@@ -98,3 +98,24 @@ Les nombres d'équilibre sont documentés en tête de chaque fichier.
 En assemblant `modules/lakour-fenoir/contenu/` (régions par `voisinsDepuisRoutes`, sites rattachés à leur région),
 `verifierContenu` ne trouve aucune erreur et 200 jours de simulation tournent (Bas presque vides au jour 200, Hauts et
 cirques autour de 1 à 2).
+
+## Couche Foundry (systems/lakour-survie/scripts, 2026-11-04)
+
+- **Correction de la logique** : `peutFaire` lit désormais le vocabulaire des incapacités du contenu (`generation.mjs#INCAPACITES`,
+  repris de `lakour-fenoir/contenu/aides.mjs`) : « travaux-lourds » interdit le chantier, « violence » la chasse (et la garde,
+  choix d'avant gardé), « nuit » la garde, « cultures » les cultures et l'élevage, etc. ; `competencesInterdites` et
+  `tachesInterdites` en plus. Avant, seule « violence » → garde était lue.
+- **Registre** (`scripts/registre.mjs`) : les formes du contenu sont traduites pour la logique (enfances `modificateurs` →
+  `competences`, traits `peur.lieu` → `peur.lieux`, `social.seuil` → `social.max`, véhicules `transport` → `type`, `terrains`,
+  `charge`, `rapide`, `allure`, bestiaire → `creatures`, noms, proches, raisons et prix des recrues).
+- **État public, champs ajoutés** : `bilan` (instantané du bilan de l'abri, pour les joueurs qui n'ont pas le monde),
+  `meteo` (`{ temps: "cyclone" | "pluie" | "" }` là où est le groupe), `groupe.porte` (ce que le groupe porte sans abri : versé
+  à l'abri à l'installation), `chroniques` (un chapitre par abri), `propositions` (des joueurs).
+- **Monde réel, champs ajoutés** : `menaces` (menaces du jour en attente, avec `id`, jamais appliquées d'elles-mêmes),
+  `paliers` (paliers de visibilité franchis), `visibiliteVeille`, `tirages` et `compteurMenaces` (hasard rejouable des actions).
+- **Relecture du 2026-11-04 (`essais/survie-api-relecture.test.mjs`)** : une action qui refuse en route n'écrit rien (`demenager` et
+  `installer` vérifient le voyage d'essai et le site d'arrivée avant de quitter l'abri ; `soigner` vérifie le soigneur avant de
+  consommer le médicament) ; le coffre rescelle une copie du navigateur en avance sur l'enveloppe à la réouverture ; une demande de
+  joueur a ses bonus et malus bornés à 0..4 (comme la fenêtre du test) et son tirage de création doit venir du générateur
+  (`tirageDuGenerateur` : budget, savoir-faire et équipement de l'enfance et du passé, traits connus et compatibles, trois au plus),
+  sinon `LAKOUR_SURVIE.Erreurs.TirageInvalide`.

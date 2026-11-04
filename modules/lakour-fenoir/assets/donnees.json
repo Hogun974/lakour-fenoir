@@ -12561,6 +12561,151 @@
    }
   }
  ],
+ "creatures": [
+  {
+   "cle": "livide-frais",
+   "nom": "Livide frais",
+   "type": "livide",
+   "des": 1,
+   "resistance": 1,
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "foret",
+    "volcan"
+   ],
+   "phases": [
+    "jour-zero",
+    "panique",
+    "effondrement",
+    "silence"
+   ],
+   "poids": 4
+  },
+  {
+   "cle": "livide-des-hauts",
+   "nom": "Livide des Hauts",
+   "type": "livide",
+   "des": 1,
+   "resistance": 2,
+   "zones": [
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "phases": [
+    "silence",
+    "apres"
+   ],
+   "poids": 2
+  },
+  {
+   "cle": "noye-du-lagon",
+   "nom": "Noyé du lagon",
+   "type": "livide",
+   "des": 1,
+   "resistance": 1,
+   "zones": [
+    "littoral"
+   ],
+   "phases": [
+    "effondrement",
+    "silence"
+   ],
+   "poids": 1
+  },
+  {
+   "cle": "livide-brule",
+   "nom": "Livide brûlé",
+   "type": "livide",
+   "des": 1,
+   "resistance": 1,
+   "zones": [
+    "littoral",
+    "hauts"
+   ],
+   "phases": [
+    "panique",
+    "effondrement",
+    "silence"
+   ],
+   "poids": 1
+  },
+  {
+   "cle": "coureur",
+   "nom": "Coureur",
+   "type": "livide",
+   "des": 2,
+   "resistance": 1,
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "foret"
+   ],
+   "phases": [
+    "jour-zero",
+    "panique"
+   ],
+   "poids": 0.5
+  },
+  {
+   "cle": "chien-errant",
+   "nom": "Chien errant",
+   "type": "animal",
+   "des": 2,
+   "resistance": 1,
+   "zones": [
+    "littoral",
+    "hauts",
+    "foret"
+   ],
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "poids": 3
+  },
+  {
+   "cle": "cochon-marron",
+   "nom": "Cochon marron",
+   "type": "animal",
+   "des": 2,
+   "resistance": 2,
+   "zones": [
+    "foret",
+    "hauts",
+    "cirque"
+   ],
+   "phases": [
+    "silence",
+    "apres"
+   ],
+   "poids": 2
+  },
+  {
+   "cle": "rat-des-reserves",
+   "nom": "Rats des réserves",
+   "type": "animal",
+   "des": 1,
+   "resistance": 1,
+   "zones": [
+    "littoral",
+    "hauts",
+    "foret",
+    "cirque"
+   ],
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "poids": 1
+  }
+ ],
  "bestiaire": [
   {
    "cle": "livide-frais",
@@ -14920,38 +15065,10 @@
  },
  "fetes": [
   {
-   "cle": "fete-de-la-liberte",
-   "nom": "Le 20 décembre, fête de la liberté",
-   "moteur": null,
-   "date": "12-20",
-   "avant": 0,
-   "apres": 0,
-   "description": "Le 20 décembre, La Réunion fête l'abolition de l'esclavage de 1848 : le maloya résonne, les kabars s'allument, on se souvient de ceux qui ont brisé leurs chaînes. Cette année, quelqu'un a peint « Nou lé pa esklav » sur un mur du camp, et le tambour s'entend malgré tout.",
-   "consigne": "C'est le 20 décembre, fête de la liberté (abolition de l'esclavage) : les survivants y voient l'écho de leur propre lutte pour ne dépendre de personne ; un tambour de maloya, un kabar à mi-voix autour du feu",
-   "decor": {
-    "palette": "braise",
-    "ornements": [
-     "etoiles"
-    ]
-   },
-   "image": "modules/lakour-fenoir/assets/fetes/fete-de-la-liberte.jpg",
-   "effet": {
-    "moral": 1,
-    "cout": {
-     "nourriture": 1
-    },
-    "parPersonne": true,
-    "unique": true
-   }
-  },
-  {
    "cle": "noel",
    "nom": "Noël sous les flamboyants",
-   "moteur": "noel",
-   "date": "12-25",
-   "avant": 1,
-   "apres": 1,
-   "description": "Noël tombe en plein été austral, sous les flamboyants en fleur et la chaleur moite des Bas. Pas de neige, jamais : un cari partagé, des letchis, un letchi en guise de sapin, des cadeaux taillés au couteau. On se demande où sont ceux qu'on aimait.",
+   "periode": "tout décembre ; la veillée du 24 au 26",
+   "description": "Noël tombe en plein été austral, sous les flamboyants en fleur et la chaleur moite des Bas. Pas de neige, jamais : un cari partagé, des letchis, une branche de filao en guise de sapin, des cadeaux taillés au couteau. On se demande où sont ceux qu'on aimait.",
    "consigne": "Noël en plein été austral : flamboyants rouges, letchis, chaleur ; les survivants fabriquent de petits cadeaux et partagent un repas, en pensant aux absents",
    "decor": {
     "palette": "sapin",
@@ -14972,13 +15089,10 @@
   },
   {
    "cle": "nouvel-an",
-   "nom": "Le jour de l'an",
-   "moteur": "nouvel-an",
-   "date": "01-01",
-   "avant": 1,
-   "apres": 0,
+   "nom": "La Saint-Sylvestre et le jour de l'an",
+   "periode": "du 31 décembre au 2 janvier",
    "description": "Avant, la Saint-Sylvestre éclatait de pétards dans toute l'île. Cette année, on se tait à minuit, on compte les vivants, on se souhaite simplement de voir la suivante. Quelque part, un idiot tire une fusée, et toute la côte l'entend.",
-   "consigne": "Jour de l'an : les survivants se souhaitent de tenir une année de plus ; les pétards d'avant manquent, et le moindre bruit à minuit attire les Livides",
+   "consigne": "Jour de l'an : les survivants se souhaitent de tenir une année de plus ; les pétards d'avant manquent, et le moindre bruit à minuit porte très loin",
    "decor": {
     "palette": "nuit",
     "ornements": [
@@ -14997,15 +15111,143 @@
    }
   },
   {
+   "cle": "paques",
+   "nom": "Pâques",
+   "periode": "du Vendredi saint au lundi de Pâques (date mobile)",
+   "description": "À Pâques, on mangeait le cari poulet en famille et les enfants cherchaient les œufs dans la cour. Cette année, les poules du camp ont pondu, et un œuf caché devient un trésor.",
+   "consigne": "Pâques : un repas en famille, des œufs de la basse-cour cachés pour les plus jeunes, la cloche d'une église qu'on n'ose pas sonner",
+   "decor": {
+    "palette": "printemps",
+    "ornements": [
+     "oeufs"
+    ]
+   },
+   "image": "modules/lakour-fenoir/assets/fetes/paques.jpg",
+   "effet": {
+    "moral": 1,
+    "cout": {
+     "nourriture": 1
+    },
+    "parPersonne": true,
+    "unique": true
+   }
+  },
+  {
+   "cle": "halloween",
+   "nom": "La Toussaint et Halloween",
+   "periode": "fin octobre : Halloween le 31 octobre, la Toussaint le 1er novembre",
+   "description": "À La Réunion, la Toussaint était le jour des cimetières : des familles entières venaient nettoyer et blanchir les tombes, fleurir leurs morts, allumer des bougies, et l'on y restait jusqu'au soir. La veille, les enfants couraient les rues déguisés pour Halloween. Aujourd'hui, les morts ne restent pas tous dans leurs tombes, et plus personne ne va au cimetière. Au camp, on dit à voix basse le nom de ceux qu'on a perdus, on pose une fleur et une bougie au pied d'une croix de bois. Personne ne se déguise plus.",
+   "consigne": "Toussaint et Halloween : au camp, on fleurit des croix de bois et l'on dit le nom des disparus ; les cimetières sont des lieux qu'on évite. Le deuil se raconte avec pudeur et sobriété, jamais comme un spectacle d'horreur ; plus personne ne se déguise en mort",
+   "decor": {
+    "palette": "crepuscule",
+    "ornements": [
+     "bougies",
+     "feuilles"
+    ]
+   },
+   "image": "modules/lakour-fenoir/assets/fetes/halloween.jpg",
+   "effet": {
+    "moral": 1,
+    "cout": {
+     "nourriture": 1
+    },
+    "parPersonne": true,
+    "unique": true
+   }
+  },
+  {
+   "cle": "musique",
+   "nom": "La fête de la musique",
+   "periode": "le 21 juin, au cœur de l'hiver austral",
+   "description": "Le 21 juin, au cœur de l'hiver austral, l'île jouait du séga et du maloya à tous les coins de rue. Au camp, un rouleur, un kayamb fabriqué avec des tiges de canne et des graines, et une voix qui chante bas, pour ne pas être entendue trop loin.",
+   "consigne": "Fête de la musique en hiver austral : un kayamb bricolé, un rouleur, un séga chanté à mi-voix ; la musique réchauffe mais porte loin dans la nuit froide",
+   "decor": {
+    "palette": "soleil",
+    "ornements": [
+     "notes"
+    ]
+   },
+   "image": "modules/lakour-fenoir/assets/fetes/musique.jpg",
+   "effet": {
+    "moral": 1,
+    "cout": {
+     "nourriture": 1
+    },
+    "parPersonne": true,
+    "unique": true
+   }
+  },
+  {
+   "cle": "liberte",
+   "nom": "Le 20 décembre, fête de la liberté",
+   "periode": "le 20 décembre",
+   "description": "Le 20 décembre, La Réunion fête l'abolition de l'esclavage de 1848 : le maloya résonne, les kabars s'allument, on se souvient de ceux qui ont brisé leurs chaînes. Cette année, quelqu'un a peint « Nou lé pa esklav » sur un mur du camp, et le tambour s'entend malgré tout.",
+   "consigne": "C'est le 20 décembre, fête de la liberté (abolition de l'esclavage) : les survivants y voient l'écho de leur propre lutte pour ne dépendre de personne ; un tambour de maloya, un kabar à mi-voix autour du feu",
+   "decor": {
+    "palette": "braise",
+    "ornements": [
+     "etoiles"
+    ]
+   },
+   "image": "modules/lakour-fenoir/assets/fetes/liberte.jpg",
+   "effet": {
+    "moral": 1,
+    "cout": {
+     "nourriture": 1
+    },
+    "parPersonne": true,
+    "unique": true
+   }
+  },
+  {
+   "cle": "fete-nationale",
+   "nom": "Le 14 juillet",
+   "periode": "le 14 juillet",
+   "description": "Le 14 juillet, il y avait le défilé au Barachois et le feu d'artifice sur la mer. Cette année, plus de défilé, plus de République à fêter, peut-être. On se demande si quelqu'un, en métropole, pense encore à l'île.",
+   "consigne": "14 juillet : plus de défilé ni de feu d'artifice ; les survivants se demandent si la métropole existe encore et pense à eux",
+   "decor": {
+    "palette": "nuit",
+    "ornements": [
+     "etoiles"
+    ]
+   },
+   "image": "modules/lakour-fenoir/assets/fetes/fete-nationale.jpg",
+   "effet": {
+    "moral": 1,
+    "cout": {
+     "nourriture": 1
+    },
+    "parPersonne": true,
+    "unique": true
+   }
+  },
+  {
+   "cle": "dipavali",
+   "nom": "Dipavali, la fête des lumières",
+   "periode": "octobre ou novembre, à la nouvelle lune (date lunaire)",
+   "description": "Pour Dipavali, la fête des lumières, les familles tamoules allumaient des lampes à huile devant les cases et dans les temples, et Saint-André défilait en couleurs. Au camp, une seule petite lampe de terre, bien abritée : une lumière contre la nuit, mais pas trop visible.",
+   "consigne": "Dipavali, fête des lumières : une petite lampe à huile protégée, des douceurs partagées ; la lumière contre les ténèbres, en prenant garde qu'elle ne se voie pas de loin",
+   "decor": {
+    "palette": "or",
+    "ornements": [
+     "bougies",
+     "etoiles"
+    ]
+   },
+   "image": "modules/lakour-fenoir/assets/fetes/dipavali.jpg",
+   "effet": {
+    "moral": 1,
+    "cout": {
+     "nourriture": 1
+    },
+    "parPersonne": true,
+    "unique": true
+   }
+  },
+  {
    "cle": "nouvel-an-chinois",
    "nom": "Le Nouvel An chinois",
-   "moteur": null,
-   "dates": {
-    "2027": "02-06",
-    "2028": "01-26"
-   },
-   "avant": 0,
-   "apres": 1,
+   "periode": "fin janvier ou février, à la fête du Printemps (date lunaire)",
    "description": "À Saint-Denis et Saint-Pierre, les familles chinoises de l'île fêtaient le Nouvel An avec la danse du lion et les pétards rouges. Au camp, on suspend une lanterne de papier rouge et l'on souhaite une année meilleure, à la manière des anciens.",
    "consigne": "Nouvel An chinois : lanternes rouges de papier, un plat partagé, le souvenir des danses du lion de Saint-Denis ; on se souhaite santé et prospérité",
    "decor": {
@@ -15027,12 +15269,7 @@
   {
    "cle": "cavadee",
    "nom": "Le Cavadee",
-   "moteur": null,
-   "dates": {
-    "2027": "01-22"
-   },
-   "avant": 0,
-   "apres": 0,
+   "periode": "janvier ou février, à la pleine lune du mois tamoul de Thai (date lunaire)",
    "description": "Au Cavadee, les fidèles tamouls de l'île portaient le kavadi en procession après des jours de jeûne et de prière, les joues percées d'aiguilles d'argent. Cette année, ceux qui croient jeûnent, prient en silence, et portent sur l'épaule le poids qu'ils peuvent.",
    "consigne": "Cavadee (fête tamoule) : jeûne, prière, offrande ; les fidèles du groupe le vivent avec gravité et pudeur, sans spectacle",
    "decor": {
@@ -15052,171 +15289,9 @@
    }
   },
   {
-   "cle": "paques",
-   "nom": "Pâques",
-   "moteur": "paques",
-   "dates": {
-    "2027": "03-28",
-    "2028": "04-16"
-   },
-   "avant": 2,
-   "apres": 1,
-   "description": "À Pâques, on mangeait le cari poulet en famille et les enfants cherchaient les œufs dans la cour. Cette année, les poules du camp ont pondu, et un œuf caché devient un trésor.",
-   "consigne": "Pâques : un repas en famille, des œufs de la basse-cour cachés pour les plus jeunes, la cloche d'une église qu'on n'ose pas sonner",
-   "decor": {
-    "palette": "printemps",
-    "ornements": [
-     "oeufs"
-    ]
-   },
-   "image": "modules/lakour-fenoir/assets/fetes/paques.jpg",
-   "effet": {
-    "moral": 1,
-    "cout": {
-     "nourriture": 1
-    },
-    "parPersonne": true,
-    "unique": true
-   }
-  },
-  {
-   "cle": "fete-de-la-musique",
-   "nom": "La fête de la musique",
-   "moteur": "musique",
-   "date": "06-21",
-   "avant": 0,
-   "apres": 0,
-   "description": "Le 21 juin, au cœur de l'hiver austral, l'île jouait du séga et du maloya à tous les coins de rue. Au camp, un rouleur, un kayamb fabriqué avec des tiges de canne et des graines, et une voix qui chante bas, pour ne pas être entendue trop loin.",
-   "consigne": "Fête de la musique en hiver austral : un kayamb bricolé, un rouleur, un séga chanté à mi-voix ; la musique réchauffe mais porte loin dans la nuit froide",
-   "decor": {
-    "palette": "soleil",
-    "ornements": [
-     "notes"
-    ]
-   },
-   "image": "modules/lakour-fenoir/assets/fetes/fete-de-la-musique.jpg",
-   "effet": {
-    "moral": 1,
-    "cout": {
-     "nourriture": 1
-    },
-    "parPersonne": true,
-    "unique": true
-   }
-  },
-  {
-   "cle": "quatorze-juillet",
-   "nom": "Le 14 juillet",
-   "moteur": null,
-   "date": "07-14",
-   "avant": 0,
-   "apres": 0,
-   "description": "Le 14 juillet, il y avait le défilé au Barachois et le feu d'artifice sur la mer. Cette année, plus de défilé, plus de République à fêter, peut-être. On se demande si quelqu'un, en métropole, pense encore à l'île.",
-   "consigne": "14 juillet : plus de défilé ni de feu d'artifice ; les survivants se demandent si la métropole existe encore et pense à eux",
-   "decor": {
-    "palette": "nuit",
-    "ornements": [
-     "etoiles"
-    ]
-   },
-   "image": "modules/lakour-fenoir/assets/fetes/quatorze-juillet.jpg",
-   "effet": {
-    "moral": 1,
-    "cout": {
-     "nourriture": 1
-    },
-    "parPersonne": true,
-    "unique": true
-   }
-  },
-  {
-   "cle": "dipavali",
-   "nom": "Dipavali",
-   "moteur": null,
-   "dates": {
-    "2026": "11-08",
-    "2027": "10-29",
-    "2028": "10-17"
-   },
-   "avant": 0,
-   "apres": 1,
-   "description": "Pour Dipavali, la fête des lumières, les familles tamoules allumaient des lampes à huile devant les cases et dans les temples, et Saint-André défilait en couleurs. Au camp, une seule petite lampe de terre, bien abritée : une lumière contre la nuit, mais pas trop visible.",
-   "consigne": "Dipavali, fête des lumières : une petite lampe à huile protégée, des douceurs partagées ; la lumière contre les ténèbres, en prenant garde qu'elle ne se voie pas de loin",
-   "decor": {
-    "palette": "or",
-    "ornements": [
-     "bougies",
-     "etoiles"
-    ]
-   },
-   "image": "modules/lakour-fenoir/assets/fetes/dipavali.jpg",
-   "effet": {
-    "moral": 1,
-    "cout": {
-     "nourriture": 1
-    },
-    "parPersonne": true,
-    "unique": true
-   }
-  },
-  {
-   "cle": "halloween",
-   "nom": "Halloween",
-   "moteur": "halloween",
-   "date": "10-31",
-   "avant": 2,
-   "apres": 0,
-   "description": "Halloween, à La Réunion, c'était des enfants déguisés en morts-vivants qui réclamaient des bonbons. Plus personne ne se déguise. Les enfants du camp en ont peur, ou en rient, ce qui est peut-être pire.",
-   "consigne": "Halloween : plus personne ne se déguise en mort ; les enfants du camp jouent à faire peur, et les adultes ne rient pas",
-   "decor": {
-    "palette": "braise",
-    "ornements": [
-     "citrouilles",
-     "feuilles"
-    ]
-   },
-   "image": "modules/lakour-fenoir/assets/fetes/halloween.jpg",
-   "effet": {
-    "moral": 1,
-    "cout": {
-     "nourriture": 1
-    },
-    "parPersonne": true,
-    "unique": true
-   }
-  },
-  {
-   "cle": "toussaint",
-   "nom": "La Toussaint",
-   "moteur": null,
-   "date": "11-01",
-   "avant": 0,
-   "apres": 1,
-   "description": "À la Toussaint, l'île entière allait fleurir ses morts, et les cimetières se couvraient de bougies. Aujourd'hui, les morts ne restent pas toujours dans leurs tombes. On plante une fleur au pied d'une croix de bois pour ceux qu'on a dû achever.",
-   "consigne": "Toussaint : fleurir les tombes de ceux qu'on a perdus, sous des croix de bois ; les cimetières, eux, sont devenus des lieux qu'on évite",
-   "decor": {
-    "palette": "crepuscule",
-    "ornements": [
-     "bougies"
-    ]
-   },
-   "image": "modules/lakour-fenoir/assets/fetes/toussaint.jpg",
-   "effet": {
-    "moral": 1,
-    "cout": {
-     "nourriture": 1
-    },
-    "parPersonne": true,
-    "unique": true
-   }
-  },
-  {
-   "cle": "fete-des-letchis",
+   "cle": "letchis",
    "nom": "La fête des letchis",
-   "moteur": null,
-   "date": "12-15",
-   "avant": 14,
-   "apres": 30,
+   "periode": "vers le 13 et le 14 décembre, au plus fort de la saison",
    "description": "En décembre, les letchis rougissent dans tous les jardins : on en vendait des bouquets au bord des routes, on en offrait aux voisins. Au camp, on monte dans l'arbre, on remplit les paniers, et pour une journée, tout le monde a le menton qui colle.",
    "consigne": "Saison des letchis : les arbres croulent de fruits rouges dans les jardins abandonnés ; une cueillette joyeuse et sucrée, qui oblige à sortir",
    "decor": {
@@ -15225,7 +15300,7 @@
      "coeurs"
     ]
    },
-   "image": "modules/lakour-fenoir/assets/fetes/fete-des-letchis.jpg",
+   "image": "modules/lakour-fenoir/assets/fetes/letchis.jpg",
    "effet": {
     "moral": 1,
     "cout": {

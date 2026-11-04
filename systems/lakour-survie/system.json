@@ -1,0 +1,46 @@
+{
+  "id": "lakour-survie",
+  "title": "Fénoir — survie à La Réunion",
+  "description": "Jeu de survie original : La Réunion au jour zéro d'un mal inconnu, le Gris, qui relève les morts en Livides. Le temps avance avec les actions du groupe ; le monde avance avec lui. Chercher un abri, l'aménager, vivre de ressources qui s'épuisent : repartir, ou s'enraciner. Système de jeu La Kour, mené par un MJ humain ou par le MJ IA.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.370"
+  },
+  "authors": [
+    { "name": "La Kour" }
+  ],
+  "esmodules": ["lakour-survie.mjs"],
+  "styles": ["styles/lakour-survie.css"],
+  "languages": [
+    { "lang": "fr", "name": "Français", "path": "lang/fr.json" },
+    { "lang": "en", "name": "English", "path": "lang/en.json" }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "survivant": { "htmlFields": ["notes"] },
+      "abri": { "htmlFields": ["notes"] }
+    },
+    "Item": {
+      "installation": { "htmlFields": ["description"] },
+      "savoir": { "htmlFields": ["description", "apprentissage", "effets"] },
+      "equipement": { "htmlFields": ["description"] },
+      "passe": { "htmlFields": ["description", "accroche"] },
+      "recette": { "htmlFields": ["description"] },
+      "affliction": { "htmlFields": ["description", "prevention"] },
+      "enfance": { "htmlFields": ["description"] },
+      "trait": { "htmlFields": ["description"] }
+    }
+  },
+  "socket": true,
+  "grid": {
+    "type": 1,
+    "distance": 1.5,
+    "units": "m"
+  },
+  "primaryTokenAttribute": "vitalite",
+  "secondaryTokenAttribute": "forces",
+  "flags": {
+    "hotReload": { "extensions": ["css", "hbs", "json"] }
+  }
+}

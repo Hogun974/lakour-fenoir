@@ -11,7 +11,7 @@ import { FACTIONS } from "./factions.mjs";
 import { EVENEMENTS } from "./evenements.mjs";
 import { RECETTES } from "./recettes.mjs";
 import { AFFLICTIONS } from "./afflictions.mjs";
-import { BESTIAIRE, BESTIAIRE_ACTEURS } from "./bestiaire.mjs";
+import { BESTIAIRE, BESTIAIRE_ACTEURS, CREATURES } from "./bestiaire.mjs";
 import { ENFANCES } from "./enfances.mjs";
 import { TRAITS } from "./traits.mjs";
 import { REPUTATIONS, PALIERS, HORLOGES_REPUTATION } from "./reputations.mjs";
@@ -46,7 +46,7 @@ export function donnees() {
     regions: REGIONS, sites: SITES, routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
     installations: INSTALLATIONS.map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: EQUIPEMENTS.map(aPlat), passes: PASSES.map(aPlat),
     recettes: RECETTES.map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
-    factions: FACTIONS, evenements: EVENEMENTS, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
+    factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
     reputations: { paliers: PALIERS, factions: REPUTATIONS, horloges: HORLOGES_REPUTATION },
     visibilite: PALIERS_VISIBILITE.map(p => ({ ...p, table: `tables:visibilite-${p.cle}` })),
     camp: ACTIVITES_CAMP,

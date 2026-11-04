@@ -4,7 +4,7 @@
   "description": "Contenu du monde original « Fénoir » pour le système La Kour Survie : survivre à La Réunion au début d'une épidémie de Livides. Seize régions de l'île reliées par leurs vraies routes et sentiers, une cinquantaine de sites d'abri, une trentaine d'installations (dont toute une voie d'autonomie), savoir-faire, passés, enfances, traits, équipement, véhicules, recettes, maladies, factions, événements, fêtes, guides du joueur et du MJ, scénario d'ouverture, one-shot, campagne en fronts, tables, carte de l'île et cartes de lieux. Textes originaux, pour un usage privé à la table. Jetons : icônes de game-icons.net (CC BY 3.0), voir CREDITS.md.",
   "version": "0.1.0",
   "authors": [{ "name": "Jordan" }],
-  "compatibility": { "minimum": "14", "verified": "14.369" },
+  "compatibility": { "minimum": "14", "verified": "14.370" },
   "relationships": {
     "systems": [{ "id": "lakour-survie", "type": "system", "compatibility": { "minimum": "0.1.0" } }]
   },

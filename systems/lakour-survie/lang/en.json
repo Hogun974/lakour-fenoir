@@ -1,0 +1,277 @@
+{
+  "TYPES": {
+    "Actor": {
+      "survivant": "Survivor",
+      "abri": "Shelter"
+    },
+    "Item": {
+      "installation": "Installation",
+      "savoir": "Know-how",
+      "equipement": "Equipment",
+      "passe": "Background",
+      "recette": "Recipe",
+      "affliction": "Affliction",
+      "enfance": "Childhood",
+      "trait": "Trait"
+    }
+  },
+  "LAKOUR_SURVIE": {
+    "Titre": "Fénoir",
+    "Annuler": "Cancel",
+    "Competences": {
+      "endurance": "Endurance", "combat": "Melee", "tir": "Shooting", "discretion": "Stealth", "vigilance": "Alertness",
+      "bricolage": "Tinkering", "survie": "Survival", "soins": "Medicine", "parole": "Speech", "conduite": "Driving"
+    },
+    "Aides": {
+      "endurance": "Carry, dig, run, endure.", "combat": "Hand-to-hand fighting.", "tir": "Firearms, bow, crossbow.",
+      "discretion": "Go unseen and unheard; scavenge quietly.", "vigilance": "Spot things, keep watch.",
+      "bricolage": "Repair, build, wiring, mechanics.", "survie": "Water, crops, fishing, hunting, orientation, plants.",
+      "soins": "Dress wounds, heal, stabilise the dying.", "parole": "Persuade, bargain, calm, lead.",
+      "conduite": "Vehicles, two-wheelers, boats."
+    },
+    "Ressources": {
+      "eau": "Water", "nourriture": "Food", "carburant": "Fuel", "medicaments": "Medicine", "munitions": "Ammunition",
+      "materiaux": "Materials", "pieces": "Parts", "graines": "Seeds", "energie": "Energy (kWh)"
+    },
+    "Nature": { "cueillette": "Foraging", "gibier": "Game", "peche": "Fishing", "bois": "Wood" },
+    "Moments": { "matin": "Morning", "apres-midi": "Afternoon", "soir": "Evening", "nuit": "Night" },
+    "Phases": { "jour-zero": "Day zero", "panique": "Panic", "effondrement": "Collapse", "silence": "Silence", "apres": "The after" },
+    "Saisons": { "pluies": "Rainy season", "seche": "Dry season" },
+    "Meteo": { "cyclone": "Cyclone", "pluie": "Heavy rain" },
+    "Difficultes": { "facile": "Easy", "normale": "Normal", "difficile": "Hard", "extreme": "Extreme" },
+    "Prudences": { "discret": "Careful", "normal": "Normal", "rapide": "Hasty" },
+    "Transports": { "pied": "On foot", "vehicule": "Vehicle", "bateau": "Boat" },
+    "Zones": { "littoral": "Coast", "hauts": "Highlands", "cirque": "Cirque", "volcan": "Volcano", "foret": "Forest" },
+    "Routes": { "ouverte": "open", "difficile": "difficult", "coupee": "cut off" },
+    "Sources": { "vu": "seen", "radio": "radio", "rumeur": "rumour" },
+    "Infestation": { "inconnue": "Unknown", "calme": "Quiet", "presente": "Present", "dense": "Dense", "grouillante": "Swarming" },
+    "Pillage": { "inconnu": "Unknown", "intact": "Intact", "entame": "Picked at", "maigre": "Meagre", "vide": "Empty" },
+    "Attitudes": { "hostile": "Hostile", "mefiante": "Wary", "neutre": "Neutral", "amicale": "Friendly" },
+    "Statuts": { "joueur": "Player", "compagnon": "Companion", "recrue": "Recruit", "pnj": "NPC" },
+    "Taches": {
+      "aucune": "No task", "garde": "Guard", "cultures": "Crops", "elevage": "Livestock", "chantier": "Building", "atelier": "Workshop",
+      "cuisine": "Cooking", "soins": "Care", "eau": "Water", "peche": "Fishing", "chasse": "Hunting", "fouille": "Scavenging", "repos": "Rest",
+      "enseigner": "Teaching", "negociation": "Negotiation"
+    },
+    "Incapacites": {
+      "violence": "Violence", "soins": "Medicine", "travaux-lourds": "Heavy labour", "conduite": "Driving", "parole": "Speaking up",
+      "cultures": "Crops and animals", "nuit": "Night watch", "combat": "Melee", "tir": "Shooting", "chasse": "Hunting", "garde": "Guard",
+      "chantier": "Building", "endurance": "Endurance", "discretion": "Stealth", "vigilance": "Alertness", "bricolage": "Tinkering", "survie": "Survival"
+    },
+    "Blessures": { "Indemne": "Unhurt", "Egratigne": "Scratched", "Blesse": "Wounded", "Grievement": "Badly wounded", "Mourant": "Dying" },
+    "Etat": {
+      "blessures": "Wounds", "fatigue": "Fatigue", "moral": "Morale", "faim": "Hunger", "soif": "Thirst", "Mort": "Dead", "Livide": "Livid"
+    },
+    "Afflictions": { "incubation": "incubating", "active": "declared", "aggravee": "worsened" },
+    "CategoriesAffliction": { "maladie": "Disease", "blessure": "Lasting injury", "psychique": "Shock" },
+    "Categories": {
+      "defense": "Defence", "eau": "Water", "nourriture": "Food", "energie": "Energy", "vie": "Camp life", "souterrain": "Underground",
+      "stockage": "Storage", "communication": "Communication"
+    },
+    "EtatInstallation": { "0": "intact", "1": "damaged", "2": "badly damaged", "3": "out of order" },
+    "Menaces": { "horde": "Horde", "livides": "Wandering Livids", "bande": "Gang", "visite": "Visit", "animaux": "Animals", "accident": "Accident" },
+    "Besoins": {
+      "couvert": "covered", "faible": "weak", "manquant": "missing",
+      "Profil": "Someone who knows {competence} (for instance: {exemples})."
+    },
+
+    "Erreurs": {
+      "PasMJActif": "Only the active GM can do this (Fénoir's state is written on their side).",
+      "MondeFerme": "Fénoir's world is not open in this browser (GM AI vault closed or shares awaited): nothing was written. It is being looked for; try again in a moment.",
+      "PasDePartie": "No Fénoir game has started (GM window: Start).",
+      "ActeurInconnu": "Survivor not found.",
+      "HorsEtat": "{nom} can no longer act.",
+      "CompetenceInconnue": "Unknown skill: {competence}.",
+      "TestInconnu": "This test cannot be found.",
+      "DejaForce": "This test has already been pushed (once per test).",
+      "SansMJ": "No GM is connected: the GM is needed to write Fénoir's state.",
+      "SansReponse": "The GM did not answer in time. Try again.",
+      "PasProprietaire": "This is not your survivor.",
+      "CreationFermee": "Survivor creation is closed by the GM.",
+      "DejaUnSurvivant": "You already have a living survivor.",
+      "RequeteInconnue": "Unknown request.",
+      "TirageManquant": "Nothing to create: roll a survivor first.",
+      "TirageInvalide": "This roll does not come from the generator (budget, skills, equipment or traits): roll another one.",
+      "EnRoute": "The group is on the road: wait until it arrives.",
+      "SansAbri": "The group has no shelter.",
+      "PasALAbri": "The group is not at its shelter.",
+      "InstallationAbsente": "This installation is not in the shelter.",
+      "MenaceInconnue": "This threat no longer exists.",
+      "DateInvalide": "Invalid start date (YYYY-MM-DD).",
+      "AucuneFete": "No holiday today: name the holiday.",
+      "RegionInconnue": "Unknown region: {region}.",
+      "SiteInconnu": "Unknown site: {site}.",
+      "InstallationInconnue": "Unknown installation: {installation}.",
+      "RecetteInconnue": "Unknown recipe: {recette}.",
+      "AfflictionInconnue": "Unknown affliction: {cle}.",
+      "CibleInconnue": "Unknown scavenging target: {cible}.",
+      "PasDansLaRegion": "The group is not in this region ({region}): it has to go there first.",
+      "Construction": "Cannot build: {raisons}.",
+      "Fabrication": "Cannot craft: {raisons}.",
+      "Voyage": "Cannot travel: {raison}.",
+      "AucuneRoute": "no passable road",
+      "Fete": "Cannot celebrate: {raison}.",
+      "PasAtteint": "{nom} does not have: {affliction}.",
+      "Medicaments": "This treatment needs {n} medicine.",
+      "Contenu": "Fénoir: {n} error(s) in the content (first: {premiere}). Details in the console (F12)."
+    },
+    "Coffre": {
+      "SansMoteur": "Fénoir: the GM AI module is off; the real world state is kept in clear in the world settings. Players can read the world state.",
+      "SansCle": "Fénoir: the GM AI vault key is missing in this browser; the world could not be sealed (it will be as soon as the key is back: players' shares, another GM, backup key).",
+      "EnAttente": "Fénoir: the world is sealed; waiting for the players' key shares (or the backup key) to open it. Nothing is written until then.",
+      "Ferme": "Fénoir: the current game's world is not open in this browser. Nothing is written until it is.",
+      "Ouvert": "Fénoir: the world is open."
+    },
+    "Reglages": {
+      "DateDepart": { "Nom": "Day zero date", "Aide": "The real date of day zero (YYYY-MM-DD): game date, season and holidays follow from it." },
+      "Budget": { "Nom": "Creation budget", "Aide": "Sum of a starting player survivor's skill levels, \"min-max\" (10-16 by default)." },
+      "RepartitionAuto": { "Nom": "Automatic task assignment", "Aide": "Each day, companions and recruits take the task the group needs most." },
+      "CreationOuverte": { "Nom": "Creation open to players", "Aide": "A player without a survivor can roll one (\"Create a survivor\" window); the active GM creates it and hands it over." },
+      "FetesJeu": { "Nom": "Holidays follow the game date", "Aide": "The GM AI \"Seasonal holiday\" setting follows Fénoir's game date (daily card, decoration, narrator line)." },
+      "Lumiere": { "Nom": "Light follows the time of day", "Aide": "The active scene's darkness follows the time of day (unless the scene is locked)." },
+      "Bandeau": { "Nom": "Survival banner", "Aide": "The banner at the top of the screen: day, time, weather, stocks in days, alerts." },
+      "Signal": { "Nom": "\"Your turn\" chime", "Aide": "A discreet chime when the GM is waiting for you (a test, a task)." },
+      "Ambiance": { "Nom": "Ambient sounds (GM)", "Aide": "Night, rain, cyclone, tension during an assault, with the GM AI sounds." },
+      "Effets": { "Nom": "Visual effects", "Aide": "Rain on the map, a slight shake during an assault. Nothing moves if your system asks for reduced motion." }
+    },
+
+    "Bandeau": {
+      "Titre": "Survival banner", "Jour": "Day {n}", "J": "d", "Attente": "Fénoir: the game has not started.", "Replier": "Collapse or expand",
+      "MaFiche": "My sheet", "EnRoute": "On the road ({n} watch(es))"
+    },
+    "Fiche": {
+      "Survivant": "Survivor sheet", "Abri": "Shelter sheet", "Objet": "Item sheet", "Nom": "Name", "Age": "Age", "Etat": "Condition",
+      "Competences": "Skills", "CliquerTester": "click: a test", "Traits": "Traits and incapacities", "Tache": "Task of the day", "Equipement": "Equipment",
+      "Savoirs": "Know-how", "Notes": "Notes", "Histoire": "Story", "Afflictions": "Diseases and injuries", "Retirer": "Remove",
+      "Infection": "The Grey: stage {stade} / 6", "Des": "dice", "MalusAide": "Dice removed from every test by condition (wounds, fatigue, morale, diseases).",
+      "Craque": "At the end of their rope: they break (GM scene).", "Jours": "{n} d", "Quarts": "{n} watch(es)"
+    },
+    "Abri": {
+      "Courant": "Group shelter", "Abandonne": "Abandoned", "Autonome": "Self-sufficient", "Defense": "Defence", "Discretion": "Discretion",
+      "Visibilite": "Visibility", "Capacite": "People / capacity", "Bruit": "Noise", "JoursAutonomes": "Self-sufficient days", "Stocks": "Stocks",
+      "Ressource": "Resource", "Quantite": "Quantity", "Net": "Net / day", "Jours": "Days", "Production": "Today's production",
+      "Installations": "Installations", "Arret": "stopped", "AucuneInstallation": "No installation.", "Alentours": "Surroundings",
+      "Sol": "Soil fertility", "Degats": "Damage", "Grille": "Who does what", "Surpeuplement": "Overcrowded: {n} too many.",
+      "Aides": {
+        "defense": "What protects the shelter from an assault (site, installations, minus damage).",
+        "discretion": "What hides it (site, camouflage, underground).",
+        "visibilite": "How far it can be seen and heard: it draws gangs and hordes."
+      }
+    },
+    "Objet": {
+      "Niveau": "Level", "Cout": "Cost", "Travail": "Work (person-watches)", "Produit": "Produces", "Consomme": "Consumes", "Stockage": "Storage",
+      "Conservation": "Preserves food (no more spoilage)", "Radio": "News by radio", "Delai": "First harvest after {n} days",
+      "Bras": "Needs {n} person(s) on the \"{tache}\" task", "Savoirs": "Required know-how", "Requiert": "Requires",
+      "Munitions": "{n} ammunition per exchange of fire", "Transport": "{places} seat(s), load {charge}, terrain: {terrains}",
+      "Incubation": "Incubation: {n} d", "Duree": "Duration: {n} d", "MalusDes": "−{n} dice", "FatigueJour": "+{n} fatigue per day",
+      "Contagion": "Contagion: {n} % per day", "Medicaments": "{n} medicine", "Peur": "Fear: {lieu}", "Incompatible": "Incompatible with",
+      "Effets": { "defense": "Defence", "discretion": "Discretion", "capacite": "Capacity", "visibilite": "Visibility", "bruit": "Noise", "protectionCyclone": "Cyclone protection", "soins": "Care", "moral": "Morale" },
+      "Champs": { "description": "Description", "accroche": "On day zero", "apprentissage": "How to learn it", "effets": "Effects", "prevention": "Prevention" },
+      "Sections": { "Etat": "Condition", "Niveau": "Level", "Usage": "Use", "Competences": "Skills", "Savoirs": "Know-how", "Equipement": "Equipment", "Incapacites": "Incapacities", "Histoire": "Story lines", "Fabrication": "Crafting", "Mal": "The illness", "Soin": "Treatment", "Effets": "Effects" }
+    },
+
+    "Test": {
+      "Titre": "Test: {competence}", "Difficulte": "Difficulty", "Bonus": "Extra dice (tool, help, situation)", "Malus": "Fewer dice (situation)",
+      "Compte": "The test matters (danger, stakes): a progress mark if failed or pushed",
+      "AideDialogue": "Every 5 or 6 is a success. Condition penalties and tool bonuses are added automatically.",
+      "Lancer": "Roll", "Forcer": "Push (1 fatigue)", "Reussite": "success", "Echec": "failure", "Force": "pushed", "Complication": "complication",
+      "ComplicationTexte": "Complication: the GM chooses (noise, broken tool, light wound, lost time).", "Marge": "margin {n}",
+      "FatigueForcee": "Pushed: +1 fatigue.", "Marque": "A progress mark.", "Monte": "{competence} rises to level {niveau}!",
+      "Relance": "Rerolled", "Demande": "The GM asks for a test"
+    },
+    "Carte": { "Temps": "Time passes ({n} watch(es))" },
+    "Action": {
+      "Fouille": "Scavenging: {lieu}", "Exploration": "Exploring: {region}", "Voyage": "On the road to {vers}", "Chantier": "Building: {installation}",
+      "Installe": "Settling in: {site}", "Qui": "Who: {noms}", "Butin": "Loot: {butin}", "Rien": "nothing", "Chemin": "Via {chemin} ({quarts} watch(es))",
+      "Stocks": "Found on site: {stocks}", "Installations": "Already there: {liste}", "Termine": "Done: level {niveau} in service.",
+      "Avance": "Work: {fait} / {requis} person-watches.", "Cout": "Cost paid: {cout}"
+    },
+    "Assaut": {
+      "Titre": "Assault on the shelter", "Defense": "Defence", "Menace": "Threat", "Inconnu": "unknown", "Breche": "BREACH: the shelter is broken into; fight, or flee.",
+      "Issues": { "repoussee": "repelled", "endommagee": "an installation damaged, someone wounded", "breche": "breach!" },
+      "Journal": { "repoussee": "Assault repelled ({type}).", "endommagee": "Assault ({type}): the shelter holds, but an installation is hit and someone is wounded.", "breche": "Assault ({type}): the shelter is breached!" }
+    },
+    "Alertes": {
+      "Mourant": "{nom} is dying: a hard Medicine test, now, or they die at the end of the watch.",
+      "Morsure": "{nom} is bitten: EXTREME Medicine test within the watch (washing, cauterising…), or the Grey."
+    },
+    "Journal": {
+      "Debut": "Day zero, {date}: the group is in {region}.", "Installe": "The group settles in {site} ({region}).", "Reprend": "The group takes back the shelter of {site} ({region}).",
+      "Quitte": "The group leaves {site}.", "Chantier": "Work started: {installation} (level {niveau}).", "Termine": "{installation} is in service (level {niveau}).",
+      "Repare": "{installation}: {n} point(s) repaired.", "RepareAbri": "The shelter: {n} damage repaired.", "Ajustement": "Adjustment",
+      "Blesse": "{nom} is wounded.", "Mordu": "{nom} is bitten by a Livid.", "Soigne": "{soigneur} treats {nom} ({n} wound(s)).",
+      "Infecte": "{nom} carries the Grey.", "Renseignement": "News from {region} ({source}).", "Fabrique": "{nom} crafts: {recette}.",
+      "FabriqueRate": "{nom} fails: {recette}.", "Affliction": "{nom}: {affliction}.", "AfflictionSoignee": "{nom} is treated: {affliction}.",
+      "AfflictionRate": "{nom}'s treatment does not take ({affliction}).", "Fete": "The group celebrates: {fete}.", "Recrue": "{nom} joins the group.",
+      "RecrueRefuse": "{nom} refuses to follow the group.", "Rejoint": "{nom} joins the group."
+    },
+    "Fete": {
+      "Alerte": "Holiday today (Fénoir calendar): {nom}. {consigne}",
+      "Carte": "Celebration at camp: {fete}", "Effet": "An extra ration for everyone; +1 morale for all.",
+      "Texte": "The group celebrates {fete}: +1 morale each, an extra ration per person ({nourriture} food left)."
+    },
+    "Soins": { "Titre": "Treat {nom}", "Affliction": "Treat {nom}: {affliction}" },
+    "Recrue": { "Titre": "Convince {nom}" },
+    "Palier": {
+      "Avis": "Fénoir (GM): the shelter crosses the visibility threshold \"{palier}\". See the GM window, Threats tab.",
+      "SansTable": "This threshold's table cannot be found (lakour-fenoir.tables compendium)."
+    },
+    "Signal": { "Test": "The GM is waiting for a test from {nom}.", "Jet": "A test from your survivor is awaited." },
+    "Infobulle": { "Fatigue": "Fatigue {n}", "Moral": "Morale {n}", "Infection": "The Grey (stage {n})", "Stocks": "Water {eau} d · food {nourriture} d" },
+    "Chroniques": {
+      "Titre": "Chronicles of Fénoir", "Chapitre": "Chapter {n} — {nom}", "EnCours": "From day {debut} to today (day {fin}): {jours} day(s).",
+      "Duree": "From day {debut} to day {fin}: {jours} day(s).", "Bati": "What was built there", "Rien": "Nothing new.",
+      "Tombes": "Those who fell", "Personne": "No one."
+    },
+    "Creation": {
+      "Titre": "Create a survivor", "Bouton": "Create a survivor",
+      "Intro": "Roll a survivor. Lock what you keep (name, age, childhood, background, traits), reroll the rest, or choose each element. Stars favour a skill on the next roll.",
+      "Nom": "Name", "Age": "Age", "Enfance": "Childhood", "Passe": "Background (on day zero)", "Traits": "Traits", "AjouterTrait": "Add a trait…",
+      "Verrou": "Keep (lock)", "Favoriser": "Favour this skill", "Incapable": "Incapable of", "Tirer": "Roll", "Creer": "Create this survivor",
+      "Rejoindre": "Join the group", "Joueur": "Player", "Statut": "Status", "Personne": "No one", "SansNom": "Nameless survivor",
+      "Cree": "{nom} is created.", "GraineRegion": "On day zero, they were around {region}.",
+      "BudgetAide": "Sum of levels: a starting survivor has between {min} and {max}."
+    },
+    "Tableau": {
+      "Titre": "Group dashboard",
+      "Onglets": { "groupe": "The group", "renseignements": "Intelligence", "journal": "Log", "propositions": "Proposals" },
+      "Groupe": "Who does what", "Besoins": "What the group lacks", "RienNeManque": "Nothing is lacking.", "Pnj": "With the group", "Plans": "Known plans",
+      "EtatLigne": "wnd. {b} · fat. {f} · morale {m}", "Carte": "Réunion as the group knows it", "Region": "Region", "Vu": "Seen",
+      "Infestation": "Livids", "Pillage": "Looting", "Factions": "Factions", "Alertes": "Alerts", "Journal": "Group log",
+      "AideRenseignements": "What the group BELIEVES, dated: a place may have changed since. Grey: never seen. Dotted roads: unknown."
+    },
+    "Renseignements": { "Jamais": "never seen", "Age": "{n} d ago" },
+    "Proposition": {
+      "Titre": "{nom} proposes", "Aide": "Propose an action to the GM (and the GM AI): they decide and have the group do it.",
+      "Type": "Action", "Details": "Where, who, how…", "Envoyer": "Propose", "Envoyee": "Proposal sent to the GM.",
+      "Types": { "fouiller": "Scavenge", "explorer": "Explore", "construire": "Build", "garde": "Keep watch", "repos": "Rest", "voyager": "Travel", "fabriquer": "Craft", "autre": "Other" }
+    },
+    "Atelier": {
+      "Titre": "Workshop", "Intro": "{n} recipe(s) possible now. Hover a recipe for its description.", "Artisan": "Crafter",
+      "LeMeilleur": "The most skilled", "Fabriquer": "Craft", "Proposer": "Propose to the GM", "Carte": "Workshop: {recette}"
+    },
+    "MJ": {
+      "Titre": "Fénoir — GM window", "Titre2": "Title",
+      "Onglets": { "partie": "Game and time", "actions": "Group actions", "groupe": "Group and recruits", "menaces": "Threats", "monde": "Real world" },
+      "Formes": {
+        "demarrer": "Start the game", "avancer": "Advance time", "fouiller": "Scavenge", "explorer": "Explore", "installer": "Settle in",
+        "construire": "Build", "reparer": "Repair", "voyager": "Travel", "demenager": "Move out", "assaut": "Assault", "ajuster": "Adjust stocks",
+        "genererRecrue": "Roll a recruit", "recruter": "Recruit", "feter": "Celebrate", "demanderTest": "Ask for a test", "fabriquer": "Craft",
+        "affliction": "Disease, injury", "ajouterMembre": "Add to the group", "rencontre": "Roll an encounter (secret)"
+      },
+      "PasActif": "You are not the active GM: only the active GM writes Fénoir's state.", "Bloque": "The world is not open in this browser: nothing is written.",
+      "Rouvrir": "Reopen the vault", "DejaDemarree": "A game is running: starting again replaces it.",
+      "RegionDepart": "Starting region", "Graine": "Random seed (empty = random)", "Membres": "Group members", "AucunSurvivant": "No survivor: create some.",
+      "Quarts": "Watches", "Quart": "watch", "UnJour": "1 day", "UneSemaine": "1 week", "Raison": "Reason", "Repos": "The group rests",
+      "AucuneFete": "No holiday today (game date).", "Fete": "Holiday", "Site": "Site", "Region": "The whole region", "Cible": "Look for",
+      "Tout": "Everything", "Prudence": "Caution", "Qui": "Who", "Quoi": "What", "Abri": "The shelter (damage)", "Vers": "To", "Transport": "Transport",
+      "Force": "Strength", "Type": "Type", "Description": "Description", "Parleur": "Who speaks", "Attitude": "Attitude", "Recette": "Recipe",
+      "Action": "Action", "Donner": "Give", "Soigner": "Treat", "Faire": "Do it",
+      "Menaces": "Threats of the day", "AideMenaces": "Rolled by the simulation against the shelter; nothing happens until you resolve them (assault) or set them aside (you narrate them otherwise).",
+      "AucuneMenace": "No pending threat.", "Resoudre": "Assault", "Ecarter": "Set aside", "Paliers": "Visibility thresholds crossed",
+      "Secret": "The REAL world: for your eyes only. Players only know their intelligence.", "MondeFerme": "Real world unavailable (not the active GM, or vault closed).",
+      "Reste": "Left to loot", "Routes": "Damaged roads", "Evenements": "Events", "Hordes": "Hordes", "Taille": "size", "Eruption": "Eruption",
+      "JournalSecret": "Secret log"
+    }
+  }
+}

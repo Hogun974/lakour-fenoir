@@ -62,6 +62,17 @@ export const BESTIAIRE = [
     faiblesse: `Ses munitions sont comptées, et il obéit : on traite avec ses chefs, pas avec lui.` })
 ];
 
+// Les créatures que la logique du système tire au sort et fait combattre (registre, famille « creatures » ; lakour-survie,
+// logique/actions.mjs tirerCreature et logique/contenu.mjs) : { cle, nom, type: "livide" | "animal", des, resistance, zones,
+// phases, poids }. Les Livides et les animaux du bestiaire seulement : les figures humaines viennent des factions (rencontres
+// « humains »). poids : fréquence relative du tirage (le coureur est rare, contrat §9).
+export const POIDS_CREATURES = { "livide-frais": 4, "livide-des-hauts": 2, "noye-du-lagon": 1, "livide-brule": 1, coureur: 0.5,
+  "chien-errant": 3, "cochon-marron": 2, "rat-des-reserves": 1 };
+export const CREATURES = BESTIAIRE.filter(b => b.categorie === "livide" || b.categorie === "animal").map(b => ({
+  cle: b.cle, nom: b.nom, type: b.categorie, des: b.des, resistance: b.resistance, zones: [...b.zones], phases: [...b.phases],
+  poids: POIDS_CREATURES[b.cle] ?? 1
+}));
+
 // Acteurs du compendium « bestiaire » : la fiche dans flags.lakour-fenoir.bestiaire ; disposition hostile, sauf les rats.
 export const BESTIAIRE_ACTEURS = BESTIAIRE.map(b => survivant({
   cle: b.cle, nom: b.nom, pack: "bestiaire", statut: "pnj", pnj: true, livide: b.categorie === "livide", vivant: b.categorie !== "livide",

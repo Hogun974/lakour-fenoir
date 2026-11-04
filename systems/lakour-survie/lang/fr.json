@@ -1,0 +1,277 @@
+{
+  "TYPES": {
+    "Actor": {
+      "survivant": "Survivant",
+      "abri": "Abri"
+    },
+    "Item": {
+      "installation": "Installation",
+      "savoir": "Savoir-faire",
+      "equipement": "Équipement",
+      "passe": "Passé",
+      "recette": "Recette",
+      "affliction": "Affliction",
+      "enfance": "Enfance",
+      "trait": "Trait"
+    }
+  },
+  "LAKOUR_SURVIE": {
+    "Titre": "Fénoir",
+    "Annuler": "Annuler",
+    "Competences": {
+      "endurance": "Endurance", "combat": "Combat", "tir": "Tir", "discretion": "Discrétion", "vigilance": "Vigilance",
+      "bricolage": "Bricolage", "survie": "Survie", "soins": "Soins", "parole": "Parole", "conduite": "Conduite"
+    },
+    "Aides": {
+      "endurance": "Porter, creuser, courir, résister.", "combat": "Le corps à corps.", "tir": "Armes à feu, arc, arbalète.",
+      "discretion": "Passer sans être vu ni entendu ; fouiller sans attirer.", "vigilance": "Repérer, monter la garde.",
+      "bricolage": "Réparer, construire, électricité, mécanique.", "survie": "Eau, cultures, pêche, chasse, orientation, plantes.",
+      "soins": "Panser, soigner, stabiliser un mourant.", "parole": "Convaincre, négocier, apaiser, commander.",
+      "conduite": "Véhicules, deux-roues, bateau."
+    },
+    "Ressources": {
+      "eau": "Eau", "nourriture": "Nourriture", "carburant": "Carburant", "medicaments": "Médicaments", "munitions": "Munitions",
+      "materiaux": "Matériaux", "pieces": "Pièces", "graines": "Graines", "energie": "Énergie (kWh)"
+    },
+    "Nature": { "cueillette": "Cueillette", "gibier": "Gibier", "peche": "Pêche", "bois": "Bois" },
+    "Moments": { "matin": "Matin", "apres-midi": "Après-midi", "soir": "Soir", "nuit": "Nuit" },
+    "Phases": { "jour-zero": "Jour zéro", "panique": "Panique", "effondrement": "Effondrement", "silence": "Silence", "apres": "L'après" },
+    "Saisons": { "pluies": "Saison des pluies", "seche": "Saison sèche" },
+    "Meteo": { "cyclone": "Cyclone", "pluie": "Fortes pluies" },
+    "Difficultes": { "facile": "Facile", "normale": "Normale", "difficile": "Difficile", "extreme": "Extrême" },
+    "Prudences": { "discret": "Discrète", "normal": "Normale", "rapide": "Rapide" },
+    "Transports": { "pied": "À pied", "vehicule": "Véhicule", "bateau": "Bateau" },
+    "Zones": { "littoral": "Littoral", "hauts": "Les Hauts", "cirque": "Cirque", "volcan": "Volcan", "foret": "Forêt" },
+    "Routes": { "ouverte": "ouverte", "difficile": "difficile", "coupee": "coupée" },
+    "Sources": { "vu": "vu", "radio": "radio", "rumeur": "rumeur" },
+    "Infestation": { "inconnue": "Inconnue", "calme": "Calme", "presente": "Présente", "dense": "Dense", "grouillante": "Grouillante" },
+    "Pillage": { "inconnu": "Inconnu", "intact": "Intact", "entame": "Entamé", "maigre": "Maigre", "vide": "Vide" },
+    "Attitudes": { "hostile": "Hostile", "mefiante": "Méfiante", "neutre": "Neutre", "amicale": "Amicale" },
+    "Statuts": { "joueur": "Joueur", "compagnon": "Compagnon", "recrue": "Recrue", "pnj": "PNJ" },
+    "Taches": {
+      "aucune": "Aucune tâche", "garde": "Garde", "cultures": "Cultures", "elevage": "Élevage", "chantier": "Chantier", "atelier": "Atelier",
+      "cuisine": "Cuisine", "soins": "Soins", "eau": "Eau", "peche": "Pêche", "chasse": "Chasse", "fouille": "Fouille", "repos": "Repos",
+      "enseigner": "Enseigner", "negociation": "Négociation"
+    },
+    "Incapacites": {
+      "violence": "Violence", "soins": "Soins", "travaux-lourds": "Travaux lourds", "conduite": "Conduite", "parole": "Prendre la parole",
+      "cultures": "Cultures et bêtes", "nuit": "Veiller la nuit", "combat": "Combat", "tir": "Tir", "chasse": "Chasse", "garde": "Garde",
+      "chantier": "Chantier", "endurance": "Endurance", "discretion": "Discrétion", "vigilance": "Vigilance", "bricolage": "Bricolage", "survie": "Survie"
+    },
+    "Blessures": { "Indemne": "Indemne", "Egratigne": "Égratigné", "Blesse": "Blessé", "Grievement": "Grièvement blessé", "Mourant": "Mourant" },
+    "Etat": {
+      "blessures": "Blessures", "fatigue": "Fatigue", "moral": "Moral", "faim": "Faim", "soif": "Soif", "Mort": "Mort", "Livide": "Livide"
+    },
+    "Afflictions": { "incubation": "en incubation", "active": "déclarée", "aggravee": "aggravée" },
+    "CategoriesAffliction": { "maladie": "Maladie", "blessure": "Blessure persistante", "psychique": "Choc" },
+    "Categories": {
+      "defense": "Défense", "eau": "Eau", "nourriture": "Nourriture", "energie": "Énergie", "vie": "Vie au camp", "souterrain": "Souterrain",
+      "stockage": "Stockage", "communication": "Communication"
+    },
+    "EtatInstallation": { "0": "intacte", "1": "abîmée", "2": "très abîmée", "3": "hors service" },
+    "Menaces": { "horde": "Horde", "livides": "Livides errants", "bande": "Bande", "visite": "Visite", "animaux": "Animaux", "accident": "Accident" },
+    "Besoins": {
+      "couvert": "couvert", "faible": "faible", "manquant": "manquant",
+      "Profil": "Quelqu'un qui sait {competence} (par exemple : {exemples})."
+    },
+
+    "Erreurs": {
+      "PasMJActif": "Seul le MJ actif peut faire cela (l'état de Fénoir s'écrit chez lui).",
+      "MondeFerme": "Le monde de Fénoir n'est pas ouvert dans ce navigateur (coffre du MJ IA fermé ou parts attendues) : rien n'a été écrit. Il est cherché ; réessaie dans un instant.",
+      "PasDePartie": "Aucune partie de Fénoir n'est démarrée (fenêtre du MJ : Démarrer).",
+      "ActeurInconnu": "Survivant introuvable.",
+      "HorsEtat": "{nom} n'est plus en état d'agir.",
+      "CompetenceInconnue": "Compétence inconnue : {competence}.",
+      "TestInconnu": "Ce test est introuvable.",
+      "DejaForce": "Ce test a déjà été forcé (une fois par test).",
+      "SansMJ": "Aucun MJ n'est connecté : il faut le MJ pour écrire l'état de Fénoir.",
+      "SansReponse": "Le MJ n'a pas répondu à temps. Réessaie.",
+      "PasProprietaire": "Ce n'est pas ton survivant.",
+      "CreationFermee": "La création de survivant est fermée par le MJ.",
+      "DejaUnSurvivant": "Tu as déjà un survivant vivant.",
+      "RequeteInconnue": "Demande inconnue.",
+      "TirageManquant": "Aucun tirage à créer : tire d'abord un survivant.",
+      "TirageInvalide": "Ce tirage ne vient pas du générateur (budget, savoir-faire, équipement ou traits) : tires-en un autre.",
+      "EnRoute": "Le groupe est en route : attends qu'il arrive.",
+      "SansAbri": "Le groupe n'a pas d'abri.",
+      "PasALAbri": "Le groupe n'est pas à son abri.",
+      "InstallationAbsente": "Cette installation n'est pas dans l'abri.",
+      "MenaceInconnue": "Cette menace n'existe plus.",
+      "DateInvalide": "Date de départ invalide (AAAA-MM-JJ).",
+      "AucuneFete": "Aucune fête aujourd'hui : nomme la fête.",
+      "RegionInconnue": "Région inconnue : {region}.",
+      "SiteInconnu": "Site inconnu : {site}.",
+      "InstallationInconnue": "Installation inconnue : {installation}.",
+      "RecetteInconnue": "Recette inconnue : {recette}.",
+      "AfflictionInconnue": "Affliction inconnue : {cle}.",
+      "CibleInconnue": "Cible de fouille inconnue : {cible}.",
+      "PasDansLaRegion": "Le groupe n'est pas dans cette région ({region}) : il faut y aller d'abord.",
+      "Construction": "Impossible de construire : {raisons}.",
+      "Fabrication": "Impossible de fabriquer : {raisons}.",
+      "Voyage": "Voyage impossible : {raison}.",
+      "AucuneRoute": "aucune route praticable",
+      "Fete": "Impossible de fêter : {raison}.",
+      "PasAtteint": "{nom} n'a pas : {affliction}.",
+      "Medicaments": "Il faut {n} médicament(s) pour ce soin.",
+      "Contenu": "Fénoir : {n} erreur(s) dans le contenu (la première : {premiere}). Détail dans la console (F12)."
+    },
+    "Coffre": {
+      "SansMoteur": "Fénoir : le module MJ IA est coupé ; l'état réel du monde est gardé en clair dans les réglages du monde. Les joueurs peuvent lire l'état du monde.",
+      "SansCle": "Fénoir : la clé du coffre du MJ IA manque dans ce navigateur ; le monde n'a pas pu être scellé (il l'est dès que la clé revient : parts des joueurs, autre MJ, clé de secours).",
+      "EnAttente": "Fénoir : le monde est scellé ; on attend les parts de la clé des joueurs (ou la clé de secours) pour l'ouvrir. Rien ne s'écrit d'ici là.",
+      "Ferme": "Fénoir : le monde de la partie en cours n'est pas ouvert dans ce navigateur. Rien ne s'écrit tant qu'il ne l'est pas.",
+      "Ouvert": "Fénoir : le monde est ouvert."
+    },
+    "Reglages": {
+      "DateDepart": { "Nom": "Date du jour zéro", "Aide": "La date réelle du jour zéro (AAAA-MM-JJ) : la date de jeu, la saison et les fêtes en découlent." },
+      "Budget": { "Nom": "Budget de création", "Aide": "Somme des niveaux de compétences d'un survivant de joueur au départ, « min-max » (10-16 par défaut)." },
+      "RepartitionAuto": { "Nom": "Répartition automatique des tâches", "Aide": "Chaque jour, les compagnons et les recrues prennent la tâche dont le groupe a le plus besoin." },
+      "CreationOuverte": { "Nom": "Création ouverte aux joueurs", "Aide": "Un joueur sans survivant peut en tirer un (fenêtre « Créer un survivant ») ; le MJ actif le crée et le lui confie." },
+      "FetesJeu": { "Nom": "Les fêtes suivent la date de jeu", "Aide": "Le réglage « Fête de saison » du MJ IA suit la date de jeu de Fénoir (carte du jour, décor, ligne du narrateur)." },
+      "Lumiere": { "Nom": "La lumière suit le moment", "Aide": "L'obscurité de la scène active suit le moment de la journée (sauf scène verrouillée)." },
+      "Bandeau": { "Nom": "Bandeau de survie", "Aide": "Le bandeau en haut de l'écran : jour, moment, météo, stocks en jours, alertes." },
+      "Signal": { "Nom": "Signal « à toi »", "Aide": "Un tintement discret quand le MJ attend quelque chose de toi (un test, une tâche)." },
+      "Ambiance": { "Nom": "Ambiances sonores (MJ)", "Aide": "Nuit, pluie, cyclone, tension d'un assaut, avec les sons du MJ IA." },
+      "Effets": { "Nom": "Effets visuels", "Aide": "Pluie sur la carte, léger tremblement à un assaut. Rien ne bouge si votre système demande moins d'animations." }
+    },
+
+    "Bandeau": {
+      "Titre": "Bandeau de survie", "Jour": "Jour {n}", "J": "j", "Attente": "Fénoir : la partie n'a pas commencé.", "Replier": "Replier ou déplier",
+      "MaFiche": "Ma fiche", "EnRoute": "En route ({n} quart(s))"
+    },
+    "Fiche": {
+      "Survivant": "Fiche de survivant", "Abri": "Fiche d'abri", "Objet": "Fiche d'objet", "Nom": "Nom", "Age": "Âge", "Etat": "État",
+      "Competences": "Compétences", "CliquerTester": "clic : un test", "Traits": "Traits et incapacités", "Tache": "Tâche du jour", "Equipement": "Équipement",
+      "Savoirs": "Savoir-faire", "Notes": "Notes", "Histoire": "Histoire", "Afflictions": "Maladies et blessures", "Retirer": "Retirer",
+      "Infection": "Le Gris : stade {stade} / 6", "Des": "dé(s)", "MalusAide": "Dés retirés à chaque test par l'état (blessures, fatigue, moral, maladies).",
+      "Craque": "À bout : il craque (scène du MJ).", "Jours": "{n} j", "Quarts": "{n} quart(s)"
+    },
+    "Abri": {
+      "Courant": "Abri du groupe", "Abandonne": "Abandonné", "Autonome": "Autonome", "Defense": "Défense", "Discretion": "Discrétion",
+      "Visibilite": "Visibilité", "Capacite": "Personnes / capacité", "Bruit": "Bruit", "JoursAutonomes": "Jours autonomes", "Stocks": "Stocks",
+      "Ressource": "Ressource", "Quantite": "Quantité", "Net": "Net / jour", "Jours": "Jours", "Production": "Production du jour",
+      "Installations": "Installations", "Arret": "à l'arrêt", "AucuneInstallation": "Aucune installation.", "Alentours": "Alentours",
+      "Sol": "Fertilité du sol", "Degats": "Dégâts", "Grille": "Qui fait quoi", "Surpeuplement": "Surpeuplé : {n} personne(s) de trop.",
+      "Aides": {
+        "defense": "Ce qui protège l'abri d'un assaut (site, installations, moins les dégâts).",
+        "discretion": "Ce qui le cache (site, camouflage, souterrain).",
+        "visibilite": "Combien on le voit et l'entend de loin : elle attire bandes et hordes."
+      }
+    },
+    "Objet": {
+      "Niveau": "Niveau", "Cout": "Coût", "Travail": "Travail (quarts-personne)", "Produit": "Produit", "Consomme": "Consomme", "Stockage": "Stockage",
+      "Conservation": "Conserve la nourriture (plus de pertes)", "Radio": "Nouvelles par la radio", "Delai": "Premières récoltes après {n} jours",
+      "Bras": "Demande {n} personne(s) à la tâche « {tache} »", "Savoirs": "Savoir-faire requis", "Requiert": "Requiert",
+      "Munitions": "{n} munition(s) par échange de tirs", "Transport": "{places} place(s), charge {charge}, terrains : {terrains}",
+      "Incubation": "Incubation : {n} j", "Duree": "Durée : {n} j", "MalusDes": "−{n} dé(s)", "FatigueJour": "+{n} fatigue par jour",
+      "Contagion": "Contagion : {n} % par jour", "Medicaments": "{n} médicament(s)", "Peur": "Peur : {lieu}", "Incompatible": "Incompatible avec",
+      "Effets": { "defense": "Défense", "discretion": "Discrétion", "capacite": "Capacité", "visibilite": "Visibilité", "bruit": "Bruit", "protectionCyclone": "Protection cyclonique", "soins": "Soins", "moral": "Moral" },
+      "Champs": { "description": "Description", "accroche": "Au jour zéro", "apprentissage": "Comment l'apprendre", "effets": "Effets", "prevention": "Prévention" },
+      "Sections": { "Etat": "État", "Niveau": "Niveau", "Usage": "Usage", "Competences": "Compétences", "Savoirs": "Savoir-faire", "Equipement": "Équipement", "Incapacites": "Incapacités", "Histoire": "Phrases d'histoire", "Fabrication": "Fabrication", "Mal": "Le mal", "Soin": "Soin", "Effets": "Effets" }
+    },
+
+    "Test": {
+      "Titre": "Test : {competence}", "Difficulte": "Difficulté", "Bonus": "Dés en plus (outil, aide, situation)", "Malus": "Dés en moins (situation)",
+      "Compte": "Le test compte (danger, enjeu) : marque de progression si échoué ou forcé",
+      "AideDialogue": "Chaque 5 ou 6 est un succès. Les malus d'état et les bonus d'outil s'ajoutent d'eux-mêmes.",
+      "Lancer": "Lancer", "Forcer": "Forcer (1 fatigue)", "Reussite": "réussite", "Echec": "échec", "Force": "forcé", "Complication": "complication",
+      "ComplicationTexte": "Complication : le MJ choisit (bruit, outil cassé, blessure légère, temps perdu).", "Marge": "marge {n}",
+      "FatigueForcee": "Forcé : +1 fatigue.", "Marque": "Une marque de progression.", "Monte": "{competence} monte au niveau {niveau} !",
+      "Relance": "Relancés", "Demande": "Le MJ demande un test"
+    },
+    "Carte": { "Temps": "Le temps passe ({n} quart(s))" },
+    "Action": {
+      "Fouille": "Fouille : {lieu}", "Exploration": "Exploration : {region}", "Voyage": "En route vers {vers}", "Chantier": "Chantier : {installation}",
+      "Installe": "Installation : {site}", "Qui": "Qui : {noms}", "Butin": "Butin : {butin}", "Rien": "rien", "Chemin": "Par {chemin} ({quarts} quart(s))",
+      "Stocks": "Trouvé sur place : {stocks}", "Installations": "Déjà là : {liste}", "Termine": "Terminé : niveau {niveau} en service.",
+      "Avance": "Chantier : {fait} / {requis} quarts-personne.", "Cout": "Coût payé : {cout}"
+    },
+    "Assaut": {
+      "Titre": "Assaut contre l'abri", "Defense": "Défense", "Menace": "Menace", "Inconnu": "inconnu", "Breche": "BRÈCHE : l'abri est percé ; il faut se battre, ou fuir.",
+      "Issues": { "repoussee": "repoussé", "endommagee": "une installation endommagée, un blessé", "breche": "brèche !" },
+      "Journal": { "repoussee": "Assaut repoussé ({type}).", "endommagee": "Assaut ({type}) : l'abri tient, mais une installation est touchée et quelqu'un est blessé.", "breche": "Assaut ({type}) : brèche dans l'abri !" }
+    },
+    "Alertes": {
+      "Mourant": "{nom} est mourant : un test de soins difficile, maintenant, ou il meurt à la fin du quart.",
+      "Morsure": "{nom} est mordu : test de soins EXTRÊME dans le quart (lavage, cautérisation…), sinon le Gris."
+    },
+    "Journal": {
+      "Debut": "Jour zéro, {date} : le groupe est à {region}.", "Installe": "Le groupe s'installe à {site} ({region}).", "Reprend": "Le groupe reprend l'abri de {site} ({region}).",
+      "Quitte": "Le groupe quitte {site}.", "Chantier": "Chantier ouvert : {installation} (niveau {niveau}).", "Termine": "{installation} est en service (niveau {niveau}).",
+      "Repare": "{installation} : {n} point(s) réparé(s).", "RepareAbri": "L'abri : {n} dégât(s) réparé(s).", "Ajustement": "Ajustement",
+      "Blesse": "{nom} est blessé.", "Mordu": "{nom} est mordu par un Livide.", "Soigne": "{soigneur} soigne {nom} ({n} blessure(s)).",
+      "Infecte": "{nom} porte le Gris.", "Renseignement": "Nouvelles de {region} ({source}).", "Fabrique": "{nom} fabrique : {recette}.",
+      "FabriqueRate": "{nom} rate : {recette}.", "Affliction": "{nom} : {affliction}.", "AfflictionSoignee": "{nom} est soigné : {affliction}.",
+      "AfflictionRate": "Le soin de {nom} ne prend pas ({affliction}).", "Fete": "Le groupe fête : {fete}.", "Recrue": "{nom} rejoint le groupe.",
+      "RecrueRefuse": "{nom} refuse de suivre le groupe.", "Rejoint": "{nom} rejoint le groupe."
+    },
+    "Fete": {
+      "Alerte": "Fête du jour (calendrier de Fénoir) : {nom}. {consigne}",
+      "Carte": "Fête au camp : {fete}", "Effet": "Une ration de plus pour chacun ; +1 moral pour tous.",
+      "Texte": "Le groupe fête {fete} : +1 moral pour chacun, une ration de plus par personne (reste {nourriture} nourriture)."
+    },
+    "Soins": { "Titre": "Soigner {nom}", "Affliction": "Soigner {nom} : {affliction}" },
+    "Recrue": { "Titre": "Convaincre {nom}" },
+    "Palier": {
+      "Avis": "Fénoir (MJ) : l'abri franchit le palier de visibilité « {palier} ». Voir la fenêtre du MJ, onglet Menaces.",
+      "SansTable": "La table de ce palier est introuvable (compendium lakour-fenoir.tables)."
+    },
+    "Signal": { "Test": "Le MJ attend un test de {nom}.", "Jet": "On attend un test de ton survivant." },
+    "Infobulle": { "Fatigue": "Fatigue {n}", "Moral": "Moral {n}", "Infection": "Le Gris (stade {n})", "Stocks": "Eau {eau} j · nourriture {nourriture} j" },
+    "Chroniques": {
+      "Titre": "Chroniques de Fénoir", "Chapitre": "Chapitre {n} — {nom}", "EnCours": "Du jour {debut} à aujourd'hui (jour {fin}) : {jours} jour(s).",
+      "Duree": "Du jour {debut} au jour {fin} : {jours} jour(s).", "Bati": "Ce qu'on y a bâti", "Rien": "Rien de neuf.",
+      "Tombes": "Ceux qui sont tombés", "Personne": "Personne."
+    },
+    "Creation": {
+      "Titre": "Créer un survivant", "Bouton": "Créer un survivant",
+      "Intro": "Tire un survivant au sort. Verrouille ce que tu gardes (nom, âge, enfance, passé, traits), relance le reste, ou choisis chaque élément. Les étoiles favorisent une compétence au prochain tirage.",
+      "Nom": "Nom", "Age": "Âge", "Enfance": "Enfance", "Passe": "Passé (au jour zéro)", "Traits": "Traits", "AjouterTrait": "Ajouter un trait…",
+      "Verrou": "Garder (verrou)", "Favoriser": "Favoriser cette compétence", "Incapable": "Incapable de", "Tirer": "Tirer", "Creer": "Créer ce survivant",
+      "Rejoindre": "Rejoindre le groupe", "Joueur": "Joueur", "Statut": "Statut", "Personne": "Personne", "SansNom": "Survivant sans nom",
+      "Cree": "{nom} est créé.", "GraineRegion": "Au jour zéro, il était du côté de {region}.",
+      "BudgetAide": "Somme des niveaux : un survivant de départ en a entre {min} et {max}."
+    },
+    "Tableau": {
+      "Titre": "Tableau de bord du groupe",
+      "Onglets": { "groupe": "Le groupe", "renseignements": "Renseignements", "journal": "Journal", "propositions": "Propositions" },
+      "Groupe": "Qui fait quoi", "Besoins": "Ce qui manque au groupe", "RienNeManque": "Rien ne manque.", "Pnj": "Avec le groupe", "Plans": "Plans connus",
+      "EtatLigne": "bless. {b} · fat. {f} · moral {m}", "Carte": "La Réunion telle que le groupe la connaît", "Region": "Région", "Vu": "Vu",
+      "Infestation": "Livides", "Pillage": "Pillage", "Factions": "Factions", "Alertes": "Alertes", "Journal": "Journal du groupe",
+      "AideRenseignements": "Ce que le groupe CROIT savoir, daté : un lieu a pu changer depuis. Gris : jamais vu. Routes en pointillé : inconnues."
+    },
+    "Renseignements": { "Jamais": "jamais vu", "Age": "il y a {n} j" },
+    "Proposition": {
+      "Titre": "{nom} propose", "Aide": "Propose une action au MJ (et au MJ IA) : il décide et la fait faire au groupe.",
+      "Type": "Action", "Details": "Où, qui, comment…", "Envoyer": "Proposer", "Envoyee": "Proposition envoyée au MJ.",
+      "Types": { "fouiller": "Fouiller", "explorer": "Explorer", "construire": "Construire", "garde": "Monter la garde", "repos": "Se reposer", "voyager": "Voyager", "fabriquer": "Fabriquer", "autre": "Autre" }
+    },
+    "Atelier": {
+      "Titre": "Atelier", "Intro": "{n} recette(s) possible(s) maintenant. Survole une recette pour sa description.", "Artisan": "Artisan",
+      "LeMeilleur": "Le plus habile", "Fabriquer": "Fabriquer", "Proposer": "Proposer au MJ", "Carte": "Atelier : {recette}"
+    },
+    "MJ": {
+      "Titre": "Fénoir — fenêtre du MJ", "Titre2": "Titre",
+      "Onglets": { "partie": "Partie et temps", "actions": "Actions du groupe", "groupe": "Groupe et recrues", "menaces": "Menaces", "monde": "Monde réel" },
+      "Formes": {
+        "demarrer": "Démarrer la partie", "avancer": "Avancer le temps", "fouiller": "Fouiller", "explorer": "Explorer", "installer": "S'installer",
+        "construire": "Construire", "reparer": "Réparer", "voyager": "Voyager", "demenager": "Déménager", "assaut": "Assaut", "ajuster": "Ajuster les stocks",
+        "genererRecrue": "Tirer une recrue", "recruter": "Recruter", "feter": "Fêter", "demanderTest": "Demander un test", "fabriquer": "Fabriquer",
+        "affliction": "Maladie, blessure", "ajouterMembre": "Ajouter au groupe", "rencontre": "Tirer une rencontre (secret)"
+      },
+      "PasActif": "Tu n'es pas le MJ actif : seul le MJ actif écrit l'état de Fénoir.", "Bloque": "Le monde n'est pas ouvert dans ce navigateur : rien ne s'écrit.",
+      "Rouvrir": "Rouvrir le coffre", "DejaDemarree": "Une partie est en cours : la démarrer de nouveau la remplace.",
+      "RegionDepart": "Région de départ", "Graine": "Graine du hasard (vide = au hasard)", "Membres": "Membres du groupe", "AucunSurvivant": "Aucun survivant : créez-en.",
+      "Quarts": "Quarts", "Quart": "quart", "UnJour": "1 jour", "UneSemaine": "1 semaine", "Raison": "Raison", "Repos": "Le groupe se repose",
+      "AucuneFete": "Aucune fête aujourd'hui (date de jeu).", "Fete": "Fête", "Site": "Site", "Region": "La région entière", "Cible": "Chercher",
+      "Tout": "Tout", "Prudence": "Prudence", "Qui": "Qui", "Quoi": "Quoi", "Abri": "L'abri (dégâts)", "Vers": "Vers", "Transport": "Transport",
+      "Force": "Force", "Type": "Type", "Description": "Description", "Parleur": "Qui parle", "Attitude": "Attitude", "Recette": "Recette",
+      "Action": "Action", "Donner": "Donner", "Soigner": "Soigner", "Faire": "Faire",
+      "Menaces": "Menaces du jour", "AideMenaces": "Tirées par la simulation contre l'abri ; rien ne se passe tant que tu ne les résous pas (assaut) ou ne les écartes pas (tu les racontes autrement).",
+      "AucuneMenace": "Aucune menace en attente.", "Resoudre": "Assaut", "Ecarter": "Écarter", "Paliers": "Paliers de visibilité franchis",
+      "Secret": "Le RÉEL : pour toi seul. Les joueurs n'en savent que leurs renseignements.", "MondeFerme": "Monde réel indisponible (pas MJ actif, ou coffre fermé).",
+      "Reste": "Reste à piller", "Routes": "Routes abîmées", "Evenements": "Événements", "Hordes": "Hordes", "Taille": "taille", "Eruption": "Éruption",
+      "JournalSecret": "Journal secret"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<div class="survie-feuille {{#if mort}}mort{{/if}} {{#if livide}}livide{{/if}}">
+  <header class="survie-entete">
+    <img class="survie-portrait" src="{{acteur.img}}" alt="{{acteur.name}}" {{#if editable}}data-action="editImage" data-edit="img"{{/if}}>
+    <div class="survie-identite">
+      {{#if editable}}<input class="survie-nom" type="text" name="name" value="{{acteur.name}}" aria-label="{{localize 'LAKOUR_SURVIE.Fiche.Nom'}}">{{else}}<h1 class="survie-nom">{{acteur.name}}</h1>{{/if}}
+      <div class="survie-pilules">
+        <span class="survie-pilule statut">{{statut}}</span>
+        {{#if age}}<span class="survie-pilule">{{localize "LAKOUR_SURVIE.Fiche.Age" }} {{age}}</span>{{/if}}
+        {{#if passe}}<span class="survie-pilule passe" data-tooltip="{{passe.aide}}"><i class="fa-solid fa-briefcase"></i> {{passe.nom}}</span>{{/if}}
+        {{#if enfance}}<span class="survie-pilule enfance" data-tooltip="{{enfance.aide}}"><i class="fa-solid fa-child"></i> {{enfance.nom}}</span>{{/if}}
+        {{#if lien}}<span class="survie-pilule lien"><i class="fa-solid fa-link"></i> {{lien}}</span>{{/if}}
+        {{#if mort}}<span class="survie-pilule grave"><i class="fa-solid fa-cross"></i> {{localize "LAKOUR_SURVIE.Etat.Mort"}}</span>{{/if}}
+        {{#if livide}}<span class="survie-pilule grave"><i class="fa-solid fa-skull"></i> {{localize "LAKOUR_SURVIE.Etat.Livide"}}</span>{{/if}}
+      </div>
+      <div class="survie-boutons-entete">
+        {{#if histoire}}<button type="button" data-action="histoire"><i class="fa-solid fa-book-open"></i> {{localize "LAKOUR_SURVIE.Fiche.Histoire"}}</button>{{/if}}
+      </div>
+    </div>
+  </header>
+
+  <section class="survie-corps">
+    <div class="survie-colonnes">
+      <div class="survie-colonne">
+        <h3><i class="fa-solid fa-heart-pulse"></i> {{localize "LAKOUR_SURVIE.Fiche.Etat"}} {{#if malus}}<small class="survie-malus" data-tooltip="{{localize 'LAKOUR_SURVIE.Fiche.MalusAide'}}">−{{malus}} {{localize "LAKOUR_SURVIE.Fiche.Des"}}</small>{{/if}}</h3>
+        <ul class="survie-jauges">
+          {{#each etat}}
+          <li class="survie-jauge {{cle}} {{#if mauvais}}mauvais{{/if}}">
+            <span class="survie-jauge-nom">{{libelle}}</span>
+            <span class="survie-jauge-barre"><span style="width: {{pct}}%"></span></span>
+            {{#if @root.gm}}<input type="number" name="system.{{cle}}" value="{{valeur}}" min="0" max="{{borne}}" class="survie-petit">{{/if}}
+            <span class="survie-jauge-texte">{{texte}}</span>
+          </li>
+          {{/each}}
+        </ul>
+        {{#if craque}}<p class="survie-avertissement"><i class="fa-solid fa-heart-crack"></i> {{localize "LAKOUR_SURVIE.Fiche.Craque"}}</p>{{/if}}
+        {{#if infection}}
+        <div class="survie-infection">
+          <span><i class="fa-solid fa-biohazard"></i> {{localize "LAKOUR_SURVIE.Fiche.Infection" stade=infection.stade}}</span>
+          <span class="survie-jauge-barre gris"><span style="width: {{infection.pct}}%"></span></span>
+        </div>
+        {{/if}}
+        {{#if afflictions.length}}
+        <h4>{{localize "LAKOUR_SURVIE.Fiche.Afflictions"}}</h4>
+        <ul class="survie-puces">
+          {{#each afflictions}}<li class="survie-puce affliction {{#if traitee}}traitee{{/if}}" data-tooltip="{{aide}}">{{nom}} <small>({{stade}}, {{reste}} j)</small></li>{{/each}}
+        </ul>
+        {{/if}}
+
+        <h3><i class="fa-solid fa-person-digging"></i> {{localize "LAKOUR_SURVIE.Fiche.Tache"}}</h3>
+        {{#if peutChoisirTache}}
+        <select class="survie-tache" aria-label="{{localize 'LAKOUR_SURVIE.Fiche.Tache'}}">
+          <option value="">—</option>
+          {{#each taches}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}
+        </select>
+        {{else}}<p>{{tache}}</p>{{/if}}
+
+        <h3><i class="fa-solid fa-masks-theater"></i> {{localize "LAKOUR_SURVIE.Fiche.Traits"}}</h3>
+        <ul class="survie-puces">
+          {{#each traits}}<li class="survie-puce trait" data-tooltip="{{aide}}">{{nom}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}
+          {{#each incapacites}}<li class="survie-puce incapacite"><i class="fa-solid fa-ban"></i> {{texte}}</li>{{/each}}
+        </ul>
+      </div>
+
+      <div class="survie-colonne large">
+        <h3><i class="fa-solid fa-dice-six"></i> {{localize "LAKOUR_SURVIE.Fiche.Competences"}} <small class="survie-aide-titre">{{localize "LAKOUR_SURVIE.Fiche.CliquerTester"}}</small></h3>
+        <ul class="survie-competences">
+          {{#each competences}}
+          <li class="survie-competence {{#if incapable}}incapable{{/if}}">
+            <button type="button" class="survie-competence-nom" data-action="tester" data-competence="{{cle}}" data-tooltip="{{aide}}">
+              {{libelle}} <span class="survie-flammes" aria-label="passion">{{flammes}}</span>
+            </button>
+            <span class="survie-pips">{{#each pips}}<span class="survie-pip {{#if plein}}plein{{/if}}"></span>{{/each}}</span>
+            {{#if @root.gm}}<input type="number" name="system.competences.{{cle}}.niveau" value="{{niveau}}" min="0" max="5" class="survie-petit">{{/if}}
+            <span class="survie-marques" data-tooltip="{{marques}} / {{seuil}}"><span style="width: {{pct}}%"></span></span>
+          </li>
+          {{/each}}
+        </ul>
+
+        <div class="survie-deux">
+          <div>
+            <h3><i class="fa-solid fa-toolbox"></i> {{localize "LAKOUR_SURVIE.Fiche.Equipement"}}</h3>
+            <ul class="survie-objets">
+              {{#each equipement}}
+              <li><img src="{{img}}" alt=""><a data-action="ouvrirObjet" data-item-id="{{id}}">{{nom}}</a>{{#if detail}} <small>{{detail}}</small>{{/if}}
+                {{#if @root.gm}}<button type="button" class="survie-icone" data-action="retirerObjet" data-item-id="{{id}}" aria-label="{{localize 'LAKOUR_SURVIE.Fiche.Retirer'}}"><i class="fa-solid fa-trash"></i></button>{{/if}}</li>
+              {{else}}<li class="survie-vide">—</li>{{/each}}
+            </ul>
+          </div>
+          <div>
+            <h3><i class="fa-solid fa-book"></i> {{localize "LAKOUR_SURVIE.Fiche.Savoirs"}}</h3>
+            <ul class="survie-objets">
+              {{#each savoirs}}
+              <li><img src="{{img}}" alt=""><a data-action="ouvrirObjet" data-item-id="{{id}}">{{nom}}</a>
+                {{#if @root.gm}}<button type="button" class="survie-icone" data-action="retirerObjet" data-item-id="{{id}}" aria-label="{{localize 'LAKOUR_SURVIE.Fiche.Retirer'}}"><i class="fa-solid fa-trash"></i></button>{{/if}}</li>
+              {{else}}<li class="survie-vide">—</li>{{/each}}
+            </ul>
+          </div>
+        </div>
+
+        <h3><i class="fa-solid fa-feather"></i> {{localize "LAKOUR_SURVIE.Fiche.Notes"}}</h3>
+        {{#if editable}}
+        <prose-mirror name="system.notes" value="{{system.notes}}" toggled data-document-uuid="{{acteur.uuid}}">{{{notesEnrichies}}}</prose-mirror>
+        {{else}}<div class="survie-notes">{{{notesEnrichies}}}</div>{{/if}}
+      </div>
+    </div>
+  </section>
+</div>

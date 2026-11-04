@@ -1,0 +1,23 @@
+<div class="survie-feuille objet">
+  <header class="survie-entete">
+    <img class="survie-portrait petit" src="{{objet.img}}" alt="" {{#if editable}}data-action="editImage" data-edit="img"{{/if}}>
+    <div class="survie-identite">
+      {{#if editable}}<input class="survie-nom" type="text" name="name" value="{{objet.name}}">{{else}}<h1 class="survie-nom">{{objet.name}}</h1>{{/if}}
+      <div class="survie-pilules"><span class="survie-pilule">{{objet.type}}</span></div>
+    </div>
+  </header>
+  <section class="survie-corps">
+    {{#each textes}}
+    <div class="survie-texte {{champ}}">
+      {{#unless @first}}<h3>{{titre}}</h3>{{/unless}}
+      {{{html}}}
+    </div>
+    {{/each}}
+    {{#each sections}}
+    <div class="survie-section">
+      <h3>{{titre}}</h3>
+      <ul class="survie-liste-simple">{{#each lignes}}<li>{{this}}</li>{{/each}}</ul>
+    </div>
+    {{/each}}
+  </section>
+</div>

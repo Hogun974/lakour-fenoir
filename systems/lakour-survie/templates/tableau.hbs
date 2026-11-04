@@ -1,0 +1,69 @@
+<div class="survie-cadre">
+  <nav class="survie-onglets">
+    {{#each onglets}}<button type="button" class="{{#if actif}}actif{{/if}}" data-action="onglet" data-onglet="{{cle}}">{{libelle}}</button>{{/each}}
+  </nav>
+  <section class="survie-corps">
+    {{#unless demarree}}<p class="survie-vide">{{localize "LAKOUR_SURVIE.Bandeau.Attente"}}</p>{{/unless}}
+
+    {{#if (eq onglet "groupe")}}
+    <h3><i class="fa-solid fa-people-group"></i> {{localize "LAKOUR_SURVIE.Tableau.Groupe"}}</h3>
+    <div class="survie-grille-defile">
+      <table class="survie-grille">
+        <thead><tr><th></th>{{#each taches}}<th data-tooltip="{{aide}}"><span>{{libelle}}</span></th>{{/each}}</tr></thead>
+        <tbody>
+          {{#each groupe}}
+          <tr class="{{#unless vivant}}mort{{/unless}}">
+            <th><a data-action="ouvrirActeur" data-acteur="{{id}}">{{nom}}</a><small>{{statut}} · {{etat}}{{#if infecte}} · ☣{{/if}}</small></th>
+            {{#each cases}}<td class="{{#if choisie}}choisie{{/if}} {{#unless possible}}impossible{{/unless}}">{{#if possible}}{{#if ../peutChanger}}<button type="button" data-action="assignerCase" data-acteur="{{../id}}" data-tache="{{tache}}" aria-label="{{tache}}">{{#if choisie}}●{{else}}·{{/if}}</button>{{else}}{{#if choisie}}●{{/if}}{{/if}}{{else}}✕{{/if}}</td>{{/each}}
+          </tr>
+          {{else}}<tr><td class="survie-vide">—</td></tr>{{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{#if pnj.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Tableau.Pnj"}}</strong> : {{#each pnj}}{{nom}}{{#if etat}} ({{etat}}){{/if}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+    {{#if plans.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Tableau.Plans"}}</strong> : {{#each plans}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+    <h3><i class="fa-solid fa-clipboard-question"></i> {{localize "LAKOUR_SURVIE.Tableau.Besoins"}}</h3>
+    <ul class="survie-besoins">
+      {{#each besoins}}<li class="{{couverture}} {{#if urgence}}urgent{{/if}}"><strong>{{tacheLibelle}}</strong> — {{couvertureLibelle}} ({{meilleur}}){{#if urgenceTexte}} — <em>{{urgenceTexte}}</em>{{/if}}{{#if profil}}<br><small>{{profil}}</small>{{/if}}</li>
+      {{else}}<li class="survie-vide">{{localize "LAKOUR_SURVIE.Tableau.RienNeManque"}}</li>{{/each}}
+    </ul>
+    {{/if}}
+
+    {{#if (eq onglet "renseignements")}}
+    <div class="survie-carte-cadre">{{{carte}}}</div>
+    <p class="survie-aide">{{localize "LAKOUR_SURVIE.Tableau.AideRenseignements"}}</p>
+    <table class="survie-table renseignements">
+      <thead><tr><th>{{localize "LAKOUR_SURVIE.Tableau.Region"}}</th><th>{{localize "LAKOUR_SURVIE.Tableau.Vu"}}</th><th>{{localize "LAKOUR_SURVIE.Tableau.Infestation"}}</th><th>{{localize "LAKOUR_SURVIE.Tableau.Pillage"}}</th><th>⚡</th><th>💧</th><th>{{localize "LAKOUR_SURVIE.Tableau.Factions"}}</th></tr></thead>
+      <tbody>
+        {{#each renseignements}}
+        <tr class="{{#if ici}}ici{{/if}} {{#if vieux}}vieux{{/if}}" {{#if notes}}data-tooltip="{{notes}}"{{/if}}>
+          <td><strong>{{nom}}</strong><br><small>{{zone}}</small></td>
+          <td>{{age}}{{#if source}}<br><small>{{source}}</small>{{/if}}</td>
+          <td class="inf-{{infestationCle}}">{{infestation}}</td>
+          <td>{{pillage}}</td><td>{{electricite}}</td><td>{{eau}}</td><td>{{factions}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{/if}}
+
+    {{#if (eq onglet "journal")}}
+    {{#if alertes.length}}
+    <h3><i class="fa-solid fa-bell"></i> {{localize "LAKOUR_SURVIE.Tableau.Alertes"}}</h3>
+    <ul class="survie-journal alertes">{{#each alertes}}<li class="{{type}}"><span class="survie-quand">J{{jour}}</span> {{texte}}</li>{{/each}}</ul>
+    {{/if}}
+    <h3><i class="fa-solid fa-scroll"></i> {{localize "LAKOUR_SURVIE.Tableau.Journal"}}</h3>
+    <ul class="survie-journal">{{#each journal}}<li><span class="survie-quand">J{{jour}} · {{moment}}</span> {{texte}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}</ul>
+    {{/if}}
+
+    {{#if (eq onglet "propositions")}}
+    <div class="survie-formulaire">
+      <p class="survie-aide">{{localize "LAKOUR_SURVIE.Proposition.Aide"}}</p>
+      <label>{{localize "LAKOUR_SURVIE.Proposition.Type"}} <select name="type">{{#each typesProposition}}<option value="{{cle}}">{{libelle}}</option>{{/each}}</select></label>
+      <textarea name="details" rows="3" placeholder="{{localize 'LAKOUR_SURVIE.Proposition.Details'}}"></textarea>
+      <button type="button" class="principal" data-action="proposer"><i class="fa-solid fa-paper-plane"></i> {{localize "LAKOUR_SURVIE.Proposition.Envoyer"}}</button>
+    </div>
+    <ul class="survie-journal">{{#each propositions}}<li><span class="survie-quand">J{{jour}}</span> <strong>{{nom}}</strong> — {{typeLibelle}}{{#if details}} : {{details}}{{/if}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}</ul>
+    {{/if}}
+  </section>
+</div>

@@ -14,6 +14,8 @@ import {
 import { DOCUMENTS, donnees as donneesContenu } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { CARTE } from "../modules/lakour-fenoir/contenu/regions.mjs";
 import { ecrirePlans } from "../modules/lakour-fenoir/contenu/cartes.mjs";
+import { EFFET_FETE } from "../modules/lakour-fenoir/scripts/fetes.js";
+import { IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 
 const RACINE_DEPOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const RACINE = join(RACINE_DEPOT, "modules", MODULE);
@@ -27,8 +29,10 @@ export const TYPE_DOCUMENT = {
   installations: "installation", savoirs: "savoir", equipements: "equipement", passes: "passe", recettes: "recette", afflictions: "affliction",
   survivants: "survivant", bestiaire: "survivant"
 };
-// Fêtes du calendrier du moteur (lakour-mj-ia/docs/fetes.md).
-export const FETES_MOTEUR = ["nouvel-an", "noel", "paques", "carnaval", "halloween", "saint-valentin", "musique"];
+// Fêtes du calendrier du moteur : celles du socle lui-même (lakour-mj-ia/scripts/fetes-logique.js, docs/fetes.md).
+export const FETES_MOTEUR = IDS_FETES;
+// Les fêtes que Fénoir doit décliner (contrat §9) ; la Toussaint est déclinée sous « halloween ».
+export const FETES_DE_FENOIR = ["noel", "nouvel-an", "paques", "halloween", "musique", "liberte", "fete-nationale", "dipavali", "nouvel-an-chinois", "cavadee", "letchis"];
 export const DIFFICULTES = ["facile", "normale", "difficile", "extreme"];
 export const BUDGET = [10, 16];
 
@@ -415,18 +419,34 @@ export function verifierDonnees(d) {
   }
   if (!d.recrues?.raisons?.length || !d.recrues?.prix?.length || !d.histoire?.proche?.length || !d.histoire?.matin?.length) e("tables des recrues ou de l'histoire vides");
 
-  // Fêtes.
-  const moteurs = new Set();
+  // Fêtes : chaque clé est une fête du socle du moteur, déclinable telle quelle (une déclinaison par fête), dates au socle seul.
+  const declinees = [];
   for (const f of d.fetes ?? []) {
-    if (f.moteur !== null && !FETES_MOTEUR.includes(f.moteur)) e(`fête ${f.cle} : fête du moteur inconnue « ${f.moteur} »`);
-    if (f.moteur) { if (moteurs.has(f.moteur)) e(`fête ${f.cle} : fête du moteur déjà déclinée`); moteurs.add(f.moteur); }
-    if (!f.date && !Object.keys(f.dates ?? {}).length) e(`fête ${f.cle} : sans date`);
-    if (!f.description || f.description.length > 600 || !f.consigne || f.consigne.length > 300) e(`fête ${f.cle} : description ou consigne trop longue ou vide`);
-    if (f.image !== `modules/${MODULE}/assets/fetes/${f.cle}.jpg`) e(`fête ${f.cle} : chemin d'image`);
+    const ou = `fête ${f.cle}`;
+    if (!FETES_MOTEUR.includes(f.cle)) e(`${ou} : clé inconnue du socle des fêtes du moteur`);
+    else {
+      try { declinees.push(normaliserDeclinaison({ id: `fenoir-${f.cle}`, fete: f.cle, nom: f.nom, description: f.description, consigne: f.consigne, decor: f.decor }, declinees)); }
+      catch (x) { e(`${ou} : ${x.message}`); }
+    }
+    if (!f.nom || f.nom.length > 80 || !f.description || f.description.length > 600 || !f.consigne || f.consigne.length > 300) e(`${ou} : nom, description ou consigne trop longs ou vides`);
+    if (!f.periode || f.periode.includes("-")) e(`${ou} : période absente ou avec un trait d'union (le journal la lit telle quelle)`);
+    if ("date" in f || "dates" in f) e(`${ou} : date codée en dur (le socle du moteur donne les dates)`);
+    if (f.image !== `modules/${MODULE}/assets/fetes/${f.cle}.jpg`) e(`${ou} : chemin d'image`);
+    if (JSON.stringify(f.effet) !== JSON.stringify(EFFET_FETE)) e(`${ou} : effet public différent du §9`);
   }
-  for (const k of ["noel", "nouvel-an", "fete-de-la-liberte", "dipavali", "nouvel-an-chinois", "cavadee", "paques", "fete-des-letchis", "quatorze-juillet", "fete-de-la-musique", "toussaint", "halloween"]) {
-    if (!(d.fetes ?? []).some(f => f.cle === k)) e(`fête absente : ${k}`);
+  for (const k of FETES_DE_FENOIR) if (!(d.fetes ?? []).some(f => f.cle === k)) e(`fête absente : ${k}`);
+
+  // Créatures (famille lue par la logique du système) : les Livides et animaux du bestiaire, mêmes dés et résistance.
+  const creatures = new Map((d.creatures ?? []).map(c => [c.cle, c]));
+  if (creatures.size !== (d.creatures ?? []).length) e("créatures : clé en double");
+  for (const c of creatures.values()) {
+    const b = index.bestiaire.get(c.cle);
+    if (!b) { e(`créature ${c.cle} : absente du bestiaire`); continue; }
+    if (!["livide", "animal"].includes(c.type) || c.type !== b.categorie) e(`créature ${c.cle} : type « ${c.type} »`);
+    if (c.des !== b.des || c.resistance !== b.resistance || !(c.poids > 0) || !c.nom) e(`créature ${c.cle} : dés, résistance, poids ou nom`);
+    if (!c.zones?.length || c.zones.some(z => !ZONES.includes(z)) || !c.phases?.length || c.phases.some(p => !PHASES.includes(p))) e(`créature ${c.cle} : zones ou phases`);
   }
+  for (const b of index.bestiaire.values()) if (b.categorie !== "humain" && !creatures.has(b.cle)) e(`créatures : ${b.cle} absente`);
 
   // Aucun terme interdit dans tout le registre.
   const interdits = termesInterdits(JSON.stringify(d));

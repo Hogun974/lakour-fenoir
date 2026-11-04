@@ -1,0 +1,33 @@
+<div class="sb-corps {{#if replie}}replie{{/if}} moment-{{momentCle}} {{#if meteo}}meteo-{{meteo.cle}}{{/if}}" role="toolbar" aria-label="{{localize 'LAKOUR_SURVIE.Bandeau.Titre'}}">
+  <button type="button" class="sb-replier" data-action="bandeauReplier" data-tooltip="{{localize 'LAKOUR_SURVIE.Bandeau.Replier'}}" aria-label="{{localize 'LAKOUR_SURVIE.Bandeau.Replier'}}"><i class="fa-solid {{#if replie}}fa-chevron-down{{else}}fa-chevron-up{{/if}}"></i></button>
+  {{#if demarree}}
+  <div class="sb-temps" data-tooltip="{{date}} · {{saison}}{{#if fetes}} · {{fetes}}{{/if}}">
+    <span class="sb-icone"><i class="fa-solid {{iconeMoment}}"></i></span>
+    <span class="sb-jour">{{localize "LAKOUR_SURVIE.Bandeau.Jour" n=jour}}</span>
+    <span class="sb-moment">{{moment}} <small>{{heure}}</small></span>
+    {{#unless replie}}<span class="sb-date">{{date}}</span>{{/unless}}
+  </div>
+  {{#unless replie}}
+  <span class="sb-phase phase-{{phaseCle}}">{{phase}}</span>
+  {{#if meteo}}<span class="sb-meteo {{meteo.cle}}"><i class="fa-solid {{meteo.icone}}"></i> {{meteo.texte}}</span>{{/if}}
+  {{#if fetes}}<span class="sb-fete"><i class="fa-solid fa-champagne-glasses"></i> {{fetes}}</span>{{/if}}
+  {{#if enRoute}}<span class="sb-route"><i class="fa-solid fa-route"></i> {{enRoute}}</span>{{/if}}
+  {{/unless}}
+  <div class="sb-stocks">
+    {{#each stocks}}<span class="sb-stock {{#if bas}}bas{{/if}}" data-tooltip="{{libelle}}"><i class="fa-solid {{icone}}"></i> {{jours}} {{localize "LAKOUR_SURVIE.Bandeau.J"}}</span>{{/each}}
+    {{#if autonome}}<span class="sb-autonome" data-tooltip="{{localize 'LAKOUR_SURVIE.Abri.Autonome'}}"><i class="fa-solid fa-seedling"></i> {{joursAutonomes}}</span>{{/if}}
+  </div>
+  {{#unless replie}}
+  {{#if alertes.length}}<div class="sb-alertes" data-tooltip="{{alerteAide}}"><i class="fa-solid fa-bell"></i> {{#each alertes}}<span class="sb-alerte {{type}}">{{texte}}</span>{{/each}}</div>{{/if}}
+  {{#if moi}}<button type="button" class="sb-moi" data-action="bandeauFiche" data-tooltip="{{localize 'LAKOUR_SURVIE.Bandeau.MaFiche'}}"><i class="fa-solid fa-user"></i> {{moi.nom}} · {{moi.tache}}</button>{{/if}}
+  {{/unless}}
+  {{else}}
+  <span class="sb-attente"><i class="fa-solid fa-hourglass-start"></i> {{titre}}</span>
+  {{/if}}
+  <div class="sb-boutons">
+    {{#if creer}}<button type="button" class="sb-bouton principal" data-action="bandeauCreer"><i class="fa-solid fa-dice-d20"></i> {{localize "LAKOUR_SURVIE.Creation.Bouton"}}</button>{{/if}}
+    <button type="button" class="sb-bouton" data-action="bandeauTableau" data-tooltip="{{localize 'LAKOUR_SURVIE.Tableau.Titre'}}" aria-label="{{localize 'LAKOUR_SURVIE.Tableau.Titre'}}"><i class="fa-solid fa-clipboard-list"></i></button>
+    <button type="button" class="sb-bouton" data-action="bandeauAtelier" data-tooltip="{{localize 'LAKOUR_SURVIE.Atelier.Titre'}}" aria-label="{{localize 'LAKOUR_SURVIE.Atelier.Titre'}}"><i class="fa-solid fa-screwdriver-wrench"></i></button>
+    {{#if gm}}<button type="button" class="sb-bouton" data-action="bandeauMJ" data-tooltip="{{localize 'LAKOUR_SURVIE.MJ.Titre'}}" aria-label="{{localize 'LAKOUR_SURVIE.MJ.Titre'}}"><i class="fa-solid fa-hat-wizard"></i></button>{{/if}}
+  </div>
+</div>

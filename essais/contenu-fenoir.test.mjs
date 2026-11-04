@@ -7,12 +7,14 @@ import assert from "node:assert/strict";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import {
-  BUDGET, FETES_MOTEUR, TYPE_PACK, bilanVoie, fabriquer, termesInterdits, verifierDocuments, verifierDonnees, verifierVoie
+  BUDGET, FETES_DE_FENOIR, FETES_MOTEUR, TYPE_PACK, bilanVoie, fabriquer, termesInterdits, verifierDocuments, verifierDonnees, verifierVoie
 } from "../outils/fabriquer-fenoir.mjs";
 import { verifierJetons } from "../outils/fabriquer-jetons-fenoir.mjs";
 import { DOCUMENTS, donnees } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { COMPETENCES, MODULE, sansBalises } from "../modules/lakour-fenoir/contenu/aides.mjs";
-import { FETES_FENOIR, fetesDuJour } from "../modules/lakour-fenoir/scripts/fetes.js";
+import { FETES_FENOIR, declinaisons, fetesDuJour } from "../modules/lakour-fenoir/scripts/fetes.js";
+import { IDS_FETES, fetesDuJour as calendrierDuSocle, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
+import { BRAS } from "../modules/lakour-fenoir/contenu/installations.mjs";
 import { verifierModuleDeContenu } from "../modules/lakour-mj-ia/outils/contrat-contenu.mjs";
 
 const RACINE = new URL("../modules/lakour-fenoir/", import.meta.url);
@@ -264,16 +266,94 @@ test("création des survivants (§10) : enfances, traits compatibles et symétri
   assert.ok(docs.filter(x => x.pack === "survivants").length >= 16, "6 prétirés et une dizaine de PNJ");
 });
 
-test("fêtes : la liste complète, une déclinaison par fête du moteur, le calendrier du jeu", () => {
-  const moteurs = FETES_FENOIR.filter(f => f.moteur).map(f => f.moteur);
-  assert.equal(new Set(moteurs).size, moteurs.length);
-  for (const m of moteurs) assert.ok(FETES_MOTEUR.includes(m));
-  assert.ok(fetesDuJour("2026-12-20").some(f => f.cle === "fete-de-la-liberte"));
-  assert.ok(fetesDuJour("2026-12-25").some(f => f.cle === "noel"));
-  assert.ok(fetesDuJour("2027-01-05").some(f => f.cle === "fete-des-letchis"), "la fenêtre des letchis chevauche le jour de l'an");
-  assert.ok(fetesDuJour("2027-02-06").some(f => f.cle === "nouvel-an-chinois"));
-  assert.deepEqual(fetesDuJour("2027-08-10"), []);
-  for (const f of D.fetes) assert.equal(f.image, `modules/${MODULE}/assets/fetes/${f.cle}.jpg`);
+test("fêtes : chaque fête déclinée a une clé connue du socle du moteur, une seule déclinaison par fête", () => {
+  assert.deepEqual(FETES_MOTEUR, IDS_FETES);
+  assert.deepEqual(FETES_FENOIR.map(f => f.cle).sort(), [...FETES_DE_FENOIR].sort(), "toutes les fêtes de Fénoir, rien de plus");
+  const deja = [];
+  for (const d of declinaisons()) {
+    assert.ok(IDS_FETES.includes(d.fete), `${d.id} : fête « ${d.fete} » inconnue du socle`);
+    deja.push(normaliserDeclinaison(d, deja)); // lève si fête inconnue, doublon, décor illisible
+  }
+  assert.equal(deja.length, FETES_DE_FENOIR.length);
+  for (const f of FETES_FENOIR) {
+    assert.equal(f.moteur, f.cle, `${f.cle} : alias lu par main.js`);
+    assert.equal(f.date, f.periode, `${f.cle} : alias lu par le journal`);
+    assert.ok(!f.periode.includes("-"), `${f.cle} : période sans trait d'union`);
+  }
+  // La Toussaint : déclinée sous « halloween », avec sobriété.
+  const toussaint = FETES_FENOIR.find(f => f.cle === "halloween");
+  assert.match(toussaint.nom, /Toussaint/);
+  assert.match(toussaint.description, /cimeti/);
+  assert.match(toussaint.consigne, /sobriété|pudeur/);
+});
+
+test("fêtes au registre : image, effet public du §9, aucune date codée en dur", () => {
+  assert.equal(D.fetes.length, FETES_DE_FENOIR.length);
+  for (const f of D.fetes) {
+    assert.equal(f.image, `modules/${MODULE}/assets/fetes/${f.cle}.jpg`);
+    assert.deepEqual(f.effet, { moral: 1, cout: { nourriture: 1 }, parPersonne: true, unique: true });
+    for (const k of ["date", "dates", "avant", "apres", "moteur"]) assert.ok(!(k in f), `${f.cle} : ${k}`);
+    for (const k of ["nom", "description", "consigne", "periode"]) assert.ok(f[k], `${f.cle} : ${k}`);
+  }
+  const casse = copie();
+  casse.fetes[0].cle = "toussaint";
+  attendre(verifierDonnees(casse), /clé inconnue du socle/);
+  const doublon = copie();
+  doublon.fetes.push({ ...doublon.fetes[0] });
+  attendre(verifierDonnees(doublon), /déjà (enregistrée|déclinée)/);
+  const datee = copie();
+  datee.fetes[0].date = "12-25";
+  attendre(verifierDonnees(datee), /date codée en dur/);
+});
+
+test("fêtes à la date de JEU : le calendrier du socle, déclinaisons de Fénoir seulement", () => {
+  const cles = iso => fetesDuJour(iso, calendrierDuSocle).map(f => f.cle);
+  assert.deepEqual(cles("2026-12-20"), ["liberte", "noel"], "le 20 décembre passe devant Noël");
+  assert.deepEqual(cles("2026-12-25"), ["noel"]);
+  assert.deepEqual(cles("2026-12-31"), ["nouvel-an", "noel"]);
+  assert.ok(cles("2026-12-13").includes("letchis"));
+  assert.deepEqual(cles("2026-11-01"), ["halloween"], "la Toussaint");
+  assert.ok(cles("2026-11-08").includes("dipavali"));
+  assert.ok(cles("2027-01-22").includes("cavadee"));
+  assert.ok(cles("2027-02-06").includes("nouvel-an-chinois"));
+  assert.ok(cles("2027-03-28").includes("paques"));
+  assert.deepEqual(cles("2027-07-14"), ["fete-nationale"]);
+  assert.deepEqual(cles("2027-06-21"), ["musique"]);
+  assert.deepEqual(cles("2027-02-14"), [], "Saint-Valentin et Carnaval : non déclinés par Fénoir");
+  assert.deepEqual(cles("2027-08-10"), []);
+  const noel = fetesDuJour("2026-12-25", calendrierDuSocle)[0];
+  assert.equal(noel.coeur, true); assert.equal(noel.debut, "2026-12-01"); assert.equal(noel.fin, "2026-12-31");
+  assert.deepEqual(fetesDuJour("2026-12-25"), [], "sans socle (hors Foundry) : rien");
+  assert.deepEqual(fetesDuJour("n'importe quoi", calendrierDuSocle), []);
+});
+
+test("créatures au registre (famille lue par la logique du système) et bras des installations (§10.3)", async t => {
+  const humains = D.bestiaire.filter(b => b.categorie === "humain").map(b => b.cle);
+  assert.deepEqual(D.creatures.map(c => c.cle).sort(), D.bestiaire.filter(b => b.categorie !== "humain").map(b => b.cle).sort());
+  for (const c of D.creatures) {
+    const b = par("bestiaire", c.cle);
+    assert.equal(c.type, b.categorie); assert.equal(c.des, b.des); assert.equal(c.resistance, b.resistance);
+    assert.ok(c.poids > 0);
+  }
+  assert.ok(humains.length && humains.every(h => !D.creatures.some(c => c.cle === h)), "les figures humaines restent au bestiaire");
+  const sansType = copie();
+  sansType.creatures[0].type = "humain";
+  attendre(verifierDonnees(sansType), /type « humain »/);
+  // Bras : la forme du contrat, effets.bras: { tache, nombre } sur chaque niveau, celle que lit logique/abri.mjs en premier.
+  for (const i of D.installations) for (const n of i.niveaux) {
+    const b = BRAS[i.cle];
+    if (!b) { assert.equal(n.effets.bras, null, i.cle); continue; }
+    assert.deepEqual(Object.keys(n.effets.bras).sort(), ["nombre", "tache"], i.cle);
+    assert.equal(n.effets.bras.tache, b.tache);
+  }
+  const chemin = new URL("../systems/lakour-survie/logique/actions.mjs", import.meta.url);
+  if (!existsSync(chemin)) return t.skip("logique du système absente");
+  const { tirerCreature } = await import(chemin);
+  const littoral = D.regions.find(r => r.zone === "littoral");
+  const tiree = tirerCreature(D, () => 0, { espece: "livide", region: littoral, jour: 0 });
+  assert.ok(D.creatures.some(c => c.cle === tiree.cle), `créature tirée du registre (${tiree.cle})`);
+  const animal = tirerCreature(D, () => 0.99, { espece: "animal", region: littoral, jour: 30 });
+  assert.ok(D.creatures.some(c => c.cle === animal.cle && c.type === "animal"), `animal tiré du registre (${animal.cle})`);
 });
 
 test("module.json : compendiums, langues, dossier de compendiums", () => {

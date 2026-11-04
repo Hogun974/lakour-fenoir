@@ -1,0 +1,97 @@
+<div class="survie-feuille abri">
+  <header class="survie-entete">
+    <img class="survie-portrait" src="{{acteur.img}}" alt="{{acteur.name}}" {{#if editable}}data-action="editImage" data-edit="img"{{/if}}>
+    <div class="survie-identite">
+      {{#if editable}}<input class="survie-nom" type="text" name="name" value="{{acteur.name}}">{{else}}<h1 class="survie-nom">{{acteur.name}}</h1>{{/if}}
+      <div class="survie-pilules">
+        <span class="survie-pilule"><i class="fa-solid fa-location-dot"></i> {{region}}</span>
+        {{#if courant}}<span class="survie-pilule bon"><i class="fa-solid fa-house-flag"></i> {{localize "LAKOUR_SURVIE.Abri.Courant"}}</span>{{/if}}
+        {{#if abandonne}}<span class="survie-pilule grave"><i class="fa-solid fa-door-open"></i> {{localize "LAKOUR_SURVIE.Abri.Abandonne"}}</span>{{/if}}
+        {{#if bilan.autonome}}<span class="survie-pilule bon"><i class="fa-solid fa-seedling"></i> {{localize "LAKOUR_SURVIE.Abri.Autonome"}}</span>{{/if}}
+      </div>
+    </div>
+  </header>
+
+  <section class="survie-corps">
+    {{#if bilan}}
+    <div class="survie-chiffres">
+      <div data-tooltip="{{localize 'LAKOUR_SURVIE.Abri.Aides.defense'}}"><i class="fa-solid fa-shield-halved"></i><strong>{{bilan.defense}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.Defense"}}</span></div>
+      <div data-tooltip="{{localize 'LAKOUR_SURVIE.Abri.Aides.discretion'}}"><i class="fa-solid fa-eye-slash"></i><strong>{{bilan.discretion}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.Discretion"}}</span></div>
+      <div data-tooltip="{{localize 'LAKOUR_SURVIE.Abri.Aides.visibilite'}}"><i class="fa-solid fa-eye"></i><strong>{{bilan.visibilite}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.Visibilite"}}</span></div>
+      <div><i class="fa-solid fa-bed"></i><strong>{{bilan.personnes}} / {{bilan.capacite}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.Capacite"}}</span></div>
+      <div><i class="fa-solid fa-volume-high"></i><strong>{{bruit}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.Bruit"}}</span></div>
+      <div><i class="fa-solid fa-seedling"></i><strong>{{bilan.joursAutonomes}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.JoursAutonomes"}}</span></div>
+    </div>
+    {{#if bilan.surpeuplement}}<p class="survie-avertissement">{{localize "LAKOUR_SURVIE.Abri.Surpeuplement" n=bilan.surpeuplement}}</p>{{/if}}
+    {{/if}}
+
+    <h3><i class="fa-solid fa-boxes-stacked"></i> {{localize "LAKOUR_SURVIE.Abri.Stocks"}}</h3>
+    <table class="survie-table">
+      <thead><tr><th>{{localize "LAKOUR_SURVIE.Abri.Ressource"}}</th><th>{{localize "LAKOUR_SURVIE.Abri.Quantite"}}</th><th>{{localize "LAKOUR_SURVIE.Abri.Net"}}</th><th>{{localize "LAKOUR_SURVIE.Abri.Jours"}}</th></tr></thead>
+      <tbody>
+        {{#each stocks}}
+        <tr class="{{#if alerte}}alerte{{/if}}">
+          <td>{{libelle}}</td>
+          <td>{{#if @root.gm}}<input type="number" name="system.stocks.{{cle}}" value="{{quantite}}" min="0" class="survie-petit">{{else}}{{quantite}}{{/if}}{{#if plafond}} <small>/ {{plafond}}</small>{{/if}}</td>
+          <td>{{#if net}}{{net}}{{/if}}</td>
+          <td>{{jours}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{#if bilan.production}}<p class="survie-aide">{{localize "LAKOUR_SURVIE.Abri.Production"}} : {{bilan.production}}</p>{{/if}}
+
+    <h3><i class="fa-solid fa-hammer"></i> {{localize "LAKOUR_SURVIE.Abri.Installations"}}</h3>
+    <ul class="survie-installations">
+      {{#each installations}}
+      <li class="etat-{{etat}}">
+        <img src="{{img}}" alt="">
+        <div>
+          <a data-action="ouvrirObjet" data-item-id="{{id}}" data-tooltip="{{aide}}">{{nom}}</a>
+          <small>{{categorie}} · {{localize "LAKOUR_SURVIE.Objet.Niveau"}} {{niveau}} / {{niveauMax}} · {{etatTexte}}{{#if arret}} · <em>{{localize "LAKOUR_SURVIE.Abri.Arret"}} ({{arret}})</em>{{/if}}</small>
+          {{#if chantier}}<span class="survie-jauge-barre chantier" data-tooltip="{{chantier.fait}} / {{chantier.requis}}"><span style="width: {{chantier.pct}}%"></span></span>{{/if}}
+        </div>
+      </li>
+      {{else}}<li class="survie-vide">{{localize "LAKOUR_SURVIE.Abri.AucuneInstallation"}}</li>{{/each}}
+    </ul>
+
+    <div class="survie-deux">
+      <div>
+        <h3><i class="fa-solid fa-tree"></i> {{localize "LAKOUR_SURVIE.Abri.Alentours"}}</h3>
+        <ul class="survie-liste-simple">
+          {{#each nature}}<li>{{libelle}} : <strong>{{valeur}}</strong></li>{{/each}}
+          <li>{{localize "LAKOUR_SURVIE.Abri.Sol"}} : <strong>{{sol}}</strong></li>
+          <li>{{localize "LAKOUR_SURVIE.Abri.Degats"}} : <strong>{{degats}}</strong></li>
+        </ul>
+      </div>
+      {{#if site}}
+      <div>
+        <h3><i class="fa-solid fa-map-pin"></i> {{site.nom}}</h3>
+        <ul class="survie-liste-simple">
+          {{#each site.atouts}}<li class="bon">＋ {{this}}</li>{{/each}}
+          {{#each site.defauts}}<li class="mauvais">－ {{this}}</li>{{/each}}
+        </ul>
+      </div>
+      {{/if}}
+    </div>
+
+    {{#if grille.length}}
+    <h3><i class="fa-solid fa-table-cells"></i> {{localize "LAKOUR_SURVIE.Abri.Grille"}}</h3>
+    <div class="survie-grille-defile">
+      <table class="survie-grille">
+        <thead><tr><th></th>{{#each taches}}<th><span>{{libelle}}</span></th>{{/each}}</tr></thead>
+        <tbody>
+          {{#each grille}}
+          <tr><th>{{nom}}</th>
+            {{#each cases}}<td class="{{#if choisie}}choisie{{/if}} {{#unless possible}}impossible{{/unless}}">{{#if possible}}<button type="button" data-action="assignerCase" data-acteur="{{../id}}" data-tache="{{tache}}" aria-label="{{tache}}">{{#if choisie}}●{{else}}·{{/if}}</button>{{else}}✕{{/if}}</td>{{/each}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{/if}}
+
+    <h3><i class="fa-solid fa-feather"></i> {{localize "LAKOUR_SURVIE.Fiche.Notes"}}</h3>
+    {{#if editable}}<prose-mirror name="system.notes" value="{{system.notes}}" toggled>{{{notesEnrichies}}}</prose-mirror>{{else}}<div class="survie-notes">{{{notesEnrichies}}}</div>{{/if}}
+  </section>
+</div>

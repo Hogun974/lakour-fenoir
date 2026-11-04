@@ -171,10 +171,26 @@ export function modificateursTraits(system, contenu, { tache = null, lieux = [] 
 
 export const competenceDeTache = tache => TACHES[tache] ?? null;
 
+// Le vocabulaire des incapacités du contenu (lakour-fenoir, contenu/aides.mjs#INCAPACITES) : les compétences et les tâches que
+// chacune interdit. « violence » garde aussi la garde (choix de la logique, docs/survie-notes-logique.md). Une incapacité qui est
+// elle-même une tâche ou une compétence interdit celle-ci.
+export const INCAPACITES = {
+  violence: { competences: ["combat", "tir"], taches: ["chasse", "garde"] },
+  soins: { competences: ["soins"], taches: ["soins"] },
+  "travaux-lourds": { competences: [], taches: ["chantier"] },
+  conduite: { competences: ["conduite"], taches: [] },
+  parole: { competences: ["parole"], taches: ["enseigner"] },
+  cultures: { competences: [], taches: ["cultures", "elevage"] },
+  nuit: { competences: [], taches: ["garde"] }
+};
+export const tachesInterdites = system => [...new Set((system?.incapacites ?? []).flatMap(i => [...(i in TACHES ? [i] : []), ...(INCAPACITES[i]?.taches ?? [])]))];
+export const competencesInterdites = system => [...new Set((system?.incapacites ?? []).flatMap(i => INCAPACITES[i]?.competences ?? (Object.values(TACHES).includes(i) ? [i] : [])))];
+
 export function peutFaire(system, tache) {
   if (!(tache in TACHES)) return false;
   const inc = system?.incapacites ?? [];
-  return !inc.includes(tache) && !(TACHES[tache] && inc.includes(TACHES[tache])) && !(tache === "garde" && inc.includes("violence"));
+  if (TACHES[tache] && (inc.includes(TACHES[tache]) || competencesInterdites(system).includes(TACHES[tache]))) return false;
+  return !tachesInterdites(system).includes(tache);
 }
 
 // Assigner une tâche. -> { ok, raison, system }

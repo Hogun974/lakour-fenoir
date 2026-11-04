@@ -1,0 +1,21 @@
+<div class="survie-cadre">
+  <div class="survie-atelier-tete">
+    <p>{{localize "LAKOUR_SURVIE.Atelier.Intro" n=possibles}}</p>
+    {{#if gm}}<label>{{localize "LAKOUR_SURVIE.Atelier.Artisan"}} <select name="artisan">{{#each artisans}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>{{/if}}
+  </div>
+  <section class="survie-corps">
+    <ul class="survie-recettes">
+      {{#each recettes}}
+      <li class="{{#if ok}}possible{{else}}impossible{{/if}}">
+        <div class="survie-recette-tete">
+          <strong data-tooltip="{{aide}}">{{nom}}</strong>
+          <span class="survie-recette-produit">→ {{produit}}</span>
+          {{#if ok}}<button type="button" data-action="fabriquer" data-recette="{{cle}}">{{#if @root.gm}}<i class="fa-solid fa-hammer"></i> {{localize "LAKOUR_SURVIE.Atelier.Fabriquer"}}{{else}}<i class="fa-solid fa-hand"></i> {{localize "LAKOUR_SURVIE.Atelier.Proposer"}}{{/if}}</button>{{/if}}
+        </div>
+        <small>{{localize "LAKOUR_SURVIE.Objet.Cout"}} : {{cout}} · {{localize "LAKOUR_SURVIE.Objet.Travail"}} {{travail}} · {{competence}} ({{difficulte}})</small>
+        {{#unless ok}}<ul class="survie-raisons">{{#each raisons}}<li>{{this}}</li>{{/each}}</ul>{{/unless}}
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,69 @@
+<div class="survie-creation-cadre">
+  <p class="survie-intro">{{localize "LAKOUR_SURVIE.Creation.Intro"}}</p>
+  <section class="survie-corps">
+    {{#if pret}}
+    <div class="survie-creation-grille">
+      <div class="survie-carte-tirage">
+        <div class="survie-ligne-verrou">
+          <label>{{localize "LAKOUR_SURVIE.Creation.Nom"}}</label>
+          <input type="text" name="nom" value="{{nom}}">
+          <button type="button" class="survie-verrou {{#if verrous.nom}}actif{{/if}}" data-action="verrou" data-element="nom" data-tooltip="{{localize 'LAKOUR_SURVIE.Creation.Verrou'}}"><i class="fa-solid {{#if verrous.nom}}fa-lock{{else}}fa-lock-open{{/if}}"></i></button>
+        </div>
+        <div class="survie-ligne-verrou">
+          <label>{{localize "LAKOUR_SURVIE.Creation.Age"}}</label>
+          <input type="number" name="age" value="{{age}}" min="16" max="75">
+          <button type="button" class="survie-verrou {{#if verrous.age}}actif{{/if}}" data-action="verrou" data-element="age" data-tooltip="{{localize 'LAKOUR_SURVIE.Creation.Verrou'}}"><i class="fa-solid {{#if verrous.age}}fa-lock{{else}}fa-lock-open{{/if}}"></i></button>
+        </div>
+        <div class="survie-ligne-verrou">
+          <label>{{localize "LAKOUR_SURVIE.Creation.Enfance"}}</label>
+          <select name="enfance">{{#each enfances}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select>
+          <button type="button" class="survie-verrou {{#if verrous.enfance}}actif{{/if}}" data-action="verrou" data-element="enfance" data-tooltip="{{localize 'LAKOUR_SURVIE.Creation.Verrou'}}"><i class="fa-solid {{#if verrous.enfance}}fa-lock{{else}}fa-lock-open{{/if}}"></i></button>
+        </div>
+        {{#if enfance.aide}}<p class="survie-aide">{{enfance.aide}}</p>{{/if}}
+        <div class="survie-ligne-verrou">
+          <label>{{localize "LAKOUR_SURVIE.Creation.Passe"}}</label>
+          <select name="passe">{{#each passes}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select>
+          <button type="button" class="survie-verrou {{#if verrous.passe}}actif{{/if}}" data-action="verrou" data-element="passe" data-tooltip="{{localize 'LAKOUR_SURVIE.Creation.Verrou'}}"><i class="fa-solid {{#if verrous.passe}}fa-lock{{else}}fa-lock-open{{/if}}"></i></button>
+        </div>
+        {{#if passe.aide}}<p class="survie-aide">{{passe.aide}}</p>{{/if}}
+        <div class="survie-ligne-verrou">
+          <label>{{localize "LAKOUR_SURVIE.Creation.Traits"}}</label>
+          <ul class="survie-puces">
+            {{#each traits}}<li class="survie-puce trait" data-tooltip="{{aide}}">{{nom}} <button type="button" class="survie-icone" data-action="retirerTrait" data-trait="{{cle}}" aria-label="{{localize 'LAKOUR_SURVIE.Fiche.Retirer'}}">✕</button></li>{{/each}}
+          </ul>
+          <button type="button" class="survie-verrou {{#if verrous.traits}}actif{{/if}}" data-action="verrou" data-element="traits" data-tooltip="{{localize 'LAKOUR_SURVIE.Creation.Verrou'}}"><i class="fa-solid {{#if verrous.traits}}fa-lock{{else}}fa-lock-open{{/if}}"></i></button>
+        </div>
+        <select name="trait" class="survie-ajout-trait">{{#each traitsPossibles}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select>
+        {{#if incapacites.length}}<p class="survie-incapacites"><i class="fa-solid fa-ban"></i> {{localize "LAKOUR_SURVIE.Creation.Incapable"}} : {{#each incapacites}}<span>{{this}}</span>{{/each}}</p>{{/if}}
+      </div>
+
+      <div class="survie-carte-tirage">
+        <h3>{{localize "LAKOUR_SURVIE.Fiche.Competences"}}
+          <span class="survie-budget {{#if budget.ok}}ok{{else}}hors{{/if}}" data-tooltip="{{localize 'LAKOUR_SURVIE.Creation.BudgetAide' min=budget.min max=budget.max}}">{{budget.somme}} / {{budget.min}}–{{budget.max}}</span></h3>
+        <ul class="survie-competences compactes">
+          {{#each competences}}
+          <li class="survie-competence {{#if incapable}}incapable{{/if}}">
+            <button type="button" class="survie-favori {{#if favori}}actif{{/if}}" data-action="favori" data-competence="{{cle}}" data-tooltip="{{localize 'LAKOUR_SURVIE.Creation.Favoriser'}}"><i class="fa-solid fa-star"></i></button>
+            <span class="survie-competence-nom">{{libelle}} <span class="survie-flammes">{{flammes}}</span></span>
+            <span class="survie-pips">{{#each pips}}<span class="survie-pip {{#if plein}}plein{{/if}}"></span>{{/each}}</span>
+          </li>
+          {{/each}}
+        </ul>
+        {{#if equipement.length}}<p><strong>{{localize "LAKOUR_SURVIE.Fiche.Equipement"}}</strong> : {{#each equipement}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+        {{#if savoirs.length}}<p><strong>{{localize "LAKOUR_SURVIE.Fiche.Savoirs"}}</strong> : {{#each savoirs}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+        {{#if graine}}<blockquote class="survie-graine">{{graine}}</blockquote>{{/if}}
+        {{#if passe.accroche}}<p class="survie-aide"><em>{{passe.accroche}}</em></p>{{/if}}
+      </div>
+    </div>
+    {{/if}}
+  </section>
+  <footer class="survie-pied">
+    {{#if gm}}
+    <label>{{localize "LAKOUR_SURVIE.Creation.Joueur"}} <select name="joueur">{{#each joueurs}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+    <label>{{localize "LAKOUR_SURVIE.Creation.Statut"}} <select name="statut">{{#each statuts}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+    {{/if}}
+    <label class="survie-case"><input type="checkbox" name="rejoindre" {{#if rejoindre}}checked{{/if}}> {{localize "LAKOUR_SURVIE.Creation.Rejoindre"}}</label>
+    <button type="button" data-action="tirer"><i class="fa-solid fa-dice"></i> {{localize "LAKOUR_SURVIE.Creation.Tirer"}}</button>
+    <button type="button" class="principal" data-action="creer" {{#unless pret}}disabled{{/unless}}><i class="fa-solid fa-user-plus"></i> {{localize "LAKOUR_SURVIE.Creation.Creer"}}</button>
+  </footer>
+</div>

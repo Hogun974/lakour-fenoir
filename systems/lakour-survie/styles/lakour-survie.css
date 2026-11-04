@@ -1,0 +1,324 @@
+/* Fénoir — thème sombre et chaud : nuit tropicale, basalte, braise de feu de camp, vert des Hauts, bleu du lagon.
+   Typographie claire et lisible : Signika (Foundry) pour le corps, titres resserrés ; contrastes AA sur fond sombre. */
+
+.lakour-survie {
+  --sv-nuit: #15110e;
+  --sv-nuit-2: #1d1814;
+  --sv-basalte: #2a231e;
+  --sv-bord: #4b3d33;
+  --sv-texte: #ece2d0;
+  --sv-terne: #b3a48f;
+  --sv-braise: #f0a347;
+  --sv-braise-doux: rgba(240, 163, 71, 0.16);
+  --sv-rouille: #c1602f;
+  --sv-sang: #c8423b;
+  --sv-vert: #8db86e;
+  --sv-lagon: #5fb3c4;
+  --sv-or: #f3d27a;
+  --sv-gris: #7d776c;
+  --sv-titre: "Signika", "Segoe UI", system-ui, sans-serif;
+  --sv-rayon: 8px;
+}
+
+/* ------------------------------------------------------------------ fenêtres */
+.application.lakour-survie {
+  color: var(--sv-texte);
+  background: var(--sv-nuit);
+  border: 1px solid var(--sv-bord);
+  box-shadow: 0 0 0 1px #000, 0 14px 44px rgba(0, 0, 0, 0.6), 0 0 70px rgba(240, 163, 71, 0.05);
+}
+.application.lakour-survie .window-header {
+  background: linear-gradient(90deg, #231b16, #3a2a1f 60%, #231b16);
+  border-bottom: 1px solid var(--sv-bord);
+  color: var(--sv-texte);
+}
+.application.lakour-survie .window-header .window-title { font-family: var(--sv-titre); font-weight: 600; letter-spacing: 0.02em; }
+.application.lakour-survie .window-header .window-icon { color: var(--sv-braise); }
+.application.lakour-survie .window-content {
+  padding: 0;
+  color: var(--sv-texte);
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(240, 163, 71, 0.09), transparent 55%),
+    radial-gradient(ellipse at 100% 100%, rgba(95, 179, 196, 0.07), transparent 50%),
+    var(--sv-nuit);
+}
+.lakour-survie h1, .lakour-survie h2, .lakour-survie h3, .lakour-survie h4 {
+  font-family: var(--sv-titre); color: var(--sv-texte); border: none; margin: 0.8em 0 0.4em; font-weight: 600;
+}
+.lakour-survie h3 { font-size: 1.08em; border-bottom: 1px solid var(--sv-bord); padding-bottom: 0.2em; }
+.lakour-survie h3 i, .lakour-survie h2 i { color: var(--sv-braise); margin-right: 0.3em; width: 1.1em; text-align: center; }
+.lakour-survie h4 { font-size: 0.95em; color: var(--sv-terne); }
+.lakour-survie p { line-height: 1.45; }
+.lakour-survie a { color: var(--sv-or); }
+.lakour-survie input[type="text"], .lakour-survie input[type="number"], .lakour-survie select, .lakour-survie textarea {
+  background: rgba(0, 0, 0, 0.35); color: var(--sv-texte); border: 1px solid var(--sv-bord); border-radius: 4px;
+}
+.lakour-survie input:focus, .lakour-survie select:focus, .lakour-survie textarea:focus, .lakour-survie button:focus-visible {
+  border-color: var(--sv-braise); box-shadow: 0 0 0 2px var(--sv-braise-doux); outline: none;
+}
+.lakour-survie button { color: var(--sv-texte); background: var(--sv-basalte); border: 1px solid var(--sv-bord); border-radius: 5px; cursor: pointer; }
+.lakour-survie button:hover:not([disabled]) { border-color: var(--sv-braise); background: #3a2d23; }
+.lakour-survie button.principal { background: linear-gradient(#a7562a, #7f3f1f); border-color: #c1602f; color: #fff6e8; font-weight: 600; }
+.lakour-survie button[disabled] { opacity: 0.5; cursor: not-allowed; }
+.lakour-survie .survie-petit { width: 3.2em; text-align: center; padding: 0 0.2em; height: 1.6em; }
+.lakour-survie .survie-icone { background: none; border: none; width: auto; padding: 0 0.3em; color: var(--sv-terne); }
+.lakour-survie .survie-icone:hover { color: var(--sv-sang); }
+.lakour-survie .survie-vide { color: var(--sv-terne); font-style: italic; }
+.lakour-survie .survie-aide { color: var(--sv-terne); font-size: 0.88em; }
+.lakour-survie .survie-aide-titre { font-weight: normal; font-size: 0.75em; color: var(--sv-terne); }
+.lakour-survie .survie-avertissement { background: rgba(200, 66, 59, 0.14); border-left: 3px solid var(--sv-sang); padding: 0.4em 0.7em; border-radius: 4px; margin: 0.5em 0.8em; }
+.lakour-survie .survie-avertissement.secret { background: rgba(95, 179, 196, 0.12); border-left-color: var(--sv-lagon); }
+.lakour-survie .survie-case { display: flex; align-items: center; gap: 0.4em; }
+.lakour-survie label { display: flex; flex-direction: column; gap: 0.15em; font-size: 0.9em; color: var(--sv-terne); }
+.lakour-survie label.survie-case { flex-direction: row; color: var(--sv-texte); }
+
+/* ------------------------------------------------------------------ fiches */
+.lakour-survie .survie-feuille { display: flex; flex-direction: column; height: 100%; }
+.lakour-survie .survie-entete { display: flex; gap: 0.9em; padding: 0.8em 1em; background: linear-gradient(180deg, rgba(240, 163, 71, 0.08), transparent); border-bottom: 1px solid var(--sv-bord); }
+.lakour-survie .survie-portrait { width: 96px; height: 96px; object-fit: cover; border-radius: var(--sv-rayon); border: 2px solid var(--sv-bord); background: var(--sv-basalte); flex: none; }
+.lakour-survie .survie-portrait.petit { width: 64px; height: 64px; }
+.lakour-survie .survie-identite { flex: 1; display: flex; flex-direction: column; gap: 0.35em; min-width: 0; }
+.lakour-survie .survie-nom { font-size: 1.6em; font-weight: 600; margin: 0; background: transparent; border: none; border-bottom: 1px dashed transparent; height: auto; padding: 0; }
+.lakour-survie input.survie-nom:hover, .lakour-survie input.survie-nom:focus { border-bottom-color: var(--sv-bord); }
+.lakour-survie .survie-pilules { display: flex; flex-wrap: wrap; gap: 0.35em; }
+.lakour-survie .survie-pilule { font-size: 0.82em; padding: 0.15em 0.65em; border-radius: 999px; background: var(--sv-basalte); border: 1px solid var(--sv-bord); }
+.lakour-survie .survie-pilule i { color: var(--sv-braise); margin-right: 0.2em; }
+.lakour-survie .survie-pilule.statut { border-color: var(--sv-braise); color: var(--sv-or); }
+.lakour-survie .survie-pilule.grave { border-color: var(--sv-sang); color: #ffb3a8; }
+.lakour-survie .survie-pilule.bon { border-color: var(--sv-vert); color: #cfeabc; }
+.lakour-survie .survie-boutons-entete { display: flex; gap: 0.4em; }
+.lakour-survie .survie-boutons-entete button { width: auto; padding: 0.2em 0.8em; }
+.lakour-survie .survie-corps { flex: 1; overflow-y: auto; padding: 0.2em 1em 1em; }
+.lakour-survie .survie-colonnes { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(300px, 1.5fr); gap: 1.2em; }
+.lakour-survie .survie-deux { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+.lakour-survie .survie-feuille.mort .survie-portrait { filter: grayscale(1); }
+.lakour-survie .survie-feuille.livide .survie-portrait { filter: grayscale(1) sepia(0.4) hue-rotate(60deg); }
+
+/* état */
+.lakour-survie .survie-jauges { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35em; }
+.lakour-survie .survie-jauge { display: grid; grid-template-columns: 5.5em 1fr auto auto; align-items: center; gap: 0.5em; font-size: 0.92em; }
+.lakour-survie .survie-jauge-nom { color: var(--sv-terne); }
+.lakour-survie .survie-jauge-barre { height: 8px; background: rgba(0, 0, 0, 0.45); border-radius: 4px; overflow: hidden; display: block; }
+.lakour-survie .survie-jauge-barre > span { display: block; height: 100%; background: var(--sv-braise); border-radius: 4px; }
+.lakour-survie .survie-jauge.moral .survie-jauge-barre > span { background: var(--sv-lagon); }
+.lakour-survie .survie-jauge.mauvais .survie-jauge-barre > span { background: var(--sv-sang); }
+.lakour-survie .survie-jauge.mauvais .survie-jauge-texte { color: #ffb3a8; }
+.lakour-survie .survie-jauge-barre.gris > span { background: linear-gradient(90deg, #8a9a7a, #c8423b); }
+.lakour-survie .survie-jauge-barre.chantier > span { background: var(--sv-vert); }
+.lakour-survie .survie-malus { color: #ffb3a8; font-weight: normal; }
+.lakour-survie .survie-infection { margin-top: 0.6em; display: grid; gap: 0.25em; color: #d8e6c4; }
+
+/* compétences */
+.lakour-survie .survie-competences { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.3em 0.9em; }
+.lakour-survie .survie-competences.compactes { grid-template-columns: 1fr; }
+.lakour-survie .survie-competence { display: grid; grid-template-columns: 1fr auto auto; grid-template-rows: auto 3px; align-items: center; gap: 0.1em 0.4em; padding: 0.25em 0.4em; border-radius: 6px; background: rgba(0, 0, 0, 0.22); border: 1px solid transparent; }
+.lakour-survie .survie-competences.compactes .survie-competence { grid-template-columns: auto 1fr auto; grid-template-rows: auto; }
+.lakour-survie .survie-competence:hover { border-color: var(--sv-bord); }
+.lakour-survie .survie-competence-nom { background: none; border: none; text-align: left; padding: 0; font-size: 0.98em; color: var(--sv-texte); width: auto; line-height: 1.6; }
+.lakour-survie .survie-competence-nom:hover { color: var(--sv-or); background: none; }
+.lakour-survie .survie-competence.incapable .survie-competence-nom { color: #ff9c90; text-decoration: line-through; text-decoration-color: rgba(200, 66, 59, 0.7); }
+.lakour-survie .survie-flammes { font-size: 0.85em; }
+.lakour-survie .survie-pips { display: inline-flex; gap: 3px; }
+.lakour-survie .survie-pip { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--sv-bord); background: rgba(0, 0, 0, 0.4); }
+.lakour-survie .survie-pip.plein { background: radial-gradient(circle at 35% 35%, #ffd38f, var(--sv-braise)); border-color: #a5652a; }
+.lakour-survie .survie-marques { grid-column: 1 / -1; height: 3px; background: rgba(0, 0, 0, 0.4); border-radius: 2px; overflow: hidden; }
+.lakour-survie .survie-marques > span { display: block; height: 100%; background: var(--sv-lagon); }
+
+/* puces, objets */
+.lakour-survie .survie-puces { list-style: none; margin: 0.2em 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35em; }
+.lakour-survie .survie-puce { padding: 0.15em 0.6em; border-radius: 999px; background: var(--sv-basalte); border: 1px solid var(--sv-bord); font-size: 0.88em; }
+.lakour-survie .survie-puce.trait { border-color: #7b6a3a; }
+.lakour-survie .survie-puce.incapacite { border-color: var(--sv-sang); color: #ffb3a8; }
+.lakour-survie .survie-puce.affliction { border-color: #6f8a4c; color: #d8e6c4; }
+.lakour-survie .survie-puce.affliction.traitee { opacity: 0.7; }
+.lakour-survie .survie-objets, .lakour-survie .survie-liste-simple { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25em; }
+.lakour-survie .survie-objets li { display: flex; align-items: center; gap: 0.4em; }
+.lakour-survie .survie-objets img { width: 24px; height: 24px; border: none; border-radius: 4px; }
+.lakour-survie .survie-objets small { color: var(--sv-terne); }
+.lakour-survie .survie-liste-simple li.bon { color: #cfeabc; }
+.lakour-survie .survie-liste-simple li.mauvais { color: #ffb3a8; }
+.lakour-survie select.survie-tache { width: 100%; }
+.lakour-survie .survie-notes, .lakour-survie prose-mirror { min-height: 4em; }
+
+/* abri */
+.lakour-survie .survie-chiffres { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.4em; margin: 0.6em 0; }
+.lakour-survie .survie-chiffres > div { background: rgba(0, 0, 0, 0.25); border: 1px solid var(--sv-bord); border-radius: var(--sv-rayon); padding: 0.4em; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.lakour-survie .survie-chiffres i { color: var(--sv-braise); }
+.lakour-survie .survie-chiffres strong { font-size: 1.3em; }
+.lakour-survie .survie-chiffres span { font-size: 0.78em; color: var(--sv-terne); }
+.lakour-survie .survie-table { width: 100%; border-collapse: collapse; font-size: 0.92em; background: transparent; border: none; }
+.lakour-survie .survie-table th { text-align: left; color: var(--sv-terne); font-weight: 600; border-bottom: 1px solid var(--sv-bord); background: none; padding: 0.3em; }
+.lakour-survie .survie-table td { padding: 0.25em 0.3em; border-bottom: 1px solid rgba(75, 61, 51, 0.5); vertical-align: top; }
+.lakour-survie .survie-table tr.alerte td { color: #ffb3a8; }
+.lakour-survie .survie-table tr.ici td { background: rgba(243, 210, 122, 0.08); }
+.lakour-survie .survie-table tr.vieux td { opacity: 0.75; }
+.lakour-survie .survie-table td.inf-calme { color: var(--sv-vert); }
+.lakour-survie .survie-table td.inf-presente { color: #e0b04a; }
+.lakour-survie .survie-table td.inf-dense { color: #e07b39; }
+.lakour-survie .survie-table td.inf-grouillante { color: var(--sv-sang); font-weight: 600; }
+.lakour-survie .survie-table td.inf-inconnue { color: var(--sv-gris); }
+.lakour-survie .survie-installations { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.4em; }
+.lakour-survie .survie-installations li { display: flex; gap: 0.5em; align-items: flex-start; background: rgba(0, 0, 0, 0.22); border: 1px solid var(--sv-bord); border-radius: var(--sv-rayon); padding: 0.4em; }
+.lakour-survie .survie-installations li > div { display: flex; flex-direction: column; gap: 0.2em; flex: 1; }
+.lakour-survie .survie-installations img { width: 32px; height: 32px; border: none; }
+.lakour-survie .survie-installations small { color: var(--sv-terne); }
+.lakour-survie .survie-installations li.etat-2, .lakour-survie .survie-installations li.etat-3 { border-color: var(--sv-sang); }
+.lakour-survie .survie-grille-defile { overflow-x: auto; }
+.lakour-survie .survie-grille { border-collapse: collapse; font-size: 0.85em; background: none; border: none; }
+.lakour-survie .survie-grille thead th { height: 7em; white-space: nowrap; vertical-align: bottom; background: none; border: none; }
+.lakour-survie .survie-grille thead th span { display: inline-block; transform: rotate(-55deg); transform-origin: left bottom; width: 1.8em; color: var(--sv-terne); }
+.lakour-survie .survie-grille tbody th { text-align: left; padding: 0.2em 0.6em 0.2em 0; white-space: nowrap; background: none; border: none; }
+.lakour-survie .survie-grille tbody th small { display: block; color: var(--sv-terne); font-weight: normal; }
+.lakour-survie .survie-grille td { text-align: center; width: 2em; border: 1px solid rgba(75, 61, 51, 0.6); }
+.lakour-survie .survie-grille td button { width: 100%; height: 1.8em; background: none; border: none; color: var(--sv-terne); padding: 0; }
+.lakour-survie .survie-grille td.choisie { background: rgba(240, 163, 71, 0.22); }
+.lakour-survie .survie-grille td.choisie button { color: var(--sv-or); }
+.lakour-survie .survie-grille td.impossible { color: rgba(200, 66, 59, 0.6); background: rgba(0, 0, 0, 0.25); }
+.lakour-survie .survie-grille tr.mort th { text-decoration: line-through; opacity: 0.6; }
+
+/* objets */
+.lakour-survie .survie-texte { margin-bottom: 0.6em; }
+.lakour-survie .survie-section { margin-bottom: 0.4em; }
+
+/* ------------------------------------------------------------------ onglets, formulaires */
+.lakour-survie .survie-cadre { display: flex; flex-direction: column; height: 100%; }
+.lakour-survie .survie-onglets { display: flex; gap: 0.2em; padding: 0.5em 0.8em 0; border-bottom: 1px solid var(--sv-bord); flex-wrap: wrap; }
+.lakour-survie .survie-onglets button { width: auto; border-radius: 6px 6px 0 0; border-bottom: none; padding: 0.3em 0.9em; background: transparent; color: var(--sv-terne); }
+.lakour-survie .survie-onglets button.actif { background: var(--sv-basalte); color: var(--sv-or); border-color: var(--sv-bord); }
+.lakour-survie .survie-formulaires { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.7em; }
+.lakour-survie .survie-formulaire { background: rgba(0, 0, 0, 0.22); border: 1px solid var(--sv-bord); border-radius: var(--sv-rayon); padding: 0.5em 0.7em 0.7em; display: flex; flex-direction: column; gap: 0.4em; margin: 0.6em 0; }
+.lakour-survie .survie-formulaire h3 { margin-top: 0.2em; }
+.lakour-survie .survie-formulaire fieldset { border: 1px solid var(--sv-bord); border-radius: 6px; display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.2em; }
+.lakour-survie .survie-ressources { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.3em; }
+.lakour-survie .survie-resultat { margin: 0.5em 0.8em; padding: 0.4em 0.7em; border-left: 3px solid var(--sv-vert); background: rgba(141, 184, 110, 0.1); border-radius: 4px; }
+.lakour-survie .survie-resultat.erreur { border-left-color: var(--sv-sang); background: rgba(200, 66, 59, 0.12); }
+.lakour-survie .survie-resultat pre { white-space: pre-wrap; font-family: inherit; margin: 0.2em 0 0; max-height: 12em; overflow: auto; }
+.lakour-survie .survie-quand-mj { margin: 0.4em 0.8em 0; color: var(--sv-terne); }
+.lakour-survie .survie-journal { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25em; }
+.lakour-survie .survie-journal li { padding: 0.2em 0.3em; border-bottom: 1px solid rgba(75, 61, 51, 0.4); line-height: 1.4; }
+.lakour-survie .survie-journal.alertes li { color: #ffd9a0; }
+.lakour-survie .survie-quand { display: inline-block; min-width: 4.5em; color: var(--sv-braise); font-size: 0.85em; }
+.lakour-survie .survie-besoins { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.3em; }
+.lakour-survie .survie-besoins li { padding: 0.3em 0.5em; border-radius: 6px; background: rgba(0, 0, 0, 0.22); border-left: 3px solid var(--sv-gris); }
+.lakour-survie .survie-besoins li.manquant { border-left-color: var(--sv-sang); }
+.lakour-survie .survie-besoins li.faible { border-left-color: #e0b04a; }
+.lakour-survie .survie-besoins li.urgent { background: rgba(200, 66, 59, 0.12); }
+.lakour-survie .survie-menaces { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35em; }
+.lakour-survie .survie-menaces li { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4em; padding: 0.3em; background: rgba(0, 0, 0, 0.2); border-radius: 6px; }
+.lakour-survie .survie-menaces button { width: auto; padding: 0.1em 0.6em; }
+.lakour-survie .survie-recrue { padding: 0.4em; border: 1px dashed var(--sv-bord); border-radius: 6px; }
+.lakour-survie .survie-carte-cadre { margin: 0.6em 0; border-radius: var(--sv-rayon); overflow: hidden; border: 1px solid var(--sv-bord); }
+.lakour-survie .survie-carte { display: block; width: 100%; height: auto; }
+.lakour-survie .survie-carte-region.ici text { font-weight: 700; }
+
+/* ------------------------------------------------------------------ création */
+.lakour-survie .survie-creation-cadre { display: flex; flex-direction: column; height: 100%; }
+.lakour-survie .survie-intro { margin: 0.6em 1em 0; color: var(--sv-terne); }
+.lakour-survie .survie-creation-grille { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+.lakour-survie .survie-carte-tirage { background: rgba(0, 0, 0, 0.22); border: 1px solid var(--sv-bord); border-radius: var(--sv-rayon); padding: 0.6em 0.8em; display: flex; flex-direction: column; gap: 0.45em; }
+.lakour-survie .survie-ligne-verrou { display: grid; grid-template-columns: 6.5em 1fr auto; align-items: center; gap: 0.4em; }
+.lakour-survie .survie-ligne-verrou label { color: var(--sv-terne); }
+.lakour-survie .survie-verrou, .lakour-survie .survie-favori { width: 2em; height: 2em; padding: 0; background: transparent; color: var(--sv-gris); }
+.lakour-survie .survie-verrou.actif { color: var(--sv-or); border-color: var(--sv-braise); }
+.lakour-survie .survie-favori.actif { color: var(--sv-or); border-color: var(--sv-braise); }
+.lakour-survie .survie-budget { float: right; font-size: 0.85em; padding: 0.05em 0.6em; border-radius: 999px; border: 1px solid; }
+.lakour-survie .survie-budget.ok { color: #cfeabc; border-color: var(--sv-vert); }
+.lakour-survie .survie-budget.hors { color: #ffb3a8; border-color: var(--sv-sang); }
+.lakour-survie .survie-incapacites { color: #ffb3a8; }
+.lakour-survie .survie-incapacites span { margin-right: 0.5em; }
+.lakour-survie .survie-graine { border-left: 3px solid var(--sv-braise); margin: 0.3em 0; padding: 0.3em 0.7em; color: var(--sv-texte); font-style: italic; background: rgba(240, 163, 71, 0.06); }
+.lakour-survie .survie-pied { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.6em; padding: 0.6em 1em; border-top: 1px solid var(--sv-bord); }
+.lakour-survie .survie-pied button { width: auto; padding: 0.3em 1em; }
+
+/* ------------------------------------------------------------------ atelier */
+.lakour-survie .survie-atelier-tete { padding: 0.6em 1em 0; display: flex; gap: 1em; align-items: flex-end; justify-content: space-between; }
+.lakour-survie .survie-recettes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4em; }
+.lakour-survie .survie-recettes li { padding: 0.4em 0.6em; border-radius: 6px; background: rgba(0, 0, 0, 0.22); border-left: 3px solid var(--sv-vert); }
+.lakour-survie .survie-recettes li.impossible { border-left-color: var(--sv-gris); opacity: 0.85; }
+.lakour-survie .survie-recette-tete { display: flex; align-items: center; gap: 0.6em; }
+.lakour-survie .survie-recette-tete button { margin-left: auto; width: auto; padding: 0.1em 0.7em; }
+.lakour-survie .survie-recette-produit { color: var(--sv-or); font-size: 0.9em; }
+.lakour-survie .survie-raisons { margin: 0.2em 0 0 1em; padding: 0; color: #ffb3a8; font-size: 0.86em; }
+
+/* ------------------------------------------------------------------ dialogue de test */
+.lakour-survie.survie-dialogue { display: grid; gap: 0.5em; }
+
+/* ------------------------------------------------------------------ cartes de chat */
+.chat-message .lakour-survie.survie-carte { border: 1px solid #4b3d33; border-radius: 8px; padding: 0.45em 0.6em; background: linear-gradient(180deg, #221b16, #17120f); color: #ece2d0; }
+.chat-message .survie-carte header { display: flex; flex-direction: column; margin-bottom: 0.3em; }
+.chat-message .survie-carte-titre { font-weight: 700; color: #f3d27a; }
+.chat-message .survie-carte-titre i { color: #f0a347; margin-right: 0.25em; }
+.chat-message .survie-carte-sous { font-size: 0.85em; color: #b3a48f; }
+.chat-message .survie-des { display: flex; flex-wrap: wrap; gap: 4px; margin: 0.25em 0; align-items: center; }
+.chat-message .survie-de { width: 26px; height: 26px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; background: #3a312a; color: #cfc4b2; border: 1px solid #5a4b3e; }
+.chat-message .survie-de.succes { background: linear-gradient(#ffcf7a, #e08a2c); color: #2a1606; border-color: #a9601d; }
+.chat-message .survie-de.un { background: #3a1f1c; color: #ff9c90; border-color: #7a2e27; }
+.chat-message .survie-de.relance { box-shadow: 0 0 0 2px #5fb3c4; }
+.chat-message .survie-des.menace .survie-de.succes { background: linear-gradient(#ff8f7f, #c8423b); color: #2a0906; border-color: #8a2a24; }
+.chat-message .survie-etiquette { font-size: 0.78em; color: #b3a48f; margin-right: 0.3em; text-transform: uppercase; letter-spacing: 0.05em; }
+.chat-message .survie-issue { margin: 0.3em 0; font-size: 1.05em; }
+.chat-message .survie-issue.reussite, .chat-message .survie-issue.repoussee { color: #b9e39b; }
+.chat-message .survie-issue.echec, .chat-message .survie-issue.breche { color: #ff9c90; }
+.chat-message .survie-issue.endommagee { color: #ffd38f; }
+.chat-message .survie-extras, .chat-message .survie-faits, .chat-message .survie-alertes, .chat-message .survie-lignes { margin: 0.2em 0; padding-left: 1.1em; font-size: 0.92em; }
+.chat-message .survie-extras .complication { color: #ffd38f; }
+.chat-message .survie-extras .monte { color: #b9e39b; font-weight: 700; }
+.chat-message .survie-alertes li { color: #ffd38f; list-style: none; margin-left: -1.1em; }
+.chat-message .survie-duel { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; }
+.chat-message .survie-forcer, .chat-message .survie-lancer { margin-top: 0.3em; background: #3a2d23; color: #f3d27a; border: 1px solid #a5652a; border-radius: 5px; }
+.chat-message .survie-raison { font-style: italic; color: #b3a48f; margin: 0.2em 0; }
+
+/* ------------------------------------------------------------------ bandeau */
+#lakour-survie-bandeau { position: fixed; top: 6px; left: 50%; transform: translateX(-50%); z-index: 70; pointer-events: none; max-width: calc(100vw - 680px); min-width: 360px; }
+#lakour-survie-bandeau .sb-corps {
+  pointer-events: auto; display: flex; align-items: center; gap: 0.6em; flex-wrap: wrap; justify-content: center;
+  padding: 0.3em 0.8em; border-radius: 0 0 14px 14px; border: 1px solid #4b3d33; border-top: none;
+  background: linear-gradient(180deg, rgba(29, 24, 20, 0.95), rgba(21, 17, 14, 0.92)); color: #ece2d0;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.5); font-family: "Signika", sans-serif; font-size: 0.95em;
+}
+#lakour-survie-bandeau .sb-corps.moment-nuit { background: linear-gradient(180deg, rgba(14, 18, 30, 0.95), rgba(10, 12, 20, 0.92)); }
+#lakour-survie-bandeau .sb-corps.meteo-cyclone { border-color: #c8423b; }
+#lakour-survie-bandeau button { width: auto; height: auto; line-height: 1.4; padding: 0.15em 0.5em; background: #2a231e; color: #ece2d0; border: 1px solid #4b3d33; border-radius: 6px; }
+#lakour-survie-bandeau button:hover { border-color: #f0a347; }
+#lakour-survie-bandeau .sb-replier { border: none; background: none; color: #b3a48f; }
+#lakour-survie-bandeau .sb-temps { display: flex; align-items: baseline; gap: 0.45em; }
+#lakour-survie-bandeau .sb-icone { color: #f0a347; }
+#lakour-survie-bandeau .sb-jour { font-weight: 700; color: #f3d27a; }
+#lakour-survie-bandeau .sb-date { color: #b3a48f; font-size: 0.88em; }
+#lakour-survie-bandeau .sb-phase { padding: 0.05em 0.6em; border-radius: 999px; border: 1px solid #4b3d33; font-size: 0.85em; }
+#lakour-survie-bandeau .sb-phase.phase-panique, #lakour-survie-bandeau .sb-phase.phase-effondrement { border-color: #c1602f; color: #ffc999; }
+#lakour-survie-bandeau .sb-meteo.cyclone { color: #ff9c90; font-weight: 700; }
+#lakour-survie-bandeau .sb-meteo.pluie { color: #9fd3de; }
+#lakour-survie-bandeau .sb-fete { color: #f3d27a; }
+#lakour-survie-bandeau .sb-stocks { display: flex; gap: 0.5em; }
+#lakour-survie-bandeau .sb-stock i { color: #5fb3c4; }
+#lakour-survie-bandeau .sb-stock.bas { color: #ff9c90; font-weight: 700; }
+#lakour-survie-bandeau .sb-autonome { color: #b9e39b; }
+#lakour-survie-bandeau .sb-alertes { display: flex; gap: 0.4em; max-width: 34em; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #ffd38f; font-size: 0.86em; }
+#lakour-survie-bandeau .sb-alerte { overflow: hidden; text-overflow: ellipsis; }
+#lakour-survie-bandeau .sb-boutons { display: flex; gap: 0.3em; }
+#lakour-survie-bandeau .sb-bouton.principal { background: linear-gradient(#a7562a, #7f3f1f); border-color: #c1602f; }
+#lakour-survie-bandeau .sb-corps.replie { padding: 0.15em 0.6em; font-size: 0.88em; }
+
+/* ------------------------------------------------------------------ infobulle des jetons */
+#lakour-survie-infobulle { position: fixed; transform: translate(-50%, -100%); pointer-events: none; z-index: 90; opacity: 0; transition: opacity 0.12s;
+  background: rgba(21, 17, 14, 0.94); border: 1px solid #4b3d33; border-radius: 8px; padding: 0.35em 0.6em; color: #ece2d0; font-size: 0.85em; max-width: 18em; }
+#lakour-survie-infobulle.visible { opacity: 1; }
+#lakour-survie-infobulle .sib-nom { font-weight: 700; color: #f3d27a; }
+#lakour-survie-infobulle .sib-etats { display: flex; flex-wrap: wrap; gap: 0.25em; margin-top: 0.2em; }
+#lakour-survie-infobulle .sib-etat { padding: 0 0.45em; border-radius: 999px; border: 1px solid #4b3d33; }
+#lakour-survie-infobulle .sib-etat.infection, #lakour-survie-infobulle .sib-etat.mort, #lakour-survie-infobulle .sib-etat.livide,
+#lakour-survie-infobulle .sib-etat.blessures-3, #lakour-survie-infobulle .sib-etat.blessures-4 { border-color: #c8423b; color: #ff9c90; }
+#lakour-survie-infobulle .sib-ligne { color: #b3a48f; margin-top: 0.15em; }
+
+/* bouton de la barre des acteurs */
+.survie-creer-survivant { flex: 1 1 100%; margin-top: 0.3em; }
+
+@media (prefers-reduced-motion: reduce) {
+  #lakour-survie-infobulle { transition: none; }
+}
+@media (max-width: 1100px) {
+  #lakour-survie-bandeau { max-width: calc(100vw - 40px); }
+  .lakour-survie .survie-colonnes, .lakour-survie .survie-creation-grille { grid-template-columns: 1fr; }
+  .lakour-survie .survie-chiffres { grid-template-columns: repeat(3, 1fr); }
+}

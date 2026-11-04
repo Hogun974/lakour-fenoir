@@ -44,9 +44,9 @@
       }
     },
     {
-      "_id": "G30TaO6WDV3Vyl4Q",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.G30TaO6WDV3Vyl4Q",
-      "name": "Le 20 décembre, fête de la liberté",
+      "_id": "PoekmoGBue8CcQbB",
+      "_key": "!journal.pages!qqQlhw4tkOi7z92s.PoekmoGBue8CcQbB",
+      "name": "Noël sous les flamboyants",
       "type": "text",
       "sort": 200,
       "title": {
@@ -54,30 +54,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Le 20 décembre, La Réunion fête l'abolition de l'esclavage de 1848 : le maloya résonne, les kabars s'allument, on se souvient de ceux qui ont brisé leurs chaînes. Cette année, quelqu'un a peint « Nou lé pa esklav » sur un mur du camp, et le tambour s'entend malgré tout.</p><p><em>Date : 20/12.</em></p>",
-        "format": 1
-      },
-      "ownership": {
-        "default": -1
-      },
-      "flags": {
-        "lakour-fenoir": {
-          "cle": "fete-de-la-liberte"
-        }
-      }
-    },
-    {
-      "_id": "PoekmoGBue8CcQbB",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.PoekmoGBue8CcQbB",
-      "name": "Noël sous les flamboyants",
-      "type": "text",
-      "sort": 300,
-      "title": {
-        "show": true,
-        "level": 1
-      },
-      "text": {
-        "content": "<p>Noël tombe en plein été austral, sous les flamboyants en fleur et la chaleur moite des Bas. Pas de neige, jamais : un cari partagé, des letchis, un letchi en guise de sapin, des cadeaux taillés au couteau. On se demande où sont ceux qu'on aimait.</p><p><em>Date : 25/12.</em></p>",
+        "content": "<p>Noël tombe en plein été austral, sous les flamboyants en fleur et la chaleur moite des Bas. Pas de neige, jamais : un cari partagé, des letchis, une branche de filao en guise de sapin, des cadeaux taillés au couteau. On se demande où sont ceux qu'on aimait.</p><p><em>Date : tout décembre ; la veillée du 24 au 26.</em></p>",
         "format": 1
       },
       "ownership": {
@@ -92,15 +69,15 @@
     {
       "_id": "EhrMoee3Qg7MHT10",
       "_key": "!journal.pages!qqQlhw4tkOi7z92s.EhrMoee3Qg7MHT10",
-      "name": "Le jour de l'an",
+      "name": "La Saint-Sylvestre et le jour de l'an",
       "type": "text",
-      "sort": 400,
+      "sort": 300,
       "title": {
         "show": true,
         "level": 1
       },
       "text": {
-        "content": "<p>Avant, la Saint-Sylvestre éclatait de pétards dans toute l'île. Cette année, on se tait à minuit, on compte les vivants, on se souhaite simplement de voir la suivante. Quelque part, un idiot tire une fusée, et toute la côte l'entend.</p><p><em>Date : 01/01.</em></p>",
+        "content": "<p>Avant, la Saint-Sylvestre éclatait de pétards dans toute l'île. Cette année, on se tait à minuit, on compte les vivants, on se souhaite simplement de voir la suivante. Quelque part, un idiot tire une fusée, et toute la côte l'entend.</p><p><em>Date : du 31 décembre au 2 janvier.</em></p>",
         "format": 1
       },
       "ownership": {
@@ -113,9 +90,32 @@
       }
     },
     {
-      "_id": "ttv7R8FCHPml8fgf",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.ttv7R8FCHPml8fgf",
-      "name": "Le Nouvel An chinois",
+      "_id": "0B2UMZ5SRajwrryX",
+      "_key": "!journal.pages!qqQlhw4tkOi7z92s.0B2UMZ5SRajwrryX",
+      "name": "Pâques",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>À Pâques, on mangeait le cari poulet en famille et les enfants cherchaient les œufs dans la cour. Cette année, les poules du camp ont pondu, et un œuf caché devient un trésor.</p><p><em>Date : du Vendredi saint au lundi de Pâques (date mobile).</em></p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "paques"
+        }
+      }
+    },
+    {
+      "_id": "zVl4hGLC2FfYsRpF",
+      "_key": "!journal.pages!qqQlhw4tkOi7z92s.zVl4hGLC2FfYsRpF",
+      "name": "La Toussaint et Halloween",
       "type": "text",
       "sort": 500,
       "title": {
@@ -123,7 +123,122 @@
         "level": 1
       },
       "text": {
-        "content": "<p>À Saint-Denis et Saint-Pierre, les familles chinoises de l'île fêtaient le Nouvel An avec la danse du lion et les pétards rouges. Au camp, on suspend une lanterne de papier rouge et l'on souhaite une année meilleure, à la manière des anciens.</p><p><em>Date : 06/02/2027, 26/01/2028.</em></p>",
+        "content": "<p>À La Réunion, la Toussaint était le jour des cimetières : des familles entières venaient nettoyer et blanchir les tombes, fleurir leurs morts, allumer des bougies, et l'on y restait jusqu'au soir. La veille, les enfants couraient les rues déguisés pour Halloween. Aujourd'hui, les morts ne restent pas tous dans leurs tombes, et plus personne ne va au cimetière. Au camp, on dit à voix basse le nom de ceux qu'on a perdus, on pose une fleur et une bougie au pied d'une croix de bois. Personne ne se déguise plus.</p><p><em>Date : fin octobre : Halloween le 31 octobre, la Toussaint le 1er novembre.</em></p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "halloween"
+        }
+      }
+    },
+    {
+      "_id": "NKAGS9Js2STpOEQf",
+      "_key": "!journal.pages!qqQlhw4tkOi7z92s.NKAGS9Js2STpOEQf",
+      "name": "La fête de la musique",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le 21 juin, au cœur de l'hiver austral, l'île jouait du séga et du maloya à tous les coins de rue. Au camp, un rouleur, un kayamb fabriqué avec des tiges de canne et des graines, et une voix qui chante bas, pour ne pas être entendue trop loin.</p><p><em>Date : le 21 juin, au cœur de l'hiver austral.</em></p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "musique"
+        }
+      }
+    },
+    {
+      "_id": "REGowgViiXqlakNv",
+      "_key": "!journal.pages!qqQlhw4tkOi7z92s.REGowgViiXqlakNv",
+      "name": "Le 20 décembre, fête de la liberté",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le 20 décembre, La Réunion fête l'abolition de l'esclavage de 1848 : le maloya résonne, les kabars s'allument, on se souvient de ceux qui ont brisé leurs chaînes. Cette année, quelqu'un a peint « Nou lé pa esklav » sur un mur du camp, et le tambour s'entend malgré tout.</p><p><em>Date : le 20 décembre.</em></p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "liberte"
+        }
+      }
+    },
+    {
+      "_id": "Biekz7fhB43PxHes",
+      "_key": "!journal.pages!qqQlhw4tkOi7z92s.Biekz7fhB43PxHes",
+      "name": "Le 14 juillet",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le 14 juillet, il y avait le défilé au Barachois et le feu d'artifice sur la mer. Cette année, plus de défilé, plus de République à fêter, peut-être. On se demande si quelqu'un, en métropole, pense encore à l'île.</p><p><em>Date : le 14 juillet.</em></p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "fete-nationale"
+        }
+      }
+    },
+    {
+      "_id": "oXzgRHrOCZEoyGYc",
+      "_key": "!journal.pages!qqQlhw4tkOi7z92s.oXzgRHrOCZEoyGYc",
+      "name": "Dipavali, la fête des lumières",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Pour Dipavali, la fête des lumières, les familles tamoules allumaient des lampes à huile devant les cases et dans les temples, et Saint-André défilait en couleurs. Au camp, une seule petite lampe de terre, bien abritée : une lumière contre la nuit, mais pas trop visible.</p><p><em>Date : octobre ou novembre, à la nouvelle lune (date lunaire).</em></p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "dipavali"
+        }
+      }
+    },
+    {
+      "_id": "ttv7R8FCHPml8fgf",
+      "_key": "!journal.pages!qqQlhw4tkOi7z92s.ttv7R8FCHPml8fgf",
+      "name": "Le Nouvel An chinois",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>À Saint-Denis et Saint-Pierre, les familles chinoises de l'île fêtaient le Nouvel An avec la danse du lion et les pétards rouges. Au camp, on suspend une lanterne de papier rouge et l'on souhaite une année meilleure, à la manière des anciens.</p><p><em>Date : fin janvier ou février, à la fête du Printemps (date lunaire).</em></p>",
         "format": 1
       },
       "ownership": {
@@ -140,13 +255,13 @@
       "_key": "!journal.pages!qqQlhw4tkOi7z92s.6iUIeU1RPRIw85HP",
       "name": "Le Cavadee",
       "type": "text",
-      "sort": 600,
+      "sort": 1100,
       "title": {
         "show": true,
         "level": 1
       },
       "text": {
-        "content": "<p>Au Cavadee, les fidèles tamouls de l'île portaient le kavadi en procession après des jours de jeûne et de prière, les joues percées d'aiguilles d'argent. Cette année, ceux qui croient jeûnent, prient en silence, et portent sur l'épaule le poids qu'ils peuvent.</p><p><em>Date : 22/01/2027.</em></p>",
+        "content": "<p>Au Cavadee, les fidèles tamouls de l'île portaient le kavadi en procession après des jours de jeûne et de prière, les joues percées d'aiguilles d'argent. Cette année, ceux qui croient jeûnent, prient en silence, et portent sur l'épaule le poids qu'ils peuvent.</p><p><em>Date : janvier ou février, à la pleine lune du mois tamoul de Thai (date lunaire).</em></p>",
         "format": 1
       },
       "ownership": {
@@ -159,124 +274,9 @@
       }
     },
     {
-      "_id": "0B2UMZ5SRajwrryX",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.0B2UMZ5SRajwrryX",
-      "name": "Pâques",
-      "type": "text",
-      "sort": 700,
-      "title": {
-        "show": true,
-        "level": 1
-      },
-      "text": {
-        "content": "<p>À Pâques, on mangeait le cari poulet en famille et les enfants cherchaient les œufs dans la cour. Cette année, les poules du camp ont pondu, et un œuf caché devient un trésor.</p><p><em>Date : 28/03/2027, 16/04/2028.</em></p>",
-        "format": 1
-      },
-      "ownership": {
-        "default": -1
-      },
-      "flags": {
-        "lakour-fenoir": {
-          "cle": "paques"
-        }
-      }
-    },
-    {
-      "_id": "zEj4oXIhwbUqpLwE",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.zEj4oXIhwbUqpLwE",
-      "name": "La fête de la musique",
-      "type": "text",
-      "sort": 800,
-      "title": {
-        "show": true,
-        "level": 1
-      },
-      "text": {
-        "content": "<p>Le 21 juin, au cœur de l'hiver austral, l'île jouait du séga et du maloya à tous les coins de rue. Au camp, un rouleur, un kayamb fabriqué avec des tiges de canne et des graines, et une voix qui chante bas, pour ne pas être entendue trop loin.</p><p><em>Date : 21/06.</em></p>",
-        "format": 1
-      },
-      "ownership": {
-        "default": -1
-      },
-      "flags": {
-        "lakour-fenoir": {
-          "cle": "fete-de-la-musique"
-        }
-      }
-    },
-    {
-      "_id": "Vzru3e7Hehep6IVX",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.Vzru3e7Hehep6IVX",
-      "name": "Le 14 juillet",
-      "type": "text",
-      "sort": 900,
-      "title": {
-        "show": true,
-        "level": 1
-      },
-      "text": {
-        "content": "<p>Le 14 juillet, il y avait le défilé au Barachois et le feu d'artifice sur la mer. Cette année, plus de défilé, plus de République à fêter, peut-être. On se demande si quelqu'un, en métropole, pense encore à l'île.</p><p><em>Date : 14/07.</em></p>",
-        "format": 1
-      },
-      "ownership": {
-        "default": -1
-      },
-      "flags": {
-        "lakour-fenoir": {
-          "cle": "quatorze-juillet"
-        }
-      }
-    },
-    {
-      "_id": "oXzgRHrOCZEoyGYc",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.oXzgRHrOCZEoyGYc",
-      "name": "Dipavali",
-      "type": "text",
-      "sort": 1000,
-      "title": {
-        "show": true,
-        "level": 1
-      },
-      "text": {
-        "content": "<p>Pour Dipavali, la fête des lumières, les familles tamoules allumaient des lampes à huile devant les cases et dans les temples, et Saint-André défilait en couleurs. Au camp, une seule petite lampe de terre, bien abritée : une lumière contre la nuit, mais pas trop visible.</p><p><em>Date : 08/11/2026, 29/10/2027, 17/10/2028.</em></p>",
-        "format": 1
-      },
-      "ownership": {
-        "default": -1
-      },
-      "flags": {
-        "lakour-fenoir": {
-          "cle": "dipavali"
-        }
-      }
-    },
-    {
-      "_id": "zVl4hGLC2FfYsRpF",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.zVl4hGLC2FfYsRpF",
-      "name": "Halloween",
-      "type": "text",
-      "sort": 1100,
-      "title": {
-        "show": true,
-        "level": 1
-      },
-      "text": {
-        "content": "<p>Halloween, à La Réunion, c'était des enfants déguisés en morts-vivants qui réclamaient des bonbons. Plus personne ne se déguise. Les enfants du camp en ont peur, ou en rient, ce qui est peut-être pire.</p><p><em>Date : 31/10.</em></p>",
-        "format": 1
-      },
-      "ownership": {
-        "default": -1
-      },
-      "flags": {
-        "lakour-fenoir": {
-          "cle": "halloween"
-        }
-      }
-    },
-    {
-      "_id": "lCAlaVyHQMWqYskc",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.lCAlaVyHQMWqYskc",
-      "name": "La Toussaint",
+      "_id": "gBYjyS5t8SDC3Bqw",
+      "_key": "!journal.pages!qqQlhw4tkOi7z92s.gBYjyS5t8SDC3Bqw",
+      "name": "La fête des letchis",
       "type": "text",
       "sort": 1200,
       "title": {
@@ -284,7 +284,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>À la Toussaint, l'île entière allait fleurir ses morts, et les cimetières se couvraient de bougies. Aujourd'hui, les morts ne restent pas toujours dans leurs tombes. On plante une fleur au pied d'une croix de bois pour ceux qu'on a dû achever.</p><p><em>Date : 01/11.</em></p>",
+        "content": "<p>En décembre, les letchis rougissent dans tous les jardins : on en vendait des bouquets au bord des routes, on en offrait aux voisins. Au camp, on monte dans l'arbre, on remplit les paniers, et pour une journée, tout le monde a le menton qui colle.</p><p><em>Date : vers le 13 et le 14 décembre, au plus fort de la saison.</em></p>",
         "format": 1
       },
       "ownership": {
@@ -292,30 +292,7 @@
       },
       "flags": {
         "lakour-fenoir": {
-          "cle": "toussaint"
-        }
-      }
-    },
-    {
-      "_id": "8Mo4EbbyKTTaveLn",
-      "_key": "!journal.pages!qqQlhw4tkOi7z92s.8Mo4EbbyKTTaveLn",
-      "name": "La fête des letchis",
-      "type": "text",
-      "sort": 1300,
-      "title": {
-        "show": true,
-        "level": 1
-      },
-      "text": {
-        "content": "<p>En décembre, les letchis rougissent dans tous les jardins : on en vendait des bouquets au bord des routes, on en offrait aux voisins. Au camp, on monte dans l'arbre, on remplit les paniers, et pour une journée, tout le monde a le menton qui colle.</p><p><em>Date : 15/12.</em></p>",
-        "format": 1
-      },
-      "ownership": {
-        "default": -1
-      },
-      "flags": {
-        "lakour-fenoir": {
-          "cle": "fete-des-letchis"
+          "cle": "letchis"
         }
       }
     }
