@@ -1,0 +1,18 @@
+{
+  "_commentaire": "Libellés anglais des figurants (assets/jetons/figurants.json, champ « libelle », lu par le MJ IA) : appliqués à la copie des assets dans lakour-fenoir-en par outils/fabriquer-fenoir.mjs --langue en. Clé : le type de figurant ; les clés et les jetons ne changent pas. Glossaire des dictionnaires : Livides = the Pallid, les Hauts = the Highlands, îlet gardé tel quel.",
+  "livide": "Pallid",
+  "livide-ancien": "Highland Pallid",
+  "noye": "Drowned of the lagoon",
+  "refugie": "Refugee",
+  "enfant": "Child",
+  "pillard": "Raider",
+  "soldat": "Garrison soldier",
+  "pelerin": "Lava pilgrim",
+  "pecheur": "Fisherman",
+  "fermier": "Highland farmer",
+  "soignant": "Caregiver",
+  "ferrailleur": "Scrapper",
+  "ilette": "Îlet dweller",
+  "chien": "Stray dog",
+  "malade": "Sick person"
+}

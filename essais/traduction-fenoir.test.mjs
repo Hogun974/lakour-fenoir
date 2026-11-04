@@ -20,7 +20,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 import {
   MODULE_EN, OPTIONS_TRADUCTION, PACK_REGISTRE, TYPE_PACK, extraireTout, fabriquer, fabriquerAnglais, lireDictionnaires, manifesteAnglais,
-  verifierDocuments, verifierDonnees
+  traduireFigurants, verifierDocuments, verifierDonnees
 } from "../outils/fabriquer-fenoir.mjs";
 import { donnees } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { COMPETENCES, MODULE } from "../modules/lakour-fenoir/contenu/aides.mjs";
@@ -192,8 +192,26 @@ test("scripts/identite.js : l'identifiant du module vient de l'adresse du script
   }
 });
 
-test("lakour-fenoir-en sur le disque (si fabriqué) : contrat des modules de contenu, identité anglaise, registre et plans traduits", { skip: !existsSync(new URL("src", RACINE_EN)) && "npm run fabriquer-fenoir-en n'a pas tourné" }, async () => {
+test("figurants : contenu/en/figurants.json traduit chaque type lu par le MJ IA, sans toucher aux clés ni aux jetons", () => {
+  const table = JSON.parse(readFileSync(new URL(`../modules/${M}/assets/jetons/figurants.json`, import.meta.url), "utf8"));
+  const libelles = JSON.parse(readFileSync(new URL(`../modules/${M}/contenu/en/figurants.json`, import.meta.url), "utf8"));
+  const en = traduireFigurants(table, libelles);
+  assert.deepEqual(Object.keys(en), Object.keys(table));
+  assert.deepEqual(Object.keys(libelles).filter(k => !k.startsWith("_")).sort(), Object.keys(table).sort(), "un libellé anglais par type, ni plus ni moins");
+  for (const [type, f] of Object.entries(en)) {
+    assert.equal(f.jeton, table[type].jeton, type);
+    assert.equal(f.libelle, libelles[type], type);
+    assert.ok(f.libelle.trim() && !/[àâçéèêëïôûùüÿœ]/i.test(f.libelle), `${type} : libellé encore français`);
+  }
+  assert.equal(en.livide.libelle, "Pallid", "glossaire : Livides -> the Pallid");
+  assert.ok(!packs.includes("figurants"), "le dictionnaire des figurants n'entre pas dans les dictionnaires des packs");
+});
+
+test("lakour-fenoir-en sur le disque (si fabriqué) : contrat des modules de contenu, identité anglaise, registre, plans et figurants traduits", { skip: !existsSync(new URL("src", RACINE_EN)) && "npm run fabriquer-fenoir-en n'a pas tourné" }, async () => {
   assert.deepEqual(verifierModuleDeContenu(`modules/${MODULE_EN}`), []);
+  const figurants = JSON.parse(readFileSync(new URL("assets/jetons/figurants.json", RACINE_EN), "utf8"));
+  assert.equal(figurants.livide.libelle, "Pallid");
+  assert.equal(figurants.livide.jeton, "livide-frais");
   const identite = await import(pathToFileURL(new URL("scripts/identite.js", RACINE_EN).pathname.replace(/^\/([A-Za-z]:)/, "$1")).href);
   assert.equal(identite.ID, MODULE_EN);
   assert.equal(identite.ANGLAIS, true);

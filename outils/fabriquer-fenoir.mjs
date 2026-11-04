@@ -521,11 +521,11 @@ export function documentsEnRegistre(registre, docs) {
 }
 
 // ---------------------------------------------------------------- Dictionnaires de traduction
-// Union des dictionnaires contenu/en/<pack>.json (module.json à part : manifeste). Rend { dictionnaire, packs }.
+// Union des dictionnaires contenu/en/<pack>.json (module.json et figurants.json à part : manifeste et assets). Rend { dictionnaire, packs }.
 export function lireDictionnaires(dossier = DOSSIER_DICTIONNAIRES) {
   const dictionnaire = {}, packs = [];
   if (!existsSync(dossier)) return { dictionnaire, packs };
-  for (const f of readdirSync(dossier).filter(f => f.endsWith(".json") && f !== "module.json").sort()) {
+  for (const f of readdirSync(dossier).filter(f => f.endsWith(".json") && !["module.json", "figurants.json"].includes(f)).sort()) {
     Object.assign(dictionnaire, JSON.parse(readFileSync(join(dossier, f), "utf8")));
     packs.push(f.slice(0, -5));
   }
@@ -590,8 +590,17 @@ export function manifesteAnglais(manifeste, traductions) {
   return en;
 }
 
+// Libellés anglais des types de figurants (assets/jetons/figurants.json, champ « libelle », lu par le MJ IA), appliqués à une
+// table { type: { libelle, jeton } } : contenu/en/figurants.json donne { type: "English label" }. Clés et jetons inchangés.
+export function traduireFigurants(table, libelles = {}) {
+  const sortie = structuredClone(table);
+  for (const [type, f] of Object.entries(sortie)) if (typeof libelles[type] === "string" && libelles[type].trim()) f.libelle = libelles[type];
+  return sortie;
+}
+
 // Copie le dossier du module français (COPIES) dans le module anglais : JSON des assets récrits (« modules/lakour-fenoir/ » ->
-// « modules/lakour-fenoir-en/ »), plans.json refait avec les plans traduits des scènes, registre traduit.
+// « modules/lakour-fenoir-en/ »), libellés des figurants traduits (contenu/en/figurants.json), plans.json refait avec les
+// plans traduits des scènes, registre traduit.
 function copierModule(documents, registre) {
   for (const element of COPIES) {
     const source = join(RACINE, element), cible = join(RACINE_EN, element);
@@ -607,6 +616,11 @@ function copierModule(documents, registre) {
     }
   };
   recrireJson(join(RACINE_EN, "assets"));
+  const figurants = join(RACINE_EN, "assets", "jetons", "figurants.json"), libelles = join(DOSSIER_DICTIONNAIRES, "figurants.json");
+  if (existsSync(figurants) && existsSync(libelles)) {
+    const table = traduireFigurants(JSON.parse(readFileSync(figurants, "utf8")), JSON.parse(readFileSync(libelles, "utf8")));
+    writeFileSync(figurants, `${JSON.stringify(table, null, 2)}\n`);
+  }
   const plans = {};
   for (const { pack, doc } of documents) if (pack === "scenes" && doc.flags?.[MODULE_EN]?.plan) plans[doc.flags[MODULE_EN].cle] = doc.flags[MODULE_EN].plan;
   writeFileSync(join(RACINE_EN, "assets", "cartes", "plans.json"), `${JSON.stringify(plans, null, 1)}\n`);

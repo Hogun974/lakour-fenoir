@@ -1,0 +1,6 @@
+{
+  "_commentaire": "Monde vierge anglais la-kour-fenoir-en (modules/lakour-mj-ia/outils/empaqueter-monde.mjs --langue en) : ce qui change par rapport à monde/world.json. Le reste (version, système, compatibilité, auteurs, adresses) est repris du manifeste français ; le module requis devient lakour-fenoir-en.",
+  "id": "la-kour-fenoir-en",
+  "title": "La Kour — Fénoir (English)",
+  "description": "<p>December, Réunion Island. The lychees are ripening, Christmas is being prepared under the filao trees, the radio is talking about a strange fever at the hospital. Tonight, someone you know did not get back up the way they should have.</p><p><strong>Fénoir</strong> is an original survival game: you arrive on day zero of the Grey, on an island you love. Every action costs time, and the island changes while you play: networks go down, hordes of the Pallid, gangs, cyclones. Find the right place for a shelter, fit it out, manage water, food, energy and morale; then choose: move on further with what you have learned, or put down roots until you are self-sufficient — cistern, vegetable garden, solar panels, galleries. Solo with AI companions, with friends, or both; run by the AI GM or by a human game master.</p>"
+}
