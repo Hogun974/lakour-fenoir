@@ -5,14 +5,17 @@
 // Nombres retenus (REGLES_MONDE) :
 // - Infestation de départ : population × 0,1. Montée vers `population` : chaque jour + (population − infestation) × taux,
 //   taux 0,05 au jour zéro, 0,15 en panique, 0,12 en effondrement, 0,03 en silence, 0 ensuite.
-//   À partir de « apres » (jour 60) : −0,03 par jour dans les Bas (altitude < 400 m), −0,008 en altitude.
-// - Hordes : naissent (8 % par jour) dans une région à infestation ≥ 4 dès l'effondrement (jour 7), taille 1 à 3 (au plus 5) ;
+//   À partir de « apres » (jour 60) : −0,045 par jour dans les Bas (altitude < 400 m : la chaleur), −0,008 en altitude.
+// - Hordes : naissent (5 % par jour) dans une région à infestation ≥ 4 dès l'effondrement (jour 7), taille 1 à 3 (au plus 5) ;
+//   à partir de « apres », les Hauts (altitude ≥ 400 m) à infestation ≥ 2,5 en forment aussi (2 % par jour : les troupes lentes
+//   des Livides anciens, conservés par le froid) ;
 //   chaque jour, une horde qui a un cap y va si la route est toujours praticable, sinon elle se choisit un cap (60 %) parmi les
 //   voisines à route ouverte ou difficile (difficile : poids ÷ 2), poids 1 + 2 × bruit de la région ; elle apporte
 //   0,1 × taille d'infestation là où elle passe (jusqu'à sa propre densité) ; elle perd 1 de taille avec 3 % de chances par
 //   jour (+5 % en saison des pluies, +8 % dans les Bas après le jour 60 : la chaleur).
-// - Pillage par les autres : chaque ressource perd réserve × (population / 5) × taux de la phase (jour zéro 3 %, panique 8 %,
-//   effondrement 5 %, silence 2,5 %, après 1,2 %) + 0,4 % par point de force de faction hostile, arrondi au hasard.
+// - Pillage par les autres : chaque ressource perd réserve × (max(population, 1,5) / 5) × taux de la phase (jour zéro 3 %,
+//   panique 8 %, effondrement 5 %, silence 3,5 %, après 2 %) + 0,4 % par point de force de faction hostile, arrondi au hasard
+//   (le plancher de population 1,5 : les réfugiés pillent aussi les cirques et les Hauts presque vides).
 //   Les réserves ne reviennent jamais ; la nature se régénère (abri.mjs) et les autres y prennent 0,2 × rendement × pop/5.
 // - Météo : en saison des pluies (et si l'arrivée y tombe aussi), un cyclone se forme avec 1 % de chances par jour : pré-alerte
 //   2 jours avant, orange la veille, rouge le jour (routes coupées, cueillette ÷ 2, hordes −1), passé le lendemain, oublié
@@ -25,10 +28,11 @@
 //   −0,01/jour sinon. Une faction de force ≥ 2 essaime vers une voisine ouverte avec 1 % × force par jour (+0,5 là-bas,
 //   −0,3 chez elle). Un abri abandonné est occupé par la plus forte faction (force ≥ 1) avec 4 % par jour ; inoccupé, chacune
 //   de ses installations s'abîme de 1 avec 2 % par jour.
-// - Menaces contre l'abri (§1.7), au plus 2 par jour : horde présente (30 % + 5 %/bruit + 4 %/visibilité, force 2 × taille + 1),
-//   Livides errants (infestation × 4 % × (1 + bruit/10) + 1 %/visibilité, force = infestation arrondie), bande hostile
-//   (1 % × force × (1 + visibilité), méfiante ÷ 2, force ceil(1,5 × force) + 1), visite d'une faction neutre ou amicale,
-//   chiens errants (2 %, force 2), accident (1 %).
+// - Menaces contre l'abri (§1.7), au plus 2 par jour : horde présente (8 % + 4 %/bruit + 2 %/visibilité, force 2 × taille + 1),
+//   Livides errants (infestation × 2 % × (1 + bruit/10) + 1 %/visibilité, force = infestation arrondie), bande hostile
+//   (0,4 % × force × (1 + visibilité), méfiante ÷ 2, force ceil(1,5 × force) + 1), visite d'une faction neutre ou amicale,
+//   chiens errants (2 %, force 2), accident (1 %). (Équilibrage du 2026-11-04, docs/survie-equilibrage.md : avant, 30 %, 4 % et
+//   1 % donnaient huit assauts par mois à un abri enraciné.)
 // - Faits : `public` selon ce que le groupe perçoit d'où il est (région courante ; fumée et convois des voisines ; nouvelles
 //   par la radio, ou par le téléphone tant qu'il marche dans sa région ; ce que toute l'île voit).
 // - Textes (textes.mjs) : chaque fait, menace et entrée du journal secret porte `texte` (français, repli) et `cle`/`params` pour
@@ -44,17 +48,19 @@ import { partPillage, reseauxActifs } from "./renseignements.mjs";
 export const REGLES_MONDE = {
   infestationDepart: 0.1,
   montee: { "jour-zero": 0.05, panique: 0.15, effondrement: 0.12, silence: 0.03, apres: 0 },
-  decroissanceBas: 0.03,
+  decroissanceBas: 0.045,
   decroissanceHauts: 0.008,
-  horde: { naissance: 0.08, seuil: 4, jourMin: 7, mouvement: 0.6, apport: 0.1, dispersion: 0.03, dispersionPluies: 0.05, dispersionChaleur: 0.08 },
-  pillage: { "jour-zero": 0.03, panique: 0.08, effondrement: 0.05, silence: 0.025, apres: 0.012 },
+  horde: { naissance: 0.05, seuil: 4, jourMin: 7, seuilHauts: 2.5, naissanceHauts: 0.02, mouvement: 0.6, apport: 0.1, dispersion: 0.03, dispersionPluies: 0.05, dispersionChaleur: 0.08 },
+  pillage: { "jour-zero": 0.03, panique: 0.08, effondrement: 0.05, silence: 0.035, apres: 0.02 },
   pillageFaction: 0.004,
+  pillagePopMin: 1.5,
   natureAutres: 0.2,
   cyclone: { chance: 0.01, forces: [[1, 50], [2, 35], [3, 15]] },
   fortesPluies: { pluies: 0.02, seche: 0.004 },
   eruption: 0.003,
   evenementContenu: 0.25,
   faction: { croissance: 0.01, essaimage: 0.01, occupation: 0.04, degradation: 0.02 },
+  menace: { horde: 0.08, hordeBruit: 0.04, hordeVisibilite: 0.02, livides: 0.02, bande: 0.004 },
   menacesMax: 2
 };
 
@@ -246,7 +252,9 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
   if (jour >= R.horde.jourMin) {
     for (const r of regions) {
       const reg = monde.regions[r.cle];
-      if (reg.infestation >= R.horde.seuil && chance(R.horde.naissance, h)) {
+      const hauts = phase === "apres" && Number(r.altitude) >= ALTITUDE_BAS;
+      const nait = reg.infestation >= R.horde.seuil ? chance(R.horde.naissance, h) : hauts && reg.infestation >= R.horde.seuilHauts && chance(R.horde.naissanceHauts, h);
+      if (nait) {
         const horde = { id: nouvelId("h"), region: r.cle, taille: entier(1, 3, h), cap: null, depuis: jour };
         monde.hordes.push(horde);
         fait(r.cle, "horde-nait", `Une horde se forme à ${nomRegion(r.cle)} (taille ${horde.taille}).`, "voisins", { horde: horde.id }, { region: nomRegion(r.cle), taille: horde.taille });
@@ -289,7 +297,8 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
     const reg = monde.regions[r.cle];
     const pop = Number(r.population) || 0;
     const hostiles = Object.entries(reg.factions).filter(([f]) => factionDe(contenu, f)?.attitude === "hostile").reduce((s, [, x]) => s + x, 0);
-    const f = (pop / 5) * R.pillage[phase] + hostiles * R.pillageFaction;
+    // Les réfugiés montent partout : une région presque vide est pillée comme si elle avait `pillagePopMin` de population.
+    const f = (Math.max(pop, R.pillagePopMin) / 5) * R.pillage[phase] + hostiles * R.pillageFaction;
     for (const res of Object.keys(reg.pillage)) {
       const q = reg.pillage[res];
       if (q > 0) reg.pillage[res] = Math.max(0, q - Math.min(q, arrondiHasard(q * f, h)));
@@ -379,9 +388,9 @@ export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jou
   const menaces = [];
   for (const ho of monde.hordes ?? []) {
     if (ho.region !== region) continue;
-    if (chance(0.3 + 0.05 * br + 0.04 * vis, hasard)) menaces.push({ type: "horde", force: 2 * ho.taille + 1, horde: ho.id, texte: `Une horde (taille ${ho.taille}) trouve l'abri.`, cle: "menace-horde", params: { taille: ho.taille } });
+    if (chance(R.menace.horde + R.menace.hordeBruit * br + R.menace.hordeVisibilite * vis, hasard)) menaces.push({ type: "horde", force: 2 * ho.taille + 1, horde: ho.id, texte: `Une horde (taille ${ho.taille}) trouve l'abri.`, cle: "menace-horde", params: { taille: ho.taille } });
   }
-  if (reg.infestation > 0.2 && chance(reg.infestation * 0.04 * (1 + br / 10) + 0.01 * vis, hasard)) {
+  if (reg.infestation > 0.2 && chance(reg.infestation * R.menace.livides * (1 + br / 10) + 0.01 * vis, hasard)) {
     menaces.push({ type: "livides", force: Math.max(1, Math.round(reg.infestation)), texte: "Des Livides errants rôdent autour de l'abri.", cle: "menace-livides", params: {} });
   }
   for (const [f, force] of Object.entries(reg.factions ?? {})) {
@@ -389,7 +398,7 @@ export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jou
     const def = factionDe(contenu, f);
     const attitude = def?.attitude ?? "mefiante";
     if (attitude === "hostile" || attitude === "mefiante") {
-      const p = 0.01 * force * (1 + vis) / (attitude === "mefiante" ? 2 : 1);
+      const p = R.menace.bande * force * (1 + vis) / (attitude === "mefiante" ? 2 : 1);
       if (chance(p, hasard)) menaces.push({ type: "bande", force: Math.ceil(1.5 * force) + 1, faction: f, attitude, texte: `${def?.nom ?? f} s'intéresse à l'abri.`, cle: "menace-bande", params: { faction: def?.nom ?? f } });
     } else if (chance(0.02 * force * (1 + vis / 2), hasard)) {
       menaces.push({ type: "visite", force: 0, faction: f, attitude, texte: `${def?.nom ?? f} vient à la rencontre du groupe.`, cle: "menace-visite", params: { faction: def?.nom ?? f } });

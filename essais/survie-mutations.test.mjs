@@ -38,7 +38,7 @@ const VERIFICATIONS = {
     m.regions["port-gris"].infestation = 3;
     m.regions["hauts-verts"].infestation = 3;
     const r = L.simulerJour(m, C, constant(0.999), 61, {}).monde;
-    assert.ok(Math.abs(r.regions["port-gris"].infestation - 2.97) < 1e-9);
+    assert.ok(Math.abs(r.regions["port-gris"].infestation - 2.955) < 1e-9);
     assert.ok(Math.abs(r.regions["hauts-verts"].infestation - 2.992) < 1e-9);
   },
   "coupures dans la fenêtre": L => {
@@ -169,7 +169,7 @@ const MUTATIONS = [
   ["abri.mjs", "export const PLANS = { ressources: 0.75, travail: 0.5 };", "export const PLANS = { ressources: 1, travail: 0.5 };", "plans −25 %"],
   ["abri.mjs", "export const PLANS = { ressources: 0.75, travail: 0.5 };", "export const PLANS = { ressources: 0.75, travail: 1 };", "plans travail ÷ 2"],
   ["abri.mjs", "else sortie[r] = Math.ceil(n * PLANS.ressources);", "else sortie[r] = Math.floor(n * PLANS.ressources);", "plans arrondis au supérieur"],
-  ["monde.mjs", "decroissanceBas: 0.03,", "decroissanceBas: 0.008,", "décomposition des Bas"],
+  ["monde.mjs", "decroissanceBas: 0.045,", "decroissanceBas: 0.008,", "décomposition des Bas"],
   ["monde.mjs", "Number(r.altitude) < ALTITUDE_BAS ? R.decroissanceBas : R.decroissanceHauts", "Number(r.altitude) > ALTITUDE_BAS ? R.decroissanceBas : R.decroissanceHauts", "Bas et Hauts"],
   ["monde.mjs", "entier(Number(f[0]), Number(f[1]), h)", "entier(Number(f[0]), Number(f[1]) + 5, h)", "coupures dans la fenêtre"],
   ["ressources.mjs", "if (conservation || n <= 0) return 0;", "if (n <= 0) return 0;", "pertes : conservation"],

@@ -387,8 +387,12 @@ export function exploiterNature(nature = {}, cle, demande) {
 }
 
 // Les installations de départ d'un site, en instances achevées depuis longtemps (un verger déjà en rapport : pas de délai).
+// Un site trouvé tard est à l'abandon depuis des semaines : ses installations ont pris 1 point d'état par 40 jours écoulés
+// après le vingtième (J60 : 1, J100 : 2, J140 et après : 3, hors service, à réparer), comme s'abîme un abri abandonné (monde.mjs).
+export const USURE_SITES = { apres: 20, parPoint: 40 };
+export const etatInstallationsDuSite = jour => borner(Math.floor(Math.max(0, Number(jour) - USURE_SITES.apres) / USURE_SITES.parPoint), 0, 3);
 export function installationsDuSite(site, contenu, jour = 0) {
   const idx = indexer(contenu);
   return (site?.installationsDepart ?? []).filter(i => idx.installations.has(i.installation))
-    .map(i => instanceInstallation(i.installation, Number(i.niveau) || 1, { termineLe: jour - 365 }));
+    .map(i => instanceInstallation(i.installation, Number(i.niveau) || 1, { termineLe: jour - 365, etat: etatInstallationsDuSite(jour) }));
 }

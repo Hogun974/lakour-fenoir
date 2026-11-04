@@ -620,7 +620,7 @@
     "medicaments": 15,
     "munitions": 15,
     "materiaux": 160,
-    "pieces": 40,
+    "pieces": 50,
     "graines": 50
    },
    "nature": {
@@ -1102,7 +1102,7 @@
     "medicaments": 25,
     "munitions": 10,
     "materiaux": 150,
-    "pieces": 50,
+    "pieces": 60,
     "graines": 45
    },
    "nature": {
@@ -1461,7 +1461,7 @@
     "medicaments": 10,
     "munitions": 8,
     "materiaux": 100,
-    "pieces": 25,
+    "pieces": 35,
     "graines": 40
    },
    "nature": {
@@ -1579,7 +1579,7 @@
     "medicaments": 15,
     "munitions": 8,
     "materiaux": 90,
-    "pieces": 25,
+    "pieces": 35,
     "graines": 50
    },
    "nature": {
@@ -1697,7 +1697,7 @@
     "medicaments": 15,
     "munitions": 6,
     "materiaux": 100,
-    "pieces": 25,
+    "pieces": 35,
     "graines": 55
    },
    "nature": {
@@ -1827,7 +1827,7 @@
     "medicaments": 6,
     "munitions": 2,
     "materiaux": 40,
-    "pieces": 10,
+    "pieces": 20,
     "graines": 30
    },
    "nature": {
@@ -1970,8 +1970,8 @@
    "souterrain": 0,
    "acces": 2,
    "stocks": {
-    "eau": 12,
-    "nourriture": 20,
+    "eau": 16,
+    "nourriture": 28,
     "carburant": 0,
     "medicaments": 3,
     "munitions": 0,
@@ -2011,8 +2011,8 @@
    "souterrain": 1,
    "acces": 2,
    "stocks": {
-    "eau": 10,
-    "nourriture": 15,
+    "eau": 14,
+    "nourriture": 23,
     "carburant": 0,
     "medicaments": 2,
     "munitions": 0,
@@ -2061,7 +2061,7 @@
    "acces": 3,
    "stocks": {
     "eau": 20,
-    "nourriture": 25,
+    "nourriture": 33,
     "carburant": 12,
     "medicaments": 10,
     "munitions": 0,
@@ -2113,8 +2113,8 @@
    "souterrain": 1,
    "acces": 2,
    "stocks": {
-    "eau": 6,
-    "nourriture": 10,
+    "eau": 8,
+    "nourriture": 16,
     "carburant": 0,
     "medicaments": 0,
     "munitions": 0,
@@ -2158,8 +2158,8 @@
    "souterrain": 0,
    "acces": 2,
    "stocks": {
-    "eau": 6,
-    "nourriture": 6,
+    "eau": 8,
+    "nourriture": 12,
     "carburant": 0,
     "medicaments": 0,
     "munitions": 0,
@@ -2239,8 +2239,8 @@
    "souterrain": 0,
    "acces": 2,
    "stocks": {
-    "eau": 6,
-    "nourriture": 8,
+    "eau": 8,
+    "nourriture": 14,
     "carburant": 6,
     "medicaments": 0,
     "munitions": 0,
@@ -2459,8 +2459,8 @@
    "souterrain": 0,
    "acces": 3,
    "stocks": {
-    "eau": 15,
-    "nourriture": 30,
+    "eau": 20,
+    "nourriture": 38,
     "carburant": 0,
     "medicaments": 6,
     "munitions": 0,
@@ -2553,8 +2553,8 @@
    "souterrain": 1,
    "acces": 2,
    "stocks": {
-    "eau": 10,
-    "nourriture": 10,
+    "eau": 12,
+    "nourriture": 16,
     "carburant": 0,
     "medicaments": 0,
     "munitions": 0,
@@ -2606,8 +2606,8 @@
    "souterrain": 0,
    "acces": 2,
    "stocks": {
-    "eau": 10,
-    "nourriture": 8,
+    "eau": 12,
+    "nourriture": 14,
     "carburant": 6,
     "medicaments": 0,
     "munitions": 0,
@@ -2651,8 +2651,8 @@
    "souterrain": 1,
    "acces": 2,
    "stocks": {
-    "eau": 10,
-    "nourriture": 20,
+    "eau": 14,
+    "nourriture": 28,
     "carburant": 0,
     "medicaments": 4,
     "munitions": 0,
@@ -2847,8 +2847,8 @@
    "souterrain": 1,
    "acces": 3,
    "stocks": {
-    "eau": 6,
-    "nourriture": 6,
+    "eau": 8,
+    "nourriture": 12,
     "carburant": 0,
     "medicaments": 0,
     "munitions": 0,
@@ -2888,8 +2888,8 @@
    "souterrain": 0,
    "acces": 2,
    "stocks": {
-    "eau": 6,
-    "nourriture": 8,
+    "eau": 8,
+    "nourriture": 14,
     "carburant": 0,
     "medicaments": 0,
     "munitions": 0,
@@ -3036,7 +3036,7 @@
    "acces": 3,
    "stocks": {
     "eau": 15,
-    "nourriture": 15,
+    "nourriture": 23,
     "carburant": 10,
     "medicaments": 60,
     "munitions": 0,
@@ -3129,8 +3129,8 @@
    "souterrain": 0,
    "acces": 2,
    "stocks": {
-    "eau": 5,
-    "nourriture": 10,
+    "eau": 8,
+    "nourriture": 16,
     "carburant": 8,
     "medicaments": 0,
     "munitions": 0,
@@ -3613,8 +3613,8 @@
    "souterrain": 1,
    "acces": 2,
    "stocks": {
-    "eau": 15,
-    "nourriture": 15,
+    "eau": 18,
+    "nourriture": 23,
     "carburant": 0,
     "medicaments": 4,
     "munitions": 0,
@@ -3711,8 +3711,8 @@
    "souterrain": 0,
    "acces": 2,
    "stocks": {
-    "eau": 10,
-    "nourriture": 12,
+    "eau": 12,
+    "nourriture": 18,
     "carburant": 3,
     "medicaments": 0,
     "munitions": 0,

@@ -202,7 +202,7 @@ monde: {
 **Simulation d'un jour** (`logique/monde.mjs`, `simulerJour(monde, contenu, hasard, jour, bruitParRegion)` → `{ monde, faits }`,
 pure, déterministe pour une graine) :
 - **Infestation** : monte vite dans les régions peuplées pendant `panique` et `effondrement` (vers `population`),
-  puis, à partir de `apres`, **décroît** dans les régions basses (altitude < 400 m : −0,03 par jour) et bien plus lentement
+  puis, à partir de `apres`, **décroît** dans les régions basses (altitude < 400 m : −0,045 par jour) et bien plus lentement
   en altitude ; les hordes l'augmentent là où elles passent.
 - **Hordes** : naissent dans les régions à infestation ≥ 4 (phase `effondrement` et après), se déplacent d'une région
   voisine à l'autre par les routes ouvertes, attirées par le **bruit** cumulé (celui du groupe compris) ; se dispersent avec

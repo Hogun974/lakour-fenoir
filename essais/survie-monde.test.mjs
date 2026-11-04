@@ -58,7 +58,7 @@ test("simulerJour : infestation qui monte vers la population, puis décroît dan
   apres.regions["port-gris"].infestation = 3;
   apres.regions["hauts-verts"].infestation = 3;
   const r = L.simulerJour(apres, C, constant(0.999), 61, {}).monde;
-  assert.ok(Math.abs(r.regions["port-gris"].infestation - 2.97) < 1e-9);
+  assert.ok(Math.abs(r.regions["port-gris"].infestation - 2.955) < 1e-9);
   assert.ok(Math.abs(r.regions["hauts-verts"].infestation - 2.992) < 1e-9);
 });
 
