@@ -9,7 +9,9 @@
     "fabriquer-fenoir-en": "node outils/fabriquer-fenoir.mjs --langue en",
     "contrat": "node modules/lakour-mj-ia/outils/contrat-contenu.mjs modules/lakour-fenoir",
     "valider": "node modules/lakour-mj-ia/outils/valider-foundry.mjs modules/lakour-fenoir lakour-survie",
-    "fabriquer-jetons-fenoir": "node outils/fabriquer-jetons-fenoir.mjs"
+    "fabriquer-jetons-fenoir": "node outils/fabriquer-jetons-fenoir.mjs",
+    "empaqueter-paquets": "node outils/empaqueter-paquets.mjs",
+    "empaqueter-monde": "node modules/lakour-mj-ia/outils/empaqueter-monde.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "3.0.5",

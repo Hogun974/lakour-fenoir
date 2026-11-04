@@ -1,0 +1,102 @@
+# Publication d'une version : à chaque étiquette « v* » poussée (ex. v0.1.0), fabrique le contenu (français, puis anglais :
+# module lakour-fenoir-en engendré des mêmes sources et des dictionnaires contenu/en/), empaquette le système, les deux
+# modules de contenu et le monde vierge, puis crée la release GitHub avec :
+#   system.json, lakour-survie.zip, module.json, lakour-fenoir.zip, lakour-fenoir-en.json, lakour-fenoir-en.zip,
+#   world.json, la-kour-fenoir.zip  (et world-en.json, la-kour-fenoir-en.zip si le monde anglais est fabriqué)
+# Les manifestes publiés portent « manifest » (releases/latest/download/…) et « download » (releases/download/<tag>/…) :
+# Foundry trouve donc toujours la dernière version par le manifeste, et chaque version garde son archive. Adresse stable du
+# manifeste anglais : https://github.com/Hogun974/lakour-fenoir/releases/latest/download/lakour-fenoir-en.json
+# Le sous-module modules/lakour-mj-ia est récupéré : la fabrication du contenu en a besoin (contrat, traduction, jetons, monde).
+name: Publication
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  publier:
+    name: Fabriquer et publier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dépôt et sous-module
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Dépendances
+        run: npm ci
+
+      - name: Essais
+        run: npm run essais
+
+      - name: Fabrication du contenu (src/, packs/, assets/donnees.json, plans des cartes)
+        run: npm run fabriquer-fenoir
+
+      - name: Module anglais lakour-fenoir-en (modules/lakour-fenoir-en/, hors git)
+        run: npm run fabriquer-fenoir-en
+
+      - name: Empaquetage du système et des modules
+        run: node outils/empaqueter-paquets.mjs --tag "$GITHUB_REF_NAME" --sortie dist
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Empaquetage du monde vierge (monde/src -> monde/dist, puis vérification des fuites)
+        run: npm run empaqueter-monde
+
+      - name: Monde dans dist/ (world.json, la-kour-fenoir.zip ; monde anglais s'il existe)
+        run: |
+          cp monde/dist/world.json dist/world.json
+          cp monde/dist/la-kour-fenoir.zip dist/la-kour-fenoir.zip
+          for f in world.en.json world-en.json; do
+            if [ -s "monde/dist/$f" ]; then cp "monde/dist/$f" dist/world-en.json; echo "Monde anglais : $f"; fi
+          done
+          if [ -s monde/dist/la-kour-fenoir-en.zip ]; then cp monde/dist/la-kour-fenoir-en.zip dist/la-kour-fenoir-en.zip; fi
+
+      - name: Vérification des fichiers à publier
+        run: |
+          ls -la dist/
+          for f in dist/system.json dist/lakour-survie.zip dist/module.json dist/lakour-fenoir.zip dist/lakour-fenoir-en.json dist/lakour-fenoir-en.zip dist/world.json dist/la-kour-fenoir.zip; do
+            test -s "$f" || { echo "Fichier manquant : $f"; exit 1; }
+          done
+          node -e "for (const f of require('fs').readdirSync('dist').filter(f => f.endsWith('.json'))) { const m = require('./dist/' + f); console.log(f, m.id, m.version, '->', m.download); }"
+
+      - name: Notes de version
+        id: notes
+        run: |
+          SYS=$(node -p "require('./dist/system.json').version")
+          MOD=$(node -p "require('./dist/module.json').version")
+          MONDE=$(node -p "require('./dist/world.json').version")
+          {
+            echo "Système \`lakour-survie\` ${SYS} · module de contenu \`lakour-fenoir\` ${MOD} · English edition \`lakour-fenoir-en\` ${MOD} · monde vierge \`la-kour-fenoir\` ${MONDE}"
+            if [ -s dist/world-en.json ]; then echo "· English world: \`world-en.json\`"; fi
+            echo
+            echo "Installation dans Foundry VTT (v14) : voir le README. Manifeste du système :"
+            echo "\`https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/system.json\`"
+            echo
+            echo "Module de contenu : \`https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/module.json\` · monde vierge : \`https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/world.json\`"
+            echo
+            echo "English content module (same documents, same identifiers as \`lakour-fenoir\`; enable only one of the two):"
+            echo "\`https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/lakour-fenoir-en.json\`"
+            echo
+            echo "Détail des changements : [CHANGELOG.md](https://github.com/${GITHUB_REPOSITORY}/blob/${GITHUB_REF_NAME}/CHANGELOG.md)."
+          } > dist/NOTES.md
+
+      - name: Release GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          body_path: dist/NOTES.md
+          files: |
+            dist/*.json
+            dist/*.zip
+          fail_on_unmatched_files: true
