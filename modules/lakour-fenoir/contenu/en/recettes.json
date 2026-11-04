@@ -1,0 +1,233 @@
+{
+  "recettes/2RjHb8GsOBEOSg9r": {
+    "_nom": "Chauffe-eau solaire de fortune",
+    "name": {
+      "fr": "Chauffe-eau solaire de fortune",
+      "en": "Makeshift solar water heater"
+    },
+    "system.description": {
+      "fr": "<p>Un serpentin de tuyau d'arrosage noir sur le toit, un fût isolé de vieilles couvertures, un robinet : de l'eau chaude au soleil.</p>",
+      "en": "<p>A coil of black garden hose on the roof, a drum insulated with old blankets, a tap: hot water from the sun.</p>"
+    }
+  },
+  "recettes/7JuZNH2SQ4MCyAaV": {
+    "_nom": "Gourde filtrante de fortune",
+    "name": {
+      "fr": "Gourde filtrante de fortune",
+      "en": "Makeshift filter bottle"
+    },
+    "system.description": {
+      "fr": "<p>Une bouteille, du coton, du sable lavé, du charbon de bois pilé : on filtre, puis on fait bouillir ou on laisse au soleil.</p>",
+      "en": "<p>A bottle, cotton wool, washed sand, crushed charcoal: you filter, then boil or leave in the sun.</p>"
+    }
+  },
+  "recettes/83vFZKoyGyRF5GKg": {
+    "_nom": "Vélo-cargo",
+    "name": {
+      "fr": "Vélo-cargo",
+      "en": "Cargo bike"
+    },
+    "system.description": {
+      "fr": "<p>Deux vélos, une caisse de bois, des soudures ou des colliers : porter des bidons et des sacs sans carburant.</p>",
+      "en": "<p>Two bicycles, a wooden crate, welds or cable ties: carry jerrycans and sacks without fuel.</p>"
+    }
+  },
+  "recettes/8aqgHi3ZUxy4IUE0": {
+    "_nom": "Cloches d'alerte",
+    "name": {
+      "fr": "Cloches d'alerte",
+      "en": "Alarm bells"
+    },
+    "system.description": {
+      "fr": "<p>Des fils tendus, des boîtes de conserve, des clochettes de chèvre : un réseau d'alarme autour du camp.</p>",
+      "en": "<p>Stretched wires, tin cans, goat bells: an alarm network around the camp.</p>"
+    }
+  },
+  "recettes/Bv0V2xng4Y1vZtkp": {
+    "_nom": "Lance de fortune",
+    "name": {
+      "fr": "Lance de fortune",
+      "en": "Makeshift spear"
+    },
+    "system.description": {
+      "fr": "<p>Un bambou bien droit, une lame ligaturée au fil de fer et à la chambre à air : de quoi frapper à travers un grillage.</p>",
+      "en": "<p>A straight bamboo pole, a blade lashed on with wire and inner tube: enough to strike through a fence.</p>"
+    }
+  },
+  "recettes/CEdTYm3drLGlFkGd": {
+    "_nom": "Bocaux et boucané",
+    "name": {
+      "fr": "Bocaux et boucané",
+      "en": "Jars and smoked meat"
+    },
+    "system.description": {
+      "fr": "<p>Achards, rougails en bocaux, viande boucanée, poisson séché : ce qui allait pourrir tiendra des mois.</p>",
+      "en": "<p>Achards, rougails in jars, smoked meat, dried fish: what was going to rot will keep for months.</p>"
+    }
+  },
+  "recettes/FnsYcbklzcALvqjB": {
+    "_nom": "Radio à manivelle",
+    "name": {
+      "fr": "Radio à manivelle",
+      "en": "Wind-up radio"
+    },
+    "system.description": {
+      "fr": "<p>Un récepteur démonté d'un vieux poste, une dynamo de vélo, une manivelle : écouter l'île sans piles.</p>",
+      "en": "<p>A receiver stripped from an old set, a bicycle dynamo, a crank: listen to the island without batteries.</p>"
+    }
+  },
+  "recettes/MbZqvVVbkxPgJ8rR": {
+    "_nom": "Moustiquaires",
+    "name": {
+      "fr": "Moustiquaires",
+      "en": "Mosquito nets"
+    },
+    "system.description": {
+      "fr": "<p>Rideaux, voilages, tulle de magasin de tissus, recousus et tendus au-dessus des lits.</p>",
+      "en": "<p>Curtains, net curtains, tulle from a fabric shop, re-sewn and stretched over the beds.</p>"
+    }
+  },
+  "recettes/Pje7DRlLPgNGD37v": {
+    "_nom": "Alcool désinfectant",
+    "name": {
+      "fr": "Alcool désinfectant",
+      "en": "Disinfecting alcohol"
+    },
+    "system.description": {
+      "fr": "<p>Fruits trop mûrs, jus de canne, un alambic de cocotte et de serpentin : un alcool fort qui désinfecte plaies et instruments.</p>",
+      "en": "<p>Overripe fruit, cane juice, a still made from a pressure cooker and a coil: a strong spirit that disinfects wounds and instruments.</p>"
+    }
+  },
+  "recettes/VIxJCPkoUrcRSgus": {
+    "_nom": "Panneaux démontables",
+    "name": {
+      "fr": "Panneaux démontables",
+      "en": "Portable panels"
+    },
+    "system.description": {
+      "fr": "<p>Deux panneaux récupérés sur un cadre pliant, un régulateur, des câbles à fiches : du courant qu'on emporte en déménageant.</p>",
+      "en": "<p>Two salvaged panels on a folding frame, a regulator, plug-in cables: power you take with you when you move.</p>"
+    }
+  },
+  "recettes/WqqRsn0W6NSai902": {
+    "_nom": "Tisanes et emplâtres",
+    "name": {
+      "fr": "Tisanes et emplâtres",
+      "en": "Infusions and poultices"
+    },
+    "system.description": {
+      "fr": "<p>Ayapana, citronnelle, bois de quivi, gingembre : les remèdes des grands-mères, contre les fièvres légères et les maux de ventre.</p>",
+      "en": "<p>Ayapana, lemongrass, bois de quivi, ginger: the grandmothers' remedies, against mild fevers and stomach aches.</p>"
+    }
+  },
+  "recettes/YbxqiHxVcgqo4lZF": {
+    "_nom": "Savon",
+    "name": {
+      "fr": "Savon",
+      "en": "Soap"
+    },
+    "system.description": {
+      "fr": "<p>Graisse de cochon ou huile, cendre de bois tamisée, un peu de patience : se laver les mains évite la moitié des maladies.</p>",
+      "en": "<p>Pig fat or oil, sifted wood ash, a little patience: washing your hands prevents half of all illnesses.</p>"
+    }
+  },
+  "recettes/a4GW8LBy6IsOnq3h": {
+    "_nom": "Poêle de masse",
+    "name": {
+      "fr": "Poêle de masse",
+      "en": "Masonry stove"
+    },
+    "system.description": {
+      "fr": "<p>Briques, pierres, argile, un tuyau de tôle : un poêle qui stocke la chaleur d'une flambée pour toute une nuit des Hauts.</p>",
+      "en": "<p>Bricks, stones, clay, a sheet-metal pipe: a stove that stores the heat of one blaze for a whole Highland night.</p>"
+    }
+  },
+  "recettes/bocOAY487x6bUzvN": {
+    "_nom": "Munitions rechargées",
+    "name": {
+      "fr": "Munitions rechargées",
+      "en": "Reloaded ammunition"
+    },
+    "system.description": {
+      "fr": "<p>Douilles récupérées, amorces et plombs de chasse, poudre tirée de cartouches abîmées : un travail lent et dangereux. Raté, il fait exploser l'arme.</p>",
+      "en": "<p>Recovered cases, primers and hunting shot, powder taken from damaged cartridges: slow, dangerous work. Botched, it blows up the gun.</p>"
+    }
+  },
+  "recettes/doXaj0nFOD8ptTpY": {
+    "_nom": "Bouclier de tôle",
+    "name": {
+      "fr": "Bouclier de tôle",
+      "en": "Sheet-metal shield"
+    },
+    "system.description": {
+      "fr": "<p>Tôle ondulée, contreplaqué, deux poignées vissées : lourd, bruyant, mais une morsure s'y casse les dents.</p>",
+      "en": "<p>Corrugated iron, plywood, two screwed-on handles: heavy, noisy, but a bite breaks its teeth on it.</p>"
+    }
+  },
+  "recettes/eNRRCctesYrtiIrV": {
+    "_nom": "Arbalète de fortune",
+    "name": {
+      "fr": "Arbalète de fortune",
+      "en": "Makeshift crossbow"
+    },
+    "system.description": {
+      "fr": "<p>Lame de ressort de voiture, crosse de bois dur, détente de récupération, et des carreaux taillés dans des tiges de fer à béton.</p>",
+      "en": "<p>A car leaf spring, a hardwood stock, a salvaged trigger, and bolts cut from lengths of rebar.</p>"
+    }
+  },
+  "recettes/hkB29SfrpROUsgvO": {
+    "_nom": "Pansements de fortune",
+    "name": {
+      "fr": "Pansements de fortune",
+      "en": "Makeshift dressings"
+    },
+    "system.description": {
+      "fr": "<p>Draps de coton découpés, bouillis, séchés au soleil et roulés : des bandes propres.</p>",
+      "en": "<p>Cotton sheets cut up, boiled, dried in the sun and rolled: clean bandages.</p>"
+    }
+  },
+  "recettes/nHobGpngrAgb3YMs": {
+    "_nom": "Arc et flèches",
+    "name": {
+      "fr": "Arc et flèches",
+      "en": "Bow and arrows"
+    },
+    "system.description": {
+      "fr": "<p>Un arc de bois de goyavier ou de tuyau PVC chauffé, une corde tressée, une douzaine de flèches empennées de plumes de poule.</p>",
+      "en": "<p>A bow of guava wood or heated PVC pipe, a braided string, a dozen arrows fletched with hen feathers.</p>"
+    }
+  },
+  "recettes/pJXHweyZrmBkJqPJ": {
+    "_nom": "Collets et nasses",
+    "name": {
+      "fr": "Collets et nasses",
+      "en": "Snares and fish traps"
+    },
+    "system.description": {
+      "fr": "<p>Fil de fer, grillage à poules, bouteilles coupées : de quoi piéger tangues, lièvres et camarons.</p>",
+      "en": "<p>Wire, chicken mesh, cut-up bottles: enough to trap tenrecs, hares and river prawns.</p>"
+    }
+  },
+  "recettes/uZaevsE1XImDgyjV": {
+    "_nom": "Semences triées",
+    "name": {
+      "fr": "Semences triées",
+      "en": "Sorted seeds"
+    },
+    "system.description": {
+      "fr": "<p>Garder les plus beaux fruits, sécher les graines de piment, de haricot et de citrouille, bouturer le manioc : la récolte de l'an prochain.</p>",
+      "en": "<p>Keep the finest fruit, dry the chilli, bean and pumpkin seeds, take cassava cuttings: next year's harvest.</p>"
+    }
+  },
+  "recettes/xdHnDIfvxxIX9cSE": {
+    "_nom": "Réchaud à bois",
+    "name": {
+      "fr": "Réchaud à bois",
+      "en": "Wood stove"
+    },
+    "system.description": {
+      "fr": "<p>Deux boîtes de conserve imbriquées, percées en haut et en bas : un réchaud qui brûle des brindilles presque sans fumée.</p>",
+      "en": "<p>Two tin cans nested together, pierced at top and bottom: a stove that burns twigs almost without smoke.</p>"
+    }
+  }
+}

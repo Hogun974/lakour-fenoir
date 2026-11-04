@@ -60,7 +60,7 @@
     },
     "Blessures": { "Indemne": "Unhurt", "Egratigne": "Scratched", "Blesse": "Wounded", "Grievement": "Badly wounded", "Mourant": "Dying" },
     "Etat": {
-      "blessures": "Wounds", "fatigue": "Fatigue", "moral": "Morale", "faim": "Hunger", "soif": "Thirst", "Mort": "Dead", "Livide": "Livid"
+      "blessures": "Wounds", "fatigue": "Fatigue", "moral": "Morale", "faim": "Hunger", "soif": "Thirst", "Mort": "Dead", "Livide": "Pallid"
     },
     "Afflictions": { "incubation": "incubating", "active": "declared", "aggravee": "worsened" },
     "CategoriesAffliction": { "maladie": "Disease", "blessure": "Lasting injury", "psychique": "Shock" },
@@ -69,7 +69,7 @@
       "stockage": "Storage", "communication": "Communication"
     },
     "EtatInstallation": { "0": "intact", "1": "damaged", "2": "badly damaged", "3": "out of order" },
-    "Menaces": { "horde": "Horde", "livides": "Wandering Livids", "bande": "Gang", "visite": "Visit", "animaux": "Animals", "accident": "Accident" },
+    "Menaces": { "horde": "Horde", "livides": "Wandering Pallid", "bande": "Gang", "visite": "Visit", "animaux": "Animals", "accident": "Accident" },
     "Besoins": {
       "couvert": "covered", "faible": "weak", "manquant": "missing",
       "Profil": "Someone who knows {competence} (for instance: {exemples})."
@@ -199,7 +199,7 @@
       "Debut": "Day zero, {date}: the group is in {region}.", "Installe": "The group settles in {site} ({region}).", "Reprend": "The group takes back the shelter of {site} ({region}).",
       "Quitte": "The group leaves {site}.", "Chantier": "Work started: {installation} (level {niveau}).", "Termine": "{installation} is in service (level {niveau}).",
       "Repare": "{installation}: {n} point(s) repaired.", "RepareAbri": "The shelter: {n} damage repaired.", "Ajustement": "Adjustment",
-      "Blesse": "{nom} is wounded.", "Mordu": "{nom} is bitten by a Livid.", "Soigne": "{soigneur} treats {nom} ({n} wound(s)).",
+      "Blesse": "{nom} is wounded.", "Mordu": "{nom} is bitten by one of the Pallid.", "Soigne": "{soigneur} treats {nom} ({n} wound(s)).",
       "Infecte": "{nom} carries the Grey.", "Renseignement": "News from {region} ({source}).", "Fabrique": "{nom} crafts: {recette}.",
       "FabriqueRate": "{nom} fails: {recette}.", "Affliction": "{nom}: {affliction}.", "AfflictionSoignee": "{nom} is treated: {affliction}.",
       "AfflictionRate": "{nom}'s treatment does not take ({affliction}).", "Fete": "The group celebrates: {fete}.", "Recrue": "{nom} joins the group.",
@@ -237,7 +237,7 @@
       "Onglets": { "groupe": "The group", "renseignements": "Intelligence", "journal": "Log", "propositions": "Proposals" },
       "Groupe": "Who does what", "Besoins": "What the group lacks", "RienNeManque": "Nothing is lacking.", "Pnj": "With the group", "Plans": "Known plans",
       "EtatLigne": "wnd. {b} · fat. {f} · morale {m}", "Carte": "Réunion as the group knows it", "Region": "Region", "Vu": "Seen",
-      "Infestation": "Livids", "Pillage": "Looting", "Factions": "Factions", "Alertes": "Alerts", "Journal": "Group log",
+      "Infestation": "the Pallid", "Pillage": "Looting", "Factions": "Factions", "Alertes": "Alerts", "Journal": "Group log",
       "AideRenseignements": "What the group BELIEVES, dated: a place may have changed since. Grey: never seen. Dotted roads: unknown."
     },
     "Renseignements": { "Jamais": "never seen", "Age": "{n} d ago" },

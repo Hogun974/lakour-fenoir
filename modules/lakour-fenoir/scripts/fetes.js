@@ -11,7 +11,10 @@
 // Effet public, le même pour toutes : fêter la fête au camp redonne 1 de moral à chacun, une fois par fête, au prix d'une ration
 // de nourriture de plus par personne. Jamais de règle cachée. Ni la description (carte publique) ni la consigne (ligne pour le
 // narrateur) ne disent un secret de partie.
-export const MODULE_FETES = "lakour-fenoir";
+import { ID } from "./identite.js";
+
+// L'identifiant du module qui porte les images (lakour-fenoir ou lakour-fenoir-en : scripts/identite.js).
+export const MODULE_FETES = ID;
 export const DOSSIER_IMAGES_FETES = `modules/${MODULE_FETES}/assets/fetes`;
 export const imageDeFete = cle => `${DOSSIER_IMAGES_FETES}/${cle}.jpg`;
 export const EFFET_FETE = { moral: 1, cout: { nourriture: 1 }, parPersonne: true, unique: true };

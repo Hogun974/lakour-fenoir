@@ -1,0 +1,2177 @@
+{
+  "tables/0gBR30UuQg72UAJC": {
+    "_nom": "Recrues — raison d'être là",
+    "name": {
+      "fr": "Recrues — raison d'être là",
+      "en": "Recruits — reason for being here"
+    },
+    "description": {
+      "fr": "<p>Pourquoi cette recrue se présente.</p>",
+      "en": "<p>Why this recruit turns up.</p>"
+    },
+    "results.tLL1trs4VYXUPLIm.description": {
+      "fr": "<p>Il a vu la fumée de votre cuisine et a marché deux jours pour la trouver.</p>",
+      "en": "<p>He saw the smoke of your kitchen and walked two days to find it.</p>"
+    },
+    "results.I1grKhoDJr0VHpie.description": {
+      "fr": "<p>Elle fuit une bande qui l'a gardée prisonnière.</p>",
+      "en": "<p>She is fleeing a gang that kept her prisoner.</p>"
+    },
+    "results.oYOYxHiUlY5qDEG4.description": {
+      "fr": "<p>Il a été chassé de son groupe après une dispute.</p>",
+      "en": "<p>He was thrown out of his group after a quarrel.</p>"
+    },
+    "results.FfMRvSztuw5iC0sE.description": {
+      "fr": "<p>Elle cherche un proche disparu et pense qu'il est passé par ici.</p>",
+      "en": "<p>She is looking for a missing relative and thinks they passed this way.</p>"
+    },
+    "results.9Rpj3KDzEiguFFIk.description": {
+      "fr": "<p>Son abri est tombé la nuit dernière ; il est le seul à s'en être sorti.</p>",
+      "en": "<p>His shelter fell last night; he is the only one who got out.</p>"
+    },
+    "results.9rKqGBtD6xWrXpDZ.description": {
+      "fr": "<p>Il a entendu votre radio et a reconnu une voix.</p>",
+      "en": "<p>He heard your radio and recognised a voice.</p>"
+    },
+    "results.v8GeDLxGxcQbAiAj.description": {
+      "fr": "<p>Elle est venue troquer et ne veut plus repartir.</p>",
+      "en": "<p>She came to barter and does not want to leave any more.</p>"
+    },
+    "results.qQhWfw64MQtWOMkQ.description": {
+      "fr": "<p>Il était caché dans la maison d'à côté depuis le début.</p>",
+      "en": "<p>He had been hiding in the house next door since the beginning.</p>"
+    },
+    "results.YGg8aRfuIemk4aA4.description": {
+      "fr": "<p>Elle était guide et connaît la région par cœur.</p>",
+      "en": "<p>She was a guide and knows the region by heart.</p>"
+    },
+    "results.NnqZVRzu08vOLJCJ.description": {
+      "fr": "<p>Il a été envoyé par sa faction pour apprendre ce que vous savez faire.</p>",
+      "en": "<p>He was sent by his faction to learn what you know how to do.</p>"
+    },
+    "results.vv7MniUx3w9Eo7a9.description": {
+      "fr": "<p>Elle a trouvé un enfant seul et vous l'amène, avec elle.</p>",
+      "en": "<p>She found a child alone and brings him to you, with her.</p>"
+    },
+    "results.d0sD9hSdryrsEyjS.description": {
+      "fr": "<p>Il était soignant à l'hôpital et n'en pouvait plus.</p>",
+      "en": "<p>He was a carer at the hospital and could not take any more.</p>"
+    }
+  },
+  "tables/0gKZBawB7DXV8kE0": {
+    "_nom": "Appels radio",
+    "name": {
+      "fr": "Appels radio",
+      "en": "Radio calls"
+    },
+    "description": {
+      "fr": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+      "en": "<p>The GM AI draws three calls per game week when the group has a radio (no duplicates); the human GM reads one when the radio crackles.</p>"
+    },
+    "results.OZEoVrBqFxzqTgUh.description": {
+      "fr": "<p><strong>Sauvetage — La famille du onzième étage.</strong> Une voix d'enfant sur une fréquence de talkie : sa famille est bloquée au onzième étage d'un immeuble de Saint-Denis, l'escalier envahi.</p><p><strong>Récompense :</strong> 6 nourriture, 4 materiaux.</p>",
+      "en": "<p><strong>Rescue — The family on the eleventh floor.</strong> A child's voice on a walkie-talkie frequency: her family is trapped on the eleventh floor of a block of flats in Saint-Denis, the staircase overrun.</p><p><strong>Reward:</strong> 6 food, 4 materials.</p>"
+    },
+    "results.BmH5jmBrd5DY9SdO.description": {
+      "fr": "<p><strong>Récupération — Les médicaments de la pharmacie du bourg.</strong> Le Dispensaire cherche des volontaires pour vider une pharmacie de Saint-Louis avant les Sans-Lune.</p><p><strong>Récompense :</strong> 4 medicaments, 2 munitions ; réputation +2.</p>",
+      "en": "<p><strong>Recovery — The medicine from the village pharmacy.</strong> The Dispensary is looking for volunteers to empty a pharmacy in Saint-Louis before the Moonless get there.</p><p><strong>Reward:</strong> 4 medicine, 2 ammunition; reputation +2.</p>"
+    },
+    "results.QoyrvVlKKvNSE8ca.description": {
+      "fr": "<p><strong>Réparation — La pompe de l'îlet.</strong> Une voix de Mafate : la conduite du captage de l'îlet a sauté après les pluies, il faut des pièces et des bras.</p><p><strong>Récompense :</strong> 6 nourriture, 4 graines ; réputation +2.</p>",
+      "en": "<p><strong>Repair — The îlet's pump.</strong> A voice from Mafate: the pipe from the îlet's catchment burst after the rains; parts and hands are needed.</p><p><strong>Reward:</strong> 6 food, 4 seeds; reputation +2.</p>"
+    },
+    "results.eTsGL7t5QSYP6Bhw.description": {
+      "fr": "<p><strong>Escorte — Le convoi de lait.</strong> La Coopérative veut descendre du lait et du fromage au Tampon et demande une escorte jusqu'au marché.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The milk convoy.</strong> The Cooperative wants to bring milk and cheese down to Le Tampon and asks for an escort as far as the market.</p><p><strong>Reward:</strong> 10 food; reputation +2.</p>"
+    },
+    "results.UmEW4NAiDPSAycOE.description": {
+      "fr": "<p><strong>Échange — Carburant contre médicaments.</strong> Un bateau des Barques du Sud propose du gasoil contre des antibiotiques, sur le quai de Saint-Leu, demain à l'aube.</p><p><strong>Récompense :</strong> 6 carburant ; réputation +1.</p>",
+      "en": "<p><strong>Trade — Fuel for medicine.</strong> A boat from the Southern Boats offers diesel for antibiotics, on the quay at Saint-Leu, tomorrow at dawn.</p><p><strong>Reward:</strong> 6 fuel; reputation +1.</p>"
+    },
+    "results.bhP0uZHG6ZTpZoTK.description": {
+      "fr": "<p><strong>Sauvetage — Les randonneurs du Piton.</strong> Trois randonneurs coincés au refuge du Piton des Neiges depuis le jour zéro appellent à l'aide : un blessé, plus de vivres.</p><p><strong>Récompense :</strong> 3 pieces, 2 medicaments.</p>",
+      "en": "<p><strong>Rescue — The hikers on the Piton.</strong> Three hikers stuck at the Piton des Neiges refuge since day zero are calling for help: one injured, no food left.</p><p><strong>Reward:</strong> 3 parts, 2 medicine.</p>"
+    },
+    "results.EfxkIRaMSNCdilDV.description": {
+      "fr": "<p><strong>Récupération — Les panneaux de la ferme.</strong> Une agricultrice de Bras-Panon offre la moitié des panneaux de sa ferme abandonnée à qui l'aide à récupérer l'autre moitié.</p><p><strong>Récompense :</strong> 6 pieces.</p>",
+      "en": "<p><strong>Recovery — The farm's panels.</strong> A farmer from Bras-Panon offers half the panels of her abandoned farm to whoever helps her recover the other half.</p><p><strong>Reward:</strong> 6 parts.</p>"
+    },
+    "results.oy6tVCIFQ1DnJ4qi.description": {
+      "fr": "<p><strong>Escorte — La docteure en tournée.</strong> Le Dispensaire veut envoyer une médecin soigner les fièvres d'un quartier de l'Est et cherche une escorte.</p><p><strong>Récompense :</strong> 3 medicaments, 4 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The doctor's rounds.</strong> The Dispensary wants to send a doctor to treat the fevers in a neighbourhood of the East and is looking for an escort.</p><p><strong>Reward:</strong> 3 medicine, 4 food; reputation +2.</p>"
+    },
+    "results.c96Q0P9JNQakSQCn.description": {
+      "fr": "<p><strong>Réparation — L'antenne de la Garnison.</strong> La Garnison du Quai cherche un électricien pour remonter une antenne relais tombée sur la Possession.</p><p><strong>Récompense :</strong> 5 carburant, 3 munitions ; réputation +2.</p>",
+      "en": "<p><strong>Repair — The Garrison's aerial.</strong> The Quay Garrison is looking for an electrician to put back up a relay aerial that fell at La Possession.</p><p><strong>Reward:</strong> 5 fuel, 3 ammunition; reputation +2.</p>"
+    },
+    "results.5hiboVeOrcjpa8TM.description": {
+      "fr": "<p><strong>Échange — Le marché aux pièces.</strong> Les Ferrailleurs annoncent un marché sur le parking de Savanna : batteries, pneus, outils contre vivres.</p><p><strong>Récompense :</strong> 5 pieces, 3 materiaux ; réputation +1.</p>",
+      "en": "<p><strong>Trade — The parts market.</strong> The Scrappers announce a market in the Savanna car park: batteries, tyres, tools for food.</p><p><strong>Reward:</strong> 5 parts, 3 materials; reputation +1.</p>"
+    },
+    "results.DvWhlQVJ21q5Rsmu.description": {
+      "fr": "<p><strong>Sauvetage — L'enfant de Sainte-Rose.</strong> Les Pèlerins cherchent un enfant parti seul vers la coulée ; la radio du presbytère promet de quoi manger à qui le ramène.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Rescue — The child from Sainte-Rose.</strong> The Pilgrims are looking for a child who went off alone towards the lava flow; the presbytery radio promises food to whoever brings him back.</p><p><strong>Reward:</strong> 8 food; reputation +2.</p>"
+    },
+    "results.JsQnkU3KCO2KYzCv.description": {
+      "fr": "<p><strong>Récupération — La caisse de la caserne.</strong> Un gendarme blessé, caché dans une brigade du Sud, parle d'une caisse de matériel radio et de rations sous le bureau du chef.</p><p><strong>Récompense :</strong> 3 munitions, 6 nourriture ; réputation +1.</p>",
+      "en": "<p><strong>Recovery — The crate at the station.</strong> A wounded gendarme, hiding in a southern gendarmerie station, talks of a crate of radio equipment and rations under the chief's desk.</p><p><strong>Reward:</strong> 3 ammunition, 6 food; reputation +1.</p>"
+    }
+  },
+  "tables/3rOWWRWJAOrlApYT": {
+    "_nom": "Complications d'un test forcé",
+    "name": {
+      "fr": "Complications d'un test forcé",
+      "en": "Complications of a pushed test"
+    },
+    "description": {
+      "fr": "<p>Un test forcé qui échoue encore : le MJ en choisit une ou la tire.</p>",
+      "en": "<p>A pushed test that fails again: the GM chooses one or rolls for it.</p>"
+    },
+    "results.LzFw5imKFVHqhICQ.description": {
+      "fr": "<p>Bruit : une vitre tombe, un outil claque, quelque chose répond au loin (+2 bruit).</p>",
+      "en": "<p>Noise: a window falls, a tool clatters, something answers in the distance (+2 noise).</p>"
+    },
+    "results.LAUzJtNlxC0rBnE3.description": {
+      "fr": "<p>Outil cassé : la lame se brise, le manche se fend.</p>",
+      "en": "<p>Broken tool: the blade snaps, the handle splits.</p>"
+    },
+    "results.hR47utlwtjsdJ3E5.description": {
+      "fr": "<p>Blessure légère : une coupure, une entorse (1 blessure).</p>",
+      "en": "<p>Minor injury: a cut, a sprain (1 wound).</p>"
+    },
+    "results.H8v4SaCnGXMU1cfN.description": {
+      "fr": "<p>Temps perdu : il faut tout recommencer (+1 quart).</p>",
+      "en": "<p>Time lost: it all has to be started again (+1 watch).</p>"
+    },
+    "results.1ufck1H1QDZwxMuK.description": {
+      "fr": "<p>Fatigue : l'effort laisse vidé (+1 fatigue).</p>",
+      "en": "<p>Fatigue: the effort leaves you drained (+1 fatigue).</p>"
+    },
+    "results.uaOxa2x6DLqK6xR4.description": {
+      "fr": "<p>Repéré : quelqu'un a vu, et s'en souviendra.</p>",
+      "en": "<p>Spotted: someone saw, and will remember.</p>"
+    },
+    "results.K65mvPQycAuNstiT.description": {
+      "fr": "<p>Ressource perdue : une partie du butin tombe, se casse ou se gâte.</p>",
+      "en": "<p>Resource lost: part of the loot falls, breaks or spoils.</p>"
+    },
+    "results.TdU5rQTeSswuDcaS.description": {
+      "fr": "<p>Un Livide de plus surgit, attiré par l'effort.</p>",
+      "en": "<p>One more Pallid appears, drawn by the effort.</p>"
+    },
+    "results.OTGg5Aqw5Kb2Twaz.description": {
+      "fr": "<p>Une dispute éclate dans le groupe à cause de l'échec.</p>",
+      "en": "<p>A quarrel breaks out in the group over the failure.</p>"
+    },
+    "results.qRypOcbw8oN1aBnE.description": {
+      "fr": "<p>Le matériel réservé pour autre chose y est passé (−1 matériau ou pièce).</p>",
+      "en": "<p>The materials set aside for something else got used up (−1 material or part).</p>"
+    },
+    "results.0GbxX2wCvyCIpj67.description": {
+      "fr": "<p>Une morsure frôlée : la manche est déchirée, la peau intacte… cette fois.</p>",
+      "en": "<p>A near-miss bite: the sleeve is torn, the skin intact… this time.</p>"
+    },
+    "results.MWb9ivrGbIEIVqDQ.description": {
+      "fr": "<p>La météo tourne : pluie, brouillard, nuit qui tombe.</p>",
+      "en": "<p>The weather turns: rain, fog, night falling.</p>"
+    }
+  },
+  "tables/4CMsVOkhaf6mizsP": {
+    "_nom": "Rumeurs de la radio",
+    "name": {
+      "fr": "Rumeurs de la radio",
+      "en": "Radio rumours"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on entend en tournant le bouton.</p>",
+      "en": "<p>What you hear when you turn the dial.</p>"
+    },
+    "results.NT9tc1HdCnfo6cHP.description": {
+      "fr": "<p>« … ici le port, évacuation par cargo jeudi, apportez vos papiers… » La voix se répète en boucle depuis trois semaines.</p>",
+      "en": "<p>\"… this is the port, evacuation by cargo ship on Thursday, bring your papers…\" The voice has been looping for three weeks.</p>"
+    },
+    "results.q93morbzE4e9U8V1.description": {
+      "fr": "<p>Un radioamateur affirme que Maurice a fermé ses ports et coulé un bateau de réfugiés.</p>",
+      "en": "<p>An amateur radio operator claims Mauritius has closed its ports and sunk a refugee boat.</p>"
+    },
+    "results.Qcoa1XtJMVz9IG8E.description": {
+      "fr": "<p>Une femme répète une adresse à Saint-Pierre et le prénom de son fils, chaque soir à vingt heures.</p>",
+      "en": "<p>A woman repeats an address in Saint-Pierre and her son's first name, every evening at eight.</p>"
+    },
+    "results.ZSL37fL4FexsRhLT.description": {
+      "fr": "<p>Quelqu'un prétend que les Livides ne montent pas au-dessus de mille mètres. C'est faux.</p>",
+      "en": "<p>Someone claims the Pallid do not climb above a thousand metres. It is not true.</p>"
+    },
+    "results.MaD73Lc1j3m9LkIf.description": {
+      "fr": "<p>Un pêcheur annonce un cyclone en formation au nord-est.</p>",
+      "en": "<p>A fisherman announces a cyclone forming to the north-east.</p>"
+    },
+    "results.MwVyD3uLbP6kzoN0.description": {
+      "fr": "<p>On parle d'un médecin qui aurait un remède, au Dispensaire du Sud. On parle beaucoup.</p>",
+      "en": "<p>There is talk of a doctor who has a cure, at the Southern Dispensary. There is a lot of talk.</p>"
+    },
+    "results.hyGciWD5HOY9e2m5.description": {
+      "fr": "<p>Une voix jeune propose de l'essence contre des médicaments, sans dire où.</p>",
+      "en": "<p>A young voice offers petrol for medicine, without saying where.</p>"
+    },
+    "results.VQr9QcWqyFzB4gIX.description": {
+      "fr": "<p>La Garnison annonce le recensement obligatoire des survivants.</p>",
+      "en": "<p>The Garrison announces the compulsory registration of survivors.</p>"
+    },
+    "results.xkj3LzmnbHtx00OR.description": {
+      "fr": "<p>Des chants des Pèlerins de la Lave, diffusés depuis Sainte-Rose.</p>",
+      "en": "<p>Songs of the Pilgrims of the Lava, broadcast from Sainte-Rose.</p>"
+    },
+    "results.X5kemw6eS6KzjMhB.description": {
+      "fr": "<p>Un message en code, suivi de rires.</p>",
+      "en": "<p>A coded message, followed by laughter.</p>"
+    },
+    "results.uYdegnst0MLDCFJN.description": {
+      "fr": "<p>Quelqu'un décrit un îlet de Mafate où tout va bien. Trop bien.</p>",
+      "en": "<p>Someone describes a Mafate îlet where everything is fine. Too fine.</p>"
+    },
+    "results.beGMdNImTV1xSAWL.description": {
+      "fr": "<p>Une voix de la Coopérative cherche un vétérinaire.</p>",
+      "en": "<p>A voice from the Cooperative is looking for a vet.</p>"
+    },
+    "results.8qG8Fy9PDELSxqYf.description": {
+      "fr": "<p>Un avion aurait survolé l'île la nuit dernière. Personne ne l'a vu.</p>",
+      "en": "<p>A plane is said to have flown over the island last night. Nobody saw it.</p>"
+    },
+    "results.Ejsss2sgVBzntqMc.description": {
+      "fr": "<p>Les Sans-Lune avertissent : « La lune est noire, payez. »</p>",
+      "en": "<p>The Moonless give warning: \"The moon is dark, pay up.\"</p>"
+    },
+    "results.P3ttlcP4INDIy1WP.description": {
+      "fr": "<p>Un homme décrit une horde qui monte la route des Plaines.</p>",
+      "en": "<p>A man describes a horde climbing the Route des Plaines.</p>"
+    },
+    "results.L2Nt7phqJczZeHWf.description": {
+      "fr": "<p>Une émission de musique : quelqu'un passe des vieux maloyas, sans un mot.</p>",
+      "en": "<p>A music broadcast: someone is playing old maloyas, without a word.</p>"
+    },
+    "results.r7CD1z8nX2zODfHi.description": {
+      "fr": "<p>Un appel à l'aide d'un phare.</p>",
+      "en": "<p>A call for help from a lighthouse.</p>"
+    },
+    "results.pGAPCraKCoeNGip4.description": {
+      "fr": "<p>Un enfant lit un livre à voix haute, chaque matin, pour qui écoute.</p>",
+      "en": "<p>A child reads a book aloud, every morning, for whoever is listening.</p>"
+    },
+    "results.1Xl2rrcCqJWQhl81.description": {
+      "fr": "<p>On dit que la Fournaise va se réveiller ; les géologues de Bourg-Murat le disent aussi.</p>",
+      "en": "<p>They say the Fournaise is going to wake up; the geologists at Bourg-Murat say so too.</p>"
+    },
+    "results.gj6ed8mQWa4xzNB2.description": {
+      "fr": "<p>Le silence. Juste le souffle de la porteuse.</p>",
+      "en": "<p>Silence. Just the hiss of the carrier wave.</p>"
+    }
+  },
+  "tables/4DOuHGISLXT94ZVh": {
+    "_nom": "Générateur — site fouillé",
+    "name": {
+      "fr": "Générateur — site fouillé",
+      "en": "Generator — scavenged site"
+    },
+    "description": {
+      "fr": "<p>Quel lieu fouille-t-on ?</p>",
+      "en": "<p>What place is being scavenged?</p>"
+    },
+    "results.MJPt8mcf1OU5yA0m.description": {
+      "fr": "<p>Une pharmacie de bourg, rideau à moitié levé.</p>",
+      "en": "<p>A village pharmacy, shutter half up.</p>"
+    },
+    "results.mf3I1hg6uPnHk2iO.description": {
+      "fr": "<p>Une boutique chinoise d'alimentation générale, l'arrière-boutique intacte.</p>",
+      "en": "<p>A Chinese general store, the back room untouched.</p>"
+    },
+    "results.rKCk9rOebLGToGVa.description": {
+      "fr": "<p>Un magasin de bricolage pillé à moitié.</p>",
+      "en": "<p>A DIY store half looted.</p>"
+    },
+    "results.l1zuqXxmJ3CEDZHk.description": {
+      "fr": "<p>Un snack de bord de plage, frigo coupé depuis longtemps.</p>",
+      "en": "<p>A beachfront snack bar, fridge long since off.</p>"
+    },
+    "results.CIepX91xHKbb6iGQ.description": {
+      "fr": "<p>Une école primaire, sa cantine et son infirmerie.</p>",
+      "en": "<p>A primary school, its canteen and its infirmary.</p>"
+    },
+    "results.TIVBxQb1rSmeyCBr.description": {
+      "fr": "<p>Une station-service, cuves peut-être pas vides.</p>",
+      "en": "<p>A petrol station, tanks perhaps not empty.</p>"
+    },
+    "results.yyWaHwFG5YwNKoJv.description": {
+      "fr": "<p>Une case de gramoun, pleine de bocaux.</p>",
+      "en": "<p>A gramoun's house (an elder's), full of jars.</p>"
+    },
+    "results.rKPvIYIGIHzTHeLm.description": {
+      "fr": "<p>Un garage avec trois voitures sur cale.</p>",
+      "en": "<p>A garage with three cars up on blocks.</p>"
+    },
+    "results.La7VgwJcslnQ63f0.description": {
+      "fr": "<p>Une jardinerie : graines, outils, engrais.</p>",
+      "en": "<p>A garden centre: seeds, tools, fertiliser.</p>"
+    },
+    "results.W97uKhl4ykrXyT6A.description": {
+      "fr": "<p>Une caserne de pompiers abandonnée.</p>",
+      "en": "<p>An abandoned fire station.</p>"
+    },
+    "results.iqdCdp5xkhCBqldO.description": {
+      "fr": "<p>Un gîte de randonnée au bord d'un sentier.</p>",
+      "en": "<p>A hikers' lodge beside a trail.</p>"
+    },
+    "results.eLUSEBIaeM4EC3gg.description": {
+      "fr": "<p>Un temple tamoul, ses cuisines et ses réserves de riz.</p>",
+      "en": "<p>A Tamil temple, its kitchens and its stores of rice.</p>"
+    },
+    "results.JoZZmHIkBBSXqX4t.description": {
+      "fr": "<p>Une villa de luxe avec panneaux et piscine.</p>",
+      "en": "<p>A luxury villa with panels and a pool.</p>"
+    },
+    "results.sTKkiRutvkzpgaGT.description": {
+      "fr": "<p>Un hangar agricole avec un tracteur.</p>",
+      "en": "<p>A farm shed with a tractor.</p>"
+    },
+    "results.sYpSO7331LuDNCp3.description": {
+      "fr": "<p>Un cabinet médical de quartier.</p>",
+      "en": "<p>A neighbourhood doctor's surgery.</p>"
+    },
+    "results.kmUpQp8wSjfPYxl1.description": {
+      "fr": "<p>Un entrepôt de grossiste dans une zone industrielle.</p>",
+      "en": "<p>A wholesaler's warehouse in an industrial zone.</p>"
+    },
+    "results.CAgjCbdhtpts2Jha.description": {
+      "fr": "<p>Une marina avec quelques bateaux.</p>",
+      "en": "<p>A marina with a few boats.</p>"
+    },
+    "results.ZCSIp0bssNAurbr4.description": {
+      "fr": "<p>Une chapelle de quartier et son presbytère.</p>",
+      "en": "<p>A neighbourhood chapel and its presbytery.</p>"
+    },
+    "results.yaSvlVTTs11YzDXo.description": {
+      "fr": "<p>Une ferme laitière des Hauts.</p>",
+      "en": "<p>A Highland dairy farm.</p>"
+    },
+    "results.nst5PPaqxj8Ymv2J.description": {
+      "fr": "<p>Un bureau de poste et ses colis en souffrance.</p>",
+      "en": "<p>A post office and its uncollected parcels.</p>"
+    }
+  },
+  "tables/5E3Zx31UryIqiGOL": {
+    "_nom": "Surnoms créoles",
+    "name": {
+      "fr": "Surnoms créoles",
+      "en": "Creole nicknames"
+    },
+    "description": {
+      "fr": "<p>Les gens de l'île ont souvent un surnom, que tout le monde connaît mieux que leur nom.</p>",
+      "en": "<p>People on the island often have a nickname, which everyone knows better than their name.</p>"
+    },
+    "results.7F0U5YTUtgFj02vj.description": {
+      "fr": "<p>Ti Paul</p>",
+      "en": "<p>Ti Paul</p>"
+    },
+    "results.CwszAMKyF3DrjRFi.description": {
+      "fr": "<p>Gros Zan</p>",
+      "en": "<p>Gros Zan</p>"
+    },
+    "results.jbHD2pokEctAsdCA.description": {
+      "fr": "<p>Gramoun</p>",
+      "en": "<p>Gramoun</p>"
+    },
+    "results.xvCWUBNJgCA85us3.description": {
+      "fr": "<p>Marmaille</p>",
+      "en": "<p>Marmaille</p>"
+    },
+    "results.5OMZF0CBK63KXlhz.description": {
+      "fr": "<p>Ti Coq</p>",
+      "en": "<p>Ti Coq</p>"
+    },
+    "results.kgK3xTd9Q28OOs68.description": {
+      "fr": "<p>Kabri</p>",
+      "en": "<p>Kabri</p>"
+    },
+    "results.mtrPON5FJWXmkIy1.description": {
+      "fr": "<p>Bichik</p>",
+      "en": "<p>Bichik</p>"
+    },
+    "results.wBBOlQ1KRActFqVR.description": {
+      "fr": "<p>Tangue</p>",
+      "en": "<p>Tangue</p>"
+    },
+    "results.7Nbl4p75Db8xuQAS.description": {
+      "fr": "<p>Zoizo</p>",
+      "en": "<p>Zoizo</p>"
+    },
+    "results.1ZaPM3Mak99XHduG.description": {
+      "fr": "<p>Lamer</p>",
+      "en": "<p>Lamer</p>"
+    },
+    "results.SQoBQL6TSSdn0hKp.description": {
+      "fr": "<p>Volcan</p>",
+      "en": "<p>Volcan</p>"
+    },
+    "results.Ng4Q2hAUd5FCFhGt.description": {
+      "fr": "<p>Ti Rouge</p>",
+      "en": "<p>Ti Rouge</p>"
+    },
+    "results.FbLzXsRsEs2vMzkc.description": {
+      "fr": "<p>Tonton Fred</p>",
+      "en": "<p>Tonton Fred</p>"
+    },
+    "results.MEF1ZkufxkRAkdWg.description": {
+      "fr": "<p>Mamzelle</p>",
+      "en": "<p>Mamzelle</p>"
+    },
+    "results.CiiZgaLKLtsyz3Hh.description": {
+      "fr": "<p>Ti Pok</p>",
+      "en": "<p>Ti Pok</p>"
+    },
+    "results.eg1pX6TTpDbC5QXy.description": {
+      "fr": "<p>Bébert</p>",
+      "en": "<p>Bébert</p>"
+    },
+    "results.oVb1R2TrPUCvkxnU.description": {
+      "fr": "<p>Caméléon</p>",
+      "en": "<p>Caméléon</p>"
+    },
+    "results.ZGjwEYtfRbh9luxJ.description": {
+      "fr": "<p>Zarlor</p>",
+      "en": "<p>Zarlor</p>"
+    },
+    "results.uOZkS64Dm3U1nEKX.description": {
+      "fr": "<p>Bon Dié</p>",
+      "en": "<p>Bon Dié</p>"
+    },
+    "results.wCFZQThk7kMmamqO.description": {
+      "fr": "<p>Lapli</p>",
+      "en": "<p>Lapli</p>"
+    }
+  },
+  "tables/7laWQXPZNSdEIgYT": {
+    "_nom": "Demandes — Le Dispensaire du Sud",
+    "name": {
+      "fr": "Demandes — Le Dispensaire du Sud",
+      "en": "Requests — The Southern Dispensary"
+    },
+    "results.Wc14exGG9fpR9l1m.description": {
+      "fr": "<p><strong>Récupération — Le frigo des vaccins.</strong> Rapporter le contenu d'une réserve de pharmacie hospitalière dans une aile infestée.</p><p><strong>Récompense :</strong> 6 medicaments ; réputation +3.</p>",
+      "en": "<p><strong>Recovery — The vaccine fridge.</strong> Bring back the contents of a hospital pharmacy store in an infested wing.</p><p><strong>Reward:</strong> 6 medicine; reputation +3.</p>"
+    },
+    "results.IJm8NN0xphgbBDHb.description": {
+      "fr": "<p><strong>Réparation — Le groupe électrogène des blocs.</strong> Faire repartir le groupe électrogène des blocs opératoires.</p><p><strong>Récompense :</strong> 4 medicaments, 2 carburant ; réputation +2.</p>",
+      "en": "<p><strong>Repair — The theatre generator.</strong> Get the operating theatres' generator running again.</p><p><strong>Reward:</strong> 4 medicine, 2 fuel; reputation +2.</p>"
+    },
+    "results.j4fowM8Ydqa2tlAr.description": {
+      "fr": "<p><strong>Escorte — La tournée des fièvres.</strong> Escorter une infirmière dans les quartiers où la dengue progresse.</p><p><strong>Récompense :</strong> 3 medicaments ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The fever rounds.</strong> Escort a nurse through the neighbourhoods where dengue is spreading.</p><p><strong>Reward:</strong> 3 medicine; reputation +2.</p>"
+    },
+    "results.XaeTBhny7HQnc3UQ.description": {
+      "fr": "<p><strong>Sauvetage — Le pharmacien de l'Entre-Deux.</strong> Ramener un pharmacien coincé chez lui avec sa famille.</p><p><strong>Récompense :</strong> 5 medicaments ; réputation +3.</p>",
+      "en": "<p><strong>Rescue — The pharmacist of L'Entre-Deux.</strong> Bring back a pharmacist stuck at home with his family.</p><p><strong>Reward:</strong> 5 medicine; reputation +3.</p>"
+    },
+    "results.zciwbHT6bj3TRJsZ.description": {
+      "fr": "<p><strong>Échange — Eau propre contre soins.</strong> De l'eau propre en quantité contre des soins pour tout le groupe.</p><p><strong>Récompense :</strong> 4 medicaments ; réputation +1.</p>",
+      "en": "<p><strong>Trade — Clean water for care.</strong> Clean water in quantity in exchange for care for the whole group.</p><p><strong>Reward:</strong> 4 medicine; reputation +1.</p>"
+    },
+    "results.m3E80H12nTBN1F7a.description": {
+      "fr": "<p><strong>Récupération — Un Livide entier.</strong> La docteure veut étudier un Livide intact, ramené vivant… si l'on peut dire.</p><p><strong>Récompense :</strong> 6 medicaments, 2 munitions ; réputation +3.</p>",
+      "en": "<p><strong>Recovery — A whole Pallid.</strong> The doctor wants to study an intact Pallid, brought back alive… so to speak.</p><p><strong>Reward:</strong> 6 medicine, 2 ammunition; reputation +3.</p>"
+    }
+  },
+  "tables/CYOYEXdAq7JQv5EY": {
+    "_nom": "Découvertes de fouille",
+    "name": {
+      "fr": "Découvertes de fouille",
+      "en": "Scavenging finds"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on trouve en fouillant un lieu (en plus du butin tiré par le système).</p>",
+      "en": "<p>What you find scavenging a place (on top of the loot rolled by the system).</p>"
+    },
+    "results.AOoOQuTgH3HBqXTC.description": {
+      "fr": "<p>Rien que du verre brisé et l'odeur.</p>",
+      "en": "<p>Nothing but broken glass and the smell.</p>"
+    },
+    "results.73i6w6ZXKsenyFo7.description": {
+      "fr": "<p>Deux conserves de sardines et un paquet de riz.</p>",
+      "en": "<p>Two tins of sardines and a bag of rice.</p>"
+    },
+    "results.ge72Jnd1JayAShfR.description": {
+      "fr": "<p>Une trousse de secours presque complète (+1 médicaments).</p>",
+      "en": "<p>An almost complete first-aid kit (+1 medicine).</p>"
+    },
+    "results.m8oKBGuXcHkcW4zO.description": {
+      "fr": "<p>Une caisse à outils rouillée (+1 pièces).</p>",
+      "en": "<p>A rusty toolbox (+1 parts).</p>"
+    },
+    "results.L1EHIoyYea1irxFU.description": {
+      "fr": "<p>Un bidon d'essence à moitié plein (+1 carburant).</p>",
+      "en": "<p>A half-full can of petrol (+1 fuel).</p>"
+    },
+    "results.q1reXttEHfWkVLhr.description": {
+      "fr": "<p>Des graines de jardin dans un tiroir (+1 graines).</p>",
+      "en": "<p>Garden seeds in a drawer (+1 seeds).</p>"
+    },
+    "results.wD9oHmuNXUm4XKeR.description": {
+      "fr": "<p>Un pack d'eau oublié sous un lit (+3 eau).</p>",
+      "en": "<p>A pack of water forgotten under a bed (+3 water).</p>"
+    },
+    "results.2CZHfeMkTslkIlLi.description": {
+      "fr": "<p>Des tôles et des planches réutilisables (+2 matériaux).</p>",
+      "en": "<p>Reusable sheet metal and planks (+2 materials).</p>"
+    },
+    "results.czJdT1mo31p5F9bN.description": {
+      "fr": "<p>Une boîte de cartouches de chasse (+1 munitions).</p>",
+      "en": "<p>A box of shotgun cartridges (+1 ammunition).</p>"
+    },
+    "results.KUF5ooSA5uLCLkDR.description": {
+      "fr": "<p>Un manuel de jardinage ou d'électricité (un savoir à apprendre).</p>",
+      "en": "<p>A gardening or electricity manual (a know-how to learn).</p>"
+    },
+    "results.zlNtjPkv2fTKi4HV.description": {
+      "fr": "<p>Une radio à piles qui marche encore.</p>",
+      "en": "<p>A battery radio that still works.</p>"
+    },
+    "results.67K9ERb22K8Io9WJ.description": {
+      "fr": "<p>Un congélateur ouvert : il vaut mieux ne pas regarder.</p>",
+      "en": "<p>An open freezer: better not to look.</p>"
+    },
+    "results.2tLe9k6b4246kFZ8.description": {
+      "fr": "<p>Un Livide enfermé dans une salle de bains.</p>",
+      "en": "<p>A Pallid shut in a bathroom.</p>"
+    },
+    "results.vVHArD4l9issV4zD.description": {
+      "fr": "<p>Un placard plein de vêtements secs et de draps.</p>",
+      "en": "<p>A cupboard full of dry clothes and sheets.</p>"
+    },
+    "results.4w2nGf5tWPyVKgxN.description": {
+      "fr": "<p>Un sac de ciment encore sec (+1 matériaux).</p>",
+      "en": "<p>A bag of cement still dry (+1 materials).</p>"
+    },
+    "results.ImaKi7vlQ3L4hxJ4.description": {
+      "fr": "<p>Un panneau solaire de cabanon et sa batterie (+2 pièces).</p>",
+      "en": "<p>A garden-shed solar panel and its battery (+2 parts).</p>"
+    },
+    "results.WnXT4YgzJcQi6AcW.description": {
+      "fr": "<p>Une réserve de rhum arrangé : désinfectant ou monnaie d'échange.</p>",
+      "en": "<p>A stock of spiced rum: disinfectant or currency.</p>"
+    },
+    "results.9kGJHiZLEJ5FGiiK.description": {
+      "fr": "<p>Un journal intime qui raconte les derniers jours de la famille.</p>",
+      "en": "<p>A diary telling of the family's last days.</p>"
+    },
+    "results.uZOD8VmHX3Mh2xrv.description": {
+      "fr": "<p>Un enfant caché dans un placard.</p>",
+      "en": "<p>A child hidden in a cupboard.</p>"
+    },
+    "results.pC42KIx5D6cBr9CS.description": {
+      "fr": "<p>Une cave remplie de bocaux d'achards et de confitures (+4 nourriture).</p>",
+      "en": "<p>A cellar full of jars of achards and jam (+4 food).</p>"
+    }
+  },
+  "tables/CvRQu1csBCynayue": {
+    "_nom": "Rencontres — volcan",
+    "name": {
+      "fr": "Rencontres — volcan",
+      "en": "Encounters — volcano"
+    },
+    "description": {
+      "fr": "<p>Une rencontre en sortie dans une région de zone « volcan ».</p>",
+      "en": "<p>An encounter on an outing in a region of the \"volcano\" zone.</p>"
+    },
+    "results.NkEKRExMqBrD7xUR.description": {
+      "fr": "<p>La Plaine des Sables vide, rouge, silencieuse : seulement le vent.</p>",
+      "en": "<p>The Plaine des Sables empty, red, silent: only the wind.</p>"
+    },
+    "results.QGTFEBdHQXlHzZxE.description": {
+      "fr": "<p>Un Livide gelé debout au bord du rempart du Pas de Bellecombe.</p>",
+      "en": "<p>A Pallid frozen upright on the edge of the rampart at the Pas de Bellecombe.</p>"
+    },
+    "results.9jZX6p6mKBGsv3Yf.description": {
+      "fr": "<p>Des fumerolles qui s'épaississent dans l'Enclos.</p>",
+      "en": "<p>Fumaroles thickening in the Enclos.</p>"
+    },
+    "results.UfyAGfeNs3GDKUtA.description": {
+      "fr": "<p>Un groupe de géologues qui surveillent encore la Fournaise, avec un vieux sismographe.</p>",
+      "en": "<p>A group of geologists still monitoring the Fournaise, with an old seismograph.</p>"
+    },
+    "results.2YslKQhQPdceHYiO.description": {
+      "fr": "<p>Le brouillard qui tombe d'un coup : on ne voit plus le bord du rempart.</p>",
+      "en": "<p>The fog comes down all at once: you can no longer see the edge of the rampart.</p>"
+    },
+    "results.hIZhWPGDKZFad78P.description": {
+      "fr": "<p>Une voiture abandonnée sur la route du Volcan, clés sur le contact, réservoir vide.</p>",
+      "en": "<p>A car abandoned on the Route du Volcan, keys in the ignition, tank empty.</p>"
+    },
+    "results.vvROJKJVArQGOHQB.description": {
+      "fr": "<p>Un randonneur mort au bord du sentier, son sac intact à côté de lui.</p>",
+      "en": "<p>A hiker dead beside the trail, his pack untouched beside him.</p>"
+    },
+    "results.gbIv3N3cXCCivRPO.description": {
+      "fr": "<p>Un grondement sourd sous les pieds.</p>",
+      "en": "<p>A dull rumble underfoot.</p>"
+    },
+    "results.laTle7gxlg0cm9f1.description": {
+      "fr": "<p>Des traces de pas dans les scories, qui tournent en rond.</p>",
+      "en": "<p>Footprints in the scoria, going round in circles.</p>"
+    },
+    "results.DVb10Ds8TzxSW092.description": {
+      "fr": "<p>Le gîte du volcan, porte battante, une lampe allumée à l'intérieur.</p>",
+      "en": "<p>The volcano lodge, door banging, a lamp lit inside.</p>"
+    },
+    "results.Og1XQ8kNlfNqJDaD.description": {
+      "fr": "<p>Un vol de pailles-en-queue qui longe le rempart.</p>",
+      "en": "<p>A flight of tropicbirds skimming along the rampart.</p>"
+    },
+    "results.OSU3pKuZj26UubkC.description": {
+      "fr": "<p>Une coulée récente, encore chaude, qui coupe la piste.</p>",
+      "en": "<p>A recent flow, still hot, cutting the track.</p>"
+    }
+  },
+  "tables/DGkxSoXhKL3PVmLM": {
+    "_nom": "Visibilité 3 — On parle de vous",
+    "name": {
+      "fr": "Visibilité 3 — On parle de vous",
+      "en": "Visibility 3 — People are talking about you"
+    },
+    "description": {
+      "fr": "<p>Quand la visibilité de l'abri franchit 3 à la hausse, le MJ reçoit en privé un événement de cette table.</p>",
+      "en": "<p>When the shelter's visibility rises past 3, the GM privately receives an event from this table.</p>"
+    },
+    "results.LXBr6F1jFoPJ2J6G.description": {
+      "fr": "<p>Un réfugié croisé en fouille parle « d'un endroit où il y a de la lumière le soir ».</p>",
+      "en": "<p>A refugee met while scavenging talks about \"a place where there is light in the evening\".</p>"
+    },
+    "results.Dgsh3WLmJ20QjOpN.description": {
+      "fr": "<p>La radio mentionne « un groupe bien installé » dans votre région.</p>",
+      "en": "<p>The radio mentions \"a well-established group\" in your region.</p>"
+    },
+    "results.O4aXIUmZNvIjLlNz.description": {
+      "fr": "<p>Un Ferrailleur demande, l'air de rien, si vous avez des panneaux à vendre.</p>",
+      "en": "<p>A Scrapper asks, casually, whether you have any panels to sell.</p>"
+    },
+    "results.0OqNA2xVDi89vm5d.description": {
+      "fr": "<p>Des traces de pas autour de la clôture, une seule fois.</p>",
+      "en": "<p>Footprints around the fence, just once.</p>"
+    },
+    "results.WxtiLK7uENeQnpeH.description": {
+      "fr": "<p>Un enfant du voisinage vient demander à manger.</p>",
+      "en": "<p>A child from the neighbourhood comes asking for food.</p>"
+    },
+    "results.HWn8ULScXdbm1g4L.description": {
+      "fr": "<p>Un chien étranger rôde autour du potager.</p>",
+      "en": "<p>A strange dog prowls around the vegetable plot.</p>"
+    },
+    "results.CL8kL0rbZRTwyR9s.description": {
+      "fr": "<p>Un fermier de passage remarque vos cultures.</p>",
+      "en": "<p>A passing farmer notices your crops.</p>"
+    },
+    "results.BG5lnYBsYOsEtrY5.description": {
+      "fr": "<p>Une fumée de votre cuisine a été vue d'une autre colline.</p>",
+      "en": "<p>Smoke from your kitchen was seen from another hill.</p>"
+    }
+  },
+  "tables/FaGBrQayrPRbUgcs": {
+    "_nom": "Générateur — survivant rencontré",
+    "name": {
+      "fr": "Générateur — survivant rencontré",
+      "en": "Generator — survivor encountered"
+    },
+    "description": {
+      "fr": "<p>Qui croise-t-on sur la route ? (Nom : table des noms réunionnais.)</p>",
+      "en": "<p>Who do you meet on the road? (Name: table of Réunion names.)</p>"
+    },
+    "results.dC6tXB8G1z9wDHxF.description": {
+      "fr": "<p>Une aide-soignante de quarante ans, blouse sous un ciré, qui cherche sa fille à Saint-Pierre.</p>",
+      "en": "<p>A forty-year-old care assistant, scrubs under a raincoat, looking for her daughter in Saint-Pierre.</p>"
+    },
+    "results.PHQRP27GEK7CMeSL.description": {
+      "fr": "<p>Un adolescent mutique avec un sabre à canne trop grand pour lui, qui suit le groupe à distance.</p>",
+      "en": "<p>A mute teenager with a cane knife too big for him, who follows the group at a distance.</p>"
+    },
+    "results.M2PfJ5bXRKnXVWqU.description": {
+      "fr": "<p>Un vieux planteur qui refuse de quitter sa case et propose un cari aux passants.</p>",
+      "en": "<p>An old planter who refuses to leave his house and offers a cari to passers-by.</p>"
+    },
+    "results.6AHMk5EkhekSa2d0.description": {
+      "fr": "<p>Une étudiante en médecine qui n'a pas dormi depuis trois jours.</p>",
+      "en": "<p>A medical student who has not slept for three days.</p>"
+    },
+    "results.LLNwKd8j8SfkkwbG.description": {
+      "fr": "<p>Un ancien légionnaire, fusil de chasse, peu de mots, beaucoup de cicatrices.</p>",
+      "en": "<p>A former legionnaire, shotgun, few words, many scars.</p>"
+    },
+    "results.z5vfUGLrqZsCZbKI.description": {
+      "fr": "<p>Un couple de touristes perdus qui ne parlent qu'anglais.</p>",
+      "en": "<p>A couple of lost tourists who speak only English.</p>"
+    },
+    "results.ULfv0P6SUCsPO5Qh.description": {
+      "fr": "<p>Une mère et ses deux enfants, dont l'un a de la fièvre.</p>",
+      "en": "<p>A mother and her two children, one of whom has a fever.</p>"
+    },
+    "results.uwYAEbsvU57xTsW9.description": {
+      "fr": "<p>Un pêcheur des Barques du Sud qui a perdu son bateau.</p>",
+      "en": "<p>A fisherman of the Southern Boats who has lost his boat.</p>"
+    },
+    "results.kLQ5eiMZhlFbJ4bZ.description": {
+      "fr": "<p>Un jeune des Sans-Lune qui veut quitter la bande.</p>",
+      "en": "<p>A young Moonless who wants to leave the gang.</p>"
+    },
+    "results.QzX2weOFeX5tFmng.description": {
+      "fr": "<p>Une institutrice de Mafate descendue chercher des médicaments.</p>",
+      "en": "<p>A schoolteacher from Mafate come down to find medicine.</p>"
+    },
+    "results.D5OkluyEKrPlKEQZ.description": {
+      "fr": "<p>Un mécanicien qui troque ses services contre un toit.</p>",
+      "en": "<p>A mechanic who trades his services for a roof.</p>"
+    },
+    "results.pacqNpLppEeDr2Mu.description": {
+      "fr": "<p>Une infirmière libérale avec son sac et sa voiture.</p>",
+      "en": "<p>A community nurse with her bag and her car.</p>"
+    },
+    "results.AqDdhpTriWHA1ZqM.description": {
+      "fr": "<p>Un musicien de maloya avec son rouleur sur le dos.</p>",
+      "en": "<p>A maloya musician with his rouleur drum on his back.</p>"
+    },
+    "results.S98GpcUY2fv27XpZ.description": {
+      "fr": "<p>Un pompier volontaire, épuisé, qui a perdu son équipe.</p>",
+      "en": "<p>A volunteer firefighter, exhausted, who has lost his crew.</p>"
+    },
+    "results.2PhdnqFYQ6sjqUKu.description": {
+      "fr": "<p>Une agricultrice de la Coopérative en quête d'un taureau échappé.</p>",
+      "en": "<p>A farmer from the Cooperative looking for an escaped bull.</p>"
+    },
+    "results.aXeoNseiygz88N0n.description": {
+      "fr": "<p>Un prêtre qui a fermé son église et ne sait plus quoi croire.</p>",
+      "en": "<p>A priest who has closed his church and no longer knows what to believe.</p>"
+    },
+    "results.FHkLRZmyGXH8HpTJ.description": {
+      "fr": "<p>Un vendeur ambulant de samoussas avec un camion vide.</p>",
+      "en": "<p>A travelling samoussa seller with an empty truck.</p>"
+    },
+    "results.bOfuneHHGqB8yKFq.description": {
+      "fr": "<p>Une ingénieure d'une centrale hydraulique.</p>",
+      "en": "<p>An engineer from a hydroelectric plant.</p>"
+    },
+    "results.dhaxoYKeT8NsUQ11.description": {
+      "fr": "<p>Un gamin des cités qui connaît tous les toits de Saint-Denis.</p>",
+      "en": "<p>A kid from the estates who knows every rooftop in Saint-Denis.</p>"
+    },
+    "results.FRnLgBrEp2dECQ9u.description": {
+      "fr": "<p>Une vieille dame qui a connu le cyclone de 1948 et qui n'a peur de rien.</p>",
+      "en": "<p>An old lady who lived through the cyclone of 1948 and fears nothing.</p>"
+    }
+  },
+  "tables/L3DZ2K7C0is03hvX": {
+    "_nom": "Histoire — ce matin-là",
+    "name": {
+      "fr": "Histoire — ce matin-là",
+      "en": "Story — that morning"
+    },
+    "description": {
+      "fr": "<p>Ce qu'il faisait le matin du jour zéro.</p>",
+      "en": "<p>What they were doing on the morning of day zero.</p>"
+    },
+    "results.ZPfPuLGBVvWLtb46.description": {
+      "fr": "<p>Ce matin-là, il buvait son café sur la varangue en regardant la pluie.</p>",
+      "en": "<p>That morning, he was drinking his coffee on the veranda watching the rain.</p>"
+    },
+    "results.6XvkhimDn1o2OJlU.description": {
+      "fr": "<p>Ce matin-là, elle était dans les embouteillages du boulevard Sud, en retard comme toujours.</p>",
+      "en": "<p>That morning, she was stuck in traffic on the boulevard Sud, late as always.</p>"
+    },
+    "results.LAocEFFwV7hg2fj8.description": {
+      "fr": "<p>Ce matin-là, il coupait la canne avant la chaleur.</p>",
+      "en": "<p>That morning, he was cutting cane before the heat.</p>"
+    },
+    "results.ZnR66mUngUVR71Pr.description": {
+      "fr": "<p>Ce matin-là, elle prenait son service de nuit à rebours, épuisée.</p>",
+      "en": "<p>That morning, she was coming off her night shift, exhausted.</p>"
+    },
+    "results.wMjQywl8QelSAA1T.description": {
+      "fr": "<p>Ce matin-là, il était au marché forain avec sa mère.</p>",
+      "en": "<p>That morning, he was at the street market with his mother.</p>"
+    },
+    "results.SFP73IUuNj0yVHof.description": {
+      "fr": "<p>Ce matin-là, elle préparait la fête de fin d'année de l'école.</p>",
+      "en": "<p>That morning, she was getting ready for the school's end-of-year party.</p>"
+    },
+    "results.BLo00P4PI7Z9MXJQ.description": {
+      "fr": "<p>Ce matin-là, il attendait un car jaune qui n'est jamais passé.</p>",
+      "en": "<p>That morning, he was waiting for a yellow bus that never came.</p>"
+    },
+    "results.1lVdj3pFtxyq0ABo.description": {
+      "fr": "<p>Ce matin-là, elle se disputait avec son frère pour une broutille.</p>",
+      "en": "<p>That morning, she was arguing with her brother over a trifle.</p>"
+    },
+    "results.R3ncfUts5cxyGXyI.description": {
+      "fr": "<p>Ce matin-là, il pêchait au large de Saint-Gilles et n'a rien su avant midi.</p>",
+      "en": "<p>That morning, he was fishing off Saint-Gilles and knew nothing until noon.</p>"
+    },
+    "results.DirslhrihYtFNU5T.description": {
+      "fr": "<p>Ce matin-là, elle randonnait vers le Piton des Neiges.</p>",
+      "en": "<p>That morning, she was hiking towards the Piton des Neiges.</p>"
+    },
+    "results.7t7WkDf8RLo21hti.description": {
+      "fr": "<p>Ce matin-là, il dormait encore, après une nuit de fête.</p>",
+      "en": "<p>That morning, he was still asleep, after a night of partying.</p>"
+    },
+    "results.NVC0b5f5o5UGaxeU.description": {
+      "fr": "<p>Ce matin-là, elle regardait les letchis rougir dans l'arbre de la cour.</p>",
+      "en": "<p>That morning, she was watching the lychees redden in the tree in the yard.</p>"
+    }
+  },
+  "tables/LtfdKgMyBIqWfKj1": {
+    "_nom": "Rencontres — cirque",
+    "name": {
+      "fr": "Rencontres — cirque",
+      "en": "Encounters — cirque"
+    },
+    "description": {
+      "fr": "<p>Une rencontre en sortie dans une région de zone « cirque ».</p>",
+      "en": "<p>An encounter on an outing in a region of the \"cirque\" zone.</p>"
+    },
+    "results.vetvDvk1WGyoM5BH.description": {
+      "fr": "<p>Deux guetteurs des Familles des Îlets qui sifflent pour prévenir l'îlet suivant.</p>",
+      "en": "<p>Two lookouts of the Families of the Îlets whistling to warn the next îlet.</p>"
+    },
+    "results.OFwfNf4SkNk5vJfI.description": {
+      "fr": "<p>Un Livide tombé dans une ravine qui gémit, coincé entre deux rochers.</p>",
+      "en": "<p>A Pallid fallen into a ravine, moaning, wedged between two rocks.</p>"
+    },
+    "results.8lBKN0Eh17lIuMv7.description": {
+      "fr": "<p>Un passage du sentier emporté : il faut une corde.</p>",
+      "en": "<p>A stretch of the trail washed away: a rope is needed.</p>"
+    },
+    "results.yHZdc880d2nmq2jm.description": {
+      "fr": "<p>Un porteur chargé de sacs qui monte à La Nouvelle et propose de troquer.</p>",
+      "en": "<p>A porter loaded with sacks climbing to La Nouvelle who offers to barter.</p>"
+    },
+    "results.QRzylsOlcpqD4cdK.description": {
+      "fr": "<p>Des réfugiés malades campés au col, que les îlets refusent de laisser descendre.</p>",
+      "en": "<p>Sick refugees camped at the pass, whom the îlets refuse to let down.</p>"
+    },
+    "results.JGLb8WbpVd6ps7gg.description": {
+      "fr": "<p>Un éboulis qui roule au-dessus du sentier.</p>",
+      "en": "<p>A rockslide rolling above the trail.</p>"
+    },
+    "results.IdJSxvlsUrGzIc7r.description": {
+      "fr": "<p>Une source captée, dont le tuyau a été coupé net.</p>",
+      "en": "<p>A tapped spring, its pipe cut clean through.</p>"
+    },
+    "results.1M8tpBPDAuBFnUSM.description": {
+      "fr": "<p>Un vieux qui joue du kayamb sur sa varangue et vous invite à boire un café.</p>",
+      "en": "<p>An old man playing the kayamb on his veranda who invites you in for coffee.</p>"
+    },
+    "results.YjWGTiVr2e3XqSOF.description": {
+      "fr": "<p>Trois Livides anciens immobiles sur le sentier, au soleil levant.</p>",
+      "en": "<p>Three old Pallid motionless on the trail, at sunrise.</p>"
+    },
+    "results.dgvxnOtXO91WLJbP.description": {
+      "fr": "<p>Un enfant qui garde des cabris et file prévenir les adultes.</p>",
+      "en": "<p>A child minding goats who runs off to warn the adults.</p>"
+    },
+    "results.REcZN7jHKR5ckgjH.description": {
+      "fr": "<p>Une case incendiée, encore tiède.</p>",
+      "en": "<p>A burnt-out house, still warm.</p>"
+    },
+    "results.j39evaDwZUuQyIaR.description": {
+      "fr": "<p>Une échelle de bois dressée contre le rempart, qui ne mène nulle part de visible.</p>",
+      "en": "<p>A wooden ladder propped against the rampart, leading nowhere visible.</p>"
+    }
+  },
+  "tables/N7GL6zu54VcNYBeU": {
+    "_nom": "Demandes — Les Pèlerins de la Lave",
+    "name": {
+      "fr": "Demandes — Les Pèlerins de la Lave",
+      "en": "Requests — The Pilgrims of the Lava"
+    },
+    "results.BcbVqYnI8jtlz392.description": {
+      "fr": "<p><strong>Récupération — Les cierges de la cathédrale.</strong> Rapporter cierges et vin de messe d'une église de Saint-Denis.</p><p><strong>Récompense :</strong> 6 nourriture, 6 eau ; réputation +2.</p>",
+      "en": "<p><strong>Recovery — The cathedral candles.</strong> Bring back candles and altar wine from a church in Saint-Denis.</p><p><strong>Reward:</strong> 6 food, 6 water; reputation +2.</p>"
+    },
+    "results.HVvlCBTnXdZc7EDD.description": {
+      "fr": "<p><strong>Sauvetage — Les fidèles de Saint-Benoît.</strong> Ramener une famille de fidèles coincée dans Saint-Benoît.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +3.</p>",
+      "en": "<p><strong>Rescue — The faithful of Saint-Benoît.</strong> Bring back a family of the faithful stuck in Saint-Benoît.</p><p><strong>Reward:</strong> 8 food; reputation +3.</p>"
+    },
+    "results.lEEHl95DcnYC7zGC.description": {
+      "fr": "<p><strong>Escorte — La procession.</strong> Protéger une procession qui va prier au bord de la coulée.</p><p><strong>Récompense :</strong> 6 nourriture, 1 medicaments ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The procession.</strong> Protect a procession going to pray at the edge of the lava flow.</p><p><strong>Reward:</strong> 6 food, 1 medicine; reputation +2.</p>"
+    },
+    "results.AsnK1lw4LQXotLyP.description": {
+      "fr": "<p><strong>Réparation — La citerne du presbytère.</strong> Réparer la citerne fissurée de Notre-Dame-des-Laves.</p><p><strong>Récompense :</strong> 10 eau, 4 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Repair — The presbytery cistern.</strong> Repair the cracked cistern at Notre-Dame-des-Laves.</p><p><strong>Reward:</strong> 10 water, 4 food; reputation +2.</p>"
+    },
+    "results.BaAbaQ0whD7mdY93.description": {
+      "fr": "<p><strong>Échange — Leur charité contre la vôtre.</strong> Ils offrent de soigner un blessé du groupe si l'un de vous assiste à leurs veillées une semaine.</p><p><strong>Récompense :</strong> 3 medicaments ; réputation +1.</p>",
+      "en": "<p><strong>Trade — Their charity for yours.</strong> They offer to treat one of the group's wounded if one of you attends their vigils for a week.</p><p><strong>Reward:</strong> 3 medicine; reputation +1.</p>"
+    },
+    "results.DV5EiWjsMVGNbthF.description": {
+      "fr": "<p><strong>Sauvetage — Le prêcheur parti.</strong> Frère Expédit est parti seul vers le volcan ; ses fidèles supplient qu'on le ramène.</p><p><strong>Récompense :</strong> 8 nourriture, 4 eau ; réputation +3.</p>",
+      "en": "<p><strong>Rescue — The preacher gone.</strong> Brother Expédit has set off alone towards the volcano; his faithful beg you to bring him back.</p><p><strong>Reward:</strong> 8 food, 4 water; reputation +3.</p>"
+    }
+  },
+  "tables/PARGwp57E2ZionKi": {
+    "_nom": "Demandes — Les Sans-Lune",
+    "name": {
+      "fr": "Demandes — Les Sans-Lune",
+      "en": "Requests — The Moonless"
+    },
+    "results.zK6Ay3AwEqjse0jk.description": {
+      "fr": "<p><strong>Récupération — Le coffre de la bijouterie.</strong> Le Comptable veut le contenu d'un coffre du centre-ville.</p><p><strong>Récompense :</strong> 4 munitions, 6 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Recovery — The jeweller's safe.</strong> The Bookkeeper wants the contents of a safe in the town centre.</p><p><strong>Reward:</strong> 4 ammunition, 6 food; reputation +2.</p>"
+    },
+    "results.eWOnpCzn24MwLdRE.description": {
+      "fr": "<p><strong>Escorte — Le collecteur.</strong> Accompagner un collecteur de tribut dans un quartier qui refuse de payer.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The collector.</strong> Accompany a tribute collector into a neighbourhood that refuses to pay.</p><p><strong>Reward:</strong> 8 food; reputation +2.</p>"
+    },
+    "results.AMOo4jSiCtc367vZ.description": {
+      "fr": "<p><strong>Échange — Ce qu'ils ont pris.</strong> Ils vendent ce qu'ils ont pillé : vivres et médicaments contre munitions.</p><p><strong>Récompense :</strong> 6 nourriture, 2 medicaments ; réputation +1.</p>",
+      "en": "<p><strong>Trade — What they took.</strong> They sell what they have looted: food and medicine for ammunition.</p><p><strong>Reward:</strong> 6 food, 2 medicine; reputation +1.</p>"
+    },
+    "results.AnB5cACNMKvGK7Wb.description": {
+      "fr": "<p><strong>Sauvetage — Un des leurs.</strong> Libérer un jeune de la bande retenu par la Garnison (la Garnison ne l'oubliera pas).</p><p><strong>Récompense :</strong> 5 munitions ; réputation +3.</p>",
+      "en": "<p><strong>Rescue — One of theirs.</strong> Free a young gang member held by the Garrison (the Garrison will not forget it).</p><p><strong>Reward:</strong> 5 ammunition; reputation +3.</p>"
+    },
+    "results.VoET3HfvbWOCetOz.description": {
+      "fr": "<p><strong>Récupération — Le stock du grossiste.</strong> Vider l'entrepôt d'un grossiste de Sainte-Marie avant la Coopérative.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Recovery — The wholesaler's stock.</strong> Empty a wholesaler's warehouse in Sainte-Marie before the Cooperative does.</p><p><strong>Reward:</strong> 10 food; reputation +2.</p>"
+    },
+    "results.EwMMbpAk9shWhjC8.description": {
+      "fr": "<p><strong>Réparation — Les lampes de la planque.</strong> Faire marcher les panneaux de leur planque.</p><p><strong>Récompense :</strong> 3 munitions, 4 nourriture ; réputation +1.</p>",
+      "en": "<p><strong>Repair — The hideout's lamps.</strong> Get the panels of their hideout working.</p><p><strong>Reward:</strong> 3 ammunition, 4 food; reputation +1.</p>"
+    }
+  },
+  "tables/S2NNTo6b2KG2DCLc": {
+    "_nom": "Rencontres — hauts",
+    "name": {
+      "fr": "Rencontres — hauts",
+      "en": "Encounters — highlands"
+    },
+    "description": {
+      "fr": "<p>Une rencontre en sortie dans une région de zone « hauts ».</p>",
+      "en": "<p>An encounter on an outing in a region of the \"highlands\" zone.</p>"
+    },
+    "results.jmCCpFMpPkNXEaVZ.description": {
+      "fr": "<p>Un Livide des Hauts figé dans le brouillard au milieu de la route, couvert de rosée.</p>",
+      "en": "<p>A Highland Pallid frozen in the fog in the middle of the road, covered in dew.</p>"
+    },
+    "results.sKn1GPLYlWoWfXXE.description": {
+      "fr": "<p>Un fermier de la Coopérative, fusil à l'épaule, qui demande ce que vous faites sur ses terres.</p>",
+      "en": "<p>A Cooperative farmer, shotgun on his shoulder, asking what you are doing on his land.</p>"
+    },
+    "results.1IGBNptbjtDZgglf.description": {
+      "fr": "<p>Des cabris échappés qui broutent sur le talus.</p>",
+      "en": "<p>Escaped goats grazing on the bank.</p>"
+    },
+    "results.NcDGojm2pmbmtlrh.description": {
+      "fr": "<p>Une case dont la cheminée fume : quelqu'un vit là, et vous observe.</p>",
+      "en": "<p>A house whose chimney is smoking: someone lives there, and is watching you.</p>"
+    },
+    "results.8TaHHo9MArlUn82Y.description": {
+      "fr": "<p>Une troupe lente de Livides anciens qui descend la route vers le bruit d'un groupe électrogène.</p>",
+      "en": "<p>A slow troop of old Pallid coming down the road towards the noise of a generator.</p>"
+    },
+    "results.Ow2sCGEVCEkysWyy.description": {
+      "fr": "<p>Une barrière de barbelés neuve, avec un panneau : « Passe pas. Nou lé la. »</p>",
+      "en": "<p>A new barbed-wire fence, with a sign: \"Passe pas. Nou lé la.\" (Keep out. We are here.)</p>"
+    },
+    "results.ETPK8u5ACIZeWTn9.description": {
+      "fr": "<p>Un cheval sellé, sans cavalier, qui erre dans la prairie.</p>",
+      "en": "<p>A saddled horse, no rider, wandering in the pasture.</p>"
+    },
+    "results.vuDfuLjg8hIMT4w4.description": {
+      "fr": "<p>Un randonneur égaré, épuisé, qui demande la route de Mafate.</p>",
+      "en": "<p>A lost, exhausted hiker asking the way to Mafate.</p>"
+    },
+    "results.a9rvDDI97m4UuY8k.description": {
+      "fr": "<p>Un incendie de savane au loin, poussé par le vent.</p>",
+      "en": "<p>A savannah fire in the distance, driven by the wind.</p>"
+    },
+    "results.9zqd0FxLCilOVpcE.description": {
+      "fr": "<p>Un chien de berger qui vous suit à distance et ne vous lâche plus.</p>",
+      "en": "<p>A sheepdog that follows you at a distance and will not leave you.</p>"
+    },
+    "results.otEDK4pBkK2p1hGX.description": {
+      "fr": "<p>Une ferme dont toutes les portes sont ouvertes, et dont la cour est vide.</p>",
+      "en": "<p>A farm with every door open, and an empty yard.</p>"
+    },
+    "results.UUb2FBjLG87FxkPF.description": {
+      "fr": "<p>Le son d'une cloche de vache dans le brouillard, qui ne s'arrête jamais.</p>",
+      "en": "<p>The sound of a cowbell in the fog, that never stops.</p>"
+    }
+  },
+  "tables/ak1hKfxxnBlIq2Xl": {
+    "_nom": "Rencontres — phase effondrement",
+    "name": {
+      "fr": "Rencontres — phase effondrement",
+      "en": "Encounters — collapse phase"
+    },
+    "description": {
+      "fr": "<p>Une rencontre typique de la phase « effondrement ».</p>",
+      "en": "<p>A typical encounter of the \"collapse\" phase.</p>"
+    },
+    "results.NQpsEh1mqrDwIAkw.description": {
+      "fr": "<p>Les lumières s'éteignent sur tout un quartier.</p>",
+      "en": "<p>The lights go out across a whole neighbourhood.</p>"
+    },
+    "results.6IlahK34KEmoaUw2.description": {
+      "fr": "<p>Une horde qui sort d'une ville par la quatre-voies.</p>",
+      "en": "<p>A horde leaving a town along the dual carriageway.</p>"
+    },
+    "results.IttJl975HDNwMZ9w.description": {
+      "fr": "<p>Un groupe de survivants qui négocie un échange depuis un toit.</p>",
+      "en": "<p>A group of survivors negotiating a trade from a rooftop.</p>"
+    },
+    "results.bv6j0lxoXqiggGRv.description": {
+      "fr": "<p>Une citerne de camion renversée, qui fuit son gasoil.</p>",
+      "en": "<p>An overturned tanker truck, leaking its diesel.</p>"
+    },
+    "results.ZZ0KA6Y5zzoFkV5X.description": {
+      "fr": "<p>Un enfant seul dans une case vide.</p>",
+      "en": "<p>A child alone in an empty house.</p>"
+    },
+    "results.CPiaAxjTpnzch3gY.description": {
+      "fr": "<p>La Garnison qui réquisitionne un camion à un carrefour.</p>",
+      "en": "<p>The Garrison requisitioning a truck at a crossroads.</p>"
+    },
+    "results.sTEI9rmXgfRcbTG2.description": {
+      "fr": "<p>Une maison barricadée dont les occupants tirent sur tout ce qui approche.</p>",
+      "en": "<p>A barricaded house whose occupants shoot at anything that approaches.</p>"
+    },
+    "results.KVHUqkDgzypnQzWE.description": {
+      "fr": "<p>Un incendie que personne n'éteint.</p>",
+      "en": "<p>A fire that nobody puts out.</p>"
+    },
+    "results.EY1o2qaw3I7oto6q.description": {
+      "fr": "<p>Un appel à l'aide sur une fréquence radio.</p>",
+      "en": "<p>A call for help on a radio frequency.</p>"
+    },
+    "results.O3YtSuKcRQyG5dfq.description": {
+      "fr": "<p>Un malade caché parmi des réfugiés.</p>",
+      "en": "<p>A sick person hidden among refugees.</p>"
+    }
+  },
+  "tables/cOA1JzJmoA25k368": {
+    "_nom": "Rencontres — phase silence",
+    "name": {
+      "fr": "Rencontres — phase silence",
+      "en": "Encounters — silence phase"
+    },
+    "description": {
+      "fr": "<p>Une rencontre typique de la phase « silence ».</p>",
+      "en": "<p>A typical encounter of the \"silence\" phase.</p>"
+    },
+    "results.sEj7zMGmo6swcF0c.description": {
+      "fr": "<p>Une ville muette où seuls les chiens aboient.</p>",
+      "en": "<p>A silent town where only the dogs bark.</p>"
+    },
+    "results.1LdzS4TTQChTFBiP.description": {
+      "fr": "<p>Une bande de Sans-Lune en maraude nocturne.</p>",
+      "en": "<p>A gang of Moonless on a night raid.</p>"
+    },
+    "results.RIjf0vE8ySSEN3N0.description": {
+      "fr": "<p>Un marché de Ferrailleurs sur un parking.</p>",
+      "en": "<p>A Scrappers' market in a car park.</p>"
+    },
+    "results.Dg98Z4icTB9ylYdI.description": {
+      "fr": "<p>Un îlet qui refuse l'entrée à des inconnus.</p>",
+      "en": "<p>An îlet that refuses entry to strangers.</p>"
+    },
+    "results.PB4P9k6wSMxJA0jQ.description": {
+      "fr": "<p>Une horde de passage sur la route des Plaines.</p>",
+      "en": "<p>A horde passing through on the Route des Plaines.</p>"
+    },
+    "results.MMHBsasVvHnfUoRH.description": {
+      "fr": "<p>Un groupe de Pèlerins qui offre le repas.</p>",
+      "en": "<p>A group of Pilgrims offering a meal.</p>"
+    },
+    "results.kv5OTZMBiMw4uvGo.description": {
+      "fr": "<p>Un fermier qui propose du lait contre du travail.</p>",
+      "en": "<p>A farmer offering milk for work.</p>"
+    },
+    "results.kRBDDjICETDn1yex.description": {
+      "fr": "<p>Une maison abandonnée récemment, encore chaude.</p>",
+      "en": "<p>A recently abandoned house, still warm.</p>"
+    },
+    "results.wRr7f8flBgXv3YdQ.description": {
+      "fr": "<p>Une fumée sur une colline : un autre groupe.</p>",
+      "en": "<p>Smoke on a hill: another group.</p>"
+    },
+    "results.V6kK0Rc9I3i8nD1e.description": {
+      "fr": "<p>Un cyclone annoncé à la radio d'un pêcheur.</p>",
+      "en": "<p>A cyclone announced on a fisherman's radio.</p>"
+    }
+  },
+  "tables/chsIlUZOEPu3Bqrn": {
+    "_nom": "Rencontres — phase panique",
+    "name": {
+      "fr": "Rencontres — phase panique",
+      "en": "Encounters — panic phase"
+    },
+    "description": {
+      "fr": "<p>Une rencontre typique de la phase « panique ».</p>",
+      "en": "<p>A typical encounter of the \"panic\" phase.</p>"
+    },
+    "results.ASymt5mNqU3qWhV3.description": {
+      "fr": "<p>Une station-service où l'on se bat pour le dernier plein.</p>",
+      "en": "<p>A petrol station where people fight over the last tankful.</p>"
+    },
+    "results.TY9yxgM0oZDsXemN.description": {
+      "fr": "<p>Un couvre-feu crié par haut-parleur depuis une voiture de police.</p>",
+      "en": "<p>A curfew shouted through a loudspeaker from a police car.</p>"
+    },
+    "results.v4KY3NQJLyFeq1WE.description": {
+      "fr": "<p>Une file de réfugiés qui monte vers les Hauts, à pied.</p>",
+      "en": "<p>A line of refugees climbing towards the Highlands, on foot.</p>"
+    },
+    "results.K2rEVzK8fiqb3GPA.description": {
+      "fr": "<p>Un pillage de magasin d'électroménager, en plein jour.</p>",
+      "en": "<p>An electrical goods store being looted, in broad daylight.</p>"
+    },
+    "results.otCkkGgAvgeArFgy.description": {
+      "fr": "<p>Un barrage de citoyens armés à l'entrée d'un quartier.</p>",
+      "en": "<p>A roadblock of armed citizens at the entrance to a neighbourhood.</p>"
+    },
+    "results.ckhD1B2aazk94ivn.description": {
+      "fr": "<p>Des avions qui décollent de Gillot, les derniers.</p>",
+      "en": "<p>Planes taking off from Gillot, the last ones.</p>"
+    },
+    "results.w3VnQkQJkXe7AYFj.description": {
+      "fr": "<p>Une famille qui propose sa voiture contre une place dans votre abri.</p>",
+      "en": "<p>A family offering their car for a place in your shelter.</p>"
+    },
+    "results.8LP3qoqm9rHyLTnJ.description": {
+      "fr": "<p>Un hôpital de campagne dressé dans un gymnase, débordé.</p>",
+      "en": "<p>A field hospital set up in a gymnasium, overwhelmed.</p>"
+    },
+    "results.FAJUH0tjaG0Fs5JK.description": {
+      "fr": "<p>Des coups de feu dans la nuit, puis des cris, puis le silence.</p>",
+      "en": "<p>Gunshots in the night, then screams, then silence.</p>"
+    },
+    "results.hPc3nn4OSrizQWfw.description": {
+      "fr": "<p>Un bateau surchargé qui quitte le port.</p>",
+      "en": "<p>An overloaded boat leaving the harbour.</p>"
+    }
+  },
+  "tables/eUNONdmZdZucM7AF": {
+    "_nom": "Recrues — prix",
+    "name": {
+      "fr": "Recrues — prix",
+      "en": "Recruits — price"
+    },
+    "description": {
+      "fr": "<p>Ce qu'elle demande, ou ce qu'elle coûte.</p>",
+      "en": "<p>What they ask for, or what they cost.</p>"
+    },
+    "results.x4zGdyvNTkZIpMEB.description": {
+      "fr": "<p>Il demande une place pour sa mère âgée, qui ne peut plus marcher.</p>",
+      "en": "<p>He asks for a place for his elderly mother, who can no longer walk.</p>"
+    },
+    "results.qrsXbgGa1bD9EjBM.description": {
+      "fr": "<p>Elle exige sa part de chaque fouille, avant les autres.</p>",
+      "en": "<p>She demands her share of every scavenge, before the others.</p>"
+    },
+    "results.wMubszYIJDbL0xr0.description": {
+      "fr": "<p>Il ne fait confiance à personne et dort une arme à la main.</p>",
+      "en": "<p>He trusts nobody and sleeps with a weapon in his hand.</p>"
+    },
+    "results.sJR4wXSpXf4hrefH.description": {
+      "fr": "<p>Elle a un trait gênant : elle chaparde.</p>",
+      "en": "<p>She has an awkward trait: she pilfers.</p>"
+    },
+    "results.1GjKU1Wl7bAJHONB.description": {
+      "fr": "<p>Il cache une morsure ancienne… qui n'a rien donné, dit-il.</p>",
+      "en": "<p>He is hiding an old bite… which came to nothing, he says.</p>"
+    },
+    "results.UHPVDUMkVusLsxEH.description": {
+      "fr": "<p>Elle veut qu'on l'aide à sauver son frère, retenu par la Garnison.</p>",
+      "en": "<p>She wants help to rescue her brother, held by the Garrison.</p>"
+    },
+    "results.NDP1XeUNxy38fFiZ.description": {
+      "fr": "<p>Il refuse de toucher une arme.</p>",
+      "en": "<p>He refuses to touch a weapon.</p>"
+    },
+    "results.nUo1jCVBONY1JKf4.description": {
+      "fr": "<p>Elle boit le rhum des réserves.</p>",
+      "en": "<p>She drinks the rum from the stores.</p>"
+    },
+    "results.z3QLpSXdpBg4vRLi.description": {
+      "fr": "<p>Il a des ennemis chez les Sans-Lune, qui le cherchent.</p>",
+      "en": "<p>He has enemies among the Moonless, who are looking for him.</p>"
+    },
+    "results.M2bGsygETLylJNka.description": {
+      "fr": "<p>Elle veut commander, ou rien.</p>",
+      "en": "<p>She wants to be in charge, or nothing.</p>"
+    },
+    "results.6Bu1On0igs93YdGs.description": {
+      "fr": "<p>Il mange comme deux.</p>",
+      "en": "<p>He eats for two.</p>"
+    },
+    "results.c8lsdu74i52gnTrr.description": {
+      "fr": "<p>Elle ne restera que jusqu'à la prochaine saison sèche.</p>",
+      "en": "<p>She will only stay until the next dry season.</p>"
+    }
+  },
+  "tables/eVUENIxsisNCurTz": {
+    "_nom": "Rencontres — phase apres",
+    "name": {
+      "fr": "Rencontres — phase apres",
+      "en": "Encounters — the after phase"
+    },
+    "description": {
+      "fr": "<p>Une rencontre typique de la phase « apres ».</p>",
+      "en": "<p>A typical encounter of the \"after\" phase.</p>"
+    },
+    "results.WeblbbQHAkCPae8N.description": {
+      "fr": "<p>Des rues désertes, des corps décomposés dans les caniveaux, plus un Livide debout dans les Bas.</p>",
+      "en": "<p>Deserted streets, decomposed bodies in the gutters, not one Pallid left standing in the Lowlands.</p>"
+    },
+    "results.ihEVceMhESJk2zB8.description": {
+      "fr": "<p>Une bande humaine qui tient un quartier du littoral.</p>",
+      "en": "<p>A human gang holding a neighbourhood on the coast.</p>"
+    },
+    "results.Lqhah5p3bQ2OPuMu.description": {
+      "fr": "<p>Une troupe de Livides des Hauts, lents et nombreux, dans le brouillard.</p>",
+      "en": "<p>A troop of Highland Pallid, slow and numerous, in the fog.</p>"
+    },
+    "results.P8kwu3F5XjQxQJAU.description": {
+      "fr": "<p>Un potager abandonné, envahi, plein de brèdes.</p>",
+      "en": "<p>An abandoned vegetable plot, overgrown, full of greens.</p>"
+    },
+    "results.e4dfaHkxjZObsiM0.description": {
+      "fr": "<p>Des barques des Barques du Sud au large.</p>",
+      "en": "<p>Boats of the Southern Boats offshore.</p>"
+    },
+    "results.mfpWAw70XheFECEr.description": {
+      "fr": "<p>Un abri prospère, trop visible, qui attire les regards.</p>",
+      "en": "<p>A prosperous shelter, too visible, that draws attention.</p>"
+    },
+    "results.YKgT3BMNCfAdiWbu.description": {
+      "fr": "<p>Un vieux Livide figé par le froid au bord d'un chemin des Hauts.</p>",
+      "en": "<p>An old Pallid frozen stiff by the cold at the edge of a Highland path.</p>"
+    },
+    "results.kEEwWKYbW8C2jpyO.description": {
+      "fr": "<p>Une famille qui revient s'installer en bas, prudemment.</p>",
+      "en": "<p>A family coming back to settle down below, cautiously.</p>"
+    },
+    "results.D1EKiy0QZTuRkZ14.description": {
+      "fr": "<p>Un chien redevenu sauvage, qui hésite à s'approcher.</p>",
+      "en": "<p>A dog gone wild again, hesitating to come closer.</p>"
+    },
+    "results.ayjNemHVLEyJcQVr.description": {
+      "fr": "<p>Une route envahie par la végétation, méconnaissable.</p>",
+      "en": "<p>A road overgrown with vegetation, unrecognisable.</p>"
+    }
+  },
+  "tables/h3wo9DGwRuinmC5G": {
+    "_nom": "Visibilité 9 — L'assaut",
+    "name": {
+      "fr": "Visibilité 9 — L'assaut",
+      "en": "Visibility 9 — The assault"
+    },
+    "description": {
+      "fr": "<p>Quand la visibilité de l'abri franchit 9 à la hausse, le MJ reçoit en privé un événement de cette table.</p>",
+      "en": "<p>When the shelter's visibility rises past 9, the GM privately receives an event from this table.</p>"
+    },
+    "results.VBTEANEIavCdZnLY.description": {
+      "fr": "<p>Une bande attaque de nuit, en deux groupes, l'un pour faire diversion.</p>",
+      "en": "<p>A gang attacks at night, in two groups, one to create a diversion.</p>"
+    },
+    "results.zHHrsQWaEulChhMa.description": {
+      "fr": "<p>Une horde attirée par votre groupe électrogène déferle sur la clôture.</p>",
+      "en": "<p>A horde drawn by your generator surges against the fence.</p>"
+    },
+    "results.EqgxxtvAar78XsZV.description": {
+      "fr": "<p>On a mis le feu à la serre pour vous faire sortir.</p>",
+      "en": "<p>Someone has set fire to the greenhouse to make you come out.</p>"
+    },
+    "results.uEIzLUj2FjlGEOki.description": {
+      "fr": "<p>Un siège : la route est coupée, l'eau aussi, ils attendent.</p>",
+      "en": "<p>A siege: the road is cut, the water too, they wait.</p>"
+    },
+    "results.vhlf3ei0wEcCPPKW.description": {
+      "fr": "<p>Un ancien membre du groupe ouvre la porte aux pillards.</p>",
+      "en": "<p>A former member of the group opens the door to the looters.</p>"
+    },
+    "results.1SG3oFBWUxnr6ePF.description": {
+      "fr": "<p>Une faction réclame l'abri au nom de l'autorité et vient le prendre.</p>",
+      "en": "<p>A faction claims the shelter in the name of authority and comes to take it.</p>"
+    },
+    "results.gl1ZGhDKJKPMHllv.description": {
+      "fr": "<p>Une horde et une bande en même temps : coïncidence, ou pas ?</p>",
+      "en": "<p>A horde and a gang at the same time: coincidence, or not?</p>"
+    },
+    "results.yd2JwZX3MrHTlX55.description": {
+      "fr": "<p>Des tireurs embusqués visent quiconque sort dans la cour.</p>",
+      "en": "<p>Snipers take aim at anyone who steps out into the yard.</p>"
+    }
+  },
+  "tables/hQZximv1NPeNFnT5": {
+    "_nom": "Visibilité 5 — Des éclaireurs",
+    "name": {
+      "fr": "Visibilité 5 — Des éclaireurs",
+      "en": "Visibility 5 — Scouts"
+    },
+    "description": {
+      "fr": "<p>Quand la visibilité de l'abri franchit 5 à la hausse, le MJ reçoit en privé un événement de cette table.</p>",
+      "en": "<p>When the shelter's visibility rises past 5, the GM privately receives an event from this table.</p>"
+    },
+    "results.CU14AKouGVvsHLVY.description": {
+      "fr": "<p>Deux silhouettes vous observent aux jumelles depuis la crête, puis disparaissent.</p>",
+      "en": "<p>Two silhouettes watch you through binoculars from the ridge, then disappear.</p>"
+    },
+    "results.kYyCKBpzdwXiERF3.description": {
+      "fr": "<p>Un « voyageur » demande l'hospitalité pour une nuit et compte vos fusils.</p>",
+      "en": "<p>A \"traveller\" asks for hospitality for one night and counts your guns.</p>"
+    },
+    "results.5IlycQfrQijFFU5x.description": {
+      "fr": "<p>On a coupé un fil de votre alarme pour voir si quelqu'un viendrait.</p>",
+      "en": "<p>Someone cut a wire of your alarm to see whether anyone would come.</p>"
+    },
+    "results.MYkRpe0dI8Nzvj6d.description": {
+      "fr": "<p>Un message griffonné sur votre portail : un signe que vous ne connaissez pas.</p>",
+      "en": "<p>A message scrawled on your gate: a sign you do not recognise.</p>"
+    },
+    "results.DyPQd0QXcLCYDWqK.description": {
+      "fr": "<p>Un drone de loisir passe au-dessus de l'abri.</p>",
+      "en": "<p>A hobby drone passes over the shelter.</p>"
+    },
+    "results.FOm60Q1D1FApEJQ2.description": {
+      "fr": "<p>Des traces de pneus dans le chemin, qui font demi-tour.</p>",
+      "en": "<p>Tyre tracks in the lane, that turn around.</p>"
+    },
+    "results.iCv3FCxJrxXbEJNh.description": {
+      "fr": "<p>Un Livide attaché à votre barrière, pour voir ce que vous en ferez.</p>",
+      "en": "<p>A Pallid tied to your fence, to see what you will do with it.</p>"
+    },
+    "results.sF0wYq7hEFLC5tHG.description": {
+      "fr": "<p>Un groupe campe à un kilomètre et ne bouge plus.</p>",
+      "en": "<p>A group camps a kilometre away and no longer moves.</p>"
+    }
+  },
+  "tables/jCRjs1WtyFPo21up": {
+    "_nom": "Rencontres — phase jour-zero",
+    "name": {
+      "fr": "Rencontres — phase jour-zero",
+      "en": "Encounters — day zero phase"
+    },
+    "description": {
+      "fr": "<p>Une rencontre typique de la phase « jour-zero ».</p>",
+      "en": "<p>A typical encounter of the \"day zero\" phase.</p>"
+    },
+    "results.aDz2BXeBE263bLLK.description": {
+      "fr": "<p>Un embouteillage monstre, des gens qui hurlent, une ambulance bloquée au milieu.</p>",
+      "en": "<p>A monstrous traffic jam, people screaming, an ambulance stuck in the middle.</p>"
+    },
+    "results.P9tvLt5NoUGghajc.description": {
+      "fr": "<p>Un voisin qui frappe à la porte : sa femme a de la fièvre et le mord.</p>",
+      "en": "<p>A neighbour knocking at the door: his wife has a fever and bites him.</p>"
+    },
+    "results.qXblVJs1lYQjxG8I.description": {
+      "fr": "<p>Un barrage de gendarmerie qui ne laisse passer personne vers l'aéroport.</p>",
+      "en": "<p>A gendarmerie roadblock letting nobody through towards the airport.</p>"
+    },
+    "results.btAETXksn2BSsBzf.description": {
+      "fr": "<p>Un supermarché pris d'assaut, rayons vides, caissières en larmes.</p>",
+      "en": "<p>A supermarket stormed, shelves empty, cashiers in tears.</p>"
+    },
+    "results.bDaazSmNR31HaAQ7.description": {
+      "fr": "<p>Une foule devant une pharmacie qui ferme son rideau.</p>",
+      "en": "<p>A crowd in front of a pharmacy pulling down its shutter.</p>"
+    },
+    "results.5PpAcPck2IHEFVKJ.description": {
+      "fr": "<p>Un coureur qui surgit d'un parking en hurlant.</p>",
+      "en": "<p>A runner bursting out of a car park, screaming.</p>"
+    },
+    "results.sdiWed94wpLEKTuq.description": {
+      "fr": "<p>Une radio qui annonce un « malaise collectif » et demande de rester chez soi.</p>",
+      "en": "<p>A radio announcing a \"mass fainting\" and asking people to stay at home.</p>"
+    },
+    "results.f8yDCCqvm2fkkLiB.description": {
+      "fr": "<p>Un bus scolaire arrêté, portes ouvertes, enfants dispersés.</p>",
+      "en": "<p>A school bus stopped, doors open, children scattered.</p>"
+    },
+    "results.9dxrHhNneHa4YG66.description": {
+      "fr": "<p>Une église pleine où l'on prie à voix haute.</p>",
+      "en": "<p>A full church where people pray out loud.</p>"
+    },
+    "results.rWEm6iOCQkL0L9t4.description": {
+      "fr": "<p>Un policier municipal qui tire en l'air pour disperser une foule.</p>",
+      "en": "<p>A municipal police officer firing into the air to disperse a crowd.</p>"
+    }
+  },
+  "tables/lUWq21YOp6BTkewB": {
+    "_nom": "Demandes — La Coopérative des Plaines",
+    "name": {
+      "fr": "Demandes — La Coopérative des Plaines",
+      "en": "Requests — The Plains Cooperative"
+    },
+    "results.LHAaed3Qv492LIN5.description": {
+      "fr": "<p><strong>Escorte — La transhumance.</strong> Mener vingt vaches d'une ferme menacée de la Plaine des Cafres à une autre, à travers le brouillard.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The transhumance.</strong> Drive twenty cows from a threatened farm on the Plaine des Cafres to another, through the fog.</p><p><strong>Reward:</strong> 10 food; reputation +2.</p>"
+    },
+    "results.0sLtWI0UVX5gy0if.description": {
+      "fr": "<p><strong>Récupération — Les semences de la jardinerie.</strong> Rapporter les sachets de graines d'une jardinerie du Tampon.</p><p><strong>Récompense :</strong> 6 nourriture, 3 graines ; réputation +2.</p>",
+      "en": "<p><strong>Recovery — The garden centre's seeds.</strong> Bring back the seed packets from a garden centre in Le Tampon.</p><p><strong>Reward:</strong> 6 food, 3 seeds; reputation +2.</p>"
+    },
+    "results.v3q2t56dakI6v2Ip.description": {
+      "fr": "<p><strong>Réparation — Le tracteur de Mémé Lucette.</strong> Remettre en marche un vieux tracteur pour les labours avant les pluies.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Repair — Granny Lucette's tractor.</strong> Get an old tractor running again for ploughing before the rains.</p><p><strong>Reward:</strong> 8 food; reputation +2.</p>"
+    },
+    "results.a6sXU8ffsC06hxjC.description": {
+      "fr": "<p><strong>Sauvetage — Le berger dans la ravine.</strong> Un jeune berger est tombé dans une ravine en poursuivant une génisse.</p><p><strong>Récompense :</strong> 6 nourriture, 2 materiaux ; réputation +3.</p>",
+      "en": "<p><strong>Rescue — The herdsman in the ravine.</strong> A young herdsman fell into a ravine chasing a heifer.</p><p><strong>Reward:</strong> 6 food, 2 materials; reputation +3.</p>"
+    },
+    "results.g2NAV2M9UCNIgI17.description": {
+      "fr": "<p><strong>Échange — Fromage contre outils.</strong> Échanger des tommes et du lait contre des outils et des clous.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +1.</p>",
+      "en": "<p><strong>Trade — Cheese for tools.</strong> Trade tommes and milk for tools and nails.</p><p><strong>Reward:</strong> 8 food; reputation +1.</p>"
+    },
+    "results.bimM5kvE1rO0Fipl.description": {
+      "fr": "<p><strong>Escorte — Le marché de Bourg-Murat.</strong> Garder le marché du samedi contre une bande qui rôde.</p><p><strong>Récompense :</strong> 6 nourriture, 2 graines ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The Bourg-Murat market.</strong> Guard the Saturday market against a gang that is prowling about.</p><p><strong>Reward:</strong> 6 food, 2 seeds; reputation +2.</p>"
+    }
+  },
+  "tables/lijCaAKYop3jZo2s": {
+    "_nom": "Générateur — rumeur de bouche à oreille",
+    "name": {
+      "fr": "Générateur — rumeur de bouche à oreille",
+      "en": "Generator — word-of-mouth rumour"
+    },
+    "description": {
+      "fr": "<p>Ce qui se dit autour des feux, vrai ou faux.</p>",
+      "en": "<p>What is said around the fires, true or false.</p>"
+    },
+    "results.AinPejYNVvi8UyDi.description": {
+      "fr": "<p>Il paraît que les Livides ne traversent pas l'eau salée.</p>",
+      "en": "<p>They say the Pallid do not cross salt water.</p>"
+    },
+    "results.ykZlPqfM7I3R006Z.description": {
+      "fr": "<p>On dit qu'un îlet de Mafate accueille tout le monde ; d'autres disent qu'il n'accueille personne.</p>",
+      "en": "<p>They say a Mafate îlet takes everyone in; others say it takes in nobody.</p>"
+    },
+    "results.WU7QzAQPI6nZWpxj.description": {
+      "fr": "<p>Un cargo viendrait chercher les survivants au Port. On le dit depuis des semaines.</p>",
+      "en": "<p>A cargo ship is supposed to be coming to pick up survivors at Le Port. They have been saying so for weeks.</p>"
+    },
+    "results.SsS4VBSPSepcILZd.description": {
+      "fr": "<p>La Fournaise va se réveiller, les animaux le sentent.</p>",
+      "en": "<p>The Fournaise is going to wake up, the animals can feel it.</p>"
+    },
+    "results.FejeuOyJB9cFsugV.description": {
+      "fr": "<p>Les Sans-Lune ont un médecin prisonnier.</p>",
+      "en": "<p>The Moonless have a doctor prisoner.</p>"
+    },
+    "results.Zm5s4ou8odY5nkGF.description": {
+      "fr": "<p>Il y a un tunnel de lave aménagé dans le Grand Brûlé, avec des vivres pour des mois.</p>",
+      "en": "<p>There is a fitted-out lava tube in the Grand Brûlé, with food for months.</p>"
+    },
+    "results.ahP4Ng3zd41jGyrb.description": {
+      "fr": "<p>Le Gris viendrait de l'eau des ravines.</p>",
+      "en": "<p>The Grey is said to come from the water of the ravines.</p>"
+    },
+    "results.vmVWb7XPTdrtr9fm.description": {
+      "fr": "<p>Les vieux Livides des Hauts ne bougent plus quand il gèle.</p>",
+      "en": "<p>The old Highland Pallid stop moving when it freezes.</p>"
+    },
+    "results.aQiwol3CmVMzHEdA.description": {
+      "fr": "<p>La Garnison a encore un hélicoptère.</p>",
+      "en": "<p>The Garrison still has a helicopter.</p>"
+    },
+    "results.0sgZTwTFVB5SGJRv.description": {
+      "fr": "<p>Un groupe vit sur les toits du Chaudron et ne descend jamais.</p>",
+      "en": "<p>A group lives on the rooftops of Le Chaudron and never comes down.</p>"
+    },
+    "results.pNsWqjVigPq6GNmK.description": {
+      "fr": "<p>Les Pèlerins jettent les mordus dans la lave.</p>",
+      "en": "<p>The Pilgrims throw the bitten into the lava.</p>"
+    },
+    "results.p5NtAUjc8W7HhRah.description": {
+      "fr": "<p>On aurait vu un enfant mordu qui ne s'est pas transformé.</p>",
+      "en": "<p>Someone is said to have seen a bitten child who did not turn.</p>"
+    }
+  },
+  "tables/mymRAN0ZBWMkVTBW": {
+    "_nom": "Rencontres — littoral",
+    "name": {
+      "fr": "Rencontres — littoral",
+      "en": "Encounters — coast"
+    },
+    "description": {
+      "fr": "<p>Une rencontre en sortie dans une région de zone « littoral ».</p>",
+      "en": "<p>An encounter on an outing in a region of the \"coast\" zone.</p>"
+    },
+    "results.nP9DuGQJmT4Xei67.description": {
+      "fr": "<p>Trois Livides frais coincés dans une voiture, qui cognent aux vitres au passage.</p>",
+      "en": "<p>Three fresh Pallid stuck in a car, banging on the windows as you pass.</p>"
+    },
+    "results.LFSkyYM39cE2h7aJ.description": {
+      "fr": "<p>Une famille qui pousse un caddie chargé le long de la quatre-voies ; le père tient un sabre à canne.</p>",
+      "en": "<p>A family pushing a loaded trolley along the dual carriageway; the father holds a cane knife.</p>"
+    },
+    "results.d0Kr7WweQGKTRYBu.description": {
+      "fr": "<p>Une meute de chiens errants autour d'une poubelle de snack.</p>",
+      "en": "<p>A pack of stray dogs around a snack bar's bin.</p>"
+    },
+    "results.VDZUaYZ81ms8DKN3.description": {
+      "fr": "<p>Un Livide noyé qui sort de l'écume en titubant, au crépuscule.</p>",
+      "en": "<p>A drowned Pallid staggering out of the foam, at dusk.</p>"
+    },
+    "results.hEopLXXnIfqgHr8o.description": {
+      "fr": "<p>Deux Ferrailleurs démontant les panneaux d'une villa ; ils proposent de partager… le travail.</p>",
+      "en": "<p>Two Scrappers dismantling the panels of a villa; they offer to share… the work.</p>"
+    },
+    "results.ACDFglScS5nH8TnP.description": {
+      "fr": "<p>Une patrouille de la Garnison qui contrôle les papiers à un rond-point.</p>",
+      "en": "<p>A Garrison patrol checking papers at a roundabout.</p>"
+    },
+    "results.oCDqxypbJ03XSKe5.description": {
+      "fr": "<p>Une douzaine de Livides devant un supermarché, attirés par une alarme sur batterie.</p>",
+      "en": "<p>A dozen Pallid in front of a supermarket, drawn by an alarm running on battery.</p>"
+    },
+    "results.HKGHIgEJb5xE4oDB.description": {
+      "fr": "<p>Un vieux pêcheur assis sur les galets, sa canne à la main, qui ne veut pas partir.</p>",
+      "en": "<p>An old fisherman sitting on the boulders, rod in hand, who does not want to leave.</p>"
+    },
+    "results.aP4vZ5k1gGNmmUx0.description": {
+      "fr": "<p>Une voiture qui klaxonne au loin, puis plus rien.</p>",
+      "en": "<p>A car horn in the distance, then nothing.</p>"
+    },
+    "results.sZjCmRLfYAc3Q2jw.description": {
+      "fr": "<p>Des Sans-Lune qui marquent une porte à la bombe ; ils ne vous ont pas encore vus.</p>",
+      "en": "<p>Moonless spray-painting a mark on a door; they have not seen you yet.</p>"
+    },
+    "results.T0X2JrmS6FoFfaGe.description": {
+      "fr": "<p>Un corps sur la plage, à moitié recouvert de sable : il bouge un bras.</p>",
+      "en": "<p>A body on the beach, half covered in sand: it moves an arm.</p>"
+    },
+    "results.N0q5KqckRq7dSvY6.description": {
+      "fr": "<p>Un groupe de jeunes qui se baignent au lagon comme si de rien n'était, une radio à fond.</p>",
+      "en": "<p>A group of young people bathing in the lagoon as if nothing were wrong, a radio at full blast.</p>"
+    }
+  },
+  "tables/n8vsDFqCUyyeL52h": {
+    "_nom": "Demandes — La Garnison du Quai",
+    "name": {
+      "fr": "Demandes — La Garnison du Quai",
+      "en": "Requests — The Quay Garrison"
+    },
+    "results.ldQ9pHQ5FPeGO4Gg.description": {
+      "fr": "<p><strong>Récupération — Les cuves de Savanna.</strong> Vider la cuve de carburant d'une station de la zone de Savanna et la ramener au Port.</p><p><strong>Récompense :</strong> 4 carburant, 2 munitions ; réputation +2.</p>",
+      "en": "<p><strong>Recovery — The Savanna tanks.</strong> Drain the fuel tank of a petrol station in the Savanna zone and bring it back to Le Port.</p><p><strong>Reward:</strong> 4 fuel, 2 ammunition; reputation +2.</p>"
+    },
+    "results.8I9BiI0fEUQl342G.description": {
+      "fr": "<p><strong>Escorte — Le recenseur.</strong> Escorter un sous-officier qui « recense les survivants » dans les hauts de La Possession.</p><p><strong>Récompense :</strong> 6 nourriture ; réputation +1.</p>",
+      "en": "<p><strong>Escort — The census taker.</strong> Escort a sergeant who is \"registering survivors\" in the heights of La Possession.</p><p><strong>Reward:</strong> 6 food; reputation +1.</p>"
+    },
+    "results.eflZnAgBsHQuXwHF.description": {
+      "fr": "<p><strong>Réparation — La grue numéro trois.</strong> Remettre en marche le moteur d'une grue pour décharger un cargo arrivé de nuit.</p><p><strong>Récompense :</strong> 6 carburant, 2 pieces ; réputation +3.</p>",
+      "en": "<p><strong>Repair — Crane number three.</strong> Get a crane's engine running again to unload a cargo ship that arrived in the night.</p><p><strong>Reward:</strong> 6 fuel, 2 parts; reputation +3.</p>"
+    },
+    "results.HY0zT5c53KYk4Tlr.description": {
+      "fr": "<p><strong>Sauvetage — La patrouille perdue.</strong> Retrouver une patrouille partie sur la route du Littoral et qui ne répond plus.</p><p><strong>Récompense :</strong> 4 munitions, 2 medicaments ; réputation +3.</p>",
+      "en": "<p><strong>Rescue — The lost patrol.</strong> Find a patrol that set out along the Route du Littoral and no longer answers.</p><p><strong>Reward:</strong> 4 ammunition, 2 medicine; reputation +3.</p>"
+    },
+    "results.uhdkaihYAFFgq0rb.description": {
+      "fr": "<p><strong>Échange — Un médecin contre du carburant.</strong> Ils offrent du carburant si un soignant du groupe passe une semaine à leur infirmerie.</p><p><strong>Récompense :</strong> 8 carburant ; réputation +2.</p>",
+      "en": "<p><strong>Trade — A doctor for fuel.</strong> They offer fuel if a carer from the group spends a week at their infirmary.</p><p><strong>Reward:</strong> 8 fuel; reputation +2.</p>"
+    },
+    "results.sGaUlFWrk09B5Fv6.description": {
+      "fr": "<p><strong>Récupération — Les armes de la brigade.</strong> Récupérer le contenu de l'armurerie d'une brigade abandonnée de l'Ouest avant les Sans-Lune.</p><p><strong>Récompense :</strong> 5 munitions ; réputation +3.</p>",
+      "en": "<p><strong>Recovery — The station's weapons.</strong> Recover the contents of the armoury of an abandoned gendarmerie station in the West before the Moonless do.</p><p><strong>Reward:</strong> 5 ammunition; reputation +3.</p>"
+    }
+  },
+  "tables/p9dYbgCOS0z1rhVT": {
+    "_nom": "Histoire — le proche du jour zéro",
+    "name": {
+      "fr": "Histoire — le proche du jour zéro",
+      "en": "Story — the loved one of day zero"
+    },
+    "description": {
+      "fr": "<p>Un proche perdu ou cherché, pour la graine d'histoire.</p>",
+      "en": "<p>A loved one lost or sought, for the story seed.</p>"
+    },
+    "results.CQVAOhip2dFwPN67.description": {
+      "fr": "<p>Au jour zéro, sa sœur était à l'aéroport ; il ne sait pas si elle a embarqué.</p>",
+      "en": "<p>On day zero, his sister was at the airport; he does not know whether she boarded.</p>"
+    },
+    "results.mkACZMYf99PRBMiA.description": {
+      "fr": "<p>Il a perdu son père dans les urgences de Bellepierre, le premier soir.</p>",
+      "en": "<p>He lost his father in the emergency department at Bellepierre, on the first evening.</p>"
+    },
+    "results.dpKFS6AbvH3gJNcK.description": {
+      "fr": "<p>Sa fille était en classe de mer à Saint-Leu ; il la cherche encore.</p>",
+      "en": "<p>His daughter was on a school trip by the sea at Saint-Leu; he is still looking for her.</p>"
+    },
+    "results.joVw4qARwFlev921.description": {
+      "fr": "<p>Son mari est parti chercher de l'essence et n'est jamais revenu.</p>",
+      "en": "<p>Her husband went out to find petrol and never came back.</p>"
+    },
+    "results.caTGpUfnewuzeIUX.description": {
+      "fr": "<p>Sa grand-mère vivait seule dans les Hauts ; il n'a pas pu monter la voir.</p>",
+      "en": "<p>His grandmother lived alone in the Highlands; he could not get up there to see her.</p>"
+    },
+    "results.CHBSJHlCAHLA7HDV.description": {
+      "fr": "<p>Son meilleur ami s'est relevé dans ses bras.</p>",
+      "en": "<p>His best friend rose again in his arms.</p>"
+    },
+    "results.VDDB5AYJntB1usHc.description": {
+      "fr": "<p>Ses parents vivent en métropole ; il ne sait pas si la métropole existe encore.</p>",
+      "en": "<p>His parents live on the mainland; he does not know whether the mainland still exists.</p>"
+    },
+    "results.Pso7GPGak0TCppGN.description": {
+      "fr": "<p>Son fils était à Mafate pour un camp de randonnée ; il est peut-être en sécurité.</p>",
+      "en": "<p>Her son was in Mafate on a hiking camp; he may be safe.</p>"
+    },
+    "results.Ay8XhID9gqusqbAU.description": {
+      "fr": "<p>Il a laissé son frère derrière lui dans un embouteillage.</p>",
+      "en": "<p>He left his brother behind in a traffic jam.</p>"
+    },
+    "results.jLJgOVEhCfEGKAqb.description": {
+      "fr": "<p>Sa compagne était infirmière ; elle a choisi de rester à l'hôpital.</p>",
+      "en": "<p>His partner was a nurse; she chose to stay at the hospital.</p>"
+    },
+    "results.EOVybzi9Qm5yXLei.description": {
+      "fr": "<p>Son chien est resté attaché dans la cour ; il y pense chaque nuit.</p>",
+      "en": "<p>Her dog was left tied up in the yard; she thinks about it every night.</p>"
+    },
+    "results.QMSq4bK1SN713jUe.description": {
+      "fr": "<p>Il ne cherche personne : il n'avait plus personne, et c'est peut-être pour ça qu'il tient.</p>",
+      "en": "<p>He is looking for nobody: he had nobody left, and perhaps that is why he holds on.</p>"
+    }
+  },
+  "tables/rOxhpncbrAU5vGls": {
+    "_nom": "Noms réunionnais",
+    "name": {
+      "fr": "Noms réunionnais",
+      "en": "Réunion names"
+    },
+    "description": {
+      "fr": "<p>Prénoms et noms de toutes les origines de l'île, pour les survivants rencontrés.</p>",
+      "en": "<p>First names and surnames from all the island's origins, for the survivors you meet.</p>"
+    },
+    "results.No0VIG2fYqnIFUPq.description": {
+      "fr": "<p>Jean-Max Hoarau</p>",
+      "en": "<p>Jean-Max Hoarau</p>"
+    },
+    "results.7Rj1cpvDaxo6v4VY.description": {
+      "fr": "<p>Marie-Josée Payet</p>",
+      "en": "<p>Marie-Josée Payet</p>"
+    },
+    "results.vhIlxGhYOy7Lk0sh.description": {
+      "fr": "<p>Latchimy Vélaye</p>",
+      "en": "<p>Latchimy Vélaye</p>"
+    },
+    "results.BCoQFmlAubwgmjwX.description": {
+      "fr": "<p>Ibrahim Moussa</p>",
+      "en": "<p>Ibrahim Moussa</p>"
+    },
+    "results.cMUABAWXQhLY4kVg.description": {
+      "fr": "<p>Ginette Grondin</p>",
+      "en": "<p>Ginette Grondin</p>"
+    },
+    "results.01qIAiKNCQ3CYtQh.description": {
+      "fr": "<p>Lucien Ah-Sing</p>",
+      "en": "<p>Lucien Ah-Sing</p>"
+    },
+    "results.QefUyM5F1Fn2IlJy.description": {
+      "fr": "<p>Sully Técher</p>",
+      "en": "<p>Sully Técher</p>"
+    },
+    "results.62zDQaV5Fj5dcqfI.description": {
+      "fr": "<p>Kamini Pounoussamy</p>",
+      "en": "<p>Kamini Pounoussamy</p>"
+    },
+    "results.YDHTCgiEan7DzuSI.description": {
+      "fr": "<p>Fatima Ingar</p>",
+      "en": "<p>Fatima Ingar</p>"
+    },
+    "results.YRRC0otjH0StbtHN.description": {
+      "fr": "<p>Expédit Boyer</p>",
+      "en": "<p>Expédit Boyer</p>"
+    },
+    "results.yqEZgDua057TnkDe.description": {
+      "fr": "<p>Rosemay Fontaine</p>",
+      "en": "<p>Rosemay Fontaine</p>"
+    },
+    "results.M5ZXHiwRSNOKUjXy.description": {
+      "fr": "<p>Daniel Lebon</p>",
+      "en": "<p>Daniel Lebon</p>"
+    },
+    "results.3cBf6PDHgFbLMf6w.description": {
+      "fr": "<p>Zaïnaba Soilihi</p>",
+      "en": "<p>Zaïnaba Soilihi</p>"
+    },
+    "results.BgSs490pYFTznxaX.description": {
+      "fr": "<p>Mardé Ramassamy</p>",
+      "en": "<p>Mardé Ramassamy</p>"
+    },
+    "results.G6ymwEOGIUhVJTSI.description": {
+      "fr": "<p>Thérèse Dijoux</p>",
+      "en": "<p>Thérèse Dijoux</p>"
+    },
+    "results.ToBYMcsDGqLT1zbp.description": {
+      "fr": "<p>Josian Robert</p>",
+      "en": "<p>Josian Robert</p>"
+    },
+    "results.CiuAsTZPQAhYzyN9.description": {
+      "fr": "<p>Valliamée Narayanin</p>",
+      "en": "<p>Valliamée Narayanin</p>"
+    },
+    "results.dpFeVUIgCj3HIBlO.description": {
+      "fr": "<p>Bruno Lefèvre</p>",
+      "en": "<p>Bruno Lefèvre</p>"
+    },
+    "results.jNSCxl3TDN5VlIMI.description": {
+      "fr": "<p>Chloé Martin</p>",
+      "en": "<p>Chloé Martin</p>"
+    },
+    "results.kOUpS9198LypAhqL.description": {
+      "fr": "<p>Lucet Rivière</p>",
+      "en": "<p>Lucet Rivière</p>"
+    },
+    "results.UYMxmrez3shFF4Qi.description": {
+      "fr": "<p>Anfane Ahamada</p>",
+      "en": "<p>Anfane Ahamada</p>"
+    },
+    "results.eqJDtF0JYgkrRO7j.description": {
+      "fr": "<p>Gilbert Clain</p>",
+      "en": "<p>Gilbert Clain</p>"
+    },
+    "results.lSDA3Qi92uug3ofi.description": {
+      "fr": "<p>Sandrine Morel</p>",
+      "en": "<p>Sandrine Morel</p>"
+    },
+    "results.rlIKHb2pCmiD674u.description": {
+      "fr": "<p>Paul Ah-Hong</p>",
+      "en": "<p>Paul Ah-Hong</p>"
+    },
+    "results.rq9hyerY5e8bybx1.description": {
+      "fr": "<p>Firmin Maillot</p>",
+      "en": "<p>Firmin Maillot</p>"
+    },
+    "results.dcuo3QKLeP36i6Sp.description": {
+      "fr": "<p>Nadia Patel</p>",
+      "en": "<p>Nadia Patel</p>"
+    },
+    "results.StQkvucFG62rw9kR.description": {
+      "fr": "<p>Vinoth Moutoussamy</p>",
+      "en": "<p>Vinoth Moutoussamy</p>"
+    },
+    "results.9rgrdRGy1NyhXdJW.description": {
+      "fr": "<p>Ophélie Turpin</p>",
+      "en": "<p>Ophélie Turpin</p>"
+    },
+    "results.D5lkkHkgIG9iuSQX.description": {
+      "fr": "<p>Dorlis Lauret</p>",
+      "en": "<p>Dorlis Lauret</p>"
+    },
+    "results.gXsUgqNeV0I5RQBi.description": {
+      "fr": "<p>Rachida Omarjee</p>",
+      "en": "<p>Rachida Omarjee</p>"
+    },
+    "results.dvwyCS3m8203XRMa.description": {
+      "fr": "<p>Christophe Ah-Kiem</p>",
+      "en": "<p>Christophe Ah-Kiem</p>"
+    },
+    "results.l9gBcbrPx6otsiSq.description": {
+      "fr": "<p>Maryse Bègue</p>",
+      "en": "<p>Maryse Bègue</p>"
+    },
+    "results.omN0H3FZAGboobsO.description": {
+      "fr": "<p>Rivo Rakotomalala</p>",
+      "en": "<p>Rivo Rakotomalala</p>"
+    },
+    "results.samfx1yh5UjoR0Vi.description": {
+      "fr": "<p>Hanta Randriamanana</p>",
+      "en": "<p>Hanta Randriamanana</p>"
+    },
+    "results.eB2mfXwWQFiTIDZY.description": {
+      "fr": "<p>Kevin Thiaw-Kine</p>",
+      "en": "<p>Kevin Thiaw-Kine</p>"
+    },
+    "results.BdNMn7uaa7JndGr8.description": {
+      "fr": "<p>Noémie Gonthier</p>",
+      "en": "<p>Noémie Gonthier</p>"
+    },
+    "results.KHp5WIQw8a1sdVAa.description": {
+      "fr": "<p>Ismaël Badat</p>",
+      "en": "<p>Ismaël Badat</p>"
+    },
+    "results.SO8BFuBiM1UNFaeH.description": {
+      "fr": "<p>Jean-Hugues Nativel</p>",
+      "en": "<p>Jean-Hugues Nativel</p>"
+    },
+    "results.hTwFud3h3A3WjmG5.description": {
+      "fr": "<p>Mélissa Cadet</p>",
+      "en": "<p>Mélissa Cadet</p>"
+    },
+    "results.Lw64mFrghq97N6wr.description": {
+      "fr": "<p>Emmanuel Sautron</p>",
+      "en": "<p>Emmanuel Sautron</p>"
+    }
+  },
+  "tables/tmvTmYEMoJRRwXfq": {
+    "_nom": "Demandes — Les Familles des Îlets",
+    "name": {
+      "fr": "Demandes — Les Familles des Îlets",
+      "en": "Requests — The Families of the Îlets"
+    },
+    "results.2fpGE8zviTPFPHaZ.description": {
+      "fr": "<p><strong>Récupération — Les médicaments de La Possession.</strong> Monter à La Nouvelle les médicaments d'une pharmacie des Bas.</p><p><strong>Récompense :</strong> 6 nourriture, 4 graines ; réputation +3.</p>",
+      "en": "<p><strong>Recovery — The medicine from La Possession.</strong> Carry up to La Nouvelle the medicine from a pharmacy in the Lowlands.</p><p><strong>Reward:</strong> 6 food, 4 seeds; reputation +3.</p>"
+    },
+    "results.OMK2hiONYlSqMJ6U.description": {
+      "fr": "<p><strong>Réparation — Le régulateur de l'école.</strong> Remplacer le régulateur solaire de l'école d'Aurère.</p><p><strong>Récompense :</strong> 6 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Repair — The school's regulator.</strong> Replace the solar regulator of the school at Aurère.</p><p><strong>Reward:</strong> 6 food; reputation +2.</p>"
+    },
+    "results.HA4tbESatMK1CXQS.description": {
+      "fr": "<p><strong>Escorte — La descente au col.</strong> Accompagner des anciens au col des Bœufs pour un troc avec Salazie.</p><p><strong>Récompense :</strong> 5 nourriture, 3 graines ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The walk down to the pass.</strong> Accompany some elders to the Col des Bœufs for a barter with Salazie.</p><p><strong>Reward:</strong> 5 food, 3 seeds; reputation +2.</p>"
+    },
+    "results.kV8fDgYPhph80xD8.description": {
+      "fr": "<p><strong>Sauvetage — Le sentier de la canalisation.</strong> Un porteur est tombé sur la canalisation des Orangers ; il faut le remonter.</p><p><strong>Récompense :</strong> 6 nourriture ; réputation +3.</p>",
+      "en": "<p><strong>Rescue — The canal trail.</strong> A porter has fallen on the Canalisation des Orangers; he has to be hauled back up.</p><p><strong>Reward:</strong> 6 food; reputation +3.</p>"
+    },
+    "results.A5HDmmg3wlRuZ1rh.description": {
+      "fr": "<p><strong>Échange — Lentilles contre pièces.</strong> Des lentilles et des patates contre des pièces électriques.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +1.</p>",
+      "en": "<p><strong>Trade — Lentils for parts.</strong> Lentils and potatoes for electrical parts.</p><p><strong>Reward:</strong> 10 food; reputation +1.</p>"
+    },
+    "results.O6h8rncSBrCBwu5s.description": {
+      "fr": "<p><strong>Réparation — Le captage emporté.</strong> Refaire le captage d'un îlet emporté par une crue.</p><p><strong>Récompense :</strong> 8 nourriture, 2 graines ; réputation +3.</p>",
+      "en": "<p><strong>Repair — The catchment swept away.</strong> Rebuild the catchment of an îlet swept away by a flood.</p><p><strong>Reward:</strong> 8 food, 2 seeds; reputation +3.</p>"
+    }
+  },
+  "tables/vQsdv0k9g1cpM2Dt": {
+    "_nom": "Rencontres — forêt",
+    "name": {
+      "fr": "Rencontres — forêt",
+      "en": "Encounters — forest"
+    },
+    "description": {
+      "fr": "<p>Une rencontre en sortie dans une région de zone « foret ».</p>",
+      "en": "<p>An encounter on an outing in a region of the \"forest\" zone.</p>"
+    },
+    "results.OVntIcbbVkMyaizn.description": {
+      "fr": "<p>Un cochon marron qui charge depuis les fougères.</p>",
+      "en": "<p>A feral pig charging out of the ferns.</p>"
+    },
+    "results.jefRGkDbxBgxIC3H.description": {
+      "fr": "<p>Un camp de fortune sous les tamarins, abandonné depuis peu.</p>",
+      "en": "<p>A makeshift camp under the tamarinds, abandoned not long ago.</p>"
+    },
+    "results.iuUfUA33nru5jK8m.description": {
+      "fr": "<p>Une troupe de Livides perdue dans la forêt de Bélouve, qui tourne en rond.</p>",
+      "en": "<p>A troop of Pallid lost in the Bélouve forest, going round in circles.</p>"
+    },
+    "results.SKMmSGnbsGGsIr88.description": {
+      "fr": "<p>Un chasseur de la Coopérative qui piste un cerf et vous fait signe de vous taire.</p>",
+      "en": "<p>A hunter from the Cooperative tracking a deer who signals you to keep quiet.</p>"
+    },
+    "results.1qtGb3VKpm17bbPJ.description": {
+      "fr": "<p>Une tangue qui détale sous les feuilles mortes.</p>",
+      "en": "<p>A tenrec scurrying away under the dead leaves.</p>"
+    },
+    "results.9C2UFKRdO5tMHsFY.description": {
+      "fr": "<p>Un arbre couché en travers de la route forestière.</p>",
+      "en": "<p>A tree lying across the forest road.</p>"
+    },
+    "results.6FOstd2EXE1erI1l.description": {
+      "fr": "<p>Un apiculteur qui récolte ses ruches, voile sur le visage.</p>",
+      "en": "<p>A beekeeper harvesting his hives, veil over his face.</p>"
+    },
+    "results.n145o3Dwja77fHTs.description": {
+      "fr": "<p>Une cabane de bûcheron où quelqu'un a gravé des noms et des dates.</p>",
+      "en": "<p>A logger's hut where someone has carved names and dates.</p>"
+    },
+    "results.D8qpqyHICDgIAckn.description": {
+      "fr": "<p>Des Pèlerins qui prient devant une coulée ancienne, dans la forêt du Grand Brûlé.</p>",
+      "en": "<p>Pilgrims praying before an old lava flow, in the Grand Brûlé forest.</p>"
+    },
+    "results.HtyrL4vjFwyElfU9.description": {
+      "fr": "<p>Un Livide pendu à une branche, toujours en mouvement.</p>",
+      "en": "<p>A Pallid hanging from a branch, still moving.</p>"
+    },
+    "results.HhpHbkGNM0oMB9hB.description": {
+      "fr": "<p>Une source fraîche entre deux racines.</p>",
+      "en": "<p>A cool spring between two roots.</p>"
+    },
+    "results.SHT4oyIBJi0f96wr.description": {
+      "fr": "<p>Le bruit d'une tronçonneuse au loin, qui s'arrête net.</p>",
+      "en": "<p>The sound of a chainsaw in the distance, that stops dead.</p>"
+    }
+  },
+  "tables/vUkc7T2p5hrZTXjx": {
+    "_nom": "Demandes — Les Barques du Sud",
+    "name": {
+      "fr": "Demandes — Les Barques du Sud",
+      "en": "Requests — The Southern Boats"
+    },
+    "results.yd4wjG9MDesjvHwP.description": {
+      "fr": "<p><strong>Récupération — Les filets de la coopérative.</strong> Rapporter les filets et cordages d'un hangar de pêche de Saint-Leu.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Recovery — The cooperative's nets.</strong> Bring back the nets and ropes from a fishing shed in Saint-Leu.</p><p><strong>Reward:</strong> 8 food; reputation +2.</p>"
+    },
+    "results.dqNvpdwCb9Tb1SAc.description": {
+      "fr": "<p><strong>Escorte — Le déchargement de nuit.</strong> Garder le quai pendant qu'une barque décharge à Saint-Philippe.</p><p><strong>Récompense :</strong> 6 nourriture, 2 carburant ; réputation +1.</p>",
+      "en": "<p><strong>Escort — The night unloading.</strong> Guard the quay while a boat unloads at Saint-Philippe.</p><p><strong>Reward:</strong> 6 food, 2 fuel; reputation +1.</p>"
+    },
+    "results.1vqXHaSt346p0fmS.description": {
+      "fr": "<p><strong>Réparation — Le hors-bord de la Marine.</strong> Remettre en état un moteur hors-bord noyé par la houle.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Repair — La Marine's outboard.</strong> Restore an outboard motor swamped by the swell.</p><p><strong>Reward:</strong> 8 food; reputation +2.</p>"
+    },
+    "results.9gBNPXg8A4JFHFgw.description": {
+      "fr": "<p><strong>Sauvetage — La barque à la dérive.</strong> Une barque à la dérive au large de l'Étang-Salé, son pêcheur blessé à bord.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +3.</p>",
+      "en": "<p><strong>Rescue — The drifting boat.</strong> A boat adrift off L'Étang-Salé, its fisherman injured on board.</p><p><strong>Reward:</strong> 10 food; reputation +3.</p>"
+    },
+    "results.LJBLTr54Q3kDVLqW.description": {
+      "fr": "<p><strong>Échange — Poisson séché contre médicaments.</strong> Échanger des médicaments contre une réserve de poisson séché.</p><p><strong>Récompense :</strong> 12 nourriture ; réputation +1.</p>",
+      "en": "<p><strong>Trade — Dried fish for medicine.</strong> Trade medicine for a store of dried fish.</p><p><strong>Reward:</strong> 12 food; reputation +1.</p>"
+    },
+    "results.wcg6yqR30GPRSN4V.description": {
+      "fr": "<p><strong>Escorte — Le passage de la route des Laves.</strong> Accompagner par la route une famille de pêcheurs qui rejoint Saint-Philippe.</p><p><strong>Récompense :</strong> 6 nourriture ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The passage of the Route des Laves.</strong> Accompany by road a fishing family heading for Saint-Philippe.</p><p><strong>Reward:</strong> 6 food; reputation +2.</p>"
+    }
+  },
+  "tables/voj6Fh3GYhcDKF4s": {
+    "_nom": "Visibilité 7 — La visite",
+    "name": {
+      "fr": "Visibilité 7 — La visite",
+      "en": "Visibility 7 — The visit"
+    },
+    "description": {
+      "fr": "<p>Quand la visibilité de l'abri franchit 7 à la hausse, le MJ reçoit en privé un événement de cette table.</p>",
+      "en": "<p>When the shelter's visibility rises past 7, the GM privately receives an event from this table.</p>"
+    },
+    "results.e9dgwM3qbyJS2PCF.description": {
+      "fr": "<p>Une délégation armée se présente pour « parler affaires ».</p>",
+      "en": "<p>An armed delegation turns up to \"talk business\".</p>"
+    },
+    "results.mD8pFHV1ZItT1zEj.description": {
+      "fr": "<p>La Garnison vient recenser l'abri et parle de réquisition.</p>",
+      "en": "<p>The Garrison comes to register the shelter and talks of requisition.</p>"
+    },
+    "results.MgEeb4u7t20OqPUX.description": {
+      "fr": "<p>Les Sans-Lune exigent un tribut d'une lune.</p>",
+      "en": "<p>The Moonless demand a tribute of one moon.</p>"
+    },
+    "results.CDZ4fUQBSNy2tOyR.description": {
+      "fr": "<p>Des Pèlerins demandent à installer une famille de malades chez vous.</p>",
+      "en": "<p>Pilgrims ask to place a family of sick people with you.</p>"
+    },
+    "results.yAQy2HzaYykezm0n.description": {
+      "fr": "<p>Une famille entière supplie d'entrer, et derrière elle, une horde.</p>",
+      "en": "<p>A whole family begs to come in, and behind them, a horde.</p>"
+    },
+    "results.J7MFAc24acKEuE6e.description": {
+      "fr": "<p>Un groupe rival propose une alliance… en échange de la moitié de la production.</p>",
+      "en": "<p>A rival group proposes an alliance… in exchange for half the production.</p>"
+    },
+    "results.0UZOnLUKVPr5hdB7.description": {
+      "fr": "<p>Les Ferrailleurs proposent d'acheter tout l'abri.</p>",
+      "en": "<p>The Scrappers offer to buy the whole shelter.</p>"
+    },
+    "results.FOjsAM2NgDkq26Bm.description": {
+      "fr": "<p>Un émissaire d'une faction lointaine demande un savoir que vous avez.</p>",
+      "en": "<p>An emissary from a distant faction asks for a know-how you have.</p>"
+    }
+  },
+  "tables/wSIDVO72cuKZAuEU": {
+    "_nom": "Imprévus du camp",
+    "name": {
+      "fr": "Imprévus du camp",
+      "en": "Camp incidents"
+    },
+    "description": {
+      "fr": "<p>Un petit événement de la vie quotidienne de l'abri, à tirer un jour calme.</p>",
+      "en": "<p>A small event of everyday life at the shelter, to roll on a quiet day.</p>"
+    },
+    "results.rxdcb92r2FgxNZiv.description": {
+      "fr": "<p>Une poule s'échappe et file vers la route ; il faut la rattraper avant les chiens.</p>",
+      "en": "<p>A hen escapes and heads for the road; it has to be caught before the dogs get it.</p>"
+    },
+    "results.K0S0bMI6OqVSKVCC.description": {
+      "fr": "<p>La pluie entre par le toit du dortoir : tout est trempé.</p>",
+      "en": "<p>Rain comes in through the dormitory roof: everything is soaked.</p>"
+    },
+    "results.Gjcz2JG5V0EGXF1D.description": {
+      "fr": "<p>Un enfant du camp a de la fièvre ; est-ce la dengue ?</p>",
+      "en": "<p>A child in the camp has a fever; is it dengue?</p>"
+    },
+    "results.kYJRHTT5QJlAb9aw.description": {
+      "fr": "<p>Deux membres se disputent la dernière bouteille de rhum arrangé.</p>",
+      "en": "<p>Two members quarrel over the last bottle of spiced rum.</p>"
+    },
+    "results.qtn55UZ1LYRykpoB.description": {
+      "fr": "<p>Un oiseau tombe dans la citerne : il faut la vider en partie.</p>",
+      "en": "<p>A bird falls into the cistern: part of it has to be drained.</p>"
+    },
+    "results.TxnU6gcBdc9oRRxw.description": {
+      "fr": "<p>Un vieux poste de radio se met à grésiller tout seul, sur une fréquence inconnue.</p>",
+      "en": "<p>An old radio set starts crackling on its own, on an unknown frequency.</p>"
+    },
+    "results.DnSyDkEqh3N9kvIn.description": {
+      "fr": "<p>Le chien du camp ramène une chaussure d'enfant.</p>",
+      "en": "<p>The camp dog brings back a child's shoe.</p>"
+    },
+    "results.QdBtIVFhbWQfMw80.description": {
+      "fr": "<p>Une scolopendre dans la réserve de bois.</p>",
+      "en": "<p>A centipede in the woodpile.</p>"
+    },
+    "results.wkErg9HdhiQnVl9C.description": {
+      "fr": "<p>Un orage coupe le courant des panneaux ; les batteries sont au plus bas.</p>",
+      "en": "<p>A storm cuts the power from the panels; the batteries are at their lowest.</p>"
+    },
+    "results.X5U7WUGKSLHe8V0e.description": {
+      "fr": "<p>Quelqu'un a retrouvé une photo de famille dans une fouille et ne parle plus.</p>",
+      "en": "<p>Someone found a family photo on a scavenge and has stopped talking.</p>"
+    },
+    "results.UGEJbDhXfzn9CTC3.description": {
+      "fr": "<p>Les letchis du voisin sont mûrs, juste derrière la clôture.</p>",
+      "en": "<p>The neighbour's lychees are ripe, just behind the fence.</p>"
+    },
+    "results.bp3HDNST6u8HoYtM.description": {
+      "fr": "<p>Une fumée à l'horizon, dans la direction de l'ancien abri.</p>",
+      "en": "<p>Smoke on the horizon, in the direction of the old shelter.</p>"
+    },
+    "results.tlJxH2C721btcPVg.description": {
+      "fr": "<p>Un membre du groupe chante en travaillant ; les autres reprennent.</p>",
+      "en": "<p>A member of the group sings while working; the others join in.</p>"
+    },
+    "results.rgv8jTAsabItPF0f.description": {
+      "fr": "<p>Des fourmis dans le sucre.</p>",
+      "en": "<p>Ants in the sugar.</p>"
+    },
+    "results.JlEmImIDEDbQH15g.description": {
+      "fr": "<p>Un Livide solitaire s'est coincé dans la clôture pendant la nuit.</p>",
+      "en": "<p>A lone Pallid got stuck in the fence during the night.</p>"
+    },
+    "results.l0Bi0XKsp3ajUJXG.description": {
+      "fr": "<p>Un cabri a mis bas : deux petits.</p>",
+      "en": "<p>A goat has given birth: two kids.</p>"
+    }
+  },
+  "tables/xCxMdF8oErpdaa7e": {
+    "_nom": "Noms de cyclones",
+    "name": {
+      "fr": "Noms de cyclones",
+      "en": "Cyclone names"
+    },
+    "description": {
+      "fr": "<p>Noms (fictifs) des cyclones de la saison.</p>",
+      "en": "<p>(Fictional) names of the season's cyclones.</p>"
+    },
+    "results.zvHBgAQr0ACDJtgv.description": {
+      "fr": "<p>Ambrine</p>",
+      "en": "<p>Ambrine</p>"
+    },
+    "results.JHz0VztojDjjvpO8.description": {
+      "fr": "<p>Baraka</p>",
+      "en": "<p>Baraka</p>"
+    },
+    "results.l4pTZ0fezAMQC5Ji.description": {
+      "fr": "<p>Célestine</p>",
+      "en": "<p>Célestine</p>"
+    },
+    "results.9lKgc97GRgnlaJh6.description": {
+      "fr": "<p>Dalvina</p>",
+      "en": "<p>Dalvina</p>"
+    },
+    "results.QR0cEZPpIdFj5U2A.description": {
+      "fr": "<p>Eloya</p>",
+      "en": "<p>Eloya</p>"
+    },
+    "results.FnK54DrQNQh8sOFy.description": {
+      "fr": "<p>Fanjava</p>",
+      "en": "<p>Fanjava</p>"
+    },
+    "results.h1eaChjB2fsXAKA0.description": {
+      "fr": "<p>Gwenaëlle</p>",
+      "en": "<p>Gwenaëlle</p>"
+    },
+    "results.YsZfr5RQyOG6QEgG.description": {
+      "fr": "<p>Halima</p>",
+      "en": "<p>Halima</p>"
+    },
+    "results.teCTPUxGKTVK6A8a.description": {
+      "fr": "<p>Iandro</p>",
+      "en": "<p>Iandro</p>"
+    },
+    "results.2Bv0ZrnAnOZE3lF1.description": {
+      "fr": "<p>Jessanne</p>",
+      "en": "<p>Jessanne</p>"
+    },
+    "results.ZrlnRuWgUdm7UtEY.description": {
+      "fr": "<p>Kalidou</p>",
+      "en": "<p>Kalidou</p>"
+    },
+    "results.aw1TzOYgAyY1r3Jk.description": {
+      "fr": "<p>Lorenza</p>",
+      "en": "<p>Lorenza</p>"
+    },
+    "results.b4OUnaFEfyL4PJtK.description": {
+      "fr": "<p>Maevan</p>",
+      "en": "<p>Maevan</p>"
+    },
+    "results.mZL0BnVz3AhwF0ln.description": {
+      "fr": "<p>Nirina</p>",
+      "en": "<p>Nirina</p>"
+    },
+    "results.KTBzxtrjwhoTEenj.description": {
+      "fr": "<p>Oriane</p>",
+      "en": "<p>Oriane</p>"
+    },
+    "results.V8IhkF7sayXrFSsv.description": {
+      "fr": "<p>Pakila</p>",
+      "en": "<p>Pakila</p>"
+    },
+    "results.8qlBdJx44eFpCGwL.description": {
+      "fr": "<p>Rasoa</p>",
+      "en": "<p>Rasoa</p>"
+    },
+    "results.P3XYTZE22USMWl1B.description": {
+      "fr": "<p>Sitoni</p>",
+      "en": "<p>Sitoni</p>"
+    },
+    "results.y5ErEazUONAVdXdO.description": {
+      "fr": "<p>Tahira</p>",
+      "en": "<p>Tahira</p>"
+    },
+    "results.1BhALBKiHREihkTG.description": {
+      "fr": "<p>Vavaka</p>",
+      "en": "<p>Vavaka</p>"
+    }
+  },
+  "tables/zLNkCeGEHL2hM2ni": {
+    "_nom": "Demandes — Les Ferrailleurs",
+    "name": {
+      "fr": "Demandes — Les Ferrailleurs",
+      "en": "Requests — The Scrappers"
+    },
+    "results.5spWHIvn23Uh8vMx.description": {
+      "fr": "<p><strong>Récupération — Le dépôt de batteries.</strong> Vider un dépôt de batteries d'un magasin d'autos dans une zone infestée.</p><p><strong>Récompense :</strong> 6 pieces ; réputation +2.</p>",
+      "en": "<p><strong>Recovery — The battery depot.</strong> Empty the battery depot of a car parts store in an infested zone.</p><p><strong>Reward:</strong> 6 parts; reputation +2.</p>"
+    },
+    "results.2OvPXHGojXHqLTaK.description": {
+      "fr": "<p><strong>Escorte — Le camion de la casse.</strong> Escorter un camion chargé de pièces de la Rivière des Galets à Saint-Pierre.</p><p><strong>Récompense :</strong> 4 pieces, 2 carburant ; réputation +2.</p>",
+      "en": "<p><strong>Escort — The scrapyard truck.</strong> Escort a truck loaded with parts from the Rivière des Galets to Saint-Pierre.</p><p><strong>Reward:</strong> 4 parts, 2 fuel; reputation +2.</p>"
+    },
+    "results.JxBwrrEHuBZSIK0f.description": {
+      "fr": "<p><strong>Réparation — Le treuil de la casse.</strong> Réparer le treuil qui soulève les carcasses de voitures.</p><p><strong>Récompense :</strong> 5 pieces ; réputation +1.</p>",
+      "en": "<p><strong>Repair — The scrapyard winch.</strong> Repair the winch that lifts the car wrecks.</p><p><strong>Reward:</strong> 5 parts; reputation +1.</p>"
+    },
+    "results.SUzNqplE9bCzxFXY.description": {
+      "fr": "<p><strong>Échange — Les panneaux du lycée.</strong> Ils achètent les panneaux d'un lycée que vous connaissez ; ou vous les vendent.</p><p><strong>Récompense :</strong> 4 pieces, 4 materiaux ; réputation +1.</p>",
+      "en": "<p><strong>Trade — The high school's panels.</strong> They buy the panels of a high school you know; or sell them to you.</p><p><strong>Reward:</strong> 4 parts, 4 materials; reputation +1.</p>"
+    },
+    "results.fpKfezkznx0ic7Bb.description": {
+      "fr": "<p><strong>Sauvetage — Gros Mani a disparu.</strong> Le chef de la casse n'est pas rentré d'une fouille au Port.</p><p><strong>Récompense :</strong> 6 pieces, 2 munitions ; réputation +3.</p>",
+      "en": "<p><strong>Rescue — Gros Mani is missing.</strong> The head of the scrapyard has not come back from a scavenge at Le Port.</p><p><strong>Reward:</strong> 6 parts, 2 ammunition; reputation +3.</p>"
+    },
+    "results.xbsMgUl4Z0S4nA11.description": {
+      "fr": "<p><strong>Récupération — Le bateau échoué.</strong> Démonter le moteur d'un bateau échoué sur les galets de la Rivière des Galets.</p><p><strong>Récompense :</strong> 5 pieces, 2 carburant ; réputation +2.</p>",
+      "en": "<p><strong>Recovery — The beached boat.</strong> Strip the engine from a boat beached on the boulders of the Rivière des Galets.</p><p><strong>Reward:</strong> 5 parts, 2 fuel; reputation +2.</p>"
+    }
+  }
+}

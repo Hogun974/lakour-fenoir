@@ -1,0 +1,221 @@
+{
+  "survivants/6taVN22OVlys8VFJ": {
+    "_nom": "La docteure Soundirassen",
+    "name": {
+      "fr": "La docteure Soundirassen",
+      "en": "Doctor Soundirassen"
+    },
+    "system.lien": {
+      "fr": "Dispensaire du Sud",
+      "en": "Southern Dispensary"
+    },
+    "system.notes": {
+      "fr": "<p>Urgentiste au grand hôpital du Sud, elle n'en est pas sortie depuis le jour zéro. Elle cherche un remède, et commence à trouver acceptables des choses qui ne l'étaient pas.</p>",
+      "en": "<p>An emergency physician at the big southern hospital, she has not left it since day zero. She is looking for a cure, and is beginning to find acceptable things that were not.</p>"
+    }
+  },
+  "survivants/AzNzFH3FyonsxXsZ": {
+    "_nom": "Gros Mani",
+    "name": {
+      "fr": "Gros Mani",
+      "en": "Gros Mani"
+    },
+    "system.lien": {
+      "fr": "Ferrailleurs",
+      "en": "Scrappers"
+    },
+    "system.notes": {
+      "fr": "<p>Tient la casse de la Rivière des Galets. Rit fort, compte vite, n'oublie jamais une dette — ni une faveur.</p>",
+      "en": "<p>Runs the scrapyard at the Rivière des Galets. Laughs loud, counts fast, never forgets a debt — or a favour.</p>"
+    }
+  },
+  "survivants/IGqceB32b2ArsFPH": {
+    "_nom": "Valliamée Narayanin, agricultrice des Hauts",
+    "name": {
+      "fr": "Valliamée Narayanin, agricultrice des Hauts",
+      "en": "Valliamée Narayanin, Highland farmer"
+    },
+    "system.notes": {
+      "fr": "<p>Elle tient une ferme laitière de la Plaine des Cafres avec son frère. Elle sait faire vivre une famille d'une terre, et elle compte bien continuer.</p>",
+      "en": "<p>She runs a dairy farm on the Plaine des Cafres with her brother. She knows how to feed a family from a piece of land, and she fully intends to keep doing so.</p>"
+    }
+  },
+  "survivants/ItL3qTYEHdUXAQAm": {
+    "_nom": "Madame Lauret, l'ancienne de La Nouvelle",
+    "name": {
+      "fr": "Madame Lauret, l'ancienne de La Nouvelle",
+      "en": "Madame Lauret, the elder of La Nouvelle"
+    },
+    "system.lien": {
+      "fr": "Familles des Îlets",
+      "en": "Families of the Îlets"
+    },
+    "system.notes": {
+      "fr": "<p>Ancienne institutrice de Mafate, elle a appris à lire à la moitié du cirque. Les sentiers l'écoutent. Elle décide qui entre.</p>",
+      "en": "<p>A former schoolteacher in Mafate, she taught half the cirque to read. The trails listen to her. She decides who comes in.</p>"
+    }
+  },
+  "survivants/Ro9A8L5zOmZpyJ2O": {
+    "_nom": "Le patron Grondin",
+    "name": {
+      "fr": "Le patron Grondin",
+      "en": "Skipper Grondin"
+    },
+    "system.lien": {
+      "fr": "Barques du Sud",
+      "en": "Southern Boats"
+    },
+    "system.notes": {
+      "fr": "<p>Pêcheur de Saint-Pierre, chef de la flottille. Il a peur de la mer depuis qu'il y a perdu son fils, et il y retourne chaque jour.</p>",
+      "en": "<p>A Saint-Pierre fisherman, head of the fleet. He has been afraid of the sea since he lost his son to it, and he goes back out every day.</p>"
+    }
+  },
+  "survivants/S7x8AY67d8P3afnh": {
+    "_nom": "Josian Robert, agent de la centrale",
+    "name": {
+      "fr": "Josian Robert, agent de la centrale",
+      "en": "Josian Robert, power plant worker"
+    },
+    "system.notes": {
+      "fr": "<p>Un des deux agents restés à la centrale de la Rivière de l'Est. Il fait tourner ce qu'il peut, se méfie de tout le monde, et sait que tôt ou tard quelqu'un viendra prendre son courant.</p>",
+      "en": "<p>One of the two workers who stayed at the Rivière de l'Est plant. He keeps running what he can, trusts nobody, and knows that sooner or later someone will come to take his power.</p>"
+    }
+  },
+  "survivants/XkZtJbtXDiDsMAyE": {
+    "_nom": "Frère Expédit",
+    "name": {
+      "fr": "Frère Expédit",
+      "en": "Brother Expédit"
+    },
+    "system.lien": {
+      "fr": "Pèlerins de la Lave",
+      "en": "Pilgrims of the Lava"
+    },
+    "system.notes": {
+      "fr": "<p>Ancien catéchiste de Sainte-Rose. Voix douce, regard qui ne cille pas. Il croit sincèrement que le volcan protège ceux qui vivent à son pied ; ses fidèles le croient plus encore.</p>",
+      "en": "<p>A former catechist from Sainte-Rose. Soft voice, unblinking gaze. He sincerely believes the volcano protects those who live at its foot; his faithful believe it even more.</p>"
+    }
+  },
+  "survivants/h6KrxULVti3ZccHo": {
+    "_nom": "Nadia Patel, infirmière",
+    "name": {
+      "fr": "Nadia Patel, infirmière",
+      "en": "Nadia Patel, nurse"
+    },
+    "system.notes": {
+      "fr": "<p>Douze ans d'urgences à Bellepierre. Elle parle doucement et ne lâche jamais. Elle cherche son frère, parti en mer le matin du jour zéro.</p>",
+      "en": "<p>Twelve years in emergency at Bellepierre. She speaks softly and never lets go. She is looking for her brother, who went out to sea on the morning of day zero.</p>"
+    }
+  },
+  "survivants/kLv3XhYLgdlPZSaA": {
+    "_nom": "Ti Zan",
+    "name": {
+      "fr": "Ti Zan",
+      "en": "Ti Zan"
+    },
+    "system.notes": {
+      "fr": "<p>Un enfant seul, muet depuis le jour zéro, qui suit le groupe à distance avec un doudou en forme de tangue. Il connaît des passages que personne d'autre ne voit.</p>",
+      "en": "<p>A child on his own, mute since day zero, who follows the group at a distance with a tenrec-shaped cuddly toy. He knows passages that nobody else sees.</p>"
+    }
+  },
+  "survivants/keHKaeCkET6GOZBE": {
+    "_nom": "Ophélie Turpin, la voix du Brûlé",
+    "name": {
+      "fr": "Ophélie Turpin, la voix du Brûlé",
+      "en": "Ophélie Turpin, the voice of Le Brûlé"
+    },
+    "system.notes": {
+      "fr": "<p>Radioamatrice dans les hauts de Saint-Denis, elle émet chaque soir les nouvelles qu'elle reçoit, vraies ou fausses, et lit des histoires aux enfants le matin. Beaucoup de groupes la connaissent sans l'avoir vue.</p>",
+      "en": "<p>An amateur radio operator in the heights of Saint-Denis, she broadcasts every evening the news she receives, true or false, and reads stories to the children in the morning. Many groups know her without ever having seen her.</p>"
+    }
+  },
+  "survivants/lxESLks5aIcvHYw6": {
+    "_nom": "Le Comptable",
+    "name": {
+      "fr": "Le Comptable",
+      "en": "The Bookkeeper"
+    },
+    "system.lien": {
+      "fr": "Sans-Lune",
+      "en": "Moonless"
+    },
+    "system.notes": {
+      "fr": "<p>Chef des Sans-Lune. Ancien employé de banque, il tient sur un cahier ce que chaque quartier lui doit. Il ne hausse jamais la voix.</p>",
+      "en": "<p>Leader of the Moonless. A former bank clerk, he keeps in a notebook what every neighbourhood owes him. He never raises his voice.</p>"
+    }
+  },
+  "survivants/mpXS6zfK51MgTxYa": {
+    "_nom": "Firmin Boyer, retraité de la marine",
+    "name": {
+      "fr": "Firmin Boyer, retraité de la marine",
+      "en": "Firmin Boyer, retired navy man"
+    },
+    "system.notes": {
+      "fr": "<p>Trente ans de marine, une voix qui porte, un dos qui ne porte plus. Il sait commander sans crier et écouter sans juger.</p>",
+      "en": "<p>Thirty years in the navy, a voice that carries, a back that no longer does. He knows how to command without shouting and listen without judging.</p>"
+    }
+  },
+  "survivants/venEIbiQOS82GIpr": {
+    "_nom": "Sully Técher, guide de canyon",
+    "name": {
+      "fr": "Sully Técher, guide de canyon",
+      "en": "Sully Técher, canyoning guide"
+    },
+    "system.notes": {
+      "fr": "<p>Né à Cilaos, il connaît chaque sentier des cirques. Il parle peu, marche vite, et préfère la montagne aux gens.</p>",
+      "en": "<p>Born in Cilaos, he knows every trail in the cirques. He says little, walks fast, and prefers the mountains to people.</p>"
+    }
+  },
+  "survivants/xcFUn1wk0bZHHP8h": {
+    "_nom": "La commandante Hoarau",
+    "name": {
+      "fr": "La commandante Hoarau",
+      "en": "Commander Hoarau"
+    },
+    "system.lien": {
+      "fr": "Garnison du Quai",
+      "en": "Quay Garrison"
+    },
+    "system.notes": {
+      "fr": "<p>Ancienne officière de port, à la tête de la Garnison. Elle croit qu'il faut un ordre pour survivre, et elle a peut-être raison. Elle signe « pour l'autorité provisoire ».</p>",
+      "en": "<p>A former harbour officer, at the head of the Garrison. She believes order is needed to survive, and she may be right. She signs \"for the provisional authority\".</p>"
+    }
+  },
+  "survivants/ytoPZGKwzjWb3Gub": {
+    "_nom": "Rivo Rakotomalala, électricien",
+    "name": {
+      "fr": "Rivo Rakotomalala, électricien",
+      "en": "Rivo Rakotomalala, electrician"
+    },
+    "system.notes": {
+      "fr": "<p>Arrivé de Tamatave à vingt ans, il a câblé la moitié des toits de l'Ouest. Il croit qu'un abri sans courant est un abri mort, et il a souvent raison.</p>",
+      "en": "<p>Arrived from Tamatave at twenty, he has wired half the roofs in the West. He believes a shelter without power is a dead shelter, and he is often right.</p>"
+    }
+  },
+  "survivants/zMgGoFqGdOYENIvX": {
+    "_nom": "Mémé Lucette",
+    "name": {
+      "fr": "Mémé Lucette",
+      "en": "Granny Lucette"
+    },
+    "system.lien": {
+      "fr": "Coopérative des Plaines",
+      "en": "Plains Cooperative"
+    },
+    "system.notes": {
+      "fr": "<p>Éleveuse de la Plaine des Cafres, présidente du conseil de la Coopérative. Elle a vu passer tous les cyclones depuis 1948 et n'a peur de rien, sauf de la ville.</p>",
+      "en": "<p>A livestock farmer on the Plaine des Cafres, chair of the Cooperative's council. She has seen every cyclone since 1948 and fears nothing, except the town.</p>"
+    }
+  },
+  "survivants/zRZUDVQs8j7WTxtQ": {
+    "_nom": "Marie-Josée Payet, gendarme",
+    "name": {
+      "fr": "Marie-Josée Payet, gendarme",
+      "en": "Marie-Josée Payet, gendarme"
+    },
+    "system.notes": {
+      "fr": "<p>Brigadière dans le Sud, fille de militaire, elle a toujours su où était sa place. Plus de hiérarchie, plus d'ordres : il lui reste sa conscience et un chargeur.</p>",
+      "en": "<p>A sergeant in the South, a soldier's daughter, she has always known where her place was. No more hierarchy, no more orders: she is left with her conscience and a magazine.</p>"
+    }
+  }
+}

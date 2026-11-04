@@ -1,0 +1,537 @@
+{
+  "equipements/08IbF38WuKp6VrO5": {
+    "_nom": "Gourde filtrante",
+    "name": {
+      "fr": "Gourde filtrante",
+      "en": "Filter bottle"
+    },
+    "system.description": {
+      "fr": "<p>Une gourde à filtre de randonneur : l'eau de la ravine devient buvable pour une personne, sans bouillir.</p>",
+      "en": "<p>A hiker's filter bottle: ravine water becomes drinkable for one person, without boiling.</p>"
+    }
+  },
+  "equipements/2dlGA2Bloq3ddJ62": {
+    "_nom": "Cloches d'alerte",
+    "name": {
+      "fr": "Cloches d'alerte",
+      "en": "Alarm bells"
+    },
+    "system.description": {
+      "fr": "<p>Des fils tendus autour du camp, garnis de boîtes de conserve et de clochettes : rien n'approche sans un tintement.</p>",
+      "en": "<p>Wires stretched around the camp, strung with tin cans and little bells: nothing comes near without a jingle.</p>"
+    }
+  },
+  "equipements/3plOmQ5JsHKI5QbE": {
+    "_nom": "Bouclier de tôle",
+    "name": {
+      "fr": "Bouclier de tôle",
+      "en": "Sheet-metal shield"
+    },
+    "system.description": {
+      "fr": "<p>Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir.</p>",
+      "en": "<p>A sheet of corrugated iron backed with plywood, with two handles: you push back, you shield yourself from bites, you advance in a line down a corridor.</p>"
+    }
+  },
+  "equipements/6MIKGIKFH4dr5ilO": {
+    "_nom": "Couteau",
+    "name": {
+      "fr": "Couteau",
+      "en": "Knife"
+    },
+    "system.description": {
+      "fr": "<p>Un bon couteau, pour tout : vider le poisson, couper la corde, tailler le bois. Une arme de dernier recours.</p>",
+      "en": "<p>A good knife, for everything: gutting fish, cutting rope, whittling wood. A weapon of last resort.</p>"
+    }
+  },
+  "equipements/6aeO2dmRghB3dx9L": {
+    "_nom": "Vélo tout-terrain",
+    "name": {
+      "fr": "Vélo tout-terrain",
+      "en": "Mountain bike"
+    },
+    "system.description": {
+      "fr": "<p>Silencieux, sans carburant, plus rapide qu'à pied sur la route… tant que ça descend. Les Hauts se montent à pied à côté.</p>",
+      "en": "<p>Silent, no fuel, faster than walking on the road… as long as it goes downhill. In the Highlands you push it uphill on foot.</p>"
+    }
+  },
+  "equipements/81lsLfP8MVFb1x5U": {
+    "_nom": "Fusil-harpon",
+    "name": {
+      "fr": "Fusil-harpon",
+      "en": "Speargun"
+    },
+    "system.description": {
+      "fr": "<p>L'arme du pêcheur sous-marin : silencieuse, précise à quelques mètres, lente à recharger. Elle nourrit au lagon avant de défendre.</p>",
+      "en": "<p>The spearfisher's weapon: silent, accurate at a few metres, slow to reload. It feeds you at the lagoon before it defends you.</p>"
+    }
+  },
+  "equipements/8HYNXZhUK8wWPTYP": {
+    "_nom": "Kayak de mer",
+    "name": {
+      "fr": "Kayak de mer",
+      "en": "Sea kayak"
+    },
+    "system.description": {
+      "fr": "<p>Un kayak de location du lagon : longer la côte sans bruit, passer la houle par beau temps, pêcher au large du récif.</p>",
+      "en": "<p>A rental kayak from the lagoon: follow the coast without a sound, cross the swell in fair weather, fish beyond the reef.</p>"
+    }
+  },
+  "equipements/9Hr9xFO759pAMjDy": {
+    "_nom": "4×4",
+    "system.description": {
+      "fr": "<p>Un pick-up ou un 4×4 de planteur : il passe la piste de la Rivière des Galets, les chemins de canne et les radiers en eau basse. Il boit beaucoup.</p>",
+      "en": "<p>A pickup or a planter's 4×4: it takes the Rivière des Galets track, the cane tracks and the fords at low water. It drinks a lot.</p>"
+    }
+  },
+  "equipements/AGkAlItFs45sN3Ts": {
+    "_nom": "Barre à mine",
+    "name": {
+      "fr": "Barre à mine",
+      "en": "Crowbar"
+    },
+    "system.description": {
+      "fr": "<p>Un mètre cinquante d'acier : on force une porte, on soulève une dalle, on tient un Livide à distance. Lourde.</p>",
+      "en": "<p>A metre and a half of steel: you force a door, lift a slab, keep a Pallid at arm's length. Heavy.</p>"
+    }
+  },
+  "equipements/EXLAPJ5j2CpYCJGf": {
+    "_nom": "Manuel trouvé",
+    "name": {
+      "fr": "Manuel trouvé",
+      "en": "Found manual"
+    },
+    "system.description": {
+      "fr": "<p>Un manuel d'un CDI, d'une bibliothèque ou d'un garage : jardinage tropical, électricité, premiers secours, radioamateur… Le lire attentivement pendant une semaine de camp peut apprendre un savoir-faire (le MJ choisit lequel).</p>",
+      "en": "<p>A manual from a school library, a public library or a garage: tropical gardening, electricity, first aid, amateur radio… Reading it carefully over a week in camp can teach a know-how (the GM chooses which).</p>"
+    }
+  },
+  "equipements/EsMoocN8cpybLVYb": {
+    "_nom": "Pied-de-biche",
+    "name": {
+      "fr": "Pied-de-biche",
+      "en": "Pry bar"
+    },
+    "system.description": {
+      "fr": "<p>L'outil du pilleur : portes, caisses, rideaux de fer. Il cogne aussi.</p>",
+      "en": "<p>The looter's tool: doors, crates, roller shutters. It hits, too.</p>"
+    }
+  },
+  "equipements/F3GL6XW5TfMujoWT": {
+    "_nom": "Tente et bâche",
+    "name": {
+      "fr": "Tente et bâche",
+      "en": "Tent and tarp"
+    },
+    "system.description": {
+      "fr": "<p>Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate.</p>",
+      "en": "<p>Sleep outside without getting soaked, put up a makeshift shelter on a Mafate trail.</p>"
+    }
+  },
+  "equipements/FcBV9tuBBLLLoplo": {
+    "_nom": "Matériel de canyon",
+    "name": {
+      "fr": "Matériel de canyon",
+      "en": "Canyoning gear"
+    },
+    "system.description": {
+      "fr": "<p>Cordes, baudriers, descendeurs, mousquetons, combinaison : descendre une cascade, franchir une ravine, remonter un blessé.</p>",
+      "en": "<p>Ropes, harnesses, descenders, karabiners, wetsuit: go down a waterfall, cross a ravine, haul up a wounded person.</p>"
+    }
+  },
+  "equipements/FtNR9av0YXqYCmhH": {
+    "_nom": "Sac de randonnée",
+    "name": {
+      "fr": "Sac de randonnée",
+      "en": "Hiking pack"
+    },
+    "system.description": {
+      "fr": "<p>Un grand sac à dos de trekking, bien réglé : on porte plus, plus loin, sans s'abîmer le dos.</p>",
+      "en": "<p>A big trekking backpack, properly adjusted: you carry more, further, without wrecking your back.</p>"
+    }
+  },
+  "equipements/FzEDgXkageKZMZih": {
+    "_nom": "Âne de bât",
+    "name": {
+      "fr": "Âne de bât",
+      "en": "Pack donkey"
+    },
+    "system.description": {
+      "fr": "<p>Un âne d'une ferme des Hauts ou de randonnée : il porte sur les sentiers de Mafate ce qu'aucun véhicule n'y montera. Il mange, il brait.</p>",
+      "en": "<p>A donkey from a Highland farm or a trekking outfit: it carries up the Mafate trails what no vehicle will ever climb. It eats, it brays.</p>"
+    }
+  },
+  "equipements/GMevJZf2TevArQ9Y": {
+    "_nom": "Tronçonneuse",
+    "name": {
+      "fr": "Tronçonneuse",
+      "en": "Chainsaw"
+    },
+    "system.description": {
+      "fr": "<p>Abattre, débiter, ouvrir un passage dans un arbre tombé. Elle boit de l'essence et hurle à travers toute la forêt.</p>",
+      "en": "<p>Fell, cut up, open a way through a fallen tree. It drinks petrol and howls across the whole forest.</p>"
+    }
+  },
+  "equipements/GwauCrDXFp9kPfjp": {
+    "_nom": "Jumelles",
+    "name": {
+      "fr": "Jumelles",
+      "en": "Binoculars"
+    },
+    "system.description": {
+      "fr": "<p>Voir avant d'être vu : la route, le rempart d'en face, la cour d'une ferme.</p>",
+      "en": "<p>See before being seen: the road, the rampart across the way, a farmyard.</p>"
+    }
+  },
+  "equipements/HXUOGHkBjBQxEsfC": {
+    "_nom": "Collets et nasses",
+    "name": {
+      "fr": "Collets et nasses",
+      "en": "Snares and fish traps"
+    },
+    "system.description": {
+      "fr": "<p>Des collets de fil de fer pour les tangues et les lièvres, des nasses de grillage pour les camarons et les poissons de rivière : on les pose le soir, on les relève au matin.</p>",
+      "en": "<p>Wire snares for tenrecs and hares, wire-mesh traps for river prawns and fish: you set them in the evening, you lift them in the morning.</p>"
+    }
+  },
+  "equipements/Jwm8SP40wObOc5wt": {
+    "_nom": "Sabre à canne",
+    "name": {
+      "fr": "Sabre à canne",
+      "en": "Cane knife"
+    },
+    "system.description": {
+      "fr": "<p>La lame large et recourbée des coupeurs de canne, qu'on trouve dans chaque hangar de l'île. Elle coupe les cannes, les lianes, les branches… et le reste. Silencieuse.</p>",
+      "en": "<p>The broad curved blade of the cane cutters, found in every shed on the island. It cuts cane, vines, branches… and the rest. Silent.</p>"
+    }
+  },
+  "equipements/LrLI4CexQXCAI2hu": {
+    "_nom": "Moustiquaires",
+    "name": {
+      "fr": "Moustiquaires",
+      "en": "Mosquito nets"
+    },
+    "system.description": {
+      "fr": "<p>Des moustiquaires pour tous les lits, retaillées et reprisées : dans les Bas en saison des pluies, elles protègent de la dengue et du chikungunya mieux que n'importe quel remède.</p>",
+      "en": "<p>Mosquito nets for every bed, cut down and mended: in the Lowlands in the rainy season they protect against dengue and chikungunya better than any remedy.</p>"
+    }
+  },
+  "equipements/N7R4QARsw7C8lpoc": {
+    "_nom": "Poêle de masse",
+    "name": {
+      "fr": "Poêle de masse",
+      "en": "Masonry stove"
+    },
+    "system.description": {
+      "fr": "<p>Un poêle de briques et de pierres qui garde la chaleur toute la nuit avec une brassée de bois : indispensable dans les Hauts en hiver austral, il cuit aussi le pain.</p>",
+      "en": "<p>A stove of bricks and stones that holds its heat all night on an armful of wood: indispensable in the Highlands in the austral winter, and it bakes bread too.</p>"
+    }
+  },
+  "equipements/OCYXrsHwxVHAvZjS": {
+    "_nom": "Lance de fortune",
+    "name": {
+      "fr": "Lance de fortune",
+      "en": "Makeshift spear"
+    },
+    "system.description": {
+      "fr": "<p>Un couteau de cuisine ou une lame de sabre ligaturée au bout d'un bambou : on frappe à travers un grillage sans s'approcher.</p>",
+      "en": "<p>A kitchen knife or a cane-knife blade lashed to the end of a bamboo pole: you strike through a fence without coming close.</p>"
+    }
+  },
+  "equipements/Rx2lvvdh5L8dpysq": {
+    "_nom": "Radio à manivelle",
+    "name": {
+      "fr": "Radio à manivelle",
+      "en": "Wind-up radio"
+    },
+    "system.description": {
+      "fr": "<p>Une petite radio qu'on remonte à la main : écouter les dernières émissions, les messages en boucle, les autres groupes. Elle ne sait pas émettre.</p>",
+      "en": "<p>A small radio you crank by hand: listen to the last broadcasts, the looped messages, the other groups. It cannot transmit.</p>"
+    }
+  },
+  "equipements/XA2FiclBwc5Dzv6e": {
+    "_nom": "Pelle et pioche",
+    "name": {
+      "fr": "Pelle et pioche",
+      "en": "Shovel and pick"
+    },
+    "system.description": {
+      "fr": "<p>Creuser une tranchée, une fosse, une galerie, une tombe. Indispensable à tout chantier.</p>",
+      "en": "<p>Dig a trench, a pit, a gallery, a grave. Indispensable on any worksite.</p>"
+    }
+  },
+  "equipements/YABPoPUuOXPaf1P7": {
+    "_nom": "Batte ou manche de pioche",
+    "name": {
+      "fr": "Batte ou manche de pioche",
+      "en": "Bat or pick handle"
+    },
+    "system.description": {
+      "fr": "<p>Du bois dur, bien en main. Rien de mieux pour repousser, rien de pire pour achever.</p>",
+      "en": "<p>Hard wood, good in the hand. Nothing better for pushing back, nothing worse for finishing off.</p>"
+    }
+  },
+  "equipements/Z7QQhuzYx0KyQRg6": {
+    "_nom": "Cheval de la Plaine des Cafres",
+    "name": {
+      "fr": "Cheval de la Plaine des Cafres",
+      "en": "Horse from the Plaine des Cafres"
+    },
+    "system.description": {
+      "fr": "<p>Un cheval d'un centre équestre de la Plaine des Cafres : plus rapide qu'à pied sur les pistes et les prairies, sûr sur les sentiers larges. Il faut le nourrir, l'abreuver, le garder des Livides.</p>",
+      "en": "<p>A horse from a riding centre on the Plaine des Cafres: faster than walking on tracks and pasture, sure-footed on the wide trails. It has to be fed, watered, and kept from the Pallid.</p>"
+    }
+  },
+  "equipements/bcPN8wVfFI6TWjEh": {
+    "_nom": "Vélo-cargo",
+    "name": {
+      "fr": "Vélo-cargo",
+      "en": "Cargo bike"
+    },
+    "system.description": {
+      "fr": "<p>Un vélo à caisse (de livreur ou fabriqué à l'atelier) : porter des bidons, des sacs de terre ou un blessé sur les routes des Bas.</p>",
+      "en": "<p>A box bike (a courier's, or built in the workshop): carry jerrycans, sacks of soil or a wounded person on the Lowland roads.</p>"
+    }
+  },
+  "equipements/dUmMz8dGEXOMhloc": {
+    "_nom": "Pistolet de service",
+    "name": {
+      "fr": "Pistolet de service",
+      "en": "Service pistol"
+    },
+    "system.description": {
+      "fr": "<p>Un pistolet 9 mm de gendarme ou de policier, avec un chargeur ou deux. On le garde pour le pire.</p>",
+      "en": "<p>A gendarme's or police officer's 9 mm pistol, with a magazine or two. You keep it for the worst.</p>"
+    }
+  },
+  "equipements/eKfBZhtXDC3AfphH": {
+    "_nom": "Lampe frontale",
+    "name": {
+      "fr": "Lampe frontale",
+      "en": "Head torch"
+    },
+    "system.description": {
+      "fr": "<p>Les deux mains libres dans le noir d'un tunnel ou d'une cage d'escalier. Avec des piles ou rechargeable.</p>",
+      "en": "<p>Both hands free in the dark of a tunnel or a stairwell. Battery or rechargeable.</p>"
+    }
+  },
+  "equipements/fv8YrrD2rNKQHdLV": {
+    "_nom": "Panneaux solaires démontables",
+    "name": {
+      "fr": "Panneaux solaires démontables",
+      "en": "Portable solar panels"
+    },
+    "system.description": {
+      "fr": "<p>Deux panneaux pliants de camping-car, un régulateur, une batterie : de quoi recharger les lampes, la radio et les talkies, n'importe où. On les emporte en déménageant.</p>",
+      "en": "<p>Two folding camper-van panels, a regulator, a battery: enough to recharge the lamps, the radio and the walkie-talkies, anywhere. You take them with you when you move.</p>"
+    }
+  },
+  "equipements/gRaW040bdNTirY7E": {
+    "_nom": "Arc de chasse",
+    "name": {
+      "fr": "Arc de chasse",
+      "en": "Hunting bow"
+    },
+    "system.description": {
+      "fr": "<p>Un arc à poulies d'un club de tir à l'arc ou un arc de fabrication maison. Silencieux, les flèches se récupèrent.</p>",
+      "en": "<p>A compound bow from an archery club, or a home-made bow. Silent, and the arrows can be recovered.</p>"
+    }
+  },
+  "equipements/hHK6ckirfpLMz8NM": {
+    "_nom": "Trousse de secours",
+    "name": {
+      "fr": "Trousse de secours",
+      "en": "First-aid kit"
+    },
+    "system.description": {
+      "fr": "<p>Compresses, bandes, désinfectant, sutures adhésives, garrot, gants, ciseaux. Elle se vide vite.</p>",
+      "en": "<p>Compresses, bandages, disinfectant, adhesive sutures, tourniquet, gloves, scissors. It empties fast.</p>"
+    }
+  },
+  "equipements/haopKUKIOz8Y7Bin": {
+    "_nom": "Sac d'intervention médicale",
+    "name": {
+      "fr": "Sac d'intervention médicale",
+      "en": "Medical response bag"
+    },
+    "system.description": {
+      "fr": "<p>Le sac d'un ambulancier ou d'un pompier : oxygène, attelles, matériel de suture, perfusions, tensiomètre.</p>",
+      "en": "<p>A paramedic's or a firefighter's bag: oxygen, splints, suture kit, drips, blood-pressure cuff.</p>"
+    }
+  },
+  "equipements/kxJoDbSlvEmKK5Bi": {
+    "_nom": "Fusil d'assaut réglementaire",
+    "name": {
+      "fr": "Fusil d'assaut réglementaire",
+      "en": "Service assault rifle"
+    },
+    "system.description": {
+      "fr": "<p>Une arme de l'armée, rare et convoitée, récupérée sur un poste abandonné ou un soldat tombé. Elle tire en rafale et vide les chargeurs plus vite qu'on ne les trouve.</p>",
+      "en": "<p>An army weapon, rare and coveted, recovered from an abandoned post or a fallen soldier. It fires in bursts and empties magazines faster than you can find them.</p>"
+    }
+  },
+  "equipements/lyHb0eP2OzbXMBBT": {
+    "_nom": "Chauffe-eau solaire de fortune",
+    "name": {
+      "fr": "Chauffe-eau solaire de fortune",
+      "en": "Makeshift solar water heater"
+    },
+    "system.description": {
+      "fr": "<p>Un serpentin de tuyau noir sur le toit, un fût isolé : de l'eau chaude pour se laver et laver les plaies. Une douche chaude change une semaine.</p>",
+      "en": "<p>A coil of black pipe on the roof, an insulated drum: hot water for washing and for washing wounds. A hot shower changes a week.</p>"
+    }
+  },
+  "equipements/maUJgkb0oqgl5h46": {
+    "_nom": "Voiture",
+    "name": {
+      "fr": "Voiture",
+      "en": "Car"
+    },
+    "system.description": {
+      "fr": "<p>Une citadine ou une berline trouvée avec ses clés : rapide sur route, inutile hors des routes, bruyante, et la route peut être bouchée par mille autres.</p>",
+      "en": "<p>A city car or a saloon found with its keys: fast on the road, useless off it, noisy, and the road may be blocked by a thousand others.</p>"
+    }
+  },
+  "equipements/mhXqjNcFXPMBnDOW": {
+    "_nom": "Barque à moteur",
+    "name": {
+      "fr": "Barque à moteur",
+      "en": "Motor boat"
+    },
+    "system.description": {
+      "fr": "<p>Une barque de pêcheur avec son hors-bord : de marine en marine le long de la côte, loin des routes et des hordes, tant que la mer le permet.</p>",
+      "en": "<p>A fisherman's boat with its outboard: from harbour to harbour along the coast, far from the roads and the hordes, as long as the sea allows.</p>"
+    }
+  },
+  "equipements/n3f2wGUmK2bCA5ZZ": {
+    "_nom": "Fusil de chasse calibre 12",
+    "name": {
+      "fr": "Fusil de chasse calibre 12",
+      "en": "12-gauge shotgun"
+    },
+    "system.description": {
+      "fr": "<p>Le fusil de chasse d'un chasseur des Hauts, superposé ou à pompe. Terrible à courte portée. Chaque coup s'entend à des kilomètres.</p>",
+      "en": "<p>A Highland hunter's shotgun, over-and-under or pump-action. Terrible at short range. Every shot is heard for kilometres.</p>"
+    }
+  },
+  "equipements/oAYx8BLS49AhmEun": {
+    "_nom": "Scooter",
+    "name": {
+      "fr": "Scooter",
+      "en": "Scooter"
+    },
+    "system.description": {
+      "fr": "<p>Le deux-roues de toute l'île : il se faufile entre les voitures bloquées, consomme peu, ne porte presque rien.</p>",
+      "en": "<p>The island's two-wheeler: it threads between the stalled cars, uses little fuel, carries almost nothing.</p>"
+    }
+  },
+  "equipements/olChNa2lCyCxRl5U": {
+    "_nom": "Arbalète de fortune",
+    "name": {
+      "fr": "Arbalète de fortune",
+      "en": "Makeshift crossbow"
+    },
+    "system.description": {
+      "fr": "<p>Une arbalète d'atelier : lame de ressort de voiture pour l'arc, crosse de bois, détente de récupération. Lente à armer, silencieuse, et ses carreaux se récupèrent.</p>",
+      "en": "<p>A workshop crossbow: a car leaf spring for the bow, a wooden stock, a salvaged trigger. Slow to cock, silent, and its bolts can be recovered.</p>"
+    }
+  },
+  "equipements/pNcSHLmPMugTau0E": {
+    "_nom": "Batterie nomade",
+    "name": {
+      "fr": "Batterie nomade",
+      "en": "Power bank"
+    },
+    "system.description": {
+      "fr": "<p>Une grosse batterie portable avec ses prises : garder le courant d'une journée pour la nuit.</p>",
+      "en": "<p>A big portable battery with its sockets: keep a day's power for the night.</p>"
+    }
+  },
+  "equipements/sAH6fwhcxEnXrjuj": {
+    "_nom": "Caisse à outils",
+    "name": {
+      "fr": "Caisse à outils",
+      "en": "Toolbox"
+    },
+    "system.description": {
+      "fr": "<p>Clés, tournevis, pinces, scie à métaux, multimètre, ruban adhésif, colliers : de quoi réparer presque tout.</p>",
+      "en": "<p>Spanners, screwdrivers, pliers, hacksaw, multimeter, duct tape, cable ties: enough to repair almost anything.</p>"
+    }
+  },
+  "equipements/uHNTLpHjEGafFf6d": {
+    "_nom": "Réchaud et gamelles",
+    "name": {
+      "fr": "Réchaud et gamelles",
+      "en": "Stove and mess tins"
+    },
+    "system.description": {
+      "fr": "<p>Cuisiner sans fumée en route, faire bouillir l'eau. Une cartouche de gaz dure peu ; un réchaud à bois, toujours.</p>",
+      "en": "<p>Cook without smoke on the road, boil water. A gas cartridge does not last long; a wood stove, always.</p>"
+    }
+  },
+  "equipements/w5jAo3vhpTDnsksz": {
+    "_nom": "Pistolet de détresse",
+    "name": {
+      "fr": "Pistolet de détresse",
+      "en": "Flare pistol"
+    },
+    "system.description": {
+      "fr": "<p>Le lance-fusées d'un bateau : appeler à l'aide, signaler, aveugler, attirer une horde ailleurs, mettre le feu. Il n'y a que quelques fusées.</p>",
+      "en": "<p>A boat's flare gun: call for help, signal, dazzle, draw a horde elsewhere, start a fire. There are only a few flares.</p>"
+    }
+  },
+  "equipements/wXr1B7QmyHAbya4x": {
+    "_nom": "Jerricans",
+    "name": {
+      "fr": "Jerricans",
+      "en": "Jerrycans"
+    },
+    "system.description": {
+      "fr": "<p>Deux jerricans de vingt litres : de l'eau, de l'essence, de quoi transporter ce qui compte.</p>",
+      "en": "<p>Two twenty-litre jerrycans: water, petrol, a way to carry what matters.</p>"
+    }
+  },
+  "equipements/yE85TULkfR9UIx88": {
+    "_nom": "Radio marine portative",
+    "name": {
+      "fr": "Radio marine portative",
+      "en": "Handheld marine radio"
+    },
+    "system.description": {
+      "fr": "<p>Une VHF de bateau étanche : on écoute et on émet sur les canaux de la mer, où les pêcheurs parlent encore.</p>",
+      "en": "<p>A waterproof boat VHF: you listen and transmit on the sea channels, where the fishermen still talk.</p>"
+    }
+  },
+  "equipements/yg9saom21cNXkFDc": {
+    "_nom": "Talkies-walkies",
+    "name": {
+      "fr": "Talkies-walkies",
+      "en": "Walkie-talkies"
+    },
+    "system.description": {
+      "fr": "<p>Une paire de talkies de chantier ou de randonnée : quelques kilomètres de portée, de quoi coordonner une fouille.</p>",
+      "en": "<p>A pair of worksite or hiking walkie-talkies: a few kilometres of range, enough to coordinate a scavenging run.</p>"
+    }
+  },
+  "equipements/zMgS6I1TZzesv8gA": {
+    "_nom": "Camion plateau",
+    "name": {
+      "fr": "Camion plateau",
+      "en": "Flatbed truck"
+    },
+    "system.description": {
+      "fr": "<p>Un camion de livraison ou de chantier : déménager un abri entier, ses panneaux et ses cuves. Lent, énorme, entendu de partout.</p>",
+      "en": "<p>A delivery or worksite truck: move a whole shelter, its panels and its tanks. Slow, enormous, heard from everywhere.</p>"
+    }
+  },
+  "equipements/zbfFqGVAJlulr1ou": {
+    "_nom": "Carabine .22",
+    "name": {
+      "fr": "Carabine .22",
+      "en": ".22 rifle"
+    },
+    "system.description": {
+      "fr": "<p>Une petite carabine de stand ou de ferme : précise, légère, moins bruyante qu'un fusil. Il faut viser la tête.</p>",
+      "en": "<p>A small range or farm rifle: accurate, light, quieter than a shotgun. You have to aim for the head.</p>"
+    }
+  }
+}

@@ -3,8 +3,18 @@
 // JSON (src/<pack>/), 4. compile en LevelDB (packs/), 5. écrit assets/donnees.json (le registre) et assets/cartes/plans.json.
 // Les vérificateurs (verifierDocuments, verifierDonnees, bilanVoie, termesInterdits…) servent aussi aux essais.
 // Usage : npm run fabriquer-fenoir        (option --sans-compiler pour vérifier et écrire src/ sans compiler packs/)
+//
+// Version anglaise (module lakour-fenoir-en, modules/lakour-mj-ia/docs/traduction.md) : mêmes sources, mêmes _id, un
+// dictionnaire par pack dans modules/lakour-fenoir/contenu/en/<pack>.json, plus contenu/en/registre.json pour les textes du
+// REGISTRE (assets/donnees.json : le système le lit par clés, jamais traduites ; ses textes — noms, descriptions, « après »,
+// atouts, phrases d'histoire, fêtes… — sont traduits par le même mécanisme, entrée « registre/<famille>/<clé> » + champ).
+//   node outils/fabriquer-fenoir.mjs --extraire     écrit ou met à jour les squelettes contenu/en/*.json (traductions gardées)
+//   npm run fabriquer-fenoir-en  (= --langue en)    engendre modules/lakour-fenoir-en/ EN ENTIER (non versionné) : module.json
+//     anglais (contenu/en/module.json), src/ et packs/ traduits, assets/donnees.json traduit, copies de lang/, scripts/, assets/
+//     (index des jetons récrits, plans.json refait avec les noms traduits), CREDITS.md ; puis les mêmes vérifications qu'en
+//     français (documents, registre, contrat du contenu). Un écart de balises ou de liens arrête la fabrication.
 import { compilePack } from "@foundryvtt/foundryvtt-cli";
-import { mkdirSync, realpathSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, realpathSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -16,10 +26,25 @@ import { CARTE } from "../modules/lakour-fenoir/contenu/regions.mjs";
 import { ecrirePlans } from "../modules/lakour-fenoir/contenu/cartes.mjs";
 import { EFFET_FETE } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
+import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
+import { verifierModuleDeContenu } from "../modules/lakour-mj-ia/outils/contrat-contenu.mjs";
 
 const RACINE_DEPOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const RACINE = join(RACINE_DEPOT, "modules", MODULE);
 export const FICHIER_DONNEES = join(RACINE, "assets", "donnees.json");
+
+// ---------------------------------------------------------------- Version anglaise
+export const MODULE_EN = `${MODULE}-en`;
+const RACINE_EN = join(RACINE_DEPOT, "modules", MODULE_EN);
+export const DOSSIER_DICTIONNAIRES = join(RACINE, "contenu", "en");
+// Ce que l'extraction regarde (traduction.mjs) : nos drapeaux sous flags.lakour-fenoir ; tout le reste par heuristique.
+export const OPTIONS_TRADUCTION = { module: MODULE };
+// Le pack fictif du registre dans les dictionnaires (contenu/en/registre.json).
+export const PACK_REGISTRE = "registre";
+// Familles du registre sans texte à traduire : l'en-tête, et les noms propres (prénoms créoles, surnoms, noms de cyclones).
+const FAMILLES_NON_TRADUITES = ["module", "version", "noms"];
+// Dossiers et fichiers du module français copiés tels quels dans le module anglais (un zip doit être autonome).
+const COPIES = ["CREDITS.md", "lang", "scripts", "assets"];
 
 export const TYPE_PACK = {
   installations: "Item", savoirs: "Item", equipements: "Item", passes: "Item", recettes: "Item", afflictions: "Item",
@@ -35,6 +60,9 @@ export const FETES_MOTEUR = IDS_FETES;
 export const FETES_DE_FENOIR = ["noel", "nouvel-an", "paques", "halloween", "musique", "liberte", "fete-nationale", "dipavali", "nouvel-an-chinois", "cavadee", "letchis"];
 export const DIFFICULTES = ["facile", "normale", "difficile", "extreme"];
 export const BUDGET = [10, 16];
+// Les vérificateurs lisent les drapeaux et chemins sous l'identifiant du module vérifié (français par défaut, anglais pour
+// lakour-fenoir-en : option { module }).
+const MODULE_PAR_DEFAUT = MODULE;
 
 // Termes interdits : rien de The Walking Dead, ni du jeu de rôle de Free League, ni d'une autre œuvre de zombies.
 // Mots entiers, lettres accentuées comprises (« débiter » ne contient pas « biter »).
@@ -61,7 +89,7 @@ export function fabriquer(documents = DOCUMENTS) {
 }
 
 // ---------------------------------------------------------------- Documents Foundry
-export function verifierDocuments(docs) {
+export function verifierDocuments(docs, { module: MODULE = MODULE_PAR_DEFAUT } = {}) {
   const erreurs = [];
   const err = (d, m) => erreurs.push(`${d.pack}/${d.doc.name ?? d.cle} : ${m}`);
   const du = pack => docs.filter(d => d.pack === pack);
@@ -190,7 +218,7 @@ export function verifierVoie(voie, d) {
 
 // ---------------------------------------------------------------- Registre (donnees.json)
 const entre = (v, a, b) => typeof v === "number" && v >= a && v <= b;
-export function verifierDonnees(d) {
+export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) {
   const erreurs = [];
   const e = m => erreurs.push(m);
   const index = Object.fromEntries(["regions", "sites", "installations", "savoirs", "factions", "evenements", "passes", "equipements", "recettes",
@@ -454,7 +482,150 @@ export function verifierDonnees(d) {
   return erreurs;
 }
 
+// ---------------------------------------------------------------- Le registre vu comme des documents (traduction)
+// Le système lit le registre par CLÉS (jamais traduites) ; ses textes passent par le même dictionnaire que les compendiums.
+// Chaque fiche d'une famille à clés (regions, sites, installations, factions, fêtes…) devient un pseudo-document
+// « registre/<famille>/<clé> » ; une famille sans clés (routes, reputations, recrues, histoire, autonomie) un seul,
+// « registre/<famille> » (un tableau est rangé sous « liste »). Rend [{ pack: "registre", cle, doc, famille, indice, nom }].
+const aDesCles = v => Array.isArray(v) && v.length > 0 && v.every(o => o && typeof o === "object" && typeof o.cle === "string");
+export function registreEnDocuments(registre) {
+  const docs = [];
+  for (const [famille, valeur] of Object.entries(registre)) {
+    if (FAMILLES_NON_TRADUITES.includes(famille)) continue;
+    if (aDesCles(valeur)) {
+      valeur.forEach((o, indice) => docs.push({ pack: PACK_REGISTRE, cle: `${PACK_REGISTRE}:${famille}/${o.cle}`, famille, indice, nom: o.nom ?? o.cle,
+        doc: { _id: `${famille}/${o.cle}`, ...structuredClone(o) } }));
+    } else {
+      docs.push({ pack: PACK_REGISTRE, cle: `${PACK_REGISTRE}:${famille}`, famille, indice: null, nom: famille,
+        doc: { _id: famille, ...(Array.isArray(valeur) ? { liste: structuredClone(valeur) } : structuredClone(valeur)) } });
+    }
+  }
+  return docs;
+}
+// L'inverse : le registre recomposé (même ordre, familles non traduites reprises telles quelles) à partir des pseudo-documents.
+export function documentsEnRegistre(registre, docs) {
+  const sortie = structuredClone(registre);
+  for (const { famille, indice, doc } of docs) {
+    const { _id, ...reste } = doc;
+    if (indice === null) sortie[famille] = Array.isArray(registre[famille]) ? reste.liste : reste;
+    else sortie[famille][indice] = reste;
+  }
+  return sortie;
+}
+
+// ---------------------------------------------------------------- Dictionnaires de traduction
+// Union des dictionnaires contenu/en/<pack>.json (module.json à part : manifeste). Rend { dictionnaire, packs }.
+export function lireDictionnaires(dossier = DOSSIER_DICTIONNAIRES) {
+  const dictionnaire = {}, packs = [];
+  if (!existsSync(dossier)) return { dictionnaire, packs };
+  for (const f of readdirSync(dossier).filter(f => f.endsWith(".json") && f !== "module.json").sort()) {
+    Object.assign(dictionnaire, JSON.parse(readFileSync(join(dossier, f), "utf8")));
+    packs.push(f.slice(0, -5));
+  }
+  return { dictionnaire, packs };
+}
+
+// Les textes extraits des documents et du registre : { squelette, tout } (traduction.mjs), le registre sous le pack « registre ».
+export function extraireTout(docs, registre) {
+  const pseudo = registreEnDocuments(registre);
+  const { squelette, tout } = extraire([...docs, ...pseudo], OPTIONS_TRADUCTION);
+  for (const p of pseudo) {
+    const cle = `${PACK_REGISTRE}/${p.doc._id}`;
+    if (tout[PACK_REGISTRE]?.[cle]) tout[PACK_REGISTRE][cle]._nom = p.nom;
+    if (squelette[PACK_REGISTRE]?.[cle]) squelette[PACK_REGISTRE][cle]._nom = p.nom;
+  }
+  return { squelette, tout };
+}
+
+// Écrit ou met à jour les squelettes contenu/en/<pack>.json (traductions existantes conservées, sources changées signalées).
+// Rend, par pack, { entrees, traduites, nouvelles, conservees, obsoletes, supprimees }.
+export function extraireDictionnaires(docs, registre, dossier = DOSSIER_DICTIONNAIRES) {
+  const { squelette, tout } = extraireTout(docs, registre);
+  mkdirSync(dossier, { recursive: true });
+  const bilan = {};
+  for (const pack of [...Object.keys(TYPE_PACK), PACK_REGISTRE]) {
+    if (!squelette[pack]) continue;
+    const fichier = join(dossier, `${pack}.json`);
+    const existant = existsSync(fichier) ? JSON.parse(readFileSync(fichier, "utf8")) : {};
+    const { dictionnaire, rapport } = fusionner(squelette[pack], existant, tout[pack]);
+    writeFileSync(fichier, `${JSON.stringify(dictionnaire, null, 2)}\n`);
+    const entrees = Object.values(dictionnaire).reduce((n, e) => n + Object.keys(e).filter(k => !k.startsWith("_")).length, 0);
+    const traduites = Object.values(dictionnaire).reduce((n, e) => n + Object.values(e).filter(t => t?.en).length, 0);
+    bilan[pack] = { entrees, traduites, ...rapport };
+  }
+  return bilan;
+}
+
+// Le module anglais en mémoire : documents traduits (uuid, chemins et drapeaux récrits vers lakour-fenoir-en) et registre
+// traduit (mêmes clés, chemins d'images récrits, « module » = lakour-fenoir-en). Rend { documents, registre, rapport }.
+export function fabriquerAnglais(docs = fabriquer(), registre = donneesContenu(), dictionnaire = lireDictionnaires().dictionnaire) {
+  const pseudo = registreEnDocuments(registre);
+  const { documents, rapport } = appliquer([...docs, ...pseudo], dictionnaire, { ...OPTIONS_TRADUCTION, deId: MODULE, versId: MODULE_EN });
+  const traduits = documents.filter(d => d.pack !== PACK_REGISTRE);
+  const registreEn = documentsEnRegistre(registre, documents.filter(d => d.pack === PACK_REGISTRE));
+  registreEn.module = MODULE_EN;
+  return { documents: traduits, registre: registreEn, rapport };
+}
+
+// Manifeste du module anglais : celui du module français, identifiant, titre, description, étiquettes des packs et dossiers
+// pris dans contenu/en/module.json, conflit déclaré avec le module français (mêmes documents : un seul des deux actif).
+export function manifesteAnglais(manifeste, traductions) {
+  const en = structuredClone(manifeste);
+  en.id = MODULE_EN;
+  en.title = traductions.title ?? `${manifeste.title} (English)`;
+  en.description = traductions.description ?? manifeste.description;
+  if (manifeste.manifest) en.manifest = manifeste.manifest.replace(/module\.json$/, `${MODULE_EN}.json`);
+  if (manifeste.download) en.download = manifeste.download.replace(`${MODULE}.zip`, `${MODULE_EN}.zip`);
+  en.packs = manifeste.packs.map(p => ({ ...p, label: traductions.packs?.[p.name] ?? p.label }));
+  en.packFolders = (manifeste.packFolders ?? []).map(f => ({ ...f, name: traductions.packFolders?.[f.name] ?? f.name }));
+  en.relationships = { ...manifeste.relationships, conflicts: [...(manifeste.relationships?.conflicts ?? []).filter(c => c.id !== MODULE),
+    { id: MODULE, type: "module", reason: `Same documents and identifiers as ${MODULE}: enable only one of the two.` }] };
+  return en;
+}
+
+// Copie le dossier du module français (COPIES) dans le module anglais : JSON des assets récrits (« modules/lakour-fenoir/ » ->
+// « modules/lakour-fenoir-en/ »), plans.json refait avec les plans traduits des scènes, registre traduit.
+function copierModule(documents, registre) {
+  for (const element of COPIES) {
+    const source = join(RACINE, element), cible = join(RACINE_EN, element);
+    if (!existsSync(source)) continue;
+    rmSync(cible, { recursive: true, force: true });
+    cpSync(source, cible, { recursive: true });
+  }
+  const recrireJson = dossier => {
+    for (const f of readdirSync(dossier, { withFileTypes: true })) {
+      const chemin = join(dossier, f.name);
+      if (f.isDirectory()) recrireJson(chemin);
+      else if (f.name.endsWith(".json")) writeFileSync(chemin, readFileSync(chemin, "utf8").replaceAll(`modules/${MODULE}/`, `modules/${MODULE_EN}/`));
+    }
+  };
+  recrireJson(join(RACINE_EN, "assets"));
+  const plans = {};
+  for (const { pack, doc } of documents) if (pack === "scenes" && doc.flags?.[MODULE_EN]?.plan) plans[doc.flags[MODULE_EN].cle] = doc.flags[MODULE_EN].plan;
+  writeFileSync(join(RACINE_EN, "assets", "cartes", "plans.json"), `${JSON.stringify(plans, null, 1)}\n`);
+  writeFileSync(join(RACINE_EN, "assets", "donnees.json"), `${JSON.stringify(registre, null, 1)}\n`);
+}
+
 // ---------------------------------------------------------------- Fabrication
+// Écrit src/<pack>/*.json puis compile packs/ pour un module (racine), à partir de documents { pack, cle, doc }.
+async function ecrireEtCompiler(docs, racine, compiler) {
+  const parPack = Object.groupBy(docs, d => d.pack);
+  for (const [pack, liste] of Object.entries(parPack)) {
+    const dossier = join(racine, "src", pack);
+    rmSync(dossier, { recursive: true, force: true });
+    mkdirSync(dossier, { recursive: true });
+    for (const { cle, doc } of liste) writeFileSync(join(dossier, `${cle.split(":")[1]}.json`), `${JSON.stringify(doc, null, 2)}\n`);
+    console.log(`${pack.padEnd(14)} ${liste.length} documents`);
+  }
+  if (compiler) {
+    for (const pack of Object.keys(parPack)) {
+      rmSync(join(racine, "packs", pack), { recursive: true, force: true });
+      await compilePack(join(racine, "src", pack), join(racine, "packs", pack));
+    }
+    console.log("compendiums compilés dans", join(racine, "packs"));
+  }
+}
+
 const lanceDirectement = () => {
   try { return realpathSync(fileURLToPath(import.meta.url)) === realpathSync(resolve(process.argv[1] ?? "")); } catch { return false; }
 };
@@ -467,23 +638,49 @@ if (lanceDirectement()) {
     console.error(`Contenu non conforme au contrat :\n- ${erreurs.join("\n- ")}`);
     process.exit(1);
   }
-  const parPack = Object.groupBy(docs, d => d.pack);
-  for (const [pack, liste] of Object.entries(parPack)) {
-    const dossier = join(RACINE, "src", pack);
-    rmSync(dossier, { recursive: true, force: true });
-    mkdirSync(dossier, { recursive: true });
-    for (const { cle, doc } of liste) writeFileSync(join(dossier, `${cle.split(":")[1]}.json`), `${JSON.stringify(doc, null, 2)}\n`);
-    console.log(`${pack.padEnd(14)} ${liste.length} documents`);
-  }
-  mkdirSync(dirname(FICHIER_DONNEES), { recursive: true });
-  writeFileSync(FICHIER_DONNEES, `${JSON.stringify(registre, null, 1)}\n`);
-  ecrirePlans();
-  console.log(`registre       ${Object.entries(registre).filter(([, v]) => Array.isArray(v)).map(([k, v]) => `${k} ${v.length}`).join(", ")}`);
-  if (!process.argv.includes("--sans-compiler")) {
-    for (const pack of Object.keys(parPack)) {
-      rmSync(join(RACINE, "packs", pack), { recursive: true, force: true });
-      await compilePack(join(RACINE, "src", pack), join(RACINE, "packs", pack));
+  const langue = process.argv.includes("--langue") ? process.argv[process.argv.indexOf("--langue") + 1] : "fr";
+  const compiler = !process.argv.includes("--sans-compiler");
+
+  if (process.argv.includes("--extraire")) {
+    // Squelettes des dictionnaires : un fichier par pack (et registre.json), traductions existantes conservées.
+    const bilan = extraireDictionnaires(docs, registre);
+    for (const [pack, b] of Object.entries(bilan)) {
+      console.log(`${pack.padEnd(14)} ${String(b.traduites).padStart(4)}/${String(b.entrees).padEnd(4)} traduites, ${b.nouvelles} nouvelle(s)`
+        + `${b.obsoletes.length ? `, ${b.obsoletes.length} obsolète(s) (enAncien à vérifier)` : ""}${b.supprimees.length ? `, ${b.supprimees.length} retirée(s)` : ""}`);
+      for (const o of b.obsoletes) console.warn(`  obsolète : ${o}`);
     }
-    console.log("compendiums compilés dans", join(RACINE, "packs"));
+    console.log(`dictionnaires dans ${DOSSIER_DICTIONNAIRES}`);
+  } else if (langue === "fr") {
+    await ecrireEtCompiler(docs, RACINE, compiler);
+    mkdirSync(dirname(FICHIER_DONNEES), { recursive: true });
+    writeFileSync(FICHIER_DONNEES, `${JSON.stringify(registre, null, 1)}\n`);
+    ecrirePlans();
+    console.log(`registre       ${Object.entries(registre).filter(([, v]) => Array.isArray(v)).map(([k, v]) => `${k} ${v.length}`).join(", ")}`);
+  } else if (langue === "en") {
+    const { dictionnaire } = lireDictionnaires();
+    const { documents, registre: registreEn, rapport } = fabriquerAnglais(docs, registre, dictionnaire);
+    console.log(resumerRapport(rapport));
+    for (const o of rapport.obsoletes) console.warn(`avertissement : traduction obsolète (le français a changé, relancer --extraire) : ${o}`);
+    if (rapport.erreurs.length) {
+      console.error(`${rapport.erreurs.length} traduction(s) en écart de balises ou de liens :`);
+      for (const e of rapport.erreurs) console.error(`- ${e.cle}:${e.chemin}\n    ${e.ecarts.join("\n    ")}`);
+      process.exit(1);
+    }
+    // Les mêmes vérifications qu'en français, sur les documents et le registre anglais (termes interdits compris).
+    const erreursEn = [...verifierDocuments(documents, { module: MODULE_EN }), ...verifierDonnees(registreEn, { module: MODULE_EN })];
+    if (erreursEn.length) { console.error(`Contenu anglais non conforme au contrat :\n- ${erreursEn.join("\n- ")}`); process.exit(1); }
+    const manifeste = JSON.parse(readFileSync(join(RACINE, "module.json"), "utf8"));
+    const fichierManifeste = join(DOSSIER_DICTIONNAIRES, "module.json");
+    const traductions = existsSync(fichierManifeste) ? JSON.parse(readFileSync(fichierManifeste, "utf8")) : {};
+    mkdirSync(RACINE_EN, { recursive: true });
+    writeFileSync(join(RACINE_EN, "module.json"), `${JSON.stringify(manifesteAnglais(manifeste, traductions), null, 2)}\n`);
+    copierModule(documents, registreEn);
+    await ecrireEtCompiler(documents, RACINE_EN, compiler);
+    const ecarts = verifierModuleDeContenu(RACINE_EN);
+    if (ecarts.length) { console.error(`${RACINE_EN} : ${ecarts.length} écart(s) au contrat des modules de contenu :\n- ${ecarts.join("\n- ")}`); process.exit(1); }
+    console.log(`${RACINE_EN} : module anglais complet (contrat du contenu respecté) ; ${rapport.manquants.length} texte(s) encore en français`);
+  } else {
+    console.error(`Langue inconnue : ${langue} (fr ou en)`);
+    process.exit(2);
   }
 }

@@ -1,0 +1,390 @@
+{
+  "scenes/57YDByw4MkyvUj8V": {
+    "_nom": "Lieu — Gîte de montagne",
+    "name": {
+      "fr": "Lieu — Gîte de montagne",
+      "en": "Place — Mountain lodge"
+    },
+    "drawings.TeW3oOBH5XyxDkZ4.text": {
+      "fr": "Clairière",
+      "en": "Clearing"
+    },
+    "drawings.nwjgumhrErquY4uq.text": {
+      "fr": "Salle commune",
+      "en": "Common room"
+    },
+    "drawings.WesUNzlxCLgiTtMh.text": {
+      "fr": "Sanitaires",
+      "en": "Washrooms"
+    },
+    "sounds.qxRd0futv4VhZlul.name": {
+      "fr": "foule — Salle commune",
+      "en": "crowd — Common room"
+    },
+    "flags.lakour-fenoir.description": {
+      "fr": "Un gîte de randonneurs des Hauts ou d'un cirque : salle commune et son poêle, dortoir, sanitaires, citerne, réserve de bois, clairière dans le brouillard. Pour une halte sur un sentier, un refuge assiégé, une rencontre avec d'autres survivants.",
+      "en": "A hikers' lodge in the Highlands or in a cirque: common room with its stove, dormitory, washrooms, cistern, woodpile, clearing in the fog. For a halt on a trail, a besieged refuge, a meeting with other survivors."
+    },
+    "flags.lakour-fenoir.plan.elements.0.nom": {
+      "fr": "Poêle",
+      "en": "Stove"
+    },
+    "flags.lakour-fenoir.plan.elements.1.nom": {
+      "fr": "Grande table",
+      "en": "Big table"
+    },
+    "flags.lakour-fenoir.plan.elements.2.nom": {
+      "fr": "Lits superposés",
+      "en": "Bunk beds"
+    },
+    "flags.lakour-fenoir.plan.elements.5.nom": {
+      "fr": "Tas de bois",
+      "en": "Woodpile"
+    },
+    "flags.lakour-fenoir.plan.elements.6.nom": {
+      "fr": "Panneau des sentiers",
+      "en": "Trail signpost"
+    }
+  },
+  "scenes/EQ4Ao5GtfuAl68iV": {
+    "_nom": "Lieu — Collège",
+    "name": {
+      "fr": "Lieu — Collège",
+      "en": "Place — Secondary school"
+    },
+    "drawings.CGsuuwKvHIJjvH2U.text": {
+      "fr": "Salles de classe",
+      "en": "Classrooms"
+    },
+    "drawings.kR65sbWWd6JYVJWC.text": {
+      "fr": "CDI et laboratoire",
+      "en": "Library and laboratory"
+    },
+    "drawings.YK32jMUrk767yDbb.text": {
+      "fr": "Cantine",
+      "en": "Canteen"
+    },
+    "drawings.XjkMvSw4iF4vX2KZ.text": {
+      "fr": "Gymnase",
+      "en": "Gymnasium"
+    },
+    "sounds.zJ8L5f5VuHcoXUWk.name": {
+      "fr": "foule — Cantine",
+      "en": "crowd — Canteen"
+    },
+    "flags.lakour-fenoir.description": {
+      "fr": "Un collège de l'île : deux bâtiments de classes, une cour, une cantine, une infirmerie, un gymnase et le grillage tout autour. Pour un centre d'accueil débordé, un abri pour beaucoup de monde, une fouille du CDI, une défense de périmètre.",
+      "en": "A secondary school on the island: two classroom buildings, a yard, a canteen, an infirmary, a gymnasium and the fence all around. For an overwhelmed reception centre, a shelter for a lot of people, a scavenge of the library, a perimeter defence."
+    },
+    "flags.lakour-fenoir.plan.elements.0.nom": {
+      "fr": "Préau",
+      "en": "Covered playground"
+    },
+    "flags.lakour-fenoir.plan.elements.1.nom": {
+      "fr": "Portail",
+      "en": "Gate"
+    },
+    "flags.lakour-fenoir.plan.elements.2.nom": {
+      "fr": "Rayonnages",
+      "en": "Shelving"
+    },
+    "flags.lakour-fenoir.plan.elements.3.nom": {
+      "fr": "Paillasses de laboratoire",
+      "en": "Laboratory benches"
+    },
+    "flags.lakour-fenoir.plan.elements.4.nom": {
+      "fr": "Lit d'infirmerie",
+      "en": "Infirmary bed"
+    },
+    "flags.lakour-fenoir.plan.elements.5.nom": {
+      "fr": "Tables de cantine",
+      "en": "Canteen tables"
+    },
+    "flags.lakour-fenoir.plan.elements.6.nom": {
+      "fr": "Tapis de sol",
+      "en": "Floor mats"
+    },
+    "flags.lakour-fenoir.plan.elements.7.nom": {
+      "fr": "Jardin pédagogique",
+      "en": "School garden"
+    }
+  },
+  "scenes/Jpa7IHkefzzGYYxx": {
+    "_nom": "Carte de La Réunion",
+    "name": {
+      "fr": "Carte de La Réunion",
+      "en": "Map of Réunion"
+    },
+    "navName": {
+      "fr": "La Réunion",
+      "en": "La Réunion"
+    },
+    "flags.lakour-fenoir.description": {
+      "fr": "La Réunion, nord en haut : une épingle par région, vers sa page du journal « Les régions de l'île ».",
+      "en": "Réunion Island, north at the top: one pin per region, pointing to its page in the journal \"The regions of the island\"."
+    }
+  },
+  "scenes/KwEFWH5eZNaVhGey": {
+    "_nom": "Lieu — Supermarché",
+    "name": {
+      "fr": "Lieu — Supermarché",
+      "en": "Place — Supermarket"
+    },
+    "drawings.yOLYCyNAPrBgrRGY.text": {
+      "fr": "Parking",
+      "en": "Car park"
+    },
+    "drawings.4q8A6yPLSQ4fGmrC.text": {
+      "fr": "Surface de vente",
+      "en": "Sales floor"
+    },
+    "drawings.CNebG7Y43flwNKU7.text": {
+      "fr": "Réserve",
+      "en": "Stockroom"
+    },
+    "drawings.mpHXA8EJy4jNFEEt.text": {
+      "fr": "Quai de livraison",
+      "en": "Loading bay"
+    },
+    "flags.lakour-fenoir.description": {
+      "fr": "Un supermarché de zone commerciale : parking, surface de vente aux rayons renversés, caisses, réserve, quai de livraison. Pour une fouille dangereuse, une négociation avec ceux qui l'occupent, une alarme qui attire une horde.",
+      "en": "A retail-park supermarket: car park, sales floor with its shelves knocked over, checkouts, stockroom, loading bay. For a dangerous scavenge, a negotiation with those who hold it, an alarm that draws a horde."
+    },
+    "flags.lakour-fenoir.plan.elements.5.nom": {
+      "fr": "Caisses",
+      "en": "Checkouts"
+    },
+    "flags.lakour-fenoir.plan.elements.6.nom": {
+      "fr": "Palettes",
+      "en": "Pallets"
+    },
+    "flags.lakour-fenoir.plan.elements.7.nom": {
+      "fr": "Chambre froide",
+      "en": "Cold room"
+    },
+    "flags.lakour-fenoir.plan.elements.8.nom": {
+      "fr": "Chariots",
+      "en": "Trolleys"
+    },
+    "flags.lakour-fenoir.plan.elements.9.nom": {
+      "fr": "Voitures abandonnées",
+      "en": "Abandoned cars"
+    }
+  },
+  "scenes/S230J7vh1cvONWzS": {
+    "_nom": "Lieu — Îlet de Mafate",
+    "name": {
+      "fr": "Lieu — Îlet de Mafate",
+      "en": "Place — Mafate îlet"
+    },
+    "drawings.tYkBt7y1m4pi0A3u.text": {
+      "fr": "Plateau",
+      "en": "Plateau"
+    },
+    "drawings.99g36GhtD5TjeCt5.text": {
+      "fr": "Case de l'ancienne",
+      "en": "The elder's house"
+    },
+    "drawings.a29NmLCZM1DVb10y.text": {
+      "fr": "Case des voisins",
+      "en": "The neighbours' house"
+    },
+    "drawings.qBSydEIUfGqCKLwE.text": {
+      "fr": "École",
+      "en": "School"
+    },
+    "drawings.KQCHxHsLget3L8TP.text": {
+      "fr": "Chapelle",
+      "en": "Chapel"
+    },
+    "flags.lakour-fenoir.description": {
+      "fr": "Un îlet de Mafate sur son plateau : quelques cases de bois sous tôle avec leurs panneaux, la petite école, la chapelle, les jardins en terrasse, la source captée, l'aire de l'hélicoptère et le sentier qui plonge vers la ravine. Pour une demande d'entrée, une quarantaine, un troc, une veillée.",
+      "en": "A Mafate îlet on its plateau: a few wooden houses under tin roofs with their panels, the little school, the chapel, the terraced gardens, the tapped spring, the helicopter pad and the trail that plunges towards the ravine. For a request to be let in, a quarantine, a barter, a wake."
+    },
+    "flags.lakour-fenoir.plan.elements.2.nom": {
+      "fr": "Jardins en terrasse",
+      "en": "Terraced gardens"
+    },
+    "flags.lakour-fenoir.plan.elements.3.nom": {
+      "fr": "Source captée",
+      "en": "Tapped spring"
+    },
+    "flags.lakour-fenoir.plan.elements.4.nom": {
+      "fr": "Aire de l'hélicoptère",
+      "en": "Helicopter pad"
+    },
+    "flags.lakour-fenoir.plan.elements.6.nom": {
+      "fr": "Sentier vers la ravine",
+      "en": "Trail to the ravine"
+    }
+  },
+  "scenes/VK2JtEwTmo5ohO8Y": {
+    "_nom": "Lieu — Station-service",
+    "name": {
+      "fr": "Lieu — Station-service",
+      "en": "Place — Petrol station"
+    },
+    "drawings.aIBa7fCd8HMMxwd9.text": {
+      "fr": "Pistes",
+      "en": "Forecourt"
+    },
+    "drawings.fB1WHLsanfFoWhkn.text": {
+      "fr": "Boutique",
+      "en": "Shop"
+    },
+    "sounds.lDjCemDKqAGN4i0u.name": {
+      "fr": "forge — Atelier",
+      "en": "forge — Workshop"
+    },
+    "flags.lakour-fenoir.description": {
+      "fr": "Une station-service de bord de quatre-voies : pistes et pompes sous l'auvent, boutique, atelier de lavage et de vidange, cuves enterrées. Pour la dernière file d'attente, un pillage, une embuscade, une cuve à vider.",
+      "en": "A petrol station beside the dual carriageway: forecourt and pumps under the canopy, shop, car wash and oil-change bay, buried tanks. For the last queue, a looting, an ambush, a tank to drain."
+    },
+    "flags.lakour-fenoir.plan.elements.0.nom": {
+      "fr": "Pompes",
+      "en": "Pumps"
+    },
+    "flags.lakour-fenoir.plan.elements.2.nom": {
+      "fr": "Auvent",
+      "en": "Canopy"
+    },
+    "flags.lakour-fenoir.plan.elements.3.nom": {
+      "fr": "Trappes des cuves",
+      "en": "Tank hatches"
+    },
+    "flags.lakour-fenoir.plan.elements.4.nom": {
+      "fr": "Comptoir",
+      "en": "Counter"
+    },
+    "flags.lakour-fenoir.plan.elements.5.nom": {
+      "fr": "Rayons",
+      "en": "Shelves"
+    },
+    "flags.lakour-fenoir.plan.elements.6.nom": {
+      "fr": "Pont élévateur",
+      "en": "Car lift"
+    },
+    "flags.lakour-fenoir.plan.elements.7.nom": {
+      "fr": "Voiture abandonnée",
+      "en": "Abandoned car"
+    }
+  },
+  "scenes/ZfoBtM3iOsnvtSOC": {
+    "_nom": "Lieu — Case créole à varangue",
+    "name": {
+      "fr": "Lieu — Case créole à varangue",
+      "en": "Place — Creole house with veranda"
+    },
+    "levels.defaultLevel0000.name": {
+      "fr": "Niveau principal",
+      "en": "Main level"
+    },
+    "drawings.anmALHdOytneNxAI.text": {
+      "fr": "Cour",
+      "en": "Yard"
+    },
+    "drawings.b2IppTRPjlfzAh1R.text": {
+      "fr": "Varangue",
+      "en": "Veranda"
+    },
+    "drawings.WC3s6BsWnIhHBZFa.text": {
+      "fr": "Salle",
+      "en": "Living room"
+    },
+    "drawings.27PiZlRzcFHpYBmf.text": {
+      "fr": "Chambres",
+      "en": "Bedrooms"
+    },
+    "drawings.YKskpaNEivcUEsXE.text": {
+      "fr": "Cuisine au feu de bois",
+      "en": "Wood-fired kitchen"
+    },
+    "sounds.MGw2qa8AqtIN0GKH.name": {
+      "fr": "feu — Foyer",
+      "en": "fire — Hearth"
+    },
+    "flags.lakour-fenoir.description": {
+      "fr": "Une case créole de bois sous tôle, sa varangue ouverte sur la cour, sa salle, ses chambres, sa cuisine au feu de bois à part, sa citerne, son letchi et son poulailler. Pour un premier abri, une visite chez un gramoun, une fouille, une nuit de siège.",
+      "en": "A wooden Creole house under a tin roof, its veranda open onto the yard, its living room, its bedrooms, its separate wood-fired kitchen, its cistern, its lychee tree and its henhouse. For a first shelter, a visit to a gramoun (an elder), a scavenge, a night under siege."
+    },
+    "flags.lakour-fenoir.plan.elements.0.nom": {
+      "fr": "Citerne",
+      "en": "Cistern"
+    },
+    "flags.lakour-fenoir.plan.elements.1.nom": {
+      "fr": "Letchi",
+      "en": "Lychee tree"
+    },
+    "flags.lakour-fenoir.plan.elements.2.nom": {
+      "fr": "Poulailler",
+      "en": "Henhouse"
+    },
+    "flags.lakour-fenoir.plan.elements.3.nom": {
+      "fr": "Foyer",
+      "en": "Hearth"
+    },
+    "flags.lakour-fenoir.plan.elements.4.nom": {
+      "fr": "Table",
+      "en": "Table"
+    },
+    "flags.lakour-fenoir.plan.elements.5.nom": {
+      "fr": "Lit",
+      "en": "Bed"
+    },
+    "flags.lakour-fenoir.plan.elements.6.nom": {
+      "fr": "Barrière",
+      "en": "Fence"
+    }
+  },
+  "scenes/hMG8papguXKsnmoL": {
+    "_nom": "Lieu — Tunnel de lave",
+    "name": {
+      "fr": "Lieu — Tunnel de lave",
+      "en": "Place — Lava tube"
+    },
+    "drawings.jvI2LijOg0ZQ2Jus.text": {
+      "fr": "Coulée",
+      "en": "Lava flow"
+    },
+    "drawings.kZis5ghKAimx1HQf.text": {
+      "fr": "Entrée basse",
+      "en": "Low entrance"
+    },
+    "drawings.YPCfKBau5xGlALzW.text": {
+      "fr": "Galerie",
+      "en": "Gallery"
+    },
+    "drawings.D0j91sZ1Ch8JHifQ.text": {
+      "fr": "Grande salle",
+      "en": "Great chamber"
+    },
+    "drawings.p14MLE40BMJD3B9X.text": {
+      "fr": "Boyau",
+      "en": "Crawlway"
+    },
+    "sounds.RjlUw4VNk8HbHGCW.name": {
+      "fr": "forge — Coulée",
+      "en": "forge — Lava flow"
+    },
+    "flags.lakour-fenoir.description": {
+      "fr": "Un tube de lave sous une coulée : entrée basse entre deux dalles, galerie aux voûtes lisses, salle plus large, boyau qui s'enfonce dans le noir. Pour un refuge discret, une exploration à la frontale, un Livide égaré dans le noir.",
+      "en": "A lava tube beneath a flow: a low entrance between two slabs, a gallery with smooth vaults, a wider chamber, a crawlway sinking into the dark. For a discreet refuge, an exploration by head torch, a Pallid lost in the dark."
+    },
+    "flags.lakour-fenoir.plan.elements.0.nom": {
+      "fr": "Dalles effondrées",
+      "en": "Collapsed slabs"
+    },
+    "flags.lakour-fenoir.plan.elements.1.nom": {
+      "fr": "Stalactites de lave",
+      "en": "Lava stalactites"
+    },
+    "flags.lakour-fenoir.plan.elements.2.nom": {
+      "fr": "Cordes de lave",
+      "en": "Ropy lava"
+    },
+    "flags.lakour-fenoir.plan.elements.4.nom": {
+      "fr": "Puits de lumière",
+      "en": "Skylight"
+    }
+  }
+}

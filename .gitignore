@@ -4,3 +4,6 @@ dist/
 .DS_Store
 Thumbs.db
 modules/*/packs/
+# Module anglais lakour-fenoir-en : engendré en entier par `npm run fabriquer-fenoir-en` (dictionnaires versionnés dans
+# modules/lakour-fenoir/contenu/en/) ; jamais versionné.
+modules/lakour-fenoir-en/

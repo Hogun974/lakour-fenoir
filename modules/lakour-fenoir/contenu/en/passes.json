@@ -1,0 +1,393 @@
+{
+  "passes/3S1r44Lr75qpmFrW": {
+    "_nom": "Chauffeur de car jaune",
+    "name": {
+      "fr": "Chauffeur de car jaune",
+      "en": "Yellow bus driver"
+    },
+    "system.description": {
+      "fr": "<p>Il conduit le car interurbain sur la route de Cilaos, quatre cents virages deux fois par jour. Il connaît chaque arrêt, chaque passager, chaque éboulis de la route.</p>",
+      "en": "<p>He drives the intercity bus on the Cilaos road, four hundred bends twice a day. He knows every stop, every passenger, every rockfall on the road.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Il est à mi-route de Cilaos, car plein, quand un passager du fond se met à hurler, puis se tait.</p>",
+      "en": "<p>He is halfway to Cilaos, bus full, when a passenger at the back starts screaming, then falls silent.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Il a fait la route de Cilaos plus de dix mille fois.",
+      "en": "He has driven the Cilaos road more than ten thousand times."
+    },
+    "system.histoire.1": {
+      "fr": "Les enfants du cirque l'appelaient par son prénom et lui montaient des mangues.",
+      "en": "The children of the cirque called him by his first name and brought him mangoes."
+    }
+  },
+  "passes/67ROrl81zV2fhWwD": {
+    "_nom": "Habitant d'un îlet de Mafate",
+    "name": {
+      "fr": "Habitant d'un îlet de Mafate",
+      "en": "Inhabitant of a Mafate îlet"
+    },
+    "system.description": {
+      "fr": "<p>Il est né à Roche-Plate, a porté des sacs de ciment sur les sentiers avant que l'hélicoptère les monte, cultive ses lentilles et ses patates, et connaît chaque famille du cirque.</p>",
+      "en": "<p>He was born at Roche-Plate, carried sacks of cement up the trails before the helicopter brought them, grows his lentils and his potatoes, and knows every family in the cirque.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Le jour zéro, rien ne se passe à Mafate. Le lendemain, des randonneurs descendent du Maïdo en racontant ce qu'ils ont vu en bas.</p>",
+      "en": "<p>On day zero, nothing happens in Mafate. The next day, hikers come down from the Maïdo telling what they saw below.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Il n'est descendu en ville qu'une poignée de fois et n'y a jamais dormi.",
+      "en": "He has only gone down to town a handful of times and has never slept there."
+    },
+    "system.histoire.1": {
+      "fr": "Il connaît chaque famille du cirque et chaque source.",
+      "en": "He knows every family in the cirque and every spring."
+    }
+  },
+  "passes/BSuVSY32Ro1zQPZB": {
+    "_nom": "Infirmière du CHU",
+    "name": {
+      "fr": "Infirmière du CHU",
+      "en": "Hospital nurse"
+    },
+    "system.description": {
+      "fr": "<p>Douze ans aux urgences de Bellepierre, des gardes de nuit, des cyclones, l'épidémie de chikungunya. Elle sait trier, piquer, panser, et garder sa voix calme quand tout le monde crie.</p>",
+      "en": "<p>Twelve years in the emergency department at Bellepierre, night shifts, cyclones, the chikungunya epidemic. She knows how to triage, inject, dress wounds, and keep her voice calm when everyone is shouting.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Elle est de garde la nuit du jour zéro. À trois heures du matin, un patient déclaré mort se redresse sur son brancard dans le couloir des urgences.</p>",
+      "en": "<p>She is on night duty on day zero. At three in the morning, a patient pronounced dead sits up on his trolley in the emergency corridor.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Elle a fait ses études à Saint-Denis et n'a jamais voulu partir en métropole.",
+      "en": "She studied in Saint-Denis and never wanted to leave for mainland France."
+    },
+    "system.histoire.1": {
+      "fr": "Elle connaît par cœur le bruit des urgences un soir de cyclone.",
+      "en": "She knows by heart the sound of the emergency department on a cyclone night."
+    }
+  },
+  "passes/CrwMVqAtNhALLYTU": {
+    "_nom": "Planteur de canne",
+    "name": {
+      "fr": "Planteur de canne",
+      "en": "Cane planter"
+    },
+    "system.description": {
+      "fr": "<p>Il a coupé la canne à la main avant les machines, il tient vingt hectares à Saint-André et il sait réparer son tracteur avec du fil de fer. Il a des bras, et de la patience.</p>",
+      "en": "<p>He cut cane by hand before the machines came, he holds twenty hectares at Saint-André and he can fix his tractor with wire. He has strong arms, and patience.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Il est dans sa parcelle quand le voisin sort des cannes en titubant, les yeux gris, sans répondre à son nom.</p>",
+      "en": "<p>He is in his field when the neighbour staggers out of the cane, eyes grey, not answering to his name.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Il a repris les terres de son grand-père quand plus personne n'en voulait.",
+      "en": "He took over his grandfather's land when nobody else wanted it."
+    },
+    "system.histoire.1": {
+      "fr": "Chaque fin de campagne, il invitait tout le quartier au cari.",
+      "en": "At the end of every harvest, he invited the whole neighbourhood to a cari."
+    }
+  },
+  "passes/HJVHcsLGqadiBkSD": {
+    "_nom": "Agricultrice des Hauts",
+    "name": {
+      "fr": "Agricultrice des Hauts",
+      "en": "Highland farmer"
+    },
+    "system.description": {
+      "fr": "<p>Elle tient avec son frère une ferme laitière de la Plaine des Cafres : vaches, potager, cabris, le froid de l'hiver et le brouillard de chaque après-midi. Elle sait faire vivre une famille d'une terre.</p>",
+      "en": "<p>She runs a dairy farm on the Plaine des Cafres with her brother: cows, vegetable plot, goats, the winter cold and the fog every afternoon. She knows how to feed a family from a piece of land.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Le camion de collecte du lait ne vient pas. Le chauffeur est retrouvé dans sa cabine, au bord de la route, et il cogne contre la vitre.</p>",
+      "en": "<p>The milk collection truck does not come. The driver is found in his cab, by the roadside, banging against the window.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Elle a grandi dans le brouillard de la Plaine et n'aime pas la chaleur des Bas.",
+      "en": "She grew up in the fog of the Plaine and does not like the heat of the Lowlands."
+    },
+    "system.histoire.1": {
+      "fr": "Elle a sauvé seule son troupeau du dernier cyclone.",
+      "en": "She saved her herd from the last cyclone on her own."
+    }
+  },
+  "passes/LhB26G0JMaCbnTJB": {
+    "_nom": "Cuisinier de camion-bar",
+    "name": {
+      "fr": "Cuisinier de camion-bar",
+      "en": "Food truck cook"
+    },
+    "system.description": {
+      "fr": "<p>Son camion-bar fait des samoussas, des bouchons et des sandwichs américains sur le parking de la plage depuis quinze ans. Il connaît tous les fournisseurs, tous les marchés, tous les ragots.</p>",
+      "en": "<p>His food truck has been making samoussas, bouchons and American sandwiches in the beach car park for fifteen years. He knows all the suppliers, all the markets, all the gossip.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Il sert la dernière fournée de la nuit quand'une cliente mord son compagnon devant le comptoir.</p>",
+      "en": "<p>He is serving the last batch of the night when a customer bites her boyfriend in front of the counter.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Son camion porte le prénom de sa fille, peint en lettres jaunes.",
+      "en": "His truck bears his daughter's first name, painted in yellow letters."
+    },
+    "system.histoire.1": {
+      "fr": "Il connaît les commandes de tous les habitués, et leurs secrets.",
+      "en": "He knows every regular's order, and their secrets."
+    }
+  },
+  "passes/OMEmLKO195PGPhcb": {
+    "_nom": "Professeure de SVT",
+    "name": {
+      "fr": "Professeure de SVT",
+      "en": "Biology teacher"
+    },
+    "system.description": {
+      "fr": "<p>Elle enseigne les sciences de la vie et de la Terre dans un collège des hauts de Saint-Paul et tient le jardin pédagogique avec ses élèves. Elle connaît les volcans, les plantes, les maladies, et elle sait expliquer.</p>",
+      "en": "<p>She teaches life and earth sciences at a secondary school in the heights of Saint-Paul and runs the school garden with her pupils. She knows volcanoes, plants, diseases, and she knows how to explain.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Elle surveille la cour de récréation quand le principal annonce le confinement. À seize heures, les parents ne sont pas tous venus.</p>",
+      "en": "<p>She is on playground duty when the headteacher announces the lockdown. At four o'clock, not all the parents have come.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Elle emmenait chaque année ses élèves au volcan et ne s'en lassait pas.",
+      "en": "She took her pupils to the volcano every year and never tired of it."
+    },
+    "system.histoire.1": {
+      "fr": "Elle refuse de lever la main sur qui que ce soit, même mort.",
+      "en": "She refuses to raise a hand against anyone, even the dead."
+    }
+  },
+  "passes/WQ0aRVr3JgccPUwj": {
+    "_nom": "Mécanicien",
+    "name": {
+      "fr": "Mécanicien",
+      "en": "Mechanic"
+    },
+    "system.description": {
+      "fr": "<p>Il tient un garage de La Possession, répare tout ce qui a un moteur et récupère tout ce qui n'en'a plus. Il connaît les Ferrailleurs avant qu'on les appelle ainsi.</p>",
+      "en": "<p>He runs a garage in La Possession, repairs anything with an engine and salvages anything that no longer has one. He knew the Scrappers before they were called that.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Un client ramène sa voiture avec un passager endormi sur la banquette arrière. Le passager n'est pas endormi.</p>",
+      "en": "<p>A customer brings his car back with a passenger asleep on the back seat. The passenger is not asleep.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Son garage était la deuxième maison de tout le quartier.",
+      "en": "His garage was the second home of the whole neighbourhood."
+    },
+    "system.histoire.1": {
+      "fr": "Il a appris le métier en démontant les mobylettes de ses cousins.",
+      "en": "He learned the trade taking apart his cousins' mopeds."
+    }
+  },
+  "passes/YZ1FPx5dXFbtinTH": {
+    "_nom": "Ambulancier",
+    "name": {
+      "fr": "Ambulancier",
+      "en": "Paramedic"
+    },
+    "system.description": {
+      "fr": "<p>Il conduit l'ambulance d'une société privée de Saint-Benoît, de jour comme de nuit, sur toutes les routes de l'Est. Il sait conduire vite, porter lourd et soigner en roulant.</p>",
+      "en": "<p>He drives the ambulance for a private company in Saint-Benoît, day and night, on every road in the East. He can drive fast, carry heavy loads and give care on the move.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Trois appels en dix minutes pour des morsures. Au troisième, son collègue se fait mordre en chargeant le brancard.</p>",
+      "en": "<p>Three calls in ten minutes for bites. On the third, his colleague is bitten while loading the stretcher.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Il a conduit des milliers de malades sur les routes de l'Est, sous la pluie, de nuit.",
+      "en": "He has driven thousands of patients on the roads of the East, in the rain, at night."
+    },
+    "system.histoire.1": {
+      "fr": "Il connaît chaque radier qui déborde et chaque raccourci.",
+      "en": "He knows every ford that overflows and every shortcut."
+    }
+  },
+  "passes/agoJWfH8pl5NVhHI": {
+    "_nom": "Pêcheur de Saint-Gilles",
+    "name": {
+      "fr": "Pêcheur de Saint-Gilles",
+      "en": "Saint-Gilles fisherman"
+    },
+    "system.description": {
+      "fr": "<p>Fils et petit-fils de pêcheurs, il connaît chaque passe du récif, chaque coin de la côte Ouest, la houle australe et les colères de la mer.</p>",
+      "en": "<p>Son and grandson of fishermen, he knows every pass in the reef, every corner of the west coast, the southern swell and the sea's tempers.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Il rentre au port à l'aube avec sa pêche. Sur le quai, personne pour acheter. Une sirène au loin, puis une autre.</p>",
+      "en": "<p>He comes back into harbour at dawn with his catch. On the quay, nobody to buy it. A siren in the distance, then another.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Son père lui a appris à lire la houle avant de lui apprendre à lire.",
+      "en": "His father taught him to read the swell before teaching him to read."
+    },
+    "system.histoire.1": {
+      "fr": "Il n'a jamais dormi plus de trois nuits loin de la mer.",
+      "en": "He has never slept more than three nights away from the sea."
+    }
+  },
+  "passes/ciiUjf21WQzWAx2v": {
+    "_nom": "Étudiante",
+    "name": {
+      "fr": "Étudiante",
+      "en": "Student"
+    },
+    "system.description": {
+      "fr": "<p>En licence à l'université du Moufia, elle vit en colocation, connaît tout le monde, court le semi-marathon et apprend vite. Elle n'a jamais vu mourir personne.</p>",
+      "en": "<p>An undergraduate at the Moufia university, she lives in a flatshare, knows everyone, runs half-marathons and learns fast. She has never seen anyone die.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Elle passe un partiel quand un surveillant s'effondre dans l'amphi. Quand il se relève, la porte est déjà bloquée par la foule.</p>",
+      "en": "<p>She is sitting an exam when an invigilator collapses in the lecture hall. By the time he gets up, the door is already blocked by the crowd.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Elle est la première de sa famille à faire des études.",
+      "en": "She is the first in her family to go to university."
+    },
+    "system.histoire.1": {
+      "fr": "Elle partageait un appartement près du Moufia avec deux amies dont elle n'a plus de nouvelles.",
+      "en": "She shared a flat near the Moufia with two friends she has not heard from since."
+    }
+  },
+  "passes/fcxdU4PNwxjhBYdc": {
+    "_nom": "Apiculteur",
+    "name": {
+      "fr": "Apiculteur",
+      "en": "Beekeeper"
+    },
+    "system.description": {
+      "fr": "<p>Ses ruches sont dispersées entre la Plaine des Palmistes et les letchis de l'Est ; il produit du miel de baies roses et de forêt. Patient, calme, il sait se faire oublier des abeilles et des hommes.</p>",
+      "en": "<p>His hives are scattered between the Plaine des Palmistes and the lychee orchards of the East; he makes Brazilian pepper and forest honey. Patient, calm, he knows how to be forgotten by bees and by men.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Il fait le tour de ses ruches en forêt quand il croise, sur la piste, un randonneur qui marche droit sur lui, une jambe brisée, sans boiter.</p>",
+      "en": "<p>He is doing the rounds of his hives in the forest when he meets, on the track, a hiker walking straight at him, one leg broken, not limping.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Il a quitté un bureau de Saint-Denis pour ses ruches et ne l'a jamais regretté.",
+      "en": "He left an office in Saint-Denis for his hives and never regretted it."
+    },
+    "system.histoire.1": {
+      "fr": "Il parle à ses abeilles, et prétend qu'elles lui répondent.",
+      "en": "He talks to his bees, and claims they answer him."
+    }
+  },
+  "passes/mDS9ArFvFPQHBuFa": {
+    "_nom": "Électricien",
+    "name": {
+      "fr": "Électricien",
+      "en": "Electrician"
+    },
+    "system.description": {
+      "fr": "<p>Artisan installateur, il a posé des panneaux sur la moitié des toits de l'Ouest et câblé des cases dans les îlets. Il sait où sont les onduleurs, les batteries et les dépôts de matériel.</p>",
+      "en": "<p>A self-employed installer, he has put panels on half the roofs in the West and wired houses in the îlets. He knows where the inverters, the batteries and the equipment depots are.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Il est sur un toit de Saint-Gilles, à finir une installation, quand il voit la file de voitures se figer sur la route des Tamarins et des gens courir entre elles.</p>",
+      "en": "<p>He is on a roof in Saint-Gilles, finishing an installation, when he sees the line of cars freeze on the Route des Tamarins and people running between them.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Il a monté son entreprise seul, avec une camionnette et un crédit qu'il rembourse encore.",
+      "en": "He set up his business alone, with a van and a loan he is still paying off."
+    },
+    "system.histoire.1": {
+      "fr": "Il dit toujours qu'un toit sans panneau est un toit qui dort.",
+      "en": "He always says a roof without a panel is a roof that sleeps."
+    }
+  },
+  "passes/nMpAsDG5OzGgYtcm": {
+    "_nom": "Retraité de la marine",
+    "name": {
+      "fr": "Retraité de la marine",
+      "en": "Retired navy man"
+    },
+    "system.description": {
+      "fr": "<p>Trente ans de marine, dont une partie à naviguer dans l'océan Indien ; il vit seul dans les hauts de La Possession avec ses cartes, son poste radio et ses souvenirs. Il sait commander, et il sait se taire.</p>",
+      "en": "<p>Thirty years in the navy, part of it sailing the Indian Ocean; he lives alone in the heights of La Possession with his charts, his radio set and his memories. He knows how to command, and he knows how to keep quiet.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Il entend sur sa radio les échanges des navires au large qui refusent de laisser accoster un cargo. Puis plus rien.</p>",
+      "en": "<p>On his radio he hears the exchanges between ships offshore refusing to let a cargo vessel dock. Then nothing more.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Il a vu tous les ports de l'océan Indien et n'est revenu que pour ses vieux jours.",
+      "en": "He has seen every port in the Indian Ocean and only came back for his old age."
+    },
+    "system.histoire.1": {
+      "fr": "Il écoute la radio marine chaque soir, par habitude.",
+      "en": "He listens to the marine radio every evening, out of habit."
+    }
+  },
+  "passes/xD0AlqP2nkoU8lga": {
+    "_nom": "Vendeur de bazar",
+    "name": {
+      "fr": "Vendeur de bazar",
+      "en": "Bazaar shopkeeper"
+    },
+    "system.description": {
+      "fr": "<p>Il tient le bazar familial de la rue commerçante de Saint-Pierre : tissus, quincaillerie, ustensiles, tout ce qu'on vend depuis trois générations. Il sait ce que valent les choses, et il sait négocier.</p>",
+      "en": "<p>He runs the family bazaar on the shopping street of Saint-Pierre: fabrics, hardware, utensils, everything that has been sold there for three generations. He knows what things are worth, and he knows how to haggle.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Il baisse son rideau de fer quand des gens tapent dessus pour entrer. Derrière lui, la réserve est pleine.</p>",
+      "en": "<p>He is pulling down his roller shutter when people start banging on it to get in. Behind him, the stockroom is full.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Le bazar appartenait à son grand-père, arrivé du Gujarat il y a longtemps.",
+      "en": "The bazaar belonged to his grandfather, who arrived from Gujarat long ago."
+    },
+    "system.histoire.1": {
+      "fr": "Il a toujours su ce que voulait un client avant qu'il ouvre la bouche.",
+      "en": "He has always known what a customer wanted before they opened their mouth."
+    }
+  },
+  "passes/zA55FIz96Q3uUrYo": {
+    "_nom": "Guide de canyon",
+    "name": {
+      "fr": "Guide de canyon",
+      "en": "Canyoning guide"
+    },
+    "system.description": {
+      "fr": "<p>Moniteur de canyon et de randonnée à Cilaos, il connaît chaque sentier des cirques, chaque ravine, chaque piège du terrain et des nuages.</p>",
+      "en": "<p>A canyoning and hiking instructor in Cilaos, he knows every trail in the cirques, every ravine, every trap of the terrain and the clouds.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>Il est au fond d'un canyon avec quatre clients quand la radio grésille un message incompréhensible. En remontant, le village est silencieux.</p>",
+      "en": "<p>He is at the bottom of a canyon with four clients when the radio crackles an incomprehensible message. On the way back up, the village is silent.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Il connaît chaque bassin de Cilaos et le nom de chaque cascade.",
+      "en": "He knows every pool in Cilaos and the name of every waterfall."
+    },
+    "system.histoire.1": {
+      "fr": "Il a perdu un client, une fois, dans une crue ; il ne prend plus jamais la pluie à la légère.",
+      "en": "He lost a client, once, in a flash flood; he never takes the rain lightly any more."
+    }
+  },
+  "passes/zBQbEN7Z3M3RZu5A": {
+    "_nom": "Gendarme",
+    "name": {
+      "fr": "Gendarme",
+      "en": "Gendarme"
+    },
+    "system.description": {
+      "fr": "<p>Brigadière d'une brigade du Sud, habituée aux accidents de la route, aux bagarres de fin de bal et aux recherches en montagne. Elle a une arme, une radio, et l'habitude qu'on l'écoute.</p>",
+      "en": "<p>A sergeant in a southern gendarmerie station, used to road accidents, end-of-dance brawls and mountain searches. She has a weapon, a radio, and the habit of being listened to.</p>"
+    },
+    "system.accroche": {
+      "fr": "<p>On l'envoie sécuriser un accident sur la RN1. Les blessés se relèvent avant les secours.</p>",
+      "en": "<p>She is sent to secure an accident on the RN1. The injured get up before the rescue services arrive.</p>"
+    },
+    "system.histoire.0": {
+      "fr": "Elle a demandé sa mutation dans l'île de sa mère, qu'elle ne connaissait que l'été.",
+      "en": "She asked for a transfer to her mother's island, which she only knew from summers."
+    },
+    "system.histoire.1": {
+      "fr": "Elle a sorti des randonneurs de Mafate en pleine nuit plus d'une fois.",
+      "en": "She has brought hikers out of Mafate in the middle of the night more than once."
+    }
+  }
+}

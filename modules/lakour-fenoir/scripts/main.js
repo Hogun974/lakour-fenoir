@@ -6,8 +6,10 @@
 // 4. l'installation (MJ actif) : guides des joueurs, journaux du MJ (cachés) et carte de La Réunion importés dans le monde, avec
 //    les identifiants du compendium (les épingles de la carte visent les pages du journal « Les régions de l'île »).
 import { FETES_FENOIR, imageDeFete, fetesDuJour } from "./fetes.js";
+import { ID } from "./identite.js";
 
-const ID = "lakour-fenoir";
+// ID : « lakour-fenoir » ou « lakour-fenoir-en » (version anglaise engendrée, mêmes scripts) ; tout ce qui porte l'identifiant
+// (réglages, drapeaux, compendiums, chemin du registre) passe par lui.
 const SYSTEME = "lakour-survie";
 const VERSION_CONTENU = "0.1.0";
 const FICHIER_DONNEES = `modules/${ID}/assets/donnees.json`;
@@ -40,9 +42,10 @@ Hooks.on("lakourSurvie.enregistrer", registre => {
 });
 
 // ---------- 2. Les fêtes (calendrier réel du moteur) : seules celles qui y existent sont déclinées ; les autres vivent au
-// calendrier du jeu (donnees.fetes, fetesDuJour) que le système et le MJ IA lisent.
-export function declinaisonsDeFete() {
-  return FETES_FENOIR.filter(f => f.moteur).map(f => ({ id: `fenoir-${f.cle}`, fete: f.moteur, nom: f.nom, description: f.description, consigne: f.consigne, decor: f.decor }));
+// calendrier du jeu (donnees.fetes, fetesDuJour) que le système et le MJ IA lisent. Les textes viennent du registre chargé
+// (assets/donnees.json : en anglais dans lakour-fenoir-en), à défaut de scripts/fetes.js (français).
+export function declinaisonsDeFete(fetes = DONNEES?.fetes ?? FETES_FENOIR) {
+  return fetes.filter(f => f.moteur ?? f.cle).map(f => ({ id: `fenoir-${f.cle}`, fete: f.moteur ?? f.cle, nom: f.nom, description: f.description, consigne: f.consigne, decor: f.decor }));
 }
 export function enregistrerFetes(api) {
   if (game.system.id !== SYSTEME || typeof api?.fetes?.enregistrer !== "function") return 0;
@@ -70,7 +73,11 @@ function reputationsAuChargement(api) {
   reputationsEnCours ??= assurerReputations(api).catch(e => { console.warn(`${ID} | réputations`, e); return 0; }).finally(() => { reputationsEnCours = null; });
   return reputationsEnCours;
 }
-Hooks.once("lakour-mj-ia.pret", api => { enregistrerFetes(api); if (game.ready) reputationsAuChargement(api); });
+Hooks.once("lakour-mj-ia.pret", async api => {
+  if (game.system.id === SYSTEME) await chargerDonnees(); // les textes des fêtes, dans la langue du module
+  enregistrerFetes(api);
+  if (game.ready) reputationsAuChargement(api);
+});
 
 // ---------- 4. L'installation
 async function dossier(type, nom) {

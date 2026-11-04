@@ -1,0 +1,182 @@
+{
+  "afflictions/88eVo6REtrl6eun8": {
+    "_nom": "Piqûre de scolopendre",
+    "name": {
+      "fr": "Piqûre de scolopendre",
+      "en": "Centipede sting"
+    },
+    "system.description": {
+      "fr": "<p>La scolopendre se cache sous les planches, dans les chaussures et les tas de bois. Sa piqûre brûle comme un fer rouge, la main enfle, la fièvre peut suivre. Rarement grave, toujours mémorable.</p>",
+      "en": "<p>The centipede hides under planks, in shoes and in woodpiles. Its sting burns like a hot iron, the hand swells, fever may follow. Rarely serious, always memorable.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Secouer chaussures et vêtements, porter des gants pour déplacer le bois.</p>",
+      "en": "<p>Shake out shoes and clothes; wear gloves to move wood.</p>"
+    }
+  },
+  "afflictions/JrQZmHXPGDuRBN8w": {
+    "_nom": "Le choc d'une perte",
+    "name": {
+      "fr": "Le choc d'une perte",
+      "en": "The shock of a loss"
+    },
+    "system.description": {
+      "fr": "<p>Avoir vu mourir un proche, avoir dû achever quelqu'un qu'on aimait : le sommeil s'en va, les gestes se font mécaniques, on se tait. Le temps aide ; les autres aussi, s'ils savent écouter.</p>",
+      "en": "<p>Having watched someone close die, having had to finish off someone you loved: sleep goes, movements turn mechanical, you fall silent. Time helps; so do the others, if they know how to listen.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Parler, veiller ensemble, enterrer ses morts, garder des rites.</p>",
+      "en": "<p>Talk, keep vigil together, bury your dead, keep your rites.</p>"
+    }
+  },
+  "afflictions/LHFpgBpFFkoICAow": {
+    "_nom": "Tétanos",
+    "name": {
+      "fr": "Tétanos",
+      "en": "Tetanus"
+    },
+    "system.description": {
+      "fr": "<p>Un clou rouillé, une plaie souillée de terre : des semaines plus tard, la mâchoire se raidit, puis les muscles se contractent jusqu'à la douleur. Ceux qui étaient vaccinés ne craignent rien ; les autres…</p>",
+      "en": "<p>A rusty nail, a wound fouled with soil: weeks later the jaw stiffens, then the muscles clench until it hurts. Those who were vaccinated have nothing to fear; the others…</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Savoir qui est vacciné ; nettoyer à fond les plaies souillées.</p>",
+      "en": "<p>Know who is vaccinated; clean soiled wounds thoroughly.</p>"
+    }
+  },
+  "afflictions/SlHVbkQZZVkwfaXd": {
+    "_nom": "Chikungunya",
+    "name": {
+      "fr": "Chikungunya",
+      "en": "Chikungunya"
+    },
+    "system.description": {
+      "fr": "<p>Le même moustique, une autre fièvre : brutale, avec des douleurs articulaires qui plient les gens en deux. Les anciens de l'île s'en souviennent. Les douleurs peuvent durer des mois.</p>",
+      "en": "<p>The same mosquito, another fever: brutal, with joint pain that bends people double. The island's elders remember it. The pain can last for months.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Moustiquaires, eaux stagnantes vidées, manches longues au crépuscule.</p>",
+      "en": "<p>Mosquito nets, standing water emptied, long sleeves at dusk.</p>"
+    }
+  },
+  "afflictions/ZrAKZgVDTg9Z6wRT": {
+    "_nom": "Coup de chaleur",
+    "name": {
+      "fr": "Coup de chaleur",
+      "en": "Heatstroke"
+    },
+    "system.description": {
+      "fr": "<p>Travailler en plein soleil dans les Bas en été austral, sans boire assez : maux de tête, vertiges, confusion, puis l'effondrement.</p>",
+      "en": "<p>Working in full sun in the Lowlands in the austral summer, without drinking enough: headache, dizziness, confusion, then collapse.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Travailler le matin et le soir, boire, se mettre à l'ombre aux heures chaudes.</p>",
+      "en": "<p>Work in the morning and evening, drink, get into the shade in the hot hours.</p>"
+    }
+  },
+  "afflictions/b2l72LlequSXTIFZ": {
+    "_nom": "Leptospirose",
+    "name": {
+      "fr": "Leptospirose",
+      "en": "Leptospirosis"
+    },
+    "system.description": {
+      "fr": "<p>La maladie des rats et des eaux douces : on l'attrape en marchant pieds nus dans les ravines, en se baignant dans les bassins, en touchant ce que les rats ont souillé. Fièvre, douleurs musculaires, puis parfois les reins et le foie qui lâchent.</p>",
+      "en": "<p>The disease of rats and fresh water: you catch it walking barefoot in the ravines, bathing in the pools, touching what rats have fouled. Fever, muscle pain, then sometimes the kidneys and liver give out.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Bottes et gants dans l'eau douce, réserves à l'abri des rats, eau traitée.</p>",
+      "en": "<p>Boots and gloves in fresh water, stores kept away from rats, treated water.</p>"
+    }
+  },
+  "afflictions/fusGjHrBAVVeFCE9": {
+    "_nom": "Plaie infectée",
+    "name": {
+      "fr": "Plaie infectée",
+      "en": "Infected wound"
+    },
+    "system.description": {
+      "fr": "<p>Une coupure de tôle, une griffure de ronce, une écharde de bambou : sous la chaleur humide, tout s'infecte. Rougeur, chaleur, pus, puis la fièvre qui monte. (Rien à voir avec le Gris : celui-là ne se soigne pas.)</p>",
+      "en": "<p>A cut from sheet metal, a bramble scratch, a bamboo splinter: in the humid heat, everything gets infected. Redness, heat, pus, then the fever rising. (Nothing to do with the Grey: that one cannot be treated.)</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Laver et désinfecter toute plaie le jour même ; alcool, savon, pansements propres.</p>",
+      "en": "<p>Wash and disinfect every wound the same day; alcohol, soap, clean dressings.</p>"
+    }
+  },
+  "afflictions/kd9q31mmHVtXtzdW": {
+    "_nom": "Gale",
+    "name": {
+      "fr": "Gale",
+      "en": "Scabies"
+    },
+    "system.description": {
+      "fr": "<p>La promiscuité des abris surpeuplés, les couvertures partagées : des démangeaisons qui empêchent de dormir et s'infectent à force de gratter.</p>",
+      "en": "<p>The crowding of overfull shelters, shared blankets: an itch that keeps you from sleeping and gets infected from all the scratching.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Laver et faire bouillir le linge, ne pas entasser les gens.</p>",
+      "en": "<p>Wash and boil the linen; do not pack people together.</p>"
+    }
+  },
+  "afflictions/oftnKWZJ7etIgWXL": {
+    "_nom": "Gastro-entérite",
+    "name": {
+      "fr": "Gastro-entérite",
+      "en": "Gastroenteritis"
+    },
+    "system.description": {
+      "fr": "<p>L'eau non traitée, les mains sales, la nourriture tournée : vomissements, diarrhée, fièvre. Sans eau propre à boire, la déshydratation emporte les enfants et les anciens.</p>",
+      "en": "<p>Untreated water, dirty hands, food gone off: vomiting, diarrhoea, fever. Without clean water to drink, dehydration carries off the children and the old.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Eau filtrée et bouillie, savon, latrines loin des citernes.</p>",
+      "en": "<p>Filtered and boiled water, soap, latrines far from the cisterns.</p>"
+    }
+  },
+  "afflictions/tlDnHzhtFkGuWlvp": {
+    "_nom": "Fracture",
+    "name": {
+      "fr": "Fracture",
+      "en": "Fracture"
+    },
+    "system.description": {
+      "fr": "<p>Une chute dans une ravine, un pied pris entre deux rochers, une barricade qui s'effondre : un os cassé, réduit et immobilisé ou pas. Six semaines d'attelle, au mieux.</p>",
+      "en": "<p>A fall in a ravine, a foot caught between two rocks, a barricade that collapses: a broken bone, set and immobilised or not. Six weeks in a splint, at best.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Une attelle bien posée tout de suite ; ne pas forcer.</p>",
+      "en": "<p>A splint properly set straight away; do not force it.</p>"
+    }
+  },
+  "afflictions/wn3MrBj4ALWgGP0l": {
+    "_nom": "Dengue",
+    "name": {
+      "fr": "Dengue",
+      "en": "Dengue"
+    },
+    "system.description": {
+      "fr": "<p>Transmise par le moustique tigre qui pullule dans les Bas à la saison des pluies : forte fièvre, douleurs derrière les yeux, courbatures, éruption. Dans sa forme grave, des saignements et un épuisement qui peut tuer.</p>",
+      "en": "<p>Carried by the tiger mosquito that swarms in the Lowlands in the rainy season: high fever, pain behind the eyes, aching limbs, a rash. In its severe form, bleeding and an exhaustion that can kill.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Moustiquaires, vider les eaux stagnantes (pots, pneus, gouttières bouchées), vivre plus haut.</p>",
+      "en": "<p>Mosquito nets, empty standing water (pots, tyres, blocked gutters), live higher up.</p>"
+    }
+  },
+  "afflictions/xZMQCOjUImNqvGnG": {
+    "_nom": "Brûlure",
+    "name": {
+      "fr": "Brûlure",
+      "en": "Burn"
+    },
+    "system.description": {
+      "fr": "<p>Un feu de cuisine, un incendie, une coulée approchée de trop près, de l'essence qui s'enflamme : la peau à vif, la douleur, l'infection qui guette.</p>",
+      "en": "<p>A cooking fire, a blaze, a lava flow approached too closely, petrol catching light: raw skin, pain, and infection lying in wait.</p>"
+    },
+    "system.prevention": {
+      "fr": "<p>Refroidir longuement à l'eau propre, couvrir proprement.</p>",
+      "en": "<p>Cool for a long time under clean water, cover cleanly.</p>"
+    }
+  }
+}

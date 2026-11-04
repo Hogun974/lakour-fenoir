@@ -1,0 +1,230 @@
+{
+  "savoirs/0HnCN5FanxEZZrAJ": {
+    "_nom": "Mécanique",
+    "name": {
+      "fr": "Mécanique",
+      "en": "Mechanics"
+    },
+    "system.description": {
+      "fr": "<p>Faire redémarrer un moteur, siphonner, réparer un groupe électrogène, une pompe, un scooter, transformer une carcasse en pièces détachées.</p>",
+      "en": "<p>Get an engine running again, siphon fuel, repair a generator, a pump, a scooter, turn a wreck into spare parts.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé de mécanicien, de chauffeur ou de marin ; un garage fouillé avec ses revues techniques ; un Ferrailleur qui veut bien montrer.</p>",
+      "en": "<p>A background as a mechanic, a driver or a sailor; a scavenged garage with its technical manuals; a Scrapper willing to show you.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre l'atelier niveau 2. +1 dé aux tests de bricolage sur les moteurs et de conduite pour une réparation de fortune. Fouiller une épave rapporte 1 pièce de plus.</p>",
+      "en": "<p>Unlocks the workshop at level 2. +1 die on tinkering tests on engines and on driving tests for a makeshift repair. Scavenging a wreck brings 1 more part.</p>"
+    }
+  },
+  "savoirs/6975YKDLebPqgXnA": {
+    "_nom": "Étaiement et galeries",
+    "name": {
+      "fr": "Étaiement et galeries",
+      "en": "Shoring and galleries"
+    },
+    "system.description": {
+      "fr": "<p>Lire la roche et le tuf, creuser sans tout faire tomber, étayer au bois et à la ferraille, ventiler, drainer ; reconnaître une voûte de lave fragile.</p>",
+      "en": "<p>Read the rock and the tuff, dig without bringing everything down, shore up with timber and scrap iron, ventilate, drain; recognise a fragile lava vault.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé de guide de canyon, de spéléologue ou de mineur ; un guide des tunnels de lave du Grand Brûlé ; réussir une cave étayée.</p>",
+      "en": "<p>A background as a canyoning guide, a caver or a miner; a guide to the lava tubes of the Grand Brûlé; completing a shored-up cellar.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre la galerie souterraine niveaux 2 à 4 et l'aménagement d'un tunnel de lave niveaux 2 et 3.</p>",
+      "en": "<p>Unlocks the underground gallery at levels 2 to 4 and the fitting out of a lava tube at levels 2 and 3.</p>"
+    }
+  },
+  "savoirs/FWJGMPXts32KIKP3": {
+    "_nom": "Premiers secours avancés",
+    "name": {
+      "fr": "Premiers secours avancés",
+      "en": "Advanced first aid"
+    },
+    "system.description": {
+      "fr": "<p>Arrêter une hémorragie, réduire une fracture, recoudre, poser une perfusion de fortune, reconnaître la dengue de la leptospirose, et savoir quand il n'y a plus rien à faire.</p>",
+      "en": "<p>Stop a haemorrhage, set a fracture, stitch, put in a makeshift drip, tell dengue from leptospirosis, and know when there is nothing more to be done.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé d'infirmière, d'ambulancier, de pompier ou de soignant ; un manuel médical ; le Dispensaire du Sud contre service rendu.</p>",
+      "en": "<p>A background as a nurse, a paramedic, a firefighter or a carer; a medical manual; the Southern Dispensary, in return for a service rendered.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre l'infirmerie niveau 2. +1 dé aux tests de soins. Un soin réussi d'une affliction économise 1 médicament (au moins 1).</p>",
+      "en": "<p>Unlocks the infirmary at level 2. +1 die on medicine tests. A successful treatment of an affliction saves 1 medicine (at least 1).</p>"
+    }
+  },
+  "savoirs/FX3eGZZ2Q5oWiPk0": {
+    "_nom": "Élevage",
+    "name": {
+      "fr": "Élevage",
+      "en": "Animal husbandry"
+    },
+    "system.description": {
+      "fr": "<p>Poules péi, cabris, cochons, chiens, abeilles, tilapias : nourrir, soigner, faire naître, abattre proprement, ne pas épuiser son troupeau.</p>",
+      "en": "<p>Local péi hens, goats, pigs, dogs, bees, tilapia: feed, tend, breed, slaughter cleanly, never exhaust your flock.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé d'agriculteur des Hauts ou d'apiculteur ; une ferme de la Plaine des Cafres ; un ancien de Mafate.</p>",
+      "en": "<p>A background as a Highland farmer or a beekeeper; a farm on the Plaine des Cafres; an elder from Mafate.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre la basse-cour, l'enclos à cabris, les ruches et les chiens de garde niveau 2, le bassin à tilapias niveau 2.</p>",
+      "en": "<p>Unlocks the poultry yard, the goat pen, the beehives and the guard dogs at level 2, the tilapia pond at level 2.</p>"
+    }
+  },
+  "savoirs/LCIz8Now2uaEtrG9": {
+    "_nom": "Pêche au lagon et en rivière",
+    "name": {
+      "fr": "Pêche au lagon et en rivière",
+      "en": "Lagoon and river fishing"
+    },
+    "system.description": {
+      "fr": "<p>Ligne, épervier, nasse, fusil-harpon, la pêche des bichiques à l'embouchure à la saison des pluies, celle des camarons dans les bassins des cirques, et lire la houle avant de sortir.</p>",
+      "en": "<p>Line, cast net, fish trap, speargun, fishing for bichiques at the river mouth in the rainy season, for prawns in the pools of the cirques, and reading the swell before going out.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé de pêcheur ou de marin ; un ancien des Barques du Sud ; une saison à pêcher sans se noyer.</p>",
+      "en": "<p>A background as a fisherman or a sailor; an elder of the Southern Boats; a season of fishing without drowning.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>+1 dé aux tests de survie pour pêcher ; la pêche d'une région rapporte 1 nourriture de plus par sortie réussie.</p>",
+      "en": "<p>+1 die on survival tests to fish; fishing in a region brings 1 more food per successful outing.</p>"
+    }
+  },
+  "savoirs/NFkdLwXEsxJe1qSX": {
+    "_nom": "Plomberie et filtration",
+    "name": {
+      "fr": "Plomberie et filtration",
+      "en": "Plumbing and filtration"
+    },
+    "system.description": {
+      "fr": "<p>Raccorder, souder, purger, filtrer : sable, charbon, ébullition, chlore dosé à la goutte. L'eau est la première arme contre la maladie.</p>",
+      "en": "<p>Connect, solder, flush, filter: sand, charcoal, boiling, chlorine measured by the drop. Water is the first weapon against disease.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé de plombier, d'agent des eaux ou d'électricien ; un manuel ; un PNJ du service des eaux ; une semaine à entretenir une citerne et un filtre sans tomber malade.</p>",
+      "en": "<p>A background as a plumber, a water-board worker or an electrician; a manual; an NPC from the water service; a week keeping a cistern and a filter without falling ill.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre la citerne niveau 3, le filtre niveau 2 et la pompe manuelle niveau 2. L'eau traitée divise par cinq le risque des maladies de l'eau.</p>",
+      "en": "<p>Unlocks the cistern at level 3, the filter at level 2 and the hand pump at level 2. Treated water divides the risk of water-borne diseases by five.</p>"
+    }
+  },
+  "savoirs/UHa00stDlln6OD0d": {
+    "_nom": "Maraîchage tropical",
+    "name": {
+      "fr": "Maraîchage tropical",
+      "en": "Tropical market gardening"
+    },
+    "system.description": {
+      "fr": "<p>Savoir ce qui pousse ici, quand et comment : brèdes, songes, patates douces, manioc, chouchous, piments, haricots ; semer avant les pluies, pailler contre le soleil de l'Ouest, protéger du vent des Hauts.</p>",
+      "en": "<p>Knowing what grows here, when and how: brèdes (leaf greens), taro, sweet potatoes, cassava, chayotes, chillies, beans; sow before the rains, mulch against the western sun, shelter from the Highland wind.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé d'agriculteur ou de planteur ; le CDI d'un collège ; les conseils d'un ancien de la Coopérative des Plaines ou des Familles des Îlets ; une saison complète de potager réussie.</p>",
+      "en": "<p>A background as a farmer or a planter; a school library; the advice of an elder from the Plains Cooperative or the Families of the Îlets; one full successful season of vegetable growing.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre le potager niveaux 2 et 3, la serre niveau 2, le compost niveau 2 et le camouflage niveau 3. +1 dé aux tests de survie pour cultiver et cueillir.</p>",
+      "en": "<p>Unlocks the vegetable plot at levels 2 and 3, the greenhouse at level 2, the compost at level 2 and camouflage at level 3. +1 die on survival tests to grow and forage.</p>"
+    }
+  },
+  "savoirs/WQxo66InFveKqVJD": {
+    "_nom": "Conserverie et séchage",
+    "name": {
+      "fr": "Conserverie et séchage",
+      "en": "Preserving and drying"
+    },
+    "system.description": {
+      "fr": "<p>Saler, sécher, boucaner, mettre en bocaux, faire des achards et des confitures qui tiennent un an sous le climat humide.</p>",
+      "en": "<p>Salt, dry, smoke, put up in jars, make achards and jams that keep for a year in the humid climate.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé de cuisinier ; une grand-mère des Hauts ; un livre de recettes lontan.</p>",
+      "en": "<p>A background as a cook; a Highland grandmother; a book of old-time lontan recipes.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre la réserve étanche niveau 2. Une réserve de nourriture préparée par le groupe ne se gâte pas, même sans installation.</p>",
+      "en": "<p>Unlocks the sealed store at level 2. A food store prepared by the group does not spoil, even without an installation.</p>"
+    }
+  },
+  "savoirs/a8Spk0bL9hXmEbsP": {
+    "_nom": "Hydraulique rurale",
+    "name": {
+      "fr": "Hydraulique rurale",
+      "en": "Rural hydraulics"
+    },
+    "system.description": {
+      "fr": "<p>Capter une source, poser une conduite par gravité, monter un bélier hydraulique, dériver une ravine sans qu'elle emporte tout à la première crue, installer une turbine.</p>",
+      "en": "<p>Catch a spring, lay a gravity pipe, build a hydraulic ram, divert a ravine without it carrying everything off at the first flood, install a turbine.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un ancien d'un îlet ou d'un cirque ; un agent d'une centrale hydraulique ; réussir un captage de source.</p>",
+      "en": "<p>An elder from an îlet or a cirque; a worker from a hydro plant; completing a spring catchment.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre le captage de source niveau 2 et le pico-hydro. +1 dé aux tests de bricolage sur l'eau.</p>",
+      "en": "<p>Unlocks the spring catchment at level 2 and the pico-hydro. +1 die on tinkering tests involving water.</p>"
+    }
+  },
+  "savoirs/p1q7tWHm7jlC6XTv": {
+    "_nom": "Radio et transmissions",
+    "name": {
+      "fr": "Radio et transmissions",
+      "en": "Radio and transmissions"
+    },
+    "system.description": {
+      "fr": "<p>Monter une antenne, trouver les fréquences, émettre sans se faire repérer, réparer un poste, parler en code.</p>",
+      "en": "<p>Put up an aerial, find the frequencies, transmit without being located, repair a set, talk in code.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé de marin, de gendarme, de pompier ou de radioamateur ; un manuel de radioamateur ; un opérateur de la Garnison du Quai.</p>",
+      "en": "<p>A background as a sailor, a gendarme, a firefighter or an amateur radio operator; an amateur radio manual; an operator from the Quay Garrison.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre le poste radio niveau 2. Les renseignements obtenus par radio sont plus sûrs (le MJ précise ce qui est vrai).</p>",
+      "en": "<p>Unlocks the radio post at level 2. Intel obtained by radio is more reliable (the GM says what is true).</p>"
+    }
+  },
+  "savoirs/yFDWfsD7dGTF6DAP": {
+    "_nom": "Électricité solaire",
+    "name": {
+      "fr": "Électricité solaire",
+      "en": "Solar electricity"
+    },
+    "system.description": {
+      "fr": "<p>Câbler des panneaux, régler un régulateur, dimensionner des batteries, ne pas griller l'onduleur ni se griller soi-même.</p>",
+      "en": "<p>Wire panels, set a regulator, size batteries, avoid frying the inverter or yourself.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé d'électricien ; un manuel trouvé dans un magasin de bricolage ou chez un installateur ; une semaine aux côtés de quelqu'un qui sait, dans un îlet de Mafate où chaque case a ses panneaux ; ou réussir le chantier de panneaux solaires niveau 1 avec un test de bricolage difficile.</p>",
+      "en": "<p>A background as an electrician; a manual found in a DIY store or at an installer's; a week alongside someone who knows, in an îlet of Mafate where every house has its panels; or completing the solar panels worksite at level 1 with a hard tinkering test.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre les panneaux solaires niveaux 2 et 3, les batteries niveaux 2 et 3, l'éolienne niveau 2 et le pico-hydro niveau 2. +1 dé aux tests de bricolage sur l'électricité.</p>",
+      "en": "<p>Unlocks the solar panels at levels 2 and 3, the batteries at levels 2 and 3, the wind turbine at level 2 and the pico-hydro at level 2. +1 die on tinkering tests involving electricity.</p>"
+    }
+  },
+  "savoirs/zZlfYpeXrBJPuT0B": {
+    "_nom": "Maçonnerie",
+    "name": {
+      "fr": "Maçonnerie",
+      "en": "Masonry"
+    },
+    "system.description": {
+      "fr": "<p>Monter un mur droit, faire un mortier qui tient, couler une dalle, sceller une porte, tailler et jointoyer le basalte comme les anciens.</p>",
+      "en": "<p>Raise a straight wall, make a mortar that holds, pour a slab, set a door, cut and point basalt like the old-timers.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé dans le bâtiment ; un vieux maçon rencontré ; réussir un premier chantier de mur sous la direction de quelqu'un qui sait.</p>",
+      "en": "<p>A background in the building trade; an old mason met along the way; completing a first wall worksite under the direction of someone who knows.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre le mur d'enceinte, la porte blindée et le dortoir niveau 3. +1 dé aux réparations de dégâts structurels.</p>",
+      "en": "<p>Unlocks the perimeter wall, the armoured door and the dormitory at level 3. +1 die on repairs of structural damage.</p>"
+    }
+  }
+}

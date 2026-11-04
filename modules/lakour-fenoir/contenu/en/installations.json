@@ -1,0 +1,398 @@
+{
+  "installations/0TYc9N3Qmf83Z5wX": {
+    "_nom": "Séchoir et fumoir",
+    "name": {
+      "fr": "Séchoir et fumoir",
+      "en": "Drying racks and smokehouse"
+    },
+    "system.description": {
+      "fr": "<p>Claies au soleil pour les fruits, les piments, le poisson ; un fumoir de tôle pour la viande boucanée. Ce qui est séché ne se gâte plus.</p>",
+      "en": "<p>Racks in the sun for fruit, chillies, fish; a sheet-metal smokehouse for cured meat. What is dried no longer spoils.</p>"
+    }
+  },
+  "installations/3bSnjKrdfDoyz7lm": {
+    "_nom": "Mur d'enceinte",
+    "name": {
+      "fr": "Mur d'enceinte",
+      "en": "Perimeter wall"
+    },
+    "system.description": {
+      "fr": "<p>Un vrai mur de parpaings ou de pierres basaltiques jointoyées, haut de deux mètres puis trois, avec un chemin de ronde. Il faut savoir maçonner, et du ciment, ou de la patience.</p>",
+      "en": "<p>A real wall of breeze blocks or mortared basalt stones, two metres high and then three, with a walkway. It takes masonry skills, and cement, or patience.</p>"
+    }
+  },
+  "installations/4cxLzcyBkV50ibsZ": {
+    "_nom": "Atelier",
+    "name": {
+      "fr": "Atelier",
+      "en": "Workshop"
+    },
+    "system.description": {
+      "fr": "<p>Un établi, un étau, des outils rangés, une caisse de pièces triées. On y répare, on y fabrique, on y apprend.</p>",
+      "en": "<p>A bench, a vice, tools put away, a crate of sorted parts. Here you repair, you make, you learn.</p>"
+    }
+  },
+  "installations/8HfJ6ROWDZ1WwLXg": {
+    "_nom": "Bouilleur solaire",
+    "name": {
+      "fr": "Bouilleur solaire",
+      "en": "Solar still"
+    },
+    "system.description": {
+      "fr": "<p>Des bacs noirs sous des vitres inclinées : le soleil évapore l'eau saumâtre, l'eau de mer ou l'eau douteuse, la vapeur se condense et coule, pure, dans une gouttière. Lent, silencieux, inépuisable sous le soleil de l'Ouest.</p>",
+      "en": "<p>Black trays under tilted panes: the sun evaporates brackish water, seawater or doubtful water, the vapour condenses and runs, pure, into a gutter. Slow, silent, inexhaustible under the western sun.</p>"
+    }
+  },
+  "installations/8rjCMeRcZPMugmgH": {
+    "_nom": "Pico-hydro sur rivière",
+    "name": {
+      "fr": "Pico-hydro sur rivière",
+      "en": "Pico-hydro on a river"
+    },
+    "system.description": {
+      "fr": "<p>Une petite turbine dans une dérivation de la rivière : jour et nuit, pluie ou soleil, elle tourne. Les rivières pérennes des cirques et de l'Est s'y prêtent ; une crue peut tout emporter.</p>",
+      "en": "<p>A small turbine in a channel off the river: day and night, rain or shine, it turns. The year-round rivers of the cirques and the East lend themselves to it; a flood can carry it all away.</p>"
+    }
+  },
+  "installations/91ZdYFYI2yBaqKOw": {
+    "_nom": "Palissade",
+    "name": {
+      "fr": "Palissade",
+      "en": "Stockade"
+    },
+    "system.description": {
+      "fr": "<p>Une clôture continue de pieux, de tôles rivetées et de grillage doublé, avec une porte qu'on ferme à la barre. Elle fait le tour du terrain : on dort derrière.</p>",
+      "en": "<p>A continuous fence of stakes, riveted sheet metal and doubled wire mesh, with a gate barred shut. It runs all the way round the ground: you sleep behind it.</p>"
+    }
+  },
+  "installations/AWvZjtQZ1z1S3bnh": {
+    "_nom": "Filtre à sable et charbon",
+    "name": {
+      "fr": "Filtre à sable et charbon",
+      "en": "Sand and charcoal filter"
+    },
+    "system.description": {
+      "fr": "<p>Un fût rempli de gravier, de sable lavé et de charbon de bois, puis une ébullition : l'eau brute de la rivière, du puits ou de la ravine devient buvable. Sans lui, la diarrhée tue plus sûrement que les Livides.</p>",
+      "en": "<p>A drum filled with gravel, washed sand and charcoal, then a boil: raw water from the river, the well or the ravine becomes drinkable. Without it, diarrhoea kills more surely than the Pallid.</p>"
+    }
+  },
+  "installations/DyRSnjRBQuBCNwEC": {
+    "_nom": "Infirmerie",
+    "name": {
+      "fr": "Infirmerie",
+      "en": "Infirmary"
+    },
+    "system.description": {
+      "fr": "<p>Un lit propre, une table, de l'eau bouillie, des bandes, un coin isolé pour les fièvres : de quoi soigner mieux et isoler un malade. Au second niveau, un jardin de simples (ayapana, citronnelle, bois de quivi) fournit tisanes et emplâtres.</p>",
+      "en": "<p>A clean bed, a table, boiled water, bandages, an isolated corner for fevers: enough to treat people better and isolate a sick person. At the second level, a herb garden (ayapana, lemongrass, bois de quivi) provides infusions and poultices.</p>"
+    }
+  },
+  "installations/Es3LGhWCZ2ErAfoe": {
+    "_nom": "Captage de source",
+    "name": {
+      "fr": "Captage de source",
+      "en": "Spring catchment"
+    },
+    "system.description": {
+      "fr": "<p>Un petit bassin de pierre à la source ou dans la ravine, une crépine, un tuyau qui descend par gravité jusqu'à l'abri. C'est ainsi que vivent les îlets de Mafate : l'eau arrive seule, sans pompe ni courant.</p>",
+      "en": "<p>A small stone basin at the spring or in the ravine, a strainer, a pipe running down by gravity to the shelter. That is how the îlets of Mafate live: the water comes on its own, without pump or power.</p>"
+    }
+  },
+  "installations/FMOhBO04FGLDnr7Y": {
+    "_nom": "Groupe électrogène",
+    "name": {
+      "fr": "Groupe électrogène",
+      "en": "Generator"
+    },
+    "system.description": {
+      "fr": "<p>Du courant à la demande, beaucoup, tout de suite. Il boit du carburant qui ne reviendra jamais, et il s'entend à un kilomètre.</p>",
+      "en": "<p>Power on demand, plenty of it, right now. It drinks fuel that will never come back, and it can be heard a kilometre away.</p>"
+    }
+  },
+  "installations/IatwRrcpMBVu3AGv": {
+    "_nom": "Verger",
+    "name": {
+      "fr": "Verger",
+      "en": "Orchard"
+    },
+    "system.description": {
+      "fr": "<p>Bananiers et papayers d'abord, qui donnent dans l'année ; puis manguiers, letchis, agrumes, fruits à pain, qu'il faut des années pour voir porter, sauf si l'on s'installe là où quelqu'un les a plantés avant vous.</p>",
+      "en": "<p>Banana and papaya trees first, which bear within the year; then mango, lychee, citrus, breadfruit, which take years to bear, unless you settle where someone planted them before you.</p>"
+    }
+  },
+  "installations/L6yjHk9jweGRmc2Y": {
+    "_nom": "Barricades",
+    "name": {
+      "fr": "Barricades",
+      "en": "Barricades"
+    },
+    "system.description": {
+      "fr": "<p>Meubles, tôles, palettes, carcasses de voitures : on bouche les portes, les fenêtres basses et les passages. C'est laid, c'est bruyant à monter, et ça arrête une poignée de Livides le temps de réagir.</p>",
+      "en": "<p>Furniture, sheet metal, pallets, car wrecks: you block the doors, the low windows and the passages. It is ugly, it is noisy to put up, and it stops a handful of Pallid long enough to react.</p>"
+    }
+  },
+  "installations/LiqfWwmyAE6DgbGK": {
+    "_nom": "Pompe manuelle",
+    "name": {
+      "fr": "Pompe manuelle",
+      "en": "Hand pump"
+    },
+    "system.description": {
+      "fr": "<p>Une pompe à bras sur le puits, ou une pompe de récupération remontée à la main : vingt minutes de bras le matin, de l'eau pour la journée.</p>",
+      "en": "<p>A hand pump on the well, or a salvaged pump reassembled by hand: twenty minutes of arm work in the morning, water for the day.</p>"
+    }
+  },
+  "installations/OcuWHSmppKDUHjjO": {
+    "_nom": "Galerie souterraine",
+    "name": {
+      "fr": "Galerie souterraine",
+      "en": "Underground gallery"
+    },
+    "system.description": {
+      "fr": "<p>Creuser sous l'abri, dans le tuf, la scorie ou la roche saine : d'abord une cave étayée, puis une galerie, puis un réseau de salles, enfin un refuge complet où l'on peut vivre caché, au frais, à l'abri des cyclones et des regards.</p><ul><li>Niveau 1, cave étayée ; niveau 2, galerie ; niveau 3, réseau ; niveau 4, refuge complet.</li></ul>",
+      "en": "<p>Dig beneath the shelter, into the tuff, the scoria or sound rock: first a shored-up cellar, then a gallery, then a network of chambers, finally a complete refuge where you can live hidden, cool, sheltered from cyclones and from prying eyes.</p><ul><li>Level 1, shored-up cellar; level 2, gallery; level 3, network; level 4, complete refuge.</li></ul>"
+    }
+  },
+  "installations/OulX7mYuPw5OTqOt": {
+    "_nom": "Bassin à tilapias",
+    "name": {
+      "fr": "Bassin à tilapias",
+      "en": "Tilapia pond"
+    },
+    "system.description": {
+      "fr": "<p>Un bassin bâché ou maçonné où grossissent des tilapias nourris de déchets et de lentilles d'eau ; au second niveau, l'eau du bassin arrose le potager et revient filtrée par une petite pompe.</p>",
+      "en": "<p>A lined or mortared pond where tilapia grow fat on scraps and duckweed; at the second level, the pond water irrigates the vegetable plot and comes back filtered through a small pump.</p>"
+    }
+  },
+  "installations/P4KZpZeASxePVoHP": {
+    "_nom": "Cuisine commune",
+    "name": {
+      "fr": "Cuisine commune",
+      "en": "Communal kitchen"
+    },
+    "system.description": {
+      "fr": "<p>Un feu de bois sous un auvent, de grandes marmites, une table pour tout le monde. Un cari partagé tient un groupe ensemble mieux qu'un discours. La fumée, elle, monte haut.</p>",
+      "en": "<p>A wood fire under a lean-to, big pots, a table for everyone. A shared cari holds a group together better than a speech. The smoke, though, rises high.</p>"
+    }
+  },
+  "installations/PV5bMI82z7yZpJ1T": {
+    "_nom": "Panneaux solaires",
+    "name": {
+      "fr": "Panneaux solaires",
+      "en": "Solar panels"
+    },
+    "system.description": {
+      "fr": "<p>Des panneaux récupérés sur les toits des voisins, un régulateur, des câbles. Sans batteries, le courant ne sert que le jour ; avec, il éclaire la nuit. Les panneaux brillent au soleil comme des miroirs.</p>",
+      "en": "<p>Panels salvaged from the neighbours' roofs, a regulator, cables. Without batteries the power only serves by day; with them, it lights the night. The panels shine in the sun like mirrors.</p>"
+    }
+  },
+  "installations/REkrLgMKcoi0GLDg": {
+    "_nom": "Serre",
+    "name": {
+      "fr": "Serre",
+      "en": "Greenhouse"
+    },
+    "system.description": {
+      "fr": "<p>Un tunnel de plastique ou de vitres récupérées sur des arceaux : à l'abri des pluies battantes de l'Est et du froid des Hauts, tomates, salades et semis poussent toute l'année. Le plastique brille au soleil.</p>",
+      "en": "<p>A tunnel of plastic or salvaged panes over hoops: sheltered from the driving rains of the East and the cold of the Highlands, tomatoes, lettuces and seedlings grow all year round. The plastic shines in the sun.</p>"
+    }
+  },
+  "installations/VqIUYVmL1LYQrgrT": {
+    "_nom": "Citerne de pluie",
+    "name": {
+      "fr": "Citerne de pluie",
+      "en": "Rainwater cistern"
+    },
+    "system.description": {
+      "fr": "<p>Gouttières, descentes, première eau jetée, et une cuve : bidons, cuve de mille litres, puis vraie citerne maçonnée. Dans l'Est, elle déborde ; dans l'Ouest, chaque averse compte.</p>",
+      "en": "<p>Gutters, downpipes, the first flush discarded, and a tank: drums, a thousand-litre tank, then a real mortared cistern. In the East it overflows; in the West, every shower counts.</p>"
+    }
+  },
+  "installations/W8WJbCqi9fodrPGD": {
+    "_nom": "Chiens de garde",
+    "name": {
+      "fr": "Chiens de garde",
+      "en": "Guard dogs"
+    },
+    "system.description": {
+      "fr": "<p>Deux ou trois chiens recueillis, nourris, dressés à aboyer à l'approche et à se taire sur ordre. Ils mangent, ils réconfortent, ils entendent ce que la garde n'entend pas.</p>",
+      "en": "<p>Two or three dogs taken in, fed, trained to bark at anything approaching and to fall silent on command. They eat, they comfort, they hear what the watch does not.</p>"
+    }
+  },
+  "installations/WDDwWzWNPJr0FSRL": {
+    "_nom": "Camouflage",
+    "name": {
+      "fr": "Camouflage",
+      "en": "Camouflage"
+    },
+    "system.description": {
+      "fr": "<p>La voie discrète : toits patinés de boue, vitres masquées, lumières occultées, plantations qui cachent les cultures, fumée filtrée, faux abandon à l'entrée. Ce qu'on ne voit pas, on ne l'attaque pas.</p>",
+      "en": "<p>The quiet path: roofs weathered with mud, windows masked, lights blacked out, plantings that hide the crops, smoke filtered, a fake abandonment at the entrance. What cannot be seen is not attacked.</p>"
+    }
+  },
+  "installations/WpDh5TfJPdjrVDST": {
+    "_nom": "Fossé et pièges",
+    "name": {
+      "fr": "Fossé et pièges",
+      "en": "Ditch and traps"
+    },
+    "system.description": {
+      "fr": "<p>Un fossé creusé devant la clôture, des pieux taillés au fond, des fils tendus avec des boîtes de conserve, des trappes sur les passages. Les Livides tombent dedans ; les vivants, eux, apprennent vite à les éviter.</p>",
+      "en": "<p>A ditch dug in front of the fence, sharpened stakes at the bottom, wires strung with tin cans, trapdoors on the passages. The Pallid fall in; the living, for their part, soon learn to avoid them.</p>"
+    }
+  },
+  "installations/XZOEuvGQ94TT5o5F": {
+    "_nom": "Poste radio",
+    "name": {
+      "fr": "Poste radio",
+      "en": "Radio post"
+    },
+    "system.description": {
+      "fr": "<p>Un poste à ondes courtes, une radio de bateau, un scanner : on écoute les autres groupes, les dernières émissions, les appels à l'aide, les mensonges. Au second niveau, on émet.</p>",
+      "en": "<p>A shortwave set, a boat radio, a scanner: you listen to the other groups, the last broadcasts, the calls for help, the lies. At the second level, you transmit.</p>"
+    }
+  },
+  "installations/Xg4F0V7LrJ7HFPY0": {
+    "_nom": "Dortoir",
+    "name": {
+      "fr": "Dortoir",
+      "en": "Dormitory"
+    },
+    "system.description": {
+      "fr": "<p>Des lits, des moustiquaires, des cloisons, un peu d'intimité : on dort mieux, et l'on peut accueillir.</p>",
+      "en": "<p>Beds, mosquito nets, partitions, a little privacy: you sleep better, and you can take people in.</p>"
+    }
+  },
+  "installations/Xy0a6sedBB2YJZBa": {
+    "_nom": "Enclos à cabris",
+    "name": {
+      "fr": "Enclos à cabris",
+      "en": "Goat pen"
+    },
+    "system.description": {
+      "fr": "<p>Un enclos et un abri pour quelques cabris : du lait, des chevreaux, de la viande pour un cari, du fumier pour le potager. Ils mangent n'importe quoi, et s'échappent dès qu'on regarde ailleurs.</p>",
+      "en": "<p>A pen and a shelter for a few goats: milk, kids, meat for a cari, manure for the vegetable plot. They eat anything, and escape the moment you look away.</p>"
+    }
+  },
+  "installations/ZWoVy5FxU6DYlJSA": {
+    "_nom": "Potager",
+    "name": {
+      "fr": "Potager",
+      "en": "Vegetable plot"
+    },
+    "system.description": {
+      "fr": "<p>Des planches de brèdes, de songes, de patates douces, de manioc, de haricots, de chouchous et de piments. La première récolte de brèdes vient vite ; le reste suit. Un potager se voit, et il boit.</p>",
+      "en": "<p>Beds of brèdes (leaf greens), taro, sweet potatoes, cassava, beans, chayotes and chillies. The first crop of greens comes quickly; the rest follows. A vegetable plot can be seen, and it drinks.</p>"
+    }
+  },
+  "installations/fFPNjbJ5DsEO1eJH": {
+    "_nom": "Ruches",
+    "name": {
+      "fr": "Ruches",
+      "en": "Beehives"
+    },
+    "system.description": {
+      "fr": "<p>Quelques ruches d'abeilles, au bord du verger ou sous les baies roses : du miel de letchi ou de forêt, de la cire pour les bougies, et des fleurs qui donnent mieux. Le miel soigne les plaies.</p>",
+      "en": "<p>A few beehives, at the edge of the orchard or under the Brazilian pepper trees: lychee or forest honey, wax for candles, and flowers that bear better. Honey heals wounds.</p>"
+    }
+  },
+  "installations/fi4tkZW6qrrHZ6LN": {
+    "_nom": "Éolienne de récupération",
+    "name": {
+      "fr": "Éolienne de récupération",
+      "en": "Salvaged wind turbine"
+    },
+    "system.description": {
+      "fr": "<p>Un alternateur de voiture, des pales taillées dans un fût de plastique, un mât haubané. Elle tourne avec les alizés, la nuit comme le jour ; elle grince, et elle se voit de loin.</p>",
+      "en": "<p>A car alternator, blades cut from a plastic drum, a guyed mast. It turns with the trade winds, night and day; it creaks, and it can be seen from afar.</p>"
+    }
+  },
+  "installations/jzUqENvDVDDGNEUc": {
+    "_nom": "Réserve étanche",
+    "name": {
+      "fr": "Réserve étanche",
+      "en": "Sealed store"
+    },
+    "system.description": {
+      "fr": "<p>Fûts à couvercle, bocaux, sacs hermétiques, étagères hors du sol, pièges à rats : la chaleur humide ne pourrit plus les réserves.</p>",
+      "en": "<p>Lidded drums, jars, airtight bags, shelves off the ground, rat traps: the humid heat no longer rots the stores.</p>"
+    }
+  },
+  "installations/kszenIroGrHUV0CA": {
+    "_nom": "Tour de guet",
+    "name": {
+      "fr": "Tour de guet",
+      "en": "Watchtower"
+    },
+    "system.description": {
+      "fr": "<p>Une plateforme sur pilotis, un toit, un garde-corps, une échelle qu'on remonte. De là-haut, la garde voit venir de loin, et voit aussi les fumées des voisins.</p>",
+      "en": "<p>A platform on stilts, a roof, a railing, a ladder you pull up. From up there the watch sees things coming from afar, and sees the neighbours' smoke too.</p>"
+    }
+  },
+  "installations/r8pqEpTGmoECFVA1": {
+    "_nom": "Aménagement d'un tunnel de lave",
+    "name": {
+      "fr": "Aménagement d'un tunnel de lave",
+      "en": "Fitting out a lava tube"
+    },
+    "system.description": {
+      "fr": "<p>Un tube de lave existe déjà : il faut en masquer l'entrée, dégager les éboulis, poser des planchers sur les cordes de lave, étayer les voûtes fragiles, ventiler et éclairer. Il n'y a ni eau ni soleil sous la coulée : l'eau se récolte dehors, la nourriture aussi. Mais aucun refuge n'est plus sûr.</p>",
+      "en": "<p>A lava tube already exists: you have to mask its entrance, clear the rockfalls, lay floors over the ropy lava, shore up the fragile vaults, ventilate and light it. There is neither water nor sun beneath the flow: water is gathered outside, food too. But no refuge is safer.</p>"
+    }
+  },
+  "installations/rs8OCP2we0MGkxYx": {
+    "_nom": "Porte blindée",
+    "name": {
+      "fr": "Porte blindée",
+      "en": "Armoured door"
+    },
+    "system.description": {
+      "fr": "<p>Une porte d'acier récupérée sur un local technique, une banque ou une caserne, scellée dans un bâti renforcé, avec ses gonds et ses barres. Le dernier rempart.</p>",
+      "en": "<p>A steel door salvaged from a plant room, a bank or a barracks, set into a reinforced frame, with its hinges and its bars. The last line of defence.</p>"
+    }
+  },
+  "installations/uyhW7qaDUjyfu4r2": {
+    "_nom": "Basse-cour",
+    "name": {
+      "fr": "Basse-cour",
+      "en": "Poultry yard"
+    },
+    "system.description": {
+      "fr": "<p>Des poules péi, des canards, un coq qui chante trop tôt. Des œufs tous les jours, de la viande les jours de fête, et un réveil que tout le quartier entend.</p>",
+      "en": "<p>Local péi hens, ducks, a rooster that crows too early. Eggs every day, meat on feast days, and an alarm call the whole neighbourhood hears.</p>"
+    }
+  },
+  "installations/vaoNw3gmVLOh5vdd": {
+    "_nom": "Antenne",
+    "name": {
+      "fr": "Antenne",
+      "en": "Aerial"
+    },
+    "system.description": {
+      "fr": "<p>Un mât haubané, un fil tendu entre deux arbres ou une parabole détournée : la radio porte sur toute l'île. Elle se voit aussi de loin.</p>",
+      "en": "<p>A guyed mast, a wire strung between two trees or a repurposed satellite dish: the radio reaches across the whole island. It can be seen from afar too.</p>"
+    }
+  },
+  "installations/wFRx3HFMJvXoj0WG": {
+    "_nom": "Compost",
+    "name": {
+      "fr": "Compost",
+      "en": "Compost"
+    },
+    "system.description": {
+      "fr": "<p>Épluchures, fumier, feuilles, cendres, tout y passe. Sans lui, la terre s'épuise en quelques récoltes ; avec lui, elle s'enrichit chaque saison.</p>",
+      "en": "<p>Peelings, manure, leaves, ashes, everything goes in. Without it, the soil is exhausted within a few harvests; with it, it grows richer every season.</p>"
+    }
+  },
+  "installations/zOYAZvwAMgTY3d6b": {
+    "_nom": "Batteries",
+    "name": {
+      "fr": "Batteries",
+      "en": "Batteries"
+    },
+    "system.description": {
+      "fr": "<p>Des batteries de voitures, de camping-cars, puis de vraies batteries solaires récupérées dans les îlets ou les maisons équipées : on garde le courant du jour pour la nuit.</p>",
+      "en": "<p>Car batteries, camper-van batteries, then real solar batteries salvaged from the îlets or from equipped houses: you keep the day's power for the night.</p>"
+    }
+  }
+}
