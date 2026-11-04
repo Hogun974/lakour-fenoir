@@ -53,13 +53,14 @@ jobs:
       - name: Empaquetage du monde vierge (monde/src -> monde/dist, puis vérification des fuites)
         run: npm run empaqueter-monde
 
+      - name: Monde vierge anglais (monde/world.en.json -> monde/dist/la-kour-fenoir-en.zip, world-en.json)
+        run: npm run empaqueter-monde -- --langue en
+
       - name: Monde dans dist/ (world.json, la-kour-fenoir.zip ; monde anglais s'il existe)
         run: |
           cp monde/dist/world.json dist/world.json
           cp monde/dist/la-kour-fenoir.zip dist/la-kour-fenoir.zip
-          for f in world.en.json world-en.json; do
-            if [ -s "monde/dist/$f" ]; then cp "monde/dist/$f" dist/world-en.json; echo "Monde anglais : $f"; fi
-          done
+          if [ -s monde/dist/world-en.json ]; then cp monde/dist/world-en.json dist/world-en.json; cp monde/dist/la-kour-fenoir-en.zip dist/la-kour-fenoir-en.zip; echo "Monde anglais recopié"; fi
           if [ -s monde/dist/la-kour-fenoir-en.zip ]; then cp monde/dist/la-kour-fenoir-en.zip dist/la-kour-fenoir-en.zip; fi
 
       - name: Vérification des fichiers à publier
