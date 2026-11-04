@@ -67,10 +67,10 @@ test("gabarits : blocs Handlebars équilibrés, chaque gabarit déclaré existe"
   for (const d of declares) assert.ok(GABARITS.some(([f]) => f.endsWith(d)), d);
 });
 
-test("system.json : types du contenu déclarés, socket, langues, compatibilité 14.369", () => {
+test("system.json : types du contenu déclarés, socket, langues, compatibilité 14.370", () => {
   const sys = JSON.parse(readFileSync(join(SYSTEME, "system.json"), "utf8"));
   assert.equal(sys.id, "lakour-survie");
-  assert.equal(sys.compatibility.verified, "14.369");
+  assert.equal(sys.compatibility.verified, "14.370");
   assert.equal(sys.socket, true);
   const types = new Set();
   const src = fileURLToPath(new URL("../modules/lakour-fenoir/src/", import.meta.url));
