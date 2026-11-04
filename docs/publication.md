@@ -132,3 +132,31 @@ depuis Foundry.
 - Les captures vieillissent : les refaire quand l'interface change.
 - Le monde anglais (`monde/world.en.json`) : quand l'outil du moteur saura le fabriquer, le workflow le publie déjà s'il
   trouve `monde/dist/world.en.json` (ou `world-en.json`) et `monde/dist/la-kour-fenoir-en.zip`.
+
+## Release à blanc du 4 novembre 2026
+
+Chaque workflow a été rejoué étape par étape (Ubuntu 24.04 sous WSL, **Node 24.22**, npm 10) dans un clone neuf
+`git clone --recurse-submodules`, avec un tag local et les variables `GITHUB_REF_NAME` / `GITHUB_REPOSITORY` du runner ;
+les archives produites ont été relues (manifeste à la racine, chemins `/`, `packs/` complets, ni `src/`, ni `contenu/`, ni
+`essais/`, ni `node_modules`, ni `.git`, CRC vérifiés). Les actions sont passées en versions Node 24
+(`actions/checkout@v5`, `actions/setup-node@v5`, `softprops/action-gh-release@v3` : les v4/v2 tournent encore sous
+Node 20, en fin de vie sur les runners GitHub).
+
+Constats et corrections :
+
+- **`package-lock.json` absent** : `actions/setup-node` (`cache: npm`) échoue dès le départ, et `npm ci` aussi. Il a été
+  engendré depuis le registre (`npm install --package-lock-only` sur le seul `package.json` : 83 paquets, tous avec
+  `resolved` et `integrity`). **À commiter.**
+- **Piège trouvé : les scripts ne s'exécutaient pas sous Linux.** La garde « lancé directement ? » écrite
+  ``import.meta.url === `file:///${process.argv[1]…}` `` est toujours fausse sur le runner (`argv[1]` commence déjà par
+  `/`, d'où `file:////…`) : le script se termine **sans rien faire et sans erreur**. Corrigé dans `outils/empaqueter-paquets.mjs`
+  (`resolve(process.argv[1]) === fileURLToPath(import.meta.url)`).
+- Nouvelle étape de garde : l'étiquette doit être `v<version de systems/lakour-survie/system.json>` (convention
+  ci-dessus) ; une version qui ne change que le contenu exige donc un nouveau numéro de système.
+- `actions/checkout` reçoit `token: ${{ secrets.SOUS_MODULE_TOKEN || github.token }}`.
+- `fabriquer-fenoir.mjs` a déjà une garde correcte (comparaison de `realpath`).
+
+- [ ] Commiter `package-lock.json` (et le refaire par `npm install --package-lock-only` à chaque changement de
+      `package.json`).
+- [ ] Essais au vert avant l'étiquette (au rejeu, des essais `survie-api-*` en cours de reprise échouaient).
+- [ ] `lakour-mj-ia` public (ou secret `SOUS_MODULE_TOKEN`) avant de pousser l'étiquette.
