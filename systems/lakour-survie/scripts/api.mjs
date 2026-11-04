@@ -1263,8 +1263,16 @@ export const api = {
   }),
 
   // Remise à zéro (MJ IA, reinitialiser) : la mémoire du monde et sa copie dans ce navigateur.
-  async oublier() {
+  // Tout oublier : la mémoire du monde et sa copie dans ce navigateur, et (MJ actif, sauf reglages: false) l'état public de la
+  // partie, le coffre et le clair de secours remis à leur valeur par défaut : le monde revient à « la partie n'a pas commencé ».
+  async oublier({ reglages = true } = {}) {
     await Coffre.oublierMonde();
+    if (reglages && estMJActif()) {
+      for (const cle of ["partie", "coffre", "mondeClair"]) {
+        const def = game.settings.settings.get(`${ID}.${cle}`);
+        if (def) await game.settings.set(ID, cle, foundry.utils.deepClone(def.default));
+      }
+    }
     return true;
   }
 };

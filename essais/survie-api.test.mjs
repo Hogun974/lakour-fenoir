@@ -323,4 +323,17 @@ test("oublier : la mémoire du monde et sa copie dans ce navigateur", async () =
   await M.api.oublier();
   assert.equal(M.api.monde(), null);
   assert.deepEqual(valeur("lakour-survie.monde")["fenoir-essai"], {});
+  // Et l'état public de la partie revient à « pas commencée » (réglages par défaut), comme le coffre scellé.
+  assert.equal(M.api.etat().demarree, false);
+  assert.equal(M.api.etat().partie, "");
+  assert.deepEqual(valeur("lakour-survie.coffre"), globalThis.game.settings.settings.get("lakour-survie.coffre").default);
+});
+
+test("oublier({ reglages: false }) : la mémoire seulement, la partie publique reste", async () => {
+  const M = await nouveauMonde();
+  const a = await survivantTire(M);
+  await M.api.demarrer({ region: "saint-denis", membres: [a.id] });
+  await M.api.oublier({ reglages: false });
+  assert.equal(M.api.monde(), null);
+  assert.equal(M.api.etat().demarree, true);
 });
