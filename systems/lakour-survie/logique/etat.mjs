@@ -25,9 +25,12 @@
 //      (retirée de groupe.membres, `departs`). Les traits (§10.1) jouent sur les rations, le moral, la fatigue, la peur du lieu.
 //  10. paliers de visibilité (§9) : un palier franchi à la hausse depuis la veille donne un fait SECRET `palierVisibilite`
 //      { palier, visibilite } (au MJ seulement).
+// Journal et alertes : chaque entrée est { quart, texte (français, repli), cle, params } (textes.mjs) ; la couche Foundry affiche
+// la traduction de `cle` dans la langue de chaque navigateur. Les anciennes entrées à `texte` seul restent lisibles.
 import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, palierVisibilite } from "./constantes.mjs";
 import { evoluerAfflictions, tirerMaladies, contracter } from "./maladies.mjs";
-import { indexer } from "./contenu.mjs";
+import { indexer, installationDe } from "./contenu.mjs";
+import { message, cleTexteDe } from "./textes.mjs";
 import { effetsTraits, lieuxAbri, travailleursParTache, competenceDeTache, peutFaire, retirerMembre } from "./generation.mjs";
 import { marquer } from "./des.mjs";
 import { ajouterStocks } from "./ressources.mjs";
@@ -113,8 +116,10 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu) });
   let bilan = ab ? bilanAbri(ab.system, ab.installations, contenu, conditions(Math.floor(e.horloge.quart / QUARTS_PAR_JOUR))) : null;
   let palierVeille = palierVisibilite(options.visibiliteVeille ?? bilan?.visibilite ?? 0);
-  const publier = (quart, texte) => { e = ajouterJournal(e, [{ quart, texte }]); };
-  const alerter = (quart, type, texte) => { const a = { quart, type, texte }; nouvellesAlertes.push(a); e = ajouterAlertes(e, [a]); };
+  // publier(quart, cle, params, texte) : une entrée du journal ; alerter(quart, type, cle, params, texte) : une alerte.
+  const publier = (quart, cle, params, texte) => { e = ajouterJournal(e, [{ quart, ...message(cle, params, texte) }]); };
+  const alerter = (quart, type, cle, params, texte) => { const a = { quart, type, ...message(cle, params, texte) }; nouvellesAlertes.push(a); e = ajouterAlertes(e, [a]); };
+  const nomInstallation = cle => installationDe(contenu, cle)?.nom ?? cle;
 
   for (let k = 0; k < Math.max(0, Math.floor(quarts)); k++) {
     const q = e.horloge.quart;
@@ -131,8 +136,10 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       s.system = r.system;
       for (const ev of r.evenements) {
         s.evenements.push({ quart: fin, ...ev });
-        if (["mort", "releve", "infection"].includes(ev.cle)) publier(fin, `${s.nom} ${ev.texte}.`);
-        if (ev.cle === "releve") alerter(fin, "releve", `${s.nom} s'est relevé, Livide.`);
+        if (["mort", "releve", "infection"].includes(ev.cle)) {
+          publier(fin, `survivant-${ev.cle}${ev.cause ? `-${ev.cause}` : ""}`, { nom: s.nom, stade: ev.stade ?? "" }, `${s.nom} ${ev.texte}.`);
+        }
+        if (ev.cle === "releve") alerter(fin, "releve", "alerte-releve", { nom: s.nom }, `${s.nom} s'est relevé, Livide.`);
       }
     }
     // 2. Bruit de l'abri.
@@ -143,7 +150,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       if (r.reste <= 0) {
         e.groupe = { ...e.groupe, region: r.vers, enRoute: null };
         e.renseignements = observer(e.renseignements, m, contenu, r.vers, Math.floor(fin / QUARTS_PAR_JOUR), "vu");
-        publier(fin, `Le groupe arrive à ${regionDe(contenu, r.vers)?.nom ?? r.vers}.`);
+        const region = regionDe(contenu, r.vers)?.nom ?? r.vers;
+        publier(fin, "arrivee", { region }, `Le groupe arrive à ${region}.`);
       } else e.groupe = { ...e.groupe, enRoute: r };
     }
     e.horloge = { quart: fin };
@@ -165,10 +173,10 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     for (const f of sim.faits) {
       if (!f.public) { secrets.push(f); continue; }
       faits.push(f);
-      publier(fin, f.texte);
+      publier(fin, cleTexteDe(f), f.params ?? {}, f.texte);
       const chezSoi = f.region === ctx.region;
       if (TYPES_ALERTE.includes(f.cle) || (chezSoi && /^reseau-/.test(f.cle)) || (chezSoi && /^horde-/.test(f.cle) && f.cle !== "horde-dispersee")
-        || (f.cle === "horde-nait" && sontVoisines(contenu, ctx.region, f.region))) alerter(fin, f.cle, f.texte);
+        || (f.cle === "horde-nait" && sontVoisines(contenu, ctx.region, f.region))) alerter(fin, f.cle, cleTexteDe(f), f.params ?? {}, f.texte);
     }
     for (const x of sim.menaces) menaces.push({ jour, ...x });
 
@@ -186,7 +194,11 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         const cy = subirCyclone(ab.system, ab.installations, contenu, { force: c.force, protection: bilan.protectionCyclone }, deriverHasard(m.graine, "abri", jour));
         ab.system = cy.abri;
         ab.installations = cy.installations;
-        if (cy.degats) publier(fin, `Le cyclone ${c.nom} abîme l'abri${cy.endommagees.length ? ` (${cy.endommagees.join(", ")})` : ""}.`);
+        if (cy.degats) {
+          const installations = cy.endommagees.map(nomInstallation).join(", ");
+          publier(fin, cy.endommagees.length ? "cyclone-degats-installations" : "cyclone-degats", { cyclone: c.nom, installations },
+            `Le cyclone ${c.nom} abîme l'abri${cy.endommagees.length ? ` (${installations})` : ""}.`);
+        }
       }
     }
     // 6. Repas.
@@ -202,8 +214,12 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       s.system = r.system;
       for (const ev of r.evenements) {
         s.evenements.push({ quart: fin, ...ev });
-        if (ev.cle === "craque") publier(fin, `${s.nom} craque.`);
-        if (ev.cle === "depart") { departs.push(s.id); e = retirerMembre(e, s.id); publier(fin, `${s.nom} ${ev.texte}.`); alerter(fin, "depart", `${s.nom} a quitté le groupe.`); }
+        if (ev.cle === "craque") publier(fin, "survivant-craque", { nom: s.nom }, `${s.nom} craque.`);
+        if (ev.cle === "depart") {
+          departs.push(s.id); e = retirerMembre(e, s.id);
+          publier(fin, "survivant-depart", { nom: s.nom }, `${s.nom} ${ev.texte}.`);
+          alerter(fin, "depart", "alerte-depart", { nom: s.nom }, `${s.nom} a quitté le groupe.`);
+        }
       }
     }
     // 6 bis. Tâches du jour.
@@ -215,7 +231,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       if (c && sys.joursTache % 7 === 0) {
         const r = marquer(sys.competences[c], 1, { passion: sys.passions?.[c] ?? 0, age: sys.age });
         sys.competences[c] = { niveau: r.niveau, marques: r.marques };
-        if (r.monte) publier(fin, `${s.nom} progresse en ${c} (niveau ${r.niveau}).`);
+        if (r.monte) publier(fin, "progression", { nom: s.nom, competence: c, niveau: r.niveau }, `${s.nom} progresse en ${c} (niveau ${r.niveau}).`);
       }
       if (Object.values(sys.passions ?? {}).some(x => Number(x) >= 2)) {
         if (c && Number(sys.passions?.[c]) >= 2) { sys.moral = Math.min(5, sys.moral + 1); sys.joursSansPassion = 0; }
@@ -230,7 +246,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         if (eleve && sys.competences?.[comp] && Number(sys.competences[comp].niveau) >= Number(eleve.system.competences[comp].niveau) + 2) {
           const r = marquer(eleve.system.competences[comp], 1, { passion: eleve.system.passions?.[comp] ?? 0, age: eleve.system.age });
           eleve.system.competences[comp] = { niveau: r.niveau, marques: r.marques };
-          if (r.monte) publier(fin, `${eleve.nom} progresse en ${comp} grâce à ${s.nom} (niveau ${r.niveau}).`);
+          if (r.monte) publier(fin, "progression-enseignee", { nom: eleve.nom, competence: comp, maitre: s.nom, niveau: r.niveau }, `${eleve.nom} progresse en ${comp} grâce à ${s.nom} (niveau ${r.niveau}).`);
         }
       }
     }
@@ -246,9 +262,12 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     // 8. Stocks bas.
     if (ab && aLAbri()) {
       bilan = bilanAbri(ab.system, ab.installations, contenu, conditions(jour));
-      for (const r of ["eau", "nourriture"]) if (bilan.joursDeStocks[r] <= 2) alerter(fin, "stocks-bas", `Plus que ${bilan.joursDeStocks[r]} jour${bilan.joursDeStocks[r] > 1 ? "s" : ""} de ${r}.`);
+      for (const r of ["eau", "nourriture"]) {
+        const n = bilan.joursDeStocks[r];
+        if (n <= 2) alerter(fin, "stocks-bas", `stocks-bas-${r}`, { n }, `Plus que ${n} jour${n > 1 ? "s" : ""} de ${r}.`);
+      }
     }
-    if (manqueNourriture > 0) publier(fin, `Pas assez à manger pour tout le monde (${manqueNourriture} part${manqueNourriture > 1 ? "s" : ""} manquent).`);
+    if (manqueNourriture > 0) publier(fin, "manque-nourriture", { n: manqueNourriture }, `Pas assez à manger pour tout le monde (${manqueNourriture} part${manqueNourriture > 1 ? "s" : ""} manquent).`);
     // 9. Maladies.
     const defsAfflictions = indexer(contenu).afflictions;
     if (defsAfflictions.size) {
@@ -256,7 +275,10 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         if (!actif(s)) continue;
         const r = evoluerAfflictions(s.system, defsAfflictions, jour);
         s.system = r.system;
-        for (const ev of r.evenements) { s.evenements.push({ quart: fin, ...ev }); publier(fin, `${s.nom} ${ev.texte}.`); }
+        for (const ev of r.evenements) {
+          s.evenements.push({ quart: fin, ...ev });
+          publier(fin, `survivant-${ev.cle}`, { nom: s.nom, affliction: defsAfflictions.get(ev.affliction)?.nom ?? ev.affliction }, `${s.nom} ${ev.texte}.`);
+        }
       }
       const ici = surv.filter(s => actif(s) && aLAbri());
       const regionVie = regionDe(contenu, ab?.system.region ?? e.groupe.region);
@@ -271,10 +293,10 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     if (ab && bilan) {
       const palier = palierVisibilite(bilan.visibilite);
       if (palier > palierVeille) {
-        const f = { jour, region: ab.system.region, cle: "palierVisibilite", public: false, portee: "mj", palier, visibilite: bilan.visibilite,
-          texte: `L'abri devient plus visible (visibilité ${bilan.visibilite}, palier ${palier}).` };
+        const f = { jour, region: ab.system.region, cle: "palierVisibilite", cleTexte: "palier-visibilite", public: false, portee: "mj", palier, visibilite: bilan.visibilite,
+          params: { visibilite: bilan.visibilite, palier }, texte: `L'abri devient plus visible (visibilité ${bilan.visibilite}, palier ${palier}).` };
         secrets.push(f);
-        m.journalSecret = [...m.journalSecret, { jour, texte: f.texte }];
+        m.journalSecret = [...m.journalSecret, { jour, texte: f.texte, cle: f.cleTexte, params: f.params }];
       }
       palierVeille = palier;
     }
@@ -288,17 +310,17 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
 // Fêter une fête au camp (§9) : +1 moral à chaque survivant vivant (au plus 5), une ration de plus par personne présente
 // (membres et PNJ), une seule fois par fête et par année (clé « fete-annee » dans etat.fetes).
 // survivants : [{ id, system }] ; abri : { system } ; personnes : nombre de rations (défaut : survivants vivants + PNJ).
-// -> { ok, raison, etat, abri, survivants: [{ id, system }] }
+// -> { ok, raison, motif: { cle, params, texte } | null, etat, abri, survivants: [{ id, system }] }
 export function feter(etat, abri, { fete, annee, survivants = [], personnes = null } = {}) {
   const cle = `${fete}-${annee}`;
-  const rien = raison => ({ ok: false, raison, etat, abri, survivants });
-  if (!fete || !annee) return rien("fête ou année manquante");
-  if ((etat.fetes ?? []).includes(cle)) return rien("déjà fêtée cette année");
+  const rien = (raison, cleMotif, params = {}) => ({ ok: false, raison, motif: message(cleMotif, params, raison), etat, abri, survivants });
+  if (!fete || !annee) return rien("fête ou année manquante", "fete-manquante");
+  if ((etat.fetes ?? []).includes(cle)) return rien("déjà fêtée cette année", "fete-deja");
   const vivants = survivants.filter(s => peutAgir(s.system));
   const n = personnes ?? vivants.length + (etat.groupe?.pnj ?? []).filter(p => p.etat !== "mort").length;
   const stocks = abri?.system?.stocks ?? {};
-  if ((Number(stocks.nourriture) || 0) < n) return rien(`il faut ${n} rations`);
+  if ((Number(stocks.nourriture) || 0) < n) return rien(`il faut ${n} rations`, "fete-rations", { n });
   const nouvelAbri = { ...abri, system: { ...abri.system, stocks: ajouterStocks(stocks, { nourriture: -n }) } };
   const nouveaux = survivants.map(s => (peutAgir(s.system) ? { id: s.id, system: { ...structuredClone(s.system), moral: Math.min(5, (Number(s.system.moral ?? 4)) + 1) } } : s));
-  return { ok: true, raison: "", etat: { ...etat, fetes: [...(etat.fetes ?? []), cle] }, abri: nouvelAbri, survivants: nouveaux };
+  return { ok: true, raison: "", motif: null, etat: { ...etat, fetes: [...(etat.fetes ?? []), cle] }, abri: nouvelAbri, survivants: nouveaux };
 }

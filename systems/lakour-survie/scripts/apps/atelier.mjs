@@ -3,7 +3,7 @@
 // recette, coût payé, produit) ; un joueur le propose au MJ (proposition « fabriquer »).
 import { ID } from "../../logique/constantes.mjs";
 import * as L from "../../logique/index.mjs";
-import { t, lireEtat, sansBalises, libelleCompetence, libelleRessource, survivantsDuGroupe } from "../donnees.mjs";
+import { t, lireEtat, sansBalises, localiser, libelleCompetence, libelleRessource, survivantsDuGroupe } from "../donnees.mjs";
 import { CHEMIN, essayer, lireChamps, options } from "./commun.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -17,7 +17,7 @@ export function contexteAtelier() {
     const v = api.peutFabriquer(r.cle);
     const produit = r.produit?.equipement ? (L.indexer(c).equipements.get(r.produit.equipement)?.nom ?? r.produit.equipement) : r.produit?.ressource ? libelleRessource(r.produit.ressource) : "";
     return {
-      cle: r.cle, nom: r.nom, ok: v.ok, raisons: v.raisons, aide: sansBalises(r.description ?? ""),
+      cle: r.cle, nom: r.nom, ok: v.ok, raisons: (v.motifs?.length ? v.motifs : v.raisons ?? []).map(localiser), aide: sansBalises(r.description ?? ""),
       cout: Object.entries(r.cout ?? {}).filter(([, q]) => Number(q)).map(([k, q]) => `${q} ${libelleRessource(k).toLowerCase()}`).join(", ") || "—",
       travail: r.travail, competence: libelleCompetence(r.competence ?? "bricolage"), difficulte: t(`LAKOUR_SURVIE.Difficultes.${r.difficulte ?? "normale"}`),
       produit: `${produit}${Number(r.produit?.n) > 1 ? ` × ${r.produit.n}` : ""}`

@@ -31,9 +31,12 @@
 //   chiens errants (2 %, force 2), accident (1 %).
 // - Faits : `public` selon ce que le groupe perçoit d'où il est (région courante ; fumée et convois des voisines ; nouvelles
 //   par la radio, ou par le téléphone tant qu'il marche dans sa région ; ce que toute l'île voit).
+// - Textes (textes.mjs) : chaque fait, menace et entrée du journal secret porte `texte` (français, repli) et `cle`/`params` pour
+//   la traduction ; le fait d'un événement du contenu garde `cle` = clé de l'événement et met sa clé de texte dans `cleTexte`.
 import { CLES_PHASES, ALTITUDE_BAS, NATURE, RESEAUX, JOURNAL_SECRET_MAX, borner, DATE_DEPART } from "./constantes.mjs";
 import { creerHasard, deriverHasard, entier, chance, tirerPoids, arrondiHasard, choisir } from "./hasard.mjs";
-import { regionsDe, regionDe, factionDe, indexer, natureRegion, reservesDepart, sontVoisines } from "./contenu.mjs";
+import { regionsDe, regionDe, factionDe, siteDe, indexer, natureRegion, reservesDepart, sontVoisines } from "./contenu.mjs";
+import { cleTexteDe } from "./textes.mjs";
 import { natureInitiale, regenererNature } from "./abri.mjs";
 import { phaseDuJour, saisonDuJour, dateDuJour } from "./temps.mjs";
 import { partPillage, reseauxActifs } from "./renseignements.mjs";
@@ -134,7 +137,7 @@ function routesTouchees(region, cleEvenement, { pistes = true } = {}) {
 }
 
 // ------------------------------------------------------------------ un jour
-// -> { monde, faits: [{ jour, region, cle, public, texte, portee }], menaces: [{ type, force, faction, texte }] }
+// -> { monde, faits: [{ jour, region, cle, public, texte, params, portee, cleTexte? }], menaces: [{ type, force, faction, texte, cle, params }] }
 export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
   const h = hasard ?? creerHasard(`${mondeEntree?.graine}|jour|${jour}`);
   // Compatibilité avec la signature du contrat (bruitParRegion en 5e argument).
@@ -149,7 +152,8 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
   const bruit = ctx.bruitParRegion ?? {};
   const regions = regionsDe(contenu).filter(r => monde.regions[r.cle]);
   const faits = [];
-  const fait = (region, cle, texte, portee = "region", extra = {}) => faits.push({ jour, region, cle, public: false, texte, portee, ...extra });
+  // fait(region, cle, texte, portee, extra, params) : `params` nourrit la traduction de `cle` (ou de extra.cleTexte).
+  const fait = (region, cle, texte, portee = "region", extra = {}, params = {}) => faits.push({ jour, region, cle, public: false, texte, params, portee, ...extra });
   const nomRegion = cle => regionDe(contenu, cle)?.nom ?? cle;
   const nouvelId = prefixe => `${prefixe}${++monde.compteur}`;
 
@@ -157,7 +161,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
   for (const r of regions) for (const res of RESEAUX) {
     if (monde.coupures[r.cle]?.[res] === jour) {
       const textes = { electricite: "l'électricité est coupée", eau: "l'eau ne coule plus au robinet", carburant: "plus une goutte de carburant à la pompe", telephone: "le téléphone ne passe plus" };
-      fait(r.cle, `reseau-${res}`, `${nomRegion(r.cle)} : ${textes[res]}.`, "radio");
+      fait(r.cle, `reseau-${res}`, `${nomRegion(r.cle)} : ${textes[res]}.`, "radio", {}, { region: nomRegion(r.cle) });
     }
   }
 
@@ -167,10 +171,10 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
   // 3. Météo : cyclone.
   const c = monde.cyclone;
   if (c) {
-    if (jour === c.arrivee - 1) { c.alerte = "orange"; fait(c.trajectoire[0], "cyclone-orange", `Alerte orange : le cyclone ${c.nom} arrive demain.`, "radio"); }
+    if (jour === c.arrivee - 1) { c.alerte = "orange"; fait(c.trajectoire[0], "cyclone-orange", `Alerte orange : le cyclone ${c.nom} arrive demain.`, "radio", {}, { cyclone: c.nom }); }
     else if (jour === c.arrivee) {
       c.alerte = "rouge";
-      fait(c.trajectoire[0], "cyclone-rouge", `Alerte rouge : le cyclone ${c.nom} frappe l'île.`, "ile", { force: c.force, trajectoire: [...c.trajectoire] });
+      fait(c.trajectoire[0], "cyclone-rouge", `Alerte rouge : le cyclone ${c.nom} frappe l'île.`, "ile", { force: c.force, trajectoire: [...c.trajectoire] }, { cyclone: c.nom });
       for (const cle of c.trajectoire) {
         const reg = monde.regions[cle];
         const routes = {};
@@ -179,7 +183,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
         reg.nature.cueillette = Math.round(reg.nature.cueillette * 50) / 100;
         for (const ho of monde.hordes) if (ho.region === cle) ho.taille -= 1;
       }
-    } else if (jour === c.arrivee + 1) { c.alerte = "passe"; fait(c.trajectoire[0], "cyclone-passe", `Le cyclone ${c.nom} s'éloigne.`, "radio"); }
+    } else if (jour === c.arrivee + 1) { c.alerte = "passe"; fait(c.trajectoire[0], "cyclone-passe", `Le cyclone ${c.nom} s'éloigne.`, "radio", {}, { cyclone: c.nom }); }
     else if (jour >= c.arrivee + 3) monde.cyclone = null;
   } else if (saison === "pluies" && saisonDuJour(jour + 2, dateDepart) === "pluies" && chance(R.cyclone.chance, h) && regions.length) {
     const force = tirerPoids(R.cyclone.forces, h);
@@ -188,7 +192,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
     const nom = NOMS_CYCLONES[(monde.cyclones ?? 0) % NOMS_CYCLONES.length];
     monde.cyclones = (monde.cyclones ?? 0) + 1;
     monde.cyclone = { nom, alerte: "pre-alerte", arrivee: jour + 2, force, trajectoire };
-    fait(trajectoire[0], "cyclone-pre-alerte", `Pré-alerte cyclonique : ${monde.cyclone.nom} approche, arrivée dans deux jours.`, "radio", { force });
+    fait(trajectoire[0], "cyclone-pre-alerte", `Pré-alerte cyclonique : ${monde.cyclone.nom} approche, arrivée dans deux jours.`, "radio", { force }, { cyclone: nom });
   }
 
   // 4. Fortes pluies.
@@ -199,7 +203,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
     const cle = possibles.length ? choisir(possibles, h) : "fortes-pluies";
     const duree = entier(1, 3, h);
     monde.regions[r.cle].evenements.push({ cle, depuis: jour, jusqua: jour + duree - 1, routes: routesTouchees(r, cle) });
-    fait(r.cle, cle, `${nomRegion(r.cle)} : fortes pluies, ${cle === "eboulement" ? "éboulements sur la route" : cle === "crue" ? "radiers submergés" : "routes noyées"}.`, "voisins");
+    fait(r.cle, cle, `${nomRegion(r.cle)} : fortes pluies, ${cle === "eboulement" ? "éboulements sur la route" : cle === "crue" ? "radiers submergés" : "routes noyées"}.`, "voisins", {}, { region: nomRegion(r.cle) });
   }
 
   // 5. Éruption.
@@ -245,7 +249,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
       if (reg.infestation >= R.horde.seuil && chance(R.horde.naissance, h)) {
         const horde = { id: nouvelId("h"), region: r.cle, taille: entier(1, 3, h), cap: null, depuis: jour };
         monde.hordes.push(horde);
-        fait(r.cle, "horde-nait", `Une horde se forme à ${nomRegion(r.cle)} (taille ${horde.taille}).`, "voisins", { horde: horde.id });
+        fait(r.cle, "horde-nait", `Une horde se forme à ${nomRegion(r.cle)} (taille ${horde.taille}).`, "voisins", { horde: horde.id }, { region: nomRegion(r.cle), taille: horde.taille });
       }
     }
   }
@@ -256,7 +260,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
       const de = ho.region;
       ho.region = ho.cap;
       ho.cap = null;
-      fait(ho.region, "horde-arrive", `Une horde venue de ${nomRegion(de)} entre à ${nomRegion(ho.region)}.`, "voisins", { horde: ho.id, de });
+      fait(ho.region, "horde-arrive", `Une horde venue de ${nomRegion(de)} entre à ${nomRegion(ho.region)}.`, "voisins", { horde: ho.id, de }, { de: nomRegion(de), region: nomRegion(ho.region) });
     } else {
       ho.cap = null;
       if (chance(R.horde.mouvement, h)) {
@@ -265,7 +269,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
         const choix = tirerPoids(options, h);
         if (choix) {
           ho.cap = choix.v;
-          fait(choix.v, "horde-approche", `Une horde quitte ${nomRegion(ho.region)} vers ${nomRegion(choix.v)}.`, "voisins", { horde: ho.id, de: ho.region });
+          fait(choix.v, "horde-approche", `Une horde quitte ${nomRegion(ho.region)} vers ${nomRegion(choix.v)}.`, "voisins", { horde: ho.id, de: ho.region }, { de: nomRegion(ho.region), vers: nomRegion(choix.v) });
         }
       }
     }
@@ -277,7 +281,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
     if (phase === "apres" && Number(r?.altitude) < ALTITUDE_BAS) p += R.horde.dispersionChaleur;
     if (chance(p, h)) ho.taille -= 1;
   }
-  for (const ho of monde.hordes) if (ho.taille <= 0) fait(ho.region, "horde-dispersee", `La horde de ${nomRegion(ho.region)} se disperse.`, "region", { horde: ho.id });
+  for (const ho of monde.hordes) if (ho.taille <= 0) fait(ho.region, "horde-dispersee", `La horde de ${nomRegion(ho.region)} se disperse.`, "region", { horde: ho.id }, { region: nomRegion(ho.region) });
   monde.hordes = monde.hordes.filter(ho => ho.taille > 0).map(ho => ({ ...ho, taille: Math.min(5, ho.taille) }));
 
   // 10. Pillage par les autres, nature.
@@ -310,7 +314,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
         if (v && monde.regions[v]) {
           monde.regions[v].factions[f] = borner((monde.regions[v].factions[f] ?? 0) + 0.5, 0, 5);
           reg.factions[f] = borner(reg.factions[f] - 0.3, 0, 5);
-          fait(v, "faction-arrive", `Un convoi de ${def?.nom ?? f} arrive à ${nomRegion(v)}.`, "voisins", { faction: f });
+          fait(v, "faction-arrive", `Un convoi de ${def?.nom ?? f} arrive à ${nomRegion(v)}.`, "voisins", { faction: f }, { faction: def?.nom ?? f, region: nomRegion(v) });
         }
       }
     }
@@ -320,7 +324,8 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
       const forte = Object.entries(reg.factions).filter(([, x]) => x >= 1).sort((x, y) => y[1] - x[1])[0];
       if (forte && chance(R.faction.occupation, h)) {
         a.occupe = forte[0];
-        fait(r.cle, "abri-occupe", `${factionDe(contenu, forte[0])?.nom ?? forte[0]} s'installe dans un abri abandonné (${a.site}).`, "region", { site: a.site, faction: forte[0] });
+        const nomFaction = factionDe(contenu, forte[0])?.nom ?? forte[0], nomSite = siteDe(contenu, a.site)?.nom ?? a.site;
+        fait(r.cle, "abri-occupe", `${nomFaction} s'installe dans un abri abandonné (${nomSite}).`, "region", { site: a.site, faction: forte[0] }, { faction: nomFaction, site: nomSite });
         continue;
       }
       a.installations = (a.installations ?? []).map(i => (chance(R.faction.degradation, h) ? { ...i, etat: Math.min(3, (Number(i.etat) || 0) + 1) } : i));
@@ -333,7 +338,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
 
   // 13. Publicité des faits, journal secret.
   for (const f of faits) f.public = perceptible(f, monde, contenu, ctx);
-  for (const f of faits) if (!f.public) monde.journalSecret.push({ jour, texte: f.texte });
+  for (const f of faits) if (!f.public) monde.journalSecret.push({ jour, texte: f.texte, cle: cleTexteDe(f), params: f.params ?? {} });
   if (monde.journalSecret.length > JOURNAL_SECRET_MAX) monde.journalSecret = monde.journalSecret.slice(-JOURNAL_SECRET_MAX);
   monde.jour = jour;
   return { monde, faits, menaces };
@@ -361,7 +366,8 @@ function appliquerEvenement(monde, contenu, e, r, jour, h, fait, nouvelId) {
   if (Number(eff.horde) > 0) monde.hordes.push({ id: nouvelId("h"), region: r.cle, taille: borner(Number(eff.horde), 1, 5), cap: null, depuis: jour });
   if (eff.faction && factionDe(contenu, eff.faction)) reg.factions[eff.faction] = borner((reg.factions[eff.faction] ?? 0) + (Number(eff.force) || 0.5), 0, 5);
   if (eff.nature && typeof eff.nature === "object") for (const [k, d] of Object.entries(eff.nature)) if (k in reg.nature) reg.nature[k] = Math.max(0, Math.round(reg.nature[k] * (1 + Math.max(-1, Number(d) || 0)) * 100) / 100);
-  fait(r.cle, e.cle, `${regionDe(contenu, r.cle)?.nom ?? r.cle} : ${e.nom ?? e.cle}. ${sansBalises(e.texte)}`.trim(), e.public === false ? "region" : "voisins", { evenement: e.cle });
+  const region = regionDe(contenu, r.cle)?.nom ?? r.cle, nom = e.nom ?? e.cle, texte = sansBalises(e.texte);
+  fait(r.cle, e.cle, `${region} : ${nom}. ${texte}`.trim(), e.public === false ? "region" : "voisins", { evenement: e.cle, cleTexte: "evenement" }, { region, nom, texte });
 }
 
 // Les menaces du jour contre l'abri (§1.7). abri : { visibilite, bruit, defense }.
@@ -373,10 +379,10 @@ export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jou
   const menaces = [];
   for (const ho of monde.hordes ?? []) {
     if (ho.region !== region) continue;
-    if (chance(0.3 + 0.05 * br + 0.04 * vis, hasard)) menaces.push({ type: "horde", force: 2 * ho.taille + 1, horde: ho.id, texte: `Une horde (taille ${ho.taille}) trouve l'abri.` });
+    if (chance(0.3 + 0.05 * br + 0.04 * vis, hasard)) menaces.push({ type: "horde", force: 2 * ho.taille + 1, horde: ho.id, texte: `Une horde (taille ${ho.taille}) trouve l'abri.`, cle: "menace-horde", params: { taille: ho.taille } });
   }
   if (reg.infestation > 0.2 && chance(reg.infestation * 0.04 * (1 + br / 10) + 0.01 * vis, hasard)) {
-    menaces.push({ type: "livides", force: Math.max(1, Math.round(reg.infestation)), texte: "Des Livides errants rôdent autour de l'abri." });
+    menaces.push({ type: "livides", force: Math.max(1, Math.round(reg.infestation)), texte: "Des Livides errants rôdent autour de l'abri.", cle: "menace-livides", params: {} });
   }
   for (const [f, force] of Object.entries(reg.factions ?? {})) {
     if (force < 0.5) continue;
@@ -384,13 +390,13 @@ export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jou
     const attitude = def?.attitude ?? "mefiante";
     if (attitude === "hostile" || attitude === "mefiante") {
       const p = 0.01 * force * (1 + vis) / (attitude === "mefiante" ? 2 : 1);
-      if (chance(p, hasard)) menaces.push({ type: "bande", force: Math.ceil(1.5 * force) + 1, faction: f, attitude, texte: `${def?.nom ?? f} s'intéresse à l'abri.` });
+      if (chance(p, hasard)) menaces.push({ type: "bande", force: Math.ceil(1.5 * force) + 1, faction: f, attitude, texte: `${def?.nom ?? f} s'intéresse à l'abri.`, cle: "menace-bande", params: { faction: def?.nom ?? f } });
     } else if (chance(0.02 * force * (1 + vis / 2), hasard)) {
-      menaces.push({ type: "visite", force: 0, faction: f, attitude, texte: `${def?.nom ?? f} vient à la rencontre du groupe.` });
+      menaces.push({ type: "visite", force: 0, faction: f, attitude, texte: `${def?.nom ?? f} vient à la rencontre du groupe.`, cle: "menace-visite", params: { faction: def?.nom ?? f } });
     }
   }
-  if (CLES_PHASES.indexOf(phase) >= 1 && chance(0.02, hasard)) menaces.push({ type: "animaux", force: 2, texte: "Une meute de chiens errants, affamés." });
-  if (chance(0.01, hasard)) menaces.push({ type: "accident", force: 0, texte: "Un accident à l'abri (chute, feu de cuisine, outil qui casse)." });
+  if (CLES_PHASES.indexOf(phase) >= 1 && chance(0.02, hasard)) menaces.push({ type: "animaux", force: 2, texte: "Une meute de chiens errants, affamés.", cle: "menace-animaux", params: {} });
+  if (chance(0.01, hasard)) menaces.push({ type: "accident", force: 0, texte: "Un accident à l'abri (chute, feu de cuisine, outil qui casse).", cle: "menace-accident", params: {} });
   return menaces.sort((a, b) => b.force - a.force).slice(0, R.menacesMax);
 }
 

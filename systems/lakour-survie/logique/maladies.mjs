@@ -21,6 +21,7 @@
 //   (avec ses médicaments) la marque traitée : plus d'aggravation, la durée restante est divisée par 2 (au supérieur) et une
 //   affliction aggravée revient à ses effets de base. Les médicaments sont consommés même si le soin échoue.
 import { ALTITUDE_BAS } from "./constantes.mjs";
+import { message } from "./textes.mjs";
 
 export const ALTITUDE_MOUSTIQUES = 800;
 export const FACTEURS_MALADIES = {
@@ -99,19 +100,20 @@ export function evoluerAfflictions(system, defs, jour) {
 }
 
 // Soigner une affliction (résultat d'un test de la compétence de `def.soin`). Les médicaments sont pris dans `stocks`.
-// -> { ok, raison, system, stocks }
+// -> { ok, raison, motif: { cle, params, texte } | null, system, stocks }
 export function soignerAffliction(system, def, resultat, stocks = {}) {
   const med = Math.max(0, Number(def?.soin?.medicaments) || 0);
-  if ((Number(stocks.medicaments) || 0) < med) return { ok: false, raison: `il faut ${med} médicament${med > 1 ? "s" : ""}`, system, stocks };
+  const refus = (raison, cle, params, sys, st) => ({ ok: false, raison, motif: message(cle, params, raison), system: sys, stocks: st });
+  if ((Number(stocks.medicaments) || 0) < med) return refus(`il faut ${med} médicament${med > 1 ? "s" : ""}`, "soin-medicaments", { n: med }, system, stocks);
   const st = { ...stocks, medicaments: (Number(stocks.medicaments) || 0) - med };
   const s = { ...structuredClone(system), afflictions: structuredClone(system?.afflictions ?? []) };
   const a = s.afflictions.find(x => x.cle === def?.cle);
-  if (!a) return { ok: false, raison: "pas atteint", system, stocks };
-  if (!resultat?.reussite) return { ok: false, raison: "le soin n'a pas pris", system: s, stocks: st };
+  if (!a) return refus("pas atteint", "soin-pas-atteint", {}, system, stocks);
+  if (!resultat?.reussite) return refus("le soin n'a pas pris", "soin-rate", {}, s, st);
   a.traitee = true;
   a.reste = Math.ceil(a.reste / 2);
   if (a.stade === "aggravee") { a.stade = "active"; a.malus = Number(def.effets?.malus) || 0; a.fatigue = Number(def.effets?.fatigue) || 0; }
-  return { ok: true, raison: "", system: s, stocks: st };
+  return { ok: true, raison: "", motif: null, system: s, stocks: st };
 }
 
 // Le tirage du jour pour un groupe : nouvelles afflictions (risque des conditions de vie, puis contagion).

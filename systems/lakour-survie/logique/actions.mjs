@@ -36,6 +36,7 @@ import { exploiterNature, installationsDuSite } from "./abri.mjs";
 import { normaliserStocks, ajouterStocks } from "./ressources.mjs";
 import { abandonnerAbri, reprendreAbri } from "./monde.mjs";
 import { phaseDuJour, momentDe } from "./temps.mjs";
+import { message } from "./textes.mjs";
 
 export const REGLES_ACTIONS = {
   rencontre: {
@@ -53,7 +54,9 @@ export const REGLES_ACTIONS = {
 };
 
 // ------------------------------------------------------------------ rencontres
-// contexte : "fouille" | "exploration" | "route". -> null | { type, nombre, faction, attitude, danger, region, texte }
+// contexte : "fouille" | "exploration" | "route". -> null | { type, nombre, faction, attitude, danger, region, texte, cle, params }
+// (texte en français, cle/params pour la traduction : textes.mjs ; `creature` des params est vide pour la créature par défaut,
+// que la couche Foundry nomme d'après `creatureCle`).
 export function tirerRencontre(monde, contenu, hasard, { region, jour = monde?.jour ?? 0, moment = "apres-midi", prudence = "normal", contexte = "fouille", bruit = 0 } = {}) {
   const R = REGLES_ACTIONS.rencontre;
   const reg = monde?.regions?.[region];
@@ -70,28 +73,32 @@ export function tirerRencontre(monde, contenu, hasard, { region, jour = monde?.j
   if (type === "livides") {
     const nombre = Math.max(1, Math.round(inf * (0.5 + hasard())) + (prudence === "rapide" ? 1 : 0));
     const c = tirerCreature(contenu, hasard, { espece: "livide", region: def, jour, phase });
-    return { type, nombre, region, creature: c.cle, des: c.des, resistance: c.resistance, texte: `${nombre} × ${c.nom ?? "Livide"} à ${nom}.` };
+    return { type, nombre, region, creature: c.cle, des: c.des, resistance: c.resistance, texte: `${nombre} × ${c.nom ?? "Livide"} à ${nom}.`,
+      ...message("rencontre-livides", { nombre, creature: c.defaut ? "" : c.nom ?? "", creatureCle: c.cle, region: nom }) };
   }
   if (type === "humains") {
     const faction = tirerPoids(Object.entries(reg.factions ?? {}).map(([f, x]) => [f, x]), hasard) ?? null;
     const fdef = faction ? factionDe(contenu, faction) : null;
     const attitude = fdef?.attitude ?? choisir(["neutre", "mefiante"], hasard);
     const nombre = 1 + Math.floor((faction ? reg.factions[faction] : 1) * hasard() * 2);
-    return { type, nombre, faction, attitude, region, texte: faction ? `${fdef?.nom ?? faction} : ${nombre} personne${nombre > 1 ? "s" : ""}.` : `Des survivants isolés (${nombre}).` };
+    return { type, nombre, faction, attitude, region, texte: faction ? `${fdef?.nom ?? faction} : ${nombre} personne${nombre > 1 ? "s" : ""}.` : `Des survivants isolés (${nombre}).`,
+      ...(faction ? message("rencontre-humains", { faction: fdef?.nom ?? faction, nombre }) : message("rencontre-isoles", { nombre })) };
   }
   if (type === "animaux") {
     const nombre = entier(2, 5, hasard);
     const c = tirerCreature(contenu, hasard, { espece: "animal", region: def, jour, phase });
-    return { type, nombre, region, creature: c.cle, des: c.des, resistance: c.resistance, texte: `${nombre} × ${c.nom ?? "chien errant"}.` };
+    return { type, nombre, region, creature: c.cle, des: c.des, resistance: c.resistance, texte: `${nombre} × ${c.nom ?? "chien errant"}.`,
+      ...message("rencontre-animaux", { nombre, creature: c.defaut ? "" : c.nom ?? "", creatureCle: c.cle }) };
   }
   const dangers = (def?.dangers ?? []).filter(d => ["crue", "eboulement", "incendie"].includes(d));
   const danger = choisir(dangers.length ? dangers : ["eboulement", "incendie", "crue"], hasard);
   const textes = { crue: "un radier en crue", eboulement: "un éboulement", incendie: "un incendie" };
-  return { type: "danger", nombre: 0, danger, region, texte: `Danger : ${textes[danger] ?? danger}.` };
+  return { type: "danger", nombre: 0, danger, region, texte: `Danger : ${textes[danger] ?? danger}.`, ...message(`rencontre-danger-${danger}`, { danger }) };
 }
 
-export const CREATURE_DEFAUT = { livide: { cle: "livide", nom: "Livide", type: "livide", des: 1, resistance: 1 },
-  animal: { cle: "chien-errant", nom: "chien errant", type: "animal", des: 1, resistance: 1 } };
+// Les créatures sans bestiaire (`defaut` : la couche Foundry les nomme dans sa langue, LAKOUR_SURVIE.Creatures.<cle>).
+export const CREATURE_DEFAUT = { livide: { cle: "livide", nom: "Livide", type: "livide", des: 1, resistance: 1, defaut: true },
+  animal: { cle: "chien-errant", nom: "chien errant", type: "animal", des: 1, resistance: 1, defaut: true } };
 
 const borneOk = (x, test) => x === undefined || x === null || test(Number(x));
 
@@ -114,7 +121,7 @@ export function explorer(monde, contenu, hasard, { region, jour = monde?.jour ??
   const nom = regionDe(contenu, region)?.nom ?? region;
   return {
     renseignement: nouveaux[region] ?? null, renseignements: nouveaux, rencontre, monde,
-    faits: [{ jour, region, cle: "exploration", public: true, texte: `Le groupe explore ${nom}.` }]
+    faits: [{ jour, region, cle: "exploration", public: true, texte: `Le groupe explore ${nom}.`, params: { region: nom } }]
   };
 }
 
@@ -163,11 +170,13 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
   const rencontre = tirerRencontre(nouveauMonde, contenu, hasard, { region, jour, moment, prudence: p, contexte: "fouille" });
   const bruit = NATURE.includes(cible) ? 0 : F.bruit[p];
   const lu = Object.entries(butin).map(([r, q]) => `${q} ${r}`).join(", ") || "rien";
+  const nomSite = site ? siteDe(contenu, site)?.nom ?? site : "";
   return {
     butin, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
     renseignements: observer(renseignements, nouveauMonde, contenu, region, jour, "vu"),
     fouille: !NATURE.includes(cible),
-    faits: [{ jour, region, cle: "fouille", public: true, texte: `Fouille ${site ? `de ${siteDe(contenu, site)?.nom ?? site} ` : ""}à ${nom} : ${lu}.` }]
+    faits: [{ jour, region, cle: site ? "fouille" : "fouille-region", public: true, texte: `Fouille ${site ? `de ${nomSite} ` : ""}à ${nom} : ${lu}.`,
+      params: { region: nom, site: nomSite, butin: { ...butin } } }]
   };
 }
 
@@ -255,20 +264,22 @@ export function chargeMax({ transport = "pied", membres = 1, vehicules = 1 } = {
 // ------------------------------------------------------------------ voyager
 // transport : "pied" | "vehicule" | "bateau" ou un véhicule du contenu ; vehicules : combien (charge).
 // carburant : ce dont dispose le groupe (null = ne pas vérifier). quart : quart de départ (pour les moments des rencontres).
-// -> { possible, raison, chemin, etapes, quarts, km, carburant, bruit, rencontres, rencontre, renseignements, faits, cheminConnu }
+// -> { possible, raison, motif: { cle, params, texte } | null, chemin, etapes, quarts, km, carburant, bruit, rencontres, rencontre,
+//      renseignements, faits, cheminConnu }
 export function voyager(monde, contenu, hasard, { de, vers, transport = "pied", membres = 1, vehicules = 1, charge = 0, quart = 0, jour = Math.floor(quart / 4),
   renseignements = {}, carburant = null } = {}) {
   const connu = cheminConnu(contenu, renseignements, de, vers, transport);
-  const refus = raison => ({ possible: false, raison, chemin: [], etapes: [], quarts: 0, km: 0, carburant: 0, rencontres: [], rencontre: null, renseignements, faits: [], cheminConnu: connu });
-  if (de === vers) return refus("déjà sur place");
+  const refus = (raison, cle, params = {}) => ({ possible: false, raison, motif: message(cle, params, raison), chemin: [], etapes: [], quarts: 0, km: 0, carburant: 0,
+    rencontres: [], rencontre: null, renseignements, faits: [], cheminConnu: connu });
+  if (de === vers) return refus("déjà sur place", "voyage-deja-sur-place");
   const max = chargeMax({ transport, membres, vehicules });
-  if (Number(charge) > max) return refus(`trop chargé : ${charge} unités pour ${max} au plus`);
+  if (Number(charge) > max) return refus(`trop chargé : ${charge} unités pour ${max} au plus`, "voyage-trop-charge", { charge, max });
   const c = cheminReel(monde, contenu, de, vers, transport);
   const nomTransport = estVehicule(transport) ? transport.nom ?? transport.cle : transport;
-  if (!c) return refus(transport === "pied" ? "aucune route praticable" : `aucune route praticable en ${nomTransport}`);
+  if (!c) return transport === "pied" ? refus("aucune route praticable", "voyage-aucune-route") : refus(`aucune route praticable en ${nomTransport}`, "voyage-aucune-route-transport", { transport: nomTransport });
   const besoin = carburantPour(c.km, transport, c.quarts);
   const bruit = estVehicule(transport) ? Math.max(0, Number(transport.bruit) || 0) : transport === "pied" ? 0 : 2;
-  if (carburant !== null && besoin > Number(carburant)) return refus(`il faut ${besoin} carburant (il y en a ${carburant})`);
+  if (carburant !== null && besoin > Number(carburant)) return refus(`il faut ${besoin} carburant (il y en a ${carburant})`, "voyage-carburant", { besoin, carburant });
   const rencontres = [];
   let r = renseignements, q = quart;
   for (const e of c.etapes) {
@@ -278,10 +289,12 @@ export function voyager(monde, contenu, hasard, { de, vers, transport = "pied", 
     r = observer(r, monde, contenu, e.vers, jour, "vu");
   }
   const nom = cle => regionDe(contenu, cle)?.nom ?? cle;
+  const chemin = c.chemin.map(nom).join(" → ");
   return {
-    possible: true, raison: "", chemin: c.chemin, etapes: c.etapes, quarts: c.quarts, km: c.km, carburant: besoin, bruit,
+    possible: true, raison: "", motif: null, chemin: c.chemin, etapes: c.etapes, quarts: c.quarts, km: c.km, carburant: besoin, bruit,
     rencontres, rencontre: rencontres[0] ?? null, renseignements: r, cheminConnu: connu,
-    faits: [{ jour, region: vers, cle: "voyage", public: true, texte: `Le groupe part de ${nom(de)} pour ${nom(vers)} (${c.chemin.map(nom).join(" → ")}, ${c.quarts} quart${c.quarts > 1 ? "s" : ""}).` }]
+    faits: [{ jour, region: vers, cle: "voyage", public: true, texte: `Le groupe part de ${nom(de)} pour ${nom(vers)} (${chemin}, ${c.quarts} quart${c.quarts > 1 ? "s" : ""}).`,
+      params: { de: nom(de), vers: nom(vers), chemin, quarts: c.quarts } }]
   };
 }
 
@@ -309,14 +322,15 @@ export function demenager(monde, { abri, installations = [], emporter = {}, tran
 
 // S'installer sur un site : un abri abandonné inoccupé se reprend (installations et stocks laissés) ; sinon on trouve les
 // stocks du site, entamés comme la région (pillage réel), une seule fois (monde.regions[r].sitesVisites).
-// -> { ok, raison, abri, installations, monde, repris }
+// -> { ok, raison, motif: { cle, params, texte } | null, abri, installations, monde, repris }
 export function installerAbri(monde, contenu, { site, jour = 0, quart = jour * 4, apport = {} } = {}) {
   const s = siteDe(contenu, site);
-  if (!s) return { ok: false, raison: "site inconnu", abri: null, installations: [], monde, repris: false };
+  const refus = (raison, cle, params = {}) => ({ ok: false, raison, motif: message(cle, params, raison), abri: null, installations: [], monde, repris: false });
+  if (!s) return refus("site inconnu", "site-inconnu");
   const region = s.region;
   const reg = monde?.regions?.[region];
   const deja = reg?.abrisAbandonnes?.find(a => a.site === site);
-  if (deja?.occupe) return { ok: false, raison: `occupé par ${factionDe(contenu, deja.occupe)?.nom ?? deja.occupe}`, abri: null, installations: [], monde, repris: false };
+  if (deja?.occupe) { const faction = factionDe(contenu, deja.occupe)?.nom ?? deja.occupe; return refus(`occupé par ${faction}`, "site-occupe", { faction }); }
   let nouveau = structuredClone(monde);
   let stocks, installations, repris = false;
   if (deja) {
@@ -343,7 +357,7 @@ export function installerAbri(monde, contenu, { site, jour = 0, quart = jour * 4
     site, region, installeLe: quart, abandonneLe: null, stocks,
     nature: { ...(nouveau.regions[region]?.nature ?? {}) }, sol: Number(s.sol) || 0, bruit: 0, degats: 0, notes: ""
   };
-  return { ok: true, raison: "", abri, installations, monde: nouveau, repris };
+  return { ok: true, raison: "", motif: null, abri, installations, monde: nouveau, repris };
 }
 
 // ------------------------------------------------------------------ assaut, combat (§1.7)
@@ -402,6 +416,6 @@ export function rencontreForcee(monde, contenu, hasard, { region, type = null, j
     const r = tirerRencontre(monde, contenu, hasard, { region, jour, moment, contexte: "fouille", prudence: "rapide" });
     if (r && (!type || r.type === type)) return r;
   }
-  return type === "livides" ? { type, nombre: 1, region, texte: "Un Livide isolé." } : null;
+  return type === "livides" ? { type, nombre: 1, region, texte: "Un Livide isolé.", ...message("rencontre-livide-isole") } : null;
 }
 

@@ -4,7 +4,7 @@
 // Chaque bouton appelle game.lakourSurvie : les gardes de l'API (MJ actif, monde ouvert) s'appliquent.
 import { ID, COMPETENCES, RESSOURCES, NATURE, DIFFICULTES, PRUDENCES, TRANSPORTS } from "../../logique/constantes.mjs";
 import * as L from "../../logique/index.mjs";
-import { t, lireEtat, sansBalises, libelleCompetence, libelleRessource, survivantsDuGroupe, abriCourant, erreurLisible } from "../donnees.mjs";
+import { t, lireEtat, sansBalises, localiser, libelleCompetence, libelleRessource, survivantsDuGroupe, abriCourant, erreurLisible } from "../donnees.mjs";
 import { estMJActif } from "../canal.mjs";
 import { CHEMIN, essayer, lireChamps, options } from "./commun.mjs";
 
@@ -34,7 +34,7 @@ export function resumeMonde(monde, c = contenu()) {
     hordes: (monde.hordes ?? []).map(h => ({ region: L.regionDe(c, h.region)?.nom ?? h.region, taille: h.taille, cap: h.cap ? L.regionDe(c, h.cap)?.nom ?? h.cap : "" })),
     cyclone: monde.cyclone ? { ...monde.cyclone, trajectoire: (monde.cyclone.trajectoire ?? []).map(r => L.regionDe(c, r)?.nom ?? r).join(", ") } : null,
     eruption: monde.eruption ? { ...monde.eruption } : null,
-    journal: [...(monde.journalSecret ?? [])].reverse().slice(0, 20).map(e => ({ jour: e.jour, texte: sansBalises(e.texte) })),
+    journal: [...(monde.journalSecret ?? [])].reverse().slice(0, 20).map(e => ({ jour: e.jour, texte: sansBalises(localiser(e)) })),
     graine: monde.graine
   };
 }
@@ -82,7 +82,7 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     afflictions: options(L.liste(c.afflictions).map(a => [a.cle, a.nom]), ""),
     fetes: fetes.map(f => ({ cle: f.cle, nom: f.nom, coeur: f.coeur })),
     dateDepart: game.settings.get(ID, "dateDepart"),
-    menaces: (monde?.menaces ?? []).map(m => ({ ...m, typeLibelle: t(`LAKOUR_SURVIE.Menaces.${m.type}`), texte: sansBalises(m.texte) })),
+    menaces: (monde?.menaces ?? []).map(m => ({ ...m, typeLibelle: t(`LAKOUR_SURVIE.Menaces.${m.type}`), texte: sansBalises(localiser(m)) })),
     paliers: [...(monde?.paliers ?? [])].reverse().slice(0, 6),
     monde: onglet === "monde" ? resumeMonde(monde, c) : null,
     recrue: CACHE.recrue
@@ -96,7 +96,7 @@ const resume = r => {
   const dire = (cle, v) => { if (v !== undefined && v !== null && v !== "" && !(Array.isArray(v) && !v.length)) lignes.push(`${cle} : ${typeof v === "object" ? JSON.stringify(v) : v}`); };
   for (const [k, v] of Object.entries(r)) if (!["faits", "etat", "test"].includes(k)) dire(k, v);
   if (r.test) dire("test", `${r.test.succes}/${r.test.requis} ${r.test.reussite ? "✔" : "✘"}`);
-  for (const f of r.faits ?? []) lignes.push(`• ${sansBalises(f.texte)}`);
+  for (const f of r.faits ?? []) lignes.push(`• ${sansBalises(localiser(f))}`);
   return lignes.join("\n");
 };
 

@@ -11,34 +11,37 @@
 import { resoudreTest } from "./des.mjs";
 import { couvre, retirerStocks, ajouterStocks, normaliserStocks } from "./ressources.mjs";
 import { COMPETENCES, RESSOURCES } from "./constantes.mjs";
+import { message } from "./textes.mjs";
 
 export const BONUS_MARGE_FABRICATION = 2;
 
 const requisInstallation = r => (typeof r === "string" ? { cle: r, niveau: 1 } : r ? { cle: r.cle, niveau: Number(r.niveau) || 1 } : null);
 
-// -> { ok, raisons: [String], cout, quarts }
+// -> { ok, raisons: [String], motifs: [{ cle, params, texte }] (les mêmes, traduisibles : textes.mjs), cout, quarts }
 export function peutFabriquer(recette, { stocks = {}, installations = [], savoirs = [], bras = 1 } = {}) {
-  if (!recette) return { ok: false, raisons: ["recette inconnue"], cout: {}, quarts: 0 };
-  const raisons = [];
-  for (const s of recette.requiert?.savoirs ?? []) if (!savoirs.includes(s)) raisons.push(`savoir-faire manquant : ${s}`);
+  const raisons = [], motifs = [];
+  const refuser = (texte, cle, params = {}) => { raisons.push(texte); motifs.push(message(cle, params, texte)); };
+  if (!recette) { refuser("recette inconnue", "recette-inconnue"); return { ok: false, raisons, motifs, cout: {}, quarts: 0 }; }
+  for (const s of recette.requiert?.savoirs ?? []) if (!savoirs.includes(s)) refuser(`savoir-faire manquant : ${s}`, "savoir-manquant", { savoir: s });
   const ri = requisInstallation(recette.requiert?.installation);
   if (ri) {
     const i = installations.find(x => x.cle === ri.cle);
-    if (!i || Number(i.niveau) < ri.niveau) raisons.push(`il faut : ${ri.cle} niveau ${ri.niveau}`);
-    else if (Number(i.etat) >= 3) raisons.push(`${ri.cle} est hors service`);
+    if (!i || Number(i.niveau) < ri.niveau) refuser(`il faut : ${ri.cle} niveau ${ri.niveau}`, "requiert", { installation: ri.cle, niveau: ri.niveau });
+    else if (Number(i.etat) >= 3) refuser(`${ri.cle} est hors service`, "requiert-hors-service", { installation: ri.cle });
   }
   const cout = Object.fromEntries(Object.entries(recette.cout ?? {}).map(([r, q]) => [r, Math.max(0, Number(q) || 0)]));
   if (!couvre(stocks, cout)) {
-    raisons.push(`il manque : ${Object.entries(cout).filter(([r, q]) => (Number(stocks?.[r]) || 0) < q).map(([r, q]) => `${q - (Number(stocks?.[r]) || 0)} ${r}`).join(", ")}`);
+    const manque = Object.fromEntries(Object.entries(cout).filter(([r, q]) => (Number(stocks?.[r]) || 0) < q).map(([r, q]) => [r, q - (Number(stocks?.[r]) || 0)]));
+    refuser(`il manque : ${Object.entries(manque).map(([r, q]) => `${q} ${r}`).join(", ")}`, "manque", { manque });
   }
-  return { ok: raisons.length === 0, raisons, cout, quarts: Math.ceil(Math.max(0, Number(recette.travail) || 0) / Math.max(1, bras)) };
+  return { ok: raisons.length === 0, raisons, motifs, cout, quarts: Math.ceil(Math.max(0, Number(recette.travail) || 0) / Math.max(1, bras)) };
 }
 
-// Fabrique : -> { ok, raisons, test, stocks, produit: { equipement?, ressource?, n } | null, quarts, perdu }
+// Fabrique : -> { ok, raisons, motifs, test, stocks, produit: { equipement?, ressource?, n } | null, quarts, perdu }
 // Un produit en ressource est déjà ajouté aux stocks rendus ; un équipement est rendu à part (objet à créer côté Foundry).
 export function fabriquer(recette, { stocks = {}, installations = [], savoirs = [], niveau = 0, bonus = 0, malus = 0, forcer = false, bras = 1, hasard = Math.random } = {}) {
   const v = peutFabriquer(recette, { stocks, installations, savoirs, bras });
-  if (!v.ok) return { ok: false, raisons: v.raisons, test: null, stocks: normaliserStocks(stocks), produit: null, quarts: 0, perdu: {} };
+  if (!v.ok) return { ok: false, raisons: v.raisons, motifs: v.motifs, test: null, stocks: normaliserStocks(stocks), produit: null, quarts: 0, perdu: {} };
   const test = resoudreTest({ niveau, difficulte: recette.difficulte ?? "normale", bonus, malus, forcer, hasard });
   let s = retirerStocks(stocks, v.cout).stocks;
   let produit = null, perdu = { ...v.cout };
@@ -55,7 +58,7 @@ export function fabriquer(recette, { stocks = {}, installations = [], savoirs = 
     s = ajouterStocks(s, rendu);
     perdu = Object.fromEntries(Object.entries(v.cout).map(([r, q]) => [r, q - rendu[r]]));
   }
-  return { ok: true, raisons: [], test, stocks: s, produit, quarts: v.quarts, perdu };
+  return { ok: true, raisons: [], motifs: [], test, stocks: s, produit, quarts: v.quarts, perdu };
 }
 
 // Vérification d'une recette (pour verifierContenu). -> [String]

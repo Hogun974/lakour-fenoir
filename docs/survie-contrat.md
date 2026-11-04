@@ -196,7 +196,7 @@ monde: {
   hordes: [ { id, region, taille 1..5, cap: regionVoisine|null, depuis } ],
   cyclone: null | { nom, alerte: "pre-alerte" | "orange" | "rouge" | "passe", arrivee: jour, force 1..3, trajectoire: [region] },
   eruption: null | { debut, fin, regions },
-  journalSecret: [ { jour, texte } ]  // ce qui s'est passé hors de la vue des joueurs (pour le MJ)
+  journalSecret: [ { jour, texte, cle, params } ]  // ce qui s'est passé hors de la vue des joueurs (pour le MJ) ; cle/params : traduction (§2.3 faits)
 }
 ```
 **Simulation d'un jour** (`logique/monde.mjs`, `simulerJour(monde, contenu, hasard, jour, bruitParRegion)` → `{ monde, faits }`,
@@ -214,9 +214,12 @@ pure, déterministe pour une graine) :
 - **Météo** : en saison des pluies, cyclone possible (pré-alerte 2 jours avant, alerte orange la veille, rouge le jour) ;
   fortes pluies : routes « difficile » ou « coupée » (radiers submergés, éboulements de la route du Littoral, de Cilaos, de
   Salazie) ; l'éruption de la Fournaise peut couper la route des Laves dans le Sud-Est.
-- **faits** : liste d'événements datés `{ jour, region, cle, public: Boolean, texte }`. `public` = ce que le groupe peut
-  voir ou entendre d'où il est (fumée d'un incendie voisin, coups de feu, la radio s'il en a une) ; le reste va au
-  journal secret.
+- **faits** : liste d'événements datés `{ jour, region, cle, public: Boolean, texte, params, cleTexte? }`. `public` = ce que
+  le groupe peut voir ou entendre d'où il est (fumée d'un incendie voisin, coups de feu, la radio s'il en a une) ; le reste
+  va au journal secret. `texte` est le français de la logique (repli) ; la couche Foundry affiche
+  `LAKOUR_SURVIE.Faits.<cleTexte ?? cle>` avec `params` dans la langue de chaque navigateur (`logique/textes.mjs`,
+  `scripts/donnees.mjs` `localiser`, `game.lakourSurvie.localiser`). Les menaces, rencontres et motifs de refus
+  (`motif`/`motifs`) portent de même `{ cle, params, texte }`.
 
 ### 2.4 Renseignements (PUBLIC) : ce que le groupe croit savoir
 ```
@@ -330,8 +333,10 @@ camion-bar, retraité de la marine…).
             plans: [cle d'installation], region: cle, enRoute: null | { de, vers, route, reste (quarts), transport } },
   renseignements: { … §2.4 },
   joursAutonomes: Number, autonome: Boolean,
-  alertes: [ { quart, type, texte } ],          // ce que le groupe sait : alerte cyclonique entendue, horde aperçue…
-  journal: [ { quart, texte } ]                 // chronique publique (les 200 dernières entrées)
+  alertes: [ { quart, type, texte, cle?, params? } ],  // ce que le groupe sait : alerte cyclonique entendue, horde aperçue…
+  journal: [ { quart, texte, cle?, params? } ]         // chronique publique (les 200 dernières entrées) ; cle/params : traduction à
+                                                       // l'affichage (clé sans point : LAKOUR_SURVIE.Faits.*, avec point : LAKOUR_SURVIE.*) ;
+                                                       // `texte` : repli (français de la logique, ou traduction au moment de l'écriture)
 }
 ```
 - Le **monde réel** (§2.3) est SECRET : réglage monde **`lakour-survie.coffre`** = l'état du monde **scellé** avec le coffre du

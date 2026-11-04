@@ -181,7 +181,7 @@ const MUTATIONS = [
   ["monde.mjs", "} else if (saison === \"pluies\" && saisonDuJour(jour + 2, dateDepart) === \"pluies\" && chance(", "} else if (chance(", "cyclones en saison des pluies"],
   ["actions.mjs", "charge: { pied: 3,", "charge: { pied: 4,", "charge à pied"],
   ["actions.mjs", "const n = Math.min(g.nombre, Math.floor(succes / g.resistance));", "const n = Math.min(g.nombre, succes);", "résistance des créatures"],
-  ["etat.mjs", "if ((etat.fetes ?? []).includes(cle)) return rien(\"déjà fêtée cette année\");", "", "fête une fois par an"],
+  ["etat.mjs", "if ((etat.fetes ?? []).includes(cle)) return rien(\"déjà fêtée cette année\", \"fete-deja\");", "", "fête une fois par an"],
   ["etat.mjs", "Boolean(bilan?.autonome) && e.fouilleLe !== jour - 1", "Boolean(bilan?.autonome)", "autonomie sans fouille"],
   ["etat.mjs", "if (palier > palierVeille) {", "if (palier > palierVeille + 9) {", "palier de visibilité"],
   ["etat.mjs", "if (c && sys.joursTache % 7 === 0) {", "if (c && sys.joursTache % 8 === 0) {", "marque de la semaine"],

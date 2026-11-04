@@ -28,6 +28,7 @@ import { entier, tirerPoids, choisir, chance } from "./hasard.mjs";
 import { liste, indexer, installationDe, siteDe } from "./contenu.mjs";
 import { survivantNeuf, peutAgir } from "./survivant.mjs";
 import { resoudreTest } from "./des.mjs";
+import { message } from "./textes.mjs";
 
 export const TACHES = {
   garde: "vigilance", cultures: "survie", elevage: "survie", chantier: "bricolage", atelier: "bricolage", cuisine: "survie",
@@ -39,10 +40,19 @@ export const JOURS_MARQUE_TACHE = 7;
 export const JOURS_SANS_PASSION = 7;
 export const JOURS_DEPART_RECRUE = 3;
 
+// Textes par défaut quand le contenu n'en donne pas (proches, raisonsRecrue, prixRecrue) : français, avec leur clé de traduction
+// (textes.mjs : proche-n, recrue-raison-n, recrue-prix-n) rendue à côté (procheCle, raisonCle, prixCle) pour la couche Foundry.
 const PROCHES = ["cherche sa sœur, restée à l'hôpital", "a perdu son père le premier soir", "attend des nouvelles de son fils, parti à la pêche",
   "a laissé sa grand-mère dans les Hauts", "ne sait pas où est sa compagne"];
 const RAISONS = ["son groupe a été dispersé", "fuit une bande", "cherche un endroit où dormir", "a entendu la radio", "suit la route depuis des jours"];
 const PRIX = ["demande une part égale des stocks", "veut qu'on aide à retrouver un proche", "se méfie de tout le monde", "a un trait difficile", "boit quand il peut"];
+// Un texte d'une liste du contenu (chaînes ou { texte | cle }), sinon d'une liste par défaut avec sa clé. -> { texte, cle }
+function tirerTexte(contenu, famille, defauts, prefixe, hasard) {
+  const l = liste(contenu?.[famille]).map(x => (typeof x === "string" ? x : x.texte ?? x.cle));
+  if (l.length) return { texte: choisir(l, hasard), cle: "" };
+  const i = Math.floor(hasard() * defauts.length) % defauts.length;
+  return { texte: defauts[i], cle: `${prefixe}-${i + 1}` };
+}
 
 const ajouter = (a, b, k = 1) => { for (const [c, n] of Object.entries(b ?? {})) a[c] = (a[c] ?? 0) + k * (Number(n) || 0); return a; };
 const union = (...l) => [...new Set(l.flat().filter(Boolean))];
@@ -116,7 +126,7 @@ export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
   }
   const competences = Object.fromEntries(COMPETENCES.map(c => [c, { niveau: niveaux[c], marques: 0 }]));
   const incapacites = union(enfance?.incapacites ?? [], passe?.incapacites ?? [], ...defsTraits.map(t => t?.incapacites ?? t?.effets?.incapacites ?? []));
-  const proches = liste(contenu?.proches).map(p => (typeof p === "string" ? p : p.texte ?? p.cle));
+  const proche = tirerTexte(contenu, "proches", PROCHES, "proche", hasard);
   return survivantNeuf({
     nom: v.nom ?? (liste(contenu?.noms).length ? choisir(liste(contenu.noms).map(n => n.nom ?? n.cle ?? n), hasard) : ""),
     age, enfance: enfance?.cle ?? "", passe: passe?.cle ?? "", passions, traits, incapacites, statut, tache: "repos",
@@ -127,7 +137,7 @@ export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
       journal: "",
       graine: {
         phrases: [...(enfance?.histoire ?? []), ...(passe?.histoire ?? [])],
-        region: options.region ?? "", age, proche: choisir(proches.length ? proches : PROCHES, hasard)
+        region: options.region ?? "", age, proche: proche.texte, procheCle: proche.cle
       }
     }
   });
@@ -193,13 +203,14 @@ export function peutFaire(system, tache) {
   return !tachesInterdites(system).includes(tache);
 }
 
-// Assigner une tâche. -> { ok, raison, system }
+// Assigner une tâche. -> { ok, raison, motif: { cle, params, texte } | null, system }
 export function assigner(system, tache, jour = 0) {
-  if (!(tache in TACHES)) return { ok: false, raison: `tâche inconnue « ${tache} »`, system };
-  if (!peutFaire(system, tache)) return { ok: false, raison: `${system?.nom || "ce survivant"} ne peut pas faire : ${tache}`, system };
+  const refus = (raison, cle, params) => ({ ok: false, raison, motif: message(cle, params, raison), system });
+  if (!(tache in TACHES)) return refus(`tâche inconnue « ${tache} »`, "tache-inconnue", { tache });
+  if (!peutFaire(system, tache)) return refus(`${system?.nom || "ce survivant"} ne peut pas faire : ${tache}`, "tache-interdite", { nom: system?.nom || "?", tache });
   const s = structuredClone(system);
   if (s.tache !== tache) { s.tache = tache; s.joursTache = 0; s.tacheDepuis = jour; }
-  return { ok: true, raison: "", system: s };
+  return { ok: true, raison: "", motif: null, system: s };
 }
 
 // Niveau effectif d'un travailleur pour une tâche (compétence + traits).
@@ -290,11 +301,12 @@ export function repartir(membres = [], besoins = { taches: {} }, contenu = {}) {
 const rang = c => ({ manquant: 2, faible: 1, couvert: 0 }[c] ?? 0);
 
 // ------------------------------------------------------------------ recrues
-// -> { survivant (system), raison, prix }
+// -> { survivant (system), raison, prix, raisonCle, prixCle (clés de traduction des textes par défaut, vides si le contenu les donne) }
 export function genererRecrue(contenu, hasard = Math.random, { besoins = null, region = "", phase = "" } = {}) {
   const survivant = genererSurvivant(contenu, hasard, { statut: "recrue", region, favoriser: besoins?.profil ?? {}, budget: null });
-  const t = (cle, def) => { const l = liste(contenu?.[cle]).map(x => (typeof x === "string" ? x : x.texte ?? x.cle)); return choisir(l.length ? l : def, hasard); };
-  return { survivant, raison: t("raisonsRecrue", RAISONS), prix: t("prixRecrue", PRIX), phase };
+  const raison = tirerTexte(contenu, "raisonsRecrue", RAISONS, "recrue-raison", hasard);
+  const prix = tirerTexte(contenu, "prixRecrue", PRIX, "recrue-prix", hasard);
+  return { survivant, raison: raison.texte, prix: prix.texte, raisonCle: raison.cle, prixCle: prix.cle, phase };
 }
 
 const CRANS = ["facile", "normale", "difficile", "extreme"];

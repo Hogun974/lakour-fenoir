@@ -3,7 +3,7 @@
 // et au MJ IA). Seulement l'état PUBLIC : les renseignements sont ce que le groupe croit, pas le réel.
 import { ID } from "../../logique/constantes.mjs";
 import * as L from "../../logique/index.mjs";
-import { t, lireEtat, aPlat, echapper, sansBalises, libelleTache, libelleCompetence, survivantsDuGroupe, monSurvivant } from "../donnees.mjs";
+import { t, lireEtat, aPlat, echapper, sansBalises, localiser, libelleTache, libelleCompetence, survivantsDuGroupe, monSurvivant } from "../donnees.mjs";
 import { CHEMIN, essayer, lireChamps, options } from "./commun.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -81,8 +81,8 @@ export function contexteTableau(onglet = "groupe") {
     pnj: (etat.groupe?.pnj ?? []).map(p => ({ nom: p.nom, etat: p.etat })),
     plans: (etat.groupe?.plans ?? []).map(k => L.installationDe(c, k)?.nom ?? k),
     renseignements, carte: onglet === "renseignements" ? carteConnue(etat, c) : "",
-    journal: [...(etat.journal ?? [])].reverse().slice(0, 80).map(e => ({ jour: L.jourDe(e.quart), moment: t(`LAKOUR_SURVIE.Moments.${L.momentDe(e.quart)}`), texte: sansBalises(e.texte) })),
-    alertes: [...(etat.alertes ?? [])].reverse().slice(0, 12).map(a => ({ jour: L.jourDe(a.quart), texte: sansBalises(a.texte), type: a.type })),
+    journal: [...(etat.journal ?? [])].reverse().slice(0, 80).map(e => ({ jour: L.jourDe(e.quart), moment: t(`LAKOUR_SURVIE.Moments.${L.momentDe(e.quart)}`), texte: sansBalises(localiser(e)) })),
+    alertes: [...(etat.alertes ?? [])].reverse().slice(0, 12).map(a => ({ jour: L.jourDe(a.quart), texte: sansBalises(localiser(a)), type: a.type })),
     propositions: [...(etat.propositions ?? [])].reverse().map(p => ({ ...p, jour: L.jourDe(p.quart), typeLibelle: t(`LAKOUR_SURVIE.Proposition.Types.${p.type}`) })),
     typesProposition: ["fouiller", "explorer", "construire", "garde", "repos", "voyager", "fabriquer", "autre"].map(x => ({ cle: x, libelle: t(`LAKOUR_SURVIE.Proposition.Types.${x}`) })),
     moi: moi ? { id: moi.id, nom: moi.name } : null

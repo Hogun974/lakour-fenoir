@@ -17,7 +17,7 @@ import { ID, COMPETENCES, RESSOURCES, NATURE, DIFFICULTES, BORNES, PALIERS_VISIB
 import { creerRegistre } from "./registre.mjs";
 import { estMJActif, emettre, versMJ, annoncer, auteur, vientDuMJActif } from "./canal.mjs";
 import {
-  t, lireEtat, reglage, aPlat, acteur, survivantsDuGroupe, abriCourant, proprietaireDe, MODULE_MJIA, MODULE_CONTENU, sansBalises
+  t, lireEtat, reglage, aPlat, acteur, survivantsDuGroupe, abriCourant, proprietaireDe, MODULE_MJIA, MODULE_CONTENU, sansBalises, localiser, entreeTexte
 } from "./donnees.mjs";
 import * as Coffre from "./coffre.mjs";
 import { carteTest, carteTemps, carteAction, carteAssaut, carteDemandeTest, carteProposition, texteTest, texteStocks } from "./cartes.mjs";
@@ -88,14 +88,24 @@ function ouvrirCtx() {
 }
 const jourCtx = ctx => L.jourDe(ctx.etat.horloge.quart);
 const hasard = (ctx, nom) => (ctx.monde ? L.deriverHasard(ctx.monde.graine, nom, ctx.etat.horloge.quart, ctx.monde.tirages = (Number(ctx.monde.tirages) || 0) + 1) : Math.random);
-const noter = (ctx, texte) => { if (texte) ctx.etat = L.ajouterJournal(ctx.etat, [{ quart: ctx.etat.horloge.quart, texte: String(texte) }]); };
-function alerter(ctx, type, texte) {
-  const a = { quart: ctx.etat.horloge.quart, type, texte };
+// Journal et alertes de l'état public : chaque entrée garde { cle, params, texte } (donnees.mjs, entreeTexte) pour que chaque
+// navigateur l'affiche dans sa langue. `x` : une chaîne libre, un fait ou message de la logique ({ cle, params, texte }), ou
+// tx("Journal.X", params) pour une clé du système.
+const tx = (cle, params = {}) => ({ cle, params });
+const noter = (ctx, x) => { const e = entreeTexte(x); if (e) ctx.etat = L.ajouterJournal(ctx.etat, [{ quart: ctx.etat.horloge.quart, ...e }]); };
+function alerter(ctx, type, x) {
+  const a = { quart: ctx.etat.horloge.quart, type, ...(entreeTexte(x) ?? { texte: "" }) };
   ctx.etat = L.ajouterAlertes(ctx.etat, [a]);
   ctx.alertes.push(a);
 }
-// Un fait public, réduit à ce qui peut se dire (pas d'identifiant de horde, pas de détail du réel).
-const publicFait = f => ({ jour: f.jour, region: f.region ?? "", cle: f.cle ?? "", public: true, texte: sansBalises(f.texte ?? "") });
+// Un fait public, réduit à ce qui peut se dire (pas d'identifiant de horde, pas de détail du réel) : texte dans la langue du MJ
+// actif (repli : le français de la logique), avec sa clé et ses paramètres pour qui veut le retraduire.
+const publicFait = f => ({ jour: f.jour, region: f.region ?? "", cle: f.cle ?? "", public: true, texte: sansBalises(localiser(f)),
+  ...(f.cleTexte ? { cleTexte: f.cleTexte } : {}), params: structuredClone(f.params ?? {}) });
+// Une rencontre ou un motif rendu à l'appelant : son texte dans la langue du MJ.
+const lisible = x => (x && typeof x === "object" ? { ...x, texte: localiser(x) } : x ?? null);
+const motifLisible = r => (r?.motif ? localiser(r.motif) : r?.raison ?? "");
+const motifsLisibles = r => (r?.motifs?.length ? r.motifs : r?.raisons ?? []).map(localiser).join(" ; ");
 
 async function chat(content, { speaker = null, flags = {} } = {}) {
   return ChatMessage.implementation.create({ content, speaker: speaker ?? { alias: t("LAKOUR_SURVIE.Titre") }, flags: { [ID]: { carte: true, ...flags } } });
@@ -324,7 +334,7 @@ async function avancerInterne(ctx, quarts, options = {}) {
   // Les fêtes du jour de jeu : au journal public et aux alertes (ligne du narrateur par l'état du jeu).
   for (const j of r.jours) {
     const date = L.dateDuJour(j, dateDepart()).iso;
-    for (const f of fetesDuJeu(date, c.fetes ?? []).filter(x => x.coeur)) alerter(ctx, "fete", t("LAKOUR_SURVIE.Fete.Alerte", { nom: f.nom, consigne: sansBalises(f.consigne) }));
+    for (const f of fetesDuJeu(date, c.fetes ?? []).filter(x => x.coeur)) alerter(ctx, "fete", tx("Fete.Alerte", { nom: f.nom, consigne: sansBalises(f.consigne) }));
   }
   ctx.faits.push(...r.faits);
   ctx.secrets.push(...r.secrets);
@@ -487,7 +497,7 @@ async function assignerDirect({ acteurId, tache, eleve = "", competence = "" } =
   if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
   const etat = lireEtat();
   const r = L.assigner(systemeLogique(a), tache, L.jourDe(etat.horloge.quart));
-  if (!r.ok) throw clair(r.raison);
+  if (!r.ok) throw clair(motifLisible(r));
   const maj = { tache: r.system.tache, joursTache: Number(r.system.joursTache) || 0, tacheDepuis: Number(r.system.tacheDepuis) || 0 };
   maj.enseigne = tache === "enseigner" && eleve ? { eleve, competence: COMPETENCES.includes(competence) ? competence : "" } : { eleve: "", competence: "" };
   await a.update({ system: maj });
@@ -534,7 +544,7 @@ async function creerSurvivantDirect({ donnees, userId = "", rejoindre = true, st
   if (rejoindre && lireEtat().demarree && !Coffre.ecritureBloquee()) {
     const ctx = ouvrirCtx();
     ctx.etat = L.ajouterMembre(ctx.etat, a.id, st);
-    noter(ctx, t("LAKOUR_SURVIE.Journal.Rejoint", { nom: a.name }));
+    noter(ctx, tx("Journal.Rejoint", { nom: a.name }));
     await terminer(ctx);
     membre = true;
   }
@@ -562,7 +572,7 @@ async function proposerDirect({ type = "autre", details = "", userId = "" } = {}
 function versTirage(s, c) {
   const g = s.histoire?.graine ?? {};
   const region = L.regionDe(c, g.region)?.nom ?? "";
-  const graine = [...(g.phrases ?? []), region ? t("LAKOUR_SURVIE.Creation.GraineRegion", { region }) : "", g.proche ?? ""].filter(Boolean).join(" ");
+  const graine = [...(g.phrases ?? []), region ? t("LAKOUR_SURVIE.Creation.GraineRegion", { region }) : "", localiser({ cle: g.procheCle, texte: g.proche ?? "" })].filter(Boolean).join(" ");
   return {
     nom: s.nom, age: s.age, enfance: s.enfance, passe: s.passe, statut: s.statut,
     competences: Object.fromEntries(COMPETENCES.map(k => [k, Number(s.competences?.[k]?.niveau) || 0])),
@@ -625,11 +635,11 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
     if (r.abri?.nature) sys.nature = r.abri.nature;
     await ab.update({ system: sys });
   } else ctx.etat.groupe.porte = L.ajouterStocks(ctx.etat.groupe.porte ?? {}, r.butin);
-  for (const f of r.faits) noter(ctx, f.texte);
+  for (const f of r.faits) noter(ctx, f);
   await chat(carteAction({ icone: "fa-magnifying-glass", titre: t("LAKOUR_SURVIE.Action.Fouille", { lieu: site ? nomSite(site) : nomRegion(reg) }),
     lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" }), t("LAKOUR_SURVIE.Action.Butin", { butin: texteStocks(r.butin) || t("LAKOUR_SURVIE.Action.Rien") })] }));
   await avancerInterne(ctx, q);
-  return { butin: r.butin, rencontre: r.rencontre, bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille };
+  return { butin: r.butin, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille };
 }
 
 async function installerInterne(ctx, { site, abriId = "" }) {
@@ -641,12 +651,12 @@ async function installerInterne(ctx, { site, abriId = "" }) {
   const quart = ctx.etat.horloge.quart;
   // Le site d'abord (occupé par une faction ?) : l'abri courant n'est quitté que si l'on peut s'installer (rien n'est écrit sinon).
   const essai = L.installerAbri(ctx.monde, c, { site, jour: jourCtx(ctx), quart });
-  if (!essai.ok) throw clair(essai.raison);
+  if (!essai.ok) throw clair(motifLisible(essai));
   // Un abri déjà occupé ailleurs : il est quitté (tout ce qu'il contient y reste).
   const ancien = abriCourant(ctx.etat);
   if (ancien && ancien.system.site !== site) await quitterAbri(ctx, ancien, {});
   const r = L.installerAbri(ctx.monde, c, { site, jour: jourCtx(ctx), quart, apport: ctx.etat.groupe.porte ?? {} });
-  if (!r.ok) throw clair(r.raison);
+  if (!r.ok) throw clair(motifLisible(r));
   ctx.monde = r.monde;
   let a = abriId ? acteur(abriId) : null;
   if (a && (a.type !== "abri" || a.system.site !== site)) a = null;
@@ -667,7 +677,7 @@ async function installerInterne(ctx, { site, abriId = "" }) {
   ctx.etat.groupe.porte = {};
   ctx.etat.chroniques = [...(ctx.etat.chroniques ?? []), { id: a.id, site, region: s.region, nom: s.nom, debut: quart, fin: null, morts: [], construit: [] }];
   ctx.chroniques = true;
-  noter(ctx, t(r.repris ? "LAKOUR_SURVIE.Journal.Reprend" : "LAKOUR_SURVIE.Journal.Installe", { site: s.nom, region: nomRegion(s.region) }));
+  noter(ctx, tx(r.repris ? "Journal.Reprend" : "Journal.Installe", { site: s.nom, region: nomRegion(s.region) }));
   await chat(carteAction({ icone: "fa-house-flag", titre: t("LAKOUR_SURVIE.Action.Installe", { site: s.nom }),
     lignes: [t("LAKOUR_SURVIE.Action.Stocks", { stocks: texteStocks(r.abri.stocks) || t("LAKOUR_SURVIE.Action.Rien") }),
       objets.length ? t("LAKOUR_SURVIE.Action.Installations", { liste: objets.map(o => o.name).join(", ") }) : ""] }));
@@ -684,7 +694,7 @@ async function quitterAbri(ctx, a, { emporter = {}, transport = "pied", membres 
   ctx.etat.groupe.porte = L.ajouterStocks(ctx.etat.groupe.porte ?? {}, d.emporte);
   const ch = chapitreOuvert(ctx.etat);
   if (ch) { ch.fin = ctx.etat.horloge.quart; ctx.chroniques = true; }
-  noter(ctx, t("LAKOUR_SURVIE.Journal.Quitte", { site: a.name }));
+  noter(ctx, tx("Journal.Quitte", { site: a.name }));
   return d;
 }
 
@@ -700,7 +710,7 @@ async function voyagerInterne(ctx, { vers, transport = "pied", membres = [], cha
   const reserve = depuisAbri ? aPlat(ab.system).stocks : (ctx.etat.groupe.porte ?? {});
   const r = L.voyager(ctx.monde, c, hasard(ctx, "voyage"), { de: ctx.etat.groupe.region, vers, transport: moyen, membres: Math.max(1, qui.length),
     charge, quart: ctx.etat.horloge.quart, renseignements: ctx.etat.renseignements, carburant: Number(reserve?.carburant) || 0 });
-  if (!r.possible) throw clair(t("LAKOUR_SURVIE.Erreurs.Voyage", { raison: r.raison }));
+  if (!r.possible) throw clair(t("LAKOUR_SURVIE.Erreurs.Voyage", { raison: motifLisible(r) }));
   // Carburant et provisions de route (eau et nourriture pour chacun, par jour entamé), pris là où ils sont.
   const jours = Math.ceil(r.quarts / 4);
   const provisions = { eau: qui.length * jours, nourriture: qui.length * jours, carburant: r.carburant };
@@ -708,12 +718,12 @@ async function voyagerInterne(ctx, { vers, transport = "pied", membres = [], cha
   if (depuisAbri) await ab.update({ system: { stocks: pris.stocks } }); else ctx.etat.groupe.porte = pris.stocks;
   ctx.etat.renseignements = r.renseignements;
   ctx.etat.groupe.enRoute = { de: ctx.etat.groupe.region, vers, route: r.chemin.join(" > "), reste: r.quarts, transport: vehicule?.cle ?? moyen };
-  for (const f of r.faits) noter(ctx, f.texte);
+  for (const f of r.faits) noter(ctx, f);
   await chat(carteAction({ icone: "fa-route", titre: t("LAKOUR_SURVIE.Action.Voyage", { vers: nomRegion(vers) }),
     lignes: [t("LAKOUR_SURVIE.Action.Chemin", { chemin: r.chemin.map(nomRegion).join(" → "), quarts: r.quarts }), t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") })] }));
   await avancerInterne(ctx, r.quarts, { mangeHorsAbri: !(pris.manque.nourriture > 0), boitHorsAbri: !(pris.manque.eau > 0) });
-  return { possible: true, arrivee: !ctx.etat.groupe.enRoute, quarts: r.quarts, chemin: r.chemin, carburant: r.carburant, rencontre: r.rencontre,
-    rencontres: r.rencontres, faits: [...r.faits, ...ctx.faits].map(publicFait), manque: pris.manque };
+  return { possible: true, arrivee: !ctx.etat.groupe.enRoute, quarts: r.quarts, chemin: r.chemin, carburant: r.carburant, rencontre: lisible(r.rencontre),
+    rencontres: r.rencontres.map(lisible), faits: [...r.faits, ...ctx.faits].map(publicFait), manque: pris.manque };
 }
 
 async function assautInterne(ctx, { force = 1, type = "", description = "", menaceId = "" }) {
@@ -742,8 +752,8 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
     blesses.push(a.id);
   }
   if (menaceId && ctx.monde) ctx.monde.menaces = (ctx.monde.menaces ?? []).filter(m => m.id !== menaceId);
-  noter(ctx, t(`LAKOUR_SURVIE.Assaut.Journal.${r.issue}`, { type: type || t("LAKOUR_SURVIE.Assaut.Inconnu") }));
-  if (r.issue === "breche") alerter(ctx, "breche", t("LAKOUR_SURVIE.Assaut.Breche"));
+  noter(ctx, tx(`Assaut.Journal.${r.issue}`, { type: type || t("LAKOUR_SURVIE.Assaut.Inconnu") }));
+  if (r.issue === "breche") alerter(ctx, "breche", tx("Assaut.Breche"));
   await chat(carteAssaut(r, { type, description, degats, blesses: blesses.map(id => acteur(id)?.name ?? id) }));
   annoncer("lakourSurvie.assaut", [{ issue: r.issue, marge: r.marge }]);
   return { marge: r.marge, issue: r.issue, degats, blesses, desDefense: r.desDefense, desMenace: r.desMenace, succesDefense: r.succesDefense, succesMenace: r.succesMenace };
@@ -760,6 +770,8 @@ async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
 export const api = {
   logique: L,
   registre,
+  // Un texte de la logique ({ cle, params, texte } : entrée du journal, alerte, fait, menace, rencontre) dans la langue de ce navigateur.
+  localiser,
 
   // ---------------- lecture
   contenu: () => contenu(),
@@ -828,7 +840,7 @@ export const api = {
     etat.groupe.porte = {};
     Coffre.nouvellePartie(p, monde);
     const ctx = { ...ouvrirCtx(), etat, monde };
-    noter(ctx, t("LAKOUR_SURVIE.Journal.Debut", { region: nomRegion(region), date: quandDe(etat).dateTexte }));
+    noter(ctx, tx("Journal.Debut", { region: nomRegion(region), date: quandDe(etat).dateTexte }));
     await terminer(ctx);
     annoncer("lakourSurvie.nouvellePartie", [quandDe(ctx.etat)]);
     await suivreFetesDuJeu(quandDe(ctx.etat).date, c.fetes ?? []).catch(() => null);
@@ -853,11 +865,11 @@ export const api = {
     const r = L.explorer(ctx.monde, c, hasard(ctx, "exploration"), { region: reg, jour: jourCtx(ctx), moment: L.momentDe(ctx.etat.horloge.quart), prudence, renseignements: ctx.etat.renseignements });
     ctx.monde = r.monde;
     ctx.etat.renseignements = r.renseignements;
-    for (const f of r.faits) noter(ctx, f.texte);
+    for (const f of r.faits) noter(ctx, f);
     await chat(carteAction({ icone: "fa-binoculars", titre: t("LAKOUR_SURVIE.Action.Exploration", { region: nomRegion(reg) }), lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" })] }));
     await avancerInterne(ctx, entier(quarts, 1, 8, 1));
     await terminer(ctx);
-    return { renseignement: structuredClone(ctx.etat.renseignements[reg] ?? null), rencontre: r.rencontre, faits: [...r.faits, ...ctx.faits].map(publicFait) };
+    return { renseignement: structuredClone(ctx.etat.renseignements[reg] ?? null), rencontre: lisible(r.rencontre), faits: [...r.faits, ...ctx.faits].map(publicFait) };
   }),
 
   fouiller: ecriture(async (args = {}) => {
@@ -888,11 +900,11 @@ export const api = {
     let cout = {};
     if (!existante || !(existante.chantier.requis > 0)) {
       const o = L.ouvrirChantier(def, { stocks: l.system.stocks, installations: l.installations }, site, { savoirs: savoirsDuGroupe(ctx.etat), plans: ctx.etat.groupe.plans });
-      if (!o.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Construction", { raisons: o.raisons.join(" ; ") }));
+      if (!o.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Construction", { raisons: motifsLisibles(o) }));
       await ab.update({ system: { stocks: o.stocks } });
       instance = { ...o.instance, id: existante?.id };
       cout = o.cout;
-      noter(ctx, t("LAKOUR_SURVIE.Journal.Chantier", { installation: def.nom, niveau: (existante?.niveau ?? 0) + 1 }));
+      noter(ctx, tx("Journal.Chantier", { installation: def.nom, niveau: (existante?.niveau ?? 0) + 1 }));
     }
     const qui = membresValides(ctx, membres);
     const q = entier(quarts, 1, 40, 1);
@@ -904,7 +916,7 @@ export const api = {
       ctx.etat = L.ajouterPlan(ctx.etat, def.cle);
       const chap = chapitreOuvert(ctx.etat);
       if (chap) { chap.construit = [...new Set([...(chap.construit ?? []), def.nom])]; ctx.chroniques = true; }
-      noter(ctx, t("LAKOUR_SURVIE.Journal.Termine", { installation: def.nom, niveau: ch.niveau }));
+      noter(ctx, tx("Journal.Termine", { installation: def.nom, niveau: ch.niveau }));
     }
     await chat(carteAction({ icone: "fa-hammer", titre: t("LAKOUR_SURVIE.Action.Chantier", { installation: def.nom }),
       lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") }),
@@ -932,12 +944,12 @@ export const api = {
       stocks = L.retirerStocks(stocks, { materiaux: r.cout.materiaux }).stocks;
       await ab.updateEmbeddedDocuments("Item", [{ _id: inst.id, system: { etat: r.instance.etat } }]);
       await ab.update({ system: { stocks } });
-      noter(ctx, t("LAKOUR_SURVIE.Journal.Repare", { installation: def?.nom ?? inst.cle, n: r.repares }));
+      noter(ctx, tx("Journal.Repare", { installation: def?.nom ?? inst.cle, n: r.repares }));
       resultat = { etat: r.instance.etat, repares: r.repares, cout: r.cout };
     } else {
       const r = L.reparerAbri(l.system, { quarts: q, bras });
       await ab.update({ system: { degats: r.abri.degats, stocks: r.abri.stocks } });
-      noter(ctx, t("LAKOUR_SURVIE.Journal.RepareAbri", { n: r.repares }));
+      noter(ctx, tx("Journal.RepareAbri", { n: r.repares }));
       resultat = { degats: r.abri.degats, repares: r.repares };
     }
     await avancerInterne(ctx, q);
@@ -972,10 +984,10 @@ export const api = {
       const porte = L.ajouterStocks(ctx.etat.groupe.porte ?? {}, depart.emporte);
       const essai = L.voyager(ctx.monde, c, () => 0.5, { de: ctx.etat.groupe.region, vers: s.region, transport: moyen, membres: bras, charge,
         quart: ctx.etat.horloge.quart, renseignements: ctx.etat.renseignements, carburant: Number(porte.carburant) || 0 });
-      if (!essai.possible) throw clair(t("LAKOUR_SURVIE.Erreurs.Voyage", { raison: essai.raison }));
+      if (!essai.possible) throw clair(t("LAKOUR_SURVIE.Erreurs.Voyage", { raison: motifLisible(essai) }));
     }
     const arrivee = L.installerAbri(ctx.monde, c, { site, jour: jourCtx(ctx), quart: ctx.etat.horloge.quart });
-    if (!arrivee.ok) throw clair(arrivee.raison);
+    if (!arrivee.ok) throw clair(motifLisible(arrivee));
     const d = await quitterAbri(ctx, ab, { emporter, transport: moyen, membres: bras });
     let voyage = null;
     if (s.region !== ctx.etat.groupe.region) voyage = await voyagerInterne(ctx, { vers: s.region, transport, membres: qui.map(a => a.id), charge });
@@ -1018,9 +1030,9 @@ export const api = {
     if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
     const r = L.blesser(systemeLogique(a), entier(n, 1, 4, 1), { morsure: Boolean(morsure) });
     await ecrireSurvivant(a, r.system);
-    noter(ctx, t(morsure ? "LAKOUR_SURVIE.Journal.Mordu" : "LAKOUR_SURVIE.Journal.Blesse", { nom: a.name }));
-    if (r.mourant) alerter(ctx, "mourant", t("LAKOUR_SURVIE.Alertes.Mourant", { nom: a.name }));
-    if (morsure) alerter(ctx, "morsure", t("LAKOUR_SURVIE.Alertes.Morsure", { nom: a.name }));
+    noter(ctx, tx(morsure ? "Journal.Mordu" : "Journal.Blesse", { nom: a.name }));
+    if (r.mourant) alerter(ctx, "mourant", tx("Alertes.Mourant", { nom: a.name }));
+    if (morsure) alerter(ctx, "morsure", tx("Alertes.Morsure", { nom: a.name }));
     await terminer(ctx);
     return { blessures: r.system.blessures, mourant: r.mourant, morsure: r.morsure };
   }),
@@ -1038,7 +1050,7 @@ export const api = {
     const test = await testDirect({ acteurId: soigneur.id, competence: "soins", difficulte: diff, bonus: (medicament ? 1 : 0) + Math.min(2, soins), titre: t("LAKOUR_SURVIE.Soins.Titre", { nom: patient.name }), forcable: false });
     const r = L.soigner(systemeLogique(patient), test);
     await ecrireSurvivant(patient, r.system);
-    noter(ctx, t("LAKOUR_SURVIE.Journal.Soigne", { nom: patient.name, soigneur: soigneur.name, n: r.soignees }));
+    noter(ctx, tx("Journal.Soigne", { nom: patient.name, soigneur: soigneur.name, n: r.soignees }));
     await terminer(ctx);
     return { test, soignees: r.soignees, blessures: r.system.blessures, medicament };
   }),
@@ -1049,7 +1061,7 @@ export const api = {
     if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
     const s = L.infecter(systemeLogique(a), ctx.etat.horloge.quart);
     await ecrireSurvivant(a, s);
-    noter(ctx, t("LAKOUR_SURVIE.Journal.Infecte", { nom: a.name }));
+    noter(ctx, tx("Journal.Infecte", { nom: a.name }));
     await terminer(ctx);
     return { infection: structuredClone(s.infection) };
   }),
@@ -1077,7 +1089,7 @@ export const api = {
     const m = (ctx.monde?.menaces ?? []).find(x => x.id === id);
     if (!m) throw erreur("MenaceInconnue");
     if (action === "assaut" && m.force > 0) {
-      const r = await assautInterne(ctx, { force: m.force, type: t(`LAKOUR_SURVIE.Menaces.${m.type}`), description: m.texte, menaceId: m.id });
+      const r = await assautInterne(ctx, { force: m.force, type: t(`LAKOUR_SURVIE.Menaces.${m.type}`), description: localiser(m), menaceId: m.id });
       await terminer(ctx);
       return r;
     }
@@ -1089,7 +1101,7 @@ export const api = {
   rencontre: ecriture(async ({ region = "", type = null } = {}) => {
     const etat = lireEtat();
     const reg = region || etat.groupe.region;
-    return L.rencontreForcee(Coffre.mondeEnMemoire(), contenu(), Math.random, { region: reg, type: type || null, jour: L.jourDe(etat.horloge.quart), moment: L.momentDe(etat.horloge.quart) });
+    return lisible(L.rencontreForcee(Coffre.mondeEnMemoire(), contenu(), Math.random, { region: reg, type: type || null, jour: L.jourDe(etat.horloge.quart), moment: L.momentDe(etat.horloge.quart) }));
   }),
 
   renseigner: ecriture(async ({ region, ...champs } = {}) => {
@@ -1098,7 +1110,7 @@ export const api = {
     const PERMIS = ["vu", "source", "infestation", "pillage", "electricite", "eau", "routes", "factions", "notes"];
     const ok = Object.fromEntries(Object.entries(champs).filter(([k, v]) => PERMIS.includes(k) && v !== undefined));
     ctx.etat.renseignements = L.renseigner(ctx.etat.renseignements, region, ok, jourCtx(ctx));
-    noter(ctx, t("LAKOUR_SURVIE.Journal.Renseignement", { region: nomRegion(region), source: t(`LAKOUR_SURVIE.Sources.${ok.source ?? "rumeur"}`) }));
+    noter(ctx, tx("Journal.Renseignement", { region: nomRegion(region), source: ok.source ?? "rumeur" }));
     await terminer(ctx);
     return structuredClone(ctx.etat.renseignements[region]);
   }),
@@ -1121,7 +1133,7 @@ export const api = {
     const bras = Math.max(1, (membres ?? []).length || 1);
     const r = L.fabriquer(def, { stocks, installations: ici ? instancesDe(ab) : [], savoirs: savoirsDuGroupe(ctx.etat), niveau: Number(sys.competences?.[competence]?.niveau) || 0,
       bonus: mods.bonus, malus: mods.malus, forcer: Boolean(forcer), bras, hasard: hasard(ctx, "atelier") });
-    if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Fabrication", { raisons: r.raisons.join(" ; ") }));
+    if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Fabrication", { raisons: motifsLisibles(r) }));
     if (ab) await ab.update({ system: { stocks: r.stocks } }); else ctx.etat.groupe.porte = r.stocks;
     const maj = await appliquerTest(artisan, competence, r.test);
     await chat(carteTest(r.test, { nom: artisan.name, competence, titre: t("LAKOUR_SURVIE.Atelier.Carte", { recette: def.nom }), monte: maj.monte, niveau: maj.niveau, forcable: false }),
@@ -1130,7 +1142,7 @@ export const api = {
       const e = defDe("equipements", r.produit.equipement);
       if (e) await artisan.createEmbeddedDocuments("Item", await Promise.all(Array.from({ length: Math.max(1, r.produit.n) }, () => donneesObjet("equipement", e))));
     }
-    noter(ctx, t(r.test.reussite ? "LAKOUR_SURVIE.Journal.Fabrique" : "LAKOUR_SURVIE.Journal.FabriqueRate", { nom: artisan.name, recette: def.nom }));
+    noter(ctx, tx(r.test.reussite ? "Journal.Fabrique" : "Journal.FabriqueRate", { nom: artisan.name, recette: def.nom }));
     await avancerInterne(ctx, Math.max(1, r.quarts));
     await terminer(ctx);
     return { ok: true, termine: true, reussite: r.test.reussite, competence, test: { ...r.test, competence }, produit: r.produit, quarts: r.quarts, perdu: r.perdu, acteurId: artisan.id };
@@ -1145,7 +1157,7 @@ export const api = {
     if (action === "donner") {
       const s = L.contracter(systemeLogique(a), def, jourCtx(ctx));
       await ecrireSurvivant(a, s);
-      noter(ctx, t("LAKOUR_SURVIE.Journal.Affliction", { nom: a.name, affliction: def.nom }));
+      noter(ctx, tx("Journal.Affliction", { nom: a.name, affliction: def.nom }));
       await terminer(ctx);
       return { ok: true, donnee: true, stade: s.afflictions.find(x => x.cle === def.cle)?.stade ?? "" };
     }
@@ -1160,9 +1172,9 @@ export const api = {
     const r = L.soignerAffliction(systemeLogique(a), def, test, stocks);
     if (ab) await ab.update({ system: { stocks: L.normaliserStocks(r.stocks) } }); else ctx.etat.groupe.porte = L.normaliserStocks(r.stocks);
     await ecrireSurvivant(a, r.system);
-    noter(ctx, t(r.ok ? "LAKOUR_SURVIE.Journal.AfflictionSoignee" : "LAKOUR_SURVIE.Journal.AfflictionRate", { nom: a.name, affliction: def.nom }));
+    noter(ctx, tx(r.ok ? "Journal.AfflictionSoignee" : "Journal.AfflictionRate", { nom: a.name, affliction: def.nom }));
     await terminer(ctx);
-    return { ok: r.ok, gueri: r.ok, reussite: test.reussite, raison: r.raison, test };
+    return { ok: r.ok, gueri: r.ok, reussite: test.reussite, raison: motifLisible(r), test };
   }),
 
   feter: ecriture(async ({ fete = "" } = {}) => {
@@ -1175,13 +1187,13 @@ export const api = {
     if (!ab) throw erreur("SansAbri");
     const membres = survivantsDuGroupe(ctx.etat).map(a => ({ id: a.id, system: systemeLogique(a) }));
     const r = L.feter(ctx.etat, { system: aPlat(ab.system) }, { fete: cle, annee: L.dateDuJour(L.jourDe(ctx.etat.horloge.quart), dateDepart()).annee, survivants: membres });
-    if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Fete", { raison: r.raison }));
+    if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Fete", { raison: motifLisible(r) }));
     ctx.etat = r.etat;
     await ab.update({ system: { stocks: r.abri.system.stocks, bruit: borner((Number(ab.system.bruit) || 0) + 2, 0, 10) } });
     for (const s of r.survivants) { const a = acteur(s.id); if (a && s.system.moral !== a.system.moral) await a.update({ system: { moral: s.system.moral } }); }
     const n = (Number(aPlat(ab.system).stocks?.nourriture) || 0);
     const nom = f?.nom ?? cle;
-    noter(ctx, t("LAKOUR_SURVIE.Journal.Fete", { fete: nom }));
+    noter(ctx, tx("Journal.Fete", { fete: nom }));
     await chat(carteAction({ icone: "fa-champagne-glasses", titre: t("LAKOUR_SURVIE.Fete.Carte", { fete: nom }), lignes: [t("LAKOUR_SURVIE.Fete.Effet"), sansBalises(f?.description ?? "")] }));
     await terminer(ctx);
     return { ok: true, fete: cle, texte: t("LAKOUR_SURVIE.Fete.Texte", { fete: nom, nourriture: n }) };
@@ -1192,7 +1204,8 @@ export const api = {
     const etat = lireEtat();
     const c = contenu();
     const r = L.genererRecrue(c, Math.random, { besoins: besoinsBruts(etat), region: region || etat.groupe.region, phase: etat.phase });
-    return { ...versTirage(r.survivant, c), statut: "recrue", raison: r.raison, prix: r.prix, region: region || etat.groupe.region };
+    return { ...versTirage(r.survivant, c), statut: "recrue", raison: localiser({ cle: r.raisonCle, texte: r.raison }), prix: localiser({ cle: r.prixCle, texte: r.prix }),
+      region: region || etat.groupe.region };
   },
 
   recruter: ecriture(async ({ recrue, parleurId, attitude = "neutre", bonus = 0 } = {}) => {
@@ -1210,8 +1223,8 @@ export const api = {
       const a = await creerActeurSurvivant(recrue, { statut: "recrue" });
       acteurId = a.id;
       ctx.etat = L.ajouterMembre(ctx.etat, a.id, "recrue");
-      noter(ctx, t("LAKOUR_SURVIE.Journal.Recrue", { nom: a.name }));
-    } else noter(ctx, t("LAKOUR_SURVIE.Journal.RecrueRefuse", { nom: recrue.nom ?? "?" }));
+      noter(ctx, tx("Journal.Recrue", { nom: a.name }));
+    } else noter(ctx, tx("Journal.RecrueRefuse", { nom: recrue.nom ?? "?" }));
     await terminer(ctx);
     return { test, reussite: test.reussite, acteurId, difficulte };
   }),
@@ -1223,7 +1236,7 @@ export const api = {
     const st = L.STATUTS.includes(statut) ? statut : "compagnon";
     ctx.etat = L.ajouterMembre(ctx.etat, a.id, st);
     await a.update({ system: { statut: st } });
-    noter(ctx, t("LAKOUR_SURVIE.Journal.Rejoint", { nom: a.name }));
+    noter(ctx, tx("Journal.Rejoint", { nom: a.name }));
     await terminer(ctx);
     return { membres: [...ctx.etat.groupe.membres] };
   }),
@@ -1231,7 +1244,7 @@ export const api = {
   retirerMembre: ecriture(async ({ acteurId } = {}) => {
     const ctx = ouvrirCtx();
     ctx.etat = L.retirerMembre(ctx.etat, acteurId);
-    noter(ctx, t("LAKOUR_SURVIE.Journal.Quitte", { site: acteur(acteurId)?.name ?? acteurId }));
+    noter(ctx, tx("Journal.Quitte", { site: acteur(acteurId)?.name ?? acteurId }));
     await terminer(ctx);
     return { membres: [...ctx.etat.groupe.membres] };
   }),

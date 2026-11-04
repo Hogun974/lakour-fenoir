@@ -59,3 +59,42 @@ export const libelleMoment = m => t(`LAKOUR_SURVIE.Moments.${m}`);
 export const libellePhase = p => t(`LAKOUR_SURVIE.Phases.${p}`);
 export const libelleTache = tache => t(`LAKOUR_SURVIE.Taches.${tache || "aucune"}`);
 export const libelleDifficulte = d => t(`LAKOUR_SURVIE.Difficultes.${d}`);
+
+// ------------------------------------------------------------------ textes de la logique, dans la langue de l'utilisateur
+// La logique (logique/textes.mjs) rend ses textes en { cle, params, texte } : faits, journal, alertes, menaces, rencontres, motifs
+// de refus. Ici on les affiche dans la langue du navigateur : une clé sans point est une clé de LAKOUR_SURVIE.Faits, une clé avec
+// point un chemin sous LAKOUR_SURVIE (entrées écrites par l'API : Journal.*, Alertes.*…). Sans clé connue, `texte` (le français de la
+// logique, ou le texte d'une ancienne entrée) reste lisible. Une chaîne est rendue telle quelle.
+const aTraduction = chemin => { try { return Boolean(game.i18n?.has?.(chemin)); } catch { return false; } };
+const PARAMS_A_LIBELLE = { ressource: "Ressources", competence: "Competences", tache: "Taches", transport: "Transports", source: "Sources" };
+const texteStocksParam = stocks => Object.entries(stocks ?? {}).filter(([, q]) => Number(q) > 0).map(([r, q]) => `${q} ${libelleRessource(r).toLowerCase()}`).join(", ")
+  || t("LAKOUR_SURVIE.Action.Rien");
+function rendreParam(cle, valeur, params) {
+  if (Array.isArray(valeur)) return valeur.map(v => rendreParam(cle, v, params)).join(", ");
+  if (valeur && typeof valeur === "object") return texteStocksParam(valeur);   // des stocks { ressource: n } (butin, manque)
+  if (cle === "creature" && !valeur && params.creatureCle) return t(`LAKOUR_SURVIE.Creatures.${params.creatureCle}`);
+  const famille = PARAMS_A_LIBELLE[cle];
+  if (famille && typeof valeur === "string" && aTraduction(`LAKOUR_SURVIE.${famille}.${valeur}`)) return t(`LAKOUR_SURVIE.${famille}.${valeur}`);
+  return valeur === null || valeur === undefined ? "" : String(valeur);
+}
+export const cheminTexte = cle => (cle ? `LAKOUR_SURVIE.${String(cle).includes(".") ? cle : `Faits.${cle}`}` : "");
+export function localiser(x) {
+  if (x === null || x === undefined) return "";
+  if (typeof x !== "object") return String(x);
+  const chemin = cheminTexte(x.cleTexte ?? x.cle);
+  if (chemin && aTraduction(chemin)) {
+    const params = x.params && typeof x.params === "object" ? x.params : {};
+    return t(chemin, Object.fromEntries(Object.entries(params).map(([k, v]) => [k, rendreParam(k, v, params)])));
+  }
+  return String(x.texte ?? "");
+}
+// Ce qu'on garde d'un texte dans l'état public (journal, alertes) : { cle, params, texte } ; `texte` est le français de la logique
+// ou, pour une entrée écrite par l'API, la traduction au moment de l'écriture (repli des anciens navigateurs). null si vide.
+export function entreeTexte(x) {
+  if (x === null || x === undefined) return null;
+  if (typeof x !== "object") return String(x) ? { texte: String(x) } : null;
+  const cle = x.cleTexte ?? x.cle ?? "";
+  const e = { texte: String(x.texte ?? localiser(x)) };
+  if (cle) { e.cle = String(cle); e.params = x.params && typeof x.params === "object" ? structuredClone(x.params) : {}; }
+  return e.texte || e.cle ? e : null;
+}

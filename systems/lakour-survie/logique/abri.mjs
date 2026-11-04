@@ -38,6 +38,7 @@ import { installationDe, regionDe, siteDe, niveauDe, niveauMaxDe, natureRegion, 
 import { consommationJour, pertesJour, plafonds, joursDeStocks, normaliserStocks, journeeStocks, couvre, retirerStocks } from "./ressources.mjs";
 import { saisonDuJour, bonusFruits, dateDuJour } from "./temps.mjs";
 import { facteurBras } from "./generation.mjs";
+import { message } from "./textes.mjs";
 
 export const FACTEUR_ETAT = [1, 0.75, 0.5, 0];
 export const SAISON_PLUIE = { pluies: 1, seche: 0.5 };
@@ -241,59 +242,63 @@ const instanceDans = (abri, cle) => (abri?.installations ?? []).find(i => i.cle 
 
 // Peut-on construire (ou ouvrir le chantier de) `niveau` de l'installation ? niveau omis : le suivant.
 // abri : { stocks, installations: [instances] } ; site : définition du site ; groupe : { savoirs: [cle], plans: [cle] }.
-// -> { ok, raisons: [String], cout, plan, niveau, enCours }
+// -> { ok, raisons: [String], motifs: [{ cle, params, texte }] (les mêmes, traduisibles : textes.mjs), cout, plan, niveau, enCours }
 export function peutConstruire(def, niveau, abri = {}, site = {}, groupe = {}) {
-  if (!def) return { ok: false, raisons: ["installation inconnue"], cout: {}, plan: false, niveau: 0, enCours: false };
-  const raisons = [];
+  const raisons = [], motifs = [];
+  const refuser = (texte, cle, params = {}) => { raisons.push(texte); motifs.push(message(cle, params, texte)); };
+  if (!def) { refuser("installation inconnue", "installation-inconnue"); return { ok: false, raisons, motifs, cout: {}, plan: false, niveau: 0, enCours: false }; }
   const instance = instanceDans(abri, def.cle);
   const actuel = Number(instance?.niveau) || 0;
   const enCours = Boolean(instance && Number(instance.chantier?.requis) > 0);
   const n = Number(niveau ?? actuel + 1);
   const max = niveauMaxDe(def);
-  if (!(n >= 1 && n <= max)) raisons.push(`${nomDe(def)} : le niveau ${n} n'existe pas (1 à ${max})`);
-  else if (n <= actuel) raisons.push(`${nomDe(def)} : déjà au niveau ${actuel}`);
-  else if (n > actuel + 1) raisons.push(`${nomDe(def)} : il faut d'abord le niveau ${n - 1}`);
-  if (instance && Number(instance.etat) >= 3) raisons.push(`${nomDe(def)} : hors service, à réparer d'abord`);
+  const nom = nomDe(def);
+  if (!(n >= 1 && n <= max)) refuser(`${nom} : le niveau ${n} n'existe pas (1 à ${max})`, "niveau-inexistant", { installation: nom, niveau: n, max });
+  else if (n <= actuel) refuser(`${nom} : déjà au niveau ${actuel}`, "niveau-deja", { installation: nom, niveau: actuel });
+  else if (n > actuel + 1) refuser(`${nom} : il faut d'abord le niveau ${n - 1}`, "niveau-prealable", { installation: nom, niveau: n - 1 });
+  if (instance && Number(instance.etat) >= 3) refuser(`${nom} : hors service, à réparer d'abord`, "hors-service-reparer", { installation: nom });
   const niv = niveauDe(def, n);
   const plan = (groupe.plans ?? []).includes(def.cle);
-  if (!niv) return { ok: false, raisons, cout: {}, plan, niveau: n, enCours };
+  if (!niv) return { ok: false, raisons, motifs, cout: {}, plan, niveau: n, enCours };
   const req = niv.requiert ?? {};
   const savoirs = groupe.savoirs ?? [];
-  for (const s of req.savoirs ?? []) if (!savoirs.includes(s)) raisons.push(`savoir-faire manquant : ${s}`);
+  for (const s of req.savoirs ?? []) if (!savoirs.includes(s)) refuser(`savoir-faire manquant : ${s}`, "savoir-manquant", { savoir: s });
   const rs = req.site ?? {};
-  if (Array.isArray(rs.eau) && rs.eau.length && !rs.eau.includes(site.eau ?? "aucune")) raisons.push(`il faut ${rs.eau.join(" ou ")} sur le site (ici : ${site.eau ?? "aucune"})`);
+  if (Array.isArray(rs.eau) && rs.eau.length && !rs.eau.includes(site.eau ?? "aucune")) {
+    refuser(`il faut ${rs.eau.join(" ou ")} sur le site (ici : ${site.eau ?? "aucune"})`, "eau-requise", { eau: rs.eau.join(" / "), ici: site.eau ?? "aucune" });
+  }
   for (const [cle, texte] of [["sol", "de la terre cultivable"], ["soleil", "du soleil"], ["souterrain", "un sous-sol qui s'y prête"]]) {
-    if (Number(rs[cle] ?? 0) > Number(site[cle] ?? 0)) raisons.push(`il faut ${texte} (${cle} ${rs[cle]} ; ici ${Number(site[cle] ?? 0)})`);
+    if (Number(rs[cle] ?? 0) > Number(site[cle] ?? 0)) refuser(`il faut ${texte} (${cle} ${rs[cle]} ; ici ${Number(site[cle] ?? 0)})`, `site-${cle}`, { requis: rs[cle], ici: Number(site[cle] ?? 0) });
   }
   for (const r of req.installations ?? []) {
     if (r.cle === def.cle) continue; // le niveau précédent : déjà vérifié
     const autre = instanceDans(abri, r.cle);
-    if (!autre || Number(autre.niveau) < Number(r.niveau)) raisons.push(`il faut d'abord : ${r.cle} niveau ${r.niveau}`);
-    else if (Number(autre.etat) >= 3) raisons.push(`${r.cle} est hors service`);
+    if (!autre || Number(autre.niveau) < Number(r.niveau)) refuser(`il faut d'abord : ${r.cle} niveau ${r.niveau}`, "requiert", { installation: r.cle, niveau: r.niveau });
+    else if (Number(autre.etat) >= 3) refuser(`${r.cle} est hors service`, "requiert-hors-service", { installation: r.cle });
   }
   // Un chantier déjà ouvert pour ce niveau est déjà payé.
   const dejaPaye = enCours && n === actuel + 1;
   const cout = dejaPaye ? {} : coutAvecPlans(niv.cout, plan);
   if (!dejaPaye && !couvre(abri.stocks, cout)) {
-    const manque = Object.entries(cout).filter(([r, q]) => r !== "travail" && (Number(abri.stocks?.[r]) || 0) < q)
-      .map(([r, q]) => `${q - (Number(abri.stocks?.[r]) || 0)} ${r}`);
-    raisons.push(`il manque : ${manque.join(", ")}`);
+    const manque = Object.fromEntries(Object.entries(cout).filter(([r, q]) => r !== "travail" && (Number(abri.stocks?.[r]) || 0) < q)
+      .map(([r, q]) => [r, q - (Number(abri.stocks?.[r]) || 0)]));
+    refuser(`il manque : ${Object.entries(manque).map(([r, q]) => `${q} ${r}`).join(", ")}`, "manque", { manque });
   }
-  return { ok: raisons.length === 0, raisons, cout, plan, niveau: n, enCours: dejaPaye };
+  return { ok: raisons.length === 0, raisons, motifs, cout, plan, niveau: n, enCours: dejaPaye };
 }
 
 // Ouvre le chantier du niveau suivant (coûts payés tout de suite, contrat §5 « payés au premier quart »).
-// -> { ok, raisons, instance, stocks, cout }
+// -> { ok, raisons, motifs, instance, stocks, cout }
 export function ouvrirChantier(def, abri = {}, site = {}, groupe = {}) {
   const v = peutConstruire(def, undefined, abri, site, groupe);
-  if (!v.ok) return { ok: false, raisons: v.raisons, instance: instanceDans(abri, def?.cle), stocks: normaliserStocks(abri.stocks), cout: v.cout };
+  if (!v.ok) return { ok: false, raisons: v.raisons, motifs: v.motifs, instance: instanceDans(abri, def?.cle), stocks: normaliserStocks(abri.stocks), cout: v.cout };
   const ancienne = instanceDans(abri, def.cle);
-  if (v.enCours) return { ok: true, raisons: [], instance: structuredClone(ancienne), stocks: normaliserStocks(abri.stocks), cout: {} };
+  if (v.enCours) return { ok: true, raisons: [], motifs: [], instance: structuredClone(ancienne), stocks: normaliserStocks(abri.stocks), cout: {} };
   const { travail = 0, ...ressources } = v.cout;
   const stocks = retirerStocks(abri.stocks, ressources).stocks;
   const instance = ancienne ? structuredClone(ancienne) : instanceInstallation(def.cle, 0);
   instance.chantier = { fait: 0, requis: Math.max(1, travail) };
-  return { ok: true, raisons: [], instance, stocks, cout: v.cout };
+  return { ok: true, raisons: [], motifs: [], instance, stocks, cout: v.cout };
 }
 
 // Avance un chantier ouvert : quarts × bras de travail (+ bonus en quarts-personne, la marge d'un test de bricolage par exemple).

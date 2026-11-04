@@ -1,5 +1,6 @@
 // Toute la logique pure du système lakour-survie (monde « Fénoir »), sans Foundry : éprouvable en Node (essais/*.test.mjs).
 export * from "./constantes.mjs";
+export * from "./textes.mjs";
 export * from "./hasard.mjs";
 export * from "./des.mjs";
 export * from "./temps.mjs";

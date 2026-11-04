@@ -2,7 +2,7 @@
 // phase de la crise, stocks d'eau et de nourriture en jours, alertes récentes, la tâche de mon survivant ; boutons du tableau
 // de bord, de l'atelier, de ma fiche (et de la fenêtre du MJ). Repliable (réglage client). Seulement l'état PUBLIC.
 import { ID } from "../../logique/constantes.mjs";
-import { t, lireEtat, reglage, monSurvivant, libelleMoment, libellePhase, libelleTache, sansBalises } from "../donnees.mjs";
+import { t, lireEtat, reglage, monSurvivant, libelleMoment, libellePhase, libelleTache, sansBalises, localiser } from "../donnees.mjs";
 import { CHEMIN, jours } from "./commun.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -32,8 +32,8 @@ export function contexteBandeau() {
     ] : [],
     autonome: Boolean(etat.autonome), joursAutonomes: etat.joursAutonomes ?? 0,
     enRoute: etat.groupe?.enRoute ? t("LAKOUR_SURVIE.Bandeau.EnRoute", { n: etat.groupe.enRoute.reste }) : "",
-    alertes: recentes.map(a => ({ type: a.type, texte: sansBalises(a.texte) })),
-    alerteAide: recentes.map(a => sansBalises(a.texte)).join(" — "),
+    alertes: recentes.map(a => ({ type: a.type, texte: sansBalises(localiser(a)) })),
+    alerteAide: recentes.map(a => sansBalises(localiser(a))).join(" — "),
     moi: moi ? { id: moi.id, nom: moi.name, tache: libelleTache(moi.system?.tache) } : null,
     creer: !gm && !moi && reglage("creationOuverte", true)
   };

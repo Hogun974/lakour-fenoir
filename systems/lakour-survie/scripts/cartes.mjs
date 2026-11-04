@@ -1,6 +1,6 @@
 // Les cartes de chat du système : tests (dés colorés, succès, bouton Forcer pour le propriétaire), faits publics du temps qui
 // passe, actions du groupe, assauts. Toutes PUBLIQUES : jamais rien du monde réel (un fait secret n'arrive jamais ici).
-import { t, echapper, sansBalises, libelleCompetence, libelleDifficulte, libelleRessource, libelleMoment, libellePhase } from "./donnees.mjs";
+import { t, echapper, sansBalises, localiser, libelleCompetence, libelleDifficulte, libelleRessource, libelleMoment, libellePhase } from "./donnees.mjs";
 
 const de = (v, force = false) => `<span class="survie-de ${v >= 5 ? "succes" : v === 1 ? "un" : "echec"}${force ? " relance" : ""}">${v}</span>`;
 
@@ -34,7 +34,8 @@ export function carteTest(r, info = {}) {
     + bouton + "</div>";
 }
 
-const listeFaits = faits => (faits.length ? `<ul class="survie-faits">${faits.map(f => `<li>${echapper(sansBalises(f.texte ?? f))}</li>`).join("")}</ul>` : "");
+// Les faits et alertes arrivent en { cle, params, texte } : rendus dans la langue de qui écrit la carte (le MJ actif).
+const listeFaits = faits => (faits.length ? `<ul class="survie-faits">${faits.map(f => `<li>${echapper(sansBalises(localiser(f)))}</li>`).join("")}</ul>` : "");
 
 // Le temps qui passe : le moment, les faits publics, les alertes.
 export function carteTemps({ quand, faits = [], alertes = [], raison = "", quarts = 0 }) {
@@ -43,7 +44,7 @@ export function carteTemps({ quand, faits = [], alertes = [], raison = "", quart
     + `<span class="survie-carte-sous">${t("LAKOUR_SURVIE.Bandeau.Jour", { n: quand.jour })} · ${libelleMoment(quand.moment)} · ${echapper(quand.dateTexte)} · ${libellePhase(quand.phase)}</span></header>`
     + (raison ? `<p class="survie-raison">${echapper(raison)}</p>` : "")
     + listeFaits(faits)
-    + (alertes.length ? `<ul class="survie-alertes">${alertes.map(a => `<li><i class="fa-solid fa-bell"></i> ${echapper(sansBalises(a.texte))}</li>`).join("")}</ul>` : "")
+    + (alertes.length ? `<ul class="survie-alertes">${alertes.map(a => `<li><i class="fa-solid fa-bell"></i> ${echapper(sansBalises(localiser(a)))}</li>`).join("")}</ul>` : "")
     + "</div>";
 }
 
