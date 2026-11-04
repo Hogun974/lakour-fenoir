@@ -19,6 +19,7 @@ import { APPELS_RADIO, DEMANDES } from "./appels.mjs";
 import { CAMP, ACTIVITES_CAMP } from "./camp.mjs";
 import { TABLES, PALIERS_VISIBILITE, DONNEES_TABLES } from "./tables.mjs";
 import { JOURNAUX, CLE_JOURNAL_REGIONS } from "./journaux.mjs";
+import { LIVRE_UNIVERS } from "./livre-univers.mjs";
 import { SURVIVANTS } from "./survivants.mjs";
 import { CARTES_LIEUX } from "./lieux-cartes.mjs";
 import { sceneReunion } from "./cartes.mjs";
@@ -31,7 +32,7 @@ export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 export const DOCUMENTS = [
   ...INSTALLATIONS, ...SAVOIRS, ...EQUIPEMENTS, ...PASSES, ...RECETTES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...JOURNAUX, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
   ...TABLES, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES,
   SCENE_REUNION, ...CARTES_LIEUX
 ];

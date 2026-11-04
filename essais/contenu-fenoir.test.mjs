@@ -200,7 +200,7 @@ test("aucun terme interdit (œuvres de zombies existantes), en mots entiers", ()
 
 test("journaux : guides lisibles des joueurs, journaux du MJ cachés, une page par région, le guide de création", () => {
   const journal = cle => docs.find(x => (x.pack === "guides" || x.pack === "mj") && x.doc.flags[MODULE].cle === cle);
-  for (const cle of ["guide-du-joueur", "regions-de-l-ile", "vie-au-camp", "fetes-de-fenoir"]) assert.equal(journal(cle)?.doc.ownership.default, 2, cle);
+  for (const cle of ["guide-du-joueur", "regions-de-l-ile", "vie-au-camp", "fetes-de-fenoir", "livre-de-l-ile"]) assert.equal(journal(cle)?.doc.ownership.default, 2, cle);
   for (const cle of ["guide-du-mj", "chronologie-de-la-crise", "factions", "reputations", "bestiaire", "jour-zero", "pourquoi-les-bas-se-vident", "one-shot-la-pharmacie-de-l-entre-deux", "campagne-l-annee-du-gris"]) {
     assert.equal(journal(cle)?.doc.ownership.default, 0, cle);
   }
@@ -210,11 +210,36 @@ test("journaux : guides lisibles des joueurs, journaux du MJ cachés, une page p
   for (const mot of ["verrouill", "budget", "passion", "trait", "Forcer", "marque", "autonom"]) assert.ok(guide.toLowerCase().includes(mot.toLowerCase()), mot);
   assert.ok(journal("jour-zero").doc.pages.length >= 6, "plusieurs départs");
   // La page des joueurs ne dit pas ce que devient la région (texte « après », réservé au MJ).
-  const pagesJoueurs = journal("regions-de-l-ile").doc.pages.map(p => p.text.content).join(" ");
+  const pagesJoueurs = [...journal("regions-de-l-ile").doc.pages, ...journal("livre-de-l-ile").doc.pages].map(p => p.text.content).join(" ");
   for (const r of D.regions) assert.ok(!pagesJoueurs.includes(sansBalises(r.apres).slice(0, 60)), r.cle);
   const mutes = docs.map(x => structuredClone(x));
   mutes.find(x => x.doc.flags[MODULE].cle === "guide-du-mj").doc.ownership.default = 2;
   attendre(verifierDocuments(mutes), /visibilité 2 au lieu de 0/);
+});
+
+test("le livre de l'île : 10 à 14 pages, 30 000 à 45 000 caractères, carnets de survivants, liens vers ce que les joueurs peuvent lire, rien du secret du MJ", () => {
+  const livre = docs.find(x => x.pack === "guides" && x.doc.flags[MODULE].cle === "livre-de-l-ile").doc;
+  assert.equal(livre.name, "Fénoir — Le livre de l'île");
+  assert.ok(livre.pages.length >= 10 && livre.pages.length <= 14, `${livre.pages.length} pages`);
+  const lisible = h => h.replace(/@UUID\[[^\]]+\]\{([^}]*)\}/g, "$1").replace(/<[^>]+>/g, "");
+  const total = livre.pages.reduce((n, p) => n + lisible(p.text.content).length, 0);
+  assert.ok(total >= 30000 && total <= 45000, `${total} caractères`);
+  const tout = livre.pages.map(p => p.text.content).join(" ");
+  assert.ok((tout.match(/<blockquote>/g) ?? []).length >= 6, "des carnets de survivants");
+  for (const t of ["L'île, avant", "Le dernier mois ordinaire", "Le jour zéro", "Portraits", "Rumeurs et mystères", "Lexique", "La première nuit"]) assert.ok(livre.pages.some(p => p.name === t), t);
+  // Chaque lien vise un journal du pack « guides » (lisible des joueurs), et sa page quand il en cite une.
+  const guides = docs.filter(x => x.pack === "guides");
+  const liens = [...tout.matchAll(/@UUID\[Compendium\.([a-z-]+)\.([a-z]+)\.JournalEntry\.([A-Za-z0-9]{16})(?:\.JournalEntryPage\.([A-Za-z0-9]{16}))?\]/g)];
+  assert.ok(liens.length >= 20, "liens vers les régions, les fêtes, la vie au camp et le guide du joueur");
+  for (const [, module, pack, id, page] of liens) {
+    assert.equal(module, MODULE); assert.equal(pack, "guides");
+    const cible = guides.find(x => x.doc._id === id);
+    assert.ok(cible, `lien vers un journal inconnu ${id}`);
+    if (page) assert.ok(cible.doc.pages.some(p => p._id === page), `page inconnue ${page} dans ${cible.doc.name}`);
+  }
+  // Rien de la chronologie datée ni du secret : pas de numéro de jour, l'origine du Gris reste inconnue.
+  assert.ok(!/jours? \d+|jour-zero|\(jours \d/.test(sansBalises(tout)), "pas de dates de la chronologie du MJ");
+  assert.ok(/personne ne le sait/i.test(sansBalises(tout)), "l'origine du Gris reste inconnue");
 });
 
 test("scène « Carte de La Réunion » : 4000 × 3000, une épingle par région vers sa page, repères dans les drapeaux", () => {
@@ -358,7 +383,7 @@ test("créatures au registre (famille lue par la logique du système) et bras de
 
 test("module.json : compendiums, langues, dossier de compendiums", () => {
   const m = JSON.parse(readFileSync(new URL("module.json", RACINE), "utf8"));
-  assert.equal(m.id, MODULE); assert.equal(m.version, "0.1.0");
+  assert.equal(m.id, MODULE); assert.equal(m.version, "0.2.0");
   assert.deepEqual(m.compatibility, { minimum: "14", verified: "14.370" });
   assert.equal(m.relationships.systems[0].id, "lakour-survie");
   assert.deepEqual(m.esmodules, ["scripts/main.js"]);
