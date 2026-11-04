@@ -114,9 +114,14 @@ test("scellement : réécrit après chaque changement, révision croissante ; le
   assert.equal(M.api.monde(), null);
   reglages.get("lakour-mj-ia.cleCarnet").valeur = cle;
   CoffreMoteur.oublierCoffre();
+  // On attend l'événement (le monde rouvert : déchiffrement par WebCrypto, durée variable sous charge), pas un délai fixe ; la
+  // minuterie ne sert qu'à échouer clairement au lieu de pendre si le monde ne se rouvre jamais.
+  const rouvert = new Promise(r => Hooks.once("lakourSurvie.mondeOuvert", r));
   Hooks.callAll("lakour-mj-ia.coffreRouvert");
+  let garde;
+  await Promise.race([rouvert, new Promise((_, ko) => { garde = setTimeout(() => ko(new Error("le monde ne s'est pas rouvert")), 10000); })])
+    .finally(() => clearTimeout(garde));
   await calme();
-  await new Promise(r => setTimeout(r, 20));
   assert.equal(M.api.mondeOuvert(), true);
   assert.equal(M.api.monde().jour, reel.jour);
 });

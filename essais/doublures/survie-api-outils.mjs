@@ -18,6 +18,9 @@ export async function charger(racine = SYSTEME) {
 
 // Un monde neuf : doublure, réglages, socket, contenu, API. -> M (modules) enrichi de { users }
 export async function monde(M, options = {}) {
+  // Ce que l'essai précédent a laissé en route (messages, déchiffrement) finit dans SON monde, avant la remise à zéro : sinon sa
+  // suite tombe dans celui-ci (l'état du coffre du système est partagé par les essais d'un même fichier).
+  await calme();
   const { users } = installerFoundry(options);
   M.Coffre._reinitialiser();
   M.enregistrerReglages({ coffre: () => M.Coffre.surCoffreChange() });

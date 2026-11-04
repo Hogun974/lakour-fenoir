@@ -8,8 +8,9 @@
 // Lancer : npm run essais
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { installerFoundry, calme, commeJoueur, valeur, reglages, erreurs } from "./doublures/foundry-survie.mjs";
+import { installerFoundry, calme, commeJoueur, valeur, reglages, erreurs, DONNEES } from "./doublures/foundry-survie.mjs";
 import { charger, monde, survivantTire } from "./doublures/survie-api-outils.mjs";
+import { creerHasard } from "../systems/lakour-survie/logique/hasard.mjs";
 
 installerFoundry();
 const M0 = await charger();
@@ -104,11 +105,18 @@ test("demande d'un joueur : bonus et malus d'un test bornés (0 à 4), un tirage
   const res = await r;
   assert.ok(res.des.length <= niveau + 1 + 4 + 2, `réserve bornée (${res.des.length} dés pour un niveau ${niveau})`);
   // Un tirage forgé (compétences à 5 partout, un 4×4 en poche, un savoir-faire étranger au passé) : refusé au joueur sans survivant.
-  const tirage = M.api.generer({ statut: "joueur" });
+  // Tirage à graine fixe, et l'objet ou le savoir-faire ajouté est choisi HORS de ce que permettent l'enfance et le passé tirés :
+  // un 4×4 est légitime pour un apiculteur, la radio pour un gendarme (environ une fois sur cinq au hasard, l'essai échouait).
+  const tirage = M.api.generer({ statut: "joueur", hasard: creerHasard("relecture-tirage-forge") });
+  const permis = champ => new Set([DONNEES.enfances, DONNEES.passes].flatMap((l, i) => l.find(x => x.cle === [tirage.enfance, tirage.passe][i])?.[champ] ?? []));
+  const etranger = (champ, liste, prefere) => [prefere, ...liste.map(x => x.cle)].find(k => !permis(champ).has(k));
+  const objetEtranger = etranger("equipement", DONNEES.equipements, "quatre-quatre");
+  const savoirEtranger = etranger("savoirs", DONNEES.savoirs, "radio");
+  assert.ok(objetEtranger && savoirEtranger, "un objet et un savoir-faire étrangers à l'enfance et au passé tirés");
   const demande = async donnees => { const p = commeJoueur("u3", () => M.api.creerSurvivant({ donnees, rejoindre: false })); p.catch(() => null); await calme(); return p; };
   await assert.rejects(demande({ ...tirage, competences: Object.fromEntries(Object.keys(tirage.competences).map(k => [k, 5])) }), /TirageInvalide/);
-  await assert.rejects(demande({ ...tirage, equipement: [...tirage.equipement, "quatre-quatre"] }), /TirageInvalide/);
-  await assert.rejects(demande({ ...tirage, savoirs: [...tirage.savoirs, "radio"] }), /TirageInvalide/);
+  await assert.rejects(demande({ ...tirage, equipement: [...tirage.equipement, objetEtranger] }), /TirageInvalide/);
+  await assert.rejects(demande({ ...tirage, savoirs: [...tirage.savoirs, savoirEtranger] }), /TirageInvalide/);
   await assert.rejects(demande({ ...tirage, traits: ["un-trait-inconnu"] }), /TirageInvalide/);
   // Le tirage honnête passe ; le MJ, lui, crée ce qu'il veut.
   assert.ok((await demande(tirage)).acteurId);

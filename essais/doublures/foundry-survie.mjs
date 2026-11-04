@@ -162,12 +162,32 @@ function livrer(fn) {
   p.finally(() => enVol.delete(p));
   return p;
 }
-// Attend que tous les messages du socket soient livrés et traités.
+// Le chiffrement du coffre (WebCrypto) se fait hors du fil JavaScript : sa durée varie avec la charge de la machine. Chaque
+// opération en cours est suivie, pour que calme() l'attende aussi au lieu d'un délai fixe (un déchiffrement encore en route à la
+// fin d'un essai finissait sinon dans le monde de l'essai suivant).
+const cryptoEnVol = new Set();
+{
+  const subtle = globalThis.crypto.subtle;
+  for (const nom of ["encrypt", "decrypt", "digest", "importKey", "exportKey", "generateKey", "deriveKey", "deriveBits", "sign", "verify"]) {
+    const original = subtle[nom].bind(subtle);
+    subtle[nom] = (...args) => {
+      const p = original(...args);
+      cryptoEnVol.add(p);
+      p.catch(() => null).finally(() => cryptoEnVol.delete(p));
+      return p;
+    };
+  }
+}
+// Attend que tous les messages du socket soient livrés et traités, et que plus aucun chiffrement ne soit en cours ; « calme » :
+// rien en vol, ni après un tour de boucle, ni après une minuterie de 1 ms (les suites posées par setTimeout(…, 0) passent avant).
 export async function calme() {
   for (let i = 0; i < 2000; i++) {
     await new Promise(r => setImmediate(r));
-    if (!enVol.size) return;
-    await Promise.allSettled([...enVol]);
+    if (!enVol.size && !cryptoEnVol.size) {
+      await new Promise(r => setTimeout(r, 1));
+      if (!enVol.size && !cryptoEnVol.size) return;
+    }
+    await Promise.allSettled([...enVol, ...cryptoEnVol]);
   }
   throw new Error("Socket : messages toujours en vol.");
 }
