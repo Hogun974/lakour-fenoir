@@ -33,7 +33,12 @@ const RUMEURS_RADIO = ["« … ici le port, évacuation par cargo jeudi, apporte
 
 const COMPLICATIONS = ["Bruit : une vitre tombe, un outil claque, quelque chose répond au loin (+2 bruit).", "Outil cassé : la lame se brise, le manche se fend.", "Blessure légère : une coupure, une entorse (1 blessure).", "Temps perdu : il faut tout recommencer (+1 quart).", "Fatigue : l'effort laisse vidé (+1 fatigue).", "Repéré : quelqu'un a vu, et s'en souviendra.", "Ressource perdue : une partie du butin tombe, se casse ou se gâte.", "Un Livide de plus surgit, attiré par l'effort.", "Une dispute éclate dans le groupe à cause de l'échec.", "Le matériel réservé pour autre chose y est passé (−1 matériau ou pièce).", "Une morsure frôlée : la manche est déchirée, la peau intacte… cette fois.", "La météo tourne : pluie, brouillard, nuit qui tombe."];
 
-const PRENOMS = ["Jean-Max Hoarau", "Marie-Josée Payet", "Latchimy Vélaye", "Ibrahim Moussa", "Ginette Grondin", "Lucien Ah-Sing", "Sully Técher", "Kamini Pounoussamy", "Fatima Ingar", "Expédit Boyer", "Rosemay Fontaine", "Daniel Lebon", "Zaïnaba Soilihi", "Mardé Ramassamy", "Thérèse Dijoux", "Josian Robert", "Valliamée Narayanin", "Bruno Lefèvre", "Chloé Martin", "Lucet Rivière", "Anfane Ahamada", "Gilbert Clain", "Sandrine Morel", "Paul Ah-Hong", "Firmin Maillot", "Nadia Patel", "Vinoth Moutoussamy", "Ophélie Turpin", "Dorlis Lauret", "Rachida Omarjee", "Christophe Ah-Kiem", "Maryse Bègue", "Rivo Rakotomalala", "Hanta Randriamanana", "Kevin Thiaw-Kine", "Noémie Gonthier", "Ismaël Badat", "Jean-Hugues Nativel", "Mélissa Cadet", "Emmanuel Sautron"];
+// Prénoms et noms de famille, rangés par genre du prénom (le générateur accorde le prénom à l'enfance et au passé) ; mixtes :
+// prénoms portés par les deux. PRENOMS (la table et le registre `noms.prenoms`) garde tout le monde.
+const PRENOMS_F = ["Marie-Josée Payet", "Ginette Grondin", "Kamini Pounoussamy", "Fatima Ingar", "Rosemay Fontaine", "Zaïnaba Soilihi", "Thérèse Dijoux", "Valliamée Narayanin", "Chloé Martin", "Sandrine Morel", "Nadia Patel", "Ophélie Turpin", "Rachida Omarjee", "Maryse Bègue", "Hanta Randriamanana", "Noémie Gonthier", "Mélissa Cadet"];
+const PRENOMS_M = ["Jean-Max Hoarau", "Ibrahim Moussa", "Lucien Ah-Sing", "Sully Técher", "Expédit Boyer", "Daniel Lebon", "Mardé Ramassamy", "Josian Robert", "Bruno Lefèvre", "Lucet Rivière", "Anfane Ahamada", "Gilbert Clain", "Paul Ah-Hong", "Firmin Maillot", "Vinoth Moutoussamy", "Dorlis Lauret", "Christophe Ah-Kiem", "Rivo Rakotomalala", "Kevin Thiaw-Kine", "Ismaël Badat", "Jean-Hugues Nativel", "Emmanuel Sautron"];
+const PRENOMS_MIXTES = ["Latchimy Vélaye"];
+const PRENOMS = [...PRENOMS_F, ...PRENOMS_M, ...PRENOMS_MIXTES];
 
 const SURNOMS = ["Ti Paul", "Gros Zan", "Gramoun", "Marmaille", "Ti Coq", "Kabri", "Bichik", "Tangue", "Zoizo", "Lamer", "Volcan", "Ti Rouge", "Tonton Fred", "Mamzelle", "Ti Pok", "Bébert", "Caméléon", "Zarlor", "Bon Dié", "Lapli"];
 
@@ -85,4 +90,5 @@ export const TABLES = [
   T("histoire-matin", "Histoire — ce matin-là", "Ce qu'il faisait le matin du jour zéro.", HISTOIRE_MATIN, { histoire: "matin" })
 ];
 
-export const DONNEES_TABLES = { raisonsRecrue: RAISONS_RECRUE, prixRecrue: PRIX_RECRUE, histoireProche: HISTOIRE_PROCHE, histoireMatin: HISTOIRE_MATIN, prenoms: PRENOMS, surnoms: SURNOMS, cyclones: CYCLONES };
+export const DONNEES_TABLES = { raisonsRecrue: RAISONS_RECRUE, prixRecrue: PRIX_RECRUE, histoireProche: HISTOIRE_PROCHE, histoireMatin: HISTOIRE_MATIN,
+  prenoms: PRENOMS, prenomsF: PRENOMS_F, prenomsM: PRENOMS_M, prenomsMixtes: PRENOMS_MIXTES, surnoms: SURNOMS, cyclones: CYCLONES };

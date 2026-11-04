@@ -1,20 +1,21 @@
 // Les enfances (contrat §10.1) : où et comment chaque survivant a grandi, à La Réunion ou ailleurs. Modificateurs de
 // compétences (+1, +2, parfois −1), parfois un savoir, une incapacité, un équipement, et des phrases pour la graine d'histoire.
-// poids : fréquence au tirage. Textes originaux, sans caricature.
+// poids : fréquence au tirage. genre ("f" | "m", vide = neutre) et nomAutre (le libellé pour l'autre genre) quand le libellé
+// est genré : « Fille de pêcheur » / « Fils de pêcheur ». Textes originaux, sans caricature.
 import { html } from "./aides.mjs";
 
-function enfance({ cle, nom, origine = "reunion", region = "", description, modificateurs, savoirs = [], incapacites = [], equipement = [], histoire, poids = 1 }) {
-  return { cle, nom, origine, region, description: html(description), modificateurs, savoirs, incapacites, equipement, histoire, poids };
+function enfance({ cle, nom, origine = "reunion", region = "", description, modificateurs, savoirs = [], incapacites = [], equipement = [], histoire, poids = 1, genre = "", nomAutre = "" }) {
+  return { cle, nom, origine, region, description: html(description), modificateurs, savoirs, incapacites, equipement, histoire, poids, genre, nomAutre };
 }
 
 export const ENFANCES = [
   enfance({ cle: "enfant-des-hauts-de-salazie", nom: "Enfant des Hauts de Salazie", region: "salazie", poids: 2,
     description: `Une enfance dans le cirque vert, entre les treilles de chouchous, la pluie et les sentiers qu'on descendait pour aller à l'école.`,
     modificateurs: { survie: 1, endurance: 1 }, histoire: ["Il a grandi à Grand Îlet, où l'on rentrait de l'école à pied sous la pluie.", "Sa grand-mère lui a appris le nom de chaque plante de la forêt."] }),
-  enfance({ cle: "gamin-du-port", nom: "Gamin du Port", region: "le-port", poids: 2,
+  enfance({ cle: "gamin-du-port", nom: "Gamin du Port", genre: "m", nomAutre: "Gamine du Port", region: "le-port", poids: 2,
     description: `Les cités du Port, les terrains vagues, les grues, la débrouille et la bande de copains qui se tient les coudes.`,
     modificateurs: { combat: 1, discretion: 1 }, histoire: ["Il a grandi dans une cité du Port, à l'ombre des grues.", "Sa bande d'enfance, c'était sa famille."] }),
-  enfance({ cle: "fille-de-pecheur-de-saint-pierre", nom: "Fille de pêcheur de Saint-Pierre", region: "saint-pierre", poids: 2,
+  enfance({ cle: "fille-de-pecheur-de-saint-pierre", nom: "Fille de pêcheur de Saint-Pierre", genre: "f", nomAutre: "Fils de pêcheur de Saint-Pierre", region: "saint-pierre", poids: 2,
     description: `Le port de Saint-Pierre, les barques au retour, l'odeur du poisson et du gasoil, les colères de la mer qu'on apprend à respecter.`,
     modificateurs: { survie: 1, conduite: 1 }, savoirs: [], histoire: ["Elle a grandi sur le port de Saint-Pierre, entre les filets de son père.", "Elle savait nager avant de savoir marcher, disait sa mère."] }),
   enfance({ cle: "enfance-zoreil", nom: "Enfance zoreil, arrivée à dix ans", origine: "ailleurs", poids: 2,

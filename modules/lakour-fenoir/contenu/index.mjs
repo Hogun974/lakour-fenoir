@@ -53,7 +53,8 @@ export function donnees() {
     camp: ACTIVITES_CAMP,
     recrues: { raisons: DONNEES_TABLES.raisonsRecrue, prix: DONNEES_TABLES.prixRecrue },
     histoire: { proche: DONNEES_TABLES.histoireProche, matin: DONNEES_TABLES.histoireMatin },
-    noms: { prenoms: DONNEES_TABLES.prenoms, surnoms: DONNEES_TABLES.surnoms, cyclones: DONNEES_TABLES.cyclones },
+    noms: { prenoms: DONNEES_TABLES.prenoms, prenomsF: DONNEES_TABLES.prenomsF, prenomsM: DONNEES_TABLES.prenomsM, prenomsMixtes: DONNEES_TABLES.prenomsMixtes,
+      surnoms: DONNEES_TABLES.surnoms, cyclones: DONNEES_TABLES.cyclones },
     autonomie: { voies: VOIES_AUTONOMIE, voieDefensive: VOIE_DEFENSIVE, bras: BRAS },
     fetes: FETES_FENOIR.map(f => ({ ...f, image: imageDeFete(f.cle), effet: EFFET_FETE }))
   };

@@ -107,7 +107,8 @@ cirques autour de 1 à 2).
   `tachesInterdites` en plus. Avant, seule « violence » → garde était lue.
 - **Registre** (`scripts/registre.mjs`) : les formes du contenu sont traduites pour la logique (enfances `modificateurs` →
   `competences`, traits `peur.lieu` → `peur.lieux`, `social.seuil` → `social.max`, véhicules `transport` → `type`, `terrains`,
-  `charge`, `rapide`, `allure`, bestiaire → `creatures`, noms, proches, raisons et prix des recrues).
+  `charge`, `rapide`, `allure`, bestiaire → `creatures`, noms → `prenomsF`, `prenomsM`, `prenomsMixtes` (et `noms` pour
+  les prénoms sans genre), proches, raisons et prix des recrues).
 - **État public, champs ajoutés** : `bilan` (instantané du bilan de l'abri, pour les joueurs qui n'ont pas le monde),
   `meteo` (`{ temps: "cyclone" | "pluie" | "" }` là où est le groupe), `groupe.porte` (ce que le groupe porte sans abri : versé
   à l'abri à l'installation), `chroniques` (un chapitre par abri), `propositions` (des joueurs).

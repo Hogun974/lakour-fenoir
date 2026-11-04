@@ -93,7 +93,9 @@ test("registre : les formes du contenu traduites pour la logique ; un ajout tard
   const voiture = c.equipements.find(e => e.cle === "voiture");
   assert.ok(L.estVehicule(voiture) && voiture.rapide && voiture.charge === 20);
   assert.ok(c.creatures.every(x => ["livide", "animal"].includes(x.type)));
-  assert.ok(c.noms.length > 10 && c.proches.length && c.raisonsRecrue.length && c.prixRecrue.length);
+  assert.ok(c.prenomsF.length > 10 && c.prenomsM.length > 10 && c.prenomsMixtes.length >= 1, "prénoms rangés par genre");
+  assert.deepEqual(c.noms, [], "tous les prénoms de Fénoir sont rangés : aucun sans genre");
+  assert.ok(c.proches.length && c.raisonsRecrue.length && c.prixRecrue.length);
   assert.deepEqual(L.verifierContenu(c), []);
   // Le module a ses données après le crochet : il donne une promesse, le système l'attend.
   const r = creerRegistre();
@@ -191,6 +193,22 @@ test("création : tirer, verrouiller, choisir ; le budget ; la demande part au M
   tirer(etat, { tout: true });
   assert.equal(etat.tirage.enfance, enfance);
   assert.equal(etat.tirage.nom, premier.nom);
+  // Libellés accordés au genre : un nom féminin gardé avec un passé masculin donne « Électricienne » partout (fenêtre, fiche).
+  etat.tirage.nom = "Rosemay Fontaine"; etat.tirage.genre = L.genreDuNom(M.api.contenu(), etat.tirage.nom); etat.tirage.passe = "electricien";
+  tirer(etat, { tout: true });
+  assert.equal(etat.tirage.genre, "f");
+  assert.equal(etat.tirage.passe, "electricien");
+  const ctxF = await commeJoueur("u1", () => contexteCreation(etat));
+  assert.equal(ctxF.passe.nom, "Électricienne");
+  assert.equal(ctxF.passes.find(o => o.valeur === "electricien").libelle, "Électricienne");
+  assert.equal(ctxF.passes.find(o => o.valeur === "infirmiere-du-chu").libelle, "Infirmière du CHU");
+  const creeF = await M.api.creerSurvivant({ donnees: etat.tirage, rejoindre: false });
+  const acteurF = game.actors.get(creeF.acteurId);
+  assert.equal(acteurF.system.genre, "f");
+  assert.equal(contexteSurvivant(acteurF, { gm: true, proprietaire: false }).passe.nom, "Électricienne");
+  await acteurF.delete();
+  etat.tirage.nom = premier.nom; etat.tirage.genre = premier.genre; etat.tirage.passe = premier.passe; etat.tirage.enfance = enfance;
+  tirer(etat, { tout: true });
   const r = commeJoueur("u1", () => M.api.creerSurvivant({ donnees: etat.tirage, rejoindre: false }));
   await calme();
   const cree = await r;

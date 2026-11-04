@@ -30,7 +30,9 @@
     "histoire": [
       "Elle emmenait chaque année ses élèves au volcan et ne s'en lassait pas.",
       "Elle refuse de lever la main sur qui que ce soit, même mort."
-    ]
+    ],
+    "genre": "f",
+    "nomAutre": "Professeur de SVT"
   },
   "effects": [],
   "folder": null,

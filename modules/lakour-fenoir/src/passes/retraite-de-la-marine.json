@@ -30,7 +30,9 @@
     "histoire": [
       "Il a vu tous les ports de l'océan Indien et n'est revenu que pour ses vieux jours.",
       "Il écoute la radio marine chaque soir, par habitude."
-    ]
+    ],
+    "genre": "m",
+    "nomAutre": "Retraitée de la marine"
   },
   "effects": [],
   "folder": null,

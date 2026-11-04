@@ -29,7 +29,9 @@
     "histoire": [
       "Il n'est descendu en ville qu'une poignée de fois et n'y a jamais dormi.",
       "Il connaît chaque famille du cirque et chaque source."
-    ]
+    ],
+    "genre": "m",
+    "nomAutre": "Habitante d'un îlet de Mafate"
   },
   "effects": [],
   "folder": null,

@@ -82,6 +82,16 @@ const VERIFICATIONS = {
     }
   },
   "budget de départ": L => { for (let i = 0; i < 300; i++) { const n = somme(L, L.genererSurvivant(C, L.creerHasard(`b${i}`), {})); assert.ok(n >= 10 && n <= 16); } },
+  "prénom du genre du passé": L => {
+    const idx = L.indexer(C);
+    for (let i = 0; i < 300; i++) {
+      const s = L.genererSurvivant(C, L.creerHasard(`g${i}`), {});
+      const g = C.prenomsF.includes(s.nom) ? "f" : C.prenomsM.includes(s.nom) ? "m" : "";
+      for (const def of [idx.passes.get(s.passe), idx.enfances.get(s.enfance)]) if (def?.genre && g) assert.equal(def.genre, g);
+    }
+    const v = L.genererSurvivant(C, L.creerHasard("v"), { budget: null, verrous: { nom: "Rosemay Fontaine", passe: "electricien" } });
+    assert.equal(L.nomAccorde(idx.passes.get(v.passe), v.genre), "Électricienne");
+  },
   "recrues qui comblent": L => {
     let f = 0, h = 0;
     for (let i = 0; i < 400; i++) {
@@ -175,6 +185,8 @@ const MUTATIONS = [
   ["generation.mjs", "while (somme() < budget[0] && garde++ < 200)", "while (false && somme() < budget[0] && garde++ < 200)", "budget de départ (minimum)"],
   ["generation.mjs", "const prefPour = (mods, favoriser) => 1 + ", "const prefPour = (mods, favoriser) => 1 + 0 * ", "recrues qui comblent"],
   ["generation.mjs", "if (!t) { total += 0.5; continue; }", "if (!t) { total += 1; continue; }", "bras"],
+  ["generation.mjs", "const candidats = genre ? [...p[genre], ...p.mixtes] : [...p.f, ...p.m, ...p.mixtes];", "const candidats = [...p.f, ...p.m, ...p.mixtes];", "prénom du genre du passé"],
+  ["generation.mjs", "const genreVoulu = genreDe({ genre: v.genre }) || (nomGarde ? genreDuNom(contenu, nomGarde) : \"\");", "const genreVoulu = genreDe({ genre: v.genre });", "prénom du genre du passé"],
   ["generation.mjs", "for (const r of [\"eau\", \"nourriture\"]) if (t.besoins?.[r] !== undefined) e.besoins[r] *= Number(t.besoins[r]);", "", "gros mangeur"],
   ["maladies.mjs", "eau: { traitee: 0.2, brute: 1 },", "eau: { traitee: 1, brute: 1 },", "eau traitée"],
   ["monde.mjs", ".filter(([, etat]) => etat !== \"coupee\")\n          .map(([v, etat])", "\n          .map(([v, etat])", "hordes par routes ouvertes"],

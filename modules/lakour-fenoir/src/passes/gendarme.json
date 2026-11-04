@@ -27,7 +27,9 @@
     "histoire": [
       "Elle a demandé sa mutation dans l'île de sa mère, qu'elle ne connaissait que l'été.",
       "Elle a sorti des randonneurs de Mafate en pleine nuit plus d'une fois."
-    ]
+    ],
+    "genre": "f",
+    "nomAutre": ""
   },
   "effects": [],
   "folder": null,

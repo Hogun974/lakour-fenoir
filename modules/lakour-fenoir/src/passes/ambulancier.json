@@ -27,7 +27,9 @@
     "histoire": [
       "Il a conduit des milliers de malades sur les routes de l'Est, sous la pluie, de nuit.",
       "Il connaît chaque radier qui déborde et chaque raccourci."
-    ]
+    ],
+    "genre": "m",
+    "nomAutre": "Ambulancière"
   },
   "effects": [],
   "folder": null,

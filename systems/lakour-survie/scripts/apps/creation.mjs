@@ -24,6 +24,7 @@ export function verrousPour(etat, { tout = false } = {}) {
   const x = etat.tirage;
   if (!x) return v;
   for (const e of ELEMENTS) if (tout || etat.verrous[e]) v[e] = structuredClone(x[e]);
+  if (tout && x.genre) v.genre = x.genre; // le genre du tirage suit le nom gardé
   return v;
 }
 
@@ -44,11 +45,12 @@ export function contexteCreation(etat) {
   const interdites = new Set([...incap, ...L.competencesInterdites(x ?? {})]);
   return {
     pret: Boolean(x), gm: game.user.isGM, verrous: etat.verrous, rejoindre: etat.rejoindre,
-    nom: x?.nom ?? "", age: x?.age ?? "",
-    enfances: options(L.liste(c.enfances).map(e => [e.cle, e.nom]), x?.enfance),
-    passes: options(L.liste(c.passes).map(p => [p.cle, p.nom]), x?.passe),
-    enfance: x?.enfance ? { nom: def("enfances", x.enfance)?.nom ?? x.enfance, aide: sansBalises(def("enfances", x.enfance)?.description ?? "") } : null,
-    passe: x?.passe ? { nom: def("passes", x.passe)?.nom ?? x.passe, aide: sansBalises(def("passes", x.passe)?.description ?? ""), accroche: sansBalises(def("passes", x.passe)?.accroche ?? "") } : null,
+    nom: x?.nom ?? "", age: x?.age ?? "", genre: x?.genre ?? "",
+    // Les listes sont accordées au genre du tirage (« Agriculteur des Hauts » pour un homme), comme les libellés affichés.
+    enfances: options(L.liste(c.enfances).map(e => [e.cle, L.nomAccorde(e, x?.genre)]), x?.enfance),
+    passes: options(L.liste(c.passes).map(p => [p.cle, L.nomAccorde(p, x?.genre)]), x?.passe),
+    enfance: x?.enfance ? { nom: L.nomAccorde(def("enfances", x.enfance), x.genre) || x.enfance, aide: sansBalises(def("enfances", x.enfance)?.description ?? "") } : null,
+    passe: x?.passe ? { nom: L.nomAccorde(def("passes", x.passe), x.genre) || x.passe, aide: sansBalises(def("passes", x.passe)?.description ?? ""), accroche: sansBalises(def("passes", x.passe)?.accroche ?? "") } : null,
     competences: COMPETENCES.map(k => ({ cle: k, libelle: libelleCompetence(k), niveau: Number(x?.competences?.[k]) || 0, pips: [1, 2, 3, 4, 5].map(i => ({ plein: i <= (Number(x?.competences?.[k]) || 0) })),
       flammes: flammes(x?.passions?.[k]), favori: etat.favoriser.includes(k), incapable: interdites.has(k) })),
     traits: (x?.traits ?? []).map(k => ({ cle: k, nom: def("traits", k)?.nom ?? k, aide: sansBalises(def("traits", k)?.description ?? "") })),
@@ -91,7 +93,11 @@ export class CreationSurvivant extends HandlebarsApplicationMixin(ApplicationV2)
     await super._onRender(context, options);
     const el = this.element;
     const sur = (sel, fn) => el.querySelector(sel)?.addEventListener("change", ev => { fn(ev.target); this.render(); });
-    sur("[name=nom]", i => { this.etat.tirage.nom = i.value.trim(); this.etat.verrous.nom = Boolean(i.value.trim()); });
+    sur("[name=nom]", i => {
+      this.etat.tirage.nom = i.value.trim(); this.etat.verrous.nom = Boolean(i.value.trim());
+      // Un nouveau nom donne son genre (prénoms du contenu), ou l'oublie ; les libellés affichés suivent.
+      this.etat.tirage.genre = L.genreDuNom(contenu(), this.etat.tirage.nom);
+    });
     sur("[name=age]", i => { this.etat.tirage.age = Number(i.value) || this.etat.tirage.age; this.etat.verrous.age = true; essayerSync(() => tirer(this.etat, { tout: true })); });
     sur("[name=enfance]", i => { this.etat.tirage.enfance = i.value; this.etat.verrous.enfance = true; essayerSync(() => tirer(this.etat, { tout: true })); });
     sur("[name=passe]", i => { this.etat.tirage.passe = i.value; this.etat.verrous.passe = true; essayerSync(() => tirer(this.etat, { tout: true })); });

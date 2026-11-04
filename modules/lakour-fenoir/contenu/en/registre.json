@@ -702,6 +702,10 @@
     "histoire.1": {
       "fr": "Elle savait nager avant de savoir marcher, disait sa mère.",
       "en": "She could swim before she could walk, her mother used to say."
+    },
+    "nomAutre": {
+      "fr": "Fils de pêcheur de Saint-Pierre",
+      "en": "Son of a Saint-Pierre fisherman"
     }
   },
   "registre/enfances/gamin-du-port": {
@@ -721,6 +725,10 @@
     "histoire.1": {
       "fr": "Sa bande d'enfance, c'était sa famille.",
       "en": "His childhood gang was his family."
+    },
+    "nomAutre": {
+      "fr": "Gamine du Port",
+      "en": "Kid from Le Port"
     }
   },
   "registre/evenements/appel-a-l-aide": {

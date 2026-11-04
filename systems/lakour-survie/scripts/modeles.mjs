@@ -31,6 +31,7 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
       afflictions: new fields.ArrayField(new fields.ObjectField()),
       enfance: texte(),
       passe: texte(),
+      genre: texte(), // "f", "m" ou "" : accorde le libellé de l'enfance et du passé (nomAccorde)
       passions: new fields.SchemaField(Object.fromEntries(COMPETENCES.map(c => [c, entier(0, 0, 2)]))),
       traits: cles(),
       incapacites: cles(),
@@ -114,7 +115,8 @@ export class ModelePasse extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       cle: cle(), description: html(), competences: objetLibre({}), savoirs: cles(), equipement: cles(), accroche: html(),
-      region: texte(), incapacites: cles(), histoire: new fields.ArrayField(new fields.StringField())
+      region: texte(), incapacites: cles(), histoire: new fields.ArrayField(new fields.StringField()),
+      genre: texte(), nomAutre: texte()
     };
   }
 }
@@ -143,7 +145,7 @@ export class ModeleEnfance extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       cle: cle(), origine: texte("reunion"), region: texte(), description: html(), modificateurs: objetLibre({}), savoirs: cles(), incapacites: cles(),
-      equipement: cles(), histoire: new fields.ArrayField(new fields.StringField()), poids: nombre(1)
+      equipement: cles(), histoire: new fields.ArrayField(new fields.StringField()), poids: nombre(1), genre: texte(), nomAutre: texte()
     };
   }
 }

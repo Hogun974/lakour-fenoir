@@ -27,7 +27,9 @@
     "histoire": [
       "Il connaît chaque bassin de Cilaos et le nom de chaque cascade.",
       "Il a perdu un client, une fois, dans une crue ; il ne prend plus jamais la pluie à la légère."
-    ]
+    ],
+    "genre": "m",
+    "nomAutre": ""
   },
   "effects": [],
   "folder": null,

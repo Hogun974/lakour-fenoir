@@ -27,7 +27,9 @@
     "histoire": [
       "Il a monté son entreprise seul, avec une camionnette et un crédit qu'il rembourse encore.",
       "Il dit toujours qu'un toit sans panneau est un toit qui dort."
-    ]
+    ],
+    "genre": "m",
+    "nomAutre": "Électricienne"
   },
   "effects": [],
   "folder": null,

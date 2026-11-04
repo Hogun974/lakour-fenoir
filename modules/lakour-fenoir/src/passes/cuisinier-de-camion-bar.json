@@ -29,7 +29,9 @@
     "histoire": [
       "Son camion porte le prénom de sa fille, peint en lettres jaunes.",
       "Il connaît les commandes de tous les habitués, et leurs secrets."
-    ]
+    ],
+    "genre": "m",
+    "nomAutre": "Cuisinière de camion-bar"
   },
   "effects": [],
   "folder": null,

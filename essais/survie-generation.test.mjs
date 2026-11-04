@@ -48,6 +48,78 @@ test("genererSurvivant : compétences = enfance + passé + traits ; verrous ; in
   assert.ok(somme(serre) >= 6 && somme(serre) <= 8);
 });
 
+test("genre : 1000 tirages — jamais un prénom féminin avec un passé ou une enfance masculins, ni l'inverse ; genre exposé", () => {
+  const idx = L.indexer(C);
+  const genres = { f: new Set(C.prenomsF), m: new Set(C.prenomsM) };
+  const vus = { f: 0, m: 0, "": 0 };
+  let mixtes = 0;
+  for (let i = 0; i < 1000; i++) {
+    const s = L.genererSurvivant(C, L.creerHasard(`gn${i}`), { statut: "joueur" });
+    assert.ok(s.nom, "un prénom du contenu");
+    const gNom = genres.f.has(s.nom) ? "f" : genres.m.has(s.nom) ? "m" : "";
+    assert.ok(["f", "m", ""].includes(s.genre));
+    if (gNom) assert.equal(s.genre, gNom, `genre « ${s.genre} » pour ${s.nom} (tirage ${i})`); else mixtes++;
+    for (const def of [idx.passes.get(s.passe), idx.enfances.get(s.enfance)]) {
+      // Un élément genré est toujours du genre du survivant (donc du prénom) : « Christophe, agricultrice » n'existe plus.
+      if (def?.genre) assert.equal(def.genre, s.genre, `${s.nom} (${s.genre}), ${def.nom} (tirage ${i})`);
+    }
+    // Les phrases de la graine viennent d'éléments du genre du survivant.
+    assert.ok(s.histoire.graine.phrases.every(p => !(s.genre === "m" && p.startsWith("Elle ")) && !(s.genre === "f" && p.startsWith("Il "))), `phrases genrées (${s.nom})`);
+    vus[s.genre]++;
+  }
+  assert.ok(vus.f > 200 && vus.m > 200, `des deux genres : ${JSON.stringify(vus)}`);
+  assert.ok(mixtes >= 1 && mixtes < 300, `des prénoms mixtes, rarement : ${mixtes}`);
+});
+
+test("genre : verrous — le nom gardé décide (libellé accordé par nomAccorde), sinon le passé ; genre gardé ; nom inconnu", () => {
+  const idx = L.indexer(C);
+  const passe = cle => idx.passes.get(cle), enfance = cle => idx.enfances.get(cle);
+  // Nom féminin gardé, passé masculin gardé : on garde le nom, le passé s'affiche au féminin, ses phrases (au masculin) sont écartées.
+  const a = L.genererSurvivant(C, L.creerHasard("a"), { budget: null, verrous: { nom: "Rosemay Fontaine", passe: "electricien", enfance: "enfant-des-hauts" } });
+  assert.equal(a.nom, "Rosemay Fontaine");
+  assert.equal(a.genre, "f");
+  assert.equal(L.nomAccorde(passe(a.passe), a.genre), "Électricienne");
+  assert.deepEqual(a.histoire.graine.phrases, ["A grandi dans la brume, entre les chouchous."]);
+  // Le prénom seul suffit (« Christophe Payet » : masculin) ; un nom inconnu laisse le libellé du passé.
+  const b = L.genererSurvivant(C, L.creerHasard("b"), { budget: null, verrous: { nom: "Christophe Payet", passe: "infirmiere" } });
+  assert.equal(b.genre, "m");
+  assert.equal(L.nomAccorde(passe(b.passe), b.genre), "Infirmier");
+  const c = L.genererSurvivant(C, L.creerHasard("c"), { budget: null, verrous: { nom: "Alex Dupont", passe: "infirmiere" } });
+  assert.equal(c.genre, "f", "nom de genre inconnu : le genre du passé");
+  assert.equal(L.nomAccorde(passe(c.passe), c.genre), "Infirmière");
+  assert.equal(L.genreDuNom(C, "Alex Dupont"), "");
+  assert.equal(L.genreDuNom(C, "Latchimy Vélaye"), "", "mixte");
+  // Enfance et passé gardés, contradictoires, sans nom : le genre du passé gagne, l'enfance prend son autre libellé.
+  const d = L.genererSurvivant(C, L.creerHasard("d"), { budget: null, verrous: { enfance: "fille-de-pecheur", passe: "planteur" } });
+  assert.equal(d.genre, "m");
+  assert.ok(C.prenomsM.includes(d.nom));
+  assert.equal(L.nomAccorde(enfance(d.enfance), d.genre), "Fils de pêcheur");
+  assert.equal(L.nomAccorde(passe(d.passe), d.genre), "Planteur");
+  assert.deepEqual(d.histoire.graine.phrases, ["Il coupait la canne depuis vingt ans."]);
+  // Enfance gardée seule : le passé tiré est du même genre (ou neutre), 200 fois.
+  for (let i = 0; i < 200; i++) {
+    const e = L.genererSurvivant(C, L.creerHasard(`e${i}`), { budget: null, verrous: { enfance: "fille-de-pecheur" } });
+    assert.ok(!passe(e.passe).genre || passe(e.passe).genre === "f", `${e.passe} avec fille de pêcheur`);
+    assert.equal(e.genre, "f");
+    assert.ok(C.prenomsF.includes(e.nom) || C.prenomsMixtes.includes(e.nom));
+  }
+  // Genre gardé : prénom de ce genre, éléments compatibles.
+  for (let i = 0; i < 100; i++) {
+    const g = L.genererSurvivant(C, L.creerHasard(`g${i}`), { budget: null, genre: "m" });
+    assert.ok(C.prenomsM.includes(g.nom) || C.prenomsMixtes.includes(g.nom));
+    assert.ok(!passe(g.passe).genre || passe(g.passe).genre === "m");
+  }
+  // nomAccorde : neutre ou sans genre connu -> le nom tel quel.
+  assert.equal(L.nomAccorde(passe("gendarme"), "m"), "Gendarme");
+  assert.equal(L.nomAccorde(passe("infirmiere"), ""), "Infirmière");
+  assert.equal(L.nomAccorde(null, "f"), "");
+  // Sans prénoms rangés par genre (ancien contenu : noms à plat) : un nom quelconque, genre vide.
+  const vieux = { ...C, prenomsF: undefined, prenomsM: undefined, prenomsMixtes: undefined, noms: ["Ti Paul"] };
+  const h = L.genererSurvivant(vieux, L.creerHasard("h"), { budget: null, verrous: { passe: "gendarme", enfance: "enfant-des-hauts" } });
+  assert.equal(h.nom, "Ti Paul");
+  assert.equal(h.genre, "");
+});
+
 test("besoinsDuGroupe : couverture, urgences, profil recherché", () => {
   const medic = L.genererSurvivant(C, constant(0.5), { budget: null, passe: "infirmiere", enfance: "enfance-protegee", traits: [] });
   const blesse = { ...L.genererSurvivant(C, constant(0.5), { budget: null, passe: "gendarme", enfance: "gamin-du-port", traits: [] }), blessures: 2 };

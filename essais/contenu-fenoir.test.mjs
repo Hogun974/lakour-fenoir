@@ -269,6 +269,23 @@ test("tables : 1dN, résultats non vides, appels avec leurs données, paliers de
   }
 });
 
+test("genre des passés et des enfances : f, m ou vide ; nomAutre avec genre ; prénoms rangés par genre, sans doublon ni oubli", () => {
+  for (const f of ["passes", "enfances"]) for (const o of D[f]) {
+    assert.ok(["", "f", "m"].includes(o.genre ?? ""), `${f} ${o.cle} : genre « ${o.genre} »`);
+    if (o.nomAutre) assert.ok(o.genre && o.nomAutre !== o.nom, `${f} ${o.cle} : nomAutre sans genre ou identique`);
+  }
+  for (const cle of ["infirmiere-du-chu", "agricultrice-des-hauts", "etudiante", "prof-de-svt"]) assert.equal(par("passes", cle).genre, "f", cle);
+  for (const cle of ["electricien", "pecheur-de-saint-gilles", "apiculteur"]) assert.equal(par("passes", cle).genre, "m", cle);
+  assert.equal(par("passes", "agricultrice-des-hauts").nomAutre, "Agriculteur des Hauts");
+  assert.equal(par("enfances", "fille-de-pecheur-de-saint-pierre").nomAutre, "Fils de pêcheur de Saint-Pierre");
+  assert.equal(par("enfances", "gamin-du-port").genre, "m");
+  const { prenoms, prenomsF, prenomsM, prenomsMixtes } = D.noms;
+  assert.ok(prenomsF.length >= 15 && prenomsM.length >= 15);
+  assert.deepEqual([...prenomsF, ...prenomsM, ...prenomsMixtes].sort(), [...prenoms].sort(), "chaque prénom est rangé une fois");
+  assert.equal(new Set(prenoms).size, prenoms.length);
+  const d = copie(); d.passes[0].genre = "x"; attendre(verifierDonnees(d), /genre inconnu/);
+});
+
 test("création des survivants (§10) : enfances, traits compatibles et symétriques, prétirés dans le budget", () => {
   for (const t of D.traits) for (const c of t.incompatibles) assert.ok(par("traits", c).incompatibles.includes(t.cle), `${t.cle} / ${c}`);
   const d = copie(); d.traits[0].incompatibles.push(d.traits[5].cle); attendre(verifierDonnees(d), /non symétrique/);

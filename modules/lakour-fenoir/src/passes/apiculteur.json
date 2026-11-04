@@ -27,7 +27,9 @@
     "histoire": [
       "Il a quitté un bureau de Saint-Denis pour ses ruches et ne l'a jamais regretté.",
       "Il parle à ses abeilles, et prétend qu'elles lui répondent."
-    ]
+    ],
+    "genre": "m",
+    "nomAutre": "Apicultrice"
   },
   "effects": [],
   "folder": null,

@@ -9802,7 +9802,9 @@
    "histoire": [
     "Elle a fait ses études à Saint-Denis et n'a jamais voulu partir en métropole.",
     "Elle connaît par cœur le bruit des urgences un soir de cyclone."
-   ]
+   ],
+   "genre": "f",
+   "nomAutre": "Infirmier du CHU"
   },
   {
    "nom": "Électricien",
@@ -9828,7 +9830,9 @@
    "histoire": [
     "Il a monté son entreprise seul, avec une camionnette et un crédit qu'il rembourse encore.",
     "Il dit toujours qu'un toit sans panneau est un toit qui dort."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Électricienne"
   },
   {
    "nom": "Pêcheur de Saint-Gilles",
@@ -9854,7 +9858,9 @@
    "histoire": [
     "Son père lui a appris à lire la houle avant de lui apprendre à lire.",
     "Il n'a jamais dormi plus de trois nuits loin de la mer."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Pêcheuse de Saint-Gilles"
   },
   {
    "nom": "Planteur de canne",
@@ -9880,7 +9886,9 @@
    "histoire": [
     "Il a repris les terres de son grand-père quand plus personne n'en voulait.",
     "Chaque fin de campagne, il invitait tout le quartier au cari."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Planteuse de canne"
   },
   {
    "nom": "Gendarme",
@@ -9906,7 +9914,9 @@
    "histoire": [
     "Elle a demandé sa mutation dans l'île de sa mère, qu'elle ne connaissait que l'été.",
     "Elle a sorti des randonneurs de Mafate en pleine nuit plus d'une fois."
-   ]
+   ],
+   "genre": "f",
+   "nomAutre": ""
   },
   {
    "nom": "Étudiante",
@@ -9931,7 +9941,9 @@
    "histoire": [
     "Elle est la première de sa famille à faire des études.",
     "Elle partageait un appartement près du Moufia avec deux amies dont elle n'a plus de nouvelles."
-   ]
+   ],
+   "genre": "f",
+   "nomAutre": "Étudiant"
   },
   {
    "nom": "Guide de canyon",
@@ -9957,7 +9969,9 @@
    "histoire": [
     "Il connaît chaque bassin de Cilaos et le nom de chaque cascade.",
     "Il a perdu un client, une fois, dans une crue ; il ne prend plus jamais la pluie à la légère."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": ""
   },
   {
    "nom": "Mécanicien",
@@ -9983,7 +9997,9 @@
    "histoire": [
     "Son garage était la deuxième maison de tout le quartier.",
     "Il a appris le métier en démontant les mobylettes de ses cousins."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Mécanicienne"
   },
   {
    "nom": "Cuisinier de camion-bar",
@@ -10011,7 +10027,9 @@
    "histoire": [
     "Son camion porte le prénom de sa fille, peint en lettres jaunes.",
     "Il connaît les commandes de tous les habitués, et leurs secrets."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Cuisinière de camion-bar"
   },
   {
    "nom": "Retraité de la marine",
@@ -10040,7 +10058,9 @@
    "histoire": [
     "Il a vu tous les ports de l'océan Indien et n'est revenu que pour ses vieux jours.",
     "Il écoute la radio marine chaque soir, par habitude."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Retraitée de la marine"
   },
   {
    "nom": "Agricultrice des Hauts",
@@ -10067,7 +10087,9 @@
    "histoire": [
     "Elle a grandi dans le brouillard de la Plaine et n'aime pas la chaleur des Bas.",
     "Elle a sauvé seule son troupeau du dernier cyclone."
-   ]
+   ],
+   "genre": "f",
+   "nomAutre": "Agriculteur des Hauts"
   },
   {
    "nom": "Ambulancier",
@@ -10093,7 +10115,9 @@
    "histoire": [
     "Il a conduit des milliers de malades sur les routes de l'Est, sous la pluie, de nuit.",
     "Il connaît chaque radier qui déborde et chaque raccourci."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Ambulancière"
   },
   {
    "nom": "Professeure de SVT",
@@ -10122,7 +10146,9 @@
    "histoire": [
     "Elle emmenait chaque année ses élèves au volcan et ne s'en lassait pas.",
     "Elle refuse de lever la main sur qui que ce soit, même mort."
-   ]
+   ],
+   "genre": "f",
+   "nomAutre": "Professeur de SVT"
   },
   {
    "nom": "Vendeur de bazar",
@@ -10149,7 +10175,9 @@
    "histoire": [
     "Le bazar appartenait à son grand-père, arrivé du Gujarat il y a longtemps.",
     "Il a toujours su ce que voulait un client avant qu'il ouvre la bouche."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Vendeuse de bazar"
   },
   {
    "nom": "Chauffeur de car jaune",
@@ -10175,7 +10203,9 @@
    "histoire": [
     "Il a fait la route de Cilaos plus de dix mille fois.",
     "Les enfants du cirque l'appelaient par son prénom et lui montaient des mangues."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Chauffeuse de car jaune"
   },
   {
    "nom": "Apiculteur",
@@ -10201,7 +10231,9 @@
    "histoire": [
     "Il a quitté un bureau de Saint-Denis pour ses ruches et ne l'a jamais regretté.",
     "Il parle à ses abeilles, et prétend qu'elles lui répondent."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Apicultrice"
   },
   {
    "nom": "Habitant d'un îlet de Mafate",
@@ -10229,7 +10261,9 @@
    "histoire": [
     "Il n'est descendu en ville qu'une poignée de fois et n'y a jamais dormi.",
     "Il connaît chaque famille du cirque et chaque source."
-   ]
+   ],
+   "genre": "m",
+   "nomAutre": "Habitante d'un îlet de Mafate"
   }
  ],
  "recettes": [
@@ -12962,7 +12996,9 @@
     "Il a grandi à Grand Îlet, où l'on rentrait de l'école à pied sous la pluie.",
     "Sa grand-mère lui a appris le nom de chaque plante de la forêt."
    ],
-   "poids": 2
+   "poids": 2,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "gamin-du-port",
@@ -12981,7 +13017,9 @@
     "Il a grandi dans une cité du Port, à l'ombre des grues.",
     "Sa bande d'enfance, c'était sa famille."
    ],
-   "poids": 2
+   "poids": 2,
+   "genre": "m",
+   "nomAutre": "Gamine du Port"
   },
   {
    "cle": "fille-de-pecheur-de-saint-pierre",
@@ -13000,7 +13038,9 @@
     "Elle a grandi sur le port de Saint-Pierre, entre les filets de son père.",
     "Elle savait nager avant de savoir marcher, disait sa mère."
    ],
-   "poids": 2
+   "poids": 2,
+   "genre": "f",
+   "nomAutre": "Fils de pêcheur de Saint-Pierre"
   },
   {
    "cle": "enfance-zoreil",
@@ -13020,7 +13060,9 @@
     "Il est arrivé de métropole à dix ans et a mis un an à comprendre le créole de la cour de récréation.",
     "Il dit toujours qu'il est d'ici, et on lui répond toujours que non."
    ],
-   "poids": 2
+   "poids": 2,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfant-de-la-cite-saint-denis",
@@ -13039,7 +13081,9 @@
     "Il a grandi au dixième étage d'une barre du Chaudron.",
     "Il connaît chaque raccourci de Saint-Denis, chaque cage d'escalier ouverte."
    ],
-   "poids": 2
+   "poids": 2,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfance-a-mayotte",
@@ -13058,7 +13102,9 @@
     "Elle a grandi à Mayotte avant de rejoindre une tante à Saint-Denis.",
     "Elle parle shimaoré à sa mère au téléphone, chaque dimanche."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfance-a-madagascar",
@@ -13077,7 +13123,9 @@
     "Il a grandi à Madagascar et envoie encore de l'argent à ses frères.",
     "Il sait réparer n'importe quoi avec presque rien : là-bas, on n'avait pas le choix."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfance-a-maurice",
@@ -13096,7 +13144,9 @@
     "Elle a grandi à Maurice et a traversé pour suivre son mari.",
     "Elle compare tout à son île natale, et finit toujours par dire que celle-ci n'est pas mal non plus."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfant-de-planteur-de-l-est",
@@ -13117,7 +13167,9 @@
     "Il a coupé sa première canne à douze ans, avec le sabre de son père.",
     "Chaque Dipavali, sa famille allumait des lampes jusque dans la cour."
    ],
-   "poids": 2
+   "poids": 2,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfant-de-mafate",
@@ -13139,7 +13191,9 @@
     "Il a grandi dans un îlet de Mafate où l'école n'avait qu'une classe.",
     "Il est descendu en ville à quinze ans et n'a jamais aimé le bruit des voitures."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfant-du-tampon",
@@ -13158,7 +13212,9 @@
     "Il a grandi au Dix-Septième, dans une case avec un grand jardin.",
     "Les vacances, c'était la ferme de son oncle, à la Plaine des Cafres."
    ],
-   "poids": 2
+   "poids": 2,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfant-de-l-ouest",
@@ -13177,7 +13233,9 @@
     "Il a appris à nager dans le lagon de l'Hermitage.",
     "L'été, il vendait des glaces sur la plage aux touristes."
    ],
-   "poids": 2
+   "poids": 2,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfant-de-cilaos",
@@ -13196,7 +13254,9 @@
     "Il a grandi à Cilaos, où sa mère brodait des nappes pour les touristes.",
     "Il sait qu'une route peut disparaître en une nuit."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfance-chinoise-de-saint-denis",
@@ -13215,7 +13275,9 @@
     "Elle a grandi derrière le comptoir de la boutique de ses parents.",
     "Son grand-père racontait la traversée depuis Canton, chaque Nouvel An."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfance-zarab-de-saint-pierre",
@@ -13233,7 +13295,9 @@
     "Il a appris à compter en rendant la monnaie au magasin de son père.",
     "Dans sa famille, une parole donnée vaut un contrat signé."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfant-de-militaire",
@@ -13252,7 +13316,9 @@
     "Il a changé huit fois d'école avant le collège.",
     "Son père l'emmenait au stand de tir le dimanche."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfance-en-foyer",
@@ -13272,7 +13338,9 @@
     "Il a connu trois familles d'accueil avant ses quatorze ans.",
     "Il garde toujours un sac prêt, au cas où."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfance-protegee",
@@ -13294,7 +13362,9 @@
     "Il a grandi dans une villa avec piscine et n'avait jamais porté un sac de ciment.",
     "Ses parents sont partis par l'un des derniers avions ; il n'a pas voulu les suivre."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfant-de-la-plaine-des-cafres",
@@ -13315,7 +13385,9 @@
     "Il a grandi dans une ferme de la Plaine des Cafres, à mille six cents mètres.",
     "Il montait à cheval avant de savoir faire du vélo."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfance-tamoule-de-saint-andre",
@@ -13334,7 +13406,9 @@
     "Sa grand-mère soignait les fièvres du quartier avec des plantes du jardin.",
     "Il a porté le kavadi à seize ans, pour un vœu qu'il n'a jamais dit."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfance-sur-un-bateau",
@@ -13355,7 +13429,9 @@
     "Il a fait le tour de l'océan Indien sur le voilier de ses parents.",
     "Il dort mal sur un sol qui ne bouge pas."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   },
   {
    "cle": "enfant-du-sud-sauvage",
@@ -13374,7 +13450,9 @@
     "Il a grandi à Saint-Philippe, entre la vanille de son grand-père et les coulées.",
     "Il a vu la lave traverser la route trois fois avant ses vingt ans."
    ],
-   "poids": 1
+   "poids": 1,
+   "genre": "",
+   "nomAutre": ""
   }
  ],
  "traits": [
@@ -14637,46 +14715,92 @@
  },
  "noms": {
   "prenoms": [
-   "Jean-Max Hoarau",
    "Marie-Josée Payet",
-   "Latchimy Vélaye",
-   "Ibrahim Moussa",
    "Ginette Grondin",
-   "Lucien Ah-Sing",
-   "Sully Técher",
    "Kamini Pounoussamy",
    "Fatima Ingar",
-   "Expédit Boyer",
    "Rosemay Fontaine",
-   "Daniel Lebon",
    "Zaïnaba Soilihi",
-   "Mardé Ramassamy",
    "Thérèse Dijoux",
-   "Josian Robert",
    "Valliamée Narayanin",
-   "Bruno Lefèvre",
    "Chloé Martin",
+   "Sandrine Morel",
+   "Nadia Patel",
+   "Ophélie Turpin",
+   "Rachida Omarjee",
+   "Maryse Bègue",
+   "Hanta Randriamanana",
+   "Noémie Gonthier",
+   "Mélissa Cadet",
+   "Jean-Max Hoarau",
+   "Ibrahim Moussa",
+   "Lucien Ah-Sing",
+   "Sully Técher",
+   "Expédit Boyer",
+   "Daniel Lebon",
+   "Mardé Ramassamy",
+   "Josian Robert",
+   "Bruno Lefèvre",
    "Lucet Rivière",
    "Anfane Ahamada",
    "Gilbert Clain",
-   "Sandrine Morel",
    "Paul Ah-Hong",
    "Firmin Maillot",
-   "Nadia Patel",
    "Vinoth Moutoussamy",
-   "Ophélie Turpin",
    "Dorlis Lauret",
-   "Rachida Omarjee",
    "Christophe Ah-Kiem",
-   "Maryse Bègue",
    "Rivo Rakotomalala",
-   "Hanta Randriamanana",
    "Kevin Thiaw-Kine",
-   "Noémie Gonthier",
    "Ismaël Badat",
    "Jean-Hugues Nativel",
-   "Mélissa Cadet",
+   "Emmanuel Sautron",
+   "Latchimy Vélaye"
+  ],
+  "prenomsF": [
+   "Marie-Josée Payet",
+   "Ginette Grondin",
+   "Kamini Pounoussamy",
+   "Fatima Ingar",
+   "Rosemay Fontaine",
+   "Zaïnaba Soilihi",
+   "Thérèse Dijoux",
+   "Valliamée Narayanin",
+   "Chloé Martin",
+   "Sandrine Morel",
+   "Nadia Patel",
+   "Ophélie Turpin",
+   "Rachida Omarjee",
+   "Maryse Bègue",
+   "Hanta Randriamanana",
+   "Noémie Gonthier",
+   "Mélissa Cadet"
+  ],
+  "prenomsM": [
+   "Jean-Max Hoarau",
+   "Ibrahim Moussa",
+   "Lucien Ah-Sing",
+   "Sully Técher",
+   "Expédit Boyer",
+   "Daniel Lebon",
+   "Mardé Ramassamy",
+   "Josian Robert",
+   "Bruno Lefèvre",
+   "Lucet Rivière",
+   "Anfane Ahamada",
+   "Gilbert Clain",
+   "Paul Ah-Hong",
+   "Firmin Maillot",
+   "Vinoth Moutoussamy",
+   "Dorlis Lauret",
+   "Christophe Ah-Kiem",
+   "Rivo Rakotomalala",
+   "Kevin Thiaw-Kine",
+   "Ismaël Badat",
+   "Jean-Hugues Nativel",
    "Emmanuel Sautron"
+  ],
+  "prenomsMixtes": [
+   "Latchimy Vélaye"
   ],
   "surnoms": [
    "Ti Paul",

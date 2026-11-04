@@ -20,6 +20,10 @@
     "system.histoire.1": {
       "fr": "Les enfants du cirque l'appelaient par son prénom et lui montaient des mangues.",
       "en": "The children of the cirque called him by his first name and brought him mangoes."
+    },
+    "system.nomAutre": {
+      "fr": "Chauffeuse de car jaune",
+      "en": "Yellow bus driver"
     }
   },
   "passes/67ROrl81zV2fhWwD": {
@@ -43,6 +47,10 @@
     "system.histoire.1": {
       "fr": "Il connaît chaque famille du cirque et chaque source.",
       "en": "He knows every family in the cirque and every spring."
+    },
+    "system.nomAutre": {
+      "fr": "Habitante d'un îlet de Mafate",
+      "en": "Inhabitant of a Mafate îlet"
     }
   },
   "passes/BSuVSY32Ro1zQPZB": {
@@ -66,6 +74,10 @@
     "system.histoire.1": {
       "fr": "Elle connaît par cœur le bruit des urgences un soir de cyclone.",
       "en": "She knows by heart the sound of the emergency department on a cyclone night."
+    },
+    "system.nomAutre": {
+      "fr": "Infirmier du CHU",
+      "en": "Hospital nurse"
     }
   },
   "passes/CrwMVqAtNhALLYTU": {
@@ -89,6 +101,10 @@
     "system.histoire.1": {
       "fr": "Chaque fin de campagne, il invitait tout le quartier au cari.",
       "en": "At the end of every harvest, he invited the whole neighbourhood to a cari."
+    },
+    "system.nomAutre": {
+      "fr": "Planteuse de canne",
+      "en": "Cane planter"
     }
   },
   "passes/HJVHcsLGqadiBkSD": {
@@ -112,6 +128,10 @@
     "system.histoire.1": {
       "fr": "Elle a sauvé seule son troupeau du dernier cyclone.",
       "en": "She saved her herd from the last cyclone on her own."
+    },
+    "system.nomAutre": {
+      "fr": "Agriculteur des Hauts",
+      "en": "Highland farmer"
     }
   },
   "passes/LhB26G0JMaCbnTJB": {
@@ -135,6 +155,10 @@
     "system.histoire.1": {
       "fr": "Il connaît les commandes de tous les habitués, et leurs secrets.",
       "en": "He knows every regular's order, and their secrets."
+    },
+    "system.nomAutre": {
+      "fr": "Cuisinière de camion-bar",
+      "en": "Food truck cook"
     }
   },
   "passes/OMEmLKO195PGPhcb": {
@@ -158,6 +182,10 @@
     "system.histoire.1": {
       "fr": "Elle refuse de lever la main sur qui que ce soit, même mort.",
       "en": "She refuses to raise a hand against anyone, even the dead."
+    },
+    "system.nomAutre": {
+      "fr": "Professeur de SVT",
+      "en": "Biology teacher"
     }
   },
   "passes/WQ0aRVr3JgccPUwj": {
@@ -181,6 +209,10 @@
     "system.histoire.1": {
       "fr": "Il a appris le métier en démontant les mobylettes de ses cousins.",
       "en": "He learned the trade taking apart his cousins' mopeds."
+    },
+    "system.nomAutre": {
+      "fr": "Mécanicienne",
+      "en": "Mechanic"
     }
   },
   "passes/YZ1FPx5dXFbtinTH": {
@@ -204,6 +236,10 @@
     "system.histoire.1": {
       "fr": "Il connaît chaque radier qui déborde et chaque raccourci.",
       "en": "He knows every ford that overflows and every shortcut."
+    },
+    "system.nomAutre": {
+      "fr": "Ambulancière",
+      "en": "Paramedic"
     }
   },
   "passes/agoJWfH8pl5NVhHI": {
@@ -227,6 +263,10 @@
     "system.histoire.1": {
       "fr": "Il n'a jamais dormi plus de trois nuits loin de la mer.",
       "en": "He has never slept more than three nights away from the sea."
+    },
+    "system.nomAutre": {
+      "fr": "Pêcheuse de Saint-Gilles",
+      "en": "Saint-Gilles fisherwoman"
     }
   },
   "passes/ciiUjf21WQzWAx2v": {
@@ -250,6 +290,10 @@
     "system.histoire.1": {
       "fr": "Elle partageait un appartement près du Moufia avec deux amies dont elle n'a plus de nouvelles.",
       "en": "She shared a flat near the Moufia with two friends she has not heard from since."
+    },
+    "system.nomAutre": {
+      "fr": "Étudiant",
+      "en": "Student"
     }
   },
   "passes/fcxdU4PNwxjhBYdc": {
@@ -273,6 +317,10 @@
     "system.histoire.1": {
       "fr": "Il parle à ses abeilles, et prétend qu'elles lui répondent.",
       "en": "He talks to his bees, and claims they answer him."
+    },
+    "system.nomAutre": {
+      "fr": "Apicultrice",
+      "en": "Beekeeper"
     }
   },
   "passes/mDS9ArFvFPQHBuFa": {
@@ -296,6 +344,10 @@
     "system.histoire.1": {
       "fr": "Il dit toujours qu'un toit sans panneau est un toit qui dort.",
       "en": "He always says a roof without a panel is a roof that sleeps."
+    },
+    "system.nomAutre": {
+      "fr": "Électricienne",
+      "en": "Electrician"
     }
   },
   "passes/nMpAsDG5OzGgYtcm": {
@@ -319,6 +371,10 @@
     "system.histoire.1": {
       "fr": "Il écoute la radio marine chaque soir, par habitude.",
       "en": "He listens to the marine radio every evening, out of habit."
+    },
+    "system.nomAutre": {
+      "fr": "Retraitée de la marine",
+      "en": "Retired navy woman"
     }
   },
   "passes/xD0AlqP2nkoU8lga": {
@@ -342,6 +398,10 @@
     "system.histoire.1": {
       "fr": "Il a toujours su ce que voulait un client avant qu'il ouvre la bouche.",
       "en": "He has always known what a customer wanted before they opened their mouth."
+    },
+    "system.nomAutre": {
+      "fr": "Vendeuse de bazar",
+      "en": "Bazaar shopkeeper"
     }
   },
   "passes/zA55FIz96Q3uUrYo": {

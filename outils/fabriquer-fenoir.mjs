@@ -358,6 +358,11 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   for (const v of d.autonomie?.voies ?? []) erreurs.push(...verifierVoie(v, d));
   for (const k of d.autonomie?.voieDefensive ?? []) if (!installations.has(k)) e(`voie défensive : ${k} inconnue`);
 
+  // Genre d'un passé ou d'une enfance (§10) : f, m ou vide ; nomAutre seulement avec un genre (en anglais, souvent le même mot).
+  const aGenre = (ou, o) => {
+    if (o.genre && !["f", "m"].includes(o.genre)) e(`${ou} : genre inconnu « ${o.genre} » (f, m ou vide)`);
+    if (o.nomAutre && !o.genre) e(`${ou} : nomAutre sans genre`);
+  };
   // Savoirs, passés, équipements.
   for (const s of savoirs.values()) if (!sansBalises(s.apprentissage) || !sansBalises(s.effets)) e(`savoir ${s.cle} : apprentissage ou effets vides`);
   for (const p of passes.values()) {
@@ -366,6 +371,7 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     if (Object.values(p.competences).some(n => !entre(n, 0, 3))) e(`${ou} : modificateur hors de 0..3`);
     if (p.region && !regions.has(p.region)) e(`${ou} : région « ${p.region} »`);
     if (!p.histoire?.length) e(`${ou} : sans phrases d'histoire`);
+    aGenre(ou, p);
   }
   for (const q of equipements.values()) {
     const ou = `équipement ${q.cle}`;
@@ -433,6 +439,7 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     if (Object.values(x.modificateurs).some(n => !Number.isInteger(n) || n < -1 || n > 2 || n === 0)) e(`${ou} : modificateur hors de −1..+2`);
     if (!x.histoire?.length || !(x.poids > 0)) e(`${ou} : histoire ou poids`);
     if (x.region && !regions.has(x.region)) e(`${ou} : région « ${x.region} »`);
+    aGenre(ou, x);
   }
   if (traits.size < 28) e(`${traits.size} traits seulement`);
   for (const t of traits.values()) {

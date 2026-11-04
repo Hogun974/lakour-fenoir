@@ -5,7 +5,14 @@
 // - passé (§3.4 enrichi) : { cle, nom, competences: { cle: ±n }, savoirs, incapacites, equipement, histoire, poids, ageMin } ;
 // - trait : { cle, nom, effets: { competences, moral, fatigue, peur: { lieux, malus, moral }, besoins: { eau, nourriture },
 //   taches: { tache: ±n }, social: { max, moral }, special }, incompatibles: [cle], poids } ;
-// - facultatifs : noms [String], proches [String], raisonsRecrue [String], prixRecrue [String].
+// - facultatifs : noms [String] (prénoms sans genre connu), prenomsF, prenomsM, prenomsMixtes [String], proches [String],
+//   raisonsRecrue [String], prixRecrue [String].
+// - genre : une enfance ou un passé au libellé genré porte `genre: "f" | "m"` (vide = neutre) et, si le libellé a une forme
+//   pour l'autre genre, `nomAutre` (« Agricultrice des Hauts » / « Agriculteur des Hauts »). Le générateur choisit d'abord
+//   l'enfance puis un passé du même genre (ou neutre), en déduit le genre du survivant, puis tire un prénom de ce genre.
+//   Sous verrous contradictoires (nom gardé d'un genre connu, enfance et passé gardés de genres opposés), le genre du nom
+//   gagne, sinon celui du passé ; l'élément qui contredit est affiché par nomAccorde (contenu.mjs) sous son `nomAutre` et
+//   ses phrases d'histoire (genrées) ne vont pas dans la graine.
 //
 // Nombres retenus :
 // - Âge 16 à 75 (le plus souvent 20 à 50). Dès 45 ans : +1 à une compétence déjà apprise, −1 en endurance ; dès 60 ans : −2.
@@ -25,7 +32,7 @@
 // - Une recrue dont le moral reste à 0 trois jours de suite s'en va.
 import { COMPETENCES, NIVEAU_MAX, borner } from "./constantes.mjs";
 import { entier, tirerPoids, choisir, chance } from "./hasard.mjs";
-import { liste, indexer, installationDe, siteDe } from "./contenu.mjs";
+import { liste, indexer, installationDe, siteDe, genreDe, GENRES } from "./contenu.mjs";
 import { survivantNeuf, peutAgir } from "./survivant.mjs";
 import { resoudreTest } from "./des.mjs";
 import { message } from "./textes.mjs";
@@ -65,18 +72,54 @@ export function compatibles(trait, pris, parCle) {
   return pris.every(c => c !== trait.cle && !(trait.incompatibles ?? []).includes(c) && !(parCle.get(c)?.incompatibles ?? []).includes(trait.cle));
 }
 
-// Un survivant tiré au sort. options : { age, enfance, passe, traits, region, statut, nom, verrous: { … mêmes clés }, favoriser:
-// { competence: poids }, budget: [min, max] | null (défaut : BUDGET_DEPART pour un joueur, aucun sinon) }
-// -> system complet (survivantNeuf + enfance, passe, passions, traits, incapacites, statut, tache, histoire, age, nom, equipement)
+// Les prénoms du contenu par genre : { f, m, mixtes } (noms : sans genre connu, rangés avec les mixtes).
+const texteDe = n => String(n?.nom ?? n?.cle ?? n ?? "").trim();
+export function prenomsDe(contenu) {
+  const l = f => liste(contenu?.[f]).map(texteDe).filter(Boolean);
+  return { f: l("prenomsF"), m: l("prenomsM"), mixtes: [...l("prenomsMixtes"), ...l("noms")] };
+}
+// Le genre d'un prénom (ou d'un nom complet) d'après les listes du contenu : "f", "m" ou "" (inconnu, mixte).
+export function genreDuNom(contenu, nom) {
+  const n = String(nom ?? "").trim().toLowerCase();
+  if (!n) return "";
+  const p = prenomsDe(contenu);
+  const premier = s => s.toLowerCase().split(/\s+/)[0];
+  for (const essai of [s => s.toLowerCase() === n, s => premier(s) === premier(n)]) {
+    const f = p.f.some(essai), m = p.m.some(essai);
+    if (f !== m) return f ? "f" : "m";
+    if (f && m) return "";
+  }
+  return "";
+}
+
+// Un survivant tiré au sort. options : { age, enfance, passe, traits, region, statut, nom, genre, verrous: { … mêmes clés },
+// favoriser: { competence: poids }, budget: [min, max] | null (défaut : BUDGET_DEPART pour un joueur, aucun sinon) }
+// -> system complet (survivantNeuf + enfance, passe, passions, traits, incapacites, statut, tache, histoire, age, nom, genre, equipement)
 export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
-  const v = { ...(options.verrous ?? {}), ...Object.fromEntries(Object.entries(options).filter(([k, x]) => ["age", "enfance", "passe", "traits", "nom"].includes(k) && x !== undefined)) };
+  const v = { ...(options.verrous ?? {}), ...Object.fromEntries(Object.entries(options).filter(([k, x]) => ["age", "enfance", "passe", "traits", "nom", "genre"].includes(k) && x !== undefined)) };
   const idx = indexer(contenu);
   const fav = options.favoriser ?? {};
   const statut = options.statut ?? "joueur";
   const age = v.age ?? (chance(0.8, hasard) ? entier(20, 50, hasard) : choisir([entier(16, 19, hasard), entier(51, 75, hasard)], hasard));
-  const enfance = idx.enfances.get(v.enfance) ?? tirerFavorise([...idx.enfances.values()], fav, hasard) ?? null;
-  const passes = [...idx.passes.values()].filter(p => !(Number(p.ageMin) > age));
-  const passe = idx.passes.get(v.passe) ?? tirerFavorise(passes.length ? passes : [...idx.passes.values()], fav, hasard) ?? null;
+  // Enfance, puis passé du même genre (ou neutre) ; le genre d'un nom gardé l'emporte sur les deux.
+  const nomGarde = String(v.nom ?? "").trim();
+  const genreVoulu = genreDe({ genre: v.genre }) || (nomGarde ? genreDuNom(contenu, nomGarde) : "");
+  const compatible = (o, g) => !g || !genreDe(o) || genreDe(o) === g;
+  const choisirParmi = (tous, g) => { const l = tous.filter(o => compatible(o, g)); return tirerFavorise(l.length ? l : tous, fav, hasard) ?? null; };
+  const enfance = idx.enfances.get(v.enfance) ?? choisirParmi([...idx.enfances.values()], genreVoulu);
+  const passesAge = [...idx.passes.values()].filter(p => !(Number(p.ageMin) > age));
+  const passe = idx.passes.get(v.passe) ?? choisirParmi(passesAge.length ? passesAge : [...idx.passes.values()], genreVoulu || genreDe(enfance));
+  let genre = genreVoulu || genreDe(passe) || genreDe(enfance);
+  // Prénom du genre du survivant ; sans genre, un prénom quelconque donne le sien (un prénom mixte laisse le genre vide).
+  let nom = nomGarde;
+  if (!nom) {
+    const p = prenomsDe(contenu);
+    const candidats = genre ? [...p[genre], ...p.mixtes] : [...p.f, ...p.m, ...p.mixtes];
+    nom = candidats.length ? choisir(candidats, hasard) : "";
+    if (!genre && nom) genre = p.f.includes(nom) && !p.m.includes(nom) ? "f" : p.m.includes(nom) && !p.f.includes(nom) ? "m" : "";
+  }
+  // Les phrases d'histoire d'un élément pris dans l'autre genre (verrous contradictoires) sont genrées : on les laisse de côté.
+  const phrasesDe = o => (compatible(o, genre) ? o?.histoire ?? [] : []);
   // Traits.
   let traits = Array.isArray(v.traits) ? v.traits.filter(t => idx.traits.has(t)) : [];
   if (!Array.isArray(v.traits)) {
@@ -128,7 +171,7 @@ export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
   const incapacites = union(enfance?.incapacites ?? [], passe?.incapacites ?? [], ...defsTraits.map(t => t?.incapacites ?? t?.effets?.incapacites ?? []));
   const proche = tirerTexte(contenu, "proches", PROCHES, "proche", hasard);
   return survivantNeuf({
-    nom: v.nom ?? (liste(contenu?.noms).length ? choisir(liste(contenu.noms).map(n => n.nom ?? n.cle ?? n), hasard) : ""),
+    nom, genre: GENRES.includes(genre) ? genre : "",
     age, enfance: enfance?.cle ?? "", passe: passe?.cle ?? "", passions, traits, incapacites, statut, tache: "repos",
     competences,
     savoirs: union(enfance?.savoirs ?? [], passe?.savoirs ?? []),
@@ -136,7 +179,7 @@ export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
     histoire: {
       journal: "",
       graine: {
-        phrases: [...(enfance?.histoire ?? []), ...(passe?.histoire ?? [])],
+        phrases: [...phrasesDe(enfance), ...phrasesDe(passe)],
         region: options.region ?? "", age, proche: proche.texte, procheCle: proche.cle
       }
     }

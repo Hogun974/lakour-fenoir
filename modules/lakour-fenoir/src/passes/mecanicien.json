@@ -27,7 +27,9 @@
     "histoire": [
       "Son garage était la deuxième maison de tout le quartier.",
       "Il a appris le métier en démontant les mobylettes de ses cousins."
-    ]
+    ],
+    "genre": "m",
+    "nomAutre": "Mécanicienne"
   },
   "effects": [],
   "folder": null,

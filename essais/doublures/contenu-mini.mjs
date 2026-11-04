@@ -213,20 +213,25 @@ export const equipements = [
 // §10 — enfances, passés, traits (noms et textes d'essai).
 export const enfances = [
   { cle: "enfant-des-hauts", nom: "Enfant des Hauts", competences: { survie: 2, endurance: 1 }, savoirs: ["maraichage"], incapacites: [], equipement: [], histoire: ["A grandi dans la brume, entre les chouchous."], poids: 2 },
-  { cle: "gamin-du-port", nom: "Gamin du port", competences: { discretion: 1, combat: 1, parole: 1 }, savoirs: [], incapacites: [], equipement: [], histoire: ["Connaît chaque ruelle du port."], poids: 2 },
-  { cle: "fille-de-pecheur", nom: "Fille de pêcheur", competences: { survie: 1, conduite: 1, endurance: 1 }, savoirs: [], incapacites: [], equipement: [], histoire: ["Sait lire la houle."], poids: 2 },
+  { cle: "gamin-du-port", nom: "Gamin du port", genre: "m", nomAutre: "Gamine du port", competences: { discretion: 1, combat: 1, parole: 1 }, savoirs: [], incapacites: [], equipement: [], histoire: ["Il connaît chaque ruelle du port."], poids: 2 },
+  { cle: "fille-de-pecheur", nom: "Fille de pêcheur", genre: "f", nomAutre: "Fils de pêcheur", competences: { survie: 1, conduite: 1, endurance: 1 }, savoirs: [], incapacites: [], equipement: [], histoire: ["Elle sait lire la houle."], poids: 2 },
   { cle: "enfance-protegee", nom: "Enfance protégée", competences: { parole: 2, soins: 1, endurance: -1 }, savoirs: ["premiers-secours"], incapacites: ["travaux-lourds"], equipement: [], histoire: ["Des livres, des vacances, peu de corvées."], poids: 1 },
   { cle: "enfant-de-la-cite", nom: "Enfant de la cité", competences: { combat: 1, vigilance: 1, discretion: 1 }, savoirs: [], incapacites: [], equipement: [], histoire: ["A appris à voir venir les ennuis."], poids: 2 }
 ];
 
 export const passes = [
-  { cle: "infirmiere", nom: "Infirmière", competences: { soins: 3, parole: 1 }, savoirs: ["premiers-secours"], incapacites: [], equipement: [], histoire: ["Était de garde au jour zéro."], poids: 1 },
-  { cle: "electricien", nom: "Électricien", competences: { bricolage: 3, vigilance: 1 }, savoirs: ["electricite-solaire"], incapacites: [], equipement: [], histoire: ["Posait des panneaux sur les toits de l'Ouest."], poids: 1 },
-  { cle: "planteur", nom: "Planteur", competences: { survie: 2, endurance: 2 }, savoirs: ["maraichage"], incapacites: [], equipement: [], histoire: ["Coupait la canne depuis vingt ans."], poids: 1 },
+  { cle: "infirmiere", nom: "Infirmière", genre: "f", nomAutre: "Infirmier", competences: { soins: 3, parole: 1 }, savoirs: ["premiers-secours"], incapacites: [], equipement: [], histoire: ["Elle était de garde au jour zéro."], poids: 1 },
+  { cle: "electricien", nom: "Électricien", genre: "m", nomAutre: "Électricienne", competences: { bricolage: 3, vigilance: 1 }, savoirs: ["electricite-solaire"], incapacites: [], equipement: [], histoire: ["Il posait des panneaux sur les toits de l'Ouest."], poids: 1 },
+  { cle: "planteur", nom: "Planteur", genre: "m", nomAutre: "Planteuse", competences: { survie: 2, endurance: 2 }, savoirs: ["maraichage"], incapacites: [], equipement: [], histoire: ["Il coupait la canne depuis vingt ans."], poids: 1 },
   { cle: "gendarme", nom: "Gendarme", competences: { tir: 2, vigilance: 2, conduite: 1 }, savoirs: [], incapacites: [], equipement: [], histoire: ["Tenait un barrage le premier soir."], poids: 1 },
-  { cle: "etudiante", nom: "Étudiante", competences: { parole: 1, soins: 1, discretion: 1 }, savoirs: ["radio"], incapacites: [], equipement: [], histoire: ["Révisait ses partiels."], poids: 1 },
-  { cle: "retraite-marine", nom: "Retraité de la marine", competences: { conduite: 2, bricolage: 2, vigilance: 1 }, savoirs: [], incapacites: [], equipement: [], histoire: ["Quarante ans de mer."], poids: 1, ageMin: 50 }
+  { cle: "etudiante", nom: "Étudiante", genre: "f", nomAutre: "Étudiant", competences: { parole: 1, soins: 1, discretion: 1 }, savoirs: ["radio"], incapacites: [], equipement: [], histoire: ["Elle révisait ses partiels."], poids: 1 },
+  { cle: "retraite-marine", nom: "Retraité de la marine", genre: "m", nomAutre: "Retraitée de la marine", competences: { conduite: 2, bricolage: 2, vigilance: 1 }, savoirs: [], incapacites: [], equipement: [], histoire: ["Quarante ans de mer."], poids: 1, ageMin: 50 }
 ];
+
+// Prénoms par genre (le générateur accorde le prénom au genre de l'enfance et du passé) ; un prénom mixte.
+export const prenomsF = ["Rosemay Fontaine", "Nadia Patel", "Thérèse Dijoux", "Chloé Martin"];
+export const prenomsM = ["Christophe Ah-Kiem", "Sully Técher", "Rivo Rakotomalala", "Daniel Lebon"];
+export const prenomsMixtes = ["Latchimy Vélaye"];
 
 export const traits = [
   { cle: "main-verte", nom: "Main verte", effets: { taches: { cultures: 1 } }, incompatibles: [], poids: 2 },
@@ -244,5 +249,6 @@ export const traits = [
   { cle: "debrouillard", nom: "Débrouillard", effets: { taches: { fouille: 1 } }, incompatibles: [], poids: 1 }
 ];
 
-export const contenuMini = () => structuredClone({ regions, sites, installations, savoirs, factions, evenements, passes, equipements, recettes, afflictions, creatures, enfances, traits });
+export const contenuMini = () => structuredClone({ regions, sites, installations, savoirs, factions, evenements, passes, equipements, recettes, afflictions, creatures, enfances, traits,
+  prenomsF, prenomsM, prenomsMixtes });
 export default contenuMini;

@@ -28,7 +28,9 @@
     "histoire": [
       "Elle a grandi dans le brouillard de la Plaine et n'aime pas la chaleur des Bas.",
       "Elle a sauvé seule son troupeau du dernier cyclone."
-    ]
+    ],
+    "genre": "f",
+    "nomAutre": "Agriculteur des Hauts"
   },
   "effects": [],
   "folder": null,

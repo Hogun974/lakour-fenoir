@@ -28,7 +28,9 @@
     "histoire": [
       "Le bazar appartenait à son grand-père, arrivé du Gujarat il y a longtemps.",
       "Il a toujours su ce que voulait un client avant qu'il ouvre la bouche."
-    ]
+    ],
+    "genre": "m",
+    "nomAutre": "Vendeuse de bazar"
   },
   "effects": [],
   "folder": null,

@@ -34,6 +34,17 @@ export function indexer(contenu = {}) {
   return index;
 }
 
+// Genre d'une enfance, d'un passé ou d'un survivant : "f", "m" ou "" (neutre ou inconnu).
+export const GENRES = ["f", "m"];
+export const genreDe = o => (GENRES.includes(o?.genre) ? o.genre : "");
+// Le libellé d'une enfance ou d'un passé accordé au genre du survivant : `nomAutre` quand l'élément est genré, le survivant
+// aussi, et qu'ils diffèrent (« Agricultrice des Hauts » → « Agriculteur des Hauts »), sinon `nom`. C'est l'endroit unique.
+export function nomAccorde(def, genre = "") {
+  if (!def) return "";
+  const g = genreDe(def), s = genreDe({ genre });
+  return g && s && g !== s && def.nomAutre ? def.nomAutre : def.nom ?? def.cle ?? "";
+}
+
 export const regionDe = (contenu, cle) => indexer(contenu).regions.get(cle) ?? null;
 export const siteDe = (contenu, cle) => indexer(contenu).sites.get(cle) ?? null;
 export const installationDe = (contenu, cle) => indexer(contenu).installations.get(cle) ?? null;
@@ -222,6 +233,8 @@ export function verifierContenu(contenu = {}) {
   for (const f of ["enfances", "passes"]) for (const o of idx[f].values()) {
     for (const c of Object.keys(o.competences ?? {})) if (!COMPETENCES.includes(c)) err(`${f} « ${o.cle} » : compétence inconnue « ${c} »`);
     for (const s of o.savoirs ?? []) if (!savoirs.has(s)) err(`${f} « ${o.cle} » : savoir inconnu « ${s} »`);
+    if (o.genre && !GENRES.includes(o.genre)) err(`${f} « ${o.cle} » : genre inconnu « ${o.genre} » (f, m ou vide)`);
+    if (o.nomAutre && !o.genre) err(`${f} « ${o.cle} » : nomAutre sans genre`);
   }
   for (const t of idx.traits.values()) {
     for (const c of Object.keys(t.effets?.competences ?? {})) if (!COMPETENCES.includes(c)) err(`trait « ${t.cle} » : compétence inconnue « ${c} »`);

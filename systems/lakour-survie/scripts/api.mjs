@@ -519,7 +519,8 @@ async function creerActeurSurvivant(d, { userId = "", statut = null } = {}) {
   const a = await Actor.implementation.create({
     name: nom, type: "survivant", img: jeton,
     system: {
-      competences, passions, enfance: d.enfance ?? "", passe: d.passe ?? "", traits: [...(d.traits ?? [])], incapacites: [...(d.incapacites ?? [])],
+      competences, passions, enfance: d.enfance ?? "", passe: d.passe ?? "", genre: L.GENRES.includes(d.genre) ? d.genre : "",
+      traits: [...(d.traits ?? [])], incapacites: [...(d.incapacites ?? [])],
       statut: st, tache: "repos", age: entier(d.age, 16, 99, 30), lien: d.lien ?? "", vivant: true, livide: false,
       histoire: { journal: "" }, notes: d.notes ?? ""
     },
@@ -574,7 +575,7 @@ function versTirage(s, c) {
   const region = L.regionDe(c, g.region)?.nom ?? "";
   const graine = [...(g.phrases ?? []), region ? t("LAKOUR_SURVIE.Creation.GraineRegion", { region }) : "", localiser({ cle: g.procheCle, texte: g.proche ?? "" })].filter(Boolean).join(" ");
   return {
-    nom: s.nom, age: s.age, enfance: s.enfance, passe: s.passe, statut: s.statut,
+    nom: s.nom, genre: s.genre ?? "", age: s.age, enfance: s.enfance, passe: s.passe, statut: s.statut,
     competences: Object.fromEntries(COMPETENCES.map(k => [k, Number(s.competences?.[k]?.niveau) || 0])),
     passions: structuredClone(s.passions ?? {}), traits: [...(s.traits ?? [])], incapacites: [...(s.incapacites ?? [])],
     equipement: [...(s.equipement ?? [])], savoirs: [...(s.savoirs ?? [])], graine, histoire: structuredClone(g), region: g.region ?? ""
@@ -583,6 +584,7 @@ function versTirage(s, c) {
 function nettoyerVerrous(v = {}) {
   const sortie = {};
   if (String(v.nom ?? "").trim()) sortie.nom = String(v.nom).trim();
+  if (L.GENRES.includes(v.genre)) sortie.genre = v.genre;
   if (Number(v.age) > 0) sortie.age = entier(v.age, 16, 99, 30);
   if (v.enfance) sortie.enfance = v.enfance;
   if (v.passe) sortie.passe = v.passe;

@@ -26,7 +26,9 @@
     "histoire": [
       "Elle est la première de sa famille à faire des études.",
       "Elle partageait un appartement près du Moufia avec deux amies dont elle n'a plus de nouvelles."
-    ]
+    ],
+    "genre": "f",
+    "nomAutre": "Étudiant"
   },
   "effects": [],
   "folder": null,

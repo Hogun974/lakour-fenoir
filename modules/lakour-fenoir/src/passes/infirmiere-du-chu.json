@@ -27,7 +27,9 @@
     "histoire": [
       "Elle a fait ses études à Saint-Denis et n'a jamais voulu partir en métropole.",
       "Elle connaît par cœur le bruit des urgences un soir de cyclone."
-    ]
+    ],
+    "genre": "f",
+    "nomAutre": "Infirmier du CHU"
   },
   "effects": [],
   "folder": null,

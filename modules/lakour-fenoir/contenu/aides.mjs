@@ -131,10 +131,12 @@ export function equipement({ cle, nom, categorie, description, bonus = {}, charg
 
 // Passé de jour zéro. Champs ajoutés : accroche (où et comment le jour zéro le surprend), region (région de départ suggérée).
 // Ajouts du §10 : incapacites (tâches refusées), histoire (phrases pour la graine d histoire).
-export function passe({ cle, nom, description, competences, savoirs = [], equipement = [], accroche = "", region = "", incapacites = [], histoire = [] }) {
+// genre : "f" | "m" quand le libellé (ou le texte) est genré, "" sinon ; nomAutre : le libellé pour l'autre genre, s'il diffère
+// (« Infirmière du CHU » / « Infirmier du CHU »). Le système accorde l'affichage au genre du survivant (nomAccorde).
+export function passe({ cle, nom, description, competences, savoirs = [], equipement = [], accroche = "", region = "", incapacites = [], histoire = [], genre = "", nomAutre = "" }) {
   return objet({
     pack: "passes", type: "passe", cle, nom,
-    system: { description: html(description), competences, savoirs, equipement, accroche: html(accroche), region, incapacites, histoire }
+    system: { description: html(description), competences, savoirs, equipement, accroche: html(accroche), region, incapacites, histoire, genre, nomAutre }
   });
 }
 

@@ -80,7 +80,10 @@ export function normaliserContenu(brut = {}) {
   const noms = c.noms;
   if (noms && !Array.isArray(noms)) {
     c.nomsFenoir = noms;
-    c.noms = [...tableau(noms.prenoms)];
+    // Prénoms par genre pour le générateur (prenomsF, prenomsM, prenomsMixtes) ; `noms` reste la liste entière (sans genre).
+    for (const f of ["prenomsF", "prenomsM", "prenomsMixtes"]) if (noms[f] !== undefined) c[f] = [...tableau(noms[f])];
+    const ranges = [...tableau(noms.prenomsF), ...tableau(noms.prenomsM), ...tableau(noms.prenomsMixtes)];
+    c.noms = ranges.length ? [...tableau(noms.prenoms)].filter(n => !ranges.includes(n)) : [...tableau(noms.prenoms)];
   }
   if (!c.proches && c.histoire?.proche) c.proches = [...tableau(c.histoire.proche)];
   if (!c.raisonsRecrue && c.recrues?.raisons) c.raisonsRecrue = [...tableau(c.recrues.raisons)];

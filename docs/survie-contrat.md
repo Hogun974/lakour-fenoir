@@ -518,7 +518,9 @@ system: {
 - **Enfance** (une vingtaine, réunionnaises et d'ailleurs : enfant des Hauts de Salazie, gamin du Port, fille de pêcheur de
   Saint-Pierre, enfance zoreil arrivée à dix ans, enfant de la cité à Saint-Denis, enfance à Mayotte ou à Madagascar…) et
   **passé** (le métier) donnent chacun des **modificateurs de compétences** (+1 ou +2, parfois -1), parfois un savoir, une
-  incapacité, un équipement de départ et des phrases d'histoire.
+  incapacité, un équipement de départ et des phrases d'histoire. Un libellé genré porte `genre: "f" | "m"` (vide = neutre)
+  et, s'il existe, `nomAutre`, le libellé pour l'autre genre (« Agricultrice des Hauts » / « Agriculteur des Hauts ») ; les
+  prénoms du registre sont rangés par genre (`noms.prenomsF`, `prenomsM`, `prenomsMixtes`).
 - **Traits** (une trentaine) : `{ cle, nom, description, effets: { competences: {cle: ±n}, moral, fatigue, peur, besoins,
   taches: { tache: ±n }, social, special }, incompatibles: [cle], poids }`. Exemples de mécaniques (noms originaux à
   écrire par le contenu) : main verte (+1 aux cultures), nerfs d'acier (ne craque pas à moral 0 une fois), incapable de
@@ -533,7 +535,10 @@ system: {
 - `genererSurvivant(contenu, hasard, { age?, enfance?, passe?, traits?, region?, statut, verrous?, favoriser?: { competence: poids } })`
   -> données complètes d'un survivant (compétences = enfance + passé + traits, plafonnées à 5 ; 1 à 2 passions tirées en
   penchant vers les compétences fortes ; 1 à 3 traits compatibles ; incapacités ; équipement ; une **graine d'histoire** :
-  les phrases de l'enfance et du passé, la région, l'âge, un proche perdu ou cherché au jour zéro).
+  les phrases de l'enfance et du passé, la région, l'âge, un proche perdu ou cherché au jour zéro). Le **genre** : l'enfance
+  est tirée d'abord, puis un passé du même genre (ou neutre), puis un prénom de ce genre ; `genre` est rendu avec le
+  survivant. Sous verrous contradictoires, le genre d'un nom gardé l'emporte (sinon celui du passé) et l'élément qui
+  contredit s'affiche sous son `nomAutre` (`nomAccorde(def, genre)`, l'endroit unique : fiche, fenêtre de création, MJ IA).
 - **Création d'un joueur** (fenêtre « Créer un survivant » du système, et outil `creer_survivant` du MJ IA) : tirer, puis
   **relancer** tout ou partie en **verrouillant** ce qu'on garde (nom, âge, enfance, passé, traits), ou choisir chaque
   élément. Un **budget** évite les super-héros : somme des niveaux entre 10 et 16 pour un humain de départ (réglage du MJ).
