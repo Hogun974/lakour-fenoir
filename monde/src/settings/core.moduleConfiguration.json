@@ -1,0 +1,18 @@
+{
+  "key": "core.moduleConfiguration",
+  "value": "{\"fr-core\": true, \"lakour-fenoir\": true, \"lakour-mj-ia\": true}",
+  "_id": "FenoirModulesCnf",
+  "user": null,
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0",
+    "createdTime": 1793800000000,
+    "modifiedTime": 1793800000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!settings!FenoirModulesCnf"
+}

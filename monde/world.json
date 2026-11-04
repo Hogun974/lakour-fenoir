@@ -1,0 +1,56 @@
+{
+  "id": "la-kour-fenoir",
+  "title": "La Kour — Fénoir",
+  "description": "<p>Décembre, La Réunion. Les letchis mûrissent, on prépare Noël sous les filaos, la radio parle d'une fièvre bizarre au CHU. Ce soir, quelqu'un que vous connaissez ne s'est pas relevé comme il faut.</p><p><strong>Fénoir</strong> est un jeu de survie original : vous débarquez au jour zéro du Gris, sur une île que vous aimez. Chaque action coûte du temps, et l'île change pendant que vous jouez : réseaux qui tombent, hordes de Livides, bandes, cyclones. Trouvez le bon endroit pour un abri, aménagez-le, gérez l'eau, la nourriture, l'énergie et le moral ; puis choisissez : repartir plus loin avec ce que vous avez appris, ou vous enraciner jusqu'à l'autonomie, citerne, potager, solaire, galeries. En solo avec des compagnons IA, entre amis, ou les deux ; mené par le MJ IA ou par un meneur humain.</p>",
+  "version": "0.2.0",
+  "system": "lakour-survie",
+  "systemVersion": "0.1.0",
+  "coreVersion": "14.370",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.370"
+  },
+  "background": "modules/lakour-fenoir/assets/monde/fond.jpg",
+  "joinTheme": "default",
+  "authors": [
+    {
+      "name": "Jordan",
+      "url": "https://github.com/Hogun974"
+    }
+  ],
+  "url": "https://github.com/Hogun974/lakour-fenoir",
+  "manifest": "https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world.json",
+  "download": "https://github.com/Hogun974/lakour-fenoir/releases/latest/download/la-kour-fenoir.zip",
+  "readme": "https://github.com/Hogun974/lakour-fenoir#readme",
+  "license": "LICENSE",
+  "bugs": "https://github.com/Hogun974/lakour-fenoir/issues",
+  "relationships": {
+    "requires": [
+      {
+        "id": "lakour-survie",
+        "type": "system",
+        "manifest": "https://github.com/Hogun974/lakour-fenoir/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "0.1.0"
+        }
+      },
+      {
+        "id": "lakour-fenoir",
+        "type": "module",
+        "manifest": "https://github.com/Hogun974/lakour-fenoir/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "0.2.0"
+        }
+      },
+      {
+        "id": "lakour-mj-ia",
+        "type": "module",
+        "manifest": "https://github.com/Hogun974/lakour-mj-ia/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "0.40.0"
+        }
+      }
+    ]
+  },
+  "flags": {}
+}
