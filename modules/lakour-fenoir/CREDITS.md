@@ -16,6 +16,7 @@ randonnée, bilans énergétiques de l'île, ARS et Office de l'eau pour l'eau p
 
 La carte de l'île (`assets/cartes/reunion.webp`) et les images des fêtes (`assets/fetes/*.jpg`) seront produites à part. Les fonds des
 cartes de lieux (`assets/cartes/lieu-*.svg`) sont dessinés par le rendu commun du moteur La Kour.
+Carte de l'île (`assets/cartes/reunion.webp`, `outils/fabriquer-carte.mjs`) : contour IGN Admin Express (Licence ouverte), relief Terrain Tiles d'AWS Open Data (SRTM, ETOPO1), routes et sentiers © les contributeurs d'OpenStreetMap (ODbL).
 
 ## Icônes des jetons
 
