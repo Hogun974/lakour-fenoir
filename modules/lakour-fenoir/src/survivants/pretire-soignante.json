@@ -1,0 +1,230 @@
+{
+  "_id": "h6KrxULVti3ZccHo",
+  "_key": "!actors!h6KrxULVti3ZccHo",
+  "name": "Nadia Patel, infirmière",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/pretire-soignante.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "enfance-zarab-de-saint-pierre",
+    "passe": "infirmiere-du-chu",
+    "passions": {
+      "soins": 2,
+      "parole": 1
+    },
+    "traits": [
+      "bras-tendu",
+      "nuits-blanches"
+    ],
+    "incapacites": [],
+    "statut": "joueur",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 38,
+    "lien": "",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Douze ans d'urgences à Bellepierre. Elle parle doucement et ne lâche jamais. Elle cherche son frère, parti en mer le matin du jour zéro.</p>"
+  },
+  "items": [
+    {
+      "_id": "QHi6OFil6booLbAj",
+      "_key": "!actors.items!h6KrxULVti3ZccHo.QHi6OFil6booLbAj",
+      "name": "Premiers secours avancés",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "premiers-secours-avances",
+        "description": "<p>Arrêter une hémorragie, réduire une fracture, recoudre, poser une perfusion de fortune, reconnaître la dengue de la leptospirose, et savoir quand il n'y a plus rien à faire.</p>",
+        "apprentissage": "<p>Un passé d'infirmière, d'ambulancier, de pompier ou de soignant ; un manuel médical ; le Dispensaire du Sud contre service rendu.</p>",
+        "effets": "<p>Ouvre l'infirmerie niveau 2. +1 dé aux tests de soins. Un soin réussi d'une affliction économise 1 médicament (au moins 1).</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "premiers-secours-avances",
+          "source": "FWJGMPXts32KIKP3"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "mpDcSOmH0eSaPSj0",
+      "_key": "!actors.items!h6KrxULVti3ZccHo.mpDcSOmH0eSaPSj0",
+      "name": "Sac d'intervention médicale",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "sac-d-intervention",
+        "categorie": "soin",
+        "description": "<p>Le sac d'un ambulancier ou d'un pompier : oxygène, attelles, matériel de suture, perfusions, tensiomètre.</p>",
+        "bonus": {
+          "soins": 2
+        },
+        "charge": 2,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sac-d-intervention",
+          "source": "haopKUKIOz8Y7Bin"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "4k2Hs2OsZomfewX4",
+      "_key": "!actors.items!h6KrxULVti3ZccHo.4k2Hs2OsZomfewX4",
+      "name": "Lampe frontale",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "frontale",
+        "categorie": "outil",
+        "description": "<p>Les deux mains libres dans le noir d'un tunnel ou d'une cage d'escalier. Avec des piles ou rechargeable.</p>",
+        "bonus": {
+          "vigilance": 1
+        },
+        "charge": 0,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "frontale",
+          "source": "eKfBZhtXDC3AfphH"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Nadia Patel, infirmière",
+    "actorLink": true,
+    "disposition": 1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/pretire-soignante.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pretire-soignante",
+      "pnj": false,
+      "pretire": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

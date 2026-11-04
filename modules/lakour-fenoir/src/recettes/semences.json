@@ -1,0 +1,43 @@
+{
+  "_id": "uZaevsE1XImDgyjV",
+  "_key": "!items!uZaevsE1XImDgyjV",
+  "name": "Semences triées",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "semences",
+    "description": "<p>Garder les plus beaux fruits, sécher les graines de piment, de haricot et de citrouille, bouturer le manioc : la récolte de l'an prochain.</p>",
+    "cout": {
+      "nourriture": 3
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "maraichage-tropical"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "ressource": "graines",
+      "n": 2
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "semences"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

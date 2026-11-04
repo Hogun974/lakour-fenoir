@@ -1,0 +1,44 @@
+{
+  "_id": "Pje7DRlLPgNGD37v",
+  "_key": "!items!Pje7DRlLPgNGD37v",
+  "name": "Alcool désinfectant",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "alcool-desinfectant",
+    "description": "<p>Fruits trop mûrs, jus de canne, un alambic de cocotte et de serpentin : un alcool fort qui désinfecte plaies et instruments.</p>",
+    "cout": {
+      "nourriture": 3,
+      "carburant": 1
+    },
+    "travail": 3,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "conserverie"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "ressource": "medicaments",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "alcool-desinfectant"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

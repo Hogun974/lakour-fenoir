@@ -1,0 +1,189 @@
+{
+  "_id": "AzNzFH3FyonsxXsZ",
+  "_key": "!actors!AzNzFH3FyonsxXsZ",
+  "name": "Gros Mani",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/gros-mani.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 2,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [
+      "doigts-crochus",
+      "touche-a-tout"
+    ],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 41,
+    "lien": "Ferrailleurs",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Tient la casse de la Rivière des Galets. Rit fort, compte vite, n'oublie jamais une dette — ni une faveur.</p>"
+  },
+  "items": [
+    {
+      "_id": "nOrR5u65mP3bI5CA",
+      "_key": "!actors.items!AzNzFH3FyonsxXsZ.nOrR5u65mP3bI5CA",
+      "name": "Mécanique",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "mecanique",
+        "description": "<p>Faire redémarrer un moteur, siphonner, réparer un groupe électrogène, une pompe, un scooter, transformer une carcasse en pièces détachées.</p>",
+        "apprentissage": "<p>Un passé de mécanicien, de chauffeur ou de marin ; un garage fouillé avec ses revues techniques ; un Ferrailleur qui veut bien montrer.</p>",
+        "effets": "<p>Ouvre l'atelier niveau 2. +1 dé aux tests de bricolage sur les moteurs et de conduite pour une réparation de fortune. Fouiller une épave rapporte 1 pièce de plus.</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "mecanique",
+          "source": "0HnCN5FanxEZZrAJ"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "8iryzznR6gL4vLWD",
+      "_key": "!actors.items!AzNzFH3FyonsxXsZ.8iryzznR6gL4vLWD",
+      "name": "Pied-de-biche",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "pied-de-biche",
+        "categorie": "outil",
+        "description": "<p>L'outil du pilleur : portes, caisses, rideaux de fer. Il cogne aussi.</p>",
+        "bonus": {
+          "bricolage": 1,
+          "combat": 1
+        },
+        "charge": 1,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "pied-de-biche",
+          "source": "EsMoocN8cpybLVYb"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Gros Mani",
+    "actorLink": false,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/gros-mani.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gros-mani",
+      "pnj": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

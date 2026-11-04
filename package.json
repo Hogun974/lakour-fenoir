@@ -1,0 +1,16 @@
+{
+  "name": "lakour-fenoir",
+  "private": true,
+  "type": "module",
+  "description": "Monde « Fénoir » : survie à La Réunion au jour zéro d'une épidémie de Livides. Système lakour-survie et module de contenu lakour-fenoir, avec le moteur commun lakour-mj-ia en sous-module.",
+  "scripts": {
+    "essais": "node --test \"essais/**/*.test.mjs\"",
+    "fabriquer-fenoir": "node outils/fabriquer-fenoir.mjs",
+    "contrat": "node modules/lakour-mj-ia/outils/contrat-contenu.mjs modules/lakour-fenoir",
+    "valider": "node modules/lakour-mj-ia/outils/valider-foundry.mjs modules/lakour-fenoir lakour-survie",
+    "fabriquer-jetons-fenoir": "node outils/fabriquer-jetons-fenoir.mjs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "3.0.5"
+  }
+}

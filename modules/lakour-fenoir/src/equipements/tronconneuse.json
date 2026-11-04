@@ -1,0 +1,37 @@
+{
+  "_id": "GMevJZf2TevArQ9Y",
+  "_key": "!items!GMevJZf2TevArQ9Y",
+  "name": "Tronçonneuse",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "tronconneuse",
+    "categorie": "outil",
+    "description": "<p>Abattre, débiter, ouvrir un passage dans un arbre tombé. Elle boit de l'essence et hurle à travers toute la forêt.</p>",
+    "bonus": {
+      "bricolage": 2
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 3,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tronconneuse"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

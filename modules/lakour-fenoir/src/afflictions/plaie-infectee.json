@@ -1,0 +1,49 @@
+{
+  "_id": "fusGjHrBAVVeFCE9",
+  "_key": "!items!fusGjHrBAVVeFCE9",
+  "name": "Plaie infectée",
+  "type": "affliction",
+  "img": "icons/svg/blood.svg",
+  "system": {
+    "cle": "plaie-infectee",
+    "categorie": "blessure",
+    "description": "<p>Une coupure de tôle, une griffure de ronce, une écharde de bambou : sous la chaleur humide, tout s'infecte. Rougeur, chaleur, pus, puis la fièvre qui monte. (Rien à voir avec le Gris : celui-là ne se soigne pas.)</p>",
+    "prevention": "<p>Laver et désinfecter toute plaie le jour même ; alcool, savon, pansements propres.</p>",
+    "contagion": 0,
+    "incubation": 2,
+    "duree": 7,
+    "effets": {
+      "malus": 1,
+      "fatigue": 0
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "normale",
+      "medicaments": 1
+    },
+    "aggravation": {
+      "jours": 3,
+      "malus": 2,
+      "fatigue": 2,
+      "duree": 10
+    },
+    "declencheur": null,
+    "risque": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plaie-infectee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

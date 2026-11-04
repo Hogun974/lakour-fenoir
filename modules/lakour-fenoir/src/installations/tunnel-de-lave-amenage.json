@@ -1,0 +1,180 @@
+{
+  "_id": "r8pqEpTGmoECFVA1",
+  "_key": "!items!r8pqEpTGmoECFVA1",
+  "name": "Aménagement d'un tunnel de lave",
+  "type": "installation",
+  "img": "icons/svg/cave.svg",
+  "system": {
+    "cle": "tunnel-de-lave-amenage",
+    "categorie": "souterrain",
+    "description": "<p>Un tube de lave existe déjà : il faut en masquer l'entrée, dégager les éboulis, poser des planchers sur les cordes de lave, étayer les voûtes fragiles, ventiler et éclairer. Il n'y a ni eau ni soleil sous la coulée : l'eau se récolte dehors, la nourriture aussi. Mais aucun refuge n'est plus sûr.</p>",
+    "niveau": 0,
+    "niveauMax": 3,
+    "chantier": {
+      "fait": 0,
+      "requis": 12
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 12
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 3
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 2,
+          "capacite": 6,
+          "visibilite": -2,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 3,
+          "soins": 0,
+          "moral": 0,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 10,
+          "pieces": 2,
+          "graines": 0,
+          "travail": 30
+        },
+        "requiert": {
+          "savoirs": [
+            "etaiement-galeries"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 3
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 2,
+          "discretion": 3,
+          "capacite": 12,
+          "visibilite": -3,
+          "bruit": 0,
+          "stockage": {
+            "nourriture": 300,
+            "eau": 100
+          },
+          "protectionCyclone": 3,
+          "soins": 0,
+          "moral": 0,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 18,
+          "pieces": 6,
+          "graines": 0,
+          "travail": 60
+        },
+        "requiert": {
+          "savoirs": [
+            "etaiement-galeries"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 3
+          },
+          "installations": [
+            {
+              "cle": "batteries",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "energie": 1
+          },
+          "defense": 3,
+          "discretion": 4,
+          "capacite": 24,
+          "visibilite": -4,
+          "bruit": 0,
+          "stockage": {
+            "nourriture": 500,
+            "eau": 200
+          },
+          "protectionCyclone": 3,
+          "soins": 0,
+          "moral": 1,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tunnel-de-lave-amenage"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

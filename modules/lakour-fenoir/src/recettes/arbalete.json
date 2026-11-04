@@ -1,0 +1,47 @@
+{
+  "_id": "eNRRCctesYrtiIrV",
+  "_key": "!items!eNRRCctesYrtiIrV",
+  "name": "Arbalète de fortune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "arbalete",
+    "description": "<p>Lame de ressort de voiture, crosse de bois dur, détente de récupération, et des carreaux taillés dans des tiges de fer à béton.</p>",
+    "cout": {
+      "materiaux": 2,
+      "pieces": 2
+    },
+    "travail": 6,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "cle": "atelier",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "arbalete-de-fortune",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "arbalete"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

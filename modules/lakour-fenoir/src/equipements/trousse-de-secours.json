@@ -1,0 +1,37 @@
+{
+  "_id": "hHK6ckirfpLMz8NM",
+  "_key": "!items!hHK6ckirfpLMz8NM",
+  "name": "Trousse de secours",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "trousse-de-secours",
+    "categorie": "soin",
+    "description": "<p>Compresses, bandes, désinfectant, sutures adhésives, garrot, gants, ciseaux. Elle se vide vite.</p>",
+    "bonus": {
+      "soins": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "trousse-de-secours"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

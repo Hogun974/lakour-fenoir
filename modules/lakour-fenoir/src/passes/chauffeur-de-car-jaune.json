@@ -1,0 +1,48 @@
+{
+  "_id": "3S1r44Lr75qpmFrW",
+  "_key": "!items!3S1r44Lr75qpmFrW",
+  "name": "Chauffeur de car jaune",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "chauffeur-de-car-jaune",
+    "description": "<p>Il conduit le car interurbain sur la route de Cilaos, quatre cents virages deux fois par jour. Il connaît chaque arrêt, chaque passager, chaque éboulis de la route.</p>",
+    "competences": {
+      "conduite": 3,
+      "vigilance": 1,
+      "parole": 1,
+      "endurance": 1,
+      "bricolage": 1
+    },
+    "savoirs": [
+      "mecanique"
+    ],
+    "equipement": [
+      "batte",
+      "talkies"
+    ],
+    "accroche": "<p>Il est à mi-route de Cilaos, car plein, quand un passager du fond se met à hurler, puis se tait.</p>",
+    "region": "cilaos",
+    "incapacites": [],
+    "histoire": [
+      "Il a fait la route de Cilaos plus de dix mille fois.",
+      "Les enfants du cirque l'appelaient par son prénom et lui montaient des mangues."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chauffeur-de-car-jaune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

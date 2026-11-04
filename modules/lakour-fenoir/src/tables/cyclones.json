@@ -1,0 +1,327 @@
+{
+  "_id": "xCxMdF8oErpdaa7e",
+  "_key": "!tables!xCxMdF8oErpdaa7e",
+  "name": "Noms de cyclones",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Noms (fictifs) des cyclones de la saison.</p>",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cyclones"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "zvHBgAQr0ACDJtgv",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.zvHBgAQr0ACDJtgv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ambrine</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "JHz0VztojDjjvpO8",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.JHz0VztojDjjvpO8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Baraka</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "l4pTZ0fezAMQC5Ji",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.l4pTZ0fezAMQC5Ji",
+      "type": "text",
+      "name": "",
+      "description": "<p>Célestine</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9lKgc97GRgnlaJh6",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.9lKgc97GRgnlaJh6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Dalvina</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QR0cEZPpIdFj5U2A",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.QR0cEZPpIdFj5U2A",
+      "type": "text",
+      "name": "",
+      "description": "<p>Eloya</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FnK54DrQNQh8sOFy",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.FnK54DrQNQh8sOFy",
+      "type": "text",
+      "name": "",
+      "description": "<p>Fanjava</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "h1eaChjB2fsXAKA0",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.h1eaChjB2fsXAKA0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Gwenaëlle</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YsZfr5RQyOG6QEgG",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.YsZfr5RQyOG6QEgG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Halima</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "teCTPUxGKTVK6A8a",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.teCTPUxGKTVK6A8a",
+      "type": "text",
+      "name": "",
+      "description": "<p>Iandro</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2Bv0ZrnAnOZE3lF1",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.2Bv0ZrnAnOZE3lF1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Jessanne</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZrlnRuWgUdm7UtEY",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.ZrlnRuWgUdm7UtEY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Kalidou</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aw1TzOYgAyY1r3Jk",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.aw1TzOYgAyY1r3Jk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Lorenza</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "b4OUnaFEfyL4PJtK",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.b4OUnaFEfyL4PJtK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Maevan</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mZL0BnVz3AhwF0ln",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.mZL0BnVz3AhwF0ln",
+      "type": "text",
+      "name": "",
+      "description": "<p>Nirina</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KTBzxtrjwhoTEenj",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.KTBzxtrjwhoTEenj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Oriane</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "V8IhkF7sayXrFSsv",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.V8IhkF7sayXrFSsv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Pakila</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8qlBdJx44eFpCGwL",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.8qlBdJx44eFpCGwL",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rasoa</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "P3XYTZE22USMWl1B",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.P3XYTZE22USMWl1B",
+      "type": "text",
+      "name": "",
+      "description": "<p>Sitoni</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "y5ErEazUONAVdXdO",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.y5ErEazUONAVdXdO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Tahira</p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1BhALBKiHREihkTG",
+      "_key": "!tables.results!xCxMdF8oErpdaa7e.1BhALBKiHREihkTG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Vavaka</p>",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

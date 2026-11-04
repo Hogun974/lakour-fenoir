@@ -1,0 +1,178 @@
+{
+  "_id": "PV5bMI82z7yZpJ1T",
+  "_key": "!items!PV5bMI82z7yZpJ1T",
+  "name": "Panneaux solaires",
+  "type": "installation",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "cle": "panneaux-solaires",
+    "categorie": "energie",
+    "description": "<p>Des panneaux récupérés sur les toits des voisins, un régulateur, des câbles. Sans batteries, le courant ne sert que le jour ; avec, il éclaire la nuit. Les panneaux brillent au soleil comme des miroirs.</p>",
+    "niveau": 0,
+    "niveauMax": 3,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 4,
+          "graines": 0,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "energie": 2
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": true,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 8,
+          "graines": 0,
+          "travail": 10
+        },
+        "requiert": {
+          "savoirs": [
+            "electricite-solaire"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "energie": 4
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": true,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 6,
+          "pieces": 12,
+          "graines": 0,
+          "travail": 14
+        },
+        "requiert": {
+          "savoirs": [
+            "electricite-solaire"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 2,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "batteries",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "energie": 6
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": true,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 2,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "panneaux-solaires"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

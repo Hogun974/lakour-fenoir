@@ -1,0 +1,208 @@
+{
+  "_id": "0gBR30UuQg72UAJC",
+  "_key": "!tables!0gBR30UuQg72UAJC",
+  "name": "Recrues — raison d'être là",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Pourquoi cette recrue se présente.</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recrues-raison",
+      "recrues": "raison"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "tLL1trs4VYXUPLIm",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.tLL1trs4VYXUPLIm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a vu la fumée de votre cuisine et a marché deux jours pour la trouver.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "I1grKhoDJr0VHpie",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.I1grKhoDJr0VHpie",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle fuit une bande qui l'a gardée prisonnière.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oYOYxHiUlY5qDEG4",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.oYOYxHiUlY5qDEG4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a été chassé de son groupe après une dispute.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FfMRvSztuw5iC0sE",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.FfMRvSztuw5iC0sE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle cherche un proche disparu et pense qu'il est passé par ici.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9Rpj3KDzEiguFFIk",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.9Rpj3KDzEiguFFIk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Son abri est tombé la nuit dernière ; il est le seul à s'en être sorti.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9rKqGBtD6xWrXpDZ",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.9rKqGBtD6xWrXpDZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a entendu votre radio et a reconnu une voix.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "v8GeDLxGxcQbAiAj",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.v8GeDLxGxcQbAiAj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle est venue troquer et ne veut plus repartir.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qQhWfw64MQtWOMkQ",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.qQhWfw64MQtWOMkQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il était caché dans la maison d'à côté depuis le début.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YGg8aRfuIemk4aA4",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.YGg8aRfuIemk4aA4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle était guide et connaît la région par cœur.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NnqZVRzu08vOLJCJ",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.NnqZVRzu08vOLJCJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a été envoyé par sa faction pour apprendre ce que vous savez faire.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vv7MniUx3w9Eo7a9",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.vv7MniUx3w9Eo7a9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle a trouvé un enfant seul et vous l'amène, avec elle.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "d0sD9hSdryrsEyjS",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.d0sD9hSdryrsEyjS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il était soignant à l'hôpital et n'en pouvait plus.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

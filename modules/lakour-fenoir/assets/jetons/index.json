@@ -1,0 +1,19 @@
+{
+  "infirmiere-du-chu": "modules/lakour-fenoir/assets/jetons/joueurs/infirmiere-du-chu.svg",
+  "electricien": "modules/lakour-fenoir/assets/jetons/joueurs/electricien.svg",
+  "pecheur-de-saint-gilles": "modules/lakour-fenoir/assets/jetons/joueurs/pecheur-de-saint-gilles.svg",
+  "planteur-de-canne": "modules/lakour-fenoir/assets/jetons/joueurs/planteur-de-canne.svg",
+  "gendarme": "modules/lakour-fenoir/assets/jetons/joueurs/gendarme.svg",
+  "etudiante": "modules/lakour-fenoir/assets/jetons/joueurs/etudiante.svg",
+  "guide-de-canyon": "modules/lakour-fenoir/assets/jetons/joueurs/guide-de-canyon.svg",
+  "mecanicien": "modules/lakour-fenoir/assets/jetons/joueurs/mecanicien.svg",
+  "cuisinier-de-camion-bar": "modules/lakour-fenoir/assets/jetons/joueurs/cuisinier-de-camion-bar.svg",
+  "retraite-de-la-marine": "modules/lakour-fenoir/assets/jetons/joueurs/retraite-de-la-marine.svg",
+  "agricultrice-des-hauts": "modules/lakour-fenoir/assets/jetons/joueurs/agricultrice-des-hauts.svg",
+  "ambulancier": "modules/lakour-fenoir/assets/jetons/joueurs/ambulancier.svg",
+  "prof-de-svt": "modules/lakour-fenoir/assets/jetons/joueurs/prof-de-svt.svg",
+  "vendeur-de-bazar": "modules/lakour-fenoir/assets/jetons/joueurs/vendeur-de-bazar.svg",
+  "chauffeur-de-car-jaune": "modules/lakour-fenoir/assets/jetons/joueurs/chauffeur-de-car-jaune.svg",
+  "apiculteur": "modules/lakour-fenoir/assets/jetons/joueurs/apiculteur.svg",
+  "ilette-de-mafate": "modules/lakour-fenoir/assets/jetons/joueurs/ilette-de-mafate.svg"
+}

@@ -1,0 +1,141 @@
+{
+  "_id": "AWvZjtQZ1z1S3bnh",
+  "_key": "!items!AWvZjtQZ1z1S3bnh",
+  "name": "Filtre à sable et charbon",
+  "type": "installation",
+  "img": "icons/svg/waterfall.svg",
+  "system": {
+    "cle": "filtre-sable-charbon",
+    "categorie": "eau",
+    "description": "<p>Un fût rempli de gravier, de sable lavé et de charbon de bois, puis une ébullition : l'eau brute de la rivière, du puits ou de la ravine devient buvable. Sans lui, la diarrhée tue plus sûrement que les Livides.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [
+              "riviere",
+              "source",
+              "puits"
+            ],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "eau": 2
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "eau",
+            "nombre": 1
+          }
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 2,
+          "graines": 0,
+          "travail": 8
+        },
+        "requiert": {
+          "savoirs": [
+            "plomberie-filtration"
+          ],
+          "site": {
+            "eau": [
+              "riviere",
+              "source",
+              "puits"
+            ],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "eau": 4
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "eau",
+            "nombre": 1
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "filtre-sable-charbon"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

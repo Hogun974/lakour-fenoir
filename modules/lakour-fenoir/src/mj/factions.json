@@ -1,0 +1,208 @@
+{
+  "_id": "pixM5gwBn4LUg5zY",
+  "_key": "!journal!pixM5gwBn4LUg5zY",
+  "name": "Les factions de Fénoir",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "factions",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "mBg8aF09si8Wctmc",
+      "_key": "!journal.pages!pixM5gwBn4LUg5zY.mBg8aF09si8Wctmc",
+      "name": "La Garnison du Quai",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce qui reste de l'ordre au Port : quelques militaires, des gendarmes mobiles coupés de leur hiérarchie, des agents portuaires, des dockers et leurs familles, retranchés derrière des murailles de conteneurs autour des darses, des cuves de carburant et des derniers navires. Ils se disent l'autorité légitime de l'île en attendant « la métropole ».</p><ul><li><strong>Attitude de départ</strong> : mefiante. <strong>Régions</strong> : Le Port et La Possession, La route du Littoral.</li><li><strong>Qui commande</strong> : La commandante Hoarau, ancienne officière de port, qui signe ses ordres « pour l'autorité provisoire ».</li><li><strong>À quoi on les reconnaît</strong> : Brassards orange fluo, conteneurs empilés en murailles, sirène du port à heure fixe.</li><li><strong>Ce qu'ils veulent</strong> : Du carburant, des armes, des médecins, des techniciens pour faire tourner ce qui reste de la centrale et des grues ; contrôler la route du Littoral ; recenser les survivants « pour l'évacuation ».</li><li><strong>Comment traiter avec eux</strong> : Ils respectent l'uniforme, la discipline et les papiers, même faux. On entre chez eux désarmé, on en sort fiché. Ils paient bien en carburant, mais réquisitionnent ce qu'ils jugent nécessaire. Celui qui se dit médecin ou électricien n'est plus jamais tout à fait libre de partir.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "garnison-du-quai"
+        }
+      }
+    },
+    {
+      "_id": "YQzp9s2Ua0ovH7GD",
+      "_key": "!journal.pages!pixM5gwBn4LUg5zY.YQzp9s2Ua0ovH7GD",
+      "name": "La Coopérative des Plaines",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les fermiers et éleveurs des Hauts se sont regroupés autour des fermes de la Plaine des Cafres et des Palmistes : lait, viande, légumes, et des fusils de chasse pour garder les clôtures. Ils travaillent dur, partagent entre eux et se méfient des gens de la ville.</p><ul><li><strong>Attitude de départ</strong> : neutre. <strong>Régions</strong> : Le Tampon et la Plaine des Cafres, La Plaine des Palmistes et Bélouve, Les Hauts de l'Ouest, Cilaos.</li><li><strong>Qui commande</strong> : Un conseil de sept fermiers, présidé par une vieille éleveuse que tout le monde appelle Mémé Lucette.</li><li><strong>À quoi on les reconnaît</strong> : Clôtures doublées, cloches de vache aux barrières, troc le samedi à Bourg-Murat.</li><li><strong>Ce qu'ils veulent</strong> : Des bras pour les récoltes, des graines, du carburant pour les tracteurs, des soignants ; qu'on les laisse tranquilles.</li><li><strong>Comment traiter avec eux</strong> : On paie en travail, en savoir ou en graines ; la parole donnée vaut contrat. Un voleur est chassé, un tricheur aussi. Ceux qui restent une saison et tiennent leurs engagements finissent par avoir une place au conseil.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "cooperative-des-plaines"
+        }
+      }
+    },
+    {
+      "_id": "tql9RoKfljBieZI4",
+      "_key": "!journal.pages!pixM5gwBn4LUg5zY.tql9RoKfljBieZI4",
+      "name": "Les Ferrailleurs",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Récupérateurs du littoral : mécaniciens, ferrailleurs, débrouillards, ils démontent tout ce que la ville a laissé, des voitures aux panneaux solaires, et revendent les pièces. Ils ne sont pas cruels, seulement efficaces : un abri abandonné une semaine est dépouillé jusqu'aux gouttières.</p><ul><li><strong>Attitude de départ</strong> : neutre. <strong>Régions</strong> : Le Port et La Possession, Saint-Paul et la côte Ouest, Saint-Leu et l'Étang-Salé, L'Est : Saint-André, Saint-Benoît, Sainte-Rose.</li><li><strong>Qui commande</strong> : Personne et tout le monde ; on cite souvent « Gros Mani », qui tient la casse de la Rivière des Galets.</li><li><strong>À quoi on les reconnaît</strong> : Pick-up hérissés de tôle, colliers de clés de voiture, marché aux pièces dans les zones commerciales.</li><li><strong>Ce qu'ils veulent</strong> : Des pièces, du carburant, des véhicules, des informations sur les dépôts intacts ; commercer avec tout le monde.</li><li><strong>Comment traiter avec eux</strong> : Le troc est roi, la parole aussi longtemps qu'elle rapporte. Ils échangent tout contre tout, renseignements compris, et vendent les vôtres au suivant. Ne laissez rien sans garde.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "ferrailleurs"
+        }
+      }
+    },
+    {
+      "_id": "wmK5IBhLU8Duhj9Z",
+      "_key": "!journal.pages!pixM5gwBn4LUg5zY.wmK5IBhLU8Duhj9Z",
+      "name": "Les Barques du Sud",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les pêcheurs de Saint-Pierre, de Saint-Joseph, de Saint-Philippe et de Saint-Leu se sont organisés en flottille : on dort sur les bateaux, au mouillage, hors de portée des Livides, et l'on vit de la mer. Ils relient les marines du Sud et de l'Ouest et transportent ce qui doit l'être.</p><ul><li><strong>Attitude de départ</strong> : neutre. <strong>Régions</strong> : Saint-Louis et Saint-Pierre, Saint-Joseph et le Sud sauvage, Saint-Leu et l'Étang-Salé, Saint-Paul et la côte Ouest.</li><li><strong>Qui commande</strong> : Le patron Grondin, pêcheur de Saint-Pierre, et une capitaine de Saint-Philippe qu'on appelle « la Marine ».</li><li><strong>À quoi on les reconnaît</strong> : Barques peintes amarrées au large, feux de signal sur les jetées, poisson séché contre tout.</li><li><strong>Ce qu'ils veulent</strong> : Du carburant pour les moteurs, de la toile et du cordage, des médicaments ; des ports sûrs ; la paix sur les quais.</li><li><strong>Comment traiter avec eux</strong> : Ils échangent du poisson et des traversées contre du carburant et des médicaments. Un passage par la mer coûte cher, mais il évite la route des Laves. Toucher à un bateau, c'est la guerre.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "barques-du-sud"
+        }
+      }
+    },
+    {
+      "_id": "6GlC4XaXD8MpZwMG",
+      "_key": "!journal.pages!pixM5gwBn4LUg5zY.6GlC4XaXD8MpZwMG",
+      "name": "Les Pèlerins de la Lave",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Autour de l'église de Sainte-Rose que la lave a épargnée, une communauté s'est formée : des familles de l'Est, des réfugiés, des malades. Ils croient que le volcan protège ceux qui vivent à son pied, que la chaleur purifie, et que le Gris est une épreuve. Ils partagent tout, soignent, accueillent… et attendent qu'on croie.</p><ul><li><strong>Attitude de départ</strong> : mefiante. <strong>Régions</strong> : L'Est : Saint-André, Saint-Benoît, Sainte-Rose, Saint-Joseph et le Sud sauvage.</li><li><strong>Qui commande</strong> : Frère Expédit, ancien catéchiste, voix douce et regard qui ne cille pas.</li><li><strong>À quoi on les reconnaît</strong> : Pierres de lave portées au cou, cierges sur les coulées, chants le soir au bord de la route des Laves.</li><li><strong>Ce qu'ils veulent</strong> : Des fidèles, des vivres à partager, des soignants ; qu'on respecte leurs rites ; garder la route des Laves.</li><li><strong>Comment traiter avec eux</strong> : On y est nourri et soigné sans payer, mais on y reste en partageant leur vie. Ils se méfient des armes et de l'ironie. Leur foi peut devenir dangereuse quand ils décident de « rendre à la lave » un infecté, ou un sceptique.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "pelerins-de-la-lave"
+        }
+      }
+    },
+    {
+      "_id": "tTKk5nZMS8jAyfpN",
+      "_key": "!journal.pages!pixM5gwBn4LUg5zY.tTKk5nZMS8jAyfpN",
+      "name": "Les Familles des Îlets",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les quelques centaines d'habitants de Mafate, et ceux de Salazie qui les ont rejoints. Ils vivaient déjà sans route, avec leurs panneaux, leurs sources et leurs jardins ; le monde d'après ressemble à leur monde d'avant, en plus dur. Ils gardent les cols et choisissent qui entre.</p><ul><li><strong>Attitude de départ</strong> : mefiante. <strong>Régions</strong> : Mafate, Salazie.</li><li><strong>Qui commande</strong> : Les anciens de chaque îlet ; à La Nouvelle, une ancienne institutrice que les sentiers écoutent.</li><li><strong>À quoi on les reconnaît</strong> : Cols gardés par deux guetteurs, sifflets qui se répondent d'îlet en îlet, cases fermées à la nuit.</li><li><strong>Ce qu'ils veulent</strong> : Des médicaments, des pièces pour leurs panneaux et leurs captages, des graines ; qu'on ne leur amène pas la maladie.</li><li><strong>Comment traiter avec eux</strong> : On demande à entrer, on ne force pas. Une quarantaine de trois jours au col, un travail à faire, et l'on peut rester. Les Familles n'oublient ni un service ni un affront. Elles enseignent volontiers l'hydraulique et le solaire à qui les aide.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "familles-des-ilets"
+        }
+      }
+    },
+    {
+      "_id": "aKV9w2nmHENZtCCQ",
+      "_key": "!journal.pages!pixM5gwBn4LUg5zY.aKV9w2nmHENZtCCQ",
+      "name": "Le Dispensaire du Sud",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Des soignants qui ont refusé de partir : médecins, infirmières, aides-soignants, pharmaciens, et ceux qui les protègent. Ils tiennent une aile du grand hôpital du Sud et un poste à Saint-Denis, soignent qui vient, étudient le Gris et cherchent un remède qu'ils n'ont pas.</p><ul><li><strong>Attitude de départ</strong> : amicale. <strong>Régions</strong> : Saint-Louis et Saint-Pierre, Saint-Denis.</li><li><strong>Qui commande</strong> : La docteure Soundirassen, urgentiste, épuisée, qui n'a pas quitté l'hôpital depuis le jour zéro.</li><li><strong>À quoi on les reconnaît</strong> : Croix rouge peinte sur des draps, ambulances transformées en navettes, coupons de soin écrits à la main.</li><li><strong>Ce qu'ils veulent</strong> : Des médicaments, de l'eau, du carburant pour les groupes électrogènes, des volontaires ; des corps à étudier, des infectés à observer.</li><li><strong>Comment traiter avec eux</strong> : On y est soigné contre ce qu'on peut donner, et parfois pour rien. Ils sont honnêtes, et à bout. Leur besoin d'étudier le Gris peut les pousser à des demandes dérangeantes : ramener un infecté vivant, un Livide entier, un enfant mordu.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "dispensaire-du-sud"
+        }
+      }
+    },
+    {
+      "_id": "dmyLzCgtNVRWLO7n",
+      "_key": "!journal.pages!pixM5gwBn4LUg5zY.dmyLzCgtNVRWLO7n",
+      "name": "Les Sans-Lune",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une bande née des pillages de la capitale, grossie de tous ceux qui ont compris qu'on survit mieux en prenant qu'en produisant. Ils sortent la nuit, connaissent la ville par cœur et lèvent un tribut sur les quartiers qu'ils « protègent ». Plus le littoral se vide de Livides, plus ils s'étendent.</p><ul><li><strong>Attitude de départ</strong> : hostile. <strong>Régions</strong> : Saint-Denis, Sainte-Marie et l'aéroport.</li><li><strong>Qui commande</strong> : Un homme qu'on appelle « le Comptable », qui tient la liste de ce que chaque quartier lui doit.</li><li><strong>À quoi on les reconnaît</strong> : Visages noircis, sortie les nuits sans lune, marques à la bombe sur les portes « déjà payées ».</li><li><strong>Ce qu'ils veulent</strong> : Tout ce qui se mange, se boit, se tire ou se vend ; la peur des autres ; les abris prospères.</li><li><strong>Comment traiter avec eux</strong> : On paie, on se cache ou on se bat. Un tribut acheté ne dure qu'une lune. Quelques-uns, jeunes et perdus, peuvent être ramenés de l'autre côté par la parole. Les autres ne comprennent que la force.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sans-lune"
+        }
+      }
+    }
+  ]
+}

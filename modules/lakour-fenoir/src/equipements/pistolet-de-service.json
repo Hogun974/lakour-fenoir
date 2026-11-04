@@ -1,0 +1,37 @@
+{
+  "_id": "dUmMz8dGEXOMhloc",
+  "_key": "!items!dUmMz8dGEXOMhloc",
+  "name": "Pistolet de service",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pistolet-de-service",
+    "categorie": "arme-a-feu",
+    "description": "<p>Un pistolet 9 mm de gendarme ou de policier, avec un chargeur ou deux. On le garde pour le pire.</p>",
+    "bonus": {
+      "tir": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": 1,
+    "bruit": 2,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pistolet-de-service"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

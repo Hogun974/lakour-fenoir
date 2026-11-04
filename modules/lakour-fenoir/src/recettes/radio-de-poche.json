@@ -1,0 +1,43 @@
+{
+  "_id": "FnsYcbklzcALvqjB",
+  "_key": "!items!FnsYcbklzcALvqjB",
+  "name": "Radio à manivelle",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "radio-de-poche",
+    "description": "<p>Un récepteur démonté d'un vieux poste, une dynamo de vélo, une manivelle : écouter l'île sans piles.</p>",
+    "cout": {
+      "pieces": 2
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "radio"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "radio-a-manivelle",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "radio-de-poche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

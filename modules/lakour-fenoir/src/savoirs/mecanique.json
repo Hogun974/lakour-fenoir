@@ -1,0 +1,29 @@
+{
+  "_id": "0HnCN5FanxEZZrAJ",
+  "_key": "!items!0HnCN5FanxEZZrAJ",
+  "name": "Mécanique",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "mecanique",
+    "description": "<p>Faire redémarrer un moteur, siphonner, réparer un groupe électrogène, une pompe, un scooter, transformer une carcasse en pièces détachées.</p>",
+    "apprentissage": "<p>Un passé de mécanicien, de chauffeur ou de marin ; un garage fouillé avec ses revues techniques ; un Ferrailleur qui veut bien montrer.</p>",
+    "effets": "<p>Ouvre l'atelier niveau 2. +1 dé aux tests de bricolage sur les moteurs et de conduite pour une réparation de fortune. Fouiller une épave rapporte 1 pièce de plus.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "mecanique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

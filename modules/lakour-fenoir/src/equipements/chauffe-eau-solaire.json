@@ -1,0 +1,39 @@
+{
+  "_id": "lyHb0eP2OzbXMBBT",
+  "_key": "!items!lyHb0eP2OzbXMBBT",
+  "name": "Chauffe-eau solaire de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "chauffe-eau-solaire",
+    "categorie": "vie",
+    "description": "<p>Un serpentin de tuyau noir sur le toit, un fût isolé : de l'eau chaude pour se laver et laver les plaies. Une douche chaude change une semaine.</p>",
+    "bonus": {
+      "soins": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chauffe-eau-solaire"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

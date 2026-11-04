@@ -1,0 +1,44 @@
+{
+  "_id": "88eVo6REtrl6eun8",
+  "_key": "!items!88eVo6REtrl6eun8",
+  "name": "Piqûre de scolopendre",
+  "type": "affliction",
+  "img": "icons/svg/blood.svg",
+  "system": {
+    "cle": "piqure-de-scolopendre",
+    "categorie": "blessure",
+    "description": "<p>La scolopendre se cache sous les planches, dans les chaussures et les tas de bois. Sa piqûre brûle comme un fer rouge, la main enfle, la fièvre peut suivre. Rarement grave, toujours mémorable.</p>",
+    "prevention": "<p>Secouer chaussures et vêtements, porter des gants pour déplacer le bois.</p>",
+    "contagion": 0,
+    "incubation": 0,
+    "duree": 2,
+    "effets": {
+      "malus": 1,
+      "fatigue": 1
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "normale",
+      "medicaments": 0
+    },
+    "aggravation": null,
+    "declencheur": null,
+    "risque": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "piqure-de-scolopendre"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

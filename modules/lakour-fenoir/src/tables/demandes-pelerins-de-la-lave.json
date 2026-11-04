@@ -1,0 +1,188 @@
+{
+  "_id": "N7GL6zu54VcNYBeU",
+  "_key": "!tables!N7GL6zu54VcNYBeU",
+  "name": "Demandes — Les Pèlerins de la Lave",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "demandes-pelerins-de-la-lave",
+      "appels": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "BcbVqYnI8jtlz392",
+      "_key": "!tables.results!N7GL6zu54VcNYBeU.BcbVqYnI8jtlz392",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Les cierges de la cathédrale.</strong> Rapporter cierges et vin de messe d'une église de Saint-Denis.</p><p><strong>Récompense :</strong> 6 nourriture, 6 eau ; réputation +2.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "nourriture": 6,
+              "eau": 6
+            },
+            "faction": "pelerins-de-la-lave",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "HVvlCBTnXdZc7EDD",
+      "_key": "!tables.results!N7GL6zu54VcNYBeU.HVvlCBTnXdZc7EDD",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — Les fidèles de Saint-Benoît.</strong> Ramener une famille de fidèles coincée dans Saint-Benoît.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +3.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "nourriture": 8
+            },
+            "faction": "pelerins-de-la-lave",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "lEEHl95DcnYC7zGC",
+      "_key": "!tables.results!N7GL6zu54VcNYBeU.lEEHl95DcnYC7zGC",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — La procession.</strong> Protéger une procession qui va prier au bord de la coulée.</p><p><strong>Récompense :</strong> 6 nourriture, 1 medicaments ; réputation +2.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "nourriture": 6,
+              "medicaments": 1
+            },
+            "faction": "pelerins-de-la-lave",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "AsnK1lw4LQXotLyP",
+      "_key": "!tables.results!N7GL6zu54VcNYBeU.AsnK1lw4LQXotLyP",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — La citerne du presbytère.</strong> Réparer la citerne fissurée de Notre-Dame-des-Laves.</p><p><strong>Récompense :</strong> 10 eau, 4 nourriture ; réputation +2.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "eau": 10,
+              "nourriture": 4
+            },
+            "faction": "pelerins-de-la-lave",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "BaAbaQ0whD7mdY93",
+      "_key": "!tables.results!N7GL6zu54VcNYBeU.BaAbaQ0whD7mdY93",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Leur charité contre la vôtre.</strong> Ils offrent de soigner un blessé du groupe si l'un de vous assiste à leurs veillées une semaine.</p><p><strong>Récompense :</strong> 3 medicaments ; réputation +1.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "medicaments": 3
+            },
+            "faction": "pelerins-de-la-lave",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "DV5EiWjsMVGNbthF",
+      "_key": "!tables.results!N7GL6zu54VcNYBeU.DV5EiWjsMVGNbthF",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — Le prêcheur parti.</strong> Frère Expédit est parti seul vers le volcan ; ses fidèles supplient qu'on le ramène.</p><p><strong>Récompense :</strong> 8 nourriture, 4 eau ; réputation +3.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "nourriture": 8,
+              "eau": 4
+            },
+            "faction": "pelerins-de-la-lave",
+            "reputation": 3
+          }
+        }
+      }
+    }
+  ]
+}

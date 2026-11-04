@@ -1,0 +1,82 @@
+{
+  "_id": "P4KZpZeASxePVoHP",
+  "_key": "!items!P4KZpZeASxePVoHP",
+  "name": "Cuisine commune",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "cuisine-commune",
+    "categorie": "vie",
+    "description": "<p>Un feu de bois sous un auvent, de grandes marmites, une table pour tout le monde. Un cari partagé tient un groupe ensemble mieux qu'un discours. La fumée, elle, monte haut.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "cuisine",
+            "nombre": 1
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cuisine-commune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

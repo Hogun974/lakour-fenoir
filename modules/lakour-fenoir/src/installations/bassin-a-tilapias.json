@@ -1,0 +1,143 @@
+{
+  "_id": "OulX7mYuPw5OTqOt",
+  "_key": "!items!OulX7mYuPw5OTqOt",
+  "name": "Bassin à tilapias",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "bassin-a-tilapias",
+    "categorie": "nourriture",
+    "description": "<p>Un bassin bâché ou maçonné où grossissent des tilapias nourris de déchets et de lentilles d'eau ; au second niveau, l'eau du bassin arrose le potager et revient filtrée par une petite pompe.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 16
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 6,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 16
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "nourriture": 1
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 60
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "elevage",
+            "nombre": 1
+          }
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 8,
+          "pieces": 3,
+          "graines": 0,
+          "travail": 16
+        },
+        "requiert": {
+          "savoirs": [
+            "elevage"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "potager",
+              "niveau": 2
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "nourriture": 3
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 60
+          },
+          "consommation": {
+            "eau": 1,
+            "energie": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "elevage",
+            "nombre": 1
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bassin-a-tilapias"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

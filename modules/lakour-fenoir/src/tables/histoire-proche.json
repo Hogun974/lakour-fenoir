@@ -1,0 +1,208 @@
+{
+  "_id": "p9dYbgCOS0z1rhVT",
+  "_key": "!tables!p9dYbgCOS0z1rhVT",
+  "name": "Histoire — le proche du jour zéro",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un proche perdu ou cherché, pour la graine d'histoire.</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "histoire-proche",
+      "histoire": "proche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "CQVAOhip2dFwPN67",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.CQVAOhip2dFwPN67",
+      "type": "text",
+      "name": "",
+      "description": "<p>Au jour zéro, sa sœur était à l'aéroport ; il ne sait pas si elle a embarqué.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mkACZMYf99PRBMiA",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.mkACZMYf99PRBMiA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a perdu son père dans les urgences de Bellepierre, le premier soir.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dpKFS6AbvH3gJNcK",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.dpKFS6AbvH3gJNcK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Sa fille était en classe de mer à Saint-Leu ; il la cherche encore.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "joVw4qARwFlev921",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.joVw4qARwFlev921",
+      "type": "text",
+      "name": "",
+      "description": "<p>Son mari est parti chercher de l'essence et n'est jamais revenu.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "caTGpUfnewuzeIUX",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.caTGpUfnewuzeIUX",
+      "type": "text",
+      "name": "",
+      "description": "<p>Sa grand-mère vivait seule dans les Hauts ; il n'a pas pu monter la voir.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CHBSJHlCAHLA7HDV",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.CHBSJHlCAHLA7HDV",
+      "type": "text",
+      "name": "",
+      "description": "<p>Son meilleur ami s'est relevé dans ses bras.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VDDB5AYJntB1usHc",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.VDDB5AYJntB1usHc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ses parents vivent en métropole ; il ne sait pas si la métropole existe encore.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Pso7GPGak0TCppGN",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.Pso7GPGak0TCppGN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Son fils était à Mafate pour un camp de randonnée ; il est peut-être en sécurité.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Ay8XhID9gqusqbAU",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.Ay8XhID9gqusqbAU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a laissé son frère derrière lui dans un embouteillage.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jLJgOVEhCfEGKAqb",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.jLJgOVEhCfEGKAqb",
+      "type": "text",
+      "name": "",
+      "description": "<p>Sa compagne était infirmière ; elle a choisi de rester à l'hôpital.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "EOVybzi9Qm5yXLei",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.EOVybzi9Qm5yXLei",
+      "type": "text",
+      "name": "",
+      "description": "<p>Son chien est resté attaché dans la cour ; il y pense chaque nuit.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QMSq4bK1SN713jUe",
+      "_key": "!tables.results!p9dYbgCOS0z1rhVT.QMSq4bK1SN713jUe",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il ne cherche personne : il n'avait plus personne, et c'est peut-être pour ça qu'il tient.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

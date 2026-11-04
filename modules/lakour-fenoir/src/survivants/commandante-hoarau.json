@@ -1,0 +1,158 @@
+{
+  "_id": "xcFUn1wk0bZHHP8h",
+  "_key": "!actors!xcFUn1wk0bZHHP8h",
+  "name": "La commandante Hoarau",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/commandante-hoarau.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [
+      "tete-de-bois",
+      "sang-de-basalte"
+    ],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 52,
+    "lien": "Garnison du Quai",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Ancienne officière de port, à la tête de la Garnison. Elle croit qu'il faut un ordre pour survivre, et elle a peut-être raison. Elle signe « pour l'autorité provisoire ».</p>"
+  },
+  "items": [
+    {
+      "_id": "XGurc4hAAZGTBN5Y",
+      "_key": "!actors.items!xcFUn1wk0bZHHP8h.XGurc4hAAZGTBN5Y",
+      "name": "Fusil d'assaut réglementaire",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "fusil-reglementaire",
+        "categorie": "arme-a-feu",
+        "description": "<p>Une arme de l'armée, rare et convoitée, récupérée sur un poste abandonné ou un soldat tombé. Elle tire en rafale et vide les chargeurs plus vite qu'on ne les trouve.</p>",
+        "bonus": {
+          "tir": 3
+        },
+        "charge": 2,
+        "usure": 0,
+        "munitions": 2,
+        "bruit": 4,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "fusil-reglementaire",
+          "source": "kxJoDbSlvEmKK5Bi"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "La commandante Hoarau",
+    "actorLink": false,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/commandante-hoarau.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "commandante-hoarau",
+      "pnj": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

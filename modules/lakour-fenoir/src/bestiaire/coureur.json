@@ -1,0 +1,122 @@
+{
+  "_id": "QEVDxTsV0egbzKiW",
+  "_key": "!actors!QEVDxTsV0egbzKiW",
+  "name": "Coureur",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/coureur.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 3,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 30,
+    "lien": "",
+    "vivant": false,
+    "livide": true,
+    "charge": 0,
+    "notes": "<p>Un mort tout récent, relevé depuis quelques heures : il court encore, maladroitement, et se jette sur sa proie. On n'en voit que les premiers jours.</p><p><strong>Comportement.</strong> Charge dès qu'il voit, crie en courant, attire les autres. Après une semaine, il ralentit et devient un Livide comme les autres.</p><p><strong>Faiblesse.</strong> Il tombe, il se cogne : un obstacle bien placé le brise.</p><p><strong>Dés d'attaque :</strong> 2 — <strong>résistance :</strong> 1 — <strong>vitesse :</strong> rapide.</p>"
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Coureur",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/coureur.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "coureur",
+      "pnj": true,
+      "bestiaire": {
+        "categorie": "livide",
+        "des": 2,
+        "resistance": 1,
+        "vitesse": "rapide"
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

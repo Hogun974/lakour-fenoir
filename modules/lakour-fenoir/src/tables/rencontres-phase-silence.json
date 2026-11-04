@@ -1,0 +1,178 @@
+{
+  "_id": "cOA1JzJmoA25k368",
+  "_key": "!tables!cOA1JzJmoA25k368",
+  "name": "Rencontres — phase silence",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une rencontre typique de la phase « silence ».</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rencontres-phase-silence",
+      "phase": "silence"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "sEj7zMGmo6swcF0c",
+      "_key": "!tables.results!cOA1JzJmoA25k368.sEj7zMGmo6swcF0c",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une ville muette où seuls les chiens aboient.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1LdzS4TTQChTFBiP",
+      "_key": "!tables.results!cOA1JzJmoA25k368.1LdzS4TTQChTFBiP",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bande de Sans-Lune en maraude nocturne.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "RIjf0vE8ySSEN3N0",
+      "_key": "!tables.results!cOA1JzJmoA25k368.RIjf0vE8ySSEN3N0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un marché de Ferrailleurs sur un parking.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Dg98Z4icTB9ylYdI",
+      "_key": "!tables.results!cOA1JzJmoA25k368.Dg98Z4icTB9ylYdI",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un îlet qui refuse l'entrée à des inconnus.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "PB4P9k6wSMxJA0jQ",
+      "_key": "!tables.results!cOA1JzJmoA25k368.PB4P9k6wSMxJA0jQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une horde de passage sur la route des Plaines.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MMHBsasVvHnfUoRH",
+      "_key": "!tables.results!cOA1JzJmoA25k368.MMHBsasVvHnfUoRH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un groupe de Pèlerins qui offre le repas.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kv5OTZMBiMw4uvGo",
+      "_key": "!tables.results!cOA1JzJmoA25k368.kv5OTZMBiMw4uvGo",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un fermier qui propose du lait contre du travail.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kRBDDjICETDn1yex",
+      "_key": "!tables.results!cOA1JzJmoA25k368.kRBDDjICETDn1yex",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une maison abandonnée récemment, encore chaude.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wRr7f8flBgXv3YdQ",
+      "_key": "!tables.results!cOA1JzJmoA25k368.wRr7f8flBgXv3YdQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une fumée sur une colline : un autre groupe.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "V6kK0Rc9I3i8nD1e",
+      "_key": "!tables.results!cOA1JzJmoA25k368.V6kK0Rc9I3i8nD1e",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cyclone annoncé à la radio d'un pêcheur.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

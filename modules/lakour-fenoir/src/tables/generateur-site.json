@@ -1,0 +1,327 @@
+{
+  "_id": "4DOuHGISLXT94ZVh",
+  "_key": "!tables!4DOuHGISLXT94ZVh",
+  "name": "Générateur — site fouillé",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quel lieu fouille-t-on ?</p>",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "generateur-site"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "MJPt8mcf1OU5yA0m",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.MJPt8mcf1OU5yA0m",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une pharmacie de bourg, rideau à moitié levé.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mf3I1hg6uPnHk2iO",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.mf3I1hg6uPnHk2iO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une boutique chinoise d'alimentation générale, l'arrière-boutique intacte.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "rKCk9rOebLGToGVa",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.rKCk9rOebLGToGVa",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un magasin de bricolage pillé à moitié.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "l1zuqXxmJ3CEDZHk",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.l1zuqXxmJ3CEDZHk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un snack de bord de plage, frigo coupé depuis longtemps.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CIepX91xHKbb6iGQ",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.CIepX91xHKbb6iGQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une école primaire, sa cantine et son infirmerie.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TIVBxQb1rSmeyCBr",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.TIVBxQb1rSmeyCBr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une station-service, cuves peut-être pas vides.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yyWaHwFG5YwNKoJv",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.yyWaHwFG5YwNKoJv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une case de gramoun, pleine de bocaux.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "rKPvIYIGIHzTHeLm",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.rKPvIYIGIHzTHeLm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un garage avec trois voitures sur cale.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "La7VgwJcslnQ63f0",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.La7VgwJcslnQ63f0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une jardinerie : graines, outils, engrais.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "W97uKhl4ykrXyT6A",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.W97uKhl4ykrXyT6A",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une caserne de pompiers abandonnée.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "iqdCdp5xkhCBqldO",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.iqdCdp5xkhCBqldO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un gîte de randonnée au bord d'un sentier.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "eLUSEBIaeM4EC3gg",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.eLUSEBIaeM4EC3gg",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un temple tamoul, ses cuisines et ses réserves de riz.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "JoZZmHIkBBSXqX4t",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.JoZZmHIkBBSXqX4t",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une villa de luxe avec panneaux et piscine.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sTKkiRutvkzpgaGT",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.sTKkiRutvkzpgaGT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un hangar agricole avec un tracteur.</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sYpSO7331LuDNCp3",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.sYpSO7331LuDNCp3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cabinet médical de quartier.</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kmUpQp8wSjfPYxl1",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.kmUpQp8wSjfPYxl1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un entrepôt de grossiste dans une zone industrielle.</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CAgjCbdhtpts2Jha",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.CAgjCbdhtpts2Jha",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une marina avec quelques bateaux.</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZCSIp0bssNAurbr4",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.ZCSIp0bssNAurbr4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une chapelle de quartier et son presbytère.</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yaSvlVTTs11YzDXo",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.yaSvlVTTs11YzDXo",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une ferme laitière des Hauts.</p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nst5PPaqxj8Ymv2J",
+      "_key": "!tables.results!4DOuHGISLXT94ZVh.nst5PPaqxj8Ymv2J",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un bureau de poste et ses colis en souffrance.</p>",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "_id": "oftnKWZJ7etIgWXL",
+  "_key": "!items!oftnKWZJ7etIgWXL",
+  "name": "Gastro-entérite",
+  "type": "affliction",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+    "cle": "gastro-enterite",
+    "categorie": "maladie",
+    "description": "<p>L'eau non traitée, les mains sales, la nourriture tournée : vomissements, diarrhée, fièvre. Sans eau propre à boire, la déshydratation emporte les enfants et les anciens.</p>",
+    "prevention": "<p>Eau filtrée et bouillie, savon, latrines loin des citernes.</p>",
+    "contagion": 0.08,
+    "incubation": 1,
+    "duree": 3,
+    "effets": {
+      "malus": 1,
+      "fatigue": 1
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "normale",
+      "medicaments": 1
+    },
+    "aggravation": {
+      "jours": 2,
+      "malus": 2,
+      "fatigue": 2,
+      "duree": 3
+    },
+    "declencheur": "eau",
+    "risque": 0.01
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gastro-enterite"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

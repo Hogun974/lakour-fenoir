@@ -1,0 +1,148 @@
+{
+  "_id": "DGkxSoXhKL3PVmLM",
+  "_key": "!tables!DGkxSoXhKL3PVmLM",
+  "name": "Visibilité 3 — On parle de vous",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quand la visibilité de l'abri franchit 3 à la hausse, le MJ reçoit en privé un événement de cette table.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "visibilite-on-parle-de-vous",
+      "visibilite": 3
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "LXBr6F1jFoPJ2J6G",
+      "_key": "!tables.results!DGkxSoXhKL3PVmLM.LXBr6F1jFoPJ2J6G",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un réfugié croisé en fouille parle « d'un endroit où il y a de la lumière le soir ».</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Dgsh3WLmJ20QjOpN",
+      "_key": "!tables.results!DGkxSoXhKL3PVmLM.Dgsh3WLmJ20QjOpN",
+      "type": "text",
+      "name": "",
+      "description": "<p>La radio mentionne « un groupe bien installé » dans votre région.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "O4aXIUmZNvIjLlNz",
+      "_key": "!tables.results!DGkxSoXhKL3PVmLM.O4aXIUmZNvIjLlNz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Ferrailleur demande, l'air de rien, si vous avez des panneaux à vendre.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0OqNA2xVDi89vm5d",
+      "_key": "!tables.results!DGkxSoXhKL3PVmLM.0OqNA2xVDi89vm5d",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces de pas autour de la clôture, une seule fois.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "WxtiLK7uENeQnpeH",
+      "_key": "!tables.results!DGkxSoXhKL3PVmLM.WxtiLK7uENeQnpeH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant du voisinage vient demander à manger.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HWn8ULScXdbm1g4L",
+      "_key": "!tables.results!DGkxSoXhKL3PVmLM.HWn8ULScXdbm1g4L",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un chien étranger rôde autour du potager.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CL8kL0rbZRTwyR9s",
+      "_key": "!tables.results!DGkxSoXhKL3PVmLM.CL8kL0rbZRTwyR9s",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un fermier de passage remarque vos cultures.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BG5lnYBsYOsEtrY5",
+      "_key": "!tables.results!DGkxSoXhKL3PVmLM.BG5lnYBsYOsEtrY5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une fumée de votre cuisine a été vue d'une autre colline.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

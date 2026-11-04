@@ -1,0 +1,37 @@
+{
+  "_id": "3plOmQ5JsHKI5QbE",
+  "_key": "!items!3plOmQ5JsHKI5QbE",
+  "name": "Bouclier de tôle",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "bouclier-de-tole",
+    "categorie": "arme",
+    "description": "<p>Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir.</p>",
+    "bonus": {
+      "combat": 1
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bouclier-de-tole"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "_id": "vaoNw3gmVLOh5vdd",
+  "_key": "!items!vaoNw3gmVLOh5vdd",
+  "name": "Antenne",
+  "type": "installation",
+  "img": "icons/svg/sound.svg",
+  "system": {
+    "cle": "antenne",
+    "categorie": "communication",
+    "description": "<p>Un mât haubané, un fil tendu entre deux arbres ou une parabole détournée : la radio porte sur toute l'île. Elle se voit aussi de loin.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 3,
+          "graines": 0,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "poste-radio",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": true,
+          "bonus": {
+            "parole": 1
+          },
+          "bras": null
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "antenne"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

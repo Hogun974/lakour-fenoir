@@ -1,0 +1,119 @@
+{
+  "_id": "kLv3XhYLgdlPZSaA",
+  "_key": "!actors!kLv3XhYLgdlPZSaA",
+  "name": "Ti Zan",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/ti-zan-l-enfant.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [
+      "oiseau-de-rien",
+      "loup-solitaire"
+    ],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 9,
+    "lien": "",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Un enfant seul, muet depuis le jour zéro, qui suit le groupe à distance avec un doudou en forme de tangue. Il connaît des passages que personne d'autre ne voit.</p>"
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Ti Zan",
+    "actorLink": false,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/ti-zan-l-enfant.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ti-zan-l-enfant",
+      "pnj": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

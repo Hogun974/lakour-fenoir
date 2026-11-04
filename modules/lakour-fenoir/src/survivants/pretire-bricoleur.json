@@ -1,0 +1,282 @@
+{
+  "_id": "ytoPZGKwzjWb3Gub",
+  "_key": "!actors!ytoPZGKwzjWb3Gub",
+  "name": "Rivo Rakotomalala, électricien",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/pretire-bricoleur.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 4,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 1,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "enfance-a-madagascar",
+    "passe": "electricien",
+    "passions": {
+      "bricolage": 2
+    },
+    "traits": [
+      "touche-a-tout",
+      "tete-de-bois"
+    ],
+    "incapacites": [],
+    "statut": "joueur",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 44,
+    "lien": "",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Arrivé de Tamatave à vingt ans, il a câblé la moitié des toits de l'Ouest. Il croit qu'un abri sans courant est un abri mort, et il a souvent raison.</p>"
+  },
+  "items": [
+    {
+      "_id": "jU5HHmzDlifE1aez",
+      "_key": "!actors.items!ytoPZGKwzjWb3Gub.jU5HHmzDlifE1aez",
+      "name": "Électricité solaire",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "electricite-solaire",
+        "description": "<p>Câbler des panneaux, régler un régulateur, dimensionner des batteries, ne pas griller l'onduleur ni se griller soi-même.</p>",
+        "apprentissage": "<p>Un passé d'électricien ; un manuel trouvé dans un magasin de bricolage ou chez un installateur ; une semaine aux côtés de quelqu'un qui sait, dans un îlet de Mafate où chaque case a ses panneaux ; ou réussir le chantier de panneaux solaires niveau 1 avec un test de bricolage difficile.</p>",
+        "effets": "<p>Ouvre les panneaux solaires niveaux 2 et 3, les batteries niveaux 2 et 3, l'éolienne niveau 2 et le pico-hydro niveau 2. +1 dé aux tests de bricolage sur l'électricité.</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "electricite-solaire",
+          "source": "yFDWfsD7dGTF6DAP"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "2hFLiYwhlFpLIamW",
+      "_key": "!actors.items!ytoPZGKwzjWb3Gub.2hFLiYwhlFpLIamW",
+      "name": "Caisse à outils",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "caisse-a-outils",
+        "categorie": "outil",
+        "description": "<p>Clés, tournevis, pinces, scie à métaux, multimètre, ruban adhésif, colliers : de quoi réparer presque tout.</p>",
+        "bonus": {
+          "bricolage": 1
+        },
+        "charge": 2,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "caisse-a-outils",
+          "source": "sAH6fwhcxEnXrjuj"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "lGH6l3WKCGpAfWhI",
+      "_key": "!actors.items!ytoPZGKwzjWb3Gub.lGH6l3WKCGpAfWhI",
+      "name": "Scooter",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "scooter",
+        "categorie": "transport",
+        "description": "<p>Le deux-roues de toute l'île : il se faufile entre les voitures bloquées, consomme peu, ne porte presque rien.</p>",
+        "bonus": {
+          "conduite": 1
+        },
+        "charge": 0,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 1,
+        "transport": {
+          "mode": "vehicule",
+          "places": 2,
+          "chargeMax": 4,
+          "carburantParQuart": 0.25,
+          "terrains": [
+            "route",
+            "piste"
+          ],
+          "bruit": 1
+        },
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "scooter",
+          "source": "oAYx8BLS49AhmEun"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "iPbcMEarBRg0cytn",
+      "_key": "!actors.items!ytoPZGKwzjWb3Gub.iPbcMEarBRg0cytn",
+      "name": "Panneaux solaires démontables",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "panneaux-demontables",
+        "categorie": "energie",
+        "description": "<p>Deux panneaux pliants de camping-car, un régulateur, une batterie : de quoi recharger les lampes, la radio et les talkies, n'importe où. On les emporte en déménageant.</p>",
+        "bonus": {},
+        "charge": 2,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": {
+          "production": {
+            "energie": 1
+          },
+          "conditions": {
+            "soleil": true
+          }
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "panneaux-demontables",
+          "source": "fv8YrrD2rNKQHdLV"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Rivo Rakotomalala, électricien",
+    "actorLink": true,
+    "disposition": 1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/pretire-bricoleur.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pretire-bricoleur",
+      "pnj": false,
+      "pretire": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

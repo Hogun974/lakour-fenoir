@@ -1,0 +1,269 @@
+{
+  "_id": "venEIbiQOS82GIpr",
+  "_key": "!actors!venEIbiQOS82GIpr",
+  "name": "Sully Técher, guide de canyon",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/pretire-eclaireur.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "enfant-de-cilaos",
+    "passe": "guide-de-canyon",
+    "passions": {
+      "survie": 2,
+      "endurance": 1
+    },
+    "traits": [
+      "jambes-de-cabri",
+      "loup-solitaire"
+    ],
+    "incapacites": [],
+    "statut": "joueur",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 29,
+    "lien": "",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Né à Cilaos, il connaît chaque sentier des cirques. Il parle peu, marche vite, et préfère la montagne aux gens.</p>"
+  },
+  "items": [
+    {
+      "_id": "7IYxlDYy9L3kqBZc",
+      "_key": "!actors.items!venEIbiQOS82GIpr.7IYxlDYy9L3kqBZc",
+      "name": "Étaiement et galeries",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "etaiement-galeries",
+        "description": "<p>Lire la roche et le tuf, creuser sans tout faire tomber, étayer au bois et à la ferraille, ventiler, drainer ; reconnaître une voûte de lave fragile.</p>",
+        "apprentissage": "<p>Un passé de guide de canyon, de spéléologue ou de mineur ; un guide des tunnels de lave du Grand Brûlé ; réussir une cave étayée.</p>",
+        "effets": "<p>Ouvre la galerie souterraine niveaux 2 à 4 et l'aménagement d'un tunnel de lave niveaux 2 et 3.</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "etaiement-galeries",
+          "source": "6975YKDLebPqgXnA"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "rKPAFLvaKjAqXwAd",
+      "_key": "!actors.items!venEIbiQOS82GIpr.rKPAFLvaKjAqXwAd",
+      "name": "Matériel de canyon",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "materiel-de-canyon",
+        "categorie": "outil",
+        "description": "<p>Cordes, baudriers, descendeurs, mousquetons, combinaison : descendre une cascade, franchir une ravine, remonter un blessé.</p>",
+        "bonus": {
+          "endurance": 1,
+          "survie": 1
+        },
+        "charge": 2,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "materiel-de-canyon",
+          "source": "FcBV9tuBBLLLoplo"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "ROF8JkK1i2D6G04P",
+      "_key": "!actors.items!venEIbiQOS82GIpr.ROF8JkK1i2D6G04P",
+      "name": "Sac de randonnée",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "sac-de-randonnee",
+        "categorie": "vie",
+        "description": "<p>Un grand sac à dos de trekking, bien réglé : on porte plus, plus loin, sans s'abîmer le dos.</p>",
+        "bonus": {
+          "endurance": 1
+        },
+        "charge": 0,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sac-de-randonnee",
+          "source": "FtNR9av0YXqYCmhH"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "Qp4aZmioRKmsRVoB",
+      "_key": "!actors.items!venEIbiQOS82GIpr.Qp4aZmioRKmsRVoB",
+      "name": "Lampe frontale",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "frontale",
+        "categorie": "outil",
+        "description": "<p>Les deux mains libres dans le noir d'un tunnel ou d'une cage d'escalier. Avec des piles ou rechargeable.</p>",
+        "bonus": {
+          "vigilance": 1
+        },
+        "charge": 0,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "frontale",
+          "source": "eKfBZhtXDC3AfphH"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Sully Técher, guide de canyon",
+    "actorLink": true,
+    "disposition": 1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/pretire-eclaireur.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pretire-eclaireur",
+      "pnj": false,
+      "pretire": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

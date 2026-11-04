@@ -1,0 +1,37 @@
+{
+  "_id": "6MIKGIKFH4dr5ilO",
+  "_key": "!items!6MIKGIKFH4dr5ilO",
+  "name": "Couteau",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "couteau",
+    "categorie": "outil",
+    "description": "<p>Un bon couteau, pour tout : vider le poisson, couper la corde, tailler le bois. Une arme de dernier recours.</p>",
+    "bonus": {
+      "survie": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "couteau"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

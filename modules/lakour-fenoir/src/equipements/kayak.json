@@ -1,0 +1,46 @@
+{
+  "_id": "8HYNXZhUK8wWPTYP",
+  "_key": "!items!8HYNXZhUK8wWPTYP",
+  "name": "Kayak de mer",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "kayak",
+    "categorie": "transport",
+    "description": "<p>Un kayak de location du lagon : longer la côte sans bruit, passer la houle par beau temps, pêcher au large du récif.</p>",
+    "bonus": {
+      "discretion": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "bateau",
+      "places": 2,
+      "chargeMax": 4,
+      "carburantParQuart": 0,
+      "terrains": [
+        "mer"
+      ],
+      "bruit": 0
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "kayak"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

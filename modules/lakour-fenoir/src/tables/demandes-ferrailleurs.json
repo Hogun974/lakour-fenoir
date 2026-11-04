@@ -1,0 +1,188 @@
+{
+  "_id": "zLNkCeGEHL2hM2ni",
+  "_key": "!tables!zLNkCeGEHL2hM2ni",
+  "name": "Demandes — Les Ferrailleurs",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "demandes-ferrailleurs",
+      "appels": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "5spWHIvn23Uh8vMx",
+      "_key": "!tables.results!zLNkCeGEHL2hM2ni.5spWHIvn23Uh8vMx",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Le dépôt de batteries.</strong> Vider un dépôt de batteries d'un magasin d'autos dans une zone infestée.</p><p><strong>Récompense :</strong> 6 pieces ; réputation +2.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "pieces": 6
+            },
+            "faction": "ferrailleurs",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "2OvPXHGojXHqLTaK",
+      "_key": "!tables.results!zLNkCeGEHL2hM2ni.2OvPXHGojXHqLTaK",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — Le camion de la casse.</strong> Escorter un camion chargé de pièces de la Rivière des Galets à Saint-Pierre.</p><p><strong>Récompense :</strong> 4 pieces, 2 carburant ; réputation +2.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "pieces": 4,
+              "carburant": 2
+            },
+            "faction": "ferrailleurs",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "JxBwrrEHuBZSIK0f",
+      "_key": "!tables.results!zLNkCeGEHL2hM2ni.JxBwrrEHuBZSIK0f",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — Le treuil de la casse.</strong> Réparer le treuil qui soulève les carcasses de voitures.</p><p><strong>Récompense :</strong> 5 pieces ; réputation +1.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "pieces": 5
+            },
+            "faction": "ferrailleurs",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "SUzNqplE9bCzxFXY",
+      "_key": "!tables.results!zLNkCeGEHL2hM2ni.SUzNqplE9bCzxFXY",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Les panneaux du lycée.</strong> Ils achètent les panneaux d'un lycée que vous connaissez ; ou vous les vendent.</p><p><strong>Récompense :</strong> 4 pieces, 4 materiaux ; réputation +1.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "pieces": 4,
+              "materiaux": 4
+            },
+            "faction": "ferrailleurs",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "fpKfezkznx0ic7Bb",
+      "_key": "!tables.results!zLNkCeGEHL2hM2ni.fpKfezkznx0ic7Bb",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — Gros Mani a disparu.</strong> Le chef de la casse n'est pas rentré d'une fouille au Port.</p><p><strong>Récompense :</strong> 6 pieces, 2 munitions ; réputation +3.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "pieces": 6,
+              "munitions": 2
+            },
+            "faction": "ferrailleurs",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "xbsMgUl4Z0S4nA11",
+      "_key": "!tables.results!zLNkCeGEHL2hM2ni.xbsMgUl4Z0S4nA11",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Le bateau échoué.</strong> Démonter le moteur d'un bateau échoué sur les galets de la Rivière des Galets.</p><p><strong>Récompense :</strong> 5 pieces, 2 carburant ; réputation +2.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "pieces": 5,
+              "carburant": 2
+            },
+            "faction": "ferrailleurs",
+            "reputation": 2
+          }
+        }
+      }
+    }
+  ]
+}

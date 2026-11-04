@@ -1,0 +1,49 @@
+{
+  "_id": "ZrAKZgVDTg9Z6wRT",
+  "_key": "!items!ZrAKZgVDTg9Z6wRT",
+  "name": "Coup de chaleur",
+  "type": "affliction",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+    "cle": "coup-de-chaleur",
+    "categorie": "maladie",
+    "description": "<p>Travailler en plein soleil dans les Bas en été austral, sans boire assez : maux de tête, vertiges, confusion, puis l'effondrement.</p>",
+    "prevention": "<p>Travailler le matin et le soir, boire, se mettre à l'ombre aux heures chaudes.</p>",
+    "contagion": 0,
+    "incubation": 0,
+    "duree": 1,
+    "effets": {
+      "malus": 1,
+      "fatigue": 2
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "normale",
+      "medicaments": 0
+    },
+    "aggravation": {
+      "jours": 1,
+      "malus": 2,
+      "fatigue": 3,
+      "duree": 2
+    },
+    "declencheur": "chaleur",
+    "risque": 0.004
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "coup-de-chaleur"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

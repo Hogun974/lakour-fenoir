@@ -1,0 +1,51 @@
+{
+  "_id": "nMpAsDG5OzGgYtcm",
+  "_key": "!items!nMpAsDG5OzGgYtcm",
+  "name": "Retraité de la marine",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "retraite-de-la-marine",
+    "description": "<p>Trente ans de marine, dont une partie à naviguer dans l'océan Indien ; il vit seul dans les hauts de La Possession avec ses cartes, son poste radio et ses souvenirs. Il sait commander, et il sait se taire.</p>",
+    "competences": {
+      "parole": 2,
+      "tir": 1,
+      "vigilance": 2,
+      "conduite": 1,
+      "soins": 1
+    },
+    "savoirs": [
+      "radio"
+    ],
+    "equipement": [
+      "radio-marine",
+      "jumelles",
+      "carabine-22"
+    ],
+    "accroche": "<p>Il entend sur sa radio les échanges des navires au large qui refusent de laisser accoster un cargo. Puis plus rien.</p>",
+    "region": "le-port",
+    "incapacites": [
+      "travaux-lourds"
+    ],
+    "histoire": [
+      "Il a vu tous les ports de l'océan Indien et n'est revenu que pour ses vieux jours.",
+      "Il écoute la radio marine chaque soir, par habitude."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "retraite-de-la-marine"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

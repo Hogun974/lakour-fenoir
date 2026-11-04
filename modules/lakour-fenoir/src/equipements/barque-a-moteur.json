@@ -1,0 +1,46 @@
+{
+  "_id": "mhXqjNcFXPMBnDOW",
+  "_key": "!items!mhXqjNcFXPMBnDOW",
+  "name": "Barque à moteur",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "barque-a-moteur",
+    "categorie": "transport",
+    "description": "<p>Une barque de pêcheur avec son hors-bord : de marine en marine le long de la côte, loin des routes et des hordes, tant que la mer le permet.</p>",
+    "bonus": {
+      "conduite": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 1,
+    "transport": {
+      "mode": "bateau",
+      "places": 4,
+      "chargeMax": 15,
+      "carburantParQuart": 1,
+      "terrains": [
+        "mer"
+      ],
+      "bruit": 1
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "barque-a-moteur"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

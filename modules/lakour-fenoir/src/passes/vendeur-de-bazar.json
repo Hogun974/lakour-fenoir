@@ -1,0 +1,49 @@
+{
+  "_id": "xD0AlqP2nkoU8lga",
+  "_key": "!items!xD0AlqP2nkoU8lga",
+  "name": "Vendeur de bazar",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "vendeur-de-bazar",
+    "description": "<p>Il tient le bazar familial de la rue commerçante de Saint-Pierre : tissus, quincaillerie, ustensiles, tout ce qu'on vend depuis trois générations. Il sait ce que valent les choses, et il sait négocier.</p>",
+    "competences": {
+      "parole": 3,
+      "discretion": 1,
+      "vigilance": 1,
+      "bricolage": 1,
+      "conduite": 1
+    },
+    "savoirs": [],
+    "equipement": [
+      "pied-de-biche",
+      "jerricans",
+      "scooter"
+    ],
+    "accroche": "<p>Il baisse son rideau de fer quand des gens tapent dessus pour entrer. Derrière lui, la réserve est pleine.</p>",
+    "region": "saint-pierre",
+    "incapacites": [
+      "travaux-lourds"
+    ],
+    "histoire": [
+      "Le bazar appartenait à son grand-père, arrivé du Gujarat il y a longtemps.",
+      "Il a toujours su ce que voulait un client avant qu'il ouvre la bouche."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "vendeur-de-bazar"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

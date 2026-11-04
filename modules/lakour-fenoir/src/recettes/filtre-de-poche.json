@@ -1,0 +1,44 @@
+{
+  "_id": "7JuZNH2SQ4MCyAaV",
+  "_key": "!items!7JuZNH2SQ4MCyAaV",
+  "name": "Gourde filtrante de fortune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "filtre-de-poche",
+    "description": "<p>Une bouteille, du coton, du sable lavé, du charbon de bois pilé : on filtre, puis on fait bouillir ou on laisse au soleil.</p>",
+    "cout": {
+      "materiaux": 1,
+      "pieces": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "plomberie-filtration"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "filtre-portatif",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "filtre-de-poche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

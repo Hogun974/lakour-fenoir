@@ -1,0 +1,47 @@
+{
+  "_id": "oAYx8BLS49AhmEun",
+  "_key": "!items!oAYx8BLS49AhmEun",
+  "name": "Scooter",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "scooter",
+    "categorie": "transport",
+    "description": "<p>Le deux-roues de toute l'île : il se faufile entre les voitures bloquées, consomme peu, ne porte presque rien.</p>",
+    "bonus": {
+      "conduite": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 1,
+    "transport": {
+      "mode": "vehicule",
+      "places": 2,
+      "chargeMax": 4,
+      "carburantParQuart": 0.25,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 1
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "scooter"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

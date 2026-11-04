@@ -1,0 +1,208 @@
+{
+  "_id": "S2NNTo6b2KG2DCLc",
+  "_key": "!tables!S2NNTo6b2KG2DCLc",
+  "name": "Rencontres — hauts",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une rencontre en sortie dans une région de zone « hauts ».</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rencontres-hauts",
+      "zone": "hauts"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "jmCCpFMpPkNXEaVZ",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.jmCCpFMpPkNXEaVZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide des Hauts figé dans le brouillard au milieu de la route, couvert de rosée.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sKn1GPLYlWoWfXXE",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.sKn1GPLYlWoWfXXE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un fermier de la Coopérative, fusil à l'épaule, qui demande ce que vous faites sur ses terres.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1IGBNptbjtDZgglf",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.1IGBNptbjtDZgglf",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des cabris échappés qui broutent sur le talus.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NcDGojm2pmbmtlrh",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.NcDGojm2pmbmtlrh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une case dont la cheminée fume : quelqu'un vit là, et vous observe.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8TaHHo9MArlUn82Y",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.8TaHHo9MArlUn82Y",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une troupe lente de Livides anciens qui descend la route vers le bruit d'un groupe électrogène.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Ow2sCGEVCEkysWyy",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.Ow2sCGEVCEkysWyy",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une barrière de barbelés neuve, avec un panneau : « Passe pas. Nou lé la. »</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ETPK8u5ACIZeWTn9",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.ETPK8u5ACIZeWTn9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cheval sellé, sans cavalier, qui erre dans la prairie.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vuDfuLjg8hIMT4w4",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.vuDfuLjg8hIMT4w4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un randonneur égaré, épuisé, qui demande la route de Mafate.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "a9rvDDI97m4UuY8k",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.a9rvDDI97m4UuY8k",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un incendie de savane au loin, poussé par le vent.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9zqd0FxLCilOVpcE",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.9zqd0FxLCilOVpcE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un chien de berger qui vous suit à distance et ne vous lâche plus.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "otEDK4pBkK2p1hGX",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.otEDK4pBkK2p1hGX",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une ferme dont toutes les portes sont ouvertes, et dont la cour est vide.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "UUb2FBjLG87FxkPF",
+      "_key": "!tables.results!S2NNTo6b2KG2DCLc.UUb2FBjLG87FxkPF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le son d'une cloche de vache dans le brouillard, qui ne s'arrête jamais.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

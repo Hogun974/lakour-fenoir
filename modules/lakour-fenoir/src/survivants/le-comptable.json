@@ -1,0 +1,158 @@
+{
+  "_id": "lxESLks5aIcvHYw6",
+  "_key": "!actors!lxESLks5aIcvHYw6",
+  "name": "Le Comptable",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/le-comptable.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [
+      "oeil-froid",
+      "doigts-crochus"
+    ],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 39,
+    "lien": "Sans-Lune",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Chef des Sans-Lune. Ancien employé de banque, il tient sur un cahier ce que chaque quartier lui doit. Il ne hausse jamais la voix.</p>"
+  },
+  "items": [
+    {
+      "_id": "6Cm9zSMrsHBeDqpC",
+      "_key": "!actors.items!lxESLks5aIcvHYw6.6Cm9zSMrsHBeDqpC",
+      "name": "Pistolet de service",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "pistolet-de-service",
+        "categorie": "arme-a-feu",
+        "description": "<p>Un pistolet 9 mm de gendarme ou de policier, avec un chargeur ou deux. On le garde pour le pire.</p>",
+        "bonus": {
+          "tir": 1
+        },
+        "charge": 1,
+        "usure": 0,
+        "munitions": 1,
+        "bruit": 2,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "pistolet-de-service",
+          "source": "dUmMz8dGEXOMhloc"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Le Comptable",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/le-comptable.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "le-comptable",
+      "pnj": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

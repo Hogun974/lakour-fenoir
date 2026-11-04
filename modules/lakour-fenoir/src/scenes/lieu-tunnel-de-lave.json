@@ -1,0 +1,656 @@
+{
+  "_id": "hMG8papguXKsnmoL",
+  "_key": "!scenes!hMG8papguXKsnmoL",
+  "name": "Lieu — Tunnel de lave",
+  "navName": "Lieu — Tunnel de lave",
+  "navigation": true,
+  "active": false,
+  "width": 3000,
+  "height": 1200,
+  "padding": 0,
+  "grid": {
+    "type": 1,
+    "size": 100,
+    "distance": 1.5,
+    "units": "m"
+  },
+  "tokenVision": true,
+  "environment": {
+    "darknessLevel": 0.85,
+    "globalLight": {
+      "enabled": false
+    }
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Niveau principal",
+      "elevation": {
+        "bottom": 0,
+        "top": null
+      },
+      "background": {
+        "color": "#18181b",
+        "src": "modules/lakour-fenoir/assets/cartes/lieu-tunnel-de-lave.svg"
+      },
+      "_key": "!scenes.levels!hMG8papguXKsnmoL.defaultLevel0000",
+      "flags": {}
+    }
+  ],
+  "initialLevel": "defaultLevel0000",
+  "walls": [
+    {
+      "c": [
+        0,
+        0,
+        3000,
+        0
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "kOoDux3f3U3JkGYJ",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.kOoDux3f3U3JkGYJ",
+      "flags": {}
+    },
+    {
+      "c": [
+        1700,
+        300,
+        2300,
+        300
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "7b0ftvJqN7A0aXUR",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.7b0ftvJqN7A0aXUR",
+      "flags": {}
+    },
+    {
+      "c": [
+        200,
+        500,
+        1700,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "paAkLS5uAZOZE5H4",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.paAkLS5uAZOZE5H4",
+      "flags": {}
+    },
+    {
+      "c": [
+        2300,
+        600,
+        2900,
+        600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "mafv67BAJtoPLBUP",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.mafv67BAJtoPLBUP",
+      "flags": {}
+    },
+    {
+      "c": [
+        200,
+        700,
+        1700,
+        700
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "xEjpPBIoEoZXnByp",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.xEjpPBIoEoZXnByp",
+      "flags": {}
+    },
+    {
+      "c": [
+        2300,
+        700,
+        2900,
+        700
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "Mf3X3RSJacSKun8F",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.Mf3X3RSJacSKun8F",
+      "flags": {}
+    },
+    {
+      "c": [
+        1700,
+        900,
+        2300,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "u38i2GU6U0KGANSk",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.u38i2GU6U0KGANSk",
+      "flags": {}
+    },
+    {
+      "c": [
+        0,
+        1200,
+        3000,
+        1200
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "fP50tpSxvCLolZpQ",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.fP50tpSxvCLolZpQ",
+      "flags": {}
+    },
+    {
+      "c": [
+        0,
+        0,
+        0,
+        1200
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "cEuIDL4cQ4Zh53F4",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.cEuIDL4cQ4Zh53F4",
+      "flags": {}
+    },
+    {
+      "c": [
+        1700,
+        300,
+        1700,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "fZWrAqlPPqUZBbXM",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.fZWrAqlPPqUZBbXM",
+      "flags": {}
+    },
+    {
+      "c": [
+        1700,
+        700,
+        1700,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "DbQ3MKSxGcx0toFt",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.DbQ3MKSxGcx0toFt",
+      "flags": {}
+    },
+    {
+      "c": [
+        2300,
+        300,
+        2300,
+        600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "u0WK0x811ri6OAHR",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.u0WK0x811ri6OAHR",
+      "flags": {}
+    },
+    {
+      "c": [
+        2300,
+        700,
+        2300,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "uBH5ZgdrGik3S2Kb",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.uBH5ZgdrGik3S2Kb",
+      "flags": {}
+    },
+    {
+      "c": [
+        2900,
+        600,
+        2900,
+        700
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "GI4n11pvwI2xvS3T",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.GI4n11pvwI2xvS3T",
+      "flags": {}
+    },
+    {
+      "c": [
+        3000,
+        0,
+        3000,
+        1200
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "7FAxye5VLlh0zTlu",
+      "_key": "!scenes.walls!hMG8papguXKsnmoL.7FAxye5VLlh0zTlu",
+      "flags": {}
+    }
+  ],
+  "drawings": [
+    {
+      "x": 0,
+      "y": 0,
+      "shape": {
+        "type": "r",
+        "width": 3000,
+        "height": 1200
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Coulée",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1000,
+      "_id": "jvI2LijOg0ZQ2Jus",
+      "_key": "!scenes.drawings!hMG8papguXKsnmoL.jvI2LijOg0ZQ2Jus",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 200,
+      "y": 500,
+      "shape": {
+        "type": "r",
+        "width": 300,
+        "height": 200
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Entrée basse",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1001,
+      "_id": "kZis5ghKAimx1HQf",
+      "_key": "!scenes.drawings!hMG8papguXKsnmoL.kZis5ghKAimx1HQf",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 500,
+      "y": 500,
+      "shape": {
+        "type": "r",
+        "width": 1200,
+        "height": 200
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Galerie",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1002,
+      "_id": "YPCfKBau5xGlALzW",
+      "_key": "!scenes.drawings!hMG8papguXKsnmoL.YPCfKBau5xGlALzW",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 1700,
+      "y": 300,
+      "shape": {
+        "type": "r",
+        "width": 600,
+        "height": 600
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Grande salle",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1003,
+      "_id": "D0j91sZ1Ch8JHifQ",
+      "_key": "!scenes.drawings!hMG8papguXKsnmoL.D0j91sZ1Ch8JHifQ",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 2300,
+      "y": 600,
+      "shape": {
+        "type": "r",
+        "width": 600,
+        "height": 100
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Boyau",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1004,
+      "_id": "p14MLE40BMJD3B9X",
+      "_key": "!scenes.drawings!hMG8papguXKsnmoL.p14MLE40BMJD3B9X",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    }
+  ],
+  "lights": [
+    {
+      "x": 350,
+      "y": 550,
+      "elevation": 0,
+      "levels": [],
+      "walls": true,
+      "config": {
+        "dim": 3,
+        "bright": 1.5,
+        "color": "#cfd8e0",
+        "alpha": 0.4,
+        "coloration": 1,
+        "luminosity": 0.5
+      },
+      "_id": "XVmiHmL2rZJqtYvv",
+      "_key": "!scenes.lights!hMG8papguXKsnmoL.XVmiHmL2rZJqtYvv",
+      "flags": {}
+    }
+  ],
+  "sounds": [
+    {
+      "name": "forge — Coulée",
+      "x": 1500,
+      "y": 600,
+      "elevation": 0,
+      "levels": [],
+      "radius": 22.5,
+      "path": "modules/lakour-mj-ia/assets/sons/forge.wav",
+      "repeat": true,
+      "volume": 0.3,
+      "walls": true,
+      "easing": true,
+      "hidden": false,
+      "locked": false,
+      "_id": "RjlUw4VNk8HbHGCW",
+      "_key": "!scenes.sounds!hMG8papguXKsnmoL.RjlUw4VNk8HbHGCW",
+      "flags": {}
+    }
+  ],
+  "regions": [],
+  "notes": [],
+  "tokens": [],
+  "tiles": [],
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lieu-tunnel-de-lave",
+      "description": "Un tube de lave sous une coulée : entrée basse entre deux dalles, galerie aux voûtes lisses, salle plus large, boyau qui s'enfonce dans le noir. Pour un refuge discret, une exploration à la frontale, un Livide égaré dans le noir.",
+      "plan": {
+        "largeur": 30,
+        "hauteur": 12,
+        "lumiere": "nuit",
+        "pieces": [
+          {
+            "nom": "Coulée",
+            "x": 0,
+            "y": 0,
+            "l": 30,
+            "h": 12,
+            "sol": "cendre"
+          },
+          {
+            "nom": "Entrée basse",
+            "x": 2,
+            "y": 5,
+            "l": 3,
+            "h": 2,
+            "sol": "cendre"
+          },
+          {
+            "nom": "Galerie",
+            "x": 5,
+            "y": 5,
+            "l": 12,
+            "h": 2,
+            "sol": "cendre"
+          },
+          {
+            "nom": "Grande salle",
+            "x": 17,
+            "y": 3,
+            "l": 6,
+            "h": 6,
+            "sol": "cendre"
+          },
+          {
+            "nom": "Boyau",
+            "x": 23,
+            "y": 6,
+            "l": 6,
+            "h": 1,
+            "sol": "cendre"
+          }
+        ],
+        "ouvertures": [
+          {
+            "x": 2,
+            "y": 5,
+            "cote": "ouest",
+            "type": "passage"
+          },
+          {
+            "x": 2,
+            "y": 6,
+            "cote": "ouest",
+            "type": "passage"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "cote": "ouest",
+            "type": "passage"
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "cote": "ouest",
+            "type": "passage"
+          },
+          {
+            "x": 17,
+            "y": 5,
+            "cote": "ouest",
+            "type": "passage"
+          },
+          {
+            "x": 17,
+            "y": 6,
+            "cote": "ouest",
+            "type": "passage"
+          },
+          {
+            "x": 23,
+            "y": 6,
+            "cote": "ouest",
+            "type": "passage"
+          }
+        ],
+        "lumieres": [
+          {
+            "x": 3,
+            "y": 5,
+            "rayon": 2,
+            "couleur": "#cfd8e0"
+          }
+        ],
+        "elements": [
+          {
+            "nom": "Dalles effondrées",
+            "x": 9,
+            "y": 5,
+            "l": 2,
+            "h": 1
+          },
+          {
+            "nom": "Stalactites de lave",
+            "x": 19,
+            "y": 4,
+            "l": 2,
+            "h": 1
+          },
+          {
+            "nom": "Cordes de lave",
+            "x": 13,
+            "y": 6,
+            "l": 3,
+            "h": 1
+          },
+          {
+            "nom": "Réserve",
+            "x": 21,
+            "y": 7,
+            "l": 2,
+            "h": 1
+          },
+          {
+            "nom": "Puits de lumière",
+            "x": 19,
+            "y": 7,
+            "l": 1,
+            "h": 1
+          }
+        ]
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

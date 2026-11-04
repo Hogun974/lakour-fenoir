@@ -1,0 +1,660 @@
+{
+  "_id": "Jpa7IHkefzzGYYxx",
+  "_key": "!scenes!Jpa7IHkefzzGYYxx",
+  "name": "Carte de La Réunion",
+  "navName": "La Réunion",
+  "navigation": true,
+  "active": false,
+  "width": 4000,
+  "height": 3000,
+  "padding": 0,
+  "grid": {
+    "type": 0,
+    "size": 92,
+    "distance": 2,
+    "units": "km"
+  },
+  "tokenVision": false,
+  "environment": {
+    "darknessLevel": 0,
+    "globalLight": {
+      "enabled": true
+    }
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "L'île",
+      "elevation": {
+        "bottom": 0,
+        "top": null
+      },
+      "background": {
+        "color": "#0d2a3a",
+        "src": "modules/lakour-fenoir/assets/cartes/reunion.webp"
+      },
+      "_key": "!scenes.levels!Jpa7IHkefzzGYYxx.defaultLevel0000",
+      "flags": {}
+    }
+  ],
+  "initialLevel": "defaultLevel0000",
+  "walls": [],
+  "drawings": [],
+  "lights": [],
+  "sounds": [],
+  "regions": [],
+  "tokens": [],
+  "tiles": [],
+  "notes": [
+    {
+      "_id": "giUzerFUS4BxOlon",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "IMqkSnSGbe2etOrZ",
+      "x": 1646,
+      "y": 268,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Saint-Denis",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "saint-denis"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.giUzerFUS4BxOlon"
+    },
+    {
+      "_id": "kx6mkhS2e29Y2nC9",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "HpdyIjm6C9Y0nbD5",
+      "x": 2029,
+      "y": 319,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Sainte-Marie et l'aéroport",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "sainte-marie"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.kx6mkhS2e29Y2nC9"
+    },
+    {
+      "_id": "owioanFs6DvhTTGM",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "NDu4YdBTek0Q5ff2",
+      "x": 1264,
+      "y": 319,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "La route du Littoral",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "route-du-littoral"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.owioanFs6DvhTTGM"
+    },
+    {
+      "_id": "pE7FyLmFmCn8CFfM",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "8lieGvpKfY511CP4",
+      "x": 929,
+      "y": 471,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Le Port et La Possession",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "le-port"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.pE7FyLmFmCn8CFfM"
+    },
+    {
+      "_id": "rLzC8RlO4SJbVn0v",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "CMYPF3bMqW7rBzCa",
+      "x": 690,
+      "y": 929,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Saint-Paul et la côte Ouest",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "saint-paul"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.rLzC8RlO4SJbVn0v"
+    },
+    {
+      "_id": "RoPCedQsHYsKqi0J",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "O4himmE95sbB00ig",
+      "x": 1168,
+      "y": 1387,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Les Hauts de l'Ouest",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "hauts-de-l-ouest"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.RoPCedQsHYsKqi0J"
+    },
+    {
+      "_id": "fNsGiRnyQRE7Nuo0",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "5xweShd0icHtsQMt",
+      "x": 977,
+      "y": 1896,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Saint-Leu et l'Étang-Salé",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "saint-leu"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.fNsGiRnyQRE7Nuo0"
+    },
+    {
+      "_id": "PWGVbHLQ2HeTVekb",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "gQh08QnKHUHiMOSA",
+      "x": 1646,
+      "y": 2455,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Saint-Louis et Saint-Pierre",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "saint-pierre"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.PWGVbHLQ2HeTVekb"
+    },
+    {
+      "_id": "r7KT5Zh3RZHZ7RvE",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "sx9ay65idkIaKCgH",
+      "x": 2077,
+      "y": 1998,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Le Tampon et la Plaine des Cafres",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "le-tampon"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.r7KT5Zh3RZHZ7RvE"
+    },
+    {
+      "_id": "EefembULESCtj4Bn",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "H9DaehP4qM3cvD4Q",
+      "x": 2793,
+      "y": 2710,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Saint-Joseph et le Sud sauvage",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "sud-sauvage"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.EefembULESCtj4Bn"
+    },
+    {
+      "_id": "TaTLOXY4XXJ6q0UD",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "HDcNQbIdL6d3EWMy",
+      "x": 2841,
+      "y": 1998,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Le Piton de la Fournaise et la Plaine des Sables",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "fournaise"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.TaTLOXY4XXJ6q0UD"
+    },
+    {
+      "_id": "sBK2o79KQxAvbDzm",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "CivgPiY0mk9ih3jB",
+      "x": 2889,
+      "y": 980,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "L'Est : Saint-André, Saint-Benoît, Sainte-Rose",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "est"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.sBK2o79KQxAvbDzm"
+    },
+    {
+      "_id": "N5D70tHgL3GM5URb",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "rMmbSkrYEazA3r6J",
+      "x": 2507,
+      "y": 1489,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "La Plaine des Palmistes et Bélouve",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "plaine-des-palmistes"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.N5D70tHgL3GM5URb"
+    },
+    {
+      "_id": "2X9u7qGxSaczsYon",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "V8IWSPAhv6Z3QtZU",
+      "x": 1742,
+      "y": 1489,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Cilaos",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "cilaos"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.2X9u7qGxSaczsYon"
+    },
+    {
+      "_id": "BuLYpwiwnqdicBVR",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "awd3WC49Cv9phSto",
+      "x": 1981,
+      "y": 1082,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Salazie",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "salazie"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.BuLYpwiwnqdicBVR"
+    },
+    {
+      "_id": "jGjaAP9mDEU3bvrE",
+      "entryId": "kJU1ZWH9qMVBZZAR",
+      "pageId": "PCmBGerBvAyvGP31",
+      "x": 1551,
+      "y": 1082,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/village.svg",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "tint": "#ffffff"
+      },
+      "iconSize": 48,
+      "text": "Mafate",
+      "fontFamily": "",
+      "fontSize": 28,
+      "textAnchor": 1,
+      "textColor": "#ffffff",
+      "global": true,
+      "flags": {
+        "lakour-fenoir": {
+          "region": "mafate"
+        }
+      },
+      "_key": "!scenes.notes!Jpa7IHkefzzGYYxx.jGjaAP9mDEU3bvrE"
+    }
+  ],
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "carte-de-la-reunion",
+      "description": "La Réunion, nord en haut : une épingle par région, vers sa page du journal « Les régions de l'île ».",
+      "regions": {
+        "saint-denis": {
+          "x": 1646,
+          "y": 268
+        },
+        "sainte-marie": {
+          "x": 2029,
+          "y": 319
+        },
+        "route-du-littoral": {
+          "x": 1264,
+          "y": 319
+        },
+        "le-port": {
+          "x": 929,
+          "y": 471
+        },
+        "saint-paul": {
+          "x": 690,
+          "y": 929
+        },
+        "hauts-de-l-ouest": {
+          "x": 1168,
+          "y": 1387
+        },
+        "saint-leu": {
+          "x": 977,
+          "y": 1896
+        },
+        "saint-pierre": {
+          "x": 1646,
+          "y": 2455
+        },
+        "le-tampon": {
+          "x": 2077,
+          "y": 1998
+        },
+        "sud-sauvage": {
+          "x": 2793,
+          "y": 2710
+        },
+        "fournaise": {
+          "x": 2841,
+          "y": 1998
+        },
+        "est": {
+          "x": 2889,
+          "y": 980
+        },
+        "plaine-des-palmistes": {
+          "x": 2507,
+          "y": 1489
+        },
+        "cilaos": {
+          "x": 1742,
+          "y": 1489
+        },
+        "salazie": {
+          "x": 1981,
+          "y": 1082
+        },
+        "mafate": {
+          "x": 1551,
+          "y": 1082
+        }
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

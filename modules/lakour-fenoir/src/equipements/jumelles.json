@@ -1,0 +1,37 @@
+{
+  "_id": "GwauCrDXFp9kPfjp",
+  "_key": "!items!GwauCrDXFp9kPfjp",
+  "name": "Jumelles",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "jumelles",
+    "categorie": "outil",
+    "description": "<p>Voir avant d'être vu : la route, le rempart d'en face, la cour d'une ferme.</p>",
+    "bonus": {
+      "vigilance": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "jumelles"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

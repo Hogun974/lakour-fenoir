@@ -1,0 +1,44 @@
+{
+  "_id": "bcPN8wVfFI6TWjEh",
+  "_key": "!items!bcPN8wVfFI6TWjEh",
+  "name": "Vélo-cargo",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "velo-cargo",
+    "categorie": "transport",
+    "description": "<p>Un vélo à caisse (de livreur ou fabriqué à l'atelier) : porter des bidons, des sacs de terre ou un blessé sur les routes des Bas.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "pied",
+      "places": 1,
+      "chargeMax": 12,
+      "carburantParQuart": 0,
+      "terrains": [
+        "route"
+      ],
+      "bruit": 0
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "velo-cargo"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

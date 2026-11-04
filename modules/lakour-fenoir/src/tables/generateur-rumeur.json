@@ -1,0 +1,207 @@
+{
+  "_id": "lijCaAKYop3jZo2s",
+  "_key": "!tables!lijCaAKYop3jZo2s",
+  "name": "Générateur — rumeur de bouche à oreille",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qui se dit autour des feux, vrai ou faux.</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "generateur-rumeur"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "AinPejYNVvi8UyDi",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.AinPejYNVvi8UyDi",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il paraît que les Livides ne traversent pas l'eau salée.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ykZlPqfM7I3R006Z",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.ykZlPqfM7I3R006Z",
+      "type": "text",
+      "name": "",
+      "description": "<p>On dit qu'un îlet de Mafate accueille tout le monde ; d'autres disent qu'il n'accueille personne.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "WU7QzAQPI6nZWpxj",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.WU7QzAQPI6nZWpxj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cargo viendrait chercher les survivants au Port. On le dit depuis des semaines.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SsS4VBSPSepcILZd",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.SsS4VBSPSepcILZd",
+      "type": "text",
+      "name": "",
+      "description": "<p>La Fournaise va se réveiller, les animaux le sentent.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FejeuOyJB9cFsugV",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.FejeuOyJB9cFsugV",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les Sans-Lune ont un médecin prisonnier.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Zm5s4ou8odY5nkGF",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.Zm5s4ou8odY5nkGF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il y a un tunnel de lave aménagé dans le Grand Brûlé, avec des vivres pour des mois.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ahP4Ng3zd41jGyrb",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.ahP4Ng3zd41jGyrb",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le Gris viendrait de l'eau des ravines.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vmVWb7XPTdrtr9fm",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.vmVWb7XPTdrtr9fm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les vieux Livides des Hauts ne bougent plus quand il gèle.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aQiwol3CmVMzHEdA",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.aQiwol3CmVMzHEdA",
+      "type": "text",
+      "name": "",
+      "description": "<p>La Garnison a encore un hélicoptère.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0sgZTwTFVB5SGJRv",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.0sgZTwTFVB5SGJRv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un groupe vit sur les toits du Chaudron et ne descend jamais.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pNsWqjVigPq6GNmK",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.pNsWqjVigPq6GNmK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les Pèlerins jettent les mordus dans la lave.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "p5NtAUjc8W7HhRah",
+      "_key": "!tables.results!lijCaAKYop3jZo2s.p5NtAUjc8W7HhRah",
+      "type": "text",
+      "name": "",
+      "description": "<p>On aurait vu un enfant mordu qui ne s'est pas transformé.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

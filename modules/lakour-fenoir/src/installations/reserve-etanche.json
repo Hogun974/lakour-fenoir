@@ -1,0 +1,128 @@
+{
+  "_id": "jzUqENvDVDDGNEUc",
+  "_key": "!items!jzUqENvDVDDGNEUc",
+  "name": "Réserve étanche",
+  "type": "installation",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "cle": "reserve-etanche",
+    "categorie": "stockage",
+    "description": "<p>Fûts à couvercle, bocaux, sacs hermétiques, étagères hors du sol, pièges à rats : la chaleur humide ne pourrit plus les réserves.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {
+            "nourriture": 100
+          },
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 8,
+          "pieces": 2,
+          "graines": 0,
+          "travail": 10
+        },
+        "requiert": {
+          "savoirs": [
+            "conserverie"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {
+            "nourriture": 250,
+            "medicaments": 50
+          },
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "reserve-etanche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

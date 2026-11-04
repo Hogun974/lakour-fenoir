@@ -1,0 +1,37 @@
+{
+  "_id": "kxJoDbSlvEmKK5Bi",
+  "_key": "!items!kxJoDbSlvEmKK5Bi",
+  "name": "Fusil d'assaut réglementaire",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "fusil-reglementaire",
+    "categorie": "arme-a-feu",
+    "description": "<p>Une arme de l'armée, rare et convoitée, récupérée sur un poste abandonné ou un soldat tombé. Elle tire en rafale et vide les chargeurs plus vite qu'on ne les trouve.</p>",
+    "bonus": {
+      "tir": 3
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": 2,
+    "bruit": 4,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fusil-reglementaire"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

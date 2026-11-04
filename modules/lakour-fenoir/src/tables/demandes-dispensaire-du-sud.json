@@ -1,0 +1,186 @@
+{
+  "_id": "7laWQXPZNSdEIgYT",
+  "_key": "!tables!7laWQXPZNSdEIgYT",
+  "name": "Demandes — Le Dispensaire du Sud",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "demandes-dispensaire-du-sud",
+      "appels": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "Wc14exGG9fpR9l1m",
+      "_key": "!tables.results!7laWQXPZNSdEIgYT.Wc14exGG9fpR9l1m",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Le frigo des vaccins.</strong> Rapporter le contenu d'une réserve de pharmacie hospitalière dans une aile infestée.</p><p><strong>Récompense :</strong> 6 medicaments ; réputation +3.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "medicaments": 6
+            },
+            "faction": "dispensaire-du-sud",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "IJm8NN0xphgbBDHb",
+      "_key": "!tables.results!7laWQXPZNSdEIgYT.IJm8NN0xphgbBDHb",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — Le groupe électrogène des blocs.</strong> Faire repartir le groupe électrogène des blocs opératoires.</p><p><strong>Récompense :</strong> 4 medicaments, 2 carburant ; réputation +2.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "medicaments": 4,
+              "carburant": 2
+            },
+            "faction": "dispensaire-du-sud",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "j4fowM8Ydqa2tlAr",
+      "_key": "!tables.results!7laWQXPZNSdEIgYT.j4fowM8Ydqa2tlAr",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — La tournée des fièvres.</strong> Escorter une infirmière dans les quartiers où la dengue progresse.</p><p><strong>Récompense :</strong> 3 medicaments ; réputation +2.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "medicaments": 3
+            },
+            "faction": "dispensaire-du-sud",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "XaeTBhny7HQnc3UQ",
+      "_key": "!tables.results!7laWQXPZNSdEIgYT.XaeTBhny7HQnc3UQ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — Le pharmacien de l'Entre-Deux.</strong> Ramener un pharmacien coincé chez lui avec sa famille.</p><p><strong>Récompense :</strong> 5 medicaments ; réputation +3.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "medicaments": 5
+            },
+            "faction": "dispensaire-du-sud",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "zciwbHT6bj3TRJsZ",
+      "_key": "!tables.results!7laWQXPZNSdEIgYT.zciwbHT6bj3TRJsZ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Eau propre contre soins.</strong> De l'eau propre en quantité contre des soins pour tout le groupe.</p><p><strong>Récompense :</strong> 4 medicaments ; réputation +1.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "medicaments": 4
+            },
+            "faction": "dispensaire-du-sud",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "m3E80H12nTBN1F7a",
+      "_key": "!tables.results!7laWQXPZNSdEIgYT.m3E80H12nTBN1F7a",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Un Livide entier.</strong> La docteure veut étudier un Livide intact, ramené vivant… si l'on peut dire.</p><p><strong>Récompense :</strong> 6 medicaments, 2 munitions ; réputation +3.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "medicaments": 6,
+              "munitions": 2
+            },
+            "faction": "dispensaire-du-sud",
+            "reputation": 3
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "_id": "lUWq21YOp6BTkewB",
+  "_key": "!tables!lUWq21YOp6BTkewB",
+  "name": "Demandes — La Coopérative des Plaines",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "demandes-cooperative-des-plaines",
+      "appels": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "LHAaed3Qv492LIN5",
+      "_key": "!tables.results!lUWq21YOp6BTkewB.LHAaed3Qv492LIN5",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — La transhumance.</strong> Mener vingt vaches d'une ferme menacée de la Plaine des Cafres à une autre, à travers le brouillard.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +2.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "nourriture": 10
+            },
+            "faction": "cooperative-des-plaines",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "0sLtWI0UVX5gy0if",
+      "_key": "!tables.results!lUWq21YOp6BTkewB.0sLtWI0UVX5gy0if",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Les semences de la jardinerie.</strong> Rapporter les sachets de graines d'une jardinerie du Tampon.</p><p><strong>Récompense :</strong> 6 nourriture, 3 graines ; réputation +2.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "nourriture": 6,
+              "graines": 3
+            },
+            "faction": "cooperative-des-plaines",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "v3q2t56dakI6v2Ip",
+      "_key": "!tables.results!lUWq21YOp6BTkewB.v3q2t56dakI6v2Ip",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — Le tracteur de Mémé Lucette.</strong> Remettre en marche un vieux tracteur pour les labours avant les pluies.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "nourriture": 8
+            },
+            "faction": "cooperative-des-plaines",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "a6sXU8ffsC06hxjC",
+      "_key": "!tables.results!lUWq21YOp6BTkewB.a6sXU8ffsC06hxjC",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — Le berger dans la ravine.</strong> Un jeune berger est tombé dans une ravine en poursuivant une génisse.</p><p><strong>Récompense :</strong> 6 nourriture, 2 materiaux ; réputation +3.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "nourriture": 6,
+              "materiaux": 2
+            },
+            "faction": "cooperative-des-plaines",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "g2NAV2M9UCNIgI17",
+      "_key": "!tables.results!lUWq21YOp6BTkewB.g2NAV2M9UCNIgI17",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Fromage contre outils.</strong> Échanger des tommes et du lait contre des outils et des clous.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +1.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "nourriture": 8
+            },
+            "faction": "cooperative-des-plaines",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "bimM5kvE1rO0Fipl",
+      "_key": "!tables.results!lUWq21YOp6BTkewB.bimM5kvE1rO0Fipl",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — Le marché de Bourg-Murat.</strong> Garder le marché du samedi contre une bande qui rôde.</p><p><strong>Récompense :</strong> 6 nourriture, 2 graines ; réputation +2.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "nourriture": 6,
+              "graines": 2
+            },
+            "faction": "cooperative-des-plaines",
+            "reputation": 2
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "_id": "hQZximv1NPeNFnT5",
+  "_key": "!tables!hQZximv1NPeNFnT5",
+  "name": "Visibilité 5 — Des éclaireurs",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quand la visibilité de l'abri franchit 5 à la hausse, le MJ reçoit en privé un événement de cette table.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "visibilite-eclaireurs",
+      "visibilite": 5
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "CU14AKouGVvsHLVY",
+      "_key": "!tables.results!hQZximv1NPeNFnT5.CU14AKouGVvsHLVY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux silhouettes vous observent aux jumelles depuis la crête, puis disparaissent.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kYyCKBpzdwXiERF3",
+      "_key": "!tables.results!hQZximv1NPeNFnT5.kYyCKBpzdwXiERF3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un « voyageur » demande l'hospitalité pour une nuit et compte vos fusils.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5IlycQfrQijFFU5x",
+      "_key": "!tables.results!hQZximv1NPeNFnT5.5IlycQfrQijFFU5x",
+      "type": "text",
+      "name": "",
+      "description": "<p>On a coupé un fil de votre alarme pour voir si quelqu'un viendrait.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MYkRpe0dI8Nzvj6d",
+      "_key": "!tables.results!hQZximv1NPeNFnT5.MYkRpe0dI8Nzvj6d",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un message griffonné sur votre portail : un signe que vous ne connaissez pas.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DyPQd0QXcLCYDWqK",
+      "_key": "!tables.results!hQZximv1NPeNFnT5.DyPQd0QXcLCYDWqK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un drone de loisir passe au-dessus de l'abri.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FOm60Q1D1FApEJQ2",
+      "_key": "!tables.results!hQZximv1NPeNFnT5.FOm60Q1D1FApEJQ2",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces de pneus dans le chemin, qui font demi-tour.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "iCv3FCxJrxXbEJNh",
+      "_key": "!tables.results!hQZximv1NPeNFnT5.iCv3FCxJrxXbEJNh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide attaché à votre barrière, pour voir ce que vous en ferez.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sF0wYq7hEFLC5tHG",
+      "_key": "!tables.results!hQZximv1NPeNFnT5.sF0wYq7hEFLC5tHG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un groupe campe à un kilomètre et ne bouge plus.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

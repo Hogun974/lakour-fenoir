@@ -1,0 +1,63 @@
+// Les recettes de l'atelier (contrat §9, logique/fabrication.mjs du système) : ce que le groupe fabrique de ses mains.
+// { cle, nom, cout: { ressource: n }, travail (quarts-personne), competence, difficulte, requiert: { savoirs, installation },
+//   produit: { equipement: cle, n } | { ressource: cle, n } }. Objets « recette » du compendium. Textes originaux.
+import { html, objet } from "./aides.mjs";
+
+function recette({ cle, nom, description, cout, travail, competence = "bricolage", difficulte = "normale", savoirs = [], installation = null, produit }) {
+  return objet({ pack: "recettes", type: "recette", cle, nom, img: "icons/svg/anvil.svg",
+    system: { description: html(description), cout, travail, competence, difficulte, requiert: { savoirs, installation }, produit } });
+}
+
+export const RECETTES = [
+  recette({ cle: "lance", nom: "Lance de fortune", cout: { materiaux: 1 }, travail: 1, produit: { equipement: "lance-de-fortune", n: 1 },
+    description: `Un bambou bien droit, une lame ligaturée au fil de fer et à la chambre à air : de quoi frapper à travers un grillage.` }),
+  recette({ cle: "arc-et-fleches", nom: "Arc et flèches", cout: { materiaux: 2 }, travail: 4, difficulte: "difficile", installation: "atelier",
+    produit: { equipement: "arc-de-chasse", n: 1 },
+    description: `Un arc de bois de goyavier ou de tuyau PVC chauffé, une corde tressée, une douzaine de flèches empennées de plumes de poule.` }),
+  recette({ cle: "arbalete", nom: "Arbalète de fortune", cout: { materiaux: 2, pieces: 2 }, travail: 6, difficulte: "difficile", savoirs: ["mecanique"], installation: { cle: "atelier", niveau: 1 },
+    produit: { equipement: "arbalete-de-fortune", n: 1 },
+    description: `Lame de ressort de voiture, crosse de bois dur, détente de récupération, et des carreaux taillés dans des tiges de fer à béton.` }),
+  recette({ cle: "bouclier", nom: "Bouclier de tôle", cout: { materiaux: 2 }, travail: 2, produit: { equipement: "bouclier-de-tole", n: 1 },
+    description: `Tôle ondulée, contreplaqué, deux poignées vissées : lourd, bruyant, mais une morsure s'y casse les dents.` }),
+  recette({ cle: "collets", nom: "Collets et nasses", cout: { materiaux: 1, pieces: 1 }, travail: 2, competence: "survie", produit: { equipement: "collets-et-nasses", n: 1 },
+    description: `Fil de fer, grillage à poules, bouteilles coupées : de quoi piéger tangues, lièvres et camarons.` }),
+  recette({ cle: "cloches", nom: "Cloches d'alerte", cout: { materiaux: 1 }, travail: 1, produit: { equipement: "cloches-d-alerte", n: 1 },
+    description: `Des fils tendus, des boîtes de conserve, des clochettes de chèvre : un réseau d'alarme autour du camp.` }),
+  recette({ cle: "filtre-de-poche", nom: "Gourde filtrante de fortune", cout: { materiaux: 1, pieces: 1 }, travail: 2, savoirs: ["plomberie-filtration"],
+    produit: { equipement: "filtre-portatif", n: 1 },
+    description: `Une bouteille, du coton, du sable lavé, du charbon de bois pilé : on filtre, puis on fait bouillir ou on laisse au soleil.` }),
+  recette({ cle: "rechaud-a-bois", nom: "Réchaud à bois", cout: { pieces: 1 }, travail: 1, produit: { equipement: "rechaud", n: 1 },
+    description: `Deux boîtes de conserve imbriquées, percées en haut et en bas : un réchaud qui brûle des brindilles presque sans fumée.` }),
+  recette({ cle: "poele-de-masse", nom: "Poêle de masse", cout: { materiaux: 6, pieces: 1 }, travail: 8, savoirs: ["maconnerie"], produit: { equipement: "poele-de-masse", n: 1 },
+    description: `Briques, pierres, argile, un tuyau de tôle : un poêle qui stocke la chaleur d'une flambée pour toute une nuit des Hauts.` }),
+  recette({ cle: "chauffe-eau", nom: "Chauffe-eau solaire de fortune", cout: { materiaux: 2, pieces: 2 }, travail: 3, savoirs: ["plomberie-filtration"],
+    produit: { equipement: "chauffe-eau-solaire", n: 1 },
+    description: `Un serpentin de tuyau d'arrosage noir sur le toit, un fût isolé de vieilles couvertures, un robinet : de l'eau chaude au soleil.` }),
+  recette({ cle: "velo-cargo", nom: "Vélo-cargo", cout: { materiaux: 2, pieces: 3 }, travail: 6, savoirs: ["mecanique"], installation: { cle: "atelier", niveau: 1 },
+    produit: { equipement: "velo-cargo", n: 1 },
+    description: `Deux vélos, une caisse de bois, des soudures ou des colliers : porter des bidons et des sacs sans carburant.` }),
+  recette({ cle: "panneaux-nomades", nom: "Panneaux démontables", cout: { pieces: 4, materiaux: 1 }, travail: 3, savoirs: ["electricite-solaire"], installation: "atelier",
+    produit: { equipement: "panneaux-demontables", n: 1 },
+    description: `Deux panneaux récupérés sur un cadre pliant, un régulateur, des câbles à fiches : du courant qu'on emporte en déménageant.` }),
+  recette({ cle: "radio-de-poche", nom: "Radio à manivelle", cout: { pieces: 2 }, travail: 3, savoirs: ["radio"], produit: { equipement: "radio-a-manivelle", n: 1 },
+    description: `Un récepteur démonté d'un vieux poste, une dynamo de vélo, une manivelle : écouter l'île sans piles.` }),
+  recette({ cle: "moustiquaires", nom: "Moustiquaires", cout: { materiaux: 1 }, travail: 2, competence: "survie", produit: { equipement: "moustiquaires", n: 1 },
+    description: `Rideaux, voilages, tulle de magasin de tissus, recousus et tendus au-dessus des lits.` }),
+  recette({ cle: "munitions-rechargees", nom: "Munitions rechargées", cout: { pieces: 2, carburant: 1 }, travail: 4, difficulte: "difficile", savoirs: ["mecanique"],
+    installation: { cle: "atelier", niveau: 2 }, produit: { ressource: "munitions", n: 2 },
+    description: `Douilles récupérées, amorces et plombs de chasse, poudre tirée de cartouches abîmées : un travail lent et dangereux. Raté, il fait exploser l'arme.` }),
+  recette({ cle: "alcool-desinfectant", nom: "Alcool désinfectant", cout: { nourriture: 3, carburant: 1 }, travail: 3, competence: "survie", savoirs: ["conserverie"],
+    produit: { ressource: "medicaments", n: 1 },
+    description: `Fruits trop mûrs, jus de canne, un alambic de cocotte et de serpentin : un alcool fort qui désinfecte plaies et instruments.` }),
+  recette({ cle: "savon", nom: "Savon", cout: { nourriture: 2, materiaux: 1 }, travail: 2, competence: "survie", produit: { ressource: "medicaments", n: 1 },
+    description: `Graisse de cochon ou huile, cendre de bois tamisée, un peu de patience : se laver les mains évite la moitié des maladies.` }),
+  recette({ cle: "pansements", nom: "Pansements de fortune", cout: { materiaux: 1 }, travail: 1, competence: "soins", produit: { ressource: "medicaments", n: 1 },
+    description: `Draps de coton découpés, bouillis, séchés au soleil et roulés : des bandes propres.` }),
+  recette({ cle: "tisanes", nom: "Tisanes et emplâtres", cout: { graines: 1 }, travail: 2, competence: "soins", savoirs: ["premiers-secours-avances"], installation: { cle: "infirmerie", niveau: 1 },
+    produit: { ressource: "medicaments", n: 1 },
+    description: `Ayapana, citronnelle, bois de quivi, gingembre : les remèdes des grands-mères, contre les fièvres légères et les maux de ventre.` }),
+  recette({ cle: "conserves", nom: "Bocaux et boucané", cout: { nourriture: 4, materiaux: 1 }, travail: 2, competence: "survie", savoirs: ["conserverie"], produit: { ressource: "nourriture", n: 5 },
+    description: `Achards, rougails en bocaux, viande boucanée, poisson séché : ce qui allait pourrir tiendra des mois.` }),
+  recette({ cle: "semences", nom: "Semences triées", cout: { nourriture: 3 }, travail: 1, competence: "survie", savoirs: ["maraichage-tropical"], produit: { ressource: "graines", n: 2 },
+    description: `Garder les plus beaux fruits, sécher les graines de piment, de haricot et de citrouille, bouturer le manioc : la récolte de l'an prochain.` })
+];

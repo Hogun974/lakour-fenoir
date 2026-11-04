@@ -1,0 +1,122 @@
+{
+  "_id": "qNxwVkb0RUjrVENz",
+  "_key": "!actors!qNxwVkb0RUjrVENz",
+  "name": "Noyé du lagon",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/noye-du-lagon.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 3,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 30,
+    "lien": "",
+    "vivant": false,
+    "livide": true,
+    "charge": 0,
+    "notes": "<p>Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p><p><strong>Comportement.</strong> Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</p><p><strong>Faiblesse.</strong> Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.</p><p><strong>Dés d'attaque :</strong> 1 — <strong>résistance :</strong> 1 — <strong>vitesse :</strong> lente.</p>"
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Noyé du lagon",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/noye-du-lagon.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "noye-du-lagon",
+      "pnj": true,
+      "bestiaire": {
+        "categorie": "livide",
+        "des": 1,
+        "resistance": 1,
+        "vitesse": "lente"
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

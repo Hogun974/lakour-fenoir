@@ -1,0 +1,42 @@
+{
+  "_id": "YbxqiHxVcgqo4lZF",
+  "_key": "!items!YbxqiHxVcgqo4lZF",
+  "name": "Savon",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "savon",
+    "description": "<p>Graisse de cochon ou huile, cendre de bois tamisée, un peu de patience : se laver les mains évite la moitié des maladies.</p>",
+    "cout": {
+      "nourriture": 2,
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "ressource": "medicaments",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "savon"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

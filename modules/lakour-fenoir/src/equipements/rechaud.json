@@ -1,0 +1,37 @@
+{
+  "_id": "uHNTLpHjEGafFf6d",
+  "_key": "!items!uHNTLpHjEGafFf6d",
+  "name": "Réchaud et gamelles",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "rechaud",
+    "categorie": "vie",
+    "description": "<p>Cuisiner sans fumée en route, faire bouillir l'eau. Une cartouche de gaz dure peu ; un réchaud à bois, toujours.</p>",
+    "bonus": {
+      "survie": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rechaud"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

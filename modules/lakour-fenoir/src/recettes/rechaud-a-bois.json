@@ -1,0 +1,41 @@
+{
+  "_id": "xdHnDIfvxxIX9cSE",
+  "_key": "!items!xdHnDIfvxxIX9cSE",
+  "name": "Réchaud à bois",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "rechaud-a-bois",
+    "description": "<p>Deux boîtes de conserve imbriquées, percées en haut et en bas : un réchaud qui brûle des brindilles presque sans fumée.</p>",
+    "cout": {
+      "pieces": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "rechaud",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rechaud-a-bois"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

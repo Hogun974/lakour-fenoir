@@ -1,0 +1,29 @@
+{
+  "_id": "p1q7tWHm7jlC6XTv",
+  "_key": "!items!p1q7tWHm7jlC6XTv",
+  "name": "Radio et transmissions",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "radio",
+    "description": "<p>Monter une antenne, trouver les fréquences, émettre sans se faire repérer, réparer un poste, parler en code.</p>",
+    "apprentissage": "<p>Un passé de marin, de gendarme, de pompier ou de radioamateur ; un manuel de radioamateur ; un opérateur de la Garnison du Quai.</p>",
+    "effets": "<p>Ouvre le poste radio niveau 2. Les renseignements obtenus par radio sont plus sûrs (le MJ précise ce qui est vrai).</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "radio"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

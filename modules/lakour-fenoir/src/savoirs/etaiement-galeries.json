@@ -1,0 +1,29 @@
+{
+  "_id": "6975YKDLebPqgXnA",
+  "_key": "!items!6975YKDLebPqgXnA",
+  "name": "Étaiement et galeries",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "etaiement-galeries",
+    "description": "<p>Lire la roche et le tuf, creuser sans tout faire tomber, étayer au bois et à la ferraille, ventiler, drainer ; reconnaître une voûte de lave fragile.</p>",
+    "apprentissage": "<p>Un passé de guide de canyon, de spéléologue ou de mineur ; un guide des tunnels de lave du Grand Brûlé ; réussir une cave étayée.</p>",
+    "effets": "<p>Ouvre la galerie souterraine niveaux 2 à 4 et l'aménagement d'un tunnel de lave niveaux 2 et 3.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "etaiement-galeries"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

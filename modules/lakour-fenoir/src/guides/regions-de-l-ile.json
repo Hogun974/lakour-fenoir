@@ -1,0 +1,415 @@
+{
+  "_id": "kJU1ZWH9qMVBZZAR",
+  "_key": "!journal!kJU1ZWH9qMVBZZAR",
+  "name": "Les régions de l'île",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "regions-de-l-ile",
+      "visible": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "1dqBJ1b2Wu5E9RhK",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.1dqBJ1b2Wu5E9RhK",
+      "name": "L'île",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La Réunion fait une soixantaine de kilomètres de long. Le <strong>littoral</strong> concentre les villes et la chaleur ; les <strong>Hauts</strong> sont frais, brumeux, peu peuplés ; trois <strong>cirques</strong> (Cilaos, Salazie, Mafate) s'ouvrent autour du Piton des Neiges ; au sud-est, le <strong>Piton de la Fournaise</strong> est l'un des volcans les plus actifs du monde. L'<strong>Ouest</strong> (côte sous le vent) est sec et ensoleillé ; l'<strong>Est</strong> (côte au vent) est l'un des endroits les plus pluvieux de la planète.</p><p>Chaque page dit ce qu'on sait d'une région <strong>au jour zéro</strong>. Le reste, il faudra aller le voir.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "carte"
+        }
+      }
+    },
+    {
+      "_id": "IMqkSnSGbe2etOrZ",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.IMqkSnSGbe2etOrZ",
+      "name": "Saint-Denis",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le chef-lieu s'étale du Barachois jusqu'aux pentes de La Montagne et du Brûlé. Au jour zéro, les bouchons remontent le boulevard Sud et les sirènes ne se taisent plus autour du CHU de Bellepierre. Les cases créoles de la rue de Paris ferment leurs barreaux, les barres du Chaudron allument toutes leurs fenêtres, et sur le front de mer, des familles regardent les avions décoller de Gillot comme on regarde partir le dernier car. On y trouve de tout : pharmacies, quincailleries, supermarchés, casernes. Et cent cinquante mille personnes qui veulent la même chose que vous.</p><ul><li><strong>Zone</strong> : littoral ; altitude moyenne environ 150 m.</li><li><strong>Climat</strong> : soleil moyen, pluie moyen.</li><li><strong>Routes</strong> : vers Sainte-Marie et l'aéroport par RN2, la quatre-voies de l'Est par Gillot (10 km, route) ; vers La route du Littoral par Nouvelle route du Littoral (RN1), digue et viaduc jusqu'à la Grande Chaloupe (8 km, route).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "saint-denis"
+        }
+      }
+    },
+    {
+      "_id": "HpdyIjm6C9Y0nbD5",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.HpdyIjm6C9Y0nbD5",
+      "name": "Sainte-Marie et l'aéroport",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>De Gillot à Sainte-Suzanne, la plaine littorale du Nord-Est alterne zones commerciales, champs de canne et lotissements. L'aéroport est le cœur battant du jour zéro : files d'attente jusqu'au parking, rotations ajoutées en urgence, rumeurs de passagers malades débarqués de nuit. Plus à l'est, le phare de Bel-Air veille toujours sur la pointe, et la petite marina de Sainte-Marie dandine ses barques. Les vergers des hauts de Sainte-Marie croulent de letchis en décembre.</p><ul><li><strong>Zone</strong> : littoral ; altitude moyenne environ 80 m.</li><li><strong>Climat</strong> : soleil moyen, pluie moyen.</li><li><strong>Routes</strong> : vers Saint-Denis par RN2, la quatre-voies de l'Est par Gillot (10 km, route) ; vers L'Est : Saint-André, Saint-Benoît, Sainte-Rose par RN2 par Sainte-Suzanne et Saint-André (16 km, route).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sainte-marie"
+        }
+      }
+    },
+    {
+      "_id": "NDu4YdBTek0Q5ff2",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.NDu4YdBTek0Q5ff2",
+      "name": "La route du Littoral",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Douze kilomètres coincés entre la falaise et l'océan, de Saint-Denis à La Possession. La nouvelle route du Littoral court sur sa digue et son viaduc jusqu'à la Grande Chaloupe ; au-delà, l'ancienne route serre la falaise sous ses filets et ses merlons. Au jour zéro, c'est un tuyau : deux files immobiles, des klaxons, des gens qui marchent entre les voitures avec leurs enfants sur les épaules. Au creux de la Grande Chaloupe dorment le vieux lazaret de pierre et la gare d'autrefois. Le chemin des Anglais, pavé il y a deux siècles, passe au-dessus de tout cela.</p><ul><li><strong>Zone</strong> : littoral ; altitude moyenne environ 20 m.</li><li><strong>Climat</strong> : soleil fort, pluie faible.</li><li><strong>Routes</strong> : vers Saint-Denis par Nouvelle route du Littoral (RN1), digue et viaduc jusqu'à la Grande Chaloupe (8 km, route) ; vers Le Port et La Possession par Ancienne route du Littoral (RN1) sous la falaise, jusqu'à La Possession (7 km, route).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "route-du-littoral"
+        }
+      }
+    },
+    {
+      "_id": "8lieGvpKfY511CP4",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.8lieGvpKfY511CP4",
+      "name": "Le Port et La Possession",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les grues du port Est, les cuves, les darses et les quais : c'est par ici qu'arrivent le carburant, les conteneurs, presque tout ce que mange l'île. La centrale du Port Est ronronne au bord de l'eau. Au jour zéro, les dockers bloquent l'entrée, des familles supplient pour une place sur un cargo, et la Rivière des Galets roule ses galets sous le pont comme si de rien n'était. La Possession, plus verte, monte vers Dos d'Âne, d'où l'on voit le rempart de Mafate.</p><ul><li><strong>Zone</strong> : littoral ; altitude moyenne environ 30 m.</li><li><strong>Climat</strong> : soleil fort, pluie faible.</li><li><strong>Routes</strong> : vers La route du Littoral par Ancienne route du Littoral (RN1) sous la falaise, jusqu'à La Possession (7 km, route) ; vers Saint-Paul et la côte Ouest par RN1, quatre-voies du Port à Saint-Paul par le pont de la Rivière des Galets (11 km, route) ; vers Mafate par Piste du lit de la Rivière des Galets jusqu'à Deux-Bras, puis sentier vers Aurère (18 km, sentier, à pied seulement).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-port"
+        }
+      }
+    },
+    {
+      "_id": "CMYPF3bMqW7rBzCa",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.CMYPF3bMqW7rBzCa",
+      "name": "Saint-Paul et la côte Ouest",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La côte sous le vent : l'étang de Saint-Paul et ses brèdes, la zone de Savanna et son hypermarché, puis Boucan, Saint-Gilles et l'Hermitage, avec le seul vrai lagon de l'île derrière sa barrière de corail. Au jour zéro, il fait beau, terriblement beau. Les touristes cherchent un vol, les plagistes ramassent les transats, et sur la route des Tamarins les gyrophares descendent vers le sud sans s'arrêter. Les hauts de Saint-Paul, Bellemène, Le Guillaume, montent dans les champs et les savanes sèches.</p><ul><li><strong>Zone</strong> : littoral ; altitude moyenne environ 120 m.</li><li><strong>Climat</strong> : soleil fort, pluie faible.</li><li><strong>Routes</strong> : vers Le Port et La Possession par RN1, quatre-voies du Port à Saint-Paul par le pont de la Rivière des Galets (11 km, route) ; vers Mafate par Canalisation des Orangers depuis Sans-Souci, vers l'Îlet des Orangers (13 km, sentier, à pied seulement) ; vers Les Hauts de l'Ouest par Route du Maïdo par Le Guillaume et Petite France (20 km, route) ; vers Saint-Leu et l'Étang-Salé par Route des Tamarins (RN1), ou la route littorale par Saint-Gilles (22 km, route).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "saint-paul"
+        }
+      }
+    },
+    {
+      "_id": "O4himmE95sbB00ig",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.O4himmE95sbB00ig",
+      "name": "Les Hauts de l'Ouest",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Au-dessus des savanes, la route du Maïdo grimpe à travers les champs de géranium, les cryptomérias et la forêt de tamarins des Hauts jusqu'au belvédère, à plus de deux mille mètres, d'où l'on plonge sur Mafate. Petite France, Le Guillaume, Trois-Bassins des Hauts, le Tévelave plus au sud : des bourgs de cases en bois sous tôle, des cuves à eau et des chiens qui aboient au moindre bruit de moteur. Au jour zéro, on y entend la nouvelle à la radio, et on ferme le portail.</p><ul><li><strong>Zone</strong> : les Hauts ; altitude moyenne environ 1200 m.</li><li><strong>Climat</strong> : soleil moyen, pluie moyen.</li><li><strong>Routes</strong> : vers Saint-Paul et la côte Ouest par Route du Maïdo par Le Guillaume et Petite France (20 km, route) ; vers Saint-Leu et l'Étang-Salé par Route Hubert-Delisle à mi-pente, puis la descente des Avirons (18 km, route) ; vers Mafate par Sentier du Maïdo : descente du rempart vers Roche-Plate (8 km, sentier, à pied seulement).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "hauts-de-l-ouest"
+        }
+      }
+    },
+    {
+      "_id": "5xweShd0icHtsQMt",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.5xweShd0icHtsQMt",
+      "name": "Saint-Leu et l'Étang-Salé",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Saint-Leu, ses ruelles, son port de poche et les parapentes qui tournent au-dessus de la falaise ; plus loin, Les Avirons et l'Étang-Salé avec sa plage de sable noir et sa forêt de filaos. Les murs de l'ancienne sucrerie de Stella dominent la côte. Au jour zéro, les pêcheurs rentrent tôt, les surfeurs restent à l'eau, et la route des Tamarins se bouche à hauteur des échangeurs.</p><ul><li><strong>Zone</strong> : littoral ; altitude moyenne environ 150 m.</li><li><strong>Climat</strong> : soleil fort, pluie faible.</li><li><strong>Routes</strong> : vers Saint-Paul et la côte Ouest par Route des Tamarins (RN1), ou la route littorale par Saint-Gilles (22 km, route) ; vers Les Hauts de l'Ouest par Route Hubert-Delisle à mi-pente, puis la descente des Avirons (18 km, route) ; vers Saint-Louis et Saint-Pierre par RN1 par l'Étang-Salé et Saint-Louis (20 km, route).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "saint-leu"
+        }
+      }
+    },
+    {
+      "_id": "gQh08QnKHUHiMOSA",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.gQh08QnKHUHiMOSA",
+      "name": "Saint-Louis et Saint-Pierre",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La capitale du Sud et sa voisine : le front de mer de Saint-Pierre, son port, son marché couvert, le grand hôpital du Sud ; Saint-Louis, la sucrerie et la centrale du Gol, Pierrefonds et son aérodrome, son quartier militaire. Au jour zéro, le Sud est en fête d'un samedi de décembre, puis les urgences débordent sur le parking, et la RN1 se ferme sur un accident que personne ne vient dégager.</p><ul><li><strong>Zone</strong> : littoral ; altitude moyenne environ 100 m.</li><li><strong>Climat</strong> : soleil fort, pluie faible.</li><li><strong>Routes</strong> : vers Saint-Leu et l'Étang-Salé par RN1 par l'Étang-Salé et Saint-Louis (20 km, route) ; vers Cilaos par Route de Cilaos (RN5) et ses quatre cents virages, depuis Saint-Louis (37 km, route) ; vers Le Tampon et la Plaine des Cafres par RN3, la quatre-voies de Saint-Pierre au Tampon (12 km, route) ; vers Saint-Joseph et le Sud sauvage par RN2 par Petite-Île et Saint-Joseph (18 km, route).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "saint-pierre"
+        }
+      }
+    },
+    {
+      "_id": "sx9ay65idkIaKCgH",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.sx9ay65idkIaKCgH",
+      "name": "Le Tampon et la Plaine des Cafres",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le Tampon s'étire en kilomètres numérotés le long de la RN3, du Douzième au Vingt-Troisième, puis la route sort des maisons et monte dans les prairies de la Plaine des Cafres : vaches, barbelés, fermes laitières, Bourg-Murat et son observatoire du volcan. L'Entre-Deux, perché sur son éperon entre deux rivières, garde ses cases créoles et ses jardins. Au jour zéro, il fait frais là-haut, et l'on allume la cheminée.</p><ul><li><strong>Zone</strong> : les Hauts ; altitude moyenne environ 1000 m.</li><li><strong>Climat</strong> : soleil moyen, pluie moyen.</li><li><strong>Routes</strong> : vers Saint-Louis et Saint-Pierre par RN3, la quatre-voies de Saint-Pierre au Tampon (12 km, route) ; vers La Plaine des Palmistes et Bélouve par RN3, route des Plaines, par Bourg-Murat et le col de Bellevue (25 km, route) ; vers Le Piton de la Fournaise et la Plaine des Sables par Route du Volcan, de Bourg-Murat au Pas de Bellecombe par la Plaine des Sables (27 km, route).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-tampon"
+        }
+      }
+    },
+    {
+      "_id": "H9DaehP4qM3cvD4Q",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.H9DaehP4qM3cvD4Q",
+      "name": "Saint-Joseph et le Sud sauvage",
+      "type": "text",
+      "sort": 1100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Après Saint-Joseph et Petite-Île, la côte devient sauvage : falaises noires, vacoas, forêt de Mare-Longue, champs de vanille sous les arbres, Saint-Philippe et ses marines minuscules, puis le Grand Brûlé, où les coulées de la Fournaise descendent jusqu'à l'océan en coupant la RN2. Il pleut beaucoup, tout pousse, et les gens se connaissent. Sous les coulées récentes courent des tunnels de lave que seuls quelques guides fréquentent.</p><ul><li><strong>Zone</strong> : forêt ; altitude moyenne environ 250 m.</li><li><strong>Climat</strong> : soleil moyen, pluie fort.</li><li><strong>Routes</strong> : vers Saint-Louis et Saint-Pierre par RN2 par Petite-Île et Saint-Joseph (18 km, route) ; vers Le Piton de la Fournaise et la Plaine des Sables par GR R2 : du gîte du Volcan à Basse-Vallée, sans un point d'eau (18 km, sentier, à pied seulement) ; vers L'Est : Saint-André, Saint-Benoît, Sainte-Rose par RN2, route des Laves à travers le Grand Brûlé jusqu'à Sainte-Rose et Saint-Benoît (48 km, route).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sud-sauvage"
+        }
+      }
+    },
+    {
+      "_id": "HDcNQbIdL6d3EWMy",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.HDcNQbIdL6d3EWMy",
+      "name": "Le Piton de la Fournaise et la Plaine des Sables",
+      "type": "text",
+      "sort": 1200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La route du Volcan quitte Bourg-Murat, traverse des landes de branles puis la Plaine des Sables, un désert rouge et noir sans un arbre, et s'arrête au Pas de Bellecombe, au bord du rempart. En contrebas, l'Enclos, le cône de la Fournaise, ses cratères et ses fumerolles. Au jour zéro, quelques randonneurs redescendent du sommet sans savoir encore ce qui se passe en bas. Le gîte du volcan affiche complet.</p><ul><li><strong>Zone</strong> : volcan ; altitude moyenne environ 2300 m.</li><li><strong>Climat</strong> : soleil moyen, pluie moyen.</li><li><strong>Routes</strong> : vers Le Tampon et la Plaine des Cafres par Route du Volcan, de Bourg-Murat au Pas de Bellecombe par la Plaine des Sables (27 km, route) ; vers Saint-Joseph et le Sud sauvage par GR R2 : du gîte du Volcan à Basse-Vallée, sans un point d'eau (18 km, sentier, à pied seulement).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "fournaise"
+        }
+      }
+    },
+    {
+      "_id": "CivgPiY0mk9ih3jB",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.CivgPiY0mk9ih3jB",
+      "name": "L'Est : Saint-André, Saint-Benoît, Sainte-Rose",
+      "type": "text",
+      "sort": 1300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La côte au vent : la canne à perte de vue autour de Saint-André et de la sucrerie de Bois-Rouge, les temples tamouls aux couleurs vives, Bras-Panon et ses bichiques, Saint-Benoît au bord de la rivière des Marsouins, puis la route qui longe l'océan jusqu'à Sainte-Rose et Notre-Dame-des-Laves. Il pleut, souvent et fort ; les rivières descendent en torrents. Plus haut, les centrales de Takamaka et de la Rivière de l'Est turbinent l'eau des montagnes. Au jour zéro, la pluie retient les gens chez eux, ce qui en sauve beaucoup.</p><ul><li><strong>Zone</strong> : littoral ; altitude moyenne environ 150 m.</li><li><strong>Climat</strong> : soleil faible, pluie fort.</li><li><strong>Routes</strong> : vers Saint-Joseph et le Sud sauvage par RN2, route des Laves à travers le Grand Brûlé jusqu'à Sainte-Rose et Saint-Benoît (48 km, route) ; vers Sainte-Marie et l'aéroport par RN2 par Sainte-Suzanne et Saint-André (16 km, route) ; vers La Plaine des Palmistes et Bélouve par RN3, la montée de Saint-Benoît à la Plaine des Palmistes (16 km, route) ; vers Salazie par Route de Salazie (RD48) le long de la Rivière du Mât, de Saint-André à Hell-Bourg (26 km, route).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "est"
+        }
+      }
+    },
+    {
+      "_id": "rMmbSkrYEazA3r6J",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.rMmbSkrYEazA3r6J",
+      "name": "La Plaine des Palmistes et Bélouve",
+      "type": "text",
+      "sort": 1400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Entre le col de Bellevue et la descente sur Saint-Benoît, la RN3 traverse un bourg de jardins, de goyaviers et de brume. Au-dessus, par la route forestière, les forêts de Bébour et de Bélouve : tamarins des Hauts couverts de mousse, fougères arborescentes, et le gîte de Bélouve au bord du vide, face au cirque de Salazie et au Trou de Fer. Au jour zéro, la pluie fine ne s'arrête pas, et la radio grésille.</p><ul><li><strong>Zone</strong> : forêt ; altitude moyenne environ 1050 m.</li><li><strong>Climat</strong> : soleil faible, pluie fort.</li><li><strong>Routes</strong> : vers Le Tampon et la Plaine des Cafres par RN3, route des Plaines, par Bourg-Murat et le col de Bellevue (25 km, route) ; vers L'Est : Saint-André, Saint-Benoît, Sainte-Rose par RN3, la montée de Saint-Benoît à la Plaine des Palmistes (16 km, route) ; vers Salazie par Route forestière de Bébour-Bélouve puis le sentier de Bélouve à Hell-Bourg (24 km, sentier, à pied seulement).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "plaine-des-palmistes"
+        }
+      }
+    },
+    {
+      "_id": "V8IWSPAhv6Z3QtZU",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.V8IWSPAhv6Z3QtZU",
+      "name": "Cilaos",
+      "type": "text",
+      "sort": 1500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>On y monte par la route aux quatre cents virages depuis Saint-Louis, tunnels à une voie et précipices compris. Au bout, un bourg de cases colorées au pied du Piton des Neiges, ses thermes, ses lentilles, ses vignes en terrasses, ses broderies. Îlet à Cordes et Bras-Sec s'accrochent plus loin sur leurs plateaux. Au jour zéro, le dernier car jaune redescend presque vide, et les éboulis surveillent la route comme toujours.</p><ul><li><strong>Zone</strong> : cirque ; altitude moyenne environ 1200 m.</li><li><strong>Climat</strong> : soleil moyen, pluie moyen.</li><li><strong>Routes</strong> : vers Saint-Louis et Saint-Pierre par Route de Cilaos (RN5) et ses quatre cents virages, depuis Saint-Louis (37 km, route) ; vers Mafate par Col du Taïbit, de Cilaos à Marla (10 km, sentier, à pied seulement) ; vers Salazie par GR R1 par le Bloc et la Caverne Dufour, sous le Piton des Neiges (16 km, sentier, à pied seulement).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "cilaos"
+        }
+      }
+    },
+    {
+      "_id": "awd3WC49Cv9phSto",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.awd3WC49Cv9phSto",
+      "name": "Salazie",
+      "type": "text",
+      "sort": 1600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le cirque vert : on y entre par la route de Salazie depuis Saint-André, le long de la Rivière du Mât, entre les cascades du Voile de la Mariée. Salazie, Hell-Bourg et ses cases créoles à lambrequins, Grand Îlet sous ses treilles de chouchous, et tout au bout le col des Bœufs, porte de Mafate. Il pleut, la brume monte l'après-midi, et chaque ravine chante.</p><ul><li><strong>Zone</strong> : cirque ; altitude moyenne environ 900 m.</li><li><strong>Climat</strong> : soleil faible, pluie fort.</li><li><strong>Routes</strong> : vers L'Est : Saint-André, Saint-Benoît, Sainte-Rose par Route de Salazie (RD48) le long de la Rivière du Mât, de Saint-André à Hell-Bourg (26 km, route) ; vers La Plaine des Palmistes et Bélouve par Route forestière de Bébour-Bélouve puis le sentier de Bélouve à Hell-Bourg (24 km, sentier, à pied seulement) ; vers Mafate par Col des Bœufs depuis Grand Îlet, puis la descente vers La Nouvelle (12 km, sentier, à pied seulement) ; vers Cilaos par GR R1 par le Bloc et la Caverne Dufour, sous le Piton des Neiges (16 km, sentier, à pied seulement).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "salazie"
+        }
+      }
+    },
+    {
+      "_id": "PCmBGerBvAyvGP31",
+      "_key": "!journal.pages!kJU1ZWH9qMVBZZAR.PCmBGerBvAyvGP31",
+      "name": "Mafate",
+      "type": "text",
+      "sort": 1700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le cirque sans route. On y entre à pied par le col des Bœufs, le Maïdo, le col du Taïbit, la canalisation des Orangers ou le lit de la Rivière des Galets ; l'hélicoptère y monte les vivres. Une quinzaine d'îlets, La Nouvelle, Marla, Roche-Plate, Aurère, Îlet à Bourse, quelques centaines d'habitants, des panneaux solaires sur chaque toit, des sources captées et des sentiers que les anciens connaissent les yeux fermés. Au jour zéro, Mafate apprend la nouvelle par la radio, comme le reste du monde. Puis plus rien ne monte.</p><ul><li><strong>Zone</strong> : cirque ; altitude moyenne environ 1000 m.</li><li><strong>Climat</strong> : soleil moyen, pluie moyen.</li><li><strong>Routes</strong> : vers Le Port et La Possession par Piste du lit de la Rivière des Galets jusqu'à Deux-Bras, puis sentier vers Aurère (18 km, sentier, à pied seulement) ; vers Saint-Paul et la côte Ouest par Canalisation des Orangers depuis Sans-Souci, vers l'Îlet des Orangers (13 km, sentier, à pied seulement) ; vers Les Hauts de l'Ouest par Sentier du Maïdo : descente du rempart vers Roche-Plate (8 km, sentier, à pied seulement) ; vers Salazie par Col des Bœufs depuis Grand Îlet, puis la descente vers La Nouvelle (12 km, sentier, à pied seulement) ; vers Cilaos par Col du Taïbit, de Cilaos à Marla (10 km, sentier, à pied seulement).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "mafate"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "MbZqvVVbkxPgJ8rR",
+  "_key": "!items!MbZqvVVbkxPgJ8rR",
+  "name": "Moustiquaires",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "moustiquaires",
+    "description": "<p>Rideaux, voilages, tulle de magasin de tissus, recousus et tendus au-dessus des lits.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "moustiquaires",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "moustiquaires"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

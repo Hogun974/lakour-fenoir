@@ -1,0 +1,178 @@
+{
+  "_id": "eVUENIxsisNCurTz",
+  "_key": "!tables!eVUENIxsisNCurTz",
+  "name": "Rencontres — phase apres",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une rencontre typique de la phase « apres ».</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rencontres-phase-apres",
+      "phase": "apres"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "WeblbbQHAkCPae8N",
+      "_key": "!tables.results!eVUENIxsisNCurTz.WeblbbQHAkCPae8N",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des rues désertes, des corps décomposés dans les caniveaux, plus un Livide debout dans les Bas.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ihEVceMhESJk2zB8",
+      "_key": "!tables.results!eVUENIxsisNCurTz.ihEVceMhESJk2zB8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bande humaine qui tient un quartier du littoral.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Lqhah5p3bQ2OPuMu",
+      "_key": "!tables.results!eVUENIxsisNCurTz.Lqhah5p3bQ2OPuMu",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une troupe de Livides des Hauts, lents et nombreux, dans le brouillard.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "P8kwu3F5XjQxQJAU",
+      "_key": "!tables.results!eVUENIxsisNCurTz.P8kwu3F5XjQxQJAU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un potager abandonné, envahi, plein de brèdes.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "e4dfaHkxjZObsiM0",
+      "_key": "!tables.results!eVUENIxsisNCurTz.e4dfaHkxjZObsiM0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des barques des Barques du Sud au large.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mfpWAw70XheFECEr",
+      "_key": "!tables.results!eVUENIxsisNCurTz.mfpWAw70XheFECEr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un abri prospère, trop visible, qui attire les regards.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YKgT3BMNCfAdiWbu",
+      "_key": "!tables.results!eVUENIxsisNCurTz.YKgT3BMNCfAdiWbu",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vieux Livide figé par le froid au bord d'un chemin des Hauts.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kEEwWKYbW8C2jpyO",
+      "_key": "!tables.results!eVUENIxsisNCurTz.kEEwWKYbW8C2jpyO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une famille qui revient s'installer en bas, prudemment.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "D1EKiy0QZTuRkZ14",
+      "_key": "!tables.results!eVUENIxsisNCurTz.D1EKiy0QZTuRkZ14",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un chien redevenu sauvage, qui hésite à s'approcher.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ayjNemHVLEyJcQVr",
+      "_key": "!tables.results!eVUENIxsisNCurTz.ayjNemHVLEyJcQVr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une route envahie par la végétation, méconnaissable.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

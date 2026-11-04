@@ -1,0 +1,187 @@
+{
+  "_id": "PARGwp57E2ZionKi",
+  "_key": "!tables!PARGwp57E2ZionKi",
+  "name": "Demandes — Les Sans-Lune",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "demandes-sans-lune",
+      "appels": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "zK6Ay3AwEqjse0jk",
+      "_key": "!tables.results!PARGwp57E2ZionKi.zK6Ay3AwEqjse0jk",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Le coffre de la bijouterie.</strong> Le Comptable veut le contenu d'un coffre du centre-ville.</p><p><strong>Récompense :</strong> 4 munitions, 6 nourriture ; réputation +2.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "munitions": 4,
+              "nourriture": 6
+            },
+            "faction": "sans-lune",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "eWOnpCzn24MwLdRE",
+      "_key": "!tables.results!PARGwp57E2ZionKi.eWOnpCzn24MwLdRE",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — Le collecteur.</strong> Accompagner un collecteur de tribut dans un quartier qui refuse de payer.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "nourriture": 8
+            },
+            "faction": "sans-lune",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "AMOo4jSiCtc367vZ",
+      "_key": "!tables.results!PARGwp57E2ZionKi.AMOo4jSiCtc367vZ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Ce qu'ils ont pris.</strong> Ils vendent ce qu'ils ont pillé : vivres et médicaments contre munitions.</p><p><strong>Récompense :</strong> 6 nourriture, 2 medicaments ; réputation +1.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "nourriture": 6,
+              "medicaments": 2
+            },
+            "faction": "sans-lune",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "AnB5cACNMKvGK7Wb",
+      "_key": "!tables.results!PARGwp57E2ZionKi.AnB5cACNMKvGK7Wb",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — Un des leurs.</strong> Libérer un jeune de la bande retenu par la Garnison (la Garnison ne l'oubliera pas).</p><p><strong>Récompense :</strong> 5 munitions ; réputation +3.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "munitions": 5
+            },
+            "faction": "sans-lune",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "VoET3HfvbWOCetOz",
+      "_key": "!tables.results!PARGwp57E2ZionKi.VoET3HfvbWOCetOz",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Le stock du grossiste.</strong> Vider l'entrepôt d'un grossiste de Sainte-Marie avant la Coopérative.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +2.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "nourriture": 10
+            },
+            "faction": "sans-lune",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "EwMMbpAk9shWhjC8",
+      "_key": "!tables.results!PARGwp57E2ZionKi.EwMMbpAk9shWhjC8",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — Les lampes de la planque.</strong> Faire marcher les panneaux de leur planque.</p><p><strong>Récompense :</strong> 3 munitions, 4 nourriture ; réputation +1.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "munitions": 3,
+              "nourriture": 4
+            },
+            "faction": "sans-lune",
+            "reputation": 1
+          }
+        }
+      }
+    }
+  ]
+}

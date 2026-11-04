@@ -1,0 +1,48 @@
+{
+  "_id": "agoJWfH8pl5NVhHI",
+  "_key": "!items!agoJWfH8pl5NVhHI",
+  "name": "Pêcheur de Saint-Gilles",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "pecheur-de-saint-gilles",
+    "description": "<p>Fils et petit-fils de pêcheurs, il connaît chaque passe du récif, chaque coin de la côte Ouest, la houle australe et les colères de la mer.</p>",
+    "competences": {
+      "survie": 2,
+      "conduite": 2,
+      "endurance": 1,
+      "vigilance": 1,
+      "combat": 1
+    },
+    "savoirs": [
+      "peche-lagon"
+    ],
+    "equipement": [
+      "fusil-harpon",
+      "barque-a-moteur"
+    ],
+    "accroche": "<p>Il rentre au port à l'aube avec sa pêche. Sur le quai, personne pour acheter. Une sirène au loin, puis une autre.</p>",
+    "region": "saint-paul",
+    "incapacites": [],
+    "histoire": [
+      "Son père lui a appris à lire la houle avant de lui apprendre à lire.",
+      "Il n'a jamais dormi plus de trois nuits loin de la mer."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pecheur-de-saint-gilles"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

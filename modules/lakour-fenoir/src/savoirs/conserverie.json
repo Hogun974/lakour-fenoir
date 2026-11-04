@@ -1,0 +1,29 @@
+{
+  "_id": "WQxo66InFveKqVJD",
+  "_key": "!items!WQxo66InFveKqVJD",
+  "name": "Conserverie et séchage",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "conserverie",
+    "description": "<p>Saler, sécher, boucaner, mettre en bocaux, faire des achards et des confitures qui tiennent un an sous le climat humide.</p>",
+    "apprentissage": "<p>Un passé de cuisinier ; une grand-mère des Hauts ; un livre de recettes lontan.</p>",
+    "effets": "<p>Ouvre la réserve étanche niveau 2. Une réserve de nourriture préparée par le groupe ne se gâte pas, même sans installation.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "conserverie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

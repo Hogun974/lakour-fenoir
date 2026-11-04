@@ -1,0 +1,267 @@
+{
+  "_id": "wSIDVO72cuKZAuEU",
+  "_key": "!tables!wSIDVO72cuKZAuEU",
+  "name": "Imprévus du camp",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un petit événement de la vie quotidienne de l'abri, à tirer un jour calme.</p>",
+  "formula": "1d16",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "imprevus-du-camp"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "rxdcb92r2FgxNZiv",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.rxdcb92r2FgxNZiv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une poule s'échappe et file vers la route ; il faut la rattraper avant les chiens.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "K0S0bMI6OqVSKVCC",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.K0S0bMI6OqVSKVCC",
+      "type": "text",
+      "name": "",
+      "description": "<p>La pluie entre par le toit du dortoir : tout est trempé.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Gjcz2JG5V0EGXF1D",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.Gjcz2JG5V0EGXF1D",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant du camp a de la fièvre ; est-ce la dengue ?</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kYJRHTT5QJlAb9aw",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.kYJRHTT5QJlAb9aw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux membres se disputent la dernière bouteille de rhum arrangé.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qtn55UZ1LYRykpoB",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.qtn55UZ1LYRykpoB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un oiseau tombe dans la citerne : il faut la vider en partie.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TxnU6gcBdc9oRRxw",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.TxnU6gcBdc9oRRxw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vieux poste de radio se met à grésiller tout seul, sur une fréquence inconnue.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DnSyDkEqh3N9kvIn",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.DnSyDkEqh3N9kvIn",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le chien du camp ramène une chaussure d'enfant.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QdBtIVFhbWQfMw80",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.QdBtIVFhbWQfMw80",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une scolopendre dans la réserve de bois.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wkErg9HdhiQnVl9C",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.wkErg9HdhiQnVl9C",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un orage coupe le courant des panneaux ; les batteries sont au plus bas.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "X5U7WUGKSLHe8V0e",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.X5U7WUGKSLHe8V0e",
+      "type": "text",
+      "name": "",
+      "description": "<p>Quelqu'un a retrouvé une photo de famille dans une fouille et ne parle plus.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "UGEJbDhXfzn9CTC3",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.UGEJbDhXfzn9CTC3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les letchis du voisin sont mûrs, juste derrière la clôture.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "bp3HDNST6u8HoYtM",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.bp3HDNST6u8HoYtM",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une fumée à l'horizon, dans la direction de l'ancien abri.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tlJxH2C721btcPVg",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.tlJxH2C721btcPVg",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un membre du groupe chante en travaillant ; les autres reprennent.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "rgv8jTAsabItPF0f",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.rgv8jTAsabItPF0f",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des fourmis dans le sucre.</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "JlEmImIDEDbQH15g",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.JlEmImIDEDbQH15g",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide solitaire s'est coincé dans la clôture pendant la nuit.</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "l0Bi0XKsp3ajUJXG",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.l0Bi0XKsp3ajUJXG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cabri a mis bas : deux petits.</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

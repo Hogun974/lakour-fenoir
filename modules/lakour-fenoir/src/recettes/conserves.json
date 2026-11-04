@@ -1,0 +1,44 @@
+{
+  "_id": "CEdTYm3drLGlFkGd",
+  "_key": "!items!CEdTYm3drLGlFkGd",
+  "name": "Bocaux et boucané",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "conserves",
+    "description": "<p>Achards, rougails en bocaux, viande boucanée, poisson séché : ce qui allait pourrir tiendra des mois.</p>",
+    "cout": {
+      "nourriture": 4,
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "conserverie"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "ressource": "nourriture",
+      "n": 5
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "conserves"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "_id": "4CMsVOkhaf6mizsP",
+  "_key": "!tables!4CMsVOkhaf6mizsP",
+  "name": "Rumeurs de la radio",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on entend en tournant le bouton.</p>",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rumeurs-radio"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "NT9tc1HdCnfo6cHP",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.NT9tc1HdCnfo6cHP",
+      "type": "text",
+      "name": "",
+      "description": "<p>« … ici le port, évacuation par cargo jeudi, apportez vos papiers… » La voix se répète en boucle depuis trois semaines.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "q93morbzE4e9U8V1",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.q93morbzE4e9U8V1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un radioamateur affirme que Maurice a fermé ses ports et coulé un bateau de réfugiés.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Qcoa1XtJMVz9IG8E",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.Qcoa1XtJMVz9IG8E",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une femme répète une adresse à Saint-Pierre et le prénom de son fils, chaque soir à vingt heures.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZSL37fL4FexsRhLT",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.ZSL37fL4FexsRhLT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Quelqu'un prétend que les Livides ne montent pas au-dessus de mille mètres. C'est faux.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MaD73Lc1j3m9LkIf",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.MaD73Lc1j3m9LkIf",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pêcheur annonce un cyclone en formation au nord-est.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MwVyD3uLbP6kzoN0",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.MwVyD3uLbP6kzoN0",
+      "type": "text",
+      "name": "",
+      "description": "<p>On parle d'un médecin qui aurait un remède, au Dispensaire du Sud. On parle beaucoup.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hyGciWD5HOY9e2m5",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.hyGciWD5HOY9e2m5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une voix jeune propose de l'essence contre des médicaments, sans dire où.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VQr9QcWqyFzB4gIX",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.VQr9QcWqyFzB4gIX",
+      "type": "text",
+      "name": "",
+      "description": "<p>La Garnison annonce le recensement obligatoire des survivants.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xkj3LzmnbHtx00OR",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.xkj3LzmnbHtx00OR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des chants des Pèlerins de la Lave, diffusés depuis Sainte-Rose.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "X5kemw6eS6KzjMhB",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.X5kemw6eS6KzjMhB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un message en code, suivi de rires.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uYdegnst0MLDCFJN",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.uYdegnst0MLDCFJN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Quelqu'un décrit un îlet de Mafate où tout va bien. Trop bien.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "beGMdNImTV1xSAWL",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.beGMdNImTV1xSAWL",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une voix de la Coopérative cherche un vétérinaire.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8qG8Fy9PDELSxqYf",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.8qG8Fy9PDELSxqYf",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un avion aurait survolé l'île la nuit dernière. Personne ne l'a vu.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Ejsss2sgVBzntqMc",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.Ejsss2sgVBzntqMc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les Sans-Lune avertissent : « La lune est noire, payez. »</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "P3ttlcP4INDIy1WP",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.P3ttlcP4INDIy1WP",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un homme décrit une horde qui monte la route des Plaines.</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "L2Nt7phqJczZeHWf",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.L2Nt7phqJczZeHWf",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une émission de musique : quelqu'un passe des vieux maloyas, sans un mot.</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "r7CD1z8nX2zODfHi",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.r7CD1z8nX2zODfHi",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un appel à l'aide d'un phare.</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pGAPCraKCoeNGip4",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.pGAPCraKCoeNGip4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant lit un livre à voix haute, chaque matin, pour qui écoute.</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1Xl2rrcCqJWQhl81",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.1Xl2rrcCqJWQhl81",
+      "type": "text",
+      "name": "",
+      "description": "<p>On dit que la Fournaise va se réveiller ; les géologues de Bourg-Murat le disent aussi.</p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gj6ed8mQWa4xzNB2",
+      "_key": "!tables.results!4CMsVOkhaf6mizsP.gj6ed8mQWa4xzNB2",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le silence. Juste le souffle de la porteuse.</p>",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

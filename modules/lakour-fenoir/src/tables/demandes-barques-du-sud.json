@@ -1,0 +1,185 @@
+{
+  "_id": "vUkc7T2p5hrZTXjx",
+  "_key": "!tables!vUkc7T2p5hrZTXjx",
+  "name": "Demandes — Les Barques du Sud",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "demandes-barques-du-sud",
+      "appels": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "yd4wjG9MDesjvHwP",
+      "_key": "!tables.results!vUkc7T2p5hrZTXjx.yd4wjG9MDesjvHwP",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Les filets de la coopérative.</strong> Rapporter les filets et cordages d'un hangar de pêche de Saint-Leu.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "nourriture": 8
+            },
+            "faction": "barques-du-sud",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "dqNvpdwCb9Tb1SAc",
+      "_key": "!tables.results!vUkc7T2p5hrZTXjx.dqNvpdwCb9Tb1SAc",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — Le déchargement de nuit.</strong> Garder le quai pendant qu'une barque décharge à Saint-Philippe.</p><p><strong>Récompense :</strong> 6 nourriture, 2 carburant ; réputation +1.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "nourriture": 6,
+              "carburant": 2
+            },
+            "faction": "barques-du-sud",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "1vqXHaSt346p0fmS",
+      "_key": "!tables.results!vUkc7T2p5hrZTXjx.1vqXHaSt346p0fmS",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — Le hors-bord de la Marine.</strong> Remettre en état un moteur hors-bord noyé par la houle.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "nourriture": 8
+            },
+            "faction": "barques-du-sud",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "9gBNPXg8A4JFHFgw",
+      "_key": "!tables.results!vUkc7T2p5hrZTXjx.9gBNPXg8A4JFHFgw",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — La barque à la dérive.</strong> Une barque à la dérive au large de l'Étang-Salé, son pêcheur blessé à bord.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +3.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "nourriture": 10
+            },
+            "faction": "barques-du-sud",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "LJBLTr54Q3kDVLqW",
+      "_key": "!tables.results!vUkc7T2p5hrZTXjx.LJBLTr54Q3kDVLqW",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Poisson séché contre médicaments.</strong> Échanger des médicaments contre une réserve de poisson séché.</p><p><strong>Récompense :</strong> 12 nourriture ; réputation +1.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "nourriture": 12
+            },
+            "faction": "barques-du-sud",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "wcg6yqR30GPRSN4V",
+      "_key": "!tables.results!vUkc7T2p5hrZTXjx.wcg6yqR30GPRSN4V",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — Le passage de la route des Laves.</strong> Accompagner par la route une famille de pêcheurs qui rejoint Saint-Philippe.</p><p><strong>Récompense :</strong> 6 nourriture ; réputation +2.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "nourriture": 6
+            },
+            "faction": "barques-du-sud",
+            "reputation": 2
+          }
+        }
+      }
+    }
+  ]
+}

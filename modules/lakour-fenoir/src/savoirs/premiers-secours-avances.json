@@ -1,0 +1,29 @@
+{
+  "_id": "FWJGMPXts32KIKP3",
+  "_key": "!items!FWJGMPXts32KIKP3",
+  "name": "Premiers secours avancés",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "premiers-secours-avances",
+    "description": "<p>Arrêter une hémorragie, réduire une fracture, recoudre, poser une perfusion de fortune, reconnaître la dengue de la leptospirose, et savoir quand il n'y a plus rien à faire.</p>",
+    "apprentissage": "<p>Un passé d'infirmière, d'ambulancier, de pompier ou de soignant ; un manuel médical ; le Dispensaire du Sud contre service rendu.</p>",
+    "effets": "<p>Ouvre l'infirmerie niveau 2. +1 dé aux tests de soins. Un soin réussi d'une affliction économise 1 médicament (au moins 1).</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "premiers-secours-avances"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

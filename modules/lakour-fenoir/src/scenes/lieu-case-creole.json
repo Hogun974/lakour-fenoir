@@ -1,0 +1,995 @@
+{
+  "_id": "ZfoBtM3iOsnvtSOC",
+  "_key": "!scenes!ZfoBtM3iOsnvtSOC",
+  "name": "Lieu — Case créole à varangue",
+  "navName": "Lieu — Case créole à varangue",
+  "navigation": true,
+  "active": false,
+  "width": 2000,
+  "height": 1600,
+  "padding": 0,
+  "grid": {
+    "type": 1,
+    "size": 100,
+    "distance": 1.5,
+    "units": "m"
+  },
+  "tokenVision": true,
+  "environment": {
+    "darknessLevel": 0,
+    "globalLight": {
+      "enabled": true
+    }
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Niveau principal",
+      "elevation": {
+        "bottom": 0,
+        "top": null
+      },
+      "background": {
+        "color": "#18181b",
+        "src": "modules/lakour-fenoir/assets/cartes/lieu-case-creole.svg"
+      },
+      "_key": "!scenes.levels!ZfoBtM3iOsnvtSOC.defaultLevel0000",
+      "flags": {}
+    }
+  ],
+  "initialLevel": "defaultLevel0000",
+  "walls": [
+    {
+      "c": [
+        0,
+        0,
+        2000,
+        0
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "Zd5dHjVAHhwolyf0",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.Zd5dHjVAHhwolyf0",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        500,
+        500,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "BLoOzeita4TuWauf",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.BLoOzeita4TuWauf",
+      "flags": {}
+    },
+    {
+      "c": [
+        600,
+        500,
+        1100,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "T9YIJiyJOYOCzcuV",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.T9YIJiyJOYOCzcuV",
+      "flags": {}
+    },
+    {
+      "c": [
+        1200,
+        500,
+        1500,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "FbxMTsOGO03zCFRv",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.FbxMTsOGO03zCFRv",
+      "flags": {}
+    },
+    {
+      "c": [
+        1600,
+        600,
+        2000,
+        600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "PL0EUeuOZM22Al97",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.PL0EUeuOZM22Al97",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        1000,
+        600,
+        1000
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "pjiYF9V5QE4NZJOf",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.pjiYF9V5QE4NZJOf",
+      "flags": {}
+    },
+    {
+      "c": [
+        700,
+        1000,
+        1200,
+        1000
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "A0Vh5n66GDosUNke",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.A0Vh5n66GDosUNke",
+      "flags": {}
+    },
+    {
+      "c": [
+        1300,
+        1000,
+        1500,
+        1000
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "SwRDEj6xXfnYpBpe",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.SwRDEj6xXfnYpBpe",
+      "flags": {}
+    },
+    {
+      "c": [
+        1600,
+        1000,
+        2000,
+        1000
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "B3LJ5NCpzcmP7ok6",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.B3LJ5NCpzcmP7ok6",
+      "flags": {}
+    },
+    {
+      "c": [
+        0,
+        1600,
+        2000,
+        1600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "XD1aa1AHUBq57cHA",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.XD1aa1AHUBq57cHA",
+      "flags": {}
+    },
+    {
+      "c": [
+        0,
+        0,
+        0,
+        1600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "EMagEVZBfnR9xfGN",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.EMagEVZBfnR9xfGN",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        300,
+        300,
+        700
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "yEI5evGKBdY5VHlv",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.yEI5evGKBdY5VHlv",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        800,
+        300,
+        1000
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "gUCMckkK6RpltAtV",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.gUCMckkK6RpltAtV",
+      "flags": {}
+    },
+    {
+      "c": [
+        900,
+        500,
+        900,
+        700
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "osrR9yjMLfrO4oj6",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.osrR9yjMLfrO4oj6",
+      "flags": {}
+    },
+    {
+      "c": [
+        900,
+        800,
+        900,
+        1000
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "L3bsKC8DFeMB6GfB",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.L3bsKC8DFeMB6GfB",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        300,
+        1500,
+        700
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "XAhbyA76sqERkLHK",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.XAhbyA76sqERkLHK",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        800,
+        1500,
+        1000
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "4ZZpwSYbSV60ZHFP",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.4ZZpwSYbSV60ZHFP",
+      "flags": {}
+    },
+    {
+      "c": [
+        1600,
+        600,
+        1600,
+        800
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "pB7UAlQX8xarVv8y",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.pB7UAlQX8xarVv8y",
+      "flags": {}
+    },
+    {
+      "c": [
+        1600,
+        900,
+        1600,
+        1000
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "T4cneRgT0OMPpMdW",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.T4cneRgT0OMPpMdW",
+      "flags": {}
+    },
+    {
+      "c": [
+        2000,
+        0,
+        2000,
+        1600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "iRG2JUBauY6VZt7a",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.iRG2JUBauY6VZt7a",
+      "flags": {}
+    },
+    {
+      "c": [
+        500,
+        500,
+        600,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "hrzD5AbHGA1FreV3",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.hrzD5AbHGA1FreV3",
+      "flags": {}
+    },
+    {
+      "c": [
+        1100,
+        500,
+        1200,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "slP4dqHRIfoQVyLh",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.slP4dqHRIfoQVyLh",
+      "flags": {}
+    },
+    {
+      "c": [
+        600,
+        1000,
+        700,
+        1000
+      ],
+      "move": 20,
+      "sight": 0,
+      "light": 0,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "oCbLOw3YO1vS84dm",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.oCbLOw3YO1vS84dm",
+      "flags": {}
+    },
+    {
+      "c": [
+        1200,
+        1000,
+        1300,
+        1000
+      ],
+      "move": 20,
+      "sight": 0,
+      "light": 0,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "QAsu0HbrH2HO9a2N",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.QAsu0HbrH2HO9a2N",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        700,
+        300,
+        800
+      ],
+      "move": 20,
+      "sight": 0,
+      "light": 0,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "YzqefasUcrVAS4PG",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.YzqefasUcrVAS4PG",
+      "flags": {}
+    },
+    {
+      "c": [
+        900,
+        700,
+        900,
+        800
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "vUBID7k01gHqGvIS",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.vUBID7k01gHqGvIS",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        700,
+        1500,
+        800
+      ],
+      "move": 20,
+      "sight": 0,
+      "light": 0,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "9SYa7FuVZ8FWtHty",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.9SYa7FuVZ8FWtHty",
+      "flags": {}
+    },
+    {
+      "c": [
+        1600,
+        800,
+        1600,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "O7jmhdytBIhlj2Yw",
+      "_key": "!scenes.walls!ZfoBtM3iOsnvtSOC.O7jmhdytBIhlj2Yw",
+      "flags": {}
+    }
+  ],
+  "drawings": [
+    {
+      "x": 0,
+      "y": 0,
+      "shape": {
+        "type": "r",
+        "width": 2000,
+        "height": 1600
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Cour",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1000,
+      "_id": "anmALHdOytneNxAI",
+      "_key": "!scenes.drawings!ZfoBtM3iOsnvtSOC.anmALHdOytneNxAI",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 300,
+      "y": 300,
+      "shape": {
+        "type": "r",
+        "width": 1200,
+        "height": 200
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Varangue",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1001,
+      "_id": "b2IppTRPjlfzAh1R",
+      "_key": "!scenes.drawings!ZfoBtM3iOsnvtSOC.b2IppTRPjlfzAh1R",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 300,
+      "y": 500,
+      "shape": {
+        "type": "r",
+        "width": 600,
+        "height": 500
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Salle",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1002,
+      "_id": "WC3s6BsWnIhHBZFa",
+      "_key": "!scenes.drawings!ZfoBtM3iOsnvtSOC.WC3s6BsWnIhHBZFa",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 900,
+      "y": 500,
+      "shape": {
+        "type": "r",
+        "width": 600,
+        "height": 500
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Chambres",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1003,
+      "_id": "27PiZlRzcFHpYBmf",
+      "_key": "!scenes.drawings!ZfoBtM3iOsnvtSOC.27PiZlRzcFHpYBmf",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 1600,
+      "y": 600,
+      "shape": {
+        "type": "r",
+        "width": 400,
+        "height": 400
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Cuisine au feu de bois",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1004,
+      "_id": "YKskpaNEivcUEsXE",
+      "_key": "!scenes.drawings!ZfoBtM3iOsnvtSOC.YKskpaNEivcUEsXE",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    }
+  ],
+  "lights": [
+    {
+      "x": 1750,
+      "y": 750,
+      "elevation": 0,
+      "levels": [],
+      "walls": true,
+      "config": {
+        "dim": 3,
+        "bright": 1.5,
+        "color": "#ff9a40",
+        "alpha": 0.4,
+        "coloration": 1,
+        "luminosity": 0.5
+      },
+      "_id": "pJS0H4q0EFFpTMop",
+      "_key": "!scenes.lights!ZfoBtM3iOsnvtSOC.pJS0H4q0EFFpTMop",
+      "flags": {}
+    }
+  ],
+  "sounds": [
+    {
+      "name": "feu — Foyer",
+      "x": 1850,
+      "y": 850,
+      "elevation": 0,
+      "levels": [],
+      "radius": 4.5,
+      "path": "modules/lakour-mj-ia/assets/sons/feu.wav",
+      "repeat": true,
+      "volume": 0.35,
+      "walls": true,
+      "easing": true,
+      "hidden": false,
+      "locked": false,
+      "_id": "MGw2qa8AqtIN0GKH",
+      "_key": "!scenes.sounds!ZfoBtM3iOsnvtSOC.MGw2qa8AqtIN0GKH",
+      "flags": {}
+    }
+  ],
+  "regions": [],
+  "notes": [],
+  "tokens": [],
+  "tiles": [],
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lieu-case-creole",
+      "description": "Une case créole de bois sous tôle, sa varangue ouverte sur la cour, sa salle, ses chambres, sa cuisine au feu de bois à part, sa citerne, son letchi et son poulailler. Pour un premier abri, une visite chez un gramoun, une fouille, une nuit de siège.",
+      "plan": {
+        "largeur": 20,
+        "hauteur": 16,
+        "lumiere": "jour",
+        "pieces": [
+          {
+            "nom": "Cour",
+            "x": 0,
+            "y": 0,
+            "l": 20,
+            "h": 16,
+            "sol": "herbe"
+          },
+          {
+            "nom": "Varangue",
+            "x": 3,
+            "y": 3,
+            "l": 12,
+            "h": 2,
+            "sol": "bois"
+          },
+          {
+            "nom": "Salle",
+            "x": 3,
+            "y": 5,
+            "l": 6,
+            "h": 5,
+            "sol": "bois"
+          },
+          {
+            "nom": "Chambres",
+            "x": 9,
+            "y": 5,
+            "l": 6,
+            "h": 5,
+            "sol": "bois"
+          },
+          {
+            "nom": "Cuisine au feu de bois",
+            "x": 16,
+            "y": 6,
+            "l": 4,
+            "h": 4,
+            "sol": "terre"
+          }
+        ],
+        "ouvertures": [
+          {
+            "x": 3,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 14,
+            "y": 3,
+            "cote": "nord",
+            "type": "passage"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "cote": "nord",
+            "type": "porte"
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "cote": "nord",
+            "type": "porte"
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "cote": "est",
+            "type": "porte"
+          },
+          {
+            "x": 16,
+            "y": 8,
+            "cote": "ouest",
+            "type": "porte"
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "cote": "ouest",
+            "type": "fenetre"
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "cote": "est",
+            "type": "fenetre"
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "cote": "sud",
+            "type": "fenetre"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "cote": "sud",
+            "type": "fenetre"
+          }
+        ],
+        "lumieres": [
+          {
+            "x": 17,
+            "y": 7,
+            "rayon": 2,
+            "couleur": "#ff9a40"
+          }
+        ],
+        "elements": [
+          {
+            "nom": "Citerne",
+            "x": 1,
+            "y": 12,
+            "l": 2,
+            "h": 2
+          },
+          {
+            "nom": "Letchi",
+            "x": 6,
+            "y": 12,
+            "l": 3,
+            "h": 3
+          },
+          {
+            "nom": "Poulailler",
+            "x": 11,
+            "y": 13,
+            "l": 3,
+            "h": 2
+          },
+          {
+            "nom": "Foyer",
+            "x": 18,
+            "y": 8,
+            "l": 1,
+            "h": 1
+          },
+          {
+            "nom": "Table",
+            "x": 5,
+            "y": 7,
+            "l": 2,
+            "h": 1
+          },
+          {
+            "nom": "Lit",
+            "x": 12,
+            "y": 6,
+            "l": 2,
+            "h": 2
+          },
+          {
+            "nom": "Barrière",
+            "x": 0,
+            "y": 15,
+            "l": 20,
+            "h": 1
+          }
+        ]
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

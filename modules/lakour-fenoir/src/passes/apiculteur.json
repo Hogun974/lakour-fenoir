@@ -1,0 +1,48 @@
+{
+  "_id": "fcxdU4PNwxjhBYdc",
+  "_key": "!items!fcxdU4PNwxjhBYdc",
+  "name": "Apiculteur",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "apiculteur",
+    "description": "<p>Ses ruches sont dispersées entre la Plaine des Palmistes et les letchis de l'Est ; il produit du miel de baies roses et de forêt. Patient, calme, il sait se faire oublier des abeilles et des hommes.</p>",
+    "competences": {
+      "survie": 2,
+      "discretion": 2,
+      "endurance": 1,
+      "soins": 1,
+      "bricolage": 1
+    },
+    "savoirs": [
+      "elevage"
+    ],
+    "equipement": [
+      "couteau",
+      "quatre-quatre"
+    ],
+    "accroche": "<p>Il fait le tour de ses ruches en forêt quand il croise, sur la piste, un randonneur qui marche droit sur lui, une jambe brisée, sans boiter.</p>",
+    "region": "plaine-des-palmistes",
+    "incapacites": [],
+    "histoire": [
+      "Il a quitté un bureau de Saint-Denis pour ses ruches et ne l'a jamais regretté.",
+      "Il parle à ses abeilles, et prétend qu'elles lui répondent."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "apiculteur"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

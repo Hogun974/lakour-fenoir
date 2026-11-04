@@ -1,0 +1,41 @@
+{
+  "_id": "8aqgHi3ZUxy4IUE0",
+  "_key": "!items!8aqgHi3ZUxy4IUE0",
+  "name": "Cloches d'alerte",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "cloches",
+    "description": "<p>Des fils tendus, des boîtes de conserve, des clochettes de chèvre : un réseau d'alarme autour du camp.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "cloches-d-alerte",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cloches"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

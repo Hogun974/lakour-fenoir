@@ -1,0 +1,42 @@
+{
+  "_id": "fv8YrrD2rNKQHdLV",
+  "_key": "!items!fv8YrrD2rNKQHdLV",
+  "name": "Panneaux solaires démontables",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "panneaux-demontables",
+    "categorie": "energie",
+    "description": "<p>Deux panneaux pliants de camping-car, un régulateur, une batterie : de quoi recharger les lampes, la radio et les talkies, n'importe où. On les emporte en déménageant.</p>",
+    "bonus": {},
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "production": {
+        "energie": 1
+      },
+      "conditions": {
+        "soleil": true
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "panneaux-demontables"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "_id": "6taVN22OVlys8VFJ",
+  "_key": "!actors!6taVN22OVlys8VFJ",
+  "name": "La docteure Soundirassen",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/docteure-soundirassen.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 5,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [
+      "nuits-blanches",
+      "coeur-d-artichaut"
+    ],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 45,
+    "lien": "Dispensaire du Sud",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Urgentiste au grand hôpital du Sud, elle n'en est pas sortie depuis le jour zéro. Elle cherche un remède, et commence à trouver acceptables des choses qui ne l'étaient pas.</p>"
+  },
+  "items": [
+    {
+      "_id": "PYqMrRs4CzrsEwgT",
+      "_key": "!actors.items!6taVN22OVlys8VFJ.PYqMrRs4CzrsEwgT",
+      "name": "Premiers secours avancés",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "premiers-secours-avances",
+        "description": "<p>Arrêter une hémorragie, réduire une fracture, recoudre, poser une perfusion de fortune, reconnaître la dengue de la leptospirose, et savoir quand il n'y a plus rien à faire.</p>",
+        "apprentissage": "<p>Un passé d'infirmière, d'ambulancier, de pompier ou de soignant ; un manuel médical ; le Dispensaire du Sud contre service rendu.</p>",
+        "effets": "<p>Ouvre l'infirmerie niveau 2. +1 dé aux tests de soins. Un soin réussi d'une affliction économise 1 médicament (au moins 1).</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "premiers-secours-avances",
+          "source": "FWJGMPXts32KIKP3"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "xa4hLBLRKEYbIC3O",
+      "_key": "!actors.items!6taVN22OVlys8VFJ.xa4hLBLRKEYbIC3O",
+      "name": "Sac d'intervention médicale",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "sac-d-intervention",
+        "categorie": "soin",
+        "description": "<p>Le sac d'un ambulancier ou d'un pompier : oxygène, attelles, matériel de suture, perfusions, tensiomètre.</p>",
+        "bonus": {
+          "soins": 2
+        },
+        "charge": 2,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sac-d-intervention",
+          "source": "haopKUKIOz8Y7Bin"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "La docteure Soundirassen",
+    "actorLink": false,
+    "disposition": 1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/docteure-soundirassen.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "docteure-soundirassen",
+      "pnj": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

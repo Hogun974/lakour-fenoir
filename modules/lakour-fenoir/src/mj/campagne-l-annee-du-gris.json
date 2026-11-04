@@ -1,0 +1,162 @@
+{
+  "_id": "FjtINnarvYGdvPWD",
+  "_key": "!journal!FjtINnarvYGdvPWD",
+  "name": "Campagne — L'année du Gris",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "campagne-l-annee-du-gris",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "tm8ja2He5EzgYHNI",
+      "_key": "!journal.pages!FjtINnarvYGdvPWD.tm8ja2He5EzgYHNI",
+      "name": "Une campagne en fronts",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une campagne d'environ un an de jeu, faite de <strong>fronts</strong> : des menaces qui avancent avec l'horloge, que les joueurs croisent, retardent ou laissent mûrir. Chaque front a une horloge (moteur MJ IA, type « front ») de six segments ; faites avancer un segment quand le temps passe sans que personne ne s'en occupe, ou quand les joueurs l'aggravent ; reculer quand ils agissent. À six, le <strong>désastre</strong> arrive.</p><p>Les fronts se croisent : laissez les joueurs choisir lequel combattre, et montrez ce que coûtent les autres.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "principe"
+        }
+      }
+    },
+    {
+      "_id": "w11UsW0CNUqqwjmJ",
+      "_key": "!journal.pages!FjtINnarvYGdvPWD.w11UsW0CNUqqwjmJ",
+      "name": "Front 1 — Le Comptable",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Menace</strong> : les Sans-Lune étendent leur tribut à tout le Nord, puis vers l'Est et l'Ouest.<br>1. Des portes marquées à la bombe à Saint-Denis.<br>2. Un tribut exigé de chaque abri de Sainte-Marie.<br>3. Les Sans-Lune prennent un dépôt de carburant.<br>4. Ils s'allient avec un groupe de la Garnison (déserteurs).<br>5. Ils attaquent un abri autonome connu, pour l'exemple.<br>6. <strong>Désastre</strong> : le Comptable tient toute la côte nord ; tout abri du littoral paie ou brûle.<br><em>Leviers</em> : le jeune des Sans-Lune qui veut partir ; la liste du Comptable ; la Garnison qui le craint.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "front-comptable"
+        }
+      }
+    },
+    {
+      "_id": "Ggg1XwcvK3sDmbyv",
+      "_key": "!journal.pages!FjtINnarvYGdvPWD.Ggg1XwcvK3sDmbyv",
+      "name": "Front 2 — L'autorité provisoire",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Menace</strong> : la Garnison du Quai veut « recenser » et « réquisitionner » toute l'île.<br>1. Contrôles sur la route du Littoral.<br>2. Recensement des abris de l'Ouest.<br>3. Réquisition des soignants et des électriciens.<br>4. Un convoi armé monte vers les Hauts prendre le lait de la Coopérative.<br>5. La Garnison prend la centrale de la Rivière de l'Est.<br>6. <strong>Désastre</strong> : un régime de fer, qui protège et qui opprime ; plus de liberté, ou la guerre.<br><em>Leviers</em> : la commandante Hoarau croit vraiment bien faire ; ses soldats sont fatigués ; un cargo pourrait vraiment venir.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "front-garnison"
+        }
+      }
+    },
+    {
+      "_id": "sMZVNbR0512MlS63",
+      "_key": "!journal.pages!FjtINnarvYGdvPWD.sMZVNbR0512MlS63",
+      "name": "Front 3 — Les Hauts froids",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Menace</strong> : l'hiver austral rassemble les Livides des Hauts en troupes immenses, figées la nuit, réveillées le jour.<br>1. Des Livides figés de givre au bord des routes (juin).<br>2. Une troupe descend la route des Plaines.<br>3. Une ferme de la Coopérative tombe.<br>4. La troupe encercle Bourg-Murat.<br>5. Elle descend vers Le Tampon au premier jour chaud.<br>6. <strong>Désastre</strong> : la plus grande horde de l'île, lente et inarrêtable, sur la route de Saint-Pierre.<br><em>Leviers</em> : le froid de la nuit (on passe entre eux à l'aube) ; la chaleur des Bas qui les défera s'ils y descendent… avec tout ce qu'ils écraseront en chemin.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "front-hauts"
+        }
+      }
+    },
+    {
+      "_id": "sYCpIZxq1sQjnjHP",
+      "_key": "!journal.pages!FjtINnarvYGdvPWD.sYCpIZxq1sQjnjHP",
+      "name": "Front 4 — La Fournaise",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Menace</strong> : le volcan se réveille.<br>1. Les géologues de Bourg-Murat enregistrent des séismes.<br>2. Le sol se gonfle ; les Pèlerins prêchent l'épreuve.<br>3. Une fissure s'ouvre dans l'Enclos.<br>4. La coulée descend vers le Grand Brûlé.<br>5. Elle coupe la route des Laves.<br>6. <strong>Désastre</strong> : une éruption hors Enclos menace Saint-Philippe ou Sainte-Rose, et les Pèlerins refusent de partir.<br><em>Leviers</em> : le tunnel de lave aménagé (refuge ou piège) ; les Barques du Sud (évacuation par la mer).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "front-fournaise"
+        }
+      }
+    },
+    {
+      "_id": "vWQRSJKC5A0x7ycQ",
+      "_key": "!journal.pages!FjtINnarvYGdvPWD.vWQRSJKC5A0x7ycQ",
+      "name": "Front 5 — Le remède",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Menace</strong> : la docteure Soundirassen croit tenir une piste… et elle a besoin de cobayes.<br>1. Elle demande des Livides entiers.<br>2. Elle demande des infectés vivants.<br>3. Un enfant mordu ne s'est pas transformé : elle le veut.<br>4. Les Pèlerins apprennent ce qu'elle fait.<br>5. Les Pèlerins marchent sur l'hôpital.<br>6. <strong>Désastre</strong> : le Dispensaire brûle, ou le remède échoue en tuant ceux qu'il devait sauver — ou il marche, à moitié, et tout le monde le veut.<br><em>Le contenu ne fixe pas la vérité sur le Gris : à vous de décider si ce front mène quelque part.</em></p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "front-remede"
+        }
+      }
+    }
+  ]
+}

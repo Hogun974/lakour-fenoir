@@ -1,0 +1,48 @@
+{
+  "_id": "mDS9ArFvFPQHBuFa",
+  "_key": "!items!mDS9ArFvFPQHBuFa",
+  "name": "Électricien",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "electricien",
+    "description": "<p>Artisan installateur, il a posé des panneaux sur la moitié des toits de l'Ouest et câblé des cases dans les îlets. Il sait où sont les onduleurs, les batteries et les dépôts de matériel.</p>",
+    "competences": {
+      "bricolage": 3,
+      "conduite": 1,
+      "endurance": 1,
+      "vigilance": 1,
+      "parole": 1
+    },
+    "savoirs": [
+      "electricite-solaire"
+    ],
+    "equipement": [
+      "caisse-a-outils",
+      "scooter"
+    ],
+    "accroche": "<p>Il est sur un toit de Saint-Gilles, à finir une installation, quand il voit la file de voitures se figer sur la route des Tamarins et des gens courir entre elles.</p>",
+    "region": "saint-paul",
+    "incapacites": [],
+    "histoire": [
+      "Il a monté son entreprise seul, avec une camionnette et un crédit qu'il rembourse encore.",
+      "Il dit toujours qu'un toit sans panneau est un toit qui dort."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "electricien"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

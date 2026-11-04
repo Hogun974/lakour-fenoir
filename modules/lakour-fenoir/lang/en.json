@@ -1,0 +1,16 @@
+{
+  "LAKOURFENOIR": {
+    "Titre": "Fénoir",
+    "Proposer": "Install the Fénoir content in this world? Player guides, GM journals (hidden) and the map of Réunion will be imported; faction reputation clocks will be created if the AI GM is active. Everything else stays in the compendiums.",
+    "Installe": "Fénoir installed: {liste}.",
+    "RienDeNeuf": "everything was already in place",
+    "Ouvrir": "Install",
+    "Aide": "Imports the guides, GM journals and the map of Réunion into this world.",
+    "MauvaisSysteme": "This world does not use the La Kour Survie system: nothing to install.",
+    "Erreurs": {
+      "Donnees": "Fénoir: cannot read assets/donnees.json ({erreur}). The island content is not registered.",
+      "Installation": "Fénoir: installation interrupted ({erreur}). Details in the console (F12)."
+    },
+    "Reputations": "{n} faction reputation clock(s) ensured."
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "_id": "8rjCMeRcZPMugmgH",
+  "_key": "!items!8rjCMeRcZPMugmgH",
+  "name": "Pico-hydro sur rivière",
+  "type": "installation",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "cle": "pico-hydro",
+    "categorie": "energie",
+    "description": "<p>Une petite turbine dans une dérivation de la rivière : jour et nuit, pluie ou soleil, elle tourne. Les rivières pérennes des cirques et de l'Est s'y prêtent ; une crue peut tout emporter.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 16
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 6,
+          "graines": 0,
+          "travail": 16
+        },
+        "requiert": {
+          "savoirs": [
+            "hydraulique-rurale"
+          ],
+          "site": {
+            "eau": [
+              "riviere"
+            ],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "energie": 4
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": true,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 6,
+          "pieces": 10,
+          "graines": 0,
+          "travail": 24
+        },
+        "requiert": {
+          "savoirs": [
+            "hydraulique-rurale",
+            "electricite-solaire"
+          ],
+          "site": {
+            "eau": [
+              "riviere"
+            ],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "energie": 10
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": true,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pico-hydro"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

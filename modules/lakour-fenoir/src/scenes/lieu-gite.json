@@ -1,0 +1,782 @@
+{
+  "_id": "57YDByw4MkyvUj8V",
+  "_key": "!scenes!57YDByw4MkyvUj8V",
+  "name": "Lieu — Gîte de montagne",
+  "navName": "Lieu — Gîte de montagne",
+  "navigation": true,
+  "active": false,
+  "width": 2000,
+  "height": 1400,
+  "padding": 0,
+  "grid": {
+    "type": 1,
+    "size": 100,
+    "distance": 1.5,
+    "units": "m"
+  },
+  "tokenVision": true,
+  "environment": {
+    "darknessLevel": 0.5,
+    "globalLight": {
+      "enabled": false
+    }
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Niveau principal",
+      "elevation": {
+        "bottom": 0,
+        "top": null
+      },
+      "background": {
+        "color": "#18181b",
+        "src": "modules/lakour-fenoir/assets/cartes/lieu-gite.svg"
+      },
+      "_key": "!scenes.levels!57YDByw4MkyvUj8V.defaultLevel0000",
+      "flags": {}
+    }
+  ],
+  "initialLevel": "defaultLevel0000",
+  "walls": [
+    {
+      "c": [
+        0,
+        0,
+        2000,
+        0
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "hoGPyhwE3ZXaENa6",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.hoGPyhwE3ZXaENa6",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        300,
+        800,
+        300
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "J5PFBxLn4tWaHnvI",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.J5PFBxLn4tWaHnvI",
+      "flags": {}
+    },
+    {
+      "c": [
+        900,
+        300,
+        1700,
+        300
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "S0hlkEn1ThIDN4jd",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.S0hlkEn1ThIDN4jd",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        900,
+        600,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "YTz5VnmK0SryLmpP",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.YTz5VnmK0SryLmpP",
+      "flags": {}
+    },
+    {
+      "c": [
+        700,
+        900,
+        1200,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "gDgHxDmbdyXqfzyT",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.gDgHxDmbdyXqfzyT",
+      "flags": {}
+    },
+    {
+      "c": [
+        1300,
+        900,
+        1700,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "7RGB8UCqgj33EFtO",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.7RGB8UCqgj33EFtO",
+      "flags": {}
+    },
+    {
+      "c": [
+        1100,
+        1100,
+        1400,
+        1100
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "CPtftxNyRRo99Kfk",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.CPtftxNyRRo99Kfk",
+      "flags": {}
+    },
+    {
+      "c": [
+        0,
+        1400,
+        2000,
+        1400
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "AykHWNpIgCtbwRZy",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.AykHWNpIgCtbwRZy",
+      "flags": {}
+    },
+    {
+      "c": [
+        0,
+        0,
+        0,
+        1400
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "fix3oXL2dychLDSh",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.fix3oXL2dychLDSh",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        300,
+        300,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "6L7mIFz9eqo2eNI7",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.6L7mIFz9eqo2eNI7",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        600,
+        300,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "GwldnzIHSb3kHsFb",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.GwldnzIHSb3kHsFb",
+      "flags": {}
+    },
+    {
+      "c": [
+        1100,
+        300,
+        1100,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "3GUgzmIVY1TGKfCB",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.3GUgzmIVY1TGKfCB",
+      "flags": {}
+    },
+    {
+      "c": [
+        1100,
+        600,
+        1100,
+        1100
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "LmxizfPGj5rQIioK",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.LmxizfPGj5rQIioK",
+      "flags": {}
+    },
+    {
+      "c": [
+        1400,
+        900,
+        1400,
+        1100
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "s7MB37TWm5u6zWKt",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.s7MB37TWm5u6zWKt",
+      "flags": {}
+    },
+    {
+      "c": [
+        1700,
+        300,
+        1700,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "jwI67Ai3ev41CizB",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.jwI67Ai3ev41CizB",
+      "flags": {}
+    },
+    {
+      "c": [
+        1700,
+        600,
+        1700,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "brZGSHSQKjL2Uj5F",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.brZGSHSQKjL2Uj5F",
+      "flags": {}
+    },
+    {
+      "c": [
+        2000,
+        0,
+        2000,
+        1400
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "BmRVc8bQnAjx0s4i",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.BmRVc8bQnAjx0s4i",
+      "flags": {}
+    },
+    {
+      "c": [
+        800,
+        300,
+        900,
+        300
+      ],
+      "move": 20,
+      "sight": 0,
+      "light": 0,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "4nB17ufPHR6l7ruV",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.4nB17ufPHR6l7ruV",
+      "flags": {}
+    },
+    {
+      "c": [
+        600,
+        900,
+        700,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "DUSenpzyJPGjm29r",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.DUSenpzyJPGjm29r",
+      "flags": {}
+    },
+    {
+      "c": [
+        1200,
+        900,
+        1300,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "JaCbLDQBcfwDI9Br",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.JaCbLDQBcfwDI9Br",
+      "flags": {}
+    },
+    {
+      "c": [
+        300,
+        500,
+        300,
+        600
+      ],
+      "move": 20,
+      "sight": 0,
+      "light": 0,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "osJOcqkG1MQJcyYp",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.osJOcqkG1MQJcyYp",
+      "flags": {}
+    },
+    {
+      "c": [
+        1100,
+        500,
+        1100,
+        600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "MUwKiMMGkpdijjH6",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.MUwKiMMGkpdijjH6",
+      "flags": {}
+    },
+    {
+      "c": [
+        1700,
+        500,
+        1700,
+        600
+      ],
+      "move": 20,
+      "sight": 0,
+      "light": 0,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "TB9hs3AHBmFYEDNw",
+      "_key": "!scenes.walls!57YDByw4MkyvUj8V.TB9hs3AHBmFYEDNw",
+      "flags": {}
+    }
+  ],
+  "drawings": [
+    {
+      "x": 0,
+      "y": 0,
+      "shape": {
+        "type": "r",
+        "width": 2000,
+        "height": 1400
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Clairière",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1000,
+      "_id": "TeW3oOBH5XyxDkZ4",
+      "_key": "!scenes.drawings!57YDByw4MkyvUj8V.TeW3oOBH5XyxDkZ4",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 300,
+      "y": 300,
+      "shape": {
+        "type": "r",
+        "width": 800,
+        "height": 600
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Salle commune",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1001,
+      "_id": "nwjgumhrErquY4uq",
+      "_key": "!scenes.drawings!57YDByw4MkyvUj8V.nwjgumhrErquY4uq",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 1100,
+      "y": 300,
+      "shape": {
+        "type": "r",
+        "width": 600,
+        "height": 600
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Dortoir",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1002,
+      "_id": "zOgw4lkq75CILHUH",
+      "_key": "!scenes.drawings!57YDByw4MkyvUj8V.zOgw4lkq75CILHUH",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 1100,
+      "y": 900,
+      "shape": {
+        "type": "r",
+        "width": 300,
+        "height": 200
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Sanitaires",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1003,
+      "_id": "WesUNzlxCLgiTtMh",
+      "_key": "!scenes.drawings!57YDByw4MkyvUj8V.WesUNzlxCLgiTtMh",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    }
+  ],
+  "lights": [
+    {
+      "x": 450,
+      "y": 450,
+      "elevation": 0,
+      "levels": [],
+      "walls": true,
+      "config": {
+        "dim": 4.5,
+        "bright": 2.5,
+        "color": "#ff9a40",
+        "alpha": 0.4,
+        "coloration": 1,
+        "luminosity": 0.5
+      },
+      "_id": "BEux0O2nftshpxpc",
+      "_key": "!scenes.lights!57YDByw4MkyvUj8V.BEux0O2nftshpxpc",
+      "flags": {}
+    }
+  ],
+  "sounds": [
+    {
+      "name": "foule — Salle commune",
+      "x": 700,
+      "y": 600,
+      "elevation": 0,
+      "levels": [],
+      "radius": 7.5,
+      "path": "modules/lakour-mj-ia/assets/sons/foule.wav",
+      "repeat": true,
+      "volume": 0.2,
+      "walls": true,
+      "easing": true,
+      "hidden": false,
+      "locked": false,
+      "_id": "qxRd0futv4VhZlul",
+      "_key": "!scenes.sounds!57YDByw4MkyvUj8V.qxRd0futv4VhZlul",
+      "flags": {}
+    }
+  ],
+  "regions": [],
+  "notes": [],
+  "tokens": [],
+  "tiles": [],
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lieu-gite",
+      "description": "Un gîte de randonneurs des Hauts ou d'un cirque : salle commune et son poêle, dortoir, sanitaires, citerne, réserve de bois, clairière dans le brouillard. Pour une halte sur un sentier, un refuge assiégé, une rencontre avec d'autres survivants.",
+      "plan": {
+        "largeur": 20,
+        "hauteur": 14,
+        "lumiere": "penombre",
+        "pieces": [
+          {
+            "nom": "Clairière",
+            "x": 0,
+            "y": 0,
+            "l": 20,
+            "h": 14,
+            "sol": "herbe"
+          },
+          {
+            "nom": "Salle commune",
+            "x": 3,
+            "y": 3,
+            "l": 8,
+            "h": 6,
+            "sol": "bois"
+          },
+          {
+            "nom": "Dortoir",
+            "x": 11,
+            "y": 3,
+            "l": 6,
+            "h": 6,
+            "sol": "bois"
+          },
+          {
+            "nom": "Sanitaires",
+            "x": 11,
+            "y": 9,
+            "l": 3,
+            "h": 2,
+            "sol": "pierre"
+          }
+        ],
+        "ouvertures": [
+          {
+            "x": 6,
+            "y": 8,
+            "cote": "sud",
+            "type": "porte"
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "cote": "ouest",
+            "type": "porte"
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "cote": "nord",
+            "type": "porte"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "cote": "ouest",
+            "type": "fenetre"
+          },
+          {
+            "x": 16,
+            "y": 5,
+            "cote": "est",
+            "type": "fenetre"
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "cote": "nord",
+            "type": "fenetre"
+          }
+        ],
+        "lumieres": [
+          {
+            "x": 4,
+            "y": 4,
+            "rayon": 3,
+            "couleur": "#ff9a40"
+          }
+        ],
+        "elements": [
+          {
+            "nom": "Poêle",
+            "x": 4,
+            "y": 4,
+            "l": 1,
+            "h": 1
+          },
+          {
+            "nom": "Grande table",
+            "x": 6,
+            "y": 5,
+            "l": 3,
+            "h": 2
+          },
+          {
+            "nom": "Lits superposés",
+            "x": 12,
+            "y": 4,
+            "l": 4,
+            "h": 1
+          },
+          {
+            "nom": "Lits superposés",
+            "x": 12,
+            "y": 7,
+            "l": 4,
+            "h": 1
+          },
+          {
+            "nom": "Citerne",
+            "x": 17,
+            "y": 10,
+            "l": 2,
+            "h": 2
+          },
+          {
+            "nom": "Tas de bois",
+            "x": 1,
+            "y": 10,
+            "l": 3,
+            "h": 1
+          },
+          {
+            "nom": "Panneau des sentiers",
+            "x": 9,
+            "y": 12,
+            "l": 1,
+            "h": 1
+          }
+        ]
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

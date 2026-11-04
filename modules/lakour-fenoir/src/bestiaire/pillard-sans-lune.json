@@ -1,0 +1,122 @@
+{
+  "_id": "DxCJXL8SGAzaEaBU",
+  "_key": "!actors!DxCJXL8SGAzaEaBU",
+  "name": "Pillard des Sans-Lune",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/pillard-sans-lune.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 3,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 30,
+    "lien": "",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Visage noirci, vêtements sombres, un sabre ou un fusil, et la liste du Comptable dans la poche : un homme de la bande qui tient Saint-Denis la nuit.</p><p><strong>Comportement.</strong> Attaque à plusieurs, de nuit, et se retire si ça coûte trop cher. Négocie un tribut avant de frapper.</p><p><strong>Faiblesse.</strong> Il tient à sa vie plus qu'à la bande : un coup dur et il fuit.</p><p><strong>Dés d'attaque :</strong> 2 — <strong>résistance :</strong> 2 — <strong>vitesse :</strong> marche.</p>"
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Pillard des Sans-Lune",
+    "actorLink": false,
+    "disposition": -1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/pillard-sans-lune.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pillard-sans-lune",
+      "pnj": true,
+      "bestiaire": {
+        "categorie": "humain",
+        "des": 2,
+        "resistance": 2,
+        "vitesse": "marche"
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

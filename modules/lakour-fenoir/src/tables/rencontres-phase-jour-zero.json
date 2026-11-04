@@ -1,0 +1,178 @@
+{
+  "_id": "jCRjs1WtyFPo21up",
+  "_key": "!tables!jCRjs1WtyFPo21up",
+  "name": "Rencontres — phase jour-zero",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une rencontre typique de la phase « jour-zero ».</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rencontres-phase-jour-zero",
+      "phase": "jour-zero"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "aDz2BXeBE263bLLK",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.aDz2BXeBE263bLLK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un embouteillage monstre, des gens qui hurlent, une ambulance bloquée au milieu.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "P9tvLt5NoUGghajc",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.P9tvLt5NoUGghajc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un voisin qui frappe à la porte : sa femme a de la fièvre et le mord.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qXblVJs1lYQjxG8I",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.qXblVJs1lYQjxG8I",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un barrage de gendarmerie qui ne laisse passer personne vers l'aéroport.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "btAETXksn2BSsBzf",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.btAETXksn2BSsBzf",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un supermarché pris d'assaut, rayons vides, caissières en larmes.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "bDaazSmNR31HaAQ7",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.bDaazSmNR31HaAQ7",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une foule devant une pharmacie qui ferme son rideau.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5PpAcPck2IHEFVKJ",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.5PpAcPck2IHEFVKJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un coureur qui surgit d'un parking en hurlant.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sdiWed94wpLEKTuq",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.sdiWed94wpLEKTuq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une radio qui annonce un « malaise collectif » et demande de rester chez soi.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "f8yDCCqvm2fkkLiB",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.f8yDCCqvm2fkkLiB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un bus scolaire arrêté, portes ouvertes, enfants dispersés.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9dxrHhNneHa4YG66",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.9dxrHhNneHa4YG66",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une église pleine où l'on prie à voix haute.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "rWEm6iOCQkL0L9t4",
+      "_key": "!tables.results!jCRjs1WtyFPo21up.rWEm6iOCQkL0L9t4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un policier municipal qui tire en l'air pour disperser une foule.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

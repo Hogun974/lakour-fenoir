@@ -1,0 +1,37 @@
+{
+  "_id": "F3GL6XW5TfMujoWT",
+  "_key": "!items!F3GL6XW5TfMujoWT",
+  "name": "Tente et bâche",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "tente",
+    "categorie": "vie",
+    "description": "<p>Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate.</p>",
+    "bonus": {
+      "survie": 1
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tente"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

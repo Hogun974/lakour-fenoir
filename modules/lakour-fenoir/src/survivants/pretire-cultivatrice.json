@@ -1,0 +1,270 @@
+{
+  "_id": "IGqceB32b2ArsFPH",
+  "_key": "!actors!IGqceB32b2ArsFPH",
+  "name": "Valliamée Narayanin, agricultrice des Hauts",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/pretire-cultivatrice.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 1,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "enfant-de-la-plaine-des-cafres",
+    "passe": "agricultrice-des-hauts",
+    "passions": {
+      "survie": 2
+    },
+    "traits": [
+      "doigts-de-terre",
+      "coeur-de-kour"
+    ],
+    "incapacites": [],
+    "statut": "joueur",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 47,
+    "lien": "",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Elle tient une ferme laitière de la Plaine des Cafres avec son frère. Elle sait faire vivre une famille d'une terre, et elle compte bien continuer.</p>"
+  },
+  "items": [
+    {
+      "_id": "exQv1ZprSReoL6NJ",
+      "_key": "!actors.items!IGqceB32b2ArsFPH.exQv1ZprSReoL6NJ",
+      "name": "Élevage",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "elevage",
+        "description": "<p>Poules péi, cabris, cochons, chiens, abeilles, tilapias : nourrir, soigner, faire naître, abattre proprement, ne pas épuiser son troupeau.</p>",
+        "apprentissage": "<p>Un passé d'agriculteur des Hauts ou d'apiculteur ; une ferme de la Plaine des Cafres ; un ancien de Mafate.</p>",
+        "effets": "<p>Ouvre la basse-cour, l'enclos à cabris, les ruches et les chiens de garde niveau 2, le bassin à tilapias niveau 2.</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "elevage",
+          "source": "FX3eGZZ2Q5oWiPk0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "2D7pvzep0X2OQJI6",
+      "_key": "!actors.items!IGqceB32b2ArsFPH.2D7pvzep0X2OQJI6",
+      "name": "Maraîchage tropical",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "maraichage-tropical",
+        "description": "<p>Savoir ce qui pousse ici, quand et comment : brèdes, songes, patates douces, manioc, chouchous, piments, haricots ; semer avant les pluies, pailler contre le soleil de l'Ouest, protéger du vent des Hauts.</p>",
+        "apprentissage": "<p>Un passé d'agriculteur ou de planteur ; le CDI d'un collège ; les conseils d'un ancien de la Coopérative des Plaines ou des Familles des Îlets ; une saison complète de potager réussie.</p>",
+        "effets": "<p>Ouvre le potager niveaux 2 et 3, la serre niveau 2, le compost niveau 2 et le camouflage niveau 3. +1 dé aux tests de survie pour cultiver et cueillir.</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "maraichage-tropical",
+          "source": "UHa00stDlln6OD0d"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "hWJjTibGHQPv950F",
+      "_key": "!actors.items!IGqceB32b2ArsFPH.hWJjTibGHQPv950F",
+      "name": "Fusil de chasse calibre 12",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "fusil-de-chasse",
+        "categorie": "arme-a-feu",
+        "description": "<p>Le fusil de chasse d'un chasseur des Hauts, superposé ou à pompe. Terrible à courte portée. Chaque coup s'entend à des kilomètres.</p>",
+        "bonus": {
+          "tir": 2
+        },
+        "charge": 2,
+        "usure": 0,
+        "munitions": 1,
+        "bruit": 2,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "fusil-de-chasse",
+          "source": "n3f2wGUmK2bCA5ZZ"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "Mw89gjyx1TZkEGTU",
+      "_key": "!actors.items!IGqceB32b2ArsFPH.Mw89gjyx1TZkEGTU",
+      "name": "Cheval de la Plaine des Cafres",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "cheval-de-la-plaine",
+        "categorie": "transport",
+        "description": "<p>Un cheval d'un centre équestre de la Plaine des Cafres : plus rapide qu'à pied sur les pistes et les prairies, sûr sur les sentiers larges. Il faut le nourrir, l'abreuver, le garder des Livides.</p>",
+        "bonus": {
+          "endurance": 1
+        },
+        "charge": 0,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 1,
+        "transport": {
+          "mode": "pied",
+          "places": 1,
+          "chargeMax": 6,
+          "carburantParQuart": 0,
+          "terrains": [
+            "route",
+            "piste",
+            "sentier"
+          ],
+          "bruit": 1
+        },
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "cheval-de-la-plaine",
+          "source": "Z7QQhuzYx0KyQRg6"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Valliamée Narayanin, agricultrice des Hauts",
+    "actorLink": true,
+    "disposition": 1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/pretire-cultivatrice.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pretire-cultivatrice",
+      "pnj": false,
+      "pretire": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

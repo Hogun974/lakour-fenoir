@@ -1,0 +1,178 @@
+{
+  "_id": "ak1hKfxxnBlIq2Xl",
+  "_key": "!tables!ak1hKfxxnBlIq2Xl",
+  "name": "Rencontres — phase effondrement",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une rencontre typique de la phase « effondrement ».</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rencontres-phase-effondrement",
+      "phase": "effondrement"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "NQpsEh1mqrDwIAkw",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.NQpsEh1mqrDwIAkw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les lumières s'éteignent sur tout un quartier.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6IlahK34KEmoaUw2",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.6IlahK34KEmoaUw2",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une horde qui sort d'une ville par la quatre-voies.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "IttJl975HDNwMZ9w",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.IttJl975HDNwMZ9w",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un groupe de survivants qui négocie un échange depuis un toit.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "bv6j0lxoXqiggGRv",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.bv6j0lxoXqiggGRv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une citerne de camion renversée, qui fuit son gasoil.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZZ0KA6Y5zzoFkV5X",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.ZZ0KA6Y5zzoFkV5X",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant seul dans une case vide.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CPiaAxjTpnzch3gY",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.CPiaAxjTpnzch3gY",
+      "type": "text",
+      "name": "",
+      "description": "<p>La Garnison qui réquisitionne un camion à un carrefour.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sTEI9rmXgfRcbTG2",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.sTEI9rmXgfRcbTG2",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une maison barricadée dont les occupants tirent sur tout ce qui approche.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KVHUqkDgzypnQzWE",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.KVHUqkDgzypnQzWE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un incendie que personne n'éteint.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "EY1o2qaw3I7oto6q",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.EY1o2qaw3I7oto6q",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un appel à l'aide sur une fréquence radio.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "O3YtSuKcRQyG5dfq",
+      "_key": "!tables.results!ak1hKfxxnBlIq2Xl.O3YtSuKcRQyG5dfq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un malade caché parmi des réfugiés.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

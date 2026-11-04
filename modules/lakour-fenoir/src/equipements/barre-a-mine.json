@@ -1,0 +1,38 @@
+{
+  "_id": "AGkAlItFs45sN3Ts",
+  "_key": "!items!AGkAlItFs45sN3Ts",
+  "name": "Barre à mine",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "barre-a-mine",
+    "categorie": "arme",
+    "description": "<p>Un mètre cinquante d'acier : on force une porte, on soulève une dalle, on tient un Livide à distance. Lourde.</p>",
+    "bonus": {
+      "combat": 1,
+      "bricolage": 1
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "barre-a-mine"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

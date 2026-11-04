@@ -1,0 +1,37 @@
+{
+  "_id": "gRaW040bdNTirY7E",
+  "_key": "!items!gRaW040bdNTirY7E",
+  "name": "Arc de chasse",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "arc-de-chasse",
+    "categorie": "arme",
+    "description": "<p>Un arc à poulies d'un club de tir à l'arc ou un arc de fabrication maison. Silencieux, les flèches se récupèrent.</p>",
+    "bonus": {
+      "tir": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "arc-de-chasse"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

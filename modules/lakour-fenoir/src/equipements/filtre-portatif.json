@@ -1,0 +1,37 @@
+{
+  "_id": "08IbF38WuKp6VrO5",
+  "_key": "!items!08IbF38WuKp6VrO5",
+  "name": "Gourde filtrante",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "filtre-portatif",
+    "categorie": "vie",
+    "description": "<p>Une gourde à filtre de randonneur : l'eau de la ravine devient buvable pour une personne, sans bouillir.</p>",
+    "bonus": {
+      "survie": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "filtre-portatif"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

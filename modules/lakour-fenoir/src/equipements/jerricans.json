@@ -1,0 +1,35 @@
+{
+  "_id": "wXr1B7QmyHAbya4x",
+  "_key": "!items!wXr1B7QmyHAbya4x",
+  "name": "Jerricans",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "jerricans",
+    "categorie": "vie",
+    "description": "<p>Deux jerricans de vingt litres : de l'eau, de l'essence, de quoi transporter ce qui compte.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "jerricans"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

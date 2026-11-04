@@ -1,0 +1,50 @@
+{
+  "_id": "67ROrl81zV2fhWwD",
+  "_key": "!items!67ROrl81zV2fhWwD",
+  "name": "Habitant d'un îlet de Mafate",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "ilette-de-mafate",
+    "description": "<p>Il est né à Roche-Plate, a porté des sacs de ciment sur les sentiers avant que l'hélicoptère les monte, cultive ses lentilles et ses patates, et connaît chaque famille du cirque.</p>",
+    "competences": {
+      "endurance": 3,
+      "survie": 2,
+      "vigilance": 1,
+      "parole": 1
+    },
+    "savoirs": [
+      "hydraulique-rurale",
+      "electricite-solaire"
+    ],
+    "equipement": [
+      "sabre-a-canne",
+      "sac-de-randonnee"
+    ],
+    "accroche": "<p>Le jour zéro, rien ne se passe à Mafate. Le lendemain, des randonneurs descendent du Maïdo en racontant ce qu'ils ont vu en bas.</p>",
+    "region": "mafate",
+    "incapacites": [
+      "conduite"
+    ],
+    "histoire": [
+      "Il n'est descendu en ville qu'une poignée de fois et n'y a jamais dormi.",
+      "Il connaît chaque famille du cirque et chaque source."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ilette-de-mafate"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

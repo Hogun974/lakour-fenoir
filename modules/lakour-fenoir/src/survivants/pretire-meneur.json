@@ -1,0 +1,271 @@
+{
+  "_id": "mpXS6zfK51MgTxYa",
+  "_key": "!actors!mpXS6zfK51MgTxYa",
+  "name": "Firmin Boyer, retraité de la marine",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/pretire-meneur.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 2,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "enfance-sur-un-bateau",
+    "passe": "retraite-de-la-marine",
+    "passions": {
+      "parole": 2
+    },
+    "traits": [
+      "sang-de-basalte",
+      "creole-de-coeur"
+    ],
+    "incapacites": [
+      "travaux-lourds"
+    ],
+    "statut": "joueur",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 64,
+    "lien": "",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Trente ans de marine, une voix qui porte, un dos qui ne porte plus. Il sait commander sans crier et écouter sans juger.</p>"
+  },
+  "items": [
+    {
+      "_id": "pIvAlNAaAIUjGldb",
+      "_key": "!actors.items!mpXS6zfK51MgTxYa.pIvAlNAaAIUjGldb",
+      "name": "Radio et transmissions",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "radio",
+        "description": "<p>Monter une antenne, trouver les fréquences, émettre sans se faire repérer, réparer un poste, parler en code.</p>",
+        "apprentissage": "<p>Un passé de marin, de gendarme, de pompier ou de radioamateur ; un manuel de radioamateur ; un opérateur de la Garnison du Quai.</p>",
+        "effets": "<p>Ouvre le poste radio niveau 2. Les renseignements obtenus par radio sont plus sûrs (le MJ précise ce qui est vrai).</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "radio",
+          "source": "p1q7tWHm7jlC6XTv"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "wLfVCshrjrmiXlvA",
+      "_key": "!actors.items!mpXS6zfK51MgTxYa.wLfVCshrjrmiXlvA",
+      "name": "Radio marine portative",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "radio-marine",
+        "categorie": "communication",
+        "description": "<p>Une VHF de bateau étanche : on écoute et on émet sur les canaux de la mer, où les pêcheurs parlent encore.</p>",
+        "bonus": {
+          "parole": 1
+        },
+        "charge": 1,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": {
+          "renseignements": true
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "radio-marine",
+          "source": "yE85TULkfR9UIx88"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "beytEzCDCCVXHpjN",
+      "_key": "!actors.items!mpXS6zfK51MgTxYa.beytEzCDCCVXHpjN",
+      "name": "Jumelles",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "jumelles",
+        "categorie": "outil",
+        "description": "<p>Voir avant d'être vu : la route, le rempart d'en face, la cour d'une ferme.</p>",
+        "bonus": {
+          "vigilance": 1
+        },
+        "charge": 0,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "jumelles",
+          "source": "GwauCrDXFp9kPfjp"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "hcowqNfHTKEVBNEW",
+      "_key": "!actors.items!mpXS6zfK51MgTxYa.hcowqNfHTKEVBNEW",
+      "name": "Carabine .22",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "carabine-22",
+        "categorie": "arme-a-feu",
+        "description": "<p>Une petite carabine de stand ou de ferme : précise, légère, moins bruyante qu'un fusil. Il faut viser la tête.</p>",
+        "bonus": {
+          "tir": 1
+        },
+        "charge": 1,
+        "usure": 0,
+        "munitions": 1,
+        "bruit": 1,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "carabine-22",
+          "source": "zbfFqGVAJlulr1ou"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Firmin Boyer, retraité de la marine",
+    "actorLink": true,
+    "disposition": 1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/pretire-meneur.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pretire-meneur",
+      "pnj": false,
+      "pretire": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

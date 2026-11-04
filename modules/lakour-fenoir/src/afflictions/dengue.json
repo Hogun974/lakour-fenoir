@@ -1,0 +1,49 @@
+{
+  "_id": "wn3MrBj4ALWgGP0l",
+  "_key": "!items!wn3MrBj4ALWgGP0l",
+  "name": "Dengue",
+  "type": "affliction",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+    "cle": "dengue",
+    "categorie": "maladie",
+    "description": "<p>Transmise par le moustique tigre qui pullule dans les Bas à la saison des pluies : forte fièvre, douleurs derrière les yeux, courbatures, éruption. Dans sa forme grave, des saignements et un épuisement qui peut tuer.</p>",
+    "prevention": "<p>Moustiquaires, vider les eaux stagnantes (pots, pneus, gouttières bouchées), vivre plus haut.</p>",
+    "contagion": 0.02,
+    "incubation": 5,
+    "duree": 7,
+    "effets": {
+      "malus": 1,
+      "fatigue": 1
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "normale",
+      "medicaments": 1
+    },
+    "aggravation": {
+      "jours": 4,
+      "malus": 2,
+      "fatigue": 2,
+      "duree": 5
+    },
+    "declencheur": "moustiques",
+    "risque": 0.006
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "dengue"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_id": "9Hr9xFO759pAMjDy",
+  "_key": "!items!9Hr9xFO759pAMjDy",
+  "name": "4×4",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "quatre-quatre",
+    "categorie": "transport",
+    "description": "<p>Un pick-up ou un 4×4 de planteur : il passe la piste de la Rivière des Galets, les chemins de canne et les radiers en eau basse. Il boit beaucoup.</p>",
+    "bonus": {
+      "conduite": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 1,
+    "transport": {
+      "mode": "vehicule",
+      "places": 5,
+      "chargeMax": 30,
+      "carburantParQuart": 2,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 1
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "quatre-quatre"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

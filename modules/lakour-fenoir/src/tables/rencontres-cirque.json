@@ -1,0 +1,208 @@
+{
+  "_id": "LtfdKgMyBIqWfKj1",
+  "_key": "!tables!LtfdKgMyBIqWfKj1",
+  "name": "Rencontres — cirque",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une rencontre en sortie dans une région de zone « cirque ».</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rencontres-cirque",
+      "zone": "cirque"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "vetvDvk1WGyoM5BH",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.vetvDvk1WGyoM5BH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux guetteurs des Familles des Îlets qui sifflent pour prévenir l'îlet suivant.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "OFwfNf4SkNk5vJfI",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.OFwfNf4SkNk5vJfI",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide tombé dans une ravine qui gémit, coincé entre deux rochers.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8lBKN0Eh17lIuMv7",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.8lBKN0Eh17lIuMv7",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un passage du sentier emporté : il faut une corde.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yHZdc880d2nmq2jm",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.yHZdc880d2nmq2jm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un porteur chargé de sacs qui monte à La Nouvelle et propose de troquer.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QRzylsOlcpqD4cdK",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.QRzylsOlcpqD4cdK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des réfugiés malades campés au col, que les îlets refusent de laisser descendre.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "JGLb8WbpVd6ps7gg",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.JGLb8WbpVd6ps7gg",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un éboulis qui roule au-dessus du sentier.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "IdJSxvlsUrGzIc7r",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.IdJSxvlsUrGzIc7r",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une source captée, dont le tuyau a été coupé net.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1M8tpBPDAuBFnUSM",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.1M8tpBPDAuBFnUSM",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vieux qui joue du kayamb sur sa varangue et vous invite à boire un café.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YjWGTiVr2e3XqSOF",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.YjWGTiVr2e3XqSOF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois Livides anciens immobiles sur le sentier, au soleil levant.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dgvxnOtXO91WLJbP",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.dgvxnOtXO91WLJbP",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant qui garde des cabris et file prévenir les adultes.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "REcZN7jHKR5ckgjH",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.REcZN7jHKR5ckgjH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une case incendiée, encore tiède.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "j39evaDwZUuQyIaR",
+      "_key": "!tables.results!LtfdKgMyBIqWfKj1.j39evaDwZUuQyIaR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une échelle de bois dressée contre le rempart, qui ne mène nulle part de visible.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

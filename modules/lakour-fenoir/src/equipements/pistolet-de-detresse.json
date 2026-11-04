@@ -1,0 +1,35 @@
+{
+  "_id": "w5jAo3vhpTDnsksz",
+  "_key": "!items!w5jAo3vhpTDnsksz",
+  "name": "Pistolet de détresse",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pistolet-de-detresse",
+    "categorie": "outil",
+    "description": "<p>Le lance-fusées d'un bateau : appeler à l'aide, signaler, aveugler, attirer une horde ailleurs, mettre le feu. Il n'y a que quelques fusées.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": 1,
+    "bruit": 3,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pistolet-de-detresse"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

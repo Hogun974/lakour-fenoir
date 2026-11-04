@@ -1,0 +1,46 @@
+{
+  "_id": "maUJgkb0oqgl5h46",
+  "_key": "!items!maUJgkb0oqgl5h46",
+  "name": "Voiture",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "voiture",
+    "categorie": "transport",
+    "description": "<p>Une citadine ou une berline trouvée avec ses clés : rapide sur route, inutile hors des routes, bruyante, et la route peut être bouchée par mille autres.</p>",
+    "bonus": {
+      "conduite": 0
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 1,
+    "transport": {
+      "mode": "vehicule",
+      "places": 5,
+      "chargeMax": 20,
+      "carburantParQuart": 1,
+      "terrains": [
+        "route"
+      ],
+      "bruit": 1
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "voiture"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

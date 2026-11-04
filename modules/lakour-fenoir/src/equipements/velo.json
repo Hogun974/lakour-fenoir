@@ -1,0 +1,47 @@
+{
+  "_id": "6aeO2dmRghB3dx9L",
+  "_key": "!items!6aeO2dmRghB3dx9L",
+  "name": "Vélo tout-terrain",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "velo",
+    "categorie": "transport",
+    "description": "<p>Silencieux, sans carburant, plus rapide qu'à pied sur la route… tant que ça descend. Les Hauts se montent à pied à côté.</p>",
+    "bonus": {
+      "endurance": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "pied",
+      "places": 1,
+      "chargeMax": 3,
+      "carburantParQuart": 0,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 0
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "velo"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

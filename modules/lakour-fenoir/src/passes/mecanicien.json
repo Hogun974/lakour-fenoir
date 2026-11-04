@@ -1,0 +1,48 @@
+{
+  "_id": "WQ0aRVr3JgccPUwj",
+  "_key": "!items!WQ0aRVr3JgccPUwj",
+  "name": "Mécanicien",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "mecanicien",
+    "description": "<p>Il tient un garage de La Possession, répare tout ce qui a un moteur et récupère tout ce qui n'en'a plus. Il connaît les Ferrailleurs avant qu'on les appelle ainsi.</p>",
+    "competences": {
+      "bricolage": 2,
+      "conduite": 2,
+      "endurance": 1,
+      "combat": 1,
+      "parole": 1
+    },
+    "savoirs": [
+      "mecanique"
+    ],
+    "equipement": [
+      "pied-de-biche",
+      "caisse-a-outils"
+    ],
+    "accroche": "<p>Un client ramène sa voiture avec un passager endormi sur la banquette arrière. Le passager n'est pas endormi.</p>",
+    "region": "le-port",
+    "incapacites": [],
+    "histoire": [
+      "Son garage était la deuxième maison de tout le quartier.",
+      "Il a appris le métier en démontant les mobylettes de ses cousins."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "mecanicien"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

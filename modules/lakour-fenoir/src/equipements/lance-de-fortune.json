@@ -1,0 +1,37 @@
+{
+  "_id": "OCYXrsHwxVHAvZjS",
+  "_key": "!items!OCYXrsHwxVHAvZjS",
+  "name": "Lance de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "lance-de-fortune",
+    "categorie": "arme",
+    "description": "<p>Un couteau de cuisine ou une lame de sabre ligaturée au bout d'un bambou : on frappe à travers un grillage sans s'approcher.</p>",
+    "bonus": {
+      "combat": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lance-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

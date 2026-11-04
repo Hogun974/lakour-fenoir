@@ -1,0 +1,37 @@
+{
+  "_id": "zbfFqGVAJlulr1ou",
+  "_key": "!items!zbfFqGVAJlulr1ou",
+  "name": "Carabine .22",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "carabine-22",
+    "categorie": "arme-a-feu",
+    "description": "<p>Une petite carabine de stand ou de ferme : précise, légère, moins bruyante qu'un fusil. Il faut viser la tête.</p>",
+    "bonus": {
+      "tir": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": 1,
+    "bruit": 1,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "carabine-22"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

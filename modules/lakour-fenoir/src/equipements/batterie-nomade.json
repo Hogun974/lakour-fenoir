@@ -1,0 +1,39 @@
+{
+  "_id": "pNcSHLmPMugTau0E",
+  "_key": "!items!pNcSHLmPMugTau0E",
+  "name": "Batterie nomade",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "batterie-nomade",
+    "categorie": "energie",
+    "description": "<p>Une grosse batterie portable avec ses prises : garder le courant d'une journée pour la nuit.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "stockage": {
+        "energie": 2
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "batterie-nomade"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

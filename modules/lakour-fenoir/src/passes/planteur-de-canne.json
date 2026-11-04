@@ -1,0 +1,48 @@
+{
+  "_id": "CrwMVqAtNhALLYTU",
+  "_key": "!items!CrwMVqAtNhALLYTU",
+  "name": "Planteur de canne",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "planteur-de-canne",
+    "description": "<p>Il a coupé la canne à la main avant les machines, il tient vingt hectares à Saint-André et il sait réparer son tracteur avec du fil de fer. Il a des bras, et de la patience.</p>",
+    "competences": {
+      "endurance": 2,
+      "survie": 2,
+      "combat": 1,
+      "conduite": 1,
+      "bricolage": 1
+    },
+    "savoirs": [
+      "maraichage-tropical"
+    ],
+    "equipement": [
+      "sabre-a-canne",
+      "quatre-quatre"
+    ],
+    "accroche": "<p>Il est dans sa parcelle quand le voisin sort des cannes en titubant, les yeux gris, sans répondre à son nom.</p>",
+    "region": "est",
+    "incapacites": [],
+    "histoire": [
+      "Il a repris les terres de son grand-père quand plus personne n'en voulait.",
+      "Chaque fin de campagne, il invitait tout le quartier au cari."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "planteur-de-canne"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

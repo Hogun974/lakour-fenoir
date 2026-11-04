@@ -1,0 +1,38 @@
+{
+  "_id": "FcBV9tuBBLLLoplo",
+  "_key": "!items!FcBV9tuBBLLLoplo",
+  "name": "Matériel de canyon",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "materiel-de-canyon",
+    "categorie": "outil",
+    "description": "<p>Cordes, baudriers, descendeurs, mousquetons, combinaison : descendre une cascade, franchir une ravine, remonter un blessé.</p>",
+    "bonus": {
+      "endurance": 1,
+      "survie": 1
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "materiel-de-canyon"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

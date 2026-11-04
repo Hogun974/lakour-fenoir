@@ -1,0 +1,137 @@
+{
+  "_id": "W8WJbCqi9fodrPGD",
+  "_key": "!items!W8WJbCqi9fodrPGD",
+  "name": "Chiens de garde",
+  "type": "installation",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "cle": "chiens-de-garde",
+    "categorie": "defense",
+    "description": "<p>Deux ou trois chiens recueillis, nourris, dressés à aboyer à l'approche et à se taire sur ordre. Ils mangent, ils réconfortent, ils entendent ce que la garde n'entend pas.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "nourriture": 5,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "nourriture": 1
+          },
+          "defense": 1,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 1,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "garde",
+            "nombre": 1
+          }
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "nourriture": 5,
+          "travail": 8
+        },
+        "requiert": {
+          "savoirs": [
+            "elevage"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "nourriture": 1
+          },
+          "defense": 2,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 1,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {
+            "vigilance": 1
+          },
+          "bras": {
+            "tache": "garde",
+            "nombre": 1
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chiens-de-garde"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

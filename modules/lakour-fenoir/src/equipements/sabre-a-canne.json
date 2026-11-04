@@ -1,0 +1,37 @@
+{
+  "_id": "Jwm8SP40wObOc5wt",
+  "_key": "!items!Jwm8SP40wObOc5wt",
+  "name": "Sabre à canne",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "sabre-a-canne",
+    "categorie": "arme",
+    "description": "<p>La lame large et recourbée des coupeurs de canne, qu'on trouve dans chaque hangar de l'île. Elle coupe les cannes, les lianes, les branches… et le reste. Silencieuse.</p>",
+    "bonus": {
+      "combat": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sabre-a-canne"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

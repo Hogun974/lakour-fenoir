@@ -1,0 +1,150 @@
+{
+  "_id": "zMgGoFqGdOYENIvX",
+  "_key": "!actors!zMgGoFqGdOYENIvX",
+  "name": "Mémé Lucette",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/memee-lucette.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [
+      "main-ouverte",
+      "tete-de-bois"
+    ],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 74,
+    "lien": "Coopérative des Plaines",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Éleveuse de la Plaine des Cafres, présidente du conseil de la Coopérative. Elle a vu passer tous les cyclones depuis 1948 et n'a peur de rien, sauf de la ville.</p>"
+  },
+  "items": [
+    {
+      "_id": "AAwOuoMTp8V7DBmi",
+      "_key": "!actors.items!zMgGoFqGdOYENIvX.AAwOuoMTp8V7DBmi",
+      "name": "Élevage",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "elevage",
+        "description": "<p>Poules péi, cabris, cochons, chiens, abeilles, tilapias : nourrir, soigner, faire naître, abattre proprement, ne pas épuiser son troupeau.</p>",
+        "apprentissage": "<p>Un passé d'agriculteur des Hauts ou d'apiculteur ; une ferme de la Plaine des Cafres ; un ancien de Mafate.</p>",
+        "effets": "<p>Ouvre la basse-cour, l'enclos à cabris, les ruches et les chiens de garde niveau 2, le bassin à tilapias niveau 2.</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "elevage",
+          "source": "FX3eGZZ2Q5oWiPk0"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Mémé Lucette",
+    "actorLink": false,
+    "disposition": 1,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/memee-lucette.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "memee-lucette",
+      "pnj": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

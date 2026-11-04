@@ -1,0 +1,185 @@
+{
+  "_id": "ljGCYC2YMQ4SCzey",
+  "_key": "!journal!ljGCYC2YMQ4SCzey",
+  "name": "Fénoir — Guide du MJ",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "guide-du-mj",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "a8hCCQ8nqxtH4PSt",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.a8hCCQ8nqxtH4PSt",
+      "name": "Mener Fénoir",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Fénoir est un jeu de <strong>survie réaliste et humaine</strong> : la faim, la soif, la fatigue, les choix impossibles, l'entraide. L'horreur est sobre : on montre peu, on suggère beaucoup, on ne complaît jamais dans le gore. La beauté de l'île est le contrepoint constant : les cirques au lever du jour, le lagon immobile, les letchis de décembre, la brume des Hauts. Le créole vient en touches légères dans les dialogues, toujours compréhensible.</p><p>Le système tient les comptes (stocks, production, réseaux, infestation, hordes, factions, météo) ; vous racontez. Le monde réel est <strong>secret</strong> : vous le voyez, les joueurs ne voient que ce qu'ils savent, daté.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "mener"
+        }
+      }
+    },
+    {
+      "_id": "MG3Wp1LcCuEWyEE0",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.MG3Wp1LcCuEWyEE0",
+      "name": "Le temps qui avance",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Rien ne se passe « entre les scènes » sans que le temps avance. Chaque action a un coût en quarts ; quand les joueurs fouillent, explorent, construisent, voyagent ou se reposent, faites avancer l'horloge, et le monde avance avec elle : à chaque jour, la simulation consomme, produit, gâte, pille, propage les hordes, fait tomber les réseaux, déplace les factions, tire la météo et les événements.</p><p>Annoncez ce que le groupe voit ou entend (les <strong>faits publics</strong>) ; gardez le reste dans le journal secret, et faites-le surgir plus tard : la fumée d'un incendie à l'horizon, la voix d'une radio, un abri voisin tombé.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "temps"
+        }
+      }
+    },
+    {
+      "_id": "nudrb0aZCZpGCuaO",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.nudrb0aZCZpGCuaO",
+      "name": "Les deux voies",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Repartir</strong> et <strong>s'enraciner</strong> sont deux façons de gagner. Ne punissez ni l'une ni l'autre.</p><ul><li>Au groupe nomade, donnez des routes vivantes, des lieux qui ont changé, des renseignements périmés, des rencontres, la récompense des <strong>plans</strong> (reconstruire plus vite).</li><li>Au groupe sédentaire, donnez la satisfaction des chantiers, des récoltes, du premier jour autonome — et le prix de la prospérité : la <strong>visibilité</strong> monte, les paliers déclenchent rumeurs, éclaireurs, visites, assauts (tables « Visibilité »).</li></ul><p>Le twist du monde (voir « Pourquoi les Bas se vident ») déplace le meilleur endroit au fil des mois : c'est le moteur naturel des déménagements.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "deux-voies"
+        }
+      }
+    },
+    {
+      "_id": "UkI9Mx20DY3J96ZI",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.UkI9Mx20DY3J96ZI",
+      "name": "Les renseignements datés",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les joueurs ne connaissent d'une région que ce qu'ils y ont vu (avec la date), ce qu'ils ont entendu à la radio (moins fiable) ou une rumeur. Rappelez-le : « La dernière fois que vous êtes passés à Saint-Pierre, il y a vingt jours, le port était aux mains des pêcheurs. » Corrigez ou ajoutez un renseignement quand un PNJ parle, quand la radio grésille, quand une rumeur court (outil renseigner).</p><p>Un déménagement doit se préparer sur des informations qui vieillissent : la surprise à l'arrivée fait partie du jeu.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "renseignements"
+        }
+      }
+    },
+    {
+      "_id": "N8hqbmNRnYl7NQmC",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.N8hqbmNRnYl7NQmC",
+      "name": "Le ton et les dilemmes",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les meilleures scènes de Fénoir sont des <strong>dilemmes</strong> :<br>- Une famille frappe à la porte ; l'un d'eux tousse. On ouvre ?<br>- La morsure est au poignet. On coupe ?<br>- Les Sans-Lune demandent un tribut ; payer, c'est survivre cette lune et nourrir la bande.<br>- Le Dispensaire veut un infecté vivant pour l'étudier. Le vôtre ?<br>- La citerne est pleine, le voisin a soif.<br>- Le groupe électrogène sauverait un blessé cette nuit ; il attirerait la horde.</p><p>Laissez les joueurs choisir, et que le monde s'en souvienne : réputations, rancunes, dettes.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "ton"
+        }
+      }
+    },
+    {
+      "_id": "ZQk4hiAjZ1brpqCp",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.ZQk4hiAjZ1brpqCp",
+      "name": "Les outils du MJ",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Tables</strong> : rencontres par zone et par phase, découvertes de fouille, rumeurs de la radio, complications d'un test forcé, noms et surnoms réunionnais, noms de cyclones, visibilité (une table par palier), générateurs (survivant rencontré, site fouillé, rumeur), recrues (raison, prix), histoire (proche, ce matin-là), imprévus du camp.</li><li><strong>Appels radio et demandes des factions</strong> : trois par semaine de jeu quand le groupe a une radio ; récompense et réputation dans les données de chaque résultat.</li><li><strong>Réputations</strong> : une horloge <strong>rep-&lt;faction&gt;</strong> par faction (voir « Réputation auprès des factions »).</li><li><strong>Bestiaire</strong> : Livides et animaux, avec leurs dés et leur résistance.</li><li><strong>Cartes</strong> : la carte de La Réunion (une épingle par région) et sept cartes de lieux (case créole, collège, station-service, supermarché, gîte, tunnel de lave, îlet).</li><li><strong>Le MJ IA</strong> joue tout cela avec ses outils survie_* : il voit le réel et le connu, et ne dit aux joueurs que le connu.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "outils"
+        }
+      }
+    },
+    {
+      "_id": "o6eXnn9HZUDpV7nZ",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.o6eXnn9HZUDpV7nZ",
+      "name": "Les factions en jeu",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les factions ne sont pas des méchants de service : chacune a de bonnes raisons. Faites-les <strong>grandir</strong> pendant la panique et l'effondrement, <strong>occuper</strong> les abris abandonnés, <strong>se disputer</strong> les régions. Un groupe qui les aide gagne de la réputation et ce qu'elle ouvre (troc, refuge, savoir enseigné) ; un groupe qui les trahit le paie.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "factions"
+        }
+      }
+    }
+  ]
+}

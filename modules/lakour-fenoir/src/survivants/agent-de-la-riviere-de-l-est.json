@@ -1,0 +1,218 @@
+{
+  "_id": "S7x8AY67d8P3afnh",
+  "_key": "!actors!S7x8AY67d8P3afnh",
+  "name": "Josian Robert, agent de la centrale",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/agent-de-la-riviere-de-l-est.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 4,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 1,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 0,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [
+      "tete-de-bois",
+      "rat-de-galerie"
+    ],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 56,
+    "lien": "",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Un des deux agents restés à la centrale de la Rivière de l'Est. Il fait tourner ce qu'il peut, se méfie de tout le monde, et sait que tôt ou tard quelqu'un viendra prendre son courant.</p>"
+  },
+  "items": [
+    {
+      "_id": "oNhcdEtv3wyvxnoX",
+      "_key": "!actors.items!S7x8AY67d8P3afnh.oNhcdEtv3wyvxnoX",
+      "name": "Hydraulique rurale",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "hydraulique-rurale",
+        "description": "<p>Capter une source, poser une conduite par gravité, monter un bélier hydraulique, dériver une ravine sans qu'elle emporte tout à la première crue, installer une turbine.</p>",
+        "apprentissage": "<p>Un ancien d'un îlet ou d'un cirque ; un agent d'une centrale hydraulique ; réussir un captage de source.</p>",
+        "effets": "<p>Ouvre le captage de source niveau 2 et le pico-hydro. +1 dé aux tests de bricolage sur l'eau.</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "hydraulique-rurale",
+          "source": "a8Spk0bL9hXmEbsP"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "Yrx5hfRRocM0ffoN",
+      "_key": "!actors.items!S7x8AY67d8P3afnh.Yrx5hfRRocM0ffoN",
+      "name": "Électricité solaire",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "electricite-solaire",
+        "description": "<p>Câbler des panneaux, régler un régulateur, dimensionner des batteries, ne pas griller l'onduleur ni se griller soi-même.</p>",
+        "apprentissage": "<p>Un passé d'électricien ; un manuel trouvé dans un magasin de bricolage ou chez un installateur ; une semaine aux côtés de quelqu'un qui sait, dans un îlet de Mafate où chaque case a ses panneaux ; ou réussir le chantier de panneaux solaires niveau 1 avec un test de bricolage difficile.</p>",
+        "effets": "<p>Ouvre les panneaux solaires niveaux 2 et 3, les batteries niveaux 2 et 3, l'éolienne niveau 2 et le pico-hydro niveau 2. +1 dé aux tests de bricolage sur l'électricité.</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "electricite-solaire",
+          "source": "yFDWfsD7dGTF6DAP"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "Syj21cUjcJKSEWlW",
+      "_key": "!actors.items!S7x8AY67d8P3afnh.Syj21cUjcJKSEWlW",
+      "name": "Caisse à outils",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "caisse-a-outils",
+        "categorie": "outil",
+        "description": "<p>Clés, tournevis, pinces, scie à métaux, multimètre, ruban adhésif, colliers : de quoi réparer presque tout.</p>",
+        "bonus": {
+          "bricolage": 1
+        },
+        "charge": 2,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 0,
+        "transport": null,
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "caisse-a-outils",
+          "source": "sAH6fwhcxEnXrjuj"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Josian Robert, agent de la centrale",
+    "actorLink": false,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/agent-de-la-riviere-de-l-est.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "agent-de-la-riviere-de-l-est",
+      "pnj": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

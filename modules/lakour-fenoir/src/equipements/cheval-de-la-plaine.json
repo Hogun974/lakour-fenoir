@@ -1,0 +1,48 @@
+{
+  "_id": "Z7QQhuzYx0KyQRg6",
+  "_key": "!items!Z7QQhuzYx0KyQRg6",
+  "name": "Cheval de la Plaine des Cafres",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cheval-de-la-plaine",
+    "categorie": "transport",
+    "description": "<p>Un cheval d'un centre équestre de la Plaine des Cafres : plus rapide qu'à pied sur les pistes et les prairies, sûr sur les sentiers larges. Il faut le nourrir, l'abreuver, le garder des Livides.</p>",
+    "bonus": {
+      "endurance": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 1,
+    "transport": {
+      "mode": "pied",
+      "places": 1,
+      "chargeMax": 6,
+      "carburantParQuart": 0,
+      "terrains": [
+        "route",
+        "piste",
+        "sentier"
+      ],
+      "bruit": 1
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cheval-de-la-plaine"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

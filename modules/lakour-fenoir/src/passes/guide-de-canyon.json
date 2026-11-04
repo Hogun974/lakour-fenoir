@@ -1,0 +1,48 @@
+{
+  "_id": "zA55FIz96Q3uUrYo",
+  "_key": "!items!zA55FIz96Q3uUrYo",
+  "name": "Guide de canyon",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "guide-de-canyon",
+    "description": "<p>Moniteur de canyon et de randonnée à Cilaos, il connaît chaque sentier des cirques, chaque ravine, chaque piège du terrain et des nuages.</p>",
+    "competences": {
+      "endurance": 2,
+      "survie": 2,
+      "vigilance": 1,
+      "discretion": 1,
+      "soins": 1
+    },
+    "savoirs": [
+      "etaiement-galeries"
+    ],
+    "equipement": [
+      "materiel-de-canyon",
+      "sac-de-randonnee"
+    ],
+    "accroche": "<p>Il est au fond d'un canyon avec quatre clients quand la radio grésille un message incompréhensible. En remontant, le village est silencieux.</p>",
+    "region": "cilaos",
+    "incapacites": [],
+    "histoire": [
+      "Il connaît chaque bassin de Cilaos et le nom de chaque cascade.",
+      "Il a perdu un client, une fois, dans une crue ; il ne prend plus jamais la pluie à la légère."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "guide-de-canyon"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_id": "LHFpgBpFFkoICAow",
+  "_key": "!items!LHFpgBpFFkoICAow",
+  "name": "Tétanos",
+  "type": "affliction",
+  "img": "icons/svg/blood.svg",
+  "system": {
+    "cle": "tetanos",
+    "categorie": "blessure",
+    "description": "<p>Un clou rouillé, une plaie souillée de terre : des semaines plus tard, la mâchoire se raidit, puis les muscles se contractent jusqu'à la douleur. Ceux qui étaient vaccinés ne craignent rien ; les autres…</p>",
+    "prevention": "<p>Savoir qui est vacciné ; nettoyer à fond les plaies souillées.</p>",
+    "contagion": 0,
+    "incubation": 8,
+    "duree": 20,
+    "effets": {
+      "malus": 2,
+      "fatigue": 1
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "extreme",
+      "medicaments": 3
+    },
+    "aggravation": {
+      "jours": 4,
+      "malus": 3,
+      "fatigue": 2,
+      "duree": 20
+    },
+    "declencheur": null,
+    "risque": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tetanos"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

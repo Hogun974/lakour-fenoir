@@ -1,0 +1,39 @@
+{
+  "_id": "yE85TULkfR9UIx88",
+  "_key": "!items!yE85TULkfR9UIx88",
+  "name": "Radio marine portative",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "radio-marine",
+    "categorie": "communication",
+    "description": "<p>Une VHF de bateau étanche : on écoute et on émet sur les canaux de la mer, où les pêcheurs parlent encore.</p>",
+    "bonus": {
+      "parole": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "renseignements": true
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "radio-marine"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

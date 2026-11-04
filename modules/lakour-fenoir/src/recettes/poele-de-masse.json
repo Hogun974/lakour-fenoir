@@ -1,0 +1,44 @@
+{
+  "_id": "a4GW8LBy6IsOnq3h",
+  "_key": "!items!a4GW8LBy6IsOnq3h",
+  "name": "Poêle de masse",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "poele-de-masse",
+    "description": "<p>Briques, pierres, argile, un tuyau de tôle : un poêle qui stocke la chaleur d'une flambée pour toute une nuit des Hauts.</p>",
+    "cout": {
+      "materiaux": 6,
+      "pieces": 1
+    },
+    "travail": 8,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "maconnerie"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "poele-de-masse",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "poele-de-masse"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

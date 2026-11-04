@@ -1,0 +1,49 @@
+{
+  "_id": "tlDnHzhtFkGuWlvp",
+  "_key": "!items!tlDnHzhtFkGuWlvp",
+  "name": "Fracture",
+  "type": "affliction",
+  "img": "icons/svg/blood.svg",
+  "system": {
+    "cle": "fracture",
+    "categorie": "blessure",
+    "description": "<p>Une chute dans une ravine, un pied pris entre deux rochers, une barricade qui s'effondre : un os cassé, réduit et immobilisé ou pas. Six semaines d'attelle, au mieux.</p>",
+    "prevention": "<p>Une attelle bien posée tout de suite ; ne pas forcer.</p>",
+    "contagion": 0,
+    "incubation": 0,
+    "duree": 40,
+    "effets": {
+      "malus": 2,
+      "fatigue": 0
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "difficile",
+      "medicaments": 1
+    },
+    "aggravation": {
+      "jours": 5,
+      "malus": 2,
+      "fatigue": 1,
+      "duree": 60
+    },
+    "declencheur": null,
+    "risque": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fracture"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

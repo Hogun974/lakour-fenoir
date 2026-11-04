@@ -1,0 +1,187 @@
+{
+  "_id": "tmvTmYEMoJRRwXfq",
+  "_key": "!tables!tmvTmYEMoJRRwXfq",
+  "name": "Demandes — Les Familles des Îlets",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "demandes-familles-des-ilets",
+      "appels": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "2fpGE8zviTPFPHaZ",
+      "_key": "!tables.results!tmvTmYEMoJRRwXfq.2fpGE8zviTPFPHaZ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Les médicaments de La Possession.</strong> Monter à La Nouvelle les médicaments d'une pharmacie des Bas.</p><p><strong>Récompense :</strong> 6 nourriture, 4 graines ; réputation +3.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "nourriture": 6,
+              "graines": 4
+            },
+            "faction": "familles-des-ilets",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "OMK2hiONYlSqMJ6U",
+      "_key": "!tables.results!tmvTmYEMoJRRwXfq.OMK2hiONYlSqMJ6U",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — Le régulateur de l'école.</strong> Remplacer le régulateur solaire de l'école d'Aurère.</p><p><strong>Récompense :</strong> 6 nourriture ; réputation +2.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "nourriture": 6
+            },
+            "faction": "familles-des-ilets",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "HA4tbESatMK1CXQS",
+      "_key": "!tables.results!tmvTmYEMoJRRwXfq.HA4tbESatMK1CXQS",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — La descente au col.</strong> Accompagner des anciens au col des Bœufs pour un troc avec Salazie.</p><p><strong>Récompense :</strong> 5 nourriture, 3 graines ; réputation +2.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "nourriture": 5,
+              "graines": 3
+            },
+            "faction": "familles-des-ilets",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "kV8fDgYPhph80xD8",
+      "_key": "!tables.results!tmvTmYEMoJRRwXfq.kV8fDgYPhph80xD8",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — Le sentier de la canalisation.</strong> Un porteur est tombé sur la canalisation des Orangers ; il faut le remonter.</p><p><strong>Récompense :</strong> 6 nourriture ; réputation +3.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "nourriture": 6
+            },
+            "faction": "familles-des-ilets",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "A5HDmmg3wlRuZ1rh",
+      "_key": "!tables.results!tmvTmYEMoJRRwXfq.A5HDmmg3wlRuZ1rh",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Lentilles contre pièces.</strong> Des lentilles et des patates contre des pièces électriques.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +1.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "nourriture": 10
+            },
+            "faction": "familles-des-ilets",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "O6h8rncSBrCBwu5s",
+      "_key": "!tables.results!tmvTmYEMoJRRwXfq.O6h8rncSBrCBwu5s",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — Le captage emporté.</strong> Refaire le captage d'un îlet emporté par une crue.</p><p><strong>Récompense :</strong> 8 nourriture, 2 graines ; réputation +3.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "nourriture": 8,
+              "graines": 2
+            },
+            "faction": "familles-des-ilets",
+            "reputation": 3
+          }
+        }
+      }
+    }
+  ]
+}

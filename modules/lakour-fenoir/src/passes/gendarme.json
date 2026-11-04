@@ -1,0 +1,48 @@
+{
+  "_id": "zBQbEN7Z3M3RZu5A",
+  "_key": "!items!zBQbEN7Z3M3RZu5A",
+  "name": "Gendarme",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "gendarme",
+    "description": "<p>Brigadière d'une brigade du Sud, habituée aux accidents de la route, aux bagarres de fin de bal et aux recherches en montagne. Elle a une arme, une radio, et l'habitude qu'on l'écoute.</p>",
+    "competences": {
+      "tir": 2,
+      "parole": 2,
+      "vigilance": 1,
+      "conduite": 1,
+      "combat": 1
+    },
+    "savoirs": [
+      "radio"
+    ],
+    "equipement": [
+      "pistolet-de-service",
+      "talkies"
+    ],
+    "accroche": "<p>On l'envoie sécuriser un accident sur la RN1. Les blessés se relèvent avant les secours.</p>",
+    "region": "saint-pierre",
+    "incapacites": [],
+    "histoire": [
+      "Elle a demandé sa mutation dans l'île de sa mère, qu'elle ne connaissait que l'été.",
+      "Elle a sorti des randonneurs de Mafate en pleine nuit plus d'une fois."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gendarme"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

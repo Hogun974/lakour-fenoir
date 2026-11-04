@@ -1,0 +1,228 @@
+{
+  "_id": "OcuWHSmppKDUHjjO",
+  "_key": "!items!OcuWHSmppKDUHjjO",
+  "name": "Galerie souterraine",
+  "type": "installation",
+  "img": "icons/svg/cave.svg",
+  "system": {
+    "cle": "galerie-souterraine",
+    "categorie": "souterrain",
+    "description": "<p>Creuser sous l'abri, dans le tuf, la scorie ou la roche saine : d'abord une cave étayée, puis une galerie, puis un réseau de salles, enfin un refuge complet où l'on peut vivre caché, au frais, à l'abri des cyclones et des regards.</p><ul><li>Niveau 1, cave étayée ; niveau 2, galerie ; niveau 3, réseau ; niveau 4, refuge complet.</li></ul>",
+    "niveau": 0,
+    "niveauMax": 4,
+    "chantier": {
+      "fait": 0,
+      "requis": 24
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 6,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 24
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 1
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 1,
+          "capacite": 2,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {
+            "nourriture": 60
+          },
+          "protectionCyclone": 1,
+          "soins": 0,
+          "moral": 0,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 10,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 40
+        },
+        "requiert": {
+          "savoirs": [
+            "etaiement-galeries"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 1
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 1,
+          "discretion": 1,
+          "capacite": 6,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {
+            "nourriture": 120
+          },
+          "protectionCyclone": 2,
+          "soins": 0,
+          "moral": 0,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 16,
+          "pieces": 2,
+          "graines": 0,
+          "travail": 60
+        },
+        "requiert": {
+          "savoirs": [
+            "etaiement-galeries"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 2
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 2,
+          "discretion": 2,
+          "capacite": 12,
+          "visibilite": -1,
+          "bruit": 0,
+          "stockage": {
+            "nourriture": 200,
+            "eau": 60
+          },
+          "protectionCyclone": 3,
+          "soins": 0,
+          "moral": 0,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 24,
+          "pieces": 6,
+          "graines": 0,
+          "travail": 90
+        },
+        "requiert": {
+          "savoirs": [
+            "etaiement-galeries"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 2
+          },
+          "installations": [
+            {
+              "cle": "batteries",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "energie": 1
+          },
+          "defense": 3,
+          "discretion": 3,
+          "capacite": 20,
+          "visibilite": -2,
+          "bruit": 0,
+          "stockage": {
+            "nourriture": 300,
+            "eau": 120
+          },
+          "protectionCyclone": 3,
+          "soins": 0,
+          "moral": 1,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "galerie-souterraine"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

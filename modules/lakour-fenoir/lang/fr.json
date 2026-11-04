@@ -1,0 +1,16 @@
+{
+  "LAKOURFENOIR": {
+    "Titre": "Fénoir",
+    "Proposer": "Installer le contenu de Fénoir dans ce monde ? Les guides des joueurs, les journaux du MJ (cachés) et la carte de La Réunion seront importés ; les horloges de réputation des factions seront créées si le MJ IA est actif. Installations, savoir-faire, équipement, passés, recettes, maladies, prétirés, bestiaire, tables et cartes de lieux restent dans les compendiums.",
+    "Installe": "Fénoir installé : {liste}.",
+    "RienDeNeuf": "tout était déjà en place",
+    "Ouvrir": "Installer",
+    "Aide": "Importe dans ce monde les guides, les journaux du MJ et la carte de La Réunion.",
+    "MauvaisSysteme": "Ce monde n'utilise pas le système La Kour Survie : rien à installer.",
+    "Erreurs": {
+      "Donnees": "Fénoir : impossible de lire assets/donnees.json ({erreur}). Le contenu de l'île n'est pas enregistré.",
+      "Installation": "Fénoir : installation interrompue ({erreur}). Le détail est dans la console (F12)."
+    },
+    "Reputations": "{n} horloge(s) de réputation des factions assurée(s)."
+  }
+}

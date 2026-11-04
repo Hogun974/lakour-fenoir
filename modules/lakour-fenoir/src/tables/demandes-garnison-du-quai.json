@@ -1,0 +1,187 @@
+{
+  "_id": "n8vsDFqCUyyeL52h",
+  "_key": "!tables!n8vsDFqCUyyeL52h",
+  "name": "Demandes — La Garnison du Quai",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "demandes-garnison-du-quai",
+      "appels": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "ldQ9pHQ5FPeGO4Gg",
+      "_key": "!tables.results!n8vsDFqCUyyeL52h.ldQ9pHQ5FPeGO4Gg",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Les cuves de Savanna.</strong> Vider la cuve de carburant d'une station de la zone de Savanna et la ramener au Port.</p><p><strong>Récompense :</strong> 4 carburant, 2 munitions ; réputation +2.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "carburant": 4,
+              "munitions": 2
+            },
+            "faction": "garnison-du-quai",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "8I9BiI0fEUQl342G",
+      "_key": "!tables.results!n8vsDFqCUyyeL52h.8I9BiI0fEUQl342G",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — Le recenseur.</strong> Escorter un sous-officier qui « recense les survivants » dans les hauts de La Possession.</p><p><strong>Récompense :</strong> 6 nourriture ; réputation +1.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "nourriture": 6
+            },
+            "faction": "garnison-du-quai",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "eflZnAgBsHQuXwHF",
+      "_key": "!tables.results!n8vsDFqCUyyeL52h.eflZnAgBsHQuXwHF",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — La grue numéro trois.</strong> Remettre en marche le moteur d'une grue pour décharger un cargo arrivé de nuit.</p><p><strong>Récompense :</strong> 6 carburant, 2 pieces ; réputation +3.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "carburant": 6,
+              "pieces": 2
+            },
+            "faction": "garnison-du-quai",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "HY0zT5c53KYk4Tlr",
+      "_key": "!tables.results!n8vsDFqCUyyeL52h.HY0zT5c53KYk4Tlr",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — La patrouille perdue.</strong> Retrouver une patrouille partie sur la route du Littoral et qui ne répond plus.</p><p><strong>Récompense :</strong> 4 munitions, 2 medicaments ; réputation +3.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "munitions": 4,
+              "medicaments": 2
+            },
+            "faction": "garnison-du-quai",
+            "reputation": 3
+          }
+        }
+      }
+    },
+    {
+      "_id": "uhdkaihYAFFgq0rb",
+      "_key": "!tables.results!n8vsDFqCUyyeL52h.uhdkaihYAFFgq0rb",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Un médecin contre du carburant.</strong> Ils offrent du carburant si un soignant du groupe passe une semaine à leur infirmerie.</p><p><strong>Récompense :</strong> 8 carburant ; réputation +2.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "carburant": 8
+            },
+            "faction": "garnison-du-quai",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "sGaUlFWrk09B5Fv6",
+      "_key": "!tables.results!n8vsDFqCUyyeL52h.sGaUlFWrk09B5Fv6",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Les armes de la brigade.</strong> Récupérer le contenu de l'armurerie d'une brigade abandonnée de l'Ouest avant les Sans-Lune.</p><p><strong>Récompense :</strong> 5 munitions ; réputation +3.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "munitions": 5
+            },
+            "faction": "garnison-du-quai",
+            "reputation": 3
+          }
+        }
+      }
+    }
+  ]
+}

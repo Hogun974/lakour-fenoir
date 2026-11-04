@@ -1,0 +1,147 @@
+{
+  "_id": "REkrLgMKcoi0GLDg",
+  "_key": "!items!REkrLgMKcoi0GLDg",
+  "name": "Serre",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "serre",
+    "categorie": "nourriture",
+    "description": "<p>Un tunnel de plastique ou de vitres récupérées sur des arceaux : à l'abri des pluies battantes de l'Est et du froid des Hauts, tomates, salades et semis poussent toute l'année. Le plastique brille au soleil.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 12
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 8,
+          "pieces": 1,
+          "graines": 2,
+          "travail": 12
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "potager",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "nourriture": 2
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 30
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 2,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "cultures",
+            "nombre": 1
+          }
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 12,
+          "pieces": 2,
+          "graines": 4,
+          "travail": 16
+        },
+        "requiert": {
+          "savoirs": [
+            "maraichage-tropical"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "potager",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "nourriture": 4
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 30
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 2,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "cultures",
+            "nombre": 1
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "serre"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

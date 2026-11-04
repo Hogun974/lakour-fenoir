@@ -1,0 +1,50 @@
+{
+  "_id": "LhB26G0JMaCbnTJB",
+  "_key": "!items!LhB26G0JMaCbnTJB",
+  "name": "Cuisinier de camion-bar",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "cuisinier-de-camion-bar",
+    "description": "<p>Son camion-bar fait des samoussas, des bouchons et des sandwichs américains sur le parking de la plage depuis quinze ans. Il connaît tous les fournisseurs, tous les marchés, tous les ragots.</p>",
+    "competences": {
+      "parole": 2,
+      "survie": 1,
+      "conduite": 1,
+      "combat": 1,
+      "vigilance": 1,
+      "soins": 1
+    },
+    "savoirs": [
+      "conserverie"
+    ],
+    "equipement": [
+      "rechaud",
+      "couteau",
+      "camion-plateau"
+    ],
+    "accroche": "<p>Il sert la dernière fournée de la nuit quand'une cliente mord son compagnon devant le comptoir.</p>",
+    "region": "saint-leu",
+    "incapacites": [],
+    "histoire": [
+      "Son camion porte le prénom de sa fille, peint en lettres jaunes.",
+      "Il connaît les commandes de tous les habitués, et leurs secrets."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cuisinier-de-camion-bar"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

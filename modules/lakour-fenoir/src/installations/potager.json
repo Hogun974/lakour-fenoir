@@ -1,0 +1,193 @@
+{
+  "_id": "ZWoVy5FxU6DYlJSA",
+  "_key": "!items!ZWoVy5FxU6DYlJSA",
+  "name": "Potager",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "potager",
+    "categorie": "nourriture",
+    "description": "<p>Des planches de brèdes, de songes, de patates douces, de manioc, de haricots, de chouchous et de piments. La première récolte de brèdes vient vite ; le reste suit. Un potager se voit, et il boit.</p>",
+    "niveau": 0,
+    "niveauMax": 3,
+    "chantier": {
+      "fait": 0,
+      "requis": 8
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 0,
+          "graines": 2,
+          "travail": 8
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 1,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "nourriture": 2
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 30
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "cultures",
+            "nombre": 1
+          }
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 0,
+          "graines": 4,
+          "travail": 12
+        },
+        "requiert": {
+          "savoirs": [
+            "maraichage-tropical"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 1,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "nourriture": 4
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 30
+          },
+          "consommation": {
+            "eau": 2
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "cultures",
+            "nombre": 1
+          }
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 6,
+          "pieces": 0,
+          "graines": 6,
+          "travail": 20
+        },
+        "requiert": {
+          "savoirs": [
+            "maraichage-tropical"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 2,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "compost",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "nourriture": 6
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 30
+          },
+          "consommation": {
+            "eau": 2
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 2,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "cultures",
+            "nombre": 2
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "potager"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

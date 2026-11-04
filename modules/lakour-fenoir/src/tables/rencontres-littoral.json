@@ -1,0 +1,208 @@
+{
+  "_id": "mymRAN0ZBWMkVTBW",
+  "_key": "!tables!mymRAN0ZBWMkVTBW",
+  "name": "Rencontres — littoral",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une rencontre en sortie dans une région de zone « littoral ».</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rencontres-littoral",
+      "zone": "littoral"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "nP9DuGQJmT4Xei67",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.nP9DuGQJmT4Xei67",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois Livides frais coincés dans une voiture, qui cognent aux vitres au passage.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LFSkyYM39cE2h7aJ",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.LFSkyYM39cE2h7aJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une famille qui pousse un caddie chargé le long de la quatre-voies ; le père tient un sabre à canne.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "d0Kr7WweQGKTRYBu",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.d0Kr7WweQGKTRYBu",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une meute de chiens errants autour d'une poubelle de snack.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VDZUaYZ81ms8DKN3",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.VDZUaYZ81ms8DKN3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide noyé qui sort de l'écume en titubant, au crépuscule.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hEopLXXnIfqgHr8o",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.hEopLXXnIfqgHr8o",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux Ferrailleurs démontant les panneaux d'une villa ; ils proposent de partager… le travail.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ACDFglScS5nH8TnP",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.ACDFglScS5nH8TnP",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une patrouille de la Garnison qui contrôle les papiers à un rond-point.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oCDqxypbJ03XSKe5",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.oCDqxypbJ03XSKe5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une douzaine de Livides devant un supermarché, attirés par une alarme sur batterie.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HKGHIgEJb5xE4oDB",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.HKGHIgEJb5xE4oDB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vieux pêcheur assis sur les galets, sa canne à la main, qui ne veut pas partir.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aP4vZ5k1gGNmmUx0",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.aP4vZ5k1gGNmmUx0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une voiture qui klaxonne au loin, puis plus rien.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sZjCmRLfYAc3Q2jw",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.sZjCmRLfYAc3Q2jw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des Sans-Lune qui marquent une porte à la bombe ; ils ne vous ont pas encore vus.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "T0X2JrmS6FoFfaGe",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.T0X2JrmS6FoFfaGe",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un corps sur la plage, à moitié recouvert de sable : il bouge un bras.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "N0q5KqckRq7dSvY6",
+      "_key": "!tables.results!mymRAN0ZBWMkVTBW.N0q5KqckRq7dSvY6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un groupe de jeunes qui se baignent au lagon comme si de rien n'était, une radio à fond.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

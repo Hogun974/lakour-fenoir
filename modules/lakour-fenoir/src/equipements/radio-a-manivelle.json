@@ -1,0 +1,37 @@
+{
+  "_id": "Rx2lvvdh5L8dpysq",
+  "_key": "!items!Rx2lvvdh5L8dpysq",
+  "name": "Radio à manivelle",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "radio-a-manivelle",
+    "categorie": "communication",
+    "description": "<p>Une petite radio qu'on remonte à la main : écouter les dernières émissions, les messages en boucle, les autres groupes. Elle ne sait pas émettre.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "renseignements": true
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "radio-a-manivelle"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

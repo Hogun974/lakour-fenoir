@@ -1,0 +1,47 @@
+{
+  "_id": "bocOAY487x6bUzvN",
+  "_key": "!items!bocOAY487x6bUzvN",
+  "name": "Munitions rechargées",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "munitions-rechargees",
+    "description": "<p>Douilles récupérées, amorces et plombs de chasse, poudre tirée de cartouches abîmées : un travail lent et dangereux. Raté, il fait exploser l'arme.</p>",
+    "cout": {
+      "pieces": 2,
+      "carburant": 1
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "cle": "atelier",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "ressource": "munitions",
+      "n": 2
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "munitions-rechargees"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

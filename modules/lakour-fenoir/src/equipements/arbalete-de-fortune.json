@@ -1,0 +1,37 @@
+{
+  "_id": "olChNa2lCyCxRl5U",
+  "_key": "!items!olChNa2lCyCxRl5U",
+  "name": "Arbalète de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "arbalete-de-fortune",
+    "categorie": "arme",
+    "description": "<p>Une arbalète d'atelier : lame de ressort de voiture pour l'arc, crosse de bois, détente de récupération. Lente à armer, silencieuse, et ses carreaux se récupèrent.</p>",
+    "bonus": {
+      "tir": 1
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "arbalete-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

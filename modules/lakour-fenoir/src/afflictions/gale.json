@@ -1,0 +1,44 @@
+{
+  "_id": "kd9q31mmHVtXtzdW",
+  "_key": "!items!kd9q31mmHVtXtzdW",
+  "name": "Gale",
+  "type": "affliction",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+    "cle": "gale",
+    "categorie": "maladie",
+    "description": "<p>La promiscuité des abris surpeuplés, les couvertures partagées : des démangeaisons qui empêchent de dormir et s'infectent à force de gratter.</p>",
+    "prevention": "<p>Laver et faire bouillir le linge, ne pas entasser les gens.</p>",
+    "contagion": 0.05,
+    "incubation": 10,
+    "duree": 14,
+    "effets": {
+      "malus": 0,
+      "fatigue": 1
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "normale",
+      "medicaments": 1
+    },
+    "aggravation": null,
+    "declencheur": null,
+    "risque": 0.002
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gale"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

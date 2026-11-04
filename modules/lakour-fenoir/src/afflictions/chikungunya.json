@@ -1,0 +1,49 @@
+{
+  "_id": "SlHVbkQZZVkwfaXd",
+  "_key": "!items!SlHVbkQZZVkwfaXd",
+  "name": "Chikungunya",
+  "type": "affliction",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+    "cle": "chikungunya",
+    "categorie": "maladie",
+    "description": "<p>Le même moustique, une autre fièvre : brutale, avec des douleurs articulaires qui plient les gens en deux. Les anciens de l'île s'en souviennent. Les douleurs peuvent durer des mois.</p>",
+    "prevention": "<p>Moustiquaires, eaux stagnantes vidées, manches longues au crépuscule.</p>",
+    "contagion": 0.02,
+    "incubation": 4,
+    "duree": 10,
+    "effets": {
+      "malus": 1,
+      "fatigue": 1
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "normale",
+      "medicaments": 1
+    },
+    "aggravation": {
+      "jours": 10,
+      "malus": 1,
+      "fatigue": 1,
+      "duree": 30
+    },
+    "declencheur": "moustiques",
+    "risque": 0.004
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chikungunya"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

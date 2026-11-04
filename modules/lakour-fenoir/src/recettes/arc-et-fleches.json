@@ -1,0 +1,41 @@
+{
+  "_id": "nHobGpngrAgb3YMs",
+  "_key": "!items!nHobGpngrAgb3YMs",
+  "name": "Arc et flèches",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "arc-et-fleches",
+    "description": "<p>Un arc de bois de goyavier ou de tuyau PVC chauffé, une corde tressée, une douzaine de flèches empennées de plumes de poule.</p>",
+    "cout": {
+      "materiaux": 2
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": "atelier"
+    },
+    "produit": {
+      "equipement": "arc-de-chasse",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "arc-et-fleches"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "_id": "6cAiaJj4qo5Z1EsL",
+  "_key": "!journal!6cAiaJj4qo5Z1EsL",
+  "name": "Fénoir — Guide du joueur",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "guide-du-joueur",
+      "visible": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "FQJEJCZN44TbP7BC",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.FQJEJCZN44TbP7BC",
+      "name": "Bienvenue à Fénoir",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Fénoir</strong>, c'est la nuit, en créole. Un mal que personne ne comprend, <em>le Gris</em>, relève les morts : on les appelle les <strong>Livides</strong>. Vous vivez à La Réunion, et la partie commence <strong>au jour zéro</strong> : les lumières sont encore allumées, les téléphones sonnent, les urgences débordent, et rien ne va plus.</p><p>Le temps avance avec vos actions, et le monde avance avec lui : les réseaux tombent région par région, les villes se remplissent de Livides puis, des mois plus tard, s'en vident ; des bandes naissent, des cyclones passent, la Fournaise peut se réveiller.</p><p>Vous cherchez un <strong>abri</strong>, vous l'aménagez, vous vivez de <strong>ressources</strong> qui s'épuisent. Deux voies, aussi valables l'une que l'autre :<br>- <strong>Repartir</strong> : quand l'endroit est épuisé ou intenable, déménager ailleurs avec ce qu'on peut porter, ses compétences, et ses <strong>plans</strong> (ce qu'on a su construire se reconstruit plus vite).<br>- <strong>S'enraciner</strong> : viser l'<strong>autonomie</strong> (eau de pluie, potager, élevage, panneaux, galeries…) pour ne plus jamais bouger. Mais la prospérité se voit et s'entend.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "bienvenue"
+        }
+      }
+    },
+    {
+      "_id": "bP0OOYMgyQ1Qn9Uc",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.bP0OOYMgyQ1Qn9Uc",
+      "name": "Le test",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Quand l'issue est incertaine et qu'il y a un enjeu, on fait un <strong>test</strong>.</p><ul><li>Votre <strong>réserve</strong> : autant de d6 que le <strong>niveau de la compétence</strong> (0 à 5) <strong>+ 1</strong>, plus les bonus (outil adapté +1, aide d'un autre +1, situation ±1 ou ±2), moins les malus d'état. Au moins 1 dé, au plus 10.</li><li>Chaque <strong>5 ou 6</strong> est un <strong>succès</strong>. La difficulté dit combien il en faut : <strong>normale</strong> 1, <strong>difficile</strong> 2, <strong>extrême</strong> 3 ; <strong>facile</strong> : 1 succès avec un dé de plus.</li><li>La <strong>marge</strong> (succès en trop) dit si c'est bien fait.</li></ul><p><strong>Exemple.</strong> Lucie (survie 2) cherche de l'eau potable dans une ravine sèche de l'Ouest : 3 dés, difficile. Elle tire 6, 3, 5 : deux succès, réussite juste.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "test"
+        }
+      }
+    },
+    {
+      "_id": "GagE4Dxv1JInyxQR",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GagE4Dxv1JInyxQR",
+      "name": "Forcer et progresser",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Forcer</strong> (une fois par test) : relancer tous les dés qui ne sont pas des succès, au prix de <strong>1 fatigue</strong>. Un test forcé qui échoue encore donne une <strong>complication</strong> que choisit le MJ : bruit, outil cassé, blessure légère, temps perdu.</p><p><strong>Progresser</strong> : un test qui comptait (danger, enjeu) donne une <strong>marque</strong> à la compétence s'il est <strong>échoué</strong> ou <strong>forcé</strong> : on apprend de ses erreurs et de ses efforts. Quand les marques atteignent <strong>2 × (niveau + 1)</strong>, la compétence monte de 1 (au plus 5). Le MJ peut aussi donner une marque après une scène marquante. Une <strong>passion</strong> multiplie les marques (×1,5 pour un intérêt, ×2 pour une passion).</p><p><strong>Exemple.</strong> Karim (bricolage 1) force la réparation d'une pompe et échoue quand même : complication (la poignée casse), mais il gagne une marque. À 4 marques, il passera bricolage 2.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "forcer"
+        }
+      }
+    },
+    {
+      "_id": "RMq9pJVwG02jD0Oe",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.RMq9pJVwG02jD0Oe",
+      "name": "Les dix compétences",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Endurance</strong> : porter, creuser, courir, résister.</li><li><strong>Combat</strong> : le corps à corps.</li><li><strong>Tir</strong> : armes à feu, arc, arbalète, fusil-harpon.</li><li><strong>Discrétion</strong> : passer sans être vu, fouiller sans bruit.</li><li><strong>Vigilance</strong> : repérer, monter la garde.</li><li><strong>Bricolage</strong> : réparer, construire, électricité, mécanique.</li><li><strong>Survie</strong> : eau, cultures, pêche, chasse, orientation, plantes.</li><li><strong>Soins</strong> : panser, recoudre, soigner les fièvres.</li><li><strong>Parole</strong> : convaincre, négocier, apaiser, commander.</li><li><strong>Conduite</strong> : véhicules, deux-roues, bateau.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "competences"
+        }
+      }
+    },
+    {
+      "_id": "DOqbbSx2IidoGqUd",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.DOqbbSx2IidoGqUd",
+      "name": "L'état d'un survivant",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Blessures</strong> (0 à 4) : indemne, égratigné, blessé (−1 dé), grièvement (−2 dés), <strong>mourant</strong> : un test de soins difficile dans le quart, sinon la mort.</li><li><strong>Fatigue</strong> (0 à 5) : −1 dé à 3 et 4, −2 à 5. Une nuit de repos à l'abri : −2 ; un quart de repos : −1.</li><li><strong>Moral</strong> (0 à 5) : à 1, −1 dé ; à 0, le personnage <strong>craque</strong> (refuse, fuit, s'effondre).</li><li><strong>Faim et soif</strong> : au-delà de 4 quarts sans boire, +1 fatigue par quart ; au-delà de 2 jours sans manger, +1 fatigue et −1 moral par jour.</li><li><strong>Infection</strong> : une <strong>morsure</strong> ou une griffure profonde d'un Livide demande un test de soins <strong>extrême</strong> dans le quart (laver, cauteriser, parfois amputer). Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. <strong>Aucun remède connu.</strong></li><li><strong>Maladies et blessures qui durent</strong> : dengue, chikungunya, leptospirose, gastro, plaies infectées, fractures… Une eau traitée, des moustiquaires et une infirmerie en réduisent le risque.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "etat"
+        }
+      }
+    },
+    {
+      "_id": "d8Vo48J5GJsODogv",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.d8Vo48J5GJsODogv",
+      "name": "Le temps",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le temps se compte en <strong>quarts</strong> de six heures : matin, après-midi, soir, nuit. Fouiller un lieu prend un quart ; explorer une région, un ou deux ; voyager, selon la route ; construire, selon le chantier (quarts de travail divisés par le nombre de bras).</p><p>La partie commence le <strong>4 décembre 2026</strong> (réglage du MJ) : en pleine <strong>saison des pluies et des cyclones</strong> (novembre à avril). L'hiver austral (mai à octobre) est sec et frais ; il gèle au-dessus de 1 500 m. Letchis en décembre-janvier, mangues de novembre à janvier : la cueillette est meilleure.</p><p>La crise a ses <strong>phases</strong> : jour zéro (jours 0–1), panique (2–6), effondrement (7–20 : électricité, eau, carburant et téléphone tombent région par région), silence (21–59), puis l'après.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "temps"
+        }
+      }
+    },
+    {
+      "_id": "80uWzPB5HyTsiLJJ",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.80uWzPB5HyTsiLJJ",
+      "name": "Les ressources et l'abri",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les stocks de l'abri sont des nombres : <strong>eau</strong> (un jour d'eau pour une personne), <strong>nourriture</strong> (un jour de repas), <strong>carburant</strong> (10 litres), <strong>médicaments</strong>, <strong>munitions</strong>, <strong>matériaux</strong> (une brouette), <strong>pièces</strong> (une caisse), <strong>graines</strong>, <strong>énergie</strong> (kWh, plafonnée par les batteries).</p><p>Chaque jour, chaque personne boit <strong>1 eau</strong> (1,5 dans les Bas en saison chaude) et mange <strong>1 nourriture</strong>. Sans réserve étanche ni séchoir, <strong>5 %</strong> de la nourriture se gâte chaque jour : la chaleur humide pourrit tout.</p><p>Les <strong>installations</strong> produisent, protègent, cachent. Un groupe de quatre consomme 4 eau et 4 nourriture par jour ; à titre de repère, une citerne de pluie donne environ 1 eau par jour et par point de pluie de la région à son premier niveau, un potager environ 2 nourriture par jour après un mois, des panneaux environ 2 kWh par jour et par point de soleil. Un jour où eau, nourriture et énergie nettes sont positives sans aucune fouille est un <strong>jour autonome</strong> ; sept de suite, et l'abri est <strong>autonome</strong>.</p><p>Exemples de voies d'autonomie : <strong>La ferme des Hauts</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 2, Enclos à cabris 2, Basse-cour 1, Réserve étanche 1, Panneaux solaires 1, Batteries 1) ; <strong>L'îlet de Mafate</strong> (Captage de source 2, Compost 1, Potager 2, Enclos à cabris 1, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1, Batteries 1, Poste radio 1) ; <strong>La case de l'Ouest sec</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 2, Verger 2, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1) ; <strong>La vallée de la Langevin (avec le courant de la rivière)</strong> (Captage de source 1, Filtre à sable et charbon 1, Compost 1, Potager 2, Bassin à tilapias 2, Réserve étanche 1, Pico-hydro sur rivière 1, Infirmerie 2, Poste radio 2, Atelier 2) ; <strong>Le refuge sous la ferme (voie discrète)</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 3, Panneaux solaires 2, Batteries 1, Galerie souterraine 4, Camouflage 3).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "abri"
+        }
+      }
+    },
+    {
+      "_id": "winoqao9FW0SD2KY",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.winoqao9FW0SD2KY",
+      "name": "Bruit, visibilité, menaces",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le <strong>bruit</strong> de l'abri (0 à 10) retombe de 2 par quart : un coup de feu +2 (rafale +4), un groupe électrogène +2 par quart, un moteur +1, un chantier +1, un cri +2. La <strong>visibilité</strong> (0 à 10) se calcule : lumières la nuit, fumée, cultures, taille du groupe, installations voyantes, moins la discrétion du site et du camouflage.</p><p>Bruit et visibilité attirent hordes et bandes. Un <strong>assaut</strong> oppose la <strong>défense</strong> de l'abri (plus la vigilance de la garde) à la <strong>force</strong> de la menace : marge positive, repoussé ; −1, une installation endommagée et un blessé ; −2 ou pire, <strong>brèche</strong>.</p><p><strong>Combat simple</strong> : chaque succès de combat ou de tir met un Livide hors d'état (les Livides anciens des Hauts en demandent deux) ; chaque Livide restant attaque (un d6 : 6 = touche, et un second 6 = morsure). Tirer fait du bruit.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "bruit"
+        }
+      }
+    },
+    {
+      "_id": "eDdGCYY0vBWGbiWN",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.eDdGCYY0vBWGbiWN",
+      "name": "Voyager et savoir",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>L'île est découpée en seize régions reliées par des <strong>routes réelles</strong> : RN1, RN2, route du Littoral, route des Tamarins, route des Plaines, route de Cilaos, route de Salazie, route du Volcan, route des Laves, et les sentiers de Mafate, qui n'a pas de route du tout. Chaque route a ses temps à pied et en véhicule ; fortes pluies, éboulements, houle et éruptions les rendent difficiles ou les coupent.</p><p>Ce que vous savez d'une région est <strong>daté</strong> : vu de vos yeux tel jour, entendu à la radio, ou simple rumeur. Le monde change pendant que vous n'y êtes pas. Un déménagement se prépare sur des renseignements qui vieillissent : c'est voulu.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "voyager"
+        }
+      }
+    },
+    {
+      "_id": "At3F4CVMfot4Sg5v",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.At3F4CVMfot4Sg5v",
+      "name": "Repartir ou s'enraciner",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Repartir.</strong> Quand l'endroit s'épuise, qu'une horde approche ou que les Livides des Hauts se rassemblent, on déménage : on emporte ce qu'on peut porter (ou charger), on garde ses compétences et ses <strong>plans</strong> — reconstruire ailleurs coûte un quart de matériaux en moins et la moitié du travail.</p><p><strong>S'enraciner.</strong> On creuse, on plante, on capte, on câble, jusqu'à ne plus dépendre de rien. Mais une serre qui brille, une éolienne qui grince, une fumée chaque soir disent à toute l'île qu'il y a quelque chose à prendre. La <strong>discrétion</strong> (souterrain, camouflage) et la <strong>défense</strong> protègent ce qu'on a bâti.</p><p>Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs et le littoral est l'enfer ; plus tard, ce sera peut-être l'inverse.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "deux-voies"
+        }
+      }
+    },
+    {
+      "_id": "YAeUac3GaRE5gFYj",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.YAeUac3GaRE5gFYj",
+      "name": "Créer son survivant",
+      "type": "text",
+      "sort": 1100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un survivant, c'est une <strong>enfance</strong> (où et comment il a grandi), un <strong>passé</strong> (ce qu'il faisait au jour zéro), un <strong>âge</strong> (16 à 75 ans), 1 à 2 <strong>passions</strong>, 1 à 3 <strong>traits</strong> de caractère, parfois des <strong>incapacités</strong>, et une histoire.</p><p><strong>Tirer.</strong> La fenêtre « Créer un survivant » (ou le MJ IA) tire tout au sort, de façon cohérente : les compétences sont la somme des modificateurs de l'enfance, du passé et des traits (au plus 5).</p><p><strong>Verrouiller et relancer.</strong> Gardez ce qui vous plaît (nom, âge, enfance, passé, traits) en le verrouillant, et relancez le reste autant que vous voulez ; ou choisissez chaque élément vous-même.</p><p><strong>Le budget.</strong> La somme des niveaux de compétences doit rester entre <strong>10 et 16</strong> pour un survivant de départ (le MJ peut changer ces bornes). Pas de héros de cinéma : des gens ordinaires.</p><p><strong>Les passions.</strong> Une flamme (intérêt) : les marques comptent une fois et demie. Deux flammes (passion) : elles comptent double, et le survivant gagne 1 de moral les jours où il fait une tâche de sa passion, en perd 1 s'il en est privé sept jours.</p><p><strong>L'âge.</strong> Sous 25 ans, on apprend plus vite (une marque de plus toutes les trois) ; les anciens partent avec plus de niveaux et moins d'endurance.</p><p><strong>Les incapacités</strong> (en rouge) : ce qu'il refuse ou ne sait pas faire — la violence, les soins, les travaux lourds, la conduite…</p><p><strong>Les tâches du jour.</strong> À l'abri, chacun a une tâche : garde, cultures, élevage, chantier, atelier, cuisine, soins, eau, pêche, chasse, fouille, repos, enseigner. Une tâche tenue une semaine donne une marque.</p><p><strong>L'histoire.</strong> Le MJ IA (ou vous) écrit le journal « Histoire de… » : qui il est, son histoire, ce qu'il garde pour lui (Foundry envoie les documents à tous les navigateurs : ce n'est pas un coffre-fort), et les chapitres de la campagne.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "creer"
+        }
+      }
+    },
+    {
+      "_id": "1negBmyxnDQWAKrk",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.1negBmyxnDQWAKrk",
+      "name": "Les enfances",
+      "type": "text",
+      "sort": 1200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Enfant des Hauts de Salazie</strong> (survie +1, endurance +1) — Une enfance dans le cirque vert, entre les treilles de chouchous, la pluie et les sentiers qu'on descendait pour aller à l'école.</p><p><strong>Gamin du Port</strong> (combat +1, discretion +1) — Les cités du Port, les terrains vagues, les grues, la débrouille et la bande de copains qui se tient les coudes.</p><p><strong>Fille de pêcheur de Saint-Pierre</strong> (survie +1, conduite +1) — Le port de Saint-Pierre, les barques au retour, l'odeur du poisson et du gasoil, les colères de la mer qu'on apprend à respecter.</p><p><strong>Enfance zoreil, arrivée à dix ans</strong> (parole +1, bricolage +1, survie -1) — Né en métropole, arrivé dans l'île à dix ans avec des parents mutés : le choc de la chaleur, du créole qu'on ne comprend pas, puis l'île qui devient la sienne.</p><p><strong>Enfant de la cité à Saint-Denis</strong> (discretion +1, parole +1) — Une barre du Chaudron ou de Vauban, les cages d'escalier, le basket, la mère qui travaille de nuit, la ville qu'on connaît par cœur.</p><p><strong>Enfance à Mayotte</strong> (endurance +1, survie +1) — Une enfance à Mayotte, le lagon, la famille nombreuse, puis la traversée vers La Réunion pour les études ou le travail.</p><p><strong>Enfance à Madagascar</strong> (endurance +1, bricolage +1) — Une enfance malgache, à Tamatave ou sur les Hautes Terres, puis l'arrivée dans l'île voisine, avec ses papiers, ses espoirs et ses petits boulots.</p><p><strong>Enfance à Maurice</strong> (parole +1, conduite +1) — Une enfance mauricienne, entre Port-Louis et la côte, avant d'épouser quelqu'un de La Réunion ou d'y suivre un travail.</p><p><strong>Enfant de planteur de l'Est</strong> (endurance +1, survie +1) — Les champs de canne de Saint-André ou de Sainte-Suzanne, la coupe en famille, les temples, les fêtes, les cyclones qui couchent tout.</p><p><strong>Enfant d'un îlet de Mafate</strong> (endurance +2, survie +1, conduite -1) — Une enfance sans route, à porter l'eau et le bois, à marcher des heures pour voir un cousin, à vivre au rythme du soleil et de l'hélicoptère.</p><p><strong>Enfant du Tampon</strong> (survie +1, bricolage +1) — Les kilomètres du Tampon, les cases avec jardin, le brouillard de l'après-midi, les vacances à la Plaine des Cafres chez l'oncle éleveur.</p><p><strong>Enfant de la côte Ouest</strong> (endurance +1, conduite +1) — Saint-Gilles, l'Hermitage, le lagon, les savanes : une enfance au soleil, entre la plage, le surf et les petits boulots de saison.</p><p><strong>Enfant de Cilaos</strong> (endurance +1, vigilance +1) — Le bourg au bout des virages, les vignes, les lentilles, les randonneurs, les mères qui brodaient, les éboulis qui coupaient la route chaque saison.</p><p><strong>Enfance chinoise de Saint-Denis</strong> (parole +1, vigilance +1) — La boutique familiale du centre-ville, les comptes faits le soir, les fêtes du Nouvel An, les grands-parents arrivés de Canton.</p><p><strong>Enfance dans une famille commerçante de Saint-Pierre</strong> (parole +2) — Une famille de commerçants musulmans de Saint-Pierre, la mosquée, le magasin de tissus, le sens des affaires et de la parole donnée.</p><p><strong>Enfant de militaire</strong> (tir +1, vigilance +1) — Une enfance de déménagements, de caserne en caserne, entre métropole, outre-mer et Afrique : la discipline, les adieux, s'adapter partout.</p><p><strong>Enfance en foyer</strong> (discretion +1, combat +1, parole -1) — Placé jeune, d'une famille d'accueil à un foyer : ne compter sur personne, garder ses affaires près de soi, se méfier des promesses.</p><p><strong>Enfance protégée</strong> (parole +1, soins +1, endurance -1 ; incapacité : travaux-lourds) — Une villa des hauts de Saint-Denis ou de Saint-Gilles, l'école privée, les cours de piano, des parents qui réglaient tout. Rien ne l'avait préparé à ceci.</p><p><strong>Enfant de la Plaine des Cafres</strong> (survie +1, endurance +1) — Les prairies, le froid, les vaches, les chevaux, le feu de cheminée en août, l'école où l'on arrivait trempé de brouillard.</p><p><strong>Enfance tamoule de Saint-André</strong> (soins +1, endurance +1) — Une famille tamoule de Saint-André : le temple, les marches sur le feu de l'oncle, les fêtes, les cannes, et la grand-mère guérisseuse.</p><p><strong>Enfance sur un bateau</strong> (conduite +1, survie +1, bricolage +1, parole -1) — Des parents navigateurs, une enfance de port en port dans l'océan Indien, l'école par correspondance, la mer pour horizon.</p><p><strong>Enfant du Sud sauvage</strong> (survie +1, discretion +1) — Saint-Philippe, la vanille, les vacoas, les coulées qu'on allait voir en famille, la forêt de Mare-Longue comme terrain de jeu.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "enfances"
+        }
+      }
+    },
+    {
+      "_id": "AkeC2EJsUT6RjK3R",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.AkeC2EJsUT6RjK3R",
+      "name": "Les passés",
+      "type": "text",
+      "sort": 1300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Infirmière du CHU</strong> — Douze ans aux urgences de Bellepierre, des gardes de nuit, des cyclones, l'épidémie de chikungunya. Elle sait trier, piquer, panser, et garder sa voix calme quand tout le monde crie. <em>Compétences : soins 3, vigilance 1, parole 1, endurance 1, survie 1.</em></p><p><strong>Électricien</strong> — Artisan installateur, il a posé des panneaux sur la moitié des toits de l'Ouest et câblé des cases dans les îlets. Il sait où sont les onduleurs, les batteries et les dépôts de matériel. <em>Compétences : bricolage 3, conduite 1, endurance 1, vigilance 1, parole 1.</em></p><p><strong>Pêcheur de Saint-Gilles</strong> — Fils et petit-fils de pêcheurs, il connaît chaque passe du récif, chaque coin de la côte Ouest, la houle australe et les colères de la mer. <em>Compétences : survie 2, conduite 2, endurance 1, vigilance 1, combat 1.</em></p><p><strong>Planteur de canne</strong> — Il a coupé la canne à la main avant les machines, il tient vingt hectares à Saint-André et il sait réparer son tracteur avec du fil de fer. Il a des bras, et de la patience. <em>Compétences : endurance 2, survie 2, combat 1, conduite 1, bricolage 1.</em></p><p><strong>Gendarme</strong> — Brigadière d'une brigade du Sud, habituée aux accidents de la route, aux bagarres de fin de bal et aux recherches en montagne. Elle a une arme, une radio, et l'habitude qu'on l'écoute. <em>Compétences : tir 2, parole 2, vigilance 1, conduite 1, combat 1.</em></p><p><strong>Étudiante</strong> — En licence à l'université du Moufia, elle vit en colocation, connaît tout le monde, court le semi-marathon et apprend vite. Elle n'a jamais vu mourir personne. <em>Compétences : endurance 2, discretion 1, parole 1, vigilance 1, survie 1, bricolage 1.</em></p><p><strong>Guide de canyon</strong> — Moniteur de canyon et de randonnée à Cilaos, il connaît chaque sentier des cirques, chaque ravine, chaque piège du terrain et des nuages. <em>Compétences : endurance 2, survie 2, vigilance 1, discretion 1, soins 1.</em></p><p><strong>Mécanicien</strong> — Il tient un garage de La Possession, répare tout ce qui a un moteur et récupère tout ce qui n'en'a plus. Il connaît les Ferrailleurs avant qu'on les appelle ainsi. <em>Compétences : bricolage 2, conduite 2, endurance 1, combat 1, parole 1.</em></p><p><strong>Cuisinier de camion-bar</strong> — Son camion-bar fait des samoussas, des bouchons et des sandwichs américains sur le parking de la plage depuis quinze ans. Il connaît tous les fournisseurs, tous les marchés, tous les ragots. <em>Compétences : parole 2, survie 1, conduite 1, combat 1, vigilance 1, soins 1.</em></p><p><strong>Retraité de la marine</strong> — Trente ans de marine, dont une partie à naviguer dans l'océan Indien ; il vit seul dans les hauts de La Possession avec ses cartes, son poste radio et ses souvenirs. Il sait commander, et il sait se taire. <em>Compétences : parole 2, tir 1, vigilance 2, conduite 1, soins 1.</em></p><p><strong>Agricultrice des Hauts</strong> — Elle tient avec son frère une ferme laitière de la Plaine des Cafres : vaches, potager, cabris, le froid de l'hiver et le brouillard de chaque après-midi. Elle sait faire vivre une famille d'une terre. <em>Compétences : survie 2, endurance 2, bricolage 1, conduite 1, tir 1.</em></p><p><strong>Ambulancier</strong> — Il conduit l'ambulance d'une société privée de Saint-Benoît, de jour comme de nuit, sur toutes les routes de l'Est. Il sait conduire vite, porter lourd et soigner en roulant. <em>Compétences : conduite 2, soins 2, endurance 1, vigilance 1, parole 1.</em></p><p><strong>Professeure de SVT</strong> — Elle enseigne les sciences de la vie et de la Terre dans un collège des hauts de Saint-Paul et tient le jardin pédagogique avec ses élèves. Elle connaît les volcans, les plantes, les maladies, et elle sait expliquer. <em>Compétences : survie 2, soins 1, parole 2, bricolage 1, vigilance 1.</em></p><p><strong>Vendeur de bazar</strong> — Il tient le bazar familial de la rue commerçante de Saint-Pierre : tissus, quincaillerie, ustensiles, tout ce qu'on vend depuis trois générations. Il sait ce que valent les choses, et il sait négocier. <em>Compétences : parole 3, discretion 1, vigilance 1, bricolage 1, conduite 1.</em></p><p><strong>Chauffeur de car jaune</strong> — Il conduit le car interurbain sur la route de Cilaos, quatre cents virages deux fois par jour. Il connaît chaque arrêt, chaque passager, chaque éboulis de la route. <em>Compétences : conduite 3, vigilance 1, parole 1, endurance 1, bricolage 1.</em></p><p><strong>Apiculteur</strong> — Ses ruches sont dispersées entre la Plaine des Palmistes et les letchis de l'Est ; il produit du miel de baies roses et de forêt. Patient, calme, il sait se faire oublier des abeilles et des hommes. <em>Compétences : survie 2, discretion 2, endurance 1, soins 1, bricolage 1.</em></p><p><strong>Habitant d'un îlet de Mafate</strong> — Il est né à Roche-Plate, a porté des sacs de ciment sur les sentiers avant que l'hélicoptère les monte, cultive ses lentilles et ses patates, et connaît chaque famille du cirque. <em>Compétences : endurance 3, survie 2, vigilance 1, parole 1.</em></p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "passes"
+        }
+      }
+    },
+    {
+      "_id": "GsGWAAAIAkUufDjK",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
+      "name": "Les traits",
+      "type": "text",
+      "sort": 1400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Doigts de terre</strong> — Tout ce qu'il plante prend racine. Il parle aux brèdes, et les brèdes l'écoutent.</p><p><strong>Sang de basalte</strong> — Quand tout s'effondre, il reste debout. Une fois dans sa vie de survivant, il ne craque pas à moral 0 : il serre les dents et continue. <em>(Incompatible : Cœur d'artichaut.)</em></p><p><strong>La main qui ne frappe pas</strong> — Il ne lèvera la main sur personne, ni vivant ni Livide. Il soigne, il porte, il construit, il parle ; il ne tue pas. Sa paix intérieure rassure les autres. <em>(Incompatible : Brute épaisse, Œil froid.)</em></p><p><strong>Peur des voûtes</strong> — Sous une voûte de pierre ou de lave, il étouffe : −2 dés à tout dans les galeries et les tunnels de lave, et il refuse d'y dormir. <em>(Incompatible : Rat de galerie.)</em></p><p><strong>Rat de galerie</strong> — Le noir, l'humidité, la roche au-dessus de la tête : il s'y sent chez lui. +1 dé aux chantiers souterrains, et il ne craint jamais une voûte. <em>(Incompatible : Peur des voûtes.)</em></p><p><strong>Levé avant le coq</strong> — Debout à quatre heures, efficace jusqu'à midi, endormi à vingt heures. La garde de l'aube est la sienne. <em>(Incompatible : Oiseau de nuit.)</em></p><p><strong>Oiseau de nuit</strong> — Il revit quand le soleil se couche : la garde de nuit ne lui pèse pas, mais il faut le secouer le matin. <em>(Incompatible : Levé avant le coq.)</em></p><p><strong>Ventre sans fond</strong> — Il mange comme deux, et il a toujours faim : une ration et demie par jour. <em>(Incompatible : Mange comme un oiseau.)</em></p><p><strong>Mange comme un oiseau</strong> — Une poignée de riz, un fruit, et il tient la journée : trois quarts de ration lui suffisent. <em>(Incompatible : Ventre sans fond.)</em></p><p><strong>Nuits blanches</strong> — Il ne dort pas, ou si peu. Il veille volontiers, mais la fatigue s'accumule : +1 fatigue un jour sur deux.</p><p><strong>Soleil dedans</strong> — Il trouve toujours quelque chose de beau : une mangue mûre, un lever de soleil sur le Piton des Neiges. Son moral de base est plus haut. <em>(Incompatible : Nuage noir.)</em></p><p><strong>Nuage noir</strong> — Il voit venir le pire et, souvent, il a raison. Son moral de base est plus bas ; ses avertissements, eux, sauvent des vies. <em>(Incompatible : Soleil dedans.)</em></p><p><strong>Cuir de cabri</strong> — Dur au mal : la première blessure de chaque combat ne lui coûte qu'une égratignure. <em>(Incompatible : Os de verre.)</em></p><p><strong>Os de verre</strong> — Tout lui fait mal, tout le blesse : chaque blessure reçue compte un cran de plus la première fois. <em>(Incompatible : Cuir de cabri.)</em></p><p><strong>Souffle court</strong> — Asthmatique : l'effort, la fumée, la poussière des chantiers lui coupent le souffle. +1 fatigue après une course, un chantier ou un incendie.</p><p><strong>Âme de pèlerin</strong> — Il prie, il croit, à sa façon : chaque fête religieuse célébrée au camp lui rend 1 moral de plus. Les Pèlerins de la Lave le reconnaissent comme l'un des leurs.</p><p><strong>Case à part</strong> — Trop de monde l'étouffe : au-delà de six personnes dans l'abri, il perd 1 moral par semaine. Seul en fouille, il est à son meilleur. <em>(Incompatible : Cœur de kour.)</em></p><p><strong>Cœur de kour</strong> — Il aime la cour pleine, les enfants qui courent, le cari pour vingt : plus le groupe est grand, mieux il se porte. <em>(Incompatible : Case à part.)</em></p><p><strong>Tête de bois</strong> — Quand il a décidé, rien ne le fait changer d'avis : il ne se laisse jamais convaincre par la parole d'un étranger… ni par celle de ses amis.</p><p><strong>Main ouverte</strong> — Il donne sa ration à l'enfant, sa veste au réfugié, son temps à qui le demande. Le groupe l'aime ; les réserves un peu moins. <em>(Incompatible : Doigts crochus.)</em></p><p><strong>Doigts crochus</strong> — Il ramène toujours quelque chose de plus de fouille… et il manque parfois quelque chose dans les réserves. <em>(Incompatible : Main ouverte.)</em></p><p><strong>Ancien fumeur</strong> — Il avait arrêté. Avec la peur, l'envie revient : sans tabac ni zamal pendant sept jours, −1 moral ; il échangerait beaucoup pour une cigarette.</p><p><strong>Œil froid</strong> — Sa main ne tremble pas : il ne perd jamais de dé de tir à cause de la peur ou d'un ami en danger. <em>(Incompatible : La main qui ne frappe pas, Mains qui tremblent.)</em></p><p><strong>Mains qui tremblent</strong> — Maladroit : les vis lui échappent, les clous se tordent, les outils glissent. −1 en bricolage. <em>(Incompatible : Œil froid, Touche-à-tout.)</em></p><p><strong>Touche-à-tout</strong> — Débrouillard : il trouve, il bidouille, il fait marcher. +1 dé en fouille et à l'atelier. <em>(Incompatible : Mains qui tremblent.)</em></p><p><strong>Bras tendu</strong> — Il se met toujours entre le danger et les plus faibles : une fois par combat, il peut prendre pour lui une attaque destinée à un autre.</p><p><strong>Brute épaisse</strong> — Il frappe d'abord et parle ensuite, quand il parle. +1 en combat, −1 en parole. <em>(Incompatible : La main qui ne frappe pas.)</em></p><p><strong>Cœur d'artichaut</strong> — Il s'attache à tout le monde, et chaque perte le brise : −2 moral au lieu de −1 à la mort d'un compagnon. Mais il sait consoler : +1 dé pour soigner le choc d'une perte. <em>(Incompatible : Sang de basalte.)</em></p><p><strong>La langue de tout le monde</strong> — Créole, français, un peu de tamoul, de malgache ou de shimaoré : il parle à chacun dans sa langue, et on lui fait confiance plus vite.</p><p><strong>Jambes de cabri</strong> — Les sentiers de montagne ne lui font pas peur : en sentier, il compte un quart de moins sur les longs trajets (au moins un quart). <em>(Incompatible : Vertige.)</em></p><p><strong>Vertige</strong> — Le vide l'aspire : −2 dés sur les remparts, les passages exposés des sentiers et les toits. <em>(Incompatible : Jambes de cabri.)</em></p><p><strong>Peur de la mer</strong> — Il ne sait pas nager, ou il a vu quelqu'un se noyer : −2 dés en bateau ou dans l'eau, et il refuse la mer s'il peut.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "traits"
+        }
+      }
+    }
+  ]
+}

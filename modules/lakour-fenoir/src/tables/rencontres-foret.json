@@ -1,0 +1,208 @@
+{
+  "_id": "vQsdv0k9g1cpM2Dt",
+  "_key": "!tables!vQsdv0k9g1cpM2Dt",
+  "name": "Rencontres — forêt",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une rencontre en sortie dans une région de zone « foret ».</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rencontres-foret",
+      "zone": "foret"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "OVntIcbbVkMyaizn",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.OVntIcbbVkMyaizn",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cochon marron qui charge depuis les fougères.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jefRGkDbxBgxIC3H",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.jefRGkDbxBgxIC3H",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un camp de fortune sous les tamarins, abandonné depuis peu.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "iuUfUA33nru5jK8m",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.iuUfUA33nru5jK8m",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une troupe de Livides perdue dans la forêt de Bélouve, qui tourne en rond.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SKMmSGnbsGGsIr88",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.SKMmSGnbsGGsIr88",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un chasseur de la Coopérative qui piste un cerf et vous fait signe de vous taire.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1qtGb3VKpm17bbPJ",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.1qtGb3VKpm17bbPJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une tangue qui détale sous les feuilles mortes.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9C2UFKRdO5tMHsFY",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.9C2UFKRdO5tMHsFY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un arbre couché en travers de la route forestière.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6FOstd2EXE1erI1l",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.6FOstd2EXE1erI1l",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un apiculteur qui récolte ses ruches, voile sur le visage.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "n145o3Dwja77fHTs",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.n145o3Dwja77fHTs",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une cabane de bûcheron où quelqu'un a gravé des noms et des dates.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "D8qpqyHICDgIAckn",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.D8qpqyHICDgIAckn",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des Pèlerins qui prient devant une coulée ancienne, dans la forêt du Grand Brûlé.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HtyrL4vjFwyElfU9",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.HtyrL4vjFwyElfU9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide pendu à une branche, toujours en mouvement.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HhpHbkGNM0oMB9hB",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.HhpHbkGNM0oMB9hB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une source fraîche entre deux racines.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SHT4oyIBJi0f96wr",
+      "_key": "!tables.results!vQsdv0k9g1cpM2Dt.SHT4oyIBJi0f96wr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le bruit d'une tronçonneuse au loin, qui s'arrête net.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

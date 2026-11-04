@@ -1,0 +1,35 @@
+{
+  "_id": "LrLI4CexQXCAI2hu",
+  "_key": "!items!LrLI4CexQXCAI2hu",
+  "name": "Moustiquaires",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "moustiquaires",
+    "categorie": "vie",
+    "description": "<p>Des moustiquaires pour tous les lits, retaillées et reprisées : dans les Bas en saison des pluies, elles protègent de la dengue et du chikungunya mieux que n'importe quel remède.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "moustiquaires"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "_id": "chsIlUZOEPu3Bqrn",
+  "_key": "!tables!chsIlUZOEPu3Bqrn",
+  "name": "Rencontres — phase panique",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une rencontre typique de la phase « panique ».</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rencontres-phase-panique",
+      "phase": "panique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "ASymt5mNqU3qWhV3",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.ASymt5mNqU3qWhV3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une station-service où l'on se bat pour le dernier plein.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TY9yxgM0oZDsXemN",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.TY9yxgM0oZDsXemN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un couvre-feu crié par haut-parleur depuis une voiture de police.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "v4KY3NQJLyFeq1WE",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.v4KY3NQJLyFeq1WE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une file de réfugiés qui monte vers les Hauts, à pied.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "K2rEVzK8fiqb3GPA",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.K2rEVzK8fiqb3GPA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pillage de magasin d'électroménager, en plein jour.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "otCkkGgAvgeArFgy",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.otCkkGgAvgeArFgy",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un barrage de citoyens armés à l'entrée d'un quartier.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ckhD1B2aazk94ivn",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.ckhD1B2aazk94ivn",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des avions qui décollent de Gillot, les derniers.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "w3VnQkQJkXe7AYFj",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.w3VnQkQJkXe7AYFj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une famille qui propose sa voiture contre une place dans votre abri.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8LP3qoqm9rHyLTnJ",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.8LP3qoqm9rHyLTnJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un hôpital de campagne dressé dans un gymnase, débordé.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FAJUH0tjaG0Fs5JK",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.FAJUH0tjaG0Fs5JK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des coups de feu dans la nuit, puis des cris, puis le silence.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hPc3nn4OSrizQWfw",
+      "_key": "!tables.results!chsIlUZOEPu3Bqrn.hPc3nn4OSrizQWfw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un bateau surchargé qui quitte le port.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

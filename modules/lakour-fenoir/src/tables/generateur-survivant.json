@@ -1,0 +1,327 @@
+{
+  "_id": "FaGBrQayrPRbUgcs",
+  "_key": "!tables!FaGBrQayrPRbUgcs",
+  "name": "Générateur — survivant rencontré",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Qui croise-t-on sur la route ? (Nom : table des noms réunionnais.)</p>",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "generateur-survivant"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "dC6tXB8G1z9wDHxF",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.dC6tXB8G1z9wDHxF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une aide-soignante de quarante ans, blouse sous un ciré, qui cherche sa fille à Saint-Pierre.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "PHQRP27GEK7CMeSL",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.PHQRP27GEK7CMeSL",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un adolescent mutique avec un sabre à canne trop grand pour lui, qui suit le groupe à distance.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "M2PfJ5bXRKnXVWqU",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.M2PfJ5bXRKnXVWqU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vieux planteur qui refuse de quitter sa case et propose un cari aux passants.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6AHMk5EkhekSa2d0",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.6AHMk5EkhekSa2d0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une étudiante en médecine qui n'a pas dormi depuis trois jours.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LLNwKd8j8SfkkwbG",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.LLNwKd8j8SfkkwbG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un ancien légionnaire, fusil de chasse, peu de mots, beaucoup de cicatrices.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "z5vfUGLrqZsCZbKI",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.z5vfUGLrqZsCZbKI",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un couple de touristes perdus qui ne parlent qu'anglais.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ULfv0P6SUCsPO5Qh",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.ULfv0P6SUCsPO5Qh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une mère et ses deux enfants, dont l'un a de la fièvre.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uwYAEbsvU57xTsW9",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.uwYAEbsvU57xTsW9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pêcheur des Barques du Sud qui a perdu son bateau.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kLQ5eiMZhlFbJ4bZ",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.kLQ5eiMZhlFbJ4bZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un jeune des Sans-Lune qui veut quitter la bande.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QzX2weOFeX5tFmng",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.QzX2weOFeX5tFmng",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une institutrice de Mafate descendue chercher des médicaments.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "D5OkluyEKrPlKEQZ",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.D5OkluyEKrPlKEQZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un mécanicien qui troque ses services contre un toit.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pacqNpLppEeDr2Mu",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.pacqNpLppEeDr2Mu",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une infirmière libérale avec son sac et sa voiture.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "AqDdhpTriWHA1ZqM",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.AqDdhpTriWHA1ZqM",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un musicien de maloya avec son rouleur sur le dos.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "S98GpcUY2fv27XpZ",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.S98GpcUY2fv27XpZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pompier volontaire, épuisé, qui a perdu son équipe.</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2PhdnqFYQ6sjqUKu",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.2PhdnqFYQ6sjqUKu",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une agricultrice de la Coopérative en quête d'un taureau échappé.</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aXeoNseiygz88N0n",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.aXeoNseiygz88N0n",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un prêtre qui a fermé son église et ne sait plus quoi croire.</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FHkLRZmyGXH8HpTJ",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.FHkLRZmyGXH8HpTJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vendeur ambulant de samoussas avec un camion vide.</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "bOfuneHHGqB8yKFq",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.bOfuneHHGqB8yKFq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une ingénieure d'une centrale hydraulique.</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dhaxoYKeT8NsUQ11",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.dhaxoYKeT8NsUQ11",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un gamin des cités qui connaît tous les toits de Saint-Denis.</p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FRnLgBrEp2dECQ9u",
+      "_key": "!tables.results!FaGBrQayrPRbUgcs.FRnLgBrEp2dECQ9u",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une vieille dame qui a connu le cyclone de 1948 et qui n'a peur de rien.</p>",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

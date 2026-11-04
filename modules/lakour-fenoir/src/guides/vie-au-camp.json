@@ -1,0 +1,93 @@
+{
+  "_id": "NdY2GZESZubnOWjU",
+  "_key": "!journal!NdY2GZESZubnOWjU",
+  "name": "La vie au camp",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "vie-au-camp",
+      "visible": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "y4ZZ4GyKl0wYTKKA",
+      "_key": "!journal.pages!NdY2GZESZubnOWjU.y4ZZ4GyKl0wYTKKA",
+      "name": "Le temps calme",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Entre deux sorties, la vie continue à l'abri. Chacun a une <strong>tâche du jour</strong> (garde, cultures, élevage, chantier, atelier, cuisine, soins, eau, pêche, chasse, fouille, repos, enseigner) ; le temps calme, ce sont aussi ces activités qu'on choisit en groupe, avec leur test et leur coût en quarts.</p><p>Une tâche tenue une semaine donne une marque dans la compétence qui lui sert (deux si c'est une passion). Le MJ peut tirer un <strong>imprévu du camp</strong> chaque jour calme.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "principe"
+        }
+      }
+    },
+    {
+      "_id": "DgA53dso0FykKwQV",
+      "_key": "!journal.pages!NdY2GZESZubnOWjU.DgA53dso0FykKwQV",
+      "name": "Les activités",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Enseigner un savoir</strong> — test de parole (normale), 4 quarts. Une marque par jour à l'élève dans la compétence enseignée si le maître a deux niveaux de plus. Une semaine d'enseignement réussi transmet un savoir-faire du maître (test de parole difficile à la fin).</p><p><strong>Réparer</strong> — test de bricolage (normale), 1 quart. Un point d'état d'une installation, ou un point de dégâts de l'abri, par réussite (coûts du système).</p><p><strong>Cultiver</strong> — test de survie (normale), 4 quarts. Les cultures produisent à plein ; une marge de 2 donne 1 nourriture de plus ce jour-là.</p><p><strong>Monter la garde</strong> — test de vigilance (normale), 1 quart. La garde ajoute son niveau de vigilance à la défense en cas d'assaut ; un succès repère une menace avant qu'elle ne frappe.</p><p><strong>Soigner</strong> — test de soins (normale), 1 quart. Un blessé récupère plus vite (une blessure de moins par réussite, avec 1 médicament) ; une affliction traitée ne s'aggrave plus.</p><p><strong>Raconter</strong> — test de parole (facile), 1 quart. Une veillée de récits, de zistoir lontan, de souvenirs : +1 moral à ceux qui écoutent (une fois par semaine).</p><p><strong>Fêter</strong> — sans test, 1 quart. Une fête du calendrier ou une date du groupe : +1 moral à chacun, une fois par fête, au prix d'une ration de plus par personne.</p><p><strong>Cuisiner pour tous</strong> — test de survie (normale), 2 quarts. Un vrai repas (cari, rougail, riz chaud) : rien de perdu ce jour-là (pas de pertes de nourriture) et +1 moral une fois par semaine.</p><p><strong>Pêcher ou chasser</strong> — test de survie (normale), 2 quarts. Prendre à la nature des alentours : 1 nourriture par succès, dans la limite de ce que la nature offre.</p><p><strong>Se reposer</strong> — sans test, 1 quart. −1 fatigue par quart de repos, −2 pour une nuit à l'abri.</p><p><strong>Écrire la chronique</strong> — sans test, 1 quart. Un paragraphe dans les Chroniques de Fénoir : où l'on est, ce qu'on a bâti, qui l'on a perdu. Le MJ peut donner une marque après une scène marquante racontée.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "activites"
+        }
+      }
+    },
+    {
+      "_id": "1uffaW491cqlKeKN",
+      "_key": "!journal.pages!NdY2GZESZubnOWjU.1uffaW491cqlKeKN",
+      "name": "Fêter",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>L'île fêtait beaucoup, et le camp aussi : Noël sous les flamboyants, le 20 décembre, le jour de l'an, Dipavali, le Nouvel An chinois, le Cavadee, Pâques, la fête des letchis, la fête de la musique, le 14 juillet, la Toussaint, Halloween. Fêter redonne <strong>1 de moral à chacun</strong>, une fois par fête, au prix d'<strong>une ration de plus par personne</strong>. C'est la seule règle : le reste, c'est à vous de le raconter.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "fetes"
+        }
+      }
+    }
+  ]
+}

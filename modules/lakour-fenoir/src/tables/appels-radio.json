@@ -1,0 +1,348 @@
+{
+  "_id": "0gKZBawB7DXV8kE0",
+  "_key": "!tables!0gKZBawB7DXV8kE0",
+  "name": "Appels radio",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "appels-radio",
+      "appels": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "OZEoVrBqFxzqTgUh",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.OZEoVrBqFxzqTgUh",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — La famille du onzième étage.</strong> Une voix d'enfant sur une fréquence de talkie : sa famille est bloquée au onzième étage d'un immeuble de Saint-Denis, l'escalier envahi.</p><p><strong>Récompense :</strong> 6 nourriture, 4 materiaux.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "nourriture": 6,
+              "materiaux": 4
+            },
+            "faction": null,
+            "reputation": 0
+          }
+        }
+      }
+    },
+    {
+      "_id": "BmH5jmBrd5DY9SdO",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.BmH5jmBrd5DY9SdO",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Les médicaments de la pharmacie du bourg.</strong> Le Dispensaire cherche des volontaires pour vider une pharmacie de Saint-Louis avant les Sans-Lune.</p><p><strong>Récompense :</strong> 4 medicaments, 2 munitions ; réputation +2.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "medicaments": 4,
+              "munitions": 2
+            },
+            "faction": "dispensaire-du-sud",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "QoyrvVlKKvNSE8ca",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.QoyrvVlKKvNSE8ca",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — La pompe de l'îlet.</strong> Une voix de Mafate : la conduite du captage de l'îlet a sauté après les pluies, il faut des pièces et des bras.</p><p><strong>Récompense :</strong> 6 nourriture, 4 graines ; réputation +2.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "nourriture": 6,
+              "graines": 4
+            },
+            "faction": "familles-des-ilets",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "eTsGL7t5QSYP6Bhw",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.eTsGL7t5QSYP6Bhw",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — Le convoi de lait.</strong> La Coopérative veut descendre du lait et du fromage au Tampon et demande une escorte jusqu'au marché.</p><p><strong>Récompense :</strong> 10 nourriture ; réputation +2.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "nourriture": 10
+            },
+            "faction": "cooperative-des-plaines",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "UmEW4NAiDPSAycOE",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.UmEW4NAiDPSAycOE",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Carburant contre médicaments.</strong> Un bateau des Barques du Sud propose du gasoil contre des antibiotiques, sur le quai de Saint-Leu, demain à l'aube.</p><p><strong>Récompense :</strong> 6 carburant ; réputation +1.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "carburant": 6
+            },
+            "faction": "barques-du-sud",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "bhP0uZHG6ZTpZoTK",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.bhP0uZHG6ZTpZoTK",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — Les randonneurs du Piton.</strong> Trois randonneurs coincés au refuge du Piton des Neiges depuis le jour zéro appellent à l'aide : un blessé, plus de vivres.</p><p><strong>Récompense :</strong> 3 pieces, 2 medicaments.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "pieces": 3,
+              "medicaments": 2
+            },
+            "faction": null,
+            "reputation": 0
+          }
+        }
+      }
+    },
+    {
+      "_id": "EfxkIRaMSNCdilDV",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.EfxkIRaMSNCdilDV",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — Les panneaux de la ferme.</strong> Une agricultrice de Bras-Panon offre la moitié des panneaux de sa ferme abandonnée à qui l'aide à récupérer l'autre moitié.</p><p><strong>Récompense :</strong> 6 pieces.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "pieces": 6
+            },
+            "faction": null,
+            "reputation": 0
+          }
+        }
+      }
+    },
+    {
+      "_id": "oy6tVCIFQ1DnJ4qi",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.oy6tVCIFQ1DnJ4qi",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Escorte — La docteure en tournée.</strong> Le Dispensaire veut envoyer une médecin soigner les fièvres d'un quartier de l'Est et cherche une escorte.</p><p><strong>Récompense :</strong> 3 medicaments, 4 nourriture ; réputation +2.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "escorte",
+            "recompense": {
+              "medicaments": 3,
+              "nourriture": 4
+            },
+            "faction": "dispensaire-du-sud",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "c96Q0P9JNQakSQCn",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.c96Q0P9JNQakSQCn",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Réparation — L'antenne de la Garnison.</strong> La Garnison du Quai cherche un électricien pour remonter une antenne relais tombée sur la Possession.</p><p><strong>Récompense :</strong> 5 carburant, 3 munitions ; réputation +2.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "reparation",
+            "recompense": {
+              "carburant": 5,
+              "munitions": 3
+            },
+            "faction": "garnison-du-quai",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "5hiboVeOrcjpa8TM",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.5hiboVeOrcjpa8TM",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Le marché aux pièces.</strong> Les Ferrailleurs annoncent un marché sur le parking de Savanna : batteries, pneus, outils contre vivres.</p><p><strong>Récompense :</strong> 5 pieces, 3 materiaux ; réputation +1.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "pieces": 5,
+              "materiaux": 3
+            },
+            "faction": "ferrailleurs",
+            "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "DvWhlQVJ21q5Rsmu",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.DvWhlQVJ21q5Rsmu",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — L'enfant de Sainte-Rose.</strong> Les Pèlerins cherchent un enfant parti seul vers la coulée ; la radio du presbytère promet de quoi manger à qui le ramène.</p><p><strong>Récompense :</strong> 8 nourriture ; réputation +2.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "nourriture": 8
+            },
+            "faction": "pelerins-de-la-lave",
+            "reputation": 2
+          }
+        }
+      }
+    },
+    {
+      "_id": "JsQnkU3KCO2KYzCv",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.JsQnkU3KCO2KYzCv",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Récupération — La caisse de la caserne.</strong> Un gendarme blessé, caché dans une brigade du Sud, parle d'une caisse de matériel radio et de rations sous le bureau du chef.</p><p><strong>Récompense :</strong> 3 munitions, 6 nourriture ; réputation +1.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "recuperation",
+            "recompense": {
+              "munitions": 3,
+              "nourriture": 6
+            },
+            "faction": "garnison-du-quai",
+            "reputation": 1
+          }
+        }
+      }
+    }
+  ]
+}

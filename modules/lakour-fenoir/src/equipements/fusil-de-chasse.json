@@ -1,0 +1,37 @@
+{
+  "_id": "n3f2wGUmK2bCA5ZZ",
+  "_key": "!items!n3f2wGUmK2bCA5ZZ",
+  "name": "Fusil de chasse calibre 12",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "fusil-de-chasse",
+    "categorie": "arme-a-feu",
+    "description": "<p>Le fusil de chasse d'un chasseur des Hauts, superposé ou à pompe. Terrible à courte portée. Chaque coup s'entend à des kilomètres.</p>",
+    "bonus": {
+      "tir": 2
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": 1,
+    "bruit": 2,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fusil-de-chasse"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_id": "HJVHcsLGqadiBkSD",
+  "_key": "!items!HJVHcsLGqadiBkSD",
+  "name": "Agricultrice des Hauts",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "agricultrice-des-hauts",
+    "description": "<p>Elle tient avec son frère une ferme laitière de la Plaine des Cafres : vaches, potager, cabris, le froid de l'hiver et le brouillard de chaque après-midi. Elle sait faire vivre une famille d'une terre.</p>",
+    "competences": {
+      "survie": 2,
+      "endurance": 2,
+      "bricolage": 1,
+      "conduite": 1,
+      "tir": 1
+    },
+    "savoirs": [
+      "elevage",
+      "maraichage-tropical"
+    ],
+    "equipement": [
+      "fusil-de-chasse",
+      "cheval-de-la-plaine"
+    ],
+    "accroche": "<p>Le camion de collecte du lait ne vient pas. Le chauffeur est retrouvé dans sa cabine, au bord de la route, et il cogne contre la vitre.</p>",
+    "region": "le-tampon",
+    "incapacites": [],
+    "histoire": [
+      "Elle a grandi dans le brouillard de la Plaine et n'aime pas la chaleur des Bas.",
+      "Elle a sauvé seule son troupeau du dernier cyclone."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "agricultrice-des-hauts"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

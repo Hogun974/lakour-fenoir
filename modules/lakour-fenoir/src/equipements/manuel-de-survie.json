@@ -1,0 +1,35 @@
+{
+  "_id": "EXLAPJ5j2CpYCJGf",
+  "_key": "!items!EXLAPJ5j2CpYCJGf",
+  "name": "Manuel trouvé",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "manuel-de-survie",
+    "categorie": "livre",
+    "description": "<p>Un manuel d'un CDI, d'une bibliothèque ou d'un garage : jardinage tropical, électricité, premiers secours, radioamateur… Le lire attentivement pendant une semaine de camp peut apprendre un savoir-faire (le MJ choisit lequel).</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "manuel-de-survie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

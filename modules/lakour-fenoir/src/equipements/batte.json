@@ -1,0 +1,37 @@
+{
+  "_id": "YABPoPUuOXPaf1P7",
+  "_key": "!items!YABPoPUuOXPaf1P7",
+  "name": "Batte ou manche de pioche",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "batte",
+    "categorie": "arme",
+    "description": "<p>Du bois dur, bien en main. Rien de mieux pour repousser, rien de pire pour achever.</p>",
+    "bonus": {
+      "combat": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "batte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

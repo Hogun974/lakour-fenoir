@@ -1,0 +1,49 @@
+{
+  "_id": "xZMQCOjUImNqvGnG",
+  "_key": "!items!xZMQCOjUImNqvGnG",
+  "name": "Brûlure",
+  "type": "affliction",
+  "img": "icons/svg/blood.svg",
+  "system": {
+    "cle": "brulure",
+    "categorie": "blessure",
+    "description": "<p>Un feu de cuisine, un incendie, une coulée approchée de trop près, de l'essence qui s'enflamme : la peau à vif, la douleur, l'infection qui guette.</p>",
+    "prevention": "<p>Refroidir longuement à l'eau propre, couvrir proprement.</p>",
+    "contagion": 0,
+    "incubation": 0,
+    "duree": 10,
+    "effets": {
+      "malus": 1,
+      "fatigue": 1
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "normale",
+      "medicaments": 1
+    },
+    "aggravation": {
+      "jours": 3,
+      "malus": 2,
+      "fatigue": 1,
+      "duree": 15
+    },
+    "declencheur": null,
+    "risque": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "brulure"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_id": "83vFZKoyGyRF5GKg",
+  "_key": "!items!83vFZKoyGyRF5GKg",
+  "name": "Vélo-cargo",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "velo-cargo",
+    "description": "<p>Deux vélos, une caisse de bois, des soudures ou des colliers : porter des bidons et des sacs sans carburant.</p>",
+    "cout": {
+      "materiaux": 2,
+      "pieces": 3
+    },
+    "travail": 6,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "cle": "atelier",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "velo-cargo",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "velo-cargo"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

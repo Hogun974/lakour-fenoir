@@ -1,0 +1,42 @@
+{
+  "_id": "pJXHweyZrmBkJqPJ",
+  "_key": "!items!pJXHweyZrmBkJqPJ",
+  "name": "Collets et nasses",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "collets",
+    "description": "<p>Fil de fer, grillage à poules, bouteilles coupées : de quoi piéger tangues, lièvres et camarons.</p>",
+    "cout": {
+      "materiaux": 1,
+      "pieces": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "collets-et-nasses",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "collets"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

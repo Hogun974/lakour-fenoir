@@ -1,0 +1,46 @@
+{
+  "_id": "FzEDgXkageKZMZih",
+  "_key": "!items!FzEDgXkageKZMZih",
+  "name": "Âne de bât",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "ane",
+    "categorie": "transport",
+    "description": "<p>Un âne d'une ferme des Hauts ou de randonnée : il porte sur les sentiers de Mafate ce qu'aucun véhicule n'y montera. Il mange, il brait.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 1,
+    "transport": {
+      "mode": "pied",
+      "places": 0,
+      "chargeMax": 8,
+      "carburantParQuart": 0,
+      "terrains": [
+        "route",
+        "piste",
+        "sentier"
+      ],
+      "bruit": 1
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ane"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

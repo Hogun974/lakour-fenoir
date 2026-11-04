@@ -1,0 +1,197 @@
+{
+  "_id": "Ro9A8L5zOmZpyJ2O",
+  "_key": "!actors!Ro9A8L5zOmZpyJ2O",
+  "name": "Le patron Grondin",
+  "type": "survivant",
+  "img": "modules/lakour-fenoir/assets/jetons/patron-grondin.svg",
+  "system": {
+    "competences": {
+      "endurance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "combat": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "tir": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "discretion": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "vigilance": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "bricolage": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "survie": {
+        "niveau": 3,
+        "marques": 0
+      },
+      "soins": {
+        "niveau": 0,
+        "marques": 0
+      },
+      "parole": {
+        "niveau": 2,
+        "marques": 0
+      },
+      "conduite": {
+        "niveau": 3,
+        "marques": 0
+      }
+    },
+    "blessures": 0,
+    "fatigue": 0,
+    "moral": 4,
+    "faim": 0,
+    "soif": 0,
+    "infection": {
+      "atteint": false,
+      "stade": 0,
+      "depuis": 0
+    },
+    "enfance": "",
+    "passe": "",
+    "passions": {},
+    "traits": [
+      "peur-de-la-mer",
+      "nuage-noir"
+    ],
+    "incapacites": [],
+    "statut": "pnj",
+    "tache": "",
+    "histoire": {
+      "journal": ""
+    },
+    "age": 58,
+    "lien": "Barques du Sud",
+    "vivant": true,
+    "livide": false,
+    "charge": 0,
+    "notes": "<p>Pêcheur de Saint-Pierre, chef de la flottille. Il a peur de la mer depuis qu'il y a perdu son fils, et il y retourne chaque jour.</p>"
+  },
+  "items": [
+    {
+      "_id": "6wzM7TYfQufVg9Mt",
+      "_key": "!actors.items!Ro9A8L5zOmZpyJ2O.6wzM7TYfQufVg9Mt",
+      "name": "Pêche au lagon et en rivière",
+      "type": "savoir",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "cle": "peche-lagon",
+        "description": "<p>Ligne, épervier, nasse, fusil-harpon, la pêche des bichiques à l'embouchure à la saison des pluies, celle des camarons dans les bassins des cirques, et lire la houle avant de sortir.</p>",
+        "apprentissage": "<p>Un passé de pêcheur ou de marin ; un ancien des Barques du Sud ; une saison à pêcher sans se noyer.</p>",
+        "effets": "<p>+1 dé aux tests de survie pour pêcher ; la pêche d'une région rapporte 1 nourriture de plus par sortie réussie.</p>"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "peche-lagon",
+          "source": "LCIz8Now2uaEtrG9"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    },
+    {
+      "_id": "N0UEK0JWwWA2dfOf",
+      "_key": "!actors.items!Ro9A8L5zOmZpyJ2O.N0UEK0JWwWA2dfOf",
+      "name": "Barque à moteur",
+      "type": "equipement",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "cle": "barque-a-moteur",
+        "categorie": "transport",
+        "description": "<p>Une barque de pêcheur avec son hors-bord : de marine en marine le long de la côte, loin des routes et des hordes, tant que la mer le permet.</p>",
+        "bonus": {
+          "conduite": 1
+        },
+        "charge": 0,
+        "usure": 0,
+        "munitions": null,
+        "bruit": 1,
+        "transport": {
+          "mode": "bateau",
+          "places": 4,
+          "chargeMax": 15,
+          "carburantParQuart": 1,
+          "terrains": [
+            "mer"
+          ],
+          "bruit": 1
+        },
+        "effets": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "barque-a-moteur",
+          "source": "mhXqjNcFXPMBnDOW"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "lakour-survie",
+        "systemVersion": "0.1.0"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Le patron Grondin",
+    "actorLink": false,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/lakour-fenoir/assets/jetons/patron-grondin.svg",
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "patron-grondin",
+      "pnj": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "_id": "haopKUKIOz8Y7Bin",
+  "_key": "!items!haopKUKIOz8Y7Bin",
+  "name": "Sac d'intervention médicale",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "sac-d-intervention",
+    "categorie": "soin",
+    "description": "<p>Le sac d'un ambulancier ou d'un pompier : oxygène, attelles, matériel de suture, perfusions, tensiomètre.</p>",
+    "bonus": {
+      "soins": 2
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sac-d-intervention"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

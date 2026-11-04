@@ -1,0 +1,41 @@
+{
+  "_id": "doXaj0nFOD8ptTpY",
+  "_key": "!items!doXaj0nFOD8ptTpY",
+  "name": "Bouclier de tôle",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "bouclier",
+    "description": "<p>Tôle ondulée, contreplaqué, deux poignées vissées : lourd, bruyant, mais une morsure s'y casse les dents.</p>",
+    "cout": {
+      "materiaux": 2
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "bouclier-de-tole",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bouclier"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

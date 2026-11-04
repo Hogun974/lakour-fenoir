@@ -1,0 +1,41 @@
+{
+  "_id": "Bv0V2xng4Y1vZtkp",
+  "_key": "!items!Bv0V2xng4Y1vZtkp",
+  "name": "Lance de fortune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "lance",
+    "description": "<p>Un bambou bien droit, une lame ligaturée au fil de fer et à la chambre à air : de quoi frapper à travers un grillage.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "lance-de-fortune",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lance"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

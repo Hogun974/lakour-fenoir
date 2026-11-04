@@ -1,0 +1,51 @@
+{
+  "_id": "OMEmLKO195PGPhcb",
+  "_key": "!items!OMEmLKO195PGPhcb",
+  "name": "Professeure de SVT",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "prof-de-svt",
+    "description": "<p>Elle enseigne les sciences de la vie et de la Terre dans un collège des hauts de Saint-Paul et tient le jardin pédagogique avec ses élèves. Elle connaît les volcans, les plantes, les maladies, et elle sait expliquer.</p>",
+    "competences": {
+      "survie": 2,
+      "soins": 1,
+      "parole": 2,
+      "bricolage": 1,
+      "vigilance": 1
+    },
+    "savoirs": [
+      "maraichage-tropical",
+      "plomberie-filtration"
+    ],
+    "equipement": [
+      "manuel-de-survie",
+      "jumelles"
+    ],
+    "accroche": "<p>Elle surveille la cour de récréation quand le principal annonce le confinement. À seize heures, les parents ne sont pas tous venus.</p>",
+    "region": "saint-paul",
+    "incapacites": [
+      "violence"
+    ],
+    "histoire": [
+      "Elle emmenait chaque année ses élèves au volcan et ne s'en lassait pas.",
+      "Elle refuse de lever la main sur qui que ce soit, même mort."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "prof-de-svt"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

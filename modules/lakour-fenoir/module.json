@@ -1,0 +1,33 @@
+{
+  "id": "lakour-fenoir",
+  "title": "La Kour — Fénoir",
+  "description": "Contenu du monde original « Fénoir » pour le système La Kour Survie : survivre à La Réunion au début d'une épidémie de Livides. Seize régions de l'île reliées par leurs vraies routes et sentiers, une cinquantaine de sites d'abri, une trentaine d'installations (dont toute une voie d'autonomie), savoir-faire, passés, enfances, traits, équipement, véhicules, recettes, maladies, factions, événements, fêtes, guides du joueur et du MJ, scénario d'ouverture, one-shot, campagne en fronts, tables, carte de l'île et cartes de lieux. Textes originaux, pour un usage privé à la table. Jetons : icônes de game-icons.net (CC BY 3.0), voir CREDITS.md.",
+  "version": "0.1.0",
+  "authors": [{ "name": "Jordan" }],
+  "compatibility": { "minimum": "14", "verified": "14.369" },
+  "relationships": {
+    "systems": [{ "id": "lakour-survie", "type": "system", "compatibility": { "minimum": "0.1.0" } }]
+  },
+  "esmodules": ["scripts/main.js"],
+  "languages": [
+    { "lang": "fr", "name": "Français", "path": "lang/fr.json" },
+    { "lang": "en", "name": "English", "path": "lang/en.json" }
+  ],
+  "packs": [
+    { "name": "guides", "label": "Fénoir — Guides (joueurs)", "path": "packs/guides", "type": "JournalEntry", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "mj", "label": "Fénoir — Journaux du MJ", "path": "packs/mj", "type": "JournalEntry", "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" } },
+    { "name": "scenes", "label": "Fénoir — Cartes", "path": "packs/scenes", "type": "Scene", "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" } },
+    { "name": "installations", "label": "Fénoir — Installations", "path": "packs/installations", "type": "Item", "system": "lakour-survie", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "savoirs", "label": "Fénoir — Savoir-faire", "path": "packs/savoirs", "type": "Item", "system": "lakour-survie", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "equipements", "label": "Fénoir — Équipement et véhicules", "path": "packs/equipements", "type": "Item", "system": "lakour-survie", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "passes", "label": "Fénoir — Passés", "path": "packs/passes", "type": "Item", "system": "lakour-survie", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "recettes", "label": "Fénoir — Recettes de l'atelier", "path": "packs/recettes", "type": "Item", "system": "lakour-survie", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "afflictions", "label": "Fénoir — Maladies et blessures", "path": "packs/afflictions", "type": "Item", "system": "lakour-survie", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "survivants", "label": "Fénoir — Prétirés et PNJ", "path": "packs/survivants", "type": "Actor", "system": "lakour-survie", "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" } },
+    { "name": "bestiaire", "label": "Fénoir — Bestiaire", "path": "packs/bestiaire", "type": "Actor", "system": "lakour-survie", "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" } },
+    { "name": "tables", "label": "Fénoir — Tables du MJ", "path": "packs/tables", "type": "RollTable", "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" } }
+  ],
+  "packFolders": [
+    { "name": "Fénoir", "sorting": "m", "color": "#2b3a2f", "packs": ["guides", "mj", "scenes", "installations", "savoirs", "equipements", "passes", "recettes", "afflictions", "survivants", "bestiaire", "tables"] }
+  ]
+}

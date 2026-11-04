@@ -1,0 +1,327 @@
+{
+  "_id": "CYOYEXdAq7JQv5EY",
+  "_key": "!tables!CYOYEXdAq7JQv5EY",
+  "name": "Découvertes de fouille",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on trouve en fouillant un lieu (en plus du butin tiré par le système).</p>",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouilles"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "AOoOQuTgH3HBqXTC",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.AOoOQuTgH3HBqXTC",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien que du verre brisé et l'odeur.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "73i6w6ZXKsenyFo7",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.73i6w6ZXKsenyFo7",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux conserves de sardines et un paquet de riz.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ge72Jnd1JayAShfR",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.ge72Jnd1JayAShfR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une trousse de secours presque complète (+1 médicaments).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "m8oKBGuXcHkcW4zO",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.m8oKBGuXcHkcW4zO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une caisse à outils rouillée (+1 pièces).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "L1EHIoyYea1irxFU",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.L1EHIoyYea1irxFU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un bidon d'essence à moitié plein (+1 carburant).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "q1reXttEHfWkVLhr",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.q1reXttEHfWkVLhr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des graines de jardin dans un tiroir (+1 graines).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wD9oHmuNXUm4XKeR",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.wD9oHmuNXUm4XKeR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pack d'eau oublié sous un lit (+3 eau).</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2CZHfeMkTslkIlLi",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.2CZHfeMkTslkIlLi",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des tôles et des planches réutilisables (+2 matériaux).</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "czJdT1mo31p5F9bN",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.czJdT1mo31p5F9bN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une boîte de cartouches de chasse (+1 munitions).</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KUF5ooSA5uLCLkDR",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.KUF5ooSA5uLCLkDR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un manuel de jardinage ou d'électricité (un savoir à apprendre).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "zlNtjPkv2fTKi4HV",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.zlNtjPkv2fTKi4HV",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une radio à piles qui marche encore.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "67K9ERb22K8Io9WJ",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.67K9ERb22K8Io9WJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un congélateur ouvert : il vaut mieux ne pas regarder.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2tLe9k6b4246kFZ8",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.2tLe9k6b4246kFZ8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide enfermé dans une salle de bains.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vVHArD4l9issV4zD",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.vVHArD4l9issV4zD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un placard plein de vêtements secs et de draps.</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "4w2nGf5tWPyVKgxN",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.4w2nGf5tWPyVKgxN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un sac de ciment encore sec (+1 matériaux).</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ImaKi7vlQ3L4hxJ4",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.ImaKi7vlQ3L4hxJ4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un panneau solaire de cabanon et sa batterie (+2 pièces).</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "WnXT4YgzJcQi6AcW",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.WnXT4YgzJcQi6AcW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une réserve de rhum arrangé : désinfectant ou monnaie d'échange.</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9kGJHiZLEJ5FGiiK",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.9kGJHiZLEJ5FGiiK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un journal intime qui raconte les derniers jours de la famille.</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uZOD8VmHX3Mh2xrv",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.uZOD8VmHX3Mh2xrv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant caché dans un placard.</p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pC42KIx5D6cBr9CS",
+      "_key": "!tables.results!CYOYEXdAq7JQv5EY.pC42KIx5D6cBr9CS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une cave remplie de bocaux d'achards et de confitures (+4 nourriture).</p>",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

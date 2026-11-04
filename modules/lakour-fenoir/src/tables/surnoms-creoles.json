@@ -1,0 +1,327 @@
+{
+  "_id": "5E3Zx31UryIqiGOL",
+  "_key": "!tables!5E3Zx31UryIqiGOL",
+  "name": "Surnoms créoles",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les gens de l'île ont souvent un surnom, que tout le monde connaît mieux que leur nom.</p>",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "surnoms-creoles"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "7F0U5YTUtgFj02vj",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.7F0U5YTUtgFj02vj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ti Paul</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CwszAMKyF3DrjRFi",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.CwszAMKyF3DrjRFi",
+      "type": "text",
+      "name": "",
+      "description": "<p>Gros Zan</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jbHD2pokEctAsdCA",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.jbHD2pokEctAsdCA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Gramoun</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xvCWUBNJgCA85us3",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.xvCWUBNJgCA85us3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Marmaille</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5OMZF0CBK63KXlhz",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.5OMZF0CBK63KXlhz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ti Coq</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kgK3xTd9Q28OOs68",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.kgK3xTd9Q28OOs68",
+      "type": "text",
+      "name": "",
+      "description": "<p>Kabri</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mtrPON5FJWXmkIy1",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.mtrPON5FJWXmkIy1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Bichik</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wBBOlQ1KRActFqVR",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.wBBOlQ1KRActFqVR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Tangue</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7Nbl4p75Db8xuQAS",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.7Nbl4p75Db8xuQAS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Zoizo</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1ZaPM3Mak99XHduG",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.1ZaPM3Mak99XHduG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Lamer</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SQoBQL6TSSdn0hKp",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.SQoBQL6TSSdn0hKp",
+      "type": "text",
+      "name": "",
+      "description": "<p>Volcan</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Ng4Q2hAUd5FCFhGt",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.Ng4Q2hAUd5FCFhGt",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ti Rouge</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FbLzXsRsEs2vMzkc",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.FbLzXsRsEs2vMzkc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Tonton Fred</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MEF1ZkufxkRAkdWg",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.MEF1ZkufxkRAkdWg",
+      "type": "text",
+      "name": "",
+      "description": "<p>Mamzelle</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CiiZgaLKLtsyz3Hh",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.CiiZgaLKLtsyz3Hh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ti Pok</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "eg1pX6TTpDbC5QXy",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.eg1pX6TTpDbC5QXy",
+      "type": "text",
+      "name": "",
+      "description": "<p>Bébert</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oVb1R2TrPUCvkxnU",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.oVb1R2TrPUCvkxnU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Caméléon</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZGjwEYtfRbh9luxJ",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.ZGjwEYtfRbh9luxJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Zarlor</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uOZkS64Dm3U1nEKX",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.uOZkS64Dm3U1nEKX",
+      "type": "text",
+      "name": "",
+      "description": "<p>Bon Dié</p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wCFZQThk7kMmamqO",
+      "_key": "!tables.results!5E3Zx31UryIqiGOL.wCFZQThk7kMmamqO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Lapli</p>",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

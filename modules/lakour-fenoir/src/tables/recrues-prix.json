@@ -1,0 +1,208 @@
+{
+  "_id": "eUNONdmZdZucM7AF",
+  "_key": "!tables!eUNONdmZdZucM7AF",
+  "name": "Recrues — prix",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'elle demande, ou ce qu'elle coûte.</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recrues-prix",
+      "recrues": "prix"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "x4zGdyvNTkZIpMEB",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.x4zGdyvNTkZIpMEB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il demande une place pour sa mère âgée, qui ne peut plus marcher.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qrsXbgGa1bD9EjBM",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.qrsXbgGa1bD9EjBM",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle exige sa part de chaque fouille, avant les autres.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wMubszYIJDbL0xr0",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.wMubszYIJDbL0xr0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il ne fait confiance à personne et dort une arme à la main.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sJR4wXSpXf4hrefH",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.sJR4wXSpXf4hrefH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle a un trait gênant : elle chaparde.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1GjKU1Wl7bAJHONB",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.1GjKU1Wl7bAJHONB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il cache une morsure ancienne… qui n'a rien donné, dit-il.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "UHPVDUMkVusLsxEH",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.UHPVDUMkVusLsxEH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle veut qu'on l'aide à sauver son frère, retenu par la Garnison.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NDP1XeUNxy38fFiZ",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.NDP1XeUNxy38fFiZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il refuse de toucher une arme.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nUo1jCVBONY1JKf4",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.nUo1jCVBONY1JKf4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle boit le rhum des réserves.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "z3QLpSXdpBg4vRLi",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.z3QLpSXdpBg4vRLi",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a des ennemis chez les Sans-Lune, qui le cherchent.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "M2bGsygETLylJNka",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.M2bGsygETLylJNka",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle veut commander, ou rien.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6Bu1On0igs93YdGs",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.6Bu1On0igs93YdGs",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il mange comme deux.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "c8lsdu74i52gnTrr",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.c8lsdu74i52gnTrr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle ne restera que jusqu'à la prochaine saison sèche.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

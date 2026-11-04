@@ -1,0 +1,38 @@
+{
+  "_id": "EsMoocN8cpybLVYb",
+  "_key": "!items!EsMoocN8cpybLVYb",
+  "name": "Pied-de-biche",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pied-de-biche",
+    "categorie": "outil",
+    "description": "<p>L'outil du pilleur : portes, caisses, rideaux de fer. Il cogne aussi.</p>",
+    "bonus": {
+      "bricolage": 1,
+      "combat": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pied-de-biche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

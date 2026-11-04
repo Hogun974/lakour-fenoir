@@ -1,0 +1,62 @@
+{
+  "livide": {
+    "libelle": "Livide",
+    "jeton": "livide-frais"
+  },
+  "livide-ancien": {
+    "libelle": "Livide des Hauts",
+    "jeton": "livide-des-hauts"
+  },
+  "noye": {
+    "libelle": "Noyé du lagon",
+    "jeton": "noye-du-lagon"
+  },
+  "refugie": {
+    "libelle": "Réfugié",
+    "jeton": "figurant-refugie"
+  },
+  "enfant": {
+    "libelle": "Enfant",
+    "jeton": "figurant-enfant"
+  },
+  "pillard": {
+    "libelle": "Pillard",
+    "jeton": "pillard-sans-lune"
+  },
+  "soldat": {
+    "libelle": "Soldat de la Garnison",
+    "jeton": "soldat-de-la-garnison"
+  },
+  "pelerin": {
+    "libelle": "Pèlerin de la Lave",
+    "jeton": "figurant-pelerin"
+  },
+  "pecheur": {
+    "libelle": "Pêcheur",
+    "jeton": "figurant-pecheur"
+  },
+  "fermier": {
+    "libelle": "Fermier des Hauts",
+    "jeton": "figurant-fermier"
+  },
+  "soignant": {
+    "libelle": "Soignant",
+    "jeton": "figurant-soignant"
+  },
+  "ferrailleur": {
+    "libelle": "Ferrailleur",
+    "jeton": "figurant-ferrailleur"
+  },
+  "ilette": {
+    "libelle": "Habitant d'un îlet",
+    "jeton": "figurant-ilette"
+  },
+  "chien": {
+    "libelle": "Chien errant",
+    "jeton": "chien-errant"
+  },
+  "malade": {
+    "libelle": "Malade",
+    "jeton": "figurant-malade"
+  }
+}

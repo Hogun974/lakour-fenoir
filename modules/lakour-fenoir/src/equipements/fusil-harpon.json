@@ -1,0 +1,38 @@
+{
+  "_id": "81lsLfP8MVFb1x5U",
+  "_key": "!items!81lsLfP8MVFb1x5U",
+  "name": "Fusil-harpon",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "fusil-harpon",
+    "categorie": "arme",
+    "description": "<p>L'arme du pêcheur sous-marin : silencieuse, précise à quelques mètres, lente à recharger. Elle nourrit au lagon avant de défendre.</p>",
+    "bonus": {
+      "survie": 1,
+      "tir": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fusil-harpon"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_id": "JrQZmHXPGDuRBN8w",
+  "_key": "!items!JrQZmHXPGDuRBN8w",
+  "name": "Le choc d'une perte",
+  "type": "affliction",
+  "img": "icons/svg/daze.svg",
+  "system": {
+    "cle": "choc-d-une-perte",
+    "categorie": "psychique",
+    "description": "<p>Avoir vu mourir un proche, avoir dû achever quelqu'un qu'on aimait : le sommeil s'en va, les gestes se font mécaniques, on se tait. Le temps aide ; les autres aussi, s'ils savent écouter.</p>",
+    "prevention": "<p>Parler, veiller ensemble, enterrer ses morts, garder des rites.</p>",
+    "contagion": 0,
+    "incubation": 0,
+    "duree": 7,
+    "effets": {
+      "malus": 1,
+      "fatigue": 1
+    },
+    "soin": {
+      "competence": "parole",
+      "difficulte": "normale",
+      "medicaments": 0
+    },
+    "aggravation": {
+      "jours": 7,
+      "malus": 1,
+      "fatigue": 1,
+      "duree": 14
+    },
+    "declencheur": null,
+    "risque": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "choc-d-une-perte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

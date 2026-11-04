@@ -1,0 +1,207 @@
+{
+  "_id": "3rOWWRWJAOrlApYT",
+  "_key": "!tables!3rOWWRWJAOrlApYT",
+  "name": "Complications d'un test forcé",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un test forcé qui échoue encore : le MJ en choisit une ou la tire.</p>",
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "complications"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "LzFw5imKFVHqhICQ",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.LzFw5imKFVHqhICQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Bruit : une vitre tombe, un outil claque, quelque chose répond au loin (+2 bruit).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LAUzJtNlxC0rBnE3",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.LAUzJtNlxC0rBnE3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Outil cassé : la lame se brise, le manche se fend.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hR47utlwtjsdJ3E5",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.hR47utlwtjsdJ3E5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Blessure légère : une coupure, une entorse (1 blessure).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "H8v4SaCnGXMU1cfN",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.H8v4SaCnGXMU1cfN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Temps perdu : il faut tout recommencer (+1 quart).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1ufck1H1QDZwxMuK",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.1ufck1H1QDZwxMuK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Fatigue : l'effort laisse vidé (+1 fatigue).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uaOxa2x6DLqK6xR4",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.uaOxa2x6DLqK6xR4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Repéré : quelqu'un a vu, et s'en souviendra.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "K65mvPQycAuNstiT",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.K65mvPQycAuNstiT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ressource perdue : une partie du butin tombe, se casse ou se gâte.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TdU5rQTeSswuDcaS",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.TdU5rQTeSswuDcaS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide de plus surgit, attiré par l'effort.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "OTGg5Aqw5Kb2Twaz",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.OTGg5Aqw5Kb2Twaz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une dispute éclate dans le groupe à cause de l'échec.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qRypOcbw8oN1aBnE",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.qRypOcbw8oN1aBnE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le matériel réservé pour autre chose y est passé (−1 matériau ou pièce).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0GbxX2wCvyCIpj67",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.0GbxX2wCvyCIpj67",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une morsure frôlée : la manche est déchirée, la peau intacte… cette fois.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MWb9ivrGbIEIVqDQ",
+      "_key": "!tables.results!3rOWWRWJAOrlApYT.MWb9ivrGbIEIVqDQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>La météo tourne : pluie, brouillard, nuit qui tombe.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

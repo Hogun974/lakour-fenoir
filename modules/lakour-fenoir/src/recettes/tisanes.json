@@ -1,0 +1,46 @@
+{
+  "_id": "WqqRsn0W6NSai902",
+  "_key": "!items!WqqRsn0W6NSai902",
+  "name": "Tisanes et emplâtres",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "tisanes",
+    "description": "<p>Ayapana, citronnelle, bois de quivi, gingembre : les remèdes des grands-mères, contre les fièvres légères et les maux de ventre.</p>",
+    "cout": {
+      "graines": 1
+    },
+    "travail": 2,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "premiers-secours-avances"
+      ],
+      "installation": {
+        "cle": "infirmerie",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "ressource": "medicaments",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tisanes"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

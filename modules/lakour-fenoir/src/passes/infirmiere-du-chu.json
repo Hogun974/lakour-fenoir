@@ -1,0 +1,48 @@
+{
+  "_id": "BSuVSY32Ro1zQPZB",
+  "_key": "!items!BSuVSY32Ro1zQPZB",
+  "name": "Infirmière du CHU",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "infirmiere-du-chu",
+    "description": "<p>Douze ans aux urgences de Bellepierre, des gardes de nuit, des cyclones, l'épidémie de chikungunya. Elle sait trier, piquer, panser, et garder sa voix calme quand tout le monde crie.</p>",
+    "competences": {
+      "soins": 3,
+      "vigilance": 1,
+      "parole": 1,
+      "endurance": 1,
+      "survie": 1
+    },
+    "savoirs": [
+      "premiers-secours-avances"
+    ],
+    "equipement": [
+      "sac-d-intervention",
+      "frontale"
+    ],
+    "accroche": "<p>Elle est de garde la nuit du jour zéro. À trois heures du matin, un patient déclaré mort se redresse sur son brancard dans le couloir des urgences.</p>",
+    "region": "saint-denis",
+    "incapacites": [],
+    "histoire": [
+      "Elle a fait ses études à Saint-Denis et n'a jamais voulu partir en métropole.",
+      "Elle connaît par cœur le bruit des urgences un soir de cyclone."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "infirmiere-du-chu"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

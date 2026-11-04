@@ -1,0 +1,47 @@
+{
+  "_id": "ciiUjf21WQzWAx2v",
+  "_key": "!items!ciiUjf21WQzWAx2v",
+  "name": "Étudiante",
+  "type": "passe",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "cle": "etudiante",
+    "description": "<p>En licence à l'université du Moufia, elle vit en colocation, connaît tout le monde, court le semi-marathon et apprend vite. Elle n'a jamais vu mourir personne.</p>",
+    "competences": {
+      "endurance": 2,
+      "discretion": 1,
+      "parole": 1,
+      "vigilance": 1,
+      "survie": 1,
+      "bricolage": 1
+    },
+    "savoirs": [],
+    "equipement": [
+      "velo",
+      "manuel-de-survie"
+    ],
+    "accroche": "<p>Elle passe un partiel quand un surveillant s'effondre dans l'amphi. Quand il se relève, la porte est déjà bloquée par la foule.</p>",
+    "region": "saint-denis",
+    "incapacites": [],
+    "histoire": [
+      "Elle est la première de sa famille à faire des études.",
+      "Elle partageait un appartement près du Moufia avec deux amies dont elle n'a plus de nouvelles."
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "etudiante"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

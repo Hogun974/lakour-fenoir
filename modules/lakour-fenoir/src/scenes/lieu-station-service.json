@@ -1,0 +1,717 @@
+{
+  "_id": "VK2JtEwTmo5ohO8Y",
+  "_key": "!scenes!VK2JtEwTmo5ohO8Y",
+  "name": "Lieu — Station-service",
+  "navName": "Lieu — Station-service",
+  "navigation": true,
+  "active": false,
+  "width": 2400,
+  "height": 1600,
+  "padding": 0,
+  "grid": {
+    "type": 1,
+    "size": 100,
+    "distance": 1.5,
+    "units": "m"
+  },
+  "tokenVision": true,
+  "environment": {
+    "darknessLevel": 0,
+    "globalLight": {
+      "enabled": true
+    }
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Niveau principal",
+      "elevation": {
+        "bottom": 0,
+        "top": null
+      },
+      "background": {
+        "color": "#18181b",
+        "src": "modules/lakour-fenoir/assets/cartes/lieu-station-service.svg"
+      },
+      "_key": "!scenes.levels!VK2JtEwTmo5ohO8Y.defaultLevel0000",
+      "flags": {}
+    }
+  ],
+  "initialLevel": "defaultLevel0000",
+  "walls": [
+    {
+      "c": [
+        0,
+        0,
+        2400,
+        0
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "xjC1Cb80H7z8kwNn",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.xjC1Cb80H7z8kwNn",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        200,
+        2200,
+        200
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "pYQXv6v0azWI3Fyv",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.pYQXv6v0azWI3Fyv",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        800,
+        1800,
+        800
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "LzWp8ZPy2APFWBPA",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.LzWp8ZPy2APFWBPA",
+      "flags": {}
+    },
+    {
+      "c": [
+        1900,
+        800,
+        2200,
+        800
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "FAxW2QRiMRvDIv8X",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.FAxW2QRiMRvDIv8X",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        900,
+        2200,
+        900
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "GuZFrDb202MJ3hIM",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.GuZFrDb202MJ3hIM",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        1400,
+        2200,
+        1400
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "OJ3qwuMJwaDNovSA",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.OJ3qwuMJwaDNovSA",
+      "flags": {}
+    },
+    {
+      "c": [
+        0,
+        1600,
+        2400,
+        1600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "NSv1WLO7AAV65HxM",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.NSv1WLO7AAV65HxM",
+      "flags": {}
+    },
+    {
+      "c": [
+        0,
+        0,
+        0,
+        1600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "s8uXxGvRnI9uU6xP",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.s8uXxGvRnI9uU6xP",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        200,
+        1500,
+        400
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "bUyANCtvHjPLH6Or",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.bUyANCtvHjPLH6Or",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        500,
+        1500,
+        600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "MpXl7M9NUZfdyaHH",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.MpXl7M9NUZfdyaHH",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        700,
+        1500,
+        800
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "4s121lVaTp4B0y0m",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.4s121lVaTp4B0y0m",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        900,
+        1500,
+        1100
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "oqNJGHavwjpTE4cD",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.oqNJGHavwjpTE4cD",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        1300,
+        1500,
+        1400
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "BmguUB1oFVSqb3yB",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.BmguUB1oFVSqb3yB",
+      "flags": {}
+    },
+    {
+      "c": [
+        2200,
+        200,
+        2200,
+        400
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "gBD18HEJSEAew3zJ",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.gBD18HEJSEAew3zJ",
+      "flags": {}
+    },
+    {
+      "c": [
+        2200,
+        500,
+        2200,
+        800
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "n6Hc8tG11V94xF7p",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.n6Hc8tG11V94xF7p",
+      "flags": {}
+    },
+    {
+      "c": [
+        2200,
+        900,
+        2200,
+        1400
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "O7LtWx79o9Dv6NRZ",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.O7LtWx79o9Dv6NRZ",
+      "flags": {}
+    },
+    {
+      "c": [
+        2400,
+        0,
+        2400,
+        1600
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "FIuAJdmgsmZ1FZJG",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.FIuAJdmgsmZ1FZJG",
+      "flags": {}
+    },
+    {
+      "c": [
+        1800,
+        800,
+        1900,
+        800
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "aFEtqkLeOtUSSi32",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.aFEtqkLeOtUSSi32",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        400,
+        1500,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "2AG0oZ1a0wPZDMR7",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.2AG0oZ1a0wPZDMR7",
+      "flags": {}
+    },
+    {
+      "c": [
+        1500,
+        600,
+        1500,
+        700
+      ],
+      "move": 20,
+      "sight": 0,
+      "light": 0,
+      "sound": 20,
+      "door": 0,
+      "ds": 0,
+      "dir": 0,
+      "levels": [],
+      "_id": "e5dPMaxZpuXzkmYy",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.e5dPMaxZpuXzkmYy",
+      "flags": {}
+    },
+    {
+      "c": [
+        2200,
+        400,
+        2200,
+        500
+      ],
+      "move": 20,
+      "sight": 20,
+      "light": 20,
+      "sound": 20,
+      "door": 1,
+      "ds": 2,
+      "dir": 0,
+      "levels": [],
+      "_id": "6xgfOzvxrFzfyUqn",
+      "_key": "!scenes.walls!VK2JtEwTmo5ohO8Y.6xgfOzvxrFzfyUqn",
+      "flags": {}
+    }
+  ],
+  "drawings": [
+    {
+      "x": 0,
+      "y": 0,
+      "shape": {
+        "type": "r",
+        "width": 2400,
+        "height": 1600
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Pistes",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1000,
+      "_id": "aIBa7fCd8HMMxwd9",
+      "_key": "!scenes.drawings!VK2JtEwTmo5ohO8Y.aIBa7fCd8HMMxwd9",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 1500,
+      "y": 200,
+      "shape": {
+        "type": "r",
+        "width": 700,
+        "height": 600
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Boutique",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1001,
+      "_id": "fB1WHLsanfFoWhkn",
+      "_key": "!scenes.drawings!VK2JtEwTmo5ohO8Y.fB1WHLsanfFoWhkn",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    },
+    {
+      "x": 1500,
+      "y": 900,
+      "shape": {
+        "type": "r",
+        "width": 700,
+        "height": 500
+      },
+      "fillType": 0,
+      "fillColor": "#000000",
+      "fillAlpha": 0,
+      "strokeWidth": 0,
+      "strokeColor": "#000000",
+      "strokeAlpha": 0,
+      "levels": [],
+      "text": "Atelier",
+      "fontSize": 33,
+      "textColor": "#ffffff",
+      "textAlpha": 0.8,
+      "hidden": true,
+      "sort": 1002,
+      "_id": "xCUvzcRv59Doy1gz",
+      "_key": "!scenes.drawings!VK2JtEwTmo5ohO8Y.xCUvzcRv59Doy1gz",
+      "flags": {},
+      "author": "WAEGJ7mePrBVyp8V"
+    }
+  ],
+  "lights": [
+    {
+      "x": 750,
+      "y": 650,
+      "elevation": 0,
+      "levels": [],
+      "walls": true,
+      "config": {
+        "dim": 6,
+        "bright": 3,
+        "color": "#e8f0ff",
+        "alpha": 0.4,
+        "coloration": 1,
+        "luminosity": 0.5
+      },
+      "_id": "Cj98EJA6MafFH7Tf",
+      "_key": "!scenes.lights!VK2JtEwTmo5ohO8Y.Cj98EJA6MafFH7Tf",
+      "flags": {}
+    }
+  ],
+  "sounds": [
+    {
+      "name": "forge — Atelier",
+      "x": 1850,
+      "y": 1150,
+      "elevation": 0,
+      "levels": [],
+      "radius": 7.5,
+      "path": "modules/lakour-mj-ia/assets/sons/forge.wav",
+      "repeat": true,
+      "volume": 0.3,
+      "walls": true,
+      "easing": true,
+      "hidden": false,
+      "locked": false,
+      "_id": "lDjCemDKqAGN4i0u",
+      "_key": "!scenes.sounds!VK2JtEwTmo5ohO8Y.lDjCemDKqAGN4i0u",
+      "flags": {}
+    }
+  ],
+  "regions": [],
+  "notes": [],
+  "tokens": [],
+  "tiles": [],
+  "ownership": {
+    "default": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lieu-station-service",
+      "description": "Une station-service de bord de quatre-voies : pistes et pompes sous l'auvent, boutique, atelier de lavage et de vidange, cuves enterrées. Pour la dernière file d'attente, un pillage, une embuscade, une cuve à vider.",
+      "plan": {
+        "largeur": 24,
+        "hauteur": 16,
+        "lumiere": "jour",
+        "pieces": [
+          {
+            "nom": "Pistes",
+            "x": 0,
+            "y": 0,
+            "l": 24,
+            "h": 16,
+            "sol": "pierre"
+          },
+          {
+            "nom": "Boutique",
+            "x": 15,
+            "y": 2,
+            "l": 7,
+            "h": 6,
+            "sol": "pierre"
+          },
+          {
+            "nom": "Atelier",
+            "x": 15,
+            "y": 9,
+            "l": 7,
+            "h": 5,
+            "sol": "metal"
+          }
+        ],
+        "ouvertures": [
+          {
+            "x": 15,
+            "y": 4,
+            "cote": "ouest",
+            "type": "porte"
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "cote": "ouest",
+            "type": "passage"
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "cote": "ouest",
+            "type": "passage"
+          },
+          {
+            "x": 18,
+            "y": 7,
+            "cote": "sud",
+            "type": "porte"
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "cote": "ouest",
+            "type": "fenetre"
+          },
+          {
+            "x": 21,
+            "y": 4,
+            "cote": "est",
+            "type": "verrouillee"
+          }
+        ],
+        "lumieres": [
+          {
+            "x": 7,
+            "y": 6,
+            "rayon": 4,
+            "couleur": "#e8f0ff"
+          }
+        ],
+        "elements": [
+          {
+            "nom": "Pompes",
+            "x": 4,
+            "y": 5,
+            "l": 1,
+            "h": 3
+          },
+          {
+            "nom": "Pompes",
+            "x": 9,
+            "y": 5,
+            "l": 1,
+            "h": 3
+          },
+          {
+            "nom": "Auvent",
+            "x": 2,
+            "y": 3,
+            "l": 10,
+            "h": 1
+          },
+          {
+            "nom": "Trappes des cuves",
+            "x": 3,
+            "y": 12,
+            "l": 3,
+            "h": 1
+          },
+          {
+            "nom": "Comptoir",
+            "x": 17,
+            "y": 3,
+            "l": 3,
+            "h": 1
+          },
+          {
+            "nom": "Rayons",
+            "x": 17,
+            "y": 5,
+            "l": 3,
+            "h": 1
+          },
+          {
+            "nom": "Pont élévateur",
+            "x": 18,
+            "y": 11,
+            "l": 2,
+            "h": 2
+          },
+          {
+            "nom": "Voiture abandonnée",
+            "x": 6,
+            "y": 9,
+            "l": 2,
+            "h": 1
+          }
+        ]
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "_id": "voj6Fh3GYhcDKF4s",
+  "_key": "!tables!voj6Fh3GYhcDKF4s",
+  "name": "Visibilité 7 — La visite",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quand la visibilité de l'abri franchit 7 à la hausse, le MJ reçoit en privé un événement de cette table.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "visibilite-visite",
+      "visibilite": 7
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "e9dgwM3qbyJS2PCF",
+      "_key": "!tables.results!voj6Fh3GYhcDKF4s.e9dgwM3qbyJS2PCF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une délégation armée se présente pour « parler affaires ».</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mD8pFHV1ZItT1zEj",
+      "_key": "!tables.results!voj6Fh3GYhcDKF4s.mD8pFHV1ZItT1zEj",
+      "type": "text",
+      "name": "",
+      "description": "<p>La Garnison vient recenser l'abri et parle de réquisition.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MgEeb4u7t20OqPUX",
+      "_key": "!tables.results!voj6Fh3GYhcDKF4s.MgEeb4u7t20OqPUX",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les Sans-Lune exigent un tribut d'une lune.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CDZ4fUQBSNy2tOyR",
+      "_key": "!tables.results!voj6Fh3GYhcDKF4s.CDZ4fUQBSNy2tOyR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des Pèlerins demandent à installer une famille de malades chez vous.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yAQy2HzaYykezm0n",
+      "_key": "!tables.results!voj6Fh3GYhcDKF4s.yAQy2HzaYykezm0n",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une famille entière supplie d'entrer, et derrière elle, une horde.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "J7MFAc24acKEuE6e",
+      "_key": "!tables.results!voj6Fh3GYhcDKF4s.J7MFAc24acKEuE6e",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un groupe rival propose une alliance… en échange de la moitié de la production.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0UZOnLUKVPr5hdB7",
+      "_key": "!tables.results!voj6Fh3GYhcDKF4s.0UZOnLUKVPr5hdB7",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les Ferrailleurs proposent d'acheter tout l'abri.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FOjsAM2NgDkq26Bm",
+      "_key": "!tables.results!voj6Fh3GYhcDKF4s.FOjsAM2NgDkq26Bm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un émissaire d'une faction lointaine demande un savoir que vous avez.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

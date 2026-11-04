@@ -1,0 +1,231 @@
+{
+  "_id": "E5BvZepVhgDp83l5",
+  "_key": "!journal!E5BvZepVhgDp83l5",
+  "name": "Scénario d'ouverture — Jour zéro",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "jour-zero",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "P9rt7bXhdphEF21L",
+      "_key": "!journal.pages!E5BvZepVhgDp83l5.P9rt7bXhdphEF21L",
+      "name": "Le premier jour",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une soirée pour lancer la campagne. Chaque personnage commence <strong>là où son passé le place</strong> au matin du 4 décembre, un vendredi de saison des pluies, et l'objectif de la séance est simple : <strong>se retrouver</strong>, ou trouver les autres, et passer la première nuit à l'abri.</p><p><strong>Structure.</strong> Trois temps : <em>ce matin-là</em> (une scène courte par personnage, dans sa région), <em>la bascule</em> (l'après-midi, quand les morts se relèvent partout), <em>la nuit</em> (le groupe réuni quelque part, ou en route). Si les personnages sont loin les uns des autres, le téléphone marche encore : ils peuvent s'appeler, se donner rendez-vous. Le réseau sature à la tombée de la nuit.</p><p><strong>Ce que le système fait.</strong> Démarrez la partie (région de départ du groupe : celle du lieu de rendez-vous), avancez par quarts. Le jour zéro, presque tout marche ; laissez les joueurs le sentir avant que ça ne marche plus.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "principe"
+        }
+      }
+    },
+    {
+      "_id": "nx65HUC209SPcdKr",
+      "_key": "!journal.pages!E5BvZepVhgDp83l5.nx65HUC209SPcdKr",
+      "name": "Départ — Saint-Denis : la garde de nuit",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Pour</strong> : infirmière, ambulancier, étudiante, toute personne en ville.</p><p><em>Ce matin-là.</em> Fin de garde aux urgences de Bellepierre : un patient « décédé » à trois heures du matin a mordu un brancardier. On a mis ça sur le compte d'un réflexe. À sept heures, le brancardier a de la fièvre.</p><p><em>La bascule.</em> À midi, les urgences débordent ; à quinze heures, le premier mort se relève dans la salle d'attente. Les portes se ferment de l'intérieur.</p><p><em>Choix.</em> Rester soigner (le Dispensaire naîtra de ceux qui restent), fuir par les parkings, emmener un collègue mordu. Lieu de rendez-vous possible : la caserne de La Montagne, au-dessus de la ville, ou une case du Brûlé.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "depart-saint-denis"
+        }
+      }
+    },
+    {
+      "_id": "CdH2IXBsD22vdIaC",
+      "_key": "!journal.pages!E5BvZepVhgDp83l5.CdH2IXBsD22vdIaC",
+      "name": "Départ — La côte Ouest : le grand beau temps",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Pour</strong> : électricien, pêcheur, prof de SVT, toute personne de l'Ouest.</p><p><em>Ce matin-là.</em> Il fait beau, terriblement beau. Le pêcheur rentre au port de Saint-Gilles, l'électricien est sur un toit, la prof surveille la récréation au collège sur la colline.</p><p><em>La bascule.</em> La route des Tamarins se fige ; des gens courent entre les voitures. Le collège annonce le confinement ; à seize heures, des parents ne viennent pas chercher leurs enfants.</p><p><em>Choix.</em> Le collège devient un abri plein d'enfants (dilemme dès le premier soir), ou la case de Bellemène avec sa citerne, ou le catamaran au mouillage.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "depart-ouest"
+        }
+      }
+    },
+    {
+      "_id": "OKheCxqBC90kmuSU",
+      "_key": "!journal.pages!E5BvZepVhgDp83l5.OKheCxqBC90kmuSU",
+      "name": "Départ — Le Port : le dernier cargo",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Pour</strong> : mécanicien, retraité de la marine, gendarme.</p><p><em>Ce matin-là.</em> Le garage ouvre ; le marin écoute sa radio. Un cargo attend au large : on ne le laisse pas accoster, il y aurait des malades à bord.</p><p><em>La bascule.</em> La rumeur dit que le cargo évacuera des civils. Une foule converge vers le port ; les dockers ferment les grilles ; des coups de feu. Les premiers brassards orange apparaissent.</p><p><em>Choix.</em> Entrer dans le port (et devenir de la Garnison), aider la foule, ou partir vers La Possession et le lit de la Rivière des Galets, porte de Mafate.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "depart-port"
+        }
+      }
+    },
+    {
+      "_id": "6WP8r0FiEO54CHnd",
+      "_key": "!journal.pages!E5BvZepVhgDp83l5.6WP8r0FiEO54CHnd",
+      "name": "Départ — La route de Cilaos : le car jaune",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Pour</strong> : chauffeur de car, guide de canyon, toute personne qui monte ou descend.</p><p><em>Ce matin-là.</em> Le car jaune quitte Saint-Louis à neuf heures, plein. Le guide est au fond d'un canyon avec quatre clients.</p><p><em>La bascule.</em> À mi-route, dans les virages, un passager du fond s'effondre, puis se relève. Le car s'arrête au bord du vide.</p><p><em>Choix.</em> Continuer jusqu'à Cilaos avec ce qu'on a à bord, redescendre vers une ville qui hurle, ou abandonner le car et monter à pied. La nuit tombe vite dans le cirque ; un éboulis peut fermer la route derrière eux.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "depart-cilaos"
+        }
+      }
+    },
+    {
+      "_id": "WIlVpixEODTNKOP5",
+      "_key": "!journal.pages!E5BvZepVhgDp83l5.WIlVpixEODTNKOP5",
+      "name": "Départ — La Plaine des Cafres : le lait qui ne descend pas",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Pour</strong> : agricultrice, apiculteur, toute personne des Hauts.</p><p><em>Ce matin-là.</em> Le camion de collecte du lait ne passe pas. Le brouillard monte à midi.</p><p><em>La bascule.</em> Le chauffeur est retrouvé au bord de la route, dans sa cabine, cognant à la vitre. Les voisins appellent : leur fils est rentré de Saint-Pierre avec une morsure.</p><p><em>Choix.</em> Rester à la ferme (une voie d'autonomie toute prête), aller chercher quelqu'un en bas, rejoindre les voisins qui parlent déjà de « se regrouper » (la Coopérative des Plaines).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "depart-hauts"
+        }
+      }
+    },
+    {
+      "_id": "ViVvikmlH7lqQLAD",
+      "_key": "!journal.pages!E5BvZepVhgDp83l5.ViVvikmlH7lqQLAD",
+      "name": "Départ — L'Est : la pluie",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Pour</strong> : planteur, ambulancier, toute personne de l'Est.</p><p><em>Ce matin-là.</em> Il pleut à verse depuis l'aube ; les radiers débordent ; on reste chez soi, ce qui en sauve beaucoup.</p><p><em>La bascule.</em> Un voisin sort des cannes en titubant. L'ambulance enchaîne les morsures. La rivière en crue emporte un pont.</p><p><em>Choix.</em> Se retrancher à la sucrerie de Bois-Rouge, monter à Salazie avant que la route ne tombe, ou rejoindre l'église de Sainte-Rose où un catéchiste rassemble les gens.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "depart-est"
+        }
+      }
+    },
+    {
+      "_id": "t3edMApRrz6JcJOP",
+      "_key": "!journal.pages!E5BvZepVhgDp83l5.t3edMApRrz6JcJOP",
+      "name": "Départ — Mafate : rien ne se passe",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Pour</strong> : habitant d'un îlet, randonneur, guide.</p><p><em>Ce matin-là.</em> Rien. Le soleil, les cabris, l'école, la radio qui parle d'un « malaise » en ville.</p><p><em>La bascule.</em> Le lendemain, des randonneurs descendent du Maïdo en racontant ce qu'ils ont vu en bas ; l'un d'eux a été mordu « par un fou » sur le parking.</p><p><em>Choix.</em> Accueillir les randonneurs ou les retenir au col ; descendre chercher de la famille en bas ; garder les sentiers. C'est le départ le plus lent, et le plus terrible quand le premier malade arrive.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "depart-mafate"
+        }
+      }
+    },
+    {
+      "_id": "Wh3hPspYBOHiPsVE",
+      "_key": "!journal.pages!E5BvZepVhgDp83l5.Wh3hPspYBOHiPsVE",
+      "name": "La première nuit",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Terminez la séance quand le groupe est réuni à l'abri (ou décide de passer la nuit en route). Faites le premier <strong>bilan</strong> avec le système : stocks, ce que produit le site, ce qui manque. Posez la question qui lancera la campagne : <em>on reste, ou on part ?</em></p><p>Tirez une rumeur de la radio pour la fin : les joueurs s'endorment sur une voix qui dit une chose qu'ils voudront vérifier.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "nuit"
+        }
+      }
+    }
+  ]
+}

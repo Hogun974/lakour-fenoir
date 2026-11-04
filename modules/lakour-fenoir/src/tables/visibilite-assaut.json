@@ -1,0 +1,148 @@
+{
+  "_id": "h3wo9DGwRuinmC5G",
+  "_key": "!tables!h3wo9DGwRuinmC5G",
+  "name": "Visibilité 9 — L'assaut",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quand la visibilité de l'abri franchit 9 à la hausse, le MJ reçoit en privé un événement de cette table.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "visibilite-assaut",
+      "visibilite": 9
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "VBTEANEIavCdZnLY",
+      "_key": "!tables.results!h3wo9DGwRuinmC5G.VBTEANEIavCdZnLY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bande attaque de nuit, en deux groupes, l'un pour faire diversion.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "zHHrsQWaEulChhMa",
+      "_key": "!tables.results!h3wo9DGwRuinmC5G.zHHrsQWaEulChhMa",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une horde attirée par votre groupe électrogène déferle sur la clôture.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "EqgxxtvAar78XsZV",
+      "_key": "!tables.results!h3wo9DGwRuinmC5G.EqgxxtvAar78XsZV",
+      "type": "text",
+      "name": "",
+      "description": "<p>On a mis le feu à la serre pour vous faire sortir.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uEIzLUj2FjlGEOki",
+      "_key": "!tables.results!h3wo9DGwRuinmC5G.uEIzLUj2FjlGEOki",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un siège : la route est coupée, l'eau aussi, ils attendent.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vhlf3ei0wEcCPPKW",
+      "_key": "!tables.results!h3wo9DGwRuinmC5G.vhlf3ei0wEcCPPKW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un ancien membre du groupe ouvre la porte aux pillards.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1SG3oFBWUxnr6ePF",
+      "_key": "!tables.results!h3wo9DGwRuinmC5G.1SG3oFBWUxnr6ePF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une faction réclame l'abri au nom de l'autorité et vient le prendre.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gl1ZGhDKJKPMHllv",
+      "_key": "!tables.results!h3wo9DGwRuinmC5G.gl1ZGhDKJKPMHllv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une horde et une bande en même temps : coïncidence, ou pas ?</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yd2JwZX3MrHTlX55",
+      "_key": "!tables.results!h3wo9DGwRuinmC5G.yd2JwZX3MrHTlX55",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des tireurs embusqués visent quiconque sort dans la cour.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

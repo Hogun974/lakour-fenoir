@@ -1,0 +1,44 @@
+{
+  "_id": "2RjHb8GsOBEOSg9r",
+  "_key": "!items!2RjHb8GsOBEOSg9r",
+  "name": "Chauffe-eau solaire de fortune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "chauffe-eau",
+    "description": "<p>Un serpentin de tuyau d'arrosage noir sur le toit, un fût isolé de vieilles couvertures, un robinet : de l'eau chaude au soleil.</p>",
+    "cout": {
+      "materiaux": 2,
+      "pieces": 2
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "plomberie-filtration"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "chauffe-eau-solaire",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chauffe-eau"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

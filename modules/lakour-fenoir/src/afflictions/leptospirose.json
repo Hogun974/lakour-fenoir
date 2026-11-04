@@ -1,0 +1,49 @@
+{
+  "_id": "b2l72LlequSXTIFZ",
+  "_key": "!items!b2l72LlequSXTIFZ",
+  "name": "Leptospirose",
+  "type": "affliction",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+    "cle": "leptospirose",
+    "categorie": "maladie",
+    "description": "<p>La maladie des rats et des eaux douces : on l'attrape en marchant pieds nus dans les ravines, en se baignant dans les bassins, en touchant ce que les rats ont souillé. Fièvre, douleurs musculaires, puis parfois les reins et le foie qui lâchent.</p>",
+    "prevention": "<p>Bottes et gants dans l'eau douce, réserves à l'abri des rats, eau traitée.</p>",
+    "contagion": 0,
+    "incubation": 7,
+    "duree": 10,
+    "effets": {
+      "malus": 1,
+      "fatigue": 1
+    },
+    "soin": {
+      "competence": "soins",
+      "difficulte": "difficile",
+      "medicaments": 2
+    },
+    "aggravation": {
+      "jours": 3,
+      "malus": 2,
+      "fatigue": 2,
+      "duree": 10
+    },
+    "declencheur": "ravine",
+    "risque": 0.003
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "leptospirose"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}
