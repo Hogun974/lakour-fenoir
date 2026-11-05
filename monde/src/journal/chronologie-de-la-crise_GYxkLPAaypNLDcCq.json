@@ -1,0 +1,169 @@
+{
+  "_id": "GYxkLPAaypNLDcCq",
+  "_key": "!journal!GYxkLPAaypNLDcCq",
+  "name": "Chronologie de la crise",
+  "folder": "N5gOxmWjwEeVTrr3",
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chronologie-de-la-crise",
+      "visible": false,
+      "version": "0.2.0"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.lakour-fenoir.mj.JournalEntry.GYxkLPAaypNLDcCq",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "pages": [
+    {
+      "_id": "S4FE15XvfW7feH76",
+      "_key": "!journal.pages!GYxkLPAaypNLDcCq.S4FE15XvfW7feH76",
+      "name": "Avant le jour zéro",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Personne ne sait d'où vient le Gris. Quelques jours avant le jour zéro, des cas de « fièvre grise » sont signalés à bord d'un navire au large et dans un hôpital de l'île ; les autorités parlent d'une intoxication. Les malades meurent en un jour ou deux. Ils ne restent pas morts.</p><p>(Au MJ de décider s'il révèle un jour l'origine. Le contenu ne la fixe pas, volontairement.)</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "avant"
+        }
+      }
+    },
+    {
+      "_id": "xx0j0N0n7hgCVNnI",
+      "_key": "!journal.pages!GYxkLPAaypNLDcCq.xx0j0N0n7hgCVNnI",
+      "name": "Jour zéro (jours 0 et 1)",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li>Les premiers morts se relèvent aux urgences de Saint-Denis et de Saint-Pierre, dans des maisons, dans des voitures.</li><li>Les réseaux marchent tous ; le téléphone sature dès le soir.</li><li>Embouteillages monstres vers l'aéroport et vers les Hauts ; accidents sur la RN1 et la RN2.</li><li>Les autorités demandent de rester chez soi, parlent d'un « malaise collectif ».</li><li>Les Hauts, les cirques et Mafate n'ont encore rien vu.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "jour-zero"
+        }
+      }
+    },
+    {
+      "_id": "GmEDv1OmX2lbsmgp",
+      "_key": "!journal.pages!GYxkLPAaypNLDcCq.GmEDv1OmX2lbsmgp",
+      "name": "Panique (jours 2 à 6)",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li>Couvre-feu, barrages, rotations d'avions et de bateaux pour ceux qui ont des billets, puis plus de rotations.</li><li>Pillages des supermarchés et des stations-service ; files de réfugiés vers les Hauts.</li><li>Premières coupures locales ; la radio officielle tourne en boucle.</li><li>Naissance de la Garnison du Quai (les forces repliées sur le port) et des Sans-Lune (pillages nocturnes à Saint-Denis).</li><li>Coureurs dans les rues : les morts récents courent encore.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "panique"
+        }
+      }
+    },
+    {
+      "_id": "Hd7dZVV8Bb44RPOh",
+      "_key": "!journal.pages!GYxkLPAaypNLDcCq.Hd7dZVV8Bb44RPOh",
+      "name": "Effondrement (jours 7 à 20)",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li>L'électricité, l'eau courante, le carburant, le téléphone tombent région par région, chacune dans sa fenêtre (voir les régions). L'Est, avec ses centrales hydrauliques, garde du courant plus longtemps ; Mafate ne le perd jamais (panneaux).</li><li>Les villes sont grouillantes ; des <strong>hordes</strong> naissent dans les régions à forte infestation et suivent le bruit le long des routes.</li><li>La Coopérative des Plaines, les Barques du Sud, les Ferrailleurs, le Dispensaire, les Pèlerins de la Lave et les Familles des Îlets s'organisent.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "effondrement"
+        }
+      }
+    },
+    {
+      "_id": "bJophmQ4dHDKuaC8",
+      "_key": "!journal.pages!GYxkLPAaypNLDcCq.bJophmQ4dHDKuaC8",
+      "name": "Silence (jours 21 à 59)",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li>Plus d'autorité, sinon celle qu'on prend. Les factions se disputent les régions et occupent les abris abandonnés.</li><li>Les hordes errent ; les premiers Livides des Bas commencent à se défaire dans la chaleur.</li><li>Les Hauts se remplissent de réfugiés… qui meurent et se relèvent dans le froid, où ils durent.</li><li>Cyclones possibles (saison des pluies) ; éruption possible de la Fournaise.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "silence"
+        }
+      }
+    },
+    {
+      "_id": "1Tg1LjjDGRUcbJmm",
+      "_key": "!journal.pages!GYxkLPAaypNLDcCq.1Tg1LjjDGRUcbJmm",
+      "name": "L'après (jour 60 et plus)",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li>La chaleur humide des Bas décompose les Livides : le littoral se vide d'eux en quelques mois.</li><li>Les bandes humaines dominent le littoral : Sans-Lune au nord, Ferrailleurs à l'ouest, Garnison au Port, Barques au sud.</li><li>Les Hauts et les cirques gardent leurs vieux Livides, lents, nombreux, figés par le froid de l'hiver austral et réveillés par le soleil.</li><li>Les groupes qui ont choisi l'autonomie deviennent les nouveaux villages de l'île — et les nouvelles cibles.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "apres"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Fénoir",
+  "type": "JournalEntry",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "color": "#2b3a2f",
+  "description": "",
+  "flags": {
+    "lakour-fenoir": {
+      "dossier": "Fénoir"
+    }
+  },
+  "_id": "N5gOxmWjwEeVTrr3",
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!N5gOxmWjwEeVTrr3"
+}

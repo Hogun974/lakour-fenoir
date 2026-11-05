@@ -1,0 +1,18 @@
+{
+  "key": "lakour-fenoir.installe",
+  "user": null,
+  "value": "\"0.2.0\"",
+  "_id": "nMEC3WiFWDItkW6Z",
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!settings!nMEC3WiFWDItkW6Z"
+}

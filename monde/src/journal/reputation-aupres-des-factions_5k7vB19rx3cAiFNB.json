@@ -1,0 +1,54 @@
+{
+  "_id": "5k7vB19rx3cAiFNB",
+  "_key": "!journal!5k7vB19rx3cAiFNB",
+  "name": "Réputation auprès des factions",
+  "folder": "N5gOxmWjwEeVTrr3",
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "reputations",
+      "visible": false,
+      "version": "0.2.0"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.lakour-fenoir.mj.JournalEntry.5k7vB19rx3cAiFNB",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "pages": [
+    {
+      "_id": "EBMZisPNPVA6Wbx6",
+      "_key": "!journal.pages!5k7vB19rx3cAiFNB.EBMZisPNPVA6Wbx6",
+      "name": "Paliers et horloges",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<h2>Les paliers</h2><p>Chaque faction a son horloge de réputation (moteur MJ IA, type « réputation »), créée à l'installation. Un appel ou une demande réussi rapporte de 1 à 3 points ; un service rendu sans rien demander, 1 ; un vol, une trahison, un mort de la faction en coûtent de 2 à 6. Les paliers :</p><ul><li><strong>Hostile</strong> (à partir de -20) : On vous attaque ou on vous chasse à vue. Aucun échange possible.</li><li><strong>Méfiante</strong> (à partir de -4) : On vous parle de loin, armes en main ; échanges rares, à prix fort, sans jamais entrer.</li><li><strong>Neutre</strong> (à partir de 0) : Des étrangers parmi d'autres : troc équitable, on vous laisse passer.</li><li><strong>Amicale</strong> (à partir de 5) : On connaît vos noms ; on vous accueille une nuit, on vous prévient d'un danger.</li><li><strong>Alliée</strong> (à partir de 10) : Vos ennemis sont les leurs : refuge, savoir, aide en cas d'assaut.</li></ul><h2>La Garnison du Quai</h2><p>Horloge <strong>rep-garnison-du-quai</strong>, départ -2.</p><ul><li><strong>Neutre</strong> : Laissez-passer pour la route du Littoral ; échange de vivres contre carburant au poste de la Grande Chaloupe.</li><li><strong>Amicale</strong> : Carburant et munitions au troc ; soins à l'infirmerie du port ; renseignements radio sur les hordes.</li><li><strong>Alliée</strong> : Un abri au Port en cas de besoin ; une escorte armée pour un déménagement ; le savoir « radio » enseigné par leurs opérateurs.</li></ul><h2>La Coopérative des Plaines</h2><p>Horloge <strong>rep-cooperative-des-plaines</strong>, départ 0.</p><ul><li><strong>Neutre</strong> : Troc du samedi à Bourg-Murat : lait, fromage, légumes contre outils et graines.</li><li><strong>Amicale</strong> : Graines et jeunes plants ; un coup de main pour une récolte ; le savoir « élevage » enseigné.</li><li><strong>Alliée</strong> : Une place dans une ferme de la Plaine ; un cheval ou un âne prêté ; le savoir « maraîchage tropical » enseigné.</li></ul><h2>Les Ferrailleurs</h2><p>Horloge <strong>rep-ferrailleurs</strong>, départ 0.</p><ul><li><strong>Neutre</strong> : Marché aux pièces : pièces et matériaux au troc, à prix de Ferrailleur.</li><li><strong>Amicale</strong> : Prix honnêtes ; un véhicule réparé ; la position d'un dépôt intact.</li><li><strong>Alliée</strong> : Le savoir « mécanique » enseigné ; ils gardent votre abri si vous partez, sans le dépouiller.</li></ul><h2>Les Barques du Sud</h2><p>Horloge <strong>rep-barques-du-sud</strong>, départ 0.</p><ul><li><strong>Neutre</strong> : Poisson contre carburant ou médicaments sur les quais.</li><li><strong>Amicale</strong> : Une traversée par la mer d'une marine à l'autre ; le savoir « pêche au lagon » enseigné.</li><li><strong>Alliée</strong> : Un bateau prêté ; l'évacuation par la mer si l'abri tombe ; un mouillage sûr pour votre propre barque.</li></ul><h2>Les Pèlerins de la Lave</h2><p>Horloge <strong>rep-pelerins-de-la-lave</strong>, départ -2.</p><ul><li><strong>Neutre</strong> : Un repas et un lit à Notre-Dame-des-Laves pour qui vient en paix.</li><li><strong>Amicale</strong> : Soins gratuits ; le passage de la route des Laves ; des nouvelles du Sud.</li><li><strong>Alliée</strong> : Refuge pour les malades et les enfants ; leurs guetteurs vous préviennent des éruptions et des hordes.</li></ul><h2>Les Familles des Îlets</h2><p>Horloge <strong>rep-familles-des-ilets</strong>, départ -2.</p><ul><li><strong>Neutre</strong> : Entrée dans Mafate après trois jours de quarantaine au col ; troc de graines et de lentilles.</li><li><strong>Amicale</strong> : Le savoir « hydraulique rurale » ou « électricité solaire » enseigné ; un guide pour les sentiers.</li><li><strong>Alliée</strong> : Une case dans un îlet ; leurs sifflets vous préviennent de tout ce qui monte.</li></ul><h2>Le Dispensaire du Sud</h2><p>Horloge <strong>rep-dispensaire-du-sud</strong>, départ 5.</p><ul><li><strong>Neutre</strong> : Soins contre ce qu'on peut donner ; médicaments au troc.</li><li><strong>Amicale</strong> : Soins gratuits pour les blessés graves ; le savoir « premiers secours avancés » enseigné.</li><li><strong>Alliée</strong> : Une place pour un malade, des médicaments en réserve, et ce qu'ils savent du Gris.</li></ul><h2>Les Sans-Lune</h2><p>Horloge <strong>rep-sans-lune</strong>, départ -8.</p><ul><li><strong>Neutre</strong> : Un tribut payé achète une lune de tranquillité.</li><li><strong>Amicale</strong> : On vous laisse passer la nuit en ville ; ils vendent ce qu'ils ont pillé.</li><li><strong>Alliée</strong> : Leurs informations sur la ville… et l'hostilité de toutes les autres factions s'ils l'apprennent.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "paliers"
+        }
+      }
+    }
+  ]
+}

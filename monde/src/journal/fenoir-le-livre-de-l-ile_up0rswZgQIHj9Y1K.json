@@ -1,0 +1,330 @@
+{
+  "_id": "up0rswZgQIHj9Y1K",
+  "_key": "!journal!up0rswZgQIHj9Y1K",
+  "name": "Fénoir — Le livre de l'île",
+  "folder": "N5gOxmWjwEeVTrr3",
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "livre-de-l-ile",
+      "visible": true,
+      "version": "0.2.0"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.lakour-fenoir.guides.JournalEntry.up0rswZgQIHj9Y1K",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "pages": [
+    {
+      "_id": "mtNjuj3UlB0CIVps",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.mtNjuj3UlB0CIVps",
+      "name": "Avant de lire",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce livre n'a pas d'auteur. Il a été commencé sur un cahier d'écolier, à la lumière d'une lampe frontale, par des gens qui venaient de passer leur première nuit derrière une porte barricadée et qui avaient besoin d'écrire ce qu'ils savaient, pour ne pas devenir fous. D'autres l'ont recopié, complété, raturé. On y a collé des pages arrachées à des carnets, des mots entendus à la radio, des choses vraies et des choses qu'on croyait vraies. Il circule d'abri en abri, et chacun y ajoute ce qu'il a appris, en disant d'où ça vient.</p><p>Si vous le lisez <strong>au jour zéro</strong>, à l'heure où les lumières brillent encore, vous n'en comprendrez pas la moitié. Lisez quand même. Lisez d'abord ce qu'était l'île, parce que c'est ce que vous allez défendre. Lisez ce qu'on sait des Livides, parce que ça vous sauvera peut-être la vie, et ce qu'on n'en sait pas, parce que ça vous empêchera de vous croire en sécurité. Lisez les rumeurs en vous souvenant qu'elles sont des rumeurs. Et gardez la dernière page pour le soir.</p><p><strong>Fénoir</strong>, en créole, c'est la nuit : <em>i fé noir</em>, il fait noir. Personne n'a décidé d'appeler ça comme ça. C'est venu tout seul, la première semaine, quand on a compris que le danger, ce n'était pas seulement les morts qui marchent, c'était le moment où l'on n'y voit plus, où le groupe électrogène se tait, où l'on écoute. Les gens disaient « depuis Fénoir » comme on disait avant « depuis le cyclone ».</p><blockquote><p>On m'a demandé pourquoi j'écrivais ça au lieu de dormir. J'ai dit : parce que demain, quelqu'un aura besoin de savoir qu'il faut laver la morsure tout de suite, pas après. Et parce que je veux qu'on se souvienne de l'odeur des letchis. Les deux.<br><em>Premier cahier, première page.</em></p></blockquote><p>Une dernière chose. Ce livre parle beaucoup de la mort, et pourtant il a été écrit par des vivants, sur une île qu'ils aimaient. N'y cherchez pas le goût du malheur. Cherchez-y ce qui a tenu.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "avant-de-lire"
+        }
+      }
+    },
+    {
+      "_id": "xEM25vdCIDTLG9KD",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.xEM25vdCIDTLG9KD",
+      "name": "L'île, avant",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<h2>Un caillou dans l'océan</h2><p>La Réunion est une montagne sortie de la mer, à sept cents kilomètres à l'est de Madagascar. Soixante kilomètres de long, quarante-cinq de large, et au milieu, à plus de trois mille mètres, le Piton des Neiges, un vieux volcan éteint que trois effondrements ont creusé en trois <strong>cirques</strong> : @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.V8IWSPAhv6Z3QtZU]{Cilaos}, @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.awd3WC49Cv9phSto]{Salazie}, @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.PCmBGerBvAyvGP31]{Mafate}. Au sud-est, le @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.HDcNQbIdL6d3EWMy]{Piton de la Fournaise}, lui, est bien vivant : il coule tous les deux ou trois ans, et quand la coulée descend le Grand Brûlé jusqu'à la mer, toute l'île monte la voir, en famille, avec les glacières.</p><p>L'île se divise en deux, et cette division explique tout ce qui suit. Les <strong>Bas</strong>, c'est le littoral : la chaleur, les villes, les routes, la canne, les zones commerciales, les quatre cinquièmes des habitants. Les <strong>Hauts</strong>, c'est tout ce qui est au-dessus : les pentes, les plaines d'altitude, les cirques, la forêt de tamarins, la brume de l'après-midi, les cases en bois sous tôle, les vaches de la @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.sx9ay65idkIaKCgH]{Plaine des Cafres}, les lentilles de Cilaos, les chouchous de Salazie. On y monte le dimanche pour le frais ; on y gèle en août. Il y a des gens des Hauts et des gens des Bas, et ils ne vivent pas tout à fait le même temps.</p><h2>Le vent, la pluie, la mer</h2><p>L'Est est <strong>au vent</strong> : l'alizé y pousse les nuages contre la montagne, et il y pleut comme nulle part ailleurs, des rivières qui descendent en torrents, une canne haute et grasse. L'Ouest est <strong>sous le vent</strong> : sec, blond, ensoleillé, avec des savanes qui brûlent en octobre, et le seul vrai <strong>lagon</strong> de l'île, de Saint-Gilles à Saint-Leu, derrière sa barrière de corail : une eau immobile, tiède, où l'on apprend à nager à tous les enfants.</p><p>Il y a deux saisons. L'<strong>hiver austral</strong>, de mai à octobre : sec, doux en bas, froid en haut, les baleines qui passent au large en juillet. L'<strong>été austral</strong>, de novembre à avril : la chaleur moite, les orages de l'après-midi, les mangues puis les letchis, et la saison des <strong>cyclones</strong>. Chaque famille sait ce que veut dire alerte orange (on remplit les bouteilles, on cloue) et alerte rouge (on ne sort plus, on écoute la radio). Après, on compte les radiers submergés et les toits envolés, et on recommence.</p><h2>Les villes et la canne</h2><p>@UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.IMqkSnSGbe2etOrZ]{Saint-Denis} au nord, le chef-lieu, avec son front de mer, ses cases de la rue de Paris et ses barres du Chaudron ; @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.gQh08QnKHUHiMOSA]{Saint-Pierre} au sud, la rivale, son marché, son port, ses soirées ; @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.8lieGvpKfY511CP4]{Le Port} à l'ouest, par où arrive tout ce que l'île ne fabrique pas, c'est-à-dire presque tout ; @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.CMYPF3bMqW7rBzCa]{Saint-Paul}, @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.5xweShd0icHtsQMt]{Saint-Leu}, Saint-André, Saint-Benoît, Saint-Joseph : un chapelet de villes reliées par des routes qu'on bouche tous les matins. L'île est petite et l'on y passe sa vie en voiture.</p><p>Entre les villes, la <strong>canne à sucre</strong>. On la coupe de juillet à décembre, les camions montent aux sucreries du Gol et de Bois-Rouge, et l'odeur de mélasse flotte sur la plaine. Il reste de la vanille dans le Sud, du géranium dans les Hauts de l'Ouest, des letchis et des mangues dans tous les jardins, des brèdes partout où il y a de l'eau. L'île ne se nourrit pourtant pas elle-même : elle importe son riz, sa farine, son lait, son carburant. Tout le monde le savait sans y penser.</p><h2>Les gens</h2><p>Il n'y avait personne sur cette île il y a quatre siècles. Tout le monde est venu de quelque part : de France, de Madagascar, d'Afrique de l'Est, de l'Inde du Sud, du Gujarat, de Chine, des Comores, de Mayotte, de Maurice. Les uns libres, beaucoup enchaînés, puis engagés, puis simplement arrivés. Il en est sorti un peuple qui se marie entre lui, qui mange le cari de l'un et les samoussas de l'autre, qui va à la messe, au temple, à la mosquée, à la pagode, parfois aux quatre, et qui parle <strong>créole</strong> à la maison et français à l'école.</p><p>La vie quotidienne, avant, c'était ça : la radio dès six heures dans la cuisine, les bouchons, le travail, le marché forain du samedi, le pique-nique du dimanche, les gramouns sur la varangue, les marmailles dans la kour, la boutique du coin qui fait crédit, le kabar du samedi soir, les enterrements où tout le quartier vient. Une vie bruyante, chaude, serrée, qui se plaignait de tout et ne serait partie pour rien au monde.</p><blockquote><p>Quand je ferme les yeux, ce n'est pas la ville que je vois. C'est la route de Cilaos, le matin, avec les nuages en bas et le soleil en haut, et mon père qui klaxonne avant chaque virage. On a tous un endroit comme ça. Gardez le vôtre. Il va servir.<br><em>Carnet de Sully, guide.</em></p></blockquote>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "l-ile-avant"
+        }
+      }
+    },
+    {
+      "_id": "SjiaMPHdeCBMH9qB",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.SjiaMPHdeCBMH9qB",
+      "name": "Le dernier mois ordinaire",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Novembre avait été un mois comme les autres, et c'est ce qui rend son souvenir si difficile à supporter.</p><p>La <strong>campagne sucrière</strong> touchait à sa fin : les derniers camions de canne montaient aux usines, les champs coupés laissaient voir la terre rouge, et l'on parlait déjà, comme chaque année, du prix de la tonne. Dans les écoles, le premier trimestre s'achevait ; on préparait les <strong>fêtes de fin d'année</strong>, les spectacles, les chorales qui chantent Noël en short. Les familles tamoules avaient allumé les lampes de <strong>Dipavali</strong> au début du mois, et Saint-André avait défilé en couleurs sous une pluie fine. Les premiers orages de l'après-midi étaient arrivés, lourds, courts, avec cette odeur de terre mouillée qui annonce l'été.</p><p>Dans les jardins, les <strong>mangues</strong> pliaient les branches et les <strong>letchis</strong> commençaient à rougir. On surveillait l'arbre tous les jours : la fête des letchis, c'est mi-décembre, mais le premier bouquet, on le mange en cachette, au pied de l'arbre, le menton qui colle. Dans les magasins, les guirlandes étaient là depuis la Toussaint, et les enfants écrivaient leurs listes de cadeaux en regardant les <strong>flamboyants</strong> rougir : Noël, ici, c'est le soleil qui tape, le cari sous la varangue et les pétards jusqu'au jour de l'an.</p><h2>Le fait divers</h2><p>Et puis il y a eu cette histoire de <strong>bateau</strong>. Une semaine, peut-être dix jours avant, un navire était arrivé au large du Port et n'avait pas accosté. On disait qu'il y avait des malades à bord, une « intoxication », une « fièvre ». Les autorités parlaient d'une mise en observation, par précaution. Les journaux en ont fait trois lignes. Les gens du Port, eux, racontaient qu'on avait débarqué des gens la nuit, en ambulance, et que les ambulances n'étaient pas revenues par la même route.</p><p>Au même moment, on signalait des cas d'une « fièvre grise » dans un hôpital de l'île : des patients qui déclinaient très vite, la peau cendrée, et qui mouraient en un jour ou deux. Le mot <strong>gris</strong> est né là, dans une salle de garde, avant d'être repris par tout le monde. Personne n'a dit ce qu'ils étaient devenus. On a parlé d'une intoxication alimentaire, puis d'un virus importé, puis plus rien, parce que la semaine suivante, il y avait autre chose à dire.</p><blockquote><p>Ma collègue de la réanimation m'a appelée un soir pour me dire qu'un mort avait bougé. Je lui ai dit de dormir. Je lui ai dit ça. On a tous dit ça, à quelqu'un, cette semaine-là.<br><em>Carnet de Nadia, infirmière.</em></p></blockquote><p>Ce qu'il faut comprendre, c'est que rien n'avait l'air d'une fin. Il y avait des signes, mais des signes, il y en a tous les jours ; on vit au milieu de signes. Le dernier mois ordinaire s'est terminé un vendredi de début décembre, sous un ciel magnifique, et personne ne l'a vu finir.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "dernier-mois"
+        }
+      }
+    },
+    {
+      "_id": "SO4Plb86hHuwsPpC",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.SO4Plb86hHuwsPpC",
+      "name": "Le jour zéro",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ceux qui l'ont vécu ne sont pas d'accord sur l'heure. Pour les uns, ça a commencé la nuit, aux urgences de Bellepierre, à @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.IMqkSnSGbe2etOrZ]{Saint-Denis}, quand un homme déclaré mort à trois heures du matin a mordu un brancardier ; on a mis ça sur le compte d'un réflexe. Pour d'autres, c'est l'après-midi, à @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.gQh08QnKHUHiMOSA]{Saint-Pierre}, dans une salle d'attente ; ou dans une voiture arrêtée sur la RN1, dans une maison, dans un car jaune au milieu des virages de @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.V8IWSPAhv6Z3QtZU]{Cilaos}. La vérité est que ça a commencé partout à peu près en même temps, dans les Bas, là où il y avait des hôpitaux, des morts et du monde.</p><h2>Ce qu'on a pu voir</h2><p>Le matin, rien. Les bouchons habituels, le soleil, les sirènes un peu plus nombreuses autour des hôpitaux. À la radio, on parlait d'un « épisode de malaises » et d'urgences saturées. Vers midi, les premiers messages sur les téléphones : <em>ne venez pas à l'hôpital</em>, <em>ils ferment les portes</em>, <em>il y a eu des coups de feu à Saint-Pierre</em>. Les écoles ont annoncé qu'elles gardaient les enfants ; puis certains parents ne sont pas venus les chercher.</p><p>L'après-midi, la <strong>bascule</strong>. Dans les rues des villes, des gens qui couraient, d'autres qui marchaient d'une drôle de façon ; des voitures abandonnées en travers ; les premiers <strong>Coureurs</strong>, ces morts si frais qu'ils couraient encore, et qui se jetaient sur la première personne venue. Les urgences ont débordé sur les parkings. La route des Tamarins s'est figée, puis la RN2, puis tout. Des familles ont pris la direction des Hauts avec ce qu'elles avaient dans le coffre ; d'autres celle de l'aéroport, où les files allaient jusqu'au parking et où l'on parlait de rotations supplémentaires, de passagers malades débarqués de nuit, d'avions qui ne repartaient pas.</p><p>Le soir, le <strong>préfet</strong> a parlé. Il a demandé de rester chez soi, de ne pas s'approcher des personnes « en état d'agitation », de laisser les routes aux secours. Il a dit « malaise collectif ». Il n'a pas dit le mot que tout le monde avait déjà en bouche. Le téléphone a saturé à la tombée de la nuit : on composait, on composait, et rien. L'électricité, elle, tenait. L'eau coulait. Les télévisions montraient des images de la métropole où il se passait, en décalé, la même chose. C'est cette nuit-là que les gens ont compris que personne ne viendrait.</p><h2>Ce qui marchait encore</h2><p>Au jour zéro, presque tout. C'est le piège, et c'est la chance. Les stations-service avaient de l'essence, les supermarchés des rayons pleins, les pharmacies leurs stocks, les quincailleries leurs tôles. Les routes étaient bouchées mais pas coupées. Ceux qui ont tenu, plus tard, sont souvent ceux qui ont fait, ce jour-là et le lendemain, trois choses simples : remplir toutes les bouteilles et toutes les baignoires, prendre ce qui se mange, se soigne et se répare, et choisir une <strong>porte</strong> qu'on peut fermer.</p><blockquote><p>On est partis à cinq dans la voiture de ma mère, avec le chien, deux bidons d'eau et la glacière. On ne savait pas où on allait. On est montés, parce que tout le monde montait. La route de la Montagne était un parking. Derrière nous, Saint-Denis avait toutes ses lumières allumées, comme un soir de fête.<br><em>Carnet de Lucie, étudiante.</em></p></blockquote><p>Dans les Hauts, dans les cirques, à Mafate, ce jour-là, il ne s'est rien passé. On a appris la nouvelle par la radio, on a fermé le portail, on a regardé les voitures monter. Le mal est arrivé plus tard, à pied, avec les réfugiés.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "jour-zero"
+        }
+      }
+    },
+    {
+      "_id": "zaHFXIBk9Ege3GkC",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.zaHFXIBk9Ege3GkC",
+      "name": "Les Livides : ce qu'on croit savoir",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>On les a appelés <strong>Livides</strong> à cause de leur couleur : un gris de cendre, marbré, les yeux voilés de blanc. Un médecin a dû employer le mot le premier ; il est resté parce qu'il n'était ni une insulte ni un mot de cinéma. Ce que vous lisez ici, ce sont des observations de survivants, recoupées quand on a pu : <strong>ce qu'on croit savoir</strong>. Les premières semaines ont coûté cher à ceux qui croyaient savoir mieux.</p><h2>Ce dont on est à peu près sûrs</h2><ul><li><strong>Ils sont morts.</strong> Pas malades, pas fous : morts. Un Livide ne respire pas, ne saigne pas vraiment, ne sent pas la douleur, ne se fatigue pas. Il ne s'arrête que quand on détruit la tête, et quand on dit « hors d'état », c'est ça qu'on veut dire.</li><li><strong>La morsure transmet le Gris.</strong> Une morsure, ou une griffure profonde, et la fièvre monte en quelques heures. Il faut <strong>laver tout de suite</strong>, à grande eau, au savon, à l'alcool, cautériser si l'on peut, et parfois couper si c'est un doigt ou une main. Tout de suite : pas après, pas quand on sera à l'abri. Ceux qui ont attendu ont tous fini pareil. Une fois la fièvre installée, on ne connaît <strong>aucun remède</strong>. Le malade décline sur quelques jours, meurt, et se relève. Les gens qui vous aiment devront alors faire ce qu'il faut. Parlez-en avant.</li><li><strong>Ils sont lents, sauf les tout frais.</strong> Un Livide marche comme un homme ivre, sans jamais s'arrêter. Mais un mort de quelques heures, les premiers jours, <strong>court</strong> encore, maladroitement, et crie en courant : on les appelle les Coureurs. Après une semaine, ils ralentissent et deviennent comme les autres. On n'en a plus revu depuis la première quinzaine.</li><li><strong>Ils vont vers le bruit, la lumière et l'odeur.</strong> Un moteur, un coup de feu, un cri, une lampe allumée dans une fenêtre la nuit, une cuisine : ils viennent, et ils s'acharnent sur une porte pendant des heures. Ils se regroupent : là où il y en a trois, il y en aura trente.</li><li><strong>Ils ne grimpent pas, ils ne nagent pas, ils n'ouvrent pas.</strong> Une échelle retirée, une porte solide, un étage, un bateau au mouillage les arrêtent. Un portail mal fermé, non.</li></ul><h2>Ce qu'on a observé sans le comprendre</h2><ul><li><strong>La chaleur les abîme.</strong> Dans les Bas, en plein été, un Livide pourrit vite : la peau se fend, les muscles lâchent, il tombe et ne se relève plus. On a vu des rues entières jonchées de corps effondrés, qu'on croyait d'abord des morts ordinaires.</li><li><strong>Le froid les garde.</strong> Dans les Hauts, on en a vu, des mois après, qui semblaient de bois : desséchés, raides, couverts de rosée le matin, immobiles dans le brouillard jusqu'à ce que le soleil les réveille. Ceux-là sont très durs à abattre. On les appelle les <strong>Livides des Hauts</strong>.</li><li><strong>La mer les rend.</strong> Les corps emportés par la houle reviennent sur les plages, gonflés, couverts d'algues, et marchent vers les lumières. Une morsure de noyé s'infecte toujours.</li><li><strong>Les brûlés ne voient plus</strong> et ne suivent que les bruits.</li><li><strong>Les animaux ne se relèvent pas.</strong> Mais les chiens sans maître se sont regroupés en meutes, et les cochons sont retournés marrons dans les ravines : ce sont d'autres dangers.</li></ul><blockquote><p>Règle de la maison : on ne discute pas une morsure. On lave, on brûle, on coupe, et on pleure après. J'ai perdu mon mari à discuter.<br><em>Carnet de Thérèse, Saint-André.</em></p></blockquote><h2>Comment on fait</h2><p>On se tait. On ne sort pas la nuit. On ne tire que si l'on n'a pas le choix, parce qu'un coup de feu s'entend à des kilomètres. On marche à deux au moins. On regarde les mains, les avant-bras, le cou de ceux qu'on accueille. Et l'on se souvient qu'ils ont été des gens, sans pour autant leur ouvrir.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-livides"
+        }
+      }
+    },
+    {
+      "_id": "Jo4kpnlbS8kdrXmX",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.Jo4kpnlbS8kdrXmX",
+      "name": "Ce qu'on apprendra peut-être",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Cette page est laissée <strong>ouverte</strong>. Elle est faite pour être complétée par ceux qui tiendront assez longtemps pour savoir. Ce qui suit, ce sont les questions, et à côté, ce qu'on en dit.</p><p><strong>D'où vient le Gris ?</strong> Personne ne le sait. On a dit : du bateau. On a dit : de l'eau des ravines, d'un moustique, d'un médicament, d'un laboratoire, du ciel, de la colère de quelque chose. On a dit que la métropole l'avait eu en même temps, que Maurice l'avait eu avant, que Madagascar ne l'avait pas. Si quelqu'un l'apprend un jour, qu'il l'écrive ici, avec la preuve.</p><p><strong>Est-ce que ça se transmet autrement que par la morsure ?</strong> On ne croit pas. Des gens ont vécu des semaines avec des infectés sans l'attraper, ont touché des corps, respiré le même air. Mais on ne sait pas pourquoi les premiers malades de novembre l'ont eu, eux, sans morsure. Alors on lave les mains, on couvre les plaies, et on n'embrasse pas les mourants.</p><p><strong>Est-ce que tout le monde se relève ?</strong> Ceux qui meurent du Gris, oui. Ceux qui meurent d'autre chose… On a vu des vieux morts dans leur lit, de leur mort, qui se sont relevés, et d'autres qui ne se sont pas relevés. Ne comptez sur rien : veillez vos morts, attachez-les, ou enterrez-les profond.</p><p><strong>Y a-t-il des gens que ça ne prend pas ?</strong> C'est la rumeur la plus dangereuse de l'île, parce que c'est celle qu'on a le plus envie de croire. On parle d'un enfant mordu qui n'a rien eu. On parle d'une femme du Sud qui est tombée malade et s'est réveillée. Le Dispensaire du Sud voudrait bien les trouver. Jusqu'à preuve, une morsure est une morsure.</p><p><strong>Est-ce que ça finira ?</strong> Si la chaleur les défait vraiment, les villes des Bas seront un jour vides de Livides : vides, mais pas sûres, parce que ce qu'il restera dans les rues, ce seront les vivants. Si le froid les garde vraiment, les Hauts resteront longtemps peuplés de leurs morts anciens, qui s'éveillent au soleil. C'est l'idée qui tourne dans toutes les têtes : <strong>le meilleur endroit change avec le temps.</strong> Ceux qui l'ont mal comprise sont morts au mauvais endroit.</p><p><strong>Est-ce qu'on peut les soigner ?</strong> Non. Pas aujourd'hui. Mais à Saint-Pierre, à l'hôpital, il y a des gens qui n'ont pas renoncé à le chercher, et qui demandent, pour ça, des choses de plus en plus difficiles à donner.</p><blockquote><p>J'ai laissé une page blanche après celle-ci. Si tu la trouves remplie, c'est que quelqu'un a appris quelque chose. Si tu la trouves blanche, écris au moins la date, et ce que tu as vu.<br><em>Deuxième cahier.</em></p></blockquote>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "ce-qu-on-apprendra"
+        }
+      }
+    },
+    {
+      "_id": "SFkouTXmJEpYMlLa",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.SFkouTXmJEpYMlLa",
+      "name": "L'île qui change",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce qui suit est le récit d'une survivante, recopié tel quel, parce qu'il dit mieux que des listes ce qui est arrivé à l'île. Les dates ont été enlevées : chaque région a eu son calendrier.</p><blockquote><p>Les premiers jours, on a cru que ça allait s'arranger, parce qu'il y avait encore des <strong>ordres</strong>. Couvre-feu, barrages, des gendarmes qui faisaient demi-tour aux voitures, des avions qui décollaient de Gillot pour ceux qui avaient des billets, puis des cargos au Port pour ceux qui avaient des papiers, puis plus d'avions, puis plus de cargos. On a vu les files monter vers les Hauts, les gens à pied avec les enfants sur les épaules, et les supermarchés vidés en une nuit par des gens qui, la veille, faisaient la queue à la caisse. C'est là que les <strong>Sans-Lune</strong> sont nés, à Saint-Denis, dans le noir, et que les militaires qui restaient se sont repliés sur le port avec leurs conteneurs. La radio officielle répétait la même chose en boucle. Un matin, elle a cessé de la répéter.<br><br>Ensuite, les <strong>réseaux</strong> sont tombés. Pas tous le même jour, pas partout pareil : le carburant d'abord, parce que les stations ont été vidées ; puis le téléphone ; puis l'électricité, par quartiers, par villes, un soir on allume et rien ne vient ; et l'eau, en dernier, quand les pompes se sont arrêtées. L'Est a gardé du courant plus longtemps, grâce à ses centrales sur les rivières ; @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.PCmBGerBvAyvGP31]{Mafate} ne l'a jamais perdu, parce qu'il n'en avait pas, seulement des panneaux. Ceux qui avaient une citerne ont compris ce qu'elle valait. Les autres ont appris à aller à la ravine, et la ravine donne la leptospirose à qui ne fait pas bouillir.<br><br>Les villes sont devenues des pièges. Dans les rues basses, à chaque carrefour, des dizaines de silhouettes, et chaque bruit en attirait d'autres. Les <strong>hordes</strong> sont nées là, de ces rassemblements, et se sont mises à suivre les routes, lentes, en masse, attirées par n'importe quel moteur. On a vu l'une d'elles descendre la @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.NDu4YdBTek0Q5ff2]{route du Littoral} comme une marée ; là-bas, les voitures abandonnées, les éboulis et la houle ont fini par faire une barrière que seuls les piétons franchissent par le vieux chemin pavé, là-haut.<br><br>Tout le monde est monté dans les Hauts, et moi aussi. Là-haut, les premières semaines, c'était presque la paix : peu de monde, donc peu de morts ; de l'eau, du bois, des légumes dans les jardins, des gens qui se connaissaient. Et puis les réfugiés sont arrivés par tous les chemins, et certains étaient mordus, et certains ne l'ont pas dit. Les Hauts se sont remplis de nos morts. Et dans le froid, nos morts ne pourrissent pas.<br><br>Un jour, il n'y a plus eu d'<strong>autorité</strong> du tout. Pas de coup d'éclat : juste personne au bout de la radio, plus de brassards sur les routes, sauf ceux du Port. Alors les gens se sont organisés, chacun autour de ce qu'il avait : les fermiers autour des fermes, les pêcheurs autour des bateaux, les soignants autour de l'hôpital, les croyants autour d'une église, les habitants des îlets autour de leurs cols, les mécaniciens autour des casses, les pillards autour de la peur. On a eu un cyclone, et la Fournaise a grondé une nuit sans couler. On a appris à vivre avec des <strong>rumeurs</strong> à la place des nouvelles.<br><br>Et puis j'ai redescendu la route, un matin, pour chercher des médicaments, et j'ai vu les rues de la côte <strong>presque vides</strong>. Des corps effondrés dans les caniveaux, qui ne bougeaient plus, qui avaient fondu dans la chaleur. J'ai cru que c'était fini. Au premier carrefour, deux hommes au visage noirci m'ont demandé ce que je transportais. Ce n'est pas fini. C'est autre chose.<br><em>Carnet de Rosemay, Le Tampon.</em></p></blockquote><p>Les auteurs de ce livre ajoutent ceci : on ne sait pas si toutes les régions suivront le même chemin. Les @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.O4himmE95sbB00ig]{Hauts de l'Ouest} et la @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.rMmbSkrYEazA3r6J]{Plaine des Palmistes} ont paru sûrs longtemps, les villes ont été l'enfer tout de suite, le @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.H9DaehP4qM3cvD4Q]{Sud sauvage} n'a jamais été ni l'un ni l'autre, et les routes qui semblaient évidentes (celle de @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.V8IWSPAhv6Z3QtZU]{Cilaos}, celle de @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.awd3WC49Cv9phSto]{Salazie}, la route des Laves) sont celles qu'un éboulis, une crue ou une coulée coupent en une nuit. Ce que vous savez d'un endroit a une date. Vérifiez avant de partir ; vérifiez encore en arrivant.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "l-ile-qui-change"
+        }
+      }
+    },
+    {
+      "_id": "K9FQohEQMtRbP8iu",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.K9FQohEQMtRbP8iu",
+      "name": "Les gens d'après",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Huit groupes sont sortis de la crise avec un nom, un territoire et des règles. Ce qui suit, c'est ce qu'on en dit <strong>du dehors</strong>, autour des feux ; ce qu'ils sont vraiment, vous le découvrirez en traitant avec eux. Aucun de ces groupes n'est fait de méchants, et aucun n'est fait de saints. Chacun a de bonnes raisons. C'est ce qui rend les choses difficiles.</p><p><strong>La Garnison du Quai.</strong> Ce qui reste de l'ordre, retranché au @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.8lieGvpKfY511CP4]{Port} derrière des murailles de conteneurs : brassards orange, sirène à heure fixe, papiers à tamponner. Des militaires, des gendarmes mobiles sans hiérarchie, des dockers et leurs familles, et une commandante qui signe « pour l'autorité provisoire ». On dit qu'ils paient bien en carburant, qu'on entre chez eux désarmé et qu'on en sort fiché, et que celui qui se déclare médecin ou électricien n'en ressort pas toujours. On dit qu'ils attendent un cargo, et que ça fait longtemps.</p><p><strong>La Coopérative des Plaines.</strong> Les fermiers des Hauts, de la @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.sx9ay65idkIaKCgH]{Plaine des Cafres} aux @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.rMmbSkrYEazA3r6J]{Palmistes} et jusqu'à @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.V8IWSPAhv6Z3QtZU]{Cilaos}, regroupés autour de leurs fermes, de leurs vaches et de leurs fusils de chasse. Des cloches aux barrières, un troc le samedi à Bourg-Murat, un conseil de sept fermiers présidé par une très vieille éleveuse. On dit qu'on paie en travail, en graines ou en savoir, que la parole donnée vaut contrat et qu'un voleur ne revient pas deux fois. On dit qu'ils se méfient des gens de la ville.</p><p><strong>Les Ferrailleurs.</strong> Les récupérateurs du littoral Ouest : mécaniciens, casseurs, débrouillards en pick-up hérissés de tôle, qui démontent tout ce que les villes ont laissé, des voitures aux panneaux solaires, et tiennent des marchés aux pièces dans les zones commerciales. Pas de chef, ou tout le monde. On dit qu'ils échangent tout contre tout, les renseignements compris, et qu'ils revendent les vôtres au suivant. On dit qu'ils ne sont pas cruels. Seulement efficaces.</p><p><strong>Les Barques du Sud.</strong> Les pêcheurs de @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.gQh08QnKHUHiMOSA]{Saint-Pierre}, de Saint-Joseph, de Saint-Philippe et de @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.5xweShd0icHtsQMt]{Saint-Leu}, qui dorment sur leurs bateaux au mouillage, hors de portée de tout ce qui marche, et vivent de la mer. Des barques peintes au large, des feux sur les jetées, du poisson séché contre n'importe quoi. On dit qu'ils transportent ce qui doit l'être d'une marine à l'autre, que ça coûte cher mais que ça évite la route des Laves, et qu'il ne faut jamais toucher à un bateau.</p><p><strong>Les Pèlerins de la Lave.</strong> Autour de l'église de Sainte-Rose que la lave a épargnée autrefois, des familles de l'@UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.CivgPiY0mk9ih3jB]{Est}, des réfugiés et des malades, menés par un ancien catéchiste à la voix douce. Des pierres de lave au cou, des cierges sur les coulées, des chants le soir au bord de la route. On dit qu'on y est nourri et soigné sans payer, mais qu'on y reste ; qu'ils croient que le volcan protège ceux qui vivent à son pied et que le Gris est une épreuve. On dit, plus bas, ce qu'ils font des mordus. On ne sait pas si c'est vrai.</p><p><strong>Les Familles des Îlets.</strong> Les quelques centaines d'habitants de @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.PCmBGerBvAyvGP31]{Mafate}, et ceux de @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.awd3WC49Cv9phSto]{Salazie} qui les ont rejoints. Ils vivaient déjà sans route, avec des panneaux sur les toits, des sources captées et des sentiers qu'ils connaissent les yeux fermés : le monde d'après ressemble à leur monde d'avant, en plus dur. Des guetteurs aux cols, des sifflets qui se répondent d'îlet en îlet, une vieille institutrice que les sentiers écoutent. On dit qu'on demande à entrer, qu'on ne force pas, qu'il y a trois jours de quarantaine au col et un travail à faire. On dit qu'ils n'oublient ni un service ni un affront.</p><p><strong>Le Dispensaire du Sud.</strong> Les soignants qui n'ont pas fui : une aile du grand hôpital de Saint-Pierre et un poste à Saint-Denis, une croix rouge peinte sur des draps, des ambulances en navettes, des coupons de soin écrits à la main, et une urgentiste qui n'est pas sortie de l'hôpital depuis le jour zéro. On dit qu'on y est soigné contre ce qu'on peut donner, et parfois pour rien. On dit qu'ils sont honnêtes, et à bout, et qu'ils demandent, pour leur remède, des choses qu'on n'a pas envie d'entendre.</p><p><strong>Les Sans-Lune.</strong> La bande née des pillages de @UUID[Compendium.lakour-fenoir.guides.JournalEntry.kJU1ZWH9qMVBZZAR.JournalEntryPage.IMqkSnSGbe2etOrZ]{Saint-Denis}, grossie de tous ceux qui ont compris qu'on survit mieux en prenant qu'en produisant. Visages noircis, sorties les nuits sans lune, marques à la bombe sur les portes « déjà payées », et un homme qu'on appelle le Comptable, qui tient sur un cahier ce que chaque quartier lui doit. On dit qu'on paie, qu'on se cache ou qu'on se bat, et qu'un tribut acheté ne dure qu'une lune. On dit que plus la côte se vide de Livides, plus ils s'étendent.</p><p>Et puis il y a les autres : les groupes sans nom, les familles dans une case, les enfants seuls, les gens comme vous. On dira de vous ce qu'on dit d'eux : ça dépend des jours.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-gens-d-apres"
+        }
+      }
+    },
+    {
+      "_id": "aBaf6BBnF0Ol8gPH",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.aBaf6BBnF0Ol8gPH",
+      "name": "Vivre à Fénoir",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce chapitre est le plus utile et le plus ennuyeux : l'eau, la nourriture, le courant, la pluie, la fièvre. Ceux qui l'ont écrit ont appris chaque ligne à leurs dépens. Les règles qui vont avec sont dans le @UUID[Compendium.lakour-fenoir.guides.JournalEntry.6cAiaJj4qo5Z1EsL]{guide du joueur} et dans @UUID[Compendium.lakour-fenoir.guides.JournalEntry.NdY2GZESZubnOWjU]{la vie au camp} ; ici, c'est la vie.</p><h2>L'eau</h2><p>On boit plus qu'on ne croit : dans la chaleur des Bas, une fois et demie ce qu'il faut dans les Hauts. Quand le réseau tombe, il reste la pluie, qu'il faut recueillir (un toit, une gouttière, une cuve propre), la rivière et la source, qu'il faut <strong>faire bouillir</strong> ou filtrer, parce que l'eau des ravines porte la leptospirose et les gastros, qui tuent plus sûrement qu'un Livide. Une citerne pleine en décembre fait tenir jusqu'en avril ; en saison sèche, dans l'Ouest, elle baisse à vue d'œil.</p><h2>La nourriture</h2><p>Les rayons des supermarchés ont nourri l'île trois semaines, puis ils ont nourri les rats. Sans réserve étanche, sans séchoir ni fumoir, la chaleur humide gâte ce qu'on stocke, un peu chaque jour. Ce qui tient : le riz et les grains tant qu'ils sont secs, les conserves, le poisson séché des Barques, le lait de la Coopérative, et surtout ce qu'on fait pousser. L'île donne beaucoup à qui sait : brèdes, chouchous, patates douces, manioc, bananes, les letchis et les mangues de l'été, le miel, les œufs des poules échappées, les tilapias d'un bassin, un cabri, un cochon marron pris au piège. Un potager demande un mois avant de nourrir ; un verger, des années. On commence le premier jour.</p><h2>Le courant</h2><p>L'île était couverte de panneaux solaires avant Fénoir, et ils marchent toujours : sur les toits des Hauts, des écoles, des hangars. Un panneau, une batterie, un régulateur, et l'on a de la lumière la nuit, une radio, une glacière pour l'insuline. Les Ferrailleurs les démontent et les vendent ; les Familles des Îlets savent les réparer. Le groupe électrogène, lui, coûte tout : du carburant qu'on ne retrouvera jamais, et un bruit que toute la vallée entend. On l'allume pour sauver une vie. Il y a des rivières, aussi, et de petites turbines, comme dans l'Est.</p><h2>Les cyclones et le volcan</h2><p>La saison des pluies n'a pas pris de congé. Un cyclone à Fénoir, c'est comme avant, sans la radio pour le nommer : le ciel qui jaunit, la houle qui monte, les oiseaux qui se taisent, et la vieille qui dit « i sa vien ». On remplit, on cloue, on descend dans ce qui est le plus solide, et on attend. Après, les radiers sont sous l'eau, les routes de Cilaos et de Salazie sont coupées, et les Livides que le vent a couchés se relèvent dans la boue. Une galerie dans la roche, un tunnel de lave aménagé, une cave étayée valent toutes les tôles du monde. Quant à la Fournaise, elle ne demande l'avis de personne : quand elle coule, la route des Laves ferme, et le Sud sauvage redevient une île dans l'île.</p><h2>La fièvre</h2><p>La dengue et le chikungunya n'ont pas disparu avec les médecins ; les moustiques, eux, ont gagné des milliers de gouttières pleines d'eau. Une moustiquaire, des cuves couvertes, de l'eau bouillie, une plaie lavée, une fracture bien tenue : voilà la médecine qui reste à la plupart. Il y a mieux à Saint-Pierre, chez le Dispensaire, pour qui a de quoi offrir. Et il y a les fièvres de l'âme : le moral, qu'on perd vite dans le noir, et qui revient avec un repas chaud, une chanson, quelqu'un qui écoute.</p><h2>Les fêtes qu'on garde</h2><p>On a gardé les fêtes, toutes : fêter, c'est dire qu'on est encore un peuple. Noël en plein été, sous les flamboyants, avec un cari partagé et des cadeaux taillés au couteau ; le <strong>20 décembre</strong>, fête de la liberté, où le tambour du maloya s'entend quand même, et où ceux qui ne dépendent plus de personne comprennent ce qu'ils fêtent ; Dipavali, une seule petite lampe à huile bien abritée ; la Toussaint, où l'on fleurit des croix de bois au lieu d'aller au cimetière ; les letchis de la mi-décembre ; la fête de la musique, en juin, un kayamb bricolé et une voix basse. Tout cela est dans @UUID[Compendium.lakour-fenoir.guides.JournalEntry.qqQlhw4tkOi7z92s]{les fêtes de Fénoir}. Ça coûte une ration de plus par personne. Ça vaut toujours le prix.</p><h2>Repartir ou s'enraciner</h2><p>Il y a deux manières de vivre à Fénoir, et ce livre refuse de dire laquelle est la bonne. Les uns <strong>repartent</strong> : quand l'endroit s'épuise, quand une horde descend la route, ils chargent ce qu'ils peuvent, emportent leurs savoir-faire et leurs plans (ce qu'on a su construire une fois se reconstruit plus vite), et vont voir ailleurs, en sachant que l'ailleurs a changé. Les autres <strong>s'enracinent</strong> : ils captent, plantent, câblent, creusent, jusqu'au jour où rien ne manque sans que personne n'ait fouillé une maison, et ce jour-là, ils comptent les jours d'autonomie comme on comptait les années. Mais une serre brille, une fumée monte chaque soir, et toute l'île sait alors qu'il y a quelque chose à prendre. Les nomades meurent sur les routes ; les sédentaires meurent chez eux. Les deux vivent, aussi, et longtemps. C'est un choix de vie, pas une tactique : voir @UUID[Compendium.lakour-fenoir.guides.JournalEntry.6cAiaJj4qo5Z1EsL.JournalEntryPage.At3F4CVMfot4Sg5v]{Repartir ou s'enraciner}.</p><blockquote><p>On est restés. On a creusé la cave, planté, capté la source. Le soixante-dixième jour, personne n'est sorti chercher quoi que ce soit, et on a mangé à notre faim. Ma fille a demandé si c'était ça, gagner. J'ai dit que c'était ça, aujourd'hui.<br><em>Carnet de Rivo, électricien.</em></p></blockquote>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "vivre-a-fenoir"
+        }
+      }
+    },
+    {
+      "_id": "MF1KFuIcbvugnenh",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.MF1KFuIcbvugnenh",
+      "name": "Portraits",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>On rencontre les mêmes gens d'un bout de l'île à l'autre : les noms changent, les visages pas tant que ça. En voici quelques-uns, tels qu'on les décrit autour des feux. Certains existent vraiment. D'autres sont peut-être déjà morts quand vous lirez ceci. Tous ont une bonne raison.</p><p><strong>La commandante Hoarau</strong>, du Port. Ancienne officière de port, la cinquantaine, une voix qui ne monte jamais. Elle a pris la tête de ce qui restait d'uniformes et en a fait la Garnison du Quai. Elle croit sincèrement qu'il faut un ordre pour survivre, et il n'est pas sûr qu'elle ait tort. Elle signe « pour l'autorité provisoire », et elle y croit encore, au provisoire.</p><p><strong>Mémé Lucette</strong>, de la Plaine des Cafres. Soixante-quatorze ans, éleveuse, présidente du conseil de la Coopérative. Elle a vu passer tous les cyclones depuis sa naissance et n'a peur de rien, sauf de la ville. Elle vous fera asseoir, vous servira un lait chaud, vous demandera ce que vous savez faire, et rien d'autre tant que vous aurez répondu honnêtement.</p><p><strong>Gros Mani</strong>, de la Rivière des Galets. Il tient la grande casse, rit fort, compte vite, n'oublie jamais une dette ni une faveur. On dit qu'il est le chef des Ferrailleurs ; il dit qu'il n'y a pas de chef. Il vous vendra la pièce qu'il vous faut, le renseignement qui va avec, et peut-être le vôtre à quelqu'un d'autre.</p><p><strong>Le patron Grondin</strong>, de Saint-Pierre. Pêcheur, la soixantaine, la flottille des Barques du Sud derrière lui. Il a peur de la mer depuis qu'il y a perdu son fils, et il y retourne chaque jour. Il transporte, il échange, il ne parle pas beaucoup.</p><p><strong>Frère Expédit</strong>, de Sainte-Rose. Ancien catéchiste, la voix douce, le regard qui ne cille pas. Il nourrit et soigne tous ceux qui viennent à l'église Notre-Dame-des-Laves, et il croit, sans une ombre, que le volcan protège ceux qui vivent à son pied. Ses fidèles le croient plus que lui.</p><p><strong>Madame Lauret</strong>, de La Nouvelle, à Mafate. Ancienne institutrice, elle a appris à lire à la moitié du cirque, et les sentiers l'écoutent. C'est elle qui décide qui entre, après la quarantaine du col. Elle vous regardera les mains et les yeux avant les papiers, et enseigne volontiers l'eau et le solaire à qui aide aux jardins.</p><p><strong>La docteure Soundirassen</strong>, du grand hôpital du Sud. Urgentiste, elle n'est pas sortie de l'hôpital depuis le jour zéro, et ça se voit. Elle soigne contre ce qu'on peut donner, et pour rien quand on n'a rien. Elle cherche un remède. Ceux qui l'ont vue récemment disent qu'elle commence à trouver acceptables des choses qui ne l'étaient pas, et qu'elle le sait.</p><p><strong>La voix du Brûlé.</strong> Ophélie Turpin, radioamatrice dans les hauts de Saint-Denis, soixante ans passés. Chaque soir, elle émet les nouvelles qu'elle reçoit, vraies ou fausses, en le disant ; chaque matin, elle lit une histoire aux enfants qui l'écoutent, quelque part. Des centaines de gens la connaissent sans l'avoir vue.</p><p><strong>Le pharmacien de l'Entre-Deux.</strong> Un vieil homme qui a fait de sa case créole une forteresse : barreaux, citerne, panneaux, et une glacière où dort tout ce qui compte dans une pharmacie de montagne. On raconte qu'il connaît les stocks de tout le Sud. On raconte qu'il est seul. On raconte qu'il n'ouvre pas.</p><p><strong>La prof du collège sur la colline.</strong> On la cite sans son nom. Le jour zéro, elle surveillait la récréation ; le soir, des parents ne sont pas venus, et elle est restée avec les enfants qui restaient. Il y a des collèges comme ça dans toute l'île, pleins d'enfants et de dilemmes. Elle a besoin de tout, et d'abord qu'on ne lui mente pas.</p><p><strong>Ti Zan.</strong> Un enfant de neuf ans, seul, muet depuis le jour zéro, qui suit les groupes à distance avec un doudou en forme de tangue. Il connaît des passages que personne d'autre ne voit. Ne lui courez pas après : laissez de la nourriture, et attendez.</p><p><strong>Et vous.</strong> Une infirmière, un électricien, une gendarme sans brigade, un guide, un vieux marin, une fermière, un chauffeur de car, un gamin débrouillard du Port, une étudiante. Au jour zéro, vous étiez ce que vous faisiez. Après, vous êtes ce que vous savez faire, et ce que vous décidez de ne pas faire. Le reste se tire au sort : @UUID[Compendium.lakour-fenoir.guides.JournalEntry.6cAiaJj4qo5Z1EsL.JournalEntryPage.YAeUac3GaRE5gFYj]{créer son survivant}.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "portraits"
+        }
+      }
+    },
+    {
+      "_id": "motAKgguEFt98pLF",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.motAKgguEFt98pLF",
+      "name": "Rumeurs et mystères",
+      "type": "text",
+      "sort": 1100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Il n'y a plus de nouvelles. Il y a des rumeurs : ce qu'on a entendu à la radio, ce qu'un homme de passage a dit à la barrière, ce qu'on répète parce qu'on a envie que ce soit vrai. Ce livre les note, avec ce qu'on en sait. <strong>Certaines sont fausses, et on vous le dit.</strong></p><p>1. <strong>« Les Livides ne montent pas au-dessus de mille mètres. »</strong> Faux. On l'a cru les premières semaines, parce que les Hauts étaient calmes : ils le sont parce qu'il y a peu de monde, donc peu de morts. Ils y montent très bien, à pied, avec les réfugiés, et ils y restent.</p><p>2. <strong>« Les Livides ne traversent pas l'eau salée. »</strong> À moitié vrai, ce qui est pire que faux. Ils ne nagent pas, et un bateau au mouillage est un bon abri. Mais la mer les rend : les noyés reviennent avec la houle, et marchent sur la plage vers vos lumières.</p><p>3. <strong>« Un cargo viendra chercher les survivants au Port. »</strong> La Garnison le dit à la radio depuis des semaines, avec un jour, puis un autre. Personne ne l'a vu. Ceux qui y sont allés avec leurs papiers sont restés : recensés, logés, réquisitionnés.</p><p>4. <strong>« Le Gris vient de l'eau des ravines. »</strong> On n'en sait rien. Ce qu'on sait, c'est que l'eau des ravines donne la leptospirose, qui tue aussi. Faites-la bouillir dans tous les cas, et la rumeur n'aura plus d'importance.</p><p>5. <strong>« Un enfant mordu ne s'est pas transformé. »</strong> C'est la rumeur qu'on veut le plus croire, et celle qui a fait le plus de morts : des gens qui ont gardé un mordu près d'eux « au cas où ». Le Dispensaire aimerait trouver cet enfant.</p><p>6. <strong>« Il y a un tunnel de lave aménagé dans le Grand Brûlé, avec des vivres pour des mois. »</strong> Plausible : il y a des tunnels sous les coulées, frais, sombres, sans eau ni soleil. Personne qui l'ait vu n'en est revenu pour le dire, ce qui peut vouloir dire deux choses.</p><p>7. <strong>« Les vieux Livides des Hauts ne bougent plus quand il gèle. »</strong> Vrai, d'après tous ceux qui ont passé l'hiver là-haut. À l'aube, par temps clair, on passe entre eux en silence. Au premier rayon, ils se réveillent. Ne tardez pas.</p><p>8. <strong>« Les Pèlerins rendent les mordus à la lave. »</strong> On le dit. Ils disent, eux, qu'ils accueillent les malades et prient. Les deux peuvent être vrais le même jour.</p><p>9. <strong>« Quelqu'un lit des histoires aux enfants, le matin, à la radio. »</strong> Vrai. C'est la voix du Brûlé. Cherchez la fréquence.</p><p>10. <strong>« Maurice a fermé ses ports et coulé un bateau de réfugiés. »</strong> Un radioamateur l'affirme. Personne n'a pu vérifier. On ne sait rien de Maurice, ni de Madagascar, ni de la métropole, depuis que les antennes se sont tues. Ce silence est peut-être le plus grand mystère de l'île, et le plus simple.</p><p>Et puis il y a les mystères qu'on ne numérote pas : un îlet de Mafate où tout va bien, trop bien ; un groupe qui vit sur les toits du Chaudron et ne descend jamais ; un avion qu'on aurait entendu une nuit, sans le voir ; une femme qui répète chaque soir à la radio une adresse de Saint-Pierre et le prénom de son fils. Si vous apprenez quelque chose, écrivez-le ici, avec la date et la source.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "rumeurs"
+        }
+      }
+    },
+    {
+      "_id": "LdQO3a7yWsGTNZMn",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.LdQO3a7yWsGTNZMn",
+      "name": "Lexique",
+      "type": "text",
+      "sort": 1200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<h2>Mots de l'île</h2><p>Le créole réunionnais se parle plus qu'il ne s'écrit ; les graphies varient. Voici les mots que vous entendrez, avec ce qu'ils veulent dire.</p><ul><li><strong>Fénoir</strong> (<em>i fé noir</em>) : la nuit, l'obscurité. Depuis Fénoir : depuis que tout a basculé.</li><li><strong>Marmaille</strong> : les enfants. « Rentre les marmailles » : rentre les enfants.</li><li><strong>Gramoun</strong> : une personne âgée, un ancien ; se dit avec respect.</li><li><strong>Zoreil</strong> : une personne venue de métropole. Pas une insulte, pas tout à fait un compliment.</li><li><strong>La kaz, la kour</strong> : la maison, la cour. La kour, c'est aussi la famille élargie, ceux de la maison.</li><li><strong>Varangue</strong> : la véranda de la case créole, où l'on vit, où l'on reçoit, où le gramoun regarde passer la route.</li><li><strong>Ravine</strong> : le lit, souvent à sec, d'un torrent ; en crue, un piège mortel.</li><li><strong>Radier</strong> : un passage bétonné au fond d'une ravine, que les voitures traversent à gué et que la pluie submerge.</li><li><strong>Îlet</strong> : un replat habité au fond d'un cirque, un hameau sans route.</li><li><strong>Dalon</strong> : un ami, un camarade.</li><li><strong>Moun</strong> : les gens. « Na poin moun » : il n'y a personne.</li><li><strong>Lontan</strong> : autrefois, le temps d'avant.</li><li><strong>La pli</strong> : la pluie. « La pli i tonm » : il pleut.</li><li><strong>Oté !</strong> : interjection pour appeler, s'étonner, protester.</li><li><strong>Tienbo, larg pa</strong> : tiens bon, ne lâche pas. On le dit aux malades, aux marcheurs, à soi-même.</li><li><strong>Kabar</strong> : une fête, une veillée avec musique, à l'origine le rassemblement autour du maloya.</li><li><strong>Maloya, séga</strong> : les deux musiques de l'île ; le maloya, lent et grave, né des esclaves ; le séga, vif, qui fait danser.</li><li><strong>Cari, brèdes, chouchou</strong> : le plat de tous les jours (viande ou poisson en sauce, sur du riz, avec des grains), les feuilles vertes qu'on cuisine, le légume des treilles de Salazie.</li><li><strong>Tangue</strong> : un petit hérisson des Hauts ; aujourd'hui, le doudou d'un enfant qui ne parle plus.</li></ul><h2>Mots des survivants</h2><ul><li><strong>Le Gris</strong> : le mal. « Il a pris le Gris », « elle porte le Gris » : infecté.</li><li><strong>Livide</strong> : un mort relevé. <strong>Coureur</strong> : un Livide tout frais, qui court encore. <strong>Livide des Hauts</strong> : un Livide ancien, conservé par le froid, raide, très dur à abattre. <strong>Noyé</strong> : un Livide rendu par la mer.</li><li><strong>Hors d'état</strong> : quand un Livide ne bouge plus pour de bon.</li><li><strong>Horde</strong> : un rassemblement de Livides qui se déplace en masse, attiré par le bruit.</li><li><strong>Le quart</strong> : la mesure du temps : matin, après-midi, soir, nuit. « Deux quarts de marche. » « Un quart de garde. »</li><li><strong>L'abri</strong> : là où l'on dort derrière une porte fermée. <strong>La fouille</strong> : sortir chercher ce qui manque. <strong>Les plans</strong> : ce qu'on a su construire une fois et qu'on saura refaire plus vite.</li><li><strong>Renseignement daté</strong> : ce qu'on sait d'un endroit, et depuis quand.</li><li><strong>Jour autonome</strong> : un jour où rien n'a manqué sans que personne ne soit sorti fouiller.</li><li><strong>Brèche</strong> : quand la porte cède.</li><li><strong>Tribut</strong> : ce que les Sans-Lune prennent pour ne pas prendre le reste.</li><li><strong>Brassard orange</strong> : la Garnison. <strong>Coupon de soin</strong> : la monnaie du Dispensaire. <strong>La quarantaine du col</strong> : les trois jours à la porte de Mafate avant d'entrer.</li><li><strong>Le silence</strong> : le temps, après la panique, où plus personne ne répond à la radio.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "lexique"
+        }
+      }
+    },
+    {
+      "_id": "WmhNGAb81nELourG",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.WmhNGAb81nELourG",
+      "name": "La première nuit",
+      "type": "text",
+      "sort": 1300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce texte a été trouvé dans le premier cahier, sans nom. On le recopie en dernier, parce que c'est par là que tout le monde commence.</p><blockquote><p>On a fermé la porte à huit heures. Pas une grande porte : celle d'une case, avec un verrou, une chaise coincée dessous et l'armoire qu'on a traînée à quatre. Dehors, il faisait encore jour, ce jour de décembre qui n'en finit pas, et les flamboyants de la rue étaient rouges comme s'ils n'avaient rien compris.<br><br>Il y avait l'électricité. On a allumé, puis on a éteint tout de suite, parce que la lumière se voyait de la rue, et on a regardé la rue par la jalousie. Il y avait deux voitures arrêtées en travers, portières ouvertes, et un homme debout entre les deux, qui ne bougeait pas, et qui ne bougeait pas. Puis un chien a aboyé quelque part, et il s'est tourné vers le bruit, lentement, comme quelqu'un qui a oublié où il a posé ses clés. On s'est éloignés de la fenêtre.<br><br>On a compté ce qu'on avait. Les bouteilles remplies dans l'après-midi, la baignoire pleine, le riz, les boîtes, le gaz, la trousse à pharmacie avec plus de pansements que de médicaments, deux lampes frontales, un couteau de cuisine, la radio de la voiture. Quatre personnes et un chien. On a fait un cari de rien du tout, et on l'a mangé en silence, parce que la cuisinière faisait un bruit de cuisinière et que ça nous paraissait énorme.<br><br>La radio a parlé jusqu'à dix heures. Le préfet, encore ; les urgences, encore. Puis une musique, puis la même musique, puis la porteuse. On a essayé les téléphones. Rien. À un moment, quelqu'un a reçu un message de midi, qui arrivait seulement maintenant, d'une personne qui disait qu'elle rentrait. Personne ne lui a répondu.<br><br>Vers minuit, des cris dans la rue d'à côté, puis des coups de feu, trois, et après les coups de feu, un bruit que je n'avais jamais entendu : des pas, beaucoup de pas, qui allaient tous dans la même direction. On a tenu la porte à deux, pour rien, parce que rien n'est venu chez nous. On avait éteint. On s'était tus. C'est cette nuit-là qu'on a appris la seule règle qui vaille : à Fénoir, on ne fait pas de bruit.<br><br>Le chien a dormi. Nous, non. On a parlé bas, de la mère de l'un qui était à Saint-Pierre, du frère de l'autre qui était en mer, de l'eau qu'il faudrait trouver si le robinet s'arrêtait, de l'endroit où l'on irait si on ne pouvait pas rester, et on n'avait pas d'endroit. On a décidé de garder tour à tour. Celui qui gardait a regardé la rue, et le ciel, qui était plein d'étoiles, parce que les étoiles, elles, ne savaient pas.<br><br>À cinq heures et demie, comme tous les matins de sa vie, le coq du voisin a chanté. Il faisait jour. Les flamboyants étaient toujours rouges. L'homme entre les deux voitures n'était plus là, et l'on a compris que ce n'était pas une bonne nouvelle.<br><br>On a fait du café, parce qu'il y avait encore du café et encore du gaz, et on l'a bu sur la varangue, assis par terre, sous l'appui de la fenêtre. La lumière montait sur la montagne. Quelqu'un a dit : « Tienbo, larg pa. » Quelqu'un a dit : « On va où ? » Et le livre a commencé là.</p></blockquote><p>Vous en êtes là. Le reste, c'est à vous de l'écrire.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "premiere-nuit"
+        }
+      }
+    }
+  ]
+}

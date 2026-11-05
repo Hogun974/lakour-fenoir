@@ -1,0 +1,123 @@
+{
+  "_id": "GHbQnoXGPuc5lqoi",
+  "_key": "!journal!GHbQnoXGPuc5lqoi",
+  "name": "One-shot — L'insuline de l'Entre-Deux",
+  "folder": "N5gOxmWjwEeVTrr3",
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "one-shot-la-pharmacie-de-l-entre-deux",
+      "visible": false,
+      "version": "0.2.0"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.lakour-fenoir.mj.JournalEntry.GHbQnoXGPuc5lqoi",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "pages": [
+    {
+      "_id": "Dhwvgdn3Y5htVnNC",
+      "_key": "!journal.pages!GHbQnoXGPuc5lqoi.Dhwvgdn3Y5htVnNC",
+      "name": "L'accroche",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une soirée, une expédition. <strong>Jour 25</strong>, phase de silence. Le groupe vit dans un abri du Tampon (la ferme de la Plaine des Cafres ou un collège du Quatorzième). L'enfant d'une famille alliée est diabétique ; il reste trois jours d'insuline. La radio a parlé d'un pharmacien de l'Entre-Deux, barricadé chez lui avec une glacière alimentée par des panneaux.</p><p><strong>Objectif</strong> : aller à l'Entre-Deux, trouver le pharmacien, ramener l'insuline — et revenir avant que la glacière ou l'enfant ne lâche.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "accroche"
+        }
+      }
+    },
+    {
+      "_id": "Fhx8PXDFuGOHrmkn",
+      "_key": "!journal.pages!GHbQnoXGPuc5lqoi.Fhx8PXDFuGOHrmkn",
+      "name": "La route",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>L'Entre-Deux est perché sur son éperon entre le Bras de la Plaine et le Bras de Cilaos : une seule route y monte. Deux options :<br>- <strong>La route</strong> (un quart en véhicule) : un embouteillage figé au carrefour, trois voitures « habitées », et un barrage de fortune tenu par deux adolescents armés d'un fusil de chasse qui exigent un péage.<br>- <strong>Les sentiers du Dimitile</strong> (deux quarts à pied) : plus discrets, mais un passage du sentier est emporté (test d'endurance ou matériel de canyon) et une troupe de Livides des Hauts somnole au soleil sur le replat.</p><p>Tirez une rencontre de la table « Rencontres — hauts » à mi-chemin.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "route"
+        }
+      }
+    },
+    {
+      "_id": "JSJjTKzWrzowypjj",
+      "_key": "!journal.pages!GHbQnoXGPuc5lqoi.JSJjTKzWrzowypjj",
+      "name": "Le pharmacien",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Monsieur Nativel, soixante-dix ans, a transformé sa case créole en forteresse : barreaux, citerne, panneaux, et une glacière où dorment l'insuline et quelques vaccins. Il est seul depuis que sa femme « est partie » (elle est dans la chambre du fond, attachée au lit : il ne peut pas se résoudre).</p><p>Il donnera l'insuline à qui l'aide :<br>- à <strong>finir ce qu'il ne peut pas faire</strong> (sa femme) ;<br>- ou à <strong>partir avec eux</strong> (il est lent, il a besoin de sa glacière, il connaît la pharmacie de tout le Sud) ;<br>- ou contre <strong>un bien précieux</strong> (des panneaux, une batterie, des munitions).</p><p>Une bande de Sans-Lune descendus du Nord fouille le bourg pendant ce temps (visibilité, bruit).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "pharmacien"
+        }
+      }
+    },
+    {
+      "_id": "5fCMczKqYOfTwJJA",
+      "_key": "!journal.pages!GHbQnoXGPuc5lqoi.5fCMczKqYOfTwJJA",
+      "name": "Le retour et la fin",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le retour se fait de nuit ou sous la pluie (tirez la météo). Si le groupe a fait du bruit, une petite horde suit. La glacière doit rester au frais : chaque quart passé au soleil compte.</p><p><strong>Fins possibles</strong> : l'enfant est sauvé et la famille alliée devient une dette d'honneur ; le pharmacien rejoint l'abri (un soignant, un savoir, une bouche de plus) ; ou l'insuline arrive trop tard. Donnez une <strong>marque</strong> à chacun pour la scène la plus difficile, et 2 points de réputation auprès du Dispensaire si l'on rapporte les vaccins.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "retour"
+        }
+      }
+    }
+  ]
+}

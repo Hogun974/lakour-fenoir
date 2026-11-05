@@ -1,0 +1,284 @@
+{
+  "_id": "UjWDeK5Sw29pkcCl",
+  "_key": "!journal!UjWDeK5Sw29pkcCl",
+  "name": "Bestiaire de Fénoir",
+  "folder": "N5gOxmWjwEeVTrr3",
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bestiaire",
+      "visible": false,
+      "version": "0.2.0"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.lakour-fenoir.mj.JournalEntry.UjWDeK5Sw29pkcCl",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "pages": [
+    {
+      "_id": "8lRKHPljhByAFpJa",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.8lRKHPljhByAFpJa",
+      "name": "Combattre",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Chaque succès de combat ou de tir ôte 1 de <strong>résistance</strong> à une créature ; à 0, elle est hors d'état (un Livide ne l'est vraiment que le crâne détruit). Chaque créature encore debout attaque avec ses <strong>dés</strong> : un 6 touche (1 blessure) ; pour un Livide, un second 6 au dé de morsure, c'est une morsure. Tirer fait du bruit. Fuir est souvent la meilleure option.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "regles"
+        }
+      }
+    },
+    {
+      "_id": "TFs7VeEB5XA6VzEd",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.TFs7VeEB5XA6VzEd",
+      "name": "Livide frais",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un mort de quelques jours, encore vêtu de ses habits, la peau grise et marbrée, les yeux voilés de blanc. Il marche comme un homme ivre, mais il ne s'arrête jamais.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : marche — <strong>sens</strong> : ouïe, odeur.</li><li><strong>Comportement</strong> : Va vers le bruit, la lumière et l'odeur des vivants ; s'acharne sur une porte ; se regroupe avec les autres. Mord et griffe.</li><li><strong>Faiblesse</strong> : Le crâne ; la chaleur humide qui le défait en quelques semaines dans les Bas.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "livide-frais"
+        }
+      }
+    },
+    {
+      "_id": "cYXReT2E0LwxTHsM",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.cYXReT2E0LwxTHsM",
+      "name": "Livide des Hauts",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un Livide ancien, conservé par le froid des Hauts : desséché, raide, couvert de rosée ou de givre au petit matin. Lent, mais si dur à abattre qu'on dirait du bois.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 2 — <strong>vitesse</strong> : lente — <strong>sens</strong> : ouïe.</li><li><strong>Comportement</strong> : Immobile au froid, il s'éveille au soleil et suit les autres. Les hordes des Hauts, des mois après le jour zéro, sont faites de ceux-là.</li><li><strong>Faiblesse</strong> : La nuit froide le fige : on passe entre eux à l'aube, en silence.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "livide-des-hauts"
+        }
+      }
+    },
+    {
+      "_id": "iq5u8P7gbpg91BSs",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.iq5u8P7gbpg91BSs",
+      "name": "Noyé du lagon",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : lente — <strong>sens</strong> : ouïe.</li><li><strong>Comportement</strong> : Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</li><li><strong>Faiblesse</strong> : Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "noye-du-lagon"
+        }
+      }
+    },
+    {
+      "_id": "khNwpbQyYmSVrD4T",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.khNwpbQyYmSVrD4T",
+      "name": "Livide brûlé",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Pris dans un incendie de quartier ou un véhicule en feu, il en est ressorti noirci, à demi aveugle, qui fume encore parfois.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : marche — <strong>sens</strong> : ouïe.</li><li><strong>Comportement</strong> : Ne sent ni la douleur ni la chaleur : il traverse les flammes et les barbelés sans ralentir.</li><li><strong>Faiblesse</strong> : Ses yeux brûlés : il ne suit que les bruits.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "livide-brule"
+        }
+      }
+    },
+    {
+      "_id": "rxpi6ginOez1yORO",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.rxpi6ginOez1yORO",
+      "name": "Coureur",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un mort tout récent, relevé depuis quelques heures : il court encore, maladroitement, et se jette sur sa proie. On n'en voit que les premiers jours.</p><ul><li><strong>Dés d'attaque</strong> : 2 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : rapide — <strong>sens</strong> : vue, ouïe.</li><li><strong>Comportement</strong> : Charge dès qu'il voit, crie en courant, attire les autres. Après une semaine, il ralentit et devient un Livide comme les autres.</li><li><strong>Faiblesse</strong> : Il tombe, il se cogne : un obstacle bien placé le brise.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "coureur"
+        }
+      }
+    },
+    {
+      "_id": "H1SuoK9OJWnwGNM9",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.H1SuoK9OJWnwGNM9",
+      "name": "Chien errant",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les chiens abandonnés se sont regroupés en meutes : maigres, malins, ils suivent les groupes, attaquent les poulaillers et les gens seuls.</p><ul><li><strong>Dés d'attaque</strong> : 2 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : rapide — <strong>sens</strong> : odeur, ouïe.</li><li><strong>Comportement</strong> : Attaquent en meute, fuient devant un groupe résolu ; un chien nourri peut devenir un ami.</li><li><strong>Faiblesse</strong> : La faim les rend imprudents ; le feu et les cris les font fuir.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "chien-errant"
+        }
+      }
+    },
+    {
+      "_id": "hujfIUy4Rklun4gS",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.hujfIUy4Rklun4gS",
+      "name": "Cochon marron",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Des cochons échappés des élevages, retournés à l'état sauvage dans les forêts et les ravines : lourds, rapides, armés de défenses naissantes.</p><ul><li><strong>Dés d'attaque</strong> : 2 — <strong>résistance</strong> : 2 — <strong>vitesse</strong> : rapide — <strong>sens</strong> : odeur.</li><li><strong>Comportement</strong> : Saccagent les potagers la nuit, chargent quand on les surprend. Un cochon abattu nourrit le camp une semaine.</li><li><strong>Faiblesse</strong> : Prévisibles : ils reviennent au même champ ; un piège ou une fosse suffit.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "cochon-marron"
+        }
+      }
+    },
+    {
+      "_id": "biAfQEmryAFUkVWk",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.biAfQEmryAFUkVWk",
+      "name": "Rats des réserves",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les rats pullulent dans les villes vidées : ils percent les sacs, souillent l'eau, portent la leptospirose.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : rapide — <strong>sens</strong> : odeur.</li><li><strong>Comportement</strong> : Une nuée la nuit dans les réserves ; mordent si on les coince.</li><li><strong>Faiblesse</strong> : Une réserve étanche et des chats.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "rat-des-reserves"
+        }
+      }
+    },
+    {
+      "_id": "jilGyLnp9TRtTTxu",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.jilGyLnp9TRtTTxu",
+      "name": "Pillard des Sans-Lune",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Visage noirci, vêtements sombres, un sabre ou un fusil, et la liste du Comptable dans la poche : un homme de la bande qui tient Saint-Denis la nuit.</p><ul><li><strong>Dés d'attaque</strong> : 2 — <strong>résistance</strong> : 2 — <strong>vitesse</strong> : marche — <strong>sens</strong> : vue, ouïe.</li><li><strong>Comportement</strong> : Attaque à plusieurs, de nuit, et se retire si ça coûte trop cher. Négocie un tribut avant de frapper.</li><li><strong>Faiblesse</strong> : Il tient à sa vie plus qu'à la bande : un coup dur et il fuit.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "pillard-sans-lune"
+        }
+      }
+    },
+    {
+      "_id": "gnqsHMRMnr4L1Blj",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.gnqsHMRMnr4L1Blj",
+      "name": "Soldat de la Garnison",
+      "type": "text",
+      "sort": 1100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un militaire ou un gendarme mobile au brassard orange, gilet pare-balles, fusil réglementaire : discipliné, fatigué, et persuadé d'avoir raison.</p><ul><li><strong>Dés d'attaque</strong> : 3 — <strong>résistance</strong> : 2 — <strong>vitesse</strong> : marche — <strong>sens</strong> : vue, ouïe.</li><li><strong>Comportement</strong> : Patrouille à quatre, contrôle, fouille, réquisitionne ; ne tire qu'en dernier recours… ou sur ordre.</li><li><strong>Faiblesse</strong> : Ses munitions sont comptées, et il obéit : on traite avec ses chefs, pas avec lui.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "soldat-de-la-garnison"
+        }
+      }
+    }
+  ]
+}

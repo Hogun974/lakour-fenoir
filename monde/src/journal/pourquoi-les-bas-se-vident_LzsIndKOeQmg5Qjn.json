@@ -1,0 +1,77 @@
+{
+  "_id": "LzsIndKOeQmg5Qjn",
+  "_key": "!journal!LzsIndKOeQmg5Qjn",
+  "name": "Pourquoi les Bas se vident",
+  "folder": "N5gOxmWjwEeVTrr3",
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pourquoi-les-bas-se-vident",
+      "visible": false,
+      "version": "0.2.0"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.lakour-fenoir.mj.JournalEntry.LzsIndKOeQmg5Qjn",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "pages": [
+    {
+      "_id": "oBaft6w7gUwCKmgC",
+      "_key": "!journal.pages!LzsIndKOeQmg5Qjn.oBaft6w7gUwCKmgC",
+      "name": "La règle du monde",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>La chaleur humide décompose les Livides. Le froid les conserve.</strong></p><p>Dans les Bas (sous 400 m environ), l'été austral est une étuve : trente degrés, une humidité qui ne retombe pas, des insectes partout. Un Livide y pourrit en quelques semaines, en quelques mois au plus : ses muscles lâchent, il tombe, il ne se relève plus. À partir du deuxième mois, l'infestation du littoral <strong>décroît</strong> chaque jour.</p><p>Dans les Hauts et les cirques, il fait frais, parfois froid ; il gèle en hiver au-dessus de 1 500 m. Les Livides s'y dessèchent au lieu de pourrir : ils deviennent les <strong>Livides des Hauts</strong>, lents, raides, presque impossibles à arrêter d'un coup, et ils durent des années.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "twist"
+        }
+      }
+    },
+    {
+      "_id": "PNepaRXu18Ih7TwC",
+      "_key": "!journal.pages!LzsIndKOeQmg5Qjn.PNepaRXu18Ih7TwC",
+      "name": "Ce que ça change",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Au début</strong>, les Hauts paraissent sûrs : peu de monde, donc peu de morts. Tout le monde y monte. Le littoral est l'enfer.</li><li><strong>Des mois plus tard</strong>, le littoral se vide de Livides mais se remplit de <strong>bandes humaines</strong> qui s'y battent pour ce qui reste. Les Hauts gardent leurs morts, et ceux de tous les réfugiés qui y sont montés.</li><li>Le « meilleur endroit » change donc avec le temps : c'est le moteur des déménagements.</li></ul><p><strong>Comment le révéler.</strong> Ne l'annoncez pas. Laissez les joueurs le découvrir : des corps effondrés dans les rues de Saint-Paul en février, un Livide figé de givre au bord de la route de la Plaine des Cafres en juillet, une remarque de la docteure du Dispensaire (« ils ne tiennent pas la chaleur »), une rumeur à la radio. Un groupe qui comprend la règle peut l'exploiter : descendre au bon moment, attirer une horde vers les Bas en été.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "consequences"
+        }
+      }
+    }
+  ]
+}
