@@ -6,10 +6,12 @@ est automatisé l'est par `.github/workflows/release.yml`, `outils/empaqueter-pa
 
 ## 1. Avant le passage en public
 
-- [ ] **Licence** : choisir (proposition : code MIT ; textes et images CC BY-NC-SA 4.0), créer `LICENSE` (et, si deux
-      licences, `LICENSE-CONTENU` ou une section claire), retirer le `TODO` du README (français et anglais), rappeler la
-      licence dans `modules/lakour-fenoir/CREDITS.md`, et mettre à jour le champ `license` des deux manifestes (il pointe
-      pour l'instant sur `README.md#licence`) et de `monde/world.json` (il dit `LICENSE`, fichier qui n'existe pas encore).
+- [x] **Licence** (décidé par Jordan le 5 novembre 2026) : code MIT, textes et images CC BY-NC-SA 4.0. `LICENSE` (MIT,
+      « Copyright (c) 2026 Hogun974 ») et `LICENCE-CONTENU.md` (détail par dossier, attribution « LaKour — Hogun974 »,
+      tiers) à la racine ; `TODO` retiré des deux README ; licence rappelée dans `modules/lakour-fenoir/CREDITS.md` ;
+      champ `license` de `system.json` et `module.json` à `"LICENSE"` (hérité par `lakour-fenoir-en` ; `monde/world.json`
+      le disait déjà), et `outils/empaqueter-paquets.mjs` copie les deux fichiers dans chaque archive ;
+      les archives du monde ne les contiendront qu'une fois le sous-module `modules/lakour-mj-ia` mis à jour (`outils/empaqueter-monde.mjs` les copie désormais), et l'étape « Licences dans chaque archive » du workflow refuse la release sans eux.
       Garder les mentions **CC BY 3.0** (game-icons), **licence ouverte** (IGN Admin Express) et **ODbL** (OpenStreetMap :
       l'attribution « © les contributeurs d'OpenStreetMap » est obligatoire) ; dire que les images sont générées par IA
       avec un modèle **non commercial** (FLUX.2 klein 9B) : cela pèse sur le choix de la licence des images.

@@ -499,16 +499,18 @@ Pour proposer un changement :
 
 ## Licence
 
-> **TODO (Jordan)** : choisir et confirmer la licence avant le passage en public, puis la rappeler dans `CREDITS.md`, dans
-> `monde/world.json` et dans le champ `license` des manifestes. Aucun fichier `LICENSE` n'est encore créé : tant qu'il n'y en
-> a pas, le dépôt est « tous droits réservés » par défaut.
+- **Le code** (système `lakour-survie`, scripts, `lang/`, outils, essais, `docs/`) : licence **MIT**, voir
+  [`LICENSE`](LICENSE) (© 2026 Hogun974).
+- **Les textes et les images originaux** (guides, livre de l'île, régions, factions, scénarios, tables : `contenu/` et
+  ses dictionnaires anglais, compendiums `src/` et `packs/`, module anglais `lakour-fenoir-en`, monde vierge `monde/` ;
+  illustrations, cartes et jetons de `assets/`) : licence
+  [**CC BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr) (attribution, pas d'usage
+  commercial, partage dans les mêmes conditions). Attribution attendue : « LaKour — Hogun974 », avec le lien vers ce
+  dépôt et vers la licence. Les illustrations sont issues d'un modèle d'IA non commercial (FLUX.2 klein 9B), ce qui
+  exclut de toute façon un usage commercial.
 
-Deux options sont envisagées :
-
-- **le code** (système, scripts, outils) sous licence **MIT** ;
-- **les textes et les images** (guides, livre de l'île, régions, factions, scénarios, tables, illustrations) sous
-  **CC BY-NC-SA 4.0** (attribution, pas d'usage commercial, partage dans les mêmes conditions) — les illustrations sont
-  issues d'un modèle d'IA non commercial, ce qui exclut de toute façon un usage commercial.
+Le détail, dossier par dossier, et les mentions des tiers sont dans [`LICENCE-CONTENU.md`](LICENCE-CONTENU.md) ; les
+deux fichiers sont livrés dans les archives du système, des modules et du monde.
 
 Les icônes de game-icons.net restent sous leur propre licence CC BY 3.0 ; la carte garde les licences de ses sources (licence
 ouverte de l'IGN, ODbL d'OpenStreetMap, dont l'attribution est obligatoire). Foundry VTT est une marque de Foundry Gaming LLC ;

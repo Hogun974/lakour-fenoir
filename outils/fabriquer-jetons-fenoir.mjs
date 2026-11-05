@@ -63,7 +63,7 @@ export function credits(liste) {
   const { lignes, auteurs } = tableauCredits([...liste.acteurs, ...liste.figurants, ...liste.passes], AUTEURS);
   return `# Crédits — La Kour, Fénoir
 
-Module de contenu original pour un usage privé à la table. Tous les textes (régions, sites, installations, savoirs, passés,
+Module de contenu original pour un usage non commercial. Tous les textes (régions, sites, installations, savoirs, passés,
 enfances, traits, factions, événements, fêtes, guides, scénarios, tables) sont **originaux** : rien n'est repris de *The Walking
 Dead* (série, bande dessinée, jeux), du jeu de rôle de Free League, ni d'aucune autre œuvre de morts-vivants. La mécanique de
 création des survivants s'inspire de celle de *RimWorld* (tirage cohérent, passions, traits) sans en reprendre ni texte ni nom.
@@ -79,6 +79,7 @@ randonnée, bilans énergétiques de l'île, ARS et Office de l'eau pour l'eau p
 
 La carte de l'île (\`assets/cartes/reunion.webp\`) et les images des fêtes (\`assets/fetes/*.jpg\`) seront produites à part. Les fonds des
 cartes de lieux (\`assets/cartes/lieu-*.svg\`) sont dessinés par le rendu commun du moteur La Kour.
+Carte de l'île (\`assets/cartes/reunion.webp\`, \`outils/fabriquer-carte.mjs\`) : contour IGN Admin Express (Licence ouverte), relief Terrain Tiles d'AWS Open Data (SRTM, ETOPO1), routes et sentiers © les contributeurs d'OpenStreetMap (ODbL).
 
 ## Icônes des jetons
 
@@ -93,6 +94,15 @@ liseré cendre pour les Livides, version en relief). Fichiers produits par \`out
 | Icône | Auteur | Utilisée pour |
 |---|---|---|
 ${lignes}
+
+## Licence
+
+Les textes et les images originaux de ce module sont sous licence **CC BY-NC-SA 4.0**
+(<https://creativecommons.org/licenses/by-nc-sa/4.0/>), attribution « LaKour — Hogun974 » ; son code (scripts, gabarits,
+styles, \`lang/\`) est sous licence **MIT**. Le détail et les mentions des tiers sont dans \`LICENCE-CONTENU.md\` et
+\`LICENSE\`, livrés dans l'archive avec ce fichier. Les icônes de game-icons.net créditées ci-dessus restent sous CC BY 3.0 ; la carte de
+l'île garde les mentions de ses données (IGN Admin Express, licence ouverte ; © les contributeurs d'OpenStreetMap, ODbL).
+Foundry VTT est une marque de Foundry Gaming, LLC ; ce module n'y est pas affilié.
 `;
 }
 

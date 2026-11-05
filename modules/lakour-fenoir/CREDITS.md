@@ -1,6 +1,6 @@
 # Crédits — La Kour, Fénoir
 
-Module de contenu original pour un usage privé à la table. Tous les textes (régions, sites, installations, savoirs, passés,
+Module de contenu original pour un usage non commercial. Tous les textes (régions, sites, installations, savoirs, passés,
 enfances, traits, factions, événements, fêtes, guides, scénarios, tables) sont **originaux** : rien n'est repris de *The Walking
 Dead* (série, bande dessinée, jeux), du jeu de rôle de Free League, ni d'aucune autre œuvre de morts-vivants. La mécanique de
 création des survivants s'inspire de celle de *RimWorld* (tirage cohérent, passions, traits) sans en reprendre ni texte ni nom.
@@ -68,3 +68,12 @@ liseré cendre pour les Livides, version en relief). Fichiers produits par `outi
 | [gas-mask](https://game-icons.net/1x1/skoll/gas-mask.html) | Skoll | Malade masqué |
 | [goat](https://game-icons.net/1x1/skoll/goat.html) | Skoll | Mémé Lucette ; Passé — Agricultrice des Hauts |
 | [pestle-mortar](https://game-icons.net/1x1/skoll/pestle-mortar.html) | Skoll | La docteure Soundirassen |
+
+## Licence
+
+Les textes et les images originaux de ce module sont sous licence **CC BY-NC-SA 4.0**
+(<https://creativecommons.org/licenses/by-nc-sa/4.0/>), attribution « LaKour — Hogun974 » ; son code (scripts, gabarits,
+styles, `lang/`) est sous licence **MIT**. Le détail et les mentions des tiers sont dans `LICENCE-CONTENU.md` et
+`LICENSE`, livrés dans l'archive avec ce fichier. Les icônes de game-icons.net créditées ci-dessus restent sous CC BY 3.0 ; la carte de
+l'île garde les mentions de ses données (IGN Admin Express, licence ouverte ; © les contributeurs d'OpenStreetMap, ODbL).
+Foundry VTT est une marque de Foundry Gaming, LLC ; ce module n'y est pas affilié.

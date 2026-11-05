@@ -489,16 +489,17 @@ change:
 
 ## Licence
 
-> **TODO (Jordan)**: choose and confirm the licence before going public, then state it in `CREDITS.md`, in
-> `monde/world.json` and in the `license` field of the manifests. No `LICENSE` file exists yet: until there is one, the
-> repository is "all rights reserved" by default.
+- **The code** (the `lakour-survie` system, scripts, `lang/`, tools, tests, `docs/`): **MIT** licence, see
+  [`LICENSE`](LICENSE) (© 2026 Hogun974).
+- **Original texts and images** (guides, the Book of the Island, regions, factions, scenarios, tables: `contenu/` and its
+  English dictionaries, the `src/` and `packs/` compendiums, the English module `lakour-fenoir-en`, the blank world
+  `monde/`; illustrations, maps and tokens in `assets/`):
+  [**CC BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/) (attribution, non-commercial, share-alike).
+  Expected attribution: "LaKour — Hogun974", with a link to this repository and to the licence. The illustrations come
+  from a non-commercial AI model (FLUX.2 klein 9B), which rules out commercial use anyway.
 
-Two options are considered:
-
-- **the code** (system, scripts, tools) under the **MIT** licence;
-- **texts and images** (guides, the Book of the Island, regions, factions, scenarios, tables, illustrations) under
-  **CC BY-NC-SA 4.0** (attribution, non-commercial, share-alike) — the illustrations come from a non-commercial AI model,
-  which rules out commercial use anyway.
+The folder-by-folder details and the third-party notices are in [`LICENCE-CONTENU.md`](LICENCE-CONTENU.md); both files
+ship in the system, module and world archives.
 
 The game-icons.net icons keep their own CC BY 3.0 licence; the map keeps the licences of its sources (IGN open licence,
 OpenStreetMap ODbL, whose attribution is mandatory). Foundry VTT is a trademark of Foundry Gaming LLC; this project is not
