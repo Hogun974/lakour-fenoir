@@ -109,6 +109,9 @@ batteries).
   délai de croissance, énergie disponible).
 - **Autonomie** : un jour où eau, nourriture et énergie nettes (production − consommation − pertes) sont ≥ 0 sans aucune
   fouille compte comme **jour autonome** ; `joursAutonomes` (consécutifs) et `autonome` (≥ 7) sont publics. Le MJ le raconte.
+- **Plafonds** : stockage de base de l'abri plus le `stockage` des installations ; au-delà, l'excédent est perdu. Ils
+  s'appliquent dès l'installation (stocks trouvés sur le site, ou laissés dans un abri repris, plus ce que le groupe apporte :
+  `installerAbri` rend `perdus`), puis à chaque journée de l'abri.
 
 ### 1.7 Bruit, visibilité, menaces
 - **Bruit** de l'abri (0 à 10, retombe de 2 par quart) : coup de feu +2 (rafale +4), groupe électrogène +2 par quart
@@ -116,7 +119,9 @@ batteries).
   cultures visibles, taille du groupe, installations voyantes, moins la discrétion du site et du camouflage.
 - Chaque jour, la simulation tire les **menaces** pour l'abri : hordes de passage (selon l'infestation, les hordes proches et
   le bruit cumulé), visite d'une bande ou d'un groupe (selon les factions de la région et la visibilité), animaux, accidents.
-- **Assaut contre l'abri** : réserve de **défense** (défense de l'abri + meilleur `vigilance` de la garde) contre la
+- **Assaut contre l'abri** : réserve de **défense** (défense de l'abri + meilleur `vigilance` de la garde, avec son bonus
+  comme pour un test à l'abri §1.1 : outil et installations, tour de guet ou chiens de garde dressés, au plus +2 ; sans garde
+  présent, pas de bonus : `vigilanceDeGarde`, `bilanAbri(...).bonus`) contre la
   **force** de la menace (nombre de d6 de la menace, mêmes succès 5–6). Marge ≥ 0 : repoussée (dégâts mineurs possibles) ;
   marge −1 : une installation endommagée et une blessure ; marge ≤ −2 : **brèche** (scène de combat, risque de devoir fuir).
 - **Rencontres** pendant les sorties : Livides (nombre), humains (faction, intentions), animaux (chiens errants), dangers
@@ -248,13 +253,30 @@ communauté religieuse, les familles des îlets de Mafate, des bandes de pillard
 phases: [phase], zones: [zone], saisons: ["pluies" | "seche"], poids, public: Boolean, texte: HTML, effets: { … } }` :
 la simulation en tire les effets simples (route coupée, stock perdu, infestation +1…) ; le MJ raconte le reste.
 Les événements météo nommés d'après un danger fin d'une région (`eboulement-cilaos`, radiers, houle, incendie de forêt…)
-ne tombent que dans les régions dont c'est un danger. À trancher : les effets `abri` du contenu (stock perdu, moral,
-blessures, découvertes) ne sont pas encore appliqués par la simulation ; il faut décider à quel abri ils s'appliquent.
+ne tombent que dans les régions dont c'est un danger.
 
 Ajouts du 2026-11-05 (parties longues) : une réparation trop courte pour finir un point s'accumule (`reparation` de
 l'abri) ; une petite production (moins d'une unité par jour : ruches, infirmerie) s'accumule (`reliquats`) ; les chiens
 de garde et autres installations qui mangent consomment après les personnes et s'arrêtent s'il ne reste rien ; un abri
 occupé par une faction redevient libre quand elle tombe sous 0,5 de force dans la région.
+
+**Effets `abri` des événements** (tranché le 2026-11-05) : `effets.abri = { stocks: { ressource: ±n }, degats, moral,
+blessure, decouverte: { ressource: n } }`.
+- **Quel abri** : celui où vit le groupe. Un événement de type `abri` (fuite de citerne, rats, maladie du potager, dispute…)
+  arrive à l'abri du groupe, dans sa région (s'il est dans les `zones` de l'événement) ; un groupe sans abri ne le tire pas.
+  Un événement d'un autre type (sécheresse, gel, eau trouble, pillards, scolopendre, découvertes…) touche l'abri du groupe
+  seulement s'il tombe dans la région de cet abri. Le fait de l'événement porte alors `effetsAbri`.
+- **Effets simples, appliqués par la logique** (`avancer`, après la journée de l'abri ; `subirEvenementAbri`) : les stocks
+  perdus (`stocks` négatifs ; jamais sous 0 : on perd ce qu'il y a) et les dégâts de l'abri (`degats`). Chacun donne un fait
+  `{ cle, params, texte }` : `abri-evenement-pertes` `{ nom, pertes: { ressource: n } }` (ce qui a vraiment été perdu),
+  `abri-evenement-degats` `{ nom, degats }` ; public (journal) si le groupe est à l'abri, sinon au journal secret.
+- **Le reste, au MJ, à raconter, sans effet automatique** : `moral` (non nul), `blessure` (qui, comment), `decouverte` et une
+  quantité positive de `stocks` (une trouvaille qu'il faut aller chercher) : faits secrets `abri-a-raconter-moral`
+  `{ nom, moral }` (signé, « -1 »), `abri-a-raconter-blessure` `{ nom, n }`, `abri-a-raconter-decouverte` `{ nom, decouverte }`,
+  au journal secret et dans `aRaconter` du résultat d'`avancer`. Le MJ (ou le MJ IA) les applique s'il le veut avec
+  `ajuster`, `blesser`. Les autres champs (`bruit`…) sont ignorés.
+- Le cyclone du contenu (`abri: { degats, moral }`) reste décrit pour le MJ : la simulation tire le cyclone elle-même et en
+  applique les dégâts (protection cyclonique comprise).
 
 ## 3. Documents Foundry
 
@@ -305,7 +327,9 @@ system: {
       consommation: { energie, carburant, eau },
       defense, discretion, capacite, visibilite, bruit, stockage: { ressource: plafond }, protectionCyclone: 0..3,
       soins: Number (bonus aux tests de soins), moral: Number (confort), conservation: Boolean (supprime les pertes),
-      sol: Number (compost : fertilité regagnée par jour), renseignements: Boolean (radio)
+      sol: Number (compost : fertilité regagnée par jour), renseignements: Boolean (radio),
+      bonus: { competence: n }   // dés aux tests à l'abri (tour de guet : vigilance +1), au plus +2 avec l'outil ; compte aussi
+                                 // dans un assaut (§1.7) ; le meilleur des installations qui ne sont pas hors service
     }
   } ]
 }

@@ -735,7 +735,11 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
   const b = bilanVivant(ctx.etat, ctx.monde);
   const presents = aLAbri(ctx.etat, ab) ? survivantsDuGroupe(ctx.etat).filter(a => L.peutAgir(a.system)) : [];
   const garde = presents.filter(a => a.system.tache === "garde");
-  const vigilance = Math.max(0, ...(garde.length ? garde : presents).map(a => Number(a.system.competences?.vigilance?.niveau) || 0));
+  // Le meilleur garde, avec son bonus d'outil et celui des installations (tour de guet…), au plus +2 comme pour un test (§1.7).
+  const vigilance = L.vigilanceDeGarde((garde.length ? garde : presents).map(a => ({
+    niveau: Number(a.system.competences?.vigilance?.niveau) || 0,
+    outil: Math.max(0, ...objetsDe(a, "equipement").map(i => Number(i.system?.bonus?.vigilance) || 0))
+  })), { installation: Number(b?.bonus?.vigilance) || 0 });
   const h = hasard(ctx, "assaut");
   const r = L.resoudreAssaut({ defense: b?.defense ?? 0, vigilance, force: entier(force, 1, 15, 1), hasard: h });
   const l = abriLogique(ab);

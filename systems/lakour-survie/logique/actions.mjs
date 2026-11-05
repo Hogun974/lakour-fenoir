@@ -22,8 +22,9 @@
 // - Créatures (§9, contenu `creatures`) : { cle, nom, type: "livide" | "animal", des (d6 d'attaque chacun), resistance (succès
 //   pour le mettre hors d'état), zones, phases, altitudeMin, altitudeMax, jourMax, poids }. Une rencontre de Livides tire un
 //   type parmi ceux qui conviennent (région, phase, jour) ; sans bestiaire : 1 dé, 1 succès.
-// - Assaut : défense (abri + meilleure vigilance de la garde) contre force (d6), succès 5–6 ; marge ≥ 0 repoussé (1 dégât si
-//   marge 0), −1 une installation endommagée et une blessure, ≤ −2 brèche.
+// - Assaut : défense (abri + meilleure vigilance de la garde, bonus d'outil et d'installation compris comme pour un test, au plus
+//   +2 : vigilanceDeGarde) contre force (d6), succès 5–6 ; marge ≥ 0 repoussé (1 dégât si marge 0), −1 une installation
+//   endommagée et une blessure, ≤ −2 brèche.
 // - Combat : `resistance` succès mettent une créature hors d'état (les moins résistantes d'abord) ; chaque créature restante
 //   lance ses `des` d6 : chaque 6 = touche (1 blessure) ; sur une touche de Livide, un d6 de morsure : 6 = morsure (les
 //   animaux blessent sans mordre de Gris). Tirer : +2 de bruit par échange.
@@ -32,8 +33,8 @@ import { chance, tirerPoids, choisir, arrondiHasard, entier } from "./hasard.mjs
 import { regionDe, siteDe, factionDe, natureRegion, voisinsDe, regionsDe, reservesDepart, liste } from "./contenu.mjs";
 import { lancer, compter, resoudreTest } from "./des.mjs";
 import { observer } from "./renseignements.mjs";
-import { exploiterNature, installationsDuSite } from "./abri.mjs";
-import { normaliserStocks, ajouterStocks } from "./ressources.mjs";
+import { exploiterNature, installationsDuSite, plafondsAbri } from "./abri.mjs";
+import { normaliserStocks, ajouterStocks, plafonner } from "./ressources.mjs";
 import { abandonnerAbri, reprendreAbri } from "./monde.mjs";
 import { phaseDuJour, momentDe } from "./temps.mjs";
 import { message } from "./textes.mjs";
@@ -325,11 +326,12 @@ export function demenager(monde, { abri, installations = [], emporter = {}, tran
 }
 
 // S'installer sur un site : un abri abandonné inoccupé se reprend (installations et stocks laissés) ; sinon on trouve les
-// stocks du site, entamés comme la région (pillage réel), une seule fois (monde.regions[r].sitesVisites).
-// -> { ok, raison, motif: { cle, params, texte } | null, abri, installations, monde, repris }
+// stocks du site, entamés comme la région (pillage réel), une seule fois (monde.regions[r].sitesVisites). Stocks trouvés et
+// apport sont ramenés TOUT DE SUITE aux plafonds de l'abri (§1.6 : au-delà, l'excédent est perdu ; `perdus`).
+// -> { ok, raison, motif: { cle, params, texte } | null, abri, installations, monde, repris, perdus: { ressource: n } }
 export function installerAbri(monde, contenu, { site, jour = 0, quart = jour * 4, apport = {} } = {}) {
   const s = siteDe(contenu, site);
-  const refus = (raison, cle, params = {}) => ({ ok: false, raison, motif: message(cle, params, raison), abri: null, installations: [], monde, repris: false });
+  const refus = (raison, cle, params = {}) => ({ ok: false, raison, motif: message(cle, params, raison), abri: null, installations: [], monde, repris: false, perdus: {} });
   if (!s) return refus("site inconnu", "site-inconnu");
   const region = s.region;
   const reg = monde?.regions?.[region];
@@ -357,11 +359,12 @@ export function installerAbri(monde, contenu, { site, jour = 0, quart = jour * 4
     stocks = ajouterStocks(trouve, apport);
     installations = installationsDuSite(s, contenu, jour);
   }
+  const plafonne = plafonner(stocks, plafondsAbri(installations, contenu));
   const abri = {
-    site, region, installeLe: quart, abandonneLe: null, stocks,
+    site, region, installeLe: quart, abandonneLe: null, stocks: plafonne.stocks,
     nature: { ...(nouveau.regions[region]?.nature ?? {}) }, sol: Number(s.sol) || 0, bruit: 0, degats: 0, notes: ""
   };
-  return { ok: true, raison: "", motif: null, abri, installations, monde: nouveau, repris };
+  return { ok: true, raison: "", motif: null, abri, installations, monde: nouveau, repris, perdus: plafonne.perdus };
 }
 
 // ------------------------------------------------------------------ assaut, combat (§1.7)
@@ -376,6 +379,16 @@ export function resoudreAssaut({ defense = 0, vigilance = 0, force = 1, hasard =
   else if (marge === -1) { issue = "endommagee"; degats = 1; blesses = 1; }
   else if (marge <= -2) { issue = "breche"; degats = 2; blesses = 1; }
   return { desDefense, desMenace, succesDefense, succesMenace, marge, issue, degats, blesses, installationEndommagee: issue !== "repoussee" };
+}
+
+// La vigilance de la garde dans un assaut (§1.7) : celle du meilleur garde, avec son bonus comme pour un test à l'abri (§1.1) :
+// outil + installations (tour de guet, chiens de garde dressés : bilanAbri(...).bonus.vigilance), au plus +2, moins ses malus.
+// Sans garde présent, 0 (la tour ne veille pas seule).
+// gardes : [{ niveau, malus?, outil? }] ; installation : le bonus de vigilance des installations de l'abri.
+export const BONUS_TEST_MAX = 2;
+export function vigilanceDeGarde(gardes = [], { installation = 0 } = {}) {
+  return Math.max(0, ...(gardes ?? []).map(g => (Number(g?.niveau) || 0) - (Number(g?.malus) || 0)
+    + Math.min(BONUS_TEST_MAX, Math.max(0, Number(g?.outil) || 0) + Math.max(0, Number(installation) || 0))));
 }
 
 // Combat simple. competence : "combat" | "tir".

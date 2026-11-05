@@ -18,14 +18,26 @@ const chemin = (o, p) => p.split(".").reduce((x, k) => x?.[k], o);
 const parametres = s => [...String(s).matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort();
 const feuilles = (o, prefixe = "") => Object.entries(o).flatMap(([k, v]) => (v && typeof v === "object" ? feuilles(v, `${prefixe}${k}.`) : [`${prefixe}${k}`]));
 
+// Les clés en attente de traduction (L.CLES_A_TRADUIRE) : leurs paramètres attendus, que les traductions devront reprendre.
+const PARAMS_A_TRADUIRE = {
+  "abri-evenement-pertes": ["nom", "pertes"], "abri-evenement-degats": ["degats", "nom"],
+  "abri-a-raconter-moral": ["moral", "nom"], "abri-a-raconter-blessure": ["n", "nom"], "abri-a-raconter-decouverte": ["decouverte", "nom"]
+};
+const enAttente = cle => L.CLES_A_TRADUIRE.includes(cle) && typeof FR.LAKOUR_SURVIE.Faits[cle] !== "string" && typeof EN.LAKOUR_SURVIE.Faits[cle] !== "string";
+const parametresAttendus = cle => (typeof FR.LAKOUR_SURVIE.Faits[cle] === "string" ? parametres(FR.LAKOUR_SURVIE.Faits[cle]) : PARAMS_A_TRADUIRE[cle] ?? []);
+
 test("textes : chaque clé de la logique existe en français et en anglais, mêmes paramètres", () => {
+  assert.deepEqual(Object.keys(PARAMS_A_TRADUIRE).sort(), [...L.CLES_A_TRADUIRE].sort(), "PARAMS_A_TRADUIRE suit L.CLES_A_TRADUIRE");
+  for (const cle of L.CLES_A_TRADUIRE) assert.ok(L.CLES_TEXTES.includes(cle), `${cle} : une clé à traduire est une clé de la logique`);
   for (const cle of L.CLES_TEXTES) {
+    if (enAttente(cle)) continue;   // ni fr ni en : traduction à venir (le repli français s'affiche)
     const fr = FR.LAKOUR_SURVIE.Faits[cle], en = EN.LAKOUR_SURVIE.Faits[cle];
     assert.equal(typeof fr, "string", `fr.json : Faits.${cle} manque`);
     assert.equal(typeof en, "string", `en.json : Faits.${cle} manque`);
     assert.deepEqual(parametres(en), parametres(fr), `Faits.${cle} : paramètres différents entre les langues`);
+    if (PARAMS_A_TRADUIRE[cle]) assert.deepEqual(parametres(fr), PARAMS_A_TRADUIRE[cle], `Faits.${cle} : paramètres attendus`);
   }
-  assert.deepEqual(Object.keys(FR.LAKOUR_SURVIE.Faits).sort(), [...L.CLES_TEXTES].sort(), "fr.json : Faits = exactement les clés de la logique");
+  assert.deepEqual(Object.keys(FR.LAKOUR_SURVIE.Faits).sort(), L.CLES_TEXTES.filter(k => !enAttente(k)).sort(), "fr.json : Faits = exactement les clés de la logique");
   assert.deepEqual(Object.keys(EN.LAKOUR_SURVIE.Faits).sort(), Object.keys(FR.LAKOUR_SURVIE.Faits).sort());
   assert.deepEqual(Object.keys(EN.LAKOUR_SURVIE.Creatures).sort(), Object.keys(FR.LAKOUR_SURVIE.Creatures).sort());
   assert.deepEqual(feuilles(EN).sort(), feuilles(FR).sort(), "fr.json et en.json ont les mêmes clés");
@@ -39,8 +51,12 @@ const estMessage = (x, ou) => {
   assert.ok(L.CLES_TEXTES.includes(cle), `${ou} : clé inconnue « ${cle} »`);
   assert.ok(x.params && typeof x.params === "object", `${ou} : params manquent (${cle})`);
   assert.ok(typeof x.texte === "string" && x.texte.length > 3, `${ou} : texte de repli manquant (${cle})`);
-  for (const p of parametres(FR.LAKOUR_SURVIE.Faits[cle])) assert.ok(p in x.params, `${ou} : ${cle} sans paramètre {${p}}`);
+  for (const p of parametresAttendus(cle)) assert.ok(p in x.params, `${ou} : ${cle} sans paramètre {${p}}`);
 };
+
+test("textes : traductions en attente (lang/fr.json et lang/en.json, Faits.*)", { todo: L.CLES_A_TRADUIRE.filter(enAttente).join(", ") || false }, () => {
+  for (const cle of L.CLES_A_TRADUIRE) assert.ok(!enAttente(cle), `Faits.${cle} à traduire`);
+});
 
 test("textes : faits, journal, alertes, menaces et journal secret d'une longue partie portent cle/params et leur repli français", () => {
   const C = contenuMini();

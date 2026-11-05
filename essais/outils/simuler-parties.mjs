@@ -422,7 +422,9 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     if (!abri) return;
     const bilan = L.bilanAbri(abri.system, abri.installations, contenu, { jour, personnes: vivants().length });
     const gardes = vivants().filter(s => s.system.tache === "garde");
-    const vigilance = Math.max(0, ...gardes.map(s => L.competence(s.system, "vigilance").niveau - L.malusEtat(s.system).total));
+    // Le meilleur garde, avec le bonus de vigilance des installations (tour de guet, chiens dressés), comme la couche Foundry.
+    const vigilance = L.vigilanceDeGarde(gardes.map(s => ({ niveau: L.competence(s.system, "vigilance").niveau, malus: L.malusEtat(s.system).total })),
+      { installation: Number(bilan.bonus?.vigilance) || 0 });
     for (const m of menaces) {
       if (m.type === "horde") stats.hordes++;
       if (m.type === "visite") continue;

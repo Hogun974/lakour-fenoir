@@ -160,6 +160,49 @@ test("s'installer : stocks du site entamés comme la région, une seule fois ; i
   assert.ok(case_.installations[0].termineLe < 0, "déjà en service");
 });
 
+test("s'installer : stocks trouvés et apport ramenés tout de suite aux plafonds de l'abri (pas le lendemain)", () => {
+  const m = L.creerMonde(C, "plafond");
+  const r = L.installerAbri(m, C, { site: "hauts-ferme", jour: 3, apport: { eau: 70, nourriture: 150, pieces: 5 } });
+  assert.equal(r.abri.stocks.eau, 40, "plafond de base de l'eau");
+  assert.equal(r.abri.stocks.nourriture, 100);
+  assert.ok(r.abri.stocks.pieces >= 5 && r.abri.stocks.pieces <= 30, "sous son plafond, rien de perdu");
+  const trouve = L.installerAbri(m, C, { site: "hauts-ferme", jour: 3 }).abri.stocks;
+  assert.deepEqual(r.perdus, { eau: trouve.eau + 70 - 40, nourriture: trouve.nourriture + 150 - 100 }, "l'excédent est perdu, et dit");
+  // Les installations du site comptent : une citerne ajoute 40 au plafond de l'eau.
+  const c = L.installerAbri(m, C, { site: "ouest-case", jour: 3, apport: { eau: 100 } });
+  const plafonds = L.bilanAbri(c.abri, c.installations, C, { jour: 3, personnes: 2 }).plafonds;
+  assert.equal(plafonds.eau, 80);
+  assert.equal(c.abri.stocks.eau, 80);
+  for (const [k, q] of Object.entries(c.abri.stocks)) assert.ok(q <= plafonds[k], `${k} ${q} ≤ ${plafonds[k]}`);
+  // Un abri repris : ce qu'on y avait laissé, plus l'apport, plafonnés aussi.
+  const laisse = L.abandonnerAbri(m, "hauts-verts", { site: "hauts-ferme", installations: [], jour: 5 });
+  laisse.regions["hauts-verts"].abrisAbandonnes.find(a => a.site === "hauts-ferme").stocks = { nourriture: 90 };
+  const repris = L.installerAbri(laisse, C, { site: "hauts-ferme", jour: 9, apport: { nourriture: 30 } });
+  assert.equal(repris.repris, true);
+  assert.equal(repris.abri.stocks.nourriture, 100);
+  assert.deepEqual(repris.perdus, { nourriture: 20 });
+});
+
+test("assaut : le bonus de vigilance des installations (tour de guet) compte, comme pour un test (au plus +2)", () => {
+  const C2 = structuredClone(C);
+  C2.installations.push({ cle: "tour-de-guet", nom: "Tour de guet", categorie: "defense", description: "<p>—</p>", niveauMax: 1,
+    niveaux: [{ cout: { materiaux: 6, travail: 8 }, requiert: {}, effets: { defense: 1, visibilite: 2, bonus: { vigilance: 1 } } }] });
+  const abri = { site: "hauts-ferme", region: "hauts-verts", stocks: {}, degats: 0 };
+  const b = L.bilanAbri(abri, [L.instanceInstallation("tour-de-guet", 1)], C2, { jour: 5, personnes: 2 });
+  assert.deepEqual(b.bonus, { vigilance: 1 });
+  assert.deepEqual(L.bilanAbri(abri, [L.instanceInstallation("tour-de-guet", 1, { etat: 3 })], C2, { jour: 5, personnes: 2 }).bonus, {}, "hors service : plus de bonus");
+  // Le meilleur garde : niveau − malus + min(2, outil + installation).
+  assert.equal(L.vigilanceDeGarde([{ niveau: 2 }], { installation: b.bonus.vigilance }), 3);
+  assert.equal(L.vigilanceDeGarde([{ niveau: 2, outil: 1 }, { niveau: 1 }], { installation: 1 }), 4);
+  assert.equal(L.vigilanceDeGarde([{ niveau: 3, outil: 2 }], { installation: 1 }), 5, "bonus borné à +2");
+  assert.equal(L.vigilanceDeGarde([{ niveau: 1, malus: 1 }], { installation: 1 }), 1);
+  assert.equal(L.vigilanceDeGarde([], { installation: 1 }), 0, "sans garde, la tour ne veille pas seule");
+  // Un dé de défense de plus dans l'assaut.
+  const sans = L.resoudreAssaut({ defense: b.defense, vigilance: L.vigilanceDeGarde([{ niveau: 1 }]), force: 2, hasard: desFixes([5]) });
+  const avec = L.resoudreAssaut({ defense: b.defense, vigilance: L.vigilanceDeGarde([{ niveau: 1 }], { installation: b.bonus.vigilance }), force: 2, hasard: desFixes([5]) });
+  assert.equal(avec.desDefense.length, sans.desDefense.length + 1);
+});
+
 test("assaut : défense + vigilance contre force, marges", () => {
   assert.equal(L.resoudreAssaut({ defense: 2, vigilance: 1, force: 2, hasard: desFixes([5, 5, 1, 1, 1]) }).issue, "repoussee");
   const zero = L.resoudreAssaut({ defense: 1, vigilance: 0, force: 1, hasard: desFixes([5, 6]) });

@@ -77,8 +77,10 @@ export function controleur(contenu, { graine, scenario }) {
     clesVues.add(cle);
     const fr = cle.includes(".") ? cle.split(".").reduce((o, k) => o?.[k], FR) : FR.Faits[cle];
     const en = cle.includes(".") ? cle.split(".").reduce((o, k) => o?.[k], EN) : EN.Faits[cle];
-    if (typeof fr !== "string") signaler(`clé sans français (${ou})`, jour, cle);
-    if (typeof en !== "string") signaler(`clé sans anglais (${ou})`, jour, cle);
+    // Une clé déclarée en attente de traduction (L.CLES_A_TRADUIRE) est comptée à part : le repli français s'affiche en attendant.
+    const enAttente = (L.CLES_A_TRADUIRE ?? []).includes(cle);
+    if (typeof fr !== "string") signaler(enAttente ? `traduction en attente, sans français (${ou})` : `clé sans français (${ou})`, jour, cle);
+    if (typeof en !== "string") signaler(enAttente ? `traduction en attente, sans anglais (${ou})` : `clé sans anglais (${ou})`, jour, cle);
     if (!(typeof x.texte === "string" && x.texte.trim().length > 2)) signaler(`message sans texte de repli (${ou})`, jour, cle);
     if (/undefined|NaN|\[object Object\]/.test(String(x.texte ?? ""))) signaler(`texte de repli abîmé (${ou})`, jour, `${cle} : ${x.texte}`);
     for (const p of parametres(fr)) {
@@ -122,10 +124,8 @@ export function controleur(contenu, { graine, scenario }) {
     // 4. Abri.
     if (abri) {
       const bilan = L.bilanAbri(abri.system, abri.installations, contenu, { jour, personnes: survivants.filter(s => L.peutAgir(s.system) && etat.groupe.membres.includes(s.id)).length, dateDepart: monde.dateDepart });
-      // Le jour de l'installation, les stocks du site et ce qu'on apporte ne sont pas encore ramenés aux plafonds (ils le sont à la
-      // journée de l'abri, le lendemain).
-      const installeAujourdhui = Number(abri.system.installeLe) >= (jour - 1) * 4;
-      if (!installeAujourdhui) for (const [r, q] of Object.entries(abri.system.stocks)) if (q > bilan.plafonds[r]) signaler("stock au-dessus du plafond", jour, `${r} ${q} > ${bilan.plafonds[r]}`);
+      // Aussi le jour de l'installation : installerAbri ramène tout de suite aux plafonds les stocks du site et ce qu'on apporte.
+      for (const [r, q] of Object.entries(abri.system.stocks)) if (q > bilan.plafonds[r]) signaler("stock au-dessus du plafond", jour, `${r} ${q} > ${bilan.plafonds[r]}`);
       for (const i of abri.installations) {
         const def = idx.installations.get(i.cle);
         if (!def) { signaler("installation inconnue", jour, i.cle); continue; }

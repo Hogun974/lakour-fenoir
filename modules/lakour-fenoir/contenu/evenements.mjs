@@ -2,8 +2,9 @@
 // effets (lus par systems/lakour-survie/logique/monde.mjs) : { infestation: ±n, pillage: fraction | { ressource: −n },
 //   route: "difficile" | "coupee" (les routes dont `coupure` cite l'événement, sinon une au hasard), duree: jours,
 //   horde: taille, faction, force, nature: { cueillette|gibier|peche|bois: fraction } }.
-// Champ ajouté : effets.abri (indications pour le MJ quand l'événement touche l'abri du groupe : { stocks: { r: −n },
-//   degats, blessure, moral, bruit, decouverte: { r: n } }) ; la simulation l'ignore, le MJ (ou le MJ IA) l'applique avec ajuster.
+// Champ ajouté : effets.abri (quand l'événement touche l'abri du groupe : { stocks: { r: −n },
+//   degats, blessure, moral, bruit, decouverte: { r: n } }) : la simulation applique stocks perdus et dégâts à l'abri du
+//   groupe ; moral, blessures et trouvailles sont rendus au MJ, à raconter (contrat §2.6) ; bruit ignoré.
 import { html, PHASES } from "./aides.mjs";
 
 const TOUTES = [...PHASES];

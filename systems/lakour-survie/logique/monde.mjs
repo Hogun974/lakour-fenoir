@@ -26,7 +26,10 @@
 //   simples ({ infestation, pillage, route, duree, horde, faction, force, nature }). Les événements « meteo » du contenu en sont
 //   (éboulements de la route du Littoral, de Cilaos, de Salazie, radiers, houle, incendie de forêt, brouillard…), sauf ceux que
 //   la simulation tire elle-même (EVENEMENTS_SIMULES : cyclone, fortes pluies, crue, éruption). Un événement que des régions
-//   ont dans leurs `dangers` n'arrive que dans l'une d'elles ; les autres, dans une région de leurs `zones`.
+//   ont dans leurs `dangers` n'arrive que dans l'une d'elles ; les autres, dans une région de leurs `zones`. Un événement de
+//   type « abri » arrive à l'abri du groupe (`contexte.abri.region`) ; sans abri, il n'est pas tiré. Tout événement qui tombe
+//   dans la région de l'abri du groupe et porte des `effets.abri` les joint à son fait (`effetsAbri`) : avancer (etat.mjs) en
+//   applique les effets simples à l'abri et rend le reste au MJ (abri.mjs, subirEvenementAbri).
 // - Factions : croissance (contenu, défaut 0,01/jour) × 1,5 pendant panique et effondrement, si la région n'est pas vide ;
 //   −0,01/jour sinon. Une faction de force ≥ 2 essaime vers une voisine ouverte avec 1 % × force par jour (+0,5 là-bas,
 //   −0,3 chez elle). Un abri abandonné est occupé par la plus forte faction (force ≥ 1) avec 4 % par jour ; inoccupé, chacune
@@ -235,15 +238,19 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
     if (jour > e.fin) { fait(e.regions[0], "eruption-fin", "L'éruption s'est calmée.", "radio"); monde.eruption = null; }
   }
 
-  // 6. Un événement du contenu.
+  // 6. Un événement du contenu. Un événement « abri » arrive à l'abri du groupe (sa région) : sans abri (ou hors de ses zones),
+  // il n'est pas tiré.
+  const regionAbriGroupe = ctx.abri?.region ? regions.find(r => r.cle === ctx.abri.region) ?? null : null;
+  const dansZones = (e, r) => !e?.zones?.length || e.zones.includes(r.zone);
   const evenements = [...indexer(contenu).evenements.values()].filter(e => e.type !== "fete" && !(e.type === "meteo" && EVENEMENTS_SIMULES.includes(e.cle))
+    && (e.type !== "abri" || (regionAbriGroupe && dansZones(e, regionAbriGroupe)))
     && (!e.phases?.length || e.phases.includes(phase)) && (!e.saisons?.length || e.saisons.includes(saison)));
   if (evenements.length && chance(R.evenementContenu, h)) {
     const e = tirerPoids(evenements.map(x => ({ ...x, poids: Number(x.poids ?? 1) })), h);
     const propres = e ? regions.filter(r => (r.dangers ?? []).includes(e.cle)) : [];
-    const lieux = propres.length ? propres : regions.filter(r => !e?.zones?.length || e.zones.includes(r.zone));
+    const lieux = e?.type === "abri" ? [regionAbriGroupe] : propres.length ? propres : regions.filter(r => dansZones(e, r));
     const r = lieux.length ? choisir(lieux, h) : null;
-    if (e && r) appliquerEvenement(monde, contenu, e, r, jour, h, fait, nouvelId);
+    if (e && r) appliquerEvenement(monde, contenu, e, r, jour, h, fait, nouvelId, regionAbriGroupe?.cle ?? null);
   }
 
   // 7. Routes d'après les événements en cours.
@@ -364,7 +371,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
   return { monde, faits, menaces };
 }
 
-function appliquerEvenement(monde, contenu, e, r, jour, h, fait, nouvelId) {
+function appliquerEvenement(monde, contenu, e, r, jour, h, fait, nouvelId, regionAbri = null) {
   const reg = monde.regions[r.cle];
   const eff = e.effets ?? {};
   const duree = Number(eff.duree) > 0 ? Number(eff.duree) : entier(1, 3, h);
@@ -387,7 +394,9 @@ function appliquerEvenement(monde, contenu, e, r, jour, h, fait, nouvelId) {
   if (eff.faction && factionDe(contenu, eff.faction)) reg.factions[eff.faction] = borner((reg.factions[eff.faction] ?? 0) + (Number(eff.force) || 0.5), 0, 5);
   if (eff.nature && typeof eff.nature === "object") for (const [k, d] of Object.entries(eff.nature)) if (k in reg.nature) reg.nature[k] = Math.max(0, Math.round(reg.nature[k] * (1 + Math.max(-1, Number(d) || 0)) * 100) / 100);
   const region = regionDe(contenu, r.cle)?.nom ?? r.cle, nom = e.nom ?? e.cle, texte = sansBalises(e.texte);
-  fait(r.cle, e.cle, `${region} : ${nom}. ${texte}`.trim(), e.public === false ? "region" : "voisins", { evenement: e.cle, cleTexte: "evenement" }, { region, nom, texte });
+  // L'événement tombe là où est l'abri du groupe : ses effets `abri` le concernent (appliqués par avancer, etat.mjs).
+  const touche = regionAbri && r.cle === regionAbri && eff.abri && typeof eff.abri === "object" ? { effetsAbri: structuredClone(eff.abri) } : {};
+  fait(r.cle, e.cle, `${region} : ${nom}. ${texte}`.trim(), e.public === false ? "region" : "voisins", { evenement: e.cle, cleTexte: "evenement", ...touche }, { region, nom, texte });
 }
 
 // Les menaces du jour contre l'abri (§1.7). abri : { visibilite, bruit, defense }.

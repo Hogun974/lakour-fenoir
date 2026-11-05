@@ -16,14 +16,18 @@ export const I = (cle, niveau, extra = {}) => L.instanceInstallation(cle, niveau
 
 // Une partie complète : installer le groupe sur un site, puis avancer jour par jour.
 // chaqueJour(ctx, jour) peut agir (fouiller…) avant que le jour passe ; il reçoit et rend ctx.
+// installations : déjà là à l'arrivée, avec celles du site ; l'apport est plafonné d'après TOUTES (installerAbri plafonne tout de
+// suite, mais ne connaît que celles du site).
 export function partie({ contenu = contenuMini(), site, installations = [], jours = 30, membres = ["a", "b", "c", "d"], graine = "s1", apport = {}, chaqueJour = null } = {}) {
   const region = L.siteDe(contenu, site).region;
   let { monde, etat } = L.demarrerPartie({ contenu, graine, region, membres });
-  const ins = L.installerAbri(monde, contenu, { site, jour: 0, apport });
+  const ins = L.installerAbri(monde, contenu, { site, jour: 0, apport: installations.length ? {} : apport });
   monde = ins.monde;
+  const toutes = [...ins.installations, ...installations];
+  const stocks = installations.length ? L.plafonner(L.ajouterStocks(ins.abri.stocks, apport), L.plafondsAbri(toutes, contenu)).stocks : ins.abri.stocks;
   let ctx = {
     contenu, monde, etat,
-    abri: { id: "abri", system: ins.abri, installations: [...ins.installations, ...installations] },
+    abri: { id: "abri", system: { ...ins.abri, stocks }, installations: toutes },
     survivants: membres.map(id => ({ id, system: L.survivantNeuf({}) })),
     historique: []
   };

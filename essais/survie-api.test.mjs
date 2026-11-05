@@ -340,3 +340,17 @@ test("oublier({ reglages: false }) : la mémoire seulement, la partie publique r
   assert.equal(M.api.monde(), null);
   assert.equal(M.api.etat().demarree, true);
 });
+
+test("assaut : la tour de guet ajoute son bonus de vigilance à la garde (§1.7, comme pour un test)", async () => {
+  const M = await nouveauMonde();
+  const a = await survivantTire(M);
+  await M.api.demarrer({ region: "sainte-marie", membres: [a.id] });
+  await M.api.installer({ site: "phare-de-bel-air" });   // tour de guet niveau 2 (bonus vigilance 1) parmi ses installations
+  await a.update({ system: { tache: "garde" } });
+  const b = M.api.bilan();
+  assert.equal(b.bonus?.vigilance, 1, "le bilan donne le bonus de la tour");
+  const niveau = Number(a.system.competences?.vigilance?.niveau) || 0;
+  const outil = Math.max(0, ...a.items.filter(i => i.type === "equipement").map(i => Number(i.system?.bonus?.vigilance) || 0));
+  const as = await M.api.assaut({ force: 1, type: "Livides errants" });
+  assert.equal(as.desDefense.length, Math.min(15, Math.max(1, b.defense + niveau + Math.min(2, outil + 1))), `défense ${b.defense}, vigilance ${niveau}, outil ${outil}`);
+});

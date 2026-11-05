@@ -13,6 +13,9 @@
 //   À chaque changement de jour (quart multiple de 4), l'effet du jour :
 //   4. simulation du monde (hasardDuJour(graine, jour) : le même monde quelle que soit la façon d'avancer) ;
 //   5. journée de l'abri (production, consommation des présents et des PNJ, pertes, plafonds, sol, alentours), cyclone ;
+//   5 bis. événements du contenu tombés là où est l'abri (§2.6, faits à `effetsAbri`) : stocks perdus (jamais sous 0) et dégâts
+//      appliqués, avec un fait `abri-evenement-*` (public si le groupe est à l'abri, sinon au journal secret) ; moral, blessures
+//      et trouvailles rendus au MJ, à raconter (`aRaconter`, faits secrets `abri-a-raconter-*`), sans effet automatique ;
 //   6. repas : on nourrit les membres présents dans l'ordre, puis les PNJ ; faim, moral ;
 //   7. autonomie (net eau, nourriture, énergie ≥ 0 et aucune fouille la veille) ; phase ; radio (une région par jour) ;
 //   8. faits publics au journal (200 au plus), alertes (cyclone, horde qui approche ou arrive, réseau qui tombe chez soi,
@@ -27,7 +30,7 @@
 //      { palier, visibilite } (au MJ seulement).
 // Journal et alertes : chaque entrée est { quart, texte (français, repli), cle, params } (textes.mjs) ; la couche Foundry affiche
 // la traduction de `cle` dans la langue de chaque navigateur. Les anciennes entrées à `texte` seul restent lisibles.
-import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, palierVisibilite } from "./constantes.mjs";
+import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, JOURNAL_SECRET_MAX, palierVisibilite } from "./constantes.mjs";
 import { evoluerAfflictions, tirerMaladies, contracter } from "./maladies.mjs";
 import { indexer, installationDe } from "./contenu.mjs";
 import { message, cleTexteDe } from "./textes.mjs";
@@ -38,7 +41,7 @@ import { hasardDuJour, deriverHasard, choisir } from "./hasard.mjs";
 import { regionsDe, regionDe, sontVoisines } from "./contenu.mjs";
 import { phaseDuJour, momentIndex, saisonDuJour } from "./temps.mjs";
 import { effetQuart, effetJour, peutAgir } from "./survivant.mjs";
-import { bilanAbri, journeeAbri, suivreAutonomie, subirCyclone } from "./abri.mjs";
+import { bilanAbri, journeeAbri, suivreAutonomie, subirCyclone, subirEvenementAbri } from "./abri.mjs";
 import { creerMonde, simulerJour } from "./monde.mjs";
 import { renseignementsInitiaux, observer, reseauxActifs } from "./renseignements.mjs";
 
@@ -91,7 +94,7 @@ const TYPES_ALERTE = ["cyclone-pre-alerte", "cyclone-orange", "cyclone-rouge", "
 //             boitHorsAbri, mangeHorsAbri: Boolean (défaut vrai : hors de l'abri, le groupe vit de ce qu'il porte ; le MJ ajuste) }.
 // -> { etat, monde, acteurs: { survivants: [{ id, system, evenements }] (ceux qui ont changé), abri: { id, system, installations } | null },
 //      faits (publics), secrets (faits que le groupe ne perçoit pas), alertes (nouvelles), menaces: [{ jour, … }], bilan, jours: [jour],
-//      departs: [id] }
+//      departs: [id], aRaconter: [{ jour, evenement, cle, params, texte }] (effets d'événements laissés au MJ, §2.6) }
 export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abri = null, options = {} } = {}) {
   let e = structuredClone(etat);
   let m = structuredClone(monde);
@@ -100,7 +103,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
   const avant = new Map(survivants.map(s => [s.id, JSON.stringify(s.system)]));
   let ab = abri ? { id: abri.id, system: structuredClone(abri.system), installations: structuredClone(abri.installations ?? []) } : null;
   const veille = new Set(options.veille ?? []), stabilises = new Set(options.stabilises ?? []), corps = new Set(options.corpsTraites ?? []);
-  const faits = [], secrets = [], nouvellesAlertes = [], menaces = [], jours = [];
+  const faits = [], secrets = [], nouvellesAlertes = [], menaces = [], jours = [], aRaconter = [];
+  const auJournalSecret = (jour, f) => { m.journalSecret = [...(m.journalSecret ?? []), { jour, texte: f.texte, cle: cleTexteDe(f), params: f.params ?? {} }].slice(-JOURNAL_SECRET_MAX); };
   const personnesAbri = () => surv.filter(s => peutAgir(s.system) && !departs.includes(s.id) && aLAbri()).length + (e.groupe.pnj ?? []).filter(p => p.etat !== "mort").length;
   const aLAbri = () => Boolean(ab && !e.groupe.enRoute && e.groupe.region === ab.system.region);
   const departs = [];
@@ -198,6 +202,24 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
           const installations = cy.endommagees.map(nomInstallation).join(", ");
           publier(fin, cy.endommagees.length ? "cyclone-degats-installations" : "cyclone-degats", { cyclone: c.nom, installations },
             `Le cyclone ${c.nom} abîme l'abri${cy.endommagees.length ? ` (${installations})` : ""}.`);
+        }
+      }
+      // 5 bis. Événements du contenu tombés là où est l'abri.
+      for (const f of sim.faits) {
+        if (!f.effetsAbri || f.region !== ab.system.region) continue;
+        const ev = subirEvenementAbri(ab.system, f.effetsAbri, f.params?.nom ?? f.cle);
+        ab.system = ev.abri;
+        const base = { jour, region: ab.system.region, evenement: f.cle };
+        for (const x of ev.messages) {
+          const fx = { ...base, ...x, public: aLAbri(), portee: "abri" };
+          if (fx.public) { faits.push(fx); publier(fin, x.cle, x.params, x.texte); }
+          else { secrets.push(fx); auJournalSecret(jour, fx); }
+        }
+        for (const x of ev.recits) {
+          const fx = { ...base, ...x, public: false, portee: "mj" };
+          secrets.push(fx);
+          aRaconter.push({ jour, evenement: f.cle, ...x });
+          auJournalSecret(jour, fx);
         }
       }
     }
@@ -304,7 +326,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
 
   if (ab) bilan = bilanAbri(ab.system, ab.installations, contenu, conditions(Math.floor(e.horloge.quart / QUARTS_PAR_JOUR)));
   const changes = surv.filter(s => JSON.stringify(s.system) !== avant.get(s.id)).map(s => ({ id: s.id, system: s.system, evenements: s.evenements }));
-  return { etat: e, monde: m, acteurs: { survivants: changes, abri: ab }, faits, secrets, alertes: nouvellesAlertes, menaces, bilan, jours, departs };
+  return { etat: e, monde: m, acteurs: { survivants: changes, abri: ab }, faits, secrets, alertes: nouvellesAlertes, menaces, bilan, jours, departs, aRaconter };
 }
 
 // Fêter une fête au camp (§9) : +1 moral à chaque survivant vivant (au plus 5), une ration de plus par personne présente

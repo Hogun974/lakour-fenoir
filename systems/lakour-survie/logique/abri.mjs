@@ -38,6 +38,9 @@
 //   bois 0,2) ; cueillette × 0,7 en saison sèche et × bonus des fruits (1,25 en novembre, 1,5 en décembre-janvier).
 // - Cyclone : dégâts = force − protection cyclonique (si positif) ; chaque installation exposée (eau, nourriture, énergie,
 //   défense) prend 1 point d'état avec 25 % de chances par point de dégâts.
+// - Événement du contenu qui touche l'abri (§2.6, subirEvenementAbri) : stocks perdus (jamais sous 0) et dégâts appliqués ;
+//   moral, blessures, trouvailles rendus au MJ, à raconter.
+// - Bonus d'installation (`effets.bonus`, tour de guet : vigilance) : le meilleur des installations pas hors service (bilan.bonus).
 import { ORDRE_DELESTAGE, RESSOURCES, NATURE, SEUIL_AUTONOMIE, borner } from "./constantes.mjs";
 import { installationDe, regionDe, siteDe, niveauDe, niveauMaxDe, natureRegion, indexer } from "./contenu.mjs";
 import { consommationJour, pertesJour, plafonds, joursDeStocks, normaliserStocks, journeeStocks, couvre, retirerStocks } from "./ressources.mjs";
@@ -80,6 +83,19 @@ function cadre(abri, contenu, conditions = {}) {
   return { site, region, jour, saison, climat, personnes: Math.max(0, Number(conditions.personnes ?? 0)) };
 }
 
+// Ce que les installations ajoutent aux plafonds de stockage (toutes, même hors service). effets : les `effets` des niveaux.
+function ajoutsDeStockage(effets) {
+  const ajouts = {};
+  for (const e of effets) for (const [r, q] of Object.entries(e?.stockage ?? {})) ajouts[r] = (ajouts[r] || 0) + (Number(q) || 0);
+  return ajouts;
+}
+
+// Les plafonds de stockage d'un abri d'après ses installations (instances), sans tout le bilan : le jour où l'on s'installe.
+export function plafondsAbri(installations = [], contenu = {}) {
+  const effets = (installations ?? []).filter(i => Number(i?.niveau) >= 1).map(i => effetsDe(installationDe(contenu, i.cle), Number(i.niveau)));
+  return plafonds(ajoutsDeStockage(effets));
+}
+
 // Le bilan d'un jour de l'abri (contrat §3.1 bilanAbri). Rien n'est modifié.
 // abri : system de l'acteur abri ({ site, region, stocks, nature, sol, bruit, degats }) ;
 // installations : instances ; conditions : { jour, saison?, dateDepart?, personnes, meteo?: { soleil, pluie },
@@ -87,7 +103,7 @@ function cadre(abri, contenu, conditions = {}) {
 //   travailleurs?: { tache: [{ niveau, passion }] } (§10.3 : une installation à `effets.bras: { tache, nombre, niveau }`
 //   produit selon ceux qui y travaillent : generation.mjs, facteurBras) }.
 // -> { defense, discretion, capacite, visibilite, bruit, protectionCyclone, soins, moral, conservation, renseignements,
-//      plafonds, production, consommation, pertes, net, sol, actives, arrets: [{ cle, raison }], autonome, joursDeStocks }
+//      bonus: { competence: n } (le meilleur `effets.bonus` des installations qui ne sont pas hors service), plafonds, production, consommation, pertes, net, sol, actives, arrets: [{ cle, raison }], autonome, joursDeStocks }
 export function bilanAbri(abri = {}, installations = [], contenu = {}, conditions = {}) {
   const c = cadre(abri, contenu, conditions);
   const stocks = normaliserStocks(abri.stocks);
@@ -164,9 +180,11 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   const actives = lignes.filter(l => l.enMarche && !l.site);
   const structurelles = lignes.filter(l => !l.horsService && !l.site);
   const sommeEffet = (liste, cle) => liste.reduce((s, l) => s + (Number(l.e[cle]) || 0), 0);
-  const ajoutsStockage = {};
-  for (const l of lignes) for (const [r, q] of Object.entries(l.e.stockage ?? {})) ajoutsStockage[r] = (ajoutsStockage[r] || 0) + (Number(q) || 0);
-  const plafond = plafonds(ajoutsStockage);
+  const plafond = plafonds(ajoutsDeStockage(lignes.map(l => l.e)));
+  // Bonus de compétence des installations (tour de guet, chiens de garde : vigilance ; §1.1) : le meilleur, tant qu'elle n'est
+  // pas hors service (même règle qu'un test à l'abri, scripts/api.mjs modificateursDuTest).
+  const bonus = {};
+  for (const l of structurelles) for (const [k, n] of Object.entries(l.e.bonus ?? {})) bonus[k] = Math.max(bonus[k] ?? 0, Number(n) || 0);
 
   const production = {};
   const reliquats = {};
@@ -207,6 +225,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     moral: sommeEffet(actives, "moral"),
     conservation,
     renseignements: actives.some(l => l.e.renseignements),
+    bonus,
     eauTraitee: actives.some(l => l.e.eauTraitee) || (siteEau === "reseau" && Boolean(conditions.reseaux?.eau)),
     plafonds: plafond,
     production, reliquats, consommation, pertes, net,
@@ -364,6 +383,47 @@ export function reparerInstallation(instance, def, { quarts = 1, bras = 1, mater
 }
 
 export const endommagerAbri = (abri, n = 1) => ({ ...abri, degats: Math.max(0, (Number(abri?.degats) || 0) + n) });
+
+// ------------------------------------------------------------------ événements du contenu qui touchent l'abri (§2.6)
+// effets : `effets.abri` d'un événement du contenu ({ stocks: { r: ±n }, degats, moral, blessure, decouverte: { r: n } }) ;
+// nom : le nom de l'événement (dans la langue du contenu). Les effets SIMPLES sont appliqués : stocks perdus (jamais sous 0),
+// dégâts de l'abri. Le reste est rendu au MJ, à raconter, sans effet automatique : moral, blessures, trouvailles
+// (`decouverte`, et une quantité positive de `stocks` : il faut aller la chercher). Les autres champs sont ignorés.
+// -> { abri, pertes: { r: n } (ce qui a vraiment été perdu), degats, messages: [{ cle, params, texte }] (effets appliqués),
+//      recits: [{ cle, params, texte }] (à raconter par le MJ) }
+const texteQuantites = q => Object.entries(q).map(([r, n]) => `${n} ${r}`).join(", ");
+export function subirEvenementAbri(abri = {}, effets = {}, nom = "") {
+  const retraits = {}, trouvailles = {};
+  for (const [r, q] of Object.entries(effets?.stocks ?? {})) {
+    const n = Math.round(Number(q) || 0);
+    if (n < 0) retraits[r] = -n;
+    else if (n > 0) trouvailles[r] = n;
+  }
+  for (const [r, q] of Object.entries(effets?.decouverte ?? {})) {
+    const n = Math.round(Number(q) || 0);
+    if (n > 0) trouvailles[r] = (trouvailles[r] ?? 0) + n;
+  }
+  const avant = normaliserStocks(abri?.stocks);
+  const stocks = retirerStocks(avant, retraits).stocks;
+  const pertes = Object.fromEntries(Object.keys(retraits).filter(r => r in avant && avant[r] > stocks[r]).map(r => [r, avant[r] - stocks[r]]));
+  const degats = Math.max(0, Math.round(Number(effets?.degats) || 0));
+  let nouveau = Object.keys(pertes).length ? { ...abri, stocks } : { ...abri };
+  if (degats) nouveau = endommagerAbri(nouveau, degats);
+  const messages = [], recits = [];
+  if (Object.keys(pertes).length) messages.push(message("abri-evenement-pertes", { nom, pertes }, `${nom} : l'abri perd ${texteQuantites(pertes)}.`));
+  if (degats) messages.push(message("abri-evenement-degats", { nom, degats }, `${nom} : l'abri est abîmé (${degats} dégât${degats > 1 ? "s" : ""}).`));
+  const moral = Math.round(Number(effets?.moral) || 0);
+  if (moral) {
+    const signe = `${moral > 0 ? "+" : ""}${moral}`;
+    recits.push(message("abri-a-raconter-moral", { nom, moral: signe }, `${nom} : moral du groupe ${signe}, à raconter.`));
+  }
+  const blessure = Math.max(0, Math.round(Number(effets?.blessure) || 0));
+  if (blessure) recits.push(message("abri-a-raconter-blessure", { nom, n: blessure }, `${nom} : ${blessure} blessure${blessure > 1 ? "s" : ""} à raconter (qui, comment).`));
+  if (Object.keys(trouvailles).length) {
+    recits.push(message("abri-a-raconter-decouverte", { nom, decouverte: trouvailles }, `${nom} : une trouvaille à raconter (${texteQuantites(trouvailles)}), à aller chercher.`));
+  }
+  return { abri: nouveau, pertes, degats, messages, recits };
+}
 
 export function reparerAbri(abri, { quarts = 1, bras = 1 } = {}) {
   const degats = Number(abri?.degats) || 0;

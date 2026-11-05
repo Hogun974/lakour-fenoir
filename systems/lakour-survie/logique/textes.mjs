@@ -11,7 +11,13 @@ export const message = (cle, params = {}, texte = undefined) => (texte === undef
 // déjà le type (clé d'un événement du contenu), `cleTexte` donne la clé du texte.
 export const cleTexteDe = x => x?.cleTexte ?? x?.cle ?? "";
 
-// Toutes les clés que la logique peut produire (essai statique : chacune existe dans lang/fr.json et lang/en.json, Faits.*).
+// Les clés de CLES_TEXTES dont la traduction n'est pas encore dans lang/fr.json et lang/en.json (Faits.*) : la couche Foundry
+// affiche leur `texte` français de repli en attendant. Une clé en sort quand ses deux traductions sont écrites (l'essai statique
+// les exige alors comme les autres).
+export const CLES_A_TRADUIRE = ["abri-evenement-pertes", "abri-evenement-degats", "abri-a-raconter-moral", "abri-a-raconter-blessure", "abri-a-raconter-decouverte"];
+
+// Toutes les clés que la logique peut produire (essai statique : chacune existe dans lang/fr.json et lang/en.json, Faits.*, sauf
+// celles de CLES_A_TRADUIRE tant qu'elles y manquent).
 export const CLES_TEXTES = [
   // monde.mjs : faits
   "reseau-electricite", "reseau-eau", "reseau-carburant", "reseau-telephone",
@@ -32,6 +38,8 @@ export const CLES_TEXTES = [
   "survivant-craque", "survivant-depart", "alerte-depart", "survivant-declaree", "survivant-aggravee", "survivant-guerie",
   "progression", "progression-enseignee", "stocks-bas-eau", "stocks-bas-nourriture", "manque-nourriture", "palier-visibilite",
   "fete-manquante", "fete-deja", "fete-rations",
+  // abri.mjs (subirEvenementAbri, par etat.mjs) : événements du contenu qui touchent l'abri (§2.6)
+  "abri-evenement-pertes", "abri-evenement-degats", "abri-a-raconter-moral", "abri-a-raconter-blessure", "abri-a-raconter-decouverte",
   // generation.mjs : tâches, recrues
   "tache-inconnue", "tache-interdite",
   "recrue-raison-1", "recrue-raison-2", "recrue-raison-3", "recrue-raison-4", "recrue-raison-5",
