@@ -120,25 +120,25 @@ enabled** in a world):
 https://github.com/Hogun974/lakour-fenoir/releases/latest/download/lakour-fenoir-en.json
 ```
 
-Then create a world with the **Fénoir — survie à La Réunion** system, enable both modules (**La Kour — Fénoir** and
-**La Kour – MJ IA**), and accept the prompt to **install the content** (player guides, GM journals, map of Réunion Island).
-Then: players create their survivor, the GM starts the game (GM window, or the AI GM's `survie_demarrer` tool).
+Then create a world with the **Fénoir — survie à La Réunion** system, enable both modules (**La Kour — Fénoir (English)**,
+or **La Kour — Fénoir**, and **La Kour – MJ IA**), and accept the prompt to **install the content** (player guides, GM
+journals, map of Réunion Island). Then: players create their survivor, the GM starts the game (GM window, or the AI GM's `survie_demarrer` tool).
 
 ### 2. A ready-made empty world
 
 A world that is already configured (system, modules enabled, content installed, map of the island in place, a single
-Gamemaster account without password) is published with each release. In **Game Worlds › Install World**, paste:
+Gamemaster account without password) is published with each release, as an archive: Foundry 14 no longer installs a world
+from a manifest URL (the **Game Worlds** tab only offers **Create World**).
 
-```
-https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world.json
-```
+1. First install the system and both modules from their manifests (way 1): the world requires them.
+2. Download `la-kour-fenoir-en.zip` (English, `lakour-fenoir-en` enabled) or `la-kour-fenoir.zip` (French) from the
+   [latest release](https://github.com/Hogun974/lakour-fenoir/releases/latest).
+3. Unzip it into `Data/worlds/la-kour-fenoir-en/` (or `Data/worlds/la-kour-fenoir/`) inside Foundry's data folder
+   (**Configuration › User Data Path**; on a hosting service, its file manager): `world.json` directly in that folder.
+4. **Restart Foundry**: the world then appears in **Game Worlds**.
 
-The English empty world (`lakour-fenoir-en` enabled), when the release includes it:
-`https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world-en.json`. In both, the AI GM is set to the
-**Chronicler** personality, in validation mode, with a budget of 10 dollars per session.
-
-The system and the modules are offered for installation if missing. The world is empty: no game, no player, no chronicle,
-no vault.
+In both, the AI GM is set to the **Chronicler** personality, in validation mode, with a budget of 10 dollars per session.
+The world is empty: no game, no player, no chronicle, no vault.
 
 ### 3. From source
 

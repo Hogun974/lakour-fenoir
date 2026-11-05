@@ -11,7 +11,8 @@
 //   node outils/fabriquer-fenoir.mjs --extraire     écrit ou met à jour les squelettes contenu/en/*.json (traductions gardées)
 //   npm run fabriquer-fenoir-en  (= --langue en)    engendre modules/lakour-fenoir-en/ EN ENTIER (non versionné) : module.json
 //     anglais (contenu/en/module.json), src/ et packs/ traduits, assets/donnees.json traduit, copies de lang/, scripts/, assets/
-//     (index des jetons récrits, plans.json refait avec les noms traduits), CREDITS.md ; puis les mêmes vérifications qu'en
+//     (index des jetons récrits, plans.json refait avec les noms traduits ; contenu/en/assets/ posé par-dessus : la carte de l'île
+//     en anglais, outils/fabriquer-carte.mjs), CREDITS.md ; puis les mêmes vérifications qu'en
 //     français (documents, registre, contrat du contenu). Un écart de balises ou de liens arrête la fabrication.
 import { compilePack } from "@foundryvtt/foundryvtt-cli";
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, realpathSync, renameSync, rmSync, writeFileSync } from "node:fs";
@@ -529,11 +530,12 @@ export function documentsEnRegistre(registre, docs) {
 }
 
 // ---------------------------------------------------------------- Dictionnaires de traduction
-// Union des dictionnaires contenu/en/<pack>.json (module.json et figurants.json à part : manifeste et assets). Rend { dictionnaire, packs }.
+// Union des dictionnaires contenu/en/<pack>.json (module.json, figurants.json et carte.json à part : manifeste, assets et textes
+// gravés de la carte de l'île, outils/fabriquer-carte.mjs). Rend { dictionnaire, packs }.
 export function lireDictionnaires(dossier = DOSSIER_DICTIONNAIRES) {
   const dictionnaire = {}, packs = [];
   if (!existsSync(dossier)) return { dictionnaire, packs };
-  for (const f of readdirSync(dossier).filter(f => f.endsWith(".json") && !["module.json", "figurants.json"].includes(f)).sort()) {
+  for (const f of readdirSync(dossier).filter(f => f.endsWith(".json") && !["module.json", "figurants.json", "carte.json"].includes(f)).sort()) {
     Object.assign(dictionnaire, JSON.parse(readFileSync(join(dossier, f), "utf8")));
     packs.push(f.slice(0, -5));
   }
@@ -623,6 +625,10 @@ function copierModule(documents, registre) {
       else if (f.name.endsWith(".json")) ecrire(chemin, readFileSync(chemin, "utf8").replaceAll(`modules/${MODULE}/`, `modules/${MODULE_EN}/`));
     }
   };
+  // Assets propres au module anglais (contenu/en/assets/, hors du zip français) : remplacent ceux du français au même chemin,
+  // donc sans rien changer aux documents (la carte de l'île en anglais : assets/cartes/reunion.webp).
+  const assetsAnglais = join(DOSSIER_DICTIONNAIRES, "assets");
+  if (existsSync(assetsAnglais)) cpSync(assetsAnglais, join(RACINE_EN, "assets"), { recursive: true });
   recrireJson(join(RACINE_EN, "assets"));
   const figurants = join(RACINE_EN, "assets", "jetons", "figurants.json"), libelles = join(DOSSIER_DICTIONNAIRES, "figurants.json");
   if (existsSync(figurants) && existsSync(libelles)) {

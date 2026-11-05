@@ -78,8 +78,8 @@ world.
 https://github.com/Hogun974/lakour-mj-ia/releases/latest/download/module.json
 ```
 
-You should now see *Fénoir — survie à La Réunion* among the systems, and *La Kour — Fénoir* and *La Kour – MJ IA* among the
-modules.
+You should now see *Fénoir — survie à La Réunion* among the systems, and *La Kour — Fénoir (English)* (*La Kour — Fénoir*
+for the French module) and *La Kour – MJ IA* among the modules.
 
 ![The three packages installed](docs/captures/tuto-paquets-installes.en.png)
 
@@ -94,22 +94,27 @@ Réunion in place, AI GM set to the **Chronicler** personality (a narrator who f
 suited to survival), in **validation** mode and with a **budget of 10 dollars per session**. It holds no game, no player,
 no key.
 
-The English world (same world, translated texts, `lakour-fenoir-en` active), if the release includes it: **Game Worlds ›
-Install World**, *Manifest URL* field:
+> **Foundry 14 no longer installs a world from its manifest URL**: the **Game Worlds** tab only offers **Create World**.
+> The empty world is therefore distributed as an archive to unzip.
 
-```
-https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world-en.json
-```
+1. The system and the modules must be installed (section 2): the world requires them and does not bring them.
+2. **Download** `la-kour-fenoir-en.zip` (the English world: same world, translated texts, `lakour-fenoir-en` active) from
+   the latest release: <https://github.com/Hogun974/lakour-fenoir/releases/latest> (*Assets* section). The French world is `la-kour-fenoir.zip`.
+3. **Find Foundry's data folder**: setup screen › **Configuration** tab › **User Data Path** field. On a hosting service,
+   use its file manager.
+4. **Unzip** the archive into a new folder `Data/worlds/la-kour-fenoir-en/` (`Data/worlds/la-kour-fenoir/` for the French
+   one; the folder name is the world's id): `world.json` must sit directly inside it, not in a subfolder.
+5. **Restart Foundry** (the server or the application): it only sees a new world folder at startup. The world
+   *La Kour — Fénoir (English)* then appears in **Game Worlds**.
 
-The French world is `.../world.json`. Foundry offers to install the system and modules if they are missing. Launch the
-world: it opens on the login screen with **a single account, Gamemaster, with no password**.
+Launch the world: it opens on the login screen with **a single account, Gamemaster, with no password**.
 
 ![The welcome screen of the empty world](docs/captures/accueil.en.png)
 
 ### Or: your own world
 
 1. **Game Worlds › Create World**, system **Fénoir — survie à La Réunion**.
-2. In the world, **Settings › Manage Modules**: tick *La Kour — Fénoir* (the English one, not both) and *La Kour – MJ IA*.
+2. In the world, **Settings › Manage Modules**: tick *La Kour — Fénoir (English)* (not the French one too) and *La Kour – MJ IA*.
    Foundry reloads.
 3. A **Fénoir** window offers to **install the content**: accept. The player guides, the GM journals (hidden from players)
    and the map of Réunion are imported; everything else (installations, equipment, backgrounds, pregens, bestiary,

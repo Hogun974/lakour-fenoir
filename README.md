@@ -122,18 +122,19 @@ MJ IA).
 ### 2. Un monde vierge, tout prêt
 
 Un monde déjà configuré (système, modules actifs, contenu installé, carte de l'île en place, un seul compte Gamemaster sans
-mot de passe) est publié avec chaque version. Dans **Mondes › Installer un monde**, coller :
+mot de passe) est publié avec chaque version, en archive : Foundry 14 n'installe plus de monde par URL de manifeste
+(l'onglet **Mondes de jeu** ne propose que **Créer un monde**).
 
-```
-https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world.json
-```
+1. Installez d'abord le système et les deux modules par leurs manifestes (façon 1) : le monde les exige.
+2. Téléchargez `la-kour-fenoir.zip` (ou `la-kour-fenoir-en.zip`, monde anglais, module `lakour-fenoir-en` actif) dans la
+   [dernière version](https://github.com/Hogun974/lakour-fenoir/releases/latest).
+3. Décompressez-la dans `Data/worlds/la-kour-fenoir/` (ou `Data/worlds/la-kour-fenoir-en/`) du dossier de données de
+   Foundry (**Configuration › Chemin des données** ; sur un hébergeur, son gestionnaire de fichiers) : `world.json`
+   directement dans ce dossier.
+4. **Redémarrez Foundry** : le monde apparaît alors dans **Mondes de jeu**.
 
-Le monde vierge anglais (module `lakour-fenoir-en` actif), quand la version publiée le contient :
-`https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world-en.json`. Dans les deux, le MJ IA est réglé sur la
-personnalité **La Chroniqueuse**, en mode validation, avec un budget de 10 $ par séance.
-
-Le système et les modules sont proposés à l'installation s'ils manquent. Le monde est vierge : aucune partie, aucun joueur,
-aucune chronique, aucun coffre.
+Dans les deux, le MJ IA est réglé sur la personnalité **La Chroniqueuse**, en mode validation, avec un budget de 10 $ par
+séance. Le monde est vierge : aucune partie, aucun joueur, aucune chronique, aucun coffre.
 
 ### 3. Depuis les sources
 

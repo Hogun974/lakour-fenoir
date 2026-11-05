@@ -33,7 +33,10 @@ manifestes (`system.json`, `module.json`, champ `media`) : les garder sous ces n
 
 Les tutoriels (`TUTORIEL.md` en français, `TUTORIAL.md` en anglais) réutilisent les captures ci-dessus et en demandent
 quelques autres. Celles du tutoriel anglais portent le suffixe `.en.png` : **Foundry en anglais**, module
-`lakour-fenoir-en` actif (monde vierge anglais `world-en.json`), mêmes conseils que plus haut.
+`lakour-fenoir-en` actif (monde vierge anglais `la-kour-fenoir-en.zip`), mêmes conseils que plus haut.
+
+> Pas de capture de l'installation du monde par manifeste : Foundry 14 n'a plus de bouton « Installer un monde » (le monde
+> vierge se distribue en archive à décompresser dans `Data/worlds/`).
 
 | Fichier | Tutoriel | Contenu | Comment l'obtenir |
 |---|---|---|---|
@@ -41,7 +44,7 @@ quelques autres. Celles du tutoriel anglais portent le suffixe `.en.png` : **Fou
 | `tuto-paquets-installes.png` | français | Les **modules complémentaires** installés : *La Kour — Fénoir* et *La Kour – MJ IA* (et le système dans son onglet, ou deux captures côte à côte). | Après l'installation des trois paquets. |
 | `tuto-installer-contenu.png` | français | La fenêtre **Fénoir** qui propose d'installer le contenu (guides, journaux du MJ, carte). | Dans un monde neuf, au premier chargement après l'activation des modules. |
 | `tuto-installer-systeme.en.png` | anglais | Même chose que `tuto-installer-systeme.png` : **Game Systems › Install System**. | Foundry en anglais. |
-| `tuto-paquets-installes.en.png` | anglais | Même chose que `tuto-paquets-installes.png` (module anglais `lakour-fenoir-en`). | Foundry en anglais. |
+| `tuto-paquets-installes.en.png` | anglais | Même chose que `tuto-paquets-installes.png` (module anglais `lakour-fenoir-en`, titre *La Kour — Fénoir (English)*). | Foundry en anglais. |
 | `tuto-installer-contenu.en.png` | anglais | Même chose que `tuto-installer-contenu.png`, en anglais. | Monde neuf avec `lakour-fenoir-en`. |
 | `accueil.en.png` | anglais | L'écran d'accueil du monde vierge anglais. | Comme `accueil.png`, avec `la-kour-fenoir-en`. |
 | `creation.en.png` | anglais | La fenêtre **Create a survivor**. | Comme `creation.png`. |

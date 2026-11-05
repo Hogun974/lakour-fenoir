@@ -1,0 +1,86 @@
+{
+  "_commentaire": "Textes gravés dans la carte de La Réunion (outils/fabriquer-carte.mjs), version anglaise : contenu/en/assets/cartes/reunion.webp, que outils/fabriquer-fenoir.mjs --langue en pose à la place de assets/cartes/reunion.webp dans lakour-fenoir-en. « libelles » : texte français -> texte anglais (cartouche, légende, points cardinaux, échelle, crédits) ; les noms de lieux réels (sommets, rivières, Plaine des Sables, Lagon de l'Hermitage…) restent tels quels. « regions » : lignes de l'étiquette d'une région (avant mise en capitales), cohérentes avec son nom anglais (registre du module anglais ; vérifié par essais/cartes-anglaises.test.mjs). Pas un dictionnaire de pack : lireDictionnaires l'ignore.",
+  "libelles": {
+    "La Réunion — Fénoir": "Réunion — Fénoir",
+    "Carte des routes, des cirques et des Hauts": "Map of the roads, the cirques and the Highlands",
+    "ÎLE DE LA RÉUNION · OCÉAN INDIEN": "RÉUNION ISLAND · INDIAN OCEAN",
+    "OCÉAN INDIEN": "INDIAN OCEAN",
+    "LÉGENDE": "KEY",
+    "Route nationale": "National road",
+    "Route départementale": "Departmental road",
+    "Route forestière": "Forest road",
+    "Sentier (à pied seulement)": "Trail (on foot only)",
+    "Rivière, ravine": "River, ravine",
+    "Sommet (altitude)": "Summit (altitude)",
+    "N": "N",
+    "S": "S",
+    "E": "E",
+    "O": "W",
+    "km": "km",
+    "1 km ≈ 46 px": "1 km ≈ 46 px",
+    "Contour : IGN Admin Express (Licence ouverte) · Relief : Terrain Tiles, AWS Open Data (SRTM, ETOPO1) · Routes et sentiers : © les contributeurs d'OpenStreetMap (ODbL)": "Coastline: IGN Admin Express (Licence Ouverte / Open Licence) · Relief: Terrain Tiles, AWS Open Data (SRTM, ETOPO1) · Roads and trails: © OpenStreetMap contributors (ODbL)"
+  },
+  "regions": {
+    "saint-denis": [
+      "Saint-Denis"
+    ],
+    "sainte-marie": [
+      "Sainte-Marie",
+      "and the airport"
+    ],
+    "route-du-littoral": [
+      "The Route",
+      "du Littoral"
+    ],
+    "le-port": [
+      "Le Port",
+      "and La Possession"
+    ],
+    "saint-paul": [
+      "Saint-Paul",
+      "and the west coast"
+    ],
+    "hauts-de-l-ouest": [
+      "The Western",
+      "Highlands"
+    ],
+    "saint-leu": [
+      "Saint-Leu",
+      "and L'Étang-Salé"
+    ],
+    "saint-pierre": [
+      "Saint-Louis",
+      "and Saint-Pierre"
+    ],
+    "le-tampon": [
+      "Le Tampon and the",
+      "Plaine des Cafres"
+    ],
+    "sud-sauvage": [
+      "Saint-Joseph and",
+      "the Wild South"
+    ],
+    "fournaise": [
+      "The Piton de la Fournaise",
+      "and the Plaine des Sables"
+    ],
+    "est": [
+      "The East",
+      "Saint-André, Saint-Benoît,",
+      "Sainte-Rose"
+    ],
+    "plaine-des-palmistes": [
+      "The Plaine des Palmistes",
+      "and Bélouve"
+    ],
+    "cilaos": [
+      "Cilaos"
+    ],
+    "salazie": [
+      "Salazie"
+    ],
+    "mafate": [
+      "Mafate"
+    ]
+  }
+}

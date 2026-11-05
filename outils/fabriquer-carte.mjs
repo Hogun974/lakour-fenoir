@@ -3,14 +3,23 @@
 //
 //   node outils/fabriquer-carte.mjs --telecharger [--brut <dossier>]   (re)construit outils/donnees-carte/ depuis les sources publiques
 //   node outils/fabriquer-carte.mjs [--apercu <dossier>]                 dessine la carte (et des aperçus JPEG dans <dossier>)
+//   node outils/fabriquer-carte.mjs --langue en                          seulement la version anglaise (fr : seulement la française)
+//
+// Deux versions, même fond, seuls les textes gravés changent : la française (assets/cartes/reunion.webp) et l'anglaise
+// (contenu/en/assets/cartes/reunion.webp, hors du zip français ; outils/fabriquer-fenoir.mjs --langue en la pose à la place de
+// assets/cartes/reunion.webp dans lakour-fenoir-en, la scène anglaise garde donc le même chemin). Textes anglais : contenu/en/
+// carte.json (cartouche, légende, points cardinaux, échelle, crédits, lignes des régions) ; les noms de lieux réels ne changent
+// pas. Un texte français sans traduction arrête tout. Les textes gravés dans l'image anglaise sont notés dans
+// donnees-carte/reunion.en.textes.json (l'essai essais/cartes-anglaises.test.mjs les compare au dictionnaire).
 //
 // Sources (voir outils/donnees-carte/SOURCES.md) : contour IGN Admin Express (france-geojson, Licence ouverte), relief Terrain
 // Tiles (AWS Open Data : SRTM, ETOPO1…), routes et sentiers OpenStreetMap (ODbL). Rendu : @resvg/resvg-js (déjà dans
 // node_modules) pour le masque de l'île et les surcouches vectorielles, calcul des pixels en JavaScript, encodage WebP par ffmpeg.
 // Projection : celle des repères des régions (contenu/regions.mjs) : 1 km ≈ 46 px, 55,216 E -> x 528, 20,87 S -> y 166.
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
+import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gunzipSync, gzipSync, inflateSync } from "node:zlib";
 import { repere as repereContenu } from "../modules/lakour-fenoir/contenu/regions.mjs";
@@ -21,6 +30,10 @@ const { Resvg } = require("@resvg/resvg-js");
 const DONNEES = new URL("donnees-carte/", import.meta.url);
 const REGISTRE = new URL("../modules/lakour-fenoir/assets/donnees.json", import.meta.url);
 const SORTIE = new URL("../modules/lakour-fenoir/assets/cartes/reunion.webp", import.meta.url);
+export const SORTIE_EN = new URL("../modules/lakour-fenoir/contenu/en/assets/cartes/reunion.webp", import.meta.url);
+const SORTIES = { fr: SORTIE, en: SORTIE_EN };
+export const LIBELLES_EN = new URL("../modules/lakour-fenoir/contenu/en/carte.json", import.meta.url);
+export const TEXTES_GRAVES_EN = new URL("donnees-carte/reunion.en.textes.json", import.meta.url);
 const W = 4000, H = 3000, PX_KM = 46;
 const POLICE = "Palatino Linotype";
 
@@ -246,6 +259,35 @@ function chemin(pts, ferme = false) {
 const projeter = pts => pts.map(([lon, lat]) => [versX(lon), versY(lat)]);
 const echapper = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
+// ================================================================ Langue des textes gravés
+// Rend { langue, t(texte), lignes(region, lignesFr), nombre(n), capitales(texte), manquants }. En anglais, t() et lignes()
+// prennent contenu/en/carte.json et notent dans manquants tout texte resté sans traduction.
+export function langueDeCarte(langue = "fr", dico = langue === "en" ? JSON.parse(readFileSync(LIBELLES_EN, "utf8")) : null) {
+  const locale = langue === "en" ? "en-GB" : "fr-FR", manquants = [];
+  const L = {
+    langue, manquants, t: x => x, lignes: (r, lignesFr) => lignesFr,
+    nombre: n => n.toLocaleString(locale).replace(/ /g, " "), capitales: x => x.toLocaleUpperCase(locale)
+  };
+  if (!dico) return L;
+  L.t = x => {
+    const en = dico.libelles?.[x];
+    if (typeof en === "string" && en.trim()) return en;
+    manquants.push(x);
+    return x;
+  };
+  L.lignes = (r, lignesFr) => {
+    const lignes = dico.regions?.[r.cle];
+    if (Array.isArray(lignes) && lignes.length) return lignes;
+    manquants.push(`région ${r.cle} : ${lignesFr.join(" ")}`);
+    return lignesFr;
+  };
+  return L;
+}
+
+// Textes gravés d'un SVG (contenu des <text>/<tspan>, entités décodées).
+export const textesGraves = svg => [...svg.matchAll(/<(?:text|tspan)\b[^>]*>([^<]*)/g)]
+  .map(m => m[1].replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&amp;/g, "&").trim()).filter(Boolean);
+
 // ================================================================ Lieux et étiquettes (coordonnées réelles approchées)
 // Sommets : altitudes officielles ; la position est affinée sur le point le plus haut du relief à moins de `cherche` px.
 const SOMMETS = [
@@ -400,27 +442,40 @@ function dessiner() {
   }
   console.log("fond : ok");
 
-  // -- Surcouche vectorielle.
-  const svg = surcouche({ traitCote, voies, rivieres, regions, grille, dMer });
-  const pix = rendreSVG(svg);
-  for (let k = 0; k < W * H; k++) {
-    const a = pix[k * 4 + 3] / 255;
-    if (!a) continue;
-    for (let c = 0; c < 3; c++) rvb[k * 3 + c] = Math.min(255, pix[k * 4 + c] + rvb[k * 3 + c] * (1 - a));
+  // -- Une image par langue : même fond, surcouche vectorielle (textes gravés) de la langue.
+  const langues = typeof option("--langue") === "string" ? [option("--langue")] : ["fr", "en"];
+  for (const langue of langues) {
+    if (!SORTIES[langue]) throw new Error(`Langue inconnue : ${langue} (fr ou en)`);
+    const L = langueDeCarte(langue);
+    const svg = surcouche({ traitCote, voies, rivieres, regions, grille, dMer, L });
+    const erreurs = verifierTextesDeCarte(langue, textesGraves(svg), L.manquants);
+    if (erreurs.length) throw new Error(`Carte (${langue}) : ${erreurs.join(" ; ")}`);
+    const image = rvb.slice();
+    const pix = rendreSVG(svg);
+    for (let k = 0; k < W * H; k++) {
+      const a = pix[k * 4 + 3] / 255;
+      if (!a) continue;
+      for (let c = 0; c < 3; c++) image[k * 3 + c] = Math.min(255, pix[k * 4 + c] + image[k * 3 + c] * (1 - a));
+    }
+    console.log(`surcouche (${langue}) : ok`);
+    encoder(image, SORTIES[langue], langue);
+    if (langue === "en") writeFileSync(TEXTES_GRAVES_EN, `${JSON.stringify(textesGraves(svg), null, 1)}\n`);
   }
-  console.log("surcouche : ok");
+  verifierReperes(registre.regions, binaire, grille, creux);
+}
 
-  // -- Encodage.
-  mkdirSync(new URL(".", SORTIE), { recursive: true });
+// Encodage WebP (et aperçus JPEG si --apercu <dossier> : <dossier>/<langue>-<vue>.jpg).
+function encoder(rvb, sortie, langue) {
+  mkdirSync(new URL(".", sortie), { recursive: true });
   const qualite = option("--qualite") ?? "90";
   execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", `${W}x${H}`, "-i", "-",
-    "-c:v", "libwebp", "-quality", String(qualite), "-compression_level", "6", "-preset", "picture", fileURLToPath(SORTIE)], { input: Buffer.from(rvb.buffer), maxBuffer: 1 << 30 });
-  console.log(`écrit : ${fileURLToPath(SORTIE)} (${(readFileSync(SORTIE).length / 1e6).toFixed(2)} Mo)`);
+    "-c:v", "libwebp", "-quality", String(qualite), "-compression_level", "6", "-preset", "picture", fileURLToPath(sortie)], { input: Buffer.from(rvb.buffer), maxBuffer: 1 << 30 });
+  console.log(`écrit : ${fileURLToPath(sortie)} (${(readFileSync(sortie).length / 1e6).toFixed(2)} Mo)`);
   const apercu = option("--apercu");
   if (typeof apercu === "string") {
     mkdirSync(apercu, { recursive: true });
     const jpeg = (nom, filtre) => execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", `${W}x${H}`, "-i", "-",
-      "-vf", filtre, "-q:v", "3", `${apercu}/${nom}.jpg`], { input: Buffer.from(rvb.buffer), maxBuffer: 1 << 30 });
+      "-vf", filtre, "-q:v", "3", `${apercu}/${langue}-${nom}.jpg`], { input: Buffer.from(rvb.buffer), maxBuffer: 1 << 30 });
     jpeg("entier", "scale=2000:1500");
     jpeg("nord-ouest", "crop=1600:1200:300:100");
     jpeg("centre", "crop=1600:1200:1100:700");
@@ -428,7 +483,37 @@ function dessiner() {
     jpeg("sud-ouest", "crop=1600:1200:0:1800");
     jpeg("nord-est", "crop=1600:1200:2400:0");
   }
-  verifierReperes(registre.regions, binaire, grille, creux);
+}
+
+// ================================================================ Textes gravés (sans dessiner : pour les essais)
+// Régions telles que la carte les étiquette (registre du module, repères corrigés).
+function regionsDeLaCarte() {
+  const registre = JSON.parse(readFileSync(REGISTRE, "utf8"));
+  return registre.regions.map(r => ({ cle: r.cle, nom: r.nom, zone: r.zone, repere: REPERES_CORRIGES[r.cle] ?? r.repere }));
+}
+
+// Textes que la carte d'une langue grave (mêmes fonctions que le dessin, sommets à leurs coordonnées). Rend { textes, manquants }.
+export function textesDeCarte(langue, L = langueDeCarte(langue)) {
+  const textes = textesGraves(habillage({ regions: regionsDeLaCarte(), sommets: placerSommets(null), L }));
+  return { textes, manquants: L.manquants };
+}
+
+// Textes français connus de la carte : ceux du cartouche, de la légende, des points cardinaux… (clés de contenu/en/carte.json
+// dont l'anglais diffère) et les lignes françaises des étiquettes de régions qui ont une version anglaise différente.
+export function francaisConnusDeCarte() {
+  const fr = textesDeCarte("fr").textes, en = new Set(textesDeCarte("en").textes);
+  const dico = JSON.parse(readFileSync(LIBELLES_EN, "utf8"));
+  const connus = new Set(Object.entries(dico.libelles ?? {}).filter(([f, e]) => f !== e).map(([f]) => f));
+  for (const t of fr) if (!en.has(t)) connus.add(t);
+  return [...connus];
+}
+
+// Écarts des textes gravés d'une carte : textes sans traduction (anglais), textes français connus restés (anglais).
+export function verifierTextesDeCarte(langue, textes, manquants = []) {
+  if (langue !== "en") return [];
+  const francais = new Set(francaisConnusDeCarte());
+  return [...manquants.map(m => `« ${m} » sans traduction dans contenu/en/carte.json`),
+    ...[...new Set(textes)].filter(t => francais.has(t)).map(t => `« ${t} » gravé en français`)];
 }
 
 // Les tuiles ont des pics isolés et un trou (altitude 0) sur les coulées récentes du Grand Brûlé : on écrase les pics par la
@@ -501,7 +586,7 @@ function tracerRivieres(alt, terreG) {
   return lignes;
 }
 
-function surcouche({ traitCote, voies, rivieres, regions, grille, dMer }) {
+function surcouche({ traitCote, voies, rivieres, regions, grille, dMer, L = langueDeCarte() }) {
   const p = [];
   p.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" font-family="${POLICE}">`);
   p.push(`<defs><filter id="flou" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter></defs>`);
@@ -543,21 +628,36 @@ function surcouche({ traitCote, voies, rivieres, regions, grille, dMer }) {
     p.push(`<path d="${d}" fill="none" stroke="${coeur}" stroke-width="${lk}" stroke-linecap="round" stroke-linejoin="round"/>`);
   }
 
+  p.push(habillage({ regions, sommets: placerSommets(grille), L }));
+  p.push(`</svg>`);
+  return p.join("\n");
+}
+
+// Sommets placés sur le point le plus haut du relief à moins de `cherche` px (sans relief : à leurs coordonnées).
+function placerSommets(grille) {
+  return SOMMETS.map(s => {
+    const bx = versX(s.lon), by = versY(s.lat);
+    let be = -1e9, x = bx, y = by;
+    if (grille) for (let dy = -s.cherche; dy <= s.cherche; dy += 4) for (let dx = -s.cherche; dx <= s.cherche; dx += 4) {
+      const e = echantillon(grille, GW, GH, (bx + dx) / MAILLE - 0.5, (by + dy) / MAILLE - 0.5);
+      if (e > be) { be = e; x = bx + dx; y = by + dy; }
+    }
+    return { ...s, _x: x, _y: y, _alt: s.alt };
+  });
+}
+
+// Tout ce qui porte du texte, par-dessus routes et rivières : sommets, lieux, régions, cadre, cartouche, rose des vents,
+// légende, échelle, océan, crédits ; textes passés par la langue L (langueDeCarte).
+function habillage({ regions, sommets, L }) {
+  const p = [];
   // Sommets.
   const halo = (couleur, larg) => `stroke="${couleur}" stroke-width="${larg}" stroke-linejoin="round" paint-order="stroke"`;
-  for (const s of SOMMETS) {
-    let bx = versX(s.lon), by = versY(s.lat), be = -1e9;
-    s._x = bx; s._y = by;
-    for (let dy = -s.cherche; dy <= s.cherche; dy += 4) for (let dx = -s.cherche; dx <= s.cherche; dx += 4) {
-      const e = echantillon(grille, GW, GH, (bx + dx) / MAILLE - 0.5, (by + dy) / MAILLE - 0.5);
-      if (e > be) { be = e; s._x = bx + dx; s._y = by + dy; }
-    }
-    s._alt = s.alt;
+  for (const s of sommets) {
     const t = s.petit ? 11 : 15;
     p.push(`<path d="M${s._x} ${s._y - t}L${s._x + t * 0.9} ${s._y + t * 0.6}L${s._x - t * 0.9} ${s._y + t * 0.6}Z" fill="#2a1d12" stroke="#f3e6c8" stroke-width="2.5"/>`);
     const tx = s._x + s.dx, ty = s._y + s.dy;
     p.push(`<text x="${tx}" y="${ty}" text-anchor="middle" font-size="${s.petit ? 24 : 30}" font-style="italic" fill="#fff3d6" ${halo("#1c140c", 5)} stroke-opacity="0.6">${echapper(s.nom)}</text>`);
-    p.push(`<text x="${tx}" y="${ty + (s.petit ? 24 : 30)}" text-anchor="middle" font-size="${s.petit ? 20 : 23}" fill="#f0e2c0" ${halo("#1c140c", 4)} stroke-opacity="0.55">${s._alt.toLocaleString("fr-FR").replace(/ /g, " ")} m</text>`);
+    p.push(`<text x="${tx}" y="${ty + (s.petit ? 24 : 30)}" text-anchor="middle" font-size="${s.petit ? 20 : 23}" fill="#f0e2c0" ${halo("#1c140c", 4)} stroke-opacity="0.55">${L.nombre(s._alt)} m</text>`);
   }
 
   // Lieux du paysage.
@@ -570,11 +670,11 @@ function surcouche({ traitCote, voies, rivieres, regions, grille, dMer }) {
   // Noms des régions : capitales espacées, discrètes.
   for (const r of regions) {
     const e = ETIQUETTES[r.cle] ?? { dx: 0, dy: -80 };
-    const lignes = e.lignes ?? [r.nom];
+    const lignes = L.lignes(r, e.lignes ?? [r.nom]);
     const x = r.repere.x + e.dx, y0 = r.repere.y + e.dy - (lignes.length - 1) * 40;
     lignes.forEach((l, i) => {
       const taille = i === 0 ? 34 : 25, y = y0 + i * 38 + (i ? 4 : 0);
-      p.push(`<text x="${x}" y="${y}" text-anchor="middle" font-size="${taille}" letter-spacing="${i === 0 ? 9 : 6}" fill="#fbf3df" fill-opacity="0.9" ${halo("#17120c", 6)} stroke-opacity="0.55">${echapper(l.toLocaleUpperCase("fr-FR"))}</text>`);
+      p.push(`<text x="${x}" y="${y}" text-anchor="middle" font-size="${taille}" letter-spacing="${i === 0 ? 9 : 6}" fill="#fbf3df" fill-opacity="0.9" ${halo("#17120c", 6)} stroke-opacity="0.55">${echapper(L.capitales(l))}</text>`);
     });
   }
 
@@ -586,27 +686,26 @@ function surcouche({ traitCote, voies, rivieres, regions, grille, dMer }) {
   p.push(`<g transform="translate(80 80)">`);
   p.push(`<rect x="0" y="0" width="840" height="250" rx="6" fill="#efe3c4" fill-opacity="0.93" stroke="#2a2016" stroke-width="4"/>`);
   p.push(`<rect x="12" y="12" width="816" height="226" rx="3" fill="none" stroke="#2a2016" stroke-width="1.5"/>`);
-  p.push(`<text x="420" y="108" text-anchor="middle" font-size="76" letter-spacing="4" fill="#2a1d12">La Réunion — Fénoir</text>`);
+  p.push(`<text x="420" y="108" text-anchor="middle" font-size="76" letter-spacing="4" fill="#2a1d12">${echapper(L.t("La Réunion — Fénoir"))}</text>`);
   p.push(`<path d="M130 136H710" stroke="#7a2e1c" stroke-width="2.5"/><path d="M400 136l20 -9l20 9l-20 9z" fill="#7a2e1c"/>`);
-  p.push(`<text x="420" y="182" text-anchor="middle" font-size="30" font-style="italic" fill="#3b2c1c">Carte des routes, des cirques et des Hauts</text>`);
-  p.push(`<text x="420" y="220" text-anchor="middle" font-size="22" letter-spacing="4" fill="#5a4630">ÎLE DE LA RÉUNION · OCÉAN INDIEN</text>`);
+  p.push(`<text x="420" y="182" text-anchor="middle" font-size="30" font-style="italic" fill="#3b2c1c">${echapper(L.t("Carte des routes, des cirques et des Hauts"))}</text>`);
+  p.push(`<text x="420" y="220" text-anchor="middle" font-size="22" letter-spacing="4" fill="#5a4630">${echapper(L.t("ÎLE DE LA RÉUNION · OCÉAN INDIEN"))}</text>`);
   p.push(`</g>`);
 
   // Rose des vents (en haut à droite).
-  p.push(roseDesVents(3600, 520, 250));
+  p.push(roseDesVents(3600, 520, 250, L));
 
   // Légende et échelle (en bas à gauche).
-  p.push(legende(80, 2330));
-  p.push(echelle(110, 2880));
+  p.push(legende(80, 2330, L));
+  p.push(echelle(110, 2880, L));
 
   // Océan Indien et crédits.
-  p.push(`<text x="2450" y="2925" text-anchor="middle" font-size="40" font-style="italic" letter-spacing="22" fill="#9fbfd0" fill-opacity="0.75">OCÉAN INDIEN</text>`);
-  p.push(`<text x="3940" y="2952" text-anchor="end" font-size="17" fill="#c9d6dc" fill-opacity="0.7">Contour : IGN Admin Express (Licence ouverte) · Relief : Terrain Tiles, AWS Open Data (SRTM, ETOPO1) · Routes et sentiers : © les contributeurs d'OpenStreetMap (ODbL)</text>`);
-  p.push(`</svg>`);
+  p.push(`<text x="2450" y="2925" text-anchor="middle" font-size="40" font-style="italic" letter-spacing="22" fill="#9fbfd0" fill-opacity="0.75">${echapper(L.t("OCÉAN INDIEN"))}</text>`);
+  p.push(`<text x="3940" y="2952" text-anchor="end" font-size="17" fill="#c9d6dc" fill-opacity="0.7">${echapper(L.t("Contour : IGN Admin Express (Licence ouverte) · Relief : Terrain Tiles, AWS Open Data (SRTM, ETOPO1) · Routes et sentiers : © les contributeurs d'OpenStreetMap (ODbL)"))}</text>`);
   return p.join("\n");
 }
 
-function roseDesVents(cx, cy, r) {
+function roseDesVents(cx, cy, r, L) {
   const p = [`<g transform="translate(${cx} ${cy})">`];
   p.push(`<circle r="${r}" fill="#0b1a26" fill-opacity="0.35" stroke="#e9dcb8" stroke-opacity="0.8" stroke-width="2.5"/>`);
   p.push(`<circle r="${r - 14}" fill="none" stroke="#e9dcb8" stroke-opacity="0.5" stroke-width="1.2"/>`);
@@ -623,16 +722,16 @@ function roseDesVents(cx, cy, r) {
   for (const a of [0, 90, 180, 270]) p.push(branche(a, r * 0.86, r * 0.13, a === 0 ? "#f3e6c4" : "#e6d6ae", a === 0 ? "#8a2f1c" : "#4a3a26"));
   p.push(`<circle r="${r * 0.06}" fill="#efe3c4" stroke="#2a2016" stroke-width="2"/>`);
   const lettre = (txt, x, y, t) => `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="central" font-size="${t}" fill="#f3e6c4" stroke="#0b1a26" stroke-width="5" paint-order="stroke" stroke-opacity="0.7">${txt}</text>`;
-  p.push(lettre("N", 0, -r - 34, 52), lettre("S", 0, r + 30, 38), lettre("E", r + 30, 0, 38), lettre("O", -r - 32, 0, 38));
+  p.push(lettre(L.t("N"), 0, -r - 34, 52), lettre(L.t("S"), 0, r + 30, 38), lettre(L.t("E"), r + 30, 0, 38), lettre(L.t("O"), -r - 32, 0, 38));
   p.push(`</g>`);
   return p.join("");
 }
 
-function legende(x, y) {
+function legende(x, y, L) {
   const p = [`<g transform="translate(${x} ${y})">`];
   p.push(`<rect width="560" height="420" rx="6" fill="#efe3c4" fill-opacity="0.9" stroke="#2a2016" stroke-width="3"/>`);
-  p.push(`<text x="280" y="50" text-anchor="middle" font-size="30" letter-spacing="8" fill="#2a1d12">LÉGENDE</text>`);
-  const ligne = (i, dessin, txt) => { const yy = 100 + i * 52; p.push(`<g transform="translate(40 ${yy})">${dessin}</g><text x="170" y="${yy + 9}" font-size="25" fill="#2a1d12">${txt}</text>`); };
+  p.push(`<text x="280" y="50" text-anchor="middle" font-size="30" letter-spacing="8" fill="#2a1d12">${echapper(L.t("LÉGENDE"))}</text>`);
+  const ligne = (i, dessin, txt) => { const yy = 100 + i * 52; p.push(`<g transform="translate(40 ${yy})">${dessin}</g><text x="170" y="${yy + 9}" font-size="25" fill="#2a1d12">${echapper(L.t(txt))}</text>`); };
   ligne(0, `<path d="M0 0H100" stroke="#21170e" stroke-width="11" stroke-linecap="round"/><path d="M0 0H100" stroke="#f5d58f" stroke-width="6" stroke-linecap="round"/>`, "Route nationale");
   ligne(1, `<path d="M0 0H100" stroke="#241b12" stroke-width="7.5" stroke-linecap="round"/><path d="M0 0H100" stroke="#efe3c6" stroke-width="4" stroke-linecap="round"/>`, "Route départementale");
   ligne(2, `<path d="M0 0H100" stroke="#241b12" stroke-width="6" stroke-linecap="round"/><path d="M0 0H100" stroke="#d9c49a" stroke-width="3" stroke-linecap="round"/>`, "Route forestière");
@@ -643,13 +742,13 @@ function legende(x, y) {
   return p.join("");
 }
 
-function echelle(x, y) {
+function echelle(x, y, L) {
   const km = 20, seg = 5, p = [`<g transform="translate(${x} ${y})">`];
   p.push(`<rect x="-30" y="-58" width="${km * PX_KM + 120}" height="104" rx="6" fill="#efe3c4" fill-opacity="0.9" stroke="#2a2016" stroke-width="3"/>`);
   for (let i = 0; i < km / seg; i++) p.push(`<rect x="${i * seg * PX_KM}" y="0" width="${seg * PX_KM}" height="14" fill="${i % 2 ? "#efe3c4" : "#2a1d12"}" stroke="#2a1d12" stroke-width="2"/>`);
   for (let k = 0; k <= km; k += seg) p.push(`<text x="${k * PX_KM}" y="-14" text-anchor="middle" font-size="24" fill="#2a1d12">${k}</text>`);
-  p.push(`<text x="${km * PX_KM + 34}" y="12" text-anchor="middle" font-size="24" fill="#2a1d12">km</text>`);
-  p.push(`<text x="${km * PX_KM / 2}" y="40" text-anchor="middle" font-size="18" font-style="italic" fill="#4a3a26">1 km ≈ ${PX_KM} px</text>`);
+  p.push(`<text x="${km * PX_KM + 34}" y="12" text-anchor="middle" font-size="24" fill="#2a1d12">${echapper(L.t("km"))}</text>`);
+  p.push(`<text x="${km * PX_KM / 2}" y="40" text-anchor="middle" font-size="18" font-style="italic" fill="#4a3a26">${echapper(L.t(`1 km ≈ ${PX_KM} px`))}</text>`);
   p.push(`</g>`);
   return p.join("");
 }
@@ -670,7 +769,12 @@ function verifierReperes(regions, binaire, grille, creux) {
   }
 }
 
-// ================================================================
-if (args.includes("--telecharger")) await telecharger();
-else dessiner();
-process.exit(0);
+// ================================================================ Lancé directement (importé par les essais : rien ne se dessine)
+const lanceDirectement = () => {
+  try { return realpathSync(fileURLToPath(import.meta.url)) === realpathSync(resolve(process.argv[1] ?? "")); } catch { return false; }
+};
+if (lanceDirectement()) {
+  if (args.includes("--telecharger")) await telecharger();
+  else dessiner();
+  process.exit(0);
+}

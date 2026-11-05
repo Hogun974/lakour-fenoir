@@ -83,8 +83,8 @@ https://github.com/Hogun974/lakour-fenoir/releases/latest/download/lakour-fenoir
 https://github.com/Hogun974/lakour-mj-ia/releases/latest/download/module.json
 ```
 
-À la fin, vous devez voir *Fénoir — survie à La Réunion* dans les systèmes, *La Kour — Fénoir* et *La Kour – MJ IA* dans les
-modules.
+À la fin, vous devez voir *Fénoir — survie à La Réunion* dans les systèmes, *La Kour — Fénoir* (ou *La Kour — Fénoir
+(English)* pour le module anglais) et *La Kour – MJ IA* dans les modules.
 
 ![Les trois paquets installés](docs/captures/tuto-paquets-installes.png)
 
@@ -99,20 +99,22 @@ carte de La Réunion en place, MJ IA réglé sur la personnalité **La Chronique
 dialogues et les relations, adaptée à la survie), en mode **validation** et avec un **budget de 10 $ par séance**. Il ne
 contient aucune partie, aucun joueur, aucune clé.
 
-Onglet **Mondes de jeu › Installer un monde**, champ *URL du manifeste* :
+> **Foundry 14 n'installe plus de monde par son URL de manifeste** : l'onglet **Mondes de jeu** ne propose que **Créer un
+> monde**. Le monde vierge se distribue donc en archive à décompresser.
 
-```
-https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world.json
-```
+1. Le système et les modules doivent être installés (section 2) : le monde les exige et ne les apporte pas.
+2. **Téléchargez** `la-kour-fenoir.zip` dans la dernière version publiée : <https://github.com/Hogun974/lakour-fenoir/releases/latest> (rubrique
+   *Assets*). Pour le **monde anglais** (même monde, textes traduits, module `lakour-fenoir-en` actif) :
+   `la-kour-fenoir-en.zip`.
+3. **Trouvez le dossier de données de Foundry** : écran de configuration › onglet **Configuration** › champ **Chemin des
+   données** (*User Data Path*). Sur un hébergeur, passez par son gestionnaire de fichiers.
+4. **Décompressez** l'archive dans un nouveau dossier `Data/worlds/la-kour-fenoir/` (ou `Data/worlds/la-kour-fenoir-en/`
+   pour l'anglais ; le nom du dossier est l'identifiant du monde) : `world.json` doit se trouver directement dedans, pas
+   dans un sous-dossier.
+5. **Redémarrez Foundry** (le serveur ou l'application) : il ne voit un nouveau dossier de monde qu'au démarrage. Le monde
+   *La Kour — Fénoir* apparaît alors dans **Mondes de jeu**.
 
-Pour le **monde anglais** (même monde, textes traduits, module `lakour-fenoir-en` actif), si la version publiée le contient :
-
-```
-https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world-en.json
-```
-
-Foundry propose d'installer le système et les modules s'ils manquent. Lancez le monde ; il s'ouvre sur l'écran de connexion
-avec **un seul compte, Gamemaster, sans mot de passe**.
+Lancez le monde ; il s'ouvre sur l'écran de connexion avec **un seul compte, Gamemaster, sans mot de passe**.
 
 ![L'écran d'accueil du monde vierge](docs/captures/accueil.png)
 

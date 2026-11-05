@@ -166,7 +166,8 @@ test("manifeste anglais : identifiant, conflit avec le module français, étique
   const traductions = JSON.parse(readFileSync(new URL(`../modules/${M}/contenu/en/module.json`, import.meta.url), "utf8"));
   const en = manifesteAnglais(manifeste, traductions);
   assert.equal(en.id, MODULE_EN);
-  assert.equal(en.title, "La Kour — Fénoir");
+  assert.equal(en.title, "La Kour — Fénoir (English)");
+  assert.notEqual(en.title, manifeste.title, "titre anglais distinct du français dans la liste des modules de Foundry");
   assert.equal(en.version, manifeste.version);
   assert.ok(en.relationships.conflicts.some(c => c.id === M && c.type === "module"));
   assert.deepEqual(en.relationships.systems, manifeste.relationships.systems);

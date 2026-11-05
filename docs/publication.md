@@ -79,7 +79,12 @@ des manifestes restent la seule source : ne pas les modifier à la main dans la 
 - [ ] **Essai d'installation à blanc** dans un Foundry v14 vide (pas le serveur de jeu) : installer le système par son
       manifeste, les deux modules, créer un monde, activer les modules, installer le contenu, créer deux survivants au
       générateur, démarrer la partie, fouiller, s'installer, avancer de dix jours, subir un assaut ; puis essayer le monde
-      vierge par `world.json`, et le module anglais par `lakour-fenoir-en.json` (en désactivant le français).
+      vierge (décompresser `la-kour-fenoir.zip` dans `Data/worlds/la-kour-fenoir/`, redémarrer Foundry), et le module
+      anglais par `lakour-fenoir-en.json` (en désactivant le français ; il s'affiche « La Kour — Fénoir (English) »).
+- [ ] **Installation de monde par manifeste absente en Foundry 14** : l'onglet Mondes de jeu n'a plus que « Créer un
+      monde » (constaté en 14.370), et un dossier déposé dans `Data/worlds/` n'est vu qu'après un redémarrage. Distribuer
+      le zip du monde (`la-kour-fenoir.zip`, `la-kour-fenoir-en.zip`) ; `world.json` et `world-en.json` restent publiés,
+      mais ne pas les donner comme adresse à coller.
 - [ ] Vérifier la **mise à jour** : avec une version installée, publier une `v0.1.1` de test (ou attendre la prochaine vraie)
       et voir Foundry la proposer.
 
@@ -96,15 +101,17 @@ client, aucune clé, aucun coffre. L'outil `empaqueter-monde` en est responsable
 
 ## 4. Adresses à donner aux joueurs
 
-À copier dans Foundry (**Installer un système**, **Installer un module**, **Installer un monde**) :
+À copier dans Foundry (**Installer un système**, **Installer un module**) ; le monde vierge, lui, se télécharge en archive
+(Foundry 14 n'a plus d'installation de monde par manifeste) :
 
 | Quoi | Adresse |
 |---|---|
 | Système *Fénoir — survie à La Réunion* | `https://github.com/Hogun974/lakour-fenoir/releases/latest/download/system.json` |
 | Module de contenu *La Kour — Fénoir* | `https://github.com/Hogun974/lakour-fenoir/releases/latest/download/module.json` |
-| Module de contenu anglais *lakour-fenoir-en* (un seul des deux actif) | `https://github.com/Hogun974/lakour-fenoir/releases/latest/download/lakour-fenoir-en.json` |
+| Module de contenu anglais *La Kour — Fénoir (English)*, `lakour-fenoir-en` (un seul des deux actif) | `https://github.com/Hogun974/lakour-fenoir/releases/latest/download/lakour-fenoir-en.json` |
 | Module *La Kour – MJ IA* (requis pour le coffre, clé d'IA facultative) | `https://github.com/Hogun974/lakour-mj-ia/releases/latest/download/module.json` |
-| Monde vierge tout prêt | `https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world.json` |
+| Monde vierge tout prêt (à décompresser dans `Data/worlds/la-kour-fenoir/`, puis redémarrer Foundry) | `https://github.com/Hogun974/lakour-fenoir/releases/latest/download/la-kour-fenoir.zip` |
+| Monde vierge anglais (dans `Data/worlds/la-kour-fenoir-en/`) | `https://github.com/Hogun974/lakour-fenoir/releases/latest/download/la-kour-fenoir-en.zip` |
 | Le dépôt, le README, les issues | `https://github.com/Hogun974/lakour-fenoir` |
 
 Pour un joueur qui rejoint une table déjà installée : seulement l'adresse d'invitation du serveur de jeu et son compte ; rien à
