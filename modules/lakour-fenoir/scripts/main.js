@@ -4,14 +4,17 @@
 // 2. les fêtes de Fénoir déclinées auprès du socle des fêtes du moteur (lakour-mj-ia, docs/fetes.md), dans chaque navigateur ;
 // 3. les horloges de réputation des factions (rep-<faction>) assurées auprès du moteur, chez le MJ actif ;
 // 4. l'installation (MJ actif) : guides des joueurs, journaux du MJ (cachés) et carte de La Réunion importés dans le monde, avec
-//    les identifiants du compendium (les épingles de la carte visent les pages du journal « Les régions de l'île »).
+//    les identifiants du compendium (les épingles de la carte visent les pages du journal « Les régions de l'île ») ; dans un
+//    monde déjà installé, les journaux présents reçoivent les pages nouvelles et les pages intactes sont remises à jour
+//    (scripts/mise-a-jour.js : une page retouchée par le MJ reste telle quelle).
 import { FETES_FENOIR, imageDeFete, fetesDuJour } from "./fetes.js";
 import { ID } from "./identite.js";
+import { avecEmpreintes, planMiseAJour } from "./mise-a-jour.js";
 
 // ID : « lakour-fenoir » ou « lakour-fenoir-en » (version anglaise engendrée, mêmes scripts) ; tout ce qui porte l'identifiant
 // (réglages, drapeaux, compendiums, chemin du registre) passe par lui.
 const SYSTEME = "lakour-survie";
-const VERSION_CONTENU = "0.2.0";
+const VERSION_CONTENU = "0.2.2"; // = module.json (essais/mise-a-jour-fenoir.test.mjs)
 const FICHIER_DONNEES = `modules/${ID}/assets/donnees.json`;
 
 // ---------- 1. Le registre de l'île
@@ -96,6 +99,18 @@ export function installer() {
   return installationEnCours;
 }
 
+// Un journal déjà dans le monde : pages nouvelles ajoutées, pages intactes remises à jour, pages retouchées gardées.
+async function mettreAJourJournal(journal, modele) {
+  const { creer, maj, gardees } = planMiseAJour(ID, journal.pages.contents.map(p => p.toObject()), modele.pages.contents.map(p => p.toObject()));
+  if (creer.length) await journal.createEmbeddedDocuments("JournalEntryPage", creer, { keepId: true });
+  if (maj.length) await journal.updateEmbeddedDocuments("JournalEntryPage", maj);
+  if (journal.getFlag(ID, "version") !== VERSION_CONTENU) await journal.setFlag(ID, "version", VERSION_CONTENU);
+  if (!creer.length && !maj.length && !gardees.length) return null;
+  let texte = game.i18n.format("LAKOURFENOIR.MisAJour", { journal: journal.name, ajouts: creer.length, maj: maj.length });
+  if (gardees.length) texte += ` ${game.i18n.format("LAKOURFENOIR.Gardees", { liste: gardees.join(", ") })}`;
+  return texte;
+}
+
 async function installerContenu() {
   if (game.system.id !== SYSTEME) return ui.notifications.warn(game.i18n.localize("LAKOURFENOIR.MauvaisSysteme"));
   const rapport = [];
@@ -104,9 +119,15 @@ async function installerContenu() {
   // qu'au compendium quand il est libre : les épingles de la carte le visent.
   for (const pack of ["guides", "mj"]) {
     for (const j of await game.packs.get(`${ID}.${pack}`)?.getDocuments() ?? []) {
-      if (game.journal.find(x => x.getFlag(ID, "cle") === j.getFlag(ID, "cle"))) continue;
+      const present = game.journal.find(x => x.getFlag(ID, "cle") === j.getFlag(ID, "cle"));
+      if (present) {
+        const r = await mettreAJourJournal(present, j);
+        if (r) rapport.push(r);
+        continue;
+      }
       const libre = !game.journal.get(j.id);
       const donnees = foundry.utils.mergeObject(game.journal.fromCompendium(j, { keepId: libre, clearOwnership: false }), { [`flags.${ID}.version`]: VERSION_CONTENU });
+      donnees.pages = avecEmpreintes(ID, donnees.pages ?? []);
       await JournalEntry.implementation.create({ ...donnees, folder: (await dossier("JournalEntry", nomDossier)).id }, { keepId: libre });
       rapport.push(j.name);
     }
@@ -131,7 +152,7 @@ Hooks.once("ready", async () => {
   if (game.settings.get(ID, "installe") === VERSION_CONTENU) return;
   const ok = await foundry.applications.api.DialogV2.confirm({
     window: { title: "LAKOURFENOIR.Titre" },
-    content: `<p>${game.i18n.localize("LAKOURFENOIR.Proposer")}</p>`,
+    content: `<p>${game.settings.get(ID, "installe") ? game.i18n.format("LAKOURFENOIR.ProposerMiseAJour", { version: VERSION_CONTENU }) : game.i18n.localize("LAKOURFENOIR.Proposer")}</p>`,
     rejectClose: false
   });
   if (ok) await installer();

@@ -2,8 +2,11 @@
   "LAKOURFENOIR": {
     "Titre": "Fénoir",
     "Proposer": "Install the Fénoir content in this world? Player guides, GM journals (hidden) and the map of Réunion will be imported; faction reputation clocks will be created if the AI GM is active. Everything else stays in the compendiums.",
+    "ProposerMiseAJour": "Update the Fénoir content in this world (version {version})? New pages of the guides and GM journals will be added and pages nobody edited will be refreshed; pages edited by hand will stay as they are.",
     "Installe": "Fénoir installed: {liste}.",
     "RienDeNeuf": "everything was already in place",
+    "MisAJour": "{journal}: {ajouts} page(s) added, {maj} updated.",
+    "Gardees": "Pages edited by hand, left as they are: {liste}.",
     "Ouvrir": "Install",
     "Aide": "Imports the guides, GM journals and the map of Réunion into this world.",
     "MauvaisSysteme": "This world does not use the La Kour Survie system: nothing to install.",

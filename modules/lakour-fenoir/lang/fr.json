@@ -2,8 +2,11 @@
   "LAKOURFENOIR": {
     "Titre": "Fénoir",
     "Proposer": "Installer le contenu de Fénoir dans ce monde ? Les guides des joueurs, les journaux du MJ (cachés) et la carte de La Réunion seront importés ; les horloges de réputation des factions seront créées si le MJ IA est actif. Installations, savoir-faire, équipement, passés, recettes, maladies, prétirés, bestiaire, tables et cartes de lieux restent dans les compendiums.",
+    "ProposerMiseAJour": "Mettre à jour le contenu de Fénoir dans ce monde (version {version}) ? Les pages nouvelles des guides et des journaux du MJ seront ajoutées et les pages que personne n'a retouchées remises à jour ; les pages modifiées à la main resteront telles quelles.",
     "Installe": "Fénoir installé : {liste}.",
     "RienDeNeuf": "tout était déjà en place",
+    "MisAJour": "{journal} : {ajouts} page(s) ajoutée(s), {maj} mise(s) à jour.",
+    "Gardees": "Pages retouchées à la main, laissées telles quelles : {liste}.",
     "Ouvrir": "Installer",
     "Aide": "Importe dans ce monde les guides, les journaux du MJ et la carte de La Réunion.",
     "MauvaisSysteme": "Ce monde n'utilise pas le système La Kour Survie : rien à installer.",

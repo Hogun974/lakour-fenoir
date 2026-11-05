@@ -5,6 +5,15 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Système 0.1.3 · Contenu 0.2.2 — 5 novembre 2026
+
+- **Mise à jour des mondes déjà installés** (`scripts/mise-a-jour.js`) : l'installateur ne sautait plus seulement les journaux
+  présents, il les complète. Les pages nouvelles du compendium sont ajoutées (« Les tisanes et les zerbaz », « Médicaments,
+  trousses et zerbaz »…), les pages que personne n'a retouchées reprennent le texte et le rang du compendium, les pages
+  modifiées à la main restent telles quelles et sont nommées au MJ. Chaque page importée porte désormais une empreinte de son
+  texte. Le numéro comparé par l'installateur était resté à 0.2.0 en contenu 0.2.1 (aucune mise à jour proposée) : un essai
+  le lie maintenant à `module.json`. Le système ne change pas, son numéro suit la publication.
+
 ## Système 0.1.2 · Contenu 0.2.1 — 5 novembre 2026
 
 - **Médicaments et zerbaz** (`docs/equilibre.md`) : une fouille trouve parfois une trousse de secours oubliée (+1 médicament,
