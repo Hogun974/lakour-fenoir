@@ -130,7 +130,7 @@
         "level": 1
       },
       "text": {
-        "content": "<ul><li><strong>Blessures</strong> (0 à 4) : indemne, égratigné, blessé (−1 dé), grièvement (−2 dés), <strong>mourant</strong> : un test de soins difficile dans le quart, sinon la mort.</li><li><strong>Fatigue</strong> (0 à 5) : −1 dé à 3 et 4, −2 à 5. Une nuit de repos à l'abri : −2 ; un quart de repos : −1.</li><li><strong>Moral</strong> (0 à 5) : à 1, −1 dé ; à 0, le personnage <strong>craque</strong> (refuse, fuit, s'effondre).</li><li><strong>Faim et soif</strong> : au-delà de 4 quarts sans boire, +1 fatigue par quart ; au-delà de 2 jours sans manger, +1 fatigue et −1 moral par jour.</li><li><strong>Infection</strong> : une <strong>morsure</strong> ou une griffure profonde d'un Livide demande un test de soins <strong>extrême</strong> dans le quart (laver, cauteriser, parfois amputer), <strong>difficile</strong> si le soignant y met un médicament ou si l'abri a une infirmerie. Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. <strong>Aucun remède connu.</strong></li><li><strong>Maladies et blessures qui durent</strong> : dengue, chikungunya, leptospirose, gastro, plaies infectées, fractures… Une eau traitée, des moustiquaires et une infirmerie en réduisent le risque.</li></ul>",
+        "content": "<ul><li><strong>Blessures</strong> (0 à 4) : indemne, égratigné, blessé (−1 dé), grièvement (−2 dés), <strong>mourant</strong> : un test de soins difficile dans le quart, sinon la mort.</li><li><strong>Fatigue</strong> (0 à 5) : −1 dé à 3 et 4, −2 à 5. Une nuit de repos à l'abri : −2 ; un quart de repos : −1.</li><li><strong>Moral</strong> (0 à 5) : à 1, −1 dé ; à 0, le personnage <strong>craque</strong> (refuse, fuit, s'effondre).</li><li><strong>Faim et soif</strong> : au-delà de 4 quarts sans boire, +1 fatigue par quart ; au-delà de 2 jours sans manger, +1 fatigue et −1 moral par jour.</li><li><strong>Infection</strong> : une <strong>morsure</strong> ou une griffure profonde d'un Livide demande un test de soins <strong>extrême</strong> dans le quart (laver, cauteriser, parfois amputer), <strong>difficile</strong> si le soignant y met un médicament (+1 dé), une décoction de zerbaz (une plante, +1 dé), s'il porte une trousse de secours ou si l'abri a une infirmerie. Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. <strong>Aucun remède connu.</strong></li><li><strong>Maladies et blessures qui durent</strong> : dengue, chikungunya, leptospirose, gastro, plaies infectées, fractures… Une eau traitée, des moustiquaires et une infirmerie en réduisent le risque.</li></ul>",
         "format": 1
       },
       "ownership": {
@@ -176,7 +176,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Les stocks de l'abri sont des nombres : <strong>eau</strong> (un jour d'eau pour une personne), <strong>nourriture</strong> (un jour de repas), <strong>carburant</strong> (10 litres), <strong>médicaments</strong>, <strong>munitions</strong>, <strong>matériaux</strong> (une brouette), <strong>pièces</strong> (une caisse), <strong>graines</strong>, <strong>énergie</strong> (kWh, plafonnée par les batteries).</p><p>Chaque jour, chaque personne boit <strong>1 eau</strong> (1,5 dans les Bas en saison chaude) et mange <strong>1 nourriture</strong>. Sans réserve étanche ni séchoir, <strong>5 %</strong> de la nourriture se gâte chaque jour : la chaleur humide pourrit tout.</p><p>Les <strong>installations</strong> produisent, protègent, cachent. Un groupe de quatre consomme 4 eau et 4 nourriture par jour ; à titre de repère, une citerne de pluie donne environ 1 eau par jour et par point de pluie de la région à son premier niveau, un potager environ 2 nourriture par jour après un mois, des panneaux environ 2 kWh par jour et par point de soleil. Un jour où eau, nourriture et énergie nettes sont positives sans aucune fouille est un <strong>jour autonome</strong> ; sept de suite, et l'abri est <strong>autonome</strong>.</p><p>Exemples de voies d'autonomie : <strong>La ferme des Hauts</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 2, Enclos à cabris 2, Basse-cour 1, Réserve étanche 1, Panneaux solaires 1, Batteries 1) ; <strong>L'îlet de Mafate</strong> (Captage de source 2, Compost 1, Potager 2, Enclos à cabris 1, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1, Batteries 1, Poste radio 1) ; <strong>La case de l'Ouest sec</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 2, Verger 2, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1) ; <strong>La vallée de la Langevin (avec le courant de la rivière)</strong> (Captage de source 1, Filtre à sable et charbon 1, Compost 1, Potager 2, Bassin à tilapias 2, Réserve étanche 1, Pico-hydro sur rivière 1, Infirmerie 2, Poste radio 2, Atelier 2) ; <strong>Le refuge sous la ferme (voie discrète)</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 3, Panneaux solaires 2, Batteries 1, Galerie souterraine 4, Camouflage 3).</p>",
+        "content": "<p>Les stocks de l'abri sont des nombres : <strong>eau</strong> (un jour d'eau pour une personne), <strong>nourriture</strong> (un jour de repas), <strong>carburant</strong> (10 litres), <strong>médicaments</strong>, <strong>munitions</strong>, <strong>matériaux</strong> (une brouette), <strong>pièces</strong> (une caisse), <strong>graines</strong>, <strong>plantes médicinales</strong> (une brassée de zerbaz : elles se cueillent, ne se pillent pas, et l'on n'en garde qu'une douzaine), <strong>énergie</strong> (kWh, plafonnée par les batteries).</p><p>Chaque jour, chaque personne boit <strong>1 eau</strong> (1,5 dans les Bas en saison chaude) et mange <strong>1 nourriture</strong>. Sans réserve étanche ni séchoir, <strong>5 %</strong> de la nourriture se gâte chaque jour : la chaleur humide pourrit tout.</p><p>Les <strong>installations</strong> produisent, protègent, cachent. Un groupe de quatre consomme 4 eau et 4 nourriture par jour ; à titre de repère, une citerne de pluie donne environ 1 eau par jour et par point de pluie de la région à son premier niveau, un potager environ 2 nourriture par jour après un mois, des panneaux environ 2 kWh par jour et par point de soleil. Un jour où eau, nourriture et énergie nettes sont positives sans aucune fouille est un <strong>jour autonome</strong> ; sept de suite, et l'abri est <strong>autonome</strong>.</p><p>Exemples de voies d'autonomie : <strong>La ferme des Hauts</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 2, Enclos à cabris 2, Basse-cour 1, Réserve étanche 1, Panneaux solaires 1, Batteries 1) ; <strong>L'îlet de Mafate</strong> (Captage de source 2, Compost 1, Potager 2, Enclos à cabris 1, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1, Batteries 1, Poste radio 1) ; <strong>La case de l'Ouest sec</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 2, Verger 2, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1) ; <strong>La vallée de la Langevin (avec le courant de la rivière)</strong> (Captage de source 1, Filtre à sable et charbon 1, Compost 1, Potager 2, Bassin à tilapias 2, Réserve étanche 1, Pico-hydro sur rivière 1, Infirmerie 2, Poste radio 2, Atelier 2) ; <strong>Le refuge sous la ferme (voie discrète)</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 3, Panneaux solaires 2, Batteries 1, Galerie souterraine 4, Camouflage 3).</p>",
         "format": 1
       },
       "ownership": {
@@ -189,11 +189,34 @@
       }
     },
     {
+      "_id": "tE5fFPX2DtUfMhFp",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.tE5fFPX2DtUfMhFp",
+      "name": "Les tisanes et les zerbaz",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>À La Réunion, on soigne depuis toujours avec les <strong>zerbaz</strong>, les plantes des tisaneurs : ayapana, citronnelle, faham, bois de quivi, fleur jaune, géranium, romarin, gingembre. Chaque cour a les siennes, chaque grand-mère ses recettes. Dans Fénoir, quand les pharmacies sont vides, elles comptent.</p><ul><li><strong>Cueillir.</strong> Une cueillette aux alentours rapporte aussi quelques <strong>plantes médicinales</strong> ; on peut aussi partir cueillir les zerbaz seulement (la fouille « plantes ») : une brassée par personne et par demi-journée (deux quarts), prise sur la cueillette des alentours. Le savoir-faire <strong>Zerbaz et tisanes</strong> double ce qu'on rapporte : on reconnaît ce qui soigne, et ce qui ne se touche pas.</li><li><strong>Préparer.</strong> À l'atelier, la recette <strong>Tisanes et emplâtres</strong> (deux brassées, un quart de travail, test de survie normal ; +1 dé avec le savoir-faire) donne un <strong>médicament</strong> : pour les fièvres légères, les maux de ventre, une plaie à laver, une maladie qui demande un médicament.</li><li><strong>Laver une morsure.</strong> Dans l'urgence, une <strong>décoction de zerbaz</strong> (une brassée, bouillie) aide le soignant : le test de soins de la morsure devient <strong>difficile</strong> au lieu d'extrême, avec un dé de plus ; avec un médicament en plus, encore un dé.</li></ul><p>Ce sont des <strong>remèdes de jeu</strong>. Les vertus des plantes sont celles que leur prête la tradition, pas un conseil médical. Et dans Fénoir, rien ne guérit du Gris : une tisane aide à laver une morsure à temps, elle ne sauve pas un infecté.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "zerbaz"
+        }
+      }
+    },
+    {
       "_id": "winoqao9FW0SD2KY",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.winoqao9FW0SD2KY",
       "name": "Bruit, visibilité, menaces",
       "type": "text",
-      "sort": 800,
+      "sort": 900,
       "title": {
         "show": true,
         "level": 1
@@ -216,7 +239,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.eDdGCYY0vBWGbiWN",
       "name": "Voyager et savoir",
       "type": "text",
-      "sort": 900,
+      "sort": 1000,
       "title": {
         "show": true,
         "level": 1
@@ -239,7 +262,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.At3F4CVMfot4Sg5v",
       "name": "Repartir ou s'enraciner",
       "type": "text",
-      "sort": 1000,
+      "sort": 1100,
       "title": {
         "show": true,
         "level": 1
@@ -262,7 +285,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.YAeUac3GaRE5gFYj",
       "name": "Créer son survivant",
       "type": "text",
-      "sort": 1100,
+      "sort": 1200,
       "title": {
         "show": true,
         "level": 1
@@ -285,7 +308,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.1negBmyxnDQWAKrk",
       "name": "Les enfances",
       "type": "text",
-      "sort": 1200,
+      "sort": 1300,
       "title": {
         "show": true,
         "level": 1
@@ -308,7 +331,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.AkeC2EJsUT6RjK3R",
       "name": "Les passés",
       "type": "text",
-      "sort": 1300,
+      "sort": 1400,
       "title": {
         "show": true,
         "level": 1
@@ -331,7 +354,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 1400,
+      "sort": 1500,
       "title": {
         "show": true,
         "level": 1

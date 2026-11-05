@@ -5,6 +5,18 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Système 0.1.2 · Contenu 0.2.1 — 5 novembre 2026
+
+- **Médicaments et zerbaz** (`docs/equilibre.md`) : une fouille trouve parfois une trousse de secours oubliée (+1 médicament,
+  hors des réserves de la région ; un hôpital rend trois fois plus de médicaments) ; nouvelle ressource **plantes médicinales**
+  (les zerbaz), cueillies aux alentours (fouille « plantes », ou en plus d'une cueillette), doublées par le nouveau savoir
+  **Zerbaz et tisanes** (trois enfances et l'apiculteur) ; la recette **Tisanes et emplâtres** en fait des médicaments (2 plantes,
+  sans savoir requis) ; morsure difficile aussi avec une décoction de zerbaz (1 plante) ou une trousse que porte le soignant,
+  médicament et décoction +1 dé chacun ; pages « Les tisanes et les zerbaz » (guide du joueur) et « Médicaments, trousses et
+  zerbaz » (guide du MJ), en français et en anglais ; le simulateur garde un médicament pour une morsure, cueille et prépare des
+  tisanes. Solo sédentaire : 11 → 7 fins par l'infection sur 40 (−20 % sur 240 parties) ; enraciné à 4 : 17 → 26 vivants à J365
+  sur les graines de référence (20 → 24 sur 240 parties).
+
 ## Système 0.1.1 · Contenu 0.2.0 — 5 novembre 2026
 
 - **Équilibrage du 2026-11-05** (`docs/equilibre.md`) : glanage de passage (une fouille ramasse aussi ce que la nature

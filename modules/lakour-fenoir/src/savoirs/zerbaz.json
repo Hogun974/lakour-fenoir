@@ -1,0 +1,29 @@
+{
+  "_id": "7aodlxqtW6d0f9ui",
+  "_key": "!items!7aodlxqtW6d0f9ui",
+  "name": "Zerbaz et tisanes",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "zerbaz",
+    "description": "<p>Reconnaître les plantes des tisaneurs au bord d'un sentier ou au fond d'une cour : ayapana, citronnelle, faham, bois de quivi, fleur jaune, géranium, romarin, gingembre. Savoir lesquelles se boivent en tisane, lesquelles se posent en emplâtre, et surtout lesquelles ne se touchent pas.</p>",
+    "apprentissage": "<p>Une grand-mère guérisseuse ou un tisaneur des Hauts, de Salazie, de l'Est ou du Sud sauvage ; un apiculteur qui connaît chaque fleur ; un vieux cahier de recettes de tisanes trouvé dans une case ; ou une saison à cueillir aux côtés de quelqu'un qui sait.</p>",
+    "effets": "<p>La cueillette rapporte deux fois plus de plantes médicinales. +1 dé aux tests pour préparer tisanes et emplâtres (recette « Tisanes et emplâtres »). Ce sont des remèdes de jeu : ils comptent comme un médicament, ils ne guérissent pas du Gris.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "zerbaz"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

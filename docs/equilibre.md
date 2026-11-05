@@ -1,5 +1,100 @@
 # Équilibre de Fénoir
 
+## Médicaments et zerbaz (appliqué le 2026-11-05, après la section suivante)
+
+Constat (section suivante, « Reste ouvert ») : l'infection tue d'abord les survivants seuls ; la morsure est « difficile » avec
+un médicament, mais l'abri d'un solo n'en a que 2 % des jours. Jordan a demandé **plus de médicaments trouvables** et la
+possibilité de **se soigner par les plantes**. Mesures avant et après, même code de mesure : `node essais/outils/parties-longues.mjs
+--graines 40` et `node essais/outils/simuler-parties.mjs --rapide` (les tableaux de remèdes sont nouveaux : pour l'« avant »,
+la même mesure a été rejouée sur le code d'avant).
+
+**Règles ajoutées** (logique `systems/lakour-survie/logique/`, contrat §1.3, §1.6, §2.3, §3.3, §9) :
+
+1. **Trousses de secours** (`actions.mjs`, `REGLES_ACTIONS.fouille.trousse`) : une fouille de la région (pillage) a 1,5 % de
+   chances par membre et par quart (× 2,5 en cherchant des médicaments, au plus 50 %) de tomber sur une trousse oubliée (boîte
+   à gants, armoire de salle de bains) : +1 médicament, qui ne sort pas des réserves de la région (la population les vide en
+   deux mois) ; une région sans médicament au jour zéro n'en cache pas. Fouiller un site de type « hopital » : médicaments × 3.
+   Essayé à 2,5 % : le nomade seul en trouvait 12 par an, les groupes sédentaires n'en profitaient pas.
+2. **Plantes médicinales, les « zerbaz »** : nouvelle ressource `plantes` (constantes, une brassée ; plafond de base 12 ; ne se
+   pille pas, comme l'énergie). Une cueillette (fouille des alentours, cible `cueillette`) rapporte en plus `arrondiHasard(0,2 ×
+   membres × quarts)` plantes sans entamer la nature ; la fouille « plantes » (cible `plantes`) en rapporte `ceil(0,5 × membres ×
+   quarts × prudence)`, prises sur la cueillette des alentours. Le savoir **Zerbaz et tisanes** (`zerbaz`, contenu ; donné par
+   trois enfances — Hauts de Salazie, tamoule de Saint-André, Sud sauvage — et le passé d'apiculteur) double les plantes cueillies.
+   Quatre sites ont un jardin de zerbaz (2 à 4 plantes en stock).
+3. **Tisanes** (recette `tisanes` du contenu, remaniée : avant, une graine, le savoir « premiers secours avancés » et une
+   infirmerie) : 2 plantes, 1 quart, test de survie normal (+1 dé avec le savoir des zerbaz) → 1 **médicament** (fièvres
+   légères, maux de ventre, plaie, maladie qui demande un médicament : tout ce que fait un médicament).
+4. **Morsure** (`survivant.mjs`, `difficulteMorsure`, `bonusMorsure`, `DECOCTION`) : difficile aussi avec une **décoction de
+   zerbaz** (1 plante de l'abri, consommée) ou une **trousse de secours / un sac d'intervention** que porte le soignant (non
+   consommé : son bonus d'outil compte, comme pour tout test) ; un médicament et une décoction donnent chacun +1 dé et se
+   cumulent (outil et infirmerie : au plus +2 ensemble). C'est le cumul qui donne une chance à un soignant sans métier : soins 0,
+   difficile, 2 dés : 11 % ; 3 dés : 26 %. Jamais plus facile que difficile, et rien ne guérit un infecté.
+5. **Simulateur** (`simuler-parties.mjs`, `REMEDES`), comme un groupe raisonnable : il garde son dernier médicament pour une
+   morsure (les soins du soir d'un simple blessé ne l'entament pas) ; sans médicament et avec moins de 3 plantes, ses cueilleurs
+   vont d'abord à la cueillette (si elle vaut au moins la moitié de la pêche ou du gibier, et jamais quand la nourriture manque) ;
+   le soir, sans médicament et avec 3 plantes (il en garde une pour une décoction), le meilleur en survie prépare une tisane. Une
+   réserve de 2 ou 3 médicaments (tisanes préparées plus tôt) faisait autant pour les solos et donnait 1,5 vivant de plus sur 40
+   aux groupes de 4 : pas gardée. Le simulateur compte maintenant morsures, morsures aidées et soignées, trousses, plantes,
+   tisanes et jours d'abri avec un médicament (tableau « Remèdes », dans les deux outils de mesure).
+
+**Parties d'un an** (40 graines par scénario, g0 à g39 ; avant → après) :
+
+| Scénario (365 jours) | Vivants à J365 | Fin médiane | Fins par l'infection | Morsures soignées / morsures | Jours d'abri avec un médicament |
+|---|---|---|---|---|---|
+| Sédentaire à 4 | 12 → 13 | J143 → J166 | 6 → 3 | — → 16/51 | — → 79 % |
+| Sédentaire à 2 | 8 → 12 | J160 → J221 | 13 → 7 | — → 13/28 | — → 73 % |
+| **Seul, enraciné** | 9 → 8 | J225 → J227 | **10 → 9** | — → 4/13 | — → 47 % |
+| **Seul, sédentaire** | 11 → 17 | J171 → J319 | **11 → 7** | — → 5/12 | 2 % → 59 % |
+| Seul, nomade | 9 → 17 | J177 → J254 | 20 → 15 | — → 6/21 | — → 85 % |
+| 2 humains + 2 compagnons | 23 → 23 | J365 → J365 | 6 → 8 | — → 25/52 | — → 85 % |
+| **4 humains (enraciné)** | **17 → 26** | J278 → J365 | 10 → 4 | — → 20/40 | — → 88 % |
+| 2 qui recrutent | 15 → 13 | J296 → J311 | 3 → 2 | — → 12/45 | — → 83 % |
+| 2 sans recruter | 13 → 10 | J260 → J251 | 12 → 7 | — → 6/20 | — → 73 % |
+| Nomade à 4 | 10 → 9 | J254 → J246 | 7 → 7 | — → 20/59 | — → 78 % |
+| Mixte à 4 | 21 → 21 | J365 → J365 | 4 → 5 | — → 27/62 | — → 85 % |
+
+Le code d'avant, rejoué avec les mêmes compteurs (simulateur, 80 parties d'un an par cas) : médicament 2 % des jours d'abri
+(solo sédentaire), 1 % (solo enraciné, enraciné à 4), 58 % (nomade seul) ; morsures soignées 2/37 (solo sédentaire), 0/24 (solo
+enraciné), 11/102 (enraciné à 4). Après : un médicament la moitié des jours chez un solo, 80 à 90 % chez un groupe ; un solo
+cueille 17 à 21 plantes et prépare une ou deux tisanes par an, un nomade trouve 7 à 8 trousses.
+
+**Le bruit des 40 graines.** Le hasard d'une partie change dès qu'une règle tire un dé de plus (une trousse, une plante) : à 40
+graines, un scénario bouge de ± 3 vivants sans qu'aucune règle ne change (le code d'avant donne 36/80 vivants à l'enraciné à 4
+sur les graines g0 à g79, 42/80 et 43/80 sur deux autres séries). Mesure de contrôle sur **240 graines** (séries g, h et i de
+80, `--serie`, ramenées sur 40) :
+
+| Scénario (240 parties d'un an, ramenées sur 40) | Vivants avant → après | Fins par l'infection avant → après |
+|---|---|---|
+| Seul, sédentaire | 8,5 → 12,5 | 15,2 → 12,2 (−20 %) |
+| Seul, enraciné | 7,5 → 8,7 | 14,3 → 12,5 (−13 %) |
+| 4 humains (enraciné) | 20,2 → 24,2 | — |
+
+- **Solos** : moins de morts par l'infection, surtout le sédentaire (il cueille et reste) ; l'enraciné seul gagne moins (il
+  déménage deux fois par an et repart d'alentours inconnus ; 13 morsures sur 40 parties, toutes aidées, 4 soignées). La limite reste le
+  soignant : la moitié des solos ont 0 en soins, et une morsure aidée ne se soigne alors qu'à 11 – 26 %. Le nomade seul passe de
+  9 à 17 vivants (trousses : un médicament 85 % des jours).
+- **Groupes de 4** : l'enraciné à 4 passe de 17 à 26 vivants à J365 sur les graines g0 – g39 (de 20 à 24 sur 240 graines : la
+  série g était basse avant) ; il soigne la moitié de ses morsures avec un soignant de métier et un médicament presque toujours
+  là. Au-dessus de ~25 sur g0 – g39, en dessous sur 240 graines : à surveiller. Le levier le plus doux, s'il faut le baisser :
+  la cueillette de plantes (0,2 → 0,1 par membre et par quart).
+
+**Simulateur rapide** (`--rapide`, 20 parties par cas, 200 jours ; avant → après) : enraciné à 4, 14/20 → 15/20 vivants à
+J200, 14/20 → 12/20 autonomes (J61 → J57), 4,57 → 4,27 assauts par mois après J30 (2,77 → 2,52 sérieux) ; nomade à 4, 17/20 →
+19/20 vivants (80 → 81 sur 100 parties : le hasard des 20) ; solo enraciné 10/20 → 11/20 ; Hauts 3,3 → 3,2 et Bas 2,2 → 2,1
+assauts par mois après J90. `essais/survie-equilibre.test.mjs` : borne du nomade « au plus 90 % de vivants à J200 » portée à
+95 % (19/20 dans ces 20 parties ; 81/100 sur 100 parties, l'enraciné 84/100 ; sur un an, le nomade à 4 finit toujours par
+manquer : 9/40 vivants à J365). Les autres bornes sont inchangées.
+
+**Essais** : `essais/survie-remedes.test.mjs` (cueillette des plantes et savoir, cueillette ordinaire, trousses dans les
+fouilles, hôpital, décoction et trousse pour une morsure, recette des tisanes du contenu, traductions, solo sédentaire du
+simulateur qui cueille et prépare).
+
+**Reste ouvert** :
+- les solos sans métier de soins : au-delà, les leviers sont hors des remèdes (forcer le test d'une morsure, que le simulateur
+  ne fait jamais et qu'un joueur ferait toujours : 2 dés difficile → 31 % ; des rencontres qu'un solo évite mieux) ;
+- l'enraciné à 4 à 26/40 sur les graines de référence (24/40 sur 240) : la cueillette de plantes est le premier levier ;
+- le nomade ne cueille pas (il n'a pas de cueilleur quand il est seul) : ses remèdes viennent des trousses.
+
 ## Appliqué le 2026-11-05
 
 Jordan a demandé de « faire au mieux » sur les propositions ci-dessous (§ « À décider », gardé pour l'historique) : cinq sont
@@ -82,7 +177,7 @@ ajustées (au plus 90 % de vivants à J200 au lieu de 85 % ; au moins 4 déména
 alentours frais au lieu de repartir affamé chaque jour) ; les autres bornes sont inchangées.
 
 **Reste ouvert** :
-- l'infection des solos (ci-dessus) : si Jordan veut la baisser, les leviers sont hors de la règle de morsure (plus de
+- l'infection des solos (ci-dessus ; **traité depuis**, section « Médicaments et zerbaz ») : si Jordan veut la baisser, les leviers sont hors de la règle de morsure (plus de
   médicaments dans les sites et les fouilles, une trousse de secours qui compterait comme un médicament, des rencontres
   qu'un solo évite mieux : le simulateur ne sait que se battre ou se cacher) ;
 - les enracinés et sédentaires de 4 perdent 1 à 3 vivants sur 40 avec les assauts remontés ; à surveiller avec les effets

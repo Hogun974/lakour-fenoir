@@ -8,9 +8,12 @@ export const CANAL = `system.${ID}`;
 export const COMPETENCES = ["endurance", "combat", "tir", "discretion", "vigilance", "bricolage", "survie", "soins", "parole", "conduite"];
 export const NIVEAU_MAX = 5;
 
-// §1.6 — les ressources (stocks entiers de l'abri). `energie` (kWh) ne se pille pas : elle se produit et se stocke.
-export const RESSOURCES = ["eau", "nourriture", "carburant", "medicaments", "munitions", "materiaux", "pieces", "graines", "energie"];
-export const RESSOURCES_PILLABLES = RESSOURCES.filter(r => r !== "energie");
+// §1.6 — les ressources (stocks entiers de l'abri). `energie` (kWh) ne se pille pas : elle se produit et se stocke. `plantes`
+// (plantes médicinales, les « zerbaz » : 1 = une brassée, de quoi une tisane) ne se pillent pas non plus : elles se cueillent
+// aux alentours (actions.mjs, REGLES_ACTIONS.plantes ; depuis le 2026-11-05).
+export const RESSOURCES = ["eau", "nourriture", "carburant", "medicaments", "munitions", "materiaux", "pieces", "graines", "plantes", "energie"];
+export const RESSOURCES_NON_PILLABLES = ["energie", "plantes"];
+export const RESSOURCES_PILLABLES = RESSOURCES.filter(r => !RESSOURCES_NON_PILLABLES.includes(r));
 // §2.1 — ressources naturelles (renouvelables) des alentours.
 export const NATURE = ["cueillette", "gibier", "peche", "bois"];
 

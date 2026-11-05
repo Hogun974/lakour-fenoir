@@ -72,7 +72,12 @@ bateau).
 - `infection` : `{ atteint, stade 0..6, depuis (quart) }`. Une **morsure** ou une griffure profonde d'un Livide : test
   `soins` **extrême** dans le quart (lavage, cautérisation, amputation selon l'endroit, décrite par le MJ), **difficile** si
   le soignant y met un médicament (consommé) ou si l'abri a une infirmerie en service (son bonus de soins compte) :
-  `difficulteMorsure({ medicament, infirmerie })` (depuis le 2026-11-05 ; avant, extrême toujours) ; échec : infecté. Le stade monte de 1 tous les 2 quarts ; à 6, la personne meurt et se relève Livide au quart suivant si rien n'est
+  `difficulteMorsure({ medicament, infirmerie })` (depuis le 2026-11-05 ; avant, extrême toujours) ; difficile aussi avec une
+  **décoction de zerbaz** (`DECOCTION` : 1 plante de l'abri, consommée) ou une **trousse de secours / un sac d'intervention**
+  que porte le soignant (équipement de catégorie `soin`, non consommé) : `difficulteMorsure({ medicament, infirmerie, trousse,
+  decoction })` ; médicament et décoction donnent chacun +1 dé et se cumulent, outil et infirmerie au plus +2 ensemble :
+  `bonusMorsure({ medicament, decoction, outil, infirmerie })` (2026-11-05, « Médicaments et zerbaz », docs/equilibre.md) ;
+  jamais plus facile que difficile ; échec : infecté. Le stade monte de 1 tous les 2 quarts ; à 6, la personne meurt et se relève Livide au quart suivant si rien n'est
   fait. Aucun remède connu (le monde pourra en révéler plus tard : c'est au MJ). Les compagnons et PNJ suivent la même règle.
 - `savoirs` : objets `savoir` possédés (§3.3). `marques` par compétence.
 
@@ -101,8 +106,9 @@ bateau).
 `eau` (1 = un jour d'eau pour une personne), `nourriture` (1 = un jour de repas), `carburant` (1 = 10 litres),
 `medicaments` (1 = de quoi traiter une blessure ou une fièvre), `munitions` (1 = un chargeur ou une poignée de
 cartouches), `materiaux` (bois, tôle, ciment, grillage : 1 = une brouette), `pieces` (électronique, mécanique,
-électrique : 1 = une caisse), `graines` (1 = de quoi semer une planche), `energie` (kWh stockés, plafonnés par les
-batteries).
+électrique : 1 = une caisse), `graines` (1 = de quoi semer une planche), `plantes` (plantes médicinales, les « zerbaz » :
+1 = une brassée ; elles se cueillent et ne se pillent pas, plafond de base 12 ; depuis le 2026-11-05), `energie` (kWh
+stockés, plafonnés par les batteries). `energie` et `plantes` n'ont pas de réserve dans les régions (`RESSOURCES_NON_PILLABLES`).
 - **Consommation quotidienne** : par personne 1 eau (1,5 dans les Bas en saison chaude) et 1 nourriture.
 - **Pertes** : sans réserve étanche ni séchoir/fumoir, 5 % de la nourriture (arrondi à l'entier supérieur s'il y en a) se
   gâte chaque jour (chaleur humide).
@@ -234,6 +240,14 @@ pure, déterministe pour une graine) :
   glané ne revient qu'à la régénération de la nature : une région où personne n'a glané depuis longtemps est pleine, celle
   qu'on vient de vider ne rend presque plus rien ; c'est ce qui se renouvelle pour qui bouge. En quittant un abri
   (`demenager`), la nature de la région garde la trace des alentours exploités (la plus basse des deux).
+- **Trousses et hôpitaux** (2026-11-05) : une fouille de la région (pillage) a 1,5 % de chances par membre et par quart
+  (× 2,5 en cherchant des médicaments, au plus 50 %) de trouver une trousse de secours oubliée : +1 médicament, hors des
+  réserves de la région (`fouiller` rend `trousse`) ; jamais dans une région sans médicament au jour zéro. Fouiller un site de
+  type `hopital` : médicaments × 3 (`REGLES_ACTIONS.fouille.sites`).
+- **Plantes médicinales** (2026-11-05) : la fouille des alentours de cible `plantes` rend `ceil(0,5 × membres × quarts ×
+  prudence)` plantes, prises sur la `cueillette` de la nature ; une cueillette ordinaire (cible `cueillette`) rapporte en plus
+  `arrondiHasard(0,2 × membres × quarts)` plantes, sans entamer la nature ; × 2 si un des cueilleurs a le savoir
+  `REGLES_ACTIONS.plantes.savoir` (`zerbaz` ; `fouiller({ …, savoirs })`). Ni l'une ni l'autre ne compte comme une fouille.
 - **Réseaux** : tombent au jour tiré ; `carburant` ne revient jamais.
 - **Factions** : grossissent, s'affaiblissent, se déplacent, occupent les abris abandonnés (§2.4). Une région vide (pillage
   sous 10 %) les affaiblit, mais jamais sous **0,5** dans leurs régions de départ (`factionsDepart` ; ou leur force de départ si
@@ -368,7 +382,8 @@ refuge complet : discrétion, défense, protection cyclonique, capacité) ; **am
 ### 3.3 Objet `savoir` (savoir-faire acquis, gardé d'un abri à l'autre)
 `system: { cle, description: HTML, apprentissage: HTML (comment l'acquérir : passé, livre trouvé, enseignement d'un PNJ,
 réussir un chantier), effets: HTML }`. Exemples : électricité solaire, maraîchage tropical, plomberie et filtration,
-maçonnerie, mécanique, premiers secours avancés, pêche au lagon, élevage, conserverie, étaiement et galeries, radio.
+maçonnerie, mécanique, premiers secours avancés, pêche au lagon, élevage, conserverie, étaiement et galeries, radio, zerbaz et
+tisanes (`zerbaz` : la clé que lit la logique pour la cueillette des plantes ; 2026-11-05).
 **Plans** : chaque installation construite au moins une fois par le groupe entre dans `groupe.plans` : la reconstruire ailleurs
 coûte **25 % de matériaux en moins** et **la moitié du travail**. C'est la « meilleure compétence » qui fait repartir plus fort.
 
@@ -528,7 +543,8 @@ les données des résultats (`flags.lakour-fenoir.appel`), guide d'utilisation i
   `{ cle, nom, cout: { materiaux, pieces, … }, travail (quarts), competence, difficulte, requiert: { savoirs, installation },
   produit: { equipement | ressource, n } }` (arc et flèches, arbalète, lance, pièges, filtre portatif, alambic, poêle de
   masse, chauffe-eau solaire, vélo-cargo, réchaud à bois, munitions rechargées, savon, compost accéléré…) ; contenu
-  `recettes.mjs` ;
+  `recettes.mjs` ; la recette `tisanes` (2 plantes → 1 médicament, survie normale, sans savoir requis) est celle que le
+  simulateur prépare (2026-11-05) ;
 - les **contrats** → les **appels radio et demandes des factions** : tables de missions (escorte, récupération de
   médicaments, réparation d'une pompe, sauvetage, échange) avec récompense (ressources) et points de réputation de
   faction, tirées par le MJ IA (trois par semaine de jeu quand le groupe a une radio) ;

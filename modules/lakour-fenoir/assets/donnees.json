@@ -2756,7 +2756,8 @@
     "munitions": 0,
     "materiaux": 5,
     "pieces": 2,
-    "graines": 8
+    "graines": 8,
+    "plantes": 4
    },
    "atouts": [
     "Terre riche, terrasses déjà faites",
@@ -3270,7 +3271,8 @@
     "munitions": 0,
     "materiaux": 3,
     "pieces": 0,
-    "graines": 6
+    "graines": 6,
+    "plantes": 3
    },
    "atouts": [
     "Plein soleil, terre riche, arbres fruitiers",
@@ -3441,7 +3443,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 8
+    "graines": 8,
+    "plantes": 2
    },
    "atouts": [
     "Pluie abondante : citerne toujours pleine",
@@ -4045,7 +4048,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 6
+    "graines": 6,
+    "plantes": 3
    },
    "atouts": [
     "Chouchous, cresson, bassin : la cour nourrit",
@@ -8939,6 +8943,13 @@
    "description": "<p>Capter une source, poser une conduite par gravité, monter un bélier hydraulique, dériver une ravine sans qu'elle emporte tout à la première crue, installer une turbine.</p>",
    "apprentissage": "<p>Un ancien d'un îlet ou d'un cirque ; un agent d'une centrale hydraulique ; réussir un captage de source.</p>",
    "effets": "<p>Ouvre le captage de source niveau 2 et le pico-hydro. +1 dé aux tests de bricolage sur l'eau.</p>"
+  },
+  {
+   "nom": "Zerbaz et tisanes",
+   "cle": "zerbaz",
+   "description": "<p>Reconnaître les plantes des tisaneurs au bord d'un sentier ou au fond d'une cour : ayapana, citronnelle, faham, bois de quivi, fleur jaune, géranium, romarin, gingembre. Savoir lesquelles se boivent en tisane, lesquelles se posent en emplâtre, et surtout lesquelles ne se touchent pas.</p>",
+   "apprentissage": "<p>Une grand-mère guérisseuse ou un tisaneur des Hauts, de Salazie, de l'Est ou du Sud sauvage ; un apiculteur qui connaît chaque fleur ; un vieux cahier de recettes de tisanes trouvé dans une case ; ou une saison à cueillir aux côtés de quelqu'un qui sait.</p>",
+   "effets": "<p>La cueillette rapporte deux fois plus de plantes médicinales. +1 dé aux tests pour préparer tisanes et emplâtres (recette « Tisanes et emplâtres »). Ce sont des remèdes de jeu : ils comptent comme un médicament, ils ne guérissent pas du Gris.</p>"
   }
  ],
  "equipements": [
@@ -10219,7 +10230,8 @@
     "bricolage": 1
    },
    "savoirs": [
-    "elevage"
+    "elevage",
+    "zerbaz"
    ],
    "equipement": [
     "couteau",
@@ -10649,21 +10661,16 @@
   {
    "nom": "Tisanes et emplâtres",
    "cle": "tisanes",
-   "description": "<p>Ayapana, citronnelle, bois de quivi, gingembre : les remèdes des grands-mères, contre les fièvres légères et les maux de ventre.</p>",
+   "description": "<p>Deux brassées de zerbaz, de l'eau bouillie, une marmite : une tisane d'ayapana ou de citronnelle pour les fièvres légères et les maux de ventre, une décoction pour laver une plaie, un emplâtre de feuilles pilées. Pour le jeu, cela compte comme un médicament (y compris pour laver une morsure) ; cela ne guérit pas du Gris. Le savoir « Zerbaz et tisanes » donne +1 dé.</p>",
    "cout": {
-    "graines": 1
+    "plantes": 2
    },
-   "travail": 2,
-   "competence": "soins",
+   "travail": 1,
+   "competence": "survie",
    "difficulte": "normale",
    "requiert": {
-    "savoirs": [
-     "premiers-secours-avances"
-    ],
-    "installation": {
-     "cle": "infirmerie",
-     "niveau": 1
-    }
+    "savoirs": [],
+    "installation": null
    },
    "produit": {
     "ressource": "medicaments",
@@ -12989,7 +12996,9 @@
     "survie": 1,
     "endurance": 1
    },
-   "savoirs": [],
+   "savoirs": [
+    "zerbaz"
+   ],
    "incapacites": [],
    "equipement": [],
    "histoire": [
@@ -13399,7 +13408,9 @@
     "soins": 1,
     "endurance": 1
    },
-   "savoirs": [],
+   "savoirs": [
+    "zerbaz"
+   ],
    "incapacites": [],
    "equipement": [],
    "histoire": [
@@ -13443,7 +13454,9 @@
     "survie": 1,
     "discretion": 1
    },
-   "savoirs": [],
+   "savoirs": [
+    "zerbaz"
+   ],
    "incapacites": [],
    "equipement": [],
    "histoire": [

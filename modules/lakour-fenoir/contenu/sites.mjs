@@ -4,7 +4,8 @@ import { html, ressources } from "./aides.mjs";
 
 function site({ cle, region, nom, type, description, capacite, defense, discretion, eau, sol, soleil, souterrain, acces, stocks = {}, atouts, defauts, installationsDepart = [] }) {
   return { cle, region, nom, type, description: html(description), capacite, defense, discretion, eau, sol, soleil, souterrain, acces,
-    stocks: ressources(stocks), atouts, defauts, installationsDepart };
+    // Les plantes médicinales (zerbaz) d'un jardin de case ou d'une ferme : un stock de l'abri qui ne se pille pas.
+    stocks: { ...ressources(stocks), ...(stocks.plantes ? { plantes: stocks.plantes } : {}) }, atouts, defauts, installationsDepart };
 }
 
 export const SITES = [
@@ -139,7 +140,7 @@ export const SITES = [
   site({ cle: "alambic-du-tevelave", region: "hauts-de-l-ouest", nom: "La ferme et l'alambic à géranium du Tévelave", type: "ferme",
     description: `Une ferme des Hauts du Tévelave avec son vieil alambic à géranium, sa chaudière de cuivre et son tas de bois. Une famille y distillait encore l'huile essentielle pour les touristes. Champs en terrasses, citerne, enclos à cabris, et la forêt juste au-dessus.`,
     capacite: 6, defense: 1, discretion: 3, eau: "citerne", sol: 3, soleil: 2, souterrain: 1, acces: 1,
-    stocks: { nourriture: 12, eau: 8, graines: 8, materiaux: 5, pieces: 2 },
+    stocks: { nourriture: 12, eau: 8, graines: 8, materiaux: 5, pieces: 2, plantes: 4 },
     atouts: ["Terre riche, terrasses déjà faites", "Alambic : on distille aussi de l'alcool pour désinfecter", "Bout de chemin, loin de tout"],
     defauts: ["Une seule piste, raide, impraticable en pluie", "La forêt sèche brûle en septembre", "Les voisins des Hauts gardent leurs morts"],
     installationsDepart: [{ installation: "citerne-de-pluie", niveau: 1 }, { installation: "enclos-a-cabris", niveau: 1 }, { installation: "potager", niveau: 1 }, { installation: "sechoir-fumoir", niveau: 1 }] }),
@@ -221,7 +222,7 @@ export const SITES = [
   site({ cle: "case-de-l-entre-deux", region: "le-tampon", nom: "Une case créole de l'Entre-Deux", type: "case-creole",
     description: `Au bourg de l'Entre-Deux, une case créole à varangue avec sa barrière de bois, son jardin de fleurs et d'arbres fruitiers, son bassin et sa cuisine extérieure. Le village est perché entre deux rivières encaissées : on n'y entre que par une route, on en sort par les sentiers du Dimitile.`,
     capacite: 6, defense: 1, discretion: 3, eau: "citerne", sol: 3, soleil: 3, souterrain: 1, acces: 1,
-    stocks: { eau: 8, nourriture: 10, graines: 6, materiaux: 3 },
+    stocks: { eau: 8, nourriture: 10, graines: 6, materiaux: 3, plantes: 3 },
     atouts: ["Plein soleil, terre riche, arbres fruitiers", "Un bourg isolé sur son éperon", "Le Dimitile au-dessus : sentiers et cachettes"],
     defauts: ["Une case de bois", "Une seule route d'accès : si elle est prise, on est pris", "Climat sec en hiver austral"],
     installationsDepart: [{ installation: "citerne-de-pluie", niveau: 1 }, { installation: "verger", niveau: 2 }, { installation: "potager", niveau: 1 }] }),
@@ -250,7 +251,7 @@ export const SITES = [
   site({ cle: "vanilleraie-de-saint-philippe", region: "sud-sauvage", nom: "Une vanilleraie de Saint-Philippe", type: "ferme",
     description: `Dans les sous-bois de Saint-Philippe, une plantation de vanille sous les arbres, avec sa case de bois, son séchoir à vanille, sa citerne et son jardin de fruits à pain, de bananiers et de songes. Il pleut presque tous les jours ; tout est vert jusqu'au toit.`,
     capacite: 6, defense: 1, discretion: 4, eau: "citerne", sol: 3, soleil: 1, souterrain: 1, acces: 1,
-    stocks: { nourriture: 12, eau: 10, graines: 8, materiaux: 4 },
+    stocks: { nourriture: 12, eau: 10, graines: 8, materiaux: 4, plantes: 2 },
     atouts: ["Pluie abondante : citerne toujours pleine", "Sous-bois, invisible du ciel et de la route", "Fruits à pain, bananes, songes : de quoi tenir"],
     defauts: ["Peu de soleil sous les arbres", "Humidité : tout moisit", "Coupée du monde quand les radiers débordent"],
     installationsDepart: [{ installation: "citerne-de-pluie", niveau: 2 }, { installation: "verger", niveau: 2 }, { installation: "sechoir-fumoir", niveau: 1 }] }),
@@ -350,7 +351,7 @@ export const SITES = [
   site({ cle: "case-de-hell-bourg", region: "salazie", nom: "Une case créole de Hell-Bourg", type: "case-creole",
     description: `Dans la rue principale de Hell-Bourg, une case créole à lambrequins peints, sa varangue, son jardin de fleurs, ses pieds de chouchou sur treille et son bassin. Derrière, une cour, un appentis, et la pente vers la ravine qui chante toute la nuit.`,
     capacite: 6, defense: 1, discretion: 2, eau: "citerne", sol: 2, soleil: 1, souterrain: 1, acces: 2,
-    stocks: { nourriture: 10, eau: 10, graines: 6, materiaux: 4 },
+    stocks: { nourriture: 10, eau: 10, graines: 6, materiaux: 4, plantes: 3 },
     atouts: ["Chouchous, cresson, bassin : la cour nourrit", "Pluie abondante", "Sentiers vers Bélouve et le Piton des Neiges"],
     defauts: ["Le bourg et ses Livides conservés par le frais", "Une case de bois", "Route de Salazie souvent coupée"],
     installationsDepart: [{ installation: "citerne-de-pluie", niveau: 2 }, { installation: "potager", niveau: 1 }] }),

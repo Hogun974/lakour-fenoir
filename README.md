@@ -242,21 +242,21 @@ des rumeurs, un lexique créole, et la première nuit.
 Tout le contenu est dans le module `lakour-fenoir` : douze compendiums (dossier « Fénoir »), plus le **registre** de l'île
 (`assets/donnees.json`) que le système charge pour simuler le monde. Les vrais chiffres, tels que `src/` les contient.
 
-### Les guides des joueurs (5 journaux, 59 pages)
+### Les guides des joueurs (5 journaux, 60 pages)
 
 | Journal | Pages | Ce qu'on y lit |
 |---|---|---|
-| **Fénoir — Guide du joueur** | 14 | Bienvenue, le test, forcer et progresser, les dix compétences, l'état d'un survivant, le temps, les ressources et l'abri, bruit, visibilité et menaces, voyager et savoir, repartir ou s'enraciner, créer son survivant, les enfances, les passés, les traits. |
+| **Fénoir — Guide du joueur** | 15 | Bienvenue, le test, forcer et progresser, les dix compétences, l'état d'un survivant, le temps, les ressources et l'abri, les tisanes et les zerbaz, bruit, visibilité et menaces, voyager et savoir, repartir ou s'enraciner, créer son survivant, les enfances, les passés, les traits. |
 | **La vie au camp** | 3 | Le temps calme, les onze activités (enseigner, réparer, cultiver, monter la garde, soigner, raconter, fêter, cuisiner, pêcher ou chasser, se reposer, écrire la chronique) avec leur test et leur coût, fêter. |
 | **Fénoir — Le livre de l'île** | 13 | L'univers de départ, écrit comme un cahier qui circule d'abri en abri (voir ci-dessus). |
 | **Les régions de l'île** | 17 | L'île, puis une page par région, épinglée sur la carte de La Réunion. |
 | **Les fêtes de Fénoir** | 12 | Fêter quand même, puis une page illustrée par fête. |
 
-### Les journaux du MJ (9 journaux, 54 pages, cachés aux joueurs)
+### Les journaux du MJ (9 journaux, 55 pages, cachés aux joueurs)
 
 | Journal | Pages | Ce qu'on y lit |
 |---|---|---|
-| **Fénoir — Guide du MJ** | 7 | Mener Fénoir, le temps qui avance, les deux voies, les renseignements datés, le ton et les dilemmes, les outils du MJ, les factions en jeu. |
+| **Fénoir — Guide du MJ** | 8 | Mener Fénoir, le temps qui avance, les deux voies, les renseignements datés, le ton et les dilemmes, médicaments, trousses et zerbaz, les outils du MJ, les factions en jeu. |
 | **Chronologie de la crise** | 6 | Avant le jour zéro, puis une page par phase. |
 | **Les factions de Fénoir** | 8 | Une page par faction : chef, signe, ce qu'elle veut, comment traiter avec elle. |
 | **Bestiaire de Fénoir** | 11 | Combattre, puis une page par créature. |
@@ -299,11 +299,11 @@ Repères : une citerne donne 1 / 2 / 3 eau par jour et par point de pluie de la 
 jour après trente jours ; des panneaux 2 / 4 / 6 kWh par jour et par point de soleil ; un groupe de quatre consomme 4 eau et
 4 nourriture par jour. Les détails sont dans `docs/survie-notes-contenu.md`.
 
-### Savoir-faire (12), passés (17), enfances (22), traits (32)
+### Savoir-faire (13), passés (17), enfances (22), traits (32)
 
 - **Savoir-faire**, gardés d'un abri à l'autre : électricité solaire, maraîchage tropical, plomberie et filtration, maçonnerie,
   mécanique, premiers secours avancés, pêche au lagon et en rivière, élevage, conserverie et séchage, étaiement et galeries,
-  radio et transmissions, hydraulique rurale. Chacun dit comment on l'acquiert (passé, livre trouvé, enseignement d'un PNJ,
+  radio et transmissions, hydraulique rurale, zerbaz et tisanes. Chacun dit comment on l'acquiert (passé, livre trouvé, enseignement d'un PNJ,
   chantier réussi) et ce qu'il permet.
 - **Passés** (le métier du jour zéro) : infirmière du CHU, électricien, pêcheur de Saint-Gilles, planteur de canne, gendarme,
   étudiante, guide de canyon, mécanicien, cuisinier de camion-bar, retraité de la marine, agricultrice des Hauts, ambulancier,

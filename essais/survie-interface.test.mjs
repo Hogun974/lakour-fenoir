@@ -154,7 +154,7 @@ test("fenêtres : bandeau, tableau de bord, fiches, atelier, fenêtre du MJ ; ri
   assert.ok(fs.taches.length >= 1);
   const fa = contexteAbri(abri);
   assert.equal(fa.courant, true);
-  assert.ok(fa.installations.length >= 1 && fa.stocks.length === 9 && fa.bilan);
+  assert.ok(fa.installations.length >= 1 && fa.stocks.length === L.RESSOURCES.length && fa.bilan);
   for (const i of abri.items.contents) assert.ok(Array.isArray(sectionsObjet(i)));
   for (const type of ["equipement", "savoir"]) for (const i of a.items.contents.filter(x => x.type === type)) sectionsObjet(i);
   // Atelier : chaque recette dit si elle est possible, et sinon pourquoi.

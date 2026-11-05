@@ -14,6 +14,15 @@
 //   une fouille pour l'autonomie. Glanage de passage (équilibrage du 2026-11-05) : une fouille de la région (pillage) ramasse
 //   aussi ceil(0,06 × membres × quarts × prudence × (cueillette + pêche + gibier par jour)) de nourriture dans la même nature
 //   (celle de l'abri si c'est sa région, sinon celle de la région) : ce qui se renouvelle pour qui bouge.
+// - Médicaments (2026-11-05) : une fouille de la région (pillage) a aussi 2,5 % de chances par membre et par quart (× 2,5 si
+//   l'on cherche des médicaments, au plus 50 %) de tomber sur une TROUSSE DE SECOURS oubliée (boîte à gants, armoire de salle
+//   de bains) : +1 médicament, qui ne vient pas des réserves de la région ; une région sans aucune réserve de médicaments au
+//   jour zéro n'en a pas. Fouiller un site de type « hopital » : médicaments × 3.
+// - Plantes médicinales, les « zerbaz » (2026-11-05) : cueillir des plantes (cible « plantes ») est une fouille des alentours
+//   qui rend ceil(0,5 × membres × quarts × prudence) plantes, × 2 si un des cueilleurs connaît les zerbaz (savoir
+//   REGLES_ACTIONS.plantes.savoir), prises dans la cueillette de la nature (une brassée = une unité) ; une cueillette ordinaire
+//   (cible « cueillette ») rapporte en plus arrondiHasard(0,2 × membres × quarts, × 2 avec le savoir) plantes, sans entamer la
+//   nature. Une tisane (recette du contenu) en fait des médicaments.
 // - Voyage : le plus court en quarts sur les routes RÉELLES ; à pied quartsPied (× 1,5 si difficile) sauf par mer ; en véhicule
 //   quartsVehicule (× 2 si difficile) sauf sentier et mer ; en bateau seulement par mer. Carburant : 1 unité (10 L) pour 60 km
 //   en véhicule, pour 20 km en bateau. Charge : 3 unités par personne à pied, 20 par véhicule (ou bateau).
@@ -48,8 +57,10 @@ export const REGLES_ACTIONS = {
     prudence: { discret: 0.6, normal: 1, rapide: 1.4 },
     phase: { "jour-zero": 0.5, panique: 0.8, effondrement: 1, silence: 1, apres: 1 }
   },
-  fouille: { fraction: { discret: 0.008, normal: 0.015, rapide: 0.025 }, cible: 2.5, plafond: { discret: 4, normal: 6, rapide: 9 }, bruit: { discret: 0, normal: 1, rapide: 3 } },
+  fouille: { fraction: { discret: 0.008, normal: 0.015, rapide: 0.025 }, cible: 2.5, plafond: { discret: 4, normal: 6, rapide: 9 }, bruit: { discret: 0, normal: 1, rapide: 3 },
+    trousse: 0.015, trousseMax: 0.5, sites: { hopital: { medicaments: 3 } } },
   nature: { parMembre: 0.5, prudence: { discret: 0.8, normal: 1, rapide: 1.3 } },
+  plantes: { parMembre: 0.5, cueillette: 0.2, savoir: "zerbaz", connaisseur: 2 },
   glanage: { parMembre: 0.06, prudence: { discret: 0.8, normal: 1, rapide: 1.3 }, nature: ["cueillette", "peche", "gibier"] },
   charge: { pied: 3, vehicule: 20, bateau: 20 },
   kmParCarburant: { vehicule: 60, bateau: 20 },
@@ -134,36 +145,50 @@ export function explorer(monde, contenu, hasard, { region, jour = monde?.jour ??
 }
 
 // ------------------------------------------------------------------ fouiller
-// cible : une ressource (fouille ciblée), ou un élément de nature (cueillette, gibier, peche, bois : alentours de l'abri).
-// abri : system de l'abri (pour la nature des alentours, si la région est celle de l'abri).
-// -> { butin, glane (nourriture glanée, comprise dans butin), rencontre, bruit, monde, abri, renseignements, faits,
-//      fouille: Boolean (compte pour l'autonomie) }
+// cible : une ressource (fouille ciblée), un élément de nature (cueillette, gibier, peche, bois : alentours de l'abri), ou
+// « plantes » (les zerbaz des alentours). abri : system de l'abri (pour la nature des alentours, si la région est celle de
+// l'abri). savoirs : ceux des fouilleurs (le savoir des zerbaz double les plantes cueillies).
+// -> { butin, glane (nourriture glanée, comprise dans butin), trousse (médicament d'une trousse oubliée, compris dans butin),
+//      rencontre, bruit, monde, abri, renseignements, faits, fouille: Boolean (compte pour l'autonomie) }
+export const fouilleDesAlentours = cible => NATURE.includes(cible) || cible === "plantes";
 export function fouiller(monde, contenu, hasard, { region, site = null, cible = null, membres = 1, quarts = 1, prudence = "normal", jour = monde?.jour ?? 0,
-  moment = "apres-midi", abri = null, renseignements = {} } = {}) {
+  moment = "apres-midi", abri = null, renseignements = {}, savoirs = [] } = {}) {
   const F = REGLES_ACTIONS.fouille;
+  const P = REGLES_ACTIONS.plantes;
   const p = F.fraction[prudence] ? prudence : "normal";
   const n = Math.max(0, Number(membres) || 0) * Math.max(0, Number(quarts) || 0);
   const nom = regionDe(contenu, region)?.nom ?? region;
+  const connaisseur = (savoirs ?? []).includes(P.savoir) ? P.connaisseur : 1;
   let nouveauMonde = structuredClone(monde);
   let nouvelAbri = abri ? structuredClone(abri) : null;
   const butin = {};
-  let glane = 0;
-  if (NATURE.includes(cible)) {
-    const parJour = natureRegion(regionDe(contenu, region))[cible].parJour;
-    const demande = Math.ceil(parJour * n * REGLES_ACTIONS.nature.parMembre * REGLES_ACTIONS.nature.prudence[p]);
+  let glane = 0, trousse = 0;
+  if (fouilleDesAlentours(cible)) {
+    // Les plantes poussent avec la cueillette : on les prend dans la même nature (une brassée = une unité).
+    const element = cible === "plantes" ? "cueillette" : cible;
+    const parJour = natureRegion(regionDe(contenu, region))[element].parJour;
+    const demande = cible === "plantes"
+      ? (parJour > 0 ? Math.ceil(P.parMembre * n * REGLES_ACTIONS.nature.prudence[p] * connaisseur) : 0)
+      : Math.ceil(parJour * n * REGLES_ACTIONS.nature.parMembre * REGLES_ACTIONS.nature.prudence[p]);
     const surAbri = nouvelAbri && nouvelAbri.region === region && nouvelAbri.nature;
     const source = surAbri ? nouvelAbri.nature : nouveauMonde.regions[region]?.nature ?? {};
-    const { nature, pris } = exploiterNature(source, cible, demande);
+    const { nature, pris } = exploiterNature(source, element, demande);
     if (surAbri) nouvelAbri.nature = nature;
     else if (nouveauMonde.regions[region]) nouveauMonde.regions[region].nature = nature;
-    if (pris) butin[cible === "bois" ? "materiaux" : "nourriture"] = pris;
+    if (pris) butin[cible === "plantes" ? "plantes" : cible === "bois" ? "materiaux" : "nourriture"] = pris;
+    // Une cueillette ordinaire rapporte aussi quelques zerbaz (citronnelle, ayapana au bord du chemin), sans entamer la nature.
+    if (cible === "cueillette" && pris > 0) {
+      const plantes = arrondiHasard(P.cueillette * n * connaisseur, hasard);
+      if (plantes > 0) butin.plantes = plantes;
+    }
   } else if (nouveauMonde.regions[region]) {
     const pillage = nouveauMonde.regions[region].pillage;
     const res = cible && RESSOURCES_PILLABLES.includes(cible) ? [cible] : RESSOURCES_PILLABLES;
     const facteur = F.fraction[p] * n * (cible ? F.cible : 1);
+    const parSite = (site ? F.sites[siteDe(contenu, site)?.type] : null) ?? {};
     for (const r of res) {
       const q = Number(pillage[r]) || 0;
-      const pris = Math.min(q, arrondiHasard(q * facteur, hasard));
+      const pris = Math.min(q, arrondiHasard(q * facteur * (Number(parSite[r]) || 1), hasard));
       if (pris > 0) butin[r] = pris;
     }
     // Plafond de ce qu'on rapporte : on rend d'abord ce qu'il y a le plus.
@@ -176,6 +201,13 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
       total -= 1;
     }
     for (const [r, q] of Object.entries(butin)) pillage[r] = Math.max(0, pillage[r] - q);
+    // Une trousse de secours oubliée (boîte à gants, armoire de salle de bains) : elle ne vient pas des réserves de la région,
+    // que la population vide, mais une région sans aucun médicament au jour zéro (le volcan) n'en cache pas.
+    const pT = Math.min(F.trousseMax, F.trousse * n * (cible === "medicaments" ? F.cible : 1));
+    if (reservesDepart(regionDe(contenu, region)).medicaments > 0 && chance(pT, hasard)) {
+      trousse = 1;
+      butin.medicaments = (butin.medicaments ?? 0) + 1;
+    }
     // Glanage de passage : en fouillant, on ramasse aussi ce que la nature offre (fruits, un poisson, un tangue), pris dans la
     // nature des alentours de l'abri (si c'est sa région) ou de la région. Ce qu'on glane ne revient qu'à la régénération de la
     // nature : une région où l'on n'a pas glané depuis longtemps est pleine, celle qu'on vient de vider ne rend presque plus rien.
@@ -197,13 +229,13 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
     if (glane) butin.nourriture = (butin.nourriture ?? 0) + glane;
   }
   const rencontre = tirerRencontre(nouveauMonde, contenu, hasard, { region, jour, moment, prudence: p, contexte: "fouille" });
-  const bruit = NATURE.includes(cible) ? 0 : F.bruit[p];
+  const bruit = fouilleDesAlentours(cible) ? 0 : F.bruit[p];
   const lu = Object.entries(butin).map(([r, q]) => `${q} ${r}`).join(", ") || "rien";
   const nomSite = site ? siteDe(contenu, site)?.nom ?? site : "";
   return {
-    butin, glane, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
+    butin, glane, trousse, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
     renseignements: observer(renseignements, nouveauMonde, contenu, region, jour, "vu"),
-    fouille: !NATURE.includes(cible),
+    fouille: !fouilleDesAlentours(cible),
     faits: [{ jour, region, cle: site ? "fouille" : "fouille-region", public: true, texte: `Fouille ${site ? `${avecPreposition("de", nomSite)} ` : ""}${avecPreposition("à", nom)} : ${lu}.`,
       params: { region: nom, site: nomSite, butin: { ...butin } } }]
   };

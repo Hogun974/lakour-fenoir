@@ -26,8 +26,16 @@
 // - un survivant dont le moral reste à 0 cinq jours de suite quitte le groupe, sauf s'il a faim (la logique ne fait partir que
 //   les recrues) ;
 // - rencontre : un seul échange de combat (chacun se bat une fois), puis le groupe se replie ; une morsure vaut un test de soins
-//   par le meilleur soigneur (extrême ; difficile avec un médicament de l'abri, consommé, ou une infirmerie, dont le bonus
-//   compte : difficulteMorsure), sinon infection ; les corps des morts sont toujours traités (pas de relève) ;
+//   par le meilleur soigneur (extrême ; difficile avec un médicament de l'abri, consommé, +1 dé, une décoction de zerbaz, une
+//   plante de l'abri consommée, +1 dé, une trousse de secours ou un sac d'intervention que porte le soignant, dont le bonus
+//   d'outil compte, ou une infirmerie, dont le bonus compte : difficulteMorsure, bonusMorsure), sinon infection ; les corps des
+//   morts sont toujours traités (pas de relève) ;
+// - remèdes (2026-11-05), comme un groupe raisonnable : il garde un médicament pour une morsure (les soins du soir d'un simple
+//   blessé n'entament pas le dernier) ; quand l'abri a moins de REMEDES.reserve médicaments et moins de REMEDES.plantesTisane
+//   plantes, ses cueilleurs vont d'abord à la cueillette (nourriture et zerbaz) si elle vaut au moins la moitié de la pêche ou
+//   du gibier et qu'on ne manque pas de nourriture ; le soir, s'il a au moins REMEDES.plantesTisane plantes (il en garde une
+//   pour laver une morsure) et moins de REMEDES.reserve médicaments, le meilleur en survie (sauf épuisé ou blessé grave)
+//   prépare une tisane (recette « tisanes » du contenu ; +1 dé s'il connaît les zerbaz) ;
 // - brèche : une installation abîmée, l'abri +2 dégâts, un échange de combat contre la force de la menace ; une bande qui entre
 //   emporte 30 % des vivres ; si des assaillants restent après l'échange, le groupe FUIT (déménagement forcé) ;
 // - un jour de départ (ou de changement de site) est un jour de jeu comme un autre : le temps passe, sans travail ;
@@ -65,6 +73,9 @@ export const REGLES_SIMULATEUR = {
   partBandeBreche: 0.3,    // ce qu'une bande emporte quand elle entre
   fatigueRepos: 4          // au-dessus, un membre se repose au lieu de travailler
 };
+// Les remèdes (2026-11-05) : sous `reserve` médicaments (aucun), on cueille des zerbaz et, avec `plantesTisane` plantes, on
+// prépare une tisane (recette du contenu). Une réserve de 2 ou 3 faisait autant pour les solos et plus pour les groupes de 4.
+export const REMEDES = { reserve: 1, recette: "tisanes", plantesTisane: 3 };
 
 // L'ordre de construction de l'enraciné ({ cle, niveau }) : ce que le site, les savoirs et les stocks permettent passe en premier.
 export const ORDRE_ENRACINE = [
@@ -79,7 +90,7 @@ export const ORDRE_ENRACINE = [
   ["palissade", 2], ["tour-de-guet", 2], ["mur", 2], ["porte-blindee", 1], ["galerie-souterraine", 4], ["mur", 3], ["batteries", 3], ["panneaux-solaires", 3],
   ["chiens-de-garde", 1]
 ];
-const PRIORITE_EMPORT = ["nourriture", "eau", "medicaments", "pieces", "materiaux", "graines", "carburant", "munitions"];
+const PRIORITE_EMPORT = ["nourriture", "eau", "medicaments", "plantes", "pieces", "materiaux", "graines", "carburant", "munitions"];
 const CAUSES = ["faim", "soif", "assaut", "rencontre", "infection", "maladie", "depart", "impasse", "vivants"];
 
 // ------------------------------------------------------------------ contenu
@@ -159,7 +170,10 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     blocages: {}, cyclones: 0, eruptions: 0, hordes: 0, assauts: 0, assautsApres30: 0, serieuxApres30: 0, joursApres30: 0, breches: 0, morts: {},
     recrues: [], tentatives: 0, manquesDebut: null, manquesFin: null, joursAvecManque: 0,
     joursAbri: 0, bas: { jours: 0, assauts: 0, livides: 0 }, hauts: { jours: 0, assauts: 0, livides: 0 }, joursApres90: 0,
-    impasse: null, fetes: 0, rencontres: 0, evitees: 0, installations: 0, mortsApres90: 0, fuites: 0, fouillesMaigres: 0, premiereFaim: null
+    impasse: null, fetes: 0, rencontres: 0, evitees: 0, installations: 0, mortsApres90: 0, fuites: 0, fouillesMaigres: 0, premiereFaim: null,
+    // Remèdes (2026-11-05) : morsures (aidées : médicament, décoction, trousse ou infirmerie ; soignées : test réussi), trousses trouvées en
+    // fouillant, plantes cueillies, tisanes réussies, jours d'abri avec au moins un médicament.
+    morsures: 0, morsuresAidees: 0, morsuresSoignees: 0, trousses: 0, plantes: 0, tisanes: 0, joursAvecMedicament: 0
   };
   let fouillesMaigres = 0;
   let actionsDuJour = [];
@@ -209,16 +223,24 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         s.system = b.system;
         s.derniereCause = cause;
         if (b.morsure) {
-          // Test de soins du meilleur soigneur : difficile avec un médicament (consommé, +1 dé comme avant) ou une infirmerie (son
-          // bonus de soins compte), extrême sinon.
+          // Test de soins du meilleur soigneur : difficile avec un médicament (consommé, +1 dé), une décoction de zerbaz (une
+          // plante consommée, +1 dé), une trousse de secours qu'il porte (son bonus d'outil compte) ou une infirmerie (son bonus
+          // de soins compte), extrême sinon : difficulteMorsure, bonusMorsure.
           const soigneur = meilleurSoigneur();
           const medicament = Boolean(abri) && (abri.system.stocks?.medicaments ?? 0) > 0;
+          const decoction = Boolean(abri) && (abri.system.stocks?.plantes ?? 0) >= L.DECOCTION.plantes;
           const infirmerie = Number(abri?.bilan?.soins) || 0;
+          const trousse = trousseDe(soigneur?.s);
           if (medicament) abri.system.stocks = L.ajouterStocks(abri.system.stocks, { medicaments: -1 });
-          const difficulte = L.difficulteMorsure({ medicament, infirmerie: infirmerie > 0 });
-          const test = L.resoudreTest({ niveau: soigneur?.niveau ?? 0, difficulte, bonus: Number(medicament) + infirmerie, hasard: h, compte: false });
+          if (decoction) abri.system.stocks = L.ajouterStocks(abri.system.stocks, { plantes: -L.DECOCTION.plantes });
+          const difficulte = L.difficulteMorsure({ medicament, infirmerie: infirmerie > 0, trousse: trousse > 0, decoction });
+          const bonus = L.bonusMorsure({ medicament, decoction, outil: trousse, infirmerie });
+          const test = L.resoudreTest({ niveau: soigneur?.niveau ?? 0, difficulte, bonus, hasard: h, compte: false });
           const m = L.appliquerMorsure(s.system, test, quart);
           s.system = m.system;
+          stats.morsures++;
+          if (difficulte !== "extreme") stats.morsuresAidees++;
+          if (!m.infecte) stats.morsuresSoignees++;
           if (m.infecte) s.derniereCause = "infection";
         }
       }
@@ -233,6 +255,25 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       if (!m || niveau > m.niveau) m = { s, niveau: Math.max(0, niveau) };
     }
     return m;
+  };
+  // Le bonus de soins de la trousse (ou du sac d'intervention) que porte un survivant : 0 s'il n'en a pas.
+  const trousseDe = s => Math.max(0, ...(s?.system.equipement ?? []).map(e => idx.equipements.get(e)).filter(e => e?.categorie === "soin").map(e => Number(e.bonus?.soins) || 0));
+  const savoirsDe = liste => [...new Set(liste.flatMap(s => s.system.savoirs ?? []))];
+  const besoinRemedes = () => Boolean(abri) && (abri.system.stocks.medicaments ?? 0) < REMEDES.reserve && (abri.system.stocks.plantes ?? 0) < REMEDES.plantesTisane;
+  // Le soir : une tisane (recette du contenu) quand l'abri a des plantes et peu de médicaments.
+  const preparerTisane = (jour, h) => {
+    const recette = idx.recettes?.get(REMEDES.recette);
+    if (!abri || !recette || (abri.system.stocks.plantes ?? 0) < REMEDES.plantesTisane || (abri.system.stocks.medicaments ?? 0) >= REMEDES.reserve) return;
+    const artisan = vivants().filter(s => Number(s.system.fatigue) < R.fatigueRepos && Number(s.system.blessures) < 3)
+      .sort((a, b) => L.competence(b.system, recette.competence).niveau - L.competence(a.system, recette.competence).niveau)[0];
+    if (!artisan) return;
+    const zerbaz = (artisan.system.savoirs ?? []).includes(L.REGLES_ACTIONS.plantes.savoir) ? 1 : 0;
+    const r = L.fabriquer(recette, { stocks: abri.system.stocks, installations: abri.installations, savoirs: savoirsDe(vivants()), niveau: L.competence(artisan.system, recette.competence).niveau,
+      bonus: zerbaz, malus: L.malusEtat(artisan.system).total, hasard: h });
+    if (!r.ok) return;
+    abri.system.stocks = r.stocks;
+    if (r.produit) stats.tisanes++;
+    noter(jour, `tisane (${artisan.nom}) : ${r.produit ? `+${r.produit.n} médicament` : "ratée"}`);
   };
   const resoudreRencontre = (rencontre, combattants, quart, h) => {
     if (!rencontre) return;
@@ -384,8 +425,10 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     if (!fouilleurs.length) return 0;
     const regionCle = abri.system.region;
     const prudence = prudencePour(regionCle);
-    const f = L.fouiller(monde, contenu, h, { region: regionCle, cible, membres: fouilleurs.length, quarts: 2, prudence, jour, moment: "matin", abri: abri.system, renseignements: etat.renseignements });
+    const f = L.fouiller(monde, contenu, h, { region: regionCle, cible, membres: fouilleurs.length, quarts: 2, prudence, jour, moment: "matin", abri: abri.system, renseignements: etat.renseignements,
+      savoirs: savoirsDe(fouilleurs) });
     monde = f.monde;
+    stats.trousses += f.trousse ?? 0;
     abri.system = { ...f.abri, stocks: L.ajouterStocks(f.abri.stocks, f.butin), bruit: Math.min(10, (f.abri.bruit ?? 0) + f.bruit) };
     etat = L.noterFouille({ ...etat, renseignements: f.renseignements }, jour);
     actionsDuJour.push(...f.faits, ...(f.rencontre ? [f.rencontre] : []));
@@ -393,19 +436,24 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     noter(jour, `fouille ${cible ?? "générale"} (${fouilleurs.length}, ${prudence}) : ${JSON.stringify(f.butin)}${f.rencontre ? ` — rencontre ${f.rencontre.texte}` : ""}`);
     return somme(Object.values(f.butin));
   };
-  const fouillerNature = (cueilleurs, jour, h, voulu = null) => {
+  const fouillerNature = (cueilleurs, jour, h, voulu = null, remedes = true) => {
     if (!cueilleurs.length) return 0;
     const n = abri.system.nature ?? {};
     const parJour = L.natureRegion(idx.regions.get(abri.system.region));
+    // Peu de médicaments et de plantes, et de quoi manger : la cueillette d'abord (nourriture et zerbaz), si les alentours en
+    // ont au moins la moitié de ce qu'offrent la pêche ou le gibier.
+    if (!voulu && remedes && besoinRemedes() && parJour.cueillette.parJour > 0 && (n.cueillette ?? 0) >= Math.max(1, 0.5 * Math.max(n.peche ?? 0, n.gibier ?? 0))) voulu = "cueillette";
     const ordre = (voulu ? [voulu] : ["cueillette", "peche", "gibier"]).filter(k => parJour[k].parJour > 0 && (n[k] ?? 0) >= 1).sort((a, b) => (n[b] ?? 0) - (n[a] ?? 0));
     const cible = ordre[0] ?? null;
     if (!cible) return 0;
-    const f = L.fouiller(monde, contenu, h, { region: abri.system.region, cible, membres: cueilleurs.length, quarts: 2, prudence: prudencePour(abri.system.region), jour, abri: abri.system, renseignements: etat.renseignements });
+    const f = L.fouiller(monde, contenu, h, { region: abri.system.region, cible, membres: cueilleurs.length, quarts: 2, prudence: prudencePour(abri.system.region), jour, abri: abri.system, renseignements: etat.renseignements,
+      savoirs: savoirsDe(cueilleurs) });
     monde = f.monde;
+    stats.plantes += f.butin.plantes ?? 0;
     abri.system = { ...f.abri, stocks: L.ajouterStocks(f.abri.stocks, f.butin) };
     actionsDuJour.push(...f.faits, ...(f.rencontre ? [f.rencontre] : []));
     resoudreRencontre(f.rencontre, cueilleurs, jour * 4, h);
-    return somme(Object.values(f.butin));
+    return somme(Object.entries(f.butin).filter(([r]) => r !== "plantes").map(([, q]) => q)); // ce qui nourrit ou bâtit
   };
 
   // ---- soins du soir : chaque blessé (≥ 2) reçoit un test de soins du meilleur soigneur (1 médicament s'il y en a).
@@ -415,7 +463,8 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     const stabilises = [];
     for (const s of vivants().filter(x => Number(x.system.blessures) >= 2).sort((a, b) => b.system.blessures - a.system.blessures)) {
       const mourant = s.system.blessures >= 4;
-      const bonus = abri && (abri.system.stocks.medicaments ?? 0) > 0 ? 1 : 0;
+      // On garde le dernier médicament pour une morsure : un simple blessé (2) ne l'entame pas.
+      const bonus = abri && (abri.system.stocks.medicaments ?? 0) > (s.system.blessures >= 3 ? 0 : 1) ? 1 : 0;
       if (bonus) abri.system.stocks = L.ajouterStocks(abri.system.stocks, { medicaments: -1 });
       const test = L.resoudreTest({ niveau: soigneur.niveau, difficulte: mourant ? "difficile" : "normale", bonus: bonus + (abri ? Number(abri.bilan?.soins) || 0 : 0), hasard: h, compte: false });
       if (test.reussite) { s.system = L.soigner(s.system, test).system; if (mourant) stabilises.push(s.id); }
@@ -599,7 +648,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         const cueilleurs = [...dispo].sort((a, b) => L.competence(b.system, "survie").niveau - L.competence(a.system, "survie").niveau).slice(0, k);
         dispo = dispo.filter(s => !cueilleurs.includes(s));
         poser(cueilleurs, "chasse");
-        if (fouillerNature(cueilleurs, jour, h) < cueilleurs.length) { poser(cueilleurs, "fouille"); fouillerRegion(cueilleurs, "nourriture", jour, h); }
+        if (fouillerNature(cueilleurs, jour, h, null, false) < cueilleurs.length) { poser(cueilleurs, "fouille"); fouillerRegion(cueilleurs, "nourriture", jour, h); }
       }
       if (manqueEau && dispo.length && (bilan.net.eau ?? 0) < 0) {
         const e = dispo.slice(0, 2); dispo = dispo.slice(2); poser(e, "fouille");
@@ -679,6 +728,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
 
     // Soir : soins, fête.
     const stabilises = soigner(jour, h);
+    preparerTisane(jour, h);
     feterSiFete(jour);
 
     // La journée passe.
@@ -690,6 +740,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       const bas = L.estDesBas(idx.regions.get(abri.system.region));
       if (jour + 1 > 90) { stats[bas ? "bas" : "hauts"].jours++; stats.joursApres90++; }
       if ((abri.system.stocks.eau ?? 0) <= 0) stats.joursSansEau++;
+      if ((abri.system.stocks.medicaments ?? 0) > 0) stats.joursAvecMedicament++;
       if ((abri.system.stocks.nourriture ?? 0) <= 0) stats.joursSansNourriture++;
       if (jour + 1 > 30) stats.joursApres30++;
       for (const m of r.menaces) if (m.type === "livides" && jour + 1 > 90) stats[bas ? "bas" : "hauts"].livides++;
@@ -794,7 +845,8 @@ export function mesurer(resultats, { jours = JOURS_DEFAUT } = {}) {
       breches: arrondi(moyenne(l.map(x => x.breches)), 2), rencontres: arrondi(moyenne(l.map(x => x.rencontres)), 1),
       joursSansEau: arrondi(moyenne(l.map(x => x.joursSansEau))), joursSansNourriture: arrondi(moyenne(l.map(x => x.joursSansNourriture))),
       limitante: limitante[0][1] > 0 ? limitante[0][0] : "—", blocages, installations: arrondi(moyenne(l.map(x => x.installations))),
-      morts: l.reduce((t, x) => { for (const [c, n] of Object.entries(x.morts)) t[c] = (t[c] ?? 0) + n; return t; }, {})
+      morts: l.reduce((t, x) => { for (const [c, n] of Object.entries(x.morts)) t[c] = (t[c] ?? 0) + n; return t; }, {}),
+      remedes: remedesDe(l)
     };
   }
   // Régions de départ (toutes stratégies sauf passif).
@@ -806,6 +858,15 @@ export function mesurer(resultats, { jours = JOURS_DEFAUT } = {}) {
   for (const r of resultats.filter(x => x.strategie !== "passif")) for (const z of ["bas", "hauts"]) { hb[z].jours += r[z].jours; hb[z].assauts += r[z].assauts; hb[z].livides += r[z].livides; }
   const hautsBas = Object.fromEntries(Object.entries(hb).map(([z, v]) => [z, { joursAbri: v.jours, assautsParMois: v.jours ? arrondi((30 * v.assauts) / v.jours, 2) : null, lividesParMois: v.jours ? arrondi((30 * v.livides) / v.jours, 2) : null }]));
   return { cas, regions, hautsBas, jours, parties: resultats.length };
+}
+
+// Les remèdes d'un ensemble de parties (stats du simulateur ; 2026-11-05) : morsures (aidées, soignées), trousses trouvées,
+// plantes cueillies et tisanes réussies par partie, part des jours d'abri avec au moins un médicament.
+export function remedesDe(l) {
+  const t = k => somme(l.map(x => Number(x[k]) || 0));
+  return { morsures: t("morsures"), aidees: t("morsuresAidees"), soignees: t("morsuresSoignees"),
+    trousses: arrondi(t("trousses") / Math.max(1, l.length), 1), plantes: arrondi(t("plantes") / Math.max(1, l.length), 1), tisanes: arrondi(t("tisanes") / Math.max(1, l.length), 1),
+    joursAvecMedicament: pct(t("joursAvecMedicament"), t("joursAbri")) };
 }
 
 // ------------------------------------------------------------------ tableaux
@@ -820,6 +881,9 @@ export function tableaux(m) {
   for (const c of cas) l.push(`| ${c.strategie} × ${c.membres} | ${CAUSES.map(x => pct(c.causes[x] ?? 0, c.parties)).join(" | ")} |`);
   l.push("", "### Menaces vécues et ressources", "", "| Cas | Cyclones / partie | Éruptions / partie | Hordes à l'abri / partie | Assauts par mois après J30 (sérieux : force ≥ 3) | Brèches / partie | Rencontres / partie (évitées) | Jours sans eau | Jours sans nourriture | Ressource limitante | Blocages de chantier |", "|---|---|---|---|---|---|---|---|---|---|---|");
   for (const c of cas) l.push(`| ${c.strategie} × ${c.membres} | ${c.cyclones} | ${c.eruptions} | ${c.hordes} | ${c.assautsParMoisApres30 ?? "—"}${c.assautsParMoisApres30 !== null ? ` (${c.serieuxParMoisApres30})` : ""} | ${c.breches} | ${c.rencontres} (${c.evitees}) | ${c.joursSansEau} | ${c.joursSansNourriture} | ${c.limitante} | ${Object.entries(c.blocages).sort((a, b) => b[1] - a[1]).map(([r, n]) => `${r} ${n}`).join(", ") || "—"} |`);
+  l.push("", "### Remèdes (morsures : aidées par un médicament, une décoction, une trousse ou une infirmerie ; soignées ; par partie : trousses trouvées, plantes cueillies, tisanes)", "",
+    "| Cas | Morsures | Aidées | Soignées | Trousses | Plantes | Tisanes | Jours d'abri avec un médicament |", "|---|---|---|---|---|---|---|---|");
+  for (const c of cas) l.push(`| ${c.strategie} × ${c.membres} | ${c.remedes.morsures} | ${c.remedes.aidees} | ${c.remedes.soignees} | ${c.remedes.trousses} | ${c.remedes.plantes} | ${c.remedes.tisanes} | ${c.remedes.joursAvecMedicament} |`);
   l.push("", "### Régions de départ (toutes stratégies sauf passif)", "", "| Région | Parties | Q1 | Médiane | Vivants à la fin | Autonomes |", "|---|---|---|---|---|---|");
   for (const [cle, r] of Object.entries(m.regions).sort((a, b) => b[1].mediane - a[1].mediane)) l.push(`| ${cle} | ${r.parties} | ${r.q1} | ${r.mediane} | ${r.survie200} | ${r.autonomie} |`);
   l.push("", "### Hauts contre Bas après J90 (abris des parties encore en vie)", "", "| Zone | Jours d'abri après J90 | Assauts par mois | Livides errants par mois |", "|---|---|---|---|");

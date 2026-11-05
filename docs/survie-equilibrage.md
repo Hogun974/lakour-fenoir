@@ -34,8 +34,9 @@ ont un, leur véhicule. **Quatre stratégies** simples et plausibles :
 
 **Chaque jour** : tâches données par `repartir` (répartition automatique), la stratégie gardant la garde et les bras des
 installations présentes et envoyant les autres travailler ; deux quarts de travail (fouille, chantier à `avancerChantier`,
-réparations) ; soins le soir (test de soins du meilleur soigneur, un médicament s'il y en a, un mourant stabilisé sur un test
-difficile) ; garde la nuit ; fêtes fêtées quand le calendrier du socle en donne une ; puis `avancer` quatre quarts et les
+réparations) ; soins le soir (test de soins du meilleur soigneur, un médicament s'il y en a — le dernier gardé pour une
+morsure, sauf pour un blessé grave —, un mourant stabilisé sur un test difficile ; puis, sans médicament et avec 3 plantes, une
+tisane : `REMEDES`, 2026-11-05) ; garde la nuit ; fêtes fêtées quand le calendrier du socle en donne une ; puis `avancer` quatre quarts et les
 menaces rendues sont résolues (`resoudreAssaut` ; brèche : une installation abîmée, l'abri +2 dégâts, un échange de combat ;
 une bande qui entre emporte 30 % des vivres).
 
@@ -44,7 +45,9 @@ sans boire et de faim après 10 jours sans manger (la logique ne fait que fatigu
 jours de suite quitte le groupe, sauf s'il a faim ; dépassés en nombre, les fouilleurs tentent de passer inaperçus (test de
 discrétion du moins discret) avant de se battre ; une rencontre vaut un échange de combat (chacun se bat une fois contre quatre
 adversaires au plus), puis le groupe se replie ; une morsure vaut un test de soins extrême (difficile avec un médicament de
-l'abri ou une infirmerie, depuis le 2026-11-05), sinon infection ; les corps sont toujours traités (pas de relève) ; après une
+l'abri ou une infirmerie, depuis le 2026-11-05 ; aussi avec une décoction de zerbaz ou une trousse que porte le soignant, et
+médicament et décoction +1 dé chacun : `difficulteMorsure`, `bonusMorsure`), sinon infection ; sans médicament, les
+cueilleurs vont d'abord à la cueillette (nourriture et plantes) ; les corps sont toujours traités (pas de relève) ; après une
 brèche, si les Livides restants sont plus nombreux que les valides, le groupe fuit
 (déménagement forcé) ; un malade aggravé (malus ≥ 3), épuisé et affamé meurt.
 

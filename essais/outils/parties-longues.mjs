@@ -6,6 +6,7 @@
 //
 //   node essais/outils/parties-longues.mjs                      (tous les scénarios, 40 graines, 365 jours)
 //   options : --graines 40  --jours 365  --scenarios sedentaire-4,seul  --json <fichier>  --monde 730 (monde seul, sans groupe)
+//             --serie h (graines h0, h1… au lieu de g0, g1… : une autre série pour mesurer le bruit du hasard)
 //
 // Scénarios : sédentaire (autonomie complète sans jamais déménager), seul (enraciné, sédentaire et nomade à 1), compagnons
 // (2 humains + 2 compagnons, enracinés), recrues (2 humains qui recrutent quand une compétence manque), nomade (4, déménage
@@ -14,7 +15,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import * as L from "../../systems/lakour-survie/logique/index.mjs";
-import { chargerContenu, jouerPartie } from "./simuler-parties.mjs";
+import { chargerContenu, jouerPartie, remedesDe } from "./simuler-parties.mjs";
 import { fetesDuJour } from "../../modules/lakour-fenoir/scripts/fetes.js";
 import { fetesDuJour as calendrierSocle } from "../../modules/lakour-mj-ia/scripts/fetes-logique.js";
 
@@ -239,12 +240,13 @@ const moyenne = l => (l.length ? l.reduce((a, b) => a + b, 0) / l.length : 0);
 const q = (l, p) => { if (!l.length) return null; const t = [...l].sort((a, b) => a - b); return t[Math.min(t.length - 1, Math.floor(p * t.length))]; };
 const arr = (x, n = 1) => (x === null ? "—" : Math.round(x * 10 ** n) / 10 ** n);
 
-export function jouerScenarios(contenu, { graines = 40, jours = 365, scenarios = Object.keys(SCENARIOS) } = {}) {
+// serie : la lettre des graines (g0, g1… par défaut ; une autre série, h0, h1…, mesure le bruit du hasard).
+export function jouerScenarios(contenu, { graines = 40, jours = 365, scenarios = Object.keys(SCENARIOS), serie = "g" } = {}) {
   const regions = L.regionsDe(contenu).map(r => r.cle);
   const sortie = {};
   for (const sc of scenarios) {
     sortie[sc] = [];
-    for (let i = 0; i < graines; i++) sortie[sc].push(jouerLongue(contenu, sc, { graine: `g${i}`, jours, region: regions[i % regions.length] }));
+    for (let i = 0; i < graines; i++) sortie[sc].push(jouerLongue(contenu, sc, { graine: `${serie}${i}`, jours, region: regions[i % regions.length] }));
   }
   return sortie;
 }
@@ -286,7 +288,8 @@ export function resumer(parties, jours) {
     comblePar: recrues.reduce((t, r) => { for (const c of r.manques) { t[c] ??= [0, 0]; t[c][1]++; if (r.comble.includes(c)) t[c][0]++; } return t; }, {}),
     manquesDebut: l.map(p => p.stats.manquesDebut?.length ?? 0), manquesFin: l.map(p => p.stats.manquesFin?.length ?? 0),
     joursAvecManque: moyenne(l.map(p => p.stats.joursAvecManque ?? 0)),
-    morts: l.reduce((t, p) => { for (const [c, n] of Object.entries(p.stats.morts)) t[c] = (t[c] ?? 0) + n; return t; }, {})
+    morts: l.reduce((t, p) => { for (const [c, n] of Object.entries(p.stats.morts)) t[c] = (t[c] ?? 0) + n; return t; }, {}),
+    remedes: remedesDe(l.map(p => p.stats))
   };
 }
 
@@ -298,6 +301,7 @@ function lireOptions(argv) {
     else if (argv[i] === "--scenarios") o.scenarios = argv[++i].split(",");
     else if (argv[i] === "--json") o.json = argv[++i];
     else if (argv[i] === "--monde") o.monde = Number(argv[++i]);
+    else if (argv[i] === "--serie") o.serie = String(argv[++i]);
   }
   return o;
 }
@@ -325,6 +329,8 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     const r = resumes[sc] = resumer(parties, o.jours);
     console.log(`| ${sc} | ${r.mediane} | ${r.q1} | ${r.vivants}/${r.parties} | ${r.autonomes} (J${r.autonomeMediane ?? "—"}) | ${r.autonomesFin} | ${arr(r.demenagements)} | ${arr(r.installations)} | ${arr(r.fetes)} | ${arr(r.breches, 2)} | ${arr(r.joursSansNourriture)} | ${arr(r.joursSansEau)} | ${Object.entries(r.causes).map(([c, n]) => `${c} ${n}`).join(", ")} |`);
   }
+  console.log("\n### Remèdes (morsures : aidées par un médicament, une décoction, une trousse ou une infirmerie, soignées ; par partie : trousses trouvées, plantes cueillies, tisanes ; jours d'abri avec un médicament)\n");
+  for (const [sc, r] of Object.entries(resumes)) console.log(`${sc.padEnd(16)} morsures ${r.remedes.morsures}, aidées ${r.remedes.aidees}, soignées ${r.remedes.soignees} ; trousses ${r.remedes.trousses}, plantes ${r.remedes.plantes}, tisanes ${r.remedes.tisanes} ; médicament ${r.remedes.joursAvecMedicament} des jours`);
   console.log("\n### Menaces contre l'abri par mois (moyenne des parties en vie)\n");
   for (const [sc, r] of Object.entries(resumes)) console.log(`${sc.padEnd(16)} ${r.menacesParMois.map(x => arr(x)).join(" ")}`);
   console.log("\n### Menaces par type et par trimestre (par mois ; h horde, l Livides errants, b bande, a animaux, v visite)\n");

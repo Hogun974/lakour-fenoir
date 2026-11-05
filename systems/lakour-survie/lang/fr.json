@@ -31,7 +31,7 @@
     },
     "Ressources": {
       "eau": "Eau", "nourriture": "Nourriture", "carburant": "Carburant", "medicaments": "Médicaments", "munitions": "Munitions",
-      "materiaux": "Matériaux", "pieces": "Pièces", "graines": "Graines", "energie": "Énergie (kWh)"
+      "materiaux": "Matériaux", "pieces": "Pièces", "graines": "Graines", "plantes": "Plantes médicinales", "energie": "Énergie (kWh)"
     },
     "Nature": { "cueillette": "Cueillette", "gibier": "Gibier", "peche": "Pêche", "bois": "Bois" },
     "Moments": { "matin": "Matin", "apres-midi": "Après-midi", "soir": "Soir", "nuit": "Nuit" },
@@ -258,7 +258,7 @@
     },
     "Alertes": {
       "Mourant": "{nom} est mourant : un test de soins difficile, maintenant, ou il meurt à la fin du quart.",
-      "Morsure": "{nom} est mordu : test de soins EXTRÊME dans le quart (lavage, cautérisation…), DIFFICILE avec un médicament ou une infirmerie, sinon le Gris."
+      "Morsure": "{nom} est mordu : test de soins EXTRÊME dans le quart (lavage, cautérisation…), DIFFICILE avec un médicament (une tisane de zerbaz en est un), une décoction de zerbaz (1 plante), une trousse de secours ou une infirmerie (médicament et décoction : +1 dé chacun), sinon le Gris."
     },
     "Journal": {
       "Debut": "Jour zéro, {date} : le groupe est à {region}.", "Installe": "Le groupe s'installe à {site} ({region}).", "Reprend": "Le groupe reprend l'abri de {site} ({region}).",

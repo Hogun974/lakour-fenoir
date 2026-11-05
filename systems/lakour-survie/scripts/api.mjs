@@ -695,8 +695,10 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   const qui = membresValides(ctx, membres);
   const q = entier(quarts, 1, 8, 1);
   const ab = abriCourant(ctx.etat);
+  // Les savoirs des fouilleurs (le savoir des zerbaz double les plantes cueillies).
+  const savoirs = [...new Set(qui.flatMap(a => systemeLogique(a).savoirs ?? []))];
   const r = L.fouiller(ctx.monde, c, hasard(ctx, "fouille"), { region: reg, site, cible, membres: Math.max(1, qui.length), quarts: q, prudence,
-    jour: jourCtx(ctx), moment: L.momentDe(ctx.etat.horloge.quart), abri: ab ? aPlat(ab.system) : null, renseignements: ctx.etat.renseignements });
+    jour: jourCtx(ctx), moment: L.momentDe(ctx.etat.horloge.quart), abri: ab ? aPlat(ab.system) : null, renseignements: ctx.etat.renseignements, savoirs });
   ctx.monde = r.monde;
   ctx.etat.renseignements = r.renseignements;
   if (r.fouille) ctx.etat = L.noterFouille(ctx.etat, jourCtx(ctx));

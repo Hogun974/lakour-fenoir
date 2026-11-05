@@ -11,7 +11,7 @@ function enfance({ cle, nom, origine = "reunion", region = "", description, modi
 export const ENFANCES = [
   enfance({ cle: "enfant-des-hauts-de-salazie", nom: "Enfant des Hauts de Salazie", region: "salazie", poids: 2,
     description: `Une enfance dans le cirque vert, entre les treilles de chouchous, la pluie et les sentiers qu'on descendait pour aller à l'école.`,
-    modificateurs: { survie: 1, endurance: 1 }, histoire: ["Il a grandi à Grand Îlet, où l'on rentrait de l'école à pied sous la pluie.", "Sa grand-mère lui a appris le nom de chaque plante de la forêt."] }),
+    modificateurs: { survie: 1, endurance: 1 }, savoirs: ["zerbaz"], histoire: ["Il a grandi à Grand Îlet, où l'on rentrait de l'école à pied sous la pluie.", "Sa grand-mère lui a appris le nom de chaque plante de la forêt."] }),
   enfance({ cle: "gamin-du-port", nom: "Gamin du Port", genre: "m", nomAutre: "Gamine du Port", region: "le-port", poids: 2,
     description: `Les cités du Port, les terrains vagues, les grues, la débrouille et la bande de copains qui se tient les coudes.`,
     modificateurs: { combat: 1, discretion: 1 }, histoire: ["Il a grandi dans une cité du Port, à l'ombre des grues.", "Sa bande d'enfance, c'était sa famille."] }),
@@ -68,11 +68,11 @@ export const ENFANCES = [
     modificateurs: { survie: 1, endurance: 1 }, savoirs: ["elevage"], histoire: ["Il a grandi dans une ferme de la Plaine des Cafres, à mille six cents mètres.", "Il montait à cheval avant de savoir faire du vélo."] }),
   enfance({ cle: "enfance-tamoule-de-saint-andre", nom: "Enfance tamoule de Saint-André", region: "est", poids: 1,
     description: `Une famille tamoule de Saint-André : le temple, les marches sur le feu de l'oncle, les fêtes, les cannes, et la grand-mère guérisseuse.`,
-    modificateurs: { soins: 1, endurance: 1 }, histoire: ["Sa grand-mère soignait les fièvres du quartier avec des plantes du jardin.", "Il a porté le kavadi à seize ans, pour un vœu qu'il n'a jamais dit."] }),
+    modificateurs: { soins: 1, endurance: 1 }, savoirs: ["zerbaz"], histoire: ["Sa grand-mère soignait les fièvres du quartier avec des plantes du jardin.", "Il a porté le kavadi à seize ans, pour un vœu qu'il n'a jamais dit."] }),
   enfance({ cle: "enfance-sur-un-bateau", nom: "Enfance sur un bateau", origine: "ailleurs", poids: 1,
     description: `Des parents navigateurs, une enfance de port en port dans l'océan Indien, l'école par correspondance, la mer pour horizon.`,
     modificateurs: { conduite: 1, survie: 1, bricolage: 1, parole: -1 }, histoire: ["Il a fait le tour de l'océan Indien sur le voilier de ses parents.", "Il dort mal sur un sol qui ne bouge pas."] }),
   enfance({ cle: "enfant-du-sud-sauvage", nom: "Enfant du Sud sauvage", region: "sud-sauvage", poids: 1,
     description: `Saint-Philippe, la vanille, les vacoas, les coulées qu'on allait voir en famille, la forêt de Mare-Longue comme terrain de jeu.`,
-    modificateurs: { survie: 1, discretion: 1 }, histoire: ["Il a grandi à Saint-Philippe, entre la vanille de son grand-père et les coulées.", "Il a vu la lave traverser la route trois fois avant ses vingt ans."] })
+    modificateurs: { survie: 1, discretion: 1 }, savoirs: ["zerbaz"], histoire: ["Il a grandi à Saint-Philippe, entre la vanille de son grand-père et les coulées.", "Il a vu la lave traverser la route trois fois avant ses vingt ans."] })
 ];

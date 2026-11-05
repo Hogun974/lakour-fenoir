@@ -49,5 +49,9 @@ export const SAVOIRS = [
   savoir({ cle: "hydraulique-rurale", nom: "Hydraulique rurale",
     description: `Capter une source, poser une conduite par gravité, monter un bélier hydraulique, dériver une ravine sans qu'elle emporte tout à la première crue, installer une turbine.`,
     apprentissage: `Un ancien d'un îlet ou d'un cirque ; un agent d'une centrale hydraulique ; réussir un captage de source.`,
-    effets: `Ouvre le captage de source niveau 2 et le pico-hydro. +1 dé aux tests de bricolage sur l'eau.` })
+    effets: `Ouvre le captage de source niveau 2 et le pico-hydro. +1 dé aux tests de bricolage sur l'eau.` }),
+  savoir({ cle: "zerbaz", nom: "Zerbaz et tisanes",
+    description: `Reconnaître les plantes des tisaneurs au bord d'un sentier ou au fond d'une cour : ayapana, citronnelle, faham, bois de quivi, fleur jaune, géranium, romarin, gingembre. Savoir lesquelles se boivent en tisane, lesquelles se posent en emplâtre, et surtout lesquelles ne se touchent pas.`,
+    apprentissage: `Une grand-mère guérisseuse ou un tisaneur des Hauts, de Salazie, de l'Est ou du Sud sauvage ; un apiculteur qui connaît chaque fleur ; un vieux cahier de recettes de tisanes trouvé dans une case ; ou une saison à cueillir aux côtés de quelqu'un qui sait.`,
+    effets: `La cueillette rapporte deux fois plus de plantes médicinales. +1 dé aux tests pour préparer tisanes et emplâtres (recette « Tisanes et emplâtres »). Ce sont des remèdes de jeu : ils comptent comme un médicament, ils ne guérissent pas du Gris.` })
 ];

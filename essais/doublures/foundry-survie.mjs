@@ -41,7 +41,7 @@ export class Collection extends Map {
 }
 
 const COMPETENCES = ["endurance", "combat", "tir", "discretion", "vigilance", "bricolage", "survie", "soins", "parole", "conduite"];
-const RESSOURCES = ["eau", "nourriture", "carburant", "medicaments", "munitions", "materiaux", "pieces", "graines", "energie"];
+const RESSOURCES = ["eau", "nourriture", "carburant", "medicaments", "munitions", "materiaux", "pieces", "graines", "plantes", "energie"];
 // Les valeurs initiales des modèles de données (scripts/modeles.mjs), comme Foundry les poserait.
 function systemeParDefaut(type) {
   if (type === "survivant") {

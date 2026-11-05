@@ -315,7 +315,7 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     for (const c of ["defense", "discretion"]) if (!entre(s[c], 0, 5)) e(`${ou} : ${c}`);
     for (const c of ["sol", "soleil", "souterrain", "acces"]) if (!entre(s[c], 0, 3)) e(`${ou} : ${c}`);
     if (!s.atouts?.length || !s.defauts?.length) e(`${ou} : atouts ou défauts manquants`);
-    for (const r of Object.keys(s.stocks)) if (!RESSOURCES.includes(r)) e(`${ou} : stock ${r}`);
+    for (const r of Object.keys(s.stocks)) if (!STOCKS.includes(r)) e(`${ou} : stock ${r}`);
     for (const i of s.installationsDepart) {
       const def = installations.get(i.installation);
       if (!def) e(`${ou} : installation de départ inconnue « ${i.installation} »`);
@@ -400,11 +400,11 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     const ou = `recette ${r.cle}`;
     if (!COMPETENCES.includes(r.competence) || !DIFFICULTES.includes(r.difficulte)) e(`${ou} : compétence ou difficulté`);
     if (!(r.travail > 0)) e(`${ou} : travail`);
-    for (const k of Object.keys(r.cout)) if (!RESSOURCES.includes(k)) e(`${ou} : coût ${k}`);
+    for (const k of Object.keys(r.cout)) if (!STOCKS.includes(k)) e(`${ou} : coût ${k}`);
     aSavoirs(ou, r.requiert.savoirs);
     const ri = typeof r.requiert.installation === "string" ? { cle: r.requiert.installation, niveau: 1 } : r.requiert.installation;
     if (ri && (!installations.has(ri.cle) || ri.niveau > installations.get(ri.cle).niveauMax)) e(`${ou} : installation requise ${ri.cle}`);
-    if (r.produit.equipement ? !equipements.has(r.produit.equipement) : !RESSOURCES.includes(r.produit.ressource)) e(`${ou} : produit inconnu`);
+    if (r.produit.equipement ? !equipements.has(r.produit.equipement) : !STOCKS.includes(r.produit.ressource)) e(`${ou} : produit inconnu`);
     if (!(r.produit.n >= 1)) e(`${ou} : quantité produite`);
   }
   for (const a of afflictions.values()) {

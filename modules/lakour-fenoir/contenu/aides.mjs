@@ -14,7 +14,8 @@ export const TYPES_SITE = ["maison", "case-creole", "immeuble", "ecole", "commer
   "port", "phare", "tunnel-de-lave", "galerie", "usine", "eglise", "autre"];
 export const EAUX_SITE = ["aucune", "citerne", "riviere", "source", "puits", "reseau"];
 export const RESSOURCES = ["eau", "nourriture", "carburant", "medicaments", "munitions", "materiaux", "pieces", "graines"];
-export const STOCKS = [...RESSOURCES, "energie"];
+// Les stocks de l'abri : les ressources pillables (les réserves des régions), plus ce qui se cueille ou se produit sans se piller.
+export const STOCKS = [...RESSOURCES, "plantes", "energie"];
 export const NATURE = ["cueillette", "gibier", "peche", "bois"];
 export const RESEAUX = ["electricite", "eau", "carburant", "telephone"];
 export const CATEGORIES = ["defense", "eau", "nourriture", "energie", "vie", "souterrain", "stockage", "communication"];

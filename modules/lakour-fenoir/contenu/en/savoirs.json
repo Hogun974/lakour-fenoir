@@ -37,6 +37,25 @@
       "en": "<p>Unlocks the underground gallery at levels 2 to 4 and the fitting out of a lava tube at levels 2 and 3.</p>"
     }
   },
+  "savoirs/7aodlxqtW6d0f9ui": {
+    "_nom": "Zerbaz et tisanes",
+    "name": {
+      "fr": "Zerbaz et tisanes",
+      "en": "Zerbaz and infusions"
+    },
+    "system.description": {
+      "fr": "<p>Reconnaître les plantes des tisaneurs au bord d'un sentier ou au fond d'une cour : ayapana, citronnelle, faham, bois de quivi, fleur jaune, géranium, romarin, gingembre. Savoir lesquelles se boivent en tisane, lesquelles se posent en emplâtre, et surtout lesquelles ne se touchent pas.</p>",
+      "en": "<p>Recognising the healers' plants along a trail or at the back of a yard: ayapana, lemongrass, faham, bois de quivi, fleur jaune, geranium, rosemary, ginger. Knowing which ones are drunk as a brew, which ones are laid on as a poultice, and above all which ones must not be touched.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Une grand-mère guérisseuse ou un tisaneur des Hauts, de Salazie, de l'Est ou du Sud sauvage ; un apiculteur qui connaît chaque fleur ; un vieux cahier de recettes de tisanes trouvé dans une case ; ou une saison à cueillir aux côtés de quelqu'un qui sait.</p>",
+      "en": "<p>A healer grandmother or a tisaneur (herbalist) from the Highlands, Salazie, the East or the Wild South; a beekeeper who knows every flower; an old notebook of herbal recipes found in a house; or a season of gathering alongside someone who knows.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>La cueillette rapporte deux fois plus de plantes médicinales. +1 dé aux tests pour préparer tisanes et emplâtres (recette « Tisanes et emplâtres »). Ce sont des remèdes de jeu : ils comptent comme un médicament, ils ne guérissent pas du Gris.</p>",
+      "en": "<p>Foraging brings back twice as many healing herbs. +1 die to tests to prepare brews and poultices (recipe “Infusions and poultices”). These are game remedies: they count as a medicine, they do not cure the Grey.</p>"
+    }
+  },
   "savoirs/FWJGMPXts32KIKP3": {
     "_nom": "Premiers secours avancés",
     "name": {

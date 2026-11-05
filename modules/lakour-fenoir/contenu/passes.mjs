@@ -87,7 +87,7 @@ export const PASSES = [
     accroche: `Il est à mi-route de Cilaos, car plein, quand un passager du fond se met à hurler, puis se tait.` }),
   p({ cle: "apiculteur", nom: "Apiculteur", genre: "m", nomAutre: "Apicultrice", region: "plaine-des-palmistes",
     description: `Ses ruches sont dispersées entre la Plaine des Palmistes et les letchis de l'Est ; il produit du miel de baies roses et de forêt. Patient, calme, il sait se faire oublier des abeilles et des hommes.`,
-    competences: { survie: 2, discretion: 2, endurance: 1, soins: 1, bricolage: 1 }, savoirs: ["elevage"], equipement: ["couteau", "quatre-quatre"],
+    competences: { survie: 2, discretion: 2, endurance: 1, soins: 1, bricolage: 1 }, savoirs: ["elevage", "zerbaz"], equipement: ["couteau", "quatre-quatre"],
     accroche: `Il fait le tour de ses ruches en forêt quand il croise, sur la piste, un randonneur qui marche droit sur lui, une jambe brisée, sans boiter.` }),
   p({ cle: "ilette-de-mafate", nom: "Habitant d'un îlet de Mafate", genre: "m", nomAutre: "Habitante d'un îlet de Mafate", region: "mafate",
     description: `Il est né à Roche-Plate, a porté des sacs de ciment sur les sentiers avant que l'hélicoptère les monte, cultive ses lentilles et ses patates, et connaît chaque famille du cirque.`,

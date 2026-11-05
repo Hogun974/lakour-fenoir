@@ -143,11 +143,34 @@
       }
     },
     {
+      "_id": "Brbhu0BmL3rRAxZp",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.Brbhu0BmL3rRAxZp",
+      "name": "Médicaments, trousses et zerbaz",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les médicaments sont rares sans être introuvables : la réserve d'une région se vide vite, mais une fouille tombe parfois sur une <strong>trousse de secours</strong> oubliée (boîte à gants, armoire de salle de bains : +1 médicament), et l'aile d'un hôpital en cache trois fois plus. Un survivant seul n'en a presque jamais : c'est lui que le Gris emporte d'abord.</p><p>Les <strong>zerbaz</strong> sont sa chance : une cueillette rapporte quelques plantes, une décoction aide à laver une morsure (test difficile au lieu d'extrême, +1 dé), une tisane préparée vaut un médicament. Racontez-les avec respect : le tisaneur du bourg, la grand-mère qui sait, le cahier de recettes trouvé dans une case. N'en faites pas des potions : ils aident le soignant, ils ne guérissent pas un infecté. Une trousse de secours ou un sac d'intervention que porte le soignant aide aussi, sans s'épuiser ; décidez qu'elle est vide si le groupe n'en prend aucun soin.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "zerbaz"
+        }
+      }
+    },
+    {
       "_id": "ZQk4hiAjZ1brpqCp",
       "_key": "!journal.pages!ljGCYC2YMQ4SCzey.ZQk4hiAjZ1brpqCp",
       "name": "Les outils du MJ",
       "type": "text",
-      "sort": 600,
+      "sort": 700,
       "title": {
         "show": true,
         "level": 1
@@ -170,7 +193,7 @@
       "_key": "!journal.pages!ljGCYC2YMQ4SCzey.o6eXnn9HZUDpV7nZ",
       "name": "Les factions en jeu",
       "type": "text",
-      "sort": 700,
+      "sort": 800,
       "title": {
         "show": true,
         "level": 1

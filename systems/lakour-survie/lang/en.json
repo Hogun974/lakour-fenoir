@@ -31,7 +31,7 @@
     },
     "Ressources": {
       "eau": "Water", "nourriture": "Food", "carburant": "Fuel", "medicaments": "Medicine", "munitions": "Ammunition",
-      "materiaux": "Materials", "pieces": "Parts", "graines": "Seeds", "energie": "Energy (kWh)"
+      "materiaux": "Materials", "pieces": "Parts", "graines": "Seeds", "plantes": "Healing herbs", "energie": "Energy (kWh)"
     },
     "Nature": { "cueillette": "Foraging", "gibier": "Game", "peche": "Fishing", "bois": "Wood" },
     "Moments": { "matin": "Morning", "apres-midi": "Afternoon", "soir": "Evening", "nuit": "Night" },
@@ -258,7 +258,7 @@
     },
     "Alertes": {
       "Mourant": "{nom} is dying: a hard Medicine test, now, or they die at the end of the watch.",
-      "Morsure": "{nom} is bitten: EXTREME Medicine test within the watch (washing, cauterising…), HARD with a medicine or an infirmary, or the Grey."
+      "Morsure": "{nom} is bitten: EXTREME Medicine test within the watch (washing, cauterising…), HARD with a medicine (a zerbaz herbal brew counts as one), a zerbaz decoction (1 herb), a first-aid kit or an infirmary (medicine and decoction: +1 die each), or the Grey."
     },
     "Journal": {
       "Debut": "Day zero, {date}: the group is in {region}.", "Installe": "The group settles in {site} ({region}).", "Reprend": "The group takes back the shelter of {site} ({region}).",

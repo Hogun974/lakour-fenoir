@@ -6,13 +6,14 @@
 // - Pertes : sans conservation (réserve étanche, séchoir, chambre froide), 5 % de la nourriture se gâte chaque jour, arrondi
 //   à l'entier supérieur dès qu'il y en a (20 → 1, 21 → 2).
 // - Stockage de base d'un abri sans aménagement (bidons, baignoire, placards) : eau 40, nourriture 100, carburant 20,
-//   médicaments 30, munitions 60, matériaux 60, pièces 30, graines 40, énergie 0 (il faut des batteries pour garder des kWh).
+//   médicaments 30, munitions 60, matériaux 60, pièces 30, graines 40, plantes médicinales 12 (elles se fanent : on n'en
+//   garde qu'une douzaine de brassées à sécher), énergie 0 (il faut des batteries pour garder des kWh).
 //   Les installations ajoutent leur `stockage` à ces plafonds ; au-delà, l'excédent est perdu.
 import { RESSOURCES, ALTITUDE_BAS, JOURS_INFINIS } from "./constantes.mjs";
 
 export const CONSOMMATION = { eau: 1, eauBasEte: 1.5, nourriture: 1 };
 export const TAUX_PERTES = 0.05;
-export const STOCKAGE_BASE = { eau: 40, nourriture: 100, carburant: 20, medicaments: 30, munitions: 60, materiaux: 60, pieces: 30, graines: 40, energie: 0 };
+export const STOCKAGE_BASE = { eau: 40, nourriture: 100, carburant: 20, medicaments: 30, munitions: 60, materiaux: 60, pieces: 30, graines: 40, plantes: 12, energie: 0 };
 
 export const stocksVides = () => Object.fromEntries(RESSOURCES.map(r => [r, 0]));
 

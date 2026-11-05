@@ -154,9 +154,22 @@ export function soigner(entree, resultat) {
 
 // La difficulté du test de soins d'une morsure (§1.3) : extrême ; difficile si le soignant y met un médicament (consommé) ou si
 // l'abri a une infirmerie en service (son bonus de soins compte alors, comme pour tout test à l'abri). Depuis le 2026-11-05 :
-// l'extrême seul laissait 0 à 11 % de chances et tuait d'abord les survivants seuls.
-export function difficulteMorsure({ medicament = false, infirmerie = false } = {}) {
-  return medicament || infirmerie ? "difficile" : "extreme";
+// l'extrême seul laissait 0 à 11 % de chances et tuait d'abord les survivants seuls. Ajouts du 2026-11-05 (après) :
+// - une tisane ou un emplâtre de zerbaz préparé à l'atelier (recette du contenu) est un médicament comme un autre ;
+// - trousse : le soignant porte une trousse de secours ou un sac d'intervention (équipement de catégorie « soin ») :
+//   désinfectant, garrot, compresses comptent comme un médicament ; la trousse n'est pas consommée (son bonus d'outil compte,
+//   comme pour tout test) ;
+// - decoction : on lave la morsure à la décoction de zerbaz (DECOCTION.plantes plante de l'abri, consommée) : aide aussi.
+export const DECOCTION = { plantes: 1, bonus: 1 };
+export function difficulteMorsure({ medicament = false, infirmerie = false, trousse = false, decoction = false } = {}) {
+  return medicament || infirmerie || trousse || decoction ? "difficile" : "extreme";
+}
+
+// Les dés en plus du test de soins d'une morsure : +1 pour un médicament, +1 pour une décoction de zerbaz (les deux se
+// cumulent : c'est ce qui donne une chance à un soignant sans métier), et le bonus d'outil (trousse) et d'installation
+// (infirmerie), au plus +2 ensemble comme pour tout test à l'abri (§1.1).
+export function bonusMorsure({ medicament = false, decoction = false, outil = 0, infirmerie = 0 } = {}) {
+  return (medicament ? 1 : 0) + (decoction ? DECOCTION.bonus : 0) + Math.min(2, Math.max(0, Number(outil) || 0) + Math.max(0, Number(infirmerie) || 0));
 }
 
 // Une morsure : le test de soins du quart (difficulteMorsure) a-t-il réussi ? Sinon infecté depuis `quart`.

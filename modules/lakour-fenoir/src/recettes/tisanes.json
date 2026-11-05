@@ -6,21 +6,16 @@
   "img": "icons/svg/anvil.svg",
   "system": {
     "cle": "tisanes",
-    "description": "<p>Ayapana, citronnelle, bois de quivi, gingembre : les remèdes des grands-mères, contre les fièvres légères et les maux de ventre.</p>",
+    "description": "<p>Deux brassées de zerbaz, de l'eau bouillie, une marmite : une tisane d'ayapana ou de citronnelle pour les fièvres légères et les maux de ventre, une décoction pour laver une plaie, un emplâtre de feuilles pilées. Pour le jeu, cela compte comme un médicament (y compris pour laver une morsure) ; cela ne guérit pas du Gris. Le savoir « Zerbaz et tisanes » donne +1 dé.</p>",
     "cout": {
-      "graines": 1
+      "plantes": 2
     },
-    "travail": 2,
-    "competence": "soins",
+    "travail": 1,
+    "competence": "survie",
     "difficulte": "normale",
     "requiert": {
-      "savoirs": [
-        "premiers-secours-avances"
-      ],
-      "installation": {
-        "cle": "infirmerie",
-        "niveau": 1
-      }
+      "savoirs": [],
+      "installation": null
     },
     "produit": {
       "ressource": "medicaments",
