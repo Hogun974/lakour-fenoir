@@ -14,7 +14,7 @@
 //     (index des jetons récrits, plans.json refait avec les noms traduits), CREDITS.md ; puis les mêmes vérifications qu'en
 //     français (documents, registre, contrat du contenu). Un écart de balises ou de liens arrête la fabrication.
 import { compilePack } from "@foundryvtt/foundryvtt-cli";
-import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, realpathSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, realpathSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -28,6 +28,14 @@ import { EFFET_FETE } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
 import { verifierModuleDeContenu } from "../modules/lakour-mj-ia/outils/contrat-contenu.mjs";
+
+// Écriture atomique (fichier temporaire puis renommage) : un essai ou un serveur qui lit le fichier pendant la fabrication
+// ne voit jamais un JSON tronqué (même fonction que dans le fabricant des Veillées).
+function ecrire(chemin, texte) {
+  const provisoire = `${chemin}.${process.pid}.tmp`;
+  writeFileSync(provisoire, texte);
+  renameSync(provisoire, chemin);
+}
 
 const RACINE_DEPOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const RACINE = join(RACINE_DEPOT, "modules", MODULE);
@@ -555,7 +563,7 @@ export function extraireDictionnaires(docs, registre, dossier = DOSSIER_DICTIONN
     const fichier = join(dossier, `${pack}.json`);
     const existant = existsSync(fichier) ? JSON.parse(readFileSync(fichier, "utf8")) : {};
     const { dictionnaire, rapport } = fusionner(squelette[pack], existant, tout[pack]);
-    writeFileSync(fichier, `${JSON.stringify(dictionnaire, null, 2)}\n`);
+    ecrire(fichier, `${JSON.stringify(dictionnaire, null, 2)}\n`);
     const entrees = Object.values(dictionnaire).reduce((n, e) => n + Object.keys(e).filter(k => !k.startsWith("_")).length, 0);
     const traduites = Object.values(dictionnaire).reduce((n, e) => n + Object.values(e).filter(t => t?.en).length, 0);
     bilan[pack] = { entrees, traduites, ...rapport };
@@ -612,19 +620,19 @@ function copierModule(documents, registre) {
     for (const f of readdirSync(dossier, { withFileTypes: true })) {
       const chemin = join(dossier, f.name);
       if (f.isDirectory()) recrireJson(chemin);
-      else if (f.name.endsWith(".json")) writeFileSync(chemin, readFileSync(chemin, "utf8").replaceAll(`modules/${MODULE}/`, `modules/${MODULE_EN}/`));
+      else if (f.name.endsWith(".json")) ecrire(chemin, readFileSync(chemin, "utf8").replaceAll(`modules/${MODULE}/`, `modules/${MODULE_EN}/`));
     }
   };
   recrireJson(join(RACINE_EN, "assets"));
   const figurants = join(RACINE_EN, "assets", "jetons", "figurants.json"), libelles = join(DOSSIER_DICTIONNAIRES, "figurants.json");
   if (existsSync(figurants) && existsSync(libelles)) {
     const table = traduireFigurants(JSON.parse(readFileSync(figurants, "utf8")), JSON.parse(readFileSync(libelles, "utf8")));
-    writeFileSync(figurants, `${JSON.stringify(table, null, 2)}\n`);
+    ecrire(figurants, `${JSON.stringify(table, null, 2)}\n`);
   }
   const plans = {};
   for (const { pack, doc } of documents) if (pack === "scenes" && doc.flags?.[MODULE_EN]?.plan) plans[doc.flags[MODULE_EN].cle] = doc.flags[MODULE_EN].plan;
-  writeFileSync(join(RACINE_EN, "assets", "cartes", "plans.json"), `${JSON.stringify(plans, null, 1)}\n`);
-  writeFileSync(join(RACINE_EN, "assets", "donnees.json"), `${JSON.stringify(registre, null, 1)}\n`);
+  ecrire(join(RACINE_EN, "assets", "cartes", "plans.json"), `${JSON.stringify(plans, null, 1)}\n`);
+  ecrire(join(RACINE_EN, "assets", "donnees.json"), `${JSON.stringify(registre, null, 1)}\n`);
 }
 
 // ---------------------------------------------------------------- Fabrication
@@ -635,7 +643,7 @@ async function ecrireEtCompiler(docs, racine, compiler) {
     const dossier = join(racine, "src", pack);
     rmSync(dossier, { recursive: true, force: true });
     mkdirSync(dossier, { recursive: true });
-    for (const { cle, doc } of liste) writeFileSync(join(dossier, `${cle.split(":")[1]}.json`), `${JSON.stringify(doc, null, 2)}\n`);
+    for (const { cle, doc } of liste) ecrire(join(dossier, `${cle.split(":")[1]}.json`), `${JSON.stringify(doc, null, 2)}\n`);
     console.log(`${pack.padEnd(14)} ${liste.length} documents`);
   }
   if (compiler) {
@@ -674,7 +682,7 @@ if (lanceDirectement()) {
   } else if (langue === "fr") {
     await ecrireEtCompiler(docs, RACINE, compiler);
     mkdirSync(dirname(FICHIER_DONNEES), { recursive: true });
-    writeFileSync(FICHIER_DONNEES, `${JSON.stringify(registre, null, 1)}\n`);
+    ecrire(FICHIER_DONNEES, `${JSON.stringify(registre, null, 1)}\n`);
     ecrirePlans();
     console.log(`registre       ${Object.entries(registre).filter(([, v]) => Array.isArray(v)).map(([k, v]) => `${k} ${v.length}`).join(", ")}`);
   } else if (langue === "en") {
@@ -694,7 +702,7 @@ if (lanceDirectement()) {
     const fichierManifeste = join(DOSSIER_DICTIONNAIRES, "module.json");
     const traductions = existsSync(fichierManifeste) ? JSON.parse(readFileSync(fichierManifeste, "utf8")) : {};
     mkdirSync(RACINE_EN, { recursive: true });
-    writeFileSync(join(RACINE_EN, "module.json"), `${JSON.stringify(manifesteAnglais(manifeste, traductions), null, 2)}\n`);
+    ecrire(join(RACINE_EN, "module.json"), `${JSON.stringify(manifesteAnglais(manifeste, traductions), null, 2)}\n`);
     copierModule(documents, registreEn);
     await ecrireEtCompiler(documents, RACINE_EN, compiler);
     const ecarts = verifierModuleDeContenu(RACINE_EN);
