@@ -2,7 +2,13 @@
 
 *Un jeu de rôle de survie original pour Foundry VTT : La Réunion, au jour zéro d'un mal inconnu.*
 
-[English version](README.en.md) · [Changements](CHANGELOG.md) · [Crédits](modules/lakour-fenoir/CREDITS.md)
+**[Tutoriel : de zéro à la première journée de survie](TUTORIEL.md)** · [English version](README.en.md) ·
+[Changements](CHANGELOG.md) · [Crédits](modules/lakour-fenoir/CREDITS.md)
+
+> **Transparence.** Le code et les textes de ce dépôt ont été écrits avec l'aide d'une IA (Claude, d'Anthropic) et relus
+> par l'auteur. Les illustrations (fond du monde, images des fêtes) ont été générées localement par IA (modèle FLUX.2 klein
+> 9B, sans service distant). La carte de l'île est fabriquée par programme à partir de données ouvertes (IGN,
+> OpenStreetMap) ; les jetons reprennent des icônes de game-icons.net. Le détail est dans [Crédits](#crédits).
 
 <p align="center">
   <img src="docs/captures/carte-de-l-ile.png" alt="La carte de La Réunion : seize régions, leurs routes et leurs sentiers" width="49%">
@@ -84,7 +90,7 @@ Le contrat entre les pièces : [`docs/survie-contrat.md`](docs/survie-contrat.md
 ## Installation
 
 Trois façons, de la plus simple à la plus complète. Dans les trois cas, il faut **le système, le module de contenu et le
-module MJ IA**.
+module MJ IA**. Le [tutoriel](TUTORIEL.md) reprend tout pas à pas, jusqu'à la première journée de jeu.
 
 ### 1. Depuis Foundry, par les manifestes (recommandé)
 
@@ -121,6 +127,10 @@ mot de passe) est publié avec chaque version. Dans **Mondes › Installer un mo
 ```
 https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world.json
 ```
+
+Le monde vierge anglais (module `lakour-fenoir-en` actif), quand la version publiée le contient :
+`https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world-en.json`. Dans les deux, le MJ IA est réglé sur la
+personnalité **La Chroniqueuse**, en mode validation, avec un budget de 10 $ par séance.
 
 Le système et les modules sont proposés à l'installation s'ils manquent. Le monde est vierge : aucune partie, aucun joueur,
 aucune chronique, aucun coffre.
@@ -421,7 +431,7 @@ ou IA) peut raconter dans n'importe quelle langue.
 
 ## Essais
 
-**209 essais** Node (`node --test`), sans Foundry, sans réseau ni coût, en quelques secondes, couvrent la logique pure du
+**257 essais** Node (`node --test`), sans Foundry, sans réseau ni coût, en quelques secondes, couvrent la logique pure du
 système (dés, état, temps et ressources, abri, actions, génération, simulation du monde sur 200 jours à graine fixe :
 rien de négatif, hordes dans des régions voisines, réseaux tombés dans leur fenêtre, décomposition des Bas après le jour 60,
 autonomie atteignable), ses textes localisés, le contenu (toutes les références résolues, chaque région atteignable de
@@ -456,6 +466,7 @@ outils/                       fabriquer-fenoir.mjs (contenu, compendiums, traduc
 essais/                       les essais Node de ce dépôt, avec leur doublure de Foundry
 docs/                         survie-contrat.md (le contrat entre les pièces), survie-notes-logique.md, survie-notes-contenu.md,
                               publication.md, captures/
+TUTORIEL.md, TUTORIAL.md      le tutoriel « de zéro à la première journée de survie », en français et en anglais
 .github/workflows/            release.yml : publication sur étiquette v*
 ```
 
@@ -482,7 +493,8 @@ Pour proposer un changement :
 
 ## Crédits
 
-- Jeu, textes, règles, contenu et code : **Jordan (La Kour)**, avec l'aide d'assistants de programmation.
+- Jeu, textes, règles, contenu et code : **Jordan (La Kour)**, écrits avec l'aide d'une IA (**Claude**, d'Anthropic) et
+  relus par l'auteur.
 - Silhouettes des jetons : icônes de **[game-icons.net](https://game-icons.net)** (Caro Asercion, DarkZaitzev, Delapouite,
   Lorc, Skoll), licence **CC BY 3.0**, recolorées et composées dans un médaillon ; la liste icône par icône est dans
   [`modules/lakour-fenoir/CREDITS.md`](modules/lakour-fenoir/CREDITS.md).

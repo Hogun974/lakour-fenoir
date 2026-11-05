@@ -79,7 +79,7 @@ La voie défensive et discrète : `autonomie.voieDefensive`.
   (api.horloges.assurer) chez le MJ actif.
 - **Visibilité** : paliers 3 (on parle de vous), 5 (éclaireurs), 7 (visite), 9 (assaut) ; table `visibilite-<palier>` chacune.
 - **Fêtes** : `scripts/fetes.js`. `moteur` = la fête du calendrier réel du moteur déclinée (noel, nouvel-an, paques, halloween,
-  musique) ou null ; `date` "MM-JJ" ou `dates` par année ; fenêtre `avant` / `apres` ; `image` assets/fetes/<cle>.jpg (à produire) ;
+  musique) ou null ; `date` "MM-JJ" ou `dates` par année ; fenêtre `avant` / `apres` ; `image` assets/fetes/<cle>.jpg (illustration générée localement par IA) ;
   `effet` : +1 moral à chacun, une fois par fête, une ration de plus par personne. `fetesDuJour(dateDeJeu)` donne les fêtes du
   calendrier DU JEU (20 décembre, Dipavali, Nouvel An chinois, Cavadee, letchis, 14 juillet, Toussaint n'existent pas au
   calendrier du moteur : à brancher côté système / MJ IA sur la date de jeu).
@@ -92,6 +92,7 @@ système peut proposer `attendre` pour être sûr (ou tolérer un `ajouter` tard
 
 ## 4. Hors du périmètre de cette livraison
 
-- Images : `assets/cartes/reunion.webp`, `assets/fetes/*.jpg`, `assets/monde/fond.jpg` (chemins posés, fichiers à produire).
+- Images : `assets/cartes/reunion.webp`, `assets/fetes/*.jpg`, `assets/monde/fond.jpg` (chemins posés ; fichiers produits
+  depuis : la carte par `outils/fabriquer-carte.mjs`, les illustrations générées localement par IA, voir `CREDITS.md`).
 - Jetons : seules les icônes déjà copiées dans `modules/lakour-mj-ia/outils/game-icons/` sont utilisées ; il n'y en a pas pour
   les véhicules (relancer `outils/fabriquer-jetons-fenoir.mjs --source <archive game-icons>` après avoir ajouté des icônes).

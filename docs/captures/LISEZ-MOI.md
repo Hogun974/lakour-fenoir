@@ -28,3 +28,31 @@ Format : PNG, 1200 à 1920 px de large, moins de 1 Mo chacun si possible (`pngqu
 `carte-de-l-ile`, `fiche-de-survivant`, `abri`, `tableau-de-bord`, `livre-de-l-ile` et `fete` servent aussi dans les
 manifestes (`system.json`, `module.json`, champ `media`) : les garder sous ces noms exacts. Le bandeau du README utilise
 `carte-de-l-ile`, `tableau-de-bord`, `fiche-de-survivant`, `abri` et `livre-de-l-ile`.
+
+## Captures des tutoriels
+
+Les tutoriels (`TUTORIEL.md` en français, `TUTORIAL.md` en anglais) réutilisent les captures ci-dessus et en demandent
+quelques autres. Celles du tutoriel anglais portent le suffixe `.en.png` : **Foundry en anglais**, module
+`lakour-fenoir-en` actif (monde vierge anglais `world-en.json`), mêmes conseils que plus haut.
+
+| Fichier | Tutoriel | Contenu | Comment l'obtenir |
+|---|---|---|---|
+| `tuto-installer-systeme.png` | français | L'écran de configuration de Foundry, onglet **Systèmes de jeu**, fenêtre **Installer un système** avec l'URL du manifeste collée dans le champ. | Avant de valider l'installation ; recadrer sans la barre d'adresse. |
+| `tuto-paquets-installes.png` | français | Les **modules complémentaires** installés : *La Kour — Fénoir* et *La Kour – MJ IA* (et le système dans son onglet, ou deux captures côte à côte). | Après l'installation des trois paquets. |
+| `tuto-installer-contenu.png` | français | La fenêtre **Fénoir** qui propose d'installer le contenu (guides, journaux du MJ, carte). | Dans un monde neuf, au premier chargement après l'activation des modules. |
+| `tuto-installer-systeme.en.png` | anglais | Même chose que `tuto-installer-systeme.png` : **Game Systems › Install System**. | Foundry en anglais. |
+| `tuto-paquets-installes.en.png` | anglais | Même chose que `tuto-paquets-installes.png` (module anglais `lakour-fenoir-en`). | Foundry en anglais. |
+| `tuto-installer-contenu.en.png` | anglais | Même chose que `tuto-installer-contenu.png`, en anglais. | Monde neuf avec `lakour-fenoir-en`. |
+| `accueil.en.png` | anglais | L'écran d'accueil du monde vierge anglais. | Comme `accueil.png`, avec `la-kour-fenoir-en`. |
+| `creation.en.png` | anglais | La fenêtre **Create a survivor**. | Comme `creation.png`. |
+| `fiche-de-survivant.en.png` | anglais | La fiche de survivant. | Comme `fiche-de-survivant.png`. |
+| `fenetre-du-mj.en.png` | anglais | **Fénoir — GM window**, onglet **Game and time**. | Comme `fenetre-du-mj.png`, mais sur l'onglet de démarrage (aucun monde réel à l'écran). |
+| `bandeau.en.png` | anglais | Le bandeau de survie. | Comme `bandeau.png`. |
+| `abri.en.png` | anglais | La fiche d'abri. | Comme `abri.png`. |
+| `tableau-de-bord.en.png` | anglais | Le **Group dashboard**, onglet **The group** (grille *Who does what*). | Comme `tableau-de-bord.png`, depuis un compte de joueur. |
+| `mj-ia.en.png` | anglais | Le MJ IA en séance avec le fournisseur factice (*dummy*). | Comme `mj-ia.png`. |
+
+Le tutoriel français utilise aussi `accueil.png`, `creation.png`, `fiche-de-survivant.png`, `fenetre-du-mj.png` (de
+préférence sur l'onglet **Partie et temps**, sans le monde réel), `bandeau.png`, `abri.png`, `tableau-de-bord.png` et
+`mj-ia.png`. Aucune capture ne doit montrer d'identifiants : ni clé d'API, ni mot de passe, ni adresse ou identifiants d'un
+relais audio TURN (fenêtre *Configurer l'audio/vidéo*, à ne pas capturer).

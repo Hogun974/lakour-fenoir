@@ -2,7 +2,13 @@
 
 *An original survival role-playing game for Foundry VTT: Réunion Island, on day zero of an unknown plague.*
 
-[Version française](README.md) · [Changelog](CHANGELOG.md) · [Credits](modules/lakour-fenoir/CREDITS.md)
+**[Tutorial: from scratch to your first day of survival](TUTORIAL.md)** · [Version française](README.md) ·
+[Changelog](CHANGELOG.md) · [Credits](modules/lakour-fenoir/CREDITS.md)
+
+> **Transparency.** The code and texts of this repository were written with the help of an AI (Claude, by Anthropic) and
+> reviewed by the author. The illustrations (world background, festival images) were generated locally by AI (FLUX.2 klein
+> 9B model, no remote service). The island map is built by code from open data (IGN, OpenStreetMap); the tokens use icons
+> from game-icons.net. Details in [Credits](#credits).
 
 <p align="center">
   <img src="docs/captures/carte-de-l-ile.png" alt="The map of Réunion Island: sixteen regions, their roads and trails" width="49%">
@@ -90,7 +96,7 @@ The contract between the pieces: [`docs/survie-contrat.md`](docs/survie-contrat.
 ## Installation
 
 Three ways, from the simplest to the most complete. In all three you need **the system, the content module and the AI GM
-module**.
+module**. The [tutorial](TUTORIAL.md) walks through it all step by step, up to the first day of play.
 
 ### 1. From Foundry, with the manifests (recommended)
 
@@ -126,6 +132,10 @@ Gamemaster account without password) is published with each release. In **Game W
 ```
 https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world.json
 ```
+
+The English empty world (`lakour-fenoir-en` enabled), when the release includes it:
+`https://github.com/Hogun974/lakour-fenoir/releases/latest/download/world-en.json`. In both, the AI GM is set to the
+**Chronicler** personality, in validation mode, with a budget of 10 dollars per session.
 
 The system and the modules are offered for installation if missing. The world is empty: no game, no player, no chronicle,
 no vault.
@@ -411,7 +421,7 @@ the system reads never change. Method: `modules/lakour-mj-ia/docs/traduction.md`
 
 ## Tests
 
-**209 Node tests** (`node --test`), no Foundry, no network, no cost, in a few seconds: the system's pure logic (dice, state,
+**257 Node tests** (`node --test`), no Foundry, no network, no cost, in a few seconds: the system's pure logic (dice, state,
 time and resources, shelter, actions, generation, world simulation over 200 days with a fixed seed: nothing negative, hordes
 in neighbouring regions, networks down within their window, decomposition of the lowlands after day 60, self-sufficiency
 reachable), its localised texts, the content (every reference resolved, every region reachable from every other, every
@@ -446,6 +456,7 @@ outils/                       fabriquer-fenoir.mjs (content, compendiums, transl
 essais/                       the Node tests of this repository, with their Foundry double
 docs/                         survie-contrat.md (the contract between the pieces), survie-notes-logique.md, survie-notes-contenu.md,
                               publication.md, captures/
+TUTORIEL.md, TUTORIAL.md      the "from scratch to your first day of survival" tutorial, in French and English
 .github/workflows/            release.yml: release on v* tags
 ```
 
@@ -472,7 +483,8 @@ change:
 
 ## Credits
 
-- Game, texts, rules, content and code: **Jordan (La Kour)**, with the help of coding assistants.
+- Game, texts, rules, content and code: **Jordan (La Kour)**, written with the help of an AI (**Claude**, by Anthropic) and
+  reviewed by the author.
 - Token silhouettes: icons from **[game-icons.net](https://game-icons.net)** (Caro Asercion, DarkZaitzev, Delapouite, Lorc,
   Skoll), **CC BY 3.0** licence, recoloured and set in a medallion; the icon-by-icon list is in
   [`modules/lakour-fenoir/CREDITS.md`](modules/lakour-fenoir/CREDITS.md).

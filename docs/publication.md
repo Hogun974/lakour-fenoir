@@ -15,15 +15,27 @@ est automatisé l'est par `.github/workflows/release.yml`, `outils/empaqueter-pa
       Garder les mentions **CC BY 3.0** (game-icons), **licence ouverte** (IGN Admin Express) et **ODbL** (OpenStreetMap :
       l'attribution « © les contributeurs d'OpenStreetMap » est obligatoire) ; dire que les images sont générées par IA
       avec un modèle **non commercial** (FLUX.2 klein 9B) : cela pèse sur le choix de la licence des images.
+- [x] **Tutoriels** (5 novembre 2026) : `TUTORIEL.md` et `TUTORIAL.md` à la racine, « de zéro à la première journée de
+      survie » (installation par manifestes, monde vierge, survivants, abri, journée, MJ IA en renvoi au tutoriel du moteur,
+      relais TURN sans identifiants, dépannage), liés en tête des deux README.
+- [x] **Réglages du monde vierge public** : `monde/src/settings/lakour-mj-ia.personnaliteActive.json` = `chroniqueuse`
+      (gardé par la liste blanche d'`empaqueter-monde`, vérifié dans les mondes construits français et anglais) ; autonomie
+      (validation) et budget (10 $) laissés aux valeurs par défaut du moteur.
+- [x] **Transparence et crédits** : mention en tête des deux README (code et textes écrits avec l'aide de Claude, d'Anthropic,
+      relus par l'auteur ; illustrations générées localement par IA, FLUX.2 klein 9B) ; `CREDITS.md` (et son générateur
+      `outils/fabriquer-jetons-fenoir.mjs`) ne dit plus que la carte et les images des fêtes « seront produites à part ».
 - [ ] **Captures** : déposer les PNG listés dans `docs/captures/LISEZ-MOI.md` (au moins `carte-de-l-ile`,
       `tableau-de-bord`, `fiche-de-survivant`, `abri`, `livre-de-l-ile`, `fete` : ce sont celles du bandeau du README et
-      des `media` des manifestes).
+      des `media` des manifestes ; puis celles des tutoriels, `tuto-*.png` et les variantes anglaises `*.en.png`).
 - [ ] **Relire le dépôt pour les fuites** : aucune adresse interne, aucun nom de machine, aucune clé, aucun vrai nom de
       joueur dans les essais, les docs (`docs/survie-contrat.md`, `docs/survie-notes-*.md`), les commentaires, `monde/src/`
       et l'historique git. `git log -p | grep -i -E "172\.|192\.168|\.local|mot de passe|clé"` pour un premier passage.
       `npm run empaqueter-monde -- --verifier` refuse déjà un utilisateur, un message, un acteur de joueur, une IP privée,
       un chemin personnel ou une adresse mail dans le monde vierge. Les documents mentionnent « La Kour », « Jordan » : à
-      garder ou non, au choix.
+      garder ou non, au choix. *Passage du 5 novembre 2026* : la recherche des adresses privées, des noms de l'infrastructure privée et des
+      préfixes de clés d'API (hors sous-module) ne trouve que des coordonnées de tracés SVG, dans l'arbre comme dans
+      l'historique (`git log -p`) ; aucun lien vers un dépôt privé. Reste à relire à la main
+      les noms de joueurs.
 - [ ] **Sous-module** : `.gitmodules` pointe sur `../lakour-mj-ia` (URL relative). Sur GitHub, cela résout vers
       `https://github.com/Hogun974/lakour-mj-ia` : ce dépôt doit **exister et être public** (ou le workflow ne pourra pas le
       récupérer : le jeton `GITHUB_TOKEN` n'a accès qu'au dépôt courant). Le commit du sous-module enregistré ici doit avoir
@@ -42,6 +54,8 @@ est automatisé l'est par `.github/workflows/release.yml`, `outils/empaqueter-pa
 - [ ] **Monde vierge** : `monde/src/` doit être extrait d'une copie à jour du monde du serveur après le dernier changement
       de contenu (`npm run empaqueter-monde -- --extraire <Data/worlds/la-kour-fenoir>`), sinon le monde publié installe
       des journaux et une carte d'une version précédente. Vérifier `monde/world.json` : `version` suit celle du module.
+      Au 5 novembre 2026, `empaqueter-monde -- --verifier` avertit que les deux guides du MJ IA de `monde/src` sont en
+      version 17 au lieu de 19 : `npm run empaqueter-monde -- --rafraichir` avant la release.
 
 ## 2. Première publication (release)
 
@@ -170,7 +184,8 @@ Constats et corrections :
 - `actions/checkout` reçoit `token: ${{ secrets.SOUS_MODULE_TOKEN || github.token }}`.
 - `fabriquer-fenoir.mjs` a déjà une garde correcte (comparaison de `realpath`).
 
-- [ ] Commiter `package-lock.json` (et le refaire par `npm install --package-lock-only` à chaque changement de
+- [x] Commiter `package-lock.json` (et le refaire par `npm install --package-lock-only` à chaque changement de
       `package.json`).
-- [ ] Essais au vert avant l'étiquette (au rejeu, des essais `survie-api-*` en cours de reprise échouaient).
+- [x] Essais au vert avant l'étiquette (au rejeu, des essais `survie-api-*` en cours de reprise échouaient ; le
+      5 novembre 2026 : 257/257 après `npm run fabriquer-fenoir-en`). À refaire avant chaque étiquette.
 - [ ] `lakour-mj-ia` public (ou secret `SOUS_MODULE_TOKEN`) avant de pousser l'étiquette.
