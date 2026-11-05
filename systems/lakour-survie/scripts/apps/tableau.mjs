@@ -60,12 +60,15 @@ export function contexteTableau(onglet = "groupe") {
   const renseignements = L.regionsDe(c).map(r => {
     const rs = etat.renseignements?.[r.cle] ?? {};
     const age = L.ageRenseignement(rs, jour);
+    // Le pillage (comme les routes et les factions) ne se voit que sur place : une nouvelle de la radio ne le rajeunit pas.
+    const ageVu = L.ageDirect(rs, jour);
+    const datePillage = rs.pillage && rs.pillage !== "inconnu" && ageVu !== null && ageVu !== age ? ` (${t("LAKOUR_SURVIE.Renseignements.Age", { n: ageVu })})` : "";
     return {
       cle: r.cle, nom: r.nom, zone: t(`LAKOUR_SURVIE.Zones.${r.zone}`), ici: r.cle === etat.groupe?.region,
       age: age === null ? t("LAKOUR_SURVIE.Renseignements.Jamais") : t("LAKOUR_SURVIE.Renseignements.Age", { n: age }), vieux: age !== null && age > 7,
       source: rs.vu === null || rs.vu === undefined ? "" : t(`LAKOUR_SURVIE.Sources.${rs.source ?? "rumeur"}`),
       infestation: t(`LAKOUR_SURVIE.Infestation.${rs.infestation ?? "inconnue"}`), infestationCle: rs.infestation ?? "inconnue",
-      pillage: t(`LAKOUR_SURVIE.Pillage.${rs.pillage ?? "inconnu"}`),
+      pillage: `${t(`LAKOUR_SURVIE.Pillage.${rs.pillage ?? "inconnu"}`)}${datePillage}`,
       electricite: rs.electricite === null || rs.electricite === undefined ? "?" : rs.electricite ? "✔" : "✘",
       eau: rs.eau === null || rs.eau === undefined ? "?" : rs.eau ? "✔" : "✘",
       factions: (rs.factions ?? []).map(f => L.factionDe(c, f)?.nom ?? f).join(", "),

@@ -20,15 +20,20 @@
 // - Sol : les installations qui demandent du sol (cultures) produisent × (0,5 + 0,5 × sol restant / sol du site), au plus × 1,25
 //   (compost) ; elles usent le sol de 0,004 par niveau et par jour ; le compost (`effets.sol`) en rend chaque jour. Sol 0..3.
 // - Énergie disponible = stock (batteries) + production du jour. Si elle manque, les installations consommatrices s'arrêtent
-//   dans l'ordre ORDRE_DELESTAGE (confort d'abord, eau en dernier) ; même règle pour le carburant (groupe électrogène) et pour
-//   l'eau des installations (les personnes boivent d'abord). Une installation arrêtée ne garde que défense, discrétion,
-//   capacité, protection cyclonique et stockage.
+//   dans l'ordre ORDRE_DELESTAGE (confort d'abord, eau en dernier) ; même règle pour le carburant (groupe électrogène), pour
+//   l'eau des installations (les personnes boivent d'abord) et pour leur nourriture (les chiens de garde mangent après les
+//   personnes ; sans restes, ils ne gardent plus). Une installation arrêtée ne garde que défense, discrétion, capacité,
+//   protection cyclonique et stockage.
+// - Production du jour : arrondie à l'entier ; une production de moins d'une demi-unité par jour (les médicaments des ruches ou
+//   de l'infirmerie) s'accumule d'un jour à l'autre dans `abri.reliquats` et donne une unité chaque fois qu'elle en fait une.
 // - Visibilité = ceil(personnes / 2) + visibilité des installations en marche − discrétion totale, bornée 0..10.
 //   Défense = défense du site + installations − floor(dégâts / 2).
 // - Plans (§3.3) : reconstruire une installation déjà construite coûte 25 % de ressources en moins (arrondi au supérieur sur
 //   le reste : 3 → 3, 4 → 3, 10 → 8) et la moitié du travail (arrondi au supérieur).
 // - Réparation : 1 point d'état coûte max(1, ceil(travail du niveau / 4)) quarts-personne et 1 matériau ; un point de dégâts de
-//   l'abri coûte 2 quarts-personne et 1 matériau.
+//   l'abri coûte 2 quarts-personne et 1 matériau. Le travail qui ne finit pas un point s'accumule (`reparation` de l'instance ou
+//   de l'abri, au plus un point d'avance s'il manque le matériau) : un survivant seul qui répare un quart par jour finit par y
+//   arriver ; une installation (ou un abri) remise à neuf n'en garde rien.
 // - Nature des alentours : régénération par jour vers le plafond = rendement × (cueillette 0,25, gibier 0,15, pêche 0,25,
 //   bois 0,2) ; cueillette × 0,7 en saison sèche et × bonus des fruits (1,25 en novembre, 1,5 en décembre-janvier).
 // - Cyclone : dégâts = force − protection cyclonique (si positif) ; chaque installation exposée (eau, nourriture, énergie,
@@ -110,7 +115,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     for (const [r, q] of Object.entries(e.production ?? {})) production[r] = (Number(q) || 0) * f;
     lignes.push({
       cle: inst.cle, categorie: def.categorie, niveau, e, production, horsService: fEtat === 0,
-      consommation: { energie: Number(e.consommation?.energie) || 0, carburant: Number(e.consommation?.carburant) || 0, eau: Number(e.consommation?.eau) || 0 },
+      consommation: { energie: Number(e.consommation?.energie) || 0, carburant: Number(e.consommation?.carburant) || 0, eau: Number(e.consommation?.eau) || 0, nourriture: Number(e.consommation?.nourriture) || 0 },
       enMarche: fEtat > 0 && inst.actif !== false, sol: demandeSol(def, niveau)
     });
   }
@@ -120,7 +125,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     + (siteEau === "reseau" && conditions.reseaux?.eau ? RESEAU_PUBLIC.eau : 0);
   const courant = conditions.reseaux?.electricite && !SITES_SANS_COURANT.includes(c.site.type) ? RESEAU_PUBLIC.electricite : 0;
   if (eauSite || courant) lignes.push({ cle: "", categorie: "site", niveau: 0, e: {}, production: { eau: eauSite, energie: courant }, horsService: false,
-    consommation: { energie: 0, carburant: 0, eau: 0 }, enMarche: true, sol: false, site: true });
+    consommation: { energie: 0, carburant: 0, eau: 0, nourriture: 0 }, enMarche: true, sol: false, site: true });
   const arrets = [];
   const arreter = (l, raison) => { if (l.enMarche) { l.enMarche = false; arrets.push({ cle: l.cle, raison }); } };
   for (const l of lignes) if (l.horsService) arrets.push({ cle: l.cle, raison: "hors-service" });
@@ -148,6 +153,12 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     if (eau >= l.consommation.eau) eau -= l.consommation.eau;
     else arreter(l, "eau");
   }
+  // Nourriture : les personnes mangent d'abord ; les bêtes nourries (chiens de garde) se partagent le reste.
+  let vivres = stocks.nourriture + Math.round(somme("nourriture")) - besoin.nourriture;
+  for (const l of parPriorite) if (l.enMarche && l.consommation.nourriture > 0) {
+    if (vivres >= l.consommation.nourriture) vivres -= l.consommation.nourriture;
+    else arreter(l, "nourriture");
+  }
 
   // Effets. Arrêtée : seulement le structurel ; hors service : capacité et stockage.
   const actives = lignes.filter(l => l.enMarche && !l.site);
@@ -158,13 +169,21 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   const plafond = plafonds(ajoutsStockage);
 
   const production = {};
+  const reliquats = {};
+  for (const [r, x] of Object.entries(abri.reliquats ?? {})) if (Number(x) > 0) reliquats[r] = Number(x);
   for (const r of RESSOURCES) {
-    const p = Math.round(somme(r));
+    const brut = somme(r);
+    let p = Math.round(brut);
+    if (p === 0 && brut > 0) {
+      const total = (reliquats[r] ?? 0) + brut;
+      p = Math.floor(total + 1e-9);
+      reliquats[r] = Math.round((total - p) * 1000) / 1000;
+    }
     if (p) production[r] = p;
   }
   const consommation = {
     eau: besoin.eau + actives.reduce((s, l) => s + l.consommation.eau, 0),
-    nourriture: besoin.nourriture,
+    nourriture: besoin.nourriture + actives.reduce((s, l) => s + l.consommation.nourriture, 0),
     energie: actives.reduce((s, l) => s + l.consommation.energie, 0),
     carburant: actives.reduce((s, l) => s + l.consommation.carburant, 0)
   };
@@ -190,7 +209,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     renseignements: actives.some(l => l.e.renseignements),
     eauTraitee: actives.some(l => l.e.eauTraitee) || (siteEau === "reseau" && Boolean(conditions.reseaux?.eau)),
     plafonds: plafond,
-    production, consommation, pertes, net,
+    production, reliquats, consommation, pertes, net,
     sol: sommeEffet(actives, "sol") - usure,
     actives: actives.map(l => l.cle),
     eauSite: Math.round(eauSite), reseauElectrique: courant > 0,
@@ -211,6 +230,7 @@ export function journeeAbri(abri = {}, installations = [], contenu = {}, conditi
   const nouveau = {
     ...abri,
     stocks: r.stocks,
+    reliquats: bilan.reliquats,
     sol: borner(Number(abri.sol ?? c.site.sol ?? 0) + bilan.sol, 0, SOL_MAX),
     nature: regenererNature(abri.nature, c.region, { saison: c.saison, mois })
   };
@@ -314,6 +334,7 @@ export function avancerChantier(instance, def, { quarts = 1, bras = 1, bonus = 0
     i.chantier = { fait: 0, requis: 0 };
     if (premier) i.termineLe = jour;
     i.etat = 0;
+    i.reparation = 0;
     return { instance: i, termine: true, niveau: i.niveau, reste: 0, plan: def?.cle ?? i.cle };
   }
   i.chantier = { fait, requis };
@@ -325,12 +346,21 @@ export function endommagerInstallation(instance, n = 1) {
   return { ...structuredClone(instance), etat: borner((Number(instance?.etat) || 0) + n, 0, 3) };
 }
 
-// Répare : -> { instance, repares, cout: { materiaux, travail } } (le travail en trop est perdu).
+// Le travail d'une réparation : celui déjà fait (s'il reste à réparer) + quarts × bras ; -> { repares, reste (travail gardé) }.
+function travailDeReparation({ aReparer, deja = 0, quarts = 1, bras = 1, parPoint, materiaux = Infinity }) {
+  if (!(aReparer > 0)) return { repares: 0, reste: 0 };
+  const travail = Math.max(0, Number(deja) || 0) + Math.max(0, Number(quarts) || 0) * Math.max(0, Number(bras) || 0);
+  const repares = Math.min(aReparer, Math.floor(travail / parPoint), Math.max(0, Math.floor(Number(materiaux))));
+  return { repares, reste: repares >= aReparer ? 0 : Math.min(parPoint, travail - repares * parPoint) };
+}
+
+// Répare : -> { instance, repares, cout: { materiaux, travail } } (travail : celui des points réparés ; le reste est gardé dans
+// instance.reparation pour la suite).
 export function reparerInstallation(instance, def, { quarts = 1, bras = 1, materiaux = Infinity } = {}) {
   const parPoint = Math.max(1, Math.ceil((Number(niveauDe(def, Math.max(1, Number(instance?.niveau) || 1))?.cout?.travail) || 0) / 4));
   const etat = Number(instance?.etat) || 0;
-  const repares = Math.min(etat, Math.floor((quarts * bras) / parPoint), Math.max(0, Math.floor(materiaux)));
-  return { instance: { ...structuredClone(instance), etat: etat - repares }, repares, cout: { materiaux: repares, travail: repares * parPoint } };
+  const t = travailDeReparation({ aReparer: etat, deja: instance?.reparation, quarts, bras, parPoint, materiaux });
+  return { instance: { ...structuredClone(instance), etat: etat - t.repares, reparation: t.reste }, repares: t.repares, cout: { materiaux: t.repares, travail: t.repares * parPoint } };
 }
 
 export const endommagerAbri = (abri, n = 1) => ({ ...abri, degats: Math.max(0, (Number(abri?.degats) || 0) + n) });
@@ -338,8 +368,8 @@ export const endommagerAbri = (abri, n = 1) => ({ ...abri, degats: Math.max(0, (
 export function reparerAbri(abri, { quarts = 1, bras = 1 } = {}) {
   const degats = Number(abri?.degats) || 0;
   const materiaux = Number(abri?.stocks?.materiaux) || 0;
-  const repares = Math.min(degats, Math.floor((quarts * bras) / TRAVAIL_DEGAT), materiaux);
-  return { abri: { ...abri, degats: degats - repares, stocks: { ...normaliserStocks(abri?.stocks), materiaux: materiaux - repares } }, repares };
+  const t = travailDeReparation({ aReparer: degats, deja: abri?.reparation, quarts, bras, parPoint: TRAVAIL_DEGAT, materiaux });
+  return { abri: { ...abri, degats: degats - t.repares, reparation: t.reste, stocks: { ...normaliserStocks(abri?.stocks), materiaux: materiaux - t.repares } }, repares: t.repares };
 }
 
 // Un cyclone sur l'abri. -> { abri, installations, degats, endommagees: [cle] }

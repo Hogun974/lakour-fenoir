@@ -224,7 +224,8 @@ pure, déterministe pour une graine) :
 ### 2.4 Renseignements (PUBLIC) : ce que le groupe croit savoir
 ```
 renseignements: { region: {
-  vu: jour | null,                     // dernière observation directe (ou "radio" : moins fiable)
+  vu: jour | null,                     // dernière nouvelle (observation, radio ou rumeur)
+  vuDirect: jour | null,               // dernière observation directe (source « vu ») : seule elle lit pillage et routes
   source: "vu" | "radio" | "rumeur",
   infestation: "inconnue" | "calme" | "presente" | "dense" | "grouillante",   // bande lue au moment `vu`
   pillage: "inconnu" | "intact" | "entame" | "maigre" | "vide",
@@ -233,7 +234,8 @@ renseignements: { region: {
 ```
 Mis à jour par `explorer`, `fouiller`, `voyager` (la région où l'on passe), la radio et le MJ. **Le MJ (et l'IA) voient le
 réel et le connu ; les joueurs ne voient que le connu, daté.** Un déménagement se prépare sur des renseignements qui
-vieillissent : c'est voulu.
+vieillissent : c'est voulu. Une nouvelle par radio rajeunit `vu`, pas `vuDirect` : le pillage et les routes gardent l'âge
+de la dernière visite (`ageDirect` ; un ancien renseignement sans `vuDirect` dont la source est « vu » est daté par `vu`).
 
 ### 2.5 Factions (contenu)
 `{ cle, nom, description: HTML, attitude: "hostile" | "mefiante" | "neutre" | "amicale", regionsDepart, croissance,
@@ -245,6 +247,14 @@ communauté religieuse, les familles des îlets de Mafate, des bandes de pillard
 `{ cle, nom, type: "meteo" | "reseau" | "horde" | "humain" | "accident" | "decouverte" | "abri" | "fete",
 phases: [phase], zones: [zone], saisons: ["pluies" | "seche"], poids, public: Boolean, texte: HTML, effets: { … } }` :
 la simulation en tire les effets simples (route coupée, stock perdu, infestation +1…) ; le MJ raconte le reste.
+Les événements météo nommés d'après un danger fin d'une région (`eboulement-cilaos`, radiers, houle, incendie de forêt…)
+ne tombent que dans les régions dont c'est un danger. À trancher : les effets `abri` du contenu (stock perdu, moral,
+blessures, découvertes) ne sont pas encore appliqués par la simulation ; il faut décider à quel abri ils s'appliquent.
+
+Ajouts du 2026-11-05 (parties longues) : une réparation trop courte pour finir un point s'accumule (`reparation` de
+l'abri) ; une petite production (moins d'une unité par jour : ruches, infirmerie) s'accumule (`reliquats`) ; les chiens
+de garde et autres installations qui mangent consomment après les personnes et s'arrêtent s'il ne reste rien ; un abri
+occupé par une faction redevient libre quand elle tombe sous 0,5 de force dans la région.
 
 ## 3. Documents Foundry
 

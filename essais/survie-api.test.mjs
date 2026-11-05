@@ -9,6 +9,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { installerFoundry, messages, emissions, journalHooks, calme, erreurs, commeJoueur, valeur } from "./doublures/foundry-survie.mjs";
 import { charger, monde, survivantTire } from "./doublures/survie-api-outils.mjs";
+import { peutFaire } from "../systems/lakour-survie/logique/index.mjs";
 
 installerFoundry();
 const M0 = await charger();
@@ -105,10 +106,12 @@ test("partie complète : jour 0, deux survivants tirés, installation, fouille, 
 
   // Les tâches : chacun la sienne ; le joueur choisit la sienne par le MJ actif.
   await M.api.assigner({ acteurId: a.id, tache: "cultures" });
-  const choix = commeJoueur("u2", () => M.api.assigner({ acteurId: b.id, tache: "garde" }));
+  // (le survivant de u2 est tiré au hasard : une incapacité, « violence » ou « nuit », peut lui interdire la garde)
+  const tacheB = ["garde", "eau", "fouille", "chantier"].find(x => peutFaire(b.system, x));
+  const choix = commeJoueur("u2", () => M.api.assigner({ acteurId: b.id, tache: tacheB }));
   await calme();
-  assert.equal((await choix).tache, "garde");
-  assert.equal(b.system.tache, "garde");
+  assert.equal((await choix).tache, tacheB);
+  assert.equal(b.system.tache, tacheB);
   await commeJoueur("u1", () => assert.rejects(() => M.api.assigner({ acteurId: b.id, tache: "repos" }), /PasProprietaire/));
 
   // 5. Trente jours passent, avec des vivres pour tenir.

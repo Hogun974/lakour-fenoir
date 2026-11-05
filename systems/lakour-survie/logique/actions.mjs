@@ -90,11 +90,15 @@ export function tirerRencontre(monde, contenu, hasard, { region, jour = monde?.j
     return { type, nombre, region, creature: c.cle, des: c.des, resistance: c.resistance, texte: `${nombre} × ${c.nom ?? "chien errant"}.`,
       ...message("rencontre-animaux", { nombre, creature: c.defaut ? "" : c.nom ?? "", creatureCle: c.cle }) };
   }
-  const dangers = (def?.dangers ?? []).filter(d => ["crue", "eboulement", "incendie"].includes(d));
+  // Les dangers de la région, nommés finement par le contenu (« eboulement-cilaos », « incendie-foret », « radier-submerge ») :
+  // leur famille (éboulement, incendie, crue) ; une région sans danger de ces familles en tire un au hasard.
+  const dangers = [...new Set((def?.dangers ?? []).map(familleDanger).filter(Boolean))];
   const danger = choisir(dangers.length ? dangers : ["eboulement", "incendie", "crue"], hasard);
   const textes = { crue: "un radier en crue", eboulement: "un éboulement", incendie: "un incendie" };
   return { type: "danger", nombre: 0, danger, region, texte: `Danger : ${textes[danger] ?? danger}.`, ...message(`rencontre-danger-${danger}`, { danger }) };
 }
+
+const familleDanger = d => (/^eboulement/.test(d) ? "eboulement" : /^incendie/.test(d) ? "incendie" : /^(crue|radier)/.test(d) ? "crue" : null);
 
 // Les créatures sans bestiaire (`defaut` : la couche Foundry les nomme dans sa langue, LAKOUR_SURVIE.Creatures.<cle>).
 export const CREATURE_DEFAUT = { livide: { cle: "livide", nom: "Livide", type: "livide", des: 1, resistance: 1, defaut: true },

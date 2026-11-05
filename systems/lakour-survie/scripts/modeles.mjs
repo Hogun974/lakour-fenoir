@@ -73,6 +73,8 @@ export class ModeleAbri extends foundry.abstract.TypeDataModel {
       sol: nombre(0),
       bruit: entier(0, 0, 10),
       degats: entier(0),
+      reparation: nombre(0),
+      reliquats: new fields.SchemaField(Object.fromEntries(RESSOURCES.map(r => [r, nombre(0)]))),
       notes: html()
     };
   }
@@ -89,6 +91,7 @@ export class ModeleInstallation extends foundry.abstract.TypeDataModel {
       niveauMax: entier(1),
       chantier: new fields.SchemaField({ fait: nombre(0), requis: nombre(0) }),
       etat: entier(0, 0, 3),
+      reparation: nombre(0),
       niveaux: new fields.ArrayField(new fields.ObjectField()),
       termineLe: relatif(0),
       actif: bool(true)

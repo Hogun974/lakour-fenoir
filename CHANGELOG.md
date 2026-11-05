@@ -7,6 +7,13 @@ dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
 ## Non publié
 
+- **Parties longues** (`essais/outils/parties-longues.mjs`, 440 parties d'un an contrôlées chaque jour) et six corrections :
+  la radio ne rajeunit plus le pillage (`vuDirect`, âge du pillage au tableau) ; une réparation trop courte s'accumule ;
+  les chiens de garde mangent ; une petite production (médicaments des ruches et de l'infirmerie) s'accumule ; un abri
+  d'une faction disparue redevient libre ; les événements météo des régions (éboulements, radiers, houle, incendie)
+  arrivent enfin. Le simulateur ne donnait plus de jour gratuit au nomade : son équilibre est remesuré.
+- **Monde vierge** remis au niveau du contenu (14 journaux, carte de La Réunion, guides du MJ IA en français et en
+  anglais) ; essais sur GitHub Actions et release à blanc à la main ; fabricant aux écritures atomiques.
 - **Monde vierge `la-kour-fenoir`** (`monde/`) : manifeste, description, fond, système et modules actifs, un seul compte
   Gamemaster sans mot de passe ; empaqueté par l'outil commun du moteur (`npm run empaqueter-monde`), qui refuse toute fuite.
 - Création : prénoms accordés au genre de l'enfance et du passé (`nomAutre`, `nomAccorde`), générateur revu ; `oublier()`

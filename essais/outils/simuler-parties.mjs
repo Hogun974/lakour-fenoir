@@ -28,7 +28,11 @@
 // - rencontre : un seul échange de combat (chacun se bat une fois), puis le groupe se replie ; une morsure vaut un test de soins
 //   extrême par le meilleur soigneur, sinon infection ; les corps des morts sont toujours traités (pas de relève) ;
 // - brèche : une installation abîmée, l'abri +2 dégâts, un échange de combat contre la force de la menace ; une bande qui entre
-//   emporte 30 % des vivres ; si des assaillants restent après l'échange, le groupe FUIT (déménagement forcé).
+//   emporte 30 % des vivres ; si des assaillants restent après l'échange, le groupe FUIT (déménagement forcé) ;
+// - un jour de départ (ou de changement de site) est un jour de jeu comme un autre : le temps passe, sans travail ;
+// - arrivé dans une région dont tous les sites sont occupés, le groupe repart plus loin ; sans site ni route, la partie s'arrête
+//   (fin « impasse », pas « vivants ») ;
+// - l'enraciné ne construit une installation qui mange (chiens de garde) que sur un surplus de nourriture produite.
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -73,7 +77,7 @@ export const ORDRE_ENRACINE = [
   ["chiens-de-garde", 1]
 ];
 const PRIORITE_EMPORT = ["nourriture", "eau", "medicaments", "pieces", "materiaux", "graines", "carburant", "munitions"];
-const CAUSES = ["faim", "soif", "assaut", "rencontre", "infection", "maladie", "depart", "vivants"];
+const CAUSES = ["faim", "soif", "assaut", "rencontre", "infection", "maladie", "depart", "impasse", "vivants"];
 
 // ------------------------------------------------------------------ contenu
 export function chargerContenu(fichier = FICHIER_DONNEES) {
@@ -117,7 +121,18 @@ const bandeScore = { intact: 4, entame: 3, inconnu: 2.5, maigre: 1, vide: 0 };
 const infScore = { calme: 1, inconnue: 0, presente: 0, dense: -1.5, grouillante: -3 };
 
 // ------------------------------------------------------------------ une partie
-export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region, graine = "1", jours = JOURS_DEFAUT, journal = false } = {}) {
+// Options des parties longues (essais/outils/parties-longues.mjs), sans effet sur les autres parties (même hasard) :
+// - strategie « sedentaire » : un enraciné qui s'installe dans SA région et ne déménage jamais (ni soif, ni fuite) ;
+// - compagnons : les n derniers membres sont des compagnons (statut « compagnon », sans budget de départ, §10.2) ;
+// - recrutement : chaque semaine passée à l'abri, si le groupe a une compétence manquante (besoinsDuGroupe) et moins de
+//   RECRUES.max membres, une recrue se présente (genererRecrue, favorisée par le profil recherché) et le meilleur orateur tente
+//   de la convaincre (recruter) ;
+// - controle(jour, instantane) : appelé à la fin de chaque jour avec { etat, monde, abri, survivants, avance (dernier avancer),
+//   actions: [faits et rencontres des actions du jour] } (lecture seule) : les vérifications d'invariants.
+export const STRATEGIES_LONGUES = [...STRATEGIES, "sedentaire"];
+export const RECRUES = { max: 8, tousLes: 7 };
+export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region, graine = "1", jours = JOURS_DEFAUT, journal = false, compagnons = 0, recrutement = false, controle = null } = {}) {
+  const sedentaire = strategie === "sedentaire";
   const R = REGLES_SIMULATEUR;
   const idx = L.indexer(contenu);
   const hasard = (...c) => L.deriverHasard(graine, ...c);
@@ -126,7 +141,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
 
   // Le groupe.
   const ids = Array.from({ length: membres }, (_, i) => `s${i + 1}`);
-  const survivants = ids.map((id, i) => ({ id, system: L.genererSurvivant(contenu, hasard("survivant", i), { statut: "joueur", region }) }));
+  const survivants = ids.map((id, i) => ({ id, system: L.genererSurvivant(contenu, hasard("survivant", i), { statut: i >= membres - compagnons ? "compagnon" : "joueur", region }) }));
   for (const s of survivants) s.nom = s.system.nom || s.id;
   const savoirs = [...new Set(survivants.flatMap(s => s.system.savoirs ?? []))];
   const vehicule = survivants.flatMap(s => s.system.equipement ?? []).map(e => idx.equipements.get(e)).find(e => e && e.type === "vehicule" && e.terrains?.includes("route")) ?? null;
@@ -134,15 +149,18 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
   let { monde, etat } = L.demarrerPartie({ contenu, graine: `${graine}|monde`, region, membres: ids });
   let abri = null;
   let porte = {};
-  let enracine = strategie === "enracine";
+  let enracine = strategie === "enracine" || sedentaire;
   let cibleSite = null;
   const stats = {
     strategie, membres, region, jours: jours, fin: "vivants", autonomeLe: null, demenagements: 0, joursSansEau: 0, joursSansNourriture: 0,
     blocages: {}, cyclones: 0, eruptions: 0, hordes: 0, assauts: 0, assautsApres30: 0, serieuxApres30: 0, joursApres30: 0, breches: 0, morts: {},
+    recrues: [], tentatives: 0, manquesDebut: null, manquesFin: null, joursAvecManque: 0,
     joursAbri: 0, bas: { jours: 0, assauts: 0, livides: 0 }, hauts: { jours: 0, assauts: 0, livides: 0 }, joursApres90: 0,
-    fetes: 0, rencontres: 0, evitees: 0, installations: 0, mortsApres90: 0, fuites: 0, fouillesMaigres: 0, premiereFaim: null
+    impasse: null, fetes: 0, rencontres: 0, evitees: 0, installations: 0, mortsApres90: 0, fuites: 0, fouillesMaigres: 0, premiereFaim: null
   };
   let fouillesMaigres = 0;
+  let actionsDuJour = [];
+  let derniereAvance = null;
   const vivants = () => survivants.filter(s => L.peutAgir(s.system) && etat.groupe.membres.includes(s.id));
   const systemes = () => survivants.map(s => s.system);
 
@@ -258,6 +276,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     porte = L.ajouterStocks(porte, { carburant: -v.carburant });
     abri = null;
     etat = { ...etat, renseignements: v.renseignements, groupe: { ...etat.groupe, abri: "", enRoute: { de: etat.groupe.region, vers, route: v.chemin.join(" → "), reste: v.quarts, transport: transport === "pied" ? "pied" : "vehicule" } } };
+    actionsDuJour.push(...v.faits, ...v.rencontres);
     for (const r of v.rencontres) resoudreRencontre(r, vivants(), jour * 4, h);
     stats.demenagements++;
     noter(jour, `déménage vers ${vers} (${v.quarts} quarts, ${transport === "pied" ? "à pied" : "en véhicule"}), emporte ${JSON.stringify(porte)}`);
@@ -287,7 +306,8 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
 
   // ---- l'enraciné choisit où s'installer (sa région ou une voisine) : vers une voisine, il y va d'abord.
   const sEnraciner = (jour, h, exclure = []) => {
-    const candidates = [etat.groupe.region, ...L.voisinsDe(contenu, etat.groupe.region).map(v => v.region)];
+    if (sedentaire && abri) return false; // ne déménage jamais
+    const candidates = sedentaire ? [etat.groupe.region] : [etat.groupe.region, ...L.voisinsDe(contenu, etat.groupe.region).map(v => v.region)];
     const choix = choisirSite("enracine", candidates, [], exclure);
     if (!choix) return false;
     if (abri && choix.site === abri.system.site) return true; // on est déjà au meilleur endroit
@@ -297,6 +317,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
   };
 
   // ---- construire (enraciné).
+  const installationNourrie = (def, niveau) => Number(L.niveauDe(def, niveau)?.effets?.consommation?.nourriture) > 0;
   const construire = (jour, h) => {
     const site = idx.sites.get(abri.system.site);
     const groupe = { savoirs, plans: etat.groupe.plans };
@@ -307,6 +328,8 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         const def = idx.installations.get(cle);
         const inst = abri.installations.find(i => i.cle === cle);
         if (!def || (Number(inst?.niveau) || 0) !== niveau - 1) continue;
+        // Des bêtes à nourrir (chiens de garde) : seulement sur un surplus de nourriture produite.
+        if (installationNourrie(def, niveau) && !((abri.bilan?.net?.nourriture ?? -1) >= 1)) continue;
         const v = L.peutConstruire(def, niveau, { stocks: abri.system.stocks, installations: abri.installations }, site, groupe);
         if (v.ok) {
           const o = L.ouvrirChantier(def, { stocks: abri.system.stocks, installations: abri.installations }, site, groupe);
@@ -358,6 +381,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     monde = f.monde;
     abri.system = { ...f.abri, stocks: L.ajouterStocks(f.abri.stocks, f.butin), bruit: Math.min(10, (f.abri.bruit ?? 0) + f.bruit) };
     etat = L.noterFouille({ ...etat, renseignements: f.renseignements }, jour);
+    actionsDuJour.push(...f.faits, ...(f.rencontre ? [f.rencontre] : []));
     resoudreRencontre(f.rencontre, fouilleurs, jour * 4, h);
     noter(jour, `fouille ${cible ?? "générale"} (${fouilleurs.length}, ${prudence}) : ${JSON.stringify(f.butin)}${f.rencontre ? ` — rencontre ${f.rencontre.texte}` : ""}`);
     return somme(Object.values(f.butin));
@@ -372,6 +396,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     const f = L.fouiller(monde, contenu, h, { region: abri.system.region, cible, membres: cueilleurs.length, quarts: 2, prudence: prudencePour(abri.system.region), jour, abri: abri.system, renseignements: etat.renseignements });
     monde = f.monde;
     abri.system = { ...f.abri, stocks: L.ajouterStocks(f.abri.stocks, f.butin) };
+    actionsDuJour.push(...f.faits, ...(f.rencontre ? [f.rencontre] : []));
     resoudreRencontre(f.rencontre, cueilleurs, jour * 4, h);
     return somme(Object.values(f.butin));
   };
@@ -438,7 +463,8 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         if (m.type !== "bande" && r.restants > valides && vivants().length) {
           stats.fuites++;
           noter(jour, `fuit l'abri (${r.restants} assaillants restent, ${valides} valides)`);
-          if (!partir(jour + 1, h, "fuite")) noter(jour, "ne peut pas fuir : aucune route");
+          if (sedentaire) noter(jour, "reste malgré la brèche (sédentaire)");
+          else if (!partir(jour, h, "fuite")) noter(jour, "ne peut pas fuir : aucune route");
           return;
         }
       }
@@ -460,35 +486,49 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
   };
 
   // ------------------------------------------------------------------ la boucle des jours
+  // En route : on avance, on mange ce qu'on porte ; à l'arrivée, on s'installe.
+  const jourDeRoute = jour => {
+    const mange = (porte.nourriture ?? 0) >= vivants().length;
+    if (mange) porte = L.ajouterStocks(porte, { nourriture: -vivants().length });
+    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri: null, options: { mangeHorsAbri: mange, corpsTraites: ids } });
+    appliquer(r);
+    if (!etat.groupe.enRoute) {
+      const cible = cibleSite && idx.sites.get(cibleSite)?.region === etat.groupe.region ? cibleSite : choisirSite(enracine ? "enracine" : "nomade", [etat.groupe.region], monde.regions[etat.groupe.region]?.sitesVisites ?? [])?.site;
+      cibleSite = null;
+      if (cible) installer(cible, jour + 1);
+    }
+    finDeJour(jour + 1);
+  };
+  // Un jour de déménagement (départ, ou changement de site dans la région) : le temps passe aussi, sans travail.
+  const jourSansTravail = (jour, h) => {
+    if (etat.groupe.enRoute) return jourDeRoute(jour);
+    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri, options: { corpsTraites: ids } });
+    appliquer(r);
+    if (abri) resoudreMenaces(r.menaces, jour + 1, h);
+    finDeJour(jour + 1);
+  };
   let jour = 0;
   for (jour = 0; jour < jours; jour++) {
     const h = hasard("jour", jour);
     let dernierFouille = 0;
     if (!vivants().length) break;
 
-    // En route : on avance, on mange ce qu'on porte.
-    if (etat.groupe.enRoute) {
-      const mange = (porte.nourriture ?? 0) >= vivants().length;
-      if (mange) porte = L.ajouterStocks(porte, { nourriture: -vivants().length });
-      const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri: null, options: { mangeHorsAbri: mange, corpsTraites: ids } });
-      appliquer(r);
-      if (!etat.groupe.enRoute) {
-        const cible = cibleSite && idx.sites.get(cibleSite)?.region === etat.groupe.region ? cibleSite : choisirSite(enracine ? "enracine" : "nomade", [etat.groupe.region], monde.regions[etat.groupe.region]?.sitesVisites ?? [])?.site;
-        cibleSite = null;
-        if (cible) installer(cible, jour + 1);
-      }
-      finDeJour(jour + 1);
-      continue;
-    }
+    if (etat.groupe.enRoute) { jourDeRoute(jour); continue; }
 
-    // Jour 0 : où s'installer.
+    // Jour 0 (ou arrivée sans site libre) : où s'installer ; tous les sites de la région sont occupés : on repart plus loin.
+    // Plus aucun site ni aucune route : impasse, la partie s'arrête là.
     if (!abri) {
-      if (enracine) { if (!sEnraciner(jour, h)) break; }
+      let ok;
+      if (enracine) ok = sEnraciner(jour, h);
       else {
         const choix = choisirSite("nomade", [etat.groupe.region], monde.regions[etat.groupe.region]?.sitesVisites ?? []);
-        if (!choix || !installer(choix.site, jour)) break;
+        ok = Boolean(choix && installer(choix.site, jour));
       }
-      if (!abri) { finDeJour(jour + 1); continue; }
+      if (!ok) {
+        if (sedentaire || !partir(jour, h, "région pleine")) { stats.impasse = jour; break; }
+        stats.regionsPleines = (stats.regionsPleines ?? 0) + 1;
+      }
+      if (!abri) { jourSansTravail(jour, h); continue; }
     }
 
     // Décision du nomade : partir ?
@@ -497,8 +537,8 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       const js = Math.min(bilan.joursDeStocks.eau, bilan.joursDeStocks.nourriture);
       const regionVide = ["maigre", "vide"].includes(etat.renseignements[abri.system.region]?.pillage);
       if ((js < R.joursStocksDepart && regionVide) || fouillesMaigres >= R.fouillesMaigres || (js < 1 && jour > 2)) {
-        if (strategie === "mixte" && stats.demenagements >= R.demenagementsMixte) { enracine = true; noter(jour, "s'enracine"); if (sEnraciner(jour, h)) { finDeJour(jour + 1); continue; } }
-        else if (partir(jour, h, `stocks ${js} j, fouilles maigres ${fouillesMaigres}`)) { fouillesMaigres = 0; finDeJour(jour + 1); continue; }
+        if (strategie === "mixte" && stats.demenagements >= R.demenagementsMixte) { enracine = true; noter(jour, "s'enracine"); if (sEnraciner(jour, h)) { jourSansTravail(jour, h); continue; } }
+        else if (partir(jour, h, `stocks ${js} j, fouilles maigres ${fouillesMaigres}`)) { fouillesMaigres = 0; jourSansTravail(jour, h); continue; }
       }
     }
 
@@ -571,7 +611,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         else { poser(f, "fouille"); fouillerRegion(f, res, jour, h); }
       }
       if (dispo.length) { poser(dispo, "chasse"); fouillerNature(dispo, jour, h); }
-      if (doitPartir && sEnraciner(jour, h, [abri.system.site])) { noter(jour, `part (${doitPartir})`); finDeJour(jour + 1); continue; }
+      if (doitPartir && sEnraciner(jour, h, [abri.system.site])) { noter(jour, `part (${doitPartir})`); jourSansTravail(jour, h); continue; }
     } else {
       // Nomade : tout le monde fouille, sauf la garde ; ciblé si l'eau ou la nourriture manque ; un cueilleur aux alentours.
       let dispo = libres();
@@ -594,6 +634,31 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       const b = fouillerRegion(dispo, cible, jour, h);
       dernierFouille += b;
       if (dispo.length && b < dispo.length) { fouillesMaigres++; stats.fouillesMaigres++; } else fouillesMaigres = 0;
+    }
+
+    // Recrutement (parties longues) : une recrue par semaine se présente si une compétence manque.
+    if (recrutement && abri) {
+      const b = L.besoinsDuGroupe(vivants(), abri, contenu, etat);
+      if (stats.manquesDebut === null) stats.manquesDebut = [...b.manques];
+      if (b.manques.length) stats.joursAvecManque++;
+      if (jour > 0 && jour % RECRUES.tousLes === 0 && b.manques.length && vivants().length < RECRUES.max) {
+        const hr = hasard("recrue", jour);
+        const r = L.genererRecrue(contenu, hr, { besoins: b, region: abri.system.region, phase: etat.phase });
+        const parleur = [...vivants()].sort((a, c) => L.competence(c.system, "parole").niveau - L.competence(a.system, "parole").niveau)[0];
+        const t = L.recruter({ recrue: r.survivant, parleur: parleur?.system, attitude: "neutre", besoins: b, hasard: hr });
+        stats.tentatives++;
+        const comble = b.manques.filter(c => L.competence(r.survivant, c).niveau >= 2);
+        const somme = L.COMPETENCES.reduce((x, c) => x + L.competence(r.survivant, c).niveau, 0);
+        if (t.reussite) {
+          const id = `r${survivants.length + 1}`;
+          survivants.push({ id, nom: t.recrue.nom || id, system: t.recrue });
+          etat = L.ajouterMembre(etat, id, "recrue");
+          ids.push(id);
+          stats.recrues.push({ jour, manques: [...b.manques], comble, somme });
+          noter(jour, `recrute ${t.recrue.nom} (manques ${b.manques.join(",")}, comble ${comble.join(",") || "rien"})`);
+        }
+      }
+      stats.manquesFin = [...b.manques];
     }
 
     // Soir : soins, fête.
@@ -625,6 +690,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
   }
 
   function appliquer(r) {
+    derniereAvance = r;
     etat = { ...r.etat, journal: [], alertes: [] };
     monde = { ...r.monde, journalSecret: [] };
     if (abri && r.acteurs.abri) abri = { ...abri, system: r.acteurs.abri.system, installations: r.acteurs.abri.installations };
@@ -649,12 +715,15 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       if (s.joursMoralZero >= R.joursMoralZero) { etat = L.retirerMembre(etat, s.id); compter(s, "depart"); }
     }
     stats.jours = j;
+    if (controle) controle(j, { etat, monde, abri, survivants, avance: derniereAvance, actions: actionsDuJour, stats });
+    actionsDuJour = [];
+    derniereAvance = null;
     if (!vivants().length) {
       const dernier = survivants.filter(s => s.compte).sort((a, b) => b.finLe - a.finLe)[0];
       stats.fin = dernier?.derniereCause ?? "assaut";
     }
   }
-  if (vivants().length) stats.fin = "vivants";
+  if (vivants().length) stats.fin = stats.impasse === null ? "vivants" : "impasse";
   stats.regionFin = abri?.system.region ?? etat.groupe.region;
   stats.installationsFin = abri ? abri.installations.filter(i => i.niveau >= 1).map(i => `${i.cle}${i.niveau}`) : [];
   stats.journal = lignes;
@@ -665,6 +734,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
 export function casDe(liste) {
   const tous = STRATEGIES.flatMap(s => TAILLES.map(t => ({ strategie: s, membres: t })));
   if (!liste) return tous;
+  tous.push(...TAILLES.map(t => ({ strategie: "sedentaire", membres: t })));
   const voulus = String(liste).split(",").map(x => x.trim()).filter(Boolean);
   return tous.filter(c => voulus.includes(`${c.strategie}-${c.membres}`));
 }
@@ -723,7 +793,7 @@ export function mesurer(resultats, { jours = JOURS_DEFAUT } = {}) {
 }
 
 // ------------------------------------------------------------------ tableaux
-const nomCause = { faim: "faim", soif: "soif", assaut: "brèche/assaut", rencontre: "rencontre", infection: "infection", maladie: "maladie", depart: "départ de tous", vivants: "vivants à la fin" };
+const nomCause = { faim: "faim", soif: "soif", assaut: "brèche/assaut", rencontre: "rencontre", infection: "infection", maladie: "maladie", depart: "départ de tous", impasse: "impasse", vivants: "vivants à la fin" };
 export function tableaux(m) {
   const l = [];
   const cas = Object.values(m.cas).sort((a, b) => STRATEGIES.indexOf(a.strategie) - STRATEGIES.indexOf(b.strategie) || a.membres - b.membres);

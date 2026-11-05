@@ -23,11 +23,16 @@
 //   les routes dont `coupure` contient l'événement sont coupées, les pistes et sentiers deviennent difficiles. Éruption :
 //   0,3 % par jour s'il existe une région à danger « eruption », 5 à 20 jours.
 // - Événements du contenu : 25 % de chances par jour d'en tirer un (phase, saison, zone, poids) et d'appliquer ses effets
-//   simples ({ infestation, pillage, route, duree, horde, faction, force, nature }).
+//   simples ({ infestation, pillage, route, duree, horde, faction, force, nature }). Les événements « meteo » du contenu en sont
+//   (éboulements de la route du Littoral, de Cilaos, de Salazie, radiers, houle, incendie de forêt, brouillard…), sauf ceux que
+//   la simulation tire elle-même (EVENEMENTS_SIMULES : cyclone, fortes pluies, crue, éruption). Un événement que des régions
+//   ont dans leurs `dangers` n'arrive que dans l'une d'elles ; les autres, dans une région de leurs `zones`.
 // - Factions : croissance (contenu, défaut 0,01/jour) × 1,5 pendant panique et effondrement, si la région n'est pas vide ;
 //   −0,01/jour sinon. Une faction de force ≥ 2 essaime vers une voisine ouverte avec 1 % × force par jour (+0,5 là-bas,
 //   −0,3 chez elle). Un abri abandonné est occupé par la plus forte faction (force ≥ 1) avec 4 % par jour ; inoccupé, chacune
-//   de ses installations s'abîme de 1 avec 2 % par jour.
+//   de ses installations s'abîme de 1 avec 2 % par jour. Une faction qui n'est plus dans la région (force < 0,5 : partie,
+//   affaiblie, éteinte) libère les abris qu'elle occupait, et emporte ce qu'il y restait : ils redeviennent des abris abandonnés
+//   qu'on peut reprendre (sans quoi, sur la durée, l'île se remplit d'abris « occupés » par des factions disparues).
 // - Menaces contre l'abri (§1.7), au plus 2 par jour : horde présente (8 % + 4 %/bruit + 2 %/visibilité, force 2 × taille + 1),
 //   Livides errants (infestation × 2 % × (1 + bruit/10) + 1 %/visibilité, force = infestation arrondie), bande hostile
 //   (0,4 % × force × (1 + visibilité), méfiante ÷ 2, force ceil(1,5 × force) + 1), visite d'une faction neutre ou amicale,
@@ -59,10 +64,14 @@ export const REGLES_MONDE = {
   fortesPluies: { pluies: 0.02, seche: 0.004 },
   eruption: 0.003,
   evenementContenu: 0.25,
-  faction: { croissance: 0.01, essaimage: 0.01, occupation: 0.04, degradation: 0.02 },
+  faction: { croissance: 0.01, essaimage: 0.01, occupation: 0.04, degradation: 0.02, presence: 0.5 },
   menace: { horde: 0.08, hordeBruit: 0.04, hordeVisibilite: 0.02, livides: 0.02, bande: 0.004 },
   menacesMax: 2
 };
+
+// Les événements météo que la simulation tire elle-même (étapes 3 à 5) : ceux du contenu qui portent ces clés n'en donnent que
+// le nom, le texte et les effets décrits pour le MJ.
+export const EVENEMENTS_SIMULES = ["cyclone", "fortes-pluies", "crue", "eboulement", "eruption"];
 
 const NOMS_CYCLONES = ["Anvalé", "Bérésio", "Calindra", "Dorvane", "Elzéa", "Firmane", "Galoya", "Hédrina", "Isaval", "Jorancé", "Kalinda", "Loréo"];
 const PIRE = { ouverte: 0, difficile: 1, coupee: 2 };
@@ -227,11 +236,12 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
   }
 
   // 6. Un événement du contenu.
-  const evenements = [...indexer(contenu).evenements.values()].filter(e => !["meteo", "fete"].includes(e.type)
+  const evenements = [...indexer(contenu).evenements.values()].filter(e => e.type !== "fete" && !(e.type === "meteo" && EVENEMENTS_SIMULES.includes(e.cle))
     && (!e.phases?.length || e.phases.includes(phase)) && (!e.saisons?.length || e.saisons.includes(saison)));
   if (evenements.length && chance(R.evenementContenu, h)) {
     const e = tirerPoids(evenements.map(x => ({ ...x, poids: Number(x.poids ?? 1) })), h);
-    const lieux = regions.filter(r => !e.zones?.length || e.zones.includes(r.zone));
+    const propres = e ? regions.filter(r => (r.dangers ?? []).includes(e.cle)) : [];
+    const lieux = propres.length ? propres : regions.filter(r => !e?.zones?.length || e.zones.includes(r.zone));
     const r = lieux.length ? choisir(lieux, h) : null;
     if (e && r) appliquerEvenement(monde, contenu, e, r, jour, h, fait, nouvelId);
   }
@@ -329,6 +339,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
     }
     for (const f of Object.keys(reg.factions)) if (reg.factions[f] < 0.05) delete reg.factions[f];
     for (const a of reg.abrisAbandonnes) {
+      if (a.occupe && !((reg.factions[a.occupe] ?? 0) >= R.faction.presence)) { a.occupe = null; a.libereLe = jour; a.stocks = {}; continue; }
       if (a.occupe) continue;
       const forte = Object.entries(reg.factions).filter(([, x]) => x >= 1).sort((x, y) => y[1] - x[1])[0];
       if (forte && chance(R.faction.occupation, h)) {

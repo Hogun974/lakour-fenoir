@@ -127,7 +127,7 @@ export function instancesDe(a) {
   return objetsDe(a, "installation").map(i => ({
     id: i.id, cle: i.system?.cle, niveau: Number(i.system?.niveau) || 0, etat: Number(i.system?.etat) || 0,
     chantier: { fait: Number(i.system?.chantier?.fait) || 0, requis: Number(i.system?.chantier?.requis) || 0 },
-    termineLe: Number(i.system?.termineLe) || 0, actif: i.system?.actif !== false
+    termineLe: Number(i.system?.termineLe) || 0, actif: i.system?.actif !== false, reparation: Number(i.system?.reparation) || 0
   }));
 }
 export const abriLogique = a => ({ id: a.id, system: aPlat(a.system), installations: instancesDe(a) });
@@ -140,12 +140,12 @@ async function ecrireSurvivant(a, system) {
 }
 async function ecrireAbri(a, { system, installations = null }) {
   const s = {};
-  for (const k of ["stocks", "nature", "sol", "bruit", "degats", "installeLe", "abandonneLe", "site", "region"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);
+  for (const k of ["stocks", "reliquats", "nature", "sol", "bruit", "degats", "reparation", "installeLe", "abandonneLe", "site", "region"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);
   await a.update({ system: s });
   if (!installations) return;
   const avant = new Map(instancesDe(a).map(i => [i.id, i]));
   const majs = installations.filter(i => i.id && avant.has(i.id) && JSON.stringify(avant.get(i.id)) !== JSON.stringify({ ...avant.get(i.id), ...i }))
-    .map(i => ({ _id: i.id, system: { niveau: i.niveau, etat: i.etat, chantier: i.chantier, termineLe: i.termineLe, actif: i.actif !== false } }));
+    .map(i => ({ _id: i.id, system: { niveau: i.niveau, etat: i.etat, chantier: i.chantier, termineLe: i.termineLe, actif: i.actif !== false, reparation: Number(i.reparation) || 0 } }));
   if (majs.length) await a.updateEmbeddedDocuments("Item", majs);
 }
 
@@ -190,7 +190,8 @@ async function donneesObjet(type, def, extra = {}) {
 }
 function donneesInstallation(def, instance) {
   return donneesObjet("installation", def, {
-    niveau: instance.niveau, etat: instance.etat, chantier: structuredClone(instance.chantier), termineLe: instance.termineLe, actif: instance.actif !== false
+    niveau: instance.niveau, etat: instance.etat, chantier: structuredClone(instance.chantier), termineLe: instance.termineLe, actif: instance.actif !== false,
+    reparation: Number(instance.reparation) || 0
   });
 }
 // Les afflictions déclarées (actives ou aggravées) ont leur objet sur l'acteur ; l'incubation reste dans system.afflictions.
@@ -911,7 +912,7 @@ export const api = {
     const qui = membresValides(ctx, membres);
     const q = entier(quarts, 1, 40, 1);
     const ch = L.avancerChantier(instance, def, { quarts: q, bras: Math.max(1, qui.length), jour: jourCtx(ctx) });
-    if (existante) await ab.updateEmbeddedDocuments("Item", [{ _id: existante.id, system: { niveau: ch.instance.niveau, chantier: ch.instance.chantier, termineLe: ch.instance.termineLe, etat: ch.instance.etat } }]);
+    if (existante) await ab.updateEmbeddedDocuments("Item", [{ _id: existante.id, system: { niveau: ch.instance.niveau, chantier: ch.instance.chantier, termineLe: ch.instance.termineLe, etat: ch.instance.etat, reparation: Number(ch.instance.reparation) || 0 } }]);
     else await ab.createEmbeddedDocuments("Item", [await donneesInstallation(def, ch.instance)]);
     await ab.update({ system: { bruit: borner((Number(ab.system.bruit) || 0) + 1, 0, 10) } });
     if (ch.termine) {
@@ -944,13 +945,13 @@ export const api = {
       const def = defDe("installations", inst.cle);
       const r = L.reparerInstallation(inst, def, { quarts: q, bras, materiaux: Number(stocks.materiaux) || 0 });
       stocks = L.retirerStocks(stocks, { materiaux: r.cout.materiaux }).stocks;
-      await ab.updateEmbeddedDocuments("Item", [{ _id: inst.id, system: { etat: r.instance.etat } }]);
+      await ab.updateEmbeddedDocuments("Item", [{ _id: inst.id, system: { etat: r.instance.etat, reparation: r.instance.reparation } }]);
       await ab.update({ system: { stocks } });
       noter(ctx, tx("Journal.Repare", { installation: def?.nom ?? inst.cle, n: r.repares }));
       resultat = { etat: r.instance.etat, repares: r.repares, cout: r.cout };
     } else {
       const r = L.reparerAbri(l.system, { quarts: q, bras });
-      await ab.update({ system: { degats: r.abri.degats, stocks: r.abri.stocks } });
+      await ab.update({ system: { degats: r.abri.degats, reparation: r.abri.reparation, stocks: r.abri.stocks } });
       noter(ctx, tx("Journal.RepareAbri", { n: r.repares }));
       resultat = { degats: r.abri.degats, repares: r.repares };
     }

@@ -6,7 +6,10 @@
 //   sinon vide.
 // - Source : "vu" (explorer, fouiller, voyager : tout ce qu'on voit), "radio" (infestation, électricité et eau seulement),
 //   "rumeur" (infestation seulement). Une observation moins sûre n'efface pas les champs qu'elle ne couvre pas.
-// - Âge : jour courant − jour de l'observation (null si jamais vu).
+// - Âge : jour courant − jour de l'observation (null si jamais vu). `vu` date la DERNIÈRE observation, quelle qu'en soit la
+//   source ; `vuDirect` date la dernière observation directe (source « vu »), la seule qui lise le pillage, les routes et les
+//   factions : une nouvelle de la radio rajeunit l'infestation et les réseaux, pas le pillage vu il y a des semaines
+//   (ageDirect). Un ancien renseignement sans `vuDirect` dont la source est « vu » est daté par son `vu`.
 import { BANDES_INFESTATION, BANDES_PILLAGE, RESEAUX, RESSOURCES_PILLABLES } from "./constantes.mjs";
 import { regionsDe, regionDe, reservesDepart } from "./contenu.mjs";
 
@@ -37,7 +40,7 @@ export function reseauxActifs(monde, region, jour) {
 }
 
 export const renseignementVide = () => ({
-  vu: null, source: "rumeur", infestation: "inconnue", pillage: "inconnu", electricite: null, eau: null, routes: {}, factions: [], notes: ""
+  vu: null, vuDirect: null, source: "rumeur", infestation: "inconnue", pillage: "inconnu", electricite: null, eau: null, routes: {}, factions: [], notes: ""
 });
 
 // Ce qu'on lit d'une région réelle, selon la source.
@@ -73,17 +76,23 @@ export function observer(renseignements = {}, monde, contenu, region, jour, sour
   const ancien = renseignements[region] ?? renseignementVide();
   const rang = s => ({ vu: 3, radio: 2, rumeur: 1 }[s] ?? 0);
   if (ancien.vu !== null && ancien.vu >= jour && rang(ancien.source) > rang(source)) return renseignements;
-  const nouveau = { ...structuredClone(ancien), ...lecture, notes: ancien.notes ?? "" };
+  const nouveau = { ...structuredClone(ancien), ...lecture, vuDirect: source === "vu" ? Number(jour) : vuDirectDe(ancien), notes: ancien.notes ?? "" };
   return { ...renseignements, [region]: nouveau };
 }
+
+// Le jour de la dernière observation directe (pillage, routes, factions), ou null.
+const vuDirectDe = r => (r?.vuDirect !== undefined && r?.vuDirect !== null ? Number(r.vuDirect) : r?.source === "vu" && r?.vu !== null && r?.vu !== undefined ? Number(r.vu) : null);
 
 // Le MJ corrige ou ajoute un renseignement (radio, rumeur, PNJ) : champs donnés, date et source.
 export function renseigner(renseignements = {}, region, champs = {}, jour = 0) {
   const ancien = renseignements[region] ?? renseignementVide();
-  return { ...renseignements, [region]: { ...structuredClone(ancien), vu: champs.vu ?? jour, source: champs.source ?? "rumeur", ...champs } };
+  const vu = champs.vu ?? jour, source = champs.source ?? "rumeur";
+  return { ...renseignements, [region]: { ...structuredClone(ancien), vu, source, ...champs, vuDirect: source === "vu" ? Number(vu) : vuDirectDe(ancien) } };
 }
 
 export const ageRenseignement = (r, jour) => (r?.vu === null || r?.vu === undefined ? null : Math.max(0, Number(jour) - Number(r.vu)));
+// L'âge de ce qu'on a vu de ses yeux (pillage, routes, factions), ou null si on ne l'a jamais vu.
+export const ageDirect = (r, jour) => { const d = vuDirectDe(r); return d === null ? null : Math.max(0, Number(jour) - d); };
 
 export function vieillir(renseignements = {}, jour) {
   return Object.fromEntries(Object.entries(renseignements).map(([cle, r]) => [cle, ageRenseignement(r, jour)]));
