@@ -253,3 +253,19 @@ test("avancer : un gros mangeur mange plus, un claustrophobe perd le moral dans 
   const moral = claustro.acteurs.survivants.find(s => s.id === "a")?.system.moral ?? 4;
   assert.ok(moral < 4, `moral ${moral}`);
 });
+
+test("recrues : une chance sur deux d'avoir le niveau 2 dans chaque compétence manquante du groupe (2026-11-05)", () => {
+  const comble = c => {
+    let n = 0;
+    for (let i = 0; i < 400; i++) {
+      const r = L.genererRecrue(C, L.deriverHasard("recrue-manque", c, i), { besoins: { manques: [c], profil: { [c]: 3 } } });
+      if (L.competence(r.survivant, c).niveau >= 2) n++;
+    }
+    return n / 400;
+  };
+  for (const c of ["vigilance", "discretion", "soins"]) assert.ok(comble(c) >= 0.5, `${c} : ${comble(c)}`);
+  assert.equal(L.RECRUE_MANQUE.chance, 0.5);
+  // Sans manque, rien n'est garanti (le tirage ordinaire).
+  const r = L.genererRecrue(C, L.deriverHasard("sans-manque", 1), { besoins: { manques: [], profil: {} } });
+  assert.ok(L.COMPETENCES.every(c => L.competence(r.survivant, c).niveau <= 5));
+});

@@ -52,7 +52,7 @@ Vous cherchez un **abri**, vous l'aménagez, vous vivez de **ressources** qui s'
 - **Fatigue** (0 à 5) : −1 dé à 3 et 4, −2 à 5. Une nuit de repos à l'abri : −2 ; un quart de repos : −1.
 - **Moral** (0 à 5) : à 1, −1 dé ; à 0, le personnage **craque** (refuse, fuit, s'effondre).
 - **Faim et soif** : au-delà de 4 quarts sans boire, +1 fatigue par quart ; au-delà de 2 jours sans manger, +1 fatigue et −1 moral par jour.
-- **Infection** : une **morsure** ou une griffure profonde d'un Livide demande un test de soins **extrême** dans le quart (laver, cauteriser, parfois amputer). Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. **Aucun remède connu.**
+- **Infection** : une **morsure** ou une griffure profonde d'un Livide demande un test de soins **extrême** dans le quart (laver, cauteriser, parfois amputer), **difficile** si le soignant y met un médicament ou si l'abri a une infirmerie. Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. **Aucun remède connu.**
 - **Maladies et blessures qui durent** : dengue, chikungunya, leptospirose, gastro, plaies infectées, fractures… Une eau traitée, des moustiquaires et une infirmerie en réduisent le risque.` },
   { cle: "temps", titre: "Le temps", texte: `Le temps se compte en **quarts** de six heures : matin, après-midi, soir, nuit. Fouiller un lieu prend un quart ; explorer une région, un ou deux ; voyager, selon la route ; construire, selon le chantier (quarts de travail divisés par le nombre de bras).
 

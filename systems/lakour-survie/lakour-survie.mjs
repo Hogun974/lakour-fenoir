@@ -3,7 +3,7 @@
 import { ID } from "./logique/constantes.mjs";
 import { MODELES_ACTEURS, MODELES_OBJETS } from "./scripts/modeles.mjs";
 import { enregistrerReglages } from "./scripts/reglages.mjs";
-import { api, registre, chargerIndex, quandDe, contenu } from "./scripts/api.mjs";
+import { api, registre, chargerIndex, quandDe, contenu, dateDuJeu } from "./scripts/api.mjs";
 import { ecouterSocket } from "./scripts/socket.mjs";
 import * as Coffre from "./scripts/coffre.mjs";
 import { estMJActif } from "./scripts/canal.mjs";
@@ -12,7 +12,7 @@ import { signaler, demandeDeTestPourMoi } from "./scripts/signal.mjs";
 import { brancherImmersion, suivreLumiere, suivreMeteo } from "./scripts/immersion.mjs";
 import { suivreAmbiance, signalerAssaut } from "./scripts/ambiance.mjs";
 import { brancherInfobulle } from "./scripts/infobulle.mjs";
-import { suivreFetesDuJeu } from "./scripts/fetes.mjs";
+import { suivreFetesDuJeu, brancherDateDuJeu, revoirFeteDuJeu } from "./scripts/fetes.mjs";
 import { FicheSurvivant, FicheAbri, FicheObjet } from "./scripts/apps/fiches.mjs";
 import { rafraichirBandeau } from "./scripts/apps/bandeau.mjs";
 import { tableauDeBord, ouvrirTableau } from "./scripts/apps/tableau.mjs";
@@ -32,6 +32,7 @@ function quandEtatChange() {
     if (appli instanceof FicheAbri && appli.rendered && !enSaisie(appli)) appli.render();
   }
   suivreMeteo();
+  revoirFeteDuJeu(dateDuJeu());
   if (estMJActif()) {
     suivreLumiere().catch(e => console.warn(`${ID} | lumière`, e));
     suivreAmbiance().catch(e => console.warn(`${ID} | ambiance`, e));
@@ -61,6 +62,10 @@ Hooks.once("init", () => {
   brancherInfobulle();
   brancherGarde();
 });
+
+// Les fêtes du moteur à la date de JEU (scripts/fetes.mjs) : au crochet « pret » du moteur, avant son premier calcul, dans chaque
+// navigateur (un moteur sans source de date l'ignore : le réglage « fete » forcé par suivreFetesDuJeu prend le relais).
+Hooks.once("lakour-mj-ia.pret", moteur => { if (game.system.id === ID) brancherDateDuJeu(moteur, () => dateDuJeu()); });
 
 // ------------------------------------------------------------------ setup : l'API et le registre du contenu (§6)
 Hooks.once("setup", () => {

@@ -264,6 +264,34 @@ test("fêtes du jour de JEU : le calendrier du socle à la date de jeu ; le rég
   assert.equal((await M.api.feter({})).fete, "liberte");
 });
 
+test("fêtes : un moteur qui suit une date de monde (sourceDeDate) reçoit la date de JEU ; son réglage « fete » reste « auto »", async () => {
+  // Le 4 décembre 2026 de jeu, un 5 novembre réel : sans source de date, le moteur posait la carte de la Dipavali (date réelle).
+  const M = await monde(M0);
+  let source = null, verifications = 0;
+  const fetesMoteur = { calendrier: date => FL.fetesDuJour(date), lister: () => DONNEES.fetes.map(f => ({ id: `fenoir-${f.cle}`, fete: f.cle })),
+    sourceDeDate: fn => { source = fn; return true; }, verifier: () => { verifications++; } };
+  game.modules.get("lakour-mj-ia").api.fetes = fetesMoteur;
+  assert.equal(M0.fetes.brancherDateDuJeu({ fetes: {} }, () => "2026-12-04"), false, "un moteur sans source de date : rien");
+  assert.equal(M0.fetes.brancherDateDuJeu({ fetes: fetesMoteur }, () => M0.module.dateDuJeu()), true);
+  await game.settings.set("lakour-survie", "fetesSuiventLeJeu", true);
+  await game.settings.set("lakour-mj-ia", "fete", "noel");
+  await game.settings.set("lakour-survie", "dateDepart", "2026-12-04");
+  const a = await survivantTire(M);
+  await M.api.demarrer({ region: "saint-denis", membres: [a.id] });
+  assert.equal(source(), "2026-12-04", "la date de jeu, pas celle du navigateur");
+  assert.equal(valeur("lakour-mj-ia.fete"), "auto", "le moteur trouve lui-même la fête du jour de jeu");
+  await M.api.avancer({ quarts: 4 * 3 });
+  assert.equal(source(), "2026-12-07");
+  const avant = verifications;
+  assert.equal(M0.fetes.revoirFeteDuJeu("2026-12-08"), true);
+  assert.equal(M0.fetes.revoirFeteDuJeu("2026-12-08"), false, "même date : pas de nouvelle vérification");
+  await calme();
+  assert.equal(verifications, avant + 1);
+  await game.settings.set("lakour-survie", "fetesSuiventLeJeu", false);
+  assert.equal(source(), null, "décoché : la date du navigateur");
+  await game.settings.set("lakour-survie", "fetesSuiventLeJeu", true);
+});
+
 test("immersion et ambiance : lumière selon le moment, pluie et cyclone, sons", () => {
   const e = q => ({ demarree: true, horloge: { quart: q }, meteo: null });
   assert.equal(obscuriteVoulue(e(0)), 0);

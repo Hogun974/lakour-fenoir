@@ -70,8 +70,9 @@ bateau).
 - `faim` et `soif` : jours sans manger / quarts sans boire. Soif ≥ 4 quarts : +1 fatigue par quart ; faim ≥ 2 jours :
   +1 fatigue par jour, moral −1.
 - `infection` : `{ atteint, stade 0..6, depuis (quart) }`. Une **morsure** ou une griffure profonde d'un Livide : test
-  `soins` **extrême** dans le quart (lavage, cautérisation, amputation selon l'endroit, décrite par le MJ) ; échec :
-  infecté. Le stade monte de 1 tous les 2 quarts ; à 6, la personne meurt et se relève Livide au quart suivant si rien n'est
+  `soins` **extrême** dans le quart (lavage, cautérisation, amputation selon l'endroit, décrite par le MJ), **difficile** si
+  le soignant y met un médicament (consommé) ou si l'abri a une infirmerie en service (son bonus de soins compte) :
+  `difficulteMorsure({ medicament, infirmerie })` (depuis le 2026-11-05 ; avant, extrême toujours) ; échec : infecté. Le stade monte de 1 tous les 2 quarts ; à 6, la personne meurt et se relève Livide au quart suivant si rien n'est
   fait. Aucun remède connu (le monde pourra en révéler plus tard : c'est au MJ). Les compagnons et PNJ suivent la même règle.
 - `savoirs` : objets `savoir` possédés (§3.3). `marques` par compétence.
 
@@ -227,8 +228,18 @@ pure, déterministe pour une graine) :
   le temps et la chaleur.
 - **Pillage** : chaque jour, les autres survivants prennent une part des réserves (selon population et phase) ; les
   réserves ne reviennent jamais (sauf `nature`, qui se régénère selon la saison).
+- **Glanage de passage** (2026-11-05) : toute fouille d'une région (pillage, ciblée ou non) ramasse aussi
+  `ceil(0,06 × membres × quarts × prudence × (cueillette + pêche + gibier par jour))` de nourriture, pris dans la `nature`
+  des alentours de l'abri (si c'est sa région) ou de la région (`fouiller` rend `glane`, compris dans `butin`). Ce qui est
+  glané ne revient qu'à la régénération de la nature : une région où personne n'a glané depuis longtemps est pleine, celle
+  qu'on vient de vider ne rend presque plus rien ; c'est ce qui se renouvelle pour qui bouge. En quittant un abri
+  (`demenager`), la nature de la région garde la trace des alentours exploités (la plus basse des deux).
 - **Réseaux** : tombent au jour tiré ; `carburant` ne revient jamais.
-- **Factions** : grossissent, s'affaiblissent, se déplacent, occupent les abris abandonnés (§2.4).
+- **Factions** : grossissent, s'affaiblissent, se déplacent, occupent les abris abandonnés (§2.4). Une région vide (pillage
+  sous 10 %) les affaiblit, mais jamais sous **0,5** dans leurs régions de départ (`factionsDepart` ; ou leur force de départ si
+  elle était plus basse) : depuis le 2026-11-05, il reste des bandes et des visites la deuxième année (avant, toutes
+  s'éteignaient entre J600 et J720).
+- **Événements du contenu** (§2.6) : 35 % de chances par jour d'en tirer un (25 % jusqu'au 2026-11-05).
 - **Météo** : en saison des pluies, cyclone possible (pré-alerte 2 jours avant, alerte orange la veille, rouge le jour) ;
   fortes pluies : routes « difficile » ou « coupée » (radiers submergés, éboulements de la route du Littoral, de Cilaos, de
   Salazie) ; l'éruption de la Fournaise peut couper la route des Laves dans le Sud-Est.
@@ -617,7 +628,10 @@ system: {
   groupe, couverture (`couvert` / `faible` / `manquant`), urgence (blessés sans soigneur, chantier prévu sans bricoleur,
   potager sans jardinier, factions sans négociateur, pas de garde la nuit) et le **profil recherché**.
 - **Recrues** : `genererRecrue(contenu, hasard, { besoins, region, phase })` tire un survivant en **favorisant** les
-  compétences manquantes du groupe (par des poids, pour garder des surprises), avec une raison d'être là et un **prix** (ce
+  compétences manquantes du groupe (par des poids, pour garder des surprises), puis, pour chaque compétence manquante qu'il
+  n'a pas (et qu'aucune incapacité ne lui interdit), lui donne une chance sur deux de l'avoir au **niveau 2** (`RECRUE_MANQUE`,
+  2026-11-05 : une recrue venue pendant un manque le comble 56 à 97 % du temps selon la compétence, au lieu de 24 à 37 % pour
+  la discrétion, la vigilance, le bricolage et les soins), avec une raison d'être là et un **prix** (ce
   qu'il demande, un défaut, une méfiance, un proche à sauver, un trait gênant). Rencontres humaines et appels radio peuvent
   proposer une recrue. `recruter({ recrue, parleurId })` : test de `parole` (difficulté selon l'attitude et les besoins),
   l'acteur `survivant` créé (statut `recrue`), ajouté au groupe. Une recrue part si son moral reste à 0 trois jours.

@@ -5,7 +5,15 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
-## Non publié
+## Système 0.1.1 · Contenu 0.2.0 — 5 novembre 2026
+
+- **Équilibrage du 2026-11-05** (`docs/equilibre.md`) : glanage de passage (une fouille ramasse aussi ce que la nature
+  offre, pris dans la nature des alentours ou de la région, qui ne se reconstitue que lentement : le nomade tient enfin un an,
+  sans dépasser l'enraciné) ; événements du contenu à 35 % par jour (enraciné à 4 : 4,5 assauts par mois) ; factions jamais
+  sous 0,5 dans leurs régions de départ (bandes et visites la 2e année) ; une recrue venue pendant un manque a une chance sur
+  deux d'y avoir le niveau 2 ; morsure : test de soins difficile avec un médicament ou une infirmerie (extrême sinon) ; les
+  fêtes du MJ IA suivent la date de jeu dès le chargement quand le moteur sait la recevoir (`sourceDeDate` : plus de carte
+  de la Dipavali réelle dans une partie au 4 décembre).
 
 - **Sécurité** (revue du 2026-11-05) : graine de 128 bits (`crypto.getRandomValues`), flux dérivés par SHA-256 et générateur
   sfc32 (avant : 2³² mondes, qu'un joueur pouvait retrouver d'après la radio ; les résultats chiffrés des simulations

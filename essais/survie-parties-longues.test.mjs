@@ -119,7 +119,8 @@ test("un abri abandonné occupé par une faction qui a quitté la région (ou s'
   assert.equal(r.monde.regions[region].abrisAbandonnes[0].occupe, faction);
   // Elle n'est plus dans la région : l'abri se libère (ses stocks partis avec elle), on peut le reprendre.
   delete m.regions[region].factions[faction];
-  r = L.simulerJour(m, C, L.hasardDuJour("abri-libre", 30), 30, {});
+  // (Sans les événements du contenu : un « convoi de pillards » tiré ce jour-là la ramènerait à 0,5.)
+  r = L.simulerJour(m, { ...C, evenements: [] }, L.hasardDuJour("abri-libre", 30), 30, {});
   const a = r.monde.regions[region].abrisAbandonnes[0];
   assert.equal(a.occupe, null);
   assert.deepEqual(L.normaliserStocks(a.stocks), L.normaliserStocks({}));

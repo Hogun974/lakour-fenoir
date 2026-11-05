@@ -11,7 +11,9 @@
 //   (normal) ou 2,5 % (rapide), × 2,5 si on cherche une ressource précise ; au plus 4 / 6 / 9 unités par membre et par quart ;
 //   bruit 0 / 1 / 3. Fouille des alentours (cueillette, gibier, pêche, bois) : ceil(rendement × membres × quarts × 0,5 ×
 //   prudence 0,8 / 1 / 1,3) pris dans la nature de l'abri (bois → matériaux, le reste → nourriture). Elle ne compte pas comme
-//   une fouille pour l'autonomie.
+//   une fouille pour l'autonomie. Glanage de passage (équilibrage du 2026-11-05) : une fouille de la région (pillage) ramasse
+//   aussi ceil(0,06 × membres × quarts × prudence × (cueillette + pêche + gibier par jour)) de nourriture dans la même nature
+//   (celle de l'abri si c'est sa région, sinon celle de la région) : ce qui se renouvelle pour qui bouge.
 // - Voyage : le plus court en quarts sur les routes RÉELLES ; à pied quartsPied (× 1,5 si difficile) sauf par mer ; en véhicule
 //   quartsVehicule (× 2 si difficile) sauf sentier et mer ; en bateau seulement par mer. Carburant : 1 unité (10 L) pour 60 km
 //   en véhicule, pour 20 km en bateau. Charge : 3 unités par personne à pied, 20 par véhicule (ou bateau).
@@ -48,6 +50,7 @@ export const REGLES_ACTIONS = {
   },
   fouille: { fraction: { discret: 0.008, normal: 0.015, rapide: 0.025 }, cible: 2.5, plafond: { discret: 4, normal: 6, rapide: 9 }, bruit: { discret: 0, normal: 1, rapide: 3 } },
   nature: { parMembre: 0.5, prudence: { discret: 0.8, normal: 1, rapide: 1.3 } },
+  glanage: { parMembre: 0.06, prudence: { discret: 0.8, normal: 1, rapide: 1.3 }, nature: ["cueillette", "peche", "gibier"] },
   charge: { pied: 3, vehicule: 20, bateau: 20 },
   kmParCarburant: { vehicule: 60, bateau: 20 },
   lenteur: { pied: 1.5, vehicule: 2, bateau: 1.5 },
@@ -133,7 +136,8 @@ export function explorer(monde, contenu, hasard, { region, jour = monde?.jour ??
 // ------------------------------------------------------------------ fouiller
 // cible : une ressource (fouille ciblée), ou un élément de nature (cueillette, gibier, peche, bois : alentours de l'abri).
 // abri : system de l'abri (pour la nature des alentours, si la région est celle de l'abri).
-// -> { butin, rencontre, bruit, monde, abri, renseignements, faits, fouille: Boolean (compte pour l'autonomie) }
+// -> { butin, glane (nourriture glanée, comprise dans butin), rencontre, bruit, monde, abri, renseignements, faits,
+//      fouille: Boolean (compte pour l'autonomie) }
 export function fouiller(monde, contenu, hasard, { region, site = null, cible = null, membres = 1, quarts = 1, prudence = "normal", jour = monde?.jour ?? 0,
   moment = "apres-midi", abri = null, renseignements = {} } = {}) {
   const F = REGLES_ACTIONS.fouille;
@@ -143,6 +147,7 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
   let nouveauMonde = structuredClone(monde);
   let nouvelAbri = abri ? structuredClone(abri) : null;
   const butin = {};
+  let glane = 0;
   if (NATURE.includes(cible)) {
     const parJour = natureRegion(regionDe(contenu, region))[cible].parJour;
     const demande = Math.ceil(parJour * n * REGLES_ACTIONS.nature.parMembre * REGLES_ACTIONS.nature.prudence[p]);
@@ -171,13 +176,32 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
       total -= 1;
     }
     for (const [r, q] of Object.entries(butin)) pillage[r] = Math.max(0, pillage[r] - q);
+    // Glanage de passage : en fouillant, on ramasse aussi ce que la nature offre (fruits, un poisson, un tangue), pris dans la
+    // nature des alentours de l'abri (si c'est sa région) ou de la région. Ce qu'on glane ne revient qu'à la régénération de la
+    // nature : une région où l'on n'a pas glané depuis longtemps est pleine, celle qu'on vient de vider ne rend presque plus rien.
+    const G = REGLES_ACTIONS.glanage;
+    const parJour = natureRegion(regionDe(contenu, region));
+    const demande = Math.ceil(G.parMembre * n * G.prudence[p] * G.nature.reduce((s, k) => s + parJour[k].parJour, 0));
+    const surAbri = nouvelAbri && nouvelAbri.region === region && nouvelAbri.nature;
+    let source = surAbri ? nouvelAbri.nature : nouveauMonde.regions[region].nature ?? {};
+    let reste = demande;
+    for (const k of [...G.nature].sort((a, b) => (Number(source[b]) || 0) - (Number(source[a]) || 0) || G.nature.indexOf(a) - G.nature.indexOf(b))) {
+      if (reste <= 0) break;
+      const e = exploiterNature(source, k, reste);
+      source = e.nature;
+      reste -= e.pris;
+      glane += e.pris;
+    }
+    if (surAbri) nouvelAbri.nature = source;
+    else nouveauMonde.regions[region].nature = source;
+    if (glane) butin.nourriture = (butin.nourriture ?? 0) + glane;
   }
   const rencontre = tirerRencontre(nouveauMonde, contenu, hasard, { region, jour, moment, prudence: p, contexte: "fouille" });
   const bruit = NATURE.includes(cible) ? 0 : F.bruit[p];
   const lu = Object.entries(butin).map(([r, q]) => `${q} ${r}`).join(", ") || "rien";
   const nomSite = site ? siteDe(contenu, site)?.nom ?? site : "";
   return {
-    butin, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
+    butin, glane, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
     renseignements: observer(renseignements, nouveauMonde, contenu, region, jour, "vu"),
     fouille: !NATURE.includes(cible),
     faits: [{ jour, region, cle: site ? "fouille" : "fouille-region", public: true, texte: `Fouille ${site ? `${avecPreposition("de", nomSite)} ` : ""}${avecPreposition("à", nom)} : ${lu}.`,
@@ -305,7 +329,7 @@ export function voyager(monde, contenu, hasard, { de, vers, transport = "pied", 
 
 // ------------------------------------------------------------------ déménager, s'installer
 // Ce qu'on emporte (borné par les stocks et la charge), l'abri quitté devient un abri abandonné (avec ses installations et ce
-// qu'on laisse). -> { monde, emporte, laisse, capacite, abandonne }
+// qu'on laisse) ; la nature de la région garde la trace des alentours exploités (la plus basse des deux). -> { monde, emporte, laisse, capacite, abandonne }
 export function demenager(monde, { abri, installations = [], emporter = {}, transport = "pied", membres = 1, vehicules = 1, jour = 0 } = {}) {
   const stocks = normaliserStocks(abri?.stocks);
   const capacite = chargeMax({ transport, membres, vehicules });
@@ -322,6 +346,10 @@ export function demenager(monde, { abri, installations = [], emporter = {}, tran
   let nouveau = abandonnerAbri(monde, abri?.region, { site: abri?.site, installations, jour });
   const a = nouveau.regions?.[abri?.region]?.abrisAbandonnes?.find(x => x.site === abri?.site);
   if (a) a.stocks = laisse;
+  // Les alentours qu'on a vidés restent vidés : la nature de la région reprend celle de l'abri quand elle est plus basse (elle
+  // se reconstitue ensuite lentement, comme partout). Sans cela, revenir dans une région rendait des alentours intacts.
+  const reg = nouveau.regions?.[abri?.region];
+  if (reg?.nature && abri?.nature) for (const k of NATURE) if (Number.isFinite(Number(abri.nature[k])) && k in reg.nature) reg.nature[k] = Math.min(reg.nature[k], Number(abri.nature[k]));
   return { monde: nouveau, emporte, laisse, capacite, abandonne: a ? structuredClone(a) : null };
 }
 

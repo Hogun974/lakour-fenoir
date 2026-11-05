@@ -258,7 +258,7 @@
     },
     "Alertes": {
       "Mourant": "{nom} is dying: a hard Medicine test, now, or they die at the end of the watch.",
-      "Morsure": "{nom} is bitten: EXTREME Medicine test within the watch (washing, cauterising…), or the Grey."
+      "Morsure": "{nom} is bitten: EXTREME Medicine test within the watch (washing, cauterising…), HARD with a medicine or an infirmary, or the Grey."
     },
     "Journal": {
       "Debut": "Day zero, {date}: the group is in {region}.", "Installe": "The group settles in {site} ({region}).", "Reprend": "The group takes back the shelter of {site} ({region}).",

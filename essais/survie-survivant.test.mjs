@@ -166,3 +166,16 @@ test("atelier : fabriquer paie, teste, produit ; l'échec rend la moitié", () =
   assert.equal(rate.stocks.pieces, 3, "1 pièce : la moitié arrondie au supérieur est rendue");
   assert.equal(rate.stocks.materiaux, 5);
 });
+
+test("morsure : test de soins extrême, difficile avec un médicament ou une infirmerie (2026-11-05)", () => {
+  assert.equal(L.difficulteMorsure(), "extreme");
+  assert.equal(L.difficulteMorsure({ medicament: true }), "difficile");
+  assert.equal(L.difficulteMorsure({ infirmerie: true }), "difficile");
+  assert.equal(L.difficulteMorsure({ medicament: false, infirmerie: false }), "extreme");
+  // Deux succès suffisent alors ; un seul ne suffit jamais.
+  const s = L.genererSurvivant(C, constant(0.3));
+  const deux = L.resoudreTest({ niveau: 1, difficulte: L.difficulteMorsure({ medicament: true }), hasard: desFixes([5, 6]) });
+  assert.equal(L.appliquerMorsure(s, deux, 4).infecte, false);
+  const un = L.resoudreTest({ niveau: 1, difficulte: L.difficulteMorsure({ infirmerie: true }), hasard: desFixes([5, 1]) });
+  assert.equal(L.appliquerMorsure(s, un, 4).infecte, true);
+});

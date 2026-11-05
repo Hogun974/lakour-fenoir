@@ -152,7 +152,14 @@ export function soigner(entree, resultat) {
   return { system: s, soignees };
 }
 
-// Une morsure : le test de soins EXTRÊME du quart a-t-il réussi ? Sinon infecté depuis `quart`.
+// La difficulté du test de soins d'une morsure (§1.3) : extrême ; difficile si le soignant y met un médicament (consommé) ou si
+// l'abri a une infirmerie en service (son bonus de soins compte alors, comme pour tout test à l'abri). Depuis le 2026-11-05 :
+// l'extrême seul laissait 0 à 11 % de chances et tuait d'abord les survivants seuls.
+export function difficulteMorsure({ medicament = false, infirmerie = false } = {}) {
+  return medicament || infirmerie ? "difficile" : "extreme";
+}
+
+// Une morsure : le test de soins du quart (difficulteMorsure) a-t-il réussi ? Sinon infecté depuis `quart`.
 export function appliquerMorsure(entree, resultatSoins, quart) {
   if (resultatSoins?.reussite) return { system: survivantNeuf(entree), infecte: false };
   return { system: infecter(entree, quart), infecte: true };

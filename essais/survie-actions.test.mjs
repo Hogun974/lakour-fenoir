@@ -7,26 +7,64 @@ import { L, contenuMini, constant, desFixes, I } from "./doublures/survie-outils
 const C = contenuMini();
 const vehicule = cle => L.indexer(C).equipements.get(cle);
 
+// Le butin sans le glanage de passage (la nourriture glanée dans la nature, comprise dans le butin depuis le 2026-11-05).
+const sansGlane = r => {
+  const b = { ...r.butin };
+  if (r.glane) { b.nourriture -= r.glane; if (!b.nourriture) delete b.nourriture; }
+  return b;
+};
+
 test("fouiller : butin pris au pillage réel, prudence (quantité, bruit), monde d'entrée intact", () => {
   const m = L.creerMonde(C, "f");
   const copie = structuredClone(m);
   const butins = {};
   for (const p of ["discret", "normal", "rapide"]) {
     const r = L.fouiller(m, C, constant(0.999), { region: "port-gris", membres: 2, quarts: 1, prudence: p, jour: 3 });
-    butins[p] = Object.values(r.butin).reduce((s, x) => s + x, 0);
+    const pille = sansGlane(r);
+    butins[p] = Object.values(pille).reduce((s, x) => s + x, 0);
     assert.equal(r.bruit, { discret: 0, normal: 1, rapide: 3 }[p]);
     assert.equal(r.fouille, true);
-    for (const [res, q] of Object.entries(r.butin)) assert.equal(r.monde.regions["port-gris"].pillage[res], m.regions["port-gris"].pillage[res] - q);
+    for (const [res, q] of Object.entries(pille)) assert.equal(r.monde.regions["port-gris"].pillage[res], m.regions["port-gris"].pillage[res] - q);
     assert.equal(r.renseignements["port-gris"].vu, 3);
   }
   assert.deepEqual(m, copie);
   assert.ok(butins.discret < butins.normal && butins.normal < butins.rapide, JSON.stringify(butins));
   assert.ok(butins.normal <= 12, "au plus 6 par membre et par quart");
   const cible = L.fouiller(m, C, constant(0.999), { region: "port-gris", membres: 2, cible: "medicaments", jour: 3 });
-  assert.deepEqual(Object.keys(cible.butin), ["medicaments"]);
+  assert.deepEqual(Object.keys(sansGlane(cible)), ["medicaments"]);
   const vide = structuredClone(m);
   for (const r of Object.keys(vide.regions["cote-ouest"].pillage)) vide.regions["cote-ouest"].pillage[r] = 0;
-  assert.deepEqual(L.fouiller(vide, C, constant(0.999), { region: "cote-ouest", membres: 4 }).butin, {});
+  assert.deepEqual(sansGlane(L.fouiller(vide, C, constant(0.999), { region: "cote-ouest", membres: 4 })), {});
+});
+
+test("fouiller : glanage de passage, pris dans la nature (de l'abri dans sa région, sinon de la région), qui se vide", () => {
+  const m = L.creerMonde(C, "glane");
+  const nourrit = n => ["cueillette", "peche", "gibier"].reduce((t, k) => t + (Number(n?.[k]) || 0), 0);
+  const parJour = ["cueillette", "peche", "gibier"].reduce((t, k) => t + L.natureRegion(L.regionDe(C, "cote-ouest"))[k].parJour, 0);
+  assert.ok(parJour > 0, "la région du contenu d'essai a de la nature");
+  const r = L.fouiller(m, C, constant(0.999), { region: "cote-ouest", membres: 2, quarts: 2, jour: 3 });
+  const attendu = Math.ceil(L.REGLES_ACTIONS.glanage.parMembre * 4 * parJour);
+  assert.equal(r.glane, attendu, "ceil(taux × membres × quarts × rendement nourricier)");
+  assert.ok(r.butin.nourriture >= r.glane, "le glanage est compris dans le butin");
+  assert.equal(Math.round(nourrit(r.monde.regions["cote-ouest"].nature) * 100), Math.round((nourrit(m.regions["cote-ouest"].nature) - r.glane) * 100), "pris dans la nature de la région");
+  // Dans la région de l'abri : pris dans la nature de l'abri (ses alentours), pas dans celle de la région.
+  const abri = { region: "cote-ouest", nature: { ...m.regions["cote-ouest"].nature }, stocks: {} };
+  const s = L.fouiller(m, C, constant(0.999), { region: "cote-ouest", membres: 2, quarts: 2, jour: 3, abri });
+  assert.deepEqual(s.monde.regions["cote-ouest"].nature, m.regions["cote-ouest"].nature);
+  assert.ok(nourrit(s.abri.nature) < nourrit(abri.nature));
+  // Une nature vidée ne rend plus rien ; une fouille des alentours (cueillette) ne glane pas en plus.
+  const vide = structuredClone(m);
+  for (const k of ["cueillette", "peche", "gibier"]) vide.regions["cote-ouest"].nature[k] = 0;
+  assert.equal(L.fouiller(vide, C, constant(0.999), { region: "cote-ouest", membres: 4, quarts: 2 }).glane, 0);
+  assert.equal(L.fouiller(m, C, constant(0.999), { region: "cote-ouest", membres: 1, cible: "cueillette" }).glane, 0);
+});
+
+test("déménager : la nature de la région garde la trace des alentours exploités", () => {
+  const m = L.creerMonde(C, "trace");
+  const nature = Object.fromEntries(Object.entries(m.regions["cote-ouest"].nature).map(([k, v]) => [k, k === "cueillette" ? 0 : v + 5]));
+  const d = L.demenager(m, { abri: { site: "x", region: "cote-ouest", stocks: {}, nature }, jour: 4 });
+  assert.equal(d.monde.regions["cote-ouest"].nature.cueillette, 0, "la cueillette vidée reste vidée");
+  assert.equal(d.monde.regions["cote-ouest"].nature.peche, m.regions["cote-ouest"].nature.peche, "jamais plus que la région");
 });
 
 test("fouiller les alentours : nature de l'abri, ne compte pas comme une fouille", () => {

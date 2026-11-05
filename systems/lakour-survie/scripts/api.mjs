@@ -46,6 +46,8 @@ const nomSite = cle => L.siteDe(contenu(), cle)?.nom ?? cle;
 const defDe = (famille, cle) => L.indexer(contenu())[famille]?.get(cle) ?? null;
 
 // ------------------------------------------------------------------ le temps
+// La date de JEU (« AAAA-MM-JJ ») : dateDepart + jour de l'horloge (sans les fêtes, pour le socle des fêtes du moteur).
+export const dateDuJeu = (etat = lireEtat()) => L.dateDuJour(L.jourDe(etat?.horloge?.quart ?? 0), dateDepart()).iso;
 export function quandDe(etat = lireEtat()) {
   const q = L.quand(etat?.horloge?.quart ?? 0, dateDepart(), langue());   // heure et date dans la langue du client
   return { ...q, fetes: fetesDuJeu(q.date, contenu().fetes ?? []).map(f => ({ cle: f.cle, nom: f.nom, coeur: f.coeur })) };

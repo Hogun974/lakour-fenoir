@@ -23,6 +23,8 @@
 //   retire aux plus fortes, en dessous on ajoute aux compétences préférées puis aux passions.
 // - Recrues : les enfances, passés, traits et passions sont pondérés par 1 + Σ préférence × modificateur, où la préférence
 //   vient du profil recherché par besoinsDuGroupe (manquant 3, faible 1,5, urgence +2) : le hasard reste, mais penche.
+//   Puis, pour chaque compétence manquante du groupe qu'elle n'a pas (et peut avoir), une chance sur deux de l'avoir au
+//   niveau 2 (RECRUE_MANQUE, 2026-11-05).
 // - Recrutement : test de parole, normale ; méfiante difficile, hostile extrême, amicale facile ; un cran plus facile si la
 //   recrue comble un manque du groupe.
 // - Tâches (§10.3) : production des installations à bras × 0,5 sans personne, × 0,75 sous le niveau requis, × 1 au niveau,
@@ -353,8 +355,17 @@ const rang = c => ({ manquant: 2, faible: 1, couvert: 0 }[c] ?? 0);
 // ------------------------------------------------------------------ recrues
 // -> { survivant (system), raison, prix (français ou langue du contenu), raisonMessage, prixMessage ({ cle, params, texte }, à
 //      afficher dans la langue de chacun), raisonCle, prixCle (clés seules, vides si le contenu donne des chaînes) }
+// Une recrue qui se présente quand une compétence manque au groupe l'a, une fois sur deux, au niveau 2 au moins (RECRUE_MANQUE :
+// pour chaque compétence manquante qu'elle n'a pas déjà, et qu'aucune incapacité ne lui interdit) : c'est souvent pour cela
+// qu'elle vient. Sans cela, le profil seul ne la comblait que 16 à 37 % du temps pour la discrétion, la vigilance, les soins.
+export const RECRUE_MANQUE = { chance: 0.5, niveau: 2 };
 export function genererRecrue(contenu, hasard = Math.random, { besoins = null, region = "", phase = "" } = {}) {
   const survivant = genererSurvivant(contenu, hasard, { statut: "recrue", region, favoriser: besoins?.profil ?? {}, budget: null });
+  const interdites = [...(survivant.incapacites ?? []), ...competencesInterdites(survivant)];
+  for (const c of besoins?.manques ?? []) {
+    if (!COMPETENCES.includes(c) || interdites.includes(c) || survivant.competences[c].niveau >= RECRUE_MANQUE.niveau) continue;
+    if (chance(RECRUE_MANQUE.chance, hasard)) survivant.competences[c] = { ...survivant.competences[c], niveau: RECRUE_MANQUE.niveau };
+  }
   const raison = tirerTexte(contenu, "raisonsRecrue", RAISONS, "recrue-raison", hasard);
   const prix = tirerTexte(contenu, "prixRecrue", PRIX, "recrue-prix", hasard);
   return { survivant, raison: raison.texte, prix: prix.texte, raisonCle: raison.cle, prixCle: prix.cle, raisonMessage: raison.message, prixMessage: prix.message, phase };

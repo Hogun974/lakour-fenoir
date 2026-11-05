@@ -21,6 +21,8 @@ import { fetesDuJour as calendrierSocle } from "../../modules/lakour-mj-ia/scrip
 const ICI = dirname(fileURLToPath(import.meta.url));
 const LANG = f => JSON.parse(readFileSync(join(ICI, "..", "..", "systems", "lakour-survie", "lang", `${f}.json`), "utf8")).LAKOUR_SURVIE;
 const FR = LANG("fr"), EN = LANG("en");
+// Les menaces relevées par type (la visite d'une faction neutre ou amicale n'est pas un assaut, mais dit qu'il reste des factions).
+const TYPES_MENACES = ["horde", "livides", "bande", "animaux", "visite"];
 const parametres = s => [...String(s ?? "").matchAll(/\{(\w+)\}/g)].map(m => m[1]);
 
 export const SCENARIOS = {
@@ -175,7 +177,7 @@ export function controleur(contenu, { graine, scenario }) {
       factions: regions.reduce((t, [, r]) => t + Object.values(r.factions).reduce((a, b) => a + b, 0), 0),
       pillage: regions.reduce((t, [c, r]) => t + L.partPillage(r.pillage, L.reservesDepart(idx.regions.get(c))), 0) / regions.length,
       menaces: avance?.menaces?.filter(m => m.force > 0).length ?? 0,
-      parType: Object.fromEntries(["horde", "livides", "bande", "animaux"].map(t => [t, avance?.menaces?.filter(m => m.type === t).length ?? 0])),
+      parType: Object.fromEntries(TYPES_MENACES.map(t => [t, avance?.menaces?.filter(m => m.type === t).length ?? 0])),
       faits: (avance?.faits?.length ?? 0) + (avance?.secrets?.length ?? 0),
       ageIci, ageVoisines: voisines.length ? Math.max(...voisines) : null,
       vivants: survivants.filter(s => L.peutAgir(s.system) && etat.groupe.membres.includes(s.id)).length,
@@ -270,7 +272,7 @@ export function resumer(parties, jours) {
     fetes: moyenne(l.map(p => p.stats.fetes)), breches: moyenne(l.map(p => p.stats.breches)),
     joursSansNourriture: moyenne(l.map(p => p.stats.joursSansNourriture)), joursSansEau: moyenne(l.map(p => p.stats.joursSansEau)),
     menacesParMois: parMois("menaces").map(x => (x === null ? null : x * 30)),
-    typesParTrimestre: [0, 1, 2, 3].map(t => Object.fromEntries(["horde", "livides", "bande", "animaux"].map(k => {
+    typesParTrimestre: Array.from({ length: Math.max(1, Math.round(jours / 91.25)) }, (_, t) => t).map(t => Object.fromEntries(TYPES_MENACES.map(k => {
       const v = l.flatMap(p => p.serie.filter(x => x.jour > t * 91 && x.jour <= (t + 1) * 91).map(x => x.parType[k]));
       return [k, v.length ? Math.round(30 * 100 * moyenne(v)) / 100 : null];
     }))),
@@ -280,6 +282,8 @@ export function resumer(parties, jours) {
     ageIciParMois: parMois("ageIci"), ageVoisinesParMois: parMois("ageVoisines"),
     recrues: recrues.length, tentatives: l.reduce((t, p) => t + (p.stats.tentatives ?? 0), 0),
     recruesComblant: recrues.filter(r => r.comble.length).length, sommeRecrues: moyenne(recrues.map(r => r.somme)),
+    // Par compétence manquante : combien de recrues venues pendant ce manque l'ont comblé (niveau 2 au moins).
+    comblePar: recrues.reduce((t, r) => { for (const c of r.manques) { t[c] ??= [0, 0]; t[c][1]++; if (r.comble.includes(c)) t[c][0]++; } return t; }, {}),
     manquesDebut: l.map(p => p.stats.manquesDebut?.length ?? 0), manquesFin: l.map(p => p.stats.manquesFin?.length ?? 0),
     joursAvecManque: moyenne(l.map(p => p.stats.joursAvecManque ?? 0)),
     morts: l.reduce((t, p) => { for (const [c, n] of Object.entries(p.stats.morts)) t[c] = (t[c] ?? 0) + n; return t; }, {})
@@ -323,7 +327,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   }
   console.log("\n### Menaces contre l'abri par mois (moyenne des parties en vie)\n");
   for (const [sc, r] of Object.entries(resumes)) console.log(`${sc.padEnd(16)} ${r.menacesParMois.map(x => arr(x)).join(" ")}`);
-  console.log("\n### Menaces par type et par trimestre (par mois ; h horde, l Livides errants, b bande, a animaux)\n");
+  console.log("\n### Menaces par type et par trimestre (par mois ; h horde, l Livides errants, b bande, a animaux, v visite)\n");
   for (const [sc, r] of Object.entries(resumes)) console.log(`${sc.padEnd(16)} ${r.typesParTrimestre.map(t => Object.entries(t).map(([k, v]) => `${k[0]}${v ?? "—"}`).join(" ")).join(" | ")}`);
   console.log("\n### Parties encore en vie à la fin de chaque mois ; impasses ; mesures\n");
   for (const [sc, r] of Object.entries(resumes)) console.log(`${sc.padEnd(16)} ${r.vivantsParMois.join(" ")} ; impasses ${r.impasses.join(", ") || "aucune"} ; ${JSON.stringify(r.mesures)}`);
@@ -332,6 +336,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   for (const sc of ["recrues", "sans-recrues", "compagnons", "humains-4"]) if (resumes[sc]) {
     const r = resumes[sc];
     console.log(`\n${sc} : ${r.recrues} recrues sur ${r.tentatives} tentatives, ${r.recruesComblant} comblent un manque, somme des niveaux ${arr(r.sommeRecrues)} ; manques au début ${arr(moyenne(r.manquesDebut))}, à la fin ${arr(moyenne(r.manquesFin))}, jours avec un manque ${arr(r.joursAvecManque)} ; morts ${JSON.stringify(r.morts)}`);
+    if (r.recrues) console.log(`  manque comblé par la recrue : ${Object.entries(r.comblePar).map(([c, [n, d]]) => `${c} ${Math.round(100 * n / d)} % (${n}/${d})`).join(", ")}`);
   }
   // Fêtes.
   const coeur = fetesDeLaPeriode(L.DATE_DEPART, o.jours);

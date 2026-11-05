@@ -182,3 +182,20 @@ test("renseignements : bandes, sources, âge, comparaison connu / réel", () => 
   assert.equal(corrige["cirque-perdu"].vu, 9);
   assert.equal(corrige["cirque-perdu"].source, "rumeur");
 });
+
+test("factions : une région vide les affaiblit, mais pas sous 0,5 dans leurs régions de départ (2026-11-05)", () => {
+  const m = L.creerMonde(C, "plancher");
+  const R = L.REGLES_MONDE.faction;
+  for (const reg of Object.values(m.regions)) for (const res of Object.keys(reg.pillage)) reg.pillage[res] = 0;   // l'île est vide
+  m.regions["port-gris"].factions = { recuperateurs: 0.52 };    // région de départ des récupérateurs (force 2) : plancher 0,5
+  m.regions["cote-ouest"].factions = { recuperateurs: 0.52 };   // pas une région de départ : rien ne les retient
+  const sans = { ...C, evenements: [] };
+  let monde = m;
+  for (let j = 61; j <= 120; j++) monde = L.simulerJour(monde, sans, L.hasardDuJour("plancher", j), j, {}).monde;
+  assert.equal(monde.regions["port-gris"].factions.recuperateurs, R.plancher, "au plancher dans sa région de départ");
+  assert.equal(monde.regions["cote-ouest"].factions.recuperateurs, undefined, "éteinte ailleurs");
+  // Une force de départ plus basse que 0,5 reste son plancher ; au-dessus, le déclin habituel.
+  m.regions["port-gris"].factions = { recuperateurs: 2 };
+  const r = L.simulerJour(m, sans, L.hasardDuJour("plancher", 61), 61, {}).monde;
+  assert.ok(r.regions["port-gris"].factions.recuperateurs < 2 && r.regions["port-gris"].factions.recuperateurs >= 1.69, "déclin de 0,01 (ou essaimage)");
+});

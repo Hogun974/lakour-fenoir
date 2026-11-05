@@ -21,7 +21,9 @@ ont un, leur véhicule. **Quatre stratégies** simples et plausibles :
   contrat : « un groupe de 4 passif en ville tient 7 à 14 jours ») ;
 - **nomade** : fouille sa région tant qu'elle rapporte ; quand les stocks passent sous 3 jours dans une région maigre, ou que deux
   fouilles de suite rapportent moins d'une unité par fouilleur, déménage vers la voisine la mieux renseignée (pillage intact,
-  infestation calme), à pied ou en véhicule ;
+  infestation calme), à pied ou en véhicule ; depuis le 2026-11-05 (`docs/equilibre.md`), il reste glaner tant que les
+  alentours ont au moins 70 % de leur nourriture naturelle (et 3 jours par personne) et deux jours d'eau, et fouille au moins
+  le jour de son arrivée ;
 - **enraciné** : choisit le meilleur site accessible (eau, sol, soleil, discrétion, installations déjà là ; sa région et ses
   voisines), s'y installe et construit dans l'ordre eau (captage, pompe, citerne, filtre), potager, panneaux, batteries, barricades,
   réserve étanche, séchoir, compost, basse-cour, cabris, galerie, camouflage, palissade, tour de guet, infirmerie… ce que le site,
@@ -41,8 +43,9 @@ une bande qui entre emporte 30 % des vivres).
 sans boire et de faim après 10 jours sans manger (la logique ne fait que fatiguer) ; un survivant dont le moral reste à 0 cinq
 jours de suite quitte le groupe, sauf s'il a faim ; dépassés en nombre, les fouilleurs tentent de passer inaperçus (test de
 discrétion du moins discret) avant de se battre ; une rencontre vaut un échange de combat (chacun se bat une fois contre quatre
-adversaires au plus), puis le groupe se replie ; une morsure vaut un test de soins extrême, sinon infection ; les corps sont
-toujours traités (pas de relève) ; après une brèche, si les Livides restants sont plus nombreux que les valides, le groupe fuit
+adversaires au plus), puis le groupe se replie ; une morsure vaut un test de soins extrême (difficile avec un médicament de
+l'abri ou une infirmerie, depuis le 2026-11-05), sinon infection ; les corps sont toujours traités (pas de relève) ; après une
+brèche, si les Livides restants sont plus nombreux que les valides, le groupe fuit
 (déménagement forcé) ; un malade aggravé (malus ≥ 3), épuisé et affamé meurt.
 
 **Mesures** par cas (stratégie × taille) : jours de survie (quartiles), vivants à J200, première faim, autonomie (part et jour),

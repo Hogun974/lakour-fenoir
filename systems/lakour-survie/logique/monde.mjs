@@ -22,17 +22,19 @@
 //   3 jours après. Fortes pluies : 2 % × climat.pluie par jour en saison des pluies (0,4 % en saison sèche), 1 à 3 jours :
 //   les routes dont `coupure` contient l'événement sont coupées, les pistes et sentiers deviennent difficiles. Éruption :
 //   0,3 % par jour s'il existe une région à danger « eruption », 5 à 20 jours.
-// - Événements du contenu : 25 % de chances par jour d'en tirer un (phase, saison, zone, poids) et d'appliquer ses effets
-//   simples ({ infestation, pillage, route, duree, horde, faction, force, nature }). Les événements « meteo » du contenu en sont
-//   (éboulements de la route du Littoral, de Cilaos, de Salazie, radiers, houle, incendie de forêt, brouillard…), sauf ceux que
-//   la simulation tire elle-même (EVENEMENTS_SIMULES : cyclone, fortes pluies, crue, éruption). Un événement que des régions
-//   ont dans leurs `dangers` n'arrive que dans l'une d'elles ; les autres, dans une région de leurs `zones`. Un événement de
-//   type « abri » arrive à l'abri du groupe (`contexte.abri.region`) ; sans abri, il n'est pas tiré. Tout événement qui tombe
-//   dans la région de l'abri du groupe et porte des `effets.abri` les joint à son fait (`effetsAbri`) : avancer (etat.mjs) en
-//   applique les effets simples à l'abri et rend le reste au MJ (abri.mjs, subirEvenementAbri).
+// - Événements du contenu : 35 % de chances par jour (25 % jusqu'au 2026-11-05) d'en tirer un (phase, saison, zone, poids) et
+//   d'appliquer ses effets simples ({ infestation, pillage, route, duree, horde, faction, force, nature }). Les événements
+//   « meteo » du contenu en sont (éboulements de la route du Littoral, de Cilaos, de Salazie, radiers, houle, incendie de
+//   forêt, brouillard…), sauf ceux que la simulation tire elle-même (EVENEMENTS_SIMULES : cyclone, fortes pluies, crue,
+//   éruption). Un événement que des régions ont dans leurs `dangers` n'arrive que dans l'une d'elles ; les autres, dans une
+//   région de leurs `zones`. Un événement de type « abri » arrive à l'abri du groupe (`contexte.abri.region`) ; sans abri, il
+//   n'est pas tiré. Tout événement qui tombe dans la région de l'abri du groupe et porte des `effets.abri` les joint à son
+//   fait (`effetsAbri`) : avancer (etat.mjs) en applique les effets simples à l'abri et rend le reste au MJ (abri.mjs,
+//   subirEvenementAbri).
 // - Factions : croissance (contenu, défaut 0,01/jour) × 1,5 pendant panique et effondrement, si la région n'est pas vide ;
-//   −0,01/jour sinon. Une faction de force ≥ 2 essaime vers une voisine ouverte avec 1 % × force par jour (+0,5 là-bas,
-//   −0,3 chez elle). Un abri abandonné est occupé par la plus forte faction (force ≥ 1) avec 4 % par jour ; inoccupé, chacune
+//   −0,01/jour sinon, mais jamais sous 0,5 dans ses régions de départ (`factionsDepart`, ou sa force de départ si elle était
+//   plus basse ; depuis le 2026-11-05 : sans ce plancher, toutes s'éteignaient entre J600 et J720). Une faction de force ≥ 2
+//   essaime vers une voisine ouverte avec 1 % × force par jour (+0,5 là-bas, −0,3 chez elle). Un abri abandonné est occupé par la plus forte faction (force ≥ 1) avec 4 % par jour ; inoccupé, chacune
 //   de ses installations s'abîme de 1 avec 2 % par jour. Une faction qui n'est plus dans la région (force < 0,5 : partie,
 //   affaiblie, éteinte) libère les abris qu'elle occupait, et emporte ce qu'il y restait : ils redeviennent des abris abandonnés
 //   qu'on peut reprendre (sans quoi, sur la durée, l'île se remplit d'abris « occupés » par des factions disparues).
@@ -66,8 +68,8 @@ export const REGLES_MONDE = {
   cyclone: { chance: 0.01, forces: [[1, 50], [2, 35], [3, 15]] },
   fortesPluies: { pluies: 0.02, seche: 0.004 },
   eruption: 0.003,
-  evenementContenu: 0.25,
-  faction: { croissance: 0.01, essaimage: 0.01, occupation: 0.04, degradation: 0.02, presence: 0.5 },
+  evenementContenu: 0.35,
+  faction: { croissance: 0.01, declin: 0.01, plancher: 0.5, essaimage: 0.01, occupation: 0.04, degradation: 0.02, presence: 0.5 },
   menace: { horde: 0.08, hordeBruit: 0.04, hordeVisibilite: 0.02, livides: 0.02, bande: 0.004 },
   menacesMax: 2
 };
@@ -333,7 +335,11 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
       const def = factionDe(contenu, f);
       const croissance = Number(def?.croissance ?? R.faction.croissance) || 0;
       const facteur = phase === "panique" || phase === "effondrement" ? 1.5 : 1;
-      reg.factions[f] = borner(reg.factions[f] + (vide ? -0.01 : croissance * facteur), 0, 5);
+      // Une région vide affaiblit ses factions, sauf dans leurs régions de départ, où elles ont leurs racines (champs, barques,
+      // familles) : elles n'y descendent pas sous `plancher` (ou leur force de départ si elle était plus basse).
+      const depart = (r.factionsDepart ?? []).find(x => x?.faction === f);
+      const plancher = depart ? Math.min(R.faction.plancher, Number(depart.force) || 0) : 0;
+      reg.factions[f] = borner(vide ? Math.max(Math.min(reg.factions[f], plancher), reg.factions[f] - R.faction.declin) : reg.factions[f] + croissance * facteur, 0, 5);
       if (reg.factions[f] >= 2 && chance(R.faction.essaimage * reg.factions[f], h)) {
         const ouvertes = Object.entries(reg.routes).filter(([, e]) => e === "ouverte").map(([v]) => v);
         const v = choisir(ouvertes, h);

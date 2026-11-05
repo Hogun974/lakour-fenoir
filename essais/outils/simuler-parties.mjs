@@ -26,7 +26,8 @@
 // - un survivant dont le moral reste à 0 cinq jours de suite quitte le groupe, sauf s'il a faim (la logique ne fait partir que
 //   les recrues) ;
 // - rencontre : un seul échange de combat (chacun se bat une fois), puis le groupe se replie ; une morsure vaut un test de soins
-//   extrême par le meilleur soigneur, sinon infection ; les corps des morts sont toujours traités (pas de relève) ;
+//   par le meilleur soigneur (extrême ; difficile avec un médicament de l'abri, consommé, ou une infirmerie, dont le bonus
+//   compte : difficulteMorsure), sinon infection ; les corps des morts sont toujours traités (pas de relève) ;
 // - brèche : une installation abîmée, l'abri +2 dégâts, un échange de combat contre la force de la menace ; une bande qui entre
 //   emporte 30 % des vivres ; si des assaillants restent après l'échange, le groupe FUIT (déménagement forcé) ;
 // - un jour de départ (ou de changement de site) est un jour de jeu comme un autre : le temps passe, sans travail ;
@@ -59,6 +60,8 @@ export const REGLES_SIMULATEUR = {
   joursStocksDepart: 3,    // nomade : déménage sous ce nombre de jours de stocks
   fouillesMaigres: 2,      // nomade : déménage après autant de fouilles qui rapportent moins d'une unité par fouilleur
   demenagementsMixte: 2,   // mixte : s'enracine après autant de déménagements
+  natureRiche: 3,          // nomade : reste glaner tant que les alentours ont ce nombre de jours de nourriture par personne…
+  natureEntamee: 0.7,      // … et au moins cette part de leur plafond (au-delà, des alentours plus frais valent le voyage)
   partBandeBreche: 0.3,    // ce qu'une bande emporte quand elle entre
   fatigueRepos: 4          // au-dessus, un membre se repose au lieu de travailler
 };
@@ -206,10 +209,14 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         s.system = b.system;
         s.derniereCause = cause;
         if (b.morsure) {
+          // Test de soins du meilleur soigneur : difficile avec un médicament (consommé, +1 dé comme avant) ou une infirmerie (son
+          // bonus de soins compte), extrême sinon.
           const soigneur = meilleurSoigneur();
-          const bonus = (abri?.system.stocks?.medicaments ?? 0) > 0 ? 1 : 0;
-          if (bonus && abri) abri.system.stocks = L.ajouterStocks(abri.system.stocks, { medicaments: -1 });
-          const test = L.resoudreTest({ niveau: soigneur?.niveau ?? 0, difficulte: "extreme", bonus, hasard: h, compte: false });
+          const medicament = Boolean(abri) && (abri.system.stocks?.medicaments ?? 0) > 0;
+          const infirmerie = Number(abri?.bilan?.soins) || 0;
+          if (medicament) abri.system.stocks = L.ajouterStocks(abri.system.stocks, { medicaments: -1 });
+          const difficulte = L.difficulteMorsure({ medicament, infirmerie: infirmerie > 0 });
+          const test = L.resoudreTest({ niveau: soigneur?.niveau ?? 0, difficulte, bonus: Number(medicament) + infirmerie, hasard: h, compte: false });
           const m = L.appliquerMorsure(s.system, test, quart);
           s.system = m.system;
           if (m.infecte) s.derniereCause = "infection";
@@ -538,7 +545,14 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     if (!enracine && strategie !== "passif") {
       const js = Math.min(bilan.joursDeStocks.eau, bilan.joursDeStocks.nourriture);
       const regionVide = ["maigre", "vide"].includes(etat.renseignements[abri.system.region]?.pillage);
-      if ((js < R.joursStocksDepart && regionVide) || fouillesMaigres >= R.fouillesMaigres || (js < 1 && jour > 2)) {
+      // Des alentours encore riches (fruits, pêche, gibier à glaner) et de l'eau : on reste glaner tant que les fouilles rapportent.
+      const NOURRICIERS = ["cueillette", "peche", "gibier"];
+      const natureIci = NOURRICIERS.reduce((t, k) => t + Math.floor(Number(abri.system.nature?.[k]) || 0), 0);
+      const plafondIci = NOURRICIERS.reduce((t, k) => t + L.natureRegion(idx.regions.get(abri.system.region))[k].plafond, 0);
+      const arrive = Math.floor(Number(abri.system.installeLe) / 4) >= jour; // installé aujourd'hui : on glane au moins un jour
+      const alentoursRiches = strategie === "nomade" && bilan.joursDeStocks.eau >= 2
+        && (arrive || natureIci >= Math.max(R.natureRiche * vivants().length, R.natureEntamee * plafondIci));
+      if (((js < R.joursStocksDepart && regionVide) || (js < 1 && jour > 2)) && !alentoursRiches || fouillesMaigres >= R.fouillesMaigres) {
         if (strategie === "mixte" && stats.demenagements >= R.demenagementsMixte) { enracine = true; noter(jour, "s'enracine"); if (sEnraciner(jour, h)) { jourSansTravail(jour, h); continue; } }
         else if (partir(jour, h, `stocks ${js} j, fouilles maigres ${fouillesMaigres}`)) { fouillesMaigres = 0; jourSansTravail(jour, h); continue; }
       }

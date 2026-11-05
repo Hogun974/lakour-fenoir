@@ -5,6 +5,8 @@
 // Remesuré le 2026-11-05 après les parties longues (essais/survie-parties-longues.test.mjs) : le simulateur comptait le jour d'un
 // déménagement sans faire passer le temps (le nomade gagnait un jour gratuit par départ, ~30 sur 200), et la logique corrigée
 // fait manger les chiens de garde et tirer les événements météo du contenu (éboulements…). Mesures entre crochets : avant.
+// Remesuré le 2026-11-05 (docs/equilibre.md, « Appliqué ») : glanage de passage, événements du contenu à 35 % par jour, plancher
+// des factions, recrues, morsure difficile avec un médicament ou une infirmerie. Mesures entre accolades : avant ces réglages.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { simuler, mesurer, jouerPartie, chargerContenu, PARTIES_RAPIDE } from "./outils/simuler-parties.mjs";
@@ -22,8 +24,8 @@ test("équilibre : un groupe de 4 passif tient une à deux semaines (première f
 });
 
 test("équilibre : l'enraciné à 4 tient 200 jours le plus souvent, devient autonome vers J25–J110, et reste menacé", () => {
-  const c = cas["enracine-4"]; // mesuré : 16/20 vivants à J200, 13/20 autonomes (médiane J62), 4,2 assauts par mois dont 2,4 sérieux
-  // [13/20, 15/20 (J63), 5,6 dont 3,8]
+  const c = cas["enracine-4"]; // mesuré : 14/20 vivants à J200, 14/20 autonomes (médiane J61), 4,6 assauts par mois dont 2,8 sérieux
+  // {18/20, 13/20 (J61), 4,0 dont 2,8} [13/20, 15/20 (J63), 5,6 dont 3,8]
   assert.ok(part(c.survie200, c.parties) >= 0.4, `${c.survie200}/${c.parties} vivants à J200`);
   assert.ok(part(c.autonomie, c.parties) >= 0.4, `${c.autonomie}/${c.parties} autonomes`);
   assert.ok(c.autonomieMediane >= 25 && c.autonomieMediane <= 110, `autonomie médiane J${c.autonomieMediane}`);
@@ -31,26 +33,30 @@ test("équilibre : l'enraciné à 4 tient 200 jours le plus souvent, devient aut
   assert.ok(c.assautsParMoisApres30 <= 12, `${c.assautsParMoisApres30} assauts par mois après J30`);
 });
 
-test("équilibre : le nomade à 4 tient quatre mois, déménage sans cesse, et finit par manquer après J90", () => {
-  // mesuré : 1/20 vivants à J200 (9/100 sur 100 parties), fin médiane J168, 33 déménagements, 18 fins sur 19 après J90, 15 par la
-  // faim [10/20 vivants à J200, 30 déménagements, 9 fins sur 10 après J90 : le jour gratuit de chaque départ]
+test("équilibre : le nomade à 4 tient quatre mois, déménage, et finit par manquer après J90", () => {
+  // mesuré : 17/20 vivants à J200 (80/100 sur 100 parties, l'enraciné 79/100), 6,4 déménagements, 3 fins sur 3 après J90.
+  // Le glanage de passage le nourrit tant qu'il trouve des alentours frais : il ne meurt plus vers J160 (fin médiane d'un an :
+  // J254, 10/40 vivants à J365 dans les parties longues, l'enraciné à 4 17/40), et il reste plus longtemps là où la nature est
+  // intacte (6 à 7 déménagements au lieu de 33 à 37 départs affamés) : bornes 0,9 (au lieu de 0,85) et 4 (au lieu de 8).
+  // {2/20, J170, 36 déménagements} [10/20 vivants à J200, 30 déménagements, 9 fins sur 10 après J90 : le jour gratuit de chaque
+  // départ]
   const c = cas["nomade-4"];
   assert.ok(c.mediane >= 120, `fin médiane J${c.mediane}`);
-  assert.ok(part(c.survie200, c.parties) <= 0.85, `${c.survie200}/${c.parties} vivants à J200`);
-  assert.ok(c.demenagements >= 8, `${c.demenagements} déménagements par partie`);
+  assert.ok(part(c.survie200, c.parties) <= 0.9, `${c.survie200}/${c.parties} vivants à J200`);
+  assert.ok(c.demenagements >= 4, `${c.demenagements} déménagements par partie`);
   const fins = resultats.filter(r => r.strategie === "nomade" && r.membres === 4 && r.fin !== "vivants");
   assert.ok(part(fins.filter(r => r.jours > 90).length, fins.length) >= 0.5, `${fins.filter(r => r.jours > 90).length}/${fins.length} fins après J90`);
 });
 
 test("équilibre : le solo enraciné est viable mais tendu", () => {
-  const c = cas["enracine-1"]; // mesuré : 13/20 vivants à J200, médiane J200 [5/20, J161]
+  const c = cas["enracine-1"]; // mesuré : 10/20 vivants à J200, médiane J200 {10/20} [5/20, J161]
   assert.ok(part(c.survie200, c.parties) >= 0.05 && part(c.survie200, c.parties) <= 0.85, `${c.survie200}/${c.parties} vivants à J200`);
   assert.ok(c.mediane >= 60, `médiane J${c.mediane}`);
   assert.ok(cas["enracine-4"].mediane >= c.mediane, "à quatre, on tient au moins aussi longtemps que seul");
 });
 
 test("équilibre : après J90, les Hauts sont plus durs que les Bas (Livides conservés par le froid)", () => {
-  const { bas, hauts } = m.hautsBas; // mesuré : Hauts 3,3 assauts par mois, Bas 2,4 [5,0 et 2,6]
+  const { bas, hauts } = m.hautsBas; // mesuré : Hauts 3,3 assauts par mois, Bas 2,2 {3,3 et 2,2} [5,0 et 2,6]
   assert.ok(bas.joursAbri > 300 && hauts.joursAbri > 300, "assez de jours d'abri de part et d'autre");
   assert.ok(hauts.assautsParMois > bas.assautsParMois, `Hauts ${hauts.assautsParMois} > Bas ${bas.assautsParMois} assauts par mois`);
 });
