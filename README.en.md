@@ -384,6 +384,20 @@ and everything around it:
 
 The full guide is installed in the world by the module and can be read in [its repository](https://github.com/Hogun974/lakour-mj-ia).
 
+## Security
+
+- **What a player sees.** Foundry sends the whole game world to every browser: settings, actors, journals, messages. The **real
+  world** (hordes, outages, reserves, the random seed, diseases still incubating, the GM's secret notes on shelters) is
+  therefore never there in clear: it is sealed in the vault of the `lakour-mj-ia` module. Without that module it stays in clear
+  in the world settings (a warning reminds the GM): a curious player can read it. Survivor and shelter sheets are readable by
+  everyone; a player only writes their survivor's name, portrait and notes, everything else goes through the GM (GM-only
+  fields, checked by the Foundry server). Their tests only count when they answer a request from the GM.
+- **An assistant GM is a GM.** Foundry gives them the same rights as the GM: they see and can do everything, vault included.
+  Only give that role to someone who may know everything about the game.
+- **The Gamemaster's password first.** The empty world has a Gamemaster account with no password: give it one (User
+  Management) **before** inviting anyone, and a password to each player. Leave the random seed empty when starting a game: a
+  safe seed is drawn.
+
 ## Languages
 
 The **interface** of the system and of the module is in **French and English** (`lang/fr.json`, `lang/en.json`, every label

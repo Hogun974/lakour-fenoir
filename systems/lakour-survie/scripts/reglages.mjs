@@ -14,7 +14,8 @@ export function enregistrerReglages(rappels = {}) {
   r("coffre", { scope: "world", config: false, type: Object, default: {}, onChange: () => rappels.coffre?.() });
   // Sans le moteur (module coupé) : le monde en clair, avec un avertissement permanent au MJ.
   r("mondeClair", { scope: "world", config: false, type: Object, default: {} });
-  // Le monde gardé dans le navigateur du MJ (localStorage), rangé par [monde][userId] : rechargement rapide, jamais envoyé.
+  // Le monde gardé dans le navigateur du MJ (localStorage), rangé par [monde][userId], jamais envoyé : SEULEMENT le temps qu'une
+  // écriture attende d'être scellée (clé du moteur absente), effacé ensuite (coffre.mjs). Sinon vide : le coffre suffit.
   r("monde", { scope: "client", config: false, type: Object, default: {} });
 
   r("dateDepart", {

@@ -18,7 +18,7 @@ export function traiterMessage(message, emetteur) {
   if (qui === null) return false;
   switch (message.type) {
     case "requete": return estMJActif() ? traiterRequete(message, qui) : false;
-    case "reponse": return vientDuMJActif(message, emetteur) || !emetteur ? recevoirReponse(message, emetteur) : false;
+    case "reponse": return vientDuMJActif(message, emetteur) ? recevoirReponse(message, emetteur) : false;
     case "signal":
       if (!vientDUnMJ(message, emetteur)) return false;
       return signaler(String(message.texte ?? ""));

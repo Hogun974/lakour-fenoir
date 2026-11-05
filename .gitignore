@@ -8,3 +8,7 @@ modules/*/packs/
 # modules/lakour-fenoir/contenu/en/) ; jamais versionné.
 modules/lakour-fenoir-en/
 monde/dist/
+# Secrets : jamais versionnés (variables d'environnement, clés de secours du coffre du MJ IA).
+.env
+*.env
+cle-de-secours-*.json

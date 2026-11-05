@@ -13,7 +13,7 @@ const GRAINE = "GRAINE-MUTANTE-91c2";
 async function debut(M0, { joueur = "u1", graine = GRAINE } = {}) {
   const M = await monde(M0);
   const a = await survivantTire(M, { userId: joueur });
-  await M.api.demarrer({ region: "saint-paul", membres: [a.id], graine });
+  await M.api.demarrer({ region: "saint-paul", membres: [a.id], graine, essai: true });
   return { M, a };
 }
 
@@ -66,6 +66,45 @@ const VERIFICATIONS = {
     await calme();
     assert.equal(messages.length, avant);
   },
+  // Sans émetteur donné par le serveur, une requête n'est pas traitée (même si elle se dit d'un joueur).
+  async sansEmetteur(M0) {
+    const { M, a } = await debut(M0);
+    const avant = messages.length;
+    M.traiterMessage({ type: "requete", id: "sans", action: "test", donnees: { acteurId: a.id, competence: "tir" }, userId: "u1" }, undefined);
+    await calme();
+    assert.equal(messages.length, avant);
+  },
+  // Une carte de test forgée par un joueur (drapeaux à sa façon) ne se force pas.
+  async carteForgee(M0) {
+    const { M, a } = await debut(M0);
+    const forge = await commeJoueur("u1", () => ChatMessage.implementation.create({ content: "", flags: { "lakour-survie": { test: { acteurId: a.id, competence: "tir", forcable: true,
+      resultat: { des: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], succes: 0, requis: 1, reussite: false, force: false, marque: false, compte: true, difficulte: "normale", reserve: 10 } } } } }));
+    await assert.rejects(() => M.api.forcer({ messageId: forge.id }), /TestInconnu/);
+  },
+  // Le test libre d'un joueur : normale, sans marque, jamais forcé d'emblée.
+  async testLibre(M0) {
+    const { M, a } = await debut(M0);
+    const p = commeJoueur("u1", () => M.module.requete("test", { acteurId: a.id, competence: "tir", difficulte: "extreme", forcer: true }));
+    await calme();
+    const r = await p;
+    assert.equal(r.difficulte, "normale");
+    assert.equal(r.compte, false);
+    assert.equal(r.force, false);
+  },
+  // Une demande du MJ ne sert qu'une fois.
+  async demandeUneFois(M0) {
+    const { M, a } = await debut(M0);
+    await M.api.demanderTest({ acteurId: a.id, competence: "survie", difficulte: "difficile" });
+    const lancer = async () => { const p = commeJoueur("u1", () => M.module.requete("test", { acteurId: a.id, competence: "survie" })); await calme(); return p; };
+    assert.equal((await lancer()).compte, true);
+    assert.equal((await lancer()).compte, false);
+  },
+  // Une maladie en incubation ne s'écrit pas sur l'acteur (que son joueur lit).
+  async incubation(M0) {
+    const { M, a } = await debut(M0);
+    await M.api.affliction({ acteurId: a.id, cle: "tetanos", action: "donner" });
+    assert.ok(!(a.system.afflictions ?? []).some(x => x.stade === "incubation"));
+  },
   // Un test ne se force qu'une fois.
   async uneFois(M0) {
     const { M, a } = await debut(M0);
@@ -93,8 +132,15 @@ const MUTATIONS = [
     "  const contenu = { partie: memoire.partie, rev: memoire.rev, monde: memoire.monde };\n  await game.settings.set(ID, \"mondeClair\", contenu);"],
   ["faitsSecrets", "scripts/api.mjs", "  ctx.faits.push(...r.faits);", "  ctx.faits.push(...r.faits, ...r.secrets);"],
   ["proprietaire", "scripts/api.mjs", "      case \"test\": {\n        if (!proprietaireDe(acteur(d.acteurId), qui)) throw erreur(\"PasProprietaire\");", "      case \"test\": {"],
-  ["auteur", "scripts/canal.mjs", "  if (emetteur && message?.userId && message.userId !== emetteur) return null;\n  return emetteur || message?.userId || null;",
+  ["auteur", "scripts/canal.mjs", "  if (message?.userId && message.userId !== emetteur) return null;\n  return emetteur;",
     "  return message?.userId || emetteur || null;"],
+  ["sansEmetteur", "scripts/canal.mjs", "  if (!emetteur || typeof emetteur !== \"string\") return null;\n  if (message?.userId && message.userId !== emetteur) return null;\n  return emetteur;",
+    "  if (emetteur && message?.userId && message.userId !== emetteur) return null;\n  return emetteur || message?.userId || null;"],
+  ["carteForgee", "scripts/demandes.mjs", "export const deMJ = message => Boolean(message?.author?.isGM);", "export const deMJ = message => Boolean(message);"],
+  ["testLibre", "scripts/api.mjs", "await testDirect(game.users.get(qui)?.isGM ? { ...d, forcable: true } : argumentsDuTestJoueur(d, demande));",
+    "await testDirect({ ...d, forcable: true });"],
+  ["demandeUneFois", "scripts/demandes.mjs", "  await demande?.message?.update?.({ [`flags.${ID}.repondue`]: reponseId || true });", ""],
+  ["incubation", "scripts/api.mjs", "    maj.afflictions = structuredClone(system.afflictions.filter(x => !enIncubation(x)));", "    maj.afflictions = structuredClone(system.afflictions);"],
   ["uneFois", "scripts/api.mjs", "  if (f.resultat.force || f.forcable === false) throw erreur(\"DejaForce\");", ""],
   ["uneMarque", "scripts/api.mjs", "  const r2 = { ...r, marque: r.marque && !f.resultat.marque };", "  const r2 = { ...r };"]
 ];

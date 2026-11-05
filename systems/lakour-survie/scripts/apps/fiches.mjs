@@ -13,14 +13,24 @@ import { CHEMIN, essayer, lireChamps, flammes, jours, options } from "./commun.m
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2, ItemSheetV2 } = foundry.applications.sheets;
-const enrichir = (html, doc) => foundry.applications.ux.TextEditor.implementation.enrichHTML(html ?? "", { relativeTo: doc, secrets: doc.isOwner });
+// Notes et descriptions affichées en HTML ({{{ }}}) : enrichHTML de Foundry v14 n'en retire rien (il les pose tels quels dans un
+// élément : client/applications/ux/text-editor.mjs) ; le serveur les nettoie à l'écriture (htmlFields du system.json), mais une
+// donnée d'avant, un compendium ou une doublure ne passent pas par lui : on nettoie donc aussi ici (foundry.utils.cleanHTML, la
+// liste blanche de Foundry), avant d'enrichir.
+export const nettoyerHTML = html => {
+  const brut = String(html ?? "");
+  const propre = globalThis.foundry?.utils?.cleanHTML;
+  return typeof propre === "function" ? propre(brut) : sansBalises(brut);
+};
+export const enrichir = (html, doc) => foundry.applications.ux.TextEditor.implementation.enrichHTML(nettoyerHTML(html), { relativeTo: doc, secrets: doc.isOwner });
 const contenu = () => game.lakourSurvie?.contenu?.() ?? {};
 const defDe = (famille, cle) => L.indexer(contenu())[famille]?.get(cle) ?? null;
 export const BLESSURES = ["Indemne", "Egratigne", "Blesse", "Grievement", "Mourant"];
 
 // ------------------------------------------------------------------ survivant (contexte pur, éprouvé hors Foundry)
-export function contexteSurvivant(a, { gm = false, proprietaire = false } = {}) {
+export function contexteSurvivant(a, { gm = false, proprietaire = false, incubations = [] } = {}) {
   const s = aPlat(a.system);
+  if (gm && incubations.length) s.afflictions = [...(s.afflictions ?? []), ...incubations.filter(x => !(s.afflictions ?? []).some(y => y.cle === x.cle))];
   const c = contenu();
   const incap = new Set(s.incapacites ?? []);
   const interdites = new Set([...incap, ...L.competencesInterdites(s)]);
@@ -76,7 +86,7 @@ export async function demanderReglagesTest(acteurNom, competence) {
     <label>${t("LAKOUR_SURVIE.Test.Bonus")} <input type="number" name="bonus" value="0" min="0" max="4"></label>
     <label>${t("LAKOUR_SURVIE.Test.Malus")} <input type="number" name="malus" value="0" min="0" max="4"></label>
     <label class="survie-case"><input type="checkbox" name="compte" checked> ${t("LAKOUR_SURVIE.Test.Compte")}</label>
-    <p class="survie-aide">${t("LAKOUR_SURVIE.Test.AideDialogue")}</p></div>`;
+    <p class="survie-aide">${t("LAKOUR_SURVIE.Test.AideDialogue")}</p>${game.user?.isGM ? "" : `<p class="survie-aide">${t("LAKOUR_SURVIE.Test.AideJoueurLibre")}</p>`}</div>`;
   return DialogV2.wait({
     window: { title: t("LAKOUR_SURVIE.Test.Titre", { competence: libelleCompetence(competence) }) },
     content: contenuHtml,
@@ -110,7 +120,8 @@ export class FicheSurvivant extends HandlebarsApplicationMixin(ActorSheetV2) {
   async _prepareContext(options) {
     const base = await super._prepareContext(options);
     const a = this.document;
-    const ctx = contexteSurvivant(a, { gm: game.user.isGM, proprietaire: a.isOwner });
+    const incubations = game.user.isGM ? game.lakourSurvie?.monde?.()?.incubations?.[a.id] ?? [] : [];
+    const ctx = contexteSurvivant(a, { gm: game.user.isGM, proprietaire: a.isOwner, incubations });
     return { ...base, ...ctx, editable: this.isEditable, notesEnrichies: await enrichir(a.system.notes, a) };
   }
 
@@ -173,7 +184,9 @@ export function contexteAbri(a) {
     stocks, installations, nature, sol: Math.round((Number(s.sol) || 0) * 100) / 100, bruit: s.bruit, degats: s.degats,
     bilan: b ? { defense: b.defense, discretion: b.discretion, visibilite: b.visibilite, capacite: b.capacite, personnes: b.personnes, autonome: Boolean(etat.autonome),
       joursAutonomes: etat.joursAutonomes ?? 0, surpeuplement: b.surpeuplement, production: Object.entries(b.production ?? {}).map(([r, q]) => `${libelleRessource(r)} ${q}`).join(", ") } : null,
-    grille, taches: Object.keys(L.TACHES).map(x => ({ cle: x, libelle: libelleTache(x) })), gm: game.user.isGM
+    grille, taches: Object.keys(L.TACHES).map(x => ({ cle: x, libelle: libelleTache(x) })), gm: game.user.isGM,
+    // Les notes secrètes du MJ (monde scellé, jamais sur l'acteur que les joueurs observent).
+    notesMJ: game.user.isGM ? game.lakourSurvie?.notesAbri?.(a.id) ?? "" : "", mondeOuvert: Boolean(game.lakourSurvie?.mondeOuvert?.())
   };
 }
 
@@ -190,6 +203,14 @@ export class FicheAbri extends HandlebarsApplicationMixin(ActorSheetV2) {
   async _prepareContext(options) {
     const base = await super._prepareContext(options);
     return { ...base, ...contexteAbri(this.document), editable: this.isEditable, notesEnrichies: await enrichir(this.document.system.notes, this.document) };
+  }
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+    // Les notes secrètes du MJ partent au monde scellé par l'API (le formulaire de la fiche ne les envoie pas : pas de nom).
+    this.element?.querySelector?.("textarea.survie-notes-mj")?.addEventListener("change", ev => {
+      ev.stopPropagation();
+      essayer(() => game.lakourSurvie.noterAbri({ abriId: this.document.id, notes: ev.target.value }));
+    });
   }
   static #ouvrirObjet(event, cible) { this.document.items.get(cible.dataset.itemId)?.sheet?.render({ force: true }); }
   static #assignerCase(event, cible) {

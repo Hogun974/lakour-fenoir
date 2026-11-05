@@ -116,6 +116,11 @@
       "recrue-prix-4": "a un trait difficile", "recrue-prix-5": "boit quand il peut",
       "proche-1": "cherche sa sœur, restée à l'hôpital", "proche-2": "a perdu son père le premier soir", "proche-3": "attend des nouvelles de son fils, parti à la pêche",
       "proche-4": "a laissé sa grand-mère dans les Hauts", "proche-5": "ne sait pas où est sa compagne",
+      "abri-evenement-pertes": "{nom} : l'abri perd {pertes}.", "abri-evenement-degats": "{nom} : l'abri est abîmé ({degats} dégât(s)).",
+      "abri-a-raconter-moral": "{nom} : moral du groupe {moral}, à raconter.", "abri-a-raconter-blessure": "{nom} : {n} blessure(s) à raconter (qui, comment).",
+      "abri-a-raconter-decouverte": "{nom} : une trouvaille à raconter ({decouverte}), à aller chercher.",
+      "besoin-soins": "des blessés ou des malades sans soigneur", "besoin-chantier": "un chantier ouvert sans bricoleur",
+      "besoin-cultures": "des cultures sans jardinier", "besoin-garde": "personne ne garde la nuit", "besoin-negociation": "des factions sans négociateur",
       "soin-medicaments": "il faut {n} médicament(s)", "soin-pas-atteint": "pas atteint", "soin-rate": "le soin n'a pas pris",
       "installation-inconnue": "installation inconnue", "recette-inconnue": "recette inconnue",
       "niveau-inexistant": "{installation} : le niveau {niveau} n'existe pas (1 à {max})", "niveau-deja": "{installation} : déjà au niveau {niveau}",
@@ -127,6 +132,9 @@
     },
 
     "Erreurs": {
+      "GraineCourte": "Graine trop courte : elle se devinerait. Laissez le champ vide (graine sûre tirée au hasard) ou donnez-en une d'au moins 32 caractères.",
+      "TropDePropositions": "Trop de propositions d'un coup : attendez une minute.",
+      "ChampReserve": "Seul le MJ change cela : passez par la fiche ou par le MJ (tâche, test, création).",
       "PasMJActif": "Seul le MJ actif peut faire cela (l'état de Fénoir s'écrit chez lui).",
       "MondeFerme": "Le monde de Fénoir n'est pas ouvert dans ce navigateur (coffre du MJ IA fermé ou parts attendues) : rien n'a été écrit. Il est cherché ; réessaie dans un instant.",
       "PasDePartie": "Aucune partie de Fénoir n'est démarrée (fenêtre du MJ : Démarrer).",
@@ -191,6 +199,8 @@
       "MaFiche": "Ma fiche", "EnRoute": "En route ({n} quart(s))"
     },
     "Fiche": {
+      "NotesPubliques": "Notes de l'abri (lues par les joueurs)", "NotesMJ": "Notes du MJ (secrètes, gardées au coffre)",
+      "NotesMJFermees": "Le monde n'est pas ouvert dans ce navigateur : les notes secrètes attendent le coffre.",
       "Survivant": "Fiche de survivant", "Abri": "Fiche d'abri", "Objet": "Fiche d'objet", "Nom": "Nom", "Age": "Âge", "Etat": "État",
       "Competences": "Compétences", "CliquerTester": "clic : un test", "Traits": "Traits et incapacités", "Tache": "Tâche du jour", "Equipement": "Équipement",
       "Savoirs": "Savoir-faire", "Notes": "Notes", "Histoire": "Histoire", "Afflictions": "Maladies et blessures", "Retirer": "Retirer",
@@ -222,6 +232,7 @@
     },
 
     "Test": {
+      "AideJoueurLibre": "Sans demande du MJ, ce test se lance en difficulté normale et ne donne pas de marque ; une demande du MJ fixe la difficulté et le fait compter.",
       "Titre": "Test : {competence}", "Difficulte": "Difficulté", "Bonus": "Dés en plus (outil, aide, situation)", "Malus": "Dés en moins (situation)",
       "Compte": "Le test compte (danger, enjeu) : marque de progression si échoué ou forcé",
       "AideDialogue": "Chaque 5 ou 6 est un succès. Les malus d'état et les bonus d'outil s'ajoutent d'eux-mêmes.",
@@ -312,7 +323,7 @@
       },
       "PasActif": "Tu n'es pas le MJ actif : seul le MJ actif écrit l'état de Fénoir.", "Bloque": "Le monde n'est pas ouvert dans ce navigateur : rien ne s'écrit.",
       "Rouvrir": "Rouvrir le coffre", "DejaDemarree": "Une partie est en cours : la démarrer de nouveau la remplace.",
-      "RegionDepart": "Région de départ", "Graine": "Graine du hasard (vide = au hasard)", "Membres": "Membres du groupe", "AucunSurvivant": "Aucun survivant : créez-en.",
+      "RegionDepart": "Région de départ", "Graine": "Graine d'essai (vide = graine sûre tirée au hasard ; sinon 32 caractères au moins)", "Membres": "Membres du groupe", "AucunSurvivant": "Aucun survivant : créez-en.",
       "Quarts": "Quarts", "Quart": "quart", "UnJour": "1 jour", "UneSemaine": "1 semaine", "Raison": "Raison", "Repos": "Le groupe se repose",
       "AucuneFete": "Aucune fête aujourd'hui (date de jeu).", "Fete": "Fête", "Site": "Site", "Region": "La région entière", "Cible": "Chercher",
       "Tout": "Tout", "Prudence": "Prudence", "Qui": "Qui", "Quoi": "Quoi", "Abri": "L'abri (dégâts)", "Vers": "Vers", "Transport": "Transport",

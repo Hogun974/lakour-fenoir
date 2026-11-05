@@ -19,6 +19,7 @@ import { tableauDeBord, ouvrirTableau } from "./scripts/apps/tableau.mjs";
 import { fenetreMJ, ouvrirFenetreMJ } from "./scripts/apps/mj.mjs";
 import { atelier } from "./scripts/apps/atelier.mjs";
 import { ouvrirCreation, doitCreer } from "./scripts/apps/creation.mjs";
+import { brancherGarde } from "./scripts/garde.mjs";
 
 // ------------------------------------------------------------------ l'état change (réglage monde « partie », chez tous)
 const enSaisie = appli => Boolean(appli.element?.querySelector?.("prose-mirror[open]") || appli.element?.contains?.(document.activeElement));
@@ -58,6 +59,7 @@ Hooks.once("init", () => {
   });
   brancherImmersion();
   brancherInfobulle();
+  brancherGarde();
 });
 
 // ------------------------------------------------------------------ setup : l'API et le registre du contenu (§6)
@@ -87,6 +89,7 @@ Hooks.once("ready", async () => {
   if (estMJActif()) {
     quandMoteur(async () => {
       const ok = await Coffre.apresMoteurPret().catch(e => { console.warn(`${ID} | coffre`, e); return false; });
+      if (ok && lireEtat().demarree) api.migrerNotesAbris().catch(e => console.warn(`${ID} | notes des abris`, e));
       if (!ok && lireEtat().demarree) ui.notifications.warn(t(Coffre.enAttenteDeParts() ? "LAKOUR_SURVIE.Coffre.EnAttente" : "LAKOUR_SURVIE.Coffre.Ferme"), { permanent: true });
       quandEtatChange();
       suivreFetesDuJeu(quandDe().date, contenu().fetes ?? []).catch(() => null);
@@ -119,7 +122,13 @@ Hooks.once("ready", () => { etaisActif = estMJActif(); });
 Hooks.on("lakourSurvie.assaut", () => { if (estMJActif()) signalerAssaut().catch(() => null); });
 
 // ------------------------------------------------------------------ cartes de chat
+// Les boutons « Forcer » et « Lancer » ne sont branchés que sur les cartes écrites par un MJ : l'auteur d'un message est fixé par le
+// serveur (message.author, v14), son contenu non ; une carte forgée par un joueur reste un texte inerte.
 Hooks.on("renderChatMessageHTML", (message, html) => {
+  if (!message.author?.isGM) {
+    for (const b of html.querySelectorAll?.(".survie-forcer, .survie-lancer") ?? []) b.remove();
+    return;
+  }
   const f = message.flags?.[ID];
   const forcer = html.querySelector?.(".survie-forcer");
   if (forcer) {
@@ -136,7 +145,7 @@ Hooks.on("renderChatMessageHTML", (message, html) => {
     if (!a || !(game.user.isGM || a.isOwner)) { b.remove(); continue; }
     b.addEventListener("click", async ev => {
       ev.preventDefault();
-      try { await api.test({ acteurId: a.id, competence: b.dataset.competence, difficulte: b.dataset.difficulte }); } catch (e) { ui.notifications.error(erreurLisible(e)); }
+      try { await api.test({ acteurId: a.id, competence: b.dataset.competence, difficulte: b.dataset.difficulte, demandeId: message.id }); } catch (e) { ui.notifications.error(erreurLisible(e)); }
     });
   }
 });

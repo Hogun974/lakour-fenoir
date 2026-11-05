@@ -391,6 +391,21 @@ seulement) et tout ce qui va avec :
 
 Le guide complet est installé dans le monde par le module et se lit dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Sécurité
+
+- **Ce que voit un joueur.** Foundry envoie à chaque navigateur tout le monde de jeu : réglages, acteurs, journaux, messages.
+  Le **monde réel** (hordes, coupures, réserves, graine du hasard, maladies en incubation, notes secrètes du MJ sur les abris)
+  n'y est donc jamais en clair : il est scellé dans le coffre du module `lakour-mj-ia`. Sans ce module, il reste en clair dans
+  les réglages du monde (un avertissement le rappelle au MJ) : un joueur curieux peut le lire. Les fiches de survivant et
+  d'abri sont, elles, lisibles de tous ; un joueur n'écrit sur son survivant que son nom, son portrait et ses notes, le reste
+  passe par le MJ (champs réservés au MJ, vérifiés par le serveur de Foundry). Ses tests ne comptent que s'ils répondent à une
+  demande du MJ.
+- **Un MJ-assistant est un MJ.** Foundry lui donne les mêmes droits qu'au MJ : il voit et peut tout, coffre compris. Ne donnez
+  ce rôle qu'à quelqu'un qui peut tout savoir de la partie.
+- **Le mot de passe du Gamemaster d'abord.** Le monde vierge a un compte Gamemaster sans mot de passe : donnez-lui-en un
+  (Configuration des joueurs) **avant** d'inviter qui que ce soit, et un mot de passe à chaque joueur. Laissez vide la graine
+  du hasard au démarrage d'une partie : une graine sûre est tirée.
+
 ## Langues
 
 L'**interface** du système et du module est en **français et en anglais** (`lang/fr.json`, `lang/en.json`, tout libellé

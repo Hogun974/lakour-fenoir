@@ -18,7 +18,8 @@ const chemin = (o, p) => p.split(".").reduce((x, k) => x?.[k], o);
 const parametres = s => [...String(s).matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort();
 const feuilles = (o, prefixe = "") => Object.entries(o).flatMap(([k, v]) => (v && typeof v === "object" ? feuilles(v, `${prefixe}${k}.`) : [`${prefixe}${k}`]));
 
-// Les clés en attente de traduction (L.CLES_A_TRADUIRE) : leurs paramètres attendus, que les traductions devront reprendre.
+// Les paramètres attendus des clés traduites en dernier (et de toute clé qui attendrait sa traduction, L.CLES_A_TRADUIRE) : les
+// traductions doivent les reprendre.
 const PARAMS_A_TRADUIRE = {
   "abri-evenement-pertes": ["nom", "pertes"], "abri-evenement-degats": ["degats", "nom"],
   "abri-a-raconter-moral": ["moral", "nom"], "abri-a-raconter-blessure": ["n", "nom"], "abri-a-raconter-decouverte": ["decouverte", "nom"]
@@ -27,7 +28,8 @@ const enAttente = cle => L.CLES_A_TRADUIRE.includes(cle) && typeof FR.LAKOUR_SUR
 const parametresAttendus = cle => (typeof FR.LAKOUR_SURVIE.Faits[cle] === "string" ? parametres(FR.LAKOUR_SURVIE.Faits[cle]) : PARAMS_A_TRADUIRE[cle] ?? []);
 
 test("textes : chaque clé de la logique existe en français et en anglais, mêmes paramètres", () => {
-  assert.deepEqual(Object.keys(PARAMS_A_TRADUIRE).sort(), [...L.CLES_A_TRADUIRE].sort(), "PARAMS_A_TRADUIRE suit L.CLES_A_TRADUIRE");
+  for (const cle of L.CLES_A_TRADUIRE) assert.ok(cle in PARAMS_A_TRADUIRE, `${cle} : paramètres attendus à donner dans PARAMS_A_TRADUIRE`);
+  assert.deepEqual(L.CLES_A_TRADUIRE, [], "toutes les clés de la logique sont traduites");
   for (const cle of L.CLES_A_TRADUIRE) assert.ok(L.CLES_TEXTES.includes(cle), `${cle} : une clé à traduire est une clé de la logique`);
   for (const cle of L.CLES_TEXTES) {
     if (enAttente(cle)) continue;   // ni fr ni en : traduction à venir (le repli français s'affiche)

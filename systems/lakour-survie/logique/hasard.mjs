@@ -1,28 +1,44 @@
-// Hasard reproductible (repris des Veillées) : une graine (nombre ou texte) donne toujours la même suite. Sans graine : Math.random.
-// La simulation du monde tire un générateur PAR JOUR (hasardDuJour) : le monde d'un jour donné ne dépend que de la graine et
-// des jours précédents, pas de la façon dont les quarts ont été avancés (1 par 1 ou 40 d'un coup).
+// Hasard reproductible (repris des Veillées, renforcé) : une graine (texte ou nombre) donne toujours la même suite. Sans graine :
+// Math.random. La simulation du monde tire un générateur PAR JOUR (hasardDuJour) : le monde d'un jour donné ne dépend que de la
+// graine et des jours précédents, pas de la façon dont les quarts ont été avancés (1 par 1 ou 40 d'un coup).
+//
+// Sécurité (le monde réel est secret) : la graine d'une partie est tirée par crypto.getRandomValues (graineSure, 128 bits, 32
+// caractères hexadécimaux). Chaque flux (« jour|12 », « radio|12 », « fouille|57|2 »…) part des 128 premiers bits de SHA-256
+// (graine|usage) (sha256.mjs, synchrone), puis d'un générateur sfc32 à état de 128 bits. Un joueur qui relève ce que la radio
+// annonce ne peut donc ni remonter à la graine (SHA-256 à sens unique, 2^128 graines à essayer) ni d'un flux à un autre.
+// Avant (jusqu'au 2026-11-05) : FNV-1a 32 bits puis mulberry32 : 2^32 états seulement, toute la partie se rejouait.
+// Une graine courte (partie ancienne, graine d'essai) marche toujours, mais se devine : graineLongue dit si elle est assez longue.
+import { sha256Texte } from "./sha256.mjs";
 
-// Graine texte -> entier 32 bits (FNV-1a).
-export function hacher(texte) {
-  let h = 0x811c9dc5;
-  for (const c of String(texte)) {
-    h ^= c.codePointAt(0);
-    h = Math.imul(h, 0x01000193) >>> 0;
-  }
-  return h >>> 0;
+export const GRAINE_LONGUEUR_MIN = 32;
+
+// Une graine sûre : 128 bits tirés par crypto.getRandomValues (navigateur ou Node), en 32 caractères hexadécimaux.
+export function graineSure() {
+  const c = globalThis.crypto;
+  if (!c?.getRandomValues) throw new Error("crypto.getRandomValues indisponible : pas de graine sûre");
+  return [...c.getRandomValues(new Uint8Array(16))].map(o => o.toString(16).padStart(2, "0")).join("");
+}
+// Une graine assez longue pour ne pas se deviner (au moins 32 caractères, comme une graine sûre).
+export const graineLongue = graine => typeof graine === "string" && graine.length >= GRAINE_LONGUEUR_MIN;
+
+// Générateur sfc32 (état de 128 bits) : renvoie une fonction () -> [0, 1).
+function sfc32(a, b, c, d) {
+  return function () {
+    const t = (((a + b) | 0) + d) | 0;
+    d = (d + 1) | 0;
+    a = b ^ (b >>> 9);
+    b = (c + (c << 3)) | 0;
+    c = (c << 21) | (c >>> 11);
+    c = (c + t) | 0;
+    return (t >>> 0) / 4294967296;
+  };
 }
 
-// Générateur mulberry32 : renvoie une fonction () -> [0, 1).
+// Graine (texte ou nombre) -> générateur : état = les 128 premiers bits de SHA-256 de la graine.
 export function creerHasard(graine) {
   if (graine === undefined || graine === null || graine === "") return Math.random;
-  let a = (typeof graine === "number" ? graine : hacher(graine)) >>> 0;
-  return function () {
-    a = (a + 0x6d2b79f5) >>> 0;
-    let t = a;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
+  const h = sha256Texte(String(graine));
+  return sfc32(h[0] | 0, h[1] | 0, h[2] | 0, h[3] | 0);
 }
 
 // Un générateur dérivé de la graine de la partie, propre à un usage (« jour|12 », « creation », « fouille|57|2 »…).

@@ -24,6 +24,7 @@ import { carteTest, carteTemps, carteAction, carteAssaut, carteDemandeTest, cart
 import { fetesDuJeu, trouverFete, suivreFetesDuJeu } from "./fetes.mjs";
 import { lireBudget } from "./reglages.mjs";
 import { ecrireChroniques, chapitreOuvert } from "./chroniques.mjs";
+import { deMJ, trouverDemande, fermerDemande, argumentsDuTestJoueur, propositionPermise } from "./demandes.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -81,10 +82,20 @@ const ecritureMJ = fn => async (args = {}) => {
 };
 
 // ------------------------------------------------------------------ contexte d'une écriture
+// Une graine courte (partie d'avant le 2026-11-05, ou graine tapée à la main) se devine : à la première écriture, le monde en reçoit
+// une sûre (logique/hasard.mjs, graineSure). Les jours déjà simulés restent ce qu'ils sont ; seuls les tirages à venir changent. Une
+// graine d'essai demandée explicitement (demarrer({ graine, essai: true }) : essais, simulateur) est gardée telle quelle.
+export function renforcerGraine(monde, jour = 0) {
+  if (!monde || monde.graineEssai || L.graineLongue(monde.graine)) return monde;
+  monde.graine = L.graineSure();
+  monde.graineRenforceeLe = jour;
+  return monde;
+}
 function ouvrirCtx() {
   const etat = lireEtat();
   const m = Coffre.mondeEnMemoire();
-  return { etat, monde: m ? structuredClone(m) : null, faits: [], secrets: [], alertes: [], quarts: 0, paliers: [], departs: [], chroniques: false, raison: "", carteTemps: false };
+  const monde = m ? renforcerGraine(structuredClone(m), L.jourDe(etat.horloge?.quart ?? 0)) : null;
+  return { etat, monde, faits: [], secrets: [], alertes: [], quarts: 0, paliers: [], departs: [], chroniques: false, raison: "", carteTemps: false };
 }
 const jourCtx = ctx => L.jourDe(ctx.etat.horloge.quart);
 const hasard = (ctx, nom) => (ctx.monde ? L.deriverHasard(ctx.monde.graine, nom, ctx.etat.horloge.quart, ctx.monde.tirages = (Number(ctx.monde.tirages) || 0) + 1) : Math.random);
@@ -118,9 +129,18 @@ const parlePour = a => {
 const CHAMPS_SURVIVANT = ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "vivant", "livide", "tache", "statut",
   "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne"];
 
-export function systemeLogique(a) {
+// Les maladies en incubation ne sont pas encore déclarées : ni le joueur ni ses voisins ne doivent les voir (les acteurs sont livrés
+// à tous les navigateurs). Elles vivent dans le monde scellé (monde.incubations[acteurId]) ; l'acteur ne porte que les afflictions
+// déclarées. systemeLogique les remet ensemble pour la logique (monde : celui de l'écriture en cours, sinon la mémoire du MJ actif).
+const enIncubation = x => x?.stade === "incubation";
+export function systemeLogique(a, monde = Coffre.mondeEnMemoire()) {
   const s = aPlat(a.system);
   const savoirs = [...new Set([...(s.savoirs ?? []), ...objetsDe(a, "savoir").map(i => i.system?.cle).filter(Boolean)])];
+  const cachees = monde?.incubations?.[a.id] ?? [];
+  if (cachees.length) {
+    const vues = Array.isArray(s.afflictions) ? s.afflictions : [];
+    s.afflictions = [...vues, ...structuredClone(cachees).filter(x => !vues.some(v => v.cle === x.cle))];
+  }
   return { ...s, nom: a.name, savoirs };
 }
 export function instancesDe(a) {
@@ -132,9 +152,18 @@ export function instancesDe(a) {
 }
 export const abriLogique = a => ({ id: a.id, system: aPlat(a.system), installations: instancesDe(a) });
 
-async function ecrireSurvivant(a, system) {
+// ctx : l'écriture en cours ; son monde reçoit les incubations (l'acteur, les seules afflictions déclarées). Sans monde (pas de
+// partie), tout reste sur l'acteur.
+async function ecrireSurvivant(a, system, ctx = null) {
   const maj = {};
   for (const k of CHAMPS_SURVIVANT) if (system[k] !== undefined) maj[k] = structuredClone(system[k]);
+  if (Array.isArray(system.afflictions) && ctx?.monde) {
+    const cachees = system.afflictions.filter(enIncubation);
+    maj.afflictions = structuredClone(system.afflictions.filter(x => !enIncubation(x)));
+    const incubations = { ...(ctx.monde.incubations ?? {}) };
+    if (cachees.length) incubations[a.id] = structuredClone(cachees); else delete incubations[a.id];
+    ctx.monde.incubations = incubations;
+  }
   await a.update({ system: maj });
   if (system.afflictions) await synchroniserAfflictions(a, system.afflictions);
 }
@@ -211,7 +240,9 @@ async function synchroniserAfflictions(a, afflictions = []) {
 }
 
 // ------------------------------------------------------------------ bilan, météo (publics)
-function conditionsAbri(etat, monde, a) {
+// publique : ce que le groupe sait. Loin de l'abri, il ne voit pas si le courant ou l'eau du réseau y marchent encore : on prend
+// son dernier renseignement sur la région de l'abri, pas le réel (le MJ, lui, lit le réel : publique faux).
+function conditionsAbri(etat, monde, a, { publique = false } = {}) {
   const c = contenu();
   const jour = L.jourDe(etat.horloge.quart);
   const membres = survivantsDuGroupe(etat).map(x => ({ id: x.id, system: systemeLogique(x) }));
@@ -219,33 +250,38 @@ function conditionsAbri(etat, monde, a) {
   const pnj = (etat.groupe.pnj ?? []).filter(p => p.etat !== "mort").length;
   const rations = { eau: pnj, nourriture: pnj };
   for (const m of presents) { const b = L.effetsTraits(m.system, c).besoins; rations.eau += b.eau; rations.nourriture += b.nourriture; }
-  const r = monde ? L.reseauxActifs(monde, a.system.region, jour) : (etat.bilan?.reseaux ?? {});
+  const connu = etat.renseignements?.[a.system.region] ?? {};
+  const r = publique && !aLAbri(etat, a) ? { eau: connu.eau === true, electricite: connu.electricite === true }
+    : monde ? L.reseauxActifs(monde, a.system.region, jour) : (etat.bilan?.reseaux ?? {});
   return { jour, dateDepart: dateDepart(), personnes: presents.length + pnj, reseaux: { eau: Boolean(r.eau), electricite: Boolean(r.electricite) }, rations,
     travailleurs: L.travailleursParTache(presents, c) };
 }
-export function bilanVivant(etat = lireEtat(), monde = Coffre.mondeEnMemoire()) {
+export function bilanVivant(etat = lireEtat(), monde = Coffre.mondeEnMemoire(), { publique = false } = {}) {
   const a = abriCourant(etat);
   if (!a) return null;
-  const conditions = conditionsAbri(etat, monde, a);
+  const conditions = conditionsAbri(etat, monde, a, { publique });
   const b = L.bilanAbri(aPlat(a.system), instancesDe(a), contenu(), conditions);
   return { ...b, reseaux: conditions.reseaux, personnes: conditions.personnes, autonomie: Boolean(etat.autonome), autonome: Boolean(etat.autonome),
     joursAutonomes: etat.joursAutonomes ?? 0, alertes: (etat.alertes ?? []).slice(-5) };
 }
 const CHAMPS_BILAN = ["production", "consommation", "net", "pertes", "joursDeStocks", "defense", "discretion", "visibilite", "capacite", "bruit",
   "protectionCyclone", "soins", "moral", "conservation", "renseignements", "eauTraitee", "plafonds", "arrets", "surpeuplement", "reseaux", "personnes", "actives"];
-function instantaneBilan(etat, monde) {
-  const b = bilanVivant(etat, monde);
+// L'instantané PUBLIC du bilan (état de la partie, lu par les joueurs) : ce que le groupe sait, pas le réel à distance.
+export function instantaneBilan(etat, monde) {
+  const b = bilanVivant(etat, monde, { publique: true });
   return b ? Object.fromEntries(CHAMPS_BILAN.map(k => [k, structuredClone(b[k] ?? null)])) : null;
 }
-// Le temps qu'il fait là où est le groupe (ce qu'il voit et entend) : « cyclone », « pluie » ou rien.
-function meteoPublique(etat, monde) {
+// Le temps qu'il fait là où est le groupe (ce qu'il voit et entend) : « cyclone », « pluie » ou rien. En route, il n'est pas
+// encore dans la région d'arrivée : il ne voit que l'alerte rouge d'un cyclone, annoncée à toute l'île.
+export function meteoPublique(etat, monde) {
   if (!monde) return etat.meteo ?? null;
   const jour = L.jourDe(etat.horloge.quart);
-  const region = etat.groupe.enRoute?.vers ?? etat.groupe.region;
-  const reg = monde.regions?.[region];
+  const region = etat.groupe.enRoute ? null : etat.groupe.region;
+  const reg = region ? monde.regions?.[region] : null;
   const enCours = e => Number(e.depuis) <= jour && (e.jusqua === null || e.jusqua === undefined || Number(e.jusqua) >= jour);
   const evts = (reg?.evenements ?? []).filter(enCours);
-  const cyclone = evts.some(e => e.cle === "cyclone") || (monde.cyclone?.alerte === "rouge" && (monde.cyclone.trajectoire ?? []).includes(region));
+  const rouge = monde.cyclone?.alerte === "rouge";
+  const cyclone = evts.some(e => e.cle === "cyclone") || (rouge && (!region || (monde.cyclone.trajectoire ?? []).includes(region)));
   const pluie = evts.some(e => ["fortes-pluies", "crue", "eboulement"].includes(e.cle));
   return { temps: cyclone ? "cyclone" : pluie ? "pluie" : "", saison: L.saisonDuJour(jour, dateDepart()), jour };
 }
@@ -303,7 +339,7 @@ async function avancerInterne(ctx, quarts, options = {}) {
   const c = contenu();
   await repartirAuto(ctx);
   const membres = survivantsDuGroupe(ctx.etat);
-  const survivants = membres.map(a => ({ id: a.id, nom: a.name, system: systemeLogique(a) }));
+  const survivants = membres.map(a => ({ id: a.id, nom: a.name, system: systemeLogique(a, ctx.monde) }));
   const ab = abriCourant(ctx.etat);
   const r = L.avancer({ etat: ctx.etat, monde: ctx.monde, contenu: c, quarts: n, survivants, abri: ab ? abriLogique(ab) : null,
     options: { dateDepart: dateDepart(), visibiliteVeille: Number(ctx.monde.visibiliteVeille) || 0, ...options } });
@@ -312,7 +348,7 @@ async function avancerInterne(ctx, quarts, options = {}) {
   for (const s of r.acteurs.survivants) {
     const a = acteur(s.id);
     if (!a) continue;
-    await ecrireSurvivant(a, s.system);
+    await ecrireSurvivant(a, s.system, ctx);
     for (const ev of s.evenements ?? []) {
       if (ev.cle === "mort") { const ch = chapitreOuvert(ctx.etat); if (ch) { ch.morts = [...new Set([...(ch.morts ?? []), a.name])]; ctx.chroniques = true; } }
     }
@@ -395,9 +431,11 @@ async function testDirect({ acteurId, competence, difficulte = "normale", bonus 
   return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, monte: maj.monte, texte: texteTest(a.name, competence, r), messageId: message?.id ?? null };
 }
 
+// Forcer : seulement la carte d'un test écrite par un MJ (le résultat qu'elle porte fait foi) ; un message écrit par un joueur, avec
+// des drapeaux de test à sa façon, n'est pas un test.
 async function forcerDirect({ messageId } = {}) {
   const message = game.messages?.get?.(messageId);
-  const f = message?.flags?.[ID]?.test;
+  const f = deMJ(message) ? message.flags?.[ID]?.test : null;
   if (!f?.resultat) throw erreur("TestInconnu");
   if (f.resultat.force || f.forcable === false) throw erreur("DejaForce");
   const a = acteur(f.acteurId);
@@ -423,8 +461,9 @@ export function requete(action, donnees = {}, delai = 20000) {
     versMJ({ type: "requete", id, action, donnees: structuredClone(donnees) });
   });
 }
+// Une réponse : seulement du MJ actif, l'émetteur donné par le serveur faisant foi (sans émetteur, elle ne vient pas du serveur).
 export function recevoirReponse(message, emetteur) {
-  if (!vientDuMJActif(message, emetteur) && emetteur) return false;
+  if (!vientDuMJActif(message, emetteur)) return false;
   const p = enAttente.get(message.id);
   if (!p) return false;
   enAttente.delete(message.id);
@@ -442,14 +481,21 @@ export async function traiterRequete(message, qui) {
     switch (message.action) {
       case "test": {
         if (!proprietaireDe(acteur(d.acteurId), qui)) throw erreur("PasProprietaire");
-        // Bonus et malus bornés comme dans la fenêtre du test (0 à 4) : un joueur ne s'offre pas une réserve de dés.
-        resultat = await enFile(() => testDirect({ ...d, bonus: entier(d.bonus, 0, 4, 0), malus: entier(d.malus, 0, 4, 0), forcable: true }));
+        // Le joueur ne choisit ni la difficulté, ni si le test compte, ni de forcer d'emblée : une demande ouverte d'un MJ en décide
+        // (une fois), sinon « normale », sans marque, bonus et malus bornés (0 à 4). Voir demandes.mjs.
+        resultat = await enFile(async () => {
+          const demande = game.users.get(qui)?.isGM ? null : trouverDemande({ messageId: d.demandeId, acteurId: d.acteurId, competence: d.competence });
+          const r = await testDirect(game.users.get(qui)?.isGM ? { ...d, forcable: true } : argumentsDuTestJoueur(d, demande));
+          if (demande) await fermerDemande(demande, r.messageId);
+          return { ...r, demande: Boolean(demande) };
+        });
         break;
       }
       case "forcer": {
-        const f = game.messages?.get?.(d.messageId)?.flags?.[ID]?.test;
+        const m = game.messages?.get?.(d.messageId);
+        const f = deMJ(m) ? m.flags?.[ID]?.test : null;
         if (!f || !proprietaireDe(acteur(f.acteurId), qui)) throw erreur("PasProprietaire");
-        resultat = await enFile(() => forcerDirect(d));
+        resultat = await enFile(() => forcerDirect({ messageId: d.messageId }));
         break;
       }
       case "assigner": {
@@ -457,7 +503,11 @@ export async function traiterRequete(message, qui) {
         resultat = await enFile(() => assignerDirect({ acteurId: d.acteurId, tache: d.tache }));
         break;
       }
-      case "proposer": resultat = await enFile(() => proposerDirect({ ...d, userId: qui })); break;
+      case "proposer": {
+        if (!game.users.get(qui)?.isGM && !propositionPermise(qui)) throw erreur("TropDePropositions");
+        resultat = await enFile(() => proposerDirect({ type: d.type, details: d.details, userId: qui }));
+        break;
+      }
       case "creer": {
         if (!reglage("creationOuverte", true) && !game.users.get(qui)?.isGM) throw erreur("CreationFermee");
         const perso = game.users.get(qui)?.character;
@@ -478,18 +528,31 @@ export async function traiterRequete(message, qui) {
 
 // Un tirage venu d'un joueur (fait dans son navigateur) : rien de plus que ce que le générateur donne, sinon il est forgé. Le budget
 // (somme des niveaux, réglage du MJ : le générateur ne le dépasse jamais pour un joueur), les savoir-faire et l'équipement de
-// l'enfance et du passé seulement, au plus trois traits connus et compatibles entre eux.
+// l'enfance et du passé seulement, au plus trois traits connus et compatibles entre eux. Vérifié CHEZ LE MJ (traiterRequete) :
+// l'enfance et le passé connus du contenu (le passé permis à cet âge), les passions comme le générateur les donne (une ou deux,
+// une seule vraie passion à 2), et toutes les incapacités qu'imposent l'enfance, le passé et les traits (ni plus, ni moins).
 export function tirageDuGenerateur(d) {
   if (!d || typeof d !== "object") return false;
   const idx = L.indexer(contenu());
   const niveau = v => entier(typeof v === "object" && v !== null ? v.niveau : v, 0, 5, 0);
   if (COMPETENCES.reduce((s, k) => s + niveau(d.competences?.[k]), 0) > lireBudget(reglage("budgetCreation", "10-16"))[1]) return false;
+  if ((idx.enfances.size && !idx.enfances.has(d.enfance)) || (idx.passes.size && !idx.passes.has(d.passe))) return false;
   const enfance = idx.enfances.get(d.enfance) ?? null, passe = idx.passes.get(d.passe) ?? null;
+  const age = entier(d.age, 16, 99, 30);
+  if (Number(passe?.ageMin) > age) return false;
   const permis = f => new Set([...(enfance?.[f] ?? []), ...(passe?.[f] ?? [])]);
   const dans = (l, p) => (l ?? []).every(x => p.has(x));
   if (!dans(d.savoirs, permis("savoirs")) || !dans(d.equipement, permis("equipement"))) return false;
   const traits = Array.isArray(d.traits) ? d.traits : [];
-  return traits.length <= 3 && traits.every((k, i) => idx.traits.has(k) && L.compatibles(idx.traits.get(k), traits.slice(0, i), idx.traits));
+  if (!(traits.length <= 3 && traits.every((k, i) => idx.traits.has(k) && L.compatibles(idx.traits.get(k), traits.slice(0, i), idx.traits)))) return false;
+  const passions = Object.entries(d.passions ?? {});
+  if (passions.some(([k, v]) => !COMPETENCES.includes(k) || ![0, 1, 2].includes(Number(v)))) return false;
+  const vives = passions.filter(([, v]) => Number(v) > 0);
+  if (vives.length > 2 || vives.filter(([, v]) => Number(v) === 2).length > 1) return false;
+  const imposees = new Set([...(enfance?.incapacites ?? []), ...(passe?.incapacites ?? []),
+    ...traits.flatMap(k => idx.traits.get(k)?.incapacites ?? idx.traits.get(k)?.effets?.incapacites ?? [])]);
+  const donnees = new Set(Array.isArray(d.incapacites) ? d.incapacites : []);
+  return donnees.size === imposees.size && [...imposees].every(x => donnees.has(x));
 }
 
 // ------------------------------------------------------------------ tâches, membres, création (§10)
@@ -517,17 +580,19 @@ async function creerActeurSurvivant(d, { userId = "", statut = null } = {}) {
   const PROPRIO = globalThis.CONST?.DOCUMENT_OWNERSHIP_LEVELS?.OWNER ?? 3;
   const jeton = L.indexer(c).passes.has(d.passe) ? JETON_PASSE(d.passe) : "icons/svg/mystery-man.svg";
   const moteur = game.modules?.get?.(MODULE_MJIA);
+  // La graine d'histoire (texte libre, lu par le MJ IA) : sans balises, bornée.
+  const graine = sansBalises(typeof d.graine === "string" ? d.graine : "").slice(0, 2000);
   const a = await Actor.implementation.create({
     name: nom, type: "survivant", img: jeton,
     system: {
       competences, passions, enfance: d.enfance ?? "", passe: d.passe ?? "", genre: L.GENRES.includes(d.genre) ? d.genre : "",
       traits: [...(d.traits ?? [])], incapacites: [...(d.incapacites ?? [])],
-      statut: st, tache: "repos", age: entier(d.age, 16, 99, 30), lien: d.lien ?? "", vivant: true, livide: false,
-      histoire: { journal: "" }, notes: d.notes ?? ""
+      statut: st, tache: "repos", age: entier(d.age, 16, 99, 30), lien: String(d.lien ?? "").slice(0, 200), vivant: true, livide: false,
+      histoire: { journal: "" }, notes: String(d.notes ?? "").slice(0, 20000)
     },
     ownership: user && !user.isGM ? { default: 0, [user.id]: PROPRIO } : { default: 0 },
     prototypeToken: { name: nom, actorLink: true, disposition: globalThis.CONST?.TOKEN_DISPOSITIONS?.FRIENDLY ?? 1, sight: { enabled: true }, texture: { src: jeton } },
-    flags: { [ID]: { graine: d.graine ?? "" }, ...(moteur?.active && d.graine ? { [MODULE_MJIA]: { graineHistoire: d.graine } } : {}) }
+    flags: { [ID]: { graine }, ...(moteur?.active && graine ? { [MODULE_MJIA]: { graineHistoire: graine } } : {}) }
   });
   const objets = [];
   for (const s of d.savoirs ?? []) { const def = defDe("savoirs", s); if (def) objets.push(await donneesObjet("savoir", def)); }
@@ -574,7 +639,7 @@ async function proposerDirect({ type = "autre", details = "", userId = "" } = {}
 function versTirage(s, c) {
   const g = s.histoire?.graine ?? {};
   const region = L.regionDe(c, g.region)?.nom ?? "";
-  const graine = [...(g.phrases ?? []), region ? t("LAKOUR_SURVIE.Creation.GraineRegion", { region }) : "", localiser({ cle: g.procheCle, texte: g.proche ?? "" })].filter(Boolean).join(" ");
+  const graine = [...(g.phrases ?? []), region ? t("LAKOUR_SURVIE.Creation.GraineRegion", { region }) : "", localiser(g.procheMessage ?? { cle: g.procheCle, texte: g.proche ?? "" })].filter(Boolean).join(" ");
   return {
     nom: s.nom, genre: s.genre ?? "", age: s.age, enfance: s.enfance, passe: s.passe, statut: s.statut,
     competences: Object.fromEntries(COMPETENCES.map(k => [k, Number(s.competences?.[k]?.niveau) || 0])),
@@ -613,7 +678,7 @@ export function besoins() {
   const b = besoinsBruts();
   return Object.entries(b.taches).map(([tache, x]) => ({
     tache, competence: x.competence, meilleur: x.meilleur, qui: x.qui ?? null, couverture: x.couverture,
-    urgence: x.urgence ? (x.raison || true) : false, raison: x.raison ?? "", profil: x.couverture !== "couvert" || x.urgence ? profilPour(x.competence) : ""
+    urgence: x.urgence ? (localiser(x.motif) || x.raison || true) : false, raison: localiser(x.motif) || x.raison || "", profil: x.couverture !== "couvert" || x.urgence ? profilPour(x.competence) : ""
   }));
 }
 
@@ -645,6 +710,19 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   return { butin: r.butin, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille };
 }
 
+// Un abri d'avant les notes secrètes (sans le drapeau notesPubliques) : ses notes, écrites par le MJ, vont au monde scellé ; la
+// fiche (que les joueurs observent) repart vide et ses notes sont désormais publiques. -> 1 si l'abri a été traité, 0 sinon.
+async function secretiserNotesAbri(ctx, a) {
+  if (!ctx?.monde || a?.type !== "abri" || a.flags?.[ID]?.notesPubliques) return 0;
+  const notes = String(a.system?.notes ?? "");
+  if (notes.trim()) {
+    const avant = String(ctx.monde.notesAbris?.[a.id] ?? "");
+    ctx.monde.notesAbris = { ...(ctx.monde.notesAbris ?? {}), [a.id]: avant ? `${avant}\n${notes}` : notes };
+  }
+  await a.update({ system: { notes: "" }, flags: { [ID]: { notesPubliques: true } } });
+  return 1;
+}
+
 async function installerInterne(ctx, { site, abriId = "" }) {
   const c = contenu();
   const s = L.siteDe(c, site);
@@ -666,9 +744,13 @@ async function installerInterne(ctx, { site, abriId = "" }) {
   a ??= (game.actors?.contents ?? []).find(x => x.type === "abri" && x.system.site === site && x.id !== ancien?.id) ?? (ancien?.system.site === site ? ancien : null);
   const OBS = globalThis.CONST?.DOCUMENT_OWNERSHIP_LEVELS?.OBSERVER ?? 2;
   if (!a) {
-    a = await Actor.implementation.create({ name: s.nom, type: "abri", img: "icons/svg/house.svg", system: r.abri, ownership: { default: OBS } });
+    a = await Actor.implementation.create({ name: s.nom, type: "abri", img: "icons/svg/house.svg", system: r.abri, ownership: { default: OBS },
+      flags: { [ID]: { notesPubliques: true } } });
   } else {
-    const { notes: _notes, ...systeme } = r.abri;   // les notes du MJ sur cet abri restent
+    // Les notes publiques de l'abri restent ; d'anciennes notes du MJ (d'avant les notes secrètes) partent au monde scellé AVANT que
+    // les joueurs ne voient l'abri.
+    const { notes: _notes, ...systeme } = r.abri;
+    await secretiserNotesAbri(ctx, a);
     await a.update({ system: systeme, ownership: { ...(a.ownership ?? {}), default: OBS } });
     const vieilles = objetsDe(a, "installation").map(i => i.id);
     if (vieilles.length) await a.deleteEmbeddedDocuments("Item", vieilles);
@@ -754,8 +836,8 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
   const blesses = [];
   for (let k = 0; k < r.blesses && presents.length; k++) {
     const a = presents[Math.floor(h() * presents.length)];
-    const s = L.blesser(systemeLogique(a), 1).system;
-    await ecrireSurvivant(a, s);
+    const s = L.blesser(systemeLogique(a, ctx.monde), 1).system;
+    await ecrireSurvivant(a, s, ctx);
     blesses.push(a.id);
   }
   if (menaceId && ctx.monde) ctx.monde.menaces = (ctx.monde.menaces ?? []).filter(m => m.id !== menaceId);
@@ -829,9 +911,13 @@ export const api = {
   },
 
   // ---------------- la partie
-  demarrer: ecritureMJ(async ({ dateDepart: dd = null, graine = "", region, membres = [], pnj = [], partie = "" } = {}) => {
+  // graine : vide = une graine sûre de 128 bits (crypto.getRandomValues) ; donnée, 32 caractères au moins (une graine courte se
+  // devinerait), sauf essai: true (essais, simulateur : graine courte voulue, gardée telle quelle).
+  demarrer: ecritureMJ(async ({ dateDepart: dd = null, graine = "", essai = false, region, membres = [], pnj = [], partie = "" } = {}) => {
     const c = contenu();
     if (!L.regionDe(c, region)) throw clair(t("LAKOUR_SURVIE.Erreurs.RegionInconnue", { region }));
+    const g = String(graine ?? "").trim();
+    if (g && !L.graineLongue(g) && !essai) throw erreur("GraineCourte");
     if (dd) {
       if (!L.dateValide(dd)) throw erreur("DateInvalide");
       await game.settings.set(ID, "dateDepart", dd);
@@ -839,8 +925,8 @@ export const api = {
     const ids = [...new Set(membres)].filter(id => acteur(id)?.type === "survivant");
     const p = String(partie || foundry.utils.randomID());
     const pnjs = (pnj ?? []).map((x, i) => ({ id: x.id ?? `pnj${i + 1}`, nom: x.nom ?? "?", passe: x.passe ?? "", etat: x.etat ?? "", travail: x.travail !== false }));
-    const { monde, etat } = L.demarrerPartie({ contenu: c, graine: String(graine || foundry.utils.randomID()), dateDepart: dateDepart(), region, membres: ids, pnj: pnjs, partie: p });
-    Object.assign(monde, { menaces: [], paliers: [], visibiliteVeille: 0, tirages: 0, compteurMenaces: 0 });
+    const { monde, etat } = L.demarrerPartie({ contenu: c, graine: g || L.graineSure(), dateDepart: dateDepart(), region, membres: ids, pnj: pnjs, partie: p });
+    Object.assign(monde, { menaces: [], paliers: [], visibiliteVeille: 0, tirages: 0, compteurMenaces: 0, incubations: {}, notesAbris: {}, ...(g && essai ? { graineEssai: true } : {}) });
     const statutDe = a => a.system.statut || (a.hasPlayerOwner ? "joueur" : a.getFlag?.(MODULE_MJIA, "compagnon") ? "compagnon" : "pnj");
     etat.groupe.statuts = Object.fromEntries(ids.map(id => [id, statutDe(acteur(id))]));
     Object.assign(etat, { chroniques: [], propositions: [] });
@@ -1035,8 +1121,8 @@ export const api = {
     const ctx = ouvrirCtx();
     const a = acteur(acteurId);
     if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
-    const r = L.blesser(systemeLogique(a), entier(n, 1, 4, 1), { morsure: Boolean(morsure) });
-    await ecrireSurvivant(a, r.system);
+    const r = L.blesser(systemeLogique(a, ctx.monde), entier(n, 1, 4, 1), { morsure: Boolean(morsure) });
+    await ecrireSurvivant(a, r.system, ctx);
     noter(ctx, tx(morsure ? "Journal.Mordu" : "Journal.Blesse", { nom: a.name }));
     if (r.mourant) alerter(ctx, "mourant", tx("Alertes.Mourant", { nom: a.name }));
     if (morsure) alerter(ctx, "morsure", tx("Alertes.Morsure", { nom: a.name }));
@@ -1055,8 +1141,8 @@ export const api = {
     if (medicament) await ab.update({ system: { stocks: L.retirerStocks(stocks, { medicaments: 1 }).stocks } });
     const soins = ab && aLAbri(ctx.etat, ab) ? Number(bilanVivant(ctx.etat, ctx.monde)?.soins) || 0 : 0;
     const test = await testDirect({ acteurId: soigneur.id, competence: "soins", difficulte: diff, bonus: (medicament ? 1 : 0) + Math.min(2, soins), titre: t("LAKOUR_SURVIE.Soins.Titre", { nom: patient.name }), forcable: false });
-    const r = L.soigner(systemeLogique(patient), test);
-    await ecrireSurvivant(patient, r.system);
+    const r = L.soigner(systemeLogique(patient, ctx.monde), test);
+    await ecrireSurvivant(patient, r.system, ctx);
     noter(ctx, tx("Journal.Soigne", { nom: patient.name, soigneur: soigneur.name, n: r.soignees }));
     await terminer(ctx);
     return { test, soignees: r.soignees, blessures: r.system.blessures, medicament };
@@ -1066,8 +1152,8 @@ export const api = {
     const ctx = ouvrirCtx();
     const a = acteur(acteurId);
     if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
-    const s = L.infecter(systemeLogique(a), ctx.etat.horloge.quart);
-    await ecrireSurvivant(a, s);
+    const s = L.infecter(systemeLogique(a, ctx.monde), ctx.etat.horloge.quart);
+    await ecrireSurvivant(a, s, ctx);
     noter(ctx, tx("Journal.Infecte", { nom: a.name }));
     await terminer(ctx);
     return { infection: structuredClone(s.infection) };
@@ -1162,13 +1248,13 @@ export const api = {
     const def = defDe("afflictions", cle) ?? L.liste(contenu().afflictions).find(x => x.nom === cle);
     if (!def) throw clair(t("LAKOUR_SURVIE.Erreurs.AfflictionInconnue", { cle }));
     if (action === "donner") {
-      const s = L.contracter(systemeLogique(a), def, jourCtx(ctx));
-      await ecrireSurvivant(a, s);
+      const s = L.contracter(systemeLogique(a, ctx.monde), def, jourCtx(ctx));
+      await ecrireSurvivant(a, s, ctx);
       noter(ctx, tx("Journal.Affliction", { nom: a.name, affliction: def.nom }));
       await terminer(ctx);
       return { ok: true, donnee: true, stade: s.afflictions.find(x => x.cle === def.cle)?.stade ?? "" };
     }
-    if (!L.aAffliction(systemeLogique(a), def.cle)) throw clair(t("LAKOUR_SURVIE.Erreurs.PasAtteint", { nom: a.name, affliction: def.nom }));
+    if (!L.aAffliction(systemeLogique(a, ctx.monde), def.cle)) throw clair(t("LAKOUR_SURVIE.Erreurs.PasAtteint", { nom: a.name, affliction: def.nom }));
     const soigneur = acteur(soigneurId) ?? (await soinsDe(ctx, { acteurId })).soigneur;
     const ab = abriCourant(ctx.etat);
     const stocks = ab ? aPlat(ab.system).stocks : (ctx.etat.groupe.porte ?? {});
@@ -1176,9 +1262,9 @@ export const api = {
     if ((Number(stocks.medicaments) || 0) < med) throw clair(t("LAKOUR_SURVIE.Erreurs.Medicaments", { n: med }));
     const test = await testDirect({ acteurId: soigneur.id, competence: def.soin?.competence ?? "soins", difficulte: def.soin?.difficulte ?? "normale",
       titre: t("LAKOUR_SURVIE.Soins.Affliction", { nom: a.name, affliction: def.nom }), forcable: false });
-    const r = L.soignerAffliction(systemeLogique(a), def, test, stocks);
+    const r = L.soignerAffliction(systemeLogique(a, ctx.monde), def, test, stocks);
     if (ab) await ab.update({ system: { stocks: L.normaliserStocks(r.stocks) } }); else ctx.etat.groupe.porte = L.normaliserStocks(r.stocks);
-    await ecrireSurvivant(a, r.system);
+    await ecrireSurvivant(a, r.system, ctx);
     noter(ctx, tx(r.ok ? "Journal.AfflictionSoignee" : "Journal.AfflictionRate", { nom: a.name, affliction: def.nom }));
     await terminer(ctx);
     return { ok: r.ok, gueri: r.ok, reussite: test.reussite, raison: motifLisible(r), test };
@@ -1211,7 +1297,7 @@ export const api = {
     const etat = lireEtat();
     const c = contenu();
     const r = L.genererRecrue(c, Math.random, { besoins: besoinsBruts(etat), region: region || etat.groupe.region, phase: etat.phase });
-    return { ...versTirage(r.survivant, c), statut: "recrue", raison: localiser({ cle: r.raisonCle, texte: r.raison }), prix: localiser({ cle: r.prixCle, texte: r.prix }),
+    return { ...versTirage(r.survivant, c), statut: "recrue", raison: localiser(r.raisonMessage ?? { cle: r.raisonCle, texte: r.raison }), prix: localiser(r.prixMessage ?? { cle: r.prixCle, texte: r.prix }),
       region: region || etat.groupe.region };
   },
 
@@ -1261,10 +1347,32 @@ export const api = {
     const a = acteur(acteurId);
     if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
     if (!COMPETENCES.includes(competence)) throw clair(t("LAKOUR_SURVIE.Erreurs.CompetenceInconnue", { competence }));
-    await chat(carteDemandeTest({ acteurId: a.id, nom: a.name, competence, difficulte: DIFFICULTES[difficulte] ? difficulte : "normale", titre }), { flags: { demande: { acteurId: a.id } } });
+    const diff = DIFFICULTES[difficulte] ? difficulte : "normale";
+    // La demande reste ouverte jusqu'au test du joueur (demandes.mjs) : elle fixe la difficulté et fait compter ce test-là.
+    await chat(carteDemandeTest({ acteurId: a.id, nom: a.name, competence, difficulte: diff, titre }), { flags: { demande: { acteurId: a.id, competence, difficulte: diff, titre: String(titre ?? "") } } });
     const joueurs = game.users.filter(u => !u.isGM && proprietaireDe(a, u.id)).map(u => u.id);
     emettre({ type: "signal", texte: t("LAKOUR_SURVIE.Signal.Test", { nom: a.name }) }, joueurs);
     return { joueurs };
+  }),
+
+  // Les notes SECRÈTES du MJ sur un abri : dans le monde scellé (monde.notesAbris), jamais sur l'acteur (que les joueurs observent).
+  // Les notes de la fiche (system.notes) sont lues par les joueurs.
+  notesAbri: abriId => (estMJActif() ? String(Coffre.mondeEnMemoire()?.notesAbris?.[abriId] ?? "") : ""),
+  noterAbri: ecriture(async ({ abriId, notes = "" } = {}) => {
+    const a = acteur(abriId);
+    if (!a || a.type !== "abri") throw erreur("ActeurInconnu");
+    const ctx = ouvrirCtx();
+    ctx.monde.notesAbris = { ...(ctx.monde.notesAbris ?? {}), [a.id]: String(notes ?? "").slice(0, 50000) };
+    await terminer(ctx);
+    return { abriId: a.id };
+  }),
+  // Les abris d'avant les notes secrètes : leurs notes (écrites par le MJ) partent au monde scellé, la fiche repart vide.
+  migrerNotesAbris: ecriture(async () => {
+    const ctx = ouvrirCtx();
+    let n = 0;
+    for (const a of (game.actors?.contents ?? []).filter(x => x.type === "abri")) n += await secretiserNotesAbri(ctx, a);
+    if (n) await terminer(ctx);
+    return { abris: n };
   }),
 
   // Remise à zéro (MJ IA, reinitialiser) : la mémoire du monde et sa copie dans ce navigateur.

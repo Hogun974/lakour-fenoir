@@ -67,7 +67,7 @@ test("partie complète : jour 0, deux survivants tirés, installation, fouille, 
   assert.deepEqual(Object.fromEntries(Object.entries(b.system.competences).map(([k, v]) => [k, v.niveau])), tirage.competences);
 
   // 2. Démarrer au jour 0 à Saint-Leu.
-  const d = await M.api.demarrer({ region: "saint-leu", membres: [a.id, b.id], graine: "essai-complet", pnj: [{ nom: "Tantine Josette", passe: "retraitee" }] });
+  const d = await M.api.demarrer({ region: "saint-leu", membres: [a.id, b.id], graine: "essai-complet", essai: true, pnj: [{ nom: "Tantine Josette", passe: "retraitee" }] });
   assert.equal(d.quand.jour, 0);
   assert.equal(d.quand.date, "2026-12-04");
   assert.equal(M.api.etat().groupe.pnj[0].nom, "Tantine Josette");
@@ -267,7 +267,7 @@ test("blessures, soins, infection : mourant, morsure, le Gris suit sa route", as
 test("explorer, voyager, renseigner : renseignements datés, routes réelles, carburant", async () => {
   const M = await nouveauMonde();
   const a = await survivantTire(M);
-  await M.api.demarrer({ region: "saint-paul", membres: [a.id], graine: "voyage" });
+  await M.api.demarrer({ region: "saint-paul", membres: [a.id], graine: "voyage", essai: true });
   const ex = await M.api.explorer({ region: "le-port", quarts: 2 });
   assert.equal(ex.renseignement.vu, 0);
   assert.equal(ex.renseignement.source, "vu");
@@ -285,7 +285,7 @@ test("explorer, voyager, renseigner : renseignements datés, routes réelles, ca
 test("menaces du jour : gardées au monde, résolues en assaut ou écartées ; paliers de visibilité au seul MJ", async () => {
   const M = await nouveauMonde();
   const a = await survivantTire(M);
-  await M.api.demarrer({ region: "saint-pierre", membres: [a.id], graine: "menaces" });
+  await M.api.demarrer({ region: "saint-pierre", membres: [a.id], graine: "menaces", essai: true });
   await M.api.installer({ site: M.api.contenu().sites.find(s => s.region === "saint-pierre").cle });
   // Beaucoup de bruit et de jours : des menaces finissent par venir.
   let menaces = [];
@@ -322,10 +322,10 @@ test("oublier : la mémoire du monde et sa copie dans ce navigateur", async () =
   const M = await nouveauMonde();
   const a = await survivantTire(M);
   await M.api.demarrer({ region: "saint-denis", membres: [a.id] });
-  assert.ok(Object.keys(valeur("lakour-survie.monde")).length);
+  assert.deepEqual(valeur("lakour-survie.monde")["fenoir-essai"] ?? {}, {}, "scellé : rien du monde réel dans ce navigateur");
   await M.api.oublier();
   assert.equal(M.api.monde(), null);
-  assert.deepEqual(valeur("lakour-survie.monde")["fenoir-essai"], {});
+  assert.deepEqual(valeur("lakour-survie.monde")["fenoir-essai"] ?? {}, {});
   // Et l'état public de la partie revient à « pas commencée » (réglages par défaut), comme le coffre scellé.
   assert.equal(M.api.etat().demarree, false);
   assert.equal(M.api.etat().partie, "");

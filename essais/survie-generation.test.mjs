@@ -92,7 +92,7 @@ test("genre : verrous — le nom gardé décide (libellé accordé par nomAccord
   // Enfance et passé gardés, contradictoires, sans nom : le genre du passé gagne, l'enfance prend son autre libellé.
   const d = L.genererSurvivant(C, L.creerHasard("d"), { budget: null, verrous: { enfance: "fille-de-pecheur", passe: "planteur" } });
   assert.equal(d.genre, "m");
-  assert.ok(C.prenomsM.includes(d.nom));
+  assert.ok(C.prenomsM.includes(d.nom) || C.prenomsMixtes.includes(d.nom), `prénom masculin ou mixte : ${d.nom}`);
   assert.equal(L.nomAccorde(enfance(d.enfance), d.genre), "Fils de pêcheur");
   assert.equal(L.nomAccorde(passe(d.passe), d.genre), "Planteur");
   assert.deepEqual(d.histoire.graine.phrases, ["Il coupait la canne depuis vingt ans."]);

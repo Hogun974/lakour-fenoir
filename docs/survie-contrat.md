@@ -186,7 +186,10 @@ hydroélectrique, un **tunnel de lave** du Sud (abri souterrain rare, frais et d
 ### 2.3 État du monde (SECRET, simulé par le système)
 ```
 monde: {
-  graine: String,                     // graine du hasard de la partie
+  graine: String,                     // graine du hasard de la partie (32 caractères hexadécimaux : 128 bits, voir plus bas)
+  graineEssai?: true,                 // graine courte donnée exprès (essais, simulateur) : gardée telle quelle
+  incubations: { acteurId: [affliction en incubation] },   // maladies pas encore déclarées (§9) : jamais sur l'acteur
+  notesAbris: { acteurId: String },   // notes secrètes du MJ sur un abri (jamais sur l'acteur abri, que les joueurs observent)
   jour: Number,                       // dernier jour simulé
   coupures: { region: { electricite, eau, carburant, telephone } },   // jour de coupure tiré (null = jamais)
   regions: { cle: {
@@ -204,6 +207,16 @@ monde: {
   journalSecret: [ { jour, texte, cle, params } ]  // ce qui s'est passé hors de la vue des joueurs (pour le MJ) ; cle/params : traduction (§2.3 faits)
 }
 ```
+**Le hasard** (`logique/hasard.mjs`, révisé le 2026-11-05) : la graine d'une partie est tirée par `crypto.getRandomValues`
+(`graineSure()` : 128 bits, 32 caractères hexadécimaux) ; chaque flux (`deriverHasard(graine, …cles)` : « jour|J », « radio|J »,
+« maladies|J », « fouille|quart|n »…) part des 128 premiers bits de **SHA-256** (`graine|cles`, `logique/sha256.mjs`, synchrone,
+éprouvé contre les vecteurs de la norme) puis d'un générateur **sfc32** à état de 128 bits. Les annonces publiques (radio,
+coupures) ne permettent donc ni de retrouver la graine ni de rejouer la simulation. Avant : FNV-1a 32 bits puis mulberry32, soit
+2³² mondes possibles, qu'un joueur pouvait tous essayer. La logique reste déterministe pour une graine donnée (essais,
+simulateur). `api.demarrer` refuse une graine de moins de 32 caractères (`GraineCourte`), sauf `essai: true` ; une partie
+plus ancienne dont la graine est courte continue, et reçoit une graine sûre à sa prochaine écriture (`graineRenforceeLe`) :
+les jours déjà simulés restent, seuls les tirages à venir changent.
+
 **Simulation d'un jour** (`logique/monde.mjs`, `simulerJour(monde, contenu, hasard, jour, bruitParRegion)` → `{ monde, faits }`,
 pure, déterministe pour une graine) :
 - **Infestation** : monte vite dans les régions peuplées pendant `panique` et `effondrement` (vers `population`),
@@ -375,10 +388,30 @@ camion-bar, retraité de la marine…).
 ```
 - Le **monde réel** (§2.3) est SECRET : réglage monde **`lakour-survie.coffre`** = l'état du monde **scellé** avec le coffre du
   MJ IA (`game.modules.get("lakour-mj-ia").api.coffre.sceller(contenu)` / `ouvrirScelle(scelle)`), réécrit après chaque
-  action qui le change (actions toutes publiques : pas de rythme à cacher). En mémoire chez le MJ actif, gardé aussi en réglage
-  **client** `lakour-survie.monde` rangé par [monde][userId] (rechargement rapide). Sans le moteur (module coupé) : réglage monde
+  action qui le change (actions toutes publiques : pas de rythme à cacher). En mémoire chez le MJ actif ; le réglage **client**
+  `lakour-survie.monde` (localStorage du MJ, rangé par [monde][userId]) n'en garde une copie que tant qu'une écriture attend
+  d'être scellée (clé ou API du moteur absente), effacée dès le scellement (révision du 2026-11-05 : avant, une copie en clair y
+  restait toujours). Au rechargement, le monde se rouvre depuis le coffre. Sans le moteur (module coupé) : réglage monde
   `lakour-survie.mondeClair` et un avertissement permanent au MJ (« les joueurs peuvent lire l'état du monde »).
   Tant que le monde n'est pas ouvert chez le MJ actif, rien ne s'écrit (`ecritureBloquee`), comme aux Veillées.
+- Ce que Foundry v14 livre à **tous** les navigateurs : réglages du monde, acteurs, objets, journaux, messages (le serveur ne trie
+  pas les documents selon les droits). Rien de secret n'y va donc : maladies en **incubation** (`monde.incubations`, l'acteur ne
+  porte que les afflictions déclarées), **notes du MJ sur un abri** (`monde.notesAbris`, `api.noterAbri` ; les notes de la
+  fiche d'abri sont lues par les joueurs ; d'anciennes notes y sont mises au secret par `api.migrerNotesAbris`, au `ready`).
+  L'instantané public du **bilan** (`etat.bilan`) et la **météo** (`etat.meteo`) ne lisent que ce que le groupe sait : loin de
+  l'abri, les réseaux de sa région sont ceux du dernier renseignement ; en route, pas le temps de la région d'arrivée.
+- **Intégrité** (Foundry v14 vérifie côté serveur les `documentTypes` du system.json) : `gmOnlyFields` réserve au MJ tous les
+  champs des acteurs et des objets du système, sauf `notes` du survivant (son propriétaire écrit aussi son nom, son portrait,
+  son jeton) ; `htmlFields` fait nettoyer le HTML par le serveur ; les fiches le nettoient aussi avant affichage
+  (`foundry.utils.cleanHTML`). Côté client, `preUpdateActor` / `preCreateItem` / `preUpdateItem` refusent poliment, et le MJ
+  actif retire un objet qu'un joueur aurait créé sur un survivant ou un abri (`scripts/garde.mjs`).
+- **Requêtes des joueurs** (socket, `scripts/demandes.mjs`) : l'émetteur donné par le serveur fait foi, un message sans émetteur est
+  ignoré ; seuls les messages de chat écrits par un MJ (`message.author.isGM`, auteur fixé par le serveur) comptent pour
+  `forcer` et pour les demandes de test. Le test d'un joueur est « normale » et ne compte pas (aucune marque, jamais forcé
+  d'emblée), sauf s'il répond à une **demande ouverte** d'un MJ (carte `demanderTest`, ou carte de jet du MJ IA
+  `data-lakour-jet`, réglages convertis comme au §7) : elle fixe difficulté et dés, fait compter le test, une fois. Une création
+  est validée chez le MJ (enfance et passé connus, passé permis à cet âge, passions comme le générateur les donne, toutes les
+  incapacités imposées) ; trois propositions par minute au plus par joueur.
 - Les **acteurs** et leurs objets sont publics (ce n'est pas un jeu de secrets entre joueurs) ; joueurs **propriétaires** de leur
   survivant, **observateurs** de l'abri courant (ils voient stocks et installations, n'écrivent pas : tout passe par le MJ).
 
@@ -391,12 +424,15 @@ contenu()                                   -> { regions, sites, installations, 
 etat()                                      -> copie de l'état public
 monde()                                     -> copie du monde réel (MJ actif, coffre ouvert ; null sinon)
 quand()                                     -> { quart, jour, moment, date: "AAAA-MM-JJ", dateTexte, saison, phase }
-demarrer({ dateDepart?, graine?, region, membres: [acteurId], pnj? })
+demarrer({ dateDepart?, graine?, essai?, region, membres: [acteurId], pnj? })
                                             -> nouvelle partie : tire les coupures, initialise le monde, place le groupe
+                                               (graine vide : graine sûre ; sinon 32 caractères au moins, ou essai: true)
 avancer({ quarts, raison })                 -> { quand, faits: [publics], alertes, bilan } ; journal
 test({ acteurId, competence, difficulte, bonus, malus, forcer, titre, compte: Boolean })
                                             -> { …resoudreTest, texte } ; message au chat avec les dés ; marque si `compte`
-forcer({ messageId })                       -> force un test déjà lancé (bouton de la carte de chat)
+forcer({ messageId })                       -> force un test déjà lancé (bouton de la carte de chat ; carte écrite par un MJ)
+demanderTest({ acteurId, competence, difficulte, titre })  -> carte « Demande de test » ouverte jusqu'au test du joueur (§4)
+noterAbri({ abriId, notes }) / notesAbri(abriId)            -> notes secrètes du MJ sur un abri (monde scellé)
 explorer({ region, membres, quarts })       -> { renseignement, rencontre|null, faits }
 fouiller({ region, site?, cible?: ressource, membres, quarts, prudence: "discret" | "normal" | "rapide" })
                                             -> { butin: { ressource: n }, rencontre|null, bruit, faits }

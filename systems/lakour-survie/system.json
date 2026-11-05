@@ -46,18 +46,18 @@
   ],
   "documentTypes": {
     "Actor": {
-      "survivant": { "htmlFields": ["notes"] },
-      "abri": { "htmlFields": ["notes"] }
+      "survivant": { "htmlFields": ["notes"], "gmOnlyFields": ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "enfance", "passe", "genre", "passions", "traits", "incapacites", "savoirs", "statut", "tache", "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "histoire", "age", "lien", "vivant", "livide", "charge"] },
+      "abri": { "htmlFields": ["notes"], "gmOnlyFields": ["site", "region", "installeLe", "abandonneLe", "stocks", "nature", "sol", "bruit", "degats", "reparation", "reliquats", "notes"] }
     },
     "Item": {
-      "installation": { "htmlFields": ["description"] },
-      "savoir": { "htmlFields": ["description", "apprentissage", "effets"] },
-      "equipement": { "htmlFields": ["description"] },
-      "passe": { "htmlFields": ["description", "accroche"] },
-      "recette": { "htmlFields": ["description"] },
-      "affliction": { "htmlFields": ["description", "prevention"] },
-      "enfance": { "htmlFields": ["description"] },
-      "trait": { "htmlFields": ["description"] }
+      "installation": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "niveau", "niveauMax", "chantier", "etat", "reparation", "niveaux", "termineLe", "actif"] },
+      "savoir": { "htmlFields": ["description", "apprentissage", "effets"], "gmOnlyFields": ["cle", "description", "apprentissage", "effets"] },
+      "equipement": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "bonus", "charge", "usure", "munitions", "bruit", "transport", "effets"] },
+      "passe": { "htmlFields": ["description", "accroche"], "gmOnlyFields": ["cle", "description", "competences", "savoirs", "equipement", "accroche", "region", "incapacites", "histoire", "genre", "nomAutre"] },
+      "recette": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "description", "cout", "travail", "competence", "difficulte", "requiert", "produit"] },
+      "affliction": { "htmlFields": ["description", "prevention"], "gmOnlyFields": ["cle", "categorie", "description", "prevention", "contagion", "incubation", "duree", "effets", "soin", "aggravation", "declencheur", "risque", "stade", "reste"] },
+      "enfance": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "origine", "region", "description", "modificateurs", "savoirs", "incapacites", "equipement", "histoire", "poids", "genre", "nomAutre"] },
+      "trait": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "description", "effets", "incompatibles", "incapacites", "poids"] }
     }
   },
   "socket": true,

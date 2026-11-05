@@ -14,7 +14,7 @@ export const cleTexteDe = x => x?.cleTexte ?? x?.cle ?? "";
 // Les clés de CLES_TEXTES dont la traduction n'est pas encore dans lang/fr.json et lang/en.json (Faits.*) : la couche Foundry
 // affiche leur `texte` français de repli en attendant. Une clé en sort quand ses deux traductions sont écrites (l'essai statique
 // les exige alors comme les autres).
-export const CLES_A_TRADUIRE = ["abri-evenement-pertes", "abri-evenement-degats", "abri-a-raconter-moral", "abri-a-raconter-blessure", "abri-a-raconter-decouverte"];
+export const CLES_A_TRADUIRE = [];
 
 // Toutes les clés que la logique peut produire (essai statique : chacune existe dans lang/fr.json et lang/en.json, Faits.*, sauf
 // celles de CLES_A_TRADUIRE tant qu'elles y manquent).
@@ -40,8 +40,9 @@ export const CLES_TEXTES = [
   "fete-manquante", "fete-deja", "fete-rations",
   // abri.mjs (subirEvenementAbri, par etat.mjs) : événements du contenu qui touchent l'abri (§2.6)
   "abri-evenement-pertes", "abri-evenement-degats", "abri-a-raconter-moral", "abri-a-raconter-blessure", "abri-a-raconter-decouverte",
-  // generation.mjs : tâches, recrues
+  // generation.mjs : tâches, recrues, besoins du groupe (raison d'une urgence)
   "tache-inconnue", "tache-interdite",
+  "besoin-soins", "besoin-chantier", "besoin-cultures", "besoin-garde", "besoin-negociation",
   "recrue-raison-1", "recrue-raison-2", "recrue-raison-3", "recrue-raison-4", "recrue-raison-5",
   "recrue-prix-1", "recrue-prix-2", "recrue-prix-3", "recrue-prix-4", "recrue-prix-5",
   "proche-1", "proche-2", "proche-3", "proche-4", "proche-5",

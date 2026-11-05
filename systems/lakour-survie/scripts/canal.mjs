@@ -24,10 +24,13 @@ export function versMJ(message) {
   return true;
 }
 
-// L'auteur réel d'un message : l'identifiant donné par le serveur ; null si le message ment sur son auteur.
+// L'auteur réel d'un message : l'identifiant donné par le serveur ; null si le message ment sur son auteur, ou s'il arrive sans
+// émetteur. Foundry v14 (handleCustomSocket du serveur) ajoute TOUJOURS l'émetteur à un message relayé ; un message sans émetteur
+// n'est pas passé par le serveur : il n'a pas d'auteur sûr et n'est pas traité.
 export function auteur(message, emetteur) {
-  if (emetteur && message?.userId && message.userId !== emetteur) return null;
-  return emetteur || message?.userId || null;
+  if (!emetteur || typeof emetteur !== "string") return null;
+  if (message?.userId && message.userId !== emetteur) return null;
+  return emetteur;
 }
 export const vientDuMJActif = (message, emetteur) => {
   const qui = auteur(message, emetteur);

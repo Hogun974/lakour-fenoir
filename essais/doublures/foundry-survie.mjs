@@ -144,9 +144,13 @@ export class FauxJournal {
   async deleteEmbeddedDocuments(type, ids) { for (const id of ids) this.pages.delete(id); return ids; }
 }
 
+// L'auteur d'un message, comme le serveur v14 le fixe (DocumentAuthorField) : celui qui l'écrit ; seul un MJ peut en nommer un autre.
 class FauxMessage {
   constructor(d) {
-    this.id = nouvelId(); Object.assign(this, structuredClone(d)); this.flags ??= {};
+    const { author, ...reste } = d ?? {};
+    this.id = nouvelId(); Object.assign(this, structuredClone(reste)); this.flags ??= {};
+    const u = globalThis.game.user;
+    this.author = u?.isGM && typeof author === "string" ? globalThis.game.users.get(author) ?? u : u;
   }
   async update(c) { appliquer(this, c); return this; }
 }

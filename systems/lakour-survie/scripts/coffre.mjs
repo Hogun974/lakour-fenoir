@@ -1,8 +1,10 @@
 // Le monde réel de Fénoir (contrat §2.3, §4), SECRET, chez le MJ actif seulement.
 //
 // Foundry v14 livre à TOUS les navigateurs les réglages du monde et les documents : le monde réel n'y est jamais écrit en clair.
-// - En mémoire chez le MJ actif ({ partie, rev, iv, monde }), recopié dans le réglage CLIENT « monde » rangé par [monde][userId]
-//   (localStorage du navigateur du MJ : rechargement rapide, jamais envoyé au serveur).
+// - En mémoire chez le MJ actif ({ partie, rev, iv, monde }). Le réglage CLIENT « monde » (localStorage du navigateur du MJ,
+//   rangé par [monde][userId], jamais envoyé au serveur) n'en garde une copie en clair QUE tant qu'une écriture n'a pas pu être
+//   scellée (clé ou API du moteur absente) : un rechargement ne la perd pas, et elle est effacée dès que le coffre l'a scellée.
+//   Sinon rien du monde réel ne reste dans le navigateur : au rechargement, il se rouvre depuis le coffre (clé du moteur).
 // - Scellé avec le coffre du MJ IA (game.modules.get("lakour-mj-ia").api.coffre : sceller / ouvrirScelle / scellerAvec /
 //   siRenouvele / siDisponible) dans le réglage monde « coffre » ({ partie, rev, chiffre, id, iv, donnees }) après CHAQUE
 //   changement : les actions de Fénoir sont toutes publiques, il n'y a pas de rythme à cacher (aux Veillées, si).
@@ -79,6 +81,7 @@ function lireClient() {
 }
 async function ecrireClient(valeur) {
   if (!game.user?.isGM) return;
+  if (!valeur && !Object.keys(lireClient()).length) return;
   try {
     const tout = objet(reglage("monde", {}));
     const parMonde = { ...objet(tout[mondeId()]) };
@@ -100,8 +103,10 @@ export async function ecrireMonde(monde) {
   const partie = memoire?.partie ?? etat.partie;
   const rev = Math.max(Number(memoire?.rev) || 0, revEnveloppe()) + 1;
   memoire = { partie, rev, iv: memoire?.iv ?? "", monde: structuredClone(monde) };
-  await ecrireClient(memoire);
-  return sceller();
+  const r = await sceller();
+  // Pas scellé (ni en clair faute de moteur) : la copie du navigateur garde l'écriture jusqu'au scellement.
+  if (!r.scelle && !r.clair) await ecrireClient(memoire);
+  return r;
 }
 
 // Scelle la mémoire (révision courante). Sans moteur : le clair. Sans clé : rien, le MJ est prévenu.
@@ -119,9 +124,9 @@ export async function sceller() {
     nonScelle = false;
     memoire.iv = scelle.iv;
     await game.settings.set(ID, "coffre", { partie: memoire.partie, rev: memoire.rev, ...scelle });
-    // Un ancien clair (le moteur était coupé) n'a plus rien à faire dans le monde.
+    // Un ancien clair (le moteur était coupé) n'a plus rien à faire dans le monde ; la copie du navigateur non plus.
     if (Object.keys(objet(reglage("mondeClair", {}))).length) await game.settings.set(ID, "mondeClair", {});
-    await ecrireClient(memoire);
+    await ecrireClient(null);
     return { scelle: true, clair: false };
   }
   if (moteurActif()) {
@@ -131,6 +136,7 @@ export async function sceller() {
   }
   avertirUneFois("clair", t("LAKOUR_SURVIE.Coffre.SansMoteur"));
   await game.settings.set(ID, "mondeClair", contenu);
+  await ecrireClient(null);
   return { scelle: false, clair: true };
 }
 
@@ -150,7 +156,7 @@ export async function ouvrirMonde() {
     if ((Number(client.rev) || 0) > (Number(env?.rev) || 0)) {
       nonScelle = true;
       if (coffreDuMoteur()) await sceller().catch(e => console.warn(`${ID} | coffre`, e));
-    }
+    } else await ecrireClient(null);   // une ancienne copie, déjà scellée : rien à garder en clair
     return true;
   }
   const coffre = objet(reglage("coffre", {}));
@@ -162,7 +168,7 @@ export async function ouvrirMonde() {
     if (contenu?.partie === etat.partie && contenu.monde) {
       memoire = { partie: contenu.partie, rev: Number(coffre.rev) || Number(contenu.rev) || 0, iv: coffre.iv, monde: contenu.monde };
       attente = false;
-      await ecrireClient(memoire);
+      await ecrireClient(null);
       Hooks.callAll("lakourSurvie.mondeOuvert");
       return true;
     }
@@ -173,7 +179,7 @@ export async function ouvrirMonde() {
   if (clair.partie === etat.partie && clair.monde) {
     memoire = { partie: clair.partie, rev: Number(clair.rev) || 0, iv: "", monde: structuredClone(clair.monde) };
     avertirUneFois("clair", t("LAKOUR_SURVIE.Coffre.SansMoteur"));
-    await ecrireClient(memoire);
+    await ecrireClient(null);
     // Le moteur est revenu : le clair est scellé aussitôt.
     if (coffreDuMoteur()) await sceller();
     return true;
@@ -193,7 +199,7 @@ function brancher() {
     memoire.rev = rev;
     memoire.iv = scelle.iv;
     await game.settings.set(ID, "coffre", { partie: memoire.partie, rev, ...scelle });
-    await ecrireClient(memoire);
+    await ecrireClient(null);
   });
   c.siDisponible?.(() => {
     setTimeout(() => {

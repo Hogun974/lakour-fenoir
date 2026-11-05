@@ -46,7 +46,7 @@
 // - Textes (textes.mjs) : chaque fait, menace et entrée du journal secret porte `texte` (français, repli) et `cle`/`params` pour
 //   la traduction ; le fait d'un événement du contenu garde `cle` = clé de l'événement et met sa clé de texte dans `cleTexte`.
 import { CLES_PHASES, ALTITUDE_BAS, NATURE, RESEAUX, JOURNAL_SECRET_MAX, borner, DATE_DEPART } from "./constantes.mjs";
-import { creerHasard, deriverHasard, entier, chance, tirerPoids, arrondiHasard, choisir } from "./hasard.mjs";
+import { creerHasard, deriverHasard, entier, chance, tirerPoids, arrondiHasard, choisir, graineSure } from "./hasard.mjs";
 import { regionsDe, regionDe, factionDe, siteDe, indexer, natureRegion, reservesDepart, sontVoisines } from "./contenu.mjs";
 import { cleTexteDe } from "./textes.mjs";
 import { natureInitiale, regenererNature } from "./abri.mjs";
@@ -82,7 +82,7 @@ const sansBalises = t => String(t ?? "").replace(/<[^>]+>/g, "").trim();
 
 // ------------------------------------------------------------------ création
 // options : { dateDepart, eruption: { debut, fin } | null }
-export function creerMonde(contenu, graine = "fenoir", options = {}) {
+export function creerMonde(contenu, graine = graineSure(), options = {}) {
   const h = deriverHasard(graine, "creation");
   const monde = {
     graine: String(graine), jour: 0, dateDepart: options.dateDepart ?? DATE_DEPART,

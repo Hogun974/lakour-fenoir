@@ -37,7 +37,7 @@ import { message, cleTexteDe } from "./textes.mjs";
 import { effetsTraits, lieuxAbri, travailleursParTache, competenceDeTache, peutFaire, retirerMembre } from "./generation.mjs";
 import { marquer } from "./des.mjs";
 import { ajouterStocks } from "./ressources.mjs";
-import { hasardDuJour, deriverHasard, choisir } from "./hasard.mjs";
+import { hasardDuJour, deriverHasard, choisir, graineSure } from "./hasard.mjs";
 import { regionsDe, regionDe, sontVoisines } from "./contenu.mjs";
 import { phaseDuJour, momentIndex, saisonDuJour } from "./temps.mjs";
 import { effetQuart, effetJour, peutAgir } from "./survivant.mjs";
@@ -63,7 +63,7 @@ export function creerPartie({ partie = "", contenu = {}, region = "", membres = 
 }
 
 // Démarrer d'un coup : monde (secret) et état (public). -> { etat, monde }
-export function demarrerPartie({ contenu, graine = "fenoir", dateDepart, region, membres = [], pnj = [], partie = "" } = {}) {
+export function demarrerPartie({ contenu, graine = graineSure(), dateDepart, region, membres = [], pnj = [], partie = "" } = {}) {
   const monde = creerMonde(contenu, graine, { dateDepart });
   return { monde, etat: creerPartie({ partie, contenu, region, membres, pnj, monde }) };
 }

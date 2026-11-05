@@ -18,7 +18,7 @@ const M0 = await charger();
 async function partieInstallee(M, { site = "college-hauts-saint-paul", stocks = { nourriture: 30, eau: 30, materiaux: 10, medicaments: 3 } } = {}) {
   const a = await survivantTire(M, { userId: "u1" });
   const b = await survivantTire(M, { userId: "u2" });
-  await M.api.demarrer({ region: "saint-paul", membres: [a.id, b.id], graine: "relecture" });
+  await M.api.demarrer({ region: "saint-paul", membres: [a.id, b.id], graine: "relecture", essai: true });
   await M.api.installer({ site });
   await M.api.ajuster({ stocks });
   return { a, b, abri: game.actors.get(M.api.etat().groupe.abri) };

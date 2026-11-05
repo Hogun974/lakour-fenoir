@@ -20,7 +20,7 @@ const CLES_SECRETES = ["journalSecret", "coupures", "abrisAbandonnes", "sitesVis
 async function partie(M) {
   const a = await survivantTire(M, { userId: "u1" });
   const b = await survivantTire(M, { userId: "u2" });
-  await M.api.demarrer({ region: "saint-paul", membres: [a.id, b.id], graine: GRAINE });
+  await M.api.demarrer({ region: "saint-paul", membres: [a.id, b.id], graine: GRAINE, essai: true });
   await M.api.installer({ site: "college-hauts-saint-paul" });
   await M.api.ajuster({ stocks: { nourriture: 60, materiaux: 10, pieces: 4 } });
   await M.api.construire({ installation: "citerne-de-pluie", quarts: 3 });
@@ -76,7 +76,7 @@ test("non-fuite : rien du monde réel dans les réglages du monde, le chat, l'é
 test("scellement : réécrit après chaque changement, révision croissante ; le coffre se rouvre ailleurs avec la clé du moteur", async () => {
   const M = await monde(M0);
   const a = await survivantTire(M);
-  await M.api.demarrer({ region: "saint-denis", membres: [a.id], graine: GRAINE });
+  await M.api.demarrer({ region: "saint-denis", membres: [a.id], graine: GRAINE, essai: true });
   const rev1 = valeur("lakour-survie.coffre").rev;
   await M.api.avancer({ quarts: 1 });
   const rev2 = valeur("lakour-survie.coffre").rev;
@@ -142,7 +142,7 @@ test("un navigateur périmé (un autre MJ a scellé depuis) n'écrase rien : il 
 test("sans le moteur : le monde en clair dans les réglages, un avertissement permanent au MJ", async () => {
   const M = await monde(M0, { moteur: false });
   const a = await survivantTire(M);
-  await M.api.demarrer({ region: "saint-denis", membres: [a.id], graine: GRAINE });
+  await M.api.demarrer({ region: "saint-denis", membres: [a.id], graine: GRAINE, essai: true });
   await M.api.avancer({ quarts: 4 });
   const clair = valeur("lakour-survie.mondeClair");
   assert.equal(clair.monde.graine, GRAINE, "le monde est en clair");
@@ -157,7 +157,7 @@ test("sans le moteur : le monde en clair dans les réglages, un avertissement pe
 test("garde : un joueur ne lit jamais monde() et ne peut rien écrire ; ses requêtes ne disent rien du réel", async () => {
   const M = await monde(M0);
   const a = await survivantTire(M, { userId: "u1" });
-  await M.api.demarrer({ region: "saint-paul", membres: [a.id], graine: GRAINE });
+  await M.api.demarrer({ region: "saint-paul", membres: [a.id], graine: GRAINE, essai: true });
   await commeJoueur("u1", async () => {
     assert.equal(M.api.monde(), null);
     await assert.rejects(() => game.settings.set("lakour-survie", "partie", {}), /un joueur ne peut pas/);

@@ -91,7 +91,12 @@
     </div>
     {{/if}}
 
-    <h3><i class="fa-solid fa-feather"></i> {{localize "LAKOUR_SURVIE.Fiche.Notes"}}</h3>
+    <h3><i class="fa-solid fa-feather"></i> {{localize "LAKOUR_SURVIE.Fiche.NotesPubliques"}}</h3>
     {{#if editable}}<prose-mirror name="system.notes" value="{{system.notes}}" toggled>{{{notesEnrichies}}}</prose-mirror>{{else}}<div class="survie-notes">{{{notesEnrichies}}}</div>{{/if}}
+    {{#if gm}}
+    <h3><i class="fa-solid fa-user-secret"></i> {{localize "LAKOUR_SURVIE.Fiche.NotesMJ"}}</h3>
+    {{#if mondeOuvert}}<textarea class="survie-notes-mj" rows="5" aria-label="{{localize 'LAKOUR_SURVIE.Fiche.NotesMJ'}}">{{notesMJ}}</textarea>
+    {{else}}<p class="survie-vide">{{localize "LAKOUR_SURVIE.Fiche.NotesMJFermees"}}</p>{{/if}}
+    {{/if}}
   </section>
 </div>

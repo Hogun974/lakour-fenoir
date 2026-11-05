@@ -36,8 +36,9 @@ export function arreterClignotement() {
 }
 
 // Une carte de chat qui demande un test au survivant de ce joueur (MJ IA : data-lakour-jet ; système : data-action="survieLancer").
+// Seulement une carte écrite par un MJ (un joueur ne fait pas sonner les autres avec une carte forgée).
 export function demandeDeTestPourMoi(message) {
-  if (game.user?.isGM) return false;
+  if (game.user?.isGM || !message?.author?.isGM) return false;
   const html = String(message?.content ?? "");
   const ids = [...html.matchAll(/data-(?:acteur)="(?:Actor\.)?([A-Za-z0-9]+)"/g)].map(m => m[1]);
   if (!ids.length || !(/data-lakour-jet|survieLancer/.test(html))) return false;

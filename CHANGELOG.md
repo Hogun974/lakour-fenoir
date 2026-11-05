@@ -7,6 +7,14 @@ dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
 ## Non publié
 
+- **Sécurité** (revue du 2026-11-05) : graine de 128 bits (`crypto.getRandomValues`), flux dérivés par SHA-256 et générateur
+  sfc32 (avant : 2³² mondes, qu'un joueur pouvait retrouver d'après la radio ; les résultats chiffrés des simulations
+  changent, l'équilibre n'est pas recalé) ; graine courte refusée au démarrage, renforcée dans une ancienne partie ; seuls les
+  messages d'un MJ font foi (forcer, demandes de test), un test de joueur ne compte que sur demande du MJ ; champs réservés au
+  MJ vérifiés par le serveur (`gmOnlyFields`), HTML nettoyé avant affichage ; incubations et notes secrètes des abris au
+  coffre ; plus de copie du monde réel dans le navigateur du MJ ; bilan et météo publics tirés du connu ; création validée
+  chez le MJ ; propositions limitées ; messages sans émetteur ignorés. Textes des recrues et des besoins du groupe localisés,
+  cinq faits des événements d'abri traduits. README : section sécurité.
 - **Parties longues** (`essais/outils/parties-longues.mjs`, 440 parties d'un an contrôlées chaque jour) et six corrections :
   la radio ne rajeunit plus le pillage (`vuDirect`, âge du pillage au tableau) ; une réparation trop courte s'accumule ;
   les chiens de garde mangent ; une petite production (médicaments des ruches et de l'infirmerie) s'accumule ; un abri

@@ -48,17 +48,22 @@ export const JOURS_SANS_PASSION = 7;
 export const JOURS_DEPART_RECRUE = 3;
 
 // Textes par défaut quand le contenu n'en donne pas (proches, raisonsRecrue, prixRecrue) : français, avec leur clé de traduction
-// (textes.mjs : proche-n, recrue-raison-n, recrue-prix-n) rendue à côté (procheCle, raisonCle, prixCle) pour la couche Foundry.
+// (textes.mjs : proche-n, recrue-raison-n, recrue-prix-n). Chacun est rendu comme les faits, en message { cle, params, texte }
+// (procheMessage, raisonMessage, prixMessage) que la couche Foundry affiche dans la langue de chacun ; procheCle, raisonCle et
+// prixCle restent pour les anciens appelants. Une liste du contenu peut donner des chaînes (déjà dans la langue du module de
+// contenu, lakour-fenoir ou lakour-fenoir-en) ou des { cle, texte } (clé de LAKOUR_SURVIE.Faits, texte de repli).
 const PROCHES = ["cherche sa sœur, restée à l'hôpital", "a perdu son père le premier soir", "attend des nouvelles de son fils, parti à la pêche",
   "a laissé sa grand-mère dans les Hauts", "ne sait pas où est sa compagne"];
 const RAISONS = ["son groupe a été dispersé", "fuit une bande", "cherche un endroit où dormir", "a entendu la radio", "suit la route depuis des jours"];
 const PRIX = ["demande une part égale des stocks", "veut qu'on aide à retrouver un proche", "se méfie de tout le monde", "a un trait difficile", "boit quand il peut"];
-// Un texte d'une liste du contenu (chaînes ou { texte | cle }), sinon d'une liste par défaut avec sa clé. -> { texte, cle }
+// Un texte d'une liste du contenu (chaînes ou { texte | cle }), sinon d'une liste par défaut avec sa clé.
+// -> { texte, cle, message: { cle, params, texte } }
 function tirerTexte(contenu, famille, defauts, prefixe, hasard) {
-  const l = liste(contenu?.[famille]).map(x => (typeof x === "string" ? x : x.texte ?? x.cle));
-  if (l.length) return { texte: choisir(l, hasard), cle: "" };
+  const l = liste(contenu?.[famille]).map(x => (typeof x === "string" ? { texte: x, cle: "" } : { texte: String(x.texte ?? x.cle ?? ""), cle: String(x.cle ?? "") }));
+  if (l.length) { const x = choisir(l, hasard); return { ...x, message: message(x.cle, {}, x.texte) }; }
   const i = Math.floor(hasard() * defauts.length) % defauts.length;
-  return { texte: defauts[i], cle: `${prefixe}-${i + 1}` };
+  const cle = `${prefixe}-${i + 1}`;
+  return { texte: defauts[i], cle, message: message(cle, {}, defauts[i]) };
 }
 
 const ajouter = (a, b, k = 1) => { for (const [c, n] of Object.entries(b ?? {})) a[c] = (a[c] ?? 0) + k * (Number(n) || 0); return a; };
@@ -180,7 +185,7 @@ export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
       journal: "",
       graine: {
         phrases: [...phrasesDe(enfance), ...phrasesDe(passe)],
-        region: options.region ?? "", age, proche: proche.texte, procheCle: proche.cle
+        region: options.region ?? "", age, proche: proche.texte, procheCle: proche.cle, procheMessage: proche.message
       }
     }
   });
@@ -303,17 +308,19 @@ export function besoinsDuGroupe(membres = [], abri = null, contenu = {}, etat = 
     const qui = capables.find(m => niveauTache(m.system, tache, contenu) === meilleur)?.id ?? null;
     taches[tache] = { competence, meilleur, qui: meilleur > 0 ? qui : null, couverture: meilleur >= 2 ? "couvert" : meilleur === 1 ? "faible" : "manquant", urgence: false, raison: "" };
   }
-  const urgent = (tache, raison) => { if (taches[tache] && taches[tache].couverture !== "couvert") { taches[tache].urgence = true; taches[tache].raison = raison; } };
-  if (vivants.some(m => Number(m.system.blessures) >= 2 || (m.system.afflictions ?? []).length)) urgent("soins", "des blessés ou des malades sans soigneur");
+  // La raison d'une urgence : en français (raison) et en message { cle, params, texte } (motif) pour la langue de chacun.
+  const urgent = (tache, cle, raison) => { if (taches[tache] && taches[tache].couverture !== "couvert") { taches[tache].urgence = true; taches[tache].raison = raison; taches[tache].motif = message(cle, {}, raison); } };
+  if (vivants.some(m => Number(m.system.blessures) >= 2 || (m.system.afflictions ?? []).length)) urgent("soins", "besoin-soins", "des blessés ou des malades sans soigneur");
   const ins = abri?.installations ?? [];
-  if (ins.some(i => Number(i.chantier?.requis) > 0)) urgent("chantier", "un chantier ouvert sans bricoleur");
-  if (ins.some(i => installationDe(contenu, i.cle)?.categorie === "nourriture" && Number(i.niveau) >= 1)) urgent("cultures", "des cultures sans jardinier");
-  if (!vivants.some(m => m.system.tache === "garde")) urgent("garde", "personne ne garde la nuit");
+  if (ins.some(i => Number(i.chantier?.requis) > 0)) urgent("chantier", "besoin-chantier", "un chantier ouvert sans bricoleur");
+  if (ins.some(i => installationDe(contenu, i.cle)?.categorie === "nourriture" && Number(i.niveau) >= 1)) urgent("cultures", "besoin-cultures", "des cultures sans jardinier");
+  if (!vivants.some(m => m.system.tache === "garde")) urgent("garde", "besoin-garde", "personne ne garde la nuit");
   // Négocier n'est pas une tâche du jour, mais un besoin : des factions connues dans la région.
   const factions = etat?.renseignements?.[etat?.groupe?.region]?.factions ?? [];
   const parole = Math.max(0, ...vivants.map(m => Number(m.system.competences?.parole?.niveau) || 0));
   taches.negociation = { competence: "parole", meilleur: parole, qui: null, couverture: parole >= 2 ? "couvert" : parole === 1 ? "faible" : "manquant",
-    urgence: factions.length > 0 && parole < 2, raison: factions.length && parole < 2 ? "des factions sans négociateur" : "" };
+    urgence: factions.length > 0 && parole < 2, raison: factions.length && parole < 2 ? "des factions sans négociateur" : "",
+    ...(factions.length && parole < 2 ? { motif: message("besoin-negociation", {}, "des factions sans négociateur") } : {}) };
   const profil = {};
   for (const t of Object.values(taches)) {
     const p = (t.couverture === "manquant" ? 3 : t.couverture === "faible" ? 1.5 : 0) + (t.urgence ? 2 : 0);
@@ -344,12 +351,13 @@ export function repartir(membres = [], besoins = { taches: {} }, contenu = {}) {
 const rang = c => ({ manquant: 2, faible: 1, couvert: 0 }[c] ?? 0);
 
 // ------------------------------------------------------------------ recrues
-// -> { survivant (system), raison, prix, raisonCle, prixCle (clés de traduction des textes par défaut, vides si le contenu les donne) }
+// -> { survivant (system), raison, prix (français ou langue du contenu), raisonMessage, prixMessage ({ cle, params, texte }, à
+//      afficher dans la langue de chacun), raisonCle, prixCle (clés seules, vides si le contenu donne des chaînes) }
 export function genererRecrue(contenu, hasard = Math.random, { besoins = null, region = "", phase = "" } = {}) {
   const survivant = genererSurvivant(contenu, hasard, { statut: "recrue", region, favoriser: besoins?.profil ?? {}, budget: null });
   const raison = tirerTexte(contenu, "raisonsRecrue", RAISONS, "recrue-raison", hasard);
   const prix = tirerTexte(contenu, "prixRecrue", PRIX, "recrue-prix", hasard);
-  return { survivant, raison: raison.texte, prix: prix.texte, raisonCle: raison.cle, prixCle: prix.cle, phase };
+  return { survivant, raison: raison.texte, prix: prix.texte, raisonCle: raison.cle, prixCle: prix.cle, raisonMessage: raison.message, prixMessage: prix.message, phase };
 }
 
 const CRANS = ["facile", "normale", "difficile", "extreme"];

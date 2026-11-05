@@ -123,7 +123,7 @@ test("fenêtres : bandeau, tableau de bord, fiches, atelier, fenêtre du MJ ; ri
   const M = await monde(M0);
   const a = await survivantTire(M, { userId: "u1" });
   assert.equal(contexteBandeau().demarree, false);
-  await M.api.demarrer({ region: "saint-paul", membres: [a.id], graine: "GRAINE-INTERFACE-SECRETE" });
+  await M.api.demarrer({ region: "saint-paul", membres: [a.id], graine: "GRAINE-INTERFACE-SECRETE", essai: true });
   await M.api.installer({ site: "college-hauts-saint-paul" });
   await M.api.avancer({ quarts: 6 });
   const abri = game.actors.get(M.api.etat().groupe.abri);

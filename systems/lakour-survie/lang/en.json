@@ -116,6 +116,11 @@
       "recrue-prix-4": "has a difficult trait", "recrue-prix-5": "drinks whenever they can",
       "proche-1": "is looking for their sister, left behind at the hospital", "proche-2": "lost their father on the first night", "proche-3": "is waiting for news of their son, who went out fishing",
       "proche-4": "left their grandmother in the Hauts", "proche-5": "does not know where their partner is",
+      "abri-evenement-pertes": "{nom}: the shelter loses {pertes}.", "abri-evenement-degats": "{nom}: the shelter is damaged ({degats} damage).",
+      "abri-a-raconter-moral": "{nom}: group morale {moral}, to narrate.", "abri-a-raconter-blessure": "{nom}: {n} wound(s) to narrate (who, how).",
+      "abri-a-raconter-decouverte": "{nom}: a find to narrate ({decouverte}), to be fetched.",
+      "besoin-soins": "wounded or sick people and no healer", "besoin-chantier": "an open building site and no handyman",
+      "besoin-cultures": "crops and no gardener", "besoin-garde": "nobody keeps watch at night", "besoin-negociation": "factions around and no negotiator",
       "soin-medicaments": "{n} medicine needed", "soin-pas-atteint": "not afflicted", "soin-rate": "the treatment did not take",
       "installation-inconnue": "unknown installation", "recette-inconnue": "unknown recipe",
       "niveau-inexistant": "{installation}: level {niveau} does not exist (1 to {max})", "niveau-deja": "{installation}: already at level {niveau}",
@@ -127,6 +132,9 @@
     },
 
     "Erreurs": {
+      "GraineCourte": "Seed too short: it could be guessed. Leave the field empty (a safe random seed is drawn) or give one of at least 32 characters.",
+      "TropDePropositions": "Too many proposals at once: wait a minute.",
+      "ChampReserve": "Only the GM changes this: go through the sheet or the GM (task, test, creation).",
       "PasMJActif": "Only the active GM can do this (Fénoir's state is written on their side).",
       "MondeFerme": "Fénoir's world is not open in this browser (GM AI vault closed or shares awaited): nothing was written. It is being looked for; try again in a moment.",
       "PasDePartie": "No Fénoir game has started (GM window: Start).",
@@ -191,6 +199,8 @@
       "MaFiche": "My sheet", "EnRoute": "On the road ({n} watch(es))"
     },
     "Fiche": {
+      "NotesPubliques": "Shelter notes (read by the players)", "NotesMJ": "GM notes (secret, kept in the vault)",
+      "NotesMJFermees": "The world is not open in this browser: the secret notes are waiting for the vault.",
       "Survivant": "Survivor sheet", "Abri": "Shelter sheet", "Objet": "Item sheet", "Nom": "Name", "Age": "Age", "Etat": "Condition",
       "Competences": "Skills", "CliquerTester": "click: a test", "Traits": "Traits and incapacities", "Tache": "Task of the day", "Equipement": "Equipment",
       "Savoirs": "Know-how", "Notes": "Notes", "Histoire": "Story", "Afflictions": "Diseases and injuries", "Retirer": "Remove",
@@ -222,6 +232,7 @@
     },
 
     "Test": {
+      "AideJoueurLibre": "Without a request from the GM, this test is rolled at normal difficulty and gives no mark; a GM request sets the difficulty and makes it count.",
       "Titre": "Test: {competence}", "Difficulte": "Difficulty", "Bonus": "Extra dice (tool, help, situation)", "Malus": "Fewer dice (situation)",
       "Compte": "The test matters (danger, stakes): a progress mark if failed or pushed",
       "AideDialogue": "Every 5 or 6 is a success. Condition penalties and tool bonuses are added automatically.",
@@ -312,7 +323,7 @@
       },
       "PasActif": "You are not the active GM: only the active GM writes Fénoir's state.", "Bloque": "The world is not open in this browser: nothing is written.",
       "Rouvrir": "Reopen the vault", "DejaDemarree": "A game is running: starting again replaces it.",
-      "RegionDepart": "Starting region", "Graine": "Random seed (empty = random)", "Membres": "Group members", "AucunSurvivant": "No survivor: create some.",
+      "RegionDepart": "Starting region", "Graine": "Test seed (empty = a safe random seed; otherwise at least 32 characters)", "Membres": "Group members", "AucunSurvivant": "No survivor: create some.",
       "Quarts": "Watches", "Quart": "watch", "UnJour": "1 day", "UneSemaine": "1 week", "Raison": "Reason", "Repos": "The group rests",
       "AucuneFete": "No holiday today (game date).", "Fete": "Holiday", "Site": "Site", "Region": "The whole region", "Cible": "Look for",
       "Tout": "Everything", "Prudence": "Caution", "Qui": "Who", "Quoi": "What", "Abri": "The shelter (damage)", "Vers": "To", "Transport": "Transport",
