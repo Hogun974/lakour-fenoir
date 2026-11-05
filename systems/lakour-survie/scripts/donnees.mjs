@@ -1,13 +1,22 @@
 // Petites lectures communes à l'API et à l'interface : traductions, état public, acteurs du groupe. Rien de secret ici.
 import { ID } from "../logique/constantes.mjs";
 import { etatVide } from "../logique/etat.mjs";
+import { remplir } from "../logique/textes.mjs";
+import { dateTexteIso } from "../logique/temps.mjs";
 
 export const MODULE_CONTENU = "lakour-fenoir";
 export const MODULE_MJIA = "lakour-mj-ia";
 
+// La langue du client Foundry ("fr", "en"…), repli « fr ».
+export function langue() {
+  try { return String(game.i18n?.lang || "fr"); } catch { return "fr"; }
+}
+
+// Avec des paramètres, le texte est rempli par logique/textes.mjs remplir (et non game.i18n.format) : contraction des noms après
+// « de »/« à » (« du côté des Hauts de l'Ouest ») et pluriels « (s) » accordés au nombre (« 1 jour », « 4 watches »).
 export function t(cle, donnees = null) {
   try {
-    if (donnees) return game.i18n.format(cle, donnees);
+    if (donnees) return remplir(game.i18n.localize(cle), donnees, langue());
     return game.i18n.localize(cle);
   } catch { return cle; }
 }
@@ -66,14 +75,27 @@ export const libelleDifficulte = d => t(`LAKOUR_SURVIE.Difficultes.${d}`);
 // point un chemin sous LAKOUR_SURVIE (entrées écrites par l'API : Journal.*, Alertes.*…). Sans clé connue, `texte` (le français de la
 // logique, ou le texte d'une ancienne entrée) reste lisible. Une chaîne est rendue telle quelle.
 const aTraduction = chemin => { try { return Boolean(game.i18n?.has?.(chemin)); } catch { return false; } };
-const PARAMS_A_LIBELLE = { ressource: "Ressources", competence: "Competences", tache: "Taches", transport: "Transports", source: "Sources" };
+const PARAMS_A_LIBELLE = { ressource: "Ressources", competence: "Competences", tache: "Taches", transport: "Transports", source: "Sources", eau: "Eaux", ici: "Eaux" };
+// Les paramètres qui sont des clés du contenu (savoir-faire, installation) : rendus par leur nom, dans la langue du module de
+// contenu (lakour-fenoir ou lakour-fenoir-en). Un nom déjà rendu (pas une clé connue) passe tel quel.
+const PARAMS_DU_CONTENU = { savoir: "savoirs", installation: "installations", recette: "recettes", equipement: "equipements" };
+function nomDuContenu(famille, cle) {
+  try {
+    const liste = game.lakourSurvie?.contenu?.()?.[famille];
+    const defs = Array.isArray(liste) ? liste : Object.values(liste ?? {});
+    return defs.find(d => d?.cle === cle)?.nom ?? null;
+  } catch { return null; }
+}
 const texteStocksParam = stocks => Object.entries(stocks ?? {}).filter(([, q]) => Number(q) > 0).map(([r, q]) => `${q} ${libelleRessource(r).toLowerCase()}`).join(", ")
   || t("LAKOUR_SURVIE.Action.Rien");
 function rendreParam(cle, valeur, params) {
   if (Array.isArray(valeur)) return valeur.map(v => rendreParam(cle, v, params)).join(", ");
   if (valeur && typeof valeur === "object") return texteStocksParam(valeur);   // des stocks { ressource: n } (butin, manque)
   if (cle === "creature" && !valeur && params.creatureCle) return t(`LAKOUR_SURVIE.Creatures.${params.creatureCle}`);
+  if (cle === "date" && typeof valeur === "string" && /^\d{4}-\d{2}-\d{2}$/.test(valeur)) return dateTexteIso(valeur, langue());
+  if (PARAMS_DU_CONTENU[cle] && typeof valeur === "string") { const nom = nomDuContenu(PARAMS_DU_CONTENU[cle], valeur); if (nom) return nom; }
   const famille = PARAMS_A_LIBELLE[cle];
+  if (famille && typeof valeur === "string" && valeur.includes(" / ")) return valeur.split(" / ").map(v => rendreParam(cle, v, params)).join(" / ");
   if (famille && typeof valeur === "string" && aTraduction(`LAKOUR_SURVIE.${famille}.${valeur}`)) return t(`LAKOUR_SURVIE.${famille}.${valeur}`);
   return valeur === null || valeur === undefined ? "" : String(valeur);
 }

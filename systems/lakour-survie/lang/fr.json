@@ -43,6 +43,7 @@
     "Transports": { "pied": "À pied", "vehicule": "Véhicule", "bateau": "Bateau" },
     "Zones": { "littoral": "Littoral", "hauts": "Les Hauts", "cirque": "Cirque", "volcan": "Volcan", "foret": "Forêt" },
     "Routes": { "ouverte": "ouverte", "difficile": "difficile", "coupee": "coupée" },
+    "Eaux": { "aucune": "aucune eau", "citerne": "une citerne", "riviere": "une rivière", "source": "une source", "puits": "un puits", "reseau": "le réseau d'eau" },
     "Sources": { "vu": "vu", "radio": "radio", "rumeur": "rumeur" },
     "Infestation": { "inconnue": "Inconnue", "calme": "Calme", "presente": "Présente", "dense": "Dense", "grouillante": "Grouillante" },
     "Pillage": { "inconnu": "Inconnu", "intact": "Intact", "entame": "Entamé", "maigre": "Maigre", "vide": "Vide" },
@@ -106,7 +107,9 @@
       "survivant-declaree": "{nom} tombe malade ({affliction}).", "survivant-aggravee": "{nom} voit son état s'aggraver ({affliction}).", "survivant-guerie": "{nom} se remet ({affliction}).",
       "progression": "{nom} progresse en {competence} (niveau {niveau}).", "progression-enseignee": "{nom} progresse en {competence} grâce à {maitre} (niveau {niveau}).",
       "stocks-bas-eau": "Plus que {n} jour(s) d'eau.", "stocks-bas-nourriture": "Plus que {n} jour(s) de nourriture.",
-      "manque-nourriture": "Pas assez à manger pour tout le monde ({n} part(s) manquent).",
+      "stocks-vides-eau": "Plus d'eau.", "stocks-vides-nourriture": "Plus de nourriture.",
+      "stocks-moins-un-jour-eau": "Moins d'un jour d'eau.", "stocks-moins-un-jour-nourriture": "Moins d'un jour de nourriture.",
+      "manque-nourriture": "Pas assez à manger pour tout le monde (il manque {n} part(s)).",
       "palier-visibilite": "L'abri devient plus visible (visibilité {visibilite}, palier {palier}).",
       "fete-manquante": "fête ou année manquante", "fete-deja": "déjà fêtée cette année", "fete-rations": "il faut {n} rations",
       "tache-inconnue": "tâche inconnue « {tache} »", "tache-interdite": "{nom} ne peut pas faire : {tache}",
@@ -291,7 +294,8 @@
       "Nom": "Nom", "Age": "Âge", "Enfance": "Enfance", "Passe": "Passé (au jour zéro)", "Traits": "Traits", "AjouterTrait": "Ajouter un trait…",
       "Verrou": "Garder (verrou)", "Favoriser": "Favoriser cette compétence", "Incapable": "Incapable de", "Tirer": "Tirer", "Creer": "Créer ce survivant",
       "Rejoindre": "Rejoindre le groupe", "Joueur": "Joueur", "Statut": "Statut", "Personne": "Personne", "SansNom": "Survivant sans nom",
-      "Cree": "{nom} est créé.", "GraineRegion": "Au jour zéro, il était du côté de {region}.",
+      "Cree": "{nom} est créé.", "GraineRegion": "Au jour zéro, sa route passait du côté de {region}.", "GraineRegionM": "Au jour zéro, il était du côté de {region}.",
+      "GraineRegionF": "Au jour zéro, elle était du côté de {region}.",
       "BudgetAide": "Somme des niveaux : un survivant de départ en a entre {min} et {max}."
     },
     "Tableau": {

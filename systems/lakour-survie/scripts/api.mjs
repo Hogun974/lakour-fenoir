@@ -17,7 +17,7 @@ import { ID, COMPETENCES, RESSOURCES, NATURE, DIFFICULTES, BORNES, PALIERS_VISIB
 import { creerRegistre } from "./registre.mjs";
 import { estMJActif, emettre, versMJ, annoncer, auteur, vientDuMJActif } from "./canal.mjs";
 import {
-  t, lireEtat, reglage, aPlat, acteur, survivantsDuGroupe, abriCourant, proprietaireDe, MODULE_MJIA, MODULE_CONTENU, sansBalises, localiser, entreeTexte
+  t, langue, lireEtat, reglage, aPlat, acteur, survivantsDuGroupe, abriCourant, proprietaireDe, MODULE_MJIA, MODULE_CONTENU, sansBalises, localiser, entreeTexte
 } from "./donnees.mjs";
 import * as Coffre from "./coffre.mjs";
 import { carteTest, carteTemps, carteAction, carteAssaut, carteDemandeTest, carteProposition, texteTest, texteStocks } from "./cartes.mjs";
@@ -47,7 +47,7 @@ const defDe = (famille, cle) => L.indexer(contenu())[famille]?.get(cle) ?? null;
 
 // ------------------------------------------------------------------ le temps
 export function quandDe(etat = lireEtat()) {
-  const q = L.quand(etat?.horloge?.quart ?? 0, dateDepart());
+  const q = L.quand(etat?.horloge?.quart ?? 0, dateDepart(), langue());   // heure et date dans la langue du client
   return { ...q, fetes: fetesDuJeu(q.date, contenu().fetes ?? []).map(f => ({ cle: f.cle, nom: f.nom, coeur: f.coeur })) };
 }
 
@@ -639,7 +639,9 @@ async function proposerDirect({ type = "autre", details = "", userId = "" } = {}
 function versTirage(s, c) {
   const g = s.histoire?.graine ?? {};
   const region = L.regionDe(c, g.region)?.nom ?? "";
-  const graine = [...(g.phrases ?? []), region ? t("LAKOUR_SURVIE.Creation.GraineRegion", { region }) : "", localiser(g.procheMessage ?? { cle: g.procheCle, texte: g.proche ?? "" })].filter(Boolean).join(" ");
+  // La phrase de la région suit le genre du survivant (« il était », « elle était », sinon une tournure neutre).
+  const cleRegion = `LAKOUR_SURVIE.Creation.GraineRegion${s.genre === "f" ? "F" : s.genre === "m" ? "M" : ""}`;
+  const graine = [...(g.phrases ?? []), region ? t(cleRegion, { region }) : "", localiser(g.procheMessage ?? { cle: g.procheCle, texte: g.proche ?? "" })].filter(Boolean).join(" ");
   return {
     nom: s.nom, genre: s.genre ?? "", age: s.age, enfance: s.enfance, passe: s.passe, statut: s.statut,
     competences: Object.fromEntries(COMPETENCES.map(k => [k, Number(s.competences?.[k]?.niveau) || 0])),
@@ -933,7 +935,7 @@ export const api = {
     etat.groupe.porte = {};
     Coffre.nouvellePartie(p, monde);
     const ctx = { ...ouvrirCtx(), etat, monde };
-    noter(ctx, tx("Journal.Debut", { region: nomRegion(region), date: quandDe(etat).dateTexte }));
+    noter(ctx, tx("Journal.Debut", { region: nomRegion(region), date: quandDe(etat).date }));   // date ISO : rendue dans la langue du lecteur
     await terminer(ctx);
     annoncer("lakourSurvie.nouvellePartie", [quandDe(ctx.etat)]);
     await suivreFetesDuJeu(quandDe(ctx.etat).date, c.fetes ?? []).catch(() => null);

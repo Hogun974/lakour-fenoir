@@ -12,9 +12,27 @@
 import { QUARTS_PAR_JOUR, MOMENTS, DATE_DEPART, PHASES } from "./constantes.mjs";
 
 const MS_JOUR = 86400000;
-const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
-const JOURS_SEMAINE = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
-const HEURES = ["6 h", "12 h", "18 h", "0 h"];
+// Les mots de la date et de l'heure, par langue (la langue du client Foundry, passée en paramètre : la logique ne lit pas `game`).
+// Une langue inconnue retombe sur le français.
+const CALENDRIERS = {
+  fr: {
+    mois: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+    semaine: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+    heures: ["6 h", "12 h", "18 h", "0 h"],
+    date: (j, d, m, a) => `${j} ${d === 1 ? "1er" : d} ${m} ${a}`
+  },
+  en: {
+    mois: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    semaine: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    heures: ["6 am", "noon", "6 pm", "midnight"],
+    date: (j, d, m, a) => `${j} ${d} ${m} ${a}`
+  }
+};
+// "en", "en-GB", "EN" -> "en" ; ce qui n'est pas connu -> "fr".
+export const langueCalendrier = langue => {
+  const l = String(langue ?? "").toLowerCase().split(/[-_]/)[0];
+  return l in CALENDRIERS ? l : "fr";
+};
 
 export const jourDe = quart => Math.floor(Math.max(0, Number(quart) || 0) / QUARTS_PAR_JOUR);
 export const momentIndex = quart => (Math.max(0, Number(quart) || 0)) % QUARTS_PAR_JOUR;
@@ -58,19 +76,26 @@ export function phaseDuJour(jour) {
   return cle;
 }
 
-export function dateTexte(jour, dateDepart = DATE_DEPART) {
+// La date du jour de jeu en toutes lettres, dans la langue donnée (« samedi 5 décembre 2026 », « Saturday 5 December 2026 »).
+export function dateTexte(jour, dateDepart = DATE_DEPART, langue = "fr") {
   const d = dateDuJour(jour, dateDepart);
-  return `${JOURS_SEMAINE[d.semaine]} ${d.jourMois === 1 ? "1er" : d.jourMois} ${MOIS[d.mois - 1]} ${d.annee}`;
+  const c = CALENDRIERS[langueCalendrier(langue)];
+  return c.date(c.semaine[d.semaine], d.jourMois, c.mois[d.mois - 1], d.annee);
 }
+// La même chose depuis une date ISO "AAAA-MM-JJ" (un paramètre de texte gardé en ISO, rendu dans la langue du lecteur).
+export const dateTexteIso = (iso, langue = "fr") => dateTexte(0, iso, langue);
+// L'heure d'un moment (index 0..3) dans la langue donnée.
+export const heureTexte = (index, langue = "fr") => CALENDRIERS[langueCalendrier(langue)].heures[Number(index) % QUARTS_PAR_JOUR] ?? "";
 
 // Tout ce que dit l'horloge pour un quart -> { quart, jour, moment, momentIndex, heure, date, dateTexte, mois, saison, phase, fruits }.
-export function quand(quart, dateDepart = DATE_DEPART) {
+// `langue` (défaut français) : celle de `heure` et `dateTexte`.
+export function quand(quart, dateDepart = DATE_DEPART, langue = "fr") {
   const q = Math.max(0, Math.floor(Number(quart) || 0));
   const jour = jourDe(q);
   const d = dateDuJour(jour, dateDepart);
   return {
-    quart: q, jour, moment: momentDe(q), momentIndex: momentIndex(q), heure: HEURES[momentIndex(q)],
-    date: d.iso, dateTexte: dateTexte(jour, dateDepart), mois: d.mois, saison: saisonDuMois(d.mois), phase: phaseDuJour(jour),
+    quart: q, jour, moment: momentDe(q), momentIndex: momentIndex(q), heure: heureTexte(momentIndex(q), langue),
+    date: d.iso, dateTexte: dateTexte(jour, dateDepart, langue), mois: d.mois, saison: saisonDuMois(d.mois), phase: phaseDuJour(jour),
     fruits: bonusFruits(d.mois)
   };
 }

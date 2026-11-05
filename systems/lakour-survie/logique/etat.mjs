@@ -33,7 +33,7 @@
 import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, JOURNAL_SECRET_MAX, palierVisibilite } from "./constantes.mjs";
 import { evoluerAfflictions, tirerMaladies, contracter } from "./maladies.mjs";
 import { indexer, installationDe } from "./contenu.mjs";
-import { message, cleTexteDe } from "./textes.mjs";
+import { message, cleTexteDe, avecPreposition } from "./textes.mjs";
 import { effetsTraits, lieuxAbri, travailleursParTache, competenceDeTache, peutFaire, retirerMembre } from "./generation.mjs";
 import { marquer } from "./des.mjs";
 import { ajouterStocks } from "./ressources.mjs";
@@ -95,6 +95,17 @@ const TYPES_ALERTE = ["cyclone-pre-alerte", "cyclone-orange", "cyclone-rouge", "
 // -> { etat, monde, acteurs: { survivants: [{ id, system, evenements }] (ceux qui ont changé), abri: { id, system, installations } | null },
 //      faits (publics), secrets (faits que le groupe ne perçoit pas), alertes (nouvelles), menaces: [{ jour, … }], bilan, jours: [jour],
 //      departs: [id], aRaconter: [{ jour, evenement, cle, params, texte }] (effets d'événements laissés au MJ, §2.6) }
+// L'alerte des stocks bas (eau, nourriture) : n jours de stocks au rythme du bilan (entier, arrondi en dessous), quantité restante.
+// 0 jour : « Plus d'eau. » si la réserve est vide, « Moins d'un jour d'eau. » sinon ; 1 ou 2 : « Plus que n jour(s)… » (accordé
+// à l'affichage). -> [cle, params, texte] pour alerter().
+export function alerteStocks(ressource, n, quantite = 0) {
+  const de = ressource === "eau" ? "d'eau" : `de ${ressource}`;
+  if (n <= 0) return Number(quantite) > 0
+    ? [`stocks-moins-un-jour-${ressource}`, { n: 0 }, `Moins d'un jour ${de}.`]
+    : [`stocks-vides-${ressource}`, { n: 0 }, `Plus ${de}.`];
+  return [`stocks-bas-${ressource}`, { n }, `Plus que ${n} jour${n > 1 ? "s" : ""} ${de}.`];
+}
+
 export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abri = null, options = {} } = {}) {
   let e = structuredClone(etat);
   let m = structuredClone(monde);
@@ -155,7 +166,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         e.groupe = { ...e.groupe, region: r.vers, enRoute: null };
         e.renseignements = observer(e.renseignements, m, contenu, r.vers, Math.floor(fin / QUARTS_PAR_JOUR), "vu");
         const region = regionDe(contenu, r.vers)?.nom ?? r.vers;
-        publier(fin, "arrivee", { region }, `Le groupe arrive à ${region}.`);
+        publier(fin, "arrivee", { region }, `Le groupe arrive ${avecPreposition("à", region)}.`);
       } else e.groupe = { ...e.groupe, enRoute: r };
     }
     e.horloge = { quart: fin };
@@ -286,10 +297,10 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       bilan = bilanAbri(ab.system, ab.installations, contenu, conditions(jour));
       for (const r of ["eau", "nourriture"]) {
         const n = bilan.joursDeStocks[r];
-        if (n <= 2) alerter(fin, "stocks-bas", `stocks-bas-${r}`, { n }, `Plus que ${n} jour${n > 1 ? "s" : ""} de ${r}.`);
+        if (n <= 2) alerter(fin, "stocks-bas", ...alerteStocks(r, n, ab.system.stocks?.[r]));
       }
     }
-    if (manqueNourriture > 0) publier(fin, "manque-nourriture", { n: manqueNourriture }, `Pas assez à manger pour tout le monde (${manqueNourriture} part${manqueNourriture > 1 ? "s" : ""} manquent).`);
+    if (manqueNourriture > 0) publier(fin, "manque-nourriture", { n: manqueNourriture }, `Pas assez à manger pour tout le monde (il manque ${manqueNourriture} part${manqueNourriture > 1 ? "s" : ""}).`);
     // 9. Maladies.
     const defsAfflictions = indexer(contenu).afflictions;
     if (defsAfflictions.size) {

@@ -183,7 +183,7 @@ export function contexteAbri(a) {
     region: L.regionDe(contenu(), s.region)?.nom ?? s.region, site: site ? { nom: site.nom, atouts: site.atouts ?? [], defauts: site.defauts ?? [] } : null,
     stocks, installations, nature, sol: Math.round((Number(s.sol) || 0) * 100) / 100, bruit: s.bruit, degats: s.degats,
     bilan: b ? { defense: b.defense, discretion: b.discretion, visibilite: b.visibilite, capacite: b.capacite, personnes: b.personnes, autonome: Boolean(etat.autonome),
-      joursAutonomes: etat.joursAutonomes ?? 0, surpeuplement: b.surpeuplement, production: Object.entries(b.production ?? {}).map(([r, q]) => `${libelleRessource(r)} ${q}`).join(", ") } : null,
+      joursAutonomes: etat.joursAutonomes ?? 0, surpeuplement: b.surpeuplement ? t("LAKOUR_SURVIE.Abri.Surpeuplement", { n: b.surpeuplement }) : "", production: Object.entries(b.production ?? {}).map(([r, q]) => `${libelleRessource(r)} ${q}`).join(", ") } : null,
     grille, taches: Object.keys(L.TACHES).map(x => ({ cle: x, libelle: libelleTache(x) })), gm: game.user.isGM,
     // Les notes secrètes du MJ (monde scellé, jamais sur l'acteur que les joueurs observent).
     notesMJ: game.user.isGM ? game.lakourSurvie?.notesAbri?.(a.id) ?? "" : "", mondeOuvert: Boolean(game.lakourSurvie?.mondeOuvert?.())

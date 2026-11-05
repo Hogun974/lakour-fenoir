@@ -37,7 +37,7 @@ import { exploiterNature, installationsDuSite, plafondsAbri } from "./abri.mjs";
 import { normaliserStocks, ajouterStocks, plafonner } from "./ressources.mjs";
 import { abandonnerAbri, reprendreAbri } from "./monde.mjs";
 import { phaseDuJour, momentDe } from "./temps.mjs";
-import { message } from "./textes.mjs";
+import { message, avecPreposition } from "./textes.mjs";
 
 export const REGLES_ACTIONS = {
   rencontre: {
@@ -74,7 +74,7 @@ export function tirerRencontre(monde, contenu, hasard, { region, jour = monde?.j
   if (type === "livides") {
     const nombre = Math.max(1, Math.round(inf * (0.5 + hasard())) + (prudence === "rapide" ? 1 : 0));
     const c = tirerCreature(contenu, hasard, { espece: "livide", region: def, jour, phase });
-    return { type, nombre, region, creature: c.cle, des: c.des, resistance: c.resistance, texte: `${nombre} × ${c.nom ?? "Livide"} à ${nom}.`,
+    return { type, nombre, region, creature: c.cle, des: c.des, resistance: c.resistance, texte: `${nombre} × ${c.nom ?? "Livide"} ${avecPreposition("à", nom)}.`,
       ...message("rencontre-livides", { nombre, creature: c.defaut ? "" : c.nom ?? "", creatureCle: c.cle, region: nom }) };
   }
   if (type === "humains") {
@@ -180,7 +180,7 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
     butin, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
     renseignements: observer(renseignements, nouveauMonde, contenu, region, jour, "vu"),
     fouille: !NATURE.includes(cible),
-    faits: [{ jour, region, cle: site ? "fouille" : "fouille-region", public: true, texte: `Fouille ${site ? `de ${nomSite} ` : ""}à ${nom} : ${lu}.`,
+    faits: [{ jour, region, cle: site ? "fouille" : "fouille-region", public: true, texte: `Fouille ${site ? `${avecPreposition("de", nomSite)} ` : ""}${avecPreposition("à", nom)} : ${lu}.`,
       params: { region: nom, site: nomSite, butin: { ...butin } } }]
   };
 }
@@ -298,7 +298,7 @@ export function voyager(monde, contenu, hasard, { de, vers, transport = "pied", 
   return {
     possible: true, raison: "", motif: null, chemin: c.chemin, etapes: c.etapes, quarts: c.quarts, km: c.km, carburant: besoin, bruit,
     rencontres, rencontre: rencontres[0] ?? null, renseignements: r, cheminConnu: connu,
-    faits: [{ jour, region: vers, cle: "voyage", public: true, texte: `Le groupe part de ${nom(de)} pour ${nom(vers)} (${chemin}, ${c.quarts} quart${c.quarts > 1 ? "s" : ""}).`,
+    faits: [{ jour, region: vers, cle: "voyage", public: true, texte: `Le groupe part ${avecPreposition("de", nom(de))} pour ${nom(vers)} (${chemin}, ${c.quarts} quart${c.quarts > 1 ? "s" : ""}).`,
       params: { de: nom(de), vers: nom(vers), chemin, quarts: c.quarts } }]
   };
 }

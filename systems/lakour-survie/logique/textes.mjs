@@ -36,7 +36,8 @@ export const CLES_TEXTES = [
   "arrivee", "cyclone-degats", "cyclone-degats-installations",
   "survivant-releve", "alerte-releve", "survivant-infection", "survivant-mort-infection", "survivant-mort-blessures",
   "survivant-craque", "survivant-depart", "alerte-depart", "survivant-declaree", "survivant-aggravee", "survivant-guerie",
-  "progression", "progression-enseignee", "stocks-bas-eau", "stocks-bas-nourriture", "manque-nourriture", "palier-visibilite",
+  "progression", "progression-enseignee", "stocks-bas-eau", "stocks-bas-nourriture",
+  "stocks-vides-eau", "stocks-vides-nourriture", "stocks-moins-un-jour-eau", "stocks-moins-un-jour-nourriture", "manque-nourriture", "palier-visibilite",
   "fete-manquante", "fete-deja", "fete-rations",
   // abri.mjs (subirEvenementAbri, par etat.mjs) : événements du contenu qui touchent l'abri (§2.6)
   "abri-evenement-pertes", "abri-evenement-degats", "abri-a-raconter-moral", "abri-a-raconter-blessure", "abri-a-raconter-decouverte",
@@ -52,3 +53,53 @@ export const CLES_TEXTES = [
   "installation-inconnue", "recette-inconnue", "niveau-inexistant", "niveau-deja", "niveau-prealable", "hors-service-reparer",
   "savoir-manquant", "eau-requise", "site-sol", "site-soleil", "site-souterrain", "requiert", "requiert-hors-service", "manque"
 ];
+
+// ------------------------------------------------------------------ petite grammaire des textes à trous
+// Un nom de lieu (ou de faction, de personne) injecté après « de » ou « à » dans un texte français : la contraction et l'élision
+// que la grammaire demande. Les noms qui commencent par un article (« Les Hauts de l'Ouest », « Le Port et La Possession »,
+// « La route du Littoral », « L'Est : … », « Une case créole… ») perdent la majuscule de l'article une fois contractés :
+//   de + Le → du, de + Les → des, de + La → de la, de + L' → de l', de + Un/Une → d'un/d'une, de + voyelle → d' ;
+//   à + Le → au, à + Les → aux, à + La → à la, à + L' → à l', à + Un/Une → à un/à une. Sans article : « de Saint-Denis ».
+const ARTICLE = /^(Les|Le|La|Une|Un)(?=\s)|^(L['’])(?=\p{L})/u;
+const VOYELLE = /^[AEIOUYÂÀÊÉÈËÎÏÔÛÙÜaeiouyâàêéèëîïôûùü]/u;
+export function avecPreposition(preposition, nom) {
+  const p = String(preposition ?? "").trim(), n = String(nom ?? "").trim();
+  if (!n) return p;
+  const maj = p !== p.toLowerCase();   // « De » ou « À » en tête de phrase
+  const cap = s => (maj ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+  const de = p.toLowerCase() === "de";
+  const m = ARTICLE.exec(n);
+  if (m) {
+    const art = (m[1] ?? m[2]).toLowerCase().replace("’", "'"), reste = n.slice(m[0].length);
+    const formes = de ? { le: "du ", les: "des ", la: "de la ", "l'": "de l'", un: "d'un ", une: "d'une " }
+      : { le: "au ", les: "aux ", la: "à la ", "l'": "à l'", un: "à un ", une: "à une " };
+    return cap(`${formes[art]}${reste.trimStart()}`);
+  }
+  if (de && VOYELLE.test(n)) return cap(`d'${n}`);
+  return `${p} ${n}`;
+}
+
+// « 1 jour(s) », « 3 watch(es) », « 2 recette(s) possible(s) » : le pluriel accordé au nombre qui précède (les mots marqués qui se
+// suivent). Français : pluriel à partir de 2 (« 0 jour », « 1,5 jour ») ; anglais : pluriel sauf pour 1 (« 0 days », « 1 day »).
+// Une marque « (s) » sans nombre devant reste telle quelle.
+const MOT_MARQUE = String.raw`[\p{L}'’-]+\((?:s|es)\)`;
+const NOMBRE_ET_MOTS = new RegExp(String.raw`(-?\d+(?:[.,]\d+)?)(\s+)(${MOT_MARQUE}(?:\s+${MOT_MARQUE})*)`, "gu");
+export function accorderPluriels(texte, langue = "fr") {
+  const en = String(langue ?? "").toLowerCase().startsWith("en");
+  return String(texte ?? "").replace(NOMBRE_ET_MOTS, (_, n, esp, mots) => {
+    const v = Math.abs(Number(String(n).replace(",", ".")));
+    const pluriel = en ? v !== 1 : v >= 2;
+    return `${n}${esp}${mots.replace(/\((s|es)\)/g, (__, marque) => (pluriel ? marque : ""))}`;
+  });
+}
+
+// Remplit un texte à trous (« {region} ») avec ses paramètres : contraction après « de »/« à » (avecPreposition), puis pluriels
+// accordés (accorderPluriels). Un trou sans paramètre reste tel quel.
+export function remplir(gabarit, params = {}, langue = "fr") {
+  const p = params && typeof params === "object" ? params : {};
+  const a = k => Object.prototype.hasOwnProperty.call(p, k) && p[k] !== undefined && p[k] !== null;
+  const texte = String(gabarit ?? "")
+    .replace(/(?<![\p{L}'’])(de|De|à|À) \{(\w+)\}/gu, (m, prep, k) => (a(k) ? avecPreposition(prep, p[k]) : m))
+    .replace(/\{(\w+)\}/g, (m, k) => (a(k) ? String(p[k]) : m));
+  return accorderPluriels(texte, langue);
+}

@@ -43,6 +43,7 @@
     "Transports": { "pied": "On foot", "vehicule": "Vehicle", "bateau": "Boat" },
     "Zones": { "littoral": "Coast", "hauts": "Highlands", "cirque": "Cirque", "volcan": "Volcano", "foret": "Forest" },
     "Routes": { "ouverte": "open", "difficile": "difficult", "coupee": "cut off" },
+    "Eaux": { "aucune": "no water", "citerne": "a cistern", "riviere": "a river", "source": "a spring", "puits": "a well", "reseau": "the water mains" },
     "Sources": { "vu": "seen", "radio": "radio", "rumeur": "rumour" },
     "Infestation": { "inconnue": "Unknown", "calme": "Quiet", "presente": "Present", "dense": "Dense", "grouillante": "Swarming" },
     "Pillage": { "inconnu": "Unknown", "intact": "Intact", "entame": "Picked at", "maigre": "Meagre", "vide": "Empty" },
@@ -106,6 +107,8 @@
       "survivant-declaree": "{nom} falls ill ({affliction}).", "survivant-aggravee": "{nom}'s condition worsens ({affliction}).", "survivant-guerie": "{nom} recovers ({affliction}).",
       "progression": "{nom} improves at {competence} (level {niveau}).", "progression-enseignee": "{nom} improves at {competence} thanks to {maitre} (level {niveau}).",
       "stocks-bas-eau": "Only {n} day(s) of water left.", "stocks-bas-nourriture": "Only {n} day(s) of food left.",
+      "stocks-vides-eau": "Out of water.", "stocks-vides-nourriture": "Out of food.",
+      "stocks-moins-un-jour-eau": "Less than a day of water left.", "stocks-moins-un-jour-nourriture": "Less than a day of food left.",
       "manque-nourriture": "Not enough to eat for everyone ({n} share(s) short).",
       "palier-visibilite": "The shelter is getting more visible (visibility {visibilite}, tier {palier}).",
       "fete-manquante": "holiday or year missing", "fete-deja": "already celebrated this year", "fete-rations": "{n} rations needed",
@@ -291,7 +294,8 @@
       "Nom": "Name", "Age": "Age", "Enfance": "Childhood", "Passe": "Background (on day zero)", "Traits": "Traits", "AjouterTrait": "Add a trait…",
       "Verrou": "Keep (lock)", "Favoriser": "Favour this skill", "Incapable": "Incapable of", "Tirer": "Roll", "Creer": "Create this survivor",
       "Rejoindre": "Join the group", "Joueur": "Player", "Statut": "Status", "Personne": "No one", "SansNom": "Nameless survivor",
-      "Cree": "{nom} is created.", "GraineRegion": "On day zero, they were around {region}.",
+      "Cree": "{nom} is created.", "GraineRegion": "On day zero, they were around {region}.", "GraineRegionM": "On day zero, he was around {region}.",
+      "GraineRegionF": "On day zero, she was around {region}.",
       "BudgetAide": "Sum of levels: a starting survivor has between {min} and {max}."
     },
     "Tableau": {

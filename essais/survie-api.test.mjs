@@ -354,3 +354,14 @@ test("assaut : la tour de guet ajoute son bonus de vigilance à la garde (§1.7,
   const as = await M.api.assaut({ force: 1, type: "Livides errants" });
   assert.equal(as.desDefense.length, Math.min(15, Math.max(1, b.defense + niveau + Math.min(2, outil + 1))), `défense ${b.defense}, vigilance ${niveau}, outil ${outil}`);
 });
+
+test("générateur : la phrase de la région suit le genre (il, elle, tournure neutre) et contracte le nom (« du côté des Hauts… »)", async () => {
+  const M = await nouveauMonde();
+  const c = M.api.contenu();
+  const s = genre => ({ nom: "X", genre, histoire: { graine: { phrases: [], region: "hauts-de-l-ouest" } } });
+  assert.equal(M.interne.versTirage(s("m"), c).graine, "Au jour zéro, il était du côté des Hauts de l'Ouest.");
+  assert.equal(M.interne.versTirage(s("f"), c).graine, "Au jour zéro, elle était du côté des Hauts de l'Ouest.");
+  assert.equal(M.interne.versTirage(s(""), c).graine, "Au jour zéro, sa route passait du côté des Hauts de l'Ouest.");
+  const sd = { nom: "Y", genre: "f", histoire: { graine: { phrases: [], region: "saint-denis" } } };
+  assert.equal(M.interne.versTirage(sd, c).graine, "Au jour zéro, elle était du côté de Saint-Denis.");
+});

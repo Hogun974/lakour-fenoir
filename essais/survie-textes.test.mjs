@@ -168,3 +168,100 @@ test("localiser (couche Foundry) : français, anglais, repli des anciennes entr�
   assert.deepEqual(entreeTexte("libre"), { texte: "libre" });
   assert.equal(entreeTexte(""), null);
 });
+
+test("grammaire : contraction après « de »/« à » des noms à article, pluriels accordés (fr, en)", () => {
+  const cas = [
+    ["Les Hauts de l'Ouest", "des Hauts de l'Ouest", "aux Hauts de l'Ouest"],
+    ["Le Port et La Possession", "du Port et La Possession", "au Port et La Possession"],
+    ["La Plaine des Palmistes et Bélouve", "de la Plaine des Palmistes et Bélouve", "à la Plaine des Palmistes et Bélouve"],
+    ["L'Est : Saint-André, Saint-Benoît, Sainte-Rose", "de l'Est : Saint-André, Saint-Benoît, Sainte-Rose", "à l'Est : Saint-André, Saint-Benoît, Sainte-Rose"],
+    ["Le Tampon et la Plaine des Cafres", "du Tampon et la Plaine des Cafres", "au Tampon et la Plaine des Cafres"],
+    ["Saint-Denis", "de Saint-Denis", "à Saint-Denis"],
+    ["Cilaos", "de Cilaos", "à Cilaos"],
+    ["Une case créole de Hell-Bourg", "d'une case créole de Hell-Bourg", "à une case créole de Hell-Bourg"],
+    ["Îlet à Bourse", "d'Îlet à Bourse", "à Îlet à Bourse"],
+    ["Lazaret", "de Lazaret", "à Lazaret"]   // « La » seulement comme mot entier
+  ];
+  for (const [nom, de, a] of cas) {
+    assert.equal(L.avecPreposition("de", nom), de);
+    assert.equal(L.avecPreposition("à", nom), a);
+  }
+  assert.equal(L.remplir("Au jour zéro, il était du côté de {region}.", { region: "Les Hauts de l'Ouest" }), "Au jour zéro, il était du côté des Hauts de l'Ouest.");
+  assert.equal(L.remplir("Fouille de {site} à {region} : {butin}.", { site: "La ferme", region: "Le Tampon", butin: "rien" }), "Fouille de la ferme au Tampon : rien.");
+  assert.equal(L.remplir("De {de} à {vers}", { de: "Les Hauts", vers: "Le Port" }), "Des Hauts au Port");
+  assert.equal(L.remplir("Un trou {inconnu} reste.", {}), "Un trou {inconnu} reste.");
+  // Pluriels : français (pluriel dès 2), anglais (pluriel sauf 1), plusieurs mots marqués à la suite.
+  assert.equal(L.accorderPluriels("Plus que 1 jour(s) d'eau."), "Plus que 1 jour d'eau.");
+  assert.equal(L.accorderPluriels("Plus que 2 jour(s) d'eau."), "Plus que 2 jours d'eau.");
+  assert.equal(L.accorderPluriels("0 quart(s)"), "0 quart");
+  assert.equal(L.accorderPluriels("3 recette(s) possible(s)"), "3 recettes possibles");
+  assert.equal(L.accorderPluriels("Time passes (4 watch(es))", "en"), "Time passes (4 watches)");
+  assert.equal(L.accorderPluriels("Time passes (1 watch(es))", "en"), "Time passes (1 watch)");
+  assert.equal(L.accorderPluriels("0 day(s)", "en"), "0 days");
+  assert.equal(L.accorderPluriels("survivant(s) sans nombre"), "survivant(s) sans nombre");
+});
+
+test("stocks bas : plus rien, moins d'un jour, 1 ou 2 jours (clés et repli français accordés)", () => {
+  assert.deepEqual(L.alerteStocks("eau", 0, 0), ["stocks-vides-eau", { n: 0 }, "Plus d'eau."]);
+  assert.deepEqual(L.alerteStocks("nourriture", 0, 3), ["stocks-moins-un-jour-nourriture", { n: 0 }, "Moins d'un jour de nourriture."]);
+  assert.deepEqual(L.alerteStocks("eau", 1, 4), ["stocks-bas-eau", { n: 1 }, "Plus que 1 jour d'eau."]);
+  assert.deepEqual(L.alerteStocks("nourriture", 2, 9), ["stocks-bas-nourriture", { n: 2 }, "Plus que 2 jours de nourriture."]);
+  for (const [cle] of [L.alerteStocks("eau", 0, 0), L.alerteStocks("eau", 0, 1), L.alerteStocks("nourriture", 0, 0), L.alerteStocks("nourriture", 0, 1)]) {
+    assert.ok(L.CLES_TEXTES.includes(cle), cle);
+  }
+});
+
+test("date et heure du jeu dans la langue du client (fr par défaut, en)", () => {
+  assert.equal(L.dateTexte(1, "2026-12-04"), "samedi 5 décembre 2026");
+  assert.equal(L.dateTexte(1, "2026-12-04", "en"), "Saturday 5 December 2026");
+  assert.equal(L.dateTexte(0, "2026-12-01", "fr"), "mardi 1er décembre 2026");
+  assert.equal(L.dateTexteIso("2027-01-01", "en-GB"), "Friday 1 January 2027");
+  assert.equal(L.dateTexte(1, "2026-12-04", "xx"), "samedi 5 décembre 2026", "langue inconnue : français");
+  const fr = L.quand(6, "2026-12-04"), en = L.quand(6, "2026-12-04", "en");
+  assert.deepEqual([fr.heure, fr.dateTexte], ["18 h", "samedi 5 décembre 2026"]);
+  assert.deepEqual([en.heure, en.dateTexte], ["6 pm", "Saturday 5 December 2026"]);
+  assert.equal(en.date, fr.date, "la date ISO ne dépend pas de la langue");
+});
+
+test("localiser : noms du contenu (savoir-faire, installation), sources d'eau, contraction, pluriels et date dans la langue", async () => {
+  const { localiser, t } = await import("../systems/lakour-survie/scripts/donnees.mjs");
+  const contenu = {
+    fr: { savoirs: [{ cle: "mecanique", nom: "Mécanique" }, { cle: "conserverie", nom: "Conserverie" }], installations: [{ cle: "atelier", nom: "Atelier" }] },
+    en: { savoirs: [{ cle: "mecanique", nom: "Mechanics" }, { cle: "conserverie", nom: "Canning" }], installations: [{ cle: "atelier", nom: "Workshop" }] }
+  };
+  const avec = (langue, fn) => {
+    const dict = langue === "en" ? EN : FR;
+    const formater = (cle, d = {}) => { const brut = chemin(dict, cle); return typeof brut === "string" ? brut.replace(/\{(\w+)\}/g, (_, k) => d[k] ?? `{${k}}`) : cle; };
+    const avant = globalThis.game;
+    globalThis.game = {
+      i18n: { localize: c => formater(c), format: formater, has: c => typeof chemin(dict, c) === "string", lang: langue },
+      lakourSurvie: { contenu: () => contenu[langue] }
+    };
+    try { return fn(); } finally { globalThis.game = avant; }
+  };
+  const savoir = { cle: "savoir-manquant", params: { savoir: "mecanique" }, texte: "savoir-faire manquant : mecanique" };
+  assert.equal(avec("fr", () => localiser(savoir)), "savoir-faire manquant : Mécanique");
+  assert.equal(avec("en", () => localiser(savoir)), "missing know-how: Mechanics");
+  assert.equal(avec("fr", () => localiser({ cle: "savoir-manquant", params: { savoir: "conserverie" } })), "savoir-faire manquant : Conserverie");
+  assert.equal(avec("fr", () => localiser({ cle: "savoir-manquant", params: { savoir: "inconnu" } })), "savoir-faire manquant : inconnu", "clé inconnue : telle quelle");
+  assert.equal(avec("en", () => localiser({ cle: "requiert", params: { installation: "atelier", niveau: 2 } })), "needed first: Workshop level 2");
+  assert.equal(avec("fr", () => localiser({ cle: "requiert-hors-service", params: { installation: "Atelier" } })), "Atelier est hors service", "un nom passe tel quel");
+  assert.equal(avec("fr", () => localiser({ cle: "eau-requise", params: { eau: "riviere / source", ici: "reseau" } })), "il faut une rivière / une source sur le site (ici : le réseau d'eau)");
+  assert.equal(avec("en", () => localiser({ cle: "eau-requise", params: { eau: "puits", ici: "aucune" } })), "the site needs a well (here: no water)");
+  // Contraction des noms de région, pluriels accordés.
+  assert.equal(avec("fr", () => localiser({ cle: "arrivee", params: { region: "Les Hauts de l'Ouest" } })), "Le groupe arrive aux Hauts de l'Ouest.");
+  assert.equal(avec("fr", () => localiser({ cle: "horde-dispersee", params: { region: "Le Port et La Possession" } })), "La horde du Port et La Possession se disperse.");
+  assert.equal(avec("en", () => localiser({ cle: "arrivee", params: { region: "Les Hauts de l'Ouest" } })), EN.LAKOUR_SURVIE.Faits.arrivee.replace("{region}", "Les Hauts de l'Ouest"));
+  assert.equal(avec("fr", () => localiser({ cle: "stocks-bas-eau", params: { n: 1 } })), "Plus que 1 jour d'eau.");
+  assert.equal(avec("fr", () => localiser({ cle: "stocks-bas-nourriture", params: { n: 2 } })), "Plus que 2 jours de nourriture.");
+  assert.equal(avec("en", () => localiser({ cle: "stocks-bas-eau", params: { n: 1 } })), "Only 1 day of water left.");
+  assert.equal(avec("fr", () => localiser({ cle: "stocks-vides-eau", params: { n: 0 } })), "Plus d'eau.");
+  assert.equal(avec("en", () => localiser({ cle: "stocks-moins-un-jour-nourriture", params: { n: 0 } })), "Less than a day of food left.");
+  assert.equal(avec("en", () => t("LAKOUR_SURVIE.Carte.Temps", { n: 4 })), "Time passes (4 watches)");
+  assert.equal(avec("en", () => t("LAKOUR_SURVIE.Carte.Temps", { n: 1 })), "Time passes (1 watch)");
+  assert.equal(avec("fr", () => t("LAKOUR_SURVIE.Carte.Temps", { n: 1 })), "Le temps passe (1 quart)");
+  // Une date gardée en ISO (journal du début de partie) se lit dans la langue du lecteur.
+  const debut = { cle: "Journal.Debut", params: { date: "2026-12-05", region: "Les Hauts de l'Ouest" } };
+  assert.ok(avec("en", () => localiser(debut)).includes("Saturday 5 December 2026"));
+  assert.ok(avec("fr", () => localiser(debut)).includes("samedi 5 décembre 2026 : le groupe est aux Hauts de l'Ouest"));
+});

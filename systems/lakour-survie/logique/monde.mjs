@@ -48,7 +48,7 @@
 import { CLES_PHASES, ALTITUDE_BAS, NATURE, RESEAUX, JOURNAL_SECRET_MAX, borner, DATE_DEPART } from "./constantes.mjs";
 import { creerHasard, deriverHasard, entier, chance, tirerPoids, arrondiHasard, choisir, graineSure } from "./hasard.mjs";
 import { regionsDe, regionDe, factionDe, siteDe, indexer, natureRegion, reservesDepart, sontVoisines } from "./contenu.mjs";
-import { cleTexteDe } from "./textes.mjs";
+import { cleTexteDe, avecPreposition } from "./textes.mjs";
 import { natureInitiale, regenererNature } from "./abri.mjs";
 import { phaseDuJour, saisonDuJour, dateDuJour } from "./temps.mjs";
 import { partPillage, reseauxActifs } from "./renseignements.mjs";
@@ -274,7 +274,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
       if (nait) {
         const horde = { id: nouvelId("h"), region: r.cle, taille: entier(1, 3, h), cap: null, depuis: jour };
         monde.hordes.push(horde);
-        fait(r.cle, "horde-nait", `Une horde se forme à ${nomRegion(r.cle)} (taille ${horde.taille}).`, "voisins", { horde: horde.id }, { region: nomRegion(r.cle), taille: horde.taille });
+        fait(r.cle, "horde-nait", `Une horde se forme ${avecPreposition("à", nomRegion(r.cle))} (taille ${horde.taille}).`, "voisins", { horde: horde.id }, { region: nomRegion(r.cle), taille: horde.taille });
       }
     }
   }
@@ -285,7 +285,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
       const de = ho.region;
       ho.region = ho.cap;
       ho.cap = null;
-      fait(ho.region, "horde-arrive", `Une horde venue de ${nomRegion(de)} entre à ${nomRegion(ho.region)}.`, "voisins", { horde: ho.id, de }, { de: nomRegion(de), region: nomRegion(ho.region) });
+      fait(ho.region, "horde-arrive", `Une horde venue ${avecPreposition("de", nomRegion(de))} entre ${avecPreposition("à", nomRegion(ho.region))}.`, "voisins", { horde: ho.id, de }, { de: nomRegion(de), region: nomRegion(ho.region) });
     } else {
       ho.cap = null;
       if (chance(R.horde.mouvement, h)) {
@@ -306,7 +306,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
     if (phase === "apres" && Number(r?.altitude) < ALTITUDE_BAS) p += R.horde.dispersionChaleur;
     if (chance(p, h)) ho.taille -= 1;
   }
-  for (const ho of monde.hordes) if (ho.taille <= 0) fait(ho.region, "horde-dispersee", `La horde de ${nomRegion(ho.region)} se disperse.`, "region", { horde: ho.id }, { region: nomRegion(ho.region) });
+  for (const ho of monde.hordes) if (ho.taille <= 0) fait(ho.region, "horde-dispersee", `La horde ${avecPreposition("de", nomRegion(ho.region))} se disperse.`, "region", { horde: ho.id }, { region: nomRegion(ho.region) });
   monde.hordes = monde.hordes.filter(ho => ho.taille > 0).map(ho => ({ ...ho, taille: Math.min(5, ho.taille) }));
 
   // 10. Pillage par les autres, nature.
@@ -340,7 +340,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
         if (v && monde.regions[v]) {
           monde.regions[v].factions[f] = borner((monde.regions[v].factions[f] ?? 0) + 0.5, 0, 5);
           reg.factions[f] = borner(reg.factions[f] - 0.3, 0, 5);
-          fait(v, "faction-arrive", `Un convoi de ${def?.nom ?? f} arrive à ${nomRegion(v)}.`, "voisins", { faction: f }, { faction: def?.nom ?? f, region: nomRegion(v) });
+          fait(v, "faction-arrive", `Un convoi ${avecPreposition("de", def?.nom ?? f)} arrive ${avecPreposition("à", nomRegion(v))}.`, "voisins", { faction: f }, { faction: def?.nom ?? f, region: nomRegion(v) });
         }
       }
     }

@@ -23,9 +23,10 @@ export function contexteAtelier() {
       produit: `${produit}${Number(r.produit?.n) > 1 ? ` × ${r.produit.n}` : ""}`
     };
   }).sort((a, b) => Number(b.ok) - Number(a.ok) || a.nom.localeCompare(b.nom));
+  const possibles = recettes.filter(r => r.ok).length;
   return {
     gm: game.user.isGM, demarree: Boolean(etat.demarree), recettes,
-    possibles: recettes.filter(r => r.ok).length,
+    possibles, intro: t("LAKOUR_SURVIE.Atelier.Intro", { n: possibles }),   // par t() : pluriel accordé
     artisans: options([["", t("LAKOUR_SURVIE.Atelier.LeMeilleur")], ...survivantsDuGroupe(etat).filter(a => L.peutAgir(a.system)).map(a => [a.id, a.name])], "")
   };
 }

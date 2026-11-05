@@ -22,7 +22,7 @@
       <div><i class="fa-solid fa-volume-high"></i><strong>{{bruit}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.Bruit"}}</span></div>
       <div><i class="fa-solid fa-seedling"></i><strong>{{bilan.joursAutonomes}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.JoursAutonomes"}}</span></div>
     </div>
-    {{#if bilan.surpeuplement}}<p class="survie-avertissement">{{localize "LAKOUR_SURVIE.Abri.Surpeuplement" n=bilan.surpeuplement}}</p>{{/if}}
+    {{#if bilan.surpeuplement}}<p class="survie-avertissement">{{bilan.surpeuplement}}</p>{{/if}}
     {{/if}}
 
     <h3><i class="fa-solid fa-boxes-stacked"></i> {{localize "LAKOUR_SURVIE.Abri.Stocks"}}</h3>
