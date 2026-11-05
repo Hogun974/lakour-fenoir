@@ -5,6 +5,13 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Système 0.1.4 · Contenu 0.2.3 — 5 novembre 2026
+
+- **Mise à jour commune aux quatre modules LaKour** (`scripts/mise-a-jour.js`, identique dans Fénoir, les Veillées, Warcraft et
+  40k) : en plus de la 0.2.2, les pages sans clé se retrouvent par leur identifiant, les pages ajoutées ou réécrites par le
+  MJ IA ne sont jamais touchées (repris des autres modules) et une page du module que le compendium n'a plus est retirée si
+  personne ne l'a retouchée. Le système ne change pas, son numéro suit la publication.
+
 ## Système 0.1.3 · Contenu 0.2.2 — 5 novembre 2026
 
 - **Mise à jour des mondes déjà installés** (`scripts/mise-a-jour.js`) : l'installateur ne sautait plus seulement les journaux

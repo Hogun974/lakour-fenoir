@@ -14,7 +14,7 @@ import { avecEmpreintes, planMiseAJour } from "./mise-a-jour.js";
 // ID : « lakour-fenoir » ou « lakour-fenoir-en » (version anglaise engendrée, mêmes scripts) ; tout ce qui porte l'identifiant
 // (réglages, drapeaux, compendiums, chemin du registre) passe par lui.
 const SYSTEME = "lakour-survie";
-const VERSION_CONTENU = "0.2.2"; // = module.json (essais/mise-a-jour-fenoir.test.mjs)
+const VERSION_CONTENU = "0.2.3"; // = module.json (essais/mise-a-jour-fenoir.test.mjs)
 const FICHIER_DONNEES = `modules/${ID}/assets/donnees.json`;
 
 // ---------- 1. Le registre de l'île
@@ -99,14 +99,16 @@ export function installer() {
   return installationEnCours;
 }
 
-// Un journal déjà dans le monde : pages nouvelles ajoutées, pages intactes remises à jour, pages retouchées gardées.
+// Un journal déjà dans le monde : pages nouvelles ajoutées, pages intactes remises à jour (ou retirées si le compendium ne
+// les a plus), pages retouchées à la main et pages du MJ IA gardées.
 async function mettreAJourJournal(journal, modele) {
-  const { creer, maj, gardees } = planMiseAJour(ID, journal.pages.contents.map(p => p.toObject()), modele.pages.contents.map(p => p.toObject()));
+  const { creer, maj, supprimer, gardees } = planMiseAJour(ID, journal.pages.contents.map(p => p.toObject()), modele.pages.contents.map(p => p.toObject()));
   if (creer.length) await journal.createEmbeddedDocuments("JournalEntryPage", creer, { keepId: true });
   if (maj.length) await journal.updateEmbeddedDocuments("JournalEntryPage", maj);
+  if (supprimer.length) await journal.deleteEmbeddedDocuments("JournalEntryPage", supprimer);
   if (journal.getFlag(ID, "version") !== VERSION_CONTENU) await journal.setFlag(ID, "version", VERSION_CONTENU);
-  if (!creer.length && !maj.length && !gardees.length) return null;
-  let texte = game.i18n.format("LAKOURFENOIR.MisAJour", { journal: journal.name, ajouts: creer.length, maj: maj.length });
+  if (!creer.length && !maj.length && !supprimer.length && !gardees.length) return null;
+  let texte = game.i18n.format("LAKOURFENOIR.MisAJour", { journal: journal.name, ajouts: creer.length, maj: maj.length + supprimer.length });
   if (gardees.length) texte += ` ${game.i18n.format("LAKOURFENOIR.Gardees", { liste: gardees.join(", ") })}`;
   return texte;
 }
