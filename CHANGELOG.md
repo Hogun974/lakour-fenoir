@@ -5,6 +5,13 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Système 0.1.5 · Contenu 0.2.4 — 6 novembre 2026
+
+- **Mise à jour des journaux : pages intactes mieux reconnues** (`scripts/mise-a-jour.js`, commun aux quatre modules LaKour) :
+  à la création d'une page, le serveur Foundry pose sa date de modification quelques millisecondes après sa date de création
+  (1 à 59 ms relevés sur LaKour). Une page importée avant les empreintes passait donc pour retouchée et n'était plus remise à
+  jour. Elle compte maintenant comme intacte si elle n'a pas été modifiée plus de 5 secondes après sa création.
+
 ## Système 0.1.4 · Contenu 0.2.3 — 5 novembre 2026
 
 - **Mise à jour commune aux quatre modules LaKour** (`scripts/mise-a-jour.js`, identique dans Fénoir, les Veillées, Warcraft et
