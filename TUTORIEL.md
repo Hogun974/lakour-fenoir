@@ -45,7 +45,7 @@ Fénoir tient en **trois paquets** à installer, plus un monde :
 |---|---|---|
 | Système *Fénoir — survie à La Réunion* | `lakour-survie` | les règles, les fiches, le temps, la simulation du monde |
 | Module *La Kour — Fénoir* | `lakour-fenoir` (français) ou `lakour-fenoir-en` (anglais) | le contenu : l'île, les abris, les installations, les guides |
-| Module *La Kour – MJ IA* | `lakour-mj-ia` | le coffre qui garde le monde réel secret, et le MJ IA si vous le voulez |
+| Module *La Kour – MJ IA* | `lakour-mj-ia` (**0.44.1** ou plus) | le coffre qui garde le monde réel secret, et le MJ IA si vous le voulez |
 
 Le module MJ IA est **nécessaire même sans IA** : c'est lui qui chiffre l'état réel du monde (hordes, réserves, coupures…)
 pour que les joueurs ne puissent pas le lire dans leur navigateur. Sans lui, le jeu tourne, mais le MJ est prévenu en
@@ -279,6 +279,22 @@ savoir : démarrez la partie (section 6), puis la séance du MJ IA ; il lit l'é
 
 ![Le MJ IA en séance](docs/captures/mj-ia.png)
 
+### Compagnons IA, coût et pilote automatique
+
+- **Modèle des compagnons** : *Réglages › MJ IA › Modèle des compagnons IA* est une liste. *Par défaut* (vide) prend un
+  modèle économique du fournisseur actif (Claude Haiku 5.5, ou le moins cher d'OpenAI) ; un modèle de l'autre
+  fournisseur revient à ce défaut.
+- **Coût** : la console du MJ IA affiche le coût estimé de la séance en cours (narrateur, compagnons, voix,
+  transcription) face au budget ; rouvrez-la pour le voir à jour. Au budget atteint, le narrateur s'arrête et vous
+  prévient, et les compagnons passent en mode simple, sans IA.
+- **Pilote automatique** : quand plus aucun joueur connecté n'a le jeton de son survivant sur la scène active et que des
+  compagnons IA y sont, le MJ IA peut mener seul la suite (il résout leurs décisions avec les outils `survie_*`, qui font
+  passer le temps). Il faut l'autonomie *Autonome* : en mode validation, celui du monde vierge, vous recevez seulement un
+  avis. Le pilote rend la main au retour d'un joueur, s'arrête au budget ou après 60 étapes (réglable), et la console
+  l'arrête ou le relance.
+
+Le détail : [README, « Ce que le moteur 0.44.1 apporte à la table »](README.md#ce-que-le-moteur-0441-apporte-à-la-table).
+
 ## 10. La voix et le relais audio TURN (facultatif)
 
 Foundry a un chat audio et vidéo intégré (*Réglages › Configurer l'audio/vidéo*). Les navigateurs s'y parlent directement ;
@@ -293,6 +309,20 @@ Sinon, renseignez dans l'onglet serveur de cette fenêtre l'adresse de votre rel
 - la documentation de Foundry (*Audio/Video Chat*) décrit les options et les ports à ouvrir.
 
 La voix du MJ IA (synthèse vocale, écoute) est une autre affaire, décrite dans le tutoriel du moteur.
+
+### Les caméras des joueurs
+
+Avec la vidéo de Foundry, ouvrez la console du MJ IA (chapeau de magicien) : son bloc **Caméras des joueurs** dit si
+elles sont permises ou coupées.
+
+1. Le monde est en audio seul ? **Ajouter la vidéo** le passe en « Audio et vidéo » (le serveur relais TURN est gardé) ;
+   chacun recharge la page quand Foundry le propose, puis choisit sa caméra dans *Configurer l'audio et la vidéo ›
+   Client*.
+2. Des joueurs sont nommés « sans droit de caméra » ? **Donner la caméra aux joueurs** accorde le droit « Diffuser la
+   vidéo » au rôle Joueur.
+3. **Couper les caméras** et **Permettre les caméras** basculent le réglage *Caméras des joueurs permises* (aussi dans
+   *Réglages › MJ IA*, coché par défaut). Coupées, aucune caméra de joueur ne s'affiche chez personne, même si un joueur
+   rallume la sienne depuis la console de son navigateur ; la vôtre reste, et **les micros ne bougent pas**.
 
 ## 11. Dépannage
 
@@ -310,6 +340,8 @@ La voix du MJ IA (synthèse vocale, écoute) est une autre affaire, décrite dan
 | Pas de bandeau en haut de l'écran. | Réglage client **Bandeau de survie** désactivé. | *Réglages › Configurer les paramètres › Fénoir*. |
 | Le MJ IA ne répond plus. | Budget de la séance atteint, ou action en attente de validation. | Voir la console du MJ IA ; augmentez le budget ou validez. Détails dans le tutoriel du moteur. |
 | La voix ne passe pas entre deux joueurs. | Réseau qui bloque les connexions directes. | Section 10 : un relais TURN. |
+| Les caméras des joueurs ne s'affichent pas. | Monde en audio seul, caméras coupées par le réglage, ou joueurs sans droit « Diffuser la vidéo ». | Console du MJ IA, bloc **Caméras des joueurs** : *Ajouter la vidéo*, *Permettre les caméras* ou *Donner la caméra aux joueurs* (section 10). |
+| Le pilote automatique ne démarre pas. | Autonomie en validation, réglage du pilote décoché, ou un joueur connecté a encore son jeton visible sur la scène active. | Passez l'autonomie en *Autonome* ; un joueur hors ligne ne compte pas (section 9). |
 
 Un autre problème ? Ouvrez une [issue](https://github.com/Hogun974/lakour-fenoir/issues) en décrivant votre version de Foundry,
 celles des trois paquets, et ce que dit la console du navigateur (F12). Ne collez jamais de clé d'API ni de mot de passe.

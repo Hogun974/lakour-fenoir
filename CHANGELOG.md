@@ -5,7 +5,16 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
-## Système 0.1.5 · Contenu 0.2.4 — 6 novembre 2026
+## Non publié
+
+- **Moteur MJ IA 0.44.1** (sous-module `modules/lakour-mj-ia`) : réglage « Caméras des joueurs permises » et bloc
+  « Caméras des joueurs » de la console (couper ou permettre, ajouter la vidéo au monde, donner la caméra aux joueurs ;
+  le micro n'est jamais touché), modèle des compagnons IA choisi dans une liste (vide : un modèle économique du
+  fournisseur actif), coût de la séance compté à chaque appel et budget respecté par le narrateur comme par les
+  compagnons, pilote automatique qui ne compte que les joueurs connectés.
+- README (français, anglais) : section « Ce que le moteur 0.44.1 apporte à la table », moteur requis 0.44.1. Tutoriels :
+  compagnons, coût et pilote automatique dans la section du MJ IA, caméras des joueurs dans celle de la voix, deux lignes
+  de dépannage, moteur 0.44.1 dans la liste des paquets.
 
 - **Mise à jour des journaux : pages intactes mieux reconnues** (`scripts/mise-a-jour.js`, commun aux quatre modules LaKour) :
   à la création d'une page, le serveur Foundry pose sa date de modification quelques millisecondes après sa date de création

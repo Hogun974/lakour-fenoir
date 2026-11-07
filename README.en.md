@@ -87,10 +87,11 @@ The contract between the pieces: [`docs/survie-contrat.md`](docs/survie-contrat.
   companions, run by the AI GM or by a human GM.
 - **Foundry VTT v14** (verified with 14.370). No game system to buy, no paid content: the system is provided here, with
   everything needed to play.
-- The **AI GM module** (`lakour-mj-ia`) is **required for the vault**: it seals the real state of the world (hordes,
-  infestation, what is left to loot, what happened out of sight) and keeps it out of the players' browsers. Without an AI key
-  it costs nothing and contacts nobody. Without the module, the system works, but the real world is kept in the clear in the
-  world settings, and the GM is warned permanently ("players can read the state of the world").
+- The **AI GM module** (`lakour-mj-ia`, **0.44.1** or later, the submodule's version) is **required for the vault**: it
+  seals the real state of the world (hordes, infestation, what is left to loot, what happened out of sight) and keeps it
+  out of the players' browsers. Without an AI key it costs nothing and contacts nobody. Without the module, the system
+  works, but the real world is kept in the clear in the world settings, and the GM is warned permanently ("players can
+  read the state of the world").
 - Optional: a Claude or OpenAI key for the AI GM, the companions and voice; Foundry's built-in A/V to talk.
 
 ## Installation
@@ -393,6 +394,38 @@ and everything around it:
   **dummy** provider to try everything with no key and no cost.
 
 The full guide is installed in the world by the module and can be read in [its repository](https://github.com/Hogun974/lakour-mj-ia).
+
+### What engine 0.44.1 brings to the table
+
+These features come from the shared engine and apply to all four La Kour worlds; they need `lakour-mj-ia` **0.44.1**
+or later.
+
+- **Players' cameras.** With Foundry's built-in audio and video (A/V), the GM allows or cuts every player's camera in
+  one move: the **Players' cameras allowed** setting (*Settings › MJ IA*, checked by default), or the **Players'
+  cameras** block of the AI GM console (wizard hat), shown as soon as the world's A/V is on. That block cuts or allows
+  the cameras in one click, offers **Add video** when the world is audio only (the world switches to "Audio & Video",
+  keeping the relay server, and everyone reloads the page) and **Give players the camera** when some lack the
+  "Broadcast Video" permission (then granted to the Player role). Once cut, each player's camera is closed in their own
+  browser and hidden in every other one: a player who switched it back on from their browser console is shown to no
+  one. The GM keeps theirs, and **the microphone is never touched**. Without A/V, nothing changes.
+- **AI companions model, from a list.** The *AI companions model* setting offers *Default* (empty: a cheap model from
+  the active provider, Claude Haiku 5.5 at Anthropic or the cheapest of the list at OpenAI), the Claude models and the
+  OpenAI models the engine knows. A model from another provider than the GM's falls back to the default; a name typed by
+  hand with an older version is kept if recognised, otherwise replaced by the default.
+- **Session cost, budget kept.** Every call is counted: narrator, AI companions, voice and transcription. The AI GM
+  console shows the current session's estimated cost against the *Budget per session* (reopen it to see it up to
+  date); once the budget is reached, the narrator stops and warns the GM, and the companions no longer call a model
+  (they go on in simple mode, without AI). The estimate follows the prices recorded in the engine: the provider's bill
+  is what counts, and an OpenAI model with an unknown price is flagged in the console (the budget then cannot count
+  anything).
+- **Autopilot.** When no **connected** player's survivor has a visible token left on the active scene, but AI
+  companions do, the AI GM carries on alone, step by step: what the companions decide (search, watch, building, rest,
+  travel) is resolved with the matching `survie_*` tool, which makes time pass, without choosing for them; out of
+  combat, at most six exchanges with the companions before a pause. An offline player does not count. It needs a
+  running session, *Autonomous* autonomy and the *Autopilot (companions only)* setting checked (the default); in
+  approval mode, the empty world's, the GM only gets a notice. The autopilot hands control back as soon as a connected
+  player returns, and stops at the budget, at the step limit (60 by default) or when the game no longer moves forward;
+  the AI GM console stops or restarts it.
 
 ## Security
 

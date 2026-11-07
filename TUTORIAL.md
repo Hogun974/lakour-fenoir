@@ -41,7 +41,7 @@ Fénoir comes as **three packages** to install, plus a world:
 |---|---|---|
 | System *Fénoir — survie à La Réunion* | `lakour-survie` | the rules, the sheets, time, the world simulation |
 | Module *La Kour — Fénoir* | `lakour-fenoir-en` (English) or `lakour-fenoir` (French) | the content: the island, shelters, installations, guides |
-| Module *La Kour – MJ IA* | `lakour-mj-ia` | the vault that keeps the real world secret, and the AI GM if you want it |
+| Module *La Kour – MJ IA* | `lakour-mj-ia` (**0.44.1** or later) | the vault that keeps the real world secret, and the AI GM if you want it |
 
 The interface of the system is in English and French (it follows Foundry's language); the English content module holds
 the translated guides, regions and tables. Real place names (Saint-Denis, Cilaos, Mafate…) stay in French.
@@ -271,6 +271,21 @@ in French; it can narrate in English.
 
 ![The AI GM in session](docs/captures/mj-ia.en.png)
 
+### AI companions, cost and autopilot
+
+- **Companions model**: *Settings › MJ IA › AI companions model* is a list. *Default* (empty) takes a cheap model from
+  the active provider (Claude Haiku 5.5, or OpenAI's cheapest); a model from the other provider falls back to that
+  default.
+- **Cost**: the AI GM console shows the current session's estimated cost (narrator, companions, voice, transcription)
+  against the budget; reopen it to see it up to date. Once the budget is reached, the narrator stops and warns you, and
+  the companions go on in simple mode, without AI.
+- **Autopilot**: when no connected player has their survivor's token on the active scene and AI companions are there,
+  the AI GM can carry on alone (it resolves their decisions with the `survie_*` tools, which make time pass). It needs
+  *Autonomous* autonomy: in approval mode, the empty world's, you only get a notice. The autopilot hands control back
+  when a player returns, stops at the budget or after 60 steps (adjustable), and the console stops or restarts it.
+
+In detail: [README, "What engine 0.44.1 brings to the table"](README.en.md#what-engine-0441-brings-to-the-table).
+
 ## 10. Voice and the TURN audio relay (optional)
 
 Foundry has built-in audio and video chat (*Settings › Configure Audio/Video*). Browsers talk to each other directly;
@@ -285,6 +300,19 @@ Otherwise, enter the address of your TURN relay and its credentials in the serve
 - Foundry's documentation (*Audio/Video Chat*) describes the options and the ports to open.
 
 The AI GM's voice (speech synthesis, listening) is another matter, covered in the engine tutorial.
+
+### Players' cameras
+
+With Foundry's video, open the AI GM console (wizard hat): its **Players' cameras** block says whether they are allowed
+or cut.
+
+1. The world is audio only? **Add video** switches it to "Audio & Video" (the TURN relay server is kept); everyone
+   reloads the page when Foundry offers it, then picks a camera in *Configure Audio/Video › Client*.
+2. Some players are listed under "No camera permission"? **Give players the camera** grants the "Broadcast Video"
+   permission to the Player role.
+3. **Cut the cameras** and **Allow the cameras** toggle the *Players' cameras allowed* setting (also in *Settings › MJ
+   IA*, checked by default). Once cut, no player's camera is shown to anyone, even if a player switches theirs back on
+   from their browser console; yours stays, and **microphones are left alone**.
 
 ## 11. Troubleshooting
 
@@ -302,6 +330,8 @@ The AI GM's voice (speech synthesis, listening) is another matter, covered in th
 | No banner at the top of the screen. | **Survival banner** client setting turned off. | *Settings › Configure Settings › Fénoir*. |
 | The AI GM no longer answers. | Session budget reached, or an action waiting for approval. | Check the AI GM console; raise the budget or approve. Details in the engine tutorial. |
 | Voice does not get through between two players. | A network that blocks direct connections. | Section 10: a TURN relay. |
+| Players' cameras are not shown. | World in audio only, cameras cut by the setting, or players without the "Broadcast Video" permission. | AI GM console, **Players' cameras** block: *Add video*, *Allow the cameras* or *Give players the camera* (section 10). |
+| The autopilot does not start. | Autonomy set to approval, autopilot setting unchecked, or a connected player still has a visible token on the active scene. | Set autonomy to *Autonomous*; an offline player does not count (section 9). |
 
 Another problem? Open an [issue](https://github.com/Hogun974/lakour-fenoir/issues) with your Foundry version, the versions of
 the three packages, and what the browser console (F12) says. Never paste an API key or a password.

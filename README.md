@@ -81,10 +81,11 @@ Le contrat entre les pièces : [`docs/survie-contrat.md`](docs/survie-contrat.md
   humains complétés par des compagnons IA, menés par le MJ IA ou par un MJ humain.
 - **Foundry VTT v14** (vérifié avec la 14.370). Aucun système de jeu à acheter, aucun contenu payant : le système est fourni
   ici, et tout ce qu'il faut pour jouer avec.
-- Le module **MJ IA** (`lakour-mj-ia`) est **requis pour le coffre** : c'est lui qui scelle l'état réel du monde (hordes,
-  infestation, ce qui reste à piller, ce qui s'est passé hors de vue) et le garde hors des navigateurs des joueurs. Sans clé
-  d'IA, il ne coûte rien et ne contacte personne. Sans lui, le système marche, mais le monde réel est gardé en clair dans les
-  réglages du monde, et le MJ en est prévenu en permanence (« les joueurs peuvent lire l'état du monde »).
+- Le module **MJ IA** (`lakour-mj-ia`, **0.44.1** ou plus, la version du sous-module) est **requis pour le coffre** :
+  c'est lui qui scelle l'état réel du monde (hordes, infestation, ce qui reste à piller, ce qui s'est passé hors de vue)
+  et le garde hors des navigateurs des joueurs. Sans clé d'IA, il ne coûte rien et ne contacte personne. Sans lui, le
+  système marche, mais le monde réel est gardé en clair dans les réglages du monde, et le MJ en est prévenu en permanence
+  (« les joueurs peuvent lire l'état du monde »).
 - Facultatif : une clé Claude ou OpenAI pour le MJ IA, les compagnons et la voix ; la voix intégrée de Foundry pour parler.
 
 ## Installation
@@ -401,6 +402,37 @@ seulement) et tout ce qui va avec :
   **factice** pour tout essayer sans clé ni coût.
 
 Le guide complet est installé dans le monde par le module et se lit dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
+
+### Ce que le moteur 0.44.1 apporte à la table
+
+Ces fonctions viennent du moteur commun et valent pour les quatre mondes de La Kour ; elles demandent `lakour-mj-ia`
+**0.44.1** ou plus.
+
+- **Caméras des joueurs.** Avec la voix et la vidéo intégrées de Foundry (A/V), le MJ permet ou coupe d'un geste les
+  caméras de tous les joueurs : réglage **Caméras des joueurs permises** (*Réglages › MJ IA*, coché par défaut), ou bloc
+  **Caméras des joueurs** de la console du MJ IA (chapeau de magicien), affiché dès que l'A/V du monde est actif. Ce bloc
+  coupe ou permet les caméras d'un clic, propose **Ajouter la vidéo** quand le monde est en audio seul (le monde passe en
+  « Audio et vidéo », serveur relais gardé, et chacun recharge la page) et **Donner la caméra aux joueurs** quand certains
+  n'ont pas le droit « Diffuser la vidéo » (accordé alors au rôle Joueur). Coupée, la caméra de chaque joueur est fermée
+  dans son navigateur et cachée dans tous les autres : un joueur qui la rallumerait depuis la console de son navigateur
+  n'est affiché chez personne. Le MJ garde la sienne, et **le micro n'est jamais touché**. Sans A/V, rien ne change.
+- **Modèle des compagnons IA, dans une liste.** Le réglage *Modèle des compagnons IA* propose *Par défaut* (vide : un
+  modèle économique du fournisseur actif, Claude Haiku 5.5 chez Anthropic ou le moins cher de la liste chez OpenAI), les
+  modèles Claude et les modèles OpenAI connus du moteur. Un modèle d'un autre fournisseur que celui du MJ revient au
+  défaut ; un nom tapé à la main avec une version plus ancienne est repris s'il est reconnu, sinon remplacé par le défaut.
+- **Coût de la séance, budget tenu.** Chaque appel est compté : narrateur, compagnons IA, voix et transcription. La
+  console du MJ IA affiche le coût estimé de la séance en cours face au *Budget par séance* (rouvrez-la pour le voir à
+  jour) ; au budget atteint, le narrateur s'arrête en prévenant le MJ, et les compagnons n'appellent plus de modèle (ils
+  continuent en mode simple, sans IA). L'estimation suit les prix relevés dans le moteur : la facture du fournisseur fait
+  foi, et un modèle OpenAI dont le prix est inconnu est signalé dans la console (le budget ne peut alors rien compter).
+- **Pilote automatique.** Quand plus aucun survivant d'un joueur **connecté** n'a de jeton visible sur la scène active,
+  mais que des compagnons IA y sont, le MJ IA mène seul la suite, étape par étape : ce que décident les compagnons
+  (fouille, garde, chantier, repos, route) est résolu par l'outil `survie_*` qui convient et fait passer le temps, sans
+  qu'il choisisse à leur place ; hors combat, au plus six échanges avec les compagnons avant une pause. Un joueur hors
+  ligne ne compte pas. Il faut une séance lancée, l'autonomie *Autonome* et le réglage *Pilote automatique (compagnons
+  seuls)* coché (par défaut) ; en mode validation, celui du monde vierge, le MJ reçoit seulement un avis. Le pilote rend
+  la main dès qu'un joueur connecté revient, et s'arrête au budget, au plafond d'étapes (60 par défaut) ou quand la
+  partie n'avance plus ; la console du MJ IA l'arrête ou le relance.
 
 ## Sécurité
 
