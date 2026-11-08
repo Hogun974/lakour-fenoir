@@ -4,7 +4,7 @@
   "name": "Recrues — prix",
   "img": "icons/svg/d20-black.svg",
   "description": "<p>Ce qu'elle demande, ou ce qu'elle coûte.</p>",
-  "formula": "1d12",
+  "formula": "1d14",
   "replacement": true,
   "displayRoll": true,
   "folder": null,
@@ -198,6 +198,36 @@
       "range": [
         12,
         12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kwVqMZbC8BDLkNjH",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.kwVqMZbC8BDLkNjH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il ne dormira pas sous le même toit qu'une famille malbare : « ces gens-là font des services ». Il changera d'avis, ou il dormira dehors.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2vpDKjgvFEYupDU8",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.2vpDKjgvFEYupDU8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle se méfie des Zoreils du groupe et le dit à table : « <em>zot i prend tout' bann bon travay</em> » (ils prennent tous les bons postes).</p>",
+      "range": [
+        14,
+        14
       ],
       "weight": 1,
       "drawn": false,

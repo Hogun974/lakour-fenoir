@@ -203,6 +203,29 @@
           "cle": "factions"
         }
       }
+    },
+    {
+      "_id": "5Zr0F31OSz0Vw56Z",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.5Zr0F31OSz0Vw56Z",
+      "name": "Les gens de l'île",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La Réunion est une île de <strong>métissage</strong>, et c'est une fierté. Faites-la vivre : une foule, une file de réfugiés, un marché des Ferrailleurs mélangent toujours plusieurs visages, et beaucoup de gens sont un peu de tout à la fois.</p><h2>Qui l'on croise</h2><ul><li><strong>Cafres</strong> : descendants des esclaves et engagés d'Afrique de l'Est et de Madagascar, la plus grande part de l'île.</li><li><strong>Yabs, petits blancs des Hauts</strong> : créoles blancs des Hauts (Cilaos, Plaine des Cafres, Salazie, Le Tampon), descendants des colons pauvres ; <strong>gros blancs</strong> : les vieilles familles de planteurs.</li><li><strong>Zoreils</strong> : les métropolitains installés, ou de passage, et coincés là depuis le jour zéro.</li><li><strong>Malbars</strong> : Tamouls hindous, descendants des engagés venus après 1848 ; temples, marche sur le feu, Cavadee, Dipavali.</li><li><strong>Z'arabes</strong> : musulmans venus du Gujarat, commerçants, la mosquée de Saint-Denis ou de Saint-Pierre.</li><li><strong>Chinois</strong> (Sinwa) : Cantonais et Hakkas, la boutique du quartier et son carnet de crédit, le Nouvel An.</li><li><strong>Malgaches</strong>, <strong>Comoriens</strong> et <strong>Mahorais</strong> : les uns anciens, les autres arrivés les derniers.</li><li><strong>Métis</strong> : presque tout le monde, un peu.</li></ul><p>Les noms disent souvent l'origine, pas toujours : Hoarau, Payet, Técher, Grondin (créoles de vieille souche) ; Narayanin, Moutoussamy (malbars) ; Patel, Omarjee (z'arabes) ; Ah-Hong, Thiaw-Kine (chinois) ; Rakotomalala (malgache) ; Ahamada, Saïd, Madi (comoriens) ; Lefèvre, Martin (zoreils). La table des noms réunionnais les mélange.</p><h2>Les préjugés</h2><p>Chaque communauté en a sur les autres, et sur elle-même, et la fin du monde les fait remonter : le Zoreil donneur de leçons, « <em>i prend tout' bann bon travay</em> » (il prend tous les bons postes) ; le Chinois de la boutique, « <em>i res' ant' zot</em> » (ils restent entre eux), qui ne ferait crédit qu'aux siens ; le Z'arabe dur en affaires ; le « service » malbar qui fait peur à ceux qui ne le connaissent pas ; le « <em>yab kouyon</em> » (le petit blanc niais) des Hauts qui ne descend jamais ; les gros blancs, « <em>i gard' la terre</em> » (ils gardent la terre) ; les derniers arrivés de Mayotte et des Comores, accusés de tout. Et, dans la bouche d'un personnage qu'on doit contredire, la vieille rengaine raciste des Cafres paresseux.</p><p>Trois règles :</p><ul><li><strong>Les préjugés sont portés par des personnages</strong>, jamais par le narrateur ni par les règles. Un PNJ peut les dire, les penser, s'en servir pour refuser ou accorder sa confiance, demander un prix pour entrer au groupe.</li><li><strong>Le jeu ne les confirme jamais.</strong> Aucune communauté n'est associée au crime ou au danger ; les pillards, les Sans-Lune et les menteurs viennent de partout. Quand un préjugé est mis à l'épreuve, il tombe : le Zoreil « qui ne sait rien » connaît la radio, la boutique chinoise a nourri tout le quartier, le Yab « arriéré » sait passer l'hiver, les derniers arrivés n'ont pas volé le riz.</li><li><strong>Le ton est celui d'une kour</strong>, plus <em>kozman</em> et moucatage (on se chambre) que haine : on se méfie, on se dispute, et on finit quand même par partager le cari. Pas d'insulte gratuite, aucun mot qui blesse plus qu'il ne raconte.</li></ul><p>Les événements du camp (le carnet de la boutique, un service dans la nuit, le Zoreil qui veut tout organiser, les derniers arrivés, le cari qu'on partage, la terre du gros blanc), les imprévus et les prix des recrues mettent ces regards en jeu. Les fêtes aussi : chaque fête a sa communauté au premier plan, et tout le monde vient voir.</p><h2>Pour le MJ IA</h2><p>Quand vous décrivez quelqu'un, donnez son apparence en clair (teint, cheveux, traits) plutôt que « un Réunionnais » ; variez les visages d'une scène à l'autre ; faites parler un PNJ avec ses préjugés quand ça sert la scène, puis laissez les faits le contredire. Les origines des personnages nommés sont dans leurs notes.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "gens-de-l-ile"
+        }
+      }
     }
   ]
 }

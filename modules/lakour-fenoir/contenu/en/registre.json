@@ -381,6 +381,25 @@
       "en": "Her grandfather told of the crossing from Canton, every New Year."
     }
   },
+  "registre/enfances/enfance-comorienne-du-chaudron": {
+    "_nom": "Enfant d'une famille comorienne du Chaudron",
+    "nom": {
+      "fr": "Enfant d'une famille comorienne du Chaudron",
+      "en": "Child of a Comorian family from Le Chaudron"
+    },
+    "description": {
+      "fr": "<p>Né à Saint-Denis de parents venus d'Anjouan et de la Grande Comore : la kofia du vendredi, le mataba de la grand-mère, l'école coranique le mercredi, le basket en bas de la barre, et la question qu'on lui pose toujours, « tu viens d'où ? ».</p>",
+      "en": "<p>Born in Saint-Denis to parents from Anjouan and Grande Comore: the kofia on Fridays, grandmother's mataba (cassava leaves), Koranic school on Wednesdays, basketball at the foot of the tower block, and the question everyone always asks, \"where are you from?\".</p>"
+    },
+    "histoire.0": {
+      "fr": "Il traduisait pour sa grand-mère au guichet, du shikomori au français et retour.",
+      "en": "He interpreted for his grandmother at the counter, from Shikomori to French and back."
+    },
+    "histoire.1": {
+      "fr": "Quand on lui demande d'où il vient, il répond « du Chaudron », et on insiste quand même.",
+      "en": "When asked where he comes from, he answers \"Le Chaudron\", and people insist anyway."
+    }
+  },
   "registre/enfances/enfance-en-foyer": {
     "_nom": "Enfance en foyer",
     "nom": {
@@ -455,6 +474,25 @@
     "histoire.1": {
       "fr": "Il a porté le kavadi à seize ans, pour un vœu qu'il n'a jamais dit.",
       "en": "He carried the kavadi at sixteen, for a vow he never spoke of."
+    }
+  },
+  "registre/enfances/enfance-yab-des-hauts-de-l-ouest": {
+    "_nom": "Enfance yab des Hauts de l'Ouest",
+    "nom": {
+      "fr": "Enfance yab des Hauts de l'Ouest",
+      "en": "Yab childhood in the Western Highlands"
+    },
+    "description": {
+      "fr": "<p>Une famille de petits blancs des Hauts, à Petite-France ou au Tévelave : l'alambic de géranium du grand-père, les fusils de chasse au-dessus de la porte, le brouillard, et le car pour le lycée en bas, où l'on se faisait traiter de « yab » jusqu'à ce qu'on rende les coups.</p>",
+      "en": "<p>A family of petits blancs, the poor whites of the Highlands, in Petite-France or Le Tévelave: grandfather's geranium still, the hunting rifles above the door, the fog, and the bus down to the lycée, where you were called \"yab\" until you hit back.</p>"
+    },
+    "histoire.0": {
+      "fr": "Son grand-père distillait le géranium dans un alambic de cuivre noirci, à Petite-France.",
+      "en": "His grandfather distilled geranium in a blackened copper still, in Petite-France."
+    },
+    "histoire.1": {
+      "fr": "Au lycée, on l'appelait « yab kouyon » ; il a appris à répondre plus vite que les autres.",
+      "en": "At the lycée they called him \"yab kouyon\" (the dim-witted Highland white); he learned to answer faster than the others."
     }
   },
   "registre/enfances/enfance-zarab-de-saint-pierre": {
@@ -775,6 +813,17 @@
       "en": "<p>Behind a false partition, under a floor or in a forgotten container: tins, rice, dry grain, enough to hold out for weeks.</p>"
     }
   },
+  "registre/evenements/carnet-de-la-boutique": {
+    "_nom": "Le carnet de la boutique",
+    "nom": {
+      "fr": "Le carnet de la boutique",
+      "en": "The shop's credit book"
+    },
+    "texte": {
+      "fr": "<p>Le vieux Paul Ah-Hong (ou celui qui tient la réserve) a rouvert « la boutique » au camp : une balance, un coin d'étagère et un carnet de crédit où il note ce que chacun prend et doit. Un soir de rationnement, quelqu'un crie que « <em>Sinwa i fé crédi k'a son moun</em> » (le Chinois ne fait crédit qu'aux siens). On ouvre le carnet devant tout le monde : les plus grosses ardoises sont celles de ceux qui crient. Reste à savoir qui s'excuse, et si le carnet survit à la soirée.</p>",
+      "en": "<p>Old Paul Ah-Hong (or whoever keeps the stores) has reopened \"the shop\" in camp: a pair of scales, a corner of shelving and a credit book where he writes down what everyone takes and owes. One evening of rationing, someone shouts that \"<em>Sinwa i fé crédi k'a son moun</em>\" (the Chinese only give credit to their own). The book is opened in front of everyone: the biggest debts belong to those who are shouting. It remains to be seen who apologises, and whether the book survives the evening.</p>"
+    }
+  },
   "registre/evenements/chaleur-qui-nettoie": {
     "_nom": "La chaleur qui nettoie",
     "nom": {
@@ -1083,6 +1132,50 @@
       "en": "<p>A neighbourhood burns: a forgotten candle, a generator, a looting gone wrong. Without firefighters, the fire goes from one house to the next all night.</p>"
     }
   },
+  "registre/evenements/la-terre-du-gros-blanc": {
+    "_nom": "La terre du gros blanc",
+    "nom": {
+      "fr": "La terre du gros blanc",
+      "en": "The gros blanc's land"
+    },
+    "texte": {
+      "fr": "<p>L'héritier d'une vieille famille de planteurs revient sur ses terres avec un titre de propriété dans une pochette plastique et un fusil : les cannes, le verger, la source, tout est à lui « depuis 1820 ». Il propose à ceux qui s'y sont installés de partager la récolte à moitié, comme du temps du colonat. Les anciens grondent « <em>zot la touzour gard la tèr</em> » (ils ont toujours gardé la terre) ; lui connaît chaque captage du domaine, et il est seul.</p>",
+      "en": "<p>The heir of an old planter family, the gros blancs, comes back to his land with a title deed in a plastic sleeve and a rifle: the cane, the orchard, the spring, everything has been his \"since 1820\". He offers those who have settled there to share the harvest half and half, as in the days of sharecropping. The old folk grumble \"<em>zot la touzour gard la tèr</em>\" (they have always kept the land); he knows every water catchment on the estate, and he is alone.</p>"
+    }
+  },
+  "registre/evenements/le-cari-partage": {
+    "_nom": "Le cari qu'on partage",
+    "nom": {
+      "fr": "Le cari qu'on partage",
+      "en": "The cari we share"
+    },
+    "texte": {
+      "fr": "<p>Après des jours de bouderie, chacun apporte ce qu'il a : le massalé de la famille malbare, le riz de la boutique, le rougail de la vieille yab, les brèdes mafane des Comoriens, le piment du Zoreil, qui a enfin appris à le doser. On mange dans la même marmite, on se chambre (« <em>out kari lé pa mal pou in zorey</em> », ton cari n'est pas mal, pour un Zoreil), et la nuit est la plus douce depuis Fénoir.</p>",
+      "en": "<p>After days of sulking, everyone brings what they have: the massalé of the Malbar family, the rice from the shop, the old Yab woman's rougail, the Comorians' mafane greens, the Zoreil's chilli, now that he has finally learned how much to use. Everyone eats from the same pot, everyone teases (\"<em>out kari lé pa mal pou in zorey</em>\", your cari's not bad, for a Zoreil), and the night is the gentlest since Fénoir.</p>"
+    }
+  },
+  "registre/evenements/le-zoreil-qui-organise": {
+    "_nom": "Le Zoreil qui veut tout organiser",
+    "nom": {
+      "fr": "Le Zoreil qui veut tout organiser",
+      "en": "The Zoreil who wants to organise everything"
+    },
+    "texte": {
+      "fr": "<p>Celui du groupe qui vient de métropole (ou la dernière recrue, arrivée de Lyon pour un stage) a tout réorganisé pendant la nuit : tableau des gardes, étiquettes sur les bidons, réunion à huit heures précises. On ricane : « <em>i koné pa mèm fé in kari é i vé komand anou</em> » (il ne sait même pas faire un cari et il veut nous commander), et « l'heure créole, il va connaître ». Son tableau a pourtant repéré que la citerne perd un peu chaque nuit. On l'écoute, ou on le vexe ?</p>",
+      "en": "<p>The one in the group who comes from mainland France (or the latest recruit, over from Lyon for an internship) has reorganised everything overnight: a watch rota, labels on the jerrycans, a meeting at eight o'clock sharp. People snigger: \"<em>i koné pa mèm fé in kari é i vé komand anou</em>\" (he can't even make a cari and he wants to give us orders), and \"he'll find out about Creole time\". Yet his rota has spotted that the tank loses a little every night. Do they listen to him, or offend him?</p>"
+    }
+  },
+  "registre/evenements/les-derniers-arrives": {
+    "_nom": "Les derniers arrivés",
+    "nom": {
+      "fr": "Les derniers arrivés",
+      "en": "The last to arrive"
+    },
+    "texte": {
+      "fr": "<p>Du riz a disparu de la réserve, et tous les regards se tournent vers la famille mahoraise arrivée la semaine dernière : « <em>zot la fine arivé, é i mank déza</em> » (à peine arrivés, et déjà il manque quelque chose). La mère se tait, le fils serre les poings. Ce ne sont pas eux : le MJ choisit le vrai coupable (des rats, un enfant du groupe qui a faim, un ancien qui cache des vivres « pour plus tard »). Il faudra le trouver avant que quelqu'un ne les mette dehors.</p>",
+      "en": "<p>Rice has gone missing from the stores, and every eye turns to the Mahorese family who arrived last week: \"<em>zot la fine arivé, é i mank déza</em>\" (barely arrived, and already something is missing). The mother says nothing, the son clenches his fists. It was not them: the GM chooses the real culprit (rats, a hungry child of the group, an elder hiding food \"for later\"). It will have to be found before someone throws them out.</p>"
+    }
+  },
   "registre/evenements/letchis-murs": {
     "_nom": "Les letchis sont mûrs",
     "nom": {
@@ -1266,11 +1359,22 @@
       "en": "<p>Weeks without a drop: the cisterns empty, the ravines run dry, the savannahs turn yellow, fires lie in wait.</p>"
     }
   },
+  "registre/evenements/un-service-dans-la-nuit": {
+    "_nom": "Un service dans la nuit",
+    "nom": {
+      "fr": "Un service dans la nuit",
+      "en": "A service in the night"
+    },
+    "texte": {
+      "fr": "<p>Des chants bas, une odeur de camphre, des citrons coupés et une lampe au pied du manguier : une famille malbare du camp fait un « service » pour ses morts du jour zéro. Certains prennent peur, parlent de sorcellerie, veulent les mettre dehors avant que « ça attire les Livides ». Un gramoun hausse les épaules : « <em>lé pa pli pir ke out neuvèn</em> » (ce n'est pas pire que ta neuvaine). Rien de ce qui se passe cette nuit-là ne fait de mal à personne ; la peur, si.</p>",
+      "en": "<p>Low chanting, a smell of camphor, cut lemons and a lamp at the foot of the mango tree: a Malbar family in the camp is holding a \"service\", a Tamil offering ritual, for their dead of day zero. Some take fright, talk of sorcery, want to throw them out before \"it draws the Pallid\". An old man shrugs: \"<em>lé pa pli pir ke out neuvèn</em>\" (it's no worse than your novena). Nothing that happens that night harms anyone; the fear does.</p>"
+    }
+  },
   "registre/factions/barques-du-sud": {
     "_nom": "Les Barques du Sud",
     "description": {
-      "fr": "<p>Les pêcheurs de Saint-Pierre, de Saint-Joseph, de Saint-Philippe et de Saint-Leu se sont organisés en flottille : on dort sur les bateaux, au mouillage, hors de portée des Livides, et l'on vit de la mer. Ils relient les marines du Sud et de l'Ouest et transportent ce qui doit l'être.</p>",
-      "en": "<p>The fishermen of Saint-Pierre, Saint-Joseph, Saint-Philippe and Saint-Leu have organised themselves into a fleet: they sleep on the boats, at anchor, out of reach of the Pallid, and live from the sea. They link the small harbours of the South and the West and carry whatever needs carrying.</p>"
+      "fr": "<p>Les pêcheurs de Saint-Pierre, de Saint-Joseph, de Saint-Philippe et de Saint-Leu se sont organisés en flottille : on dort sur les bateaux, au mouillage, hors de portée des Livides, et l'on vit de la mer. Ils relient les marines du Sud et de l'Ouest et transportent ce qui doit l'être. Familles de pêcheurs créoles de toutes les nuances, ils se moquent des plaisanciers zoreils de Saint-Gilles qui réclament une place à bord, et les prennent quand même quand ils savent réparer un moteur.</p>",
+      "en": "<p>The fishermen of Saint-Pierre, Saint-Joseph, Saint-Philippe and Saint-Leu have organised themselves into a fleet: they sleep on the boats, at anchor, out of reach of the Pallid, and live from the sea. They link the small harbours of the South and the West and carry whatever needs carrying. Fishing families of every Creole shade, they make fun of the Zoreil yachtsmen of Saint-Gilles who demand a place on board, and take them anyway when they can fix an engine.</p>"
     },
     "veulent": {
       "fr": "<p>Du carburant pour les moteurs, de la toile et du cordage, des médicaments ; des ports sûrs ; la paix sur les quais.</p>",
@@ -1292,8 +1396,8 @@
   "registre/factions/cooperative-des-plaines": {
     "_nom": "La Coopérative des Plaines",
     "description": {
-      "fr": "<p>Les fermiers et éleveurs des Hauts se sont regroupés autour des fermes de la Plaine des Cafres et des Palmistes : lait, viande, légumes, et des fusils de chasse pour garder les clôtures. Ils travaillent dur, partagent entre eux et se méfient des gens de la ville.</p>",
-      "en": "<p>The farmers and livestock breeders of the Highlands have gathered around the farms of the Plaine des Cafres and the Plaine des Palmistes: milk, meat, vegetables, and shotguns to guard the fences. They work hard, share among themselves and distrust townspeople.</p>"
+      "fr": "<p>Les fermiers et éleveurs des Hauts se sont regroupés autour des fermes de la Plaine des Cafres et des Palmistes : lait, viande, légumes, et des fusils de chasse pour garder les clôtures. Ils travaillent dur, partagent entre eux et se méfient des gens de la ville. Des yabs des Plaines surtout, mais aussi des familles malbares qui élèvent là-haut depuis trois générations et deux Zoreils venus faire du fromage ; en bas, on dit « <em>bann yab i partaz ant zot</em> » (les yabs ne partagent qu'entre eux), et la Coopérative répond que la ville n'est jamais montée aider aux foins.</p>",
+      "en": "<p>The farmers and livestock breeders of the Highlands have gathered around the farms of the Plaine des Cafres and the Plaine des Palmistes: milk, meat, vegetables, and shotguns to guard the fences. They work hard, share among themselves and distrust townspeople. Mostly Yabs of the Plains, the poor whites of the Highlands, but also Malbar families who have farmed up there for three generations and two Zoreils who came to make cheese; down below, people say \"<em>bann yab i partaz ant zot</em>\" (the Yabs only share among themselves), and the Cooperative answers that the town never once came up to help with the hay.</p>"
     },
     "veulent": {
       "fr": "<p>Des bras pour les récoltes, des graines, du carburant pour les tracteurs, des soignants ; qu'on les laisse tranquilles.</p>",
@@ -1315,8 +1419,8 @@
   "registre/factions/dispensaire-du-sud": {
     "_nom": "Le Dispensaire du Sud",
     "description": {
-      "fr": "<p>Des soignants qui ont refusé de partir : médecins, infirmières, aides-soignants, pharmaciens, et ceux qui les protègent. Ils tiennent une aile du grand hôpital du Sud et un poste à Saint-Denis, soignent qui vient, étudient le Gris et cherchent un remède qu'ils n'ont pas.</p>",
-      "en": "<p>Medical staff who refused to leave: doctors, nurses, care assistants, pharmacists, and those who protect them. They hold a wing of the big southern hospital and a post in Saint-Denis, treat whoever comes, study the Grey and search for a cure they do not have.</p>"
+      "fr": "<p>Des soignants qui ont refusé de partir : médecins, infirmières, aides-soignants, pharmaciens, et ceux qui les protègent. Ils tiennent une aile du grand hôpital du Sud et un poste à Saint-Denis, soignent qui vient, étudient le Gris et cherchent un remède qu'ils n'ont pas. Une urgentiste malbare, des infirmières de toute l'île, un pharmacien z'arabe, des internes zoreils qui n'ont pas pu repartir : on s'y dispute sur tout, sauf sur qui soigner.</p>",
+      "en": "<p>Medical staff who refused to leave: doctors, nurses, care assistants, pharmacists, and those who protect them. They hold a wing of the big southern hospital and a post in Saint-Denis, treat whoever comes, study the Grey and search for a cure they do not have. A Malbar emergency physician, nurses from all over the island, a Z'arabe pharmacist, Zoreil junior doctors who could not get home: they argue about everything there, except about whom to treat.</p>"
     },
     "veulent": {
       "fr": "<p>Des médicaments, de l'eau, du carburant pour les groupes électrogènes, des volontaires ; des corps à étudier, des infectés à observer.</p>",
@@ -1338,8 +1442,8 @@
   "registre/factions/familles-des-ilets": {
     "_nom": "Les Familles des Îlets",
     "description": {
-      "fr": "<p>Les quelques centaines d'habitants de Mafate, et ceux de Salazie qui les ont rejoints. Ils vivaient déjà sans route, avec leurs panneaux, leurs sources et leurs jardins ; le monde d'après ressemble à leur monde d'avant, en plus dur. Ils gardent les cols et choisissent qui entre.</p>",
-      "en": "<p>The few hundred inhabitants of Mafate, and those from Salazie who joined them. They already lived without a road, with their panels, their springs and their gardens; the world after looks like their world before, only harder. They guard the passes and choose who comes in.</p>"
+      "fr": "<p>Les quelques centaines d'habitants de Mafate, et ceux de Salazie qui les ont rejoints. Ils vivaient déjà sans route, avec leurs panneaux, leurs sources et leurs jardins ; le monde d'après ressemble à leur monde d'avant, en plus dur. Ils gardent les cols et choisissent qui entre. Petits blancs et Cafres des îlets, cousins d'un sentier à l'autre, ils se sont toujours fait traiter d'arriérés par les Bas ; ce sont les seuls à n'avoir presque rien perdu au jour zéro.</p>",
+      "en": "<p>The few hundred inhabitants of Mafate, and those from Salazie who joined them. They already lived without a road, with their panels, their springs and their gardens; the world after looks like their world before, only harder. They guard the passes and choose who comes in. Petits blancs and Cafres of the îlets, cousins from one trail to the next, they have always been called backward by the Lowlands; they are the only ones who lost almost nothing on day zero.</p>"
     },
     "veulent": {
       "fr": "<p>Des médicaments, des pièces pour leurs panneaux et leurs captages, des graines ; qu'on ne leur amène pas la maladie.</p>",
@@ -1361,8 +1465,8 @@
   "registre/factions/ferrailleurs": {
     "_nom": "Les Ferrailleurs",
     "description": {
-      "fr": "<p>Récupérateurs du littoral : mécaniciens, ferrailleurs, débrouillards, ils démontent tout ce que la ville a laissé, des voitures aux panneaux solaires, et revendent les pièces. Ils ne sont pas cruels, seulement efficaces : un abri abandonné une semaine est dépouillé jusqu'aux gouttières.</p>",
-      "en": "<p>Salvagers of the coast: mechanics, scrap dealers, resourceful types, they strip everything the town has left, from cars to solar panels, and sell the parts on. They are not cruel, only efficient: a shelter abandoned for a week is stripped down to the gutters.</p>"
+      "fr": "<p>Récupérateurs du littoral : mécaniciens, ferrailleurs, débrouillards, ils démontent tout ce que la ville a laissé, des voitures aux panneaux solaires, et revendent les pièces. Ils ne sont pas cruels, seulement efficaces : un abri abandonné une semaine est dépouillé jusqu'aux gouttières. Cafres du Port, Malgaches des chantiers, un Z'arabe qui tenait la plus grande casse de Saint-Paul : chez eux, on ne demande d'où l'on vient que pour savoir où sont les pièces.</p>",
+      "en": "<p>Salvagers of the coast: mechanics, scrap dealers, resourceful types, they strip everything the town has left, from cars to solar panels, and sell the parts on. They are not cruel, only efficient: a shelter abandoned for a week is stripped down to the gutters. Cafres from Le Port, Malagasy from the building sites, a Z'arabe who ran the biggest scrapyard in Saint-Paul: among them, nobody asks where you come from except to find out where the parts are.</p>"
     },
     "veulent": {
       "fr": "<p>Des pièces, du carburant, des véhicules, des informations sur les dépôts intacts ; commercer avec tout le monde.</p>",
@@ -1384,8 +1488,8 @@
   "registre/factions/garnison-du-quai": {
     "_nom": "La Garnison du Quai",
     "description": {
-      "fr": "<p>Ce qui reste de l'ordre au Port : quelques militaires, des gendarmes mobiles coupés de leur hiérarchie, des agents portuaires, des dockers et leurs familles, retranchés derrière des murailles de conteneurs autour des darses, des cuves de carburant et des derniers navires. Ils se disent l'autorité légitime de l'île en attendant « la métropole ».</p>",
-      "en": "<p>What is left of order at Le Port: a few soldiers, riot gendarmes cut off from their chain of command, port workers, dockers and their families, dug in behind walls of containers around the docks, the fuel tanks and the last ships. They call themselves the island's legitimate authority while waiting for \"the mainland\".</p>"
+      "fr": "<p>Ce qui reste de l'ordre au Port : quelques militaires, des gendarmes mobiles coupés de leur hiérarchie, des agents portuaires, des dockers et leurs familles, retranchés derrière des murailles de conteneurs autour des darses, des cuves de carburant et des derniers navires. Ils se disent l'autorité légitime de l'île en attendant « la métropole ». On y croise des Zoreils mutés qui n'ont pas eu d'avion, des dockers cafres et malbars du Port, des gendarmes de toute l'île sous une commandante yab ; dehors, on ricane qu'« <em>zot i atann la Frans konm in bato i sa vien</em> » (ils attendent la France comme un bateau qui va venir).</p>",
+      "en": "<p>What is left of order at Le Port: a few soldiers, riot gendarmes cut off from their chain of command, port workers, dockers and their families, dug in behind walls of containers around the docks, the fuel tanks and the last ships. They call themselves the island's legitimate authority while waiting for \"the mainland\". Among them are Zoreils (mainland French) posted here who never got a plane, Cafre and Malbar dockers from Le Port, gendarmes from all over the island under a Yab commander; outside, people snigger that \"<em>zot i atann la Frans konm in bato i sa vien</em>\" (they wait for France like a ship that is coming).</p>"
     },
     "veulent": {
       "fr": "<p>Du carburant, des armes, des médecins, des techniciens pour faire tourner ce qui reste de la centrale et des grues ; contrôler la route du Littoral ; recenser les survivants « pour l'évacuation ».</p>",
@@ -1407,8 +1511,8 @@
   "registre/factions/pelerins-de-la-lave": {
     "_nom": "Les Pèlerins de la Lave",
     "description": {
-      "fr": "<p>Autour de l'église de Sainte-Rose que la lave a épargnée, une communauté s'est formée : des familles de l'Est, des réfugiés, des malades. Ils croient que le volcan protège ceux qui vivent à son pied, que la chaleur purifie, et que le Gris est une épreuve. Ils partagent tout, soignent, accueillent… et attendent qu'on croie.</p>",
-      "en": "<p>Around the church of Sainte-Rose that the lava spared, a community has formed: families from the East, refugees, the sick. They believe the volcano protects those who live at its foot, that heat purifies, and that the Grey is a trial. They share everything, give care, take people in… and wait for you to believe.</p>"
+      "fr": "<p>Autour de l'église de Sainte-Rose que la lave a épargnée, une communauté s'est formée : des familles de l'Est, des réfugiés, des malades. Ils croient que le volcan protège ceux qui vivent à son pied, que la chaleur purifie, et que le Gris est une épreuve. Ils partagent tout, soignent, accueillent… et attendent qu'on croie. Catholiques de l'Est pour la plupart, ils ont vu arriver des familles malbares avec leurs lampes et leurs dieux, et certains fidèles grincent : « <em>zot i fé servis dan nout légliz</em> » (ils font des services dans notre église). Frère Expédit les laisse prier.</p>",
+      "en": "<p>Around the church of Sainte-Rose that the lava spared, a community has formed: families from the East, refugees, the sick. They believe the volcano protects those who live at its foot, that heat purifies, and that the Grey is a trial. They share everything, give care, take people in… and wait for you to believe. Mostly Catholics from the East, they have seen Malbar families arrive with their lamps and their gods, and some of the faithful grumble: \"<em>zot i fé servis dan nout légliz</em>\" (they hold services in our church). Brother Expédit lets them pray.</p>"
     },
     "veulent": {
       "fr": "<p>Des fidèles, des vivres à partager, des soignants ; qu'on respecte leurs rites ; garder la route des Laves.</p>",
@@ -1430,8 +1534,8 @@
   "registre/factions/sans-lune": {
     "_nom": "Les Sans-Lune",
     "description": {
-      "fr": "<p>Une bande née des pillages de la capitale, grossie de tous ceux qui ont compris qu'on survit mieux en prenant qu'en produisant. Ils sortent la nuit, connaissent la ville par cœur et lèvent un tribut sur les quartiers qu'ils « protègent ». Plus le littoral se vide de Livides, plus ils s'étendent.</p>",
-      "en": "<p>A gang born of the looting of the capital, swollen by all those who understood that you survive better by taking than by producing. They go out at night, know the town by heart and levy a tribute on the neighbourhoods they \"protect\". The more the coast empties of Pallid, the further they spread.</p>"
+      "fr": "<p>Une bande née des pillages de la capitale, grossie de tous ceux qui ont compris qu'on survit mieux en prenant qu'en produisant. Ils sortent la nuit, connaissent la ville par cœur et lèvent un tribut sur les quartiers qu'ils « protègent ». Plus le littoral se vide de Livides, plus ils s'étendent. Ils viennent de tous les quartiers et de toutes les couleurs, et c'est bien la seule chose qu'ils partagent avec le reste de l'île.</p>",
+      "en": "<p>A gang born of the looting of the capital, swollen by all those who understood that you survive better by taking than by producing. They go out at night, know the town by heart and levy a tribute on the neighbourhoods they \"protect\". The more the coast empties of Pallid, the further they spread. They come from every neighbourhood and every colour, and that is about the only thing they share with the rest of the island.</p>"
     },
     "veulent": {
       "fr": "<p>Tout ce qui se mange, se boit, se tire ou se vend ; la peur des autres ; les abris prospères.</p>",
@@ -1811,6 +1915,14 @@
     "prix.11": {
       "fr": "Elle ne restera que jusqu'à la prochaine saison sèche.",
       "en": "She will only stay until the next dry season."
+    },
+    "prix.12": {
+      "fr": "Il ne dormira pas sous le même toit qu'une famille malbare : « ces gens-là font des services ». Il changera d'avis, ou il dormira dehors.",
+      "en": "He won't sleep under the same roof as a Malbar family: \"those people hold services\". He will change his mind, or sleep outside."
+    },
+    "prix.13": {
+      "fr": "Elle se méfie des Zoreils du groupe et le dit à table : « *zot i prend tout' bann bon travay* » (ils prennent tous les bons postes).",
+      "en": "She distrusts the group's Zoreils and says so at table: \"*zot i prend tout' bann bon travay*\" (they take all the good jobs)."
     }
   },
   "registre/regions/cilaos": {

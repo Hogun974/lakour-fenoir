@@ -115,6 +115,14 @@
     "results.JsQnkU3KCO2KYzCv.description": {
       "fr": "<p><strong>Récupération — La caisse de la caserne.</strong> Un gendarme blessé, caché dans une brigade du Sud, parle d'une caisse de matériel radio et de rations sous le bureau du chef.</p><p><strong>Récompense :</strong> 3 munitions, 6 nourriture ; réputation +1.</p>",
       "en": "<p><strong>Recovery — The crate at the station.</strong> A wounded gendarme, hiding in a southern gendarmerie station, talks of a crate of radio equipment and rations under the chief's desk.</p><p><strong>Reward:</strong> 3 ammunition, 6 food; reputation +1.</p>"
+    },
+    "results.zm997aUTslDDXQWp.description": {
+      "fr": "<p><strong>Sauvetage — Les cousins de Kawéni.</strong> Une femme parle shimaoré, puis français : ses cousins arrivés de Mayotte la veille du jour zéro sont bloqués dans une case du Chaudron. Ses voisins ont refusé d'y aller, « <em>pa nout zafèr</em> » (pas notre affaire) ; elle offre tout ce qu'elle a.</p><p><strong>Récompense :</strong> 5 nourriture, 4 materiaux.</p>",
+      "en": "<p><strong>Rescue — The cousins from Kawéni.</strong> A woman speaks Shimaore, then French: her cousins, who arrived from Mayotte the day before day zero, are trapped in a house in Le Chaudron. Her neighbours refused to go, \"<em>pa nout zafèr</em>\" (not our business); she offers everything she has.</p><p><strong>Reward:</strong> 5 food, 4 materials.</p>"
+    },
+    "results.Y8uE8keBZRoa4bvv.description": {
+      "fr": "<p><strong>Échange — Le carnet de Madame Thiaw-Kine.</strong> La boutiquière chinoise de la Rivière Saint-Louis propose son arrière-boutique contre une escorte jusqu'à Cilaos, et raye du carnet les dettes de ceux qui l'aident. On dit qu'elle ne fait crédit qu'aux siens ; son carnet a nourri tout le quartier pendant la grève de 2009.</p><p><strong>Récompense :</strong> 8 nourriture, 2 graines.</p>",
+      "en": "<p><strong>Trade — Madame Thiaw-Kine's credit book.</strong> The Chinese shopkeeper of La Rivière Saint-Louis offers her back room in exchange for an escort to Cilaos, and strikes from her book the debts of those who help her. People say she only gives credit to her own; her book fed the whole neighbourhood during the 2009 general strike.</p><p><strong>Reward:</strong> 8 food, 2 seeds.</p>"
     }
   },
   "tables/3rOWWRWJAOrlApYT": {
@@ -1213,6 +1221,14 @@
     "results.c8lsdu74i52gnTrr.description": {
       "fr": "<p>Elle ne restera que jusqu'à la prochaine saison sèche.</p>",
       "en": "<p>She will only stay until the next dry season.</p>"
+    },
+    "results.kwVqMZbC8BDLkNjH.description": {
+      "fr": "<p>Il ne dormira pas sous le même toit qu'une famille malbare : « ces gens-là font des services ». Il changera d'avis, ou il dormira dehors.</p>",
+      "en": "<p>He won't sleep under the same roof as a Malbar family: \"those people hold services\". He will change his mind, or sleep outside.</p>"
+    },
+    "results.2vpDKjgvFEYupDU8.description": {
+      "fr": "<p>Elle se méfie des Zoreils du groupe et le dit à table : « <em>zot i prend tout' bann bon travay</em> » (ils prennent tous les bons postes).</p>",
+      "en": "<p>She distrusts the group's Zoreils and says so at table: \"<em>zot i prend tout' bann bon travay</em>\" (they take all the good jobs).</p>"
     }
   },
   "tables/eVUENIxsisNCurTz": {
@@ -1491,6 +1507,14 @@
     "results.p5NtAUjc8W7HhRah.description": {
       "fr": "<p>On aurait vu un enfant mordu qui ne s'est pas transformé.</p>",
       "en": "<p>Someone is said to have seen a bitten child who did not turn.</p>"
+    },
+    "results.Hwj54z4vZUTsyfXA.description": {
+      "fr": "<p>Les Malbars de Saint-André auraient fait un service, et leurs Livides ne passeraient plus la grille du temple. La grille est en fer forgé, et fermée à clé.</p>",
+      "en": "<p>The Malbars of Saint-André are said to have held a service, and now their Pallid can no longer get past the temple gate. The gate is wrought iron, and locked.</p>"
+    },
+    "results.eLvtxPg22U0ySf4p.description": {
+      "fr": "<p>On accuse les Comoriens du Chaudron d'avoir vidé l'hypermarché du quartier ; ceux qui l'ont vraiment vidé avaient un camion et des visages noircis.</p>",
+      "en": "<p>The Comorians of Le Chaudron are blamed for emptying the neighbourhood hypermarket; those who really emptied it had a lorry and blackened faces.</p>"
     }
   },
   "tables/mymRAN0ZBWMkVTBW": {
@@ -2050,6 +2074,18 @@
     "results.l0Bi0XKsp3ajUJXG.description": {
       "fr": "<p>Un cabri a mis bas : deux petits.</p>",
       "en": "<p>A goat has given birth: two kids.</p>"
+    },
+    "results.pRo5vfv7b5fpBANT.description": {
+      "fr": "<p>Deux membres du groupe s'écharpent pour savoir si le vrai rougail saucisse prend des tomates ; le camp prend parti, quartier par quartier.</p>",
+      "en": "<p>Two members of the group are at each other's throats over whether a real sausage rougail takes tomatoes; the camp takes sides, neighbourhood by neighbourhood.</p>"
+    },
+    "results.VzkVxnKkiZtA9umN.description": {
+      "fr": "<p>Une vieille yab et un jeune Comorien découvrent qu'ils fredonnent le même séga, chacun avec ses paroles.</p>",
+      "en": "<p>An old Yab woman and a young Comorian discover they hum the same séga, each with their own words.</p>"
+    },
+    "results.wfT5g0lsueYfDQTc.description": {
+      "fr": "<p>Quelqu'un imite l'accent zoreil de la dernière recrue ; la recrue imite en retour l'accent des Hauts, et tout le monde rit, sauf un.</p>",
+      "en": "<p>Someone mimics the latest recruit's Zoreil accent; the recruit mimics the Highland accent back, and everyone laughs, except one.</p>"
     }
   },
   "tables/xCxMdF8oErpdaa7e": {
