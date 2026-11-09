@@ -11,6 +11,10 @@ dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
   bouquets liés et vendus au bord de la route, des enfants qui en mangent) et le Nouvel An chinois (un seul dragon : une
   tête à l'avant, un long corps d'étoffe porté sur des perches, la queue à l'arrière). Le système ne change pas, son numéro
   suit la publication.
+- **Corrections après relecture** : la fête des letchis repeinte une seconde fois (enfants en sandales, letchis à peau
+  rouge granuleuse, sans épines) ; le nouvel an repeint au même trait encré que les autres fêtes ; trois jetons de passés
+  refaits : l'apiculteur tient un enfumoir (plus de pipe), le vendeur de bazar z'arabe porte une calotte blanche (plus de
+  turban), la professeure de SVT a le visage net (plus de taches orange).
 
 ## Système 0.1.6 · Contenu 0.2.5 — 9 novembre 2026
 
