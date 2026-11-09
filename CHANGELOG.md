@@ -17,6 +17,12 @@ dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 - **Visages métissés** : chaque personnage peint suit le guide du métissage réunionnais (`docs/metissage.md`) : Cafres et
   Malgaches, Malbars, Chinois, Z'arabes, Yabs et petits blancs des Hauts, Zoreils, Comoriens et Mahorais, et tous les
   métis, avec un teint et des traits décrits personnage par personnage.
+- **Le métissage dans les textes** : Fénoir fait vivre le métissage de l'île. Les prétirés et les PNJ ont leur origine et
+  leurs préjugés sur les autres, que le jeu ne confirme jamais. Deux enfances (comorienne du Chaudron, yab des Hauts de
+  l'Ouest), six événements (le carnet de la boutique, un service dans la nuit, le Zoreil qui veut tout organiser, les
+  derniers arrivés, le cari qu'on partage, la terre du gros blanc), une page « Les gens de l'île » dans le guide du MJ, et
+  des factions, rumeurs, imprévus, prix de recrues et appels radio qui mettent les regards en jeu. Traduction anglaise
+  complète. Le guide d'écriture et de dessin est dans `docs/metissage.md`.
 - **Figurants peints** : `assets/jetons/figurants.json` donne à chaque figurant son image peinte (`image: "ia/<jeton>.webp"`),
   que le MJ IA pose sur les jetons qu'il crée.
 - **Moteur MJ IA 0.46.0** (sous-module `modules/lakour-mj-ia`) : il accepte les jetons peints (index des joueurs, figurants,
