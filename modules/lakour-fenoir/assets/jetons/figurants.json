@@ -1,62 +1,77 @@
 {
   "livide": {
     "libelle": "Livide",
-    "jeton": "livide-frais"
+    "jeton": "livide-frais",
+    "image": "ia/livide-frais.webp"
   },
   "livide-ancien": {
     "libelle": "Livide des Hauts",
-    "jeton": "livide-des-hauts"
+    "jeton": "livide-des-hauts",
+    "image": "ia/livide-des-hauts.webp"
   },
   "noye": {
     "libelle": "Noyé du lagon",
-    "jeton": "noye-du-lagon"
+    "jeton": "noye-du-lagon",
+    "image": "ia/noye-du-lagon.webp"
   },
   "refugie": {
     "libelle": "Réfugié",
-    "jeton": "figurant-refugie"
+    "jeton": "figurant-refugie",
+    "image": "ia/figurant-refugie.webp"
   },
   "enfant": {
     "libelle": "Enfant",
-    "jeton": "figurant-enfant"
+    "jeton": "figurant-enfant",
+    "image": "ia/figurant-enfant.webp"
   },
   "pillard": {
     "libelle": "Pillard",
-    "jeton": "pillard-sans-lune"
+    "jeton": "pillard-sans-lune",
+    "image": "ia/pillard-sans-lune.webp"
   },
   "soldat": {
     "libelle": "Soldat de la Garnison",
-    "jeton": "soldat-de-la-garnison"
+    "jeton": "soldat-de-la-garnison",
+    "image": "ia/soldat-de-la-garnison.webp"
   },
   "pelerin": {
     "libelle": "Pèlerin de la Lave",
-    "jeton": "figurant-pelerin"
+    "jeton": "figurant-pelerin",
+    "image": "ia/figurant-pelerin.webp"
   },
   "pecheur": {
     "libelle": "Pêcheur",
-    "jeton": "figurant-pecheur"
+    "jeton": "figurant-pecheur",
+    "image": "ia/figurant-pecheur.webp"
   },
   "fermier": {
     "libelle": "Fermier des Hauts",
-    "jeton": "figurant-fermier"
+    "jeton": "figurant-fermier",
+    "image": "ia/figurant-fermier.webp"
   },
   "soignant": {
     "libelle": "Soignant",
-    "jeton": "figurant-soignant"
+    "jeton": "figurant-soignant",
+    "image": "ia/figurant-soignant.webp"
   },
   "ferrailleur": {
     "libelle": "Ferrailleur",
-    "jeton": "figurant-ferrailleur"
+    "jeton": "figurant-ferrailleur",
+    "image": "ia/figurant-ferrailleur.webp"
   },
   "ilette": {
     "libelle": "Habitant d'un îlet",
-    "jeton": "figurant-ilette"
+    "jeton": "figurant-ilette",
+    "image": "ia/figurant-ilette.webp"
   },
   "chien": {
     "libelle": "Chien errant",
-    "jeton": "chien-errant"
+    "jeton": "chien-errant",
+    "image": "ia/chien-errant.webp"
   },
   "malade": {
     "libelle": "Malade",
-    "jeton": "figurant-malade"
+    "jeton": "figurant-malade",
+    "image": "ia/figurant-malade.webp"
   }
 }

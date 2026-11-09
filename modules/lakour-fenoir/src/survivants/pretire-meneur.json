@@ -3,7 +3,7 @@
   "_key": "!actors!mpXS6zfK51MgTxYa",
   "name": "Firmin Boyer, retraité de la marine",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/pretire-meneur.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/pretire-meneur.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -239,7 +239,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/pretire-meneur.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/pretire-meneur.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

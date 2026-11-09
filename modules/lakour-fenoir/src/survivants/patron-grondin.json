@@ -3,7 +3,7 @@
   "_key": "!actors!Ro9A8L5zOmZpyJ2O",
   "name": "Le patron Grondin",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/patron-grondin.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/patron-grondin.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -166,7 +166,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/patron-grondin.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/patron-grondin.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

@@ -3,7 +3,7 @@
   "_key": "!actors!xcFUn1wk0bZHHP8h",
   "name": "La commandante Hoarau",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/commandante-hoarau.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/commandante-hoarau.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -127,7 +127,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/commandante-hoarau.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/commandante-hoarau.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

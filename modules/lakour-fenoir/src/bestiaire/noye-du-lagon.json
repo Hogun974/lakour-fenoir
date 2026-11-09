@@ -3,7 +3,7 @@
   "_key": "!actors!qNxwVkb0RUjrVENz",
   "name": "Noyé du lagon",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/noye-du-lagon.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/noye-du-lagon.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -85,7 +85,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/noye-du-lagon.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/noye-du-lagon.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

@@ -3,7 +3,7 @@
   "_key": "!actors!DxCJXL8SGAzaEaBU",
   "name": "Pillard des Sans-Lune",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/pillard-sans-lune.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/pillard-sans-lune.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -85,7 +85,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/pillard-sans-lune.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/pillard-sans-lune.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

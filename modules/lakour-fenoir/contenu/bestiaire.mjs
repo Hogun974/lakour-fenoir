@@ -3,7 +3,7 @@
 // Données au registre (donnees.json, famille « bestiaire ») et acteurs « survivant » du compendium bestiaire (livide = true
 // pour un Livide ; flags.lakour-fenoir.bestiaire porte la fiche). Textes originaux.
 import { COMPETENCES, html, survivant } from "./aides.mjs";
-import { cheminJeton } from "./jetons.mjs";
+import { imageJeton } from "./jetons.mjs";
 
 function creature({ cle, nom, categorie, des, resistance, vitesse, sens, zones, phases, description, comportement, faiblesse, competences = {} }) {
   return { cle, nom, categorie, des, resistance, vitesse, sens, zones, phases, description: html(description), comportement: html(comportement), faiblesse: html(faiblesse), competences };
@@ -77,7 +77,7 @@ export const CREATURES = BESTIAIRE.filter(b => b.categorie === "livide" || b.cat
 export const BESTIAIRE_ACTEURS = BESTIAIRE.map(b => survivant({
   cle: b.cle, nom: b.nom, pack: "bestiaire", statut: "pnj", pnj: true, livide: b.categorie === "livide", vivant: b.categorie !== "livide",
   competences: Object.fromEntries(COMPETENCES.map(c => [c, b.competences[c] ?? (c === "combat" ? b.des : 0)])),
-  moral: 3, img: cheminJeton(b.cle), disposition: -1,
+  moral: 3, img: imageJeton(b.cle), disposition: -1,
   notes: `${b.description}\n\n**Comportement.** ${b.comportement.replace(/<[^>]+>/g, "")}\n\n**Faiblesse.** ${b.faiblesse.replace(/<[^>]+>/g, "")}\n\n**Dés d'attaque :** ${b.des} — **résistance :** ${b.resistance} — **vitesse :** ${b.vitesse}.`.replace(/<[^>]+>/g, ""),
   extra: { bestiaire: { categorie: b.categorie, des: b.des, resistance: b.resistance, vitesse: b.vitesse } }
 }));

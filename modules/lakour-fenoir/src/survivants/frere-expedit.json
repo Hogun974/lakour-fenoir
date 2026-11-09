@@ -3,7 +3,7 @@
   "_key": "!actors!XkZtJbtXDiDsMAyE",
   "name": "Frère Expédit",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/frere-expedit.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/frere-expedit.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -90,7 +90,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/frere-expedit.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/frere-expedit.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

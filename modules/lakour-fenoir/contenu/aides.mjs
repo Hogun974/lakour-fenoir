@@ -143,7 +143,7 @@ export function passe({ cle, nom, description, competences, savoirs = [], equipe
 
 // ---------------------------------------------------------------- Acteurs « survivant » (§3.1 et §10.1)
 // pack : "survivants" (prétirés, PNJ) ou "bestiaire" (Livides, animaux, figures hostiles : livide = true pour un Livide).
-// img : jeton (assets/jetons/<cle>.svg) ; disposition : -1 hostile, 0 neutre, 1 allié.
+// img : jeton (assets/jetons/ia/<cle>.webp, ou assets/jetons/<cle>.svg en repli) ; disposition : -1 hostile, 0 neutre, 1 allié.
 export function survivant({ cle, nom, pack = "survivants", passe = "", enfance = "", age = 30, lien = "", competences = {}, passions = {}, traits = [],
   incapacites = [], statut = "pnj", moral = 4, notes = "", objets = [], pnj = false, livide = false, vivant = true, img = IMG.survivant,
   disposition = null, extra = {} }) {

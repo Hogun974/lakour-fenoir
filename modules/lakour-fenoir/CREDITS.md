@@ -21,9 +21,16 @@ Illustrations (fond du monde `assets/monde/fond.jpg`, images des fêtes `assets/
 par l'auteur, avec le modèle FLUX.2 klein 9B (modèle non commercial), sans service distant.
 Les fonds des cartes de lieux (`assets/cartes/lieu-*.svg`) sont dessinés par le rendu commun du moteur La Kour.
 
+## Jetons peints
+
+Les jetons du dossier `assets/jetons/ia/` (portraits ronds des survivants, PNJ, créatures, figurants et passés, en WebP)
+sont des images générées localement par IA par l'auteur, avec le modèle FLUX.2 klein 9B (modèle non commercial) dans
+ComfyStudio, sans service distant ; ils n'utilisent aucune icône de game-icons.net. Ce sont eux que portent les acteurs et
+l'index des jetons de joueur ; les SVG ci-dessous servent de repli et de version en relief.
+
 ## Icônes des jetons
 
-Les silhouettes des jetons (`assets/jetons/`) sont des icônes de **[game-icons.net](https://game-icons.net)**, publiées sous licence
+Les silhouettes des jetons SVG (`assets/jetons/*.svg`, `3d/`, `joueurs/`) sont des icônes de **[game-icons.net](https://game-icons.net)**, publiées sous licence
 **Creative Commons Attribution 3.0 (CC BY 3.0)** : <https://creativecommons.org/licenses/by/3.0/>. Source : <https://github.com/game-icons/icons>.
 
 Icons made by Caro Asercion, DarkZaitzev, Delapouite, Lorc, Skoll, from game-icons.net (CC BY 3.0).

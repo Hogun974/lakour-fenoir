@@ -6,9 +6,9 @@
 [Changements](CHANGELOG.md) · [Crédits](modules/lakour-fenoir/CREDITS.md)
 
 > **Transparence.** Le code et les textes de ce dépôt ont été écrits avec l'aide d'une IA (Claude, d'Anthropic) et relus
-> par l'auteur. Les illustrations (fond du monde, images des fêtes) ont été générées localement par IA (modèle FLUX.2 klein
-> 9B, sans service distant). La carte de l'île est fabriquée par programme à partir de données ouvertes (IGN,
-> OpenStreetMap) ; les jetons reprennent des icônes de game-icons.net. Le détail est dans [Crédits](#crédits).
+> par l'auteur. Les illustrations (fond du monde, images des fêtes, jetons peints) ont été générées localement par IA (modèle
+> FLUX.2 klein 9B, sans service distant). La carte de l'île est fabriquée par programme à partir de données ouvertes (IGN,
+> OpenStreetMap) ; les jetons SVG de repli reprennent des icônes de game-icons.net. Le détail est dans [Crédits](#crédits).
 
 <p align="center">
   <img src="docs/captures/carte-de-l-ile.png" alt="La carte de La Réunion : seize régions, leurs routes et leurs sentiers" width="49%">
@@ -81,7 +81,7 @@ Le contrat entre les pièces : [`docs/survie-contrat.md`](docs/survie-contrat.md
   humains complétés par des compagnons IA, menés par le MJ IA ou par un MJ humain.
 - **Foundry VTT v14** (vérifié avec la 14.370). Aucun système de jeu à acheter, aucun contenu payant : le système est fourni
   ici, et tout ce qu'il faut pour jouer avec.
-- Le module **MJ IA** (`lakour-mj-ia`, **0.44.1** ou plus, la version du sous-module) est **requis pour le coffre** :
+- Le module **MJ IA** (`lakour-mj-ia`, **0.46.0** ou plus, la version du sous-module) est **requis pour le coffre** :
   c'est lui qui scelle l'état réel du monde (hordes, infestation, ce qui reste à piller, ce qui s'est passé hors de vue)
   et le garde hors des navigateurs des joueurs. Sans clé d'IA, il ne coûte rien et ne contacte personne. Sans lui, le
   système marche, mais le monde réel est gardé en clair dans les réglages du monde, et le MJ en est prévenu en permanence
@@ -528,7 +528,9 @@ Pour proposer un changement :
 
 - Jeu, textes, règles, contenu et code : **Jordan (La Kour)**, écrits avec l'aide d'une IA (**Claude**, d'Anthropic) et
   relus par l'auteur.
-- Silhouettes des jetons : icônes de **[game-icons.net](https://game-icons.net)** (Caro Asercion, DarkZaitzev, Delapouite,
+- Jetons peints (`assets/jetons/ia/`, portraits ronds en WebP portés par les acteurs et les jetons de joueur) : générés
+  localement par IA avec FLUX.2 klein 9B (ComfyStudio, sans service distant), sans icône de game-icons.net.
+- Silhouettes des jetons SVG (repli et version en relief) : icônes de **[game-icons.net](https://game-icons.net)** (Caro Asercion, DarkZaitzev, Delapouite,
   Lorc, Skoll), licence **CC BY 3.0**, recolorées et composées dans un médaillon ; la liste icône par icône est dans
   [`modules/lakour-fenoir/CREDITS.md`](modules/lakour-fenoir/CREDITS.md).
 - Carte de La Réunion (`assets/cartes/reunion.webp`) : contour **IGN Admin Express** (licence ouverte), relief **Terrain Tiles**

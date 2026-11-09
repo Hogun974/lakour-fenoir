@@ -3,7 +3,7 @@
   "_key": "!actors!IGqceB32b2ArsFPH",
   "name": "Valliamée Narayanin, agricultrice des Hauts",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/pretire-cultivatrice.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/pretire-cultivatrice.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -238,7 +238,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/pretire-cultivatrice.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/pretire-cultivatrice.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

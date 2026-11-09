@@ -3,7 +3,7 @@
   "_key": "!actors!S7x8AY67d8P3afnh",
   "name": "Josian Robert, agent de la centrale",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/agent-de-la-riviere-de-l-est.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/agent-de-la-riviere-de-l-est.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -187,7 +187,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/agent-de-la-riviere-de-l-est.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/agent-de-la-riviere-de-l-est.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

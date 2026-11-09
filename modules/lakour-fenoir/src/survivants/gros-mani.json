@@ -3,7 +3,7 @@
   "_key": "!actors!AzNzFH3FyonsxXsZ",
   "name": "Gros Mani",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/gros-mani.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/gros-mani.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -158,7 +158,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/gros-mani.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/gros-mani.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

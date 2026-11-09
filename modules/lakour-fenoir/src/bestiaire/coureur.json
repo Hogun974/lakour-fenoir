@@ -3,7 +3,7 @@
   "_key": "!actors!QEVDxTsV0egbzKiW",
   "name": "Coureur",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/coureur.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/coureur.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -85,7 +85,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/coureur.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/coureur.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

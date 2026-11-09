@@ -3,7 +3,7 @@
   "_key": "!actors!lxESLks5aIcvHYw6",
   "name": "Le Comptable",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/le-comptable.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/le-comptable.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -127,7 +127,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/le-comptable.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/le-comptable.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

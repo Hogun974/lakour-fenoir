@@ -3,7 +3,7 @@
   "_key": "!actors!keHKaeCkET6GOZBE",
   "name": "Ophélie Turpin, la voix du Brûlé",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/radioamatrice-du-brule.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/radioamatrice-du-brule.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -159,7 +159,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/radioamatrice-du-brule.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/radioamatrice-du-brule.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

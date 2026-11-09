@@ -3,7 +3,7 @@
   "_key": "!actors!dZjOctDY12Zhbdj1",
   "name": "Chien errant",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/chien-errant.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/chien-errant.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -85,7 +85,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/chien-errant.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/chien-errant.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

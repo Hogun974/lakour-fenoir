@@ -3,7 +3,7 @@
   "_key": "!actors!6taVN22OVlys8VFJ",
   "name": "La docteure Soundirassen",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/docteure-soundirassen.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/docteure-soundirassen.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -157,7 +157,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/docteure-soundirassen.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/docteure-soundirassen.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

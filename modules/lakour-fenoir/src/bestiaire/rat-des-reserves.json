@@ -3,7 +3,7 @@
   "_key": "!actors!XxIU8uAdEFivmHkr",
   "name": "Rats des réserves",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/rat-des-reserves.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/rat-des-reserves.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -85,7 +85,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/rat-des-reserves.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/rat-des-reserves.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

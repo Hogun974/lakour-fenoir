@@ -3,7 +3,7 @@
   "_key": "!actors!ItL3qTYEHdUXAQAm",
   "name": "Madame Lauret, l'ancienne de La Nouvelle",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/ancienne-de-la-nouvelle.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/ancienne-de-la-nouvelle.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -149,7 +149,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/ancienne-de-la-nouvelle.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/ancienne-de-la-nouvelle.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

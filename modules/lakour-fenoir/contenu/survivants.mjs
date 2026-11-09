@@ -3,7 +3,7 @@
 import { survivant } from "./aides.mjs";
 import { SAVOIRS } from "./savoirs.mjs";
 import { EQUIPEMENTS } from "./equipements.mjs";
-import { cheminJeton } from "./jetons.mjs";
+import { imageJeton } from "./jetons.mjs";
 
 const sv = cle => SAVOIRS.find(s => s.system.cle === cle);
 const eq = cle => EQUIPEMENTS.find(e => e.system.cle === cle);
@@ -14,11 +14,11 @@ const objets = (savoirs = [], equipement = []) => [...savoirs.map(sv), ...equipe
 
 function pretire({ cle, nom, passe, enfance, age, competences, passions, traits, incapacites = [], savoirs, equipement, notes, lien = "" }) {
   return survivant({ cle, nom, passe, enfance, age, competences, passions, traits, incapacites, lien, statut: "joueur", notes,
-    objets: objets(savoirs, equipement), img: cheminJeton(cle), extra: { pretire: true } });
+    objets: objets(savoirs, equipement), img: imageJeton(cle), extra: { pretire: true } });
 }
 function pnj({ cle, nom, passe = "", enfance = "", age, competences, passions = {}, traits = [], incapacites = [], savoirs = [], equipement = [], notes, lien = "", disposition = 0 }) {
   return survivant({ cle, nom, passe, enfance, age, competences, passions, traits, incapacites, lien, statut: "pnj", pnj: true, notes,
-    objets: objets(savoirs, equipement), img: cheminJeton(cle), disposition });
+    objets: objets(savoirs, equipement), img: imageJeton(cle), disposition });
 }
 
 export const PRETIRES = [

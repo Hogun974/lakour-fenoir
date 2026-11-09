@@ -3,7 +3,7 @@
   "_key": "!actors!VDaQoDenx6zqsz9q",
   "name": "Livide des Hauts",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/livide-des-hauts.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/livide-des-hauts.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -85,7 +85,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/livide-des-hauts.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/livide-des-hauts.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

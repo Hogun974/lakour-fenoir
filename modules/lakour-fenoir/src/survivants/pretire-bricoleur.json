@@ -3,7 +3,7 @@
   "_key": "!actors!ytoPZGKwzjWb3Gub",
   "name": "Rivo Rakotomalala, électricien",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/pretire-bricoleur.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/pretire-bricoleur.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -250,7 +250,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/pretire-bricoleur.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/pretire-bricoleur.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

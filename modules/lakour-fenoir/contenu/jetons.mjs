@@ -3,12 +3,26 @@
 // dans modules/lakour-mj-ia/outils/game-icons/ sont utilisées (pour en ajouter : outils/fabriquer-jetons-fenoir.mjs
 // --source <dossier icons-master de l'archive game-icons>). Les images, figurants.json, les index des jetons de joueur et
 // le tableau des icônes de CREDITS.md sont écrits par outils/fabriquer-jetons-fenoir.mjs.
+import { existsSync } from "node:fs";
+
 export const DOSSIER_JETONS = "modules/lakour-fenoir/assets/jetons";
 export const cheminJeton = cle => `${DOSSIER_JETONS}/${cle}.svg`;
 export const cheminJeton3d = cle => `${DOSSIER_JETONS}/3d/${cle}.svg`;
 export const cheminJetonJoueur = cle => `${DOSSIER_JETONS}/joueurs/${cle}.svg`;
 export const cheminJetonJoueur3d = cle => `${DOSSIER_JETONS}/joueurs/3d/${cle}.svg`;
 export const INDEX_JOUEURS = { "2d": `${DOSSIER_JETONS}/index.json`, "3d": `${DOSSIER_JETONS}/index-3d.json` };
+
+// Jetons peints (images IA générées localement avec FLUX.2 klein 9B, ComfyStudio) : assets/jetons/ia/<cle>.webp et
+// ia/joueurs/<cle>.webp, ronds, 512 × 512, détourés. Ils ne sont pas fabriqués par le script (dossier gardé à chaque
+// fabrication) : quand le WebP existe, l'acteur (img, texture du jeton) et index.json le désignent ; sinon le SVG sert
+// de repli. Les jetons en relief (3d/) restent en SVG.
+export const DOSSIER_IA = `${DOSSIER_JETONS}/ia`;
+export const cheminJetonIa = cle => `${DOSSIER_IA}/${cle}.webp`;
+export const cheminJetonJoueurIa = cle => `${DOSSIER_IA}/joueurs/${cle}.webp`;
+const RACINE_DEPOT = new URL("../../../", import.meta.url);
+export const existe = chemin => existsSync(new URL(chemin, RACINE_DEPOT));
+export const imageJeton = cle => (existe(cheminJetonIa(cle)) ? cheminJetonIa(cle) : cheminJeton(cle));
+export const imageJetonJoueur = cle => (existe(cheminJetonJoueurIa(cle)) ? cheminJetonJoueurIa(cle) : cheminJetonJoueur(cle));
 
 // Jeton de joueur par passé (clé du passé -> icône).
 export const JETONS_PASSES = {

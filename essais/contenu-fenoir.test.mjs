@@ -9,7 +9,8 @@ import { join } from "node:path";
 import {
   BUDGET, FETES_DE_FENOIR, FETES_MOTEUR, TYPE_PACK, bilanVoie, fabriquer, termesInterdits, verifierDocuments, verifierDonnees, verifierVoie
 } from "../outils/fabriquer-fenoir.mjs";
-import { verifierJetons } from "../outils/fabriquer-jetons-fenoir.mjs";
+import { jetonsNonPeints, listeJetons, verifierJetons } from "../outils/fabriquer-jetons-fenoir.mjs";
+import { INDEX_JOUEURS, cheminJetonIa, cheminJetonJoueurIa } from "../modules/lakour-fenoir/contenu/jetons.mjs";
 import { DOCUMENTS, donnees } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { COMPETENCES, MODULE, sansBalises } from "../modules/lakour-fenoir/contenu/aides.mjs";
 import { FETES_FENOIR, declinaisons, fetesDuJour } from "../modules/lakour-fenoir/scripts/fetes.js";
@@ -400,7 +401,7 @@ test("créatures au registre (famille lue par la logique du système) et bras de
 
 test("module.json : compendiums, langues, dossier de compendiums", () => {
   const m = JSON.parse(readFileSync(new URL("module.json", RACINE), "utf8"));
-  assert.equal(m.id, MODULE); assert.equal(m.version, "0.2.4");
+  assert.equal(m.id, MODULE); assert.equal(m.version, "0.2.5");
   assert.deepEqual(m.compatibility, { minimum: "14", verified: "14.370" });
   assert.equal(m.relationships.systems[0].id, "lakour-survie");
   assert.deepEqual(m.esmodules, ["scripts/main.js"]);
@@ -429,6 +430,42 @@ test("fichiers fabriqués à jour : src/, assets/donnees.json, jetons", () => {
   const ecrit = JSON.parse(readFileSync(new URL("assets/donnees.json", RACINE), "utf8"));
   assert.deepEqual(ecrit, JSON.parse(JSON.stringify(D)), "assets/donnees.json périmé : relancer npm run fabriquer-fenoir");
   assert.deepEqual(verifierJetons(), []);
+});
+
+test("jetons peints : chaque clé de index.json a son WebP, que l'index désigne ; acteurs et figurants peints aussi", () => {
+  const depot = chemin => new URL(`../${chemin}`, import.meta.url);
+  const index = JSON.parse(readFileSync(depot(INDEX_JOUEURS["2d"]), "utf8"));
+  const liste = listeJetons();
+  assert.deepEqual(Object.keys(index).sort(), liste.passes.map(p => p.cle).sort());
+  for (const [cle, chemin] of Object.entries(index)) {
+    assert.equal(chemin, cheminJetonJoueurIa(cle), `${cle} : index.json désigne le jeton peint`);
+    assert.ok(existsSync(depot(chemin)), `${chemin} absent`);
+  }
+  const index3d = JSON.parse(readFileSync(depot(INDEX_JOUEURS["3d"]), "utf8"));
+  for (const chemin of Object.values(index3d)) assert.match(chemin, /\/joueurs\/3d\/[a-z0-9-]+\.svg$/, "le relief reste en SVG");
+  assert.deepEqual(jetonsNonPeints(liste), [], "jetons peints manquants");
+  for (const j of liste.figurants) assert.ok(existsSync(depot(cheminJetonIa(j.cle))), j.cle);
+  // figurants.json : chaque type garde son jeton SVG et désigne le jeton peint (« image », relatif à assets/jetons/).
+  const figurants = JSON.parse(readFileSync(depot(`${INDEX_JOUEURS["2d"].replace(/index\.json$/, "figurants.json")}`), "utf8"));
+  for (const [type, f] of Object.entries(figurants)) {
+    assert.match(f.jeton, /^[a-z0-9-]+$/, type);
+    assert.equal(f.image, `ia/${f.jeton}.webp`, `${type} : image peinte`);
+  }
+  for (const d of DOCUMENTS.filter(x => x.type === "survivant")) {
+    const cle = d.flags[MODULE].cle;
+    assert.equal(d.img, cheminJetonIa(cle), `${d.name} : img`);
+    assert.equal(d.prototypeToken.texture.src, cheminJetonIa(cle), `${d.name} : jeton`);
+  }
+  // Un WebP rond de 512 × 512 (en-tête RIFF/WEBP, VP8X avec canal alpha).
+  for (const j of [...liste.acteurs, ...liste.figurants, ...liste.passes]) {
+    const octets = readFileSync(depot(j.peint));
+    assert.equal(octets.toString("ascii", 0, 4), "RIFF", j.peint);
+    assert.equal(octets.toString("ascii", 8, 12), "WEBP", j.peint);
+    assert.equal(octets.toString("ascii", 12, 16), "VP8X", `${j.peint} : WebP étendu (transparence)`);
+    assert.ok(octets[20] & 0x10, `${j.peint} : canal alpha`);
+    assert.equal(1 + octets.readUIntLE(24, 3), 512, `${j.peint} : largeur`);
+    assert.equal(1 + octets.readUIntLE(27, 3), 512, `${j.peint} : hauteur`);
+  }
 });
 
 test("contrat commun des modules de contenu du MJ IA (sauf l'image de la carte, à produire)", () => {

@@ -3,7 +3,7 @@
   "_key": "!actors!zRZUDVQs8j7WTxtQ",
   "name": "Marie-Josée Payet, gendarme",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/pretire-combattante.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/pretire-combattante.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -198,7 +198,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/pretire-combattante.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/pretire-combattante.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

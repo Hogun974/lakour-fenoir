@@ -3,7 +3,7 @@
   "_key": "!actors!venEIbiQOS82GIpr",
   "name": "Sully Técher, guide de canyon",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/pretire-eclaireur.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/pretire-eclaireur.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -237,7 +237,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/pretire-eclaireur.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/pretire-eclaireur.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

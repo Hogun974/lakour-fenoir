@@ -35,6 +35,17 @@ export const PACKS = { installation: "installations", savoir: "savoirs", equipem
 const ICONES = { installation: "icons/svg/house.svg", savoir: "icons/svg/book.svg", equipement: "icons/svg/item-bag.svg", passe: "icons/svg/mystery-man.svg",
   recette: "icons/svg/anvil.svg", affliction: "icons/svg/biohazard.svg", enfance: "icons/svg/village.svg", trait: "icons/svg/aura.svg" };
 const JETON_PASSE = cle => `modules/${MODULE_CONTENU}/assets/jetons/joueurs/${cle}.svg`;
+// Le jeton d'un passé : celui que désigne l'index des jetons de joueur du module de contenu (assets/jetons/index.json : le
+// jeton peint, WebP, quand il existe), le SVG du passé sinon (hors de Foundry, index illisible ou passé absent de l'index).
+let indexJetons = null;
+async function jetonPasse(cle) {
+  try {
+    indexJetons ??= await (await fetch(foundry.utils.getRoute(`modules/${MODULE_CONTENU}/assets/jetons/index.json`))).json();
+    const chemin = indexJetons?.[cle];
+    if (typeof chemin === "string" && chemin.startsWith(`modules/${MODULE_CONTENU}/assets/jetons/`)) return chemin;
+  } catch { /* SVG en repli */ }
+  return JETON_PASSE(cle);
+}
 
 const erreur = cle => new Error(`LAKOUR_SURVIE.Erreurs.${cle}`);
 const clair = texte => new Error(texte);
@@ -580,7 +591,7 @@ async function creerActeurSurvivant(d, { userId = "", statut = null } = {}) {
   const nom = String(d.nom || t("LAKOUR_SURVIE.Creation.SansNom")).slice(0, 80);
   const user = userId ? game.users.get(userId) : null;
   const PROPRIO = globalThis.CONST?.DOCUMENT_OWNERSHIP_LEVELS?.OWNER ?? 3;
-  const jeton = L.indexer(c).passes.has(d.passe) ? JETON_PASSE(d.passe) : "icons/svg/mystery-man.svg";
+  const jeton = L.indexer(c).passes.has(d.passe) ? await jetonPasse(d.passe) : "icons/svg/mystery-man.svg";
   const moteur = game.modules?.get?.(MODULE_MJIA);
   // La graine d'histoire (texte libre, lu par le MJ IA) : sans balises, bornée.
   const graine = sansBalises(typeof d.graine === "string" ? d.graine : "").slice(0, 2000);

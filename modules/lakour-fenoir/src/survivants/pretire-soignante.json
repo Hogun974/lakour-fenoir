@@ -3,7 +3,7 @@
   "_key": "!actors!h6KrxULVti3ZccHo",
   "name": "Nadia Patel, infirmière",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/pretire-soignante.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/pretire-soignante.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -198,7 +198,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/pretire-soignante.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/pretire-soignante.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1

@@ -5,8 +5,28 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
-## Non publié
+## Système 0.1.6 · Contenu 0.2.5 — 9 novembre 2026
 
+- **Jetons peints** : les 54 jetons du monde (6 prétirés, 11 PNJ, 10 créatures, 10 figurants, 17 passés) deviennent des
+  portraits ronds peints, générés localement par IA (FLUX.2 klein 9B dans ComfyStudio, sans service distant) : anneau de métal
+  rouillé cerclé de cordage, ciel gris, La Réunion en fond. Ils sont dans `assets/jetons/ia/` (WebP 512 × 512, détourés) ;
+  les acteurs des compendiums (image et jeton) et `assets/jetons/index.json` les désignent, les SVG game-icons restent en
+  repli (et pour le style en relief, `3d/`). `outils/fabriquer-jetons-fenoir.mjs` garde le dossier `ia/` et choisit le
+  WebP quand il existe ; un essai vérifie que chaque clé de `index.json` a son WebP. Le module anglais les reprend.
+  Tous portent le même anneau : un seul anneau de référence est posé sur chaque portrait.
+- **Visages métissés** : chaque personnage peint suit le guide du métissage réunionnais (`docs/metissage.md`) : Cafres et
+  Malgaches, Malbars, Chinois, Z'arabes, Yabs et petits blancs des Hauts, Zoreils, Comoriens et Mahorais, et tous les
+  métis, avec un teint et des traits décrits personnage par personnage.
+- **Figurants peints** : `assets/jetons/figurants.json` donne à chaque figurant son image peinte (`image: "ia/<jeton>.webp"`),
+  que le MJ IA pose sur les jetons qu'il crée.
+- **Moteur MJ IA 0.46.0** (sous-module `modules/lakour-mj-ia`) : il accepte les jetons peints (index des joueurs, figurants,
+  survivants). Le monde vierge l'exige (`monde/world.json`, minimum 0.46.0), les README aussi.
+- **Fêtes et fond refaits** : les 11 illustrations du calendrier (`assets/fetes/*.jpg`, 1280 × 720) et le fond du monde
+  (`assets/monde/fond.jpg`, 1920 × 1072) sont repeints dans le même ton, mêmes sujets. La communauté de la fête est au
+  premier plan, les autres autour : Malbars pour la Cavadee et la Dipavali, Chinois pour le nouvel an chinois, Cafres pour
+  le 20 désanm, tout le monde mêlé pour les autres.
+- **Système** : un survivant tiré par le générateur prend le jeton de son passé désigné par `index.json` (le jeton peint),
+  le SVG en repli.
 - **Moteur MJ IA 0.44.1** (sous-module `modules/lakour-mj-ia`) : réglage « Caméras des joueurs permises » et bloc
   « Caméras des joueurs » de la console (couper ou permettre, ajouter la vidéo au monde, donner la caméra aux joueurs ;
   le micro n'est jamais touché), modèle des compagnons IA choisi dans une liste (vide : un modèle économique du
@@ -15,6 +35,8 @@ dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 - README (français, anglais) : section « Ce que le moteur 0.44.1 apporte à la table », moteur requis 0.44.1. Tutoriels :
   compagnons, coût et pilote automatique dans la section du MJ IA, caméras des joueurs dans celle de la voix, deux lignes
   de dépannage, moteur 0.44.1 dans la liste des paquets.
+
+## Système 0.1.5 · Contenu 0.2.4 — 6 novembre 2026
 
 - **Mise à jour des journaux : pages intactes mieux reconnues** (`scripts/mise-a-jour.js`, commun aux quatre modules LaKour) :
   à la création d'une page, le serveur Foundry pose sa date de modification quelques millisecondes après sa date de création

@@ -6,9 +6,9 @@
 [Changelog](CHANGELOG.md) · [Credits](modules/lakour-fenoir/CREDITS.md)
 
 > **Transparency.** The code and texts of this repository were written with the help of an AI (Claude, by Anthropic) and
-> reviewed by the author. The illustrations (world background, festival images) were generated locally by AI (FLUX.2 klein
-> 9B model, no remote service). The island map is built by code from open data (IGN, OpenStreetMap); the tokens use icons
-> from game-icons.net. Details in [Credits](#credits).
+> reviewed by the author. The illustrations (world background, festival images, painted tokens) were generated locally by AI
+> (FLUX.2 klein 9B model, no remote service). The island map is built by code from open data (IGN, OpenStreetMap); the
+> fallback SVG tokens use icons from game-icons.net. Details in [Credits](#credits).
 
 <p align="center">
   <img src="docs/captures/carte-de-l-ile.png" alt="The map of Réunion Island: sixteen regions, their roads and trails" width="49%">
@@ -87,7 +87,7 @@ The contract between the pieces: [`docs/survie-contrat.md`](docs/survie-contrat.
   companions, run by the AI GM or by a human GM.
 - **Foundry VTT v14** (verified with 14.370). No game system to buy, no paid content: the system is provided here, with
   everything needed to play.
-- The **AI GM module** (`lakour-mj-ia`, **0.44.1** or later, the submodule's version) is **required for the vault**: it
+- The **AI GM module** (`lakour-mj-ia`, **0.46.0** or later, the submodule's version) is **required for the vault**: it
   seals the real state of the world (hordes, infestation, what is left to loot, what happened out of sight) and keeps it
   out of the players' browsers. Without an AI key it costs nothing and contacts nobody. Without the module, the system
   works, but the real world is kept in the clear in the world settings, and the GM is warned permanently ("players can
@@ -518,7 +518,9 @@ change:
 
 - Game, texts, rules, content and code: **Jordan (La Kour)**, written with the help of an AI (**Claude**, by Anthropic) and
   reviewed by the author.
-- Token silhouettes: icons from **[game-icons.net](https://game-icons.net)** (Caro Asercion, DarkZaitzev, Delapouite, Lorc,
+- Painted tokens (`assets/jetons/ia/`, round WebP portraits used by the actors and the player tokens): generated locally by
+  AI with FLUX.2 klein 9B (ComfyStudio, no remote service), without any game-icons.net icon.
+- Silhouettes of the SVG tokens (fallback and relief version): icons from **[game-icons.net](https://game-icons.net)** (Caro Asercion, DarkZaitzev, Delapouite, Lorc,
   Skoll), **CC BY 3.0** licence, recoloured and set in a medallion; the icon-by-icon list is in
   [`modules/lakour-fenoir/CREDITS.md`](modules/lakour-fenoir/CREDITS.md).
 - Map of Réunion Island (`assets/cartes/reunion.webp`): outline from **IGN Admin Express** (French open licence), relief

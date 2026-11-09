@@ -3,7 +3,7 @@
   "_key": "!actors!jVQwUHEkH3TOijNQ",
   "name": "Livide brûlé",
   "type": "survivant",
-  "img": "modules/lakour-fenoir/assets/jetons/livide-brule.svg",
+  "img": "modules/lakour-fenoir/assets/jetons/ia/livide-brule.webp",
   "system": {
     "competences": {
       "endurance": {
@@ -85,7 +85,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/lakour-fenoir/assets/jetons/livide-brule.svg",
+      "src": "modules/lakour-fenoir/assets/jetons/ia/livide-brule.webp",
       "fit": "contain",
       "scaleX": 1,
       "scaleY": 1
