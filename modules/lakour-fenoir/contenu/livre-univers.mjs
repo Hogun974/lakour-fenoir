@@ -44,11 +44,13 @@ Il y a deux saisons. L'**hiver austral**, de mai à octobre : sec, doux en bas, 
 
 ${region("saint-denis", "Saint-Denis")} au nord, le chef-lieu, avec son front de mer, ses cases de la rue de Paris et ses barres du Chaudron ; ${region("saint-pierre", "Saint-Pierre")} au sud, la rivale, son marché, son port, ses soirées ; ${region("le-port", "Le Port")} à l'ouest, par où arrive tout ce que l'île ne fabrique pas, c'est-à-dire presque tout ; ${region("saint-paul", "Saint-Paul")}, ${region("saint-leu", "Saint-Leu")}, Saint-André, Saint-Benoît, Saint-Joseph : un chapelet de villes reliées par des routes qu'on bouche tous les matins. L'île est petite et l'on y passe sa vie en voiture.
 
-Entre les villes, la **canne à sucre**. On la coupe de juillet à décembre, les camions montent aux sucreries du Gol et de Bois-Rouge, et l'odeur de mélasse flotte sur la plaine. Il reste de la vanille dans le Sud, du géranium dans les Hauts de l'Ouest, des letchis et des mangues dans tous les jardins, des brèdes partout où il y a de l'eau. L'île ne se nourrit pourtant pas elle-même : elle importe son riz, sa farine, son lait, son carburant. Tout le monde le savait sans y penser.
+Entre les villes, la **canne à sucre**. On la coupe de juillet à décembre, les camions montent aux sucreries du Gol et de Bois-Rouge, et l'odeur de mélasse flotte sur la plaine. Il reste de la vanille dans le Sud, du géranium dans les Hauts de l'Ouest, des letchis et des mangues dans tous les jardins, des brèdes partout où il y a de l'eau. L'île ne se nourrit pourtant pas elle-même : elle importe son riz, sa farine, son lait, son carburant.
 
 # Les gens
 
-Il n'y avait personne sur cette île il y a quatre siècles. Tout le monde est venu de quelque part : de France, de Madagascar, d'Afrique de l'Est, de l'Inde du Sud, du Gujarat, de Chine, des Comores, de Mayotte, de Maurice. Les uns libres, beaucoup enchaînés, puis engagés, puis simplement arrivés. Il en est sorti un peuple qui se marie entre lui, qui mange le cari de l'un et les samoussas de l'autre, qui va à la messe, au temple, à la mosquée, à la pagode, parfois aux quatre, et qui parle **créole** à la maison et français à l'école.
+Il n'y avait personne sur cette île il y a quatre siècles. Tout le monde est venu de quelque part, les uns libres, beaucoup enchaînés, puis engagés, puis simplement arrivés, et chacun a gardé son nom dans la kour : les **Cafres**, venus d'Afrique et de Madagascar, les plus nombreux ; les **Yabs**, petits blancs des Hauts, et les **gros blancs** des vieilles familles de planteurs ; les **Malbars**, Tamouls venus couper la canne ; les **Z'arabes** du Gujarat ; les **Chinois** venus de Canton ; les **Malgaches**, les **Comoriens**, les **Mahorais**, les **Zoreils** de métropole. Et surtout tous ceux qui sont un peu de tout cela : un peuple qui se marie entre lui, qui mange le cari de l'un et les samoussas de l'autre, qui va à la messe, au temple, à la mosquée, à la pagode, parfois aux quatre, et qui parle **créole** à la maison et français à l'école.
+
+On se chambre, d'une kour à l'autre : le Zoreil « *i prend tout' bann bon travay* » (il prend tous les bons postes), le Chinois « *i res' ant' zot* » (reste entre les siens), le Malbar fait des « services », le Yab ne descend jamais de ses Hauts, et les derniers arrivés sont accusés de tout. C'est le *kozman* de l'île, moitié rire, moitié méfiance, et Fénoir l'a ravivé. Ce livre ne l'a jamais vu dire vrai sur personne.
 
 La vie quotidienne, avant, c'était ça : la radio dès six heures dans la cuisine, les bouchons, le travail, le marché forain du samedi, le pique-nique du dimanche, les gramouns sur la varangue, les marmailles dans la kour, la boutique du coin qui fait crédit, le kabar du samedi soir, les enterrements où tout le quartier vient. Une vie bruyante, chaude, serrée, qui se plaignait de tout et ne serait partie pour rien au monde.
 
@@ -182,7 +184,7 @@ Les rayons des supermarchés ont nourri l'île trois semaines, puis ils ont nour
 
 # Le courant
 
-L'île était couverte de panneaux solaires avant Fénoir, et ils marchent toujours : sur les toits des Hauts, des écoles, des hangars. Un panneau, une batterie, un régulateur, et l'on a de la lumière la nuit, une radio, une glacière pour l'insuline. Les Ferrailleurs les démontent et les vendent ; les Familles des Îlets savent les réparer. Le groupe électrogène, lui, coûte tout : du carburant qu'on ne retrouvera jamais, et un bruit que toute la vallée entend. On l'allume pour sauver une vie. Il y a des rivières, aussi, et de petites turbines, comme dans l'Est.
+L'île était couverte de panneaux solaires avant Fénoir, et ils marchent toujours : sur les toits des Hauts, des écoles, des hangars. Un panneau, une batterie, un régulateur, et l'on a de la lumière la nuit, une radio, une glacière pour l'insuline. Le groupe électrogène, lui, coûte tout : du carburant qu'on ne retrouvera jamais, et un bruit que toute la vallée entend. On l'allume pour sauver une vie.
 
 # Les cyclones et le volcan
 
@@ -194,11 +196,11 @@ La dengue et le chikungunya n'ont pas disparu avec les médecins ; les moustique
 
 # Les fêtes qu'on garde
 
-On a gardé les fêtes, toutes : fêter, c'est dire qu'on est encore un peuple. Noël en plein été, sous les flamboyants, avec un cari partagé et des cadeaux taillés au couteau ; le **20 décembre**, fête de la liberté, où le tambour du maloya s'entend quand même, et où ceux qui ne dépendent plus de personne comprennent ce qu'ils fêtent ; Dipavali, une seule petite lampe à huile bien abritée ; la Toussaint, où l'on fleurit des croix de bois au lieu d'aller au cimetière ; les letchis de la mi-décembre ; la fête de la musique, en juin, un kayamb bricolé et une voix basse. Tout cela est dans ${guide("fetes-de-fenoir", "les fêtes de Fénoir")}. Ça coûte une ration de plus par personne. Ça vaut toujours le prix.
+On a gardé les fêtes, toutes, et celles des voisins avec : fêter, c'est dire qu'on est encore un peuple. Noël sous les flamboyants ; le **20 décembre**, fête de la liberté, où ceux qui ne dépendent plus de personne comprennent ce qu'ils fêtent ; une seule lampe à huile pour Dipavali, et tout le camp vient la voir ; un kayamb bricolé en juin. Tout cela est dans ${guide("fetes-de-fenoir", "les fêtes de Fénoir")}. Ça coûte une ration de plus par personne. Ça vaut toujours le prix.
 
 # Repartir ou s'enraciner
 
-Il y a deux manières de vivre à Fénoir, et ce livre refuse de dire laquelle est la bonne. Les uns **repartent** : quand l'endroit s'épuise, quand une horde descend la route, ils chargent ce qu'ils peuvent, emportent leurs savoir-faire et leurs plans (ce qu'on a su construire une fois se reconstruit plus vite), et vont voir ailleurs, en sachant que l'ailleurs a changé. Les autres **s'enracinent** : ils captent, plantent, câblent, creusent, jusqu'au jour où rien ne manque sans que personne n'ait fouillé une maison, et ce jour-là, ils comptent les jours d'autonomie comme on comptait les années. Mais une serre brille, une fumée monte chaque soir, et toute l'île sait alors qu'il y a quelque chose à prendre. Les nomades meurent sur les routes ; les sédentaires meurent chez eux. Les deux vivent, aussi, et longtemps. C'est un choix de vie, pas une tactique : voir ${pageGuide("guide-du-joueur", "deux-voies", "Repartir ou s'enraciner")}.
+Il y a deux manières de vivre à Fénoir, et ce livre refuse de dire laquelle est la bonne. Les uns **repartent** : quand l'endroit s'épuise, quand une horde descend la route, ils chargent ce qu'ils peuvent, emportent leurs savoir-faire et leurs plans, et vont voir ailleurs. Les autres **s'enracinent** : ils captent, plantent, câblent, creusent, jusqu'au jour où rien ne manque sans que personne n'ait fouillé une maison. Mais une serre brille, une fumée monte chaque soir, et toute l'île sait alors qu'il y a quelque chose à prendre. Les nomades meurent sur les routes ; les sédentaires meurent chez eux. Les deux vivent, aussi, et longtemps. C'est un choix de vie, pas une tactique : voir ${pageGuide("guide-du-joueur", "deux-voies", "Repartir ou s'enraciner")}.
 
 > On est restés. On a creusé la cave, planté, capté la source. Le soixante-dixième jour, personne n'est sorti chercher quoi que ce soit, et on a mangé à notre faim. Ma fille a demandé si c'était ça, gagner. J'ai dit que c'était ça, aujourd'hui.
 > *Carnet de Rivo, électricien.*` },
@@ -237,7 +239,7 @@ Il y a deux manières de vivre à Fénoir, et ce livre refuse de dire laquelle e
 
 3. **« Un cargo viendra chercher les survivants au Port. »** La Garnison le dit à la radio depuis des semaines, avec un jour, puis un autre. Personne ne l'a vu. Ceux qui y sont allés avec leurs papiers sont restés : recensés, logés, réquisitionnés.
 
-4. **« Le Gris vient de l'eau des ravines. »** On n'en sait rien. Ce qu'on sait, c'est que l'eau des ravines donne la leptospirose, qui tue aussi. Faites-la bouillir dans tous les cas, et la rumeur n'aura plus d'importance.
+4. **« Les Comoriens du Chaudron ont vidé l'hypermarché. »** Faux : ceux qui l'ont vidé avaient un camion et des visages noircis. Mais la rumeur court plus vite qu'eux.
 
 5. **« Un enfant mordu ne s'est pas transformé. »** C'est la rumeur qu'on veut le plus croire, et celle qui a fait le plus de morts : des gens qui ont gardé un mordu près d'eux « au cas où ». Le Dispensaire aimerait trouver cet enfant.
 
@@ -251,7 +253,7 @@ Il y a deux manières de vivre à Fénoir, et ce livre refuse de dire laquelle e
 
 10. **« Maurice a fermé ses ports et coulé un bateau de réfugiés. »** Un radioamateur l'affirme. Personne n'a pu vérifier. On ne sait rien de Maurice, ni de Madagascar, ni de la métropole, depuis que les antennes se sont tues. Ce silence est peut-être le plus grand mystère de l'île, et le plus simple.
 
-Et puis il y a les mystères qu'on ne numérote pas : un îlet de Mafate où tout va bien, trop bien ; un groupe qui vit sur les toits du Chaudron et ne descend jamais ; un avion qu'on aurait entendu une nuit, sans le voir ; une femme qui répète chaque soir à la radio une adresse de Saint-Pierre et le prénom de son fils. Si vous apprenez quelque chose, écrivez-le ici, avec la date et la source.` },
+Et puis il y a les mystères qu'on ne numérote pas : un îlet de Mafate où tout va bien, trop bien ; un groupe qui vit sur les toits du Chaudron et ne descend jamais ; une femme qui répète chaque soir à la radio une adresse de Saint-Pierre et le prénom de son fils. Si vous apprenez quelque chose, écrivez-le ici, avec la date et la source.` },
 
   { cle: "lexique", titre: "Lexique", texte: `# Mots de l'île
 

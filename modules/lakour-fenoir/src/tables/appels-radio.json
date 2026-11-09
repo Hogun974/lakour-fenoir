@@ -4,7 +4,7 @@
   "name": "Appels radio",
   "img": "icons/svg/d20-black.svg",
   "description": "<p>Le MJ IA tire trois appels par semaine de jeu quand le groupe a une radio (sans doublon) ; le MJ humain en lit un quand la radio grésille.</p>",
-  "formula": "1d12",
+  "formula": "1d14",
   "replacement": true,
   "displayRoll": true,
   "folder": null,
@@ -340,6 +340,60 @@
             },
             "faction": "garnison-du-quai",
             "reputation": 1
+          }
+        }
+      }
+    },
+    {
+      "_id": "zm997aUTslDDXQWp",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.zm997aUTslDDXQWp",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Sauvetage — Les cousins de Kawéni.</strong> Une femme parle shimaoré, puis français : ses cousins arrivés de Mayotte la veille du jour zéro sont bloqués dans une case du Chaudron. Ses voisins ont refusé d'y aller, « <em>pa nout zafèr</em> » (pas notre affaire) ; elle offre tout ce qu'elle a.</p><p><strong>Récompense :</strong> 5 nourriture, 4 materiaux.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "sauvetage",
+            "recompense": {
+              "nourriture": 5,
+              "materiaux": 4
+            },
+            "faction": null,
+            "reputation": 0
+          }
+        }
+      }
+    },
+    {
+      "_id": "Y8uE8keBZRoa4bvv",
+      "_key": "!tables.results!0gKZBawB7DXV8kE0.Y8uE8keBZRoa4bvv",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Échange — Le carnet de Madame Thiaw-Kine.</strong> La boutiquière chinoise de la Rivière Saint-Louis propose son arrière-boutique contre une escorte jusqu'à Cilaos, et raye du carnet les dettes de ceux qui l'aident. On dit qu'elle ne fait crédit qu'aux siens ; son carnet a nourri tout le quartier pendant la grève de 2009.</p><p><strong>Récompense :</strong> 8 nourriture, 2 graines.</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {
+        "lakour-fenoir": {
+          "appel": {
+            "type": "echange",
+            "recompense": {
+              "nourriture": 8,
+              "graines": 2
+            },
+            "faction": null,
+            "reputation": 0
           }
         }
       }

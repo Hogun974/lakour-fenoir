@@ -33,7 +33,9 @@ export const APPELS_RADIO = tableAppels("appels-radio", "Appels radio", DESC, [
   ["reparation", "L'antenne de la Garnison", "La Garnison du Quai cherche un électricien pour remonter une antenne relais tombée sur la Possession.", { carburant: 5, munitions: 3 }, "garnison-du-quai", 2],
   ["echange", "Le marché aux pièces", "Les Ferrailleurs annoncent un marché sur le parking de Savanna : batteries, pneus, outils contre vivres.", { pieces: 5, materiaux: 3 }, "ferrailleurs", 1],
   ["sauvetage", "L'enfant de Sainte-Rose", "Les Pèlerins cherchent un enfant parti seul vers la coulée ; la radio du presbytère promet de quoi manger à qui le ramène.", { nourriture: 8 }, "pelerins-de-la-lave", 2],
-  ["recuperation", "La caisse de la caserne", "Un gendarme blessé, caché dans une brigade du Sud, parle d'une caisse de matériel radio et de rations sous le bureau du chef.", { munitions: 3, nourriture: 6 }, "garnison-du-quai", 1]
+  ["recuperation", "La caisse de la caserne", "Un gendarme blessé, caché dans une brigade du Sud, parle d'une caisse de matériel radio et de rations sous le bureau du chef.", { munitions: 3, nourriture: 6 }, "garnison-du-quai", 1],
+  ["sauvetage", "Les cousins de Kawéni", "Une femme parle shimaoré, puis français : ses cousins arrivés de Mayotte la veille du jour zéro sont bloqués dans une case du Chaudron. Ses voisins ont refusé d'y aller, « *pa nout zafèr* » (pas notre affaire) ; elle offre tout ce qu'elle a.", { nourriture: 5, materiaux: 4 }, null, 0],
+  ["echange", "Le carnet de Madame Thiaw-Kine", "La boutiquière chinoise de la Rivière Saint-Louis propose son arrière-boutique contre une escorte jusqu'à Cilaos, et raye du carnet les dettes de ceux qui l'aident. On dit qu'elle ne fait crédit qu'aux siens ; son carnet a nourri tout le quartier pendant la grève de 2009.", { nourriture: 8, graines: 2 }, null, 0]
 ]);
 
 export const DEMANDES = [

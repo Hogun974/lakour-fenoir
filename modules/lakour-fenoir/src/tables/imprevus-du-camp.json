@@ -4,7 +4,7 @@
   "name": "Imprévus du camp",
   "img": "icons/svg/d20-black.svg",
   "description": "<p>Un petit événement de la vie quotidienne de l'abri, à tirer un jour calme.</p>",
-  "formula": "1d16",
+  "formula": "1d19",
   "replacement": true,
   "displayRoll": true,
   "folder": null,
@@ -257,6 +257,51 @@
       "range": [
         16,
         16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pRo5vfv7b5fpBANT",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.pRo5vfv7b5fpBANT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux membres du groupe s'écharpent pour savoir si le vrai rougail saucisse prend des tomates ; le camp prend parti, quartier par quartier.</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VzkVxnKkiZtA9umN",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.VzkVxnKkiZtA9umN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une vieille yab et un jeune Comorien découvrent qu'ils fredonnent le même séga, chacun avec ses paroles.</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wfT5g0lsueYfDQTc",
+      "_key": "!tables.results!wSIDVO72cuKZAuEU.wfT5g0lsueYfDQTc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Quelqu'un imite l'accent zoreil de la dernière recrue ; la recrue imite en retour l'accent des Hauts, et tout le monde rit, sauf un.</p>",
+      "range": [
+        19,
+        19
       ],
       "weight": 1,
       "drawn": false,

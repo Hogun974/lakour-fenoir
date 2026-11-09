@@ -125,6 +125,9 @@ export const EVENEMENTS = [
   evenement({ cle: "enfant-seul", nom: "Un enfant seul", type: "humain", phases: ["panique", "effondrement", "silence"], poids: 1,
     texte: `Un enfant sale et muet, assis au bord de la route ou caché dans une cabane, qui serre un doudou et ne veut dire ni son nom ni où sont ses parents.`,
     effets: {} }),
+  evenement({ cle: "la-terre-du-gros-blanc", nom: "La terre du gros blanc", type: "humain", phases: ["silence", "apres"], zones: ["littoral", "hauts"], poids: 1,
+    texte: `L'héritier d'une vieille famille de planteurs revient sur ses terres avec un titre de propriété dans une pochette plastique et un fusil : les cannes, le verger, la source, tout est à lui « depuis 1820 ». Il propose à ceux qui s'y sont installés de partager la récolte à moitié, comme du temps du colonat. Les anciens grondent « *zot la touzour gard la tèr* » (ils ont toujours gardé la terre) ; lui connaît chaque captage du domaine, et il est seul.`,
+    effets: {} }),
 
   // ---------------------------------------------------------------- Accidents
   evenement({ cle: "incendie-urbain", nom: "Incendie en ville", type: "accident", phases: ["panique", "effondrement", "silence"], zones: ["littoral"], poids: 2,
@@ -148,6 +151,22 @@ export const EVENEMENTS = [
   evenement({ cle: "dispute-au-camp", nom: "Dispute au camp", type: "abri", poids: 1, public: false,
     texte: `La fatigue, la peur, une ration mal partagée : une dispute éclate et menace de diviser le groupe.`,
     effets: { abri: { moral: -1 } } }),
+  // Les communautés au camp (docs/metissage.md) : les préjugés sont dans la bouche des personnages, et le jeu ne les confirme jamais.
+  evenement({ cle: "carnet-de-la-boutique", nom: "Le carnet de la boutique", type: "abri", phases: APRES_CHUTE, poids: 1, public: false,
+    texte: `Le vieux Paul Ah-Hong (ou celui qui tient la réserve) a rouvert « la boutique » au camp : une balance, un coin d'étagère et un carnet de crédit où il note ce que chacun prend et doit. Un soir de rationnement, quelqu'un crie que « *Sinwa i fé crédi k'a son moun* » (le Chinois ne fait crédit qu'aux siens). On ouvre le carnet devant tout le monde : les plus grosses ardoises sont celles de ceux qui crient. Reste à savoir qui s'excuse, et si le carnet survit à la soirée.`,
+    effets: { abri: { moral: -1 } } }),
+  evenement({ cle: "un-service-dans-la-nuit", nom: "Un service dans la nuit", type: "abri", phases: APRES_CHUTE, poids: 1, public: false,
+    texte: `Des chants bas, une odeur de camphre, des citrons coupés et une lampe au pied du manguier : une famille malbare du camp fait un « service » pour ses morts du jour zéro. Certains prennent peur, parlent de sorcellerie, veulent les mettre dehors avant que « ça attire les Livides ». Un gramoun hausse les épaules : « *lé pa pli pir ke out neuvèn* » (ce n'est pas pire que ta neuvaine). Rien de ce qui se passe cette nuit-là ne fait de mal à personne ; la peur, si.`,
+    effets: { abri: { moral: -1 } } }),
+  evenement({ cle: "le-zoreil-qui-organise", nom: "Le Zoreil qui veut tout organiser", type: "abri", phases: APRES_CHUTE, poids: 1, public: false,
+    texte: `Celui du groupe qui vient de métropole (ou la dernière recrue, arrivée de Lyon pour un stage) a tout réorganisé pendant la nuit : tableau des gardes, étiquettes sur les bidons, réunion à huit heures précises. On ricane : « *i koné pa mèm fé in kari é i vé komand anou* » (il ne sait même pas faire un cari et il veut nous commander), et « l'heure créole, il va connaître ». Son tableau a pourtant repéré que la citerne perd un peu chaque nuit. On l'écoute, ou on le vexe ?`,
+    effets: { abri: { stocks: { eau: -2 }, moral: -1 } } }),
+  evenement({ cle: "les-derniers-arrives", nom: "Les derniers arrivés", type: "abri", phases: APRES_CHUTE, poids: 1, public: false,
+    texte: `Du riz a disparu de la réserve, et tous les regards se tournent vers la famille mahoraise arrivée la semaine dernière : « *zot la fine arivé, é i mank déza* » (à peine arrivés, et déjà il manque quelque chose). La mère se tait, le fils serre les poings. Ce ne sont pas eux : le MJ choisit le vrai coupable (des rats, un enfant du groupe qui a faim, un ancien qui cache des vivres « pour plus tard »). Il faudra le trouver avant que quelqu'un ne les mette dehors.`,
+    effets: { abri: { stocks: { nourriture: -3 }, moral: -1 } } }),
+  evenement({ cle: "le-cari-partage", nom: "Le cari qu'on partage", type: "abri", phases: ["silence", "apres"], poids: 1, public: false,
+    texte: `Après des jours de bouderie, chacun apporte ce qu'il a : le massalé de la famille malbare, le riz de la boutique, le rougail de la vieille yab, les brèdes mafane des Comoriens, le piment du Zoreil, qui a enfin appris à le doser. On mange dans la même marmite, on se chambre (« *out kari lé pa mal pou in zorey* », ton cari n'est pas mal, pour un Zoreil), et la nuit est la plus douce depuis Fénoir.`,
+    effets: { abri: { stocks: { nourriture: -2 }, moral: 1 } } }),
 
   // ---------------------------------------------------------------- Découvertes
   evenement({ cle: "cache-de-vivres", nom: "Une cache de vivres", type: "decouverte", phases: APRES_CHUTE, poids: 2, public: false,

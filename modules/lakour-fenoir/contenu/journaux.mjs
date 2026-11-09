@@ -161,7 +161,37 @@ Les **zerbaz** sont sa chance : une cueillette rapporte quelques plantes, une d�
 - **Bestiaire** : Livides et animaux, avec leurs dés et leur résistance.
 - **Cartes** : la carte de La Réunion (une épingle par région) et sept cartes de lieux (case créole, collège, station-service, supermarché, gîte, tunnel de lave, îlet).
 - **Le MJ IA** joue tout cela avec ses outils survie_* : il voit le réel et le connu, et ne dit aux joueurs que le connu.` },
-  { cle: "factions", titre: "Les factions en jeu", texte: `Les factions ne sont pas des méchants de service : chacune a de bonnes raisons. Faites-les **grandir** pendant la panique et l'effondrement, **occuper** les abris abandonnés, **se disputer** les régions. Un groupe qui les aide gagne de la réputation et ce qu'elle ouvre (troc, refuge, savoir enseigné) ; un groupe qui les trahit le paie.` }
+  { cle: "factions", titre: "Les factions en jeu", texte: `Les factions ne sont pas des méchants de service : chacune a de bonnes raisons. Faites-les **grandir** pendant la panique et l'effondrement, **occuper** les abris abandonnés, **se disputer** les régions. Un groupe qui les aide gagne de la réputation et ce qu'elle ouvre (troc, refuge, savoir enseigné) ; un groupe qui les trahit le paie.` },
+  { cle: "gens-de-l-ile", titre: "Les gens de l'île", texte: `La Réunion est une île de **métissage**, et c'est une fierté. Faites-la vivre : une foule, une file de réfugiés, un marché des Ferrailleurs mélangent toujours plusieurs visages, et beaucoup de gens sont un peu de tout à la fois.
+
+# Qui l'on croise
+
+- **Cafres** : descendants des esclaves et engagés d'Afrique de l'Est et de Madagascar, la plus grande part de l'île.
+- **Yabs, petits blancs des Hauts** : créoles blancs des Hauts (Cilaos, Plaine des Cafres, Salazie, Le Tampon), descendants des colons pauvres ; **gros blancs** : les vieilles familles de planteurs.
+- **Zoreils** : les métropolitains installés, ou de passage, et coincés là depuis le jour zéro.
+- **Malbars** : Tamouls hindous, descendants des engagés venus après 1848 ; temples, marche sur le feu, Cavadee, Dipavali.
+- **Z'arabes** : musulmans venus du Gujarat, commerçants, la mosquée de Saint-Denis ou de Saint-Pierre.
+- **Chinois** (Sinwa) : Cantonais et Hakkas, la boutique du quartier et son carnet de crédit, le Nouvel An.
+- **Malgaches**, **Comoriens** et **Mahorais** : les uns anciens, les autres arrivés les derniers.
+- **Métis** : presque tout le monde, un peu.
+
+Les noms disent souvent l'origine, pas toujours : Hoarau, Payet, Técher, Grondin (créoles de vieille souche) ; Narayanin, Moutoussamy (malbars) ; Patel, Omarjee (z'arabes) ; Ah-Hong, Thiaw-Kine (chinois) ; Rakotomalala (malgache) ; Ahamada, Saïd, Madi (comoriens) ; Lefèvre, Martin (zoreils). La table des noms réunionnais les mélange.
+
+# Les préjugés
+
+Chaque communauté en a sur les autres, et sur elle-même, et la fin du monde les fait remonter : le Zoreil donneur de leçons, « *i prend tout' bann bon travay* » (il prend tous les bons postes) ; le Chinois de la boutique, « *i res' ant' zot* » (ils restent entre eux), qui ne ferait crédit qu'aux siens ; le Z'arabe dur en affaires ; le « service » malbar qui fait peur à ceux qui ne le connaissent pas ; le « *yab kouyon* » (le petit blanc niais) des Hauts qui ne descend jamais ; les gros blancs, « *i gard' la terre* » (ils gardent la terre) ; les derniers arrivés de Mayotte et des Comores, accusés de tout. Et, dans la bouche d'un personnage qu'on doit contredire, la vieille rengaine raciste des Cafres paresseux.
+
+Trois règles :
+
+- **Les préjugés sont portés par des personnages**, jamais par le narrateur ni par les règles. Un PNJ peut les dire, les penser, s'en servir pour refuser ou accorder sa confiance, demander un prix pour entrer au groupe.
+- **Le jeu ne les confirme jamais.** Aucune communauté n'est associée au crime ou au danger ; les pillards, les Sans-Lune et les menteurs viennent de partout. Quand un préjugé est mis à l'épreuve, il tombe : le Zoreil « qui ne sait rien » connaît la radio, la boutique chinoise a nourri tout le quartier, le Yab « arriéré » sait passer l'hiver, les derniers arrivés n'ont pas volé le riz.
+- **Le ton est celui d'une kour**, plus *kozman* et moucatage (on se chambre) que haine : on se méfie, on se dispute, et on finit quand même par partager le cari. Pas d'insulte gratuite, aucun mot qui blesse plus qu'il ne raconte.
+
+Les événements du camp (le carnet de la boutique, un service dans la nuit, le Zoreil qui veut tout organiser, les derniers arrivés, le cari qu'on partage, la terre du gros blanc), les imprévus et les prix des recrues mettent ces regards en jeu. Les fêtes aussi : chaque fête a sa communauté au premier plan, et tout le monde vient voir.
+
+# Pour le MJ IA
+
+Quand vous décrivez quelqu'un, donnez son apparence en clair (teint, cheveux, traits) plutôt que « un Réunionnais » ; variez les visages d'une scène à l'autre ; faites parler un PNJ avec ses préjugés quand ça sert la scène, puis laissez les faits le contredire. Les origines des personnages nommés sont dans leurs notes.` }
 ] });
 
 // ================================================================ Chronologie de la crise (MJ)
