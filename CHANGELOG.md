@@ -5,6 +5,13 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Système 0.1.7 · Contenu 0.2.6 — 9 novembre 2026
+
+- **Deux fêtes repeintes** : la fête des letchis (un grand pied de letchi chargé de bouquets rouges, la cueillette, les
+  bouquets liés et vendus au bord de la route, des enfants qui en mangent) et le Nouvel An chinois (un seul dragon : une
+  tête à l'avant, un long corps d'étoffe porté sur des perches, la queue à l'arrière). Le système ne change pas, son numéro
+  suit la publication.
+
 ## Système 0.1.6 · Contenu 0.2.5 — 9 novembre 2026
 
 - **Jetons peints** : les 54 jetons du monde (6 prétirés, 11 PNJ, 10 créatures, 10 figurants, 17 passés) deviennent des

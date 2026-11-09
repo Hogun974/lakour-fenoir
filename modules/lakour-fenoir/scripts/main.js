@@ -14,7 +14,7 @@ import { avecEmpreintes, planMiseAJour } from "./mise-a-jour.js";
 // ID : « lakour-fenoir » ou « lakour-fenoir-en » (version anglaise engendrée, mêmes scripts) ; tout ce qui porte l'identifiant
 // (réglages, drapeaux, compendiums, chemin du registre) passe par lui.
 const SYSTEME = "lakour-survie";
-const VERSION_CONTENU = "0.2.5"; // = module.json (essais/mise-a-jour-fenoir.test.mjs)
+const VERSION_CONTENU = "0.2.6"; // = module.json (essais/mise-a-jour-fenoir.test.mjs)
 const FICHIER_DONNEES = `modules/${ID}/assets/donnees.json`;
 
 // ---------- 1. Le registre de l'île
