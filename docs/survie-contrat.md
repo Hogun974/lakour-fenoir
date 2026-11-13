@@ -681,3 +681,86 @@ Fénoir : enfance, passé, traits, région, âge, proche perdu), en posant d'abo
 `histoire` des compagnons) : il en parle, s'en souvient, agit selon elle. Le résumé d'un personnage donné au MJ IA en cite
 une ligne. L'acteur garde l'uuid du journal (`flags.lakour-mj-ia.histoire`). Sans IA : le journal se crée avec ses quatre
 pages vides et des questions pour aider le joueur.
+
+## 11. L'esprit sur le corps, le sens moral et l'autorité (ajout du 2026-11-13, lot « moral »)
+
+Tiré du complément du jeu 3D (familles 2 et 3), validé par Jordan. Logique : `logique/esprit.mjs`, `moralite.mjs`, `porte.mjs`,
+`chefs.mjs` ; chiffres et raisons : `docs/equilibre-moral.md`. **Rien n'est magique** : la foi agit par le moral, le jeu ne confirme
+ni ne dément rien ; les croyances et les préjugés sont ceux des personnages ; aucune religion ni aucune origine ne donne de bonus
+ni de malus propre.
+
+### 11.1 Champs d'un survivant (s'ajoutent au §3.1 et au §10.1 ; tous réservés au MJ, `gmOnlyFields`)
+```
+system: {
+  …,
+  regard: "epreuve" | "refaire" | "vivre" | "",   // vide : esprit pas encore tiré (fiche d'avant) : AUCUN effet de ce §11
+  religion: cle | "aucune" | "plusieurs" | "",     // une religion du contenu (registre `religions`)
+  religions: [cle],                                // « plusieurs » : deux ou trois religions
+  pratique: Boolean,                               // pratiquant (religion ou ancrage)
+  ancrage: cle | "",                               // ce qui fait tenir un non-croyant (registre `ancrages`)
+  sensMoral: −10..10 (0),                          // du rouge (exclure, trahir) au bleu (accueillir, aider)
+  reputation: −10..10 (0),                         // ce que les témoins en ont vu ; ce que les autres connaissent
+  autorite: 0..5 (2),                              // à quel point il est obéi quand il mène
+  esprit: { joursSansObservance, enFaute, reconfortLe, joursBas, lacher 0..3, chance 0..3, joursSansNourriture, nourriSuite,
+            nourri: { epreuve, refaire, vivre }, ancragePerdu, revolte, projet, joursNourris, joursFaim }   // compteurs (espritDe)
+}
+```
+Le générateur les tire (`genererSurvivant` : `tirerEsprit` sur un flux de hasard à part, `options.hasardEsprit`) ; la création
+garde la religion, la pratique, l'ancrage et le regard choisis (verrou « esprit » ; `generer({ verrous: { regard, religion,
+religions, pratique, ancrage } })`) ; un tirage venu d'un joueur est refusé si sa jauge dépasse ±6, son autorité 4, ou si sa
+réputation n'est pas nulle (`tirageDuGenerateur`).
+
+### 11.2 Contenu (registre)
+- `religions` : `{ cle, nom, description, observance: { besoin: "calme" | "objet" | "rien", texte }, fetes: [clé de fête],
+  poids, affinites: { enfance: facteur }, special?: "aucune" | "plusieurs" }` ; « aucune » et « plusieurs » sont deux entrées
+  spéciales. `ancrages` : `{ cle, nom, description, besoin, texte, poids }`.
+- `traits[].effets` peut porter `sensMoral`, `autorite`, `regard: { regard: poids }`, `croyant`, `pratique` (au tirage seulement).
+- `factions[].sensMoralChef` : le sens moral de qui mène la bande devant l'abri.
+
+### 11.3 Ce que fait le temps (`avancer`, à chaque jour ; seulement pour un esprit tiré)
+Plafond du moral + `plafondEsprit` (pratiquant +1, en faute −1 ; regard éteint −1 ; entente ±1) ; journée de l'esprit
+(`journeeEsprit` : observances, réconfort, regard nourri, celui qui lâche) ; faux bruits la nuit à l'abri (`fauxBruit`, +1 fatigue) ;
+le chef (`etat.groupe.chef`) gagne ou perd de l'autorité (`autoriteDuJour`) et, trop bas, ses crises (`crisesAutorite`) ; le
+malaise des bleus dans un groupe rouge ; la porte (`journeePorte`) ; l'alerte d'un tribut dû. Faits nouveaux (clés
+`esprit-*`, `porte-*`, `autorite-*`, `desertion`, `crise-*`, `malaise-couleur`, `tribut-du`, `chef-*`) dans `CLES_TEXTES`.
+Un départ (« un matin, il n'est plus là ») ou une désertion retirent le membre comme une recrue à bout ; « au bord » (un
+joueur), une scission ou un renversement vont au MJ (journal secret, `aRaconter`, avis à l'écran).
+
+### 11.4 État public et monde secret
+- Public (`lakour-survie.partie`) : `groupe.chef`, `groupe.entente` (−3..3), `groupe.accueilLe`, `groupe.feteLe` ;
+  `porte: [{ id, jour, nom, age, genre, profil, bouches, demande: message, apporte, revient }]` (ce que le groupe voit) ;
+  `votes: [{ id, quart, question, acte, voix, resultat, decide }]` (10) ; `tributs: [{ id, bande, faction, demande, tousLes,
+  prochain, payes, etat: "actif" | "allie" | "rompu" }]` ; `communautes: [{ id, nom, membres, statuts, stocks?, plans, region,
+  abri, depuis, entente }]` (les groupes séparés).
+- Secret (monde scellé) : `porte: { id: { survivant, profil, bouches } }` (la vraie couleur du visiteur), `porteSuites` (feu,
+  retour), `trahis`, `bandes: { tributId: { sensMoral, force } }`, la décision du chef de chaque menace « bande » ou « visite »
+  (`menaces[].chef`).
+
+### 11.5 API (`game.lakourSurvie`, écritures au MJ actif, monde ouvert)
+```
+communaute()                                   -> { chef, entente, reputation, couleur (MJ), porte, tributs, votes, communautes, liste }
+acteMoral({ acteurId | acteurs, acte | delta, circonstances, temoins = true, voteId, journal })
+                                               -> le POINT D'ENTRÉE du sens moral (la rumeur : acte « colporter » ; logique :
+                                                  deplacerSensMoral, deplacerReputation, acteMoral, acteCollectif)
+ajusterEsprit({ acteurId, regard, religion, religions, pratique, ancrage, sensMoral, reputation, autorite, chance, ancragePerdu })
+tirerEsprit({ acteurId, forcer })              -> tire l'esprit d'une fiche qui n'en a pas
+entente({ delta, raison }) / chef({ acteurId }) / parole({ tenue, raison })
+voter({ question, acte, voix, circonstances }) -> les voix données, les autres d'après leur jauge (voixAuto)
+decider({ voteId, decision })                  -> le chef suit le vote ou non (autorité)
+porte({ visiteurId, decision: "accueillir" | "refuser" | "trahir", voteId, circonstances })
+frapper({ profil })                            -> quelqu'un frappe, tout de suite
+tribut({ tributId, paye })                     -> payé, augmenté, alliance, ou révolte (menace)
+resoudreMenace({ id, action: "assaut" | "ecarter" | "ultimatum" | "rejoindre" })
+separer({ partants, abriVaAux, nom }) / fusionner({ communauteId }) / signe()
+```
+Un test qui compte consomme un point de chance (un dé de plus, carte « Un coup de chance ») ; celui qui lâche perd un dé en
+parole ; en assaut, l'autorité du chef présent donne ±1 dé de défense. Réglage monde `visibiliteSensMoral` : « soi » (défaut :
+chacun voit sa couleur, les autres la réputation), « tous », « mj ».
+
+### 11.6 Fenêtres
+Fiche de survivant : section « L'esprit » (regard, religion ou ancrage, pratique, en faute, sens moral selon le réglage,
+réputation, autorité, signes, et pour le MJ chance et projet d'un enfant ; tout se règle à la main ; bouton « Tirer l'esprit »).
+Création : regard, religion (plusieurs), ancrage, pratique, et la couleur et l'autorité tirées. Fiche d'abri : la liste à la
+porte et ceux qui attendent. Fenêtre du MJ : onglet « Communauté » (chef, parole, entente, couleur réelle et réputation du groupe,
+membres, porte et vraie couleur des visiteurs, votes, acte, signe, tributs, séparation et fusion) ; onglet « Menaces » : la
+décision du chef de bande, avec « Accepter l'ultimatum » et « À la porte ».
