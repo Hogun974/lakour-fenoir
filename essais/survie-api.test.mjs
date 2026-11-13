@@ -161,7 +161,7 @@ test("partie complète : jour 0, deux survivants tirés, installation, fouille, 
   const nourriture = abri.system.stocks.nourriture;
   const fe = await M.api.feter({ fete: "noel" });
   assert.equal(fe.ok, true);
-  assert.equal(abri.system.stocks.nourriture, nourriture - 3, "deux membres et une PNJ : trois rations");
+  assert.equal(abri.system.stocks.nourriture, nourriture - 6, "Noël (lot « fetes ») : deux rations de plus pour chacun des deux membres et de la PNJ");
   assert.equal(b.system.moral, Math.min(5, moral + 1));
   await assert.rejects(() => M.api.feter({ fete: "noel" }), /déjà fêtée/);
 

@@ -23,7 +23,7 @@ import { LIVRE_UNIVERS } from "./livre-univers.mjs";
 import { SURVIVANTS } from "./survivants.mjs";
 import { CARTES_LIEUX } from "./lieux-cartes.mjs";
 import { sceneReunion } from "./cartes.mjs";
-import { FETES_FENOIR, imageDeFete, EFFET_FETE } from "../scripts/fetes.js";
+import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
 const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJournal("guides", CLE_JOURNAL_REGIONS), pageId: idPage("guides", CLE_JOURNAL_REGIONS, r.cle) }]));
@@ -56,6 +56,6 @@ export function donnees() {
     noms: { prenoms: DONNEES_TABLES.prenoms, prenomsF: DONNEES_TABLES.prenomsF, prenomsM: DONNEES_TABLES.prenomsM, prenomsMixtes: DONNEES_TABLES.prenomsMixtes,
       surnoms: DONNEES_TABLES.surnoms, cyclones: DONNEES_TABLES.cyclones },
     autonomie: { voies: VOIES_AUTONOMIE, voieDefensive: VOIE_DEFENSIVE, bras: BRAS },
-    fetes: FETES_FENOIR.map(f => ({ ...f, image: imageDeFete(f.cle), effet: EFFET_FETE }))
+    fetes: FETES_FENOIR.map(f => ({ ...f, image: imageSiPeinte(f.cle), effet: f.effet ?? EFFET_FETE }))
   };
 }

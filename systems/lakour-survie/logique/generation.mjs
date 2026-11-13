@@ -36,6 +36,7 @@ import { COMPETENCES, NIVEAU_MAX, borner } from "./constantes.mjs";
 import { entier, tirerPoids, choisir, chance } from "./hasard.mjs";
 import { liste, indexer, installationDe, siteDe, genreDe, GENRES } from "./contenu.mjs";
 import { survivantNeuf, peutAgir } from "./survivant.mjs";
+import { poidsTravail } from "./releve.mjs";
 import { resoudreTest } from "./des.mjs";
 import { message } from "./textes.mjs";
 
@@ -280,19 +281,21 @@ export function facteurBras(bras, travailleurs = []) {
     if (!t) { total += 0.5; continue; }
     let f = t.niveau < requis ? 0.75 : 1 + 0.1 * (t.niveau - requis);
     if (Number(t.passion) >= 1) f += 0.1;
-    total += f;
+    // Un jeune de 16 à 18 ans travaille aux 3/4 (releve.mjs ; absent : 1).
+    total += f * (Number(t.poids ?? 1) || 0);
   }
   return total / n;
 }
 
-// Les travailleurs par tâche, pour bilanAbri (conditions.travailleurs).
-export function travailleursParTache(membres, contenu) {
+// Les travailleurs par tâche, pour bilanAbri (conditions.travailleurs). jour : le jour de jeu (l'âge des jeunes ; lot « fetes »).
+export function travailleursParTache(membres, contenu, jour = 0) {
   const t = {};
   for (const m of membres) {
     const s = m.system ?? m;
     if (!peutAgir(s) || !s.tache || !peutFaire(s, s.tache)) continue;
     const c = competenceDeTache(s.tache);
-    (t[s.tache] ??= []).push({ id: m.id, niveau: niveauTache(s, s.tache, contenu), passion: c ? Number(s.passions?.[c]) || 0 : 0 });
+    const w = poidsTravail(s, jour);
+    (t[s.tache] ??= []).push({ id: m.id, niveau: niveauTache(s, s.tache, contenu), passion: c ? Number(s.passions?.[c]) || 0 : 0, ...(w !== 1 ? { poids: w } : {}) });
   }
   return t;
 }

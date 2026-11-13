@@ -59,9 +59,44 @@ const defDe = (famille, cle) => L.indexer(contenu())[famille]?.get(cle) ?? null;
 // ------------------------------------------------------------------ le temps
 // La date de JEU (« AAAA-MM-JJ ») : dateDepart + jour de l'horloge (sans les fêtes, pour le socle des fêtes du moteur).
 export const dateDuJeu = (etat = lireEtat()) => L.dateDuJour(L.jourDe(etat?.horloge?.quart ?? 0), dateDepart()).iso;
+// Le temps de l'île (lot « fetes », logique/lune.mjs) : la lune, la clarté du quart (la nuit), les signes du paysage, la chaleur, et
+// la date telle que le groupe la sait (etat.calendrier, écrit par le MJ actif : sans téléphone ni radio, elle se lit dans la nature).
+// Le ciel (couvert ou non) vient de etat.ciel, que le MJ actif écrit pour le jour et la région du groupe (terminer).
 export function quandDe(etat = lireEtat()) {
   const q = L.quand(etat?.horloge?.quart ?? 0, dateDepart(), langue());   // heure et date dans la langue du client
-  return { ...q, fetes: fetesDuJeu(q.date, contenu().fetes ?? []).map(f => ({ cle: f.cle, nom: f.nom, coeur: f.coeur })) };
+  const region = etat?.groupe?.enRoute?.vers ?? etat?.groupe?.region ?? "";
+  const altitude = Number(L.regionDe(contenu(), region)?.altitude) || 0;
+  const lune = L.lune(q.date);
+  const ciel = etat?.ciel?.jour === q.jour && etat?.ciel?.region === region ? etat.ciel : null;
+  const couvert = Boolean(ciel?.[q.moment]);
+  const clarte = L.clarte(lune, q.moment, { couvert });
+  const d = L.dateDuJour(q.jour, dateDepart());
+  const sue = etat?.calendrier?.exacte === false ? L.dateSue({ mois: d.mois, jourMois: d.jourMois, iso: q.date, telephone: false, altitude }) : { exacte: true };
+  return {
+    ...q, fetes: fetesDuJeu(q.date, contenu().fetes ?? []).map(f => ({ cle: f.cle, nom: f.nom, coeur: f.coeur })),
+    lune, couvert, clarte, chaleur: L.chaleurPese({ mois: d.mois, altitude, moment: q.moment }), signes: L.signesDuMois(d.mois, { altitude }),
+    dateExacte: sue.exacte, dateLue: sue.exacte ? "" : texteDateLue(sue)
+  };
+}
+// « Début février, lune gibbeuse décroissante, les longanis » (langue du client).
+export function texteDateLue(sue) {
+  const mois = t(`LAKOUR_SURVIE.Annee.Mois.${sue.mois}`);
+  return [t(`LAKOUR_SURVIE.Annee.Tiers.${sue.tiers}`, { mois }), sue.phase ? t(`LAKOUR_SURVIE.Lune.Phases.${sue.phase}`) : "",
+    ...(sue.signes ?? []).slice(0, 2).map(s => t(`LAKOUR_SURVIE.Annee.Signes.${s}`))].filter(Boolean).join(", ");
+}
+// Le ciel d'une nuit dans une région (MJ actif, monde ouvert) : un flux du hasard propre au jour et à la région ; couvert d'office
+// sous la pluie forte, la crue, le cyclone de la région.
+export function cielDe(monde, region, jour) {
+  if (!monde?.graine || !region) return { soir: false, nuit: false };
+  const reg = L.regionDe(contenu(), region);
+  const evenements = (monde.regions?.[region]?.evenements ?? []).filter(e => Number(e.depuis) <= jour && (e.jusqua === null || e.jusqua === undefined || Number(e.jusqua) >= jour)).map(e => e.cle);
+  return L.cielDeLaNuit(L.deriverHasard(monde.graine, "ciel", jour, region), { zone: reg?.zone, saison: L.saisonDuJour(jour, dateDepart()), evenements });
+}
+// La clarté réelle d'un quart dans une région (MJ actif) : 0 à 3 la nuit, null le jour.
+export function clarteReelle(monde, quart, region) {
+  const jour = L.jourDe(quart), moment = L.momentDe(quart);
+  if (!L.estNuit(moment)) return null;
+  return L.clarte(L.lune(L.dateDuJour(jour, dateDepart()).iso), moment, { couvert: Boolean(cielDe(monde, region, jour)[moment]) });
 }
 
 // ------------------------------------------------------------------ la file et les gardes
@@ -197,6 +232,10 @@ function membresValides(ctx, ids = []) {
   const demandes = (ids ?? []).map(acteur).filter(a => a?.type === "survivant" && L.peutAgir(a.system));
   return demandes.length ? demandes : groupe;
 }
+// Les bras d'une équipe (au moins un) : un jeune de 16 à 18 ans compte pour 3/4 (lot « fetes »).
+const brasDeLEquipe = (qui, jour) => (qui.length ? L.brasDe(qui.map(a => systemeLogique(a)), jour) : 1);
+// Des survivants désignés par leurs ids ou leurs noms, parmi ceux donnés. -> [id]
+const idsDe = (refs, acteurs) => [...new Set([refs].flat().filter(Boolean).map(x => acteurs.find(a => a.id === x || a.name === x)?.id).filter(Boolean))];
 const aLAbri = (etat, a = abriCourant(etat)) => Boolean(a && !etat.groupe.enRoute && etat.groupe.region === a.system.region);
 export function savoirsDuGroupe(etat = lireEtat()) {
   return [...new Set(survivantsDuGroupe(etat).filter(a => L.peutAgir(a.system)).flatMap(a => systemeLogique(a).savoirs))];
@@ -300,10 +339,24 @@ export function meteoPublique(etat, monde) {
 }
 
 // ------------------------------------------------------------------ terminer une écriture
+// Le ciel de la nuit là où est le groupe, et s'il sait encore la date (lot « fetes ») : ce qu'il voit et sait, écrit dans l'état
+// public par le MJ actif (la graine du monde reste secrète).
+function tempsDeLIle(ctx) {
+  if (!ctx.monde) return;
+  const jour = jourCtx(ctx);
+  const region = ctx.etat.groupe.enRoute?.vers ?? ctx.etat.groupe.region;
+  ctx.etat.ciel = { jour, region, ...cielDe(ctx.monde, region, jour) };
+  const telephone = Boolean(L.reseauxActifs(ctx.monde, ctx.etat.groupe.region, jour)?.telephone);
+  const ab = abriCourant(ctx.etat);
+  const radio = Boolean(ctx.etat.bilan?.renseignements) && aLAbri(ctx.etat, ab);
+  ctx.etat.calendrier = { exacte: telephone || radio };
+}
+
 async function terminer(ctx) {
   ctx.etat.phase = L.phaseDuJour(jourCtx(ctx));
   ctx.etat.bilan = instantaneBilan(ctx.etat, ctx.monde);
   ctx.etat.meteo = meteoPublique(ctx.etat, ctx.monde);
+  tempsDeLIle(ctx);
   if (ctx.monde) await Coffre.ecrireMonde(ctx.monde);
   await game.settings.set(ID, "partie", ctx.etat);
   if (ctx.chroniques) await ecrireChroniques(ctx.etat, contenu()).catch(e => console.warn(`${ID} | chroniques`, e));
@@ -395,7 +448,21 @@ async function avancerInterne(ctx, quarts, options = {}) {
 
 // ------------------------------------------------------------------ tests (§1.1)
 // Bonus d'outil (le meilleur équipement), d'installation (atelier, tour de guet, antenne : à l'abri) ; malus d'état et de traits.
-function modificateursDuTest(a, sys, competence, etat = lireEtat()) {
+// La nuit et la chaleur DEHORS (lot « fetes », logique/lune.mjs) : dehors = le test se passe hors de l'abri (par défaut : le groupe
+// n'est pas à son abri ; le MJ peut le dire : true ou false). -> { nuit, chaleur } (dés en plus ou en moins)
+function modificateursDehors(sys, competence, etat, dehors) {
+  const ici = aLAbri(etat);
+  if (!(dehors ?? !ici) || !etat?.demarree) return { nuit: 0, chaleur: 0 };
+  const quart = etat.horloge?.quart ?? 0;
+  const region = etat.groupe?.enRoute?.vers ?? etat.groupe?.region ?? "";
+  const monde = estMJActif() ? Coffre.mondeEnMemoire() : null;
+  const clarte = monde ? clarteReelle(monde, quart, region) : quandDe(etat).clarte;
+  const d = L.dateDuJour(L.jourDe(quart), dateDepart());
+  const altitude = Number(L.regionDe(contenu(), region)?.altitude) || 0;
+  return { nuit: L.desDeNuit(competence, clarte), chaleur: L.desDeChaleur(competence, { mois: d.mois, altitude, moment: L.momentDe(quart) }) };
+}
+
+function modificateursDuTest(a, sys, competence, etat = lireEtat(), { dehors = null } = {}) {
   const c = contenu();
   const outil = Math.max(0, ...objetsDe(a, "equipement").map(i => Number(i.system?.bonus?.[competence]) || 0));
   let installation = 0, lieux = [];
@@ -410,7 +477,9 @@ function modificateursDuTest(a, sys, competence, etat = lireEtat()) {
   }
   const traits = L.modificateursTraits(sys, c, { lieux }).malus;
   const malus = L.malusEtat(sys, { traits });
-  return { bonus: Math.min(2, outil + installation), malus: malus.total, outil, installation, etat: malus };
+  const x = modificateursDehors(sys, competence, etat, dehors);
+  const plus = Math.max(0, x.nuit) + Math.max(0, x.chaleur), moins = Math.max(0, -x.nuit) + Math.max(0, -x.chaleur);
+  return { bonus: Math.min(2, outil + installation) + plus, malus: malus.total + moins, outil, installation, etat: malus, nuit: x.nuit, chaleur: x.chaleur };
 }
 
 async function appliquerTest(a, competence, r) {
@@ -428,20 +497,20 @@ async function appliquerTest(a, competence, r) {
   return { monte, niveau };
 }
 
-async function testDirect({ acteurId, competence, difficulte = "normale", bonus = 0, malus = 0, forcer = false, titre = "", compte = true, forcable = true } = {}) {
+async function testDirect({ acteurId, competence, difficulte = "normale", bonus = 0, malus = 0, forcer = false, titre = "", compte = true, forcable = true, dehors = null } = {}) {
   const a = acteur(acteurId);
   if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
   if (!COMPETENCES.includes(competence)) throw clair(t("LAKOUR_SURVIE.Erreurs.CompetenceInconnue", { competence }));
   const sys = systemeLogique(a);
   if (!L.peutAgir(sys)) throw clair(t("LAKOUR_SURVIE.Erreurs.HorsEtat", { nom: a.name }));
   const diff = DIFFICULTES[difficulte] ? difficulte : "normale";
-  const mods = modificateursDuTest(a, sys, competence);
+  const mods = modificateursDuTest(a, sys, competence, lireEtat(), { dehors: typeof dehors === "boolean" ? dehors : null });
   const niveau = Number(sys.competences?.[competence]?.niveau) || 0;
   const r = L.resoudreTest({ niveau, difficulte: diff, bonus: (Number(bonus) || 0) + mods.bonus, malus: (Number(malus) || 0) + mods.malus, forcer: Boolean(forcer), compte: compte !== false });
   const maj = await appliquerTest(a, competence, r);
   const info = { nom: a.name, competence, titre, monte: maj.monte, niveau: maj.niveau };
   const message = await chat(carteTest(r, { ...info, forcable }), { speaker: parlePour(a), flags: { test: { acteurId: a.id, competence, titre, resultat: r, forcable } } });
-  return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, monte: maj.monte, texte: texteTest(a.name, competence, r), messageId: message?.id ?? null };
+  return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, nuit: mods.nuit, chaleur: mods.chaleur, monte: maj.monte, texte: texteTest(a.name, competence, r), messageId: message?.id ?? null };
 }
 
 // Forcer : seulement la carte d'un test écrite par un MJ (le résultat qu'elle porte fait foi) ; un message écrit par un joueur, avec
@@ -600,7 +669,7 @@ async function creerActeurSurvivant(d, { userId = "", statut = null } = {}) {
     system: {
       competences, passions, enfance: d.enfance ?? "", passe: d.passe ?? "", genre: L.GENRES.includes(d.genre) ? d.genre : "",
       traits: [...(d.traits ?? [])], incapacites: [...(d.incapacites ?? [])],
-      statut: st, tache: "repos", age: entier(d.age, 16, 99, 30), lien: String(d.lien ?? "").slice(0, 200), vivant: true, livide: false,
+      statut: st, tache: "repos", age: entier(d.age, 16, 99, 30), ageJour: lireEtat().demarree ? L.jourDe(lireEtat().horloge?.quart ?? 0) : 0, lien: String(d.lien ?? "").slice(0, 200), vivant: true, livide: false,
       histoire: { journal: "" }, notes: String(d.notes ?? "").slice(0, 20000)
     },
     ownership: user && !user.isGM ? { default: 0, [user.id]: PROPRIO } : { default: 0 },
@@ -708,8 +777,10 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   const ab = abriCourant(ctx.etat);
   // Les savoirs des fouilleurs (le savoir des zerbaz double les plantes cueillies).
   const savoirs = [...new Set(qui.flatMap(a => systemeLogique(a).savoirs ?? []))];
+  // La nuit (lot « fetes ») : la clarté réelle du quart où l'on part (lune, brume, nuages) ; null le jour.
+  const clarte = clarteReelle(ctx.monde, ctx.etat.horloge.quart, reg);
   const r = L.fouiller(ctx.monde, c, hasard(ctx, "fouille"), { region: reg, site, cible, membres: Math.max(1, qui.length), quarts: q, prudence,
-    jour: jourCtx(ctx), moment: L.momentDe(ctx.etat.horloge.quart), abri: ab ? aPlat(ab.system) : null, renseignements: ctx.etat.renseignements, savoirs });
+    jour: jourCtx(ctx), moment: L.momentDe(ctx.etat.horloge.quart), abri: ab ? aPlat(ab.system) : null, renseignements: ctx.etat.renseignements, savoirs, clarte });
   ctx.monde = r.monde;
   ctx.etat.renseignements = r.renseignements;
   if (r.fouille) ctx.etat = L.noterFouille(ctx.etat, jourCtx(ctx));
@@ -724,7 +795,7 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   await chat(carteAction({ icone: "fa-magnifying-glass", titre: t("LAKOUR_SURVIE.Action.Fouille", { lieu: site ? nomSite(site) : nomRegion(reg) }),
     lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" }), t("LAKOUR_SURVIE.Action.Butin", { butin: texteStocks(r.butin) || t("LAKOUR_SURVIE.Action.Rien") })] }));
   await avancerInterne(ctx, q);
-  return { butin: r.butin, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille };
+  return { butin: r.butin, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille, clarte };
 }
 
 // Un abri d'avant les notes secrètes (sans le drapeau notesPubliques) : ses notes, écrites par le MJ, vont au monde scellé ; la
@@ -810,8 +881,11 @@ async function voyagerInterne(ctx, { vers, transport = "pied", membres = [], cha
   const ab = abriCourant(ctx.etat);
   const depuisAbri = aLAbri(ctx.etat, ab);
   const reserve = depuisAbri ? aPlat(ab.system).stocks : (ctx.etat.groupe.porte ?? {});
+  // Les jeunes portent moins (lot « fetes », logique/releve.mjs) ; la nuit de chaque étape a sa clarté (lune, brume, nuages).
+  const porteurs = qui.length ? L.porteursDe(qui.map(a => systemeLogique(a)), jourCtx(ctx)) : 1;
   const r = L.voyager(ctx.monde, c, hasard(ctx, "voyage"), { de: ctx.etat.groupe.region, vers, transport: moyen, membres: Math.max(1, qui.length),
-    charge, quart: ctx.etat.horloge.quart, renseignements: ctx.etat.renseignements, carburant: Number(reserve?.carburant) || 0 });
+    charge, quart: ctx.etat.horloge.quart, renseignements: ctx.etat.renseignements, carburant: Number(reserve?.carburant) || 0,
+    porteurs, clarte: (quart, region) => clarteReelle(ctx.monde, quart, region) });
   if (!r.possible) throw clair(t("LAKOUR_SURVIE.Erreurs.Voyage", { raison: motifLisible(r) }));
   // Carburant et provisions de route (eau et nourriture pour chacun, par jour entamé), pris là où ils sont.
   const jours = Math.ceil(r.quarts / 4);
@@ -828,7 +902,7 @@ async function voyagerInterne(ctx, { vers, transport = "pied", membres = [], cha
     rencontres: r.rencontres.map(lisible), faits: [...r.faits, ...ctx.faits].map(publicFait), manque: pris.manque };
 }
 
-async function assautInterne(ctx, { force = 1, type = "", description = "", menaceId = "" }) {
+async function assautInterne(ctx, { force = 1, type = "", description = "", menaceId = "", horde = false }) {
   const ab = abriCourant(ctx.etat);
   if (!ab) throw erreur("SansAbri");
   const b = bilanVivant(ctx.etat, ctx.monde);
@@ -839,8 +913,11 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
     niveau: Number(a.system.competences?.vigilance?.niveau) || 0,
     outil: Math.max(0, ...objetsDe(a, "equipement").map(i => Number(i.system?.bonus?.vigilance) || 0))
   })), { installation: Number(b?.bonus?.vigilance) || 0 });
+  // Le sang-froid (la marche sur le feu, lot « fetes ») : des dés de défense en plus contre une horde.
+  // Une horde : dite (horde), ou nommée dans le type de la menace (« horde », « Livides », « Pallid »).
+  const sangFroid = horde || /horde|livide|pallid/i.test(String(type ?? "")) ? L.sangFroidDuJour(ctx.etat, jourCtx(ctx)) : 0;
   const h = hasard(ctx, "assaut");
-  const r = L.resoudreAssaut({ defense: b?.defense ?? 0, vigilance, force: entier(force, 1, 15, 1), hasard: h });
+  const r = L.resoudreAssaut({ defense: (b?.defense ?? 0) + sangFroid, vigilance, force: entier(force, 1, 15, 1), hasard: h });
   const l = abriLogique(ab);
   const degats = [];
   let installations = l.installations;
@@ -862,7 +939,7 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
   if (r.issue === "breche") alerter(ctx, "breche", tx("Assaut.Breche"));
   await chat(carteAssaut(r, { type, description, degats, blesses: blesses.map(id => acteur(id)?.name ?? id) }));
   annoncer("lakourSurvie.assaut", [{ issue: r.issue, marge: r.marge }]);
-  return { marge: r.marge, issue: r.issue, degats, blesses, desDefense: r.desDefense, desMenace: r.desMenace, succesDefense: r.succesDefense, succesMenace: r.succesMenace };
+  return { marge: r.marge, issue: r.issue, degats, blesses, sangFroid, desDefense: r.desDefense, desMenace: r.desMenace, succesDefense: r.succesDefense, succesMenace: r.succesMenace };
 }
 
 async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
@@ -1018,7 +1095,8 @@ export const api = {
     }
     const qui = membresValides(ctx, membres);
     const q = entier(quarts, 1, 40, 1);
-    const ch = L.avancerChantier(instance, def, { quarts: q, bras: Math.max(1, qui.length), jour: jourCtx(ctx) });
+    // Les bras : un jeune de 16 à 18 ans travaille aux 3/4 (lot « fetes », logique/releve.mjs).
+    const ch = L.avancerChantier(instance, def, { quarts: q, bras: brasDeLEquipe(qui, jourCtx(ctx)), jour: jourCtx(ctx) });
     if (existante) await ab.updateEmbeddedDocuments("Item", [{ _id: existante.id, system: { niveau: ch.instance.niveau, chantier: ch.instance.chantier, termineLe: ch.instance.termineLe, etat: ch.instance.etat, reparation: Number(ch.instance.reparation) || 0 } }]);
     else await ab.createEmbeddedDocuments("Item", [await donneesInstallation(def, ch.instance)]);
     await ab.update({ system: { bruit: borner((Number(ab.system.bruit) || 0) + 1, 0, 10) } });
@@ -1043,7 +1121,7 @@ export const api = {
     if (!ab) throw erreur("SansAbri");
     const l = abriLogique(ab);
     const q = entier(quarts, 1, 40, 1);
-    const bras = Math.max(1, membresValides(ctx, membres).length);
+    const bras = brasDeLEquipe(membresValides(ctx, membres), jourCtx(ctx));
     let stocks = l.system.stocks;
     let resultat;
     if (installationId) {
@@ -1199,7 +1277,7 @@ export const api = {
     const m = (ctx.monde?.menaces ?? []).find(x => x.id === id);
     if (!m) throw erreur("MenaceInconnue");
     if (action === "assaut" && m.force > 0) {
-      const r = await assautInterne(ctx, { force: m.force, type: t(`LAKOUR_SURVIE.Menaces.${m.type}`), description: localiser(m), menaceId: m.id });
+      const r = await assautInterne(ctx, { force: m.force, type: t(`LAKOUR_SURVIE.Menaces.${m.type}`), description: localiser(m), menaceId: m.id, horde: ["horde", "livides"].includes(m.type) });
       await terminer(ctx);
       return r;
     }
@@ -1287,26 +1365,207 @@ export const api = {
     return { ok: r.ok, gueri: r.ok, reussite: test.reussite, raison: motifLisible(r), test };
   }),
 
-  feter: ecriture(async ({ fete = "" } = {}) => {
+  // Fêter (lot « fetes », 2026-11-13 : le gain et le coût de chaque fête, logique/fetes.mjs et etat.mjs). option : le choix d'une fête
+  // qui en a (la fête de la musique : « musique » ou « silence ») ; pour : les survivants (ids ou noms) qui font un vœu (Cavadee) ou
+  // qu'un cadeau attache (Noël ; vide : tous) ; avec : la faction (abri voisin) qui reçoit les dons, les graines, la part.
+  feter: ecriture(async ({ fete = "", option = "", pour = [], avec = "" } = {}) => {
     const ctx = ouvrirCtx();
     const q = quandDe(ctx.etat);
-    const f = trouverFete(fete, contenu().fetes ?? []) ?? (fete ? null : fetesDuJeu(q.date, contenu().fetes ?? [])[0] ?? null);
+    const c = contenu();
+    const f = trouverFete(fete, c.fetes ?? []) ?? (fete ? null : fetesDuJeu(q.date, c.fetes ?? [])[0] ?? null);
     const cle = f?.cle ?? String(fete ?? "").trim();
     if (!cle) throw erreur("AucuneFete");
     const ab = abriCourant(ctx.etat);
     if (!ab) throw erreur("SansAbri");
+    if (avec && !L.factionDe(c, avec)) throw clair(t("LAKOUR_SURVIE.Erreurs.FactionInconnue", { faction: avec }));
     const membres = survivantsDuGroupe(ctx.etat).map(a => ({ id: a.id, system: systemeLogique(a) }));
-    const r = L.feter(ctx.etat, { system: aPlat(ab.system) }, { fete: cle, annee: L.dateDuJour(L.jourDe(ctx.etat.horloge.quart), dateDepart()).annee, survivants: membres });
+    const ids = idsDe(pour, survivantsDuGroupe(ctx.etat));
+    const { effet, option: choisie } = L.effetDeFete(f, option);
+    const jour = jourCtx(ctx);
+    const r = L.feter(ctx.etat, { system: aPlat(ab.system) }, { fete: cle, annee: L.dateDuJour(jour, dateDepart()).annee, survivants: membres,
+      effet: f ? effet : null, pour: ids, avec, jour });
     if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Fete", { raison: motifLisible(r) }));
     ctx.etat = r.etat;
-    await ab.update({ system: { stocks: r.abri.system.stocks, bruit: borner((Number(ab.system.bruit) || 0) + 2, 0, 10) } });
-    for (const s of r.survivants) { const a = acteur(s.id); if (a && s.system.moral !== a.system.moral) await a.update({ system: { moral: s.system.moral } }); }
-    const n = (Number(aPlat(ab.system).stocks?.nourriture) || 0);
+    await ab.update({ system: { stocks: r.abri.system.stocks, bruit: borner((Number(ab.system.bruit) || 0) + (f ? r.bruit : 2), 0, 10) } });
+    for (const s of r.survivants) {
+      const a = acteur(s.id);
+      if (!a) continue;
+      const maj = {};
+      for (const k of ["moral", "fatigue", "statut", "joursMoralZero"]) if (s.system[k] !== undefined && s.system[k] !== a.system[k]) maj[k] = s.system[k];
+      if (Object.keys(maj).length) await a.update({ system: maj });
+    }
     const nom = f?.nom ?? cle;
+    const nomDe = id => acteur(id)?.name ?? id;
     noter(ctx, tx("Journal.Fete", { fete: nom }));
-    await chat(carteAction({ icone: "fa-champagne-glasses", titre: t("LAKOUR_SURVIE.Fete.Carte", { fete: nom }), lignes: [t("LAKOUR_SURVIE.Fete.Effet"), sansBalises(f?.description ?? "")] }));
+    if (r.reposes.length) noter(ctx, tx("Journal.Repos", { noms: r.reposes.join(", ") }));
+    if (r.attaches.length) noter(ctx, tx("Journal.Attache", { noms: r.attaches.map(nomDe).join(", ") }));
+    if (r.voeux.length) noter(ctx, tx("Journal.Voeu", { noms: r.voeux.map(nomDe).join(", ") }));
+    if (r.refugies) alerter(ctx, "refugies", tx("Fete.Refugies"));
+    const lignes = [f?.gain ? t("LAKOUR_SURVIE.Fete.Gain", { texte: sansBalises(f.gain) }) : t("LAKOUR_SURVIE.Fete.Effet"),
+      f?.cout ? t("LAKOUR_SURVIE.Fete.Cout", { texte: sansBalises(f.cout) }) : "",
+      choisie ? t(`LAKOUR_SURVIE.Fete.Options.${choisie}`) : "",
+      r.reposes.length ? t("LAKOUR_SURVIE.Fete.Reposes", { noms: r.reposes.join(", ") }) : "",
+      r.restent.length ? t("LAKOUR_SURVIE.Fete.Restent", { noms: r.restent.join(", ") }) : "",
+      sansBalises(f?.description ?? "")];
+    await chat(carteAction({ icone: "fa-champagne-glasses", titre: t("LAKOUR_SURVIE.Fete.Carte", { fete: nom }), lignes }));
+    if (r.quarts) await avancerInterne(ctx, r.quarts);
     await terminer(ctx);
-    return { ok: true, fete: cle, texte: t("LAKOUR_SURVIE.Fete.Texte", { fete: nom, nourriture: n }) };
+    const n = (Number(aPlat(ab.system).stocks?.nourriture) || 0);
+    return { ok: true, fete: cle, option: choisie, cout: r.cout, gain: r.gain, bruit: f ? r.bruit : 2, quarts: r.quarts, reposes: r.reposes, restent: r.restent,
+      attaches: r.attaches, voeux: r.voeux, refugies: r.refugies, texte: t("LAKOUR_SURVIE.Fete.Texte", { fete: nom, nourriture: n }) };
+  }),
+
+  // Aller à la fête d'une autre communauté (lot « fetes ») : les participants y passent deux quarts, en reviennent avec +1 de moral, et
+  // le groupe gagne un lien avec la communauté et la faction qui reçoivent (logique/fetes.mjs, participer : le point d'accroche des
+  // préjugés des PNJ). Crochet « lakourSurvie.participation » (l'entrée notée).
+  participer: ecriture(async ({ fete = "", communaute = "", faction = "", membres = [] } = {}) => {
+    const ctx = ouvrirCtx();
+    const c = contenu();
+    const q = quandDe(ctx.etat);
+    const f = trouverFete(fete, c.fetes ?? []) ?? (fete ? null : fetesDuJeu(q.date, c.fetes ?? [])[0] ?? null);
+    if (!f) throw erreur("AucuneFete");
+    if (faction && !L.factionDe(c, faction)) throw clair(t("LAKOUR_SURVIE.Erreurs.FactionInconnue", { faction }));
+    const hote = communaute || (f.communautes ?? []).find(x => x !== "tous") || "";
+    if (hote && !L.COMMUNAUTES.includes(hote)) throw clair(t("LAKOUR_SURVIE.Erreurs.CommunauteInconnue", { communaute: hote }));
+    const qui = membresValides(ctx, membres);
+    const jour = jourCtx(ctx);
+    const r = L.participer(ctx.etat, { fete: f.cle, annee: L.dateDuJour(jour, dateDepart()).annee, jour, communaute: hote, faction, qui: qui.map(a => a.id) });
+    if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Participation", { raison: motifLisible(r) }));
+    ctx.etat = r.etat;
+    for (const a of qui) await a.update({ system: { moral: borner((Number(a.system.moral) || 0) + L.PARTICIPATION.moral, 0, 5) } });
+    const chez = [hote ? t(`LAKOUR_SURVIE.Communautes.${hote}`) : "", faction ? L.factionDe(c, faction)?.nom ?? faction : ""].filter(Boolean).join(", ");
+    noter(ctx, tx("Journal.Participe", { noms: qui.map(a => a.name).join(", "), fete: f.nom, chez }));
+    await chat(carteAction({ icone: "fa-people-group", titre: t("LAKOUR_SURVIE.Participation.Carte", { fete: f.nom, chez }),
+      lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") }), t("LAKOUR_SURVIE.Participation.Effet")] }));
+    Hooks.callAll("lakourSurvie.participation", structuredClone(r.entree));
+    await avancerInterne(ctx, L.PARTICIPATION.quarts);
+    await terminer(ctx);
+    return { ok: true, fete: f.cle, communaute: hote, faction, qui: qui.map(a => a.id), liens: structuredClone(ctx.etat.liens) };
+  }),
+
+  // Un vœu (Cavadee) tenu ou rompu, dit par le MJ : tenu, +1 de moral ; rompu, −1 ; le soutien du vœu s'arrête.
+  voeu: ecriture(async ({ acteurId, issue = "tenu" } = {}) => {
+    const ctx = ouvrirCtx();
+    const a = acteur(acteurId);
+    if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
+    const jour = jourCtx(ctx);
+    if (!L.voeuxDe(ctx.etat, a.id, jour).length) throw clair(t("LAKOUR_SURVIE.Erreurs.SansVoeu", { nom: a.name }));
+    // Le vœu se clôt pour lui seul : les autres qui l'ont fait le gardent.
+    ctx.etat = { ...ctx.etat, souvenirs: (ctx.etat.souvenirs ?? []).flatMap(s => {
+      if (!s.voeu || !L.souvenirActif(s, jour) || !(s.qui ?? []).includes(a.id)) return [s];
+      const autres = s.qui.filter(id => id !== a.id);
+      return [...(autres.length ? [{ ...s, qui: autres }] : []), { ...s, qui: [a.id], jusqua: jour - 1 }];
+    }) };
+    const tenu = issue !== "rompu";
+    await a.update({ system: { moral: borner((Number(a.system.moral) || 0) + (tenu ? 1 : -1), 0, 5) } });
+    noter(ctx, tx(tenu ? "Journal.VoeuTenu" : "Journal.VoeuRompu", { nom: a.name }));
+    await terminer(ctx);
+    return { ok: true, acteurId: a.id, tenu };
+  }),
+
+  // ---------------- La relève, les morts, l'autel (lot « fetes », logique/releve.mjs)
+  // Les survivants que le joueur d'un mort peut reprendre (lecture) : [{ id, nom, source, statut, age, jeune, tache, passe }].
+  candidatsReleve: ({ mortId = "" } = {}) => {
+    const etat = lireEtat();
+    const membres = survivantsDuGroupe(etat).map(a => ({ id: a.id, nom: a.name, system: systemeLogique(a) }));
+    return L.candidatsReleve({ etat, membres, mortId, jour: L.jourDe(etat.horloge?.quart ?? 0) });
+  },
+  // À la mort de son survivant, le joueur reprend un autre survivant de son groupe (16 ans au moins), ou demande un nouveau tirage.
+  // action : « reprendre » (candidat : id d'un membre ou d'un PNJ léger) ou « tirage » (le joueur est prévenu : il crée le suivant).
+  // userId : le joueur (défaut : le propriétaire du mort). Le repris devient le personnage du joueur, son statut « joueur », sa tâche
+  // « repos » : ce qu'il faisait pour le groupe (tacheLaissee) est à reprendre ou à confier. Un compagnon IA cesse d'en être un.
+  releve: ecriture(async ({ mortId = "", candidat = "", userId = "", action = "reprendre" } = {}) => {
+    const ctx = ouvrirCtx();
+    const mort = acteur(mortId);
+    if (!mort || mort.type !== "survivant") throw erreur("ActeurInconnu");
+    if (L.peutAgir(mort.system)) throw clair(t("LAKOUR_SURVIE.Erreurs.PasMort", { nom: mort.name }));
+    const joueur = userId ? game.users.get(userId) : game.users.find(u => !u.isGM && proprietaireDe(mort, u.id)) ?? null;
+    if (action === "tirage") {
+      noter(ctx, tx("Journal.ReleveTirage", { mort: mort.name }));
+      if (joueur) emettre({ type: "signal", texte: t("LAKOUR_SURVIE.Signal.Releve", { nom: mort.name }) }, [joueur.id]);
+      await terminer(ctx);
+      return { ok: true, action, joueur: joueur?.id ?? "" };
+    }
+    const jour = jourCtx(ctx);
+    const membres = survivantsDuGroupe(ctx.etat).map(a => ({ id: a.id, nom: a.name, system: systemeLogique(a) }));
+    const candidats = L.candidatsReleve({ etat: ctx.etat, membres, mortId: mort.id, jour });
+    const choix = candidats.find(x => x.id === candidat || x.nom === candidat);
+    if (!choix) throw clair(t("LAKOUR_SURVIE.Erreurs.PasCandidat", { nom: candidat || "?", age: L.REGLES_RELEVE.ageMin }));
+    let a = null, tache = choix.tache;
+    if (choix.source === "pnj") {
+      // Un PNJ léger : sa fiche est tirée d'après son nom et son passé (il a ses compétences, on les découvre).
+      const p = (ctx.etat.groupe.pnj ?? []).find(x => x.id === choix.id);
+      const verrous = { nom: p.nom, ...(L.indexer(contenu()).passes.has(p.passe) ? { passe: p.passe } : {}) };
+      const d = generer({ verrous, statut: "joueur", budget: null });
+      a = await creerActeurSurvivant({ ...d, age: Math.max(L.REGLES_RELEVE.ageMin, Number(d.age) || 30) }, { userId: joueur?.id ?? "", statut: "joueur" });
+    } else a = acteur(choix.id);
+    const r = L.reprendre(ctx.etat, { mortId: mort.id, candidat: choix, acteurId: a.id, tache, quart: ctx.etat.horloge.quart, nom: a.name });
+    if (!r.ok) throw clair(motifLisible(r));
+    ctx.etat = r.etat;
+    const PROPRIO = globalThis.CONST?.DOCUMENT_OWNERSHIP_LEVELS?.OWNER ?? 3;
+    const maj = { system: { statut: "joueur", tache: "repos", joursTache: 0 } };
+    if (joueur && !joueur.isGM) maj.ownership = { ...(a.ownership ?? {}), [joueur.id]: PROPRIO };
+    await a.update(maj);
+    if (a.getFlag?.(MODULE_MJIA, "compagnon")) await (a.unsetFlag?.(MODULE_MJIA, "compagnon") ?? a.update({ [`flags.${MODULE_MJIA}.compagnon`]: null }));
+    if (joueur && !joueur.isGM) await joueur.update({ character: a.id });
+    const laissee = r.tacheLaissee && r.tacheLaissee !== "repos" ? (L.TACHES[r.tacheLaissee] !== undefined ? t(`LAKOUR_SURVIE.Taches.${r.tacheLaissee}`) : r.tacheLaissee) : "";
+    noter(ctx, tx(laissee ? "Journal.ReleveTache" : "Journal.Releve", { nom: a.name, mort: mort.name, tache: laissee }));
+    await chat(carteAction({ icone: "fa-people-arrows", titre: t("LAKOUR_SURVIE.Releve.Carte", { nom: a.name, mort: mort.name }),
+      lignes: [laissee ? t("LAKOUR_SURVIE.Releve.Tache", { nom: a.name, tache: laissee }) : "", L.estJeune(systemeLogique(a), jour) ? t("LAKOUR_SURVIE.Releve.Jeune", { nom: a.name }) : ""] }));
+    await terminer(ctx);
+    return { ok: true, action: "reprendre", acteurId: a.id, nom: a.name, source: choix.source, tacheLaissee: r.tacheLaissee, jeune: L.estJeune(systemeLogique(a), jour), joueur: joueur?.id ?? "" };
+  }),
+
+  // Les morts du groupe (l'autel) : [{ id, nom, quart, region, retrouve, repos, livide }].
+  morts: () => structuredClone(lireEtat().morts ?? []),
+  // L'autel des morts. action : « honorer » (l'abri a un autel ; une assiette offerte, un quart ; une fois par semaine), « repos »
+  // (donner le repos à un mort retrouvé : un quart), « retrouver » (son corps est retrouvé, ou le Livide qu'il était a reçu le repos),
+  // « inscrire » (un nom de plus : un PNJ léger tombé, un proche).
+  autel: ecriture(async ({ action = "honorer", mort = "", nom = "", retrouve = true } = {}) => {
+    const ctx = ouvrirCtx();
+    const jour = jourCtx(ctx);
+    if (action === "inscrire") {
+      ctx.etat = L.ajouterMort(ctx.etat, { nom, quart: ctx.etat.horloge.quart, region: ctx.etat.groupe.region, retrouve: Boolean(retrouve) });
+      noter(ctx, tx("Journal.Inscrit", { nom }));
+      await terminer(ctx);
+      return { ok: true, morts: structuredClone(ctx.etat.morts ?? []) };
+    }
+    if (action === "retrouver") {
+      const r = L.retrouverMort(ctx.etat, mort);
+      if (!r.ok) throw clair(motifLisible(r));
+      ctx.etat = r.etat;
+      noter(ctx, tx("Journal.Retrouve", { nom: (ctx.etat.morts ?? []).find(m => m.id === mort || m.nom === mort)?.nom ?? mort }));
+      await terminer(ctx);
+      return { ok: true };
+    }
+    if (action === "repos") {
+      const r = L.donnerRepos(ctx.etat, mort, { jour });
+      if (!r.ok) throw clair(motifLisible(r));
+      ctx.etat = r.etat;
+      noter(ctx, tx("Journal.Repos", { noms: r.mort.nom }));
+      await chat(carteAction({ icone: "fa-dove", titre: t("LAKOUR_SURVIE.Autel.Repos", { nom: r.mort.nom }), lignes: [t("LAKOUR_SURVIE.Autel.ReposEffet")] }));
+      await avancerInterne(ctx, L.REGLES_REPOS.quarts);
+      await terminer(ctx);
+      return { ok: true, mort: r.mort.nom, deuil: L.deuil(ctx.etat) };
+    }
+    const ab = abriCourant(ctx.etat);
+    if (!ab) throw erreur("SansAbri");
+    if (!aLAbri(ctx.etat, ab)) throw erreur("PasALAbri");
+    const autel = instancesDe(ab).some(i => i.niveau >= 1 && i.etat < 3 && L.niveauDe(defDe("installations", i.cle), i.niveau)?.effets?.autel);
+    const stocks = aPlat(ab.system).stocks;
+    const offrande = L.REGLES_AUTEL.offrande;
+    if (autel && !L.couvre(stocks, offrande)) throw clair(t("LAKOUR_SURVIE.Erreurs.Offrande"));
+    const r = L.honorerAutel(ctx.etat, { jour, autel });
+    if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Autel", { raison: motifLisible(r) }));
+    ctx.etat = r.etat;
+    await ab.update({ system: { stocks: L.retirerStocks(stocks, offrande).stocks } });
+    const presents = survivantsDuGroupe(ctx.etat).filter(a => L.peutAgir(a.system));
+    for (const a of presents) await a.update({ system: { moral: borner((Number(a.system.moral) || 0) + L.REGLES_AUTEL.moral, 0, 5) } });
+    noter(ctx, tx("Journal.Autel", { noms: (ctx.etat.morts ?? []).map(m => m.nom).join(", ") }));
+    await chat(carteAction({ icone: "fa-hands-praying", titre: t("LAKOUR_SURVIE.Autel.Carte"), lignes: [(ctx.etat.morts ?? []).map(m => m.nom).join(", "), t("LAKOUR_SURVIE.Autel.Effet")] }));
+    await avancerInterne(ctx, L.REGLES_AUTEL.quarts);
+    await terminer(ctx);
+    return { ok: true, presents: presents.map(a => a.id) };
   }),
 
   // ---------------- §10 : groupe, recrues
@@ -1318,7 +1577,7 @@ export const api = {
       region: region || etat.groupe.region };
   },
 
-  recruter: ecriture(async ({ recrue, parleurId, attitude = "neutre", bonus = 0 } = {}) => {
+  recruter: ecriture(async ({ recrue, parleurId, attitude = "neutre", bonus = 0, faction = "" } = {}) => {
     if (!recrue || typeof recrue !== "object") throw erreur("TirageManquant");
     const ctx = ouvrirCtx();
     const parleur = acteur(parleurId);
@@ -1326,7 +1585,8 @@ export const api = {
     const b = besoinsBruts(ctx.etat);
     const niveau = v => Number(typeof v === "object" && v !== null ? v.niveau : v) || 0;
     const combleUnManque = (b.manques ?? []).some(k => niveau(recrue.competences?.[k]) >= 2);
-    const difficulte = L.difficulteRecrutement({ attitude, combleUnManque });
+    // Les liens tissés avec sa faction (fêtes partagées, dons : lot « fetes ») : deux ou plus, l'attitude gagne un cran.
+    const difficulte = L.difficulteRecrutement({ attitude: faction ? L.attitudeAvecLiens(attitude, L.liensAvec(ctx.etat, faction)) : attitude, combleUnManque });
     const test = await testDirect({ acteurId: parleur.id, competence: "parole", difficulte, bonus, titre: t("LAKOUR_SURVIE.Recrue.Titre", { nom: recrue.nom ?? "?" }), forcable: false });
     let acteurId = "";
     if (test.reussite) {
@@ -1408,4 +1668,4 @@ export const api = {
 };
 
 // Pour les essais et l'interface : les fonctions internes utiles.
-export const interne = { testDirect, forcerDirect, assignerDirect, creerSurvivantDirect, bilanVivant, quandDe, besoins, savoirsDuGroupe, versTirage, auteur };
+export const interne = { modificateursDuTest, testDirect, forcerDirect, assignerDirect, creerSurvivantDirect, bilanVivant, quandDe, besoins, savoirsDuGroupe, versTirage, auteur };

@@ -1,0 +1,80 @@
+{
+  "_id": "Z6uJJGVCncMXJbN5",
+  "_key": "!items!Z6uJJGVCncMXJbN5",
+  "name": "Autel des morts",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "autel-des-morts",
+    "categorie": "vie",
+    "description": "<p>Une étagère contre le mur le plus calme, une nappe propre, des noms écrits à la craie sur une ardoise ou gravés au couteau dans une planche, une bougie, une assiette. Les noms de ceux que le groupe a perdus. Chacun y vient comme il croit, ou sans croire : on s'y tient ensemble.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 1
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 1,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 1
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "autel": true,
+          "bras": null
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "autel-des-morts"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

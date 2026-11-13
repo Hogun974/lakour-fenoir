@@ -39,6 +39,10 @@ export const CLES_TEXTES = [
   "progression", "progression-enseignee", "stocks-bas-eau", "stocks-bas-nourriture",
   "stocks-vides-eau", "stocks-vides-nourriture", "stocks-moins-un-jour-eau", "stocks-moins-un-jour-nourriture", "manque-nourriture", "palier-visibilite",
   "fete-manquante", "fete-deja", "fete-rations",
+  // fetes.mjs, releve.mjs (lot « fetes », 2026-11-13) : fêtes, participation, relève, morts, autel
+  "fete-manque", "participation-sans-hote", "participation-sans-personne", "participation-deja",
+  "releve-sans-candidat", "releve-sans-fiche", "releve-pas-du-groupe", "mort-inconnu", "mort-deja-repos", "mort-pas-retrouve",
+  "autel-absent", "autel-vide", "autel-trop-tot",
   // abri.mjs (subirEvenementAbri, par etat.mjs) : événements du contenu qui touchent l'abri (§2.6)
   "abri-evenement-pertes", "abri-evenement-degats", "abri-a-raconter-moral", "abri-a-raconter-blessure", "abri-a-raconter-decouverte",
   // generation.mjs : tâches, recrues, besoins du groupe (raison d'une urgence)

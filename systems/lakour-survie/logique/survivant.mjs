@@ -121,9 +121,12 @@ export function effetJour(entree, options = {}) {
     s.moral = Math.max(0, s.moral - 1);
     evenements.push({ cle: "faim", texte: "a faim depuis des jours" });
   } else if (options.mange && s.fatigue < 3) {
-    const plafond = borner(3 + Math.max(0, Number(options.confort) || 0) + (Number(tr.moral) || 0), 0, 5);
+    // esprit (souvenirs et deuil, souvenirs.mjs ; lot « fetes » du 2026-11-13) : le plafond bouge d'autant ; négatif, un moral
+    // au-dessus du plafond redescend d'un par jour, comme pour un pessimiste.
+    const esprit = Number(options.esprit) || 0;
+    const plafond = borner(3 + Math.max(0, Number(options.confort) || 0) + (Number(tr.moral) || 0) + esprit, 0, 5);
     if (s.moral < plafond) s.moral += 1;
-    else if (s.moral > plafond && Number(tr.moral) < 0) s.moral -= 1;
+    else if (s.moral > plafond && (Number(tr.moral) < 0 || esprit < 0)) s.moral -= 1;
   }
   if (s.moral <= 0) evenements.push({ cle: "craque", texte: "craque" });
   if (s.statut === "recrue") {

@@ -13,8 +13,8 @@ import { jetonsNonPeints, listeJetons, verifierJetons } from "../outils/fabrique
 import { INDEX_JOUEURS, cheminJetonIa, cheminJetonJoueurIa } from "../modules/lakour-fenoir/contenu/jetons.mjs";
 import { DOCUMENTS, donnees } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { COMPETENCES, MODULE, sansBalises } from "../modules/lakour-fenoir/contenu/aides.mjs";
-import { FETES_FENOIR, declinaisons, fetesDuJour } from "../modules/lakour-fenoir/scripts/fetes.js";
-import { IDS_FETES, fetesDuJour as calendrierDuSocle, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
+import { FETES_FENOIR, declinaisons, fetesDuJour, IMAGES_FETES } from "../modules/lakour-fenoir/scripts/fetes.js";
+import { IDS_DECLINABLES, IDS_SUR_DEMANDE, fetesDuJour as calendrierDuSocle, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { BRAS } from "../modules/lakour-fenoir/contenu/installations.mjs";
 import { verifierModuleDeContenu } from "../modules/lakour-mj-ia/outils/contrat-contenu.mjs";
 
@@ -310,11 +310,11 @@ test("création des survivants (§10) : enfances, traits compatibles et symétri
 });
 
 test("fêtes : chaque fête déclinée a une clé connue du socle du moteur, une seule déclinaison par fête", () => {
-  assert.deepEqual(FETES_MOTEUR, IDS_FETES);
+  assert.deepEqual(FETES_MOTEUR, IDS_DECLINABLES, "le socle et ses fêtes sur demande");
   assert.deepEqual(FETES_FENOIR.map(f => f.cle).sort(), [...FETES_DE_FENOIR].sort(), "toutes les fêtes de Fénoir, rien de plus");
   const deja = [];
   for (const d of declinaisons()) {
-    assert.ok(IDS_FETES.includes(d.fete), `${d.id} : fête « ${d.fete} » inconnue du socle`);
+    assert.ok(IDS_DECLINABLES.includes(d.fete), `${d.id} : fête « ${d.fete} » inconnue du socle`);
     deja.push(normaliserDeclinaison(d, deja)); // lève si fête inconnue, doublon, décor illisible
   }
   assert.equal(deja.length, FETES_DE_FENOIR.length);
@@ -330,11 +330,13 @@ test("fêtes : chaque fête déclinée a une clé connue du socle du moteur, une
   assert.match(toussaint.consigne, /sobriété|pudeur/);
 });
 
-test("fêtes au registre : image, effet public du §9, aucune date codée en dur", () => {
+test("fêtes au registre : image (si peinte), gain et coût de chaque fête, aucune date codée en dur", () => {
   assert.equal(D.fetes.length, FETES_DE_FENOIR.length);
   for (const f of D.fetes) {
-    assert.equal(f.image, `modules/${MODULE}/assets/fetes/${f.cle}.jpg`);
-    assert.deepEqual(f.effet, { moral: 1, cout: { nourriture: 1 }, parPersonne: true, unique: true });
+    assert.equal(f.image, IMAGES_FETES.includes(f.cle) ? `modules/${MODULE}/assets/fetes/${f.cle}.jpg` : "");
+    if (f.image) assert.ok(existsSync(new URL(f.image.replace(`modules/${MODULE}/`, ""), RACINE)), `${f.cle} : image absente`);
+    assert.deepEqual(f.effet, FETES_FENOIR.find(x => x.cle === f.cle).effet, `${f.cle} : effet du contenu`);
+    assert.ok(f.gain && f.cout && f.communautes.length, `${f.cle} : gain, coût, communautés`);
     for (const k of ["date", "dates", "avant", "apres", "moteur"]) assert.ok(!(k in f), `${f.cle} : ${k}`);
     for (const k of ["nom", "description", "consigne", "periode"]) assert.ok(f[k], `${f.cle} : ${k}`);
   }
@@ -347,6 +349,19 @@ test("fêtes au registre : image, effet public du §9, aucune date codée en dur
   const datee = copie();
   datee.fetes[0].date = "12-25";
   attendre(verifierDonnees(datee), /date codée en dur/);
+  const effetInconnu = copie();
+  effetInconnu.fetes[0].effet = { ...effetInconnu.fetes[0].effet, miracle: 3 };
+  attendre(verifierDonnees(effetInconnu), /champ d'effet inconnu/);
+  const sansTexte = copie();
+  sansTexte.fetes[0].gain = "";
+  attendre(verifierDonnees(sansTexte), /gain ou coût sans texte/);
+  // Les quatre fêtes du lot « fetes » : sans illustration (à peindre), effets propres.
+  for (const k of IDS_SUR_DEMANDE) assert.equal(D.fetes.find(f => f.cle === k)?.image, "", k);
+  const noel = D.fetes.find(f => f.cle === "noel").effet;
+  assert.equal(noel.rations, 2, "Noël : un vrai surplus");
+  assert.ok(noel.attache);
+  assert.ok(D.fetes.find(f => f.cle === "halloween").effet.repos, "la Toussaint donne le repos aux morts");
+  assert.deepEqual(Object.keys(D.fetes.find(f => f.cle === "musique").effet.options), ["musique", "silence"]);
 });
 
 test("fêtes à la date de JEU : le calendrier du socle, déclinaisons de Fénoir seulement", () => {
@@ -364,6 +379,13 @@ test("fêtes à la date de JEU : le calendrier du socle, déclinaisons de Fénoi
   assert.deepEqual(cles("2027-06-21"), ["musique"]);
   assert.deepEqual(cles("2027-02-14"), [], "Saint-Valentin et Carnaval : non déclinés par Fénoir");
   assert.deepEqual(cles("2027-08-10"), []);
+  // Les fêtes sur demande : seulement quand le monde les décline (le moteur passe alors aussi : ses déclinaisons).
+  const avecDemande = iso => fetesDuJour(iso, d => calendrierDuSocle(d, { aussi: IDS_SUR_DEMANDE })).map(f => f.cle);
+  assert.ok(!cles("2026-05-27").includes("aid-el-kebir"), "sans déclinaison, le socle ne la donne pas");
+  assert.ok(avecDemande("2026-05-27").includes("aid-el-kebir"));
+  assert.ok(avecDemande("2026-03-01").includes("ramadan"));
+  assert.ok(avecDemande("2027-04-14").includes("nouvel-an-tamoul"));
+  assert.ok(avecDemande("2027-01-03").includes("marche-sur-le-feu"));
   const noel = fetesDuJour("2026-12-25", calendrierDuSocle)[0];
   assert.equal(noel.coeur, true); assert.equal(noel.debut, "2026-12-01"); assert.equal(noel.fin, "2026-12-31");
   assert.deepEqual(fetesDuJour("2026-12-25"), [], "sans socle (hors Foundry) : rien");

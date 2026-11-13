@@ -322,3 +322,9 @@
   .lakour-survie .survie-colonnes, .lakour-survie .survie-creation-grille { grid-template-columns: 1fr; }
   .lakour-survie .survie-chiffres { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Lot « fetes » : la clarté de la nuit et la chaleur au bandeau. */
+#lakour-survie-bandeau .sb-nuit, #lakour-survie-bandeau .sb-chaleur { white-space: nowrap; font-size: 0.9em; opacity: 0.9; }
+#lakour-survie-bandeau .sb-nuit.clarte-0 { color: #9aa3b5; }
+#lakour-survie-bandeau .sb-nuit.clarte-3 { color: #f5e6b3; }
+#lakour-survie-bandeau .sb-chaleur { color: #f3a46b; }

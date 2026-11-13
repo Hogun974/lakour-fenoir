@@ -30,7 +30,7 @@
 //      { palier, visibilite } (au MJ seulement).
 // Journal et alertes : chaque entrée est { quart, texte (français, repli), cle, params } (textes.mjs) ; la couche Foundry affiche
 // la traduction de `cle` dans la langue de chaque navigateur. Les anciennes entrées à `texte` seul restent lisibles.
-import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, JOURNAL_SECRET_MAX, palierVisibilite } from "./constantes.mjs";
+import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, JOURNAL_SECRET_MAX, palierVisibilite, borner } from "./constantes.mjs";
 import { evoluerAfflictions, tirerMaladies, contracter } from "./maladies.mjs";
 import { indexer, installationDe } from "./contenu.mjs";
 import { message, cleTexteDe, avecPreposition } from "./textes.mjs";
@@ -43,6 +43,9 @@ import { phaseDuJour, momentIndex, saisonDuJour } from "./temps.mjs";
 import { effetQuart, effetJour, peutAgir } from "./survivant.mjs";
 import { bilanAbri, journeeAbri, suivreAutonomie, subirCyclone, subirEvenementAbri } from "./abri.mjs";
 import { creerMonde, simulerJour } from "./monde.mjs";
+import { EFFET_DEFAUT, coutDeFete, manqueDe, ajouterLiens } from "./fetes.mjs";
+import { ajouterSouvenir, oublierSouvenirs, espritDuJour, lueurDuJour, hygieneDuJour } from "./souvenirs.mjs";
+import { reposerRetrouves, inscrireMorts } from "./releve.mjs";
 import { renseignementsInitiaux, observer, reseauxActifs } from "./renseignements.mjs";
 
 export function etatVide() {
@@ -112,6 +115,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
   const dateDepart = options.dateDepart ?? m?.dateDepart;
   const surv = survivants.map(s => ({ id: s.id, nom: s.nom ?? s.system?.nom ?? s.id, system: structuredClone(s.system), evenements: [] }));
   const avant = new Map(survivants.map(s => [s.id, JSON.stringify(s.system)]));
+  // Les morts d'avant cet appel (d'avant le lot « fetes » compris) ne s'inscrivent pas à l'autel d'eux-mêmes : seulement ceux de ce temps-ci.
+  const vivantsAuDebut = new Set(survivants.filter(s => peutAgir(s.system)).map(s => s.id));
   let ab = abri ? { id: abri.id, system: structuredClone(abri.system), installations: structuredClone(abri.installations ?? []) } : null;
   const veille = new Set(options.veille ?? []), stabilises = new Set(options.stabilises ?? []), corps = new Set(options.corpsTraites ?? []);
   const faits = [], secrets = [], nouvellesAlertes = [], menaces = [], jours = [], aRaconter = [];
@@ -128,7 +133,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     return r;
   };
   const conditions = jour => ({ jour, dateDepart, personnes: personnesAbri(), reseaux: ab ? reseauxActifs(m, ab.system.region, jour) : {},
-    rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu) });
+    rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu, jour), lueur: lueurDuJour(e, jour) });
   let bilan = ab ? bilanAbri(ab.system, ab.installations, contenu, conditions(Math.floor(e.horloge.quart / QUARTS_PAR_JOUR))) : null;
   let palierVeille = palierVisibilite(options.visibiliteVeille ?? bilan?.visibilite ?? 0);
   // publier(quart, cle, params, texte) : une entrée du journal ; alerter(quart, type, cle, params, texte) : une alerte.
@@ -157,6 +162,19 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         if (ev.cle === "releve") alerter(fin, "releve", "alerte-releve", { nom: s.nom }, `${s.nom} s'est relevé, Livide.`);
       }
     }
+    // 1 bis. Les morts du quart s'inscrivent (l'autel, le deuil : releve.mjs) ; le choc ôte 1 de moral aux vivants du groupe par mort.
+    // Un mort qui se relève Livide après coup n'est plus « retrouvé » : il faut retrouver son corps avant de lui donner le repos.
+    {
+      const ins = inscrireMorts(e, surv.filter(x => vivantsAuDebut.has(x.id)).map(x => ({ id: x.id, nom: x.nom, system: x.system })), { quart: fin, region: e.groupe.region });
+      e = ins.etat;
+      if (ins.nouveaux.length) {
+        for (const x of surv) if (peutAgir(x.system) && !departs.includes(x.id)) x.system = { ...x.system, moral: borner((Number(x.system.moral) || 0) - ins.nouveaux.length, 0, 5) };
+      }
+      const relevesLivides = new Set(surv.filter(x => x.system.livide).map(x => x.id));
+      if ((e.morts ?? []).some(m => relevesLivides.has(m.id) && !m.livide && !m.repos)) {
+        e = { ...e, morts: e.morts.map(m => (relevesLivides.has(m.id) && !m.livide && !m.repos ? { ...m, livide: true, retrouve: false } : m)) };
+      }
+    }
     // 2. Bruit de l'abri.
     if (ab) ab.system.bruit = Math.min(10, Math.max(0, (Number(ab.system.bruit) || 0) - 2 + (bilan?.bruit ?? 0)));
     // 3. Voyage en cours.
@@ -175,6 +193,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     // ---- Effet du jour.
     const jour = fin / QUARTS_PAR_JOUR;
     jours.push(jour);
+    e = oublierSouvenirs(e, jour - 1);
     // 4. Monde.
     const ctx = {
       region: e.groupe.enRoute ? e.groupe.enRoute.vers : e.groupe.region,
@@ -243,7 +262,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       const mange = aLAbri() ? rang++ < nourris : options.mangeHorsAbri !== false;
       const tr = effetsTraits(s.system, contenu);
       const peurMoral = tr.peurs.filter(p => p.lieux.some(l => lieux.includes(l))).reduce((t, p) => t + p.moral, 0);
-      const r = effetJour(s.system, { mange, confort: aLAbri() ? bilan?.moral ?? 0 : 0, traits: tr, personnes: taille, peurMoral });
+      const r = effetJour(s.system, { mange, confort: aLAbri() ? bilan?.moral ?? 0 : 0, traits: tr, personnes: taille, peurMoral, esprit: espritDuJour(e, s.id, jour - 1) });
       s.system = r.system;
       for (const ev of r.evenements) {
         s.evenements.push({ quart: fin, ...ev });
@@ -315,7 +334,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       }
       const ici = surv.filter(s => actif(s) && aLAbri());
       const regionVie = regionDe(contenu, ab?.system.region ?? e.groupe.region);
-      const conditionsVie = { saison: saisonDuJour(jour, dateDepart), altitude: regionVie?.altitude ?? 0, eauTraitee: Boolean(bilan?.eauTraitee), infirmerie: (bilan?.soins ?? 0) > 0 };
+      const conditionsVie = { saison: saisonDuJour(jour, dateDepart), altitude: regionVie?.altitude ?? 0, eauTraitee: Boolean(bilan?.eauTraitee), infirmerie: (bilan?.soins ?? 0) > 0,
+        hygiene: hygieneDuJour(e, jour - 1) };
       for (const n of tirerMaladies(ici, defsAfflictions, conditionsVie, deriverHasard(m.graine, "maladies", jour), jour)) {
         const s = surv.find(x => x.id === n.id);
         s.system = contracter(s.system, defsAfflictions.get(n.cle), jour);
@@ -340,20 +360,59 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
   return { etat: e, monde: m, acteurs: { survivants: changes, abri: ab }, faits, secrets, alertes: nouvellesAlertes, menaces, bilan, jours, departs, aRaconter };
 }
 
-// Fêter une fête au camp (§9) : +1 moral à chaque survivant vivant (au plus 5), une ration de plus par personne présente
-// (membres et PNJ), une seule fois par fête et par année (clé « fete-annee » dans etat.fetes).
-// survivants : [{ id, system }] ; abri : { system } ; personnes : nombre de rations (défaut : survivants vivants + PNJ).
-// -> { ok, raison, motif: { cle, params, texte } | null, etat, abri, survivants: [{ id, system }] }
-export function feter(etat, abri, { fete, annee, survivants = [], personnes = null } = {}) {
+// Fêter une fête au camp (§9 ; gains et coûts propres à chaque fête depuis le lot « fetes », 2026-11-13 : fetes.mjs) : une seule fois
+// par fête et par année (clé « fete-annee » dans etat.fetes). Sans `effet` : l'effet d'avant (+1 moral à chaque survivant vivant, au
+// plus 5 ; une ration de plus par personne présente, membres et PNJ).
+// survivants : [{ id, system }] ; abri : { system } ; personnes : nombre de rations (défaut : survivants vivants + PNJ) ;
+// effet : l'effet de la fête (effetDeFete) ; pour : les survivants qui font un vœu ou qu'un cadeau attache (vide : tous) ; avec : la
+// faction avec qui l'on fête (dons, échange de graines, part donnée) ; jour : le jour de jeu (souvenirs).
+// -> { ok, raison, motif: { cle, params, texte } | null, etat, abri, survivants: [{ id, system }], effet, cout, gain, bruit, quarts,
+//      attaches: [id], voeux: [id], reposes: [nom], restent: [nom], refugies: Boolean }
+const texteManque = manque => Object.entries(manque).map(([r, q]) => `${q} ${r}`).join(", ");
+export function feter(etat, abri, { fete, annee, survivants = [], personnes = null, effet = null, pour = [], avec = "", jour = 0 } = {}) {
   const cle = `${fete}-${annee}`;
   const rien = (raison, cleMotif, params = {}) => ({ ok: false, raison, motif: message(cleMotif, params, raison), etat, abri, survivants });
   if (!fete || !annee) return rien("fête ou année manquante", "fete-manquante");
   if ((etat.fetes ?? []).includes(cle)) return rien("déjà fêtée cette année", "fete-deja");
+  const ef = effet ?? EFFET_DEFAUT;
   const vivants = survivants.filter(s => peutAgir(s.system));
   const n = personnes ?? vivants.length + (etat.groupe?.pnj ?? []).filter(p => p.etat !== "mort").length;
   const stocks = abri?.system?.stocks ?? {};
-  if ((Number(stocks.nourriture) || 0) < n) return rien(`il faut ${n} rations`, "fete-rations", { n });
-  const nouvelAbri = { ...abri, system: { ...abri.system, stocks: ajouterStocks(stocks, { nourriture: -n }) } };
-  const nouveaux = survivants.map(s => (peutAgir(s.system) ? { id: s.id, system: { ...structuredClone(s.system), moral: Math.min(5, (Number(s.system.moral ?? 4)) + 1) } } : s));
-  return { ok: true, raison: "", motif: null, etat: { ...etat, fetes: [...(etat.fetes ?? []), cle] }, abri: nouvelAbri, survivants: nouveaux };
+  const cout = coutDeFete(ef, n);
+  const manque = manqueDe(stocks, cout);
+  if (Object.keys(manque).length) {
+    if (Object.keys(manque).length === 1 && manque.nourriture) return rien(`il faut ${cout.nourriture} rations`, "fete-rations", { n: cout.nourriture });
+    return rien(`il manque ${Object.entries(manque).map(([r, q]) => `${q} ${r}`).join(", ")}`, "fete-manque", { manque: texteManque(manque) });
+  }
+  const gain = { ...(ef.gain ?? {}) };
+  if (avec) for (const [r, q] of Object.entries(ef.avecGain ?? {})) gain[r] = (gain[r] ?? 0) + (Number(q) || 0);
+  const apres = ajouterStocks(ajouterStocks(stocks, Object.fromEntries(Object.entries(cout).map(([r, q]) => [r, -q]))), gain);
+  const nouvelAbri = { ...abri, system: { ...abri.system, stocks: apres } };
+  const cibles = ids => (ids?.length ? vivants.filter(s => ids.includes(s.id)) : vivants).map(s => s.id);
+  const voeux = ef.voeu ? cibles(pour) : [];
+  const attaches = ef.attache ? (pour?.length ? vivants.filter(s => pour.includes(s.id)) : vivants).filter(s => s.system.statut === "recrue").map(s => s.id) : [];
+  const nouveaux = survivants.map(s => {
+    if (!peutAgir(s.system)) return s;
+    const sys = structuredClone(s.system);
+    sys.moral = borner((Number(sys.moral ?? 4)) + (Number(ef.moral) || 0), 0, 5);
+    if (Number(ef.fatigue)) sys.fatigue = borner((Number(sys.fatigue) || 0) + Number(ef.fatigue), 0, 5);
+    if (voeux.includes(s.id) && Number(ef.voeu?.fatigue)) sys.fatigue = borner((Number(sys.fatigue) || 0) + Number(ef.voeu.fatigue), 0, 5);
+    if (attaches.includes(s.id)) { sys.statut = "compagnon"; sys.joursMoralZero = 0; }
+    return { id: s.id, system: sys };
+  });
+  let e = { ...etat, fetes: [...(etat.fetes ?? []), cle] };
+  const j = Number(jour) || 0;
+  const duree = x => j + Math.max(1, Number(x?.jours) || 1) - 1;
+  if (ef.soutien) e = ajouterSouvenir(e, { cle: "soutien", source: fete, depuis: j, jusqua: duree(ef.soutien), moral: ef.soutien.moral ?? 1 });
+  if (ef.lueur) e = ajouterSouvenir(e, { cle: "lueur", source: fete, depuis: j, jusqua: duree(ef.lueur), visibilite: ef.lueur.visibilite ?? 1 });
+  if (ef.hygiene) e = ajouterSouvenir(e, { cle: "hygiene", source: fete, depuis: j, jusqua: duree(ef.hygiene), hygiene: true });
+  if (ef.sangFroid) e = ajouterSouvenir(e, { cle: "sang-froid", source: fete, depuis: j, jusqua: duree(ef.sangFroid), sangFroid: ef.sangFroid.des ?? 1 });
+  if (voeux.length) e = ajouterSouvenir(e, { cle: "voeu", source: fete, depuis: j, jusqua: null, moral: ef.voeu.moral ?? 1, qui: voeux, voeu: true });
+  if (attaches.length) e = { ...e, groupe: { ...e.groupe, statuts: { ...(e.groupe?.statuts ?? {}), ...Object.fromEntries(attaches.map(id => [id, "compagnon"])) } } };
+  if (Number(ef.liens) && avec) e = ajouterLiens(e, { faction: avec, n: Number(ef.liens) });
+  if (Number(ef.renom)) e = ajouterLiens(e, { renom: Number(ef.renom) });
+  let reposes = [], restent = [];
+  if (ef.repos) ({ etat: e, reposes, restent } = reposerRetrouves(e, { jour: j }));
+  return { ok: true, raison: "", motif: null, etat: e, abri: nouvelAbri, survivants: nouveaux, effet: ef, cout, gain, bruit: Number(ef.bruit) || 0,
+    quarts: Math.max(0, Number(ef.quarts) || 0), attaches, voeux, reposes, restent, refugies: Boolean(ef.refugies) };
 }

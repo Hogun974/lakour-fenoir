@@ -274,11 +274,34 @@
       }
     },
     {
+      "_id": "ix7hqLHG6lkEckut",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.ix7hqLHG6lkEckut",
+      "name": "La mort, la relève et l'autel",
+      "type": "text",
+      "sort": 1200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un survivant meurt. Le groupe, lui, continue : c'est lui, le vrai personnage.</p><p><strong>La relève.</strong> À la mort de votre survivant, vous choisissez : un <strong>nouveau tirage</strong>, ou <strong>reprendre un autre survivant de votre groupe</strong>, déjà sur place, d'au moins <strong>16 ans</strong> : un compagnon, une recrue, un PNJ. Il arrive avec ses propres compétences, ses traits, son histoire ; vous ne choisissez pas qui il est. Le prix : il <strong>cesse son travail pour le groupe</strong>. Ce qu'il faisait (la garde, le potager, la cuisine), il faudra le reprendre vous-même ou le confier à quelqu'un d'autre. S'il ne reste personne, il reste le nouveau tirage.</p><p><strong>Les jeunes.</strong> De 16 à 18 ans, un survivant porte moins qu'un adulte (deux tiers d'une charge), travaille moins vite (trois quarts d'un adulte), son avis pèse moins dans un vote, et il ne peut pas être chef. À 18 ans, c'est un survivant comme les autres.</p><p><strong>Le deuil.</strong> Chaque mort du groupe ôte 1 de moral à tous les vivants. Tant qu'on ne lui a pas <strong>donné le repos</strong>, son deuil pèse : le moral remonte un cran moins haut. Donner le repos, c'est une courte cérémonie à l'abri (un quart), pour un mort <strong>retrouvé</strong> : un mort qui s'est relevé en Livide doit d'abord être retrouvé. À la <strong>Toussaint</strong>, on le donne à tous les morts retrouvés à la fois.</p><p><strong>L'autel des morts.</strong> Une étagère, une nappe, des noms écrits à la craie, une bougie : l'autel de l'abri porte les noms de ceux que le groupe a perdus. L'<strong>honorer</strong> (un quart, une assiette offerte), une fois par semaine au plus, rend 1 de moral à chacun et soutient le moral du groupe pendant sept jours. Rien n'en revient : c'est le groupe qui se tient.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "releve"
+        }
+      }
+    },
+    {
       "_id": "YAeUac3GaRE5gFYj",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.YAeUac3GaRE5gFYj",
       "name": "Créer son survivant",
       "type": "text",
-      "sort": 1200,
+      "sort": 1300,
       "title": {
         "show": true,
         "level": 1
@@ -301,7 +324,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.1negBmyxnDQWAKrk",
       "name": "Les enfances",
       "type": "text",
-      "sort": 1300,
+      "sort": 1400,
       "title": {
         "show": true,
         "level": 1
@@ -324,7 +347,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.AkeC2EJsUT6RjK3R",
       "name": "Les passés",
       "type": "text",
-      "sort": 1400,
+      "sort": 1500,
       "title": {
         "show": true,
         "level": 1
@@ -347,7 +370,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 1500,
+      "sort": 1600,
       "title": {
         "show": true,
         "level": 1

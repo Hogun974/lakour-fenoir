@@ -274,6 +274,17 @@
       "en": "<p>A pen and a shelter for a few goats: milk, kids, meat for a cari, manure for the vegetable plot. They eat anything, and escape the moment you look away.</p>"
     }
   },
+  "installations/Z6uJJGVCncMXJbN5": {
+    "_nom": "Autel des morts",
+    "name": {
+      "fr": "Autel des morts",
+      "en": "Altar of the dead"
+    },
+    "system.description": {
+      "fr": "<p>Une étagère contre le mur le plus calme, une nappe propre, des noms écrits à la craie sur une ardoise ou gravés au couteau dans une planche, une bougie, une assiette. Les noms de ceux que le groupe a perdus. Chacun y vient comme il croit, ou sans croire : on s'y tient ensemble.</p>",
+      "en": "<p>A shelf against the quietest wall, a clean cloth, names written in chalk on a slate or carved with a knife into a plank, a candle, a plate. The names of those the group has lost. Everyone comes to it as they believe, or without believing: you hold together there.</p>"
+    }
+  },
   "installations/ZWoVy5FxU6DYlJSA": {
     "_nom": "Potager",
     "name": {

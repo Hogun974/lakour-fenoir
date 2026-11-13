@@ -196,7 +196,7 @@ La dengue et le chikungunya n'ont pas disparu avec les médecins ; les moustique
 
 # Les fêtes qu'on garde
 
-On a gardé les fêtes, toutes, et celles des voisins avec : fêter, c'est dire qu'on est encore un peuple. Noël sous les flamboyants ; le **20 décembre**, fête de la liberté, où ceux qui ne dépendent plus de personne comprennent ce qu'ils fêtent ; une seule lampe à huile pour Dipavali, et tout le camp vient la voir ; un kayamb bricolé en juin. Tout cela est dans ${guide("fetes-de-fenoir", "les fêtes de Fénoir")}. Ça coûte une ration de plus par personne. Ça vaut toujours le prix.
+On a gardé les fêtes, toutes, et celles des voisins avec : fêter, c'est dire qu'on est encore un peuple. Noël sous les flamboyants ; le **20 décembre**, fête de la liberté, où ceux qui ne dépendent plus de personne comprennent ce qu'ils fêtent ; une seule lampe à huile pour Dipavali, et tout le camp vient la voir ; un kayamb bricolé en juin. Tout cela est dans ${guide("fetes-de-fenoir", "les fêtes de Fénoir")}. Chacune coûte quelque chose : des rations, du bois, du bruit qui porte, une lumière qui se voit. Ça vaut toujours le prix.
 
 # Repartir ou s'enraciner
 

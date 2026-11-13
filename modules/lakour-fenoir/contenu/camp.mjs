@@ -17,7 +17,7 @@ export const ACTIVITES_CAMP = [
   { cle: "raconter", nom: "Raconter", tache: "repos", test: { competence: "parole", difficulte: "facile" }, quarts: 1,
     effet: "Une veillée de récits, de zistoir lontan, de souvenirs : +1 moral à ceux qui écoutent (une fois par semaine)." },
   { cle: "feter", nom: "Fêter", tache: "cuisine", test: null, quarts: 1,
-    effet: "Une fête du calendrier ou une date du groupe : +1 moral à chacun, une fois par fête, au prix d'une ration de plus par personne." },
+    effet: "Une fête du calendrier : son gain et son coût (journal « Les fêtes de Fénoir ») ; une date du groupe : +1 moral à chacun, au prix d'une ration de plus par personne. Une fois par fête et par année." },
   { cle: "cuisiner", nom: "Cuisiner pour tous", tache: "cuisine", test: { competence: "survie", difficulte: "normale" }, quarts: 2,
     effet: "Un vrai repas (cari, rougail, riz chaud) : rien de perdu ce jour-là (pas de pertes de nourriture) et +1 moral une fois par semaine." },
   { cle: "pecher-chasser", nom: "Pêcher ou chasser", tache: "peche", test: { competence: "survie", difficulte: "normale" }, quarts: 2,
@@ -36,7 +36,7 @@ export const CAMP = [
 
 Une tâche tenue une semaine donne une marque dans la compétence qui lui sert (deux si c'est une passion). Le MJ peut tirer un **imprévu du camp** chaque jour calme.` },
     { cle: "activites", titre: "Les activités", texte: ACTIVITES_CAMP.map(a => `**${a.nom}** — ${a.test ? `test de ${a.test.competence} (${a.test.difficulte})` : "sans test"}, ${a.quarts} quart${a.quarts > 1 ? "s" : ""}. ${a.effet}`).join("\n\n") },
-    { cle: "fetes", titre: "Fêter", texte: `L'île fêtait beaucoup, et le camp aussi : Noël sous les flamboyants, le 20 décembre, le jour de l'an, Dipavali, le Nouvel An chinois, le Cavadee, Pâques, la fête des letchis, la fête de la musique, le 14 juillet, la Toussaint, Halloween. Fêter redonne **1 de moral à chacun**, une fois par fête, au prix d'**une ration de plus par personne**. C'est la seule règle : le reste, c'est à vous de le raconter.` }
+    { cle: "fetes", titre: "Fêter", texte: `L'île fêtait beaucoup, et le camp aussi : Noël sous les flamboyants, le 20 décembre, le jour de l'an, Dipavali, le Nouvel An chinois, le Cavadee, Pâques, la fête des letchis, la fête de la musique, le 14 juillet, la Toussaint, Halloween. Et le ramadan, l'Aïd el-Kebir, le Nouvel An tamoul, la marche sur le feu. Chaque fête a **ce qu'elle apporte** (du moral, parfois pour plusieurs jours, un lien avec un voisin, des graines, du sang-froid) et **ce qu'elle coûte** (des rations, du bois, du bruit, de la lumière) : le journal « Les fêtes de Fénoir » les donne, une fois par fête et par année. Aucune n'est magique ; le reste, c'est à vous de le raconter.` }
   ] }),
   table({ cle: "imprevus-du-camp", nom: "Imprévus du camp", description: "Un petit événement de la vie quotidienne de l'abri, à tirer un jour calme.", resultats: IMPREVUS })
 ];

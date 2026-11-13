@@ -29,12 +29,14 @@ export const FACTEURS_MALADIES = {
   moustiques: { pluiesBas: 1, pluiesHauts: 0.3, seche: 0.1 },
   ravine: { pluies: 1, seche: 0.3, traitee: 0.5 },
   chaleur: { pluiesBas: 1, autre: 0.2 },
-  infirmerie: 0.7
+  infirmerie: 0.7,
+  // Un abri tenu propre (le grand ménage du Nouvel An chinois : souvenirs.mjs, lot « fetes ») : risque et contagion × 0,5.
+  hygiene: 0.5
 };
 
 // Facteur de risque d'une affliction selon les conditions de vie.
 // conditions : { saison, altitude, eauTraitee, infirmerie }
-export function facteurRisque(def, { saison = "pluies", altitude = 0, eauTraitee = false, infirmerie = false } = {}) {
+export function facteurRisque(def, { saison = "pluies", altitude = 0, eauTraitee = false, infirmerie = false, hygiene = false } = {}) {
   const F = FACTEURS_MALADIES;
   let f;
   switch (def?.declencheur) {
@@ -44,7 +46,7 @@ export function facteurRisque(def, { saison = "pluies", altitude = 0, eauTraitee
     case "chaleur": f = saison === "pluies" && Number(altitude) < ALTITUDE_BAS ? F.chaleur.pluiesBas : F.chaleur.autre; break;
     default: return 0; // blessure, choc : c'est le MJ (ou une rencontre) qui les donne (contracter)
   }
-  return f * (infirmerie ? F.infirmerie : 1);
+  return f * (infirmerie ? F.infirmerie : 1) * (hygiene ? F.hygiene : 1);
 }
 
 export const risqueAffliction = (def, conditions) => Math.min(1, Math.max(0, Number(def?.risque) || 0) * facteurRisque(def, conditions));
@@ -129,7 +131,7 @@ export function tirerMaladies(survivants, defs, conditions, hasard, jour = 0) {
       if (p > 0 && hasard() < p) nouvelles.push({ id: s.id, cle: def.cle });
     }
   }
-  const facteur = conditions?.infirmerie ? FACTEURS_MALADIES.infirmerie : 1;
+  const facteur = (conditions?.infirmerie ? FACTEURS_MALADIES.infirmerie : 1) * (conditions?.hygiene ? FACTEURS_MALADIES.hygiene : 1);
   for (const malade of survivants) {
     for (const a of declarees(malade.system)) {
       const def = parCle.get(a.cle);

@@ -182,11 +182,34 @@
       }
     },
     {
+      "_id": "SihSH8iuGinpqKWG",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.SihSH8iuGinpqKWG",
+      "name": "Le temps de l'île, les fêtes et les morts",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>La lune.</strong> Le système calcule la lune de la date de jeu et, chaque nuit, si la brume ou les nuages la cachent (souvent dans les Hauts le soir, toujours sous la pluie forte et le cyclone) : le bandeau dit la clarté. Une sortie de nuit en tient compte d'elle-même (fouille, voyage, tests dehors : le guide « Le temps de l'île » des joueurs). Une nuit de noir total est celle des expéditions risquées : faites-la sentir (la main sur l'épaule de celui de devant, la ravine qu'on devine au bruit de l'eau).</p><p><strong>La date perdue.</strong> Sans téléphone ni poste radio, les joueurs ne voient plus la date exacte : le bandeau dit « début, mi- ou fin » du mois, la lune et les signes du paysage. Vous la voyez toujours.</p><p><strong>Les fêtes.</strong> Chacune a son gain et son coût, que le système applique quand le groupe la fête (fenêtre du MJ, onglet Partie, ou le MJ IA). Certaines demandent un choix : la fête de la musique en musique ou en silence ; les vœux du Cavadee, ceux qui les font ; le cadeau de Noël, la recrue qu'il attache ; les dons du Nouvel An chinois, l'échange de graines du Nouvel An tamoul, la part de l'Aïd el-Kebir, l'abri voisin qui les reçoit. Un vœu se tient ou se rompt : c'est vous qui le dites (tenu, +1 de moral ; rompu, −1). Racontez la foi avec respect, sans jamais la confirmer ni la moquer.</p><p><strong>Chez les autres.</strong> Aller à la fête d'une autre communauté tisse des liens (onglet Groupe). Les PNJ y portent leurs préjugés, et les faits les démentent : celui qui craignait le « service » des Malbars a vu le feu de la marche et la cuisine partagée après ; c'est à vous de le jouer.</p><p><strong>La mort et la relève.</strong> Quand un survivant de joueur meurt, proposez la relève (onglet Groupe) : un nouveau tirage, ou un autre membre de 16 ans au moins. Celui qu'on reprend lâche son travail : dites-le, et laissez les joueurs le confier. Les morts s'inscrivent d'eux-mêmes sur l'autel du groupe ; ajoutez-y les PNJ légers qui tombent. Un mort relevé en Livide doit être retrouvé avant le repos : c'est une scène.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "temps-de-l-ile"
+        }
+      }
+    },
+    {
       "_id": "o6eXnn9HZUDpV7nZ",
       "_key": "!journal.pages!ljGCYC2YMQ4SCzey.o6eXnn9HZUDpV7nZ",
       "name": "Les factions en jeu",
       "type": "text",
-      "sort": 800,
+      "sort": 900,
       "title": {
         "show": true,
         "level": 1
@@ -209,7 +232,7 @@
       "_key": "!journal.pages!ljGCYC2YMQ4SCzey.5Zr0F31OSz0Vw56Z",
       "name": "Les gens de l'île",
       "type": "text",
-      "sort": 900,
+      "sort": 1000,
       "title": {
         "show": true,
         "level": 1

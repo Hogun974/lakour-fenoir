@@ -1,7 +1,7 @@
 <div class="sb-corps {{#if replie}}replie{{/if}} moment-{{momentCle}} {{#if meteo}}meteo-{{meteo.cle}}{{/if}}" role="toolbar" aria-label="{{localize 'LAKOUR_SURVIE.Bandeau.Titre'}}">
   <button type="button" class="sb-replier" data-action="bandeauReplier" data-tooltip="{{localize 'LAKOUR_SURVIE.Bandeau.Replier'}}" aria-label="{{localize 'LAKOUR_SURVIE.Bandeau.Replier'}}"><i class="fa-solid {{#if replie}}fa-chevron-down{{else}}fa-chevron-up{{/if}}"></i></button>
   {{#if demarree}}
-  <div class="sb-temps" data-tooltip="{{date}} · {{saison}}{{#if fetes}} · {{fetes}}{{/if}}">
+  <div class="sb-temps" data-tooltip="{{date}} · {{saison}}{{#if lune}} · {{lune}}{{/if}}{{#if signes}} · {{signes}}{{/if}}{{#if fetes}} · {{fetes}}{{/if}}">
     <span class="sb-icone"><i class="fa-solid {{iconeMoment}}"></i></span>
     <span class="sb-jour">{{localize "LAKOUR_SURVIE.Bandeau.Jour" n=jour}}</span>
     <span class="sb-moment">{{moment}} <small>{{heure}}</small></span>
@@ -9,6 +9,8 @@
   </div>
   {{#unless replie}}
   <span class="sb-phase phase-{{phaseCle}}">{{phase}}</span>
+  {{#if nuit}}<span class="sb-nuit clarte-{{nuit.niveau}}" data-tooltip="{{lune}}{{#if nuit.couvert}} · {{localize 'LAKOUR_SURVIE.Lune.Couvert'}}{{/if}}"><i class="fa-solid {{#if nuit.couvert}}fa-cloud-moon{{else}}fa-moon{{/if}}"></i> {{nuit.texte}}</span>{{/if}}
+  {{#if chaleur}}<span class="sb-chaleur"><i class="fa-solid fa-temperature-high"></i> {{localize "LAKOUR_SURVIE.Lune.Chaleur"}}</span>{{/if}}
   {{#if meteo}}<span class="sb-meteo {{meteo.cle}}"><i class="fa-solid {{meteo.icone}}"></i> {{meteo.texte}}</span>{{/if}}
   {{#if fetes}}<span class="sb-fete"><i class="fa-solid fa-champagne-glasses"></i> {{fetes}}</span>{{/if}}
   {{#if enRoute}}<span class="sb-route"><i class="fa-solid fa-route"></i> {{enRoute}}</span>{{/if}}
