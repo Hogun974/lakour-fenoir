@@ -47,6 +47,19 @@
     </table>
     {{/if}}
 
+    {{#if (eq onglet "marche")}}{{#if marche}}
+    <p class="survie-aide">{{localize "LAKOUR_SURVIE.Marche.MJ.AideCours"}}</p>
+    <h3><i class="fa-solid fa-scale-balanced"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Cours"}}</h3>
+    <p>{{#each marche.cours}}<strong>{{libelle}}</strong> {{valeur}}{{#unless @last}} · {{/unless}}{{/each}}</p>
+    <h3><i class="fa-solid fa-book"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Boutiques"}}</h3>
+    <ul class="survie-liste-simple">{{#each marche.carnets}}<li><strong>{{nom}}</strong> — {{localize "LAKOUR_SURVIE.Marche.MJ.Dette" dette=dette plafond=plafond}}{{#if traine}} <span class="survie-alerte">{{localize "LAKOUR_SURVIE.Marche.MJ.Traine"}}</span>{{/if}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}</ul>
+    <h3><i class="fa-solid fa-store"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Marches"}}</h3>
+    <ul class="survie-liste-simple">{{#each marche.marches}}<li><strong>{{nom}}</strong> — {{jour}}{{#if hote}} · {{localize "LAKOUR_SURVIE.Marche.Tableau.ChezNous"}}{{/if}}{{#if rompue}} · <span class="survie-alerte">{{localize "LAKOUR_SURVIE.Marche.MJ.TreveRompue"}}</span>{{/if}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}</ul>
+    {{#if marche.signe}}<p><strong>{{localize "LAKOUR_SURVIE.Marche.MJ.Signe"}}</strong> : {{marche.signe}}</p>{{/if}}
+    <h3><i class="fa-solid fa-comments"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Rumeurs"}}</h3>
+    <ul class="survie-journal">{{#each marche.rumeurs}}<li><span class="survie-quand">J{{jour}}</span> {{texte}}{{#if dementie}} <em>({{localize "LAKOUR_SURVIE.Marche.MJ.Dementie"}})</em>{{/if}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}</ul>
+    {{/if}}{{/if}}
+
     {{#if (eq onglet "journal")}}
     {{#if alertes.length}}
     <h3><i class="fa-solid fa-bell"></i> {{localize "LAKOUR_SURVIE.Tableau.Alertes"}}</h3>

@@ -98,6 +98,13 @@ export const EQUIPEMENTS = [
     description: `Un serpentin de tuyau noir sur le toit, un fût isolé : de l'eau chaude pour se laver et laver les plaies. Une douche chaude change une semaine.` }),
   equipement({ cle: "manuel-de-survie", nom: "Manuel trouvé", categorie: "livre", bonus: {}, charge: 0,
     description: `Un manuel d'un CDI, d'une bibliothèque ou d'un garage : jardinage tropical, électricité, premiers secours, radioamateur… Le lire attentivement pendant une semaine de camp peut apprendre un savoir-faire (le MJ choisit lequel).` }),
+  // ---------------------------------------------------------------- Le marché (contenu/marche.mjs)
+  equipement({ cle: "carnet-de-credit", nom: "Carnet de crédit", categorie: "vie", bonus: {}, charge: 0,
+    description: `Un cahier d'écolier à couverture bleue, un crayon attaché par une ficelle : on y écrit ce que chacun prend et ce qu'il doit, en parts, et ce qu'il a rendu. C'est ce qui remplace la monnaie. Celui qui le tient ouvre une boutique ; une dette qui traîne finit dans la bouche de tout le monde, et le carnet se solde au Nouvel An chinois.` }),
+  equipement({ cle: "balance-romaine", nom: "Balance romaine", categorie: "outil", bonus: {}, charge: 1,
+    description: `Un fléau d'acier, un crochet, un poids qui coulisse : la balance des boutiques et des marchés d'avant. On pèse devant tout le monde, deux fois s'il le faut, et l'on discute moins.` }),
+  equipement({ cle: "poincon-de-marque", nom: "Poinçon de marque", categorie: "outil", bonus: {}, charge: 0,
+    description: `Un clou affûté, un fer chauffé ou un tampon de caoutchouc : de quoi graver le signe de sa communauté sur ses outils, ses bidons, ses armes. Un objet marqué se prouve et se réclame ; un voisin qui dit qu'il est à lui est démenti par la marque.` }),
   // ---------------------------------------------------------------- Véhicules et montures
   equipement({ cle: "voiture", nom: "Voiture", categorie: "transport", bonus: { conduite: 0 }, charge: 0, bruit: 1,
     transport: vehicule("vehicule", 5, 20, 1, ["route"], 1),

@@ -1,0 +1,36 @@
+{
+  "_id": "EPJKOAHUNqbfpcwc",
+  "_key": "!items!EPJKOAHUNqbfpcwc",
+  "name": "Poinçon de marque",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "poincon-de-marque",
+    "categorie": "outil",
+    "description": "<p>Un clou affûté, un fer chauffé ou un tampon de caoutchouc : de quoi graver le signe de sa communauté sur ses outils, ses bidons, ses armes. Un objet marqué se prouve et se réclame ; un voisin qui dit qu'il est à lui est démenti par la marque.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "poincon-de-marque"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -26,7 +26,8 @@
       ],
       "bruit": 0
     },
-    "effets": null
+    "effets": null,
+    "marque": ""
   },
   "effects": [],
   "folder": null,

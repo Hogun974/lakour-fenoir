@@ -8966,7 +8966,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Barre à mine",
@@ -8982,7 +8983,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Pied-de-biche",
@@ -8998,7 +9000,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Batte ou manche de pioche",
@@ -9013,7 +9016,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Lance de fortune",
@@ -9028,7 +9032,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Couteau",
@@ -9043,7 +9048,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Fusil-harpon",
@@ -9059,7 +9065,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Arc de chasse",
@@ -9074,7 +9081,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Arbalète de fortune",
@@ -9089,7 +9097,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Bouclier de tôle",
@@ -9104,7 +9113,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Fusil de chasse calibre 12",
@@ -9119,7 +9129,8 @@
    "munitions": 1,
    "bruit": 2,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Carabine .22",
@@ -9134,7 +9145,8 @@
    "munitions": 1,
    "bruit": 1,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Pistolet de service",
@@ -9149,7 +9161,8 @@
    "munitions": 1,
    "bruit": 2,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Fusil d'assaut réglementaire",
@@ -9164,7 +9177,8 @@
    "munitions": 2,
    "bruit": 4,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Pistolet de détresse",
@@ -9177,7 +9191,8 @@
    "munitions": 1,
    "bruit": 3,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Pelle et pioche",
@@ -9193,7 +9208,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Caisse à outils",
@@ -9208,7 +9224,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Tronçonneuse",
@@ -9223,7 +9240,8 @@
    "munitions": null,
    "bruit": 3,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Lampe frontale",
@@ -9238,7 +9256,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Jumelles",
@@ -9253,7 +9272,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Matériel de canyon",
@@ -9269,7 +9289,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Gourde filtrante",
@@ -9284,7 +9305,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Réchaud et gamelles",
@@ -9299,7 +9321,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Sac de randonnée",
@@ -9314,7 +9337,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Tente et bâche",
@@ -9329,7 +9353,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Trousse de secours",
@@ -9344,7 +9369,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Sac d'intervention médicale",
@@ -9359,7 +9385,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Talkies-walkies",
@@ -9374,7 +9401,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Radio à manivelle",
@@ -9389,7 +9417,8 @@
    "transport": null,
    "effets": {
     "renseignements": true
-   }
+   },
+   "marque": ""
   },
   {
    "nom": "Radio marine portative",
@@ -9406,7 +9435,8 @@
    "transport": null,
    "effets": {
     "renseignements": true
-   }
+   },
+   "marque": ""
   },
   {
    "nom": "Panneaux solaires démontables",
@@ -9426,7 +9456,8 @@
     "conditions": {
      "soleil": true
     }
-   }
+   },
+   "marque": ""
   },
   {
    "nom": "Batterie nomade",
@@ -9443,7 +9474,8 @@
     "stockage": {
      "energie": 2
     }
-   }
+   },
+   "marque": ""
   },
   {
    "nom": "Jerricans",
@@ -9456,7 +9488,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Collets et nasses",
@@ -9471,7 +9504,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Cloches d'alerte",
@@ -9486,7 +9520,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Moustiquaires",
@@ -9499,7 +9534,8 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Poêle de masse",
@@ -9514,7 +9550,8 @@
    "transport": null,
    "effets": {
     "moral": 1
-   }
+   },
+   "marque": ""
   },
   {
    "nom": "Chauffe-eau solaire de fortune",
@@ -9531,7 +9568,8 @@
    "transport": null,
    "effets": {
     "moral": 1
-   }
+   },
+   "marque": ""
   },
   {
    "nom": "Manuel trouvé",
@@ -9544,7 +9582,50 @@
    "munitions": null,
    "bruit": 0,
    "transport": null,
-   "effets": null
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Carnet de crédit",
+   "cle": "carnet-de-credit",
+   "categorie": "vie",
+   "description": "<p>Un cahier d'écolier à couverture bleue, un crayon attaché par une ficelle : on y écrit ce que chacun prend et ce qu'il doit, en parts, et ce qu'il a rendu. C'est ce qui remplace la monnaie. Celui qui le tient ouvre une boutique ; une dette qui traîne finit dans la bouche de tout le monde, et le carnet se solde au Nouvel An chinois.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Balance romaine",
+   "cle": "balance-romaine",
+   "categorie": "outil",
+   "description": "<p>Un fléau d'acier, un crochet, un poids qui coulisse : la balance des boutiques et des marchés d'avant. On pèse devant tout le monde, deux fois s'il le faut, et l'on discute moins.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Poinçon de marque",
+   "cle": "poincon-de-marque",
+   "categorie": "outil",
+   "description": "<p>Un clou affûté, un fer chauffé ou un tampon de caoutchouc : de quoi graver le signe de sa communauté sur ses outils, ses bidons, ses armes. Un objet marqué se prouve et se réclame ; un voisin qui dit qu'il est à lui est démenti par la marque.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Voiture",
@@ -9568,7 +9649,8 @@
     ],
     "bruit": 1
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "4×4",
@@ -9593,7 +9675,8 @@
     ],
     "bruit": 1
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Camion plateau",
@@ -9615,7 +9698,8 @@
     ],
     "bruit": 2
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Scooter",
@@ -9640,7 +9724,8 @@
     ],
     "bruit": 1
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Vélo tout-terrain",
@@ -9665,7 +9750,8 @@
     ],
     "bruit": 0
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Vélo-cargo",
@@ -9687,7 +9773,8 @@
     ],
     "bruit": 0
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Kayak de mer",
@@ -9711,7 +9798,8 @@
     ],
     "bruit": 0
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Barque à moteur",
@@ -9735,7 +9823,8 @@
     ],
     "bruit": 1
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Âne de bât",
@@ -9759,7 +9848,8 @@
     ],
     "bruit": 1
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   },
   {
    "nom": "Cheval de la Plaine des Cafres",
@@ -9785,7 +9875,8 @@
     ],
     "bruit": 1
    },
-   "effets": null
+   "effets": null,
+   "marque": ""
   }
  ],
  "passes": [
@@ -12745,6 +12836,474 @@
    }
   },
   {
+   "cle": "marche-le-carnet-ouvert",
+   "nom": "Le carnet ouvert",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 2,
+   "public": false,
+   "texte": "<p>Un client à qui Madame Thiaw-Kine vient de refuser une ardoise (il doit déjà trois sacs de riz depuis deux mois) crie dans la file : « <em>Sinwa i fé crédi k'a son moun !</em> » (le Chinois ne fait crédit qu'aux siens). La boutiquière ne répond rien. Elle pose le carnet bleu sur le comptoir, l'ouvre, et lit les noms à voix haute : Payet, Narayanin, Ahamada, Hoarau, Lefèvre, Rakotomalala, Grondin… deux cents noms, trois chinois. Puis elle lit le nom de celui qui crie, et ce qu'il doit. Dans la file, une vieille murmure que sans ce carnet, ses petits n'auraient pas mangé en janvier. Le client s'en va. Le lendemain, il revient rendre un sac.</p>",
+   "effets": {
+    "dementi": "chinois"
+   },
+   "stades": [
+    "boutique",
+    "forain"
+   ]
+  },
+  {
+   "cle": "marche-la-radio-du-zoreil",
+   "nom": "La radio du Zoreil",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 2,
+   "public": false,
+   "texte": "<p>Deux fermiers ricanent devant l'étal de Thomas Lefèvre : « <em>zorey i koné rien fé isi</em> » (le Zoreil ne sait rien faire ici), il ne sait même pas planter un piquet de chouchou. Au même moment, le poste de la Coopérative crachote, et la voix d'Ophélie Turpin annonce une horde sur la route des Plaines, assez tôt pour qu'on rentre les bêtes. Le poste, c'est lui qui l'a réparé, comme ceux des Barques, du Dispensaire et des îlets. Les deux fermiers lui apportent leur vieux talkie le samedi suivant, et un sac de pommes de terre pour la peine.</p>",
+   "effets": {
+    "dementi": "zoreils"
+   },
+   "stades": [
+    "forain",
+    "foire"
+   ]
+  },
+  {
+   "cle": "marche-les-lentilles-du-yab",
+   "nom": "Les lentilles du Yab",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 2,
+   "public": false,
+   "texte": "<p>« <em>Yab i désann jamé dann ba</em> » (le Yab ne descend jamais de ses Hauts), répète un jeune du Port en cherchant des lentilles de Cilaos, introuvables d'après lui. Derrière lui, Jean-Marie Dijoux pose son sac de jute, quatre heures de marche dans les jambes, comme chaque semaine depuis le jour zéro. Les meilleures lentilles de l'île, petites et brunes. Il les troque au cours, pas une part de plus, et repart avant la nuit en marmonnant que « <em>moun anba i vé tout pou rien</em> » (les gens d'en bas veulent tout pour rien). Le jeune du Port l'aide à recharger son sac. Ni l'un ni l'autre ne s'excuse ; ils se reverront samedi.</p>",
+   "effets": {
+    "dementi": "yabs"
+   },
+   "stades": [
+    "forain",
+    "foire"
+   ]
+  },
+  {
+   "cle": "marche-les-dettes-effacees",
+   "nom": "Les dettes effacées",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Le cyclone est passé la semaine dernière. Au marché, on dit qu'Ismaël Omarjee va faire payer double, « dur en affaires » comme il est. Il arrive avec son petit carnet, l'ouvre sur l'étal, et raye une à une les dettes des familles qui ont tout perdu : la case de la ravine, le hangar des Payet, la barque du vieux Grondin. Il ne dit pas un mot ; il discute ensuite le prix d'un rouleau de fil de fer pendant dix minutes, par principe. (Si le groupe doit quelque chose à un carnet et a souffert du cyclone, le MJ peut effacer sa dette : remise au Nouvel An ou tout de suite.)</p>",
+   "effets": {
+    "dementi": "zarabes",
+    "remise": true
+   },
+   "stades": [
+    "boutique",
+    "forain"
+   ]
+  },
+  {
+   "cle": "marche-la-tisaneuse",
+   "nom": "La tisaneuse",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 2,
+   "public": false,
+   "texte": "<p>Un enfant tombe en pleine fièvre entre deux étals. Sa mère refuse d'abord qu'on l'approche de Madame Moutoussamy : « à cause du service », on dit qu'elle fait des choses la nuit. Lalao Rasoanaivo elle-même recule d'un pas : « <em>mi tous pa so tizan, na in servis ladan</em> » (je ne touche pas à ses tisanes, il y a un service dedans). La vieille tisaneuse ne demande rien à personne : elle mouille un linge, fait boire l'enfant à petites gorgées, sort un paquet de papier journal. La fièvre tombe avant la fin du marché. Elle a soigné ce mois-ci un catéchiste, deux Z'arabes, un Zoreil et la moitié du conseil, sans jamais demander qui croyait en quoi.</p>",
+   "effets": {
+    "dementi": "malbars"
+   },
+   "stades": [
+    "forain",
+    "foire"
+   ]
+  },
+  {
+   "cle": "marche-l-objet-rapporte",
+   "nom": "L'objet rapporté",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 2,
+   "public": false,
+   "texte": "<p>Depuis trois marchés, le conseil cherche la caisse à outils marquée des trois encoches de la Coopérative, disparue un samedi. Le président Gérard Payet a son idée : « <em>dopi zot la arivé, tout i disparé</em> » (depuis qu'ils sont arrivés, tout disparaît), et il regarde les derniers arrivés, comoriens et mahorais. Ce matin, Soilihi Ahamada pose la caisse sur la table du conseil : il l'a trouvée dans le coffre d'un pick-up, derrière l'étal d'un marchand de passage qui a filé. La marque ne ment pas. Gérard Payet se lève, et dit devant tous qu'il s'est trompé. Ce n'est pas facile, à soixante ans ; il le fait quand même.</p>",
+   "effets": {
+    "dementi": "comoriens",
+    "objet": "marque"
+   },
+   "stades": [
+    "forain"
+   ]
+  },
+  {
+   "cle": "marche-le-porteur-du-cirque",
+   "nom": "Le porteur du cirque",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Monsieur de Sainte-Croix, appuyé sur sa canne, ressort devant un étal la vieille rengaine de son grand-père sur les Cafres et la paresse. Le silence tombe. C'est Mémé Lucette, ou n'importe qui du conseil, qui répond devant tout le marché : la hotte de bambou qui vient de passer, trente kilos de riz et de médicaments pour les îlets, c'est Rosaire Fontaine qui la porte, à dos d'homme, par le sentier Scout, deux fois par semaine depuis le jour zéro. Personne d'autre n'a voulu le faire. Le vieil homme se tait. La semaine suivante, il donne à Rosaire une paire de chaussures de marche qui ne lui servent plus. Rosaire les prend, et lui dit, pour être juste, qu'il pensait lui aussi que « <em>gro blan i gard la tèr</em> » (les gros blancs gardent la terre).</p>",
+   "effets": {
+    "dementi": "cafres"
+   },
+   "stades": [
+    "forain",
+    "foire"
+   ]
+  },
+  {
+   "cle": "marche-le-terrain-ouvert",
+   "nom": "Le terrain ouvert",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>« <em>Gro blan i gard la tèr</em> » (le gros blanc garde la terre), disent les anciens en passant devant la varangue de Monsieur de Sainte-Croix. Ce jour-là, le conseil cherche un terrain neuf, l'ancien étant trop exposé : c'est lui qui se lève et propose sa prairie, entre la route et la ravine, ouverte à tous, pour rien, « tant que le marché tient ». Il demande seulement qu'on laisse ses manguiers tranquilles. Les anciens grommellent qu'il cache quelque chose. Il ne cache rien ; il est seul, et il aime entendre du monde le samedi.</p>",
+   "effets": {
+    "dementi": "gros-blancs"
+   },
+   "stades": [
+    "forain"
+   ]
+  },
+  {
+   "cle": "marche-le-litige",
+   "nom": "Le litige des cabris",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 2,
+   "public": false,
+   "texte": "<p>Deux bastions se disputent trois cabris : l'un les a perdus pendant l'orage, l'autre les a trouvés dans sa ravine et nourris un mois. On porte le litige au conseil, une voix par bastion. Le président Gérard Payet, qu'on dit « faire passer ses amis d'abord », donne sa voix à l'inconnu contre son propre cousin, parce que le mois de fourrage compte. Le conseil coupe la poire en deux : deux cabris rendus, un gardé pour la peine. Le groupe a une voix s'il est un bastion du marché ; le MJ fait voter (trancher un litige).</p>",
+   "effets": {
+    "litige": true
+   },
+   "stades": [
+    "forain",
+    "foire"
+   ]
+  },
+  {
+   "cle": "marche-le-cours-s-affole",
+   "nom": "Le cours s'affole",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Une rumeur de fièvre au Port a fait monter les médicaments ; l'eau manque depuis que la citerne d'un bastion s'est fendue. À l'ouverture, des marchands demandent dix parts pour une boîte d'antibiotiques. Lalao Rasoanaivo efface son ardoise, réunit le conseil sous le kiosque, et réécrit le cours pour la journée : les médicaments et l'eau montent, mais pour tous pareil. Celui qui vend au-dessus du cours affiché sort du marché.</p>",
+   "effets": {
+    "cours": {
+     "medicaments": 2,
+     "eau": 1
+    }
+   },
+   "stades": [
+    "forain",
+    "foire"
+   ]
+  },
+  {
+   "cle": "marche-la-dette-qui-traine",
+   "nom": "La dette qui traîne",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>On chuchote entre deux étals qu'un bastion de la région doit au carnet depuis des semaines, et qu'il troque ailleurs au lieu de rendre. Le Ladi Lafé (« il a dit qu'il a fait », la rumeur) fait le tour du marché avant midi. C'est vrai, cette fois, ou presque : la dette existe, mais le bastion a perdu sa récolte. Si c'est le groupe qui doit, les PNJ qui l'ont entendu se méfient (une rumeur contre lui pèse sur leur première confiance) jusqu'à ce qu'il rende.</p>",
+   "effets": {
+    "rumeur": "vraie"
+   },
+   "stades": [
+    "boutique",
+    "forain"
+   ]
+  },
+  {
+   "cle": "marche-le-ladi-lafe",
+   "nom": "Le Ladi Lafé",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Une histoire court sur le groupe : il aurait refusé l'entrée à une famille malade, ou vendu des vivres gâtés, ou volé une nasse. C'est faux. Quelqu'un l'a lancée exprès, un marchand qui veut sa place au conseil, ou un ancien membre chassé du groupe. Tant que la rumeur court, les PNJ qui l'ont entendue se méfient. Pour la faire tomber, il faut une preuve : une marque, un témoin, un fait. Et une rumeur fausse démentie se retourne contre celui qui l'a lancée : tout le marché saura qu'il a menti.</p>",
+   "effets": {
+    "rumeur": "fausse"
+   },
+   "stades": [
+    "forain",
+    "foire"
+   ]
+  },
+  {
+   "cle": "marche-ce-n-est-pas-a-lui",
+   "nom": "Ce n'est pas à lui",
+   "type": "marche",
+   "phases": [
+    "jour-zero",
+    "panique",
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Le groupe rapporte au marché un objet trouvé en fouille : une radio, un fusil-harpon, une caisse d'outils. Un voisin s'avance aussitôt : c'est à lui, il l'a perdu le mois dernier. Il ment peut-être. Si l'objet porte une marque, elle tranche ; sinon, les témoins ; sinon, c'est parole contre parole, et le conseil décide. Un mensonge démenti par une marque ou un témoin se sait : le Ladi Lafé s'en charge.</p>",
+   "effets": {
+    "objet": "reclame"
+   },
+   "stades": [
+    "troc",
+    "forain"
+   ]
+  },
+  {
+   "cle": "marche-la-treve-menacee",
+   "nom": "La trêve menacée",
+   "type": "marche",
+   "phases": [
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Une bande en armes se présente aux abords du marché. Elle ne veut pas troquer : elle veut voir qui est là, et ce qu'ils portent. Le conseil rappelle la trêve, une voix par bastion. Entrer armé dans le périmètre, ou y frapper quelqu'un, c'est rompre la trêve : tout le monde le saura, sur toute l'île, et aucun bastion ne troquera plus avec celui qui l'a fait. La bande hésite. Le groupe peut faire pencher la balance, d'un côté ou de l'autre.</p>",
+   "effets": {
+    "treve": "menacee"
+   },
+   "stades": [
+    "forain",
+    "foire"
+   ]
+  },
+  {
+   "cle": "marche-l-oratoire-rouge",
+   "nom": "L'oratoire rouge",
+   "type": "marche",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Sur la route du marché, un oratoire peint en rouge, de ceux qu'on dédie à saint Expédit au bord des routes : une statuette, des bougies, des fleurs en plastique. Depuis le jour zéro, on y laisse aussi des messages pliés sous une pierre, pour les groupes qui ne se croisent jamais. Personne n'y touche, par respect ou par crainte ; le jeu ne dit pas lequel. Le groupe y trouve un message (table « Oratoires rouges ») et peut en laisser un.</p>",
+   "effets": {},
+   "stades": [
+    "troc",
+    "boutique",
+    "forain",
+    "foire"
+   ]
+  },
+  {
    "cle": "fete-au-camp",
    "nom": "Une fête au camp",
    "type": "fete",
@@ -14366,31 +14925,56 @@
     "cle": "hostile",
     "nom": "Hostile",
     "min": -20,
-    "attitude": "On vous attaque ou on vous chasse à vue. Aucun échange possible."
+    "attitude": "On vous attaque ou on vous chasse à vue. Aucun échange possible.",
+    "marche": {
+     "majoration": 1,
+     "credit": "refuse",
+     "echange": false
+    }
    },
    {
     "cle": "mefiante",
     "nom": "Méfiante",
     "min": -4,
-    "attitude": "On vous parle de loin, armes en main ; échanges rares, à prix fort, sans jamais entrer."
+    "attitude": "On vous parle de loin, armes en main ; échanges rares, à prix fort, sans jamais entrer.",
+    "marche": {
+     "majoration": 0.5,
+     "credit": "refuse",
+     "echange": true
+    }
    },
    {
     "cle": "neutre",
     "nom": "Neutre",
     "min": 0,
-    "attitude": "Des étrangers parmi d'autres : troc équitable, on vous laisse passer."
+    "attitude": "Des étrangers parmi d'autres : troc équitable, on vous laisse passer.",
+    "marche": {
+     "majoration": 0,
+     "credit": "moitie",
+     "echange": true
+    }
    },
    {
     "cle": "amicale",
     "nom": "Amicale",
     "min": 5,
-    "attitude": "On connaît vos noms ; on vous accueille une nuit, on vous prévient d'un danger."
+    "attitude": "On connaît vos noms ; on vous accueille une nuit, on vous prévient d'un danger.",
+    "marche": {
+     "majoration": 0,
+     "credit": "plein",
+     "echange": true
+    }
    },
    {
     "cle": "alliee",
     "nom": "Alliée",
     "min": 10,
-    "attitude": "Vos ennemis sont les leurs : refuge, savoir, aide en cas d'assaut."
+    "attitude": "Vos ennemis sont les leurs : refuge, savoir, aide en cas d'assaut.",
+    "marche": {
+     "majoration": 0,
+     "credit": "plein",
+     "echange": true
+    }
    }
   ],
   "factions": [
@@ -15664,6 +16248,359 @@
     "parPersonne": true,
     "unique": true
    }
+  }
+ ],
+ "communautes": [
+  {
+   "cle": "cafres",
+   "nom": "Cafres",
+   "description": "Descendants des esclaves et engagés d'Afrique de l'Est et de Madagascar."
+  },
+  {
+   "cle": "yabs",
+   "nom": "Yabs",
+   "description": "Petits blancs des Hauts, créoles blancs des cirques et des plaines."
+  },
+  {
+   "cle": "gros-blancs",
+   "nom": "Gros blancs",
+   "description": "Les vieilles familles de planteurs."
+  },
+  {
+   "cle": "zoreils",
+   "nom": "Zoreils",
+   "description": "Les métropolitains installés, ou de passage."
+  },
+  {
+   "cle": "malbars",
+   "nom": "Malbars",
+   "description": "Tamouls hindous, descendants des engagés de l'Inde du Sud."
+  },
+  {
+   "cle": "zarabes",
+   "nom": "Z'arabes",
+   "description": "Musulmans venus du Gujarat, souvent commerçants."
+  },
+  {
+   "cle": "chinois",
+   "nom": "Chinois (Sinwa)",
+   "description": "Cantonais et Hakkas, la boutique du quartier."
+  },
+  {
+   "cle": "malgaches",
+   "nom": "Malgaches",
+   "description": "Venus de Madagascar, anciens et récents."
+  },
+  {
+   "cle": "comoriens",
+   "nom": "Comoriens et Mahorais",
+   "description": "Les derniers arrivés, des Comores et de Mayotte."
+  },
+  {
+   "cle": "creoles",
+   "nom": "Créoles (vus par un Zoreil)",
+   "description": "Tous les gens nés ici, vus d'un bloc par qui vient d'ailleurs."
+  },
+  {
+   "cle": "gens-d-en-bas",
+   "nom": "Les gens d'en bas",
+   "description": "Ceux de la côte et des villes, vus des Hauts."
+  },
+  {
+   "cle": "gens-des-hauts",
+   "nom": "Les gens des Hauts",
+   "description": "Ceux des Hauts et des cirques, vus de la côte."
+  },
+  {
+   "cle": "etrangers-au-quartier",
+   "nom": "Les étrangers au quartier",
+   "description": "Quiconque n'est pas d'ici : le premier préjugé d'un boutiquier prudent."
+  }
+ ],
+ "marchands": [
+  {
+   "cle": "madame-thiaw-kine",
+   "nom": "Madame Thiaw-Kine, la boutiquière",
+   "communaute": "chinois",
+   "role": "Boutique et carnet de crédit",
+   "region": "saint-pierre",
+   "apparence": "Soixante ans, petite, traits d'Asie de l'Est, cheveux gris tirés en chignon, lunettes au bout d'un cordon, blouse à fleurs.",
+   "description": "<p>Elle tient la boutique d'alimentation générale de la Rivière Saint-Louis depuis quarante ans : une balance romaine, trois étagères, un réchaud au fond, et le <strong>carnet</strong>, un cahier d'écolier à couverture bleue où chaque dette du quartier est écrite au crayon. Elle n'a pas fermé au jour zéro ; elle a juste baissé le rideau à moitié.</p>",
+   "prejuges": [
+    {
+     "cible": "zoreils",
+     "poids": 1,
+     "dit": "« *Zorey i pèy pa, li rant an Frans.* » (Le Zoreil ne paie pas, il rentre en France.)"
+    }
+   ],
+   "onDit": "« *Sinwa i fé crédi k'a son moun.* » (Le Chinois ne fait crédit qu'aux siens.)",
+   "dementi": "Son carnet est ouvert à quiconque tient parole : il a nourri tout le quartier, et il y a trois noms chinois sur deux cents.",
+   "evenement": "marche-le-carnet-ouvert"
+  },
+  {
+   "cle": "thomas-lefevre",
+   "nom": "Thomas Lefèvre, dit Radio",
+   "communaute": "zoreils",
+   "role": "Réparateur de radios",
+   "region": "le-tampon",
+   "apparence": "Trente-cinq ans, grand, peau claire brûlée aux pommettes, cheveux châtains en bataille, lunettes rafistolées au chatterton.",
+   "description": "<p>Ingénieur du son venu de Lyon pour un festival, deux ans avant le jour zéro, il est resté pour une fille de Bras-Panon et n'est jamais reparti. Il parle un créole appliqué qui fait rire tout le monde, et il a sur son étal un fer à souder qui chauffe au panneau solaire.</p>",
+   "prejuges": [
+    {
+     "cible": "creoles",
+     "poids": 1,
+     "dit": "« L'heure créole » : on ne sait jamais quand ils viendront, alors il donne rendez-vous une heure plus tôt."
+    }
+   ],
+   "onDit": "« *Zorey i koné rien fé isi.* » (Le Zoreil ne sait rien faire ici.)",
+   "dementi": "C'est lui qui répare les radios de tous les bastions : sans lui, l'île ne s'entendrait plus.",
+   "evenement": "marche-la-radio-du-zoreil"
+  },
+  {
+   "cle": "jean-marie-dijoux",
+   "nom": "Jean-Marie Dijoux, les lentilles de l'Îlet à Cordes",
+   "communaute": "yabs",
+   "role": "Marchand de lentilles",
+   "region": "cilaos",
+   "apparence": "Cinquante ans, sec et noueux, peau très claire rougie par le froid, yeux bleus délavés, chapeau de paille tressée.",
+   "description": "<p>Il cultive les lentilles en terrasse à l'Îlet à Cordes, comme son père et le père de son père. Il descend chaque semaine par la route de Cilaos, un sac de jute sur l'épaule et un fusil sur l'autre, et remonte avant la nuit.</p>",
+   "prejuges": [
+    {
+     "cible": "gens-d-en-bas",
+     "poids": 1,
+     "dit": "« *Moun anba i vé tout pou rien.* » (Les gens d'en bas veulent tout pour rien.)"
+    }
+   ],
+   "onDit": "« *Yab i désann jamé dann ba.* » (Le Yab ne descend jamais de ses Hauts.)",
+   "dementi": "Il descend chaque semaine, quatre heures de route à pied, avec les meilleures lentilles de l'île.",
+   "evenement": "marche-les-lentilles-du-yab"
+  },
+  {
+   "cle": "ismael-omarjee",
+   "nom": "Ismaël Omarjee, tissus et quincaillerie",
+   "communaute": "zarabes",
+   "role": "Commerçant",
+   "region": "saint-pierre",
+   "apparence": "Cinquante-cinq ans, peau mate claire, barbe grise taillée court, calotte blanche, chemise repassée malgré tout.",
+   "description": "<p>Le magasin de tissus de la rue des Bons-Enfants est devenu un étal de quincaillerie : clous redressés, vis triées par taille, bâches, fil de fer. Il discute chaque prix pied à pied, par principe, et tient lui aussi un petit carnet.</p>",
+   "prejuges": [
+    {
+     "cible": "chinois",
+     "poids": 1,
+     "dit": "« *Sinwa i kas lo pri.* » (Les Chinois cassent les prix.)"
+    }
+   ],
+   "onDit": "Le commerçant z'arabe est « dur en affaires » : il ne lâche jamais une part.",
+   "dementi": "Après le cyclone, il raye de son carnet les dettes de ceux qui ont tout perdu, sans une phrase.",
+   "evenement": "marche-les-dettes-effacees"
+  },
+  {
+   "cle": "madame-moutoussamy",
+   "nom": "Madame Moutoussamy, la tisaneuse",
+   "communaute": "malbars",
+   "role": "Tisaneuse",
+   "region": "est",
+   "apparence": "Soixante-dix ans, peau très sombre, cheveux blancs nattés, un pottou rouge au front, sari de coton passé.",
+   "description": "<p>Elle vend des zerbaz séchés en petits paquets de papier journal, des tisanes pour la fièvre, des emplâtres pour les entorses. Elle fait le service au temple de Saint-André depuis cinquante ans et ne s'en cache pas. Elle soigne d'abord, et demande après ce qu'on peut donner.</p>",
+   "prejuges": [
+    {
+     "cible": "zoreils",
+     "poids": 1,
+     "dit": "« *Zorey i kroi in kashé i gèr tout.* » (Les Zoreils croient qu'un cachet guérit tout.)"
+    }
+   ],
+   "onDit": "On en a peur, « à cause du service » : elle ferait des choses la nuit.",
+   "dementi": "Elle soigne tout le marché, sans demander à personne qui croit en quoi.",
+   "evenement": "marche-la-tisaneuse"
+  },
+  {
+   "cle": "soilihi-ahamada",
+   "nom": "Soilihi Ahamada, le docker",
+   "communaute": "comoriens",
+   "role": "Porteur et manutentionnaire",
+   "region": "le-port",
+   "apparence": "Trente ans, peau noire, épaules de docker, kofia brodée, un sourire qu'il ne montre pas aux inconnus.",
+   "description": "<p>Arrivé de Moroni par Mayotte en 2019, docker au Port jusqu'au jour zéro, il porte aujourd'hui les charges des autres au marché pour une part de ce qu'il porte. Sa sœur Zaïnaba, mahoraise par son mari, tresse les cheveux et les nasses.</p>",
+   "prejuges": [
+    {
+     "cible": "yabs",
+     "poids": 1,
+     "dit": "« *Yab i koz pa ek nou.* » (Les Yabs ne nous parlent pas.)"
+    }
+   ],
+   "onDit": "Les derniers arrivés, comoriens et mahorais, sont « accusés de tout » : au moindre vol, on les regarde.",
+   "dementi": "C'est lui qui rapporte au conseil l'objet marqué que tout le monde cherchait.",
+   "evenement": "marche-l-objet-rapporte"
+  },
+  {
+   "cle": "rosaire-fontaine",
+   "nom": "Rosaire Fontaine, porteur de Mafate",
+   "communaute": "cafres",
+   "role": "Porteur du cirque",
+   "region": "mafate",
+   "apparence": "Quarante-cinq ans, peau noire, crâne rasé, mollets de coureur, une hotte de bambou sur le dos.",
+   "description": "<p>Avant, il ravitaillait les îlets de Mafate quand l'hélicoptère ne volait pas ; aujourd'hui il est le seul ravitaillement. Trente kilos sur le dos, le sentier Scout ou le col des Bœufs, et il revient avec ce que les îlets échangent.</p>",
+   "prejuges": [
+    {
+     "cible": "gros-blancs",
+     "poids": 1,
+     "dit": "« *Gro blan i gard la tèr.* » (Les gros blancs gardent la terre.)"
+    }
+   ],
+   "onDit": "La vieille rengaine raciste sur les Cafres et la paresse, dans la bouche de qui veut la dire.",
+   "dementi": "Celui qui la répète est contredit devant tous : le porteur qui ravitaille le cirque à dos d'homme est cafre.",
+   "evenement": "marche-le-porteur-du-cirque"
+  },
+  {
+   "cle": "armand-de-sainte-croix",
+   "nom": "Monsieur Armand de Sainte-Croix",
+   "communaute": "gros-blancs",
+   "role": "Propriétaire du terrain du marché",
+   "region": "saint-paul",
+   "apparence": "Soixante-quinze ans, peau claire tachée de soleil, cheveux blancs plaqués, canne à pommeau, costume de lin froissé.",
+   "description": "<p>Dernier d'une vieille famille de planteurs de l'Ouest, il a vu partir la canne, puis les enfants, puis le monde. Il a gardé la terre, une varangue et des manières. Il a dit des choses qu'on ne dit plus, et il en dit encore.</p>",
+   "prejuges": [
+    {
+     "cible": "cafres",
+     "poids": 2,
+     "dit": "La vieille rengaine raciste sur les Cafres et la paresse, qu'il répète comme son grand-père, jusqu'au jour où on le contredit devant tous."
+    }
+   ],
+   "onDit": "Le gros blanc « *i gard la tèr* » (il garde la terre).",
+   "dementi": "Le terrain du marché, c'est lui qui l'a ouvert à tous, et il n'en demande rien.",
+   "evenement": "marche-le-terrain-ouvert"
+  },
+  {
+   "cle": "lalao-rasoanaivo",
+   "nom": "Lalao Rasoanaivo, la balance du conseil",
+   "communaute": "malgaches",
+   "role": "Tenante du cours",
+   "region": "saint-pierre",
+   "apparence": "Quarante ans, peau brune, traits des Hautes Terres, cheveux noirs en chignon serré, un crayon derrière l'oreille.",
+   "description": "<p>Comptable d'une coopérative de vanille avant le jour zéro, elle tient la grande ardoise du cours et la balance du conseil. Personne ne conteste ses pesées : elle pèse devant tout le monde, deux fois.</p>",
+   "prejuges": [
+    {
+     "cible": "malbars",
+     "poids": 1,
+     "dit": "« *Mi tous pa so tizan, na in servis ladan.* » (Je ne touche pas à ses tisanes, il y a un service dedans.)"
+    }
+   ],
+   "onDit": "« *Bann malgas i vol nout travay.* » (Les Malgaches nous volent le travail.)",
+   "dementi": "Le travail qu'elle fait, personne ne voulait le faire : tenir un cours juste, le même pour tous, et peser deux fois devant tout le monde.",
+   "evenement": "marche-le-cours-s-affole"
+  },
+  {
+   "cle": "gerard-payet",
+   "nom": "Gérard Payet, président du conseil du marché",
+   "communaute": "metis",
+   "role": "Président du conseil",
+   "region": "saint-pierre",
+   "apparence": "Soixante ans, métis à la peau brune, aux traits d'une grand-mère hakka, moustache grise, voix de stentor.",
+   "description": "<p>Ancien chef de rayon, élu président du conseil parce que tout le monde le connaît et que personne ne le craint. Il ouvre chaque marché par la même phrase, « <em>isi la pa pou batay</em> » (ici, ce n'est pas pour se battre), et il la pense.</p>",
+   "prejuges": [
+    {
+     "cible": "comoriens",
+     "poids": 2,
+     "dit": "« *Dopi zot la arivé, tout i disparé.* » (Depuis qu'ils sont arrivés, tout disparaît.)"
+    }
+   ],
+   "onDit": "Le président « fait passer ses amis d'abord ».",
+   "dementi": "Au premier litige, il donne raison à un inconnu contre son propre cousin ; et quand l'objet marqué revient, il reconnaît devant le conseil qu'il s'était trompé sur les derniers arrivés.",
+   "evenement": "marche-le-litige"
+  }
+ ],
+ "marches": [
+  {
+   "cle": "marche-de-bourg-murat",
+   "nom": "Le marché du samedi à Bourg-Murat",
+   "region": "le-tampon",
+   "lieu": "le parking du gîte, au bord de la route du Volcan",
+   "jourSemaine": 6,
+   "bastions": [
+    "cooperative-des-plaines"
+   ],
+   "description": "<p>Le troc du samedi de la Coopérative, devenu le marché des Plaines : lait, fromage, légumes des Hauts, contre outils, graines et nouvelles d'en bas. Les fermiers y montent la garde à tour de rôle, cloches de vache aux barrières.</p>"
+  },
+  {
+   "cle": "marche-de-savanna",
+   "nom": "Le marché aux pièces de Savanna",
+   "region": "saint-paul",
+   "lieu": "le parking de l'hypermarché, entre les caddies renversés",
+   "jourSemaine": 3,
+   "bastions": [
+    "ferrailleurs"
+   ],
+   "description": "<p>Le mercredi, les Ferrailleurs étalent ce que les villes ont laissé : batteries, pneus, panneaux, outils. On y troque tout contre tout, et on n'y laisse rien sans garde. Le terrain est celui de Monsieur de Sainte-Croix, qui l'a ouvert à tous.</p>"
+  },
+  {
+   "cle": "marche-du-quai-de-saint-pierre",
+   "nom": "Le marché du quai de Saint-Pierre",
+   "region": "saint-pierre",
+   "lieu": "le front de mer, sous les filaos, entre le port et la rivière d'Abord",
+   "jourSemaine": 0,
+   "bastions": [
+    "barques-du-sud",
+    "dispensaire-du-sud"
+   ],
+   "description": "<p>Le dimanche matin, avant la chaleur : poisson des Barques, soins du Dispensaire, la boutique Thiaw-Kine qui monte un étal, la tisaneuse, le réparateur de radios. Le conseil s'assoit sous le kiosque ; Gérard Payet le préside, Lalao Rasoanaivo tient le cours.</p>"
+  },
+  {
+   "cle": "marche-du-col-des-boeufs",
+   "nom": "Le troc du col des Bœufs",
+   "region": "salazie",
+   "lieu": "le col, entre Salazie et Mafate, là où la route s'arrête",
+   "jourSemaine": 5,
+   "bastions": [
+    "familles-des-ilets"
+   ],
+   "description": "<p>Le vendredi, les Familles des Îlets descendent au col ce que Mafate échange, et repartent avec ce que Salazie apporte. Personne ne monte plus haut sans les trois jours de quarantaine. Rosaire Fontaine y porte la moitié des charges.</p>"
+  }
+ ],
+ "foires": [
+  {
+   "cle": "foire-des-lentilles",
+   "nom": "La foire des lentilles de Cilaos",
+   "region": "cilaos",
+   "mois": 10,
+   "recolte": "nourriture",
+   "produit": "les lentilles",
+   "description": "<p>En octobre, Cilaos fêtait ses lentilles. La fête est devenue une foire de troc sous trêve : les terrasses de l'Îlet à Cordes donnent leur récolte, les bastions montent de toute l'île par la route aux quatre cents virages, et pendant trois jours personne ne lève la main sur personne dans le cirque.</p>"
+  },
+  {
+   "cle": "foire-du-chouchou",
+   "nom": "La foire du chouchou de Salazie",
+   "region": "salazie",
+   "mois": 5,
+   "recolte": "nourriture",
+   "produit": "les chouchous",
+   "description": "<p>Les treilles de chouchous croulent dans le cirque le plus vert de l'île. On en fait des gratins, des achards, on en troque des sacs entiers. Hell-Bourg rouvre ses cases créoles pour trois jours.</p>"
+  },
+  {
+   "cle": "foire-des-goyaviers",
+   "nom": "La foire des goyaviers de la Plaine des Palmistes",
+   "region": "plaine-des-palmistes",
+   "mois": 6,
+   "recolte": "nourriture",
+   "produit": "les goyaviers",
+   "description": "<p>En juin, les goyaviers rougissent toute la Plaine : on les cueille par paniers, on en fait des confitures et du rhum arrangé, et l'on troque le reste sous la pluie fine des Palmistes.</p>"
+  },
+  {
+   "cle": "foire-du-vacoa",
+   "nom": "La foire du vacoa de Saint-Philippe",
+   "region": "sud-sauvage",
+   "mois": 8,
+   "recolte": "materiaux",
+   "produit": "les feuilles de vacoa tressées",
+   "description": "<p>Les tresseuses du Sud sauvage sortent leurs feuilles de vacoa séchées : nattes, paniers, chapeaux, cordes, toitures. Tout ce qui se tresse se troque, et l'on mange les cœurs de palmiste du Sud.</p>"
+  },
+  {
+   "cle": "foire-aux-semences",
+   "nom": "La foire aux semences du Nouvel An tamoul",
+   "region": "est",
+   "mois": 4,
+   "recolte": "graines",
+   "produit": "les semences",
+   "description": "<p>En avril, la fin des cyclones et le Nouvel An tamoul : le signal des semis. Les abris de l'Est échangent leurs graines devant le temple de Saint-André, sachet contre sachet, et chacun repart avec de quoi semer ce qu'il n'avait pas.</p>"
   }
  ]
 }

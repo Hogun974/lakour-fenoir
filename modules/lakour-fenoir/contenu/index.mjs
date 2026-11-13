@@ -22,6 +22,7 @@ import { JOURNAUX, CLE_JOURNAL_REGIONS } from "./journaux.mjs";
 import { LIVRE_UNIVERS } from "./livre-univers.mjs";
 import { SURVIVANTS } from "./survivants.mjs";
 import { CARTES_LIEUX } from "./lieux-cartes.mjs";
+import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES } from "./marche.mjs";
 import { sceneReunion } from "./cartes.mjs";
 import { FETES_FENOIR, imageDeFete, EFFET_FETE } from "../scripts/fetes.js";
 
@@ -56,6 +57,9 @@ export function donnees() {
     noms: { prenoms: DONNEES_TABLES.prenoms, prenomsF: DONNEES_TABLES.prenomsF, prenomsM: DONNEES_TABLES.prenomsM, prenomsMixtes: DONNEES_TABLES.prenomsMixtes,
       surnoms: DONNEES_TABLES.surnoms, cyclones: DONNEES_TABLES.cyclones },
     autonomie: { voies: VOIES_AUTONOMIE, voieDefensive: VOIE_DEFENSIVE, bras: BRAS },
-    fetes: FETES_FENOIR.map(f => ({ ...f, image: imageDeFete(f.cle), effet: EFFET_FETE }))
+    fetes: FETES_FENOIR.map(f => ({ ...f, image: imageDeFete(f.cle), effet: EFFET_FETE })),
+    // Le marché (contenu/marche.mjs ; logique systems/lakour-survie/logique/marche.mjs) : les cibles des préjugés, les gens du
+    // marché (avec leurs préjugés), des marchés forains possibles, les foires de saison.
+    communautes: COMMUNAUTES, marchands: MARCHANDS, marches: MARCHES, foires: FOIRES
   };
 }

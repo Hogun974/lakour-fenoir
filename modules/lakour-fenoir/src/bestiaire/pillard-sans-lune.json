@@ -72,7 +72,8 @@
     "vivant": true,
     "livide": false,
     "charge": 0,
-    "notes": "<p>Visage noirci, vêtements sombres, un sabre ou un fusil, et la liste du Comptable dans la poche : un homme de la bande qui tient Saint-Denis la nuit.</p><p><strong>Comportement.</strong> Attaque à plusieurs, de nuit, et se retire si ça coûte trop cher. Négocie un tribut avant de frapper.</p><p><strong>Faiblesse.</strong> Il tient à sa vie plus qu'à la bande : un coup dur et il fuit.</p><p><strong>Dés d'attaque :</strong> 2 — <strong>résistance :</strong> 2 — <strong>vitesse :</strong> marche.</p>"
+    "notes": "<p>Visage noirci, vêtements sombres, un sabre ou un fusil, et la liste du Comptable dans la poche : un homme de la bande qui tient Saint-Denis la nuit.</p><p><strong>Comportement.</strong> Attaque à plusieurs, de nuit, et se retire si ça coûte trop cher. Négocie un tribut avant de frapper.</p><p><strong>Faiblesse.</strong> Il tient à sa vie plus qu'à la bande : un coup dur et il fuit.</p><p><strong>Dés d'attaque :</strong> 2 — <strong>résistance :</strong> 2 — <strong>vitesse :</strong> marche.</p>",
+    "prejuges": []
   },
   "items": [],
   "effects": [],

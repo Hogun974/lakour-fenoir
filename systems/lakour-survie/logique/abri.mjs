@@ -213,7 +213,8 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   const discretion = borner((Number(c.site.discretion) || 0) + sommeEffet(structurelles, "discretion"), 0, 10);
   const defense = Math.max(0, (Number(c.site.defense) || 0) + sommeEffet(structurelles, "defense") - Math.floor((Number(abri.degats) || 0) / 2));
   const capacite = (Number(c.site.capacite) || 0) + sommeEffet(lignes, "capacite");
-  const visibiliteBrute = Math.ceil(c.personnes / 2) + sommeEffet(actives, "visibilite") - discretion;
+  // conditions.signature : ce que l'abri montre en plus (un marché qu'il accueille : marche.mjs, signatureDuMarche).
+  const visibiliteBrute = Math.ceil(c.personnes / 2) + sommeEffet(actives, "visibilite") + (Number(conditions.signature) || 0) - discretion;
   const protectionCyclone = Math.min(3, Math.max(c.site.type === "tunnel-de-lave" ? 3 : 0, ...structurelles.map(l => Number(l.e.protectionCyclone) || 0)));
   const usure = lignes.filter(l => l.sol && l.enMarche).reduce((s, l) => s + l.niveau * USURE_SOL, 0);
   const bilan = {

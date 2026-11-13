@@ -274,11 +274,34 @@
       }
     },
     {
+      "_id": "Pe9frMgKhtkTEW3Z",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.Pe9frMgKhtkTEW3Z",
+      "name": "Troquer : la boutique, le marché, la foire",
+      "type": "text",
+      "sort": 1200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Il n'y a plus de monnaie. On <strong>troque</strong>, et le marché se met en place au fil de la partie :</p><ul><li><strong>De la main à la main</strong>, dès le premier jour : deux personnes échangent, sans lieu ni règle.</li><li><strong>La boutique</strong> : un commerçant resté dans son quartier tient un <strong>carnet de crédit</strong>. On prend aujourd'hui, on rend plus tard, et la dette est écrite. Une dette qui traîne (un mois, ou passée le Nouvel An chinois) se sait : le <strong>Ladi Lafé</strong> (« il a dit qu'il a fait », la rumeur) s'en charge, et le crédit s'arrête. Les dettes se soldent au <strong>Nouvel An chinois</strong> : qui a tout rendu voit son crédit grandir.</li><li><strong>Le marché forain</strong> : quand plusieurs communautés vivent dans une région et qu'une route est ouverte, un marché s'installe un jour fixe de la semaine, sur un terrain qui n'est à personne. Chaque bastion a une voix au <strong>conseil du marché</strong>, qui affiche le cours et règle les litiges. <strong>Trêve</strong> dans son périmètre : la rompre, c'est être connu de toute l'île comme celui qui l'a rompue.</li><li><strong>La foire</strong>, une fois par an, autour d'une récolte : les lentilles de Cilaos en octobre, les chouchous de Salazie, les goyaviers des Palmistes, le vacoa de Saint-Philippe, les semences du Nouvel An tamoul.</li></ul><p><strong>Le cours</strong> dit ce que vaut chaque chose, en <strong>parts</strong> (une part, c'est un jour de nourriture pour une personne) : il aide à échanger, il ne fait pas payer. De base : eau 1, nourriture 1, plantes 1, graines 2, matériaux 2, munitions 3, pièces 3, carburant 4, médicaments 5. Il bouge avec la crise (le carburant ne revient jamais), la saison (l'eau vaut peu sous la pluie) et la récolte de la foire.</p><p><strong>Accueillir le marché</strong> à son abri rapporte de la réputation auprès des bastions qui y viennent, mais tout se voit et s'entend : du bruit chaque jour de marché, du monde, des lumières.</p><p><strong>Les gens du marché</strong> viennent de toutes les communautés, et chacun a ses préjugés sur les autres. Un préjugé rend un marchand méfiant avec un inconnu : un prix moins bon, un crédit refusé, une parole mise en doute. Il s'use quand on échange honnêtement, quand on fête ensemble, et quand les faits le démentent. Aucune origine ne donne de bonus ni de malus dans les règles. Se servir d'un préjugé, pour refuser quelqu'un ou pour colporter, se paie.</p><p><strong>Marquer ses biens</strong> : un objet marqué du signe de sa communauté se prouve et se réclame. Un voisin qui dit qu'il est à lui est démenti par la marque, et un mensonge démenti se sait.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "troquer"
+        }
+      }
+    },
+    {
       "_id": "YAeUac3GaRE5gFYj",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.YAeUac3GaRE5gFYj",
       "name": "Créer son survivant",
       "type": "text",
-      "sort": 1200,
+      "sort": 1300,
       "title": {
         "show": true,
         "level": 1
@@ -301,7 +324,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.1negBmyxnDQWAKrk",
       "name": "Les enfances",
       "type": "text",
-      "sort": 1300,
+      "sort": 1400,
       "title": {
         "show": true,
         "level": 1
@@ -324,7 +347,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.AkeC2EJsUT6RjK3R",
       "name": "Les passés",
       "type": "text",
-      "sort": 1400,
+      "sort": 1500,
       "title": {
         "show": true,
         "level": 1
@@ -347,7 +370,7 @@
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 1500,
+      "sort": 1600,
       "title": {
         "show": true,
         "level": 1

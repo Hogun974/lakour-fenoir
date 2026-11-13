@@ -10,7 +10,7 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const contenu = () => game.lakourSurvie?.contenu?.() ?? {};
 const COULEURS_INFESTATION = { inconnue: "#6d6a63", calme: "#7fae6a", presente: "#e0b04a", dense: "#e07b39", grouillante: "#c8423b" };
 const COULEURS_ROUTE = { ouverte: "#9fb79a", difficile: "#e0b04a", coupee: "#c8423b" };
-export const ONGLETS = ["groupe", "renseignements", "journal", "propositions"];
+export const ONGLETS = ["groupe", "renseignements", "marche", "journal", "propositions"];
 
 // La carte des régions connue (SVG, d'après les repères de la scène « Carte de La Réunion », 4000 × 3000).
 export function carteConnue(etat, c = contenu()) {
@@ -38,6 +38,27 @@ export function carteConnue(etat, c = contenu()) {
   });
   return `<svg class="survie-carte" viewBox="0 0 4000 3000" role="img" aria-label="${echapper(t("LAKOUR_SURVIE.Tableau.Carte"))}">`
     + `<rect width="4000" height="3000" fill="#0d2a3a"/>${traits.join("")}${points.join("")}</svg>`;
+}
+
+// Le marché vu par le groupe (état PUBLIC, contrat §11) : le cours du jour, ses dettes aux carnets, les marchés et leurs jours,
+// ce qui se dit (les rumeurs encore vivantes ; leur vérité reste au MJ), son signe.
+export function marchePublic(etat, c = contenu()) {
+  const m = L.marcheDe(etat);
+  const jour = L.jourDe(etat.horloge?.quart ?? 0);
+  const groupe = t("LAKOUR_SURVIE.Marche.LeGroupe");
+  const nomSujet = s => (s === "groupe" ? groupe : s);
+  let cours = {};
+  try { cours = game.lakourSurvie?.coursDuJour?.() ?? {}; } catch { cours = {}; }
+  return {
+    cours: L.RESSOURCES_TROC.map(r => ({ libelle: t(`LAKOUR_SURVIE.Ressources.${r}`), valeur: cours[r] ?? "?" })),
+    carnets: m.boutiques.map(b => ({ nom: b.nom, dette: L.detteDe(b, "groupe"), plafond: L.plafondCredit(b, "groupe"),
+      traine: (b.entrees ?? []).some(e => e.debiteur === "groupe" && Number(e.reste) > 0 && (e.nouvelAn !== null && e.nouvelAn !== undefined || jour - Number(e.jour) >= L.REGLES_MARCHE.carnet.traine)) })),
+    marches: m.marches.map(x => ({ nom: x.nom, jour: x.foire ? t("LAKOUR_SURVIE.Marche.MJ.FoireJusqua", { jour: x.jusqua }) : t(`LAKOUR_SURVIE.Marche.Jours.${x.jourSemaine}`),
+      hote: x.hote === "groupe", rompue: Boolean(x.treve?.rompue) })),
+    rumeurs: [...m.rumeurs].filter(r => L.rumeurActive(r, jour) || r.dementie).reverse()
+      .map(r => ({ jour: r.jour, dementie: r.dementie, texte: sansBalises(localiser({ ...r, params: Object.fromEntries(Object.entries(r.params ?? {}).map(([k, x]) => [k, nomSujet(x)])) })) })),
+    signe: m.signe
+  };
 }
 
 export function contexteTableau(onglet = "groupe") {
@@ -84,6 +105,7 @@ export function contexteTableau(onglet = "groupe") {
     pnj: (etat.groupe?.pnj ?? []).map(p => ({ nom: p.nom, etat: p.etat })),
     plans: (etat.groupe?.plans ?? []).map(k => L.installationDe(c, k)?.nom ?? k),
     renseignements, carte: onglet === "renseignements" ? carteConnue(etat, c) : "",
+    marche: onglet === "marche" && etat.demarree ? marchePublic(etat, c) : null,
     journal: [...(etat.journal ?? [])].reverse().slice(0, 80).map(e => ({ jour: L.jourDe(e.quart), moment: t(`LAKOUR_SURVIE.Moments.${L.momentDe(e.quart)}`), texte: sansBalises(localiser(e)) })),
     alertes: [...(etat.alertes ?? [])].reverse().slice(0, 12).map(a => ({ jour: L.jourDe(a.quart), texte: sansBalises(localiser(a)), type: a.type })),
     propositions: [...(etat.propositions ?? [])].reverse().map(p => ({ ...p, jour: L.jourDe(p.quart), typeLibelle: t(`LAKOUR_SURVIE.Proposition.Types.${p.type}`) })),

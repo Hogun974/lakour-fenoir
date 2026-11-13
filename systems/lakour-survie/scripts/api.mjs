@@ -25,6 +25,7 @@ import { fetesDuJeu, trouverFete, suivreFetesDuJeu } from "./fetes.mjs";
 import { lireBudget } from "./reglages.mjs";
 import { ecrireChroniques, chapitreOuvert } from "./chroniques.mjs";
 import { deMJ, trouverDemande, fermerDemande, argumentsDuTestJoueur, propositionPermise } from "./demandes.mjs";
+import { fonctionsMarche } from "./api-marche.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -267,7 +268,7 @@ function conditionsAbri(etat, monde, a, { publique = false } = {}) {
   const r = publique && !aLAbri(etat, a) ? { eau: connu.eau === true, electricite: connu.electricite === true }
     : monde ? L.reseauxActifs(monde, a.system.region, jour) : (etat.bilan?.reseaux ?? {});
   return { jour, dateDepart: dateDepart(), personnes: presents.length + pnj, reseaux: { eau: Boolean(r.eau), electricite: Boolean(r.electricite) }, rations,
-    travailleurs: L.travailleursParTache(presents, c) };
+    travailleurs: L.travailleursParTache(presents, c), signature: L.signatureDuMarche(etat.marche) };
 }
 export function bilanVivant(etat = lireEtat(), monde = Coffre.mondeEnMemoire(), { publique = false } = {}) {
   const a = abriCourant(etat);
@@ -386,6 +387,8 @@ async function avancerInterne(ctx, quarts, options = {}) {
     const date = L.dateDuJour(j, dateDepart()).iso;
     for (const f of fetesDuJeu(date, c.fetes ?? []).filter(x => x.coeur)) alerter(ctx, "fete", tx("Fete.Alerte", { nom: f.nom, consigne: sansBalises(f.consigne) }));
   }
+  // Le marché : jours de marché, Nouvel An chinois (le carnet se solde), dettes qui traînent (le Ladi Lafé), rumeurs éteintes.
+  await MARCHE.journee(ctx, r.jours);
   ctx.faits.push(...r.faits);
   ctx.secrets.push(...r.secrets);
   ctx.alertes.push(...r.alertes);
@@ -873,6 +876,10 @@ async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
   return { patient, soigneur, difficulte: difficulte || (Number(patient.system.blessures) >= 4 ? "difficile" : "normale") };
 }
 
+// Le marché (contrat §11) : ses fonctions et sa journée, avec les aides internes d'ici.
+const MARCHE = fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser,
+  chat, carteAction, sansBalises });
+
 export const api = {
   logique: L,
   registre,
@@ -1287,7 +1294,8 @@ export const api = {
     return { ok: r.ok, gueri: r.ok, reussite: test.reussite, raison: motifLisible(r), test };
   }),
 
-  feter: ecriture(async ({ fete = "" } = {}) => {
+  // invites : des PNJ (acteurs) qui partagent la fête avec le groupe : chacun de leurs préjugés perd un cran (le marché, §11).
+  feter: ecriture(async ({ fete = "", invites = [] } = {}) => {
     const ctx = ouvrirCtx();
     const q = quandDe(ctx.etat);
     const f = trouverFete(fete, contenu().fetes ?? []) ?? (fete ? null : fetesDuJeu(q.date, contenu().fetes ?? [])[0] ?? null);
@@ -1304,10 +1312,14 @@ export const api = {
     const n = (Number(aPlat(ab.system).stocks?.nourriture) || 0);
     const nom = f?.nom ?? cle;
     noter(ctx, tx("Journal.Fete", { fete: nom }));
+    const usures = await MARCHE.feteInvites(ctx, invites);
     await chat(carteAction({ icone: "fa-champagne-glasses", titre: t("LAKOUR_SURVIE.Fete.Carte", { fete: nom }), lignes: [t("LAKOUR_SURVIE.Fete.Effet"), sansBalises(f?.description ?? "")] }));
     await terminer(ctx);
-    return { ok: true, fete: cle, texte: t("LAKOUR_SURVIE.Fete.Texte", { fete: nom, nourriture: n }) };
+    return { ok: true, fete: cle, texte: t("LAKOUR_SURVIE.Fete.Texte", { fete: nom, nourriture: n }), invites: usures };
   }),
+
+  // ---------------- §11 : le marché (api-marche.mjs)
+  ...MARCHE.api,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "" } = {}) => {

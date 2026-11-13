@@ -11,6 +11,8 @@ import { BESTIAIRE } from "./bestiaire.mjs";
 import { VOIES_AUTONOMIE, INSTALLATIONS } from "./installations.mjs";
 import { texteReputations } from "./reputations.mjs";
 import { FETES_FENOIR } from "../scripts/fetes.js";
+import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES, COURS_TEXTE } from "./marche.mjs";
+import { EVENEMENTS } from "./evenements.mjs";
 
 const nomRegion = cle => REGIONS.find(r => r.cle === cle)?.nom ?? cle;
 const nomInstallation = cle => INSTALLATIONS.find(i => i.system.cle === cle)?.name ?? cle;
@@ -86,6 +88,20 @@ Ce que vous savez d'une région est **daté** : vu de vos yeux tel jour, entendu
 **S'enraciner.** On creuse, on plante, on capte, on câble, jusqu'à ne plus dépendre de rien. Mais une serre qui brille, une éolienne qui grince, une fumée chaque soir disent à toute l'île qu'il y a quelque chose à prendre. La **discrétion** (souterrain, camouflage) et la **défense** protègent ce qu'on a bâti.
 
 Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs et le littoral est l'enfer ; plus tard, ce sera peut-être l'inverse.` },
+  { cle: "troquer", titre: "Troquer : la boutique, le marché, la foire", texte: `Il n'y a plus de monnaie. On **troque**, et le marché se met en place au fil de la partie :
+
+- **De la main à la main**, dès le premier jour : deux personnes échangent, sans lieu ni règle.
+- **La boutique** : un commerçant resté dans son quartier tient un **carnet de crédit**. On prend aujourd'hui, on rend plus tard, et la dette est écrite. Une dette qui traîne (un mois, ou passée le Nouvel An chinois) se sait : le **Ladi Lafé** (« il a dit qu'il a fait », la rumeur) s'en charge, et le crédit s'arrête. Les dettes se soldent au **Nouvel An chinois** : qui a tout rendu voit son crédit grandir.
+- **Le marché forain** : quand plusieurs communautés vivent dans une région et qu'une route est ouverte, un marché s'installe un jour fixe de la semaine, sur un terrain qui n'est à personne. Chaque bastion a une voix au **conseil du marché**, qui affiche le cours et règle les litiges. **Trêve** dans son périmètre : la rompre, c'est être connu de toute l'île comme celui qui l'a rompue.
+- **La foire**, une fois par an, autour d'une récolte : les lentilles de Cilaos en octobre, les chouchous de Salazie, les goyaviers des Palmistes, le vacoa de Saint-Philippe, les semences du Nouvel An tamoul.
+
+**Le cours** dit ce que vaut chaque chose, en **parts** (une part, c'est un jour de nourriture pour une personne) : il aide à échanger, il ne fait pas payer. De base : eau 1, nourriture 1, plantes 1, graines 2, matériaux 2, munitions 3, pièces 3, carburant 4, médicaments 5. Il bouge avec la crise (le carburant ne revient jamais), la saison (l'eau vaut peu sous la pluie) et la récolte de la foire.
+
+**Accueillir le marché** à son abri rapporte de la réputation auprès des bastions qui y viennent, mais tout se voit et s'entend : du bruit chaque jour de marché, du monde, des lumières.
+
+**Les gens du marché** viennent de toutes les communautés, et chacun a ses préjugés sur les autres. Un préjugé rend un marchand méfiant avec un inconnu : un prix moins bon, un crédit refusé, une parole mise en doute. Il s'use quand on échange honnêtement, quand on fête ensemble, et quand les faits le démentent. Aucune origine ne donne de bonus ni de malus dans les règles. Se servir d'un préjugé, pour refuser quelqu'un ou pour colporter, se paie.
+
+**Marquer ses biens** : un objet marqué du signe de sa communauté se prouve et se réclame. Un voisin qui dit qu'il est à lui est démenti par la marque, et un mensonge démenti se sait.` },
   { cle: "creer", titre: "Créer son survivant", texte: `Un survivant, c'est une **enfance** (où et comment il a grandi), un **passé** (ce qu'il faisait au jour zéro), un **âge** (16 à 75 ans), 1 à 2 **passions**, 1 à 3 **traits** de caractère, parfois des **incapacités**, et une histoire.
 
 **Tirer.** La fenêtre « Créer un survivant » (ou le MJ IA) tire tout au sort, de façon cohérente : les compétences sont la somme des modificateurs de l'enfance, du passé et des traits (au plus 5).
@@ -161,6 +177,18 @@ Les **zerbaz** sont sa chance : une cueillette rapporte quelques plantes, une d�
 - **Bestiaire** : Livides et animaux, avec leurs dés et leur résistance.
 - **Cartes** : la carte de La Réunion (une épingle par région) et sept cartes de lieux (case créole, collège, station-service, supermarché, gîte, tunnel de lave, îlet).
 - **Le MJ IA** joue tout cela avec ses outils survie_* : il voit le réel et le connu, et ne dit aux joueurs que le connu.` },
+  { cle: "marche", titre: "Le marché", texte: `Le marché est l'endroit où toutes les communautés se croisent : c'est là que l'île d'après se voit vivre, et que les préjugés s'entendent le plus. Faites-le naître lentement, au rythme de la partie (le détail est dans le journal **Le marché et le Ladi Lafé**).
+
+- **Au début, le troc.** De la main à la main : une boîte de cartouches contre un sac de riz, à la barrière d'un abri. Utilisez le **cours** (onglet Marché de la fenêtre du MJ) pour dire si l'échange est juste ; le système ne fait que compter.
+- **Puis la boutique.** Un commerçant est resté dans son quartier (Madame Thiaw-Kine, à la Rivière Saint-Louis) : ouvrez sa boutique et son **carnet**. Le groupe prend à crédit, rend plus tard ; une dette qui traîne un mois nourrit le Ladi Lafé tout seul, et le carnet se solde au Nouvel An chinois.
+- **Puis le marché forain**, quand deux communautés au moins vivent dans la région et qu'une route est ouverte : un jour fixe, un terrain à personne, un conseil avec une voix par bastion, un cours affiché, une **trêve**. Les jours de marché tombent d'eux-mêmes ; tirez un **événement de marché** et jouez-le.
+- **La foire**, une fois l'an, autour d'une récolte : ouvrez-la pour trois jours ; sa récolte vaut moitié moins ce jour-là.
+
+**Les gens du marché** viennent de toutes les communautés, et aucun rôle n'est réservé à une origine. Donnez-leur une voix, des manies, et leurs **préjugés**. Le système ne connaît l'origine de personne : c'est vous qui dites quel préjugé du marchand s'éveille devant tel survivant (souvent à tort : on est métis). Le préjugé pèse sur la **première confiance** (prix majoré, crédit refusé, un dé de moins à la parole) et **s'use** : trois échanges honnêtes, une fête partagée, un démenti vu de ses yeux. **Démentez chaque préjugé par les faits**, devant tout le monde, dans le ton d'une kour : on se chambre, on se méfie, et on finit par partager le cari. Jamais le jeu ne donne raison à un préjugé.
+
+**Le Ladi Lafé** dit la réputation des autres. Il peut mentir, et des gens malveillants le font mentir. Tenez au secret ce qui est vrai ; laissez les joueurs chercher la preuve (une marque, un témoin, un fait). Une rumeur fausse démentie se retourne contre celui qui l'a lancée ; celui qui colporte du mal, même vrai, n'en sort pas grandi.
+
+**Accueillir le marché** est un choix d'enracinement : réputation auprès des bastions, mais bruit, lumière et monde chaque semaine. Rappelez le prix quand la visibilité monte.` },
   { cle: "factions", titre: "Les factions en jeu", texte: `Les factions ne sont pas des méchants de service : chacune a de bonnes raisons. Faites-les **grandir** pendant la panique et l'effondrement, **occuper** les abris abandonnés, **se disputer** les régions. Un groupe qui les aide gagne de la réputation et ce qu'elle ouvre (troc, refuge, savoir enseigné) ; un groupe qui les trahit le paie.` },
   { cle: "gens-de-l-ile", titre: "Les gens de l'île", texte: `La Réunion est une île de **métissage**, et c'est une fierté. Faites-la vivre : une foule, une file de réfugiés, un marché des Ferrailleurs mélangent toujours plusieurs visages, et beaucoup de gens sont un peu de tout à la fois.
 
@@ -187,7 +215,7 @@ Trois règles :
 - **Le jeu ne les confirme jamais.** Aucune communauté n'est associée au crime ou au danger ; les pillards, les Sans-Lune et les menteurs viennent de partout. Quand un préjugé est mis à l'épreuve, il tombe : le Zoreil « qui ne sait rien » connaît la radio, la boutique chinoise a nourri tout le quartier, le Yab « arriéré » sait passer l'hiver, les derniers arrivés n'ont pas volé le riz.
 - **Le ton est celui d'une kour**, plus *kozman* et moucatage (on se chambre) que haine : on se méfie, on se dispute, et on finit quand même par partager le cari. Pas d'insulte gratuite, aucun mot qui blesse plus qu'il ne raconte.
 
-Les événements du camp (le carnet de la boutique, un service dans la nuit, le Zoreil qui veut tout organiser, les derniers arrivés, le cari qu'on partage, la terre du gros blanc), les imprévus et les prix des recrues mettent ces regards en jeu. Les fêtes aussi : chaque fête a sa communauté au premier plan, et tout le monde vient voir.
+Les événements du camp (le carnet de la boutique, un service dans la nuit, le Zoreil qui veut tout organiser, les derniers arrivés, le cari qu'on partage, la terre du gros blanc), les imprévus et les prix des recrues mettent ces regards en jeu. Les fêtes aussi : chaque fête a sa communauté au premier plan, et tout le monde vient voir. Au marché, huit événements démentent chacun un préjugé devant tout le monde (journal « Le marché et le Ladi Lafé »).
 
 # Pour le MJ IA
 
@@ -388,5 +416,94 @@ Les fronts se croisent : laissez les joueurs choisir lequel combattre, et montre
 *Le contenu ne fixe pas la vérité sur le Gris : à vous de décider si ce front mène quelque part.*` }
 ] });
 
-export const JOURNAUX = [GUIDE_JOUEUR, REGIONS_DE_L_ILE, FETES, GUIDE_MJ, CHRONOLOGIE, POURQUOI, FACTIONS_J, REPUTATIONS_J, BESTIAIRE_J, JOUR_ZERO, ONE_SHOT, CAMPAGNE];
+// ================================================================ Le marché et le Ladi Lafé (MJ)
+// Le marché en quatre stades, le carnet, le conseil et sa trêve, les foires, le cours, les préjugés et leurs démentis, les gens
+// du marché, la rumeur, les objets marqués, les oratoires rouges (contenu/marche.mjs ; logique marche.mjs ; docs/metissage.md).
+const nomCommunaute = cle => COMMUNAUTES.find(c => c.cle === cle)?.nom ?? (cle === "metis" ? "métis" : cle);
+const JOURS_SEMAINE = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+const NOMS_RESSOURCES = { eau: "eau", nourriture: "nourriture", plantes: "plantes (zerbaz)", graines: "graines", materiaux: "matériaux", munitions: "munitions", pieces: "pièces", carburant: "carburant", medicaments: "médicaments" };
+const nomFaction = cle => FACTIONS.find(f => f.cle === cle)?.nom ?? cle;
+const EVENEMENTS_MARCHE = EVENEMENTS.filter(e => e.type === "marche");
+// Un texte HTML du registre remis en texte brut, sans l'espace que laisse une balise avant une virgule ou un point.
+const brut = h => sansBalises(h).replace(/ ([,.])/g, "$1");
+
+const LE_MARCHE = journal({ cle: "le-marche-et-le-ladi-lafe", nom: "Le marché et le Ladi Lafé", pack: "mj", pages: [
+  { cle: "stades", titre: "Les quatre stades", texte: `Le marché se met en place au fil de la partie. Troc seulement : **pas de monnaie**. Le système suit chaque stade (fenêtre du MJ, onglet **Marché**) ; vous racontez.
+
+- **1. Le troc de la main à la main**, dès le premier jour : deux personnes échangent, sans lieu ni règle. Le cours dit si c'est juste ; rien n'oblige à le suivre.
+- **2. La boutique**, quand un commerçant PNJ est resté dans son quartier et a de quoi tenir : un point d'échange fixe, avec son **carnet de crédit**. C'est ce qui remplace la monnaie.
+- **3. Le marché forain**, quand plusieurs communautés vivent dans la même région (le groupe compris) et qu'une route est ouverte entre elles : un jour fixe par semaine, un terrain qui n'est à personne, un **conseil du marché** avec une voix par bastion, un cours affiché, des litiges réglés, une **trêve** dans son périmètre.
+- **4. La foire**, une fois par an, autour d'une récolte : les bastions de plusieurs régions se retrouvent pour trois jours, sous trêve.
+
+Un abri peut **accueillir** le marché forain : chaque mois de marché tenu (quatre jours de marché) lui vaut **1 point de réputation** auprès de chaque bastion qui y vient ; mais sa signature grandit : **+3 bruit** chaque jour de marché, **+2 visibilité** tant qu'il l'accueille (du monde, des lumières, des allées et venues).` },
+  { cle: "boutique", titre: "La boutique et son carnet", texte: `Le **carnet de crédit** est un cahier : on y écrit ce que chacun prend, au cours du jour, en **parts**. On prend aujourd'hui, on rend plus tard, en n'importe quels biens, au cours du jour où l'on rend ; les dettes les plus anciennes se soldent d'abord.
+
+- **Plafond** : 10 parts par débiteur ; +5 par Nouvel An où il a tout rendu (au plus 30). La moitié si le tenancier se méfie (un préjugé de poids 1, ou une faction neutre) ; rien s'il refuse.
+- **Une dette qui traîne** (30 jours, ou passée le Nouvel An chinois) arrête le crédit, et nourrit le **Ladi Lafé** : une rumeur vraie court sur le débiteur (une fois par dette). Elle pèse sur la première confiance de qui l'a entendue, jusqu'à ce qu'elle s'éteigne (90 jours).
+- **Le Nouvel An chinois** solde le carnet : une dette rendue en entier sort du carnet et la parole du débiteur grandit ; une dette encore due reste, et traîne. Le tenancier peut **effacer** des dettes (après un cyclone, un deuil) : c'est son choix, et toute l'île s'en souvient.
+
+Le carnet est public : on l'ouvre devant tout le monde, et les joueurs voient le leur sur le tableau de bord.` },
+  { cle: "forain", titre: "Le marché forain, son conseil et sa trêve", texte: `Un marché forain se tient un **jour fixe** de la semaine, sur un terrain qui n'est à personne (un carrefour, une place, un front de mer). Chaque bastion qui y vient a **une voix au conseil** ; le conseil affiche le cours (il peut l'ajuster d'une ou deux parts quand une denrée manque) et **tranche les litiges** à la majorité (à égalité : on partage).
+
+**La trêve** : personne n'entre armé, personne ne frappe dans le périmètre. La rompre, c'est **3 points de réputation** de moins auprès de chaque bastion du conseil, une rumeur vraie qui court sur toute l'île pendant un an, et le marché fermé jusqu'à ce que le conseil la rétablisse.
+
+Des marchés possibles :
+
+${MARCHES.map(m => `- **${m.nom}** (${REGIONS.find(r => r.cle === m.region)?.nom ?? m.region}, le ${JOURS_SEMAINE[m.jourSemaine]}, ${m.lieu}) : ${brut(m.description)} Bastions : ${m.bastions.map(nomFaction).join(", ")}.`).join("\n")}` },
+  { cle: "foires", titre: "Les foires de saison", texte: `Les foires agricoles d'avant sont devenues des **marchés de troc saisonniers, sous trêve**. Une foire dure trois jours ; sa récolte vaut moitié moins au cours ce jour-là, et l'on vient de plusieurs régions.
+
+${FOIRES.map(f => `- **${f.nom}** (${MOIS[f.mois - 1]}, ${REGIONS.find(r => r.cle === f.region)?.nom ?? f.region}) : ${brut(f.description)}`).join("\n")}` },
+  { cle: "cours", titre: "Le cours du troc", texte: `Le cours dit ce que vaut chaque bien en **parts** (une part = un jour de nourriture pour une personne). L'énergie ne se troque pas (des kWh dans des batteries ne passent pas de main en main).
+
+${Object.entries(COURS_TEXTE).map(([r, v]) => `- **${NOMS_RESSOURCES[r]}** : ${v}`).join("\n")}
+
+Il bouge avec la crise et la saison :
+- pendant la panique et l'effondrement, les médicaments et les munitions valent une fois et demie plus ; le carburant aussi dès l'effondrement ;
+- au silence, le carburant double et les pièces valent une fois et demie plus ; dans l'après, le carburant vaut deux fois et demie plus (il ne revient jamais), les graines aussi grimpent ;
+- l'eau vaut moitié moins en saison des pluies, une fois et demie plus en saison sèche ;
+- la récolte d'une foire vaut moitié moins ce jour-là.
+
+Un troc est **juste** à une part ou à 10 % près. Un marchand demande la valeur reçue **majorée** selon sa première confiance (préjugés, rumeurs, réputation de sa faction).` },
+  { cle: "prejuges", titre: "Les préjugés au marché", texte: `Le marché est l'endroit où toutes les communautés se croisent : c'est là que les préjugés s'entendent le plus. **Aucune origine ne donne de bonus ni de malus dans les règles.** Un préjugé est un **trait d'un PNJ**, jamais une propriété d'une communauté. Le système ne connaît l'origine de personne : c'est le MJ qui dit quel préjugé du PNJ s'éveille devant tel inconnu, souvent à tort (on est métis).
+
+**La première confiance.** Le poids des préjugés en jeu (1 à 3 chacun, cumulés) plus les rumeurs défavorables qu'il a entendues, au plus 3 :
+- **0** : prix au cours, crédit au plafond ;
+- **1** : prix majoré d'un quart, crédit à moitié, un dé de moins aux tests de parole avec lui ;
+- **2** : prix majoré de moitié, crédit refusé, un dé de moins ;
+- **3** : prix double, crédit refusé, deux dés de moins.
+
+**L'usure.** Un préjugé perd un cran tous les **trois échanges honnêtes** avec quelqu'un qu'il vise, à chaque **fête partagée**, et chaque fois que **les faits le démentent** sous ses yeux. À zéro, il est tombé : le PNJ ne le dit plus, ou plus devant vous.
+
+**Le joueur qui s'en sert** (pour refuser quelqu'un à la porte, pour faire baisser un prix, pour colporter) se paie : ses voisins s'en souviennent, et sa réputation aussi.
+
+**Le jeu dément chaque préjugé par les faits**, dans le ton d'une kour : on se chambre, on se méfie, et on finit par partager le cari. Ce qui se dit, et ce que le jeu montre :
+
+${MARCHANDS.map(m => `- ${m.onDit} — **${m.nom}** : ${m.dementi}`).join("\n")}` },
+  { cle: "gens", titre: "Les gens du marché", texte: `Ils viennent de toutes les communautés ; aucun rôle n'est réservé à une origine. Chacun porte ses propres préjugés : chacun en a sur chacun. Créez-en l'acteur depuis la fenêtre du MJ (onglet Marché) pour qu'il porte ses préjugés.
+
+${MARCHANDS.map(m => `**${m.nom}** — ${m.role} (${REGIONS.find(r => r.cle === m.region)?.nom ?? m.region} ; ${nomCommunaute(m.communaute)}). ${m.apparence} ${brut(m.description)} *Ses préjugés* : ${m.prejuges.map(p => `${p.dit} (sur : ${nomCommunaute(p.cible)})`).join(" ; ")}.`).join("\n\n")}` },
+  { cle: "ladi-lafe", titre: "Le Ladi Lafé", texte: `**Ladi Lafé**, en créole, « il a dit qu'il a fait » : la rumeur. C'est par elle qu'on connaît la réputation des autres, et que les autres connaissent la vôtre, avant de vous avoir vus.
+
+- **Elle peut être fausse**, et des gens malveillants la font mentir exprès. Le système garde au secret ce qui est vrai, qui l'a lancée et pourquoi ; les joueurs n'entendent que ce qui se dit.
+- **Elle pèse** : chaque rumeur défavorable encore vivante sur quelqu'un compte dans la première confiance de qui l'a entendue. Elle s'éteint en 90 jours (un an pour une trêve rompue).
+- **Elle tombe sur une preuve** : une marque sur l'objet, un témoin, un fait. Une rumeur vraie ne se dément pas : le jeu dit vrai. Une rumeur fausse et malveillante démentie se retourne contre son auteur : une rumeur vraie court alors sur lui.
+- **Colporter du mal a un coût**, que la rumeur soit vraie ou non : on se souvient de celui qui l'a dite.
+- Les réputations des factions passent aussi par elle : voyez « Réputation auprès des factions ».
+
+Tables : « Marché — ce qui se dit (le Ladi Lafé) », avec la vérité entre crochets, et « Générateur — rumeur de bouche à oreille ».` },
+  { cle: "marques", titre: "Les objets marqués", texte: `Chaque communauté peut **marquer ses biens** : trois encoches, un letchi gravé, une croix de peinture rouge. Le groupe choisit son **signe** (onglet Marché) et marque ses objets (poinçon de marque).
+
+- Un objet marqué **se prouve et se réclame** : la marque tranche.
+- Sans marque, les **témoins** ; sans témoins, **parole contre parole** : le conseil du marché décide, ou un test de parole opposé.
+- **Le voisin qui ment.** Quand le groupe rend un objet trouvé, un voisin peut mentir et dire qu'il est à lui. Un mensonge démenti par une marque ou un témoin **se sait** : une rumeur vraie court sur le menteur.` },
+  { cle: "oratoires", titre: "Les oratoires rouges", texte: `Au bord des routes de l'île, de petits oratoires peints en rouge, dédiés à saint Expédit : une statuette, des bougies, des fleurs en plastique, des ex-voto. Depuis le jour zéro, on y laisse des **messages** pliés sous une pierre, pour les groupes qui ne se croisent jamais : un rendez-vous, une offre de troc, un avertissement, un nom qu'on cherche.
+
+Personne n'y touche, par respect ou par crainte ; certains y voient la protection du saint, d'autres une habitude ; le jeu ne dit rien de plus. Le groupe peut y laisser un message (le MJ le fera trouver par qui passe) et y lire ceux des autres (table « Oratoires rouges — messages »).` },
+  { cle: "evenements", titre: "Les événements de marché", texte: `Les jours de marché, le système tire un événement de marché selon le stade (la simulation du monde ne les tire jamais). Jouez-le, puis, s'il dément un préjugé, appliquez le démenti : le préjugé perd un cran chez les PNJ qui le portent.
+
+${EVENEMENTS_MARCHE.map(e => `- **${e.nom}**${e.effets?.dementi ? ` (dément un préjugé sur : ${nomCommunaute(e.effets.dementi)})` : ""}`).join("\n")}` }
+] });
+
+export const JOURNAUX = [GUIDE_JOUEUR, REGIONS_DE_L_ILE, FETES, GUIDE_MJ, CHRONOLOGIE, POURQUOI, FACTIONS_J, REPUTATIONS_J, BESTIAIRE_J, JOUR_ZERO, ONE_SHOT, CAMPAGNE, LE_MARCHE];
 export const CLE_JOURNAL_REGIONS = "regions-de-l-ile";

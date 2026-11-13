@@ -16,7 +16,8 @@
     "transport": null,
     "effets": {
       "renseignements": true
-    }
+    },
+    "marque": ""
   },
   "effects": [],
   "folder": null,

@@ -1,7 +1,8 @@
 // Modèles de données (TypeDataModel) des acteurs et objets, conformes au contrat (§3.1 à §3.4, §9, §10.1) et à ce que le contenu
 // de lakour-fenoir compile dans ses compendiums (src/). Extensions (sans effet si on les laisse vides) : survivant.afflictions,
 // savoirs, joursTache, tacheDepuis, joursSansPassion, joursMoralZero, enseigne (logique, docs/survie-notes-logique.md) ;
-// installation.termineLe, actif ; affliction.stade, reste (l'instance portée par un survivant).
+// installation.termineLe, actif ; affliction.stade, reste (l'instance portée par un survivant) ; survivant.prejuges et
+// equipement.marque (le marché, 2026-11-13 : marche.mjs).
 import { COMPETENCES, RESSOURCES, NATURE } from "../logique/constantes.mjs";
 
 const { fields } = foundry.data;
@@ -49,6 +50,8 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
       vivant: bool(true),
       livide: bool(false),
       charge: nombre(0),
+      // Les préjugés d'un PNJ (marche.mjs) : [{ cible, poids 1..3, dit, echanges, fetes, dementis }] ; vide pour tous les autres.
+      prejuges: new fields.ArrayField(new fields.ObjectField()),
       notes: html()
     };
   }
@@ -109,7 +112,8 @@ export class ModeleEquipement extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       cle: cle(), categorie: texte("outil"), description: html(), bonus: objetLibre({}), charge: nombre(0), usure: nombre(0),
-      munitions: nombreNul(), bruit: nombre(0), transport: objetNul(), effets: objetNul()
+      munitions: nombreNul(), bruit: nombre(0), transport: objetNul(), effets: objetNul(),
+      marque: texte()   // le signe d'une communauté sur l'objet (marche.mjs, reclamerObjet) : vide = pas marqué
     };
   }
 }

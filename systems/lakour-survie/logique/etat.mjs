@@ -44,12 +44,13 @@ import { effetQuart, effetJour, peutAgir } from "./survivant.mjs";
 import { bilanAbri, journeeAbri, suivreAutonomie, subirCyclone, subirEvenementAbri } from "./abri.mjs";
 import { creerMonde, simulerJour } from "./monde.mjs";
 import { renseignementsInitiaux, observer, reseauxActifs } from "./renseignements.mjs";
+import { marcheVide, signatureDuMarche } from "./marche.mjs";
 
 export function etatVide() {
   return {
     partie: "", demarree: false, horloge: { quart: 0 }, phase: "jour-zero",
     groupe: { abri: "", membres: [], pnj: [], plans: [], region: "", enRoute: null },
-    renseignements: {}, joursAutonomes: 0, autonome: false, alertes: [], journal: [], fouilleLe: null, fetes: []
+    renseignements: {}, joursAutonomes: 0, autonome: false, alertes: [], journal: [], fouilleLe: null, fetes: [], marche: marcheVide()
   };
 }
 
@@ -128,7 +129,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     return r;
   };
   const conditions = jour => ({ jour, dateDepart, personnes: personnesAbri(), reseaux: ab ? reseauxActifs(m, ab.system.region, jour) : {},
-    rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu) });
+    rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu), signature: signatureDuMarche(e.marche) });
   let bilan = ab ? bilanAbri(ab.system, ab.installations, contenu, conditions(Math.floor(e.horloge.quart / QUARTS_PAR_JOUR))) : null;
   let palierVeille = palierVisibilite(options.visibiliteVeille ?? bilan?.visibilite ?? 0);
   // publier(quart, cle, params, texte) : une entrée du journal ; alerter(quart, type, cle, params, texte) : une alerte.

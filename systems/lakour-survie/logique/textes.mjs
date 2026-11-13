@@ -51,7 +51,13 @@ export const CLES_TEXTES = [
   "soin-medicaments", "soin-pas-atteint", "soin-rate",
   // abri.mjs, fabrication.mjs : motifs de refus d'un chantier ou d'une recette
   "installation-inconnue", "recette-inconnue", "niveau-inexistant", "niveau-deja", "niveau-prealable", "hors-service-reparer",
-  "savoir-manquant", "eau-requise", "site-sol", "site-soleil", "site-souterrain", "requiert", "requiert-hors-service", "manque"
+  "savoir-manquant", "eau-requise", "site-sol", "site-soleil", "site-souterrain", "requiert", "requiert-hors-service", "manque",
+  // marche.mjs : stades, carnet de crédit, jours de marché, foires, Ladi Lafé (la rumeur)
+  "marche-stade-troc", "marche-stade-boutique", "marche-stade-sans-boutique", "marche-stade-forain", "marche-stade-sans-forain",
+  "marche-stade-foire", "marche-stade-sans-foire",
+  "carnet-rien", "carnet-refuse", "carnet-traine", "carnet-plafond", "carnet-nouvel-an",
+  "marche-jour", "foire-finie", "marche-dette-rumeur",
+  "rumeur", "rumeur-treve", "rumeur-dette", "rumeur-menteur", "rumeur-inconnue", "rumeur-vraie"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

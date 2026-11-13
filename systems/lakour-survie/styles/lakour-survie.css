@@ -322,3 +322,7 @@
   .lakour-survie .survie-colonnes, .lakour-survie .survie-creation-grille { grid-template-columns: 1fr; }
   .lakour-survie .survie-chiffres { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Le marché (onglet Marché de la fenêtre du MJ, tableau de bord) : une dette qui traîne, la vérité d'une rumeur (MJ seul). */
+.lakour-survie .survie-alerte { color: #ffb3a8; font-weight: 600; }
+.lakour-survie .survie-secret { color: #c9a7ff; font-style: italic; }

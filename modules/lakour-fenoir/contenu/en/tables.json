@@ -125,6 +125,65 @@
       "en": "<p><strong>Trade — Madame Thiaw-Kine's credit book.</strong> The Chinese shopkeeper of La Rivière Saint-Louis offers her back room in exchange for an escort to Cilaos, and strikes from her book the debts of those who help her. People say she only gives credit to her own; her book fed the whole neighbourhood during the 2009 general strike.</p><p><strong>Reward:</strong> 8 food, 2 seeds.</p>"
     }
   },
+  "tables/2KT2bBV66pMOX4ZJ": {
+    "_nom": "Marché — ce qui se dit (le Ladi Lafé)",
+    "name": {
+      "fr": "Marché — ce qui se dit (le Ladi Lafé)",
+      "en": "Market — what is said (the Ladi Lafé)"
+    },
+    "description": {
+      "fr": "<p>La rumeur du marché, et entre crochets ce qui est vrai (pour le MJ).</p>",
+      "en": "<p>The market's rumours, and in brackets what is true (for the GM).</p>"
+    },
+    "results.bKgiGB6CW1osQGtK.description": {
+      "fr": "<p>« Les Ferrailleurs ont un dépôt de carburant intact sous la zone de Savanna. » [Vrai : un dépôt, presque vide.]</p>",
+      "en": "<p>\"The Scrappers have an untouched fuel depot under the Savanna retail park.\" [True: a depot, nearly empty.]</p>"
+    },
+    "results.ufeFkUutVXJ7c8NT.description": {
+      "fr": "<p>« Le Dispensaire teste des remèdes sur ses malades. » [À moitié vrai : la docteure cherche, et elle demande des volontaires.]</p>",
+      "en": "<p>\"The Dispensary tests remedies on its patients.\" [Half true: the doctor is searching, and she asks for volunteers.]</p>"
+    },
+    "results.so49cbb7j5WXODrH.description": {
+      "fr": "<p>« La Garnison va fermer la route du Littoral à ceux qui ne sont pas recensés. » [Vrai, pour l'instant.]</p>",
+      "en": "<p>\"The Garrison is going to close the Route du Littoral to anyone not registered.\" [True, for now.]</p>"
+    },
+    "results.BJ0IShRqDWZVlCP0.description": {
+      "fr": "<p>« Les Familles des Îlets laissent mourir les malades au col. » [Faux : la quarantaine dure trois jours, on y nourrit tout le monde.]</p>",
+      "en": "<p>\"The Families of the Îlets leave the sick to die at the pass.\" [False: the quarantine lasts three days, and everyone is fed there.]</p>"
+    },
+    "results.DIqlAWkEfbKOWekB.description": {
+      "fr": "<p>« Le Comptable des Sans-Lune tient un carnet de tous les abris du Nord. » [Vrai.]</p>",
+      "en": "<p>\"The Moonless Bookkeeper keeps a book of every shelter in the North.\" [True.]</p>"
+    },
+    "results.wmQdbtk7WS4247TT.description": {
+      "fr": "<p>« La boutiquière chinoise ne fait crédit qu'aux siens. » [Faux : son carnet a nourri tout le quartier.]</p>",
+      "en": "<p>\"The Chinese shopkeeper only gives credit to her own.\" [False: her book fed the whole neighbourhood.]</p>"
+    },
+    "results.473kre7CcWMcHRC3.description": {
+      "fr": "<p>« La tisaneuse malbare fait un service sur ses tisanes. » [Faux : elle soigne, voilà tout. Ce qu'elle fait au temple ne regarde qu'elle.]</p>",
+      "en": "<p>\"The Malbar herbalist does a service over her tisanes.\" [False: she heals, that is all. What she does at the temple is her business.]</p>"
+    },
+    "results.tf7BBS9aaaEHGgx9.description": {
+      "fr": "<p>« Les derniers arrivés ont volé la caisse de la Coopérative. » [Faux : un marchand de passage l'avait, et il a filé.]</p>",
+      "en": "<p>\"The last to arrive stole the Cooperative's toolbox.\" [False: a passing trader had it, and he made off.]</p>"
+    },
+    "results.vZsugUtSCi6u6Czb.description": {
+      "fr": "<p>« Un bastion du Sud cache un médecin et ne le partage pas. » [Vrai : un vétérinaire, qui ne veut pas qu'on le sache.]</p>",
+      "en": "<p>\"A stronghold in the South is hiding a doctor and won't share him.\" [True: a vet, who doesn't want it known.]</p>"
+    },
+    "results.0jGS5qnbcuqX3vDh.description": {
+      "fr": "<p>« Les Barques du Sud vont à Maurice la nuit. » [Faux : une seule fois, et ils sont revenus sans rien.]</p>",
+      "en": "<p>\"The Southern Boats go to Mauritius at night.\" [False: only once, and they came back with nothing.]</p>"
+    },
+    "results.Y0VYe0LAYtk8KcVX.description": {
+      "fr": "<p>« Le groupe qui vit là-haut ne rend jamais ce qu'il emprunte. » [Au MJ de voir : vrai si le groupe a une dette qui traîne, sinon une rumeur lancée exprès.]</p>",
+      "en": "<p>\"The group living up there never gives back what it borrows.\" [Up to the GM: true if the group has a debt dragging on, otherwise a rumour started on purpose.]</p>"
+    },
+    "results.mKD97nNN8QAkDpOx.description": {
+      "fr": "<p>« Le président du conseil fait passer ses amis d'abord. » [Faux : il vient de donner tort à son cousin.]</p>",
+      "en": "<p>\"The council chairman puts his friends first.\" [False: he has just ruled against his cousin.]</p>"
+    }
+  },
   "tables/3rOWWRWJAOrlApYT": {
     "_nom": "Complications d'un test forcé",
     "name": {
@@ -486,6 +545,81 @@
     "results.m3E80H12nTBN1F7a.description": {
       "fr": "<p><strong>Récupération — Un Livide entier.</strong> La docteure veut étudier un Livide intact, ramené vivant… si l'on peut dire.</p><p><strong>Récompense :</strong> 6 medicaments, 2 munitions ; réputation +3.</p>",
       "en": "<p><strong>Recovery — A whole Pallid.</strong> The doctor wants to study an intact Pallid, brought back alive… so to speak.</p><p><strong>Reward:</strong> 6 medicine, 2 ammunition; reputation +3.</p>"
+    }
+  },
+  "tables/9Z48zATc55hbPGWK": {
+    "_nom": "Marché — ce qu'on trouve sur les étals",
+    "name": {
+      "fr": "Marché — ce qu'on trouve sur les étals",
+      "en": "Market — what's on the stalls"
+    },
+    "description": {
+      "fr": "<p>Un étal du marché forain ou de la foire.</p>",
+      "en": "<p>A stall at the open-air market or the fair.</p>"
+    },
+    "results.GGdMvJMR6NVi3e5s.description": {
+      "fr": "<p>Des sacs de lentilles de Cilaos, petites et brunes, au cours.</p>",
+      "en": "<p>Sacks of Cilaos lentils, small and brown, at the rate.</p>"
+    },
+    "results.CshLEhUJjyAkJ4Z1.description": {
+      "fr": "<p>Des bocaux d'achards de légumes et de piment, fermés à la cire.</p>",
+      "en": "<p>Jars of vegetable and chilli achards, sealed with wax.</p>"
+    },
+    "results.cp06yfF05EkhV1xE.description": {
+      "fr": "<p>Des chouchous par brassées, encore humides de la rosée de Salazie.</p>",
+      "en": "<p>Armfuls of chayotes, still wet with the Salazie dew.</p>"
+    },
+    "results.ICpxwMASDHbCve0q.description": {
+      "fr": "<p>Du poisson séché des Barques, en chapelets.</p>",
+      "en": "<p>Dried fish from the Boats, on strings.</p>"
+    },
+    "results.2sbKWcrpQm8XQQz6.description": {
+      "fr": "<p>Des clous redressés, triés par taille dans des boîtes de conserve.</p>",
+      "en": "<p>Straightened nails, sorted by size in tin cans.</p>"
+    },
+    "results.1q4oDTEWCcbcqANT.description": {
+      "fr": "<p>Des batteries de voiture « presque chargées », dit le Ferrailleur.</p>",
+      "en": "<p>Car batteries, \"nearly charged\", says the Scrapper.</p>"
+    },
+    "results.CZamPrMlcGGopr4V.description": {
+      "fr": "<p>Des paquets de zerbaz dans du papier journal : fièvre, ventre, entorse.</p>",
+      "en": "<p>Packets of zerbaz in newspaper: fever, stomach, sprain.</p>"
+    },
+    "results.lQtzvzX97IKmYw0l.description": {
+      "fr": "<p>Un vélo sans pneus, et deux pneus sans vélo.</p>",
+      "en": "<p>A bicycle without tyres, and two tyres without a bicycle.</p>"
+    },
+    "results.nNvobYQhDCQ5CbzA.description": {
+      "fr": "<p>Des sachets de graines de brèdes, de tomates, de piments, de maïs.</p>",
+      "en": "<p>Packets of seeds: brèdes (leafy greens), tomatoes, chillies, maize.</p>"
+    },
+    "results.wXA7jKvIVIGMdtsh.description": {
+      "fr": "<p>Une chèvre et son petit, à troquer ensemble.</p>",
+      "en": "<p>A goat and her kid, to be traded together.</p>"
+    },
+    "results.ia87u9BIMzEJKNf0.description": {
+      "fr": "<p>Des nattes et des paniers de vacoa tressé.</p>",
+      "en": "<p>Mats and baskets of woven screwpine (vacoa).</p>"
+    },
+    "results.6EgZZwAWzF48DpLz.description": {
+      "fr": "<p>Du savon de cendre et de graisse, en pains carrés.</p>",
+      "en": "<p>Soap made of ash and fat, in square bars.</p>"
+    },
+    "results.Vaup6kzbjpaqE3Gj.description": {
+      "fr": "<p>Des cartouches de chasse, comptées une à une, à prix fort.</p>",
+      "en": "<p>Hunting cartridges, counted one by one, at a steep price.</p>"
+    },
+    "results.wN61xbMt4ZriJbr4.description": {
+      "fr": "<p>Des piles de toutes tailles, testées sur la langue devant le client.</p>",
+      "en": "<p>Batteries of every size, tested on the tongue in front of the customer.</p>"
+    },
+    "results.MypPxBBElic49V6J.description": {
+      "fr": "<p>Des manuels scolaires : on troque les pages pour allumer le feu, ou pour apprendre.</p>",
+      "en": "<p>School textbooks: the pages are traded to light fires, or to learn.</p>"
+    },
+    "results.MuCx3T2PKK2rg38C.description": {
+      "fr": "<p>Du miel des Hauts dans des bouteilles de rhum lavées.</p>",
+      "en": "<p>Highland honey in washed rum bottles.</p>"
     }
   },
   "tables/CYOYEXdAq7JQv5EY": {
@@ -1282,6 +1416,57 @@
       "en": "<p>A road overgrown with vegetation, unrecognisable.</p>"
     }
   },
+  "tables/ebvmbCR2d4IbKTBR": {
+    "_nom": "Oratoires rouges — messages",
+    "name": {
+      "fr": "Oratoires rouges — messages",
+      "en": "Red oratories — messages"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on trouve sous la pierre d'un oratoire rouge, au bord de la route.</p>",
+      "en": "<p>What you find under the stone of a red oratory, by the road.</p>"
+    },
+    "results.nM1aa9weUbBqifJE.description": {
+      "fr": "<p>« Famille Grondin, partis à Cilaos par la route, tous vivants sauf mamie. Si vous lisez ça, Rosemay, on t'attend. »</p>",
+      "en": "<p>\"Grondin family, gone to Cilaos by the road, all alive except granny. If you read this, Rosemay, we are waiting for you.\"</p>"
+    },
+    "results.E7jEZSi4ypqPWKe0.description": {
+      "fr": "<p>« Échange graines de maïs contre médicaments. Laisser ici, on repasse jeudi. »</p>",
+      "en": "<p>\"Maize seeds for medicine. Leave it here, we come back Thursday.\"</p>"
+    },
+    "results.cZLLC7cZhFD3dJKz.description": {
+      "fr": "<p>« Horde vue sur la route des Plaines, le 12. Ne montez pas. »</p>",
+      "en": "<p>\"Horde seen on the Route des Plaines, on the 12th. Don't go up.\"</p>"
+    },
+    "results.8cUAKMoapWq0HMt8.description": {
+      "fr": "<p>« Merci pour l'eau. » Rien d'autre, et une petite croix rouge.</p>",
+      "en": "<p>\"Thanks for the water.\" Nothing else, and a small red cross.</p>"
+    },
+    "results.KnKkZjIeM4A8WCh0.description": {
+      "fr": "<p>« Le pont de la ravine est tombé. Passez par le haut, à droite du manguier. »</p>",
+      "en": "<p>\"The ravine bridge has fallen. Go over the top, right of the mango tree.\"</p>"
+    },
+    "results.zEfeEciy1Cix4baD.description": {
+      "fr": "<p>« Ici, Thomas, dit Radio : radios réparées dimanche au marché du quai. Laissez le poste, je le rapporte. »</p>",
+      "en": "<p>\"Thomas here, known as Radio: radios repaired on Sunday at the quay market. Leave the set, I'll bring it back.\"</p>"
+    },
+    "results.L9jo1zXFiarq7q6N.description": {
+      "fr": "<p>« Qui a pris la barque bleue ? On ne vous en veut pas, rendez-la. »</p>",
+      "en": "<p>\"Who took the blue boat? We don't hold it against you, bring it back.\"</p>"
+    },
+    "results.3PO3CqgeH1GSsLJk.description": {
+      "fr": "<p>Un dessin d'enfant : une case, quatre bonshommes, un soleil. Et un prénom : Ti Zan.</p>",
+      "en": "<p>A child's drawing: a house, four stick figures, a sun. And a first name: Ti Zan.</p>"
+    },
+    "results.MapqcWFnmkmGL953.description": {
+      "fr": "<p>« Le Comptable sait où vous êtes. Changez d'abri. » Personne ne signe.</p>",
+      "en": "<p>\"The Bookkeeper knows where you are. Change shelters.\" Nobody signs.</p>"
+    },
+    "results.ws6IBJeSUGNG7FV0.description": {
+      "fr": "<p>« Nous sommes six à la chapelle du Brûlé. Nous avons des panneaux. Nous cherchons un soignant. »</p>",
+      "en": "<p>\"There are six of us at the Brûlé chapel. We have panels. We are looking for someone who can heal.\"</p>"
+    }
+  },
   "tables/h3wo9DGwRuinmC5G": {
     "_nom": "Visibilité 9 — L'assaut",
     "name": {
@@ -1515,6 +1700,22 @@
     "results.eLvtxPg22U0ySf4p.description": {
       "fr": "<p>On accuse les Comoriens du Chaudron d'avoir vidé l'hypermarché du quartier ; ceux qui l'ont vraiment vidé avaient un camion et des visages noircis.</p>",
       "en": "<p>The Comorians of Le Chaudron are blamed for emptying the neighbourhood hypermarket; those who really emptied it had a lorry and blackened faces.</p>"
+    },
+    "results.VfZNH50QS5tvb4CM.description": {
+      "fr": "<p>On dit que la boutiquière chinoise de la Rivière Saint-Louis ne fait crédit qu'aux siens. Son carnet compte deux cents noms, dont trois chinois.</p>",
+      "en": "<p>They say the Chinese shopkeeper of Rivière Saint-Louis only gives credit to her own. Her book holds two hundred names, three of them Chinese.</p>"
+    },
+    "results.KCfOdxWxybdnxrAl.description": {
+      "fr": "<p>Il paraît que le marché du samedi à Bourg-Murat est sous trêve, et que celui qui la rompt n'est plus reçu nulle part dans l'île.</p>",
+      "en": "<p>Word is the Saturday market at Bourg-Murat is under truce, and whoever breaks it is no longer welcome anywhere on the island.</p>"
+    },
+    "results.QnJnHQIvwk4f3yLs.description": {
+      "fr": "<p>On raconte qu'un bastion de l'Ouest troque des vivres gâtés. C'est un concurrent qui le raconte.</p>",
+      "en": "<p>People say a stronghold in the West trades spoiled food. It is a competitor who says so.</p>"
+    },
+    "results.UhUXGUh7uwMlqnZr.description": {
+      "fr": "<p>Il y aurait des messages sous les pierres des oratoires rouges, au bord des routes, pour ceux qui ne se croisent jamais.</p>",
+      "en": "<p>There are supposedly messages under the stones of the red oratories, by the roads, for those who never cross paths.</p>"
     }
   },
   "tables/mymRAN0ZBWMkVTBW": {
@@ -1866,6 +2067,49 @@
     "results.O6h8rncSBrCBwu5s.description": {
       "fr": "<p><strong>Réparation — Le captage emporté.</strong> Refaire le captage d'un îlet emporté par une crue.</p><p><strong>Récompense :</strong> 8 nourriture, 2 graines ; réputation +3.</p>",
       "en": "<p><strong>Repair — The catchment swept away.</strong> Rebuild the catchment of an îlet swept away by a flood.</p><p><strong>Reward:</strong> 8 food, 2 seeds; reputation +3.</p>"
+    }
+  },
+  "tables/uTjmfpIZFy4ALx1G": {
+    "_nom": "Marché — litiges au conseil",
+    "name": {
+      "fr": "Marché — litiges au conseil",
+      "en": "Market — disputes before the council"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on porte au conseil du marché, une voix par bastion.</p>",
+      "en": "<p>What is taken to the market council, one voice per stronghold.</p>"
+    },
+    "results.Hq0o2FeyqR5MCeVR.description": {
+      "fr": "<p>Trois cabris perdus pendant l'orage et retrouvés dans la ravine d'un autre bastion, nourris un mois.</p>",
+      "en": "<p>Three goats lost in the storm and found in another stronghold's ravine, fed for a month.</p>"
+    },
+    "results.ohtpxlbuoGeYiFAz.description": {
+      "fr": "<p>Un sac de riz pesé à la balance d'un bastion et repesé à celle du conseil : il manque un kilo.</p>",
+      "en": "<p>A sack of rice weighed on one stronghold's scales and weighed again on the council's: a kilo is missing.</p>"
+    },
+    "results.xxCQqqkGaSdLfZzI.description": {
+      "fr": "<p>Une dette de carnet que le débiteur jure avoir rendue ; le carnet dit le contraire.</p>",
+      "en": "<p>A book debt the debtor swears he paid back; the book says otherwise.</p>"
+    },
+    "results.BeZWGPFX0OrHu3Y8.description": {
+      "fr": "<p>Deux bastions revendiquent la même source au-dessus du marché.</p>",
+      "en": "<p>Two strongholds claim the same spring above the market.</p>"
+    },
+    "results.RFIyGlMpgAjFWNmf.description": {
+      "fr": "<p>Un fusil troqué qui s'enraye au premier coup : l'acheteur veut ses parts.</p>",
+      "en": "<p>A traded rifle that jams on the first shot: the buyer wants his shares back.</p>"
+    },
+    "results.caljImuc8cLNUkAE.description": {
+      "fr": "<p>Un enfant d'un bastion a cassé la vitre de la seule voiture qui roule encore.</p>",
+      "en": "<p>A child from one stronghold broke the window of the only car that still runs.</p>"
+    },
+    "results.8JbVgPPSNV3PZ07M.description": {
+      "fr": "<p>Un marchand a vendu au-dessus du cours affiché ; il dit qu'il ne savait pas lire l'ardoise.</p>",
+      "en": "<p>A trader sold above the posted rate; he says he couldn't read the slate.</p>"
+    },
+    "results.eMtNTPOF2KclNBUw.description": {
+      "fr": "<p>Une barque empruntée pour la journée revient trouée.</p>",
+      "en": "<p>A boat borrowed for the day comes back holed.</p>"
     }
   },
   "tables/vQsdv0k9g1cpM2Dt": {
