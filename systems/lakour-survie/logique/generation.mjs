@@ -36,6 +36,8 @@ import { COMPETENCES, NIVEAU_MAX, borner } from "./constantes.mjs";
 import { entier, tirerPoids, choisir, chance } from "./hasard.mjs";
 import { liste, indexer, installationDe, siteDe, genreDe, GENRES } from "./contenu.mjs";
 import { survivantNeuf, peutAgir } from "./survivant.mjs";
+import { tirerEsprit } from "./esprit.mjs";
+import { deriverHasard } from "./hasard.mjs";
 import { resoudreTest } from "./des.mjs";
 import { message } from "./textes.mjs";
 
@@ -44,6 +46,8 @@ export const TACHES = {
   soins: "soins", eau: "survie", peche: "survie", chasse: "survie", fouille: "discretion", repos: null, enseigner: null
 };
 export const BUDGET_DEPART = [10, 16];
+// Ce que la création peut garder de l'esprit (verrous) : le joueur change sa religion avant de valider (complément, famille 2).
+export const CHAMPS_ESPRIT_VERROUS = ["regard", "religion", "religions", "pratique", "ancrage"];
 export const STATUTS = ["joueur", "compagnon", "recrue", "pnj"];
 export const JOURS_MARQUE_TACHE = 7;
 export const JOURS_SANS_PASSION = 7;
@@ -103,7 +107,7 @@ export function genreDuNom(contenu, nom) {
 // favoriser: { competence: poids }, budget: [min, max] | null (défaut : BUDGET_DEPART pour un joueur, aucun sinon) }
 // -> system complet (survivantNeuf + enfance, passe, passions, traits, incapacites, statut, tache, histoire, age, nom, genre, equipement)
 export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
-  const v = { ...(options.verrous ?? {}), ...Object.fromEntries(Object.entries(options).filter(([k, x]) => ["age", "enfance", "passe", "traits", "nom", "genre"].includes(k) && x !== undefined)) };
+  const v = { ...(options.verrous ?? {}), ...Object.fromEntries(Object.entries(options).filter(([k, x]) => ["age", "enfance", "passe", "traits", "nom", "genre", ...CHAMPS_ESPRIT_VERROUS].includes(k) && x !== undefined)) };
   const idx = indexer(contenu);
   const fav = options.favoriser ?? {};
   const statut = options.statut ?? "joueur";
@@ -177,9 +181,15 @@ export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
   const competences = Object.fromEntries(COMPETENCES.map(c => [c, { niveau: niveaux[c], marques: 0 }]));
   const incapacites = union(enfance?.incapacites ?? [], passe?.incapacites ?? [], ...defsTraits.map(t => t?.incapacites ?? t?.effets?.incapacites ?? []));
   const proche = tirerTexte(contenu, "proches", PROCHES, "proche", hasard);
+  // L'esprit (esprit.mjs : regard, religion ou ancrage, sens moral, autorité) : tiré sur un flux À PART, dérivé de ce qui précède,
+  // pour que les tirages d'avant ce lot (survivants, recrues, simulateur) ne changent pas ; options.hasardEsprit le remplace.
+  const verrousEsprit = Object.fromEntries(CHAMPS_ESPRIT_VERROUS.filter(k => v[k] !== undefined).map(k => [k, v[k]]));
+  const hEsprit = options.hasardEsprit ?? deriverHasard("esprit", nom, age, enfance?.cle ?? "", passe?.cle ?? "", traits.join(","), JSON.stringify(passions), JSON.stringify(niveaux));
+  const esprit = tirerEsprit(contenu, hEsprit, { traits, competences, age, enfance: enfance?.cle ?? "", verrous: verrousEsprit });
   return survivantNeuf({
     nom, genre: GENRES.includes(genre) ? genre : "",
     age, enfance: enfance?.cle ?? "", passe: passe?.cle ?? "", passions, traits, incapacites, statut, tache: "repos",
+    ...esprit,
     competences,
     savoirs: union(enfance?.savoirs ?? [], passe?.savoirs ?? []),
     equipement: union(enfance?.equipement ?? [], passe?.equipement ?? []),

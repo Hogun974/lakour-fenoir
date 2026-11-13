@@ -72,7 +72,16 @@
     "vivant": true,
     "livide": false,
     "charge": 0,
-    "notes": "<p>Des cochons échappés des élevages, retournés à l'état sauvage dans les forêts et les ravines : lourds, rapides, armés de défenses naissantes.</p><p><strong>Comportement.</strong> Saccagent les potagers la nuit, chargent quand on les surprend. Un cochon abattu nourrit le camp une semaine.</p><p><strong>Faiblesse.</strong> Prévisibles : ils reviennent au même champ ; un piège ou une fosse suffit.</p><p><strong>Dés d'attaque :</strong> 2 — <strong>résistance :</strong> 2 — <strong>vitesse :</strong> rapide.</p>"
+    "notes": "<p>Des cochons échappés des élevages, retournés à l'état sauvage dans les forêts et les ravines : lourds, rapides, armés de défenses naissantes.</p><p><strong>Comportement.</strong> Saccagent les potagers la nuit, chargent quand on les surprend. Un cochon abattu nourrit le camp une semaine.</p><p><strong>Faiblesse.</strong> Prévisibles : ils reviennent au même champ ; un piège ou une fosse suffit.</p><p><strong>Dés d'attaque :</strong> 2 — <strong>résistance :</strong> 2 — <strong>vitesse :</strong> rapide.</p>",
+    "regard": "",
+    "religion": "",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 0,
+    "autorite": 2,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [],
   "effects": [],

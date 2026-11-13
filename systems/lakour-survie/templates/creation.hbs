@@ -34,6 +34,19 @@
           <button type="button" class="survie-verrou {{#if verrous.traits}}actif{{/if}}" data-action="verrou" data-element="traits" data-tooltip="{{localize 'LAKOUR_SURVIE.Creation.Verrou'}}"><i class="fa-solid {{#if verrous.traits}}fa-lock{{else}}fa-lock-open{{/if}}"></i></button>
         </div>
         <select name="trait" class="survie-ajout-trait">{{#each traitsPossibles}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select>
+        {{#if esprit}}
+        <div class="survie-esprit-creation">
+          <h4><i class="fa-solid fa-dove"></i> {{localize "LAKOUR_SURVIE.Fiche.Esprit"}}
+            <button type="button" class="survie-verrou {{#if verrous.esprit}}actif{{/if}}" data-action="verrou" data-element="esprit" data-tooltip="{{localize 'LAKOUR_SURVIE.Creation.Verrou'}}"><i class="fa-solid {{#if verrous.esprit}}fa-lock{{else}}fa-lock-open{{/if}}"></i></button></h4>
+          <label data-tooltip="{{esprit.regardAide}}">{{localize "LAKOUR_SURVIE.Esprit.Regard"}} <select name="regard">{{#each esprit.regards}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+          <label>{{localize "LAKOUR_SURVIE.Esprit.Religion"}} <select name="religion">{{#each esprit.religions}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+          {{#if esprit.plusieurs}}<label>{{localize "LAKOUR_SURVIE.Esprit.Religions"}} <select name="religions" multiple>{{#each esprit.religionsMultiples}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>{{/if}}
+          {{#if esprit.sansReligion}}<label>{{localize "LAKOUR_SURVIE.Esprit.Ancrage"}} <select name="ancrage">{{#each esprit.ancrages}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>{{/if}}
+          <label class="survie-case" data-tooltip="{{localize 'LAKOUR_SURVIE.Esprit.PratiqueAide'}}"><input type="checkbox" name="pratique" {{#if esprit.pratique}}checked{{/if}}> {{localize "LAKOUR_SURVIE.Esprit.Pratiquant"}}</label>
+          {{#if esprit.aideFoi}}<p class="survie-aide">{{esprit.aideFoi}}</p>{{/if}}
+          <p class="survie-sens {{esprit.sens.bande}}" data-tooltip="{{localize 'LAKOUR_SURVIE.Esprit.SensAide'}}">{{localize "LAKOUR_SURVIE.Esprit.SensMoral"}} : <span class="survie-jauge-barre sens"><span style="width: {{esprit.sens.pct}}%"></span></span> {{esprit.sens.libelle}} · {{localize "LAKOUR_SURVIE.Esprit.Autorite"}} {{esprit.autorite}} / 5</p>
+        </div>
+        {{/if}}
         {{#if incapacites.length}}<p class="survie-incapacites"><i class="fa-solid fa-ban"></i> {{localize "LAKOUR_SURVIE.Creation.Incapable"}} : {{#each incapacites}}<span>{{this}}</span>{{/each}}</p>{{/if}}
       </div>
 

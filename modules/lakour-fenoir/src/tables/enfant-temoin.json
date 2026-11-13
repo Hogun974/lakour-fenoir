@@ -1,0 +1,118 @@
+{
+  "_id": "METnW9AkcEIQZX6Y",
+  "_key": "!tables!METnW9AkcEIQZX6Y",
+  "name": "L'enfant témoin",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un enfant a vu ce que le groupe a fait. Selon ce qu'il sait faire, il l'imitera plus tard, ou il s'en révoltera.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "enfant-temoin",
+      "esprit": "enfant"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "XmiBMPDSJJDv1plh",
+      "_key": "!tables.results!METnW9AkcEIQZX6Y.XmiBMPDSJJDv1plh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a tout vu depuis le toit. Il ne dit rien ; il ne mange pas ce soir-là.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hfwrkcbog1bLRnNS",
+      "_key": "!tables.results!METnW9AkcEIQZX6Y.hfwrkcbog1bLRnNS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle rejoue la scène avec ses poupées : celle qui reste dehors, et ceux qui ferment la porte.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "zDZPHz0NEb3q1j8W",
+      "_key": "!tables.results!METnW9AkcEIQZX6Y.zDZPHz0NEb3q1j8W",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il demande à voix haute, au repas, pourquoi on a fait ça. Personne ne répond.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "PG35UurgyWcAEVfg",
+      "_key": "!tables.results!METnW9AkcEIQZX6Y.PG35UurgyWcAEVfg",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle imite le chef, le menton haut, et répète ses mots à un plus petit qu'elle.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "3V8iw1MHdqZFvc6T",
+      "_key": "!tables.results!METnW9AkcEIQZX6Y.3V8iw1MHdqZFvc6T",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a caché du pain sous son matelas : « pour quand ce sera nous ».</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "PQfcsCNFBVec4ftG",
+      "_key": "!tables.results!METnW9AkcEIQZX6Y.PQfcsCNFBVec4ftG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle s'approche d'un adulte qu'elle aime bien et murmure : « Moi je partirai un jour. »</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

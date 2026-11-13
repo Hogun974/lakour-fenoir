@@ -125,6 +125,49 @@
       "en": "<p><strong>Trade — Madame Thiaw-Kine's credit book.</strong> The Chinese shopkeeper of La Rivière Saint-Louis offers her back room in exchange for an escort to Cilaos, and strikes from her book the debts of those who help her. People say she only gives credit to her own; her book fed the whole neighbourhood during the 2009 general strike.</p><p><strong>Reward:</strong> 8 food, 2 seeds.</p>"
     }
   },
+  "tables/3Wyf3O4dXAwMlD6u": {
+    "_nom": "Les chefs de bande — les ultimatums",
+    "name": {
+      "fr": "Les chefs de bande — les ultimatums",
+      "en": "Gang leaders — the ultimatums"
+    },
+    "description": {
+      "fr": "<p>Ce qu'exige un chef de bande qui pose un ultimatum. Accepté, il devient un tribut, puis, avec le temps, une alliance ou une révolte.</p>",
+      "en": "<p>What a gang leader demands when issuing an ultimatum. Accepted, it becomes a tribute, then, in time, an alliance or a revolt.</p>"
+    },
+    "results.UvwFCBpsnKnpUrDu.description": {
+      "fr": "<p>« Une part de ce que vous produisez, chaque semaine. Et personne ne viendra vous ennuyer. »</p>",
+      "en": "<p>\"A share of what you produce, every week. And nobody will come bothering you.\"</p>"
+    },
+    "results.l1fPV1IVBK6Gmmys.description": {
+      "fr": "<p>« Votre carburant. Tout. Après, on parlera d'amitié. »</p>",
+      "en": "<p>\"Your fuel. All of it. Then we'll talk about friendship.\"</p>"
+    },
+    "results.txazMx7frdHRmeHh.description": {
+      "fr": "<p>« Deux bras pour nos chantiers, un mois. Vous choisissez lesquels. »</p>",
+      "en": "<p>\"Two pairs of hands for our building work, for a month. You choose whose.\"</p>"
+    },
+    "results.7be9ccvjd05emP2F.description": {
+      "fr": "<p>« Les médicaments, ou on vient les chercher, et on prendra le reste avec. »</p>",
+      "en": "<p>\"The medicine, or we come and get it, and we'll take the rest with it.\"</p>"
+    },
+    "results.TTYLhS6nwbxK5zsG.description": {
+      "fr": "<p>« La moitié de la récolte. On a des enfants aussi. »</p>",
+      "en": "<p>\"Half the harvest. We have children too.\"</p>"
+    },
+    "results.mZhTjjjyNPQdAvDF.description": {
+      "fr": "<p>« Rien pour cette fois. La prochaine lune, on revient, et vous aurez réfléchi. »</p>",
+      "en": "<p>\"Nothing this time. Next moon we come back, and you'll have thought it over.\"</p>"
+    },
+    "results.aVZnD76wRMqhm0NY.description": {
+      "fr": "<p>« Votre radio. On veut savoir ce que vous savez. »</p>",
+      "en": "<p>\"Your radio. We want to know what you know.\"</p>"
+    },
+    "results.Ym7HNnZ2z1AHtVPt.description": {
+      "fr": "<p>« Laissez-nous passer par chez vous, chaque mois, et nourrissez-nous ce jour-là. »</p>",
+      "en": "<p>\"Let us pass through your place every month, and feed us that day.\"</p>"
+    }
+  },
   "tables/3rOWWRWJAOrlApYT": {
     "_nom": "Complications d'un test forcé",
     "name": {
@@ -681,6 +724,49 @@
       "en": "<p>Smoke from your kitchen was seen from another hill.</p>"
     }
   },
+  "tables/ERAHk53pO3a4pwAe": {
+    "_nom": "L'esprit — les faux bruits de la nuit",
+    "name": {
+      "fr": "L'esprit — les faux bruits de la nuit",
+      "en": "The spirit — the false noises of the night"
+    },
+    "description": {
+      "fr": "<p>Ce qu'entend, la nuit, celui dont le moral est au plus bas. Le jeu ne dit pas si c'était vrai.</p>",
+      "en": "<p>What someone whose morale is at its lowest hears at night. The game doesn't say whether it was real.</p>"
+    },
+    "results.9YGPYN4qq2140LQM.description": {
+      "fr": "<p>Des pas sur le gravier, derrière la case. Personne.</p>",
+      "en": "<p>Footsteps on the gravel, behind the house. Nobody.</p>"
+    },
+    "results.AKAuZss8E4FfsYTF.description": {
+      "fr": "<p>Une voix qui appelle un prénom, tout bas, dans la ravine.</p>",
+      "en": "<p>A voice calling a name, very softly, in the ravine.</p>"
+    },
+    "results.peBb9L0xtHAmH1rx.description": {
+      "fr": "<p>Le portail qui grince, deux fois. Il est fermé, cadenassé.</p>",
+      "en": "<p>The gate creaks, twice. It is shut and padlocked.</p>"
+    },
+    "results.uSTgUMg5r0mXldaT.description": {
+      "fr": "<p>Quelqu'un qui gratte à la tôle, juste à côté de sa tête.</p>",
+      "en": "<p>Someone scratching at the corrugated iron, right next to their head.</p>"
+    },
+    "results.M4t3C82XLnmthQBq.description": {
+      "fr": "<p>Un enfant qui pleure au loin. Le vent tourne, et plus rien.</p>",
+      "en": "<p>A child crying in the distance. The wind turns, and nothing more.</p>"
+    },
+    "results.L72eofWHvCgYBXUz.description": {
+      "fr": "<p>Le bruit d'un moteur sur la route. La route est vide jusqu'au matin.</p>",
+      "en": "<p>The sound of an engine on the road. The road stays empty until morning.</p>"
+    },
+    "results.ugqjTfGIkBDdfCcS.description": {
+      "fr": "<p>Une respiration lente, de l'autre côté de la cloison.</p>",
+      "en": "<p>Slow breathing, on the other side of the partition.</p>"
+    },
+    "results.XCthw50jfvMiPPvj.description": {
+      "fr": "<p>Le tintement des cloches d'alerte. Aucune n'a bougé.</p>",
+      "en": "<p>The tinkle of the alarm bells. None of them moved.</p>"
+    }
+  },
   "tables/FaGBrQayrPRbUgcs": {
     "_nom": "Générateur — survivant rencontré",
     "name": {
@@ -890,6 +976,41 @@
       "en": "<p>A wooden ladder propped against the rampart, leading nowhere visible.</p>"
     }
   },
+  "tables/METnW9AkcEIQZX6Y": {
+    "_nom": "L'enfant témoin",
+    "name": {
+      "fr": "L'enfant témoin",
+      "en": "The child witness"
+    },
+    "description": {
+      "fr": "<p>Un enfant a vu ce que le groupe a fait. Selon ce qu'il sait faire, il l'imitera plus tard, ou il s'en révoltera.</p>",
+      "en": "<p>A child saw what the group did. Depending on what they are good at, they will imitate it later, or rebel against it.</p>"
+    },
+    "results.XmiBMPDSJJDv1plh.description": {
+      "fr": "<p>Il a tout vu depuis le toit. Il ne dit rien ; il ne mange pas ce soir-là.</p>",
+      "en": "<p>He saw everything from the roof. He says nothing; he doesn't eat that evening.</p>"
+    },
+    "results.hfwrkcbog1bLRnNS.description": {
+      "fr": "<p>Elle rejoue la scène avec ses poupées : celle qui reste dehors, et ceux qui ferment la porte.</p>",
+      "en": "<p>She replays the scene with her dolls: the one left outside, and those who shut the door.</p>"
+    },
+    "results.zDZPHz0NEb3q1j8W.description": {
+      "fr": "<p>Il demande à voix haute, au repas, pourquoi on a fait ça. Personne ne répond.</p>",
+      "en": "<p>At the meal, he asks out loud why we did that. Nobody answers.</p>"
+    },
+    "results.PG35UurgyWcAEVfg.description": {
+      "fr": "<p>Elle imite le chef, le menton haut, et répète ses mots à un plus petit qu'elle.</p>",
+      "en": "<p>She imitates the leader, chin up, and repeats his words to someone smaller than her.</p>"
+    },
+    "results.3V8iw1MHdqZFvc6T.description": {
+      "fr": "<p>Il a caché du pain sous son matelas : « pour quand ce sera nous ».</p>",
+      "en": "<p>He has hidden bread under his mattress: \"for when it's us\".</p>"
+    },
+    "results.PQfcsCNFBVec4ftG.description": {
+      "fr": "<p>Elle s'approche d'un adulte qu'elle aime bien et murmure : « Moi je partirai un jour. »</p>",
+      "en": "<p>She goes up to an adult she likes and whispers: \"I'll leave one day.\"</p>"
+    }
+  },
   "tables/N7GL6zu54VcNYBeU": {
     "_nom": "Demandes — Les Pèlerins de la Lave",
     "name": {
@@ -952,6 +1073,49 @@
       "en": "<p><strong>Repair — The hideout's lamps.</strong> Get the panels of their hideout working.</p><p><strong>Reward:</strong> 3 ammunition, 4 food; reputation +1.</p>"
     }
   },
+  "tables/RrsEELfidn02gbrG": {
+    "_nom": "La porte — ce que dit le refusé",
+    "name": {
+      "fr": "La porte — ce que dit le refusé",
+      "en": "The door — what the one turned away says"
+    },
+    "description": {
+      "fr": "<p>Celui à qui l'on a fermé la porte, en partant. Ce qu'il fera ensuite dépend de lui, pas de ce qu'il dit.</p>",
+      "en": "<p>The one the door was shut on, as they leave. What they do next depends on them, not on what they say.</p>"
+    },
+    "results.9Xqj7iX7sO0r69fB.description": {
+      "fr": "<p>« <em>Mi konpran.</em> » (Je comprends.) Il remet son sac sur l'épaule et repart sans se retourner.</p>",
+      "en": "<p>\"<em>Mi konpran.</em>\" (I understand.) He shoulders his bag again and leaves without looking back.</p>"
+    },
+    "results.AezM11dQKnnCGE9a.description": {
+      "fr": "<p>Elle crache par terre : « Vous verrez, quand ce sera votre tour. »</p>",
+      "en": "<p>She spits on the ground: \"You'll see, when it's your turn.\"</p>"
+    },
+    "results.BkkGk0PRkMQC7g2i.description": {
+      "fr": "<p>Il demande seulement de l'eau pour la route. Qu'on la lui donne ou non, on s'en souviendra.</p>",
+      "en": "<p>He only asks for water for the road. Whether you give it to him or not, it will be remembered.</p>"
+    },
+    "results.UsEJFQyXVbhzv2E9.description": {
+      "fr": "<p>Elle note quelque chose dans un carnet, regarde longuement la barrière, et s'en va.</p>",
+      "en": "<p>She writes something down in a notebook, looks at the gate for a long time, and goes.</p>"
+    },
+    "results.e5WIDfocYvUbfqoy.description": {
+      "fr": "<p>« Dites-moi ce qui vous manque. Je reviendrai avec. »</p>",
+      "en": "<p>\"Tell me what you're short of. I'll come back with it.\"</p>"
+    },
+    "results.gADFYADTZDvK5Iy3.description": {
+      "fr": "<p>Il ne dit rien. Le soir, on voit sa silhouette sur la crête, qui observe le camp.</p>",
+      "en": "<p>He says nothing. In the evening, his silhouette can be seen on the ridge, watching the camp.</p>"
+    },
+    "results.VfOusK80uRs25kjB.description": {
+      "fr": "<p>Elle laisse un enfant à la porte, et s'enfuit. (Le MJ décide de la suite : on n'a refusé qu'elle.)</p>",
+      "en": "<p>She leaves a child at the door and runs off. (The GM decides what follows: only she was turned away.)</p>"
+    },
+    "results.dpomYH4MQrHiqhgr.description": {
+      "fr": "<p>Il rit : « Les Sans-Lune, eux, m'auraient ouvert. » Puis il prend la route du littoral.</p>",
+      "en": "<p>He laughs: \"The Moonless would have let me in.\" Then he takes the coast road.</p>"
+    }
+  },
   "tables/S2NNTo6b2KG2DCLc": {
     "_nom": "Rencontres — hauts",
     "name": {
@@ -1009,6 +1173,49 @@
     "results.UUb2FBjLG87FxkPF.description": {
       "fr": "<p>Le son d'une cloche de vache dans le brouillard, qui ne s'arrête jamais.</p>",
       "en": "<p>The sound of a cowbell in the fog, that never stops.</p>"
+    }
+  },
+  "tables/aIDpVmerx8739tbC": {
+    "_nom": "L'esprit — celui qui lâche : les signes",
+    "name": {
+      "fr": "L'esprit — celui qui lâche : les signes",
+      "en": "The spirit — the one who lets go: the signs"
+    },
+    "description": {
+      "fr": "<p>Il mange moins, il parle moins, il donne ses affaires : ce que le groupe peut remarquer. Le groupe le retient par sa présence ; sinon, un matin, il n'est plus là (rien n'est montré).</p>",
+      "en": "<p>They eat less, talk less, give their things away: what the group can notice. The group holds them back by being there; otherwise, one morning, they are gone (nothing is shown).</p>"
+    },
+    "results.Nf0aB4mPnErKfUgh.description": {
+      "fr": "<p>Il laisse la moitié de sa gamelle, « pour les enfants ». Il le fait depuis trois jours.</p>",
+      "en": "<p>He leaves half his bowl, \"for the children\". He has been doing it for three days.</p>"
+    },
+    "results.rUFUam9kGQpMTGIG.description": {
+      "fr": "<p>Elle ne répond plus que par oui ou par non, et regarde la route.</p>",
+      "en": "<p>She only answers yes or no now, and watches the road.</p>"
+    },
+    "results.1UGLtusHT5cK0HI8.description": {
+      "fr": "<p>Il a donné son couteau à la plus jeune, « il te servira plus qu'à moi ».</p>",
+      "en": "<p>He gave his knife to the youngest girl: \"it'll be more use to you than to me\".</p>"
+    },
+    "results.1TnpKre7D1jyXnmx.description": {
+      "fr": "<p>Elle a plié ses affaires au carré, comme pour un départ, et ne les a pas rouvertes.</p>",
+      "en": "<p>She has folded her things neatly, as if to leave, and hasn't opened them again.</p>"
+    },
+    "results.CyMCVpk617T9bDc2.description": {
+      "fr": "<p>Il ne se lave plus, ne se rase plus, lui qui ne manquait jamais un matin.</p>",
+      "en": "<p>He no longer washes or shaves, he who never missed a morning.</p>"
+    },
+    "results.EdTEACVqzpwsaE41.description": {
+      "fr": "<p>Elle parle de son mari au passé, puis au présent, puis plus du tout.</p>",
+      "en": "<p>She speaks of her husband in the past tense, then in the present, then not at all.</p>"
+    },
+    "results.i43n5Y5t0Pat3F91.description": {
+      "fr": "<p>Il a écrit une lettre et demande qui la portera « si jamais ».</p>",
+      "en": "<p>He has written a letter and asks who will carry it \"just in case\".</p>"
+    },
+    "results.ucfT905szTp4ZhLs.description": {
+      "fr": "<p>Elle s'assoit seule au bord du camp, au coucher du soleil, et reste là après la nuit tombée.</p>",
+      "en": "<p>She sits alone at the edge of the camp at sunset, and stays there after nightfall.</p>"
     }
   },
   "tables/ak1hKfxxnBlIq2Xl": {
@@ -1162,6 +1369,49 @@
     "results.hPc3nn4OSrizQWfw.description": {
       "fr": "<p>Un bateau surchargé qui quitte le port.</p>",
       "en": "<p>An overloaded boat leaving the harbour.</p>"
+    }
+  },
+  "tables/dclPTq1OJk9rtHTo": {
+    "_nom": "L'esprit — ce que le cyclone a déposé",
+    "name": {
+      "fr": "L'esprit — ce que le cyclone a déposé",
+      "en": "The spirit — what the cyclone left"
+    },
+    "description": {
+      "fr": "<p>Un objet que le vent a laissé là. Le croyant pratiquant y voit un signe (+1 moral) ; celui qui ne pratique pas hésite ; les autres n'y pensent même pas. Le jeu ne tranche pas.</p>",
+      "en": "<p>An object the wind left there. The practising believer sees a sign in it (+1 morale); the one who doesn't practise hesitates; the others don't even think about it. The game doesn't decide.</p>"
+    },
+    "results.vR9IbkPPnV2mTuHF.description": {
+      "fr": "<p>Une statue de saint Expédit, intacte, posée debout dans la boue de la cour.</p>",
+      "en": "<p>A statue of Saint Expédit, intact, standing upright in the mud of the yard.</p>"
+    },
+    "results.q92KgqdgMOHD0SPe.description": {
+      "fr": "<p>Une barque retournée sur le toit du poulailler, sans une égratignure.</p>",
+      "en": "<p>A boat upside down on the henhouse roof, without a scratch.</p>"
+    },
+    "results.BCFBQa24IOiBpJog.description": {
+      "fr": "<p>Une valise fermée, pleine de photos d'une famille que personne ne connaît.</p>",
+      "en": "<p>A closed suitcase, full of photos of a family nobody knows.</p>"
+    },
+    "results.Mb8NdwlkH0qUhERv.description": {
+      "fr": "<p>Un coffre de pêcheur coincé dans le manguier, avec des hameçons et du fil neuf.</p>",
+      "en": "<p>A fisherman's chest wedged in the mango tree, with hooks and new line.</p>"
+    },
+    "results.M8BqJGoloy2bbBUU.description": {
+      "fr": "<p>Une cloche d'église, au milieu du potager, fendue.</p>",
+      "en": "<p>A church bell, cracked, in the middle of the vegetable garden.</p>"
+    },
+    "results.iS8MJsdsV9ioHWZ2.description": {
+      "fr": "<p>Un sac de riz de vingt-cinq kilos, encore sec dans son plastique.</p>",
+      "en": "<p>A twenty-five-kilo bag of rice, still dry in its plastic.</p>"
+    },
+    "results.HkO0ZdofxTKwSw0E.description": {
+      "fr": "<p>Une poupée de chiffon accrochée au portail, comme si on l'avait posée là.</p>",
+      "en": "<p>A rag doll hanging on the gate, as if someone had placed it there.</p>"
+    },
+    "results.0UGOVfqViDTBZlt5.description": {
+      "fr": "<p>Une lampe à pétrole intacte, son verre entier, au pied de la porte.</p>",
+      "en": "<p>An intact oil lamp, its glass whole, at the foot of the door.</p>"
     }
   },
   "tables/eUNONdmZdZucM7AF": {

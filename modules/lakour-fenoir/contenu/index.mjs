@@ -14,6 +14,8 @@ import { AFFLICTIONS } from "./afflictions.mjs";
 import { BESTIAIRE, BESTIAIRE_ACTEURS, CREATURES } from "./bestiaire.mjs";
 import { ENFANCES } from "./enfances.mjs";
 import { TRAITS } from "./traits.mjs";
+import { RELIGIONS, ANCRAGES } from "./religions.mjs";
+import { TABLES_ESPRIT } from "./esprit.mjs";
 import { REPUTATIONS, PALIERS, HORLOGES_REPUTATION } from "./reputations.mjs";
 import { APPELS_RADIO, DEMANDES } from "./appels.mjs";
 import { CAMP, ACTIVITES_CAMP } from "./camp.mjs";
@@ -33,7 +35,7 @@ export const DOCUMENTS = [
   ...INSTALLATIONS, ...SAVOIRS, ...EQUIPEMENTS, ...PASSES, ...RECETTES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
   ...JOURNAUX, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
-  ...TABLES, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES,
+  ...TABLES, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -48,6 +50,7 @@ export function donnees() {
     installations: INSTALLATIONS.map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: EQUIPEMENTS.map(aPlat), passes: PASSES.map(aPlat),
     recettes: RECETTES.map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
     factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
+    religions: RELIGIONS, ancrages: ANCRAGES,
     reputations: { paliers: PALIERS, factions: REPUTATIONS, horloges: HORLOGES_REPUTATION },
     visibilite: PALIERS_VISIBILITE.map(p => ({ ...p, table: `tables:visibilite-${p.cle}` })),
     camp: ACTIVITES_CAMP,

@@ -26,6 +26,7 @@ import { DOCUMENTS, donnees as donneesContenu } from "../modules/lakour-fenoir/c
 import { CARTE } from "../modules/lakour-fenoir/contenu/regions.mjs";
 import { ecrirePlans } from "../modules/lakour-fenoir/contenu/cartes.mjs";
 import { EFFET_FETE } from "../modules/lakour-fenoir/scripts/fetes.js";
+import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
 import { verifierModuleDeContenu } from "../modules/lakour-mj-ia/outils/contrat-contenu.mjs";
@@ -69,6 +70,23 @@ export const FETES_MOTEUR = IDS_FETES;
 export const FETES_DE_FENOIR = ["noel", "nouvel-an", "paques", "halloween", "musique", "liberte", "fete-nationale", "dipavali", "nouvel-an-chinois", "cavadee", "letchis"];
 export const DIFFICULTES = ["facile", "normale", "difficile", "extreme"];
 export const BUDGET = [10, 16];
+// L'esprit d'un survivant (complément du jeu 3D, familles 2 et 3 ; système : logique/esprit.mjs, moralite.mjs, chefs.mjs).
+export const REGARDS = ["epreuve", "refaire", "vivre"];
+export const BESOINS_OBSERVANCE = ["calme", "objet", "rien"];
+const CLES_RELIGIONS = new Set(RELIGIONS.map(r => r.cle));
+const CLES_ANCRAGES = new Set(ANCRAGES.map(a => a.cle));
+// L'esprit d'un survivant du compendium : vide (pas encore tiré) ou cohérent avec les religions et ancrages du contenu.
+export function erreursEsprit(sys = {}) {
+  const e = [];
+  if (sys.regard && !REGARDS.includes(sys.regard)) e.push(`regard « ${sys.regard} »`);
+  if (sys.religion && !CLES_RELIGIONS.has(sys.religion)) e.push(`religion « ${sys.religion} »`);
+  if (sys.religion === "plusieurs" && ((sys.religions ?? []).length < 2 || sys.religions.some(r => !CLES_RELIGIONS.has(r) || ["aucune", "plusieurs"].includes(r)))) e.push("« plusieurs » sans deux religions connues");
+  if (sys.religion !== "plusieurs" && (sys.religions ?? []).length) e.push("religions sans « plusieurs »");
+  if (sys.ancrage && !CLES_ANCRAGES.has(sys.ancrage)) e.push(`ancrage « ${sys.ancrage} »`);
+  if (!(Number.isInteger(sys.sensMoral) && sys.sensMoral >= -10 && sys.sensMoral <= 10)) e.push(`sens moral ${sys.sensMoral}`);
+  if (!(Number.isInteger(sys.autorite) && sys.autorite >= 0 && sys.autorite <= 5)) e.push(`autorité ${sys.autorite}`);
+  return e;
+}
 // Les vérificateurs lisent les drapeaux et chemins sous l'identifiant du module vérifié (français par défaut, anglais pour
 // lakour-fenoir-en : option { module }).
 const MODULE_PAR_DEFAUT = MODULE;
@@ -128,6 +146,9 @@ export function verifierDocuments(docs, { module: MODULE = MODULE_PAR_DEFAUT } =
       if (!d.doc.system.enfance || !d.doc.system.passe || !d.doc.system.traits.length) err(d, "prétiré sans enfance, passé ou traits");
     }
     if (!sansBalises(d.doc.system.notes)) err(d, "notes vides");
+    for (const m of erreursEsprit(d.doc.system)) err(d, `esprit : ${m}`);
+    // Les prétirés et les PNJ nommés du compendium ont leur esprit (regard, religion ou ancrage) : ils sont prêts à jouer.
+    if (d.pack === "survivants" && !d.doc.system.regard) err(d, "esprit non tiré (regard vide)");
   }
   // Journaux : visibilité selon le pack, pages non vides, clés.
   for (const pack of ["guides", "mj"]) for (const d of du(pack)) {
@@ -462,6 +483,34 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     }
   }
   if (!d.recrues?.raisons?.length || !d.recrues?.prix?.length || !d.histoire?.proche?.length || !d.histoire?.matin?.length) e("tables des recrues ou de l'histoire vides");
+  // L'esprit au tirage : ce que les traits font pencher (sens moral, autorité, regard, croyant, pratique).
+  for (const t of traits.values()) {
+    const ef = t.effets ?? {};
+    if (ef.sensMoral !== undefined && !(Number.isInteger(ef.sensMoral) && Math.abs(ef.sensMoral) <= 4)) e(`trait ${t.cle} : sensMoral ${ef.sensMoral}`);
+    if (ef.autorite !== undefined && !(Number.isInteger(ef.autorite) && Math.abs(ef.autorite) <= 2)) e(`trait ${t.cle} : autorite ${ef.autorite}`);
+    for (const [r, x] of Object.entries(ef.regard ?? {})) if (!REGARDS.includes(r) || !(x > 0)) e(`trait ${t.cle} : regard « ${r} »`);
+    if (ef.pratique !== undefined && !entre(ef.pratique, 0, 1)) e(`trait ${t.cle} : pratique`);
+  }
+
+  // Religions et ancrages (complément du jeu 3D, famille 2) : « aucune » et « plusieurs » présentes ; observances, fêtes du socle,
+  // affinités vers des enfances connues (une affinité ne change que le tirage, jamais une règle).
+  const religions = new Map((d.religions ?? []).map(r => [r.cle, r]));
+  if (religions.size !== (d.religions ?? []).length) e("religions : clé en double");
+  for (const k of ["aucune", "plusieurs"]) if (religions.get(k)?.special !== k) e(`religion « ${k} » absente ou sans special`);
+  if ([...religions.values()].filter(r => !r.special).length < 5) e("moins de cinq religions");
+  for (const r of religions.values()) {
+    const ou = `religion ${r.cle}`;
+    if (!/^[a-z0-9-]+$/.test(r.cle) || !r.nom || !sansBalises(r.description) || !(r.poids > 0)) e(`${ou} : clé, nom, description ou poids`);
+    if (!r.special && (!BESOINS_OBSERVANCE.includes(r.observance?.besoin) || !r.observance?.texte)) e(`${ou} : observance`);
+    for (const f of r.fetes ?? []) if (!(d.fetes ?? []).some(x => x.cle === f)) e(`${ou} : fête inconnue « ${f} »`);
+    for (const [k, x] of Object.entries(r.affinites ?? {})) if (!enfances.has(k) || !(x >= 0)) e(`${ou} : affinité « ${k} »`);
+  }
+  const ancrages = new Map((d.ancrages ?? []).map(a => [a.cle, a]));
+  if (ancrages.size < 4 || ancrages.size !== (d.ancrages ?? []).length) e("ancrages : moins de quatre, ou clé en double");
+  for (const a of ancrages.values()) {
+    if (!/^[a-z0-9-]+$/.test(a.cle) || !a.nom || !sansBalises(a.description) || !a.texte || !(a.poids > 0) || !BESOINS_OBSERVANCE.includes(a.besoin)) e(`ancrage ${a.cle} : fiche invalide`);
+  }
+  for (const f of factions.values()) if (!(Number.isInteger(f.sensMoralChef) && f.sensMoralChef >= -10 && f.sensMoralChef <= 10)) e(`faction ${f.cle} : sensMoralChef`);
 
   // Fêtes : chaque clé est une fête du socle du moteur, déclinable telle quelle (une déclinaison par fête), dates au socle seul.
   const declinees = [];

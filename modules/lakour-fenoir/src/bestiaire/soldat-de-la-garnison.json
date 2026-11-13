@@ -72,7 +72,16 @@
     "vivant": true,
     "livide": false,
     "charge": 0,
-    "notes": "<p>Un militaire ou un gendarme mobile au brassard orange, gilet pare-balles, fusil réglementaire : discipliné, fatigué, et persuadé d'avoir raison.</p><p><strong>Comportement.</strong> Patrouille à quatre, contrôle, fouille, réquisitionne ; ne tire qu'en dernier recours… ou sur ordre.</p><p><strong>Faiblesse.</strong> Ses munitions sont comptées, et il obéit : on traite avec ses chefs, pas avec lui.</p><p><strong>Dés d'attaque :</strong> 3 — <strong>résistance :</strong> 2 — <strong>vitesse :</strong> marche.</p>"
+    "notes": "<p>Un militaire ou un gendarme mobile au brassard orange, gilet pare-balles, fusil réglementaire : discipliné, fatigué, et persuadé d'avoir raison.</p><p><strong>Comportement.</strong> Patrouille à quatre, contrôle, fouille, réquisitionne ; ne tire qu'en dernier recours… ou sur ordre.</p><p><strong>Faiblesse.</strong> Ses munitions sont comptées, et il obéit : on traite avec ses chefs, pas avec lui.</p><p><strong>Dés d'attaque :</strong> 3 — <strong>résistance :</strong> 2 — <strong>vitesse :</strong> marche.</p>",
+    "regard": "",
+    "religion": "",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 0,
+    "autorite": 2,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [],
   "effects": [],

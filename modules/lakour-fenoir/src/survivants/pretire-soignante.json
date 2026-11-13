@@ -78,7 +78,16 @@
     "vivant": true,
     "livide": false,
     "charge": 0,
-    "notes": "<p>Douze ans d'urgences à Bellepierre. Fille de commerçants z'arabes de Saint-Pierre, elle a préféré les gardes de nuit au magasin de tissus ; à qui lui sort « <em>zot i marie ant' zot</em> » (vous ne vous mariez qu'entre vous), elle montre l'alliance d'un Maillot de l'Étang-Salé. Elle parle doucement et ne lâche jamais. Elle cherche son frère, parti en mer le matin du jour zéro.</p>"
+    "notes": "<p>Douze ans d'urgences à Bellepierre. Fille de commerçants z'arabes de Saint-Pierre, elle a préféré les gardes de nuit au magasin de tissus ; à qui lui sort « <em>zot i marie ant' zot</em> » (vous ne vous mariez qu'entre vous), elle montre l'alliance d'un Maillot de l'Étang-Salé. Elle parle doucement et ne lâche jamais. Elle cherche son frère, parti en mer le matin du jour zéro.</p>",
+    "regard": "refaire",
+    "religion": "islam",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 3,
+    "autorite": 2,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

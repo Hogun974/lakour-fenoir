@@ -6,6 +6,7 @@
 //   degats, blessure, moral, bruit, decouverte: { r: n } }) : la simulation applique stocks perdus et dégâts à l'abri du
 //   groupe ; moral, blessures et trouvailles sont rendus au MJ, à raconter (contrat §2.6) ; bruit ignoré.
 import { html, PHASES } from "./aides.mjs";
+import { EVENEMENTS_ESPRIT } from "./esprit.mjs";
 
 const TOUTES = [...PHASES];
 const APRES_CHUTE = ["effondrement", "silence", "apres"];
@@ -194,5 +195,8 @@ export const EVENEMENTS = [
   // ---------------------------------------------------------------- Fêtes (voir fetes.mjs pour les dates)
   evenement({ cle: "fete-au-camp", nom: "Une fête au camp", type: "fete", phases: ["silence", "apres"], poids: 1, public: false,
     texte: `Une date revient, un anniversaire, une fête d'avant : le groupe décide de la marquer, avec ce qu'il a. Une ration de plus, une chanson, un feu. (Fêter coûte une ration de plus par personne et redonne 1 de moral à chacun, une fois par fête.)`,
-    effets: { abri: { stocks: { nourriture: -4 }, moral: 1 } } })
+    effets: { abri: { stocks: { nourriture: -4 }, moral: 1 } } }),
+
+  // ---------------------------------------------------------------- L'esprit et la porte (complément du jeu 3D, familles 2 et 3 : esprit.mjs)
+  ...EVENEMENTS_ESPRIT
 ];

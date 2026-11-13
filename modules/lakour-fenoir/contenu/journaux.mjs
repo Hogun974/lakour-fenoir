@@ -10,6 +10,7 @@ import { PASSES } from "./passes.mjs";
 import { BESTIAIRE } from "./bestiaire.mjs";
 import { VOIES_AUTONOMIE, INSTALLATIONS } from "./installations.mjs";
 import { texteReputations } from "./reputations.mjs";
+import { PAGES_JOUEUR_ESPRIT, PAGES_MJ_ESPRIT } from "./esprit.mjs";
 import { FETES_FENOIR } from "../scripts/fetes.js";
 
 const nomRegion = cle => REGIONS.find(r => r.cle === cle)?.nom ?? cle;
@@ -105,6 +106,7 @@ Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs e
 **L'histoire.** Le MJ IA (ou vous) écrit le journal « Histoire de… » : qui il est, son histoire, ce qu'il garde pour lui (Foundry envoie les documents à tous les navigateurs : ce n'est pas un coffre-fort), et les chapitres de la campagne.` },
   { cle: "enfances", titre: "Les enfances", texte: ENFANCES.map(e => `**${e.nom}** (${Object.entries(e.modificateurs).map(([c, n]) => `${c} ${n > 0 ? "+" : ""}${n}`).join(", ")}${e.incapacites.length ? ` ; incapacité : ${e.incapacites.join(", ")}` : ""}) — ${sansBalises(e.description)}`).join("\n\n") },
   { cle: "passes", titre: "Les passés", texte: PASSES.map(p => `**${p.name}** — ${sansBalises(p.system.description)} *Compétences : ${Object.entries(p.system.competences).map(([c, n]) => `${c} ${n}`).join(", ")}.*`).join("\n\n") },
+  ...PAGES_JOUEUR_ESPRIT,
   { cle: "traits", titre: "Les traits", texte: TRAITS.map(t => `**${t.nom}** — ${sansBalises(t.description)}${t.incompatibles.length ? ` *(Incompatible : ${t.incompatibles.map(c => TRAITS.find(x => x.cle === c)?.nom ?? c).join(", ")}.)*` : ""}`).join("\n\n") }
 ] });
 
@@ -191,7 +193,8 @@ Les événements du camp (le carnet de la boutique, un service dans la nuit, le 
 
 # Pour le MJ IA
 
-Quand vous décrivez quelqu'un, donnez son apparence en clair (teint, cheveux, traits) plutôt que « un Réunionnais » ; variez les visages d'une scène à l'autre ; faites parler un PNJ avec ses préjugés quand ça sert la scène, puis laissez les faits le contredire. Les origines des personnages nommés sont dans leurs notes.` }
+Quand vous décrivez quelqu'un, donnez son apparence en clair (teint, cheveux, traits) plutôt que « un Réunionnais » ; variez les visages d'une scène à l'autre ; faites parler un PNJ avec ses préjugés quand ça sert la scène, puis laissez les faits le contredire. Les origines des personnages nommés sont dans leurs notes.` },
+  ...PAGES_MJ_ESPRIT
 ] });
 
 // ================================================================ Chronologie de la crise (MJ)

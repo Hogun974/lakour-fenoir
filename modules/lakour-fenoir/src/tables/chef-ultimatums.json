@@ -1,0 +1,148 @@
+{
+  "_id": "3Wyf3O4dXAwMlD6u",
+  "_key": "!tables!3Wyf3O4dXAwMlD6u",
+  "name": "Les chefs de bande — les ultimatums",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'exige un chef de bande qui pose un ultimatum. Accepté, il devient un tribut, puis, avec le temps, une alliance ou une révolte.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chef-ultimatums",
+      "chefs": "ultimatum"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "UvwFCBpsnKnpUrDu",
+      "_key": "!tables.results!3Wyf3O4dXAwMlD6u.UvwFCBpsnKnpUrDu",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Une part de ce que vous produisez, chaque semaine. Et personne ne viendra vous ennuyer. »</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "l1fPV1IVBK6Gmmys",
+      "_key": "!tables.results!3Wyf3O4dXAwMlD6u.l1fPV1IVBK6Gmmys",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Votre carburant. Tout. Après, on parlera d'amitié. »</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "txazMx7frdHRmeHh",
+      "_key": "!tables.results!3Wyf3O4dXAwMlD6u.txazMx7frdHRmeHh",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Deux bras pour nos chantiers, un mois. Vous choisissez lesquels. »</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7be9ccvjd05emP2F",
+      "_key": "!tables.results!3Wyf3O4dXAwMlD6u.7be9ccvjd05emP2F",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Les médicaments, ou on vient les chercher, et on prendra le reste avec. »</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TTYLhS6nwbxK5zsG",
+      "_key": "!tables.results!3Wyf3O4dXAwMlD6u.TTYLhS6nwbxK5zsG",
+      "type": "text",
+      "name": "",
+      "description": "<p>« La moitié de la récolte. On a des enfants aussi. »</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mZhTjjjyNPQdAvDF",
+      "_key": "!tables.results!3Wyf3O4dXAwMlD6u.mZhTjjjyNPQdAvDF",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Rien pour cette fois. La prochaine lune, on revient, et vous aurez réfléchi. »</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aVZnD76wRMqhm0NY",
+      "_key": "!tables.results!3Wyf3O4dXAwMlD6u.aVZnD76wRMqhm0NY",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Votre radio. On veut savoir ce que vous savez. »</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Ym7HNnZ2z1AHtVPt",
+      "_key": "!tables.results!3Wyf3O4dXAwMlD6u.Ym7HNnZ2z1AHtVPt",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Laissez-nous passer par chez vous, chaque mois, et nourrissez-nous ce jour-là. »</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

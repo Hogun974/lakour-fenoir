@@ -226,6 +226,29 @@
           "cle": "gens-de-l-ile"
         }
       }
+    },
+    {
+      "_id": "nMflAWCwDeZtv3Hq",
+      "_key": "!journal.pages!ljGCYC2YMQ4SCzey.nMflAWCwDeZtv3Hq",
+      "name": "Mener l'esprit et le sens moral",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le système tient les jauges ; vous racontez ce qu'elles veulent dire. Tout se règle dans la <strong>fenêtre du MJ</strong>, onglet <strong>Communauté</strong>, et sur la <strong>fiche de survivant</strong> (regard, religion ou ancrage, pratique, sens moral, réputation, autorité, chance).</p><h2>Pas de magie, jamais</h2><p>La foi agit par le moral. Un objet que le cyclone a laissé dans la cour, une chance inespérée après une trahison : le personnage peut y voir un signe, vous pouvez le laisser y croire, <strong>le jeu ne confirme rien</strong>. Ne décrivez jamais un miracle ; décrivez quelqu'un qui reprend courage.</p><h2>Celui qui lâche</h2><p>Les signes viennent avant (table « celui qui lâche ») : faites-les voir aux joueurs, avec tact. Le groupe le retient par sa présence : rester à l'abri, être plusieurs, s'entendre. Si un compagnon ou un PNJ part, c'est <strong>un matin, il n'est plus là</strong> : aucune scène, rien de montré, pas de corps. Pour un personnage de joueur, le système vous prévient seulement (« au bord ») : c'est une conversation avec son joueur, pas un jet.</p><h2>Le sens moral</h2><ul><li>La jauge bouge avec les actes, même excusés ; la <strong>réputation</strong> bouge avec ce que les témoins ont vu et compris. Les circonstances atténuantes n'adoucissent que la réputation.</li><li><strong>Qui voit quoi</strong> : réglage « Visibilité du sens moral » (chacun la sienne, par défaut ; tout le monde ; seulement le MJ). Foundry envoie les fiches à tous les navigateurs : ce n'est pas un coffre-fort.</li><li><strong>La rumeur</strong> (le Ladi Lafé) colporte les réputations, vraies ou fausses ; celui qui colporte du mal rougit lui aussi. Le système en offre le point d'entrée (acte « colporter »).</li><li><strong>La porte</strong> : les visiteurs arrivent d'eux-mêmes (plus le groupe est bleu, plus il en vient ; plus il est rouge, plus ce sont des durs). Vous voyez leur vraie couleur, les joueurs non. Ce qu'ils deviennent après un refus dépend d'eux : le feu du rancunier n'est pas annoncé comme tel, le retour du refusé l'est.</li></ul><h2>Les chefs</h2><ul><li>Le <strong>chef de bande PNJ</strong> décide selon son sens moral (fenêtre du MJ : la décision s'affiche avec la menace). Vous pouvez la suivre ou la changer. Un ultimatum accepté devient un <strong>tribut</strong> : le système vous dit quand il tombe ; payé quatre fois à une bande qui n'est pas rouge, il devient une alliance ; une bande rouge augmente sa demande, et pousse à la révolte.</li><li>Le <strong>chef joueur</strong> reste maître de ses choix. Proposez-lui de demander un <strong>vote</strong> quand la question divise ; s'il passe outre, son autorité baisse, et le système vous le rappelle quand elle devient dangereuse (désertions, scission, renversement : à vous de les mettre en scène).</li><li><strong>Séparer</strong> ou <strong>fondre</strong> deux groupes se fait d'un clic : les stocks se partagent au prorata, les plans restent à tous, l'abri va à l'un des deux.</li></ul><h2>Le ton</h2><p>Les religions, les ancrages, les préjugés sur la foi des autres (le « service » malbar qui fait peur, l'Apocalypse des uns, le volcan des Pèlerins) sont ceux des personnages. Le jeu les traite toutes de la même façon : aucune religion, aucune origine ne donne de bonus ni de malus.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "esprit-et-sens-moral"
+        }
+      }
     }
   ]
 }

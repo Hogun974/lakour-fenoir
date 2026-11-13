@@ -1,6 +1,7 @@
 // Modèles de données (TypeDataModel) des acteurs et objets, conformes au contrat (§3.1 à §3.4, §9, §10.1) et à ce que le contenu
 // de lakour-fenoir compile dans ses compendiums (src/). Extensions (sans effet si on les laisse vides) : survivant.afflictions,
-// savoirs, joursTache, tacheDepuis, joursSansPassion, joursMoralZero, enseigne (logique, docs/survie-notes-logique.md) ;
+// savoirs, joursTache, tacheDepuis, joursSansPassion, joursMoralZero, enseigne (logique, docs/survie-notes-logique.md) ; regard,
+// religion, religions, pratique, ancrage, sensMoral, reputation, autorite, esprit (contrat §11) ;
 // installation.termineLe, actif ; affliction.stade, reste (l'instance portée par un survivant).
 import { COMPETENCES, RESSOURCES, NATURE } from "../logique/constantes.mjs";
 
@@ -49,7 +50,18 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
       vivant: bool(true),
       livide: bool(false),
       charge: nombre(0),
-      notes: html()
+      notes: html(),
+      // L'esprit et le sens moral (complément du jeu 3D, familles 2 et 3 ; logique/esprit.mjs, moralite.mjs, chefs.mjs ; contrat
+      // §11). Valeurs par défaut neutres : une fiche d'avant n'a pas d'esprit tiré (regard vide) et ne change pas.
+      regard: texte(),
+      religion: texte(),
+      religions: cles(),
+      pratique: bool(false),
+      ancrage: texte(),
+      sensMoral: new fields.NumberField({ required: true, nullable: false, integer: true, min: -10, max: 10, initial: 0 }),
+      reputation: new fields.NumberField({ required: true, nullable: false, integer: true, min: -10, max: 10, initial: 0 }),
+      autorite: entier(2, 0, 5),
+      esprit: objetLibre({})
     };
   }
 

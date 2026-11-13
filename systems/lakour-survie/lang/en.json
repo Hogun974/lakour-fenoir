@@ -131,10 +131,12 @@
       "savoir-manquant": "missing know-how: {savoir}", "eau-requise": "the site needs {eau} (here: {ici})",
       "site-sol": "arable soil is needed (soil {requis}; here {ici})", "site-soleil": "sunlight is needed (sun {requis}; here {ici})",
       "site-souterrain": "a suitable basement is needed (underground {requis}; here {ici})",
-      "requiert": "needed first: {installation} level {niveau}", "requiert-hors-service": "{installation} is out of order", "manque": "missing: {manque}"
+      "requiert": "needed first: {installation} level {niveau}", "requiert-hors-service": "{installation} is out of order", "manque": "missing: {manque}",
+      "esprit-observance-manquee": "{nom} hasn't been able to keep what holds them up for days; they feel at fault.", "esprit-observance-reprise": "{nom} is back to their habits.", "esprit-reconfort": "{nom} clings to what keeps them going.", "esprit-regard-change": "{nom} no longer sees things the same way.", "esprit-retenu": "The others are there, around {nom}. It matters.", "esprit-signe-1": "{nom} eats less.", "esprit-signe-2": "{nom} talks less and less.", "esprit-signe-3": "{nom} gives their things away.", "esprit-lache": "One morning, {nom} is gone.", "esprit-au-bord": "{nom} is on the verge of letting go.", "esprit-faux-bruit": "{nom} heard something in the night. Nobody else did.", "malaise-couleur": "{nom} no longer feels they belong in this group.", "autorite-monte": "People listen to {nom} more: everyone has eaten.", "autorite-baisse": "People listen to {nom} less: we went hungry.", "desertion": "{nom} deserted in the night: nobody listens to {chef} any more.", "crise-scission": "The group is splitting: some no longer follow {nom}.", "crise-renversement": "{successeur} could take the lead from {nom}.", "tribut-du": "The tribute to {bande} is due today.", "porte-repart": "{nom} didn't wait any longer and left.", "porte-feu": "A fire flares up in the night, right next to the camp. Nobody saw who lit it.", "porte-feu-secret": "The fire was {nom}, out of spite.", "porte-revient": "{nom} comes back, loaded with what you were missing, and asks again for a place.", "porte-frappe-refugie": "Someone knocks at the door: {nom} asks for a roof and something to eat.", "porte-frappe-famille": "Someone knocks at the door: {nom} asks for a place for their family ({n} more mouth(s) to feed).", "porte-frappe-blesse": "Someone knocks at the door: {nom} is wounded and asks to be cared for.", "porte-frappe-dur": "Someone knocks at the door: {nom} offers their arms and what they carry for a place.", "porte-demande-refugie": "{nom} asks for a roof and something to eat.", "porte-demande-famille": "{nom} asks for a place for their family ({n} more mouth(s) to feed).", "porte-demande-blesse": "{nom} is wounded and asks to be cared for.", "porte-demande-dur": "{nom} offers their arms and what they carry for a place.", "porte-accueilli": "{nom} is welcomed into the group.", "porte-refuse": "{nom} was turned away at the door.", "porte-trahi": "We took what {nom} brought, then sent them away.", "porte-inconnu": "nobody by that name is waiting at the door", "porte-decision": "unknown answer \"{decision}\"", "porte-rien-a-prendre": "{nom} brings nothing", "chef-attaquer": "The leader of {faction} has decided to attack.", "chef-negocier": "The leader of {faction} wants to talk.", "chef-passer": "The leader of {faction} moves on: they will settle elsewhere.", "chef-ultimatum": "The leader of {faction} issues an ultimatum: a tribute, or war.", "chef-rejoindre": "The leader of {faction} asks to join the group."
     },
 
     "Erreurs": {
+      "ActeInconnu": "Unknown act: {acte}.", "PasMembre": "This survivor isn't in the group.", "SansChef": "The group has no leader.", "VoteInconnu": "Unknown vote.", "TributInconnu": "Unknown tribute.", "TributStocks": "Not enough in stock to pay: {demande}.", "SeparationImpossible": "Choose who leaves (at least one, not everyone).", "CommunauteInconnue": "Unknown group.",
       "GraineCourte": "Seed too short: it could be guessed. Leave the field empty (a safe random seed is drawn) or give one of at least 32 characters.",
       "TropDePropositions": "Too many proposals at once: wait a minute.",
       "ChampReserve": "Only the GM changes this: go through the sheet or the GM (task, test, creation).",
@@ -185,6 +187,7 @@
       "Ouvert": "Fénoir: the world is open."
     },
     "Reglages": {
+      "VisibiliteSens": {"Nom":"Moral compass visibility","Aide":"Who sees a survivor's colour (from red to blue): each their own (others by reputation), everyone, or only the GM.","soi":"Each their own","tous":"Everyone","mj":"Only the GM"},
       "DateDepart": { "Nom": "Day zero date", "Aide": "The real date of day zero (YYYY-MM-DD): game date, season and holidays follow from it." },
       "Budget": { "Nom": "Creation budget", "Aide": "Sum of a starting player survivor's skill levels, \"min-max\" (10-16 by default)." },
       "RepartitionAuto": { "Nom": "Automatic task assignment", "Aide": "Each day, companions and recruits take the task the group needs most." },
@@ -202,6 +205,7 @@
       "MaFiche": "My sheet", "EnRoute": "On the road ({n} watch(es))"
     },
     "Fiche": {
+      "Esprit": "The spirit",
       "NotesPubliques": "Shelter notes (read by the players)", "NotesMJ": "GM notes (secret, kept in the vault)",
       "NotesMJFermees": "The world is not open in this browser: the secret notes are waiting for the vault.",
       "Survivant": "Survivor sheet", "Abri": "Shelter sheet", "Objet": "Item sheet", "Nom": "Name", "Age": "Age", "Etat": "Condition",
@@ -211,6 +215,7 @@
       "Craque": "At the end of their rope: they break (GM scene).", "Jours": "{n} d", "Quarts": "{n} watch(es)"
     },
     "Abri": {
+      "Porte": "The door", "PorteAide": "What the shelter truly lacks, according to its stocks: the price of entry, and what someone who comes back brings.", "RienNeManque": "Nothing is truly lacking.", "Manque": "We lack",
       "Courant": "Group shelter", "Abandonne": "Abandoned", "Autonome": "Self-sufficient", "Defense": "Defence", "Discretion": "Discretion",
       "Visibilite": "Visibility", "Capacite": "People / capacity", "Bruit": "Noise", "JoursAutonomes": "Self-sufficient days", "Stocks": "Stocks",
       "Ressource": "Resource", "Quantite": "Quantity", "Net": "Net / day", "Jours": "Days", "Production": "Today's production",
@@ -235,6 +240,7 @@
     },
 
     "Test": {
+      "Chance": "A stroke of luck.",
       "AideJoueurLibre": "Without a request from the GM, this test is rolled at normal difficulty and gives no mark; a GM request sets the difficulty and makes it count.",
       "Titre": "Test: {competence}", "Difficulte": "Difficulty", "Bonus": "Extra dice (tool, help, situation)", "Malus": "Fewer dice (situation)",
       "Compte": "The test matters (danger, stakes): a progress mark if failed or pushed",
@@ -261,6 +267,7 @@
       "Morsure": "{nom} is bitten: EXTREME Medicine test within the watch (washing, cauterising…), HARD with a medicine (a zerbaz herbal brew counts as one), a zerbaz decoction (1 herb), a first-aid kit or an infirmary (medicine and decoction: +1 die each), or the Grey."
     },
     "Journal": {
+      "VoteIgnore": "{nom} overrides the vote.", "VoteSuivi": "{nom} follows the vote.", "Acte": "{noms}: {acte}.", "Entente": "Group harmony: {n}. {raison}", "Chef": "{nom} takes the lead of the group.", "SansChef": "The group no longer has a leader.", "ParoleTenue": "{nom} kept their word. {raison}", "ParoleManquee": "{nom} broke their word. {raison}", "Vote": "Vote: {question} — for {pour}, against {contre}, abstaining {abstention}.", "Tribut": "Tribute accepted: {bande} demands {demande} every {n} days.", "Tribut_paye": "Tribute paid to {bande}: {demande}.", "Tribut_hausse": "Tribute paid to {bande}; next time it will be {demande}.", "Tribut_alliance": "The tribute has made {bande} an ally.", "Tribut_revolte": "The group refuses the tribute to {bande}: they will come.", "Separation": "The group splits: {noms} leave ({nom}).", "Fusion": "{nom} joins the group: we are one again.", "Signe": "{nom} sees a sign in it.",
       "Debut": "Day zero, {date}: the group is in {region}.", "Installe": "The group settles in {site} ({region}).", "Reprend": "The group takes back the shelter of {site} ({region}).",
       "Quitte": "The group leaves {site}.", "Chantier": "Work started: {installation} (level {niveau}).", "Termine": "{installation} is in service (level {niveau}).",
       "Repare": "{installation}: {n} point(s) repaired.", "RepareAbri": "The shelter: {n} damage repaired.", "Ajustement": "Adjustment",
@@ -316,10 +323,20 @@
       "Titre": "Workshop", "Intro": "{n} recipe(s) possible now. Hover a recipe for its description.", "Artisan": "Crafter",
       "LeMeilleur": "The most skilled", "Fabriquer": "Craft", "Proposer": "Propose to the GM", "Carte": "Workshop: {recette}"
     },
+    "Regards": {"epreuve":"A trial","refaire":"Remaking the world","vivre":"The will to live","Aide":{"epreuve":"They hold on by enduring (hunger, wounds, the cyclone).","refaire":"They hold on by building and welcoming.","vivre":"They hold on through small pleasures (a good meal, rest, a celebration, their passion)."}},
+    "Sens": {"rouge":"Red","rougeatre":"Reddish","neutre":"In between","bleute":"Bluish","bleu":"Blue"},
+    "Actes": {"exclure":"Exclude","colporter":"Spread gossip","mentir":"Lie","abandonner":"Abandon","attaquer":"Attack","trahir":"Betray","accueillir":"Welcome","aider":"Help","partager":"Share","epargner":"Spare","rendre":"Give back"},
+    "Profils": {"refugie":"Refugee","famille":"A family","blesse":"Wounded","dur":"A hard case"},
+    "Entente": {"bonne":"good","moyenne":"neither good nor bad","mauvaise":"bad"},
+    "Tributs": {"actif":"ongoing","allie":"turned into an alliance","rompu":"refused"},
+    "Esprit": {"Ancrage":"Anchor","Pratiquant":"practising","NonPratiquant":"not practising","Chef":"Leader","Regard":"Outlook","Foi":"What holds them","EnFaute":"at fault","Religion":"Religion","Religions":"Religions","SensMoral":"Moral compass","Reputation":"Reputation","Autorite":"Authority","SensAide":"From red (exclude, betray) to blue (welcome, help). Everyone sees their own; others know it by reputation.","ReputationAide":"What witnesses saw and repeated. It may be false.","AutoriteAide":"How much people listen when they lead: rises when they keep their word and everyone eats, falls when they ignore a vote.","PratiqueAide":"Practising: their morale can climb higher, but they must keep their observances. Not practising: little gain, no risk.","Chance":"Luck: {n}","NonTire":"Spirit not rolled yet","Tirer":"Roll the spirit","Signes":{"1":"They eat less.","2":"They talk less.","3":"They give their things away."},"Projet":{"vengeance":"Wants to leave, for revenge","ailleurs":"Wants to leave and found a better elsewhere"}},
+    "Communaute": {"Aide":"The leader, harmony, the group's true colour (only you see it), the door, votes, tributes. Nothing is magical: faith works through morale.","Projet":{"vengeance":"{nom} is revolted by what they saw and wants to leave, for revenge. Who might quietly help: {complices}.","ailleurs":"{nom} is revolted by what they saw and wants to leave and found a better elsewhere. Who might quietly help: {complices}."},"Proche":"Someone close to {nom} ({n})","Autres":"The others ({n})","Parole":"The word given","Tenue":"kept","Manquee":"broken","Delta":"By how much","Couleur":"Group colour","Reputation":"What people say of the group","Signes":"Signs","Enfant":"child","Apporte":"They bring: {liste}","VraieCouleur":"Their true colour","Decision":"Decision","Accueillir":"Welcome","Refuser":"Turn away","Trahir":"Take what they bring, then send them away","Vote":"After the vote","Circonstances":"Mitigating circumstances (no room left, no food left)","PersonneALaPorte":"Nobody is waiting at the door.","Profil":"Who","Votes":"Votes","Resultat":"for {pour}, against {contre}, abstaining {abstention}","Question":"The question","Acte":"The act","VoteAide":"Players say their vote out loud; companions, recruits and NPCs vote according to their compass.","Faire":"Do it","NePasFaire":"Don't do it","Temoins":"There were witnesses","AuJournal":"In the group log","SigneAide":"The cyclone left an object in the yard: everyone reads it according to their faith (a practising believer sees a sign, +1 morale). The game doesn't say who is right.","Tributs":"Tributes","Prochain":"due on day {n}","Payes":"paid {n} time(s)","Payer":"This time","Paye":"pay","Refuse":"refuse","Groupes":"Splitting and merging","Partants":"Who leaves","AbriVa":"The shelter goes","Restants":"to those who stay","PartantsAbri":"to those who leave","NomGroupe":"The other group's name","AutreGroupe":"The group to merge","SansChef":"Nobody","SansVote":"No vote","Rien":"nothing","ProfilCouleur":"According to the group's colour"},
     "MJ": {
       "Titre": "Fénoir — GM window", "Titre2": "Title",
-      "Onglets": { "partie": "Game and time", "actions": "Group actions", "groupe": "Group and recruits", "menaces": "Threats", "monde": "Real world" },
+      "Onglets": { "partie": "Game and time", "actions": "Group actions", "groupe": "Group and recruits", "communaute": "Community", "menaces": "Threats", "monde": "Real world" },
+      "Ultimatum": "Accept the ultimatum", "Rejoindre": "At the door",
       "Formes": {
+        "chef": "The leader", "parole": "The leader's word", "entente": "Harmony", "frapper": "Have someone knock", "voter": "A vote", "decider": "The leader decides", "acteMoral": "An act", "signe": "A sign?", "separer": "Split up", "fusionner": "Merge",
         "demarrer": "Start the game", "avancer": "Advance time", "fouiller": "Scavenge", "explorer": "Explore", "installer": "Settle in",
         "construire": "Build", "reparer": "Repair", "voyager": "Travel", "demenager": "Move out", "assaut": "Assault", "ajuster": "Adjust stocks",
         "genererRecrue": "Roll a recruit", "recruter": "Recruit", "feter": "Celebrate", "demanderTest": "Ask for a test", "fabriquer": "Craft",

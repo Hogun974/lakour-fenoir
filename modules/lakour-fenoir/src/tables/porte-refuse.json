@@ -1,0 +1,148 @@
+{
+  "_id": "RrsEELfidn02gbrG",
+  "_key": "!tables!RrsEELfidn02gbrG",
+  "name": "La porte — ce que dit le refusé",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Celui à qui l'on a fermé la porte, en partant. Ce qu'il fera ensuite dépend de lui, pas de ce qu'il dit.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "porte-refuse",
+      "porte": "refuse"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "9Xqj7iX7sO0r69fB",
+      "_key": "!tables.results!RrsEELfidn02gbrG.9Xqj7iX7sO0r69fB",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Mi konpran.</em> » (Je comprends.) Il remet son sac sur l'épaule et repart sans se retourner.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "AezM11dQKnnCGE9a",
+      "_key": "!tables.results!RrsEELfidn02gbrG.AezM11dQKnnCGE9a",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle crache par terre : « Vous verrez, quand ce sera votre tour. »</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BkkGk0PRkMQC7g2i",
+      "_key": "!tables.results!RrsEELfidn02gbrG.BkkGk0PRkMQC7g2i",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il demande seulement de l'eau pour la route. Qu'on la lui donne ou non, on s'en souviendra.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "UsEJFQyXVbhzv2E9",
+      "_key": "!tables.results!RrsEELfidn02gbrG.UsEJFQyXVbhzv2E9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle note quelque chose dans un carnet, regarde longuement la barrière, et s'en va.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "e5WIDfocYvUbfqoy",
+      "_key": "!tables.results!RrsEELfidn02gbrG.e5WIDfocYvUbfqoy",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Dites-moi ce qui vous manque. Je reviendrai avec. »</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gADFYADTZDvK5Iy3",
+      "_key": "!tables.results!RrsEELfidn02gbrG.gADFYADTZDvK5Iy3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il ne dit rien. Le soir, on voit sa silhouette sur la crête, qui observe le camp.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VfOusK80uRs25kjB",
+      "_key": "!tables.results!RrsEELfidn02gbrG.VfOusK80uRs25kjB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle laisse un enfant à la porte, et s'enfuit. (Le MJ décide de la suite : on n'a refusé qu'elle.)</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dpomYH4MQrHiqhgr",
+      "_key": "!tables.results!RrsEELfidn02gbrG.dpomYH4MQrHiqhgr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il rit : « Les Sans-Lune, eux, m'auraient ouvert. » Puis il prend la route du littoral.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

@@ -22,6 +22,7 @@ export function carteTest(r, info = {}) {
     r.force ? `<li><i class="fa-solid fa-person-running"></i> ${t("LAKOUR_SURVIE.Test.FatigueForcee")}</li>` : "",
     r.complication ? `<li class="complication"><i class="fa-solid fa-triangle-exclamation"></i> ${t("LAKOUR_SURVIE.Test.ComplicationTexte")}</li>` : "",
     r.marque ? `<li><i class="fa-solid fa-feather"></i> ${t("LAKOUR_SURVIE.Test.Marque")}</li>` : "",
+    info.chance ? `<li class="chance"><i class="fa-solid fa-clover"></i> ${t("LAKOUR_SURVIE.Test.Chance")}</li>` : "",
     info.monte ? `<li class="monte"><i class="fa-solid fa-arrow-up"></i> ${t("LAKOUR_SURVIE.Test.Monte", { competence: libelleCompetence(info.competence), niveau: info.niveau })}</li>` : ""
   ].filter(Boolean).join("");
   const bouton = !r.force && info.forcable !== false ?`<button type="button" class="survie-forcer" data-action="survieForcer"><i class="fa-solid fa-dice"></i> ${t("LAKOUR_SURVIE.Test.Forcer")}</button>` : "";

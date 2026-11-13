@@ -1,0 +1,148 @@
+{
+  "_id": "dclPTq1OJk9rtHTo",
+  "_key": "!tables!dclPTq1OJk9rtHTo",
+  "name": "L'esprit — ce que le cyclone a déposé",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un objet que le vent a laissé là. Le croyant pratiquant y voit un signe (+1 moral) ; celui qui ne pratique pas hésite ; les autres n'y pensent même pas. Le jeu ne tranche pas.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "esprit-objet-du-cyclone",
+      "esprit": "cyclone"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "vR9IbkPPnV2mTuHF",
+      "_key": "!tables.results!dclPTq1OJk9rtHTo.vR9IbkPPnV2mTuHF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une statue de saint Expédit, intacte, posée debout dans la boue de la cour.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "q92KgqdgMOHD0SPe",
+      "_key": "!tables.results!dclPTq1OJk9rtHTo.q92KgqdgMOHD0SPe",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une barque retournée sur le toit du poulailler, sans une égratignure.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BCFBQa24IOiBpJog",
+      "_key": "!tables.results!dclPTq1OJk9rtHTo.BCFBQa24IOiBpJog",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une valise fermée, pleine de photos d'une famille que personne ne connaît.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Mb8NdwlkH0qUhERv",
+      "_key": "!tables.results!dclPTq1OJk9rtHTo.Mb8NdwlkH0qUhERv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un coffre de pêcheur coincé dans le manguier, avec des hameçons et du fil neuf.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "M8BqJGoloy2bbBUU",
+      "_key": "!tables.results!dclPTq1OJk9rtHTo.M8BqJGoloy2bbBUU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une cloche d'église, au milieu du potager, fendue.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "iS8MJsdsV9ioHWZ2",
+      "_key": "!tables.results!dclPTq1OJk9rtHTo.iS8MJsdsV9ioHWZ2",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un sac de riz de vingt-cinq kilos, encore sec dans son plastique.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HkO0ZdofxTKwSw0E",
+      "_key": "!tables.results!dclPTq1OJk9rtHTo.HkO0ZdofxTKwSw0E",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une poupée de chiffon accrochée au portail, comme si on l'avait posée là.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0UGOVfqViDTBZlt5",
+      "_key": "!tables.results!dclPTq1OJk9rtHTo.0UGOVfqViDTBZlt5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une lampe à pétrole intacte, son verre entier, au pied de la porte.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

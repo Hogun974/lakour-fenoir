@@ -343,11 +343,80 @@
       }
     },
     {
+      "_id": "WQuQ8osrBIqkFqtP",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.WQuQ8osrBIqkFqtP",
+      "name": "L'esprit sur le corps",
+      "type": "text",
+      "sort": 1500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>À Fénoir, le moral compte autant que les vivres. Ce que croit un survivant, et ceux qui l'entourent, changent sa forme. <strong>Rien n'est magique</strong> : la foi agit par le moral ; votre personnage peut y voir la main du ciel, le jeu ne confirme et ne dément jamais rien.</p><p><strong>Le regard.</strong> Chacun vit la catastrophe à sa façon, et c'est ce qui nourrit son moral :</p><ul><li><strong>une épreuve</strong> : il tient en endurant (la faim, les blessures, le cyclone) ;</li><li><strong>une chance de refaire le monde</strong> : il tient en bâtissant (chantier, cultures, élevage, atelier, soins, enseigner) et en accueillant ;</li><li><strong>simplement l'envie de vivre</strong> : il tient par les petits plaisirs (un bon repas à l'abri, le repos, la pêche, la cuisine, une fête, sa passion).</li></ul><p>Tous les deux jours où ce qui le nourrit arrive, son moral remonte d'un cran (sans dépasser son plafond). Le regard peut changer : deux semaines sans ce qui le nourrit, le moral bas, et il voit les choses autrement.</p><p><strong>La religion, ou l'ancrage.</strong> Elle est tirée avec le reste du survivant, et vous pouvez la changer avant de valider : une religion de l'île, « aucune » ou « plusieurs à la fois ». Le non-croyant a son <strong>ancrage</strong> (une photo, un carnet, une routine, le sport…), au même effet.</p><ul><li><strong>Pratiquant</strong> : il gagne plus (son moral peut monter d'un cran plus haut), mais il tient ses observances. Trois jours sans pouvoir les tenir (sur la route, sans un coreligionnaire pour prier avec lui ; l'objet de son ancrage perdu), il se sent en faute : −1 moral, et son plafond baisse d'un cran jusqu'à ce qu'il les reprenne.</li><li><strong>Non-pratiquant</strong> : il gagne peu et ne risque rien : une fois par semaine, quand son moral tombe à 1, il se raccroche à ce qui le fait tenir (+1).</li><li>Aux fêtes de sa religion, le pratiquant gagne 1 moral de plus que les autres.</li></ul><p><strong>Les autres.</strong> L'<strong>entente</strong> du groupe (de −3 à +3) compte : bonne (+2 ou plus), le moral de chacun peut monter un cran plus haut ; mauvaise (−2 ou moins), un cran plus bas. Seul, on ne profite de rien.</p><p><strong>La nuit.</strong> Plus le moral est bas, plus la nuit ajoute de faux bruits ; la présence des autres les fait taire. Celui qui en entend dort mal (+1 fatigue).</p><p><strong>Celui qui lâche.</strong> Certains ne tiennent pas. Ils donnent des signes avant : ils mangent moins (une demi-ration), parlent moins (−1 dé en parole), donnent leurs affaires. Le groupe les retient par sa présence, pas par un bouton : à deux autres au moins autour de lui, avec une entente qui n'est pas mauvaise, il ne s'enfonce pas. Sinon, un matin, un compagnon ou un PNJ n'est plus là. Un personnage de joueur ne part jamais tout seul : c'est à vous et au MJ.</p><p><strong>La chance.</strong> Il arrive qu'un survivant ait de la chance, un dé de plus au moment où ça compte. Lui sait peut-être pourquoi. Le jeu ne le dit pas.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "esprit"
+        }
+      }
+    },
+    {
+      "_id": "RJkxwsQR7JXGrtER",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.RJkxwsQR7JXGrtER",
+      "name": "Religions et ancrages",
+      "type": "text",
+      "sort": 1600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les religions de l'île, et ce que tient un pratiquant :</p><ul><li><strong>Catholique</strong> — La foi de la plupart des cases de l'île : la messe du dimanche, les processions, la Vierge noire de la Rivière des Pluies et saint Expédit, dont les petites chapelles rouges bordent encore les routes. Après le jour zéro, on prie dans les églises fermées, on allume des bougies devant les statues, et chacun se demande si c'est la fin des temps ou seulement la fin d'un monde. <em>Ce que tient un pratiquant : le chapelet du soir, une bougie pour les morts, la prière avant le repas.</em></li><li><strong>Hindouisme tamoul</strong> — La religion des Malbars, venue avec les engagés du Sud de l'Inde : les temples aux couleurs vives, les fêtes de la lumière, le feu sur lequel on marche, la Cavadee et ses piercings, le carême qu'on tient avant. Ceux qui ne la connaissent pas parlent de « services » et de sorcellerie ; ceux qui la pratiquent allument une lampe chaque soir et ne demandent à personne de comprendre. <em>Ce que tient un pratiquant : la lampe allumée le soir, une offrande de fleurs ou de riz, le carême avant les fêtes.</em></li><li><strong>Islam</strong> — La foi des Z'arabes de Saint-Denis et de Saint-Pierre, dont la mosquée Noor-e-Islam est la plus ancienne de France, et celle des Comoriens et des Mahorais arrivés plus tard. On prie cinq fois par jour, même dans un abri de tôle, et la question de l'eau propre pour les ablutions devient une question de survie. <em>Ce que tient un pratiquant : les cinq prières, l'eau propre des ablutions, le jeûne du ramadan quand il revient.</em></li><li><strong>Culte des ancêtres et temple chinois</strong> — Dans l'arrière-boutique, l'autel des ancêtres avec ses photos et ses bâtons d'encens ; à Saint-Denis et à Saint-Pierre, les temples de Guan Di. Beaucoup de familles chinoises vont aussi à la messe. On n'abandonne pas les siens parce que le monde s'arrête : on les nourrit, même d'une poignée de riz. <em>Ce que tient un pratiquant : l'encens pour les ancêtres, une part du repas posée devant leur photo, le respect des jours de fête.</em></li><li><strong>Église évangélique</strong> — Des églises dans d'anciens entrepôts, des chants qu'on entend de la rue, une Bible annotée qu'on garde sur soi. Les évangéliques se sont multipliés dans les quartiers ; après le jour zéro, certains y voient l'Apocalypse annoncée, d'autres seulement une raison de plus d'ouvrir la porte. Tant qu'il a sa Bible, le pratiquant tient ; s'il la perd, il se sent nu. <em>Ce que tient un pratiquant : la Bible ouverte chaque jour, les chants, le culte avec les frères et les sœurs.</em></li><li><strong>Servis kabaré, le culte des ancêtres</strong> — Venu de Madagascar et d'Afrique avec les esclaves, transmis en silence pendant des générations : le servis kabaré, le repas offert aux ancêtres, le maloya qui les appelle. On le cachait, on le pratique aujourd'hui plus ouvertement, et souvent en plus de la messe. Dans le monde d'après, dire le nom des morts, c'est aussi se souvenir qu'on vient de loin et qu'on a déjà survécu à pire. <em>Ce que tient un pratiquant : le rhum et le tabac posés pour les anciens, leurs noms dits à voix haute, un repas partagé avec eux.</em></li><li><strong>Aucune</strong> — Il ne croit pas, ou plus. Ce qui le fait tenir est ailleurs : une photo, un carnet, une routine, le sport. C'est son ancrage, et il compte autant que la foi des autres.</li><li><strong>Plusieurs à la fois</strong> — La messe le dimanche et le temple pour la Dipavali, un cierge à saint Expédit et une offrande pour les anciens : à La Réunion, beaucoup croient à plusieurs choses à la fois, et personne ne trouve ça étrange. Il tient les deux, ou les trois.</li></ul><p>Les ancrages de ceux qui ne croient pas, et comment on les entretient :</p><ul><li><strong>Une photo</strong> — Une photo pliée en quatre dans un portefeuille : des enfants, un mariage, une maison au bord de la mer. Il la regarde chaque soir. Tant qu'il l'a sur lui, il sait pourquoi il se lève. <em>Pour l'entretenir : la regarder chaque soir, la garder sèche.</em></li><li><strong>Un carnet</strong> — Un carnet d'écolier où il écrit chaque soir ce qui s'est passé : les noms, les dates, la météo, ce qu'on a mangé. Quelqu'un, un jour, devra savoir. Le perdre, ce serait perdre tout ce qu'il a vu. <em>Pour l'entretenir : écrire quelques lignes chaque soir.</em></li><li><strong>Une routine</strong> — Le café à cinq heures et demie, la barbe faite, le lit fait, les affaires pliées : le monde s'écroule, pas ses habitudes. Sur la route, sans abri, tout se dérègle, et lui avec. <em>Pour l'entretenir : le café à la même heure, se raser, plier ses affaires.</em></li><li><strong>Le sport</strong> — Il courait le Grand Raid, ou il jouait au foot le dimanche au stade de son quartier. Il continue : des pompes au lever, une course dans la cour. Le corps fatigué fait taire la tête. <em>Pour l'entretenir : courir, nager ou faire ses pompes chaque matin.</em></li><li><strong>Un instrument</strong> — Un kayamb, un harmonica, une vieille guitare au vernis écaillé. Le soir, il joue tout bas un séga ou un maloya de son grand-père. Le bruit attire, il le sait ; il joue quand même, pour lui. <em>Pour l'entretenir : jouer un air le soir, même tout bas.</em></li><li><strong>Un pied de piment</strong> — Un pied de piment dans un pot de yaourt, ou une bouture de géranium de la case de sa mère. Il l'arrose, il le déplace au soleil, il l'emporte quand on part. Tant qu'il pousse, quelque chose continue. <em>Pour l'entretenir : l'arroser, le mettre au soleil, l'emporter partout.</em></li></ul><p>Les croyances, les doutes et les préjugés sur la foi des autres sont ceux des personnages : le jeu traite toutes les religions de la même façon, et n'en confirme aucune.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "religions"
+        }
+      }
+    },
+    {
+      "_id": "bgFu5TBCOfTa4wF3",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.bgFu5TBCOfTa4wF3",
+      "name": "Le sens moral, la porte et le chef",
+      "type": "text",
+      "sort": 1700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Le sens moral</strong> est une jauge, du <strong>rouge</strong> (exclure, trahir) au <strong>bleu</strong> (accueillir, aider). Chacun voit <strong>sa propre couleur</strong> ; celle des autres, on ne la connaît que par leur <strong>réputation</strong>, ce que les témoins ont vu et répété (et qui peut être faux). Le MJ peut changer qui voit quoi.</p><ul><li>Exclure quelqu'un pousse vers le rouge, l'accueillir vers le bleu, <strong>même avec des circonstances atténuantes</strong> (plus de place, plus de nourriture) : elles ne changent que le jugement des témoins qui savaient.</li><li>Trahir pousse loin vers le rouge ; colporter du mal sur quelqu'un, mentir quand une marque ou un témoin vous dément, aussi.</li><li><strong>Aucune couleur n'est gratuite.</strong> Le bleu attire les réfugiés : des bouches en plus. Le rouge fait fuir les gens de bien (dans un groupe rouge, un bleu se sent de moins en moins à sa place) et attire les durs.</li></ul><p><strong>La porte.</strong> L'abri affiche <strong>ce qui lui manque vraiment</strong>, d'après ses stocks : c'est la liste à la porte, le prix d'entrée. Quand quelqu'un frappe, le groupe accueille ou refuse ; le chef peut trancher seul ou demander un <strong>vote</strong>, et celui qui a voté contre une trahison ne rougit pas avec les autres. Le refusé peut partir sans rancune, revenir avec ce qui manque pour gagner sa place, ou, rancunier, allumer un feu près du camp pour y attirer les menaces. Le groupe qui prend ce qu'il apporte puis le renvoie rougit ; lui, on dit qu'il a de la chance ensuite.</p><p><strong>Le chef et son autorité.</strong> L'<strong>autorité</strong> dit à quel point un chef est obéi. Elle monte quand il tient parole et que tout le monde mange, elle tombe quand on a faim ou qu'il ignore un vote. Trop basse : des désertions, une scission, un renversement. Un chef très écouté donne un dé de plus à la défense de l'abri ; un chef qu'on n'écoute plus en coûte un.</p><p><strong>Les enfants regardent.</strong> Un enfant témoin imite ce qu'il voit, ou s'en révolte, selon ce qu'il sait faire. Révolté, il peut un jour vouloir partir, pour se venger ou pour fonder un ailleurs meilleur, et des adultes peuvent l'y aider en douce.</p><p><strong>Les autres groupes.</strong> Un chef de bande décide selon son propre sens moral : attaquer, négocier, passer son chemin pour fonder ailleurs, poser un ultimatum (qui devient un tribut, puis une alliance ou une révolte), ou demander à rejoindre. Deux groupes peuvent se séparer (on partage les stocks, chacun garde les plans, l'abri va à l'un des deux) ou se fondre en un seul.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sens-moral"
+        }
+      }
+    },
+    {
       "_id": "GsGWAAAIAkUufDjK",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 1500,
+      "sort": 1800,
       "title": {
         "show": true,
         "level": 1

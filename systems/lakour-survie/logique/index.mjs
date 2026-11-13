@@ -14,4 +14,8 @@ export * from "./actions.mjs";
 export * from "./fabrication.mjs";
 export * from "./maladies.mjs";
 export * from "./generation.mjs";
+export * from "./esprit.mjs";
+export * from "./moralite.mjs";
+export * from "./porte.mjs";
+export * from "./chefs.mjs";
 export * from "./etat.mjs";

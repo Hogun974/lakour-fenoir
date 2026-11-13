@@ -1,0 +1,148 @@
+{
+  "_id": "ERAHk53pO3a4pwAe",
+  "_key": "!tables!ERAHk53pO3a4pwAe",
+  "name": "L'esprit — les faux bruits de la nuit",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'entend, la nuit, celui dont le moral est au plus bas. Le jeu ne dit pas si c'était vrai.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "esprit-faux-bruits",
+      "esprit": "faux-bruits"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "9YGPYN4qq2140LQM",
+      "_key": "!tables.results!ERAHk53pO3a4pwAe.9YGPYN4qq2140LQM",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des pas sur le gravier, derrière la case. Personne.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "AKAuZss8E4FfsYTF",
+      "_key": "!tables.results!ERAHk53pO3a4pwAe.AKAuZss8E4FfsYTF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une voix qui appelle un prénom, tout bas, dans la ravine.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "peBb9L0xtHAmH1rx",
+      "_key": "!tables.results!ERAHk53pO3a4pwAe.peBb9L0xtHAmH1rx",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le portail qui grince, deux fois. Il est fermé, cadenassé.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uSTgUMg5r0mXldaT",
+      "_key": "!tables.results!ERAHk53pO3a4pwAe.uSTgUMg5r0mXldaT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Quelqu'un qui gratte à la tôle, juste à côté de sa tête.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "M4t3C82XLnmthQBq",
+      "_key": "!tables.results!ERAHk53pO3a4pwAe.M4t3C82XLnmthQBq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant qui pleure au loin. Le vent tourne, et plus rien.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "L72eofWHvCgYBXUz",
+      "_key": "!tables.results!ERAHk53pO3a4pwAe.L72eofWHvCgYBXUz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le bruit d'un moteur sur la route. La route est vide jusqu'au matin.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ugqjTfGIkBDdfCcS",
+      "_key": "!tables.results!ERAHk53pO3a4pwAe.ugqjTfGIkBDdfCcS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une respiration lente, de l'autre côté de la cloison.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "XCthw50jfvMiPPvj",
+      "_key": "!tables.results!ERAHk53pO3a4pwAe.XCthw50jfvMiPPvj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le tintement des cloches d'alerte. Aucune n'a bougé.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

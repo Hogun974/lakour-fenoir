@@ -38,6 +38,13 @@ export function enregistrerReglages(rappels = {}) {
     name: "LAKOUR_SURVIE.Reglages.FetesJeu.Nom", hint: "LAKOUR_SURVIE.Reglages.FetesJeu.Aide",
     scope: "world", config: true, type: Boolean, default: true, onChange: () => rappels.fetes?.()
   });
+  // Qui voit le sens moral d'un survivant (complément du jeu 3D, famille 3) : chacun le sien (défaut), tout le monde, ou le MJ seul.
+  // Les autres se connaissent par la réputation. (Foundry envoie les fiches à tous les navigateurs : ce n'est pas un coffre.)
+  r("visibiliteSensMoral", {
+    name: "LAKOUR_SURVIE.Reglages.VisibiliteSens.Nom", hint: "LAKOUR_SURVIE.Reglages.VisibiliteSens.Aide",
+    scope: "world", config: true, type: String, default: "soi",
+    choices: { soi: "LAKOUR_SURVIE.Reglages.VisibiliteSens.soi", tous: "LAKOUR_SURVIE.Reglages.VisibiliteSens.tous", mj: "LAKOUR_SURVIE.Reglages.VisibiliteSens.mj" }
+  });
   r("lumiereSuitLeMoment", {
     name: "LAKOUR_SURVIE.Reglages.Lumiere.Nom", hint: "LAKOUR_SURVIE.Reglages.Lumiere.Aide",
     scope: "world", config: true, type: Boolean, default: true

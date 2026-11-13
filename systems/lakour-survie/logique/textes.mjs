@@ -51,7 +51,19 @@ export const CLES_TEXTES = [
   "soin-medicaments", "soin-pas-atteint", "soin-rate",
   // abri.mjs, fabrication.mjs : motifs de refus d'un chantier ou d'une recette
   "installation-inconnue", "recette-inconnue", "niveau-inexistant", "niveau-deja", "niveau-prealable", "hors-service-reparer",
-  "savoir-manquant", "eau-requise", "site-sol", "site-soleil", "site-souterrain", "requiert", "requiert-hors-service", "manque"
+  "savoir-manquant", "eau-requise", "site-sol", "site-soleil", "site-souterrain", "requiert", "requiert-hors-service", "manque",
+  // esprit.mjs (par etat.mjs) : l'esprit au jour le jour (complément du jeu 3D, famille 2)
+  "esprit-observance-manquee", "esprit-observance-reprise", "esprit-reconfort", "esprit-regard-change", "esprit-retenu",
+  "esprit-signe-1", "esprit-signe-2", "esprit-signe-3", "esprit-lache", "esprit-au-bord", "esprit-faux-bruit",
+  // etat.mjs, moralite.mjs, chefs.mjs : la couleur du groupe, l'autorité du chef, les tributs (famille 3)
+  "malaise-couleur", "autorite-monte", "autorite-baisse", "desertion", "crise-scission", "crise-renversement", "tribut-du",
+  // porte.mjs : celui qui frappe à la porte
+  "porte-repart", "porte-feu", "porte-feu-secret", "porte-revient",
+  "porte-frappe-refugie", "porte-frappe-famille", "porte-frappe-blesse", "porte-frappe-dur",
+  "porte-demande-refugie", "porte-demande-famille", "porte-demande-blesse", "porte-demande-dur",
+  "porte-accueilli", "porte-refuse", "porte-trahi", "porte-inconnu", "porte-decision", "porte-rien-a-prendre",
+  // chefs.mjs : ce que décide le chef d'une bande
+  "chef-attaquer", "chef-negocier", "chef-passer", "chef-ultimatum", "chef-rejoindre"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

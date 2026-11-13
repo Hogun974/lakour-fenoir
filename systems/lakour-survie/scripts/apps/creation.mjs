@@ -8,14 +8,17 @@ import * as L from "../../logique/index.mjs";
 import { t, sansBalises, libelleCompetence, reglage, monSurvivant } from "../donnees.mjs";
 import { lireBudget } from "../reglages.mjs";
 import { CHEMIN, essayer, flammes, options } from "./commun.mjs";
+import { optionsRegards, optionsReligions, optionsReligionsMultiples, optionsAncrages, jaugeSens, libelleFoi, aideFoi } from "./esprit.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const contenu = () => game.lakourSurvie?.contenu?.() ?? {};
 const ELEMENTS = ["nom", "age", "enfance", "passe", "traits"];
+// L'esprit que le joueur choisit avant de valider (la religion ou l'ancrage, sa pratique, son regard) : gardé aux relances.
+const ESPRIT = ["regard", "religion", "religions", "pratique", "ancrage"];
 
 // L'état de la création (pur, éprouvé hors Foundry) : tirage, verrous, préférences.
 export function nouvelleCreation() {
-  return { tirage: null, verrous: { nom: false, age: false, enfance: false, passe: false, traits: false }, favoriser: [], rejoindre: true, userId: "", statut: "joueur" };
+  return { tirage: null, verrous: { nom: false, age: false, enfance: false, passe: false, traits: false, esprit: false }, favoriser: [], rejoindre: true, userId: "", statut: "joueur" };
 }
 
 // Les verrous à donner au générateur d'après l'état (tout : seules les valeurs dérivées sont recalculées).
@@ -24,6 +27,7 @@ export function verrousPour(etat, { tout = false } = {}) {
   const x = etat.tirage;
   if (!x) return v;
   for (const e of ELEMENTS) if (tout || etat.verrous[e]) v[e] = structuredClone(x[e]);
+  if (etat.verrous.esprit) for (const e of ESPRIT) if (x[e] !== undefined) v[e] = structuredClone(x[e]);
   if (tout && x.genre) v.genre = x.genre; // le genre du tirage suit le nom gardé
   return v;
 }
@@ -60,6 +64,14 @@ export function contexteCreation(etat) {
     equipement: (x?.equipement ?? []).map(k => def("equipements", k)?.nom ?? k),
     savoirs: (x?.savoirs ?? []).map(k => def("savoirs", k)?.nom ?? k),
     graine: x?.graine ?? "",
+    // L'esprit : regard, religion (ou ancrage) et pratique se choisissent ; la couleur (sens moral) et l'autorité se voient.
+    esprit: x ? {
+      regards: optionsRegards(x.regard, false), religions: optionsReligions(x.religion, c, false), plusieurs: x.religion === L.RELIGION_PLUSIEURS,
+      religionsMultiples: optionsReligionsMultiples(x.religions, c), sansReligion: !x.religion || x.religion === L.RELIGION_AUCUNE,
+      ancrages: optionsAncrages(x.ancrage, c), pratique: Boolean(x.pratique), foi: libelleFoi(x, c), aideFoi: aideFoi(x, c),
+      regardAide: x.regard ? t(`LAKOUR_SURVIE.Regards.Aide.${x.regard}`) : "",
+      sens: jaugeSens(x.sensMoral), autorite: Number(x.autorite ?? L.AUTORITE.defaut), verrou: Boolean(etat.verrous.esprit)
+    } : null,
     budget: { min: budget[0], max: budget[1], somme, ok: somme >= budget[0] && somme <= budget[1] },
     joueurs: game.user.isGM ? options([["", t("LAKOUR_SURVIE.Creation.Personne")], ...game.users.filter(u => !u.isGM).map(u => [u.id, u.name])], etat.userId) : [],
     statuts: game.user.isGM ? options(L.STATUTS.map(s => [s, t(`LAKOUR_SURVIE.Statuts.${s}`)]), etat.statut) : []
@@ -102,6 +114,20 @@ export class CreationSurvivant extends HandlebarsApplicationMixin(ApplicationV2)
     sur("[name=enfance]", i => { this.etat.tirage.enfance = i.value; this.etat.verrous.enfance = true; essayerSync(() => tirer(this.etat, { tout: true })); });
     sur("[name=passe]", i => { this.etat.tirage.passe = i.value; this.etat.verrous.passe = true; essayerSync(() => tirer(this.etat, { tout: true })); });
     sur("[name=trait]", i => { if (!i.value) return; this.etat.tirage.traits = [...this.etat.tirage.traits, i.value]; this.etat.verrous.traits = true; essayerSync(() => tirer(this.etat, { tout: true })); });
+    // L'esprit : modifié sur place (la couleur et l'autorité du tirage restent), puis gardé aux relances.
+    const esprit = (champ, valeur) => { this.etat.tirage[champ] = valeur; this.etat.verrous.esprit = true; };
+    sur("[name=regard]", i => esprit("regard", i.value));
+    sur("[name=religion]", i => {
+      esprit("religion", i.value);
+      if (i.value === L.RELIGION_PLUSIEURS && (this.etat.tirage.religions ?? []).length < 2) {
+        const x = this.etat.tirage;
+        this.etat.tirage.religions = L.tirerEsprit(contenu(), Math.random, { traits: x.traits, competences: x.competences, age: x.age, enfance: x.enfance, verrous: { religion: L.RELIGION_PLUSIEURS } }).religions;
+      } else if (i.value !== L.RELIGION_PLUSIEURS) this.etat.tirage.religions = [];
+      if (i.value && i.value !== L.RELIGION_AUCUNE) this.etat.tirage.ancrage = "";
+    });
+    sur("[name=religions]", i => esprit("religions", [...i.selectedOptions].map(o => o.value)));
+    sur("[name=ancrage]", i => esprit("ancrage", i.value));
+    sur("[name=pratique]", i => esprit("pratique", i.checked));
     sur("[name=rejoindre]", i => { this.etat.rejoindre = i.checked; });
     sur("[name=joueur]", i => { this.etat.userId = i.value; });
     sur("[name=statut]", i => { this.etat.statut = i.value; });

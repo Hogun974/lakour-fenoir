@@ -72,7 +72,16 @@
     "vivant": false,
     "livide": true,
     "charge": 0,
-    "notes": "<p>Un mort tout récent, relevé depuis quelques heures : il court encore, maladroitement, et se jette sur sa proie. On n'en voit que les premiers jours.</p><p><strong>Comportement.</strong> Charge dès qu'il voit, crie en courant, attire les autres. Après une semaine, il ralentit et devient un Livide comme les autres.</p><p><strong>Faiblesse.</strong> Il tombe, il se cogne : un obstacle bien placé le brise.</p><p><strong>Dés d'attaque :</strong> 2 — <strong>résistance :</strong> 1 — <strong>vitesse :</strong> rapide.</p>"
+    "notes": "<p>Un mort tout récent, relevé depuis quelques heures : il court encore, maladroitement, et se jette sur sa proie. On n'en voit que les premiers jours.</p><p><strong>Comportement.</strong> Charge dès qu'il voit, crie en courant, attire les autres. Après une semaine, il ralentit et devient un Livide comme les autres.</p><p><strong>Faiblesse.</strong> Il tombe, il se cogne : un obstacle bien placé le brise.</p><p><strong>Dés d'attaque :</strong> 2 — <strong>résistance :</strong> 1 — <strong>vitesse :</strong> rapide.</p>",
+    "regard": "",
+    "religion": "",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 0,
+    "autorite": 2,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [],
   "effects": [],

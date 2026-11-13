@@ -146,8 +146,10 @@ export function passe({ cle, nom, description, competences, savoirs = [], equipe
 // img : jeton (assets/jetons/ia/<cle>.webp, ou assets/jetons/<cle>.svg en repli) ; disposition : -1 hostile, 0 neutre, 1 allié.
 export function survivant({ cle, nom, pack = "survivants", passe = "", enfance = "", age = 30, lien = "", competences = {}, passions = {}, traits = [],
   incapacites = [], statut = "pnj", moral = 4, notes = "", objets = [], pnj = false, livide = false, vivant = true, img = IMG.survivant,
-  disposition = null, extra = {} }) {
+  disposition = null, extra = {}, esprit = {} }) {
   const _id = identifiant(`${pack}:${cle}`);
+  // L'esprit (système : logique/esprit.mjs, moralite.mjs, chefs.mjs ; contrat §11) : vide = pas encore tiré (aucun effet).
+  const sp = { regard: "", religion: "", religions: [], pratique: false, ancrage: "", sensMoral: 0, autorite: 2, reputation: 0, ...esprit };
   const comp = Object.fromEntries(COMPETENCES.map(c => [c, { niveau: competences[c] ?? 0, marques: 0 }]));
   return {
     __pack: pack, __cle: `${pack}:${cle}`,
@@ -156,7 +158,9 @@ export function survivant({ cle, nom, pack = "survivants", passe = "", enfance =
       competences: comp, blessures: 0, fatigue: 0, moral, faim: 0, soif: 0,
       infection: { atteint: false, stade: 0, depuis: 0 },
       enfance, passe, passions, traits, incapacites, statut, tache: "", histoire: { journal: "" },
-      age, lien, vivant, livide, charge: 0, notes: html(notes)
+      age, lien, vivant, livide, charge: 0, notes: html(notes),
+      regard: sp.regard, religion: sp.religion, religions: [...sp.religions], pratique: Boolean(sp.pratique), ancrage: sp.ancrage,
+      sensMoral: sp.sensMoral, autorite: sp.autorite, reputation: sp.reputation, esprit: {}
     },
     // Objets incorporés : copies des savoirs et équipements du compendium, clé « !actors.items!acteur.objet ».
     items: objets.map(o => {

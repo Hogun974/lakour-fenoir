@@ -75,7 +75,16 @@
     "vivant": true,
     "livide": false,
     "charge": 0,
-    "notes": "<p>Ancienne institutrice de Mafate, petite blanche d'un îlet qu'aucune route n'a jamais atteint, elle a appris à lire à la moitié du cirque. Les sentiers l'écoutent. Elle décide qui entre. On l'a assez traitée d'arriérée des Hauts, à l'École normale de Saint-Denis, pour savoir ce que valent les diplômes des gens d'en bas quand la pluie coupe le sentier.</p>"
+    "notes": "<p>Ancienne institutrice de Mafate, petite blanche d'un îlet qu'aucune route n'a jamais atteint, elle a appris à lire à la moitié du cirque. Les sentiers l'écoutent. Elle décide qui entre. On l'a assez traitée d'arriérée des Hauts, à l'École normale de Saint-Denis, pour savoir ce que valent les diplômes des gens d'en bas quand la pluie coupe le sentier.</p>",
+    "regard": "refaire",
+    "religion": "catholique",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 4,
+    "autorite": 4,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

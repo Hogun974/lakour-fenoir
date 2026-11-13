@@ -75,7 +75,19 @@
     "vivant": true,
     "livide": false,
     "charge": 0,
-    "notes": "<p>Un des deux agents restés à la centrale de la Rivière de l'Est, fils d'un Robert de Saint-Benoît et d'une Ah-Kiem. Il fait tourner ce qu'il peut, se méfie de tout le monde, et sait que tôt ou tard quelqu'un viendra prendre son courant. Côté Ah-Kiem, on lui a appris à compter, côté Robert à partager, et chaque côté le soupçonne de tenir de l'autre.</p>"
+    "notes": "<p>Un des deux agents restés à la centrale de la Rivière de l'Est, fils d'un Robert de Saint-Benoît et d'une Ah-Kiem. Il fait tourner ce qu'il peut, se méfie de tout le monde, et sait que tôt ou tard quelqu'un viendra prendre son courant. Côté Ah-Kiem, on lui a appris à compter, côté Robert à partager, et chaque côté le soupçonne de tenir de l'autre.</p>",
+    "regard": "epreuve",
+    "religion": "plusieurs",
+    "religions": [
+      "catholique",
+      "culte-chinois"
+    ],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": -1,
+    "autorite": 2,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

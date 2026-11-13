@@ -77,7 +77,19 @@
     "vivant": true,
     "livide": false,
     "charge": 0,
-    "notes": "<p>Ancien catéchiste de Sainte-Rose, métis au visage de Malbar, élevé par une grand-mère qui allait à la messe le dimanche et au temple le vendredi. Voix douce, regard qui ne cille pas. Il croit sincèrement que le volcan protège ceux qui vivent à son pied ; ses fidèles le croient plus encore, et certains murmurent, quand il allume une lampe à huile, qu'il fait « un service » en cachette.</p>"
+    "notes": "<p>Ancien catéchiste de Sainte-Rose, métis au visage de Malbar, élevé par une grand-mère qui allait à la messe le dimanche et au temple le vendredi. Voix douce, regard qui ne cille pas. Il croit sincèrement que le volcan protège ceux qui vivent à son pied ; ses fidèles le croient plus encore, et certains murmurent, quand il allume une lampe à huile, qu'il fait « un service » en cachette.</p>",
+    "regard": "epreuve",
+    "religion": "plusieurs",
+    "religions": [
+      "catholique",
+      "hindouisme-tamoul"
+    ],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 2,
+    "autorite": 4,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [],
   "effects": [],
