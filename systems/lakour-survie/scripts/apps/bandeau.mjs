@@ -1,6 +1,8 @@
 // Le bandeau de survie (repris du bandeau des Veillées), en haut de l'écran, chez tous : jour, moment, date, saison et météo,
 // phase de la crise, stocks d'eau et de nourriture en jours, alertes récentes, la tâche de mon survivant ; boutons du tableau
 // de bord, de l'atelier, de ma fiche (et de la fenêtre du MJ). Repliable (réglage client). Seulement l'état PUBLIC.
+// Lot « fetes » : la lune et la clarté de la nuit, la chaleur, les signes du paysage ; sans téléphone ni radio, la date lue dans la
+// nature remplace la date exacte (le MJ, lui, la voit toujours).
 import { ID } from "../../logique/constantes.mjs";
 import { t, lireEtat, reglage, monSurvivant, libelleMoment, libellePhase, libelleTache, sansBalises, localiser } from "../donnees.mjs";
 import { CHEMIN, jours } from "./commun.mjs";
@@ -23,7 +25,11 @@ export function contexteBandeau() {
   return {
     demarree: true, gm, replie,
     jour: q.jour, moment: libelleMoment(q.moment), momentCle: q.moment, iconeMoment: ICONES_MOMENT[q.moment] ?? "fa-sun", heure: q.heure,
-    date: q.dateTexte, saison: t(`LAKOUR_SURVIE.Saisons.${q.saison}`), phase: libellePhase(q.phase), phaseCle: q.phase,
+    date: q.dateExacte === false && !gm ? q.dateLue : q.dateTexte, dateLue: q.dateExacte === false ? q.dateLue : "",
+    lune: q.lune ? t(`LAKOUR_SURVIE.Lune.Phases.${q.lune.phase}`) : "",
+    nuit: q.clarte === null || q.clarte === undefined ? null : { niveau: q.clarte, texte: t(`LAKOUR_SURVIE.Lune.Clarte.${q.clarte}`), couvert: Boolean(q.couvert) },
+    chaleur: Boolean(q.chaleur), signes: (q.signes ?? []).map(x => t(`LAKOUR_SURVIE.Annee.Signes.${x}`)).join(", "),
+    saison: t(`LAKOUR_SURVIE.Saisons.${q.saison}`), phase: libellePhase(q.phase), phaseCle: q.phase,
     meteo: meteo ? { cle: meteo, texte: t(`LAKOUR_SURVIE.Meteo.${meteo}`), icone: ICONES_METEO[meteo] } : null,
     fetes: (q.fetes ?? []).map(f => f.nom).join(", "),
     stocks: b ? [

@@ -83,6 +83,13 @@ export function contexteTableau(onglet = "groupe") {
       couvertureLibelle: t(`LAKOUR_SURVIE.Besoins.${b.couverture}`), urgenceTexte: typeof b.urgence === "string" ? b.urgence : "" })),
     pnj: (etat.groupe?.pnj ?? []).map(p => ({ nom: p.nom, etat: p.etat })),
     plans: (etat.groupe?.plans ?? []).map(k => L.installationDe(c, k)?.nom ?? k),
+    // Lot « fetes » : l'autel (les morts du groupe), ce qui soutient le groupe (souvenirs de fête, vœux, autel), les liens tissés.
+    morts: (etat.morts ?? []).map(m => ({ nom: m.nom, etat: t(`LAKOUR_SURVIE.Autel.Etats.${m.repos ? "repos" : m.retrouve ? "deuil" : "perdu"}`) })),
+    souvenirs: L.souvenirsActifs(etat, jour).map(x => ({ texte: `${t(`LAKOUR_SURVIE.Souvenirs.${x.cle}`)}${x.qui?.length ? ` (${x.qui.map(id => game.actors.get(id)?.name ?? id).join(", ")})` : ""}`,
+      fin: x.jusqua === null || x.jusqua === undefined ? t("LAKOUR_SURVIE.Souvenirs.Tenu") : t("LAKOUR_SURVIE.Souvenirs.Jusqua", { n: x.jusqua }) })),
+    liens: [...Object.entries(etat.liens?.communautes ?? {}).map(([k, n]) => `${t(`LAKOUR_SURVIE.Communautes.${k}`)} ${n}`),
+      ...Object.entries(etat.liens?.factions ?? {}).map(([k, n]) => `${L.factionDe(c, k)?.nom ?? k} ${n}`),
+      ...(Number(etat.liens?.renom) ? [t("LAKOUR_SURVIE.Liens.Renom", { n: etat.liens.renom })] : [])].join(", "),
     renseignements, carte: onglet === "renseignements" ? carteConnue(etat, c) : "",
     journal: [...(etat.journal ?? [])].reverse().slice(0, 80).map(e => ({ jour: L.jourDe(e.quart), moment: t(`LAKOUR_SURVIE.Moments.${L.momentDe(e.quart)}`), texte: sansBalises(localiser(e)) })),
     alertes: [...(etat.alertes ?? [])].reverse().slice(0, 12).map(a => ({ jour: L.jourDe(a.quart), texte: sansBalises(localiser(a)), type: a.type })),

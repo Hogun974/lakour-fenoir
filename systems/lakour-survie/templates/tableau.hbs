@@ -22,6 +22,9 @@
     </div>
     {{#if pnj.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Tableau.Pnj"}}</strong> : {{#each pnj}}{{nom}}{{#if etat}} ({{etat}}){{/if}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
     {{#if plans.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Tableau.Plans"}}</strong> : {{#each plans}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+    {{#if morts.length}}<p class="survie-aide"><i class="fa-solid fa-dove"></i> <strong>{{localize "LAKOUR_SURVIE.Autel.Titre"}}</strong> : {{#each morts}}{{nom}} <small>({{etat}})</small>{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+    {{#if souvenirs.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Souvenirs.Titre"}}</strong> : {{#each souvenirs}}{{texte}} <small>({{fin}})</small>{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+    {{#if liens}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Liens.Titre"}}</strong> : {{liens}}</p>{{/if}}
     <h3><i class="fa-solid fa-clipboard-question"></i> {{localize "LAKOUR_SURVIE.Tableau.Besoins"}}</h3>
     <ul class="survie-besoins">
       {{#each besoins}}<li class="{{couverture}} {{#if urgence}}urgent{{/if}}"><strong>{{tacheLibelle}}</strong> — {{couvertureLibelle}} ({{meilleur}}){{#if urgenceTexte}} — <em>{{urgenceTexte}}</em>{{/if}}{{#if profil}}<br><small>{{profil}}</small>{{/if}}</li>

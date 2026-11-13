@@ -235,8 +235,8 @@
   "registre/camp/feter": {
     "_nom": "Fêter",
     "effet": {
-      "fr": "Une fête du calendrier ou une date du groupe : +1 moral à chacun, une fois par fête, au prix d'une ration de plus par personne.",
-      "en": "A holiday of the calendar or a date of the group's own: +1 morale to everyone, once per holiday, at the cost of one extra ration per person."
+      "fr": "Une fête du calendrier : son gain et son coût (journal « Les fêtes de Fénoir ») ; une date du groupe : +1 moral à chacun, au prix d'une ration de plus par personne. Une fois par fête et par année.",
+      "en": "A holiday of the calendar: its gain and its cost (journal \"The holidays of Fénoir\"); a date of the group's own: +1 morale to everyone, at the cost of one extra ration per person. Once per holiday and per year."
     }
   },
   "registre/camp/monter-la-garde": {
@@ -1554,6 +1554,29 @@
       "en": "Blackened faces, raids on moonless nights, spray-painted marks on doors \"already paid\""
     }
   },
+  "registre/fetes/aid-el-kebir": {
+    "_nom": "L'Aïd el-Kebir",
+    "periode": {
+      "fr": "deux mois et dix jours après la fin du ramadan (calendrier musulman)",
+      "en": "two months and ten days after the end of Ramadan (Muslim calendar)"
+    },
+    "description": {
+      "fr": "À l'Aïd el-Kebir, chaque famille musulmane de l'île sacrifiait un cabri ou un mouton et en donnait une part aux voisins et aux plus pauvres. Au camp, donner un cabri, c'est se priver ; mais la part donnée court sur les routes plus vite que le groupe, et des gens finissent par frapper à la porte.",
+      "en": "At Aïd el-Kebir, every Muslim family on the island sacrificed a goat or a sheep and gave a share to the neighbours and to the poorest. In camp, giving a goat means going without; but the share given travels the roads faster than the group, and people end up knocking at the door."
+    },
+    "consigne": {
+      "fr": "Aïd el-Kebir : un cabri partagé, une part portée à ceux qui n'ont rien ; la nouvelle d'un abri qui donne se répand, et elle attire des affamés autant que de la gratitude",
+      "en": "Aïd el-Kebir: a goat shared, a share carried to those who have nothing; word of a shelter that gives spreads, and it draws the hungry as much as gratitude"
+    },
+    "gain": {
+      "fr": "La part donnée aux démunis bâtit la réputation de l'abri (renom +1, deux liens de plus avec l'abri à qui l'on porte une part) ; des réfugiés viendront ; +1 de moral à chacun.",
+      "en": "The share given to those who have nothing builds the shelter's reputation (renown +1, two more bonds with the shelter you bring a share to); refugees will come; +1 morale to everyone."
+    },
+    "cout": {
+      "fr": "Un cabri de l'élevage (six rations).",
+      "en": "A goat from the herd (six rations)."
+    }
+  },
   "registre/fetes/cavadee": {
     "_nom": "Le Cavadee",
     "periode": {
@@ -1567,6 +1590,14 @@
     "consigne": {
       "fr": "Cavadee (fête tamoule) : jeûne, prière, offrande ; les fidèles du groupe le vivent avec gravité et pudeur, sans spectacle",
       "en": "Cavadee (Tamil festival): fasting, prayer, offering; the believers in the group live it with gravity and modesty, without spectacle"
+    },
+    "gain": {
+      "fr": "Après dix jours de carême, un vœu (retrouver quelqu'un, atteindre un lieu) qui soutient le moral de ceux qui l'ont fait tant qu'ils le tiennent.",
+      "en": "After ten days of fasting, a vow (to find someone, to reach a place) that holds up the morale of those who made it, as long as they keep it."
+    },
+    "cout": {
+      "fr": "Les privations (fatigue +1 à ceux qui font le vœu) ; la marche à découvert (visibilité +2 ce jour-là).",
+      "en": "The privations (fatigue +1 to those who make the vow); the walk in the open (visibility +2 that day)."
     }
   },
   "registre/fetes/dipavali": {
@@ -1582,6 +1613,14 @@
     "consigne": {
       "fr": "Dipavali, fête des lumières : une petite lampe à huile protégée, des douceurs partagées ; la lumière contre les ténèbres, en prenant garde qu'elle ne se voie pas de loin",
       "en": "Dipavali, festival of lights: a small sheltered oil lamp, sweets shared; light against the darkness, taking care that it cannot be seen from afar"
+    },
+    "gain": {
+      "fr": "Une nuit de lampes à huile : +2 de moral à chacun.",
+      "en": "A night of oil lamps: +2 morale to everyone."
+    },
+    "cout": {
+      "fr": "Une ration de plus par personne ; chaque flamme attire (visibilité +3 cette nuit).",
+      "en": "One extra ration per person; every flame draws attention (visibility +3 that night)."
     }
   },
   "registre/fetes/fete-nationale": {
@@ -1597,6 +1636,14 @@
     "consigne": {
       "fr": "14 juillet : plus de défilé ni de feu d'artifice ; les survivants se demandent si la métropole existe encore et pense à eux",
       "en": "14 July: no more parade or fireworks; the survivors wonder whether the mainland still exists and still thinks of them"
+    },
+    "gain": {
+      "fr": "Un verre levé à ceux d'en face : +1 de moral à chacun.",
+      "en": "A glass raised to those across the sea: +1 morale to everyone."
+    },
+    "cout": {
+      "fr": "Une ration de plus par personne (bruit +2).",
+      "en": "One extra ration per person (noise +2)."
     }
   },
   "registre/fetes/halloween": {
@@ -1612,6 +1659,14 @@
     "consigne": {
       "fr": "Toussaint et Halloween : au camp, on fleurit des croix de bois et l'on dit le nom des disparus ; les cimetières sont des lieux qu'on évite. Le deuil se raconte avec pudeur et sobriété, jamais comme un spectacle d'horreur ; plus personne ne se déguise en mort",
       "en": "All Saints' and Halloween: in camp, wooden crosses are decked with flowers and the names of the missing are spoken; cemeteries are places to avoid. Grief is told with modesty and restraint, never as a horror show; nobody dresses up as the dead any more"
+    },
+    "gain": {
+      "fr": "On donne le repos à tous ses morts retrouvés : leur deuil se lève ; +1 de moral à chacun.",
+      "en": "You give rest to all your dead who have been found: their mourning lifts; +1 morale to everyone."
+    },
+    "cout": {
+      "fr": "Il faut avoir retrouvé ses morts (le corps d'un mort relevé en Livide doit être retrouvé d'abord) ; les bougies se voient la nuit (visibilité +1).",
+      "en": "You must have found your dead (the body of someone who rose as a Pallid must be found first); the candles can be seen at night (visibility +1)."
     }
   },
   "registre/fetes/letchis": {
@@ -1627,6 +1682,14 @@
     "consigne": {
       "fr": "Saison des letchis : les arbres croulent de fruits rouges dans les jardins abandonnés ; une cueillette joyeuse et sucrée, qui oblige à sortir",
       "en": "Lychee season: the trees are heavy with red fruit in the abandoned gardens; a joyful, sweet harvest, which means going outside"
+    },
+    "gain": {
+      "fr": "Une cueillette joyeuse : +1 de moral à chacun et trois paniers de letchis (nourriture +3).",
+      "en": "A joyful harvest: +1 morale to everyone and three baskets of lychees (food +3)."
+    },
+    "cout": {
+      "fr": "Il faut sortir et grimper aux arbres (un quart dehors ; bruit +1).",
+      "en": "You have to go out and climb the trees (one watch outside; noise +1)."
     }
   },
   "registre/fetes/liberte": {
@@ -1642,6 +1705,37 @@
     "consigne": {
       "fr": "C'est le 20 décembre, fête de la liberté (abolition de l'esclavage) : les survivants y voient l'écho de leur propre lutte pour ne dépendre de personne ; un tambour de maloya, un kabar à mi-voix autour du feu",
       "en": "It is 20 December, Freedom Day (abolition of slavery): the survivors see in it the echo of their own struggle to depend on no one; a maloya drum, a kabar sung low around the fire"
+    },
+    "gain": {
+      "fr": "Le maloya remonte le moral de tout l'abri : +1 de moral à chacun, et trois jours où il remonte plus haut.",
+      "en": "Maloya lifts the whole shelter's morale: +1 morale to everyone, and three days when it climbs higher."
+    },
+    "cout": {
+      "fr": "Une ration de plus par personne ; le tambour s'entend de très loin (bruit +4 à l'abri).",
+      "en": "One extra ration per person; the drum carries very far (noise +4 at the shelter)."
+    }
+  },
+  "registre/fetes/marche-sur-le-feu": {
+    "_nom": "La marche sur le feu",
+    "periode": {
+      "fr": "début janvier, après dix huit jours de carême (chaque temple a sa date)",
+      "en": "early January, after eighteen days of fasting (each temple has its own date)"
+    },
+    "description": {
+      "fr": "Au début de janvier, après dix-huit jours de carême, les fidèles malbars marchaient pieds nus sur un lit de braises, au temple, sous les yeux de toute l'île. Au camp, on allume un grand feu qui brûle le bois d'une semaine ; ceux qui le traversent, ou le regardent, en reviennent avec des nerfs que la nuit n'entame plus. La lueur se voit de très loin.",
+      "en": "In early January, after eighteen days of fasting, the Malbar faithful walked barefoot over a bed of embers, at the temple, before the whole island. In camp, you light a great fire that burns a week's wood; those who cross it, or watch it, come back with nerves the night no longer wears down. The glow can be seen from very far away."
+    },
+    "consigne": {
+      "fr": "Marche sur le feu : un grand feu de bois, des pieds nus sur les braises, la foi de ceux qui croient et le respect des autres ; rien de surnaturel, seulement des nerfs plus solides, et une lueur visible de loin",
+      "en": "Fire-walk: a great wood fire, bare feet on the embers, the faith of those who believe and the respect of the others; nothing supernatural, only steadier nerves, and a glow visible from afar"
+    },
+    "gain": {
+      "fr": "Du sang-froid face aux hordes : deux semaines où la défense de l'abri a un dé de plus contre une horde.",
+      "en": "Nerve against the hordes: two weeks when the shelter's defence has one more die against a horde."
+    },
+    "cout": {
+      "fr": "Beaucoup de bois (quatre matériaux) ; une lueur visible de loin (visibilité +3 cette nuit).",
+      "en": "A lot of wood (four materials); a glow seen from far away (visibility +3 that night)."
     }
   },
   "registre/fetes/musique": {
@@ -1657,6 +1751,14 @@
     "consigne": {
       "fr": "Fête de la musique en hiver austral : un kayamb bricolé, un rouleur, un séga chanté à mi-voix ; la musique réchauffe mais porte loin dans la nuit froide",
       "en": "Music Day in the austral winter: a home-made kayamb, a rouleur, a séga sung low; the music warms but carries far in the cold night"
+    },
+    "gain": {
+      "fr": "La nuit la plus longue de l'année, dans le froid des Hauts : en musique, +1 de moral à chacun ; en silence, on dort serrés (fatigue −1).",
+      "en": "The longest night of the year, in the cold of the Highlands: with music, +1 morale to everyone; in silence, you sleep huddled together (fatigue −1)."
+    },
+    "cout": {
+      "fr": "Une ration chaude de plus par personne ; si l'on joue, la musique porte loin (bruit +3).",
+      "en": "One extra hot ration per person; if you play, the music carries far (noise +3)."
     }
   },
   "registre/fetes/noel": {
@@ -1672,6 +1774,14 @@
     "consigne": {
       "fr": "Noël en plein été austral : flamboyants rouges, letchis, chaleur ; les survivants fabriquent de petits cadeaux et partagent un repas, en pensant aux absents",
       "en": "Christmas in the middle of the austral summer: red flame trees, lychees, heat; the survivors make small presents and share a meal, thinking of the absent"
+    },
+    "gain": {
+      "fr": "Un repas partagé : +1 de moral, et une semaine où il remonte plus haut ; un cadeau attache une recrue au groupe (elle devient compagnon et ne part plus, même à bout de forces).",
+      "en": "A shared meal: +1 morale, and a week when it climbs higher; a present binds a recruit to the group (they become a companion and no longer leave, even at the end of their tether)."
+    },
+    "cout": {
+      "fr": "Un vrai surplus : deux rations de plus par personne.",
+      "en": "A real surplus: two extra rations per person."
     }
   },
   "registre/fetes/nouvel-an": {
@@ -1687,6 +1797,14 @@
     "consigne": {
       "fr": "Jour de l'an : les survivants se souhaitent de tenir une année de plus ; les pétards d'avant manquent, et le moindre bruit à minuit porte très loin",
       "en": "New Year's Day: the survivors wish each other to hold out one more year; the firecrackers of before are missed, and the slightest noise at midnight carries very far"
+    },
+    "gain": {
+      "fr": "On se souhaite de voir l'année suivante : +1 de moral à chacun.",
+      "en": "You wish each other to see the next year: +1 morale to everyone."
+    },
+    "cout": {
+      "fr": "Une ration de plus par personne ; à minuit, le moindre bruit porte loin (bruit +2).",
+      "en": "One extra ration per person; at midnight, the slightest noise carries far (noise +2)."
     }
   },
   "registre/fetes/nouvel-an-chinois": {
@@ -1702,6 +1820,37 @@
     "consigne": {
       "fr": "Nouvel An chinois : lanternes rouges de papier, un plat partagé, le souvenir des danses du lion de Saint-Denis ; on se souhaite santé et prospérité",
       "en": "Chinese New Year: red paper lanterns, a shared dish, the memory of the lion dances of Saint-Denis; people wish each other health and prosperity"
+    },
+    "gain": {
+      "fr": "Le grand ménage de l'abri : un mois où les maladies prennent moitié moins ; dettes et trocs soldés ; un don à un abri voisin installe la confiance (un lien de plus avec lui) ; +1 de moral à chacun.",
+      "en": "The shelter's great clean-out: a month when diseases catch half as often; debts and barters settled; a gift to a neighbouring shelter builds trust (one more bond with it); +1 morale to everyone."
+    },
+    "cout": {
+      "fr": "Deux quarts de travail, une ration de plus par personne, et les pétards (bruit +3).",
+      "en": "Two watches of work, one extra ration per person, and the firecrackers (noise +3)."
+    }
+  },
+  "registre/fetes/nouvel-an-tamoul": {
+    "_nom": "Le Nouvel An tamoul",
+    "periode": {
+      "fr": "vers le 14 avril, à la fin de la saison des cyclones",
+      "en": "around 14 April, at the end of the cyclone season"
+    },
+    "description": {
+      "fr": "À la mi-avril, le Nouvel An tamoul ouvrait l'année au temple : kolam de farine de riz devant les portes, riz au lait sucré, habits neufs. La saison des cyclones s'achève, la terre est encore mouillée : c'est le signal des semis, et le moment d'échanger des graines avec ceux qui en ont d'autres.",
+      "en": "In mid-April, the Tamil New Year opened the year at the temple: kolam of rice flour in front of the doors, sweet rice pudding, new clothes. The cyclone season is ending, the earth is still wet: it is the signal to sow, and the time to trade seeds with those who have others."
+    },
+    "consigne": {
+      "fr": "Nouvel An tamoul : fin des cyclones, kolam devant la porte, riz au lait ; on sème, et l'on échange des graines avec un abri voisin si l'on ose aller le voir",
+      "en": "Tamil New Year: end of the cyclones, a kolam in front of the door, rice pudding; you sow, and you trade seeds with a neighbouring shelter if you dare go and see them"
+    },
+    "gain": {
+      "fr": "Fin de la saison des cyclones, signal des semis : deux graines mises de côté, et deux de plus en les échangeant avec un abri voisin (un lien de plus avec lui) ; +1 de moral à chacun.",
+      "en": "End of the cyclone season, the signal to sow: two seeds put aside, and two more by trading them with a neighbouring shelter (one more bond with it); +1 morale to everyone."
+    },
+    "cout": {
+      "fr": "Rien d'autre que d'oser aller voir les voisins.",
+      "en": "Nothing but daring to go and see the neighbours."
     }
   },
   "registre/fetes/paques": {
@@ -1717,6 +1866,37 @@
     "consigne": {
       "fr": "Pâques : un repas en famille, des œufs de la basse-cour cachés pour les plus jeunes, la cloche d'une église qu'on n'ose pas sonner",
       "en": "Easter: a family meal, eggs from the poultry yard hidden for the youngest, a church bell nobody dares to ring"
+    },
+    "gain": {
+      "fr": "Un repas en famille, des œufs cachés pour les plus jeunes : +1 de moral à chacun.",
+      "en": "A family meal, eggs hidden for the youngest: +1 morale to everyone."
+    },
+    "cout": {
+      "fr": "Une ration de plus par personne (bruit +1).",
+      "en": "One extra ration per person (noise +1)."
+    }
+  },
+  "registre/fetes/ramadan": {
+    "_nom": "Le mois de ramadan",
+    "periode": {
+      "fr": "un mois du calendrier musulman, qui recule chaque année d'une dizaine de jours ; il finit par la fête de la rupture du jeûne",
+      "en": "a month of the Muslim calendar, which moves back about ten days every year; it ends with the festival of the breaking of the fast"
+    },
+    "description": {
+      "fr": "Pendant le ramadan, les familles z'arabes, comoriennes et mahoraises de l'île jeûnaient du lever au coucher du soleil, et la rupture du jeûne réunissait les voisins autour des samoussas et du thé. Au camp, ceux qui jeûnent ne mangent et ne boivent qu'à la nuit tombée : on cuisine tard, à la lueur d'une lampe qu'il faut cacher, et le groupe se tient serré.",
+      "en": "During Ramadan, the island's Z'arabe, Comorian and Mahoran families fasted from sunrise to sunset, and the breaking of the fast brought the neighbours together around samosas and tea. In camp, those who fast only eat and drink after nightfall: you cook late, by the light of a lamp you have to hide, and the group holds close together."
+    },
+    "consigne": {
+      "fr": "Ramadan : ceux qui jeûnent tiennent le jour sans manger ni boire et cuisinent la nuit, lumière masquée ; une discipline partagée, sans jugement de ceux qui ne jeûnent pas ; à la fin, on partage ce qu'on a",
+      "en": "Ramadan: those who fast get through the day without eating or drinking and cook at night, light masked; a shared discipline, with no judgement of those who do not fast; at the end, you share what you have"
+    },
+    "gain": {
+      "fr": "Un mois de discipline et de cohésion : le moral de chacun remonte plus haut pendant tout le mois.",
+      "en": "A month of discipline and cohesion: everyone's morale climbs higher for the whole month."
+    },
+    "cout": {
+      "fr": "On ne mange et ne boit qu'à la nuit : cuisine et lumière nocturnes (visibilité +1 pendant le mois).",
+      "en": "You only eat and drink after nightfall: cooking and light at night (visibility +1 for the month)."
     }
   },
   "registre/histoire": {

@@ -1,0 +1,93 @@
+{
+  "_id": "BWvyzxdXB0AzooUv",
+  "_key": "!journal!BWvyzxdXB0AzooUv",
+  "name": "Le temps de l'île",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "temps-de-l-ile",
+      "visible": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "PNmHOvFntJPjvTKo",
+      "_key": "!journal.pages!BWvyzxdXB0AzooUv.PNmHOvFntJPjvTKo",
+      "name": "L'année réunionnaise",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>L'année de Fénoir suit celle de l'île. Les <strong>flamboyants</strong> s'embrasent en fin d'année ; les <strong>letchis</strong> rougissent en décembre, puis viennent les <strong>longanis</strong> ; les mangues tombent de novembre à janvier. De décembre à mars, la <strong>chaleur de l'été austral</strong> écrase les Bas : l'après-midi dehors, un test d'endurance perd un dé, et l'on boit davantage. Les cyclones passent surtout de janvier à mars ; le Nouvel An tamoul, à la mi-avril, en annonce la fin. L'hiver austral rafraîchit les Hauts, la brume y monte chaque soir ; la canne se coupe de juillet à novembre.</p><p>Le bandeau dit ce que montre le paysage : c'est aussi comme cela qu'on garde la date, quand plus rien d'autre ne la donne.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "annee"
+        }
+      }
+    },
+    {
+      "_id": "HJaK4QvuO14DmZkZ",
+      "_key": "!journal.pages!BWvyzxdXB0AzooUv.HJaK4QvuO14DmZkZ",
+      "name": "La lune et la nuit",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La nuit est vraiment noire. Sa <strong>clarté</strong> suit la <strong>lune</strong> : elle se lève chaque jour un peu plus tard, un premier croissant s'est déjà couché quand la nuit commence, une lune décroissante ne se lève qu'au cœur de la nuit. La <strong>brume et les nuages des Hauts</strong> la cachent souvent : une nuit claire peut devenir noire en plein trajet.</p><ul><li><strong>Nuit noire</strong> (lune couchée, nouvelle, ou cachée) : dehors, chaque test perd un dé, sauf la discrétion qui en gagne un ; les rencontres sont plus rares, les chutes et les ravines plus fréquentes. Mais <strong>sortir par une nuit de noir total rapporte plus à la fouille</strong> (un quart de plus) : personne d'autre ne sort.</li><li><strong>Pleine lumière</strong> (pleine lune levée, ciel dégagé) : on y voit mieux, la vigilance gagne un dé ; <strong>les Livides aussi</strong> : la discrétion perd un dé et les rencontres sont plus fréquentes.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "lune"
+        }
+      }
+    },
+    {
+      "_id": "jJJh2gTRKOSKhX4a",
+      "_key": "!journal.pages!BWvyzxdXB0AzooUv.jJJh2gTRKOSKhX4a",
+      "name": "Quand la date se perd",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Tant qu'un téléphone capte, ou qu'une radio parle, on sait quel jour on est. Quand le réseau tombe et que l'abri n'a pas de poste, la date exacte se perd : on la lit dans la nature et dans la lune. « Début février, la lune décroît, les longanis sont mûrs » : c'est assez pour vivre, pas toujours assez pour un rendez-vous. Plusieurs fêtes suivent la lune (la Dipavali à la nouvelle lune, le Cavadee à la pleine lune, le Nouvel An chinois, le ramadan) : elles se retrouvent quand même.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "date"
+        }
+      }
+    }
+  ]
+}

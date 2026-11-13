@@ -86,6 +86,15 @@ Ce que vous savez d'une région est **daté** : vu de vos yeux tel jour, entendu
 **S'enraciner.** On creuse, on plante, on capte, on câble, jusqu'à ne plus dépendre de rien. Mais une serre qui brille, une éolienne qui grince, une fumée chaque soir disent à toute l'île qu'il y a quelque chose à prendre. La **discrétion** (souterrain, camouflage) et la **défense** protègent ce qu'on a bâti.
 
 Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs et le littoral est l'enfer ; plus tard, ce sera peut-être l'inverse.` },
+  { cle: "releve", titre: "La mort, la relève et l'autel", texte: `Un survivant meurt. Le groupe, lui, continue : c'est lui, le vrai personnage.
+
+**La relève.** À la mort de votre survivant, vous choisissez : un **nouveau tirage**, ou **reprendre un autre survivant de votre groupe**, déjà sur place, d'au moins **16 ans** : un compagnon, une recrue, un PNJ. Il arrive avec ses propres compétences, ses traits, son histoire ; vous ne choisissez pas qui il est. Le prix : il **cesse son travail pour le groupe**. Ce qu'il faisait (la garde, le potager, la cuisine), il faudra le reprendre vous-même ou le confier à quelqu'un d'autre. S'il ne reste personne, il reste le nouveau tirage.
+
+**Les jeunes.** De 16 à 18 ans, un survivant porte moins qu'un adulte (deux tiers d'une charge), travaille moins vite (trois quarts d'un adulte), son avis pèse moins dans un vote, et il ne peut pas être chef. À 18 ans, c'est un survivant comme les autres.
+
+**Le deuil.** Chaque mort du groupe ôte 1 de moral à tous les vivants. Tant qu'on ne lui a pas **donné le repos**, son deuil pèse : le moral remonte un cran moins haut. Donner le repos, c'est une courte cérémonie à l'abri (un quart), pour un mort **retrouvé** : un mort qui s'est relevé en Livide doit d'abord être retrouvé. À la **Toussaint**, on le donne à tous les morts retrouvés à la fois.
+
+**L'autel des morts.** Une étagère, une nappe, des noms écrits à la craie, une bougie : l'autel de l'abri porte les noms de ceux que le groupe a perdus. L'**honorer** (un quart, une assiette offerte), une fois par semaine au plus, rend 1 de moral à chacun et soutient le moral du groupe pendant sept jours. Rien n'en revient : c'est le groupe qui se tient.` },
   { cle: "creer", titre: "Créer son survivant", texte: `Un survivant, c'est une **enfance** (où et comment il a grandi), un **passé** (ce qu'il faisait au jour zéro), un **âge** (16 à 75 ans), 1 à 2 **passions**, 1 à 3 **traits** de caractère, parfois des **incapacités**, et une histoire.
 
 **Tirer.** La fenêtre « Créer un survivant » (ou le MJ IA) tire tout au sort, de façon cohérente : les compétences sont la somme des modificateurs de l'enfance, du passé et des traits (au plus 5).
@@ -122,8 +131,25 @@ Chaque page dit ce qu'on sait d'une région **au jour zéro**. Le reste, il faud
 
 // ================================================================ Les fêtes (joueurs)
 const FETES = journal({ cle: "fetes-de-fenoir", nom: "Les fêtes de Fénoir", pack: "guides", pages: [
-  { cle: "principe", titre: "Fêter quand même", texte: `L'île fêtait beaucoup : chaque communauté, chaque saison. Le monde d'après ne fait pas exception. **Fêter une fête au camp** redonne **1 de moral à chacun**, une fois par fête, au prix d'**une ration de plus par personne**. Rien d'autre : pas de règle cachée.` },
-  ...FETES_FENOIR.map(f => ({ cle: f.cle, titre: f.nom, texte: `${f.description}\n\n*Date : ${f.date ? f.date.split("-").reverse().join("/") : Object.entries(f.dates).map(([a, d]) => `${d.split("-").reverse().join("/")}/${a}`).join(", ")}.*` }))
+  { cle: "principe", titre: "Fêter quand même", texte: `L'île fêtait beaucoup : chaque communauté, chaque saison, et les fêtes des uns étaient celles de tout le monde. Le monde d'après ne fait pas exception : le calendrier du métissage donne encore le tempo de l'année.
+
+**Fêter une fête au camp** se décide en groupe, une fois par fête et par année. Chaque fête a **ce qu'elle apporte** et **ce qu'elle coûte** : du moral, parfois pour plusieurs jours, mais aussi des rations, du bois, du bruit qui porte, de la lumière qui se voit. Aucune n'a d'effet magique : ceux qui croient peuvent y voir un signe, le monde ne confirme rien. La foi tient debout ceux qui l'ont ; c'est déjà beaucoup.` },
+  { cle: "chez-les-autres", titre: "Aller à la fête des autres", texte: `À La Réunion, tout le monde allait voir le feu de la Dipavali, le dragon du Nouvel An chinois, le kabar du 20 décembre. Dans le monde d'après, **aller à la fête d'une autre communauté** (un abri voisin, une faction, un quartier qui fête encore) prend deux quarts, rend **+1 de moral** à ceux qui y vont, et **tisse un lien** avec ceux qui reçoivent : un lien de plus avec leur communauté et, s'ils sont d'une faction, avec elle. Avec deux liens, on recrute plus facilement chez eux.
+
+Les préjugés ne tombent pas en un soir. Mais on se méfie moins de ceux avec qui l'on a mangé.` },
+  ...FETES_FENOIR.map(f => ({ cle: f.cle, titre: f.nom, texte: `${f.description}${f.gain ? `\n\n**Ce qu'elle apporte.** ${f.gain}` : ""}${f.cout ? `\n\n**Ce qu'elle coûte.** ${f.cout}` : ""}\n\n*Date : ${f.date ? f.date.split("-").reverse().join("/") : Object.entries(f.dates).map(([a, d]) => `${d.split("-").reverse().join("/")}/${a}`).join(", ")}.*` }))
+] });
+
+// ================================================================ Le temps de l'île (joueurs ; lot « fetes », 2026-11-13)
+const TEMPS_DE_L_ILE = journal({ cle: "temps-de-l-ile", nom: "Le temps de l'île", pack: "guides", pages: [
+  { cle: "annee", titre: "L'année réunionnaise", texte: `L'année de Fénoir suit celle de l'île. Les **flamboyants** s'embrasent en fin d'année ; les **letchis** rougissent en décembre, puis viennent les **longanis** ; les mangues tombent de novembre à janvier. De décembre à mars, la **chaleur de l'été austral** écrase les Bas : l'après-midi dehors, un test d'endurance perd un dé, et l'on boit davantage. Les cyclones passent surtout de janvier à mars ; le Nouvel An tamoul, à la mi-avril, en annonce la fin. L'hiver austral rafraîchit les Hauts, la brume y monte chaque soir ; la canne se coupe de juillet à novembre.
+
+Le bandeau dit ce que montre le paysage : c'est aussi comme cela qu'on garde la date, quand plus rien d'autre ne la donne.` },
+  { cle: "lune", titre: "La lune et la nuit", texte: `La nuit est vraiment noire. Sa **clarté** suit la **lune** : elle se lève chaque jour un peu plus tard, un premier croissant s'est déjà couché quand la nuit commence, une lune décroissante ne se lève qu'au cœur de la nuit. La **brume et les nuages des Hauts** la cachent souvent : une nuit claire peut devenir noire en plein trajet.
+
+- **Nuit noire** (lune couchée, nouvelle, ou cachée) : dehors, chaque test perd un dé, sauf la discrétion qui en gagne un ; les rencontres sont plus rares, les chutes et les ravines plus fréquentes. Mais **sortir par une nuit de noir total rapporte plus à la fouille** (un quart de plus) : personne d'autre ne sort.
+- **Pleine lumière** (pleine lune levée, ciel dégagé) : on y voit mieux, la vigilance gagne un dé ; **les Livides aussi** : la discrétion perd un dé et les rencontres sont plus fréquentes.` },
+  { cle: "date", titre: "Quand la date se perd", texte: `Tant qu'un téléphone capte, ou qu'une radio parle, on sait quel jour on est. Quand le réseau tombe et que l'abri n'a pas de poste, la date exacte se perd : on la lit dans la nature et dans la lune. « Début février, la lune décroît, les longanis sont mûrs » : c'est assez pour vivre, pas toujours assez pour un rendez-vous. Plusieurs fêtes suivent la lune (la Dipavali à la nouvelle lune, le Cavadee à la pleine lune, le Nouvel An chinois, le ramadan) : elles se retrouvent quand même.` }
 ] });
 
 // ================================================================ Guide du MJ
@@ -161,6 +187,15 @@ Les **zerbaz** sont sa chance : une cueillette rapporte quelques plantes, une d�
 - **Bestiaire** : Livides et animaux, avec leurs dés et leur résistance.
 - **Cartes** : la carte de La Réunion (une épingle par région) et sept cartes de lieux (case créole, collège, station-service, supermarché, gîte, tunnel de lave, îlet).
 - **Le MJ IA** joue tout cela avec ses outils survie_* : il voit le réel et le connu, et ne dit aux joueurs que le connu.` },
+  { cle: "temps-de-l-ile", titre: "Le temps de l'île, les fêtes et les morts", texte: `**La lune.** Le système calcule la lune de la date de jeu et, chaque nuit, si la brume ou les nuages la cachent (souvent dans les Hauts le soir, toujours sous la pluie forte et le cyclone) : le bandeau dit la clarté. Une sortie de nuit en tient compte d'elle-même (fouille, voyage, tests dehors : le guide « Le temps de l'île » des joueurs). Une nuit de noir total est celle des expéditions risquées : faites-la sentir (la main sur l'épaule de celui de devant, la ravine qu'on devine au bruit de l'eau).
+
+**La date perdue.** Sans téléphone ni poste radio, les joueurs ne voient plus la date exacte : le bandeau dit « début, mi- ou fin » du mois, la lune et les signes du paysage. Vous la voyez toujours.
+
+**Les fêtes.** Chacune a son gain et son coût, que le système applique quand le groupe la fête (fenêtre du MJ, onglet Partie, ou le MJ IA). Certaines demandent un choix : la fête de la musique en musique ou en silence ; les vœux du Cavadee, ceux qui les font ; le cadeau de Noël, la recrue qu'il attache ; les dons du Nouvel An chinois, l'échange de graines du Nouvel An tamoul, la part de l'Aïd el-Kebir, l'abri voisin qui les reçoit. Un vœu se tient ou se rompt : c'est vous qui le dites (tenu, +1 de moral ; rompu, −1). Racontez la foi avec respect, sans jamais la confirmer ni la moquer.
+
+**Chez les autres.** Aller à la fête d'une autre communauté tisse des liens (onglet Groupe). Les PNJ y portent leurs préjugés, et les faits les démentent : celui qui craignait le « service » des Malbars a vu le feu de la marche et la cuisine partagée après ; c'est à vous de le jouer.
+
+**La mort et la relève.** Quand un survivant de joueur meurt, proposez la relève (onglet Groupe) : un nouveau tirage, ou un autre membre de 16 ans au moins. Celui qu'on reprend lâche son travail : dites-le, et laissez les joueurs le confier. Les morts s'inscrivent d'eux-mêmes sur l'autel du groupe ; ajoutez-y les PNJ légers qui tombent. Un mort relevé en Livide doit être retrouvé avant le repos : c'est une scène.` },
   { cle: "factions", titre: "Les factions en jeu", texte: `Les factions ne sont pas des méchants de service : chacune a de bonnes raisons. Faites-les **grandir** pendant la panique et l'effondrement, **occuper** les abris abandonnés, **se disputer** les régions. Un groupe qui les aide gagne de la réputation et ce qu'elle ouvre (troc, refuge, savoir enseigné) ; un groupe qui les trahit le paie.` },
   { cle: "gens-de-l-ile", titre: "Les gens de l'île", texte: `La Réunion est une île de **métissage**, et c'est une fierté. Faites-la vivre : une foule, une file de réfugiés, un marché des Ferrailleurs mélangent toujours plusieurs visages, et beaucoup de gens sont un peu de tout à la fois.
 
@@ -388,5 +423,5 @@ Les fronts se croisent : laissez les joueurs choisir lequel combattre, et montre
 *Le contenu ne fixe pas la vérité sur le Gris : à vous de décider si ce front mène quelque part.*` }
 ] });
 
-export const JOURNAUX = [GUIDE_JOUEUR, REGIONS_DE_L_ILE, FETES, GUIDE_MJ, CHRONOLOGIE, POURQUOI, FACTIONS_J, REPUTATIONS_J, BESTIAIRE_J, JOUR_ZERO, ONE_SHOT, CAMPAGNE];
+export const JOURNAUX = [GUIDE_JOUEUR, REGIONS_DE_L_ILE, FETES, TEMPS_DE_L_ILE, GUIDE_MJ, CHRONOLOGIE, POURQUOI, FACTIONS_J, REPUTATIONS_J, BESTIAIRE_J, JOUR_ZERO, ONE_SHOT, CAMPAGNE];
 export const CLE_JOURNAL_REGIONS = "regions-de-l-ile";

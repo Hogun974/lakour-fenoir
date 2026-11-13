@@ -17,6 +17,14 @@
   },
   "LAKOUR_SURVIE": {
     "Titre": "Fénoir",
+    "Participation": { "Carte": "At other people's holiday: {fete}, with {chez}", "Effet": "+1 morale to those who go; one more bond with those who host." },
+    "Releve": { "Carte": "{nom} takes over from {mort}", "Tache": "{nom} no longer does their task for the group ({tache}): to be taken on or handed over.", "Jeune": "{nom} is under 18: carries less, works more slowly, cannot be leader.", "Titre": "Taking over", "Mort": "The dead survivor", "Candidat": "Who to take over", "Tirage": "New draw", "Joueur": "The player", "Aucun": "Nobody to take over: there remains the new draw.", "Ans": "{n} years old", "PnjLeger": "group NPC" },
+    "Autel": { "Carte": "The altar of the dead is honoured", "Effet": "+1 morale to everyone; the group's morale holds better for seven days.", "Repos": "Rest for {nom}", "ReposEffet": "Their mourning no longer weighs on the group.", "Titre": "The altar of the dead", "Vide": "No name on the altar.", "Honorer": "Honour", "DonnerRepos": "Give rest", "Retrouver": "Found", "Inscrire": "Write a name", "Nom": "Name", "Etats": {"deuil":"mourned","repos":"at rest","perdu":"not found"}, "Deuil": "Mourning: morale climbs back one notch lower as long as one of the dead has not been given rest." },
+    "Communautes": { "tous": "everyone", "cafres": "Cafres", "yabs": "Yabs", "zoreils": "Zoreils", "malbars": "Malbars", "zarabes": "Z'arabes", "chinois": "Chinese", "malgaches": "Malagasy", "comoriens": "Comorians and Mahorans" },
+    "Lune": { "Titre": "Moon", "Phases": {"nouvelle":"new moon","premier-croissant":"waxing crescent","premier-quartier":"first quarter","gibbeuse-croissante":"waxing gibbous moon","pleine":"full moon","gibbeuse-decroissante":"waning gibbous moon","dernier-quartier":"last quarter","dernier-croissant":"waning crescent"}, "Clarte": {"0":"black night","1":"dark night","2":"clear night","3":"full light"}, "Couvert": "overcast sky", "Chaleur": "heat of the austral summer" },
+    "Annee": { "Mois": {"1":"January","2":"February","3":"March","4":"April","5":"May","6":"June","7":"July","8":"August","9":"September","10":"October","11":"November","12":"December"}, "Tiers": {"debut":"early {mois}","mi":"mid-{mois}","fin":"late {mois}"}, "Signes": {"flamboyants":"the flame trees in bloom","letchis":"the lychees","mangues":"the mangoes","longanis":"the longans","chaleur":"the heat of the Lowlands","cyclones":"the time of cyclones","goyaviers":"the strawberry guavas","brume-froide":"the cold mist of the Highlands","canne-coupee":"the cane harvest","jacarandas":"the jacarandas in bloom"}, "DateLue": "Date read in nature: {date}" },
+    "Souvenirs": { "Titre": "What holds the group up", "soutien": "memory of a holiday", "lueur": "glow of the shelter", "hygiene": "clean shelter", "sang-froid": "nerve", "voeu": "vow", "autel": "the altar honoured", "Jusqua": "until day {n}", "Tenu": "as long as it is kept" },
+    "Liens": { "Titre": "Bonds woven", "Renom": "Shelter's renown: {n}" },
     "Annuler": "Cancel",
     "Competences": {
       "endurance": "Endurance", "combat": "Melee", "tir": "Shooting", "discretion": "Stealth", "vigilance": "Alertness",
@@ -78,6 +86,7 @@
 
     "Creatures": { "livide": "Pallid", "chien-errant": "stray dog" },
     "Faits": {
+      "fete-manque": "{manque} missing", "participation-sans-hote": "at whose place?", "participation-sans-personne": "nobody is going", "participation-deja": "the group has already been to this holiday at their place this year", "releve-sans-candidat": "nobody to take over", "releve-sans-fiche": "their sheet is needed", "releve-pas-du-groupe": "not in the group", "mort-inconnu": "unknown dead: {nom}", "mort-deja-repos": "{nom} already rests", "mort-pas-retrouve": "{nom} must be found first", "autel-absent": "the shelter needs an altar of the dead", "autel-vide": "no name on the altar", "autel-trop-tot": "the altar was honoured less than a week ago ({n} more day(s))",
       "reseau-electricite": "{region}: the power is out.", "reseau-eau": "{region}: the taps have run dry.",
       "reseau-carburant": "{region}: not a drop of fuel left at the pump.", "reseau-telephone": "{region}: the phones are dead.",
       "cyclone-pre-alerte": "Cyclone pre-alert: {cyclone} is approaching, landfall in two days.", "cyclone-orange": "Orange alert: cyclone {cyclone} arrives tomorrow.",
@@ -135,6 +144,7 @@
     },
 
     "Erreurs": {
+      "FactionInconnue": "Unknown faction: {faction}.", "CommunauteInconnue": "Unknown community: {communaute}.", "Participation": "No holiday at other people's: {raison}.", "SansVoeu": "{nom} has no vow in progress.", "PasMort": "{nom} is alive: no takeover.", "PasCandidat": "\"{nom}\" cannot take over (a living member of the group, at least {age} years old, who is not already a player's survivor).", "Offrande": "A ration is needed as an offering.", "Autel": "The altar: {raison}.",
       "GraineCourte": "Seed too short: it could be guessed. Leave the field empty (a safe random seed is drawn) or give one of at least 32 characters.",
       "TropDePropositions": "Too many proposals at once: wait a minute.",
       "ChampReserve": "Only the GM changes this: go through the sheet or the GM (task, test, creation).",
@@ -261,6 +271,7 @@
       "Morsure": "{nom} is bitten: EXTREME Medicine test within the watch (washing, cauterising…), HARD with a medicine (a zerbaz herbal brew counts as one), a zerbaz decoction (1 herb), a first-aid kit or an infirmary (medicine and decoction: +1 die each), or the Grey."
     },
     "Journal": {
+      "Repos": "Rest is given to: {noms}.", "Attache": "The present binds {noms} to the group.", "Voeu": "Vow made: {noms}.", "VoeuTenu": "{nom} kept their vow.", "VoeuRompu": "{nom} broke their vow.", "Participe": "{noms} go to the holiday ({fete}) with {chez}.", "Releve": "{nom} takes over from {mort}.", "ReleveTache": "{nom} takes over from {mort}; they no longer do their task for the group ({tache}).", "ReleveTirage": "{mort}'s player draws a new survivor.", "Inscrit": "{nom} is written on the altar.", "Retrouve": "{nom}'s body is found.", "Autel": "The group honours the altar of the dead: {noms}.",
       "Debut": "Day zero, {date}: the group is in {region}.", "Installe": "The group settles in {site} ({region}).", "Reprend": "The group takes back the shelter of {site} ({region}).",
       "Quitte": "The group leaves {site}.", "Chantier": "Work started: {installation} (level {niveau}).", "Termine": "{installation} is in service (level {niveau}).",
       "Repare": "{installation}: {n} point(s) repaired.", "RepareAbri": "The shelter: {n} damage repaired.", "Ajustement": "Adjustment",
@@ -271,6 +282,7 @@
       "RecrueRefuse": "{nom} refuses to follow the group.", "Rejoint": "{nom} joins the group."
     },
     "Fete": {
+      "Refugies": "Word of the share given travels the roads: refugees will come.", "Gain": "What it brings: {texte}", "Cout": "What it costs: {texte}", "Options": {"musique":"With music.","silence":"In silence."}, "Reposes": "They rest: {noms}.", "Restent": "Not found yet: {noms}.",
       "Alerte": "Holiday today (Fénoir calendar): {nom}. {consigne}",
       "Carte": "Celebration at camp: {fete}", "Effet": "An extra ration for everyone; +1 morale for all.",
       "Texte": "The group celebrates {fete}: +1 morale each, an extra ration per person ({nourriture} food left)."
@@ -281,7 +293,7 @@
       "Avis": "Fénoir (GM): the shelter crosses the visibility threshold \"{palier}\". See the GM window, Threats tab.",
       "SansTable": "This threshold's table cannot be found (lakour-fenoir.tables compendium)."
     },
-    "Signal": { "Test": "The GM is waiting for a test from {nom}.", "Jet": "A test from your survivor is awaited." },
+    "Signal": { "Releve": "{nom} is dead: take over a survivor of the group, or draw the next one.", "Test": "The GM is waiting for a test from {nom}.", "Jet": "A test from your survivor is awaited." },
     "Infobulle": { "Fatigue": "Fatigue {n}", "Moral": "Morale {n}", "Infection": "The Grey (stage {n})", "Stocks": "Water {eau} d · food {nourriture} d" },
     "Chroniques": {
       "Titre": "Chronicles of Fénoir", "Chapitre": "Chapter {n} — {nom}", "EnCours": "From day {debut} to today (day {fin}): {jours} day(s).",
@@ -317,9 +329,11 @@
       "LeMeilleur": "The most skilled", "Fabriquer": "Craft", "Proposer": "Propose to the GM", "Carte": "Workshop: {recette}"
     },
     "MJ": {
+      "FeteDuJour": "Today's holiday", "Option": "Choice", "Pour": "For whom (vow, present)", "Avec": "With whom (neighbouring shelter, faction)", "Communaute": "Hosting community", "Faction": "Hosting faction", "Issue": "Outcome", "Tenu": "Kept", "Rompu": "Broken", "Mort": "The dead", "Action": "Action", "Aucune": "—", "Lune": "Moon",
       "Titre": "Fénoir — GM window", "Titre2": "Title",
       "Onglets": { "partie": "Game and time", "actions": "Group actions", "groupe": "Group and recruits", "menaces": "Threats", "monde": "Real world" },
       "Formes": {
+        "participer": "Go to other people's holiday", "voeu": "A vow kept or broken", "releve": "Taking over", "autel": "The altar of the dead",
         "demarrer": "Start the game", "avancer": "Advance time", "fouiller": "Scavenge", "explorer": "Explore", "installer": "Settle in",
         "construire": "Build", "reparer": "Repair", "voyager": "Travel", "demenager": "Move out", "assaut": "Assault", "ajuster": "Adjust stocks",
         "genererRecrue": "Roll a recruit", "recruter": "Recruit", "feter": "Celebrate", "demanderTest": "Ask for a test", "fabriquer": "Craft",

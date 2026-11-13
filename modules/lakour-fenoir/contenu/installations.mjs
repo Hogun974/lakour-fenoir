@@ -208,6 +208,12 @@ export const INSTALLATIONS = [
       { cout: { materiaux: 8, travail: 10 }, effets: { capacite: 8, moral: 1 } },
       { cout: { materiaux: 14, travail: 16 }, requiert: { savoirs: ["maconnerie"] }, effets: { capacite: 14, moral: 1 } }
     ] }),
+  // L'autel des morts (lot « fetes », 2026-11-13) : effets.autel, lu par le système (logique/releve.mjs : honorerAutel).
+  installation({ cle: "autel-des-morts", nom: "Autel des morts", categorie: "vie",
+    description: `Une étagère contre le mur le plus calme, une nappe propre, des noms écrits à la craie sur une ardoise ou gravés au couteau dans une planche, une bougie, une assiette. Les noms de ceux que le groupe a perdus. Chacun y vient comme il croit, ou sans croire : on s'y tient ensemble.`,
+    niveaux: [
+      { cout: { materiaux: 1, travail: 1 }, effets: { autel: true } }
+    ] }),
   installation({ cle: "cuisine-commune", nom: "Cuisine commune", categorie: "vie",
     description: `Un feu de bois sous un auvent, de grandes marmites, une table pour tout le monde. Un cari partagé tient un groupe ensemble mieux qu'un discours. La fumée, elle, monte haut.`,
     niveaux: [

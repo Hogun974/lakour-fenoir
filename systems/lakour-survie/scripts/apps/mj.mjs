@@ -1,6 +1,8 @@
 // La fenêtre du MJ (MJ humain, sans IA : le système se joue sans elle) : démarrer la partie, avancer le temps, faire agir le groupe
 // (fouiller, explorer, construire, réparer, voyager, déménager), un assaut, une recrue, fêter, demander un test à un joueur ;
 // les menaces du jour à résoudre ; et le MONDE RÉEL, au seul MJ actif monde ouvert (jamais ailleurs : c'est le secret).
+// Lot « fetes » (2026-11-13) : la lune et la clarté de la nuit ; fêter avec son choix, ses vœux, son cadeau, l'abri qui reçoit ;
+// aller à la fête des autres ; un vœu tenu ou rompu ; la relève à la mort d'un survivant de joueur ; l'autel des morts.
 // Chaque bouton appelle game.lakourSurvie : les gardes de l'API (MJ actif, monde ouvert) s'appliquent.
 import { ID, COMPETENCES, RESSOURCES, NATURE, DIFFICULTES, PRUDENCES, TRANSPORTS } from "../../logique/constantes.mjs";
 import * as L from "../../logique/index.mjs";
@@ -60,6 +62,13 @@ export function contexteMJ(onglet = "partie", resultat = null) {
   });
   const vehicules = [...new Set(membres.flatMap(a => [...a.items.contents].filter(i => i.type === "equipement" && i.system?.transport).map(i => i.system.cle)))];
   const fetes = api?.fetesDuJour?.() ?? [];
+  const q = etat.demarree ? api.quand() : null;
+  const tous = (game.actors?.contents ?? []).filter(a => a.type === "survivant");
+  const mortsDuGroupe = tous.filter(a => (etat.groupe?.membres ?? []).includes(a.id) && (a.system?.vivant === false || a.system?.livide));
+  const candidats = api?.candidatsReleve?.({}) ?? [];
+  const libelleCandidat = x => `${x.nom}${x.source === "pnj" ? ` (${t("LAKOUR_SURVIE.Releve.PnjLeger")})` : x.age ? ` (${t("LAKOUR_SURVIE.Releve.Ans", { n: x.age })})` : ""}${x.tache && x.tache !== "repos" ? ` — ${t(`LAKOUR_SURVIE.Taches.${x.tache}`)}` : ""}`;
+  const joueurs = (game.users?.contents ?? [...(game.users?.values?.() ?? [])]).filter(u => !u.isGM);
+  const morts = (etat.morts ?? []).map(m => ({ ...m, etatTexte: t(`LAKOUR_SURVIE.Autel.Etats.${m.repos ? "repos" : m.retrouve ? "deuil" : "perdu"}`) }));
   return {
     onglet, onglets: ONGLETS_MJ.map(o => ({ cle: o, libelle: t(`LAKOUR_SURVIE.MJ.Onglets.${o}`), actif: o === onglet })),
     actif, ouvert, demarree: Boolean(etat.demarree), bloque: Boolean(etat.demarree) && !ouvert,
@@ -81,6 +90,17 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     recettes: options(L.liste(c.recettes).map(r => [r.cle, r.nom]), ""),
     afflictions: options(L.liste(c.afflictions).map(a => [a.cle, a.nom]), ""),
     fetes: fetes.map(f => ({ cle: f.cle, nom: f.nom, coeur: f.coeur })),
+    toutesFetes: options([["", t("LAKOUR_SURVIE.MJ.FeteDuJour")], ...L.liste(c.fetes).map(f => [f.cle, f.nom])], ""),
+    optionsFete: options([["", "—"], ...[...new Set(L.liste(c.fetes).flatMap(f => L.optionsDeFete(f)))].map(o => [o, t(`LAKOUR_SURVIE.Fete.Options.${o}`)])], ""),
+    factions: options([["", t("LAKOUR_SURVIE.MJ.Aucune")], ...L.liste(c.factions).map(f => [f.cle, f.nom])], ""),
+    communautes: options([["", "—"], ...L.COMMUNAUTES.filter(x => x !== "tous").map(x => [x, t(`LAKOUR_SURVIE.Communautes.${x}`)])], ""),
+    lune: q?.lune ? { phase: t(`LAKOUR_SURVIE.Lune.Phases.${q.lune.phase}`), eclairee: Math.round(q.lune.eclairee * 100),
+      clarte: q.clarte === null || q.clarte === undefined ? "" : t(`LAKOUR_SURVIE.Lune.Clarte.${q.clarte}`), couvert: q.couvert, chaleur: q.chaleur,
+      signes: (q.signes ?? []).map(x => t(`LAKOUR_SURVIE.Annee.Signes.${x}`)).join(", "), dateLue: q.dateLue } : null,
+    mortsDuGroupe: options(mortsDuGroupe.map(a => [a.id, a.name]), ""),
+    candidats: options(candidats.map(x => [x.id, libelleCandidat(x)]), ""),
+    joueurs: options([["", "—"], ...joueurs.map(u => [u.id, u.name])], ""),
+    morts, mortsOptions: options(morts.map(m => [m.id, m.nom]), ""), deuil: morts.some(m => !m.repos),
     dateDepart: game.settings.get(ID, "dateDepart"),
     menaces: (monde?.menaces ?? []).map(m => ({ ...m, typeLibelle: t(`LAKOUR_SURVIE.Menaces.${m.type}`), texte: sansBalises(localiser(m)) })),
     paliers: [...(monde?.paliers ?? [])].reverse().slice(0, 6),
@@ -127,7 +147,8 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
     const nom = forme?.dataset.forme;
     const d = lireChamps(forme);
     const api = game.lakourSurvie;
-    const membres = Array.isArray(d.membres) ? d.membres : d.membres ? [d.membres] : [];
+    const liste = x => (Array.isArray(x) ? x : x ? [x] : []);
+    const membres = liste(d.membres);
     const appels = {
       demarrer: () => api.demarrer({ region: d.region, membres, dateDepart: d.dateDepart || null, graine: d.graine || "" }),
       avancer: () => api.avancer({ quarts: Number(d.quarts) || 1, raison: d.raison ?? "", repos: Boolean(d.repos) }),
@@ -142,7 +163,11 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       ajuster: () => api.ajuster({ stocks: Object.fromEntries(RESSOURCES.filter(r => Number(d[`stock.${r}`])).map(r => [r, Number(d[`stock.${r}`])])), raison: d.raison ?? "" }),
       genererRecrue: async () => { CACHE.recrue = await api.genererRecrue({ region: d.region || "" }); return CACHE.recrue; },
       recruter: async () => { const r = await api.recruter({ recrue: CACHE.recrue, parleurId: d.parleur, attitude: d.attitude || "neutre" }); if (r.reussite) CACHE.recrue = null; return r; },
-      feter: () => api.feter({ fete: d.fete ?? "" }),
+      feter: () => api.feter({ fete: d.fete ?? "", option: d.option ?? "", pour: liste(d.pour), avec: d.avec ?? "" }),
+      participer: () => api.participer({ fete: d.fete ?? "", communaute: d.communaute ?? "", faction: d.faction ?? "", membres }),
+      voeu: () => api.voeu({ acteurId: d.acteur, issue: d.issue || "tenu" }),
+      releve: () => api.releve({ mortId: d.mort, candidat: d.candidat ?? "", userId: d.joueur ?? "", action: d.action || "reprendre" }),
+      autel: () => api.autel({ action: d.action || "honorer", mort: d.mort ?? "", nom: d.nom ?? "" }),
       demanderTest: () => api.demanderTest({ acteurId: d.acteur, competence: d.competence, difficulte: d.difficulte, titre: d.titre ?? "" }),
       fabriquer: () => api.fabriquer({ recette: d.recette, acteurId: d.acteur || "", membres }),
       affliction: () => api.affliction({ acteurId: d.acteur, cle: d.affliction, action: d.action || "donner" }),

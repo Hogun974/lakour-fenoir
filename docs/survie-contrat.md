@@ -681,3 +681,33 @@ Fénoir : enfance, passé, traits, région, âge, proche perdu), en posant d'abo
 `histoire` des compagnons) : il en parle, s'en souvient, agit selon elle. Le résumé d'un personnage donné au MJ IA en cite
 une ligne. L'acteur garde l'uuid du journal (`flags.lakour-mj-ia.histoire`). Sans IA : le journal se crée avec ses quatre
 pages vides et des questions pour aider le joueur.
+
+## 11. Le temps de l'île et la mort (lot « fetes », ajout du 2026-11-13)
+
+Familles 1 et 6 du remue-méninges de Fénoir 3D. Chiffres et raisons : `docs/equilibre-fetes.md`. Rien de magique : tout agit par le
+moral, le bruit, la lumière, les stocks, l'hygiène, le sang-froid et les liens.
+
+- **Logique** (`systems/lakour-survie/logique/`) : `lune.mjs` (lune, clarté de la nuit 0 à 3, ciel couvert, effets de la nuit dehors,
+  chaleur, signes du paysage, date lue), `souvenirs.mjs` (souvenirs de fête, de vœu et d'autel ; deuil ; `espritDuJour` : le plafond du
+  moral), `fetes.mjs` (effet d'une fête : `effetDeFete`, coût, liens, `participer`), `releve.mjs` (relève, jeunes de 16 à 18 ans, morts,
+  repos, autel). `feter` (etat.mjs) applique l'effet d'une fête du contenu ; sans effet, celui d'avant (+1 moral, une ration).
+  `avancer` : les morts du temps qui passe s'inscrivent (`etat.morts`) avec un choc de −1 moral, le deuil et les souvenirs jouent sur
+  le plafond du moral (`effetJour({ esprit })`), la lueur s'ajoute à la visibilité (`bilanAbri` : `conditions.lueur`), l'hygiène
+  divise le risque des maladies (`conditionsVie.hygiene`). `fouiller`, `tirerRencontre`, `voyager` prennent une `clarte` facultative
+  (sans elle, le tirage d'avant) ; `voyager` des `porteurs` ; `travailleursParTache` le jour (l'âge des jeunes).
+- **Contenu** : chaque fête du registre porte `effet` (forme de `logique/fetes.mjs`), `gain` et `cout` (textes), `communautes` ;
+  quatre fêtes s'ajoutent (`ramadan`, `aid-el-kebir`, `nouvel-an-tamoul`, `marche-sur-le-feu`, sans image pour l'instant :
+  `image: ""`) ; installation `autel-des-morts` (`effets.autel`) ; journaux « Les fêtes de Fénoir » (gain et coût, la fête des
+  autres), « Le temps de l'île » (joueurs), pages « La mort, la relève et l'autel » (guide du joueur) et « Le temps de l'île, les
+  fêtes et les morts » (guide du MJ).
+- **Survivant** : `ageJour` (jour de jeu où l'âge a été noté ; 0 par défaut).
+- **État public** (`lakour-survie.partie`, tous champs facultatifs) : `morts: [{ id, nom, quart, region, retrouve, repos, livide }]`,
+  `souvenirs`, `liens: { factions, communautes, renom }`, `participations`, `releves`, `autel: { honoreLe }`, `ciel: { jour, region,
+  soir, nuit }` (couvert), `calendrier: { exacte }` (le groupe sait-il la date ?).
+- **API** : `quand()` rend en plus `lune`, `clarte`, `couvert`, `chaleur`, `signes`, `dateExacte`, `dateLue` ; `test({ dehors })` ;
+  `feter({ fete, option, pour, avec })` ; `participer({ fete, communaute, faction, membres })` (crochet `lakourSurvie.participation`) ;
+  `voeu({ acteurId, issue })` ; `candidatsReleve({ mortId })` ; `releve({ mortId, candidat, userId, action })` ; `morts()` ;
+  `autel({ action, mort, nom })` ; `recruter({ …, faction })` ; `assaut({ …, horde })` (sang-froid).
+- **Moteur** (`lakour-mj-ia`, branche du lot) : fêtes « sur demande » au socle (seul un monde qui les décline les voit) ; outils
+  `survie_feter` (choix, vœux, cadeau, abri voisin ; vœu tenu ou rompu), `survie_participer`, `survie_releve` (avec `confier`),
+  `survie_autel` ; l'état du jeu dit la lune, la date lue, l'autel, les souvenirs et les liens.

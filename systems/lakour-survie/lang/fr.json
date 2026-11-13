@@ -17,6 +17,14 @@
   },
   "LAKOUR_SURVIE": {
     "Titre": "Fénoir",
+    "Participation": { "Carte": "À la fête des autres : {fete}, chez {chez}", "Effet": "+1 de moral à ceux qui y vont ; un lien de plus avec ceux qui reçoivent." },
+    "Releve": { "Carte": "{nom} prend la relève de {mort}", "Tache": "{nom} ne fait plus sa tâche pour le groupe ({tache}) : à reprendre ou à confier.", "Jeune": "{nom} a moins de 18 ans : il porte moins, travaille moins vite, ne peut pas être chef.", "Titre": "La relève", "Mort": "Le survivant mort", "Candidat": "Qui reprendre", "Tirage": "Nouveau tirage", "Joueur": "Le joueur", "Aucun": "Personne à reprendre : il reste le nouveau tirage.", "Ans": "{n} ans", "PnjLeger": "PNJ du groupe" },
+    "Autel": { "Carte": "L'autel des morts est honoré", "Effet": "+1 de moral à chacun ; le moral du groupe tient mieux pendant sept jours.", "Repos": "Le repos pour {nom}", "ReposEffet": "Son deuil ne pèse plus sur le groupe.", "Titre": "L'autel des morts", "Vide": "Aucun nom sur l'autel.", "Honorer": "Honorer", "DonnerRepos": "Donner le repos", "Retrouver": "Retrouvé", "Inscrire": "Inscrire un nom", "Nom": "Nom", "Etats": {"deuil":"en deuil","repos":"repose","perdu":"pas retrouvé"}, "Deuil": "Deuil : le moral remonte un cran moins haut tant qu'un mort n'a pas reçu le repos." },
+    "Communautes": { "tous": "tout le monde", "cafres": "Cafres", "yabs": "Yabs", "zoreils": "Zoreils", "malbars": "Malbars", "zarabes": "Z'arabes", "chinois": "Chinois", "malgaches": "Malgaches", "comoriens": "Comoriens et Mahorais" },
+    "Lune": { "Titre": "Lune", "Phases": {"nouvelle":"nouvelle lune","premier-croissant":"premier croissant","premier-quartier":"premier quartier","gibbeuse-croissante":"lune gibbeuse croissante","pleine":"pleine lune","gibbeuse-decroissante":"lune gibbeuse décroissante","dernier-quartier":"dernier quartier","dernier-croissant":"dernier croissant"}, "Clarte": {"0":"nuit noire","1":"nuit sombre","2":"nuit claire","3":"pleine lumière"}, "Couvert": "ciel couvert", "Chaleur": "chaleur de l'été austral" },
+    "Annee": { "Mois": {"1":"janvier","2":"février","3":"mars","4":"avril","5":"mai","6":"juin","7":"juillet","8":"août","9":"septembre","10":"octobre","11":"novembre","12":"décembre"}, "Tiers": {"debut":"début {mois}","mi":"mi-{mois}","fin":"fin {mois}"}, "Signes": {"flamboyants":"les flamboyants en fleur","letchis":"les letchis","mangues":"les mangues","longanis":"les longanis","chaleur":"la chaleur des Bas","cyclones":"le temps des cyclones","goyaviers":"les goyaviers","brume-froide":"la brume froide des Hauts","canne-coupee":"la coupe de la canne","jacarandas":"les jacarandas en fleur"}, "DateLue": "Date lue dans la nature : {date}" },
+    "Souvenirs": { "Titre": "Ce qui soutient le groupe", "soutien": "souvenir de fête", "lueur": "lueur de l'abri", "hygiene": "abri propre", "sang-froid": "sang-froid", "voeu": "vœu", "autel": "l'autel honoré", "Jusqua": "jusqu'au jour {n}", "Tenu": "tant qu'il tient" },
+    "Liens": { "Titre": "Liens tissés", "Renom": "Renom de l'abri : {n}" },
     "Annuler": "Annuler",
     "Competences": {
       "endurance": "Endurance", "combat": "Combat", "tir": "Tir", "discretion": "Discrétion", "vigilance": "Vigilance",
@@ -78,6 +86,7 @@
 
     "Creatures": { "livide": "Livide", "chien-errant": "chien errant" },
     "Faits": {
+      "fete-manque": "il manque {manque}", "participation-sans-hote": "chez qui ?", "participation-sans-personne": "personne n'y va", "participation-deja": "le groupe est déjà allé à cette fête chez eux cette année", "releve-sans-candidat": "personne à reprendre", "releve-sans-fiche": "il faut sa fiche", "releve-pas-du-groupe": "pas du groupe", "mort-inconnu": "mort inconnu : {nom}", "mort-deja-repos": "{nom} repose déjà", "mort-pas-retrouve": "il faut d'abord retrouver {nom}", "autel-absent": "il faut un autel des morts à l'abri", "autel-vide": "aucun nom sur l'autel", "autel-trop-tot": "l'autel a été honoré il y a moins d'une semaine (encore {n} jour(s))",
       "reseau-electricite": "{region} : l'électricité est coupée.", "reseau-eau": "{region} : l'eau ne coule plus au robinet.",
       "reseau-carburant": "{region} : plus une goutte de carburant à la pompe.", "reseau-telephone": "{region} : le téléphone ne passe plus.",
       "cyclone-pre-alerte": "Pré-alerte cyclonique : {cyclone} approche, arrivée dans deux jours.", "cyclone-orange": "Alerte orange : le cyclone {cyclone} arrive demain.",
@@ -135,6 +144,7 @@
     },
 
     "Erreurs": {
+      "FactionInconnue": "Faction inconnue : {faction}.", "CommunauteInconnue": "Communauté inconnue : {communaute}.", "Participation": "Pas de fête chez les autres : {raison}.", "SansVoeu": "{nom} n'a pas de vœu en cours.", "PasMort": "{nom} est vivant : pas de relève.", "PasCandidat": "« {nom} » ne peut pas prendre la relève (un membre vivant du groupe, de {age} ans au moins, qui n'est pas déjà le survivant d'un joueur).", "Offrande": "Il faut une ration à offrir.", "Autel": "L'autel : {raison}.",
       "GraineCourte": "Graine trop courte : elle se devinerait. Laissez le champ vide (graine sûre tirée au hasard) ou donnez-en une d'au moins 32 caractères.",
       "TropDePropositions": "Trop de propositions d'un coup : attendez une minute.",
       "ChampReserve": "Seul le MJ change cela : passez par la fiche ou par le MJ (tâche, test, création).",
@@ -261,6 +271,7 @@
       "Morsure": "{nom} est mordu : test de soins EXTRÊME dans le quart (lavage, cautérisation…), DIFFICILE avec un médicament (une tisane de zerbaz en est un), une décoction de zerbaz (1 plante), une trousse de secours ou une infirmerie (médicament et décoction : +1 dé chacun), sinon le Gris."
     },
     "Journal": {
+      "Repos": "Le repos est donné à : {noms}.", "Attache": "Le cadeau attache {noms} au groupe.", "Voeu": "Vœu fait : {noms}.", "VoeuTenu": "{nom} a tenu son vœu.", "VoeuRompu": "{nom} a rompu son vœu.", "Participe": "{noms} vont à la fête ({fete}) chez {chez}.", "Releve": "{nom} prend la relève de {mort}.", "ReleveTache": "{nom} prend la relève de {mort} ; il ne fait plus sa tâche pour le groupe ({tache}).", "ReleveTirage": "Le joueur de {mort} tire un nouveau survivant.", "Inscrit": "{nom} est inscrit sur l'autel.", "Retrouve": "Le corps de {nom} est retrouvé.", "Autel": "Le groupe honore l'autel des morts : {noms}.",
       "Debut": "Jour zéro, {date} : le groupe est à {region}.", "Installe": "Le groupe s'installe à {site} ({region}).", "Reprend": "Le groupe reprend l'abri de {site} ({region}).",
       "Quitte": "Le groupe quitte {site}.", "Chantier": "Chantier ouvert : {installation} (niveau {niveau}).", "Termine": "{installation} est en service (niveau {niveau}).",
       "Repare": "{installation} : {n} point(s) réparé(s).", "RepareAbri": "L'abri : {n} dégât(s) réparé(s).", "Ajustement": "Ajustement",
@@ -271,6 +282,7 @@
       "RecrueRefuse": "{nom} refuse de suivre le groupe.", "Rejoint": "{nom} rejoint le groupe."
     },
     "Fete": {
+      "Refugies": "La nouvelle de la part donnée court sur les routes : des réfugiés viendront.", "Gain": "Ce qu'elle apporte : {texte}", "Cout": "Ce qu'elle coûte : {texte}", "Options": {"musique":"En musique.","silence":"En silence."}, "Reposes": "Ils reposent : {noms}.", "Restent": "Pas encore retrouvés : {noms}.",
       "Alerte": "Fête du jour (calendrier de Fénoir) : {nom}. {consigne}",
       "Carte": "Fête au camp : {fete}", "Effet": "Une ration de plus pour chacun ; +1 moral pour tous.",
       "Texte": "Le groupe fête {fete} : +1 moral pour chacun, une ration de plus par personne (reste {nourriture} nourriture)."
@@ -281,7 +293,7 @@
       "Avis": "Fénoir (MJ) : l'abri franchit le palier de visibilité « {palier} ». Voir la fenêtre du MJ, onglet Menaces.",
       "SansTable": "La table de ce palier est introuvable (compendium lakour-fenoir.tables)."
     },
-    "Signal": { "Test": "Le MJ attend un test de {nom}.", "Jet": "On attend un test de ton survivant." },
+    "Signal": { "Releve": "{nom} est mort : reprends un survivant du groupe, ou tire le suivant.", "Test": "Le MJ attend un test de {nom}.", "Jet": "On attend un test de ton survivant." },
     "Infobulle": { "Fatigue": "Fatigue {n}", "Moral": "Moral {n}", "Infection": "Le Gris (stade {n})", "Stocks": "Eau {eau} j · nourriture {nourriture} j" },
     "Chroniques": {
       "Titre": "Chroniques de Fénoir", "Chapitre": "Chapitre {n} — {nom}", "EnCours": "Du jour {debut} à aujourd'hui (jour {fin}) : {jours} jour(s).",
@@ -317,9 +329,11 @@
       "LeMeilleur": "Le plus habile", "Fabriquer": "Fabriquer", "Proposer": "Proposer au MJ", "Carte": "Atelier : {recette}"
     },
     "MJ": {
+      "FeteDuJour": "La fête du jour", "Option": "Choix", "Pour": "Pour qui (vœu, cadeau)", "Avec": "Avec qui (abri voisin, faction)", "Communaute": "Communauté qui reçoit", "Faction": "Faction qui reçoit", "Issue": "Issue", "Tenu": "Tenu", "Rompu": "Rompu", "Mort": "Le mort", "Action": "Action", "Aucune": "—", "Lune": "Lune",
       "Titre": "Fénoir — fenêtre du MJ", "Titre2": "Titre",
       "Onglets": { "partie": "Partie et temps", "actions": "Actions du groupe", "groupe": "Groupe et recrues", "menaces": "Menaces", "monde": "Monde réel" },
       "Formes": {
+        "participer": "Aller à la fête des autres", "voeu": "Un vœu tenu ou rompu", "releve": "La relève", "autel": "L'autel des morts",
         "demarrer": "Démarrer la partie", "avancer": "Avancer le temps", "fouiller": "Fouiller", "explorer": "Explorer", "installer": "S'installer",
         "construire": "Construire", "reparer": "Réparer", "voyager": "Voyager", "demenager": "Déménager", "assaut": "Assaut", "ajuster": "Ajuster les stocks",
         "genererRecrue": "Tirer une recrue", "recruter": "Recruter", "feter": "Fêter", "demanderTest": "Demander un test", "fabriquer": "Fabriquer",

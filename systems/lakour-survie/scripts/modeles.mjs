@@ -45,6 +45,7 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
       enseigne: new fields.SchemaField({ eleve: texte(), competence: texte() }),
       histoire: new fields.SchemaField({ journal: texte() }),
       age: entier(30, 0, 120),
+      ageJour: relatif(0), // le jour de jeu où l'âge a été noté (un an de plus tous les 365 jours : logique/releve.mjs, lot « fetes »)
       lien: texte(),
       vivant: bool(true),
       livide: bool(false),

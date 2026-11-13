@@ -46,7 +46,7 @@
   ],
   "documentTypes": {
     "Actor": {
-      "survivant": { "htmlFields": ["notes"], "gmOnlyFields": ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "enfance", "passe", "genre", "passions", "traits", "incapacites", "savoirs", "statut", "tache", "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "histoire", "age", "lien", "vivant", "livide", "charge"] },
+      "survivant": { "htmlFields": ["notes"], "gmOnlyFields": ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "enfance", "passe", "genre", "passions", "traits", "incapacites", "savoirs", "statut", "tache", "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "histoire", "age", "ageJour", "lien", "vivant", "livide", "charge"] },
       "abri": { "htmlFields": ["notes"], "gmOnlyFields": ["site", "region", "installeLe", "abandonneLe", "stocks", "nature", "sol", "bruit", "degats", "reparation", "reliquats", "notes"] }
     },
     "Item": {

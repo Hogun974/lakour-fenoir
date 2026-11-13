@@ -171,6 +171,45 @@ test("fenêtres : bandeau, tableau de bord, fiches, atelier, fenêtre du MJ ; ri
   assert.ok(contenuInfobulle(abri).ligne);
 });
 
+test("lot « fetes » : la lune au bandeau, la date lue chez le joueur ; fenêtre du MJ (fêter, la fête des autres, relève, autel) ; le tableau dit l'autel et ce qui soutient le groupe", async () => {
+  const M = await monde(M0);
+  const a = await survivantTire(M, { userId: "u1" });
+  const c = await survivantTire(M, { statut: "compagnon", verrous: { age: 35 } });
+  await M.api.demarrer({ region: "saint-paul", membres: [a.id, c.id], graine: "GRAINE-INTERFACE-FETES", essai: true, dateDepart: "2026-12-20" });
+  await M.api.installer({ site: "college-hauts-saint-paul" });
+  await M.api.ajuster({ stocks: { nourriture: 40 } });
+  await M.api.avancer({ quarts: 3 });   // la nuit
+  const b = await commeJoueur("u1", () => contexteBandeau());
+  assert.ok(b.nuit && [0, 1, 2, 3].includes(b.nuit.niveau) && b.nuit.texte, "la clarté de la nuit");
+  assert.ok(b.lune && b.signes.includes("letchis"));
+  // Fenêtre du MJ.
+  const mj = contexteMJ("partie");
+  assert.ok(mj.lune.phase && mj.lune.clarte);
+  assert.deepEqual(mj.optionsFete.map(o => o.valeur), ["", "musique", "silence"]);
+  assert.equal(mj.toutesFetes.length, DONNEES.fetes.length + 1);
+  assert.equal(mj.factions.length, DONNEES.factions.length + 1);
+  const g = contexteMJ("groupe");
+  assert.equal(g.communautes.length, 9);
+  assert.ok(g.candidats.some(o => o.valeur === c.id), "la compagne peut prendre la relève");
+  assert.deepEqual(g.mortsDuGroupe, []);
+  // Une fête : le tableau dit ce qui soutient le groupe ; une mort : l'autel.
+  await M.api.feter({ fete: "liberte" });
+  const tg = await commeJoueur("u1", () => contexteTableau("groupe"));
+  assert.ok(tg.souvenirs.length >= 1);
+  await a.update({ system: { blessures: 4 } });
+  await M.api.avancer({ quarts: 1 });
+  const t2 = await commeJoueur("u1", () => contexteTableau("groupe"));
+  assert.deepEqual(t2.morts.map(m => m.nom), [a.name]);
+  const g2 = contexteMJ("groupe");
+  assert.deepEqual(g2.mortsDuGroupe.map(o => o.valeur), [a.id]);
+  assert.equal(g2.deuil, true);
+  // Bien plus tard, sans téléphone ni radio : le joueur lit la date dans la nature ; le MJ voit la vraie.
+  await M.api.avancer({ quarts: 4 * 45 });
+  const tard = await commeJoueur("u1", () => contexteBandeau());
+  assert.equal(tard.date, tard.dateLue);
+  assert.notEqual(contexteBandeau().date, tard.dateLue, "le MJ voit la date exacte");
+});
+
 test("création : tirer, verrouiller, choisir ; le budget ; la demande part au MJ actif", async () => {
   const M = await monde(M0);
   const etat = nouvelleCreation();

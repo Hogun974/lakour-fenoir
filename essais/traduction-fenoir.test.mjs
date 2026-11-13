@@ -113,7 +113,8 @@ test("registre anglais : mêmes clés et mêmes nombres que le français, textes
   assert.equal(registreEn.installations.find(i => i.cle === "citerne-de-pluie").nom, anglais.find(d => d.cle === "installations:citerne-de-pluie").doc.name, "même nom dans le compendium et le registre");
   assert.ok(registreEn.sites.every(s => s.atouts.every(a => a !== registreFr.sites.find(x => x.cle === s.cle).atouts[0] || /^[A-Z]/.test(a))));
   for (const f of registreEn.fetes) {
-    assert.equal(f.image, `modules/${MODULE_EN}/assets/fetes/${f.cle}.jpg`);
+    assert.equal(f.image, registreFr.fetes.find(x => x.cle === f.cle).image ? `modules/${MODULE_EN}/assets/fetes/${f.cle}.jpg` : "");
+    assert.ok(f.gain && f.cout && f.gain !== registreFr.fetes.find(x => x.cle === f.cle).gain, `fête ${f.cle} : gain et coût traduits`);
     assert.ok(f.nom.length <= 80 && f.description.length <= 600 && f.consigne.length <= 300, `fête ${f.cle} : textes trop longs`);
     assert.ok(!f.periode.includes("-"), `fête ${f.cle} : période avec un trait d'union`);
   }

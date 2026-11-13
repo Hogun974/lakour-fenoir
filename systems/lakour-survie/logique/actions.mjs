@@ -49,6 +49,7 @@ import { normaliserStocks, ajouterStocks, plafonner } from "./ressources.mjs";
 import { abandonnerAbri, reprendreAbri } from "./monde.mjs";
 import { phaseDuJour, momentDe } from "./temps.mjs";
 import { message, avecPreposition } from "./textes.mjs";
+import { facteurRencontreNuit, facteurDangerNuit, facteurButinNuit } from "./lune.mjs";
 
 export const REGLES_ACTIONS = {
   rencontre: {
@@ -72,18 +73,19 @@ export const REGLES_ACTIONS = {
 // contexte : "fouille" | "exploration" | "route". -> null | { type, nombre, faction, attitude, danger, region, texte, cle, params }
 // (texte en français, cle/params pour la traduction : textes.mjs ; `creature` des params est vide pour la créature par défaut,
 // que la couche Foundry nomme d'après `creatureCle`).
-export function tirerRencontre(monde, contenu, hasard, { region, jour = monde?.jour ?? 0, moment = "apres-midi", prudence = "normal", contexte = "fouille", bruit = 0 } = {}) {
+// clarte (lot « fetes », lune.mjs) : la clarté de la nuit (0 à 3) ; absente ou null (le jour, ou sans lune connue) : rien ne change.
+export function tirerRencontre(monde, contenu, hasard, { region, jour = monde?.jour ?? 0, moment = "apres-midi", prudence = "normal", contexte = "fouille", bruit = 0, clarte = null } = {}) {
   const R = REGLES_ACTIONS.rencontre;
   const reg = monde?.regions?.[region];
   if (!reg) return null;
   const phase = phaseDuJour(jour);
   const inf = Number(reg.infestation) || 0;
-  const p = Math.min(R.max, ((R.base[contexte] ?? R.base.fouille) + R.parInfestation * inf) * (R.moment[moment] ?? 1) * (R.prudence[prudence] ?? 1) * (R.phase[phase] ?? 1) * (1 + 0.1 * Math.max(0, Number(bruit) || 0)));
+  const p = Math.min(R.max, ((R.base[contexte] ?? R.base.fouille) + R.parInfestation * inf) * (R.moment[moment] ?? 1) * (R.prudence[prudence] ?? 1) * (R.phase[phase] ?? 1) * (1 + 0.1 * Math.max(0, Number(bruit) || 0)) * facteurRencontreNuit(clarte));
   if (!chance(p, hasard)) return null;
   const def = regionDe(contenu, region);
   const forceFactions = Object.values(reg.factions ?? {}).reduce((s, x) => s + x, 0);
   const humains = forceFactions + (Number(def?.population) || 0) * (CLES_PHASES.indexOf(phase) >= 3 ? 0.2 : 0.1);
-  const type = tirerPoids([["livides", 0.2 + 2 * inf], ["humains", humains], ["animaux", CLES_PHASES.indexOf(phase) >= 1 ? 0.5 : 0], ["danger", contexte === "route" ? 0.8 : 0.4]], hasard);
+  const type = tirerPoids([["livides", 0.2 + 2 * inf], ["humains", humains], ["animaux", CLES_PHASES.indexOf(phase) >= 1 ? 0.5 : 0], ["danger", (contexte === "route" ? 0.8 : 0.4) * facteurDangerNuit(clarte)]], hasard);
   const nom = def?.nom ?? region;
   if (type === "livides") {
     const nombre = Math.max(1, Math.round(inf * (0.5 + hasard())) + (prudence === "rapide" ? 1 : 0));
@@ -152,7 +154,7 @@ export function explorer(monde, contenu, hasard, { region, jour = monde?.jour ??
 //      rencontre, bruit, monde, abri, renseignements, faits, fouille: Boolean (compte pour l'autonomie) }
 export const fouilleDesAlentours = cible => NATURE.includes(cible) || cible === "plantes";
 export function fouiller(monde, contenu, hasard, { region, site = null, cible = null, membres = 1, quarts = 1, prudence = "normal", jour = monde?.jour ?? 0,
-  moment = "apres-midi", abri = null, renseignements = {}, savoirs = [] } = {}) {
+  moment = "apres-midi", abri = null, renseignements = {}, savoirs = [], clarte = null } = {}) {
   const F = REGLES_ACTIONS.fouille;
   const P = REGLES_ACTIONS.plantes;
   const p = F.fraction[prudence] ? prudence : "normal";
@@ -184,7 +186,9 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
   } else if (nouveauMonde.regions[region]) {
     const pillage = nouveauMonde.regions[region].pillage;
     const res = cible && RESSOURCES_PILLABLES.includes(cible) ? [cible] : RESSOURCES_PILLABLES;
-    const facteur = F.fraction[p] * n * (cible ? F.cible : 1);
+    // Une nuit noire : personne d'autre ne sort, on trouve ce que les autres n'ont pas pris (lune.mjs, NUIT.butin).
+    const nuit = facteurButinNuit(clarte);
+    const facteur = F.fraction[p] * n * (cible ? F.cible : 1) * nuit;
     const parSite = (site ? F.sites[siteDe(contenu, site)?.type] : null) ?? {};
     for (const r of res) {
       const q = Number(pillage[r]) || 0;
@@ -192,7 +196,7 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
       if (pris > 0) butin[r] = pris;
     }
     // Plafond de ce qu'on rapporte : on rend d'abord ce qu'il y a le plus.
-    const plafond = F.plafond[p] * n;
+    const plafond = Math.round(F.plafond[p] * n * nuit);
     let total = Object.values(butin).reduce((s, x) => s + x, 0);
     while (total > plafond) {
       const [r] = Object.entries(butin).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0];
@@ -228,7 +232,7 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
     else nouveauMonde.regions[region].nature = source;
     if (glane) butin.nourriture = (butin.nourriture ?? 0) + glane;
   }
-  const rencontre = tirerRencontre(nouveauMonde, contenu, hasard, { region, jour, moment, prudence: p, contexte: "fouille" });
+  const rencontre = tirerRencontre(nouveauMonde, contenu, hasard, { region, jour, moment, prudence: p, contexte: "fouille", clarte });
   const bruit = fouilleDesAlentours(cible) ? 0 : F.bruit[p];
   const lu = Object.entries(butin).map(([r, q]) => `${q} ${r}`).join(", ") || "rien";
   const nomSite = site ? siteDe(contenu, site)?.nom ?? site : "";
@@ -328,12 +332,13 @@ export function chargeMax({ transport = "pied", membres = 1, vehicules = 1 } = {
 // -> { possible, raison, motif: { cle, params, texte } | null, chemin, etapes, quarts, km, carburant, bruit, rencontres, rencontre,
 //      renseignements, faits, cheminConnu }
 export function voyager(monde, contenu, hasard, { de, vers, transport = "pied", membres = 1, vehicules = 1, charge = 0, quart = 0, jour = Math.floor(quart / 4),
-  renseignements = {}, carburant = null } = {}) {
+  renseignements = {}, carburant = null, porteurs = null, clarte = null } = {}) {
   const connu = cheminConnu(contenu, renseignements, de, vers, transport);
   const refus = (raison, cle, params = {}) => ({ possible: false, raison, motif: message(cle, params, raison), chemin: [], etapes: [], quarts: 0, km: 0, carburant: 0,
     rencontres: [], rencontre: null, renseignements, faits: [], cheminConnu: connu });
   if (de === vers) return refus("déjà sur place", "voyage-deja-sur-place");
-  const max = chargeMax({ transport, membres, vehicules });
+  // porteurs (lot « fetes ») : les bras qui portent (un jeune de 16 à 18 ans porte 2/3 d'un adulte : releve.mjs) ; défaut : membres.
+  const max = chargeMax({ transport, membres: porteurs ?? membres, vehicules });
   if (Number(charge) > max) return refus(`trop chargé : ${charge} unités pour ${max} au plus`, "voyage-trop-charge", { charge, max });
   const c = cheminReel(monde, contenu, de, vers, transport);
   const nomTransport = estVehicule(transport) ? transport.nom ?? transport.cle : transport;
@@ -344,7 +349,8 @@ export function voyager(monde, contenu, hasard, { de, vers, transport = "pied", 
   const rencontres = [];
   let r = renseignements, q = quart;
   for (const e of c.etapes) {
-    const x = tirerRencontre(monde, contenu, hasard, { region: e.vers, jour, moment: momentDe(q), contexte: "route", bruit });
+    const x = tirerRencontre(monde, contenu, hasard, { region: e.vers, jour, moment: momentDe(q), contexte: "route", bruit,
+      clarte: typeof clarte === "function" ? clarte(q, e.vers) : clarte });
     if (x) rencontres.push({ ...x, etape: e });
     q += e.quarts;
     r = observer(r, monde, contenu, e.vers, jour, "vu");
