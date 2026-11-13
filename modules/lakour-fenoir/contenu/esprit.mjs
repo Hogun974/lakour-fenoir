@@ -117,14 +117,14 @@ Tous les deux jours où ce qui le nourrit arrive, son moral remonte d'un cran (s
 **La religion, ou l'ancrage.** Elle est tirée avec le reste du survivant, et vous pouvez la changer avant de valider : une religion de l'île, « aucune » ou « plusieurs à la fois ». Le non-croyant a son **ancrage** (une photo, un carnet, une routine, le sport…), au même effet.
 
 - **Pratiquant** : il gagne plus (son moral peut monter d'un cran plus haut), mais il tient ses observances. Trois jours sans pouvoir les tenir (sur la route, sans un coreligionnaire pour prier avec lui ; l'objet de son ancrage perdu), il se sent en faute : −1 moral, et son plafond baisse d'un cran jusqu'à ce qu'il les reprenne.
-- **Non-pratiquant** : il gagne peu et ne risque rien : une fois par semaine, quand son moral tombe à 1, il se raccroche à ce qui le fait tenir (+1).
+- **Non-pratiquant** : il gagne peu et ne risque rien : une fois toutes les deux semaines, quand son moral touche le fond (0), il se raccroche à ce qui le fait tenir (+1).
 - Aux fêtes de sa religion, le pratiquant gagne 1 moral de plus que les autres.
 
 **Les autres.** L'**entente** du groupe (de −3 à +3) compte : bonne (+2 ou plus), le moral de chacun peut monter un cran plus haut ; mauvaise (−2 ou moins), un cran plus bas. Seul, on ne profite de rien.
 
 **La nuit.** Plus le moral est bas, plus la nuit ajoute de faux bruits ; la présence des autres les fait taire. Celui qui en entend dort mal (+1 fatigue).
 
-**Celui qui lâche.** Certains ne tiennent pas. Ils donnent des signes avant : ils mangent moins (une demi-ration), parlent moins (−1 dé en parole), donnent leurs affaires. Le groupe les retient par sa présence, pas par un bouton : à deux autres au moins autour de lui, avec une entente qui n'est pas mauvaise, il ne s'enfonce pas. Sinon, un matin, un compagnon ou un PNJ n'est plus là. Un personnage de joueur ne part jamais tout seul : c'est à vous et au MJ.
+**Celui qui lâche.** Certains ne tiennent pas. Ils donnent des signes avant : ils mangent moins (le repas ne leur rend plus de moral), parlent moins (−1 dé en parole), donnent leurs affaires. Le groupe les retient par sa présence, pas par un bouton : à deux autres au moins autour de lui, avec une entente qui n'est pas mauvaise, il ne s'enfonce pas. Sinon, un matin, un compagnon ou un PNJ n'est plus là. Un personnage de joueur ne part jamais tout seul : c'est à vous et au MJ.
 
 **La chance.** Il arrive qu'un survivant ait de la chance, un dé de plus au moment où ça compte. Lui sait peut-être pourquoi. Le jeu ne le dit pas.` },
   { cle: "religions", titre: "Religions et ancrages", texte: `Les religions de l'île, et ce que tient un pratiquant :

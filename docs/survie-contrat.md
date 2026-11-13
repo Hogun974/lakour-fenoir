@@ -235,7 +235,7 @@ pure, déterministe pour une graine) :
 - **Pillage** : chaque jour, les autres survivants prennent une part des réserves (selon population et phase) ; les
   réserves ne reviennent jamais (sauf `nature`, qui se régénère selon la saison).
 - **Glanage de passage** (2026-11-05) : toute fouille d'une région (pillage, ciblée ou non) ramasse aussi
-  `ceil(0,06 × membres × quarts × prudence × (cueillette + pêche + gibier par jour))` de nourriture, pris dans la `nature`
+  `ceil(0,055 × membres × quarts × prudence × (cueillette + pêche + gibier par jour))` (0,06 avant le rééquilibrage du 2026-11-13) de nourriture, pris dans la `nature`
   des alentours de l'abri (si c'est sa région) ou de la région (`fouiller` rend `glane`, compris dans `butin`). Ce qui est
   glané ne revient qu'à la régénération de la nature : une région où personne n'a glané depuis longtemps est pleine, celle
   qu'on vient de vider ne rend presque plus rien ; c'est ce qui se renouvelle pour qui bouge. En quittant un abri

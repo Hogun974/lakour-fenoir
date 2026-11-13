@@ -116,15 +116,18 @@ test("observances : à l'abri elles tiennent ; trois jours sur la route sans cor
   assert.equal(np.moral, 4);
 });
 
-test("réconfort du non-pratiquant : une fois par semaine, quand le moral tombe à 1, il se raccroche (+1)", () => {
-  let s = esprit({ pratique: false, moral: 1 });
+test("réconfort du non-pratiquant : une fois toutes les deux semaines, quand le moral touche le fond (0), il se raccroche (+1)", () => {
+  // Rééquilibrage du 2026-11-13 (docs/equilibre-moral.md § 7) : tous les 14 jours (7 avant), à moral 0 (1 avant).
+  assert.deepEqual([L.REGLES_ESPRIT.foi.reconfortTous, L.REGLES_ESPRIT.foi.reconfortSeuil], [14, 0]);
+  let s = esprit({ pratique: false, moral: 0 });
   const r1 = L.journeeEsprit(s, C, { jour: 10, aLAbri: true, nourritures: {}, plafond: 4 });
-  assert.equal(r1.system.moral, 2);
+  assert.equal(r1.system.moral, 1);
   assert.ok(r1.evenements.some(e => e.cle === "reconfort"));
-  s = { ...r1.system, moral: 1 };
-  assert.equal(L.journeeEsprit(s, C, { jour: 14, aLAbri: true, nourritures: {}, plafond: 4 }).system.moral, 1, "pas avant sept jours");
-  assert.equal(L.journeeEsprit(s, C, { jour: 17, aLAbri: true, nourritures: {}, plafond: 4 }).system.moral, 2);
-  assert.equal(L.journeeEsprit(esprit({ religion: "aucune", moral: 1, pratique: false }), C, { jour: 1, nourritures: {}, plafond: 4 }).system.moral, 1, "sans foi ni ancrage, rien");
+  assert.equal(L.journeeEsprit({ ...esprit({ pratique: false }), moral: 1 }, C, { jour: 10, aLAbri: true, nourritures: {}, plafond: 4 }).system.moral, 1, "à 1, pas encore");
+  s = { ...r1.system, moral: 0 };
+  assert.equal(L.journeeEsprit(s, C, { jour: 23, aLAbri: true, nourritures: {}, plafond: 4 }).system.moral, 0, "pas avant quatorze jours");
+  assert.equal(L.journeeEsprit(s, C, { jour: 24, aLAbri: true, nourritures: {}, plafond: 4 }).system.moral, 1);
+  assert.equal(L.journeeEsprit(esprit({ religion: "aucune", moral: 0, pratique: false }), C, { jour: 1, nourritures: {}, plafond: 4 }).system.moral, 0, "sans foi ni ancrage, rien");
 });
 
 test("le regard : ce qui le nourrit (endurer, bâtir et accueillir, petits plaisirs) ; il change après deux semaines sans", () => {
@@ -155,14 +158,18 @@ test("le regard : ce qui le nourrit (endurer, bâtir et accueillir, petits plais
   assert.equal(v.regard, "vivre");
 });
 
-test("celui qui lâche : signes à 2, 4, 6 jours au fond ; retenu par la présence ; un compagnon part à 8, un joueur jamais", () => {
+test("celui qui lâche : signes à 2, 4, 6 jours au fond (moral 0) ; retenu par la présence ; un compagnon part à 8, un joueur jamais", () => {
   const fond = (s, presents, entente = 0, jours = 1, depuis = 1) => {
     const evts = [];
-    for (let j = depuis; j < depuis + jours; j++) { const r = L.journeeEsprit({ ...s, moral: 1 }, C, { jour: j, presents, entente, nourritures: {}, plafond: 3 }); s = r.system; evts.push(...r.evenements.map(e => e.cle)); }
+    for (let j = depuis; j < depuis + jours; j++) { const r = L.journeeEsprit({ ...s, moral: 0 }, C, { jour: j, presents, entente, nourritures: {}, plafond: 3 }); s = r.system; evts.push(...r.evenements.map(e => e.cle)); }
     return { s, evts };
   };
   let { s, evts } = fond(esprit({ religion: "aucune", pratique: false }), 0, 0, 6);
   assert.deepEqual(evts.filter(e => e.startsWith("signe-")), ["signe-1", "signe-2", "signe-3"]);
+  // Rééquilibrage du 2026-11-13 : « au fond », c'est à 0. À 1, on remonte (deux jours de moins par jour), le repas nourrit encore.
+  assert.equal(L.REGLES_ESPRIT.lacher.seuilMoral, 0);
+  const aUn = L.journeeEsprit({ ...s, moral: 1 }, C, { jour: 30, presents: 0, nourritures: {}, plafond: 3 }).system;
+  assert.equal(L.espritDe(aUn).joursBas, L.espritDe(s).joursBas - 2, "à moral 1, il ne s'enfonce plus");
   assert.equal(L.sansAppetit(s), true, "il mange moins : le repas ne lui rend plus de moral");
   assert.equal(L.effetJour({ ...s, moral: 2 }, { mange: true, sansAppetit: true }).system.moral, 2);
   assert.equal(L.malusEsprit(s, "parole"), 1, "il parle moins");

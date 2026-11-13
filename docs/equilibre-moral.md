@@ -30,14 +30,14 @@ Les 6 prétirés et les 11 PNJ ont leur esprit choisi à la main d'après leur h
 |---|---|---|
 | Pratiquant | plafond du moral +1 ; 3 jours sans observance : « en faute », −1 de moral une fois et plafond −1 jusqu'à la reprise | « gagne plus mais tient ses observances » ; trois jours, c'est un voyage, pas un oubli |
 | Observance | « calme » : à l'abri, ou en route avec un coreligionnaire pratiquant ; « objet » (Bible, photo, carnet…) : tant qu'il n'est pas perdu | prier ensemble sur la route ; perdre l'objet, c'est perdre l'ancrage |
-| Non-pratiquant | rien chaque jour ; une fois par semaine, à moral 1 ou moins : +1 | « gagne peu, ne risque rien » |
+| Non-pratiquant | rien chaque jour ; une fois toutes les deux semaines, à moral 0 : +1 (une fois par semaine à moral 1 ou moins avant le rééquilibrage du 2026-11-13, § 7) | « gagne peu, ne risque rien » ; il se raccroche quand il touche le fond |
 | Fête de sa religion | +1 de moral de plus au pratiquant (en plus du +1 de chacun) ; entente +1 | les fêtes du métissage donnent le tempo ; la fête rapproche |
 | Regard nourri | tous les deux jours nourris : +1 (sans dépasser le plafond, et seulement à moral 2 ou plus) | à 1 jour, le regard rendait tout le moral perdu à la faim ; au fond, c'est le groupe qui retient, pas soi |
 | Regard éteint | 7 jours sans ce qui le nourrit : plafond −1 jusqu'au prochain jour nourri | le revers du regard : un « vivre » sur la route, un « refaire » sans chantier s'éteignent un peu |
 | Regard qui change | 14 jours sans, moral ≤ 2 : il bascule vers le regard le plus nourri pendant ce temps | « il peut changer en cours de partie » |
 | Entente | −3..+3 ; ≥ 2 : plafond +1, ≤ −2 : plafond −1, pour qui n'est pas seul | la communauté a un effet, bon ou mauvais |
 | Faux bruits | la nuit à l'abri, moral 0 : 50 %, 1 : 35 %, 2 : 20 %, −10 points par autre présent (au plus 3) ; +1 fatigue | « plus le moral est bas… la présence des autres les fait taire » |
-| Celui qui lâche | moral ≤ 1 : +1 jour au fond (sauf 2 autres présents et entente ≥ 0) ; moral ≥ 2 : −2 ; signes à 2, 4, 6 jours ; départ à 8 (compagnon, recrue, PNJ) | les signes avant, le groupe qui retient ; un joueur ne part jamais seul (le MJ est prévenu) |
+| Celui qui lâche | moral 0 : +1 jour au fond (sauf 2 autres présents et entente ≥ 0) ; moral ≥ 1 : −2 (moral ≤ 1 et ≥ 2 avant le rééquilibrage du 2026-11-13, § 7) ; signes à 2, 4, 6 jours ; départ à 8 (compagnon, recrue, PNJ) | les signes avant, le groupe qui retient ; un joueur ne part jamais seul (le MJ est prévenu) |
 | Signes | mange moins : le repas ne lui rend plus de moral ; parle moins : −1 dé en parole ; donne ses affaires : au MJ | d'abord essayé en demi-ration : le groupe y gagnait des vivres (15 parties de nomades sur 300 sauvées par… celui qui lâche), retiré |
 | Chance du trahi | +1 point (au plus 3), un dé de plus au prochain test qui compte | « lui y voit le ciel ; le jeu ne le dit pas » |
 
@@ -124,3 +124,67 @@ désormais à 90 % de vivants à J200, touche la borne de 95 % plus souvent (20/
 graine) : à surveiller au moment de fusionner les lots. **À trancher par Jordan** : garder ce surcroît de survie (le moral est
 « central », voulu), ou le ramener vers 85 % (leviers : `REGLES_ESPRIT.foi.reconfortSeuil` à 0, `regard.moralMin` à 3,
 `regard.plafondEteint` à −2).
+
+## 7. Rééquilibrage du 2026-11-13 (après la fusion des quatre lots)
+
+Mesures, causes et chiffres d'ensemble : `docs/equilibre.md`, « Rééquilibrage du 2026-11-13 ». Ici, ce qui touche l'esprit.
+
+### Les fins par « départ de tous »
+
+La règle du simulateur (pas de la logique) : un survivant à moral 0 cinq jours de suite, sans faim, quitte le groupe. Après la
+fusion, les départs **de membres** avaient en fait **baissé** (nomade × 4, 300 parties de 200 jours : 119 → 73 ; l'esprit
+« resserre les extrêmes »), mais ceux qui restaient tombaient dans des groupes **décimés**, d'où plus de fins « départ de
+tous » (nomade × 4 : 2 → 12 et 4 → 13). Relevé au moment de chaque départ (graines 1 et 2, 300 parties par cas) :
+
+- **le deuil sans fin** : 76 à 84 % des départs des groupes de 4 avaient lieu sous le deuil d'un mort. Le simulateur ne donnait
+  jamais le repos (il fête la Toussaint avec l'effet du socle, sans repos) : après le premier mort, le plafond du moral de tous
+  restait à −1 jusqu'au bout de la partie. Corrigé dans le simulateur : le soir, à l'abri, le groupe donne le repos à ses morts
+  (`REGLES_REPOS`, un quart), comme le ferait une table ;
+- **celui qui lâche, à un ou deux** : 100 % des départs des groupes de 2 avaient le signe « mange moins » (le repas ne rend
+  plus de moral). Personne ne retient (il faut deux autres présents) ; sans le repas, on ne remonte qu'avec le réconfort de la
+  semaine, une fête ou une passion, et il faut atteindre 2 pour sortir du fond. Plus de la moitié avaient aussi 3 de fatigue
+  ou plus (les faux bruits des nuits à moral bas), ce qui bloque aussi le repas ;
+- **la porte et les crises d'autorité** n'y sont pour rien : le simulateur n'ouvre pas la porte, ne vote pas et n'a pas de chef.
+
+### Les chiffres changés
+
+| Chiffre | Avant | Après | Pourquoi |
+|---|---|---|---|
+| `REGLES_ESPRIT.lacher.seuilMoral` | 1 | **0** | « au fond », c'est 0. À 1, celui qui lâche mangeait sans que le repas lui rende rien : il ne remontait plus qu'avec le réconfort, une fête ou une passion, et personne ne le retient à deux. À 0 seulement, les signes restent (on les voit, le groupe peut agir), mais un moral à 1 se refait au repas et efface les jours au fond. Les fins par « départ de tous » reviennent à leur niveau d'avant les lots (ci-dessous). |
+| `REGLES_ESPRIT.foi.reconfortSeuil` | 1 | **0** | le non-pratiquant se raccroche à ce qui le fait tenir quand il touche le fond, pas avant |
+| `REGLES_ESPRIT.foi.reconfortTous` | 7 | **14** | une fois toutes les deux semaines : à six survivants sur dix (tous les non-pratiquants), le réconfort hebdomadaire cassait presque toute série de jours au fond |
+
+Mesuré un chiffre à la fois puis ensemble, 240 parties d'un an par scénario (six séries de 40 graines), vivants à J365 ramenés
+sur 40 (« dép. » : fins par départ de tous, sur 240) :
+
+| Réglage (simulateur corrigé) | Nomade × 4 | Nomade seul | Recrues | Humains × 4 | Compagnons | Mixte × 4 | Enraciné seul |
+|---|---|---|---|---|---|---|---|
+| avant les lots | 15,7 (dép. 4) | 15,3 (3) | 14,0 (4) | 22,3 (2) | 25,5 (0) | 21,0 (6) | 10,8 (2) |
+| esprit tel quel | 22,8 | 15,8 | 20,3 | 27,2 | 27,2 | 24,8 | 11,0 |
+| tout l'esprit coupé (pour mémoire) | 18,2 | 16,7 | 16,0 | 23,3 | 25,7 | 22,7 | 11,0 |
+| réconfort coupé (pour mémoire) | 15,2 | 13,5 | 16,8 | 24,7 | 26,0 | 22,0 | 9,7 |
+| plafond du pratiquant à 0 (pour mémoire) | 20,0 | 15,0 | 18,5 | 26,3 | 26,5 | 23,5 | 10,7 |
+| regard nourri coupé (pour mémoire) | 22,0 | 15,3 | 18,0 | 26,2 | 26,8 | 24,7 | 11,0 |
+| `regard.moralMin` 3 (levier du § 6) | 22,5 | 15,3 | 18,8 | 26,8 | 27,5 | 24,8 | 11,0 |
+| `regard.plafondEteint` −2 (levier du § 6) | 16,8 | 13,8 | 18,5 | 25,2 | 25,7 | 22,8 | 10,3 |
+| `reconfortSeuil` 0 (levier du § 6) | 20,8 | 16,0 | 18,2 | 26,8 | 27,5 | 24,2 | 10,7 |
+| `reconfortTous` 14 | 18,8 (dép. 29) | 14,8 (21) | 19,3 (4) | 25,8 (6) | 26,5 (11) | 22,3 (15) | 10,3 (11) |
+| `lacher.seuilMoral` 0 | 24,3 (dép. 8) | 16,3 (5) | 20,5 (3) | 27,3 (1) | 27,5 (3) | 25,7 (4) | 11,2 (1) |
+| `seuilMoral` 0 + `reconfortTous` 14 | 22,0 (dép. 10) | 15,8 (10) | 20,5 (2) | 26,5 (2) | 27,5 (3) | 24,8 (4) | 11,0 (2) |
+| `seuilMoral` 0 + `reconfortSeuil` 0 + `reconfortTous` 14 | 20,2 (dép. 12) | 16,0 (9) | 18,3 (1) | 25,5 (3) | 27,0 (4) | 24,7 (8) | 10,8 (3) |
+| idem + `plafondEteint` −2 | 14,2 (dép. 29) | 14,3 (26) | 17,8 (2) | 24,8 (3) | 26,5 (4) | 22,7 (13) | 10,0 (17) |
+
+Lecture : affaiblir le réconfort seul fait baisser la survie **par les départs** (le piège de celui qui lâche se referme) ; il
+faut d'abord rouvrir le piège (`seuilMoral` 0), puis rendre le réconfort plus rare et plus tardif. Le levier du § 6
+`plafondEteint` −2 ramène bien le nomade, mais il fait partir les solos (enraciné seul : 17 fins par départ sur 240) : écarté.
+`regard.moralMin` 3 ne change rien de mesurable : écarté. Le reste de l'avance du nomade à J200 est repris par le glanage
+(`docs/equilibre.md`).
+
+Avec le glanage à 0,055 (`docs/equilibre.md`), l'état final sur 240 parties d'un an : nomade × 4 18,8 sur 40 (avant les lots
+15,7, fusion 21,5), recrues 18,7 (14,0 ; 19,5), humains × 4 25,7 (22,3 ; 24,7), mixte × 4 24,2 (21,0 ; 25,5), compagnons 27,0
+(25,5 ; 24,7), nomade seul 15,8 (15,3 ; 15,5), enraciné seul 10,8 (10,8 ; 9,5). Les fins par départ : enracinés et mixtes
+revenus près d'avant les lots ; le nomade en garde davantage (`docs/equilibre.md`, « Ce qui reste »), et le levier pour les
+réduire, `lacher.retenue` 1, est mesuré mais pas appliqué (la borne du nomade repasserait à 3 tirages hors bornes sur 40).
+
+Le texte du guide du joueur disait encore que celui qui lâche « mange une demi-ration » : c'est le repas qui ne lui rend plus
+de moral (la demi-ration avait été retirée, § 2). Corrigé en français et en anglais, avec le nouveau rythme du réconfort.

@@ -1,5 +1,169 @@
 # Équilibre de Fénoir
 
+## Rééquilibrage du 2026-11-13 (branche `equilibre`)
+
+Jordan a demandé d'« équilibrer le tout » après la fusion des quatre lots : retrouver l'équilibre d'origine (survie à J200 et
+sur un an, autonomie de l'enraciné, première faim, les deux voies aussi valables l'une que l'autre, bornes des essais) en gardant
+l'esprit des nouveautés (le moral central, l'entraide qui compte : un léger mieux pour les groupes qui se soutiennent, pas le
+doublement de la survie des nomades sur un an). Aucune règle de fond n'a changé et aucune nouveauté n'a été retirée.
+
+### Comment c'est mesuré
+
+Trois états, même code de mesure (le simulateur et les parties longues du dépôt, joués en parallèle par fils d'exécution) :
+**avant** les lots (`principale` au commit 3c8c750, moteur 75d325a), la **fusion** (`principale` au commit 9f224fc) et
+**après** le rééquilibrage (branche `equilibre`).
+
+- **200 jours** : `simuler-parties.mjs`, 300 parties par cas, **graines 1, 2 et 3** (9 900 parties par état).
+- **Un an** : `parties-longues.mjs`, 40 graines par série, **six séries** (g, h, i, j, k, l : 240 parties par scénario, ramenées
+  sur 40). Sur la seule série g (celle des mesures précédentes), un scénario bouge de ± 3 à 5 parties sur 40 sans qu'aucune
+  règle ne change : la série g donnait « humains × 4 : 26 → 19 » et « nomade seul : 13 → 20 » ; sur 240 parties, les humains
+  × 4 passaient en fait de 22,3 à 24,7 et le nomade seul de 15,3 à 15,5.
+- **La borne du nomade** : l'essai de `survie-equilibre.test.mjs` (20 parties) rejoué sur 40 graines (1 à 40), mêmes bornes.
+
+### Ce qui était anormal, et pourquoi
+
+1. **Le gaz sous l'évier choisissait le site** (simulateur). Le lot « savoirs » a mis 13 kg de gaz dans les stocks des cases,
+   maisons, fermes et îlets ; le score d'un site comptait tous ses stocks (÷ 60 pour l'enraciné, ÷ 20 pour le nomade et le
+   passif). Une maison passait devant un meilleur site (exemple : la maison du Brûlé, 14,10 → 14,32, devant le lazaret de la
+   Grande Chaloupe, 14,17). D'où trois des écarts relevés : la **première faim** de l'enraciné seul repoussée (J21 → J65–J78 :
+   la maison a un garde-manger), l'**autonomie** de l'enraciné × 4 en baisse (76 → 67–71 % : la maison produit moins qu'un
+   site à source), les **passifs** qui tenaient mieux (14–16 % au lieu de 11–14 %). Le simulateur ne cuisine pas au gaz : le gaz,
+   les boutures et le biocarburant ne comptent plus dans le score (`STOCKS_NON_JOUES`).
+2. **Le deuil sans fin** (simulateur). Il ne donnait jamais le repos à ses morts (il fête la Toussaint avec l'effet du socle) :
+   après le premier mort, le plafond du moral de tous restait à −1 jusqu'au bout. Il le donne maintenant le soir, à l'abri.
+3. **Les fins par « départ de tous »** (`equilibre-moral.md` § 7) : les départs de membres avaient baissé (nomade × 4 :
+   119 → 73 sur 300 parties) mais tombaient dans des groupes décimés. Deux causes : le deuil sans fin (76 à 84 % des départs
+   des groupes de 4), et **celui qui lâche** à un ou deux, que personne ne retient (100 % des départs des groupes de 2 avaient
+   le signe « mange moins », qui empêche le repas de rendre du moral). La porte et les crises d'autorité n'y sont pour rien :
+   le simulateur n'ouvre pas la porte, ne vote pas et n'a pas de chef.
+4. **L'esprit tenait trop les groupes** (règle). Mesuré composante par composante (chaque règle de `REGLES_ESPRIT` coupée seule,
+   240 parties d'un an par scénario) : le **réconfort** du non-pratiquant pèse le plus (coupé : nomade × 4 22,8 → 15,2 sur 40,
+   recrues 20,3 → 16,8, humains × 4 27,2 → 24,7), puis le **plafond du pratiquant** (nomade × 4 → 20,0), le **regard nourri**
+   peu (→ 22,0). Le réconfort casse, une fois par semaine, la série de jours au fond qui faisait partir un survivant ; à six
+   personnes sur dix (tous les non-pratiquants), il rendait le départ presque impossible.
+5. **Les rentes du marché** (`equilibre-marche.md`, « Rééquilibrage ») : tisanes, rimèd lontan et pansements rapportaient 2,3
+   à 5,1 parts par quart de travail ; une seule paire de pinces à linge relevait le moral de l'abri d'un point entier.
+
+### Les chiffres changés
+
+| Chiffre | Avant | Après | Pourquoi | Détail |
+|---|---|---|---|---|
+| `REGLES_ESPRIT.lacher.seuilMoral` (« au fond ») | moral ≤ 1 | **moral 0** | à 1, le repas ne rendait plus rien à celui qui lâche : un piège à un ou deux | `equilibre-moral.md` § 7 |
+| `REGLES_ESPRIT.foi.reconfortSeuil` | 1 | **0** | le réconfort quand on touche le fond | idem |
+| `REGLES_ESPRIT.foi.reconfortTous` | 7 jours | **14 jours** | chaque semaine, il empêchait presque tout départ | idem |
+| `REGLES_ACTIONS.glanage.parMembre` | 0,06 | **0,055** | l'esprit faisait gagner au nomade ~5 points à J200 (la borne de l'essai sautait) ; le glanage est le levier du nomade (essayé de 0,04 à 0,1 le 2026-11-05) : à 0,055, il revient à son niveau d'avant les lots à J200 | ci-dessous |
+| cours des plantes (`REGLES_MARCHE.cours`) | 1, fixe | **2**, × 1,5 avec les médicaments dès la panique | la tisane rapportait 3 à 5,5 parts par quart de travail | `equilibre-marche.md` |
+| pansements de fortune (`recettes.mjs`) | 1 quart | **3 quarts** | 1 matériau → 1 médicament : la plus grosse rente | idem |
+| confort des objets (`abri.mjs`) | somme | **somme arrondie à l'entier inférieur** | un seul objet à 0,5 relevait le plafond du moral d'un point entier | idem |
+| pinces à linge (`equipements.mjs`) | moral 0,5 | **0,25** | sans savoir, 1 matériau, 1 quart : l'objet de confort le moins cher | idem |
+| simulateur : score d'un site | tous les stocks | **sans gaz, boutures, biocarburant** | le gaz faisait choisir une maison | § 1 ci-dessus |
+| simulateur : le repos des morts | jamais | **le soir, à l'abri** | le deuil pesait jusqu'au bout | § 2 ci-dessus |
+
+Le glanage mesuré seul (nomade × 4, 800 parties de 200 jours, 50 par région de départ, même tirage que la borne : les quatre
+premières régions comptent double dans l'essai) : avant les lots 83,8 % ; esprit tel quel 89,6 % ; tout l'esprit coupé 85,1 % ;
+`seuilMoral` 0 + réconfort 0 / 14 jours 87,9 % ; + glanage 0,05 83,6 % ; + glanage 0,04 82,9 %. Sur la borne (40 tirages de
+20 parties) : glanage 0,05, 669/800 et 3 tirages hors des bornes (dont deux à moins de 4 déménagements) ; **0,055, 667/800 et
+2 tirages** : gardé. Sur un an, le glanage change peu (nomade × 4 : 20,2 avant ce chiffre, 18,8 à 0,055, 20,5 à 0,05 : le
+bruit des 240 parties) : c'est la deuxième moitié de l'année, quand les régions sont vides, qui départage le nomade.
+
+Essayés et écartés (mesures dans `equilibre-moral.md` § 7) : `regard.moralMin` 3 (sans effet), `regard.plafondEteint` −2 (fait
+partir les solos), `lacher.retenue` 1 (un seul autre retient : moins de départs à deux, mais plus de survie partout), le
+réconfort coupé (une nouveauté retirée), le plafond du pratiquant à 0 (idem), le regard nourri tous les 3 jours (nomade × 4
+19,8 sur 40, sans effet), 30 % de pratiquants au tirage au lieu de 40 % (sans effet), les faux bruits divisés par deux (plus de
+départs de membres chez le nomade, pas moins : 75 → 103 sur 300 parties).
+
+### Les mesures : avant les lots, fusion, après
+
+**Vivants à J200** (en %, graine 1 \| 2 \| 3, 300 parties par cas et par graine) :
+
+| Cas | avant les lots | fusion | après |
+|---|---|---|---|
+| passif × 4 | 11 \| 13 \| 14 (moy. 12.7) | 14 \| 15 \| 16 (moy. 15.0) | 12 \| 13 \| 14 (moy. 13.0) |
+| nomade × 1 | 55 \| 57 \| 58 (moy. 56.7) | 58 \| 57 \| 57 (moy. 57.3) | 55 \| 57 \| 54 (moy. 55.3) |
+| nomade × 2 | 76 \| 71 \| 77 (moy. 74.7) | 74 \| 78 \| 78 (moy. 76.7) | 71 \| 73 \| 75 (moy. 73.0) |
+| nomade × 4 | 82 \| 88 \| 87 (moy. 85.7) | 85 \| 88 \| 90 (moy. 87.7) | 81 \| 82 \| 85 (moy. 82.7) |
+| nomade × 6 | 79 \| 80 \| 84 (moy. 81.0) | 86 \| 81 \| 86 (moy. 84.3) | 84 \| 86 \| 82 (moy. 84.0) |
+| enraciné × 1 | 61 \| 56 \| 57 (moy. 58.0) | 54 \| 54 \| 53 (moy. 53.7) | 57 \| 56 \| 54 (moy. 55.7) |
+| enraciné × 2 | 71 \| 69 \| 68 (moy. 69.3) | 72 \| 68 \| 71 (moy. 70.3) | 77 \| 71 \| 72 (moy. 73.3) |
+| enraciné × 4 | 83 \| 83 \| 83 (moy. 83.0) | 84 \| 81 \| 87 (moy. 84.0) | 88 \| 85 \| 88 (moy. 87.0) |
+| enraciné × 6 | 89 \| 90 \| 88 (moy. 89.0) | 89 \| 88 \| 92 (moy. 89.7) | 87 \| 87 \| 90 (moy. 88.0) |
+| mixte × 2 | 76 \| 78 \| 74 (moy. 76.0) | 69 \| 74 \| 73 (moy. 72.0) | 73 \| 75 \| 78 (moy. 75.3) |
+| mixte × 4 | 85 \| 84 \| 84 (moy. 84.3) | 82 \| 83 \| 90 (moy. 85.0) | 84 \| 86 \| 87 (moy. 85.7) |
+
+| Cas | autonomes : avant | fusion | après | 1re faim (médiane) : avant | fusion | après | fins par départ (sur 300) : avant | fusion | après |
+|---|---|---|---|---|---|---|---|---|---|
+| passif × 4 | 28 \| 29 \| 27 | 35 \| 35 \| 34 | 28 \| 29 \| 28 | J7 \| J6 \| J7 | J7 \| J7 \| J7 | J7 \| J7 \| J7 | 0 \| 0 \| 0 | 0 \| 0 \| 0 | 0 \| 0 \| 1 |
+| nomade × 1 | 2 \| 3 \| 2 | 3 \| 3 \| 3 | 1 \| 2 \| 2 | J151 \| J187 \| J200 | J164 \| J196 \| J197 | J189 \| J200 \| J200 | 3 \| 1 \| 0 | 4 \| 5 \| 5 | 2 \| 4 \| 3 |
+| nomade × 2 | 1 \| 2 \| 3 | 3 \| 5 \| 5 | 1 \| 1 \| 3 | J65 \| J89 \| J65 | J65 \| J82 \| J67 | J66 \| J82 \| J69 | 4 \| 4 \| 4 | 11 \| 12 \| 6 | 14 \| 11 \| 13 |
+| nomade × 4 | 3 \| 4 \| 2 | 4 \| 4 \| 6 | 3 \| 3 \| 4 | J137 \| J136 \| J136 | J121 \| J133 \| J140 | J115 \| J124 \| J131 | 2 \| 4 \| 4 | 12 \| 13 \| 10 | 9 \| 8 \| 9 |
+| nomade × 6 | 0 \| 1 \| 1 | 1 \| 1 \| 1 | 2 \| 0 \| 0 | J131 \| J133 \| J143 | J140 \| J146 \| J140 | J132 \| J142 \| J133 | 1 \| 3 \| 3 | 3 \| 6 \| 6 | 11 \| 12 \| 12 |
+| enraciné × 1 | 74 \| 72 \| 72 | 74 \| 72 \| 73 | 73 \| 72 \| 73 | J21 \| J21 \| J21 | J78 \| J65 \| J50 | J21 \| J28 \| J21 | 4 \| 1 \| 3 | 1 \| 2 \| 2 | 3 \| 1 \| 4 |
+| enraciné × 2 | 59 \| 58 \| 53 | 59 \| 56 \| 55 | 59 \| 57 \| 57 | J21 \| J21 \| J28 | J28 \| J28 \| J29 | J21 \| J21 \| J21 | 2 \| 1 \| 3 | 7 \| 8 \| 5 | 4 \| 2 \| 4 |
+| enraciné × 4 | 76 \| 76 \| 68 | 71 \| 67 \| 67 | 77 \| 75 \| 71 | J28 \| J21 \| J21 | J22 \| J22 \| J23 | J21 \| J21 \| J21 | 5 \| 1 \| 0 | 2 \| 4 \| 5 | 0 \| 2 \| 2 |
+| enraciné × 6 | 74 \| 71 \| 73 | 73 \| 73 \| 77 | 72 \| 75 \| 74 | J17 \| J17 \| J17 | J17 \| J17 \| J17 | J17 \| J17 \| J17 | 2 \| 0 \| 0 | 5 \| 5 \| 2 | 8 \| 5 \| 2 |
+| mixte × 2 | 22 \| 18 \| 20 | 19 \| 20 \| 22 | 19 \| 21 \| 21 | J65 \| J94 \| J86 | J79 \| J115 \| J115 | J57 \| J59 \| J65 | 1 \| 2 \| 1 | 7 \| 5 \| 10 | 7 \| 3 \| 6 |
+| mixte × 4 | 38 \| 38 \| 33 | 28 \| 34 \| 34 | 32 \| 40 \| 39 | J105 \| J92 \| J106 | J91 \| J105 \| J94 | J69 \| J67 \| J66 | 2 \| 3 \| 3 | 6 \| 7 \| 2 | 8 \| 2 \| 3 |
+
+**Vivants à J365** (sur 40, moyenne des six séries g à l, 240 parties par scénario ; entre parenthèses, chaque série) :
+
+| Scénario (365 jours) | avant les lots | fusion | après |
+|---|---|---|---|
+| sedentaire-4 | 12.3 (9 · 14 · 14 · 12 · 14 · 11) | 13.3 (14 · 12 · 13 · 10 · 17 · 14) | 13.5 (14 · 12 · 14 · 10 · 17 · 14) |
+| recrues | 14.0 (11 · 17 · 12 · 13 · 16 · 15) | 19.5 (18 · 19 · 20 · 17 · 21 · 22) | 18.7 (21 · 16 · 19 · 19 · 18 · 19) |
+| seul-nomade | 15.3 (13 · 12 · 16 · 18 · 18 · 15) | 15.5 (20 · 18 · 17 · 11 · 13 · 14) | 15.8 (20 · 19 · 15 · 11 · 15 · 15) |
+| sans-recrues | 15.8 (14 · 15 · 18 · 19 · 12 · 17) | 16.7 (16 · 20 · 15 · 17 · 11 · 21) | 18.0 (19 · 22 · 17 · 20 · 12 · 18) |
+| sedentaire-2 | 11.0 (12 · 14 · 12 · 6 · 13 · 9) | 12.7 (10 · 13 · 14 · 14 · 11 · 14) | 13.0 (11 · 13 · 14 · 15 · 11 · 14) |
+| compagnons | 25.5 (24 · 23 · 23 · 32 · 21 · 30) | 24.7 (25 · 27 · 25 · 23 · 22 · 26) | 27.0 (29 · 26 · 27 · 27 · 26 · 27) |
+| nomade-4 | 15.7 (10 · 11 · 18 · 23 · 15 · 17) | 21.5 (20 · 23 · 23 · 23 · 22 · 18) | 18.8 (16 · 17 · 23 · 18 · 23 · 16) |
+| seul-enracine | 10.8 (9 · 13 · 10 · 8 · 9 · 16) | 9.5 (11 · 8 · 8 · 15 · 7 · 8) | 10.8 (12 · 10 · 9 · 16 · 7 · 11) |
+| humains-4 | 22.3 (26 · 24 · 20 · 17 · 23 · 24) | 24.7 (19 · 25 · 29 · 26 · 23 · 26) | 25.7 (21 · 26 · 29 · 27 · 26 · 25) |
+| mixte-4 | 21.0 (24 · 28 · 17 · 21 · 21 · 15) | 25.5 (25 · 26 · 27 · 24 · 26 · 25) | 24.2 (27 · 24 · 23 · 24 · 20 · 27) |
+| seul-sedentaire | 9.2 (8 · 10 · 8 · 10 · 13 · 6) | 10.3 (10 · 12 · 8 · 10 · 11 · 11) | 10.3 (10 · 12 · 8 · 10 · 11 · 11) |
+
+**Fins par « départ de tous »** sur un an (sur 240) : nomade × 4 4 → 23 → 20, mixte × 4 6 → 11 → 8, compagnons 0 → 10 → 4,
+sans recrues 2 → 13 → 5, sédentaire × 2 1 → 8 → 5, nomade seul 3 → 9 → 8, enraciné seul 2 → 0 → 3.
+
+**La borne du nomade** (`survie-equilibre.test.mjs`, 40 tirages de 20 parties, graines 1 à 40) :
+
+| | Vivants à J200 (800 parties) | Tirages hors des bornes |
+|---|---|---|
+| avant les lots | 680/800 (85 %) | 2/40 |
+| fusion | 708/800 (89 %) | 4/40 (trois à 20/20) |
+| après | **667/800 (83 %)** | **2/40** (un à 20/20, un où la seule fin tombe avant J90) |
+
+L'essai lui-même (graine « 1 », 20 parties) : nomade × 4 18/20 vivants, 6,1 déménagements, 2 fins sur 2 après J90 ; enraciné
+× 4 18/20, 14/20 autonomes (J60), 3,9 assauts par mois après J30 dont 2,1 sérieux ; solo enraciné 10/20, médiane J200 ; Hauts
+3,2 assauts par mois après J90, Bas 2,5. Les bornes n'ont pas bougé.
+
+### Ce qui est revenu, ce qui reste
+
+- **Revenu à l'équilibre d'origine** : les passifs (12,7 → 15,0 → 13,0 % à J200) ; la **première faim** (enraciné seul J21 → J65–
+  J78 → J21–J28 ; enraciné × 4 J21–J28 → J22 → J21) ; l'**autonomie** de l'enraciné × 4 (76, 76, 68 → 71, 67, 67 → 77, 75, 71 %)
+  et des passifs (28 → 35 → 28 %) ; le **nomade à J200** (85,7 → 87,7 → 82,7 % ; nomade × 6 81,0 → 84,3 → 84,0) ; les
+  **solos** sur un an (nomade seul 15,3 → 15,5 → 15,8 ; enraciné seul 10,8 → 9,5 → 10,8) ; la **borne** du nomade (2/40) ; les
+  fins par départ des groupes enracinés et mixtes (année : compagnons 10 → 4, sans recrues 13 → 5, mixte × 4 11 → 8).
+- **Les deux voies** : à J200, le nomade × 4 (82,7 %) et l'enraciné × 4 (87,0 %) restent proches, comme avant (85,7 et 83,0) ;
+  sur un an, la voie enracinée reste la plus sûre (humains × 4 25,7 sur 40, nomade × 4 18,8), comme avant (22,3 et 15,7).
+- **Le léger mieux des groupes qui se soutiennent**, gardé : sur un an, nomade × 4 15,7 → 18,8 (+20 % ; la fusion : +37 %),
+  recrues 14,0 → 18,7 (les recrues restent plus souvent), humains × 4 22,3 → 25,7, mixte × 4 21,0 → 24,2, compagnons
+  25,5 → 27,0. Les solos, eux, ne gagnent rien : l'esprit aide qui a des autres autour de lui. Avec la seule série g (celle
+  des mesures de la fusion), nomade × 4 10 → 20 → 16, humains × 4 26 → 19 → 21 : la série g était basse pour le nomade et
+  haute pour les humains avant les lots.
+- **À J200, l'enraciné** gagne encore 3 à 4 points (× 2 69,3 → 73,3 ; × 4 83,0 → 87,0) : la fusion le cachait, parce que le gaz
+  lui faisait choisir des maisons moins productives. C'est le même « léger mieux » (un moral qui tient mieux au fond des
+  mauvais jours) ; le ramener demanderait de toucher au plafond du pratiquant, une nouveauté.
+- **Les fins par départ du nomade** restent au-dessus d'avant les lots (J200, nomade × 4 : 2 \| 4 \| 4 → 12 \| 13 \| 10 → 9 \| 8 \|
+  9 ; à deux : 4 \| 4 \| 4 → 11 \| 12 \| 6 → 14 \| 11 \| 13 ; à six : 1 \| 3 \| 3 → 3 \| 6 \| 6 → 11 \| 12 \| 12). Ce n'est plus le piège de celui qui lâche (49 % seulement des
+  départs ont un signe, contre 100 % à deux avant), mais la règle du simulateur : un nomade affamé, épuisé (85 % des départs
+  avaient 3 de fatigue ou plus, qui empêche le repas de rendre du moral) et à moral 0 cinq jours s'en va. Le réconfort plus rare
+  et le glanage plus maigre, qui ramènent la survie du nomade, le remettent plus souvent au fond. Le levier, si Jordan veut les
+  réduire encore : `lacher.retenue` 2 → 1 (un seul compagnon retient). Mesuré sur l'état final : fins par départ à J200 nomade
+  × 2 14 \| 11 \| 13 → 4 \| 6 \| 5, nomade × 4 9 \| 8 \| 9 → 5 \| 1 \| 6, nomade × 6 11 \| 12 \| 12 → 8 \| 7 \| 7 ; mais la survie
+  remonte (nomade × 4 82,7 → 84,0 %, × 6 84,0 → 86,0 %) et la borne repasse à 3 tirages sur 40 (685/800), même avec un glanage
+  à 0,05 ou 0,045 (689/800, 3 tirages) : **pas appliqué**, à trancher.
+- **Le mixte** a faim plus tôt dans sa phase nomade (mixte × 4 : première faim J92–J106 → J66–J69), effet du glanage ; sa
+  survie ne bouge pas (84,3 → 85,7 %), son autonomie revient (38 → 28–34 → 32–40 %).
+
 ## Les quatre lots du 2026-11-13 et leur fusion
 
 Les chiffres de chaque lot et leurs raisons sont dans leur propre fichier (gardés tels que leurs auteurs les ont écrits) :
@@ -69,7 +233,8 @@ L'essai (graine « 1 ») passe : 17/20. Mais un tirage sur dix environ tomberait
 changeait : le nomade × 4 survit mieux après la fusion (85 % → 89 % sur ces 800 parties ; le lot moral seul le mesurait à 91 %
 sur 300 parties, graine 2). **À trancher par Jordan**, sans retouche ici : garder ce surcroît (le moral « central », voulu) et
 desserrer la borne (0,95 → 1, ou mesurer sur 100 parties), ou ramener le nomade vers 85 % (les leviers sont dans
-`equilibre-moral.md` § 6).
+`equilibre-moral.md` § 6). **Tranché** : ramené, sans desserrer la borne (« Rééquilibrage du 2026-11-13 », plus
+haut).
 
 **Parties longues** (`node essais/outils/parties-longues.mjs --graines 40`, 11 scénarios × 40 graines, 365 jours) :
 
@@ -91,7 +256,8 @@ Aucune anomalie relevée par les contrôles du jour, avant comme après (valeurs
 sans clé ou sans traduction). Sur un an, le **nomade × 4 ne finit plus par manquer** comme avant : 10/40 → 20/40 vivants à J365
 (médiane J280 → J365 ; le commentaire de l'essai d'équilibre disait « 9/40 vivants à J365 ») ; le nomade seul aussi (13/40 →
 20/40) et les recrues (11/40 → 18/40) ; les humains × 4 enracinés, eux, reculent (26/40 → 19/40, médiane J365 → J321). Sur 40
-graines, le bruit est de ± 3 parties environ : ces écarts-là le dépassent. **À trancher par Jordan** (rien n'a été retouché).
+graines, le bruit est de ± 3 parties environ : ces écarts-là le dépassent. **À trancher par Jordan** (rien n'a été retouché). **Tranché** : voir « Rééquilibrage du 2026-11-13 », plus haut (sur 240 parties au lieu de 40, les humains × 4 n'avaient
+en fait pas reculé : 22,3 → 24,7 sur 40).
 
 ## Médicaments et zerbaz (appliqué le 2026-11-05, après la section suivante)
 

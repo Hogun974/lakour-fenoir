@@ -12,7 +12,7 @@
 //   bruit 0 / 1 / 3. Fouille des alentours (cueillette, gibier, pêche, bois) : ceil(rendement × membres × quarts × 0,5 ×
 //   prudence 0,8 / 1 / 1,3) pris dans la nature de l'abri (bois → matériaux, le reste → nourriture). Elle ne compte pas comme
 //   une fouille pour l'autonomie. Glanage de passage (équilibrage du 2026-11-05) : une fouille de la région (pillage) ramasse
-//   aussi ceil(0,06 × membres × quarts × prudence × (cueillette + pêche + gibier par jour)) de nourriture dans la même nature
+//   aussi ceil(0,055 × membres × quarts × prudence × (cueillette + pêche + gibier par jour)) de nourriture dans la même nature
 //   (celle de l'abri si c'est sa région, sinon celle de la région) : ce qui se renouvelle pour qui bouge.
 // - Médicaments (2026-11-05) : une fouille de la région (pillage) a aussi 2,5 % de chances par membre et par quart (× 2,5 si
 //   l'on cherche des médicaments, au plus 50 %) de tomber sur une TROUSSE DE SECOURS oubliée (boîte à gants, armoire de salle
@@ -75,7 +75,8 @@ export const REGLES_ACTIONS = {
     trousse: 0.015, trousseMax: 0.5, sites: { hopital: { medicaments: 3 } } },
   nature: { parMembre: 0.5, prudence: { discret: 0.8, normal: 1, rapide: 1.3 } },
   plantes: { parMembre: 0.5, cueillette: 0.2, savoir: "zerbaz", connaisseur: 2 },
-  glanage: { parMembre: 0.06, prudence: { discret: 0.8, normal: 1, rapide: 1.3 }, nature: ["cueillette", "peche", "gibier"] },
+  // Glanage 0,06 → 0,055 (rééquilibrage du 2026-11-13, docs/equilibre.md) : avec l'esprit, le nomade tenait mieux qu'avant les lots.
+  glanage: { parMembre: 0.055, prudence: { discret: 0.8, normal: 1, rapide: 1.3 }, nature: ["cueillette", "peche", "gibier"] },
   charge: { pied: 3, vehicule: 20, bateau: 20 },
   kmParCarburant: { vehicule: 60, bateau: 20 },
   lenteur: { pied: 1.5, vehicule: 2, bateau: 1.5 },

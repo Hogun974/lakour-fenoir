@@ -49,7 +49,10 @@ l'abri ou une infirmerie, depuis le 2026-11-05 ; aussi avec une décoction de ze
 médicament et décoction +1 dé chacun : `difficulteMorsure`, `bonusMorsure`), sinon infection ; sans médicament, les
 cueilleurs vont d'abord à la cueillette (nourriture et plantes) ; les corps sont toujours traités (pas de relève) ; après une
 brèche, si les Livides restants sont plus nombreux que les valides, le groupe fuit
-(déménagement forcé) ; un malade aggravé (malus ≥ 3), épuisé et affamé meurt.
+(déménagement forcé) ; un malade aggravé (malus ≥ 3), épuisé et affamé meurt. Depuis le rééquilibrage du 2026-11-13
+(`docs/equilibre.md`) : le soir, à l'abri, le groupe donne le repos à ses morts retrouvés (sans quoi le deuil pesait jusqu'au
+bout de la partie) ; le gaz, les boutures et le biocarburant, que le simulateur ne joue pas, ne comptent plus dans le score
+d'un site (les 13 kg de gaz sous l'évier faisaient choisir une maison plutôt qu'un bon site).
 
 **Mesures** par cas (stratégie × taille) : jours de survie (quartiles), vivants à J200, première faim, autonomie (part et jour),
 déménagements, installations, causes de fin, cyclones, éruptions et hordes vécus, assauts par mois après J30 (sérieux : force

@@ -18,8 +18,8 @@
 // - pratiquant : plafond du moral +1 tant que ses observances tiennent ; 3 jours sans : « en faute », −1 de moral une fois et
 //   plafond −1 jusqu'à la prochaine observance tenue. Une observance « calme » se tient à l'abri, ou en route avec un
 //   coreligionnaire pratiquant à côté ; un ancrage « objet » (photo, carnet) se tient tant que l'objet n'est pas perdu.
-// - non-pratiquant (croyant ou ancrage) : rien chaque jour, jamais de faute ; une fois par semaine, quand son moral tombe à 1 ou
-//   moins, il se raccroche à ce qui le fait tenir : +1.
+// - non-pratiquant (croyant ou ancrage) : rien chaque jour, jamais de faute ; une fois toutes les deux semaines, quand son moral
+//   tombe à 0, il se raccroche à ce qui le fait tenir : +1.
 // - regard : tous les deux jours où ce qui le nourrit arrive (épreuve : endurer ; refaire : bâtir ou accueillir ; vivre : un petit
 //   plaisir), +1 de moral, sans dépasser le plafond (et seulement à 2 ou plus : au fond, seul le groupe retient). Une semaine
 //   sans rien de ce qui le nourrit : plafond −1 (il s'éteint un peu), jusqu'au prochain jour qui le nourrit. 14 jours sans, moral à
@@ -27,8 +27,8 @@
 // - la communauté : entente du groupe (−3..3) ; à 2 ou plus, plafond +1 pour qui n'est pas seul ; à −2 ou moins, plafond −1.
 // - faux bruits : la nuit à l'abri, moral 0 : 50 %, 1 : 35 %, 2 : 20 %, moins 10 points par autre présent (au plus 3) ; celui
 //   qui en entend dort mal (+1 fatigue).
-// - lâcher : moral à 1 ou moins, un jour de plus « au fond » (sauf si au moins 2 autres sont là et que l'entente n'est pas
-//   négative : le groupe le retient) ; moral 2 ou plus : −2. Signes à 2, 4, 6 jours (mange moins : le repas ne lui rend plus de
+// - lâcher : moral à 0, un jour de plus « au fond » (sauf si au moins 2 autres sont là et que l'entente n'est pas
+//   négative : le groupe le retient) ; moral 1 ou plus : −2. Signes à 2, 4, 6 jours (mange moins : le repas ne lui rend plus de
 //   moral ; parle moins :
 //   −1 dé en parole ; donne ses affaires) ; à 8, un compagnon, une recrue ou un PNJ part un matin ; un joueur, jamais : le MJ
 //   est prévenu.
@@ -52,11 +52,13 @@ export const REGLES_ESPRIT = {
     // Sans contenu de religions : une chance sur quatre d'un ancrage.
     ancrageSansReligion: 0.75
   },
-  foi: { plafondPratique: 1, plafondFaute: -1, joursFaute: 3, moralFaute: -1, reconfortTous: 7, reconfortSeuil: 1 },
+  // Rééquilibrage du 2026-11-13 (docs/equilibre-moral.md § 7) : réconfort tous les 14 jours (7) et seulement au fond, à moral 0
+  // (1) ; « au fond », pour celui qui lâche, c'est moral 0 (1).
+  foi: { plafondPratique: 1, plafondFaute: -1, joursFaute: 3, moralFaute: -1, reconfortTous: 14, reconfortSeuil: 0 },
   regard: { joursPourUn: 2, moralMin: 2, joursEteint: 7, plafondEteint: -1, joursChangement: 14, moralChangement: 2 },
   entente: { min: -3, max: 3, defaut: 0, seuilBon: 2, seuilMauvais: -2 },
   fauxBruits: { parMoral: [0.5, 0.35, 0.2], parPresent: 0.1, presentsMax: 3, fatigue: 1 },
-  lacher: { seuilMoral: 1, signes: [2, 4, 6], depart: 8, retenue: 2, remontee: 2, malusParole: 1 },
+  lacher: { seuilMoral: 0, signes: [2, 4, 6], depart: 8, retenue: 2, remontee: 2, malusParole: 1 },
   chance: { max: 3, trahi: 1 }
 };
 
