@@ -138,8 +138,18 @@ test("visibilité : végétation abattue (−1 tous les 15 jours), veillée à l
   assert.equal(chien.bonus.vigilance, 1);
   const garde = L.bilanAbri({ ...a, stocks: { ...a.stocks, nourriture: 30 } }, [I("chiens-de-garde", 1)], C, cond({ chien: true }));
   assert.equal(garde.moral, 1, "le chien du groupe ne double pas les chiens de garde");
-  assert.equal(L.bilanAbri(a, [], C, cond({ confort: 0.5 })).moral, 0.5);
+  // Par points entiers (rééquilibrage du 2026-11-13) : une natte seule (0,5) ne relève plus le plafond du moral d'un point entier.
+  assert.equal(L.bilanAbri(a, [], C, cond({ confort: 0.5 })).moral, 0, "un seul objet à 0,5 ne suffit pas");
+  assert.equal(L.bilanAbri(a, [], C, cond({ confort: 0.75 })).moral, 0, "trois paires de pinces à linge (0,25) non plus");
+  assert.equal(L.bilanAbri(a, [], C, cond({ confort: 1 })).moral, 1, "deux nattes, ou quatre paires de pinces : +1");
   assert.equal(L.bilanAbri(a, [], C, cond({ confort: 3 })).moral, 1, "les objets de confort : +1 au plus");
+  const idx = L.indexer(C);
+  const pinces = idx.equipements.get("pinces-a-linge-en-bois"), natte = idx.equipements.get("natte-de-vacoa");
+  assert.equal(pinces.effets.moral, 0.25, "les pinces à linge (1 matériau, 1 quart, sans savoir) comptent pour un quart");
+  assert.equal(natte.effets.moral, 0.5);
+  const dansLeJeu = n => L.effetJour(L.survivantNeuf({ moral: 3 }), { mange: true, confort: L.bilanAbri(a, [], C, cond({ confort: n })).moral }).system.moral;
+  assert.equal(dansLeJeu(0.5), 3, "le moral ne monte pas au-dessus de 3 pour un demi-point de confort");
+  assert.equal(dansLeJeu(1), 4);
 });
 
 // ------------------------------------------------------------------ cyclone

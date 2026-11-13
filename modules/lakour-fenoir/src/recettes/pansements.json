@@ -10,7 +10,7 @@
     "cout": {
       "materiaux": 1
     },
-    "travail": 1,
+    "travail": 3,
     "competence": "soins",
     "difficulte": "normale",
     "requiert": {

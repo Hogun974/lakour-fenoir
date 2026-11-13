@@ -11236,7 +11236,7 @@
    "bruit": 0,
    "transport": null,
    "effets": {
-    "moral": 0.5
+    "moral": 0.25
    },
    "marque": ""
   },
@@ -12329,7 +12329,7 @@
    "cout": {
     "materiaux": 1
    },
-   "travail": 1,
+   "travail": 3,
    "competence": "soins",
    "difficulte": "normale",
    "requiert": {

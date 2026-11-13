@@ -51,7 +51,7 @@ export const RECETTES = [
     description: `Fruits trop mûrs, jus de canne, un alambic de cocotte et de serpentin : un alcool fort qui désinfecte plaies et instruments.` }),
   recette({ cle: "savon", nom: "Savon", cout: { nourriture: 2, materiaux: 1 }, travail: 2, competence: "survie", produit: { ressource: "medicaments", n: 1 },
     description: `Graisse de cochon ou huile, cendre de bois tamisée, un peu de patience : se laver les mains évite la moitié des maladies.` }),
-  recette({ cle: "pansements", nom: "Pansements de fortune", cout: { materiaux: 1 }, travail: 1, competence: "soins", produit: { ressource: "medicaments", n: 1 },
+  recette({ cle: "pansements", nom: "Pansements de fortune", cout: { materiaux: 1 }, travail: 3, competence: "soins", produit: { ressource: "medicaments", n: 1 },
     description: `Draps de coton découpés, bouillis, séchés au soleil et roulés : des bandes propres.` }),
   recette({ cle: "tisanes", nom: "Tisanes et emplâtres", cout: { plantes: 2 }, travail: 1, competence: "survie",
     produit: { ressource: "medicaments", n: 1 },

@@ -15,7 +15,7 @@ aide à échanger ; rien n'oblige à le suivre (le MJ peut toujours faire passer
 |---|---|---|
 | eau | 1 | un jour d'eau pour une personne, comme la nourriture |
 | nourriture | 1 | l'unité |
-| plantes (zerbaz) | 1 | une brassée se cueille en un quart ; deux font une tisane |
+| plantes (zerbaz) | 2 (1 avant le rééquilibrage) | deux brassées et un quart de travail font une tisane, qui vaut un médicament : à 2, la tisane rapporte environ une part par quart, le prix d'un travail (voir « Rééquilibrage ») |
 | graines | 2 | une planche semée rend 2 nourritures par jour après un mois : la graine vaut plus qu'un repas |
 | matériaux | 2 | une brouette de tôle ou de bois : du travail de récupération |
 | munitions | 3 | rares, ne se fabriquent qu'à l'atelier (munitions rechargées) |
@@ -28,10 +28,12 @@ aide à échanger ; rien n'oblige à le suivre (le MJ peut toujours faire passer
 
 | Moment | Ce qui monte | Pourquoi |
 |---|---|---|
-| panique | médicaments, munitions × 1,5 | tout le monde fait des réserves |
-| effondrement | médicaments, munitions, carburant × 1,5 | les stations ferment, les pharmacies sont pillées |
-| silence | médicaments, munitions × 1,5 ; carburant × 2 ; pièces × 1,5 | plus rien ne se produit |
-| après | médicaments × 1,5 ; carburant × 2,5 ; pièces × 1,5 ; graines × 1,5 | le carburant ne revient jamais ; on cultive |
+| panique | médicaments, plantes, munitions × 1,5 | tout le monde fait des réserves |
+| effondrement | médicaments, plantes, munitions, carburant × 1,5 | les stations ferment, les pharmacies sont pillées |
+| silence | médicaments, plantes, munitions × 1,5 ; carburant × 2 ; pièces × 1,5 | plus rien ne se produit |
+| après | médicaments, plantes × 1,5 ; carburant × 2,5 ; pièces × 1,5 ; graines × 1,5 | le carburant ne revient jamais ; on cultive |
+
+Les plantes suivent les médicaments (rééquilibrage du 2026-11-13) : quand la pharmacie se vide, les zerbaz montent avec elle.
 | saison des pluies | eau × 0,5 | les citernes débordent |
 | saison sèche | eau × 1,5 | l'Ouest sec manque d'eau |
 | jour de foire | la récolte de la foire × 0,5 | l'abondance |
@@ -39,9 +41,43 @@ aide à échanger ; rien n'oblige à le suivre (le MJ peut toujours faire passer
 Le conseil d'un marché peut ajouter une ou deux parts à un bien qui manque (`ajustements`, l'événement « Le cours s'affole » :
 médicaments +2, eau +1).
 
-**À noter** : deux plantes (2 parts) donnent un médicament (5 parts) par la recette des tisanes (un quart, test de survie
-normal). C'est voulu : le savoir des zerbaz vaut quelque chose au marché. Si Jordan trouve l'écart trop grand, monter les
-plantes à 1,5 suffit.
+**À noter** (avant le rééquilibrage) : deux plantes (2 parts) donnaient un médicament (5 parts) par la recette des tisanes (un
+quart, test de survie normal). Monter les plantes à 1,5 ne suffisait pas : voir « Rééquilibrage du 2026-11-13 » plus bas.
+
+## Rééquilibrage du 2026-11-13 : ce que rapporte une heure à l'atelier
+
+Mesure : pour chaque recette qui produit une ressource à cours, la valeur produite moins la valeur consommée, au cours de
+chaque phase, par quart-personne de travail, en espérance (test de la recette par un artisan de niveau 2, +1 dé aux tisanes
+pour qui connaît les zerbaz ; réussite : le produit, +1 à marge 2 ; échec : la moitié du coût rendue). Repère : une cueillette
+ou une pêche aux alentours rend 1 à 2 nourritures par quart-personne ; une recette qui rapporte plus de 2 parts par quart, à
+l'infini, est une rente.
+
+| Recette | Avant (jour zéro → crise) | Après | Ce qui a changé |
+|---|---|---|---|
+| Tisanes (2 plantes → 1 médicament, 1 quart) | +2,8 → +5,1 parts par quart | +1,0 → +1,4 | cours des plantes 1 → 2, et × 1,5 avec les médicaments dès la panique |
+| Rimèd lontan (3 plantes → 2 médicaments, 2 quarts, savoir des zerbaz) | +2,4 → +4,2 | +1,2 → +1,8 | idem (le savoir garde son avantage) |
+| Pansements de fortune (1 matériau → 1 médicament) | +2,3 → +4,2 | +0,8 → +1,4 | travail 1 → 3 quarts (découper, faire bouillir, sécher au soleil, rouler) : le bois des alentours fait des matériaux sans fin, c'était la plus grosse rente |
+| Savon (2 nourritures, 1 matériau → 1 médicament, 2 quarts) | +0,3 → +1,2 | inchangé | le prix d'un travail |
+| Semences triées (3 nourritures → 2 graines) | +0,5, +1,9 dans l'après | inchangé | dans la bande, et le savoir du maraîchage est requis |
+| Conserves, alcool désinfectant, munitions rechargées | à perte au cours | inchangé | elles servent à garder, soigner, se défendre, pas à vendre |
+
+Le reste a été regardé et laissé :
+- **le gaz, les boutures et le biocarburant** n'ont pas de cours (`RESSOURCES_HORS_COURS`) : ils ne se vendent pas. Les boutures
+  deviennent des graines (une pour une) dans un jardin, et les graines se vendent ; mais les jardins des cases sont finis
+  (15 + 25 × population par région, puis ils s'étiolent après J90) : un trésor qu'on ramasse une fois, pas une rente ;
+- **le carburant maison** (alcool de canne : 4 nourritures ; huile filtrée : 3 nourritures et 1 matériau) ne fait rouler que la
+  voiture modifiée et ne se troque pas ; il coûte cher en vivres, comme voulu (`equilibre-savoirs.md` § 5) ;
+- **les objets faits main** : les pinces à linge (1 matériau, 1 quart, aucun savoir) donnaient +0,5 au moral de l'abri, et ce
+  demi-point suffisait : le moral est un nombre entier, et un plafond de 3,5 le laissait monter à 4. **Une seule paire** valait
+  donc une cuisine commune (3 matériaux, 1 pièce, 6 quarts), et on l'emporte en déménageant. Deux corrections : le confort des
+  objets compte **par points entiers** (`abri.mjs`, la somme arrondie à l'entier inférieur : deux objets à 0,5 font +1, comme
+  le disait déjà le guide du MJ) ; les pinces à linge comptent pour **0,25** (il en faut quatre paires) ; le sac, la chaise et
+  la natte de vacoa (savoir du bambou et du vacoa, 2 à 3 quarts) restent à 0,5. Le plafond (+1 au plus) ne change pas ;
+- **les installations lontan** (eau chauffée au feu de bois, cuisine commune, jardin créole…) ne produisent rien qui se vende
+  plus cher que leur coût en travail ; leur gain est le moral, plafonné par le confort de l'abri (5 au plus).
+
+Le simulateur ne troque pas, ne fabrique que des tisanes pour lui-même et ne porte pas d'objets de confort : ces trois
+changements ne déplacent aucune de ses mesures.
 
 ## Le troc
 
@@ -119,6 +155,7 @@ une fête. C'est le rythme voulu : le préjugé se sent au premier contact, puis
 
 ## Ce qui reste à trancher (Jordan)
 
-- Les valeurs du cours, surtout l'écart plantes / médicaments (tisanes rentables) et le carburant × 2,5 dans l'après.
+- Les valeurs du cours, et le carburant × 2,5 dans l'après (l'écart plantes / médicaments est tranché : rééquilibrage du
+  2026-11-13 ci-dessus).
 - La signature d'un marché accueilli (+ 2 visibilité) : assez pour sentir le prix, sans rendre l'accueil impossible ?
 - Le rythme de l'usure (3 échanges par cran) : plus lent si les préjugés tombent trop vite à la table.

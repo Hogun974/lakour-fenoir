@@ -55,7 +55,8 @@
 // - Végétation abattue par un cyclone (`abri.vegetation: { n, depuis }`) : visibilité + n, −1 tous les 15 jours.
 // - Veillée à la lumière (`abri.lumiereLe` = le jour) : visibilité +1 ce jour-là (lire le soir se voit de loin).
 // - Un chien du groupe présent (`conditions.chien`) : moral +1 (sauf si des chiens de garde sont déjà en service) et
-//   vigilance +1 comme une installation ; des objets de confort (`conditions.confort` : leurs `effets.moral`) : moral +1 au plus.
+//   vigilance +1 comme une installation ; des objets de confort (`conditions.confort` : la somme de leurs `effets.moral`, arrondie
+//   à l'entier inférieur) : moral +1 au plus.
 // - Boutures (journeeAbri) : replantées chaque jour dans un potager ou un jardin en service (elles deviennent des graines),
 //   sinon un tiers meurt (au supérieur).
 // - Alentours au-dessus du plafond (bois et fruits tombés d'un cyclone) : le surplus se perd chaque jour (POURRISSEMENT).
@@ -287,7 +288,9 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     + (Number(conditions.signature) || 0) + devoile - discretion;
   // Le chien (sauf chiens de garde en service) et les objets de confort : le moral de l'abri.
   const moralChien = conditions.chien && !actives.some(l => l.cle === "chiens-de-garde") ? 1 : 0;
-  const moralObjets = Math.min(CONFORT_MAX, Math.max(0, Number(conditions.confort) || 0));
+  // Le confort des objets compte par points entiers (rééquilibrage du 2026-11-13) : le plafond du moral (3 + confort) est comparé
+  // à un moral entier, et une seule natte (0,5) le relevait déjà d'un point ; il en faut deux (quatre paires de pinces à linge).
+  const moralObjets = Math.min(CONFORT_MAX, Math.floor(Math.max(0, Number(conditions.confort) || 0)));
   const protectionCyclone = Math.min(3, Math.max(c.site.type === "tunnel-de-lave" ? 3 : 0, ...structurelles.map(l => Number(l.e.protectionCyclone) || 0)));
   const usure = lignes.filter(l => l.sol && l.enMarche).reduce((s, l) => s + l.niveau * USURE_SOL, 0);
   const bilan = {

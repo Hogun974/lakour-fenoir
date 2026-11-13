@@ -77,8 +77,8 @@ jeton peint, et ce lot ne génère aucune image (§6).
 | Jardins des cases d'une région | 15 + 25 × population, entiers jusqu'au jour 90, puis −1/600 par jour, jamais sous 30 % | « garde des mois ses plantes solides » |
 | Fouille « jardins » | ceil(0,6 × membres × quarts × prudence × 1,5 dans une case, une maison, une ferme, un îlet) prises aux jardins : 60 % en nourriture, 50 % en boutures, plus 0,2 zerbaz par membre et par quart | une sortie de deux personnes rapporte 2 à 4 nourritures et 2 boutures |
 | Boutures | plafond 30 ; repiquées le soir dans un potager, jardin créole, serre ou verger en service (→ graines), sinon un tiers meurt par jour | « elles meurent si on ne les replante pas » |
-| Rimèd lontan | 3 plantes → 2 médicaments, soins, savoir des zerbaz | mieux que la tisane (2 → 1) pour qui sait |
-| Objets de confort | `effets.moral` des équipements des présents (pinces, sac, chaise, natte : 0,5 ; poêle de masse, chauffe-eau de fortune : 1), au plus +1 au moral de l'abri | ces effets étaient décrits sans être appliqués ; ils le sont, plafonnés |
+| Rimèd lontan | 3 plantes → 2 médicaments, soins, savoir des zerbaz | mieux que la tisane (2 → 1) pour qui sait ; au marché, les plantes valent 2 (× 1,5 dans la crise) depuis le rééquilibrage du 2026-11-13, pour que la recette ne soit pas une rente |
+| Objets de confort | `effets.moral` des équipements des présents (pinces à linge : 0,25, 0,5 avant le rééquilibrage du 2026-11-13 ; sac, chaise, natte : 0,5 ; poêle de masse, chauffe-eau de fortune : 1), au plus +1 au moral de l'abri, par points entiers (la somme arrondie à l'entier inférieur) | ces effets étaient décrits sans être appliqués ; ils le sont, plafonnés. Avant le rééquilibrage, un seul objet à 0,5 relevait déjà le plafond d'un point (moral entier sous un plafond de 3,5) : une paire de pinces (1 matériau, 1 quart, sans savoir) valait une cuisine commune et se déménageait. Il faut maintenant deux objets à 0,5, ou quatre paires de pinces (`equilibre-marche.md`, « Rééquilibrage ») |
 
 ## 4. Gaz et eau chaude
 

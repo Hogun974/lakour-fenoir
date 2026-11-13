@@ -35,6 +35,22 @@ test("cours : valeurs de base en parts, crise, saison, récolte de foire, ajuste
   for (const v of Object.values(L.coursDuJour({ ajustements: { eau: -9 } }))) assert.ok(v >= L.REGLES_MARCHE.cours.minimum, "jamais sous le minimum");
 });
 
+test("cours : les plantes valent 2 et suivent les médicaments dans la crise ; une tisane n'est pas une rente (rééquilibrage du 2026-11-13)", () => {
+  assert.equal(L.coursDuJour({ phase: "jour-zero" }).plantes, 2);
+  for (const phase of ["panique", "effondrement", "silence", "apres"]) {
+    const c = L.coursDuJour({ phase });
+    assert.equal(c.plantes, 3, `${phase} : les zerbaz montent avec les médicaments`);
+    assert.equal(c.medicaments, 7.5, phase);
+  }
+  // Tisanes : 2 plantes et 1 quart font 1 médicament. Le gain au cours, au plus 1,5 part (avant : 3 en temps normal, 5,5 dans la
+  // crise) ; une cueillette des alentours rend 1 à 2 nourritures par quart-personne.
+  for (const phase of ["jour-zero", "panique", "effondrement", "silence", "apres"]) {
+    const c = L.coursDuJour({ phase });
+    const gain = c.medicaments - 2 * c.plantes;
+    assert.ok(gain >= 0 && gain <= 1.5, `${phase} : la tisane rapporte ${gain} part(s)`);
+  }
+});
+
 test("troc : valeur au cours, majoration de la première confiance, équitable, accepté ; appliqué seulement si l'on a ce qu'on donne", () => {
   const cours = L.coursDuJour({ phase: "jour-zero", saison: "seche" });
   assert.equal(L.valeurBiens({ medicaments: 2, nourriture: 3, energie: 50 }, cours), 13, "l'énergie ne compte pas");

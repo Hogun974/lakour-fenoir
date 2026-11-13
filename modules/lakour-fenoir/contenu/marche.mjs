@@ -162,4 +162,4 @@ export const FOIRES = [
 
 // ---------------------------------------------------------------- Le cours de base (pour les textes : la logique le calcule)
 // Doit rester égal à REGLES_MARCHE.cours.base de systems/lakour-survie/logique/marche.mjs (un essai le vérifie).
-export const COURS_TEXTE = { eau: 1, nourriture: 1, plantes: 1, graines: 2, materiaux: 2, munitions: 3, pieces: 3, carburant: 4, medicaments: 5 };
+export const COURS_TEXTE = { eau: 1, nourriture: 1, plantes: 2, graines: 2, materiaux: 2, munitions: 3, pieces: 3, carburant: 4, medicaments: 5 };

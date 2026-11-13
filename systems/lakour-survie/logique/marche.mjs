@@ -27,13 +27,16 @@ export const PREUVES = ["marque", "temoin", "fait"];
 
 export const REGLES_MARCHE = {
   // Le cours : valeur de base en parts, multiplicateurs de phase et de saison, récolte de la foire, arrondi au demi.
+  // Rééquilibrage du 2026-11-13 (docs/equilibre-marche.md) : les plantes valent 2 (et non 1) et suivent les médicaments dans la
+  // crise (× 1,5 dès la panique) : à 1 part, deux brassées (2) faisaient une tisane qui valait un médicament (5, puis 7,5), une
+  // rente de 3 à 5 parts par quart de travail ; à 2, la tisane rapporte environ une part par quart, le prix d'un travail.
   cours: {
-    base: { eau: 1, nourriture: 1, plantes: 1, graines: 2, materiaux: 2, munitions: 3, pieces: 3, carburant: 4, medicaments: 5 },
+    base: { eau: 1, nourriture: 1, plantes: 2, graines: 2, materiaux: 2, munitions: 3, pieces: 3, carburant: 4, medicaments: 5 },
     phase: {
-      "jour-zero": {}, panique: { medicaments: 1.5, munitions: 1.5 },
-      effondrement: { medicaments: 1.5, munitions: 1.5, carburant: 1.5 },
-      silence: { medicaments: 1.5, munitions: 1.5, carburant: 2, pieces: 1.5 },
-      apres: { medicaments: 1.5, carburant: 2.5, pieces: 1.5, graines: 1.5 }
+      "jour-zero": {}, panique: { medicaments: 1.5, plantes: 1.5, munitions: 1.5 },
+      effondrement: { medicaments: 1.5, plantes: 1.5, munitions: 1.5, carburant: 1.5 },
+      silence: { medicaments: 1.5, plantes: 1.5, munitions: 1.5, carburant: 2, pieces: 1.5 },
+      apres: { medicaments: 1.5, plantes: 1.5, carburant: 2.5, pieces: 1.5, graines: 1.5 }
     },
     saison: { pluies: { eau: 0.5 }, seche: { eau: 1.5 } },
     recolte: 0.5,          // la récolte d'une foire vaut moitié moins ce jour-là

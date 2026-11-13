@@ -9,7 +9,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
-import { REGLES_MARCHE } from "../systems/lakour-survie/logique/marche.mjs";
+import { REGLES_MARCHE, coursDuJour } from "../systems/lakour-survie/logique/marche.mjs";
 import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES, COURS_TEXTE } from "../modules/lakour-fenoir/contenu/marche.mjs";
 import { EVENEMENTS } from "../modules/lakour-fenoir/contenu/evenements.mjs";
 import { SURVIVANTS } from "../modules/lakour-fenoir/contenu/survivants.mjs";
@@ -72,6 +72,24 @@ test("créole : chaque parole en créole est en italique, suivie de son sens ent
     if (!/\*[^*]+\*/.test(d)) continue;
     assert.match(d, /\*[^*]+\*[^(]*\([^)]+\)/u, `sens manquant : ${d}`);
   }
+});
+
+test("recettes et cours : aucune recette ne rapporte plus de 3 parts par quart de travail, dans aucune phase (rééquilibrage du 2026-11-13)", () => {
+  // Une cueillette des alentours rend 1 à 2 nourritures par quart-personne : au-delà de 3 parts par quart, à l'infini, c'est une
+  // rente. Avant : tisanes et pansements 5,5 parts par quart dans la crise, rimèd lontan 6 (docs/equilibre-marche.md).
+  const phases = ["jour-zero", "panique", "effondrement", "silence", "apres"];
+  for (const r of D.recettes.filter(x => x.produit?.ressource)) {
+    for (const phase of phases) {
+      const c = coursDuJour({ phase });
+      if (!(r.produit.ressource in c) || Object.keys(r.cout).some(k => !(k in c))) continue;
+      const cout = Object.entries(r.cout).reduce((t, [k, q]) => t + q * c[k], 0);
+      const parQuart = (r.produit.n * c[r.produit.ressource] - cout) / r.travail;
+      assert.ok(parQuart <= 3, `${r.cle} (${phase}) : ${parQuart} parts par quart`);
+    }
+  }
+  const pansements = D.recettes.find(x => x.cle === "pansements");
+  assert.equal(pansements.travail, 3, "découper, faire bouillir, sécher, rouler : 3 quarts");
+  assert.deepEqual(pansements.cout, { materiaux: 1 });
 });
 
 test("cours, foires, marchés : le cours des textes est celui de la logique ; régions, mois, jours, bastions connus", () => {

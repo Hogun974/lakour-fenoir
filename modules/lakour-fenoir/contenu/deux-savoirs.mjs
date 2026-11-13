@@ -182,7 +182,7 @@ const JOURNAL_MJ = journal({ cle: "deux-savoirs", nom: "Les deux savoirs et l'î
 - Les **boutures** meurent si on ne les replante pas : sans potager, jardin, serre ou verger en service, un tiers fane chaque jour. Avec, elles sont repiquées le soir même et deviennent des graines.
 - Quand la pharmacie est vide, le jardin soigne : tisanes (2 plantes → 1 médicament), *rimèd lontan* avec le savoir des zerbaz (3 plantes → 2 médicaments).
 - **Les livres** se fouillent (fouille « livres » : une école, une église, un commerce, une case) : un livre apprend un savoir-faire, moderne deux fois plus souvent que lontan. Il est rare, et chaque région en a peu.
-- **Les objets faits main** (pinces à linge en bois fendu, sac, chaise et natte de vacoa, cordes de choka) coûtent trois fois rien ; deux d'entre eux à l'abri, ou un poêle de masse, ou un chauffe-eau de fortune, donnent +1 au moral de l'abri (au plus +1).` },
+- **Les objets faits main** (pinces à linge en bois fendu, sac, chaise et natte de vacoa, cordes de choka) coûtent trois fois rien ; deux d'entre eux à l'abri (quatre pour les pinces à linge, qui comptent moitié moins), ou un poêle de masse, ou un chauffe-eau de fortune, donnent +1 au moral de l'abri (au plus +1).` },
   { cle: "gaz", titre: "Le gaz et l'eau chaude", texte: `**Le gaz** est une ressource à part (en kilos : une bouteille en fait 13). On le trouve en fouillant (une bouteille sous l'évier de chaque case), il s'épuise, et il ne fait pas rouler un moteur. Il ne se range pas avec le carburant : ce ne sont ni les mêmes réserves, ni les mêmes usages.
 
 - La **gazinière** (1 kg par jour) fait la cuisine sans fumée : plus discrète que la cuisine commune au feu de bois, qui prend le relais quand la bouteille est vide.

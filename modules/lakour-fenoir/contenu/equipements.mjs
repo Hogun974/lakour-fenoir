@@ -141,7 +141,7 @@ export const EQUIPEMENTS = [
     description: `Un chien errant qui a fini par manger dans la main, ou un chiot d'une portée de l'élevage : il dort en travers de la porte, entend les Livides avant la garde, s'agite avant le cyclone et le volcan. Il se bat si on le lâche, et peut y rester. À l'abri, il remonte le moral de tous.` }),
   equipement({ cle: "cahier-de-gramoune", nom: "Cahier d'une gramoune", categorie: "livre", bonus: {}, charge: 0, enseigne: [],
     description: `Un cahier d'écolier rempli à la veillée, sous la dictée d'une ancienne : remèdes, lunes pour planter, façons de tresser et de bâtir, avec ses mots à elle. Il n'en existe qu'un ; il apprend ce qu'elle savait, même quand elle n'est plus là.` }),
-  equipement({ cle: "pinces-a-linge-en-bois", nom: "Pinces à linge en bois fendu", categorie: "vie", bonus: {}, charge: 0, effets: { moral: 0.5 },
+  equipement({ cle: "pinces-a-linge-en-bois", nom: "Pinces à linge en bois fendu", categorie: "vie", bonus: {}, charge: 0, effets: { moral: 0.25 },
     description: `Un bout de bois de goyavier fendu, une ligature de fil : le linge sèche au vent au lieu de traîner. Trois fois rien, et la cour ressemble de nouveau à une cour.` }),
   equipement({ cle: "sac-en-vacoa", nom: "Sac en vacoa", categorie: "vie", bonus: { endurance: 1 }, charge: 0, effets: { moral: 0.5 },
     description: `Un sac tressé de feuilles de vacoa séchées, solide et léger, comme ceux des marchés d'avant : on porte plus, plus loin, et c'est beau.` }),

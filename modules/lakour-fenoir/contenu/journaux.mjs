@@ -105,7 +105,7 @@ Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs e
 - **Le marché forain** : quand plusieurs communautés vivent dans une région et qu'une route est ouverte, un marché s'installe un jour fixe de la semaine, sur un terrain qui n'est à personne. Chaque bastion a une voix au **conseil du marché**, qui affiche le cours et règle les litiges. **Trêve** dans son périmètre : la rompre, c'est être connu de toute l'île comme celui qui l'a rompue.
 - **La foire**, une fois par an, autour d'une récolte : les lentilles de Cilaos en octobre, les chouchous de Salazie, les goyaviers des Palmistes, le vacoa de Saint-Philippe, les semences du Nouvel An tamoul.
 
-**Le cours** dit ce que vaut chaque chose, en **parts** (une part, c'est un jour de nourriture pour une personne) : il aide à échanger, il ne fait pas payer. De base : eau 1, nourriture 1, plantes 1, graines 2, matériaux 2, munitions 3, pièces 3, carburant 4, médicaments 5. Il bouge avec la crise (le carburant ne revient jamais), la saison (l'eau vaut peu sous la pluie) et la récolte de la foire.
+**Le cours** dit ce que vaut chaque chose, en **parts** (une part, c'est un jour de nourriture pour une personne) : il aide à échanger, il ne fait pas payer. De base : eau 1, nourriture 1, plantes 2, graines 2, matériaux 2, munitions 3, pièces 3, carburant 4, médicaments 5. Il bouge avec la crise (le carburant ne revient jamais), la saison (l'eau vaut peu sous la pluie) et la récolte de la foire.
 
 **Accueillir le marché** à son abri rapporte de la réputation auprès des bastions qui y viennent, mais tout se voit et s'entend : du bruit chaque jour de marché, du monde, des lumières.
 
@@ -497,7 +497,7 @@ ${FOIRES.map(f => `- **${f.nom}** (${MOIS[f.mois - 1]}, ${REGIONS.find(r => r.cl
 ${Object.entries(COURS_TEXTE).map(([r, v]) => `- **${NOMS_RESSOURCES[r]}** : ${v}`).join("\n")}
 
 Il bouge avec la crise et la saison :
-- pendant la panique et l'effondrement, les médicaments et les munitions valent une fois et demie plus ; le carburant aussi dès l'effondrement ;
+- pendant la panique et l'effondrement, les médicaments, les plantes et les munitions valent une fois et demie plus (les médicaments et les plantes le restent ensuite) ; le carburant aussi dès l'effondrement ;
 - au silence, le carburant double et les pièces valent une fois et demie plus ; dans l'après, le carburant vaut deux fois et demie plus (il ne revient jamais), les graines aussi grimpent ;
 - l'eau vaut moitié moins en saison des pluies, une fois et demie plus en saison sèche ;
 - la récolte d'une foire vaut moitié moins ce jour-là.
