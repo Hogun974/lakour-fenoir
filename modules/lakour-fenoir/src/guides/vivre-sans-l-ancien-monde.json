@@ -1,0 +1,93 @@
+{
+  "_id": "9gBoVTyIS4dHEuqu",
+  "_key": "!journal!9gBoVTyIS4dHEuqu",
+  "name": "Vivre sans l'ancien monde",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "vivre-sans-l-ancien-monde",
+      "visible": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "CPC7I4iaYqpxUWwJ",
+      "_key": "!journal.pages!9gBoVTyIS4dHEuqu.CPC7I4iaYqpxUWwJ",
+      "name": "Le savoir d'autrefois",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les matériaux de l'ancien monde finissent : le PVC casse, les tôles rouillent, plus personne ne fabrique de câble. Ce que les anciens savaient faire avec le bambou, le vacoa, la pierre et les plantes du jardin, lui, ne s'épuise pas.</p><ul><li>Beaucoup d'installations ont une version <strong>à l'ancienne</strong> : gratuite ou presque (on la bâtit avec le bois et les plantes des alentours), réparable soi-même, moins performante, souvent plus discrète. Bâtie à côté de la moderne, elle prend le relais quand la moderne casse.</li><li>Les savoir-faire se rangent en deux <strong>arbres</strong>, moderne et lontan ; on n'est vraiment autonome qu'avec les deux.</li><li><strong>Les gramounes</strong> savent ce que plus personne ne sait. Gagnez leur confiance : on apprend plus vite à leurs côtés que dans un livre. Écrivez sous leur dictée, le soir : sinon, leur savoir partira avec elles.</li><li><strong>Les jardins</strong> des cases abandonnées gardent des mois chouchou, bananiers, manioc et songe. Prenez-y des boutures, et replantez-les le jour même.</li><li><strong>Lire</strong> prend du temps, et de la lumière : une lampe le soir se voit de loin.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "lontan"
+        }
+      }
+    },
+    {
+      "_id": "TSAmEL1U5bUMKK77",
+      "_key": "!journal.pages!9gBoVTyIS4dHEuqu.TSAmEL1U5bUMKK77",
+      "name": "Quand le cyclone vient",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Préparez</strong> dès la pré-alerte : rentrez ou fixez tout ce qui peut s'envoler. Ce qu'on n'a pas fixé s'envole, et finit dans la cour de quelqu'un d'autre.</li><li><strong>Pendant</strong>, le vent et la pluie vont par rafales et accalmies. Sortir est possible, trempé, de travers, sourd et presque aveugle. Si le ciel s'ouvre d'un coup, méfiez-vous : c'est peut-être l'œil, et le vent reviendra de l'autre côté.</li><li>Sous le vacarme, rien ne s'entend : ni vous, ni eux.</li><li><strong>Après</strong>, il y a du bois pour des semaines, des fruits à ramasser vite, des sentiers coupés, de l'eau à filtrer, et l'abri qu'on voit de plus loin tant que la végétation n'a pas repoussé.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "cyclone"
+        }
+      }
+    },
+    {
+      "_id": "kxgtVtoA7daKt15Z",
+      "_key": "!journal.pages!9gBoVTyIS4dHEuqu.kxgtVtoA7daKt15Z",
+      "name": "Sans carburant",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li>La <strong>route</strong> est rapide et bruyante, et chaque épave, chaque éboulis, chaque tunnel est un verrou. Le <strong>sentier</strong> est lent, silencieux, et on n'y passe que ce qu'on porte.</li><li>Le <strong>vélo</strong> descend des Hauts sans un bruit ; il remonte en une journée de poussée.</li><li>Une <strong>charrette à bœufs</strong> porte une case entière, lentement ; les bœufs mangent l'herbe du bord de la route.</li><li>Un <strong>véhicule électrique</strong> se recharge sur les panneaux et les batteries de l'abri ; un moteur <strong>modifié</strong> boit l'alcool de canne, l'huile filtrée ou le bois sec du gazogène.</li><li>Les <strong>chiens errants</strong> vont en meutes sur les routes. Un chien qu'on nourrit, patiemment, peut devenir le vôtre : il garde, il réconforte, il sent venir le cyclone avant le ciel.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "routes"
+        }
+      }
+    }
+  ]
+}

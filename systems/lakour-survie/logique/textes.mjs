@@ -51,7 +51,13 @@ export const CLES_TEXTES = [
   "soin-medicaments", "soin-pas-atteint", "soin-rate",
   // abri.mjs, fabrication.mjs : motifs de refus d'un chantier ou d'une recette
   "installation-inconnue", "recette-inconnue", "niveau-inexistant", "niveau-deja", "niveau-prealable", "hors-service-reparer",
-  "savoir-manquant", "eau-requise", "site-sol", "site-soleil", "site-souterrain", "requiert", "requiert-hors-service", "manque"
+  "savoir-manquant", "eau-requise", "site-sol", "site-soleil", "site-souterrain", "requiert", "requiert-hors-service", "manque",
+  // lot « savoirs » : les deux savoirs, la gramoune, le chien, le cyclone vécu, les routes sans carburant
+  "eruption-premices", "livre-trouve", "verrou-epave", "verrou-eboulis", "verrou-tunnel", "verrou-arbre", "voyage-source",
+  "savoir-perdu", "chien-agite-cyclone", "chien-agite-volcan", "boutures-mortes",
+  "cyclone-prepare", "cyclone-emportes", "cyclone-citerne", "cyclone-arbres", "cyclone-depot", "menace-depot",
+  "apprendre-savoir-inconnu", "apprendre-source", "apprendre-deja", "apprendre-maitre", "apprendre-livre",
+  "dictee-pas-gramoune", "dictee-confiance", "dictee-faite"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

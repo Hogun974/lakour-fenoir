@@ -1,0 +1,30 @@
+{
+  "_id": "NRU6A2iGZjURlDxg",
+  "_key": "!items!NRU6A2iGZjURlDxg",
+  "name": "Pierre sèche",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "pierre-seche",
+    "description": "<p>Épierrer un champ et monter avec ses cailloux un mur qui tient sans mortier, un siècle durant : les grosses pierres en bas, les boutisses qui traversent, le fruit vers l'intérieur. Les murets des Hauts et des îlets en sont faits.</p>",
+    "apprentissage": "<p>Un vieux maçon des Hauts, un gramoun de la Plaine des Grègues ou de Mafate ; un cahier dicté ; un premier muret monté sous ses yeux.</p>",
+    "effets": "<p>Ouvre le mur de pierres sèches. +1 dé aux réparations de murets et de terrasses.</p>",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pierre-seche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -10,6 +10,17 @@
       "en": "<p>A coil of black garden hose on the roof, a drum insulated with old blankets, a tap: hot water from the sun.</p>"
     }
   },
+  "recettes/5HIPC9w7NaleygmE": {
+    "_nom": "Gazogène sur un camion",
+    "name": {
+      "fr": "Gazogène sur un camion",
+      "en": "Wood-gas burner on a truck"
+    },
+    "system.description": {
+      "fr": "<p>Un fût, un foyer, un filtre, des tuyaux jusqu'à l'admission : un camion du groupe (le MJ le retire) roulera au bois sec.</p>",
+      "en": "<p>A drum, a firebox, a filter, pipes to the intake: one of the group's trucks (the GM removes it) will run on dry wood.</p>"
+    }
+  },
   "recettes/7JuZNH2SQ4MCyAaV": {
     "_nom": "Gourde filtrante de fortune",
     "name": {
@@ -43,6 +54,28 @@
       "en": "<p>Stretched wires, tin cans, goat bells: an alarm network around the camp.</p>"
     }
   },
+  "recettes/8h5MizzJ5gAyPHGB": {
+    "_nom": "Chaise en vacoa",
+    "name": {
+      "fr": "Chaise en vacoa",
+      "en": "Vacoa chair"
+    },
+    "system.description": {
+      "fr": "<p>Un cadre de bois chevillé, une assise tressée de vacoa : une soirée de travail pour des années de veillées.</p>",
+      "en": "<p>A pegged wooden frame, a seat woven from vacoa: one evening's work for years of evenings.</p>"
+    }
+  },
+  "recettes/Buvxj39uKMreBfcT": {
+    "_nom": "Sac en vacoa",
+    "name": {
+      "fr": "Sac en vacoa",
+      "en": "Vacoa bag"
+    },
+    "system.description": {
+      "fr": "<p>Couper les feuilles de vacoa, ôter les épines du bord, les faire sécher et blanchir, les fendre en lanières, tresser.</p>",
+      "en": "<p>Cut the vacoa leaves, strip the thorns from their edges, dry and bleach them, split them into strips, weave.</p>"
+    }
+  },
   "recettes/Bv0V2xng4Y1vZtkp": {
     "_nom": "Lance de fortune",
     "name": {
@@ -63,6 +96,17 @@
     "system.description": {
       "fr": "<p>Achards, rougails en bocaux, viande boucanée, poisson séché : ce qui allait pourrir tiendra des mois.</p>",
       "en": "<p>Achards, rougails in jars, smoked meat, dried fish: what was going to rot will keep for months.</p>"
+    }
+  },
+  "recettes/EQKtEz46LIaK1Rdx": {
+    "_nom": "Natte de vacoa",
+    "name": {
+      "fr": "Natte de vacoa",
+      "en": "Vacoa mat"
+    },
+    "system.description": {
+      "fr": "<p>Des lanières de vacoa tressées à plat, bord replié : une natte pour dormir, sécher, s'asseoir.</p>",
+      "en": "<p>Strips of vacoa woven flat, edge folded over: a mat to sleep on, dry things on, sit on.</p>"
     }
   },
   "recettes/FnsYcbklzcALvqjB": {
@@ -96,6 +140,17 @@
     "system.description": {
       "fr": "<p>Fruits trop mûrs, jus de canne, un alambic de cocotte et de serpentin : un alcool fort qui désinfecte plaies et instruments.</p>",
       "en": "<p>Overripe fruit, cane juice, a still made from a pressure cooker and a coil: a strong spirit that disinfects wounds and instruments.</p>"
+    }
+  },
+  "recettes/TzE3XBQUBOoTBAUz": {
+    "_nom": "Rimèd lontan",
+    "name": {
+      "fr": "Rimèd lontan",
+      "en": "Rimèd lontan (old-time remedies)"
+    },
+    "system.description": {
+      "fr": "<p><em>Rimèd lontan</em> (les remèdes d'autrefois) : sirops, frictions, bains de feuilles et emplâtres de la gramoune, préparés avec ce que le jardin donne quand la pharmacie est vide. Ils comptent comme des médicaments pour le jeu ; ils ne guérissent pas du Gris.</p>",
+      "en": "<p><em>Rimèd lontan</em> (the remedies of the old days): the gramoune's syrups, rubs, leaf baths and poultices, made with what the garden gives when the pharmacy is empty. They count as medicine in the game; they do not cure the Grey.</p>"
     }
   },
   "recettes/VIxJCPkoUrcRSgus": {
@@ -142,6 +197,17 @@
       "en": "<p>Bricks, stones, clay, a sheet-metal pipe: a stove that stores the heat of one blaze for a whole Highland night.</p>"
     }
   },
+  "recettes/a9fg8knFEzz7GN9S": {
+    "_nom": "Huile filtrée (carburant)",
+    "name": {
+      "fr": "Huile filtrée (carburant)",
+      "en": "Filtered oil (fuel)"
+    },
+    "system.description": {
+      "fr": "<p>L'huile des friteuses abandonnées et des cocos pressés, décantée, filtrée au tissu, chauffée : un carburant pour moteur modifié, qui encrasse vite.</p>",
+      "en": "<p>Oil from abandoned fryers and pressed coconuts, settled, filtered through cloth, heated: a fuel for a modified engine, which clogs it quickly.</p>"
+    }
+  },
   "recettes/bocOAY487x6bUzvN": {
     "_nom": "Munitions rechargées",
     "name": {
@@ -186,6 +252,17 @@
       "en": "<p>Cotton sheets cut up, boiled, dried in the sun and rolled: clean bandages.</p>"
     }
   },
+  "recettes/i8u6OGsMOqGbxF9l": {
+    "_nom": "Pinces à linge en bois fendu",
+    "name": {
+      "fr": "Pinces à linge en bois fendu",
+      "en": "Split-wood clothes pegs"
+    },
+    "system.description": {
+      "fr": "<p>Un bout de goyavier, un couteau, du fil : on fend, on taille, on ligature. Le genre de chose qu'on achetait sans y penser.</p>",
+      "en": "<p>A piece of guava wood, a knife, some wire: you split, you carve, you bind. The kind of thing you used to buy without thinking.</p>"
+    }
+  },
   "recettes/nHobGpngrAgb3YMs": {
     "_nom": "Arc et flèches",
     "name": {
@@ -208,6 +285,17 @@
       "en": "<p>Wire, chicken mesh, cut-up bottles: enough to trap tenrecs, hares and river prawns.</p>"
     }
   },
+  "recettes/q6P0ESNuMdJccL0c": {
+    "_nom": "Alcool de canne (carburant)",
+    "name": {
+      "fr": "Alcool de canne (carburant)",
+      "en": "Cane alcohol (fuel)"
+    },
+    "system.description": {
+      "fr": "<p>Du jus de canne ou des fruits fermentés, un alambic de fortune, et l'alcool qui coule, plus fort que pour le rhum : dix litres d'un carburant qu'acceptent seulement les moteurs modifiés.</p>",
+      "en": "<p>Cane juice or fermented fruit, a makeshift still, and the alcohol running out, stronger than for rum: ten litres of a fuel that only modified engines will take.</p>"
+    }
+  },
   "recettes/uZaevsE1XImDgyjV": {
     "_nom": "Semences triées",
     "name": {
@@ -219,6 +307,17 @@
       "en": "<p>Keep the finest fruit, dry the chilli, bean and pumpkin seeds, take cassava cuttings: next year's harvest.</p>"
     }
   },
+  "recettes/wEBWQeG7BvkrtNtY": {
+    "_nom": "Moteur modifié pour l'alcool",
+    "name": {
+      "fr": "Moteur modifié pour l'alcool",
+      "en": "Engine modified for alcohol"
+    },
+    "system.description": {
+      "fr": "<p>On prend une vieille voiture à essence du groupe (le MJ la retire) : joints, gicleurs, allumage. Elle boira désormais l'alcool de canne et l'huile filtrée, plus l'essence.</p>",
+      "en": "<p>You take one of the group's old petrol cars (the GM removes it): seals, jets, ignition. From now on it will drink cane alcohol and filtered oil, no longer petrol.</p>"
+    }
+  },
   "recettes/xdHnDIfvxxIX9cSE": {
     "_nom": "Réchaud à bois",
     "name": {
@@ -228,6 +327,17 @@
     "system.description": {
       "fr": "<p>Deux boîtes de conserve imbriquées, percées en haut et en bas : un réchaud qui brûle des brindilles presque sans fumée.</p>",
       "en": "<p>Two tin cans nested together, pierced at top and bottom: a stove that burns twigs almost without smoke.</p>"
+    }
+  },
+  "recettes/z5bmjfxQ48deOIP8": {
+    "_nom": "Cordes de choka",
+    "name": {
+      "fr": "Cordes de choka",
+      "en": "Choka ropes"
+    },
+    "system.description": {
+      "fr": "<p>Les feuilles de choka rouies dans l'eau, battues pour en tirer la fibre, tordues en cordes.</p>",
+      "en": "<p>Choka leaves retted in water, beaten to draw out the fibre, twisted into ropes.</p>"
     }
   }
 }

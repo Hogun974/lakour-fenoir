@@ -1,0 +1,46 @@
+{
+  "_id": "Gt1PRc9qvrHmJqgg",
+  "_key": "!items!Gt1PRc9qvrHmJqgg",
+  "name": "Camion à gazogène",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "camion-a-gazogene",
+    "categorie": "transport",
+    "description": "<p>Un camion plateau qui porte à l'arrière un grand fût où brûle du bois : le gaz du bois fait tourner le moteur. Il fume, il cogne, il faut charger le foyer à chaque arrêt (une brouette de bois sec par quart), mais il roule sans une goutte d'essence.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 3,
+    "transport": {
+      "mode": "vehicule",
+      "places": 2,
+      "chargeMax": 50,
+      "carburantParQuart": 1,
+      "terrains": [
+        "route"
+      ],
+      "bruit": 3,
+      "source": "materiaux",
+      "lenteur": 1.5
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "camion-a-gazogene"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

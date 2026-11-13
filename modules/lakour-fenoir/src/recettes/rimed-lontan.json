@@ -1,0 +1,43 @@
+{
+  "_id": "TzE3XBQUBOoTBAUz",
+  "_key": "!items!TzE3XBQUBOoTBAUz",
+  "name": "Rimèd lontan",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "rimed-lontan",
+    "description": "<p><em>Rimèd lontan</em> (les remèdes d'autrefois) : sirops, frictions, bains de feuilles et emplâtres de la gramoune, préparés avec ce que le jardin donne quand la pharmacie est vide. Ils comptent comme des médicaments pour le jeu ; ils ne guérissent pas du Gris.</p>",
+    "cout": {
+      "plantes": 3
+    },
+    "travail": 2,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "zerbaz"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "ressource": "medicaments",
+      "n": 2
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rimed-lontan"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

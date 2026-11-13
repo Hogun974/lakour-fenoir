@@ -656,6 +656,21 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         // Plus d'eau à trouver et le site n'en donne pas assez : on cherche un site avec de l'eau (sa région ou une voisine).
         if (jour > 1 && (abri.system.stocks.eau ?? 0) < bilan.consommation.eau && trouvee < bilan.consommation.eau) doitPartir = `soif (site ${abri.system.site})`;
       }
+      // Lot « savoirs » : un cyclone annoncé sur la région de l'abri : on rentre et on fixe ce qui s'envole (deux quarts de travail
+      // par personne envoyée), comme le ferait un groupe raisonnable qui écoute la radio ou voit le ciel.
+      const cy = monde.cyclone;
+      if (cy && ["pre-alerte", "orange"].includes(cy.alerte) && (cy.trajectoire ?? []).includes(abri.system.region) && dispo.length
+        && !L.preparationValable(abri.system.preparation, cy.arrivee)) {
+        const exposees = abri.installations.filter(i => i.niveau >= 1 && L.CATEGORIES_EXPOSEES.includes(idx.installations.get(i.cle)?.categorie)).length;
+        const requis = L.travailPreparation(exposees);
+        const avant = abri.system.preparation && jour - Number(abri.system.preparation.jour ?? -99) <= L.PREPARATION.valable ? Number(abri.system.preparation.fait) || 0 : 0;
+        const k = Math.min(dispo.length, Math.max(1, Math.ceil((requis - avant) / 2)));
+        const p = dispo.slice(0, k);
+        dispo = dispo.slice(k);
+        poser(p, "chantier");
+        abri.system.preparation = { jour, fait: avant + 2 * k, requis };
+        stats.preparations = (stats.preparations ?? 0) + 1;
+      }
       if (ouvert && dispo.length) {
         const ouvriers = dispo.slice(0, 2);
         dispo = dispo.slice(2);

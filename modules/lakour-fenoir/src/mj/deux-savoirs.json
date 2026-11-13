@@ -1,0 +1,185 @@
+{
+  "_id": "EiccwQRe6BbpZkpH",
+  "_key": "!journal!EiccwQRe6BbpZkpH",
+  "name": "Les deux savoirs et l'île en mouvement",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "deux-savoirs",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "Zw5nrJbZ87O9zg7u",
+      "_key": "!journal.pages!EiccwQRe6BbpZkpH.Zw5nrJbZ87O9zg7u",
+      "name": "Les deux savoirs",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le savoir d'autrefois vaut le savoir moderne. Les savoir-faire se rangent en deux <strong>arbres</strong> :</p><ul><li><strong>moderne</strong> : électricité solaire, maraîchage, plomberie et filtration, maçonnerie, mécanique, premiers secours, radio, galeries, hydraulique, moteurs de fortune ;</li><li><strong>lontan</strong> (d'autrefois) : zerbaz et tisanes, jardin créole, bambou, vacoa et vétiver, pierre sèche, pêche, élevage, conserverie.</li></ul><p><strong>L'autonomie complète</strong> demande les deux : un abri autonome (sept jours de suite) et au moins deux savoir-faire de chaque arbre dans le groupe. La fiche d'abri et le tableau de bord le disent.</p><p><strong>Les installations à l'ancienne.</strong> Plusieurs installations ont une <strong>sœur lontan</strong> faite en matières de l'île (bambou, vacoa, goyavier, vétiver, pierre sèche) : gouttières de bambou et jarres (citerne), conduite de bambou (captage), puits à balancier (pompe), jardin créole (potager), garde-manger lontan (réserve), palissade de bambou, mur de pierres sèches, guet dans un grand arbre (tour), ruches en tronc. La cuisine commune au feu de bois est la sœur lontan de la gazinière ; l'eau chauffée au feu de bois, celle des chauffe-eau. Pas de panneau solaire ni de batterie à l'ancienne.</p><ul><li>Elles se paient en <strong>matières de l'île</strong> (« ile » dans les coûts), prises sur le bois des alentours de l'abri, qui repousse ; elles se réparent avec les mêmes matières, sans matériaux fouillés.</li><li>Elles sont <strong>moins performantes</strong> (une conduite de bambou fuit), souvent <strong>plus discrètes</strong> (un jardin créole ressemble à une cour à l'abandon).</li><li><strong>Deux sœurs ne s'additionnent pas</strong> : la moderne marche d'abord, la lontan attend en secours et prend le relais quand la moderne est cassée, éteinte ou à court (plus de gaz, plus d'eau d'arrosage). C'est l'intérêt de bâtir les deux.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "deux-savoirs"
+        }
+      }
+    },
+    {
+      "_id": "NeTngjSxvF4cC3qK",
+      "_key": "!journal.pages!EiccwQRe6BbpZkpH.NeTngjSxvF4cC3qK",
+      "name": "La gramoune, bibliothèque vivante",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une <strong>gramoune</strong> (un gramoun) a soixante ans ou plus et garde au moins un savoir lontan. Elle est fragile (lente, à soigner, pas de travaux lourds), et c'est la pièce la plus rare de l'île.</p><ul><li><strong>Sa confiance</strong> va de 0 à 5. Elle se gagne veillée après veillée (fenêtre du MJ, onglet Savoirs : « Gagner sa confiance » : un test de parole, +1 dé si celui qui parle a lui-même un savoir lontan) ; un test forcé raté la fait baisser.</li><li><strong>Apprendre</strong> : une veillée par soir, à l'abri. Auprès d'une gramoune qui a confiance (3 ou plus), un savoir lontan qu'elle a s'apprend en <strong>4 veillées</strong> ; auprès de quelqu'un d'autre qui sait, en 7 ; dans un livre trouvé, en 14 ; dans le cahier d'une gramoune, en 7.</li><li><strong>Lire prend de la lumière</strong> : une unité d'énergie si l'abri en a, sinon une bougie, et ce soir-là l'abri se voit de loin (visibilité +1).</li><li><strong>Le cahier</strong> : écrire sous sa dictée, six veillées, si elle a confiance (3 ou plus). Il n'y en a qu'un ; il apprend ses savoirs lontan et lui survit. <strong>Sinon, son savoir meurt avec elle</strong> : le journal le dit le jour où elle s'en va.</li><li><strong>Accueillir une gramoune</strong> : la fenêtre du MJ propose quatre anciens de l'île, métissés comme elle (Gramoune Zélie Ah-Kiem, Gramoun Ignace Técher, Gramoune Mariamma Moutoussamy, Gramoun Saïd Madi), comme des recrues : test de parole, prix et raison d'être là. Leurs préjugés sont les leurs ; la partie les dément.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "gramoune"
+        }
+      }
+    },
+    {
+      "_id": "p95NUk7UYOBo6RGJ",
+      "_key": "!journal.pages!EiccwQRe6BbpZkpH.p95NUk7UYOBo6RGJ",
+      "name": "Le jardin créole, les livres, les objets faits main",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Les jardins des cases</strong> sont le premier trésor d'une case abandonnée (fouille « jardins » dans une région, mieux dans une case, une maison, une ferme, un îlet). On en rapporte de la nourriture (chouchou, bananes, manioc, songe : ils tiennent des mois après le départ des gens), des <strong>boutures</strong> et des zerbaz.</p><ul><li>Les <strong>boutures</strong> meurent si on ne les replante pas : sans potager, jardin, serre ou verger en service, un tiers fane chaque jour. Avec, elles sont repiquées le soir même et deviennent des graines.</li><li>Quand la pharmacie est vide, le jardin soigne : tisanes (2 plantes → 1 médicament), <em>rimèd lontan</em> avec le savoir des zerbaz (3 plantes → 2 médicaments).</li><li><strong>Les livres</strong> se fouillent (fouille « livres » : une école, une église, un commerce, une case) : un livre apprend un savoir-faire, moderne deux fois plus souvent que lontan. Il est rare, et chaque région en a peu.</li><li><strong>Les objets faits main</strong> (pinces à linge en bois fendu, sac, chaise et natte de vacoa, cordes de choka) coûtent trois fois rien ; deux d'entre eux à l'abri, ou un poêle de masse, ou un chauffe-eau de fortune, donnent +1 au moral de l'abri (au plus +1).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "jardin"
+        }
+      }
+    },
+    {
+      "_id": "kkbpeTMoAdDGrdig",
+      "_key": "!journal.pages!EiccwQRe6BbpZkpH.kkbpeTMoAdDGrdig",
+      "name": "Le gaz et l'eau chaude",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Le gaz</strong> est une ressource à part (en kilos : une bouteille en fait 13). On le trouve en fouillant (une bouteille sous l'évier de chaque case), il s'épuise, et il ne fait pas rouler un moteur. Il ne se range pas avec le carburant : ce ne sont ni les mêmes réserves, ni les mêmes usages.</p><ul><li>La <strong>gazinière</strong> (1 kg par jour) fait la cuisine sans fumée : plus discrète que la cuisine commune au feu de bois, qui prend le relais quand la bouteille est vide.</li><li>L'<strong>eau chaude</strong> : chauffe-eau solaire (d'abord), chauffe-eau à gaz (1 kg par jour, quand le soleil ne suffit pas), eau chauffée au feu de bois (en dernier : la fumée se voit). Chacun donne +1 au moral et +1 dé aux soins à l'abri (on lave les plaies à l'eau chaude) ; ils ne s'additionnent pas.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "gaz"
+        }
+      }
+    },
+    {
+      "_id": "S5lfqgXT6CHXBQNg",
+      "_key": "!journal.pages!EiccwQRe6BbpZkpH.S5lfqgXT6CHXBQNg",
+      "name": "Le cyclone, pas à pas",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le système tire les cyclones (pré-alerte deux jours avant, orange la veille, rouge le jour) ; ils ne sont pas plus forts qu'avant. Ce qui change, c'est la façon de les vivre.</p><ul><li><strong>Avant : préparer.</strong> Rentrer ou fixer ce qui s'envole (fenêtre du MJ, « Préparer le cyclone ») : 2 quarts-personne, plus 1 par installation exposée. Préparé dans les cinq jours : +1 de protection, et rien n'est emporté. Sinon, le vent emporte les tôles et les bâches (2 matériaux par point de force), les zerbaz qui séchaient, les boutures.</li><li><strong>Le chien</strong> du groupe s'agite le jour de la pré-alerte, même sans radio ; et la veille d'une éruption.</li><li><strong>Pendant</strong> (table « Cyclone — heure par heure ») : rafales et accalmies ; l'œil, si la région est au cœur de la trajectoire d'un cyclone fort ; puis le vent qui revient de l'autre côté. Dehors : −2 dés (−1 dans une accalmie), vigilance −3, mais +2 en discrétion. <strong>Les Livides n'entendent rien sous le vacarme</strong> : c'est le seul jour où l'on peut marteler sans se trahir (le bruit de l'abri ne compte pas).</li><li><strong>Après</strong> : les fuites ont rempli la citerne (+4 eau par point de force) d'une eau <strong>à filtrer</strong> (trois jours de risque doublé pour les maladies de l'eau sans filtre) ; les arbres tombés donnent du bois pour des semaines et des fruits à conserver vite ; les sentiers et les pistes restent coupés plus longtemps que la route (arbres en travers) ; la végétation abattue rend l'abri visible de plus loin (+force, −1 tous les quinze jours) ; et le vent a déposé dans la cour quelque chose qui était mal fixé ailleurs (bonne ou mauvaise surprise, parfois une menace).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "cyclone"
+        }
+      }
+    },
+    {
+      "_id": "qugGKZJGFKMubXMh",
+      "_key": "!journal.pages!EiccwQRe6BbpZkpH.qugGKZJGFKMubXMh",
+      "name": "Les chiens",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Après le jour zéro, les chiens abandonnés vont en <strong>meutes</strong> qui tiennent les routes : sur la route, les rencontres de bêtes sont deux fois plus fréquentes, et nombreuses (3 à 7), parfois menées par un <strong>chien de tête</strong> (bestiaire).</p><p><strong>Gagner la confiance d'un chien errant</strong> : c'est l'exception voulue à la règle qui veut que les animaux s'élèvent sans s'apprivoiser. Une veillée = 1 nourriture posée et un test de survie (+1 dé avec l'élevage) ; la confiance monte de 1 (de 2 avec une belle marge) ; à 5, le chien est au groupe (équipement « Chien du groupe »). Un test forcé raté : il mord (1 blessure, jamais de Gris) et recule.</p><p><strong>Le chien du groupe</strong> : +1 au moral de l'abri (sauf si des chiens de garde y sont déjà), +1 en vigilance comme une installation (assauts compris), +1 dé au combat de son maître ; il peut y rester (le MJ le dit). Il s'agite avant le cyclone et le volcan.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "chiens"
+        }
+      }
+    },
+    {
+      "_id": "guUx7BmCXVEESK0i",
+      "_key": "!journal.pages!EiccwQRe6BbpZkpH.guUx7BmCXVEESK0i",
+      "name": "Se déplacer sans carburant",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>La route</strong> est rapide, bruyante, et pleine de <strong>verrous</strong> : une épave en travers (on la siphonne et on passe en chicane, on la pousse dans le vide dans un grand fracas, ou on la laisse), un éboulis, un tunnel à une voie, un arbre tombé. Seul un véhicule les rencontre ; le système ajoute leur temps au voyage et le carburant siphonné aux réserves, le MJ raconte (table « Verrous de la route »). <strong>Le sentier</strong> est lent et silencieux (rencontres × 0,7), on n'y passe que ce qu'on porte. Le pire endroit où tomber en panne : un lieu desservi par une seule route (Cilaos, Salazie, les Hauts).</p><ul><li><strong>La charrette à bœufs</strong> : lente, silencieuse, porte quarante unités, les bêtes broutent les bas-côtés ; ce ne sont pas des montures ; trop large pour se faufiler entre les épaves.</li><li><strong>Le vélo</strong> descend des Hauts sans bruit et vite, et remonte en poussant (deux fois plus long qu'à pied) : des trajets presque à sens unique. Le vélo à assistance électrique remonte presque comme il descend.</li><li><strong>Les véhicules électriques</strong> (vélo, scooter, voiture) se rechargent sur les batteries de l'abri : l'énergie d'un trajet se prend au départ de l'abri.</li><li><strong>Le carburant maison</strong> : alcool de canne, huile filtrée, et le gazogène qui brûle du bois sec. Il faut d'abord modifier le moteur (savoir « Moteurs de fortune », atelier) ; le véhicule modifié est plus lent, et ne roule plus qu'avec ce carburant.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "routes"
+        }
+      }
+    }
+  ]
+}

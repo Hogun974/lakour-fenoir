@@ -22,7 +22,8 @@
     "munitions": 40,
     "materiaux": 300,
     "pieces": 160,
-    "graines": 30
+    "graines": 30,
+    "gaz": 210
    },
    "nature": {
     "cueillette": {
@@ -137,7 +138,8 @@
     "munitions": 15,
     "materiaux": 220,
     "pieces": 140,
-    "graines": 30
+    "graines": 30,
+    "gaz": 130
    },
    "nature": {
     "cueillette": {
@@ -241,7 +243,8 @@
     "munitions": 5,
     "materiaux": 160,
     "pieces": 90,
-    "graines": 2
+    "graines": 2,
+    "gaz": 50
    },
    "nature": {
     "cueillette": {
@@ -357,7 +360,8 @@
     "munitions": 60,
     "materiaux": 400,
     "pieces": 300,
-    "graines": 10
+    "graines": 10,
+    "gaz": 170
    },
    "nature": {
     "cueillette": {
@@ -489,7 +493,8 @@
     "munitions": 25,
     "materiaux": 280,
     "pieces": 140,
-    "graines": 25
+    "graines": 25,
+    "gaz": 170
    },
    "nature": {
     "cueillette": {
@@ -621,7 +626,8 @@
     "munitions": 15,
     "materiaux": 160,
     "pieces": 50,
-    "graines": 50
+    "graines": 50,
+    "gaz": 90
    },
    "nature": {
     "cueillette": {
@@ -738,7 +744,8 @@
     "munitions": 15,
     "materiaux": 200,
     "pieces": 80,
-    "graines": 25
+    "graines": 25,
+    "gaz": 130
    },
    "nature": {
     "cueillette": {
@@ -857,7 +864,8 @@
     "munitions": 50,
     "materiaux": 320,
     "pieces": 180,
-    "graines": 35
+    "graines": 35,
+    "gaz": 210
    },
    "nature": {
     "cueillette": {
@@ -988,7 +996,8 @@
     "munitions": 20,
     "materiaux": 260,
     "pieces": 90,
-    "graines": 60
+    "graines": 60,
+    "gaz": 130
    },
    "nature": {
     "cueillette": {
@@ -1103,7 +1112,8 @@
     "munitions": 10,
     "materiaux": 150,
     "pieces": 60,
-    "graines": 45
+    "graines": 45,
+    "gaz": 90
    },
    "nature": {
     "cueillette": {
@@ -1226,7 +1236,8 @@
     "munitions": 0,
     "materiaux": 20,
     "pieces": 10,
-    "graines": 0
+    "graines": 0,
+    "gaz": 10
    },
    "nature": {
     "cueillette": {
@@ -1325,7 +1336,8 @@
     "munitions": 15,
     "materiaux": 260,
     "pieces": 110,
-    "graines": 50
+    "graines": 50,
+    "gaz": 130
    },
    "nature": {
     "cueillette": {
@@ -1462,7 +1474,8 @@
     "munitions": 8,
     "materiaux": 100,
     "pieces": 35,
-    "graines": 40
+    "graines": 40,
+    "gaz": 50
    },
    "nature": {
     "cueillette": {
@@ -1580,7 +1593,8 @@
     "munitions": 8,
     "materiaux": 90,
     "pieces": 35,
-    "graines": 50
+    "graines": 50,
+    "gaz": 50
    },
    "nature": {
     "cueillette": {
@@ -1698,7 +1712,8 @@
     "munitions": 6,
     "materiaux": 100,
     "pieces": 35,
-    "graines": 55
+    "graines": 55,
+    "gaz": 50
    },
    "nature": {
     "cueillette": {
@@ -1828,7 +1843,8 @@
     "munitions": 2,
     "materiaux": 40,
     "pieces": 20,
-    "graines": 30
+    "graines": 30,
+    "gaz": 10
    },
    "nature": {
     "cueillette": {
@@ -1977,7 +1993,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 2,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Un seul escalier à tenir : quelques barricades suffisent",
@@ -2018,7 +2035,8 @@
     "munitions": 0,
     "materiaux": 6,
     "pieces": 0,
-    "graines": 2
+    "graines": 2,
+    "gaz": 13
    },
    "atouts": [
     "Mur d'enceinte et portail de fer",
@@ -2067,7 +2085,8 @@
     "munitions": 0,
     "materiaux": 8,
     "pieces": 6,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Matériel de secours, brancards, désincarcération",
@@ -2120,7 +2139,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 4
+    "graines": 4,
+    "gaz": 13
    },
    "atouts": [
     "Une source captée en haut du terrain",
@@ -2165,7 +2185,8 @@
     "munitions": 0,
     "materiaux": 3,
     "pieces": 3,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Tour imprenable : une porte, un escalier",
@@ -2210,7 +2231,8 @@
     "munitions": 0,
     "materiaux": 15,
     "pieces": 12,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Stocks énormes au début : colis, vivres, outillage",
@@ -2246,7 +2268,8 @@
     "munitions": 0,
     "materiaux": 2,
     "pieces": 2,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "On largue les amarres et les Livides restent à quai",
@@ -2282,7 +2305,8 @@
     "munitions": 0,
     "materiaux": 8,
     "pieces": 0,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Murs de basalte d'un mètre : il faut des jours pour les franchir",
@@ -2323,7 +2347,8 @@
     "munitions": 0,
     "materiaux": 30,
     "pieces": 15,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Carburant, outillage lourd, ciment et ferraille",
@@ -2372,7 +2397,8 @@
     "munitions": 0,
     "materiaux": 20,
     "pieces": 40,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Le paradis du bricoleur : pièces électriques et mécaniques",
@@ -2421,7 +2447,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 6,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Une forteresse flottante : on retire la passerelle",
@@ -2466,7 +2493,8 @@
     "munitions": 0,
     "materiaux": 10,
     "pieces": 4,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "De la place pour beaucoup de monde",
@@ -2515,7 +2543,8 @@
     "munitions": 0,
     "materiaux": 15,
     "pieces": 10,
-    "graines": 10
+    "graines": 10,
+    "gaz": 0
    },
    "atouts": [
     "Des vivres pour des semaines… au début",
@@ -2560,7 +2589,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 5
+    "graines": 5,
+    "gaz": 13
    },
    "atouts": [
     "Citerne en béton et gouttières en état",
@@ -2613,7 +2643,8 @@
     "munitions": 0,
     "materiaux": 0,
     "pieces": 3,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Panneaux et batteries de bord",
@@ -2658,7 +2689,8 @@
     "munitions": 0,
     "materiaux": 8,
     "pieces": 5,
-    "graines": 6
+    "graines": 6,
+    "gaz": 0
    },
    "atouts": [
     "Le jardin pédagogique et ses bacs",
@@ -2707,7 +2739,8 @@
     "munitions": 0,
     "materiaux": 6,
     "pieces": 0,
-    "graines": 3
+    "graines": 3,
+    "gaz": 0
    },
    "atouts": [
     "Dortoirs et cuisine pour un groupe",
@@ -2757,6 +2790,7 @@
     "materiaux": 5,
     "pieces": 2,
     "graines": 8,
+    "gaz": 13,
     "plantes": 4
    },
    "atouts": [
@@ -2810,7 +2844,8 @@
     "munitions": 0,
     "materiaux": 10,
     "pieces": 4,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Très discrète, dans la brume et la forêt",
@@ -2855,7 +2890,8 @@
     "munitions": 0,
     "materiaux": 15,
     "pieces": 8,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Murs de pierre et grandes portes",
@@ -2896,7 +2932,8 @@
     "munitions": 0,
     "materiaux": 3,
     "pieces": 0,
-    "graines": 3
+    "graines": 3,
+    "gaz": 13
    },
    "atouts": [
     "Un puits : de l'eau même sans réseau",
@@ -2945,7 +2982,8 @@
     "munitions": 0,
     "materiaux": 6,
     "pieces": 10,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Bassins et pompes : un élevage de poissons tout trouvé",
@@ -2990,7 +3028,8 @@
     "munitions": 10,
     "materiaux": 15,
     "pieces": 8,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Mur d'enceinte, chicanes, poste de garde",
@@ -3043,7 +3082,8 @@
     "munitions": 0,
     "materiaux": 6,
     "pieces": 10,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "La pharmacie la mieux fournie de l'île",
@@ -3092,7 +3132,8 @@
     "munitions": 0,
     "materiaux": 25,
     "pieces": 25,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Des tonnes de sucre : calories et conserves",
@@ -3137,7 +3178,8 @@
     "munitions": 0,
     "materiaux": 0,
     "pieces": 2,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Pêche quotidienne",
@@ -3173,7 +3215,8 @@
     "munitions": 0,
     "materiaux": 8,
     "pieces": 4,
-    "graines": 10
+    "graines": 10,
+    "gaz": 13
    },
    "atouts": [
     "Lait, viande, fumier : une autonomie qui a déjà commencé",
@@ -3226,7 +3269,8 @@
     "munitions": 0,
     "materiaux": 8,
     "pieces": 3,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Place, cantine, stocks de centre de vaccination",
@@ -3272,6 +3316,7 @@
     "materiaux": 3,
     "pieces": 0,
     "graines": 6,
+    "gaz": 13,
     "plantes": 3
    },
    "atouts": [
@@ -3321,7 +3366,8 @@
     "munitions": 0,
     "materiaux": 2,
     "pieces": 0,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Le refuge le plus discret de l'île : invisible depuis la route",
@@ -3357,7 +3403,8 @@
     "munitions": 0,
     "materiaux": 6,
     "pieces": 12,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "L'eau d'une rivière permanente",
@@ -3402,7 +3449,8 @@
     "munitions": 0,
     "materiaux": 3,
     "pieces": 0,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Rivière et mer : eau douce et poisson",
@@ -3444,6 +3492,7 @@
     "materiaux": 4,
     "pieces": 0,
     "graines": 8,
+    "gaz": 13,
     "plantes": 2
    },
    "atouts": [
@@ -3493,7 +3542,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Presque personne ne monte jusque-là",
@@ -3538,7 +3588,8 @@
     "munitions": 0,
     "materiaux": 0,
     "pieces": 0,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Introuvable sans guide",
@@ -3574,7 +3625,8 @@
     "munitions": 0,
     "materiaux": 20,
     "pieces": 20,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Alcool pur : désinfectant, combustible, monnaie d'échange",
@@ -3623,7 +3675,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Murs solides, clocher pour guetter",
@@ -3672,7 +3725,8 @@
     "munitions": 0,
     "materiaux": 12,
     "pieces": 25,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "De l'électricité locale bien après la chute du réseau",
@@ -3721,7 +3775,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 8
+    "graines": 8,
+    "gaz": 13
    },
    "atouts": [
     "Letchis et mangoustans, bassin à poissons",
@@ -3770,7 +3825,8 @@
     "munitions": 0,
     "materiaux": 5,
     "pieces": 0,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "On y arrive par une route forestière puis à pied : peu de visiteurs",
@@ -3815,7 +3871,8 @@
     "munitions": 0,
     "materiaux": 6,
     "pieces": 0,
-    "graines": 15
+    "graines": 15,
+    "gaz": 13
    },
    "atouts": [
     "Serres et graines en quantité",
@@ -3864,7 +3921,8 @@
     "munitions": 0,
     "materiaux": 8,
     "pieces": 2,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Cachée dans la forêt",
@@ -3905,7 +3963,8 @@
     "munitions": 0,
     "materiaux": 6,
     "pieces": 4,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Une source qui ne tarit pas",
@@ -3950,7 +4009,8 @@
     "munitions": 0,
     "materiaux": 5,
     "pieces": 0,
-    "graines": 12
+    "graines": 12,
+    "gaz": 13
    },
    "atouts": [
     "Lentilles, vigne, maïs : les terrasses nourrissent",
@@ -4003,7 +4063,8 @@
     "munitions": 0,
     "materiaux": 3,
     "pieces": 0,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Le toit de l'île : on voit venir de très loin",
@@ -4049,6 +4110,7 @@
     "materiaux": 4,
     "pieces": 0,
     "graines": 6,
+    "gaz": 13,
     "plantes": 3
    },
    "atouts": [
@@ -4094,7 +4156,8 @@
     "munitions": 0,
     "materiaux": 6,
     "pieces": 0,
-    "graines": 10
+    "graines": 10,
+    "gaz": 13
    },
    "atouts": [
     "Chouchous toute l'année : on ne meurt pas de faim",
@@ -4143,7 +4206,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 0
+    "graines": 0,
+    "gaz": 0
    },
    "atouts": [
     "Le verrou de Mafate",
@@ -4188,7 +4252,8 @@
     "munitions": 0,
     "materiaux": 6,
     "pieces": 0,
-    "graines": 10
+    "graines": 10,
+    "gaz": 13
    },
    "atouts": [
     "Solaire et sources : l'électricité et l'eau ne tombent jamais",
@@ -4241,7 +4306,8 @@
     "munitions": 0,
     "materiaux": 3,
     "pieces": 0,
-    "graines": 5
+    "graines": 5,
+    "gaz": 13
    },
    "atouts": [
     "Perché : on voit venir de loin, on tient le sentier",
@@ -4290,7 +4356,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 5
+    "graines": 5,
+    "gaz": 13
    },
    "atouts": [
     "Rivière permanente : pico-hydro possible",
@@ -4335,7 +4402,8 @@
     "munitions": 0,
     "materiaux": 4,
     "pieces": 0,
-    "graines": 3
+    "graines": 3,
+    "gaz": 0
    },
    "atouts": [
     "Livres scolaires, cartes, trousse de secours",
@@ -4898,7 +4966,8 @@
       "bras": null
      }
     }
-   ]
+   ],
+   "arbre": "moderne"
   },
   {
    "nom": "Mur d'enceinte",
@@ -5045,7 +5114,8 @@
       "bras": null
      }
     }
-   ]
+   ],
+   "arbre": "moderne"
   },
   {
    "nom": "Tour de guet",
@@ -5154,7 +5224,8 @@
       }
      }
     }
-   ]
+   ],
+   "arbre": "moderne"
   },
   {
    "nom": "Fossé et pièges",
@@ -5725,7 +5796,8 @@
       "bras": null
      }
     }
-   ]
+   ],
+   "arbre": "moderne"
   },
   {
    "nom": "Filtre à sable et charbon",
@@ -6060,7 +6132,8 @@
       "bras": null
      }
     }
-   ]
+   ],
+   "arbre": "moderne"
   },
   {
    "nom": "Pompe manuelle",
@@ -6175,7 +6248,8 @@
       }
      }
     }
-   ]
+   ],
+   "arbre": "moderne"
   },
   {
    "nom": "Potager",
@@ -6346,7 +6420,8 @@
       }
      }
     }
-   ]
+   ],
+   "arbre": "moderne"
   },
   {
    "nom": "Serre",
@@ -7037,7 +7112,8 @@
       }
      }
     }
-   ]
+   ],
+   "arbre": "moderne"
   },
   {
    "nom": "Compost",
@@ -7889,7 +7965,8 @@
       "bras": null
      }
     }
-   ]
+   ],
+   "arbre": "moderne"
   },
   {
    "nom": "Atelier",
@@ -8317,7 +8394,8 @@
       }
      }
     }
-   ]
+   ],
+   "arbre": "lontan"
   },
   {
    "nom": "Poste radio",
@@ -8857,6 +8935,1131 @@
      }
     }
    ]
+  },
+  {
+   "nom": "Palissade de bambou",
+   "cle": "palissade-de-bambou",
+   "categorie": "defense",
+   "description": "<p>Des cannes de bambou plantées serré, ligaturées à la fibre de choka, doublées de branches épineuses : elle plie sous le vent au lieu de casser, repousse si on la laisse faire, et se fond dans la ravine. Elle arrête moins qu'une palissade de tôle.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 12
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 6,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 1,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 10,
+      "travail": 16
+     },
+     "requiert": {
+      "savoirs": [
+       "bambou-vacoa"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 2,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "palissade"
+  },
+  {
+   "nom": "Mur de pierres sèches",
+   "cle": "mur-de-pierres-seches",
+   "categorie": "defense",
+   "description": "<p>Le muret des Hauts et des îlets, monté avec les cailloux du champ, sans un gramme de ciment : il ne coûte que de la peine, ne s'abîme presque jamais et ressemble à tous les vieux murs de l'île. Il monte moins haut qu'un mur maçonné.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 32
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 32
+     },
+     "requiert": {
+      "savoirs": [
+       "pierre-seche"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 2,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 48
+     },
+     "requiert": {
+      "savoirs": [
+       "pierre-seche"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 3,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "mur"
+  },
+  {
+   "nom": "Guet dans un grand arbre",
+   "cle": "guet-dans-un-arbre",
+   "categorie": "defense",
+   "description": "<p>Une plateforme de gaulettes dans la fourche d'un manguier ou d'un tamarin, une échelle de corde qu'on remonte : la garde voit loin, cachée dans le feuillage. Rien de plus, et c'est déjà beaucoup.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {
+       "vigilance": 1
+      },
+      "bras": {
+       "tache": "garde",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "tour-de-guet"
+  },
+  {
+   "nom": "Gouttières de bambou et jarres",
+   "cle": "citerne-lontan",
+   "categorie": "eau",
+   "description": "<p>Des bambous fendus en gouttières sous le bord du toit, des jarres de terre et des fûts de bois dessous. Les joints fuient un peu, les jarres se fêlent ; on les refait avec ce qui pousse autour.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 8
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 0.5
+      },
+      "conditions": {
+       "pluie": true,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "eau": 20
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 5,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [
+       "bambou-vacoa"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 1.5
+      },
+      "conditions": {
+       "pluie": true,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "eau": 40
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "citerne-de-pluie"
+  },
+  {
+   "nom": "Conduite de bambou",
+   "cle": "conduite-de-bambou",
+   "categorie": "eau",
+   "description": "<p>Un petit barrage de pierres à la source, et des bambous emboîtés, calés sur des fourches, qui descendent jusqu'à la case. L'eau arrive seule ; il en fuit un peu à chaque joint, et une chèvre peut tout défaire.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 12
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 4,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [
+        "source",
+        "riviere"
+       ],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 3
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 8,
+      "travail": 18
+     },
+     "requiert": {
+      "savoirs": [
+       "bambou-vacoa"
+      ],
+      "site": {
+       "eau": [
+        "source",
+        "riviere"
+       ],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 6
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "eau": 20
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "captage-de-source"
+  },
+  {
+   "nom": "Puits à balancier",
+   "cle": "puits-a-balancier",
+   "categorie": "eau",
+   "description": "<p>Une longue perche de bois sur une fourche, une pierre au bout pour contrepoids, un seau de l'autre : on puise sans pompe ni pièce, au prix de quelques allers-retours de plus.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 8
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [
+        "puits"
+       ],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 3
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": {
+       "tache": "eau",
+       "nombre": 1
+      }
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 5,
+      "travail": 10
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [
+        "puits"
+       ],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 6
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": {
+       "tache": "eau",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "pompe-manuelle"
+  },
+  {
+   "nom": "Jardin créole",
+   "cle": "jardin-creole",
+   "categorie": "nourriture",
+   "description": "<p>Le jardin de la case, où tout pousse mêlé : bananiers pour l'ombre, chouchou sur la treille, songe, manioc, patates, brèdes, et les zerbaz le long de la clôture. On le plante de boutures, on le paille ; il boit peu, ressemble à une cour à l'abandon, et donne moins qu'un potager bien aligné.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 8
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 1,
+      "ile": 2,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 1.5,
+       "plantes": 0.2
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 20
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": {
+       "tache": "cultures",
+       "nombre": 1
+      }
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 2,
+      "ile": 3,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [
+       "jardin-creole"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 3,
+       "plantes": 0.3
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 20
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": {
+       "tache": "cultures",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "potager"
+  },
+  {
+   "nom": "Ruches en tronc",
+   "cle": "ruches-en-tronc",
+   "categorie": "nourriture",
+   "description": "<p>Un tronc creux de bois de natte ou de filao, fermé d'une planche, posé sous un toit de paille : les abeilles s'y installent seules. On récolte moins, en enfumant au vétiver.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 0.4
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 45
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": {
+       "tache": "elevage",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "ruches"
+  },
+  {
+   "nom": "Garde-manger lontan",
+   "cle": "garde-manger-lontan",
+   "categorie": "stockage",
+   "description": "<p>Un grenier sur pilotis coiffé de vétiver, des jarres fermées de cire, des sacs de vacoa pendus hors de portée des rats : la réserve tient au sec, en plus petit.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 8
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "nourriture": 50
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": true,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "reserve-etanche"
+  },
+  {
+   "nom": "Gazinière",
+   "cle": "gaziniere",
+   "categorie": "vie",
+   "description": "<p>La gazinière d'une cuisine, sa bouteille de treize kilos dessous : on cuit le cari sans fumée, donc sans se faire voir. La bouteille se vide ; quand il n'y a plus de gaz, on retourne au feu de bois (la cuisine commune prend le relais si elle existe).</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 2
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 1,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 2
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "gaz": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": {
+       "tache": "cuisine",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "cuisine-commune",
+   "rang": 0
+  },
+  {
+   "nom": "Chauffe-eau solaire",
+   "cle": "eau-chaude-solaire",
+   "categorie": "vie",
+   "description": "<p>Le capteur et le ballon d'un toit de l'Ouest, démontés et remontés : une douche chaude chaque soir de soleil, de l'eau chaude pour laver les plaies. Le capteur brille sur le toit.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 3,
+      "graines": 0,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [
+       "plomberie-filtration"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 1,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {
+       "soins": 1
+      },
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "eau-chaude",
+   "rang": 0
+  },
+  {
+   "nom": "Chauffe-eau à gaz",
+   "cle": "eau-chaude-gaz",
+   "categorie": "vie",
+   "description": "<p>Un chauffe-eau instantané branché sur une bouteille : de l'eau chaude à toute heure, tant qu'il reste du gaz. Il passe après le soleil.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 3
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 1,
+      "pieces": 2,
+      "graines": 0,
+      "travail": 3
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "gaz": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {
+       "soins": 1
+      },
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "eau-chaude",
+   "rang": 1
+  },
+  {
+   "nom": "Eau chauffée au feu de bois",
+   "cle": "eau-chaude-feu-de-bois",
+   "categorie": "vie",
+   "description": "<p>Un fût noirci sur trois pierres, un feu de bois de goyavier : l'eau chaude des anciens, gratuite, longue à venir. La fumée monte, et se voit.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 3
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 3
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {
+       "soins": 1
+      },
+      "bras": {
+       "tache": "cuisine",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "eau-chaude",
+   "rang": 2
   }
  ],
  "savoirs": [
@@ -8865,91 +10068,136 @@
    "cle": "electricite-solaire",
    "description": "<p>Câbler des panneaux, régler un régulateur, dimensionner des batteries, ne pas griller l'onduleur ni se griller soi-même.</p>",
    "apprentissage": "<p>Un passé d'électricien ; un manuel trouvé dans un magasin de bricolage ou chez un installateur ; une semaine aux côtés de quelqu'un qui sait, dans un îlet de Mafate où chaque case a ses panneaux ; ou réussir le chantier de panneaux solaires niveau 1 avec un test de bricolage difficile.</p>",
-   "effets": "<p>Ouvre les panneaux solaires niveaux 2 et 3, les batteries niveaux 2 et 3, l'éolienne niveau 2 et le pico-hydro niveau 2. +1 dé aux tests de bricolage sur l'électricité.</p>"
+   "effets": "<p>Ouvre les panneaux solaires niveaux 2 et 3, les batteries niveaux 2 et 3, l'éolienne niveau 2 et le pico-hydro niveau 2. +1 dé aux tests de bricolage sur l'électricité.</p>",
+   "arbre": "moderne"
   },
   {
    "nom": "Maraîchage tropical",
    "cle": "maraichage-tropical",
    "description": "<p>Savoir ce qui pousse ici, quand et comment : brèdes, songes, patates douces, manioc, chouchous, piments, haricots ; semer avant les pluies, pailler contre le soleil de l'Ouest, protéger du vent des Hauts.</p>",
    "apprentissage": "<p>Un passé d'agriculteur ou de planteur ; le CDI d'un collège ; les conseils d'un ancien de la Coopérative des Plaines ou des Familles des Îlets ; une saison complète de potager réussie.</p>",
-   "effets": "<p>Ouvre le potager niveaux 2 et 3, la serre niveau 2, le compost niveau 2 et le camouflage niveau 3. +1 dé aux tests de survie pour cultiver et cueillir.</p>"
+   "effets": "<p>Ouvre le potager niveaux 2 et 3, la serre niveau 2, le compost niveau 2 et le camouflage niveau 3. +1 dé aux tests de survie pour cultiver et cueillir.</p>",
+   "arbre": "moderne"
   },
   {
    "nom": "Plomberie et filtration",
    "cle": "plomberie-filtration",
    "description": "<p>Raccorder, souder, purger, filtrer : sable, charbon, ébullition, chlore dosé à la goutte. L'eau est la première arme contre la maladie.</p>",
    "apprentissage": "<p>Un passé de plombier, d'agent des eaux ou d'électricien ; un manuel ; un PNJ du service des eaux ; une semaine à entretenir une citerne et un filtre sans tomber malade.</p>",
-   "effets": "<p>Ouvre la citerne niveau 3, le filtre niveau 2 et la pompe manuelle niveau 2. L'eau traitée divise par cinq le risque des maladies de l'eau.</p>"
+   "effets": "<p>Ouvre la citerne niveau 3, le filtre niveau 2 et la pompe manuelle niveau 2. L'eau traitée divise par cinq le risque des maladies de l'eau.</p>",
+   "arbre": "moderne"
   },
   {
    "nom": "Maçonnerie",
    "cle": "maconnerie",
    "description": "<p>Monter un mur droit, faire un mortier qui tient, couler une dalle, sceller une porte, tailler et jointoyer le basalte comme les anciens.</p>",
    "apprentissage": "<p>Un passé dans le bâtiment ; un vieux maçon rencontré ; réussir un premier chantier de mur sous la direction de quelqu'un qui sait.</p>",
-   "effets": "<p>Ouvre le mur d'enceinte, la porte blindée et le dortoir niveau 3. +1 dé aux réparations de dégâts structurels.</p>"
+   "effets": "<p>Ouvre le mur d'enceinte, la porte blindée et le dortoir niveau 3. +1 dé aux réparations de dégâts structurels.</p>",
+   "arbre": "moderne"
   },
   {
    "nom": "Mécanique",
    "cle": "mecanique",
    "description": "<p>Faire redémarrer un moteur, siphonner, réparer un groupe électrogène, une pompe, un scooter, transformer une carcasse en pièces détachées.</p>",
    "apprentissage": "<p>Un passé de mécanicien, de chauffeur ou de marin ; un garage fouillé avec ses revues techniques ; un Ferrailleur qui veut bien montrer.</p>",
-   "effets": "<p>Ouvre l'atelier niveau 2. +1 dé aux tests de bricolage sur les moteurs et de conduite pour une réparation de fortune. Fouiller une épave rapporte 1 pièce de plus.</p>"
+   "effets": "<p>Ouvre l'atelier niveau 2. +1 dé aux tests de bricolage sur les moteurs et de conduite pour une réparation de fortune. Fouiller une épave rapporte 1 pièce de plus.</p>",
+   "arbre": "moderne"
   },
   {
    "nom": "Premiers secours avancés",
    "cle": "premiers-secours-avances",
    "description": "<p>Arrêter une hémorragie, réduire une fracture, recoudre, poser une perfusion de fortune, reconnaître la dengue de la leptospirose, et savoir quand il n'y a plus rien à faire.</p>",
    "apprentissage": "<p>Un passé d'infirmière, d'ambulancier, de pompier ou de soignant ; un manuel médical ; le Dispensaire du Sud contre service rendu.</p>",
-   "effets": "<p>Ouvre l'infirmerie niveau 2. +1 dé aux tests de soins. Un soin réussi d'une affliction économise 1 médicament (au moins 1).</p>"
+   "effets": "<p>Ouvre l'infirmerie niveau 2. +1 dé aux tests de soins. Un soin réussi d'une affliction économise 1 médicament (au moins 1).</p>",
+   "arbre": "moderne"
   },
   {
    "nom": "Pêche au lagon et en rivière",
    "cle": "peche-lagon",
    "description": "<p>Ligne, épervier, nasse, fusil-harpon, la pêche des bichiques à l'embouchure à la saison des pluies, celle des camarons dans les bassins des cirques, et lire la houle avant de sortir.</p>",
    "apprentissage": "<p>Un passé de pêcheur ou de marin ; un ancien des Barques du Sud ; une saison à pêcher sans se noyer.</p>",
-   "effets": "<p>+1 dé aux tests de survie pour pêcher ; la pêche d'une région rapporte 1 nourriture de plus par sortie réussie.</p>"
+   "effets": "<p>+1 dé aux tests de survie pour pêcher ; la pêche d'une région rapporte 1 nourriture de plus par sortie réussie.</p>",
+   "arbre": "lontan"
   },
   {
    "nom": "Élevage",
    "cle": "elevage",
    "description": "<p>Poules péi, cabris, cochons, chiens, abeilles, tilapias : nourrir, soigner, faire naître, abattre proprement, ne pas épuiser son troupeau.</p>",
    "apprentissage": "<p>Un passé d'agriculteur des Hauts ou d'apiculteur ; une ferme de la Plaine des Cafres ; un ancien de Mafate.</p>",
-   "effets": "<p>Ouvre la basse-cour, l'enclos à cabris, les ruches et les chiens de garde niveau 2, le bassin à tilapias niveau 2.</p>"
+   "effets": "<p>Ouvre la basse-cour, l'enclos à cabris, les ruches et les chiens de garde niveau 2, le bassin à tilapias niveau 2.</p>",
+   "arbre": "lontan"
   },
   {
    "nom": "Conserverie et séchage",
    "cle": "conserverie",
    "description": "<p>Saler, sécher, boucaner, mettre en bocaux, faire des achards et des confitures qui tiennent un an sous le climat humide.</p>",
    "apprentissage": "<p>Un passé de cuisinier ; une grand-mère des Hauts ; un livre de recettes lontan.</p>",
-   "effets": "<p>Ouvre la réserve étanche niveau 2. Une réserve de nourriture préparée par le groupe ne se gâte pas, même sans installation.</p>"
+   "effets": "<p>Ouvre la réserve étanche niveau 2. Une réserve de nourriture préparée par le groupe ne se gâte pas, même sans installation.</p>",
+   "arbre": "lontan"
   },
   {
    "nom": "Étaiement et galeries",
    "cle": "etaiement-galeries",
    "description": "<p>Lire la roche et le tuf, creuser sans tout faire tomber, étayer au bois et à la ferraille, ventiler, drainer ; reconnaître une voûte de lave fragile.</p>",
    "apprentissage": "<p>Un passé de guide de canyon, de spéléologue ou de mineur ; un guide des tunnels de lave du Grand Brûlé ; réussir une cave étayée.</p>",
-   "effets": "<p>Ouvre la galerie souterraine niveaux 2 à 4 et l'aménagement d'un tunnel de lave niveaux 2 et 3.</p>"
+   "effets": "<p>Ouvre la galerie souterraine niveaux 2 à 4 et l'aménagement d'un tunnel de lave niveaux 2 et 3.</p>",
+   "arbre": "moderne"
   },
   {
    "nom": "Radio et transmissions",
    "cle": "radio",
    "description": "<p>Monter une antenne, trouver les fréquences, émettre sans se faire repérer, réparer un poste, parler en code.</p>",
    "apprentissage": "<p>Un passé de marin, de gendarme, de pompier ou de radioamateur ; un manuel de radioamateur ; un opérateur de la Garnison du Quai.</p>",
-   "effets": "<p>Ouvre le poste radio niveau 2. Les renseignements obtenus par radio sont plus sûrs (le MJ précise ce qui est vrai).</p>"
+   "effets": "<p>Ouvre le poste radio niveau 2. Les renseignements obtenus par radio sont plus sûrs (le MJ précise ce qui est vrai).</p>",
+   "arbre": "moderne"
   },
   {
    "nom": "Hydraulique rurale",
    "cle": "hydraulique-rurale",
    "description": "<p>Capter une source, poser une conduite par gravité, monter un bélier hydraulique, dériver une ravine sans qu'elle emporte tout à la première crue, installer une turbine.</p>",
    "apprentissage": "<p>Un ancien d'un îlet ou d'un cirque ; un agent d'une centrale hydraulique ; réussir un captage de source.</p>",
-   "effets": "<p>Ouvre le captage de source niveau 2 et le pico-hydro. +1 dé aux tests de bricolage sur l'eau.</p>"
+   "effets": "<p>Ouvre le captage de source niveau 2 et le pico-hydro. +1 dé aux tests de bricolage sur l'eau.</p>",
+   "arbre": "moderne"
   },
   {
    "nom": "Zerbaz et tisanes",
    "cle": "zerbaz",
    "description": "<p>Reconnaître les plantes des tisaneurs au bord d'un sentier ou au fond d'une cour : ayapana, citronnelle, faham, bois de quivi, fleur jaune, géranium, romarin, gingembre. Savoir lesquelles se boivent en tisane, lesquelles se posent en emplâtre, et surtout lesquelles ne se touchent pas.</p>",
    "apprentissage": "<p>Une grand-mère guérisseuse ou un tisaneur des Hauts, de Salazie, de l'Est ou du Sud sauvage ; un apiculteur qui connaît chaque fleur ; un vieux cahier de recettes de tisanes trouvé dans une case ; ou une saison à cueillir aux côtés de quelqu'un qui sait.</p>",
-   "effets": "<p>La cueillette rapporte deux fois plus de plantes médicinales. +1 dé aux tests pour préparer tisanes et emplâtres (recette « Tisanes et emplâtres »). Ce sont des remèdes de jeu : ils comptent comme un médicament, ils ne guérissent pas du Gris.</p>"
+   "effets": "<p>La cueillette rapporte deux fois plus de plantes médicinales. +1 dé aux tests pour préparer tisanes et emplâtres (recette « Tisanes et emplâtres »). Ce sont des remèdes de jeu : ils comptent comme un médicament, ils ne guérissent pas du Gris.</p>",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Bambou, vacoa et vétiver",
+   "cle": "bambou-vacoa",
+   "description": "<p>Fendre le bambou, le chauffer pour le courber, le ligaturer à la fibre de choka ; tresser le vacoa en sacs, en nattes, en fonds de chaise ; couvrir un toit de vétiver ; tailler le goyavier pour un manche. On fabrique un outil ou un meuble avec presque rien, et on le répare soi-même.</p>",
+   "apprentissage": "<p>Une gramoune ou un gramoun qui tressait encore pour le bazar ; une vannière de Saint-Louis ou de l'Étang-Salé ; un cahier dicté ; une saison à refaire les nattes et les paniers aux côtés de quelqu'un qui sait.</p>",
+   "effets": "<p>Ouvre la palissade de bambou niveau 2 et la conduite de bambou niveau 2, et les objets faits main (sac et chaise en vacoa, nattes, cordes de choka). +1 dé aux tests de bricolage avec les matières de l'île.</p>",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Pierre sèche",
+   "cle": "pierre-seche",
+   "description": "<p>Épierrer un champ et monter avec ses cailloux un mur qui tient sans mortier, un siècle durant : les grosses pierres en bas, les boutisses qui traversent, le fruit vers l'intérieur. Les murets des Hauts et des îlets en sont faits.</p>",
+   "apprentissage": "<p>Un vieux maçon des Hauts, un gramoun de la Plaine des Grègues ou de Mafate ; un cahier dicté ; un premier muret monté sous ses yeux.</p>",
+   "effets": "<p>Ouvre le mur de pierres sèches. +1 dé aux réparations de murets et de terrasses.</p>",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Jardin créole",
+   "cle": "jardin-creole",
+   "description": "<p>Le jardin de la case, où tout pousse ensemble : bananier pour l'ombre, chouchou sur la treille, songe dans le mouillé, manioc et patate dans le sec, brèdes au pied, zerbaz le long de la clôture. On bouture plus qu'on ne sème, on paille, on plante avec la lune, et le jardin se garde des mois sans personne.</p>",
+   "apprentissage": "<p>Une gramoune qui a toujours eu son jardin ; une famille des îlets ; un cahier dicté ; une saison à bouturer et à repiquer ce qu'on a pris dans les jardins abandonnés.</p>",
+   "effets": "<p>Ouvre le jardin créole niveau 2. Les boutures prises dans les jardins des cases reprennent mieux (le MJ peut en rendre une partie qui aurait fané). +1 dé aux tests de survie pour cultiver sans graines achetées.</p>",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Moteurs de fortune",
+   "cle": "moteurs-de-fortune",
+   "description": "<p>Modifier un moteur pour qu'il boive de l'alcool de canne ou de l'huile filtrée, monter un gazogène au bois sur un camion, entretenir et recharger un véhicule électrique sur les batteries de l'abri. Le moteur y perd en vitesse et en fiabilité : il roule quand même.</p>",
+   "apprentissage": "<p>Un passé de mécanicien ; un Ferrailleur qui a déjà fait la conversion ; une revue technique trouvée dans un garage ; un premier moteur modifié réussi à l'atelier.</p>",
+   "effets": "<p>Ouvre les recettes du carburant maison (alcool de canne, huile filtrée) et des moteurs modifiés (voiture à l'alcool, camion à gazogène). +1 dé aux tests de bricolage sur un moteur modifié.</p>",
+   "arbre": "moderne"
   }
  ],
  "equipements": [
@@ -9663,7 +10911,11 @@
      "route",
      "piste"
     ],
-    "bruit": 0
+    "bruit": 0,
+    "pente": {
+     "descente": 0.6,
+     "montee": 2.5
+    }
    },
    "effets": null
   },
@@ -9685,7 +10937,11 @@
     "terrains": [
      "route"
     ],
-    "bruit": 0
+    "bruit": 0,
+    "pente": {
+     "descente": 0.8,
+     "montee": 3
+    }
    },
    "effets": null
   },
@@ -9784,6 +11040,271 @@
      "sentier"
     ],
     "bruit": 1
+   },
+   "effets": null
+  },
+  {
+   "nom": "Chien du groupe",
+   "cle": "chien-du-groupe",
+   "categorie": "animal",
+   "description": "<p>Un chien errant qui a fini par manger dans la main, ou un chiot d'une portée de l'élevage : il dort en travers de la porte, entend les Livides avant la garde, s'agite avant le cyclone et le volcan. Il se bat si on le lâche, et peut y rester. À l'abri, il remonte le moral de tous.</p>",
+   "bonus": {
+    "vigilance": 1,
+    "combat": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null
+  },
+  {
+   "nom": "Cahier d'une gramoune",
+   "cle": "cahier-de-gramoune",
+   "categorie": "livre",
+   "description": "<p>Un cahier d'écolier rempli à la veillée, sous la dictée d'une ancienne : remèdes, lunes pour planter, façons de tresser et de bâtir, avec ses mots à elle. Il n'en existe qu'un ; il apprend ce qu'elle savait, même quand elle n'est plus là.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "enseigne": []
+  },
+  {
+   "nom": "Pinces à linge en bois fendu",
+   "cle": "pinces-a-linge-en-bois",
+   "categorie": "vie",
+   "description": "<p>Un bout de bois de goyavier fendu, une ligature de fil : le linge sèche au vent au lieu de traîner. Trois fois rien, et la cour ressemble de nouveau à une cour.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "moral": 0.5
+   }
+  },
+  {
+   "nom": "Sac en vacoa",
+   "cle": "sac-en-vacoa",
+   "categorie": "vie",
+   "description": "<p>Un sac tressé de feuilles de vacoa séchées, solide et léger, comme ceux des marchés d'avant : on porte plus, plus loin, et c'est beau.</p>",
+   "bonus": {
+    "endurance": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "moral": 0.5
+   }
+  },
+  {
+   "nom": "Chaise en vacoa",
+   "cle": "chaise-en-vacoa",
+   "categorie": "vie",
+   "description": "<p>Un cadre de bois, une assise tressée de vacoa : de quoi s'asseoir le soir sous la varangue comme avant. On ne mesure pas ce que vaut une chaise avant de s'en être passé.</p>",
+   "bonus": {},
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "moral": 0.5
+   }
+  },
+  {
+   "nom": "Natte de vacoa",
+   "cle": "natte-de-vacoa",
+   "categorie": "vie",
+   "description": "<p>Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "moral": 0.5
+   }
+  },
+  {
+   "nom": "Cordes de choka",
+   "cle": "cordes-de-choka",
+   "categorie": "outil",
+   "description": "<p>Des cordes tordues avec la fibre des feuilles de choka (l'agave), rouies et battues : elles lient un bambou, tiennent une bâche, descendent un seau dans le puits.</p>",
+   "bonus": {
+    "survie": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null
+  },
+  {
+   "nom": "Charrette à bœufs",
+   "cle": "charrette-a-boeufs",
+   "categorie": "transport",
+   "description": "<p>Deux bœufs moka d'une ferme des Hauts sous le joug, une charrette de bois cerclée de fer : lente, silencieuse, elle porte une case entière. Les bêtes broutent l'herbe des bas-côtés, on marche à côté d'elles (ce ne sont pas des montures), et il faut savoir les mener (élevage).</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": {
+    "mode": "pied",
+    "places": 1,
+    "chargeMax": 40,
+    "carburantParQuart": 0,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 0,
+    "allure": 1.2,
+    "pente": {
+     "descente": 1,
+     "montee": 1.5
+    },
+    "large": true
+   },
+   "effets": null
+  },
+  {
+   "nom": "Vélo à assistance électrique",
+   "cle": "velo-electrique",
+   "categorie": "transport",
+   "description": "<p>Un vélo de location de la côte Ouest, sa batterie rechargée sur les panneaux de l'abri : il remonte les Hauts presque comme il les descend, sans un bruit. Une demi-unité d'énergie par quart de route.</p>",
+   "bonus": {
+    "endurance": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": {
+    "mode": "pied",
+    "places": 1,
+    "chargeMax": 3,
+    "carburantParQuart": 0.5,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 0,
+    "rapide": false,
+    "allure": 0.4,
+    "source": "energie",
+    "pente": {
+     "descente": 0.6,
+     "montee": 0.9
+    }
+   },
+   "effets": null
+  },
+  {
+   "nom": "Scooter électrique",
+   "cle": "scooter-electrique",
+   "categorie": "transport",
+   "description": "<p>Un scooter de livreur, rechargé au soleil par les panneaux de l'abri : rapide, muet, il ne porte presque rien. Une unité d'énergie par quart de route.</p>",
+   "bonus": {
+    "conduite": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": {
+    "mode": "vehicule",
+    "places": 2,
+    "chargeMax": 4,
+    "carburantParQuart": 1,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 0,
+    "source": "energie"
+   },
+   "effets": null
+  },
+  {
+   "nom": "Voiture électrique",
+   "cle": "voiture-electrique",
+   "categorie": "transport",
+   "description": "<p>Une petite voiture électrique de la ville, rechargée sur les batteries de l'abri : l'île s'y prête, courte et ensoleillée. Elle roule sans bruit, mais vide une batterie en un trajet (cinq unités d'énergie par quart de route).</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": {
+    "mode": "vehicule",
+    "places": 4,
+    "chargeMax": 16,
+    "carburantParQuart": 5,
+    "terrains": [
+     "route"
+    ],
+    "bruit": 0,
+    "source": "energie"
+   },
+   "effets": null
+  },
+  {
+   "nom": "Voiture à l'alcool de canne",
+   "cle": "voiture-a-l-alcool",
+   "categorie": "transport",
+   "description": "<p>Une vieille voiture à essence dont on a changé les joints, réglé l'allumage et agrandi les gicleurs : elle boit l'alcool de canne ou l'huile filtrée de l'abri. Elle démarre mal à froid, tire moins, et sent le rhum.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 1,
+   "transport": {
+    "mode": "vehicule",
+    "places": 5,
+    "chargeMax": 16,
+    "carburantParQuart": 1.2,
+    "terrains": [
+     "route"
+    ],
+    "bruit": 1,
+    "source": "biocarburant",
+    "lenteur": 1.25
+   },
+   "effets": null
+  },
+  {
+   "nom": "Camion à gazogène",
+   "cle": "camion-a-gazogene",
+   "categorie": "transport",
+   "description": "<p>Un camion plateau qui porte à l'arrière un grand fût où brûle du bois : le gaz du bois fait tourner le moteur. Il fume, il cogne, il faut charger le foyer à chaque arrêt (une brouette de bois sec par quart), mais il roule sans une goutte d'essence.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 3,
+   "transport": {
+    "mode": "vehicule",
+    "places": 2,
+    "chargeMax": 50,
+    "carburantParQuart": 1,
+    "terrains": [
+     "route"
+    ],
+    "bruit": 3,
+    "source": "materiaux",
+    "lenteur": 1.5
    },
    "effets": null
   }
@@ -10718,6 +12239,221 @@
    "produit": {
     "ressource": "graines",
     "n": 2
+   }
+  },
+  {
+   "nom": "Pinces à linge en bois fendu",
+   "cle": "pinces-a-linge",
+   "description": "<p>Un bout de goyavier, un couteau, du fil : on fend, on taille, on ligature. Le genre de chose qu'on achetait sans y penser.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "pinces-a-linge-en-bois",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Sac en vacoa",
+   "cle": "sac-en-vacoa",
+   "description": "<p>Couper les feuilles de vacoa, ôter les épines du bord, les faire sécher et blanchir, les fendre en lanières, tresser.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "bambou-vacoa"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "sac-en-vacoa",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Chaise en vacoa",
+   "cle": "chaise-en-vacoa",
+   "description": "<p>Un cadre de bois chevillé, une assise tressée de vacoa : une soirée de travail pour des années de veillées.</p>",
+   "cout": {
+    "materiaux": 2
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "bambou-vacoa"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "chaise-en-vacoa",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Natte de vacoa",
+   "cle": "natte-de-vacoa",
+   "description": "<p>Des lanières de vacoa tressées à plat, bord replié : une natte pour dormir, sécher, s'asseoir.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "bambou-vacoa"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "natte-de-vacoa",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Cordes de choka",
+   "cle": "cordes-de-choka",
+   "description": "<p>Les feuilles de choka rouies dans l'eau, battues pour en tirer la fibre, tordues en cordes.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "cordes-de-choka",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Rimèd lontan",
+   "cle": "rimed-lontan",
+   "description": "<p><em>Rimèd lontan</em> (les remèdes d'autrefois) : sirops, frictions, bains de feuilles et emplâtres de la gramoune, préparés avec ce que le jardin donne quand la pharmacie est vide. Ils comptent comme des médicaments pour le jeu ; ils ne guérissent pas du Gris.</p>",
+   "cout": {
+    "plantes": 3
+   },
+   "travail": 2,
+   "competence": "soins",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "zerbaz"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "ressource": "medicaments",
+    "n": 2
+   }
+  },
+  {
+   "nom": "Alcool de canne (carburant)",
+   "cle": "alcool-de-canne",
+   "description": "<p>Du jus de canne ou des fruits fermentés, un alambic de fortune, et l'alcool qui coule, plus fort que pour le rhum : dix litres d'un carburant qu'acceptent seulement les moteurs modifiés.</p>",
+   "cout": {
+    "nourriture": 4
+   },
+   "travail": 4,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "conserverie"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "ressource": "biocarburant",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Huile filtrée (carburant)",
+   "cle": "huile-filtree",
+   "description": "<p>L'huile des friteuses abandonnées et des cocos pressés, décantée, filtrée au tissu, chauffée : un carburant pour moteur modifié, qui encrasse vite.</p>",
+   "cout": {
+    "nourriture": 3,
+    "materiaux": 1
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "moteurs-de-fortune"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "ressource": "biocarburant",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Moteur modifié pour l'alcool",
+   "cle": "moteur-a-l-alcool",
+   "description": "<p>On prend une vieille voiture à essence du groupe (le MJ la retire) : joints, gicleurs, allumage. Elle boira désormais l'alcool de canne et l'huile filtrée, plus l'essence.</p>",
+   "cout": {
+    "pieces": 4,
+    "materiaux": 2
+   },
+   "travail": 8,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "moteurs-de-fortune"
+    ],
+    "installation": {
+     "cle": "atelier",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "voiture-a-l-alcool",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Gazogène sur un camion",
+   "cle": "gazogene",
+   "description": "<p>Un fût, un foyer, un filtre, des tuyaux jusqu'à l'admission : un camion du groupe (le MJ le retire) roulera au bois sec.</p>",
+   "cout": {
+    "pieces": 5,
+    "materiaux": 6
+   },
+   "travail": 12,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "moteurs-de-fortune"
+    ],
+    "installation": {
+     "cle": "atelier",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "camion-a-gazogene",
+    "n": 1
    }
   }
  ],
@@ -12774,6 +14510,197 @@
      "moral": 1
     }
    }
+  },
+  {
+   "cle": "arbres-tombes",
+   "nom": "Arbres en travers",
+   "type": "meteo",
+   "phases": [
+    "jour-zero",
+    "panique",
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies"
+   ],
+   "poids": 1,
+   "public": true,
+   "texte": "<p>Après le cyclone, des filaos, des tamariniers et des manguiers couchés en travers des pistes et des sentiers : on dégage d'abord la route, les chemins restent coupés des jours. Le bois est là pour qui le débite.</p>",
+   "effets": {
+    "route": "coupee",
+    "duree": 4
+   }
+  },
+  {
+   "cle": "meute-sur-la-route",
+   "nom": "Une meute tient la route",
+   "type": "accident",
+   "phases": [
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 2,
+   "public": true,
+   "texte": "<p>Une meute d'une dizaine de chiens, menée par un grand chien de tête, tient un tronçon de route : elle suit les voyageurs, attend la nuit ou la panne.</p>",
+   "effets": {
+    "nature": {
+     "gibier": -0.1
+    }
+   }
+  },
+  {
+   "cle": "chien-qui-suit",
+   "nom": "Un chien qui suit",
+   "type": "decouverte",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Un chien maigre, collier encore au cou, suit le groupe de loin depuis deux jours. Il n'approche pas, il ne part pas. Avec de la patience et de la nourriture, il pourrait devenir le chien du groupe.</p>",
+   "effets": {}
+  },
+  {
+   "cle": "jardin-abandonne",
+   "nom": "Un jardin abandonné",
+   "type": "decouverte",
+   "phases": [
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 2,
+   "public": false,
+   "texte": "<p>Derrière une case vide, un jardin que personne n'a touché : la treille de chouchous déborde, les bananiers ont fait des rejets, le manioc attend en terre. De quoi manger, et des boutures à replanter le jour même.</p>",
+   "effets": {
+    "abri": {
+     "decouverte": {
+      "nourriture": 6,
+      "boutures": 4
+     }
+    }
+   }
+  },
+  {
+   "cle": "la-gramoune-qui-reste",
+   "nom": "La gramoune qui reste",
+   "type": "humain",
+   "phases": [
+    "panique",
+    "effondrement",
+    "silence"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Dans une case au bout d'un chemin, une très vieille dame refuse de partir : elle a son jardin, ses zerbaz, ses poules. Elle sait des choses que plus personne ne sait ; elle ne les dira qu'à ceux qui prendront le temps de l'écouter (une gramoune à accueillir : fenêtre du MJ).</p>",
+   "effets": {}
+  },
+  {
+   "cle": "bouteilles-de-gaz",
+   "nom": "Un dépôt de bouteilles de gaz",
+   "type": "decouverte",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Derrière une boutique de quartier, une cage de bouteilles de gaz, cadenassée, que personne n'a pensé à ouvrir.</p>",
+   "effets": {
+    "abri": {
+     "decouverte": {
+      "gaz": 39
+     }
+    }
+   }
+  },
+  {
+   "cle": "livres-de-l-ecole",
+   "nom": "La bibliothèque de l'école",
+   "type": "decouverte",
+   "phases": [
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Le CDI d'un collège, intact sous la poussière : des manuels, des encyclopédies, des revues. Un savoir à apprendre, si l'on a le temps et la lumière pour lire (fouille « livres » sur le site).</p>",
+   "effets": {}
   }
  ],
  "creatures": [
@@ -12883,6 +14810,23 @@
     "apres"
    ],
    "poids": 3
+  },
+  {
+   "cle": "chien-de-tete",
+   "nom": "Chien de tête",
+   "type": "animal",
+   "des": 2,
+   "resistance": 2,
+   "zones": [
+    "littoral",
+    "hauts",
+    "foret"
+   ],
+   "phases": [
+    "silence",
+    "apres"
+   ],
+   "poids": 1
   },
   {
    "cle": "cochon-marron",
@@ -13058,6 +15002,29 @@
    "comportement": "<p>Attaquent en meute, fuient devant un groupe résolu ; un chien nourri peut devenir un ami.</p>",
    "faiblesse": "<p>La faim les rend imprudents ; le feu et les cris les font fuir.</p>",
    "competences": {}
+  },
+  {
+   "cle": "chien-de-tete",
+   "nom": "Chien de tête",
+   "categorie": "animal",
+   "des": 2,
+   "resistance": 2,
+   "vitesse": "rapide",
+   "sens": "odeur, ouïe",
+   "zones": [
+    "littoral",
+    "hauts",
+    "foret"
+   ],
+   "phases": [
+    "silence",
+    "apres"
+   ],
+   "description": "<p>Le meneur d'une meute des routes : un grand chien de garde abandonné, collier encore au cou, qui a appris que les voitures en panne et les marcheurs isolés sont des proies. Les autres le suivent.</p>",
+   "comportement": "<p>La meute tient un tronçon de route, une aire de repos, un pont. Elle suit les voyageurs de loin, attend la nuit ou la fatigue, et charge quand le chien de tête charge. Abattu ou chassé, il emporte la meute avec lui.</p>",
+   "faiblesse": "<p>Toute la meute dépend de lui : s'il tombe ou s'il recule, les autres se dispersent. Un chien qu'on a nourri ne le suit plus.</p>",
+   "competences": {},
+   "acteur": false
   },
   {
    "cle": "cochon-marron",
@@ -14895,7 +16862,9 @@
    "Elle était guide et connaît la région par cœur.",
    "Il a été envoyé par sa faction pour apprendre ce que vous savez faire.",
    "Elle a trouvé un enfant seul et vous l'amène, avec elle.",
-   "Il était soignant à l'hôpital et n'en pouvait plus."
+   "Il était soignant à l'hôpital et n'en pouvait plus.",
+   "C'est une gramoune : son jardin a été piétiné par une horde, et elle a marché jusqu'ici avec ses boutures dans un seau.",
+   "C'est un vieux gramoun qui a vu la fumée et qui voudrait bien finir ses jours avec des gens, pas tout seul dans les Hauts."
   ],
   "prix": [
    "Il demande une place pour sa mère âgée, qui ne peut plus marcher.",
@@ -14911,7 +16880,8 @@
    "Il mange comme deux.",
    "Elle ne restera que jusqu'à la prochaine saison sèche.",
    "Il ne dormira pas sous le même toit qu'une famille malbare : « ces gens-là font des services ». Il changera d'avis, ou il dormira dehors.",
-   "Elle se méfie des Zoreils du groupe et le dit à table : « *zot i prend tout' bann bon travay* » (ils prennent tous les bons postes)."
+   "Elle se méfie des Zoreils du groupe et le dit à table : « *zot i prend tout' bann bon travay* » (ils prennent tous les bons postes).",
+   "C'est une gramoune : elle marche lentement, il faudra la porter dans les sentiers et la soigner l'hiver ; mais elle sait des choses que personne ne sait plus."
   ]
  },
  "histoire": {
@@ -15415,6 +17385,44 @@
      1,
      1
     ]
+   },
+   "jardin-creole": {
+    "tache": "cultures",
+    "nombres": [
+     1,
+     1
+    ]
+   },
+   "puits-a-balancier": {
+    "tache": "eau",
+    "nombres": [
+     1,
+     1
+    ]
+   },
+   "guet-dans-un-arbre": {
+    "tache": "garde",
+    "nombres": [
+     1
+    ]
+   },
+   "ruches-en-tronc": {
+    "tache": "elevage",
+    "nombres": [
+     1
+    ]
+   },
+   "gaziniere": {
+    "tache": "cuisine",
+    "nombres": [
+     1
+    ]
+   },
+   "eau-chaude-feu-de-bois": {
+    "tache": "cuisine",
+    "nombres": [
+     1
+    ]
    }
   }
  },
@@ -15664,6 +17672,259 @@
     "parPersonne": true,
     "unique": true
    }
+  }
+ ],
+ "depotsCyclone": [
+  {
+   "cle": "toles-du-voisin",
+   "nom": "des tôles arrachées à un toit voisin",
+   "poids": 3,
+   "texte": "Trois tôles ondulées, encore clouées à leur chevron, plantées dans le manguier. Quelqu'un, ailleurs, n'a plus de toit.",
+   "stocks": {
+    "materiaux": 3
+   }
+  },
+  {
+   "cle": "bache-et-cordes",
+   "nom": "une bâche bleue et ses cordes",
+   "poids": 2,
+   "texte": "Une bâche de chantier enroulée autour du poteau de la barrière, avec ses cordes. Elle servira.",
+   "stocks": {
+    "materiaux": 1
+   }
+  },
+  {
+   "cle": "panneau-arrache",
+   "nom": "un panneau solaire arraché",
+   "poids": 1,
+   "texte": "Un panneau solaire, le cadre tordu, les cellules intactes, couché dans la boue de la cour.",
+   "stocks": {
+    "pieces": 2
+   }
+  },
+  {
+   "cle": "bouteille-de-gaz",
+   "nom": "une bouteille de gaz",
+   "poids": 1,
+   "texte": "Une bouteille de gaz de treize kilos a roulé jusqu'au mur. Pleine, ou presque.",
+   "stocks": {
+    "gaz": 10
+   }
+  },
+  {
+   "cle": "fut-d-eau",
+   "nom": "un fût plein d'eau de pluie",
+   "poids": 2,
+   "texte": "Un fût bleu, venu on ne sait d'où, plein à ras bord d'eau de pluie.",
+   "stocks": {
+    "eau": 8
+   }
+  },
+  {
+   "cle": "poules-affolees",
+   "nom": "des poules affolées",
+   "poids": 1,
+   "texte": "Trois poules trempées, réfugiées sous la varangue, qui ne veulent plus partir.",
+   "stocks": {
+    "nourriture": 3
+   }
+  },
+  {
+   "cle": "regimes-de-bananes",
+   "nom": "des régimes de bananes cassés",
+   "poids": 2,
+   "texte": "Les bananiers du voisin ont cassé : deux régimes verts dans la cour, à faire mûrir ou cuire vite.",
+   "stocks": {
+    "nourriture": 4
+   }
+  },
+  {
+   "cle": "barque-retournee",
+   "nom": "une barque retournée",
+   "poids": 1,
+   "texte": "Une barque de pêcheur, coque en l'air, au milieu du chemin. Le moteur a disparu ; le bois et les rames restent.",
+   "stocks": {
+    "materiaux": 2
+   }
+  },
+  {
+   "cle": "livide-sous-la-tole",
+   "nom": "un Livide coincé sous une tôle",
+   "poids": 2,
+   "texte": "Une tôle s'est abattue contre la clôture, et dessous, quelque chose bouge encore et gratte.",
+   "menace": {
+    "type": "livides",
+    "force": 1
+   }
+  },
+  {
+   "cle": "vache-noyee",
+   "nom": "une vache noyée",
+   "poids": 1,
+   "texte": "Une vache gonflée, coincée contre la barrière : dans deux jours, l'odeur. Il faut la tirer loin, ou la brûler, et la fumée se verra.",
+   "moral": -1
+  },
+  {
+   "cle": "nid-de-guepes",
+   "nom": "un nid de guêpes",
+   "poids": 1,
+   "texte": "Un nid de guêpes arraché à un arbre, tombé dans la réserve de bois. Elles sont furieuses.",
+   "moral": -1
+  },
+  {
+   "cle": "malle-d-un-inconnu",
+   "nom": "la malle d'un inconnu",
+   "poids": 1,
+   "texte": "Une petite malle de bois, des photos de famille gondolées, un chapelet, une lettre jamais postée. Certains y voient un signe ; ce n'est qu'une malle.",
+   "moral": 0
+  },
+  {
+   "cle": "cuve-de-fioul",
+   "nom": "une cuve percée",
+   "poids": 1,
+   "texte": "Une cuve de mazout percée a vidé son fond dans la cour. Le potager boira de l'eau sale quelques jours.",
+   "moral": -1
+  }
+ ],
+ "gramounes": [
+  {
+   "incapacites": [
+    "travaux-lourds"
+   ],
+   "equipement": [],
+   "passions": {
+    "soins": 2
+   },
+   "confiance": 1,
+   "statut": "recrue",
+   "cle": "gramoune-zelie",
+   "nom": "Gramoune Zélie Ah-Kiem",
+   "genre": "f",
+   "age": 81,
+   "enfance": "enfant-de-planteur-de-l-est",
+   "passe": "planteur-de-canne",
+   "competences": {
+    "soins": 3,
+    "survie": 3,
+    "parole": 2,
+    "vigilance": 1
+   },
+   "traits": [
+    "os-de-verre",
+    "coeur-de-kour"
+   ],
+   "savoirs": [
+    "zerbaz",
+    "jardin-creole",
+    "conserverie"
+   ],
+   "raison": "Elle n'a pas voulu quitter sa case de Bras-Panon ; quand la ravine a pris le pont, ce sont ses voisins qui ont dû partir, et elle avec.",
+   "prix": "Elle marche lentement, il faut la porter dans les sentiers, et elle ne donne ses remèdes qu'à ceux qui l'écoutent.",
+   "notes": "Fille d'un boutiquier chinois de Bras-Panon et d'une coupeuse de canne cafre, elle a soigné tout le quartier avec son jardin : ayapana, fleur jaune, faham, citronnelle. Elle dit des médecins zoreils qu'« *zot i koné pa nout rimèd* » (ils ne connaissent pas nos remèdes) ; c'est pourtant une infirmière de Lyon qui, la première, a recopié ses recettes dans un cahier, et elle en parle avec tendresse. Elle ne se plaint jamais du dos. Elle se plaint de tout le reste."
+  },
+  {
+   "incapacites": [
+    "travaux-lourds"
+   ],
+   "equipement": [],
+   "passions": {
+    "bricolage": 2
+   },
+   "confiance": 1,
+   "statut": "recrue",
+   "cle": "gramoun-ignace",
+   "nom": "Gramoun Ignace Técher",
+   "genre": "m",
+   "age": 78,
+   "enfance": "enfant-de-cilaos",
+   "passe": "agricultrice-des-hauts",
+   "competences": {
+    "bricolage": 3,
+    "survie": 3,
+    "parole": 1,
+    "endurance": 1
+   },
+   "traits": [
+    "tete-de-bois",
+    "leve-avant-le-coq"
+   ],
+   "savoirs": [
+    "pierre-seche",
+    "bambou-vacoa",
+    "elevage"
+   ],
+   "raison": "Il gardait encore ses vaches au-dessus de l'îlet ; la dernière est morte, et il est descendu, une canne à la main, sans un mot.",
+   "prix": "Il commande tout chantier comme s'il était le sien, ne monte plus une échelle, et râle contre « les gens d'en bas ».",
+   "notes": "Yab de vieille souche, il a monté à la main la moitié des murets de pierre sèche de son îlet. Il répète que « *bann malbar i fé sèrvis* » (les Malbars font des cérémonies) comme s'il s'en méfiait ; l'homme qui lui a appris à poser une boutisse s'appelait Moutoussamy, et c'est à son enterrement qu'Ignace a pleuré pour la dernière fois. Il dort peu, se lève avant le coq, et voudrait qu'on en fasse autant."
+  },
+  {
+   "incapacites": [
+    "travaux-lourds"
+   ],
+   "equipement": [],
+   "passions": {
+    "bricolage": 2
+   },
+   "confiance": 1,
+   "statut": "recrue",
+   "cle": "gramoune-mariamma",
+   "nom": "Gramoune Mariamma Moutoussamy",
+   "genre": "f",
+   "age": 74,
+   "enfance": "enfance-tamoule-de-saint-andre",
+   "passe": "vendeur-de-bazar",
+   "competences": {
+    "bricolage": 3,
+    "survie": 2,
+    "parole": 2,
+    "soins": 1
+   },
+   "traits": [
+    "soleil-dedans",
+    "main-ouverte"
+   ],
+   "savoirs": [
+    "bambou-vacoa",
+    "jardin-creole",
+    "zerbaz"
+   ],
+   "raison": "Son étal de paniers au bazar de Saint-Louis a brûlé avec le reste ; elle a gardé son couteau à vacoa et son sourire.",
+   "prix": "Elle ne mangera pas de bœuf, demande un coin pour sa lampe le vendredi, et donne tout ce qu'on lui confie.",
+   "notes": "Vannière malbare, elle a tressé des milliers de sacs et de chaises de vacoa pour les marchés du Sud. Elle dit des Comoriens qu'« *zot lé dèrnié arivé, zot i pran tout* » (les derniers arrivés prennent tout), puis partage son riz avec la première famille comorienne qui passe, et lui apprend à tresser. Elle chante en tamoul en travaillant ; personne ne comprend les paroles, tout le monde connaît l'air."
+  },
+  {
+   "incapacites": [
+    "travaux-lourds"
+   ],
+   "equipement": [],
+   "passions": {
+    "survie": 2
+   },
+   "confiance": 1,
+   "statut": "recrue",
+   "cle": "gramoun-said",
+   "nom": "Gramoun Saïd Madi",
+   "genre": "m",
+   "age": 72,
+   "enfance": "enfance-a-mayotte",
+   "passe": "pecheur-de-saint-gilles",
+   "competences": {
+    "survie": 3,
+    "parole": 2,
+    "discretion": 1,
+    "endurance": 1
+   },
+   "traits": [
+    "souffle-court",
+    "creole-de-coeur"
+   ],
+   "savoirs": [
+    "peche-lagon",
+    "bambou-vacoa"
+   ],
+   "raison": "Il a ramené sa pirogue au port avec trois inconnus à bord le soir du jour zéro, et ne l'a plus quittée depuis.",
+   "prix": "Il tousse la nuit, ne peut plus porter, et refuse de s'éloigner de la mer plus de quelques jours.",
+   "notes": "Arrivé de Mayotte il y a quarante ans, kofia brodée et barbe blanche, il a pêché au large de Saint-Gilles toute sa vie et tressé ses nasses au bambou. Il se moque des Yabs, « *bann yab i koné pa la mèr* » (les petits blancs des Hauts ne connaissent pas la mer) ; son meilleur ami, un pêcheur de Cilaos descendu à vingt ans, lui a pourtant sauvé la vie un soir de houle. Il prie à l'heure, rit fort, et sait où sont les poissons."
   }
  ]
 }

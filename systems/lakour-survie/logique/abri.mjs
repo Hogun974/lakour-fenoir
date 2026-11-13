@@ -41,12 +41,31 @@
 // - Événement du contenu qui touche l'abri (§2.6, subirEvenementAbri) : stocks perdus (jamais sous 0) et dégâts appliqués ;
 //   moral, blessures, trouvailles rendus au MJ, à raconter.
 // - Bonus d'installation (`effets.bonus`, tour de guet : vigilance) : le meilleur des installations pas hors service (bilan.bonus).
-import { ORDRE_DELESTAGE, RESSOURCES, NATURE, SEUIL_AUTONOMIE, borner } from "./constantes.mjs";
+//
+// Lot « savoirs » (docs/equilibre-savoirs.md, contrat §11) :
+// - Installations sœurs : une installation à l'ancienne (`arbre: "lontan"`) porte `role` = la clé de sa sœur moderne (ou un rôle
+//   commun : « eau-chaude ») et un `rang` (défaut 0, 1 pour une lontan : la moderne passe d'abord). Deux sœurs ne s'additionnent
+//   pas : chaque jour, seule la première (par rang) qui peut marcher est en service ; les autres attendent en secours
+//   (`bilan.secours`), sans rien produire ni consommer, sans défense ni visibilité ; leur stockage et leur capacité restent.
+//   Une sœur hors service, éteinte ou arrêtée faute de carburant, de gaz, d'énergie, d'eau ou de nourriture laisse la place à la
+//   suivante : le feu de bois quand le gaz manque, les gouttières de bambou quand la citerne est cassée.
+// - Gaz (`consommation.gaz`) : servi comme le carburant, par ordre de priorité ; ce qui en manque s'arrête.
+// - Matières de l'île (coût `ile`) : prises sur le bois des alentours de l'abri (`abri.nature.bois`), qui repousse ; une
+//   installation lontan se répare avec elles au lieu de matériaux.
+// - Végétation abattue par un cyclone (`abri.vegetation: { n, depuis }`) : visibilité + n, −1 tous les 15 jours.
+// - Veillée à la lumière (`abri.lumiereLe` = le jour) : visibilité +1 ce jour-là (lire le soir se voit de loin).
+// - Un chien du groupe présent (`conditions.chien`) : moral +1 (sauf si des chiens de garde sont déjà en service) et
+//   vigilance +1 comme une installation ; des objets de confort (`conditions.confort` : leurs `effets.moral`) : moral +1 au plus.
+// - Boutures (journeeAbri) : replantées chaque jour dans un potager ou un jardin en service (elles deviennent des graines),
+//   sinon un tiers meurt (au supérieur).
+// - Alentours au-dessus du plafond (bois et fruits tombés d'un cyclone) : le surplus se perd chaque jour (POURRISSEMENT).
+import { ORDRE_DELESTAGE, RESSOURCES, NATURE, SEUIL_AUTONOMIE, COUT_ILE, borner } from "./constantes.mjs";
 import { installationDe, regionDe, siteDe, niveauDe, niveauMaxDe, natureRegion, indexer } from "./contenu.mjs";
 import { consommationJour, pertesJour, plafonds, joursDeStocks, normaliserStocks, journeeStocks, couvre, retirerStocks } from "./ressources.mjs";
 import { saisonDuJour, bonusFruits, dateDuJour } from "./temps.mjs";
 import { facteurBras } from "./generation.mjs";
 import { message } from "./textes.mjs";
+import { tirerPoids } from "./hasard.mjs";
 
 export const FACTEUR_ETAT = [1, 0.75, 0.5, 0];
 export const SAISON_PLUIE = { pluies: 1, seche: 0.5 };
@@ -61,6 +80,20 @@ export const TRAVAIL_DEGAT = 2;
 export const EAU_SITE = { riviere: 12, source: 8, puits: 5, citerne: 1, reseau: 0, aucune: 0 };
 export const RESEAU_PUBLIC = { eau: 60, electricite: 20 };
 const SITES_SANS_COURANT = ["tunnel-de-lave", "galerie"];
+// Lot « savoirs ».
+export const POURRISSEMENT = { cueillette: 0.25, gibier: 0.1, peche: 0.1, bois: 0.03 };   // part du surplus perdue par jour
+export const VEGETATION_REPOUSSE = 15;          // jours pour regagner 1 de visibilité après un cyclone
+export const BOUTURES_PERTE = 1 / 3;            // part des boutures qui meurt chaque jour sans jardin
+export const JARDINS = ["potager", "jardin-creole", "serre", "verger"];   // où l'on repique les boutures
+export const CONFORT_MAX = 1;                   // moral des objets de confort
+// Le rôle et le rang d'une installation (sœurs) : rôle = sa propre clé par défaut ; rang 0, 1 pour une lontan.
+export const roleDe = def => def?.role || def?.cle || "";
+export const rangDe = def => (Number.isFinite(Number(def?.rang)) ? Number(def.rang) : def?.arbre === "lontan" ? 1 : 0);
+export const vegetationAbattue = (abri, jour = 0) => {
+  const v = abri?.vegetation;
+  if (!v || !(Number(v.n) > 0)) return 0;
+  return Math.max(0, Number(v.n) - Math.floor(Math.max(0, Number(jour) - Number(v.depuis ?? 0)) / VEGETATION_REPOUSSE));
+};
 
 export function instanceInstallation(cle, niveau = 0, extra = {}) {
   return { cle, niveau, etat: 0, chantier: { fait: 0, requis: 0 }, termineLe: 0, actif: true, ...extra };
@@ -130,9 +163,10 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     const production = {};
     for (const [r, q] of Object.entries(e.production ?? {})) production[r] = (Number(q) || 0) * f;
     lignes.push({
-      cle: inst.cle, categorie: def.categorie, niveau, e, production, horsService: fEtat === 0,
-      consommation: { energie: Number(e.consommation?.energie) || 0, carburant: Number(e.consommation?.carburant) || 0, eau: Number(e.consommation?.eau) || 0, nourriture: Number(e.consommation?.nourriture) || 0 },
-      enMarche: fEtat > 0 && inst.actif !== false, sol: demandeSol(def, niveau)
+      cle: inst.cle, categorie: def.categorie, niveau, e, production, horsService: fEtat === 0, role: roleDe(def), rang: rangDe(def),
+      consommation: { energie: Number(e.consommation?.energie) || 0, carburant: Number(e.consommation?.carburant) || 0, eau: Number(e.consommation?.eau) || 0,
+        nourriture: Number(e.consommation?.nourriture) || 0, gaz: Number(e.consommation?.gaz) || 0 },
+      peutMarcher: fEtat > 0 && inst.actif !== false, enMarche: fEtat > 0 && inst.actif !== false, sol: demandeSol(def, niveau)
     });
   }
   // L'eau du site et les réseaux publics : une « ligne » sans installation.
@@ -141,50 +175,79 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     + (siteEau === "reseau" && conditions.reseaux?.eau ? RESEAU_PUBLIC.eau : 0);
   const courant = conditions.reseaux?.electricite && !SITES_SANS_COURANT.includes(c.site.type) ? RESEAU_PUBLIC.electricite : 0;
   if (eauSite || courant) lignes.push({ cle: "", categorie: "site", niveau: 0, e: {}, production: { eau: eauSite, energie: courant }, horsService: false,
-    consommation: { energie: 0, carburant: 0, eau: 0, nourriture: 0 }, enMarche: true, sol: false, site: true });
-  const arrets = [];
-  const arreter = (l, raison) => { if (l.enMarche) { l.enMarche = false; arrets.push({ cle: l.cle, raison }); } };
-  for (const l of lignes) if (l.horsService) arrets.push({ cle: l.cle, raison: "hors-service" });
+    consommation: { energie: 0, carburant: 0, eau: 0, nourriture: 0, gaz: 0 }, peutMarcher: true, enMarche: true, sol: false, site: true });
 
-  // Carburant (groupe électrogène) : servi par ordre de priorité, ce qui manque s'arrête.
-  const parPriorite = [...lignes].sort((a, b) => prioriteDelestage(b.categorie) - prioriteDelestage(a.categorie));
-  let carburant = stocks.carburant;
-  for (const l of parPriorite) if (l.enMarche && l.consommation.carburant > 0) {
-    if (carburant >= l.consommation.carburant) carburant -= l.consommation.carburant;
-    else arreter(l, "carburant");
-  }
-  // Énergie : stock + production des installations en marche ; les consommatrices servies par priorité.
-  const somme = (cle, filtre = () => true) => lignes.filter(l => l.enMarche && filtre(l)).reduce((s, l) => s + (l.production[cle] || 0), 0);
-  const productionEnergie = Math.round(somme("energie"));
-  let energie = stocks.energie + productionEnergie;
-  for (const l of parPriorite) if (l.enMarche && l.consommation.energie > 0) {
-    if (energie >= l.consommation.energie) energie -= l.consommation.energie;
-    else arreter(l, "energie");
-  }
-  // Eau : les personnes boivent d'abord ; les installations (arrosage, bassin) se partagent le reste.
+  // Les sœurs (lot « savoirs ») : par rôle, la première qui peut marcher est en service, les autres en secours. Si celle qu'on a
+  // choisie s'arrête au délestage (plus de gaz, d'énergie…), on recommence sans elle : la suivante prend le relais.
+  const parRole = new Map();
+  for (const l of lignes) if (!l.site) parRole.set(l.role, [...(parRole.get(l.role) ?? []), l]);
+  const soeurs = [...parRole.values()].filter(g => g.length > 1).map(g => [...g].sort((a, b) => a.rang - b.rang));
+  const ecartees = new Set();
   const besoin = consommationJour({ personnes: c.personnes, altitude: c.region.altitude, saison: c.saison, rations: conditions.rations ?? null });
-  const productionEauAvant = Math.round(somme("eau"));
-  let eau = stocks.eau + productionEauAvant - besoin.eau;
-  for (const l of parPriorite) if (l.enMarche && l.consommation.eau > 0) {
-    if (eau >= l.consommation.eau) eau -= l.consommation.eau;
-    else arreter(l, "eau");
+  const somme = (cle, filtre = () => true) => lignes.filter(l => l.enMarche && filtre(l)).reduce((s, l) => s + (l.production[cle] || 0), 0);
+  let arrets = [];
+  for (let essai = 0; essai <= lignes.length; essai++) {
+    arrets = [];
+    for (const l of lignes) { l.enMarche = l.peutMarcher; l.secours = false; }
+    for (const l of lignes) if (l.horsService) arrets.push({ cle: l.cle, raison: "hors-service" });
+    for (const g of soeurs) {
+      const choisie = g.find(l => l.peutMarcher && !ecartees.has(l)) ?? g.find(l => l.peutMarcher);
+      for (const l of g) {
+        if (l === choisie || !l.peutMarcher) continue;
+        l.enMarche = false;
+        // Écartée parce qu'elle s'arrêtait (plus de gaz…) : elle garde sa raison ; sinon, elle attend en secours.
+        if (ecartees.has(l)) arrets.push({ cle: l.cle, raison: l.raisonArret ?? "secours" });
+        else l.secours = true;
+      }
+      if (choisie) choisie.choisie = true;
+    }
+    const arreter = (l, raison) => { if (l.enMarche) { l.enMarche = false; arrets.push({ cle: l.cle, raison }); } };
+    // Carburant (groupe électrogène), puis gaz (gazinière, chauffe-eau) : servis par ordre de priorité, ce qui manque s'arrête.
+    const parPriorite = [...lignes].sort((a, b) => prioriteDelestage(b.categorie) - prioriteDelestage(a.categorie));
+    for (const r of ["carburant", "gaz"]) {
+      let reste = stocks[r] + Math.round(somme(r));
+      for (const l of parPriorite) if (l.enMarche && l.consommation[r] > 0) {
+        if (reste >= l.consommation[r]) reste -= l.consommation[r];
+        else arreter(l, r);
+      }
+    }
+    // Énergie : stock + production des installations en marche ; les consommatrices servies par priorité.
+    let energie = stocks.energie + Math.round(somme("energie"));
+    for (const l of parPriorite) if (l.enMarche && l.consommation.energie > 0) {
+      if (energie >= l.consommation.energie) energie -= l.consommation.energie;
+      else arreter(l, "energie");
+    }
+    // Eau : les personnes boivent d'abord ; les installations (arrosage, bassin) se partagent le reste.
+    let eau = stocks.eau + Math.round(somme("eau")) - besoin.eau;
+    for (const l of parPriorite) if (l.enMarche && l.consommation.eau > 0) {
+      if (eau >= l.consommation.eau) eau -= l.consommation.eau;
+      else arreter(l, "eau");
+    }
+    // Nourriture : les personnes mangent d'abord ; les bêtes nourries (chiens de garde) se partagent le reste.
+    let vivres = stocks.nourriture + Math.round(somme("nourriture")) - besoin.nourriture;
+    for (const l of parPriorite) if (l.enMarche && l.consommation.nourriture > 0) {
+      if (vivres >= l.consommation.nourriture) vivres -= l.consommation.nourriture;
+      else arreter(l, "nourriture");
+    }
+    // Une sœur choisie arrêtée faute de quoi marcher, alors qu'une autre attend : on recommence sans elle.
+    const relais = soeurs.flatMap(g => g.filter(l => l.choisie && !l.enMarche && l.peutMarcher && g.some(x => x !== l && x.peutMarcher && !ecartees.has(x))));
+    for (const l of lignes) l.choisie = false;
+    if (!relais.length) break;
+    for (const l of relais) { ecartees.add(l); l.raisonArret = arrets.find(a => a.cle === l.cle)?.raison; }
   }
-  // Nourriture : les personnes mangent d'abord ; les bêtes nourries (chiens de garde) se partagent le reste.
-  let vivres = stocks.nourriture + Math.round(somme("nourriture")) - besoin.nourriture;
-  for (const l of parPriorite) if (l.enMarche && l.consommation.nourriture > 0) {
-    if (vivres >= l.consommation.nourriture) vivres -= l.consommation.nourriture;
-    else arreter(l, "nourriture");
-  }
+  const secours = lignes.filter(l => l.secours).map(l => ({ cle: l.cle, role: l.role }));
 
-  // Effets. Arrêtée : seulement le structurel ; hors service : capacité et stockage.
+  // Effets. Arrêtée : seulement le structurel ; hors service : capacité et stockage ; en secours : stockage et capacité.
   const actives = lignes.filter(l => l.enMarche && !l.site);
-  const structurelles = lignes.filter(l => !l.horsService && !l.site);
+  const structurelles = lignes.filter(l => !l.horsService && !l.site && !l.secours);
   const sommeEffet = (liste, cle) => liste.reduce((s, l) => s + (Number(l.e[cle]) || 0), 0);
   const plafond = plafonds(ajoutsDeStockage(lignes.map(l => l.e)));
   // Bonus de compétence des installations (tour de guet, chiens de garde : vigilance ; §1.1) : le meilleur, tant qu'elle n'est
   // pas hors service (même règle qu'un test à l'abri, scripts/api.mjs modificateursDuTest).
   const bonus = {};
   for (const l of structurelles) for (const [k, n] of Object.entries(l.e.bonus ?? {})) bonus[k] = Math.max(bonus[k] ?? 0, Number(n) || 0);
+  // Un chien du groupe présent : il entend avant la garde (vigilance +1, comme une installation).
+  if (conditions.chien) bonus.vigilance = Math.max(bonus.vigilance ?? 0, 1);
 
   const production = {};
   const reliquats = {};
@@ -203,17 +266,25 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     eau: besoin.eau + actives.reduce((s, l) => s + l.consommation.eau, 0),
     nourriture: besoin.nourriture + actives.reduce((s, l) => s + l.consommation.nourriture, 0),
     energie: actives.reduce((s, l) => s + l.consommation.energie, 0),
-    carburant: actives.reduce((s, l) => s + l.consommation.carburant, 0)
+    carburant: actives.reduce((s, l) => s + l.consommation.carburant, 0),
+    gaz: actives.reduce((s, l) => s + l.consommation.gaz, 0)
   };
+  if (!consommation.gaz) delete consommation.gaz;
   const conservation = actives.some(l => l.e.conservation);
   const pertes = { nourriture: pertesJour(Math.max(0, stocks.nourriture + (production.nourriture || 0) - consommation.nourriture), conservation) };
   const net = {};
-  for (const r of ["eau", "nourriture", "energie", "carburant", "medicaments"]) net[r] = (production[r] || 0) - (consommation[r] || 0) - (pertes[r] || 0);
+  for (const r of ["eau", "nourriture", "energie", "carburant", "medicaments", "gaz"]) net[r] = (production[r] || 0) - (consommation[r] || 0) - (pertes[r] || 0);
+  if (!net.gaz) delete net.gaz;
 
   const discretion = borner((Number(c.site.discretion) || 0) + sommeEffet(structurelles, "discretion"), 0, 10);
   const defense = Math.max(0, (Number(c.site.defense) || 0) + sommeEffet(structurelles, "defense") - Math.floor((Number(abri.degats) || 0) / 2));
   const capacite = (Number(c.site.capacite) || 0) + sommeEffet(lignes, "capacite");
-  const visibiliteBrute = Math.ceil(c.personnes / 2) + sommeEffet(actives, "visibilite") - discretion;
+  // Lot « savoirs » : végétation abattue par un cyclone, veillée à la lumière (lecture du soir).
+  const devoile = vegetationAbattue(abri, c.jour) + (abri.lumiereLe !== undefined && abri.lumiereLe !== null && Number(abri.lumiereLe) === c.jour ? 1 : 0);
+  const visibiliteBrute = Math.ceil(c.personnes / 2) + sommeEffet(actives, "visibilite") + devoile - discretion;
+  // Le chien (sauf chiens de garde en service) et les objets de confort : le moral de l'abri.
+  const moralChien = conditions.chien && !actives.some(l => l.cle === "chiens-de-garde") ? 1 : 0;
+  const moralObjets = Math.min(CONFORT_MAX, Math.max(0, Number(conditions.confort) || 0));
   const protectionCyclone = Math.min(3, Math.max(c.site.type === "tunnel-de-lave" ? 3 : 0, ...structurelles.map(l => Number(l.e.protectionCyclone) || 0)));
   const usure = lignes.filter(l => l.sol && l.enMarche).reduce((s, l) => s + l.niveau * USURE_SOL, 0);
   const bilan = {
@@ -222,7 +293,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     bruit: sommeEffet(actives, "bruit"),
     protectionCyclone,
     soins: sommeEffet(actives, "soins"),
-    moral: sommeEffet(actives, "moral"),
+    moral: sommeEffet(actives, "moral") + moralChien + moralObjets,
     conservation,
     renseignements: actives.some(l => l.e.renseignements),
     bonus,
@@ -233,6 +304,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     actives: actives.map(l => l.cle),
     eauSite: Math.round(eauSite), reseauElectrique: courant > 0,
     arrets,
+    secours,
     surpeuplement: Math.max(0, c.personnes - capacite),
     autonome: net.eau >= 0 && net.nourriture >= 0 && net.energie >= 0
   };
@@ -246,14 +318,34 @@ export function journeeAbri(abri = {}, installations = [], contenu = {}, conditi
   const c = cadre(abri, contenu, conditions);
   const r = journeeStocks(abri.stocks, { production: bilan.production, consommation: bilan.consommation, conservation: bilan.conservation, plafond: bilan.plafonds });
   const mois = dateDuJour(c.jour, conditions.dateDepart).mois;
+  const b = repiquerBoutures(r.stocks, bilan);
   const nouveau = {
     ...abri,
-    stocks: r.stocks,
+    stocks: b.stocks,
     reliquats: bilan.reliquats,
     sol: borner(Number(abri.sol ?? c.site.sol ?? 0) + bilan.sol, 0, SOL_MAX),
     nature: regenererNature(abri.nature, c.region, { saison: c.saison, mois })
   };
-  return { abri: nouveau, bilan, manque: r.manque, pertes: r.pertes, perdus: r.perdus };
+  return { abri: nouveau, bilan, manque: r.manque, pertes: r.pertes, perdus: r.perdus, boutures: { repiquees: b.repiquees, mortes: b.mortes } };
+}
+
+// Les boutures d'un jour (lot « savoirs ») : repiquées dans un jardin en service (potager, jardin créole, serre, verger), elles
+// deviennent des graines (« de quoi semer une planche ») jusqu'au plafond, le reste meurt ; sans jardin, un tiers meurt.
+// -> { stocks, repiquees, mortes }
+export function repiquerBoutures(stocks, bilan = {}) {
+  const s = normaliserStocks(stocks);
+  const n = s.boutures;
+  if (!n) return { stocks: s, repiquees: 0, mortes: 0 };
+  if ((bilan.actives ?? []).some(cle => JARDINS.includes(cle))) {
+    const place = Math.max(0, Math.floor(Number(bilan.plafonds?.graines ?? Infinity)) - s.graines);
+    const repiquees = Math.min(n, place);
+    s.graines += repiquees;
+    s.boutures = 0;
+    return { stocks: s, repiquees, mortes: n - repiquees };
+  }
+  const mortes = Math.ceil(n * BOUTURES_PERTE);
+  s.boutures = n - mortes;
+  return { stocks: s, repiquees: 0, mortes };
 }
 
 // ------------------------------------------------------------------ autonomie (§1.6)
@@ -318,26 +410,40 @@ export function peutConstruire(def, niveau, abri = {}, site = {}, groupe = {}) {
   // Un chantier déjà ouvert pour ce niveau est déjà payé.
   const dejaPaye = enCours && n === actuel + 1;
   const cout = dejaPaye ? {} : coutAvecPlans(niv.cout, plan);
-  if (!dejaPaye && !couvre(abri.stocks, cout)) {
-    const manque = Object.fromEntries(Object.entries(cout).filter(([r, q]) => r !== "travail" && (Number(abri.stocks?.[r]) || 0) < q)
+  // Les matières de l'île (`ile`) se prennent sur le bois des alentours de l'abri, pas dans les stocks.
+  const { [COUT_ILE]: ile = 0, ...coutStocks } = cout;
+  const bois = boisDisponible(abri);
+  if (!dejaPaye && (!couvre(abri.stocks, coutStocks) || ile > bois)) {
+    const manque = Object.fromEntries(Object.entries(coutStocks).filter(([r, q]) => r !== "travail" && (Number(abri.stocks?.[r]) || 0) < q)
       .map(([r, q]) => [r, q - (Number(abri.stocks?.[r]) || 0)]));
+    if (ile > bois) manque[COUT_ILE] = ile - bois;
     refuser(`il manque : ${Object.entries(manque).map(([r, q]) => `${q} ${r}`).join(", ")}`, "manque", { manque });
   }
   return { ok: raisons.length === 0, raisons, motifs, cout, plan, niveau: n, enCours: dejaPaye };
 }
 
+// Les matières de l'île à portée de main : le bois des alentours de l'abri (entier ; lot « savoirs »).
+export const boisDisponible = abri => Math.max(0, Math.floor(Number(abri?.nature?.bois) || 0));
+// Prendre des matières de l'île sur les alentours. -> nature (nouvelle)
+export function prendreIle(nature = {}, n = 0) {
+  const q = Math.max(0, Number(n) || 0);
+  if (!q) return { ...nature };
+  return { ...nature, bois: Math.max(0, Math.round(((Number(nature?.bois) || 0) - q) * 100) / 100) };
+}
+
 // Ouvre le chantier du niveau suivant (coûts payés tout de suite, contrat §5 « payés au premier quart »).
-// -> { ok, raisons, motifs, instance, stocks, cout }
+// -> { ok, raisons, motifs, instance, stocks, nature (alentours, matières de l'île prises), cout }
 export function ouvrirChantier(def, abri = {}, site = {}, groupe = {}) {
+  const nature = abri.nature ? { ...abri.nature } : undefined;
   const v = peutConstruire(def, undefined, abri, site, groupe);
-  if (!v.ok) return { ok: false, raisons: v.raisons, motifs: v.motifs, instance: instanceDans(abri, def?.cle), stocks: normaliserStocks(abri.stocks), cout: v.cout };
+  if (!v.ok) return { ok: false, raisons: v.raisons, motifs: v.motifs, instance: instanceDans(abri, def?.cle), stocks: normaliserStocks(abri.stocks), nature, cout: v.cout };
   const ancienne = instanceDans(abri, def.cle);
-  if (v.enCours) return { ok: true, raisons: [], motifs: [], instance: structuredClone(ancienne), stocks: normaliserStocks(abri.stocks), cout: {} };
-  const { travail = 0, ...ressources } = v.cout;
+  if (v.enCours) return { ok: true, raisons: [], motifs: [], instance: structuredClone(ancienne), stocks: normaliserStocks(abri.stocks), nature, cout: {} };
+  const { travail = 0, [COUT_ILE]: ile = 0, ...ressources } = v.cout;
   const stocks = retirerStocks(abri.stocks, ressources).stocks;
   const instance = ancienne ? structuredClone(ancienne) : instanceInstallation(def.cle, 0);
   instance.chantier = { fait: 0, requis: Math.max(1, travail) };
-  return { ok: true, raisons: [], motifs: [], instance, stocks, cout: v.cout };
+  return { ok: true, raisons: [], motifs: [], instance, stocks, nature: ile ? prendreIle(abri.nature, ile) : nature, cout: v.cout };
 }
 
 // Avance un chantier ouvert : quarts × bras de travail (+ bonus en quarts-personne, la marge d'un test de bricolage par exemple).
@@ -375,11 +481,15 @@ function travailDeReparation({ aReparer, deja = 0, quarts = 1, bras = 1, parPoin
 
 // Répare : -> { instance, repares, cout: { materiaux, travail } } (travail : celui des points réparés ; le reste est gardé dans
 // instance.reparation pour la suite).
-export function reparerInstallation(instance, def, { quarts = 1, bras = 1, materiaux = Infinity } = {}) {
+// Une installation lontan (`def.arbre === "lontan"`) se répare avec les matières de l'île (`ile` : le bois des alentours) au lieu
+// de matériaux fouillés : cout: { ile, travail } (lot « savoirs »).
+export function reparerInstallation(instance, def, { quarts = 1, bras = 1, materiaux = Infinity, ile = Infinity } = {}) {
   const parPoint = Math.max(1, Math.ceil((Number(niveauDe(def, Math.max(1, Number(instance?.niveau) || 1))?.cout?.travail) || 0) / 4));
   const etat = Number(instance?.etat) || 0;
-  const t = travailDeReparation({ aReparer: etat, deja: instance?.reparation, quarts, bras, parPoint, materiaux });
-  return { instance: { ...structuredClone(instance), etat: etat - t.repares, reparation: t.reste }, repares: t.repares, cout: { materiaux: t.repares, travail: t.repares * parPoint } };
+  const lontan = def?.arbre === "lontan";
+  const t = travailDeReparation({ aReparer: etat, deja: instance?.reparation, quarts, bras, parPoint, materiaux: lontan ? ile : materiaux });
+  return { instance: { ...structuredClone(instance), etat: etat - t.repares, reparation: t.reste }, repares: t.repares,
+    cout: { [lontan ? COUT_ILE : "materiaux"]: t.repares, travail: t.repares * parPoint } };
 }
 
 export const endommagerAbri = (abri, n = 1) => ({ ...abri, degats: Math.max(0, (Number(abri?.degats) || 0) + n) });
@@ -448,6 +558,64 @@ export function subirCyclone(abri, installations, contenu, { force = 1, protecti
   return { abri: endommagerAbri(abri, degats), installations: nouvelles, degats, endommagees };
 }
 
+// Le passage d'un cyclone sur l'abri, tout entier (lot « savoirs », docs/equilibre-savoirs.md) : les dégâts de subirCyclone, plus
+// - préparé (on a rentré ou fixé ce qui s'envole, `prepare`) : +1 de protection (au plus 3), et rien n'est emporté ; sinon le vent
+//   emporte ce qui traînait dehors : 2 × force matériaux (tôles, bâches), force plantes, toutes les boutures ;
+// - les fuites et les gouttières qui débordent remplissent la citerne : +4 × force eau (au plafond), mais une eau à filtrer :
+//   `abri.eauDouteuse` = jour + 3 (maladies de l'eau × 2 si l'eau n'est pas traitée, maladies.mjs) ;
+// - les arbres tombés : bois des alentours + 0,5 × force × plafond (du bois pour des semaines, qui pourrit lentement) ; les
+//   fruits tombés : cueillette + 0,3 × force × plafond (à ramasser et conserver vite : ils pourrissent en quelques jours) ;
+// - la végétation abattue : `abri.vegetation` = { n: force, depuis: jour } (visibilité + force, −1 tous les 15 jours) ;
+// - ce que le cyclone a pris mal fixé ailleurs et dépose dans la cour : un dépôt tiré dans `depots` (contenu `depotsCyclone`,
+//   { cle, nom, poids, stocks?, menace?: { type, force }, moral? }) ; ses stocks sont posés (au plafond), sa menace et son
+//   moral rendus au MJ.
+// -> { abri, installations, degats, endommagees, protection, emportes, eau, bois, fruits, depot: { cle, nom, stocks, menace,
+//      moral } | null }
+export const CYCLONE_ABRI = { eauParForce: 4, eauDouteuse: 3, bois: 0.5, fruits: 0.3, emportes: { materiaux: 2, plantes: 1 } };
+export function passageCyclone(abri = {}, installations = [], contenu = {}, { force = 1, protection = 0, prepare = false, jour = 0, depots = [] } = {}, hasard = Math.random) {
+  const C = CYCLONE_ABRI;
+  const f = Math.max(0, Number(force) || 0);
+  const prot = Math.min(3, Math.max(0, Number(protection) || 0) + (prepare ? 1 : 0));
+  const cy = subirCyclone(abri, installations, contenu, { force: f, protection: prot }, hasard);
+  let a = cy.abri;
+  const plafond = plafondsAbri(cy.installations, contenu);
+  let stocks = normaliserStocks(a.stocks);
+  const emportes = {};
+  if (!prepare && f > 0) {
+    const voulu = { materiaux: C.emportes.materiaux * f, plantes: C.emportes.plantes * f, boutures: stocks.boutures };
+    const r = retirerStocks(stocks, voulu);
+    for (const k of Object.keys(voulu)) if (stocks[k] - r.stocks[k] > 0) emportes[k] = stocks[k] - r.stocks[k];
+    stocks = r.stocks;
+  }
+  const avantEau = stocks.eau;
+  stocks.eau = Math.min(Math.floor(plafond.eau), stocks.eau + C.eauParForce * f);
+  const eau = Math.max(0, stocks.eau - avantEau);
+  // Ce que le cyclone dépose dans la cour.
+  const liste = (depots ?? []).filter(d => d && d.cle).map(d => ({ ...d, poids: Number(d.poids ?? 1) }));
+  const tire = f > 0 && liste.length ? tirerPoids(liste, hasard) : null;
+  let depot = null;
+  if (tire) {
+    const poses = {};
+    for (const [r, q] of Object.entries(tire.stocks ?? {})) {
+      const n = Math.max(0, Math.round(Number(q) || 0));
+      if (!n || !(r in stocks)) continue;
+      const avant = stocks[r];
+      stocks[r] = Math.min(Math.floor(plafond[r] ?? Infinity), avant + n);
+      if (stocks[r] > avant) poses[r] = stocks[r] - avant;
+    }
+    depot = { cle: tire.cle, nom: tire.nom ?? tire.cle, stocks: poses, menace: tire.menace ?? null, moral: Number(tire.moral) || 0 };
+  }
+  const region = regionDe(contenu, a.region);
+  const n = natureRegion(region);
+  const nature = { ...(a.nature ?? natureInitiale(region)) };
+  const bois = Math.round(n.bois.plafond * C.bois * f * 100) / 100, fruits = Math.round(n.cueillette.plafond * C.fruits * f * 100) / 100;
+  nature.bois = Math.round(((Number(nature.bois) || 0) + bois) * 100) / 100;
+  nature.cueillette = Math.round(((Number(nature.cueillette) || 0) + fruits) * 100) / 100;
+  const veg = Math.max(f, vegetationAbattue(a, jour));
+  a = { ...a, stocks, nature, ...(f > 0 ? { vegetation: { n: veg, depuis: jour }, eauDouteuse: jour + C.eauDouteuse } : {}) };
+  return { abri: a, installations: cy.installations, degats: cy.degats, endommagees: cy.endommagees, protection: prot, emportes, eau, bois, fruits, depot };
+}
+
 // ------------------------------------------------------------------ nature des alentours
 // Alentours intacts d'une région (stocks au plafond).
 export function natureInitiale(region) {
@@ -463,7 +631,9 @@ export function regenererNature(nature = {}, region = {}, { saison = "pluies", m
     let gain = n[k].parJour * REGENERATION_NATURE[k];
     if (k === "cueillette") gain *= SAISON_CUEILLETTE[saison] * bonusFruits(mois);
     const actuel = Math.max(0, Number(nature?.[k] ?? n[k].plafond));
-    sortie[k] = Math.round(Math.min(n[k].plafond, actuel + gain) * 100) / 100;
+    // Au-dessus du plafond (bois et fruits tombés d'un cyclone) : rien ne repousse, le surplus pourrit peu à peu.
+    if (actuel > n[k].plafond) sortie[k] = Math.round((n[k].plafond + (actuel - n[k].plafond) * (1 - POURRISSEMENT[k])) * 100) / 100;
+    else sortie[k] = Math.round(Math.min(n[k].plafond, actuel + gain) * 100) / 100;
   }
   return sortie;
 }

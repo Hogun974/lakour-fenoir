@@ -2,10 +2,13 @@
 // bâtiments et occupants inventés ; pas de marque commerciale. Atouts et défauts honnêtes.
 import { html, ressources } from "./aides.mjs";
 
+const SITES_A_GAZ = ["case-creole", "maison", "ferme", "ilet"];
+
 function site({ cle, region, nom, type, description, capacite, defense, discretion, eau, sol, soleil, souterrain, acces, stocks = {}, atouts, defauts, installationsDepart = [] }) {
   return { cle, region, nom, type, description: html(description), capacite, defense, discretion, eau, sol, soleil, souterrain, acces,
     // Les plantes médicinales (zerbaz) d'un jardin de case ou d'une ferme : un stock de l'abri qui ne se pille pas.
-    stocks: { ...ressources(stocks), ...(stocks.plantes ? { plantes: stocks.plantes } : {}) }, atouts, defauts, installationsDepart };
+    // Lot « savoirs » : une bouteille de gaz de 13 kg sous l'évier des cases, maisons, fermes et îlets.
+    stocks: { ...ressources({ ...(SITES_A_GAZ.includes(type) ? { gaz: 13 } : {}), ...stocks }), ...(stocks.plantes ? { plantes: stocks.plantes } : {}) }, atouts, defauts, installationsDepart };
 }
 
 export const SITES = [

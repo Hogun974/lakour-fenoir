@@ -23,6 +23,7 @@ import { LIVRE_UNIVERS } from "./livre-univers.mjs";
 import { SURVIVANTS } from "./survivants.mjs";
 import { CARTES_LIEUX } from "./lieux-cartes.mjs";
 import { sceneReunion } from "./cartes.mjs";
+import { DEPOTS_CYCLONE, GRAMOUNES, TABLES_SAVOIRS, JOURNAUX_SAVOIRS } from "./deux-savoirs.mjs";
 import { FETES_FENOIR, imageDeFete, EFFET_FETE } from "../scripts/fetes.js";
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
@@ -32,8 +33,8 @@ export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 export const DOCUMENTS = [
   ...INSTALLATIONS, ...SAVOIRS, ...EQUIPEMENTS, ...PASSES, ...RECETTES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
-  ...TABLES, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES,
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...TABLES, ...TABLES_SAVOIRS, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -56,6 +57,8 @@ export function donnees() {
     noms: { prenoms: DONNEES_TABLES.prenoms, prenomsF: DONNEES_TABLES.prenomsF, prenomsM: DONNEES_TABLES.prenomsM, prenomsMixtes: DONNEES_TABLES.prenomsMixtes,
       surnoms: DONNEES_TABLES.surnoms, cyclones: DONNEES_TABLES.cyclones },
     autonomie: { voies: VOIES_AUTONOMIE, voieDefensive: VOIE_DEFENSIVE, bras: BRAS },
-    fetes: FETES_FENOIR.map(f => ({ ...f, image: imageDeFete(f.cle), effet: EFFET_FETE }))
+    fetes: FETES_FENOIR.map(f => ({ ...f, image: imageDeFete(f.cle), effet: EFFET_FETE })),
+    // Lot « savoirs » : ce que le cyclone dépose dans la cour (lu par la logique) ; les gramounes qu'on peut accueillir.
+    depotsCyclone: DEPOTS_CYCLONE, gramounes: GRAMOUNES
   };
 }

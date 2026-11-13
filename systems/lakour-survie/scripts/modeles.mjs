@@ -43,6 +43,10 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
       joursSansPassion: entier(0),
       joursMoralZero: entier(0),
       enseigne: new fields.SchemaField({ eleve: texte(), competence: texte() }),
+      // Lot « savoirs » : la confiance (d'une gramoune envers le groupe), l'apprentissage en cours, la dictée de son cahier.
+      confiance: entier(0, 0, 5),
+      apprentissage: objetNul(),
+      dictee: objetNul(),
       histoire: new fields.SchemaField({ journal: texte() }),
       age: entier(30, 0, 120),
       lien: texte(),
@@ -75,6 +79,11 @@ export class ModeleAbri extends foundry.abstract.TypeDataModel {
       degats: entier(0),
       reparation: nombre(0),
       reliquats: new fields.SchemaField(Object.fromEntries(RESSOURCES.map(r => [r, nombre(0)]))),
+      // Lot « savoirs » : végétation abattue par un cyclone, eau douteuse après les fuites, préparation au cyclone, veillée à la lumière.
+      vegetation: objetNul(),
+      eauDouteuse: nombreNul(),
+      preparation: objetNul(),
+      lumiereLe: nombreNul(),
       notes: html()
     };
   }
@@ -94,14 +103,18 @@ export class ModeleInstallation extends foundry.abstract.TypeDataModel {
       reparation: nombre(0),
       niveaux: new fields.ArrayField(new fields.ObjectField()),
       termineLe: relatif(0),
-      actif: bool(true)
+      actif: bool(true),
+      // Lot « savoirs » : arbre (moderne, lontan), rôle partagé avec une sœur, rang entre sœurs.
+      arbre: texte(),
+      role: texte(),
+      rang: nombreNul()
     };
   }
 }
 
 export class ModeleSavoir extends foundry.abstract.TypeDataModel {
   static defineSchema() {
-    return { cle: cle(), description: html(), apprentissage: html(), effets: html() };
+    return { cle: cle(), description: html(), apprentissage: html(), effets: html(), arbre: texte() };
   }
 }
 
@@ -109,7 +122,8 @@ export class ModeleEquipement extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       cle: cle(), categorie: texte("outil"), description: html(), bonus: objetLibre({}), charge: nombre(0), usure: nombre(0),
-      munitions: nombreNul(), bruit: nombre(0), transport: objetNul(), effets: objetNul()
+      munitions: nombreNul(), bruit: nombre(0), transport: objetNul(), effets: objetNul(),
+      enseigne: cles(), auteur: texte()   // lot « savoirs » : ce qu'un livre ou un cahier apprend ; l'ancienne qui l'a dicté
     };
   }
 }

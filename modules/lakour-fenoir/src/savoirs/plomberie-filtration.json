@@ -8,7 +8,8 @@
     "cle": "plomberie-filtration",
     "description": "<p>Raccorder, souder, purger, filtrer : sable, charbon, ébullition, chlore dosé à la goutte. L'eau est la première arme contre la maladie.</p>",
     "apprentissage": "<p>Un passé de plombier, d'agent des eaux ou d'électricien ; un manuel ; un PNJ du service des eaux ; une semaine à entretenir une citerne et un filtre sans tomber malade.</p>",
-    "effets": "<p>Ouvre la citerne niveau 3, le filtre niveau 2 et la pompe manuelle niveau 2. L'eau traitée divise par cinq le risque des maladies de l'eau.</p>"
+    "effets": "<p>Ouvre la citerne niveau 3, le filtre niveau 2 et la pompe manuelle niveau 2. L'eau traitée divise par cinq le risque des maladies de l'eau.</p>",
+    "arbre": "moderne"
   },
   "effects": [],
   "folder": null,

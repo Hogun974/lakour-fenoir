@@ -4,7 +4,7 @@
   "name": "Recrues — prix",
   "img": "icons/svg/d20-black.svg",
   "description": "<p>Ce qu'elle demande, ou ce qu'elle coûte.</p>",
-  "formula": "1d14",
+  "formula": "1d15",
   "replacement": true,
   "displayRoll": true,
   "folder": null,
@@ -228,6 +228,21 @@
       "range": [
         14,
         14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sP4oHmu1ePhiJXFv",
+      "_key": "!tables.results!eUNONdmZdZucM7AF.sP4oHmu1ePhiJXFv",
+      "type": "text",
+      "name": "",
+      "description": "<p>C'est une gramoune : elle marche lentement, il faudra la porter dans les sentiers et la soigner l'hiver ; mais elle sait des choses que personne ne sait plus.</p>",
+      "range": [
+        15,
+        15
       ],
       "weight": 1,
       "drawn": false,

@@ -5,8 +5,11 @@
 import { COMPETENCES, html, survivant } from "./aides.mjs";
 import { imageJeton } from "./jetons.mjs";
 
-function creature({ cle, nom, categorie, des, resistance, vitesse, sens, zones, phases, description, comportement, faiblesse, competences = {} }) {
-  return { cle, nom, categorie, des, resistance, vitesse, sens, zones, phases, description: html(description), comportement: html(comportement), faiblesse: html(faiblesse), competences };
+// acteur: false (lot « savoirs ») : une créature décrite au bestiaire et tirée par la logique, sans acteur au compendium (pas de
+// jeton peint) : le MJ prend le jeton d'une créature proche (le chien errant pour le chien de tête).
+function creature({ cle, nom, categorie, des, resistance, vitesse, sens, zones, phases, description, comportement, faiblesse, competences = {}, acteur = true }) {
+  return { cle, nom, categorie, des, resistance, vitesse, sens, zones, phases, description: html(description), comportement: html(comportement), faiblesse: html(faiblesse), competences,
+    ...(acteur ? {} : { acteur: false }) };
 }
 
 export const BESTIAIRE = [
@@ -40,6 +43,11 @@ export const BESTIAIRE = [
     description: `Les chiens abandonnés se sont regroupés en meutes : maigres, malins, ils suivent les groupes, attaquent les poulaillers et les gens seuls.`,
     comportement: `Attaquent en meute, fuient devant un groupe résolu ; un chien nourri peut devenir un ami.`,
     faiblesse: `La faim les rend imprudents ; le feu et les cris les font fuir.` }),
+  creature({ cle: "chien-de-tete", nom: "Chien de tête", categorie: "animal", des: 2, resistance: 2, vitesse: "rapide", sens: "odeur, ouïe", acteur: false,
+    zones: ["littoral", "hauts", "foret"], phases: ["silence", "apres"],
+    description: `Le meneur d'une meute des routes : un grand chien de garde abandonné, collier encore au cou, qui a appris que les voitures en panne et les marcheurs isolés sont des proies. Les autres le suivent.`,
+    comportement: `La meute tient un tronçon de route, une aire de repos, un pont. Elle suit les voyageurs de loin, attend la nuit ou la fatigue, et charge quand le chien de tête charge. Abattu ou chassé, il emporte la meute avec lui.`,
+    faiblesse: `Toute la meute dépend de lui : s'il tombe ou s'il recule, les autres se dispersent. Un chien qu'on a nourri ne le suit plus.` }),
   creature({ cle: "cochon-marron", nom: "Cochon marron", categorie: "animal", des: 2, resistance: 2, vitesse: "rapide", sens: "odeur",
     zones: ["foret", "hauts", "cirque"], phases: ["silence", "apres"],
     description: `Des cochons échappés des élevages, retournés à l'état sauvage dans les forêts et les ravines : lourds, rapides, armés de défenses naissantes.`,
@@ -67,14 +75,14 @@ export const BESTIAIRE = [
 // phases, poids }. Les Livides et les animaux du bestiaire seulement : les figures humaines viennent des factions (rencontres
 // « humains »). poids : fréquence relative du tirage (le coureur est rare, contrat §9).
 export const POIDS_CREATURES = { "livide-frais": 4, "livide-des-hauts": 2, "noye-du-lagon": 1, "livide-brule": 1, coureur: 0.5,
-  "chien-errant": 3, "cochon-marron": 2, "rat-des-reserves": 1 };
+  "chien-errant": 3, "chien-de-tete": 1, "cochon-marron": 2, "rat-des-reserves": 1 };
 export const CREATURES = BESTIAIRE.filter(b => b.categorie === "livide" || b.categorie === "animal").map(b => ({
   cle: b.cle, nom: b.nom, type: b.categorie, des: b.des, resistance: b.resistance, zones: [...b.zones], phases: [...b.phases],
   poids: POIDS_CREATURES[b.cle] ?? 1
 }));
 
 // Acteurs du compendium « bestiaire » : la fiche dans flags.lakour-fenoir.bestiaire ; disposition hostile, sauf les rats.
-export const BESTIAIRE_ACTEURS = BESTIAIRE.map(b => survivant({
+export const BESTIAIRE_ACTEURS = BESTIAIRE.filter(b => b.acteur !== false).map(b => survivant({
   cle: b.cle, nom: b.nom, pack: "bestiaire", statut: "pnj", pnj: true, livide: b.categorie === "livide", vivant: b.categorie !== "livide",
   competences: Object.fromEntries(COMPETENCES.map(c => [c, b.competences[c] ?? (c === "combat" ? b.des : 0)])),
   moral: 3, img: imageJeton(b.cle), disposition: -1,

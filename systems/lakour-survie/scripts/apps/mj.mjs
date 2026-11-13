@@ -10,7 +10,7 @@ import { CHEMIN, essayer, lireChamps, options } from "./commun.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const contenu = () => game.lakourSurvie?.contenu?.() ?? {};
-export const ONGLETS_MJ = ["partie", "actions", "groupe", "menaces", "monde"];
+export const ONGLETS_MJ = ["partie", "actions", "groupe", "savoirs", "menaces", "monde"];
 const pct = (x, total) => (total > 0 ? Math.round(x / total * 100) : 0);
 
 // Le monde réel résumé (MJ actif seul) : par région l'infestation réelle, ce qui reste à piller, factions, routes abîmées ;
@@ -68,7 +68,8 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     regions: options(regions, ici), toutesRegions: options([["", "—"], ...regions], ""),
     sites: options(L.liste(c.sites).map(s => [s.cle, `${L.regionDe(c, s.region)?.nom ?? s.region} — ${s.nom}`]), ""),
     sitesIci: options([["", t("LAKOUR_SURVIE.MJ.Region")], ...sitesIci], ""),
-    cibles: options([["", t("LAKOUR_SURVIE.MJ.Tout")], ...RESSOURCES.filter(r => r !== "energie").map(r => [r, libelleRessource(r)]), ...NATURE.map(n => [n, t(`LAKOUR_SURVIE.Nature.${n}`)])], ""),
+    cibles: options([["", t("LAKOUR_SURVIE.MJ.Tout")], ...RESSOURCES.filter(r => r !== "energie").map(r => [r, libelleRessource(r)]), ...NATURE.map(n => [n, t(`LAKOUR_SURVIE.Nature.${n}`)]),
+      ...["jardins", "livres"].map(x => [x, t(`LAKOUR_SURVIE.Savoirs.Cibles.${x}`)])], ""),
     prudences: options(PRUDENCES.map(p => [p, t(`LAKOUR_SURVIE.Prudences.${p}`)]), "normal"),
     transports: options([...TRANSPORTS.map(x => [x, t(`LAKOUR_SURVIE.Transports.${x}`)]), ...vehicules.map(v => [v, L.indexer(c).equipements.get(v)?.nom ?? v])], "pied"),
     installations: options(constructibles, ""),
@@ -85,7 +86,25 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     menaces: (monde?.menaces ?? []).map(m => ({ ...m, typeLibelle: t(`LAKOUR_SURVIE.Menaces.${m.type}`), texte: sansBalises(localiser(m)) })),
     paliers: [...(monde?.paliers ?? [])].reverse().slice(0, 6),
     monde: onglet === "monde" ? resumeMonde(monde, c) : null,
-    recrue: CACHE.recrue
+    recrue: CACHE.recrue,
+    // Lot « savoirs » : l'onglet Savoirs et cyclone.
+    ...(onglet === "savoirs" || onglet === "groupe" ? contexteSavoirs(etat, c, api, membres) : {})
+  };
+}
+
+// Lot « savoirs » : les deux arbres du groupe, le cyclone vécu (MJ seul), les veillées (apprendre, confiance, dictée, chien).
+function contexteSavoirs(etat, c, api, membres) {
+  const arbres = api?.savoirsDuGroupe?.() ?? null;
+  const cyclone = api?.cyclone?.() ?? null;
+  const libelleArbre = a => (a ? ` (${t(`LAKOUR_SURVIE.Savoirs.Arbres.${a}`)})` : "");
+  return {
+    arbres, chienErrant: etat.groupe?.chienErrant ?? null,
+    cycloneVecu: cyclone ? { ...cyclone, quarts: cyclone.quarts.map(q => ({ moment: t(`LAKOUR_SURVIE.Moments.${q.moment}`), vent: t(`LAKOUR_SURVIE.Savoirs.Vents.${q.vent}`),
+      dehors: t("LAKOUR_SURVIE.Savoirs.Dehors", q.dehors) })) } : null,
+    savoirsListe: options(L.liste(c.savoirs).map(s => [s.cle, `${s.nom}${libelleArbre(s.arbre)}`]), ""),
+    sources: options(["maitre", "livre", "cahier"].map(x => [x, t(`LAKOUR_SURVIE.Savoirs.Sources.${x}`)]), "maitre"),
+    membresConfiance: options(membres.map(a => [a.id, `${a.name} (${t("LAKOUR_SURVIE.Savoirs.ConfianceCourte", { n: Number(a.system?.confiance) || 0 })})`]), ""),
+    gramounes: options([["", "—"], ...(c.gramounes ?? []).map(g => [g.cle, `${g.nom}, ${g.age}`])], "")
   };
 }
 
@@ -140,14 +159,19 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       demenager: () => api.demenager({ site: d.site, transport: d.transport, membres, emporter: Object.fromEntries(RESSOURCES.filter(r => Number(d[`emporter.${r}`]) > 0).map(r => [r, Number(d[`emporter.${r}`])])) }),
       assaut: () => api.assaut({ force: Number(d.force) || 1, type: d.type ?? "", description: d.description ?? "" }),
       ajuster: () => api.ajuster({ stocks: Object.fromEntries(RESSOURCES.filter(r => Number(d[`stock.${r}`])).map(r => [r, Number(d[`stock.${r}`])])), raison: d.raison ?? "" }),
-      genererRecrue: async () => { CACHE.recrue = await api.genererRecrue({ region: d.region || "" }); return CACHE.recrue; },
+      genererRecrue: async () => { CACHE.recrue = await api.genererRecrue({ region: d.region || "", gramoune: d.gramoune || "" }); return CACHE.recrue; },
       recruter: async () => { const r = await api.recruter({ recrue: CACHE.recrue, parleurId: d.parleur, attitude: d.attitude || "neutre" }); if (r.reussite) CACHE.recrue = null; return r; },
       feter: () => api.feter({ fete: d.fete ?? "" }),
       demanderTest: () => api.demanderTest({ acteurId: d.acteur, competence: d.competence, difficulte: d.difficulte, titre: d.titre ?? "" }),
       fabriquer: () => api.fabriquer({ recette: d.recette, acteurId: d.acteur || "", membres }),
       affliction: () => api.affliction({ acteurId: d.acteur, cle: d.affliction, action: d.action || "donner" }),
       ajouterMembre: () => api.ajouterMembre({ acteurId: d.acteur, statut: d.statut || "compagnon" }),
-      rencontre: () => api.rencontre({ region: d.region || "" })
+      rencontre: () => api.rencontre({ region: d.region || "" }),
+      preparerCyclone: () => api.preparerCyclone({ quarts: Number(d.quarts) || 1, membres }),
+      apprendre: () => api.apprendre({ acteurId: d.acteur, savoir: d.savoir, source: d.source || "maitre", maitreId: d.maitre || "" }),
+      gagnerConfiance: () => api.gagnerConfiance({ acteurId: d.acteur, parleurId: d.parleur }),
+      dicter: () => api.dicter({ gramouneId: d.acteur, scribeId: d.scribe }),
+      apprivoiser: () => api.apprivoiser({ acteurId: d.acteur })
     };
     if (!appels[nom]) return;
     cible.disabled = true;

@@ -1,0 +1,177 @@
+{
+  "_id": "PRGTFt3WHnYdtKLM",
+  "_key": "!tables!PRGTFt3WHnYdtKLM",
+  "name": "Verrous de la route",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qui barre une route carrossable (le système ajoute le temps d'un verrou au voyage en véhicule) ; un vélo, un marcheur passent à côté.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "verrous-de-la-route"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "mDFUD4dOHNdSQajE",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.mDFUD4dOHNdSQajE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une voiture en travers, portières ouvertes : on siphonne (épave), on la pousse dans la ravine (grand fracas, +4 bruit), ou on se faufile en chicane.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sQraybFRM5oTUnh3",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.sQraybFRM5oTUnh3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois voitures encastrées sous un pont : une seule passe, et il faut d'abord sortir ce qui reste dedans.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "RmmUVNHYBC0mZOH0",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.RmmUVNHYBC0mZOH0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un bus scolaire couché sur la route de Cilaos : on ne le bouge pas ; à pied, on passe ; en voiture, on fait demi-tour.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "R5AN7vo5DBVfZD6L",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.R5AN7vo5DBVfZD6L",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un tunnel à une voie, noir comme un four, la sortie invisible : on attend, on écoute, on allume les phares ou pas.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aeNX9taG30rRKkPm",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.aeNX9taG30rRKkPm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un éboulis frais, des cailloux gros comme des cabris : deux heures de pelle, ou le sentier à côté avec ce qu'on porte.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qpFWnSwvMKiVjtDS",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.qpFWnSwvMKiVjtDS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un arbre en travers après le cyclone : la tronçonneuse (bruit) ou la hache (temps). Les fruits de l'arbre sont à prendre.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "zpcFKcDOKndHToG2",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.zpcFKcDOKndHToG2",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une barricade d'une faction, abandonnée ou pas : des pneus, des fûts, une chaîne. Quelqu'un a peut-être les jumelles sur vous.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0bjMiWeozInYjbhC",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.0bjMiWeozInYjbhC",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un camion-citerne sur le flanc : il reste peut-être du carburant dans la cuve, et une odeur à ne pas allumer de cigarette.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9hsOazJFVQEfH4aE",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.9hsOazJFVQEfH4aE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un radier noyé : la route continue sous l'eau brune. Attendre que la rivière baisse, ou risquer le moteur.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mNVF8rgzcTcMvKFD",
+      "_key": "!tables.results!PRGTFt3WHnYdtKLM.mNVF8rgzcTcMvKFD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une voiture sur cales, roues volées, et un mot sur le pare-brise : « Pa touch, mi rovien » (n'y touchez pas, je reviens). Daté d'il y a des mois.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

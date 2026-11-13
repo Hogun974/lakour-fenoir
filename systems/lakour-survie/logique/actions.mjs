@@ -39,9 +39,22 @@
 // - Combat : `resistance` succès mettent une créature hors d'état (les moins résistantes d'abord) ; chaque créature restante
 //   lance ses `des` d6 : chaque 6 = touche (1 blessure) ; sur une touche de Livide, un d6 de morsure : 6 = morsure (les
 //   animaux blessent sans mordre de Gris). Tirer : +2 de bruit par échange.
+//
+// Lot « savoirs » (docs/equilibre-savoirs.md, contrat §11) :
+// - Fouilles « jardins » (les jardins des cases : nourriture, boutures, zerbaz ; savoirs.mjs, JARDINS_CASES) et « livres » (un
+//   livre qui apprend un savoir-faire : LIVRES). Toutes deux comptent comme une fouille de la région (rencontres, autonomie).
+// - Sur la route, les chiens abandonnés vont en meutes : rencontre « animaux » deux fois plus probable, 3 à 7 bêtes. Un sentier
+//   est silencieux : rencontres × 0,7.
+// - Véhicules : `source` (ce qu'ils brûlent : carburant, biocarburant pour un moteur modifié, materiaux pour un gazogène, energie
+//   pour un véhicule électrique), `lenteur` (moteur modifié : quartsVehicule × lenteur), `pente` ({ descente, montee } : × allure
+//   quand l'étape descend ou monte de 300 m ou plus : le vélo descend des Hauts sans bruit et remonte en poussant), `large`
+//   (charrette : la route seulement, et les verrous l'arrêtent comme un véhicule).
+// - Verrous de la route (savoirs.mjs, tirerVerrous) : seulement en véhicule ; leur temps s'ajoute au voyage, le carburant
+//   siphonné aussi ; le MJ raconte les autres façons de passer.
 import { NATURE, RESSOURCES_PILLABLES, CLES_PHASES, borner } from "./constantes.mjs";
+import { JARDINS_CASES, jardinsDisponibles, chanceLivre, tirerSavoirDeLivre, tirerVerrous } from "./savoirs.mjs";
 import { chance, tirerPoids, choisir, arrondiHasard, entier } from "./hasard.mjs";
-import { regionDe, siteDe, factionDe, natureRegion, voisinsDe, regionsDe, reservesDepart, liste } from "./contenu.mjs";
+import { regionDe, siteDe, factionDe, natureRegion, voisinsDe, regionsDe, reservesDepart, liste, indexer } from "./contenu.mjs";
 import { lancer, compter, resoudreTest } from "./des.mjs";
 import { observer } from "./renseignements.mjs";
 import { exploiterNature, installationsDuSite, plafondsAbri } from "./abri.mjs";
@@ -65,25 +78,30 @@ export const REGLES_ACTIONS = {
   charge: { pied: 3, vehicule: 20, bateau: 20 },
   kmParCarburant: { vehicule: 60, bateau: 20 },
   lenteur: { pied: 1.5, vehicule: 2, bateau: 1.5 },
-  bruitTir: 2
+  bruitTir: 2,
+  // Lot « savoirs ».
+  meute: { poids: 2, nombre: [3, 7] }, sentier: 0.7, pente: 300
 };
 
 // ------------------------------------------------------------------ rencontres
 // contexte : "fouille" | "exploration" | "route". -> null | { type, nombre, faction, attitude, danger, region, texte, cle, params }
 // (texte en français, cle/params pour la traduction : textes.mjs ; `creature` des params est vide pour la créature par défaut,
 // que la couche Foundry nomme d'après `creatureCle`).
-export function tirerRencontre(monde, contenu, hasard, { region, jour = monde?.jour ?? 0, moment = "apres-midi", prudence = "normal", contexte = "fouille", bruit = 0 } = {}) {
+export function tirerRencontre(monde, contenu, hasard, { region, jour = monde?.jour ?? 0, moment = "apres-midi", prudence = "normal", contexte = "fouille", bruit = 0, facteur = 1 } = {}) {
   const R = REGLES_ACTIONS.rencontre;
   const reg = monde?.regions?.[region];
   if (!reg) return null;
   const phase = phaseDuJour(jour);
   const inf = Number(reg.infestation) || 0;
-  const p = Math.min(R.max, ((R.base[contexte] ?? R.base.fouille) + R.parInfestation * inf) * (R.moment[moment] ?? 1) * (R.prudence[prudence] ?? 1) * (R.phase[phase] ?? 1) * (1 + 0.1 * Math.max(0, Number(bruit) || 0)));
+  const p = Math.min(R.max, ((R.base[contexte] ?? R.base.fouille) + R.parInfestation * inf) * (R.moment[moment] ?? 1) * (R.prudence[prudence] ?? 1) * (R.phase[phase] ?? 1) * (1 + 0.1 * Math.max(0, Number(bruit) || 0))
+    * Math.max(0, Number(facteur) || 0));
   if (!chance(p, hasard)) return null;
   const def = regionDe(contenu, region);
   const forceFactions = Object.values(reg.factions ?? {}).reduce((s, x) => s + x, 0);
   const humains = forceFactions + (Number(def?.population) || 0) * (CLES_PHASES.indexOf(phase) >= 3 ? 0.2 : 0.1);
-  const type = tirerPoids([["livides", 0.2 + 2 * inf], ["humains", humains], ["animaux", CLES_PHASES.indexOf(phase) >= 1 ? 0.5 : 0], ["danger", contexte === "route" ? 0.8 : 0.4]], hasard);
+  // Les meutes de chiens abandonnés tiennent les routes (lot « savoirs ») : deux fois plus de rencontres d'animaux sur la route.
+  const meute = contexte === "route" && CLES_PHASES.indexOf(phase) >= 2;
+  const type = tirerPoids([["livides", 0.2 + 2 * inf], ["humains", humains], ["animaux", CLES_PHASES.indexOf(phase) >= 1 ? 0.5 * (meute ? REGLES_ACTIONS.meute.poids : 1) : 0], ["danger", contexte === "route" ? 0.8 : 0.4]], hasard);
   const nom = def?.nom ?? region;
   if (type === "livides") {
     const nombre = Math.max(1, Math.round(inf * (0.5 + hasard())) + (prudence === "rapide" ? 1 : 0));
@@ -100,7 +118,7 @@ export function tirerRencontre(monde, contenu, hasard, { region, jour = monde?.j
       ...(faction ? message("rencontre-humains", { faction: fdef?.nom ?? faction, nombre }) : message("rencontre-isoles", { nombre })) };
   }
   if (type === "animaux") {
-    const nombre = entier(2, 5, hasard);
+    const nombre = meute ? entier(REGLES_ACTIONS.meute.nombre[0], REGLES_ACTIONS.meute.nombre[1], hasard) : entier(2, 5, hasard);
     const c = tirerCreature(contenu, hasard, { espece: "animal", region: def, jour, phase });
     return { type, nombre, region, creature: c.cle, des: c.des, resistance: c.resistance, texte: `${nombre} × ${c.nom ?? "chien errant"}.`,
       ...message("rencontre-animaux", { nombre, creature: c.defaut ? "" : c.nom ?? "", creatureCle: c.cle }) };
@@ -162,8 +180,28 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
   let nouveauMonde = structuredClone(monde);
   let nouvelAbri = abri ? structuredClone(abri) : null;
   const butin = {};
-  let glane = 0, trousse = 0;
-  if (fouilleDesAlentours(cible)) {
+  let glane = 0, trousse = 0, livre = null;
+  if ((cible === "jardins" || cible === "livres") && nouveauMonde.regions[region]) {
+    // Lot « savoirs » : les jardins des cases (nourriture, boutures, zerbaz) ou un livre qui apprend un savoir-faire.
+    const regMonde = nouveauMonde.regions[region];
+    const def = regionDe(contenu, region);
+    const s = site ? siteDe(contenu, site) : null;
+    if (cible === "jardins") {
+      const J = JARDINS_CASES;
+      const bonus = s && J.sites.includes(s.type) ? J.bonusSite : 1;
+      const demande = Math.min(jardinsDisponibles(def, regMonde, jour), Math.ceil(J.parMembre * n * REGLES_ACTIONS.nature.prudence[p] * bonus));
+      if (demande > 0) {
+        butin.nourriture = Math.ceil(demande * J.part.nourriture);
+        butin.boutures = Math.ceil(demande * J.part.boutures);
+        regMonde.jardinsPris = (Number(regMonde.jardinsPris) || 0) + demande;
+        const plantes = arrondiHasard(J.plantes * n * connaisseur, hasard);
+        if (plantes > 0) butin.plantes = plantes;
+      }
+    } else if (chance(chanceLivre({ region: def, regMonde, site: s, n }), hasard)) {
+      livre = tirerSavoirDeLivre(contenu, hasard);
+      if (livre) regMonde.livresTrouves = (Number(regMonde.livresTrouves) || 0) + 1;
+    }
+  } else if (fouilleDesAlentours(cible)) {
     // Les plantes poussent avec la cueillette : on les prend dans la même nature (une brassée = une unité).
     const element = cible === "plantes" ? "cueillette" : cible;
     const parJour = natureRegion(regionDe(contenu, region))[element].parJour;
@@ -232,12 +270,14 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
   const bruit = fouilleDesAlentours(cible) ? 0 : F.bruit[p];
   const lu = Object.entries(butin).map(([r, q]) => `${q} ${r}`).join(", ") || "rien";
   const nomSite = site ? siteDe(contenu, site)?.nom ?? site : "";
+  const nomLivre = livre ? indexer(contenu).savoirs.get(livre)?.nom ?? livre : "";
   return {
-    butin, glane, trousse, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
+    butin, glane, trousse, livre, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
     renseignements: observer(renseignements, nouveauMonde, contenu, region, jour, "vu"),
     fouille: !fouilleDesAlentours(cible),
     faits: [{ jour, region, cle: site ? "fouille" : "fouille-region", public: true, texte: `Fouille ${site ? `${avecPreposition("de", nomSite)} ` : ""}${avecPreposition("à", nom)} : ${lu}.`,
-      params: { region: nom, site: nomSite, butin: { ...butin } } }]
+      params: { region: nom, site: nomSite, butin: { ...butin } } },
+    ...(livre ? [{ jour, region, cle: "livre-trouve", public: true, texte: `Un livre trouvé : il peut apprendre ${nomLivre}.`, params: { savoir: nomLivre } }] : [])]
   };
 }
 
@@ -252,16 +292,19 @@ const praticable = (v, transport) => {
 export const estVehicule = e => Boolean(e && typeof e === "object" && Array.isArray(e.terrains));
 
 // Durée d'une étape (quarts), selon l'état de la route ; Infinity si on ne passe pas.
-// transport : "pied" | "vehicule" | "bateau", ou un véhicule (objet equipement : terrains, rapide, allure).
-export function dureeEtape(v, transport = "pied", etat = "ouverte") {
+// transport : "pied" | "vehicule" | "bateau", ou un véhicule (objet equipement : terrains, rapide, allure, lenteur, pente).
+// denivele : altitude d'arrivée − altitude de départ (m) ; un véhicule à `pente` va plus vite en descente, plus lentement en montée.
+export function dureeEtape(v, transport = "pied", etat = "ouverte", denivele = 0) {
   if (etat === "coupee") return Infinity;
   if (estVehicule(transport)) {
     const ve = transport;
     if (!ve.terrains.includes(v.terrain)) return Infinity;
     let base;
+    const d = Number(denivele) || 0, seuil = REGLES_ACTIONS.pente;
+    const pente = ve.pente ? (d <= -seuil ? Number(ve.pente.descente) || 1 : d >= seuil ? Number(ve.pente.montee) || 1 : 1) : 1;
     if (v.terrain === "mer") base = Number(v.quartsVehicule) * (ve.rapide ? 1 : 2);
-    else if (ve.rapide) base = Number(v.quartsVehicule);
-    else base = Math.ceil(Number(v.quartsPied) * (Number(ve.allure) || 1));
+    else if (ve.rapide) base = Math.ceil(Number(v.quartsVehicule) * (Number(ve.lenteur) || 1));
+    else base = Math.ceil(Number(v.quartsPied) * (Number(ve.allure) || 1) * pente);
     if (!(base > 0)) return Infinity;
     return etat === "difficile" ? Math.ceil(base * (ve.rapide ? REGLES_ACTIONS.lenteur.vehicule : REGLES_ACTIONS.lenteur.pied)) : base;
   }
@@ -286,7 +329,8 @@ export function planifierChemin(contenu, de, vers, transport = "pied", etatRoute
     if (u === vers) break;
     for (const v of voisinsDe(contenu, u)) {
       const etat = etatRoute(u, v.region);
-      const d = dureeEtape(v, transport, etat);
+      const denivele = (Number(regionDe(contenu, v.region)?.altitude) || 0) - (Number(regionDe(contenu, u)?.altitude) || 0);
+      const d = dureeEtape(v, transport, etat, denivele);
       if (d === Infinity) continue;
       if (dist.get(u) + d < dist.get(v.region)) { dist.set(v.region, dist.get(u) + d); prec.set(v.region, { de: u, v, etat, d }); }
     }
@@ -327,8 +371,11 @@ export function chargeMax({ transport = "pied", membres = 1, vehicules = 1 } = {
 // carburant : ce dont dispose le groupe (null = ne pas vérifier). quart : quart de départ (pour les moments des rencontres).
 // -> { possible, raison, motif: { cle, params, texte } | null, chemin, etapes, quarts, km, carburant, bruit, rencontres, rencontre,
 //      renseignements, faits, cheminConnu }
+// reserves : { carburant, biocarburant, materiaux, energie } (lot « savoirs ») : ce que le groupe peut brûler ; le véhicule prend
+// dans sa `source` (défaut : carburant). Le résultat dit `source` ; `verrous` (épaves, éboulis, tunnels, arbres : leur temps est
+// compris dans `quarts`) et `siphonne` (carburant pris aux épaves).
 export function voyager(monde, contenu, hasard, { de, vers, transport = "pied", membres = 1, vehicules = 1, charge = 0, quart = 0, jour = Math.floor(quart / 4),
-  renseignements = {}, carburant = null } = {}) {
+  renseignements = {}, carburant = null, reserves = null } = {}) {
   const connu = cheminConnu(contenu, renseignements, de, vers, transport);
   const refus = (raison, cle, params = {}) => ({ possible: false, raison, motif: message(cle, params, raison), chemin: [], etapes: [], quarts: 0, km: 0, carburant: 0,
     rencontres: [], rencontre: null, renseignements, faits: [], cheminConnu: connu });
@@ -339,23 +386,37 @@ export function voyager(monde, contenu, hasard, { de, vers, transport = "pied", 
   const nomTransport = estVehicule(transport) ? transport.nom ?? transport.cle : transport;
   if (!c) return transport === "pied" ? refus("aucune route praticable", "voyage-aucune-route") : refus(`aucune route praticable en ${nomTransport}`, "voyage-aucune-route-transport", { transport: nomTransport });
   const besoin = carburantPour(c.km, transport, c.quarts);
+  const source = estVehicule(transport) ? transport.source || "carburant" : "carburant";
   const bruit = estVehicule(transport) ? Math.max(0, Number(transport.bruit) || 0) : transport === "pied" ? 0 : 2;
-  if (carburant !== null && besoin > Number(carburant)) return refus(`il faut ${besoin} carburant (il y en a ${carburant})`, "voyage-carburant", { besoin, carburant });
+  const dispo = reserves && typeof reserves === "object" ? Number(reserves[source]) || 0 : source === "carburant" && carburant !== null ? Number(carburant) : null;
+  if (dispo !== null && besoin > dispo) {
+    return source === "carburant" ? refus(`il faut ${besoin} carburant (il y en a ${dispo})`, "voyage-carburant", { besoin, carburant: dispo })
+      : refus(`il faut ${besoin} ${source} (il y en a ${dispo})`, "voyage-source", { besoin, source, dispo });
+  }
   const rencontres = [];
   let r = renseignements, q = quart;
   for (const e of c.etapes) {
-    const x = tirerRencontre(monde, contenu, hasard, { region: e.vers, jour, moment: momentDe(q), contexte: "route", bruit });
+    // Un sentier est silencieux (lot « savoirs ») : moins de rencontres qu'une route.
+    const x = tirerRencontre(monde, contenu, hasard, { region: e.vers, jour, moment: momentDe(q), contexte: "route", bruit, facteur: e.terrain === "sentier" ? REGLES_ACTIONS.sentier : 1 });
     if (x) rencontres.push({ ...x, etape: e });
     q += e.quarts;
     r = observer(r, monde, contenu, e.vers, jour, "vu");
   }
+  // Les verrous de la route : seulement en véhicule (ou en charrette, trop large pour se faufiler).
+  const roule = transport === "vehicule" || (estVehicule(transport) && (transport.rapide || transport.large) && !(transport.terrains ?? []).every(t => t === "mer"));
+  const enCours = reg => (monde?.regions?.[reg]?.evenements ?? []).filter(x => Number(x.depuis) <= jour && (x.jusqua === null || x.jusqua === undefined || Number(x.jusqua) >= jour));
+  const verrous = tirerVerrous(c.etapes, { vehicule: roule, jour, phase: phaseDuJour(jour), hasard, evenements: enCours });
+  const retard = verrous.reduce((s, v) => s + v.quarts, 0), siphonne = verrous.reduce((s, v) => s + v.carburant, 0);
+  const quarts = c.quarts + retard;
   const nom = cle => regionDe(contenu, cle)?.nom ?? cle;
   const chemin = c.chemin.map(nom).join(" → ");
   return {
-    possible: true, raison: "", motif: null, chemin: c.chemin, etapes: c.etapes, quarts: c.quarts, km: c.km, carburant: besoin, bruit,
-    rencontres, rencontre: rencontres[0] ?? null, renseignements: r, cheminConnu: connu,
-    faits: [{ jour, region: vers, cle: "voyage", public: true, texte: `Le groupe part ${avecPreposition("de", nom(de))} pour ${nom(vers)} (${chemin}, ${c.quarts} quart${c.quarts > 1 ? "s" : ""}).`,
-      params: { de: nom(de), vers: nom(vers), chemin, quarts: c.quarts } }]
+    possible: true, raison: "", motif: null, chemin: c.chemin, etapes: c.etapes, quarts, km: c.km, carburant: besoin, source, bruit,
+    rencontres, rencontre: rencontres[0] ?? null, renseignements: r, cheminConnu: connu, verrous, siphonne,
+    faits: [{ jour, region: vers, cle: "voyage", public: true, texte: `Le groupe part ${avecPreposition("de", nom(de))} pour ${nom(vers)} (${chemin}, ${quarts} quart${quarts > 1 ? "s" : ""}).`,
+      params: { de: nom(de), vers: nom(vers), chemin, quarts } },
+    ...verrous.map(v => ({ jour, region: v.vers, cle: `verrou-${v.type}`, public: true, texte: `Sur la route ${avecPreposition("de", nom(v.vers))} : ${({ epave: "une épave en travers", eboulis: "un éboulis", tunnel: "un tunnel à une voie", arbre: "un arbre en travers" })[v.type]} (+${v.quarts} quart${v.quarts > 1 ? "s" : ""}).`,
+      params: { region: nom(v.vers), quarts: v.quarts } }))]
   };
 }
 

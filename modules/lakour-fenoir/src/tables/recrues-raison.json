@@ -4,7 +4,7 @@
   "name": "Recrues — raison d'être là",
   "img": "icons/svg/d20-black.svg",
   "description": "<p>Pourquoi cette recrue se présente.</p>",
-  "formula": "1d12",
+  "formula": "1d14",
   "replacement": true,
   "displayRoll": true,
   "folder": null,
@@ -198,6 +198,36 @@
       "range": [
         12,
         12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "v0bDwxiZOqjfEQEU",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.v0bDwxiZOqjfEQEU",
+      "type": "text",
+      "name": "",
+      "description": "<p>C'est une gramoune : son jardin a été piétiné par une horde, et elle a marché jusqu'ici avec ses boutures dans un seau.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "eXU38fFOWMSgkGBo",
+      "_key": "!tables.results!0gBR30UuQg72UAJC.eXU38fFOWMSgkGBo",
+      "type": "text",
+      "name": "",
+      "description": "<p>C'est un vieux gramoun qui a vu la fumée et qui voudrait bien finir ses jours avec des gens, pas tout seul dans les Hauts.</p>",
+      "range": [
+        14,
+        14
       ],
       "weight": 1,
       "drawn": false,

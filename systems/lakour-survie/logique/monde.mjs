@@ -45,6 +45,11 @@
 //   1 % donnaient huit assauts par mois à un abri enraciné.)
 // - Faits : `public` selon ce que le groupe perçoit d'où il est (région courante ; fumée et convois des voisines ; nouvelles
 //   par la radio, ou par le téléphone tant qu'il marche dans sa région ; ce que toute l'île voit).
+// - Lot « savoirs » (docs/equilibre-savoirs.md) : le jour rouge, chaque région de la trajectoire reçoit du bois tombé
+//   (+0,5 × force × plafond, au-dessus du plafond : il pourrit lentement) et ses pistes et sentiers sont coupés par des arbres
+//   (15 % × force chacun, `arbres-tombes`, 4 × force jours) ; sous le vacarme (sousLeVacarme), le bruit d'une région n'attire ni
+//   les hordes ni les menaces. L'éruption s'annonce la veille (`eruption-premices`, secret : un chien le sent). Un monde d'avant
+//   le gaz reçoit ses réserves à la part qui reste des autres (completerPillage).
 // - Textes (textes.mjs) : chaque fait, menace et entrée du journal secret porte `texte` (français, repli) et `cle`/`params` pour
 //   la traduction ; le fait d'un événement du contenu garde `cle` = clé de l'événement et met sa clé de texte dans `cleTexte`.
 import { CLES_PHASES, ALTITUDE_BAS, NATURE, RESEAUX, JOURNAL_SECRET_MAX, borner, DATE_DEPART } from "./constantes.mjs";
@@ -65,7 +70,7 @@ export const REGLES_MONDE = {
   pillageFaction: 0.004,
   pillagePopMin: 1.5,
   natureAutres: 0.2,
-  cyclone: { chance: 0.01, forces: [[1, 50], [2, 35], [3, 15]] },
+  cyclone: { chance: 0.01, forces: [[1, 50], [2, 35], [3, 15]], arbres: 0.15, joursArbres: 4, bois: 0.5 },
   fortesPluies: { pluies: 0.02, seche: 0.004 },
   eruption: 0.003,
   evenementContenu: 0.35,
@@ -76,7 +81,7 @@ export const REGLES_MONDE = {
 
 // Les événements météo que la simulation tire elle-même (étapes 3 à 5) : ceux du contenu qui portent ces clés n'en donnent que
 // le nom, le texte et les effets décrits pour le MJ.
-export const EVENEMENTS_SIMULES = ["cyclone", "fortes-pluies", "crue", "eboulement", "eruption"];
+export const EVENEMENTS_SIMULES = ["cyclone", "fortes-pluies", "crue", "eboulement", "eruption", "arbres-tombes"];
 
 const NOMS_CYCLONES = ["Anvalé", "Bérésio", "Calindra", "Dorvane", "Elzéa", "Firmane", "Galoya", "Hédrina", "Isaval", "Jorancé", "Kalinda", "Loréo"];
 const PIRE = { ouverte: 0, difficile: 1, coupee: 2 };
@@ -163,7 +168,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
   // Compatibilité avec la signature du contrat (bruitParRegion en 5e argument).
   const ctx = contexte && !("bruitParRegion" in contexte) && !("region" in contexte) && !("abri" in contexte) && !("radio" in contexte)
     ? { bruitParRegion: contexte } : (contexte ?? {});
-  const monde = structuredClone(mondeEntree);
+  const monde = completerPillage(structuredClone(mondeEntree), contenu);
   const R = REGLES_MONDE;
   const dateDepart = monde.dateDepart ?? DATE_DEPART;
   const phase = phaseDuJour(jour);
@@ -202,6 +207,13 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
         reg.evenements.push({ cle: "cyclone", depuis: jour, jusqua: jour + c.force, routes });
         reg.nature.cueillette = Math.round(reg.nature.cueillette * 50) / 100;
         for (const ho of monde.hordes) if (ho.region === cle) ho.taille -= 1;
+        // Lot « savoirs » : les arbres tombés coupent pistes et sentiers plus longtemps que la route (on dégage la route d'abord), et
+        // donnent du bois pour des semaines (au-dessus du plafond, il pourrit lentement : abri.mjs, regenererNature).
+        const arbres = {};
+        for (const v of regionDe(contenu, cle)?.voisins ?? []) if ((v.terrain === "piste" || v.terrain === "sentier") && h() < R.cyclone.arbres * c.force) arbres[v.region] = "coupee";
+        if (Object.keys(arbres).length) reg.evenements.push({ cle: "arbres-tombes", depuis: jour, jusqua: jour + R.cyclone.joursArbres * c.force, routes: arbres });
+        const plafondBois = natureRegion(regionDe(contenu, cle)).bois.plafond;
+        reg.nature.bois = Math.round((reg.nature.bois + plafondBois * R.cyclone.bois * c.force) * 100) / 100;
       }
     } else if (jour === c.arrivee + 1) { c.alerte = "passe"; fait(c.trajectoire[0], "cyclone-passe", `Le cyclone ${c.nom} s'éloigne.`, "radio", {}, { cyclone: c.nom }); }
     else if (jour >= c.arrivee + 3) monde.cyclone = null;
@@ -228,8 +240,10 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
 
   // 5. Éruption.
   const zonesEruption = regionsAEruption(contenu);
+  // Lot « savoirs » : l'éruption s'annonce la veille (la terre tremble, les bêtes s'agitent : un chien le sent avant le ciel).
   if (!monde.eruption && zonesEruption.length && chance(R.eruption, h)) {
-    monde.eruption = { debut: jour, fin: jour + entier(5, 20, h), regions: zonesEruption };
+    monde.eruption = { debut: jour + 1, fin: jour + 1 + entier(5, 20, h), regions: zonesEruption };
+    fait(zonesEruption[0], "eruption-premices", "La terre tremble sous le volcan ; les bêtes sont nerveuses.", "region", { regions: [...zonesEruption] });
   }
   if (monde.eruption) {
     const e = monde.eruption;
@@ -292,7 +306,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
       ho.cap = null;
       if (chance(R.horde.mouvement, h)) {
         const options = Object.entries(routes).filter(([, etat]) => etat !== "coupee")
-          .map(([v, etat]) => ({ v, poids: (1 + 2 * (Number(bruit[v]) || 0)) / (etat === "difficile" ? 2 : 1) }));
+          .map(([v, etat]) => ({ v, poids: (1 + 2 * (sousLeVacarme(monde, v, jour) ? 0 : Number(bruit[v]) || 0)) / (etat === "difficile" ? 2 : 1) }));
         const choix = tirerPoids(options, h);
         if (choix) {
           ho.cap = choix.v;
@@ -410,7 +424,8 @@ export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jou
   const R = REGLES_MONDE;
   const reg = monde?.regions?.[region];
   if (!reg) return [];
-  const vis = borner(Number(visibilite) || 0, 0, 10), br = borner(Number(bruit) || 0, 0, 10);
+  // Sous le vacarme du cyclone (lot « savoirs »), les Livides n'entendent rien : le bruit de l'abri ne compte pas ce jour-là.
+  const vis = borner(Number(visibilite) || 0, 0, 10), br = sousLeVacarme(monde, region, jour) ? 0 : borner(Number(bruit) || 0, 0, 10);
   const menaces = [];
   for (const ho of monde.hordes ?? []) {
     if (ho.region !== region) continue;
@@ -433,6 +448,27 @@ export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jou
   if (CLES_PHASES.indexOf(phase) >= 1 && chance(0.02, hasard)) menaces.push({ type: "animaux", force: 2, texte: "Une meute de chiens errants, affamés.", cle: "menace-animaux", params: {} });
   if (chance(0.01, hasard)) menaces.push({ type: "accident", force: 0, texte: "Un accident à l'abri (chute, feu de cuisine, outil qui casse).", cle: "menace-accident", params: {} });
   return menaces.sort((a, b) => b.force - a.force).slice(0, R.menacesMax);
+}
+
+// Le jour où le cyclone frappe une région (alerte rouge, sur sa trajectoire) : le vacarme couvre tout (lot « savoirs »).
+export const sousLeVacarme = (monde, region, jour) => Boolean(monde?.cyclone && monde.cyclone.alerte === "rouge" && Number(monde.cyclone.arrivee) === Number(jour)
+  && (monde.cyclone.trajectoire ?? []).includes(region));
+
+// Les réserves d'une région d'avant une ressource pillable nouvelle (le gaz, lot « savoirs ») : on la complète à la part qui reste
+// des autres ressources (une partie en cours ne perd ni ne gagne rien d'autre).
+export function completerPillage(monde, contenu) {
+  for (const r of regionsDe(contenu)) {
+    const reg = monde?.regions?.[r.cle];
+    if (!reg?.pillage) continue;
+    const initial = reservesDepart(r);
+    const manquent = Object.keys(initial).filter(k => reg.pillage[k] === undefined);
+    if (!manquent.length) continue;
+    const presents = Object.keys(initial).filter(k => reg.pillage[k] !== undefined);
+    const total = presents.reduce((s, k) => s + initial[k], 0);
+    const part = total > 0 ? presents.reduce((s, k) => s + Math.max(0, Number(reg.pillage[k]) || 0), 0) / total : 1;
+    for (const k of manquent) reg.pillage[k] = Math.round(initial[k] * Math.min(1, part));
+  }
+  return monde;
 }
 
 // Un abri quitté par le groupe devient un abri abandonné du monde (§2.3), avec ses installations.

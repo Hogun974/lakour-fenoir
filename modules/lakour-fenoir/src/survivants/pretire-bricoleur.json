@@ -90,7 +90,8 @@
         "cle": "electricite-solaire",
         "description": "<p>Câbler des panneaux, régler un régulateur, dimensionner des batteries, ne pas griller l'onduleur ni se griller soi-même.</p>",
         "apprentissage": "<p>Un passé d'électricien ; un manuel trouvé dans un magasin de bricolage ou chez un installateur ; une semaine aux côtés de quelqu'un qui sait, dans un îlet de Mafate où chaque case a ses panneaux ; ou réussir le chantier de panneaux solaires niveau 1 avec un test de bricolage difficile.</p>",
-        "effets": "<p>Ouvre les panneaux solaires niveaux 2 et 3, les batteries niveaux 2 et 3, l'éolienne niveau 2 et le pico-hydro niveau 2. +1 dé aux tests de bricolage sur l'électricité.</p>"
+        "effets": "<p>Ouvre les panneaux solaires niveaux 2 et 3, les batteries niveaux 2 et 3, l'éolienne niveau 2 et le pico-hydro niveau 2. +1 dé aux tests de bricolage sur l'électricité.</p>",
+        "arbre": "moderne"
       },
       "effects": [],
       "folder": null,

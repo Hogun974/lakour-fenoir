@@ -14,20 +14,20 @@ export const INSTALLATIONS = [
       { cout: { materiaux: 3, travail: 4 }, effets: { defense: 1, visibilite: 1 } },
       { cout: { materiaux: 6, travail: 8 }, effets: { defense: 2, visibilite: 1 } }
     ] }),
-  installation({ cle: "palissade", nom: "Palissade", categorie: "defense",
+  installation({ cle: "palissade", arbre: "moderne", nom: "Palissade", categorie: "defense",
     description: `Une clôture continue de pieux, de tôles rivetées et de grillage doublé, avec une porte qu'on ferme à la barre. Elle fait le tour du terrain : on dort derrière.`,
     niveaux: [
       { cout: { materiaux: 8, travail: 12 }, effets: { defense: 2, visibilite: 2 } },
       { cout: { materiaux: 12, pieces: 1, travail: 16 }, effets: { defense: 3, visibilite: 2 } }
     ] }),
-  installation({ cle: "mur", nom: "Mur d'enceinte", categorie: "defense",
+  installation({ cle: "mur", arbre: "moderne", nom: "Mur d'enceinte", categorie: "defense",
     description: `Un vrai mur de parpaings ou de pierres basaltiques jointoyées, haut de deux mètres puis trois, avec un chemin de ronde. Il faut savoir maçonner, et du ciment, ou de la patience.`,
     niveaux: [
       { cout: { materiaux: 15, travail: 24 }, requiert: { savoirs: ["maconnerie"] }, effets: { defense: 3, visibilite: 1 } },
       { cout: { materiaux: 20, travail: 32 }, requiert: { savoirs: ["maconnerie"] }, effets: { defense: 4, visibilite: 1 } },
       { cout: { materiaux: 30, pieces: 2, travail: 48 }, requiert: { savoirs: ["maconnerie"] }, effets: { defense: 5, visibilite: 1, protectionCyclone: 1 } }
     ] }),
-  installation({ cle: "tour-de-guet", nom: "Tour de guet", categorie: "defense",
+  installation({ cle: "tour-de-guet", arbre: "moderne", nom: "Tour de guet", categorie: "defense",
     description: `Une plateforme sur pilotis, un toit, un garde-corps, une échelle qu'on remonte. De là-haut, la garde voit venir de loin, et voit aussi les fumées des voisins.`,
     niveaux: [
       { cout: { materiaux: 6, travail: 8 }, effets: { defense: 1, visibilite: 2, bonus: { vigilance: 1 } } },
@@ -59,7 +59,7 @@ export const INSTALLATIONS = [
     ] }),
 
   // ---------------------------------------------------------------- Eau
-  installation({ cle: "citerne-de-pluie", nom: "Citerne de pluie", categorie: "eau",
+  installation({ cle: "citerne-de-pluie", arbre: "moderne", nom: "Citerne de pluie", categorie: "eau",
     description: `Gouttières, descentes, première eau jetée, et une cuve : bidons, cuve de mille litres, puis vraie citerne maçonnée. Dans l'Est, elle déborde ; dans l'Ouest, chaque averse compte.`,
     niveaux: [
       { cout: { materiaux: 4, pieces: 1, travail: 6 }, effets: { production: { eau: 1 }, conditions: { pluie: true }, stockage: { eau: 30 } } },
@@ -78,13 +78,13 @@ export const INSTALLATIONS = [
       { cout: { materiaux: 3, pieces: 1, travail: 4 }, requiert: { site: { soleil: 1 } }, effets: { production: { eau: 1 }, conditions: { soleil: true }, visibilite: 1 } },
       { cout: { materiaux: 6, pieces: 2, travail: 8 }, requiert: { site: { soleil: 1 } }, effets: { production: { eau: 2 }, conditions: { soleil: true }, visibilite: 1 } }
     ] }),
-  installation({ cle: "captage-de-source", nom: "Captage de source", categorie: "eau",
+  installation({ cle: "captage-de-source", arbre: "moderne", nom: "Captage de source", categorie: "eau",
     description: `Un petit bassin de pierre à la source ou dans la ravine, une crépine, un tuyau qui descend par gravité jusqu'à l'abri. C'est ainsi que vivent les îlets de Mafate : l'eau arrive seule, sans pompe ni courant.`,
     niveaux: [
       { cout: { materiaux: 4, pieces: 2, travail: 10 }, requiert: { site: { eau: ["source", "riviere"] } }, effets: { production: { eau: 4 } } },
       { cout: { materiaux: 8, pieces: 3, travail: 16 }, requiert: { savoirs: ["hydraulique-rurale"], site: { eau: ["source", "riviere"] } }, effets: { production: { eau: 8 }, stockage: { eau: 40 } } }
     ] }),
-  installation({ cle: "pompe-manuelle", nom: "Pompe manuelle", categorie: "eau",
+  installation({ cle: "pompe-manuelle", arbre: "moderne", nom: "Pompe manuelle", categorie: "eau",
     description: `Une pompe à bras sur le puits, ou une pompe de récupération remontée à la main : vingt minutes de bras le matin, de l'eau pour la journée.`,
     niveaux: [
       { cout: { materiaux: 2, pieces: 2, travail: 6 }, requiert: { site: { eau: ["puits"] } }, effets: { production: { eau: 4 } } },
@@ -92,7 +92,7 @@ export const INSTALLATIONS = [
     ] }),
 
   // ---------------------------------------------------------------- Nourriture
-  installation({ cle: "potager", nom: "Potager", categorie: "nourriture",
+  installation({ cle: "potager", arbre: "moderne", nom: "Potager", categorie: "nourriture",
     description: `Des planches de brèdes, de songes, de patates douces, de manioc, de haricots, de chouchous et de piments. La première récolte de brèdes vient vite ; le reste suit. Un potager se voit, et il boit.`,
     niveaux: [
       { cout: { materiaux: 2, graines: 2, travail: 8 }, requiert: { site: { sol: 1, soleil: 1 } }, effets: { production: { nourriture: 2 }, conditions: { delai: 30 }, consommation: { eau: 1 }, visibilite: 1 } },
@@ -129,7 +129,7 @@ export const INSTALLATIONS = [
       { cout: { materiaux: 6, pieces: 1, travail: 16 }, effets: { production: { nourriture: 1 }, conditions: { delai: 60 }, consommation: { eau: 1 } } },
       { cout: { materiaux: 8, pieces: 3, travail: 16 }, requiert: { savoirs: ["elevage"], installations: [{ cle: "potager", niveau: 2 }] }, effets: { production: { nourriture: 3 }, conditions: { delai: 60 }, consommation: { eau: 1, energie: 1 } } }
     ] }),
-  installation({ cle: "ruches", nom: "Ruches", categorie: "nourriture",
+  installation({ cle: "ruches", arbre: "moderne", nom: "Ruches", categorie: "nourriture",
     description: `Quelques ruches d'abeilles, au bord du verger ou sous les baies roses : du miel de letchi ou de forêt, de la cire pour les bougies, et des fleurs qui donnent mieux. Le miel soigne les plaies.`,
     niveaux: [
       { cout: { materiaux: 2, travail: 4 }, effets: { production: { nourriture: 1 }, conditions: { delai: 45 } } },
@@ -181,7 +181,7 @@ export const INSTALLATIONS = [
     niveaux: [
       { cout: { materiaux: 3, travail: 6 }, effets: { conservation: true, visibilite: 1 } }
     ] }),
-  installation({ cle: "reserve-etanche", nom: "Réserve étanche", categorie: "stockage",
+  installation({ cle: "reserve-etanche", arbre: "moderne", nom: "Réserve étanche", categorie: "stockage",
     description: `Fûts à couvercle, bocaux, sacs hermétiques, étagères hors du sol, pièges à rats : la chaleur humide ne pourrit plus les réserves.`,
     niveaux: [
       { cout: { materiaux: 4, pieces: 1, travail: 6 }, effets: { conservation: true, stockage: { nourriture: 100 } } },
@@ -208,7 +208,7 @@ export const INSTALLATIONS = [
       { cout: { materiaux: 8, travail: 10 }, effets: { capacite: 8, moral: 1 } },
       { cout: { materiaux: 14, travail: 16 }, requiert: { savoirs: ["maconnerie"] }, effets: { capacite: 14, moral: 1 } }
     ] }),
-  installation({ cle: "cuisine-commune", nom: "Cuisine commune", categorie: "vie",
+  installation({ cle: "cuisine-commune", arbre: "lontan", nom: "Cuisine commune", categorie: "vie",
     description: `Un feu de bois sous un auvent, de grandes marmites, une table pour tout le monde. Un cari partagé tient un groupe ensemble mieux qu'un discours. La fumée, elle, monte haut.`,
     niveaux: [
       { cout: { materiaux: 3, pieces: 1, travail: 6 }, effets: { moral: 1, visibilite: 1 } }
@@ -244,6 +244,82 @@ export const INSTALLATIONS = [
       { cout: { materiaux: 4, travail: 12 }, requiert: { site: { souterrain: 3 } }, effets: { capacite: 6, discretion: 2, protectionCyclone: 3, conservation: true, visibilite: -2 } },
       { cout: { materiaux: 10, pieces: 2, travail: 30 }, requiert: { savoirs: ["etaiement-galeries"], site: { souterrain: 3 } }, effets: { capacite: 12, discretion: 3, defense: 2, protectionCyclone: 3, conservation: true, visibilite: -3, stockage: { nourriture: 300, eau: 100 } } },
       { cout: { materiaux: 18, pieces: 6, travail: 60 }, requiert: { savoirs: ["etaiement-galeries"], site: { souterrain: 3 }, installations: [{ cle: "batteries", niveau: 1 }] }, effets: { capacite: 24, discretion: 4, defense: 3, protectionCyclone: 3, conservation: true, moral: 1, visibilite: -4, consommation: { energie: 1 }, stockage: { nourriture: 500, eau: 200 } } }
+    ] }),
+
+  // ---------------------------------------------------------------- Lot « savoirs » : les sœurs à l'ancienne (lontan) et l'eau chaude
+  // Chaque sœur lontan porte `role` = la clé de sa sœur moderne : les deux ne s'additionnent pas, la moderne passe d'abord et la
+  // lontan prend le relais quand elle est cassée ou à court (abri.mjs). Coût `ile` : matières de l'île, prises sur le bois des
+  // alentours (bambou, vacoa, goyavier, vétiver), qui repoussent ; réparées avec elles aussi. Moins performantes, plus discrètes.
+  installation({ cle: "palissade-de-bambou", arbre: "lontan", role: "palissade", nom: "Palissade de bambou", categorie: "defense",
+    description: `Des cannes de bambou plantées serré, ligaturées à la fibre de choka, doublées de branches épineuses : elle plie sous le vent au lieu de casser, repousse si on la laisse faire, et se fond dans la ravine. Elle arrête moins qu'une palissade de tôle.`,
+    niveaux: [
+      { cout: { ile: 6, travail: 12 }, effets: { defense: 1, visibilite: 1 } },
+      { cout: { ile: 10, travail: 16 }, requiert: { savoirs: ["bambou-vacoa"] }, effets: { defense: 2, visibilite: 1 } }
+    ] }),
+  installation({ cle: "mur-de-pierres-seches", arbre: "lontan", role: "mur", nom: "Mur de pierres sèches", categorie: "defense",
+    description: `Le muret des Hauts et des îlets, monté avec les cailloux du champ, sans un gramme de ciment : il ne coûte que de la peine, ne s'abîme presque jamais et ressemble à tous les vieux murs de l'île. Il monte moins haut qu'un mur maçonné.`,
+    niveaux: [
+      { cout: { travail: 32 }, requiert: { savoirs: ["pierre-seche"] }, effets: { defense: 2 } },
+      { cout: { travail: 48 }, requiert: { savoirs: ["pierre-seche"] }, effets: { defense: 3 } }
+    ] }),
+  installation({ cle: "guet-dans-un-arbre", arbre: "lontan", role: "tour-de-guet", nom: "Guet dans un grand arbre", categorie: "defense",
+    description: `Une plateforme de gaulettes dans la fourche d'un manguier ou d'un tamarin, une échelle de corde qu'on remonte : la garde voit loin, cachée dans le feuillage. Rien de plus, et c'est déjà beaucoup.`,
+    niveaux: [
+      { cout: { ile: 3, travail: 6 }, requiert: { site: { sol: 1 } }, effets: { bonus: { vigilance: 1 } } }
+    ] }),
+  installation({ cle: "citerne-lontan", arbre: "lontan", role: "citerne-de-pluie", nom: "Gouttières de bambou et jarres", categorie: "eau",
+    description: `Des bambous fendus en gouttières sous le bord du toit, des jarres de terre et des fûts de bois dessous. Les joints fuient un peu, les jarres se fêlent ; on les refait avec ce qui pousse autour.`,
+    niveaux: [
+      { cout: { ile: 3, travail: 8 }, effets: { production: { eau: 0.5 }, conditions: { pluie: true }, stockage: { eau: 20 } } },
+      { cout: { ile: 5, travail: 12 }, requiert: { savoirs: ["bambou-vacoa"] }, effets: { production: { eau: 1.5 }, conditions: { pluie: true }, stockage: { eau: 40 } } }
+    ] }),
+  installation({ cle: "conduite-de-bambou", arbre: "lontan", role: "captage-de-source", nom: "Conduite de bambou", categorie: "eau",
+    description: `Un petit barrage de pierres à la source, et des bambous emboîtés, calés sur des fourches, qui descendent jusqu'à la case. L'eau arrive seule ; il en fuit un peu à chaque joint, et une chèvre peut tout défaire.`,
+    niveaux: [
+      { cout: { ile: 4, travail: 12 }, requiert: { site: { eau: ["source", "riviere"] } }, effets: { production: { eau: 3 } } },
+      { cout: { ile: 8, travail: 18 }, requiert: { savoirs: ["bambou-vacoa"], site: { eau: ["source", "riviere"] } }, effets: { production: { eau: 6 }, stockage: { eau: 20 } } }
+    ] }),
+  installation({ cle: "puits-a-balancier", arbre: "lontan", role: "pompe-manuelle", nom: "Puits à balancier", categorie: "eau",
+    description: `Une longue perche de bois sur une fourche, une pierre au bout pour contrepoids, un seau de l'autre : on puise sans pompe ni pièce, au prix de quelques allers-retours de plus.`,
+    niveaux: [
+      { cout: { ile: 3, travail: 8 }, requiert: { site: { eau: ["puits"] } }, effets: { production: { eau: 3 } } },
+      { cout: { ile: 5, travail: 10 }, requiert: { site: { eau: ["puits"] } }, effets: { production: { eau: 6 } } }
+    ] }),
+  installation({ cle: "jardin-creole", arbre: "lontan", role: "potager", nom: "Jardin créole", categorie: "nourriture",
+    description: `Le jardin de la case, où tout pousse mêlé : bananiers pour l'ombre, chouchou sur la treille, songe, manioc, patates, brèdes, et les zerbaz le long de la clôture. On le plante de boutures, on le paille ; il boit peu, ressemble à une cour à l'abandon, et donne moins qu'un potager bien aligné.`,
+    niveaux: [
+      { cout: { ile: 2, graines: 1, travail: 8 }, requiert: { site: { sol: 1 } }, effets: { production: { nourriture: 1.5, plantes: 0.2 }, conditions: { delai: 20 } } },
+      { cout: { ile: 3, graines: 2, travail: 12 }, requiert: { savoirs: ["jardin-creole"], site: { sol: 1 } }, effets: { production: { nourriture: 3, plantes: 0.3 }, conditions: { delai: 20 } } }
+    ] }),
+  installation({ cle: "ruches-en-tronc", arbre: "lontan", role: "ruches", nom: "Ruches en tronc", categorie: "nourriture",
+    description: `Un tronc creux de bois de natte ou de filao, fermé d'une planche, posé sous un toit de paille : les abeilles s'y installent seules. On récolte moins, en enfumant au vétiver.`,
+    niveaux: [
+      { cout: { ile: 1, travail: 4 }, effets: { production: { nourriture: 0.4 }, conditions: { delai: 45 } } }
+    ] }),
+  installation({ cle: "garde-manger-lontan", arbre: "lontan", role: "reserve-etanche", nom: "Garde-manger lontan", categorie: "stockage",
+    description: `Un grenier sur pilotis coiffé de vétiver, des jarres fermées de cire, des sacs de vacoa pendus hors de portée des rats : la réserve tient au sec, en plus petit.`,
+    niveaux: [
+      { cout: { ile: 3, travail: 8 }, effets: { conservation: true, stockage: { nourriture: 50 } } }
+    ] }),
+  installation({ cle: "gaziniere", arbre: "moderne", role: "cuisine-commune", rang: 0, nom: "Gazinière", categorie: "vie",
+    description: `La gazinière d'une cuisine, sa bouteille de treize kilos dessous : on cuit le cari sans fumée, donc sans se faire voir. La bouteille se vide ; quand il n'y a plus de gaz, on retourne au feu de bois (la cuisine commune prend le relais si elle existe).`,
+    niveaux: [
+      { cout: { materiaux: 1, pieces: 1, travail: 2 }, effets: { moral: 1, consommation: { gaz: 1 } } }
+    ] }),
+  installation({ cle: "eau-chaude-solaire", arbre: "moderne", role: "eau-chaude", rang: 0, nom: "Chauffe-eau solaire", categorie: "vie",
+    description: `Le capteur et le ballon d'un toit de l'Ouest, démontés et remontés : une douche chaude chaque soir de soleil, de l'eau chaude pour laver les plaies. Le capteur brille sur le toit.`,
+    niveaux: [
+      { cout: { materiaux: 3, pieces: 3, travail: 6 }, requiert: { savoirs: ["plomberie-filtration"], site: { soleil: 1 } }, effets: { moral: 1, visibilite: 1, bonus: { soins: 1 } } }
+    ] }),
+  installation({ cle: "eau-chaude-gaz", arbre: "moderne", role: "eau-chaude", rang: 1, nom: "Chauffe-eau à gaz", categorie: "vie",
+    description: `Un chauffe-eau instantané branché sur une bouteille : de l'eau chaude à toute heure, tant qu'il reste du gaz. Il passe après le soleil.`,
+    niveaux: [
+      { cout: { materiaux: 1, pieces: 2, travail: 3 }, effets: { moral: 1, bonus: { soins: 1 }, consommation: { gaz: 1 } } }
+    ] }),
+  installation({ cle: "eau-chaude-feu-de-bois", arbre: "lontan", role: "eau-chaude", rang: 2, nom: "Eau chauffée au feu de bois", categorie: "vie",
+    description: `Un fût noirci sur trois pierres, un feu de bois de goyavier : l'eau chaude des anciens, gratuite, longue à venir. La fumée monte, et se voit.`,
+    niveaux: [
+      { cout: { ile: 2, travail: 3 }, effets: { moral: 1, visibilite: 1, bonus: { soins: 1 } } }
     ] })
 ];
 
@@ -256,7 +332,10 @@ export const BRAS = {
   atelier: { tache: "atelier", nombres: [1, 2] }, infirmerie: { tache: "soins", nombres: [1, 1] }, "cuisine-commune": { tache: "cuisine", nombres: [1] },
   "tour-de-guet": { tache: "garde", nombres: [1, 1] }, "chiens-de-garde": { tache: "garde", nombres: [1, 1] },
   "filtre-sable-charbon": { tache: "eau", nombres: [1, 1] }, "pompe-manuelle": { tache: "eau", nombres: [1, 1] },
-  "sechoir-fumoir": { tache: "cuisine", nombres: [1] }, "poste-radio": { tache: "garde", nombres: [1, 1] }
+  "sechoir-fumoir": { tache: "cuisine", nombres: [1] }, "poste-radio": { tache: "garde", nombres: [1, 1] },
+  // Lot « savoirs »
+  "jardin-creole": { tache: "cultures", nombres: [1, 1] }, "puits-a-balancier": { tache: "eau", nombres: [1, 1] }, "guet-dans-un-arbre": { tache: "garde", nombres: [1] },
+  "ruches-en-tronc": { tache: "elevage", nombres: [1] }, gaziniere: { tache: "cuisine", nombres: [1] }, "eau-chaude-feu-de-bois": { tache: "cuisine", nombres: [1] }
 };
 for (const i of INSTALLATIONS) {
   const b = BRAS[i.system.cle];

@@ -1,0 +1,177 @@
+{
+  "_id": "AJoKcuCBsgcaRVNU",
+  "_key": "!tables!AJoKcuCBsgcaRVNU",
+  "name": "Paroles de gramoune",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce que dit l'ancienne pendant une veillée d'apprentissage ou de dictée. En créole, avec le sens à côté.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "paroles-de-gramoune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "7Btw4egTZF36mLD8",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.7Btw4egTZF36mLD8",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Planté dann bon katié la lune, i pous mèm si ou oubli ali.</em> » (Plante au bon quartier de lune, ça pousse même si tu l'oublies.) Ce qu'elle dit avant chaque semis.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0fsEbRYYGWBlBcA5",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.0fsEbRYYGWBlBcA5",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Sé pa la marmit i fé la tizan, sé lo kèr.</em> » (Ce n'est pas la marmite qui fait la tisane, c'est le cœur.) Puis elle donne quand même les doses, exactes.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xegXtVdan8ixAQ19",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.xegXtVdan8ixAQ19",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Ayapana pou lo vant, fleur jaune pou lo foi, faham pou lo kèr.</em> » (L'ayapana pour le ventre, la fleur jaune pour le foie, le faham pour le cœur.)</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "C1h6r6dkQziLOghl",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.C1h6r6dkQziLOghl",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Bambou i pli, li kas pa.</em> » (Le bambou plie, il ne casse pas.) Elle parle de la palissade ; elle parle aussi du groupe.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "fhTCQMrBvEvZtcJB",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.fhTCQMrBvEvZtcJB",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Kan lo shien i tourn an ron, ramas out linj.</em> » (Quand le chien tourne en rond, rentre ton linge.) Le cyclone, avant la radio.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sDMTK4Qf1wn8yOLI",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.sDMTK4Qf1wn8yOLI",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Mwin la vu siklone 48, mwin la vu Firinga. Ou va vwar la fin Fénoir osi.</em> » (J'ai vu le cyclone de 48, j'ai vu Firinga. Tu verras la fin de Fénoir aussi.)</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8gAjqL9TLqwOXK4x",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.8gAjqL9TLqwOXK4x",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Mur pyèr sèk, ou mont ali in fwa, ou rekomans pa.</em> » (Un mur de pierres sèches, on le monte une fois, on ne le recommence pas.)</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wiP7kBflaXMEikV4",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.wiP7kBflaXMEikV4",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Domoun lé pa rish par sak li gingn, mé par sak li koné fé.</em> » (On n'est pas riche de ce qu'on gagne, mais de ce qu'on sait faire.)</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wFVnG7vdvVSobF3B",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.wFVnG7vdvVSobF3B",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle refuse d'expliquer : « <em>Gard bien, ou va konprann.</em> » (Regarde bien, tu comprendras.) Une veillée de plus, sans test.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YnttRxbMaYEsxkFS",
+      "_key": "!tables.results!AJoKcuCBsgcaRVNU.YnttRxbMaYEsxkFS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle se tait toute la soirée, fatiguée. Une veillée perdue, à moins de la soigner d'abord (fatigue ou blessure).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

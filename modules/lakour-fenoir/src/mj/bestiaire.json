@@ -182,11 +182,34 @@
       }
     },
     {
+      "_id": "hXMbSABQD2mW0H7Z",
+      "_key": "!journal.pages!UjWDeK5Sw29pkcCl.hXMbSABQD2mW0H7Z",
+      "name": "Chien de tête",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le meneur d'une meute des routes : un grand chien de garde abandonné, collier encore au cou, qui a appris que les voitures en panne et les marcheurs isolés sont des proies. Les autres le suivent.</p><ul><li><strong>Dés d'attaque</strong> : 2 — <strong>résistance</strong> : 2 — <strong>vitesse</strong> : rapide — <strong>sens</strong> : odeur, ouïe.</li><li><strong>Comportement</strong> : La meute tient un tronçon de route, une aire de repos, un pont. Elle suit les voyageurs de loin, attend la nuit ou la fatigue, et charge quand le chien de tête charge. Abattu ou chassé, il emporte la meute avec lui.</li><li><strong>Faiblesse</strong> : Toute la meute dépend de lui : s'il tombe ou s'il recule, les autres se dispersent. Un chien qu'on a nourri ne le suit plus.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "chien-de-tete"
+        }
+      }
+    },
+    {
       "_id": "hujfIUy4Rklun4gS",
       "_key": "!journal.pages!UjWDeK5Sw29pkcCl.hujfIUy4Rklun4gS",
       "name": "Cochon marron",
       "type": "text",
-      "sort": 800,
+      "sort": 900,
       "title": {
         "show": true,
         "level": 1
@@ -209,7 +232,7 @@
       "_key": "!journal.pages!UjWDeK5Sw29pkcCl.biAfQEmryAFUkVWk",
       "name": "Rats des réserves",
       "type": "text",
-      "sort": 900,
+      "sort": 1000,
       "title": {
         "show": true,
         "level": 1
@@ -232,7 +255,7 @@
       "_key": "!journal.pages!UjWDeK5Sw29pkcCl.jilGyLnp9TRtTTxu",
       "name": "Pillard des Sans-Lune",
       "type": "text",
-      "sort": 1000,
+      "sort": 1100,
       "title": {
         "show": true,
         "level": 1
@@ -255,7 +278,7 @@
       "_key": "!journal.pages!UjWDeK5Sw29pkcCl.gnqsHMRMnr4L1Blj",
       "name": "Soldat de la Garnison",
       "type": "text",
-      "sort": 1100,
+      "sort": 1200,
       "title": {
         "show": true,
         "level": 1

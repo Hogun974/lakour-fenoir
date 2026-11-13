@@ -31,7 +31,8 @@
     },
     "Ressources": {
       "eau": "Eau", "nourriture": "Nourriture", "carburant": "Carburant", "medicaments": "Médicaments", "munitions": "Munitions",
-      "materiaux": "Matériaux", "pieces": "Pièces", "graines": "Graines", "plantes": "Plantes médicinales", "energie": "Énergie (kWh)"
+      "materiaux": "Matériaux", "pieces": "Pièces", "graines": "Graines", "plantes": "Plantes médicinales", "energie": "Énergie (kWh)",
+      "gaz": "Gaz (kg)", "boutures": "Boutures et plants", "biocarburant": "Carburant maison", "ile": "Matières de l'île"
     },
     "Nature": { "cueillette": "Cueillette", "gibier": "Gibier", "peche": "Pêche", "bois": "Bois" },
     "Moments": { "matin": "Matin", "apres-midi": "Après-midi", "soir": "Soir", "nuit": "Nuit" },
@@ -131,7 +132,23 @@
       "savoir-manquant": "savoir-faire manquant : {savoir}", "eau-requise": "il faut {eau} sur le site (ici : {ici})",
       "site-sol": "il faut de la terre cultivable (sol {requis} ; ici {ici})", "site-soleil": "il faut du soleil (soleil {requis} ; ici {ici})",
       "site-souterrain": "il faut un sous-sol qui s'y prête (souterrain {requis} ; ici {ici})",
-      "requiert": "il faut d'abord : {installation} niveau {niveau}", "requiert-hors-service": "{installation} est hors service", "manque": "il manque : {manque}"
+      "requiert": "il faut d'abord : {installation} niveau {niveau}", "requiert-hors-service": "{installation} est hors service", "manque": "il manque : {manque}",
+      "eruption-premices": "La terre tremble sous le volcan ; les bêtes sont nerveuses.",
+      "livre-trouve": "Un livre trouvé : il peut apprendre {savoir}.",
+      "verrou-epave": "Sur la route de {region} : une épave en travers (+{quarts} quart(s)).", "verrou-eboulis": "Sur la route de {region} : un éboulis (+{quarts} quart(s)).",
+      "verrou-tunnel": "Sur la route de {region} : un tunnel à une voie (+{quarts} quart(s)).", "verrou-arbre": "Sur la route de {region} : un arbre en travers (+{quarts} quart(s)).",
+      "voyage-source": "il faut {besoin} {source} (il y en a {dispo})",
+      "savoir-perdu": "Personne n'a écrit sous la dictée de {nom} : ce qu'elle savait s'en va avec elle.",
+      "chien-agite-cyclone": "Le chien tourne en rond, gémit, gratte la porte : le ciel est encore bleu, mais quelque chose vient.",
+      "chien-agite-volcan": "Le chien refuse de sortir, le poil hérissé, le nez vers le volcan.",
+      "boutures-mortes": "{n} bouture(s) fanée(s) faute d'avoir été replantée(s).",
+      "cyclone-prepare": "Tout était rentré ou fixé : {cyclone} n'a rien emporté.", "cyclone-emportes": "{cyclone} emporte ce qui traînait dehors : {pertes}.",
+      "cyclone-citerne": "Les fuites et les gouttières qui débordent remplissent la citerne (+{eau} eau) : une eau à filtrer.",
+      "cyclone-arbres": "Des arbres couchés partout : du bois pour des semaines, des fruits à ramasser et conserver vite ; l'abri se voit de plus loin.",
+      "cyclone-depot": "Le cyclone a déposé dans la cour : {nom}. {stocks}", "menace-depot": "{nom} : une menace dans la cour.",
+      "apprendre-savoir-inconnu": "savoir-faire inconnu : {savoir}", "apprendre-source": "source inconnue : {source}", "apprendre-deja": "sait déjà : {savoir}",
+      "apprendre-maitre": "le maître ne sait pas : {savoir}", "apprendre-livre": "ce livre n'enseigne pas : {savoir}",
+      "dictee-pas-gramoune": "il faut une ancienne qui garde un savoir lontan", "dictee-confiance": "il faut sa confiance ({n} au moins)", "dictee-faite": "son cahier est déjà écrit"
     },
 
     "Erreurs": {
@@ -175,7 +192,9 @@
       "Fete": "Impossible de fêter : {raison}.",
       "PasAtteint": "{nom} n'a pas : {affliction}.",
       "Medicaments": "Il faut {n} médicament(s) pour ce soin.",
-      "Contenu": "Fénoir : {n} erreur(s) dans le contenu (la première : {premiere}). Détail dans la console (F12)."
+      "Contenu": "Fénoir : {n} erreur(s) dans le contenu (la première : {premiere}). Détail dans la console (F12).",
+      "Apprendre": "Impossible d'apprendre : {raisons}.", "Dicter": "Impossible d'écrire sous la dictée : {raisons}.",
+      "ChienNourriture": "Il faut 1 nourriture à poser devant le chien.", "GramouneInconnue": "Gramoune inconnue : {cle}."
     },
     "Coffre": {
       "SansMoteur": "Fénoir : le module MJ IA est coupé ; l'état réel du monde est gardé en clair dans les réglages du monde. Les joueurs peuvent lire l'état du monde.",
@@ -214,7 +233,8 @@
       "Courant": "Abri du groupe", "Abandonne": "Abandonné", "Autonome": "Autonome", "Defense": "Défense", "Discretion": "Discrétion",
       "Visibilite": "Visibilité", "Capacite": "Personnes / capacité", "Bruit": "Bruit", "JoursAutonomes": "Jours autonomes", "Stocks": "Stocks",
       "Ressource": "Ressource", "Quantite": "Quantité", "Net": "Net / jour", "Jours": "Jours", "Production": "Production du jour",
-      "Installations": "Installations", "Arret": "à l'arrêt", "AucuneInstallation": "Aucune installation.", "Alentours": "Alentours",
+      "Installations": "Installations", "Arret": "à l'arrêt", "Secours": "en secours (sa sœur est en service)", "Lontan": "lontan",
+      "AutonomieComplete": "Autonomie complète (les deux savoirs)", "Arbres": "Savoir-faire du groupe : {moderne} moderne(s), {lontan} lontan.", "AucuneInstallation": "Aucune installation.", "Alentours": "Alentours",
       "Sol": "Fertilité du sol", "Degats": "Dégâts", "Grille": "Qui fait quoi", "Surpeuplement": "Surpeuplé : {n} personne(s) de trop.",
       "Aides": {
         "defense": "Ce qui protège l'abri d'un assaut (site, installations, moins les dégâts).",
@@ -268,7 +288,13 @@
       "Infecte": "{nom} porte le Gris.", "Renseignement": "Nouvelles de {region} ({source}).", "Fabrique": "{nom} fabrique : {recette}.",
       "FabriqueRate": "{nom} rate : {recette}.", "Affliction": "{nom} : {affliction}.", "AfflictionSoignee": "{nom} est soigné : {affliction}.",
       "AfflictionRate": "Le soin de {nom} ne prend pas ({affliction}).", "Fete": "Le groupe fête : {fete}.", "Recrue": "{nom} rejoint le groupe.",
-      "RecrueRefuse": "{nom} refuse de suivre le groupe.", "Rejoint": "{nom} rejoint le groupe."
+      "RecrueRefuse": "{nom} refuse de suivre le groupe.", "Rejoint": "{nom} rejoint le groupe.",
+      "CyclonePrepare": "Tout est rentré ou fixé pour le cyclone ({fait} / {requis} quarts-personne).", "CyclonePreparation": "On rentre et on fixe ce qui peut s'envoler ({fait} / {requis} quarts-personne).",
+      "SavoirAppris": "{nom} sait désormais : {savoir}.", "Veillee": "Veillée : {nom} apprend {savoir} ({fait} / {requis}).",
+      "Confiance": "{nom} : confiance {confiance} / 5.", "Dictee": "Veillée de dictée avec {nom} ({fait} / {requis}).",
+      "CahierEcrit": "Le cahier de {nom} est écrit, de la main de {scribe} : son savoir ne mourra pas avec elle.",
+      "ChienApprivoise": "Le chien errant suit {nom} : il est au groupe.", "ChienMord": "Le chien errant mord {nom}, de peur (confiance {confiance} / 5).",
+      "ChienConfiance": "Le chien errant s'approche de {nom} (confiance {confiance} / 5)."
     },
     "Fete": {
       "Alerte": "Fête du jour (calendrier de Fénoir) : {nom}. {consigne}",
@@ -316,14 +342,36 @@
       "Titre": "Atelier", "Intro": "{n} recette(s) possible(s) maintenant. Survole une recette pour sa description.", "Artisan": "Artisan",
       "LeMeilleur": "Le plus habile", "Fabriquer": "Fabriquer", "Proposer": "Proposer au MJ", "Carte": "Atelier : {recette}"
     },
+    "Savoirs": {
+      "Livre": "Livre : {savoir}", "Cahier": "Cahier de {nom}", "Preparer": "Préparer le cyclone",
+      "PreparationFaite": "Tout est rentré ou fixé ({fait} / {requis} quarts-personne) : +1 de protection, rien ne s'envolera.",
+      "PreparationEnCours": "Préparation : {fait} / {requis} quarts-personne.",
+      "Confiance": "Gagner la confiance de {nom}", "ConfianceCourte": "confiance {n}", "Chien": "Gagner la confiance d'un chien errant",
+      "Cibles": { "jardins": "Jardins des cases (nourriture, boutures, zerbaz)", "livres": "Livres (un savoir-faire à apprendre)" },
+      "Arbres": { "moderne": "moderne", "lontan": "lontan" },
+      "Vents": { "rafales": "Rafales", "accalmie": "Accalmie", "oeil": "L'œil : calme total (un piège)", "retour": "Le vent revient de l'autre côté" },
+      "Dehors": "dehors : {des} dé(s), vigilance {vigilance}, discrétion +{discretion}",
+      "Sources": { "maitre": "Quelqu'un qui sait (ou une gramoune)", "livre": "Un livre trouvé", "cahier": "Le cahier d'une gramoune" },
+      "Gramoune": "Gramoune ou gramoun", "Eleve": "Qui apprend", "Savoir": "Savoir-faire", "Source": "Auprès de", "Maitre": "Maître ou gramoune", "Scribe": "Qui écrit",
+      "Cyclone": "Le cyclone {nom} (force {force}) sur l'abri, jour {jour}",
+      "Aide": "Les deux savoirs (moderne, lontan), les anciens, le chien et le cyclone. Chaque veillée prend un quart.",
+      "AideGramoune": "Une des gramounes de l'île, proposée comme recrue : métissée, fragile, savante. Le recrutement reste un test de parole.",
+      "AidePreparer": "Rentrer ou fixer ce qui s'envole : 2 quarts-personne, plus 1 par installation exposée. Valable cinq jours : +1 de protection, rien n'est emporté.",
+      "AideApprendre": "Un livre : 14 veillées (et de la lumière). Quelqu'un qui sait : 7. Une gramoune qui a confiance (3 ou plus), pour un savoir lontan : 4. Son cahier : 7.",
+      "AideDicter": "Six veillées, si elle a confiance (3 ou plus) : un cahier unique, qui lui survit.",
+      "AideChien": "Une veillée = 1 nourriture et un test de survie (+1 dé avec l'élevage). À 5 de confiance, le chien est au groupe.",
+      "ChienEnCours": "Le chien errant en est à {n} / 5."
+    },
     "MJ": {
       "Titre": "Fénoir — fenêtre du MJ", "Titre2": "Titre",
-      "Onglets": { "partie": "Partie et temps", "actions": "Actions du groupe", "groupe": "Groupe et recrues", "menaces": "Menaces", "monde": "Monde réel" },
+      "Onglets": { "partie": "Partie et temps", "actions": "Actions du groupe", "groupe": "Groupe et recrues", "savoirs": "Savoirs et cyclone", "menaces": "Menaces", "monde": "Monde réel" },
       "Formes": {
         "demarrer": "Démarrer la partie", "avancer": "Avancer le temps", "fouiller": "Fouiller", "explorer": "Explorer", "installer": "S'installer",
         "construire": "Construire", "reparer": "Réparer", "voyager": "Voyager", "demenager": "Déménager", "assaut": "Assaut", "ajuster": "Ajuster les stocks",
         "genererRecrue": "Tirer une recrue", "recruter": "Recruter", "feter": "Fêter", "demanderTest": "Demander un test", "fabriquer": "Fabriquer",
-        "affliction": "Maladie, blessure", "ajouterMembre": "Ajouter au groupe", "rencontre": "Tirer une rencontre (secret)"
+        "affliction": "Maladie, blessure", "ajouterMembre": "Ajouter au groupe", "rencontre": "Tirer une rencontre (secret)",
+        "preparerCyclone": "Préparer le cyclone", "apprendre": "Une veillée d'apprentissage", "gagnerConfiance": "Gagner la confiance d'une gramoune",
+        "dicter": "Écrire sous sa dictée", "apprivoiser": "Gagner la confiance d'un chien errant"
       },
       "PasActif": "Tu n'es pas le MJ actif : seul le MJ actif écrit l'état de Fénoir.", "Bloque": "Le monde n'est pas ouvert dans ce navigateur : rien ne s'écrit.",
       "Rouvrir": "Rouvrir le coffre", "DejaDemarree": "Une partie est en cours : la démarrer de nouveau la remplace.",

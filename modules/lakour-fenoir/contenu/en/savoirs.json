@@ -132,6 +132,44 @@
       "en": "<p>Unlocks the cistern at level 3, the filter at level 2 and the hand pump at level 2. Treated water divides the risk of water-borne diseases by five.</p>"
     }
   },
+  "savoirs/NRU6A2iGZjURlDxg": {
+    "_nom": "Pierre sèche",
+    "name": {
+      "fr": "Pierre sèche",
+      "en": "Dry stone"
+    },
+    "system.description": {
+      "fr": "<p>Épierrer un champ et monter avec ses cailloux un mur qui tient sans mortier, un siècle durant : les grosses pierres en bas, les boutisses qui traversent, le fruit vers l'intérieur. Les murets des Hauts et des îlets en sont faits.</p>",
+      "en": "<p>Clearing a field of its stones and building with them a wall that stands without mortar for a century: the big stones at the bottom, through-stones across, the batter leaning inwards. The low walls of the Highlands and the îlets are made this way.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un vieux maçon des Hauts, un gramoun de la Plaine des Grègues ou de Mafate ; un cahier dicté ; un premier muret monté sous ses yeux.</p>",
+      "en": "<p>An old mason from the Highlands, a gramoun (an elder) from the Plaine des Grègues or Mafate; a dictated notebook; a first low wall built under his eye.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre le mur de pierres sèches. +1 dé aux réparations de murets et de terrasses.</p>",
+      "en": "<p>Unlocks the dry-stone wall. +1 die to repairs of low walls and terraces.</p>"
+    }
+  },
+  "savoirs/TNeDuMWxmF0kB3Pr": {
+    "_nom": "Moteurs de fortune",
+    "name": {
+      "fr": "Moteurs de fortune",
+      "en": "Makeshift engines"
+    },
+    "system.description": {
+      "fr": "<p>Modifier un moteur pour qu'il boive de l'alcool de canne ou de l'huile filtrée, monter un gazogène au bois sur un camion, entretenir et recharger un véhicule électrique sur les batteries de l'abri. Le moteur y perd en vitesse et en fiabilité : il roule quand même.</p>",
+      "en": "<p>Modifying an engine to drink cane alcohol or filtered oil, fitting a wood-gas burner to a truck, servicing and charging an electric vehicle from the shelter's batteries. The engine loses speed and reliability: it runs all the same.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Un passé de mécanicien ; un Ferrailleur qui a déjà fait la conversion ; une revue technique trouvée dans un garage ; un premier moteur modifié réussi à l'atelier.</p>",
+      "en": "<p>A background as a mechanic; a Scrapper who has already done the conversion; a technical manual found in a garage; a first engine successfully modified in the workshop.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre les recettes du carburant maison (alcool de canne, huile filtrée) et des moteurs modifiés (voiture à l'alcool, camion à gazogène). +1 dé aux tests de bricolage sur un moteur modifié.</p>",
+      "en": "<p>Unlocks the recipes for home-made fuel (cane alcohol, filtered oil) and modified engines (alcohol car, wood-gas truck). +1 die to Tinkering tests on a modified engine.</p>"
+    }
+  },
   "savoirs/UHa00stDlln6OD0d": {
     "_nom": "Maraîchage tropical",
     "name": {
@@ -149,6 +187,25 @@
     "system.effets": {
       "fr": "<p>Ouvre le potager niveaux 2 et 3, la serre niveau 2, le compost niveau 2 et le camouflage niveau 3. +1 dé aux tests de survie pour cultiver et cueillir.</p>",
       "en": "<p>Unlocks the vegetable plot at levels 2 and 3, the greenhouse at level 2, the compost at level 2 and camouflage at level 3. +1 die on survival tests to grow and forage.</p>"
+    }
+  },
+  "savoirs/WGMfp7aYgJvA0KIt": {
+    "_nom": "Jardin créole",
+    "name": {
+      "fr": "Jardin créole",
+      "en": "Creole garden"
+    },
+    "system.description": {
+      "fr": "<p>Le jardin de la case, où tout pousse ensemble : bananier pour l'ombre, chouchou sur la treille, songe dans le mouillé, manioc et patate dans le sec, brèdes au pied, zerbaz le long de la clôture. On bouture plus qu'on ne sème, on paille, on plante avec la lune, et le jardin se garde des mois sans personne.</p>",
+      "en": "<p>The house garden, where everything grows together: banana tree for shade, chayote on the trellis, taro in the wet, cassava and sweet potato in the dry, brèdes (leafy greens) underneath, zerbaz (healing herbs) along the fence. You take cuttings more than you sow, you mulch, you plant by the moon, and the garden keeps for months with nobody there.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Une gramoune qui a toujours eu son jardin ; une famille des îlets ; un cahier dicté ; une saison à bouturer et à repiquer ce qu'on a pris dans les jardins abandonnés.</p>",
+      "en": "<p>A gramoune (an elder) who has always had her garden; a family from the îlets; a dictated notebook; a season of taking cuttings and planting out what was taken from abandoned gardens.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre le jardin créole niveau 2. Les boutures prises dans les jardins des cases reprennent mieux (le MJ peut en rendre une partie qui aurait fané). +1 dé aux tests de survie pour cultiver sans graines achetées.</p>",
+      "en": "<p>Unlocks the Creole garden at level 2. Cuttings taken from house gardens take root better (the GM may give back some that would have wilted). +1 die to Survival tests to grow food without bought seed.</p>"
     }
   },
   "savoirs/WQxo66InFveKqVJD": {
@@ -206,6 +263,25 @@
     "system.effets": {
       "fr": "<p>Ouvre le poste radio niveau 2. Les renseignements obtenus par radio sont plus sûrs (le MJ précise ce qui est vrai).</p>",
       "en": "<p>Unlocks the radio post at level 2. Intel obtained by radio is more reliable (the GM says what is true).</p>"
+    }
+  },
+  "savoirs/ug3ja6dRYPl3UYIQ": {
+    "_nom": "Bambou, vacoa et vétiver",
+    "name": {
+      "fr": "Bambou, vacoa et vétiver",
+      "en": "Bamboo, vacoa and vetiver"
+    },
+    "system.description": {
+      "fr": "<p>Fendre le bambou, le chauffer pour le courber, le ligaturer à la fibre de choka ; tresser le vacoa en sacs, en nattes, en fonds de chaise ; couvrir un toit de vétiver ; tailler le goyavier pour un manche. On fabrique un outil ou un meuble avec presque rien, et on le répare soi-même.</p>",
+      "en": "<p>Splitting bamboo, heating it to bend it, lashing it with choka fibre; weaving vacoa into bags, mats, chair seats; thatching a roof with vetiver; carving guava wood for a handle. You make a tool or a piece of furniture from almost nothing, and repair it yourself.</p>"
+    },
+    "system.apprentissage": {
+      "fr": "<p>Une gramoune ou un gramoun qui tressait encore pour le bazar ; une vannière de Saint-Louis ou de l'Étang-Salé ; un cahier dicté ; une saison à refaire les nattes et les paniers aux côtés de quelqu'un qui sait.</p>",
+      "en": "<p>A gramoune or gramoun (an elder) who still wove for the bazaar; a basket-weaver from Saint-Louis or L'Étang-Salé; a dictated notebook; a season remaking mats and baskets alongside someone who knows.</p>"
+    },
+    "system.effets": {
+      "fr": "<p>Ouvre la palissade de bambou niveau 2 et la conduite de bambou niveau 2, et les objets faits main (sac et chaise en vacoa, nattes, cordes de choka). +1 dé aux tests de bricolage avec les matières de l'île.</p>",
+      "en": "<p>Unlocks the bamboo palisade at level 2 and the bamboo pipeline at level 2, and handmade things (vacoa bag and chair, mats, choka ropes). +1 die to Tinkering tests with island materials.</p>"
     }
   },
   "savoirs/yFDWfsD7dGTF6DAP": {

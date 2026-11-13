@@ -1,0 +1,43 @@
+{
+  "_id": "Buvxj39uKMreBfcT",
+  "_key": "!items!Buvxj39uKMreBfcT",
+  "name": "Sac en vacoa",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "sac-en-vacoa",
+    "description": "<p>Couper les feuilles de vacoa, ôter les épines du bord, les faire sécher et blanchir, les fendre en lanières, tresser.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "bambou-vacoa"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "sac-en-vacoa",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sac-en-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

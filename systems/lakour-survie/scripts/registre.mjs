@@ -58,7 +58,12 @@ function normaliserEquipement(e) {
     rapide: tr.rapide ?? motorise,
     allure: motorise ? (tr.allure ?? null) : Number(tr.allure ?? ALLURES[e.cle] ?? ALLURE_DEFAUT),
     carburantParQuart: Number(tr.carburantParQuart) || 0,
-    bruit: Number(tr.bruit ?? e.bruit) || 0
+    bruit: Number(tr.bruit ?? e.bruit) || 0,
+    // Lot « savoirs » : ce que le véhicule brûle, moteur modifié plus lent, vélo en pente, charrette trop large pour se faufiler.
+    source: tr.source ?? "carburant",
+    lenteur: Number(tr.lenteur) || 1,
+    pente: tr.pente && typeof tr.pente === "object" ? { descente: Number(tr.pente.descente) || 1, montee: Number(tr.pente.montee) || 1 } : null,
+    large: Boolean(tr.large)
   };
 }
 

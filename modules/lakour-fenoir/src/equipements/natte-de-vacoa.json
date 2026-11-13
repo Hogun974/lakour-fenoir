@@ -1,0 +1,37 @@
+{
+  "_id": "R0G71qo20r7WKfk2",
+  "_key": "!items!R0G71qo20r7WKfk2",
+  "name": "Natte de vacoa",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "natte-de-vacoa",
+    "categorie": "vie",
+    "description": "<p>Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 0.5
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "natte-de-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

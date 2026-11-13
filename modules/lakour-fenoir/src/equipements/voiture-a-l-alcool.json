@@ -1,0 +1,46 @@
+{
+  "_id": "u9ANmNix6eQQlUsC",
+  "_key": "!items!u9ANmNix6eQQlUsC",
+  "name": "Voiture à l'alcool de canne",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "voiture-a-l-alcool",
+    "categorie": "transport",
+    "description": "<p>Une vieille voiture à essence dont on a changé les joints, réglé l'allumage et agrandi les gicleurs : elle boit l'alcool de canne ou l'huile filtrée de l'abri. Elle démarre mal à froid, tire moins, et sent le rhum.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 1,
+    "transport": {
+      "mode": "vehicule",
+      "places": 5,
+      "chargeMax": 16,
+      "carburantParQuart": 1.2,
+      "terrains": [
+        "route"
+      ],
+      "bruit": 1,
+      "source": "biocarburant",
+      "lenteur": 1.25
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "voiture-a-l-alcool"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

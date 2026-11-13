@@ -88,7 +88,8 @@
         "cle": "elevage",
         "description": "<p>Poules péi, cabris, cochons, chiens, abeilles, tilapias : nourrir, soigner, faire naître, abattre proprement, ne pas épuiser son troupeau.</p>",
         "apprentissage": "<p>Un passé d'agriculteur des Hauts ou d'apiculteur ; une ferme de la Plaine des Cafres ; un ancien de Mafate.</p>",
-        "effets": "<p>Ouvre la basse-cour, l'enclos à cabris, les ruches et les chiens de garde niveau 2, le bassin à tilapias niveau 2.</p>"
+        "effets": "<p>Ouvre la basse-cour, l'enclos à cabris, les ruches et les chiens de garde niveau 2, le bassin à tilapias niveau 2.</p>",
+        "arbre": "lontan"
       },
       "effects": [],
       "folder": null,

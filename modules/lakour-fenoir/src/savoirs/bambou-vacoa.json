@@ -1,0 +1,30 @@
+{
+  "_id": "ug3ja6dRYPl3UYIQ",
+  "_key": "!items!ug3ja6dRYPl3UYIQ",
+  "name": "Bambou, vacoa et vétiver",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "bambou-vacoa",
+    "description": "<p>Fendre le bambou, le chauffer pour le courber, le ligaturer à la fibre de choka ; tresser le vacoa en sacs, en nattes, en fonds de chaise ; couvrir un toit de vétiver ; tailler le goyavier pour un manche. On fabrique un outil ou un meuble avec presque rien, et on le répare soi-même.</p>",
+    "apprentissage": "<p>Une gramoune ou un gramoun qui tressait encore pour le bazar ; une vannière de Saint-Louis ou de l'Étang-Salé ; un cahier dicté ; une saison à refaire les nattes et les paniers aux côtés de quelqu'un qui sait.</p>",
+    "effets": "<p>Ouvre la palissade de bambou niveau 2 et la conduite de bambou niveau 2, et les objets faits main (sac et chaise en vacoa, nattes, cordes de choka). +1 dé aux tests de bricolage avec les matières de l'île.</p>",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bambou-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

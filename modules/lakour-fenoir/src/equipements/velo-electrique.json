@@ -1,0 +1,54 @@
+{
+  "_id": "zNp4aPZvp3iNjJvB",
+  "_key": "!items!zNp4aPZvp3iNjJvB",
+  "name": "Vélo à assistance électrique",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "velo-electrique",
+    "categorie": "transport",
+    "description": "<p>Un vélo de location de la côte Ouest, sa batterie rechargée sur les panneaux de l'abri : il remonte les Hauts presque comme il les descend, sans un bruit. Une demi-unité d'énergie par quart de route.</p>",
+    "bonus": {
+      "endurance": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "pied",
+      "places": 1,
+      "chargeMax": 3,
+      "carburantParQuart": 0.5,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 0,
+      "rapide": false,
+      "allure": 0.4,
+      "source": "energie",
+      "pente": {
+        "descente": 0.6,
+        "montee": 0.9
+      }
+    },
+    "effets": null
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "velo-electrique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

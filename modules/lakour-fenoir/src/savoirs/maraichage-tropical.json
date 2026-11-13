@@ -8,7 +8,8 @@
     "cle": "maraichage-tropical",
     "description": "<p>Savoir ce qui pousse ici, quand et comment : brèdes, songes, patates douces, manioc, chouchous, piments, haricots ; semer avant les pluies, pailler contre le soleil de l'Ouest, protéger du vent des Hauts.</p>",
     "apprentissage": "<p>Un passé d'agriculteur ou de planteur ; le CDI d'un collège ; les conseils d'un ancien de la Coopérative des Plaines ou des Familles des Îlets ; une saison complète de potager réussie.</p>",
-    "effets": "<p>Ouvre le potager niveaux 2 et 3, la serre niveau 2, le compost niveau 2 et le camouflage niveau 3. +1 dé aux tests de survie pour cultiver et cueillir.</p>"
+    "effets": "<p>Ouvre le potager niveaux 2 et 3, la serre niveau 2, le compost niveau 2 et le camouflage niveau 3. +1 dé aux tests de survie pour cultiver et cueillir.</p>",
+    "arbre": "moderne"
   },
   "effects": [],
   "folder": null,

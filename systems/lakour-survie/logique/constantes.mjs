@@ -11,8 +11,18 @@ export const NIVEAU_MAX = 5;
 // §1.6 — les ressources (stocks entiers de l'abri). `energie` (kWh) ne se pille pas : elle se produit et se stocke. `plantes`
 // (plantes médicinales, les « zerbaz » : 1 = une brassée, de quoi une tisane) ne se pillent pas non plus : elles se cueillent
 // aux alentours (actions.mjs, REGLES_ACTIONS.plantes ; depuis le 2026-11-05).
-export const RESSOURCES = ["eau", "nourriture", "carburant", "medicaments", "munitions", "materiaux", "pieces", "graines", "plantes", "energie"];
-export const RESSOURCES_NON_PILLABLES = ["energie", "plantes"];
+// Lot « savoirs » (docs/equilibre-savoirs.md) : `gaz` (1 = un kilo de butane ; une bouteille en fait 13) est une ressource à part,
+// pillable : les bouteilles des cuisines ne sont pas le carburant des stations et ne font pas rouler un moteur. `boutures`
+// (plants et boutures pris dans les jardins des cases : ils meurent s'ils ne sont pas replantés) et `biocarburant` (alcool de
+// canne ou huile filtrée faits maison, 1 = 10 litres : seul un moteur modifié l'accepte) ne se pillent pas. Un stock d'avant ces
+// ajouts les lit à 0 (normaliserStocks).
+export const RESSOURCES = ["eau", "nourriture", "carburant", "medicaments", "munitions", "materiaux", "pieces", "graines", "plantes", "energie",
+  "gaz", "boutures", "biocarburant"];
+export const RESSOURCES_NON_PILLABLES = ["energie", "plantes", "boutures", "biocarburant"];
+// Lot « savoirs » : les deux savoirs (savoir-faire et installations : moderne, lontan) et la clé de coût des matières de l'île
+// (bambou, vacoa, bois, vétiver), prises sur le bois des alentours de l'abri, qui repousse (abri.mjs, peutConstruire).
+export const ARBRES = ["moderne", "lontan"];
+export const COUT_ILE = "ile";
 export const RESSOURCES_PILLABLES = RESSOURCES.filter(r => !RESSOURCES_NON_PILLABLES.includes(r));
 // §2.1 — ressources naturelles (renouvelables) des alentours.
 export const NATURE = ["cueillette", "gibier", "peche", "bois"];
