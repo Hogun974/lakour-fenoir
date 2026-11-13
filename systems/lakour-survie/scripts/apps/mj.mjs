@@ -69,6 +69,8 @@ export function contexteMarche(etat, monde, c = contenu()) {
     signe: m.signe,
     ressources: L.RESSOURCES_TROC.map(r => ({ cle: r, libelle: libelleRessource(r) })),
     pnj: options([["", "—"], ...pnj.map(a => [a.id, a.name])], ""),
+    // Qui joue d'un préjugé pour faire baisser le prix (le sens moral, §14 : il porte l'acte « colporter »).
+    porteurs: options([["", "—"], ["groupe", groupe], ...survivantsDuGroupe(etat).map(a => [a.id, a.name])], ""),
     cibles: options(L.liste(c.communautes).map(x => [x.cle, x.nom]), ""),
     factions: options([["", "—"], ...L.liste(c.factions).map(f => [f.cle, f.nom])], ""),
     choixMarches: options([["", "—"], ...m.marches.map(x => [x.cle, x.nom])], ""),
@@ -168,6 +170,8 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     endommagees: options([["", t("LAKOUR_SURVIE.MJ.Abri")], ...instances.filter(i => Number(i.system?.etat) > 0).map(i => [i.id, `${i.name} (${t(`LAKOUR_SURVIE.EtatInstallation.${i.system.etat}`)})`])], ""),
     survivants: survivants.map(a => ({ id: a.id, nom: a.name, membre: (etat.groupe?.membres ?? []).includes(a.id) })),
     membres: options(membres.map(a => [a.id, a.name]), ""),
+    // Les PNJ hors du groupe (invités d'une fête, témoins de la fête des autres : leurs préjugés s'usent, le marché §12).
+    pnjHors: options(survivants.filter(a => !(etat.groupe?.membres ?? []).includes(a.id)).map(a => [a.id, a.name]), ""),
     competences: options(COMPETENCES.map(k => [k, libelleCompetence(k)]), "vigilance"),
     difficultes: options(Object.keys(DIFFICULTES).map(d => [d, t(`LAKOUR_SURVIE.Difficultes.${d}`)]), "normale"),
     ressources: RESSOURCES.filter(r => r !== "energie").map(r => ({ cle: r, libelle: libelleRessource(r) })),
@@ -272,8 +276,8 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       ajuster: () => api.ajuster({ stocks: Object.fromEntries(RESSOURCES.filter(r => Number(d[`stock.${r}`])).map(r => [r, Number(d[`stock.${r}`])])), raison: d.raison ?? "" }),
       genererRecrue: async () => { CACHE.recrue = await api.genererRecrue({ region: d.region || "", gramoune: d.gramoune || "" }); return CACHE.recrue; },
       recruter: async () => { const r = await api.recruter({ recrue: CACHE.recrue, parleurId: d.parleur, attitude: d.attitude || "neutre" }); if (r.reussite) CACHE.recrue = null; return r; },
-      feter: () => api.feter({ fete: d.fete ?? "", option: d.option ?? "", pour: liste(d.pour), avec: d.avec ?? "" }),
-      participer: () => api.participer({ fete: d.fete ?? "", communaute: d.communaute ?? "", faction: d.faction ?? "", membres }),
+      feter: () => api.feter({ fete: d.fete ?? "", option: d.option ?? "", pour: liste(d.pour), avec: d.avec ?? "", invites: liste(d.invites) }),
+      participer: () => api.participer({ fete: d.fete ?? "", communaute: d.communaute ?? "", faction: d.faction ?? "", membres, pnj: liste(d.pnj) }),
       voeu: () => api.voeu({ acteurId: d.acteur, issue: d.issue || "tenu" }),
       releve: () => api.releve({ mortId: d.mort, candidat: d.candidat ?? "", userId: d.joueur ?? "", action: d.action || "reprendre" }),
       autel: () => api.autel({ action: d.action || "honorer", mort: d.mort ?? "", nom: d.nom ?? "" }),
@@ -283,7 +287,7 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       ajouterMembre: () => api.ajouterMembre({ acteurId: d.acteur, statut: d.statut || "compagnon" }),
       rencontre: () => api.rencontre({ region: d.region || "" }),
       // Le marché (§12) : biens « donne.<r> », « recoit.<r> », « biens.<r> » ; cibles : liste multiple.
-      troquer: () => api.troquer({ donne: biens(d, "donne"), recoit: biens(d, "recoit"), pnjId: d.pnj || "", cibles: liste(d.cibles), faction: d.faction || "", marche: d.marche || "", accepter: Boolean(d.accepter) }),
+      troquer: () => api.troquer({ donne: biens(d, "donne"), recoit: biens(d, "recoit"), pnjId: d.pnj || "", cibles: liste(d.cibles), faction: d.faction || "", marche: d.marche || "", accepter: Boolean(d.accepter), prejuge: d.prejuge || "" }),
       ouvrirBoutique: () => api.ouvrirBoutique({ nom: d.nom || game.actors?.get?.(d.tenancier)?.name || "", tenancier: d.tenancier || "" }),
       crediter: () => api.crediter({ boutique: d.boutique || "", biens: biens(d, "biens"), cibles: liste(d.cibles) }),
       rendre: () => api.rendre({ boutique: d.boutique || "", biens: biens(d, "biens"), cibles: liste(d.cibles) }),

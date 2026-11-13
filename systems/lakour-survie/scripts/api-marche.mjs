@@ -13,7 +13,8 @@ import { t, lireEtat, aPlat, acteur, abriCourant, MODULE_MJIA } from "./donnees.
 export const GROUPE = "groupe";
 const SUJETS = ["debiteur", "sujet", "par", "auteur"];
 
-export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser, chat, carteAction, sansBalises }) {
+export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser, chat, carteAction, sansBalises,
+  porterActe = null, membresPresents = () => [], espritDuTirage = () => ({}) }) {
   const c = () => contenu();
   const etatMarche = ctx => L.marcheDe(ctx.etat);
   const secretMarche = ctx => L.secretMarcheDe(ctx.monde);
@@ -92,6 +93,18 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
   const nomCible = cle => L.liste(c().communautes).find(x => x.cle === cle)?.nom ?? cle;
 
   // Lancer une rumeur dans le contexte d'une écriture (publique au journal, vérité au monde scellé).
+  // Le sens moral (lot « moral », contrat §14) : qui porte un acte du marché. qui : « groupe » (ses membres présents), l'id ou le nom
+  // d'un survivant ; un PNJ inconnu ou une faction ne portent rien ici. -> le résultat de porterActe, ou null.
+  function porteursDe(qui) {
+    if (!qui) return [];
+    const a = acteur(qui) ?? (game.actors?.contents ?? []).find(x => x.type === "survivant" && x.name === qui);
+    return a?.type === "survivant" ? [a.id] : [];
+  }
+  async function acteDuMarche(ctx, qui, acte) {
+    const ids = qui === GROUPE ? membresPresents(ctx).map(a => a.id) : porteursDe(qui);
+    return ids.length && porterActe ? porterActe(ctx, ids, acte) : null;
+  }
+
   function rumeurCtx(ctx, options) {
     const r = L.lancerRumeur(etatMarche(ctx), secretMarche(ctx), { jour: jourCtx(ctx), ...options });
     ctx.etat.marche = r.marche;
@@ -171,7 +184,8 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
 
     // Troquer au cours : le PNJ demande sa majoration ; refusé s'il n'y trouve pas son compte, sauf `accepter` (le MJ passe outre).
     // Un échange honnête (au moins au cours) use d'un échange les préjugés éveillés du PNJ.
-    troquer: ecriture(async ({ donne = {}, recoit = {}, pnjId = "", cibles = [], faction = "", marche = "", accepter = false } = {}) => {
+    // prejuge : qui joue d'un préjugé pour faire baisser le prix (« groupe » ou un survivant) : il porte l'acte « colporter » (§14).
+    troquer: ecriture(async ({ donne = {}, recoit = {}, pnjId = "", cibles = [], faction = "", marche = "", accepter = false, prejuge = "" } = {}) => {
       const ctx = ouvrirCtx();
       const conf = confianceDe(ctx.etat, { pnjId, cibles, faction });
       if (faction && palierFaction(faction)?.echange === false) throw clair(t("LAKOUR_SURVIE.Marche.Erreurs.Hostile"));
@@ -186,8 +200,9 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
       let usure = { uses: [], tombes: [] };
       if (a && ev.valeurDonnee >= ev.valeurRecue) { usure = await userPrejugesDe(a, { cibles: listeIds(cibles), echanges: 1 }); noterUsure(ctx, a, usure); }
       noter(ctx, tx("Marche.Journal.Troc", { donne: texteBiens(donne), recoit: texteBiens(recoit), avec: a?.name ?? (faction ? L.factionDe(c(), faction)?.nom ?? faction : "—") }));
+      const sens = prejuge ? await acteDuMarche(ctx, prejuge, "colporter") : null;
       await terminer(ctx);
-      return { ok: true, ...ev, confiance: conf, stocks: r.stocks, usure };
+      return { ok: true, ...ev, confiance: conf, stocks: r.stocks, usure, sens };
     }),
 
     // La boutique et son carnet.
@@ -307,8 +322,10 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
       rumeurCtx(ctx, { ...r.rumeur, auteur: "" });
       const faites = par === GROUPE ? await appliquerReputation(r.reputation) : {};
       alerter(ctx, "treve", lisible(r.rumeur.texte));
+      // Le sens moral (§14) : rompre la trêve, c'est frapper dans le périmètre des gens qui ne menaçaient pas (acte « attaquer »).
+      const sens = await acteDuMarche(ctx, par, "attaquer");
       await terminer(ctx);
-      return { marche: mk.cle, reputation: faites };
+      return { marche: mk.cle, reputation: faites, sens };
     }),
     retablirTreve: ecriture(async ({ marche = "" } = {}) => {
       const ctx = ouvrirCtx();
@@ -327,8 +344,10 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
       const ctx = ouvrirCtx();
       if (!String(texte).trim()) throw clair(t("LAKOUR_SURVIE.Marche.Erreurs.Texte"));
       const r = rumeurCtx(ctx, { sujet, texte: String(texte), vraie: Boolean(vraie), malveillant: Boolean(malveillant), auteur, portee, contre: Boolean(contre), source: "colporte" });
+      // Le sens moral (§14) : le colporteur, s'il est un survivant (ou le groupe), porte l'acte « colporter ».
+      const sens = r.colporteur ? await acteDuMarche(ctx, r.colporteur, "colporter") : null;
       await terminer(ctx);
-      return { id: r.rumeur.id, colporteur: r.colporteur };
+      return { id: r.rumeur.id, colporteur: r.colporteur, sens };
     }),
     dementir: ecriture(async ({ id = "", preuve = "fait" } = {}) => {
       const ctx = ouvrirCtx();
@@ -338,8 +357,10 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
       ctx.monde.marche = r.secret;
       noter(ctx, tx("Marche.Journal.Dementie", { preuve: t(`LAKOUR_SURVIE.Marche.Preuves.${L.PREUVES.includes(preuve) ? preuve : "fait"}`) }));
       if (r.rumeur) noter(ctx, tx("Marche.Journal.Rumeur", { texte: sansBalises(localiser(lisible(r.rumeur))) }));
+      // Le sens moral (§14) : un mensonge démenti, si son auteur est un survivant (ou le groupe), est l'acte « mentir ».
+      const sens = r.menteur ? await acteDuMarche(ctx, r.menteur, "mentir") : null;
       await terminer(ctx);
-      return { ok: true, menteur: r.menteur };
+      return { ok: true, menteur: r.menteur, sens };
     }),
     // Les faits démentent un préjugé sous les yeux des PNJ (tous ceux qui le portent, ou ceux qu'on nomme) : un cran de moins.
     dementirPrejuge: ecriture(async ({ cible = "", pnj = [] } = {}) => {
@@ -373,7 +394,9 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
       const deja = (game.actors?.contents ?? []).find(a => a.type === "survivant" && a.flags?.["lakour-survie"]?.marchand === cle);
       if (deja) return { acteurId: deja.id, deja: true };
       const a = await Actor.implementation.create({ name: def.nom, type: "survivant", img: "icons/svg/mystery-man.svg",
-        system: { statut: "pnj", lien: def.role, notes: `<p>${def.apparence}</p>${def.description}`, prejuges: def.prejuges.map(L.normaliserPrejuge) },
+        system: { statut: "pnj", lien: def.role, notes: `<p>${def.apparence}</p>${def.description}`, prejuges: def.prejuges.map(L.normaliserPrejuge),
+          // Son esprit (le lot moral, §14 : regard, foi ou ancrage, sens moral, autorité), écrit d'après son histoire.
+          ...(def.esprit ? espritDuTirage(def.esprit, c()) : {}) },
         flags: { "lakour-survie": { marchand: cle } }, prototypeToken: { name: def.nom, actorLink: true, disposition: 0 } });
       return { acteurId: a.id, deja: false };
     }, { partie: false }),
@@ -406,8 +429,10 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
           texte: { cle: "rumeur-menteur", params: { auteur: reclamant, sujet: o.name }, texte: `${reclamant} a menti sur ${o.name}.` } });
       }
       noter(ctx, tx("Marche.Journal.Reclamation", { objet: o.name, issue: t(`LAKOUR_SURVIE.Marche.Issues.${v.issue}`) }));
+      // Le sens moral (§14) : un objet qu'on disait sien, démenti par une marque ou des témoins, est l'acte « mentir » de qui le porte.
+      const sens = v.menteur === "possesseur" ? await acteDuMarche(ctx, acteurId, "mentir") : null;
       await terminer(ctx);
-      return v;
+      return { ...v, sens };
     })
   };
 

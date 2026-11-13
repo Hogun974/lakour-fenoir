@@ -2473,6 +2473,10 @@
       "fr": "Il commande tout chantier comme s'il était le sien, ne monte plus une échelle, et râle contre « les gens d'en bas ».",
       "en": "He runs every building job as if it were his own, no longer climbs a ladder, and grumbles about “the people from down below”."
     },
+    "prejuges.0.dit": {
+      "fr": "« *Bann malbar i fé sèrvis.* » (Les Malbars font des cérémonies.)",
+      "en": "\"*Bann malbar i fé sèrvis.*\" (The Malbars hold ceremonies.)"
+    },
     "notes": {
       "fr": "Yab de vieille souche, il a monté à la main la moitié des murets de pierre sèche de son îlet. Il répète que « *bann malbar i fé sèrvis* » (les Malbars font des cérémonies) comme s'il s'en méfiait ; l'homme qui lui a appris à poser une boutisse s'appelait Moutoussamy, et c'est à son enterrement qu'Ignace a pleuré pour la dernière fois. Il dort peu, se lève avant le coq, et voudrait qu'on en fasse autant.",
       "en": "A Yab (a poor white of the Highlands) of old stock, he built half the dry-stone walls of his îlet by hand. He keeps saying “*bann malbar i fé sèrvis*” (the Malbars, the Tamil Réunionese, hold ceremonies) as if he distrusted them; the man who taught him to lay a through-stone was called Moutoussamy, and it was at his funeral that Ignace last cried. He sleeps little, rises before the rooster, and would like everyone else to do the same."
@@ -2491,6 +2495,10 @@
     "prix": {
       "fr": "Il tousse la nuit, ne peut plus porter, et refuse de s'éloigner de la mer plus de quelques jours.",
       "en": "He coughs at night, can no longer carry loads, and refuses to stay away from the sea for more than a few days."
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Bann yab i koné pa la mèr.* » (Les petits blancs des Hauts ne connaissent pas la mer.)",
+      "en": "\"*Bann yab i koné pa la mèr.*\" (The poor whites of the Highlands don't know the sea.)"
     },
     "notes": {
       "fr": "Arrivé de Mayotte il y a quarante ans, kofia brodée et barbe blanche, il a pêché au large de Saint-Gilles toute sa vie et tressé ses nasses au bambou. Il se moque des Yabs, « *bann yab i koné pa la mèr* » (les petits blancs des Hauts ne connaissent pas la mer) ; son meilleur ami, un pêcheur de Cilaos descendu à vingt ans, lui a pourtant sauvé la vie un soir de houle. Il prie à l'heure, rit fort, et sait où sont les poissons.",
@@ -2511,6 +2519,10 @@
       "fr": "Elle ne mangera pas de bœuf, demande un coin pour sa lampe le vendredi, et donne tout ce qu'on lui confie.",
       "en": "She will not eat beef, asks for a corner for her lamp on Fridays, and gives away everything she is given."
     },
+    "prejuges.0.dit": {
+      "fr": "« *Zot lé dèrnié arivé, zot i pran tout.* » (Les derniers arrivés prennent tout.)",
+      "en": "\"*Zot lé dèrnié arivé, zot i pran tout.*\" (The last to arrive take everything.)"
+    },
     "notes": {
       "fr": "Vannière malbare, elle a tressé des milliers de sacs et de chaises de vacoa pour les marchés du Sud. Elle dit des Comoriens qu'« *zot lé dèrnié arivé, zot i pran tout* » (les derniers arrivés prennent tout), puis partage son riz avec la première famille comorienne qui passe, et lui apprend à tresser. Elle chante en tamoul en travaillant ; personne ne comprend les paroles, tout le monde connaît l'air.",
       "en": "A Malbar (Tamil Réunionese) basket-weaver, she has woven thousands of vacoa bags and chairs for the markets of the South. She says of the Comorians that “*zot lé dèrnié arivé, zot i pran tout*” (the last to arrive take everything), then shares her rice with the first Comorian family that passes, and teaches them to weave. She sings in Tamil while she works; nobody understands the words, everyone knows the tune."
@@ -2529,6 +2541,10 @@
     "prix": {
       "fr": "Elle marche lentement, il faut la porter dans les sentiers, et elle ne donne ses remèdes qu'à ceux qui l'écoutent.",
       "en": "She walks slowly, she has to be carried on the trails, and she only gives her remedies to those who listen to her."
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Zot i koné pa nout rimèd.* » (Ils ne connaissent pas nos remèdes.)",
+      "en": "\"*Zot i koné pa nout rimèd.*\" (They don't know our remedies.)"
     },
     "notes": {
       "fr": "Fille d'un boutiquier chinois de Bras-Panon et d'une coupeuse de canne cafre, elle a soigné tout le quartier avec son jardin : ayapana, fleur jaune, faham, citronnelle. Elle dit des médecins zoreils qu'« *zot i koné pa nout rimèd* » (ils ne connaissent pas nos remèdes) ; c'est pourtant une infirmière de Lyon qui, la première, a recopié ses recettes dans un cahier, et elle en parle avec tendresse. Elle ne se plaint jamais du dos. Elle se plaint de tout le reste.",

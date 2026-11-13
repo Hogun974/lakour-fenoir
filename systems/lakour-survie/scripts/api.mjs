@@ -718,7 +718,9 @@ async function creerActeurSurvivant(d, { userId = "", statut = null } = {}) {
       traits: [...(d.traits ?? [])], incapacites: [...(d.incapacites ?? [])],
       statut: st, tache: "repos", age: entier(d.age, 16, 99, 30), ageJour: lireEtat().demarree ? L.jourDe(lireEtat().horloge?.quart ?? 0) : 0, lien: String(d.lien ?? "").slice(0, 200), vivant: true, livide: false,
       histoire: { journal: "" }, notes: String(d.notes ?? "").slice(0, 20000), confiance: entier(d.confiance ?? 0, 0, 5, 0),
-      ...espritDuTirage(d, c)
+      ...espritDuTirage(d, c),
+      // Les préjugés d'une recrue du contenu (une gramoune : le marché, §12) ; jamais ceux d'un survivant de joueur.
+      ...(st !== "joueur" && Array.isArray(d.prejuges) ? { prejuges: d.prejuges.map(L.normaliserPrejuge).filter(p => p.cible) } : {})
     },
     ownership: user && !user.isGM ? { default: 0, [user.id]: PROPRIO } : { default: 0 },
     prototypeToken: { name: nom, actorLink: true, disposition: globalThis.CONST?.TOKEN_DISPOSITIONS?.FRIENDLY ?? 1, sight: { enabled: true }, texture: { src: jeton } },
@@ -1035,8 +1037,10 @@ async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
 }
 
 // Le marché (contrat §12) : ses fonctions et sa journée, avec les aides internes d'ici.
+// Jointures (fusion des lots) : porterActe et membresPresents (le sens moral, §14 : colporter, mentir, rompre la trêve, jouer d'un
+// préjugé), espritDuTirage (l'esprit des gens du marché). Passés par des flèches : définis plus bas.
 const MARCHE = fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser,
-  chat, carteAction, sansBalises });
+  chat, carteAction, sansBalises, porterActe: (...x) => porterActe(...x), membresPresents: ctx => membresPresents(ctx), espritDuTirage: (...x) => espritDuTirage(...x) });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1628,7 +1632,9 @@ export const api = {
   // Aller à la fête d'une autre communauté (lot « fetes ») : les participants y passent deux quarts, en reviennent avec +1 de moral, et
   // le groupe gagne un lien avec la communauté et la faction qui reçoivent (logique/fetes.mjs, participer : le point d'accroche des
   // préjugés des PNJ). Crochet « lakourSurvie.participation » (l'entrée notée).
-  participer: ecriture(async ({ fete = "", communaute = "", faction = "", membres = [] } = {}) => {
+  // pnj : les PNJ (acteurs) qui y ont vu le groupe partager la fête : chacun de leurs préjugés perd un cran (le marché, §12 :
+  // une fête partagée), comme les invités d'une fête au camp (feter({ invites })).
+  participer: ecriture(async ({ fete = "", communaute = "", faction = "", membres = [], pnj = [] } = {}) => {
     const ctx = ouvrirCtx();
     const c = contenu();
     const q = quandDe(ctx.etat);
@@ -1647,10 +1653,11 @@ export const api = {
     noter(ctx, tx("Journal.Participe", { noms: qui.map(a => a.name).join(", "), fete: f.nom, chez }));
     await chat(carteAction({ icone: "fa-people-group", titre: t("LAKOUR_SURVIE.Participation.Carte", { fete: f.nom, chez }),
       lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") }), t("LAKOUR_SURVIE.Participation.Effet")] }));
+    const prejuges = await MARCHE.feteInvites(ctx, pnj);
     Hooks.callAll("lakourSurvie.participation", structuredClone(r.entree));
     await avancerInterne(ctx, L.PARTICIPATION.quarts);
     await terminer(ctx);
-    return { ok: true, fete: f.cle, communaute: hote, faction, qui: qui.map(a => a.id), liens: structuredClone(ctx.etat.liens) };
+    return { ok: true, fete: f.cle, communaute: hote, faction, qui: qui.map(a => a.id), liens: structuredClone(ctx.etat.liens), prejuges };
   }),
 
   // Un vœu (Cavadee) tenu ou rompu, dit par le MJ : tenu, +1 de moral ; rompu, −1 ; le soutien du vœu s'arrête.
@@ -1883,6 +1890,9 @@ export const api = {
   chef: ecriture(async ({ acteurId = "" } = {}) => {
     const ctx = ouvrirCtx();
     if (acteurId && !(ctx.etat.groupe.membres ?? []).includes(acteurId)) throw erreur("PasMembre");
+    // Un jeune de 16 à 18 ans ne peut pas mener le groupe (releve.mjs, peutEtreChef : lot « fetes »).
+    const candidat = acteurId ? acteur(acteurId) : null;
+    if (candidat && !L.peutEtreChef(systemeLogique(candidat), jourCtx(ctx))) throw clair(t("LAKOUR_SURVIE.Erreurs.ChefJeune", { nom: candidat.name, age: L.REGLES_RELEVE.ageAdulte }));
     ctx.etat.groupe = { ...ctx.etat.groupe, chef: acteurId };
     noter(ctx, acteurId ? tx("Journal.Chef", { nom: acteur(acteurId)?.name ?? "?" }) : tx("Journal.SansChef"));
     await terminer(ctx);
@@ -1904,7 +1914,10 @@ export const api = {
     const ctx = ouvrirCtx();
     if (!(acte in L.ACTES_MORAUX)) throw clair(t("LAKOUR_SURVIE.Erreurs.ActeInconnu", { acte }));
     const v = voixDu(ctx, { acte, voix, circonstances });
-    const resultat = L.resoudreVote(v);
+    // Un jeune de 16 à 18 ans vote à moitié (releve.mjs, poidsVote : lot « fetes »).
+    const jour = jourCtx(ctx);
+    const poids = Object.fromEntries(Object.keys(v).map(id => [id, L.poidsVote(systemeLogique(acteur(id)), jour)]));
+    const resultat = L.resoudreVote(v, poids);
     ctx.etat.compteurVotes = (Number(ctx.etat.compteurVotes) || 0) + 1;
     const vote = { id: `vote${ctx.etat.compteurVotes}`, quart: ctx.etat.horloge.quart, question: String(question ?? "").slice(0, 200), acte, voix: v, resultat, decide: null };
     ctx.etat.votes = [...(ctx.etat.votes ?? []), vote].slice(-10);
@@ -2255,7 +2268,9 @@ function recrueGramoune(cle, region) {
     nom: g.nom, genre: g.genre ?? "", age: g.age, enfance: g.enfance, passe: g.passe, statut: "recrue",
     competences: Object.fromEntries(COMPETENCES.map(k => [k, Number(g.competences?.[k]) || 0])), passions: structuredClone(g.passions ?? {}),
     traits: [...(g.traits ?? [])], incapacites: [...(g.incapacites ?? [])], equipement: [...(g.equipement ?? [])], savoirs: [...(g.savoirs ?? [])],
-    confiance: Number(g.confiance) || 0, notes: g.notes ?? "", graine: sansBalises(g.notes ?? ""), raison: g.raison ?? "", prix: g.prix ?? "", region, gramoune: g.cle
+    confiance: Number(g.confiance) || 0, notes: g.notes ?? "", graine: sansBalises(g.notes ?? ""), raison: g.raison ?? "", prix: g.prix ?? "", region, gramoune: g.cle,
+    // Son esprit (le lot moral : regard, foi, sens moral, autorité) et ses préjugés (le marché), écrits d'après son histoire.
+    ...structuredClone(g.esprit ?? {}), prejuges: structuredClone(g.prejuges ?? [])
   };
 }
 

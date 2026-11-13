@@ -29,27 +29,33 @@ export const DEPOTS_CYCLONE = [
 // Une bibliothèque vivante, fragile : âge, incapacité aux travaux lourds, un trait fragile. Confiance de départ 1 (on ne livre
 // pas ses remèdes au premier venu). Le MJ en propose une comme recrue (fenêtre du MJ, « Recrue », gramoune) ; le recrutement se
 // fait au test de parole, comme les autres. Les préjugés sont les leurs ; les faits les démentent.
-const gramoune = g => ({ incapacites: ["travaux-lourds"], equipement: [], passions: {}, confiance: 1, statut: "recrue", ...g });
+// esprit (lot « moral », fusion des lots) : regard, foi, sens moral, autorité, d'après son histoire (jamais d'après son origine) ;
+// prejuges (lot « marché ») : ce qu'elle dit des autres dans ses notes, que les faits démentent (docs/metissage.md).
+const gramoune = g => ({ incapacites: ["travaux-lourds"], equipement: [], passions: {}, confiance: 1, statut: "recrue", esprit: {}, prejuges: [], ...g });
 export const GRAMOUNES = [
-  gramoune({ cle: "gramoune-zelie", nom: "Gramoune Zélie Ah-Kiem", genre: "f", age: 81, enfance: "enfant-de-planteur-de-l-est", passe: "planteur-de-canne",
+  gramoune({ cle: "gramoune-zelie", esprit: { regard: "epreuve", religion: "plusieurs", religions: ["catholique", "culte-chinois"], pratique: true, ancrage: "", sensMoral: 3, autorite: 3 }, prejuges: [{ cible: "zoreils", poids: 1, dit: "« *Zot i koné pa nout rimèd.* » (Ils ne connaissent pas nos remèdes.)" }],
+    nom: "Gramoune Zélie Ah-Kiem", genre: "f", age: 81, enfance: "enfant-de-planteur-de-l-est", passe: "planteur-de-canne",
     competences: { soins: 3, survie: 3, parole: 2, vigilance: 1 }, passions: { soins: 2 }, traits: ["os-de-verre", "coeur-de-kour"],
     savoirs: ["zerbaz", "jardin-creole", "conserverie"],
     raison: "Elle n'a pas voulu quitter sa case de Bras-Panon ; quand la ravine a pris le pont, ce sont ses voisins qui ont dû partir, et elle avec.",
     prix: "Elle marche lentement, il faut la porter dans les sentiers, et elle ne donne ses remèdes qu'à ceux qui l'écoutent.",
     notes: `Fille d'un boutiquier chinois de Bras-Panon et d'une coupeuse de canne cafre, elle a soigné tout le quartier avec son jardin : ayapana, fleur jaune, faham, citronnelle. Elle dit des médecins zoreils qu'« *zot i koné pa nout rimèd* » (ils ne connaissent pas nos remèdes) ; c'est pourtant une infirmière de Lyon qui, la première, a recopié ses recettes dans un cahier, et elle en parle avec tendresse. Elle ne se plaint jamais du dos. Elle se plaint de tout le reste.` }),
-  gramoune({ cle: "gramoun-ignace", nom: "Gramoun Ignace Técher", genre: "m", age: 78, enfance: "enfant-de-cilaos", passe: "agricultrice-des-hauts",
+  gramoune({ cle: "gramoun-ignace", esprit: { regard: "refaire", religion: "catholique", religions: [], pratique: true, ancrage: "", sensMoral: 1, autorite: 3 }, prejuges: [{ cible: "malbars", poids: 1, dit: "« *Bann malbar i fé sèrvis.* » (Les Malbars font des cérémonies.)" }],
+    nom: "Gramoun Ignace Técher", genre: "m", age: 78, enfance: "enfant-de-cilaos", passe: "agricultrice-des-hauts",
     competences: { bricolage: 3, survie: 3, parole: 1, endurance: 1 }, passions: { bricolage: 2 }, traits: ["tete-de-bois", "leve-avant-le-coq"],
     savoirs: ["pierre-seche", "bambou-vacoa", "elevage"],
     raison: "Il gardait encore ses vaches au-dessus de l'îlet ; la dernière est morte, et il est descendu, une canne à la main, sans un mot.",
     prix: "Il commande tout chantier comme s'il était le sien, ne monte plus une échelle, et râle contre « les gens d'en bas ».",
     notes: `Yab de vieille souche, il a monté à la main la moitié des murets de pierre sèche de son îlet. Il répète que « *bann malbar i fé sèrvis* » (les Malbars font des cérémonies) comme s'il s'en méfiait ; l'homme qui lui a appris à poser une boutisse s'appelait Moutoussamy, et c'est à son enterrement qu'Ignace a pleuré pour la dernière fois. Il dort peu, se lève avant le coq, et voudrait qu'on en fasse autant.` }),
-  gramoune({ cle: "gramoune-mariamma", nom: "Gramoune Mariamma Moutoussamy", genre: "f", age: 74, enfance: "enfance-tamoule-de-saint-andre", passe: "vendeur-de-bazar",
+  gramoune({ cle: "gramoune-mariamma", esprit: { regard: "vivre", religion: "hindouisme-tamoul", religions: [], pratique: true, ancrage: "", sensMoral: 4, autorite: 2 }, prejuges: [{ cible: "comoriens", poids: 1, dit: "« *Zot lé dèrnié arivé, zot i pran tout.* » (Les derniers arrivés prennent tout.)" }],
+    nom: "Gramoune Mariamma Moutoussamy", genre: "f", age: 74, enfance: "enfance-tamoule-de-saint-andre", passe: "vendeur-de-bazar",
     competences: { bricolage: 3, survie: 2, parole: 2, soins: 1 }, passions: { bricolage: 2 }, traits: ["soleil-dedans", "main-ouverte"],
     savoirs: ["bambou-vacoa", "jardin-creole", "zerbaz"],
     raison: "Son étal de paniers au bazar de Saint-Louis a brûlé avec le reste ; elle a gardé son couteau à vacoa et son sourire.",
     prix: "Elle ne mangera pas de bœuf, demande un coin pour sa lampe le vendredi, et donne tout ce qu'on lui confie.",
     notes: `Vannière malbare, elle a tressé des milliers de sacs et de chaises de vacoa pour les marchés du Sud. Elle dit des Comoriens qu'« *zot lé dèrnié arivé, zot i pran tout* » (les derniers arrivés prennent tout), puis partage son riz avec la première famille comorienne qui passe, et lui apprend à tresser. Elle chante en tamoul en travaillant ; personne ne comprend les paroles, tout le monde connaît l'air.` }),
-  gramoune({ cle: "gramoun-said", nom: "Gramoun Saïd Madi", genre: "m", age: 72, enfance: "enfance-a-mayotte", passe: "pecheur-de-saint-gilles",
+  gramoune({ cle: "gramoun-said", esprit: { regard: "refaire", religion: "islam", religions: [], pratique: true, ancrage: "", sensMoral: 4, autorite: 2 }, prejuges: [{ cible: "yabs", poids: 1, dit: "« *Bann yab i koné pa la mèr.* » (Les petits blancs des Hauts ne connaissent pas la mer.)" }],
+    nom: "Gramoun Saïd Madi", genre: "m", age: 72, enfance: "enfance-a-mayotte", passe: "pecheur-de-saint-gilles",
     competences: { survie: 3, parole: 2, discretion: 1, endurance: 1 }, passions: { survie: 2 }, traits: ["souffle-court", "creole-de-coeur"],
     savoirs: ["peche-lagon", "bambou-vacoa"],
     raison: "Il a ramené sa pirogue au port avec trois inconnus à bord le soir du jour zéro, et ne l'a plus quittée depuis.",

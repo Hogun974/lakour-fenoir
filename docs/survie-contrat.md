@@ -928,3 +928,33 @@ Création : regard, religion (plusieurs), ancrage, pratique, et la couleur et l'
 porte et ceux qui attendent. Fenêtre du MJ : onglet « Communauté » (chef, parole, entente, couleur réelle et réputation du groupe,
 membres, porte et vraie couleur des visiteurs, votes, acte, signe, tributs, séparation et fusion) ; onglet « Menaces » : la
 décision du chef de bande, avec « Accepter l'ultimatum » et « À la porte ».
+
+## 15. Jointures entre les quatre lots (fusion du 2026-11-13)
+
+Les quatre lots (§11 à §14) ont été écrits côte à côte ; leur fusion les branche là où chacun avait laissé un point d'accroche.
+Aucun chiffre nouveau : chaque jointure applique une règle qui existait déjà dans l'un des lots.
+
+- **Le marché pousse vers le rouge** (§12 -> §14, `scripts/api-marche.mjs`, par `porterActe` de l'API) : la rumeur
+  (`rumeur({ auteur })`) fait porter l'acte « colporter » à son colporteur ; un mensonge démenti (`dementir`) fait porter « mentir »
+  à son auteur ; un objet que le groupe disait sien, démenti par une marque ou des témoins (`reclamer`, `menteur: "possesseur"`),
+  fait porter « mentir » à qui le porte ; rompre la trêve (`rompreTreve({ par })`) fait porter « attaquer » (frapper dans le
+  périmètre des gens qui ne menaçaient pas) ; `troquer({ prejuge })` : qui joue d'un préjugé pour le prix porte « colporter ».
+  L'auteur peut être `"groupe"` (ses membres présents), l'id ou le nom d'un survivant ; un PNJ inconnu ou une faction ne portent
+  rien. Ces fonctions rendent en plus `sens` (le résultat de l'acte, ou `null`). Fenêtre du MJ, onglet Marché : « Qui joue d'un
+  préjugé pour le prix ».
+- **La fête des autres use les préjugés** (§11 -> §12) : `participer({ …, pnj })` : chaque préjugé des PNJ qui y voient le groupe
+  perd un cran, comme une fête partagée au camp (`feter({ invites })`) ; rend `prejuges`. Fenêtre du MJ : les PNJ invités d'une
+  fête au camp et ceux qui voient le groupe chez les autres.
+- **Les jeunes de 16 à 18 ans** (§11 -> §14) : `chef({ acteurId })` refuse un jeune (`peutEtreChef` ; erreur
+  `Erreurs.ChefJeune`) ; `voter` pèse chaque voix par `poidsVote` (un jeune : une demi-voix ; `resoudreVote(voix, poids)`, sans
+  poids : 1 par voix, comme avant) ; `crisesAutorite` ne désigne jamais un jeune comme successeur.
+- **Les gramounes et les gens du marché ont un esprit** (§13, §12 -> §14) : `esprit: { regard, religion, religions, pratique,
+  ancrage, sensMoral, autorite }` dans `contenu.gramounes` et `contenu.marchands`, écrit d'après leur histoire (jamais d'après leur
+  origine). `genererRecrue({ gramoune })` le rend dans le tirage, avec les **préjugés** de la gramoune (§12, tirés de ses notes ;
+  `creerSurvivant` les garde pour une recrue, jamais pour un survivant de joueur) ; `creerMarchand` le pose sur l'acteur.
+- **Les fêtes de chaque religion** (§11 -> §14) : l'islam fête le ramadan et l'Aïd el-Kebir ; l'hindouisme tamoul, aussi le Nouvel
+  An tamoul et la marche sur le feu (`religions[].fetes`) : un pratiquant y gagne 1 de moral de plus quand le groupe la fête.
+- **Collisions de noms réglées à la fusion** : `api.signe({ signe })` reste le signe du groupe (marché) ; lire un signe (§14)
+  devient `api.lireSigne()` ; l'erreur d'un groupe séparé inconnu devient `Erreurs.GroupeInconnu` (`Erreurs.CommunauteInconnue`
+  reste la communauté d'une fête, §11). Le gaz, les boutures et le biocarburant (§13) n'ont pas de cours au marché
+  (`RESSOURCES_HORS_COURS`) : ils ne se troquent pas au cours tant qu'on ne leur en a pas donné un.

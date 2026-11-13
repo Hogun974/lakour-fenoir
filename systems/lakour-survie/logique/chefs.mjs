@@ -17,6 +17,7 @@ import { tirerPoids, chance, entier } from "./hasard.mjs";
 import { message } from "./textes.mjs";
 import { espritDe } from "./esprit.mjs";
 import { bandeSensMoral } from "./moralite.mjs";
+import { peutEtreChef } from "./releve.mjs";
 
 export const DECISIONS_CHEF = ["attaquer", "negocier", "passer", "ultimatum", "rejoindre"];
 // Le sens moral d'un chef de bande quand sa faction n'en donne pas : d'après son attitude.
@@ -161,7 +162,9 @@ export function crisesAutorite({ membres = [], chefId = "", jour = 0, hasard = M
   let crise = "", successeur = "";
   if (a <= R.crise) {
     const restants = autres.filter(m => m.id !== deserteur);
-    successeur = [...restants].sort((x, y) => autoriteDe(y.system) - autoriteDe(x.system))[0]?.id ?? "";
+    // Un jeune de 16 à 18 ans ne peut pas mener (releve.mjs, peutEtreChef : lot « fetes ») : il n'est pas un successeur. Un âge
+    // inconnu (0 ou absent) n'en fait pas un jeune, comme pour l'enfant témoin (moralite.mjs, estEnfant).
+    successeur = [...restants].filter(m => !(Number(m.system?.age) > 0) || peutEtreChef(m.system, jour)).sort((x, y) => autoriteDe(y.system) - autoriteDe(x.system))[0]?.id ?? "";
     crise = vivants.length >= R.scissionMembres ? "scission" : successeur ? "renversement" : "";
   }
   return { deserteur, crise, successeur };

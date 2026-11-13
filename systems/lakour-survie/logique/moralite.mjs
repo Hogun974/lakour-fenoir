@@ -93,12 +93,16 @@ export function voixAuto(s = {}, sens = 0, { circonstances = false } = {}) {
 
 export const VOIX = ["pour", "contre", "abstention"];
 // voix : { acteurId: "pour" | "contre" | "abstention" } -> { pour, contre, abstention, total, majorite: "pour" | "contre" | "egalite", part }
-export function resoudreVote(voix = {}) {
-  const v = Object.values(voix).filter(x => VOIX.includes(x));
-  const pour = v.filter(x => x === "pour").length, contre = v.filter(x => x === "contre").length;
+// poids (facultatif) : { acteurId: poids } ; un jeune de 16 à 18 ans vote à moitié (releve.mjs, poidsVote : lot « fetes »). Sans
+// poids, chaque voix compte 1 (les comptes sont alors des entiers, comme avant).
+export function resoudreVote(voix = {}, poids = {}) {
+  const v = Object.entries(voix).filter(([, x]) => VOIX.includes(x));
+  const p = id => (poids && Number.isFinite(Number(poids[id])) ? Math.max(0, Number(poids[id])) : 1);
+  const somme = sorte => v.filter(([, x]) => x === sorte).reduce((s, [id]) => s + p(id), 0);
+  const pour = somme("pour"), contre = somme("contre"), abstention = somme("abstention");
   const majorite = pour > contre ? "pour" : contre > pour ? "contre" : "egalite";
   const exprimes = pour + contre;
-  return { pour, contre, abstention: v.length - exprimes, total: v.length, majorite, part: exprimes ? Math.max(pour, contre) / exprimes : 0 };
+  return { pour, contre, abstention, total: pour + contre + abstention, majorite, part: exprimes ? Math.max(pour, contre) / exprimes : 0 };
 }
 
 // Un acte décidé par le groupe. membres : [{ id, system }] ; voix (facultatif) : { id: "pour" | "contre" | "abstention" } sur la

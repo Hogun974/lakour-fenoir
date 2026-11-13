@@ -26,12 +26,14 @@ export const RELIGIONS = [
     description: `La foi de la plupart des cases de l'île : la messe du dimanche, les processions, la Vierge noire de la Rivière des Pluies et saint Expédit, dont les petites chapelles rouges bordent encore les routes. Après le jour zéro, on prie dans les églises fermées, on allume des bougies devant les statues, et chacun se demande si c'est la fin des temps ou seulement la fin d'un monde.` }),
   religion({ cle: "hindouisme-tamoul", nom: "Hindouisme tamoul", poids: 1.5,
     affinites: { "enfance-tamoule-de-saint-andre": 6, "enfant-de-planteur-de-l-est": 1.8, "enfance-a-maurice": 2, "enfance-zarab-de-saint-pierre": 0.1, "enfance-a-mayotte": 0.1, "enfance-comorienne-du-chaudron": 0.1, "enfance-zoreil": 0.2 },
-    fetes: ["dipavali", "cavadee"],
+    // Le Nouvel An tamoul et la marche sur le feu : fêtes du lot « fetes », rattachées à la fusion des lots.
+    fetes: ["dipavali", "cavadee", "nouvel-an-tamoul", "marche-sur-le-feu"],
     observance: { besoin: "calme", texte: "la lampe allumée le soir, une offrande de fleurs ou de riz, le carême avant les fêtes" },
     description: `La religion des Malbars, venue avec les engagés du Sud de l'Inde : les temples aux couleurs vives, les fêtes de la lumière, le feu sur lequel on marche, la Cavadee et ses piercings, le carême qu'on tient avant. Ceux qui ne la connaissent pas parlent de « services » et de sorcellerie ; ceux qui la pratiquent allument une lampe chaque soir et ne demandent à personne de comprendre.` }),
   religion({ cle: "islam", nom: "Islam", poids: 0.6,
     affinites: { "enfance-zarab-de-saint-pierre": 12, "enfance-a-mayotte": 12, "enfance-comorienne-du-chaudron": 12, "enfance-a-madagascar": 0.6, "enfance-tamoule-de-saint-andre": 0.1 },
-    fetes: [],
+    // Le ramadan et l'Aïd el-Kebir : fêtes du lot « fetes », rattachées à la fusion des lots.
+    fetes: ["ramadan", "aid-el-kebir"],
     observance: { besoin: "calme", texte: "les cinq prières, l'eau propre des ablutions, le jeûne du ramadan quand il revient" },
     description: `La foi des Z'arabes de Saint-Denis et de Saint-Pierre, dont la mosquée Noor-e-Islam est la plus ancienne de France, et celle des Comoriens et des Mahorais arrivés plus tard. On prie cinq fois par jour, même dans un abri de tôle, et la question de l'eau propre pour les ablutions devient une question de survie.` }),
   religion({ cle: "culte-chinois", nom: "Culte des ancêtres et temple chinois", poids: 0.4,

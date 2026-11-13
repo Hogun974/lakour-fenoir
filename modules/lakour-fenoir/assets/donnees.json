@@ -17164,7 +17164,9 @@
    },
    "fetes": [
     "dipavali",
-    "cavadee"
+    "cavadee",
+    "nouvel-an-tamoul",
+    "marche-sur-le-feu"
    ],
    "poids": 1.5,
    "affinites": {
@@ -17185,7 +17187,10 @@
     "besoin": "calme",
     "texte": "les cinq prières, l'eau propre des ablutions, le jeûne du ramadan quand il revient"
    },
-   "fetes": [],
+   "fetes": [
+    "ramadan",
+    "aid-el-kebir"
+   ],
    "poids": 0.6,
    "affinites": {
     "enfance-zarab-de-saint-pierre": 12,
@@ -18977,7 +18982,16 @@
    ],
    "onDit": "« *Sinwa i fé crédi k'a son moun.* » (Le Chinois ne fait crédit qu'aux siens.)",
    "dementi": "Son carnet est ouvert à quiconque tient parole : il a nourri tout le quartier, et il y a trois noms chinois sur deux cents.",
-   "evenement": "marche-le-carnet-ouvert"
+   "evenement": "marche-le-carnet-ouvert",
+   "esprit": {
+    "regard": "refaire",
+    "religion": "culte-chinois",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 2,
+    "autorite": 3
+   }
   },
   {
    "cle": "thomas-lefevre",
@@ -18996,7 +19010,16 @@
    ],
    "onDit": "« *Zorey i koné rien fé isi.* » (Le Zoreil ne sait rien faire ici.)",
    "dementi": "C'est lui qui répare les radios de tous les bastions : sans lui, l'île ne s'entendrait plus.",
-   "evenement": "marche-la-radio-du-zoreil"
+   "evenement": "marche-la-radio-du-zoreil",
+   "esprit": {
+    "regard": "vivre",
+    "religion": "aucune",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "musique",
+    "sensMoral": 1,
+    "autorite": 2
+   }
   },
   {
    "cle": "jean-marie-dijoux",
@@ -19015,7 +19038,16 @@
    ],
    "onDit": "« *Yab i désann jamé dann ba.* » (Le Yab ne descend jamais de ses Hauts.)",
    "dementi": "Il descend chaque semaine, quatre heures de route à pied, avec les meilleures lentilles de l'île.",
-   "evenement": "marche-les-lentilles-du-yab"
+   "evenement": "marche-les-lentilles-du-yab",
+   "esprit": {
+    "regard": "epreuve",
+    "religion": "catholique",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 0,
+    "autorite": 2
+   }
   },
   {
    "cle": "ismael-omarjee",
@@ -19034,7 +19066,16 @@
    ],
    "onDit": "Le commerçant z'arabe est « dur en affaires » : il ne lâche jamais une part.",
    "dementi": "Après le cyclone, il raye de son carnet les dettes de ceux qui ont tout perdu, sans une phrase.",
-   "evenement": "marche-les-dettes-effacees"
+   "evenement": "marche-les-dettes-effacees",
+   "esprit": {
+    "regard": "refaire",
+    "religion": "islam",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 1,
+    "autorite": 3
+   }
   },
   {
    "cle": "madame-moutoussamy",
@@ -19053,7 +19094,16 @@
    ],
    "onDit": "On en a peur, « à cause du service » : elle ferait des choses la nuit.",
    "dementi": "Elle soigne tout le marché, sans demander à personne qui croit en quoi.",
-   "evenement": "marche-la-tisaneuse"
+   "evenement": "marche-la-tisaneuse",
+   "esprit": {
+    "regard": "epreuve",
+    "religion": "hindouisme-tamoul",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 4,
+    "autorite": 3
+   }
   },
   {
    "cle": "soilihi-ahamada",
@@ -19072,7 +19122,16 @@
    ],
    "onDit": "Les derniers arrivés, comoriens et mahorais, sont « accusés de tout » : au moindre vol, on les regarde.",
    "dementi": "C'est lui qui rapporte au conseil l'objet marqué que tout le monde cherchait.",
-   "evenement": "marche-l-objet-rapporte"
+   "evenement": "marche-l-objet-rapporte",
+   "esprit": {
+    "regard": "vivre",
+    "religion": "islam",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 1,
+    "autorite": 2
+   }
   },
   {
    "cle": "rosaire-fontaine",
@@ -19091,7 +19150,19 @@
    ],
    "onDit": "La vieille rengaine raciste sur les Cafres et la paresse, dans la bouche de qui veut la dire.",
    "dementi": "Celui qui la répète est contredit devant tous : le porteur qui ravitaille le cirque à dos d'homme est cafre.",
-   "evenement": "marche-le-porteur-du-cirque"
+   "evenement": "marche-le-porteur-du-cirque",
+   "esprit": {
+    "regard": "refaire",
+    "religion": "plusieurs",
+    "religions": [
+     "catholique",
+     "ancetres-malgaches"
+    ],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 3,
+    "autorite": 3
+   }
   },
   {
    "cle": "armand-de-sainte-croix",
@@ -19110,7 +19181,16 @@
    ],
    "onDit": "Le gros blanc « *i gard la tèr* » (il garde la terre).",
    "dementi": "Le terrain du marché, c'est lui qui l'a ouvert à tous, et il n'en demande rien.",
-   "evenement": "marche-le-terrain-ouvert"
+   "evenement": "marche-le-terrain-ouvert",
+   "esprit": {
+    "regard": "epreuve",
+    "religion": "catholique",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": -1,
+    "autorite": 3
+   }
   },
   {
    "cle": "lalao-rasoanaivo",
@@ -19129,7 +19209,16 @@
    ],
    "onDit": "« *Bann malgas i vol nout travay.* » (Les Malgaches nous volent le travail.)",
    "dementi": "Le travail qu'elle fait, personne ne voulait le faire : tenir un cours juste, le même pour tous, et peser deux fois devant tout le monde.",
-   "evenement": "marche-le-cours-s-affole"
+   "evenement": "marche-le-cours-s-affole",
+   "esprit": {
+    "regard": "refaire",
+    "religion": "evangelique",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 3,
+    "autorite": 4
+   }
   },
   {
    "cle": "gerard-payet",
@@ -19148,7 +19237,16 @@
    ],
    "onDit": "Le président « fait passer ses amis d'abord ».",
    "dementi": "Au premier litige, il donne raison à un inconnu contre son propre cousin ; et quand l'objet marqué revient, il reconnaît devant le conseil qu'il s'était trompé sur les derniers arrivés.",
-   "evenement": "marche-le-litige"
+   "evenement": "marche-le-litige",
+   "esprit": {
+    "regard": "refaire",
+    "religion": "aucune",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "routine",
+    "sensMoral": 3,
+    "autorite": 4
+   }
   }
  ],
  "marches": [
@@ -19368,6 +19466,25 @@
    },
    "confiance": 1,
    "statut": "recrue",
+   "esprit": {
+    "regard": "epreuve",
+    "religion": "plusieurs",
+    "religions": [
+     "catholique",
+     "culte-chinois"
+    ],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 3,
+    "autorite": 3
+   },
+   "prejuges": [
+    {
+     "cible": "zoreils",
+     "poids": 1,
+     "dit": "« *Zot i koné pa nout rimèd.* » (Ils ne connaissent pas nos remèdes.)"
+    }
+   ],
    "cle": "gramoune-zelie",
    "nom": "Gramoune Zélie Ah-Kiem",
    "genre": "f",
@@ -19403,6 +19520,22 @@
    },
    "confiance": 1,
    "statut": "recrue",
+   "esprit": {
+    "regard": "refaire",
+    "religion": "catholique",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 1,
+    "autorite": 3
+   },
+   "prejuges": [
+    {
+     "cible": "malbars",
+     "poids": 1,
+     "dit": "« *Bann malbar i fé sèrvis.* » (Les Malbars font des cérémonies.)"
+    }
+   ],
    "cle": "gramoun-ignace",
    "nom": "Gramoun Ignace Técher",
    "genre": "m",
@@ -19438,6 +19571,22 @@
    },
    "confiance": 1,
    "statut": "recrue",
+   "esprit": {
+    "regard": "vivre",
+    "religion": "hindouisme-tamoul",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 4,
+    "autorite": 2
+   },
+   "prejuges": [
+    {
+     "cible": "comoriens",
+     "poids": 1,
+     "dit": "« *Zot lé dèrnié arivé, zot i pran tout.* » (Les derniers arrivés prennent tout.)"
+    }
+   ],
    "cle": "gramoune-mariamma",
    "nom": "Gramoune Mariamma Moutoussamy",
    "genre": "f",
@@ -19473,6 +19622,22 @@
    },
    "confiance": 1,
    "statut": "recrue",
+   "esprit": {
+    "regard": "refaire",
+    "religion": "islam",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 4,
+    "autorite": 2
+   },
+   "prejuges": [
+    {
+     "cible": "yabs",
+     "poids": 1,
+     "dit": "« *Bann yab i koné pa la mèr.* » (Les petits blancs des Hauts ne connaissent pas la mer.)"
+    }
+   ],
    "cle": "gramoun-said",
    "nom": "Gramoun Saïd Madi",
    "genre": "m",

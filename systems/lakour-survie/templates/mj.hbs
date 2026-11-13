@@ -34,6 +34,7 @@
       <label>{{localize "LAKOUR_SURVIE.MJ.Option"}} <select name="option">{{#each optionsFete}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
       <label>{{localize "LAKOUR_SURVIE.MJ.Pour"}} <select name="pour" multiple>{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
       <label>{{localize "LAKOUR_SURVIE.MJ.Avec"}} <select name="avec">{{#each factions}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.MJ.Invites"}} <select name="invites" multiple>{{#each pnjHors}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
       <button type="button" data-action="executer"><i class="fa-solid fa-cake-candles"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.feter"}}</button>
     </div>
     {{#if lune}}
@@ -161,6 +162,7 @@
         <label>{{localize "LAKOUR_SURVIE.MJ.Communaute"}} <select name="communaute">{{#each communautes}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
         <label>{{localize "LAKOUR_SURVIE.MJ.Faction"}} <select name="faction">{{#each factions}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
         <label>{{localize "LAKOUR_SURVIE.MJ.Qui"}} <select name="membres" multiple>{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.MJ.PnjTemoins"}} <select name="pnj" multiple>{{#each pnjHors}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
         <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
       </div>
       <div class="survie-formulaire" data-forme="voeu">
@@ -409,6 +411,7 @@
         <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Cibles"}} <select name="cibles" multiple>{{#each marche.cibles}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
         <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Faction"}} <select name="faction">{{#each marche.factions}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
         <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Marche"}} <select name="marche">{{#each marche.choixMarches}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Prejuge"}} <select name="prejuge">{{#each marche.porteurs}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
         <label class="survie-case"><input type="checkbox" name="accepter"> {{localize "LAKOUR_SURVIE.Marche.MJ.Accepter"}}</label>
         <button type="button" data-action="executer"><i class="fa-solid fa-calculator"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Evaluer"}}</button>
       </div>

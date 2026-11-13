@@ -34,7 +34,7 @@ test("gens du marché : toutes les communautés, aucun rôle réservé ni en dou
     }
     assert.ok(m.onDit && m.dementi && m.apparence, m.cle);
     // Aucune règle attachée à une origine : un marchand n'a pas d'effet chiffré.
-    for (const k of Object.keys(m)) assert.ok(["cle", "nom", "communaute", "role", "region", "apparence", "description", "prejuges", "onDit", "dementi", "evenement"].includes(k), `${m.cle} : champ ${k}`);
+    for (const k of Object.keys(m)) assert.ok(["cle", "nom", "communaute", "role", "region", "apparence", "description", "prejuges", "onDit", "dementi", "evenement", "esprit"].includes(k), `${m.cle} : champ ${k}`);
   }
   // Les registres le portent tel quel.
   assert.equal(D.marchands.length, MARCHANDS.length);
