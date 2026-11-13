@@ -18804,7 +18804,7 @@
    },
    "gain": "Un mois de discipline et de cohésion : le moral de chacun remonte plus haut pendant tout le mois.",
    "cout": "On ne mange et ne boit qu'à la nuit : cuisine et lumière nocturnes (visibilité +1 pendant le mois).",
-   "image": ""
+   "image": "modules/lakour-fenoir/assets/fetes/ramadan.jpg"
   },
   {
    "cle": "aid-el-kebir",
@@ -18833,7 +18833,7 @@
    },
    "gain": "La part donnée aux démunis bâtit la réputation de l'abri (renom +1, deux liens de plus avec l'abri à qui l'on porte une part) ; des réfugiés viendront ; +1 de moral à chacun.",
    "cout": "Un cabri de l'élevage (six rations).",
-   "image": ""
+   "image": "modules/lakour-fenoir/assets/fetes/aid-el-kebir.jpg"
   },
   {
    "cle": "nouvel-an-tamoul",
@@ -18862,7 +18862,7 @@
    },
    "gain": "Fin de la saison des cyclones, signal des semis : deux graines mises de côté, et deux de plus en les échangeant avec un abri voisin (un lien de plus avec lui) ; +1 de moral à chacun.",
    "cout": "Rien d'autre que d'oser aller voir les voisins.",
-   "image": ""
+   "image": "modules/lakour-fenoir/assets/fetes/nouvel-an-tamoul.jpg"
   },
   {
    "cle": "marche-sur-le-feu",
@@ -18894,7 +18894,7 @@
    },
    "gain": "Du sang-froid face aux hordes : deux semaines où la défense de l'abri a un dé de plus contre une horde.",
    "cout": "Beaucoup de bois (quatre matériaux) ; une lueur visible de loin (visibilité +3 cette nuit).",
-   "image": ""
+   "image": "modules/lakour-fenoir/assets/fetes/marche-sur-le-feu.jpg"
   }
  ],
  "communautes": [

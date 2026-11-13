@@ -5,6 +5,13 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Système 0.2.2 · Contenu 0.3.2 — 14 novembre 2026
+
+- **Quatre fêtes illustrées**, peintes comme les autres (générées localement par IA, FLUX.2 klein 9B) : la rupture du jeûne du
+  ramadan, le partage de l'Aïd el-Kebir avec les démunis et les réfugiés, le kolam et l'échange de graines du Nouvel An tamoul,
+  la marche sur le feu d'un temple tamoul. Chaque fois, la communauté de la fête au premier plan et des voisins d'autres
+  origines autour. Le système ne change pas, son numéro suit celui de la publication.
+
 ## Système 0.2.1 · Contenu 0.3.1 — 13 novembre 2026
 
 Rééquilibrage après les quatre chantiers de la 0.2.0, mesuré sur 300 parties par cas et trois graines, et sur 240 parties d'un an.

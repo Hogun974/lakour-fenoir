@@ -355,8 +355,8 @@ test("fêtes au registre : image (si peinte), gain et coût de chaque fête, auc
   const sansTexte = copie();
   sansTexte.fetes[0].gain = "";
   attendre(verifierDonnees(sansTexte), /gain ou coût sans texte/);
-  // Les quatre fêtes du lot « fetes » : sans illustration (à peindre), effets propres.
-  for (const k of IDS_SUR_DEMANDE) assert.equal(D.fetes.find(f => f.cle === k)?.image, "", k);
+  // Les quatre fêtes du lot « fetes » : peintes depuis la 0.3.2, effets propres.
+  for (const k of IDS_SUR_DEMANDE) assert.equal(D.fetes.find(f => f.cle === k)?.image, `modules/${MODULE}/assets/fetes/${k}.jpg`, k);
   const noel = D.fetes.find(f => f.cle === "noel").effet;
   assert.equal(noel.rations, 2, "Noël : un vrai surplus");
   assert.ok(noel.attache);
@@ -423,7 +423,7 @@ test("créatures au registre (famille lue par la logique du système) et bras de
 
 test("module.json : compendiums, langues, dossier de compendiums", () => {
   const m = JSON.parse(readFileSync(new URL("module.json", RACINE), "utf8"));
-  assert.equal(m.id, MODULE); assert.equal(m.version, "0.3.1");
+  assert.equal(m.id, MODULE); assert.equal(m.version, "0.3.2");
   assert.deepEqual(m.compatibility, { minimum: "14", verified: "14.370" });
   assert.equal(m.relationships.systems[0].id, "lakour-survie");
   assert.deepEqual(m.esmodules, ["scripts/main.js"]);

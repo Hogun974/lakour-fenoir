@@ -27,7 +27,8 @@ export const imageDeFete = cle => `${DOSSIER_IMAGES_FETES}/${cle}.jpg`;
 // L'effet d'avant le lot « fetes » (et celui d'une fête sans effet propre) : +1 moral, une ration de plus par personne, du bruit.
 export const EFFET_FETE = { moral: 1, rations: 1, bruit: 2 };
 // Les fêtes qui ont leur illustration (assets/fetes/<cle>.jpg).
-export const IMAGES_FETES = ["noel", "nouvel-an", "paques", "halloween", "musique", "liberte", "fete-nationale", "dipavali", "nouvel-an-chinois", "cavadee", "letchis"];
+export const IMAGES_FETES = ["noel", "nouvel-an", "paques", "halloween", "musique", "liberte", "fete-nationale", "dipavali", "nouvel-an-chinois", "cavadee", "letchis",
+  "ramadan", "aid-el-kebir", "nouvel-an-tamoul", "marche-sur-le-feu"];
 export const imageSiPeinte = cle => (IMAGES_FETES.includes(cle) ? imageDeFete(cle) : "");
 export const ID_MOTEUR = "lakour-mj-ia";
 
