@@ -11,7 +11,8 @@
 //   d'état (survivant.mjs, malusEtat).
 //
 // Nombres retenus (risque du jour = risque × facteurs) :
-// - eau : × 1 si l'eau de l'abri n'est pas traitée, × 0,2 si elle l'est (filtre, réseau public encore là) ;
+// - eau : × 1 si l'eau de l'abri n'est pas traitée, × 0,2 si elle l'est (filtre, réseau public encore là) ; × 2 non traitée
+//   quand elle est douteuse (les fuites d'un cyclone ont rempli la citerne : eauDouteuse, lot « savoirs ») ;
 // - moustiques : × 1 en saison des pluies dans les Bas (< 800 m pour les moustiques), × 0,3 en saison des pluies plus haut,
 //   × 0,1 en saison sèche ;
 // - ravine (leptospirose) : × 1 en saison des pluies, × 0,3 sinon, × 0,5 si l'eau est traitée ;
@@ -25,7 +26,7 @@ import { message } from "./textes.mjs";
 
 export const ALTITUDE_MOUSTIQUES = 800;
 export const FACTEURS_MALADIES = {
-  eau: { traitee: 0.2, brute: 1 },
+  eau: { traitee: 0.2, brute: 1, douteuse: 2 },
   moustiques: { pluiesBas: 1, pluiesHauts: 0.3, seche: 0.1 },
   ravine: { pluies: 1, seche: 0.3, traitee: 0.5 },
   chaleur: { pluiesBas: 1, autre: 0.2 },
@@ -35,12 +36,12 @@ export const FACTEURS_MALADIES = {
 };
 
 // Facteur de risque d'une affliction selon les conditions de vie.
-// conditions : { saison, altitude, eauTraitee, infirmerie }
-export function facteurRisque(def, { saison = "pluies", altitude = 0, eauTraitee = false, infirmerie = false, hygiene = false } = {}) {
+// conditions : { saison, altitude, eauTraitee, infirmerie, hygiene, eauDouteuse }
+export function facteurRisque(def, { saison = "pluies", altitude = 0, eauTraitee = false, infirmerie = false, hygiene = false, eauDouteuse = false } = {}) {
   const F = FACTEURS_MALADIES;
   let f;
   switch (def?.declencheur) {
-    case "eau": f = eauTraitee ? F.eau.traitee : F.eau.brute; break;
+    case "eau": f = eauTraitee ? F.eau.traitee : eauDouteuse ? F.eau.douteuse : F.eau.brute; break;
     case "moustiques": f = saison === "pluies" ? (Number(altitude) < ALTITUDE_MOUSTIQUES ? F.moustiques.pluiesBas : F.moustiques.pluiesHauts) : F.moustiques.seche; break;
     case "ravine": f = (saison === "pluies" ? F.ravine.pluies : F.ravine.seche) * (eauTraitee ? F.ravine.traitee : 1); break;
     case "chaleur": f = saison === "pluies" && Number(altitude) < ALTITUDE_BAS ? F.chaleur.pluiesBas : F.chaleur.autre; break;

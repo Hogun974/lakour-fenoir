@@ -1,0 +1,43 @@
+{
+  "_id": "EQKtEz46LIaK1Rdx",
+  "_key": "!items!EQKtEz46LIaK1Rdx",
+  "name": "Natte de vacoa",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "natte-de-vacoa",
+    "description": "<p>Des lanières de vacoa tressées à plat, bord replié : une natte pour dormir, sécher, s'asseoir.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "bambou-vacoa"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "natte-de-vacoa",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "natte-de-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

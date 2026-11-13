@@ -93,7 +93,8 @@
         "cle": "radio",
         "description": "<p>Monter une antenne, trouver les fréquences, émettre sans se faire repérer, réparer un poste, parler en code.</p>",
         "apprentissage": "<p>Un passé de marin, de gendarme, de pompier ou de radioamateur ; un manuel de radioamateur ; un opérateur de la Garnison du Quai.</p>",
-        "effets": "<p>Ouvre le poste radio niveau 2. Les renseignements obtenus par radio sont plus sûrs (le MJ précise ce qui est vrai).</p>"
+        "effets": "<p>Ouvre le poste radio niveau 2. Les renseignements obtenus par radio sont plus sûrs (le MJ précise ce qui est vrai).</p>",
+        "arbre": "moderne"
       },
       "effects": [],
       "folder": null,

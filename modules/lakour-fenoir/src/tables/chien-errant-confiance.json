@@ -1,0 +1,147 @@
+{
+  "_id": "CVzybRUPbVjBHSsl",
+  "_key": "!tables!CVzybRUPbVjBHSsl",
+  "name": "Un chien errant, veillée après veillée",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce que fait le chien errant pendant qu'on gagne sa confiance.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chien-errant-confiance"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "HwSaQR4ogFSLQ4zW",
+      "_key": "!tables.results!CVzybRUPbVjBHSsl.HwSaQR4ogFSLQ4zW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il regarde de loin, couché à l'ombre d'une épave, les côtes saillantes. Il s'enfuit dès qu'on se lève.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pwhFFfAs4UFb3AS4",
+      "_key": "!tables.results!CVzybRUPbVjBHSsl.pwhFFfAs4UFb3AS4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il s'approche de la nourriture posée, attend qu'on recule de trois pas, mange, repart.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xPHJBlX3JCXX6JOL",
+      "_key": "!tables.results!CVzybRUPbVjBHSsl.xPHJBlX3JCXX6JOL",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il grogne, babines retroussées, quand on tend la main : trop tôt.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "JLDrVPe00nzT4Scn",
+      "_key": "!tables.results!CVzybRUPbVjBHSsl.JLDrVPe00nzT4Scn",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il dort à l'entrée de la cour cette nuit, et aboie une fois quand quelque chose passe sur la route.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wAraHtmJXmV5JfW3",
+      "_key": "!tables.results!CVzybRUPbVjBHSsl.wAraHtmJXmV5JfW3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il accepte la main sur la tête, en tremblant. Il a un vieux collier, avec un prénom à moitié effacé.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0APmR76JqpXMMG3Q",
+      "_key": "!tables.results!CVzybRUPbVjBHSsl.0APmR76JqpXMMG3Q",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il suit quelqu'un pendant une fouille, à dix mètres, et grogne vers une porte : il y avait un Livide derrière.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Wvn4JrIC5spKODaq",
+      "_key": "!tables.results!CVzybRUPbVjBHSsl.Wvn4JrIC5spKODaq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une meute passe au loin : il hésite, regarde la meute, regarde le groupe. Il reste.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "J7j5MVCmo7Js1sJQ",
+      "_key": "!tables.results!CVzybRUPbVjBHSsl.J7j5MVCmo7Js1sJQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il mord, de peur, quand on le surprend dans son sommeil (1 blessure, pas de Gris : c'est un chien). Tout est à recommencer, ou presque.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

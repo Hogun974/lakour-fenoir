@@ -1,0 +1,38 @@
+{
+  "_id": "TDs38uzp1fwj7esY",
+  "_key": "!items!TDs38uzp1fwj7esY",
+  "name": "Pinces à linge en bois fendu",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pinces-a-linge-en-bois",
+    "categorie": "vie",
+    "description": "<p>Un bout de bois de goyavier fendu, une ligature de fil : le linge sèche au vent au lieu de traîner. Trois fois rien, et la cour ressemble de nouveau à une cour.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 0.5
+    },
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pinces-a-linge-en-bois"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "z5bmjfxQ48deOIP8",
+  "_key": "!items!z5bmjfxQ48deOIP8",
+  "name": "Cordes de choka",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "cordes-de-choka",
+    "description": "<p>Les feuilles de choka rouies dans l'eau, battues pour en tirer la fibre, tordues en cordes.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "cordes-de-choka",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cordes-de-choka"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

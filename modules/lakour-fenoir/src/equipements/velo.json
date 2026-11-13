@@ -24,7 +24,11 @@
         "route",
         "piste"
       ],
-      "bruit": 0
+      "bruit": 0,
+      "pente": {
+        "descente": 0.6,
+        "montee": 2.5
+      }
     },
     "effets": null,
     "marque": ""

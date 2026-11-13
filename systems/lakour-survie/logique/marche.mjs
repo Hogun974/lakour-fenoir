@@ -18,8 +18,10 @@ import { normaliserStocks, retirerStocks, ajouterStocks } from "./ressources.mjs
 import { dateDuJour } from "./temps.mjs";
 
 export const STADES_MARCHE = ["troc", "boutique", "forain", "foire"];
-// Ce qui se troque : tout sauf l'énergie (des kWh dans des batteries ne passent pas de main en main).
-export const RESSOURCES_TROC = RESSOURCES.filter(r => r !== "energie");
+// Ce qui se troque : tout sauf l'énergie (des kWh dans des batteries ne passent pas de main en main). Le gaz, les boutures et le
+// biocarburant (lot « savoirs ») n'ont pas encore de cours : ils restent hors du troc tant qu'on ne leur en a pas donné un.
+export const RESSOURCES_HORS_COURS = ["energie", "gaz", "boutures", "biocarburant"];
+export const RESSOURCES_TROC = RESSOURCES.filter(r => !RESSOURCES_HORS_COURS.includes(r));
 export const PORTEES_RUMEUR = ["quartier", "region", "voisins", "ile"];
 export const PREUVES = ["marque", "temoin", "fait"];
 

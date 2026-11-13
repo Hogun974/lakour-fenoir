@@ -1,0 +1,30 @@
+{
+  "_id": "WGMfp7aYgJvA0KIt",
+  "_key": "!items!WGMfp7aYgJvA0KIt",
+  "name": "Jardin créole",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "jardin-creole",
+    "description": "<p>Le jardin de la case, où tout pousse ensemble : bananier pour l'ombre, chouchou sur la treille, songe dans le mouillé, manioc et patate dans le sec, brèdes au pied, zerbaz le long de la clôture. On bouture plus qu'on ne sème, on paille, on plante avec la lune, et le jardin se garde des mois sans personne.</p>",
+    "apprentissage": "<p>Une gramoune qui a toujours eu son jardin ; une famille des îlets ; un cahier dicté ; une saison à bouturer et à repiquer ce qu'on a pris dans les jardins abandonnés.</p>",
+    "effets": "<p>Ouvre le jardin créole niveau 2. Les boutures prises dans les jardins des cases reprennent mieux (le MJ peut en rendre une partie qui aurait fané). +1 dé aux tests de survie pour cultiver sans graines achetées.</p>",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "jardin-creole"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -19,7 +19,7 @@ import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, realpathSync,
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  ATTITUDES, CATEGORIES, CATEGORIES_EQUIPEMENT, COMPETENCES, EAUX_SITE, EQUILIBRE, INCAPACITES, MODULE, NATURE, PHASES, RESEAUX, RESSOURCES,
+  ARBRES, ATTITUDES, CATEGORIES, CATEGORIES_EQUIPEMENT, COUT_ILE, COMPETENCES, EAUX_SITE, EQUILIBRE, INCAPACITES, MODULE, NATURE, PHASES, RESEAUX, RESSOURCES,
   SAISONS, STOCKS, TACHES, TERRAINS, TRANSPORTS, TYPES_EVENEMENT, TYPES_SITE, ZONES, sansBalises
 } from "../modules/lakour-fenoir/contenu/aides.mjs";
 import { DOCUMENTS, donnees as donneesContenu } from "../modules/lakour-fenoir/contenu/index.mjs";
@@ -343,7 +343,7 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     i.niveaux.forEach((n, k) => {
       const ici = `${ou} niveau ${k + 1}`;
       if (!(n.cout.travail > 0)) e(`${ici} : travail manquant`);
-      for (const [r, q] of Object.entries(n.cout)) if (r !== "travail" && (!RESSOURCES.includes(r) || !(q >= 0))) e(`${ici} : coût ${r}`);
+      for (const [r, q] of Object.entries(n.cout)) if (r !== "travail" && r !== COUT_ILE && (!STOCKS.includes(r) || !(q >= 0))) e(`${ici} : coût ${r}`);
       aSavoirs(ici, n.requiert.savoirs);
       for (const x of n.requiert.site.eau) if (!EAUX_SITE.includes(x)) e(`${ici} : eau de site « ${x} »`);
       for (const r of n.requiert.installations) {
@@ -533,6 +533,28 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     if (!c.zones?.length || c.zones.some(z => !ZONES.includes(z)) || !c.phases?.length || c.phases.some(p => !PHASES.includes(p))) e(`créature ${c.cle} : zones ou phases`);
   }
   for (const b of index.bestiaire.values()) if (b.categorie !== "humain" && !creatures.has(b.cle)) e(`créatures : ${b.cle} absente`);
+
+  // Lot « savoirs » : arbres des savoirs et des installations, sœurs, dépôts du cyclone, gramounes.
+  for (const sv of savoirs.values()) if (sv.arbre && !ARBRES.includes(sv.arbre)) e(`savoir ${sv.cle} : arbre « ${sv.arbre} »`);
+  for (const k of ARBRES) if (![...savoirs.values()].some(sv => sv.arbre === k)) e(`aucun savoir de l'arbre ${k}`);
+  for (const i of installations.values()) {
+    if (i.arbre && !ARBRES.includes(i.arbre)) e(`installation ${i.cle} : arbre « ${i.arbre} »`);
+    if (i.role && i.role !== i.cle && ![...installations.values()].some(x => x !== i && (x.role || x.cle) === i.role)) e(`installation ${i.cle} : rôle « ${i.role} » sans sœur`);
+    if (i.arbre === "lontan" && i.role && i.niveaux.some(n => (n.cout.materiaux ?? 0) + (n.cout.pieces ?? 0) > 0)) e(`installation ${i.cle} : une installation lontan ne coûte ni matériaux ni pièces fouillés`);
+  }
+  for (const x of d.depotsCyclone ?? []) {
+    if (!x.cle || !x.nom || !sansBalises(x.texte) || !(x.poids > 0)) e(`dépôt du cyclone ${x.cle} : clé, nom, texte ou poids`);
+    for (const r of Object.keys(x.stocks ?? {})) if (!STOCKS.includes(r)) e(`dépôt du cyclone ${x.cle} : stock « ${r} »`);
+    if (x.menace && !(x.menace.force >= 1)) e(`dépôt du cyclone ${x.cle} : menace sans force`);
+  }
+  for (const g of d.gramounes ?? []) {
+    const ou = `gramoune ${g.cle}`;
+    if (!enfances.has(g.enfance) || !passes.has(g.passe)) e(`${ou} : enfance ou passé inconnu`);
+    for (const t of g.traits ?? []) if (!traits.has(t)) e(`${ou} : trait inconnu « ${t} »`);
+    aSavoirs(ou, g.savoirs); aCompetences(ou, g.competences); aIncapacites(ou, g.incapacites);
+    if (!(g.age >= 60) || !(g.savoirs ?? []).some(sv => savoirs.get(sv)?.arbre === "lontan")) e(`${ou} : une gramoune a 60 ans ou plus et un savoir lontan`);
+    if (!["f", "m"].includes(g.genre) || !g.nom || !sansBalises(g.notes) || !g.raison || !g.prix) e(`${ou} : genre, nom, notes, raison ou prix`);
+  }
 
   // Aucun terme interdit dans tout le registre.
   const interdits = termesInterdits(JSON.stringify(d));

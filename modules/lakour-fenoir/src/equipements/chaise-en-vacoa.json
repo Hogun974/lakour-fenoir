@@ -1,0 +1,38 @@
+{
+  "_id": "mS3PJGEMIO3QPtTV",
+  "_key": "!items!mS3PJGEMIO3QPtTV",
+  "name": "Chaise en vacoa",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "chaise-en-vacoa",
+    "categorie": "vie",
+    "description": "<p>Un cadre de bois, une assise tressée de vacoa : de quoi s'asseoir le soir sous la varangue comme avant. On ne mesure pas ce que vaut une chaise avant de s'en être passé.</p>",
+    "bonus": {},
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 0.5
+    },
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chaise-en-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

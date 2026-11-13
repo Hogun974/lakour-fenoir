@@ -46,13 +46,13 @@
   ],
   "documentTypes": {
     "Actor": {
-      "survivant": { "htmlFields": ["notes"], "gmOnlyFields": ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "enfance", "passe", "genre", "passions", "traits", "incapacites", "savoirs", "statut", "tache", "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "histoire", "age", "ageJour", "lien", "vivant", "livide", "charge", "prejuges"] },
-      "abri": { "htmlFields": ["notes"], "gmOnlyFields": ["site", "region", "installeLe", "abandonneLe", "stocks", "nature", "sol", "bruit", "degats", "reparation", "reliquats", "notes"] }
+      "survivant": { "htmlFields": ["notes"], "gmOnlyFields": ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "enfance", "passe", "genre", "passions", "traits", "incapacites", "savoirs", "statut", "tache", "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "confiance", "apprentissage", "dictee", "histoire", "age", "lien", "vivant", "livide", "charge", "ageJour", "prejuges"] },
+      "abri": { "htmlFields": ["notes"], "gmOnlyFields": ["site", "region", "installeLe", "abandonneLe", "stocks", "nature", "sol", "bruit", "degats", "reparation", "reliquats", "vegetation", "eauDouteuse", "preparation", "lumiereLe", "notes"] }
     },
     "Item": {
-      "installation": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "niveau", "niveauMax", "chantier", "etat", "reparation", "niveaux", "termineLe", "actif"] },
-      "savoir": { "htmlFields": ["description", "apprentissage", "effets"], "gmOnlyFields": ["cle", "description", "apprentissage", "effets"] },
-      "equipement": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "bonus", "charge", "usure", "munitions", "bruit", "transport", "effets", "marque"] },
+      "installation": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "niveau", "niveauMax", "chantier", "etat", "reparation", "niveaux", "termineLe", "actif", "arbre", "role", "rang"] },
+      "savoir": { "htmlFields": ["description", "apprentissage", "effets"], "gmOnlyFields": ["cle", "description", "apprentissage", "effets", "arbre"] },
+      "equipement": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "bonus", "charge", "usure", "munitions", "bruit", "transport", "effets", "enseigne", "auteur", "marque"] },
       "passe": { "htmlFields": ["description", "accroche"], "gmOnlyFields": ["cle", "description", "competences", "savoirs", "equipement", "accroche", "region", "incapacites", "histoire", "genre", "nomAutre"] },
       "recette": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "description", "cout", "travail", "competence", "difficulte", "requiert", "produit"] },
       "affliction": { "htmlFields": ["description", "prevention"], "gmOnlyFields": ["cle", "categorie", "description", "prevention", "contagion", "incubation", "duree", "effets", "soin", "aggravation", "declencheur", "risque", "stade", "reste"] },

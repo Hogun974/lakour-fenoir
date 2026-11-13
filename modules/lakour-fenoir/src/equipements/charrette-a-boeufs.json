@@ -1,0 +1,52 @@
+{
+  "_id": "bqtCrw2ly0rWWqZn",
+  "_key": "!items!bqtCrw2ly0rWWqZn",
+  "name": "Charrette à bœufs",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "charrette-a-boeufs",
+    "categorie": "transport",
+    "description": "<p>Deux bœufs moka d'une ferme des Hauts sous le joug, une charrette de bois cerclée de fer : lente, silencieuse, elle porte une case entière. Les bêtes broutent l'herbe des bas-côtés, on marche à côté d'elles (ce ne sont pas des montures), et il faut savoir les mener (élevage).</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "pied",
+      "places": 1,
+      "chargeMax": 40,
+      "carburantParQuart": 0,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 0,
+      "allure": 1.2,
+      "pente": {
+        "descente": 1,
+        "montee": 1.5
+      },
+      "large": true
+    },
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "charrette-a-boeufs"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

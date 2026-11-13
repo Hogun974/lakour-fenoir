@@ -10,6 +10,17 @@
       "en": "<p>A hiker's filter bottle: ravine water becomes drinkable for one person, without boiling.</p>"
     }
   },
+  "equipements/206qWaRr3q2LbJTF": {
+    "_nom": "Scooter électrique",
+    "name": {
+      "fr": "Scooter électrique",
+      "en": "Electric scooter"
+    },
+    "system.description": {
+      "fr": "<p>Un scooter de livreur, rechargé au soleil par les panneaux de l'abri : rapide, muet, il ne porte presque rien. Une unité d'énergie par quart de route.</p>",
+      "en": "<p>A delivery scooter, charged in the sun by the shelter's panels: fast, silent, it carries almost nothing. One unit of energy per watch on the road.</p>"
+    }
+  },
   "equipements/2dlGA2Bloq3ddJ62": {
     "_nom": "Cloches d'alerte",
     "name": {
@@ -52,6 +63,17 @@
     "system.description": {
       "fr": "<p>Silencieux, sans carburant, plus rapide qu'à pied sur la route… tant que ça descend. Les Hauts se montent à pied à côté.</p>",
       "en": "<p>Silent, no fuel, faster than walking on the road… as long as it goes downhill. In the Highlands you push it uphill on foot.</p>"
+    }
+  },
+  "equipements/7bFHD5K91aRRVSfj": {
+    "_nom": "Voiture électrique",
+    "name": {
+      "fr": "Voiture électrique",
+      "en": "Electric car"
+    },
+    "system.description": {
+      "fr": "<p>Une petite voiture électrique de la ville, rechargée sur les batteries de l'abri : l'île s'y prête, courte et ensoleillée. Elle roule sans bruit, mais vide une batterie en un trajet (cinq unités d'énergie par quart de route).</p>",
+      "en": "<p>A small electric city car, charged from the shelter's batteries: the island suits it, short and sunny. It runs without a sound, but empties a battery in one trip (five units of energy per watch on the road).</p>"
     }
   },
   "equipements/81lsLfP8MVFb1x5U": {
@@ -182,6 +204,17 @@
       "en": "<p>Fell, cut up, open a way through a fallen tree. It drinks petrol and howls across the whole forest.</p>"
     }
   },
+  "equipements/Gt1PRc9qvrHmJqgg": {
+    "_nom": "Camion à gazogène",
+    "name": {
+      "fr": "Camion à gazogène",
+      "en": "Wood-gas truck"
+    },
+    "system.description": {
+      "fr": "<p>Un camion plateau qui porte à l'arrière un grand fût où brûle du bois : le gaz du bois fait tourner le moteur. Il fume, il cogne, il faut charger le foyer à chaque arrêt (une brouette de bois sec par quart), mais il roule sans une goutte d'essence.</p>",
+      "en": "<p>A flatbed truck carrying a big drum at the back where wood burns: the gas from the wood runs the engine. It smokes, it knocks, the firebox has to be loaded at every stop (a barrow of dry wood per watch), but it runs without a drop of petrol.</p>"
+    }
+  },
   "equipements/GwauCrDXFp9kPfjp": {
     "_nom": "Jumelles",
     "name": {
@@ -202,6 +235,17 @@
     "system.description": {
       "fr": "<p>Des collets de fil de fer pour les tangues et les lièvres, des nasses de grillage pour les camarons et les poissons de rivière : on les pose le soir, on les relève au matin.</p>",
       "en": "<p>Wire snares for tenrecs and hares, wire-mesh traps for river prawns and fish: you set them in the evening, you lift them in the morning.</p>"
+    }
+  },
+  "equipements/IylxLgrTqrtVNmjC": {
+    "_nom": "Chien du groupe",
+    "name": {
+      "fr": "Chien du groupe",
+      "en": "The group's dog"
+    },
+    "system.description": {
+      "fr": "<p>Un chien errant qui a fini par manger dans la main, ou un chiot d'une portée de l'élevage : il dort en travers de la porte, entend les Livides avant la garde, s'agite avant le cyclone et le volcan. Il se bat si on le lâche, et peut y rester. À l'abri, il remonte le moral de tous.</p>",
+      "en": "<p>A stray that finally ate from someone's hand, or a puppy from a litter of the shelter's own: it sleeps across the doorway, hears the Pallid before the watch does, gets restless before the cyclone and the volcano. It fights if you let it go, and it can die doing so. At the shelter, it lifts everyone's spirits.</p>"
     }
   },
   "equipements/Jwm8SP40wObOc5wt": {
@@ -237,6 +281,17 @@
       "en": "<p>A stove of bricks and stones that holds its heat all night on an armful of wood: indispensable in the Highlands in the austral winter, and it bakes bread too.</p>"
     }
   },
+  "equipements/No3fi8QjyVit4Vcg": {
+    "_nom": "Sac en vacoa",
+    "name": {
+      "fr": "Sac en vacoa",
+      "en": "Vacoa bag"
+    },
+    "system.description": {
+      "fr": "<p>Un sac tressé de feuilles de vacoa séchées, solide et léger, comme ceux des marchés d'avant : on porte plus, plus loin, et c'est beau.</p>",
+      "en": "<p>A bag woven from dried vacoa (screwpine) leaves, strong and light, like those of the markets before: you carry more, further, and it is beautiful.</p>"
+    }
+  },
   "equipements/OCYXrsHwxVHAvZjS": {
     "_nom": "Lance de fortune",
     "name": {
@@ -248,6 +303,17 @@
       "en": "<p>A kitchen knife or a cane-knife blade lashed to the end of a bamboo pole: you strike through a fence without coming close.</p>"
     }
   },
+  "equipements/R0G71qo20r7WKfk2": {
+    "_nom": "Natte de vacoa",
+    "name": {
+      "fr": "Natte de vacoa",
+      "en": "Vacoa mat"
+    },
+    "system.description": {
+      "fr": "<p>Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil.</p>",
+      "en": "<p>A woven mat to sleep dry on, to sit on in the evening, to dry coffee or grain in the sun.</p>"
+    }
+  },
   "equipements/Rx2lvvdh5L8dpysq": {
     "_nom": "Radio à manivelle",
     "name": {
@@ -257,6 +323,17 @@
     "system.description": {
       "fr": "<p>Une petite radio qu'on remonte à la main : écouter les dernières émissions, les messages en boucle, les autres groupes. Elle ne sait pas émettre.</p>",
       "en": "<p>A small radio you crank by hand: listen to the last broadcasts, the looped messages, the other groups. It cannot transmit.</p>"
+    }
+  },
+  "equipements/TDs38uzp1fwj7esY": {
+    "_nom": "Pinces à linge en bois fendu",
+    "name": {
+      "fr": "Pinces à linge en bois fendu",
+      "en": "Split-wood clothes pegs"
+    },
+    "system.description": {
+      "fr": "<p>Un bout de bois de goyavier fendu, une ligature de fil : le linge sèche au vent au lieu de traîner. Trois fois rien, et la cour ressemble de nouveau à une cour.</p>",
+      "en": "<p>A split stick of guava wood, a twist of wire: the washing dries in the wind instead of lying about. Next to nothing, and the yard looks like a yard again.</p>"
     }
   },
   "equipements/VPX4NAJ9P5XDCfKL": {
@@ -279,6 +356,17 @@
     "system.description": {
       "fr": "<p>Creuser une tranchée, une fosse, une galerie, une tombe. Indispensable à tout chantier.</p>",
       "en": "<p>Dig a trench, a pit, a gallery, a grave. Indispensable on any worksite.</p>"
+    }
+  },
+  "equipements/XP4evbw443PgIHT0": {
+    "_nom": "Cordes de choka",
+    "name": {
+      "fr": "Cordes de choka",
+      "en": "Choka ropes"
+    },
+    "system.description": {
+      "fr": "<p>Des cordes tordues avec la fibre des feuilles de choka (l'agave), rouies et battues : elles lient un bambou, tiennent une bâche, descendent un seau dans le puits.</p>",
+      "en": "<p>Ropes twisted from the fibre of choka (agave) leaves, retted and beaten: they lash a bamboo, hold a tarp, lower a bucket into the well.</p>"
     }
   },
   "equipements/YABPoPUuOXPaf1P7": {
@@ -312,6 +400,17 @@
     "system.description": {
       "fr": "<p>Un vélo à caisse (de livreur ou fabriqué à l'atelier) : porter des bidons, des sacs de terre ou un blessé sur les routes des Bas.</p>",
       "en": "<p>A box bike (a courier's, or built in the workshop): carry jerrycans, sacks of soil or a wounded person on the Lowland roads.</p>"
+    }
+  },
+  "equipements/bqtCrw2ly0rWWqZn": {
+    "_nom": "Charrette à bœufs",
+    "name": {
+      "fr": "Charrette à bœufs",
+      "en": "Ox cart"
+    },
+    "system.description": {
+      "fr": "<p>Deux bœufs moka d'une ferme des Hauts sous le joug, une charrette de bois cerclée de fer : lente, silencieuse, elle porte une case entière. Les bêtes broutent l'herbe des bas-côtés, on marche à côté d'elles (ce ne sont pas des montures), et il faut savoir les mener (élevage).</p>",
+      "en": "<p>Two moka oxen from a Highland farm under the yoke, a wooden cart with iron-rimmed wheels: slow, silent, it carries a whole house. The beasts graze the verges, you walk beside them (they are not mounts), and you have to know how to drive them (animal husbandry).</p>"
     }
   },
   "equipements/dUmMz8dGEXOMhloc": {
@@ -402,6 +501,17 @@
       "en": "<p>A coil of black pipe on the roof, an insulated drum: hot water for washing and for washing wounds. A hot shower changes a week.</p>"
     }
   },
+  "equipements/mS3PJGEMIO3QPtTV": {
+    "_nom": "Chaise en vacoa",
+    "name": {
+      "fr": "Chaise en vacoa",
+      "en": "Vacoa chair"
+    },
+    "system.description": {
+      "fr": "<p>Un cadre de bois, une assise tressée de vacoa : de quoi s'asseoir le soir sous la varangue comme avant. On ne mesure pas ce que vaut une chaise avant de s'en être passé.</p>",
+      "en": "<p>A wooden frame, a seat woven from vacoa: something to sit on in the evening on the veranda, like before. You never know what a chair is worth until you have gone without one.</p>"
+    }
+  },
   "equipements/maUJgkb0oqgl5h46": {
     "_nom": "Voiture",
     "name": {
@@ -479,6 +589,28 @@
       "en": "<p>Spanners, screwdrivers, pliers, hacksaw, multimeter, duct tape, cable ties: enough to repair almost anything.</p>"
     }
   },
+  "equipements/sswgHn21e5oBrOHt": {
+    "_nom": "Cahier d'une gramoune",
+    "name": {
+      "fr": "Cahier d'une gramoune",
+      "en": "A gramoune's notebook"
+    },
+    "system.description": {
+      "fr": "<p>Un cahier d'écolier rempli à la veillée, sous la dictée d'une ancienne : remèdes, lunes pour planter, façons de tresser et de bâtir, avec ses mots à elle. Il n'en existe qu'un ; il apprend ce qu'elle savait, même quand elle n'est plus là.</p>",
+      "en": "<p>A school exercise book filled in during the evenings, at an elder's dictation: remedies, moons for planting, ways to weave and to build, in her own words. There is only one; it teaches what she knew, even when she is gone.</p>"
+    }
+  },
+  "equipements/u9ANmNix6eQQlUsC": {
+    "_nom": "Voiture à l'alcool de canne",
+    "name": {
+      "fr": "Voiture à l'alcool de canne",
+      "en": "Cane-alcohol car"
+    },
+    "system.description": {
+      "fr": "<p>Une vieille voiture à essence dont on a changé les joints, réglé l'allumage et agrandi les gicleurs : elle boit l'alcool de canne ou l'huile filtrée de l'abri. Elle démarre mal à froid, tire moins, et sent le rhum.</p>",
+      "en": "<p>An old petrol car with new seals, retimed ignition and widened jets: it drinks the shelter's cane alcohol or filtered oil. It starts badly when cold, pulls less, and smells of rum.</p>"
+    }
+  },
   "equipements/uHNTLpHjEGafFf6d": {
     "_nom": "Réchaud et gamelles",
     "name": {
@@ -554,6 +686,17 @@
     "system.description": {
       "fr": "<p>Un camion de livraison ou de chantier : déménager un abri entier, ses panneaux et ses cuves. Lent, énorme, entendu de partout.</p>",
       "en": "<p>A delivery or worksite truck: move a whole shelter, its panels and its tanks. Slow, enormous, heard from everywhere.</p>"
+    }
+  },
+  "equipements/zNp4aPZvp3iNjJvB": {
+    "_nom": "Vélo à assistance électrique",
+    "name": {
+      "fr": "Vélo à assistance électrique",
+      "en": "Electric-assist bicycle"
+    },
+    "system.description": {
+      "fr": "<p>Un vélo de location de la côte Ouest, sa batterie rechargée sur les panneaux de l'abri : il remonte les Hauts presque comme il les descend, sans un bruit. Une demi-unité d'énergie par quart de route.</p>",
+      "en": "<p>A rental bike from the West coast, its battery charged on the shelter's panels: it climbs back up to the Highlands almost as easily as it comes down, without a sound. Half a unit of energy per watch on the road.</p>"
     }
   },
   "equipements/zbfFqGVAJlulr1ou": {

@@ -9,7 +9,7 @@
 // Nature d'une région (§2.1 « ressources naturelles par jour et leur plafond ») : un nombre n = ce qu'un groupe tire par jour
 // d'alentours intacts ; le plafond vaut alors 10 × n. On accepte aussi [parJour, plafond] ou { parJour, plafond }.
 import { ZONES, TERRAINS, NATURE, RESSOURCES_PILLABLES, RESEAUX, TYPES_SITE, EAUX_SITE, CATEGORIES_INSTALLATION, ATTITUDES,
-  RESSOURCES, COMPETENCES, DIFFICULTES, TYPES_VEHICULE, CATEGORIES_AFFLICTION, DECLENCHEURS_AFFLICTION, CLES_PHASES } from "./constantes.mjs";
+  RESSOURCES, COMPETENCES, DIFFICULTES, TYPES_VEHICULE, CATEGORIES_AFFLICTION, DECLENCHEURS_AFFLICTION, CLES_PHASES, ARBRES, COUT_ILE } from "./constantes.mjs";
 import { verifierRecette } from "./fabrication.mjs";
 
 export const FAMILLES = ["regions", "sites", "installations", "savoirs", "factions", "evenements", "passes", "equipements",
@@ -174,7 +174,7 @@ export function verifierContenu(contenu = {}) {
     d.niveaux.forEach((n, i) => {
       const ici = `${ou} niveau ${i + 1}`;
       if (!(Number(n?.cout?.travail) > 0)) err(`${ici} : coût en travail manquant`);
-      for (const [res, q] of Object.entries(n?.cout ?? {})) if (res !== "travail" && (!RESSOURCES.includes(res) || !(Number(q) >= 0))) err(`${ici} : coût invalide « ${res} »`);
+      for (const [res, q] of Object.entries(n?.cout ?? {})) if (res !== "travail" && res !== COUT_ILE && (!RESSOURCES.includes(res) || !(Number(q) >= 0))) err(`${ici} : coût invalide « ${res} »`);
       for (const s of n?.requiert?.savoirs ?? []) if (!savoirs.has(s)) err(`${ici} : savoir inconnu « ${s} »`);
       for (const r of n?.requiert?.installations ?? []) {
         const autre = installations.get(r.cle);
@@ -187,6 +187,13 @@ export function verifierContenu(contenu = {}) {
       if (n?.effets?.conditions?.riviere && !(n?.requiert?.site?.eau ?? []).includes("riviere")) err(`${ici} : condition « rivière » sans site à rivière requis`);
     });
   }
+
+  // Lot « savoirs » : arbres (moderne, lontan) ; une installation qui porte le rôle d'une autre a au moins une sœur.
+  for (const d of installations.values()) {
+    if (d.arbre && !ARBRES.includes(d.arbre)) err(`installation « ${d.cle} » : arbre inconnu « ${d.arbre} »`);
+    if (d.role && d.role !== d.cle && ![...installations.values()].some(x => x !== d && (x.role || x.cle) === d.role)) err(`installation « ${d.cle} » : rôle « ${d.role} » sans sœur`);
+  }
+  for (const sv of savoirs.values()) if (sv.arbre && !ARBRES.includes(sv.arbre)) err(`savoir « ${sv.cle} » : arbre inconnu « ${sv.arbre} »`);
 
   // Factions, événements.
   for (const f of factions.values()) {
@@ -248,4 +255,4 @@ export function verifierContenu(contenu = {}) {
 
 // Clés d'événements que la simulation connaît d'elle-même (météo, éruption…), utilisables dans `dangers` et `coupure` même
 // si le contenu ne les décrit pas.
-export const EVENEMENTS_SYSTEME = ["fortes-pluies", "crue", "eboulement", "cyclone", "eruption", "incendie"];
+export const EVENEMENTS_SYSTEME = ["fortes-pluies", "crue", "eboulement", "cyclone", "eruption", "incendie", "arbres-tombes"];

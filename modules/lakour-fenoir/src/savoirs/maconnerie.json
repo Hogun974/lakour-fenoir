@@ -8,7 +8,8 @@
     "cle": "maconnerie",
     "description": "<p>Monter un mur droit, faire un mortier qui tient, couler une dalle, sceller une porte, tailler et jointoyer le basalte comme les anciens.</p>",
     "apprentissage": "<p>Un passé dans le bâtiment ; un vieux maçon rencontré ; réussir un premier chantier de mur sous la direction de quelqu'un qui sait.</p>",
-    "effets": "<p>Ouvre le mur d'enceinte, la porte blindée et le dortoir niveau 3. +1 dé aux réparations de dégâts structurels.</p>"
+    "effets": "<p>Ouvre le mur d'enceinte, la porte blindée et le dortoir niveau 3. +1 dé aux réparations de dégâts structurels.</p>",
+    "arbre": "moderne"
   },
   "effects": [],
   "folder": null,

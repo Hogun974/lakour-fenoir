@@ -1,0 +1,40 @@
+{
+  "_id": "No3fi8QjyVit4Vcg",
+  "_key": "!items!No3fi8QjyVit4Vcg",
+  "name": "Sac en vacoa",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "sac-en-vacoa",
+    "categorie": "vie",
+    "description": "<p>Un sac tressé de feuilles de vacoa séchées, solide et léger, comme ceux des marchés d'avant : on porte plus, plus loin, et c'est beau.</p>",
+    "bonus": {
+      "endurance": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 0.5
+    },
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sac-en-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

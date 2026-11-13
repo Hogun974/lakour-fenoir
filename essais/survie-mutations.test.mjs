@@ -188,7 +188,7 @@ const MUTATIONS = [
   ["generation.mjs", "const candidats = genre ? [...p[genre], ...p.mixtes] : [...p.f, ...p.m, ...p.mixtes];", "const candidats = [...p.f, ...p.m, ...p.mixtes];", "prénom du genre du passé"],
   ["generation.mjs", "const genreVoulu = genreDe({ genre: v.genre }) || (nomGarde ? genreDuNom(contenu, nomGarde) : \"\");", "const genreVoulu = genreDe({ genre: v.genre });", "prénom du genre du passé"],
   ["generation.mjs", "for (const r of [\"eau\", \"nourriture\"]) if (t.besoins?.[r] !== undefined) e.besoins[r] *= Number(t.besoins[r]);", "", "gros mangeur"],
-  ["maladies.mjs", "eau: { traitee: 0.2, brute: 1 },", "eau: { traitee: 1, brute: 1 },", "eau traitée"],
+  ["maladies.mjs", "eau: { traitee: 0.2, brute: 1, douteuse: 2 },", "eau: { traitee: 1, brute: 1, douteuse: 2 },", "eau traitée"],
   ["monde.mjs", ".filter(([, etat]) => etat !== \"coupee\")\n          .map(([v, etat])", "\n          .map(([v, etat])", "hordes par routes ouvertes"],
   ["monde.mjs", "} else if (saison === \"pluies\" && saisonDuJour(jour + 2, dateDepart) === \"pluies\" && chance(", "} else if (chance(", "cyclones en saison des pluies"],
   ["actions.mjs", "charge: { pied: 3,", "charge: { pied: 4,", "charge à pied"],

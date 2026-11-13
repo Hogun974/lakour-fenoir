@@ -13,9 +13,12 @@ const n = (cueillette, gibier, peche, bois) => ({
   peche: { parJour: peche[0], plafond: peche[1] }, bois: { parJour: bois[0], plafond: bois[1] }
 });
 
+// Lot « savoirs » : le gaz des cuisines (1 = un kilo ; une bouteille de 13 kg dans chaque case), selon la population.
+export const gazDepart = population => Math.round(10 + 40 * (Number(population) || 0));
+
 function region({ cle, nom, zone, altitude, population, climat, description, apres, ressources: r, nature, infrastructures, dangers, factionsDepart, repere: rp }) {
   return { cle, nom, zone, altitude, population, climat, description: html(description), apres: html(apres),
-    ressources: ressources(r), nature, infrastructures, dangers, factionsDepart, sites: [], voisins: [], repere: rp };
+    ressources: ressources({ gaz: gazDepart(population), ...r }), nature, infrastructures, dangers, factionsDepart, sites: [], voisins: [], repere: rp };
 }
 
 export const REGIONS_BRUTES = [

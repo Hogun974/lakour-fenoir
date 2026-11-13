@@ -172,7 +172,8 @@ export function contexteAbri(a) {
     const enChantier = Number(sys.chantier?.requis) > 0;
     return { id: i.id, nom: i.name, img: i.img, niveau: sys.niveau, niveauMax: sys.niveauMax ?? def?.niveauMax ?? 1, etat: sys.etat, etatTexte: t(`LAKOUR_SURVIE.EtatInstallation.${sys.etat ?? 0}`),
       chantier: enChantier ? { fait: sys.chantier.fait, requis: sys.chantier.requis, pct: Math.round(Math.min(1, sys.chantier.fait / sys.chantier.requis) * 100) } : null,
-      categorie: t(`LAKOUR_SURVIE.Categories.${sys.categorie ?? def?.categorie ?? "vie"}`), arret: (b?.arrets ?? []).find(x => x.cle === sys.cle)?.raison ?? "", aide: sansBalises(def?.description ?? "") };
+      categorie: t(`LAKOUR_SURVIE.Categories.${sys.categorie ?? def?.categorie ?? "vie"}`), arret: (b?.arrets ?? []).find(x => x.cle === sys.cle)?.raison ?? "", aide: sansBalises(def?.description ?? ""),
+      secours: (b?.secours ?? []).some(x => x.cle === sys.cle), lontan: (def?.arbre ?? sys.arbre) === "lontan" };
   });
   const nature = NATURE.map(n => ({ cle: n, libelle: t(`LAKOUR_SURVIE.Nature.${n}`), valeur: Math.round((Number(s.nature?.[n]) || 0) * 10) / 10 }));
   const membres = courant ? (etat.groupe.membres ?? []).map(id => game.actors.get(id)).filter(Boolean) : [];
@@ -183,7 +184,7 @@ export function contexteAbri(a) {
     region: L.regionDe(contenu(), s.region)?.nom ?? s.region, site: site ? { nom: site.nom, atouts: site.atouts ?? [], defauts: site.defauts ?? [] } : null,
     stocks, installations, nature, sol: Math.round((Number(s.sol) || 0) * 100) / 100, bruit: s.bruit, degats: s.degats,
     bilan: b ? { defense: b.defense, discretion: b.discretion, visibilite: b.visibilite, capacite: b.capacite, personnes: b.personnes, autonome: Boolean(etat.autonome),
-      joursAutonomes: etat.joursAutonomes ?? 0, surpeuplement: b.surpeuplement ? t("LAKOUR_SURVIE.Abri.Surpeuplement", { n: b.surpeuplement }) : "", production: Object.entries(b.production ?? {}).map(([r, q]) => `${libelleRessource(r)} ${q}`).join(", ") } : null,
+      joursAutonomes: etat.joursAutonomes ?? 0, savoirs: b.savoirs ?? null, surpeuplement: b.surpeuplement ? t("LAKOUR_SURVIE.Abri.Surpeuplement", { n: b.surpeuplement }) : "", production: Object.entries(b.production ?? {}).map(([r, q]) => `${libelleRessource(r)} ${q}`).join(", ") } : null,
     grille, taches: Object.keys(L.TACHES).map(x => ({ cle: x, libelle: libelleTache(x) })), gm: game.user.isGM,
     // Les notes secrètes du MJ (monde scellé, jamais sur l'acteur que les joueurs observent).
     notesMJ: game.user.isGM ? game.lakourSurvie?.notesAbri?.(a.id) ?? "" : "", mondeOuvert: Boolean(game.lakourSurvie?.mondeOuvert?.())

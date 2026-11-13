@@ -119,10 +119,10 @@ export const EQUIPEMENTS = [
     transport: vehicule("vehicule", 2, 4, 0.25, ["route", "piste"], 1),
     description: `Le deux-roues de toute l'île : il se faufile entre les voitures bloquées, consomme peu, ne porte presque rien.` }),
   equipement({ cle: "velo", nom: "Vélo tout-terrain", categorie: "transport", bonus: { endurance: 1 }, charge: 0, bruit: 0,
-    transport: vehicule("pied", 1, 3, 0, ["route", "piste"], 0),
+    transport: { ...vehicule("pied", 1, 3, 0, ["route", "piste"], 0), pente: { descente: 0.6, montee: 2.5 } },
     description: `Silencieux, sans carburant, plus rapide qu'à pied sur la route… tant que ça descend. Les Hauts se montent à pied à côté.` }),
   equipement({ cle: "velo-cargo", nom: "Vélo-cargo", categorie: "transport", bonus: {}, charge: 0, bruit: 0,
-    transport: vehicule("pied", 1, 12, 0, ["route"], 0),
+    transport: { ...vehicule("pied", 1, 12, 0, ["route"], 0), pente: { descente: 0.8, montee: 3 } },
     description: `Un vélo à caisse (de livreur ou fabriqué à l'atelier) : porter des bidons, des sacs de terre ou un blessé sur les routes des Bas.` }),
   equipement({ cle: "kayak", nom: "Kayak de mer", categorie: "transport", bonus: { discretion: 1 }, charge: 0, bruit: 0,
     transport: vehicule("bateau", 2, 4, 0, ["mer"], 0),
@@ -135,5 +135,43 @@ export const EQUIPEMENTS = [
     description: `Un âne d'une ferme des Hauts ou de randonnée : il porte sur les sentiers de Mafate ce qu'aucun véhicule n'y montera. Il mange, il brait.` }),
   equipement({ cle: "cheval-de-la-plaine", nom: "Cheval de la Plaine des Cafres", categorie: "transport", bonus: { endurance: 1 }, charge: 0, bruit: 1,
     transport: vehicule("pied", 1, 6, 0, ["route", "piste", "sentier"], 1),
-    description: `Un cheval d'un centre équestre de la Plaine des Cafres : plus rapide qu'à pied sur les pistes et les prairies, sûr sur les sentiers larges. Il faut le nourrir, l'abreuver, le garder des Livides.` })
+    description: `Un cheval d'un centre équestre de la Plaine des Cafres : plus rapide qu'à pied sur les pistes et les prairies, sûr sur les sentiers larges. Il faut le nourrir, l'abreuver, le garder des Livides.` }),
+  // ---------------------------------------------------------------- Lot « savoirs » : le chien, les livres, les objets faits main
+  equipement({ cle: "chien-du-groupe", nom: "Chien du groupe", categorie: "animal", bonus: { vigilance: 1, combat: 1 }, charge: 0,
+    description: `Un chien errant qui a fini par manger dans la main, ou un chiot d'une portée de l'élevage : il dort en travers de la porte, entend les Livides avant la garde, s'agite avant le cyclone et le volcan. Il se bat si on le lâche, et peut y rester. À l'abri, il remonte le moral de tous.` }),
+  equipement({ cle: "cahier-de-gramoune", nom: "Cahier d'une gramoune", categorie: "livre", bonus: {}, charge: 0, enseigne: [],
+    description: `Un cahier d'écolier rempli à la veillée, sous la dictée d'une ancienne : remèdes, lunes pour planter, façons de tresser et de bâtir, avec ses mots à elle. Il n'en existe qu'un ; il apprend ce qu'elle savait, même quand elle n'est plus là.` }),
+  equipement({ cle: "pinces-a-linge-en-bois", nom: "Pinces à linge en bois fendu", categorie: "vie", bonus: {}, charge: 0, effets: { moral: 0.5 },
+    description: `Un bout de bois de goyavier fendu, une ligature de fil : le linge sèche au vent au lieu de traîner. Trois fois rien, et la cour ressemble de nouveau à une cour.` }),
+  equipement({ cle: "sac-en-vacoa", nom: "Sac en vacoa", categorie: "vie", bonus: { endurance: 1 }, charge: 0, effets: { moral: 0.5 },
+    description: `Un sac tressé de feuilles de vacoa séchées, solide et léger, comme ceux des marchés d'avant : on porte plus, plus loin, et c'est beau.` }),
+  equipement({ cle: "chaise-en-vacoa", nom: "Chaise en vacoa", categorie: "vie", bonus: {}, charge: 2, effets: { moral: 0.5 },
+    description: `Un cadre de bois, une assise tressée de vacoa : de quoi s'asseoir le soir sous la varangue comme avant. On ne mesure pas ce que vaut une chaise avant de s'en être passé.` }),
+  equipement({ cle: "natte-de-vacoa", nom: "Natte de vacoa", categorie: "vie", bonus: {}, charge: 1, effets: { moral: 0.5 },
+    description: `Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil.` }),
+  equipement({ cle: "cordes-de-choka", nom: "Cordes de choka", categorie: "outil", bonus: { survie: 1 }, charge: 1,
+    description: `Des cordes tordues avec la fibre des feuilles de choka (l'agave), rouies et battues : elles lient un bambou, tiennent une bâche, descendent un seau dans le puits.` }),
+
+  // ---------------------------------------------------------------- Lot « savoirs » : se déplacer sans carburant
+  // source : la ressource brûlée (carburant par défaut ; biocarburant pour un moteur modifié, materiaux pour un gazogène, energie
+  // pour un véhicule électrique) ; lenteur : quartsVehicule × lenteur (moteur modifié) ; pente : { descente, montee } × allure
+  // quand l'étape descend ou monte de 300 m ; large : une charrette ne se faufile pas (les verrous de la route l'arrêtent).
+  equipement({ cle: "charrette-a-boeufs", nom: "Charrette à bœufs", categorie: "transport", bonus: {}, charge: 0, bruit: 0,
+    transport: { ...vehicule("pied", 1, 40, 0, ["route", "piste"], 0), allure: 1.2, pente: { descente: 1, montee: 1.5 }, large: true },
+    description: `Deux bœufs moka d'une ferme des Hauts sous le joug, une charrette de bois cerclée de fer : lente, silencieuse, elle porte une case entière. Les bêtes broutent l'herbe des bas-côtés, on marche à côté d'elles (ce ne sont pas des montures), et il faut savoir les mener (élevage).` }),
+  equipement({ cle: "velo-electrique", nom: "Vélo à assistance électrique", categorie: "transport", bonus: { endurance: 1 }, charge: 0, bruit: 0,
+    transport: { ...vehicule("pied", 1, 3, 0.5, ["route", "piste"], 0), rapide: false, allure: 0.4, source: "energie", pente: { descente: 0.6, montee: 0.9 } },
+    description: `Un vélo de location de la côte Ouest, sa batterie rechargée sur les panneaux de l'abri : il remonte les Hauts presque comme il les descend, sans un bruit. Une demi-unité d'énergie par quart de route.` }),
+  equipement({ cle: "scooter-electrique", nom: "Scooter électrique", categorie: "transport", bonus: { conduite: 1 }, charge: 0, bruit: 0,
+    transport: { ...vehicule("vehicule", 2, 4, 1, ["route", "piste"], 0), source: "energie" },
+    description: `Un scooter de livreur, rechargé au soleil par les panneaux de l'abri : rapide, muet, il ne porte presque rien. Une unité d'énergie par quart de route.` }),
+  equipement({ cle: "voiture-electrique", nom: "Voiture électrique", categorie: "transport", bonus: {}, charge: 0, bruit: 0,
+    transport: { ...vehicule("vehicule", 4, 16, 5, ["route"], 0), source: "energie" },
+    description: `Une petite voiture électrique de la ville, rechargée sur les batteries de l'abri : l'île s'y prête, courte et ensoleillée. Elle roule sans bruit, mais vide une batterie en un trajet (cinq unités d'énergie par quart de route).` }),
+  equipement({ cle: "voiture-a-l-alcool", nom: "Voiture à l'alcool de canne", categorie: "transport", bonus: {}, charge: 0, bruit: 1,
+    transport: { ...vehicule("vehicule", 5, 16, 1.2, ["route"], 1), source: "biocarburant", lenteur: 1.25 },
+    description: `Une vieille voiture à essence dont on a changé les joints, réglé l'allumage et agrandi les gicleurs : elle boit l'alcool de canne ou l'huile filtrée de l'abri. Elle démarre mal à froid, tire moins, et sent le rhum.` }),
+  equipement({ cle: "camion-a-gazogene", nom: "Camion à gazogène", categorie: "transport", bonus: {}, charge: 0, bruit: 3,
+    transport: { ...vehicule("vehicule", 2, 50, 1, ["route"], 3), source: "materiaux", lenteur: 1.5 },
+    description: `Un camion plateau qui porte à l'arrière un grand fût où brûle du bois : le gaz du bois fait tourner le moteur. Il fume, il cogne, il faut charger le foyer à chaque arrêt (une brouette de bois sec par quart), mais il roule sans une goutte d'essence.` })
 ];

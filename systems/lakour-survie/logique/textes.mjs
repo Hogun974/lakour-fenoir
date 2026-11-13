@@ -61,7 +61,13 @@ export const CLES_TEXTES = [
   "marche-stade-foire", "marche-stade-sans-foire",
   "carnet-rien", "carnet-refuse", "carnet-traine", "carnet-plafond", "carnet-nouvel-an",
   "marche-jour", "foire-finie", "marche-dette-rumeur",
-  "rumeur", "rumeur-treve", "rumeur-dette", "rumeur-menteur", "rumeur-inconnue", "rumeur-vraie"
+  "rumeur", "rumeur-treve", "rumeur-dette", "rumeur-menteur", "rumeur-inconnue", "rumeur-vraie",
+  // lot « savoirs » : les deux savoirs, la gramoune, le chien, le cyclone vécu, les routes sans carburant
+  "eruption-premices", "livre-trouve", "verrou-epave", "verrou-eboulis", "verrou-tunnel", "verrou-arbre", "voyage-source",
+  "savoir-perdu", "chien-agite-cyclone", "chien-agite-volcan", "boutures-mortes",
+  "cyclone-prepare", "cyclone-emportes", "cyclone-citerne", "cyclone-arbres", "cyclone-depot", "menace-depot",
+  "apprendre-savoir-inconnu", "apprendre-source", "apprendre-deja", "apprendre-maitre", "apprendre-livre",
+  "dictee-pas-gramoune", "dictee-confiance", "dictee-faite"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

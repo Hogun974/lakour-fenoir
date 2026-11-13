@@ -56,6 +56,14 @@
     "results.d0sD9hSdryrsEyjS.description": {
       "fr": "<p>Il était soignant à l'hôpital et n'en pouvait plus.</p>",
       "en": "<p>He was a carer at the hospital and could not take any more.</p>"
+    },
+    "results.v0bDwxiZOqjfEQEU.description": {
+      "fr": "<p>C'est une gramoune : son jardin a été piétiné par une horde, et elle a marché jusqu'ici avec ses boutures dans un seau.</p>",
+      "en": "<p>She is a gramoune (an elder): a horde trampled her garden, and she walked all the way here with her cuttings in a bucket.</p>"
+    },
+    "results.eXU38fFOWMSgkGBo.description": {
+      "fr": "<p>C'est un vieux gramoun qui a vu la fumée et qui voudrait bien finir ses jours avec des gens, pas tout seul dans les Hauts.</p>",
+      "en": "<p>He is an old gramoun (an elder) who saw the smoke and would like to end his days among people, not alone in the Highlands.</p>"
     }
   },
   "tables/0gKZBawB7DXV8kE0": {
@@ -547,6 +555,245 @@
       "en": "<p><strong>Recovery — A whole Pallid.</strong> The doctor wants to study an intact Pallid, brought back alive… so to speak.</p><p><strong>Reward:</strong> 6 medicine, 2 ammunition; reputation +3.</p>"
     }
   },
+  "tables/8R6zkOHHCT2LCJoI": {
+    "_nom": "Meutes des routes",
+    "name": {
+      "fr": "Meutes des routes",
+      "en": "Road packs"
+    },
+    "description": {
+      "fr": "<p>Les chiens abandonnés vont en meutes, et tiennent les routes.</p>",
+      "en": "<p>Abandoned dogs gather in packs, and hold the roads.</p>"
+    },
+    "results.5G2uqhDci4h5KOAP.description": {
+      "fr": "<p>Une meute de six, menée par un grand chien gris au collier clouté, sur l'aire de repos de la quatre-voies.</p>",
+      "en": "<p>A pack of six, led by a big grey dog with a studded collar, at the rest area of the dual carriageway.</p>"
+    },
+    "results.MZiNO2Tj6d77VkNN.description": {
+      "fr": "<p>Des aboiements qui suivent la voiture le long de la route, puis plus rien. Ils attendent la panne.</p>",
+      "en": "<p>Barking that follows the car along the road, then nothing. They are waiting for the breakdown.</p>"
+    },
+    "results.GUzfe44vyc2fitoS.description": {
+      "fr": "<p>Une meute qui dort sous un pont, au milieu de sacs éventrés : leur territoire. On contourne ou on traverse vite.</p>",
+      "en": "<p>A pack sleeping under a bridge among torn-open bags: their territory. You go round, or cross quickly.</p>"
+    },
+    "results.55pVJCXsVgXtc71N.description": {
+      "fr": "<p>Deux chiens maigres fouillent une épave ; ils détalent, puis reviennent, à cinq.</p>",
+      "en": "<p>Two thin dogs rummage in a wreck; they bolt, then come back, five of them.</p>"
+    },
+    "results.mNjtwAeASxWDxBI3.description": {
+      "fr": "<p>La meute a coincé un Livide contre un grillage et le harcèle : elle n'a pas peur des morts, elle a peur du feu.</p>",
+      "en": "<p>The pack has cornered a Pallid against a wire fence and is harrying it: it is not afraid of the dead, it is afraid of fire.</p>"
+    },
+    "results.VarQhNVm37kSPvpY.description": {
+      "fr": "<p>Un chien de tête blessé, qui boite : la meute se dispute déjà la place.</p>",
+      "en": "<p>A wounded lead dog, limping: the pack is already fighting over its place.</p>"
+    },
+    "results.nGVs4qJaReFoaqrI.description": {
+      "fr": "<p>Une meute qui suit un vélo dans la descente, en silence, jusqu'au virage.</p>",
+      "en": "<p>A pack following a bicycle down the slope, in silence, as far as the bend.</p>"
+    },
+    "results.vXxHnyBqWyBQrcY0.description": {
+      "fr": "<p>Une chienne avec ses chiots, cachée dans un fossé : elle attaquera pour eux, ou se laissera nourrir.</p>",
+      "en": "<p>A bitch with her puppies, hidden in a ditch: she will attack for them, or let herself be fed.</p>"
+    }
+  },
+  "tables/A5DEArv99VCcNSDW": {
+    "_nom": "Le jardin d'une case",
+    "name": {
+      "fr": "Le jardin d'une case",
+      "en": "A house garden"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on trouve dans le jardin d'une case abandonnée (fouille « jardins »).</p>",
+      "en": "<p>What you find in the garden of an abandoned house (“gardens” scavenging).</p>"
+    },
+    "results.IIjL3r5MzupKdw7u.description": {
+      "fr": "<p>Une treille de chouchous qui a envahi toute la cour : de quoi nourrir le groupe une semaine, et des boutures à repiquer.</p>",
+      "en": "<p>A chayote trellis that has overrun the whole yard: enough to feed the group for a week, and cuttings to plant out.</p>"
+    },
+    "results.Gr08pGubL0RO1jD9.description": {
+      "fr": "<p>Des bananiers en touffe, deux régimes verts : à couper, à cuire, et des rejets à replanter.</p>",
+      "en": "<p>A clump of banana trees, two green bunches: to cut, to cook, and suckers to replant.</p>"
+    },
+    "results.S2PS1tJFzyAHhFfI.description": {
+      "fr": "<p>Un carré de songes dans le coin humide, sous le robinet qui ne coule plus.</p>",
+      "en": "<p>A patch of taro in the damp corner, under the tap that no longer runs.</p>"
+    },
+    "results.jPWQzMg0vivCP7EW.description": {
+      "fr": "<p>Du manioc à perte de vue sous les mauvaises herbes : il se garde en terre, on le prend au fur et à mesure.</p>",
+      "en": "<p>Cassava as far as the eye can see under the weeds: it keeps in the ground, you take it as you go.</p>"
+    },
+    "results.8ofQyo4EhIzOKCPk.description": {
+      "fr": "<p>Les zerbaz de la gramoune le long de la clôture : ayapana, citronnelle, fleur jaune (+1 plantes).</p>",
+      "en": "<p>The gramoune's zerbaz (healing herbs) along the fence: ayapana, lemongrass, fleur jaune (+1 herbs).</p>"
+    },
+    "results.FYpFOSIkfpHQlSba.description": {
+      "fr": "<p>Un pied de piment chargé, un pied de combava, un curcuma : de quoi redonner goût au riz.</p>",
+      "en": "<p>A loaded chilli plant, a combava (makrut lime) tree, some turmeric: enough to give the rice some taste again.</p>"
+    },
+    "results.fmiMU1x4dNgRIIvC.description": {
+      "fr": "<p>Des patates douces qui ont couru partout : on en déterre de quoi faire un cari, et des lianes à bouturer.</p>",
+      "en": "<p>Sweet potatoes that have run everywhere: you dig up enough for a cari, and vines to take cuttings from.</p>"
+    },
+    "results.VdeTvrBTkwNQeNVL.description": {
+      "fr": "<p>Un jardin déjà visité : des trous partout, des tiges cassées. Quelqu'un est passé avant vous, il y a peu.</p>",
+      "en": "<p>A garden already visited: holes everywhere, broken stems. Someone came through before you, not long ago.</p>"
+    },
+    "results.bniuRtYcpZKA3Fo6.description": {
+      "fr": "<p>Un pied de letchi ou de manguier chargé en saison : les fruits tombent tout seuls, les chauves-souris en profitent.</p>",
+      "en": "<p>A lychee or mango tree laden in season: the fruit falls on its own, and the bats help themselves.</p>"
+    },
+    "results.CVjx3ic3Au3vKzOi.description": {
+      "fr": "<p>Dans la case, sur la table, le cahier de recettes de la grand-mère, écrit au crayon : un livre (un savoir lontan à apprendre).</p>",
+      "en": "<p>In the house, on the table, the grandmother's recipe notebook, written in pencil: a book (a lontan skill to learn).</p>"
+    }
+  },
+  "tables/AJoKcuCBsgcaRVNU": {
+    "_nom": "Paroles de gramoune",
+    "name": {
+      "fr": "Paroles de gramoune",
+      "en": "A gramoune's sayings"
+    },
+    "description": {
+      "fr": "<p>Ce que dit l'ancienne pendant une veillée d'apprentissage ou de dictée. En créole, avec le sens à côté.</p>",
+      "en": "<p>What the elder says during an evening of learning or dictation. In Creole, with the meaning alongside.</p>"
+    },
+    "results.7Btw4egTZF36mLD8.description": {
+      "fr": "<p>« <em>Planté dann bon katié la lune, i pous mèm si ou oubli ali.</em> » (Plante au bon quartier de lune, ça pousse même si tu l'oublies.) Ce qu'elle dit avant chaque semis.</p>",
+      "en": "<p>“<em>Planté dann bon katié la lune, i pous mèm si ou oubli ali.</em>” (Plant in the right quarter of the moon and it grows even if you forget it.) What she says before every sowing.</p>"
+    },
+    "results.0fsEbRYYGWBlBcA5.description": {
+      "fr": "<p>« <em>Sé pa la marmit i fé la tizan, sé lo kèr.</em> » (Ce n'est pas la marmite qui fait la tisane, c'est le cœur.) Puis elle donne quand même les doses, exactes.</p>",
+      "en": "<p>“<em>Sé pa la marmit i fé la tizan, sé lo kèr.</em>” (It's not the pot that makes the tea, it's the heart.) Then she gives the doses anyway, exactly.</p>"
+    },
+    "results.xegXtVdan8ixAQ19.description": {
+      "fr": "<p>« <em>Ayapana pou lo vant, fleur jaune pou lo foi, faham pou lo kèr.</em> » (L'ayapana pour le ventre, la fleur jaune pour le foie, le faham pour le cœur.)</p>",
+      "en": "<p>“<em>Ayapana pou lo vant, fleur jaune pou lo foi, faham pou lo kèr.</em>” (Ayapana for the belly, fleur jaune for the liver, faham for the heart.)</p>"
+    },
+    "results.C1h6r6dkQziLOghl.description": {
+      "fr": "<p>« <em>Bambou i pli, li kas pa.</em> » (Le bambou plie, il ne casse pas.) Elle parle de la palissade ; elle parle aussi du groupe.</p>",
+      "en": "<p>“<em>Bambou i pli, li kas pa.</em>” (Bamboo bends, it doesn't break.) She is talking about the palisade; she is talking about the group too.</p>"
+    },
+    "results.fhTCQMrBvEvZtcJB.description": {
+      "fr": "<p>« <em>Kan lo shien i tourn an ron, ramas out linj.</em> » (Quand le chien tourne en rond, rentre ton linge.) Le cyclone, avant la radio.</p>",
+      "en": "<p>“<em>Kan lo shien i tourn an ron, ramas out linj.</em>” (When the dog walks in circles, bring in your washing.) The cyclone, before the radio.</p>"
+    },
+    "results.sDMTK4Qf1wn8yOLI.description": {
+      "fr": "<p>« <em>Mwin la vu siklone 48, mwin la vu Firinga. Ou va vwar la fin Fénoir osi.</em> » (J'ai vu le cyclone de 48, j'ai vu Firinga. Tu verras la fin de Fénoir aussi.)</p>",
+      "en": "<p>“<em>Mwin la vu siklone 48, mwin la vu Firinga. Ou va vwar la fin Fénoir osi.</em>” (I saw the cyclone of '48, I saw Firinga. You will see the end of Fénoir too.)</p>"
+    },
+    "results.8gAjqL9TLqwOXK4x.description": {
+      "fr": "<p>« <em>Mur pyèr sèk, ou mont ali in fwa, ou rekomans pa.</em> » (Un mur de pierres sèches, on le monte une fois, on ne le recommence pas.)</p>",
+      "en": "<p>“<em>Mur pyèr sèk, ou mont ali in fwa, ou rekomans pa.</em>” (A dry-stone wall, you build it once, you don't build it again.)</p>"
+    },
+    "results.wiP7kBflaXMEikV4.description": {
+      "fr": "<p>« <em>Domoun lé pa rish par sak li gingn, mé par sak li koné fé.</em> » (On n'est pas riche de ce qu'on gagne, mais de ce qu'on sait faire.)</p>",
+      "en": "<p>“<em>Domoun lé pa rish par sak li gingn, mé par sak li koné fé.</em>” (You're not rich from what you earn, but from what you know how to do.)</p>"
+    },
+    "results.wFVnG7vdvVSobF3B.description": {
+      "fr": "<p>Elle refuse d'expliquer : « <em>Gard bien, ou va konprann.</em> » (Regarde bien, tu comprendras.) Une veillée de plus, sans test.</p>",
+      "en": "<p>She refuses to explain: “<em>Gard bien, ou va konprann.</em>” (Watch closely, you'll understand.) One more evening, without a test.</p>"
+    },
+    "results.YnttRxbMaYEsxkFS.description": {
+      "fr": "<p>Elle se tait toute la soirée, fatiguée. Une veillée perdue, à moins de la soigner d'abord (fatigue ou blessure).</p>",
+      "en": "<p>She says nothing all evening, tired. A lost evening, unless she is looked after first (fatigue or wound).</p>"
+    }
+  },
+  "tables/B0822ak1CjeTdNsN": {
+    "_nom": "Cyclone — heure par heure",
+    "name": {
+      "fr": "Cyclone — heure par heure",
+      "en": "Cyclone — hour by hour"
+    },
+    "description": {
+      "fr": "<p>Le jour où le cyclone frappe : rafales, accalmies, l'œil, le vent qui revient. Un résultat par quart, ou quand les joueurs sortent.</p>",
+      "en": "<p>The day the cyclone strikes: gusts, lulls, the eye, the wind coming back. One result per watch, or when the players go out.</p>"
+    },
+    "results.DQHoHB4pvsD4crDp.description": {
+      "fr": "<p>Rafales : la tôle du toit claque comme un fusil, toutes les trois secondes. Dehors : −2 dés, on n'entend rien (vigilance −3).</p>",
+      "en": "<p>Gusts: the roof sheeting cracks like a rifle, every three seconds. Outside: −2 dice, you hear nothing (vigilance −3).</p>"
+    },
+    "results.ASleNUUtDWZLOThd.description": {
+      "fr": "<p>Accalmie de dix minutes : la pluie tombe droit, on entend de nouveau la ravine. Le temps de vérifier une fixation, pas plus.</p>",
+      "en": "<p>A ten-minute lull: the rain falls straight down, you can hear the ravine again. Time to check one fastening, no more.</p>"
+    },
+    "results.5egXjGoBp2E4QPst.description": {
+      "fr": "<p>Une fuite au-dessus du dortoir : on court avec des bassines. Le seau de la cuisine sert de gouttière.</p>",
+      "en": "<p>A leak above the dormitory: people run with basins. The kitchen bucket serves as a gutter.</p>"
+    },
+    "results.YIj369pVTlSkqxwD.description": {
+      "fr": "<p>Un arbre tombe quelque part, un craquement sourd, puis plus rien. Le bois de demain, la route coupée d'après-demain.</p>",
+      "en": "<p>A tree falls somewhere, a dull crack, then nothing. Tomorrow's firewood, the day after tomorrow's blocked road.</p>"
+    },
+    "results.ZSveYAOoMJtazHH8.description": {
+      "fr": "<p>Le courant (s'il y en avait) saute ; on finit la nuit à la bougie. La lumière ne se voit de nulle part : il n'y a personne dehors.</p>",
+      "en": "<p>The power (if there was any) cuts out; the night ends by candlelight. The light can't be seen from anywhere: there is nobody outside.</p>"
+    },
+    "results.D63AlwNX7B7suuKb.description": {
+      "fr": "<p>L'œil passe (si la région est au cœur de la trajectoire) : silence total, ciel clair, étoiles. C'est un piège : le vent revient de l'autre côté.</p>",
+      "en": "<p>The eye passes over (if the region lies at the heart of the path): total silence, clear sky, stars. It's a trap: the wind comes back from the other side.</p>"
+    },
+    "results.GYe8AMoF0dSwJ7X6.description": {
+      "fr": "<p>Le vent tourne : ce qu'on avait calé contre la façade se met à battre de l'autre côté. Une fixation à revoir, dehors, en plein vent.</p>",
+      "en": "<p>The wind turns: what had been wedged against the front starts banging on the other side. A fastening to redo, outside, in the full wind.</p>"
+    },
+    "results.gzC3FobY1onIRJlA.description": {
+      "fr": "<p>Une silhouette titube dans la cour, poussée par le vent : un Livide égaré, qui n'entend rien non plus.</p>",
+      "en": "<p>A figure staggers across the yard, pushed by the wind: a stray Pallid, which can't hear anything either.</p>"
+    },
+    "results.Eltdm0r5BLYAXvOn.description": {
+      "fr": "<p>Les marmailles ne dorment pas ; quelqu'un raconte une histoire de Ti Jean pour les tenir. Les grands écoutent aussi.</p>",
+      "en": "<p>The marmailles (the kids) don't sleep; someone tells a Ti Jean story to keep them quiet. The grown-ups listen too.</p>"
+    },
+    "results.gvSSCnA61HyNO74J.description": {
+      "fr": "<p>Au matin, la cour est méconnaissable : branches, feuilles, boue, et quelque chose qui n'était pas là hier (table « Ce que le cyclone dépose »).</p>",
+      "en": "<p>In the morning, the yard is unrecognisable: branches, leaves, mud, and something that wasn't there yesterday (table “What the cyclone leaves in the yard”).</p>"
+    }
+  },
+  "tables/CVzybRUPbVjBHSsl": {
+    "_nom": "Un chien errant, veillée après veillée",
+    "name": {
+      "fr": "Un chien errant, veillée après veillée",
+      "en": "A stray dog, evening after evening"
+    },
+    "description": {
+      "fr": "<p>Ce que fait le chien errant pendant qu'on gagne sa confiance.</p>",
+      "en": "<p>What the stray dog does while you win its trust.</p>"
+    },
+    "results.HwSaQR4ogFSLQ4zW.description": {
+      "fr": "<p>Il regarde de loin, couché à l'ombre d'une épave, les côtes saillantes. Il s'enfuit dès qu'on se lève.</p>",
+      "en": "<p>It watches from a distance, lying in the shade of a wreck, ribs showing. It runs off as soon as anyone stands up.</p>"
+    },
+    "results.pwhFFfAs4UFb3AS4.description": {
+      "fr": "<p>Il s'approche de la nourriture posée, attend qu'on recule de trois pas, mange, repart.</p>",
+      "en": "<p>It comes up to the food put down, waits for you to step back three paces, eats, leaves.</p>"
+    },
+    "results.xPHJBlX3JCXX6JOL.description": {
+      "fr": "<p>Il grogne, babines retroussées, quand on tend la main : trop tôt.</p>",
+      "en": "<p>It growls, lips curled back, when you reach out a hand: too soon.</p>"
+    },
+    "results.JLDrVPe00nzT4Scn.description": {
+      "fr": "<p>Il dort à l'entrée de la cour cette nuit, et aboie une fois quand quelque chose passe sur la route.</p>",
+      "en": "<p>It sleeps at the entrance to the yard tonight, and barks once when something passes on the road.</p>"
+    },
+    "results.wAraHtmJXmV5JfW3.description": {
+      "fr": "<p>Il accepte la main sur la tête, en tremblant. Il a un vieux collier, avec un prénom à moitié effacé.</p>",
+      "en": "<p>It accepts a hand on its head, trembling. It has an old collar, with a half-worn-away name.</p>"
+    },
+    "results.0APmR76JqpXMMG3Q.description": {
+      "fr": "<p>Il suit quelqu'un pendant une fouille, à dix mètres, et grogne vers une porte : il y avait un Livide derrière.</p>",
+      "en": "<p>It follows someone during a scavenging run, ten metres behind, and growls at a door: there was a Pallid behind it.</p>"
+    },
+    "results.Wvn4JrIC5spKODaq.description": {
+      "fr": "<p>Une meute passe au loin : il hésite, regarde la meute, regarde le groupe. Il reste.</p>",
+      "en": "<p>A pack passes in the distance: it hesitates, looks at the pack, looks at the group. It stays.</p>"
+    },
+    "results.J7j5MVCmo7Js1sJQ.description": {
+      "fr": "<p>Il mord, de peur, quand on le surprend dans son sommeil (1 blessure, pas de Gris : c'est un chien). Tout est à recommencer, ou presque.</p>",
+      "en": "<p>It bites, out of fear, when startled in its sleep (1 wound, no Grey: it's a dog). Back to square one, or nearly.</p>"
+    }
+  },
   "tables/9Z48zATc55hbPGWK": {
     "_nom": "Marché — ce qu'on trouve sur les étals",
     "name": {
@@ -813,6 +1060,69 @@
     "results.BG5lnYBsYOsEtrY5.description": {
       "fr": "<p>Une fumée de votre cuisine a été vue d'une autre colline.</p>",
       "en": "<p>Smoke from your kitchen was seen from another hill.</p>"
+    }
+  },
+  "tables/EZLdsCuJASLPtHwG": {
+    "_nom": "Ce que le cyclone dépose dans la cour",
+    "name": {
+      "fr": "Ce que le cyclone dépose dans la cour",
+      "en": "What the cyclone leaves in the yard"
+    },
+    "description": {
+      "fr": "<p>Ce qui était mal fixé ailleurs et que le vent dépose chez soi : bonnes et mauvaises surprises (le système en tire un seul et l'applique ; la table sert à en raconter d'autres).</p>",
+      "en": "<p>What was badly tied down elsewhere and the wind drops at your place: good and bad surprises (the system rolls a single one and applies it; the table is there to tell of others).</p>"
+    },
+    "results.3YVpbvPgoeGUyCfC.description": {
+      "fr": "<p>Trois tôles ondulées, encore clouées à leur chevron, plantées dans le manguier. Quelqu'un, ailleurs, n'a plus de toit.</p>",
+      "en": "<p>Three corrugated sheets, still nailed to their rafter, stuck in the mango tree. Someone, somewhere, has no roof any more.</p>"
+    },
+    "results.BSko6qSzeW1HCyNB.description": {
+      "fr": "<p>Une bâche de chantier enroulée autour du poteau de la barrière, avec ses cordes. Elle servira.</p>",
+      "en": "<p>A building-site tarp wrapped round the gatepost, with its ropes. It will come in handy.</p>"
+    },
+    "results.7djHHBgv0idb0udw.description": {
+      "fr": "<p>Un panneau solaire, le cadre tordu, les cellules intactes, couché dans la boue de la cour.</p>",
+      "en": "<p>A solar panel, frame twisted, cells intact, lying in the mud of the yard.</p>"
+    },
+    "results.TtFOjJDEDzAsF8Kg.description": {
+      "fr": "<p>Une bouteille de gaz de treize kilos a roulé jusqu'au mur. Pleine, ou presque.</p>",
+      "en": "<p>A thirteen-kilo gas bottle has rolled up against the wall. Full, or nearly.</p>"
+    },
+    "results.9YGm9cEIauRYvcHT.description": {
+      "fr": "<p>Un fût bleu, venu on ne sait d'où, plein à ras bord d'eau de pluie.</p>",
+      "en": "<p>A blue drum, from who knows where, brimming with rainwater.</p>"
+    },
+    "results.aB35mvtEIdGbJNwm.description": {
+      "fr": "<p>Trois poules trempées, réfugiées sous la varangue, qui ne veulent plus partir.</p>",
+      "en": "<p>Three soaked hens, sheltering under the veranda, that will not leave.</p>"
+    },
+    "results.phnQvpzZ8QLVbtGF.description": {
+      "fr": "<p>Les bananiers du voisin ont cassé : deux régimes verts dans la cour, à faire mûrir ou cuire vite.</p>",
+      "en": "<p>The neighbour's banana trees have snapped: two green bunches in the yard, to ripen or cook quickly.</p>"
+    },
+    "results.HM4duPNwkpBETg2w.description": {
+      "fr": "<p>Une barque de pêcheur, coque en l'air, au milieu du chemin. Le moteur a disparu ; le bois et les rames restent.</p>",
+      "en": "<p>A fishing boat, hull in the air, in the middle of the path. The engine is gone; the wood and the oars remain.</p>"
+    },
+    "results.PwdDrIN6FoBcUUBW.description": {
+      "fr": "<p>Une tôle s'est abattue contre la clôture, et dessous, quelque chose bouge encore et gratte.</p>",
+      "en": "<p>A sheet of metal has slammed against the fence, and underneath, something is still moving and scratching.</p>"
+    },
+    "results.tz0JaSSyfKEhfEgE.description": {
+      "fr": "<p>Une vache gonflée, coincée contre la barrière : dans deux jours, l'odeur. Il faut la tirer loin, ou la brûler, et la fumée se verra.</p>",
+      "en": "<p>A bloated cow, wedged against the fence: in two days, the smell. It has to be dragged far away, or burned, and the smoke will be seen.</p>"
+    },
+    "results.OyyIOYFWlcXbEjpR.description": {
+      "fr": "<p>Un nid de guêpes arraché à un arbre, tombé dans la réserve de bois. Elles sont furieuses.</p>",
+      "en": "<p>A wasps' nest torn from a tree, fallen into the woodpile. They are furious.</p>"
+    },
+    "results.H4K2EpAg8qassMhj.description": {
+      "fr": "<p>Une petite malle de bois, des photos de famille gondolées, un chapelet, une lettre jamais postée. Certains y voient un signe ; ce n'est qu'une malle.</p>",
+      "en": "<p>A small wooden trunk, warped family photos, a rosary, a letter never posted. Some see a sign in it; it is only a trunk.</p>"
+    },
+    "results.EyZYP74zSlGyhC3E.description": {
+      "fr": "<p>Une cuve de mazout percée a vidé son fond dans la cour. Le potager boira de l'eau sale quelques jours.</p>",
+      "en": "<p>A holed fuel-oil tank has emptied its dregs into the yard. The vegetable garden will drink dirty water for a few days.</p>"
     }
   },
   "tables/FaGBrQayrPRbUgcs": {
@@ -1084,6 +1394,57 @@
     "results.EwMMbpAk9shWhjC8.description": {
       "fr": "<p><strong>Réparation — Les lampes de la planque.</strong> Faire marcher les panneaux de leur planque.</p><p><strong>Récompense :</strong> 3 munitions, 4 nourriture ; réputation +1.</p>",
       "en": "<p><strong>Repair — The hideout's lamps.</strong> Get the panels of their hideout working.</p><p><strong>Reward:</strong> 3 ammunition, 4 food; reputation +1.</p>"
+    }
+  },
+  "tables/PRGTFt3WHnYdtKLM": {
+    "_nom": "Verrous de la route",
+    "name": {
+      "fr": "Verrous de la route",
+      "en": "Road bottlenecks"
+    },
+    "description": {
+      "fr": "<p>Ce qui barre une route carrossable (le système ajoute le temps d'un verrou au voyage en véhicule) ; un vélo, un marcheur passent à côté.</p>",
+      "en": "<p>What blocks a road for vehicles (the system adds a bottleneck's time to a journey by vehicle); a bicycle or someone on foot gets past.</p>"
+    },
+    "results.mDFUD4dOHNdSQajE.description": {
+      "fr": "<p>Une voiture en travers, portières ouvertes : on siphonne (épave), on la pousse dans la ravine (grand fracas, +4 bruit), ou on se faufile en chicane.</p>",
+      "en": "<p>A car across the road, doors open: you siphon it (wreck), push it into the ravine (a great crash, +4 noise), or weave past it.</p>"
+    },
+    "results.sQraybFRM5oTUnh3.description": {
+      "fr": "<p>Trois voitures encastrées sous un pont : une seule passe, et il faut d'abord sortir ce qui reste dedans.</p>",
+      "en": "<p>Three cars jammed under a bridge: only one lane gets through, and first you have to get out what is left inside.</p>"
+    },
+    "results.RmmUVNHYBC0mZOH0.description": {
+      "fr": "<p>Un bus scolaire couché sur la route de Cilaos : on ne le bouge pas ; à pied, on passe ; en voiture, on fait demi-tour.</p>",
+      "en": "<p>A school bus on its side on the Cilaos road: it won't move; on foot, you get past; by car, you turn back.</p>"
+    },
+    "results.R5AN7vo5DBVfZD6L.description": {
+      "fr": "<p>Un tunnel à une voie, noir comme un four, la sortie invisible : on attend, on écoute, on allume les phares ou pas.</p>",
+      "en": "<p>A single-lane tunnel, black as an oven, the exit out of sight: you wait, you listen, you switch on the headlights or not.</p>"
+    },
+    "results.aeNX9taG30rRKkPm.description": {
+      "fr": "<p>Un éboulis frais, des cailloux gros comme des cabris : deux heures de pelle, ou le sentier à côté avec ce qu'on porte.</p>",
+      "en": "<p>A fresh rockfall, stones as big as goats: two hours of shovelling, or the trail alongside with whatever you can carry.</p>"
+    },
+    "results.qpFWnSwvMKiVjtDS.description": {
+      "fr": "<p>Un arbre en travers après le cyclone : la tronçonneuse (bruit) ou la hache (temps). Les fruits de l'arbre sont à prendre.</p>",
+      "en": "<p>A tree across the road after the cyclone: the chainsaw (noise) or the axe (time). The tree's fruit is there for the taking.</p>"
+    },
+    "results.zpcFKcDOKndHToG2.description": {
+      "fr": "<p>Une barricade d'une faction, abandonnée ou pas : des pneus, des fûts, une chaîne. Quelqu'un a peut-être les jumelles sur vous.</p>",
+      "en": "<p>A faction's barricade, abandoned or not: tyres, drums, a chain. Someone may have binoculars on you.</p>"
+    },
+    "results.0bjMiWeozInYjbhC.description": {
+      "fr": "<p>Un camion-citerne sur le flanc : il reste peut-être du carburant dans la cuve, et une odeur à ne pas allumer de cigarette.</p>",
+      "en": "<p>A tanker truck on its side: there may be fuel left in the tank, and a smell that says don't light a cigarette.</p>"
+    },
+    "results.9hsOazJFVQEfH4aE.description": {
+      "fr": "<p>Un radier noyé : la route continue sous l'eau brune. Attendre que la rivière baisse, ou risquer le moteur.</p>",
+      "en": "<p>A flooded ford: the road carries on under the brown water. Wait for the river to drop, or risk the engine.</p>"
+    },
+    "results.mNVF8rgzcTcMvKFD.description": {
+      "fr": "<p>Une voiture sur cales, roues volées, et un mot sur le pare-brise : « Pa touch, mi rovien » (n'y touchez pas, je reviens). Daté d'il y a des mois.</p>",
+      "en": "<p>A car up on blocks, wheels stolen, and a note on the windscreen: “Pa touch, mi rovien” (don't touch, I'll be back). Dated months ago.</p>"
     }
   },
   "tables/S2NNTo6b2KG2DCLc": {
@@ -1363,6 +1724,10 @@
     "results.2vpDKjgvFEYupDU8.description": {
       "fr": "<p>Elle se méfie des Zoreils du groupe et le dit à table : « <em>zot i prend tout' bann bon travay</em> » (ils prennent tous les bons postes).</p>",
       "en": "<p>She distrusts the group's Zoreils and says so at table: \"<em>zot i prend tout' bann bon travay</em>\" (they take all the good jobs).</p>"
+    },
+    "results.sP4oHmu1ePhiJXFv.description": {
+      "fr": "<p>C'est une gramoune : elle marche lentement, il faudra la porter dans les sentiers et la soigner l'hiver ; mais elle sait des choses que personne ne sait plus.</p>",
+      "en": "<p>She is a gramoune (an elder): she walks slowly, she will have to be carried on the trails and nursed in winter; but she knows things nobody knows any more.</p>"
     }
   },
   "tables/eVUENIxsisNCurTz": {
@@ -2036,6 +2401,57 @@
     "results.Lw64mFrghq97N6wr.description": {
       "fr": "<p>Latchimy Vélaye</p>",
       "en": "<p>Latchimy Vélaye</p>"
+    }
+  },
+  "tables/tg3ure3UoIRF6Ig9": {
+    "_nom": "Livres trouvés",
+    "name": {
+      "fr": "Livres trouvés",
+      "en": "Books found"
+    },
+    "description": {
+      "fr": "<p>Le livre qu'on rapporte d'une fouille « livres » (le système tire le savoir qu'il apprend ; la table donne le livre).</p>",
+      "en": "<p>The book brought back from a “books” scavenging run (the system rolls the skill it teaches; the table gives the book).</p>"
+    },
+    "results.WLLhZNYUyv95FzDh.description": {
+      "fr": "<p>Un manuel scolaire d'électricité, annoté au crayon par un élève qui n'aimait pas les schémas.</p>",
+      "en": "<p>A school electricity textbook, annotated in pencil by a pupil who didn't like diagrams.</p>"
+    },
+    "results.fykrDHMYev9h4vTS.description": {
+      "fr": "<p>Le guide d'entretien d'un chauffe-eau solaire, avec les plans du circuit.</p>",
+      "en": "<p>The maintenance guide for a solar water heater, with the circuit plans.</p>"
+    },
+    "results.Y308bPeVwIMpzLW9.description": {
+      "fr": "<p>Un vieux cahier de recettes lontan : rougails, achards, conserves, et dans la marge, des remèdes.</p>",
+      "en": "<p>An old notebook of lontan (old-time) recipes: rougails, achards (pickles), preserves, and in the margin, remedies.</p>"
+    },
+    "results.UTyH0LhifdukaocY.description": {
+      "fr": "<p>Un livre de vannerie de l'artisanat réunionnais, photos jaunies de sacs et de chapeaux de vacoa.</p>",
+      "en": "<p>A book on Réunionese basketry, with yellowed photos of vacoa bags and hats.</p>"
+    },
+    "results.P0gEVJVbcAZ7ordy.description": {
+      "fr": "<p>La revue technique d'une voiture de quinze ans, et un dossier sur la conversion des moteurs à l'éthanol.</p>",
+      "en": "<p>The workshop manual for a fifteen-year-old car, and a file on converting engines to ethanol.</p>"
+    },
+    "results.f9PX4AeMpN66pkDU.description": {
+      "fr": "<p>Un manuel de secourisme d'association, pages cornées à « hémorragie » et « fracture ».</p>",
+      "en": "<p>A first-aid association manual, pages dog-eared at “haemorrhage” and “fracture”.</p>"
+    },
+    "results.Vzp8sko7GbNPbEkd.description": {
+      "fr": "<p>Un guide des plantes médicinales de l'île, un herbier glissé entre les pages.</p>",
+      "en": "<p>A guide to the island's medicinal plants, a herbarium slipped between the pages.</p>"
+    },
+    "results.kHbtkVMiYeniDeFb.description": {
+      "fr": "<p>Un traité de maçonnerie traditionnelle : les murs en pierre sèche des Hauts, coupe par coupe.</p>",
+      "en": "<p>A treatise on traditional masonry: the dry-stone walls of the Highlands, cross-section by cross-section.</p>"
+    },
+    "results.fvpgFicdtOoxwPiC.description": {
+      "fr": "<p>Un manuel de radioamateur, avec la liste des fréquences des autres îles.</p>",
+      "en": "<p>A radio amateur's manual, with the list of frequencies of the other islands.</p>"
+    },
+    "results.nVh66X0bHZYHmFpL.description": {
+      "fr": "<p>Un roman, rien de plus. On le lit quand même, pour les soirs sans rien : +1 moral au groupe, une fois (le MJ le dit).</p>",
+      "en": "<p>A novel, nothing more. You read it all the same, for the empty evenings: +1 morale for the group, once (the GM says so).</p>"
     }
   },
   "tables/tmvTmYEMoJRRwXfq": {

@@ -1,0 +1,37 @@
+{
+  "_id": "sswgHn21e5oBrOHt",
+  "_key": "!items!sswgHn21e5oBrOHt",
+  "name": "Cahier d'une gramoune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cahier-de-gramoune",
+    "categorie": "livre",
+    "description": "<p>Un cahier d'écolier rempli à la veillée, sous la dictée d'une ancienne : remèdes, lunes pour planter, façons de tresser et de bâtir, avec ses mots à elle. Il n'en existe qu'un ; il apprend ce qu'elle savait, même quand elle n'est plus là.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "enseigne": []
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cahier-de-gramoune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

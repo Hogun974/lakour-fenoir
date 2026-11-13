@@ -1,0 +1,47 @@
+{
+  "_id": "5HIPC9w7NaleygmE",
+  "_key": "!items!5HIPC9w7NaleygmE",
+  "name": "Gazogène sur un camion",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "gazogene",
+    "description": "<p>Un fût, un foyer, un filtre, des tuyaux jusqu'à l'admission : un camion du groupe (le MJ le retire) roulera au bois sec.</p>",
+    "cout": {
+      "pieces": 5,
+      "materiaux": 6
+    },
+    "travail": 12,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "moteurs-de-fortune"
+      ],
+      "installation": {
+        "cle": "atelier",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "camion-a-gazogene",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gazogene"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

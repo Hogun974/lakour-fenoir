@@ -1,0 +1,44 @@
+{
+  "_id": "a9fg8knFEzz7GN9S",
+  "_key": "!items!a9fg8knFEzz7GN9S",
+  "name": "Huile filtrée (carburant)",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "huile-filtree",
+    "description": "<p>L'huile des friteuses abandonnées et des cocos pressés, décantée, filtrée au tissu, chauffée : un carburant pour moteur modifié, qui encrasse vite.</p>",
+    "cout": {
+      "nourriture": 3,
+      "materiaux": 1
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "moteurs-de-fortune"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "ressource": "biocarburant",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "huile-filtree"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

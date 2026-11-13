@@ -21,7 +21,11 @@
       "terrains": [
         "route"
       ],
-      "bruit": 0
+      "bruit": 0,
+      "pente": {
+        "descente": 0.8,
+        "montee": 3
+      }
     },
     "effets": null,
     "marque": ""

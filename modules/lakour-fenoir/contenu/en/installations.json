@@ -32,6 +32,17 @@
       "en": "<p>A bench, a vice, tools put away, a crate of sorted parts. Here you repair, you make, you learn.</p>"
     }
   },
+  "installations/5SYPK3lvGG98GEEw": {
+    "_nom": "Gazinière",
+    "name": {
+      "fr": "Gazinière",
+      "en": "Gas stove"
+    },
+    "system.description": {
+      "fr": "<p>La gazinière d'une cuisine, sa bouteille de treize kilos dessous : on cuit le cari sans fumée, donc sans se faire voir. La bouteille se vide ; quand il n'y a plus de gaz, on retourne au feu de bois (la cuisine commune prend le relais si elle existe).</p>",
+      "en": "<p>A kitchen gas stove with its thirteen-kilo bottle underneath: you cook the cari (curry) without smoke, so without being seen. The bottle empties; when there is no gas left, it is back to the wood fire (the communal kitchen takes over if there is one).</p>"
+    }
+  },
   "installations/8HfJ6ROWDZ1WwLXg": {
     "_nom": "Bouilleur solaire",
     "name": {
@@ -76,6 +87,28 @@
       "en": "<p>A drum filled with gravel, washed sand and charcoal, then a boil: raw water from the river, the well or the ravine becomes drinkable. Without it, diarrhoea kills more surely than the Pallid.</p>"
     }
   },
+  "installations/Au0096NH6Rdj6CKI": {
+    "_nom": "Palissade de bambou",
+    "name": {
+      "fr": "Palissade de bambou",
+      "en": "Bamboo palisade"
+    },
+    "system.description": {
+      "fr": "<p>Des cannes de bambou plantées serré, ligaturées à la fibre de choka, doublées de branches épineuses : elle plie sous le vent au lieu de casser, repousse si on la laisse faire, et se fond dans la ravine. Elle arrête moins qu'une palissade de tôle.</p>",
+      "en": "<p>Bamboo canes planted close together, lashed with choka fibre, backed with thorny branches: it bends in the wind instead of breaking, grows back if you let it, and blends into the ravine. It stops less than a sheet-metal palisade.</p>"
+    }
+  },
+  "installations/BH21L5RydHWGMHMY": {
+    "_nom": "Gouttières de bambou et jarres",
+    "name": {
+      "fr": "Gouttières de bambou et jarres",
+      "en": "Bamboo gutters and jars"
+    },
+    "system.description": {
+      "fr": "<p>Des bambous fendus en gouttières sous le bord du toit, des jarres de terre et des fûts de bois dessous. Les joints fuient un peu, les jarres se fêlent ; on les refait avec ce qui pousse autour.</p>",
+      "en": "<p>Split bamboo as gutters along the edge of the roof, earthenware jars and wooden casks beneath. The joints leak a little, the jars crack; you remake them with what grows around.</p>"
+    }
+  },
   "installations/DyRSnjRBQuBCNwEC": {
     "_nom": "Infirmerie",
     "name": {
@@ -85,6 +118,28 @@
     "system.description": {
       "fr": "<p>Un lit propre, une table, de l'eau bouillie, des bandes, un coin isolé pour les fièvres : de quoi soigner mieux et isoler un malade. Au second niveau, un jardin de simples (ayapana, citronnelle, bois de quivi) fournit tisanes et emplâtres.</p>",
       "en": "<p>A clean bed, a table, boiled water, bandages, an isolated corner for fevers: enough to treat people better and isolate a sick person. At the second level, a herb garden (ayapana, lemongrass, bois de quivi) provides infusions and poultices.</p>"
+    }
+  },
+  "installations/EDvGOBcGxam1zJSg": {
+    "_nom": "Garde-manger lontan",
+    "name": {
+      "fr": "Garde-manger lontan",
+      "en": "Old-time larder"
+    },
+    "system.description": {
+      "fr": "<p>Un grenier sur pilotis coiffé de vétiver, des jarres fermées de cire, des sacs de vacoa pendus hors de portée des rats : la réserve tient au sec, en plus petit.</p>",
+      "en": "<p>A granary on stilts thatched with vetiver, jars sealed with wax, vacoa bags hung out of the rats' reach: the stores stay dry, on a smaller scale.</p>"
+    }
+  },
+  "installations/EN4DMaHD7lvjWzip": {
+    "_nom": "Chauffe-eau à gaz",
+    "name": {
+      "fr": "Chauffe-eau à gaz",
+      "en": "Gas water heater"
+    },
+    "system.description": {
+      "fr": "<p>Un chauffe-eau instantané branché sur une bouteille : de l'eau chaude à toute heure, tant qu'il reste du gaz. Il passe après le soleil.</p>",
+      "en": "<p>An instant water heater connected to a gas bottle: hot water at any hour, as long as there is gas left. It comes after the sun.</p>"
     }
   },
   "installations/Es3LGhWCZ2ErAfoe": {
@@ -142,6 +197,17 @@
       "en": "<p>A hand pump on the well, or a salvaged pump reassembled by hand: twenty minutes of arm work in the morning, water for the day.</p>"
     }
   },
+  "installations/OBOMpYK7tFolQcYZ": {
+    "_nom": "Mur de pierres sèches",
+    "name": {
+      "fr": "Mur de pierres sèches",
+      "en": "Dry-stone wall"
+    },
+    "system.description": {
+      "fr": "<p>Le muret des Hauts et des îlets, monté avec les cailloux du champ, sans un gramme de ciment : il ne coûte que de la peine, ne s'abîme presque jamais et ressemble à tous les vieux murs de l'île. Il monte moins haut qu'un mur maçonné.</p>",
+      "en": "<p>The low wall of the Highlands and the îlets, built with the stones from the field, without a gram of cement: it costs nothing but effort, hardly ever wears and looks like every old wall on the island. It does not rise as high as a mortared wall.</p>"
+    }
+  },
   "installations/OcuWHSmppKDUHjjO": {
     "_nom": "Galerie souterraine",
     "name": {
@@ -195,6 +261,28 @@
     "system.description": {
       "fr": "<p>Un tunnel de plastique ou de vitres récupérées sur des arceaux : à l'abri des pluies battantes de l'Est et du froid des Hauts, tomates, salades et semis poussent toute l'année. Le plastique brille au soleil.</p>",
       "en": "<p>A tunnel of plastic or salvaged panes over hoops: sheltered from the driving rains of the East and the cold of the Highlands, tomatoes, lettuces and seedlings grow all year round. The plastic shines in the sun.</p>"
+    }
+  },
+  "installations/UgGo9sTV5xrqQHGo": {
+    "_nom": "Jardin créole",
+    "name": {
+      "fr": "Jardin créole",
+      "en": "Creole garden"
+    },
+    "system.description": {
+      "fr": "<p>Le jardin de la case, où tout pousse mêlé : bananiers pour l'ombre, chouchou sur la treille, songe, manioc, patates, brèdes, et les zerbaz le long de la clôture. On le plante de boutures, on le paille ; il boit peu, ressemble à une cour à l'abandon, et donne moins qu'un potager bien aligné.</p>",
+      "en": "<p>The house garden, where everything grows together: banana trees for shade, chayote on the trellis, taro, cassava, sweet potatoes, brèdes (leafy greens), and the zerbaz (healing herbs) along the fence. You plant it from cuttings and mulch it; it drinks little, looks like an abandoned yard, and yields less than a neatly lined vegetable garden.</p>"
+    }
+  },
+  "installations/VVjNtIGqchisVLlL": {
+    "_nom": "Conduite de bambou",
+    "name": {
+      "fr": "Conduite de bambou",
+      "en": "Bamboo pipeline"
+    },
+    "system.description": {
+      "fr": "<p>Un petit barrage de pierres à la source, et des bambous emboîtés, calés sur des fourches, qui descendent jusqu'à la case. L'eau arrive seule ; il en fuit un peu à chaque joint, et une chèvre peut tout défaire.</p>",
+      "en": "<p>A small stone dam at the spring, and bamboo pipes fitted end to end, propped on forked sticks, running down to the house. The water arrives on its own; a little leaks at every joint, and a goat can undo it all.</p>"
     }
   },
   "installations/VqIUYVmL1LYQrgrT": {
@@ -296,6 +384,17 @@
       "en": "<p>Beds of brèdes (leaf greens), taro, sweet potatoes, cassava, beans, chayotes and chillies. The first crop of greens comes quickly; the rest follows. A vegetable plot can be seen, and it drinks.</p>"
     }
   },
+  "installations/aPUo41aJLtwNcuNQ": {
+    "_nom": "Puits à balancier",
+    "name": {
+      "fr": "Puits à balancier",
+      "en": "Well sweep"
+    },
+    "system.description": {
+      "fr": "<p>Une longue perche de bois sur une fourche, une pierre au bout pour contrepoids, un seau de l'autre : on puise sans pompe ni pièce, au prix de quelques allers-retours de plus.</p>",
+      "en": "<p>A long wooden pole on a forked post, a stone at one end as a counterweight, a bucket at the other: you draw water without pump or parts, at the cost of a few more trips.</p>"
+    }
+  },
   "installations/fFPNjbJ5DsEO1eJH": {
     "_nom": "Ruches",
     "name": {
@@ -316,6 +415,28 @@
     "system.description": {
       "fr": "<p>Un alternateur de voiture, des pales taillées dans un fût de plastique, un mât haubané. Elle tourne avec les alizés, la nuit comme le jour ; elle grince, et elle se voit de loin.</p>",
       "en": "<p>A car alternator, blades cut from a plastic drum, a guyed mast. It turns with the trade winds, night and day; it creaks, and it can be seen from afar.</p>"
+    }
+  },
+  "installations/fq8oPLYqHym7DP89": {
+    "_nom": "Eau chauffée au feu de bois",
+    "name": {
+      "fr": "Eau chauffée au feu de bois",
+      "en": "Water heated on a wood fire"
+    },
+    "system.description": {
+      "fr": "<p>Un fût noirci sur trois pierres, un feu de bois de goyavier : l'eau chaude des anciens, gratuite, longue à venir. La fumée monte, et se voit.</p>",
+      "en": "<p>A blackened drum on three stones, a fire of guava wood: the elders' hot water, free, slow to come. The smoke rises, and can be seen.</p>"
+    }
+  },
+  "installations/gBKJ1LVf85BeLqT3": {
+    "_nom": "Chauffe-eau solaire",
+    "name": {
+      "fr": "Chauffe-eau solaire",
+      "en": "Solar water heater"
+    },
+    "system.description": {
+      "fr": "<p>Le capteur et le ballon d'un toit de l'Ouest, démontés et remontés : une douche chaude chaque soir de soleil, de l'eau chaude pour laver les plaies. Le capteur brille sur le toit.</p>",
+      "en": "<p>The collector and tank from a roof in the West, taken down and put back up: a hot shower every sunny evening, hot water to wash wounds. The collector shines on the roof.</p>"
     }
   },
   "installations/jzUqENvDVDDGNEUc": {
@@ -362,6 +483,17 @@
       "en": "<p>A steel door salvaged from a plant room, a bank or a barracks, set into a reinforced frame, with its hinges and its bars. The last line of defence.</p>"
     }
   },
+  "installations/rx8f0leSpAxrzq06": {
+    "_nom": "Ruches en tronc",
+    "name": {
+      "fr": "Ruches en tronc",
+      "en": "Log hives"
+    },
+    "system.description": {
+      "fr": "<p>Un tronc creux de bois de natte ou de filao, fermé d'une planche, posé sous un toit de paille : les abeilles s'y installent seules. On récolte moins, en enfumant au vétiver.</p>",
+      "en": "<p>A hollow trunk of natte or filao wood, closed with a board, set under a thatched roof: the bees move in on their own. You harvest less, smoking them with vetiver.</p>"
+    }
+  },
   "installations/uyhW7qaDUjyfu4r2": {
     "_nom": "Basse-cour",
     "name": {
@@ -393,6 +525,17 @@
     "system.description": {
       "fr": "<p>Épluchures, fumier, feuilles, cendres, tout y passe. Sans lui, la terre s'épuise en quelques récoltes ; avec lui, elle s'enrichit chaque saison.</p>",
       "en": "<p>Peelings, manure, leaves, ashes, everything goes in. Without it, the soil is exhausted within a few harvests; with it, it grows richer every season.</p>"
+    }
+  },
+  "installations/wQAgZnc8Tm9UjwrI": {
+    "_nom": "Guet dans un grand arbre",
+    "name": {
+      "fr": "Guet dans un grand arbre",
+      "en": "Lookout in a big tree"
+    },
+    "system.description": {
+      "fr": "<p>Une plateforme de gaulettes dans la fourche d'un manguier ou d'un tamarin, une échelle de corde qu'on remonte : la garde voit loin, cachée dans le feuillage. Rien de plus, et c'est déjà beaucoup.</p>",
+      "en": "<p>A platform of poles in the fork of a mango or tamarind tree, a rope ladder you pull up after you: the watch sees far, hidden in the foliage. Nothing more, and that is already a lot.</p>"
     }
   },
   "installations/zOYAZvwAMgTY3d6b": {

@@ -1,0 +1,41 @@
+{
+  "_id": "i8u6OGsMOqGbxF9l",
+  "_key": "!items!i8u6OGsMOqGbxF9l",
+  "name": "Pinces à linge en bois fendu",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "pinces-a-linge",
+    "description": "<p>Un bout de goyavier, un couteau, du fil : on fend, on taille, on ligature. Le genre de chose qu'on achetait sans y penser.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "pinces-a-linge-en-bois",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pinces-a-linge"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

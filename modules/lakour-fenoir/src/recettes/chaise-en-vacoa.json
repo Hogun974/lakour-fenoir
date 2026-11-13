@@ -1,0 +1,43 @@
+{
+  "_id": "8h5MizzJ5gAyPHGB",
+  "_key": "!items!8h5MizzJ5gAyPHGB",
+  "name": "Chaise en vacoa",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "chaise-en-vacoa",
+    "description": "<p>Un cadre de bois chevillé, une assise tressée de vacoa : une soirée de travail pour des années de veillées.</p>",
+    "cout": {
+      "materiaux": 2
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "bambou-vacoa"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "chaise-en-vacoa",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chaise-en-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

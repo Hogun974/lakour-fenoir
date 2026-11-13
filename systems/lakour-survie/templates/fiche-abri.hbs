@@ -8,6 +8,7 @@
         {{#if courant}}<span class="survie-pilule bon"><i class="fa-solid fa-house-flag"></i> {{localize "LAKOUR_SURVIE.Abri.Courant"}}</span>{{/if}}
         {{#if abandonne}}<span class="survie-pilule grave"><i class="fa-solid fa-door-open"></i> {{localize "LAKOUR_SURVIE.Abri.Abandonne"}}</span>{{/if}}
         {{#if bilan.autonome}}<span class="survie-pilule bon"><i class="fa-solid fa-seedling"></i> {{localize "LAKOUR_SURVIE.Abri.Autonome"}}</span>{{/if}}
+        {{#if bilan.savoirs.complete}}<span class="survie-pilule bon"><i class="fa-solid fa-book-open"></i> {{localize "LAKOUR_SURVIE.Abri.AutonomieComplete"}}</span>{{/if}}
       </div>
     </div>
   </header>
@@ -23,6 +24,7 @@
       <div><i class="fa-solid fa-seedling"></i><strong>{{bilan.joursAutonomes}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.JoursAutonomes"}}</span></div>
     </div>
     {{#if bilan.surpeuplement}}<p class="survie-avertissement">{{bilan.surpeuplement}}</p>{{/if}}
+    {{#if bilan.savoirs}}<p class="survie-aide"><i class="fa-solid fa-book-open"></i> {{localize "LAKOUR_SURVIE.Abri.Arbres" moderne=bilan.savoirs.moderne lontan=bilan.savoirs.lontan}}</p>{{/if}}
     {{/if}}
 
     <h3><i class="fa-solid fa-boxes-stacked"></i> {{localize "LAKOUR_SURVIE.Abri.Stocks"}}</h3>
@@ -48,7 +50,7 @@
         <img src="{{img}}" alt="">
         <div>
           <a data-action="ouvrirObjet" data-item-id="{{id}}" data-tooltip="{{aide}}">{{nom}}</a>
-          <small>{{categorie}} · {{localize "LAKOUR_SURVIE.Objet.Niveau"}} {{niveau}} / {{niveauMax}} · {{etatTexte}}{{#if arret}} · <em>{{localize "LAKOUR_SURVIE.Abri.Arret"}} ({{arret}})</em>{{/if}}</small>
+          <small>{{categorie}} · {{localize "LAKOUR_SURVIE.Objet.Niveau"}} {{niveau}} / {{niveauMax}} · {{etatTexte}}{{#if lontan}} · {{localize "LAKOUR_SURVIE.Abri.Lontan"}}{{/if}}{{#if arret}} · <em>{{localize "LAKOUR_SURVIE.Abri.Arret"}} ({{arret}})</em>{{/if}}{{#if secours}} · <em>{{localize "LAKOUR_SURVIE.Abri.Secours"}}</em>{{/if}}</small>
           {{#if chantier}}<span class="survie-jauge-barre chantier" data-tooltip="{{chantier.fait}} / {{chantier.requis}}"><span style="width: {{chantier.pct}}%"></span></span>{{/if}}
         </div>
       </li>

@@ -1,0 +1,49 @@
+{
+  "_id": "206qWaRr3q2LbJTF",
+  "_key": "!items!206qWaRr3q2LbJTF",
+  "name": "Scooter électrique",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "scooter-electrique",
+    "categorie": "transport",
+    "description": "<p>Un scooter de livreur, rechargé au soleil par les panneaux de l'abri : rapide, muet, il ne porte presque rien. Une unité d'énergie par quart de route.</p>",
+    "bonus": {
+      "conduite": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "vehicule",
+      "places": 2,
+      "chargeMax": 4,
+      "carburantParQuart": 1,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 0,
+      "source": "energie"
+    },
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "scooter-electrique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

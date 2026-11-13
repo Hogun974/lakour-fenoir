@@ -1,0 +1,39 @@
+{
+  "_id": "IylxLgrTqrtVNmjC",
+  "_key": "!items!IylxLgrTqrtVNmjC",
+  "name": "Chien du groupe",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "chien-du-groupe",
+    "categorie": "animal",
+    "description": "<p>Un chien errant qui a fini par manger dans la main, ou un chiot d'une portée de l'élevage : il dort en travers de la porte, entend les Livides avant la garde, s'agite avant le cyclone et le volcan. Il se bat si on le lâche, et peut y rester. À l'abri, il remonte le moral de tous.</p>",
+    "bonus": {
+      "vigilance": 1,
+      "combat": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chien-du-groupe"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

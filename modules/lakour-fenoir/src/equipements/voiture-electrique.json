@@ -1,0 +1,46 @@
+{
+  "_id": "7bFHD5K91aRRVSfj",
+  "_key": "!items!7bFHD5K91aRRVSfj",
+  "name": "Voiture électrique",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "voiture-electrique",
+    "categorie": "transport",
+    "description": "<p>Une petite voiture électrique de la ville, rechargée sur les batteries de l'abri : l'île s'y prête, courte et ensoleillée. Elle roule sans bruit, mais vide une batterie en un trajet (cinq unités d'énergie par quart de route).</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "vehicule",
+      "places": 4,
+      "chargeMax": 16,
+      "carburantParQuart": 5,
+      "terrains": [
+        "route"
+      ],
+      "bruit": 0,
+      "source": "energie"
+    },
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "voiture-electrique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

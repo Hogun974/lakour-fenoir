@@ -247,5 +247,30 @@ export const EVENEMENTS = [
   // ---------------------------------------------------------------- Fêtes (voir fetes.mjs pour les dates)
   evenement({ cle: "fete-au-camp", nom: "Une fête au camp", type: "fete", phases: ["silence", "apres"], poids: 1, public: false,
     texte: `Une date revient, un anniversaire, une fête d'avant : le groupe décide de la marquer, avec ce qu'il a. Une ration de plus, une chanson, un feu. (Fêter coûte une ration de plus par personne et redonne 1 de moral à chacun, une fois par fête.)`,
-    effets: { abri: { stocks: { nourriture: -4 }, moral: 1 } } })
+    effets: { abri: { stocks: { nourriture: -4 }, moral: 1 } } }),
+
+  // ---------------------------------------------------------------- Lot « savoirs » : les deux savoirs, l'île en mouvement
+  // « arbres-tombes » est tiré par la simulation elle-même au passage d'un cyclone (logique/monde.mjs, EVENEMENTS_SIMULES) : ce texte
+  // le décrit au MJ.
+  evenement({ cle: "arbres-tombes", nom: "Arbres en travers", type: "meteo", saisons: ["pluies"], poids: 1,
+    texte: `Après le cyclone, des filaos, des tamariniers et des manguiers couchés en travers des pistes et des sentiers : on dégage d'abord la route, les chemins restent coupés des jours. Le bois est là pour qui le débite.`,
+    effets: { route: "coupee", duree: 4 } }),
+  evenement({ cle: "meute-sur-la-route", nom: "Une meute tient la route", type: "accident", phases: ["silence", "apres"], zones: ["littoral", "hauts", "foret"], poids: 2,
+    texte: `Une meute d'une dizaine de chiens, menée par un grand chien de tête, tient un tronçon de route : elle suit les voyageurs, attend la nuit ou la panne.`,
+    effets: { nature: { gibier: -0.1 } } }),
+  evenement({ cle: "chien-qui-suit", nom: "Un chien qui suit", type: "decouverte", phases: APRES_CHUTE, poids: 1, public: false,
+    texte: `Un chien maigre, collier encore au cou, suit le groupe de loin depuis deux jours. Il n'approche pas, il ne part pas. Avec de la patience et de la nourriture, il pourrait devenir le chien du groupe.`,
+    effets: {} }),
+  evenement({ cle: "jardin-abandonne", nom: "Un jardin abandonné", type: "decouverte", phases: ["silence", "apres"], poids: 2, public: false,
+    texte: `Derrière une case vide, un jardin que personne n'a touché : la treille de chouchous déborde, les bananiers ont fait des rejets, le manioc attend en terre. De quoi manger, et des boutures à replanter le jour même.`,
+    effets: { abri: { decouverte: { nourriture: 6, boutures: 4 } } } }),
+  evenement({ cle: "la-gramoune-qui-reste", nom: "La gramoune qui reste", type: "humain", phases: ["panique", "effondrement", "silence"], poids: 1, public: false,
+    texte: `Dans une case au bout d'un chemin, une très vieille dame refuse de partir : elle a son jardin, ses zerbaz, ses poules. Elle sait des choses que plus personne ne sait ; elle ne les dira qu'à ceux qui prendront le temps de l'écouter (une gramoune à accueillir : fenêtre du MJ).`,
+    effets: {} }),
+  evenement({ cle: "bouteilles-de-gaz", nom: "Un dépôt de bouteilles de gaz", type: "decouverte", phases: APRES_CHUTE, poids: 1, public: false,
+    texte: `Derrière une boutique de quartier, une cage de bouteilles de gaz, cadenassée, que personne n'a pensé à ouvrir.`,
+    effets: { abri: { decouverte: { gaz: 39 } } } }),
+  evenement({ cle: "livres-de-l-ecole", nom: "La bibliothèque de l'école", type: "decouverte", phases: ["silence", "apres"], poids: 1, public: false,
+    texte: `Le CDI d'un collège, intact sous la poussière : des manuels, des encyclopédies, des revues. Un savoir à apprendre, si l'on a le temps et la lumière pour lire (fouille « livres » sur le site).`,
+    effets: {} })
 ];

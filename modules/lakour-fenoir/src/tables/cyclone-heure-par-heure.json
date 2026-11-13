@@ -1,0 +1,177 @@
+{
+  "_id": "B0822ak1CjeTdNsN",
+  "_key": "!tables!B0822ak1CjeTdNsN",
+  "name": "Cyclone — heure par heure",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le jour où le cyclone frappe : rafales, accalmies, l'œil, le vent qui revient. Un résultat par quart, ou quand les joueurs sortent.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cyclone-heure-par-heure"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "DQHoHB4pvsD4crDp",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.DQHoHB4pvsD4crDp",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rafales : la tôle du toit claque comme un fusil, toutes les trois secondes. Dehors : −2 dés, on n'entend rien (vigilance −3).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ASleNUUtDWZLOThd",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.ASleNUUtDWZLOThd",
+      "type": "text",
+      "name": "",
+      "description": "<p>Accalmie de dix minutes : la pluie tombe droit, on entend de nouveau la ravine. Le temps de vérifier une fixation, pas plus.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5egXjGoBp2E4QPst",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.5egXjGoBp2E4QPst",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une fuite au-dessus du dortoir : on court avec des bassines. Le seau de la cuisine sert de gouttière.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YIj369pVTlSkqxwD",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.YIj369pVTlSkqxwD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un arbre tombe quelque part, un craquement sourd, puis plus rien. Le bois de demain, la route coupée d'après-demain.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZSveYAOoMJtazHH8",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.ZSveYAOoMJtazHH8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le courant (s'il y en avait) saute ; on finit la nuit à la bougie. La lumière ne se voit de nulle part : il n'y a personne dehors.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "D63AlwNX7B7suuKb",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.D63AlwNX7B7suuKb",
+      "type": "text",
+      "name": "",
+      "description": "<p>L'œil passe (si la région est au cœur de la trajectoire) : silence total, ciel clair, étoiles. C'est un piège : le vent revient de l'autre côté.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "GYe8AMoF0dSwJ7X6",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.GYe8AMoF0dSwJ7X6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le vent tourne : ce qu'on avait calé contre la façade se met à battre de l'autre côté. Une fixation à revoir, dehors, en plein vent.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gzC3FobY1onIRJlA",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.gzC3FobY1onIRJlA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une silhouette titube dans la cour, poussée par le vent : un Livide égaré, qui n'entend rien non plus.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Eltdm0r5BLYAXvOn",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.Eltdm0r5BLYAXvOn",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les marmailles ne dorment pas ; quelqu'un raconte une histoire de Ti Jean pour les tenir. Les grands écoutent aussi.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gvSSCnA61HyNO74J",
+      "_key": "!tables.results!B0822ak1CjeTdNsN.gvSSCnA61HyNO74J",
+      "type": "text",
+      "name": "",
+      "description": "<p>Au matin, la cour est méconnaissable : branches, feuilles, boue, et quelque chose qui n'était pas là hier (table « Ce que le cyclone dépose »).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "_id": "8R6zkOHHCT2LCJoI",
+  "_key": "!tables!8R6zkOHHCT2LCJoI",
+  "name": "Meutes des routes",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les chiens abandonnés vont en meutes, et tiennent les routes.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "meutes-des-routes"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "5G2uqhDci4h5KOAP",
+      "_key": "!tables.results!8R6zkOHHCT2LCJoI.5G2uqhDci4h5KOAP",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une meute de six, menée par un grand chien gris au collier clouté, sur l'aire de repos de la quatre-voies.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MZiNO2Tj6d77VkNN",
+      "_key": "!tables.results!8R6zkOHHCT2LCJoI.MZiNO2Tj6d77VkNN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des aboiements qui suivent la voiture le long de la route, puis plus rien. Ils attendent la panne.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "GUzfe44vyc2fitoS",
+      "_key": "!tables.results!8R6zkOHHCT2LCJoI.GUzfe44vyc2fitoS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une meute qui dort sous un pont, au milieu de sacs éventrés : leur territoire. On contourne ou on traverse vite.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "55pVJCXsVgXtc71N",
+      "_key": "!tables.results!8R6zkOHHCT2LCJoI.55pVJCXsVgXtc71N",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux chiens maigres fouillent une épave ; ils détalent, puis reviennent, à cinq.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mNjtwAeASxWDxBI3",
+      "_key": "!tables.results!8R6zkOHHCT2LCJoI.mNjtwAeASxWDxBI3",
+      "type": "text",
+      "name": "",
+      "description": "<p>La meute a coincé un Livide contre un grillage et le harcèle : elle n'a pas peur des morts, elle a peur du feu.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VarQhNVm37kSPvpY",
+      "_key": "!tables.results!8R6zkOHHCT2LCJoI.VarQhNVm37kSPvpY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un chien de tête blessé, qui boite : la meute se dispute déjà la place.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nGVs4qJaReFoaqrI",
+      "_key": "!tables.results!8R6zkOHHCT2LCJoI.nGVs4qJaReFoaqrI",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une meute qui suit un vélo dans la descente, en silence, jusqu'au virage.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vXxHnyBqWyBQrcY0",
+      "_key": "!tables.results!8R6zkOHHCT2LCJoI.vXxHnyBqWyBQrcY0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une chienne avec ses chiots, cachée dans un fossé : elle attaquera pour eux, ou se laissera nourrir.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

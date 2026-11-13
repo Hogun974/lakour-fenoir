@@ -13,9 +13,13 @@ export const TERRAINS = ["route", "piste", "sentier", "mer"];
 export const TYPES_SITE = ["maison", "case-creole", "immeuble", "ecole", "commerce", "ferme", "gite", "ilet", "caserne", "hopital",
   "port", "phare", "tunnel-de-lave", "galerie", "usine", "eglise", "autre"];
 export const EAUX_SITE = ["aucune", "citerne", "riviere", "source", "puits", "reseau"];
-export const RESSOURCES = ["eau", "nourriture", "carburant", "medicaments", "munitions", "materiaux", "pieces", "graines"];
-// Les stocks de l'abri : les ressources pillables (les réserves des régions), plus ce qui se cueille ou se produit sans se piller.
-export const STOCKS = [...RESSOURCES, "plantes", "energie"];
+export const RESSOURCES = ["eau", "nourriture", "carburant", "medicaments", "munitions", "materiaux", "pieces", "graines", "gaz"];
+// Les stocks de l'abri : les ressources pillables (les réserves des régions), plus ce qui se cueille ou se produit sans se piller
+// (lot « savoirs » : boutures des jardins, carburant maison).
+export const STOCKS = [...RESSOURCES, "plantes", "energie", "boutures", "biocarburant"];
+// Coût d'une installation lontan en matières de l'île (bambou, vacoa, bois, vétiver), pris sur le bois des alentours (lot « savoirs »).
+export const COUT_ILE = "ile";
+export const ARBRES = ["moderne", "lontan"];
 export const NATURE = ["cueillette", "gibier", "peche", "bois"];
 export const RESEAUX = ["electricite", "eau", "carburant", "telephone"];
 export const CATEGORIES = ["defense", "eau", "nourriture", "energie", "vie", "souterrain", "stockage", "communication"];
@@ -24,7 +28,7 @@ export const PHASES = ["jour-zero", "panique", "effondrement", "silence", "apres
 export const SAISONS = ["pluies", "seche"];
 export const ATTITUDES = ["hostile", "mefiante", "neutre", "amicale"];
 export const COMPETENCES = ["endurance", "combat", "tir", "discretion", "vigilance", "bricolage", "survie", "soins", "parole", "conduite"];
-export const CATEGORIES_EQUIPEMENT = ["arme", "arme-a-feu", "outil", "soin", "transport", "communication", "energie", "vie", "livre"];
+export const CATEGORIES_EQUIPEMENT = ["arme", "arme-a-feu", "outil", "soin", "transport", "communication", "energie", "vie", "livre", "animal"];
 export const TRANSPORTS = ["pied", "vehicule", "bateau"];
 
 // Repères d'équilibre (docs/survie-notes-contenu.md) : ce que vise le contenu, pour que la logique s'aligne.
@@ -105,29 +109,35 @@ function niveauInstallation(n = {}) {
   };
 }
 
-export function installation({ cle, nom, categorie, description, niveaux }) {
+// Lot « savoirs » : arbre ("moderne" | "lontan" | "" : sans sœur), role (la clé de l'installation sœur, ou un rôle commun comme
+// « eau-chaude » : deux sœurs ne s'additionnent pas, la meilleure qui marche est en service, l'autre attend en secours), rang
+// (ordre de préférence entre sœurs : 0 d'abord ; défaut 0, 1 pour une lontan). Ces champs ne sont écrits que s'ils servent.
+export function installation({ cle, nom, categorie, description, niveaux, arbre = "", role = "", rang = null }) {
   const nv = niveaux.map(niveauInstallation);
   return objet({
     pack: "installations", type: "installation", cle, nom, img: IMAGES_CATEGORIE[categorie],
     system: {
       categorie, description: html(description), niveau: 0, niveauMax: nv.length,
-      chantier: { fait: 0, requis: nv[0]?.cout.travail ?? 0 }, etat: 0, niveaux: nv
+      chantier: { fait: 0, requis: nv[0]?.cout.travail ?? 0 }, etat: 0, niveaux: nv,
+      ...(arbre ? { arbre } : {}), ...(role ? { role } : {}), ...(rang !== null ? { rang } : {})
     }
   });
 }
 
-export function savoir({ cle, nom, description, apprentissage, effets }) {
-  return objet({ pack: "savoirs", type: "savoir", cle, nom, system: { description: html(description), apprentissage: html(apprentissage), effets: html(effets) } });
+// arbre (lot « savoirs ») : "moderne" ou "lontan" (le savoir d'avant, transmis par les anciens) ; l'autonomie complète demande les deux.
+export function savoir({ cle, nom, description, apprentissage, effets, arbre = "" }) {
+  return objet({ pack: "savoirs", type: "savoir", cle, nom, system: { description: html(description), apprentissage: html(apprentissage), effets: html(effets), arbre } });
 }
 
 // Équipement. Champs ajoutés au contrat (§3.4, voir docs/survie-notes-contenu.md) : categorie, bruit (ajouté au bruit
 // quand on s'en sert), transport ({ mode, places, chargeMax, carburant } pour un véhicule), effets (comme une installation,
 // pour les panneaux démontables), munitions = unités de munitions consommées par échange de tirs (null hors arme à feu).
 // marque : le signe d'une communauté sur l'objet (le marché, 2026-11-13) ; vide dans le compendium.
-export function equipement({ cle, nom, categorie, description, bonus = {}, charge = 1, usure = 0, munitions = null, bruit = 0, transport = null, effets = null, img, marque = "" }) {
+// enseigne (lot « savoirs ») : les savoir-faire qu'un livre ou un cahier apprend (veillées de lecture).
+export function equipement({ cle, nom, categorie, description, bonus = {}, charge = 1, usure = 0, munitions = null, bruit = 0, transport = null, effets = null, img, marque = "", enseigne = null }) {
   return objet({
     pack: "equipements", type: "equipement", cle, nom, img,
-    system: { categorie, description: html(description), bonus, charge, usure, munitions, bruit, transport, effets, marque }
+    system: { categorie, description: html(description), bonus, charge, usure, munitions, bruit, transport, effets, marque, ...(enseigne ? { enseigne } : {}) }
   });
 }
 

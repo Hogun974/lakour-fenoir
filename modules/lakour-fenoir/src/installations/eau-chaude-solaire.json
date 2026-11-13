@@ -1,0 +1,86 @@
+{
+  "_id": "gBKJ1LVf85BeLqT3",
+  "_key": "!items!gBKJ1LVf85BeLqT3",
+  "name": "Chauffe-eau solaire",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "eau-chaude-solaire",
+    "categorie": "vie",
+    "description": "<p>Le capteur et le ballon d'un toit de l'Ouest, démontés et remontés : une douche chaude chaque soir de soleil, de l'eau chaude pour laver les plaies. Le capteur brille sur le toit.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 3,
+          "graines": 0,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [
+            "plomberie-filtration"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {
+            "soins": 1
+          },
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "role": "eau-chaude",
+    "rang": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "eau-chaude-solaire"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

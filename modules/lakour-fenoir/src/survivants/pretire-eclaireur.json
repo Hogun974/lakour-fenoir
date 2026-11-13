@@ -92,7 +92,8 @@
         "cle": "etaiement-galeries",
         "description": "<p>Lire la roche et le tuf, creuser sans tout faire tomber, étayer au bois et à la ferraille, ventiler, drainer ; reconnaître une voûte de lave fragile.</p>",
         "apprentissage": "<p>Un passé de guide de canyon, de spéléologue ou de mineur ; un guide des tunnels de lave du Grand Brûlé ; réussir une cave étayée.</p>",
-        "effets": "<p>Ouvre la galerie souterraine niveaux 2 à 4 et l'aménagement d'un tunnel de lave niveaux 2 et 3.</p>"
+        "effets": "<p>Ouvre la galerie souterraine niveaux 2 à 4 et l'aménagement d'un tunnel de lave niveaux 2 et 3.</p>",
+        "arbre": "moderne"
       },
       "effects": [],
       "folder": null,

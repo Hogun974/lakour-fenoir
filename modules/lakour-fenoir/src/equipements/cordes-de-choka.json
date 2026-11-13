@@ -1,0 +1,38 @@
+{
+  "_id": "XP4evbw443PgIHT0",
+  "_key": "!items!XP4evbw443PgIHT0",
+  "name": "Cordes de choka",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cordes-de-choka",
+    "categorie": "outil",
+    "description": "<p>Des cordes tordues avec la fibre des feuilles de choka (l'agave), rouies et battues : elles lient un bambou, tiennent une bâche, descendent un seau dans le puits.</p>",
+    "bonus": {
+      "survie": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cordes-de-choka"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

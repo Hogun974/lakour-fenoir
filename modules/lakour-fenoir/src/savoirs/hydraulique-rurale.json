@@ -8,7 +8,8 @@
     "cle": "hydraulique-rurale",
     "description": "<p>Capter une source, poser une conduite par gravité, monter un bélier hydraulique, dériver une ravine sans qu'elle emporte tout à la première crue, installer une turbine.</p>",
     "apprentissage": "<p>Un ancien d'un îlet ou d'un cirque ; un agent d'une centrale hydraulique ; réussir un captage de source.</p>",
-    "effets": "<p>Ouvre le captage de source niveau 2 et le pico-hydro. +1 dé aux tests de bricolage sur l'eau.</p>"
+    "effets": "<p>Ouvre le captage de source niveau 2 et le pico-hydro. +1 dé aux tests de bricolage sur l'eau.</p>",
+    "arbre": "moderne"
   },
   "effects": [],
   "folder": null,

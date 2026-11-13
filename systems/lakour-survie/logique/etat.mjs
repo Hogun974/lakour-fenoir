@@ -41,7 +41,9 @@ import { hasardDuJour, deriverHasard, choisir, graineSure } from "./hasard.mjs";
 import { regionsDe, regionDe, sontVoisines } from "./contenu.mjs";
 import { phaseDuJour, momentIndex, saisonDuJour } from "./temps.mjs";
 import { effetQuart, effetJour, peutAgir } from "./survivant.mjs";
-import { bilanAbri, journeeAbri, suivreAutonomie, subirCyclone, subirEvenementAbri } from "./abri.mjs";
+import { bilanAbri, journeeAbri, suivreAutonomie, passageCyclone, subirEvenementAbri } from "./abri.mjs";
+import { estGramoune, preparationValable } from "./savoirs.mjs";
+import { liste } from "./contenu.mjs";
 import { creerMonde, simulerJour } from "./monde.mjs";
 import { EFFET_DEFAUT, coutDeFete, manqueDe, ajouterLiens } from "./fetes.mjs";
 import { ajouterSouvenir, oublierSouvenirs, espritDuJour, lueurDuJour, hygieneDuJour } from "./souvenirs.mjs";
@@ -134,7 +136,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     return r;
   };
   const conditions = jour => ({ jour, dateDepart, personnes: personnesAbri(), reseaux: ab ? reseauxActifs(m, ab.system.region, jour) : {},
-    rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu, jour), lueur: lueurDuJour(e, jour), signature: signatureDuMarche(e.marche) });
+    rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu, jour), lueur: lueurDuJour(e, jour), signature: signatureDuMarche(e.marche),
+    chien: Boolean(options.chien) && aLAbri(), confort: aLAbri() ? Number(options.confort) || 0 : 0 });
   let bilan = ab ? bilanAbri(ab.system, ab.installations, contenu, conditions(Math.floor(e.horloge.quart / QUARTS_PAR_JOUR))) : null;
   let palierVeille = palierVisibilite(options.visibiliteVeille ?? bilan?.visibilite ?? 0);
   // publier(quart, cle, params, texte) : une entrée du journal ; alerter(quart, type, cle, params, texte) : une alerte.
@@ -159,6 +162,10 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         s.evenements.push({ quart: fin, ...ev });
         if (["mort", "releve", "infection"].includes(ev.cle)) {
           publier(fin, `survivant-${ev.cle}${ev.cause ? `-${ev.cause}` : ""}`, { nom: s.nom, stade: ev.stade ?? "" }, `${s.nom} ${ev.texte}.`);
+        }
+        // Une gramoune qui meurt sans que personne ait écrit sous sa dictée : son savoir s'en va avec elle (lot « savoirs »).
+        if (ev.cle === "mort" && estGramoune(s.system, contenu) && !s.system.dictee?.cahier) {
+          publier(fin, "savoir-perdu", { nom: s.nom }, `Personne n'a écrit sous la dictée de ${s.nom} : ce qu'elle savait s'en va avec elle.`);
         }
         if (ev.cle === "releve") alerter(fin, "releve", "alerte-releve", { nom: s.nom }, `${s.nom} s'est relevé, Livide.`);
       }
@@ -214,6 +221,20 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         || (f.cle === "horde-nait" && sontVoisines(contenu, ctx.region, f.region))) alerter(fin, f.cle, cleTexteDe(f), f.params ?? {}, f.texte);
     }
     for (const x of sim.menaces) menaces.push({ jour, ...x });
+    // Le chien du groupe s'agite avant le ciel (lot « savoirs ») : le cyclone qui vient sur la région de l'abri, le volcan qui
+    // tremble (la région de l'abri ou une voisine), même sans radio.
+    if (options.chien && ab && aLAbri()) {
+      const ici = ab.system.region;
+      if (sim.faits.some(f => f.cle === "cyclone-pre-alerte") && (m.cyclone?.trajectoire ?? []).includes(ici)) {
+        alerter(fin, "chien", "chien-agite-cyclone", {}, "Le chien tourne en rond, gémit, gratte la porte : le ciel est encore bleu, mais quelque chose vient.");
+        publier(fin, "chien-agite-cyclone", {}, "Le chien tourne en rond, gémit, gratte la porte : le ciel est encore bleu, mais quelque chose vient.");
+      }
+      const premices = sim.faits.find(f => f.cle === "eruption-premices");
+      if (premices && (premices.regions ?? []).some(r => r === ici || sontVoisines(contenu, ici, r))) {
+        alerter(fin, "chien", "chien-agite-volcan", {}, "Le chien refuse de sortir, le poil hérissé, le nez vers le volcan.");
+        publier(fin, "chien-agite-volcan", {}, "Le chien refuse de sortir, le poil hérissé, le nez vers le volcan.");
+      }
+    }
 
     // 5. Journée de l'abri.
     let manqueNourriture = 0, nourris = 0;
@@ -224,15 +245,38 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       bilan = j.bilan;
       manqueNourriture = j.manque.nourriture ?? 0;
       nourris = Math.max(0, presents - manqueNourriture);
+      if (j.boutures?.mortes && aLAbri()) publier(fin, "boutures-mortes", { n: j.boutures.mortes }, `${j.boutures.mortes} bouture${j.boutures.mortes > 1 ? "s" : ""} fanée${j.boutures.mortes > 1 ? "s" : ""} faute d'avoir été replantée${j.boutures.mortes > 1 ? "s" : ""}.`);
       const c = m.cyclone;
       if (c && c.alerte === "rouge" && c.arrivee === jour && c.trajectoire.includes(ab.system.region)) {
-        const cy = subirCyclone(ab.system, ab.installations, contenu, { force: c.force, protection: bilan.protectionCyclone }, deriverHasard(m.graine, "abri", jour));
-        ab.system = cy.abri;
+        // Lot « savoirs » : le passage entier (préparation, fuites, arbres et fruits tombés, végétation abattue, dépôt dans la cour).
+        const prepare = preparationValable(ab.system.preparation, jour);
+        const cy = passageCyclone(ab.system, ab.installations, contenu, { force: c.force, protection: bilan.protectionCyclone, prepare, jour,
+          depots: liste(contenu.depotsCyclone) }, deriverHasard(m.graine, "abri", jour));
+        ab.system = { ...cy.abri, preparation: null };
         ab.installations = cy.installations;
         if (cy.degats) {
           const installations = cy.endommagees.map(nomInstallation).join(", ");
           publier(fin, cy.endommagees.length ? "cyclone-degats-installations" : "cyclone-degats", { cyclone: c.nom, installations },
             `Le cyclone ${c.nom} abîme l'abri${cy.endommagees.length ? ` (${installations})` : ""}.`);
+        }
+        const ici = aLAbri();
+        const dire = (cle, params, texte) => {
+          if (ici) publier(fin, cle, params, texte);
+          else { const fx = { jour, region: ab.system.region, cle, params, texte, public: false, portee: "abri" }; secrets.push(fx); auJournalSecret(jour, fx); }
+        };
+        if (prepare) dire("cyclone-prepare", { cyclone: c.nom }, `Tout était rentré ou fixé : ${c.nom} n'a rien emporté.`);
+        if (Object.keys(cy.emportes).length) dire("cyclone-emportes", { cyclone: c.nom, pertes: cy.emportes }, `${c.nom} emporte ce qui traînait dehors.`);
+        if (cy.eau) dire("cyclone-citerne", { cyclone: c.nom, eau: cy.eau }, `Les fuites et les gouttières qui débordent remplissent la citerne (+${cy.eau} eau) : une eau à filtrer.`);
+        dire("cyclone-arbres", { cyclone: c.nom }, "Des arbres couchés partout : du bois pour des semaines, des fruits à ramasser et conserver vite ; l'abri se voit de plus loin.");
+        if (cy.depot) {
+          dire("cyclone-depot", { cyclone: c.nom, nom: cy.depot.nom, stocks: cy.depot.stocks }, `Le cyclone a déposé dans la cour : ${cy.depot.nom}.`);
+          if (cy.depot.menace) menaces.push({ jour, type: cy.depot.menace.type ?? "livides", force: Number(cy.depot.menace.force) || 1, ...message("menace-depot", { nom: cy.depot.nom }, `${cy.depot.nom} : une menace dans la cour.`) });
+          if (cy.depot.moral) {
+            const x = message("abri-a-raconter-moral", { nom: cy.depot.nom, moral: `${cy.depot.moral > 0 ? "+" : ""}${cy.depot.moral}` }, `${cy.depot.nom} : moral du groupe ${cy.depot.moral > 0 ? "+" : ""}${cy.depot.moral}, à raconter.`);
+            aRaconter.push({ jour, evenement: "cyclone", ...x });
+            const fx = { jour, region: ab.system.region, ...x, public: false, portee: "mj" };
+            secrets.push(fx); auJournalSecret(jour, fx);
+          }
         }
       }
       // 5 bis. Événements du contenu tombés là où est l'abri.
@@ -336,7 +380,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       const ici = surv.filter(s => actif(s) && aLAbri());
       const regionVie = regionDe(contenu, ab?.system.region ?? e.groupe.region);
       const conditionsVie = { saison: saisonDuJour(jour, dateDepart), altitude: regionVie?.altitude ?? 0, eauTraitee: Boolean(bilan?.eauTraitee), infirmerie: (bilan?.soins ?? 0) > 0,
-        hygiene: hygieneDuJour(e, jour - 1) };
+        hygiene: hygieneDuJour(e, jour - 1), eauDouteuse: Boolean(ab && Number(ab.system.eauDouteuse) >= jour) };
       for (const n of tirerMaladies(ici, defsAfflictions, conditionsVie, deriverHasard(m.graine, "maladies", jour), jour)) {
         const s = surv.find(x => x.id === n.id);
         s.system = contracter(s.system, defsAfflictions.get(n.cle), jour);

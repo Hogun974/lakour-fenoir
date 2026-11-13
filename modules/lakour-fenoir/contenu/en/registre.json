@@ -22,6 +22,21 @@
       "en": "The refuge beneath the farm (the quiet path)"
     }
   },
+  "registre/bestiaire/chien-de-tete": {
+    "_nom": "Chien de tête",
+    "description": {
+      "fr": "<p>Le meneur d'une meute des routes : un grand chien de garde abandonné, collier encore au cou, qui a appris que les voitures en panne et les marcheurs isolés sont des proies. Les autres le suivent.</p>",
+      "en": "<p>The leader of a road pack: a big abandoned guard dog, collar still on, that has learned that broken-down cars and people alone on foot are prey. The others follow it.</p>"
+    },
+    "comportement": {
+      "fr": "<p>La meute tient un tronçon de route, une aire de repos, un pont. Elle suit les voyageurs de loin, attend la nuit ou la fatigue, et charge quand le chien de tête charge. Abattu ou chassé, il emporte la meute avec lui.</p>",
+      "en": "<p>The pack holds a stretch of road, a rest area, a bridge. It follows travellers from a distance, waits for night or fatigue, and charges when the lead dog charges. Shot or driven off, it takes the pack with it.</p>"
+    },
+    "faiblesse": {
+      "fr": "<p>Toute la meute dépend de lui : s'il tombe ou s'il recule, les autres se dispersent. Un chien qu'on a nourri ne le suit plus.</p>",
+      "en": "<p>The whole pack depends on it: if it falls or backs down, the others scatter. A dog that has been fed no longer follows it.</p>"
+    }
+  },
   "registre/bestiaire/chien-errant": {
     "_nom": "Chien errant",
     "sens": {
@@ -303,6 +318,149 @@
     "effet": {
       "fr": "Un blessé récupère plus vite (une blessure de moins par réussite, avec 1 médicament) ; une affliction traitée ne s'aggrave plus.",
       "en": "A wounded person recovers faster (one wound less per success, with 1 medicine); a treated affliction no longer worsens."
+    }
+  },
+  "registre/depotsCyclone/bache-et-cordes": {
+    "_nom": "une bâche bleue et ses cordes",
+    "nom": {
+      "fr": "une bâche bleue et ses cordes",
+      "en": "a blue tarp and its ropes"
+    },
+    "texte": {
+      "fr": "Une bâche de chantier enroulée autour du poteau de la barrière, avec ses cordes. Elle servira.",
+      "en": "A building-site tarp wrapped round the gatepost, with its ropes. It will come in handy."
+    }
+  },
+  "registre/depotsCyclone/barque-retournee": {
+    "_nom": "une barque retournée",
+    "nom": {
+      "fr": "une barque retournée",
+      "en": "an upturned boat"
+    },
+    "texte": {
+      "fr": "Une barque de pêcheur, coque en l'air, au milieu du chemin. Le moteur a disparu ; le bois et les rames restent.",
+      "en": "A fishing boat, hull in the air, in the middle of the path. The engine is gone; the wood and the oars remain."
+    }
+  },
+  "registre/depotsCyclone/bouteille-de-gaz": {
+    "_nom": "une bouteille de gaz",
+    "nom": {
+      "fr": "une bouteille de gaz",
+      "en": "a gas bottle"
+    },
+    "texte": {
+      "fr": "Une bouteille de gaz de treize kilos a roulé jusqu'au mur. Pleine, ou presque.",
+      "en": "A thirteen-kilo gas bottle has rolled up against the wall. Full, or nearly."
+    }
+  },
+  "registre/depotsCyclone/cuve-de-fioul": {
+    "_nom": "une cuve percée",
+    "nom": {
+      "fr": "une cuve percée",
+      "en": "a holed tank"
+    },
+    "texte": {
+      "fr": "Une cuve de mazout percée a vidé son fond dans la cour. Le potager boira de l'eau sale quelques jours.",
+      "en": "A holed fuel-oil tank has emptied its dregs into the yard. The vegetable garden will drink dirty water for a few days."
+    }
+  },
+  "registre/depotsCyclone/fut-d-eau": {
+    "_nom": "un fût plein d'eau de pluie",
+    "nom": {
+      "fr": "un fût plein d'eau de pluie",
+      "en": "a drum full of rainwater"
+    },
+    "texte": {
+      "fr": "Un fût bleu, venu on ne sait d'où, plein à ras bord d'eau de pluie.",
+      "en": "A blue drum, from who knows where, brimming with rainwater."
+    }
+  },
+  "registre/depotsCyclone/livide-sous-la-tole": {
+    "_nom": "un Livide coincé sous une tôle",
+    "nom": {
+      "fr": "un Livide coincé sous une tôle",
+      "en": "a Pallid pinned under a sheet of metal"
+    },
+    "texte": {
+      "fr": "Une tôle s'est abattue contre la clôture, et dessous, quelque chose bouge encore et gratte.",
+      "en": "A sheet of metal has slammed against the fence, and underneath, something is still moving and scratching."
+    }
+  },
+  "registre/depotsCyclone/malle-d-un-inconnu": {
+    "_nom": "la malle d'un inconnu",
+    "nom": {
+      "fr": "la malle d'un inconnu",
+      "en": "a stranger's trunk"
+    },
+    "texte": {
+      "fr": "Une petite malle de bois, des photos de famille gondolées, un chapelet, une lettre jamais postée. Certains y voient un signe ; ce n'est qu'une malle.",
+      "en": "A small wooden trunk, warped family photos, a rosary, a letter never posted. Some see a sign in it; it is only a trunk."
+    }
+  },
+  "registre/depotsCyclone/nid-de-guepes": {
+    "_nom": "un nid de guêpes",
+    "nom": {
+      "fr": "un nid de guêpes",
+      "en": "a wasps' nest"
+    },
+    "texte": {
+      "fr": "Un nid de guêpes arraché à un arbre, tombé dans la réserve de bois. Elles sont furieuses.",
+      "en": "A wasps' nest torn from a tree, fallen into the woodpile. They are furious."
+    }
+  },
+  "registre/depotsCyclone/panneau-arrache": {
+    "_nom": "un panneau solaire arraché",
+    "nom": {
+      "fr": "un panneau solaire arraché",
+      "en": "a torn-off solar panel"
+    },
+    "texte": {
+      "fr": "Un panneau solaire, le cadre tordu, les cellules intactes, couché dans la boue de la cour.",
+      "en": "A solar panel, frame twisted, cells intact, lying in the mud of the yard."
+    }
+  },
+  "registre/depotsCyclone/poules-affolees": {
+    "_nom": "des poules affolées",
+    "nom": {
+      "fr": "des poules affolées",
+      "en": "panicked hens"
+    },
+    "texte": {
+      "fr": "Trois poules trempées, réfugiées sous la varangue, qui ne veulent plus partir.",
+      "en": "Three soaked hens, sheltering under the veranda, that will not leave."
+    }
+  },
+  "registre/depotsCyclone/regimes-de-bananes": {
+    "_nom": "des régimes de bananes cassés",
+    "nom": {
+      "fr": "des régimes de bananes cassés",
+      "en": "broken banana bunches"
+    },
+    "texte": {
+      "fr": "Les bananiers du voisin ont cassé : deux régimes verts dans la cour, à faire mûrir ou cuire vite.",
+      "en": "The neighbour's banana trees have snapped: two green bunches in the yard, to ripen or cook quickly."
+    }
+  },
+  "registre/depotsCyclone/toles-du-voisin": {
+    "_nom": "des tôles arrachées à un toit voisin",
+    "nom": {
+      "fr": "des tôles arrachées à un toit voisin",
+      "en": "sheet metal torn from a neighbour's roof"
+    },
+    "texte": {
+      "fr": "Trois tôles ondulées, encore clouées à leur chevron, plantées dans le manguier. Quelqu'un, ailleurs, n'a plus de toit.",
+      "en": "Three corrugated sheets, still nailed to their rafter, stuck in the mango tree. Someone, somewhere, has no roof any more."
+    }
+  },
+  "registre/depotsCyclone/vache-noyee": {
+    "_nom": "une vache noyée",
+    "nom": {
+      "fr": "une vache noyée",
+      "en": "a drowned cow"
+    },
+    "texte": {
+      "fr": "Une vache gonflée, coincée contre la barrière : dans deux jours, l'odeur. Il faut la tirer loin, ou la brûler, et la fumée se verra.",
+      "en": "A bloated cow, wedged against the fence: in two days, the smell. It has to be dragged far away, or burned, and the smoke will be seen."
     }
   },
   "registre/communautes/cafres": {
@@ -923,6 +1081,28 @@
       "en": "<p>A voice on the radio, or a white sheet on a balcony: someone is trapped, wounded, surrounded. They give an address. Is it a trap?</p>"
     }
   },
+  "registre/evenements/arbres-tombes": {
+    "_nom": "Arbres en travers",
+    "nom": {
+      "fr": "Arbres en travers",
+      "en": "Trees across the way"
+    },
+    "texte": {
+      "fr": "<p>Après le cyclone, des filaos, des tamariniers et des manguiers couchés en travers des pistes et des sentiers : on dégage d'abord la route, les chemins restent coupés des jours. Le bois est là pour qui le débite.</p>",
+      "en": "<p>After the cyclone, filaos, tamarinds and mango trees lie across the tracks and trails: the road is cleared first, the paths stay cut for days. The wood is there for whoever cuts it up.</p>"
+    }
+  },
+  "registre/evenements/bouteilles-de-gaz": {
+    "_nom": "Un dépôt de bouteilles de gaz",
+    "nom": {
+      "fr": "Un dépôt de bouteilles de gaz",
+      "en": "A store of gas bottles"
+    },
+    "texte": {
+      "fr": "<p>Derrière une boutique de quartier, une cage de bouteilles de gaz, cadenassée, que personne n'a pensé à ouvrir.</p>",
+      "en": "<p>Behind a neighbourhood shop, a padlocked cage of gas bottles that nobody thought to open.</p>"
+    }
+  },
   "registre/evenements/brouillard-des-hauts": {
     "_nom": "Brouillard des Hauts",
     "nom": {
@@ -976,6 +1156,17 @@
     "texte": {
       "fr": "<p>Dans la moiteur de l'été austral, les Livides des Bas tombent d'eux-mêmes : des corps qui s'effondrent au milieu d'une rue, qui ne se relèvent plus. Une odeur atroce, puis plus rien.</p>",
       "en": "<p>In the sticky heat of the austral summer, the Pallid of the Lowlands fall on their own: bodies collapsing in the middle of a street, never to rise again. A dreadful smell, then nothing.</p>"
+    }
+  },
+  "registre/evenements/chien-qui-suit": {
+    "_nom": "Un chien qui suit",
+    "nom": {
+      "fr": "Un chien qui suit",
+      "en": "A dog that follows"
+    },
+    "texte": {
+      "fr": "<p>Un chien maigre, collier encore au cou, suit le groupe de loin depuis deux jours. Il n'approche pas, il ne part pas. Avec de la patience et de la nourriture, il pourrait devenir le chien du groupe.</p>",
+      "en": "<p>A thin dog, collar still on, has been following the group from a distance for two days. It does not come closer, it does not leave. With patience and food, it could become the group's dog.</p>"
     }
   },
   "registre/evenements/chiens-errants": {
@@ -1275,6 +1466,28 @@
       "en": "<p>A neighbourhood burns: a forgotten candle, a generator, a looting gone wrong. Without firefighters, the fire goes from one house to the next all night.</p>"
     }
   },
+  "registre/evenements/jardin-abandonne": {
+    "_nom": "Un jardin abandonné",
+    "nom": {
+      "fr": "Un jardin abandonné",
+      "en": "An abandoned garden"
+    },
+    "texte": {
+      "fr": "<p>Derrière une case vide, un jardin que personne n'a touché : la treille de chouchous déborde, les bananiers ont fait des rejets, le manioc attend en terre. De quoi manger, et des boutures à replanter le jour même.</p>",
+      "en": "<p>Behind an empty house, a garden nobody has touched: the chayote trellis is overflowing, the banana trees have sent up suckers, the cassava waits in the ground. Something to eat, and cuttings to replant the same day.</p>"
+    }
+  },
+  "registre/evenements/la-gramoune-qui-reste": {
+    "_nom": "La gramoune qui reste",
+    "nom": {
+      "fr": "La gramoune qui reste",
+      "en": "The gramoune who stays"
+    },
+    "texte": {
+      "fr": "<p>Dans une case au bout d'un chemin, une très vieille dame refuse de partir : elle a son jardin, ses zerbaz, ses poules. Elle sait des choses que plus personne ne sait ; elle ne les dira qu'à ceux qui prendront le temps de l'écouter (une gramoune à accueillir : fenêtre du MJ).</p>",
+      "en": "<p>In a house at the end of a path, a very old lady refuses to leave: she has her garden, her zerbaz (healing herbs), her hens. She knows things nobody else knows any more; she will only tell them to those who take the time to listen (a gramoune to take in: GM window).</p>"
+    }
+  },
   "registre/evenements/la-terre-du-gros-blanc": {
     "_nom": "La terre du gros blanc",
     "nom": {
@@ -1341,6 +1554,17 @@
       "en": "<p>In the early morning, after a cold night, dozens of Pallid motionless on the road and in the fields, covered in dew. The sun wakes them one by one.</p>"
     }
   },
+  "registre/evenements/livres-de-l-ecole": {
+    "_nom": "La bibliothèque de l'école",
+    "nom": {
+      "fr": "La bibliothèque de l'école",
+      "en": "The school library"
+    },
+    "texte": {
+      "fr": "<p>Le CDI d'un collège, intact sous la poussière : des manuels, des encyclopédies, des revues. Un savoir à apprendre, si l'on a le temps et la lumière pour lire (fouille « livres » sur le site).</p>",
+      "en": "<p>A secondary school's library, intact under the dust: textbooks, encyclopaedias, magazines. Know-how to learn, if you have the time and the light to read (“books” scavenging on the site).</p>"
+    }
+  },
   "registre/evenements/malade-cache": {
     "_nom": "Un malade caché",
     "nom": {
@@ -1383,6 +1607,17 @@
     "texte": {
       "fr": "<p>Sur un parking de zone commerciale, les Ferrailleurs tiennent marché : pièces, batteries, outils, carburant, et des nouvelles de toute l'île, vraies ou fausses.</p>",
       "en": "<p>In a retail-park car park, the Scrappers hold a market: parts, batteries, tools, fuel, and news from all over the island, true or false.</p>"
+    }
+  },
+  "registre/evenements/meute-sur-la-route": {
+    "_nom": "Une meute tient la route",
+    "nom": {
+      "fr": "Une meute tient la route",
+      "en": "A pack holds the road"
+    },
+    "texte": {
+      "fr": "<p>Une meute d'une dizaine de chiens, menée par un grand chien de tête, tient un tronçon de route : elle suit les voyageurs, attend la nuit ou la panne.</p>",
+      "en": "<p>A pack of about ten dogs, led by a big lead dog, holds a stretch of road: it follows travellers, waiting for night or a breakdown.</p>"
     }
   },
   "registre/evenements/marche-l-objet-rapporte": {
@@ -2180,6 +2415,82 @@
       "en": "One extra ration per person (noise +1)."
     }
   },
+  "registre/gramounes/gramoun-ignace": {
+    "_nom": "Gramoun Ignace Técher",
+    "nom": {
+      "fr": "Gramoun Ignace Técher",
+      "en": "Gramoun Ignace Técher"
+    },
+    "raison": {
+      "fr": "Il gardait encore ses vaches au-dessus de l'îlet ; la dernière est morte, et il est descendu, une canne à la main, sans un mot.",
+      "en": "He was still keeping his cows above the îlet; the last one died, and he came down, a stick in his hand, without a word."
+    },
+    "prix": {
+      "fr": "Il commande tout chantier comme s'il était le sien, ne monte plus une échelle, et râle contre « les gens d'en bas ».",
+      "en": "He runs every building job as if it were his own, no longer climbs a ladder, and grumbles about “the people from down below”."
+    },
+    "notes": {
+      "fr": "Yab de vieille souche, il a monté à la main la moitié des murets de pierre sèche de son îlet. Il répète que « *bann malbar i fé sèrvis* » (les Malbars font des cérémonies) comme s'il s'en méfiait ; l'homme qui lui a appris à poser une boutisse s'appelait Moutoussamy, et c'est à son enterrement qu'Ignace a pleuré pour la dernière fois. Il dort peu, se lève avant le coq, et voudrait qu'on en fasse autant.",
+      "en": "A Yab (a poor white of the Highlands) of old stock, he built half the dry-stone walls of his îlet by hand. He keeps saying “*bann malbar i fé sèrvis*” (the Malbars, the Tamil Réunionese, hold ceremonies) as if he distrusted them; the man who taught him to lay a through-stone was called Moutoussamy, and it was at his funeral that Ignace last cried. He sleeps little, rises before the rooster, and would like everyone else to do the same."
+    }
+  },
+  "registre/gramounes/gramoun-said": {
+    "_nom": "Gramoun Saïd Madi",
+    "nom": {
+      "fr": "Gramoun Saïd Madi",
+      "en": "Gramoun Saïd Madi"
+    },
+    "raison": {
+      "fr": "Il a ramené sa pirogue au port avec trois inconnus à bord le soir du jour zéro, et ne l'a plus quittée depuis.",
+      "en": "He brought his pirogue back to port with three strangers on board on the evening of day zero, and has not left it since."
+    },
+    "prix": {
+      "fr": "Il tousse la nuit, ne peut plus porter, et refuse de s'éloigner de la mer plus de quelques jours.",
+      "en": "He coughs at night, can no longer carry loads, and refuses to stay away from the sea for more than a few days."
+    },
+    "notes": {
+      "fr": "Arrivé de Mayotte il y a quarante ans, kofia brodée et barbe blanche, il a pêché au large de Saint-Gilles toute sa vie et tressé ses nasses au bambou. Il se moque des Yabs, « *bann yab i koné pa la mèr* » (les petits blancs des Hauts ne connaissent pas la mer) ; son meilleur ami, un pêcheur de Cilaos descendu à vingt ans, lui a pourtant sauvé la vie un soir de houle. Il prie à l'heure, rit fort, et sait où sont les poissons.",
+      "en": "He came from Mayotte forty years ago, embroidered kofia and white beard, fished off Saint-Gilles all his life and wove his fish traps from bamboo. He makes fun of the Yabs, “*bann yab i koné pa la mèr*” (the poor whites of the Highlands know nothing of the sea); yet his best friend, a fisherman from Cilaos who came down at twenty, saved his life one night of heavy swell. He prays on time, laughs loudly, and knows where the fish are."
+    }
+  },
+  "registre/gramounes/gramoune-mariamma": {
+    "_nom": "Gramoune Mariamma Moutoussamy",
+    "nom": {
+      "fr": "Gramoune Mariamma Moutoussamy",
+      "en": "Gramoune Mariamma Moutoussamy"
+    },
+    "raison": {
+      "fr": "Son étal de paniers au bazar de Saint-Louis a brûlé avec le reste ; elle a gardé son couteau à vacoa et son sourire.",
+      "en": "Her basket stall at the Saint-Louis bazaar burned with everything else; she kept her vacoa knife and her smile."
+    },
+    "prix": {
+      "fr": "Elle ne mangera pas de bœuf, demande un coin pour sa lampe le vendredi, et donne tout ce qu'on lui confie.",
+      "en": "She will not eat beef, asks for a corner for her lamp on Fridays, and gives away everything she is given."
+    },
+    "notes": {
+      "fr": "Vannière malbare, elle a tressé des milliers de sacs et de chaises de vacoa pour les marchés du Sud. Elle dit des Comoriens qu'« *zot lé dèrnié arivé, zot i pran tout* » (les derniers arrivés prennent tout), puis partage son riz avec la première famille comorienne qui passe, et lui apprend à tresser. Elle chante en tamoul en travaillant ; personne ne comprend les paroles, tout le monde connaît l'air.",
+      "en": "A Malbar (Tamil Réunionese) basket-weaver, she has woven thousands of vacoa bags and chairs for the markets of the South. She says of the Comorians that “*zot lé dèrnié arivé, zot i pran tout*” (the last to arrive take everything), then shares her rice with the first Comorian family that passes, and teaches them to weave. She sings in Tamil while she works; nobody understands the words, everyone knows the tune."
+    }
+  },
+  "registre/gramounes/gramoune-zelie": {
+    "_nom": "Gramoune Zélie Ah-Kiem",
+    "nom": {
+      "fr": "Gramoune Zélie Ah-Kiem",
+      "en": "Gramoune Zélie Ah-Kiem"
+    },
+    "raison": {
+      "fr": "Elle n'a pas voulu quitter sa case de Bras-Panon ; quand la ravine a pris le pont, ce sont ses voisins qui ont dû partir, et elle avec.",
+      "en": "She would not leave her house in Bras-Panon; when the ravine took the bridge, it was her neighbours who had to leave, and she went with them."
+    },
+    "prix": {
+      "fr": "Elle marche lentement, il faut la porter dans les sentiers, et elle ne donne ses remèdes qu'à ceux qui l'écoutent.",
+      "en": "She walks slowly, she has to be carried on the trails, and she only gives her remedies to those who listen to her."
+    },
+    "notes": {
+      "fr": "Fille d'un boutiquier chinois de Bras-Panon et d'une coupeuse de canne cafre, elle a soigné tout le quartier avec son jardin : ayapana, fleur jaune, faham, citronnelle. Elle dit des médecins zoreils qu'« *zot i koné pa nout rimèd* » (ils ne connaissent pas nos remèdes) ; c'est pourtant une infirmière de Lyon qui, la première, a recopié ses recettes dans un cahier, et elle en parle avec tendresse. Elle ne se plaint jamais du dos. Elle se plaint de tout le reste.",
+      "en": "Daughter of a Chinese shopkeeper from Bras-Panon and a Cafre (Afro-Réunionese) cane cutter, she has tended the whole neighbourhood with her garden: ayapana, fleur jaune, faham, lemongrass. She says of the Zoreil (mainland French) doctors that “*zot i koné pa nout rimèd*” (they don't know our remedies); yet it was a nurse from Lyon who first copied her recipes into a notebook, and she speaks of her fondly. She never complains about her back. She complains about everything else."
+    }
+  },
   "registre/fetes/ramadan": {
     "_nom": "Le mois de ramadan",
     "periode": {
@@ -2797,6 +3108,14 @@
       "fr": "Il était soignant à l'hôpital et n'en pouvait plus.",
       "en": "He was a carer at the hospital and could not take any more."
     },
+    "raisons.12": {
+      "fr": "C'est une gramoune : son jardin a été piétiné par une horde, et elle a marché jusqu'ici avec ses boutures dans un seau.",
+      "en": "She is a gramoune (an elder): a horde trampled her garden, and she walked all the way here with her cuttings in a bucket."
+    },
+    "raisons.13": {
+      "fr": "C'est un vieux gramoun qui a vu la fumée et qui voudrait bien finir ses jours avec des gens, pas tout seul dans les Hauts.",
+      "en": "He is an old gramoun (an elder) who saw the smoke and would like to end his days among people, not alone in the Highlands."
+    },
     "prix.0": {
       "fr": "Il demande une place pour sa mère âgée, qui ne peut plus marcher.",
       "en": "He asks for a place for his elderly mother, who can no longer walk."
@@ -2852,6 +3171,10 @@
     "prix.13": {
       "fr": "Elle se méfie des Zoreils du groupe et le dit à table : « *zot i prend tout' bann bon travay* » (ils prennent tous les bons postes).",
       "en": "She distrusts the group's Zoreils and says so at table: \"*zot i prend tout' bann bon travay*\" (they take all the good jobs)."
+    },
+    "prix.14": {
+      "fr": "C'est une gramoune : elle marche lentement, il faudra la porter dans les sentiers et la soigner l'hiver ; mais elle sait des choses que personne ne sait plus.",
+      "en": "She is a gramoune (an elder): she walks slowly, she will have to be carried on the trails and nursed in winter; but she knows things nobody knows any more."
     }
   },
   "registre/regions/cilaos": {

@@ -176,7 +176,7 @@ const parlePour = a => {
 
 // ------------------------------------------------------------------ acteurs <-> logique
 const CHAMPS_SURVIVANT = ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "vivant", "livide", "tache", "statut",
-  "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne"];
+  "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "confiance", "apprentissage", "dictee"];
 
 // Les maladies en incubation ne sont pas encore déclarées : ni le joueur ni ses voisins ne doivent les voir (les acteurs sont livrés
 // à tous les navigateurs). Elles vivent dans le monde scellé (monde.incubations[acteurId]) ; l'acteur ne porte que les afflictions
@@ -218,7 +218,8 @@ async function ecrireSurvivant(a, system, ctx = null) {
 }
 async function ecrireAbri(a, { system, installations = null }) {
   const s = {};
-  for (const k of ["stocks", "reliquats", "nature", "sol", "bruit", "degats", "reparation", "installeLe", "abandonneLe", "site", "region"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);
+  for (const k of ["stocks", "reliquats", "nature", "sol", "bruit", "degats", "reparation", "installeLe", "abandonneLe", "site", "region",
+    "vegetation", "eauDouteuse", "preparation", "lumiereLe"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);
   await a.update({ system: s });
   if (!installations) return;
   const avant = new Map(instancesDe(a).map(i => [i.id, i]));
@@ -295,6 +296,14 @@ async function synchroniserAfflictions(a, afflictions = []) {
 // ------------------------------------------------------------------ bilan, météo (publics)
 // publique : ce que le groupe sait. Loin de l'abri, il ne voit pas si le courant ou l'eau du réseau y marchent encore : on prend
 // son dernier renseignement sur la région de l'abri, pas le réel (le MJ, lui, lit le réel : publique faux).
+// Lot « savoirs » : un chien du groupe parmi les présents (équipement de catégorie « animal ») ; le confort de leurs objets (somme des
+// effets.moral des équipements qui ne sont pas des véhicules : objets faits main, poêle de masse, chauffe-eau de fortune).
+export const CLE_CHIEN = "chien-du-groupe";
+function chienEtConfort(acteurs = []) {
+  const objets = acteurs.flatMap(a => objetsDe(a, "equipement"));
+  return { chien: objets.some(i => i.system?.cle === CLE_CHIEN || i.system?.categorie === "animal"),
+    confort: objets.filter(i => !i.system?.transport).reduce((x, i) => x + (Number(i.system?.effets?.moral) || 0), 0) };
+}
 function conditionsAbri(etat, monde, a, { publique = false } = {}) {
   const c = contenu();
   const jour = L.jourDe(etat.horloge.quart);
@@ -306,19 +315,22 @@ function conditionsAbri(etat, monde, a, { publique = false } = {}) {
   const connu = etat.renseignements?.[a.system.region] ?? {};
   const r = publique && !aLAbri(etat, a) ? { eau: connu.eau === true, electricite: connu.electricite === true }
     : monde ? L.reseauxActifs(monde, a.system.region, jour) : (etat.bilan?.reseaux ?? {});
+  const cc = chienEtConfort(aLAbri(etat, a) ? survivantsDuGroupe(etat).filter(x => L.peutAgir(x.system)) : []);
   return { jour, dateDepart: dateDepart(), personnes: presents.length + pnj, reseaux: { eau: Boolean(r.eau), electricite: Boolean(r.electricite) }, rations,
-    travailleurs: L.travailleursParTache(presents, c), signature: L.signatureDuMarche(etat.marche) };
+    travailleurs: L.travailleursParTache(presents, c), signature: L.signatureDuMarche(etat.marche), chien: cc.chien, confort: cc.confort };
 }
 export function bilanVivant(etat = lireEtat(), monde = Coffre.mondeEnMemoire(), { publique = false } = {}) {
   const a = abriCourant(etat);
   if (!a) return null;
   const conditions = conditionsAbri(etat, monde, a, { publique });
   const b = L.bilanAbri(aPlat(a.system), instancesDe(a), contenu(), conditions);
+  const savoirs = L.autonomieComplete({ autonome: etat.autonome, savoirs: savoirsDuGroupe(etat), contenu: contenu() });
   return { ...b, reseaux: conditions.reseaux, personnes: conditions.personnes, autonomie: Boolean(etat.autonome), autonome: Boolean(etat.autonome),
-    joursAutonomes: etat.joursAutonomes ?? 0, alertes: (etat.alertes ?? []).slice(-5) };
+    joursAutonomes: etat.joursAutonomes ?? 0, alertes: (etat.alertes ?? []).slice(-5), savoirs };
 }
 const CHAMPS_BILAN = ["production", "consommation", "net", "pertes", "joursDeStocks", "defense", "discretion", "visibilite", "capacite", "bruit",
-  "protectionCyclone", "soins", "moral", "conservation", "renseignements", "eauTraitee", "plafonds", "arrets", "surpeuplement", "reseaux", "personnes", "actives"];
+  "protectionCyclone", "soins", "moral", "conservation", "renseignements", "eauTraitee", "plafonds", "arrets", "surpeuplement", "reseaux", "personnes", "actives",
+  "secours", "savoirs"];
 // L'instantané PUBLIC du bilan (état de la partie, lu par les joueurs) : ce que le groupe sait, pas le réel à distance.
 export function instantaneBilan(etat, monde) {
   const b = bilanVivant(etat, monde, { publique: true });
@@ -408,8 +420,9 @@ async function avancerInterne(ctx, quarts, options = {}) {
   const membres = survivantsDuGroupe(ctx.etat);
   const survivants = membres.map(a => ({ id: a.id, nom: a.name, system: systemeLogique(a, ctx.monde) }));
   const ab = abriCourant(ctx.etat);
+  const cc = chienEtConfort(membres.filter(a => L.peutAgir(a.system)));
   const r = L.avancer({ etat: ctx.etat, monde: ctx.monde, contenu: c, quarts: n, survivants, abri: ab ? abriLogique(ab) : null,
-    options: { dateDepart: dateDepart(), visibiliteVeille: Number(ctx.monde.visibiliteVeille) || 0, ...options } });
+    options: { dateDepart: dateDepart(), visibiliteVeille: Number(ctx.monde.visibiliteVeille) || 0, chien: cc.chien, confort: cc.confort, ...options } });
   ctx.etat = r.etat;
   ctx.monde = r.monde;
   for (const s of r.acteurs.survivants) {
@@ -673,7 +686,7 @@ async function creerActeurSurvivant(d, { userId = "", statut = null } = {}) {
       competences, passions, enfance: d.enfance ?? "", passe: d.passe ?? "", genre: L.GENRES.includes(d.genre) ? d.genre : "",
       traits: [...(d.traits ?? [])], incapacites: [...(d.incapacites ?? [])],
       statut: st, tache: "repos", age: entier(d.age, 16, 99, 30), ageJour: lireEtat().demarree ? L.jourDe(lireEtat().horloge?.quart ?? 0) : 0, lien: String(d.lien ?? "").slice(0, 200), vivant: true, livide: false,
-      histoire: { journal: "" }, notes: String(d.notes ?? "").slice(0, 20000)
+      histoire: { journal: "" }, notes: String(d.notes ?? "").slice(0, 20000), confiance: entier(d.confiance ?? 0, 0, 5, 0)
     },
     ownership: user && !user.isGM ? { default: 0, [user.id]: PROPRIO } : { default: 0 },
     prototypeToken: { name: nom, actorLink: true, disposition: globalThis.CONST?.TOKEN_DISPOSITIONS?.FRIENDLY ?? 1, sight: { enabled: true }, texture: { src: jeton } },
@@ -774,7 +787,7 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   const c = contenu();
   const reg = region || ctx.etat.groupe.region;
   if (!L.regionDe(c, reg)) throw clair(t("LAKOUR_SURVIE.Erreurs.RegionInconnue", { region: reg }));
-  if (cible && !NATURE.includes(cible) && !RESSOURCES.includes(cible)) throw clair(t("LAKOUR_SURVIE.Erreurs.CibleInconnue", { cible }));
+  if (cible && !NATURE.includes(cible) && !RESSOURCES.includes(cible) && !CIBLES_SAVOIRS.includes(cible)) throw clair(t("LAKOUR_SURVIE.Erreurs.CibleInconnue", { cible }));
   const qui = membresValides(ctx, membres);
   const q = entier(quarts, 1, 8, 1);
   const ab = abriCourant(ctx.etat);
@@ -795,10 +808,15 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
     await ab.update({ system: sys });
   } else ctx.etat.groupe.porte = L.ajouterStocks(ctx.etat.groupe.porte ?? {}, r.butin);
   for (const f of r.faits) noter(ctx, f);
+  // Un livre trouvé (lot « savoirs ») : il va au premier fouilleur ; il apprend le savoir tiré (veillées de lecture : apprendre).
+  if (r.livre && qui[0]) {
+    const def = defDe("savoirs", r.livre), base = defDe("equipements", "manuel-de-survie");
+    if (def && base) await qui[0].createEmbeddedDocuments("Item", [await donneesObjet("equipement", base, { enseigne: [r.livre] })].map(o => ({ ...o, name: t("LAKOUR_SURVIE.Savoirs.Livre", { savoir: def.nom }) })));
+  }
   await chat(carteAction({ icone: "fa-magnifying-glass", titre: t("LAKOUR_SURVIE.Action.Fouille", { lieu: site ? nomSite(site) : nomRegion(reg) }),
     lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" }), t("LAKOUR_SURVIE.Action.Butin", { butin: texteStocks(r.butin) || t("LAKOUR_SURVIE.Action.Rien") })] }));
   await avancerInterne(ctx, q);
-  return { butin: r.butin, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille, clarte };
+  return { butin: r.butin, livre: r.livre ?? null, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille, clarte };
 }
 
 // Un abri d'avant les notes secrètes (sans le drapeau notesPubliques) : ses notes, écrites par le MJ, vont au monde scellé ; la
@@ -886,22 +904,27 @@ async function voyagerInterne(ctx, { vers, transport = "pied", membres = [], cha
   const reserve = depuisAbri ? aPlat(ab.system).stocks : (ctx.etat.groupe.porte ?? {});
   // Les jeunes portent moins (lot « fetes », logique/releve.mjs) ; la nuit de chaque étape a sa clarté (lune, brume, nuages).
   const porteurs = qui.length ? L.porteursDe(qui.map(a => systemeLogique(a)), jourCtx(ctx)) : 1;
+  // Ce que le voyage peut consommer (lot « savoirs ») : carburant, biocarburant, matériaux, énergie.
+  const reserves = Object.fromEntries(["carburant", "biocarburant", "materiaux", "energie"].map(k => [k, Number(reserve?.[k]) || 0]));
   const r = L.voyager(ctx.monde, c, hasard(ctx, "voyage"), { de: ctx.etat.groupe.region, vers, transport: moyen, membres: Math.max(1, qui.length),
-    charge, quart: ctx.etat.horloge.quart, renseignements: ctx.etat.renseignements, carburant: Number(reserve?.carburant) || 0,
+    charge, quart: ctx.etat.horloge.quart, renseignements: ctx.etat.renseignements, reserves,
     porteurs, clarte: (quart, region) => clarteReelle(ctx.monde, quart, region) });
   if (!r.possible) throw clair(t("LAKOUR_SURVIE.Erreurs.Voyage", { raison: motifLisible(r) }));
-  // Carburant et provisions de route (eau et nourriture pour chacun, par jour entamé), pris là où ils sont.
+  // Carburant (ou ce que brûle le véhicule : biocarburant, bois sec, énergie des batteries) et provisions de route (eau et nourriture
+  // pour chacun, par jour entamé), pris là où ils sont ; le carburant siphonné aux épaves va dans ce qu'on porte.
   const jours = Math.ceil(r.quarts / 4);
-  const provisions = { eau: qui.length * jours, nourriture: qui.length * jours, carburant: r.carburant };
+  const provisions = { eau: qui.length * jours, nourriture: qui.length * jours };
+  provisions[r.source ?? "carburant"] = (provisions[r.source ?? "carburant"] ?? 0) + r.carburant;
   const pris = L.retirerStocks(reserve, provisions);
   if (depuisAbri) await ab.update({ system: { stocks: pris.stocks } }); else ctx.etat.groupe.porte = pris.stocks;
+  if (r.siphonne > 0) ctx.etat.groupe.porte = L.ajouterStocks(ctx.etat.groupe.porte ?? {}, { carburant: r.siphonne });
   ctx.etat.renseignements = r.renseignements;
   ctx.etat.groupe.enRoute = { de: ctx.etat.groupe.region, vers, route: r.chemin.join(" > "), reste: r.quarts, transport: vehicule?.cle ?? moyen };
   for (const f of r.faits) noter(ctx, f);
   await chat(carteAction({ icone: "fa-route", titre: t("LAKOUR_SURVIE.Action.Voyage", { vers: nomRegion(vers) }),
     lignes: [t("LAKOUR_SURVIE.Action.Chemin", { chemin: r.chemin.map(nomRegion).join(" → "), quarts: r.quarts }), t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") })] }));
   await avancerInterne(ctx, r.quarts, { mangeHorsAbri: !(pris.manque.nourriture > 0), boitHorsAbri: !(pris.manque.eau > 0) });
-  return { possible: true, arrivee: !ctx.etat.groupe.enRoute, quarts: r.quarts, chemin: r.chemin, carburant: r.carburant, rencontre: lisible(r.rencontre),
+  return { possible: true, arrivee: !ctx.etat.groupe.enRoute, quarts: r.quarts, chemin: r.chemin, carburant: r.carburant, source: r.source, verrous: r.verrous, siphonne: r.siphonne, rencontre: lisible(r.rencontre),
     rencontres: r.rencontres.map(lisible), faits: [...r.faits, ...ctx.faits].map(publicFait), manque: pris.manque };
 }
 
@@ -979,7 +1002,7 @@ export const api = {
     const def = defDe("installations", cle);
     if (!ab || !def) return { ok: false, raisons: [t(ab ? "LAKOUR_SURVIE.Erreurs.InstallationInconnue" : "LAKOUR_SURVIE.Erreurs.SansAbri", { installation: cle })] };
     const l = abriLogique(ab);
-    return L.peutConstruire(def, undefined, { stocks: l.system.stocks, installations: l.installations }, L.siteDe(contenu(), l.system.site) ?? {}, { savoirs: savoirsDuGroupe(etat), plans: etat.groupe.plans });
+    return L.peutConstruire(def, undefined, { stocks: l.system.stocks, installations: l.installations, nature: l.system.nature }, L.siteDe(contenu(), l.system.site) ?? {}, { savoirs: savoirsDuGroupe(etat), plans: etat.groupe.plans });
   },
   peutFabriquer(cle, { bras = 1 } = {}) {
     const etat = lireEtat(), ab = abriCourant(etat);
@@ -1093,9 +1116,9 @@ export const api = {
     let instance = existante;
     let cout = {};
     if (!existante || !(existante.chantier.requis > 0)) {
-      const o = L.ouvrirChantier(def, { stocks: l.system.stocks, installations: l.installations }, site, { savoirs: savoirsDuGroupe(ctx.etat), plans: ctx.etat.groupe.plans });
+      const o = L.ouvrirChantier(def, { stocks: l.system.stocks, installations: l.installations, nature: l.system.nature }, site, { savoirs: savoirsDuGroupe(ctx.etat), plans: ctx.etat.groupe.plans });
       if (!o.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Construction", { raisons: motifsLisibles(o) }));
-      await ab.update({ system: { stocks: o.stocks } });
+      await ab.update({ system: { stocks: o.stocks, ...(o.nature ? { nature: o.nature } : {}) } });
       instance = { ...o.instance, id: existante?.id };
       cout = o.cout;
       noter(ctx, tx("Journal.Chantier", { installation: def.nom, niveau: (existante?.niveau ?? 0) + 1 }));
@@ -1135,10 +1158,10 @@ export const api = {
       const inst = l.installations.find(i => i.id === installationId);
       if (!inst) throw erreur("InstallationAbsente");
       const def = defDe("installations", inst.cle);
-      const r = L.reparerInstallation(inst, def, { quarts: q, bras, materiaux: Number(stocks.materiaux) || 0 });
-      stocks = L.retirerStocks(stocks, { materiaux: r.cout.materiaux }).stocks;
+      const r = L.reparerInstallation(inst, def, { quarts: q, bras, materiaux: Number(stocks.materiaux) || 0, ile: L.boisDisponible(l.system) });
+      stocks = L.retirerStocks(stocks, { materiaux: r.cout.materiaux ?? 0 }).stocks;
       await ab.updateEmbeddedDocuments("Item", [{ _id: inst.id, system: { etat: r.instance.etat, reparation: r.instance.reparation } }]);
-      await ab.update({ system: { stocks } });
+      await ab.update({ system: { stocks, ...(r.cout.ile ? { nature: L.prendreIle(l.system.nature, r.cout.ile) } : {}) } });
       noter(ctx, tx("Journal.Repare", { installation: def?.nom ?? inst.cle, n: r.repares }));
       resultat = { etat: r.instance.etat, repares: r.repares, cout: r.cout };
     } else {
@@ -1581,9 +1604,10 @@ export const api = {
   ...MARCHE.api,
 
   // ---------------- §10 : groupe, recrues
-  genererRecrue: async ({ region = "" } = {}) => {
+  genererRecrue: async ({ region = "", gramoune = "" } = {}) => {
     const etat = lireEtat();
     const c = contenu();
+    if (gramoune) return recrueGramoune(gramoune, region || etat.groupe.region);
     const r = L.genererRecrue(c, Math.random, { besoins: besoinsBruts(etat), region: region || etat.groupe.region, phase: etat.phase });
     return { ...versTirage(r.survivant, c), statut: "recrue", raison: localiser(r.raisonMessage ?? { cle: r.raisonCle, texte: r.raison }), prix: localiser(r.prixMessage ?? { cle: r.prixCle, texte: r.prix }),
       region: region || etat.groupe.region };
@@ -1664,6 +1688,17 @@ export const api = {
     return { abris: n };
   }),
 
+  // ---------------------------------------------------------------- lot « savoirs »
+  preparerCyclone: ecriture(async (args = {}) => { const ctx = ouvrirCtx(); const r = await preparerCycloneInterne(ctx, args); await terminer(ctx); return r; }),
+  apprendre: ecriture(async (args = {}) => { const ctx = ouvrirCtx(); const r = await apprendreInterne(ctx, args); await terminer(ctx); return r; }),
+  gagnerConfiance: ecriture(async (args = {}) => { const ctx = ouvrirCtx(); const r = await confianceInterne(ctx, args); await terminer(ctx); return r; }),
+  dicter: ecriture(async (args = {}) => { const ctx = ouvrirCtx(); const r = await dicterInterne(ctx, args); await terminer(ctx); return r; }),
+  apprivoiser: ecriture(async (args = {}) => { const ctx = ouvrirCtx(); const r = await apprivoiserInterne(ctx, args); await terminer(ctx); return r; }),
+  // Le cyclone vécu quart par quart dans la région de l'abri (MJ actif, monde ouvert) : rafales, accalmies, l'œil.
+  cyclone: () => cycloneDuJour(),
+  // Les savoir-faire du groupe rangés par arbre, et l'autonomie complète.
+  savoirsDuGroupe: () => L.autonomieComplete({ autonome: lireEtat().autonome, savoirs: savoirsDuGroupe(), contenu: contenu() }),
+
   // Remise à zéro (MJ IA, reinitialiser) : la mémoire du monde et sa copie dans ce navigateur.
   // Tout oublier : la mémoire du monde et sa copie dans ce navigateur, et (MJ actif, sauf reglages: false) l'état public de la
   // partie, le coffre et le clair de secours remis à leur valeur par défaut : le monde revient à « la partie n'a pas commencé ».
@@ -1678,6 +1713,157 @@ export const api = {
     return true;
   }
 };
+
+// ------------------------------------------------------------------ lot « savoirs » (docs/equilibre-savoirs.md, contrat §11)
+export const CIBLES_SAVOIRS = ["jardins", "livres"];
+const CATEGORIES_EXPOSEES = ["eau", "nourriture", "energie", "defense"];
+const aUnSavoirLontan = a => (systemeLogique(a).savoirs ?? []).some(sv => defDe("savoirs", sv)?.arbre === "lontan");
+const exigerAbri = ctx => {
+  const ab = abriCourant(ctx.etat);
+  if (!ab) throw erreur("SansAbri");
+  if (!aLAbri(ctx.etat, ab)) throw erreur("PasALAbri");
+  return ab;
+};
+const survivantDuGroupe = (ctx, id) => {
+  const a = acteur(id);
+  if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
+  if (!L.peutAgir(a.system)) throw clair(t("LAKOUR_SURVIE.Erreurs.HorsEtat", { nom: a.name }));
+  return a;
+};
+
+// Préparer le cyclone : rentrer ou fixer (quarts × bras de travail, accumulés tant que la préparation reste valable).
+async function preparerCycloneInterne(ctx, { membres = [], quarts = 1 } = {}) {
+  const ab = exigerAbri(ctx);
+  const l = abriLogique(ab);
+  const exposees = l.installations.filter(i => i.niveau >= 1 && CATEGORIES_EXPOSEES.includes(defDe("installations", i.cle)?.categorie)).length;
+  const requis = L.travailPreparation(exposees);
+  const jour = jourCtx(ctx);
+  const avant = l.system.preparation && jour - Number(l.system.preparation.jour ?? -99) <= L.PREPARATION.valable ? l.system.preparation : null;
+  const qui = membresValides(ctx, membres);
+  const q = entier(quarts, 1, 8, 1);
+  const fait = (Number(avant?.fait) || 0) + q * Math.max(1, qui.length);
+  const preparation = { jour, fait, requis };
+  await ab.update({ system: { preparation } });
+  noter(ctx, tx(fait >= requis ? "Journal.CyclonePrepare" : "Journal.CyclonePreparation", { fait, requis }));
+  await chat(carteAction({ icone: "fa-hurricane", titre: t("LAKOUR_SURVIE.Savoirs.Preparer"), lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" }),
+    t(fait >= requis ? "LAKOUR_SURVIE.Savoirs.PreparationFaite" : "LAKOUR_SURVIE.Savoirs.PreparationEnCours", { fait, requis })] }));
+  await avancerInterne(ctx, q);
+  return { fait, requis, prete: fait >= requis };
+}
+
+// Une veillée d'apprentissage (1 quart, le soir, à l'abri).
+async function apprendreInterne(ctx, { acteurId, savoir = "", source = "maitre", maitreId = "" } = {}) {
+  const ab = exigerAbri(ctx);
+  const eleve = survivantDuGroupe(ctx, acteurId);
+  const sys = systemeLogique(eleve);
+  let maitre = null, livre = null;
+  if (source === "maitre") {
+    const m = survivantDuGroupe(ctx, maitreId);
+    maitre = { ...systemeLogique(m), confiance: Number(m.system.confiance) || 0 };
+  } else {
+    // Le livre ou le cahier : chez un membre du groupe, un équipement qui enseigne ce savoir.
+    const objets = survivantsDuGroupe(ctx.etat).flatMap(a => objetsDe(a, "equipement"));
+    const o = objets.find(i => (i.system?.enseigne ?? []).includes(savoir) && (source === "cahier" ? i.system?.cle === "cahier-de-gramoune" : i.system?.cle !== "cahier-de-gramoune"));
+    livre = o ? { enseigne: [...(o.system.enseigne ?? [])] } : { enseigne: [] };
+  }
+  const l = abriLogique(ab);
+  const r = L.veilleeApprentissage({ ...sys, apprentissage: eleve.system.apprentissage ?? null }, { savoir, source, maitre, livre, contenu: contenu(), energie: Number(l.system.stocks?.energie) || 0 });
+  if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Apprendre", { raisons: motifsLisibles(r) }));
+  await eleve.update({ system: { apprentissage: r.system.apprentissage } });
+  if (r.lumiere === "energie") await ab.update({ system: { stocks: L.retirerStocks(l.system.stocks, { energie: 1 }).stocks } });
+  else if (r.lumiere === "bougie") await ab.update({ system: { lumiereLe: jourCtx(ctx) } });
+  const def = defDe("savoirs", savoir);
+  if (r.termine) {
+    if (def) await eleve.createEmbeddedDocuments("Item", [await donneesObjet("savoir", def)]);
+    noter(ctx, tx("Journal.SavoirAppris", { nom: eleve.name, savoir: def?.nom ?? savoir }));
+  } else noter(ctx, tx("Journal.Veillee", { nom: eleve.name, savoir: def?.nom ?? savoir, fait: r.fait, requis: r.requis }));
+  await avancerInterne(ctx, 1);
+  return { fait: r.fait, requis: r.requis, termine: r.termine, lumiere: r.lumiere };
+}
+
+// Une veillée avec une gramoune : gagner sa confiance (test de parole, +1 dé si celui qui parle a un savoir lontan).
+async function confianceInterne(ctx, { acteurId, parleurId } = {}) {
+  const g = survivantDuGroupe(ctx, acteurId);
+  const p = survivantDuGroupe(ctx, parleurId);
+  const test = await testDirect({ acteurId: p.id, competence: "parole", difficulte: "normale", bonus: aUnSavoirLontan(p) ? 1 : 0,
+    titre: t("LAKOUR_SURVIE.Savoirs.Confiance", { nom: g.name }) });
+  const c = L.gagnerConfiance(Number(g.system.confiance) || 0, test);
+  await g.update({ system: { confiance: c.confiance } });
+  noter(ctx, tx("Journal.Confiance", { nom: g.name, confiance: c.confiance }));
+  await avancerInterne(ctx, 1);
+  return { confiance: c.confiance, delta: c.delta, reussite: test.reussite };
+}
+
+// Une veillée de dictée : six veillées, un cahier unique qui apprend ses savoirs lontan.
+async function dicterInterne(ctx, { gramouneId, scribeId } = {}) {
+  exigerAbri(ctx);
+  const g = survivantDuGroupe(ctx, gramouneId);
+  const scribe = survivantDuGroupe(ctx, scribeId);
+  const r = L.veilleeDictee({ ...systemeLogique(g), confiance: Number(g.system.confiance) || 0, dictee: g.system.dictee ?? null }, { contenu: contenu() });
+  if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Dicter", { raisons: motifsLisibles(r) }));
+  await g.update({ system: { dictee: r.system.dictee } });
+  if (r.termine) {
+    const base = defDe("equipements", "cahier-de-gramoune");
+    if (base) {
+      const o = await donneesObjet("equipement", base, { enseigne: r.enseigne, auteur: g.name });
+      await scribe.createEmbeddedDocuments("Item", [{ ...o, name: t("LAKOUR_SURVIE.Savoirs.Cahier", { nom: g.name }) }]);
+    }
+    noter(ctx, tx("Journal.CahierEcrit", { nom: g.name, scribe: scribe.name }));
+  } else noter(ctx, tx("Journal.Dictee", { nom: g.name, fait: r.fait, requis: r.requis }));
+  await avancerInterne(ctx, 1);
+  return { fait: r.fait, requis: r.requis, termine: r.termine, enseigne: r.enseigne };
+}
+
+// Une veillée avec un chien errant : 1 nourriture posée, un test de survie (+1 dé avec l'élevage).
+async function apprivoiserInterne(ctx, { acteurId } = {}) {
+  const a = survivantDuGroupe(ctx, acteurId);
+  const ab = abriCourant(ctx.etat);
+  const depuisAbri = aLAbri(ctx.etat, ab);
+  const reserve = depuisAbri ? aPlat(ab.system).stocks : (ctx.etat.groupe.porte ?? {});
+  if ((Number(reserve?.nourriture) || 0) < L.CHIEN.nourriture) throw clair(t("LAKOUR_SURVIE.Erreurs.ChienNourriture"));
+  const pris = L.retirerStocks(reserve, { nourriture: L.CHIEN.nourriture }).stocks;
+  if (depuisAbri) await ab.update({ system: { stocks: pris } }); else ctx.etat.groupe.porte = pris;
+  const elevage = (systemeLogique(a).savoirs ?? []).includes("elevage");
+  const test = await testDirect({ acteurId: a.id, competence: "survie", difficulte: "normale", bonus: elevage ? 1 : 0, titre: t("LAKOUR_SURVIE.Savoirs.Chien") });
+  const r = L.veilleeChien(ctx.etat.groupe.chienErrant ?? { confiance: 0, region: ctx.etat.groupe.region }, test);
+  if (r.morsure) await ecrireSurvivant(a, L.blesser(systemeLogique(a, ctx.monde), 1).system, ctx);
+  if (r.apprivoise) {
+    const base = defDe("equipements", CLE_CHIEN);
+    if (base) await a.createEmbeddedDocuments("Item", [await donneesObjet("equipement", base)]);
+    ctx.etat.groupe.chienErrant = null;
+    noter(ctx, tx("Journal.ChienApprivoise", { nom: a.name }));
+  } else {
+    ctx.etat.groupe.chienErrant = r.chien;
+    noter(ctx, tx(r.morsure ? "Journal.ChienMord" : "Journal.ChienConfiance", { nom: a.name, confiance: r.chien.confiance }));
+  }
+  await avancerInterne(ctx, 1);
+  return { confiance: r.chien.confiance, delta: r.delta, apprivoise: r.apprivoise, morsure: r.morsure, reussite: test.reussite };
+}
+
+// Le cyclone qui frappe la région de l'abri aujourd'hui (ou demain, en orange) : son déroulé, au MJ seul.
+function cycloneDuJour() {
+  if (!estMJActif() || !Coffre.mondeOuvert()) return null;
+  const monde = Coffre.mondeEnMemoire();
+  const etat = lireEtat();
+  const c = monde?.cyclone;
+  const region = abriCourant(etat)?.system?.region ?? etat.groupe?.region;
+  if (!c || !["orange", "rouge"].includes(c.alerte) || !(c.trajectoire ?? []).includes(region)) return null;
+  const quarts = L.deroulementCyclone(c, region, L.deriverHasard(monde.graine, "cyclone-vecu", c.arrivee, region));
+  return { nom: c.nom, alerte: c.alerte, force: c.force, arrivee: c.arrivee, region, quarts };
+}
+
+// Une gramoune du contenu, présentée comme une recrue (le recrutement reste un test de parole).
+function recrueGramoune(cle, region) {
+  const c = contenu();
+  const g = (c.gramounes ?? []).find(x => x.cle === cle);
+  if (!g) throw clair(t("LAKOUR_SURVIE.Erreurs.GramouneInconnue", { cle }));
+  return {
+    nom: g.nom, genre: g.genre ?? "", age: g.age, enfance: g.enfance, passe: g.passe, statut: "recrue",
+    competences: Object.fromEntries(COMPETENCES.map(k => [k, Number(g.competences?.[k]) || 0])), passions: structuredClone(g.passions ?? {}),
+    traits: [...(g.traits ?? [])], incapacites: [...(g.incapacites ?? [])], equipement: [...(g.equipement ?? [])], savoirs: [...(g.savoirs ?? [])],
+    confiance: Number(g.confiance) || 0, notes: g.notes ?? "", graine: sansBalises(g.notes ?? ""), raison: g.raison ?? "", prix: g.prix ?? "", region, gramoune: g.cle
+  };
+}
 
 // Pour les essais et l'interface : les fonctions internes utiles.
 export const interne = { modificateursDuTest, testDirect, forcerDirect, assignerDirect, creerSurvivantDirect, bilanVivant, quandDe, besoins, savoirsDuGroupe, versTirage, auteur };

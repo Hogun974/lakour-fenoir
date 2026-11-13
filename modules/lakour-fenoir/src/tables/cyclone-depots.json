@@ -1,0 +1,222 @@
+{
+  "_id": "EZLdsCuJASLPtHwG",
+  "_key": "!tables!EZLdsCuJASLPtHwG",
+  "name": "Ce que le cyclone dépose dans la cour",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qui était mal fixé ailleurs et que le vent dépose chez soi : bonnes et mauvaises surprises (le système en tire un seul et l'applique ; la table sert à en raconter d'autres).</p>",
+  "formula": "1d13",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cyclone-depots"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "3YVpbvPgoeGUyCfC",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.3YVpbvPgoeGUyCfC",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois tôles ondulées, encore clouées à leur chevron, plantées dans le manguier. Quelqu'un, ailleurs, n'a plus de toit.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BSko6qSzeW1HCyNB",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.BSko6qSzeW1HCyNB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bâche de chantier enroulée autour du poteau de la barrière, avec ses cordes. Elle servira.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7djHHBgv0idb0udw",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.7djHHBgv0idb0udw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un panneau solaire, le cadre tordu, les cellules intactes, couché dans la boue de la cour.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TtFOjJDEDzAsF8Kg",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.TtFOjJDEDzAsF8Kg",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bouteille de gaz de treize kilos a roulé jusqu'au mur. Pleine, ou presque.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9YGm9cEIauRYvcHT",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.9YGm9cEIauRYvcHT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un fût bleu, venu on ne sait d'où, plein à ras bord d'eau de pluie.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aB35mvtEIdGbJNwm",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.aB35mvtEIdGbJNwm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois poules trempées, réfugiées sous la varangue, qui ne veulent plus partir.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "phnQvpzZ8QLVbtGF",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.phnQvpzZ8QLVbtGF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les bananiers du voisin ont cassé : deux régimes verts dans la cour, à faire mûrir ou cuire vite.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HM4duPNwkpBETg2w",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.HM4duPNwkpBETg2w",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une barque de pêcheur, coque en l'air, au milieu du chemin. Le moteur a disparu ; le bois et les rames restent.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "PwdDrIN6FoBcUUBW",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.PwdDrIN6FoBcUUBW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une tôle s'est abattue contre la clôture, et dessous, quelque chose bouge encore et gratte.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tz0JaSSyfKEhfEgE",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.tz0JaSSyfKEhfEgE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une vache gonflée, coincée contre la barrière : dans deux jours, l'odeur. Il faut la tirer loin, ou la brûler, et la fumée se verra.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "OyyIOYFWlcXbEjpR",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.OyyIOYFWlcXbEjpR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un nid de guêpes arraché à un arbre, tombé dans la réserve de bois. Elles sont furieuses.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "H4K2EpAg8qassMhj",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.H4K2EpAg8qassMhj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une petite malle de bois, des photos de famille gondolées, un chapelet, une lettre jamais postée. Certains y voient un signe ; ce n'est qu'une malle.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "EyZYP74zSlGyhC3E",
+      "_key": "!tables.results!EZLdsCuJASLPtHwG.EyZYP74zSlGyhC3E",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une cuve de mazout percée a vidé son fond dans la cour. Le potager boira de l'eau sale quelques jours.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

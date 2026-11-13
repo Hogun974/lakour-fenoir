@@ -39,7 +39,8 @@
     },
     "Ressources": {
       "eau": "Water", "nourriture": "Food", "carburant": "Fuel", "medicaments": "Medicine", "munitions": "Ammunition",
-      "materiaux": "Materials", "pieces": "Parts", "graines": "Seeds", "plantes": "Healing herbs", "energie": "Energy (kWh)"
+      "materiaux": "Materials", "pieces": "Parts", "graines": "Seeds", "plantes": "Healing herbs", "energie": "Energy (kWh)",
+      "gaz": "Gas (kg)", "boutures": "Cuttings and seedlings", "biocarburant": "Home-made fuel", "ile": "Island materials"
     },
     "Nature": { "cueillette": "Foraging", "gibier": "Game", "peche": "Fishing", "bois": "Wood" },
     "Moments": { "matin": "Morning", "apres-midi": "Afternoon", "soir": "Evening", "nuit": "Night" },
@@ -161,7 +162,23 @@
       "rumeur-dette": "{debiteur} still owes {reste} share(s) in the book of {boutique}.",
       "rumeur-menteur": "{auteur} lied about {sujet}.",
       "rumeur-inconnue": "unknown rumour",
-      "rumeur-vraie": "it is true: a fact cannot be denied"
+      "rumeur-vraie": "it is true: a fact cannot be denied",
+      "eruption-premices": "The ground trembles under the volcano; the animals are restless.",
+      "livre-trouve": "A book found: it can teach {savoir}.",
+      "verrou-epave": "On the road to {region}: a wreck across the way (+{quarts} watch(es)).", "verrou-eboulis": "On the road to {region}: a rockfall (+{quarts} watch(es)).",
+      "verrou-tunnel": "On the road to {region}: a single-lane tunnel (+{quarts} watch(es)).", "verrou-arbre": "On the road to {region}: a tree across the road (+{quarts} watch(es)).",
+      "voyage-source": "{besoin} {source} needed ({dispo} available)",
+      "savoir-perdu": "Nobody wrote down what {nom} dictated: what she knew goes with her.",
+      "chien-agite-cyclone": "The dog paces in circles, whines, scratches at the door: the sky is still blue, but something is coming.",
+      "chien-agite-volcan": "The dog refuses to go out, hackles up, nose towards the volcano.",
+      "boutures-mortes": "{n} cutting(s) wilted for want of replanting.",
+      "cyclone-prepare": "Everything had been brought in or tied down: {cyclone} took nothing away.", "cyclone-emportes": "{cyclone} carries off what was lying outside: {pertes}.",
+      "cyclone-citerne": "The leaks and overflowing gutters fill the tank (+{eau} water): water that needs filtering.",
+      "cyclone-arbres": "Trees down everywhere: firewood for weeks, fruit to gather and preserve quickly; the shelter can be seen from further away.",
+      "cyclone-depot": "The cyclone has left something in the yard: {nom}. {stocks}", "menace-depot": "{nom}: a threat in the yard.",
+      "apprendre-savoir-inconnu": "unknown know-how: {savoir}", "apprendre-source": "unknown source: {source}", "apprendre-deja": "already knows: {savoir}",
+      "apprendre-maitre": "the teacher does not know: {savoir}", "apprendre-livre": "this book does not teach: {savoir}",
+      "dictee-pas-gramoune": "it takes an elder who keeps a lontan (old-time) skill", "dictee-confiance": "it takes her trust ({n} at least)", "dictee-faite": "her notebook is already written"
     },
 
     "Erreurs": {
@@ -206,7 +223,9 @@
       "Fete": "Cannot celebrate: {raison}.",
       "PasAtteint": "{nom} does not have: {affliction}.",
       "Medicaments": "This treatment needs {n} medicine.",
-      "Contenu": "Fénoir: {n} error(s) in the content (first: {premiere}). Details in the console (F12)."
+      "Contenu": "Fénoir: {n} error(s) in the content (first: {premiere}). Details in the console (F12).",
+      "Apprendre": "Cannot learn: {raisons}.", "Dicter": "Cannot take dictation: {raisons}.",
+      "ChienNourriture": "1 food is needed to put down in front of the dog.", "GramouneInconnue": "Unknown gramoune: {cle}."
     },
     "Coffre": {
       "SansMoteur": "Fénoir: the GM AI module is off; the real world state is kept in clear in the world settings. Players can read the world state.",
@@ -245,7 +264,8 @@
       "Courant": "Group shelter", "Abandonne": "Abandoned", "Autonome": "Self-sufficient", "Defense": "Defence", "Discretion": "Discretion",
       "Visibilite": "Visibility", "Capacite": "People / capacity", "Bruit": "Noise", "JoursAutonomes": "Self-sufficient days", "Stocks": "Stocks",
       "Ressource": "Resource", "Quantite": "Quantity", "Net": "Net / day", "Jours": "Days", "Production": "Today's production",
-      "Installations": "Installations", "Arret": "stopped", "AucuneInstallation": "No installation.", "Alentours": "Surroundings",
+      "Installations": "Installations", "Arret": "stopped", "AucuneInstallation": "No installation.", "Alentours": "Surroundings", "Secours": "on standby (its sister is in service)", "Lontan": "lontan",
+      "AutonomieComplete": "Full self-sufficiency (both kinds of know-how)", "Arbres": "The group's know-how: {moderne} modern, {lontan} lontan (old-time).",
       "Sol": "Soil fertility", "Degats": "Damage", "Grille": "Who does what", "Surpeuplement": "Overcrowded: {n} too many.",
       "Aides": {
         "defense": "What protects the shelter from an assault (site, installations, minus damage).",
@@ -300,7 +320,13 @@
       "Infecte": "{nom} carries the Grey.", "Renseignement": "News from {region} ({source}).", "Fabrique": "{nom} crafts: {recette}.",
       "FabriqueRate": "{nom} fails: {recette}.", "Affliction": "{nom}: {affliction}.", "AfflictionSoignee": "{nom} is treated: {affliction}.",
       "AfflictionRate": "{nom}'s treatment does not take ({affliction}).", "Fete": "The group celebrates: {fete}.", "Recrue": "{nom} joins the group.",
-      "RecrueRefuse": "{nom} refuses to follow the group.", "Rejoint": "{nom} joins the group."
+      "RecrueRefuse": "{nom} refuses to follow the group.", "Rejoint": "{nom} joins the group.",
+      "CyclonePrepare": "Everything is brought in or tied down for the cyclone ({fait} / {requis} person-watches).", "CyclonePreparation": "Bringing in and tying down whatever could blow away ({fait} / {requis} person-watches).",
+      "SavoirAppris": "{nom} now knows: {savoir}.", "Veillee": "Evening lesson: {nom} learns {savoir} ({fait} / {requis}).",
+      "Confiance": "{nom}: trust {confiance} / 5.", "Dictee": "Evening of dictation with {nom} ({fait} / {requis}).",
+      "CahierEcrit": "{nom}'s notebook is written, in {scribe}'s hand: her knowledge will not die with her.",
+      "ChienApprivoise": "The stray dog follows {nom}: it belongs to the group now.", "ChienMord": "The stray dog bites {nom}, out of fear (trust {confiance} / 5).",
+      "ChienConfiance": "The stray dog comes closer to {nom} (trust {confiance} / 5)."
     },
     "Fete": {
       "Refugies": "Word of the share given travels the roads: refugees will come.", "Gain": "What it brings: {texte}", "Cout": "What it costs: {texte}", "Options": {"musique":"With music.","silence":"In silence."}, "Reposes": "They rest: {noms}.", "Restent": "Not found yet: {noms}.",
@@ -466,17 +492,39 @@
         "FoireJusqua": "until day {jour}"
       }
     },
+    "Savoirs": {
+      "Livre": "Book: {savoir}", "Cahier": "{nom}'s notebook", "Preparer": "Prepare for the cyclone",
+      "PreparationFaite": "Everything is brought in or tied down ({fait} / {requis} person-watches): +1 protection, nothing will blow away.",
+      "PreparationEnCours": "Preparation: {fait} / {requis} person-watches.",
+      "Confiance": "Win {nom}'s trust", "ConfianceCourte": "trust {n}", "Chien": "Win a stray dog's trust",
+      "Cibles": { "jardins": "House gardens (food, cuttings, healing herbs)", "livres": "Books (know-how to learn)" },
+      "Arbres": { "moderne": "modern", "lontan": "lontan (old-time)" },
+      "Vents": { "rafales": "Gusts", "accalmie": "Lull", "oeil": "The eye: total calm (a trap)", "retour": "The wind comes back from the other side" },
+      "Dehors": "outside: {des} dice, vigilance {vigilance}, stealth +{discretion}",
+      "Sources": { "maitre": "Someone who knows (or a gramoune)", "livre": "A book found", "cahier": "A gramoune's notebook" },
+      "Gramoune": "Gramoune or gramoun (elder)", "Eleve": "Learner", "Savoir": "Know-how", "Source": "Learning from", "Maitre": "Teacher or gramoune", "Scribe": "Who writes",
+      "Cyclone": "Cyclone {nom} (strength {force}) over the shelter, day {jour}",
+      "Aide": "The two kinds of know-how (modern, lontan), the elders, the dog and the cyclone. Each evening session takes a watch.",
+      "AideGramoune": "One of the island's gramounes (elders), offered as a recruit: of mixed heritage, frail, wise. Recruiting is still a Speech test.",
+      "AidePreparer": "Bring in or tie down whatever can blow away: 2 person-watches, plus 1 per exposed installation. Good for five days: +1 protection, nothing is carried off.",
+      "AideApprendre": "A book: 14 evenings (and light). Someone who knows: 7. A gramoune who trusts you (3 or more), for a lontan skill: 4. Her notebook: 7.",
+      "AideDicter": "Six evenings, if she trusts you (3 or more): a unique notebook that outlives her.",
+      "AideChien": "One evening = 1 food and a Survival test (+1 die with Animal husbandry). At trust 5, the dog belongs to the group.",
+      "ChienEnCours": "The stray dog is at {n} / 5."
+    },
     "MJ": {
-      "FeteDuJour": "Today's holiday", "Option": "Choice", "Pour": "For whom (vow, present)", "Avec": "With whom (neighbouring shelter, faction)", "Communaute": "Hosting community", "Faction": "Hosting faction", "Issue": "Outcome", "Tenu": "Kept", "Rompu": "Broken", "Mort": "The dead", "Action": "Action", "Aucune": "—", "Lune": "Moon",
+      "FeteDuJour": "Today's holiday", "Option": "Choice", "Pour": "For whom (vow, present)", "Avec": "With whom (neighbouring shelter, faction)", "Communaute": "Hosting community", "Faction": "Hosting faction", "Issue": "Outcome", "Tenu": "Kept", "Rompu": "Broken", "Mort": "The dead", "Aucune": "—", "Lune": "Moon",
       "Titre": "Fénoir — GM window", "Titre2": "Title",
-      "Onglets": { "partie": "Game and time", "actions": "Group actions", "groupe": "Group and recruits", "menaces": "Threats", "marche": "Market", "monde": "Real world" },
+      "Onglets": { "partie": "Game and time", "actions": "Group actions", "groupe": "Group and recruits", "savoirs": "Know-how and cyclone", "menaces": "Threats", "marche": "Market", "monde": "Real world" },
       "Formes": {
         "participer": "Go to other people's holiday", "voeu": "A vow kept or broken", "releve": "Taking over", "autel": "The altar of the dead",
         "troquer": "Trade", "ouvrirBoutique": "Open a shop", "crediter": "Take on credit", "rendre": "Pay back the book", "effacerDette": "Wipe out the group's debt", "ouvrirMarche": "Open a market or a fair", "gererMarche": "Hosting and truce", "evenementDeMarche": "Draw a market event", "dementirPrejuge": "The facts deny a prejudice", "rumeur": "Start a rumour", "dementir": "Deny a rumour", "creerMarchand": "Create one of the market people", "signe": "The group's sign",
         "demarrer": "Start the game", "avancer": "Advance time", "fouiller": "Scavenge", "explorer": "Explore", "installer": "Settle in",
         "construire": "Build", "reparer": "Repair", "voyager": "Travel", "demenager": "Move out", "assaut": "Assault", "ajuster": "Adjust stocks",
         "genererRecrue": "Roll a recruit", "recruter": "Recruit", "feter": "Celebrate", "demanderTest": "Ask for a test", "fabriquer": "Craft",
-        "affliction": "Disease, injury", "ajouterMembre": "Add to the group", "rencontre": "Roll an encounter (secret)"
+        "affliction": "Disease, injury", "ajouterMembre": "Add to the group", "rencontre": "Roll an encounter (secret)",
+        "preparerCyclone": "Prepare for the cyclone", "apprendre": "An evening lesson", "gagnerConfiance": "Win a gramoune's trust",
+        "dicter": "Take her dictation", "apprivoiser": "Win a stray dog's trust"
       },
       "PasActif": "You are not the active GM: only the active GM writes Fénoir's state.", "Bloque": "The world is not open in this browser: nothing is written.",
       "Rouvrir": "Reopen the vault", "DejaDemarree": "A game is running: starting again replaces it.",

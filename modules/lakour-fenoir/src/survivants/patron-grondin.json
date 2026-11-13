@@ -98,7 +98,8 @@
         "cle": "peche-lagon",
         "description": "<p>Ligne, épervier, nasse, fusil-harpon, la pêche des bichiques à l'embouchure à la saison des pluies, celle des camarons dans les bassins des cirques, et lire la houle avant de sortir.</p>",
         "apprentissage": "<p>Un passé de pêcheur ou de marin ; un ancien des Barques du Sud ; une saison à pêcher sans se noyer.</p>",
-        "effets": "<p>+1 dé aux tests de survie pour pêcher ; la pêche d'une région rapporte 1 nourriture de plus par sortie réussie.</p>"
+        "effets": "<p>+1 dé aux tests de survie pour pêcher ; la pêche d'une région rapporte 1 nourriture de plus par sortie réussie.</p>",
+        "arbre": "lontan"
       },
       "effects": [],
       "folder": null,

@@ -9,11 +9,14 @@
 //   médicaments 30, munitions 60, matériaux 60, pièces 30, graines 40, plantes médicinales 12 (elles se fanent : on n'en
 //   garde qu'une douzaine de brassées à sécher), énergie 0 (il faut des batteries pour garder des kWh).
 //   Les installations ajoutent leur `stockage` à ces plafonds ; au-delà, l'excédent est perdu.
+//   Lot « savoirs » : gaz 26 (deux bouteilles de 13 kg sous l'évier), boutures 30 (des seaux et des sacs mouillés), biocarburant
+//   10 (quelques bidons).
 import { RESSOURCES, ALTITUDE_BAS, JOURS_INFINIS } from "./constantes.mjs";
 
 export const CONSOMMATION = { eau: 1, eauBasEte: 1.5, nourriture: 1 };
 export const TAUX_PERTES = 0.05;
-export const STOCKAGE_BASE = { eau: 40, nourriture: 100, carburant: 20, medicaments: 30, munitions: 60, materiaux: 60, pieces: 30, graines: 40, plantes: 12, energie: 0 };
+export const STOCKAGE_BASE = { eau: 40, nourriture: 100, carburant: 20, medicaments: 30, munitions: 60, materiaux: 60, pieces: 30, graines: 40, plantes: 12, energie: 0,
+  gaz: 26, boutures: 30, biocarburant: 10 };
 
 export const stocksVides = () => Object.fromEntries(RESSOURCES.map(r => [r, 0]));
 

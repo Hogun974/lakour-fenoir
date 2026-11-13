@@ -1,0 +1,43 @@
+{
+  "_id": "q6P0ESNuMdJccL0c",
+  "_key": "!items!q6P0ESNuMdJccL0c",
+  "name": "Alcool de canne (carburant)",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "alcool-de-canne",
+    "description": "<p>Du jus de canne ou des fruits fermentés, un alambic de fortune, et l'alcool qui coule, plus fort que pour le rhum : dix litres d'un carburant qu'acceptent seulement les moteurs modifiés.</p>",
+    "cout": {
+      "nourriture": 4
+    },
+    "travail": 4,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "conserverie"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "ressource": "biocarburant",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "alcool-de-canne"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

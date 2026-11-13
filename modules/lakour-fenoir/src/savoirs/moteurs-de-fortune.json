@@ -1,0 +1,30 @@
+{
+  "_id": "TNeDuMWxmF0kB3Pr",
+  "_key": "!items!TNeDuMWxmF0kB3Pr",
+  "name": "Moteurs de fortune",
+  "type": "savoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "cle": "moteurs-de-fortune",
+    "description": "<p>Modifier un moteur pour qu'il boive de l'alcool de canne ou de l'huile filtrée, monter un gazogène au bois sur un camion, entretenir et recharger un véhicule électrique sur les batteries de l'abri. Le moteur y perd en vitesse et en fiabilité : il roule quand même.</p>",
+    "apprentissage": "<p>Un passé de mécanicien ; un Ferrailleur qui a déjà fait la conversion ; une revue technique trouvée dans un garage ; un premier moteur modifié réussi à l'atelier.</p>",
+    "effets": "<p>Ouvre les recettes du carburant maison (alcool de canne, huile filtrée) et des moteurs modifiés (voiture à l'alcool, camion à gazogène). +1 dé aux tests de bricolage sur un moteur modifié.</p>",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "moteurs-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

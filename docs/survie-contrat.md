@@ -769,3 +769,80 @@ bastions, hote })`, `fermerMarche`, `accueillir({ marche, hote })`, `rompreTreve
 invités. Chaque jour d'`avancer` : la journée du marché ; la réputation gagnée ou perdue s'écrit dans les horloges
 `rep-<faction>` du moteur (`api.horloges.avancer`) quand il les tient. Fenêtres : onglet **Marché** de la fenêtre du MJ (avec la
 vérité des rumeurs) et du tableau de bord (le cours, le carnet du groupe, les marchés, ce qui se dit ; jamais la vérité).
+## 11. Les deux savoirs et l'île en mouvement (lot « savoirs », 2026-11-13)
+
+Chiffres et raisons : `docs/equilibre-savoirs.md`. Logique : `logique/savoirs.mjs` (nouveau), `abri.mjs`, `actions.mjs`,
+`monde.mjs`, `etat.mjs`, `maladies.mjs`. Rien n'est retiré ni renommé ; les champs nouveaux ont une valeur par défaut.
+
+### 11.1 Ressources (§1.6)
+- `gaz` (1 = un kilo ; une bouteille en fait 13), pillable : réserves des régions (contenu `ressources.gaz`), stocks des sites,
+  plafond de base 26. Une partie d'avant le gaz le reçoit à la part qui reste des autres réserves (`completerPillage`, appelé
+  par `simulerJour`).
+- `boutures` (plafond 30) et `biocarburant` (carburant maison, 1 = 10 L, plafond 10) : non pillables. Les boutures sont
+  repiquées chaque soir dans un potager, jardin créole, serre ou verger en service (elles deviennent des graines), sinon un tiers
+  meurt (`repiquerBoutures`, appelé par `journeeAbri`, qui rend `boutures: { repiquees, mortes }`).
+
+### 11.2 Installations (§3.2)
+- Champs nouveaux de la définition : `arbre` (`"moderne"` | `"lontan"`), `role` (défaut : sa clé), `rang` (défaut : 0, 1 pour une
+  lontan). **Sœurs** : les installations d'un même rôle ne s'additionnent pas ; la première par rang qui peut marcher est en
+  service, les autres en secours (`bilan.secours: [{ cle, role }]`, ni production, ni consommation, ni effet structurel ;
+  stockage et capacité gardés). Une sœur arrêtée au délestage (carburant, gaz, énergie, eau, nourriture) laisse la place à la
+  suivante et garde sa raison dans `bilan.arrets`.
+- `effets.consommation.gaz` : servi après le carburant, par ordre de priorité ; `bilan.consommation.gaz`, `bilan.net.gaz` (absents
+  quand nuls).
+- Coût `ile` (matières de l'île) : pris sur `abri.nature.bois` (`peutConstruire` lit `abri.nature`, `ouvrirChantier` rend
+  `nature`) ; une lontan se répare avec (`reparerInstallation(…, { ile })` → `cout.ile`). `boisDisponible`, `prendreIle`.
+- Bilan : `conditions.chien` (moral +1 sauf chiens de garde en service, vigilance +1 en bonus), `conditions.confort` (somme des
+  `effets.moral` des objets des présents, au plus +1 au moral), `abri.vegetation: { n, depuis }` (visibilité + n − 1 par
+  15 jours), `abri.lumiereLe` (visibilité +1 ce jour-là).
+- Alentours au-dessus du plafond (`regenererNature`) : plus de repousse, le surplus se perd chaque jour (`POURRISSEMENT`).
+
+### 11.3 Cyclone (§2.3)
+- `passageCyclone(abri, installations, contenu, { force, protection, prepare, jour, depots }, hasard)` (remplace l'appel de
+  `subirCyclone` dans `avancer`, qui reste) : préparation (+1 de protection, rien d'emporté) ou pertes (matériaux, plantes,
+  boutures), eau des fuites et `abri.eauDouteuse` (3 jours : `facteurRisque(…, { eauDouteuse })` × 2 sans eau traitée), bois et
+  fruits tombés au-dessus du plafond, `abri.vegetation`, un dépôt tiré dans le registre `depotsCyclone` (stocks posés ; menace
+  rendue dans les menaces du jour, clé `menace-depot` ; moral rendu au MJ). `abri.preparation: { jour, fait, requis }`
+  (`travailPreparation`, `preparationValable` : 5 jours) est consommée au passage.
+- Simulation : le jour rouge, bois tombé dans la région et pistes et sentiers coupés par des arbres (événement
+  `arbres-tombes`, dans `EVENEMENTS_SIMULES` et `EVENEMENTS_SYSTEME`) ; `sousLeVacarme(monde, region, jour)` : le bruit ne compte
+  ni pour les menaces ni pour les hordes. `deroulementCyclone(cyclone, region, hasard)` : quatre quarts (rafales, accalmie, œil,
+  retour) et leurs malus dehors (`DEHORS_CYCLONE`).
+- Éruption : tirée la veille (`debut` = jour + 1), fait secret `eruption-premices` `{ regions }`.
+- `avancer(…, { options: { chien, confort } })` : un chien à l'abri donne l'alerte `chien-agite-cyclone` à la pré-alerte d'un
+  cyclone dont la trajectoire passe sur l'abri, `chien-agite-volcan` aux prémices d'une éruption dans sa région ou une voisine.
+  Journal : `cyclone-prepare`, `cyclone-emportes`, `cyclone-citerne`, `cyclone-arbres`, `cyclone-depot`, `boutures-mortes`,
+  `savoir-perdu` (une gramoune meurt sans cahier).
+
+### 11.4 Savoirs, gramoune, chien (`savoirs.mjs`)
+- `ARBRES`, `arbreDe`, `savoirsParArbre`, `autonomieComplete({ autonome, savoirs, contenu })` (2 savoirs de chaque arbre).
+- `estGramoune(system, contenu)` (60 ans et plus, un savoir lontan), `dureeApprentissage`, `veilleeApprentissage(eleve, { savoir,
+  source: "livre" | "cahier" | "maitre", maitre, livre: { enseigne }, contenu, energie })` → `{ ok, motifs, system, fait, requis,
+  termine, lumiere }` ; `gagnerConfiance(confiance, test)` ; `veilleeDictee(gramoune, { contenu })` ; `veilleeChien(chien,
+  test)`.
+- Survivant (§3.1) : `confiance` (0..5, défaut 0), `apprentissage` (`{ savoir, source, fait, requis }` | null), `dictee`
+  (`{ fait, requis, cahier }` | null). Abri : `vegetation`, `eauDouteuse`, `preparation`, `lumiereLe`. Installation : `arbre`,
+  `role`, `rang`. Savoir : `arbre`. Équipement : `enseigne` (savoirs qu'un livre ou un cahier apprend), `auteur`. Catégorie
+  d'équipement nouvelle : `animal` (le chien du groupe).
+
+### 11.5 Fouilles et routes (`actions.mjs`)
+- Cibles de fouille `jardins` (les jardins des cases de la région, `jardinsDisponibles`, `monde.regions[r].jardinsPris`) et
+  `livres` (`chanceLivre`, `tirerSavoirDeLivre`, `monde.regions[r].livresTrouves`) : `fouiller` rend `livre` (clé d'un savoir ou
+  null) et un fait `livre-trouve`.
+- Rencontres : `tirerRencontre(…, { facteur })` ; sur la route dès l'effondrement, meutes (animaux × 2, 3 à 7).
+- Véhicules (registre, `normaliserEquipement`) : `source`, `lenteur`, `pente: { descente, montee }`, `large` ;
+  `dureeEtape(v, transport, etat, denivele)` ; `voyager(…, { reserves })` vérifie la `source` du véhicule (refus
+  `voyage-source`) et rend `source`, `verrous` (`tirerVerrous`) et `siphonne` ; le temps des verrous est compris dans `quarts`.
+
+### 11.6 API (§5) et fenêtres
+- Nouvelles fonctions : `preparerCyclone({ membres, quarts })`, `apprendre({ acteurId, savoir, source, maitreId })`,
+  `gagnerConfiance({ acteurId, parleurId })`, `dicter({ gramouneId, scribeId })`, `apprivoiser({ acteurId })` (chacune une
+  veillée ou un temps de travail, qui fait passer le temps), `cyclone()` (le déroulé du jour au MJ actif, monde ouvert),
+  `savoirsDuGroupe()`. `genererRecrue({ region, gramoune })` présente une gramoune du registre (`gramounes`) comme recrue ;
+  `fouiller` accepte `jardins` et `livres` (le livre va au premier fouilleur) ; `voyager` prend l'énergie, le biocarburant ou
+  le bois sec selon le véhicule, et met le carburant siphonné dans ce que le groupe porte ; `construire` et `reparer` prennent
+  les matières de l'île aux alentours. `bilan()` : `secours`, `savoirs` (`autonomieComplete`), aussi dans l'instantané public.
+- Fenêtre du MJ : onglet « Savoirs et cyclone » (déroulé du cyclone, préparer, veillées, confiance, dictée, chien) ; gramoune
+  dans le formulaire des recrues ; cibles « jardins » et « livres ». Fiche d'abri : sœurs en secours, installations lontan,
+  savoir-faire du groupe et autonomie complète. État public : `groupe.chienErrant` (`{ confiance, region }` | null).
+- Registre du contenu : `depotsCyclone`, `gramounes`.

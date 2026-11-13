@@ -1,0 +1,177 @@
+{
+  "_id": "tg3ure3UoIRF6Ig9",
+  "_key": "!tables!tg3ure3UoIRF6Ig9",
+  "name": "Livres trouvés",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le livre qu'on rapporte d'une fouille « livres » (le système tire le savoir qu'il apprend ; la table donne le livre).</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "livres-trouves"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "WLLhZNYUyv95FzDh",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.WLLhZNYUyv95FzDh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un manuel scolaire d'électricité, annoté au crayon par un élève qui n'aimait pas les schémas.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "fykrDHMYev9h4vTS",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.fykrDHMYev9h4vTS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le guide d'entretien d'un chauffe-eau solaire, avec les plans du circuit.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Y308bPeVwIMpzLW9",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.Y308bPeVwIMpzLW9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vieux cahier de recettes lontan : rougails, achards, conserves, et dans la marge, des remèdes.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "UTyH0LhifdukaocY",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.UTyH0LhifdukaocY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un livre de vannerie de l'artisanat réunionnais, photos jaunies de sacs et de chapeaux de vacoa.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "P0gEVJVbcAZ7ordy",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.P0gEVJVbcAZ7ordy",
+      "type": "text",
+      "name": "",
+      "description": "<p>La revue technique d'une voiture de quinze ans, et un dossier sur la conversion des moteurs à l'éthanol.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "f9PX4AeMpN66pkDU",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.f9PX4AeMpN66pkDU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un manuel de secourisme d'association, pages cornées à « hémorragie » et « fracture ».</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Vzp8sko7GbNPbEkd",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.Vzp8sko7GbNPbEkd",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un guide des plantes médicinales de l'île, un herbier glissé entre les pages.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kHbtkVMiYeniDeFb",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.kHbtkVMiYeniDeFb",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un traité de maçonnerie traditionnelle : les murs en pierre sèche des Hauts, coupe par coupe.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "fvpgFicdtOoxwPiC",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.fvpgFicdtOoxwPiC",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un manuel de radioamateur, avec la liste des fréquences des autres îles.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nVh66X0bHZYHmFpL",
+      "_key": "!tables.results!tg3ure3UoIRF6Ig9.nVh66X0bHZYHmFpL",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un roman, rien de plus. On le lit quand même, pour les soirs sans rien : +1 moral au groupe, une fois (le MJ le dit).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

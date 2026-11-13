@@ -1,0 +1,177 @@
+{
+  "_id": "A5DEArv99VCcNSDW",
+  "_key": "!tables!A5DEArv99VCcNSDW",
+  "name": "Le jardin d'une case",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on trouve dans le jardin d'une case abandonnée (fouille « jardins »).</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "jardin-d-une-case"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "IIjL3r5MzupKdw7u",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.IIjL3r5MzupKdw7u",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une treille de chouchous qui a envahi toute la cour : de quoi nourrir le groupe une semaine, et des boutures à repiquer.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Gr08pGubL0RO1jD9",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.Gr08pGubL0RO1jD9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des bananiers en touffe, deux régimes verts : à couper, à cuire, et des rejets à replanter.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "S2PS1tJFzyAHhFfI",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.S2PS1tJFzyAHhFfI",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un carré de songes dans le coin humide, sous le robinet qui ne coule plus.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jPWQzMg0vivCP7EW",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.jPWQzMg0vivCP7EW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Du manioc à perte de vue sous les mauvaises herbes : il se garde en terre, on le prend au fur et à mesure.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8ofQyo4EhIzOKCPk",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.8ofQyo4EhIzOKCPk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les zerbaz de la gramoune le long de la clôture : ayapana, citronnelle, fleur jaune (+1 plantes).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FYpFOSIkfpHQlSba",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.FYpFOSIkfpHQlSba",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pied de piment chargé, un pied de combava, un curcuma : de quoi redonner goût au riz.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "fmiMU1x4dNgRIIvC",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.fmiMU1x4dNgRIIvC",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des patates douces qui ont couru partout : on en déterre de quoi faire un cari, et des lianes à bouturer.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VdeTvrBTkwNQeNVL",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.VdeTvrBTkwNQeNVL",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un jardin déjà visité : des trous partout, des tiges cassées. Quelqu'un est passé avant vous, il y a peu.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "bniuRtYcpZKA3Fo6",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.bniuRtYcpZKA3Fo6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pied de letchi ou de manguier chargé en saison : les fruits tombent tout seuls, les chauves-souris en profitent.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CVjx3ic3Au3vKzOi",
+      "_key": "!tables.results!A5DEArv99VCcNSDW.CVjx3ic3Au3vKzOi",
+      "type": "text",
+      "name": "",
+      "description": "<p>Dans la case, sur la table, le cahier de recettes de la grand-mère, écrit au crayon : un livre (un savoir lontan à apprendre).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

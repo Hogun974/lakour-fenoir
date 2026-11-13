@@ -15,6 +15,7 @@ export * from "./fabrication.mjs";
 export * from "./maladies.mjs";
 export * from "./generation.mjs";
 export * from "./marche.mjs";
+export * from "./savoirs.mjs";
 export * from "./etat.mjs";
 export * from "./lune.mjs";
 export * from "./souvenirs.mjs";

@@ -1,0 +1,86 @@
+{
+  "_id": "EN4DMaHD7lvjWzip",
+  "_key": "!items!EN4DMaHD7lvjWzip",
+  "name": "Chauffe-eau à gaz",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "eau-chaude-gaz",
+    "categorie": "vie",
+    "description": "<p>Un chauffe-eau instantané branché sur une bouteille : de l'eau chaude à toute heure, tant qu'il reste du gaz. Il passe après le soleil.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 3
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 1,
+          "pieces": 2,
+          "graines": 0,
+          "travail": 3
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "gaz": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {
+            "soins": 1
+          },
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "role": "eau-chaude",
+    "rang": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "eau-chaude-gaz"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

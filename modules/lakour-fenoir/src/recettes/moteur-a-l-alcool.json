@@ -1,0 +1,47 @@
+{
+  "_id": "wEBWQeG7BvkrtNtY",
+  "_key": "!items!wEBWQeG7BvkrtNtY",
+  "name": "Moteur modifié pour l'alcool",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "moteur-a-l-alcool",
+    "description": "<p>On prend une vieille voiture à essence du groupe (le MJ la retire) : joints, gicleurs, allumage. Elle boira désormais l'alcool de canne et l'huile filtrée, plus l'essence.</p>",
+    "cout": {
+      "pieces": 4,
+      "materiaux": 2
+    },
+    "travail": 8,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "moteurs-de-fortune"
+      ],
+      "installation": {
+        "cle": "atelier",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "voiture-a-l-alcool",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "moteur-a-l-alcool"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}
