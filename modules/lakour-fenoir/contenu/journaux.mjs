@@ -500,7 +500,7 @@ Tables : « Marché — ce qui se dit (le Ladi Lafé) », avec la vérité entre
   { cle: "oratoires", titre: "Les oratoires rouges", texte: `Au bord des routes de l'île, de petits oratoires peints en rouge, dédiés à saint Expédit : une statuette, des bougies, des fleurs en plastique, des ex-voto. Depuis le jour zéro, on y laisse des **messages** pliés sous une pierre, pour les groupes qui ne se croisent jamais : un rendez-vous, une offre de troc, un avertissement, un nom qu'on cherche.
 
 Personne n'y touche, par respect ou par crainte ; certains y voient la protection du saint, d'autres une habitude ; le jeu ne dit rien de plus. Le groupe peut y laisser un message (le MJ le fera trouver par qui passe) et y lire ceux des autres (table « Oratoires rouges — messages »).` },
-  { cle: "evenements", titre: "Les événements de marché", texte: `Les jours de marché, le système tire un événement de marché selon le stade (la simulation du monde ne les tire jamais). Jouez-le, puis, s'il dément un préjugé, appliquez le démenti : le préjugé perd un cran chez les PNJ qui le portent.
+  { cle: "evenements", titre: "Les événements de marché", texte: `Un jour de marché, tirez un événement de marché selon le stade (onglet Marché de la fenêtre du MJ ; la simulation du monde ne les tire jamais). Jouez-le, puis, s'il dément un préjugé, appliquez le démenti : le préjugé perd un cran chez les PNJ qui le portent.
 
 ${EVENEMENTS_MARCHE.map(e => `- **${e.nom}**${e.effets?.dementi ? ` (dément un préjugé sur : ${nomCommunaute(e.effets.dementi)})` : ""}`).join("\n")}` }
 ] });
