@@ -1,0 +1,148 @@
+{
+  "_id": "aIDpVmerx8739tbC",
+  "_key": "!tables!aIDpVmerx8739tbC",
+  "name": "L'esprit — celui qui lâche : les signes",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Il mange moins, il parle moins, il donne ses affaires : ce que le groupe peut remarquer. Le groupe le retient par sa présence ; sinon, un matin, il n'est plus là (rien n'est montré).</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "esprit-signes",
+      "esprit": "signes"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "Nf0aB4mPnErKfUgh",
+      "_key": "!tables.results!aIDpVmerx8739tbC.Nf0aB4mPnErKfUgh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il laisse la moitié de sa gamelle, « pour les enfants ». Il le fait depuis trois jours.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "rUFUam9kGQpMTGIG",
+      "_key": "!tables.results!aIDpVmerx8739tbC.rUFUam9kGQpMTGIG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle ne répond plus que par oui ou par non, et regarde la route.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1UGLtusHT5cK0HI8",
+      "_key": "!tables.results!aIDpVmerx8739tbC.1UGLtusHT5cK0HI8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a donné son couteau à la plus jeune, « il te servira plus qu'à moi ».</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1TnpKre7D1jyXnmx",
+      "_key": "!tables.results!aIDpVmerx8739tbC.1TnpKre7D1jyXnmx",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle a plié ses affaires au carré, comme pour un départ, et ne les a pas rouvertes.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CyMCVpk617T9bDc2",
+      "_key": "!tables.results!aIDpVmerx8739tbC.CyMCVpk617T9bDc2",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il ne se lave plus, ne se rase plus, lui qui ne manquait jamais un matin.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "EdTEACVqzpwsaE41",
+      "_key": "!tables.results!aIDpVmerx8739tbC.EdTEACVqzpwsaE41",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle parle de son mari au passé, puis au présent, puis plus du tout.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "i43n5Y5t0Pat3F91",
+      "_key": "!tables.results!aIDpVmerx8739tbC.i43n5Y5t0Pat3F91",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il a écrit une lettre et demande qui la portera « si jamais ».</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ucfT905szTp4ZhLs",
+      "_key": "!tables.results!aIDpVmerx8739tbC.ucfT905szTp4ZhLs",
+      "type": "text",
+      "name": "",
+      "description": "<p>Elle s'assoit seule au bord du camp, au coucher du soleil, et reste là après la nuit tombée.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

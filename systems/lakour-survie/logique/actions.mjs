@@ -40,7 +40,7 @@
 //   lance ses `des` d6 : chaque 6 = touche (1 blessure) ; sur une touche de Livide, un d6 de morsure : 6 = morsure (les
 //   animaux blessent sans mordre de Gris). Tirer : +2 de bruit par échange.
 //
-// Lot « savoirs » (docs/equilibre-savoirs.md, contrat §11) :
+// Lot « savoirs » (docs/equilibre-savoirs.md, contrat §13) :
 // - Fouilles « jardins » (les jardins des cases : nourriture, boutures, zerbaz ; savoirs.mjs, JARDINS_CASES) et « livres » (un
 //   livre qui apprend un savoir-faire : LIVRES). Toutes deux comptent comme une fouille de la région (rencontres, autonomie).
 // - Sur la route, les chiens abandonnés vont en meutes : rencontre « animaux » deux fois plus probable, 3 à 7 bêtes. Un sentier

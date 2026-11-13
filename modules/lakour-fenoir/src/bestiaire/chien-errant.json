@@ -73,7 +73,16 @@
     "livide": false,
     "charge": 0,
     "notes": "<p>Les chiens abandonnés se sont regroupés en meutes : maigres, malins, ils suivent les groupes, attaquent les poulaillers et les gens seuls.</p><p><strong>Comportement.</strong> Attaquent en meute, fuient devant un groupe résolu ; un chien nourri peut devenir un ami.</p><p><strong>Faiblesse.</strong> La faim les rend imprudents ; le feu et les cris les font fuir.</p><p><strong>Dés d'attaque :</strong> 2 — <strong>résistance :</strong> 1 — <strong>vitesse :</strong> rapide.</p>",
-    "prejuges": []
+    "prejuges": [],
+    "regard": "",
+    "religion": "",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 0,
+    "autorite": 2,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [],
   "effects": [],

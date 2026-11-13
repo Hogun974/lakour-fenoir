@@ -85,7 +85,16 @@
         "fetes": 0,
         "dementis": 0
       }
-    ]
+    ],
+    "regard": "refaire",
+    "religion": "catholique",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 4,
+    "autorite": 5,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

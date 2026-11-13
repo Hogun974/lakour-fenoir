@@ -2,9 +2,13 @@
 // croissance : par jour (simulation) ; ressourcesPreferees : ce qu'elles pillent ou échangent d'abord.
 import { html } from "./aides.mjs";
 
+// sensMoralChef : le sens moral (−10 rouge .. +10 bleu) de qui mène la bande devant l'abri (complément du jeu 3D, famille 3 ;
+// docs/equilibre-moral.md) : il pèse sur ce qu'il décide (attaquer, négocier, passer, ultimatum, demander à rejoindre).
+const SENS_CHEFS = { "garnison-du-quai": -2, "cooperative-des-plaines": 1, ferrailleurs: -1, "barques-du-sud": 1, "pelerins-de-la-lave": 0,
+  "familles-des-ilets": 1, "dispensaire-du-sud": 6, "sans-lune": -7 };
 function faction({ cle, nom, attitude, regionsDepart, croissance, ressourcesPreferees, description, veulent, traiter, chef, signe }) {
   return { cle, nom, attitude, regionsDepart, croissance, ressourcesPreferees, description: html(description), veulent: html(veulent),
-    traiter: html(traiter), chef, signe };
+    traiter: html(traiter), chef, signe, sensMoralChef: SENS_CHEFS[cle] ?? 0 };
 }
 
 export const FACTIONS = [

@@ -73,7 +73,16 @@
     "livide": true,
     "charge": 0,
     "notes": "<p>Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p><p><strong>Comportement.</strong> Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</p><p><strong>Faiblesse.</strong> Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.</p><p><strong>Dés d'attaque :</strong> 1 — <strong>résistance :</strong> 1 — <strong>vitesse :</strong> lente.</p>",
-    "prejuges": []
+    "prejuges": [],
+    "regard": "",
+    "religion": "",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 0,
+    "autorite": 2,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [],
   "effects": [],

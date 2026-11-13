@@ -78,7 +78,19 @@
     "livide": false,
     "charge": 0,
     "notes": "<p>Elle tient une ferme laitière de la Plaine des Cafres avec son frère, malbars dans un pays de yabs depuis trois générations. Les voisins ont mis vingt ans à cesser de dire qu'« <em>in malbar i koné la kann, pa la vash</em> » (un Malbar connaît la canne, pas les vaches) ; son lait a gagné trois fois le concours de Bourg-Murat. Elle sait faire vivre une famille d'une terre, et elle compte bien continuer.</p>",
-    "prejuges": []
+    "prejuges": [],
+    "regard": "refaire",
+    "religion": "plusieurs",
+    "religions": [
+      "hindouisme-tamoul",
+      "catholique"
+    ],
+    "pratique": true,
+    "ancrage": "",
+    "sensMoral": 2,
+    "autorite": 2,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

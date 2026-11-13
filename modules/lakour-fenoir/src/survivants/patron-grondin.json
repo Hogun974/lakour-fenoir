@@ -85,7 +85,19 @@
         "fetes": 0,
         "dementis": 0
       }
-    ]
+    ],
+    "regard": "epreuve",
+    "religion": "plusieurs",
+    "religions": [
+      "catholique",
+      "ancetres-malgaches"
+    ],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 1,
+    "autorite": 3,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

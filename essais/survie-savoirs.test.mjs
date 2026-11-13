@@ -1,4 +1,4 @@
-// Lot « savoirs » (docs/equilibre-savoirs.md, contrat §11) : les deux savoirs (sœurs lontan, matières de l'île, arbres,
+// Lot « savoirs » (docs/equilibre-savoirs.md, contrat §13) : les deux savoirs (sœurs lontan, matières de l'île, arbres,
 // apprentissage, gramoune, cahier), le jardin créole (boutures, jardins des cases, livres), le gaz et l'eau chaude, le cyclone
 // vécu (préparation, fuites, arbres, végétation, dépôt, vacarme, œil), les chiens (meutes, confiance, alertes) et les routes sans
 // carburant (vélo en pente, véhicules électriques et modifiés, verrous). Logique pure, sur le VRAI contenu de lakour-fenoir.

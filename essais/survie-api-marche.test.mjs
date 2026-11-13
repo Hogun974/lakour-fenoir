@@ -1,4 +1,4 @@
-// Le marché dans l'API game.lakourSurvie (scripts/api-marche.mjs, contrat §11), sur la doublure de Foundry avec le VRAI contenu de
+// Le marché dans l'API game.lakourSurvie (scripts/api-marche.mjs, contrat §12), sur la doublure de Foundry avec le VRAI contenu de
 // lakour-fenoir et le VRAI coffre du MJ IA :
 // - boutique et carnet : crédit (stocks du groupe), plafond, rendre, dette effacée ;
 // - troc avec un PNJ qui a un préjugé : majoration, refus, troc accepté, usure après trois échanges honnêtes ; démenti ; fête partagée ;

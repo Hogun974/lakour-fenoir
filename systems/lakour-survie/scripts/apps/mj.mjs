@@ -9,10 +9,11 @@ import * as L from "../../logique/index.mjs";
 import { t, lireEtat, sansBalises, localiser, libelleCompetence, libelleRessource, survivantsDuGroupe, abriCourant, erreurLisible } from "../donnees.mjs";
 import { estMJActif } from "../canal.mjs";
 import { CHEMIN, essayer, lireChamps, options } from "./commun.mjs";
+import { jaugeSens, libelleFoi, libelleBande, optionsActes, texteListe } from "./esprit.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const contenu = () => game.lakourSurvie?.contenu?.() ?? {};
-export const ONGLETS_MJ = ["partie", "actions", "groupe", "savoirs", "menaces", "marche", "monde"];
+export const ONGLETS_MJ = ["partie", "actions", "groupe", "savoirs", "communaute", "menaces", "marche", "monde"];
 const pct = (x, total) => (total > 0 ? Math.round(x / total * 100) : 0);
 
 // Le monde réel résumé (MJ actif seul) : par région l'infestation réelle, ce qui reste à piller, factions, routes abîmées ;
@@ -41,7 +42,7 @@ export function resumeMonde(monde, c = contenu()) {
   };
 }
 
-// L'onglet Marché (contrat §11) : cours du jour, stades, carnets, marchés, rumeurs (et, au MJ actif monde ouvert, leur vérité),
+// L'onglet Marché (contrat §12) : cours du jour, stades, carnets, marchés, rumeurs (et, au MJ actif monde ouvert, leur vérité),
 // et ce qu'il faut aux formulaires (PNJ, cibles des préjugés, factions, modèles de marchés, foires, gens du marché).
 export function contexteMarche(etat, monde, c = contenu()) {
   const api = game.lakourSurvie;
@@ -80,6 +81,46 @@ export function contexteMarche(etat, monde, c = contenu()) {
     choixStades: options(L.STADES_MARCHE.map(s => [s, t(`LAKOUR_SURVIE.Marche.Stades.${s}`)]), "forain"),
     gestes: options(["accueillir", "rendreAccueil", "rompreTreve", "retablirTreve", "fermer"].map(g => [g, t(`LAKOUR_SURVIE.Marche.Gestes.${g}`)]), "accueillir"),
     preuves: options(L.PREUVES.map(p => [p, t(`LAKOUR_SURVIE.Marche.Preuves.${p}`)]), "fait")
+  };
+}
+
+// La communauté (onglet du MJ, contrat §14) : le chef, l'entente, la couleur réelle et la réputation du groupe, chaque membre (regard,
+// foi, jauge, réputation, autorité, signes), la porte (la vraie couleur des visiteurs : secret du MJ), les votes, les tributs, les
+// communautés séparées. monde : le monde réel (visiteurs, bandes), au seul MJ actif.
+export function contexteCommunaute(etat = lireEtat(), monde = null, c = contenu()) {
+  const membres = survivantsDuGroupe(etat);
+  const vivants = membres.filter(a => L.peutAgir(a.system));
+  const sys = vivants.map(a => ({ id: a.id, s: { ...a.system, esprit: a.system.esprit ?? {} } }));
+  const couleur = L.couleurDuGroupe(sys.map(x => x.s)), reputation = L.reputationDuGroupe(sys.map(x => x.s));
+  const entente = L.ententeDe(etat);
+  const ab = abriCourant(etat);
+  const b = ab ? (game.lakourSurvie?.bilan?.() ?? etat.bilan) : null;
+  const votes = [...(etat.votes ?? [])].reverse();
+  return {
+    chef: options([["", t("LAKOUR_SURVIE.Communaute.SansChef")], ...vivants.map(a => [a.id, a.name])], etat.groupe?.chef ?? ""),
+    entente: { valeur: entente, libelle: t(`LAKOUR_SURVIE.Entente.${entente >= 2 ? "bonne" : entente <= -2 ? "mauvaise" : "moyenne"}`) },
+    couleur: { ...jaugeSens(couleur.moyenne), moyenne: couleur.moyenne }, reputation: { ...jaugeSens(reputation.moyenne), moyenne: reputation.moyenne },
+    membres: sys.map(({ id, s }) => {
+      const e = L.espritDe(s);
+      return { id, nom: game.actors.get(id)?.name ?? id, actif: L.espritActif(s), regard: s.regard ? t(`LAKOUR_SURVIE.Regards.${s.regard}`) : "—", foi: libelleFoi(s, c) || "—",
+        sens: jaugeSens(s.sensMoral), reputation: jaugeSens(s.reputation), autorite: L.autoriteDe(s), lacher: e.lacher, enFaute: e.enFaute, chance: e.chance,
+        projet: e.projet ? t(`LAKOUR_SURVIE.Esprit.Projet.${e.projet}`) : "", enfant: L.estEnfant(s), chef: etat.groupe?.chef === id };
+    }),
+    membresOptions: options(vivants.map(a => [a.id, a.name]), ""),
+    liste: ab ? texteListe(L.listeALaPorte({ stocks: ab.system?.stocks ?? {}, bilan: b, personnes: b?.personnes ?? vivants.length })) : "",
+    visiteurs: (etat.porte ?? []).map(v => {
+      const sec = monde?.porte?.[v.id]?.survivant ?? null;
+      return { id: v.id, nom: v.nom, age: v.age, profil: t(`LAKOUR_SURVIE.Profils.${v.profil}`), demande: sansBalises(localiser(v.demande)), revient: v.revient,
+        apporte: Object.keys(v.apporte ?? {}).length ? texteListe(Object.entries(v.apporte).map(([ressource, manque]) => ({ ressource, manque }))) : "",
+        secret: sec ? jaugeSens(sec.sensMoral) : null };
+    }),
+    votes: votes.slice(0, 3).map(v => ({ ...v, acteLibelle: t(`LAKOUR_SURVIE.Actes.${v.acte}`), decideLibelle: v.decide === null ? "" : v.decide ? t(`LAKOUR_SURVIE.Actes.${v.decide}`) : t("LAKOUR_SURVIE.Communaute.Rien") })),
+    votesOptions: options([["", t("LAKOUR_SURVIE.Communaute.SansVote")], ...votes.map(v => [v.id, `${v.question || t(`LAKOUR_SURVIE.Actes.${v.acte}`)} (${v.resultat.pour}/${v.resultat.contre})`])], ""),
+    actes: optionsActes("exclure"),
+    tributs: (etat.tributs ?? []).map(x => ({ ...x, demandeTexte: texteListe(Object.entries(x.demande ?? {}).map(([ressource, manque]) => ({ ressource, manque }))),
+      etatLibelle: t(`LAKOUR_SURVIE.Tributs.${x.etat}`), actif: x.etat === "actif", sens: monde?.bandes?.[x.id] ? jaugeSens(monde.bandes[x.id].sensMoral) : null })),
+    communautes: options((etat.communautes ?? []).map(x => [x.id, `${x.nom} (${x.membres.length})`]), ""), aDesCommunautes: Boolean((etat.communautes ?? []).length),
+    profils: options([["", t("LAKOUR_SURVIE.Communaute.ProfilCouleur")], ...L.PROFILS_VISITEUR.map(p => [p, t(`LAKOUR_SURVIE.Profils.${p}`)])], "")
   };
 }
 
@@ -145,7 +186,10 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     joueurs: options([["", "—"], ...joueurs.map(u => [u.id, u.name])], ""),
     morts, mortsOptions: options(morts.map(m => [m.id, m.nom]), ""), deuil: morts.some(m => !m.repos),
     dateDepart: game.settings.get(ID, "dateDepart"),
-    menaces: (monde?.menaces ?? []).map(m => ({ ...m, typeLibelle: t(`LAKOUR_SURVIE.Menaces.${m.type}`), texte: sansBalises(localiser(m)) })),
+    menaces: (monde?.menaces ?? []).map(m => ({ ...m, typeLibelle: t(`LAKOUR_SURVIE.Menaces.${m.type}`), texte: sansBalises(localiser(m)),
+      chef: m.chef ? { texte: sansBalises(localiser(m.chef)), bande: m.chef.bande, bandeLibelle: libelleBande(m.chef.bande), decision: m.chef.decision,
+        ultimatum: m.chef.decision === "ultimatum", rejoindre: m.chef.decision === "rejoindre" } : null })),
+    communaute: onglet === "communaute" && etat.demarree ? contexteCommunaute(etat, monde, c) : null,
     paliers: [...(monde?.paliers ?? [])].reverse().slice(0, 6),
     monde: onglet === "monde" ? resumeMonde(monde, c) : null,
     marche: onglet === "marche" && etat.demarree ? contexteMarche(etat, monde, c) : null,
@@ -238,7 +282,7 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       affliction: () => api.affliction({ acteurId: d.acteur, cle: d.affliction, action: d.action || "donner" }),
       ajouterMembre: () => api.ajouterMembre({ acteurId: d.acteur, statut: d.statut || "compagnon" }),
       rencontre: () => api.rencontre({ region: d.region || "" }),
-      // Le marché (§11) : biens « donne.<r> », « recoit.<r> », « biens.<r> » ; cibles : liste multiple.
+      // Le marché (§12) : biens « donne.<r> », « recoit.<r> », « biens.<r> » ; cibles : liste multiple.
       troquer: () => api.troquer({ donne: biens(d, "donne"), recoit: biens(d, "recoit"), pnjId: d.pnj || "", cibles: liste(d.cibles), faction: d.faction || "", marche: d.marche || "", accepter: Boolean(d.accepter) }),
       ouvrirBoutique: () => api.ouvrirBoutique({ nom: d.nom || game.actors?.get?.(d.tenancier)?.name || "", tenancier: d.tenancier || "" }),
       crediter: () => api.crediter({ boutique: d.boutique || "", biens: biens(d, "biens"), cibles: liste(d.cibles) }),
@@ -262,7 +306,20 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       apprendre: () => api.apprendre({ acteurId: d.acteur, savoir: d.savoir, source: d.source || "maitre", maitreId: d.maitre || "" }),
       gagnerConfiance: () => api.gagnerConfiance({ acteurId: d.acteur, parleurId: d.parleur }),
       dicter: () => api.dicter({ gramouneId: d.acteur, scribeId: d.scribe }),
-      apprivoiser: () => api.apprivoiser({ acteurId: d.acteur })
+      apprivoiser: () => api.apprivoiser({ acteurId: d.acteur }),
+      // La communauté (contrat §14).
+      chef: () => api.chef({ acteurId: d.chef || "" }),
+      entente: () => api.entente({ delta: Number(d.delta) || 0, raison: d.raison ?? "" }),
+      parole: () => api.parole({ tenue: d.tenue !== "non", raison: d.raison ?? "" }),
+      voter: () => api.voter({ question: d.question ?? "", acte: d.acte || "accueillir", circonstances: Boolean(d.circonstances) }),
+      decider: () => api.decider({ voteId: d.vote || "", decision: d.decision || "pour" }),
+      acteMoral: () => api.acteMoral({ acteurs: membres, acte: d.acte, circonstances: Boolean(d.circonstances), temoins: d.temoins !== false, voteId: d.vote || "", journal: Boolean(d.journal) }),
+      porte: () => api.porte({ visiteurId: d.visiteur, decision: d.decision || "accueillir", voteId: d.vote || "", circonstances: Boolean(d.circonstances) }),
+      frapper: () => api.frapper({ profil: d.profil || "" }),
+      tribut: () => api.tribut({ tributId: d.tribut, paye: d.paye !== "non" }),
+      separer: () => api.separer({ partants: membres, abriVaAux: d.abriVaAux || "restants", nom: d.nom ?? "" }),
+      fusionner: () => api.fusionner({ communauteId: d.communaute }),
+      lireSigne: () => api.lireSigne({})
     };
     if (!appels[nom]) return;
     cible.disabled = true;

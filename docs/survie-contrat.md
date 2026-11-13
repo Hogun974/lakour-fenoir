@@ -711,13 +711,13 @@ moral, le bruit, la lumière, les stocks, l'hygiène, le sang-froid et les liens
 - **Moteur** (`lakour-mj-ia`, branche du lot) : fêtes « sur demande » au socle (seul un monde qui les décline les voit) ; outils
   `survie_feter` (choix, vœux, cadeau, abri voisin ; vœu tenu ou rompu), `survie_participer`, `survie_releve` (avec `confier`),
   `survie_autel` ; l'état du jeu dit la lune, la date lue, l'autel, les souvenirs et les liens.
-## 11. Le marché et le Ladi Lafé (ajout du 2026-11-13, lot « marche »)
+## 12. Le marché et le Ladi Lafé (ajout du 2026-11-13, lot « marche »)
 
 Repris du jeu 3D (complément, famille 8 : le marché et les préjugés au marché ; famille 1 : les foires devenues marchés de troc
 saisonniers sous trêve, les oratoires rouges ; famille 3 : le Ladi Lafé, les objets marqués). Chiffres et raisons :
 `docs/equilibre-marche.md` ; écriture des préjugés : `docs/metissage.md`.
 
-### 11.1 Règles (logique pure, `logique/marche.mjs`)
+### 12.1 Règles (logique pure, `logique/marche.mjs`)
 - **Quatre stades** : troc de la main à la main (toujours), boutique et carnet de crédit (un commerçant PNJ), marché forain (deux
   communautés au moins dans la région, une route ouverte : jour fixe, terrain à personne, conseil avec une voix par bastion,
   cours affiché, litiges, trêve), foire (trois jours, une fois l'an, autour d'une récolte). `stadesDuMarche(…)`.
@@ -744,7 +744,7 @@ saisonniers sous trêve, les oratoires rouges ; famille 3 : le Ladi Lafé, les o
   dettes qui traînent, rumeurs éteintes). `evenementsDeMarche(contenu, { stade, saison, phase })` : les événements de type
   `marche`, que **la simulation du monde ne tire jamais** (`monde.mjs`).
 
-### 11.2 Données
+### 12.2 Données
 - État public : `etat.marche = { boutiques: [carnet], marches: [marché], rumeurs: [rumeur publique], signe, prochain }` (absent
   d'une partie plus ancienne : `marcheDe(etat)` rend un marché vide). Secret : `monde.marche = { rumeurs: { id: { vraie, auteur,
   malveillant } } }`.
@@ -755,7 +755,7 @@ saisonniers sous trêve, les oratoires rouges ; famille 3 : le Ladi Lafé, les o
   région, récolte) ; événements de type `marche` (`stades`, `effets.dementi`, `effets.cours`…) ; paliers de réputation avec leur
   effet au troc (`reputations.paliers[].marche`).
 
-### 11.3 API (`scripts/api-marche.mjs`, étalée dans `game.lakourSurvie`)
+### 12.3 API (`scripts/api-marche.mjs`, étalée dans `game.lakourSurvie`)
 Lecture : `marche()`, `coursDuJour({ recolte, ajustements, marche })`, `stadesDuMarche({ region })`, `confiance({ pnjId, cibles,
 faction })`, `evaluerTroc({ donne, recoit, pnjId, cibles, faction, marche })`, `trancherLitige({ voix })`,
 `evenementDeMarche({ stade })`.
@@ -769,12 +769,12 @@ bastions, hote })`, `fermerMarche`, `accueillir({ marche, hote })`, `rompreTreve
 invités. Chaque jour d'`avancer` : la journée du marché ; la réputation gagnée ou perdue s'écrit dans les horloges
 `rep-<faction>` du moteur (`api.horloges.avancer`) quand il les tient. Fenêtres : onglet **Marché** de la fenêtre du MJ (avec la
 vérité des rumeurs) et du tableau de bord (le cours, le carnet du groupe, les marchés, ce qui se dit ; jamais la vérité).
-## 11. Les deux savoirs et l'île en mouvement (lot « savoirs », 2026-11-13)
+## 13. Les deux savoirs et l'île en mouvement (lot « savoirs », 2026-11-13)
 
 Chiffres et raisons : `docs/equilibre-savoirs.md`. Logique : `logique/savoirs.mjs` (nouveau), `abri.mjs`, `actions.mjs`,
 `monde.mjs`, `etat.mjs`, `maladies.mjs`. Rien n'est retiré ni renommé ; les champs nouveaux ont une valeur par défaut.
 
-### 11.1 Ressources (§1.6)
+### 13.1 Ressources (§1.6)
 - `gaz` (1 = un kilo ; une bouteille en fait 13), pillable : réserves des régions (contenu `ressources.gaz`), stocks des sites,
   plafond de base 26. Une partie d'avant le gaz le reçoit à la part qui reste des autres réserves (`completerPillage`, appelé
   par `simulerJour`).
@@ -782,7 +782,7 @@ Chiffres et raisons : `docs/equilibre-savoirs.md`. Logique : `logique/savoirs.mj
   repiquées chaque soir dans un potager, jardin créole, serre ou verger en service (elles deviennent des graines), sinon un tiers
   meurt (`repiquerBoutures`, appelé par `journeeAbri`, qui rend `boutures: { repiquees, mortes }`).
 
-### 11.2 Installations (§3.2)
+### 13.2 Installations (§3.2)
 - Champs nouveaux de la définition : `arbre` (`"moderne"` | `"lontan"`), `role` (défaut : sa clé), `rang` (défaut : 0, 1 pour une
   lontan). **Sœurs** : les installations d'un même rôle ne s'additionnent pas ; la première par rang qui peut marcher est en
   service, les autres en secours (`bilan.secours: [{ cle, role }]`, ni production, ni consommation, ni effet structurel ;
@@ -797,7 +797,7 @@ Chiffres et raisons : `docs/equilibre-savoirs.md`. Logique : `logique/savoirs.mj
   15 jours), `abri.lumiereLe` (visibilité +1 ce jour-là).
 - Alentours au-dessus du plafond (`regenererNature`) : plus de repousse, le surplus se perd chaque jour (`POURRISSEMENT`).
 
-### 11.3 Cyclone (§2.3)
+### 13.3 Cyclone (§2.3)
 - `passageCyclone(abri, installations, contenu, { force, protection, prepare, jour, depots }, hasard)` (remplace l'appel de
   `subirCyclone` dans `avancer`, qui reste) : préparation (+1 de protection, rien d'emporté) ou pertes (matériaux, plantes,
   boutures), eau des fuites et `abri.eauDouteuse` (3 jours : `facteurRisque(…, { eauDouteuse })` × 2 sans eau traitée), bois et
@@ -814,7 +814,7 @@ Chiffres et raisons : `docs/equilibre-savoirs.md`. Logique : `logique/savoirs.mj
   Journal : `cyclone-prepare`, `cyclone-emportes`, `cyclone-citerne`, `cyclone-arbres`, `cyclone-depot`, `boutures-mortes`,
   `savoir-perdu` (une gramoune meurt sans cahier).
 
-### 11.4 Savoirs, gramoune, chien (`savoirs.mjs`)
+### 13.4 Savoirs, gramoune, chien (`savoirs.mjs`)
 - `ARBRES`, `arbreDe`, `savoirsParArbre`, `autonomieComplete({ autonome, savoirs, contenu })` (2 savoirs de chaque arbre).
 - `estGramoune(system, contenu)` (60 ans et plus, un savoir lontan), `dureeApprentissage`, `veilleeApprentissage(eleve, { savoir,
   source: "livre" | "cahier" | "maitre", maitre, livre: { enseigne }, contenu, energie })` → `{ ok, motifs, system, fait, requis,
@@ -825,7 +825,7 @@ Chiffres et raisons : `docs/equilibre-savoirs.md`. Logique : `logique/savoirs.mj
   `role`, `rang`. Savoir : `arbre`. Équipement : `enseigne` (savoirs qu'un livre ou un cahier apprend), `auteur`. Catégorie
   d'équipement nouvelle : `animal` (le chien du groupe).
 
-### 11.5 Fouilles et routes (`actions.mjs`)
+### 13.5 Fouilles et routes (`actions.mjs`)
 - Cibles de fouille `jardins` (les jardins des cases de la région, `jardinsDisponibles`, `monde.regions[r].jardinsPris`) et
   `livres` (`chanceLivre`, `tirerSavoirDeLivre`, `monde.regions[r].livresTrouves`) : `fouiller` rend `livre` (clé d'un savoir ou
   null) et un fait `livre-trouve`.
@@ -834,7 +834,7 @@ Chiffres et raisons : `docs/equilibre-savoirs.md`. Logique : `logique/savoirs.mj
   `dureeEtape(v, transport, etat, denivele)` ; `voyager(…, { reserves })` vérifie la `source` du véhicule (refus
   `voyage-source`) et rend `source`, `verrous` (`tirerVerrous`) et `siphonne` ; le temps des verrous est compris dans `quarts`.
 
-### 11.6 API (§5) et fenêtres
+### 13.6 API (§5) et fenêtres
 - Nouvelles fonctions : `preparerCyclone({ membres, quarts })`, `apprendre({ acteurId, savoir, source, maitreId })`,
   `gagnerConfiance({ acteurId, parleurId })`, `dicter({ gramouneId, scribeId })`, `apprivoiser({ acteurId })` (chacune une
   veillée ou un temps de travail, qui fait passer le temps), `cyclone()` (le déroulé du jour au MJ actif, monde ouvert),
@@ -846,3 +846,85 @@ Chiffres et raisons : `docs/equilibre-savoirs.md`. Logique : `logique/savoirs.mj
   dans le formulaire des recrues ; cibles « jardins » et « livres ». Fiche d'abri : sœurs en secours, installations lontan,
   savoir-faire du groupe et autonomie complète. État public : `groupe.chienErrant` (`{ confiance, region }` | null).
 - Registre du contenu : `depotsCyclone`, `gramounes`.
+## 14. L'esprit sur le corps, le sens moral et l'autorité (ajout du 2026-11-13, lot « moral »)
+
+Tiré du complément du jeu 3D (familles 2 et 3), validé par Jordan. Logique : `logique/esprit.mjs`, `moralite.mjs`, `porte.mjs`,
+`chefs.mjs` ; chiffres et raisons : `docs/equilibre-moral.md`. **Rien n'est magique** : la foi agit par le moral, le jeu ne confirme
+ni ne dément rien ; les croyances et les préjugés sont ceux des personnages ; aucune religion ni aucune origine ne donne de bonus
+ni de malus propre.
+
+### 14.1 Champs d'un survivant (s'ajoutent au §3.1 et au §10.1 ; tous réservés au MJ, `gmOnlyFields`)
+```
+system: {
+  …,
+  regard: "epreuve" | "refaire" | "vivre" | "",   // vide : esprit pas encore tiré (fiche d'avant) : AUCUN effet de ce §14
+  religion: cle | "aucune" | "plusieurs" | "",     // une religion du contenu (registre `religions`)
+  religions: [cle],                                // « plusieurs » : deux ou trois religions
+  pratique: Boolean,                               // pratiquant (religion ou ancrage)
+  ancrage: cle | "",                               // ce qui fait tenir un non-croyant (registre `ancrages`)
+  sensMoral: −10..10 (0),                          // du rouge (exclure, trahir) au bleu (accueillir, aider)
+  reputation: −10..10 (0),                         // ce que les témoins en ont vu ; ce que les autres connaissent
+  autorite: 0..5 (2),                              // à quel point il est obéi quand il mène
+  esprit: { joursSansObservance, enFaute, reconfortLe, joursBas, lacher 0..3, chance 0..3, joursSansNourriture, nourriSuite,
+            nourri: { epreuve, refaire, vivre }, ancragePerdu, revolte, projet, joursNourris, joursFaim }   // compteurs (espritDe)
+}
+```
+Le générateur les tire (`genererSurvivant` : `tirerEsprit` sur un flux de hasard à part, `options.hasardEsprit`) ; la création
+garde la religion, la pratique, l'ancrage et le regard choisis (verrou « esprit » ; `generer({ verrous: { regard, religion,
+religions, pratique, ancrage } })`) ; un tirage venu d'un joueur est refusé si sa jauge dépasse ±6, son autorité 4, ou si sa
+réputation n'est pas nulle (`tirageDuGenerateur`).
+
+### 14.2 Contenu (registre)
+- `religions` : `{ cle, nom, description, observance: { besoin: "calme" | "objet" | "rien", texte }, fetes: [clé de fête],
+  poids, affinites: { enfance: facteur }, special?: "aucune" | "plusieurs" }` ; « aucune » et « plusieurs » sont deux entrées
+  spéciales. `ancrages` : `{ cle, nom, description, besoin, texte, poids }`.
+- `traits[].effets` peut porter `sensMoral`, `autorite`, `regard: { regard: poids }`, `croyant`, `pratique` (au tirage seulement).
+- `factions[].sensMoralChef` : le sens moral de qui mène la bande devant l'abri.
+
+### 14.3 Ce que fait le temps (`avancer`, à chaque jour ; seulement pour un esprit tiré)
+Plafond du moral + `plafondEsprit` (pratiquant +1, en faute −1 ; regard éteint −1 ; entente ±1) ; journée de l'esprit
+(`journeeEsprit` : observances, réconfort, regard nourri, celui qui lâche) ; faux bruits la nuit à l'abri (`fauxBruit`, +1 fatigue) ;
+le chef (`etat.groupe.chef`) gagne ou perd de l'autorité (`autoriteDuJour`) et, trop bas, ses crises (`crisesAutorite`) ; le
+malaise des bleus dans un groupe rouge ; la porte (`journeePorte`) ; l'alerte d'un tribut dû. Faits nouveaux (clés
+`esprit-*`, `porte-*`, `autorite-*`, `desertion`, `crise-*`, `malaise-couleur`, `tribut-du`, `chef-*`) dans `CLES_TEXTES`.
+Un départ (« un matin, il n'est plus là ») ou une désertion retirent le membre comme une recrue à bout ; « au bord » (un
+joueur), une scission ou un renversement vont au MJ (journal secret, `aRaconter`, avis à l'écran).
+
+### 14.4 État public et monde secret
+- Public (`lakour-survie.partie`) : `groupe.chef`, `groupe.entente` (−3..3), `groupe.accueilLe`, `groupe.feteLe` ;
+  `porte: [{ id, jour, nom, age, genre, profil, bouches, demande: message, apporte, revient }]` (ce que le groupe voit) ;
+  `votes: [{ id, quart, question, acte, voix, resultat, decide }]` (10) ; `tributs: [{ id, bande, faction, demande, tousLes,
+  prochain, payes, etat: "actif" | "allie" | "rompu" }]` ; `communautes: [{ id, nom, membres, statuts, stocks?, plans, region,
+  abri, depuis, entente }]` (les groupes séparés).
+- Secret (monde scellé) : `porte: { id: { survivant, profil, bouches } }` (la vraie couleur du visiteur), `porteSuites` (feu,
+  retour), `trahis`, `bandes: { tributId: { sensMoral, force } }`, la décision du chef de chaque menace « bande » ou « visite »
+  (`menaces[].chef`).
+
+### 14.5 API (`game.lakourSurvie`, écritures au MJ actif, monde ouvert)
+```
+communaute()                                   -> { chef, entente, reputation, couleur (MJ), porte, tributs, votes, communautes, liste }
+acteMoral({ acteurId | acteurs, acte | delta, circonstances, temoins = true, voteId, journal })
+                                               -> le POINT D'ENTRÉE du sens moral (la rumeur : acte « colporter » ; logique :
+                                                  deplacerSensMoral, deplacerReputation, acteMoral, acteCollectif)
+ajusterEsprit({ acteurId, regard, religion, religions, pratique, ancrage, sensMoral, reputation, autorite, chance, ancragePerdu })
+tirerEsprit({ acteurId, forcer })              -> tire l'esprit d'une fiche qui n'en a pas
+entente({ delta, raison }) / chef({ acteurId }) / parole({ tenue, raison })
+voter({ question, acte, voix, circonstances }) -> les voix données, les autres d'après leur jauge (voixAuto)
+decider({ voteId, decision })                  -> le chef suit le vote ou non (autorité)
+porte({ visiteurId, decision: "accueillir" | "refuser" | "trahir", voteId, circonstances })
+frapper({ profil })                            -> quelqu'un frappe, tout de suite
+tribut({ tributId, paye })                     -> payé, augmenté, alliance, ou révolte (menace)
+resoudreMenace({ id, action: "assaut" | "ecarter" | "ultimatum" | "rejoindre" })
+separer({ partants, abriVaAux, nom }) / fusionner({ communauteId }) / lireSigne()
+```
+Un test qui compte consomme un point de chance (un dé de plus, carte « Un coup de chance ») ; celui qui lâche perd un dé en
+parole ; en assaut, l'autorité du chef présent donne ±1 dé de défense. Réglage monde `visibiliteSensMoral` : « soi » (défaut :
+chacun voit sa couleur, les autres la réputation), « tous », « mj ».
+
+### 14.6 Fenêtres
+Fiche de survivant : section « L'esprit » (regard, religion ou ancrage, pratique, en faute, sens moral selon le réglage,
+réputation, autorité, signes, et pour le MJ chance et projet d'un enfant ; tout se règle à la main ; bouton « Tirer l'esprit »).
+Création : regard, religion (plusieurs), ancrage, pratique, et la couleur et l'autorité tirées. Fiche d'abri : la liste à la
+porte et ceux qui attendent. Fenêtre du MJ : onglet « Communauté » (chef, parole, entente, couleur réelle et réputation du groupe,
+membres, porte et vraie couleur des visiteurs, votes, acte, signe, tributs, séparation et fusion) ; onglet « Menaces » : la
+décision du chef de bande, avec « Accepter l'ultimatum » et « À la porte ».

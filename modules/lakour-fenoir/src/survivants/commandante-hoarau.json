@@ -76,7 +76,16 @@
     "livide": false,
     "charge": 0,
     "notes": "<p>Ancienne officière de port, petite blanche de la Plaine des Grègues descendue à la mer à dix-huit ans, à la tête de la Garnison. Elle croit qu'il faut un ordre pour survivre, et elle a peut-être raison. Elle signe « pour l'autorité provisoire » ; ses dockers la disent « plus zoreil que les Zoreils », avec ses tampons, mais elle a grandi sans électricité, dans une case en bois sous tôle.</p>",
-    "prejuges": []
+    "prejuges": [],
+    "regard": "epreuve",
+    "religion": "catholique",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": -2,
+    "autorite": 4,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

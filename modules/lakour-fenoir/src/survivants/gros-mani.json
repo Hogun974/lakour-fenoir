@@ -76,7 +76,16 @@
     "livide": false,
     "charge": 0,
     "notes": "<p>Tient la casse de la Rivière des Galets, cafre du Port et fier de l'être. Rit fort, compte vite, n'oublie jamais une dette — ni une faveur. Au client qui lui ressort la vieille rengaine des Cafres paresseux, il montre les mille carcasses démontées à la main, et double le prix.</p>",
-    "prejuges": []
+    "prejuges": [],
+    "regard": "vivre",
+    "religion": "aucune",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "photo",
+    "sensMoral": -1,
+    "autorite": 3,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

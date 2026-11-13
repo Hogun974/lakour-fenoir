@@ -12954,7 +12954,8 @@
    "veulent": "<p>Du carburant, des armes, des médecins, des techniciens pour faire tourner ce qui reste de la centrale et des grues ; contrôler la route du Littoral ; recenser les survivants « pour l'évacuation ».</p>",
    "traiter": "<p>Ils respectent l'uniforme, la discipline et les papiers, même faux. On entre chez eux désarmé, on en sort fiché. Ils paient bien en carburant, mais réquisitionnent ce qu'ils jugent nécessaire. Celui qui se dit médecin ou électricien n'est plus jamais tout à fait libre de partir.</p>",
    "chef": "La commandante Hoarau, ancienne officière de port, qui signe ses ordres « pour l'autorité provisoire »",
-   "signe": "Brassards orange fluo, conteneurs empilés en murailles, sirène du port à heure fixe"
+   "signe": "Brassards orange fluo, conteneurs empilés en murailles, sirène du port à heure fixe",
+   "sensMoralChef": -2
   },
   {
    "cle": "cooperative-des-plaines",
@@ -12976,7 +12977,8 @@
    "veulent": "<p>Des bras pour les récoltes, des graines, du carburant pour les tracteurs, des soignants ; qu'on les laisse tranquilles.</p>",
    "traiter": "<p>On paie en travail, en savoir ou en graines ; la parole donnée vaut contrat. Un voleur est chassé, un tricheur aussi. Ceux qui restent une saison et tiennent leurs engagements finissent par avoir une place au conseil.</p>",
    "chef": "Un conseil de sept fermiers, présidé par une vieille éleveuse que tout le monde appelle Mémé Lucette",
-   "signe": "Clôtures doublées, cloches de vache aux barrières, troc le samedi à Bourg-Murat"
+   "signe": "Clôtures doublées, cloches de vache aux barrières, troc le samedi à Bourg-Murat",
+   "sensMoralChef": 1
   },
   {
    "cle": "ferrailleurs",
@@ -12998,7 +13000,8 @@
    "veulent": "<p>Des pièces, du carburant, des véhicules, des informations sur les dépôts intacts ; commercer avec tout le monde.</p>",
    "traiter": "<p>Le troc est roi, la parole aussi longtemps qu'elle rapporte. Ils échangent tout contre tout, renseignements compris, et vendent les vôtres au suivant. Ne laissez rien sans garde.</p>",
    "chef": "Personne et tout le monde ; on cite souvent « Gros Mani », qui tient la casse de la Rivière des Galets",
-   "signe": "Pick-up hérissés de tôle, colliers de clés de voiture, marché aux pièces dans les zones commerciales"
+   "signe": "Pick-up hérissés de tôle, colliers de clés de voiture, marché aux pièces dans les zones commerciales",
+   "sensMoralChef": -1
   },
   {
    "cle": "barques-du-sud",
@@ -13020,7 +13023,8 @@
    "veulent": "<p>Du carburant pour les moteurs, de la toile et du cordage, des médicaments ; des ports sûrs ; la paix sur les quais.</p>",
    "traiter": "<p>Ils échangent du poisson et des traversées contre du carburant et des médicaments. Un passage par la mer coûte cher, mais il évite la route des Laves. Toucher à un bateau, c'est la guerre.</p>",
    "chef": "Le patron Grondin, pêcheur de Saint-Pierre, et une capitaine de Saint-Philippe qu'on appelle « la Marine »",
-   "signe": "Barques peintes amarrées au large, feux de signal sur les jetées, poisson séché contre tout"
+   "signe": "Barques peintes amarrées au large, feux de signal sur les jetées, poisson séché contre tout",
+   "sensMoralChef": 1
   },
   {
    "cle": "pelerins-de-la-lave",
@@ -13040,7 +13044,8 @@
    "veulent": "<p>Des fidèles, des vivres à partager, des soignants ; qu'on respecte leurs rites ; garder la route des Laves.</p>",
    "traiter": "<p>On y est nourri et soigné sans payer, mais on y reste en partageant leur vie. Ils se méfient des armes et de l'ironie. Leur foi peut devenir dangereuse quand ils décident de « rendre à la lave » un infecté, ou un sceptique.</p>",
    "chef": "Frère Expédit, ancien catéchiste, voix douce et regard qui ne cille pas",
-   "signe": "Pierres de lave portées au cou, cierges sur les coulées, chants le soir au bord de la route des Laves"
+   "signe": "Pierres de lave portées au cou, cierges sur les coulées, chants le soir au bord de la route des Laves",
+   "sensMoralChef": 0
   },
   {
    "cle": "familles-des-ilets",
@@ -13060,7 +13065,8 @@
    "veulent": "<p>Des médicaments, des pièces pour leurs panneaux et leurs captages, des graines ; qu'on ne leur amène pas la maladie.</p>",
    "traiter": "<p>On demande à entrer, on ne force pas. Une quarantaine de trois jours au col, un travail à faire, et l'on peut rester. Les Familles n'oublient ni un service ni un affront. Elles enseignent volontiers l'hydraulique et le solaire à qui les aide.</p>",
    "chef": "Les anciens de chaque îlet ; à La Nouvelle, une ancienne institutrice que les sentiers écoutent",
-   "signe": "Cols gardés par deux guetteurs, sifflets qui se répondent d'îlet en îlet, cases fermées à la nuit"
+   "signe": "Cols gardés par deux guetteurs, sifflets qui se répondent d'îlet en îlet, cases fermées à la nuit",
+   "sensMoralChef": 1
   },
   {
    "cle": "dispensaire-du-sud",
@@ -13080,7 +13086,8 @@
    "veulent": "<p>Des médicaments, de l'eau, du carburant pour les groupes électrogènes, des volontaires ; des corps à étudier, des infectés à observer.</p>",
    "traiter": "<p>On y est soigné contre ce qu'on peut donner, et parfois pour rien. Ils sont honnêtes, et à bout. Leur besoin d'étudier le Gris peut les pousser à des demandes dérangeantes : ramener un infecté vivant, un Livide entier, un enfant mordu.</p>",
    "chef": "La docteure Soundirassen, urgentiste, épuisée, qui n'a pas quitté l'hôpital depuis le jour zéro",
-   "signe": "Croix rouge peinte sur des draps, ambulances transformées en navettes, coupons de soin écrits à la main"
+   "signe": "Croix rouge peinte sur des draps, ambulances transformées en navettes, coupons de soin écrits à la main",
+   "sensMoralChef": 6
   },
   {
    "cle": "sans-lune",
@@ -13101,7 +13108,8 @@
    "veulent": "<p>Tout ce qui se mange, se boit, se tire ou se vend ; la peur des autres ; les abris prospères.</p>",
    "traiter": "<p>On paie, on se cache ou on se bat. Un tribut acheté ne dure qu'une lune. Quelques-uns, jeunes et perdus, peuvent être ramenés de l'autre côté par la parole. Les autres ne comprennent que la force.</p>",
    "chef": "Un homme qu'on appelle « le Comptable », qui tient la liste de ce que chaque quartier lui doit",
-   "signe": "Visages noircis, sortie les nuits sans lune, marques à la bombe sur les portes « déjà payées »"
+   "signe": "Visages noircis, sortie les nuits sans lune, marques à la bombe sur les portes « déjà payées »",
+   "sensMoralChef": -7
   }
  ],
  "evenements": [
@@ -15331,6 +15339,123 @@
    "public": false,
    "texte": "<p>Le CDI d'un collège, intact sous la poussière : des manuels, des encyclopédies, des revues. Un savoir à apprendre, si l'on a le temps et la lumière pour lire (fouille « livres » sur le site).</p>",
    "effets": {}
+  },
+  {
+   "cle": "objet-du-cyclone",
+   "nom": "Ce que le vent a laissé",
+   "type": "decouverte",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Après la nuit de vent, un objet que personne n'a apporté est là, au milieu de la cour (table « ce que le cyclone a déposé »). Le croyant qui pratique y voit un signe et reprend courage (+1 moral, à raconter) ; celui qui ne pratique plus hésite ; les autres haussent les épaules. Le jeu ne dit pas qui a raison.</p>",
+   "effets": {
+    "abri": {
+     "moral": 1
+    }
+   }
+  },
+  {
+   "cle": "priere-du-soir",
+   "nom": "La prière du soir",
+   "type": "abri",
+   "phases": [
+    "panique",
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Au coucher du soleil, quelques-uns se retrouvent dans un coin du camp : un chapelet, une lampe malbare, un tapis tourné vers La Mecque, une Bible ouverte, le nom des anciens dit à voix basse. D'autres les regardent sans rien dire ; un ou deux s'approchent. Personne ne promet rien, mais cette nuit-là, on dort mieux.</p>",
+   "effets": {
+    "abri": {
+     "moral": 1
+    }
+   }
+  },
+  {
+   "cle": "celui-qui-ne-mange-plus",
+   "nom": "Celui qui ne mange plus",
+   "type": "abri",
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Quelqu'un du groupe laisse sa gamelle à moitié pleine, parle de moins en moins, a donné son couteau (table « celui qui lâche »). Ce n'est pas un bouton qui le retiendra : c'est d'être là, avec lui, le soir. Le MJ choisit qui, et le dit avec tact.</p>",
+   "effets": {
+    "abri": {
+     "moral": -1
+    }
+   }
+  },
+  {
+   "cle": "la-porte-en-debat",
+   "nom": "Faut-il ouvrir ?",
+   "type": "abri",
+   "phases": [
+    "panique",
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "cirque",
+    "volcan",
+    "foret"
+   ],
+   "saisons": [
+    "pluies",
+    "seche"
+   ],
+   "poids": 1,
+   "public": false,
+   "texte": "<p>Une famille campe depuis deux jours devant la barrière. Au repas, le ton monte : « <em>nou nana pa asé pou nou mèm</em> » (on n'a pas assez pour nous-mêmes), répond quelqu'un à celle qui veut ouvrir. Le chef peut trancher seul, ou demander un vote. Qui a voté contre une trahison ne rougit pas avec les autres.</p>",
+   "effets": {
+    "abri": {
+     "moral": -1
+    }
+   }
   }
  ],
  "creatures": [
@@ -16296,7 +16421,10 @@
      "cultures": 1
     },
     "social": null,
-    "special": ""
+    "special": "",
+    "regard": {
+     "refaire": 1
+    }
    },
    "incompatibles": [],
    "incapacites": [],
@@ -16314,7 +16442,11 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": "nerfs-d-acier"
+    "special": "nerfs-d-acier",
+    "regard": {
+     "epreuve": 1
+    },
+    "autorite": 1
    },
    "incompatibles": [
     "coeur-d-artichaut"
@@ -16334,7 +16466,8 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": ""
+    "special": "",
+    "sensMoral": 2
    },
    "incompatibles": [
     "brute-epaisse",
@@ -16510,7 +16643,10 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": ""
+    "special": "",
+    "regard": {
+     "vivre": 1.5
+    }
    },
    "incompatibles": [
     "nuage-noir"
@@ -16530,7 +16666,10 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": ""
+    "special": "",
+    "regard": {
+     "epreuve": 1.5
+    }
    },
    "incompatibles": [
     "soleil-dedans"
@@ -16608,7 +16747,12 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": "fetes-religieuses"
+    "special": "fetes-religieuses",
+    "croyant": true,
+    "pratique": 0.4,
+    "regard": {
+     "epreuve": 1
+    }
    },
    "incompatibles": [],
    "incapacites": [],
@@ -16629,7 +16773,8 @@
      "seuil": 6,
      "moral": -1
     },
-    "special": ""
+    "special": "",
+    "autorite": -1
    },
    "incompatibles": [
     "coeur-de-kour"
@@ -16654,7 +16799,11 @@
      "seuil": 6,
      "moral": 1
     },
-    "special": ""
+    "special": "",
+    "sensMoral": 1,
+    "regard": {
+     "refaire": 1
+    }
    },
    "incompatibles": [
     "loup-solitaire"
@@ -16674,7 +16823,8 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": "tetu"
+    "special": "tetu",
+    "autorite": 1
    },
    "incompatibles": [],
    "incapacites": [],
@@ -16692,7 +16842,8 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": "genereux"
+    "special": "genereux",
+    "sensMoral": 3
    },
    "incompatibles": [
     "doigts-crochus"
@@ -16714,7 +16865,8 @@
      "fouille": 1
     },
     "social": null,
-    "special": "chapardeur"
+    "special": "chapardeur",
+    "sensMoral": -2
    },
    "incompatibles": [
     "main-ouverte"
@@ -16734,7 +16886,10 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": "manque"
+    "special": "manque",
+    "regard": {
+     "vivre": 0.5
+    }
    },
    "incompatibles": [],
    "incapacites": [],
@@ -16754,7 +16909,11 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": "sang-froid"
+    "special": "sang-froid",
+    "sensMoral": -1,
+    "regard": {
+     "epreuve": 0.5
+    }
    },
    "incompatibles": [
     "main-qui-ne-frappe-pas",
@@ -16801,7 +16960,10 @@
      "atelier": 1
     },
     "social": null,
-    "special": ""
+    "special": "",
+    "regard": {
+     "refaire": 0.5
+    }
    },
    "incompatibles": [
     "mains-qui-tremblent"
@@ -16821,7 +16983,8 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": "protecteur"
+    "special": "protecteur",
+    "sensMoral": 2
    },
    "incompatibles": [],
    "incapacites": [],
@@ -16842,7 +17005,8 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": ""
+    "special": "",
+    "sensMoral": -2
    },
    "incompatibles": [
     "main-qui-ne-frappe-pas"
@@ -16862,7 +17026,11 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": "sensible"
+    "special": "sensible",
+    "sensMoral": 1,
+    "regard": {
+     "vivre": 1
+    }
    },
    "incompatibles": [
     "sang-de-basalte"
@@ -16884,7 +17052,8 @@
     "besoins": {},
     "taches": {},
     "social": null,
-    "special": "langues"
+    "special": "langues",
+    "sensMoral": 1
    },
    "incompatibles": [],
    "incapacites": [],
@@ -16954,6 +17123,219 @@
    },
    "incompatibles": [],
    "incapacites": [],
+   "poids": 1
+  }
+ ],
+ "religions": [
+  {
+   "cle": "catholique",
+   "nom": "Catholique",
+   "description": "<p>La foi de la plupart des cases de l'île : la messe du dimanche, les processions, la Vierge noire de la Rivière des Pluies et saint Expédit, dont les petites chapelles rouges bordent encore les routes. Après le jour zéro, on prie dans les églises fermées, on allume des bougies devant les statues, et chacun se demande si c'est la fin des temps ou seulement la fin d'un monde.</p>",
+   "observance": {
+    "besoin": "calme",
+    "texte": "le chapelet du soir, une bougie pour les morts, la prière avant le repas"
+   },
+   "fetes": [
+    "noel",
+    "paques",
+    "halloween"
+   ],
+   "poids": 5,
+   "affinites": {
+    "enfance-zoreil": 1.2,
+    "enfant-des-hauts-de-salazie": 1.3,
+    "enfant-de-cilaos": 1.3,
+    "enfance-yab-des-hauts-de-l-ouest": 1.4,
+    "enfant-de-la-plaine-des-cafres": 1.3,
+    "enfance-tamoule-de-saint-andre": 0.4,
+    "enfance-chinoise-de-saint-denis": 0.6,
+    "enfance-zarab-de-saint-pierre": 0.1,
+    "enfance-a-mayotte": 0.1,
+    "enfance-comorienne-du-chaudron": 0.1
+   }
+  },
+  {
+   "cle": "hindouisme-tamoul",
+   "nom": "Hindouisme tamoul",
+   "description": "<p>La religion des Malbars, venue avec les engagés du Sud de l'Inde : les temples aux couleurs vives, les fêtes de la lumière, le feu sur lequel on marche, la Cavadee et ses piercings, le carême qu'on tient avant. Ceux qui ne la connaissent pas parlent de « services » et de sorcellerie ; ceux qui la pratiquent allument une lampe chaque soir et ne demandent à personne de comprendre.</p>",
+   "observance": {
+    "besoin": "calme",
+    "texte": "la lampe allumée le soir, une offrande de fleurs ou de riz, le carême avant les fêtes"
+   },
+   "fetes": [
+    "dipavali",
+    "cavadee"
+   ],
+   "poids": 1.5,
+   "affinites": {
+    "enfance-tamoule-de-saint-andre": 6,
+    "enfant-de-planteur-de-l-est": 1.8,
+    "enfance-a-maurice": 2,
+    "enfance-zarab-de-saint-pierre": 0.1,
+    "enfance-a-mayotte": 0.1,
+    "enfance-comorienne-du-chaudron": 0.1,
+    "enfance-zoreil": 0.2
+   }
+  },
+  {
+   "cle": "islam",
+   "nom": "Islam",
+   "description": "<p>La foi des Z'arabes de Saint-Denis et de Saint-Pierre, dont la mosquée Noor-e-Islam est la plus ancienne de France, et celle des Comoriens et des Mahorais arrivés plus tard. On prie cinq fois par jour, même dans un abri de tôle, et la question de l'eau propre pour les ablutions devient une question de survie.</p>",
+   "observance": {
+    "besoin": "calme",
+    "texte": "les cinq prières, l'eau propre des ablutions, le jeûne du ramadan quand il revient"
+   },
+   "fetes": [],
+   "poids": 0.6,
+   "affinites": {
+    "enfance-zarab-de-saint-pierre": 12,
+    "enfance-a-mayotte": 12,
+    "enfance-comorienne-du-chaudron": 12,
+    "enfance-a-madagascar": 0.6,
+    "enfance-tamoule-de-saint-andre": 0.1
+   }
+  },
+  {
+   "cle": "culte-chinois",
+   "nom": "Culte des ancêtres et temple chinois",
+   "description": "<p>Dans l'arrière-boutique, l'autel des ancêtres avec ses photos et ses bâtons d'encens ; à Saint-Denis et à Saint-Pierre, les temples de Guan Di. Beaucoup de familles chinoises vont aussi à la messe. On n'abandonne pas les siens parce que le monde s'arrête : on les nourrit, même d'une poignée de riz.</p>",
+   "observance": {
+    "besoin": "calme",
+    "texte": "l'encens pour les ancêtres, une part du repas posée devant leur photo, le respect des jours de fête"
+   },
+   "fetes": [
+    "nouvel-an-chinois"
+   ],
+   "poids": 0.4,
+   "affinites": {
+    "enfance-chinoise-de-saint-denis": 12,
+    "enfance-a-maurice": 1.5,
+    "enfance-zarab-de-saint-pierre": 0.1,
+    "enfance-a-mayotte": 0.1,
+    "enfance-comorienne-du-chaudron": 0.1
+   }
+  },
+  {
+   "cle": "evangelique",
+   "nom": "Église évangélique",
+   "description": "<p>Des églises dans d'anciens entrepôts, des chants qu'on entend de la rue, une Bible annotée qu'on garde sur soi. Les évangéliques se sont multipliés dans les quartiers ; après le jour zéro, certains y voient l'Apocalypse annoncée, d'autres seulement une raison de plus d'ouvrir la porte. Tant qu'il a sa Bible, le pratiquant tient ; s'il la perd, il se sent nu.</p>",
+   "observance": {
+    "besoin": "objet",
+    "texte": "la Bible ouverte chaque jour, les chants, le culte avec les frères et les sœurs"
+   },
+   "fetes": [
+    "noel",
+    "paques"
+   ],
+   "poids": 0.6,
+   "affinites": {
+    "enfant-de-la-cite-saint-denis": 1.5,
+    "enfant-du-tampon": 1.4,
+    "enfance-a-madagascar": 1.6,
+    "enfance-zarab-de-saint-pierre": 0.1,
+    "enfance-a-mayotte": 0.1,
+    "enfance-comorienne-du-chaudron": 0.1
+   }
+  },
+  {
+   "cle": "ancetres-malgaches",
+   "nom": "Servis kabaré, le culte des ancêtres",
+   "description": "<p>Venu de Madagascar et d'Afrique avec les esclaves, transmis en silence pendant des générations : le servis kabaré, le repas offert aux ancêtres, le maloya qui les appelle. On le cachait, on le pratique aujourd'hui plus ouvertement, et souvent en plus de la messe. Dans le monde d'après, dire le nom des morts, c'est aussi se souvenir qu'on vient de loin et qu'on a déjà survécu à pire.</p>",
+   "observance": {
+    "besoin": "calme",
+    "texte": "le rhum et le tabac posés pour les anciens, leurs noms dits à voix haute, un repas partagé avec eux"
+   },
+   "fetes": [
+    "liberte"
+   ],
+   "poids": 0.4,
+   "affinites": {
+    "enfance-a-madagascar": 8,
+    "enfant-de-planteur-de-l-est": 1.5,
+    "enfant-du-sud-sauvage": 1.5,
+    "enfance-zarab-de-saint-pierre": 0.1,
+    "enfance-a-mayotte": 0.3,
+    "enfance-comorienne-du-chaudron": 0.3
+   }
+  },
+  {
+   "cle": "aucune",
+   "nom": "Aucune",
+   "description": "<p>Il ne croit pas, ou plus. Ce qui le fait tenir est ailleurs : une photo, un carnet, une routine, le sport. C'est son ancrage, et il compte autant que la foi des autres.</p>",
+   "fetes": [],
+   "poids": 2,
+   "affinites": {
+    "enfance-zoreil": 1.6,
+    "enfance-en-foyer": 1.5,
+    "enfant-de-militaire": 1.3
+   },
+   "special": "aucune"
+  },
+  {
+   "cle": "plusieurs",
+   "nom": "Plusieurs à la fois",
+   "description": "<p>La messe le dimanche et le temple pour la Dipavali, un cierge à saint Expédit et une offrande pour les anciens : à La Réunion, beaucoup croient à plusieurs choses à la fois, et personne ne trouve ça étrange. Il tient les deux, ou les trois.</p>",
+   "fetes": [],
+   "poids": 1.2,
+   "affinites": {
+    "enfance-tamoule-de-saint-andre": 2,
+    "enfant-de-planteur-de-l-est": 1.5,
+    "enfance-chinoise-de-saint-denis": 1.5,
+    "enfance-a-madagascar": 1.3,
+    "enfance-zarab-de-saint-pierre": 0.1,
+    "enfance-a-mayotte": 0.1,
+    "enfance-comorienne-du-chaudron": 0.1
+   },
+   "special": "plusieurs"
+  }
+ ],
+ "ancrages": [
+  {
+   "cle": "photo",
+   "nom": "Une photo",
+   "description": "<p>Une photo pliée en quatre dans un portefeuille : des enfants, un mariage, une maison au bord de la mer. Il la regarde chaque soir. Tant qu'il l'a sur lui, il sait pourquoi il se lève.</p>",
+   "besoin": "objet",
+   "texte": "la regarder chaque soir, la garder sèche",
+   "poids": 3
+  },
+  {
+   "cle": "carnet",
+   "nom": "Un carnet",
+   "description": "<p>Un carnet d'écolier où il écrit chaque soir ce qui s'est passé : les noms, les dates, la météo, ce qu'on a mangé. Quelqu'un, un jour, devra savoir. Le perdre, ce serait perdre tout ce qu'il a vu.</p>",
+   "besoin": "objet",
+   "texte": "écrire quelques lignes chaque soir",
+   "poids": 2
+  },
+  {
+   "cle": "routine",
+   "nom": "Une routine",
+   "description": "<p>Le café à cinq heures et demie, la barbe faite, le lit fait, les affaires pliées : le monde s'écroule, pas ses habitudes. Sur la route, sans abri, tout se dérègle, et lui avec.</p>",
+   "besoin": "calme",
+   "texte": "le café à la même heure, se raser, plier ses affaires",
+   "poids": 2
+  },
+  {
+   "cle": "sport",
+   "nom": "Le sport",
+   "description": "<p>Il courait le Grand Raid, ou il jouait au foot le dimanche au stade de son quartier. Il continue : des pompes au lever, une course dans la cour. Le corps fatigué fait taire la tête.</p>",
+   "besoin": "calme",
+   "texte": "courir, nager ou faire ses pompes chaque matin",
+   "poids": 2
+  },
+  {
+   "cle": "musique",
+   "nom": "Un instrument",
+   "description": "<p>Un kayamb, un harmonica, une vieille guitare au vernis écaillé. Le soir, il joue tout bas un séga ou un maloya de son grand-père. Le bruit attire, il le sait ; il joue quand même, pour lui.</p>",
+   "besoin": "objet",
+   "texte": "jouer un air le soir, même tout bas",
+   "poids": 1
+  },
+  {
+   "cle": "plante",
+   "nom": "Un pied de piment",
+   "description": "<p>Un pied de piment dans un pot de yaourt, ou une bouture de géranium de la case de sa mère. Il l'arrose, il le déplace au soleil, il l'emporte quand on part. Tant qu'il pousse, quelque chose continue.</p>",
+   "besoin": "objet",
+   "texte": "l'arroser, le mettre au soleil, l'emporter partout",
    "poids": 1
   }
  ],

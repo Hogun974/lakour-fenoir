@@ -9,7 +9,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { installerFoundry, messages, emissions, journalHooks, calme, erreurs, commeJoueur, valeur } from "./doublures/foundry-survie.mjs";
 import { charger, monde, survivantTire } from "./doublures/survie-api-outils.mjs";
-import { peutFaire } from "../systems/lakour-survie/logique/index.mjs";
+import { peutFaire, espritActif, religionsDe } from "../systems/lakour-survie/logique/index.mjs";
 
 installerFoundry();
 const M0 = await charger();
@@ -65,6 +65,10 @@ test("partie complète : jour 0, deux survivants tirés, installation, fouille, 
   assert.ok(b && b.ownership.u2 === 3, "le survivant du joueur u2 est à lui");
   assert.equal(b.system.statut, "joueur");
   assert.deepEqual(Object.fromEntries(Object.entries(b.system.competences).map(([k, v]) => [k, v.niveau])), tirage.competences);
+
+  // Deux adultes : un jeune de 16 ou 17 ans (que le générateur tire parfois) travaille aux trois quarts (releve.mjs) ; les tirages
+  // ont bougé à la fusion des lots.
+  for (const x of [a, b]) if (Number(x.system.age) < 18) await x.update({ system: { age: 30 } });
 
   // 2. Démarrer au jour 0 à Saint-Leu.
   const d = await M.api.demarrer({ region: "saint-leu", membres: [a.id, b.id], graine: "essai-complet", essai: true, pnj: [{ nom: "Tantine Josette", passe: "retraitee" }] });
@@ -162,7 +166,10 @@ test("partie complète : jour 0, deux survivants tirés, installation, fouille, 
   const fe = await M.api.feter({ fete: "noel" });
   assert.equal(fe.ok, true);
   assert.equal(abri.system.stocks.nourriture, nourriture - 6, "Noël (lot « fetes ») : deux rations de plus pour chacun des deux membres et de la PNJ");
-  assert.equal(b.system.moral, Math.min(5, moral + 1));
+  // Un pratiquant d'une religion qui fête Noël y gagne 1 de plus (lot « moral », esprit.mjs) ; l'esprit de b est tiré au hasard.
+  const religions = new Map((M.api.contenu().religions ?? []).map(x => [x.cle, x]));
+  const foi = espritActif(b.system) && b.system.pratique && religionsDe(b.system).some(r => (religions.get(r)?.fetes ?? []).includes("noel")) ? 1 : 0;
+  assert.equal(b.system.moral, Math.min(5, moral + 1 + foi));
   await assert.rejects(() => M.api.feter({ fete: "noel" }), /déjà fêtée/);
 
   // 10. Recruter une recrue tirée selon les besoins.

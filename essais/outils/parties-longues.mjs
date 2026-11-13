@@ -57,7 +57,8 @@ export function controleur(contenu, { graine, scenario }) {
   const clesVues = new Set();
 
   // Nombres impossibles : NaN, infini, négatif (sauf les champs qui peuvent l'être).
-  const PEUT_ETRE_NEGATIF = /(^|\.)(termineLe|net\.|sol$|depuis$|actifDepuis$|marge$)/;
+  // sensMoral, reputation (−10..10) et entente (−3..3) sont signés par nature (moralite.mjs, esprit.mjs).
+  const PEUT_ETRE_NEGATIF = /(^|\.)(termineLe|net\.|sol$|depuis$|actifDepuis$|marge$|sensMoral$|reputation$|entente$)/;
   const scanner = (o, chemin, jour, profondeur = 0) => {
     if (profondeur > 12 || o === null || o === undefined) return;
     if (typeof o === "number") {

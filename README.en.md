@@ -212,6 +212,17 @@ crops, livestock, building, workshop, cooking, care, water, fishing, hunting, se
 week gives a mark; the output of installations that need hands depends on who works there. **Recruits** fill what the group
 lacks, with a reason to be there and a price; the GM (or automatic assignment) gives their task to companions and recruits.
 
+**The spirit and the moral compass.** Every survivor has an **outlook** on the catastrophe (a trial, a chance to remake the
+world, the will to live: what feeds their morale), one of the island's **religions** or an **anchor** (a photo, a notebook, a
+routine, sport), practised or not, a **moral compass** from red (exclude, betray) to blue (welcome, help) that only they see
+(others know it through their **reputation**), and **authority** when they lead. Nothing is magical: faith works through
+morale, the game confirms nothing. The lower the morale, the more false noises the night adds; some don't hold on, and the
+group holds them back by being there. Someone knocks at the door: the shelter shows what it truly lacks; the group welcomes,
+refuses or betrays, may vote, and no colour comes free (blue draws refugees, red draws hard cases). A gang leader decides
+according to their own compass (attack, negotiate, move on, issue an ultimatum, ask to join); a child witness imitates or
+rebels; two groups split or merge. It is all run from the GM window's **Community** tab (`docs/survie-contrat.md` §14,
+`docs/equilibre-moral.md`).
+
 **Dated intelligence.** The island is divided into sixteen regions linked by real roads (RN1, RN2, the coastal road, the
 Tamarins road, the Plaines road, the Cilaos road, the Salazie road, the Volcano road, the Lava road, and the trails of
 Mafate, which has no road at all), each with its times on foot and by vehicle, and possible cuts (flooded fords, landslides,

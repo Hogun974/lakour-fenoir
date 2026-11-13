@@ -50,6 +50,11 @@ import { ajouterSouvenir, oublierSouvenirs, espritDuJour, lueurDuJour, hygieneDu
 import { reposerRetrouves, inscrireMorts } from "./releve.mjs";
 import { renseignementsInitiaux, observer, reseauxActifs } from "./renseignements.mjs";
 import { marcheVide, signatureDuMarche } from "./marche.mjs";
+import { espritActif, plafondEsprit, nourrituresDuJour, journeeEsprit, fauxBruit, texteEsprit, ESPRIT_PUBLICS, ententeDe, sansAppetit,
+  religionsDe, ajusterEntente } from "./esprit.mjs";
+import { couleurDuGroupe, malaiseCouleur } from "./moralite.mjs";
+import { journeePorte, listeALaPorte } from "./porte.mjs";
+import { autoriteDuJour, crisesAutorite, tributsDus } from "./chefs.mjs";
 
 export function etatVide() {
   return {
@@ -183,6 +188,18 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         e = { ...e, morts: e.morts.map(m => (relevesLivides.has(m.id) && !m.livide && !m.repos ? { ...m, livide: true, retrouve: false } : m)) };
       }
     }
+    // 1 ter. Les faux bruits de la nuit (esprit.mjs) : à l'abri, plus le moral est bas et moins il y a de monde autour, plus on
+    // entend ce qui n'est pas là ; celui qui en entend dort mal (+1 fatigue). Flux de hasard à part : « nuit|quart|id ».
+    if (nuit && aLAbri()) {
+      const ici = surv.filter(actif);
+      for (const s of ici) {
+        if (!espritActif(s.system) || !fauxBruit(s.system, ici.length - 1, deriverHasard(m.graine, "nuit", q, s.id))) continue;
+        s.system = { ...s.system, fatigue: Math.min(5, (Number(s.system.fatigue) || 0) + 1) };
+        const t = texteEsprit("faux-bruit", s.nom);
+        s.evenements.push({ quart: fin, cle: "faux-bruit" });
+        publier(fin, t.cle, t.params, t.texte);
+      }
+    }
     // 2. Bruit de l'abri.
     if (ab) ab.system.bruit = Math.min(10, Math.max(0, (Number(ab.system.bruit) || 0) - 2 + (bilan?.bruit ?? 0)));
     // 3. Voyage en cours.
@@ -302,12 +319,20 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     let rang = 0;
     const lieux = ab && aLAbri() ? lieuxAbri(ab, contenu) : [];
     const taille = presentsAbri().length + pnjPresents();
+    const entente = ententeDe(e);
+    const jourEsprit = {};
     for (const s of surv) {
       if (!actif(s)) continue;
       const mange = aLAbri() ? rang++ < nourris : options.mangeHorsAbri !== false;
       const tr = effetsTraits(s.system, contenu);
       const peurMoral = tr.peurs.filter(p => p.lieux.some(l => lieux.includes(l))).reduce((t, p) => t + p.moral, 0);
-      const r = effetJour(s.system, { mange, confort: aLAbri() ? bilan?.moral ?? 0 : 0, traits: tr, personnes: taille, peurMoral, esprit: espritDuJour(e, s.id, jour - 1) });
+      const confort = aLAbri() ? bilan?.moral ?? 0 : 0;
+      const autres = Math.max(0, (aLAbri() ? presentsAbri().length : surv.filter(actif).length) - 1);
+      const pe = plafondEsprit(s.system, contenu, { entente, presents: autres });
+      // esprit (lot « fetes », souvenirs.mjs) : souvenirs de fête, vœux, autel et deuil ; plafondEsprit (lot « moral », esprit.mjs).
+      const souvenirs = espritDuJour(e, s.id, jour - 1);
+      jourEsprit[s.id] = { mange, autres, plafond: Math.min(5, Math.max(0, 3 + Math.max(0, Number(confort) || 0) + (Number(tr.moral) || 0) + pe + souvenirs)), confort };
+      const r = effetJour(s.system, { mange, confort, traits: tr, personnes: taille, peurMoral, esprit: souvenirs, plafondEsprit: pe, sansAppetit: sansAppetit(s.system) });
       s.system = r.system;
       for (const ev of r.evenements) {
         s.evenements.push({ quart: fin, ...ev });
@@ -346,6 +371,85 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
           if (r.monte) publier(fin, "progression-enseignee", { nom: eleve.nom, competence: comp, maitre: s.nom, niveau: r.niveau }, `${eleve.nom} progresse en ${comp} grâce à ${s.nom} (niveau ${r.niveau}).`);
         }
       }
+    }
+    // 6 ter. L'esprit (esprit.mjs) : observances, réconfort, ce qui nourrit le regard, celui qui lâche ; puis l'autorité du chef
+    // et ses crises, le malaise des gens de bien dans un groupe rouge, la porte. Rien de tout cela pour une fiche sans esprit tiré.
+    const cycloneIci = Boolean(m.cyclone && m.cyclone.alerte === "rouge" && m.cyclone.arrivee === jour && ab && m.cyclone.trajectoire?.includes(ab.system.region));
+    const feteRecente = Number.isFinite(Number(e.groupe.feteLe)) && e.groupe.feteLe !== null && Number(e.groupe.feteLe) >= jour - 1;
+    const accueilRecent = Number.isFinite(Number(e.groupe.accueilLe)) && e.groupe.accueilLe !== null && Number(e.groupe.accueilLe) >= jour - 7;
+    for (const s of surv) {
+      if (!actif(s) || !espritActif(s.system) || !jourEsprit[s.id]) continue;
+      const j = jourEsprit[s.id];
+      const sys = s.system;
+      const c = sys.tache ? competenceDeTache(sys.tache) : null;
+      const nourritures = nourrituresDuJour({ mange: j.mange, faim: sys.faim, blessures: sys.blessures, fatigue: sys.fatigue, tache: sys.tache, aLAbri: aLAbri(),
+        enRoute: Boolean(e.groupe.enRoute), cyclone: cycloneIci, fete: feteRecente, accueil: accueilRecent, confort: j.confort,
+        passion: Boolean(c && Number(sys.passions?.[c]) >= 2 && peutFaire(sys, sys.tache)) });
+      const coreligionnaire = surv.some(o => o.id !== s.id && actif(o) && o.system.pratique && religionsDe(o.system).some(x => religionsDe(sys).includes(x)));
+      const r = journeeEsprit(sys, contenu, { jour, aLAbri: aLAbri(), coreligionnaire, nourritures, plafond: j.plafond, presents: j.autres, entente, statut: sys.statut });
+      s.system = r.system;
+      for (const ev of r.evenements) {
+        s.evenements.push({ quart: fin, ...ev });
+        const t = texteEsprit(ev.cle, s.nom);
+        if (!t) continue;
+        if (ev.cle === "lache") {
+          departs.push(s.id); e = retirerMembre(e, s.id);
+          publier(fin, t.cle, t.params, t.texte);
+          alerter(fin, "depart", "alerte-depart", { nom: s.nom }, `${s.nom} a quitté le groupe.`);
+        } else if (ESPRIT_PUBLICS.includes(ev.cle)) publier(fin, t.cle, t.params, t.texte);
+        else {
+          const fx = { jour, region: e.groupe.region, cle: t.cle, params: t.params, texte: t.texte, public: false, portee: "mj" };
+          secrets.push(fx);
+          auJournalSecret(jour, fx);
+          if (ev.cle === "au-bord") aRaconter.push({ jour, evenement: "esprit", ...t });
+        }
+      }
+    }
+    // Le malaise des gens de bien dans un groupe rouge (une fois par semaine).
+    const couleur = couleurDuGroupe(surv.filter(actif).map(s => s.system));
+    if (jour % 7 === 0) for (const s of surv) {
+      if (!actif(s) || !espritActif(s.system)) continue;
+      const d = malaiseCouleur(s.system, couleur.moyenne);
+      if (!d) continue;
+      s.system = { ...s.system, moral: Math.max(0, (Number(s.system.moral) || 0) + d) };
+      const fx = { jour, region: e.groupe.region, cle: "malaise-couleur", params: { nom: s.nom }, texte: `${s.nom} ne se sent plus à sa place dans ce groupe.`, public: false, portee: "mj" };
+      secrets.push(fx); auJournalSecret(jour, fx);
+    }
+    // Le chef : nourrit-il son monde ? Une autorité trop basse : désertions, scission, renversement (une fois par semaine).
+    const chef = surv.find(s => s.id === e.groupe.chef && actif(s));
+    if (chef) {
+      const r = autoriteDuJour(chef.system, { tousNourris: manqueNourriture <= 0 });
+      chef.system = r.system;
+      if (r.delta) publier(fin, r.delta > 0 ? "autorite-monte" : "autorite-baisse", { nom: chef.nom },
+        r.delta > 0 ? `On écoute davantage ${chef.nom} : tout le monde a mangé.` : `On écoute moins ${chef.nom} : on a eu faim.`);
+      const crise = crisesAutorite({ membres: surv.filter(actif).map(s => ({ id: s.id, system: s.system })), chefId: chef.id, jour, hasard: deriverHasard(m.graine, "autorite", jour) });
+      if (crise.deserteur) {
+        const d = surv.find(s => s.id === crise.deserteur);
+        departs.push(d.id); e = retirerMembre(e, d.id);
+        publier(fin, "desertion", { nom: d.nom, chef: chef.nom }, `${d.nom} a déserté dans la nuit : on n'écoute plus ${chef.nom}.`);
+        alerter(fin, "depart", "alerte-depart", { nom: d.nom }, `${d.nom} a quitté le groupe.`);
+      }
+      if (crise.crise) {
+        const successeur = surv.find(s => s.id === crise.successeur)?.nom ?? "";
+        const fx = { jour, region: e.groupe.region, cle: `crise-${crise.crise}`, params: { nom: chef.nom, successeur }, public: false, portee: "mj",
+          texte: crise.crise === "scission" ? `Le groupe se fend : une partie ne suit plus ${chef.nom}.` : `${successeur} pourrait prendre la tête à la place de ${chef.nom}.` };
+        secrets.push(fx); auJournalSecret(jour, fx);
+        aRaconter.push({ jour, evenement: "autorite", cle: fx.cle, params: fx.params, texte: fx.texte });
+      }
+    }
+    // La porte : ceux qui repartent, le feu du rancunier, le retour de celui qui rapporte, celui qui frappe.
+    if (ab && surv.some(s => actif(s) && espritActif(s.system))) {
+      const liste = listeALaPorte({ stocks: ab.system.stocks, bilan, personnes: personnesAbri() });
+      const p = journeePorte(e, m, contenu, deriverHasard(m.graine, "porte", jour), { jour, aLAbri: aLAbri(), phase: phaseDuJour(jour),
+        visibilite: bilan?.visibilite ?? 0, couleur: couleur.bande, region: ab.system.region, liste });
+      e = p.etat; m = p.monde;
+      if (p.bruit) ab.system.bruit = Math.min(10, (Number(ab.system.bruit) || 0) + p.bruit);
+      for (const f of p.faits) { faits.push({ region: ab.system.region, ...f }); publier(fin, cleTexteDe(f), f.params, f.texte); }
+      for (const f of p.secrets) { const fx = { region: ab.system.region, ...f, portee: "mj" }; secrets.push(fx); auJournalSecret(jour, fx); }
+    }
+    // Les tributs qui tombent aujourd'hui.
+    for (const t of tributsDus(e, jour).filter(x => Number(x.prochain) === jour)) {
+      alerter(fin, "tribut", "tribut-du", { bande: t.bande || t.faction }, `Le tribut de ${t.bande || t.faction} est dû aujourd'hui.`);
     }
     // 7. Autonomie, phase, radio.
     const auto = ab ? suivreAutonomie(e.joursAutonomes, Boolean(bilan?.autonome) && e.fouilleLe !== jour - 1) : { joursAutonomes: 0, autonome: false };
@@ -411,10 +515,12 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
 // survivants : [{ id, system }] ; abri : { system } ; personnes : nombre de rations (défaut : survivants vivants + PNJ) ;
 // effet : l'effet de la fête (effetDeFete) ; pour : les survivants qui font un vœu ou qu'un cadeau attache (vide : tous) ; avec : la
 // faction avec qui l'on fête (dons, échange de graines, part donnée) ; jour : le jour de jeu (souvenirs).
+// contenu (facultatif, lot « moral ») : le pratiquant d'une religion dont c'est la fête (religion.fetes) gagne 1 moral de plus
+// (esprit.mjs) ; la fête marque le jour (groupe.feteLe : un petit plaisir pour le regard « vivre ») et rapproche le groupe (entente +1).
 // -> { ok, raison, motif: { cle, params, texte } | null, etat, abri, survivants: [{ id, system }], effet, cout, gain, bruit, quarts,
 //      attaches: [id], voeux: [id], reposes: [nom], restent: [nom], refugies: Boolean }
 const texteManque = manque => Object.entries(manque).map(([r, q]) => `${q} ${r}`).join(", ");
-export function feter(etat, abri, { fete, annee, survivants = [], personnes = null, effet = null, pour = [], avec = "", jour = 0 } = {}) {
+export function feter(etat, abri, { fete, annee, survivants = [], personnes = null, effet = null, pour = [], avec = "", jour = 0, contenu = null } = {}) {
   const cle = `${fete}-${annee}`;
   const rien = (raison, cleMotif, params = {}) => ({ ok: false, raison, motif: message(cleMotif, params, raison), etat, abri, survivants });
   if (!fete || !annee) return rien("fête ou année manquante", "fete-manquante");
@@ -436,10 +542,12 @@ export function feter(etat, abri, { fete, annee, survivants = [], personnes = nu
   const cibles = ids => (ids?.length ? vivants.filter(s => ids.includes(s.id)) : vivants).map(s => s.id);
   const voeux = ef.voeu ? cibles(pour) : [];
   const attaches = ef.attache ? (pour?.length ? vivants.filter(s => pour.includes(s.id)) : vivants).filter(s => s.system.statut === "recrue").map(s => s.id) : [];
+  const religions = indexer(contenu ?? {}).religions;
+  const saFete = sys => espritActif(sys) && Boolean(sys.pratique) && religionsDe(sys).some(r => (religions.get(r)?.fetes ?? []).includes(fete));
   const nouveaux = survivants.map(s => {
     if (!peutAgir(s.system)) return s;
     const sys = structuredClone(s.system);
-    sys.moral = borner((Number(sys.moral ?? 4)) + (Number(ef.moral) || 0), 0, 5);
+    sys.moral = borner((Number(sys.moral ?? 4)) + (Number(ef.moral) || 0) + (saFete(s.system) ? 1 : 0), 0, 5);
     if (Number(ef.fatigue)) sys.fatigue = borner((Number(sys.fatigue) || 0) + Number(ef.fatigue), 0, 5);
     if (voeux.includes(s.id) && Number(ef.voeu?.fatigue)) sys.fatigue = borner((Number(sys.fatigue) || 0) + Number(ef.voeu.fatigue), 0, 5);
     if (attaches.includes(s.id)) { sys.statut = "compagnon"; sys.joursMoralZero = 0; }
@@ -447,6 +555,7 @@ export function feter(etat, abri, { fete, annee, survivants = [], personnes = nu
   });
   let e = { ...etat, fetes: [...(etat.fetes ?? []), cle] };
   const j = Number(jour) || 0;
+  if (contenu) e = ajusterEntente({ ...e, groupe: { ...e.groupe, feteLe: Math.floor((Number(etat.horloge?.quart) || 0) / QUARTS_PAR_JOUR) } }, 1);
   const duree = x => j + Math.max(1, Number(x?.jours) || 1) - 1;
   if (ef.soutien) e = ajouterSouvenir(e, { cle: "soutien", source: fete, depuis: j, jusqua: duree(ef.soutien), moral: ef.soutien.moral ?? 1 });
   if (ef.lueur) e = ajouterSouvenir(e, { cle: "lueur", source: fete, depuis: j, jusqua: duree(ef.lueur), visibilite: ef.lueur.visibilite ?? 1 });

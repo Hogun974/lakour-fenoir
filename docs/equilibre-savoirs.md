@@ -2,7 +2,7 @@
 
 Lot tiré du remue-méninges de Fénoir 3D (familles 9 « Les deux savoirs » et 10 « L'île en mouvement », plus l'eau chaude et le
 gaz de la famille 5). Ce fichier donne les chiffres retenus et leurs raisons ; la règle est dans le contrat
-(`docs/survie-contrat.md` §11) et dans la logique (`systems/lakour-survie/logique/savoirs.mjs`, `abri.mjs`, `actions.mjs`,
+(`docs/survie-contrat.md` §13) et dans la logique (`systems/lakour-survie/logique/savoirs.mjs`, `abri.mjs`, `actions.mjs`,
 `monde.mjs`, `etat.mjs`). Rien n'est retiré ni renommé : une partie en cours continue (stocks et mondes complétés, champs
 nouveaux à valeur par défaut).
 

@@ -13,7 +13,7 @@ import { ZONES, TERRAINS, NATURE, RESSOURCES_PILLABLES, RESEAUX, TYPES_SITE, EAU
 import { verifierRecette } from "./fabrication.mjs";
 
 export const FAMILLES = ["regions", "sites", "installations", "savoirs", "factions", "evenements", "passes", "equipements",
-  "recettes", "afflictions", "creatures", "enfances", "traits"];
+  "recettes", "afflictions", "creatures", "enfances", "traits", "religions", "ancrages"];
 export const PLAFOND_NATURE = 10; // plafond = 10 × rendement par jour
 
 const aPlat = o => (o && typeof o === "object" && o.system && typeof o.system === "object" ? { nom: o.name, ...o.system } : o);

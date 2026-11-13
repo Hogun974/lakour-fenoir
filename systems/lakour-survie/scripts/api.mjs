@@ -177,6 +177,10 @@ const parlePour = a => {
 // ------------------------------------------------------------------ acteurs <-> logique
 const CHAMPS_SURVIVANT = ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "vivant", "livide", "tache", "statut",
   "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "confiance", "apprentissage", "dictee"];
+// L'esprit et le sens moral (contrat §14) : réécrits par l'avancée du temps (observances, regard, lâcher, autorité du chef) et par
+// les actes du groupe.
+const CHAMPS_ESPRIT = ["regard", "religion", "religions", "pratique", "ancrage", "sensMoral", "reputation", "autorite", "esprit"];
+CHAMPS_SURVIVANT.push(...CHAMPS_ESPRIT);
 
 // Les maladies en incubation ne sont pas encore déclarées : ni le joueur ni ses voisins ne doivent les voir (les acteurs sont livrés
 // à tous les navigateurs). Elles vivent dans le monde scellé (monde.incubations[acteurId]) ; l'acteur ne porte que les afflictions
@@ -382,6 +386,8 @@ async function terminer(ctx) {
     Hooks.callAll("lakourSurvie.palier", p);
     globalThis.ui?.notifications?.info?.(t("LAKOUR_SURVIE.Palier.Avis", { palier: p.palier }));
   }
+  // Ce que l'esprit et l'autorité laissent au MJ (celui qui est au bord, une scission, un renversement) : un avis, au seul MJ actif.
+  for (const x of ctx.aRaconter ?? []) if (["esprit", "autorite"].includes(x.evenement)) globalThis.ui?.notifications?.info?.(sansBalises(localiser(x)));
   if (ctx.carteTemps || faits.length || ctx.alertes.length) await chat(carteTemps({ quand, faits, alertes: ctx.alertes, raison: ctx.raison, quarts: ctx.quarts }));
   await suivreFetesDuJeu(quand.date, contenu().fetes ?? []).catch(e => console.warn(`${ID} | fêtes`, e));
 }
@@ -412,6 +418,17 @@ async function repartirAuto(ctx) {
   }
 }
 
+// Le chef d'une bande qui vient à l'abri décide selon son sens moral (chefs.mjs) : la décision est gardée avec la menace (secret).
+function avecChef(ctx, m) {
+  if (!["bande", "visite"].includes(m.type)) return m;
+  const etat = ctx.etat;
+  const membres = survivantsDuGroupe(etat).filter(a => L.peutAgir(a.system)).map(a => systemeLogique(a, ctx.monde));
+  const forceGroupe = (Number(bilanVivant(etat, ctx.monde)?.defense) || 0) + membres.length;
+  const chef = L.chefDeLaMenace(m, L.factionDe(contenu(), m.faction), L.deriverHasard(ctx.monde.graine, "chef", m.id), { forceGroupe,
+    reputationGroupe: L.reputationDuGroupe(membres).moyenne, phase: etat.phase });
+  return { ...m, chef };
+}
+
 async function avancerInterne(ctx, quarts, options = {}) {
   const n = entier(quarts, 0, 400, 1);
   if (!n || !ctx.monde) return null;
@@ -440,7 +457,9 @@ async function avancerInterne(ctx, quarts, options = {}) {
   const jour = jourCtx(ctx);
   ctx.monde.compteurMenaces = Number(ctx.monde.compteurMenaces) || 0;
   ctx.monde.menaces = [...(ctx.monde.menaces ?? []).filter(m => Number(m.jour) >= jour - 3),
-    ...r.menaces.map(m => ({ id: `m${++ctx.monde.compteurMenaces}`, ...m }))].slice(-20);
+    ...r.menaces.map(m => avecChef(ctx, { id: `m${++ctx.monde.compteurMenaces}`, ...m }))].slice(-20);
+  // Les départs de celui qui lâche ou qui déserte (esprit.mjs, chefs.mjs) : au MJ, à raconter.
+  ctx.aRaconter = [...(ctx.aRaconter ?? []), ...(r.aRaconter ?? [])];
   // Paliers de visibilité franchis (secrets : au MJ seul).
   for (const f of r.secrets.filter(x => x.cle === "palierVisibilite")) {
     const p = palierDe(f);
@@ -495,7 +514,9 @@ function modificateursDuTest(a, sys, competence, etat = lireEtat(), { dehors = n
   const malus = L.malusEtat(sys, { traits });
   const x = modificateursDehors(sys, competence, etat, dehors);
   const plus = Math.max(0, x.nuit) + Math.max(0, x.chaleur), moins = Math.max(0, -x.nuit) + Math.max(0, -x.chaleur);
-  return { bonus: Math.min(2, outil + installation) + plus, malus: malus.total + moins, outil, installation, etat: malus, nuit: x.nuit, chaleur: x.chaleur };
+  // Celui qui lâche parle moins (esprit.mjs, malusEsprit).
+  const esprit = L.malusEsprit(sys, competence);
+  return { bonus: Math.min(2, outil + installation) + plus, malus: malus.total + moins + esprit, outil, installation, etat: malus, nuit: x.nuit, chaleur: x.chaleur, esprit };
 }
 
 async function appliquerTest(a, competence, r) {
@@ -522,11 +543,14 @@ async function testDirect({ acteurId, competence, difficulte = "normale", bonus 
   const diff = DIFFICULTES[difficulte] ? difficulte : "normale";
   const mods = modificateursDuTest(a, sys, competence, lireEtat(), { dehors: typeof dehors === "boolean" ? dehors : null });
   const niveau = Number(sys.competences?.[competence]?.niveau) || 0;
-  const r = L.resoudreTest({ niveau, difficulte: diff, bonus: (Number(bonus) || 0) + mods.bonus, malus: (Number(malus) || 0) + mods.malus, forcer: Boolean(forcer), compte: compte !== false });
+  // La chance (esprit.mjs : celui qui a été trahi) : un dé de plus au prochain test qui compte, consommé. Le jeu ne dit pas d'où.
+  const chance = compte !== false ? L.utiliserChance(sys) : { bonus: 0 };
+  if (chance.bonus) await a.update({ system: { esprit: chance.system.esprit } });
+  const r = L.resoudreTest({ niveau, difficulte: diff, bonus: (Number(bonus) || 0) + mods.bonus + chance.bonus, malus: (Number(malus) || 0) + mods.malus, forcer: Boolean(forcer), compte: compte !== false });
   const maj = await appliquerTest(a, competence, r);
-  const info = { nom: a.name, competence, titre, monte: maj.monte, niveau: maj.niveau };
+  const info = { nom: a.name, competence, titre, monte: maj.monte, niveau: maj.niveau, chance: chance.bonus > 0 };
   const message = await chat(carteTest(r, { ...info, forcable }), { speaker: parlePour(a), flags: { test: { acteurId: a.id, competence, titre, resultat: r, forcable } } });
-  return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, nuit: mods.nuit, chaleur: mods.chaleur, monte: maj.monte, texte: texteTest(a.name, competence, r), messageId: message?.id ?? null };
+  return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, nuit: mods.nuit, chaleur: mods.chaleur, chance: chance.bonus, monte: maj.monte, texte: texteTest(a.name, competence, r), messageId: message?.id ?? null };
 }
 
 // Forcer : seulement la carte d'un test écrite par un MJ (le résultat qu'elle porte fait foi) ; un message écrit par un joueur, avec
@@ -650,7 +674,14 @@ export function tirageDuGenerateur(d) {
   const imposees = new Set([...(enfance?.incapacites ?? []), ...(passe?.incapacites ?? []),
     ...traits.flatMap(k => idx.traits.get(k)?.incapacites ?? idx.traits.get(k)?.effets?.incapacites ?? [])]);
   const donnees = new Set(Array.isArray(d.incapacites) ? d.incapacites : []);
-  return donnees.size === imposees.size && [...imposees].every(x => donnees.has(x));
+  if (!(donnees.size === imposees.size && [...imposees].every(x => donnees.has(x)))) return false;
+  // L'esprit : le joueur choisit sa religion (ou son ancrage), sa pratique, son regard ; la jauge et l'autorité restent celles du tirage
+  // (dans leurs bornes de départ) et la réputation commence à zéro.
+  const esp = espritDuTirage(d);
+  if ((d.regard && esp.regard !== d.regard) || (d.religion && esp.religion !== d.religion) || (d.ancrage && esp.ancrage !== d.ancrage)) return false;
+  if (d.religion === L.RELIGION_PLUSIEURS && esp.religions.length < 2) return false;
+  if (Math.abs(Number(d.sensMoral) || 0) > L.SENS_DEPART_MAX || (Number(d.autorite) || 0) > L.AUTORITE_DEPART_MAX || (Number(d.autorite) || 0) < 0) return false;
+  return !(Number(d.reputation) || 0);
 }
 
 // ------------------------------------------------------------------ tâches, membres, création (§10)
@@ -686,7 +717,8 @@ async function creerActeurSurvivant(d, { userId = "", statut = null } = {}) {
       competences, passions, enfance: d.enfance ?? "", passe: d.passe ?? "", genre: L.GENRES.includes(d.genre) ? d.genre : "",
       traits: [...(d.traits ?? [])], incapacites: [...(d.incapacites ?? [])],
       statut: st, tache: "repos", age: entier(d.age, 16, 99, 30), ageJour: lireEtat().demarree ? L.jourDe(lireEtat().horloge?.quart ?? 0) : 0, lien: String(d.lien ?? "").slice(0, 200), vivant: true, livide: false,
-      histoire: { journal: "" }, notes: String(d.notes ?? "").slice(0, 20000), confiance: entier(d.confiance ?? 0, 0, 5, 0)
+      histoire: { journal: "" }, notes: String(d.notes ?? "").slice(0, 20000), confiance: entier(d.confiance ?? 0, 0, 5, 0),
+      ...espritDuTirage(d, c)
     },
     ownership: user && !user.isGM ? { default: 0, [user.id]: PROPRIO } : { default: 0 },
     prototypeToken: { name: nom, actorLink: true, disposition: globalThis.CONST?.TOKEN_DISPOSITIONS?.FRIENDLY ?? 1, sight: { enabled: true }, texture: { src: jeton } },
@@ -733,6 +765,20 @@ async function proposerDirect({ type = "autre", details = "", userId = "" } = {}
   return p;
 }
 
+// L'esprit d'un tirage (regard, religion ou ancrage, sens moral, autorité), borné et réduit à ce que le contenu connaît. Un tirage
+// sans esprit (MJ IA d'avant, fiche à la main) le garde vide : aucun effet tant que le MJ ne le tire pas.
+export function espritDuTirage(d = {}, c = contenu()) {
+  const idx = L.indexer(c);
+  const religion = d.religion && (idx.religions.has(d.religion) || [L.RELIGION_AUCUNE, L.RELIGION_PLUSIEURS].includes(d.religion)) ? String(d.religion) : "";
+  const religions = religion === L.RELIGION_PLUSIEURS ? [...new Set((Array.isArray(d.religions) ? d.religions : []).filter(r => idx.religions.has(r) && !idx.religions.get(r)?.special))].slice(0, 3) : [];
+  return {
+    regard: L.REGARDS.includes(d.regard) ? d.regard : "", religion, religions, pratique: Boolean(d.pratique),
+    ancrage: d.ancrage && idx.ancrages.has(d.ancrage) ? String(d.ancrage) : "",
+    sensMoral: entier(d.sensMoral ?? 0, L.SENS_MORAL.min, L.SENS_MORAL.max, 0), reputation: entier(d.reputation ?? 0, L.REPUTATION.min, L.REPUTATION.max, 0),
+    autorite: entier(d.autorite ?? L.AUTORITE.defaut, L.AUTORITE.min, L.AUTORITE.max, L.AUTORITE.defaut), esprit: {}
+  };
+}
+
 // ------------------------------------------------------------------ générateur (§10.2) : lecture seule, partout
 function versTirage(s, c) {
   const g = s.histoire?.graine ?? {};
@@ -744,7 +790,9 @@ function versTirage(s, c) {
     nom: s.nom, genre: s.genre ?? "", age: s.age, enfance: s.enfance, passe: s.passe, statut: s.statut,
     competences: Object.fromEntries(COMPETENCES.map(k => [k, Number(s.competences?.[k]?.niveau) || 0])),
     passions: structuredClone(s.passions ?? {}), traits: [...(s.traits ?? [])], incapacites: [...(s.incapacites ?? [])],
-    equipement: [...(s.equipement ?? [])], savoirs: [...(s.savoirs ?? [])], graine, histoire: structuredClone(g), region: g.region ?? ""
+    equipement: [...(s.equipement ?? [])], savoirs: [...(s.savoirs ?? [])], graine, histoire: structuredClone(g), region: g.region ?? "",
+    regard: s.regard ?? "", religion: s.religion ?? "", religions: [...(s.religions ?? [])], pratique: Boolean(s.pratique), ancrage: s.ancrage ?? "",
+    sensMoral: Number(s.sensMoral) || 0, autorite: Number(s.autorite ?? L.AUTORITE.defaut)
   };
 }
 function nettoyerVerrous(v = {}) {
@@ -755,12 +803,19 @@ function nettoyerVerrous(v = {}) {
   if (v.enfance) sortie.enfance = v.enfance;
   if (v.passe) sortie.passe = v.passe;
   if (Array.isArray(v.traits)) sortie.traits = v.traits.filter(Boolean);
+  // L'esprit choisi par le joueur avant de valider (la religion surtout ; complément du jeu 3D, famille 2).
+  if (L.REGARDS.includes(v.regard)) sortie.regard = v.regard;
+  if (typeof v.religion === "string" && v.religion) sortie.religion = v.religion;
+  if (Array.isArray(v.religions)) sortie.religions = v.religions.filter(Boolean);
+  if (typeof v.pratique === "boolean") sortie.pratique = v.pratique;
+  if (typeof v.ancrage === "string") sortie.ancrage = v.ancrage;
   return sortie;
 }
 export function generer({ verrous = {}, statut = "joueur", region = "", favoriser = {}, budget, hasard: h = Math.random } = {}) {
   const c = contenu();
   const b = budget === null ? null : Array.isArray(budget) ? budget : statut === "joueur" ? lireBudget(reglage("budgetCreation", "10-16")) : null;
-  const s = L.genererSurvivant(c, h, { verrous: nettoyerVerrous(verrous), statut, region, favoriser: favoriser ?? {}, budget: b });
+  const s = L.genererSurvivant(c, h, { verrous: nettoyerVerrous(verrous), statut, region, favoriser: favoriser ?? {}, budget: b,
+    ...(h === Math.random ? { hasardEsprit: Math.random } : {}) });
   return versTirage(s, c);
 }
 
@@ -943,7 +998,10 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
   // Une horde : dite (horde), ou nommée dans le type de la menace (« horde », « Livides », « Pallid »).
   const sangFroid = horde || /horde|livide|pallid/i.test(String(type ?? "")) ? L.sangFroidDuJour(ctx.etat, jourCtx(ctx)) : 0;
   const h = hasard(ctx, "assaut");
-  const r = L.resoudreAssaut({ defense: (b?.defense ?? 0) + sangFroid, vigilance, force: entier(force, 1, 15, 1), hasard: h });
+  // Un chef très écouté donne un dé de plus à la défense, un chef qu'on n'écoute plus en coûte un (chefs.mjs).
+  const chef = presents.find(a => a.id === ctx.etat.groupe.chef);
+  const autorite = chef ? L.bonusAutoriteAssaut(L.autoriteDe(chef.system)) : 0;
+  const r = L.resoudreAssaut({ defense: Math.max(0, (b?.defense ?? 0) + sangFroid + autorite), vigilance, force: entier(force, 1, 15, 1), hasard: h });
   const l = abriLogique(ab);
   const degats = [];
   let installations = l.installations;
@@ -976,9 +1034,116 @@ async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
   return { patient, soigneur, difficulte: difficulte || (Number(patient.system.blessures) >= 4 ? "difficile" : "normale") };
 }
 
-// Le marché (contrat §11) : ses fonctions et sa journée, avec les aides internes d'ici.
+// Le marché (contrat §12) : ses fonctions et sa journée, avec les aides internes d'ici.
 const MARCHE = fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser,
   chat, carteAction, sansBalises });
+// ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
+const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
+async function ecrireEsprit(a, s) {
+  if (!a) return;
+  await a.update({ system: Object.fromEntries(CHAMPS_ESPRIT.filter(k => s[k] !== undefined).map(k => [k, structuredClone(s[k])]).concat(s.moral !== undefined ? [["moral", s.moral]] : [])) });
+}
+const membresPresents = ctx => survivantsDuGroupe(ctx.etat).filter(a => L.peutAgir(a.system));
+// Les enfants du groupe ont vu l'acte (moralite.mjs, reactionEnfant) : ils l'imitent ou s'en révoltent ; un projet de départ et les
+// adultes qui pourraient l'aider vont au MJ (journal secret), jamais au journal public.
+async function temoignageEnfants(ctx, sens) {
+  if (!sens) return [];
+  const sortie = [];
+  const presents = membresPresents(ctx);
+  const adultes = presents.map(a => ({ id: a.id, system: systemeLogique(a, ctx.monde) }));
+  for (const a of presents) {
+    const sys = systemeLogique(a, ctx.monde);
+    if (!L.estEnfant(sys)) continue;
+    const avant = L.espritDe(sys).projet;
+    const r = L.reactionEnfant(sys, sens, hasard(ctx, "enfant"));
+    await ecrireEsprit(a, r.system);
+    sortie.push({ acteurId: a.id, nom: a.name, reaction: r.reaction, projet: r.projet });
+    if (r.projet && !avant) {
+      const complices = L.complicesPossibles(adultes, ctx.etat.groupe.chef ?? "").map(id => acteur(id)?.name).filter(Boolean);
+      const texte = t(`LAKOUR_SURVIE.Communaute.Projet.${r.projet}`, { nom: a.name, complices: complices.join(", ") || "—" });
+      ctx.monde.journalSecret = [...(ctx.monde.journalSecret ?? []), { jour: jourCtx(ctx), texte, cle: "", params: {} }].slice(-L.JOURNAL_SECRET_MAX);
+    }
+  }
+  return sortie;
+}
+// Un acte porté par des survivants (ou par le groupe, avec un vote) : jauges, réputations, enfants témoins.
+async function porterActe(ctx, ids, acte, { voix = null, circonstances = false, temoins = true, delta = undefined } = {}) {
+  const membres = ids.map(acteur).filter(a => a?.type === "survivant").map(a => ({ id: a.id, system: systemeLogique(a, ctx.monde) }));
+  const r = L.acteCollectif(membres, acte, { voix, chefId: ctx.etat.groupe.chef ?? "", circonstances, temoins, delta });
+  for (const m of r.membres) await ecrireEsprit(acteur(m.id), m.system);
+  const enfants = await temoignageEnfants(ctx, Math.sign(delta ?? L.ACTES_MORAUX[acte] ?? 0));
+  return { membres: r.membres.map(m => ({ acteurId: m.id, nom: acteur(m.id)?.name ?? m.id, sensMoral: m.system.sensMoral, reputation: m.system.reputation, delta: m.delta, deltaReputation: m.reputation })),
+    porteurs: r.porteurs, epargnes: r.epargnes, enfants };
+}
+// Le vote (moralite.mjs) : les voix données, et celles des compagnons, recrues et PNJ qu'on ne joue pas (voixAuto).
+function voixDu(ctx, { acte = "", voix = {}, circonstances = false } = {}) {
+  const sens = Math.sign(L.ACTES_MORAUX[acte] ?? 0);
+  const sortie = {};
+  for (const a of membresPresents(ctx)) {
+    const v = voix?.[a.id];
+    if (L.VOIX.includes(v)) sortie[a.id] = v;
+    else sortie[a.id] = a.system.statut === "joueur" ? "abstention" : L.voixAuto(systemeLogique(a, ctx.monde), sens, { circonstances });
+  }
+  return sortie;
+}
+// Le chef suit-il le vote ? (autorité, chefs.mjs) -> { delta, suivi } | null
+async function suivreLeVote(ctx, vote, acteFait) {
+  const chef = acteur(ctx.etat.groupe.chef);
+  if (!vote || !chef) return null;
+  const r = L.suivreVote(systemeLogique(chef, ctx.monde), vote.resultat, vote.acte === acteFait ? "pour" : "contre");
+  vote.decide = acteFait;
+  if (r.delta) await chef.update({ system: { autorite: r.system.autorite } });
+  if (!r.suivi) { ctx.etat = L.ajusterEntente(ctx.etat, -1); noter(ctx, tx("Journal.VoteIgnore", { nom: chef.name })); }
+  else noter(ctx, tx("Journal.VoteSuivi", { nom: chef.name }));
+  return { delta: r.delta, suivi: r.suivi };
+}
+// Les voix d'un vote, vues depuis un autre acte : qui votait pour accueillir s'opposait à l'exclusion.
+const voixPour = (vote, acte) => (!vote ? null : vote.acte === acte ? vote.voix
+  : Object.fromEntries(Object.entries(vote.voix).map(([id, v]) => [id, v === "pour" ? "contre" : v === "contre" ? "pour" : v])));
+function poserTribut(ctx, m) {
+  const ab = abriCourant(ctx.etat);
+  const stocks = ab ? aPlat(ab.system).stocks : ctx.etat.groupe.porte ?? {};
+  ctx.monde.compteurTributs = (Number(ctx.monde.compteurTributs) || 0) + 1;
+  const nomBande = L.factionDe(contenu(), m.faction)?.nom ?? m.faction ?? "?";
+  const { tribut, secret } = L.poserUltimatum({ id: `t${ctx.monde.compteurTributs}`, bande: nomBande, faction: m.faction ?? "", sensMoral: m.chef?.sensMoral ?? 0,
+    force: m.force, demande: L.demandeTribut(stocks, m.force), jour: jourCtx(ctx) });
+  ctx.etat.tributs = [...(ctx.etat.tributs ?? []), tribut].slice(-10);
+  ctx.monde.bandes = { ...(ctx.monde.bandes ?? {}), [tribut.id]: secret };
+  noter(ctx, tx("Journal.Tribut", { bande: nomBande, demande: texteStocks(tribut.demande), n: tribut.tousLes }));
+  return { tribut: structuredClone(tribut) };
+}
+// Quelqu'un frappe à la porte, tout de suite (le MJ, une bande qui demande à rejoindre).
+async function faireFrapper(ctx, { profil = null, sensMoral = null } = {}) {
+  const ab = abriCourant(ctx.etat);
+  const membres = membresPresents(ctx).map(a => systemeLogique(a, ctx.monde));
+  ctx.monde.compteurPorte = (Number(ctx.monde.compteurPorte) || 0) + 1;
+  const { public: v, secret } = L.tirerVisiteur(contenu(), hasard(ctx, "porte"), { id: `v${ctx.monde.compteurPorte}`, jour: jourCtx(ctx), couleur: L.couleurDuGroupe(membres).bande,
+    region: ab?.system.region ?? ctx.etat.groupe.region, profil });
+  if (sensMoral !== null && sensMoral !== undefined) secret.survivant.sensMoral = entier(sensMoral, L.SENS_MORAL.min, L.SENS_MORAL.max, 0);
+  ctx.etat.porte = [...(ctx.etat.porte ?? []), v];
+  ctx.monde.porte = { ...(ctx.monde.porte ?? {}), [v.id]: secret };
+  noter(ctx, { cle: "porte-frappe", cleTexte: `porte-frappe-${v.profil}`, params: { nom: v.nom, n: v.bouches }, texte: v.demande.texte });
+  return structuredClone(v);
+}
+const listePorteCtx = ctx => {
+  const ab = abriCourant(ctx.etat);
+  if (!ab) return [];
+  const b = bilanVivant(ctx.etat, ctx.monde);
+  return L.listeALaPorte({ stocks: aPlat(ab.system).stocks, bilan: b, personnes: b?.personnes ?? 1 });
+};
+// Ce que le groupe sait de sa communauté (public), plus la couleur réelle pour le MJ actif.
+export function communaute(etat = lireEtat()) {
+  const membres = survivantsDuGroupe(etat).filter(a => L.peutAgir(a.system));
+  const ab = abriCourant(etat);
+  const b = ab ? (estMJActif() && Coffre.mondeOuvert() ? bilanVivant(etat) : etat.bilan) : null;
+  return {
+    chef: etat.groupe?.chef ?? "", entente: L.ententeDe(etat), reputation: L.reputationDuGroupe(membres.map(a => aPlat(a.system))),
+    couleur: game.user?.isGM ? L.couleurDuGroupe(membres.map(a => aPlat(a.system))) : null,
+    porte: structuredClone(etat.porte ?? []), tributs: structuredClone(etat.tributs ?? []), votes: structuredClone(etat.votes ?? []),
+    communautes: structuredClone(etat.communautes ?? []),
+    liste: ab ? L.listeALaPorte({ stocks: aPlat(ab.system).stocks, bilan: b, personnes: b?.personnes ?? membres.length }) : []
+  };
+}
 
 export const api = {
   logique: L,
@@ -1311,6 +1476,19 @@ export const api = {
       await terminer(ctx);
       return r;
     }
+    // L'ultimatum d'un chef de bande accepté : un tribut (chefs.mjs) ; sa demande à rejoindre : quelqu'un à la porte.
+    if (action === "ultimatum") {
+      const r = poserTribut(ctx, m);
+      ctx.monde.menaces = ctx.monde.menaces.filter(x => x.id !== id);
+      await terminer(ctx);
+      return r;
+    }
+    if (action === "rejoindre") {
+      const v = await faireFrapper(ctx, { sensMoral: m.chef?.sensMoral, faction: m.faction });
+      ctx.monde.menaces = ctx.monde.menaces.filter(x => x.id !== id);
+      await terminer(ctx);
+      return { visiteur: v };
+    }
     ctx.monde.menaces = ctx.monde.menaces.filter(x => x.id !== id);
     await terminer(ctx);
     return { ecartee: true };
@@ -1414,7 +1592,7 @@ export const api = {
     const { effet, option: choisie } = L.effetDeFete(f, option);
     const jour = jourCtx(ctx);
     const r = L.feter(ctx.etat, { system: aPlat(ab.system) }, { fete: cle, annee: L.dateDuJour(jour, dateDepart()).annee, survivants: membres,
-      effet: f ? effet : null, pour: ids, avec, jour });
+      effet: f ? effet : null, pour: ids, avec, jour, contenu: c });
     if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Fete", { raison: motifLisible(r) }));
     ctx.etat = r.etat;
     await ab.update({ system: { stocks: r.abri.system.stocks, bruit: borner((Number(ab.system.bruit) || 0) + (f ? r.bruit : 2), 0, 10) } });
@@ -1600,7 +1778,7 @@ export const api = {
     return { ok: true, presents: presents.map(a => a.id) };
   }),
 
-  // ---------------- §11 : le marché (api-marche.mjs)
+  // ---------------- §12 : le marché (api-marche.mjs)
   ...MARCHE.api,
 
   // ---------------- §10 : groupe, recrues
@@ -1653,6 +1831,222 @@ export const api = {
     noter(ctx, tx("Journal.Quitte", { site: acteur(acteurId)?.name ?? acteurId }));
     await terminer(ctx);
     return { membres: [...ctx.etat.groupe.membres] };
+  }),
+
+  // ---------------- §14 : l'esprit, le sens moral, la porte, les chefs (complément du jeu 3D, familles 2 et 3)
+  communaute: () => communaute(),
+  // Le point d'entrée commun du sens moral (la rumeur du Ladi Lafé y passe : acte « colporter ») : un acte porté par un ou plusieurs
+  // survivants, ou un déplacement libre (delta). Avec un vote (voteId), qui a voté contre ne le porte pas.
+  acteMoral: ecriture(async ({ acteurId = "", acteurs = [], acte = "", delta, circonstances = false, temoins = true, voteId = "", journal = false } = {}) => {
+    const ctx = ouvrirCtx();
+    const ids = [...new Set([acteurId, ...(acteurs ?? [])].filter(Boolean))];
+    if (!ids.length || ids.some(id => acteur(id)?.type !== "survivant")) throw erreur("ActeurInconnu");
+    const libre = delta !== undefined && delta !== null && delta !== "" && Number.isFinite(Number(delta));
+    if (!libre && !(acte in L.ACTES_MORAUX)) throw clair(t("LAKOUR_SURVIE.Erreurs.ActeInconnu", { acte }));
+    const vote = voteId ? (ctx.etat.votes ?? []).find(v => v.id === voteId) ?? null : null;
+    const r = await porterActe(ctx, ids, acte, { voix: voixPour(vote, acte), circonstances: Boolean(circonstances), temoins: temoins !== false, delta: libre ? Math.round(Number(delta)) : undefined });
+    const suivi = vote && acte ? await suivreLeVote(ctx, vote, acte) : null;
+    if (journal && acte) noter(ctx, tx("Journal.Acte", { noms: r.membres.map(m => m.nom).join(", "), acte: nomActe(acte) }));
+    await terminer(ctx);
+    return { ...r, vote: suivi };
+  }),
+  // Le MJ règle l'esprit d'un survivant (valeurs absolues ; la fiche le permet aussi).
+  ajusterEsprit: ecritureMJ(async ({ acteurId, ...champs } = {}) => {
+    const a = acteur(acteurId);
+    if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
+    const s = systemeLogique(a);
+    const e = L.espritDe(s);
+    const maj = { ...espritDuTirage({ ...s, ...champs }), esprit: { ...e } };
+    if (champs.chance !== undefined) maj.esprit.chance = entier(champs.chance, 0, L.REGLES_ESPRIT.chance.max, 0);
+    if (champs.ancragePerdu !== undefined) maj.esprit.ancragePerdu = Boolean(champs.ancragePerdu);
+    await a.update({ system: maj });
+    return { acteurId: a.id, ...maj };
+  }),
+  // Tirer l'esprit d'une fiche qui n'en a pas (fiche d'avant, PNJ fait à la main) ; forcer : le retirer.
+  tirerEsprit: ecritureMJ(async ({ acteurId, forcer = false } = {}) => {
+    const a = acteur(acteurId);
+    if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
+    const s = systemeLogique(a);
+    if (L.espritActif(s) && !forcer) return { acteurId: a.id, deja: true };
+    const e = L.tirerEsprit(contenu(), Math.random, { traits: s.traits ?? [], competences: s.competences ?? {}, age: Number(s.age) || 30, enfance: s.enfance ?? "" });
+    await a.update({ system: e });
+    return { acteurId: a.id, ...e };
+  }),
+  entente: ecriture(async ({ delta = 0, raison = "" } = {}) => {
+    const ctx = ouvrirCtx();
+    ctx.etat = L.ajusterEntente(ctx.etat, Math.round(Number(delta) || 0));
+    noter(ctx, tx("Journal.Entente", { n: L.ententeDe(ctx.etat), raison: String(raison ?? "") }));
+    await terminer(ctx);
+    return { entente: L.ententeDe(ctx.etat) };
+  }),
+  // Le chef du groupe (vide : personne).
+  chef: ecriture(async ({ acteurId = "" } = {}) => {
+    const ctx = ouvrirCtx();
+    if (acteurId && !(ctx.etat.groupe.membres ?? []).includes(acteurId)) throw erreur("PasMembre");
+    ctx.etat.groupe = { ...ctx.etat.groupe, chef: acteurId };
+    noter(ctx, acteurId ? tx("Journal.Chef", { nom: acteur(acteurId)?.name ?? "?" }) : tx("Journal.SansChef"));
+    await terminer(ctx);
+    return { chef: acteurId };
+  }),
+  // La parole du chef : tenue (+1 autorité) ou manquée (−1).
+  parole: ecriture(async ({ tenue = true, raison = "" } = {}) => {
+    const ctx = ouvrirCtx();
+    const a = acteur(ctx.etat.groupe.chef);
+    if (!a) throw erreur("SansChef");
+    const r = L.tenirParole(systemeLogique(a), Boolean(tenue));
+    await a.update({ system: { autorite: r.system.autorite } });
+    noter(ctx, tx(tenue ? "Journal.ParoleTenue" : "Journal.ParoleManquee", { nom: a.name, raison: String(raison ?? "") }));
+    await terminer(ctx);
+    return { autorite: r.system.autorite, delta: r.delta };
+  }),
+  // Un vote du groupe sur un acte (accueillir, exclure, trahir…) : les voix données, les autres comme le dirait leur jauge.
+  voter: ecriture(async ({ question = "", acte = "accueillir", voix = {}, circonstances = false } = {}) => {
+    const ctx = ouvrirCtx();
+    if (!(acte in L.ACTES_MORAUX)) throw clair(t("LAKOUR_SURVIE.Erreurs.ActeInconnu", { acte }));
+    const v = voixDu(ctx, { acte, voix, circonstances });
+    const resultat = L.resoudreVote(v);
+    ctx.etat.compteurVotes = (Number(ctx.etat.compteurVotes) || 0) + 1;
+    const vote = { id: `vote${ctx.etat.compteurVotes}`, quart: ctx.etat.horloge.quart, question: String(question ?? "").slice(0, 200), acte, voix: v, resultat, decide: null };
+    ctx.etat.votes = [...(ctx.etat.votes ?? []), vote].slice(-10);
+    noter(ctx, tx("Journal.Vote", { question: vote.question || nomActe(acte), pour: resultat.pour, contre: resultat.contre, abstention: resultat.abstention }));
+    await terminer(ctx);
+    return structuredClone(vote);
+  }),
+  // Le chef décide après un vote, sans autre acte (un acte du groupe passe par acteMoral ou porte, avec voteId).
+  decider: ecriture(async ({ voteId, decision = "pour" } = {}) => {
+    const ctx = ouvrirCtx();
+    const vote = (ctx.etat.votes ?? []).find(v => v.id === voteId);
+    if (!vote) throw erreur("VoteInconnu");
+    const r = await suivreLeVote(ctx, vote, decision === "pour" ? vote.acte : "");
+    await terminer(ctx);
+    return { vote: structuredClone(vote), ...(r ?? {}) };
+  }),
+  // Quelqu'un à la porte : accueillir, refuser, ou prendre ce qu'il apporte puis le trahir (porte.mjs).
+  porte: ecriture(async ({ visiteurId, decision = "accueillir", voteId = "", circonstances = false } = {}) => {
+    const ctx = ouvrirCtx();
+    const r = L.repondreALaPorte(ctx.etat, ctx.monde, hasard(ctx, "porte"), { visiteurId, decision, jour: jourCtx(ctx), liste: listePorteCtx(ctx) });
+    if (!r.ok) throw clair(localiser(r.motif));
+    ctx.etat = r.etat;
+    ctx.monde = r.monde;
+    for (const f of r.faits) noter(ctx, f);
+    // Ce qu'on prend (ce qu'il apporte) : à l'abri, sinon dans ce que le groupe porte.
+    const ab = abriCourant(ctx.etat);
+    if (Object.keys(r.stocks).length) {
+      if (ab) await ab.update({ system: { stocks: L.ajouterStocks(aPlat(ab.system).stocks, r.stocks) } });
+      else ctx.etat.groupe.porte = L.ajouterStocks(ctx.etat.groupe.porte ?? {}, r.stocks);
+    }
+    const vote = voteId ? (ctx.etat.votes ?? []).find(v => v.id === voteId) ?? null : null;
+    const membres = membresPresents(ctx).map(a => a.id);
+    const acte = await porterActe(ctx, membres, r.acte, { voix: voixPour(vote, r.acte), circonstances: Boolean(circonstances) });
+    const suivi = vote ? await suivreLeVote(ctx, vote, r.acte) : null;
+    let acteurId = "";
+    if (r.recrue) {
+      const a = await creerActeurSurvivant(versTirage(r.recrue, contenu()), { statut: "recrue" });
+      acteurId = a.id;
+      ctx.etat = L.ajouterMembre(ctx.etat, a.id, "recrue");
+      // Une famille : des bouches en plus (PNJ légers, nourris par l'abri).
+      for (let k = 0; k < r.bouches; k++) ctx.etat.groupe.pnj = [...(ctx.etat.groupe.pnj ?? []), { id: `pnj-${a.id}-${k + 1}`, nom: t("LAKOUR_SURVIE.Communaute.Proche", { nom: a.name, n: k + 1 }), passe: "", etat: "", travail: false }];
+    }
+    await terminer(ctx);
+    return { decision, acte: r.acte, acteurId, bouches: r.bouches, pris: r.stocks, suite: r.suite ? r.suite.suite : "", ...acte, vote: suivi };
+  }),
+  // Le MJ fait frapper quelqu'un à la porte, tout de suite (profil : refugie, famille, blesse, dur ; vide : selon la couleur du groupe).
+  frapper: ecriture(async ({ profil = "" } = {}) => {
+    const ctx = ouvrirCtx();
+    const v = await faireFrapper(ctx, { profil: L.PROFILS_VISITEUR.includes(profil) ? profil : null });
+    await terminer(ctx);
+    return v;
+  }),
+  // Le tribut qui tombe : payé ou refusé (chefs.mjs).
+  tribut: ecriture(async ({ tributId, paye = true } = {}) => {
+    const ctx = ouvrirCtx();
+    const i = (ctx.etat.tributs ?? []).findIndex(x => x.id === tributId);
+    if (i < 0) throw erreur("TributInconnu");
+    const tribut = ctx.etat.tributs[i];
+    const secret = ctx.monde.bandes?.[tributId] ?? {};
+    if (paye) {
+      const ab = abriCourant(ctx.etat);
+      const stocks = ab ? aPlat(ab.system).stocks : ctx.etat.groupe.porte ?? {};
+      if (!L.couvre(stocks, tribut.demande)) throw clair(t("LAKOUR_SURVIE.Erreurs.TributStocks", { demande: texteStocks(tribut.demande) }));
+      const reste = L.retirerStocks(stocks, tribut.demande).stocks;
+      if (ab) await ab.update({ system: { stocks: reste } }); else ctx.etat.groupe.porte = reste;
+    }
+    const r = L.echeanceTribut(tribut, secret, { paye: Boolean(paye), jour: jourCtx(ctx) });
+    ctx.etat.tributs = ctx.etat.tributs.map((x, k) => (k === i ? r.tribut : x));
+    noter(ctx, tx(`Journal.Tribut_${r.issue || "paye"}`, { bande: tribut.bande, demande: texteStocks(r.tribut.demande) }));
+    if (r.issue === "revolte") {
+      ctx.monde.compteurMenaces = (Number(ctx.monde.compteurMenaces) || 0) + 1;
+      ctx.monde.menaces = [...(ctx.monde.menaces ?? []), { id: `m${ctx.monde.compteurMenaces}`, jour: jourCtx(ctx), type: "bande", force: Math.max(2, Math.ceil(1.5 * (Number(secret.force) || 2)) + 1),
+        faction: tribut.faction, attitude: "hostile", cle: "menace-bande", params: { faction: tribut.bande }, texte: `${tribut.bande} s'intéresse à l'abri.` }].slice(-20);
+    }
+    await terminer(ctx);
+    return { tribut: structuredClone(r.tribut), issue: r.issue };
+  }),
+  // Séparer le groupe : les partants s'en vont avec leur part des stocks (au prorata), tous gardent les plans ; l'abri va à l'un des deux.
+  separer: ecriture(async ({ partants = [], abriVaAux = "restants", nom = "" } = {}) => {
+    const ctx = ouvrirCtx();
+    const membres = [...(ctx.etat.groupe.membres ?? [])];
+    const p = (partants ?? []).filter(id => membres.includes(id));
+    if (!p.length || p.length === membres.length) throw erreur("SeparationImpossible");
+    const ab = abriCourant(ctx.etat);
+    const stocks = ab ? aPlat(ab.system).stocks : ctx.etat.groupe.porte ?? {};
+    const r = L.separerGroupe({ membres, partants: p, stocks, plans: ctx.etat.groupe.plans ?? [], abriVaAux });
+    ctx.etat.compteurCommunautes = (Number(ctx.etat.compteurCommunautes) || 0) + 1;
+    const c = { id: `c${ctx.etat.compteurCommunautes}`, nom: String(nom || t("LAKOUR_SURVIE.Communaute.Autres", { n: ctx.etat.compteurCommunautes })).slice(0, 80),
+      membres: r.partants, statuts: Object.fromEntries(r.partants.map(id => [id, ctx.etat.groupe.statuts?.[id] ?? acteur(id)?.system.statut ?? "compagnon"])),
+      plans: r.plansPartants, region: ab?.system.region ?? ctx.etat.groupe.region, abri: "", depuis: jourCtx(ctx), entente: L.ententeDe(ctx.etat) };
+    if (r.abri === "partants" && ab) {
+      c.abri = ab.id;
+      await ab.update({ system: { stocks: r.stocksPartants } });
+      ctx.etat.groupe = { ...ctx.etat.groupe, abri: "", porte: L.ajouterStocks(ctx.etat.groupe.porte ?? {}, r.stocksRestants) };
+    } else {
+      c.stocks = r.stocksPartants;
+      if (ab) await ab.update({ system: { stocks: r.stocksRestants } }); else ctx.etat.groupe.porte = r.stocksRestants;
+    }
+    ctx.etat.groupe = { ...ctx.etat.groupe, membres: r.restants, ...(r.partants.includes(ctx.etat.groupe.chef) ? { chef: "" } : {}) };
+    for (const id of r.partants) { const a = acteur(id); if (a) await a.update({ system: { statut: "pnj", tache: "" } }); }
+    ctx.etat.communautes = [...(ctx.etat.communautes ?? []), c].slice(-10);
+    noter(ctx, tx("Journal.Separation", { nom: c.nom, noms: r.partants.map(id => acteur(id)?.name ?? id).join(", ") }));
+    await terminer(ctx);
+    return { communaute: structuredClone(c), restants: r.restants };
+  }),
+  // Fondre une communauté (séparée plus tôt) dans le groupe : membres, stocks, plans ; l'entente part de la plus basse, moins un.
+  fusionner: ecriture(async ({ communauteId } = {}) => {
+    const ctx = ouvrirCtx();
+    const c = (ctx.etat.communautes ?? []).find(x => x.id === communauteId);
+    if (!c) throw erreur("GroupeInconnu");
+    const abC = c.abri ? acteur(c.abri) : null;
+    const stocksC = abC ? aPlat(abC.system).stocks : c.stocks ?? {};
+    const f = L.fusionnerGroupes({ membres: ctx.etat.groupe.membres, stocks: {}, plans: ctx.etat.groupe.plans, entente: L.ententeDe(ctx.etat) }, { membres: c.membres, stocks: stocksC, plans: c.plans, entente: c.entente ?? 0 });
+    let ab = abriCourant(ctx.etat);
+    if (!ab && abC) { ctx.etat.groupe = { ...ctx.etat.groupe, abri: abC.id }; ab = abC; }
+    else if (ab && abC && abC.id !== ab.id) await abC.update({ system: { stocks: Object.fromEntries(Object.keys(stocksC).map(k => [k, 0])) } });
+    if (ab && abC?.id !== ab.id) await ab.update({ system: { stocks: L.ajouterStocks(aPlat(ab.system).stocks, stocksC) } });
+    else if (!ab) ctx.etat.groupe.porte = L.ajouterStocks(ctx.etat.groupe.porte ?? {}, stocksC);
+    for (const id of c.membres) {
+      const a = acteur(id);
+      if (!a) continue;
+      ctx.etat = L.ajouterMembre(ctx.etat, id, c.statuts?.[id] ?? "compagnon");
+      await a.update({ system: { statut: c.statuts?.[id] ?? "compagnon" } });
+    }
+    ctx.etat.groupe = { ...ctx.etat.groupe, plans: f.plans, entente: f.entente };
+    ctx.etat.communautes = (ctx.etat.communautes ?? []).filter(x => x.id !== communauteId);
+    noter(ctx, tx("Journal.Fusion", { nom: c.nom }));
+    await terminer(ctx);
+    return { membres: [...ctx.etat.groupe.membres], plans: [...f.plans], entente: f.entente };
+  }),
+  // Un objet que le cyclone a laissé, une coïncidence : chacun le lit selon sa foi (esprit.mjs, lireUnSigne). Rien de magique.
+  // (« lireSigne » : « signe » est le signe du groupe, au marché.)
+  lireSigne: ecriture(async () => {
+    const ctx = ouvrirCtx();
+    const lectures = [];
+    for (const a of membresPresents(ctx)) {
+      const r = L.lireUnSigne(systemeLogique(a, ctx.monde));
+      if (r.lecture === "signe") { await a.update({ system: { moral: r.system.moral } }); noter(ctx, tx("Journal.Signe", { nom: a.name })); }
+      lectures.push({ acteurId: a.id, nom: a.name, lecture: r.lecture });
+    }
+    await terminer(ctx);
+    return { lectures };
   }),
 
   // Le MJ demande un test à un joueur : carte au chat avec un bouton « Lancer » pour le propriétaire, et un tintement chez lui.
@@ -1714,7 +2108,7 @@ export const api = {
   }
 };
 
-// ------------------------------------------------------------------ lot « savoirs » (docs/equilibre-savoirs.md, contrat §11)
+// ------------------------------------------------------------------ lot « savoirs » (docs/equilibre-savoirs.md, contrat §13)
 export const CIBLES_SAVOIRS = ["jardins", "livres"];
 const CATEGORIES_EXPOSEES = ["eau", "nourriture", "energie", "defense"];
 const aUnSavoirLontan = a => (systemeLogique(a).savoirs ?? []).some(sv => defDe("savoirs", sv)?.arbre === "lontan");
@@ -1866,4 +2260,4 @@ function recrueGramoune(cle, region) {
 }
 
 // Pour les essais et l'interface : les fonctions internes utiles.
-export const interne = { modificateursDuTest, testDirect, forcerDirect, assignerDirect, creerSurvivantDirect, bilanVivant, quandDe, besoins, savoirsDuGroupe, versTirage, auteur };
+export const interne = { modificateursDuTest, testDirect, forcerDirect, assignerDirect, creerSurvivantDirect, bilanVivant, quandDe, besoins, savoirsDuGroupe, versTirage, auteur, espritDuTirage, communaute };

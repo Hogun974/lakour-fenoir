@@ -40,7 +40,7 @@ export function carteConnue(etat, c = contenu()) {
     + `<rect width="4000" height="3000" fill="#0d2a3a"/>${traits.join("")}${points.join("")}</svg>`;
 }
 
-// Le marché vu par le groupe (état PUBLIC, contrat §11) : le cours du jour, ses dettes aux carnets, les marchés et leurs jours,
+// Le marché vu par le groupe (état PUBLIC, contrat §12) : le cours du jour, ses dettes aux carnets, les marchés et leurs jours,
 // ce qui se dit (les rumeurs encore vivantes ; leur vérité reste au MJ), son signe.
 export function marchePublic(etat, c = contenu()) {
   const m = L.marcheDe(etat);

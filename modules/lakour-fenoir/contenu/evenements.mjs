@@ -6,6 +6,7 @@
 //   degats, blessure, moral, bruit, decouverte: { r: n } }) : la simulation applique stocks perdus et dégâts à l'abri du
 //   groupe ; moral, blessures et trouvailles sont rendus au MJ, à raconter (contrat §2.6) ; bruit ignoré.
 import { html, PHASES } from "./aides.mjs";
+import { EVENEMENTS_ESPRIT } from "./esprit.mjs";
 
 const TOUTES = [...PHASES];
 const APRES_CHUTE = ["effondrement", "silence", "apres"];
@@ -272,5 +273,7 @@ export const EVENEMENTS = [
     effets: { abri: { decouverte: { gaz: 39 } } } }),
   evenement({ cle: "livres-de-l-ecole", nom: "La bibliothèque de l'école", type: "decouverte", phases: ["silence", "apres"], poids: 1, public: false,
     texte: `Le CDI d'un collège, intact sous la poussière : des manuels, des encyclopédies, des revues. Un savoir à apprendre, si l'on a le temps et la lumière pour lire (fouille « livres » sur le site).`,
-    effets: {} })
+    effets: {} }),
+  // ---------------------------------------------------------------- L'esprit et la porte (complément du jeu 3D, familles 2 et 3 : esprit.mjs)
+  ...EVENEMENTS_ESPRIT
 ];

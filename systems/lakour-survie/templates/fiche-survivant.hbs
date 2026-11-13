@@ -54,6 +54,39 @@
         </select>
         {{else}}<p>{{tache}}</p>{{/if}}
 
+        <h3><i class="fa-solid fa-dove"></i> {{localize "LAKOUR_SURVIE.Fiche.Esprit"}}{{#if esprit.chef}} <small class="survie-pilule">{{localize "LAKOUR_SURVIE.Esprit.Chef"}}</small>{{/if}}</h3>
+        {{#if esprit.actif}}
+        <ul class="survie-esprit">
+          <li data-tooltip="{{esprit.regardAide}}"><span class="survie-esprit-nom">{{localize "LAKOUR_SURVIE.Esprit.Regard"}}</span>
+            {{#if gm}}<select name="system.regard">{{#each esprit.regards}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select>{{else}}{{esprit.regard}}{{/if}}</li>
+          <li data-tooltip="{{esprit.aideFoi}}"><span class="survie-esprit-nom">{{localize "LAKOUR_SURVIE.Esprit.Foi"}}</span> {{esprit.foi}}{{#if esprit.enFaute}} <em class="mauvais">{{localize "LAKOUR_SURVIE.Esprit.EnFaute"}}</em>{{/if}}</li>
+          {{#if gm}}
+          <li class="survie-esprit-mj">
+            <select name="system.religion" aria-label="{{localize 'LAKOUR_SURVIE.Esprit.Religion'}}">{{#each esprit.religions}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select>
+            {{#if esprit.plusieurs}}<select name="system.religions" multiple aria-label="{{localize 'LAKOUR_SURVIE.Esprit.Religions'}}">{{#each esprit.religionsMultiples}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select>{{/if}}
+            <select name="system.ancrage" aria-label="{{localize 'LAKOUR_SURVIE.Esprit.Ancrage'}}">{{#each esprit.ancrages}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select>
+            <label class="survie-case"><input type="checkbox" name="system.pratique" {{#if esprit.pratique}}checked{{/if}}> {{localize "LAKOUR_SURVIE.Esprit.Pratiquant"}}</label>
+          </li>
+          {{/if}}
+          {{#if esprit.sens}}
+          <li class="survie-sens {{esprit.sens.bande}}" data-tooltip="{{localize 'LAKOUR_SURVIE.Esprit.SensAide'}}"><span class="survie-esprit-nom">{{localize "LAKOUR_SURVIE.Esprit.SensMoral"}}</span>
+            <span class="survie-jauge-barre sens"><span style="width: {{esprit.sens.pct}}%"></span></span> {{esprit.sens.libelle}}
+            {{#if gm}}<input type="number" name="system.sensMoral" value="{{esprit.sensMoral}}" min="-10" max="10" class="survie-petit">{{/if}}</li>
+          {{/if}}
+          <li class="survie-sens {{esprit.reputation.bande}}" data-tooltip="{{localize 'LAKOUR_SURVIE.Esprit.ReputationAide'}}"><span class="survie-esprit-nom">{{localize "LAKOUR_SURVIE.Esprit.Reputation"}}</span> {{esprit.reputation.libelle}}
+            {{#if gm}}<input type="number" name="system.reputation" value="{{esprit.reputationValeur}}" min="-10" max="10" class="survie-petit">{{/if}}</li>
+          <li data-tooltip="{{localize 'LAKOUR_SURVIE.Esprit.AutoriteAide'}}"><span class="survie-esprit-nom">{{localize "LAKOUR_SURVIE.Esprit.Autorite"}}</span>
+            <span class="survie-jauge-barre"><span style="width: {{esprit.autorite.pct}}%"></span></span> {{esprit.autorite.valeur}} / 5
+            {{#if gm}}<input type="number" name="system.autorite" value="{{esprit.autoriteValeur}}" min="0" max="5" class="survie-petit">{{/if}}</li>
+          {{#each esprit.signes}}<li class="mauvais"><i class="fa-solid fa-person-walking-arrow-right"></i> {{this}}</li>{{/each}}
+          {{#if esprit.projet}}<li class="mauvais"><i class="fa-solid fa-user-secret"></i> {{esprit.projet}}</li>{{/if}}
+          {{#if esprit.chance}}<li><i class="fa-solid fa-clover"></i> {{localize "LAKOUR_SURVIE.Esprit.Chance" n=esprit.chance}}</li>{{/if}}
+        </ul>
+        {{else}}
+        <p class="survie-vide">{{localize "LAKOUR_SURVIE.Esprit.NonTire"}}</p>
+        {{#if gm}}<button type="button" data-action="tirerEsprit"><i class="fa-solid fa-dice"></i> {{localize "LAKOUR_SURVIE.Esprit.Tirer"}}</button>{{/if}}
+        {{/if}}
+
         <h3><i class="fa-solid fa-masks-theater"></i> {{localize "LAKOUR_SURVIE.Fiche.Traits"}}</h3>
         <ul class="survie-puces">
           {{#each traits}}<li class="survie-puce trait" data-tooltip="{{aide}}">{{nom}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}

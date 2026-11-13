@@ -76,7 +76,16 @@
     "livide": false,
     "charge": 0,
     "notes": "<p>Radioamatrice dans les hauts de Saint-Denis, petite blanche du Brûlé, elle émet chaque soir les nouvelles qu'elle reçoit, vraies ou fausses, et lit des histoires aux enfants le matin. Beaucoup de groupes la connaissent sans l'avoir vue. Elle ouvre chaque émission par « <em>tout' bann kaf, yab, malbar, zarab, sinwa, komor, zorey ki ékout amwin</em> » (tous ceux qui m'écoutent, de toutes les couleurs), et chaque soir quelqu'un râle d'avoir été cité le dernier.</p>",
-    "prejuges": []
+    "prejuges": [],
+    "regard": "vivre",
+    "religion": "aucune",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "routine",
+    "sensMoral": 3,
+    "autorite": 3,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

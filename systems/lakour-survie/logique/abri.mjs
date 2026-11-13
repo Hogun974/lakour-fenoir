@@ -42,7 +42,7 @@
 //   moral, blessures, trouvailles rendus au MJ, à raconter.
 // - Bonus d'installation (`effets.bonus`, tour de guet : vigilance) : le meilleur des installations pas hors service (bilan.bonus).
 //
-// Lot « savoirs » (docs/equilibre-savoirs.md, contrat §11) :
+// Lot « savoirs » (docs/equilibre-savoirs.md, contrat §13) :
 // - Installations sœurs : une installation à l'ancienne (`arbre: "lontan"`) porte `role` = la clé de sa sœur moderne (ou un rôle
 //   commun : « eau-chaude ») et un `rang` (défaut 0, 1 pour une lontan : la moderne passe d'abord). Deux sœurs ne s'additionnent
 //   pas : chaque jour, seule la première (par rang) qui peut marcher est en service ; les autres attendent en secours

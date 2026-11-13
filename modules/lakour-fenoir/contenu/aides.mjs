@@ -157,8 +157,10 @@ export function passe({ cle, nom, description, competences, savoirs = [], equipe
 // img : jeton (assets/jetons/ia/<cle>.webp, ou assets/jetons/<cle>.svg en repli) ; disposition : -1 hostile, 0 neutre, 1 allié.
 export function survivant({ cle, nom, pack = "survivants", passe = "", enfance = "", age = 30, lien = "", competences = {}, passions = {}, traits = [],
   incapacites = [], statut = "pnj", moral = 4, notes = "", objets = [], pnj = false, livide = false, vivant = true, img = IMG.survivant,
-  disposition = null, extra = {}, prejuges = [] }) {
+  disposition = null, extra = {}, prejuges = [], esprit = {} }) {
   const _id = identifiant(`${pack}:${cle}`);
+  // L'esprit (système : logique/esprit.mjs, moralite.mjs, chefs.mjs ; contrat §14) : vide = pas encore tiré (aucun effet).
+  const sp = { regard: "", religion: "", religions: [], pratique: false, ancrage: "", sensMoral: 0, autorite: 2, reputation: 0, ...esprit };
   const comp = Object.fromEntries(COMPETENCES.map(c => [c, { niveau: competences[c] ?? 0, marques: 0 }]));
   return {
     __pack: pack, __cle: `${pack}:${cle}`,
@@ -169,7 +171,9 @@ export function survivant({ cle, nom, pack = "survivants", passe = "", enfance =
       enfance, passe, passions, traits, incapacites, statut, tache: "", histoire: { journal: "" },
       age, lien, vivant, livide, charge: 0, notes: html(notes),
       // Les préjugés d'un PNJ (le marché : systems/lakour-survie/logique/marche.mjs) : { cible, poids 1..3, dit, echanges, fetes, dementis }.
-      prejuges: prejuges.map(p => ({ cible: p.cible, poids: p.poids ?? 1, dit: p.dit ?? "", echanges: 0, fetes: 0, dementis: 0 }))
+      prejuges: prejuges.map(p => ({ cible: p.cible, poids: p.poids ?? 1, dit: p.dit ?? "", echanges: 0, fetes: 0, dementis: 0 })),
+      regard: sp.regard, religion: sp.religion, religions: [...sp.religions], pratique: Boolean(sp.pratique), ancrage: sp.ancrage,
+      sensMoral: sp.sensMoral, autorite: sp.autorite, reputation: sp.reputation, esprit: {}
     },
     // Objets incorporés : copies des savoirs et équipements du compendium, clé « !actors.items!acteur.objet ».
     items: objets.map(o => {

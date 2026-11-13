@@ -1,4 +1,4 @@
-// Les deux savoirs et l'île en mouvement (lot « savoirs », docs/equilibre-savoirs.md, contrat §11). Logique pure.
+// Les deux savoirs et l'île en mouvement (lot « savoirs », docs/equilibre-savoirs.md, contrat §13). Logique pure.
 //
 // - Deux arbres de savoir-faire : `moderne` (électricité, radio, mécanique, plomberie…) et `lontan` (remèdes, cultures, fabrication à
 //   la main). Un savoir du contenu porte `arbre` ; une installation aussi (les sœurs : abri.mjs). L'autonomie complète demande les

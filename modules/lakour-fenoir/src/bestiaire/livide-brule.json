@@ -73,7 +73,16 @@
     "livide": true,
     "charge": 0,
     "notes": "<p>Pris dans un incendie de quartier ou un véhicule en feu, il en est ressorti noirci, à demi aveugle, qui fume encore parfois.</p><p><strong>Comportement.</strong> Ne sent ni la douleur ni la chaleur : il traverse les flammes et les barbelés sans ralentir.</p><p><strong>Faiblesse.</strong> Ses yeux brûlés : il ne suit que les bruits.</p><p><strong>Dés d'attaque :</strong> 1 — <strong>résistance :</strong> 1 — <strong>vitesse :</strong> marche.</p>",
-    "prejuges": []
+    "prejuges": [],
+    "regard": "",
+    "religion": "",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 0,
+    "autorite": 2,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [],
   "effects": [],

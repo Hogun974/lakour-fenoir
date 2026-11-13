@@ -1,4 +1,4 @@
-// Le marché de Fénoir (logique systems/lakour-survie/logique/marche.mjs, contrat §11, docs/equilibre-marche.md) :
+// Le marché de Fénoir (logique systems/lakour-survie/logique/marche.mjs, contrat §12, docs/equilibre-marche.md) :
 // - le cours du troc (parts), l'évaluation et l'application d'un troc ;
 // - la première confiance d'un PNJ (ses préjugés éveillés par le MJ, les rumeurs, la réputation de sa faction) et l'usure des
 //   préjugés (échanges honnêtes, fêtes partagées, démentis) ; aucune origine ne joue dans les règles ;

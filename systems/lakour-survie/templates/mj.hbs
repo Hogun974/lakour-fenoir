@@ -242,12 +242,133 @@
     </div>
     {{/if}}
 
+    {{#if (eq onglet "communaute")}}
+    {{#if communaute}}
+    <p class="survie-aide">{{localize "LAKOUR_SURVIE.Communaute.Aide"}}</p>
+    <div class="survie-formulaires">
+      <div class="survie-formulaire" data-forme="chef">
+        <h3><i class="fa-solid fa-crown"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.chef"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Esprit.Chef"}} <select name="chef">{{#each communaute.chef}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="parole">
+        <h3><i class="fa-solid fa-handshake-simple"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.parole"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Parole"}} <select name="tenue"><option value="oui">{{localize "LAKOUR_SURVIE.Communaute.Tenue"}}</option><option value="non">{{localize "LAKOUR_SURVIE.Communaute.Manquee"}}</option></select></label>
+        <label>{{localize "LAKOUR_SURVIE.MJ.Raison"}} <input type="text" name="raison"></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="entente">
+        <h3><i class="fa-solid fa-people-arrows"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.entente"}} : {{communaute.entente.valeur}} ({{communaute.entente.libelle}})</h3>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Delta"}} <input type="number" name="delta" value="1" min="-6" max="6"></label>
+        <label>{{localize "LAKOUR_SURVIE.MJ.Raison"}} <input type="text" name="raison"></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+    </div>
+    <p class="survie-sens {{communaute.couleur.bande}}"><strong>{{localize "LAKOUR_SURVIE.Communaute.Couleur"}}</strong> : {{communaute.couleur.libelle}} ({{communaute.couleur.moyenne}}) · <strong>{{localize "LAKOUR_SURVIE.Communaute.Reputation"}}</strong> : {{communaute.reputation.libelle}} ({{communaute.reputation.moyenne}})</p>
+    <table class="survie-table">
+      <thead><tr><th>{{localize "LAKOUR_SURVIE.Fiche.Nom"}}</th><th>{{localize "LAKOUR_SURVIE.Esprit.Regard"}}</th><th>{{localize "LAKOUR_SURVIE.Esprit.Foi"}}</th><th>{{localize "LAKOUR_SURVIE.Esprit.SensMoral"}}</th><th>{{localize "LAKOUR_SURVIE.Esprit.Reputation"}}</th><th>{{localize "LAKOUR_SURVIE.Esprit.Autorite"}}</th><th>{{localize "LAKOUR_SURVIE.Communaute.Signes"}}</th></tr></thead>
+      <tbody>{{#each communaute.membres}}<tr><td>{{#if chef}}👑 {{/if}}{{nom}}{{#if enfant}} <small>({{localize "LAKOUR_SURVIE.Communaute.Enfant"}})</small>{{/if}}{{#unless actif}} <small>({{localize "LAKOUR_SURVIE.Esprit.NonTire"}})</small>{{/unless}}</td><td>{{regard}}</td><td>{{foi}}{{#if enFaute}} <em>{{localize "LAKOUR_SURVIE.Esprit.EnFaute"}}</em>{{/if}}</td>
+        <td class="survie-sens {{sens.bande}}">{{sens.valeur}} {{sens.libelle}}</td><td>{{reputation.valeur}}</td><td>{{autorite}}</td><td>{{#if lacher}}{{lacher}}/3{{/if}}{{#if chance}} 🍀{{chance}}{{/if}}{{#if projet}} {{projet}}{{/if}}</td></tr>{{/each}}</tbody>
+    </table>
+
+    <h3><i class="fa-solid fa-door-closed"></i> {{localize "LAKOUR_SURVIE.Abri.Porte"}}</h3>
+    <p>{{#if communaute.liste}}<strong>{{localize "LAKOUR_SURVIE.Abri.Manque"}}</strong> : {{communaute.liste}}{{else}}<em>{{localize "LAKOUR_SURVIE.Abri.RienNeManque"}}</em>{{/if}}</p>
+    <div class="survie-formulaires">
+      {{#each communaute.visiteurs}}
+      <div class="survie-formulaire" data-forme="porte">
+        <h3><i class="fa-solid fa-person"></i> {{nom}}, {{age}} — {{profil}}{{#if revient}} ↺{{/if}}</h3>
+        <p>{{demande}}{{#if apporte}}<br><em>{{localize "LAKOUR_SURVIE.Communaute.Apporte" liste=apporte}}</em>{{/if}}</p>
+        {{#if secret}}<p class="survie-avertissement secret survie-sens {{secret.bande}}"><i class="fa-solid fa-user-secret"></i> {{localize "LAKOUR_SURVIE.Communaute.VraieCouleur"}} : {{secret.libelle}} ({{secret.valeur}})</p>{{/if}}
+        <input type="hidden" name="visiteur" value="{{id}}">
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Decision"}} <select name="decision"><option value="accueillir">{{localize "LAKOUR_SURVIE.Communaute.Accueillir"}}</option><option value="refuser">{{localize "LAKOUR_SURVIE.Communaute.Refuser"}}</option>{{#if apporte}}<option value="trahir">{{localize "LAKOUR_SURVIE.Communaute.Trahir"}}</option>{{/if}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Vote"}} <select name="vote">{{#each ../communaute.votesOptions}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label class="survie-case"><input type="checkbox" name="circonstances"> {{localize "LAKOUR_SURVIE.Communaute.Circonstances"}}</label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      {{else}}<p class="survie-vide">{{localize "LAKOUR_SURVIE.Communaute.PersonneALaPorte"}}</p>{{/each}}
+      <div class="survie-formulaire" data-forme="frapper">
+        <h3><i class="fa-solid fa-hand-back-fist"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.frapper"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Profil"}} <select name="profil">{{#each communaute.profils}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+    </div>
+
+    <h3><i class="fa-solid fa-check-to-slot"></i> {{localize "LAKOUR_SURVIE.Communaute.Votes"}}</h3>
+    <ul class="survie-liste-simple">{{#each communaute.votes}}<li><strong>{{#if question}}{{question}}{{else}}{{acteLibelle}}{{/if}}</strong> — {{localize "LAKOUR_SURVIE.Communaute.Resultat" pour=resultat.pour contre=resultat.contre abstention=resultat.abstention}}{{#if decideLibelle}} → {{decideLibelle}}{{/if}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}</ul>
+    <div class="survie-formulaires">
+      <div class="survie-formulaire" data-forme="voter">
+        <h3><i class="fa-solid fa-box-archive"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.voter"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Question"}} <input type="text" name="question"></label>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Acte"}} <select name="acte">{{#each communaute.actes}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+        <label class="survie-case"><input type="checkbox" name="circonstances"> {{localize "LAKOUR_SURVIE.Communaute.Circonstances"}}</label>
+        <p class="survie-aide">{{localize "LAKOUR_SURVIE.Communaute.VoteAide"}}</p>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="decider">
+        <h3><i class="fa-solid fa-gavel"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.decider"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Vote"}} <select name="vote">{{#each communaute.votesOptions}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Decision"}} <select name="decision"><option value="pour">{{localize "LAKOUR_SURVIE.Communaute.Faire"}}</option><option value="contre">{{localize "LAKOUR_SURVIE.Communaute.NePasFaire"}}</option></select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="acteMoral">
+        <h3><i class="fa-solid fa-scale-unbalanced"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.acteMoral"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.MJ.Qui"}} <select name="membres" multiple>{{#each communaute.membresOptions}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Acte"}} <select name="acte">{{#each communaute.actes}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Vote"}} <select name="vote">{{#each communaute.votesOptions}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label class="survie-case"><input type="checkbox" name="circonstances"> {{localize "LAKOUR_SURVIE.Communaute.Circonstances"}}</label>
+        <label class="survie-case"><input type="checkbox" name="temoins" checked> {{localize "LAKOUR_SURVIE.Communaute.Temoins"}}</label>
+        <label class="survie-case"><input type="checkbox" name="journal"> {{localize "LAKOUR_SURVIE.Communaute.AuJournal"}}</label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="lireSigne">
+        <h3><i class="fa-solid fa-wind"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.lireSigne"}}</h3>
+        <p class="survie-aide">{{localize "LAKOUR_SURVIE.Communaute.SigneAide"}}</p>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+    </div>
+
+    <h3><i class="fa-solid fa-coins"></i> {{localize "LAKOUR_SURVIE.Communaute.Tributs"}}</h3>
+    <div class="survie-formulaires">
+      {{#each communaute.tributs}}
+      <div class="survie-formulaire" data-forme="tribut">
+        <h3>{{bande}} — {{etatLibelle}}</h3>
+        <p>{{demandeTexte}} · {{localize "LAKOUR_SURVIE.Communaute.Prochain" n=prochain}} · {{localize "LAKOUR_SURVIE.Communaute.Payes" n=payes}}{{#if sens}} · <span class="survie-sens {{sens.bande}}">{{sens.libelle}}</span>{{/if}}</p>
+        {{#if actif}}<input type="hidden" name="tribut" value="{{id}}">
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Payer"}} <select name="paye"><option value="oui">{{localize "LAKOUR_SURVIE.Communaute.Paye"}}</option><option value="non">{{localize "LAKOUR_SURVIE.Communaute.Refuse"}}</option></select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>{{/if}}
+      </div>
+      {{else}}<p class="survie-vide">—</p>{{/each}}
+    </div>
+
+    <h3><i class="fa-solid fa-code-fork"></i> {{localize "LAKOUR_SURVIE.Communaute.Groupes"}}</h3>
+    <div class="survie-formulaires">
+      <div class="survie-formulaire" data-forme="separer">
+        <h3>{{localize "LAKOUR_SURVIE.MJ.Formes.separer"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.Partants"}} <select name="membres" multiple>{{#each communaute.membresOptions}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.AbriVa"}} <select name="abriVaAux"><option value="restants">{{localize "LAKOUR_SURVIE.Communaute.Restants"}}</option><option value="partants">{{localize "LAKOUR_SURVIE.Communaute.PartantsAbri"}}</option></select></label>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.NomGroupe"}} <input type="text" name="nom"></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      {{#if communaute.aDesCommunautes}}
+      <div class="survie-formulaire" data-forme="fusionner">
+        <h3>{{localize "LAKOUR_SURVIE.MJ.Formes.fusionner"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Communaute.AutreGroupe"}} <select name="communaute">{{#each communaute.communautes}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      {{/if}}
+    </div>
+    {{else}}<p class="survie-vide">{{localize "LAKOUR_SURVIE.Bandeau.Attente"}}</p>{{/if}}
+    {{/if}}
+
     {{#if (eq onglet "menaces")}}
     <h3><i class="fa-solid fa-triangle-exclamation"></i> {{localize "LAKOUR_SURVIE.MJ.Menaces"}}</h3>
     <p class="survie-aide">{{localize "LAKOUR_SURVIE.MJ.AideMenaces"}}</p>
     <ul class="survie-menaces">
       {{#each menaces}}
       <li><span class="survie-quand">J{{jour}}</span> <strong>{{typeLibelle}}</strong>{{#if force}} ({{localize "LAKOUR_SURVIE.MJ.Force"}} {{force}}){{/if}} — {{texte}}
+        {{#if chef}}<br><em class="survie-sens {{chef.bande}}"><i class="fa-solid fa-user-tie"></i> {{chef.texte}} ({{chef.bandeLibelle}})</em>
+        {{#if chef.ultimatum}}<button type="button" data-action="menace" data-id="{{id}}" data-mode="ultimatum"><i class="fa-solid fa-coins"></i> {{localize "LAKOUR_SURVIE.MJ.Ultimatum"}}</button>{{/if}}
+        {{#if chef.rejoindre}}<button type="button" data-action="menace" data-id="{{id}}" data-mode="rejoindre"><i class="fa-solid fa-door-open"></i> {{localize "LAKOUR_SURVIE.MJ.Rejoindre"}}</button>{{/if}}{{/if}}
         {{#if force}}<button type="button" data-action="menace" data-id="{{id}}" data-mode="assaut"><i class="fa-solid fa-shield-halved"></i> {{localize "LAKOUR_SURVIE.MJ.Resoudre"}}</button>{{/if}}
         <button type="button" data-action="menace" data-id="{{id}}" data-mode="ecarter"><i class="fa-solid fa-xmark"></i> {{localize "LAKOUR_SURVIE.MJ.Ecarter"}}</button></li>
       {{else}}<li class="survie-vide">{{localize "LAKOUR_SURVIE.MJ.AucuneMenace"}}</li>{{/each}}

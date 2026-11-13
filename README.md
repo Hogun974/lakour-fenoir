@@ -212,6 +212,17 @@ pêche, chasse, fouille, repos, enseigner) ; une tâche tenue une semaine donne 
 demandent des bras dépend de qui y travaille. Les **recrues** comblent ce qui manque au groupe, avec une raison d'être là et
 un prix ; le MJ (ou la répartition automatique) donne leur tâche aux compagnons et aux recrues.
 
+**L'esprit et le sens moral.** Chaque survivant a un **regard** sur la catastrophe (une épreuve, une chance de refaire le
+monde, l'envie de vivre : ce qui nourrit son moral), une **religion** de l'île ou un **ancrage** (une photo, un carnet, une
+routine, le sport), pratiqué ou non, un **sens moral** du rouge (exclure, trahir) au bleu (accueillir, aider), que lui seul voit
+(les autres le connaissent par sa **réputation**), et une **autorité** quand il mène. Rien n'est magique : la foi agit par le
+moral, le jeu ne confirme rien. Plus le moral est bas, plus la nuit ajoute de faux bruits ; certains ne tiennent pas, et le
+groupe les retient par sa présence. On frappe à la porte : l'abri affiche ce qui lui manque vraiment ; le groupe accueille,
+refuse ou trahit, peut voter, et aucune couleur n'est gratuite (le bleu attire les réfugiés, le rouge les durs). Un chef de
+bande décide selon son sens moral (attaquer, négocier, passer, poser un ultimatum, demander à rejoindre) ; un enfant témoin
+imite ou se révolte ; deux groupes se séparent ou se fondent. Tout se règle dans l'onglet **Communauté** de la fenêtre du MJ
+(`docs/survie-contrat.md` §14, `docs/equilibre-moral.md`).
+
 **Les renseignements datés.** L'île est découpée en seize régions reliées par des routes réelles (RN1, RN2, route du
 Littoral, route des Tamarins, route des Plaines, route de Cilaos, route de Salazie, route du Volcan, route des Laves, et les
 sentiers de Mafate, qui n'a pas de route du tout), chacune avec ses temps à pied et en véhicule, et des coupures possibles

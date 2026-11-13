@@ -76,7 +76,16 @@
     "livide": false,
     "charge": 0,
     "notes": "<p>Urgentiste au grand hôpital du Sud, fille d'une famille malbare de Saint-André, elle n'en est pas sortie depuis le jour zéro. Elle cherche un remède, et commence à trouver acceptables des choses qui ne l'étaient pas. Sa mère disait des Cafres qu'« <em>zot i pens pa demain</em> » (ils ne pensent pas au lendemain) ; c'est un brancardier cafre de la Ravine des Cabris qui garde sa porte depuis le jour zéro, et elle ne laisse plus personne finir cette phrase devant elle.</p>",
-    "prejuges": []
+    "prejuges": [],
+    "regard": "refaire",
+    "religion": "hindouisme-tamoul",
+    "religions": [],
+    "pratique": false,
+    "ancrage": "",
+    "sensMoral": 1,
+    "autorite": 3,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

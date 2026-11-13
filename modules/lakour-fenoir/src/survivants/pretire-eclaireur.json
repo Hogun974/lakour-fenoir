@@ -79,7 +79,16 @@
     "livide": false,
     "charge": 0,
     "notes": "<p>Né à Cilaos, yab de vieille souche, il connaît chaque sentier des cirques. En ville, on l'appelait « <em>yab kouyon</em> » (le petit blanc niais des Hauts) ; ceux qui le disaient le suivent aujourd'hui sur les sentiers, en silence. Il parle peu, marche vite, et préfère la montagne aux gens.</p>",
-    "prejuges": []
+    "prejuges": [],
+    "regard": "vivre",
+    "religion": "aucune",
+    "religions": [],
+    "pratique": true,
+    "ancrage": "sport",
+    "sensMoral": 0,
+    "autorite": 1,
+    "reputation": 0,
+    "esprit": {}
   },
   "items": [
     {

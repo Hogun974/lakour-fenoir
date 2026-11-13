@@ -46,8 +46,8 @@
   ],
   "documentTypes": {
     "Actor": {
-      "survivant": { "htmlFields": ["notes"], "gmOnlyFields": ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "enfance", "passe", "genre", "passions", "traits", "incapacites", "savoirs", "statut", "tache", "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "confiance", "apprentissage", "dictee", "histoire", "age", "lien", "vivant", "livide", "charge", "ageJour", "prejuges"] },
-      "abri": { "htmlFields": ["notes"], "gmOnlyFields": ["site", "region", "installeLe", "abandonneLe", "stocks", "nature", "sol", "bruit", "degats", "reparation", "reliquats", "vegetation", "eauDouteuse", "preparation", "lumiereLe", "notes"] }
+      "survivant": { "htmlFields": ["notes"], "gmOnlyFields": ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "enfance", "passe", "genre", "passions", "traits", "incapacites", "savoirs", "statut", "tache", "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "histoire", "age", "lien", "vivant", "livide", "charge", "regard", "religion", "religions", "pratique", "ancrage", "sensMoral", "reputation", "autorite", "esprit", "confiance", "apprentissage", "dictee", "ageJour", "prejuges"] },
+      "abri": { "htmlFields": ["notes"], "gmOnlyFields": ["site", "region", "installeLe", "abandonneLe", "stocks", "nature", "sol", "bruit", "degats", "reparation", "reliquats", "notes", "vegetation", "eauDouteuse", "preparation", "lumiereLe"] }
     },
     "Item": {
       "installation": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "niveau", "niveauMax", "chantier", "etat", "reparation", "niveaux", "termineLe", "actif", "arbre", "role", "rang"] },

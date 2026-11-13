@@ -1,6 +1,6 @@
 // Le marché de Fénoir (troc, boutique et carnet de crédit, marché forain et sa trêve, foire), les préjugés des PNJ au marché,
 // le Ladi Lafé (la rumeur) et les objets marqués. Logique pure, éprouvée par essais/survie-marche.test.mjs.
-// Chiffres et raisons : docs/equilibre-marche.md ; contrat : docs/survie-contrat.md §11.
+// Chiffres et raisons : docs/equilibre-marche.md ; contrat : docs/survie-contrat.md §12.
 //
 // Principes (validés par Jordan, docs/metissage.md) :
 // - Troc seulement, pas de monnaie. Le COURS dit ce que vaut chaque bien en « parts » (une part = un jour de nourriture pour une

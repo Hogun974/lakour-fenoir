@@ -1,4 +1,4 @@
-// Le marché dans l'API game.lakourSurvie (contrat §11) : troc au cours, boutique et carnet de crédit, marchés forains et foires,
+// Le marché dans l'API game.lakourSurvie (contrat §12) : troc au cours, boutique et carnet de crédit, marchés forains et foires,
 // trêve, accueil du marché, préjugés des PNJ (première confiance, usure), Ladi Lafé (la rumeur : publique dans etat.marche, sa
 // vérité scellée dans monde.marche), objets marqués. La logique est pure (logique/marche.mjs) ; ici, on l'applique aux documents.
 //

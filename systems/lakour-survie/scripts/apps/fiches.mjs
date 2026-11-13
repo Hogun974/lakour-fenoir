@@ -10,6 +10,7 @@ import { ID, COMPETENCES, RESSOURCES, NATURE, DIFFICULTES } from "../../logique/
 import * as L from "../../logique/index.mjs";
 import { t, aPlat, lireEtat, echapper, sansBalises, libelleCompetence, libelleRessource, libelleTache, MODULE_MJIA } from "../donnees.mjs";
 import { CHEMIN, essayer, lireChamps, flammes, jours, options } from "./commun.mjs";
+import { contexteEsprit, texteListe } from "./esprit.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2, ItemSheetV2 } = foundry.applications.sheets;
@@ -72,6 +73,8 @@ export function contexteSurvivant(a, { gm = false, proprietaire = false, incubat
     taches, tache: libelleTache(s.tache), peutChoisirTache: (gm || proprietaire) && s.vivant !== false && !s.livide,
     histoire: Boolean(game.modules?.get?.(MODULE_MJIA)?.api?.histoire?.ouvrir),
     membre: (lireEtat().groupe?.membres ?? []).includes(a.id),
+    // L'esprit et le sens moral (contrat §14) : chacun voit sa couleur, les autres sa réputation (réglage du MJ).
+    esprit: contexteEsprit(s, { gm, proprietaire, chef: lireEtat().groupe?.chef === a.id }, c),
     difficultes: Object.keys(DIFFICULTES)
   };
 }
@@ -112,7 +115,8 @@ export class FicheSurvivant extends HandlebarsApplicationMixin(ActorSheetV2) {
       tester: FicheSurvivant.#tester,
       ouvrirObjet: FicheSurvivant.#ouvrirObjet,
       retirerObjet: FicheSurvivant.#retirerObjet,
-      histoire: FicheSurvivant.#histoire
+      histoire: FicheSurvivant.#histoire,
+      tirerEsprit: FicheSurvivant.#tirerEsprit
     }
   };
   static PARTS = { fiche: { template: `${CHEMIN}/fiche-survivant.hbs`, scrollable: [".survie-corps"] } };
@@ -152,9 +156,18 @@ export class FicheSurvivant extends HandlebarsApplicationMixin(ActorSheetV2) {
   static #ouvrirObjet(event, cible) { this.document.items.get(cible.dataset.itemId)?.sheet?.render({ force: true }); }
   static async #retirerObjet(event, cible) { if (game.user.isGM) await this.document.items.get(cible.dataset.itemId)?.delete(); }
   static #histoire() { essayer(() => game.modules.get(MODULE_MJIA)?.api?.histoire?.ouvrir?.(this.document)); }
+  // Une fiche sans esprit (d'avant, ou faite à la main) : le MJ le tire.
+  static async #tirerEsprit() { if (game.user.isGM) { await essayer(() => game.lakourSurvie.tirerEsprit({ acteurId: this.document.id })); this.render(); } }
 }
 
 // ------------------------------------------------------------------ abri
+function porteAbri(etat, s, b) {
+  const liste = L.listeALaPorte({ stocks: s.stocks ?? {}, bilan: b, personnes: b?.personnes ?? 1 });
+  const visiteurs = (etat.porte ?? []).map(v => ({ nom: v.nom, demande: localiserDemande(v), apporte: Object.keys(v.apporte ?? {}).length ? texteListe(Object.entries(v.apporte).map(([ressource, manque]) => ({ ressource, manque }))) : "" }));
+  return { liste: texteListe(liste), vide: !liste.length, visiteurs };
+}
+const localiserDemande = v => sansBalises(game.lakourSurvie?.localiser?.(v.demande) ?? v.demande?.texte ?? "");
+
 export function contexteAbri(a) {
   const s = aPlat(a.system);
   const etat = lireEtat();
@@ -186,6 +199,8 @@ export function contexteAbri(a) {
     bilan: b ? { defense: b.defense, discretion: b.discretion, visibilite: b.visibilite, capacite: b.capacite, personnes: b.personnes, autonome: Boolean(etat.autonome),
       joursAutonomes: etat.joursAutonomes ?? 0, savoirs: b.savoirs ?? null, surpeuplement: b.surpeuplement ? t("LAKOUR_SURVIE.Abri.Surpeuplement", { n: b.surpeuplement }) : "", production: Object.entries(b.production ?? {}).map(([r, q]) => `${libelleRessource(r)} ${q}`).join(", ") } : null,
     grille, taches: Object.keys(L.TACHES).map(x => ({ cle: x, libelle: libelleTache(x) })), gm: game.user.isGM,
+    // La liste à la porte (ce qui manque vraiment, d'après les stocks) et ceux qui attendent devant (ce que le groupe voit d'eux).
+    porte: courant ? porteAbri(etat, s, b) : null,
     // Les notes secrètes du MJ (monde scellé, jamais sur l'acteur que les joueurs observent).
     notesMJ: game.user.isGM ? game.lakourSurvie?.notesAbri?.(a.id) ?? "" : "", mondeOuvert: Boolean(game.lakourSurvie?.mondeOuvert?.())
   };

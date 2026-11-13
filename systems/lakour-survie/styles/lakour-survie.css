@@ -331,3 +331,18 @@
 /* Le marché (onglet Marché de la fenêtre du MJ, tableau de bord) : une dette qui traîne, la vérité d'une rumeur (MJ seul). */
 .lakour-survie .survie-alerte { color: #ffb3a8; font-weight: 600; }
 .lakour-survie .survie-secret { color: #c9a7ff; font-style: italic; }
+/* L'esprit et le sens moral (contrat §14) : la couleur du rouge au bleu, la section de la fiche, la création. */
+.lakour-survie .survie-esprit { list-style: none; margin: 0 0 0.6em; padding: 0; display: grid; gap: 0.3em; }
+.lakour-survie .survie-esprit li { display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; }
+.lakour-survie .survie-esprit li.mauvais, .lakour-survie .survie-esprit .mauvais { color: #ffb3a8; }
+.lakour-survie .survie-esprit-nom { min-width: 7.5em; opacity: 0.8; }
+.lakour-survie .survie-esprit .survie-jauge-barre { flex: 1 1 6em; max-width: 10em; }
+.lakour-survie .survie-esprit-mj select[multiple] { min-height: 4.5em; }
+.lakour-survie .survie-jauge-barre.sens { background: linear-gradient(90deg, #b8322a, #6d6a63 50%, #2f6fb0); }
+.lakour-survie .survie-jauge-barre.sens > span { background: transparent; border-right: 3px solid #efe3c8; border-radius: 0; }
+.lakour-survie .survie-sens.rouge { color: #ff8c80; }
+.lakour-survie .survie-sens.rougeatre { color: #f0b0a0; }
+.lakour-survie .survie-sens.bleute { color: #a9cbee; }
+.lakour-survie .survie-sens.bleu { color: #7fb4ee; }
+.lakour-survie .survie-esprit-creation { margin-top: 0.6em; padding-top: 0.4em; border-top: 1px solid var(--sv-bord); display: grid; gap: 0.3em; }
+.lakour-survie .survie-esprit-creation h4 { display: flex; align-items: center; gap: 0.5em; margin: 0; }
