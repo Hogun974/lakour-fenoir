@@ -66,7 +66,7 @@ Ce dépôt contient quatre pièces :
 | Pièce | Dossier | Ce que c'est |
 |---|---|---|
 | le **système** `lakour-survie` | `systems/lakour-survie/` | les règles (logique pure, éprouvée), l'horloge et la simulation du monde, les fiches, la création, le bandeau, le tableau de bord, la fenêtre du MJ, l'atelier, le coffre |
-| le **module de contenu** `lakour-fenoir` | `modules/lakour-fenoir/` | La Réunion : régions, sites d'abri, routes, installations, savoir-faire, passés, enfances, traits, équipement, recettes, maladies, factions, événements, bestiaire, fêtes, guides, tables, cartes |
+| le **module de contenu** `lakour-fenoir` | `modules/lakour-fenoir/` | La Réunion : régions, sites d'abri, routes, installations, savoir-faire, passés, enfances, traits, équipement, recettes, maladies, factions, événements, bestiaire, fêtes, marché (gens du marché, marchés forains, foires), religions et ancrages, gramounes, guides, tables, cartes |
 | le **module anglais** `lakour-fenoir-en` | engendré par `npm run fabriquer-fenoir-en` (non versionné) | les mêmes documents, traduits ; un seul des deux actif à la fois |
 | le **monde vierge** `la-kour-fenoir` | `monde/` | un monde prêt : système, modules actifs, contenu installé, carte en place |
 | le **moteur commun** `lakour-mj-ia` | `modules/lakour-mj-ia/` (sous-module) | le MJ IA, les compagnons, le coffre chiffré qui garde le monde réel secret ([son dépôt](https://github.com/Hogun974/lakour-mj-ia)) |
@@ -223,6 +223,26 @@ bande décide selon son sens moral (attaquer, négocier, passer, poser un ultima
 imite ou se révolte ; deux groupes se séparent ou se fondent. Tout se règle dans l'onglet **Communauté** de la fenêtre du MJ
 (`docs/survie-contrat.md` §14, `docs/equilibre-moral.md`).
 
+**Le temps de l'île et la mort.** Le système suit la **lune** et la clarté de chaque nuit (la brume des Hauts, les nuages et la
+pluie la cachent) : une nuit noire rend une sortie plus discrète et plus dangereuse, une pleine lune fait voir et être vu. Sans
+téléphone ni poste radio, le groupe **perd la date** : le bandeau ne dit plus que « début, mi- ou fin » du mois, la lune et les
+signes du paysage (les flamboyants, les letchis, la brume froide). Chaque **fête** a son gain et son coût (plus bas). Un
+survivant meurt, le groupe continue : la **relève** reprend un autre membre de 16 ans au moins (il lâche son travail) ou un
+nouveau tirage ; les **jeunes** de 16 à 18 ans portent et travaillent moins, votent à moitié et ne mènent pas ; les morts
+s'inscrivent sur l'**autel des morts**, et leur deuil pèse jusqu'à ce qu'on leur donne le **repos**
+(`docs/survie-contrat.md` §11, `docs/equilibre-fetes.md`).
+
+**Les deux savoirs et l'île en mouvement.** Chaque savoir-faire et une partie des installations appartiennent à l'un des deux
+**arbres** : *moderne* (pièces, électricité, carburant) ou *lontan* (le savoir d'autrefois : bambou, vacoa, pierre sèche, jardin
+créole, puits à balancier, avec les matières de l'île) ; l'autonomie complète demande les deux. Les **gramounes** sont des
+bibliothèques vivantes : on gagne leur confiance, on apprend auprès d'elles, on écrit leur cahier avant qu'elles ne s'en aillent.
+On trouve des livres, on replante les boutures des jardins abandonnés ; le **gaz** se compte au kilo, l'eau se chauffe au gaz,
+au soleil ou au feu de bois. Le **cyclone** se vit quart par quart (rafales, accalmie, l'œil, le vent qui revient) : ce qui
+n'est pas rentré s'envole, les arbres tombent et coupent les sentiers, la cour se remplit. Les **chiens** errants tiennent les
+routes en meutes ; un chien apprivoisé sent venir le cyclone et le volcan. Sans carburant, on va à pied, à vélo, en charrette à
+bœufs, en voiture électrique ou à l'alcool de canne, et les routes ont leurs verrous (épave, éboulis, tunnel à une voie, arbre en
+travers) (`docs/survie-contrat.md` §13, `docs/equilibre-savoirs.md`).
+
 **Les renseignements datés.** L'île est découpée en seize régions reliées par des routes réelles (RN1, RN2, route du
 Littoral, route des Tamarins, route des Plaines, route de Cilaos, route de Salazie, route du Volcan, route des Laves, et les
 sentiers de Mafate, qui n'a pas de route du tout), chacune avec ses temps à pied et en véhicule, et des coupures possibles
@@ -243,7 +263,7 @@ La lumière de la scène suit le moment, la pluie tombe sur la carte, l'écran t
 `prefers-reduced-motion`), les ambiances sonores du moteur suivent la nuit, la pluie, le cyclone, la tension ; un tintement
 discret signale « à toi ».
 
-Le **guide du joueur** (journal du monde, lisible de tous) détaille tout cela en quatorze pages ; **La vie au camp** décrit
+Le **guide du joueur** (journal du monde, lisible de tous) détaille tout cela en vingt pages ; **La vie au camp** décrit
 le temps calme, ses activités et ses fêtes ; **Les régions de l'île** sont épinglées sur la carte ; le **livre de l'île**
 (treize pages, lisible de tous) raconte l'univers de départ : l'île avant, le dernier mois ordinaire, le jour zéro, ce qu'on
 croit savoir des Livides et ce qu'on apprendra peut-être, l'île qui change, les gens d'après, vivre à Fénoir, des portraits,
@@ -254,24 +274,28 @@ des rumeurs, un lexique créole, et la première nuit.
 Tout le contenu est dans le module `lakour-fenoir` : douze compendiums (dossier « Fénoir »), plus le **registre** de l'île
 (`assets/donnees.json`) que le système charge pour simuler le monde. Les vrais chiffres, tels que `src/` les contient.
 
-### Les guides des joueurs (5 journaux, 60 pages)
+### Les guides des joueurs (7 journaux, 76 pages)
 
 | Journal | Pages | Ce qu'on y lit |
 |---|---|---|
-| **Fénoir — Guide du joueur** | 15 | Bienvenue, le test, forcer et progresser, les dix compétences, l'état d'un survivant, le temps, les ressources et l'abri, les tisanes et les zerbaz, bruit, visibilité et menaces, voyager et savoir, repartir ou s'enraciner, créer son survivant, les enfances, les passés, les traits. |
+| **Fénoir — Guide du joueur** | 20 | Bienvenue, le test, forcer et progresser, les dix compétences, l'état d'un survivant, le temps, les ressources et l'abri, les tisanes et les zerbaz, bruit, visibilité et menaces, voyager et savoir, repartir ou s'enraciner, la mort, la relève et l'autel, troquer (la boutique, le marché, la foire), créer son survivant, les enfances, les passés, l'esprit sur le corps, religions et ancrages, le sens moral, la porte et le chef, les traits. |
 | **La vie au camp** | 3 | Le temps calme, les onze activités (enseigner, réparer, cultiver, monter la garde, soigner, raconter, fêter, cuisiner, pêcher ou chasser, se reposer, écrire la chronique) avec leur test et leur coût, fêter. |
 | **Fénoir — Le livre de l'île** | 13 | L'univers de départ, écrit comme un cahier qui circule d'abri en abri (voir ci-dessus). |
 | **Les régions de l'île** | 17 | L'île, puis une page par région, épinglée sur la carte de La Réunion. |
-| **Les fêtes de Fénoir** | 12 | Fêter quand même, puis une page illustrée par fête. |
+| **Les fêtes de Fénoir** | 17 | Fêter quand même (le gain et le coût de chaque fête), aller à la fête des autres, puis une page par fête (illustrée pour les onze premières). |
+| **Le temps de l'île** | 3 | L'année réunionnaise, la lune et la nuit, quand la date se perd. |
+| **Vivre sans l'ancien monde** | 3 | Le savoir d'autrefois, quand le cyclone vient, sans carburant. |
 
-### Les journaux du MJ (9 journaux, 55 pages, cachés aux joueurs)
+### Les journaux du MJ (11 journaux, 78 pages, cachés aux joueurs)
 
 | Journal | Pages | Ce qu'on y lit |
 |---|---|---|
-| **Fénoir — Guide du MJ** | 8 | Mener Fénoir, le temps qui avance, les deux voies, les renseignements datés, le ton et les dilemmes, médicaments, trousses et zerbaz, les outils du MJ, les factions en jeu. |
+| **Fénoir — Guide du MJ** | 12 | Mener Fénoir, le temps qui avance, les deux voies, les renseignements datés, le ton et les dilemmes, médicaments, trousses et zerbaz, les outils du MJ, le temps de l'île, les fêtes et les morts, le marché, les factions en jeu, les gens de l'île, mener l'esprit et le sens moral. |
 | **Chronologie de la crise** | 6 | Avant le jour zéro, puis une page par phase. |
 | **Les factions de Fénoir** | 8 | Une page par faction : chef, signe, ce qu'elle veut, comment traiter avec elle. |
-| **Bestiaire de Fénoir** | 11 | Combattre, puis une page par créature. |
+| **Bestiaire de Fénoir** | 12 | Combattre, puis une page par créature (dont le chien de tête d'une meute). |
+| **Le marché et le Ladi Lafé** | 11 | Les quatre stades, la boutique et son carnet, le marché forain, son conseil et sa trêve, les foires de saison, le cours du troc, les préjugés au marché, les gens du marché, le Ladi Lafé, les objets marqués, les oratoires rouges, les événements de marché. |
+| **Les deux savoirs et l'île en mouvement** | 7 | Les deux savoirs, la gramoune bibliothèque vivante, le jardin créole, les livres et les objets faits main, le gaz et l'eau chaude, le cyclone pas à pas, les chiens, se déplacer sans carburant. |
 | **Scénario d'ouverture — Jour zéro** | 9 | Le premier jour, **sept départs** (Saint-Denis : la garde de nuit ; la côte Ouest : le grand beau temps ; Le Port : le dernier cargo ; la route de Cilaos : le car jaune ; la Plaine des Cafres : le lait qui ne descend pas ; l'Est : la pluie ; Mafate : rien ne se passe), la première nuit. |
 | **One-shot — L'insuline de l'Entre-Deux** | 4 | L'accroche, la route, le pharmacien, le retour et la fin. |
 | **Campagne — L'année du Gris** | 6 | Une campagne en **cinq fronts** : le Comptable, l'autorité provisoire, les Hauts froids, la Fournaise, le remède. |
@@ -294,16 +318,19 @@ plus lente quand la route principale est coupée : chemin des Anglais, Dos d'Ân
 part ; chacun avec capacité, défense, discrétion, eau (aucune, citerne, rivière, source, puits, réseau), sol, soleil,
 souterrain, accès, stocks à l'arrivée, atouts et défauts, installations déjà là.
 
-### Les installations (36, en niveaux)
+### Les installations (50, en niveaux)
+
+Les installations *lontan* (le savoir d'autrefois, avec les matières de l'île) sont les sœurs des modernes : elles tiennent le
+même rôle, autrement.
 
 | Catégorie | Installations (niveau maximal) |
 |---|---|
-| **Défense** (8) | Barricades (2), Palissade (2), Mur d'enceinte (3), Tour de guet (2), Fossé et pièges (2), Chiens de garde (2), Porte blindée (1), Camouflage (3) |
-| **Eau** (5) | Citerne de pluie (3), Filtre à sable et charbon (2), Bouilleur solaire (2), Captage de source (2), Pompe manuelle (2) |
-| **Nourriture** (8) | Potager (3), Serre (2), Verger (2), Basse-cour (2), Enclos à cabris (2), Bassin à tilapias (2), Ruches (2), Compost (2) |
+| **Défense** (11) | Barricades (2), Palissade (2), Mur d'enceinte (3), Tour de guet (2), Fossé et pièges (2), Chiens de garde (2), Porte blindée (1), Camouflage (3) ; *lontan* : Palissade de bambou (2), Mur de pierres sèches (2), Guet dans un grand arbre (1) |
+| **Eau** (8) | Citerne de pluie (3), Filtre à sable et charbon (2), Bouilleur solaire (2), Captage de source (2), Pompe manuelle (2) ; *lontan* : Gouttières de bambou et jarres (2), Conduite de bambou (2), Puits à balancier (2) |
+| **Nourriture** (10) | Potager (3), Serre (2), Verger (2), Basse-cour (2), Enclos à cabris (2), Bassin à tilapias (2), Ruches (2), Compost (2) ; *lontan* : Jardin créole (2), Ruches en tronc (1) |
 | **Énergie** (5) | Panneaux solaires (3), Batteries (3), Pico-hydro sur rivière (2), Groupe électrogène (1), Éolienne de récupération (2) |
-| **Vie** (4) | Atelier (2), Infirmerie (2), Dortoir (3), Cuisine commune (1) |
-| **Stockage** (2) | Séchoir et fumoir (1), Réserve étanche (2) |
+| **Vie** (9) | Atelier (2), Infirmerie (2), Dortoir (3), Autel des morts (1), Gazinière (1), Chauffe-eau solaire (1), Chauffe-eau à gaz (1) ; *lontan* : Cuisine commune (1), Eau chauffée au feu de bois (1) |
+| **Stockage** (3) | Séchoir et fumoir (1), Réserve étanche (2) ; *lontan* : Garde-manger lontan (1) |
 | **Communication** (2) | Poste radio (2), Antenne (1) |
 | **Souterrain** (2) | Galerie souterraine (4 : cave étayée, galerie, réseau, refuge complet), Aménagement d'un tunnel de lave (3) |
 
@@ -311,21 +338,23 @@ Repères : une citerne donne 1 / 2 / 3 eau par jour et par point de pluie de la 
 jour après trente jours ; des panneaux 2 / 4 / 6 kWh par jour et par point de soleil ; un groupe de quatre consomme 4 eau et
 4 nourriture par jour. Les détails sont dans `docs/survie-notes-contenu.md`.
 
-### Savoir-faire (13), passés (17), enfances (22), traits (32)
+### Savoir-faire (17), passés (17), enfances (24), traits (32)
 
-- **Savoir-faire**, gardés d'un abri à l'autre : électricité solaire, maraîchage tropical, plomberie et filtration, maçonnerie,
-  mécanique, premiers secours avancés, pêche au lagon et en rivière, élevage, conserverie et séchage, étaiement et galeries,
-  radio et transmissions, hydraulique rurale, zerbaz et tisanes. Chacun dit comment on l'acquiert (passé, livre trouvé, enseignement d'un PNJ,
-  chantier réussi) et ce qu'il permet.
+- **Savoir-faire**, gardés d'un abri à l'autre, dans deux arbres. *Moderne* : électricité solaire, maraîchage tropical,
+  plomberie et filtration, maçonnerie, mécanique, premiers secours avancés, étaiement et galeries, radio et transmissions,
+  hydraulique rurale, moteurs de fortune. *Lontan* : pêche au lagon et en rivière, élevage, conserverie et séchage, zerbaz et
+  tisanes, bambou, vacoa et vétiver, pierre sèche, jardin créole. Chacun dit comment on l'acquiert (passé, livre trouvé,
+  enseignement d'un PNJ ou d'une gramoune, cahier d'une gramoune, chantier réussi) et ce qu'il permet.
 - **Passés** (le métier du jour zéro) : infirmière du CHU, électricien, pêcheur de Saint-Gilles, planteur de canne, gendarme,
   étudiante, guide de canyon, mécanicien, cuisinier de camion-bar, retraité de la marine, agricultrice des Hauts, ambulancier,
   professeure de SVT, vendeur de bazar, chauffeur de car jaune, apiculteur, habitant d'un îlet de Mafate ; avec modificateurs,
   savoirs, équipement de départ, incapacités, accroche et phrases d'histoire.
 - **Enfances** (registre), réunionnaises et d'ailleurs : enfant des Hauts de Salazie, gamin du Port, fille de pêcheur de
   Saint-Pierre, enfance zoreil arrivée à dix ans, enfant de la cité à Saint-Denis, enfance à Mayotte, à Madagascar, à Maurice,
-  enfant de planteur de l'Est, d'un îlet de Mafate, du Tampon, de la côte Ouest, de Cilaos, enfance chinoise de Saint-Denis,
-  famille commerçante de Saint-Pierre, enfant de militaire, enfance en foyer, enfance protégée, enfant de la Plaine des
-  Cafres, enfance tamoule de Saint-André, enfance sur un bateau, enfant du Sud sauvage.
+  enfant d'une famille comorienne du Chaudron, enfant de planteur de l'Est, d'un îlet de Mafate, du Tampon, de la côte Ouest,
+  de Cilaos, enfance chinoise de Saint-Denis, famille commerçante de Saint-Pierre, enfant de militaire, enfance en foyer,
+  enfance protégée, enfant de la Plaine des Cafres, enfance yab des Hauts de l'Ouest, enfance tamoule de Saint-André, enfance
+  sur un bateau, enfant du Sud sauvage.
 - **Traits** (registre), aux noms originaux : Doigts de terre, Sang de basalte, La main qui ne frappe pas, Peur des voûtes,
   Rat de galerie, Levé avant le coq, Oiseau de nuit, Ventre sans fond, Mange comme un oiseau, Nuits blanches, Soleil dedans,
   Nuage noir, Cuir de cabri, Os de verre, Souffle court, Âme de pèlerin, Case à part, Cœur de kour, Tête de bois, Main
@@ -333,7 +362,7 @@ jour après trente jours ; des panneaux 2 / 4 / 6 kWh par jour et par point de s
   d'artichaut, La langue de tout le monde, Jambes de cabri, Vertige, Peur de la mer ; avec leurs effets (compétences, moral,
   fatigue, peurs, besoins, tâches, social) et leurs incompatibilités.
 
-### Équipement et véhicules (49), recettes (21), maladies et blessures (12)
+### Équipement et véhicules (65), recettes (31), maladies et blessures (12)
 
 - **Équipement** : 8 armes (sabre à canne, barre à mine, batte, lance de fortune, fusil-harpon, arc de chasse, arbalète de
   fortune, bouclier de tôle), 4 armes à feu (fusil de chasse calibre 12, carabine .22, pistolet de service, fusil d'assaut
@@ -341,12 +370,16 @@ jour après trente jours ; des panneaux 2 / 4 / 6 kWh par jour et par point de s
   lampe frontale, jumelles, matériel de canyon, collets et nasses, cloches d'alerte), 8 objets de vie (gourde filtrante,
   réchaud, sac de randonnée, tente et bâche, jerricans, moustiquaires, poêle de masse, chauffe-eau solaire), 2 de soin,
   3 de communication (talkies, radio à manivelle, radio marine), 2 d'énergie (panneaux démontables, batterie nomade), un
-  manuel trouvé, et **10 transports** : voiture, 4×4, camion plateau, scooter, vélo tout-terrain, vélo-cargo, kayak de mer,
-  barque à moteur, âne de bât, cheval de la Plaine des Cafres (places, charge, carburant par quart, terrains, bruit).
+  manuel trouvé et le cahier d'une gramoune, le **marché** (carnet de crédit, balance romaine, poinçon de marque), les objets
+  faits main (pinces à linge en bois fendu, sac, chaise et natte de vacoa, cordes de choka), le **chien du groupe**, et
+  **16 transports** : voiture, 4×4, camion plateau, scooter, vélo tout-terrain, vélo-cargo, kayak de mer, barque à moteur, âne
+  de bât, cheval de la Plaine des Cafres, charrette à bœufs, vélo à assistance électrique, scooter électrique, voiture
+  électrique, voiture à l'alcool de canne, camion à gazogène (places, charge, carburant ou énergie par quart, terrains, bruit).
 - **Recettes de l'atelier** : lance, arc et flèches, arbalète, bouclier, collets et nasses, cloches d'alerte, gourde
   filtrante, réchaud à bois, poêle de masse, chauffe-eau solaire, vélo-cargo, panneaux démontables, radio à manivelle,
   moustiquaires, munitions rechargées, alcool désinfectant, savon, pansements, tisanes et emplâtres, bocaux et boucané,
-  semences triées.
+  semences triées ; *lontan* : pinces à linge en bois fendu, sac, chaise et natte de vacoa, cordes de choka, rimèd lontan ; sans
+  carburant : alcool de canne, huile filtrée, moteur modifié pour l'alcool, gazogène sur un camion.
 - **Maladies et blessures** : dengue, chikungunya, leptospirose, gastro-entérite, gale, plaie infectée, tétanos, fracture,
   brûlure, piqûre de scolopendre, coup de chaleur, le choc d'une perte ; chacune avec son évolution, ses soins et sa
   prévention (eau traitée, moustiquaires, infirmerie).
@@ -364,16 +397,20 @@ jour après trente jours ; des panneaux 2 / 4 / 6 kWh par jour et par point de s
   (méfiante), le Dispensaire du Sud (amicale), les Sans-Lune (hostile) ; chacune avec sa croissance, ses régions, ce qu'elle
   veut, comment traiter avec elle, une **réputation** à paliers tenue par les horloges du moteur, et une table de demandes.
 
-### Les événements (49) et les tables du MJ (37)
+### Les événements (81) et les tables du MJ (55)
 
-- **Événements** (registre) : 16 de météo (pluies, cyclones, houle, sécheresse…), 4 de réseaux, 6 de hordes, 8 humains,
-  3 accidents, 4 à l'abri, 7 découvertes, 1 de fête ; la simulation en tire les effets simples (route coupée, stock perdu,
+- **Événements** (registre) : 17 de météo (pluies, cyclones, houle, sécheresse, arbres en travers…), 4 de réseaux, 6 de hordes,
+  10 humains, 4 accidents, 12 à l'abri, 12 découvertes, 15 de **marché** (tirés au bouton par le MJ, jamais par la simulation),
+  1 de fête ; la simulation en tire les effets simples (route coupée, stock perdu,
   infestation, horde, faction), le MJ raconte le reste, avec des indications quand l'événement touche l'abri du groupe.
 - **Tables** : rencontres par zone (littoral, Hauts, cirque, forêt, volcan) et par phase (jour zéro, panique, effondrement,
   silence, après), fouilles, complications, cyclones, rumeurs de la radio, appels radio, imprévus du camp, générateurs de
   rumeur, de site et de survivant, phrases d'histoire (le matin, un proche), prénoms et surnoms créoles, raisons et prix des
   recrues, une table de demandes par faction (8), une table par palier de visibilité (on parle de vous, éclaireurs, visite,
-  assaut).
+  assaut) ; le marché (ce qui se dit, les étals, les litiges au conseil, les messages des oratoires rouges) ; les savoirs (le
+  cyclone heure par heure, ce qu'il dépose dans la cour, les verrous de la route, les meutes, les livres trouvés, le jardin d'une
+  case, les paroles de gramoune, un chien errant veillée après veillée) ; l'esprit (les faux bruits de la nuit, les signes de
+  celui qui lâche, ce que le cyclone a déposé, l'enfant témoin, ce que dit le refusé, les ultimatums des chefs de bande).
 
 ### Les cartes (8) et les jetons
 
@@ -386,11 +423,17 @@ malade, chien…) pour animer un lieu.
 
 ## Les fêtes
 
-L'île fêtait beaucoup, et le camp aussi. **Onze fêtes** réunionnaises, chacune avec son journal illustré et sa ligne de
+L'île fêtait beaucoup, et le camp aussi. **Quinze fêtes** du métissage réunionnais, chacune avec sa page et sa ligne de
 contexte pour le narrateur (ce que la fête devient dans le monde d'après) : Noël sous les flamboyants, la Saint-Sylvestre et
 le jour de l'an, Pâques, la Toussaint et Halloween, la fête de la musique, le 20 décembre (fête de la liberté, abolition de
-l'esclavage), le 14 juillet, Dipavali, le Nouvel An chinois, le Cavadee, la fête des letchis. Une seule règle, jamais cachée :
-fêter redonne **1 de moral** à chacun, une fois par fête, au prix d'**une ration de plus** par personne. Les fêtes suivent la
+l'esclavage), le 14 juillet, Dipavali, le Nouvel An chinois, le Cavadee, la fête des letchis, et, propres à Fénoir, le mois de
+ramadan, l'Aïd el-Kebir, le Nouvel An tamoul et la marche sur le feu. Chaque fête a son **gain et son coût**, jamais cachés et
+jamais magiques : du moral, un souvenir qui soutient le groupe quelques jours, une recrue que le cadeau de Noël attache, le
+grand ménage du Nouvel An chinois contre les maladies, le sang-froid de la marche sur le feu ; et des rations, du bruit, de la
+lumière qui se voit de loin, du temps. Certaines demandent un choix (la musique ou le silence, qui fait un vœu, avec quel abri
+voisin on partage). Aller à la **fête des autres** tisse des liens avec une communauté et une faction, et use les préjugés des
+PNJ qui y voient le groupe ; un pratiquant gagne un peu plus à la fête de sa religion. Les chiffres :
+[`docs/equilibre-fetes.md`](docs/equilibre-fetes.md). Les fêtes suivent la
 **date de jeu** (réglage « Les fêtes suivent la date de jeu » : la carte du jour, le décor et la ligne du narrateur du MJ IA
 suivent le calendrier de Fénoir, pas celui de la vraie vie), et la fenêtre du MJ propose celle du jour.
 
@@ -403,9 +446,13 @@ avec une voix par bastion, un cours affiché, une **trêve**), et les **foires**
 Le **cours** dit ce que vaut chaque chose en parts. Les gens du marché viennent de toutes les communautés, avec leurs
 **préjugés** : un trait de chaque PNJ, qui pèse sur sa première confiance et s'use au contact, aux fêtes partagées et devant
 les faits ; le jeu les dément tous, et **aucune origine ne donne de bonus ni de malus**. Le **Ladi Lafé** (la rumeur) dit la
-réputation des autres, et il peut mentir. Les objets **marqués** se prouvent et se réclament ; les **oratoires rouges** du bord
+réputation des autres, et il peut mentir ; celui qui colporte du mal, qui ment, qui rompt la trêve ou joue d'un préjugé pour un
+prix glisse vers le rouge. Les objets **marqués** se prouvent et se réclament ; les **oratoires rouges** du bord
 des routes servent de boîtes à messages. Fenêtre du MJ et tableau de bord : onglet **Marché** ; le MJ : journal
 **Le marché et le Ladi Lafé** ; les chiffres : [`docs/equilibre-marche.md`](docs/equilibre-marche.md).
+
+Les chiffres d'équilibre des quatre lots du 2026-11-13 (fêtes, marché, savoirs, sens moral) et leurs mesures après fusion sont
+rassemblés dans [`docs/equilibre.md`](docs/equilibre.md) ; les jointures entre lots, dans `docs/survie-contrat.md` §15.
 
 ## Le MJ IA, en bref
 
@@ -488,7 +535,7 @@ ou IA) peut raconter dans n'importe quelle langue.
 
 ## Essais
 
-**257 essais** Node (`node --test`), sans Foundry, sans réseau ni coût, en quelques secondes, couvrent la logique pure du
+**416 essais** Node (`node --test`), sans Foundry, sans réseau ni coût, en quelques secondes, couvrent la logique pure du
 système (dés, état, temps et ressources, abri, actions, génération, simulation du monde sur 200 jours à graine fixe :
 rien de négatif, hordes dans des régions voisines, réseaux tombés dans leur fenêtre, décomposition des Bas après le jour 60,
 autonomie atteignable), ses textes localisés, le contenu (toutes les références résolues, chaque région atteignable de
@@ -497,7 +544,9 @@ traduction (dictionnaires complets, même monde en anglais), et la couche Foundr
 (`essais/doublures/foundry-survie.mjs`) : une partie complète (jour zéro, survivants tirés au générateur, installation,
 fouille, citerne et potager, trente jours, assaut, atelier, maladie, fête, recrue, déménagement), le secret qui ne fuit
 jamais vers les joueurs (réglages, chat, état public, socket), le scellement et la réouverture du coffre, la garde d'écriture
-hors du MJ actif, et des batteries de mutations (chaque règle clé cassée doit être détectée).
+hors du MJ actif, les lots du 2026-11-13 (la lune et les fêtes, la relève et l'autel, le marché et ses préjugés, les deux savoirs
+et le cyclone vécu, l'esprit et le sens moral) et leurs jointures, des bornes d'équilibre tenues par le simulateur de parties,
+et des batteries de mutations (chaque règle clé cassée doit être détectée).
 
 ```bash
 npm run essais               # tous les essais du dépôt
@@ -522,7 +571,8 @@ outils/                       fabriquer-fenoir.mjs (contenu, compendiums, traduc
                               fabriquer-jetons-fenoir.mjs (jetons SVG), valider-modeles.mjs, empaqueter-paquets.mjs (archives)
 essais/                       les essais Node de ce dépôt, avec leur doublure de Foundry
 docs/                         survie-contrat.md (le contrat entre les pièces), survie-notes-logique.md, survie-notes-contenu.md,
-                              publication.md, captures/
+                              equilibre.md et equilibre-{fetes,marche,savoirs,moral}.md (les chiffres et leurs raisons),
+                              metissage.md, publication.md, captures/
 TUTORIEL.md, TUTORIAL.md      le tutoriel « de zéro à la première journée de survie », en français et en anglais
 .github/workflows/            release.yml : publication sur étiquette v*
 ```

@@ -1,5 +1,98 @@
 # Équilibre de Fénoir
 
+## Les quatre lots du 2026-11-13 et leur fusion
+
+Les chiffres de chaque lot et leurs raisons sont dans leur propre fichier (gardés tels que leurs auteurs les ont écrits) :
+
+| Lot | Fichier | Ce qu'il règle | Contrat |
+|---|---|---|---|
+| Fêtes, lune, relève, autel | [`equilibre-fetes.md`](equilibre-fetes.md) | la lune et la nuit, la chaleur, le gain et le coût de chaque fête, les liens chez les autres, la mort, le deuil, le repos, l'autel, la relève et les jeunes de 16 à 18 ans | §11 |
+| Marché, carnet, préjugés, Ladi Lafé | [`equilibre-marche.md`](equilibre-marche.md) | la part, le cours, la première confiance, l'usure des préjugés, le carnet de crédit, le marché forain, la trêve, l'accueil, la rumeur | §12 |
+| Les deux savoirs, l'île en mouvement | [`equilibre-savoirs.md`](equilibre-savoirs.md) | les sœurs lontan, les gramounes, livres et cahiers, jardins et boutures, le gaz et l'eau chaude, le cyclone vécu, les chiens, les routes sans carburant | §13 |
+| L'esprit, le sens moral, l'autorité | [`equilibre-moral.md`](equilibre-moral.md) | le tirage de l'esprit, l'esprit au jour le jour, les actes moraux, la porte, les chefs | §14 |
+
+La fusion (branche `fusion-lots`) n'ajoute **aucun chiffre** : elle branche les lots entre eux avec des règles qui existaient
+déjà (contrat §15) : le marché fait porter des actes moraux (colporter, mentir, attaquer), la fête des autres use les
+préjugés, les jeunes ne mènent pas et votent à moitié, les gramounes et les gens du marché ont un esprit, chaque religion a ses
+fêtes. Rien de cela ne joue dans le simulateur (il ne troque pas, ne vote pas et ne recrute pas de gramoune).
+
+### Mesures après fusion (2026-11-13)
+
+Même code de mesure des deux côtés : `node essais/outils/simuler-parties.mjs --parties 300 --graine <g>` (300 parties de
+200 jours par cas, 16 cas, 4 800 parties), joué sur `principale` (3c8c750) et sur `fusion-lots`, graines 1 et 2.
+
+**Vivants à J200** (graine 1 | graine 2) :
+
+| Cas | `principale` | fusion |
+|---|---|---|
+| passif × 1 | 14 % \| 13 % | 14 % \| 18 % |
+| passif × 2 | 12 % \| 12 % | 15 % \| 17 % |
+| passif × 4 | 11 % \| 13 % | 14 % \| 15 % |
+| passif × 6 | 10 % \| 8 % | 13 % \| 14 % |
+| nomade × 1 | 55 % \| 57 % | 58 % \| 57 % |
+| nomade × 2 | 76 % \| 71 % | 74 % \| 78 % |
+| nomade × 4 | 82 % \| 88 % | 85 % \| 88 % |
+| nomade × 6 | 79 % \| 80 % | 86 % \| 81 % |
+| enraciné × 1 | 61 % \| 56 % | 54 % \| 54 % |
+| enraciné × 2 | 71 % \| 69 % | 72 % \| 68 % |
+| enraciné × 4 | 83 % \| 83 % | 84 % \| 81 % |
+| enraciné × 6 | 89 % \| 90 % | 89 % \| 88 % |
+| mixte × 1 | 58 % \| 60 % | 59 % \| 60 % |
+| mixte × 2 | 76 % \| 78 % | 69 % \| 74 % |
+| mixte × 4 | 85 % \| 84 % | 82 % \| 83 % |
+| mixte × 6 | 83 % \| 82 % | 83 % \| 84 % |
+
+**Autres écarts** (graine 1 | graine 2, `principale` → fusion) :
+
+- **Autonomie** : l'enraciné × 4 l'atteint moins souvent (76 % → 71 % | 76 % → 67 %), le mixte × 4 aussi (38 % → 28 % |
+  38 % → 34 %) ; les passifs plus souvent (× 4 : 28 % → 35 % | 29 % → 35 %).
+- **Première faim** de l'enraciné seul bien plus tard (médiane J21 → J78 | J21 → J65).
+- **Assauts sérieux par mois après J30** de l'enraciné × 4 un peu moins nombreux (2,71 → 2,48 | 2,82 → 2,60) ; Hauts contre Bas
+  après J90 inchangé dans son sens (Hauts 3,31 → 3,15 assauts par mois, Bas 2,11 → 2,09, graine 1).
+- **Fins par « départ de tous »** (règle du simulateur : un survivant à moral 0 cinq jours de suite, sans faim, s'en va) plus
+  fréquentes dans presque tous les cas, sur 300 parties : nomade × 4 2 → 12 | 4 → 13, nomade × 2 4 → 11 | 4 → 12, enraciné × 2
+  2 → 7 | 1 → 8, mixte × 2 1 → 7 | 2 → 5. Sans doute l'esprit du lot moral (celui qui lâche, le regard éteint), qui pousse
+  quelques survivants au fond quand le reste du groupe tient mieux ; la cause n'est pas isolée ici (lot par lot).
+- Les écarts de deux à quatre points changent de sens d'une graine à l'autre (le bruit du tirage, ± 3 points sur 300 parties) ;
+  ceux qui tiennent sur les deux graines : passifs +2 à +6, autonomie de l'enraciné × 4 −5 à −9, première faim de l'enraciné
+  seul repoussée, plus de départs, enraciné seul −2 à −7.
+
+**La borne du nomade** (`essais/survie-equilibre.test.mjs` : 20 parties, graine « 1 », au plus 95 % de vivants à J200, au
+moins la moitié des fins après J90) rejouée sur 40 tirages (graines 1 à 40, 20 parties chacune, mêmes bornes) :
+
+| | Vivants à J200 (800 parties) | Tirages hors des bornes | Pourquoi |
+|---|---|---|---|
+| `principale` | 680/800 (85 %) | 2/40 | deux tirages où les deux fins tombent avant J90 |
+| fusion | 708/800 (89 %) | 4/40 | trois tirages à 20/20 vivants (au-dessus de 95 %), un où la seule fin tombe avant J90 |
+
+L'essai (graine « 1 ») passe : 17/20. Mais un tirage sur dix environ tomberait hors de la borne de 95 % si la graine de l'essai
+changeait : le nomade × 4 survit mieux après la fusion (85 % → 89 % sur ces 800 parties ; le lot moral seul le mesurait à 91 %
+sur 300 parties, graine 2). **À trancher par Jordan**, sans retouche ici : garder ce surcroît (le moral « central », voulu) et
+desserrer la borne (0,95 → 1, ou mesurer sur 100 parties), ou ramener le nomade vers 85 % (les leviers sont dans
+`equilibre-moral.md` § 6).
+
+**Parties longues** (`node essais/outils/parties-longues.mjs --graines 40`, 11 scénarios × 40 graines, 365 jours) :
+
+| Scénario | Médiane | Vivants à J365 | Autonomes (jour médian) | Brèches par partie |
+|---|---|---|---|---|
+| sedentaire-4 | J180 → J226 | 9/40 → 14/40 | 15 (J66) → 14 (J61) | 3.05 → 2.03 |
+| sedentaire-2 | J166 → J147 | 12/40 → 10/40 | 14 (J11) → 15 (J11) | 2.65 → 2.1 |
+| seul-enracine | J232 → J246 | 9/40 → 11/40 | 24 (J8) → 26 (J12) | 1.95 → 2.05 |
+| seul-sedentaire | J118 → J134 | 8/40 → 10/40 | 17 (J7) → 18 (J7) | 2.6 → 2.2 |
+| seul-nomade | J249 → J365 | 13/40 → 20/40 | 0 (J—) → 0 (J—) | 1.9 → 1.6 |
+| compagnons | J365 → J365 | 24/40 → 25/40 | 24 (J61) → 22 (J50) | 2.7 → 2.23 |
+| humains-4 | J365 → J321 | 26/40 → 19/40 | 26 (J62) → 29 (J62) | 2.85 → 3.03 |
+| recrues | J273 → J355 | 11/40 → 18/40 | 21 (J39) → 23 (J56) | 2.08 → 2.25 |
+| sans-recrues | J249 → J302 | 14/40 → 16/40 | 25 (J37) → 24 (J37) | 2.1 → 1.9 |
+| nomade-4 | J280 → J365 | 10/40 → 20/40 | 0 (J—) → 3 (J72) | 2.55 → 2.33 |
+| mixte-4 | J365 → J365 | 24/40 → 25/40 | 20 (J105) → 14 (J95) | 2.35 → 2.25 |
+
+Aucune anomalie relevée par les contrôles du jour, avant comme après (valeurs impossibles, impasses, chantiers bloqués, textes
+sans clé ou sans traduction). Sur un an, le **nomade × 4 ne finit plus par manquer** comme avant : 10/40 → 20/40 vivants à J365
+(médiane J280 → J365 ; le commentaire de l'essai d'équilibre disait « 9/40 vivants à J365 ») ; le nomade seul aussi (13/40 →
+20/40) et les recrues (11/40 → 18/40) ; les humains × 4 enracinés, eux, reculent (26/40 → 19/40, médiane J365 → J321). Sur 40
+graines, le bruit est de ± 3 parties environ : ces écarts-là le dépassent. **À trancher par Jordan** (rien n'a été retouché).
+
 ## Médicaments et zerbaz (appliqué le 2026-11-05, après la section suivante)
 
 Constat (section suivante, « Reste ouvert ») : l'infection tue d'abord les survivants seuls ; la morsure est « difficile » avec
