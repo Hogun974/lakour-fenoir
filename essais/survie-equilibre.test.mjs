@@ -11,7 +11,8 @@
 // médicinales, tisanes, décoction et trousse pour une morsure. Mesures entre chevrons : avant ces ajouts.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { simuler, mesurer, jouerPartie, chargerContenu, PARTIES_RAPIDE } from "./outils/simuler-parties.mjs";
+import { simuler, mesurer, jouerPartie, chargerContenu, PARTIES_RAPIDE, scoreSiteEnracine, scoreSiteNomade, STOCKS_NON_JOUES } from "./outils/simuler-parties.mjs";
+import * as L from "../systems/lakour-survie/logique/index.mjs";
 
 const CAS = "passif-4,nomade-4,enracine-4,enracine-1";
 const resultats = await simuler({ parties: PARTIES_RAPIDE, graine: "1", cas: CAS, fils: 4 });
@@ -72,4 +73,18 @@ test("équilibre : même graine, même partie (le simulateur est déterministe)"
   const options = { strategie: "mixte", membres: 2, region: "saint-leu", graine: "determinisme", jours: 60 };
   const a = jouerPartie(contenu, options), b = jouerPartie(contenu, options);
   assert.deepEqual({ ...a, journal: undefined }, { ...b, journal: undefined });
+});
+
+test("simulateur (rééquilibrage du 2026-11-13) : ce qu'il ne joue pas ne fait pas choisir un site ; il donne le repos à ses morts", () => {
+  const contenu = chargerContenu();
+  const idx = L.indexer(contenu);
+  // Les 13 kg de gaz sous l'évier faisaient passer une maison devant un meilleur site (première faim de l'enraciné seul J21 → J78).
+  const region = idx.regions.get("saint-denis"), site = idx.sites.get("maison-du-brule");
+  assert.ok(Number(site.stocks.gaz) > 0, "la maison a du gaz");
+  const sans = { ...site, stocks: Object.fromEntries(Object.entries(site.stocks).filter(([r]) => !STOCKS_NON_JOUES.includes(r))) };
+  assert.equal(scoreSiteEnracine(site, region, 1), scoreSiteEnracine(sans, region, 1));
+  assert.equal(scoreSiteNomade(site, region), scoreSiteNomade(sans, region));
+  // Le deuil (plafond du moral −1 pour tous) ne pèse plus jusqu'à la fin de la partie : le soir, à l'abri, on donne le repos.
+  const morts = resultats.filter(r => r.strategie !== "passif");
+  assert.ok(morts.reduce((t, r) => t + r.repos, 0) > 0, "des morts ont reçu le repos");
 });

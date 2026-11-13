@@ -41,7 +41,9 @@
 // - un jour de départ (ou de changement de site) est un jour de jeu comme un autre : le temps passe, sans travail ;
 // - arrivé dans une région dont tous les sites sont occupés, le groupe repart plus loin ; sans site ni route, la partie s'arrête
 //   (fin « impasse », pas « vivants ») ;
-// - l'enraciné ne construit une installation qui mange (chiens de garde) que sur un surplus de nourriture produite.
+// - l'enraciné ne construit une installation qui mange (chiens de garde) que sur un surplus de nourriture produite ;
+// - rééquilibrage du 2026-11-13 (docs/equilibre.md) : le soir, à l'abri, le groupe donne le repos à ses morts retrouvés (lot
+//   « fetes ») ; le gaz, les boutures et le biocarburant, qu'il ne joue pas, ne comptent pas dans le choix d'un site.
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -110,6 +112,11 @@ const arrondi = (x, n = 1) => Math.round(x * 10 ** n) / 10 ** n;
 const pct = (n, d) => (d ? `${Math.round((100 * n) / d)} %` : "—");
 
 const EAU_SCORE = { source: 5, riviere: 5, puits: 3.5, citerne: 0, reseau: 1.5, aucune: 0 };
+// Ce que le simulateur ne joue pas (lot « savoirs » : il ne cuisine pas au gaz, ne repique pas, ne roule pas à l'alcool) ne pèse
+// pas dans le choix d'un site : les 13 kg de gaz sous l'évier des cases faisaient passer une maison devant un meilleur site
+// (rééquilibrage du 2026-11-13, docs/equilibre.md).
+export const STOCKS_NON_JOUES = ["gaz", "boutures", "biocarburant"];
+const stocksDuSite = site => somme(Object.entries(site.stocks ?? {}).filter(([r]) => !STOCKS_NON_JOUES.includes(r)).map(([, q]) => Number(q) || 0));
 
 // Le meilleur site pour s'enraciner (eau d'abord, sol, soleil, discrétion, ce qui existe déjà), avec ses contraintes.
 export function scoreSiteEnracine(site, region, membres) {
@@ -117,7 +124,7 @@ export function scoreSiteEnracine(site, region, membres) {
   if (membres >= 5 && !["source", "riviere"].includes(site.eau)) s -= 2;
   s += Number(site.sol ?? 0) * 1.2 + Number(site.soleil ?? 0) * (Number(region.climat?.soleil ?? 1) / 3);
   s += Number(site.discretion ?? 0) + Number(site.defense ?? 0) * 0.5 + (site.installationsDepart?.length ?? 0) * 1;
-  s += Number(site.souterrain ?? 0) * 0.3 + Math.min(3, somme(Object.values(site.stocks ?? {}).map(Number)) / 60);
+  s += Number(site.souterrain ?? 0) * 0.3 + Math.min(3, stocksDuSite(site) / 60);
   const nature = L.natureRegion(region);
   s += (nature.cueillette.parJour + nature.peche.parJour + nature.gibier.parJour) * 0.4;
   if (Number(site.capacite ?? 0) < membres) s -= 2;
@@ -126,7 +133,7 @@ export function scoreSiteEnracine(site, region, membres) {
 }
 // Le site d'un nomade ou d'un passif : sûr, discret, avec des stocks.
 export function scoreSiteNomade(site, region, visites = []) {
-  const stocks = somme(Object.values(site.stocks ?? {}).map(Number));
+  const stocks = stocksDuSite(site);
   return Number(site.defense ?? 0) + Number(site.discretion ?? 0) + stocks / 20 + (EAU_SCORE[site.eau] ?? 0) * 0.3 + (site.installationsDepart?.length ?? 0) * 0.3
     - (visites.includes(site.cle) ? 3 : 0);
 }
@@ -173,7 +180,9 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     impasse: null, fetes: 0, rencontres: 0, evitees: 0, installations: 0, mortsApres90: 0, fuites: 0, fouillesMaigres: 0, premiereFaim: null,
     // Remèdes (2026-11-05) : morsures (aidées : médicament, décoction, trousse ou infirmerie ; soignées : test réussi), trousses trouvées en
     // fouillant, plantes cueillies, tisanes réussies, jours d'abri avec au moins un médicament.
-    morsures: 0, morsuresAidees: 0, morsuresSoignees: 0, trousses: 0, plantes: 0, tisanes: 0, joursAvecMedicament: 0
+    morsures: 0, morsuresAidees: 0, morsuresSoignees: 0, trousses: 0, plantes: 0, tisanes: 0, joursAvecMedicament: 0,
+    // Lot « fetes » (rééquilibrage du 2026-11-13) : morts à qui le groupe a donné le repos.
+    repos: 0
   };
   let fouillesMaigres = 0;
   let actionsDuJour = [];
@@ -529,6 +538,18 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     }
   };
 
+  // ---- le repos des morts (lot « fetes », rééquilibrage du 2026-11-13) : le soir, à l'abri, un groupe raisonnable donne le repos
+  // à ses morts retrouvés (une courte cérémonie, REGLES_REPOS). Sans elle, le deuil (plafond du moral −1 pour tous) pesait
+  // jusqu'à la fin de la partie : le simulateur fête la Toussaint avec l'effet du socle, qui ne donne pas le repos.
+  const donnerLeRepos = jour => {
+    if (!abri) return;
+    for (const m of etat.morts ?? []) {
+      if (!m.retrouve || m.repos) continue;
+      const r = L.donnerRepos(etat, m.id, { jour });
+      if (r.ok) { etat = r.etat; stats.repos++; noter(jour, `donne le repos à ${m.nom}`); }
+    }
+  };
+
   // ---- fêtes.
   const feterSiFete = jour => {
     if (!abri) return;
@@ -744,6 +765,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     // Soir : soins, fête.
     const stabilises = soigner(jour, h);
     preparerTisane(jour, h);
+    donnerLeRepos(jour);
     feterSiFete(jour);
 
     // La journée passe.
