@@ -5,6 +5,26 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Système 0.2.1 · Contenu 0.3.1 — 13 novembre 2026
+
+Rééquilibrage après les quatre chantiers de la 0.2.0, mesuré sur 300 parties par cas et trois graines, et sur 240 parties d'un an.
+
+- **L'esprit tient, sans tout porter** :
+  - celui qui lâche ne s'enfonce plus qu'au fond (moral 0) : à 1, le repas le remonte encore ;
+  - le non-pratiquant se raccroche à ce qui le fait tenir une fois toutes les deux semaines, quand il touche le fond, et non plus
+    chaque semaine dès 1.
+- **Le glanage de passage** rapporte un peu moins (0,055 au lieu de 0,06) : avec l'esprit, le nomade tenait mieux qu'avant.
+- **Le marché n'est plus une rente** :
+  - les plantes valent 2 parts (et non 1) et suivent les médicaments dans la crise : une tisane rapporte le prix d'un travail ;
+  - les pansements de fortune demandent 3 quarts au lieu d'un ;
+  - les objets de confort comptent par points entiers (deux objets pour +1), et les pinces à linge pour un quart.
+- **Correction de texte** : celui qui lâche ne mange pas une demi-ration, mais le repas ne lui rend plus de moral (guide du
+  joueur, fr et en).
+- **Le simulateur d'équilibre** joue mieux les nouveautés : il donne le repos à ses morts, et le gaz sous l'évier ne lui fait plus
+  choisir une maison plutôt qu'un bon site.
+- Les mesures (avant les chantiers, après la fusion, après le rééquilibrage) sont dans `docs/equilibre.md`, section
+  « Rééquilibrage du 2026-11-13 ».
+
 ## Système 0.2.0 · Contenu 0.3.0 — 13 novembre 2026
 
 Quatre chantiers tirés du remue-méninges de Fénoir 3D, validés par l'auteur pour le jeu de rôle.

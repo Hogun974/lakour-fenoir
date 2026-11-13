@@ -423,7 +423,7 @@ test("créatures au registre (famille lue par la logique du système) et bras de
 
 test("module.json : compendiums, langues, dossier de compendiums", () => {
   const m = JSON.parse(readFileSync(new URL("module.json", RACINE), "utf8"));
-  assert.equal(m.id, MODULE); assert.equal(m.version, "0.3.0");
+  assert.equal(m.id, MODULE); assert.equal(m.version, "0.3.1");
   assert.deepEqual(m.compatibility, { minimum: "14", verified: "14.370" });
   assert.equal(m.relationships.systems[0].id, "lakour-survie");
   assert.deepEqual(m.esmodules, ["scripts/main.js"]);
