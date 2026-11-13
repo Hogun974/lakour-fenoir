@@ -1,0 +1,36 @@
+{
+  "_id": "VPX4NAJ9P5XDCfKL",
+  "_key": "!items!VPX4NAJ9P5XDCfKL",
+  "name": "Balance romaine",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "balance-romaine",
+    "categorie": "outil",
+    "description": "<p>Un fléau d'acier, un crochet, un poids qui coulisse : la balance des boutiques et des marchés d'avant. On pèse devant tout le monde, deux fois s'il le faut, et l'on discute moins.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "balance-romaine"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

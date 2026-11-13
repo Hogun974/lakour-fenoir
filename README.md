@@ -383,6 +383,19 @@ fêter redonne **1 de moral** à chacun, une fois par fête, au prix d'**une rat
 **date de jeu** (réglage « Les fêtes suivent la date de jeu » : la carte du jour, le décor et la ligne du narrateur du MJ IA
 suivent le calendrier de Fénoir, pas celui de la vraie vie), et la fenêtre du MJ propose celle du jour.
 
+## Le marché
+
+Pas de monnaie : on **troque**, et le marché naît au fil de la partie, en quatre stades : le troc de la main à la main, la
+**boutique** d'un commerçant resté dans son quartier et son **carnet de crédit** (on prend, on rend plus tard ; une dette qui
+traîne se sait ; le carnet se solde au Nouvel An chinois), le **marché forain** (un jour fixe, un terrain à personne, un conseil
+avec une voix par bastion, un cours affiché, une **trêve**), et les **foires** de saison (les lentilles de Cilaos en octobre…).
+Le **cours** dit ce que vaut chaque chose en parts. Les gens du marché viennent de toutes les communautés, avec leurs
+**préjugés** : un trait de chaque PNJ, qui pèse sur sa première confiance et s'use au contact, aux fêtes partagées et devant
+les faits ; le jeu les dément tous, et **aucune origine ne donne de bonus ni de malus**. Le **Ladi Lafé** (la rumeur) dit la
+réputation des autres, et il peut mentir. Les objets **marqués** se prouvent et se réclament ; les **oratoires rouges** du bord
+des routes servent de boîtes à messages. Fenêtre du MJ et tableau de bord : onglet **Marché** ; le MJ : journal
+**Le marché et le Ladi Lafé** ; les chiffres : [`docs/equilibre-marche.md`](docs/equilibre-marche.md).
+
 ## Le MJ IA, en bref
 
 Le module `lakour-mj-ia` apporte un **meneur IA** (Claude ou ChatGPT, avec votre propre clé, rangée dans votre navigateur

@@ -15,7 +15,7 @@
 import { verifierContenu, liste } from "../logique/contenu.mjs";
 
 export const FAMILLES_LISTES = ["regions", "sites", "routes", "installations", "savoirs", "factions", "evenements", "passes", "equipements",
-  "recettes", "afflictions", "bestiaire", "creatures", "enfances", "traits", "visibilite", "camp", "fetes"];
+  "recettes", "afflictions", "bestiaire", "creatures", "enfances", "traits", "visibilite", "camp", "fetes", "communautes", "marchands", "marches", "foires"];
 
 // Les lieux d'abri que recouvre chaque peur (type de site, clé ou catégorie d'installation, generation.mjs lieuxAbri).
 export const LIEUX_DES_PEURS = {

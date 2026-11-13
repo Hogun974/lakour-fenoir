@@ -328,3 +328,6 @@
 #lakour-survie-bandeau .sb-nuit.clarte-0 { color: #9aa3b5; }
 #lakour-survie-bandeau .sb-nuit.clarte-3 { color: #f5e6b3; }
 #lakour-survie-bandeau .sb-chaleur { color: #f3a46b; }
+/* Le marché (onglet Marché de la fenêtre du MJ, tableau de bord) : une dette qui traîne, la vérité d'une rumeur (MJ seul). */
+.lakour-survie .survie-alerte { color: #ffb3a8; font-weight: 600; }
+.lakour-survie .survie-secret { color: #c9a7ff; font-style: italic; }

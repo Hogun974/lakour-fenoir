@@ -11,8 +11,9 @@ const TOUTES = [...PHASES];
 const APRES_CHUTE = ["effondrement", "silence", "apres"];
 const ZONES_TOUTES = ["littoral", "hauts", "cirque", "volcan", "foret"];
 
-function evenement({ cle, nom, type, phases = TOUTES, zones = ZONES_TOUTES, saisons = ["pluies", "seche"], poids = 1, public: pub = true, texte, effets = {} }) {
-  return { cle, nom, type, phases, zones, saisons, poids, public: pub, texte: html(texte), effets };
+// stades (événements de marché seulement) : les stades du marché où il peut tomber (systems/lakour-survie/logique/marche.mjs).
+function evenement({ cle, nom, type, phases = TOUTES, zones = ZONES_TOUTES, saisons = ["pluies", "seche"], poids = 1, public: pub = true, texte, effets = {}, stades = null }) {
+  return { cle, nom, type, phases, zones, saisons, poids, public: pub, texte: html(texte), effets, ...(stades ? { stades } : {}) };
 }
 
 export const EVENEMENTS = [
@@ -190,6 +191,58 @@ export const EVENEMENTS = [
   evenement({ cle: "cabris-marrons", nom: "Des cabris marrons", type: "decouverte", zones: ["hauts", "cirque", "volcan"], poids: 1,
     texte: `Un petit troupeau de cabris échappés d'une ferme broute sur une pente : de quoi commencer un élevage, si l'on sait les attraper.`,
     effets: { nature: { gibier: 0.3 } } }),
+
+  // ---------------------------------------------------------------- Marché (contenu/marche.mjs, logique marche.mjs)
+  // La simulation du monde ne les tire jamais : le système en tire un les jours de marché (evenementDeMarche), le MJ le joue.
+  // Chaque préjugé dit au marché est démenti par les faits, dans le ton d'une kour : on se chambre, on se méfie, on finit par
+  // partager le cari. effets.dementi : la communauté dont un préjugé tombe d'un cran chez les PNJ qui le portent, quand le MJ
+  // joue la scène ; effets.cours : ce que le conseil ajoute au cours ce jour-là (en parts) ; effets.rumeur : « fausse » (une
+  // rumeur malveillante court), effets.objet, effets.litige, effets.treve : des scènes pour le MJ, sans effet automatique.
+  evenement({ cle: "marche-le-carnet-ouvert", nom: "Le carnet ouvert", type: "marche", phases: APRES_CHUTE, poids: 2, public: false, stades: ["boutique", "forain"],
+    texte: `Un client à qui Madame Thiaw-Kine vient de refuser une ardoise (il doit déjà trois sacs de riz depuis deux mois) crie dans la file : « *Sinwa i fé crédi k'a son moun !* » (le Chinois ne fait crédit qu'aux siens). La boutiquière ne répond rien. Elle pose le carnet bleu sur le comptoir, l'ouvre, et lit les noms à voix haute : Payet, Narayanin, Ahamada, Hoarau, Lefèvre, Rakotomalala, Grondin… deux cents noms, trois chinois. Puis elle lit le nom de celui qui crie, et ce qu'il doit. Dans la file, une vieille murmure que sans ce carnet, ses petits n'auraient pas mangé en janvier. Le client s'en va. Le lendemain, il revient rendre un sac.`,
+    effets: { dementi: "chinois" } }),
+  evenement({ cle: "marche-la-radio-du-zoreil", nom: "La radio du Zoreil", type: "marche", phases: APRES_CHUTE, poids: 2, public: false, stades: ["forain", "foire"],
+    texte: `Deux fermiers ricanent devant l'étal de Thomas Lefèvre : « *zorey i koné rien fé isi* » (le Zoreil ne sait rien faire ici), il ne sait même pas planter un piquet de chouchou. Au même moment, le poste de la Coopérative crachote, et la voix d'Ophélie Turpin annonce une horde sur la route des Plaines, assez tôt pour qu'on rentre les bêtes. Le poste, c'est lui qui l'a réparé, comme ceux des Barques, du Dispensaire et des îlets. Les deux fermiers lui apportent leur vieux talkie le samedi suivant, et un sac de pommes de terre pour la peine.`,
+    effets: { dementi: "zoreils" } }),
+  evenement({ cle: "marche-les-lentilles-du-yab", nom: "Les lentilles du Yab", type: "marche", phases: APRES_CHUTE, poids: 2, public: false, stades: ["forain", "foire"],
+    texte: `« *Yab i désann jamé dann ba* » (le Yab ne descend jamais de ses Hauts), répète un jeune du Port en cherchant des lentilles de Cilaos, introuvables d'après lui. Derrière lui, Jean-Marie Dijoux pose son sac de jute, quatre heures de marche dans les jambes, comme chaque semaine depuis le jour zéro. Les meilleures lentilles de l'île, petites et brunes. Il les troque au cours, pas une part de plus, et repart avant la nuit en marmonnant que « *moun anba i vé tout pou rien* » (les gens d'en bas veulent tout pour rien). Le jeune du Port l'aide à recharger son sac. Ni l'un ni l'autre ne s'excuse ; ils se reverront samedi.`,
+    effets: { dementi: "yabs" } }),
+  evenement({ cle: "marche-les-dettes-effacees", nom: "Les dettes effacées", type: "marche", phases: APRES_CHUTE, saisons: ["pluies"], poids: 1, public: false, stades: ["boutique", "forain"],
+    texte: `Le cyclone est passé la semaine dernière. Au marché, on dit qu'Ismaël Omarjee va faire payer double, « dur en affaires » comme il est. Il arrive avec son petit carnet, l'ouvre sur l'étal, et raye une à une les dettes des familles qui ont tout perdu : la case de la ravine, le hangar des Payet, la barque du vieux Grondin. Il ne dit pas un mot ; il discute ensuite le prix d'un rouleau de fil de fer pendant dix minutes, par principe. (Si le groupe doit quelque chose à un carnet et a souffert du cyclone, le MJ peut effacer sa dette : remise au Nouvel An ou tout de suite.)`,
+    effets: { dementi: "zarabes", remise: true } }),
+  evenement({ cle: "marche-la-tisaneuse", nom: "La tisaneuse", type: "marche", phases: APRES_CHUTE, poids: 2, public: false, stades: ["forain", "foire"],
+    texte: `Un enfant tombe en pleine fièvre entre deux étals. Sa mère refuse d'abord qu'on l'approche de Madame Moutoussamy : « à cause du service », on dit qu'elle fait des choses la nuit. Lalao Rasoanaivo elle-même recule d'un pas : « *mi tous pa so tizan, na in servis ladan* » (je ne touche pas à ses tisanes, il y a un service dedans). La vieille tisaneuse ne demande rien à personne : elle mouille un linge, fait boire l'enfant à petites gorgées, sort un paquet de papier journal. La fièvre tombe avant la fin du marché. Elle a soigné ce mois-ci un catéchiste, deux Z'arabes, un Zoreil et la moitié du conseil, sans jamais demander qui croyait en quoi.`,
+    effets: { dementi: "malbars" } }),
+  evenement({ cle: "marche-l-objet-rapporte", nom: "L'objet rapporté", type: "marche", phases: APRES_CHUTE, poids: 2, public: false, stades: ["forain"],
+    texte: `Depuis trois marchés, le conseil cherche la caisse à outils marquée des trois encoches de la Coopérative, disparue un samedi. Le président Gérard Payet a son idée : « *dopi zot la arivé, tout i disparé* » (depuis qu'ils sont arrivés, tout disparaît), et il regarde les derniers arrivés, comoriens et mahorais. Ce matin, Soilihi Ahamada pose la caisse sur la table du conseil : il l'a trouvée dans le coffre d'un pick-up, derrière l'étal d'un marchand de passage qui a filé. La marque ne ment pas. Gérard Payet se lève, et dit devant tous qu'il s'est trompé. Ce n'est pas facile, à soixante ans ; il le fait quand même.`,
+    effets: { dementi: "comoriens", objet: "marque" } }),
+  evenement({ cle: "marche-le-porteur-du-cirque", nom: "Le porteur du cirque", type: "marche", phases: APRES_CHUTE, poids: 1, public: false, stades: ["forain", "foire"],
+    texte: `Monsieur de Sainte-Croix, appuyé sur sa canne, ressort devant un étal la vieille rengaine de son grand-père sur les Cafres et la paresse. Le silence tombe. C'est Mémé Lucette, ou n'importe qui du conseil, qui répond devant tout le marché : la hotte de bambou qui vient de passer, trente kilos de riz et de médicaments pour les îlets, c'est Rosaire Fontaine qui la porte, à dos d'homme, par le sentier Scout, deux fois par semaine depuis le jour zéro. Personne d'autre n'a voulu le faire. Le vieil homme se tait. La semaine suivante, il donne à Rosaire une paire de chaussures de marche qui ne lui servent plus. Rosaire les prend, et lui dit, pour être juste, qu'il pensait lui aussi que « *gro blan i gard la tèr* » (les gros blancs gardent la terre).`,
+    effets: { dementi: "cafres" } }),
+  evenement({ cle: "marche-le-terrain-ouvert", nom: "Le terrain ouvert", type: "marche", phases: APRES_CHUTE, poids: 1, public: false, stades: ["forain"],
+    texte: `« *Gro blan i gard la tèr* » (le gros blanc garde la terre), disent les anciens en passant devant la varangue de Monsieur de Sainte-Croix. Ce jour-là, le conseil cherche un terrain neuf, l'ancien étant trop exposé : c'est lui qui se lève et propose sa prairie, entre la route et la ravine, ouverte à tous, pour rien, « tant que le marché tient ». Il demande seulement qu'on laisse ses manguiers tranquilles. Les anciens grommellent qu'il cache quelque chose. Il ne cache rien ; il est seul, et il aime entendre du monde le samedi.`,
+    effets: { dementi: "gros-blancs" } }),
+  evenement({ cle: "marche-le-litige", nom: "Le litige des cabris", type: "marche", phases: APRES_CHUTE, poids: 2, public: false, stades: ["forain", "foire"],
+    texte: `Deux bastions se disputent trois cabris : l'un les a perdus pendant l'orage, l'autre les a trouvés dans sa ravine et nourris un mois. On porte le litige au conseil, une voix par bastion. Le président Gérard Payet, qu'on dit « faire passer ses amis d'abord », donne sa voix à l'inconnu contre son propre cousin, parce que le mois de fourrage compte. Le conseil coupe la poire en deux : deux cabris rendus, un gardé pour la peine. Le groupe a une voix s'il est un bastion du marché ; le MJ fait voter (trancher un litige).`,
+    effets: { litige: true } }),
+  evenement({ cle: "marche-le-cours-s-affole", nom: "Le cours s'affole", type: "marche", phases: APRES_CHUTE, poids: 1, public: false, stades: ["forain", "foire"],
+    texte: `Une rumeur de fièvre au Port a fait monter les médicaments ; l'eau manque depuis que la citerne d'un bastion s'est fendue. À l'ouverture, des marchands demandent dix parts pour une boîte d'antibiotiques. Lalao Rasoanaivo efface son ardoise, réunit le conseil sous le kiosque, et réécrit le cours pour la journée : les médicaments et l'eau montent, mais pour tous pareil. Celui qui vend au-dessus du cours affiché sort du marché.`,
+    effets: { cours: { medicaments: 2, eau: 1 } } }),
+  evenement({ cle: "marche-la-dette-qui-traine", nom: "La dette qui traîne", type: "marche", phases: APRES_CHUTE, poids: 1, public: false, stades: ["boutique", "forain"],
+    texte: `On chuchote entre deux étals qu'un bastion de la région doit au carnet depuis des semaines, et qu'il troque ailleurs au lieu de rendre. Le Ladi Lafé (« il a dit qu'il a fait », la rumeur) fait le tour du marché avant midi. C'est vrai, cette fois, ou presque : la dette existe, mais le bastion a perdu sa récolte. Si c'est le groupe qui doit, les PNJ qui l'ont entendu se méfient (une rumeur contre lui pèse sur leur première confiance) jusqu'à ce qu'il rende.`,
+    effets: { rumeur: "vraie" } }),
+  evenement({ cle: "marche-le-ladi-lafe", nom: "Le Ladi Lafé", type: "marche", phases: APRES_CHUTE, poids: 1, public: false, stades: ["forain", "foire"],
+    texte: `Une histoire court sur le groupe : il aurait refusé l'entrée à une famille malade, ou vendu des vivres gâtés, ou volé une nasse. C'est faux. Quelqu'un l'a lancée exprès, un marchand qui veut sa place au conseil, ou un ancien membre chassé du groupe. Tant que la rumeur court, les PNJ qui l'ont entendue se méfient. Pour la faire tomber, il faut une preuve : une marque, un témoin, un fait. Et une rumeur fausse démentie se retourne contre celui qui l'a lancée : tout le marché saura qu'il a menti.`,
+    effets: { rumeur: "fausse" } }),
+  evenement({ cle: "marche-ce-n-est-pas-a-lui", nom: "Ce n'est pas à lui", type: "marche", poids: 1, public: false, stades: ["troc", "forain"],
+    texte: `Le groupe rapporte au marché un objet trouvé en fouille : une radio, un fusil-harpon, une caisse d'outils. Un voisin s'avance aussitôt : c'est à lui, il l'a perdu le mois dernier. Il ment peut-être. Si l'objet porte une marque, elle tranche ; sinon, les témoins ; sinon, c'est parole contre parole, et le conseil décide. Un mensonge démenti par une marque ou un témoin se sait : le Ladi Lafé s'en charge.`,
+    effets: { objet: "reclame" } }),
+  evenement({ cle: "marche-la-treve-menacee", nom: "La trêve menacée", type: "marche", phases: ["silence", "apres"], poids: 1, public: false, stades: ["forain", "foire"],
+    texte: `Une bande en armes se présente aux abords du marché. Elle ne veut pas troquer : elle veut voir qui est là, et ce qu'ils portent. Le conseil rappelle la trêve, une voix par bastion. Entrer armé dans le périmètre, ou y frapper quelqu'un, c'est rompre la trêve : tout le monde le saura, sur toute l'île, et aucun bastion ne troquera plus avec celui qui l'a fait. La bande hésite. Le groupe peut faire pencher la balance, d'un côté ou de l'autre.`,
+    effets: { treve: "menacee" } }),
+  evenement({ cle: "marche-l-oratoire-rouge", nom: "L'oratoire rouge", type: "marche", phases: APRES_CHUTE, poids: 1, public: false, stades: ["troc", "boutique", "forain", "foire"],
+    texte: `Sur la route du marché, un oratoire peint en rouge, de ceux qu'on dédie à saint Expédit au bord des routes : une statuette, des bougies, des fleurs en plastique. Depuis le jour zéro, on y laisse aussi des messages pliés sous une pierre, pour les groupes qui ne se croisent jamais. Personne n'y touche, par respect ou par crainte ; le jeu ne dit pas lequel. Le groupe y trouve un message (table « Oratoires rouges ») et peut en laisser un.`,
+    effets: {} }),
 
   // ---------------------------------------------------------------- Fêtes (voir fetes.mjs pour les dates)
   evenement({ cle: "fete-au-camp", nom: "Une fête au camp", type: "fete", phases: ["silence", "apres"], poids: 1, public: false,

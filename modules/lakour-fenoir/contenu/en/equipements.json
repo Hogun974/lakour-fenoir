@@ -94,6 +94,17 @@
       "en": "<p>A metre and a half of steel: you force a door, lift a slab, keep a Pallid at arm's length. Heavy.</p>"
     }
   },
+  "equipements/EPJKOAHUNqbfpcwc": {
+    "_nom": "Poinçon de marque",
+    "name": {
+      "fr": "Poinçon de marque",
+      "en": "Marking punch"
+    },
+    "system.description": {
+      "fr": "<p>Un clou affûté, un fer chauffé ou un tampon de caoutchouc : de quoi graver le signe de sa communauté sur ses outils, ses bidons, ses armes. Un objet marqué se prouve et se réclame ; un voisin qui dit qu'il est à lui est démenti par la marque.</p>",
+      "en": "<p>A sharpened nail, a heated iron or a rubber stamp: enough to engrave your community's sign on your tools, your jerrycans, your weapons. A marked object can be proven and claimed; a neighbour who says it is his is proved wrong by the mark.</p>"
+    }
+  },
   "equipements/EXLAPJ5j2CpYCJGf": {
     "_nom": "Manuel trouvé",
     "name": {
@@ -246,6 +257,17 @@
     "system.description": {
       "fr": "<p>Une petite radio qu'on remonte à la main : écouter les dernières émissions, les messages en boucle, les autres groupes. Elle ne sait pas émettre.</p>",
       "en": "<p>A small radio you crank by hand: listen to the last broadcasts, the looped messages, the other groups. It cannot transmit.</p>"
+    }
+  },
+  "equipements/VPX4NAJ9P5XDCfKL": {
+    "_nom": "Balance romaine",
+    "name": {
+      "fr": "Balance romaine",
+      "en": "Steelyard"
+    },
+    "system.description": {
+      "fr": "<p>Un fléau d'acier, un crochet, un poids qui coulisse : la balance des boutiques et des marchés d'avant. On pèse devant tout le monde, deux fois s'il le faut, et l'on discute moins.</p>",
+      "en": "<p>A steel beam, a hook, a sliding weight: the scales of the shops and markets of before. You weigh in front of everyone, twice if need be, and you argue less.</p>"
     }
   },
   "equipements/XA2FiclBwc5Dzv6e": {
@@ -466,6 +488,17 @@
     "system.description": {
       "fr": "<p>Cuisiner sans fumée en route, faire bouillir l'eau. Une cartouche de gaz dure peu ; un réchaud à bois, toujours.</p>",
       "en": "<p>Cook without smoke on the road, boil water. A gas cartridge does not last long; a wood stove, always.</p>"
+    }
+  },
+  "equipements/uqCHGvfFAPvqrQtS": {
+    "_nom": "Carnet de crédit",
+    "name": {
+      "fr": "Carnet de crédit",
+      "en": "Credit book"
+    },
+    "system.description": {
+      "fr": "<p>Un cahier d'écolier à couverture bleue, un crayon attaché par une ficelle : on y écrit ce que chacun prend et ce qu'il doit, en parts, et ce qu'il a rendu. C'est ce qui remplace la monnaie. Celui qui le tient ouvre une boutique ; une dette qui traîne finit dans la bouche de tout le monde, et le carnet se solde au Nouvel An chinois.</p>",
+      "en": "<p>A blue-covered school exercise book, a pencil tied on with string: you write down what everyone takes and what they owe, in shares, and what they have paid back. It is what replaces money. Whoever keeps it opens a shop; a debt that drags on ends up in everyone's mouth, and the book is settled at Chinese New Year.</p>"
     }
   },
   "equipements/w5jAo3vhpTDnsksz": {

@@ -21,7 +21,8 @@
       "conditions": {
         "soleil": true
       }
-    }
+    },
+    "marque": ""
   },
   "effects": [],
   "folder": null,

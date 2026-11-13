@@ -4,12 +4,14 @@
 import { FACTIONS } from "./factions.mjs";
 
 // Paliers (valeur de l'horloge) : du plus bas au plus haut ; format du moteur : [{ nom, min }].
+// marche : ce que le palier fait au troc avec la faction (logique marche.mjs, premiereConfiance({ palier })) : majoration du prix
+// demandé et crédit au carnet (« plein », « moitie », « refuse ») ; hostile : aucun échange.
 export const PALIERS = [
-  { cle: "hostile", nom: "Hostile", min: -20, attitude: "On vous attaque ou on vous chasse à vue. Aucun échange possible." },
-  { cle: "mefiante", nom: "Méfiante", min: -4, attitude: "On vous parle de loin, armes en main ; échanges rares, à prix fort, sans jamais entrer." },
-  { cle: "neutre", nom: "Neutre", min: 0, attitude: "Des étrangers parmi d'autres : troc équitable, on vous laisse passer." },
-  { cle: "amicale", nom: "Amicale", min: 5, attitude: "On connaît vos noms ; on vous accueille une nuit, on vous prévient d'un danger." },
-  { cle: "alliee", nom: "Alliée", min: 10, attitude: "Vos ennemis sont les leurs : refuge, savoir, aide en cas d'assaut." }
+  { cle: "hostile", nom: "Hostile", min: -20, attitude: "On vous attaque ou on vous chasse à vue. Aucun échange possible.", marche: { majoration: 1, credit: "refuse", echange: false } },
+  { cle: "mefiante", nom: "Méfiante", min: -4, attitude: "On vous parle de loin, armes en main ; échanges rares, à prix fort, sans jamais entrer.", marche: { majoration: 0.5, credit: "refuse", echange: true } },
+  { cle: "neutre", nom: "Neutre", min: 0, attitude: "Des étrangers parmi d'autres : troc équitable, on vous laisse passer.", marche: { majoration: 0, credit: "moitie", echange: true } },
+  { cle: "amicale", nom: "Amicale", min: 5, attitude: "On connaît vos noms ; on vous accueille une nuit, on vous prévient d'un danger.", marche: { majoration: 0, credit: "plein", echange: true } },
+  { cle: "alliee", nom: "Alliée", min: 10, attitude: "Vos ennemis sont les leurs : refuge, savoir, aide en cas d'assaut.", marche: { majoration: 0, credit: "plein", echange: true } }
 ];
 export const PALIERS_MOTEUR = PALIERS.map(({ nom, min }) => ({ nom, min }));
 const DEPART = { hostile: -8, mefiante: -2, neutre: 0, amicale: 5 };
@@ -67,9 +69,11 @@ export const REPUTATIONS = FACTIONS.map(f => ({
 // Les horloges à assurer auprès du moteur (api.horloges.assurer), une par faction.
 export const HORLOGES_REPUTATION = REPUTATIONS.map(r => ({ id: r.horloge, nom: r.nom, type: "reputation", valeur: r.depart, visible: true, faction: r.faction, paliers: PALIERS_MOTEUR }));
 
+const CREDITS = { plein: "au carnet", moitie: "à moitié du plafond", refuse: "refusé" };
 // Texte du journal (MJ) « Réputation auprès des factions ».
 export function texteReputations() {
   const paliers = PALIERS.map(p => `- **${p.nom}** (à partir de ${p.min}) : ${p.attitude}`).join("\n");
   const factions = REPUTATIONS.map(r => `# ${r.nom}\n\nHorloge **${r.horloge}**, départ ${r.depart}.\n\n${["neutre", "amicale", "alliee"].map(c => `- **${PALIERS.find(p => p.cle === c).nom}** : ${r.ouvre[c]}`).join("\n")}`).join("\n\n");
-  return `# Les paliers\n\nChaque faction a son horloge de réputation (moteur MJ IA, type « réputation »), créée à l'installation. Un appel ou une demande réussi rapporte de 1 à 3 points ; un service rendu sans rien demander, 1 ; un vol, une trahison, un mort de la faction en coûtent de 2 à 6. Les paliers :\n\n${paliers}\n\n${factions}`;
+  const marche = PALIERS.map(p => `- **${p.nom}** : ${p.marche.echange ? `prix ${p.marche.majoration ? `majoré de ${Math.round(p.marche.majoration * 100)} %` : "au cours"}, crédit ${CREDITS[p.marche.credit]}` : "aucun échange"}.`).join("\n");
+  return `# Les paliers\n\nChaque faction a son horloge de réputation (moteur MJ IA, type « réputation »), créée à l'installation. Un appel ou une demande réussi rapporte de 1 à 3 points ; un service rendu sans rien demander, 1 ; un vol, une trahison, un mort de la faction en coûtent de 2 à 6. Les paliers :\n\n${paliers}\n\n# Au marché, et le Ladi Lafé\n\nLa réputation se sait par le **Ladi Lafé** (« il a dit qu'il a fait », la rumeur) : ce qu'on dit du groupe au marché, vrai ou faux, arrive aux factions avant lui. Au troc avec une faction, son palier compte comme la première confiance d'un PNJ (journal « Le marché et le Ladi Lafé ») :\n\n${marche}\n\nAccueillir un marché rapporte un point auprès de chaque bastion qui y vient, par mois de marché tenu ; rompre la trêve d'un marché en coûte 3 auprès de chacun, et toute l'île le sait.\n\n${factions}`;
 }

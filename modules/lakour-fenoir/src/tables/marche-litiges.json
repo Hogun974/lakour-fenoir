@@ -1,0 +1,148 @@
+{
+  "_id": "uTjmfpIZFy4ALx1G",
+  "_key": "!tables!uTjmfpIZFy4ALx1G",
+  "name": "Marché — litiges au conseil",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on porte au conseil du marché, une voix par bastion.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "marche-litiges",
+      "marche": "litiges"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "Hq0o2FeyqR5MCeVR",
+      "_key": "!tables.results!uTjmfpIZFy4ALx1G.Hq0o2FeyqR5MCeVR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois cabris perdus pendant l'orage et retrouvés dans la ravine d'un autre bastion, nourris un mois.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ohtpxlbuoGeYiFAz",
+      "_key": "!tables.results!uTjmfpIZFy4ALx1G.ohtpxlbuoGeYiFAz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un sac de riz pesé à la balance d'un bastion et repesé à celle du conseil : il manque un kilo.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xxCQqqkGaSdLfZzI",
+      "_key": "!tables.results!uTjmfpIZFy4ALx1G.xxCQqqkGaSdLfZzI",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une dette de carnet que le débiteur jure avoir rendue ; le carnet dit le contraire.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BeZWGPFX0OrHu3Y8",
+      "_key": "!tables.results!uTjmfpIZFy4ALx1G.BeZWGPFX0OrHu3Y8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux bastions revendiquent la même source au-dessus du marché.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "RFIyGlMpgAjFWNmf",
+      "_key": "!tables.results!uTjmfpIZFy4ALx1G.RFIyGlMpgAjFWNmf",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un fusil troqué qui s'enraye au premier coup : l'acheteur veut ses parts.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "caljImuc8cLNUkAE",
+      "_key": "!tables.results!uTjmfpIZFy4ALx1G.caljImuc8cLNUkAE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant d'un bastion a cassé la vitre de la seule voiture qui roule encore.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8JbVgPPSNV3PZ07M",
+      "_key": "!tables.results!uTjmfpIZFy4ALx1G.8JbVgPPSNV3PZ07M",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un marchand a vendu au-dessus du cours affiché ; il dit qu'il ne savait pas lire l'ardoise.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "eMtNTPOF2KclNBUw",
+      "_key": "!tables.results!uTjmfpIZFy4ALx1G.eMtNTPOF2KclNBUw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une barque empruntée pour la journée revient trouée.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

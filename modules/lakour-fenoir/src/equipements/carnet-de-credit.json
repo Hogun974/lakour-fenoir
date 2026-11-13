@@ -1,0 +1,36 @@
+{
+  "_id": "uqCHGvfFAPvqrQtS",
+  "_key": "!items!uqCHGvfFAPvqrQtS",
+  "name": "Carnet de crédit",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "carnet-de-credit",
+    "categorie": "vie",
+    "description": "<p>Un cahier d'écolier à couverture bleue, un crayon attaché par une ficelle : on y écrit ce que chacun prend et ce qu'il doit, en parts, et ce qu'il a rendu. C'est ce qui remplace la monnaie. Celui qui le tient ouvre une boutique ; une dette qui traîne finit dans la bouche de tout le monde, et le carnet se solde au Nouvel An chinois.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "carnet-de-credit"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

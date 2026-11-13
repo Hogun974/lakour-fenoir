@@ -16,7 +16,8 @@
     "transport": null,
     "effets": {
       "moral": 1
-    }
+    },
+    "marque": ""
   },
   "effects": [],
   "folder": null,

@@ -16,7 +16,8 @@
     "munitions": 1,
     "bruit": 2,
     "transport": null,
-    "effets": null
+    "effets": null,
+    "marque": ""
   },
   "effects": [],
   "folder": null,

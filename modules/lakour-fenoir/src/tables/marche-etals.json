@@ -1,0 +1,268 @@
+{
+  "_id": "9Z48zATc55hbPGWK",
+  "_key": "!tables!9Z48zATc55hbPGWK",
+  "name": "Marché — ce qu'on trouve sur les étals",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un étal du marché forain ou de la foire.</p>",
+  "formula": "1d16",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "marche-etals",
+      "marche": "etals"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "GGdMvJMR6NVi3e5s",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.GGdMvJMR6NVi3e5s",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des sacs de lentilles de Cilaos, petites et brunes, au cours.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CshLEhUJjyAkJ4Z1",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.CshLEhUJjyAkJ4Z1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des bocaux d'achards de légumes et de piment, fermés à la cire.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cp06yfF05EkhV1xE",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.cp06yfF05EkhV1xE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des chouchous par brassées, encore humides de la rosée de Salazie.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ICpxwMASDHbCve0q",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.ICpxwMASDHbCve0q",
+      "type": "text",
+      "name": "",
+      "description": "<p>Du poisson séché des Barques, en chapelets.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2sbKWcrpQm8XQQz6",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.2sbKWcrpQm8XQQz6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des clous redressés, triés par taille dans des boîtes de conserve.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1q4oDTEWCcbcqANT",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.1q4oDTEWCcbcqANT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des batteries de voiture « presque chargées », dit le Ferrailleur.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CZamPrMlcGGopr4V",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.CZamPrMlcGGopr4V",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des paquets de zerbaz dans du papier journal : fièvre, ventre, entorse.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "lQtzvzX97IKmYw0l",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.lQtzvzX97IKmYw0l",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vélo sans pneus, et deux pneus sans vélo.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nNvobYQhDCQ5CbzA",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.nNvobYQhDCQ5CbzA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des sachets de graines de brèdes, de tomates, de piments, de maïs.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wXA7jKvIVIGMdtsh",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.wXA7jKvIVIGMdtsh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une chèvre et son petit, à troquer ensemble.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ia87u9BIMzEJKNf0",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.ia87u9BIMzEJKNf0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des nattes et des paniers de vacoa tressé.</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6EgZZwAWzF48DpLz",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.6EgZZwAWzF48DpLz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Du savon de cendre et de graisse, en pains carrés.</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Vaup6kzbjpaqE3Gj",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.Vaup6kzbjpaqE3Gj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des cartouches de chasse, comptées une à une, à prix fort.</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wN61xbMt4ZriJbr4",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.wN61xbMt4ZriJbr4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des piles de toutes tailles, testées sur la langue devant le client.</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MypPxBBElic49V6J",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.MypPxBBElic49V6J",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des manuels scolaires : on troque les pages pour allumer le feu, ou pour apprendre.</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MuCx3T2PKK2rg38C",
+      "_key": "!tables.results!9Z48zATc55hbPGWK.MuCx3T2PKK2rg38C",
+      "type": "text",
+      "name": "",
+      "description": "<p>Du miel des Hauts dans des bouteilles de rhum lavées.</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

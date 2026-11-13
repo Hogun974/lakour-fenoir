@@ -19,7 +19,7 @@ export const STOCKS = [...RESSOURCES, "plantes", "energie"];
 export const NATURE = ["cueillette", "gibier", "peche", "bois"];
 export const RESEAUX = ["electricite", "eau", "carburant", "telephone"];
 export const CATEGORIES = ["defense", "eau", "nourriture", "energie", "vie", "souterrain", "stockage", "communication"];
-export const TYPES_EVENEMENT = ["meteo", "reseau", "horde", "humain", "accident", "decouverte", "abri", "fete"];
+export const TYPES_EVENEMENT = ["meteo", "reseau", "horde", "humain", "accident", "decouverte", "abri", "fete", "marche"];
 export const PHASES = ["jour-zero", "panique", "effondrement", "silence", "apres"];
 export const SAISONS = ["pluies", "seche"];
 export const ATTITUDES = ["hostile", "mefiante", "neutre", "amicale"];
@@ -123,10 +123,11 @@ export function savoir({ cle, nom, description, apprentissage, effets }) {
 // Équipement. Champs ajoutés au contrat (§3.4, voir docs/survie-notes-contenu.md) : categorie, bruit (ajouté au bruit
 // quand on s'en sert), transport ({ mode, places, chargeMax, carburant } pour un véhicule), effets (comme une installation,
 // pour les panneaux démontables), munitions = unités de munitions consommées par échange de tirs (null hors arme à feu).
-export function equipement({ cle, nom, categorie, description, bonus = {}, charge = 1, usure = 0, munitions = null, bruit = 0, transport = null, effets = null, img }) {
+// marque : le signe d'une communauté sur l'objet (le marché, 2026-11-13) ; vide dans le compendium.
+export function equipement({ cle, nom, categorie, description, bonus = {}, charge = 1, usure = 0, munitions = null, bruit = 0, transport = null, effets = null, img, marque = "" }) {
   return objet({
     pack: "equipements", type: "equipement", cle, nom, img,
-    system: { categorie, description: html(description), bonus, charge, usure, munitions, bruit, transport, effets }
+    system: { categorie, description: html(description), bonus, charge, usure, munitions, bruit, transport, effets, marque }
   });
 }
 
@@ -146,7 +147,7 @@ export function passe({ cle, nom, description, competences, savoirs = [], equipe
 // img : jeton (assets/jetons/ia/<cle>.webp, ou assets/jetons/<cle>.svg en repli) ; disposition : -1 hostile, 0 neutre, 1 allié.
 export function survivant({ cle, nom, pack = "survivants", passe = "", enfance = "", age = 30, lien = "", competences = {}, passions = {}, traits = [],
   incapacites = [], statut = "pnj", moral = 4, notes = "", objets = [], pnj = false, livide = false, vivant = true, img = IMG.survivant,
-  disposition = null, extra = {} }) {
+  disposition = null, extra = {}, prejuges = [] }) {
   const _id = identifiant(`${pack}:${cle}`);
   const comp = Object.fromEntries(COMPETENCES.map(c => [c, { niveau: competences[c] ?? 0, marques: 0 }]));
   return {
@@ -156,7 +157,9 @@ export function survivant({ cle, nom, pack = "survivants", passe = "", enfance =
       competences: comp, blessures: 0, fatigue: 0, moral, faim: 0, soif: 0,
       infection: { atteint: false, stade: 0, depuis: 0 },
       enfance, passe, passions, traits, incapacites, statut, tache: "", histoire: { journal: "" },
-      age, lien, vivant, livide, charge: 0, notes: html(notes)
+      age, lien, vivant, livide, charge: 0, notes: html(notes),
+      // Les préjugés d'un PNJ (le marché : systems/lakour-survie/logique/marche.mjs) : { cible, poids 1..3, dit, echanges, fetes, dementis }.
+      prejuges: prejuges.map(p => ({ cible: p.cible, poids: p.poids ?? 1, dit: p.dit ?? "", echanges: 0, fetes: 0, dementis: 0 }))
     },
     // Objets incorporés : copies des savoirs et équipements du compendium, clé « !actors.items!acteur.objet ».
     items: objets.map(o => {

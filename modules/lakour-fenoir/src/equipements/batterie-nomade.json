@@ -18,7 +18,8 @@
       "stockage": {
         "energie": 2
       }
-    }
+    },
+    "marque": ""
   },
   "effects": [],
   "folder": null,

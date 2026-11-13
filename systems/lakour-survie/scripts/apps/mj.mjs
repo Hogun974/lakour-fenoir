@@ -12,7 +12,7 @@ import { CHEMIN, essayer, lireChamps, options } from "./commun.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const contenu = () => game.lakourSurvie?.contenu?.() ?? {};
-export const ONGLETS_MJ = ["partie", "actions", "groupe", "menaces", "monde"];
+export const ONGLETS_MJ = ["partie", "actions", "groupe", "menaces", "marche", "monde"];
 const pct = (x, total) => (total > 0 ? Math.round(x / total * 100) : 0);
 
 // Le monde réel résumé (MJ actif seul) : par région l'infestation réelle, ce qui reste à piller, factions, routes abîmées ;
@@ -38,6 +38,48 @@ export function resumeMonde(monde, c = contenu()) {
     eruption: monde.eruption ? { ...monde.eruption } : null,
     journal: [...(monde.journalSecret ?? [])].reverse().slice(0, 20).map(e => ({ jour: e.jour, texte: sansBalises(localiser(e)) })),
     graine: monde.graine
+  };
+}
+
+// L'onglet Marché (contrat §11) : cours du jour, stades, carnets, marchés, rumeurs (et, au MJ actif monde ouvert, leur vérité),
+// et ce qu'il faut aux formulaires (PNJ, cibles des préjugés, factions, modèles de marchés, foires, gens du marché).
+export function contexteMarche(etat, monde, c = contenu()) {
+  const api = game.lakourSurvie;
+  const m = L.marcheDe(etat);
+  const secret = monde ? L.secretMarcheDe(monde) : null;
+  const jour = L.jourDe(etat.horloge?.quart ?? 0);
+  const groupe = t("LAKOUR_SURVIE.Marche.LeGroupe");
+  const nomSujet = s => (s === "groupe" ? groupe : s);
+  const cours = api?.coursDuJour?.() ?? {};
+  const pnj = (game.actors?.contents ?? []).filter(a => a.type === "survivant" && !a.system?.livide && !(etat.groupe?.membres ?? []).includes(a.id));
+  const jours = [0, 1, 2, 3, 4, 5, 6].map(j => [String(j), t(`LAKOUR_SURVIE.Marche.Jours.${j}`)]);
+  return {
+    cours: L.RESSOURCES_TROC.map(r => ({ libelle: libelleRessource(r), valeur: cours[r] ?? "?" })),
+    stades: (api?.stadesDuMarche?.() ?? []).map(s => ({ ...s, libelle: t(`LAKOUR_SURVIE.Marche.Stades.${s.stade}`) })),
+    boutiques: m.boutiques.map(b => ({ nom: b.nom, tenancier: game.actors?.get?.(b.tenancier)?.name ?? b.tenancier ?? "", dette: L.detteDe(b, "groupe"),
+      plafond: L.plafondCredit(b, "groupe"), traine: L.dettesQuiTrainent(b, jour).length > 0 || (b.entrees ?? []).some(e => e.debiteur === "groupe" && e.rumeur && e.reste > 0) })),
+    marches: m.marches.map(x => ({ nom: x.nom, jour: x.foire ? t("LAKOUR_SURVIE.Marche.MJ.FoireJusqua", { jour: x.jusqua }) : t(`LAKOUR_SURVIE.Marche.Jours.${x.jourSemaine}`),
+      hote: x.hote ? nomSujet(x.hote) : "", rompue: Boolean(x.treve?.rompue), bastions: (x.bastions ?? []).map(b => L.factionDe(c, b)?.nom ?? b).join(", ") })),
+    rumeurs: [...m.rumeurs].reverse().map(r => {
+      const v = secret?.rumeurs?.[r.id];
+      return { jour: r.jour, dementie: r.dementie, texte: sansBalises(localiser({ ...r, params: Object.fromEntries(Object.entries(r.params ?? {}).map(([k, x]) => [k, nomSujet(x)])) })),
+        verite: v ? `${t(v.vraie ? "LAKOUR_SURVIE.Marche.MJ.Vrai" : "LAKOUR_SURVIE.Marche.MJ.Faux")}${v.auteur ? ` — ${nomSujet(v.auteur)}` : ""}${v.malveillant ? ` — ${t("LAKOUR_SURVIE.Marche.MJ.Malveillant")}` : ""}` : "" };
+    }),
+    signe: m.signe,
+    ressources: L.RESSOURCES_TROC.map(r => ({ cle: r, libelle: libelleRessource(r) })),
+    pnj: options([["", "—"], ...pnj.map(a => [a.id, a.name])], ""),
+    cibles: options(L.liste(c.communautes).map(x => [x.cle, x.nom]), ""),
+    factions: options([["", "—"], ...L.liste(c.factions).map(f => [f.cle, f.nom])], ""),
+    choixMarches: options([["", "—"], ...m.marches.map(x => [x.cle, x.nom])], ""),
+    choixBoutiques: options(m.boutiques.map(b => [b.cle, b.nom]), ""),
+    choixRumeurs: options(m.rumeurs.filter(r => !r.dementie).map(r => [r.id, `J${r.jour} — ${sansBalises(localiser(r)).slice(0, 70)}`]), ""),
+    modeles: options([["", "—"], ...L.liste(c.marches).map(x => [x.cle, x.nom])], ""),
+    foires: options([["", "—"], ...L.liste(c.foires).map(x => [x.cle, x.nom])], ""),
+    marchands: options(L.liste(c.marchands).map(x => [x.cle, x.nom]), ""),
+    jours: options(jours, "6"),
+    choixStades: options(L.STADES_MARCHE.map(s => [s, t(`LAKOUR_SURVIE.Marche.Stades.${s}`)]), "forain"),
+    gestes: options(["accueillir", "rendreAccueil", "rompreTreve", "retablirTreve", "fermer"].map(g => [g, t(`LAKOUR_SURVIE.Marche.Gestes.${g}`)]), "accueillir"),
+    preuves: options(L.PREUVES.map(p => [p, t(`LAKOUR_SURVIE.Marche.Preuves.${p}`)]), "fait")
   };
 }
 
@@ -105,11 +147,15 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     menaces: (monde?.menaces ?? []).map(m => ({ ...m, typeLibelle: t(`LAKOUR_SURVIE.Menaces.${m.type}`), texte: sansBalises(localiser(m)) })),
     paliers: [...(monde?.paliers ?? [])].reverse().slice(0, 6),
     monde: onglet === "monde" ? resumeMonde(monde, c) : null,
+    marche: onglet === "marche" && etat.demarree ? contexteMarche(etat, monde, c) : null,
     recrue: CACHE.recrue
   };
 }
 
 const CACHE = { recrue: null };
+// Les biens d'un formulaire : les champs « <prefixe>.<ressource> » positifs.
+const biens = (d, prefixe) => Object.fromEntries(L.RESSOURCES_TROC.filter(r => Number(d[`${prefixe}.${r}`]) > 0).map(r => [r, Number(d[`${prefixe}.${r}`])]));
+const liste = v => (Array.isArray(v) ? v : v ? [v] : []).filter(Boolean);
 const resume = r => {
   if (r === null || r === undefined) return "";
   const lignes = [];
@@ -172,7 +218,27 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       fabriquer: () => api.fabriquer({ recette: d.recette, acteurId: d.acteur || "", membres }),
       affliction: () => api.affliction({ acteurId: d.acteur, cle: d.affliction, action: d.action || "donner" }),
       ajouterMembre: () => api.ajouterMembre({ acteurId: d.acteur, statut: d.statut || "compagnon" }),
-      rencontre: () => api.rencontre({ region: d.region || "" })
+      rencontre: () => api.rencontre({ region: d.region || "" }),
+      // Le marché (§11) : biens « donne.<r> », « recoit.<r> », « biens.<r> » ; cibles : liste multiple.
+      troquer: () => api.troquer({ donne: biens(d, "donne"), recoit: biens(d, "recoit"), pnjId: d.pnj || "", cibles: liste(d.cibles), faction: d.faction || "", marche: d.marche || "", accepter: Boolean(d.accepter) }),
+      ouvrirBoutique: () => api.ouvrirBoutique({ nom: d.nom || game.actors?.get?.(d.tenancier)?.name || "", tenancier: d.tenancier || "" }),
+      crediter: () => api.crediter({ boutique: d.boutique || "", biens: biens(d, "biens"), cibles: liste(d.cibles) }),
+      rendre: () => api.rendre({ boutique: d.boutique || "", biens: biens(d, "biens"), cibles: liste(d.cibles) }),
+      effacerDette: () => api.effacerDette({ boutique: d.boutique || "" }),
+      ouvrirMarche: () => api.ouvrirMarche({ modele: d.modele || "", foire: d.foire || "", nom: d.nom || "", jourSemaine: Number(d.jourSemaine ?? 6), hote: d.accueil ? "groupe" : "" }),
+      gererMarche: () => ({
+        accueillir: () => api.accueillir({ marche: d.marche || "", hote: "groupe" }),
+        rendreAccueil: () => api.accueillir({ marche: d.marche || "", hote: "" }),
+        rompreTreve: () => api.rompreTreve({ marche: d.marche || "", par: d.par || "groupe" }),
+        retablirTreve: () => api.retablirTreve({ marche: d.marche || "" }),
+        fermer: () => api.fermerMarche({ marche: d.marche || "" })
+      })[d.geste ?? "accueillir"]?.(),
+      evenementDeMarche: async () => { const e = api.evenementDeMarche({ stade: d.stade || "forain" }); return e ? { nom: e.nom, texte: sansBalises(e.texte), dementi: e.effets?.dementi ?? "" } : { nom: "—" }; },
+      dementirPrejuge: () => api.dementirPrejuge({ cible: d.cible || "" }),
+      rumeur: () => api.rumeur({ sujet: d.sujet || "groupe", texte: d.texte || "", vraie: Boolean(d.vraie), malveillant: Boolean(d.malveillant), auteur: d.auteur || "" }),
+      dementir: () => api.dementir({ id: d.id || "", preuve: d.preuve || "fait" }),
+      creerMarchand: () => api.creerMarchand({ cle: d.cle || "" }),
+      signe: () => api.signe({ signe: d.signe ?? "" })
     };
     if (!appels[nom]) return;
     cible.disabled = true;

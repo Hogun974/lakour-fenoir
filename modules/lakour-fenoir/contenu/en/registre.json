@@ -305,6 +305,149 @@
       "en": "A wounded person recovers faster (one wound less per success, with 1 medicine); a treated affliction no longer worsens."
     }
   },
+  "registre/communautes/cafres": {
+    "_nom": "Cafres",
+    "nom": {
+      "fr": "Cafres",
+      "en": "Cafres"
+    },
+    "description": {
+      "fr": "Descendants des esclaves et engagés d'Afrique de l'Est et de Madagascar.",
+      "en": "Descendants of the slaves and indentured workers from East Africa and Madagascar."
+    }
+  },
+  "registre/communautes/chinois": {
+    "_nom": "Chinois (Sinwa)",
+    "nom": {
+      "fr": "Chinois (Sinwa)",
+      "en": "Chinese (Sinwa)"
+    },
+    "description": {
+      "fr": "Cantonais et Hakkas, la boutique du quartier.",
+      "en": "Cantonese and Hakka, the neighbourhood shop."
+    }
+  },
+  "registre/communautes/comoriens": {
+    "_nom": "Comoriens et Mahorais",
+    "nom": {
+      "fr": "Comoriens et Mahorais",
+      "en": "Comorians and Mahorese"
+    },
+    "description": {
+      "fr": "Les derniers arrivés, des Comores et de Mayotte.",
+      "en": "The last to arrive, from the Comoros and Mayotte."
+    }
+  },
+  "registre/communautes/creoles": {
+    "_nom": "Créoles (vus par un Zoreil)",
+    "nom": {
+      "fr": "Créoles (vus par un Zoreil)",
+      "en": "Creoles (as a Zoreil sees them)"
+    },
+    "description": {
+      "fr": "Tous les gens nés ici, vus d'un bloc par qui vient d'ailleurs.",
+      "en": "Everyone born here, seen as one block by someone from elsewhere."
+    }
+  },
+  "registre/communautes/etrangers-au-quartier": {
+    "_nom": "Les étrangers au quartier",
+    "nom": {
+      "fr": "Les étrangers au quartier",
+      "en": "Strangers to the neighbourhood"
+    },
+    "description": {
+      "fr": "Quiconque n'est pas d'ici : le premier préjugé d'un boutiquier prudent.",
+      "en": "Anyone who is not from here: the first prejudice of a careful shopkeeper."
+    }
+  },
+  "registre/communautes/gens-d-en-bas": {
+    "_nom": "Les gens d'en bas",
+    "nom": {
+      "fr": "Les gens d'en bas",
+      "en": "People from down below"
+    },
+    "description": {
+      "fr": "Ceux de la côte et des villes, vus des Hauts.",
+      "en": "Those of the coast and the towns, as seen from the Highlands."
+    }
+  },
+  "registre/communautes/gens-des-hauts": {
+    "_nom": "Les gens des Hauts",
+    "nom": {
+      "fr": "Les gens des Hauts",
+      "en": "People from the Highlands"
+    },
+    "description": {
+      "fr": "Ceux des Hauts et des cirques, vus de la côte.",
+      "en": "Those of the Highlands and the cirques, as seen from the coast."
+    }
+  },
+  "registre/communautes/gros-blancs": {
+    "_nom": "Gros blancs",
+    "nom": {
+      "fr": "Gros blancs",
+      "en": "Gros blancs"
+    },
+    "description": {
+      "fr": "Les vieilles familles de planteurs.",
+      "en": "The old planter families (literally \"big whites\")."
+    }
+  },
+  "registre/communautes/malbars": {
+    "_nom": "Malbars",
+    "nom": {
+      "fr": "Malbars",
+      "en": "Malbars"
+    },
+    "description": {
+      "fr": "Tamouls hindous, descendants des engagés de l'Inde du Sud.",
+      "en": "Hindu Tamils, descendants of the indentured workers from southern India."
+    }
+  },
+  "registre/communautes/malgaches": {
+    "_nom": "Malgaches",
+    "nom": {
+      "fr": "Malgaches",
+      "en": "Malagasy"
+    },
+    "description": {
+      "fr": "Venus de Madagascar, anciens et récents.",
+      "en": "From Madagascar, long settled and recent."
+    }
+  },
+  "registre/communautes/yabs": {
+    "_nom": "Yabs",
+    "nom": {
+      "fr": "Yabs",
+      "en": "Yabs"
+    },
+    "description": {
+      "fr": "Petits blancs des Hauts, créoles blancs des cirques et des plaines.",
+      "en": "The petits blancs of the Highlands, white Creoles of the cirques and the plains."
+    }
+  },
+  "registre/communautes/zarabes": {
+    "_nom": "Z'arabes",
+    "nom": {
+      "fr": "Z'arabes",
+      "en": "Z'arabes"
+    },
+    "description": {
+      "fr": "Musulmans venus du Gujarat, souvent commerçants.",
+      "en": "Muslims from Gujarat, often traders."
+    }
+  },
+  "registre/communautes/zoreils": {
+    "_nom": "Zoreils",
+    "nom": {
+      "fr": "Zoreils",
+      "en": "Zoreils"
+    },
+    "description": {
+      "fr": "Les métropolitains installés, ou de passage.",
+      "en": "People from mainland France who settled here, or are passing through."
+    }
+  },
   "registre/enfances/enfance-a-madagascar": {
     "_nom": "Enfance à Madagascar",
     "nom": {
@@ -1220,6 +1363,17 @@
       "en": "<p>The humid heat has brought mildew, caterpillars or snails: part of the beds is lost.</p>"
     }
   },
+  "registre/evenements/marche-ce-n-est-pas-a-lui": {
+    "_nom": "Ce n'est pas à lui",
+    "nom": {
+      "fr": "Ce n'est pas à lui",
+      "en": "It isn't his"
+    },
+    "texte": {
+      "fr": "<p>Le groupe rapporte au marché un objet trouvé en fouille : une radio, un fusil-harpon, une caisse d'outils. Un voisin s'avance aussitôt : c'est à lui, il l'a perdu le mois dernier. Il ment peut-être. Si l'objet porte une marque, elle tranche ; sinon, les témoins ; sinon, c'est parole contre parole, et le conseil décide. Un mensonge démenti par une marque ou un témoin se sait : le Ladi Lafé s'en charge.</p>",
+      "en": "<p>The group brings to the market an object found while scavenging: a radio, a speargun, a toolbox. A neighbour steps forward at once: it is his, he lost it last month. Maybe he is lying. If the object bears a mark, it decides; otherwise, the witnesses; otherwise, it is word against word, and the council decides. A lie proved wrong by a mark or a witness gets known: the Ladi Lafé sees to it.</p>"
+    }
+  },
   "registre/evenements/marche-des-ferrailleurs": {
     "_nom": "Marché des Ferrailleurs",
     "nom": {
@@ -1229,6 +1383,156 @@
     "texte": {
       "fr": "<p>Sur un parking de zone commerciale, les Ferrailleurs tiennent marché : pièces, batteries, outils, carburant, et des nouvelles de toute l'île, vraies ou fausses.</p>",
       "en": "<p>In a retail-park car park, the Scrappers hold a market: parts, batteries, tools, fuel, and news from all over the island, true or false.</p>"
+    }
+  },
+  "registre/evenements/marche-l-objet-rapporte": {
+    "_nom": "L'objet rapporté",
+    "nom": {
+      "fr": "L'objet rapporté",
+      "en": "The object brought back"
+    },
+    "texte": {
+      "fr": "<p>Depuis trois marchés, le conseil cherche la caisse à outils marquée des trois encoches de la Coopérative, disparue un samedi. Le président Gérard Payet a son idée : « <em>dopi zot la arivé, tout i disparé</em> » (depuis qu'ils sont arrivés, tout disparaît), et il regarde les derniers arrivés, comoriens et mahorais. Ce matin, Soilihi Ahamada pose la caisse sur la table du conseil : il l'a trouvée dans le coffre d'un pick-up, derrière l'étal d'un marchand de passage qui a filé. La marque ne ment pas. Gérard Payet se lève, et dit devant tous qu'il s'est trompé. Ce n'est pas facile, à soixante ans ; il le fait quand même.</p>",
+      "en": "<p>For three markets, the council has been looking for the toolbox marked with the Cooperative's three notches, gone missing one Saturday. The chairman Gérard Payet has his idea: \"<em>dopi zot la arivé, tout i disparé</em>\" (since they arrived, everything goes missing), and he looks at the last to arrive, Comorians and Mahorese. This morning, Soilihi Ahamada sets the box on the council's table: he found it in the back of a pickup, behind the stall of a passing trader who has made off. The mark does not lie. Gérard Payet stands up and says in front of everyone that he was wrong. It is not easy, at sixty; he does it anyway.</p>"
+    }
+  },
+  "registre/evenements/marche-l-oratoire-rouge": {
+    "_nom": "L'oratoire rouge",
+    "nom": {
+      "fr": "L'oratoire rouge",
+      "en": "The red oratory"
+    },
+    "texte": {
+      "fr": "<p>Sur la route du marché, un oratoire peint en rouge, de ceux qu'on dédie à saint Expédit au bord des routes : une statuette, des bougies, des fleurs en plastique. Depuis le jour zéro, on y laisse aussi des messages pliés sous une pierre, pour les groupes qui ne se croisent jamais. Personne n'y touche, par respect ou par crainte ; le jeu ne dit pas lequel. Le groupe y trouve un message (table « Oratoires rouges ») et peut en laisser un.</p>",
+      "en": "<p>On the road to the market, an oratory painted red, the kind dedicated to Saint Expedite along the roads: a statuette, candles, plastic flowers. Since day zero, people also leave messages folded under a stone there, for the groups that never cross paths. Nobody touches them, out of respect or fear; the game does not say which. The group finds a message there (table \"Red oratories\") and can leave one.</p>"
+    }
+  },
+  "registre/evenements/marche-la-dette-qui-traine": {
+    "_nom": "La dette qui traîne",
+    "nom": {
+      "fr": "La dette qui traîne",
+      "en": "The debt that drags on"
+    },
+    "texte": {
+      "fr": "<p>On chuchote entre deux étals qu'un bastion de la région doit au carnet depuis des semaines, et qu'il troque ailleurs au lieu de rendre. Le Ladi Lafé (« il a dit qu'il a fait », la rumeur) fait le tour du marché avant midi. C'est vrai, cette fois, ou presque : la dette existe, mais le bastion a perdu sa récolte. Si c'est le groupe qui doit, les PNJ qui l'ont entendu se méfient (une rumeur contre lui pèse sur leur première confiance) jusqu'à ce qu'il rende.</p>",
+      "en": "<p>People whisper between two stalls that a stronghold of the region has owed the book for weeks, and trades elsewhere instead of paying back. The Ladi Lafé (\"he said he did\", the rumour) goes round the market before noon. It is true, this time, or nearly: the debt exists, but the stronghold lost its harvest. If it is the group that owes, the NPCs who heard it grow wary (a rumour against it weighs on their first trust) until it pays back.</p>"
+    }
+  },
+  "registre/evenements/marche-la-radio-du-zoreil": {
+    "_nom": "La radio du Zoreil",
+    "nom": {
+      "fr": "La radio du Zoreil",
+      "en": "The Zoreil's radio"
+    },
+    "texte": {
+      "fr": "<p>Deux fermiers ricanent devant l'étal de Thomas Lefèvre : « <em>zorey i koné rien fé isi</em> » (le Zoreil ne sait rien faire ici), il ne sait même pas planter un piquet de chouchou. Au même moment, le poste de la Coopérative crachote, et la voix d'Ophélie Turpin annonce une horde sur la route des Plaines, assez tôt pour qu'on rentre les bêtes. Le poste, c'est lui qui l'a réparé, comme ceux des Barques, du Dispensaire et des îlets. Les deux fermiers lui apportent leur vieux talkie le samedi suivant, et un sac de pommes de terre pour la peine.</p>",
+      "en": "<p>Two farmers snigger in front of Thomas Lefèvre's stall: \"<em>zorey i koné rien fé isi</em>\" (the Zoreil can't do anything here), he can't even plant a chayote stake. At that very moment, the Cooperative's set crackles, and Ophélie Turpin's voice announces a horde on the Route des Plaines, early enough to bring the animals in. That set, he is the one who repaired it, like those of the Boats, the Dispensary and the îlets. The two farmers bring him their old walkie-talkie the following Saturday, and a sack of potatoes for his trouble.</p>"
+    }
+  },
+  "registre/evenements/marche-la-tisaneuse": {
+    "_nom": "La tisaneuse",
+    "nom": {
+      "fr": "La tisaneuse",
+      "en": "The herbalist"
+    },
+    "texte": {
+      "fr": "<p>Un enfant tombe en pleine fièvre entre deux étals. Sa mère refuse d'abord qu'on l'approche de Madame Moutoussamy : « à cause du service », on dit qu'elle fait des choses la nuit. Lalao Rasoanaivo elle-même recule d'un pas : « <em>mi tous pa so tizan, na in servis ladan</em> » (je ne touche pas à ses tisanes, il y a un service dedans). La vieille tisaneuse ne demande rien à personne : elle mouille un linge, fait boire l'enfant à petites gorgées, sort un paquet de papier journal. La fièvre tombe avant la fin du marché. Elle a soigné ce mois-ci un catéchiste, deux Z'arabes, un Zoreil et la moitié du conseil, sans jamais demander qui croyait en quoi.</p>",
+      "en": "<p>A child collapses with a high fever between two stalls. The mother at first refuses to let Madame Moutoussamy near him: \"because of the service\" (an offering ritual), they say she does things at night. Lalao Rasoanaivo herself steps back: \"<em>mi tous pa so tizan, na in servis ladan</em>\" (I don't touch her tisanes, there's a service in them). The old herbalist asks nothing of anyone: she wets a cloth, has the child drink in small sips, takes out a packet of newspaper. The fever breaks before the end of the market. This month she has treated a catechist, two Z'arabes, a Zoreil and half the council, without ever asking who believed in what.</p>"
+    }
+  },
+  "registre/evenements/marche-la-treve-menacee": {
+    "_nom": "La trêve menacée",
+    "nom": {
+      "fr": "La trêve menacée",
+      "en": "The truce threatened"
+    },
+    "texte": {
+      "fr": "<p>Une bande en armes se présente aux abords du marché. Elle ne veut pas troquer : elle veut voir qui est là, et ce qu'ils portent. Le conseil rappelle la trêve, une voix par bastion. Entrer armé dans le périmètre, ou y frapper quelqu'un, c'est rompre la trêve : tout le monde le saura, sur toute l'île, et aucun bastion ne troquera plus avec celui qui l'a fait. La bande hésite. Le groupe peut faire pencher la balance, d'un côté ou de l'autre.</p>",
+      "en": "<p>An armed gang turns up at the edge of the market. It does not want to trade: it wants to see who is there, and what they carry. The council recalls the truce, one voice per stronghold. Coming into the bounds armed, or striking someone there, is breaking the truce: everyone will know, across the whole island, and no stronghold will ever trade with whoever did it. The gang hesitates. The group can tip the balance, one way or the other.</p>"
+    }
+  },
+  "registre/evenements/marche-le-carnet-ouvert": {
+    "_nom": "Le carnet ouvert",
+    "nom": {
+      "fr": "Le carnet ouvert",
+      "en": "The open book"
+    },
+    "texte": {
+      "fr": "<p>Un client à qui Madame Thiaw-Kine vient de refuser une ardoise (il doit déjà trois sacs de riz depuis deux mois) crie dans la file : « <em>Sinwa i fé crédi k'a son moun !</em> » (le Chinois ne fait crédit qu'aux siens). La boutiquière ne répond rien. Elle pose le carnet bleu sur le comptoir, l'ouvre, et lit les noms à voix haute : Payet, Narayanin, Ahamada, Hoarau, Lefèvre, Rakotomalala, Grondin… deux cents noms, trois chinois. Puis elle lit le nom de celui qui crie, et ce qu'il doit. Dans la file, une vieille murmure que sans ce carnet, ses petits n'auraient pas mangé en janvier. Le client s'en va. Le lendemain, il revient rendre un sac.</p>",
+      "en": "<p>A customer whom Madame Thiaw-Kine has just refused a tab (he already owes three sacks of rice from two months ago) shouts in the queue: \"<em>Sinwa i fé crédi k'a son moun !</em>\" (the Chinese only give credit to their own). The shopkeeper says nothing. She sets the blue book on the counter, opens it, and reads the names aloud: Payet, Narayanin, Ahamada, Hoarau, Lefèvre, Rakotomalala, Grondin… two hundred names, three of them Chinese. Then she reads the name of the man shouting, and what he owes. In the queue, an old woman murmurs that without that book, her little ones would not have eaten in January. The customer leaves. The next day, he comes back to return a sack.</p>"
+    }
+  },
+  "registre/evenements/marche-le-cours-s-affole": {
+    "_nom": "Le cours s'affole",
+    "nom": {
+      "fr": "Le cours s'affole",
+      "en": "The rate goes wild"
+    },
+    "texte": {
+      "fr": "<p>Une rumeur de fièvre au Port a fait monter les médicaments ; l'eau manque depuis que la citerne d'un bastion s'est fendue. À l'ouverture, des marchands demandent dix parts pour une boîte d'antibiotiques. Lalao Rasoanaivo efface son ardoise, réunit le conseil sous le kiosque, et réécrit le cours pour la journée : les médicaments et l'eau montent, mais pour tous pareil. Celui qui vend au-dessus du cours affiché sort du marché.</p>",
+      "en": "<p>A rumour of fever at Le Port has sent medicine up; water is short since a stronghold's tank cracked. At the opening, traders ask ten shares for a box of antibiotics. Lalao Rasoanaivo wipes her slate, gathers the council under the bandstand, and rewrites the rate for the day: medicine and water go up, but the same for everyone. Whoever sells above the posted rate leaves the market.</p>"
+    }
+  },
+  "registre/evenements/marche-le-ladi-lafe": {
+    "_nom": "Le Ladi Lafé",
+    "texte": {
+      "fr": "<p>Une histoire court sur le groupe : il aurait refusé l'entrée à une famille malade, ou vendu des vivres gâtés, ou volé une nasse. C'est faux. Quelqu'un l'a lancée exprès, un marchand qui veut sa place au conseil, ou un ancien membre chassé du groupe. Tant que la rumeur court, les PNJ qui l'ont entendue se méfient. Pour la faire tomber, il faut une preuve : une marque, un témoin, un fait. Et une rumeur fausse démentie se retourne contre celui qui l'a lancée : tout le marché saura qu'il a menti.</p>",
+      "en": "<p>A story is going round about the group: it supposedly turned away a sick family, or sold spoiled food, or stole a fish trap. It is false. Someone started it on purpose, a trader who wants its seat on the council, or a former member thrown out of the group. As long as the rumour runs, the NPCs who heard it are wary. To bring it down takes proof: a mark, a witness, a fact. And a false rumour, once denied, turns against whoever started it: the whole market will know he lied.</p>"
+    }
+  },
+  "registre/evenements/marche-le-litige": {
+    "_nom": "Le litige des cabris",
+    "nom": {
+      "fr": "Le litige des cabris",
+      "en": "The dispute over the goats"
+    },
+    "texte": {
+      "fr": "<p>Deux bastions se disputent trois cabris : l'un les a perdus pendant l'orage, l'autre les a trouvés dans sa ravine et nourris un mois. On porte le litige au conseil, une voix par bastion. Le président Gérard Payet, qu'on dit « faire passer ses amis d'abord », donne sa voix à l'inconnu contre son propre cousin, parce que le mois de fourrage compte. Le conseil coupe la poire en deux : deux cabris rendus, un gardé pour la peine. Le groupe a une voix s'il est un bastion du marché ; le MJ fait voter (trancher un litige).</p>",
+      "en": "<p>Two strongholds are arguing over three goats: one lost them in the storm, the other found them in its ravine and fed them for a month. The dispute is taken to the council, one voice per stronghold. The chairman Gérard Payet, who is said to \"put his friends first\", gives his voice to the stranger against his own cousin, because the month of fodder counts. The council splits the difference: two goats returned, one kept for the trouble. The group has a voice if it is a stronghold of the market; the GM calls the vote (settle a dispute).</p>"
+    }
+  },
+  "registre/evenements/marche-le-porteur-du-cirque": {
+    "_nom": "Le porteur du cirque",
+    "nom": {
+      "fr": "Le porteur du cirque",
+      "en": "The cirque porter"
+    },
+    "texte": {
+      "fr": "<p>Monsieur de Sainte-Croix, appuyé sur sa canne, ressort devant un étal la vieille rengaine de son grand-père sur les Cafres et la paresse. Le silence tombe. C'est Mémé Lucette, ou n'importe qui du conseil, qui répond devant tout le marché : la hotte de bambou qui vient de passer, trente kilos de riz et de médicaments pour les îlets, c'est Rosaire Fontaine qui la porte, à dos d'homme, par le sentier Scout, deux fois par semaine depuis le jour zéro. Personne d'autre n'a voulu le faire. Le vieil homme se tait. La semaine suivante, il donne à Rosaire une paire de chaussures de marche qui ne lui servent plus. Rosaire les prend, et lui dit, pour être juste, qu'il pensait lui aussi que « <em>gro blan i gard la tèr</em> » (les gros blancs gardent la terre).</p>",
+      "en": "<p>Monsieur de Sainte-Croix, leaning on his cane, trots out in front of a stall his grandfather's old refrain about the Cafres and laziness. Silence falls. It is Mémé Lucette, or anyone on the council, who answers in front of the whole market: the bamboo basket that just went by, thirty kilos of rice and medicine for the îlets, is carried by Rosaire Fontaine, on his back, by the Scout trail, twice a week since day zero. Nobody else wanted to do it. The old man falls silent. The following week, he gives Rosaire a pair of walking boots he no longer uses. Rosaire takes them, and tells him, to be fair, that he too used to think that \"<em>gro blan i gard la tèr</em>\" (the gros blancs keep the land).</p>"
+    }
+  },
+  "registre/evenements/marche-le-terrain-ouvert": {
+    "_nom": "Le terrain ouvert",
+    "nom": {
+      "fr": "Le terrain ouvert",
+      "en": "The open ground"
+    },
+    "texte": {
+      "fr": "<p>« <em>Gro blan i gard la tèr</em> » (le gros blanc garde la terre), disent les anciens en passant devant la varangue de Monsieur de Sainte-Croix. Ce jour-là, le conseil cherche un terrain neuf, l'ancien étant trop exposé : c'est lui qui se lève et propose sa prairie, entre la route et la ravine, ouverte à tous, pour rien, « tant que le marché tient ». Il demande seulement qu'on laisse ses manguiers tranquilles. Les anciens grommellent qu'il cache quelque chose. Il ne cache rien ; il est seul, et il aime entendre du monde le samedi.</p>",
+      "en": "<p>\"<em>Gro blan i gard la tèr</em>\" (the gros blanc keeps the land), the old folk say as they pass Monsieur de Sainte-Croix's veranda. That day, the council is looking for new ground, the old one being too exposed: he is the one who stands up and offers his meadow, between the road and the ravine, open to all, for nothing, \"as long as the market holds\". He only asks that his mango trees be left alone. The old folk grumble that he is hiding something. He is hiding nothing; he is alone, and he likes to hear people on Saturdays.</p>"
+    }
+  },
+  "registre/evenements/marche-les-dettes-effacees": {
+    "_nom": "Les dettes effacées",
+    "nom": {
+      "fr": "Les dettes effacées",
+      "en": "The wiped-out debts"
+    },
+    "texte": {
+      "fr": "<p>Le cyclone est passé la semaine dernière. Au marché, on dit qu'Ismaël Omarjee va faire payer double, « dur en affaires » comme il est. Il arrive avec son petit carnet, l'ouvre sur l'étal, et raye une à une les dettes des familles qui ont tout perdu : la case de la ravine, le hangar des Payet, la barque du vieux Grondin. Il ne dit pas un mot ; il discute ensuite le prix d'un rouleau de fil de fer pendant dix minutes, par principe. (Si le groupe doit quelque chose à un carnet et a souffert du cyclone, le MJ peut effacer sa dette : remise au Nouvel An ou tout de suite.)</p>",
+      "en": "<p>The cyclone went through last week. At the market, people say Ismaël Omarjee will charge double, \"a hard bargainer\" as he is. He arrives with his little book, opens it on the stall, and strikes out one by one the debts of the families who lost everything: the house by the ravine, the Payets' shed, old Grondin's boat. He does not say a word; then he haggles over the price of a roll of wire for ten minutes, on principle. (If the group owes something to a book and suffered from the cyclone, the GM can wipe out its debt: at the New Year or straight away.)</p>"
+    }
+  },
+  "registre/evenements/marche-les-lentilles-du-yab": {
+    "_nom": "Les lentilles du Yab",
+    "nom": {
+      "fr": "Les lentilles du Yab",
+      "en": "The Yab's lentils"
+    },
+    "texte": {
+      "fr": "<p>« <em>Yab i désann jamé dann ba</em> » (le Yab ne descend jamais de ses Hauts), répète un jeune du Port en cherchant des lentilles de Cilaos, introuvables d'après lui. Derrière lui, Jean-Marie Dijoux pose son sac de jute, quatre heures de marche dans les jambes, comme chaque semaine depuis le jour zéro. Les meilleures lentilles de l'île, petites et brunes. Il les troque au cours, pas une part de plus, et repart avant la nuit en marmonnant que « <em>moun anba i vé tout pou rien</em> » (les gens d'en bas veulent tout pour rien). Le jeune du Port l'aide à recharger son sac. Ni l'un ni l'autre ne s'excuse ; ils se reverront samedi.</p>",
+      "en": "<p>\"<em>Yab i désann jamé dann ba</em>\" (the Yab never comes down from his Highlands), repeats a youngster from Le Port while looking for Cilaos lentils, which according to him cannot be found. Behind him, Jean-Marie Dijoux sets down his jute sack, four hours of walking in his legs, like every week since day zero. The best lentils on the island, small and brown. He trades them at the rate, not a share more, and leaves before nightfall muttering that \"<em>moun anba i vé tout pou rien</em>\" (people from down below want everything for nothing). The youngster from Le Port helps him load his sack. Neither apologises; they will see each other on Saturday.</p>"
     }
   },
   "registre/evenements/noyes-du-lagon": {
@@ -1899,6 +2203,81 @@
       "en": "You only eat and drink after nightfall: cooking and light at night (visibility +1 for the month)."
     }
   },
+  "registre/foires/foire-aux-semences": {
+    "_nom": "La foire aux semences du Nouvel An tamoul",
+    "nom": {
+      "fr": "La foire aux semences du Nouvel An tamoul",
+      "en": "The seed fair of the Tamil New Year"
+    },
+    "produit": {
+      "fr": "les semences",
+      "en": "seeds"
+    },
+    "description": {
+      "fr": "<p>En avril, la fin des cyclones et le Nouvel An tamoul : le signal des semis. Les abris de l'Est échangent leurs graines devant le temple de Saint-André, sachet contre sachet, et chacun repart avec de quoi semer ce qu'il n'avait pas.</p>",
+      "en": "<p>In April, the end of the cyclones and the Tamil New Year: the signal for sowing. The shelters of the East swap their seeds in front of the Saint-André temple, packet for packet, and everyone leaves with something to sow that they did not have.</p>"
+    }
+  },
+  "registre/foires/foire-des-goyaviers": {
+    "_nom": "La foire des goyaviers de la Plaine des Palmistes",
+    "nom": {
+      "fr": "La foire des goyaviers de la Plaine des Palmistes",
+      "en": "The strawberry guava fair of the Plaine des Palmistes"
+    },
+    "produit": {
+      "fr": "les goyaviers",
+      "en": "strawberry guavas (goyaviers)"
+    },
+    "description": {
+      "fr": "<p>En juin, les goyaviers rougissent toute la Plaine : on les cueille par paniers, on en fait des confitures et du rhum arrangé, et l'on troque le reste sous la pluie fine des Palmistes.</p>",
+      "en": "<p>In June, the strawberry guavas turn the whole Plaine red: they are picked by the basketful, made into jam and rhum arrangé, and the rest is traded in the fine Palmistes drizzle.</p>"
+    }
+  },
+  "registre/foires/foire-des-lentilles": {
+    "_nom": "La foire des lentilles de Cilaos",
+    "nom": {
+      "fr": "La foire des lentilles de Cilaos",
+      "en": "The Cilaos lentil fair"
+    },
+    "produit": {
+      "fr": "les lentilles",
+      "en": "lentils"
+    },
+    "description": {
+      "fr": "<p>En octobre, Cilaos fêtait ses lentilles. La fête est devenue une foire de troc sous trêve : les terrasses de l'Îlet à Cordes donnent leur récolte, les bastions montent de toute l'île par la route aux quatre cents virages, et pendant trois jours personne ne lève la main sur personne dans le cirque.</p>",
+      "en": "<p>In October, Cilaos used to celebrate its lentils. The festival has become a barter fair under truce: the terraces of Îlet à Cordes give their harvest, the strongholds come up from all over the island by the road of four hundred bends, and for three days nobody raises a hand against anybody in the cirque.</p>"
+    }
+  },
+  "registre/foires/foire-du-chouchou": {
+    "_nom": "La foire du chouchou de Salazie",
+    "nom": {
+      "fr": "La foire du chouchou de Salazie",
+      "en": "The Salazie chayote fair"
+    },
+    "produit": {
+      "fr": "les chouchous",
+      "en": "chayotes (chouchous)"
+    },
+    "description": {
+      "fr": "<p>Les treilles de chouchous croulent dans le cirque le plus vert de l'île. On en fait des gratins, des achards, on en troque des sacs entiers. Hell-Bourg rouvre ses cases créoles pour trois jours.</p>",
+      "en": "<p>The chayote (chouchou) trellises sag in the greenest cirque of the island. People make gratins and achards with them, and trade them by the sackful. Hell-Bourg reopens its Creole houses for three days.</p>"
+    }
+  },
+  "registre/foires/foire-du-vacoa": {
+    "_nom": "La foire du vacoa de Saint-Philippe",
+    "nom": {
+      "fr": "La foire du vacoa de Saint-Philippe",
+      "en": "The Saint-Philippe screwpine fair"
+    },
+    "produit": {
+      "fr": "les feuilles de vacoa tressées",
+      "en": "woven screwpine (vacoa) leaves"
+    },
+    "description": {
+      "fr": "<p>Les tresseuses du Sud sauvage sortent leurs feuilles de vacoa séchées : nattes, paniers, chapeaux, cordes, toitures. Tout ce qui se tresse se troque, et l'on mange les cœurs de palmiste du Sud.</p>",
+      "en": "<p>The weavers of the Wild South bring out their dried screwpine (vacoa) leaves: mats, baskets, hats, ropes, roofing. Everything woven is traded, and people eat the palm hearts of the South.</p>"
+    }
+  },
   "registre/histoire": {
     "_nom": "histoire",
     "proche.0": {
@@ -1996,6 +2375,376 @@
     "matin.11": {
       "fr": "Ce matin-là, elle regardait les letchis rougir dans l'arbre de la cour.",
       "en": "That morning, she was watching the lychees redden in the tree in the yard."
+    }
+  },
+  "registre/marchands/armand-de-sainte-croix": {
+    "_nom": "Monsieur Armand de Sainte-Croix",
+    "nom": {
+      "fr": "Monsieur Armand de Sainte-Croix",
+      "en": "Monsieur Armand de Sainte-Croix"
+    },
+    "role": {
+      "fr": "Propriétaire du terrain du marché",
+      "en": "Owner of the market ground"
+    },
+    "apparence": {
+      "fr": "Soixante-quinze ans, peau claire tachée de soleil, cheveux blancs plaqués, canne à pommeau, costume de lin froissé.",
+      "en": "Seventy-five, fair sun-spotted skin, slicked-back white hair, a knob-handled cane, a crumpled linen suit."
+    },
+    "description": {
+      "fr": "<p>Dernier d'une vieille famille de planteurs de l'Ouest, il a vu partir la canne, puis les enfants, puis le monde. Il a gardé la terre, une varangue et des manières. Il a dit des choses qu'on ne dit plus, et il en dit encore.</p>",
+      "en": "<p>The last of an old planter family of the West, he has seen the cane go, then the children, then the world. He has kept the land, a veranda and his manners. He has said things that are no longer said, and he still says some.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "La vieille rengaine raciste sur les Cafres et la paresse, qu'il répète comme son grand-père, jusqu'au jour où on le contredit devant tous.",
+      "en": "The old racist refrain about the Cafres and laziness, which he repeats like his grandfather did, until the day he is contradicted in front of everyone."
+    },
+    "onDit": {
+      "fr": "Le gros blanc « *i gard la tèr* » (il garde la terre).",
+      "en": "The gros blanc \"*i gard la tèr*\" (keeps the land)."
+    },
+    "dementi": {
+      "fr": "Le terrain du marché, c'est lui qui l'a ouvert à tous, et il n'en demande rien.",
+      "en": "The market ground is his, he opened it to all, and he asks nothing for it."
+    }
+  },
+  "registre/marchands/gerard-payet": {
+    "_nom": "Gérard Payet, président du conseil du marché",
+    "nom": {
+      "fr": "Gérard Payet, président du conseil du marché",
+      "en": "Gérard Payet, chairman of the market council"
+    },
+    "role": {
+      "fr": "Président du conseil",
+      "en": "Council chairman"
+    },
+    "apparence": {
+      "fr": "Soixante ans, métis à la peau brune, aux traits d'une grand-mère hakka, moustache grise, voix de stentor.",
+      "en": "Sixty, a brown-skinned métis with the features of a Hakka grandmother, grey moustache, booming voice."
+    },
+    "description": {
+      "fr": "<p>Ancien chef de rayon, élu président du conseil parce que tout le monde le connaît et que personne ne le craint. Il ouvre chaque marché par la même phrase, « <em>isi la pa pou batay</em> » (ici, ce n'est pas pour se battre), et il la pense.</p>",
+      "en": "<p>A former department manager, elected chairman of the council because everyone knows him and nobody fears him. He opens every market with the same sentence, \"<em>isi la pa pou batay</em>\" (here is not for fighting), and he means it.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Dopi zot la arivé, tout i disparé.* » (Depuis qu'ils sont arrivés, tout disparaît.)",
+      "en": "\"*Dopi zot la arivé, tout i disparé.*\" (Since they arrived, everything goes missing.)"
+    },
+    "onDit": {
+      "fr": "Le président « fait passer ses amis d'abord ».",
+      "en": "The chairman \"puts his friends first\"."
+    },
+    "dementi": {
+      "fr": "Au premier litige, il donne raison à un inconnu contre son propre cousin ; et quand l'objet marqué revient, il reconnaît devant le conseil qu'il s'était trompé sur les derniers arrivés.",
+      "en": "At the first dispute, he rules for a stranger against his own cousin; and when the marked object comes back, he admits before the council that he was wrong about the last to arrive."
+    }
+  },
+  "registre/marchands/ismael-omarjee": {
+    "_nom": "Ismaël Omarjee, tissus et quincaillerie",
+    "nom": {
+      "fr": "Ismaël Omarjee, tissus et quincaillerie",
+      "en": "Ismaël Omarjee, cloth and hardware"
+    },
+    "role": {
+      "fr": "Commerçant",
+      "en": "Trader"
+    },
+    "apparence": {
+      "fr": "Cinquante-cinq ans, peau mate claire, barbe grise taillée court, calotte blanche, chemise repassée malgré tout.",
+      "en": "Fifty-five, light olive skin, short-trimmed grey beard, white skullcap, a shirt ironed in spite of everything."
+    },
+    "description": {
+      "fr": "<p>Le magasin de tissus de la rue des Bons-Enfants est devenu un étal de quincaillerie : clous redressés, vis triées par taille, bâches, fil de fer. Il discute chaque prix pied à pied, par principe, et tient lui aussi un petit carnet.</p>",
+      "en": "<p>The cloth shop on Rue des Bons-Enfants has become a hardware stall: straightened nails, screws sorted by size, tarpaulins, wire. He haggles over every price inch by inch, on principle, and he too keeps a little book.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Sinwa i kas lo pri.* » (Les Chinois cassent les prix.)",
+      "en": "\"*Sinwa i kas lo pri.*\" (The Chinese undercut prices.)"
+    },
+    "onDit": {
+      "fr": "Le commerçant z'arabe est « dur en affaires » : il ne lâche jamais une part.",
+      "en": "The Z'arabe trader \"drives a hard bargain\": he never gives up a single share."
+    },
+    "dementi": {
+      "fr": "Après le cyclone, il raye de son carnet les dettes de ceux qui ont tout perdu, sans une phrase.",
+      "en": "After the cyclone, he strikes from his book the debts of those who lost everything, without a word."
+    }
+  },
+  "registre/marchands/jean-marie-dijoux": {
+    "_nom": "Jean-Marie Dijoux, les lentilles de l'Îlet à Cordes",
+    "nom": {
+      "fr": "Jean-Marie Dijoux, les lentilles de l'Îlet à Cordes",
+      "en": "Jean-Marie Dijoux, the lentils of Îlet à Cordes"
+    },
+    "role": {
+      "fr": "Marchand de lentilles",
+      "en": "Lentil seller"
+    },
+    "apparence": {
+      "fr": "Cinquante ans, sec et noueux, peau très claire rougie par le froid, yeux bleus délavés, chapeau de paille tressée.",
+      "en": "Fifty, lean and knotty, very fair skin reddened by the cold, washed-out blue eyes, woven straw hat."
+    },
+    "description": {
+      "fr": "<p>Il cultive les lentilles en terrasse à l'Îlet à Cordes, comme son père et le père de son père. Il descend chaque semaine par la route de Cilaos, un sac de jute sur l'épaule et un fusil sur l'autre, et remonte avant la nuit.</p>",
+      "en": "<p>He grows lentils on terraces at Îlet à Cordes, like his father and his father's father. He comes down every week by the Cilaos road, a jute sack on one shoulder and a rifle on the other, and goes back up before nightfall.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Moun anba i vé tout pou rien.* » (Les gens d'en bas veulent tout pour rien.)",
+      "en": "\"*Moun anba i vé tout pou rien.*\" (People from down below want everything for nothing.)"
+    },
+    "onDit": {
+      "fr": "« *Yab i désann jamé dann ba.* » (Le Yab ne descend jamais de ses Hauts.)",
+      "en": "\"*Yab i désann jamé dann ba.*\" (The Yab never comes down from his Highlands.)"
+    },
+    "dementi": {
+      "fr": "Il descend chaque semaine, quatre heures de route à pied, avec les meilleures lentilles de l'île.",
+      "en": "He comes down every week, four hours on foot, with the best lentils on the island."
+    }
+  },
+  "registre/marchands/lalao-rasoanaivo": {
+    "_nom": "Lalao Rasoanaivo, la balance du conseil",
+    "nom": {
+      "fr": "Lalao Rasoanaivo, la balance du conseil",
+      "en": "Lalao Rasoanaivo, the council's scales"
+    },
+    "role": {
+      "fr": "Tenante du cours",
+      "en": "Keeper of the rate"
+    },
+    "apparence": {
+      "fr": "Quarante ans, peau brune, traits des Hautes Terres, cheveux noirs en chignon serré, un crayon derrière l'oreille.",
+      "en": "Forty, brown skin, features of the Malagasy Highlands, black hair in a tight bun, a pencil behind her ear."
+    },
+    "description": {
+      "fr": "<p>Comptable d'une coopérative de vanille avant le jour zéro, elle tient la grande ardoise du cours et la balance du conseil. Personne ne conteste ses pesées : elle pèse devant tout le monde, deux fois.</p>",
+      "en": "<p>A bookkeeper for a vanilla cooperative before day zero, she keeps the big slate of the rate and the council's scales. Nobody disputes her weighings: she weighs in front of everyone, twice.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Mi tous pa so tizan, na in servis ladan.* » (Je ne touche pas à ses tisanes, il y a un service dedans.)",
+      "en": "\"*Mi tous pa so tizan, na in servis ladan.*\" (I don't touch her tisanes, there's a service in them.)"
+    },
+    "onDit": {
+      "fr": "« *Bann malgas i vol nout travay.* » (Les Malgaches nous volent le travail.)",
+      "en": "\"*Bann malgas i vol nout travay.*\" (The Malagasy steal our jobs.)"
+    },
+    "dementi": {
+      "fr": "Le travail qu'elle fait, personne ne voulait le faire : tenir un cours juste, le même pour tous, et peser deux fois devant tout le monde.",
+      "en": "The job she does, nobody wanted to do: keep a fair rate, the same for everyone, and weigh twice in front of everyone."
+    }
+  },
+  "registre/marchands/madame-moutoussamy": {
+    "_nom": "Madame Moutoussamy, la tisaneuse",
+    "nom": {
+      "fr": "Madame Moutoussamy, la tisaneuse",
+      "en": "Madame Moutoussamy, the herbalist"
+    },
+    "role": {
+      "fr": "Tisaneuse",
+      "en": "Herbalist"
+    },
+    "apparence": {
+      "fr": "Soixante-dix ans, peau très sombre, cheveux blancs nattés, un pottou rouge au front, sari de coton passé.",
+      "en": "Seventy, very dark skin, braided white hair, a red pottou on her forehead, a faded cotton sari."
+    },
+    "description": {
+      "fr": "<p>Elle vend des zerbaz séchés en petits paquets de papier journal, des tisanes pour la fièvre, des emplâtres pour les entorses. Elle fait le service au temple de Saint-André depuis cinquante ans et ne s'en cache pas. Elle soigne d'abord, et demande après ce qu'on peut donner.</p>",
+      "en": "<p>She sells dried zerbaz in little packets of newspaper, tisanes for fever, poultices for sprains. She has performed the service at the Saint-André temple for fifty years and does not hide it. She heals first, and asks afterwards what you can give.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Zorey i kroi in kashé i gèr tout.* » (Les Zoreils croient qu'un cachet guérit tout.)",
+      "en": "\"*Zorey i kroi in kashé i gèr tout.*\" (Zoreils think a pill cures everything.)"
+    },
+    "onDit": {
+      "fr": "On en a peur, « à cause du service » : elle ferait des choses la nuit.",
+      "en": "People are afraid of her, \"because of the service\" (an offering ritual): she supposedly does things at night."
+    },
+    "dementi": {
+      "fr": "Elle soigne tout le marché, sans demander à personne qui croit en quoi.",
+      "en": "She heals the whole market, without asking anyone who believes in what."
+    }
+  },
+  "registre/marchands/madame-thiaw-kine": {
+    "_nom": "Madame Thiaw-Kine, la boutiquière",
+    "nom": {
+      "fr": "Madame Thiaw-Kine, la boutiquière",
+      "en": "Madame Thiaw-Kine, the shopkeeper"
+    },
+    "role": {
+      "fr": "Boutique et carnet de crédit",
+      "en": "Shop and credit book"
+    },
+    "apparence": {
+      "fr": "Soixante ans, petite, traits d'Asie de l'Est, cheveux gris tirés en chignon, lunettes au bout d'un cordon, blouse à fleurs.",
+      "en": "Sixty, small, East Asian features, grey hair pulled into a bun, glasses on a cord, flowered smock."
+    },
+    "description": {
+      "fr": "<p>Elle tient la boutique d'alimentation générale de la Rivière Saint-Louis depuis quarante ans : une balance romaine, trois étagères, un réchaud au fond, et le <strong>carnet</strong>, un cahier d'écolier à couverture bleue où chaque dette du quartier est écrite au crayon. Elle n'a pas fermé au jour zéro ; elle a juste baissé le rideau à moitié.</p>",
+      "en": "<p>She has kept the general store of Rivière Saint-Louis for forty years: a steelyard, three shelves, a stove at the back, and the <strong>book</strong>, a blue-covered school exercise book where every debt of the neighbourhood is written in pencil. She did not close on day zero; she just pulled the shutter halfway down.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Zorey i pèy pa, li rant an Frans.* » (Le Zoreil ne paie pas, il rentre en France.)",
+      "en": "\"*Zorey i pèy pa, li rant an Frans.*\" (The Zoreil doesn't pay, he goes back to France.)"
+    },
+    "onDit": {
+      "fr": "« *Sinwa i fé crédi k'a son moun.* » (Le Chinois ne fait crédit qu'aux siens.)",
+      "en": "\"*Sinwa i fé crédi k'a son moun.*\" (The Chinese only give credit to their own.)"
+    },
+    "dementi": {
+      "fr": "Son carnet est ouvert à quiconque tient parole : il a nourri tout le quartier, et il y a trois noms chinois sur deux cents.",
+      "en": "Her book is open to anyone who keeps their word: it fed the whole neighbourhood, and there are three Chinese names out of two hundred."
+    }
+  },
+  "registre/marchands/rosaire-fontaine": {
+    "_nom": "Rosaire Fontaine, porteur de Mafate",
+    "nom": {
+      "fr": "Rosaire Fontaine, porteur de Mafate",
+      "en": "Rosaire Fontaine, Mafate porter"
+    },
+    "role": {
+      "fr": "Porteur du cirque",
+      "en": "Cirque porter"
+    },
+    "apparence": {
+      "fr": "Quarante-cinq ans, peau noire, crâne rasé, mollets de coureur, une hotte de bambou sur le dos.",
+      "en": "Forty-five, black skin, shaved head, a runner's calves, a bamboo basket on his back."
+    },
+    "description": {
+      "fr": "<p>Avant, il ravitaillait les îlets de Mafate quand l'hélicoptère ne volait pas ; aujourd'hui il est le seul ravitaillement. Trente kilos sur le dos, le sentier Scout ou le col des Bœufs, et il revient avec ce que les îlets échangent.</p>",
+      "en": "<p>Before, he supplied the îlets of Mafate when the helicopter was not flying; today he is the only supply. Thirty kilos on his back, the Scout trail or the Col des Bœufs, and he comes back with what the îlets trade.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Gro blan i gard la tèr.* » (Les gros blancs gardent la terre.)",
+      "en": "\"*Gro blan i gard la tèr.*\" (The gros blancs keep the land.)"
+    },
+    "onDit": {
+      "fr": "La vieille rengaine raciste sur les Cafres et la paresse, dans la bouche de qui veut la dire.",
+      "en": "The old racist refrain about the Cafres and laziness, in the mouth of whoever wants to say it."
+    },
+    "dementi": {
+      "fr": "Celui qui la répète est contredit devant tous : le porteur qui ravitaille le cirque à dos d'homme est cafre.",
+      "en": "Whoever repeats it is contradicted in front of everyone: the porter who supplies the cirque on his back is a Cafre."
+    }
+  },
+  "registre/marchands/soilihi-ahamada": {
+    "_nom": "Soilihi Ahamada, le docker",
+    "nom": {
+      "fr": "Soilihi Ahamada, le docker",
+      "en": "Soilihi Ahamada, the docker"
+    },
+    "role": {
+      "fr": "Porteur et manutentionnaire",
+      "en": "Porter and handler"
+    },
+    "apparence": {
+      "fr": "Trente ans, peau noire, épaules de docker, kofia brodée, un sourire qu'il ne montre pas aux inconnus.",
+      "en": "Thirty, black skin, docker's shoulders, embroidered kofia, a smile he does not show strangers."
+    },
+    "description": {
+      "fr": "<p>Arrivé de Moroni par Mayotte en 2019, docker au Port jusqu'au jour zéro, il porte aujourd'hui les charges des autres au marché pour une part de ce qu'il porte. Sa sœur Zaïnaba, mahoraise par son mari, tresse les cheveux et les nasses.</p>",
+      "en": "<p>He came from Moroni by way of Mayotte in 2019 and was a docker at Le Port until day zero; today he carries other people's loads at the market for a share of what he carries. His sister Zaïnaba, Mahorese by marriage, braids hair and fish traps.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "« *Yab i koz pa ek nou.* » (Les Yabs ne nous parlent pas.)",
+      "en": "\"*Yab i koz pa ek nou.*\" (The Yabs don't talk to us.)"
+    },
+    "onDit": {
+      "fr": "Les derniers arrivés, comoriens et mahorais, sont « accusés de tout » : au moindre vol, on les regarde.",
+      "en": "The last to arrive, Comorians and Mahorese, are \"blamed for everything\": at the slightest theft, eyes turn to them."
+    },
+    "dementi": {
+      "fr": "C'est lui qui rapporte au conseil l'objet marqué que tout le monde cherchait.",
+      "en": "He is the one who brings back to the council the marked object everyone was looking for."
+    }
+  },
+  "registre/marchands/thomas-lefevre": {
+    "_nom": "Thomas Lefèvre, dit Radio",
+    "nom": {
+      "fr": "Thomas Lefèvre, dit Radio",
+      "en": "Thomas Lefèvre, known as Radio"
+    },
+    "role": {
+      "fr": "Réparateur de radios",
+      "en": "Radio repairer"
+    },
+    "apparence": {
+      "fr": "Trente-cinq ans, grand, peau claire brûlée aux pommettes, cheveux châtains en bataille, lunettes rafistolées au chatterton.",
+      "en": "Thirty-five, tall, fair skin burnt on the cheekbones, tousled light-brown hair, glasses mended with insulating tape."
+    },
+    "description": {
+      "fr": "<p>Ingénieur du son venu de Lyon pour un festival, deux ans avant le jour zéro, il est resté pour une fille de Bras-Panon et n'est jamais reparti. Il parle un créole appliqué qui fait rire tout le monde, et il a sur son étal un fer à souder qui chauffe au panneau solaire.</p>",
+      "en": "<p>A sound engineer who came from Lyon for a festival two years before day zero, he stayed for a girl from Bras-Panon and never left. He speaks a studious Creole that makes everyone laugh, and on his stall there is a soldering iron heated by a solar panel.</p>"
+    },
+    "prejuges.0.dit": {
+      "fr": "« L'heure créole » : on ne sait jamais quand ils viendront, alors il donne rendez-vous une heure plus tôt.",
+      "en": "\"Creole time\": you never know when they will come, so he sets appointments an hour early."
+    },
+    "onDit": {
+      "fr": "« *Zorey i koné rien fé isi.* » (Le Zoreil ne sait rien faire ici.)",
+      "en": "\"*Zorey i koné rien fé isi.*\" (The Zoreil can't do anything here.)"
+    },
+    "dementi": {
+      "fr": "C'est lui qui répare les radios de tous les bastions : sans lui, l'île ne s'entendrait plus.",
+      "en": "He is the one who repairs the radios of every stronghold: without him, the island would no longer hear itself."
+    }
+  },
+  "registre/marches/marche-de-bourg-murat": {
+    "_nom": "Le marché du samedi à Bourg-Murat",
+    "nom": {
+      "fr": "Le marché du samedi à Bourg-Murat",
+      "en": "The Saturday market at Bourg-Murat"
+    },
+    "lieu": {
+      "fr": "le parking du gîte, au bord de la route du Volcan",
+      "en": "the gîte car park, by the Route du Volcan"
+    },
+    "description": {
+      "fr": "<p>Le troc du samedi de la Coopérative, devenu le marché des Plaines : lait, fromage, légumes des Hauts, contre outils, graines et nouvelles d'en bas. Les fermiers y montent la garde à tour de rôle, cloches de vache aux barrières.</p>",
+      "en": "<p>The Cooperative's Saturday barter, now the market of the Plains: milk, cheese, Highland vegetables, for tools, seeds and news from below. The farmers take turns standing guard, cowbells on the gates.</p>"
+    }
+  },
+  "registre/marches/marche-de-savanna": {
+    "_nom": "Le marché aux pièces de Savanna",
+    "nom": {
+      "fr": "Le marché aux pièces de Savanna",
+      "en": "The Savanna parts market"
+    },
+    "lieu": {
+      "fr": "le parking de l'hypermarché, entre les caddies renversés",
+      "en": "the hypermarket car park, among the overturned trolleys"
+    },
+    "description": {
+      "fr": "<p>Le mercredi, les Ferrailleurs étalent ce que les villes ont laissé : batteries, pneus, panneaux, outils. On y troque tout contre tout, et on n'y laisse rien sans garde. Le terrain est celui de Monsieur de Sainte-Croix, qui l'a ouvert à tous.</p>",
+      "en": "<p>On Wednesdays, the Scrappers lay out what the towns left behind: batteries, tyres, panels, tools. Everything is traded for everything, and nothing is left unguarded. The ground belongs to Monsieur de Sainte-Croix, who opened it to all.</p>"
+    }
+  },
+  "registre/marches/marche-du-col-des-boeufs": {
+    "_nom": "Le troc du col des Bœufs",
+    "nom": {
+      "fr": "Le troc du col des Bœufs",
+      "en": "The barter at the Col des Bœufs"
+    },
+    "lieu": {
+      "fr": "le col, entre Salazie et Mafate, là où la route s'arrête",
+      "en": "the pass, between Salazie and Mafate, where the road ends"
+    },
+    "description": {
+      "fr": "<p>Le vendredi, les Familles des Îlets descendent au col ce que Mafate échange, et repartent avec ce que Salazie apporte. Personne ne monte plus haut sans les trois jours de quarantaine. Rosaire Fontaine y porte la moitié des charges.</p>",
+      "en": "<p>On Fridays, the Families of the Îlets bring down to the pass what Mafate trades, and go back up with what Salazie brings. Nobody goes higher without the three days of quarantine. Rosaire Fontaine carries half the loads.</p>"
+    }
+  },
+  "registre/marches/marche-du-quai-de-saint-pierre": {
+    "_nom": "Le marché du quai de Saint-Pierre",
+    "nom": {
+      "fr": "Le marché du quai de Saint-Pierre",
+      "en": "The Saint-Pierre quay market"
+    },
+    "lieu": {
+      "fr": "le front de mer, sous les filaos, entre le port et la rivière d'Abord",
+      "en": "the seafront, under the filaos, between the harbour and the Rivière d'Abord"
+    },
+    "description": {
+      "fr": "<p>Le dimanche matin, avant la chaleur : poisson des Barques, soins du Dispensaire, la boutique Thiaw-Kine qui monte un étal, la tisaneuse, le réparateur de radios. Le conseil s'assoit sous le kiosque ; Gérard Payet le préside, Lalao Rasoanaivo tient le cours.</p>",
+      "en": "<p>Sunday morning, before the heat: fish from the Boats, care from the Dispensary, the Thiaw-Kine shop setting up a stall, the herbalist, the radio repairer. The council sits under the bandstand; Gérard Payet chairs it, Lalao Rasoanaivo keeps the rate.</p>"
     }
   },
   "registre/recrues": {

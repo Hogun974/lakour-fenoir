@@ -244,7 +244,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
   // il n'est pas tiré.
   const regionAbriGroupe = ctx.abri?.region ? regions.find(r => r.cle === ctx.abri.region) ?? null : null;
   const dansZones = (e, r) => !e?.zones?.length || e.zones.includes(r.zone);
-  const evenements = [...indexer(contenu).evenements.values()].filter(e => e.type !== "fete" && !(e.type === "meteo" && EVENEMENTS_SIMULES.includes(e.cle))
+  const evenements = [...indexer(contenu).evenements.values()].filter(e => e.type !== "fete" && e.type !== "marche" && !(e.type === "meteo" && EVENEMENTS_SIMULES.includes(e.cle))
     && (e.type !== "abri" || (regionAbriGroupe && dansZones(e, regionAbriGroupe)))
     && (!e.phases?.length || e.phases.includes(phase)) && (!e.saisons?.length || e.saisons.includes(saison)));
   if (evenements.length && chance(R.evenementContenu, h)) {

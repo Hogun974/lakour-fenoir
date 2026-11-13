@@ -214,6 +214,112 @@
     </ul>
     {{/if}}
 
+    {{#if (eq onglet "marche")}}
+    <h3><i class="fa-solid fa-scale-balanced"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Cours"}}</h3>
+    <p class="survie-aide">{{localize "LAKOUR_SURVIE.Marche.MJ.AideCours"}}</p>
+    <p>{{#each marche.cours}}<strong>{{libelle}}</strong> {{valeur}}{{#unless @last}} · {{/unless}}{{/each}}</p>
+    <h3><i class="fa-solid fa-stairs"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Stades"}}</h3>
+    <ul class="survie-liste-simple">{{#each marche.stades}}<li>{{#if ouvert}}✔{{else}}✘{{/if}} <strong>{{libelle}}</strong> — {{texte}}</li>{{/each}}</ul>
+
+    <h3><i class="fa-solid fa-book"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Boutiques"}}</h3>
+    <ul class="survie-liste-simple">{{#each marche.boutiques}}<li><strong>{{nom}}</strong>{{#if tenancier}} ({{tenancier}}){{/if}} — {{localize "LAKOUR_SURVIE.Marche.MJ.Dette" dette=dette plafond=plafond}}{{#if traine}} <span class="survie-alerte">{{localize "LAKOUR_SURVIE.Marche.MJ.Traine"}}</span>{{/if}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}</ul>
+    <h3><i class="fa-solid fa-store"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Marches"}}</h3>
+    <ul class="survie-liste-simple">{{#each marche.marches}}<li><strong>{{nom}}</strong> — {{jour}}{{#if hote}} · {{localize "LAKOUR_SURVIE.Marche.MJ.Hote"}} {{hote}}{{/if}}{{#if rompue}} · <span class="survie-alerte">{{localize "LAKOUR_SURVIE.Marche.MJ.TreveRompue"}}</span>{{/if}}{{#if bastions}} · {{bastions}}{{/if}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}</ul>
+    <h3><i class="fa-solid fa-comments"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Rumeurs"}}</h3>
+    <ul class="survie-journal">{{#each marche.rumeurs}}<li><span class="survie-quand">J{{jour}}</span> {{texte}}{{#if dementie}} <em>({{localize "LAKOUR_SURVIE.Marche.MJ.Dementie"}})</em>{{/if}}{{#if verite}} <span class="survie-secret">[{{verite}}]</span>{{/if}}</li>{{else}}<li class="survie-vide">—</li>{{/each}}</ul>
+
+    <div class="survie-formulaires">
+      <div class="survie-formulaire" data-forme="troquer">
+        <h3><i class="fa-solid fa-right-left"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.troquer"}}</h3>
+        <p class="survie-aide">{{localize "LAKOUR_SURVIE.Marche.MJ.AideTroc"}}</p>
+        <fieldset><legend>{{localize "LAKOUR_SURVIE.Marche.MJ.Donne"}}</legend><div class="survie-ressources">{{#each marche.ressources}}<label>{{libelle}} <input type="number" name="donne.{{cle}}" value="0" min="0"></label>{{/each}}</div></fieldset>
+        <fieldset><legend>{{localize "LAKOUR_SURVIE.Marche.MJ.Recoit"}}</legend><div class="survie-ressources">{{#each marche.ressources}}<label>{{libelle}} <input type="number" name="recoit.{{cle}}" value="0" min="0"></label>{{/each}}</div></fieldset>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Pnj"}} <select name="pnj">{{#each marche.pnj}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Cibles"}} <select name="cibles" multiple>{{#each marche.cibles}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Faction"}} <select name="faction">{{#each marche.factions}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Marche"}} <select name="marche">{{#each marche.choixMarches}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label class="survie-case"><input type="checkbox" name="accepter"> {{localize "LAKOUR_SURVIE.Marche.MJ.Accepter"}}</label>
+        <button type="button" data-action="executer"><i class="fa-solid fa-calculator"></i> {{localize "LAKOUR_SURVIE.Marche.MJ.Evaluer"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="ouvrirBoutique">
+        <h3><i class="fa-solid fa-shop"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.ouvrirBoutique"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Nom"}} <input type="text" name="nom"></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Tenancier"}} <select name="tenancier">{{#each marche.pnj}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="crediter">
+        <h3><i class="fa-solid fa-pen-to-square"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.crediter"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Boutique"}} <select name="boutique">{{#each marche.choixBoutiques}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <div class="survie-ressources">{{#each marche.ressources}}<label>{{libelle}} <input type="number" name="biens.{{cle}}" value="0" min="0"></label>{{/each}}</div>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Cibles"}} <select name="cibles" multiple>{{#each marche.cibles}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="rendre">
+        <h3><i class="fa-solid fa-hand-holding"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.rendre"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Boutique"}} <select name="boutique">{{#each marche.choixBoutiques}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <div class="survie-ressources">{{#each marche.ressources}}<label>{{libelle}} <input type="number" name="biens.{{cle}}" value="0" min="0"></label>{{/each}}</div>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Cibles"}} <select name="cibles" multiple>{{#each marche.cibles}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="effacerDette">
+        <h3><i class="fa-solid fa-eraser"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.effacerDette"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Boutique"}} <select name="boutique">{{#each marche.choixBoutiques}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="ouvrirMarche">
+        <h3><i class="fa-solid fa-store"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.ouvrirMarche"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Modele"}} <select name="modele">{{#each marche.modeles}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Foire"}} <select name="foire">{{#each marche.foires}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Nom"}} <input type="text" name="nom"></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.JourSemaine"}} <select name="jourSemaine">{{#each marche.jours}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+        <label class="survie-case"><input type="checkbox" name="accueil"> {{localize "LAKOUR_SURVIE.Marche.MJ.Accueillir"}}</label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="gererMarche">
+        <h3><i class="fa-solid fa-handshake"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.gererMarche"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Marche"}} <select name="marche">{{#each marche.choixMarches}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.MJ.Action"}} <select name="geste">{{#each marche.gestes}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Par"}} <input type="text" name="par" placeholder="{{localize "LAKOUR_SURVIE.Marche.LeGroupe"}}"></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="evenementDeMarche">
+        <h3><i class="fa-solid fa-dice"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.evenementDeMarche"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Stade"}} <select name="stade">{{#each marche.choixStades}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="dementirPrejuge">
+        <h3><i class="fa-solid fa-scale-unbalanced-flip"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.dementirPrejuge"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Cible"}} <select name="cible">{{#each marche.cibles}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="rumeur">
+        <h3><i class="fa-solid fa-comment-dots"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.rumeur"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Sujet"}} <input type="text" name="sujet" placeholder="{{localize "LAKOUR_SURVIE.Marche.LeGroupe"}}"></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Texte"}} <input type="text" name="texte"></label>
+        <label class="survie-case"><input type="checkbox" name="vraie" checked> {{localize "LAKOUR_SURVIE.Marche.MJ.Vraie"}}</label>
+        <label class="survie-case"><input type="checkbox" name="malveillant"> {{localize "LAKOUR_SURVIE.Marche.MJ.Malveillant"}}</label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Auteur"}} <input type="text" name="auteur"></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="dementir">
+        <h3><i class="fa-solid fa-comment-slash"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.dementir"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Rumeur"}} <select name="id">{{#each marche.choixRumeurs}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Preuve"}} <select name="preuve">{{#each marche.preuves}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="creerMarchand">
+        <h3><i class="fa-solid fa-user-plus"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.creerMarchand"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Marchand"}} <select name="cle">{{#each marche.marchands}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="signe">
+        <h3><i class="fa-solid fa-stamp"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.signe"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Marche.MJ.Signe"}} <input type="text" name="signe" value="{{marche.signe}}"></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+    </div>
+    {{/if}}
+
     {{#if (eq onglet "monde")}}
     {{#if monde}}
     <p class="survie-avertissement secret"><i class="fa-solid fa-user-secret"></i> {{localize "LAKOUR_SURVIE.MJ.Secret"}}</p>

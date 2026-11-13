@@ -75,7 +75,17 @@
     "vivant": true,
     "livide": false,
     "charge": 0,
-    "notes": "<p>Pêcheur de Saint-Pierre, métis à la peau sombre, chef de la flottille. Il a peur de la mer depuis qu'il y a perdu son fils, et il y retourne chaque jour. Il en veut aux Zoreils qui ont racheté les cases du front de mer, mais son meilleur matelot est un moniteur de voile breton qui ne parle toujours pas créole.</p>"
+    "notes": "<p>Pêcheur de Saint-Pierre, métis à la peau sombre, chef de la flottille. Il a peur de la mer depuis qu'il y a perdu son fils, et il y retourne chaque jour. Il en veut aux Zoreils qui ont racheté les cases du front de mer, mais son meilleur matelot est un moniteur de voile breton qui ne parle toujours pas créole.</p>",
+    "prejuges": [
+      {
+        "cible": "zoreils",
+        "poids": 1,
+        "dit": "« *Bann zorey la aste tout' lakaz bor d'mèr.* » (Les Zoreils ont racheté toutes les cases du bord de mer.)",
+        "echanges": 0,
+        "fetes": 0,
+        "dementis": 0
+      }
+    ]
   },
   "items": [
     {
@@ -135,7 +145,8 @@
           ],
           "bruit": 1
         },
-        "effets": null
+        "effets": null,
+        "marque": ""
       },
       "effects": [],
       "folder": null,

@@ -83,6 +83,10 @@ Fénoir ne lisse pas l'île : chaque communauté a ses préjugés sur les autres
   - sur les gros blancs : les anciens maîtres, « i gard' la terre ».
 - Pas d'insulte gratuite ni de mot qui blesse plus qu'il ne raconte. Le ton est celui d'une cour réunionnaise : on se
   chambre, on se méfie, et on finit quand même par partager le cari.
+- **Au marché** (2026-11-13, `docs/equilibre-marche.md`) : un préjugé devient une donnée d'un PNJ (`system.prejuges` : une
+  cible, un poids de 1 à 3, ce qu'il dit). Il pèse sur sa première confiance envers un inconnu (prix, crédit, parole) quand le
+  MJ dit qu'il s'éveille, et s'use au contact, aux fêtes partagées et devant les faits. Le système ne connaît l'origine de
+  personne : aucune origine ne donne de bonus ni de malus. Chaque préjugé du marché a son événement qui le dément devant tous.
 
 ## Traduction anglaise
 

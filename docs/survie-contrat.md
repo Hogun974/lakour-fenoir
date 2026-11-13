@@ -711,3 +711,61 @@ moral, le bruit, la lumière, les stocks, l'hygiène, le sang-froid et les liens
 - **Moteur** (`lakour-mj-ia`, branche du lot) : fêtes « sur demande » au socle (seul un monde qui les décline les voit) ; outils
   `survie_feter` (choix, vœux, cadeau, abri voisin ; vœu tenu ou rompu), `survie_participer`, `survie_releve` (avec `confier`),
   `survie_autel` ; l'état du jeu dit la lune, la date lue, l'autel, les souvenirs et les liens.
+## 11. Le marché et le Ladi Lafé (ajout du 2026-11-13, lot « marche »)
+
+Repris du jeu 3D (complément, famille 8 : le marché et les préjugés au marché ; famille 1 : les foires devenues marchés de troc
+saisonniers sous trêve, les oratoires rouges ; famille 3 : le Ladi Lafé, les objets marqués). Chiffres et raisons :
+`docs/equilibre-marche.md` ; écriture des préjugés : `docs/metissage.md`.
+
+### 11.1 Règles (logique pure, `logique/marche.mjs`)
+- **Quatre stades** : troc de la main à la main (toujours), boutique et carnet de crédit (un commerçant PNJ), marché forain (deux
+  communautés au moins dans la région, une route ouverte : jour fixe, terrain à personne, conseil avec une voix par bastion,
+  cours affiché, litiges, trêve), foire (trois jours, une fois l'an, autour d'une récolte). `stadesDuMarche(…)`.
+- **Troc seulement** : le cours (`coursDuJour({ phase, saison, recolte, ajustements })`) donne la valeur de chaque bien en
+  **parts** (une part = un jour de nourriture) ; l'énergie ne se troque pas. `valeurBiens`, `evaluerTroc({ donne, recoit, cours,
+  majoration })`, `appliquerTroc(stocks, { donne, recoit })`.
+- **Préjugés** : un trait d'un PNJ, `{ cible, poids 1..3, dit, echanges, fetes, dementis }`, jamais une propriété d'une
+  communauté ; **aucune origine ne donne de bonus ni de malus** ; le système ne connaît l'origine de personne : le MJ dit quels
+  préjugés s'éveillent (`cibles`). `premiereConfiance({ prejuges, cibles, rumeurs, palier })` -> `{ poids, majoration, credit,
+  parole }` ; `userPrejuges(prejuges, { cibles, echanges, fete, dementi })` (un cran par 3 échanges honnêtes, par fête partagée,
+  par démenti).
+- **Carnet** : `carnetVide`, `prendreACredit`, `rendreAuCarnet`, `effacerDettes`, `dettesQuiTrainent`, `plafondCredit`,
+  `solderAuNouvelAn` (les dettes se soldent au Nouvel An chinois).
+- **Marché forain** : `creerMarche`, `estJourDeMarche`, `rompreTreve` (rumeur vraie sur toute l'île, réputation − 3 par bastion du
+  conseil), `retablirTreve`, `trancherLitige`, `tenirJourDeMarche` (l'abri qui accueille : bruit, réputation), `signatureDuMarche`
+  (visibilité + 2 : `bilanAbri(…, { signature })`).
+- **Ladi Lafé** : `lancerRumeur(public, secret, …)` -> la rumeur publique (sujet, texte, portée, jour) et sa vérité au secret
+  (`{ vraie, auteur, malveillant }`) ; `rumeursContre` (ce qui pèse sur la première confiance) ; `dementirRumeur` (une preuve ; une
+  rumeur vraie ne se dément pas ; un mensonge malveillant démenti fait courir une rumeur vraie sur son auteur). Le résultat
+  désigne le **colporteur** (lien avec une jauge de sens moral à venir).
+- **Objets marqués** : `reclamerObjet({ marque, signeReclamant, signePossesseur, temoins })` (la marque, puis les témoins, puis
+  parole contre parole).
+- **Chaque jour** : `journeeDuMarche({ marche, secret, jour, dateDepart, fetes })` (jours de marché, foires finies, Nouvel An chinois,
+  dettes qui traînent, rumeurs éteintes). `evenementsDeMarche(contenu, { stade, saison, phase })` : les événements de type
+  `marche`, que **la simulation du monde ne tire jamais** (`monde.mjs`).
+
+### 11.2 Données
+- État public : `etat.marche = { boutiques: [carnet], marches: [marché], rumeurs: [rumeur publique], signe, prochain }` (absent
+  d'une partie plus ancienne : `marcheDe(etat)` rend un marché vide). Secret : `monde.marche = { rumeurs: { id: { vraie, auteur,
+  malveillant } } }`.
+- Acteur `survivant` : `system.prejuges` (liste, vide par défaut). Objet `equipement` : `system.marque` (le signe d'une
+  communauté, vide par défaut). Tous deux réservés au MJ (`gmOnlyFields`).
+- Contenu (`contenu/marche.mjs`) : `communautes` (les cibles possibles d'un préjugé), `marchands` (les gens du marché, de toutes
+  les communautés, avec leurs préjugés et l'événement qui les dément), `marches` (marchés forains possibles), `foires` (mois,
+  région, récolte) ; événements de type `marche` (`stades`, `effets.dementi`, `effets.cours`…) ; paliers de réputation avec leur
+  effet au troc (`reputations.paliers[].marche`).
+
+### 11.3 API (`scripts/api-marche.mjs`, étalée dans `game.lakourSurvie`)
+Lecture : `marche()`, `coursDuJour({ recolte, ajustements, marche })`, `stadesDuMarche({ region })`, `confiance({ pnjId, cibles,
+faction })`, `evaluerTroc({ donne, recoit, pnjId, cibles, faction, marche })`, `trancherLitige({ voix })`,
+`evenementDeMarche({ stade })`.
+Écriture (MJ actif, monde ouvert) : `troquer({ donne, recoit, pnjId, cibles, faction, marche, accepter })`, `ouvrirBoutique({ nom,
+tenancier, region })`, `crediter({ boutique, biens, pnjId, cibles, faction })`, `rendre({ boutique, biens, cibles })`,
+`effacerDette({ boutique, debiteur })`, `solderCarnet({ boutique, remises })`, `ouvrirMarche({ modele | foire | nom, jourSemaine,
+bastions, hote })`, `fermerMarche`, `accueillir({ marche, hote })`, `rompreTreve({ marche, par })`, `retablirTreve`,
+`rumeur({ sujet, texte, vraie, malveillant, auteur, portee, contre })`, `dementir({ id, preuve })`, `dementirPrejuge({ cible, pnj })`,
+`prejuges({ acteurId, prejuges })`, `creerMarchand({ cle })`, `signe({ signe })`, `marquerObjet({ acteurId, objetId, signe })`,
+`reclamer({ acteurId, objetId, reclamant, signeReclamant, temoins })` ; `feter({ fete, invites })` use les préjugés des PNJ
+invités. Chaque jour d'`avancer` : la journée du marché ; la réputation gagnée ou perdue s'écrit dans les horloges
+`rep-<faction>` du moteur (`api.horloges.avancer`) quand il les tient. Fenêtres : onglet **Marché** de la fenêtre du MJ (avec la
+vérité des rumeurs) et du tableau de bord (le cours, le carnet du groupe, les marchés, ce qui se dit ; jamais la vérité).

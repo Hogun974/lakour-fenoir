@@ -54,7 +54,8 @@ export const TYPES_SITE = ["maison", "case-creole", "immeuble", "ecole", "commer
 export const EAUX_SITE = ["aucune", "citerne", "riviere", "source", "puits", "reseau"];
 export const CATEGORIES_INSTALLATION = ["defense", "eau", "nourriture", "energie", "vie", "souterrain", "stockage", "communication"];
 export const ATTITUDES = ["hostile", "mefiante", "neutre", "amicale"];
-export const TYPES_EVENEMENT = ["meteo", "reseau", "horde", "humain", "accident", "decouverte", "abri", "fete"];
+// « marche » (2026-11-13) : les événements de marché, que la simulation du monde ne tire jamais (marche.mjs, evenementsDeMarche).
+export const TYPES_EVENEMENT = ["meteo", "reseau", "horde", "humain", "accident", "decouverte", "abri", "fete", "marche"];
 export const PRUDENCES = ["discret", "normal", "rapide"];
 
 // La décomposition des Livides (§0, §2.3) : sous cette altitude moyenne, une région est « des Bas » (chaleur humide).

@@ -214,7 +214,9 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   const defense = Math.max(0, (Number(c.site.defense) || 0) + sommeEffet(structurelles, "defense") - Math.floor((Number(abri.degats) || 0) / 2));
   const capacite = (Number(c.site.capacite) || 0) + sommeEffet(lignes, "capacite");
   // lueur (lot « fetes », souvenirs.mjs) : les lampes de la Dipavali, le feu de la marche, la cuisine de nuit du ramadan.
-  const visibiliteBrute = Math.ceil(c.personnes / 2) + sommeEffet(actives, "visibilite") + Math.max(0, Number(conditions.lueur) || 0) - discretion;
+  // conditions.signature : ce que l'abri montre en plus (un marché qu'il accueille : marche.mjs, signatureDuMarche).
+  const visibiliteBrute = Math.ceil(c.personnes / 2) + sommeEffet(actives, "visibilite") + Math.max(0, Number(conditions.lueur) || 0)
+    + (Number(conditions.signature) || 0) - discretion;
   const protectionCyclone = Math.min(3, Math.max(c.site.type === "tunnel-de-lave" ? 3 : 0, ...structurelles.map(l => Number(l.e.protectionCyclone) || 0)));
   const usure = lignes.filter(l => l.sol && l.enMarche).reduce((s, l) => s + l.niveau * USURE_SOL, 0);
   const bilan = {

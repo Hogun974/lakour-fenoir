@@ -1,0 +1,178 @@
+{
+  "_id": "ebvmbCR2d4IbKTBR",
+  "_key": "!tables!ebvmbCR2d4IbKTBR",
+  "name": "Oratoires rouges — messages",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on trouve sous la pierre d'un oratoire rouge, au bord de la route.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "oratoires-rouges",
+      "marche": "oratoires"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "nM1aa9weUbBqifJE",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.nM1aa9weUbBqifJE",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Famille Grondin, partis à Cilaos par la route, tous vivants sauf mamie. Si vous lisez ça, Rosemay, on t'attend. »</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "E7jEZSi4ypqPWKe0",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.E7jEZSi4ypqPWKe0",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Échange graines de maïs contre médicaments. Laisser ici, on repasse jeudi. »</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cZLLC7cZhFD3dJKz",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.cZLLC7cZhFD3dJKz",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Horde vue sur la route des Plaines, le 12. Ne montez pas. »</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8cUAKMoapWq0HMt8",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.8cUAKMoapWq0HMt8",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Merci pour l'eau. » Rien d'autre, et une petite croix rouge.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KnKkZjIeM4A8WCh0",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.KnKkZjIeM4A8WCh0",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Le pont de la ravine est tombé. Passez par le haut, à droite du manguier. »</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "zEfeEciy1Cix4baD",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.zEfeEciy1Cix4baD",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Ici, Thomas, dit Radio : radios réparées dimanche au marché du quai. Laissez le poste, je le rapporte. »</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "L9jo1zXFiarq7q6N",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.L9jo1zXFiarq7q6N",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Qui a pris la barque bleue ? On ne vous en veut pas, rendez-la. »</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "3PO3CqgeH1GSsLJk",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.3PO3CqgeH1GSsLJk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un dessin d'enfant : une case, quatre bonshommes, un soleil. Et un prénom : Ti Zan.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MapqcWFnmkmGL953",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.MapqcWFnmkmGL953",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Le Comptable sait où vous êtes. Changez d'abri. » Personne ne signe.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ws6IBJeSUGNG7FV0",
+      "_key": "!tables.results!ebvmbCR2d4IbKTBR.ws6IBJeSUGNG7FV0",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Nous sommes six à la chapelle du Brûlé. Nous avons des panneaux. Nous cherchons un soignant. »</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

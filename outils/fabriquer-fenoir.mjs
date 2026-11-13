@@ -491,6 +491,37 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   }
   for (const k of FETES_DE_FENOIR) if (!(d.fetes ?? []).some(f => f.cle === k)) e(`fête absente : ${k}`);
 
+  // Le marché (contenu/marche.mjs) : cibles des préjugés connues, gens du marché de toutes les communautés, chaque préjugé dit
+  // au marché démenti par un événement, marchés et foires dans des régions connues, événements de marché bien faits.
+  const cibles = new Set((d.communautes ?? []).map(c => c.cle));
+  const STADES = ["troc", "boutique", "forain", "foire"];
+  for (const c of d.communautes ?? []) if (!/^[a-z0-9-]+$/.test(c.cle ?? "") || !c.nom || !c.description) e(`communauté ${c.cle} : clé, nom ou description`);
+  for (const m of d.marchands ?? []) {
+    const ou = `marchand ${m.cle}`;
+    if (!index.regions.has(m.region)) e(`${ou} : région « ${m.region} »`);
+    if (m.communaute !== "metis" && !cibles.has(m.communaute)) e(`${ou} : communauté « ${m.communaute} »`);
+    if (!m.prejuges?.length) e(`${ou} : sans préjugé (chacun en a sur chacun)`);
+    for (const p of m.prejuges ?? []) {
+      if (!cibles.has(p.cible)) e(`${ou} : préjugé à cible inconnue « ${p.cible} »`);
+      if (!(p.poids >= 1 && p.poids <= 3) || !p.dit) e(`${ou} : préjugé mal formé`);
+    }
+    if (!m.nom || !m.role || !m.apparence || !sansBalises(m.description) || !m.onDit || !m.dementi) e(`${ou} : textes incomplets`);
+    const ev = index.evenements.get(m.evenement);
+    if (!ev || ev.type !== "marche") e(`${ou} : événement de marché « ${m.evenement} »`);
+  }
+  const roles = new Set((d.marchands ?? []).map(m => m.role));
+  if (roles.size !== (d.marchands ?? []).length) e("marchands : un rôle par marchand (aucun rôle réservé, aucun rôle en double)");
+  for (const m of d.marches ?? []) {
+    if (!index.regions.has(m.region) || !(m.jourSemaine >= 0 && m.jourSemaine <= 6) || !m.lieu) e(`marché ${m.cle} : région, jour ou lieu`);
+    for (const b of m.bastions ?? []) if (!index.factions.has(b)) e(`marché ${m.cle} : bastion « ${b} »`);
+  }
+  for (const f of d.foires ?? []) if (!index.regions.has(f.region) || !(f.mois >= 1 && f.mois <= 12) || !RESSOURCES.includes(f.recolte) || !f.produit) e(`foire ${f.cle} : région, mois, récolte ou produit`);
+  for (const v of index.evenements.values()) {
+    if (v.type !== "marche") { if (v.stades) e(`événement ${v.cle} : stades hors d'un événement de marché`); continue; }
+    if (!v.stades?.length || v.stades.some(s => !STADES.includes(s))) e(`événement ${v.cle} : stades`);
+    if (v.effets.dementi && !cibles.has(v.effets.dementi)) e(`événement ${v.cle} : démenti « ${v.effets.dementi} »`);
+  }
+
   // Créatures (famille lue par la logique du système) : les Livides et animaux du bestiaire, mêmes dés et résistance.
   const creatures = new Map((d.creatures ?? []).map(c => [c.cle, c]));
   if (creatures.size !== (d.creatures ?? []).length) e("créatures : clé en double");
