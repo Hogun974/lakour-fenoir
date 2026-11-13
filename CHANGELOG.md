@@ -5,6 +5,73 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Système 0.2.0 · Contenu 0.3.0 — 13 novembre 2026
+
+Quatre chantiers tirés du remue-méninges de Fénoir 3D, validés par l'auteur pour le jeu de rôle.
+
+- **Le temps de l'île** :
+  - la lune de la date de jeu fait la clarté de chaque nuit, et la brume des Hauts la cache ;
+  - dehors, la nuit noire ôte un dé à tout test, sauf la discrétion qui en gagne un, et elle rend la fouille plus riche ; la
+    pleine lune aide la vigilance, et les Livides aussi ;
+  - la chaleur de l'été austral pèse l'après-midi dans les Bas ;
+  - le paysage marque l'année (flamboyants, letchis, longanis…), et sans téléphone ni radio la date se lit dans la nature.
+- **Les fêtes du métissage** :
+  - chacune a son gain et son coût, jamais magiques ;
+  - quatre fêtes de plus : ramadan, Aïd el-Kebir, Nouvel An tamoul, marche sur le feu ;
+  - aller à la fête d'une autre communauté tisse des liens et use les préjugés de ceux qui reçoivent.
+- **La relève, l'autel et le repos** :
+  - à la mort de son survivant, on reprend un membre du groupe d'au moins 16 ans, qui lâche son travail, ou on tire le suivant ;
+  - de 16 à 18 ans, on porte et on travaille moins, on n'a qu'une demi-voix et on ne peut pas être chef ;
+  - l'autel des morts, le deuil et le repos : la Toussaint donne le repos à tous les morts retrouvés.
+- **Le marché** : pas de monnaie, on troque, au cours affiché en parts. Le marché naît au fil de la partie, en quatre stades :
+  - le troc de la main à la main ;
+  - la boutique et son carnet de crédit, soldé au Nouvel An chinois ;
+  - le marché forain, avec son jour fixe, son conseil, son cours et sa trêve ;
+  - les foires de saison, comme les lentilles de Cilaos en octobre.
+
+  Accueillir le marché rapporte de la réputation, mais l'abri se voit davantage.
+- **Les préjugés et le Ladi Lafé** :
+  - les préjugés sont un trait de chaque PNJ : ils pèsent sur sa première confiance et s'usent au contact, aux fêtes partagées et
+    devant les faits ;
+  - dix gens du marché, de toutes les communautés, et quinze événements de marché, dont huit qui démentent chacun un préjugé
+    devant tous ;
+  - aucune origine ne donne de bonus ni de malus ;
+  - la rumeur peut mentir, et un mensonge démenti se retourne contre son auteur ;
+  - les objets marqués se prouvent et se réclament, et les oratoires rouges servent de boîtes à messages.
+- **Les deux savoirs** :
+  - neuf installations à l'ancienne, en matières de l'île, qui prennent le relais de leur sœur moderne sans s'y additionner ;
+  - deux arbres de savoir-faire (moderne, lontan) et quatre savoirs nouveaux ;
+  - les gramounes : confiance, veillées d'apprentissage, cahier dicté, et quatre anciens métissés à accueillir ;
+  - les jardins des cases, les boutures, les livres, le rimèd lontan et les objets faits main ;
+  - le gaz, ressource à part, la gazinière et trois chauffe-eau.
+- **L'île en mouvement** :
+  - le cyclone vécu : préparer l'abri, fuites, arbres et fruits tombés, végétation abattue, ce que le vent laisse dans la cour,
+    le vacarme, l'œil ;
+  - l'éruption annoncée la veille ;
+  - les meutes des routes, et le chien du groupe qu'on gagne ;
+  - la charrette à bœufs, le vélo en pente, les véhicules électriques, les moteurs modifiés au carburant maison, les verrous de
+    la route.
+- **L'esprit sur le corps** :
+  - chaque survivant a un regard sur la catastrophe, une religion de l'île (ou « aucune », ou « plusieurs ») ou un ancrage,
+    pratiqué ou non ;
+  - la foi agit par le moral, jamais par miracle ; l'entente du groupe compte ;
+  - plus le moral est bas, plus la nuit a de faux bruits ;
+  - certains lâchent après des signes, et le groupe les retient par sa présence ; sinon, un matin, ils ne sont plus là.
+- **Le sens moral et l'autorité** :
+  - une jauge du rouge au bleu que chacun voit pour soi, et une réputation pour les autres ;
+  - la porte : accueillir, refuser ou trahir, et ce que devient le refusé ;
+  - le vote, l'enfant témoin ;
+  - les chefs de bande qui décident selon leur sens moral (ultimatum, tribut, alliance ou révolte) ;
+  - l'autorité du chef et ses crises ; séparation et fusion de deux groupes ;
+  - colporter, mentir, rompre la trêve ou jouer d'un préjugé au troc font rougir.
+- **Interface du MJ et MJ IA** :
+  - fenêtre du MJ en huit onglets (Partie, Actions, Groupe, Savoirs, Communauté, Menaces, Marché, Monde) ;
+  - section « L'esprit » de la fiche de survivant ;
+  - le MJ IA mène tout cela avec le moteur 0.48.0 (douze outils de plus pour Fénoir).
+- **Traduction anglaise complète.** Contrat §11 à §15, chiffres dans `docs/equilibre-fetes.md`, `equilibre-marche.md`,
+  `equilibre-savoirs.md` et `equilibre-moral.md`, résumés dans `docs/equilibre.md`. Moteur requis : 0.48.0.
+- **Les quatre nouvelles fêtes n'ont pas encore d'illustration.**
+
 ## Système 0.1.7 · Contenu 0.2.6 — 9 novembre 2026
 
 - **Deux fêtes repeintes** : la fête des letchis (un grand pied de letchi chargé de bouquets rouges, la cueillette, les
