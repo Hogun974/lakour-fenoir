@@ -69,8 +69,11 @@ export function contexteTableau(onglet = "groupe") {
   const membres = survivantsDuGroupe(etat);
   const groupe = membres.map(a => {
     const s = aPlat(a.system);
+    const rang = L.rangDuMembre(etat, a.id, jour);
+    const corvee = L.liste(c.corvees).find(x => x.cle === etat.groupe?.corvees?.[a.id])?.nom ?? "";
     return {
-      id: a.id, nom: a.name, img: a.img, statut: t(`LAKOUR_SURVIE.Statuts.${s.statut || "joueur"}`), vivant: s.vivant !== false && !s.livide,
+      id: a.id, nom: a.name, img: a.img, statut: `${t(`LAKOUR_SURVIE.Statuts.${s.statut || "joueur"}`)}${rang && rang !== "membre" ? ` · ${t(`LAKOUR_SURVIE.Gestion.Rangs.${rang}`)}` : ""}${corvee ? ` · ${corvee}` : ""}`,
+      vivant: s.vivant !== false && !s.livide,
       etat: t("LAKOUR_SURVIE.Tableau.EtatLigne", { b: s.blessures ?? 0, f: s.fatigue ?? 0, m: s.moral ?? 4 }), infecte: Boolean(s.infection?.atteint),
       peutChanger: game.user.isGM || a.isOwner,
       cases: Object.keys(L.TACHES).map(x => ({ tache: x, choisie: s.tache === x, possible: L.peutFaire(s, x) }))
@@ -103,6 +106,9 @@ export function contexteTableau(onglet = "groupe") {
     groupe, besoins: besoins.map(b => ({ ...b, tacheLibelle: libelleTache(b.tache),
       couvertureLibelle: t(`LAKOUR_SURVIE.Besoins.${b.couverture}`), urgenceTexte: typeof b.urgence === "string" ? b.urgence : "" })),
     pnj: (etat.groupe?.pnj ?? []).map(p => ({ nom: p.nom, etat: p.etat })),
+    // Lot 10 : la table de gestion se lit de tous : les quotas et où ils en sont, le rang de chacun, sa corvée.
+    quotas: (etat.groupe?.quotas ?? []).map(q => ({ tenu: L.etatDuQuota(q).tenu, texte: t("LAKOUR_SURVIE.Gestion.Quota", { nom: game.actors.get(q.acteurId)?.name ?? q.acteurId,
+      tache: libelleTache(q.tache), fait: L.etatDuQuota(q).fait, jours: L.etatDuQuota(q).jours }) })),
     plans: (etat.groupe?.plans ?? []).map(k => L.installationDe(c, k)?.nom ?? k),
     // Lot « fetes » : l'autel (les morts du groupe), ce qui soutient le groupe (souvenirs de fête, vœux, autel), les liens tissés.
     morts: (etat.morts ?? []).map(m => ({ nom: m.nom, etat: t(`LAKOUR_SURVIE.Autel.Etats.${m.repos ? "repos" : m.retrouve ? "deuil" : m.livide ? "livide" : "perdu"}`) })),

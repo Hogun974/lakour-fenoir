@@ -28,6 +28,7 @@ import { ecrirePlans } from "../modules/lakour-fenoir/contenu/cartes.mjs";
 import { IMAGES_FETES, EFFET_FETE, FETES_HORS_SOCLE } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { COMMUNAUTES } from "../systems/lakour-survie/logique/fetes.mjs";
 import { verifierHistoires } from "../systems/lakour-survie/logique/histoires.mjs";
+import { verifierCorvees } from "../systems/lakour-survie/logique/gestion.mjs";
 import { erreursAffaire } from "../systems/lakour-survie/logique/affaires.mjs";
 import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_DECLINABLES, IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
@@ -84,7 +85,8 @@ export const BUDGET = [10, 16];
 // L'esprit d'un survivant (complément du jeu 3D, familles 2 et 3 ; système : logique/esprit.mjs, moralite.mjs, chefs.mjs).
 export const REGARDS = ["epreuve", "refaire", "vivre"];
 export const BESOINS_OBSERVANCE = ["calme", "objet", "rien"];
-const CLES_RELIGIONS = new Set(RELIGIONS.map(r => r.cle));
+// Les clés des religions, et leurs anciennes clés (alias de la liste commune du lot 10 : une fiche qui les porte reste valable).
+const CLES_RELIGIONS = new Set(RELIGIONS.flatMap(r => [r.cle, ...(r.alias ?? [])]));
 const CLES_ANCRAGES = new Set(ANCRAGES.map(a => a.cle));
 // L'esprit d'un survivant du compendium : vide (pas encore tiré) ou cohérent avec les religions et ancrages du contenu.
 export function erreursEsprit(sys = {}) {
@@ -523,7 +525,10 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   if ([...religions.values()].filter(r => !r.special).length < 5) e("moins de cinq religions");
   for (const r of religions.values()) {
     const ou = `religion ${r.cle}`;
-    if (!/^[a-z0-9-]+$/.test(r.cle) || !r.nom || !sansBalises(r.description) || !(r.poids > 0)) e(`${ou} : clé, nom, description ou poids`);
+    // « plusieurs » ne se tire plus (poids 0 : la religion double « hindoue catholique » tient sa place au tirage, lot 10).
+    if (!/^[a-z0-9-]+$/.test(r.cle) || !r.nom || !sansBalises(r.description) || !(r.poids > 0 || (r.special === "plusieurs" && r.poids === 0))) e(`${ou} : clé, nom, description ou poids`);
+    for (const a of r.alias ?? []) if (!/^[a-z0-9-]+$/.test(a) || religions.has(a) || (d.religions ?? []).some(x => x !== r && (x.alias ?? []).includes(a))) e(`${ou} : alias « ${a} »`);
+    for (const k of r.composee ?? []) if (!religions.has(k) || religions.get(k).special || k === r.cle) e(`${ou} : religion composée « ${k} »`);
     if (!r.special && (!BESOINS_OBSERVANCE.includes(r.observance?.besoin) || !r.observance?.texte)) e(`${ou} : observance`);
     for (const f of r.fetes ?? []) if (!(d.fetes ?? []).some(x => x.cle === f)) e(`${ou} : fête inconnue « ${f} »`);
     for (const [k, x] of Object.entries(r.affinites ?? {})) if (!enfances.has(k) || !(x >= 0)) e(`${ou} : affinité « ${k} »`);
@@ -649,6 +654,10 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
       for (const k of famille.keys()) if (!vus.has(k)) e(`histoires : ${type} « ${k} » sans phrases`);
     }
   }
+
+  // Lot 10 (§22) : les corvées (une des treize tâches, un nom) et le barème des objets (des parts positives).
+  for (const m of verifierCorvees(d)) e(m);
+  for (const [k, v] of Object.entries(d.bareme?.objets ?? {})) if (!/^[a-z0-9-]+$/.test(k) || !(Number(v) >= 0)) e(`barème : objet « ${k} » (${v})`);
 
   // Aucun terme interdit dans tout le registre.
   const interdits = termesInterdits(JSON.stringify(d));

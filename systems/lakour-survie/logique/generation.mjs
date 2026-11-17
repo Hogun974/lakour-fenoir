@@ -91,6 +91,8 @@ export function prenomsDe(contenu) {
   const l = f => liste(contenu?.[f]).map(texteDe).filter(Boolean);
   return { f: l("prenomsF"), m: l("prenomsM"), mixtes: [...l("prenomsMixtes"), ...l("noms")] };
 }
+// Un nom comparé à un autre (homonymes, lot 10) : sans casse, sans accents, sans espaces en trop.
+export const cleDeNom = nom => String(nom ?? "").normalize("NFD").replace(/\p{Mn}/gu, "").trim().toLowerCase().replace(/\s+/g, " ");
 // Le genre d'un prénom (ou d'un nom complet) d'après les listes du contenu : "f", "m" ou "" (inconnu, mixte).
 export function genreDuNom(contenu, nom) {
   const n = String(nom ?? "").trim().toLowerCase();
@@ -106,7 +108,10 @@ export function genreDuNom(contenu, nom) {
 }
 
 // Un survivant tiré au sort. options : { age, enfance, passe, traits, region, statut, nom, genre, verrous: { … mêmes clés },
-// favoriser: { competence: poids }, budget: [min, max] | null (défaut : BUDGET_DEPART pour un joueur, aucun sinon) }
+// favoriser: { competence: poids }, budget: [min, max] | null (défaut : BUDGET_DEPART pour un joueur, aucun sinon),
+// nomsPris: [nom] (lot 10 : les noms déjà portés dans le groupe ou le monde ; un nom tiré qui en est un est retiré une fois
+// parmi les autres, pour qu'une rumeur ou un acte dit sous un nom n'aille jamais au mauvais : sans homonyme, aucun tirage ne
+// change ; un nom gardé par verrou reste celui qu'on a choisi) }
 // -> system complet (survivantNeuf + enfance, passe, passions, traits, incapacites, statut, tache, histoire, age, nom, genre, equipement)
 export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
   const v = { ...(options.verrous ?? {}), ...Object.fromEntries(Object.entries(options).filter(([k, x]) => ["age", "enfance", "passe", "traits", "nom", "genre", ...CHAMPS_ESPRIT_VERROUS].includes(k) && x !== undefined)) };
@@ -129,6 +134,11 @@ export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
     const p = prenomsDe(contenu);
     const candidats = genre ? [...p[genre], ...p.mixtes] : [...p.f, ...p.m, ...p.mixtes];
     nom = candidats.length ? choisir(candidats, hasard) : "";
+    const pris = new Set((options.nomsPris ?? []).map(cleDeNom).filter(Boolean));
+    if (nom && pris.has(cleDeNom(nom))) {
+      const libres = candidats.filter(x => !pris.has(cleDeNom(x)));
+      if (libres.length) nom = choisir(libres, hasard);
+    }
     if (!genre && nom) genre = p.f.includes(nom) && !p.m.includes(nom) ? "f" : p.m.includes(nom) && !p.f.includes(nom) ? "m" : "";
   }
   // Les phrases d'histoire d'un élément pris dans l'autre genre (verrous contradictoires) sont genrées : on les laisse de côté.
@@ -377,8 +387,8 @@ const rang = c => ({ manquant: 2, faible: 1, couvert: 0 }[c] ?? 0);
 // pour chaque compétence manquante qu'elle n'a pas déjà, et qu'aucune incapacité ne lui interdit) : c'est souvent pour cela
 // qu'elle vient. Sans cela, le profil seul ne la comblait que 16 à 37 % du temps pour la discrétion, la vigilance, les soins.
 export const RECRUE_MANQUE = { chance: 0.5, niveau: 2 };
-export function genererRecrue(contenu, hasard = Math.random, { besoins = null, region = "", phase = "" } = {}) {
-  const survivant = genererSurvivant(contenu, hasard, { statut: "recrue", region, favoriser: besoins?.profil ?? {}, budget: null });
+export function genererRecrue(contenu, hasard = Math.random, { besoins = null, region = "", phase = "", nomsPris = [] } = {}) {
+  const survivant = genererSurvivant(contenu, hasard, { statut: "recrue", region, favoriser: besoins?.profil ?? {}, budget: null, nomsPris });
   const interdites = [...(survivant.incapacites ?? []), ...competencesInterdites(survivant)];
   for (const c of besoins?.manques ?? []) {
     if (!COMPETENCES.includes(c) || interdites.includes(c) || survivant.competences[c].niveau >= RECRUE_MANQUE.niveau) continue;
@@ -386,8 +396,18 @@ export function genererRecrue(contenu, hasard = Math.random, { besoins = null, r
   }
   const raison = tirerTexte(contenu, "raisonsRecrue", RAISONS, "recrue-raison", hasard);
   const prix = tirerTexte(contenu, "prixRecrue", PRIX, "recrue-prix", hasard);
-  return { survivant, raison: raison.texte, prix: prix.texte, raisonCle: raison.cle, prixCle: prix.cle, raisonMessage: raison.message, prixMessage: prix.message, phase };
+  const attitude = tirerAttitude(deriverHasard("attitude", survivant.nom, survivant.age, survivant.enfance, survivant.passe));
+  return { survivant, raison: raison.texte, prix: prix.texte, raisonCle: raison.cle, prixCle: prix.cle, raisonMessage: raison.message, prixMessage: prix.message, phase, attitude };
 }
+
+// L'attitude d'un inconnu qu'on rencontre (lot 10, jeu 3D : amicale 25, neutre 45, méfiante 22, hostile 8, sur 100) : ce qui règle
+// la difficulté pour le convaincre (difficulteRecrutement). Tirée sur un flux à part, dérivé de la recrue (aucun autre tirage ne
+// bouge).
+export const ATTITUDES_RENCONTRE = { amicale: 25, neutre: 45, mefiante: 22, hostile: 8 };
+export const tirerAttitude = (hasard = Math.random) => tirerPoids(Object.entries(ATTITUDES_RENCONTRE), hasard) ?? "neutre";
+// Insister le même jour (lot 10) : le jeu 3D ne permet qu'une tentative par jour ; à la table, le système compte les tentatives et
+// le rappelle au MJ, qui tranche (rien n'est interdit : insister se joue).
+export const TENTATIVES_PAR_JOUR = 1;
 
 const CRANS = ["facile", "normale", "difficile", "extreme"];
 export function difficulteRecrutement({ attitude = "neutre", combleUnManque = false } = {}) {

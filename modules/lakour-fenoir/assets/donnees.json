@@ -17267,7 +17267,7 @@
     "paques",
     "halloween"
    ],
-   "poids": 5,
+   "poids": 45,
    "affinites": {
     "enfance-zoreil": 1.2,
     "enfant-des-hauts-de-salazie": 1.3,
@@ -17282,8 +17282,8 @@
    }
   },
   {
-   "cle": "hindouisme-tamoul",
-   "nom": "Hindouisme tamoul",
+   "cle": "hindoue",
+   "nom": "Hindoue",
    "description": "<p>La religion des Malbars, venue avec les engagés du Sud de l'Inde : les temples aux couleurs vives, les fêtes de la lumière, le feu sur lequel on marche, la Cavadee et ses piercings, le carême qu'on tient avant. Ceux qui ne la connaissent pas parlent de « services » et de sorcellerie ; ceux qui la pratiquent allument une lampe chaque soir et ne demandent à personne de comprendre.</p>",
    "observance": {
     "besoin": "calme",
@@ -17296,20 +17296,56 @@
     "marche-sur-le-feu",
     "pongal"
    ],
-   "poids": 1.5,
+   "poids": 16,
    "affinites": {
     "enfance-tamoule-de-saint-andre": 6,
     "enfant-de-planteur-de-l-est": 1.8,
     "enfance-a-maurice": 2,
+    "enfance-zoreil": 0.2,
     "enfance-zarab-de-saint-pierre": 0.1,
     "enfance-a-mayotte": 0.1,
-    "enfance-comorienne-du-chaudron": 0.1,
-    "enfance-zoreil": 0.2
-   }
+    "enfance-comorienne-du-chaudron": 0.1
+   },
+   "alias": [
+    "hindouisme-tamoul"
+   ]
   },
   {
-   "cle": "islam",
-   "nom": "Islam",
+   "cle": "hindoue-catholique",
+   "nom": "Hindoue catholique",
+   "description": "<p>La messe le dimanche et le temple le vendredi, la Vierge et Mariamen sur la même étagère, sous les mêmes fleurs : beaucoup de familles malbares sont les deux à la fois depuis des générations, et personne dans l'île ne trouve ça étrange. Le curé a fini par venir bénir la marche sur le feu ; la grand-mère a toujours su à quelle porte frapper pour quelle peine.</p>",
+   "observance": {
+    "besoin": "calme",
+    "texte": "un cierge à saint Expédit et une lampe pour Mariamen, la messe du dimanche et le carême du temple"
+   },
+   "fetes": [
+    "noel",
+    "paques",
+    "halloween",
+    "dipavali",
+    "cavadee",
+    "nouvel-an-tamoul",
+    "marche-sur-le-feu",
+    "pongal"
+   ],
+   "poids": 10,
+   "affinites": {
+    "enfance-tamoule-de-saint-andre": 4,
+    "enfant-de-planteur-de-l-est": 1.8,
+    "enfance-a-maurice": 1.5,
+    "enfance-zoreil": 0.2,
+    "enfance-zarab-de-saint-pierre": 0.1,
+    "enfance-a-mayotte": 0.1,
+    "enfance-comorienne-du-chaudron": 0.1
+   },
+   "composee": [
+    "catholique",
+    "hindoue"
+   ]
+  },
+  {
+   "cle": "musulmane",
+   "nom": "Musulmane",
    "description": "<p>La foi des Z'arabes de Saint-Denis et de Saint-Pierre, dont la mosquée Noor-e-Islam est la plus ancienne de France, et celle des Comoriens et des Mahorais arrivés plus tard. On prie cinq fois par jour, même dans un abri de tôle, et la question de l'eau propre pour les ablutions devient une question de survie.</p>",
    "observance": {
     "besoin": "calme",
@@ -17319,39 +17355,22 @@
     "ramadan",
     "aid-el-kebir"
    ],
-   "poids": 0.6,
+   "poids": 7,
    "affinites": {
     "enfance-zarab-de-saint-pierre": 12,
     "enfance-a-mayotte": 12,
     "enfance-comorienne-du-chaudron": 12,
     "enfance-a-madagascar": 0.6,
     "enfance-tamoule-de-saint-andre": 0.1
-   }
-  },
-  {
-   "cle": "culte-chinois",
-   "nom": "Culte des ancêtres et temple chinois",
-   "description": "<p>Dans l'arrière-boutique, l'autel des ancêtres avec ses photos et ses bâtons d'encens ; à Saint-Denis et à Saint-Pierre, les temples de Guan Di. Beaucoup de familles chinoises vont aussi à la messe. On n'abandonne pas les siens parce que le monde s'arrête : on les nourrit, même d'une poignée de riz.</p>",
-   "observance": {
-    "besoin": "calme",
-    "texte": "l'encens pour les ancêtres, une part du repas posée devant leur photo, le respect des jours de fête"
    },
-   "fetes": [
-    "nouvel-an-chinois"
-   ],
-   "poids": 0.4,
-   "affinites": {
-    "enfance-chinoise-de-saint-denis": 12,
-    "enfance-a-maurice": 1.5,
-    "enfance-zarab-de-saint-pierre": 0.1,
-    "enfance-a-mayotte": 0.1,
-    "enfance-comorienne-du-chaudron": 0.1
-   }
+   "alias": [
+    "islam"
+   ]
   },
   {
-   "cle": "evangelique",
-   "nom": "Église évangélique",
-   "description": "<p>Des églises dans d'anciens entrepôts, des chants qu'on entend de la rue, une Bible annotée qu'on garde sur soi. Les évangéliques se sont multipliés dans les quartiers ; après le jour zéro, certains y voient l'Apocalypse annoncée, d'autres seulement une raison de plus d'ouvrir la porte. Tant qu'il a sa Bible, le pratiquant tient ; s'il la perd, il se sent nu.</p>",
+   "cle": "protestante",
+   "nom": "Protestante",
+   "description": "<p>Surtout des églises évangéliques : des salles dans d'anciens entrepôts, des chants qu'on entend de la rue, une Bible annotée qu'on garde sur soi ; et quelques vieux temples de l'Église réformée. Les assemblées se sont multipliées dans les quartiers ; après le jour zéro, certains y voient l'Apocalypse annoncée, d'autres seulement une raison de plus d'ouvrir la porte. Tant qu'il a sa Bible, le pratiquant tient ; s'il la perd, il se sent nu.</p>",
    "observance": {
     "besoin": "objet",
     "texte": "la Bible ouverte chaque jour, les chants, le culte avec les frères et les sœurs"
@@ -17360,7 +17379,7 @@
     "noel",
     "paques"
    ],
-   "poids": 0.6,
+   "poids": 4,
    "affinites": {
     "enfant-de-la-cite-saint-denis": 1.5,
     "enfant-du-tampon": 1.4,
@@ -17368,11 +17387,37 @@
     "enfance-zarab-de-saint-pierre": 0.1,
     "enfance-a-mayotte": 0.1,
     "enfance-comorienne-du-chaudron": 0.1
-   }
+   },
+   "alias": [
+    "evangelique"
+   ]
   },
   {
-   "cle": "ancetres-malgaches",
-   "nom": "Servis kabaré, le culte des ancêtres",
+   "cle": "bouddhiste",
+   "nom": "Bouddhiste",
+   "description": "<p>Les pagodes de Saint-Denis et de Saint-Pierre, l'autel de la maison où brûlent les bâtons d'encens, les photos des anciens posées à côté : la foi de bien des familles chinoises de l'île, qui vont aussi parfois à la messe. On s'assoit en silence avant que la journée commence, on ne laisse pas les siens sans offrande parce que le monde s'arrête : une poignée de riz suffit.</p>",
+   "observance": {
+    "besoin": "calme",
+    "texte": "l'encens le premier et le quinze du mois lunaire, un moment de silence le matin, une part du repas posée devant l'autel"
+   },
+   "fetes": [
+    "nouvel-an-chinois"
+   ],
+   "poids": 3,
+   "affinites": {
+    "enfance-chinoise-de-saint-denis": 12,
+    "enfance-a-maurice": 1.5,
+    "enfance-zarab-de-saint-pierre": 0.1,
+    "enfance-a-mayotte": 0.1,
+    "enfance-comorienne-du-chaudron": 0.1
+   },
+   "alias": [
+    "culte-chinois"
+   ]
+  },
+  {
+   "cle": "servis-kabare",
+   "nom": "Servis kabaré",
    "description": "<p>Venu de Madagascar et d'Afrique avec les esclaves, transmis en silence pendant des générations : le servis kabaré, le repas offert aux ancêtres, le maloya qui les appelle. On le cachait, on le pratique aujourd'hui plus ouvertement, et souvent en plus de la messe. Dans le monde d'après, dire le nom des morts, c'est aussi se souvenir qu'on vient de loin et qu'on a déjà survécu à pire.</p>",
    "observance": {
     "besoin": "calme",
@@ -17381,7 +17426,7 @@
    "fetes": [
     "liberte"
    ],
-   "poids": 0.4,
+   "poids": 1,
    "affinites": {
     "enfance-a-madagascar": 8,
     "enfant-de-planteur-de-l-est": 1.5,
@@ -17389,14 +17434,17 @@
     "enfance-zarab-de-saint-pierre": 0.1,
     "enfance-a-mayotte": 0.3,
     "enfance-comorienne-du-chaudron": 0.3
-   }
+   },
+   "alias": [
+    "ancetres-malgaches"
+   ]
   },
   {
    "cle": "aucune",
    "nom": "Aucune",
    "description": "<p>Il ne croit pas, ou plus. Ce qui le fait tenir est ailleurs : une photo, un carnet, une routine, le sport. C'est son ancrage, et il compte autant que la foi des autres.</p>",
    "fetes": [],
-   "poids": 2,
+   "poids": 14,
    "affinites": {
     "enfance-zoreil": 1.6,
     "enfance-en-foyer": 1.5,
@@ -17407,18 +17455,10 @@
   {
    "cle": "plusieurs",
    "nom": "Plusieurs à la fois",
-   "description": "<p>La messe le dimanche et le temple pour la Dipavali, un cierge à saint Expédit et une offrande pour les anciens : à La Réunion, beaucoup croient à plusieurs choses à la fois, et personne ne trouve ça étrange. Il tient les deux, ou les trois.</p>",
+   "description": "<p>Une messe et une offrande pour les anciens, l'encens de la pagode et un cierge à saint Expédit : à La Réunion, beaucoup croient à plusieurs choses à la fois, et personne ne trouve ça étrange. Il tient les deux, ou les trois. (Se choisit sur la fiche : le tirage donne « hindoue catholique », la plus répandue.)</p>",
    "fetes": [],
-   "poids": 1.2,
-   "affinites": {
-    "enfance-tamoule-de-saint-andre": 2,
-    "enfant-de-planteur-de-l-est": 1.5,
-    "enfance-chinoise-de-saint-denis": 1.5,
-    "enfance-a-madagascar": 1.3,
-    "enfance-zarab-de-saint-pierre": 0.1,
-    "enfance-a-mayotte": 0.1,
-    "enfance-comorienne-du-chaudron": 0.1
-   },
+   "poids": 0,
+   "affinites": {},
    "special": "plusieurs"
   }
  ],
@@ -19296,7 +19336,7 @@
    "evenement": "marche-le-carnet-ouvert",
    "esprit": {
     "regard": "refaire",
-    "religion": "culte-chinois",
+    "religion": "bouddhiste",
     "religions": [],
     "pratique": true,
     "ancrage": "",
@@ -19380,7 +19420,7 @@
    "evenement": "marche-les-dettes-effacees",
    "esprit": {
     "regard": "refaire",
-    "religion": "islam",
+    "religion": "musulmane",
     "religions": [],
     "pratique": true,
     "ancrage": "",
@@ -19408,7 +19448,7 @@
    "evenement": "marche-la-tisaneuse",
    "esprit": {
     "regard": "epreuve",
-    "religion": "hindouisme-tamoul",
+    "religion": "hindoue",
     "religions": [],
     "pratique": true,
     "ancrage": "",
@@ -19436,7 +19476,7 @@
    "evenement": "marche-l-objet-rapporte",
    "esprit": {
     "regard": "vivre",
-    "religion": "islam",
+    "religion": "musulmane",
     "religions": [],
     "pratique": false,
     "ancrage": "",
@@ -19467,7 +19507,7 @@
     "religion": "plusieurs",
     "religions": [
      "catholique",
-     "ancetres-malgaches"
+     "servis-kabare"
     ],
     "pratique": false,
     "ancrage": "",
@@ -19523,7 +19563,7 @@
    "evenement": "marche-le-cours-s-affole",
    "esprit": {
     "regard": "refaire",
-    "religion": "evangelique",
+    "religion": "protestante",
     "religions": [],
     "pratique": true,
     "ancrage": "",
@@ -19791,7 +19831,7 @@
     "religion": "plusieurs",
     "religions": [
      "catholique",
-     "culte-chinois"
+     "bouddhiste"
     ],
     "pratique": true,
     "ancrage": "",
@@ -19893,7 +19933,7 @@
    "statut": "recrue",
    "esprit": {
     "regard": "vivre",
-    "religion": "hindouisme-tamoul",
+    "religion": "hindoue",
     "religions": [],
     "pratique": true,
     "ancrage": "",
@@ -19944,7 +19984,7 @@
    "statut": "recrue",
    "esprit": {
     "regard": "refaire",
-    "religion": "islam",
+    "religion": "musulmane",
     "religions": [],
     "pratique": true,
     "ancrage": "",
@@ -22474,7 +22514,8 @@
    "cle": "religion:ancetres-malgaches",
    "type": "religion",
    "pour": [
-    "ancetres-malgaches"
+    "ancetres-malgaches",
+    "servis-kabare"
    ],
    "phrases": [
     {
@@ -24853,5 +24894,180 @@
    "traces": "Une file de gens à la grille du port, chaque matin ; des papiers qu'on garde au sec, au cas où.",
    "ton": ""
   }
- ]
+ ],
+ "corvees": [
+  {
+   "cle": "rapporter-des-troncs",
+   "nom": "Rapporter des troncs",
+   "tache": "chantier",
+   "description": "Abattre un arbre mort ou couché par le vent, l'ébrancher, le débiter et le traîner jusqu'à l'abri."
+  },
+  {
+   "cle": "rapporter-du-bambou",
+   "nom": "Rapporter du bambou",
+   "tache": "chantier",
+   "description": "Couper les cannes de bambou de la ravine, les plus droites, et les lier en fagots."
+  },
+  {
+   "cle": "rapporter-du-petit-bois",
+   "nom": "Rapporter du petit bois",
+   "tache": "chantier",
+   "description": "Des gaulettes et des branches pour les clôtures, les claies et le feu."
+  },
+  {
+   "cle": "rapporter-des-fibres",
+   "nom": "Rapporter des fibres",
+   "tache": "chantier",
+   "description": "Feuilles de vacoa et de choka, chaume, canne coupée : de quoi tresser, couvrir et lier."
+  },
+  {
+   "cle": "rapporter-des-pierres",
+   "nom": "Rapporter des pierres",
+   "tache": "chantier",
+   "description": "Les galets de la ravine et les moellons d'un mur effondré, portés à dos ou à la brouette."
+  },
+  {
+   "cle": "rapporter-de-la-terre",
+   "nom": "Rapporter de la terre",
+   "tache": "chantier",
+   "description": "Terre, argile et sable pour le torchis, les planches du jardin et les sacs de la barricade."
+  },
+  {
+   "cle": "rapporter-de-la-recuperation",
+   "nom": "Rapporter de la récupération",
+   "tache": "fouille",
+   "description": "Démonter ce qui traîne alentour : tôles, ferraille, fil de fer, clous, tuyaux, câbles."
+  },
+  {
+   "cle": "puiser-de-l-eau",
+   "nom": "Puiser l'eau",
+   "tache": "eau",
+   "description": "Aller à la source, au bassin ou à la citerne, remplir les bidons et revenir sans rien renverser."
+  },
+  {
+   "cle": "rapporter-des-vivres",
+   "nom": "Rapporter des vivres",
+   "tache": "cultures",
+   "description": "Cueillir, ramasser les œufs, traire, couper les brèdes, relever les nasses à camarons."
+  },
+  {
+   "cle": "rapporter-des-zerbaz",
+   "nom": "Rapporter des zerbaz",
+   "tache": "soins",
+   "description": "Les plantes qui soignent, cueillies là où la gramoune a dit, et pas ailleurs."
+  },
+  {
+   "cle": "scier-des-planches",
+   "nom": "Scier des planches",
+   "tache": "atelier",
+   "description": "Débiter un tronc en planches, à la scie de long, à deux, toute une journée."
+  },
+  {
+   "cle": "tailler-des-poutres",
+   "nom": "Tailler des poutres",
+   "tache": "atelier",
+   "description": "Équarrir les poutres et fendre les bardeaux pour la charpente et le toit."
+  },
+  {
+   "cle": "tresser-de-la-corde",
+   "nom": "Tresser de la corde",
+   "tache": "atelier",
+   "description": "Rouler et tresser les fibres de choka ou de coco en cordes qui tiennent."
+  },
+  {
+   "cle": "faire-des-clous",
+   "nom": "Faire des clous",
+   "tache": "atelier",
+   "description": "Redresser les clous de récupération, tailler des chevilles de bois dur."
+  },
+  {
+   "cle": "preparer-le-mortier",
+   "nom": "Préparer le mortier",
+   "tache": "atelier",
+   "description": "Gâcher le torchis, éteindre la chaux, monter le mortier à la pelle."
+  },
+  {
+   "cle": "cuisiner",
+   "nom": "Cuisiner",
+   "tache": "cuisine",
+   "description": "Le cari du soir, le boucané, les achards, les conserves pour les jours sans."
+  },
+  {
+   "cle": "rendre-l-eau-bonne",
+   "nom": "Rendre l'eau bonne",
+   "tache": "eau",
+   "description": "Filtrer, faire bouillir, laisser reposer : l'eau de pluie et de ravine devient de l'eau à boire."
+  },
+  {
+   "cle": "preparer-des-soins",
+   "nom": "Préparer des soins",
+   "tache": "soins",
+   "description": "Pansements bouillis et séchés, tisanes, cataplasmes, baumes de la gramoune."
+  },
+  {
+   "cle": "batir",
+   "nom": "Bâtir",
+   "tache": "chantier",
+   "description": "Monter ce qu'on a décidé : poser, clouer, lier, caler, recommencer."
+  },
+  {
+   "cle": "entretenir-les-installations",
+   "nom": "Entretenir les installations",
+   "tache": "chantier",
+   "description": "Le tour de ce qui tient l'abri en vie : une charnière, un joint, une planche qui bouge."
+  },
+  {
+   "cle": "nettoyer-les-filtres",
+   "nom": "Nettoyer les filtres",
+   "tache": "eau",
+   "description": "Rincer le sable, changer le charbon, déboucher les gouttières avant la pluie."
+  },
+  {
+   "cle": "nourrir-les-betes",
+   "nom": "Nourrir les bêtes",
+   "tache": "elevage",
+   "description": "Le grain des poules, l'herbe des cabris, l'eau de tout le monde, et compter qu'il ne manque personne."
+  },
+  {
+   "cle": "relever-les-productions",
+   "nom": "Relever les productions",
+   "tache": "cultures",
+   "description": "Faire le tour des planches, des ruches et des enclos, et rapporter ce qu'ils ont donné."
+  },
+  {
+   "cle": "inspecter-les-cables-et-tuyaux",
+   "nom": "Inspecter les câbles et les tuyaux",
+   "tache": "chantier",
+   "description": "Suivre le tuyau de la source et les fils des panneaux, chercher la fuite ou le fil rongé."
+  },
+  {
+   "cle": "reparer-les-defenses",
+   "nom": "Réparer les défenses",
+   "tache": "chantier",
+   "description": "Reprendre la barricade, regarnir la palissade, retendre les cloches d'alerte."
+  },
+  {
+   "cle": "monter-la-garde",
+   "nom": "Monter la garde",
+   "tache": "garde",
+   "description": "La ronde, les yeux sur la route et sur la ravine, l'oreille aux cloches, la nuit entière s'il le faut."
+  }
+ ],
+ "bareme": {
+  "objets": {
+   "tronconneuse": 22.5,
+   "fusil-de-chasse": 20,
+   "carabine-22": 17.5,
+   "pistolet-de-service": 17.5,
+   "carte-routiere-de-l-ile": 6,
+   "carte-de-randonnee-de-cilaos": 4,
+   "carte-ancienne-de-l-ile": 3,
+   "poule": 4,
+   "lapin": 4,
+   "cabri": 10,
+   "porcelet": 12.5,
+   "veau-moka": 20,
+   "essaim": 7.5
+  }
+ }
 }

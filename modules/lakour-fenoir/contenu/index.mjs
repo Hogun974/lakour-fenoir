@@ -31,6 +31,7 @@ import { HISTOIRES } from "./histoires.mjs";
 import { TABLES_SENS, JOURNAL_SENS } from "./sens.mjs";
 import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
 import { LOT_AFFAIRES } from "./affaires.mjs";
+import { CORVEES, BAREME, TABLES_COMMUNAUTE } from "./communaute.mjs";
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
 const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJournal("guides", CLE_JOURNAL_REGIONS), pageId: idPage("guides", CLE_JOURNAL_REGIONS, r.cle) }]));
@@ -41,7 +42,7 @@ export const DOCUMENTS = [
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
   ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
   ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
-  ...TABLES_SENS,
+  ...TABLES_SENS, ...TABLES_COMMUNAUTE,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -75,6 +76,8 @@ export function donnees() {
     // Lot 11 « histoires » (§16) : les phrases d'histoire des survivants, tirées par le générateur (logique/histoires.mjs).
     histoires: HISTOIRES,
     // Lot 12 « Affaires, récits et fêtes » (contrat §17) : les affaires de l'île, lues par la logique (logique/affaires.mjs) et le MJ IA.
-    affaires: LOT_AFFAIRES.affaires
+    affaires: LOT_AFFAIRES.affaires,
+    // Lot 10 (contrat §22) : les corvées de la table de gestion (logique/gestion.mjs) et le barème des objets en parts (marche.mjs).
+    corvees: CORVEES, bareme: BAREME
   };
 }

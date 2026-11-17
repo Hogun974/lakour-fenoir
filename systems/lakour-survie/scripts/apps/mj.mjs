@@ -75,6 +75,17 @@ export function contexteMarche(etat, monde, c = contenu()) {
     factions: options([["", "—"], ...L.liste(c.factions).map(f => [f.cle, f.nom])], ""),
     choixMarches: options([["", "—"], ...m.marches.map(x => [x.cle, x.nom])], ""),
     choixBoutiques: options(m.boutiques.map(b => [b.cle, b.nom]), ""),
+    // Lot 10 : la boutique d'un commerçant (sa marge), qui parle, les étals du groupe, les objets à estimer.
+    boutiquesTroc: options([["", "—"], ...m.boutiques.map(b => [b.cle, b.nom])], ""),
+    parleurs: options([["", groupe], ...survivantsDuGroupe(etat).map(a => [a.id, a.name])], ""),
+    marchesForains: options(m.marches.filter(x => !x.foire).map(x => [x.cle, x.nom]), ""),
+    etals: (m.etals ?? []).map(e => ({ id: e.id, marche: m.marches.find(x => x.cle === e.marche)?.nom ?? e.marche, gardien: e.gardien,
+      reste: texteListe(Object.entries(e.biens ?? {}).map(([ressource, manque]) => ({ ressource, manque }))),
+      caisse: texteListe(Object.entries(e.caisse ?? {}).filter(([, q]) => Number(q) >= 1).map(([ressource, q]) => ({ ressource, manque: Math.floor(q) }))) })),
+    choixEtals: options((m.etals ?? []).map(e => [e.id, `${e.id} — ${m.marches.find(x => x.cle === e.marche)?.nom ?? e.marche}`]), ""),
+    objets: options([...Object.keys(c.bareme?.objets ?? {}).map(k => [k, L.indexer(c).equipements.get(k)?.nom ?? k]),
+      ...L.liste(c.recettes).filter(r => r.produit?.equipement).map(r => [r.produit.equipement, L.indexer(c).equipements.get(r.produit.equipement)?.nom ?? r.produit.equipement])]
+      .filter((x, i, l) => l.findIndex(y => y[0] === x[0]) === i), ""),
     choixRumeurs: options(m.rumeurs.filter(r => !r.dementie).map(r => [r.id, `J${r.jour} — ${sansBalises(localiser(r)).slice(0, 70)}`]), ""),
     modeles: options([["", "—"], ...L.liste(c.marches).map(x => [x.cle, x.nom])], ""),
     foires: options([["", "—"], ...L.liste(c.foires).map(x => [x.cle, x.nom])], ""),
@@ -106,7 +117,9 @@ export function contexteCommunaute(etat = lireEtat(), monde = null, c = contenu(
       const e = L.espritDe(s);
       return { id, nom: game.actors.get(id)?.name ?? id, actif: L.espritActif(s), regard: s.regard ? t(`LAKOUR_SURVIE.Regards.${s.regard}`) : "—", foi: libelleFoi(s, c) || "—",
         sens: jaugeSens(s.sensMoral), reputation: jaugeSens(s.reputation), autorite: L.autoriteDe(s), lacher: e.lacher, enFaute: e.enFaute, chance: e.chance,
-        projet: e.projet ? t(`LAKOUR_SURVIE.Esprit.Projet.${e.projet}`) : "", enfant: L.estEnfant(s), chef: etat.groupe?.chef === id };
+        projet: e.projet ? t(`LAKOUR_SURVIE.Esprit.Projet.${e.projet}`) : "", enfant: L.estEnfant(s), chef: etat.groupe?.chef === id,
+        rang: t(`LAKOUR_SURVIE.Gestion.Rangs.${L.rangDuMembre(etat, id, L.jourDe(etat.horloge?.quart ?? 0)) || "membre"}`),
+        conversion: e.religionAvant ? t("LAKOUR_SURVIE.Gestion.EnConversion", { jour: e.convertiLe ?? "?" }) : "" };
     }),
     membresOptions: options(vivants.map(a => [a.id, a.name]), ""),
     liste: ab ? texteListe(L.listeALaPorte({ stocks: ab.system?.stocks ?? {}, bilan: b, personnes: b?.personnes ?? vivants.length })) : "",
@@ -121,8 +134,36 @@ export function contexteCommunaute(etat = lireEtat(), monde = null, c = contenu(
     actes: optionsActes("exclure"),
     tributs: (etat.tributs ?? []).map(x => ({ ...x, demandeTexte: texteListe(Object.entries(x.demande ?? {}).map(([ressource, manque]) => ({ ressource, manque }))),
       etatLibelle: t(`LAKOUR_SURVIE.Tributs.${x.etat}`), actif: x.etat === "actif", sens: monde?.bandes?.[x.id] ? jaugeSens(monde.bandes[x.id].sensMoral) : null })),
-    communautes: options((etat.communautes ?? []).map(x => [x.id, `${x.nom} (${x.membres.length})`]), ""), aDesCommunautes: Boolean((etat.communautes ?? []).length),
+    communautes: options((etat.communautes ?? []).map(x => [x.id, `${x.nom} (${x.membres.length})${x.passage === undefined ? "" : ` — ${t("LAKOUR_SURVIE.Gestion.Passage")} : ${t(`LAKOUR_SURVIE.Gestion.${x.passage ? "Ouvert" : "Ferme"}`)}`}`]), ""),
+    aDesCommunautes: Boolean((etat.communautes ?? []).length),
+    // Lot 10 : les seconds (ordre de succession), les religions pour changer de foi.
+    seconds: L.secondsDe(etat).map(id => game.actors?.get?.(id)?.name ?? id).join(", "),
+    religions: options(L.liste(c.religions).map(r => [r.cle, r.nom]), ""),
+    religionsMultiples: L.liste(c.religions).filter(r => !r.special).map(r => ({ valeur: r.cle, libelle: r.nom })),
     profils: options([["", t("LAKOUR_SURVIE.Communaute.ProfilCouleur")], ...L.PROFILS_VISITEUR.map(p => [p, t(`LAKOUR_SURVIE.Profils.${p}`)])], "")
+  };
+}
+
+// La table de gestion (lot 10, contrat §22 ; onglet Groupe) : chaque membre, son rang, sa tâche, ce que sa grille lui ferait prendre,
+// sa grille (0 à 4 par tâche, avec son niveau en infobulle), sa corvée ; les quotas et où ils en sont ; les stocks.
+export function contexteGestion(api = game.lakourSurvie, c = contenu()) {
+  const g = api?.tableDeGestion?.();
+  if (!g) return null;
+  const tache = k => (k ? t(`LAKOUR_SURVIE.Taches.${k}`) : "—");
+  const corvees = L.liste(c.corvees);
+  return {
+    taches: L.TACHES_GRILLE.map(k => ({ cle: k, libelle: tache(k) })),
+    membres: g.membres.map(m => ({ ...m, rangLibelle: m.rang ? t(`LAKOUR_SURVIE.Gestion.Rangs.${m.rang}`) : "", tacheLibelle: tache(m.tache),
+      prendraitLibelle: m.prendrait ? tache(m.prendrait) : "", joueur: m.statut === "joueur",
+      cases: L.TACHES_GRILLE.map(k => ({ cle: k, valeur: m.grille[k] ?? 0, niveau: m.niveaux[k], interdit: m.niveaux[k] === null,
+        aide: `${tache(k)}${m.niveaux[k] === null ? "" : ` — ${t("LAKOUR_SURVIE.Gestion.Niveau", { n: m.niveaux[k] })}`}` })),
+      corveeLibelle: corvees.find(x => x.cle === m.corvee)?.nom ?? "" })),
+    quotas: g.quotas.map(q => ({ id: q.id, texte: t("LAKOUR_SURVIE.Gestion.Quota", { nom: q.nom, tache: tache(q.tache), fait: q.fait, jours: q.jours }), tenu: q.tenu })),
+    stocks: Object.entries(g.stocks ?? {}).filter(([, n]) => Number(n) > 0).map(([r, n]) => `${libelleRessource(r)} ${n}`).join(" · "),
+    membresOptions: options(g.membres.map(m => [m.id, m.nom]), ""),
+    tachesOptions: options(L.TACHES_GRILLE.filter(k => k !== "repos").map(k => [k, tache(k)]), "garde"),
+    corveesOptions: options([["", "—"], ...corvees.map(x => [x.cle, `${tache(x.tache)} — ${x.nom}`])], ""),
+    seconds: g.seconds.map(id => g.membres.find(m => m.id === id)?.nom ?? id).join(", ")
   };
 }
 
@@ -197,7 +238,10 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     paliers: [...(monde?.paliers ?? [])].reverse().slice(0, 6),
     monde: onglet === "monde" ? resumeMonde(monde, c) : null,
     marche: onglet === "marche" && etat.demarree ? contexteMarche(etat, monde, c) : null,
-    recrue: CACHE.recrue,
+    recrue: CACHE.recrue ? { ...CACHE.recrue, attitudeLibelle: CACHE.recrue.attitude ? t(`LAKOUR_SURVIE.Attitudes.${CACHE.recrue.attitude}`) : "" } : null,
+    attitudes: options(["amicale", "neutre", "mefiante", "hostile"].map(a => [a, t(`LAKOUR_SURVIE.Attitudes.${a}`)]), CACHE.recrue?.attitude || "neutre"),
+    // Lot 10 : la table de gestion (onglet Groupe).
+    gestion: onglet === "groupe" && etat.demarree ? contexteGestion(api, c) : null,
     sens: onglet === "partie" && etat.demarree ? contexteSens(api) : null,
     // Lot « savoirs » : l'onglet Savoirs et cyclone.
     ...(onglet === "savoirs" || onglet === "groupe" ? contexteSavoirs(etat, c, api, membres) : {})
@@ -302,7 +346,23 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       assaut: () => api.assaut({ force: Number(d.force) || 1, type: d.type ?? "", description: d.description ?? "" }),
       ajuster: () => api.ajuster({ stocks: Object.fromEntries(RESSOURCES.filter(r => Number(d[`stock.${r}`])).map(r => [r, Number(d[`stock.${r}`])])), raison: d.raison ?? "" }),
       genererRecrue: async () => { CACHE.recrue = await api.genererRecrue({ region: d.region || "", gramoune: d.gramoune || "" }); return CACHE.recrue; },
-      recruter: async () => { const r = await api.recruter({ recrue: CACHE.recrue, parleurId: d.parleur, attitude: d.attitude || "neutre" }); if (r.reussite) CACHE.recrue = null; return r; },
+      recruter: async () => {
+        const r = await api.recruter({ recrue: CACHE.recrue, parleurId: d.parleur, attitude: d.attitude || "neutre" });
+        if (r.reussite) CACHE.recrue = null;
+        return r.insiste ? { ...r, insiste: t("LAKOUR_SURVIE.Gestion.Insiste", { n: r.tentative }) } : r;
+      },
+      // Lot 10 (contrat §22) : la table de gestion, les rangs, le passage, la conversion, la boutique et l'étal.
+      priorites: () => api.priorites({ acteurId: d.acteur, effacer: Boolean(d.effacer),
+        grille: Object.fromEntries(L.TACHES_GRILLE.filter(k => d[`p.${k}`] !== undefined && d[`p.${k}`] !== null).map(k => [k, Number(d[`p.${k}`]) || 0])) }),
+      quota: () => (d.retirer ? api.quota({ retirer: d.retirer }) : api.quota({ acteurId: d.acteur, tache: d.tache, jours: Number(d.jours) || 1 })),
+      corvee: () => api.corvee({ acteurId: d.acteur, corvee: d.corvee || "" }),
+      second: () => api.second({ acteurId: d.acteur, retirer: d.retirer === "oui" }),
+      admettre: () => api.admettre({ acteurId: d.acteur }),
+      passage: () => api.passage({ communauteId: d.communaute, ouvert: d.ouvert !== "non" }),
+      convertir: () => api.convertir({ acteurId: d.acteur, religion: d.religion, religions: liste(d.religions), lieu: d.lieu ?? "" }),
+      tenirEtal: () => api.tenirEtal({ marche: d.marche || "", biens: biens(d, "biens"), contre: d.contre || "nourriture", gardien: d.gardien ?? "" }),
+      releverEtal: () => api.releverEtal({ etal: d.etal || "", fermer: Boolean(d.fermer) }),
+      valeurObjet: async () => api.valeurObjet({ cle: d.objet || "" }),
       feter: () => api.feter({ fete: d.fete ?? "", option: d.option ?? "", pour: liste(d.pour), avec: d.avec ?? "", invites: liste(d.invites) }),
       participer: () => api.participer({ fete: d.fete ?? "", communaute: d.communaute ?? "", faction: d.faction ?? "", membres, pnj: liste(d.pnj) }),
       voeu: () => api.voeu({ acteurId: d.acteur, issue: d.issue || "tenu" }),
@@ -314,8 +374,9 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       ajouterMembre: () => api.ajouterMembre({ acteurId: d.acteur, statut: d.statut || "compagnon" }),
       rencontre: () => api.rencontre({ region: d.region || "" }),
       // Le marché (§12) : biens « donne.<r> », « recoit.<r> », « biens.<r> » ; cibles : liste multiple.
-      troquer: () => api.troquer({ donne: biens(d, "donne"), recoit: biens(d, "recoit"), pnjId: d.pnj || "", cibles: liste(d.cibles), faction: d.faction || "", marche: d.marche || "", accepter: Boolean(d.accepter), prejuge: d.prejuge || "" }),
-      ouvrirBoutique: () => api.ouvrirBoutique({ nom: d.nom || game.actors?.get?.(d.tenancier)?.name || "", tenancier: d.tenancier || "" }),
+      troquer: () => api.troquer({ donne: biens(d, "donne"), recoit: biens(d, "recoit"), pnjId: d.pnj || "", cibles: liste(d.cibles), faction: d.faction || "", marche: d.marche || "", accepter: Boolean(d.accepter), prejuge: d.prejuge || "",
+        boutique: d.boutique || "", parleurId: d.parleur || "" }),
+      ouvrirBoutique: () => api.ouvrirBoutique({ nom: d.nom || game.actors?.get?.(d.tenancier)?.name || "", tenancier: d.tenancier || "", tirer: Boolean(d.tirer) }),
       crediter: () => api.crediter({ boutique: d.boutique || "", biens: biens(d, "biens"), cibles: liste(d.cibles) }),
       rendre: () => api.rendre({ boutique: d.boutique || "", biens: biens(d, "biens"), cibles: liste(d.cibles) }),
       effacerDette: () => api.effacerDette({ boutique: d.boutique || "" }),

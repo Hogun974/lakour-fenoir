@@ -346,3 +346,8 @@
 .lakour-survie .survie-sens.bleu { color: #7fb4ee; }
 .lakour-survie .survie-esprit-creation { margin-top: 0.6em; padding-top: 0.4em; border-top: 1px solid var(--sv-bord); display: grid; gap: 0.3em; }
 .lakour-survie .survie-esprit-creation h4 { display: flex; align-items: center; gap: 0.5em; margin: 0; }
+/* Lot 10 : la table de gestion (une grille membre × tâche, priorités 0 à 4). */
+.lakour-survie .survie-defile { overflow-x: auto; }
+.lakour-survie .survie-gestion th, .lakour-survie .survie-gestion td { text-align: center; white-space: nowrap; }
+.lakour-survie .survie-gestion td:first-child, .lakour-survie .survie-gestion th:first-child { text-align: left; white-space: normal; }
+.lakour-survie .survie-gestion input.survie-priorite { width: 2.6em; text-align: center; }

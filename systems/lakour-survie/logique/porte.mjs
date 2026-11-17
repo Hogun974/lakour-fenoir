@@ -6,9 +6,9 @@
 //   c'est le prix d'entrée, et ce que rapporte celui qui revient.
 // - Aucune couleur n'est gratuite : le bleu attire les réfugiés (des bouches en plus), le rouge fait fuir les gens de bien et
 //   attire les durs (REGLES_PORTE.couleur, .profils).
-// - Le refusé : neutre, il part chercher ailleurs ; rancunier (jauge ≤ −3, souvent), il allume un feu près du camp pour y attirer
-//   les menaces (bruit de l'abri +4, un à trois jours plus tard) et rougit ; bon (jauge ≥ 3, souvent), il revient deux à cinq
-//   jours plus tard avec ce qui manque, pour gagner sa place, et bleuit. Le groupe qui prend ce qu'il apporte puis le trahit rougit
+// - Le refusé : le plus souvent, il comprend et part chercher ailleurs ; rancunier (plus souvent s'il est rouge), il allume un feu
+//   près du camp pour y attirer les menaces (bruit de l'abri +4, un à trois jours plus tard) et rougit ; bon (plus souvent s'il
+//   est bleu), il revient deux à cinq jours plus tard avec ce qui manque, pour gagner sa place, et bleuit (chancesDuRefus, lot 10). Le groupe qui prend ce qu'il apporte puis le trahit rougit
 //   (acte « trahir ») ; lui reçoit un point de chance (esprit.mjs : il y voit le ciel, le jeu ne dit rien).
 // - État : les visiteurs qui attendent sont publics (etat.porte : ce que le groupe voit d'eux) ; leur fiche entière, jauge comprise,
 //   et les suites prévues sont secrètes (monde.porte, monde.porteSuites).
@@ -41,8 +41,12 @@ export const REGLES_PORTE = {
   dur: { sensMoral: -3, combat: 1 },
   blesse: { blessures: 2 },
   rancune: -3, bonte: 3,
+  // La suite d'un refus (lot 10, aligné sur le jeu 3D, validé par Jordan le 17 novembre 2026) : le refusé comprend 60 fois sur 100 ;
+  // la rancune (le feu) et le retour se partagent le reste et penchent avec sa couleur (couleur = jauge / 10) : rancune
+  // 20 × (1 − couleur), retour 20 × (1 + couleur). Un tout rouge ne revient jamais, un tout bleu n'est jamais rancunier.
+  // (Avant le lot 10 : ≤ −3, feu 70 % ; ≥ 3, retour 60 % ; entre, feu 10 % et retour 15 %.)
   suites: {
-    rancunier: { feu: 0.7 }, bon: { revient: 0.6 }, neutre: { feu: 0.1, revient: 0.15 },
+    comprend: 60, rancune: 20, retour: 20,
     feu: { bruit: 4, dans: [1, 3], sens: -1 }, revient: { dans: [2, 5], sens: 1, objets: 2 }
   },
   // La liste à la porte : jours de réserve visés, seuils des autres ressources.
@@ -85,11 +89,12 @@ const DEMANDES = {
 // Un visiteur tiré au sort. options : { id, jour, couleur (bande), region, besoins, profil } -> { public, secret }
 // public : { id, jour, nom, age, genre, profil, bouches, demande: { cle, params, texte }, apporte: {}, revient: false } ;
 // secret : { survivant (system complet, jauge comprise), profil, bouches }.
-export function tirerVisiteur(contenu, hasard = Math.random, { id = "v1", jour = 0, couleur = "neutre", region = "", besoins = null, profil = null } = {}) {
+export function tirerVisiteur(contenu, hasard = Math.random, { id = "v1", jour = 0, couleur = "neutre", region = "", besoins = null, profil = null, nomsPris = [] } = {}) {
   const R = REGLES_PORTE;
   const bande = typeof couleur === "number" ? bandeSensMoral(couleur) : couleur;
   const p = PROFILS_VISITEUR.includes(profil) ? profil : tirerPoids(Object.entries(R.profils[bande] ?? R.profils.neutre), hasard) ?? "refugie";
-  let s = genererSurvivant(contenu, hasard, { statut: "recrue", region, favoriser: besoins?.profil ?? {}, budget: null });
+  // nomsPris (lot 10) : ceux du groupe et de ceux qui attendent déjà : pas d'homonyme à la porte.
+  let s = genererSurvivant(contenu, hasard, { statut: "recrue", region, favoriser: besoins?.profil ?? {}, budget: null, nomsPris });
   if (p === "dur") {
     s = deplacerSensMoral(s, R.dur.sensMoral);
     for (const c of ["combat", "tir"]) s.competences[c] = { ...s.competences[c], niveau: borner(n0(s.competences[c]?.niveau) + R.dur.combat, 0, 5) };
@@ -106,14 +111,21 @@ export function tirerVisiteur(contenu, hasard = Math.random, { id = "v1", jour =
 
 // La suite d'un refus, selon la jauge (secrète) du refusé. liste : listeALaPorte (ce qu'il rapportera s'il revient).
 // -> { suite: "part" | "feu" | "revient", dans (jours), apporte: { ressource: n }, sens (ce que devient sa jauge) }
+// Les chances de chaque suite (sur 1) pour une jauge donnée. -> { part, feu, revient }
+export function chancesDuRefus(sensMoral = 0) {
+  const S = REGLES_PORTE.suites;
+  const c = borner(n0(sensMoral) / 10, -1, 1);
+  const p = { part: S.comprend, feu: S.rancune * (1 - c), revient: S.retour * (1 + c) };
+  const total = p.part + p.feu + p.revient;
+  return { part: p.part / total, feu: p.feu / total, revient: p.revient / total };
+}
 export function suiteDuRefus(survivant, hasard = Math.random, { liste = [] } = {}) {
   const R = REGLES_PORTE;
-  const sens = n0(survivant?.sensMoral);
-  const S = sens <= R.rancune ? R.suites.rancunier : sens >= R.bonte ? R.suites.bon : R.suites.neutre;
+  const S = chancesDuRefus(survivant?.sensMoral);
   const x = hasard();
   let suite = "part";
-  if (x < n0(S.feu)) suite = "feu";
-  else if (x < n0(S.feu) + n0(S.revient)) suite = "revient";
+  if (x < S.feu) suite = "feu";
+  else if (x < S.feu + S.revient) suite = "revient";
   if (suite === "feu") return { suite, dans: entier(R.suites.feu.dans[0], R.suites.feu.dans[1], hasard), apporte: {}, sens: R.suites.feu.sens };
   if (suite === "revient") {
     const apporte = {};
@@ -161,7 +173,8 @@ export function journeePorte(etat, monde, contenu, hasard = Math.random, ctx = {
   // 3. Quelqu'un frappe.
   if (ctx.aLAbri && chance(chanceVisiteur(ctx), hasard)) {
     m.compteurPorte = n0(m.compteurPorte) + 1;
-    const { public: v, secret } = tirerVisiteur(contenu, hasard, { id: `v${m.compteurPorte}`, jour, couleur: ctx.couleur, region: ctx.region, besoins: ctx.besoins });
+    const { public: v, secret } = tirerVisiteur(contenu, hasard, { id: `v${m.compteurPorte}`, jour, couleur: ctx.couleur, region: ctx.region, besoins: ctx.besoins,
+      nomsPris: [...(ctx.nomsPris ?? []), ...e.porte.map(x => x.nom)] });
     e.porte.push(v);
     m.porte[v.id] = secret;
     faits.push({ jour, cle: "porte-frappe", cleTexte: `porte-frappe-${v.profil}`, public: true, params: { nom: v.nom, n: v.bouches }, texte: `Quelqu'un frappe à la porte : ${v.demande.texte}` });

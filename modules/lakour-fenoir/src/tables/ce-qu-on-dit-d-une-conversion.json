@@ -1,0 +1,118 @@
+{
+  "_id": "tl3vb04L2HNqs1m9",
+  "_key": "!tables!tl3vb04L2HNqs1m9",
+  "name": "La religion — ce qu'on dit de celui qui en change",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quitter sa religion, ou en changer souvent, se sait. Ce que disent les autres : leurs préjugés, que les faits démentent. Le jeu ne dit pas qui a raison.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ce-qu-on-dit-d-une-conversion",
+      "esprit": "conversion"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "aH6GcHKgCQAWMuzZ",
+      "_key": "!tables.results!tl3vb04L2HNqs1m9.aH6GcHKgCQAWMuzZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Il prie là où on lui donne à manger », dit une voisine. Elle l'a pourtant vu laisser sa part aux enfants, hier soir.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "84MxOlf0tTlaqF0K",
+      "_key": "!tables.results!tl3vb04L2HNqs1m9.84MxOlf0tTlaqF0K",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Une religion, ça ne se change pas comme une chemise. » Celle qui le dit va à la messe et au temple depuis quarante ans.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "53jHjH0vQwQibm53",
+      "_key": "!tables.results!tl3vb04L2HNqs1m9.53jHjH0vQwQibm53",
+      "type": "text",
+      "name": "",
+      "description": "<p>Au repas, deux soirs de suite, personne ne s'assoit à côté de lui. Le troisième, si.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ckXzmeDyjZoUxzMF",
+      "_key": "!tables.results!tl3vb04L2HNqs1m9.ckXzmeDyjZoUxzMF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le frère qui lisait la Bible lui offre la sienne, sans un mot, et repart.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VbKWOSnnqOmg9aj4",
+      "_key": "!tables.results!tl3vb04L2HNqs1m9.VbKWOSnnqOmg9aj4",
+      "type": "text",
+      "name": "",
+      "description": "<p>La grand-mère pose quand même une assiette pour les anciens, et une pour lui : « Les morts, eux, ne font pas d'histoires. »</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "f72SxVhIJufjCf9N",
+      "_key": "!tables.results!tl3vb04L2HNqs1m9.f72SxVhIJufjCf9N",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un gamin demande si le bon Dieu est fâché. Personne ne sait quoi répondre ; le jeu non plus.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

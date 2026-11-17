@@ -32,6 +32,16 @@
 //   moral ; parle moins :
 //   −1 dé en parole ; donne ses affaires) ; à 8, un compagnon, une recrue ou un PNJ part un matin ; un joueur, jamais : le MJ
 //   est prévenu.
+//
+// Lot 10 (2026-11-17, contrat §22, docs/equilibre-communaute.md) :
+// - la liste des religions est COMMUNE au jeu 3D ; ses anciennes clés restent des alias (contenu : religion.alias ; cleReligion) ;
+//   une religion double (« hindoue catholique », contenu : religion.composee) compte ses deux religions pour prier ensemble et
+//   pour les fêtes (religionsDe) ;
+// - changer de religion dans un lieu de culte (changerDeReligion) : pendant REGLES_ESPRIT.conversion.jours, on garde une part de
+//   l'ancienne et on n'a qu'une part de la nouvelle, SEULEMENT par le moral et les observances : les deux religions comptent pour
+//   prier ensemble et pour les fêtes (le bonus provisoire), l'observance la plus exigeante des deux s'impose et le plafond du
+//   pratiquant ne monte pas (le malus provisoire). Quitter sa religion, ou en changer souvent, se sait (le Ladi Lafé : l'API lance
+//   une rumeur vraie, marche.mjs).
 import { borner } from "./constantes.mjs";
 import { liste, indexer } from "./contenu.mjs";
 import { tirerPoids, choisir, chance, entier } from "./hasard.mjs";
@@ -59,7 +69,10 @@ export const REGLES_ESPRIT = {
   entente: { min: -3, max: 3, defaut: 0, seuilBon: 2, seuilMauvais: -2 },
   fauxBruits: { parMoral: [0.5, 0.35, 0.2], parPresent: 0.1, presentsMax: 3, fatigue: 1 },
   lacher: { seuilMoral: 0, signes: [2, 4, 6], depart: 8, retenue: 2, remontee: 2, malusParole: 1 },
-  chance: { max: 3, trahi: 1 }
+  chance: { max: 3, trahi: 1 },
+  // Lot 10 : changer de religion. jours : la durée où l'on tient des deux ; plafond : le plafond du pratiquant pendant ce temps
+  // (au lieu de +1) ; souvent : deux changements en moins de tant de jours se savent.
+  conversion: { jours: 30, plafond: 0, souvent: 365 }
 };
 
 const n0 = x => Number(x) || 0;
@@ -77,22 +90,50 @@ export function espritDe(s = {}) {
     joursSansNourriture: Math.max(0, n0(e.joursSansNourriture)), nourriSuite: Math.max(0, n0(e.nourriSuite)),
     nourri: { epreuve: Math.max(0, n0(e.nourri?.epreuve)), refaire: Math.max(0, n0(e.nourri?.refaire)), vivre: Math.max(0, n0(e.nourri?.vivre)) },
     ancragePerdu: Boolean(e.ancragePerdu), revolte: Math.max(0, n0(e.revolte)), projet: String(e.projet ?? ""),
-    joursNourris: Math.max(0, n0(e.joursNourris)), joursFaim: Math.max(0, n0(e.joursFaim))
+    joursNourris: Math.max(0, n0(e.joursNourris)), joursFaim: Math.max(0, n0(e.joursFaim)),
+    // Lot 10 : la conversion en cours (religion d'avant, ses religions, le jour du changement) et les jours des changements.
+    religionAvant: String(e.religionAvant ?? ""), religionsAvant: Array.isArray(e.religionsAvant) ? e.religionsAvant.filter(Boolean).map(String) : [],
+    convertiLe: e.convertiLe === null || e.convertiLe === undefined || e.convertiLe === "" || !Number.isFinite(Number(e.convertiLe)) ? null : Number(e.convertiLe),
+    conversions: Array.isArray(e.conversions) ? e.conversions.map(Number).filter(Number.isFinite) : []
   };
 }
 
 // ------------------------------------------------------------------ religion, ancrage
 export const estCroyant = s => Boolean(s?.religion) && s.religion !== RELIGION_AUCUNE;
-// Les religions d'un survivant (« plusieurs » : celles de `religions`).
-export function religionsDe(s = {}) {
-  if (s.religion === RELIGION_PLUSIEURS) return [...new Set((s.religions ?? []).filter(Boolean))];
-  return estCroyant(s) ? [s.religion] : [];
+// La clé d'aujourd'hui d'une religion : une ancienne clé (alias du contenu) rend celle qui la remplace ; « aucune », « plusieurs »,
+// une clé inconnue ou un contenu sans religions la rendent telle quelle.
+export function cleReligion(cle, contenu = {}) {
+  const k = String(cle ?? "");
+  if (!k || k === RELIGION_AUCUNE || k === RELIGION_PLUSIEURS) return k;
+  return indexer(contenu ?? {}).religions.get(k)?.cle ?? k;
+}
+// Les religions propres d'un choix (religion, religions de « plusieurs »), sous leurs clés d'aujourd'hui, et pour une religion
+// double ses deux religions.
+function religionsDuChoix(religion, religions, contenu) {
+  const idx = indexer(contenu ?? {});
+  const base = religion === RELIGION_PLUSIEURS ? (religions ?? []).filter(Boolean) : religion && religion !== RELIGION_AUCUNE ? [religion] : [];
+  const sortie = [];
+  for (const r of base.map(x => cleReligion(x, contenu))) sortie.push(r, ...(idx.religions.get(r)?.composee ?? []).map(x => cleReligion(x, contenu)));
+  return sortie;
+}
+// La conversion est-elle en cours (le jour donné) ? (Sans jour : tant qu'une religion d'avant est notée.)
+export function enConversion(s = {}, jour = null) {
+  const e = espritDe(s);
+  if (!e.religionAvant || e.convertiLe === null) return false;
+  return jour === null || jour === undefined || n0(jour) - e.convertiLe < REGLES_ESPRIT.conversion.jours;
+}
+// Les religions d'un survivant (« plusieurs » : celles de `religions`), sous leurs clés d'aujourd'hui avec contenu ; une religion
+// double compte aussi ses deux religions ; pendant une conversion (jour donné, ou toute conversion notée), l'ancienne compte encore.
+export function religionsDe(s = {}, contenu = null, jour = null) {
+  const sortie = religionsDuChoix(s.religion, s.religions, contenu);
+  if (enConversion(s, jour)) { const e = espritDe(s); sortie.push(...religionsDuChoix(e.religionAvant, e.religionsAvant, contenu)); }
+  return [...new Set(sortie)];
 }
 // Ce qui le fait tenir : { source: "religion" | "ancrage" | "", cles, pratique, besoin }.
-export function soutienDe(s = {}, contenu = {}) {
+export function soutienDe(s = {}, contenu = {}, jour = null) {
   const idx = indexer(contenu);
   if (estCroyant(s)) {
-    const cles = religionsDe(s);
+    const cles = religionsDe(s, contenu, jour);
     // Plusieurs religions : l'observance la plus exigeante compte (« calme » avant « objet » avant « rien »).
     const besoins = cles.map(c => idx.religions.get(c)?.observance?.besoin).filter(b => BESOINS_OBSERVANCE.includes(b));
     const besoin = BESOINS_OBSERVANCE.find(b => besoins.includes(b)) ?? "calme";
@@ -105,7 +146,7 @@ export function soutienDe(s = {}, contenu = {}) {
   return { source: "", cles: [], pratique: false, besoin: "rien" };
 }
 // Deux survivants partagent-ils une religion ? (prier ensemble sur la route tient l'observance de chacun.)
-export const coreligionnaires = (a, b) => religionsDe(a).some(r => religionsDe(b).includes(r));
+export const coreligionnaires = (a, b, contenu = null, jour = null) => religionsDe(a, contenu, jour).some(r => religionsDe(b, contenu, jour).includes(r));
 
 // ------------------------------------------------------------------ tirage
 // L'esprit d'un survivant tiré au sort. options : { traits: [cle], competences: { cle: { niveau } | n }, age, enfance,
@@ -132,8 +173,9 @@ export function tirerEsprit(contenu = {}, hasard = Math.random, { traits = [], c
   let religion = "", plusieurs = [];
   const poidsReligion = r => n0(r.poids ?? 1) * Math.max(0, Number(r.affinites?.[enfance] ?? 1));
   if (verrous.religion !== undefined && verrous.religion !== null && verrous.religion !== "") {
-    religion = String(verrous.religion);
-    if (religion === RELIGION_PLUSIEURS) plusieurs = [...new Set((verrous.religions ?? []).filter(c => idx.religions.has(c)))];
+    // Une ancienne clé (alias) se garde sous la clé d'aujourd'hui (liste commune, lot 10).
+    religion = cleReligion(verrous.religion, contenu);
+    if (religion === RELIGION_PLUSIEURS) plusieurs = [...new Set((verrous.religions ?? []).filter(c => idx.religions.has(c)).map(c => cleReligion(c, contenu)))];
   } else if (religions.length) {
     const vraies = religions.filter(r => !r.special);
     const special = cle => religions.find(r => r.special === cle);
@@ -178,12 +220,13 @@ export function tirerEsprit(contenu = {}, hasard = Math.random, { traits = [], c
 // ------------------------------------------------------------------ le moral au jour le jour
 // Le plafond du moral venu de l'esprit (s'ajoute à 3 + confort + traits, survivant.mjs effetJour) : la foi ou l'ancrage d'un
 // pratiquant (+1, ou −1 en faute), l'entente du groupe (±1 quand on n'est pas seul). contexte : { entente, presents (autres) }.
-export function plafondEsprit(s = {}, contenu = {}, { entente = 0, presents = 0 } = {}) {
+export function plafondEsprit(s = {}, contenu = {}, { entente = 0, presents = 0, jour = null } = {}) {
   if (!espritActif(s)) return 0;
   const F = REGLES_ESPRIT.foi, E = REGLES_ESPRIT.entente;
   let p = 0;
-  const sout = soutienDe(s, contenu);
-  if (sout.source && sout.pratique) p += espritDe(s).enFaute ? F.plafondFaute : F.plafondPratique;
+  const sout = soutienDe(s, contenu, jour);
+  // Pendant une conversion (lot 10), le pratiquant n'a qu'une part de sa foi : son plafond ne monte pas (la faute pèse toujours).
+  if (sout.source && sout.pratique) p += espritDe(s).enFaute ? F.plafondFaute : sout.source === "religion" && enConversion(s, jour) ? REGLES_ESPRIT.conversion.plafond : F.plafondPratique;
   // Une semaine sans rien de ce qui nourrit son regard : il s'éteint un peu (plafond −1), jusqu'au prochain jour qui le nourrit.
   if (espritDe(s).joursSansNourriture >= REGLES_ESPRIT.regard.joursEteint) p += REGLES_ESPRIT.regard.plafondEteint;
   if (Number(presents) >= 1) {
@@ -215,8 +258,14 @@ export function journeeEsprit(entree, contenu = {}, ctx = {}) {
   const jour = n0(ctx.jour);
   const plafond = borner(Number(ctx.plafond ?? 5), 0, 5);
   s.moral = borner(Number(s.moral ?? 4), 0, 5);
-  // 1. Observances (pratiquant).
-  const sout = soutienDe(s, contenu);
+  // 0. La conversion (lot 10) : son temps fini, l'ancienne religion ne compte plus.
+  if (e.religionAvant && e.convertiLe !== null && jour - e.convertiLe >= REGLES_ESPRIT.conversion.jours) {
+    e.religionAvant = ""; e.religionsAvant = [];
+    evenements.push({ cle: "conversion-faite" });
+  }
+  s.esprit = e;
+  // 1. Observances (pratiquant) ; pendant une conversion, la plus exigeante des deux religions.
+  const sout = soutienDe(s, contenu, jour);
   if (sout.source && sout.pratique) {
     const tenue = sout.besoin === "rien" || (sout.besoin === "objet" ? !e.ancragePerdu : Boolean(ctx.aLAbri) || Boolean(ctx.coreligionnaire));
     if (tenue) { e.joursSansObservance = 0; if (e.enFaute) evenements.push({ cle: "observance-reprise" }); e.enFaute = false; }
@@ -284,6 +333,33 @@ export function probaFauxBruit(s, presents = 0) {
 }
 export const fauxBruit = (s, presents = 0, hasard = Math.random) => chance(probaFauxBruit(s, presents), hasard);
 
+// ------------------------------------------------------------------ changer de religion (lot 10)
+// Changer de religion, dans un lieu de culte (l'API demande le lieu ; le MJ dit si c'en est un). choix : { religion, religions,
+// jour }. -> { ok, motif, system, avant: { religion, religions }, quitte (il ne croit plus), souvent (un autre changement il y a
+// moins de REGLES_ESPRIT.conversion.souvent jours) }. Le pratiquant le reste ; ses compteurs de faute repartent de zéro.
+export function changerDeReligion(entree, { religion = "", religions = [], jour = 0 } = {}, contenu = {}) {
+  const s = structuredClone(entree ?? {});
+  const C = REGLES_ESPRIT.conversion;
+  const idx = indexer(contenu ?? {});
+  const nouvelle = cleReligion(religion, contenu);
+  const valide = nouvelle === RELIGION_AUCUNE || nouvelle === RELIGION_PLUSIEURS || idx.religions.has(nouvelle) || !liste(contenu?.religions).length;
+  if (!nouvelle || !valide) return { ok: false, motif: message("conversion-inconnue", { religion }, `religion inconnue « ${religion} »`), system: s };
+  const multiples = nouvelle === RELIGION_PLUSIEURS ? [...new Set((religions ?? []).map(r => cleReligion(r, contenu)).filter(r => idx.religions.has(r) && !idx.religions.get(r)?.special))] : [];
+  if (nouvelle === RELIGION_PLUSIEURS && multiples.length < 2) return { ok: false, motif: message("conversion-plusieurs", {}, "« plusieurs » demande au moins deux religions"), system: s };
+  const avant = { religion: cleReligion(s.religion, contenu), religions: (s.religions ?? []).map(r => cleReligion(r, contenu)) };
+  const meme = avant.religion === nouvelle && (nouvelle !== RELIGION_PLUSIEURS || [...avant.religions].sort().join() === [...multiples].sort().join());
+  if (meme) return { ok: false, motif: message("conversion-meme", {}, "c'est déjà sa religion"), system: s };
+  const e = espritDe(s);
+  const j = n0(jour);
+  const souvent = e.conversions.some(x => j - x < C.souvent);
+  const croyaitAvant = Boolean(avant.religion) && avant.religion !== RELIGION_AUCUNE;
+  s.esprit = { ...e, religionAvant: croyaitAvant ? avant.religion : "", religionsAvant: croyaitAvant ? avant.religions : [], convertiLe: croyaitAvant ? j : null,
+    conversions: [...e.conversions, j].slice(-5), joursSansObservance: 0, enFaute: false };
+  s.religion = nouvelle;
+  s.religions = multiples;
+  return { ok: true, motif: null, system: s, avant, quitte: croyaitAvant && nouvelle === RELIGION_AUCUNE, souvent };
+}
+
 // ------------------------------------------------------------------ chance, signes
 // La chance du trahi : des points, un dé de plus au prochain test qui compte (consommé). Le jeu ne dit pas d'où elle vient.
 export function donnerChance(entree, n = REGLES_ESPRIT.chance.trahi) {
@@ -331,7 +407,8 @@ const TEXTES_ESPRIT = {
   "signe-3": n => `${n} donne ses affaires.`,
   lache: n => `Un matin, ${n} n'est plus là.`,
   "au-bord": n => `${n} est au bord de lâcher.`,
-  "faux-bruit": n => `${n} a entendu quelque chose dans la nuit. Personne d'autre.`
+  "faux-bruit": n => `${n} a entendu quelque chose dans la nuit. Personne d'autre.`,
+  "conversion-faite": n => `${n} ne tient plus que de sa nouvelle foi.`
 };
 export const CLES_ESPRIT = Object.keys(TEXTES_ESPRIT);
 export function texteEsprit(cle, nom) {

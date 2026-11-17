@@ -20,6 +20,7 @@
         </tbody>
       </table>
     </div>
+    {{#if quotas.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Gestion.Quotas"}}</strong> : {{#each quotas}}{{#if tenu}}✔ {{/if}}{{texte}}{{#unless @last}} · {{/unless}}{{/each}}</p>{{/if}}
     {{#if pnj.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Tableau.Pnj"}}</strong> : {{#each pnj}}{{nom}}{{#if etat}} ({{etat}}){{/if}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
     {{#if plans.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Tableau.Plans"}}</strong> : {{#each plans}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
     {{#if morts.length}}<p class="survie-aide"><i class="fa-solid fa-dove"></i> <strong>{{localize "LAKOUR_SURVIE.Autel.Titre"}}</strong> : {{#each morts}}{{nom}} <small>({{etat}})</small>{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}

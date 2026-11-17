@@ -12,6 +12,7 @@ import { VOIES_AUTONOMIE, INSTALLATIONS } from "./installations.mjs";
 import { texteReputations } from "./reputations.mjs";
 import { PAGES_JOUEUR_ESPRIT, PAGES_MJ_ESPRIT } from "./esprit.mjs";
 import { PAGES_JOUEUR_SENS } from "./sens.mjs";
+import { PAGES_JOUEUR_COMMUNAUTE, PAGES_MJ_COMMUNAUTE } from "./communaute.mjs";
 import { FETES_FENOIR } from "../scripts/fetes.js";
 import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES, COURS_TEXTE } from "./marche.mjs";
 import { EVENEMENTS } from "./evenements.mjs";
@@ -134,6 +135,7 @@ Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs e
   { cle: "enfances", titre: "Les enfances", texte: ENFANCES.map(e => `**${e.nom}** (${Object.entries(e.modificateurs).map(([c, n]) => `${c} ${n > 0 ? "+" : ""}${n}`).join(", ")}${e.incapacites.length ? ` ; incapacité : ${e.incapacites.join(", ")}` : ""}) — ${sansBalises(e.description)}`).join("\n\n") },
   { cle: "passes", titre: "Les passés", texte: PASSES.map(p => `**${p.name}** — ${sansBalises(p.system.description)} *Compétences : ${Object.entries(p.system.competences).map(([c, n]) => `${c} ${n}`).join(", ")}.*`).join("\n\n") },
   ...PAGES_JOUEUR_ESPRIT,
+  ...PAGES_JOUEUR_COMMUNAUTE,
   ...PAGES_JOUEUR_SENS,
   { cle: "traits", titre: "Les traits", texte: TRAITS.map(t => `**${t.nom}** — ${sansBalises(t.description)}${t.incompatibles.length ? ` *(Incompatible : ${t.incompatibles.map(c => TRAITS.find(x => x.cle === c)?.nom ?? c).join(", ")}.)*` : ""}`).join("\n\n") }
 ] });
@@ -262,7 +264,8 @@ Les événements du camp (le carnet de la boutique, un service dans la nuit, le 
 # Pour le MJ IA
 
 Quand vous décrivez quelqu'un, donnez son apparence en clair (teint, cheveux, traits) plutôt que « un Réunionnais » ; variez les visages d'une scène à l'autre ; faites parler un PNJ avec ses préjugés quand ça sert la scène, puis laissez les faits le contredire. Les origines des personnages nommés sont dans leurs notes.` },
-  ...PAGES_MJ_ESPRIT
+  ...PAGES_MJ_ESPRIT,
+  ...PAGES_MJ_COMMUNAUTE
 ] });
 
 // ================================================================ Chronologie de la crise (MJ)

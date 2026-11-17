@@ -28,7 +28,8 @@ test("religions et ancrages : au registre, « aucune » et « plusieurs » compr
   assert.deepEqual(verifierDonnees(D).filter(e => /religion|ancrage|sensMoral|esprit/.test(e)), []);
   // Le système les lit : clés uniques, indexées.
   const idx = L.indexer(D);
-  assert.equal(idx.religions.size, RELIGIONS.length);
+  // Les anciennes clés (alias de la liste commune, lot 10) mènent aux mêmes religions : autant de religions que de clés d'aujourd'hui.
+  assert.equal(new Set(idx.religions.values()).size, RELIGIONS.length);
   assert.equal(idx.ancrages.size, ANCRAGES.length);
 });
 
@@ -38,7 +39,8 @@ test("aucune religion, aucune origine n'a d'effet propre : même plafond, même 
   assert.deepEqual([...plafonds], [1]);
   assert.equal(L.plafondEsprit(s("aucune", { ancrage: "photo" }), D), 1, "l'ancrage d'un non-croyant fait le même effet");
   // Ce que les règles lisent d'une religion : son observance (besoin) et ses fêtes, rien d'autre.
-  for (const r of D.religions) assert.deepEqual(Object.keys(r).filter(k => !["cle", "nom", "description", "observance", "fetes", "poids", "affinites", "special"].includes(k)), [], r.cle);
+  // (alias : les anciennes clés ; composee : les deux religions d'une religion double, pour prier ensemble et pour les fêtes.)
+  for (const r of D.religions) assert.deepEqual(Object.keys(r).filter(k => !["cle", "nom", "description", "observance", "fetes", "poids", "affinites", "special", "alias", "composee"].includes(k)), [], r.cle);
 });
 
 test("traits, factions, prétirés et PNJ : ce qui penche au tirage, le chef de chaque faction, des personnages prêts à jouer", () => {
@@ -77,7 +79,7 @@ test("traduction : religions, ancrages, tables, événements et pages en anglais
   assert.equal(nom(EN.religions, "catholique"), "Catholic");
   assert.equal(nom(EN.religions, "plusieurs"), "Several at once");
   assert.equal(nom(EN.ancrages, "photo"), "A photo");
-  assert.ok(/kabaré/.test(nom(EN.religions, "ancetres-malgaches")), "le nom créole du culte reste");
+  assert.ok(/kabaré/.test(nom(EN.religions, "servis-kabare")), "le nom créole du culte reste");
   for (const r of EN.religions) assert.ok(!/[àéèêç]/.test(sansBalises(r.observance?.texte ?? "")), `${r.cle} : observance en anglais`);
   const cleEn = d => d.doc.flags?.["lakour-fenoir-en"]?.cle ?? d.doc.flags?.["lakour-fenoir"]?.cle;
   const tableEn = anglais.find(d => d.pack === "tables" && cleEn(d) === "porte-refuse").doc;

@@ -59,7 +59,8 @@ import { espritActif, plafondEsprit, nourrituresDuJour, journeeEsprit, fauxBruit
   religionsDe, ajusterEntente } from "./esprit.mjs";
 import { couleurDuGroupe, malaiseCouleur } from "./moralite.mjs";
 import { journeePorte, listeALaPorte } from "./porte.mjs";
-import { autoriteDuJour, crisesAutorite, tributsDus } from "./chefs.mjs";
+import { autoriteDuJour, crisesAutorite, tributsDus, rangsDuJour, secondsDe } from "./chefs.mjs";
+import { suivreQuotas } from "./gestion.mjs";
 
 export function etatVide() {
   return {
@@ -381,7 +382,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       const peurMoral = tr.peurs.filter(p => p.lieux.some(l => lieux.includes(l))).reduce((t, p) => t + p.moral, 0);
       const confort = aLAbri() ? bilan?.moral ?? 0 : 0;
       const autres = Math.max(0, (aLAbri() ? presentsAbri().length : surv.filter(actif).length) - 1);
-      const pe = plafondEsprit(s.system, contenu, { entente, presents: autres });
+      const pe = plafondEsprit(s.system, contenu, { entente, presents: autres, jour });
       // esprit (lot « fetes », souvenirs.mjs) : souvenirs de fête, vœux, autel et deuil ; plafondEsprit (lot « moral », esprit.mjs).
       const souvenirs = espritDuJour(e, s.id, jour - 1);
       jourEsprit[s.id] = { mange, autres, plafond: Math.min(5, Math.max(0, 3 + Math.max(0, Number(confort) || 0) + (Number(tr.moral) || 0) + pe + souvenirs)), confort };
@@ -438,7 +439,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       const nourritures = nourrituresDuJour({ mange: j.mange, faim: sys.faim, blessures: sys.blessures, fatigue: sys.fatigue, tache: sys.tache, aLAbri: aLAbri(),
         enRoute: Boolean(e.groupe.enRoute), cyclone: cycloneIci, fete: feteRecente, accueil: accueilRecent, confort: j.confort,
         passion: Boolean(c && Number(sys.passions?.[c]) >= 2 && peutFaire(sys, sys.tache)) });
-      const coreligionnaire = surv.some(o => o.id !== s.id && actif(o) && o.system.pratique && religionsDe(o.system).some(x => religionsDe(sys).includes(x)));
+      const coreligionnaire = surv.some(o => o.id !== s.id && actif(o) && o.system.pratique && religionsDe(o.system, contenu, jour).some(x => religionsDe(sys, contenu, jour).includes(x)));
       const r = journeeEsprit(sys, contenu, { jour, aLAbri: aLAbri(), coreligionnaire, nourritures, plafond: j.plafond, presents: j.autres, entente, statut: sys.statut });
       s.system = r.system;
       for (const ev of r.evenements) {
@@ -468,6 +469,12 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       const fx = { jour, region: e.groupe.region, cle: "malaise-couleur", params: { nom: s.nom }, texte: `${s.nom} ne se sent plus à sa place dans ce groupe.`, public: false, portee: "mj" };
       secrets.push(fx); auJournalSecret(jour, fx);
     }
+    // Les rangs (lot 10, chefs.mjs) : la mort coûte le rang ; le chef mort, son second prend la tête ; les nouveaux d'une semaine
+    // deviennent membres. Puis les quotas de la table de gestion (gestion.mjs) : suivis, sans punition.
+    const rangs = rangsDuJour(e, surv, { jour, partis: departs });
+    e = rangs.etat;
+    for (const f of rangs.faits) publier(fin, f.cle, f.params, f.texte);
+    e = suivreQuotas(e, surv.filter(actif).map(s => ({ id: s.id, system: s.system })), jour).etat;
     // Le chef : nourrit-il son monde ? Une autorité trop basse : désertions, scission, renversement (une fois par semaine).
     const chef = surv.find(s => s.id === e.groupe.chef && actif(s));
     if (chef) {
@@ -475,7 +482,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       chef.system = r.system;
       if (r.delta) publier(fin, r.delta > 0 ? "autorite-monte" : "autorite-baisse", { nom: chef.nom },
         r.delta > 0 ? `On écoute davantage ${chef.nom} : tout le monde a mangé.` : `On écoute moins ${chef.nom} : on a eu faim.`);
-      const crise = crisesAutorite({ membres: surv.filter(actif).map(s => ({ id: s.id, system: s.system })), chefId: chef.id, jour, hasard: deriverHasard(m.graine, "autorite", jour) });
+      const crise = crisesAutorite({ membres: surv.filter(actif).map(s => ({ id: s.id, system: s.system })), chefId: chef.id, jour, hasard: deriverHasard(m.graine, "autorite", jour),
+        seconds: secondsDe(e) });
       if (crise.deserteur) {
         const d = surv.find(s => s.id === crise.deserteur);
         departs.push(d.id); e = retirerMembre(e, d.id);
@@ -494,7 +502,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     if (ab && surv.some(s => actif(s) && espritActif(s.system))) {
       const liste = listeALaPorte({ stocks: ab.system.stocks, bilan, personnes: personnesAbri() });
       const p = journeePorte(e, m, contenu, deriverHasard(m.graine, "porte", jour), { jour, aLAbri: aLAbri(), phase: phaseDuJour(jour),
-        visibilite: bilan?.visibilite ?? 0, couleur: couleur.bande, region: ab.system.region, liste });
+        visibilite: bilan?.visibilite ?? 0, couleur: couleur.bande, region: ab.system.region, liste, nomsPris: surv.map(s => s.nom) });
       e = p.etat; m = p.monde;
       if (p.bruit) ab.system.bruit = Math.min(10, (Number(ab.system.bruit) || 0) + p.bruit);
       for (const f of p.faits) { faits.push({ region: ab.system.region, ...f }); publier(fin, cleTexteDe(f), f.params, f.texte); }
@@ -596,7 +604,7 @@ export function feter(etat, abri, { fete, annee, survivants = [], personnes = nu
   const voeux = ef.voeu ? cibles(pour) : [];
   const attaches = ef.attache ? (pour?.length ? vivants.filter(s => pour.includes(s.id)) : vivants).filter(s => s.system.statut === "recrue").map(s => s.id) : [];
   const religions = indexer(contenu ?? {}).religions;
-  const saFete = sys => espritActif(sys) && Boolean(sys.pratique) && religionsDe(sys).some(r => (religions.get(r)?.fetes ?? []).includes(fete));
+  const saFete = sys => espritActif(sys) && Boolean(sys.pratique) && religionsDe(sys, contenu ?? {}).some(r => (religions.get(r)?.fetes ?? []).includes(fete));
   const nouveaux = survivants.map(s => {
     if (!peutAgir(s.system)) return s;
     const sys = structuredClone(s.system);

@@ -2602,6 +2602,288 @@
       "en": "People from mainland France who settled here, or are passing through."
     }
   },
+  "registre/corvees/batir": {
+    "_nom": "Bâtir",
+    "nom": {
+      "fr": "Bâtir",
+      "en": "Build"
+    },
+    "description": {
+      "fr": "Monter ce qu'on a décidé : poser, clouer, lier, caler, recommencer.",
+      "en": "Put up what was decided: set, nail, lash, wedge, start again."
+    }
+  },
+  "registre/corvees/cuisiner": {
+    "_nom": "Cuisiner",
+    "nom": {
+      "fr": "Cuisiner",
+      "en": "Cook"
+    },
+    "description": {
+      "fr": "Le cari du soir, le boucané, les achards, les conserves pour les jours sans.",
+      "en": "The evening cari (curry), the boucané (smoked pork), the achards (pickles), preserves for the lean days."
+    }
+  },
+  "registre/corvees/entretenir-les-installations": {
+    "_nom": "Entretenir les installations",
+    "nom": {
+      "fr": "Entretenir les installations",
+      "en": "Maintain the installations"
+    },
+    "description": {
+      "fr": "Le tour de ce qui tient l'abri en vie : une charnière, un joint, une planche qui bouge.",
+      "en": "The round of what keeps the shelter alive: a hinge, a seal, a loose plank."
+    }
+  },
+  "registre/corvees/faire-des-clous": {
+    "_nom": "Faire des clous",
+    "nom": {
+      "fr": "Faire des clous",
+      "en": "Make nails"
+    },
+    "description": {
+      "fr": "Redresser les clous de récupération, tailler des chevilles de bois dur.",
+      "en": "Straighten salvaged nails, whittle hardwood pegs."
+    }
+  },
+  "registre/corvees/inspecter-les-cables-et-tuyaux": {
+    "_nom": "Inspecter les câbles et les tuyaux",
+    "nom": {
+      "fr": "Inspecter les câbles et les tuyaux",
+      "en": "Inspect cables and pipes"
+    },
+    "description": {
+      "fr": "Suivre le tuyau de la source et les fils des panneaux, chercher la fuite ou le fil rongé.",
+      "en": "Follow the pipe from the spring and the wires from the panels, look for the leak or the gnawed wire."
+    }
+  },
+  "registre/corvees/monter-la-garde": {
+    "_nom": "Monter la garde",
+    "description": {
+      "fr": "La ronde, les yeux sur la route et sur la ravine, l'oreille aux cloches, la nuit entière s'il le faut.",
+      "en": "The round, eyes on the road and the ravine, ears to the bells, the whole night if need be."
+    }
+  },
+  "registre/corvees/nettoyer-les-filtres": {
+    "_nom": "Nettoyer les filtres",
+    "nom": {
+      "fr": "Nettoyer les filtres",
+      "en": "Clean the filters"
+    },
+    "description": {
+      "fr": "Rincer le sable, changer le charbon, déboucher les gouttières avant la pluie.",
+      "en": "Rinse the sand, change the charcoal, unblock the gutters before the rain."
+    }
+  },
+  "registre/corvees/nourrir-les-betes": {
+    "_nom": "Nourrir les bêtes",
+    "nom": {
+      "fr": "Nourrir les bêtes",
+      "en": "Feed the animals"
+    },
+    "description": {
+      "fr": "Le grain des poules, l'herbe des cabris, l'eau de tout le monde, et compter qu'il ne manque personne.",
+      "en": "Grain for the hens, grass for the goats, water for everyone, and count that nobody is missing."
+    }
+  },
+  "registre/corvees/preparer-des-soins": {
+    "_nom": "Préparer des soins",
+    "nom": {
+      "fr": "Préparer des soins",
+      "en": "Prepare care"
+    },
+    "description": {
+      "fr": "Pansements bouillis et séchés, tisanes, cataplasmes, baumes de la gramoune.",
+      "en": "Boiled and dried dressings, herbal teas, poultices, the gramoune's balms."
+    }
+  },
+  "registre/corvees/preparer-le-mortier": {
+    "_nom": "Préparer le mortier",
+    "nom": {
+      "fr": "Préparer le mortier",
+      "en": "Mix mortar"
+    },
+    "description": {
+      "fr": "Gâcher le torchis, éteindre la chaux, monter le mortier à la pelle.",
+      "en": "Work the daub, slake the lime, mix the mortar with a shovel."
+    }
+  },
+  "registre/corvees/puiser-de-l-eau": {
+    "_nom": "Puiser l'eau",
+    "nom": {
+      "fr": "Puiser l'eau",
+      "en": "Draw water"
+    },
+    "description": {
+      "fr": "Aller à la source, au bassin ou à la citerne, remplir les bidons et revenir sans rien renverser.",
+      "en": "Go to the spring, the basin or the tank, fill the jerrycans and come back without spilling."
+    }
+  },
+  "registre/corvees/rapporter-de-la-recuperation": {
+    "_nom": "Rapporter de la récupération",
+    "nom": {
+      "fr": "Rapporter de la récupération",
+      "en": "Bring in salvage"
+    },
+    "description": {
+      "fr": "Démonter ce qui traîne alentour : tôles, ferraille, fil de fer, clous, tuyaux, câbles.",
+      "en": "Strip what lies about: corrugated iron, scrap, wire, nails, pipes, cables."
+    }
+  },
+  "registre/corvees/rapporter-de-la-terre": {
+    "_nom": "Rapporter de la terre",
+    "nom": {
+      "fr": "Rapporter de la terre",
+      "en": "Bring in earth"
+    },
+    "description": {
+      "fr": "Terre, argile et sable pour le torchis, les planches du jardin et les sacs de la barricade.",
+      "en": "Soil, clay and sand for daub, the garden beds and the barricade's sandbags."
+    }
+  },
+  "registre/corvees/rapporter-des-fibres": {
+    "_nom": "Rapporter des fibres",
+    "nom": {
+      "fr": "Rapporter des fibres",
+      "en": "Bring in fibres"
+    },
+    "description": {
+      "fr": "Feuilles de vacoa et de choka, chaume, canne coupée : de quoi tresser, couvrir et lier.",
+      "en": "Vacoa (screwpine) and choka (sisal) leaves, thatch, cut cane: something to plait, roof and tie with."
+    }
+  },
+  "registre/corvees/rapporter-des-pierres": {
+    "_nom": "Rapporter des pierres",
+    "nom": {
+      "fr": "Rapporter des pierres",
+      "en": "Bring in stones"
+    },
+    "description": {
+      "fr": "Les galets de la ravine et les moellons d'un mur effondré, portés à dos ou à la brouette.",
+      "en": "River pebbles and rubble from a collapsed wall, carried on the back or in the wheelbarrow."
+    }
+  },
+  "registre/corvees/rapporter-des-troncs": {
+    "_nom": "Rapporter des troncs",
+    "nom": {
+      "fr": "Rapporter des troncs",
+      "en": "Bring in logs"
+    },
+    "description": {
+      "fr": "Abattre un arbre mort ou couché par le vent, l'ébrancher, le débiter et le traîner jusqu'à l'abri.",
+      "en": "Fell a dead or wind-thrown tree, strip it, cut it up and drag it back to the shelter."
+    }
+  },
+  "registre/corvees/rapporter-des-vivres": {
+    "_nom": "Rapporter des vivres",
+    "nom": {
+      "fr": "Rapporter des vivres",
+      "en": "Bring in food"
+    },
+    "description": {
+      "fr": "Cueillir, ramasser les œufs, traire, couper les brèdes, relever les nasses à camarons.",
+      "en": "Pick, gather the eggs, milk, cut the brèdes (leafy greens), lift the camaron (river prawn) traps."
+    }
+  },
+  "registre/corvees/rapporter-des-zerbaz": {
+    "_nom": "Rapporter des zerbaz",
+    "nom": {
+      "fr": "Rapporter des zerbaz",
+      "en": "Bring in zerbaz"
+    },
+    "description": {
+      "fr": "Les plantes qui soignent, cueillies là où la gramoune a dit, et pas ailleurs.",
+      "en": "The healing plants, picked where the gramoune (elder) said, and nowhere else."
+    }
+  },
+  "registre/corvees/rapporter-du-bambou": {
+    "_nom": "Rapporter du bambou",
+    "nom": {
+      "fr": "Rapporter du bambou",
+      "en": "Bring in bamboo"
+    },
+    "description": {
+      "fr": "Couper les cannes de bambou de la ravine, les plus droites, et les lier en fagots.",
+      "en": "Cut the straightest bamboo canes in the ravine and tie them in bundles."
+    }
+  },
+  "registre/corvees/rapporter-du-petit-bois": {
+    "_nom": "Rapporter du petit bois",
+    "nom": {
+      "fr": "Rapporter du petit bois",
+      "en": "Bring in kindling"
+    },
+    "description": {
+      "fr": "Des gaulettes et des branches pour les clôtures, les claies et le feu.",
+      "en": "Poles and branches for fences, racks and the fire."
+    }
+  },
+  "registre/corvees/relever-les-productions": {
+    "_nom": "Relever les productions",
+    "nom": {
+      "fr": "Relever les productions",
+      "en": "Collect the produce"
+    },
+    "description": {
+      "fr": "Faire le tour des planches, des ruches et des enclos, et rapporter ce qu'ils ont donné.",
+      "en": "Walk the beds, the hives and the pens, and bring back what they gave."
+    }
+  },
+  "registre/corvees/rendre-l-eau-bonne": {
+    "_nom": "Rendre l'eau bonne",
+    "nom": {
+      "fr": "Rendre l'eau bonne",
+      "en": "Make the water safe"
+    },
+    "description": {
+      "fr": "Filtrer, faire bouillir, laisser reposer : l'eau de pluie et de ravine devient de l'eau à boire.",
+      "en": "Filter, boil, let it settle: rain and ravine water become drinking water."
+    }
+  },
+  "registre/corvees/reparer-les-defenses": {
+    "_nom": "Réparer les défenses",
+    "nom": {
+      "fr": "Réparer les défenses",
+      "en": "Repair the defences"
+    },
+    "description": {
+      "fr": "Reprendre la barricade, regarnir la palissade, retendre les cloches d'alerte.",
+      "en": "Shore up the barricade, refill the palisade, re-string the alarm bells."
+    }
+  },
+  "registre/corvees/scier-des-planches": {
+    "_nom": "Scier des planches",
+    "nom": {
+      "fr": "Scier des planches",
+      "en": "Saw planks"
+    },
+    "description": {
+      "fr": "Débiter un tronc en planches, à la scie de long, à deux, toute une journée.",
+      "en": "Rip a trunk into planks with the long saw, two people, a whole day."
+    }
+  },
+  "registre/corvees/tailler-des-poutres": {
+    "_nom": "Tailler des poutres",
+    "nom": {
+      "fr": "Tailler des poutres",
+      "en": "Hew beams"
+    },
+    "description": {
+      "fr": "Équarrir les poutres et fendre les bardeaux pour la charpente et le toit.",
+      "en": "Square the beams and split the shingles for the frame and the roof."
+    }
+  },
+  "registre/corvees/tresser-de-la-corde": {
+    "_nom": "Tresser de la corde",
+    "nom": {
+      "fr": "Tresser de la corde",
+      "en": "Plait rope"
+    },
+    "description": {
+      "fr": "Rouler et tresser les fibres de choka ou de coco en cordes qui tiennent.",
+      "en": "Roll and plait choka or coconut fibre into rope that holds."
+    }
+  },
   "registre/depotsCyclone/bache-et-cordes": {
     "_nom": "une bâche bleue et ses cordes",
     "nom": {
@@ -7832,21 +8114,6 @@
       "en": "The island within the island. Few people, so few dead; the vanilla, the screwpines, the sea that takes without warning. People left there last, or never."
     }
   },
-  "registre/religions/ancetres-malgaches": {
-    "_nom": "Servis kabaré, le culte des ancêtres",
-    "nom": {
-      "fr": "Servis kabaré, le culte des ancêtres",
-      "en": "Servis kabaré, ancestor worship"
-    },
-    "description": {
-      "fr": "<p>Venu de Madagascar et d'Afrique avec les esclaves, transmis en silence pendant des générations : le servis kabaré, le repas offert aux ancêtres, le maloya qui les appelle. On le cachait, on le pratique aujourd'hui plus ouvertement, et souvent en plus de la messe. Dans le monde d'après, dire le nom des morts, c'est aussi se souvenir qu'on vient de loin et qu'on a déjà survécu à pire.</p>",
-      "en": "<p>Brought from Madagascar and Africa with the enslaved, handed down in silence for generations: the servis kabaré, the meal offered to the ancestors, the maloya that calls them. It used to be hidden; it is practised more openly today, often alongside mass. In the world after, speaking the names of the dead is also remembering that you come from far away and have already survived worse.</p>"
-    },
-    "observance.texte": {
-      "fr": "le rhum et le tabac posés pour les anciens, leurs noms dits à voix haute, un repas partagé avec eux",
-      "en": "rum and tobacco set out for the elders, their names spoken aloud, a meal shared with them"
-    }
-  },
   "registre/religions/aucune": {
     "_nom": "Aucune",
     "nom": {
@@ -7856,6 +8123,21 @@
     "description": {
       "fr": "<p>Il ne croit pas, ou plus. Ce qui le fait tenir est ailleurs : une photo, un carnet, une routine, le sport. C'est son ancrage, et il compte autant que la foi des autres.</p>",
       "en": "<p>They don't believe, or no longer do. What keeps them going lies elsewhere: a photo, a notebook, a routine, sport. It is their anchor, and it counts as much as other people's faith.</p>"
+    }
+  },
+  "registre/religions/bouddhiste": {
+    "_nom": "Bouddhiste",
+    "nom": {
+      "fr": "Bouddhiste",
+      "en": "Buddhist"
+    },
+    "description": {
+      "fr": "<p>Les pagodes de Saint-Denis et de Saint-Pierre, l'autel de la maison où brûlent les bâtons d'encens, les photos des anciens posées à côté : la foi de bien des familles chinoises de l'île, qui vont aussi parfois à la messe. On s'assoit en silence avant que la journée commence, on ne laisse pas les siens sans offrande parce que le monde s'arrête : une poignée de riz suffit.</p>",
+      "en": "<p>The pagodas of Saint-Denis and Saint-Pierre, the home altar where incense sticks burn, the photos of the elders set beside it: the faith of many of the island's Chinese families, who sometimes go to mass as well. You sit in silence before the day begins; you don't leave your own without an offering because the world has stopped: a handful of rice will do.</p>"
+    },
+    "observance.texte": {
+      "fr": "l'encens le premier et le quinze du mois lunaire, un moment de silence le matin, une part du repas posée devant l'autel",
+      "en": "incense on the first and fifteenth of the lunar month, a moment of silence in the morning, a share of the meal set before the altar"
     }
   },
   "registre/religions/catholique": {
@@ -7873,41 +8155,11 @@
       "en": "the evening rosary, a candle for the dead, grace before the meal"
     }
   },
-  "registre/religions/culte-chinois": {
-    "_nom": "Culte des ancêtres et temple chinois",
+  "registre/religions/hindoue": {
+    "_nom": "Hindoue",
     "nom": {
-      "fr": "Culte des ancêtres et temple chinois",
-      "en": "Ancestor worship and the Chinese temple"
-    },
-    "description": {
-      "fr": "<p>Dans l'arrière-boutique, l'autel des ancêtres avec ses photos et ses bâtons d'encens ; à Saint-Denis et à Saint-Pierre, les temples de Guan Di. Beaucoup de familles chinoises vont aussi à la messe. On n'abandonne pas les siens parce que le monde s'arrête : on les nourrit, même d'une poignée de riz.</p>",
-      "en": "<p>In the back of the shop, the ancestors' altar with its photos and incense sticks; in Saint-Denis and Saint-Pierre, the temples of Guan Di. Many Chinese families also go to mass. You don't abandon your own because the world stops: you feed them, even with a handful of rice.</p>"
-    },
-    "observance.texte": {
-      "fr": "l'encens pour les ancêtres, une part du repas posée devant leur photo, le respect des jours de fête",
-      "en": "incense for the ancestors, a share of the meal set before their photo, respect for the feast days"
-    }
-  },
-  "registre/religions/evangelique": {
-    "_nom": "Église évangélique",
-    "nom": {
-      "fr": "Église évangélique",
-      "en": "Evangelical church"
-    },
-    "description": {
-      "fr": "<p>Des églises dans d'anciens entrepôts, des chants qu'on entend de la rue, une Bible annotée qu'on garde sur soi. Les évangéliques se sont multipliés dans les quartiers ; après le jour zéro, certains y voient l'Apocalypse annoncée, d'autres seulement une raison de plus d'ouvrir la porte. Tant qu'il a sa Bible, le pratiquant tient ; s'il la perd, il se sent nu.</p>",
-      "en": "<p>Churches in old warehouses, hymns you can hear from the street, an annotated Bible kept close. Evangelicals have multiplied in the neighbourhoods; after day zero, some see the foretold Apocalypse in it, others only one more reason to open the door. As long as they have their Bible, the believer holds on; if they lose it, they feel naked.</p>"
-    },
-    "observance.texte": {
-      "fr": "la Bible ouverte chaque jour, les chants, le culte avec les frères et les sœurs",
-      "en": "the Bible opened every day, the hymns, worship with the brothers and sisters"
-    }
-  },
-  "registre/religions/hindouisme-tamoul": {
-    "_nom": "Hindouisme tamoul",
-    "nom": {
-      "fr": "Hindouisme tamoul",
-      "en": "Tamil Hinduism"
+      "fr": "Hindoue",
+      "en": "Hindu"
     },
     "description": {
       "fr": "<p>La religion des Malbars, venue avec les engagés du Sud de l'Inde : les temples aux couleurs vives, les fêtes de la lumière, le feu sur lequel on marche, la Cavadee et ses piercings, le carême qu'on tient avant. Ceux qui ne la connaissent pas parlent de « services » et de sorcellerie ; ceux qui la pratiquent allument une lampe chaque soir et ne demandent à personne de comprendre.</p>",
@@ -7918,11 +8170,26 @@
       "en": "the lamp lit in the evening, an offering of flowers or rice, the fast before the festivals"
     }
   },
-  "registre/religions/islam": {
-    "_nom": "Islam",
+  "registre/religions/hindoue-catholique": {
+    "_nom": "Hindoue catholique",
     "nom": {
-      "fr": "Islam",
-      "en": "Islam"
+      "fr": "Hindoue catholique",
+      "en": "Hindu Catholic"
+    },
+    "description": {
+      "fr": "<p>La messe le dimanche et le temple le vendredi, la Vierge et Mariamen sur la même étagère, sous les mêmes fleurs : beaucoup de familles malbares sont les deux à la fois depuis des générations, et personne dans l'île ne trouve ça étrange. Le curé a fini par venir bénir la marche sur le feu ; la grand-mère a toujours su à quelle porte frapper pour quelle peine.</p>",
+      "en": "<p>Mass on Sunday and the temple on Friday, the Virgin and Mariamen on the same shelf, under the same flowers: many Malbar families have been both at once for generations, and nobody on the island finds it strange. The priest ended up coming to bless the fire-walking; grandmother always knew which door to knock on for which sorrow.</p>"
+    },
+    "observance.texte": {
+      "fr": "un cierge à saint Expédit et une lampe pour Mariamen, la messe du dimanche et le carême du temple",
+      "en": "a candle for Saint Expedite and a lamp for Mariamen, Sunday mass and the temple fast"
+    }
+  },
+  "registre/religions/musulmane": {
+    "_nom": "Musulmane",
+    "nom": {
+      "fr": "Musulmane",
+      "en": "Muslim"
     },
     "description": {
       "fr": "<p>La foi des Z'arabes de Saint-Denis et de Saint-Pierre, dont la mosquée Noor-e-Islam est la plus ancienne de France, et celle des Comoriens et des Mahorais arrivés plus tard. On prie cinq fois par jour, même dans un abri de tôle, et la question de l'eau propre pour les ablutions devient une question de survie.</p>",
@@ -7940,8 +8207,38 @@
       "en": "Several at once"
     },
     "description": {
-      "fr": "<p>La messe le dimanche et le temple pour la Dipavali, un cierge à saint Expédit et une offrande pour les anciens : à La Réunion, beaucoup croient à plusieurs choses à la fois, et personne ne trouve ça étrange. Il tient les deux, ou les trois.</p>",
-      "en": "<p>Mass on Sunday and the temple for Dipavali, a candle for Saint Expédit and an offering for the elders: on Réunion, many people believe in several things at once, and nobody finds it strange. They keep both, or all three.</p>"
+      "fr": "<p>Une messe et une offrande pour les anciens, l'encens de la pagode et un cierge à saint Expédit : à La Réunion, beaucoup croient à plusieurs choses à la fois, et personne ne trouve ça étrange. Il tient les deux, ou les trois. (Se choisit sur la fiche : le tirage donne « hindoue catholique », la plus répandue.)</p>",
+      "en": "<p>A mass and an offering for the elders, the pagoda's incense and a candle for Saint Expédit: on Réunion, many people believe in several things at once, and nobody finds it strange. They keep both, or all three. (Chosen on the sheet: the draw gives \"Hindu Catholic\", the most common.)</p>"
+    }
+  },
+  "registre/religions/protestante": {
+    "_nom": "Protestante",
+    "nom": {
+      "fr": "Protestante",
+      "en": "Protestant"
+    },
+    "description": {
+      "fr": "<p>Surtout des églises évangéliques : des salles dans d'anciens entrepôts, des chants qu'on entend de la rue, une Bible annotée qu'on garde sur soi ; et quelques vieux temples de l'Église réformée. Les assemblées se sont multipliées dans les quartiers ; après le jour zéro, certains y voient l'Apocalypse annoncée, d'autres seulement une raison de plus d'ouvrir la porte. Tant qu'il a sa Bible, le pratiquant tient ; s'il la perd, il se sent nu.</p>",
+      "en": "<p>Mostly evangelical churches: halls in old warehouses, hymns you can hear from the street, an annotated Bible kept close; and a few old temples of the Reformed Church. The congregations have multiplied in the neighbourhoods; after day zero, some see the foretold Apocalypse in it, others only one more reason to open the door. As long as they have their Bible, the believer holds on; if they lose it, they feel naked.</p>"
+    },
+    "observance.texte": {
+      "fr": "la Bible ouverte chaque jour, les chants, le culte avec les frères et les sœurs",
+      "en": "the Bible opened every day, the hymns, worship with the brothers and sisters"
+    }
+  },
+  "registre/religions/servis-kabare": {
+    "_nom": "Servis kabaré",
+    "nom": {
+      "fr": "Servis kabaré",
+      "en": "Servis kabaré"
+    },
+    "description": {
+      "fr": "<p>Venu de Madagascar et d'Afrique avec les esclaves, transmis en silence pendant des générations : le servis kabaré, le repas offert aux ancêtres, le maloya qui les appelle. On le cachait, on le pratique aujourd'hui plus ouvertement, et souvent en plus de la messe. Dans le monde d'après, dire le nom des morts, c'est aussi se souvenir qu'on vient de loin et qu'on a déjà survécu à pire.</p>",
+      "en": "<p>Brought from Madagascar and Africa with the enslaved, handed down in silence for generations: the servis kabaré, the meal offered to the ancestors, the maloya that calls them. It used to be hidden; it is practised more openly today, often alongside mass. In the world after, speaking the names of the dead is also remembering that you come from far away and have already survived worse.</p>"
+    },
+    "observance.texte": {
+      "fr": "le rhum et le tabac posés pour les anciens, leurs noms dits à voix haute, un repas partagé avec eux",
+      "en": "rum and tobacco set out for the elders, their names spoken aloud, a meal shared with them"
     }
   },
   "registre/reputations": {

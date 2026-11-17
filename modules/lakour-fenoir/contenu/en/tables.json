@@ -2980,6 +2980,49 @@
       "en": "<p>There are supposedly messages under the stones of the red oratories, by the roads, for those who never cross paths.</p>"
     }
   },
+  "tables/lvnc8Aik4KmJNMAZ": {
+    "_nom": "La communauté — le départ préparé",
+    "name": {
+      "fr": "La communauté — le départ préparé",
+      "en": "Community — the prepared departure"
+    },
+    "description": {
+      "fr": "<p>Une suite à la désertion : des membres qui n'écoutent plus le chef préparent leur départ en douce. Des stocks manquent peu à peu, une cache se monte hors les murs ; la ronde peut la découvrir ; le chef retient les partants, les laisse partir ou part avec eux. Rien n'est automatique : à jouer.</p>",
+      "en": "<p>A sequel to desertion: members who no longer listen to the leader prepare to leave on the quiet. Stocks go missing little by little, a cache builds up outside the walls; the watch may find it; the leader holds the leavers back, lets them go or goes with them. Nothing is automatic: play it out.</p>"
+    },
+    "results.nmyGE1y24SzMl2PY.description": {
+      "fr": "<p>Il manque deux rations de riz, puis trois. Personne n'a rien vu, et chacun regarde son voisin.</p>",
+      "en": "<p>Two rations of rice are missing, then three. Nobody saw a thing, and everyone eyes their neighbour.</p>"
+    },
+    "results.qUMcJAF5rVFEVICF.description": {
+      "fr": "<p>Un bidon d'eau a disparu de la citerne ; le cadenas n'est pas forcé.</p>",
+      "en": "<p>A jerrycan of water has gone from the tank; the padlock hasn't been forced.</p>"
+    },
+    "results.wbc7PZwrgeDW1u3y.description": {
+      "fr": "<p>Deux d'entre eux se taisent quand le chef approche, et parlent bas, le soir, au bout du camp.</p>",
+      "en": "<p>Two of them fall silent when the leader comes near, and talk low in the evening, at the far end of the camp.</p>"
+    },
+    "results.M7XQf4HqydfLymKD.description": {
+      "fr": "<p>La ronde trouve, sous une tôle au bord de la ravine, des bouteilles d'eau et un sac de vivres bien ficelé.</p>",
+      "en": "<p>The watch finds, under a sheet of iron at the edge of the ravine, bottles of water and a well-tied bag of food.</p>"
+    },
+    "results.epqBxRD5WyOk31pC.description": {
+      "fr": "<p>On retrouve un plan dessiné au charbon sur un carton : le chemin vers les Hauts, une croix sur un îlet.</p>",
+      "en": "<p>A map drawn in charcoal on a piece of cardboard turns up: the way to the Hauts (the uplands), a cross on an îlet (hamlet).</p>"
+    },
+    "results.Zu5j96f2Qt9qBudQ.description": {
+      "fr": "<p>Une petite demande si « tonton » va revenir : elle l'a vu cacher quelque chose derrière le manguier.</p>",
+      "en": "<p>A little girl asks whether \"tonton\" (uncle) is coming back: she saw him hide something behind the mango tree.</p>"
+    },
+    "results.qc1Jjf7JOUKaWF90.description": {
+      "fr": "<p>Le chef les surprend au portail avant le jour, sacs au dos. Il peut les retenir, les laisser partir, ou partir avec eux.</p>",
+      "en": "<p>The leader catches them at the gate before dawn, packs on their backs. He can hold them back, let them go, or go with them.</p>"
+    },
+    "results.Sgm1GrCuPu2k8Z74.description": {
+      "fr": "<p>La cache est vide ce matin. Ils sont partis cette nuit avec ce qu'ils avaient mis de côté, et rien de plus.</p>",
+      "en": "<p>The cache is empty this morning. They left in the night with what they had put aside, and nothing more.</p>"
+    }
+  },
   "tables/mAAaKafkFizy1TUH": {
     "_nom": "La nuit — les signes",
     "name": {
@@ -3435,6 +3478,41 @@
     "results.nivbbRXSOZWImF9T.description": {
       "fr": "<p>La ravine se tait d'un coup : un éboulis l'a barrée plus haut. Elle rompra le barrage dans la nuit, ou demain.</p>",
       "en": "<p>The ravine falls silent all at once: a rockfall has dammed it higher up. It will break through tonight, or tomorrow.</p>"
+    }
+  },
+  "tables/tl3vb04L2HNqs1m9": {
+    "_nom": "La religion — ce qu'on dit de celui qui en change",
+    "name": {
+      "fr": "La religion — ce qu'on dit de celui qui en change",
+      "en": "Religion — what people say of someone who changes"
+    },
+    "description": {
+      "fr": "<p>Quitter sa religion, ou en changer souvent, se sait. Ce que disent les autres : leurs préjugés, que les faits démentent. Le jeu ne dit pas qui a raison.</p>",
+      "en": "<p>Leaving one's religion, or changing it often, gets known. What the others say: their prejudices, which the facts contradict. The game does not say who is right.</p>"
+    },
+    "results.aH6GcHKgCQAWMuzZ.description": {
+      "fr": "<p>« Il prie là où on lui donne à manger », dit une voisine. Elle l'a pourtant vu laisser sa part aux enfants, hier soir.</p>",
+      "en": "<p>\"He prays wherever he's given food,\" says a neighbour. Yet she saw him leave his share to the children last night.</p>"
+    },
+    "results.84MxOlf0tTlaqF0K.description": {
+      "fr": "<p>« Une religion, ça ne se change pas comme une chemise. » Celle qui le dit va à la messe et au temple depuis quarante ans.</p>",
+      "en": "<p>\"You don't change religion like a shirt.\" The woman who says so has gone to mass and to the temple for forty years.</p>"
+    },
+    "results.53jHjH0vQwQibm53.description": {
+      "fr": "<p>Au repas, deux soirs de suite, personne ne s'assoit à côté de lui. Le troisième, si.</p>",
+      "en": "<p>At the meal, two evenings running, nobody sits beside him. On the third, someone does.</p>"
+    },
+    "results.ckXzmeDyjZoUxzMF.description": {
+      "fr": "<p>Le frère qui lisait la Bible lui offre la sienne, sans un mot, et repart.</p>",
+      "en": "<p>The brother who used to read the Bible gives him his own, without a word, and walks off.</p>"
+    },
+    "results.VbKWOSnnqOmg9aj4.description": {
+      "fr": "<p>La grand-mère pose quand même une assiette pour les anciens, et une pour lui : « Les morts, eux, ne font pas d'histoires. »</p>",
+      "en": "<p>Grandmother still sets a plate for the elders, and one for him: \"The dead, at least, don't make a fuss.\"</p>"
+    },
+    "results.f72SxVhIJufjCf9N.description": {
+      "fr": "<p>Un gamin demande si le bon Dieu est fâché. Personne ne sait quoi répondre ; le jeu non plus.</p>",
+      "en": "<p>A kid asks whether the good Lord is angry. Nobody knows what to answer; nor does the game.</p>"
     }
   },
   "tables/tmvTmYEMoJRRwXfq": {

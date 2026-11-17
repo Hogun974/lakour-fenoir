@@ -145,9 +145,10 @@ export function autoriteDuJour(chef, { tousNourris = true } = {}) {
   s.esprit = e;
   return { system: delta ? ajusterAutorite(s, delta) : s, delta };
 }
-// Les crises d'une autorité trop basse, une fois par semaine. membres : [{ id, system }] (le chef compris) ; chefId.
+// Les crises d'une autorité trop basse, une fois par semaine. membres : [{ id, system }] (le chef compris) ; chefId ; seconds (lot 10) :
+// le successeur est d'abord un second (le premier nommé, adulte, resté), puis le plus écouté.
 // -> { deserteur: id | "", crise: "" | "scission" | "renversement", successeur: id | "" }
-export function crisesAutorite({ membres = [], chefId = "", jour = 0, hasard = Math.random } = {}) {
+export function crisesAutorite({ membres = [], chefId = "", jour = 0, hasard = Math.random, seconds = [] } = {}) {
   const R = REGLES_AUTORITE;
   const chef = membres.find(m => m.id === chefId);
   const vide = { deserteur: "", crise: "", successeur: "" };
@@ -164,11 +165,98 @@ export function crisesAutorite({ membres = [], chefId = "", jour = 0, hasard = M
     const restants = autres.filter(m => m.id !== deserteur);
     // Un jeune de 16 à 18 ans ne peut pas mener (releve.mjs, peutEtreChef : lot « fetes ») : il n'est pas un successeur. Un âge
     // inconnu (0 ou absent) n'en fait pas un jeune, comme pour l'enfant témoin (moralite.mjs, estEnfant).
-    successeur = [...restants].filter(m => !(Number(m.system?.age) > 0) || peutEtreChef(m.system, jour)).sort((x, y) => autoriteDe(y.system) - autoriteDe(x.system))[0]?.id ?? "";
+    const capables = [...restants].filter(m => !(Number(m.system?.age) > 0) || peutEtreChef(m.system, jour));
+    successeur = (seconds ?? []).find(id => capables.some(m => m.id === id))
+      ?? capables.sort((x, y) => autoriteDe(y.system) - autoriteDe(x.system))[0]?.id ?? "";
     crise = vivants.length >= R.scissionMembres ? "scission" : successeur ? "renversement" : "";
   }
   return { deserteur, crise, successeur };
 }
+// ------------------------------------------------------------------ les rangs (lot 10)
+// Quatre rangs dans le groupe (jeu 3D, famille 9, décidé par Jordan le 15 novembre 2026) : le chef, ses seconds, les membres, les
+// nouveaux. Le second succède au chef. La mort coûte le rang : un mort, un parti, un relevé perdent le leur ; celui qui prend la
+// relève entre simple membre. Un nouveau (arrivé depuis moins d'une semaine, ou pas encore admis) ne peut être ni chef ni second.
+// Les droits du jeu 3D sur les portes et les stocks n'ont pas cours à la table : le MJ arbitre.
+// État public : groupe.seconds: [id] (dans l'ordre de succession), groupe.nouveaux: { id: jour d'arrivée }.
+export const RANGS = ["chef", "second", "membre", "nouveau"];
+export const REGLES_RANGS = { secondsMax: 3, joursNouveau: 7 };
+const groupeDe = etat => etat?.groupe ?? {};
+export const secondsDe = etat => [...new Set((groupeDe(etat).seconds ?? []).filter(Boolean))];
+// Est-il encore nouveau ce jour-là ?
+export function estNouveau(etat, id, jour = 0) {
+  const arrive = groupeDe(etat).nouveaux?.[id];
+  return arrive !== undefined && arrive !== null && n0(jour) - n0(arrive) < REGLES_RANGS.joursNouveau;
+}
+// Le rang d'un membre : "chef" | "second" | "membre" | "nouveau" ("" : pas du groupe).
+export function rangDuMembre(etat, id, jour = 0) {
+  const g = groupeDe(etat);
+  if (!id || !(g.membres ?? []).includes(id)) return "";
+  if (g.chef === id) return "chef";
+  if (secondsDe(etat).includes(id)) return "second";
+  return estNouveau(etat, id, jour) ? "nouveau" : "membre";
+}
+// Un arrivant (recrue, accueilli à la porte, fusion) : nouveau à partir de ce jour.
+export function noterArrivee(etat, id, jour = 0) {
+  if (!id) return etat;
+  return { ...etat, groupe: { ...groupeDe(etat), nouveaux: { ...(groupeDe(etat).nouveaux ?? {}), [id]: n0(jour) } } };
+}
+// Admettre un nouveau tout de suite (le chef ou un second le décide) : il devient membre.
+export function admettre(etat, id) {
+  const nouveaux = { ...(groupeDe(etat).nouveaux ?? {}) };
+  delete nouveaux[id];
+  return { ...etat, groupe: { ...groupeDe(etat), nouveaux } };
+}
+// Nommer (ou retirer) un second. membre : son system (un jeune ne mène pas). -> { ok, etat, motif }
+export function nommerSecond(etat, id, { retirer = false, jour = 0, membre = null } = {}) {
+  const refus = (cle, texte) => ({ ok: false, etat, motif: message(cle, {}, texte) });
+  const seconds = secondsDe(etat);
+  if (retirer) return { ok: true, etat: { ...etat, groupe: { ...groupeDe(etat), seconds: seconds.filter(x => x !== id) } }, motif: null };
+  const rang = rangDuMembre(etat, id, jour);
+  if (!rang) return refus("rang-pas-membre", "il n'est pas du groupe");
+  if (rang === "chef") return refus("rang-deja-chef", "c'est le chef");
+  if (rang === "nouveau") return refus("rang-nouveau", "un nouveau ne peut pas être second");
+  if (membre && !peutEtreChef(membre, jour)) return refus("rang-jeune", "un jeune ne mène pas");
+  if (seconds.includes(id)) return { ok: true, etat, motif: null };
+  if (seconds.length >= REGLES_RANGS.secondsMax) return { ok: false, etat, motif: message("rang-seconds-max", { n: REGLES_RANGS.secondsMax }, `au plus ${REGLES_RANGS.secondsMax} seconds`) };
+  return { ok: true, etat: { ...etat, groupe: { ...groupeDe(etat), seconds: [...seconds, id] } }, motif: null };
+}
+// Les rangs au jour qui passe : ceux qui ne sont plus là (morts, partis, relevés) perdent le leur ; le chef mort, le premier second
+// vivant et adulte prend la tête ; sans second, le groupe n'a plus de chef (le MJ ou le vote en désignera un). Les nouveaux d'il y
+// a une semaine deviennent membres. survivants : [{ id, nom, system }] ; partis : [id] (ce jour). -> { etat, faits: [message] }
+export function rangsDuJour(etat, survivants = [], { jour = 0, partis = [] } = {}) {
+  const g = groupeDe(etat);
+  const faits = [];
+  const vivant = id => (g.membres ?? []).includes(id) && !partis.includes(id) && survivants.some(s => s.id === id && s.system?.vivant !== false && !s.system?.livide);
+  const nom = id => survivants.find(s => s.id === id)?.nom ?? id;
+  let seconds = secondsDe(etat).filter(vivant);
+  let chef = g.chef ?? "";
+  if (chef && !vivant(chef)) {
+    const ancien = nom(chef);
+    const successeur = seconds.find(id => peutEtreChef(survivants.find(s => s.id === id)?.system ?? {}, jour)) ?? "";
+    if (successeur) {
+      seconds = seconds.filter(x => x !== successeur);
+      faits.push(message("chef-succede", { nom: nom(successeur), ancien }, `${nom(successeur)} prend la tête du groupe, à la place de ${ancien}.`));
+    } else faits.push(message("chef-perdu", { ancien }, `Le groupe n'a plus de chef depuis ${ancien}.`));
+    chef = successeur;
+  }
+  const nouveaux = Object.fromEntries(Object.entries(g.nouveaux ?? {}).filter(([id, j]) => vivant(id) && n0(jour) - n0(j) < REGLES_RANGS.joursNouveau));
+  const avant = JSON.stringify([g.chef ?? "", secondsDe(etat), g.nouveaux ?? {}]);
+  if (JSON.stringify([chef, seconds, nouveaux]) === avant) return { etat, faits };
+  return { etat: { ...etat, groupe: { ...g, chef, seconds, nouveaux } }, faits };
+}
+
+// ------------------------------------------------------------------ les accords de passage (lot 10)
+// Entre le groupe et une communauté voisine (séparée, §14) : un accord de passage, donné ou retiré (jeu 3D, famille 9, décidé le
+// 16 novembre). Le retirer ferme le passage ; les deux communautés le savent. -> { ok, etat, communaute, motif }
+export function accordDePassage(etat, communauteId, { ouvert = true, jour = 0 } = {}) {
+  const l = etat?.communautes ?? [];
+  const c = l.find(x => x.id === communauteId);
+  if (!c) return { ok: false, etat, communaute: null, motif: message("passage-inconnu", {}, "communauté inconnue") };
+  const maj = { ...c, passage: Boolean(ouvert), passageLe: n0(jour) };
+  return { ok: true, etat: { ...etat, communautes: l.map(x => (x.id === communauteId ? maj : x)) }, communaute: maj,
+    motif: message(ouvert ? "passage-ouvert" : "passage-ferme", { communaute: c.nom }, ouvert ? `Le passage est ouvert entre le groupe et ${c.nom}.` : `Le passage est fermé entre le groupe et ${c.nom} ; les deux communautés le savent.`) };
+}
+
 // Le dé de défense que donne (ou retire) l'autorité du chef présent pendant un assaut.
 export const bonusAutoriteAssaut = autorite => (n0(autorite) >= REGLES_AUTORITE.assaut.haut ? 1 : n0(autorite) <= REGLES_AUTORITE.assaut.bas ? -1 : 0);
 

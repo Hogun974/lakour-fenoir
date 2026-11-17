@@ -17,7 +17,7 @@ import { ID, COMPETENCES, RESSOURCES, NATURE, DIFFICULTES, BORNES, PALIERS_VISIB
 import { creerRegistre } from "./registre.mjs";
 import { estMJActif, emettre, versMJ, annoncer, auteur, vientDuMJActif } from "./canal.mjs";
 import {
-  t, langue, lireEtat, reglage, aPlat, acteur, survivantsDuGroupe, abriCourant, proprietaireDe, MODULE_MJIA, MODULE_CONTENU, sansBalises, localiser, entreeTexte
+  t, langue, lireEtat, reglage, aPlat, acteur, survivantsDuGroupe, abriCourant, proprietaireDe, MODULE_MJIA, MODULE_CONTENU, sansBalises, localiser, entreeTexte, nomsDesSurvivants, survivantDesigne
 } from "./donnees.mjs";
 import * as Coffre from "./coffre.mjs";
 import { carteTest, carteTemps, carteAction, carteAssaut, carteDemandeTest, carteProposition, texteTest, texteStocks } from "./cartes.mjs";
@@ -28,6 +28,7 @@ import { deMJ, trouverDemande, fermerDemande, argumentsDuTestJoueur, proposition
 import { fonctionsMarche } from "./api-marche.mjs";
 import { histoireDuSurvivant, DRAPEAU_PHRASES } from "./histoires.mjs";
 import { fonctionsSens } from "./api-sens.mjs";
+import { fonctionsGestion } from "./api-gestion.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -263,7 +264,11 @@ function membresValides(ctx, ids = []) {
 // Les bras d'une équipe (au moins un) : un jeune de 16 à 18 ans compte pour 3/4 (lot « fetes »).
 const brasDeLEquipe = (qui, jour) => (qui.length ? L.brasDe(qui.map(a => systemeLogique(a)), jour) : 1);
 // Des survivants désignés par leurs ids ou leurs noms, parmi ceux donnés. -> [id]
-const idsDe = (refs, acteurs) => [...new Set([refs].flat().filter(Boolean).map(x => acteurs.find(a => a.id === x || a.name === x)?.id).filter(Boolean))];
+// Un nom que portent deux d'entre eux ne désigne personne (lot 10 : jamais le mauvais).
+const idsDe = (refs, acteurs) => [...new Set([refs].flat().filter(Boolean).map(x => {
+  const parNom = acteurs.filter(a => a.name === x);
+  return (acteurs.find(a => a.id === x) ?? (parNom.length === 1 ? parNom[0] : null))?.id;
+}).filter(Boolean))];
 const aLAbri = (etat, a = abriCourant(etat)) => Boolean(a && !etat.groupe.enRoute && etat.groupe.region === a.system.region);
 export function savoirsDuGroupe(etat = lireEtat()) {
   return [...new Set(survivantsDuGroupe(etat).filter(a => L.peutAgir(a.system)).flatMap(a => systemeLogique(a).savoirs))];
@@ -438,15 +443,20 @@ function palierDe(f) {
   return { palier: def?.nom ?? String(f.palier), table: table?.nom ?? cle, uuid: table?.uuid ?? "", seuil, visibilite: f.visibilite, jour: f.jour };
 }
 
+// La table de gestion (lot 10, gestion.mjs) : un membre qui a une grille de priorités prend chaque jour la tâche qu'elle donne, même
+// sans la répartition automatique ; avec elle (réglage), tous ceux qu'on ne joue pas suivent leur grille, ou la grille par défaut.
 async function repartirAuto(ctx) {
-  if (!reglage("repartitionAuto", false)) return;
+  const auto = reglage("repartitionAuto", false);
+  const grilles = Object.keys(ctx.etat.groupe?.priorites ?? {});
+  if (!auto && !grilles.length) return;
   const c = contenu();
   const membres = survivantsDuGroupe(ctx.etat).filter(a => L.peutAgir(a.system));
   const autres = membres.filter(a => !["joueur"].includes(a.system.statut));
   if (!autres.length) return;
   const ab = abriCourant(ctx.etat);
   const besoins = L.besoinsDuGroupe(membres.filter(a => a.system.statut === "joueur").map(a => ({ id: a.id, system: systemeLogique(a) })), ab ? abriLogique(ab) : null, c, ctx.etat);
-  const plan = L.repartir(autres.map(a => ({ id: a.id, system: systemeLogique(a) })), besoins, c);
+  const tous = L.repartirParPriorites(membres.map(a => ({ id: a.id, system: systemeLogique(a) })), ctx.etat, { besoins, abri: ab ? abriLogique(ab) : null, contenu: c });
+  const plan = auto ? tous : Object.fromEntries(Object.entries(tous).filter(([id]) => grilles.includes(id)));
   for (const [id, tache] of Object.entries(plan)) {
     const a = acteur(id);
     if (!a || a.system.tache === tache) continue;
@@ -822,8 +832,9 @@ async function proposerDirect({ type = "autre", details = "", userId = "" } = {}
 // sans esprit (MJ IA d'avant, fiche à la main) le garde vide : aucun effet tant que le MJ ne le tire pas.
 export function espritDuTirage(d = {}, c = contenu()) {
   const idx = L.indexer(c);
-  const religion = d.religion && (idx.religions.has(d.religion) || [L.RELIGION_AUCUNE, L.RELIGION_PLUSIEURS].includes(d.religion)) ? String(d.religion) : "";
-  const religions = religion === L.RELIGION_PLUSIEURS ? [...new Set((Array.isArray(d.religions) ? d.religions : []).filter(r => idx.religions.has(r) && !idx.religions.get(r)?.special))].slice(0, 3) : [];
+  // Une ancienne clé (liste commune des religions, lot 10) s'écrit sous la clé d'aujourd'hui.
+  const religion = d.religion && (idx.religions.has(d.religion) || [L.RELIGION_AUCUNE, L.RELIGION_PLUSIEURS].includes(d.religion)) ? L.cleReligion(d.religion, c) : "";
+  const religions = religion === L.RELIGION_PLUSIEURS ? [...new Set((Array.isArray(d.religions) ? d.religions : []).filter(r => idx.religions.has(r) && !idx.religions.get(r)?.special).map(r => L.cleReligion(r, c)))].slice(0, 3) : [];
   return {
     regard: L.REGARDS.includes(d.regard) ? d.regard : "", religion, religions, pratique: Boolean(d.pratique),
     ancrage: d.ancrage && idx.ancrages.has(d.ancrage) ? String(d.ancrage) : "",
@@ -864,10 +875,11 @@ function nettoyerVerrous(v = {}) {
   if (typeof v.ancrage === "string") sortie.ancrage = v.ancrage;
   return sortie;
 }
-export function generer({ verrous = {}, statut = "joueur", region = "", favoriser = {}, budget, hasard: h = Math.random } = {}) {
+// nomsPris (lot 10) : en plus des survivants du monde, dont le tirage évite les noms (pas d'homonyme dans un groupe).
+export function generer({ verrous = {}, statut = "joueur", region = "", favoriser = {}, budget, hasard: h = Math.random, nomsPris = [] } = {}) {
   const c = contenu();
   const b = budget === null ? null : Array.isArray(budget) ? budget : statut === "joueur" ? lireBudget(reglage("budgetCreation", "10-16")) : null;
-  const s = L.genererSurvivant(c, h, { verrous: nettoyerVerrous(verrous), statut, region, favoriser: favoriser ?? {}, budget: b,
+  const s = L.genererSurvivant(c, h, { verrous: nettoyerVerrous(verrous), statut, region, favoriser: favoriser ?? {}, budget: b, nomsPris: [...nomsDesSurvivants(), ...(nomsPris ?? [])],
     ...(h === Math.random ? { hasardEsprit: Math.random } : {}) });
   return versTirage(s, c);
 }
@@ -1095,6 +1107,9 @@ async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
 const MARCHE = fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser,
   chat, carteAction, sansBalises, porterActe: (...x) => porterActe(...x), membresPresents: ctx => membresPresents(ctx), espritDuTirage: (...x) => espritDuTirage(...x) });
 // Percevoir dans le noir (contrat §18) : ses fonctions, avec les aides internes d'ici.
+// La table de gestion, les rangs, le passage, la conversion (lot 10, contrat §22).
+const GESTION = fonctionsGestion({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, systemeLogique, abriLogique,
+  besoinsBruts: etat => besoinsBruts(etat) });
 const SENS = fonctionsSens({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, dateDepart, clair, erreur, chat, carteAction, systemeLogique,
   bilanVivant: (etat, monde) => bilanVivant(etat, monde), mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), fetesDuJeu,
   aLAbri: (etat, ab) => aLAbri(etat, ab) });
@@ -1107,14 +1122,17 @@ async function ecrireEsprit(a, s) {
 const membresPresents = ctx => survivantsDuGroupe(ctx.etat).filter(a => L.peutAgir(a.system));
 // Les enfants du groupe ont vu l'acte (moralite.mjs, reactionEnfant) : ils l'imitent ou s'en révoltent ; un projet de départ et les
 // adultes qui pourraient l'aider vont au MJ (journal secret), jamais au journal public.
-async function temoignageEnfants(ctx, sens) {
+// auteurs : ceux qui portent l'acte (lot 10) : un témoin n'est jamais l'auteur de l'acte, et un jeune de 16 ou 17 ans qui colporte
+// ne se voit pas colporter.
+async function temoignageEnfants(ctx, sens, auteurs = []) {
   if (!sens) return [];
   const sortie = [];
   const presents = membresPresents(ctx);
   const adultes = presents.map(a => ({ id: a.id, system: systemeLogique(a, ctx.monde) }));
+  const temoins = new Set(L.enfantsTemoins(adultes, auteurs).map(m => m.id));
   for (const a of presents) {
+    if (!temoins.has(a.id)) continue;
     const sys = systemeLogique(a, ctx.monde);
-    if (!L.estEnfant(sys)) continue;
     const avant = L.espritDe(sys).projet;
     const r = L.reactionEnfant(sys, sens, hasard(ctx, "enfant"));
     await ecrireEsprit(a, r.system);
@@ -1132,7 +1150,7 @@ async function porterActe(ctx, ids, acte, { voix = null, circonstances = false, 
   const membres = ids.map(acteur).filter(a => a?.type === "survivant").map(a => ({ id: a.id, system: systemeLogique(a, ctx.monde) }));
   const r = L.acteCollectif(membres, acte, { voix, chefId: ctx.etat.groupe.chef ?? "", circonstances, temoins, delta });
   for (const m of r.membres) await ecrireEsprit(acteur(m.id), m.system);
-  const enfants = await temoignageEnfants(ctx, Math.sign(delta ?? L.ACTES_MORAUX[acte] ?? 0));
+  const enfants = await temoignageEnfants(ctx, Math.sign(delta ?? L.ACTES_MORAUX[acte] ?? 0), r.porteurs);
   return { membres: r.membres.map(m => ({ acteurId: m.id, nom: acteur(m.id)?.name ?? m.id, sensMoral: m.system.sensMoral, reputation: m.system.reputation, delta: m.delta, deltaReputation: m.reputation })),
     porteurs: r.porteurs, epargnes: r.epargnes, enfants };
 }
@@ -1179,7 +1197,7 @@ async function faireFrapper(ctx, { profil = null, sensMoral = null } = {}) {
   const membres = membresPresents(ctx).map(a => systemeLogique(a, ctx.monde));
   ctx.monde.compteurPorte = (Number(ctx.monde.compteurPorte) || 0) + 1;
   const { public: v, secret } = L.tirerVisiteur(contenu(), hasard(ctx, "porte"), { id: `v${ctx.monde.compteurPorte}`, jour: jourCtx(ctx), couleur: L.couleurDuGroupe(membres).bande,
-    region: ab?.system.region ?? ctx.etat.groupe.region, profil });
+    region: ab?.system.region ?? ctx.etat.groupe.region, profil, nomsPris: [...nomsDesSurvivants(), ...(ctx.etat.porte ?? []).map(x => x.nom)] });
   if (sensMoral !== null && sensMoral !== undefined) secret.survivant.sensMoral = entier(sensMoral, L.SENS_MORAL.min, L.SENS_MORAL.max, 0);
   ctx.etat.porte = [...(ctx.etat.porte ?? []), v];
   ctx.monde.porte = { ...(ctx.monde.porte ?? {}), [v.id]: secret };
@@ -1202,6 +1220,8 @@ export function communaute(etat = lireEtat()) {
     couleur: game.user?.isGM ? L.couleurDuGroupe(membres.map(a => aPlat(a.system))) : null,
     porte: structuredClone(etat.porte ?? []), tributs: structuredClone(etat.tributs ?? []), votes: structuredClone(etat.votes ?? []),
     communautes: structuredClone(etat.communautes ?? []),
+    // Lot 10 : les seconds (dans l'ordre de succession) et le rang de chacun.
+    seconds: L.secondsDe(etat), rangs: Object.fromEntries(membres.map(a => [a.id, L.rangDuMembre(etat, a.id, L.jourDe(etat.horloge?.quart ?? 0))])),
     liste: ab ? L.listeALaPorte({ stocks: aPlat(ab.system).stocks, bilan: b, personnes: b?.personnes ?? membres.length }) : []
   };
 }
@@ -1877,15 +1897,17 @@ export const api = {
   ...MARCHE.api,
   // Lot « sens » (contrat §18) : percevoir dans le noir, le vent, la pluie, la rue nettoyée, la musique.
   ...SENS,
+  // Lot 10 (contrat §22) : la table de gestion, les rangs, le passage entre abris, changer de religion.
+  ...GESTION,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {
     const etat = lireEtat();
     const c = contenu();
     if (gramoune) return recrueGramoune(gramoune, region || etat.groupe.region);
-    const r = L.genererRecrue(c, Math.random, { besoins: besoinsBruts(etat), region: region || etat.groupe.region, phase: etat.phase });
+    const r = L.genererRecrue(c, Math.random, { besoins: besoinsBruts(etat), region: region || etat.groupe.region, phase: etat.phase, nomsPris: nomsDesSurvivants() });
     return { ...versTirage(r.survivant, c), statut: "recrue", raison: localiser(r.raisonMessage ?? { cle: r.raisonCle, texte: r.raison }), prix: localiser(r.prixMessage ?? { cle: r.prixCle, texte: r.prix }),
-      region: region || etat.groupe.region };
+      region: region || etat.groupe.region, attitude: r.attitude };
   },
 
   recruter: ecriture(async ({ recrue, parleurId, attitude = "neutre", bonus = 0, faction = "" } = {}) => {
@@ -1898,16 +1920,21 @@ export const api = {
     const combleUnManque = (b.manques ?? []).some(k => niveau(recrue.competences?.[k]) >= 2);
     // Les liens tissés avec sa faction (fêtes partagées, dons : lot « fetes ») : deux ou plus, l'attitude gagne un cran.
     const difficulte = L.difficulteRecrutement({ attitude: faction ? L.attitudeAvecLiens(attitude, L.liensAvec(ctx.etat, faction)) : attitude, combleUnManque });
+    // Lot 10 : les tentatives du jour (le jeu 3D n'en permet qu'une par jour ; ici, le système les compte et le rappelle au MJ).
+    const cleTentative = `${L.cleDeNom(recrue.nom ?? "?")}|${parleur.id}|${jourCtx(ctx)}`;
+    const tentatives = { ...Object.fromEntries(Object.entries(ctx.etat.groupe.tentatives ?? {}).filter(([k]) => k.endsWith(`|${jourCtx(ctx)}`))) };
+    tentatives[cleTentative] = (Number(tentatives[cleTentative]) || 0) + 1;
+    ctx.etat.groupe = { ...ctx.etat.groupe, tentatives };
     const test = await testDirect({ acteurId: parleur.id, competence: "parole", difficulte, bonus, titre: t("LAKOUR_SURVIE.Recrue.Titre", { nom: recrue.nom ?? "?" }), forcable: false });
     let acteurId = "";
     if (test.reussite) {
       const a = await creerActeurSurvivant(recrue, { statut: "recrue" });
       acteurId = a.id;
-      ctx.etat = L.ajouterMembre(ctx.etat, a.id, "recrue");
+      ctx.etat = L.noterArrivee(L.ajouterMembre(ctx.etat, a.id, "recrue"), a.id, jourCtx(ctx));
       noter(ctx, tx("Journal.Recrue", { nom: a.name }));
     } else noter(ctx, tx("Journal.RecrueRefuse", { nom: recrue.nom ?? "?" }));
     await terminer(ctx);
-    return { test, reussite: test.reussite, acteurId, difficulte };
+    return { test, reussite: test.reussite, acteurId, difficulte, tentative: tentatives[cleTentative], insiste: tentatives[cleTentative] > L.TENTATIVES_PAR_JOUR };
   }),
 
   ajouterMembre: ecriture(async ({ acteurId, statut = "compagnon" } = {}) => {
@@ -1936,8 +1963,10 @@ export const api = {
   // survivants, ou un déplacement libre (delta). Avec un vote (voteId), qui a voté contre ne le porte pas.
   acteMoral: ecriture(async ({ acteurId = "", acteurs = [], acte = "", delta, circonstances = false, temoins = true, voteId = "", journal = false } = {}) => {
     const ctx = ouvrirCtx();
-    const ids = [...new Set([acteurId, ...(acteurs ?? [])].filter(Boolean))];
-    if (!ids.length || ids.some(id => acteur(id)?.type !== "survivant")) throw erreur("ActeurInconnu");
+    // Par id, ou par nom (lot 10) : un nom cherché d'abord dans le groupe ; un nom porté par deux survivants est refusé (ambigu).
+    const refs = [...new Set([acteurId, ...(acteurs ?? [])].filter(Boolean))];
+    const ids = [...new Set(refs.map(x => survivantDesigne(x, survivantsDuGroupe(ctx.etat))?.id))];
+    if (!refs.length || ids.some(id => !id)) throw erreur("ActeurInconnu");
     const libre = delta !== undefined && delta !== null && delta !== "" && Number.isFinite(Number(delta));
     if (!libre && !(acte in L.ACTES_MORAUX)) throw clair(t("LAKOUR_SURVIE.Erreurs.ActeInconnu", { acte }));
     const vote = voteId ? (ctx.etat.votes ?? []).find(v => v.id === voteId) ?? null : null;
@@ -2046,7 +2075,7 @@ export const api = {
     if (r.recrue) {
       const a = await creerActeurSurvivant(versTirage(r.recrue, contenu()), { statut: "recrue" });
       acteurId = a.id;
-      ctx.etat = L.ajouterMembre(ctx.etat, a.id, "recrue");
+      ctx.etat = L.noterArrivee(L.ajouterMembre(ctx.etat, a.id, "recrue"), a.id, jourCtx(ctx));
       // Une famille : des bouches en plus (PNJ légers, nourris par l'abri).
       for (let k = 0; k < r.bouches; k++) ctx.etat.groupe.pnj = [...(ctx.etat.groupe.pnj ?? []), { id: `pnj-${a.id}-${k + 1}`, nom: t("LAKOUR_SURVIE.Communaute.Proche", { nom: a.name, n: k + 1 }), passe: "", etat: "", travail: false }];
     }

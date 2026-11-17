@@ -81,7 +81,12 @@ export const CLES_TEXTES = [
   // chefs.mjs : ce que décide le chef d'une bande
   "chef-attaquer", "chef-negocier", "chef-passer", "chef-ultimatum", "chef-rejoindre",
   // sens.mjs (par etat.mjs) : percevoir dans le noir, la Timise, l'alarme naturelle (lot « sens »)
-  "noir-palier-1", "noir-palier-2", "noir-palier-3", "noir-palier-4", "grenouilles-silence", "noir-horde-entendue", "timise", "timise-reconnue"
+  "noir-palier-1", "noir-palier-2", "noir-palier-3", "noir-palier-4", "grenouilles-silence", "noir-horde-entendue", "timise", "timise-reconnue",
+  // Lot 10 (contrat §22) : changer de religion, les rangs, le passage, les quotas, l'étal, ce qui se dit d'une conversion
+  "esprit-conversion-faite", "conversion-inconnue", "conversion-plusieurs", "conversion-meme",
+  "chef-succede", "chef-perdu", "rang-pas-membre", "rang-deja-chef", "rang-nouveau", "rang-jeune", "rang-seconds-max",
+  "passage-inconnu", "passage-ouvert", "passage-ferme", "quota-pas-membre", "etal-vend", "etal-vole",
+  "rumeur-quitte-sa-foi", "rumeur-change-souvent"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous
