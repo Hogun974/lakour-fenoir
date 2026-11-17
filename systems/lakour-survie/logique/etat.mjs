@@ -32,6 +32,10 @@
 // le musicien ; l'odeur de l'abri va aux menaces ; au quart de nuit, ceux qui veillent dehors ou de garde sans lumière s'habituent au
 // noir (options.lumiere : l'abri est éclairé ; options.lumiereEnRoute : le groupe marche avec des torches), les grenouilles se
 // taisent quand une horde entre dans la région du groupe (une fois par horde), la Timise crie parfois.
+// Lot « cartes » (reperes.mjs, contrat §20) : chaque jour, le compte des jours du groupe (etat.compte) : juste tant que le
+// téléphone marche là où il est ou que la radio de l'abri parle ; sinon celui qui le tient note le jour (s'il est là et en état),
+// et un jour non noté fait dériver le compte. options.reperes : { calendriers: [année des calendriers portés], planche: Boolean }.
+// Un membre qui meurt garde dans son journal le jour qu'il croyait et les plans du groupe (etat.morts[].journal).
 // Journal et alertes : chaque entrée est { quart, texte (français, repli), cle, params } (textes.mjs) ; la couche Foundry affiche
 // la traduction de `cle` dans la langue de chaque navigateur. Les anciennes entrées à `texte` seul restent lisibles.
 import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, JOURNAL_SECRET_MAX, palierVisibilite, borner } from "./constantes.mjs";
@@ -44,7 +48,7 @@ import { ajouterStocks } from "./ressources.mjs";
 import { hasardDuJour, deriverHasard, choisir, graineSure, chance } from "./hasard.mjs";
 import { regionsDe, regionDe, siteDe, sontVoisines } from "./contenu.mjs";
 import { pluieDuJour, ravineDuJour, mortsSansRepos, bruitDesMusiciens, compterNuitNoire, palierNoirEffectif, chanceTimise, texteNoir } from "./sens.mjs";
-import { phaseDuJour, momentIndex, saisonDuJour } from "./temps.mjs";
+import { phaseDuJour, momentIndex, saisonDuJour, dateDuJour } from "./temps.mjs";
 import { effetQuart, effetJour, peutAgir } from "./survivant.mjs";
 import { bilanAbri, journeeAbri, suivreAutonomie, passageCyclone, subirEvenementAbri } from "./abri.mjs";
 import { estGramoune, preparationValable } from "./savoirs.mjs";
@@ -62,6 +66,7 @@ import { journeePorte, listeALaPorte } from "./porte.mjs";
 import { autoriteDuJour, crisesAutorite, tributsDus, rangsDuJour, secondsDe } from "./chefs.mjs";
 import { suivreQuotas } from "./gestion.mjs";
 import { noterCyclone, fenetresQuiSouvrent, plansDuMonde, plansDeLEtat, perteEtagere, etagereDeLAbri } from "./plans.mjs";
+import { compteDepart, compteDe, journeeCompte, texteCompte, supportDuCompte, journalAuDeces } from "./reperes.mjs";
 
 export function etatVide() {
   return {
@@ -76,7 +81,9 @@ export function creerPartie({ partie = "", contenu = {}, region = "", membres = 
   return {
     ...etatVide(), partie, demarree: true,
     groupe: { abri: "", membres: [...membres], pnj: structuredClone(pnj), plans: [], region, enRoute: null },
-    renseignements: renseignementsInitiaux(contenu, { region, monde, jour: 0 })
+    renseignements: renseignementsInitiaux(contenu, { region, monde, jour: 0 }),
+    // Lot « cartes » : au jour zéro, on sait le jour ; le premier membre tient le compte (le MJ peut en désigner un autre).
+    compte: compteDepart(0, membres[0] ?? "")
   };
 }
 
@@ -195,6 +202,12 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     {
       const ins = inscrireMorts(e, surv.filter(x => vivantsAuDebut.has(x.id)).map(x => ({ id: x.id, nom: x.nom, system: x.system })), { quart: fin, region: e.groupe.region });
       e = ins.etat;
+      // Lot « cartes » : son journal reste sur lui, avec le jour qu'il croyait et les plans du groupe.
+      if (ins.nouveaux.length) {
+        const ids = new Set(ins.nouveaux.map(x => x.id));
+        const journal = journalAuDeces(compteDe(e, { jour: Math.floor(fin / QUARTS_PAR_JOUR) }), e.groupe.plans ?? []);
+        e = { ...e, morts: e.morts.map(x => (ids.has(x.id) && !x.journal ? { ...x, journal: structuredClone(journal) } : x)) };
+      }
       if (ins.nouveaux.length) {
         for (const x of surv) if (peutAgir(x.system) && !departs.includes(x.id)) x.system = { ...x.system, moral: borner((Number(x.system.moral) || 0) - ins.nouveaux.length, 0, 5) };
       }
@@ -540,6 +553,21 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     if (bilan?.renseignements) {
       const cible = choisir(regionsDe(contenu).map(r => r.cle), deriverHasard(m.graine, "radio", jour));
       if (cible) e.renseignements = observer(e.renseignements, m, contenu, cible, jour, "radio");
+    }
+    // 7 bis. Le jour qu'on croit (lot « cartes », reperes.mjs) : le téléphone de la région du groupe ou la radio de l'abri le donnent ;
+    // sinon celui qui tient le compte a noté hier, ou non (flux de hasard à part : « compte|jour »).
+    {
+      const c = compteDe(e, { jour: jour - 1 });
+      const exacte = Boolean(reseauxActifs(m, e.groupe.region, jour)?.telephone) || (Boolean(bilan?.renseignements) && aLAbri());
+      const reperes = [...(options.reperes?.calendriers ?? []).map(annee => ({ type: "calendrier", annee })), ...(options.reperes?.planche ? [{ type: "planche" }] : [])];
+      const support = supportDuCompte(reperes, dateDuJour(c.jourCru, dateDepart).annee);
+      const teneur = c.teneur ? surv.find(s => s.id === c.teneur) ?? null : null;
+      const present = Boolean(teneur) && !departs.includes(teneur.id) && (e.groupe.membres ?? []).includes(teneur.id);
+      const r = journeeCompte(c, { jour, exacte, support, teneur: teneur?.system ?? null, present, hasard: deriverHasard(m.graine, "compte", jour) });
+      e.compte = r.compte;
+      const tc = r.evenement ? texteCompte(r.evenement, { nom: teneur?.nom ?? "", raison: r.note?.raison ?? "" }) : null;
+      if (tc) publier(fin, tc.cle, tc.params, tc.texte);
+      if (r.evenement === "perdu") alerter(fin, "compte", tc.cle, tc.params, tc.texte);
     }
     // 8. Stocks bas.
     if (ab && aLAbri()) {

@@ -268,6 +268,30 @@ const lignesPapier = s => {
   return [t("LAKOUR_SURVIE.Plans.Objet", { plans: p.plans.map(k => L.nomDuPlan(c, k)).join(", ") }), p.unique ? t("LAKOUR_SURVIE.Plans.ObjetUnique") : ""];
 };
 
+// Lot « cartes » (contrat §20) : ce que dit une carte, un calendrier, une montre (ce qu'on lit sur l'objet lui-même : l'année d'un
+// calendrier, les régions et l'impression d'une carte, ce qu'on y a écrit ; rien de ce que sait le MJ).
+function texteRepere(r) {
+  if (!r?.type) return [];
+  const R = k => `LAKOUR_SURVIE.Reperes.${k}`;
+  const l = [t(R(`Types.${r.type}`))];
+  if (r.type === "calendrier") {
+    if (Number(r.annee)) l.push(String(r.annee));
+    for (const [k, cle] of [["lunes", "AvecLunes"], ["marees", "AvecMarees"], ["fetes", "AvecFetes"]]) if (r[k]) l.push(t(R(cle)));
+  }
+  if (r.type === "carte") {
+    const toutes = L.regionsDe(game.lakourSurvie?.contenu?.() ?? {}).length;
+    const regions = Array.isArray(r.regions) ? r.regions : null;
+    l.push(!regions || (toutes && regions.length >= toutes) ? t(R("ToutelIle")) : regions.map(k => defDe("regions", k)?.nom ?? k).join(", "));
+    if (r.moitie) l.push(t(R(`Moitie.${r.moitie}`)));
+    if (Number(r.imprimee)) l.push(t(R("Imprimee"), { annee: r.imprimee }));
+    if (r.copie) l.push(t(R("Copie")));
+    for (const n of Object.values(r.notes ?? {})) l.push(n);
+    const a = Number.isInteger(r.annotation) ? r.annotations?.[r.annotation] : null;
+    if (a?.texte) l.push(a.texte);
+  }
+  return l;
+}
+
 // Les sections d'une fiche d'objet selon son type -> [{ titre, lignes: [texte], html }].
 export function sectionsObjet(i) {
   const s = aPlat(i.system);
@@ -285,7 +309,7 @@ export function sectionsObjet(i) {
       ajout("Usage", [Object.entries(s.bonus ?? {}).filter(([, n]) => Number(n)).map(([k, n]) => `${libelleCompetence(k)} +${n}`).join(", "),
         Number(s.bruit) ? `${t("LAKOUR_SURVIE.Objet.Effets.bruit")} ${s.bruit}` : "", s.munitions ? t("LAKOUR_SURVIE.Objet.Munitions", { n: s.munitions }) : "",
         s.transport ? t("LAKOUR_SURVIE.Objet.Transport", { places: s.transport.places ?? 1, charge: s.transport.chargeMax ?? 0, terrains: (s.transport.terrains ?? []).join(", ") }) : "",
-        ...effetsTexte(s.effets), ...lignesPapier(s)]);
+        ...effetsTexte(s.effets), ...lignesPapier(s), ...texteRepere(s.repere)]);
       break;
     case "passe": case "enfance": {
       const mods = s.competences ?? s.modificateurs ?? {};

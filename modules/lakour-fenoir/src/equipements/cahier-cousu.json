@@ -1,0 +1,40 @@
+{
+  "_id": "QMhog9vjE1IGTzZ7",
+  "_key": "!items!QMhog9vjE1IGTzZ7",
+  "name": "Cahier cousu",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cahier-cousu",
+    "categorie": "repere",
+    "description": "<p>Des feuilles pliées et cousues au fil de pêche : de quoi recopier une carte, tenir un journal, garder ce qu'on apprend.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "cahier",
+      "rarete": "commune"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cahier-cousu"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

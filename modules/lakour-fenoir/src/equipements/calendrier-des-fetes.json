@@ -1,0 +1,50 @@
+{
+  "_id": "1qDrJz9tbJn3utaA",
+  "_key": "!items!1qDrJz9tbJn3utaA",
+  "name": "Calendrier des fêtes de l'île",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "calendrier-des-fetes",
+    "categorie": "repere",
+    "description": "<p>Le calendrier d'une association interculturelle, distribué dans les écoles et les mairies : Noël et le 20 désanm, le Nouvel An chinois et la Dipavali, le Cavadee, l'Aïd, le Nouvel An tamoul, Pongal… avec les lunes, puisque tant de fêtes les suivent. On y voit venir les fêtes des autres.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "calendrier",
+      "rarete": "rare",
+      "annee": "courante",
+      "lunes": true,
+      "marees": false,
+      "fetes": true,
+      "lieux": {
+        "ecole": 0.03,
+        "commerce": 0.02,
+        "autre": 0.02,
+        "region": 0.004
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "calendrier-des-fetes"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

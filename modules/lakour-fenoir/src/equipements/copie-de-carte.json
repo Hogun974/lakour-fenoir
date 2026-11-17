@@ -1,0 +1,49 @@
+{
+  "_id": "71t1IczrhQEDQtfo",
+  "_key": "!items!71t1IczrhQEDQtfo",
+  "name": "Copie de carte",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "copie-de-carte",
+    "categorie": "repere",
+    "description": "<p>Une carte recopiée à la main dans un cahier cousu, à l'encre de suie : les routes, les régions, les notes, pas le relief. Elle vaut ce que valait la main qui l'a tracée.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "carte",
+      "rarete": "commune",
+      "couvre": "ile",
+      "terrains": [
+        "route"
+      ],
+      "ilYa": [
+        0,
+        0
+      ],
+      "copie": true
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "copie-de-carte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

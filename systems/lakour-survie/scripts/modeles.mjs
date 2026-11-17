@@ -159,7 +159,9 @@ export class ModeleEquipement extends foundry.abstract.TypeDataModel {
       enseigne: cles(), auteur: texte(),  // lot « savoirs » : ce qu'un livre ou un cahier apprend ; l'ancienne qui l'a dicté
       // Lot 4 « Les plans » : les plans qu'un papier porte (clés du carnet), et la clé du plan unique qu'il est (vide : une copie, ou
       // pas un papier).
-      plans: cles(), unique: texte()
+      plans: cles(), unique: texte(),
+      // Lot « cartes » (logique/reperes.mjs) : une carte, un calendrier, une montre… { type, … } ; null : un équipement ordinaire.
+      repere: objetNul()
     };
   }
 }

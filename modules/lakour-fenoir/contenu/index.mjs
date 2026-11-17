@@ -29,6 +29,7 @@ import { sceneReunion } from "./cartes.mjs";
 import { DEPOTS_CYCLONE, GRAMOUNES, TABLES_SAVOIRS, JOURNAUX_SAVOIRS } from "./deux-savoirs.mjs";
 import { HISTOIRES } from "./histoires.mjs";
 import { TABLES_SENS, JOURNAL_SENS } from "./sens.mjs";
+import { EQUIPEMENTS_REPERES, RECETTES_REPERES, TABLES_REPERES, JOURNAL_REPERES } from "./reperes.mjs";
 import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
 import { LOT_AFFAIRES } from "./affaires.mjs";
 import { CORVEES, BAREME, TABLES_COMMUNAUTE } from "./communaute.mjs";
@@ -39,11 +40,11 @@ const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJo
 export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 
 export const DOCUMENTS = [
-  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...SAVOIRS, ...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...PASSES, ...RECETTES, ...AFFLICTIONS,
+  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...SAVOIRS, ...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
   ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
-  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS,
+  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -56,8 +57,8 @@ export function donnees() {
     module: MODULE, version: 1,
     // Lot 12 : ce qu'on comprend en arrivant dans chaque région (une ligne pour le MJ, contenu/affaires.mjs).
     regions: REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" })), sites: sitesAvecPlans(SITES), routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
-    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS].map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: [...EQUIPEMENTS, ...EQUIPEMENTS_PLANS].map(aPlat), passes: PASSES.map(aPlat),
-    recettes: RECETTES.map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
+    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS].map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: [...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES].map(aPlat), passes: PASSES.map(aPlat),
+    recettes: [...RECETTES, ...RECETTES_REPERES].map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
     factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
     religions: RELIGIONS, ancrages: ANCRAGES,
     reputations: { paliers: PALIERS, factions: REPUTATIONS, horloges: HORLOGES_REPUTATION },

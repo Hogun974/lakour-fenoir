@@ -1,0 +1,52 @@
+{
+  "_id": "Bv2927IxJMnq0Q0o",
+  "_key": "!items!Bv2927IxJMnq0Q0o",
+  "name": "Vieux calendrier",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "vieux-calendrier",
+    "categorie": "repere",
+    "description": "<p>Un calendrier d'une autre année, oublié sur un mur : les jours tombent faux, et les lunes aussi. Celui qui y lit la lune croit retrouver le jour ; il se trompe, sans le savoir.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "calendrier",
+      "rarete": "commune",
+      "annee": "passee",
+      "lunes": true,
+      "marees": false,
+      "fetes": false,
+      "lieux": {
+        "ecole": 0.06,
+        "maison": 0.05,
+        "case-creole": 0.05,
+        "immeuble": 0.04,
+        "ferme": 0.04,
+        "region": 0.015
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "vieux-calendrier"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

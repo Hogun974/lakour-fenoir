@@ -30,6 +30,7 @@ import { histoireDuSurvivant, DRAPEAU_PHRASES } from "./histoires.mjs";
 import { fonctionsSens } from "./api-sens.mjs";
 import { fonctionsGestion } from "./api-gestion.mjs";
 import { fonctionsPlans } from "./api-plans.mjs";
+import { fonctionsReperes } from "./api-reperes.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -77,12 +78,34 @@ export function quandDe(etat = lireEtat()) {
   const clarte = L.clarte(lune, q.moment, { couvert });
   const d = L.dateDuJour(q.jour, dateDepart());
   const sue = etat?.calendrier?.exacte === false ? L.dateSue({ mois: d.mois, jourMois: d.jourMois, iso: q.date, telephone: false, altitude }) : { exacte: true };
+  const temps = tempsDuQuart(etat, q.quart, region);
+  const dateLue = sue.exacte ? "" : texteDateLue(sue);
   return {
     ...q, fetes: fetesDuJeu(q.date, contenu().fetes ?? []).map(f => ({ cle: f.cle, nom: f.nom, coeur: f.coeur })),
     lune, couvert, clarte, chaleur: L.chaleurPese({ mois: d.mois, altitude, moment: q.moment }), signes: L.signesDuMois(d.mois, { altitude }),
-    dateExacte: sue.exacte, dateLue: sue.exacte ? "" : texteDateLue(sue),
+    dateExacte: sue.exacte, dateLue,
     // Lot « sens » (logique/sens.mjs) : le temps du quart là où est le groupe (écrit par le MJ actif dans etat.temps), la voix de la région.
-    ...tempsDuQuart(etat, q.quart, region)
+    ...temps,
+    // Lot « cartes » (logique/reperes.mjs, contrat §20) : le jour que le groupe croit, et l'heure qu'il lit dans le ciel.
+    ...jourDuGroupe(etat, q, { exacte: sue.exacte, dateLue, couvert, pluie: temps.pluie })
+  };
+}
+// Ce que le groupe croit du jour et de l'heure (lot « cartes ») : la date exacte avec le téléphone ou la radio, ou si son compte est
+// sûr ; « vers le … » s'il est à peu près ; la date lue dans la nature s'il est perdu. L'heure : exacte avec le téléphone, la radio
+// ou une montre ; celle du cadran solaire à l'abri, au soleil ; sinon lue dans le ciel (les joueurs ne voient alors que le moment).
+// -> { compte: { certitude, marge, jourCru, teneur }, dateDuGroupe, jourDuGroupe (null : on ne sait plus), heureLue, heureDuGroupe }
+function jourDuGroupe(etat, q, { exacte, dateLue, couvert, pluie }) {
+  const c = L.compteDe(etat);
+  const sait = exacte || c.certitude === "sur";
+  const i = REPERES.infos(etat);
+  const ab = abriCourant(etat);
+  const sousTerre = Boolean(ab && aLAbri(etat, ab) && L.siteDe(contenu(), aPlat(ab.system).site)?.type === "tunnel-de-lave");
+  const heureLue = L.heureLue({ moment: q.moment, couvert, pluie, sousTerre, exacte: exacte || i.montre, cadran: i.cadran });
+  return {
+    compte: { certitude: sait ? "sur" : c.certitude, marge: sait ? 0 : c.marge, jourCru: sait ? q.jour : c.certitude === "perdu" ? null : c.jourCru, teneur: c.teneur },
+    dateDuGroupe: sait ? q.dateTexte : c.certitude === "a-peu-pres" ? t("LAKOUR_SURVIE.Reperes.Vers", { date: L.dateTexte(c.jourCru, dateDepart(), langue()) }) : dateLue,
+    jourDuGroupe: sait ? q.jour : c.certitude === "a-peu-pres" ? c.jourCru : null,
+    heureLue, heureDuGroupe: heureLue.exacte ? q.heure : ""
   };
 }
 // La pluie, la brume et le vent du quart (ce que le groupe voit et sent) ; rien si etat.temps ne parle pas de ce quart-ci.
@@ -409,6 +432,10 @@ function tempsDeLIle(ctx) {
   const telephone = Boolean(L.reseauxActifs(ctx.monde, ctx.etat.groupe.region, jour)?.telephone);
   const ab = abriCourant(ctx.etat);
   const radio = Boolean(ctx.etat.bilan?.renseignements) && aLAbri(ctx.etat, ab);
+  // Lot « cartes » : le compte des jours (une partie d'avant le lot reçoit le sien, sûr ou perdu selon la date qu'elle savait) ; le
+  // téléphone ou la radio le remettent juste.
+  const compte = L.compteDe(ctx.etat, { jour });
+  ctx.etat.compte = (telephone || radio) && !(compte.certitude === "sur" && compte.jourCru === jour) ? L.savoirLeJour(compte, jour) : compte;
   ctx.etat.calendrier = { exacte: telephone || radio };
 }
 
@@ -482,12 +509,13 @@ async function avancerInterne(ctx, quarts, options = {}) {
   if (!n || !ctx.monde) return null;
   const c = contenu();
   await repartirAuto(ctx);
+  await REPERES.fixer(ctx);   // lot « cartes » : l'année d'un calendrier, les régions d'une carte glissés depuis le compendium
   const membres = survivantsDuGroupe(ctx.etat);
   const survivants = membres.map(a => ({ id: a.id, nom: a.name, system: systemeLogique(a, ctx.monde) }));
   const ab = abriCourant(ctx.etat);
   const cc = chienEtConfort(membres.filter(a => L.peutAgir(a.system)));
   const r = L.avancer({ etat: ctx.etat, monde: ctx.monde, contenu: c, quarts: n, survivants, abri: ab ? abriLogique(ab) : null,
-    options: { dateDepart: dateDepart(), visibiliteVeille: Number(ctx.monde.visibiliteVeille) || 0, chien: cc.chien, confort: cc.confort, ...options } });
+    options: { dateDepart: dateDepart(), visibiliteVeille: Number(ctx.monde.visibiliteVeille) || 0, chien: cc.chien, confort: cc.confort, reperes: REPERES.optionsAvancer(ctx.etat), ...options } });
   ctx.etat = r.etat;
   ctx.monde = r.monde;
   for (const s of r.acteurs.survivants) {
@@ -940,11 +968,13 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   }
   // Un plan trouvé (lot 4 « Les plans ») : le papier va au premier fouilleur ; le groupe le lit au carnet s'il en a les savoirs.
   const plan = r.plan && qui[0] ? await PLANS_API.trouverPapier(ctx, qui[0], r.plan) : null;
+  // Lot « cartes » : une carte ou un calendrier, parfois (flux de hasard à part : les autres tirages ne bougent pas).
+  const repere = await REPERES.trouver(ctx, { site, region: reg, qui, fouille: r.fouille });
   await chat(carteAction({ icone: "fa-magnifying-glass", titre: t("LAKOUR_SURVIE.Action.Fouille", { lieu: site ? nomSite(site) : nomRegion(reg) }),
     lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" }), t("LAKOUR_SURVIE.Action.Butin", { butin: texteStocks(r.butin) || t("LAKOUR_SURVIE.Action.Rien") }),
-      plan ? t("LAKOUR_SURVIE.Plans.CarteTrouve", { plan: plan.nom }) : ""] }));
+      plan ? t("LAKOUR_SURVIE.Plans.CarteTrouve", { plan: plan.nom }) : "", ...(repere ? [t("LAKOUR_SURVIE.Reperes.Trouvaille", { objet: repere.nom })] : [])] }));
   await avancerInterne(ctx, q);
-  return { butin: r.butin, livre: r.livre ?? null, plan, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille, clarte };
+  return { butin: r.butin, livre: r.livre ?? null, plan, repere, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille, clarte };
 }
 
 // Un abri d'avant les notes secrètes (sans le drapeau notesPubliques) : ses notes, écrites par le MJ, vont au monde scellé ; la
@@ -1128,6 +1158,10 @@ export const CIBLE_PLANS = "plans";
 const PLANS_API = fonctionsPlans({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, dateDepart, clair, erreur, chat, carteAction,
   avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o), membresValides, donneesObjet, objetsDe, defDe, hasard, motifsLisibles, savoirsDuGroupe, instancesDe,
   aLAbri: (etat, ab) => aLAbri(etat, ab), mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), texteStocks });
+// Le jour qu'on croit, les cartes et les calendriers (contrat §20) : ses fonctions, avec les aides internes d'ici.
+const REPERES = fonctionsReperes({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, dateDepart, clair, chat, carteAction,
+  quandDe: etat => quandDe(etat), avancerInterne: (ctx, n) => avancerInterne(ctx, n), donneesObjet: (...x) => donneesObjet(...x),
+  aLAbri: (etat, ab) => aLAbri(etat, ab), fetesDuJeu, estMJ: () => Boolean(game.user?.isGM) });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1252,8 +1286,10 @@ function contexteAffaires({ region = "", mois = null, phase = "", fronts = null,
   }
   const h = game.modules?.get?.(MODULE_MJIA)?.api?.horloges;
   const lus = Object.fromEntries(L.FRONTS_CAMPAGNE.map(f => [f, Number((typeof h?.trouver === "function" ? h.trouver(`front-${f}`) : null)?.valeur) || 0]));
+  // Lot « cartes » : un groupe qui a perdu le compte des jours ouvre les affaires « quand la date se perd ».
+  const perdue = q.dateExacte === false && L.compteDe(etat).certitude === "perdu" ? ["date-perdue"] : [];
   return { region: region || (etat?.groupe?.enRoute?.vers ?? etat?.groupe?.region ?? ""), mois: mois ?? q.mois, phase: phase || q.phase, fetes: [...fetes],
-    fronts: { ...lus, ...(fronts ?? {}) }, declencheurs: [...(declencheurs ?? [])], closes: [...(closes ?? [])] };
+    fronts: { ...lus, ...(fronts ?? {}) }, declencheurs: [...new Set([...(declencheurs ?? []), ...perdue])], closes: [...(closes ?? [])] };
 }
 
 export const api = {
@@ -1783,10 +1819,12 @@ export const api = {
     await chat(carteAction({ icone: "fa-people-group", titre: t("LAKOUR_SURVIE.Participation.Carte", { fete: f.nom, chez }),
       lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") }), t("LAKOUR_SURVIE.Participation.Effet")] }));
     const prejuges = await MARCHE.feteInvites(ctx, pnj);
+    // Lot « cartes » : ceux qui reçoivent savent quel jour ils fêtent ; un groupe qui ne le savait plus l'apprend.
+    const jourAppris = REPERES.dateDeLaFete(ctx, { chez, fete: f.nom });
     Hooks.callAll("lakourSurvie.participation", structuredClone(r.entree));
     await avancerInterne(ctx, L.PARTICIPATION.quarts);
     await terminer(ctx);
-    return { ok: true, fete: f.cle, communaute: hote, faction, qui: qui.map(a => a.id), liens: structuredClone(ctx.etat.liens), prejuges };
+    return { ok: true, fete: f.cle, communaute: hote, faction, qui: qui.map(a => a.id), liens: structuredClone(ctx.etat.liens), prejuges, jourAppris };
   }),
 
   // Un vœu (Cavadee) tenu ou rompu, dit par le MJ : tenu, +1 de moral ; rompu, −1 ; le soutien du vœu s'arrête.
@@ -1922,6 +1960,8 @@ export const api = {
   ...GESTION,
   // Lot 4 « Les plans » (contrat §21) : le carnet, les papiers, les lieux à plans, l'étagère aux cahiers.
   ...PLANS_API.api,
+  // Lot « cartes » (contrat §20) : le compte des jours, la lune sur un calendrier, les cartes et les calendriers, le journal d'un mort.
+  ...REPERES.api,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {

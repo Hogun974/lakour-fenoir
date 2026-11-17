@@ -1,0 +1,148 @@
+{
+  "_id": "ltfIK3JqAB498dRF",
+  "_key": "!tables!ltfIK3JqAB498dRF",
+  "name": "Le jour qu'on vous donne",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quand le groupe a perdu le compte et demande le jour : qui le donne, et ce que vaut ce qu'il dit (reperes, fenêtre du MJ « Un jour donné ou reçu »).</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "le-jour-qu-on-vous-donne",
+      "reperes": "le-jour-qu-on-vous-donne"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "Qb1waEwkHxuDsEHA",
+      "_key": "!tables.results!ltfIK3JqAB498dRF.Qb1waEwkHxuDsEHA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vieux planteur des Hauts, sûr de lui : « On est le 12. J'ai coché sur le calendrier du facteur, chaque soir. » Il dit vrai, à un jour près.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YvFaq2Alwn1GwLDu",
+      "_key": "!tables.results!ltfIK3JqAB498dRF.YvFaq2Alwn1GwLDu",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une marchande du marché forain : « Le 3, ou le 4… La foire, c'est dans dix jours, ça je sais. » Elle se trompe de deux jours, de bonne foi.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gQFkWvFqPmct6Iez",
+      "_key": "!tables.results!ltfIK3JqAB498dRF.gQFkWvFqPmct6Iez",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un îlet qui répond par sifflets, d'une crête à l'autre : trois coups, puis deux. Personne ne sait d'où ils tiennent leur date.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kt2zzSBPagrpeqtb",
+      "_key": "!tables.results!ltfIK3JqAB498dRF.kt2zzSBPagrpeqtb",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un gamin qui compte sur ses doigts depuis la dernière pleine lune. Il a raison, à trois jours près.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "3xK0TXqn2tME6DEO",
+      "_key": "!tables.results!ltfIK3JqAB498dRF.3xK0TXqn2tME6DEO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un homme qui vend des œufs, et qui gagne à ce qu'on croie que la foire est demain. Il ment.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nQZstvMRETghWknO",
+      "_key": "!tables.results!ltfIK3JqAB498dRF.nQZstvMRETghWknO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un poste de radio qui grésille, une voix lointaine qui donne la date en passant. C'est le vrai jour.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "RByLkT6tes3AT8lx",
+      "_key": "!tables.results!ltfIK3JqAB498dRF.RByLkT6tes3AT8lx",
+      "type": "text",
+      "name": "",
+      "description": "<p>La dame qui tient l'oratoire du chemin et le compte des messes : elle a le bon jour, et le dit à qui passe.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pyK3VSSSUAHfTGGw",
+      "_key": "!tables.results!ltfIK3JqAB498dRF.pyK3VSSSUAHfTGGw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux voisins qui se disputent, à quatre jours d'écart. L'un des deux a raison ; aucun ne cédera.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

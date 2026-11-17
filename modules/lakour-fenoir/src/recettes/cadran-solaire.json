@@ -1,0 +1,41 @@
+{
+  "_id": "eL2IkwEgFoJjE1G9",
+  "_key": "!items!eL2IkwEgFoJjE1G9",
+  "name": "Cadran solaire",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "cadran-solaire",
+    "description": "<p>Quatre galets, une gaulette bien droite, et une journée de soleil pour marquer les heures sur l'ombre. Il faut savoir où est le nord.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "cadran-solaire",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cadran-solaire"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

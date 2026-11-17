@@ -1,0 +1,58 @@
+{
+  "_id": "lJluGAPOJDplEmkz",
+  "_key": "!items!lJluGAPOJDplEmkz",
+  "name": "Plan de ville",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "plan-de-ville",
+    "categorie": "repere",
+    "description": "<p>Le plan que distribuaient l'office de tourisme et la mairie : les rues, les écoles, la pharmacie de garde, la gendarmerie, les routes qui sortent de la ville. Il ne couvre que la ville où on l'a trouvé.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "carte",
+      "rarete": "commune",
+      "couvre": "region",
+      "terrains": [
+        "route"
+      ],
+      "ilYa": [
+        0,
+        4
+      ],
+      "lieux": {
+        "commerce": 0.06,
+        "ecole": 0.04,
+        "immeuble": 0.04,
+        "gite": 0.03,
+        "maison": 0.02,
+        "case-creole": 0.02,
+        "autre": 0.03,
+        "region": 0.015
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plan-de-ville"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

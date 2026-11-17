@@ -1,0 +1,56 @@
+{
+  "_id": "T7LFaNYAkK9llURL",
+  "_key": "!items!T7LFaNYAkK9llURL",
+  "name": "Moitié de carte routière",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "moitie-de-carte",
+    "categorie": "repere",
+    "description": "<p>Une carte routière déchirée en deux, tachée, gondolée par la pluie : on n'en a qu'une moitié, l'ouest ou l'est. Le reste de l'île s'arrête au bord du papier.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "carte",
+      "rarete": "commune",
+      "couvre": "ile",
+      "dechiree": true,
+      "terrains": [
+        "route"
+      ],
+      "ilYa": [
+        0,
+        3
+      ],
+      "lieux": {
+        "commerce": 0.03,
+        "port": 0.02,
+        "immeuble": 0.02,
+        "maison": 0.02,
+        "region": 0.006
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "moitie-de-carte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -11839,6 +11839,539 @@
    "enseigne": [
     "electricite-solaire"
    ]
+  },
+  {
+   "nom": "Carte routière de l'île",
+   "cle": "carte-routiere-de-l-ile",
+   "categorie": "repere",
+   "description": "<p>La carte routière dépliable qu'on achetait à la station-service ou à l'aéroport : les nationales en rouge, les départementales en jaune, les villes, les cols. Presque rien du relief, rien des sentiers. Elle dit les routes telles qu'elles étaient le jour où on l'a imprimée ; ce qui les bouche aujourd'hui, elle ne le sait pas, et elle ne sait rien des Livides.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "carte",
+    "rarete": "rare",
+    "couvre": "ile",
+    "terrains": [
+     "route"
+    ],
+    "ilYa": [
+     0,
+     2
+    ],
+    "lieux": {
+     "commerce": 0.04,
+     "gite": 0.04,
+     "caserne": 0.05,
+     "port": 0.03,
+     "autre": 0.02,
+     "region": 0.005
+    }
+   }
+  },
+  {
+   "nom": "Carte de randonnée",
+   "cle": "carte-de-randonnee",
+   "categorie": "repere",
+   "description": "<p>Une carte au 1/25 000 d'un cirque ou du volcan, pliée et repliée par un randonneur : chaque courbe de niveau, chaque sentier, chaque îlet, les gîtes et les points d'eau. C'est la seule qui montre les sentiers. Elle ne sait pas lesquels l'éboulis a emportés depuis.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "carte",
+    "rarete": "peu-commune",
+    "couvre": {
+     "un": [
+      "cilaos",
+      "mafate",
+      "salazie",
+      "fournaise"
+     ]
+    },
+    "terrains": [
+     "route",
+     "piste",
+     "sentier"
+    ],
+    "ilYa": [
+     1,
+     8
+    ],
+    "lieux": {
+     "gite": 0.08,
+     "ilet": 0.05,
+     "caserne": 0.02,
+     "autre": 0.03,
+     "region": 0.005
+    }
+   }
+  },
+  {
+   "nom": "Plan de ville",
+   "cle": "plan-de-ville",
+   "categorie": "repere",
+   "description": "<p>Le plan que distribuaient l'office de tourisme et la mairie : les rues, les écoles, la pharmacie de garde, la gendarmerie, les routes qui sortent de la ville. Il ne couvre que la ville où on l'a trouvé.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "carte",
+    "rarete": "commune",
+    "couvre": "region",
+    "terrains": [
+     "route"
+    ],
+    "ilYa": [
+     0,
+     4
+    ],
+    "lieux": {
+     "commerce": 0.06,
+     "ecole": 0.04,
+     "immeuble": 0.04,
+     "gite": 0.03,
+     "maison": 0.02,
+     "case-creole": 0.02,
+     "autre": 0.03,
+     "region": 0.015
+    }
+   }
+  },
+  {
+   "nom": "Carte ancienne de l'île",
+   "cle": "carte-ancienne",
+   "categorie": "repere",
+   "description": "<p>Une carte de l'île d'il y a trente ou quarante ans, trouvée dans le placard d'une école ou au fond d'une case : les routes d'alors, des sentiers que plus personne ne prend, et ni la route des Tamarins ni la nouvelle route du Littoral. Elle a l'air sûre d'elle. Elle trompe.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "carte",
+    "rarete": "commune",
+    "couvre": "ile",
+    "terrains": [
+     "route",
+     "sentier"
+    ],
+    "ilYa": [
+     30,
+     45
+    ],
+    "routesImprimees": {
+     "saint-paul|saint-leu": "difficile",
+     "saint-denis|route-du-littoral": "difficile"
+    },
+    "notes": {
+     "saint-paul": "La carte ne connaît pas la route des Tamarins : entre Saint-Paul et Saint-Leu, seulement la route sinueuse de la côte.",
+     "route-du-littoral": "La carte ne montre que la vieille route sous la falaise, celle des éboulis, et pas la nouvelle route sur la mer.",
+     "sud-sauvage": "La carte trace la route des Laves comme elle passait avant les grandes coulées : une partie de ce tracé est sous la lave.",
+     "fournaise": "Des sentiers marqués au pied du volcan ne mènent plus nulle part : les coulées sont passées dessus."
+    },
+    "lieux": {
+     "ecole": 0.06,
+     "case-creole": 0.04,
+     "maison": 0.03,
+     "autre": 0.03,
+     "region": 0.006
+    }
+   }
+  },
+  {
+   "nom": "Moitié de carte routière",
+   "cle": "moitie-de-carte",
+   "categorie": "repere",
+   "description": "<p>Une carte routière déchirée en deux, tachée, gondolée par la pluie : on n'en a qu'une moitié, l'ouest ou l'est. Le reste de l'île s'arrête au bord du papier.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "carte",
+    "rarete": "commune",
+    "couvre": "ile",
+    "dechiree": true,
+    "terrains": [
+     "route"
+    ],
+    "ilYa": [
+     0,
+     3
+    ],
+    "lieux": {
+     "commerce": 0.03,
+     "port": 0.02,
+     "immeuble": 0.02,
+     "maison": 0.02,
+     "region": 0.006
+    }
+   }
+  },
+  {
+   "nom": "Carte annotée par un mort",
+   "cle": "carte-annotee",
+   "categorie": "repere",
+   "description": "<p>Une carte routière couverte d'une écriture serrée au stylo bille : des croix, des flèches, des dates, des mots soulignés deux fois. Celui qui l'a annotée est mort ; on l'a trouvée sur lui, ou à côté. Sa note dit une cache, un danger, ou un mensonge, et on ne sait pas lequel.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "carte",
+    "rarete": "rare",
+    "couvre": "ile",
+    "terrains": [
+     "route",
+     "sentier"
+    ],
+    "ilYa": [
+     0,
+     3
+    ],
+    "annotations": [
+     {
+      "region": "cilaos",
+      "vraie": true,
+      "texte": "« Îlet à Cordes : la case bleue au bout du chemin, sous le plancher, de quoi tenir un mois. » Au stylo bleu, souligné deux fois."
+     },
+     {
+      "region": "sainte-marie",
+      "vraie": true,
+      "texte": "« Gillot : NE PAS PASSER PAR LA ZONE CARGO. » Trois croix rouges autour d'un hangar."
+     },
+     {
+      "region": "le-tampon",
+      "vraie": false,
+      "texte": "« Bourg-Murat : ils ont de l'eau et des médicaments, ils accueillent. » Avec une date, juste avant le silence."
+     },
+     {
+      "region": "salazie",
+      "vraie": true,
+      "texte": "« Hell-Bourg : derrière les thermes, sous la grille, ça tient. » Une flèche vers la ravine."
+     },
+     {
+      "region": "saint-pierre",
+      "vraie": false,
+      "texte": "« Terre-Sainte : un bateau. Ils partent le 15. » Le mois n'est pas écrit."
+     },
+     {
+      "region": "plaine-des-palmistes",
+      "vraie": false,
+      "texte": "« Bébour : le gîte est vide, le feu prend bien, personne. » Une autre main a ajouté, au crayon : « menteur »."
+     }
+    ],
+    "lieux": {
+     "caserne": 0.02,
+     "gite": 0.02,
+     "ilet": 0.02,
+     "hopital": 0.02,
+     "region": 0.004
+    }
+   }
+  },
+  {
+   "nom": "Copie de carte",
+   "cle": "copie-de-carte",
+   "categorie": "repere",
+   "description": "<p>Une carte recopiée à la main dans un cahier cousu, à l'encre de suie : les routes, les régions, les notes, pas le relief. Elle vaut ce que valait la main qui l'a tracée.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "carte",
+    "rarete": "commune",
+    "couvre": "ile",
+    "terrains": [
+     "route"
+    ],
+    "ilYa": [
+     0,
+     0
+    ],
+    "copie": true
+   }
+  },
+  {
+   "nom": "Calendrier des postes",
+   "cle": "calendrier-des-postes",
+   "categorie": "repere",
+   "description": "<p>L'almanach que le facteur passait vendre en fin d'année, avec ses photos de chatons ou de paysages de l'île : les jours, les saints, les vacances scolaires et les quartiers de lune. En novembre et en décembre, c'est déjà celui de l'année suivante. Il était accroché dans la cuisine de presque toutes les cases.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "calendrier",
+    "rarete": "commune",
+    "annee": "postes",
+    "lunes": true,
+    "marees": false,
+    "fetes": false,
+    "lieux": {
+     "case-creole": 0.1,
+     "maison": 0.08,
+     "ferme": 0.08,
+     "immeuble": 0.06,
+     "ilet": 0.06,
+     "eglise": 0.05,
+     "commerce": 0.03,
+     "region": 0.03
+    }
+   }
+  },
+  {
+   "nom": "Calendrier de l'année",
+   "cle": "calendrier-de-l-annee",
+   "categorie": "repere",
+   "description": "<p>Un calendrier publicitaire de garage, de quincaillerie ou de boutique chinoise, une photo par mois. Les jours, rien d'autre : pas de lune. Coché chaque soir, il garde le compte des jours de l'année.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "calendrier",
+    "rarete": "peu-commune",
+    "annee": "courante",
+    "lunes": false,
+    "marees": false,
+    "fetes": false,
+    "lieux": {
+     "commerce": 0.05,
+     "usine": 0.04,
+     "ecole": 0.03,
+     "caserne": 0.03,
+     "hopital": 0.03,
+     "port": 0.03,
+     "autre": 0.03,
+     "ferme": 0.02,
+     "region": 0.01
+    }
+   }
+  },
+  {
+   "nom": "Calendrier des marées et des lunes",
+   "cle": "calendrier-des-marees-et-des-lunes",
+   "categorie": "repere",
+   "description": "<p>Le petit livret des pêcheurs et des plaisanciers : pour chaque jour, les heures des marées, le lever et le coucher de la lune, sa phase heure par heure. Avec lui, la lune donne le jour à un jour près.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "calendrier",
+    "rarete": "rare",
+    "annee": "courante",
+    "lunes": true,
+    "marees": true,
+    "fetes": false,
+    "lieux": {
+     "phare": 0.1,
+     "port": 0.08,
+     "commerce": 0.01,
+     "region": 0.003
+    }
+   }
+  },
+  {
+   "nom": "Vieux calendrier",
+   "cle": "vieux-calendrier",
+   "categorie": "repere",
+   "description": "<p>Un calendrier d'une autre année, oublié sur un mur : les jours tombent faux, et les lunes aussi. Celui qui y lit la lune croit retrouver le jour ; il se trompe, sans le savoir.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "calendrier",
+    "rarete": "commune",
+    "annee": "passee",
+    "lunes": true,
+    "marees": false,
+    "fetes": false,
+    "lieux": {
+     "ecole": 0.06,
+     "maison": 0.05,
+     "case-creole": 0.05,
+     "immeuble": 0.04,
+     "ferme": 0.04,
+     "region": 0.015
+    }
+   }
+  },
+  {
+   "nom": "Calendrier des fêtes de l'île",
+   "cle": "calendrier-des-fetes",
+   "categorie": "repere",
+   "description": "<p>Le calendrier d'une association interculturelle, distribué dans les écoles et les mairies : Noël et le 20 désanm, le Nouvel An chinois et la Dipavali, le Cavadee, l'Aïd, le Nouvel An tamoul, Pongal… avec les lunes, puisque tant de fêtes les suivent. On y voit venir les fêtes des autres.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "calendrier",
+    "rarete": "rare",
+    "annee": "courante",
+    "lunes": true,
+    "marees": false,
+    "fetes": true,
+    "lieux": {
+     "ecole": 0.03,
+     "commerce": 0.02,
+     "autre": 0.02,
+     "region": 0.004
+    }
+   }
+  },
+  {
+   "nom": "Montre à aiguilles",
+   "cle": "montre-a-aiguilles",
+   "categorie": "repere",
+   "description": "<p>Une montre mécanique, de celles qu'on remonte chaque matin d'un tour de molette : elle ne craint ni la panne de courant ni les piles mortes. Avec elle, on sait l'heure, pas le jour.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "montre",
+    "rarete": "peu-commune",
+    "lieux": {
+     "maison": 0.02,
+     "case-creole": 0.02,
+     "immeuble": 0.02,
+     "commerce": 0.02,
+     "caserne": 0.02,
+     "hopital": 0.02,
+     "region": 0.006
+    }
+   }
+  },
+  {
+   "nom": "Planche des jours",
+   "cle": "planche-des-jours",
+   "categorie": "repere",
+   "description": "<p>Une planche et un couteau : une encoche par jour, groupées par cinq, une plus longue à chaque lune. On y perd moins vite le fil qu'avec des traits dans un carnet.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "planche",
+    "rarete": "commune"
+   }
+  },
+  {
+   "nom": "Cadran solaire",
+   "cle": "cadran-solaire",
+   "categorie": "repere",
+   "description": "<p>Quatre galets et une baguette plantée bien droite dans la cour : l'ombre dit l'heure quand il y a du soleil. Il ne sert qu'à l'abri, et seulement de jour.</p>",
+   "bonus": {},
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "cadran",
+    "rarete": "commune"
+   }
+  },
+  {
+   "nom": "Encre de suie",
+   "cle": "encre-de-suie",
+   "categorie": "repere",
+   "description": "<p>Du charbon de bois pilé dans un peu d'eau et de sève : de quoi écrire quand les stylos sont morts. Une fiole sert pour une copie.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "encre",
+    "rarete": "commune"
+   }
+  },
+  {
+   "nom": "Cahier cousu",
+   "cle": "cahier-cousu",
+   "categorie": "repere",
+   "description": "<p>Des feuilles pliées et cousues au fil de pêche : de quoi recopier une carte, tenir un journal, garder ce qu'on apprend.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "repere": {
+    "type": "cahier",
+    "rarete": "commune"
+   }
   }
  ],
  "passes": [
@@ -12985,6 +13518,82 @@
    },
    "produit": {
     "equipement": "camion-a-gazogene",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Planche des jours",
+   "cle": "planche-des-jours",
+   "description": "<p>Une planche, un couteau, un peu de lumière : on taille la première encoche le soir même.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "bricolage",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "planche-des-jours",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Cadran solaire",
+   "cle": "cadran-solaire",
+   "description": "<p>Quatre galets, une gaulette bien droite, et une journée de soleil pour marquer les heures sur l'ombre. Il faut savoir où est le nord.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "survie",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "cadran-solaire",
+    "n": 1
+   }
+  },
+  {
+   "nom": "Encre de suie",
+   "cle": "encre-de-suie",
+   "description": "<p>Le charbon d'un feu de la veille, pilé fin, un peu d'eau, une goutte de sève pour que ça tienne : deux fioles.</p>",
+   "cout": {
+    "eau": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "encre-de-suie",
+    "n": 2
+   }
+  },
+  {
+   "nom": "Cahier cousu",
+   "cle": "cahier-cousu",
+   "description": "<p>Des feuilles récupérées (des cahiers d'école, le dos des affiches), pliées et cousues au fil de pêche.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "cahier-cousu",
     "n": 1
    }
   }

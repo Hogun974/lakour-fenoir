@@ -31,6 +31,7 @@ import { verifierHistoires } from "../systems/lakour-survie/logique/histoires.mj
 import { verifierCorvees } from "../systems/lakour-survie/logique/gestion.mjs";
 import { erreursAffaire } from "../systems/lakour-survie/logique/affaires.mjs";
 import { erreursPlans } from "../systems/lakour-survie/logique/plans.mjs";
+import { erreursRepere, chanceRepere, LIEUX_REPERE, CHANCE_REPERE_MAX } from "../systems/lakour-survie/logique/reperes.mjs";
 import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_DECLINABLES, IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
@@ -429,6 +430,10 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     }
   }
   if (![...equipements.values()].some(q => q.transport)) e("aucun véhicule ni monture");
+  // Lot « cartes » (contrat §20) : la forme des cartes, calendriers et montres, et la chance d'en trouver par lieu.
+  for (const q of equipements.values()) for (const x of erreursRepere(q, d)) e(x);
+  for (const lieu of LIEUX_REPERE) if (chanceRepere(d, lieu) > CHANCE_REPERE_MAX) e(`repères : chance trop forte dans « ${lieu} » (${chanceRepere(d, lieu)})`);
+  for (const k of ["carte-routiere-de-l-ile", "calendrier-des-postes", "planche-des-jours", "copie-de-carte"]) if (!equipements.has(k)) e(`repères : ${k} absent`);
 
   // Recettes, afflictions, bestiaire.
   for (const r of recettes.values()) {

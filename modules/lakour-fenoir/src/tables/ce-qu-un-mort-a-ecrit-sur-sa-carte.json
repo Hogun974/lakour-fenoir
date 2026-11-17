@@ -1,0 +1,118 @@
+{
+  "_id": "xEpBNEDgbiE5GwBY",
+  "_key": "!tables!xEpBNEDgbiE5GwBY",
+  "name": "Ce qu'un mort a écrit sur sa carte",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les notes d'une carte trouvée sur un mort : une cache, un danger, ou un mensonge (la carte annotée en porte une).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ce-qu-un-mort-a-ecrit-sur-sa-carte",
+      "reperes": "ce-qu-un-mort-a-ecrit-sur-sa-carte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "o5JGtxCSzU2ly6re",
+      "_key": "!tables.results!xEpBNEDgbiE5GwBY.o5JGtxCSzU2ly6re",
+      "type": "text",
+      "name": "",
+      "description": "<p>Cilaos — « Îlet à Cordes : la case bleue au bout du chemin, sous le plancher, de quoi tenir un mois. » Au stylo bleu, souligné deux fois.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7t1VFP4jOiPFWqgg",
+      "_key": "!tables.results!xEpBNEDgbiE5GwBY.7t1VFP4jOiPFWqgg",
+      "type": "text",
+      "name": "",
+      "description": "<p>Sainte-Marie et l'aéroport — « Gillot : NE PAS PASSER PAR LA ZONE CARGO. » Trois croix rouges autour d'un hangar.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QIoz1TmIu0c0GCD5",
+      "_key": "!tables.results!xEpBNEDgbiE5GwBY.QIoz1TmIu0c0GCD5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le Tampon et la Plaine des Cafres — « Bourg-Murat : ils ont de l'eau et des médicaments, ils accueillent. » Avec une date, juste avant le silence.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "24rbWRzuGjjYowww",
+      "_key": "!tables.results!xEpBNEDgbiE5GwBY.24rbWRzuGjjYowww",
+      "type": "text",
+      "name": "",
+      "description": "<p>Salazie — « Hell-Bourg : derrière les thermes, sous la grille, ça tient. » Une flèche vers la ravine.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yl0ABCuqdzFGfUBA",
+      "_key": "!tables.results!xEpBNEDgbiE5GwBY.yl0ABCuqdzFGfUBA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Saint-Louis et Saint-Pierre — « Terre-Sainte : un bateau. Ils partent le 15. » Le mois n'est pas écrit.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "eWgeq2E7IPr3JJ56",
+      "_key": "!tables.results!xEpBNEDgbiE5GwBY.eWgeq2E7IPr3JJ56",
+      "type": "text",
+      "name": "",
+      "description": "<p>La Plaine des Palmistes et Bélouve — « Bébour : le gîte est vide, le feu prend bien, personne. » Une autre main a ajouté, au crayon : « menteur ».</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

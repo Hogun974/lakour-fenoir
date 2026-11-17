@@ -1,0 +1,54 @@
+{
+  "_id": "U6fHMevWhRd7QJBx",
+  "_key": "!items!U6fHMevWhRd7QJBx",
+  "name": "Calendrier des postes",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "calendrier-des-postes",
+    "categorie": "repere",
+    "description": "<p>L'almanach que le facteur passait vendre en fin d'année, avec ses photos de chatons ou de paysages de l'île : les jours, les saints, les vacances scolaires et les quartiers de lune. En novembre et en décembre, c'est déjà celui de l'année suivante. Il était accroché dans la cuisine de presque toutes les cases.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "calendrier",
+      "rarete": "commune",
+      "annee": "postes",
+      "lunes": true,
+      "marees": false,
+      "fetes": false,
+      "lieux": {
+        "case-creole": 0.1,
+        "maison": 0.08,
+        "ferme": 0.08,
+        "immeuble": 0.06,
+        "ilet": 0.06,
+        "eglise": 0.05,
+        "commerce": 0.03,
+        "region": 0.03
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "calendrier-des-postes"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "_id": "zQmFKR3RXI2jZLId",
+  "_key": "!items!zQmFKR3RXI2jZLId",
+  "name": "Calendrier des marées et des lunes",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "calendrier-des-marees-et-des-lunes",
+    "categorie": "repere",
+    "description": "<p>Le petit livret des pêcheurs et des plaisanciers : pour chaque jour, les heures des marées, le lever et le coucher de la lune, sa phase heure par heure. Avec lui, la lune donne le jour à un jour près.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "calendrier",
+      "rarete": "rare",
+      "annee": "courante",
+      "lunes": true,
+      "marees": true,
+      "fetes": false,
+      "lieux": {
+        "phare": 0.1,
+        "port": 0.08,
+        "commerce": 0.01,
+        "region": 0.003
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "calendrier-des-marees-et-des-lunes"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

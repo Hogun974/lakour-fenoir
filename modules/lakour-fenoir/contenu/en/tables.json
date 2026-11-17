@@ -3232,6 +3232,49 @@
       "en": "<p>There are supposedly messages under the stones of the red oratories, by the roads, for those who never cross paths.</p>"
     }
   },
+  "tables/ltfIK3JqAB498dRF": {
+    "_nom": "Le jour qu'on vous donne",
+    "name": {
+      "fr": "Le jour qu'on vous donne",
+      "en": "The day you are given"
+    },
+    "description": {
+      "fr": "<p>Quand le groupe a perdu le compte et demande le jour : qui le donne, et ce que vaut ce qu'il dit (reperes, fenêtre du MJ « Un jour donné ou reçu »).</p>",
+      "en": "<p>When the group has lost count and asks what day it is: who gives it, and what their word is worth (reperes, GM window \"A day given or received\").</p>"
+    },
+    "results.Qb1waEwkHxuDsEHA.description": {
+      "fr": "<p>Un vieux planteur des Hauts, sûr de lui : « On est le 12. J'ai coché sur le calendrier du facteur, chaque soir. » Il dit vrai, à un jour près.</p>",
+      "en": "<p>An old planter from the Highlands, sure of himself: \"It's the 12th. I ticked it off on the postman's calendar, every evening.\" He's telling the truth, give or take a day.</p>"
+    },
+    "results.YvFaq2Alwn1GwLDu.description": {
+      "fr": "<p>Une marchande du marché forain : « Le 3, ou le 4… La foire, c'est dans dix jours, ça je sais. » Elle se trompe de deux jours, de bonne foi.</p>",
+      "en": "<p>A stallholder at the open-air market: \"The 3rd, or the 4th… The fair is in ten days, that much I know.\" She's two days out, in good faith.</p>"
+    },
+    "results.gQFkWvFqPmct6Iez.description": {
+      "fr": "<p>Un îlet qui répond par sifflets, d'une crête à l'autre : trois coups, puis deux. Personne ne sait d'où ils tiennent leur date.</p>",
+      "en": "<p>An îlet that answers by whistles, from one ridge to the next: three blasts, then two. Nobody knows where they got their date from.</p>"
+    },
+    "results.kt2zzSBPagrpeqtb.description": {
+      "fr": "<p>Un gamin qui compte sur ses doigts depuis la dernière pleine lune. Il a raison, à trois jours près.</p>",
+      "en": "<p>A kid counting on his fingers since the last full moon. He's right, give or take three days.</p>"
+    },
+    "results.3xK0TXqn2tME6DEO.description": {
+      "fr": "<p>Un homme qui vend des œufs, et qui gagne à ce qu'on croie que la foire est demain. Il ment.</p>",
+      "en": "<p>A man selling eggs, who gains if people think the fair is tomorrow. He's lying.</p>"
+    },
+    "results.nQZstvMRETghWknO.description": {
+      "fr": "<p>Un poste de radio qui grésille, une voix lointaine qui donne la date en passant. C'est le vrai jour.</p>",
+      "en": "<p>A crackling radio set, a distant voice giving the date in passing. It's the true day.</p>"
+    },
+    "results.RByLkT6tes3AT8lx.description": {
+      "fr": "<p>La dame qui tient l'oratoire du chemin et le compte des messes : elle a le bon jour, et le dit à qui passe.</p>",
+      "en": "<p>The lady who looks after the wayside oratory and keeps count for the masses: she has the right day, and tells whoever passes.</p>"
+    },
+    "results.pyK3VSSSUAHfTGGw.description": {
+      "fr": "<p>Deux voisins qui se disputent, à quatre jours d'écart. L'un des deux a raison ; aucun ne cédera.</p>",
+      "en": "<p>Two neighbours arguing, four days apart. One of them is right; neither will give in.</p>"
+    }
+  },
   "tables/lvnc8Aik4KmJNMAZ": {
     "_nom": "La communauté — le départ préparé",
     "name": {
@@ -4193,6 +4236,41 @@
     "results.1BhALBKiHREihkTG.description": {
       "fr": "<p>Vavaka</p>",
       "en": "<p>Vavaka</p>"
+    }
+  },
+  "tables/xEpBNEDgbiE5GwBY": {
+    "_nom": "Ce qu'un mort a écrit sur sa carte",
+    "name": {
+      "fr": "Ce qu'un mort a écrit sur sa carte",
+      "en": "What a dead man wrote on his map"
+    },
+    "description": {
+      "fr": "<p>Les notes d'une carte trouvée sur un mort : une cache, un danger, ou un mensonge (la carte annotée en porte une).</p>",
+      "en": "<p>The notes on a map found on a dead body: a cache, a danger, or a lie (the annotated map carries one).</p>"
+    },
+    "results.o5JGtxCSzU2ly6re.description": {
+      "fr": "<p>Cilaos — « Îlet à Cordes : la case bleue au bout du chemin, sous le plancher, de quoi tenir un mois. » Au stylo bleu, souligné deux fois.</p>",
+      "en": "<p>Cilaos — \"Îlet à Cordes: the blue case at the end of the path, under the floorboards, enough to last a month.\" In blue ink, underlined twice.</p>"
+    },
+    "results.7t1VFP4jOiPFWqgg.description": {
+      "fr": "<p>Sainte-Marie et l'aéroport — « Gillot : NE PAS PASSER PAR LA ZONE CARGO. » Trois croix rouges autour d'un hangar.</p>",
+      "en": "<p>Sainte-Marie and the airport — \"Gillot: DO NOT GO THROUGH THE CARGO ZONE.\" Three red crosses around a hangar.</p>"
+    },
+    "results.QIoz1TmIu0c0GCD5.description": {
+      "fr": "<p>Le Tampon et la Plaine des Cafres — « Bourg-Murat : ils ont de l'eau et des médicaments, ils accueillent. » Avec une date, juste avant le silence.</p>",
+      "en": "<p>Le Tampon and the Plaine des Cafres — \"Bourg-Murat: they have water and medicine, they take people in.\" With a date, just before the silence.</p>"
+    },
+    "results.24rbWRzuGjjYowww.description": {
+      "fr": "<p>Salazie — « Hell-Bourg : derrière les thermes, sous la grille, ça tient. » Une flèche vers la ravine.</p>",
+      "en": "<p>Salazie — \"Hell-Bourg: behind the thermal baths, under the grate, it holds.\" An arrow towards the ravine.</p>"
+    },
+    "results.yl0ABCuqdzFGfUBA.description": {
+      "fr": "<p>Saint-Louis et Saint-Pierre — « Terre-Sainte : un bateau. Ils partent le 15. » Le mois n'est pas écrit.</p>",
+      "en": "<p>Saint-Louis and Saint-Pierre — \"Terre-Sainte: a boat. They leave on the 15th.\" The month isn't written.</p>"
+    },
+    "results.eWgeq2E7IPr3JJ56.description": {
+      "fr": "<p>La Plaine des Palmistes et Bélouve — « Bébour : le gîte est vide, le feu prend bien, personne. » Une autre main a ajouté, au crayon : « menteur ».</p>",
+      "en": "<p>La Plaine des Palmistes and Bélouve — \"Bébour: the gîte is empty, the fire catches well, nobody around.\" Another hand has added, in pencil: \"liar\".</p>"
     }
   },
   "tables/xy4CRhi0vrQVevFH": {

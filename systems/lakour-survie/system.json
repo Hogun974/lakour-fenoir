@@ -52,7 +52,7 @@
     "Item": {
       "installation": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "niveau", "niveauMax", "chantier", "etat", "reparation", "niveaux", "termineLe", "actif", "arbre", "role", "rang"] },
       "savoir": { "htmlFields": ["description", "apprentissage", "effets"], "gmOnlyFields": ["cle", "description", "apprentissage", "effets", "arbre"] },
-      "equipement": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "bonus", "charge", "usure", "munitions", "bruit", "transport", "effets", "enseigne", "auteur", "marque", "plans", "unique"] },
+      "equipement": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "bonus", "charge", "usure", "munitions", "bruit", "transport", "effets", "enseigne", "auteur", "marque", "plans", "unique", "repere"] },
       "passe": { "htmlFields": ["description", "accroche"], "gmOnlyFields": ["cle", "description", "competences", "savoirs", "equipement", "accroche", "region", "incapacites", "histoire", "genre", "nomAutre"] },
       "recette": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "description", "cout", "travail", "competence", "difficulte", "requiert", "produit"] },
       "affliction": { "htmlFields": ["description", "prevention"], "gmOnlyFields": ["cle", "categorie", "description", "prevention", "contagion", "incubation", "duree", "effets", "soin", "aggravation", "declencheur", "risque", "stade", "reste"] },

@@ -86,7 +86,7 @@ export const BANDES_PILLAGE = [
   [0.1, "maigre"],
   [-Infinity, "vide"]
 ];
-export const SOURCES_RENSEIGNEMENT = ["vu", "radio", "rumeur"];
+export const SOURCES_RENSEIGNEMENT = ["vu", "radio", "rumeur", "journal"];   // « journal » : le journal d'un mort (lot « cartes », reperes.mjs)
 
 // L'ordre dans lequel les installations consommatrices d'énergie s'arrêtent quand l'énergie manque (§3.2) : la première
 // catégorie de la liste s'éteint d'abord ; l'eau et le souterrain (ventilation) tiennent le plus longtemps.
