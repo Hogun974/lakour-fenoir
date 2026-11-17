@@ -56,7 +56,9 @@ test("contenu « vivant » : onze installations nouvelles, en sœurs pour le hor
   assert.equal(par("soue-a-cochons").niveaux[0].effets.vivant.depart, 0);
   assert.equal(par("etable").niveaux[0].effets.vivant.depart, 0);
   assert.equal(par("aquaponie").niveaux[0].effets.vivant.sansPompe, 2);
-  assert.equal(par("aquaponie").niveaux[0].effets.vivant.filtre, 30);
+  // Le filtre (30 jours) est l'entretien du lot 7 (fusion de la vague 3) : l'eau se salit, sans rien produire de moins.
+  assert.deepEqual(par("aquaponie").niveaux[0].entretien, { tousLes: 30, travail: 1, eau: true });
+  assert.equal(par("aquaponie").niveaux[0].effets.vivant.filtre, undefined);
   assert.equal(par("bananeraie").niveaux[0].effets.conditions.delai, 300);
   assert.equal(par("carreau-de-canne").niveaux[0].effets.conditions.delai, 365);
   assert.equal(par("jardin-de-zerbaz").niveaux[0].effets.production.plantes, 1);

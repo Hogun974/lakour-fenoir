@@ -80,11 +80,23 @@ export function vivantDesInstallations(installations = []) {
     });
     if (PLUIE_ARROSE.includes(cle)) for (const n of niveaux) n.effets.pluieArrose = true;
   }
+  return curageDuVivant(installations);
+}
+// Fusion de la vague 3 : le bassin à curer, le filtre à changer (`filtre` : jours) sont l'entretien du lot 7, un seul mécanisme
+// (logique/ouvrages.mjs) : `entretien: { tousLes, travail: 1, eau: true }` sur le niveau ; ses bras (l'élevage, les cultures) le
+// soignent chaque jour, curer({ installation }) le fait à la demande. Posé sur place.
+export function curageDuVivant(installations = []) {
+  for (const i of installations) for (const n of i.system?.niveaux ?? i.niveaux ?? []) {
+    const v = n?.effets?.vivant;
+    if (!(Number(v?.filtre) > 0)) continue;
+    n.entretien = { ...(n.entretien ?? {}), tousLes: Number(v.filtre), travail: 1, eau: true };
+    delete v.filtre;
+  }
   return installations;
 }
 
 // ---------------------------------------------------------------- Les installations nouvelles du vivant
-export const INSTALLATIONS_VIVANT = [
+export const INSTALLATIONS_VIVANT = curageDuVivant([
   installation({ cle: "clapier", nom: "Clapier", categorie: "nourriture",
     description: `Des cases de planches et de grillage, à l'ombre, une litière de paille de canne : quelques lapins nourris d'herbe coupée. De la viande sans bruit, et du fumier pour le jardin.`,
     niveaux: [
@@ -155,7 +167,7 @@ export const INSTALLATIONS_VIVANT = [
     niveaux: [
       { cout: { ile: 2, graines: 2, travail: 8 }, requiert: { site: { sol: 1, soleil: 1 } }, effets: { production: { nourriture: 1 }, conditions: { delai: 365 }, visibilite: 1 } }
     ] })
-];
+]);
 // Les bras (§10.3) : élevage pour les bêtes et les bassins, cultures pour le reste (même forme que installations.mjs).
 export const BRAS_VIVANT = { clapier: "elevage", "soue-a-cochons": "elevage", etable: "elevage", "bassin-a-camarons": "elevage", aquaponie: "elevage",
   "bacs-de-culture": "cultures", "serre-hydroponique": "cultures", "jardin-de-zerbaz": "cultures", "treille-a-chouchou": "cultures", bananeraie: "cultures",

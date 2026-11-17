@@ -109,7 +109,8 @@
     ],
     "arbre": "lontan",
     "role": "camouflage",
-    "rang": 1
+    "rang": 1,
+    "materiau": "bambou-et-vacoa"
   },
   "effects": [],
   "folder": null,

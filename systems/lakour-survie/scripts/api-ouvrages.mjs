@@ -115,6 +115,8 @@ export function fonctionsOuvrages({ ecriture, ouvrirCtx, terminer, noter, tx, jo
   const ecrire = fn => ecriture(async (args = {}) => { const ctx = ouvrirCtx(); const r = await fn(ctx, args); await terminer(ctx); return r; });
   return {
     publiques: { ouvrages: () => ouvrages(), entretenir: ecrire(entretenirInterne), incendie: ecrire(incendieInterne) },
+    // Fusion de la vague 3 : le curage des bassins du vivant (api-vivant.mjs, curer) est cet entretien-là.
+    entretenirInterne,
     defensesDeLAssaut, eboulementDuChantier
   };
 }

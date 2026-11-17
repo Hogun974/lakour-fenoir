@@ -68,13 +68,17 @@
             "places": 40,
             "plein": 30,
             "depart": 15,
-            "filtre": 30,
             "sansPompe": 2
           },
           "bras": {
             "tache": "elevage",
             "nombre": 1
           }
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1,
+          "eau": true
         }
       }
     ],

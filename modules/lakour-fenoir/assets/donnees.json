@@ -7594,11 +7594,15 @@
        "espece": "tilapia",
        "places": 30,
        "plein": 20,
-       "depart": 12,
-       "filtre": 20
+       "depart": 12
       }
      },
-     "materiau": "pierre-seche"
+     "materiau": "pierre-seche",
+     "entretien": {
+      "tousLes": 20,
+      "travail": 1,
+      "eau": true
+     }
     },
     {
      "cout": {
@@ -7658,11 +7662,15 @@
       "vivant": {
        "espece": "tilapia",
        "places": 40,
-       "plein": 30,
-       "filtre": 8
+       "plein": 30
       }
      },
-     "materiau": "parpaing-et-beton"
+     "materiau": "parpaing-et-beton",
+     "entretien": {
+      "tousLes": 8,
+      "travail": 1,
+      "eau": true
+     }
     }
    ]
   },
@@ -15972,13 +15980,17 @@
        "places": 40,
        "plein": 30,
        "depart": 15,
-       "filtre": 30,
        "sansPompe": 2
       },
       "bras": {
        "tache": "elevage",
        "nombre": 1
       }
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1,
+      "eau": true
      }
     }
    ],
@@ -16050,13 +16062,17 @@
        "espece": "plants-hors-sol",
        "places": 12,
        "plein": 12,
-       "depart": 12,
-       "filtre": 12
+       "depart": 12
       },
       "bras": {
        "tache": "cultures",
        "nombre": 1
       }
+     },
+     "entretien": {
+      "tousLes": 12,
+      "travail": 1,
+      "eau": true
      }
     }
    ],
@@ -16133,13 +16149,17 @@
        "places": 60,
        "plein": 60,
        "depart": 60,
-       "filtre": 8,
        "maladie": 0.34
       },
       "bras": {
        "tache": "cultures",
        "nombre": 1
       }
+     },
+     "entretien": {
+      "tousLes": 8,
+      "travail": 1,
+      "eau": true
      }
     }
    ],
@@ -16626,7 +16646,8 @@
    ],
    "arbre": "lontan",
    "role": "camouflage",
-   "rang": 1
+   "rang": 1,
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Rideau de filaos",
@@ -16734,7 +16755,8 @@
    ],
    "arbre": "lontan",
    "role": "camouflage",
-   "rang": 2
+   "rang": 2,
+   "materiau": "bambou-et-vacoa"
   }
  ],
  "savoirs": [

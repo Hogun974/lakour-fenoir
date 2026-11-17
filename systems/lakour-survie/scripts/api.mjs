@@ -1262,7 +1262,8 @@ const OUVRAGES = fonctionsOuvrages({ ecriture, ouvrirCtx, terminer, noter, tx, j
 const VIVANT = fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
   ecrireSurvivant: (...x) => ecrireSurvivant(...x), bilanVivant: (etat, monde) => bilanVivant(etat, monde),
   mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), aLAbri: (etat, ab) => aLAbri(etat, ab),
-  testDirect: (...x) => testDirect(...x), objetsDe, defDe, avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o), instancesDe, membresValides });
+  testDirect: (...x) => testDirect(...x), objetsDe, defDe, avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o), instancesDe, membresValides,
+  entretenir: (ctx, args) => OUVRAGES.entretenirInterne(ctx, args) });
 // Le paradis et son piège, et rallumer l'île (lot 9, contrat §28) : ses fonctions, avec les aides internes d'ici.
 const PARADIS = fonctionsParadis({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
   ecrireSurvivant: (...x) => ecrireSurvivant(...x), bilanVivant: (etat, monde) => bilanVivant(etat, monde),

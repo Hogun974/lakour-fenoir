@@ -73,13 +73,17 @@
             "places": 60,
             "plein": 60,
             "depart": 60,
-            "filtre": 8,
             "maladie": 0.34
           },
           "bras": {
             "tache": "cultures",
             "nombre": 1
           }
+        },
+        "entretien": {
+          "tousLes": 8,
+          "travail": 1,
+          "eau": true
         }
       }
     ],

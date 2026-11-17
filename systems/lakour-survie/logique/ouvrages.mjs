@@ -12,6 +12,9 @@
 //    tire chaque jour (flux de hasard à part) ; une installation qui a une `vie` (les batteries) perd un cran tous les `vie` jours.
 //    Le suivi d'une instance : `suivi: { le (jour du dernier soin), negligence (crans perdus faute de soin), encrasse, vieLe }`.
 //    Une partie d'avant le lot (sans suivi) commence à compter le jour où elle passe ici : rien n'est perdu d'un coup.
+//    Fusion de la vague 3 : c'est le SEUL mécanisme d'entretien. Le curage des bassins et des bacs du vivant (lot 8) en est un cas :
+//    `eau: true` (son eau se salit : elle « s'encrasse » sans rien produire de moins ; logique/vivant.mjs en fait le manque
+//    « eau-sale » du cheptel) ; ce sont ses bras (l'élevage, les cultures) qui la soignent.
 // 3. LES DÉFENSES DEVANT LES LIVIDES. `effets.piege` (fosse, chausse-trapes, douves : de la force retirée à un assaut de Livides,
 //    la fosse se comble au-delà), `effets.hauteur` (chemin de ronde : un défenseur en hauteur n'est pas frappé, ce sont les appuis
 //    qu'on attaque), `effets.porte` (herse, portail, porte blindée : une porte fermée se frappe toujours), `effets.alarme` (la
@@ -88,7 +91,7 @@ export function entretienDe(def, niveau = 1) {
   const panne = borner(n0(e.panne), 0, 1), vie = Math.max(0, Math.round(n0(e.vie)));
   if (!tousLes && !panne && !vie) return null;
   return { tousLes, travail: Math.max(1, Math.round(n0(e.travail) || 1)), encrassement: borner(n0(e.encrassement), 0, 1), arret: Boolean(e.arret),
-    lavee: Boolean(e.lavee), panne, vie };
+    lavee: Boolean(e.lavee), panne, vie, eau: Boolean(e.eau) };
 }
 // Le suivi d'une instance, complet (une partie d'avant le lot : rien, à poser au premier jour).
 export function suiviDe(instance) {
@@ -187,8 +190,9 @@ export function journeeOuvrages(installations = [], contenu = {}, { jour = 0, pl
         s = suiviDe(r.instance);
         evenements.push({ cle: "ouvrage-soigne", installation: x.inst.cle, rattrape: r.rattrape ?? 0 });
       } else if (du) {
-        if (e.encrassement || e.arret) {
-          if (!s.encrasse) evenements.push({ cle: "ouvrage-encrasse", installation: x.inst.cle, arret: e.arret });
+        if (e.encrassement || e.arret || e.eau) {
+          // L'eau d'un bassin qui se salit : le vivant le dit lui-même (« vivant-eau-sale »).
+          if (!s.encrasse && !e.eau) evenements.push({ cle: "ouvrage-encrasse", installation: x.inst.cle, arret: e.arret });
           s.encrasse = true;
         } else if (n0(x.inst.etat) < 3) {
           x.inst.etat = borner(n0(x.inst.etat) + 1, 0, 3);
@@ -238,7 +242,8 @@ export function ouvragesDeLAbri(installations = [], contenu = {}, { jour = null 
   }
   return o;
 }
-// Une haie (effets.pousse) ne défend qu'une fois fermée : `pousse` jours après sa plantation.
+// Une haie (effets.pousse) ne défend qu'une fois fermée : `pousse` jours après sa plantation (ce qu'elle cache pousse avec elle :
+// facteurPousse, logique/paradis.mjs).
 export const haieFermee = (instance, effets, jour) => !(n0(effets?.pousse) > 0) || n0(jour) - n0(instance?.termineLe) >= n0(effets.pousse);
 
 // Avant les dés : les pièges ôtent de la force à un assaut de Livides ; un piège débordé se comble (un cran d'état, à vider).
@@ -362,6 +367,7 @@ export function erreursOuvrages(contenu = {}) {
         if (n0(e.travail) < 0 || n0(e.travail) > 8) erreurs.push(`${ici} : entretien de ${e.travail} quarts`);
         if (!(n0(e.panne) >= 0 && n0(e.panne) <= 0.05)) erreurs.push(`${ici} : panne ${e.panne}`);
         if (!(n0(e.encrassement) >= 0 && n0(e.encrassement) <= 1)) erreurs.push(`${ici} : encrassement ${e.encrassement}`);
+        if (e.eau && !n.effets?.vivant) erreurs.push(`${ici} : une eau à curer sans rien de vivant`);
       }
       const f = n.effets ?? {};
       if (f.piege !== undefined && !(n0(f.piege) >= 0 && n0(f.piege) <= 4)) erreurs.push(`${ici} : piège ${f.piege}`);

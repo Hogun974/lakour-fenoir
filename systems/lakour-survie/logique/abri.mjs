@@ -80,7 +80,8 @@
 //
 // Lot 7 « Bâtir et défendre » (docs/equilibre-batir.md, contrat §26 ; logique/ouvrages.mjs) :
 // - Une installation encrassée (panneaux sales, pico-hydro bouchée) produit × (1 − encrassement), ou plus du tout (facteurEntretien).
-// - Une haie (`effets.pousse`) ne défend ni ne cache avant d'être fermée (haieFermee).
+// - Une haie (`effets.pousse`) ne défend pas avant d'être fermée (haieFermee) ; ce qu'elle cache pousse avec elle (lot 9, facteurPousse).
+//   Fusion de la vague 3 : deux rôles, la défense (la haie de choka) et le camouflage (la haie de bambous, le rideau de filaos).
 // - Une touffe de bambous (`effets.bois`) regarnit chaque jour le bois des alentours (bilan.bois, journeeAbri), jusqu'au plafond.
 // - `effets.lumiere` (lampes, éclairage) : bilan.lumiere, l'abri est éclairé la nuit (lot « sens »).
 // - Cyclone : la chance par point de dégâts suit le matériau (chanceCyclone : 25 % pour le bois sous tôle, comme avant), et une
@@ -196,9 +197,10 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     if (niveau < 1) continue;
     const def = installationDe(contenu, inst.cle);
     if (!def) continue;
-    // Lot 7 : une haie qui n'a pas encore fermé ne défend ni ne cache.
+    // Lot 7 : une haie qui n'a pas encore fermé ne défend pas. Ce qu'elle cache, elle le cache à mesure qu'elle pousse (lot 9 :
+    // facteurPousse, plus bas) ; l'annuler ici aussi effaçait la haie qui cache jusqu'au dernier jour (fusion de la vague 3).
     const e0 = effetsDe(def, niveau);
-    const e = haieFermee(inst, e0, Number(conditions.jour ?? 0)) ? e0 : { ...e0, defense: 0, discretion: 0 };
+    const e = haieFermee(inst, e0, Number(conditions.jour ?? 0)) ? e0 : { ...e0, defense: 0 };
     const fEtat = FACTEUR_ETAT[borner(Number(inst.etat) || 0, 0, 3)];
     const cond = e.conditions ?? {};
     let f = fEtat;

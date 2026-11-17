@@ -12,7 +12,7 @@
 // - abattre({ installation, n })                      -> la viande aux stocks de l'abri ; le troupeau baisse
 // - abattre({ beteId })                               -> une bête que le groupe porte (lot 5 ou capturée) : sa viande, à l'abri ou portée
 // - soignerCheptel({ installation, acteurId })        -> un quart, le remède de l'espèce, un test de survie ; réussi, il guérit
-// - curer({ installation, membres })                  -> un quart : le bassin curé, le filtre changé
+// - curer({ installation, membres })                  -> un quart : le bassin curé, le filtre changé (l'entretien du lot 7, entretenir)
 // - capturer({ acteurId, espece, n })                 -> prendre une bête en liberté (l'outil de l'espèce, un test de survie)
 // - chasser({ acteurId, espece, competence, fuit })   -> l'abattre (combat ou tir) : sa viande ; un tir s'entend
 // - recevoirBete({ espece, n, source })               -> des bêtes données, échangées ou trouvées en fouillant (lot 5)
@@ -22,7 +22,7 @@ import * as L from "../logique/index.mjs";
 import { t, lireEtat, acteur, survivantsDuGroupe, abriCourant, aPlat } from "./donnees.mjs";
 
 export function fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
-  ecrireSurvivant, bilanVivant, mondeMJ, aLAbri, testDirect, objetsDe, defDe, avancerInterne, instancesDe, membresValides }) {
+  ecrireSurvivant, bilanVivant, mondeMJ, aLAbri, testDirect, objetsDe, defDe, avancerInterne, instancesDe, membresValides, entretenir }) {
   const K = k => `LAKOUR_SURVIE.Vivant.${k}`;
   const survivantDe = id => {
     const a = acteur(id);
@@ -202,14 +202,14 @@ export function fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jour
 
   async function curerInterne(ctx, { installation = "", membres = [] } = {}) {
     const ab = abriIci(ctx);
-    const { inst, def, v, st } = cheptelDe(ab, installation, ctx);
-    if (!(Number(v.filtre) > 0)) throw clair(t(K("Erreurs.SansFiltre"), { installation: def?.nom ?? inst.cle }));
+    const { inst, def, st } = cheptelDe(ab, installation, ctx);
+    // Fusion de la vague 3 : un seul mécanisme, l'entretien du lot 7 (un quart ; le temps passe là-bas).
+    if (!L.entretienDe(def, inst.niveau)?.eau) throw clair(t(K("Erreurs.SansFiltre"), { installation: def?.nom ?? inst.cle }));
     const qui = membresValides(ctx, membres);
-    const r = L.nettoyerCheptel(st, jourCtx(ctx));
-    await ecrireCheptel(ab, inst.cle, r.etat);
+    const e = await entretenir(ctx, { installationId: inst.id ?? inst.cle, membres: qui.map(a => a.id), quarts: 1 });
+    if (e.soigne) await ecrireCheptel(abriIci(ctx), inst.cle, L.nettoyerCheptel(st).etat);
     noter(ctx, tx("Vivant.Journal.Cure", { installation: def?.nom ?? inst.cle, noms: qui.map(a => a.name).join(", ") }));
-    await avancerInterne(ctx, 1);
-    return { installation: inst.cle, filtreLe: r.etat.filtreLe };
+    return { installation: inst.cle, soigne: e.soigne, reste: e.reste };
   }
 
   // Prendre une bête en liberté : l'outil de son espèce (porté par quelqu'un du groupe), un test de survie (facile ou normale ; +1 dé

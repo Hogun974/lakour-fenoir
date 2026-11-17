@@ -69,13 +69,17 @@
             "espece": "plants-hors-sol",
             "places": 12,
             "plein": 12,
-            "depart": 12,
-            "filtre": 12
+            "depart": 12
           },
           "bras": {
             "tache": "cultures",
             "nombre": 1
           }
+        },
+        "entretien": {
+          "tousLes": 12,
+          "travail": 1,
+          "eau": true
         }
       }
     ],

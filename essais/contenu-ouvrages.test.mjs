@@ -63,7 +63,8 @@ test("installations d'avant : un matériau (le mur de pierre, puis de parpaing),
   assert.equal(def("citerne-de-pluie").niveaux[0].entretien.tousLes, 60);
   assert.ok(def("panneaux-solaires").niveaux[0].entretien.lavee && def("pico-hydro").niveaux[0].entretien.arret);
   for (const i of D.installations) if (i.niveaux.some(n => n.effets.bras) && OUVRAGES_EXISTANTS[i.cle]) {
-    assert.ok(!i.niveaux.some(n => n.entretien), `${i.cle} : ses bras l'entretiennent`);
+    // Sauf l'eau d'un bassin à curer (le lot 8 sur le mécanisme de ce lot, fusion de la vague 3) : ses bras la soignent chaque jour.
+    assert.ok(!i.niveaux.some(n => n.entretien && !n.entretien.eau), `${i.cle} : ses bras l'entretiennent`);
   }
   assert.deepEqual(def("fosse-et-pieges").niveaux.map(n => n.effets.piege), [1, 2]);
   assert.equal(def("porte-blindee").niveaux[0].effets.porte, true);

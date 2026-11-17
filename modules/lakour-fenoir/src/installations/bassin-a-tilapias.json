@@ -67,11 +67,15 @@
             "espece": "tilapia",
             "places": 30,
             "plein": 20,
-            "depart": 12,
-            "filtre": 20
+            "depart": 12
           }
         },
-        "materiau": "pierre-seche"
+        "materiau": "pierre-seche",
+        "entretien": {
+          "tousLes": 20,
+          "travail": 1,
+          "eau": true
+        }
       },
       {
         "cout": {
@@ -131,11 +135,15 @@
           "vivant": {
             "espece": "tilapia",
             "places": 40,
-            "plein": 30,
-            "filtre": 8
+            "plein": 30
           }
         },
-        "materiau": "parpaing-et-beton"
+        "materiau": "parpaing-et-beton",
+        "entretien": {
+          "tousLes": 8,
+          "travail": 1,
+          "eau": true
+        }
       }
     ]
   },

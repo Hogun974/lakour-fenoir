@@ -125,15 +125,24 @@ test("vivant : la faim selon ce que mange l'espèce (l'herbe sur un site sans te
 });
 
 test("vivant : l'eau sale passé le temps du filtre, sauf si quelqu'un est à la tâche ; deux jours sans pompe tuent l'aquaponie", () => {
-  const b = [inst("bassin-a-tilapias")];
-  const sale = L.journeeVivant({ abri: abriDe(b, { region: "sud-sauvage", vivant: { "bassin-a-tilapias": { tetes: 20, sante: 3, filtreLe: 0 } } }), installations: b, contenu, bilan: {},
-    conditions: { jour: 25, personnes: 2 } });
+  // Fusion de la vague 3 : le filtre est l'entretien du lot 7 (journeeOuvrages) ; son eau sale, le suivi « encrassé » de l'instance.
+  const b0 = [inst("bassin-a-tilapias", 1, { suivi: { le: 0, negligence: 0, encrasse: false, vieLe: null } })];
+  const seul = L.journeeOuvrages(b0, contenu, { jour: 25, bras: {} });
+  assert.equal(seul.installations[0].suivi.encrasse, true, "passé vingt jours, personne à l'élevage : l'eau se salit");
+  assert.ok(!seul.evenements.some(x => x.cle === "ouvrage-encrasse"), "le vivant le dit lui-même");
+  assert.equal(seul.installations[0].etat ?? 0, 0, "une eau sale n'abîme pas le bassin");
+  const b = seul.installations;
+  const sale = L.journeeVivant({ abri: abriDe(b, { region: "sud-sauvage", vivant: { "bassin-a-tilapias": { tetes: 20, sante: 3 } } }), installations: b, contenu, bilan: {},
+    conditions: { jour: 26, personnes: 2 } });
   assert.deepEqual(sale.vivant["bassin-a-tilapias"].manques, ["eau-sale"]);
   assert.ok(sale.evenements.some(x => x.cle === "vivant-eau-sale"));
-  const cure = L.journeeVivant({ abri: abriDe(b, { region: "sud-sauvage", vivant: { "bassin-a-tilapias": { tetes: 20, sante: 3, filtreLe: 0 } } }), installations: b, contenu, bilan: {},
-    conditions: { jour: 25, personnes: 2, travailleurs: { elevage: [{ niveau: 1 }] } } });
-  assert.deepEqual(cure.vivant["bassin-a-tilapias"].manques, []);
-  assert.equal(cure.vivant["bassin-a-tilapias"].filtreLe, 25, "l'éleveur l'a curé");
+  const cure = L.journeeOuvrages(b0, contenu, { jour: 25, bras: { elevage: 1 } });
+  assert.equal(cure.installations[0].suivi.encrasse, false);
+  assert.equal(cure.installations[0].suivi.le, 25, "l'éleveur l'a curé");
+  const propre = L.journeeVivant({ abri: abriDe(cure.installations, { region: "sud-sauvage", vivant: { "bassin-a-tilapias": { tetes: 20, sante: 3 } } }),
+    installations: cure.installations, contenu, bilan: {}, conditions: { jour: 26, personnes: 2 } });
+  assert.deepEqual(propre.vivant["bassin-a-tilapias"].manques, []);
+  assert.equal(L.cheptelsDe({ region: "sud-sauvage" }, cure.installations, contenu, { jour: 26 })[0].filtre, 19, "dix-neuf jours avant de curer");
   const aq = [inst("aquaponie")];
   const arret = { arrets: [{ cle: "aquaponie", raison: "energie" }] };
   let a = abriDe(aq, { region: "sud-sauvage", vivant: { aquaponie: { tetes: 30, sante: 3, filtreLe: 30 } } });
@@ -212,7 +221,7 @@ test("vivant : peupler jusqu'aux places, abattre (la viande, le troupeau baisse)
   assert.equal(L.abattreCheptel(st, espece("plants-hors-sol"), { n: 1 }).motif, "pas-de-viande");
   assert.equal(L.abattreCheptel(st, espece("essaim"), { n: 1 }).motif, "pas-de-viande");
   assert.equal(L.abattreCheptel({ ...st, tetes: 0 }, espece("cabri"), { n: 1 }).motif, "vide");
-  assert.equal(L.nettoyerCheptel({ ...st, manques: ["eau-sale"] }, 12).etat.filtreLe, 12);
+  assert.deepEqual(L.nettoyerCheptel({ ...st, manques: ["eau-sale"] }).etat.manques, []);
 });
 
 test("vivant : les bêtes portées tiennent leur délai hors d'un enclos, puis meurent (leur viande se mange) ; l'enclos de leur espèce", () => {

@@ -3,12 +3,14 @@
 //
 // Une seule règle pour tout ce qui vit à l'abri (complément du jeu 3D, famille 9, demande de Jordan du 15 novembre) :
 // - Un CHEPTEL (ou un bac de plants) est porté par une installation dont un niveau a `effets.vivant` :
-//   { espece | especes: [clé], places, plein, depart?, filtre? (jours), sansPompe? (jours), maladie? (facteur) }.
+//   { espece | especes: [clé], places, plein, depart?, sansPompe? (jours), maladie? (facteur) }. Le bassin à curer, le filtre à
+//   changer (fusion de la vague 3) : l'entretien du lot 7 (logique/ouvrages.mjs), `entretien: { tousLes, travail, eau: true, tache }`
+//   sur le niveau ; son eau sale (le suivi « encrassé » de l'instance) est le manque « eau-sale ».
 //   `places` : ce qu'il peut loger ; `plein` : les têtes qu'il faut pour sa production de base (celle du contenu, inchangée) ;
 //   `depart` : les têtes d'une installation que le groupe vient d'achever (une installation trouvée sur un site, ou d'une partie
 //   d'avant ce lot, est pleine).
 // - Son état (abri.vivant[clé de l'installation]) : { espece, tetes, sante 0..3, malade: { depuis } | null, manques: [mot],
-//   naissances (reliquat), filtreLe (jour), sansPompe (jours), depuis (jour) }. Absent : pleine santé, `plein` têtes (ou `depart`
+//   naissances (reliquat), sansPompe (jours), depuis (jour) } (un « filtreLe » d'avant la vague 3 est ignoré : l'entretien le suit). Absent : pleine santé, `plein` têtes (ou `depart`
 //   si l'installation vient d'être achevée : etatCheptel).
 // - Chaque jour (journeeVivant, appelé par journeeAbri), chaque MANQUE ôte 1 de santé : soif (l'installation s'arrête faute d'eau, ou
 //   on l'a éteinte),
@@ -35,6 +37,7 @@ import { borner } from "./constantes.mjs";
 import { liste, niveauDe, installationDe, regionDe, siteDe } from "./contenu.mjs";
 import { message } from "./textes.mjs";
 import { chance } from "./hasard.mjs";
+import { entretienDe, etatEntretien, suiviDe } from "./ouvrages.mjs";
 
 export const GENRES_VIVANT = ["betes", "poissons", "plants", "essaim"];
 export const MANGE_VIVANT = ["herbe", "restes", "solution", ""];
@@ -91,15 +94,14 @@ export function etatCheptel(abri = {}, inst = {}, def = null, contenu = {}, { jo
     const st = structuredClone(garde);
     return { espece: st.espece || especeParDefaut(v, contenu, altitude), tetes: Math.max(0, Math.floor(n0(st.tetes))), sante: borner(Math.round(n0(st.sante ?? 3)), 0, 3),
       malade: st.malade && typeof st.malade === "object" ? { depuis: n0(st.malade.depuis) } : null, manques: Array.isArray(st.manques) ? st.manques : [],
-      naissances: n0(st.naissances), filtreLe: st.filtreLe === undefined || st.filtreLe === null ? n0(inst.termineLe) : n0(st.filtreLe),
-      sansPompe: n0(st.sansPompe), depuis: n0(st.depuis ?? inst.termineLe) };
+      naissances: n0(st.naissances), sansPompe: n0(st.sansPompe), depuis: n0(st.depuis ?? inst.termineLe) };
   }
   // Pas encore suivi : achevée à l'instant par le groupe, elle a son cheptel de départ ; sinon (un site, une partie d'avant), pleine.
   const v1 = vivantDuNiveau(def, 1) ?? v;
   const recente = n0(inst?.termineLe) >= n0(jour) - REGLES_VIVANT.recent && n0(inst?.termineLe) >= 0;
   const tetes = recente ? Math.max(0, Math.floor(n0(v1.depart ?? v.plein))) : Math.max(0, Math.floor(n0(v.plein)));
   return { espece: especeParDefaut(v, contenu, altitude), tetes, sante: REGLES_VIVANT.santeMax, malade: null, manques: [], naissances: 0,
-    filtreLe: n0(jour), sansPompe: 0, depuis: n0(inst?.termineLe) };
+    sansPompe: 0, depuis: n0(inst?.termineLe) };
 }
 
 // Ce qu'un cheptel produit, en facteur de la production de base. -> { facteur, troupeau, vigueur, horsAltitude }
@@ -127,10 +129,20 @@ export function cheptelsDe(abri = {}, installations = [], contenu = {}, { jour =
     const f = facteurCheptel(st, v, esp, { altitude: alt });
     sortie.push({ cle: inst.cle, nom: def?.nom ?? inst.cle, espece: st.espece, especeNom: esp?.nom ?? st.espece, genre: esp?.genre ?? "", tetes: st.tetes,
       places: n0(v.places), plein: n0(v.plein), sante: st.sante, malade: Boolean(st.malade), manques: [...st.manques], facteur: arrondi(f.facteur, 2),
-      horsAltitude: f.horsAltitude, filtre: n0(v.filtre) > 0 ? Math.max(0, n0(v.filtre) - (n0(jour) - n0(st.filtreLe))) : null });
+      horsAltitude: f.horsAltitude, filtre: filtreRestant(inst, def, jour) });
   }
   return sortie;
 }
+
+// L'eau d'un bassin ou d'un bac : l'entretien du lot 7 qui la dit (`eau`), les jours avant qu'elle se salisse (0 : sale), ou null.
+export function filtreRestant(inst, def, jour = 0) {
+  const e = entretienDe(def, inst?.niveau);
+  if (!e?.eau) return null;
+  if (suiviDe(inst)?.encrasse) return 0;
+  const et = etatEntretien(inst, def, jour);
+  return et ? Math.max(0, et.prochain - n0(jour)) : e.tousLes;
+}
+export const eauSale = (inst, def) => Boolean(entretienDe(def, inst?.niveau)?.eau && suiviDe(inst)?.encrasse);
 
 // Le bruit des cheptels qui ont eu faim ou soif (ils crient), au plus REGLES_VIVANT.cri.max.
 export function criDuVivant(abri = {}) {
@@ -181,9 +193,7 @@ export function journeeVivant({ abri = {}, installations = [], contenu = {}, bil
       vivant[inst.cle] = { ...st, tetes: resemer ? Math.min(R.replanter.plants, n0(v.plein)) : 0, sante: R.santeMax, manques: [], malade: null, sansPompe: 0 };
       continue;
     }
-    const tache = TACHE_VIVANT[genre] ?? "elevage";
-    // Le soin de tous les jours : qui est à la tâche cure le bassin, change le filtre (eau sale évitée).
-    if (n0(v.filtre) > 0 && aLaTache(tache)) st.filtreLe = jour;
+    // Le soin de tous les jours (curer le bassin, changer le filtre) est l'entretien du lot 7 (journeeOuvrages : qui est à la tâche).
     // Les manques du jour.
     const raison = arrets.get(inst.cle);
     const manques = [];
@@ -196,7 +206,7 @@ export function journeeVivant({ abri = {}, installations = [], contenu = {}, bil
       || (mange === "solution" && !compost)) manques.push("faim");
     const panne = n0(inst.etat) >= 3 || raison === "energie" || raison === "hors-service";
     if (panne) manques.push("panne");
-    if (n0(v.filtre) > 0 && jour - n0(st.filtreLe) > n0(v.filtre)) manques.push("eau-sale");
+    if (eauSale(inst, def)) manques.push("eau-sale");
     if (genre === "plants" && n0(site.soleil) < 1) manques.push("ombre");
     if (st.tetes > n0(v.places)) manques.push("surpopulation");
     // Deux jours sans pompe (aquaponie) : tout meurt d'un coup.
@@ -287,10 +297,11 @@ export function soignerCheptel(st, test = {}) {
   if (!st.malade) return { ok: false, motif: "pas-malade" };
   return { ok: true, motif: "", gueri: Boolean(test?.reussite), etat: test?.reussite ? { ...st, malade: null } : { ...st } };
 }
-// Curer un bassin, changer un filtre : l'eau redevient propre.
-export function nettoyerCheptel(st, jour = 0) {
+// Curer un bassin, changer un filtre : l'eau redevient propre (le soin de l'instance est entretenirInstallation, lot 7) ; le cheptel
+// n'a plus ce manque.
+export function nettoyerCheptel(st) {
   if (!st) return { ok: false, motif: "pas-vivant" };
-  return { ok: true, motif: "", etat: { ...st, filtreLe: n0(jour), manques: (st.manques ?? []).filter(m => m !== "eau-sale") } };
+  return { ok: true, motif: "", etat: { ...st, manques: (st.manques ?? []).filter(m => m !== "eau-sale") } };
 }
 
 // ------------------------------------------------------------------ bêtes portées (prises en liberté, trouvées en fouillant)
