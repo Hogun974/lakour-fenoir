@@ -21,6 +21,28 @@
       "en": "<p>Racks in the sun for fruit, chillies, fish; a sheet-metal smokehouse for cured meat. What is dried no longer spoils.</p>"
     }
   },
+  "installations/1Bw5AtCsHkEJt0ak": {
+    "_nom": "Aquaponie",
+    "name": {
+      "fr": "Aquaponie",
+      "en": "Aquaponics"
+    },
+    "system.description": {
+      "fr": "<p>Un bassin à tilapias relié à des bacs de brèdes par une petite pompe : les poissons nourrissent les plantes, les plantes filtrent l'eau des poissons. Le filtre tient un mois ; il faut deux fois moins d'eau qu'un potager. Mais deux jours sans pompe tuent tout.</p>",
+      "en": "<p>A tilapia tank linked to troughs of brèdes (leafy greens) by a small pump: the fish feed the plants, the plants filter the fish's water. The filter lasts a month; it takes half the water of a vegetable plot. But two days without the pump kill everything.</p>"
+    }
+  },
+  "installations/1m3PVFvSh7697WuS": {
+    "_nom": "Clapier",
+    "name": {
+      "fr": "Clapier",
+      "en": "Rabbit hutch"
+    },
+    "system.description": {
+      "fr": "<p>Des cases de planches et de grillage, à l'ombre, une litière de paille de canne : quelques lapins nourris d'herbe coupée. De la viande sans bruit, et du fumier pour le jardin.</p>",
+      "en": "<p>Hutches of planks and wire mesh, in the shade, a litter of cane straw: a few rabbits fed on cut grass. Meat without noise, and manure for the garden.</p>"
+    }
+  },
   "installations/2oGgK1cAJxUESBcl": {
     "_nom": "Digesteur à biogaz",
     "name": {
@@ -186,6 +208,17 @@
       "en": "<p>A stone shelf against the quietest wall, a flame, a clean cloth. Each person sets there what their faith asks, a picture, a lamp, a rosary, a handful of rice, or just comes to be quiet there for a while. Nobody prays there in someone else's place.</p>"
     }
   },
+  "installations/D0N2mvtdqrLXrOlN": {
+    "_nom": "Bassin à camarons",
+    "name": {
+      "fr": "Bassin à camarons",
+      "en": "Camaron pond"
+    },
+    "system.description": {
+      "fr": "<p>Un bassin de galets au bord de la rivière, où l'eau entre et sort par deux rigoles grillagées : des camarons dans les Bas, des anguilles plus haut, pris jeunes dans la ravine. L'eau qui court se renouvelle seule.</p>",
+      "en": "<p>A pond of river stones on the bank, where the water comes in and goes out through two screened channels: camarons (river prawns) in the Lowlands, eels higher up, caught young in the ravine. Running water renews itself.</p>"
+    }
+  },
   "installations/DHDhL1EQybCNjofA": {
     "_nom": "Jarres filtrantes",
     "name": {
@@ -296,6 +329,17 @@
       "en": "<p>Bamboo racks on trestles, in the sun: herbs, chillies, coffee, seeds dry there without moulding. That way you keep far more armfuls than fit in the house.</p>"
     }
   },
+  "installations/HqAhEAApAgZNllsR": {
+    "_nom": "Bananeraie",
+    "name": {
+      "fr": "Bananeraie",
+      "en": "Banana grove"
+    },
+    "system.description": {
+      "fr": "<p>Quelques pieds de bananiers paillés, au bord de l'eau ou dans le mouillé : il faut presque une année avant le premier régime, puis chaque pied se remplace par ses rejets. Les troncs nourrissent les cochons.</p>",
+      "en": "<p>A few mulched banana plants, by the water or in the damp: it takes almost a year before the first bunch, then each plant is replaced by its suckers. The trunks feed the pigs.</p>"
+    }
+  },
   "installations/IKyHRiK5fUD91HUj": {
     "_nom": "Four à pain",
     "name": {
@@ -384,6 +428,28 @@
       "en": "<p>A hand pump on the well, or a salvaged pump reassembled by hand: twenty minutes of arm work in the morning, water for the day.</p>"
     }
   },
+  "installations/LrAYlyelchIehdFm": {
+    "_nom": "Bacs de culture en bambou",
+    "name": {
+      "fr": "Bacs de culture en bambou",
+      "en": "Bamboo growing troughs"
+    },
+    "system.description": {
+      "fr": "<p>Des bambous fendus posés sur des tréteaux, remplis de galets, où courent une eau et le jus du compost : des brèdes, des salades, des piments sans un pouce de terre. Les bacs se bouchent en une douzaine de jours si personne ne les rince.</p>",
+      "en": "<p>Split bamboos laid on trestles, filled with pebbles, where water and the juice of the compost run: brèdes (leafy greens), lettuces, chillies without an inch of soil. The troughs clog in a dozen days if nobody rinses them.</p>"
+    }
+  },
+  "installations/MlF0BotLNBKIZnTS": {
+    "_nom": "Carreau de canne",
+    "name": {
+      "fr": "Carreau de canne",
+      "en": "Cane patch"
+    },
+    "system.description": {
+      "fr": "<p>Des boutures de canne en rangs, sur une terre au soleil : il faut une année avant la première coupe, puis elle repousse seule. Du jus, du sucre, de quoi faire du rhum ou du vinaigre à l'alambic ; et la canne haute se voit de loin.</p>",
+      "en": "<p>Cane cuttings in rows, on sunny ground: it takes a year before the first cut, then it grows back on its own. Juice, sugar, the makings of rum or vinegar at the still; and tall cane can be seen from afar.</p>"
+    }
+  },
   "installations/NQriicwxAdQfOTAT": {
     "_nom": "Chemin de ronde",
     "name": {
@@ -470,6 +536,17 @@
     "system.description": {
       "fr": "<p>Un tunnel de plastique ou de vitres récupérées sur des arceaux : à l'abri des pluies battantes de l'Est et du froid des Hauts, tomates, salades et semis poussent toute l'année. Le plastique brille au soleil.</p>",
       "en": "<p>A tunnel of plastic or salvaged panes over hoops: sheltered from the driving rains of the East and the cold of the Highlands, tomatoes, lettuces and seedlings grow all year round. The plastic shines in the sun.</p>"
+    }
+  },
+  "installations/Tc2oFSCuKvPBFDFb": {
+    "_nom": "Étable",
+    "name": {
+      "fr": "Étable",
+      "en": "Cattle shed"
+    },
+    "system.description": {
+      "fr": "<p>Un abri de troncs et de gaulettes couvert de chaume, un enclos de pieux autour d'un coin d'herbe : deux bœufs moka, qu'il faut trouver dans les Hauts et mener à la corde. Du lait chaque jour, du fumier, la traction d'une charrette ; ce ne sont pas des montures.</p>",
+      "en": "<p>A shelter of trunks and gaulettes (thin poles) under thatch, a stockade around a patch of grass: two moka oxen, which have to be found in the Highlands and led on a rope. Milk every day, manure, the pull of a cart; they are not mounts.</p>"
     }
   },
   "installations/TjrH5za1ONmADZD9": {
@@ -648,6 +725,17 @@
       "en": "<p>A pen and a shelter for a few goats: milk, kids, meat for a cari, manure for the vegetable plot. They eat anything, and escape the moment you look away.</p>"
     }
   },
+  "installations/XzXd6JWw1Pz16efE": {
+    "_nom": "Soue à cochons",
+    "name": {
+      "fr": "Soue à cochons",
+      "en": "Pigsty"
+    },
+    "system.description": {
+      "fr": "<p>Un muret de moellons, une auge, un toit de tôle sur la moitié : deux cochons qu'on engraisse aux épluchures et aux troncs de bananier. Ils ne donnent rien chaque jour, sinon le fumier ; un cochon abattu nourrit le camp dix jours. Il faut d'abord en trouver, ou en prendre un en liberté.</p>",
+      "en": "<p>A low wall of rubble stone, a trough, a sheet-metal roof over half of it: two pigs fattened on peelings and banana trunks. They give nothing each day but manure; one pig slaughtered feeds the camp for ten days. You first have to find some, or catch one running free.</p>"
+    }
+  },
   "installations/YV6QqQ5VnXFjFLqE": {
     "_nom": "Haie de choka",
     "name": {
@@ -734,6 +822,17 @@
     "system.description": {
       "fr": "<p>Une fente étroite ménagée dans un mur de pierres, évasée vers l'intérieur : on voit dehors sans être vu, on tire sans être atteint. Il faut savoir monter la pierre pour qu'elle tienne autour du vide.</p>",
       "en": "<p>A narrow slit left in a stone wall, splayed towards the inside: you see out without being seen, you shoot without being reached. You need to know how to lay stone for it to hold around the gap.</p>"
+    }
+  },
+  "installations/bqnIdutpJFra4e5u": {
+    "_nom": "Jardin de zerbaz",
+    "name": {
+      "fr": "Jardin de zerbaz",
+      "en": "Zerbaz garden"
+    },
+    "system.description": {
+      "fr": "<p>Le carré de plantes à tisane au fond de la cour : ayapana, citronnelle, géranium, et celles que seuls les anciens savent nommer. Une brassée par jour, une fois qu'il a pris.</p>",
+      "en": "<p>The patch of infusion herbs at the back of the yard: ayapana, lemongrass, geranium, and the ones only the elders can name. An armful a day, once it has taken.</p>"
     }
   },
   "installations/buM4ANICgORgk41b": {
@@ -956,6 +1055,17 @@
       "en": "<p>A dry-stone tower filled with shells, bits of dead coral picked up on the beach and wood, fired for a day and a night. Out comes lime, which makes mortar and whitewash: enough to build without cement. Its white smoke rises straight and can be seen along the whole coast.</p>"
     }
   },
+  "installations/orNPCcWahzCHi7Pp": {
+    "_nom": "Treille à chouchou",
+    "name": {
+      "fr": "Treille à chouchou",
+      "en": "Chouchou trellis"
+    },
+    "system.description": {
+      "fr": "<p>Une treille de bambou où le chouchou grimpe et retombe : on mange le fruit, la racine et les brèdes. Elle cache aussi une cour sous ses feuilles.</p>",
+      "en": "<p>A bamboo trellis where the chouchou (chayote) climbs and hangs down: you eat the fruit, the root and the greens. It also hides a yard under its leaves.</p>"
+    }
+  },
   "installations/pAOIsxcqT6RfFRCQ": {
     "_nom": "Douves",
     "name": {
@@ -965,6 +1075,17 @@
     "system.description": {
       "fr": "<p>Un fossé profond creusé autour de l'abri et rempli par une dérivation de la ravine, une vanne de planches pour régler l'eau. Un Livide y tombe et n'en ressort pas seul ; les vivants passent par la passerelle. L'eau qui dort amène les moustiques : il faut la faire courir, et curer le fond.</p>",
       "en": "<p>A deep ditch dug around the shelter and filled by a channel off the ravine, a gate of planks to set the water. One of the Pallid falls in and does not climb out alone; the living cross by the footbridge. Still water brings mosquitoes: it has to run, and the bottom has to be dredged.</p>"
+    }
+  },
+  "installations/qG4RvnzesJT0qaGs": {
+    "_nom": "Serre hors-sol",
+    "name": {
+      "fr": "Serre hors-sol",
+      "en": "Soilless greenhouse"
+    },
+    "system.description": {
+      "fr": "<p>Des rampes de tuyaux sous une serre, une pompe, un fût de solution nourricière : soixante plants qui poussent vite et tombent rarement malades, tant que le courant tient et qu'on change le filtre chaque semaine. La serre brille au soleil.</p>",
+      "en": "<p>Racks of pipes under a greenhouse, a pump, a drum of nutrient solution: sixty plants that grow fast and rarely fall sick, as long as the power holds and the filter is changed every week. The greenhouse glints in the sun.</p>"
     }
   },
   "installations/r8pqEpTGmoECFVA1": {

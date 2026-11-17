@@ -10,13 +10,16 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { installerFoundry, commeJoueur, valeur } from "./doublures/foundry-survie.mjs";
 import { charger, monde, survivantTire } from "./doublures/survie-api-outils.mjs";
+import { creerHasard } from "../systems/lakour-survie/logique/hasard.mjs";
 
 installerFoundry();
 const M0 = await charger();
 
 async function partie() {
   const M = await monde(M0);
-  const a = await survivantTire(M);
+  // Un survivant tiré d'une graine fixe (vague 3) : sa parole fait la confiance du commerçant, donc le plafond du carnet ; tiré au
+  // hasard, il passait parfois le plafond que l'essai vérifie.
+  const a = await survivantTire(M, { hasard: creerHasard("essai-du-marche") });
   await M.api.demarrer({ region: "saint-pierre", membres: [a.id], graine: "essai-du-marche", essai: true });
   const ins = await M.api.installer({ site: M.api.contenu().sites.find(s => s.region === "saint-pierre").cle });
   const abri = game.actors.get(ins.abriId);

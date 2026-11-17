@@ -74,7 +74,7 @@
       "_key": "!tables.results!DLmPYNleHsBWDjM0.E3D4l7SYZNy0SrjQ",
       "type": "text",
       "name": "",
-      "description": "<p><strong>Porcelet</strong> — Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni. <em>Elle tient 30 heures hors d'un enclos ; morte, elle donne 4 de nourriture.</em></p>",
+      "description": "<p><strong>Porcelet</strong> — Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni. <em>Elle tient 30 heures hors d'un enclos ; morte, elle donne 10 de nourriture.</em></p>",
       "range": [
         4,
         4
@@ -89,7 +89,7 @@
       "_key": "!tables.results!DLmPYNleHsBWDjM0.KbmxlJbf5Z7OanoW",
       "type": "text",
       "name": "",
-      "description": "<p><strong>Veau moka</strong> — Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement. <em>Elle tient 48 heures hors d'un enclos ; morte, elle donne 10 de nourriture.</em></p>",
+      "description": "<p><strong>Veau moka</strong> — Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement. <em>Elle tient 48 heures hors d'un enclos ; morte, elle donne 20 de nourriture.</em></p>",
       "range": [
         5,
         5

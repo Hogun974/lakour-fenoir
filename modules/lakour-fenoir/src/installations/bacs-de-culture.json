@@ -1,0 +1,101 @@
+{
+  "_id": "LrAYlyelchIehdFm",
+  "_key": "!items!LrAYlyelchIehdFm",
+  "name": "Bacs de culture en bambou",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "bacs-de-culture",
+    "categorie": "nourriture",
+    "description": "<p>Des bambous fendus posés sur des tréteaux, remplis de galets, où courent une eau et le jus du compost : des brèdes, des salades, des piments sans un pouce de terre. Les bacs se bouchent en une douzaine de jours si personne ne les rince.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 1,
+          "ile": 3,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "compost",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "nourriture": 1
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 12
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "vivant": {
+            "espece": "plants-hors-sol",
+            "places": 12,
+            "plein": 12,
+            "depart": 12,
+            "filtre": 12
+          },
+          "bras": {
+            "tache": "cultures",
+            "nombre": 1
+          }
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "role": "hors-sol"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bacs-de-culture"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

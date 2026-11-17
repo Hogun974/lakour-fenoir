@@ -1,0 +1,118 @@
+{
+  "_id": "jtbKoV38Fs2rhuQN",
+  "_key": "!tables!jtbKoV38Fs2rhuQN",
+  "name": "Les bêtes de l'île — les Hauts",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on croise dans les pâturages, les landes et les fermes des Hauts.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "betes-de-l-ile-hauts",
+      "vivant": "betes-de-l-ile-hauts"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "b2CGaUXqOx6Ccm4i",
+      "_key": "!tables.results!jtbKoV38Fs2rhuQN.b2CGaUXqOx6Ccm4i",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien : le brouillard monte, on n'y voit plus à vingt pas.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "S7NPwLT9rbm8U6iN",
+      "_key": "!tables.results!jtbKoV38Fs2rhuQN.S7NPwLT9rbm8U6iN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois bœufs moka et un veau dans une prairie de la Plaine des Cafres, un vieux taureau devant (une corde, et de la patience).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZzzCuQxXyeXlV2W5",
+      "_key": "!tables.results!jtbKoV38Fs2rhuQN.ZzzCuQxXyeXlV2W5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bande de lapins dans une lande à ajoncs, au soir.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sKY3t2Id2zCyDEQ6",
+      "_key": "!tables.results!jtbKoV38Fs2rhuQN.sKY3t2Id2zCyDEQ6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Quatre cabris sur un muret de pierres sèches ; ils vous regardent passer.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kLpRPBQUT4DHM032",
+      "_key": "!tables.results!jtbKoV38Fs2rhuQN.kLpRPBQUT4DHM032",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une ferme vide : la porte de l'étable bat, une vache maigre meugle dans l'enclos (un bœuf moka qu'on peut mener).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "4yuUt1DB9OT9eEBq",
+      "_key": "!tables.results!jtbKoV38Fs2rhuQN.4yuUt1DB9OT9eEBq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des poules marronnes dans les cryptomérias d'un ancien élevage.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

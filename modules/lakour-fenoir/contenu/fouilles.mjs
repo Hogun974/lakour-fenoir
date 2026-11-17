@@ -9,6 +9,7 @@
 // parpaings, deux cents clous). Les quantités des lots restent celles du jeu 3D, en objets ; c'est `par` (combien d'objets font une
 // unité) qui les ramène aux ressources de Fénoir. Le compte est fait au tirage, à l'unité près (arrondi au hasard).
 import { html, journal, table, MODULE } from "./aides.mjs";
+import { ESPECES } from "./vivant.mjs";
 
 // ---------------------------------------------------------------- Ce que vaut un objet trouvé
 // { cle, nom, ressource, par } : `par` objets font une unité de la ressource ; ou { equipement, repli: { ressource, par } } : l'objet
@@ -257,32 +258,32 @@ const TYPES_ECART = ["ilet", "gite", "ferme", "phare", "tunnel-de-lave", "galeri
 export const sitesAvecGenres = sites => sites.map(s => ({ ...s, genre: GENRE_DES_SITES[s.cle] ?? GENRE_DES_TYPES[s.type] ?? "maison", ecart: TYPES_ECART.includes(s.type) }));
 
 // ---------------------------------------------------------------- Les bêtes trouvées en fouillant
-// nombre [min, max] ; capture : ce qui la prend (le champ `capture` des équipements) ; tient : quarts hors d'un enclos (le jeu 3D : 12 à
-// 48 heures) ; viande : la nourriture qu'elle laisse si elle meurt ou qu'on l'abat ; enclos : les installations où elle se garde ;
-// sansOutil : « file » (elle s'échappe, le lieu n'en a plus) ou « pique » (une blessure, l'essaim reste).
-const B = (cle, nom, { nombre = [1, 1], tient, viande, enclos, sansOutil = "file", description }) => ({ cle, nom, nombre, tient, viande, enclos, sansOutil, description });
+// nombre [min, max] ; capture : ce qui la prend (le champ `capture` des équipements) ; sansOutil : « file » (elle s'échappe, le lieu n'en
+// a plus) ou « pique » (une blessure, l'essaim reste). Fusion de la vague 3 : une bête trouvée est une espèce du vivant (contenu/
+// vivant.mjs, le porcelet et le veau moka sous leur alias) ; son délai hors d'un enclos (tient, en quarts : capture.horsEnclos), sa
+// viande et son enclos (l'installation dont le cheptel la prend : la basse-cour, le clapier, l'enclos à cabris, la soue, l'étable, les
+// ruches) sont ceux de son espèce, une seule fois.
+const ENCLOS_DES_ESPECES = { poule: ["basse-cour"], lapin: ["clapier"], cabri: ["enclos-a-cabris"], cochon: ["soue-a-cochons"], "boeuf-moka": ["etable"],
+  essaim: ["ruches", "ruches-en-tronc"] };
+const especeDeBete = cle => ESPECES.find(e => e.cle === cle || (e.alias ?? []).includes(cle));
+const B = (cle, nom, { nombre = [1, 1], sansOutil = "file", description }) => {
+  const e = especeDeBete(cle);
+  return { cle, nom, nombre, tient: e.capture.horsEnclos, viande: e.viande, enclos: [...ENCLOS_DES_ESPECES[e.cle]], sansOutil, description };
+};
 export const BETES_TROUVEES = [
-  B("poule", "Poule", { nombre: [1, 3], tient: 4, viande: 1, enclos: ["basse-cour"], description: `Une poule de cour, rousse et maigre, qui gratte encore derrière la case. On l'attrape avec une cage ou un sac de goni ; sinon elle file sous les fourrés.` }),
-  B("lapin", "Lapin", { nombre: [1, 2], tient: 4, viande: 1, enclos: ["basse-cour"], description: `Un lapin de clapier resté dans sa caisse, ou qui en est sorti. Une cage ou un sac de goni.` }),
-  B("cabri", "Cabri", { tient: 6, viande: 6, enclos: ["enclos-a-cabris"], description: `Un cabri attaché à un piquet qui a mangé tout ce qu'il pouvait atteindre. Il se prend à la corde, et il tire.` }),
-  B("porcelet", "Porcelet", { tient: 5, viande: 4, enclos: ["enclos-a-cabris"], description: `Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni.` }),
-  B("veau-moka", "Veau moka", { tient: 8, viande: 10, enclos: ["enclos-a-cabris"], description: `Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement.` }),
-  B("essaim", "Essaim d'abeilles", { tient: 2, viande: 0, enclos: ["ruches", "ruches-en-tronc"], sansOutil: "pique", description: `Un essaim installé dans un mur creux, un toit, une caisse : on l'entend avant de le voir. Il se prend à l'enfumoir ; sans lui, il pique, et il reste.` })
+  B("poule", "Poule", { nombre: [1, 3], description: `Une poule de cour, rousse et maigre, qui gratte encore derrière la case. On l'attrape avec une cage ou un sac de goni ; sinon elle file sous les fourrés.` }),
+  B("lapin", "Lapin", { nombre: [1, 2], description: `Un lapin de clapier resté dans sa caisse, ou qui en est sorti. Une cage ou un sac de goni.` }),
+  B("cabri", "Cabri", { description: `Un cabri attaché à un piquet qui a mangé tout ce qu'il pouvait atteindre. Il se prend à la corde, et il tire.` }),
+  B("porcelet", "Porcelet", { description: `Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni.` }),
+  B("veau-moka", "Veau moka", { description: `Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement.` }),
+  B("essaim", "Essaim d'abeilles", { sansOutil: "pique", description: `Un essaim installé dans un mur creux, un toit, une caisse : on l'entend avant de le voir. Il se prend à l'enfumoir ; sans lui, il pique, et il reste.` })
 ];
 
 // ---------------------------------------------------------------- Prendre une bête : les outils (champ `capture`) et leurs recettes
-// L'outil qui prend chaque sorte de bête (le champ `capture` des équipements). Fusion de la vague 3 : une seule fiche par outil, celle
-// du lot 6 (contenu/ateliers.mjs : cage de bambou, sac de goni, enfumoir, avec leur recette dans contenu/recettes-3d.mjs) ; la corde
-// est la corde de choka (lot « savoirs »), une seule clé ; ce qu'on trouve en fouillant (« une corde », « une cage à volailles »)
-// donne ces objets-là.
-export const CAPTURE_DES_EQUIPEMENTS = { "cordes-de-choka": ["cabri", "porcelet", "veau-moka"], "sac-de-goni": ["poule", "lapin", "porcelet"],
-  "cage-de-bambou": ["poule", "lapin"], enfumoir: ["essaim"] };
-// Les documents d'équipement reçoivent leur champ `capture` (compendium), le même que celui du registre ; posé sur place, pour que
-// les documents restent ceux que les autres fichiers exportent.
-export function documentsAvecCapture(docs) {
-  for (const d of docs) if (CAPTURE_DES_EQUIPEMENTS[d.system?.cle]) d.system.capture = [...CAPTURE_DES_EQUIPEMENTS[d.system.cle]];
-  return docs;
-}
+// L'outil qui prend chaque sorte de bête : le champ `capture` des équipements, posé par contenu/vivant.mjs (fusion de la vague 3 : une
+// seule fiche par outil, celle du lot 6, et une seule liste de ce qu'il prend, par espèce ; le porcelet et le veau moka trouvés ici
+// sont un cochon et un bœuf moka). Ce qu'on trouve en fouillant (« une corde », « une cage à volailles ») donne la corde de choka et
+// la cage de bambou.
 
 // ---------------------------------------------------------------- Les gisements et les milieux de l'île (la récolte)
 // produits : [objet, min, max] ; parQuart : gisements qu'un survivant exploite en un quart ; repousse : jours de saison des pluies avant
@@ -353,8 +354,6 @@ export const MILIEUX_DES_REGIONS = {
   cilaos: ["eboulis", "ravine", "cultures", "foret-des-hauts"], salazie: ["ravine", "cultures", "foret-des-bas", "bourg"], mafate: ["ravine", "eboulis", "savane", "cultures"]
 };
 export const regionsAvecMilieux = regions => regions.map(r => ({ ...r, milieux: [...(MILIEUX_DES_REGIONS[r.cle] ?? [])] }));
-// Le registre complet d'une famille d'équipements : ce que prend chaque outil de capture (CAPTURE_DES_EQUIPEMENTS).
-export const equipementsAvecCapture = equipements => equipements.map(e => (CAPTURE_DES_EQUIPEMENTS[e.cle] ? { ...e, capture: [...CAPTURE_DES_EQUIPEMENTS[e.cle]] } : e));
 
 // ---------------------------------------------------------------- Tables du MJ
 const NOMS_RESSOURCES = { eau: "eau", nourriture: "nourriture", carburant: "carburant", medicaments: "médicaments", munitions: "munitions", materiaux: "matériaux",
@@ -437,7 +436,7 @@ ${BETES_TROUVEES.map(b => `- **${b.nom}** (${b.nombre[0] === b.nombre[1] ? b.nom
 
 **Il faut l'outil en main** : une cage ou un sac de goni pour les volailles et les lapins, une corde pour un cabri, un porcelet, un veau, un enfumoir pour un essaim. **Sans lui**, la bête file (le lieu n'en a plus) ; l'essaim pique (une blessure au premier fouilleur) et reste.
 
-**Une bête prise** suit le groupe (fiche « Les bêtes » de la fenêtre du MJ ; betes()). Elle tient quelques quarts hors d'un enclos : ramenez-la à une installation qui la garde (« Mettre à l'enclos »), ou abattez-la (la viande va aux stocks). Passé le délai, elle meurt, et l'on mange sa viande. Une bête à l'enclos ne change pas encore la production de l'installation : l'élevage complet viendra avec « le vivant de l'abri ».` },
+**Une bête prise** suit le groupe (fiche « Les bêtes » de la fenêtre du MJ ; betes()). Elle tient quelques quarts hors d'un enclos : ramenez-la à une installation qui la garde (« Mettre à l'enclos ») : elle rejoint le cheptel de son espèce (le vivant de l'abri) ; ou abattez-la (la viande va aux stocks). Passé le délai, elle meurt, et l'on mange sa viande.` },
   { cle: "demonter", titre: "Démonter", texte: `**On récolte aussi en cassant ce qui existe.** Une case, une maison, une épave démontée rend **la moitié de ce qu'elle a coûté** : des planches, des tôles, des clous, des parpaings, des câbles, comptés en matériaux et en pièces (page « Les genres de lieux »). Une case de bois rend 12 matériaux, une maison en dur 21 matériaux et une pièce, une voiture une batterie, des roues et des ressorts (3 pièces).
 
 **C'est lent et bruyant** : de 4 quarts-personne pour une remise à 60 pour un entrepôt ; chaque quart fait du bruit (+1 ou +2, comme un chantier), et les rencontres viennent avec. **Sans outil** (pied-de-biche, barre à mine, pelle-pioche, masse, tronçonneuse, caisse à outils), deux fois plus lent. Ce qu'on démonte se rend au fur et à mesure ; on peut s'arrêter et revenir.
@@ -467,7 +466,7 @@ Ce qui se prend autrement n'est pas récolté : les **zerbaz** (cible « plantes
 - **fouiller({ cible: "demonter", … })** : démonter un lieu (il se fouille d'abord s'il n'est pas fini) ; **demonter({ installationId })** : démonter une installation de l'abri.
 - **fouiller({ cible: "matieres", gisement })** : récolter un gisement des alentours (sans gisement : le plus abondant).
 - **lieux({ region })** : les lieux de la région, ceux qu'on a vus et ce qu'on en sait ; au MJ, le degré réel. **gisements({ region })** : ce que la région a, ce qui repousse.
-- **betes()**, **enclore({ id })**, **abattre({ id })**, **relacher({ id })** : les bêtes que le groupe a prises.
+- **betes()** : les bêtes que le groupe a prises ; **mettreEnEnclos({ beteId })**, **abattre({ beteId })**, **lacherBetes({ beteId })** (le vivant de l'abri) : les mettre au cheptel, les abattre, les lâcher.
 - **acteMoral({ acte: "prendre-au-culte" })** : quand prendre dans un lieu de culte pèse.
 - Chaque fouille d'un lieu de culte laisse une ligne au journal secret ; une bête prise, perdue, morte, une au journal du groupe.
 - Le degré de pillage et le contenu d'un lieu sont secrets (le monde scellé) ; le mot, le travail fait et ce qu'on a trouvé sont publics.` }

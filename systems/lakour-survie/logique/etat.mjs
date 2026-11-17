@@ -41,6 +41,10 @@
 // Le Gris et les maladies que le groupe ne sait pas reconnaître se disent au journal public par leurs signes (le nom va au journal
 // secret) ; un mordu qui se relève devant le groupe lui apprend à nommer le Gris (groupe.grisConnu). Chaque jour : la souillure
 // de l'abri (journeeAbri), l'abri salubre aux maladies, puis le tirage de l'insalubrité (flux « insalubrite|jour »).
+// Lot 8 « Le vivant de l'abri » (vivant.mjs, contrat §27) : chaque jour, la journée du vivant (journeeAbri, flux « vivant|jour ») ;
+// ce qui arrive aux cheptels va au journal (public à l'abri, sinon secret) ; les bêtes que le groupe porte (groupe.betes) meurent
+// passé leur délai hors d'un enclos (leur viande va aux stocks de l'abri si le groupe y est, sinon à ce qu'il porte) ; le chien du
+// groupe grogne quand une horde ou des Livides viennent vers l'abri (alerte « chien »), sans bruit.
 // Journal et alertes : chaque entrée est { quart, texte (français, repli), cle, params } (textes.mjs) ; la couche Foundry affiche
 // la traduction de `cle` dans la langue de chaque navigateur. Les anciennes entrées à `texte` seul restent lisibles.
 import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, JOURNAL_SECRET_MAX, palierVisibilite, borner } from "./constantes.mjs";
@@ -73,8 +77,8 @@ import { autoriteDuJour, crisesAutorite, tributsDus, rangsDuJour, secondsDe } fr
 import { suivreQuotas } from "./gestion.mjs";
 import { noterCyclone, fenetresQuiSouvrent, plansDuMonde, plansDeLEtat, perteEtagere, etagereDeLAbri } from "./plans.mjs";
 import { compteDepart, compteDe, journeeCompte, texteCompte, supportDuCompte, journalAuDeces } from "./reperes.mjs";
-import { expirerBetes, betesDuGroupe, beteTrouvee } from "./fouilles.mjs";
 import { journeeOuvrages, messageOuvrage } from "./ouvrages.mjs";
+import { betesQuiMeurent } from "./vivant.mjs";
 
 export function etatVide() {
   return {
@@ -180,7 +184,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
   };
   const conditions = jour => ({ jour, dateDepart, personnes: personnesAbri(), reseaux: ab ? reseauxActifs(m, ab.system.region, jour) : {},
     rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu, jour), lueur: lueurDuJour(e, jour), signature: signatureDuMarche(e.marche),
-    chien: Boolean(options.chien) && aLAbri(), confort: aLAbri() ? Number(options.confort) || 0 : 0, ...sensDuJour(jour) });
+    chien: Boolean(options.chien) && aLAbri(), confort: aLAbri() ? Number(options.confort) || 0 : 0, ...sensDuJour(jour),
+    hasardVivant: m?.graine ? deriverHasard(m.graine, "vivant", jour) : null });
   let bilan = ab ? bilanAbri(ab.system, ab.installations, contenu, conditions(Math.floor(e.horloge.quart / QUARTS_PAR_JOUR))) : null;
   let palierVeille = palierVisibilite(options.visibiliteVeille ?? bilan?.visibilite ?? 0);
   // publier(quart, cle, params, texte) : une entrée du journal ; alerter(quart, type, cle, params, texte) : une alerte.
@@ -319,6 +324,19 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         publier(fin, "arrivee", { region }, `Le groupe arrive ${avecPreposition("à", region)}.`);
       } else e.groupe = { ...e.groupe, enRoute: r };
     }
+    // 3 bis. Lot 8 : les bêtes que le groupe porte meurent passé leur délai hors d'un enclos ; leur viande se mange encore.
+    if ((e.groupe.betes ?? []).length) {
+      const r = betesQuiMeurent(e.groupe.betes, { quart: fin, contenu });
+      if (r.mortes.length) {
+        e = { ...e, groupe: { ...e.groupe, betes: r.betes } };
+        const viande = r.mortes.reduce((t, b) => t + (Number(b.viande) || 0), 0);
+        if (viande > 0) {
+          if (ab && aLAbri()) ab.system = { ...ab.system, stocks: ajouterStocks(ab.system.stocks, { nourriture: viande }) };
+          else e = { ...e, groupe: { ...e.groupe, porte: ajouterStocks(e.groupe.porte ?? {}, { nourriture: viande }) } };
+        }
+        for (const b of r.mortes) publier(fin, "vivant-portee-morte", { n: b.nombre, espece: b.cle, viande: b.viande }, `Les bêtes qu'on portait (${b.nombre}) n'ont pas tenu hors d'un enclos ; il en reste ${b.viande} de viande.`);
+      }
+    }
     e.horloge = { quart: fin };
     if (fin % QUARTS_PAR_JOUR !== 0) continue;
 
@@ -354,6 +372,12 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         || (f.cle === "horde-nait" && sontVoisines(contenu, ctx.region, f.region))) alerter(fin, f.cle, cleTexteDe(f), f.params ?? {}, f.texte);
     }
     for (const x of sim.menaces) menaces.push({ jour, ...x });
+    // Lot 8 : le chien du groupe à l'abri prévient sans attirer : il grogne bas, le nez vers ce qui vient (horde, Livides).
+    if (options.chien && ab && aLAbri() && sim.menaces.some(x => ["horde", "livides"].includes(x.type))) {
+      const texte = "Le chien tourne autour de vous, le poil levé, et grogne tout bas, le nez vers la ravine : quelque chose vient.";
+      alerter(fin, "chien", "chien-grogne", {}, texte);
+      publier(fin, "chien-grogne", {}, texte);
+    }
     // Le chien du groupe s'agite avant le ciel (lot « savoirs ») : le cyclone qui vient sur la région de l'abri, le volcan qui
     // tremble (la région de l'abri ou une voisine), même sans radio.
     if (options.chien && ab && aLAbri()) {
@@ -378,6 +402,11 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       bilan = j.bilan;
       manqueNourriture = j.manque.nourriture ?? 0;
       nourris = Math.max(0, presents - manqueNourriture);
+      // Lot 8 : ce qui arrive aux cheptels (naissances, soif, morts, maladie) : au journal à l'abri, au journal secret sinon.
+      for (const x of j.vivant ?? []) {
+        if (aLAbri()) publier(fin, x.cle, x.params, x.texte);
+        else { const fx = { jour, region: ab.system.region, cle: x.cle, params: x.params, texte: x.texte, public: false, portee: "abri" }; secrets.push(fx); auJournalSecret(jour, fx); }
+      }
       if (j.boutures?.mortes && aLAbri()) publier(fin, "boutures-mortes", { n: j.boutures.mortes }, `${j.boutures.mortes} bouture${j.boutures.mortes > 1 ? "s" : ""} fanée${j.boutures.mortes > 1 ? "s" : ""} faute d'avoir été replantée${j.boutures.mortes > 1 ? "s" : ""}.`);
       const c = m.cyclone;
       if (c && c.alerte === "rouge" && c.arrivee === jour && c.trajectoire.includes(ab.system.region)) {
@@ -685,20 +714,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     }
   }
 
-  // Lot 5 « fouille » (fouilles.mjs) : une bête prise qui n'est pas à l'enclos à temps meurt ; sa viande va à l'abri (le groupe y est) ou
-  // dans ce qu'il porte.
-  if (betesDuGroupe(e).length) {
-    const x = expirerBetes(e, contenu, e.horloge.quart);
-    e = x.etat;
-    for (const { bete, viande } of x.mortes) {
-      const nom = beteTrouvee(contenu, bete.cle)?.nom ?? bete.cle;
-      if (viande > 0) {
-        if (aLAbri()) ab.system.stocks = ajouterStocks(ab.system.stocks ?? {}, { nourriture: viande });
-        else e = { ...e, groupe: { ...e.groupe, porte: ajouterStocks(e.groupe.porte ?? {}, { nourriture: viande }) } };
-      }
-      publier(e.horloge.quart, "bete-morte", { bete: nom, viande }, `${nom} : pas d'enclos à temps, elle est morte${viande ? ` (${viande} de nourriture)` : ""}.`);
-    }
-  }
+  // Les bêtes que le groupe porte (lot 5 et lot 8) n'ont qu'une expiration, celle du lot 8 (3 bis, à chaque quart : betesQuiMeurent).
 
   if (ab) bilan = bilanAbri(ab.system, ab.installations, contenu, conditions(Math.floor(e.horloge.quart / QUARTS_PAR_JOUR)));
   const changes = surv.filter(s => JSON.stringify(s.system) !== avant.get(s.id)).map(s => ({ id: s.id, system: s.system, evenements: s.evenements }));

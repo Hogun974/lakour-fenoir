@@ -62,7 +62,8 @@
           "bras": {
             "tache": "cultures",
             "nombre": 1
-          }
+          },
+          "pluieArrose": true
         },
         "materiau": "bambou-et-vacoa"
       },
@@ -114,7 +115,8 @@
           "bras": {
             "tache": "cultures",
             "nombre": 1
-          }
+          },
+          "pluieArrose": true
         },
         "materiau": "bambou-et-vacoa"
       },
@@ -171,7 +173,8 @@
           "bras": {
             "tache": "cultures",
             "nombre": 2
-          }
+          },
+          "pluieArrose": true
         },
         "materiau": "bois-sous-tole"
       }

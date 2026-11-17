@@ -24,7 +24,7 @@ async function partie({ region = "saint-denis", site = "barre-du-chaudron", grai
 
 test("API : les fonctions de la fouille existent ; hors du MJ actif, celles qui écrivent refusent", async () => {
   const { M } = await partie();
-  for (const f of ["lieux", "gisements", "betes", "enclore", "abattre", "relacher", "demonter"]) assert.equal(typeof M.api[f], "function", f);
+  for (const f of ["lieux", "gisements", "betes", "mettreEnEnclos", "abattre", "lacherBetes", "demonter"]) assert.equal(typeof M.api[f], "function", f);
   for (const [nom, args] of [["demonter", { installationId: "x" }], ["abattre", { id: "x" }], ["fouiller", { cible: "lieu", genre: "case" }]]) {
     await commeJoueur("u1", () => assert.rejects(() => M.api[nom](args), /PasMJActif/, nom));
   }
@@ -90,7 +90,7 @@ test("API : démonter une installation de l'abri — la moitié de ses coûts, e
   await assert.rejects(() => M.api.demonter({ installationId: "inconnue" }), /inconnue|Unknown/i);
 });
 
-test("API : les bêtes prises — betes(), abattre (la viande à l'abri), relâcher ; l'enclos qu'il faut", async () => {
+test("API : les bêtes prises — betes(), abattre (la viande à l'abri), relâcher ; l'enclos qu'il faut (les fonctions du lot 8 depuis la vague 3)", async () => {
   const { M, abri } = await partie();
   const etat = M.api.etat();
   const q = etat.horloge.quart;
@@ -100,12 +100,15 @@ test("API : les bêtes prises — betes(), abattre (la viande à l'abri), relâc
   const b = M.api.betes();
   assert.equal(b.length, 2);
   assert.equal(b[0].reste, 6);
-  await assert.rejects(() => M.api.enclore({ id: "b1" }), /enclos|pen/);
+  // Sans enclos à cabris à l'abri, la bête reste portée.
+  const m = await M.api.mettreEnEnclos({ beteId: "b1" });
+  assert.equal(m.betes[0].entrent, 0);
+  assert.equal(M.api.betes().length, 2);
   const avant = game.actors.get(abri.id).system.stocks.nourriture;
-  const r = await M.api.abattre({ id: "b1" });
+  const r = await M.api.abattre({ beteId: "b1" });
   assert.equal(r.viande, 6);
   assert.equal(game.actors.get(abri.id).system.stocks.nourriture, avant + 6);
-  await M.api.relacher({ id: "b2" });
+  await M.api.lacherBetes({ beteId: "b2" });
   assert.equal(M.api.betes().length, 0);
   assert.ok(M.api.etat().journal.some(j => j.cle === "Faits.bete-abattue" || j.cle === "bete-abattue"));
 });

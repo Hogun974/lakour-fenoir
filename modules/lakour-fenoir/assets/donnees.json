@@ -6912,7 +6912,8 @@
       "bras": {
        "tache": "cultures",
        "nombre": 1
-      }
+      },
+      "pluieArrose": true
      },
      "materiau": "bambou-et-vacoa"
     },
@@ -6964,7 +6965,8 @@
       "bras": {
        "tache": "cultures",
        "nombre": 1
-      }
+      },
+      "pluieArrose": true
      },
      "materiau": "bambou-et-vacoa"
     },
@@ -7021,7 +7023,8 @@
       "bras": {
        "tache": "cultures",
        "nombre": 2
-      }
+      },
+      "pluieArrose": true
      },
      "materiau": "bois-sous-tole"
     }
@@ -7212,7 +7215,8 @@
       "bras": {
        "tache": "cultures",
        "nombre": 1
-      }
+      },
+      "pluieArrose": true
      }
     },
     {
@@ -7259,7 +7263,8 @@
       "bras": {
        "tache": "cultures",
        "nombre": 1
-      }
+      },
+      "pluieArrose": true
      }
     }
    ],
@@ -7306,7 +7311,9 @@
        "riviere": false,
        "delai": 20
       },
-      "consommation": {},
+      "consommation": {
+       "eau": 0.5
+      },
       "defense": 0,
       "discretion": 0,
       "capacite": 0,
@@ -7324,6 +7331,12 @@
       "bras": {
        "tache": "elevage",
        "nombre": 1
+      },
+      "vivant": {
+       "espece": "poule",
+       "places": 6,
+       "plein": 4,
+       "depart": 3
       }
      }
     },
@@ -7357,7 +7370,9 @@
        "riviere": false,
        "delai": 20
       },
-      "consommation": {},
+      "consommation": {
+       "eau": 0.5
+      },
       "defense": 0,
       "discretion": 0,
       "capacite": 0,
@@ -7375,6 +7390,11 @@
       "bras": {
        "tache": "elevage",
        "nombre": 1
+      },
+      "vivant": {
+       "espece": "poule",
+       "places": 12,
+       "plein": 8
       }
      }
     }
@@ -7421,7 +7441,9 @@
        "riviere": false,
        "delai": 30
       },
-      "consommation": {},
+      "consommation": {
+       "eau": 1
+      },
       "defense": 0,
       "discretion": 0,
       "capacite": 0,
@@ -7439,6 +7461,12 @@
       "bras": {
        "tache": "elevage",
        "nombre": 1
+      },
+      "vivant": {
+       "espece": "cabri",
+       "places": 4,
+       "plein": 2,
+       "depart": 2
       }
      }
     },
@@ -7471,7 +7499,9 @@
        "riviere": false,
        "delai": 60
       },
-      "consommation": {},
+      "consommation": {
+       "eau": 1
+      },
       "defense": 0,
       "discretion": 0,
       "capacite": 0,
@@ -7489,6 +7519,11 @@
       "bras": {
        "tache": "elevage",
        "nombre": 1
+      },
+      "vivant": {
+       "espece": "cabri",
+       "places": 6,
+       "plein": 4
       }
      }
     }
@@ -7554,6 +7589,13 @@
       "bras": {
        "tache": "elevage",
        "nombre": 1
+      },
+      "vivant": {
+       "espece": "tilapia",
+       "places": 30,
+       "plein": 20,
+       "depart": 12,
+       "filtre": 20
       }
      },
      "materiau": "pierre-seche"
@@ -7612,6 +7654,12 @@
       "bras": {
        "tache": "elevage",
        "nombre": 1
+      },
+      "vivant": {
+       "espece": "tilapia",
+       "places": 40,
+       "plein": 30,
+       "filtre": 8
       }
      },
      "materiau": "parpaing-et-beton"
@@ -7675,6 +7723,12 @@
       "bras": {
        "tache": "elevage",
        "nombre": 1
+      },
+      "vivant": {
+       "espece": "essaim",
+       "places": 1,
+       "plein": 1,
+       "depart": 1
       }
      }
     },
@@ -7725,6 +7779,11 @@
       "bras": {
        "tache": "elevage",
        "nombre": 1
+      },
+      "vivant": {
+       "espece": "essaim",
+       "places": 1,
+       "plein": 1
       }
      }
     }
@@ -10470,7 +10529,8 @@
       "bras": {
        "tache": "cultures",
        "nombre": 1
-      }
+      },
+      "pluieArrose": true
      }
     },
     {
@@ -10521,7 +10581,8 @@
       "bras": {
        "tache": "cultures",
        "nombre": 1
-      }
+      },
+      "pluieArrose": true
      }
     }
    ],
@@ -10587,6 +10648,12 @@
       "bras": {
        "tache": "elevage",
        "nombre": 1
+      },
+      "vivant": {
+       "espece": "essaim",
+       "places": 1,
+       "plein": 1,
+       "depart": 1
       }
      }
     }
@@ -15490,6 +15557,866 @@
    "arbre": "lontan",
    "materiau": "bambou-et-vacoa",
    "expose": true
+  },
+  {
+   "nom": "Clapier",
+   "cle": "clapier",
+   "categorie": "nourriture",
+   "description": "<p>Des cases de planches et de grillage, à l'ombre, une litière de paille de canne : quelques lapins nourris d'herbe coupée. De la viande sans bruit, et du fumier pour le jardin.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 0,
+      "graines": 0,
+      "nourriture": 1,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 1
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 45
+      },
+      "consommation": {
+       "eau": 0.25
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0.005,
+      "renseignements": false,
+      "bonus": {},
+      "vivant": {
+       "espece": "lapin",
+       "places": 6,
+       "plein": 3,
+       "depart": 2
+      },
+      "bras": {
+       "tache": "elevage",
+       "nombre": 1
+      }
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 5,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [
+       "elevage"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 2
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 45
+      },
+      "consommation": {
+       "eau": 0.5
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0.01,
+      "renseignements": false,
+      "bonus": {},
+      "vivant": {
+       "espece": "lapin",
+       "places": 10,
+       "plein": 6
+      },
+      "bras": {
+       "tache": "elevage",
+       "nombre": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "nom": "Soue à cochons",
+   "cle": "soue-a-cochons",
+   "categorie": "nourriture",
+   "description": "<p>Un muret de moellons, une auge, un toit de tôle sur la moitié : deux cochons qu'on engraisse aux épluchures et aux troncs de bananier. Ils ne donnent rien chaque jour, sinon le fumier ; un cochon abattu nourrit le camp dix jours. Il faut d'abord en trouver, ou en prendre un en liberté.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 8
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 6,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [
+       "elevage"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "eau": 0.5
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 1,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0.02,
+      "renseignements": false,
+      "bonus": {},
+      "odeur": 1,
+      "vivant": {
+       "espece": "cochon",
+       "places": 4,
+       "plein": 2,
+       "depart": 0
+      },
+      "bras": {
+       "tache": "elevage",
+       "nombre": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "nom": "Étable",
+   "cle": "etable",
+   "categorie": "nourriture",
+   "description": "<p>Un abri de troncs et de gaulettes couvert de chaume, un enclos de pieux autour d'un coin d'herbe : deux bœufs moka, qu'il faut trouver dans les Hauts et mener à la corde. Du lait chaque jour, du fumier, la traction d'une charrette ; ce ne sont pas des montures.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 16
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 2,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 6,
+      "travail": 16
+     },
+     "requiert": {
+      "savoirs": [
+       "elevage"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 1
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 30
+      },
+      "consommation": {
+       "eau": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 1,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0.02,
+      "renseignements": false,
+      "bonus": {},
+      "odeur": 1,
+      "vivant": {
+       "espece": "boeuf-moka",
+       "places": 2,
+       "plein": 2,
+       "depart": 0
+      },
+      "bras": {
+       "tache": "elevage",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Bassin à camarons",
+   "cle": "bassin-a-camarons",
+   "categorie": "nourriture",
+   "description": "<p>Un bassin de galets au bord de la rivière, où l'eau entre et sort par deux rigoles grillagées : des camarons dans les Bas, des anguilles plus haut, pris jeunes dans la ravine. L'eau qui court se renouvelle seule.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 12
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 2,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [
+        "riviere",
+        "source"
+       ],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 1
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 90
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "vivant": {
+       "especes": [
+        "camaron",
+        "anguille"
+       ],
+       "places": 20,
+       "plein": 12,
+       "depart": 8
+      },
+      "bras": {
+       "tache": "elevage",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Aquaponie",
+   "cle": "aquaponie",
+   "categorie": "nourriture",
+   "description": "<p>Un bassin à tilapias relié à des bacs de brèdes par une petite pompe : les poissons nourrissent les plantes, les plantes filtrent l'eau des poissons. Le filtre tient un mois ; il faut deux fois moins d'eau qu'un potager. Mais deux jours sans pompe tuent tout.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 18
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 8,
+      "pieces": 4,
+      "graines": 0,
+      "travail": 18
+     },
+     "requiert": {
+      "savoirs": [
+       "elevage",
+       "plomberie-filtration"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 1,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 3
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 60
+      },
+      "consommation": {
+       "eau": 0.5,
+       "energie": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "vivant": {
+       "espece": "tilapia",
+       "places": 40,
+       "plein": 30,
+       "depart": 15,
+       "filtre": 30,
+       "sansPompe": 2
+      },
+      "bras": {
+       "tache": "elevage",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Bacs de culture en bambou",
+   "cle": "bacs-de-culture",
+   "categorie": "nourriture",
+   "description": "<p>Des bambous fendus posés sur des tréteaux, remplis de galets, où courent une eau et le jus du compost : des brèdes, des salades, des piments sans un pouce de terre. Les bacs se bouchent en une douzaine de jours si personne ne les rince.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 1,
+      "ile": 3,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 1,
+       "souterrain": 0
+      },
+      "installations": [
+       {
+        "cle": "compost",
+        "niveau": 1
+       }
+      ]
+     },
+     "effets": {
+      "production": {
+       "nourriture": 1
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 12
+      },
+      "consommation": {
+       "eau": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "vivant": {
+       "espece": "plants-hors-sol",
+       "places": 12,
+       "plein": 12,
+       "depart": 12,
+       "filtre": 12
+      },
+      "bras": {
+       "tache": "cultures",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "hors-sol"
+  },
+  {
+   "nom": "Serre hors-sol",
+   "cle": "serre-hydroponique",
+   "categorie": "nourriture",
+   "description": "<p>Des rampes de tuyaux sous une serre, une pompe, un fût de solution nourricière : soixante plants qui poussent vite et tombent rarement malades, tant que le courant tient et qu'on change le filtre chaque semaine. La serre brille au soleil.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 16
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 10,
+      "pieces": 4,
+      "graines": 2,
+      "travail": 16
+     },
+     "requiert": {
+      "savoirs": [
+       "maraichage-tropical",
+       "plomberie-filtration"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 1,
+       "souterrain": 0
+      },
+      "installations": [
+       {
+        "cle": "compost",
+        "niveau": 1
+       }
+      ]
+     },
+     "effets": {
+      "production": {
+       "nourriture": 4
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 20
+      },
+      "consommation": {
+       "eau": 2,
+       "energie": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 2,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "vivant": {
+       "espece": "plants-hors-sol",
+       "places": 60,
+       "plein": 60,
+       "depart": 60,
+       "filtre": 8,
+       "maladie": 0.34
+      },
+      "bras": {
+       "tache": "cultures",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "hors-sol"
+  },
+  {
+   "nom": "Jardin de zerbaz",
+   "cle": "jardin-de-zerbaz",
+   "categorie": "nourriture",
+   "description": "<p>Le carré de plantes à tisane au fond de la cour : ayapana, citronnelle, géranium, et celles que seuls les anciens savent nommer. Une brassée par jour, une fois qu'il a pris.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 2,
+      "ile": 2,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [
+       "zerbaz"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "plantes": 1
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 30
+      },
+      "consommation": {
+       "eau": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "pluieArrose": true,
+      "bras": {
+       "tache": "cultures",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Treille à chouchou",
+   "cle": "treille-a-chouchou",
+   "categorie": "nourriture",
+   "description": "<p>Une treille de bambou où le chouchou grimpe et retombe : on mange le fruit, la racine et les brèdes. Elle cache aussi une cour sous ses feuilles.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 1,
+      "ile": 3,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 1
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 90
+      },
+      "consommation": {
+       "eau": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "pluieArrose": true,
+      "bras": {
+       "tache": "cultures",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Bananeraie",
+   "cle": "bananeraie",
+   "categorie": "nourriture",
+   "description": "<p>Quelques pieds de bananiers paillés, au bord de l'eau ou dans le mouillé : il faut presque une année avant le premier régime, puis chaque pied se remplace par ses rejets. Les troncs nourrissent les cochons.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 2,
+      "ile": 2,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": [
+       {
+        "cle": "compost",
+        "niveau": 1
+       }
+      ]
+     },
+     "effets": {
+      "production": {
+       "nourriture": 2
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 300
+      },
+      "consommation": {
+       "eau": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "pluieArrose": true,
+      "bras": {
+       "tache": "cultures",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Carreau de canne",
+   "cle": "carreau-de-canne",
+   "categorie": "nourriture",
+   "description": "<p>Des boutures de canne en rangs, sur une terre au soleil : il faut une année avant la première coupe, puis elle repousse seule. Du jus, du sucre, de quoi faire du rhum ou du vinaigre à l'alambic ; et la canne haute se voit de loin.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 8
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 2,
+      "ile": 2,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 1,
+       "soleil": 1,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "nourriture": 1
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 365
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": {
+       "tache": "cultures",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan"
   }
  ],
  "savoirs": [
@@ -16224,7 +17151,12 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "capture": [
+    "tilapia",
+    "camaron",
+    "anguille"
+   ]
   },
   {
    "nom": "Cloches d'alerte",
@@ -16721,8 +17653,8 @@
    "marque": "",
    "capture": [
     "cabri",
-    "porcelet",
-    "veau-moka"
+    "cochon",
+    "boeuf-moka"
    ]
   },
   {
@@ -18455,7 +19387,7 @@
    "capture": [
     "poule",
     "lapin",
-    "porcelet"
+    "cochon"
    ]
   },
   {
@@ -26887,7 +27819,12 @@
    "description": "<p>Des cochons échappés des élevages, retournés à l'état sauvage dans les forêts et les ravines : lourds, rapides, armés de défenses naissantes.</p>",
    "comportement": "<p>Saccagent les potagers la nuit, chargent quand on les surprend. Un cochon abattu nourrit le camp une semaine.</p>",
    "faiblesse": "<p>Prévisibles : ils reviennent au même champ ; un piège ou une fosse suffit.</p>",
-   "competences": {}
+   "competences": {},
+   "espece": "cochon",
+   "groupe": [
+    2,
+    5
+   ]
   },
   {
    "cle": "rat-des-reserves",
@@ -26965,6 +27902,127 @@
     "vigilance": 2,
     "discretion": 1
    }
+  },
+  {
+   "cle": "poule-marronne",
+   "nom": "Poule marronne",
+   "categorie": "bete",
+   "espece": "poule",
+   "groupe": [
+    3,
+    7
+   ],
+   "zones": [
+    "littoral",
+    "hauts",
+    "foret",
+    "cirque"
+   ],
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "poids": 3,
+   "des": 1,
+   "resistance": 1,
+   "vitesse": "rapide",
+   "sens": "ouïe, odeur",
+   "acteur": false,
+   "description": "<p>Les poules des cours abandonnées vivent maintenant dans la canne et les bords de route, un coq devant, qui chante encore trop tôt.</p>",
+   "comportement": "<p>Elles grattent, picorent, s'envolent d'un coup quand on court vers elles. Le soir, elles se perchent dans le même manguier.</p>",
+   "faiblesse": "<p>Le soir, sur leur perchoir, elles ne bougent plus : un sac de goni, une main tranquille.</p>",
+   "competences": {}
+  },
+  {
+   "cle": "lapin-sauvage",
+   "nom": "Lapins",
+   "categorie": "bete",
+   "espece": "lapin",
+   "groupe": [
+    2,
+    5
+   ],
+   "zones": [
+    "hauts",
+    "littoral",
+    "cirque"
+   ],
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "poids": 2,
+   "des": 1,
+   "resistance": 1,
+   "vitesse": "rapide",
+   "sens": "ouïe, odeur",
+   "acteur": false,
+   "description": "<p>Des lapins échappés des clapiers, qui ont fait des petits dans les talus des cultures et les landes des Hauts.</p>",
+   "comportement": "<p>Ils sortent à l'aube et au soir ; au moindre pas, ils disparaissent dans le talus.</p>",
+   "faiblesse": "<p>Ils reviennent toujours au même trou : une cage à l'entrée, et de la patience.</p>",
+   "competences": {}
+  },
+  {
+   "cle": "cabri-marron",
+   "nom": "Cabris marrons",
+   "categorie": "bete",
+   "espece": "cabri",
+   "groupe": [
+    3,
+    6
+   ],
+   "zones": [
+    "cirque",
+    "hauts",
+    "volcan",
+    "foret"
+   ],
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "poids": 2,
+   "des": 1,
+   "resistance": 1,
+   "vitesse": "rapide",
+   "sens": "ouïe, odeur",
+   "acteur": false,
+   "description": "<p>Des cabris partis des enclos, qui vivent dans les éboulis, les remparts et les forêts sèches, là où personne ne monte.</p>",
+   "comportement": "<p>Ils regardent venir de loin, sautent d'un rocher à l'autre, et vont boire à la même vasque chaque soir.</p>",
+   "faiblesse": "<p>La vasque du soir : une corde, quelqu'un qui attend sans bouger.</p>",
+   "competences": {}
+  },
+  {
+   "cle": "boeuf-moka-sauvage",
+   "nom": "Bœufs moka",
+   "categorie": "bete",
+   "espece": "boeuf-moka",
+   "groupe": [
+    2,
+    4
+   ],
+   "zones": [
+    "hauts",
+    "volcan"
+   ],
+   "phases": [
+    "effondrement",
+    "silence",
+    "apres"
+   ],
+   "poids": 1,
+   "des": 1,
+   "resistance": 1,
+   "vitesse": "marche",
+   "sens": "ouïe, odeur",
+   "acteur": false,
+   "description": "<p>Des bœufs moka des fermes de la Plaine des Cafres, lâchés le jour zéro : ils paissent les pâturages et les landes, un tiers de veaux, un vieux taureau devant.</p>",
+   "comportement": "<p>Lents, méfiants ; ils ne fuient qu'au dernier moment, et loin. Un taureau qu'on serre de trop près peut charger.</p>",
+   "faiblesse": "<p>Le sel, et la voix calme de quelqu'un qui a déjà mené des bêtes : avec l'élevage, on les approche.</p>",
+   "competences": {}
   }
  ],
  "enfances": [
@@ -29238,7 +30296,7 @@
       "niveau": 1
      },
      {
-      "cle": "potager",
+      "cle": "jardin-creole",
       "niveau": 2
      },
      {
@@ -43760,7 +44818,7 @@
    "tient": 4,
    "viande": 1,
    "enclos": [
-    "basse-cour"
+    "clapier"
    ],
    "sansOutil": "file",
    "description": "Un lapin de clapier resté dans sa caisse, ou qui en est sorti. Une cage ou un sac de goni."
@@ -43788,9 +44846,9 @@
     1
    ],
    "tient": 5,
-   "viande": 4,
+   "viande": 10,
    "enclos": [
-    "enclos-a-cabris"
+    "soue-a-cochons"
    ],
    "sansOutil": "file",
    "description": "Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni."
@@ -43803,9 +44861,9 @@
     1
    ],
    "tient": 8,
-   "viande": 10,
+   "viande": 20,
    "enclos": [
-    "enclos-a-cabris"
+    "etable"
    ],
    "sansOutil": "file",
    "description": "Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement."
@@ -44441,6 +45499,265 @@
      "part": 4
     }
    ]
+  }
+ ],
+ "especes": [
+  {
+   "cle": "poule",
+   "nom": "Poule péi",
+   "genre": "betes",
+   "taux": 0.08,
+   "viande": 1,
+   "mange": "restes",
+   "maladie": 0.02,
+   "altitude": null,
+   "remede": {
+    "cout": {
+     "plantes": 1
+    },
+    "texte": "une tisane de zerbaz (une brassée)"
+   },
+   "capture": {
+    "difficulte": "facile",
+    "outils": [
+     "cage-de-bambou",
+     "cage",
+     "sac-de-goni"
+    ],
+    "horsEnclos": 4
+   },
+   "produit": "Des œufs (une ration de nourriture vaut quatre œufs), et une poule au cari les jours de fête."
+  },
+  {
+   "cle": "lapin",
+   "nom": "Lapin",
+   "genre": "betes",
+   "taux": 0.1,
+   "viande": 1,
+   "mange": "herbe",
+   "maladie": 0.02,
+   "altitude": null,
+   "remede": {
+    "cout": {
+     "plantes": 1
+    },
+    "texte": "une tisane de zerbaz (une brassée)"
+   },
+   "capture": {
+    "difficulte": "normale",
+    "outils": [
+     "cage-de-bambou",
+     "cage",
+     "sac-de-goni"
+    ],
+    "horsEnclos": 4
+   },
+   "produit": "De la viande sans bruit, du fumier pour le jardin."
+  },
+  {
+   "cle": "cabri",
+   "nom": "Cabri",
+   "genre": "betes",
+   "taux": 0.02,
+   "viande": 6,
+   "mange": "herbe",
+   "maladie": 0.01,
+   "altitude": null,
+   "remede": {
+    "cout": {
+     "plantes": 1
+    },
+    "texte": "une tisane de zerbaz (une brassée)"
+   },
+   "capture": {
+    "difficulte": "normale",
+    "outils": [
+     "cordes-de-choka",
+     "corde"
+    ],
+    "horsEnclos": 6
+   },
+   "produit": "Du lait, des chevreaux, du fumier ; un cabri abattu, six rations et une peau."
+  },
+  {
+   "cle": "cochon",
+   "nom": "Cochon",
+   "genre": "betes",
+   "taux": 0.03,
+   "viande": 10,
+   "mange": "restes",
+   "maladie": 0.01,
+   "altitude": null,
+   "remede": {
+    "cout": {
+     "plantes": 1
+    },
+    "texte": "une tisane de zerbaz (une brassée)"
+   },
+   "alias": [
+    "porcelet"
+   ],
+   "capture": {
+    "difficulte": "normale",
+    "outils": [
+     "cordes-de-choka",
+     "corde",
+     "sac-de-goni"
+    ],
+    "horsEnclos": 5
+   },
+   "produit": "Rien chaque jour, sinon le fumier : on l'engraisse aux restes et aux troncs de bananier, et un cochon nourrit le camp dix jours."
+  },
+  {
+   "cle": "boeuf-moka",
+   "nom": "Bœuf moka",
+   "genre": "betes",
+   "taux": 0.004,
+   "viande": 20,
+   "mange": "herbe",
+   "maladie": 0.01,
+   "altitude": null,
+   "remede": {
+    "cout": {
+     "plantes": 1
+    },
+    "texte": "une tisane de zerbaz (une brassée)"
+   },
+   "alias": [
+    "veau-moka"
+   ],
+   "capture": {
+    "difficulte": "normale",
+    "outils": [
+     "cordes-de-choka",
+     "corde"
+    ],
+    "horsEnclos": 8
+   },
+   "produit": "Du lait, du fumier, la traction d'une charrette ; abattu, vingt rations et trois peaux."
+  },
+  {
+   "cle": "essaim",
+   "nom": "Essaim d'abeilles",
+   "genre": "essaim",
+   "taux": 0,
+   "viande": 0,
+   "mange": "",
+   "maladie": 0.01,
+   "altitude": null,
+   "remede": {
+    "cout": {
+     "plantes": 1
+    },
+    "texte": "une tisane de zerbaz (une brassée)"
+   },
+   "capture": {
+    "difficulte": "normale",
+    "outils": [
+     "enfumoir"
+    ],
+    "horsEnclos": 2
+   },
+   "produit": "Le miel, la cire des bougies, des fleurs qui donnent mieux."
+  },
+  {
+   "cle": "tilapia",
+   "nom": "Tilapia",
+   "genre": "poissons",
+   "taux": 0.05,
+   "viande": 0.25,
+   "mange": "restes",
+   "maladie": 0.02,
+   "altitude": [
+    0,
+    900
+   ],
+   "remede": {
+    "cout": {
+     "eau": 4
+    },
+    "texte": "l'eau changée, une poignée de sel (quatre d'eau)"
+   },
+   "capture": {
+    "difficulte": "normale",
+    "outils": [
+     "collets-et-nasses"
+    ],
+    "horsEnclos": 2
+   },
+   "produit": "Du poisson (quatre tilapias font une ration)."
+  },
+  {
+   "cle": "camaron",
+   "nom": "Camaron",
+   "genre": "poissons",
+   "taux": 0.02,
+   "viande": 0.5,
+   "mange": "restes",
+   "maladie": 0.02,
+   "altitude": [
+    0,
+    500
+   ],
+   "remede": {
+    "cout": {
+     "eau": 4
+    },
+    "texte": "l'eau changée, une poignée de sel (quatre d'eau)"
+   },
+   "capture": {
+    "difficulte": "normale",
+    "outils": [
+     "collets-et-nasses"
+    ],
+    "horsEnclos": 2
+   },
+   "produit": "Le camaron de la rivière, le plat des grands jours (deux font une ration)."
+  },
+  {
+   "cle": "anguille",
+   "nom": "Anguille",
+   "genre": "poissons",
+   "taux": 0.01,
+   "viande": 0.5,
+   "mange": "restes",
+   "maladie": 0.02,
+   "altitude": [
+    0,
+    1200
+   ],
+   "remede": {
+    "cout": {
+     "eau": 4
+    },
+    "texte": "l'eau changée, une poignée de sel (quatre d'eau)"
+   },
+   "capture": {
+    "difficulte": "normale",
+    "outils": [
+     "collets-et-nasses"
+    ],
+    "horsEnclos": 2
+   },
+   "produit": "L'anguille des bassins, lente à venir (deux font une ration)."
+  },
+  {
+   "cle": "plants-hors-sol",
+   "nom": "Plants hors-sol",
+   "genre": "plants",
+   "taux": 0,
+   "viande": 0,
+   "mange": "solution",
+   "maladie": 0.03,
+   "altitude": null,
+   "remede": {
+    "cout": {
+     "ile": 1
+    },
+    "texte": "de la lessive de cendre (du bois des alentours)"
+   },
+   "capture": null,
+   "produit": "Des brèdes surtout, des salades dans les Hauts, des tomates et des piments dans les Bas."
   }
  ]
 }

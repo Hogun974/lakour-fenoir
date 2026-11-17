@@ -8,8 +8,8 @@
 //   lieux({ region })                         -> les lieux de la région par genre (combien, ceux qu'on a vus, ce qu'on en sait) ; au MJ, le
 //                                                degré réel des lieux visités
 //   gisements({ region })                     -> les milieux et les gisements de la région, ce qui est disponible, ce qui repousse
-//   betes()                                   -> les bêtes que le groupe a prises (et le temps qu'il leur reste)
-//   enclore({ id }) / abattre({ id }) / relacher({ id })
+//   betes()                                   -> les bêtes que le groupe a prises (et le temps qu'il leur reste) ; les mettre en enclos, les
+//                                                abattre, les lâcher : mettreEnEnclos, abattre({ beteId }), lacherBetes du lot 8 (api-vivant.mjs)
 //   demonter({ installationId, membres })     -> démonter une installation de l'abri : la moitié de ses coûts ; le temps passe
 import * as L from "../logique/index.mjs";
 import { t, lireEtat, acteur, survivantsDuGroupe, abriCourant, aPlat } from "./donnees.mjs";
@@ -18,7 +18,7 @@ export function fonctionsFouilles({ ecriture, ouvrirCtx, terminer, noter, tx, jo
   ecrireSurvivant, avancerInterne, membresValides, donneesObjet, objetsDe, defDe, instancesDe, aLAbri, mondeMJ, texteStocks, journalSecret, motifLisible }) {
   const nomRegion = cle => L.regionDe(contenu(), cle)?.nom ?? cle;
   const nomGenre = cle => L.genreFouille(contenu(), cle)?.nom ?? cle;
-  const nomBete = cle => L.beteTrouvee(contenu(), cle)?.nom ?? cle;
+  const nomBete = cle => L.beteTrouvee(contenu(), cle)?.nom ?? L.especeDe(contenu(), cle)?.nom ?? cle;
   const nomObjet = cle => { const n = String(L.objetDeFouille(contenu(), cle)?.nom ?? cle); return n.charAt(0).toLowerCase() + n.slice(1); };
   // Les clés des équipements que portent des survivants (pour prendre une bête, démonter, récolter).
   const equipementsDe = qui => [...new Set(qui.flatMap(a => objetsDe(a, "equipement").map(i => i.system?.cle).filter(Boolean)))];
@@ -46,7 +46,7 @@ export function fonctionsFouilles({ ecriture, ouvrirCtx, terminer, noter, tx, jo
     if (r.bete) {
       const b = r.bete;
       if (b.issue === "prise") {
-        const x = L.ajouterBete(ctx.etat, { cle: b.cle, nombre: b.nombre, quart: ctx.etat.horloge.quart, tient: b.tient });
+        const x = L.ajouterBete(ctx.etat, { cle: b.cle, nombre: b.nombre, quart: ctx.etat.horloge.quart, contenu: contenu() });
         ctx.etat = x.etat;
         sortie.bete = { ...x.bete, nom: nomBete(b.cle), issue: "prise" };
       } else if (b.issue === "pique" && qui[0]) {
@@ -107,41 +107,10 @@ export function fonctionsFouilles({ ecriture, ouvrirCtx, terminer, noter, tx, jo
       enclosNom: b.enclos ? defDe("installations", b.enclos)?.nom ?? b.enclos : "" }));
   }
 
-  // ---------------------------------------------------------------- écritures
-  async function retirer(id, abattre) {
-    const ctx = ouvrirCtx();
-    const r = L.retirerBete(ctx.etat, contenu(), id, { abattre });
-    if (!r.ok) throw clair(motifLisible(r));
-    ctx.etat = r.etat;
-    if (r.viande > 0) {
-      const ab = abriCourant(ctx.etat);
-      if (ab && aLAbri(ctx.etat, ab)) await ab.update({ system: { stocks: L.ajouterStocks(aPlat(ab.system).stocks, { nourriture: r.viande }) } });
-      else ctx.etat.groupe.porte = L.ajouterStocks(ctx.etat.groupe.porte ?? {}, { nourriture: r.viande });
-    }
-    noter(ctx, abattre ? tx("Faits.bete-abattue", { bete: nomBete(r.bete.cle), viande: r.viande }) : tx("Faits.bete-relachee", { bete: nomBete(r.bete.cle) }));
-    await terminer(ctx);
-    return { ok: true, viande: r.viande };
-  }
-
   const api = {
     lieux: (args = {}) => lieux(args),
     gisements: (args = {}) => gisements(args),
     betes: () => betes(),
-    enclore: ecriture(async ({ id } = {}) => {
-      const ctx = ouvrirCtx();
-      const ab = abriCourant(ctx.etat);
-      if (!ab) throw erreur("SansAbri");
-      if (!aLAbri(ctx.etat, ab)) throw erreur("PasALAbri");
-      const r = L.enclore(ctx.etat, contenu(), id, { installations: instancesDe(ab), site: ab.system.site });
-      if (!r.ok) throw clair(motifLisible(r));
-      ctx.etat = r.etat;
-      const b = L.betesDuGroupe(ctx.etat).find(x => x.id === id);
-      noter(ctx, tx("Faits.bete-enclose", { bete: nomBete(b?.cle), enclos: defDe("installations", r.enclos)?.nom ?? r.enclos }));
-      await terminer(ctx);
-      return { ok: true, enclos: r.enclos };
-    }),
-    abattre: ecriture(async ({ id } = {}) => retirer(id, true)),
-    relacher: ecriture(async ({ id } = {}) => retirer(id, false)),
     // Démonter une installation de l'abri (la moitié de ses coûts, tous niveaux compris ; un tiers de son travail ; le plan reste au carnet).
     demonter: ecriture(async ({ installationId, membres = [] } = {}) => {
       const ctx = ouvrirCtx();

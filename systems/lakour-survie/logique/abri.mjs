@@ -85,6 +85,14 @@
 // - `effets.lumiere` (lampes, éclairage) : bilan.lumiere, l'abri est éclairé la nuit (lot « sens »).
 // - Cyclone : la chance par point de dégâts suit le matériau (chanceCyclone : 25 % pour le bois sous tôle, comme avant), et une
 //   définition peut se dire exposée (`expose`) quelle que soit sa catégorie (exposeeAuCyclone).
+// Lot 8 « Le vivant de l'abri » (docs/equilibre-vivant.md, contrat §27 ; logique/vivant.mjs) :
+// - Un cheptel ou un bac (`effets.vivant` d'un niveau) produit × min(1, têtes ÷ plein) × sa vigueur (santé), moitié hors de
+//   l'altitude de son espèce ; vide, il ne boit ni ne mange. Son état est dans `abri.vivant` (journeeVivant, à la fin de la journée).
+// - La pluie arrose ce qui pousse à ciel ouvert (`effets.pluieArrose`) : un jour de pluie (conditions.pluie ≥ 0,5), il ne prend pas d'eau.
+// - Un cheptel qui a eu faim ou soif crie : +1 au bruit de l'abri (+2 au plus).
+// - Le chien du groupe présent ajoute +1 de vigilance à ce qu'apportent les installations (au plus +2), sans bruit (il prévient
+//   sans attirer : savoirs.mjs, vigilanceAvecChien).
+// - bilan.cheptels : chaque cheptel (têtes, places, santé, malade, manques) ; journeeAbri rend `vivant` (ce qui est arrivé).
 import { ORDRE_DELESTAGE, RESSOURCES, NATURE, SEUIL_AUTONOMIE, COUT_ILE, borner } from "./constantes.mjs";
 import { installationDe, regionDe, siteDe, niveauDe, niveauMaxDe, natureRegion, indexer } from "./contenu.mjs";
 import { consommationJour, pertesJour, plafonds, joursDeStocks, normaliserStocks, journeeStocks, couvre, retirerStocks } from "./ressources.mjs";
@@ -95,6 +103,8 @@ import { tirerPoids } from "./hasard.mjs";
 import { odeurAbri } from "./sens.mjs";
 import { insalubrite as niveauInsalubrite, niveauHygiene, souillureDe, souillureDuJour } from "./corps.mjs";
 import { chanceCyclone, exposeeAuCyclone, facteurEntretien, haieFermee } from "./ouvrages.mjs";
+import { vivantDuNiveau, etatCheptel, facteurCheptel, especeDe, criDuVivant, arroseParLaPluie, cheptelsDe, journeeVivant } from "./vivant.mjs";
+import { vigilanceAvecChien } from "./savoirs.mjs";
 
 export const FACTEUR_ETAT = [1, 0.75, 0.5, 0];
 export const SAISON_PLUIE = { pluies: 1, seche: 0.5 };
@@ -199,12 +209,18 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     if (bras?.tache) f *= facteurBras(bras, conditions.travailleurs?.[bras.tache] ?? []);
     // Lot 7 : encrassée (panneaux sales, roue bouchée), elle produit moins, ou plus du tout.
     f *= facteurEntretien(inst, def, niveau);
+    // Lot 8 : un cheptel ou un bac produit selon ses têtes et sa santé ; vide, il ne boit ni ne mange.
+    const vv = vivantDuNiveau(def, niveau);
+    const cheptel = vv ? etatCheptel(abri, inst, def, contenu, { jour: c.jour, altitude: c.region.altitude }) : null;
+    if (cheptel) f *= facteurCheptel(cheptel, vv, especeDe(contenu, cheptel.espece), { altitude: c.region.altitude }).facteur;
+    const vide = Boolean(cheptel && cheptel.tetes <= 0);
+    const eauConso = vide || arroseParLaPluie(e, conditions) ? 0 : Number(e.consommation?.eau) || 0;
     const production = {};
     for (const [r, q] of Object.entries(e.production ?? {})) production[r] = (Number(q) || 0) * f;
     lignes.push({
       cle: inst.cle, categorie: def.categorie, niveau, e, production, horsService: fEtat === 0, role: roleDe(def), rang: rangDe(def), bois: (Number(e.bois) || 0) * f,
-      consommation: { energie: Number(e.consommation?.energie) || 0, carburant: Number(e.consommation?.carburant) || 0, eau: Number(e.consommation?.eau) || 0,
-        nourriture: Number(e.consommation?.nourriture) || 0, gaz: Number(e.consommation?.gaz) || 0 },
+      consommation: { energie: Number(e.consommation?.energie) || 0, carburant: Number(e.consommation?.carburant) || 0, eau: eauConso,
+        nourriture: vide ? 0 : Number(e.consommation?.nourriture) || 0, gaz: Number(e.consommation?.gaz) || 0 },
       peutMarcher: fEtat > 0 && inst.actif !== false, enMarche: fEtat > 0 && inst.actif !== false, sol: demandeSol(def, niveau)
     });
   }
@@ -285,8 +301,8 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   // pas hors service (même règle qu'un test à l'abri, scripts/api.mjs modificateursDuTest).
   const bonus = {};
   for (const l of structurelles) for (const [k, n] of Object.entries(l.e.bonus ?? {})) bonus[k] = Math.max(bonus[k] ?? 0, Number(n) || 0);
-  // Un chien du groupe présent : il entend avant la garde (vigilance +1, comme une installation).
-  if (conditions.chien) bonus.vigilance = Math.max(bonus.vigilance ?? 0, 1);
+  // Un chien du groupe présent : il entend avant la garde, et prévient sans attirer (lot 8 : +1 sur les installations, au plus +2).
+  if (conditions.chien) bonus.vigilance = vigilanceAvecChien(bonus.vigilance ?? 0, true);
 
   const production = {};
   const reliquats = {};
@@ -342,7 +358,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   const bilan = {
     defense, discretion, capacite,
     visibilite: borner(Math.round(visibiliteBrute), 0, 10),
-    bruit: sommeEffet(actives, "bruit") + Math.max(0, Math.round(Number(conditions.musique) || 0)),
+    bruit: sommeEffet(actives, "bruit") + Math.max(0, Math.round(Number(conditions.musique) || 0)) + criDuVivant(abri),
     protectionCyclone,
     soins: sommeEffet(actives, "soins"),
     moral: sommeEffet(actives, "moral") + moralChien + moralObjets,
@@ -366,7 +382,9 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     autonome: net.eau >= 0 && net.nourriture >= 0 && net.energie >= 0,
     // Lot 7 : le bois que les touffes de bambous rendent aux alentours ; l'abri éclairé la nuit.
     bois: Math.round(actives.reduce((t, l) => t + l.bois, 0) * 100) / 100,
-    lumiere: actives.some(l => Boolean(l.e.lumiere))
+    lumiere: actives.some(l => Boolean(l.e.lumiere)),
+    // Lot 8 : les cheptels et les bacs de l'abri.
+    cheptels: cheptelsDe(abri, installations, contenu, { jour: c.jour, altitude: c.region.altitude })
   };
   bilan.joursDeStocks = joursDeStocks(stocks, net);
   return bilan;
@@ -389,7 +407,12 @@ export function journeeAbri(abri = {}, installations = [], contenu = {}, conditi
       pluie: Number(conditions.pluie) || 0 }),
     nature: regarnir(regenererNature(abri.nature, c.region, { saison: c.saison, mois }), c.region, bilan.bois)
   };
-  return { abri: nouveau, bilan, manque: r.manque, pertes: r.pertes, perdus: r.perdus, boutures: { repiquees: b.repiquees, mortes: b.mortes } };
+  // Lot 8 : la journée du vivant (santé, naissances, morts, maladie ; flux de hasard conditions.hasardVivant, sans lui : pas de maladie).
+  const v = journeeVivant({ abri: nouveau, installations, contenu, bilan, conditions: { ...conditions, jour: c.jour, personnes: c.personnes },
+    manqueNourriture: r.manque.nourriture ?? 0, hasard: conditions.hasardVivant ?? null });
+  if (Object.keys(v.vivant).length || abri.vivant) nouveau.vivant = v.vivant;
+  if (v.stocks.graines !== nouveau.stocks.graines) nouveau.stocks = { ...nouveau.stocks, graines: Math.max(0, Math.floor(Number(v.stocks.graines) || 0)) };
+  return { abri: nouveau, bilan, manque: r.manque, pertes: r.pertes, perdus: r.perdus, boutures: { repiquees: b.repiquees, mortes: b.mortes }, vivant: v.evenements };
 }
 
 // Lot 7 : le bois qu'une touffe de bambous rend aux alentours, jusqu'au plafond de la région.

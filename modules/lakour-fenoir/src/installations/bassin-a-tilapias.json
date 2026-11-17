@@ -62,6 +62,13 @@
           "bras": {
             "tache": "elevage",
             "nombre": 1
+          },
+          "vivant": {
+            "espece": "tilapia",
+            "places": 30,
+            "plein": 20,
+            "depart": 12,
+            "filtre": 20
           }
         },
         "materiau": "pierre-seche"
@@ -120,6 +127,12 @@
           "bras": {
             "tache": "elevage",
             "nombre": 1
+          },
+          "vivant": {
+            "espece": "tilapia",
+            "places": 40,
+            "plein": 30,
+            "filtre": 8
           }
         },
         "materiau": "parpaing-et-beton"

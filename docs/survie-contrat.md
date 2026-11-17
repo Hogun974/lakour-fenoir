@@ -1667,9 +1667,8 @@ des sites ; un lieu de culte ne rend rien de convoité hors l'eau.
   des réserves de la région (`monde.regions[r].pillage`) ; un lieu fouillé jusqu'au bout est `fini`. Refus : `lieu-genre-inconnu`,
   `lieu-aucun`, `lieu-ailleurs`, `lieu-demonte-deja`, `lieu-fini`.
 - **Les bêtes** : `tirerBeteDuLieu` (une au plus) × (1 − degré)² ; `prendBete(contenu, equipements, bete)` ; issue `prise`, `file` ou
-  `pique` (l'essaim reste). État public `groupe.betes: [{ id, cle, nombre, prisLe, jusqua, enclos, abri }]` : `ajouterBete`,
-  `expirerBetes` (la viande), `enclore` (une installation de `enclos` en service ; refus `bete-sans-enclos`), `retirerBete` (abattre ou
-  relâcher), `betesDuGroupe`.
+  `pique` (l'essaim reste). État public `groupe.betes`, à la forme du §27 (une seule liste, une seule expiration : `betesQuiMeurent`
+  du §27 ; voir §29) : `ajouterBete` (par `porterBete`), `retirerBete` (abattre, la viande de l'espèce, ou relâcher), `betesDuGroupe`.
 - **Démonter** : `demonterLieu(…)` (un lieu pas fini se fouille d'abord ; `demontage.rend` au prorata du travail, deux fois plus lent
   sans un outil de `REGLES_FOUILLES.demontage.outils` ; refus `lieu-indemontable`, `lieu-site`) ; `demontageInstallation(instance, def)`
   → `{ rend, travail }` (la moitié des coûts des niveaux faits, `ile` en matériaux ; un tiers du travail).
@@ -1696,11 +1695,12 @@ des sites ; un lieu de culte ne rend rien de convoité hors l'eau.
   au groupe, l'essaim pique le premier fouilleur (une blessure) ; le rappel d'un lieu de culte va au journal secret ; le résultat porte
   en plus `lieu`, `trouve`, `objets`, `bete`, `culte`, `gisement`. Lecture : `lieux({ region })` (les genres, les lieux vus ; au MJ, le
   degré réel), `gisements({ region })` (milieux, gisements ; au MJ, ce qui est disponible), `betes()`. Écriture (MJ actif, monde ouvert) :
-  `enclore({ id })`, `abattre({ id })`, `relacher({ id })`, `demonter({ installationId, membres })` (le temps passe : ⌈travail ÷ bras⌉
+  `demonter({ installationId, membres })` ; les bêtes prises se mettent au cheptel, s'abattent ou se lâchent par les fonctions du §27
+  (`mettreEnEnclos({ beteId })`, `abattre({ beteId })`, `lacherBetes({ beteId })` ; §29) (le temps passe : ⌈travail ÷ bras⌉
   quarts ; le plan reste au carnet).
 - Équipement (§3.4) : `capture: [clé de bête]` (`gmOnlyFields`).
 - Fenêtre du MJ, onglet Actions : cibles « Un lieu », « Démonter un lieu », « Matières de l'île », le genre de lieu de la région, « à
-  l'écart », le gisement ; formulaires « Démonter une installation » et « Les bêtes prises » (mettre à l'enclos, abattre, relâcher).
+  l'écart », le gisement ; formulaires « Démonter une installation » et « Les bêtes prises » (mettre à l'enclos, abattre, relâcher : les appels du §27).
 - Contenu : 95 objets, 24 genres, 6 bêtes, 16 gisements, 11 milieux ; équipements `corde`, `sac-de-goni`, `cage`, `enfumoir` et trois
   recettes ; 37 tables (« Fouille — … » par genre, « Récolte — … » par milieu, ce qu'on lit en arrivant, une bête dans la cour) ;
   journal du MJ « Fouiller, démonter, récolter » ; page « Fouiller, démonter, récolter » du guide du joueur.
@@ -1790,3 +1790,80 @@ au cyclone), une instance sans suivi commence à compter le jour où le système
 - Fenêtre du MJ, onglet Partie : bloc « Bâtir et défendre » (défenses, risque d'éboulement, entretiens dus) et formulaires « Entretenir une
   installation », « Le feu à l'abri ». Fiche de l'abri : le matériau de chaque installation et son entretien (dans N jours, à faire,
   encrassée).
+
+## 27. Le vivant de l'abri : élevage, cultures et bêtes de l'île (lot 8 du portage du jeu 3D, 2026-11-17)
+
+Lot 8 de l'inventaire du jeu 3D : « une seule règle pour tout ce qui vit à l'abri » (famille 9, demande de Jordan du 15 novembre),
+l'eau exigée pour tout ce qui boit (16 novembre), les bêtes trouvées des deux façons (16 novembre), le chien qui prévient sans attirer
+(famille 10, 17 novembre), le reste validé le 17 (« tout maintenant »). Chiffres et raisons : `docs/equilibre-vivant.md`. Logique :
+`logique/vivant.mjs` (nouveau), le chien dans `savoirs.mjs`, crochets dans `abri.mjs` (bilan, journée) et `etat.mjs` (avancer). API :
+`scripts/api-vivant.mjs` (nouveau). Contenu : `contenu/vivant.mjs` (nouveau). **À part les chiens, les animaux s'élèvent, ils ne
+s'apprivoisent pas, et ce ne sont pas des montures** (la charrette à bœufs reste de la traction). Rien n'est retiré ni renommé : un abri
+sans `vivant` a des cheptels pleins et en santé ; la production de base de la basse-cour, de l'enclos à cabris, du bassin à tilapias et
+des ruches ne change pas ; la maladie tire dans son propre flux (« vivant|jour ») et ne change aucun autre tirage.
+
+### 27.1 Règles (logique pure, `logique/vivant.mjs`)
+- **Un cheptel** (ou un bac de plants) : un niveau d'installation porte `effets.vivant: { espece | especes: [clé], places, plein, depart?,
+  filtre? (jours), sansPompe? (jours), maladie? (facteur) }` ; son état est `abri.vivant[clé d'installation]` = `{ espece, tetes, sante 0..3,
+  malade: { depuis } | null, manques: [mot], naissances (reliquat), filtreLe, sansPompe, depuis }`. `etatCheptel(abri, inst, def, contenu,
+  { jour, altitude })` : absent, `plein` têtes (une installation d'un site ou d'une partie d'avant) ou `depart` (achevée depuis un jour au
+  plus : `REGLES_VIVANT.recent`) ; `vivantDuNiveau`, `estVivante`, `especesPossibles`, `especeParDefaut` (la première qui vit à cette
+  altitude), `dansSonAltitude`, `especesDe`, `especeDe`.
+- **Production** : `facteurCheptel(st, v, espece, { altitude })` = min(1, têtes ÷ plein) × vigueur (`REGLES_VIVANT.vigueur` : santé 0 rien,
+  1 moitié, 2 et 3 entière) × ½ hors de l'altitude de l'espèce ; un cheptel vide ne boit ni ne mange.
+- **La journée** : `journeeVivant({ abri, installations, contenu, bilan, conditions, manqueNourriture, hasard })` → `{ vivant, stocks,
+  evenements }`. Chaque manque ôte 1 de santé (`MANQUES_VIVANT` : `soif` = arrêt faute d'eau, ou installation éteinte ; `faim` selon `espece.mange` : `restes` quand
+  personne n'a mangé ce jour-là ou personne n'est là, `herbe` sur un site sans terre sans personne à l'élevage, `solution` sans compost en
+  service ; `panne` = hors service ou sans courant ; `eau-sale` = filtre passé son temps, sauf quelqu'un à la tâche du genre,
+  `TACHE_VIVANT` ; `ombre` ; `surpopulation`) ; malade, −1 tous les deux jours ; un jour sans aucun mal, +1 ; à 0, un tiers meurt (au moins
+  un) ; `sansPompe` jours d'arrêt d'affilée : tout meurt. Naissances : santé ≥ 2, pas malade, dans son altitude, deux têtes et une place :
+  ⌊têtes ÷ 2⌋ × `espece.taux` par jour (reliquat). Plants : un semis par jour à la tâche « cultures » (une graine, six plants). Maladie :
+  `espece.maladie` × `v.maladie` × l'insalubrité de l'abri (¼, ½, ¾, 1) ; elle passe seule à 10 % par jour.
+- **Gestes** : `peuplerCheptel`, `abattreCheptel` (viande = têtes × `espece.viande`, à l'entier inférieur), `soignerCheptel(st, test)`,
+  `nettoyerCheptel(st, jour)` ; motifs `pas-vivant`, `nombre`, `plein`, `autre-espece`, `pas-de-viande`, `vide`, `pas-malade`.
+- **Bêtes portées** (`etat.groupe.betes: [{ id, cle (l'espèce, ou un alias : porcelet, veau-moka), nombre, prisLe, jusqua (quart),
+  enclos: "", abri: "", source }]`, public : la forme des bêtes trouvées du lot 5, pour une seule liste) : `porterBete`, `betesPortees`
+  (sans celles « à l'enclos »), `betesQuiMeurent` (à `jusqua` = prise + `espece.capture.horsEnclos` quarts ; viande), `horsEnclosDe`,
+  `enclosPour(installations, contenu, espece, abri)` ; `especeDe` lit aussi les `alias` d'une espèce, `cleEspece`.
+- **Bêtes en liberté** (bestiaire, `categorie: "bete"`, `espece`, `groupe: [min, max]`, `acteur: false`) : `betesSauvagesDe`,
+  `tirerBeteSauvage(contenu, { zone, phase }, hasard)`, `prendreBete(espece, { test, outils })` (l'outil de `espece.capture.outils` ; sans
+  outil ou raté : elle file ; un essaim sans enfumoir pique et reste), `chasserBete(espece, { test })`.
+- **Assaut** : `pertesDAssaut(abri, installations, contenu, { marge, force })` (marge −1 : une bête ; brèche : `force` bêtes ; ni poissons,
+  ni plants, ni essaims). **Contrôle** : `erreursVivant(contenu)` (fabricant, essais).
+- **Le chien qui prévient sans attirer** (`savoirs.mjs`) : `CHIEN_PREVIENT` (flair 44 m de jour, 22 m la nuit ; aboie sous 5 m, bruit 2 ;
+  mène et s'arrête à 14 m), `alerteDuChien({ distance, nuit, suit })` → `{ signal: "rien" | "tourne" | "mene" | "aboie", bruit, flair,
+  arret }`, `vigilanceAvecChien(bonus, chien)` (+1 sur les installations, au plus +2).
+
+### 27.2 Branchements
+- `bilanAbri` : le facteur du cheptel sur la production, l'eau d'un cheptel vide, `effets.pluieArrose` (un jour où `conditions.pluie` ≥ 0,5,
+  pas d'eau : `arroseParLaPluie`), le cri des cheptels qui ont eu faim ou soif (`criDuVivant`, +1 au bruit, +2 au plus), le chien présent
+  (+1 de vigilance sur les installations, au plus +2 ; avant : le meilleur des deux) ; rend `cheptels` (`cheptelsDe`).
+- `journeeAbri` : `journeeVivant` (flux `conditions.hasardVivant`) ; rend `vivant` (les événements) ; écrit `abri.vivant` et les graines
+  resemées.
+- `avancer` : `hasardVivant` (« vivant|jour ») dans les conditions ; les événements des cheptels au journal (à l'abri) ou au journal secret ;
+  à chaque quart, les bêtes portées qui meurent (`vivant-portee-morte` ; viande aux stocks de l'abri si le groupe y est, sinon à
+  `groupe.porte`) ; le chien à l'abri grogne quand une horde ou des Livides viennent (alerte et journal `chien-grogne`, sans bruit).
+  Faits nouveaux (`CLES_TEXTES`) : `vivant-soif`, `-faim`, `-eau-sale`, `-morts`, `-vide`, `-naissance`, `-malade`, `-guerie`, `-sans-pompe`,
+  `vivant-portee-morte`, `chien-grogne`.
+- API `assaut` : `betesPerdues` (`pertesDAssaut`) ; tests : la vigilance de chacun du groupe compte le chien présent comme son maître
+  (son bonus d'outil, sans bruit).
+
+### 27.3 État, API et fenêtres
+- Abri : `vivant` (objet, vide par défaut ; `gmOnlyFields`). État public : `groupe.betes` (vide par défaut). Instantané du bilan :
+  `cheptels`.
+- API (`scripts/api-vivant.mjs`, étalée dans `game.lakourSurvie`). Lecture : `cheptels()` (cheptels, bêtes portées et le temps qui leur
+  reste, chien, outils de capture du groupe), `flairDuChien({ distance, nuit, suit })`, `beteSauvage({ zone, phase })`. Écriture (MJ actif,
+  monde ouvert) : `peupler({ installation, n, espece, portees })` (des plants : une graine pour six), `mettreEnEnclos({ beteId })`,
+  `abattre({ installation, n })`, `soignerCheptel({ installation, acteurId })` (un quart, `espece.remede.cout`, survie normale, +1 dé avec
+  l'élevage ou le maraîchage), `curer({ installation, membres })` (un quart), `capturer({ acteurId, espece, n })`, `chasser({ acteurId,
+  espece, competence, fuit })`, `recevoirBete({ espece, n, source })`, `lacherBetes({ beteId })`.
+- Fiche d'abri : la ligne du cheptel de chaque installation. Fenêtre du MJ, onglet Actions : bloc « Le vivant de l'abri » et ses onze
+  formulaires.
+- Contenu (`contenu/vivant.mjs`) : registre `especes` (10) ; `effets.vivant` et l'eau de la basse-cour (½), de l'enclos à cabris (1), du
+  bassin à tilapias, des ruches ; `effets.pluieArrose` (potager, jardin créole, verger) ; onze installations (clapier, soue à cochons,
+  étable, bassin à camarons, aquaponie, bacs de culture en bambou et serre hors-sol en sœurs « hors-sol », jardin de zerbaz, treille à
+  chouchou, bananeraie, carreau de canne) ; quatre bêtes en liberté au bestiaire (et l'espèce du cochon marron) ; trois outils de capture
+  et leurs recettes (`equipements[].capture`, aussi sur la corde de choka et les nasses) ; six tables (« Les bêtes de l'île — … » par zone,
+  « Un cheptel — ce qui arrive ») ; journal du MJ « Le vivant de l'abri » ; page « Élever, cultiver, prendre une bête » du guide du joueur.
+  La voie d'autonomie de la ferme des Hauts prend le jardin créole au lieu du potager (les bêtes boivent). Le fabricant vérifie la forme
+  (`erreursVivant`), accepte la catégorie « bete » au bestiaire (ni créature, ni acteur).

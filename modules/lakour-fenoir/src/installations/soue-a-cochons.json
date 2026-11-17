@@ -1,0 +1,93 @@
+{
+  "_id": "XzXd6JWw1Pz16efE",
+  "_key": "!items!XzXd6JWw1Pz16efE",
+  "name": "Soue à cochons",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "soue-a-cochons",
+    "categorie": "nourriture",
+    "description": "<p>Un muret de moellons, une auge, un toit de tôle sur la moitié : deux cochons qu'on engraisse aux épluchures et aux troncs de bananier. Ils ne donnent rien chaque jour, sinon le fumier ; un cochon abattu nourrit le camp dix jours. Il faut d'abord en trouver, ou en prendre un en liberté.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 8
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 6,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 8
+        },
+        "requiert": {
+          "savoirs": [
+            "elevage"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "eau": 0.5
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 1,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0.02,
+          "renseignements": false,
+          "bonus": {},
+          "odeur": 1,
+          "vivant": {
+            "espece": "cochon",
+            "places": 4,
+            "plein": 2,
+            "depart": 0
+          },
+          "bras": {
+            "tache": "elevage",
+            "nombre": 1
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "soue-a-cochons"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

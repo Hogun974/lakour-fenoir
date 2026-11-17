@@ -5,7 +5,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { donnees, DOCUMENTS } from "../modules/lakour-fenoir/contenu/index.mjs";
-import { GENRES_FOUILLE, OBJETS_FOUILLE, TABLES_FOUILLE, JOURNAL_FOUILLES, CAPTURE_DES_EQUIPEMENTS } from "../modules/lakour-fenoir/contenu/fouilles.mjs";
+import { GENRES_FOUILLE, OBJETS_FOUILLE, TABLES_FOUILLE, JOURNAL_FOUILLES } from "../modules/lakour-fenoir/contenu/fouilles.mjs";
+import { CAPTURE_DES_EQUIPEMENTS } from "../modules/lakour-fenoir/contenu/vivant.mjs";
 import { lireDictionnaires, fabriquerAnglais } from "../outils/fabriquer-fenoir.mjs";
 import * as L from "../systems/lakour-survie/logique/index.mjs";
 import { chargerContenu } from "./outils/simuler-parties.mjs";
@@ -25,7 +26,8 @@ test("registre : les familles du lot (objets, genres, bêtes, gisements, milieux
   for (const cle of ["cage-de-bambou", "cordes-de-choka", "enfumoir", "sac-de-goni"]) assert.ok(cap[cle]?.length, cle);
   for (const cle of ["cage", "corde"]) assert.ok(!d.equipements.some(e => e.cle === cle), `plus de fiche ${cle} en double`);
   for (const o of OBJETS_FOUILLE.filter(o => o.equipement)) assert.ok(d.equipements.some(e => e.cle === o.equipement), o.cle);
-  for (const b of d.betesTrouvees) assert.ok(Object.values(cap).some(c => c.includes(b.cle)), b.cle);
+  // Une bête trouvée est prise par l'outil de son espèce (le porcelet est un cochon, le veau moka un bœuf moka : contenu/vivant.mjs).
+  for (const b of d.betesTrouvees) assert.ok(Object.values(cap).some(c => c.includes(b.cle) || c.includes(d.especes.find(e => (e.alias ?? []).includes(b.cle))?.cle)), b.cle);
   assert.deepEqual(L.erreursFouilles(contenu), []);
 });
 
@@ -64,7 +66,7 @@ test("documents : une table par genre et par milieu (au moins six lignes), le jo
     const fiches = DOCUMENTS.filter(x => x.type === "equipement" && x.system?.cle === cle);
     assert.equal(fiches.length, 1, cle);
     assert.deepEqual(fiches[0].system.capture, CAPTURE_DES_EQUIPEMENTS[cle], cle);
-    if (cle !== "cordes-de-choka") assert.equal(d.recettes.filter(r => r.produit?.equipement === cle).length, 1, `une recette pour ${cle}`);
+    if (["cage-de-bambou", "sac-de-goni", "enfumoir"].includes(cle)) assert.equal(d.recettes.filter(r => r.produit?.equipement === cle).length, 1, `une recette pour ${cle}`);
   }
 });
 

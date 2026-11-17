@@ -1,0 +1,105 @@
+{
+  "_id": "qG4RvnzesJT0qaGs",
+  "_key": "!items!qG4RvnzesJT0qaGs",
+  "name": "Serre hors-sol",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "serre-hydroponique",
+    "categorie": "nourriture",
+    "description": "<p>Des rampes de tuyaux sous une serre, une pompe, un fût de solution nourricière : soixante plants qui poussent vite et tombent rarement malades, tant que le courant tient et qu'on change le filtre chaque semaine. La serre brille au soleil.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 16
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 10,
+          "pieces": 4,
+          "graines": 2,
+          "travail": 16
+        },
+        "requiert": {
+          "savoirs": [
+            "maraichage-tropical",
+            "plomberie-filtration"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "compost",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "nourriture": 4
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 20
+          },
+          "consommation": {
+            "eau": 2,
+            "energie": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 2,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "vivant": {
+            "espece": "plants-hors-sol",
+            "places": 60,
+            "plein": 60,
+            "depart": 60,
+            "filtre": 8,
+            "maladie": 0.34
+          },
+          "bras": {
+            "tache": "cultures",
+            "nombre": 1
+          }
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "role": "hors-sol"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "serre-hydroponique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

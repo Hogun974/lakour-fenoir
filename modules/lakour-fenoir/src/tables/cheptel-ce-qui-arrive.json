@@ -1,0 +1,178 @@
+{
+  "_id": "B33GKVefhArycxDa",
+  "_key": "!tables!B33GKVefhArycxDa",
+  "name": "Un cheptel — ce qui arrive",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Pour donner de la vie à l'élevage, une fois de temps en temps, ou quand un cheptel a eu un manque.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cheptel-ce-qui-arrive",
+      "vivant": "cheptel-ce-qui-arrive"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "JatboqHXn7or0p6F",
+      "_key": "!tables.results!B33GKVefhArycxDa.JatboqHXn7or0p6F",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cabri s'est échappé par un trou de la clôture ; on le retrouve au matin dans le potager des voisins (ou dans le vôtre).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xF9iOLrg1kDVFNk5",
+      "_key": "!tables.results!B33GKVefhArycxDa.xF9iOLrg1kDVFNk5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une poule couve dans un coin où personne ne l'attendait : des poussins dans trois semaines.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "3FpXmdlswNJRa4tB",
+      "_key": "!tables.results!B33GKVefhArycxDa.3FpXmdlswNJRa4tB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un chien errant tourne la nuit autour de la basse-cour. Le lendemain, il revient.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "f2W56CgWiEG2ssrF",
+      "_key": "!tables.results!B33GKVefhArycxDa.f2W56CgWiEG2ssrF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bête boite : une épine, une pierre ; un soin d'une heure, et elle remarche.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dIwmV8s6nyJLq4lU",
+      "_key": "!tables.results!B33GKVefhArycxDa.dIwmV8s6nyJLq4lU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le coq chante trop tôt, trop fort. Quelqu'un propose d'en faire un cari.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nAM2wUAHDLqr5oDT",
+      "_key": "!tables.results!B33GKVefhArycxDa.nAM2wUAHDLqr5oDT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une scolopendre dans la paille du clapier : un lapin en meurt.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cBUz2dweNiFd1lPA",
+      "_key": "!tables.results!B33GKVefhArycxDa.cBUz2dweNiFd1lPA",
+      "type": "text",
+      "name": "",
+      "description": "<p>L'eau du bassin a verdi en une nuit de chaleur : il faut curer avant que les poissons ne remontent respirer.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QUxsYlHpEmqY7wYa",
+      "_key": "!tables.results!B33GKVefhArycxDa.QUxsYlHpEmqY7wYa",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant du groupe a donné un nom à chaque bête. Personne n'ose plus parler d'abattre.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aEkJMfPU6Yg8v6Kz",
+      "_key": "!tables.results!B33GKVefhArycxDa.aEkJMfPU6Yg8v6Kz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des voisins viennent proposer un troc : un cabri contre des médicaments.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6yHPIGBumBHJZqOF",
+      "_key": "!tables.results!B33GKVefhArycxDa.6yHPIGBumBHJZqOF",
+      "type": "text",
+      "name": "",
+      "description": "<p>La nuit, les bêtes se taisent toutes d'un coup, et se serrent dans le fond de l'enclos. Le chien grogne vers la ravine.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

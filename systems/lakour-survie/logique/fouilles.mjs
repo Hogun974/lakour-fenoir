@@ -29,6 +29,8 @@ import { saisonDuJour } from "./temps.mjs";
 import { message } from "./textes.mjs";
 // La qualité d'un outil trouvé : une seule règle, celle du lot 6 (ateliers, logique/armes.mjs ; fusion de la vague 3).
 import { qualiteTrouvee } from "./armes.mjs";
+// Les bêtes trouvées sont des espèces du vivant (lot 8) : leur outil, leur viande, leur délai hors d'un enclos, leur enclos.
+import { especeDe, porterBete } from "./vivant.mjs";
 
 // ------------------------------------------------------------------ règles
 export const MOTS_PILLAGE = ["intact", "a-peine", "deja", "retourne", "sac"];
@@ -261,10 +263,12 @@ export const lieuPublic = (cle, e) => ({ cle, region: e.region, genre: e.genre, 
   fait: a2(e.fait), travail: e.travail, fini: Boolean(e.fini), demonte: Boolean(e.demonte), demontage: e.demontage ? { fait: a2(e.demontage.fait), travail: e.demontage.travail } : null,
   vuLe: e.vuLe ?? null });
 
-// Qui prend quelle bête : les équipements des fouilleurs dont le champ `capture` la nomme.
+// Qui prend quelle bête : les équipements des fouilleurs dont le champ `capture` la nomme, ou nomme son espèce (fusion de la vague 3 :
+// le champ est celui du lot 8, par espèce ; le porcelet trouvé ici est un cochon, le veau moka un bœuf moka).
 export function prendBete(contenu, equipements = [], bete) {
   const idx = indexer(contenu).equipements;
-  return (equipements ?? []).find(c => (idx.get(c)?.capture ?? []).includes(bete)) ?? null;
+  const espece = especeDe(contenu, bete)?.cle ?? bete;
+  return (equipements ?? []).find(c => (idx.get(c)?.capture ?? []).some(x => x === bete || x === espece)) ?? null;
 }
 
 // ------------------------------------------------------------------ fouiller un lieu
@@ -460,46 +464,27 @@ export function recolterGisement(monde, contenu, hasard, { region, gisement = ""
 }
 
 // ------------------------------------------------------------------ les bêtes prises
-// État public : groupe.betes = [{ id, cle, nombre, prisLe (quart), jusqua (quart) | null (à l'enclos), enclos: clé d'installation | "",
-// abri: site | "" }].
+// Fusion de la vague 3 : une seule liste de bêtes portées, groupe.betes, à la forme du lot 8 (logique/vivant.mjs : porterBete,
+// betesPortees, betesQuiMeurent) = [{ id, cle (l'espèce ou son alias), nombre, prisLe (quart), jusqua (quart), enclos: "", abri: "",
+// source }]. Une seule expiration, celle du lot 8 (betesQuiMeurent, dans avancer, à chaque quart). Mettre à l'enclos, c'est
+// mettreEnEnclos du lot 8 : la bête rejoint le cheptel de son espèce et quitte la liste (l'ancien « enclore » du lot 5 n'existe plus).
+// Le délai hors d'un enclos et la viande sont ceux de l'espèce.
 export const betesDuGroupe = etat => (Array.isArray(etat?.groupe?.betes) ? etat.groupe.betes : []);
-export function ajouterBete(etat, { cle, nombre = 1, quart = 0, tient = 4, id = "" } = {}) {
+export function ajouterBete(etat, { cle, nombre = 1, quart = 0, tient = 0, id = "", contenu = null } = {}) {
   const e = structuredClone(etat);
-  const b = { id: id || `bete-${quart}-${cle}-${betesDuGroupe(e).length + 1}`, cle, nombre: Math.max(1, Number(nombre) || 1), prisLe: quart, jusqua: quart + Math.max(1, Number(tient) || 1), enclos: "", abri: "" };
+  const x = porterBete(betesDuGroupe(e), { espece: cle, nombre: Math.max(1, Number(nombre) || 1), quart, source: "fouille", contenu: contenu ?? {} });
+  const b = { ...x.bete, ...(id ? { id } : {}), ...(Number(tient) > 0 ? { jusqua: quart + Math.floor(Number(tient)) } : {}) };
   e.groupe = { ...e.groupe, betes: [...betesDuGroupe(e), b] };
   return { etat: e, bete: b };
 }
-// Les bêtes hors d'un enclos dont le délai est passé meurent : leur viande. -> { etat, mortes: [{ bete, viande }] }
-export function expirerBetes(etat, contenu, quart) {
-  const e = structuredClone(etat);
-  const mortes = [];
-  const restent = [];
-  for (const b of betesDuGroupe(e)) {
-    if (!b.enclos && b.jusqua !== null && Number(quart) >= Number(b.jusqua)) mortes.push({ bete: b, viande: (Number(beteTrouvee(contenu, b.cle)?.viande) || 0) * b.nombre });
-    else restent.push(b);
-  }
-  if (mortes.length) e.groupe = { ...e.groupe, betes: restent };
-  return { etat: e, mortes };
-}
-// Mettre à l'enclos : il faut une installation en service qui la garde (installations : [{ cle, niveau, etat }]).
-export function enclore(etat, contenu, id, { installations = [], site = "" } = {}) {
-  const b = betesDuGroupe(etat).find(x => x.id === id);
-  if (!b) return { ok: false, motif: message("bete-inconnue", {}, "bête inconnue"), etat };
-  if (b.enclos) return { ok: false, motif: message("bete-deja-enclose", {}, "elle est déjà à l'enclos"), etat };
-  const def = beteTrouvee(contenu, b.cle);
-  const enclos = (installations ?? []).find(i => (def?.enclos ?? []).includes(i.cle) && Number(i.niveau) >= 1 && Number(i.etat ?? 0) < 3);
-  if (!enclos) return { ok: false, motif: message("bete-sans-enclos", { enclos: (def?.enclos ?? []).join(", ") }, `il faut une installation qui la garde (${(def?.enclos ?? []).join(", ")})`), etat };
-  const e = structuredClone(etat);
-  e.groupe.betes = betesDuGroupe(e).map(x => (x.id === id ? { ...x, enclos: enclos.cle, abri: site, jusqua: null } : x));
-  return { ok: true, motif: null, etat: e, enclos: enclos.cle };
-}
-// Abattre (la viande) ou relâcher : la bête quitte le groupe. -> { ok, etat, viande }
+// Abattre (la viande de l'espèce) ou relâcher : la bête quitte le groupe. -> { ok, etat, viande }
 export function retirerBete(etat, contenu, id, { abattre = false } = {}) {
   const b = betesDuGroupe(etat).find(x => x.id === id);
   if (!b) return { ok: false, motif: message("bete-inconnue", {}, "bête inconnue"), etat, viande: 0 };
   const e = structuredClone(etat);
   e.groupe.betes = betesDuGroupe(e).filter(x => x.id !== id);
-  return { ok: true, motif: null, etat: e, viande: abattre ? (Number(beteTrouvee(contenu, b.cle)?.viande) || 0) * b.nombre : 0, bete: b };
+  const viande = Math.floor((Number(b.nombre) || 0) * (Number(especeDe(contenu, b.cle)?.viande) || 0) + 1e-9);
+  return { ok: true, motif: null, etat: e, viande: abattre ? viande : 0, bete: b };
 }
 
 // ------------------------------------------------------------------ vérification du registre (fabricant, essais)

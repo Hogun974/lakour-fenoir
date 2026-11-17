@@ -138,9 +138,10 @@ test("contenu : le savoir des zerbaz, la recette des tisanes (2 plantes → 1 m�
 
 test("simulateur : le solo sédentaire cueille des zerbaz, prépare des tisanes et soigne ses morsures avec", () => {
   let plantes = 0, tisanes = 0, morsures = 0, aidees = 0, jours = 0, avecMedicament = 0;
-  // Quatre graines par région (deux jusqu'au lot « sens », 2026-11-17) : avec deux, il n'y avait que deux ou trois morsures en
-  // tout, et une seule de plus ou de moins (la pluie et l'odeur changent le cours des parties) faisait basculer l'essai.
-  for (const region of ["salazie", "le-tampon", "saint-paul", "est"]) for (const g of ["a", "b", "c", "d"]) {
+  // Douze graines par région (quatre jusqu'à la fusion de la vague 3, deux jusqu'au lot « sens ») : avec deux, il n'y avait que deux
+  // ou trois morsures en tout, et une seule de plus ou de moins (la pluie et l'odeur changent le cours des parties) faisait basculer
+  // l'essai ; avec quatre, la part des jours avec un médicament allait de 18 à 37 % selon les lots fusionnés (sur douze : 29 %).
+  for (const region of ["salazie", "le-tampon", "saint-paul", "est"]) for (const g of "abcdefghijkl") {
     const s = jouerPartie(VRAI, { strategie: "sedentaire", membres: 1, region, graine: `remedes-${g}`, jours: 120 });
     plantes += s.plantes; tisanes += s.tisanes; morsures += s.morsures; aidees += s.morsuresAidees;
     jours += s.joursAbri; avecMedicament += s.joursAvecMedicament;

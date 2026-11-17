@@ -9,7 +9,7 @@
 import { ID, COMPETENCES, RESSOURCES, NATURE, DIFFICULTES } from "../../logique/constantes.mjs";
 import * as L from "../../logique/index.mjs";
 import { t, aPlat, lireEtat, echapper, sansBalises, libelleCompetence, libelleRessource, libelleTache, MODULE_MJIA } from "../donnees.mjs";
-import { CHEMIN, essayer, lireChamps, flammes, jours, options } from "./commun.mjs";
+import { CHEMIN, essayer, lireChamps, flammes, jours, options, ligneCheptel } from "./commun.mjs";
 import { contexteEsprit, texteListe } from "./esprit.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -225,7 +225,9 @@ export function contexteAbri(a) {
       categorie: t(`LAKOUR_SURVIE.Categories.${sys.categorie ?? def?.categorie ?? "vie"}`), arret: (b?.arrets ?? []).find(x => x.cle === sys.cle)?.raison ?? "", aide: sansBalises(def?.description ?? ""),
       secours: (b?.secours ?? []).some(x => x.cle === sys.cle), lontan: (def?.arbre ?? sys.arbre) === "lontan",
       // Lot 7 « Bâtir et défendre » : le matériau, l'entretien (encrassée, à soigner dans N jours ou en retard).
-      ...ouvrageDeLaFiche(def, sys, Number(etat.horloge?.quart) || 0) };
+      ...ouvrageDeLaFiche(def, sys, Number(etat.horloge?.quart) || 0),
+      // Lot 8 : son cheptel (têtes, places, santé, ce qui lui manque).
+      cheptel: ligneCheptel((b?.cheptels ?? []).find(x => x.cle === sys.cle)) };
   });
   const nature = NATURE.map(n => ({ cle: n, libelle: t(`LAKOUR_SURVIE.Nature.${n}`), valeur: Math.round((Number(s.nature?.[n]) || 0) * 10) / 10 }));
   const membres = courant ? (etat.groupe.membres ?? []).map(id => game.actors.get(id)).filter(Boolean) : [];

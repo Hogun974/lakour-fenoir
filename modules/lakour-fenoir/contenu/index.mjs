@@ -38,24 +38,31 @@ import { INSTALLATIONS_PLANS, EQUIPEMENTS_PLANS, PLANS_REGISTRE, LIEUX_A_PLANS, 
 import { INSTALLATIONS_ATELIERS, EQUIPEMENTS_ATELIERS, BAREME_ATELIERS, TABLES_ATELIERS, JOURNAL_ATELIERS, sitesAvecAteliers } from "./ateliers.mjs";
 import { RECETTES_ATELIERS } from "./recettes-3d.mjs";
 import { OBJETS_FOUILLE, GENRES_FOUILLE, BETES_TROUVEES, GISEMENTS, MILIEUX, TABLES_FOUILLE, JOURNAL_FOUILLES,
-  sitesAvecGenres, regionsAvecMilieux, equipementsAvecCapture, documentsAvecCapture } from "./fouilles.mjs";
+  sitesAvecGenres, regionsAvecMilieux } from "./fouilles.mjs";
 import { INSTALLATIONS_OUVRAGES, PLANS_OUVRAGES, TABLES_OUVRAGES, JOURNAUX_OUVRAGES, BRAS_OUVRAGES, porterOuvrages, sitesAvecPlansOuvrages } from "./ouvrages.mjs";
+import { ESPECES, INSTALLATIONS_VIVANT, BETES_SAUVAGES, TABLES_VIVANT, JOURNAL_VIVANT, vivantDesInstallations,
+  completerBestiaire, captureDesEquipements, documentsAvecCapture } from "./vivant.mjs";
 
 // Lot 7 « Bâtir et défendre » (contrat §26) : les matériaux, l'entretien et les effets de défense posés sur les installations d'avant.
 porterOuvrages([...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE]);
+// Lot 8 « Le vivant de l'abri » (contrat §27) : la basse-cour, l'enclos à cabris, le bassin à tilapias et les ruches passent sous la règle
+// du vivant (effets.vivant, l'eau de ceux qui boivent), la pluie arrose ce qui pousse à ciel ouvert ; le cochon marron a son espèce.
+vivantDesInstallations(INSTALLATIONS);
+completerBestiaire(BESTIAIRE);
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
 const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJournal("guides", CLE_JOURNAL_REGIONS), pageId: idPage("guides", CLE_JOURNAL_REGIONS, r.cle) }]));
 export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 
 export const DOCUMENTS = [
-  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_ATELIERS, ...INSTALLATIONS_OUVRAGES, ...SAVOIRS, ...documentsAvecCapture(EQUIPEMENTS), ...EQUIPEMENTS_PLANS,
-  ...EQUIPEMENTS_REPERES, ...documentsAvecCapture(EQUIPEMENTS_ATELIERS), ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...RECETTES_ATELIERS, ...AFFLICTIONS,
+  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_ATELIERS, ...INSTALLATIONS_OUVRAGES, ...INSTALLATIONS_VIVANT, ...SAVOIRS,
+  ...documentsAvecCapture(EQUIPEMENTS), ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...documentsAvecCapture(EQUIPEMENTS_ATELIERS),
+  ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...RECETTES_ATELIERS, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, JOURNAL_CORPS, JOURNAL_ATELIERS, JOURNAL_FOUILLES, ...JOURNAUX_OUVRAGES, LIVRE_UNIVERS,
-  ...CAMP.filter(d => d.__pack !== "tables"),
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, JOURNAL_CORPS, JOURNAL_ATELIERS, JOURNAL_FOUILLES, ...JOURNAUX_OUVRAGES, JOURNAL_VIVANT,
+  LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
   ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
-  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES, ...TABLES_CORPS, ...TABLES_ATELIERS, ...TABLES_FOUILLE, ...TABLES_OUVRAGES,
+  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES, ...TABLES_CORPS, ...TABLES_ATELIERS, ...TABLES_FOUILLE, ...TABLES_OUVRAGES, ...TABLES_VIVANT,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -69,10 +76,11 @@ export function donnees() {
     // Lot 12 : ce qu'on comprend en arrivant dans chaque région (une ligne pour le MJ, contenu/affaires.mjs).
     regions: regionsAvecMilieux(REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" }))),
     sites: sitesAvecGenres(sitesAvecAteliers(sitesAvecPlansOuvrages(sitesAvecPlans(SITES)))), routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
-    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_ATELIERS, ...INSTALLATIONS_OUVRAGES].map(aPlat), savoirs: SAVOIRS.map(aPlat),
-    equipements: equipementsAvecCapture([...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...EQUIPEMENTS_ATELIERS].map(aPlat)), passes: PASSES.map(aPlat),
+    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_ATELIERS, ...INSTALLATIONS_OUVRAGES, ...INSTALLATIONS_VIVANT].map(aPlat),
+    savoirs: SAVOIRS.map(aPlat),
+    equipements: captureDesEquipements([...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...EQUIPEMENTS_ATELIERS].map(aPlat)), passes: PASSES.map(aPlat),
     recettes: [...RECETTES, ...RECETTES_REPERES, ...RECETTES_ATELIERS].map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
-    factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
+    factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: [...BESTIAIRE, ...BETES_SAUVAGES], enfances: ENFANCES, traits: TRAITS,
     religions: RELIGIONS, ancrages: ANCRAGES,
     reputations: { paliers: PALIERS, factions: REPUTATIONS, horloges: HORLOGES_REPUTATION },
     visibilite: PALIERS_VISIBILITE.map(p => ({ ...p, table: `tables:visibilite-${p.cle}` })),
@@ -103,6 +111,8 @@ export function donnees() {
     // Lot 5 « fouille » (contrat §25 ; logique/fouilles.mjs) : ce que vaut un objet trouvé, les genres de lieux et leurs tables, les bêtes
     // qu'on y trouve, les gisements et les milieux de l'île (les milieux d'une région sont dans regions[].milieux, le genre d'un site
     // dans sites[].genre).
-    objetsFouille: OBJETS_FOUILLE, genresFouille: GENRES_FOUILLE, betesTrouvees: BETES_TROUVEES, gisements: GISEMENTS, milieux: MILIEUX
+    objetsFouille: OBJETS_FOUILLE, genresFouille: GENRES_FOUILLE, betesTrouvees: BETES_TROUVEES, gisements: GISEMENTS, milieux: MILIEUX,
+    // Lot 8 « Le vivant de l'abri » (contrat §27 ; logique/vivant.mjs) : les espèces élevées et ce qu'on en sait.
+    especes: ESPECES
   };
 }

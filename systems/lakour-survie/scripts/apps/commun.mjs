@@ -1,6 +1,6 @@
 // Petits outils communs aux fenêtres (ApplicationV2 + Handlebars) du système.
 import { ID } from "../../logique/constantes.mjs";
-import { erreurLisible } from "../donnees.mjs";
+import { erreurLisible, t } from "../donnees.mjs";
 
 export const CHEMIN = `systems/${ID}/templates`;
 
@@ -36,3 +36,13 @@ export const options = (paires, choisi = "") => paires.map(([valeur, libelle]) =
 // Les flammes d'une passion (0, 1 ou 2).
 export const flammes = n => (Number(n) >= 2 ? "🔥🔥" : Number(n) === 1 ? "🔥" : "");
 export const jours = n => (Number(n) >= 999 ? "∞" : String(n ?? "?"));
+
+// Lot 8 « Le vivant de l'abri » (contrat §27) : une ligne lisible pour un cheptel du bilan (fiche d'abri, fenêtre du MJ).
+export function ligneCheptel(x) {
+  if (!x) return "";
+  const K = k => `LAKOUR_SURVIE.Vivant.${k}`;
+  const manques = (x.manques ?? []).map(m => t(K(`Manques.${m}`))).join(", ");
+  return [t(K("Ligne"), { espece: x.especeNom ?? x.espece, tetes: x.tetes, places: x.places, plein: x.plein, sante: x.sante }),
+    x.malade ? t(K("Malade")) : "", manques ? t(K("Manque"), { manques }) : "", x.horsAltitude ? t(K("HorsAltitude")) : "",
+    x.filtre !== null && x.filtre !== undefined && x.filtre <= 2 ? t(K("Filtre"), { n: x.filtre }) : ""].filter(Boolean).join(" · ");
+}

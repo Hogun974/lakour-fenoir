@@ -23,6 +23,8 @@
     {{#if quotas.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Gestion.Quotas"}}</strong> : {{#each quotas}}{{#if tenu}}✔ {{/if}}{{texte}}{{#unless @last}} · {{/unless}}{{/each}}</p>{{/if}}
     {{#if pnj.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Tableau.Pnj"}}</strong> : {{#each pnj}}{{nom}}{{#if etat}} ({{etat}}){{/if}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
     {{#if plans.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Tableau.Plans"}}</strong> : {{#each plans}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+    {{#if cheptels.length}}<p class="survie-aide"><i class="fa-solid fa-paw"></i> <strong>{{localize "LAKOUR_SURVIE.Vivant.Titre"}}</strong> : {{#each cheptels}}{{this}}{{#unless @last}} ; {{/unless}}{{/each}}</p>{{/if}}
+    {{#if betes.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Vivant.Portees"}}</strong> : {{#each betes}}{{this}}{{#unless @last}} ; {{/unless}}{{/each}}</p>{{/if}}
     {{#if morts.length}}<p class="survie-aide"><i class="fa-solid fa-dove"></i> <strong>{{localize "LAKOUR_SURVIE.Autel.Titre"}}</strong> : {{#each morts}}{{nom}} <small>({{etat}})</small>{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
     {{#if souvenirs.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Souvenirs.Titre"}}</strong> : {{#each souvenirs}}{{texte}} <small>({{fin}})</small>{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
     {{#if liens}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Liens.Titre"}}</strong> : {{liens}}</p>{{/if}}

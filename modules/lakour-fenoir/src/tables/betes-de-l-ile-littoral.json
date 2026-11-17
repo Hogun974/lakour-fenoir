@@ -1,0 +1,118 @@
+{
+  "_id": "4WIFytKTQ2aHKJN8",
+  "_key": "!tables!4WIFytKTQ2aHKJN8",
+  "name": "Les bêtes de l'île — le littoral",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on croise en battant les cultures, la canne et les écarts des Bas. Une bête en liberté se prend (test de survie avec l'outil de son espèce : cage, sac de goni, corde) ou se chasse ; ratée, elle file, et les autres avec.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "betes-de-l-ile-littoral",
+      "vivant": "betes-de-l-ile-littoral"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "PoxNm1QHRXW99Gud",
+      "_key": "!tables.results!4WIFytKTQ2aHKJN8.PoxNm1QHRXW99Gud",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien, sinon des traces de pattes dans la boue d'un chemin de canne.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9AcQXggDLTNBZqBd",
+      "_key": "!tables.results!4WIFytKTQ2aHKJN8.9AcQXggDLTNBZqBd",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une poule marronne et ses poussins, au bord d'un champ de canne (une poule, trois poussins qui suivront la mère).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qD7vyAuWs5w7dpEt",
+      "_key": "!tables.results!4WIFytKTQ2aHKJN8.qD7vyAuWs5w7dpEt",
+      "type": "text",
+      "name": "",
+      "description": "<p>Cinq poules et un coq dans le manguier d'une cour vide, au crépuscule : elles se perchent.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "OYUjfSIgv4HTKzbf",
+      "_key": "!tables.results!4WIFytKTQ2aHKJN8.OYUjfSIgv4HTKzbf",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux lapins dans un talus de cultures, au petit matin.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MrniilA2rasV27yP",
+      "_key": "!tables.results!4WIFytKTQ2aHKJN8.MrniilA2rasV27yP",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un essaim pendu sous l'auvent d'une case abandonnée, gros comme un ballon (il faut un enfumoir).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nYI0ZDFNWEinRGzw",
+      "_key": "!tables.results!4WIFytKTQ2aHKJN8.nYI0ZDFNWEinRGzw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un chien errant qui suit les poules, lui aussi. Il vous regarde, et ne part pas.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

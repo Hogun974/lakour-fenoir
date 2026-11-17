@@ -153,16 +153,16 @@ test("une bête prise tient quelques quarts : à l'enclos à temps, sinon elle m
   const r = L.avancer({ etat, monde, contenu, quarts: 3, survivants: [], abri: null });
   assert.equal(L.betesDuGroupe(r.etat).length, 0);
   assert.equal(r.etat.groupe.porte.nourriture, 6, "un cabri : 6 de nourriture");
-  assert.ok(r.etat.journal.some(j => j.cle === "bete-morte"));
-  // À l'enclos : il faut l'installation qui la garde.
-  const y = L.ajouterBete(etat, { cle: "poule", nombre: 2, quart: 0 });
-  assert.equal(L.enclore(y.etat, contenu, y.bete.id, { installations: [] }).motif.cle, "bete-sans-enclos");
-  const z = L.enclore(y.etat, contenu, y.bete.id, { installations: [{ cle: "basse-cour", niveau: 1, etat: 0 }], site: "ilet-de-marla" });
-  assert.ok(z.ok);
-  assert.equal(L.betesDuGroupe(z.etat).find(b => b.id === y.bete.id).jusqua, null);
-  assert.equal(L.expirerBetes(z.etat, contenu, 999).mortes.filter(m => m.bete.id === y.bete.id).length, 0, "à l'enclos, elle ne meurt pas de délai");
-  const w = L.retirerBete(z.etat, contenu, y.bete.id, { abattre: true });
+  // Une seule expiration, celle du lot 8 (fusion de la vague 3).
+  assert.ok(r.etat.journal.some(j => j.cle === "vivant-portee-morte"));
+  // Une bête prise a la forme du lot 8 et le délai de son espèce ; abattue, la viande de son espèce (le porcelet est un cochon).
+  const y = L.ajouterBete(etat, { cle: "poule", nombre: 2, quart: 0, contenu });
+  assert.equal(y.bete.jusqua, 4);
+  assert.equal(y.bete.source, "fouille");
+  const w = L.retirerBete(y.etat, contenu, y.bete.id, { abattre: true });
   assert.equal(w.viande, 2);
+  const p = L.ajouterBete(etat, { cle: "porcelet", nombre: 1, quart: 0, contenu });
+  assert.equal(L.retirerBete(p.etat, contenu, p.bete.id, { abattre: true }).viande, 10);
 });
 
 test("démonter un lieu : il se fouille d'abord, rend la moitié de son coût au fur et à mesure, deux fois plus lent sans outil, puis n'existe plus", () => {

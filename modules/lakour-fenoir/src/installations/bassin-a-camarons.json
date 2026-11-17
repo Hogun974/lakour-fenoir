@@ -1,0 +1,98 @@
+{
+  "_id": "D0N2mvtdqrLXrOlN",
+  "_key": "!items!D0N2mvtdqrLXrOlN",
+  "name": "Bassin à camarons",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "bassin-a-camarons",
+    "categorie": "nourriture",
+    "description": "<p>Un bassin de galets au bord de la rivière, où l'eau entre et sort par deux rigoles grillagées : des camarons dans les Bas, des anguilles plus haut, pris jeunes dans la ravine. L'eau qui court se renouvelle seule.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 12
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 2,
+          "travail": 12
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [
+              "riviere",
+              "source"
+            ],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "nourriture": 1
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 90
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "vivant": {
+            "especes": [
+              "camaron",
+              "anguille"
+            ],
+            "places": 20,
+            "plein": 12,
+            "depart": 8
+          },
+          "bras": {
+            "tache": "elevage",
+            "nombre": 1
+          }
+        }
+      }
+    ],
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bassin-a-camarons"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

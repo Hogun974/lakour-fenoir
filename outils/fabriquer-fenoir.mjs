@@ -36,6 +36,7 @@ import { erreursOuvrages } from "../systems/lakour-survie/logique/ouvrages.mjs";
 import { erreursRepere, chanceRepere, LIEUX_REPERE, CHANCE_REPERE_MAX } from "../systems/lakour-survie/logique/reperes.mjs";
 import { METIERS, TRAITEMENTS, objetsDeRecette } from "../systems/lakour-survie/logique/fabrication.mjs";
 import { GAMMES, QUALITES } from "../systems/lakour-survie/logique/armes.mjs";
+import { erreursVivant } from "../systems/lakour-survie/logique/vivant.mjs";
 import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_DECLINABLES, IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
@@ -504,7 +505,14 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   for (const q of equipements.values()) if (q.parade !== undefined && !(Number.isInteger(q.parade) && q.parade >= 2 && q.parade <= 6)) e(`équipement ${q.cle} : parade hors de 2..6`);
   if (![...equipements.values()].some(q => q.parade)) e("aucun bouclier");
   if (![...equipements.values()].some(q => q.bivouac)) e("rien pour bivouaquer");
-  for (const b of d.bestiaire ?? []) if (!(b.des >= 1) || !(b.resistance >= 1) || !["livide", "animal", "humain"].includes(b.categorie)) e(`bestiaire ${b.cle} : fiche invalide`);
+  for (const b of d.bestiaire ?? []) if (!(b.des >= 1) || !(b.resistance >= 1) || !["livide", "animal", "humain", "bete"].includes(b.categorie)) e(`bestiaire ${b.cle} : fiche invalide`);
+  // Lot 8 « Le vivant de l'abri » (contrat §27) : les espèces, les cheptels des installations, les bêtes en liberté, les outils de capture.
+  for (const x of erreursVivant(d)) e(x);
+  if ((d.especes ?? []).length < 8) e("vivant : moins de huit espèces");
+  if ((d.bestiaire ?? []).filter(b => b.categorie === "bete").length < 4) e("vivant : moins de quatre bêtes en liberté");
+  for (const k of ["basse-cour", "enclos-a-cabris", "bassin-a-tilapias", "ruches"]) if (!installations.get(k)?.niveaux.every(n => n.effets.vivant)) e(`vivant : ${k} sans cheptel`);
+  // Un outil au moins existe pour chaque espèce qui se prend (les clés d'un autre lot, « cage », « corde », peuvent manquer ici).
+  for (const x of (d.especes ?? []).filter(y => y.capture)) if (!(x.capture.outils ?? []).some(o => equipements.has(o))) e(`espèce ${x.cle} : aucun outil de capture connu`);
   for (const k of ["livide-frais", "livide-des-hauts", "noye-du-lagon", "livide-brule", "coureur", "chien-errant", "cochon-marron"]) if (!index.bestiaire.has(k)) e(`bestiaire : ${k} absent`);
   // Lot « sens » : la perception des Livides, les pluies d'une année, les ravines temporaires, le bruit d'un ancrage.
   for (const b of d.bestiaire ?? []) {
@@ -676,7 +684,8 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     if (c.des !== b.des || c.resistance !== b.resistance || !(c.poids > 0) || !c.nom) e(`créature ${c.cle} : dés, résistance, poids ou nom`);
     if (!c.zones?.length || c.zones.some(z => !ZONES.includes(z)) || !c.phases?.length || c.phases.some(p => !PHASES.includes(p))) e(`créature ${c.cle} : zones ou phases`);
   }
-  for (const b of index.bestiaire.values()) if (b.categorie !== "humain" && !creatures.has(b.cle)) e(`créatures : ${b.cle} absente`);
+  // Les bêtes en liberté (lot 8, catégorie « bete ») fuient : la logique ne les fait pas combattre, ce ne sont pas des créatures.
+  for (const b of index.bestiaire.values()) if (!["humain", "bete"].includes(b.categorie) && !creatures.has(b.cle)) e(`créatures : ${b.cle} absente`);
 
   // Lot « savoirs » : arbres des savoirs et des installations, sœurs, dépôts du cyclone, gramounes.
   for (const sv of savoirs.values()) if (sv.arbre && !ARBRES.includes(sv.arbre)) e(`savoir ${sv.cle} : arbre « ${sv.arbre} »`);

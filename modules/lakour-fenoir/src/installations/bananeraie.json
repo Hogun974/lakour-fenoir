@@ -1,0 +1,94 @@
+{
+  "_id": "HqAhEAApAgZNllsR",
+  "_key": "!items!HqAhEAApAgZNllsR",
+  "name": "Bananeraie",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "bananeraie",
+    "categorie": "nourriture",
+    "description": "<p>Quelques pieds de bananiers paillés, au bord de l'eau ou dans le mouillé : il faut presque une année avant le premier régime, puis chaque pied se remplace par ses rejets. Les troncs nourrissent les cochons.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 2,
+          "ile": 2,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 1,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "compost",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "nourriture": 2
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 300
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "pluieArrose": true,
+          "bras": {
+            "tache": "cultures",
+            "nombre": 1
+          }
+        }
+      }
+    ],
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bananeraie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

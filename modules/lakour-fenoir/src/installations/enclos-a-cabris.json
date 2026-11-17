@@ -43,7 +43,9 @@
             "riviere": false,
             "delai": 30
           },
-          "consommation": {},
+          "consommation": {
+            "eau": 1
+          },
           "defense": 0,
           "discretion": 0,
           "capacite": 0,
@@ -61,6 +63,12 @@
           "bras": {
             "tache": "elevage",
             "nombre": 1
+          },
+          "vivant": {
+            "espece": "cabri",
+            "places": 4,
+            "plein": 2,
+            "depart": 2
           }
         }
       },
@@ -93,7 +101,9 @@
             "riviere": false,
             "delai": 60
           },
-          "consommation": {},
+          "consommation": {
+            "eau": 1
+          },
           "defense": 0,
           "discretion": 0,
           "capacite": 0,
@@ -111,6 +121,11 @@
           "bras": {
             "tache": "elevage",
             "nombre": 1
+          },
+          "vivant": {
+            "espece": "cabri",
+            "places": 6,
+            "plein": 4
           }
         }
       }

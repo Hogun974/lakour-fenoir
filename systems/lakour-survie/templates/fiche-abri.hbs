@@ -52,6 +52,7 @@
         <div>
           <a data-action="ouvrirObjet" data-item-id="{{id}}" data-tooltip="{{aide}}">{{nom}}</a>
           <small>{{categorie}} · {{localize "LAKOUR_SURVIE.Objet.Niveau"}} {{niveau}} / {{niveauMax}} · {{etatTexte}}{{#if lontan}} · {{localize "LAKOUR_SURVIE.Abri.Lontan"}}{{/if}}{{#if arret}} · <em>{{localize "LAKOUR_SURVIE.Abri.Arret"}} ({{arret}})</em>{{/if}}{{#if secours}} · <em>{{localize "LAKOUR_SURVIE.Abri.Secours"}}</em>{{/if}}{{#if materiau}} · {{materiau}}{{/if}}{{#if entretien}} · <span class="{{#if mauvais}}mauvais{{/if}}">{{entretien}}</span>{{/if}}</small>
+          {{#if cheptel}}<small class="survie-cheptel"><i class="fa-solid fa-paw"></i> {{cheptel}}</small>{{/if}}
           {{#if chantier}}<span class="survie-jauge-barre chantier" data-tooltip="{{chantier.fait}} / {{chantier.requis}}"><span style="width: {{chantier.pct}}%"></span></span>{{/if}}
         </div>
       </li>

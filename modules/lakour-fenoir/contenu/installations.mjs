@@ -353,7 +353,8 @@ for (const i of INSTALLATIONS) {
 export const VOIES_AUTONOMIE = [
   { cle: "ferme-des-hauts", nom: "La ferme des Hauts", site: "ferme-de-la-plaine-des-cafres",
     installations: [
-      { cle: "citerne-de-pluie", niveau: 3 }, { cle: "bouilleur-solaire", niveau: 2 }, { cle: "compost", niveau: 1 }, { cle: "potager", niveau: 2 },
+      // Lot 8 (le vivant) : les bêtes boivent ; le jardin créole, qui boit peu, remplace le potager pour passer l'hiver sec des Hauts.
+      { cle: "citerne-de-pluie", niveau: 3 }, { cle: "bouilleur-solaire", niveau: 2 }, { cle: "compost", niveau: 1 }, { cle: "jardin-creole", niveau: 2 },
       { cle: "enclos-a-cabris", niveau: 2 }, { cle: "basse-cour", niveau: 1 }, { cle: "reserve-etanche", niveau: 1 }, { cle: "panneaux-solaires", niveau: 1 }, { cle: "batteries", niveau: 1 }
     ] },
   { cle: "ilet-de-mafate", nom: "L'îlet de Mafate", site: "ilet-de-la-nouvelle",

@@ -1,0 +1,99 @@
+{
+  "_id": "1Bw5AtCsHkEJt0ak",
+  "_key": "!items!1Bw5AtCsHkEJt0ak",
+  "name": "Aquaponie",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "aquaponie",
+    "categorie": "nourriture",
+    "description": "<p>Un bassin à tilapias relié à des bacs de brèdes par une petite pompe : les poissons nourrissent les plantes, les plantes filtrent l'eau des poissons. Le filtre tient un mois ; il faut deux fois moins d'eau qu'un potager. Mais deux jours sans pompe tuent tout.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 18
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 8,
+          "pieces": 4,
+          "graines": 0,
+          "travail": 18
+        },
+        "requiert": {
+          "savoirs": [
+            "elevage",
+            "plomberie-filtration"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 1,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "nourriture": 3
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 60
+          },
+          "consommation": {
+            "eau": 0.5,
+            "energie": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "vivant": {
+            "espece": "tilapia",
+            "places": 40,
+            "plein": 30,
+            "depart": 15,
+            "filtre": 30,
+            "sansPompe": 2
+          },
+          "bras": {
+            "tache": "elevage",
+            "nombre": 1
+          }
+        }
+      }
+    ],
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "aquaponie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

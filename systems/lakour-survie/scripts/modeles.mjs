@@ -124,6 +124,9 @@ export class ModeleAbri extends foundry.abstract.TypeDataModel {
       souillure: nombre(0),
       // Lot 6 « ateliers » : l'eau bouillie ou javellisée à l'atelier traite l'eau de l'abri jusqu'à ce jour (exclu ; 0 : rien).
       eauTraiteeAvant: nombre(0),
+      // Lot 8 « Le vivant de l'abri » (logique/vivant.mjs) : l'état de chaque cheptel, par clé d'installation ({ espece, tetes, sante,
+      // malade, manques, naissances, filtreLe, sansPompe, depuis }) ; vide : les cheptels sont pleins (une partie d'avant le lot).
+      vivant: objetLibre({}),
       notes: html()
     };
   }

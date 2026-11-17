@@ -19,6 +19,7 @@ import { PAGES_JOUEUR_CORPS } from "./hygiene.mjs";
 import { PAGES_JOUEUR_ATELIERS } from "./ateliers.mjs";
 import { PAGES_JOUEUR_FOUILLES } from "./fouilles.mjs";
 import { PAGES_JOUEUR_OUVRAGES } from "./ouvrages.mjs";
+import { PAGES_JOUEUR_VIVANT } from "./vivant.mjs";
 import { FETES_FENOIR } from "../scripts/fetes.js";
 import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES, COURS_TEXTE } from "./marche.mjs";
 import { EVENEMENTS } from "./evenements.mjs";
@@ -150,6 +151,7 @@ Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs e
   ...PAGES_JOUEUR_ATELIERS,
   ...PAGES_JOUEUR_FOUILLES,
   ...PAGES_JOUEUR_OUVRAGES,
+  ...PAGES_JOUEUR_VIVANT,
   { cle: "traits", titre: "Les traits", texte: TRAITS.map(t => `**${t.nom}** — ${sansBalises(t.description)}${t.incompatibles.length ? ` *(Incompatible : ${t.incompatibles.map(c => TRAITS.find(x => x.cle === c)?.nom ?? c).join(", ")}.)*` : ""}`).join("\n\n") }
 ] });
 
