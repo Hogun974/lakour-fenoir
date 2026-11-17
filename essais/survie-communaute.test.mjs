@@ -286,8 +286,8 @@ test("les quotas : une demande suivie jour après jour, la semaine close fait so
   assert.deepEqual(r.bilans, [{ id: q.quota.id, acteurId: "a", tache: "garde", fait: 2, jours: 3, tenu: false }]);
   assert.equal(r.etat.groupe.quotas[0].fait, 1, "la nouvelle semaine repart de zéro");
   assert.equal(L.retirerQuota(r.etat, q.quota.id).groupe.quotas.length, 0);
-  // Les corvées : vingt-six, chacune à l'une des treize tâches.
-  assert.equal(L.corveesDe(C).length, 26);
+  // Lot 9 (contrat §28) : les deux corvées de la ronde s'ajoutent aux vingt-six du lot 10.
+  assert.equal(L.corveesDe(C).length, 28);
   assert.deepEqual(L.verifierCorvees(C), []);
   assert.ok(L.corveesDe(C, "eau").map(c => c.cle).includes("nettoyer-les-filtres"));
   assert.deepEqual(L.donnerCorvee({ groupe: {} }, "a", "puiser-de-l-eau").groupe.corvees, { a: "puiser-de-l-eau" });

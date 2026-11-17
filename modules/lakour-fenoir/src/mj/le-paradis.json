@@ -1,0 +1,185 @@
+{
+  "_id": "WSsP7SqN0EaI7Z9q",
+  "_key": "!journal!WSsP7SqN0EaI7Z9q",
+  "name": "Le paradis et son piège",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "le-paradis",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "ODPupWntPHXRZIF3",
+      "_key": "!journal.pages!WSsP7SqN0EaI7Z9q.ODPupWntPHXRZIF3",
+      "name": "Le paradis, et son prix",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le but d'une longue partie, pour qui s'enracine, c'est <strong>le paradis</strong> : un abri autonome où l'on vit bien, où l'on n'a plus à sortir. Le système le dit déjà (l'autonomie, l'autonomie complète des deux savoirs). Ce journal dit <strong>son prix</strong> : il faut le garder.</p><ul><li><strong>Plus on reste au même endroit, plus on attire les Livides</strong> : c'est la <strong>chaleur du lieu</strong>. Elle se mesure en secret ; les joueurs n'en voient que des signes.</li><li><strong>Des rondes</strong> la tiennent : elles abattent ceux qui viennent. Une ronde manquée se paie : ceux qui arrivent restent, et s'agglutinent.</li><li><strong>Les corps</strong> que laissent les rondes doivent être enterrés, ou brûlés.</li><li><strong>Sous terre</strong>, l'air et le jour manquent.</li><li><strong>Une haie</strong> cache l'abri, si on lui laisse le temps de pousser.</li></ul><p>Rien de cela n'interdit de s'enraciner : un groupe organisé tient son paradis des années. C'est un groupe qui s'épuise, qui se réduit, qui néglige sa garde, qui se fait prendre. Et la porte reste ouverte : partir, revenir quand le lieu a été oublié.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "principe"
+        }
+      }
+    },
+    {
+      "_id": "Be26SxgxkIAAG7gc",
+      "_key": "!journal.pages!WSsP7SqN0EaI7Z9q.Be26SxgxkIAAG7gc",
+      "name": "La chaleur du lieu",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Ce qui la fait monter.</strong> Chaque jour où l'on vit à l'abri : un peu, et bien plus quand le groupe est nombreux (seul, huit fois moins qu'à quatre ; à deux, trois fois moins ; à huit, deux fois plus). Un jour de bruit fort (coups de feu, groupe électrogène) en ajoute. Dans les Hauts, en saison sèche, le froid rassemble les Livides : un quart de plus.</p><p><strong>Ce qui la fait baisser.</strong><br>- <strong>Un jour de silence</strong> : personne ne bâtit, ne fouille, ne chasse, ne travaille à l'atelier ; aucun bruit. Le système le voit seul ; vous pouvez aussi le décider (avancer avec silence).<br>- <strong>La ronde</strong> : chaque Livide abattu efface une piste ; une ronde, même vide, efface des traces.<br>- <strong>Un camp leurre</strong> : un feu et du bruit loin de l'abri, pour tirer ailleurs ce qui rôde (leurre : deux quarts, un matériau, et un test de discrétion pour rentrer sans être vu ; raté, il ne trompe qu'à moitié). Il trompe moitié moins s'il en a été fait un dans la semaine.<br>- <strong>Partir</strong> : un lieu où plus personne ne vit refroidit, jour après jour. Revenir dans un lieu qu'on a quitté depuis des mois, c'est revenir dans un lieu oublié. C'est la <strong>transhumance</strong> des anciens : les Hauts à une saison, les Bas à l'autre.</p><p><strong>Ce qu'elle fait.</strong> Dès qu'il reste des traces, elle fait <strong>venir des Livides</strong> autour de l'abri, chaque jour un peu plus. Une fois qu'« ils viennent », elle pèse aussi sur les <strong>hordes</strong> : une horde qui passe trouve plus souvent l'abri, et les hordes de passage se tournent vers la région d'un abri chaud. Jamais sur la visibilité : celle-là reste ce que voient les vivants, les bandes.</p><p><strong>Ce qu'en voient les joueurs</strong> (le journal le dit quand ça change) :<br>- <em>on vous a oubliés</em> : rien ;<br>- <em>des traces</em> : quelque chose passe, la nuit ;<br>- <em>on vous a remarqués</em> : il en vient chaque jour un ou deux ;<br>- <em>ils viennent</em> : chaque jour plus nombreux ;<br>- <em>assiégés</em> : ils sont contre la clôture, et ne partent plus.</p><p><strong>Pour le MJ</strong> : paradis() donne la chaleur (de 0 à 10), les agglutinés, les signes ; chaleur({ delta }) la corrige (une scène qui fait du bruit, un incendie) ; leurre({ membres }) fait le camp leurre.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "chaleur"
+        }
+      }
+    },
+    {
+      "_id": "Cpb6r7uExR8YkuVU",
+      "_key": "!journal.pages!WSsP7SqN0EaI7Z9q.Cpb6r7uExR8YkuVU",
+      "name": "La ronde",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La <strong>ronde</strong> est une tâche du jour (vigilance pour voir, combat pour abattre). On la confie : ni la répartition automatique ni la grille par défaut ne la donnent d'elles-mêmes. Celui qui l'a la fait chaque jour à l'abri, au matin.</p><p><strong>Comment elle se joue</strong> (le système la tire seul, chaque jour ; vous pouvez la jouer en scène avec ronde({ membres })) :<br>- les Livides autour de l'abri : ceux du jour (selon la chaleur et ce qu'il reste de Livides dans la région) et ceux qui s'agglutinaient ;<br>- le meilleur guetteur cherche (vigilance, normale) : <strong>vus à temps</strong>, on les prend un par un (+1 dé au combat), et ceux qu'on n'abat pas, on les laisse — on recule, ils ne frappent pas ; <strong>surpris</strong> (−1 dé), le plus proche frappe quand l'échange n'en a abattu aucun (un 6 touche, un 6 au dé de morsure mord) ;<br>- chaque rondier fait un échange de combat, trois Livides au plus à la fois ;<br>- vus à temps, la ronde relève aussi autre chose : la table « La ronde — ce qu'on trouve » (une fuite, une clôture pliée, des traces). C'est là que se <strong>contrôle</strong> le paradis : ce qu'on voit tôt se répare à peu de frais.</p><p><strong>Une ronde confiée à un PNJ</strong> rate selon ses compétences : ce sont ses dés.</p><p><strong>La tournée du petit jour.</strong> Quand personne n'a la ronde, celui qui a veillé la nuit fait le tour au matin, fourbu (−1 dé) : s'il voit quelque chose, il l'abat ; sinon, il reste derrière la clôture. C'est ce qui tient la plupart des abris bien gardés.</p><p><strong>Une ronde manquée</strong> (personne n'a la ronde, ni la garde, alors que le lieu est « remarqué ») : quatre sur dix de ceux qui sont venus restent. Les <strong>agglutinés</strong> (au plus huit) rôdent autour de l'abri : chacun rend une attaque de Livides errants plus probable (1 % par jour), et ils frappent plus fort (un de force tous les cinq). Chaque jour, quelques-uns repartent d'eux-mêmes. Une ronde les reprend tous.</p><p><strong>Une morsure pendant la ronde</strong> : l'alerte le dit ; soignez-la tout de suite (soignerMorsure).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "ronde"
+        }
+      }
+    },
+    {
+      "_id": "o3AHNGgtS3W3gM90",
+      "_key": "!journal.pages!WSsP7SqN0EaI7Z9q.o3AHNGgtS3W3gM90",
+      "name": "Les corps",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Chaque Livide abattu par une ronde laisse un corps près de l'abri (la fiche de l'abri les compte). Tant qu'il est frais (quinze jours dans les Bas, quarante dans les Hauts, où le froid le garde et où il sent moitié moins) :<br>- il <strong>sent pour les bêtes</strong> : les chiens errants viennent plus souvent (les Livides, eux, ignorent l'odeur d'un corps) ;<br>- il <strong>salit l'abri</strong> : un peu de souillure par corps et par jour (les maladies de la saleté).</p><p><strong>Les enterrer</strong> (traiterCorps({ action: \"enterrer\", membres, quarts })) : trois corps par quart et par personne, sans bruit, loin de l'abri. <strong>Les brûler</strong> (action « bruler ») : dix par quart et par personne, avec du bois des alentours (un pour cinq corps) ; mais <strong>la fumée se voit</strong> : visibilité +2 ce jour-là (les bandes regardent).</p><p>Décrivez sobrement : la pelle, la chaux, le bûcher qu'on surveille, ce qu'on se dit en revenant. Jamais ce qu'on voit.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "corps"
+        }
+      }
+    },
+    {
+      "_id": "nWEoB2gp1yJkan02",
+      "_key": "!journal.pages!WSsP7SqN0EaI7Z9q.nWEoB2gp1yJkan02",
+      "name": "Sous terre : l'air et le jour",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un groupe qui vit <strong>sous terre</strong> (un tunnel de lave, une galerie, un tunnel de lave aménagé, une galerie au refuge complet ; ou parce que vous le dites : sousTerre({ vit })) :</p><ul><li><strong>Les jours sans soleil</strong> : celui qui ne remonte jamais (sa tâche ne le fait pas sortir : repos, cuisine, soins, atelier…) compte ses jours. Après <strong>sept</strong>, son moral ne remonte plus aussi haut (plafond −1) ; après <strong>vingt et un</strong>, −2. Un jour dehors (fouille, chasse, pêche, eau, cultures, élevage, garde, ronde, chantier) remet le compte à zéro.</li><li><strong>L'air</strong> : plus des trois quarts de la place prise, il est <strong>lourd</strong> (la nuit repose moins : +1 de fatigue au matin) ; plus de monde que de place, il est <strong>vicié</strong> (+2, et la bougie s'étouffe : alerte). La table « Sous terre — la bougie » donne ce qu'on en remarque ; la flamme d'une bougie est la seule jauge, sans chiffre.</li><li><strong>Le puits d'air et de jour</strong> : au premier niveau, l'air passe (un cran de mieux) ; au second, le jour tombe aussi (plus de jours sans soleil). Mais il laisse sortir la lueur, la fumée et les voix : la discrétion baisse.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sous-terre"
+        }
+      }
+    },
+    {
+      "_id": "TmWYwEYpg4EvRjMa",
+      "_key": "!journal.pages!WSsP7SqN0EaI7Z9q.TmWYwEYpg4EvRjMa",
+      "name": "La haie qui cache l'abri",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le <strong>camouflage</strong> a ses sœurs lontan : la <strong>haie de bambous</strong> et le <strong>rideau de filaos</strong>, plantés autour de la cour. Comme toutes les sœurs, une seule sert à la fois (le camouflage d'abord, s'il marche).</p><ul><li>Une haie <strong>pousse</strong> : elle ne cache qu'une part de ce qu'elle cachera tant qu'elle n'a pas poussé (deux à trois mois pour le bambou, un mois pour le filao).</li><li><strong>Au cyclone</strong>, le bambou plie et se relève (il ne s'abîme pas) ; le filao casse (un point d'état de plus) : l'abri se voit à travers jusqu'à la réparation.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "haie"
+        }
+      }
+    },
+    {
+      "_id": "KTeZAx7rLlguoW98",
+      "_key": "!journal.pages!WSsP7SqN0EaI7Z9q.KTeZAx7rLlguoW98",
+      "name": "Mener le paradis",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Dites les signes</strong>, pas le chiffre : des traces, des herbes couchées, un pieu penché, le silence des oiseaux.</li><li><strong>Faites sentir le choix</strong> : rester, c'est payer des rondes, des corps, du silence ; partir, c'est perdre ce qu'on a bâti — mais un lieu quitté se refroidit, et l'on peut y revenir.</li><li><strong>Le MJ IA</strong> lit la chaleur dans paradis() et la dit par des signes ; il ne la nomme jamais.</li><li><strong>Ce qui s'use</strong> : la table « La ronde — ce qu'on trouve » montre ce qui s'use avant que ça casse (une fuite, un pieu penché) ; réparé tôt (reparer), cela ne coûte presque rien. C'est le « contrôle » du paradis.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "mener"
+        }
+      }
+    }
+  ]
+}

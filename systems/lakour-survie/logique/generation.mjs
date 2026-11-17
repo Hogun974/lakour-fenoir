@@ -42,10 +42,14 @@ import { composerHistoire } from "./histoires.mjs";
 import { deriverHasard } from "./hasard.mjs";
 import { resoudreTest } from "./des.mjs";
 import { message } from "./textes.mjs";
+import { TACHES_SUR_DEMANDE } from "./paradis.mjs";
 
 export const TACHES = {
   garde: "vigilance", cultures: "survie", elevage: "survie", chantier: "bricolage", atelier: "bricolage", cuisine: "survie",
-  soins: "soins", eau: "survie", peche: "survie", chasse: "survie", fouille: "discretion", repos: null, enseigner: null
+  soins: "soins", eau: "survie", peche: "survie", chasse: "survie", fouille: "discretion", repos: null, enseigner: null,
+  // Lot 9 « Le paradis et son piège » (paradis.mjs, contrat §28) : la ronde autour de l'abri (voir les Livides, puis les abattre).
+  // Tâche « sur demande » (TACHES_SUR_DEMANDE) : ni les besoins du groupe ni la répartition automatique ne la donnent d'eux-mêmes.
+  ronde: "vigilance"
 };
 export const BUDGET_DEPART = [10, 16];
 // Ce que la création peut garder de l'esprit (verrous) : le joueur change sa religion avant de valider (complément, famille 2).
@@ -261,7 +265,7 @@ export const competenceDeTache = tache => TACHES[tache] ?? null;
 // chacune interdit. « violence » garde aussi la garde (choix de la logique, docs/survie-notes-logique.md). Une incapacité qui est
 // elle-même une tâche ou une compétence interdit celle-ci.
 export const INCAPACITES = {
-  violence: { competences: ["combat", "tir"], taches: ["chasse", "garde"] },
+  violence: { competences: ["combat", "tir"], taches: ["chasse", "garde", "ronde"] },
   soins: { competences: ["soins"], taches: ["soins"] },
   "travaux-lourds": { competences: [], taches: ["chantier"] },
   conduite: { competences: ["conduite"], taches: [] },
@@ -332,7 +336,7 @@ export function besoinsDuGroupe(membres = [], abri = null, contenu = {}, etat = 
   const vivants = membres.filter(m => peutAgir(m.system));
   const taches = {};
   for (const [tache, competence] of Object.entries(TACHES)) {
-    if (!competence) continue;
+    if (!competence || TACHES_SUR_DEMANDE.includes(tache)) continue;
     const capables = vivants.filter(m => peutFaire(m.system, tache));
     const meilleur = Math.max(0, ...capables.map(m => niveauTache(m.system, tache, contenu)));
     const qui = capables.find(m => niveauTache(m.system, tache, contenu) === meilleur)?.id ?? null;
@@ -373,7 +377,7 @@ export function repartir(membres = [], besoins = { taches: {} }, contenu = {}) {
     if (mieux && niveauTache(mieux.system, tache, contenu) > 0) { sortie[mieux.id] = tache; libres.delete(mieux.id); }
   }
   for (const m of libres.values()) {
-    const options = Object.keys(TACHES).filter(t => TACHES[t] && peutFaire(m.system, t));
+    const options = Object.keys(TACHES).filter(t => TACHES[t] && !TACHES_SUR_DEMANDE.includes(t) && peutFaire(m.system, t));
     sortie[m.id] = options.sort((a, b) => niveauTache(m.system, b, contenu) - niveauTache(m.system, a, contenu))[0] ?? "repos";
   }
   return sortie;

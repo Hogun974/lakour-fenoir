@@ -158,7 +158,10 @@ const infScore = { calme: 1, inconnue: 0, presente: 0, dense: -1.5, grouillante:
 //   actions: [faits et rencontres des actions du jour] } (lecture seule) : les vérifications d'invariants.
 export const STRATEGIES_LONGUES = [...STRATEGIES, "sedentaire"];
 export const RECRUES = { max: 8, tousLes: 7 };
-export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region, graine = "1", jours = JOURS_DEFAUT, journal = false, compagnons = 0, recrutement = false, controle = null } = {}) {
+// Lot 9 (« Le paradis et son piège », docs/equilibre-paradis.md) : rondes (défaut vrai) : un groupe enraciné fait la ronde quand il
+// voit qu'on l'a remarqué ; rallumer (défaut faux) : une fois autonome, il nettoie les lieux gardés de sa région pour la rallumer.
+export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region, graine = "1", jours = JOURS_DEFAUT, journal = false, compagnons = 0, recrutement = false, controle = null,
+  rondes = true, rallumer = false } = {}) {
   const sedentaire = strategie === "sedentaire";
   const R = REGLES_SIMULATEUR;
   const idx = L.indexer(contenu);
@@ -188,7 +191,11 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     // fouillant, plantes cueillies, tisanes réussies, jours d'abri avec au moins un médicament.
     morsures: 0, morsuresAidees: 0, morsuresSoignees: 0, trousses: 0, plantes: 0, tisanes: 0, joursAvecMedicament: 0,
     // Lot « fetes » (rééquilibrage du 2026-11-13) : morts à qui le groupe a donné le repos.
-    repos: 0
+    repos: 0,
+    // Lot 9 : rondes faites, Livides abattus, la chaleur du lieu (la plus haute, celle de la fin), les agglutinés (le plus), corps
+    // enterrés, nettoyages des lieux gardés, le jour où la région s'est rallumée, les jours où elle l'est, les convois attirés.
+    rondes: 0, abattus: 0, chaleurMax: 0, chaleurFin: 0, agglutinesMax: 0, corpsEnterres: 0, nettoyages: 0, rallumeeLe: null, joursRallumee: 0, convois: 0,
+    morsuresRonde: 0
   };
   let fouillesMaigres = 0;
   let actionsDuJour = [];
@@ -240,30 +247,31 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         const b = L.blesser(s.system, r.blessures, { morsure: r.morsures > 0 });
         s.system = b.system;
         s.derniereCause = cause;
-        if (b.morsure) {
-          // Test de soins du meilleur soigneur : difficile avec un médicament (consommé, +1 dé), une décoction de zerbaz (une
-          // plante consommée, +1 dé), une trousse de secours qu'il porte (son bonus d'outil compte) ou une infirmerie (son bonus
-          // de soins compte), extrême sinon : difficulteMorsure, bonusMorsure.
-          const soigneur = meilleurSoigneur();
-          const medicament = Boolean(abri) && (abri.system.stocks?.medicaments ?? 0) > 0;
-          const decoction = Boolean(abri) && (abri.system.stocks?.plantes ?? 0) >= L.DECOCTION.plantes;
-          const infirmerie = Number(abri?.bilan?.soins) || 0;
-          const trousse = trousseDe(soigneur?.s);
-          if (medicament) abri.system.stocks = L.ajouterStocks(abri.system.stocks, { medicaments: -1 });
-          if (decoction) abri.system.stocks = L.ajouterStocks(abri.system.stocks, { plantes: -L.DECOCTION.plantes });
-          const difficulte = L.difficulteMorsure({ medicament, infirmerie: infirmerie > 0, trousse: trousse > 0, decoction });
-          const bonus = L.bonusMorsure({ medicament, decoction, outil: trousse, infirmerie });
-          const test = L.resoudreTest({ niveau: soigneur?.niveau ?? 0, difficulte, bonus, hasard: h, compte: false });
-          const m = L.appliquerMorsure(s.system, test, quart);
-          s.system = m.system;
-          stats.morsures++;
-          if (difficulte !== "extreme") stats.morsuresAidees++;
-          if (!m.infecte) stats.morsuresSoignees++;
-          if (m.infecte) s.derniereCause = "infection";
-        }
+        if (b.morsure) soignerMorsure(s, quart, h);
       }
     }
     return { restants };
+  };
+  // Test de soins du meilleur soigneur : difficile avec un médicament (consommé, +1 dé), une décoction de zerbaz (une plante
+  // consommée, +1 dé), une trousse de secours qu'il porte (son bonus d'outil compte) ou une infirmerie (son bonus de soins compte),
+  // extrême sinon : difficulteMorsure, bonusMorsure. (Lot 9 : aussi pour une morsure de la ronde, rendue par avancer.)
+  const soignerMorsure = (s, quart, h) => {
+    const soigneur = meilleurSoigneur();
+    const medicament = Boolean(abri) && (abri.system.stocks?.medicaments ?? 0) > 0;
+    const decoction = Boolean(abri) && (abri.system.stocks?.plantes ?? 0) >= L.DECOCTION.plantes;
+    const infirmerie = Number(abri?.bilan?.soins) || 0;
+    const trousse = trousseDe(soigneur?.s);
+    if (medicament) abri.system.stocks = L.ajouterStocks(abri.system.stocks, { medicaments: -1 });
+    if (decoction) abri.system.stocks = L.ajouterStocks(abri.system.stocks, { plantes: -L.DECOCTION.plantes });
+    const difficulte = L.difficulteMorsure({ medicament, infirmerie: infirmerie > 0, trousse: trousse > 0, decoction });
+    const bonus = L.bonusMorsure({ medicament, decoction, outil: trousse, infirmerie });
+    const test = L.resoudreTest({ niveau: soigneur?.niveau ?? 0, difficulte, bonus, hasard: h, compte: false });
+    const m = L.appliquerMorsure(s.system, test, quart);
+    s.system = m.system;
+    stats.morsures++;
+    if (difficulte !== "extreme") stats.morsuresAidees++;
+    if (!m.infecte) stats.morsuresSoignees++;
+    if (m.infecte) s.derniereCause = "infection";
   };
   const meilleurSoigneur = () => {
     let m = null;
@@ -679,6 +687,17 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       if (g) { g.system = L.assigner(g.system, "garde", jour).system; gardes.add(g.id); }
     }
     const manqueEau = bilan.joursDeStocks.eau < 3, manqueNourriture = bilan.joursDeStocks.nourriture < 3;
+    // Lot 9 : la ronde. Celui qui a veillé fait déjà le tour au petit jour (la logique) ; un groupe enraciné envoie en plus son meilleur
+    // combattant valide faire la ronde quand « ils viennent » (le signe de la chaleur, public, sur l'abri), ou quand des Livides
+    // traînent autour de l'abri depuis deux jours (rondes manquées, public). Boire et manger passent avant.
+    if (enracine && rondes && abri && !manqueEau && !manqueNourriture) {
+      const signe = abri.system.signeChaleur ?? "oublie";
+      const due = ["viennent", "assieges"].includes(signe) || (Number(abri.system.rondesManquees) || 0) >= 2;
+
+      const rondier = due ? vivants().filter(s => s.system.tache === "repos" && L.peutFaire(s.system, L.TACHE_RONDE) && Number(s.system.blessures) < 2 && Number(s.system.fatigue) < 3)
+        .sort((a, b) => L.competence(b.system, "combat").niveau - L.competence(a.system, "combat").niveau)[0] : null;
+      if (rondier) rondier.system = L.assigner(rondier.system, L.TACHE_RONDE, jour).system;
+    }
     // Un épuisé se repose, sauf quand l'eau ou la nourriture manque : on va chercher à boire même fourbu.
     const libres = () => vivants().filter(s => s.system.tache === "repos" && Number(s.system.blessures) < 3 && (Number(s.system.fatigue) < R.fatigueRepos || manqueEau || manqueNourriture));
     const poser = (liste, tache) => { for (const s of liste) { const a = L.assigner(s.system, tache, jour); if (a.ok) s.system = a.system; } };
@@ -739,6 +758,21 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         if (res === "materiaux" && (abri.system.nature?.bois ?? 0) >= 2) { poser(f, "chasse"); fouillerNature(f, jour, h, "bois"); }
         else { poser(f, "fouille"); fouillerRegion(f, res, jour, h); }
       }
+      // Lot 9 : rallumer. Autonome, sans manque, à deux au moins : on nettoie un lieu gardé de la région (un échange de combat chacun).
+      if (rallumer && etat.autonome && !manqueNourriture && !manqueEau && dispo.length >= 2) {
+        const g = L.lieuxGardes(etat, contenu, abri.system.region, { jour, tenus: [abri.system.site] });
+        const lieu = g.lieux.find(l => !l.nettoye);
+        if (lieu) {
+          const equipe = [...dispo].sort((a, b) => L.competence(b.system, "combat").niveau - L.competence(a.system, "combat").niveau).slice(0, 2);
+          dispo = dispo.filter(s => !equipe.includes(s));
+          poser(equipe, "fouille");
+          const nombre = Math.max(1, Math.round(2 * (monde.regions[abri.system.region]?.infestation ?? 0)));
+          const r = combattre(equipe, { nombre, des: 1, resistance: 1, type: "livide" }, jour * 4, h, "rencontre");
+          const tues = nombre - r.restants;
+          if (tues >= 1) { etat = { ...etat, nettoyes: L.nettoyerLieu(etat.nettoyes ?? [], { region: abri.system.region, site: lieu.site, jour, tues }) }; stats.nettoyages++; }
+          noter(jour, `nettoie ${lieu.site} (${tues}/${nombre})`);
+        }
+      }
       if (dispo.length) { poser(dispo, "chasse"); fouillerNature(dispo, jour, h); }
       if (doitPartir && sEnraciner(jour, h, [abri.system.site])) { noter(jour, `part (${doitPartir})`); jourSansTravail(jour, h); continue; }
     } else {
@@ -795,12 +829,27 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     // Soir : soins, fête.
     const stabilises = soigner(jour, h);
     preparerTisane(jour, h);
+    // Lot 9 : un soir, quand les corps frais s'entassent (4 et plus), on en enterre un quart de travail (sans bruit).
+    if (abri && L.corpsFrais(L.corpsDe(abri.system), { jour, altitude: idx.regions.get(abri.system.region)?.altitude }) >= 4) {
+      const t = L.traiterCorps(L.corpsDe(abri.system), { action: "enterrer", quarts: 1, bras: 1 });
+      abri.system = { ...abri.system, corps: t.corps };
+      stats.corpsEnterres += t.traites;
+    }
     donnerLeRepos(jour);
     feterSiFete(jour);
 
     // La journée passe.
-    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri, options: { stabilises, corpsTraites: ids, veille: vivants().filter(s => s.system.tache === "garde").map(s => s.id), bivouac: bivouac() } });
+    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri, options: { stabilises, corpsTraites: ids, veille: vivants().filter(s => s.system.tache === "garde").map(s => s.id), bivouac: bivouac(), tournee: rondes } });
     appliquer(r);
+    // Lot 9 : les morsures de la ronde se soignent tout de suite ; la chaleur, les rondes, l'île.
+    for (const id of r.paradis?.morsures ?? []) { const s = survivants.find(x => x.id === id); if (s && L.peutAgir(s.system)) { stats.morsuresRonde++; soignerMorsure(s, (jour + 1) * 4, h); } }
+    for (const x of r.paradis?.rondes ?? []) { stats.rondes++; stats.abattus += x.abattus; }
+    if (abri) {
+      const lieu = L.lieuDe(monde, abri.system.site);
+      stats.chaleurMax = Math.max(stats.chaleurMax, lieu.chaleur); stats.chaleurFin = lieu.chaleur; stats.agglutinesMax = Math.max(stats.agglutinesMax, lieu.agglutines);
+    }
+    if (L.regionsRallumees(etat).length) { stats.joursRallumee++; if (stats.rallumeeLe === null) stats.rallumeeLe = jour + 1; }
+    stats.convois += r.faits.filter(f => f.cle === "convoi-attire").length + r.secrets.filter(f => f.cle === "convoi-attire").length;
     if (abri) {
       abri.bilan = r.bilan;
       stats.joursAbri++;

@@ -17,6 +17,7 @@
 // - Les PNJ apprennent comme les joueurs : une tâche tenue sept jours donne une marque à tout membre, joueur ou non (etat.mjs, déjà).
 // Rien d'automatique ne s'impose à un joueur : la grille et les quotas ne règlent que ceux qu'on ne joue pas, et se lisent.
 import { TACHES, peutFaire, niveauTache, repartir } from "./generation.mjs";
+import { TACHES_SUR_DEMANDE } from "./paradis.mjs";
 import { installationDe, liste } from "./contenu.mjs";
 import { peutAgir } from "./survivant.mjs";
 import { message } from "./textes.mjs";
@@ -37,7 +38,7 @@ export function grilleDe(etat, id) {
 // La grille par défaut : la tâche de la répartition automatique en 1, ce qu'il sait faire en 3, le reste éteint.
 export function grilleParDefaut(system, tacheRepartie = "") {
   return Object.fromEntries(TACHES_GRILLE.map(t => [t, t === tacheRepartie ? PRIORITE_DEFAUT.repartition
-    : TACHES[t] && peutFaire(system, t) ? PRIORITE_DEFAUT.capable : 0]));
+    : TACHES[t] && !TACHES_SUR_DEMANDE.includes(t) && peutFaire(system, t) ? PRIORITE_DEFAUT.capable : 0]));
 }
 // Régler une priorité (ou toute une grille). -> etat
 export function reglerPriorites(etat, id, grille = {}) {
@@ -61,7 +62,9 @@ export function travailDisponible(situation = {}) {
   return {
     garde: true, eau: true, peche: true, chasse: true, fouille: true, repos: true,
     soins: Boolean(s.blesses), cuisine: s.vivres !== false, chantier: Boolean(s.chantier || s.abime), atelier: Boolean(s.atelier),
-    cultures: Boolean(s.cultures), elevage: Boolean(s.elevage), enseigner: false
+    cultures: Boolean(s.cultures), elevage: Boolean(s.elevage), enseigner: false,
+    // Lot 9 : la ronde a du travail tant qu'il y a un abri à garder (sur demande : la grille par défaut ne la donne pas).
+    ronde: s.abri !== false
   };
 }
 // La situation de l'abri pour travailDisponible. membres : [{ id, system }] ; abri : { system: { stocks }, installations } | null.
@@ -81,7 +84,8 @@ export function situationDeLAbri(membres = [], abri = null, contenu = {}) {
     abime: ins.some(i => n0(i.etat) > 0),
     atelier: n0(stocks.materiaux) > 0 && liste(contenu?.recettes).length > 0,
     cultures: enService("cultures"),
-    elevage: enService("elevage")
+    elevage: enService("elevage"),
+    abri: Boolean(abri)
   };
 }
 

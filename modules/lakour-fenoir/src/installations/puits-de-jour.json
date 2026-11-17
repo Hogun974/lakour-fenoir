@@ -1,0 +1,124 @@
+{
+  "_id": "ZzYuqoTcdrA8dEp3",
+  "_key": "!items!ZzYuqoTcdrA8dEp3",
+  "name": "Puits d'air et de jour",
+  "type": "installation",
+  "img": "icons/svg/cave.svg",
+  "system": {
+    "cle": "puits-de-jour",
+    "categorie": "souterrain",
+    "description": "<p>Un conduit percé jusqu'au jour depuis la galerie : d'abord un simple tuyau d'air coiffé d'un chapeau de tôle, puis un vrai puits, tubé, fermé d'une plaque de plexiglas ou d'un vieux pare-brise, qui descend un rond de soleil jusqu'en bas. L'air circule, la bougie se tient droite ; le jour tombe sur ceux qui ne remontent plus. Mais ce qui entre sort aussi : le soir, la lueur des lampes monte par le puits, avec la fumée et les voix.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 1
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": -1,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "air": 1,
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 1
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": -1,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "air": 1,
+          "jour": 1,
+          "bras": null
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "puits-de-jour"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

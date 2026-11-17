@@ -35,17 +35,18 @@ import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
 import { LOT_AFFAIRES } from "./affaires.mjs";
 import { CORVEES, BAREME, TABLES_COMMUNAUTE } from "./communaute.mjs";
 import { INSTALLATIONS_PLANS, EQUIPEMENTS_PLANS, PLANS_CONSTRUCTION, LIEUX_A_PLANS, TABLES_PLANS, JOURNAL_PLANS, sitesAvecPlans } from "./plans.mjs";
+import { INSTALLATIONS_PARADIS, CHANTIERS_REGION, CORVEES_PARADIS, TABLES_PARADIS, JOURNAL_PARADIS, JOURNAL_ILE } from "./paradis.mjs";
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
 const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJournal("guides", CLE_JOURNAL_REGIONS), pageId: idPage("guides", CLE_JOURNAL_REGIONS, r.cle) }]));
 export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 
 export const DOCUMENTS = [
-  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...SAVOIRS, ...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...AFFLICTIONS,
+  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_PARADIS, ...SAVOIRS, ...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, JOURNAL_CORPS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, JOURNAL_CORPS, JOURNAL_PARADIS, JOURNAL_ILE, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
   ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
-  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES, ...TABLES_CORPS,
+  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES, ...TABLES_CORPS, ...TABLES_PARADIS,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -58,7 +59,7 @@ export function donnees() {
     module: MODULE, version: 1,
     // Lot 12 : ce qu'on comprend en arrivant dans chaque région (une ligne pour le MJ, contenu/affaires.mjs).
     regions: REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" })), sites: sitesAvecPlans(SITES), routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
-    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE].map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: [...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES].map(aPlat), passes: PASSES.map(aPlat),
+    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_PARADIS].map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: [...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES].map(aPlat), passes: PASSES.map(aPlat),
     recettes: [...RECETTES, ...RECETTES_REPERES].map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
     factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
     religions: RELIGIONS, ancrages: ANCRAGES,
@@ -81,11 +82,15 @@ export function donnees() {
     // Lot 12 « Affaires, récits et fêtes » (contrat §17) : les affaires de l'île, lues par la logique (logique/affaires.mjs) et le MJ IA.
     affaires: LOT_AFFAIRES.affaires,
     // Lot 10 (contrat §22) : les corvées de la table de gestion (logique/gestion.mjs) et le barème des objets en parts (marche.mjs).
-    corvees: CORVEES, bareme: BAREME,
+    // Lot 9 (contrat §28) : les corvées de la ronde s'ajoutent à celles du lot 10.
+    corvees: [...CORVEES, ...CORVEES_PARADIS], bareme: BAREME,
     // Lot 4 « Les plans » (contrat §21 ; logique/plans.mjs) : les plans qu'on trouve (rareté, lieux, plans uniques) et les lieux à plans
     // rares ; les plans propres d'un site sont dans sites[].plans.
     plans: PLANS_CONSTRUCTION, lieuxAPlans: LIEUX_A_PLANS,
     // Lot « corps » (contrat §19) : les symptômes (nommés aux joueurs) et le Gris en six stades visibles (logique/maladies.mjs).
-    symptomes: SYMPTOMES, gris: GRIS
+    symptomes: SYMPTOMES, gris: GRIS,
+    // Lot 9 « Le paradis et son piège » (contrat §28 ; logique/paradis.mjs) : les grands chantiers de région (rallumer l'île).
+    chantiersRegion: CHANTIERS_REGION
   };
+
 }

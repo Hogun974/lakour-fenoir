@@ -46,6 +46,10 @@
 //   Lot « sens » (docs/equilibre-sens.md) : l'odeur de l'abri (0 à 4, bilan.odeur) ajoute 2 % par point à la horde et 1 % aux
 //   Livides errants ; celle que sentent les bêtes (bilan.odeurBetes, avec les morts laissés sans repos) 0,5 % aux chiens errants.
 //   Une odeur nulle (le cas de presque tous les abris) ne change rien au tirage.
+//   Lot 9 « Le paradis et son piège » (paradis.mjs, docs/equilibre-paradis.md) : la CHALEUR du lieu de l'abri ajoute 2 % par point à
+//   la horde présente et 1 % aux Livides errants ; chaque Livide AGGLUTINÉ autour de l'abri (ronde manquée) 3 % aux errants, et un
+//   de force tous les deux. Une région RALLUMÉE : errants moitié moins souvent ; mais la lumière se voit : les bandes voient l'abri
+//   avec 3 de visibilité de plus, et leur force monte de 1 par 4 régions rallumées. Tout à zéro (le cas d'avant) : même tirage.
 // - Faits : `public` selon ce que le groupe perçoit d'où il est (région courante ; fumée et convois des voisines ; nouvelles
 //   par la radio, ou par le téléphone tant qu'il marche dans sa région ; ce que toute l'île voit).
 // - Lot « savoirs » (docs/equilibre-savoirs.md) : le jour rouge, chaque région de la trajectoire reçoit du bois tombé
@@ -53,6 +57,11 @@
 //   (15 % × force chacun, `arbres-tombes`, 4 × force jours) ; sous le vacarme (sousLeVacarme), le bruit d'une région n'attire ni
 //   les hordes ni les menaces. L'éruption s'annonce la veille (`eruption-premices`, secret : un chien le sent). Un monde d'avant
 //   le gaz reçoit ses réserves à la part qui reste des autres (completerPillage).
+// - Lot 9 (paradis.mjs) : contexte.rallumees (les régions rallumées, état public) et contexte.chaleurParRegion (la chaleur du lieu
+//   de l'abri du groupe). Une région rallumée : son infestation décroît de 0,03 par jour de plus et ne passe plus 1,5 ; aucune horde
+//   n'y naît, celles qui y passent se défont plus vite (+8 % par jour) ; chaque jour, elle peut attirer un convoi d'une bande voisine
+//   (chanceConvoi, flux « convoi|jour|région » à part). Une horde qui choisit son cap préfère la région d'un abri chaud (+0,5 par
+//   point de chaleur au-dessus du seuil où « ils viennent », chaleurQuiAttire). Sans région rallumée ni chaleur : rien ne change.
 // - Textes (textes.mjs) : chaque fait, menace et entrée du journal secret porte `texte` (français, repli) et `cle`/`params` pour
 //   la traduction ; le fait d'un événement du contenu garde `cle` = clé de l'événement et met sa clé de texte dans `cleTexte`.
 import { CLES_PHASES, ALTITUDE_BAS, NATURE, RESEAUX, JOURNAL_SECRET_MAX, borner, DATE_DEPART } from "./constantes.mjs";
@@ -63,6 +72,7 @@ import { natureInitiale, regenererNature } from "./abri.mjs";
 import { phaseDuJour, saisonDuJour, dateDuJour } from "./temps.mjs";
 import { partPillage, reseauxActifs } from "./renseignements.mjs";
 import { REGLES_SENS } from "./sens.mjs";
+import { menacesDeChaleur, effetsRallumee, chanceConvoi, factionAttiree, forceDeLaLumiere, REGLES_PARADIS } from "./paradis.mjs";
 
 export const REGLES_MONDE = {
   infestationDepart: 0.1,
@@ -275,13 +285,25 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
 
   // 7. Routes d'après les événements en cours.
   routesDesEvenements(monde);
+  // Lot 9 : une route rouverte par un grand chantier (contexte.routesTenues : [[région, voisine]]) n'est plus coupée par un éboulement
+  // ou une crue : on passe, au pas ; seul le cyclone, le jour où il frappe, la ferme encore.
+  for (const [a, b] of Array.isArray(ctx.routesTenues) ? ctx.routesTenues : []) {
+    for (const [x, y] of [[a, b], [b, a]]) {
+      const r = monde.regions[x];
+      if (r?.routes?.[y] === "coupee" && !sousLeVacarme(monde, x, jour) && !sousLeVacarme(monde, y, jour)) r.routes[y] = "difficile";
+    }
+  }
 
   // 8. Infestation.
+  const rallumees = new Set(Array.isArray(ctx.rallumees) ? ctx.rallumees : []);
+  const ER = effetsRallumee();
   for (const r of regions) {
     const reg = monde.regions[r.cle];
     const pop = Number(r.population) || 0;
     if (phase === "apres") reg.infestation -= Number(r.altitude) < ALTITUDE_BAS ? R.decroissanceBas : R.decroissanceHauts;
     else if (reg.infestation < pop) reg.infestation += (pop - reg.infestation) * R.montee[phase];
+    // Lot 9 : une région rallumée se nettoie, et ne redevient pas dense.
+    if (rallumees.has(r.cle)) reg.infestation = Math.min(ER.plafond, reg.infestation - ER.infestation);
     reg.infestation = borner(reg.infestation, 0, 5);
   }
 
@@ -291,7 +313,8 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
       const reg = monde.regions[r.cle];
       const hauts = phase === "apres" && Number(r.altitude) >= ALTITUDE_BAS;
       const nait = reg.infestation >= R.horde.seuil ? chance(R.horde.naissance, h) : hauts && reg.infestation >= R.horde.seuilHauts && chance(R.horde.naissanceHauts, h);
-      if (nait) {
+      // Lot 9 : aucune horde ne naît dans une région rallumée (le tirage a lieu quand même : les autres ne bougent pas).
+      if (nait && !rallumees.has(r.cle)) {
         const horde = { id: nouvelId("h"), region: r.cle, taille: entier(1, 3, h), cap: null, depuis: jour };
         monde.hordes.push(horde);
         fait(r.cle, "horde-nait", `Une horde se forme ${avecPreposition("à", nomRegion(r.cle))} (taille ${horde.taille}).`, "voisins", { horde: horde.id }, { region: nomRegion(r.cle), taille: horde.taille });
@@ -310,7 +333,8 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
       ho.cap = null;
       if (chance(R.horde.mouvement, h)) {
         const options = Object.entries(routes).filter(([, etat]) => etat !== "coupee")
-          .map(([v, etat]) => ({ v, poids: (1 + 2 * (sousLeVacarme(monde, v, jour) ? 0 : Number(bruit[v]) || 0)) / (etat === "difficile" ? 2 : 1) }));
+          .map(([v, etat]) => ({ v, poids: (1 + 2 * (sousLeVacarme(monde, v, jour) ? 0 : Number(bruit[v]) || 0)
+            + REGLES_PARADIS.chaleur.hordeAttrait * (Number(ctx.chaleurParRegion?.[v]) || 0)) / (etat === "difficile" ? 2 : 1) }));
         const choix = tirerPoids(options, h);
         if (choix) {
           ho.cap = choix.v;
@@ -324,6 +348,7 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
     let p = R.horde.dispersion;
     if (saison === "pluies") p += R.horde.dispersionPluies;
     if (phase === "apres" && Number(r?.altitude) < ALTITUDE_BAS) p += R.horde.dispersionChaleur;
+    if (rallumees.has(ho.region)) p += ER.dispersion;
     if (chance(p, h)) ho.taille -= 1;
   }
   for (const ho of monde.hordes) if (ho.taille <= 0) fait(ho.region, "horde-dispersee", `La horde ${avecPreposition("de", nomRegion(ho.region))} se disperse.`, "region", { horde: ho.id }, { region: nomRegion(ho.region) });
@@ -383,9 +408,24 @@ export function simulerJour(mondeEntree, contenu, hasard, jour, contexte = {}) {
     }
   }
 
+  // 11 bis. Lot 9 : la lumière se voit ; une région rallumée attire les convois des bandes voisines (flux à part).
+  const nRallumees = [...rallumees].filter(k => monde.regions[k]).length;
+  for (const cle of [...rallumees].sort()) {
+    if (!monde.regions[cle] || !chance(chanceConvoi(nRallumees), deriverHasard(monde.graine, "convoi", jour, cle))) continue;
+    const a = factionAttiree(monde, contenu, cle);
+    if (!a) continue;
+    const L2 = REGLES_PARADIS.rallumer.lumiere;
+    monde.regions[cle].factions[a.faction] = borner((monde.regions[cle].factions[a.faction] ?? 0) + L2.force, 0, 5);
+    monde.regions[a.de].factions[a.faction] = borner((monde.regions[a.de].factions[a.faction] ?? 0) - L2.depart, 0, 5);
+    const nomF = factionDe(contenu, a.faction)?.nom ?? a.faction;
+    fait(cle, "convoi-attire", `Un convoi ${avecPreposition("de", nomF)} arrive ${avecPreposition("à", nomRegion(cle))}, attiré par les lumières.`, "voisins",
+      { faction: a.faction, de: a.de }, { faction: nomF, region: nomRegion(cle) });
+  }
+
   // 12. Menaces contre l'abri du groupe.
   const regionAbri = ctx.abri?.region ?? ctx.region;
-  const menaces = regionAbri && ctx.abri ? tirerMenaces(monde, contenu, h, { jour, phase, ...ctx.abri, region: regionAbri }) : [];
+  const menaces = regionAbri && ctx.abri ? tirerMenaces(monde, contenu, h, { jour, phase, ...ctx.abri, region: regionAbri,
+    rallumee: rallumees.has(regionAbri), rallumees: nRallumees }) : [];
 
   // 13. Publicité des faits, journal secret.
   for (const f of faits) f.public = perceptible(f, monde, contenu, ctx);
@@ -423,30 +463,38 @@ function appliquerEvenement(monde, contenu, e, r, jour, h, fait, nouvelId, regio
   fait(r.cle, e.cle, `${region} : ${nom}. ${texte}`.trim(), e.public === false ? "region" : "voisins", { evenement: e.cle, cleTexte: "evenement", ...touche }, { region, nom, texte });
 }
 
-// Les menaces du jour contre l'abri (§1.7). abri : { visibilite, bruit, defense, odeur, odeurBetes }.
-export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jour ?? 0, phase = phaseDuJour(jour), visibilite = 0, bruit = 0, odeur = 0, odeurBetes = 0 } = {}) {
+// Les menaces du jour contre l'abri (§1.7). abri : { visibilite, bruit, defense, odeur, odeurBetes } ; lot 9 : chaleur, agglutines (le
+// lieu de l'abri, paradis.mjs), rallumee (la région de l'abri est rallumée), rallumees (combien de régions le sont).
+export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jour ?? 0, phase = phaseDuJour(jour), visibilite = 0, bruit = 0, odeur = 0, odeurBetes = 0,
+  chaleur = 0, agglutines = 0, rallumee = false, rallumees = 0 } = {}) {
   const R = REGLES_MONDE;
   const reg = monde?.regions?.[region];
   if (!reg) return [];
   // Sous le vacarme du cyclone (lot « savoirs »), les Livides n'entendent rien : le bruit de l'abri ne compte pas ce jour-là.
   const vis = borner(Number(visibilite) || 0, 0, 10), br = sousLeVacarme(monde, region, jour) ? 0 : borner(Number(bruit) || 0, 0, 10);
   const O = REGLES_SENS.odeur.menace, od = borner(Number(odeur) || 0, 0, 4), odB = borner(Number(odeurBetes) || 0, 0, 4);
+  // Lot 9 : la chaleur du lieu et les agglutinés (jamais la visibilité : elle reste celle des bandes) ; la lumière d'une région
+  // rallumée, que voient les bandes.
+  const P = menacesDeChaleur({ chaleur, agglutines });
+  const facteurErrants = rallumee ? effetsRallumee().livides : 1;
+  const visBandes = vis + (rallumee ? REGLES_PARADIS.rallumer.lumiere.visibilite : 0);
+  const forceLumiere = forceDeLaLumiere(rallumees);
   const menaces = [];
   for (const ho of monde.hordes ?? []) {
     if (ho.region !== region) continue;
-    if (chance(R.menace.horde + R.menace.hordeBruit * br + R.menace.hordeVisibilite * vis + O.horde * od, hasard)) menaces.push({ type: "horde", force: 2 * ho.taille + 1, horde: ho.id, texte: `Une horde (taille ${ho.taille}) trouve l'abri.`, cle: "menace-horde", params: { taille: ho.taille } });
+    if (chance(R.menace.horde + R.menace.hordeBruit * br + R.menace.hordeVisibilite * vis + O.horde * od + P.horde, hasard)) menaces.push({ type: "horde", force: 2 * ho.taille + 1, horde: ho.id, texte: `Une horde (taille ${ho.taille}) trouve l'abri.`, cle: "menace-horde", params: { taille: ho.taille } });
   }
-  if (reg.infestation > 0.2 && chance(reg.infestation * R.menace.livides * (1 + br / 10) + 0.01 * vis + O.livides * od, hasard)) {
-    menaces.push({ type: "livides", force: Math.max(1, Math.round(reg.infestation)), texte: "Des Livides errants rôdent autour de l'abri.", cle: "menace-livides", params: {} });
+  if ((reg.infestation > 0.2 || Number(agglutines) > 0) && chance((reg.infestation * R.menace.livides * (1 + br / 10) + 0.01 * vis + O.livides * od) * facteurErrants + P.livides, hasard)) {
+    menaces.push({ type: "livides", force: Math.max(1, Math.round(reg.infestation)) + P.forceLivides, texte: "Des Livides errants rôdent autour de l'abri.", cle: "menace-livides", params: {} });
   }
   for (const [f, force] of Object.entries(reg.factions ?? {})) {
     if (force < 0.5) continue;
     const def = factionDe(contenu, f);
     const attitude = def?.attitude ?? "mefiante";
     if (attitude === "hostile" || attitude === "mefiante") {
-      const p = R.menace.bande * force * (1 + vis) / (attitude === "mefiante" ? 2 : 1);
-      if (chance(p, hasard)) menaces.push({ type: "bande", force: Math.ceil(1.5 * force) + 1, faction: f, attitude, texte: `${def?.nom ?? f} s'intéresse à l'abri.`, cle: "menace-bande", params: { faction: def?.nom ?? f } });
-    } else if (chance(0.02 * force * (1 + vis / 2), hasard)) {
+      const p = R.menace.bande * force * (1 + visBandes) / (attitude === "mefiante" ? 2 : 1);
+      if (chance(p, hasard)) menaces.push({ type: "bande", force: Math.ceil(1.5 * force) + 1 + forceLumiere, faction: f, attitude, texte: `${def?.nom ?? f} s'intéresse à l'abri.`, cle: "menace-bande", params: { faction: def?.nom ?? f } });
+    } else if (chance(0.02 * force * (1 + visBandes / 2), hasard)) {
       menaces.push({ type: "visite", force: 0, faction: f, attitude, texte: `${def?.nom ?? f} vient à la rencontre du groupe.`, cle: "menace-visite", params: { faction: def?.nom ?? f } });
     }
   }

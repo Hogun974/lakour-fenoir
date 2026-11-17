@@ -87,6 +87,9 @@ export function contexteSurvivant(a, { gm = false, proprietaire = false, incubat
     gris: !gm && vu.gris ? { signes: signes(vu.gris.symptomes), nom: vu.gris.reconnu ? t("LAKOUR_SURVIE.Corps.Gris") : t("LAKOUR_SURVIE.Corps.Fievre") } : null,
     morsure: vu.morsure ? t("LAKOUR_SURVIE.Corps.Morsure.Pansee") : "",
     sommeil,
+    // Lot 9 : les jours sans soleil (sous terre), quand il y en a.
+    soleil: (() => { const n = L.sousTerreDe(s).jours; return n > 0 ? { texte: t("LAKOUR_SURVIE.Paradis.Fiche.Soleil", { n }), mauvais: L.palierSousTerre(n) > 0 } : null; })(),
+
     // Lot « sens » : l'habitude du noir (nuits passées debout sans lumière, palier).
     noir: (() => { const n = L.noirDe(s); return n.nuits > 0 ? { nuits: n.nuits, palier: t(`LAKOUR_SURVIE.Percevoir.Accoutumance.Paliers.${L.palierNoir(n.nuits)}`) } : null; })(),
     // Lot 4 « Les plans » : ce qu'il sait par cœur (le plan survit par lui).
@@ -228,6 +231,9 @@ export function contexteAbri(a) {
       // Lot « corps » : l'hygiène (0 à 3) et l'insalubrité (propre, ordinaire, sale, insalubre).
       hygiene: Number(b.hygiene) || 0, insalubrite: t(`LAKOUR_SURVIE.Corps.Insalubrite.${L.ETATS_INSALUBRITE[Number(b.insalubrite) || 0] ?? "propre"}`), sale: Number(b.insalubrite) >= 2, production: Object.entries(b.production ?? {}).map(([r, q]) => `${libelleRessource(r)} ${q}`).join(", ") } : null,
     grille, taches: Object.keys(L.TACHES).map(x => ({ cle: x, libelle: libelleTache(x) })), gm: game.user.isGM,
+    // Lot 9 « Le paradis et son piège » : le signe de la chaleur (jamais le chiffre), les corps, la dernière ronde, sous terre.
+    paradis: paradisAbri(s, contenu(), courant),
+
     // La liste à la porte (ce qui manque vraiment, d'après les stocks) et ceux qui attendent devant (ce que le groupe voit d'eux).
     porte: courant ? porteAbri(etat, s, b) : null,
     // Les notes secrètes du MJ (monde scellé, jamais sur l'acteur que les joueurs observent).
@@ -235,7 +241,23 @@ export function contexteAbri(a) {
   };
 }
 
+// Lot 9 : ce que la fiche d'abri dit du paradis (public : le signe, pas la chaleur chiffrée, qui reste au monde secret).
+function paradisAbri(s, c, courant) {
+  const corps = L.corpsDe(s);
+  const jour = L.jourDe(lireEtat().horloge?.quart ?? 0);
+  const signe = s.signeChaleur || "oublie";
+  const n = L.totalCorps(corps);
+  const P = k => `LAKOUR_SURVIE.Paradis.${k}`;
+  return {
+    signe: t(P(`Signes.${signe}`)), mauvais: ["viennent", "assieges"].includes(signe),
+    corps: n ? t(P("Fiche.Corps"), { n, frais: Math.round(L.corpsFrais(corps, { jour, altitude: L.regionDe(c, s.region)?.altitude ?? 0 }) * 10) / 10 }) : "",
+    ronde: s.rondeLe !== null && s.rondeLe !== undefined ? t(P("Fiche.Ronde"), { n: s.rondeLe }) : "",
+    air: courant && s.air && s.air !== "bon" ? t(P("Fiche.SousTerre"), { air: t(P(`Air.${s.air}`)) }) : ""
+  };
+}
+
 export class FicheAbri extends HandlebarsApplicationMixin(ActorSheetV2) {
+
   static DEFAULT_OPTIONS = {
     classes: [ID, "survie-fiche", "survie-fiche-abri"],
     position: { width: 760, height: 760 },

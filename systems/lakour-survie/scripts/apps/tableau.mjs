@@ -34,6 +34,13 @@ export function carteConnue(etat, c = contenu(), cartes = null) {
     }
     traits.push(`<line x1="${r.repere.x}" y1="${r.repere.y}" x2="${b.repere.x}" y2="${b.repere.y}" stroke="${etatRoute ? COULEURS_ROUTE[etatRoute] : "#5a5650"}" stroke-width="${v.terrain === "route" ? 14 : 8}" ${etatRoute ? "" : "stroke-dasharray=\"30 24\""} ${v.terrain === "mer" ? "opacity=\"0.5\"" : ""}><title>${echapper(v.route ?? "")}</title></line>`);
   }
+  // Lot 9 « Rallumer l'île » : les régions rallumées s'allument (un halo, la nuit sur la carte) ; celles qui se sont éteintes, un cerne.
+  const halos = regions.map(r => {
+    const x = L.ileDe(etat).regions[r.cle];
+    if (x?.etat === "rallumee") return `<circle cx="${r.repere.x}" cy="${r.repere.y}" r="190" fill="url(#survie-lumiere)"><title>${echapper(`${r.nom} — ${t("LAKOUR_SURVIE.Paradis.Regions.rallumee")}`)}</title></circle>`;
+    if (x?.etat === "eteinte") return `<circle cx="${r.repere.x}" cy="${r.repere.y}" r="120" fill="none" stroke="#6d6a63" stroke-width="8" stroke-dasharray="14 18"/>`;
+    return "";
+  });
   const points = regions.map(r => {
     const rs = etat.renseignements?.[r.cle] ?? {};
     const couleur = COULEURS_INFESTATION[rs.infestation ?? "inconnue"] ?? COULEURS_INFESTATION.inconnue;
@@ -45,7 +52,8 @@ export function carteConnue(etat, c = contenu(), cartes = null) {
       + `<text x="${r.repere.x}" y="${r.repere.y + 140}" text-anchor="middle" font-size="86" fill="#efe3c8">${echapper(r.nom)}</text></g>`;
   });
   return `<svg class="survie-carte" viewBox="0 0 4000 3000" role="img" aria-label="${echapper(t("LAKOUR_SURVIE.Tableau.Carte"))}">`
-    + `<rect width="4000" height="3000" fill="#0d2a3a"/>${traits.join("")}${points.join("")}</svg>`;
+    + `<defs><radialGradient id="survie-lumiere"><stop offset="0" stop-color="#ffe9a8" stop-opacity="0.95"/><stop offset="0.55" stop-color="#f3c45a" stop-opacity="0.45"/><stop offset="1" stop-color="#f3c45a" stop-opacity="0"/></radialGradient></defs>`
+    + `<rect width="4000" height="3000" fill="#0d2a3a"/>${halos.join("")}${traits.join("")}${points.join("")}</svg>`;
 }
 
 // Le marché vu par le groupe (état PUBLIC, contrat §12) : le cours du jour, ses dettes aux carnets, les marchés et leurs jours,
@@ -159,6 +167,10 @@ export function contexteTableau(onglet = "groupe") {
     renseignements, carte: onglet === "renseignements" ? carteConnue(etat, c, rep?.cartes ?? {}) : "",
     reperes: rep ? reperesPublics(rep) : null,
     marche: onglet === "marche" && etat.demarree ? marchePublic(etat, c) : null,
+    // Lot 9 : l'île qui se rallume (public) et les jalons du groupe.
+    ile: { rallumees: L.regionsRallumees(etat).map(k => L.regionDe(c, k)?.nom ?? k).join(", "),
+      jalons: L.jalonsDe(etat).map(j => sansBalises(localiser(L.texteJalon(j.cle, j.params ?? {})))) },
+
     journal: [...(etat.journal ?? [])].reverse().slice(0, 80).map(e => ({ jour: L.jourDe(e.quart), moment: t(`LAKOUR_SURVIE.Moments.${L.momentDe(e.quart)}`), texte: sansBalises(localiser(e)) })),
     alertes: [...(etat.alertes ?? [])].reverse().slice(0, 12).map(a => ({ jour: L.jourDe(a.quart), texte: sansBalises(localiser(a)), type: a.type })),
     propositions: [...(etat.propositions ?? [])].reverse().map(p => ({ ...p, jour: L.jourDe(p.quart), typeLibelle: t(`LAKOUR_SURVIE.Proposition.Types.${p.type}`) })),

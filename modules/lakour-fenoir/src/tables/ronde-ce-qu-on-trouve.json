@@ -1,0 +1,178 @@
+{
+  "_id": "NzqR9CdZLGJLCquW",
+  "_key": "!tables!NzqR9CdZLGJLCquW",
+  "name": "La ronde — ce qu'on trouve",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quand la ronde voit les Livides à temps, elle relève aussi autre chose (le système donne le numéro ; sinon, tirez).</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ronde-ce-qu-on-trouve",
+      "paradis": "ronde-ce-qu-on-trouve"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "oEzPzwrQ3tH79K4f",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.oEzPzwrQ3tH79K4f",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une fuite : la citerne suinte au pied, une auréole sombre dans la terre. Réparée aujourd'hui, elle ne coûte rien ; laissée, elle coûtera.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uL4b1u07n3UoHLg0",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.uL4b1u07n3UoHLg0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pieu de la clôture penché, un fil arraché : quelque chose a poussé là, cette nuit, et n'est pas passé.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "4JpUhHkBfO19NuVG",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.4JpUhHkBfO19NuVG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces fraîches dans la boue du chemin, qui tournent autour de l'abri et repartent vers la ravine. Trois, peut-être quatre.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "osheIIhP5Mg1ersj",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.osheIIhP5Mg1ersj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bâche du potager soulevée par le vent ; des poules qui ne sont pas rentrées.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uULeVcHBVjyFHu0M",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.uULeVcHBVjyFHu0M",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un corps d'avant-hier que les chiens errants ont traîné jusqu'au bord du chemin. Il faudra l'enterrer plus loin.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SGNTQM6yycCkvMnP",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.SGNTQM6yycCkvMnP",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un mot coincé sous une pierre, à l'entrée : quelqu'un est passé, a vu, et demande s'il peut revenir.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hTzX4ExGmf9sjIkE",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.hTzX4ExGmf9sjIkE",
+      "type": "text",
+      "name": "",
+      "description": "<p>La haie a un trou, au ras du sol, assez grand pour un chien, ou pour un enfant.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "n32oexxdwoCXtFDd",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.n32oexxdwoCXtFDd",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une vieille douille, toute neuve : quelqu'un a tiré près d'ici, hier soir. Ce n'était pas vous.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2NznIwKbXDcfxwNR",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.2NznIwKbXDcfxwNR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien, sinon le silence des oiseaux quand on passe le long de la ravine. Ils savent quelque chose.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "786Oq85kWfB2vPVO",
+      "_key": "!tables.results!NzqR9CdZLGJLCquW.786Oq85kWfB2vPVO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des fruits tombés que personne n'a ramassés, et un manguier qui charge : une bonne nouvelle, pour une fois.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "_id": "2DxfOVkAEXgJSHIc",
+  "_key": "!tables!2DxfOVkAEXgJSHIc",
+  "name": "L'île — ce qu'on voit la nuit",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>La nuit, d'un point haut, on regarde l'île. Tirez quand le groupe regarde au loin ; les régions rallumées se voient toujours.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ile-ce-qu-on-voit-la-nuit",
+      "paradis": "ile-ce-qu-on-voit-la-nuit"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "cIKmfSzHiwty74sG",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.cIKmfSzHiwty74sG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien. Le noir, d'un bout à l'autre, et la lune sur la mer.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZE0ICanfeITIJL6x",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.ZE0ICanfeITIJL6x",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une lumière fixe sur la côte, très loin : quelqu'un a du courant.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ttkC34RA4bvHbDLy",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.ttkC34RA4bvHbDLy",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un feu qui bouge, sur une route des Hauts : un convoi qui roule tous phares éteints sauf un.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "3CFIyC1ejmhqXM2P",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.3CFIyC1ejmhqXM2P",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le phare, peut-être : un éclat, puis rien, puis un éclat.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ljEwTshkZ88Jq9M4",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.ljEwTshkZ88Jq9M4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une lueur rouge sur le volcan, qu'on regarde longtemps.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "r1XiWmTuXNcZd2DI",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.r1XiWmTuXNcZd2DI",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des lampes dans un îlet de Mafate, minuscules, à l'heure du repas.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "l7yXiGSseHSBGB5T",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.l7yXiGSseHSBGB5T",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une ville entière dans le noir, sauf une fenêtre.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VAAlN6NBkYUQEckm",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.VAAlN6NBkYUQEckm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Vos propres lumières, si votre région est rallumée : de si loin, on dirait d'avant.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "IyNC4zLOpde3PRE4",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.IyNC4zLOpde3PRE4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un incendie dans les cannes, qui court sur la pente.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Wap6ZuVF1xcXQvMT",
+      "_key": "!tables.results!2DxfOVkAEXgJSHIc.Wap6ZuVF1xcXQvMT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux lumières qui se répondent, d'une colline à l'autre, en clignant : quelqu'un se parle.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

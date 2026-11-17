@@ -77,6 +77,13 @@
 // - La souillure (`abri.souillure`) et l'insalubrité (`bilan.insalubrite`, 0 à 3) : journeeAbri l'amasse (personnes, latrines,
 //   surpeuplement) et l'efface (jours, pluie : `conditions.pluie`). L'odeur compte la souillure d'un abri sale (insalubrité 2 et
 //   plus) comme celle d'un abri surpeuplé.
+//
+// Lot 9 « Le paradis et son piège » (docs/equilibre-paradis.md, contrat §28 ; logique/paradis.mjs) :
+// - Les corps des Livides abattus par les rondes (`abri.corps`, lots datés) : frais, ils sentent pour les bêtes (comme un mort sans
+//   repos : odeurBetes) et salissent l'abri (0,05 de souillure par corps et par jour) ; le bûcher du jour (`abri.fumeeLe`) se voit
+//   (visibilité + 2).
+// - Une installation qui pousse (`effets.pousse` : jours ; la haie) ne cache qu'une part de sa discrétion avant d'avoir poussé.
+// - Les puits sous terre : `effets.air`, `effets.jour` des installations en marche (bilan.puitsAir, bilan.puitsJour).
 import { ORDRE_DELESTAGE, RESSOURCES, NATURE, SEUIL_AUTONOMIE, COUT_ILE, borner } from "./constantes.mjs";
 import { installationDe, regionDe, siteDe, niveauDe, niveauMaxDe, natureRegion, indexer } from "./contenu.mjs";
 import { consommationJour, pertesJour, plafonds, joursDeStocks, normaliserStocks, journeeStocks, couvre, retirerStocks } from "./ressources.mjs";
@@ -86,6 +93,7 @@ import { message } from "./textes.mjs";
 import { tirerPoids } from "./hasard.mjs";
 import { odeurAbri } from "./sens.mjs";
 import { insalubrite as niveauInsalubrite, niveauHygiene, souillureDe, souillureDuJour } from "./corps.mjs";
+import { corpsDe, corpsFrais, corpsOublies, totalCorps, fumeeDuJour, facteurPousse, REGLES_PARADIS } from "./paradis.mjs";
 
 export const FACTEUR_ETAT = [1, 0.75, 0.5, 0];
 export const SAISON_PLUIE = { pluies: 1, seche: 0.5 };
@@ -190,6 +198,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     for (const [r, q] of Object.entries(e.production ?? {})) production[r] = (Number(q) || 0) * f;
     lignes.push({
       cle: inst.cle, categorie: def.categorie, niveau, e, production, horsService: fEtat === 0, role: roleDe(def), rang: rangDe(def),
+      pousse: facteurPousse(e, inst.termineLe, c.jour),
       consommation: { energie: Number(e.consommation?.energie) || 0, carburant: Number(e.consommation?.carburant) || 0, eau: Number(e.consommation?.eau) || 0,
         nourriture: Number(e.consommation?.nourriture) || 0, gaz: Number(e.consommation?.gaz) || 0 },
       peutMarcher: fEtat > 0 && inst.actif !== false, enMarche: fEtat > 0 && inst.actif !== false, sol: demandeSol(def, niveau)
@@ -266,7 +275,8 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   // Effets. Arrêtée : seulement le structurel ; hors service : capacité et stockage ; en secours : stockage et capacité.
   const actives = lignes.filter(l => l.enMarche && !l.site);
   const structurelles = lignes.filter(l => !l.horsService && !l.site && !l.secours);
-  const sommeEffet = (liste, cle) => liste.reduce((s, l) => s + (Number(l.e[cle]) || 0), 0);
+  // Lot 9 : la discrétion d'une haie qui pousse (pousse : 0 à 1 ; 1 pour tout le reste).
+  const sommeEffet = (liste, cle) => liste.reduce((s, l) => s + (Number(l.e[cle]) || 0) * (cle === "discretion" || cle === "visibilite" ? l.pousse ?? 1 : 1), 0);
   const plafond = plafonds(ajoutsDeStockage(lignes.map(l => l.e)));
   // Bonus de compétence des installations (tour de guet, chiens de garde : vigilance ; §1.1) : le meilleur, tant qu'elle n'est
   // pas hors service (même règle qu'un test à l'abri, scripts/api.mjs modificateursDuTest).
@@ -306,7 +316,8 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   const defense = Math.max(0, (Number(c.site.defense) || 0) + sommeEffet(structurelles, "defense") - Math.floor((Number(abri.degats) || 0) / 2));
   const capacite = (Number(c.site.capacite) || 0) + sommeEffet(lignes, "capacite");
   // Lot « savoirs » : végétation abattue par un cyclone, veillée à la lumière (lecture du soir).
-  const devoile = vegetationAbattue(abri, c.jour) + (abri.lumiereLe !== undefined && abri.lumiereLe !== null && Number(abri.lumiereLe) === c.jour ? 1 : 0);
+  const devoile = vegetationAbattue(abri, c.jour) + (abri.lumiereLe !== undefined && abri.lumiereLe !== null && Number(abri.lumiereLe) === c.jour ? 1 : 0)
+    + fumeeDuJour(abri, c.jour);   // lot 9 : la fumée d'un bûcher de corps
   // lueur (lot « fetes », souvenirs.mjs) : les lampes de la Dipavali, le feu de la marche, la cuisine de nuit du ramadan.
   // conditions.signature : ce que l'abri montre en plus (un marché qu'il accueille : marche.mjs, signatureDuMarche).
   const visibiliteBrute = Math.ceil(c.personnes / 2) + sommeEffet(actives, "visibilite") + Math.max(0, Number(conditions.lueur) || 0)
@@ -324,8 +335,10 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   const hygieneDe = filtre => Math.max(0, ...actives.filter(l => Number(l.e.hygiene) > 0 && filtre(l)).map(l => Number(l.e.hygiene)));
   const latrines = hygieneDe(l => l.role === "latrines"), toilette = hygieneDe(l => l.role !== "latrines");
   const insalubrite = niveauInsalubrite(souillureDe(abri));
+  // Lot 9 : les corps frais des Livides abattus sentent pour les bêtes comme un mort sans repos (les Livides ignorent l'odeur d'un corps).
+  const frais = corpsFrais(corpsDe(abri), { jour: c.jour, altitude: c.region.altitude });
   const odeur = odeurAbri({ installations: sommeEffet(actives, "odeur"), souillure: conditions.souillure ?? (surpeuplement > 0 || insalubrite >= 2 ? 1 : 0), sang: Boolean(conditions.sang),
-    morts: Number(conditions.morts) || 0, altitude: c.region.altitude, pluie: Number(conditions.pluie) || 0 });
+    morts: (Number(conditions.morts) || 0) + (frais >= 1 ? 1 : 0), altitude: c.region.altitude, pluie: Number(conditions.pluie) || 0 });
   const bilan = {
     defense, discretion, capacite,
     visibilite: borner(Math.round(visibiliteBrute), 0, 10),
@@ -347,6 +360,9 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     surpeuplement,
     latrines, toilette, hygiene: niveauHygiene(latrines, toilette), souillure: souillureDe(abri), insalubrite,
     odeur: odeur.odeur, odeurBetes: odeur.betes, odeurSources: odeur.sources,
+    // Lot 9 : les corps (tous, et les frais), les puits sous terre.
+    corps: totalCorps(corpsDe(abri)), corpsFrais: Math.round(frais * 10) / 10,
+    puitsAir: actives.some(l => Number(l.e.air) > 0) ? 1 : 0, puitsJour: actives.some(l => Number(l.e.jour) > 0) ? 1 : 0,
     ...(conditions.ravine && c.site.eau === "riviere" ? { ravine: conditions.ravine.etat ?? "" } : {}),
     autonome: net.eau >= 0 && net.nourriture >= 0 && net.energie >= 0
   };
@@ -368,7 +384,9 @@ export function journeeAbri(abri = {}, installations = [], contenu = {}, conditi
     sol: borner(Number(abri.sol ?? c.site.sol ?? 0) + bilan.sol, 0, SOL_MAX),
     // Lot « corps » : la souillure du jour (les présents, les latrines, le surpeuplement ; la pluie l'efface plus vite).
     souillure: souillureDuJour({ souillure: souillureDe(abri), personnes: c.personnes, latrines: bilan.latrines, surpeuplement: bilan.surpeuplement,
-      pluie: Number(conditions.pluie) || 0 }),
+      pluie: Number(conditions.pluie) || 0 }) + Math.round(REGLES_PARADIS.corps.souillure * (bilan.corpsFrais || 0) * 1000) / 1000,
+    // Lot 9 : les corps qu'on oublie (secs depuis trois mois) quittent la liste.
+    ...(Array.isArray(abri.corps) ? { corps: corpsOublies(corpsDe(abri), c.jour) } : {}),
     nature: regenererNature(abri.nature, c.region, { saison: c.saison, mois })
   };
   return { abri: nouveau, bilan, manque: r.manque, pertes: r.pertes, perdus: r.perdus, boutures: { repiquees: b.repiquees, mortes: b.mortes } };

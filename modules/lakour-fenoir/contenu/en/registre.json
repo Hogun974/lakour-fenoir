@@ -2459,6 +2459,72 @@
       "en": "A wounded person recovers faster (one wound less per success, with 1 medicine); a treated affliction no longer worsens."
     }
   },
+  "registre/chantiersRegion/rallumer-le-phare-de-bel-air": {
+    "_nom": "Rallumer le phare de Bel-Air",
+    "nom": {
+      "fr": "Rallumer le phare de Bel-Air",
+      "en": "Relight the Bel-Air lighthouse"
+    },
+    "description": {
+      "fr": "Le vieux phare de Sainte-Marie n'a besoin que d'un panneau, d'une batterie et de quelqu'un pour monter là-haut. Il ne guide plus aucun bateau ; il dit seulement, chaque nuit, qu'il y a encore des vivants sur cette côte.",
+      "en": "The old Sainte-Marie lighthouse only needs a panel, a battery and someone to climb up there. It no longer guides any boat; it only says, every night, that there are still living people on this coast."
+    }
+  },
+  "registre/chantiersRegion/relancer-la-centrale-de-la-riviere-de-l-est": {
+    "_nom": "Relancer la centrale de la Rivière de l'Est",
+    "nom": {
+      "fr": "Relancer la centrale de la Rivière de l'Est",
+      "en": "Restart the Rivière de l'Est power station"
+    },
+    "description": {
+      "fr": "La grande centrale de l'Est s'est arrêtée seule, faute de bras. Il faut descendre au pied de la conduite, nettoyer les grilles, remettre une turbine en route et isoler le réseau pour n'éclairer que ce qui vit encore. Le plus long des chantiers, et celui qui allume tout l'Est.",
+      "en": "The great power station of the East stopped on its own, for lack of hands. You have to go down to the foot of the penstock, clean the screens, get a turbine running again and isolate the grid to light only what still lives. The longest of the great works, and the one that lights the whole East."
+    }
+  },
+  "registre/chantiersRegion/relancer-la-centrale-de-langevin": {
+    "_nom": "Relancer la petite centrale de Langevin",
+    "nom": {
+      "fr": "Relancer la petite centrale de Langevin",
+      "en": "Restart the small Langevin power station"
+    },
+    "description": {
+      "fr": "Au fond de la ravine, la petite centrale attend qu'on dégage la prise d'eau, qu'on rebobine un alternateur et qu'on retende la ligne jusqu'à la Marine. Un travail de saison sèche, à plusieurs : la crue remonte vite. Fini, le Sud a du courant la nuit, sans bruit, et ses lumières se voient depuis la mer.",
+      "en": "At the bottom of the ravine, the small power station waits for someone to clear the water intake, rewind an alternator and restring the line down to the Marine. Dry-season work, done together: the flood comes back fast. Finished, the South has power at night, without noise, and its lights can be seen from the sea."
+    }
+  },
+  "registre/chantiersRegion/reparer-le-port-de-saint-pierre": {
+    "_nom": "Réparer le port de Saint-Pierre",
+    "nom": {
+      "fr": "Réparer le port de Saint-Pierre",
+      "en": "Repair the Saint-Pierre harbour"
+    },
+    "description": {
+      "fr": "Dégager la passe, renflouer deux barques, réparer la chambre froide à la main et rallumer les feux de l'entrée : les pêcheurs du Sud ressortent. Fini, le port pêche (une part de plus chaque jour à qui y tient un abri, au MJ de la donner) et ses feux se voient du large.",
+      "en": "Clear the channel, refloat two boats, repair the cold room by hand and relight the entrance lights: the fishermen of the South go out again. Finished, the harbour fishes (one more share a day for whoever holds a shelter there, for the GM to give) and its lights can be seen from offshore."
+    }
+  },
+  "registre/chantiersRegion/rouvrir-la-route-des-tamarins": {
+    "_nom": "Rouvrir la route des Tamarins",
+    "nom": {
+      "fr": "Rouvrir la route des Tamarins",
+      "en": "Reopen the Route des Tamarins"
+    },
+    "description": {
+      "fr": "Les viaducs de la route d'en haut sont bouchés d'épaves. Les Ferrailleurs y voient de la ferraille ; d'autres, une route. Il faut les pousser au fond des ravines, une à une, et garder la chaussée ouverte.",
+      "en": "The viaducts of the upper road are blocked with wrecks. The Scrappers see scrap metal there; others, a road. You have to push them to the bottom of the ravines, one by one, and keep the roadway open."
+    }
+  },
+  "registre/chantiersRegion/rouvrir-la-route-du-littoral": {
+    "_nom": "Rouvrir la route du Littoral",
+    "nom": {
+      "fr": "Rouvrir la route du Littoral",
+      "en": "Reopen the Route du Littoral"
+    },
+    "description": {
+      "fr": "Les éboulis de la falaise, les voitures abandonnées en travers, les filets arrachés : il faut tout dégager, pousser les épaves à la mer, étayer les pires endroits. Finie, la route ne se ferme plus qu'aux pires jours : après un éboulement, on passe encore, au pas.",
+      "en": "The rockfalls from the cliff, the cars abandoned across the road, the torn-down nets: everything has to be cleared, the wrecks pushed into the sea, the worst spots shored up. Finished, the road only closes on the worst days: after a rockfall, you still get through, at walking pace."
+    }
+  },
   "registre/communautes/cafres": {
     "_nom": "Cafres",
     "nom": {
@@ -2646,6 +2712,17 @@
       "en": "Straighten salvaged nails, whittle hardwood pegs."
     }
   },
+  "registre/corvees/faire-le-tour-de-la-cloture": {
+    "_nom": "Faire le tour de la clôture",
+    "nom": {
+      "fr": "Faire le tour de la clôture",
+      "en": "Walk the fence"
+    },
+    "description": {
+      "fr": "Longer la clôture et la haie, redresser ce qui penche, regarder ce qui a passé la nuit.",
+      "en": "Walk along the fence and the hedge, straighten what leans, look at what came by in the night."
+    }
+  },
   "registre/corvees/inspecter-les-cables-et-tuyaux": {
     "_nom": "Inspecter les câbles et les tuyaux",
     "nom": {
@@ -2827,6 +2904,17 @@
     "description": {
       "fr": "Faire le tour des planches, des ruches et des enclos, et rapporter ce qu'ils ont donné.",
       "en": "Walk the beds, the hives and the pens, and bring back what they gave."
+    }
+  },
+  "registre/corvees/relever-les-traces": {
+    "_nom": "Relever les traces",
+    "nom": {
+      "fr": "Relever les traces",
+      "en": "Follow the tracks"
+    },
+    "description": {
+      "fr": "Suivre les herbes couchées et les pas dans la boue jusqu'au bout du chemin, et abattre ce qu'on trouve.",
+      "en": "Follow the flattened grass and the footprints in the mud to the end of the path, and put down what you find."
     }
   },
   "registre/corvees/rendre-l-eau-bonne": {

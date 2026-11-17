@@ -247,6 +247,8 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     plans: onglet === "savoirs" && etat.demarree ? contextePlans(api, c) : null,
     reperes: onglet === "partie" && etat.demarree ? contexteReperes(api, c, membres) : null,
     corps: onglet === "partie" && etat.demarree ? contexteCorps(api) : null,
+    // Lot 9 (contrat §28) : le paradis et son piège, rallumer l'île.
+    paradis: onglet === "partie" && etat.demarree ? contexteParadis(api) : null,
     // Lot « savoirs » : l'onglet Savoirs et cyclone.
     ...(onglet === "savoirs" || onglet === "groupe" ? contexteSavoirs(etat, c, api, membres) : {})
   };
@@ -270,6 +272,33 @@ function contexteSavoirs(etat, c, api, membres) {
 
 // Lot « sens » (contrat §18) : ce que le groupe perçoit (temps du quart, odeur de l'abri, ravine, corps des Livides, habitude du
 // noir de chacun, lieux nettoyés, moment musical), et ce qu'il faut aux formulaires.
+// Lot 9 « Le paradis et son piège » (contrat §28) : la chaleur (chiffre au MJ), la ronde, les corps, sous terre ; l'île (chaque région
+// tenue ou rallumée, ce qui lui manque), les chantiers de région, les jalons ; et ce qu'il faut aux formulaires.
+export function contexteParadis(api = game.lakourSurvie) {
+  const p = api?.paradis?.();
+  const i = api?.ile?.();
+  if (!p || !i) return null;
+  const K = k => `LAKOUR_SURVIE.Paradis.${k}`;
+  const a = p.abri;
+  return {
+    abri: a ? t(K("MJ.Abri"), { signe: a.signeTexte, corps: a.corps, frais: a.corpsFrais, manquees: a.rondesManquees }) : "",
+    chaleur: p.mj ? t(K("MJ.Chaleur"), { chaleur: p.mj.chaleur, agglutines: p.mj.agglutines, arrivants: p.mj.arrivants }) : "",
+    rondiers: p.rondiers.length ? t(K("MJ.Rondiers"), { noms: p.rondiers.join(", ") }) : t(K("MJ.SansRondier")),
+    sousTerre: a?.sousTerre ? t(K("MJ.SousTerre"), { air: a.airTexte, puits: a.puits?.jour ? t(K("Puits.jour")) : a.puits?.air ? t(K("Puits.air")) : t(K("Puits.aucun")) }) : "",
+    soleil: p.membres.filter(m => m.joursSansSoleil > 0).map(m => ({ nom: m.nom, jours: m.joursSansSoleil, mauvais: m.palier > 0 })),
+    regions: i.regions.filter(r => r.etat !== "noire" || r.conditions).map(r => ({ nom: r.nom, etat: r.etatTexte, allumee: r.etat === "rallumee",
+      manque: r.conditions?.manqueTextes?.join(", ") ?? "", lieux: (r.conditions?.lieux ?? []).map(l => `${l.nettoye ? "✔" : "✘"} ${l.nom}`).join(" · ") })),
+    compte: t(K("MJ.Compte"), { n: i.rallumees, total: i.total }),
+    chantiers: i.chantiers.map(c => ({ nom: c.nom, region: c.regionNom, avance: c.fini ? t(K("MJ.Fini")) : c.ouvert ? `${Math.floor(c.fait)} / ${c.requis}` : t(K("MJ.PasOuvert")),
+      aides: c.aides.join(", ") })),
+    jalons: i.jalons.map(j => `${t("LAKOUR_SURVIE.Bandeau.Jour", { n: j.jour })} — ${j.texte}`),
+    chantiersOptions: options(i.chantiers.filter(c => !c.fini).map(c => [c.cle, `${c.regionNom} — ${c.nom}`]), ""),
+    actionsCorps: options([["enterrer", t(K("Corps.enterrer"))], ["bruler", t(K("Corps.bruler"))]], "enterrer"),
+    actionsIle: options([["declarer", t(K("Ile.declarer"))], ["eteindre", t(K("Ile.eteindre"))]], "declarer"),
+    sousTerreOptions: options([["", t(K("SousTerre.site"))], ["oui", t(K("SousTerre.oui"))], ["non", t(K("SousTerre.non"))]], "")
+  };
+}
+
 // Lot « corps » (contrat §19) : le sommeil de chacun, l'hygiène et l'insalubrité de l'abri, et ce qu'il faut aux formulaires.
 export function contexteCorps(api = game.lakourSurvie) {
   const c = api?.corps?.();
@@ -524,7 +553,17 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       soignerMorsure: () => api.soignerMorsure({ acteurId: d.acteur, soigneurId: d.soigneur || "", medicament: d.medicament !== "non", decoction: d.decoction !== "non" }),
       chute: () => api.chute({ acteurId: d.acteur, hauteur: Number(d.hauteur) || 0, eau: Number(d.eau) || 0, tester: d.tester !== "non" }),
       menage: () => api.menage({ membres: liste(d.membres), quarts: Number(d.quarts) || 1 }),
-      dormir: () => api.dormir({ membres: liste(d.membres), quarts: Number(d.quarts) || 1, lieu: d.lieu || "" })
+      dormir: () => api.dormir({ membres: liste(d.membres), quarts: Number(d.quarts) || 1, lieu: d.lieu || "" }),
+      // Le paradis et son piège, rallumer l'île (contrat §28).
+      ronde: () => api.ronde({ membres: liste(d.membres), ...(d.abattus !== "" && d.abattus !== undefined ? { abattus: Number(d.abattus) || 0 } : {}),
+        ...(d.livides !== "" && d.livides !== undefined ? { livides: Number(d.livides) || 0 } : {}) }),
+      traiterCorps: () => api.traiterCorps({ action: d.action || "enterrer", membres: liste(d.membres), quarts: Number(d.quarts) || 1 }),
+      leurre: () => api.leurre({ membres: liste(d.membres) }),
+      chaleur: () => api.chaleur({ delta: Number(d.delta) || 0 }),
+      sousTerre: () => api.sousTerre({ vit: d.vit === "oui" ? true : d.vit === "non" ? false : null }),
+      rallumer: () => api.rallumer({ region: d.region || "", action: d.action || "declarer" }),
+      chantierRegion: () => api.chantierRegion({ cle: d.chantier || "", membres: liste(d.membres), quarts: Number(d.quarts) || 2, aide: d.aide || "", retirer: d.retirer === "oui" })
+
     };
     if (!appels[nom]) return;
     cible.disabled = true;
