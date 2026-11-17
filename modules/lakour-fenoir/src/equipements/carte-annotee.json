@@ -1,0 +1,88 @@
+{
+  "_id": "0CSRPEyUAY6ocakG",
+  "_key": "!items!0CSRPEyUAY6ocakG",
+  "name": "Carte annotée par un mort",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "carte-annotee",
+    "categorie": "repere",
+    "description": "<p>Une carte routière couverte d'une écriture serrée au stylo bille : des croix, des flèches, des dates, des mots soulignés deux fois. Celui qui l'a annotée est mort ; on l'a trouvée sur lui, ou à côté. Sa note dit une cache, un danger, ou un mensonge, et on ne sait pas lequel.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "carte",
+      "rarete": "rare",
+      "couvre": "ile",
+      "terrains": [
+        "route",
+        "sentier"
+      ],
+      "ilYa": [
+        0,
+        3
+      ],
+      "annotations": [
+        {
+          "region": "cilaos",
+          "vraie": true,
+          "texte": "« Îlet à Cordes : la case bleue au bout du chemin, sous le plancher, de quoi tenir un mois. » Au stylo bleu, souligné deux fois."
+        },
+        {
+          "region": "sainte-marie",
+          "vraie": true,
+          "texte": "« Gillot : NE PAS PASSER PAR LA ZONE CARGO. » Trois croix rouges autour d'un hangar."
+        },
+        {
+          "region": "le-tampon",
+          "vraie": false,
+          "texte": "« Bourg-Murat : ils ont de l'eau et des médicaments, ils accueillent. » Avec une date, juste avant le silence."
+        },
+        {
+          "region": "salazie",
+          "vraie": true,
+          "texte": "« Hell-Bourg : derrière les thermes, sous la grille, ça tient. » Une flèche vers la ravine."
+        },
+        {
+          "region": "saint-pierre",
+          "vraie": false,
+          "texte": "« Terre-Sainte : un bateau. Ils partent le 15. » Le mois n'est pas écrit."
+        },
+        {
+          "region": "plaine-des-palmistes",
+          "vraie": false,
+          "texte": "« Bébour : le gîte est vide, le feu prend bien, personne. » Une autre main a ajouté, au crayon : « menteur »."
+        }
+      ],
+      "lieux": {
+        "caserne": 0.02,
+        "gite": 0.02,
+        "ilet": 0.02,
+        "hopital": 0.02,
+        "region": 0.004
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "carte-annotee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

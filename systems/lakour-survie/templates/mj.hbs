@@ -77,6 +77,58 @@
       <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
     </div>
     {{/if}}
+    {{#if reperes}}
+    <div class="survie-formulaire survie-reperes">
+      <h3><i class="fa-solid fa-calendar-days"></i> {{localize "LAKOUR_SURVIE.Reperes.Titre"}}</h3>
+      {{#each reperes.lignes}}<p>{{this}}</p>{{/each}}
+      <p><strong>{{localize "LAKOUR_SURVIE.Reperes.Objets"}}</strong> : {{#each reperes.objets}}{{this}}{{#unless @last}} ; {{/unless}}{{else}}{{localize "LAKOUR_SURVIE.Reperes.Aucun"}}{{/each}}</p>
+      {{#if reperes.journaux.length}}<p><strong>{{localize "LAKOUR_SURVIE.Reperes.Journaux"}}</strong> : {{#each reperes.journaux}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+      <p class="survie-aide">{{localize "LAKOUR_SURVIE.Reperes.MJ.Aide"}}</p>
+    </div>
+    <div class="survie-formulaire" data-forme="compte">
+      <h3><i class="fa-solid fa-calendar-check"></i> {{localize "LAKOUR_SURVIE.Reperes.MJ.Compte"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Action"}} <select name="action">{{#each reperes.actions}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Qui"}} <select name="acteur">{{#each reperes.qui}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.JourIso"}} <input type="text" name="date" value="" placeholder="{{reperes.dateCrue}}"></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Certitude"}} <select name="certitude">{{#each reperes.certitudes}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    <div class="survie-formulaire" data-forme="donnerDate">
+      <h3><i class="fa-solid fa-comments"></i> {{localize "LAKOUR_SURVIE.Reperes.MJ.Date"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.De"}} <input type="text" name="de" value=""></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.A"}} <input type="text" name="a" value=""></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.JourIso"}} <input type="text" name="date" value="" placeholder="{{reperes.dateCrue}}"></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Mensonge"}} <select name="mensonge">{{#each reperes.mensonges}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    <div class="survie-formulaire" data-forme="lireLaLune">
+      <h3><i class="fa-solid fa-moon"></i> {{localize "LAKOUR_SURVIE.Reperes.MJ.Lune"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Objet"}} <select name="objet">{{#each reperes.calendriers}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    <div class="survie-formulaire" data-forme="donnerRepere">
+      <h3><i class="fa-solid fa-map"></i> {{localize "LAKOUR_SURVIE.Reperes.MJ.Repere"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Qui"}} <select name="acteur">{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Cle"}} <select name="cle">{{#each reperes.cles}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    {{#if reperes.cartes.length}}
+    <div class="survie-formulaire" data-forme="copierCarte">
+      <h3><i class="fa-solid fa-pen-nib"></i> {{localize "LAKOUR_SURVIE.Reperes.MJ.Copier"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Objet"}} <select name="objet">{{#each reperes.cartes}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Qui"}} <select name="acteur">{{#each reperes.qui}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    {{/if}}
+    <div class="survie-formulaire" data-forme="lireJournal">
+      <h3><i class="fa-solid fa-book-open"></i> {{localize "LAKOUR_SURVIE.Reperes.MJ.Journal"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Mort"}} <select name="mort">{{#each reperes.morts}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Inconnu"}} <input type="text" name="de" value=""></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.JourIso"}} <input type="text" name="date" value=""></label>
+      <label>{{localize "LAKOUR_SURVIE.Reperes.MJ.Depuis"}} <input type="number" name="depuis" value="0" min="0" class="survie-petit"></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    {{/if}}
     {{/if}}
 
     {{#if (eq onglet "actions")}}

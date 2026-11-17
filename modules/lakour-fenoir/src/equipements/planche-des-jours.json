@@ -1,0 +1,40 @@
+{
+  "_id": "erkZO5xELWuZbgqd",
+  "_key": "!items!erkZO5xELWuZbgqd",
+  "name": "Planche des jours",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "planche-des-jours",
+    "categorie": "repere",
+    "description": "<p>Une planche et un couteau : une encoche par jour, groupées par cinq, une plus longue à chaque lune. On y perd moins vite le fil qu'avec des traits dans un carnet.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "planche",
+      "rarete": "commune"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "planche-des-jours"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

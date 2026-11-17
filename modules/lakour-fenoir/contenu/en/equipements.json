@@ -10,6 +10,52 @@
       "en": "<p>A hiker's filter bottle: ravine water becomes drinkable for one person, without boiling.</p>"
     }
   },
+  "equipements/0CSRPEyUAY6ocakG": {
+    "_nom": "Carte annotée par un mort",
+    "name": {
+      "fr": "Carte annotée par un mort",
+      "en": "Map annotated by a dead man"
+    },
+    "system.description": {
+      "fr": "<p>Une carte routière couverte d'une écriture serrée au stylo bille : des croix, des flèches, des dates, des mots soulignés deux fois. Celui qui l'a annotée est mort ; on l'a trouvée sur lui, ou à côté. Sa note dit une cache, un danger, ou un mensonge, et on ne sait pas lequel.</p>",
+      "en": "<p>A road map covered in tight ballpoint handwriting: crosses, arrows, dates, words underlined twice. Whoever annotated it is dead; it was found on them, or next to them. Their note marks a cache, a danger, or a lie, and nobody knows which.</p>"
+    },
+    "system.repere.annotations.0.texte": {
+      "fr": "« Îlet à Cordes : la case bleue au bout du chemin, sous le plancher, de quoi tenir un mois. » Au stylo bleu, souligné deux fois.",
+      "en": "\"Îlet à Cordes: the blue case at the end of the path, under the floorboards, enough to last a month.\" In blue ink, underlined twice."
+    },
+    "system.repere.annotations.1.texte": {
+      "fr": "« Gillot : NE PAS PASSER PAR LA ZONE CARGO. » Trois croix rouges autour d'un hangar.",
+      "en": "\"Gillot: DO NOT GO THROUGH THE CARGO ZONE.\" Three red crosses around a hangar."
+    },
+    "system.repere.annotations.2.texte": {
+      "fr": "« Bourg-Murat : ils ont de l'eau et des médicaments, ils accueillent. » Avec une date, juste avant le silence.",
+      "en": "\"Bourg-Murat: they have water and medicine, they take people in.\" With a date, just before the silence."
+    },
+    "system.repere.annotations.3.texte": {
+      "fr": "« Hell-Bourg : derrière les thermes, sous la grille, ça tient. » Une flèche vers la ravine.",
+      "en": "\"Hell-Bourg: behind the thermal baths, under the grate, it holds.\" An arrow towards the ravine."
+    },
+    "system.repere.annotations.4.texte": {
+      "fr": "« Terre-Sainte : un bateau. Ils partent le 15. » Le mois n'est pas écrit.",
+      "en": "\"Terre-Sainte: a boat. They leave on the 15th.\" The month isn't written."
+    },
+    "system.repere.annotations.5.texte": {
+      "fr": "« Bébour : le gîte est vide, le feu prend bien, personne. » Une autre main a ajouté, au crayon : « menteur ».",
+      "en": "\"Bébour: the gîte is empty, the fire catches well, nobody around.\" Another hand has added, in pencil: \"liar\"."
+    }
+  },
+  "equipements/1qDrJz9tbJn3utaA": {
+    "_nom": "Calendrier des fêtes de l'île",
+    "name": {
+      "fr": "Calendrier des fêtes de l'île",
+      "en": "Calendar of the island's festivals"
+    },
+    "system.description": {
+      "fr": "<p>Le calendrier d'une association interculturelle, distribué dans les écoles et les mairies : Noël et le 20 désanm, le Nouvel An chinois et la Dipavali, le Cavadee, l'Aïd, le Nouvel An tamoul, Pongal… avec les lunes, puisque tant de fêtes les suivent. On y voit venir les fêtes des autres.</p>",
+      "en": "<p>The calendar of an intercultural association, handed out in schools and town halls: Christmas and the 20 désanm (20 December), Chinese New Year and Dipavali, Cavadee, Eid, Tamil New Year, Pongal… with the moons, since so many festivals follow them. You can see the others' festivals coming.</p>"
+    }
+  },
   "equipements/206qWaRr3q2LbJTF": {
     "_nom": "Scooter électrique",
     "name": {
@@ -65,6 +111,17 @@
       "en": "<p>Silent, no fuel, faster than walking on the road… as long as it goes downhill. In the Highlands you push it uphill on foot.</p>"
     }
   },
+  "equipements/71t1IczrhQEDQtfo": {
+    "_nom": "Copie de carte",
+    "name": {
+      "fr": "Copie de carte",
+      "en": "Copied map"
+    },
+    "system.description": {
+      "fr": "<p>Une carte recopiée à la main dans un cahier cousu, à l'encre de suie : les routes, les régions, les notes, pas le relief. Elle vaut ce que valait la main qui l'a tracée.</p>",
+      "en": "<p>A map copied by hand into a sewn notebook, in soot ink: the roads, the regions, the notes, not the relief. It is worth what the hand that drew it was worth.</p>"
+    }
+  },
   "equipements/7bFHD5K91aRRVSfj": {
     "_nom": "Voiture électrique",
     "name": {
@@ -114,6 +171,17 @@
     "system.description": {
       "fr": "<p>Un mètre cinquante d'acier : on force une porte, on soulève une dalle, on tient un Livide à distance. Lourde.</p>",
       "en": "<p>A metre and a half of steel: you force a door, lift a slab, keep a Pallid at arm's length. Heavy.</p>"
+    }
+  },
+  "equipements/Bv2927IxJMnq0Q0o": {
+    "_nom": "Vieux calendrier",
+    "name": {
+      "fr": "Vieux calendrier",
+      "en": "Old calendar"
+    },
+    "system.description": {
+      "fr": "<p>Un calendrier d'une autre année, oublié sur un mur : les jours tombent faux, et les lunes aussi. Celui qui y lit la lune croit retrouver le jour ; il se trompe, sans le savoir.</p>",
+      "en": "<p>A calendar from another year, forgotten on a wall: the days fall wrong, and so do the moons. Whoever reads the moon on it thinks they have found the day again; they are wrong, without knowing it.</p>"
     }
   },
   "equipements/EPJKOAHUNqbfpcwc": {
@@ -292,6 +360,33 @@
       "en": "<p>A bag woven from dried vacoa (screwpine) leaves, strong and light, like those of the markets before: you carry more, further, and it is beautiful.</p>"
     }
   },
+  "equipements/NuaSHyA2c5HK9uUg": {
+    "_nom": "Carte ancienne de l'île",
+    "name": {
+      "fr": "Carte ancienne de l'île",
+      "en": "Old map of the island"
+    },
+    "system.description": {
+      "fr": "<p>Une carte de l'île d'il y a trente ou quarante ans, trouvée dans le placard d'une école ou au fond d'une case : les routes d'alors, des sentiers que plus personne ne prend, et ni la route des Tamarins ni la nouvelle route du Littoral. Elle a l'air sûre d'elle. Elle trompe.</p>",
+      "en": "<p>A map of the island from thirty or forty years ago, found in a school cupboard or at the back of a case (a Creole house): the roads of the time, trails nobody takes any more, and neither the Route des Tamarins nor the new Route du Littoral. It looks sure of itself. It misleads.</p>"
+    },
+    "system.repere.notes.saint-paul": {
+      "fr": "La carte ne connaît pas la route des Tamarins : entre Saint-Paul et Saint-Leu, seulement la route sinueuse de la côte.",
+      "en": "The map doesn't know the Route des Tamarins: between Saint-Paul and Saint-Leu, only the winding coast road."
+    },
+    "system.repere.notes.route-du-littoral": {
+      "fr": "La carte ne montre que la vieille route sous la falaise, celle des éboulis, et pas la nouvelle route sur la mer.",
+      "en": "The map only shows the old road under the cliff, the one with the rockfalls, and not the new road over the sea."
+    },
+    "system.repere.notes.sud-sauvage": {
+      "fr": "La carte trace la route des Laves comme elle passait avant les grandes coulées : une partie de ce tracé est sous la lave.",
+      "en": "The map draws the Route des Laves as it ran before the great lava flows: part of that line is under the lava."
+    },
+    "system.repere.notes.fournaise": {
+      "fr": "Des sentiers marqués au pied du volcan ne mènent plus nulle part : les coulées sont passées dessus.",
+      "en": "Trails marked at the foot of the volcano lead nowhere any more: the lava flows have gone over them."
+    }
+  },
   "equipements/OCYXrsHwxVHAvZjS": {
     "_nom": "Lance de fortune",
     "name": {
@@ -301,6 +396,17 @@
     "system.description": {
       "fr": "<p>Un couteau de cuisine ou une lame de sabre ligaturée au bout d'un bambou : on frappe à travers un grillage sans s'approcher.</p>",
       "en": "<p>A kitchen knife or a cane-knife blade lashed to the end of a bamboo pole: you strike through a fence without coming close.</p>"
+    }
+  },
+  "equipements/QMhog9vjE1IGTzZ7": {
+    "_nom": "Cahier cousu",
+    "name": {
+      "fr": "Cahier cousu",
+      "en": "Sewn notebook"
+    },
+    "system.description": {
+      "fr": "<p>Des feuilles pliées et cousues au fil de pêche : de quoi recopier une carte, tenir un journal, garder ce qu'on apprend.</p>",
+      "en": "<p>Sheets folded and sewn with fishing line: enough to copy a map, keep a journal, hold on to what you learn.</p>"
     }
   },
   "equipements/R0G71qo20r7WKfk2": {
@@ -325,6 +431,28 @@
       "en": "<p>A small radio you crank by hand: listen to the last broadcasts, the looped messages, the other groups. It cannot transmit.</p>"
     }
   },
+  "equipements/T7LFaNYAkK9llURL": {
+    "_nom": "Moitié de carte routière",
+    "name": {
+      "fr": "Moitié de carte routière",
+      "en": "Half a road map"
+    },
+    "system.description": {
+      "fr": "<p>Une carte routière déchirée en deux, tachée, gondolée par la pluie : on n'en a qu'une moitié, l'ouest ou l'est. Le reste de l'île s'arrête au bord du papier.</p>",
+      "en": "<p>A road map torn in two, stained, warped by the rain: only one half is left, the west or the east. The rest of the island stops at the edge of the paper.</p>"
+    }
+  },
+  "equipements/TDDZCkNgRsxLIWK5": {
+    "_nom": "Carte routière de l'île",
+    "name": {
+      "fr": "Carte routière de l'île",
+      "en": "Road map of the island"
+    },
+    "system.description": {
+      "fr": "<p>La carte routière dépliable qu'on achetait à la station-service ou à l'aéroport : les nationales en rouge, les départementales en jaune, les villes, les cols. Presque rien du relief, rien des sentiers. Elle dit les routes telles qu'elles étaient le jour où on l'a imprimée ; ce qui les bouche aujourd'hui, elle ne le sait pas, et elle ne sait rien des Livides.</p>",
+      "en": "<p>The fold-out road map you used to buy at the petrol station or the airport: national roads in red, departmental roads in yellow, the towns, the passes. Almost nothing of the relief, nothing of the trails. It shows the roads as they were the day it was printed; what blocks them today, it doesn't know, and it knows nothing of the Pallid.</p>"
+    }
+  },
   "equipements/TDs38uzp1fwj7esY": {
     "_nom": "Pinces à linge en bois fendu",
     "name": {
@@ -334,6 +462,17 @@
     "system.description": {
       "fr": "<p>Un bout de bois de goyavier fendu, une ligature de fil : le linge sèche au vent au lieu de traîner. Trois fois rien, et la cour ressemble de nouveau à une cour.</p>",
       "en": "<p>A split stick of guava wood, a twist of wire: the washing dries in the wind instead of lying about. Next to nothing, and the yard looks like a yard again.</p>"
+    }
+  },
+  "equipements/U6fHMevWhRd7QJBx": {
+    "_nom": "Calendrier des postes",
+    "name": {
+      "fr": "Calendrier des postes",
+      "en": "Post office calendar"
+    },
+    "system.description": {
+      "fr": "<p>L'almanach que le facteur passait vendre en fin d'année, avec ses photos de chatons ou de paysages de l'île : les jours, les saints, les vacances scolaires et les quartiers de lune. En novembre et en décembre, c'est déjà celui de l'année suivante. Il était accroché dans la cuisine de presque toutes les cases.</p>",
+      "en": "<p>The almanac the postman used to sell at the end of the year, with its photos of kittens or of the island's landscapes: the days, the saints, the school holidays and the quarters of the moon. In November and December, it is already next year's. It hung in the kitchen of almost every case.</p>"
     }
   },
   "equipements/VPX4NAJ9P5XDCfKL": {
@@ -435,6 +574,17 @@
       "en": "<p>Both hands free in the dark of a tunnel or a stairwell. Battery or rechargeable.</p>"
     }
   },
+  "equipements/erkZO5xELWuZbgqd": {
+    "_nom": "Planche des jours",
+    "name": {
+      "fr": "Planche des jours",
+      "en": "Tally board"
+    },
+    "system.description": {
+      "fr": "<p>Une planche et un couteau : une encoche par jour, groupées par cinq, une plus longue à chaque lune. On y perd moins vite le fil qu'avec des traits dans un carnet.</p>",
+      "en": "<p>A plank and a knife: one notch a day, in groups of five, a longer one at each moon. You lose the thread less quickly than with strokes in a notebook.</p>"
+    }
+  },
   "equipements/fv8YrrD2rNKQHdLV": {
     "_nom": "Panneaux solaires démontables",
     "name": {
@@ -490,6 +640,17 @@
       "en": "<p>An army weapon, rare and coveted, recovered from an abandoned post or a fallen soldier. It fires in bursts and empties magazines faster than you can find them.</p>"
     }
   },
+  "equipements/lJluGAPOJDplEmkz": {
+    "_nom": "Plan de ville",
+    "name": {
+      "fr": "Plan de ville",
+      "en": "Town plan"
+    },
+    "system.description": {
+      "fr": "<p>Le plan que distribuaient l'office de tourisme et la mairie : les rues, les écoles, la pharmacie de garde, la gendarmerie, les routes qui sortent de la ville. Il ne couvre que la ville où on l'a trouvé.</p>",
+      "en": "<p>The plan the tourist office and the town hall used to hand out: the streets, the schools, the duty pharmacy, the gendarmerie, the roads out of town. It only covers the town where it was found.</p>"
+    }
+  },
   "equipements/lyHb0eP2OzbXMBBT": {
     "_nom": "Chauffe-eau solaire de fortune",
     "name": {
@@ -521,6 +682,17 @@
     "system.description": {
       "fr": "<p>Une citadine ou une berline trouvée avec ses clés : rapide sur route, inutile hors des routes, bruyante, et la route peut être bouchée par mille autres.</p>",
       "en": "<p>A city car or a saloon found with its keys: fast on the road, useless off it, noisy, and the road may be blocked by a thousand others.</p>"
+    }
+  },
+  "equipements/mamG6zwlHyGBSCIb": {
+    "_nom": "Cadran solaire",
+    "name": {
+      "fr": "Cadran solaire",
+      "en": "Sundial"
+    },
+    "system.description": {
+      "fr": "<p>Quatre galets et une baguette plantée bien droite dans la cour : l'ombre dit l'heure quand il y a du soleil. Il ne sert qu'à l'abri, et seulement de jour.</p>",
+      "en": "<p>Four pebbles and a stick planted bolt upright in the yard: the shadow tells the time when the sun is out. It only works at the shelter, and only by day.</p>"
     }
   },
   "equipements/mhXqjNcFXPMBnDOW": {
@@ -556,6 +728,17 @@
       "en": "<p>The island's two-wheeler: it threads between the stalled cars, uses little fuel, carries almost nothing.</p>"
     }
   },
+  "equipements/oK5YlH3LVKzmSWWH": {
+    "_nom": "Calendrier de l'année",
+    "name": {
+      "fr": "Calendrier de l'année",
+      "en": "This year's calendar"
+    },
+    "system.description": {
+      "fr": "<p>Un calendrier publicitaire de garage, de quincaillerie ou de boutique chinoise, une photo par mois. Les jours, rien d'autre : pas de lune. Coché chaque soir, il garde le compte des jours de l'année.</p>",
+      "en": "<p>An advertising calendar from a garage, a hardware shop or a Chinese corner shop, one photo a month. The days, nothing else: no moon. Ticked off every evening, it keeps the count of the year's days.</p>"
+    }
+  },
   "equipements/olChNa2lCyCxRl5U": {
     "_nom": "Arbalète de fortune",
     "name": {
@@ -576,6 +759,17 @@
     "system.description": {
       "fr": "<p>Une grosse batterie portable avec ses prises : garder le courant d'une journée pour la nuit.</p>",
       "en": "<p>A big portable battery with its sockets: keep a day's power for the night.</p>"
+    }
+  },
+  "equipements/rfekFU67EFP5EOgN": {
+    "_nom": "Encre de suie",
+    "name": {
+      "fr": "Encre de suie",
+      "en": "Soot ink"
+    },
+    "system.description": {
+      "fr": "<p>Du charbon de bois pilé dans un peu d'eau et de sève : de quoi écrire quand les stylos sont morts. Une fiole sert pour une copie.</p>",
+      "en": "<p>Charcoal ground into a little water and sap: something to write with when the pens are dead. One vial does one copy.</p>"
     }
   },
   "equipements/sAH6fwhcxEnXrjuj": {
@@ -631,6 +825,17 @@
     "system.description": {
       "fr": "<p>Un cahier d'écolier à couverture bleue, un crayon attaché par une ficelle : on y écrit ce que chacun prend et ce qu'il doit, en parts, et ce qu'il a rendu. C'est ce qui remplace la monnaie. Celui qui le tient ouvre une boutique ; une dette qui traîne finit dans la bouche de tout le monde, et le carnet se solde au Nouvel An chinois.</p>",
       "en": "<p>A blue-covered school exercise book, a pencil tied on with string: you write down what everyone takes and what they owe, in shares, and what they have paid back. It is what replaces money. Whoever keeps it opens a shop; a debt that drags on ends up in everyone's mouth, and the book is settled at Chinese New Year.</p>"
+    }
+  },
+  "equipements/utpHfK8SbTSxteDn": {
+    "_nom": "Carte de randonnée",
+    "name": {
+      "fr": "Carte de randonnée",
+      "en": "Hiking map"
+    },
+    "system.description": {
+      "fr": "<p>Une carte au 1/25 000 d'un cirque ou du volcan, pliée et repliée par un randonneur : chaque courbe de niveau, chaque sentier, chaque îlet, les gîtes et les points d'eau. C'est la seule qui montre les sentiers. Elle ne sait pas lesquels l'éboulis a emportés depuis.</p>",
+      "en": "<p>A 1:25,000 map of a cirque or of the volcano, folded and refolded by a hiker: every contour line, every trail, every îlet (hamlet), the gîtes and the water points. It is the only one that shows the trails. It doesn't know which ones the rockfalls have carried away since.</p>"
     }
   },
   "equipements/w5jAo3vhpTDnsksz": {
@@ -699,6 +904,17 @@
       "en": "<p>A rental bike from the West coast, its battery charged on the shelter's panels: it climbs back up to the Highlands almost as easily as it comes down, without a sound. Half a unit of energy per watch on the road.</p>"
     }
   },
+  "equipements/zQmFKR3RXI2jZLId": {
+    "_nom": "Calendrier des marées et des lunes",
+    "name": {
+      "fr": "Calendrier des marées et des lunes",
+      "en": "Tide and moon calendar"
+    },
+    "system.description": {
+      "fr": "<p>Le petit livret des pêcheurs et des plaisanciers : pour chaque jour, les heures des marées, le lever et le coucher de la lune, sa phase heure par heure. Avec lui, la lune donne le jour à un jour près.</p>",
+      "en": "<p>The little booklet of fishermen and sailors: for every day, the times of the tides, moonrise and moonset, its phase hour by hour. With it, the moon gives the day to within a day.</p>"
+    }
+  },
   "equipements/zbfFqGVAJlulr1ou": {
     "_nom": "Carabine .22",
     "name": {
@@ -708,6 +924,17 @@
     "system.description": {
       "fr": "<p>Une petite carabine de stand ou de ferme : précise, légère, moins bruyante qu'un fusil. Il faut viser la tête.</p>",
       "en": "<p>A small range or farm rifle: accurate, light, quieter than a shotgun. You have to aim for the head.</p>"
+    }
+  },
+  "equipements/ztXLum1vL36ju1hA": {
+    "_nom": "Montre à aiguilles",
+    "name": {
+      "fr": "Montre à aiguilles",
+      "en": "Wind-up watch"
+    },
+    "system.description": {
+      "fr": "<p>Une montre mécanique, de celles qu'on remonte chaque matin d'un tour de molette : elle ne craint ni la panne de courant ni les piles mortes. Avec elle, on sait l'heure, pas le jour.</p>",
+      "en": "<p>A mechanical watch, the kind you wind every morning with a turn of the crown: it fears neither power cuts nor dead batteries. With it, you know the time, not the day.</p>"
     }
   }
 }

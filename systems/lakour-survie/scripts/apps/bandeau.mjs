@@ -3,6 +3,8 @@
 // de bord, de l'atelier, de ma fiche (et de la fenêtre du MJ). Repliable (réglage client). Seulement l'état PUBLIC.
 // Lot « fetes » : la lune et la clarté de la nuit, la chaleur, les signes du paysage ; sans téléphone ni radio, la date lue dans la
 // nature remplace la date exacte (le MJ, lui, la voit toujours).
+// Lot « cartes » (contrat §20) : les joueurs voient le jour que le groupe CROIT (« vers le … », « Jour ≈ 41 », « Jour ? » quand le
+// compte est perdu) et l'heure seulement s'ils la savent (téléphone, radio, montre, cadran) ; sinon le moment du jour.
 import { ID } from "../../logique/constantes.mjs";
 import { t, lireEtat, reglage, monSurvivant, libelleMoment, libellePhase, libelleTache, sansBalises, localiser } from "../donnees.mjs";
 import { CHEMIN, jours } from "./commun.mjs";
@@ -24,8 +26,9 @@ export function contexteBandeau() {
   const meteo = etat.meteo?.temps ?? "";
   return {
     demarree: true, gm, replie,
-    jour: q.jour, moment: libelleMoment(q.moment), momentCle: q.moment, iconeMoment: ICONES_MOMENT[q.moment] ?? "fa-sun", heure: q.heure,
-    date: q.dateExacte === false && !gm ? q.dateLue : q.dateTexte, dateLue: q.dateExacte === false ? q.dateLue : "",
+    jour: q.jour, jourTexte: texteDuJour(q, gm), moment: libelleMoment(q.moment), momentCle: q.moment, iconeMoment: ICONES_MOMENT[q.moment] ?? "fa-sun",
+    heure: gm ? q.heure : q.heureDuGroupe ?? q.heure, heureAide: q.heureLue ? t(`LAKOUR_SURVIE.Reperes.Heure.${q.heureLue.cle}`) : "",
+    date: gm ? q.dateTexte : q.dateDuGroupe ?? (q.dateExacte === false ? q.dateLue : q.dateTexte), dateLue: q.dateExacte === false ? q.dateLue : "",
     lune: q.lune ? t(`LAKOUR_SURVIE.Lune.Phases.${q.lune.phase}`) : "",
     nuit: q.clarte === null || q.clarte === undefined ? null : { niveau: q.clarte, texte: t(`LAKOUR_SURVIE.Lune.Clarte.${q.clarte}`), couvert: Boolean(q.couvert) },
     chaleur: Boolean(q.chaleur), signes: (q.signes ?? []).map(x => t(`LAKOUR_SURVIE.Annee.Signes.${x}`)).join(", "),
@@ -43,6 +46,12 @@ export function contexteBandeau() {
     moi: moi ? { id: moi.id, nom: moi.name, tache: libelleTache(moi.system?.tache) } : null,
     creer: !gm && !moi && reglage("creationOuverte", true)
   };
+}
+
+// Le numéro du jour : le vrai pour le MJ ; pour les joueurs, celui que le groupe croit.
+function texteDuJour(q, gm) {
+  if (gm || q.jourDuGroupe === undefined || (q.compte?.certitude === "sur" && q.jourDuGroupe === q.jour)) return t("LAKOUR_SURVIE.Bandeau.Jour", { n: q.jour });
+  return q.jourDuGroupe === null ? t("LAKOUR_SURVIE.Reperes.JourPerdu") : t("LAKOUR_SURVIE.Reperes.JourVers", { n: q.jourDuGroupe });
 }
 
 export class BandeauSurvie extends HandlebarsApplicationMixin(ApplicationV2) {

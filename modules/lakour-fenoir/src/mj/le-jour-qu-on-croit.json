@@ -1,0 +1,231 @@
+{
+  "_id": "KYoVKmAJRdXz6EWN",
+  "_key": "!journal!KYoVKmAJRdXz6EWN",
+  "name": "Le jour qu'on croit",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "le-jour-qu-on-croit",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "5AdJ0K58tbk3zaUT",
+      "_key": "!journal.pages!KYoVKmAJRdXz6EWN.5AdJ0K58tbk3zaUT",
+      "name": "Le compte des jours",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Au jour zéro, tout le monde sait quel jour on est : le téléphone le dit. Tant que le <strong>téléphone</strong> marche là où est le groupe, ou que la <strong>radio</strong> de l'abri parle, la date est exacte. Ensuite, il faut la tenir soi-même.</p><p><strong>Celui qui tient le compte.</strong> Un survivant du groupe note le jour, chaque jour : une encoche dans un carnet, un trait sur un mur, une case cochée. Au départ, c'est le premier du groupe ; on en désigne un autre dans la fenêtre du MJ (« Le compte des jours »). Le système note le jour de lui-même tant que celui qui le tient est <strong>là et en état</strong> : il ne le note pas s'il est séparé du groupe, mort, mourant (4 blessures), épuisé (fatigue 5) ou confus par le Gris (stade 5) ; au fond du trou (<strong>moral 0</strong>), il oublie un jour sur trois. Le MJ peut aussi dire qu'un jour n'a pas été noté (une fuite, une nuit de cyclone) ou qu'un autre l'a noté à la main.</p><p><strong>Ce qui se passe quand on note.</strong><br>- Sur un <strong>calendrier de l'année</strong> qu'on coche, le compte reste <strong>sûr</strong>.<br>- Par <strong>encoches</strong> (un carnet), on finit par douter : au bout de <strong>10 jours</strong>, le compte devient « <strong>à peu près</strong> » (à un jour près), même s'il est juste.<br>- Sur une <strong>planche des jours</strong> (une encoche plus longue à chaque lune), le doute ne vient qu'au bout de <strong>30 jours</strong>.</p><p><strong>Ce qui se passe quand on ne note pas.</strong> Chaque jour oublié rend le compte incertain et le fait dériver : <strong>30 %</strong> de chances que le jour soit sauté (on prend du retard), <strong>10 %</strong> qu'il soit compté deux fois (de l'avance). <strong>Trois jours de suite</strong> sans noter (deux sans calendrier de l'année), et le compte est <strong>perdu</strong> : on ne sait plus quel jour on est. Il ne reste que la date lue dans la nature (« début février, lune gibbeuse, les longanis »), et ce que disent les autres.</p><p><strong>Ce que voient les joueurs.</strong> Le bandeau dit la date si on la sait, « vers le … » si le compte est à peu près, la date lue dans la nature s'il est perdu ; le numéro du jour suit (« Jour ≈ 41 », « Jour ? »). Le MJ voit toujours le vrai jour, et l'écart.</p><p><strong>Ce que le système ne fait pas.</strong> Il ne dit jamais aux joueurs que leur compte est faux. Un compte « à peu près » peut être juste, et un compte faux peut sembler solide : un jour reçu d'un autre reste « à peu près », même s'il était faux.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-compte-des-jours"
+        }
+      }
+    },
+    {
+      "_id": "B9aVj9GEtrpOojr7",
+      "_key": "!journal.pages!KYoVKmAJRdXz6EWN.B9aVj9GEtrpOojr7",
+      "name": "Le jour des autres, et le mensonge",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un compte perdu ne se retrouve que <strong>par d'autres</strong> : un PNJ, une communauté, un journal trouvé sur un mort, la radio si elle revient. <strong>Ils peuvent se tromper, ou mentir.</strong> Le jour reçu est cru et noté, avec le nom de qui l'a donné ; le compte devient « à peu près ». S'il était faux, on ne le découvre qu'en <strong>recoupant</strong> : la lune sur un calendrier de l'année, ou quelqu'un d'autre qui dit autre chose. Le système ne le dit pas aux joueurs.</p><p><strong>Aller à la fête des autres</strong> rend le jour : ceux qui reçoivent savent quel jour ils fêtent.</p><p><strong>Donner un faux jour exprès.</strong> Quand le groupe donne un jour qu'il ne croit pas (fenêtre du MJ, « Un jour donné ou reçu »), le faux jour <strong>court par le Ladi Lafé</strong> : une rumeur fausse et malveillante, dont l'auteur reste au secret. Si elle est <strong>démentie</strong> un jour (un calendrier, un témoin, un fait), le menteur porte l'acte « <strong>mentir</strong> » (vers le rouge, et sa réputation en souffre), comme tout mensonge démenti. Le groupe qui ne sait plus le jour et en donne un ne ment pas : il se trompe.</p><p>Table : « Le jour qu'on vous donne ». L'affaire « Le jour qu'il est » naît quand le groupe a perdu le compte.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-jour-des-autres"
+        }
+      }
+    },
+    {
+      "_id": "JNbg4ShMC2qjC7zN",
+      "_key": "!journal.pages!KYoVKmAJRdXz6EWN.JNbg4ShMC2qjC7zN",
+      "name": "La lune sur un calendrier",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une nuit où l'on voit la lune (le ciel dégagé, la lune levée ; une nuit sans lune, à la nouvelle lune, se lit aussi), un calendrier qui <strong>marque les lunes</strong> redonne le jour : on cherche, dans le mois qu'on croit vivre, le jour où la lune avait cette tête-là. Le jour retrouvé l'est <strong>à 2 jours près</strong> (à 1 jour près avec le <strong>calendrier des marées et des lunes</strong>, qui donne la phase heure par heure). Quand le compte est perdu, le mois se lit dans la nature.</p><p><strong>Un calendrier d'une autre année</strong> a ses lunes <strong>fausses</strong> : le jour trouvé l'est aussi, sans que personne le sache. Le système le dit au MJ.</p><p>Le calendrier de l'année du garage n'a pas de lunes : il garde le compte, il ne le retrouve pas.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "la-lune-sur-un-calendrier"
+        }
+      }
+    },
+    {
+      "_id": "OFdvzMB3UBrfU4KF",
+      "_key": "!journal.pages!KYoVKmAJRdXz6EWN.OFdvzMB3UBrfU4KF",
+      "name": "L'heure du ciel",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le téléphone, la radio ou une <strong>montre à aiguilles</strong> donnent l'heure exacte. Sans eux, l'heure se lit dans le ciel :<br>- de jour, par <strong>beau temps</strong> : à <strong>une demi-heure</strong> près (le <strong>cadran solaire</strong> de l'abri la donne juste) ;<br>- de jour <strong>sous les nuages</strong> ou la pluie, ou par <strong>nuit claire</strong> : à <strong>une heure et demie</strong> près ;<br>- par <strong>nuit couverte</strong> : à <strong>trois heures</strong> près ;<br>- <strong>sous terre</strong> (un abri dans un tunnel de lave) : on ne sait plus l'heure.</p><p>Les joueurs ne voient alors que le moment du jour (matin, après-midi, soir, nuit). Le soleil se lève vers <strong>5 h 36</strong> et se couche vers <strong>18 h 48</strong> en saison des pluies ; vers <strong>6 h 42</strong> et <strong>17 h 48</strong> en saison sèche.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "l-heure-du-ciel"
+        }
+      }
+    },
+    {
+      "_id": "NUzHGTk1Gofk2tzB",
+      "_key": "!journal.pages!KYoVKmAJRdXz6EWN.NUzHGTk1Gofk2tzB",
+      "name": "Les cartes",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une carte dit les routes <strong>telles qu'elles étaient imprimées</strong> : avant la crise, sans rien des Livides, sans les éboulis, les épaves et les radiers emportés depuis. Elle s'ajoute aux renseignements du groupe (tableau de bord, onglet des renseignements : les routes « d'après la carte », en pointillés plus fins sur la carte de l'île), sans jamais remplacer ce qu'on a vu. Une carte de routes ne montre que les routes ; une carte de randonnée montre aussi les pistes et les sentiers. Plusieurs cartes se complètent ; la plus récente l'emporte. Perdre la carte (un troc, un mort), c'est perdre ce qu'elle disait.</p><ul><li><strong>Carte routière de l'île</strong> (rare) — La carte routière dépliable qu'on achetait à la station-service ou à l'aéroport : les nationales en rouge, les départementales en jaune, les villes, les cols. Presque rien du relief, rien des sentiers. Elle dit les routes telles qu'elles étaient le jour où on l'a imprimée ; ce qui les bouche aujourd'hui, elle ne le sait pas, et elle ne sait rien des Livides. <em>Où on en trouve : une caserne 5 %, un commerce, une station-service 4 %, un gîte, un hôtel 4 %, un port 3 %, un autre lieu (mairie, maison forestière, thermes…) 2 %, une fouille sans lieu précis (des cases au hasard) 0,5 %.</em></li><li><strong>Carte de randonnée</strong> (peu commune) — Une carte au 1/25 000 d'un cirque ou du volcan, pliée et repliée par un randonneur : chaque courbe de niveau, chaque sentier, chaque îlet, les gîtes et les points d'eau. C'est la seule qui montre les sentiers. Elle ne sait pas lesquels l'éboulis a emportés depuis. <em>Où on en trouve : un gîte, un hôtel 8 %, un îlet 5 %, un autre lieu (mairie, maison forestière, thermes…) 3 %, une caserne 2 %, une fouille sans lieu précis (des cases au hasard) 0,5 %.</em></li><li><strong>Plan de ville</strong> (commune) — Le plan que distribuaient l'office de tourisme et la mairie : les rues, les écoles, la pharmacie de garde, la gendarmerie, les routes qui sortent de la ville. Il ne couvre que la ville où on l'a trouvé. <em>Où on en trouve : un commerce, une station-service 6 %, une école 4 %, un immeuble 4 %, un gîte, un hôtel 3 %, un autre lieu (mairie, maison forestière, thermes…) 3 %, une maison 2 %, une case créole 2 %, une fouille sans lieu précis (des cases au hasard) 1,5 %.</em></li><li><strong>Carte ancienne de l'île</strong> (commune) — Une carte de l'île d'il y a trente ou quarante ans, trouvée dans le placard d'une école ou au fond d'une case : les routes d'alors, des sentiers que plus personne ne prend, et ni la route des Tamarins ni la nouvelle route du Littoral. Elle a l'air sûre d'elle. Elle trompe. <em>Où on en trouve : une école 6 %, une case créole 4 %, une maison 3 %, un autre lieu (mairie, maison forestière, thermes…) 3 %, une fouille sans lieu précis (des cases au hasard) 0,6 %.</em></li><li><strong>Moitié de carte routière</strong> (commune) — Une carte routière déchirée en deux, tachée, gondolée par la pluie : on n'en a qu'une moitié, l'ouest ou l'est. Le reste de l'île s'arrête au bord du papier. <em>Où on en trouve : un commerce, une station-service 3 %, un port 2 %, un immeuble 2 %, une maison 2 %, une fouille sans lieu précis (des cases au hasard) 0,6 %.</em></li><li><strong>Carte annotée par un mort</strong> (rare) — Une carte routière couverte d'une écriture serrée au stylo bille : des croix, des flèches, des dates, des mots soulignés deux fois. Celui qui l'a annotée est mort ; on l'a trouvée sur lui, ou à côté. Sa note dit une cache, un danger, ou un mensonge, et on ne sait pas lequel. <em>Où on en trouve : une caserne 2 %, un gîte, un hôtel 2 %, un îlet 2 %, un hôpital 2 %, une fouille sans lieu précis (des cases au hasard) 0,4 %.</em></li></ul><p><strong>Recopier une carte</strong> (fenêtre du MJ) demande un cahier cousu et une fiole d'encre de suie (usée), et un quart : la copie garde les routes et les notes, pas le relief.</p><p>Table : « Ce qu'un mort a écrit sur sa carte ».</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-cartes"
+        }
+      }
+    },
+    {
+      "_id": "81BS1ztQxHkXvGUZ",
+      "_key": "!journal.pages!KYoVKmAJRdXz6EWN.81BS1ztQxHkXvGUZ",
+      "name": "Les calendriers et la montre",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un calendrier vaut pour <strong>son année</strong> : celle que le groupe croit vivre. Coché chaque jour, celui de l'année garde le compte <strong>sûr</strong> et laisse <strong>trois jours</strong> au lieu de deux avant de le perdre. S'il marque les lunes, il le retrouve (« La lune sur un calendrier »). Le calendrier des fêtes fait voir venir les fêtes des autres.</p><ul><li><strong>Calendrier des postes</strong> (commune) — L'almanach que le facteur passait vendre en fin d'année, avec ses photos de chatons ou de paysages de l'île : les jours, les saints, les vacances scolaires et les quartiers de lune. En novembre et en décembre, c'est déjà celui de l'année suivante. Il était accroché dans la cuisine de presque toutes les cases. <em>Où on en trouve : une case créole 10 %, une maison 8 %, une ferme 8 %, un immeuble 6 %, un îlet 6 %, un lieu de culte 5 %, un commerce, une station-service 3 %, une fouille sans lieu précis (des cases au hasard) 3 %.</em></li><li><strong>Calendrier de l'année</strong> (peu commune) — Un calendrier publicitaire de garage, de quincaillerie ou de boutique chinoise, une photo par mois. Les jours, rien d'autre : pas de lune. Coché chaque soir, il garde le compte des jours de l'année. <em>Où on en trouve : un commerce, une station-service 5 %, une usine 4 %, une école 3 %, une caserne 3 %, un hôpital 3 %, un port 3 %, un autre lieu (mairie, maison forestière, thermes…) 3 %, une ferme 2 %, une fouille sans lieu précis (des cases au hasard) 1 %.</em></li><li><strong>Calendrier des marées et des lunes</strong> (rare) — Le petit livret des pêcheurs et des plaisanciers : pour chaque jour, les heures des marées, le lever et le coucher de la lune, sa phase heure par heure. Avec lui, la lune donne le jour à un jour près. <em>Où on en trouve : un phare 10 %, un port 8 %, un commerce, une station-service 1 %, une fouille sans lieu précis (des cases au hasard) 0,3 %.</em></li><li><strong>Vieux calendrier</strong> (commune) — Un calendrier d'une autre année, oublié sur un mur : les jours tombent faux, et les lunes aussi. Celui qui y lit la lune croit retrouver le jour ; il se trompe, sans le savoir. <em>Où on en trouve : une école 6 %, une maison 5 %, une case créole 5 %, un immeuble 4 %, une ferme 4 %, une fouille sans lieu précis (des cases au hasard) 1,5 %.</em></li><li><strong>Calendrier des fêtes de l'île</strong> (rare) — Le calendrier d'une association interculturelle, distribué dans les écoles et les mairies : Noël et le 20 désanm, le Nouvel An chinois et la Dipavali, le Cavadee, l'Aïd, le Nouvel An tamoul, Pongal… avec les lunes, puisque tant de fêtes les suivent. On y voit venir les fêtes des autres. <em>Où on en trouve : une école 3 %, un commerce, une station-service 2 %, un autre lieu (mairie, maison forestière, thermes…) 2 %, une fouille sans lieu précis (des cases au hasard) 0,4 %.</em></li><li><strong>Montre à aiguilles</strong> (peu commune) — Une montre mécanique, de celles qu'on remonte chaque matin d'un tour de molette : elle ne craint ni la panne de courant ni les piles mortes. Avec elle, on sait l'heure, pas le jour. <em>Où on en trouve : une maison 2 %, une case créole 2 %, un immeuble 2 %, un commerce, une station-service 2 %, une caserne 2 %, un hôpital 2 %, une fouille sans lieu précis (des cases au hasard) 0,6 %.</em></li></ul><p><strong>Les fabrications</strong> (atelier) : la <strong>planche des jours</strong> (le doute vient après 30 jours d'encoches au lieu de 10), le <strong>cadran solaire</strong> (l'heure juste à l'abri, de jour, au soleil), l'<strong>encre de suie</strong> et le <strong>cahier cousu</strong> (recopier une carte).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-calendriers"
+        }
+      }
+    },
+    {
+      "_id": "RAG0A3O3PhUhCnS2",
+      "_key": "!journal.pages!KYoVKmAJRdXz6EWN.RAG0A3O3PhUhCnS2",
+      "name": "Où on les trouve",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>En fouillant un lieu, le système tire une fois : une carte, un calendrier ou une montre, parfois. L'objet va au premier fouilleur, avec l'année d'un calendrier, la région d'un plan de ville ou d'une carte de randonnée, la moitié d'une carte déchirée, la note d'une carte annotée. La chance d'en trouver un, selon le lieu :</p><ul><li>une fouille sans lieu précis (des cases au hasard) : 10,9 %</li><li>une maison : 22 %</li><li>une case créole : 23 %</li><li>un immeuble : 18 %</li><li>une école : 22 %</li><li>un commerce, une station-service : 26 %</li><li>une ferme : 14 %</li><li>un gîte, un hôtel : 17 %</li><li>un îlet : 13 %</li><li>une caserne : 14 %</li><li>un hôpital : 7 %</li><li>un port : 16 %</li><li>un phare : 10 %</li><li>une usine : 4 %</li><li>un lieu de culte : 5 %</li><li>un autre lieu (mairie, maison forestière, thermes…) : 16 %</li></ul><p>Le MJ peut aussi en donner un (une trouvaille racontée, un troc) : fenêtre du MJ, « Une carte ou un calendrier ».</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "ou-on-les-trouve"
+        }
+      }
+    },
+    {
+      "_id": "huwRDzPkqGmERqAc",
+      "_key": "!journal.pages!KYoVKmAJRdXz6EWN.huwRDzPkqGmERqAc",
+      "name": "Le journal d'un mort",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Chaque survivant tient son journal : les jours notés, ce qu'il a vu, les plans qu'il a appris. <strong>Il reste sur le corps</strong> : on le lit sur place, on ne l'emporte pas.</p><ul><li><strong>Le journal d'un mort du groupe</strong> se lit là où il est tombé, tant qu'il n'a pas reçu le repos (il est enterré avec lui) ; celui d'un Livide qu'on n'a pas retrouvé marche avec lui. Il rend le jour qu'il croyait (s'il le savait encore), à une marge qui grandit d'un jour tous les trois jours depuis sa mort, et les plans du groupe à sa mort.</li><li><strong>Le journal d'un inconnu</strong> (table du lot des affaires, « Récit — le journal d'un mort ») : le MJ dit son dernier jour noté (vrai, faux, ou menteur), depuis combien de jours le corps est là, ses plans, et ce qu'il dit des régions (l'infestation, l'eau, le courant, une note) ; ses renseignements entrent s'ils sont plus récents que ceux du groupe, sous la source « journal ».</li></ul><p>Lire prend un quart. Le jour d'un journal n'est pris que si le groupe ne sait pas le jour. Pour le ton : rien à montrer du corps ; ce qui serre le cœur, c'est l'écriture, les jours cochés qui s'arrêtent.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-journal-d-un-mort"
+        }
+      }
+    },
+    {
+      "_id": "EGb0xcntT6oBzYUv",
+      "_key": "!journal.pages!KYoVKmAJRdXz6EWN.EGb0xcntT6oBzYUv",
+      "name": "Ce que fait le système",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Chaque jour</strong> : le compte des jours (le téléphone de la région du groupe ou la radio de l'abri le remettent juste ; sinon celui qui le tient note, ou non). Au journal public : le doute, le compte perdu, le jour manqué, la date qui revient ; une alerte quand le compte se perd.</li><li><strong>Le bandeau</strong> : la date et le jour que le groupe croit ; l'heure seulement si on la sait (téléphone, radio, montre, cadran).</li><li><strong>Les fouilles</strong> : une carte, un calendrier ou une montre, parfois.</li><li><strong>La fête des autres</strong> : on y apprend le jour.</li><li><strong>Les affaires</strong> : « quand la date se perd » s'ouvre de lui-même.</li><li><strong>API</strong> : reperes() (lecture : le compte, l'heure, les objets du groupe, ce que disent ses cartes, les journaux lisibles ; l'écart au vrai jour au MJ seul), compte({ action: \"teneur\" | \"noter\" | \"oublier\" | \"regler\", acteurId, date, certitude }), donnerDate({ de, a, date, mensonge }), lireLaLune({ objetId }), donnerRepere({ acteurId, cle }), copierCarte({ objetId, acteurId }), lireJournal({ mortId } ou { de, date, depuis, plans, renseignements }).</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "systeme"
+        }
+      }
+    }
+  ]
+}

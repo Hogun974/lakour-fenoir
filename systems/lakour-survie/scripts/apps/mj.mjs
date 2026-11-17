@@ -199,6 +199,7 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     marche: onglet === "marche" && etat.demarree ? contexteMarche(etat, monde, c) : null,
     recrue: CACHE.recrue,
     sens: onglet === "partie" && etat.demarree ? contexteSens(api) : null,
+    reperes: onglet === "partie" && etat.demarree ? contexteReperes(api, c, membres) : null,
     // Lot « savoirs » : l'onglet Savoirs et cyclone.
     ...(onglet === "savoirs" || onglet === "groupe" ? contexteSavoirs(etat, c, api, membres) : {})
   };
@@ -243,6 +244,38 @@ export function contexteSens(api = game.lakourSurvie) {
     nettoyes: s.nettoyes.map(x => ({ nom: x.nom, jour: x.jour, tues: x.tues, facteur: Math.round(x.facteur * 100) })),
     actionsNoir: options(["lumiere", "nuit", "regler"].map(a => [a, t(P(`ActionsNoir.${a}`))]), "lumiere"),
     airs: options(["doux", "fort"].map(a => [a, t(P(`Airs.${a}`))]), "doux")
+  };
+}
+
+// Lot « cartes » (contrat §20) : le vrai jour et celui que le groupe croit, l'écart, qui tient le compte, l'heure, les cartes et
+// calendriers du groupe, les journaux qu'on peut lire ; et ce qu'il faut aux formulaires.
+export function contexteReperes(api = game.lakourSurvie, c = contenu(), membres = []) {
+  const r = api?.reperes?.();
+  if (!r) return null;
+  const R = k => `LAKOUR_SURVIE.Reperes.${k}`;
+  const q = api.quand();
+  const k = r.compte;
+  const lignes = [t(R("Vrai"), { jour: q.jour, date: q.dateTexte })];
+  if (q.compte?.certitude === "sur") lignes.push(t(R("Compte.sur"), { date: q.dateTexte }));
+  else if (k.certitude === "perdu") lignes.push(t(R("Compte.perdu"), { lue: q.dateLue || "—" }), t(R("PerduMJ")));
+  else lignes.push(t(R("Compte.a-peu-pres"), { date: k.dateCrue, marge: k.marge }), k.ecart ? t(R("Ecart"), { n: k.ecart > 0 ? `+${k.ecart}` : k.ecart }) : t(R("Juste")));
+  lignes.push([k.teneurNom ? t(R("Teneur"), { nom: k.teneurNom }) : t(R("SansTeneur")), k.recu?.de && k.recu.de !== "lune" ? t(R("Recu"), { de: k.recu.de }) : "",
+    k.encoches ? t(R("Encoches"), { n: k.encoches }) : ""].filter(Boolean).join(" · "));
+  lignes.push(`${t(R(`Heure.${r.heure?.cle ?? "jour-clair"}`))}. ${t(R("Soleil"), r.soleil)}`);
+  const objets = r.objets.map(o => ({ valeur: o.id, libelle: `${o.nom} (${o.porteur})`, type: o.type }));
+  const reperesDuContenu = L.reperesDuContenu(c).filter(d => d.cle !== "copie-de-carte");
+  return {
+    lignes, objets: objets.map(o => o.libelle),
+    journaux: r.journaux.map(j => j.nom),
+    actions: options(["teneur", "noter", "oublier", "regler"].map(a => [a, t(R(`Actions.${a}`))]), "teneur"),
+    certitudes: options([["", "—"], ...L.CERTITUDES.map(x => [x, t(R(`Certitudes.${x}`))])], ""),
+    qui: options([["", "—"], ...membres.map(a => [a.id, a.name])], k.teneur ?? ""),
+    mensonges: options(["auto", "oui", "non"].map(x => [x, t(R(`Mensonges.${x}`))]), "auto"),
+    calendriers: options([["", "—"], ...objets.filter(o => o.type === "calendrier").map(o => [o.valeur, o.libelle])], ""),
+    cartes: options(objets.filter(o => o.type === "carte").map(o => [o.valeur, o.libelle]), ""),
+    cles: options(reperesDuContenu.map(d => [d.cle, d.nom]), reperesDuContenu[0]?.cle ?? ""),
+    morts: options([["", "—"], ...r.journaux.map(j => [j.id, j.nom])], ""),
+    dateCrue: k.dateCrueIso || q.date
   };
 }
 
@@ -354,7 +387,14 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       // Percevoir dans le noir (contrat §18).
       noir: () => api.noir({ acteurId: d.acteur, action: d.action || "lumiere", nuits: Number(d.nuits) || 0 }),
       nettoyer: () => api.nettoyer({ region: d.region || "", site: d.site || "", tues: Number(d.tues) || 0 }),
-      jouer: () => api.jouer({ musiciens: liste(d.musiciens), air: d.air || "doux" })
+      jouer: () => api.jouer({ musiciens: liste(d.musiciens), air: d.air || "doux" }),
+      // Le jour qu'on croit, les cartes et les calendriers (contrat §20).
+      compte: () => api.compte({ action: d.action || "teneur", acteurId: d.acteur || "", date: d.date || "", certitude: d.certitude || "" }),
+      donnerDate: () => api.donnerDate({ de: d.de || "", a: d.a || "", date: d.date || "", mensonge: d.mensonge === "oui" ? true : d.mensonge === "non" ? false : null }),
+      lireLaLune: () => api.lireLaLune({ objetId: d.objet || "" }),
+      donnerRepere: () => api.donnerRepere({ acteurId: d.acteur, cle: d.cle }),
+      copierCarte: () => api.copierCarte({ objetId: d.objet, acteurId: d.acteur || "" }),
+      lireJournal: () => api.lireJournal(d.mort ? { mortId: d.mort } : { de: d.de || "", date: d.date || "", depuis: Number(d.depuis) || 0 })
     };
     if (!appels[nom]) return;
     cible.disabled = true;

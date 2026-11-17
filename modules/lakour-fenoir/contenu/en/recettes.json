@@ -186,6 +186,17 @@
       "en": "<p>Pig fat or oil, sifted wood ash, a little patience: washing your hands prevents half of all illnesses.</p>"
     }
   },
+  "recettes/Zh85g2AG1kZOvpP4": {
+    "_nom": "Encre de suie",
+    "name": {
+      "fr": "Encre de suie",
+      "en": "Soot ink"
+    },
+    "system.description": {
+      "fr": "<p>Le charbon d'un feu de la veille, pilé fin, un peu d'eau, une goutte de sève pour que ça tienne : deux fioles.</p>",
+      "en": "<p>Charcoal from last night's fire, ground fine, a little water, a drop of sap to make it hold: two vials.</p>"
+    }
+  },
   "recettes/a4GW8LBy6IsOnq3h": {
     "_nom": "Poêle de masse",
     "name": {
@@ -230,6 +241,17 @@
       "en": "<p>Corrugated iron, plywood, two screwed-on handles: heavy, noisy, but a bite breaks its teeth on it.</p>"
     }
   },
+  "recettes/eL2IkwEgFoJjE1G9": {
+    "_nom": "Cadran solaire",
+    "name": {
+      "fr": "Cadran solaire",
+      "en": "Sundial"
+    },
+    "system.description": {
+      "fr": "<p>Quatre galets, une gaulette bien droite, et une journée de soleil pour marquer les heures sur l'ombre. Il faut savoir où est le nord.</p>",
+      "en": "<p>Four pebbles, a good straight stick, and a day of sunshine to mark the hours on the shadow. You need to know where north is.</p>"
+    }
+  },
   "recettes/eNRRCctesYrtiIrV": {
     "_nom": "Arbalète de fortune",
     "name": {
@@ -250,6 +272,17 @@
     "system.description": {
       "fr": "<p>Draps de coton découpés, bouillis, séchés au soleil et roulés : des bandes propres.</p>",
       "en": "<p>Cotton sheets cut up, boiled, dried in the sun and rolled: clean bandages.</p>"
+    }
+  },
+  "recettes/i7KGi8V7LpW4AQn8": {
+    "_nom": "Planche des jours",
+    "name": {
+      "fr": "Planche des jours",
+      "en": "Tally board"
+    },
+    "system.description": {
+      "fr": "<p>Une planche, un couteau, un peu de lumière : on taille la première encoche le soir même.</p>",
+      "en": "<p>A plank, a knife, a little light: you cut the first notch that same evening.</p>"
     }
   },
   "recettes/i8u6OGsMOqGbxF9l": {
@@ -294,6 +327,17 @@
     "system.description": {
       "fr": "<p>Du jus de canne ou des fruits fermentés, un alambic de fortune, et l'alcool qui coule, plus fort que pour le rhum : dix litres d'un carburant qu'acceptent seulement les moteurs modifiés.</p>",
       "en": "<p>Cane juice or fermented fruit, a makeshift still, and the alcohol running out, stronger than for rum: ten litres of a fuel that only modified engines will take.</p>"
+    }
+  },
+  "recettes/s4dClkWjWERLuYic": {
+    "_nom": "Cahier cousu",
+    "name": {
+      "fr": "Cahier cousu",
+      "en": "Sewn notebook"
+    },
+    "system.description": {
+      "fr": "<p>Des feuilles récupérées (des cahiers d'école, le dos des affiches), pliées et cousues au fil de pêche.</p>",
+      "en": "<p>Salvaged sheets (school exercise books, the backs of posters), folded and sewn with fishing line.</p>"
     }
   },
   "recettes/uZaevsE1XImDgyjV": {

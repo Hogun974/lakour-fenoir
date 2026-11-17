@@ -1,0 +1,40 @@
+{
+  "_id": "mamG6zwlHyGBSCIb",
+  "_key": "!items!mamG6zwlHyGBSCIb",
+  "name": "Cadran solaire",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cadran-solaire",
+    "categorie": "repere",
+    "description": "<p>Quatre galets et une baguette plantée bien droite dans la cour : l'ombre dit l'heure quand il y a du soleil. Il ne sert qu'à l'abri, et seulement de jour.</p>",
+    "bonus": {},
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "cadran",
+      "rarete": "commune"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cadran-solaire"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

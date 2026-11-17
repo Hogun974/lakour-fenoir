@@ -152,7 +152,9 @@ export class ModeleEquipement extends foundry.abstract.TypeDataModel {
       cle: cle(), categorie: texte("outil"), description: html(), bonus: objetLibre({}), charge: nombre(0), usure: nombre(0),
       munitions: nombreNul(), bruit: nombre(0), transport: objetNul(), effets: objetNul(),
       marque: texte(),   // le signe d'une communauté sur l'objet (marche.mjs, reclamerObjet) : vide = pas marqué
-      enseigne: cles(), auteur: texte()   // lot « savoirs » : ce qu'un livre ou un cahier apprend ; l'ancienne qui l'a dicté
+      enseigne: cles(), auteur: texte(),   // lot « savoirs » : ce qu'un livre ou un cahier apprend ; l'ancienne qui l'a dicté
+      // Lot « cartes » (logique/reperes.mjs) : une carte, un calendrier, une montre… { type, … } ; null : un équipement ordinaire.
+      repere: objetNul()
     };
   }
 }

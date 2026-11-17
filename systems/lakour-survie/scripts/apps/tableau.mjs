@@ -13,7 +13,10 @@ const COULEURS_ROUTE = { ouverte: "#9fb79a", difficile: "#e0b04a", coupee: "#c84
 export const ONGLETS = ["groupe", "renseignements", "marche", "journal", "propositions"];
 
 // La carte des régions connue (SVG, d'après les repères de la scène « Carte de La Réunion », 4000 × 3000).
-export function carteConnue(etat, c = contenu()) {
+// Lot « cartes » : une route qu'on n'a pas vue, mais que montre une carte du groupe, se trace d'après elle (pointillé fin, pâle) ;
+// cartes : ce que disent les cartes du groupe (logique/reperes.mjs, ceQueDisentLesCartes ; défaut : celles du groupe).
+export function carteConnue(etat, c = contenu(), cartes = null) {
+  const imprime = cartes ?? (() => { try { return game.lakourSurvie?.reperes?.()?.cartes ?? {}; } catch { return {}; } })();
   const regions = L.regionsDe(c).filter(r => r.repere);
   if (!regions.length) return "";
   const ici = etat.groupe?.enRoute?.vers ?? etat.groupe?.region;
@@ -24,6 +27,11 @@ export function carteConnue(etat, c = contenu()) {
     if (!b?.repere || vus.has(cle)) continue;
     vus.add(cle);
     const etatRoute = etat.renseignements?.[r.cle]?.routes?.[v.region] ?? etat.renseignements?.[v.region]?.routes?.[r.cle] ?? null;
+    const surCarte = etatRoute ? null : imprime?.[r.cle]?.routes?.[v.region] ?? imprime?.[v.region]?.routes?.[r.cle] ?? null;
+    if (surCarte) {
+      traits.push(`<line x1="${r.repere.x}" y1="${r.repere.y}" x2="${b.repere.x}" y2="${b.repere.y}" stroke="${COULEURS_ROUTE[surCarte] ?? "#5a5650"}" stroke-width="${v.terrain === "route" ? 10 : 6}" stroke-dasharray="10 30" opacity="0.7"><title>${echapper(`${v.route ?? ""} — ${t("LAKOUR_SURVIE.Reperes.Types.carte")}`)}</title></line>`);
+      continue;
+    }
     traits.push(`<line x1="${r.repere.x}" y1="${r.repere.y}" x2="${b.repere.x}" y2="${b.repere.y}" stroke="${etatRoute ? COULEURS_ROUTE[etatRoute] : "#5a5650"}" stroke-width="${v.terrain === "route" ? 14 : 8}" ${etatRoute ? "" : "stroke-dasharray=\"30 24\""} ${v.terrain === "mer" ? "opacity=\"0.5\"" : ""}><title>${echapper(v.route ?? "")}</title></line>`);
   }
   const points = regions.map(r => {
@@ -61,6 +69,30 @@ export function marchePublic(etat, c = contenu()) {
   };
 }
 
+// Lot « cartes » : ce que le groupe croit du jour, et ses cartes et calendriers, en mots (public).
+export function reperesPublics(rep, q = game.lakourSurvie?.quand?.() ?? {}) {
+  const R = cle => `LAKOUR_SURVIE.Reperes.${cle}`;
+  const c = rep.compte ?? {};
+  const certitude = q.compte?.certitude ?? c.certitude;
+  const compte = certitude === "perdu" ? t(R("Compte.perdu"), { lue: q.dateLue || "—" })
+    : certitude === "sur" ? t(R("Compte.sur"), { date: q.dateDuGroupe ?? q.dateTexte ?? c.dateCrue })
+      : t(R("Compte.a-peu-pres"), { date: c.dateCrue, marge: c.marge });
+  const details = [c.teneurNom ? t(R("Teneur"), { nom: c.teneurNom }) : t(R("SansTeneur")), c.recu?.de && c.recu.de !== "lune" ? t(R("Recu"), { de: c.recu.de }) : ""].filter(Boolean).join(" · ");
+  const objet = o => {
+    const plus = [];
+    if (o.type === "calendrier") {
+      plus.push(t(R(o.valable ? "Valable" : "Perime")));
+      for (const [k, cle] of [["lunes", "AvecLunes"], ["marees", "AvecMarees"], ["fetes", "AvecFetes"]]) if (o[k]) plus.push(t(R(cle)));
+    } else if (o.type === "carte") {
+      if (o.imprimee) plus.push(t(R("Imprimee"), { annee: o.imprimee }));
+      if (o.copie) plus.push(t(R("Copie")));
+    } else plus.push(t(R(`Types.${o.type}`)));
+    return `${t(R("Porte"), { nom: o.nom, porteur: o.porteur })}${plus.length ? ` — ${plus.join(", ")}` : ""}`;
+  };
+  return { compte, details, heure: q.heureLue ? t(R(`Heure.${q.heureLue.cle}`)) : "", objets: (rep.objets ?? []).map(o => ({ texte: objet(o) })),
+    fetes: (rep.fetesAVenir ?? []).map(f => (f.dans ? t(R("FeteDans"), { nom: f.nom, n: f.dans }) : t(R("FeteAujourdhui"), { nom: f.nom }))).join(", ") };
+}
+
 export function contexteTableau(onglet = "groupe") {
   const etat = lireEtat();
   const c = contenu();
@@ -78,8 +110,12 @@ export function contexteTableau(onglet = "groupe") {
   });
   let besoins = [];
   try { besoins = game.lakourSurvie.besoins().filter(b => b.couverture !== "couvert" || b.urgence); } catch { besoins = []; }
+  // Lot « cartes » (contrat §20) : le jour que le groupe croit, ses cartes et ses calendriers, ce que disent ses cartes.
+  let rep = null;
+  try { rep = etat.demarree ? game.lakourSurvie?.reperes?.() ?? null : null; } catch { rep = null; }
   const renseignements = L.regionsDe(c).map(r => {
     const rs = etat.renseignements?.[r.cle] ?? {};
+    const surCarte = rep?.cartes?.[r.cle] ?? null;
     const age = L.ageRenseignement(rs, jour);
     // Le pillage (comme les routes et les factions) ne se voit que sur place : une nouvelle de la radio ne le rajeunit pas.
     const ageVu = L.ageDirect(rs, jour);
@@ -93,7 +129,10 @@ export function contexteTableau(onglet = "groupe") {
       electricite: rs.electricite === null || rs.electricite === undefined ? "?" : rs.electricite ? "✔" : "✘",
       eau: rs.eau === null || rs.eau === undefined ? "?" : rs.eau ? "✔" : "✘",
       factions: (rs.factions ?? []).map(f => L.factionDe(c, f)?.nom ?? f).join(", "),
-      notes: rs.notes ?? ""
+      notes: [rs.notes ?? "", ...(surCarte?.notes ?? [])].filter(Boolean).join(" "),
+      carte: surCarte && Object.keys(surCarte.routes).length ? t("LAKOUR_SURVIE.Reperes.CarteLigne", {
+        sources: surCarte.sources.map(s => (s.imprimee ? `${s.nom}, ${s.imprimee}` : s.nom)).join(" ; "),
+        routes: Object.entries(surCarte.routes).map(([v, e]) => `${L.regionDe(c, v)?.nom ?? v} : ${t(`LAKOUR_SURVIE.Routes.${e}`)}`).join(", ") }) : ""
     };
   });
   return {
@@ -111,7 +150,8 @@ export function contexteTableau(onglet = "groupe") {
     liens: [...Object.entries(etat.liens?.communautes ?? {}).map(([k, n]) => `${t(`LAKOUR_SURVIE.Communautes.${k}`)} ${n}`),
       ...Object.entries(etat.liens?.factions ?? {}).map(([k, n]) => `${L.factionDe(c, k)?.nom ?? k} ${n}`),
       ...(Number(etat.liens?.renom) ? [t("LAKOUR_SURVIE.Liens.Renom", { n: etat.liens.renom })] : [])].join(", "),
-    renseignements, carte: onglet === "renseignements" ? carteConnue(etat, c) : "",
+    renseignements, carte: onglet === "renseignements" ? carteConnue(etat, c, rep?.cartes ?? {}) : "",
+    reperes: rep ? reperesPublics(rep) : null,
     marche: onglet === "marche" && etat.demarree ? marchePublic(etat, c) : null,
     journal: [...(etat.journal ?? [])].reverse().slice(0, 80).map(e => ({ jour: L.jourDe(e.quart), moment: t(`LAKOUR_SURVIE.Moments.${L.momentDe(e.quart)}`), texte: sansBalises(localiser(e)) })),
     alertes: [...(etat.alertes ?? [])].reverse().slice(0, 12).map(a => ({ jour: L.jourDe(a.quart), texte: sansBalises(localiser(a)), type: a.type })),

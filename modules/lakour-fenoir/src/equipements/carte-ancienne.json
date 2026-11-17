@@ -1,0 +1,66 @@
+{
+  "_id": "NuaSHyA2c5HK9uUg",
+  "_key": "!items!NuaSHyA2c5HK9uUg",
+  "name": "Carte ancienne de l'île",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "carte-ancienne",
+    "categorie": "repere",
+    "description": "<p>Une carte de l'île d'il y a trente ou quarante ans, trouvée dans le placard d'une école ou au fond d'une case : les routes d'alors, des sentiers que plus personne ne prend, et ni la route des Tamarins ni la nouvelle route du Littoral. Elle a l'air sûre d'elle. Elle trompe.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "carte",
+      "rarete": "commune",
+      "couvre": "ile",
+      "terrains": [
+        "route",
+        "sentier"
+      ],
+      "ilYa": [
+        30,
+        45
+      ],
+      "routesImprimees": {
+        "saint-paul|saint-leu": "difficile",
+        "saint-denis|route-du-littoral": "difficile"
+      },
+      "notes": {
+        "saint-paul": "La carte ne connaît pas la route des Tamarins : entre Saint-Paul et Saint-Leu, seulement la route sinueuse de la côte.",
+        "route-du-littoral": "La carte ne montre que la vieille route sous la falaise, celle des éboulis, et pas la nouvelle route sur la mer.",
+        "sud-sauvage": "La carte trace la route des Laves comme elle passait avant les grandes coulées : une partie de ce tracé est sous la lave.",
+        "fournaise": "Des sentiers marqués au pied du volcan ne mènent plus nulle part : les coulées sont passées dessus."
+      },
+      "lieux": {
+        "ecole": 0.06,
+        "case-creole": 0.04,
+        "maison": 0.03,
+        "autre": 0.03,
+        "region": 0.006
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "carte-ancienne"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

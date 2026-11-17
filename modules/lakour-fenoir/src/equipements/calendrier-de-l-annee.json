@@ -1,0 +1,55 @@
+{
+  "_id": "oK5YlH3LVKzmSWWH",
+  "_key": "!items!oK5YlH3LVKzmSWWH",
+  "name": "Calendrier de l'année",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "calendrier-de-l-annee",
+    "categorie": "repere",
+    "description": "<p>Un calendrier publicitaire de garage, de quincaillerie ou de boutique chinoise, une photo par mois. Les jours, rien d'autre : pas de lune. Coché chaque soir, il garde le compte des jours de l'année.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "calendrier",
+      "rarete": "peu-commune",
+      "annee": "courante",
+      "lunes": false,
+      "marees": false,
+      "fetes": false,
+      "lieux": {
+        "commerce": 0.05,
+        "usine": 0.04,
+        "ecole": 0.03,
+        "caserne": 0.03,
+        "hopital": 0.03,
+        "port": 0.03,
+        "autre": 0.03,
+        "ferme": 0.02,
+        "region": 0.01
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "calendrier-de-l-annee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

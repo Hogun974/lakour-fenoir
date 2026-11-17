@@ -25,6 +25,11 @@
     {{#if morts.length}}<p class="survie-aide"><i class="fa-solid fa-dove"></i> <strong>{{localize "LAKOUR_SURVIE.Autel.Titre"}}</strong> : {{#each morts}}{{nom}} <small>({{etat}})</small>{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
     {{#if souvenirs.length}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Souvenirs.Titre"}}</strong> : {{#each souvenirs}}{{texte}} <small>({{fin}})</small>{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
     {{#if liens}}<p class="survie-aide"><strong>{{localize "LAKOUR_SURVIE.Liens.Titre"}}</strong> : {{liens}}</p>{{/if}}
+    {{#if reperes}}
+    <p class="survie-aide"><i class="fa-solid fa-calendar-days"></i> <strong>{{localize "LAKOUR_SURVIE.Reperes.Titre"}}</strong> : {{reperes.compte}} <small>({{reperes.details}}{{#if reperes.heure}} · {{reperes.heure}}{{/if}})</small></p>
+    <p class="survie-aide"><i class="fa-solid fa-map"></i> <strong>{{localize "LAKOUR_SURVIE.Reperes.Objets"}}</strong> : {{#each reperes.objets}}{{texte}}{{#unless @last}} ; {{/unless}}{{else}}{{localize "LAKOUR_SURVIE.Reperes.Aucun"}}{{/each}}</p>
+    {{#if reperes.fetes}}<p class="survie-aide"><i class="fa-solid fa-champagne-glasses"></i> <strong>{{localize "LAKOUR_SURVIE.Reperes.FetesAVenir"}}</strong> : {{reperes.fetes}}</p>{{/if}}
+    {{/if}}
     <h3><i class="fa-solid fa-clipboard-question"></i> {{localize "LAKOUR_SURVIE.Tableau.Besoins"}}</h3>
     <ul class="survie-besoins">
       {{#each besoins}}<li class="{{couverture}} {{#if urgence}}urgent{{/if}}"><strong>{{tacheLibelle}}</strong> — {{couvertureLibelle}} ({{meilleur}}){{#if urgenceTexte}} — <em>{{urgenceTexte}}</em>{{/if}}{{#if profil}}<br><small>{{profil}}</small>{{/if}}</li>
@@ -40,7 +45,7 @@
       <tbody>
         {{#each renseignements}}
         <tr class="{{#if ici}}ici{{/if}} {{#if vieux}}vieux{{/if}}" {{#if notes}}data-tooltip="{{notes}}"{{/if}}>
-          <td><strong>{{nom}}</strong><br><small>{{zone}}</small></td>
+          <td><strong>{{nom}}</strong><br><small>{{zone}}</small>{{#if carte}}<br><small class="survie-carte-imprimee"><i class="fa-solid fa-map"></i> {{carte}}</small>{{/if}}</td>
           <td>{{age}}{{#if source}}<br><small>{{source}}</small>{{/if}}</td>
           <td class="inf-{{infestationCle}}">{{infestation}}</td>
           <td>{{pillage}}</td><td>{{electricite}}</td><td>{{eau}}</td><td>{{factions}}</td>

@@ -1,0 +1,41 @@
+{
+  "_id": "Zh85g2AG1kZOvpP4",
+  "_key": "!items!Zh85g2AG1kZOvpP4",
+  "name": "Encre de suie",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "encre-de-suie",
+    "description": "<p>Le charbon d'un feu de la veille, pilé fin, un peu d'eau, une goutte de sève pour que ça tienne : deux fioles.</p>",
+    "cout": {
+      "eau": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "encre-de-suie",
+      "n": 2
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "encre-de-suie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

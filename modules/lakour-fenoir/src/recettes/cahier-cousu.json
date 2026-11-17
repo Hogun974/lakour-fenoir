@@ -1,0 +1,41 @@
+{
+  "_id": "s4dClkWjWERLuYic",
+  "_key": "!items!s4dClkWjWERLuYic",
+  "name": "Cahier cousu",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "cahier-cousu",
+    "description": "<p>Des feuilles récupérées (des cahiers d'école, le dos des affiches), pliées et cousues au fil de pêche.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "cahier-cousu",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cahier-cousu"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

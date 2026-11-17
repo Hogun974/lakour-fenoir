@@ -81,7 +81,10 @@ export const CLES_TEXTES = [
   // chefs.mjs : ce que décide le chef d'une bande
   "chef-attaquer", "chef-negocier", "chef-passer", "chef-ultimatum", "chef-rejoindre",
   // sens.mjs (par etat.mjs) : percevoir dans le noir, la Timise, l'alarme naturelle (lot « sens »)
-  "noir-palier-1", "noir-palier-2", "noir-palier-3", "noir-palier-4", "grenouilles-silence", "noir-horde-entendue", "timise", "timise-reconnue"
+  "noir-palier-1", "noir-palier-2", "noir-palier-3", "noir-palier-4", "grenouilles-silence", "noir-horde-entendue", "timise", "timise-reconnue",
+  // reperes.mjs (par etat.mjs et l'API) : le compte des jours, la lune lue sur un calendrier, le journal d'un mort (lot « cartes »)
+  "compte-retrouve", "compte-doute", "compte-perdu", "compte-manque", "compte-manque-personne", "compte-manque-absent", "compte-manque-mort", "compte-manque-empeche", "compte-manque-moral",
+  "lune-sans-calendrier", "lune-sans-lunes", "journal-absent", "journal-enterre", "journal-livide", "journal-loin"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

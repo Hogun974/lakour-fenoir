@@ -1,0 +1,40 @@
+{
+  "_id": "rfekFU67EFP5EOgN",
+  "_key": "!items!rfekFU67EFP5EOgN",
+  "name": "Encre de suie",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "encre-de-suie",
+    "categorie": "repere",
+    "description": "<p>Du charbon de bois pilé dans un peu d'eau et de sève : de quoi écrire quand les stylos sont morts. Une fiole sert pour une copie.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "encre",
+      "rarete": "commune"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "encre-de-suie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

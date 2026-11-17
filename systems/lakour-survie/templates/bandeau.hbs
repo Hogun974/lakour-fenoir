@@ -1,10 +1,10 @@
 <div class="sb-corps {{#if replie}}replie{{/if}} moment-{{momentCle}} {{#if meteo}}meteo-{{meteo.cle}}{{/if}}" role="toolbar" aria-label="{{localize 'LAKOUR_SURVIE.Bandeau.Titre'}}">
   <button type="button" class="sb-replier" data-action="bandeauReplier" data-tooltip="{{localize 'LAKOUR_SURVIE.Bandeau.Replier'}}" aria-label="{{localize 'LAKOUR_SURVIE.Bandeau.Replier'}}"><i class="fa-solid {{#if replie}}fa-chevron-down{{else}}fa-chevron-up{{/if}}"></i></button>
   {{#if demarree}}
-  <div class="sb-temps" data-tooltip="{{date}} · {{saison}}{{#if lune}} · {{lune}}{{/if}}{{#if signes}} · {{signes}}{{/if}}{{#if fetes}} · {{fetes}}{{/if}}">
+  <div class="sb-temps" data-tooltip="{{date}} · {{saison}}{{#if lune}} · {{lune}}{{/if}}{{#if signes}} · {{signes}}{{/if}}{{#if fetes}} · {{fetes}}{{/if}}{{#if heureAide}} · {{heureAide}}{{/if}}">
     <span class="sb-icone"><i class="fa-solid {{iconeMoment}}"></i></span>
-    <span class="sb-jour">{{localize "LAKOUR_SURVIE.Bandeau.Jour" n=jour}}</span>
-    <span class="sb-moment">{{moment}} <small>{{heure}}</small></span>
+    <span class="sb-jour">{{jourTexte}}</span>
+    <span class="sb-moment">{{moment}}{{#if heure}} <small>{{heure}}</small>{{/if}}</span>
     {{#unless replie}}<span class="sb-date">{{date}}</span>{{/unless}}
   </div>
   {{#unless replie}}

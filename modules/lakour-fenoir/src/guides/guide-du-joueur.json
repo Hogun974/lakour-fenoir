@@ -481,11 +481,34 @@
       }
     },
     {
+      "_id": "HWAmwBGjXJXcYIUY",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.HWAmwBGjXJXcYIUY",
+      "name": "Le jour qu'on croit, les cartes et les calendriers",
+      "type": "text",
+      "sort": 2100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Au début, le téléphone dit le jour. Quand il se tait, il faut le tenir soi-même.</p><ul><li><strong>Noter le jour.</strong> L'un de vous tient le compte, chaque soir. Sur un calendrier de l'année qu'on coche, le compte reste sûr. Avec de simples encoches, on finit par douter au bout de dix jours ; une planche des jours fait tenir un mois.</li><li><strong>Oublier.</strong> Un jour sans le noter (une fuite, une fièvre, un mauvais soir) fait glisser le compte d'un jour, dans un sens ou dans l'autre. Trois jours de suite, et on ne sait plus quel jour on est. Il reste les signes de la nature : la lune, les fruits, la canne qu'on coupe.</li><li><strong>Les autres.</strong> Celui qui a perdu le compte ne le retrouve que par d'autres. Ils peuvent se tromper, ou mentir. Un calendrier qui marque les lunes, une nuit claire, et l'on retrouve le jour à deux jours près ; s'il est d'une autre année, ses lunes mentent aussi.</li><li><strong>L'heure</strong> se lit dans le ciel : à une demi-heure près par beau temps, beaucoup moins bien la nuit ou sous les nuages, plus du tout sous terre. Une montre à aiguilles, ça ne craint pas la panne.</li><li><strong>Les cartes</strong> se trouvent en fouillant : routière, de randonnée, plan de ville, vieille carte trompeuse, carte déchirée, carte annotée par un mort. Elles disent les routes d'avant, rien des Livides.</li><li><strong>Le journal d'un mort</strong> reste sur son corps. On le lit sur place.</li></ul><blockquote><p>Trois jours de fièvre. Quand je me suis relevée, personne n'avait noté. Madame Narayanin a dit samedi, Firmin a dit dimanche. On a pris samedi, parce qu'elle avait l'air plus sûre. On a su plus tard, à la fête de Pongal de l'îlet d'en face, qu'on était lundi.<br><em>Carnet d'une infirmière, Salazie.</em></p></blockquote><blockquote><p>Le monsieur du marché m'a dit le 14. Le vieux des Hauts m'a dit le 11. La lune, sur le calendrier des pêcheurs, dit le 12. Je crois la lune.<br><em>Carnet sans nom, Saint-Pierre.</em></p></blockquote>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-jour-qu-on-croit"
+        }
+      }
+    },
+    {
       "_id": "GsGWAAAIAkUufDjK",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 2100,
+      "sort": 2200,
       "title": {
         "show": true,
         "level": 1

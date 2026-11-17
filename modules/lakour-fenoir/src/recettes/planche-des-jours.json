@@ -1,0 +1,41 @@
+{
+  "_id": "i7KGi8V7LpW4AQn8",
+  "_key": "!items!i7KGi8V7LpW4AQn8",
+  "name": "Planche des jours",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "planche-des-jours",
+    "description": "<p>Une planche, un couteau, un peu de lumière : on taille la première encoche le soir même.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "planche-des-jours",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "planche-des-jours"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

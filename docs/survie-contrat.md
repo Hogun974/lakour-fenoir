@@ -1202,3 +1202,71 @@ Rien n'est retiré ni renommé ; les champs nouveaux ont une valeur par défaut 
   anciens », « Un Livide intrigué — ce qu'il fait », « La ravine après la pluie », « La voix de l'île — musique du soir » ; journal du
   MJ « Percevoir dans le noir » ; page « La nuit, le vent et la pluie » (guide du joueur) ; page « La nuit et ses voix » (livre de
   l'île).
+
+## 20. Le jour qu'on croit, les cartes et les calendriers (lot « cartes », 2026-11-17)
+
+Lot 3 de l'inventaire du jeu 3D : la famille 1 du complément, « Savoir quel jour et quelle heure il est », « Les cartes et les
+calendriers se trouvent », leurs déclinaisons, « Le journal est un livre » et « Lire, copier et perdre un journal », pour une table.
+Le lot fêtes (§11) avait posé la date de jeu, la lune et la date lue dans la nature ; ce paragraphe y ajoute ce que le groupe
+**croit**. Chiffres et raisons : `docs/equilibre-cartes.md`. Logique : `logique/reperes.mjs` (nouveau), crochets dans `etat.mjs`.
+API : `scripts/api-reperes.mjs` (nouveau), crochets dans `api.mjs`. Contenu : `contenu/reperes.mjs` (nouveau). Rien n'est retiré
+ni renommé : `etat.calendrier.exacte`, `quand().dateExacte` et `quand().dateLue` gardent leur sens ; un champ nouveau a sa valeur
+par défaut ; le compte tire dans son propre flux de hasard (« compte|jour ») et ne change aucun autre tirage.
+
+### 20.1 Règles (logique pure, `logique/reperes.mjs`)
+- **Le compte des jours** (`etat.compte`, public : ce que le groupe croit) :
+  `{ jourCru, certitude: "sur" | "a-peu-pres" | "perdu", noteLe, oublieLe, joursSansNoter, marge, encoches, teneur (acteurId), recu: { de, le, annonce } | null }`.
+  `compteDepart(jour, teneur)`, `compteDe(etat)` (une partie d'avant le lot : sûr si `calendrier.exacte` n'est pas `false`, perdu
+  sinon), `jourConnu`, `ecartDuCompte(c, jour)` (au MJ), `peutNoter(system)`, `noteDuJour(c, jour, { teneur, present, hasard })`
+  (raisons : `note`, `tenu`, `oublie`, `sans-teneur`, `absent`, `mort`, `empeche`, `moral`), `finDuJour(c, jour, { note, support,
+  hasard })`, `savoirLeJour`, `recevoirJour(c, { jourAnnonce, jour, de, marge })`, `journeeCompte(c, { jour, exacte, support,
+  teneur, present, hasard })` → `{ compte, note, evenement: "retrouve" | "doute" | "perdu" | "manque" | null }`, `texteCompte`,
+  `REGLES_COMPTE`, `CERTITUDES`.
+- **La lune sur un calendrier** : `lireLaLune(c, { jour, dateDepart, calendrier: { annee, lunes, marees }, hasard })` →
+  `{ ok, motif, compte, trouve, avant, autreAnnee }` (le mois cru ; perdu, le mois de la nature ; une autre année fausse le jour).
+- **L'heure** : `heureLue({ moment, couvert, pluie, sousTerre, exacte, cadran })` → `{ exacte, marge, cle }` ; `SOLEIL`,
+  `MARGES_HEURE`, `soleilDuMois(mois)`.
+- **Les repères** (équipements de catégorie `repere`, champ `repere`) : `TYPES_REPERE` (`carte`, `calendrier`, `montre`, `planche`,
+  `cadran`, `cahier`, `encre`), `RARETES_REPERE`, `ANNEES_CALENDRIER` (`courante`, `postes`, `passee`), `TERRAINS_CARTE`,
+  `LIEUX_REPERE` (les types de sites et `region`), `repereDe`, `reperesDuContenu`, `resoudreRepere(def, { jour, dateDepart, region,
+  contenu, hasard })` (l'année d'un calendrier, les régions, la moitié, l'annotation et l'impression d'une carte),
+  `calendrierValable(rep, annee)`, `supportDuCompte(reperes, annee)`, `calendrierPourLaLune`, `aUneMontre`, `aUnCadran`,
+  `ceQueDisentLesCartes(cartes, contenu)` → `{ region: { routes: { voisine: etat }, sources: [{ nom, imprimee }], notes } }`,
+  `tirerRepere(contenu, { lieu, hasard })`, `chanceRepere`, `CHANCE_REPERE_MAX`, `erreursRepere(def, contenu)`.
+- **Le journal d'un mort** : `journalAuDeces(compte, plans)`, `lireJournalDuMort(etat, ref, { jour, region })`,
+  `renseignementsDuJournal(renseignements, lus, { jour, contenu })` (source `journal`, ajoutée à `SOURCES_RENSEIGNEMENT` :
+  l'infestation, l'eau, le courant, une note).
+
+### 20.2 Branchements
+- `creerPartie` : `compte: compteDepart(0, membres[0])`.
+- `avancer` (étape 7 bis, chaque jour) : le téléphone de la région du groupe ou la radio de l'abri remettent le compte juste ;
+  sinon `journeeCompte` (option `reperes: { calendriers: [année], planche }`). Faits publics `compte-retrouve`, `compte-doute`,
+  `compte-perdu`, `compte-manque*` ; une alerte de type `compte` quand il se perd. Étape 1 bis : un membre qui meurt garde
+  `etat.morts[].journal: { jourCru, certitude, plans }`.
+- Écriture (`terminer`) : `etat.compte` est posé (migration) et remis juste par le téléphone ou la radio, avant `etat.calendrier`.
+- `fouiller` (API) : une fouille d'un lieu tire un repère (flux « repere|quart|lieu »), créé sur le premier fouilleur ; le
+  résultat porte `repere: { cle, nom, acteurId, objetId } | null`.
+- `participer` (API) : la fête des autres rend le jour à un groupe qui ne le sait plus (`jourAppris`).
+- `affaires()` : le déclencheur `date-perdue` s'ajoute de lui-même quand le compte est perdu.
+
+### 20.3 État, API et fenêtres
+- Équipement : `repere` (objet, `null` par défaut ; `gmOnlyFields`). Catégorie d'équipement `repere` (`CATEGORIES_EQUIPEMENT`).
+- `quand()` rend en plus `compte: { certitude, marge, jourCru, teneur }` (ce que le groupe sait : sûr avec le téléphone ou la
+  radio), `dateDuGroupe`, `jourDuGroupe` (`null` : perdu), `heureLue`, `heureDuGroupe` (vide si l'heure n'est pas sue).
+- Nouvelles fonctions : `reperes()` (lecture : compte, heure, soleil, support, objets du groupe, ce que disent ses cartes,
+  calendrier pour la lune, montre, cadran, fêtes à venir sur le calendrier des fêtes, journaux lisibles ; `compte.ecart` au MJ
+  seul) ; écritures (MJ actif, monde ouvert) : `compte({ action: "teneur" | "noter" | "oublier" | "regler", acteurId, date, jour,
+  certitude })`, `donnerDate({ de, a, date, jour, mensonge })` (`a` vide : le groupe reçoit ; sinon il donne, et un mensonge court
+  par le Ladi Lafé : rumeur fausse et malveillante, auteur au secret ; démentie, « mentir »), `lireLaLune({ objetId })`,
+  `donnerRepere({ acteurId, cle })`, `copierCarte({ objetId, acteurId })` (un cahier cousu, une encre usée, un quart),
+  `lireJournal({ mortId } | { de, date, jour, depuis, plans, renseignements })` (un quart).
+- Bandeau : les joueurs voient la date et le numéro du jour que le groupe croit, et l'heure seulement s'ils la savent ; le MJ, le
+  vrai. Tableau de bord : le compte, les cartes et calendriers du groupe, les fêtes à venir ; dans les renseignements, les routes
+  « d'après la carte » et ses notes ; sur la carte de l'île, une route vue d'après une carte en pointillé fin. Fenêtre du MJ, onglet
+  Partie : bloc « Le jour qu'on croit » (le vrai jour, l'écart) et formulaires « Le compte des jours », « Un jour donné ou reçu »,
+  « Lire la lune sur un calendrier », « Une carte ou un calendrier », « Recopier une carte », « Lire un journal ». Fiche d'objet : ce
+  que dit le repère.
+- Contenu : 17 équipements (`contenu/reperes.mjs` : 6 cartes, 5 calendriers, la montre, la planche des jours, le cadran solaire,
+  l'encre de suie, le cahier cousu, la copie de carte), 4 recettes, tables « Le jour qu'on vous donne » et « Ce qu'un mort a écrit
+  sur sa carte » (drapeau `reperes`), journal du MJ « Le jour qu'on croit », page « Le jour qu'on croit, les cartes et les
+  calendriers » (guide du joueur). Le fabricant vérifie la forme des repères (`erreursRepere`) et la chance par lieu.

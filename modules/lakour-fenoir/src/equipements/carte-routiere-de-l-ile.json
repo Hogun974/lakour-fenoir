@@ -1,0 +1,56 @@
+{
+  "_id": "TDDZCkNgRsxLIWK5",
+  "_key": "!items!TDDZCkNgRsxLIWK5",
+  "name": "Carte routière de l'île",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "carte-routiere-de-l-ile",
+    "categorie": "repere",
+    "description": "<p>La carte routière dépliable qu'on achetait à la station-service ou à l'aéroport : les nationales en rouge, les départementales en jaune, les villes, les cols. Presque rien du relief, rien des sentiers. Elle dit les routes telles qu'elles étaient le jour où on l'a imprimée ; ce qui les bouche aujourd'hui, elle ne le sait pas, et elle ne sait rien des Livides.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "repere": {
+      "type": "carte",
+      "rarete": "rare",
+      "couvre": "ile",
+      "terrains": [
+        "route"
+      ],
+      "ilYa": [
+        0,
+        2
+      ],
+      "lieux": {
+        "commerce": 0.04,
+        "gite": 0.04,
+        "caserne": 0.05,
+        "port": 0.03,
+        "autre": 0.02,
+        "region": 0.005
+      }
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "carte-routiere-de-l-ile"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}
