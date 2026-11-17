@@ -171,7 +171,9 @@ restent proches, la première faim et l'autonomie restent dans leurs plages.
   décalent le premier creux de vivres).
 - **Les fins par départ du nomade × 6** : 11 · 8 → 10 · 19. La graine 1 ne bouge pas, la graine 2 double ; la survie, elle, ne bouge
   pas (81,5 → 81,0). Le moral appliqué d'office (§5) les faisait monter partout ; coupé, il reste cet écart sur une graine, qui peut
-  être du bruit (le même cas variait de 3 à 12 entre deux états du 13 novembre). À remesurer à la fusion.
+  être du bruit (le même cas variait de 3 à 12 entre deux états du 13 novembre). À remesurer à la fusion. **Remesuré** (rééquilibrage
+  d'après les douze lots, `equilibre-3d.md`) sur 1 800 parties (graines 1 à 6) : `principale` 56, `vague1` 56, `vague2` 83,
+  `vague3` 68, après le rééquilibrage 61 ; de 3 à 19 selon la graine. L'écart de `vague2` ne tient pas sur `vague3`.
 
 **Ce que le lot fait dans le simulateur** (60 parties par cas, graine 2, comptées par le `controle` de `jouerPartie`) :
 

@@ -97,6 +97,10 @@ Même code de mesure des deux côtés, chacun avec son propre simulateur (celui 
 
 ## Ce qu'il faut retenir (pour la passe d'équilibrage)
 
+**Fait** : `equilibre-3d.md` (part de chaque lot, corrections du simulateur, mesures avant les lots, `vague3` et après). Sur 240 parties
+au lieu de 20, les compagnons ne perdaient rien (27,3 → 27,3 sur 40) ; la soif des sédentaires venait du simulateur (lot 8).
+
+
 Les écarts sont ceux des cinq lots ensemble et de leurs jointures ; ils ne sont pas séparés lot par lot (chaque lot a mesuré le sien
 sur `vague2`). À 300 parties, un écart de 3 points de « vivants » est du bruit ; à 20 graines, un écart de 2 ou 3 parties aussi.
 

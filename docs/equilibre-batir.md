@@ -302,3 +302,6 @@ en a un) :
     privaient le solo de ses tisanes. C'est une règle du simulateur, pas du jeu ; elle touche aussi les mesures des autres lots.
 11. **Le cyclone selon le matériau** : la tôle (citerne, panneaux, barricades) et le bambou (potager) y perdent plus qu'avant ; le
     passif, qui ne répare rien, perd 3 à 4 points de vivants à J200 (§7). Garder les parts du 3D, ou les adoucir pour la tôle ?
+    **Mesuré depuis** (rééquilibrage d'après les douze lots, `equilibre-3d.md`) : la tôle coupée seule ne change rien aux passifs
+    (0,0 point) ni aux sédentaires ; tous les matériaux à 25 % rendent 0,1 à 0,9 point. Ce qui touchait le passif était l'usure (il ne
+    soignait jamais) : le simulateur lui fait passer un quart sur un entretien dû, comme l'enraciné oisif. Parts du 3D gardées.

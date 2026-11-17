@@ -12,6 +12,12 @@
 // Remesuré le 2026-11-13 (docs/equilibre.md, « Rééquilibrage ») après les quatre lots et leur rééquilibrage (simulateur : repos des
 // morts, gaz hors du score des sites ; esprit : au fond à 0, réconfort à 0 tous les 14 jours ; glanage 0,055). Mesures entre
 // doubles crochets : après la fusion, avant le rééquilibrage. Les bornes ne changent pas.
+// Remesuré le 2026-11-17 (docs/equilibre-3d.md, rééquilibrage d'après les douze lots du jeu 3D ; simulateur : ce qui boit jugé sur la
+// saison sèche, le couple mangé en sécheresse, le passif qui entretient, l'hygiène après l'autonomie à un ou deux). Graine « 1 » :
+// passif × 4 première faim J7, fin J17 ; enraciné × 4 15/20 vivants, 13/20 autonomes (J46), 3,6 assauts par mois dont 1,9 sérieux
+// (vague3 : 15/20, 15/20 (J50), 4,2 dont 2,3) ; nomade × 4 16/20, 6,3 déménagements, 3 fins sur 4 après J90 (vague3 : 17/20, 5,8,
+// 3/3) ; 40 tirages : 671/800, 2 hors bornes (vague3 : 662/800, 1) ; solo enraciné 14/20, J200 ; Hauts 2,8, Bas 2,0 (vague3 : 3,2
+// et 2,0). Les bornes ne changent pas.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { simuler, mesurer, jouerPartie, chargerContenu, PARTIES_RAPIDE, scoreSiteEnracine, scoreSiteNomade, STOCKS_NON_JOUES } from "./outils/simuler-parties.mjs";

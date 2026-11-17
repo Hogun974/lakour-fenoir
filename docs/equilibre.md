@@ -1,5 +1,32 @@
 # Équilibre de Fénoir
 
+## Rééquilibrage d'après les douze lots du jeu 3D (2026-11-17, branche `equilibre-3d`)
+
+Détail, méthode et tableaux complets : [`equilibre-3d.md`](equilibre-3d.md). Mesures : un an sur six séries de 40 graines (240 parties
+par scénario, vivants ramenés sur 40) ; 200 jours sur les graines 1, 2 et 3 (300 parties par cas et par graine). **Avant** : `principale`
+(a243e96, avant les douze lots) ; **`vague3`** : la fusion des douze lots (7db43e9) ; **après** : cette branche.
+
+- **Ce qui faisait mourir les sédentaires** (seul sédentaire 10,3 → 7,0 sur 40, par la soif : 17 → 56 fins sur 240) : le simulateur, pas
+  une règle. Il bâtissait ce qui boit (lot 8 : treille, bananeraie, bacs, jardin de zerbaz, basse-cour) sur le surplus d'eau de la saison
+  des pluies, qui buvait la réserve à la saison sèche. Corrigé dans le simulateur (le surplus se juge aussi sur la saison sèche ; en
+  sécheresse, on mange aussi le couple gardé). Les humains × 4 payaient en plus le prix du paradis (lot 9 : −1,5), voulu et gardé.
+- **Les passifs** : l'usure (lot 7 ; le passif ne soignait jamais), pas la tôle au cyclone (0,0). Le passif passe un quart sur un entretien
+  dû. **L'enraciné × 2** : seul ou à deux, l'hygiène après l'autonomie.
+- **Un seul chiffre du jeu** : la foi musulmane (affinité × 12 → × 2 pour trois enfances, tirées deux fois moins souvent) : 13,3 → 8,0 %.
+
+| Mesure | Avant les lots (`principale`) | `vague3` | Après |
+|---|---|---|---|
+| Un an, sédentaire × 4 · × 2 · seul (sur 40) | 13,5 · 13,0 · 10,3 | 12,3 · 11,8 · 7,0 | 15,8 · 15,5 · 10,8 |
+| Un an, humains × 4 · compagnons · recrues · sans recrues | 25,7 · 27,0 · 18,7 · 18,0 | 23,7 · 27,3 · 20,0 · 16,7 | 24,5 · 27,0 · 21,0 · 20,3 |
+| Un an, nomade × 4 · mixte × 4 · seul enraciné · seul nomade | 18,8 · 24,2 · 10,8 · 15,8 | 21,5 · 26,2 · 11,8 · 16,2 | 22,8 · 25,5 · 12,3 · 16,7 |
+| J200, passif × 4 · × 6 (%) | 13,1 · 10,6 | 10,0 · 6,8 | 11,6 · 7,1 |
+| J200, nomade × 4 · enraciné × 4 · mixte × 4 (%) | 82,7 · 87,1 · 85,8 | 83,1 · 83,6 · 84,2 | 82,9 · 84,6 · 84,4 |
+| J200, enraciné × 2 : vivants · autonomes (%) | 73,3 · 57,7 | 73,9 · 55,7 | 76,7 · 58,0 |
+| Première faim, enraciné × 1 · × 4 | J21–J28 · J21 | J21 · J28–J29 | J21 · J28–J29 |
+| Fins par départ, nomade × 6 (sur 1 800) | 56 | 68 | 61 |
+| Borne du nomade (40 tirages) | 667/800, 2 hors bornes | 662/800, 1 | 671/800, 2 |
+| Part musulmane au tirage | — | 13,3 % | 8,0 % |
+
 ## Rééquilibrage du 2026-11-13 (branche `equilibre`)
 
 Jordan a demandé d'« équilibrer le tout » après la fusion des quatre lots : retrouver l'équilibre d'origine (survie à J200 et

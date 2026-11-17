@@ -275,6 +275,12 @@ ration au groupe et mouraient dans chaque disette (la règle des restes, § 2) ;
   faim des poules quand le groupe n'a plus rien du tout (après la correction des restes, § 2 : 9 jours-cheptel sur 24 parties à six au
   lieu de 97 sur 32).
 
+**Rééquilibrage d'après les douze lots** (`equilibre-3d.md`) : sur un an, ce lot était l'étape où les sédentaires mouraient de soif
+(seul sédentaire 11,5 → 6,8 sur 40, 240 parties). La règle n'y était pour rien : le simulateur jugeait ce qui boit sur le surplus d'eau
+du jour, celui de la saison des pluies, et bâtissait une treille, une bananeraie, des bacs, une basse-cour qui buvaient la réserve à la
+saison sèche. Il les juge maintenant aussi sur la saison sèche (basse-cour et enclos compris), et, en sécheresse, mange le couple qu'il
+gardait quand le bilan d'eau est négatif. L'eau des bêtes et des plants ne change pas.
+
 ## 10. Les écarts au jeu 3D, et ce qui reste à trancher
 
 - **La maladie passe seule** une fois sur dix par jour (le 3D demande le remède) : sans cela, un groupe sans plantes perdait toujours son

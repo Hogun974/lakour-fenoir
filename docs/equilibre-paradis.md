@@ -234,6 +234,10 @@ au combat). La partie qui rallume n'est ni plus facile ni plus dure que celle qu
 
 ### 6.4 Les deux limites
 
+(Rééquilibrage d'après les douze lots, `equilibre-3d.md` : sur 240 parties d'un an, la chaleur coupée rend 1,5 sur 40 aux humains × 4
+et 1,2 aux compagnons, le prix voulu ; les agglutinés coupés ne changent aucune partie. Aucun chiffre de ce lot n'a été retouché.)
+
+
 1. **L'enracinement reste tenable** : enraciné × 4 contre nomade × 4, 134/99 avant et 127/93 après sur 192 parties d'un an ; à deux,
    98 contre 97 ; seul, 59 contre 61. Les deux voies gardent leur écart.
 2. **Rallumer l'île ne rend pas la longue partie trop facile** : sur les 72 parties où la région s'est allumée, 61 vivants contre 63 pour
