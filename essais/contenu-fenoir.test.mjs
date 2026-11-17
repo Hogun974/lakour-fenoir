@@ -15,7 +15,10 @@ import { DOCUMENTS, donnees } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { COMPETENCES, MODULE, sansBalises } from "../modules/lakour-fenoir/contenu/aides.mjs";
 import { FETES_FENOIR, FETES_HORS_SOCLE, declinaisons, fetesDuJour, IMAGES_FETES, estHorsSocle } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { IDS_DECLINABLES, IDS_SUR_DEMANDE, fetesDuJour as calendrierDuSocle, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
-import { BRAS } from "../modules/lakour-fenoir/contenu/installations.mjs";
+import { BRAS as BRAS_INSTALLATIONS } from "../modules/lakour-fenoir/contenu/installations.mjs";
+import { BRAS_OUVRAGES } from "../modules/lakour-fenoir/contenu/ouvrages.mjs";
+// Lot 7 « Bâtir et défendre » : les bras des installations du lot s'ajoutent à ceux d'installations.mjs.
+const BRAS = { ...BRAS_INSTALLATIONS, ...BRAS_OUVRAGES };
 import { verifierModuleDeContenu } from "../modules/lakour-mj-ia/outils/contrat-contenu.mjs";
 
 const RACINE = new URL("../modules/lakour-fenoir/", import.meta.url);

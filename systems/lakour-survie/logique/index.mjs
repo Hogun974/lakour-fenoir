@@ -34,3 +34,4 @@ export * from "./plans.mjs";
 export * from "./reperes.mjs";
 export * from "./corps.mjs";
 export * from "./fouilles.mjs";
+export * from "./ouvrages.mjs";

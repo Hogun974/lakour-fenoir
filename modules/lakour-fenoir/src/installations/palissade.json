@@ -56,6 +56,10 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 90,
+          "travail": 1
         }
       },
       {
@@ -98,10 +102,15 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 90,
+          "travail": 1
         }
       }
     ],
-    "arbre": "moderne"
+    "arbre": "moderne",
+    "materiau": "bois-sous-tole"
   },
   "effects": [],
   "folder": null,

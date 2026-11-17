@@ -59,11 +59,16 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1
         }
       }
     ],
     "arbre": "lontan",
-    "role": "reserve-etanche"
+    "role": "reserve-etanche",
+    "materiau": "bambou-et-vacoa"
   },
   "effects": [],
   "folder": null,

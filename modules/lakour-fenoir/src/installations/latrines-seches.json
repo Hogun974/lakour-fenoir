@@ -63,7 +63,8 @@
     ],
     "arbre": "lontan",
     "role": "latrines",
-    "rang": 1
+    "rang": 1,
+    "materiau": "bois-sous-tole"
   },
   "effects": [],
   "folder": null,

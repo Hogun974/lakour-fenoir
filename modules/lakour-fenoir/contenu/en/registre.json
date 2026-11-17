@@ -5450,13 +5450,13 @@
   },
   "registre/gisements/bambou": {
     "_nom": "Touffe de bambous",
-    "nom": {
-      "fr": "Touffe de bambous",
-      "en": "Clump of bamboo"
-    },
     "description": {
       "fr": "Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.",
       "en": "A clump of bamboo at the bottom of a ravine or along a stream: straight poles for a palisade, a pipe, a cage."
+    },
+    "nom": {
+      "fr": "Touffe de bambous",
+      "en": "Clump of bamboo"
     }
   },
   "registre/gisements/bancoulier": {

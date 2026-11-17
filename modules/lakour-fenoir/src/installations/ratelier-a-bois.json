@@ -1,0 +1,133 @@
+{
+  "_id": "Z0PC2WDxh564EYY7",
+  "_key": "!items!Z0PC2WDxh564EYY7",
+  "name": "Râtelier à bois",
+  "type": "installation",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "cle": "ratelier-a-bois",
+    "categorie": "stockage",
+    "description": "<p>Deux rangs de piquets où l'on couche les troncs, les poutres et les bambous hors de la boue, à l'abri des termites. Au second niveau, un toit de tôle : les planches aussi y tiennent.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 2
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 1,
+          "travail": 2
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {
+            "materiaux": 10
+          },
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        },
+        "materiau": "bambou-et-vacoa",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 1,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {
+            "materiaux": 25
+          },
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        },
+        "materiau": "bois-sous-tole"
+      }
+    ],
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ratelier-a-bois"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

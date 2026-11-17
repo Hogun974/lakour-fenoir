@@ -148,7 +148,12 @@ export class ModeleInstallation extends foundry.abstract.TypeDataModel {
       arbre: texte(),
       role: texte(),
       rang: nombreNul(),
-      metiers: cles()   // lot 6 « ateliers » : les métiers d'atelier qu'elle sert (logique/fabrication.mjs)
+      metiers: cles(),   // lot 6 « ateliers » : les métiers d'atelier qu'elle sert (logique/fabrication.mjs)
+      // Lot 7 « Bâtir et défendre » (logique/ouvrages.mjs) : la famille de matériaux (vide : bois sous tôle), exposée au cyclone quelle que
+      // soit sa catégorie (null : selon sa catégorie), le suivi de l'entretien d'une instance { le, negligence, encrasse, vieLe }.
+      materiau: texte(),
+      expose: new fields.BooleanField({ required: false, nullable: true, initial: null }),
+      suivi: objetNul()
     };
   }
 }

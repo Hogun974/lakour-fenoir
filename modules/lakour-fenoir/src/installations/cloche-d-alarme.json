@@ -1,0 +1,85 @@
+{
+  "_id": "z3IiPrqxZWc6vvbx",
+  "_key": "!items!z3IiPrqxZWc6vvbx",
+  "name": "Cloche d'alarme",
+  "type": "installation",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "cle": "cloche-d-alarme",
+    "categorie": "defense",
+    "description": "<p>Un bout de rail, une jante ou une tôle épaisse pendue à une potence, et une barre de fer à côté. Tout l'abri l'entend d'un coup, même ceux qui dorment. Les environs aussi : on ne la frappe que quand il le faut.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 2
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 1,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 1,
+          "travail": 2
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {
+            "vigilance": 1
+          },
+          "alarme": true,
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "materiau": "bois-sous-tole"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cloche-d-alarme"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

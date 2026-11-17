@@ -1,0 +1,85 @@
+{
+  "_id": "b0COj4WAYlPfCueR",
+  "_key": "!items!b0COj4WAYlPfCueR",
+  "name": "Meurtrière de basalte",
+  "type": "installation",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "cle": "meurtriere-de-basalte",
+    "categorie": "defense",
+    "description": "<p>Une fente étroite ménagée dans un mur de pierres, évasée vers l'intérieur : on voit dehors sans être vu, on tire sans être atteint. Il faut savoir monter la pierre pour qu'elle tienne autour du vide.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [
+            "pierre-seche"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 1,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {
+            "tir": 1
+          },
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "materiau": "pierre-seche"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "meurtriere-de-basalte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

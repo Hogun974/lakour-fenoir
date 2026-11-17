@@ -119,7 +119,8 @@
       "etabli",
       "mecanique",
       "electricite"
-    ]
+    ],
+    "materiau": "bois-sous-tole"
   },
   "effects": [],
   "folder": null,

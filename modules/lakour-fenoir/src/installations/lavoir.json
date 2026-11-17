@@ -65,7 +65,8 @@
     ],
     "arbre": "lontan",
     "role": "toilette",
-    "rang": 1
+    "rang": 1,
+    "materiau": "pierre-seche"
   },
   "effects": [],
   "folder": null,

@@ -68,7 +68,8 @@
             "tache": "cultures",
             "nombre": 1
           }
-        }
+        },
+        "materiau": "bambou-et-vacoa"
       },
       {
         "cout": {
@@ -124,7 +125,8 @@
             "tache": "cultures",
             "nombre": 1
           }
-        }
+        },
+        "materiau": "tole-de-recuperation"
       }
     ]
   },

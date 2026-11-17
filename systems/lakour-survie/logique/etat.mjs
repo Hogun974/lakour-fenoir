@@ -74,6 +74,7 @@ import { suivreQuotas } from "./gestion.mjs";
 import { noterCyclone, fenetresQuiSouvrent, plansDuMonde, plansDeLEtat, perteEtagere, etagereDeLAbri } from "./plans.mjs";
 import { compteDepart, compteDe, journeeCompte, texteCompte, supportDuCompte, journalAuDeces } from "./reperes.mjs";
 import { expirerBetes, betesDuGroupe, beteTrouvee } from "./fouilles.mjs";
+import { journeeOuvrages, messageOuvrage } from "./ouvrages.mjs";
 
 export function etatVide() {
   return {
@@ -271,7 +272,9 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       const jourQ = Math.floor(q / QUARTS_PAR_JOUR);
       const enRoute = Boolean(e.groupe.enRoute);
       const lumiereLe = ab?.system?.lumiereLe;
-      const lumiereAbri = Boolean(options.lumiere) || (aLAbri() && ((lumiereLe !== null && lumiereLe !== undefined && Number(lumiereLe) === jourQ) || lueurDuJour(e, jourQ) > 0));
+      // Lot 7 : des lampes ou un éclairage en service (bilan.lumiere) éclairent l'abri la nuit.
+      const lumiereAbri = Boolean(options.lumiere) || (aLAbri() && ((lumiereLe !== null && lumiereLe !== undefined && Number(lumiereLe) === jourQ) || lueurDuJour(e, jourQ) > 0
+        || Boolean(bilan?.lumiere)));
       const debout = surv.filter(s => actif(s) && (enRoute || veille.has(s.id) || s.system.tache === "garde"));
       for (const s of debout) {
         const r = compterNuitNoire(s.system, { quart: q, lumiere: enRoute ? Boolean(options.lumiereEnRoute) : lumiereAbri });
@@ -437,6 +440,18 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
           aRaconter.push({ jour, evenement: f.cle, ...x });
           auJournalSecret(jour, fx);
         }
+      }
+    }
+    // 5 ter. Lot 7 « Bâtir et défendre » (ouvrages.mjs) : le soin courant des installations par ceux qui sont à leur tâche (ou au
+    // chantier) à l'abri, l'usure faute de soin, l'encrassement, la pluie sur le torchis, les pannes (flux « ouvrages|jour »).
+    if (ab) {
+      const bras = Object.fromEntries(Object.entries(travailleursParTache(presentsAbri(), contenu, jour)).map(([t, l]) => [t, l.length]));
+      const o = journeeOuvrages(ab.installations, contenu, { jour, pluie: Number(sensDuJour(jour - 1).pluie) || 0, bras, hasard: deriverHasard(m.graine, "ouvrages", jour) });
+      ab.installations = o.installations;
+      for (const ev of o.evenements.filter(x => x.cle !== "ouvrage-soigne")) {
+        const x = messageOuvrage(ev, nomInstallation(ev.installation));
+        if (aLAbri()) publier(fin, x.cle, x.params, x.texte);
+        else { const fx = { jour, region: ab.system.region, ...x, public: false, portee: "abri" }; secrets.push(fx); auJournalSecret(jour, fx); }
       }
     }
     // 6. Repas.

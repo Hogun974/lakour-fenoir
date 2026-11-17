@@ -1,0 +1,153 @@
+{
+  "_id": "Vf5LFaJplPPSsSKi",
+  "_key": "!items!Vf5LFaJplPPSsSKi",
+  "name": "Puits creusé",
+  "type": "installation",
+  "img": "icons/svg/waterfall.svg",
+  "system": {
+    "cle": "puits-creuse",
+    "categorie": "eau",
+    "description": "<p>Creusé à la pioche et à la barre à mine jusqu'à la nappe, cuvelé de galets à mesure qu'on descend, avec un seau et une corde. Là où il n'y a ni source ni ravine, c'est de l'eau tous les jours de l'année, à remonter à bras et à faire bouillir. Au second niveau, une margelle et un treuil.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 24
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 2,
+          "travail": 24
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [
+              "aucune",
+              "citerne",
+              "reseau"
+            ],
+            "sol": 1,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "eau": 2
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "eau",
+            "nombre": 1
+          }
+        },
+        "entretien": {
+          "tousLes": 90,
+          "travail": 2
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 2,
+          "travail": 10
+        },
+        "requiert": {
+          "savoirs": [
+            "pierre-seche"
+          ],
+          "site": {
+            "eau": [
+              "aucune",
+              "citerne",
+              "reseau"
+            ],
+            "sol": 1,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "eau": 3
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": {
+            "tache": "eau",
+            "nombre": 1
+          }
+        },
+        "entretien": {
+          "tousLes": 90,
+          "travail": 2
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "materiau": "pierre-seche"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "puits-creuse"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

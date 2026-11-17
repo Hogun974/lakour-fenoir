@@ -114,7 +114,8 @@
         }
       }
     ],
-    "arbre": "moderne"
+    "arbre": "moderne",
+    "materiau": "bois-sous-tole"
   },
   "effects": [],
   "folder": null,

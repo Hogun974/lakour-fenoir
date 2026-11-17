@@ -58,6 +58,10 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1
         }
       },
       {
@@ -105,10 +109,15 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1
         }
       }
     ],
-    "arbre": "moderne"
+    "arbre": "moderne",
+    "materiau": "tole-de-recuperation"
   },
   "effects": [],
   "folder": null,

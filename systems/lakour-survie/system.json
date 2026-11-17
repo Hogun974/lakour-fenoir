@@ -50,7 +50,7 @@
       "abri": { "htmlFields": ["notes"], "gmOnlyFields": ["site", "region", "installeLe", "abandonneLe", "stocks", "nature", "sol", "bruit", "degats", "reparation", "reliquats", "notes", "vegetation", "eauDouteuse", "preparation", "lumiereLe", "souillure", "eauTraiteeAvant"] }
     },
     "Item": {
-      "installation": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "niveau", "niveauMax", "chantier", "etat", "reparation", "niveaux", "termineLe", "actif", "arbre", "role", "rang", "metiers"] },
+      "installation": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "niveau", "niveauMax", "chantier", "etat", "reparation", "niveaux", "termineLe", "actif", "arbre", "role", "rang", "metiers", "materiau", "expose", "suivi"] },
       "savoir": { "htmlFields": ["description", "apprentissage", "effets"], "gmOnlyFields": ["cle", "description", "apprentissage", "effets", "arbre"] },
       "equipement": { "htmlFields": ["description"], "gmOnlyFields": ["cle", "categorie", "description", "bonus", "charge", "usure", "munitions", "bruit", "transport", "effets", "enseigne", "auteur", "marque", "plans", "unique", "repere", "parade", "bivouac", "qualite", "gammes", "usages", "reparations", "remise", "eclaire", "remede", "protege", "amenagement", "capture"] },
       "passe": { "htmlFields": ["description", "accroche"], "gmOnlyFields": ["cle", "description", "competences", "savoirs", "equipement", "accroche", "region", "incapacites", "histoire", "genre", "nomAutre"] },

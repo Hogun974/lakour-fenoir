@@ -65,7 +65,8 @@
     ],
     "arbre": "moderne",
     "role": "eau-chaude",
-    "rang": 1
+    "rang": 1,
+    "materiau": "tole-de-recuperation"
   },
   "effects": [],
   "folder": null,

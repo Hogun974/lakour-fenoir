@@ -118,7 +118,8 @@
       }
     ],
     "arbre": "lontan",
-    "role": "potager"
+    "role": "potager",
+    "materiau": "bambou-et-vacoa"
   },
   "effects": [],
   "folder": null,

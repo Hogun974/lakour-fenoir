@@ -63,9 +63,14 @@
             "parole": 1
           },
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 90,
+          "travail": 1
         }
       }
-    ]
+    ],
+    "materiau": "bois-sous-tole"
   },
   "effects": [],
   "folder": null,

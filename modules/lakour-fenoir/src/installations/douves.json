@@ -1,0 +1,88 @@
+{
+  "_id": "pAOIsxcqT6RfFRCQ",
+  "_key": "!items!pAOIsxcqT6RfFRCQ",
+  "name": "Douves",
+  "type": "installation",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "cle": "douves",
+    "categorie": "defense",
+    "description": "<p>Un fossé profond creusé autour de l'abri et rempli par une dérivation de la ravine, une vanne de planches pour régler l'eau. Un Livide y tombe et n'en ressort pas seul ; les vivants passent par la passerelle. L'eau qui dort amène les moustiques : il faut la faire courir, et curer le fond.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 30
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 30
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [
+              "riviere",
+              "source"
+            ],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 1,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "piege": 2,
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 60,
+          "travail": 2
+        }
+      }
+    ],
+    "materiau": "pierre-seche"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "douves"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "_id": "TjrH5za1ONmADZD9",
+  "_key": "!items!TjrH5za1ONmADZD9",
+  "name": "Lits de bois",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "lits-de-bois",
+    "categorie": "vie",
+    "description": "<p>Des cadres de planches sanglés de corde, hors du sol : on y dort mieux, loin des scolopendres et de l'eau qui court par terre les nuits d'averse.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 2,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ],
+    "role": "dortoir",
+    "rang": 2,
+    "materiau": "bois-sous-tole"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lits-de-bois"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

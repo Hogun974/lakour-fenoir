@@ -1,0 +1,90 @@
+{
+  "_id": "JHSLpHnXKHVyqyHT",
+  "_key": "!items!JHSLpHnXKHVyqyHT",
+  "name": "Boucan",
+  "type": "installation",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "cle": "boucan",
+    "categorie": "stockage",
+    "description": "<p>La paillote où l'on cuisine, avec sa claie au-dessus du feu : la viande, le poisson et les piments s'y boucanent des jours durant et ne se gâtent plus. Elle ne coûte que de la paille et des gaulettes ; la pluie use le torchis, le vent l'emporte au premier cyclone.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 4,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": true,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "odeur": 1,
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "role": "sechoir-fumoir",
+    "rang": 1,
+    "materiau": "paille-et-torchis",
+    "expose": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "boucan"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

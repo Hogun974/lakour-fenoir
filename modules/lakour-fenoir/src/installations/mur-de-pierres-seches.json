@@ -106,7 +106,8 @@
       }
     ],
     "arbre": "lontan",
-    "role": "mur"
+    "role": "mur",
+    "materiau": "pierre-seche"
   },
   "effects": [],
   "folder": null,

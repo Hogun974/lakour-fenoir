@@ -63,7 +63,8 @@
             "tache": "cultures",
             "nombre": 1
           }
-        }
+        },
+        "materiau": "bambou-et-vacoa"
       },
       {
         "cout": {
@@ -114,7 +115,8 @@
             "tache": "cultures",
             "nombre": 1
           }
-        }
+        },
+        "materiau": "bambou-et-vacoa"
       },
       {
         "cout": {
@@ -170,7 +172,8 @@
             "tache": "cultures",
             "nombre": 2
           }
-        }
+        },
+        "materiau": "bois-sous-tole"
       }
     ],
     "arbre": "moderne"

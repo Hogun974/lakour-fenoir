@@ -1,0 +1,88 @@
+{
+  "_id": "EGKmpDR3PXOfTWQu",
+  "_key": "!items!EGKmpDR3PXOfTWQu",
+  "name": "Salle verte",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "salle-verte",
+    "categorie": "vie",
+    "description": "<p>Une tonnelle de bambou couverte de palmes et de feuilles de vacoa, dressée pour les fêtes, les mariages et les veillées, comme dans les cours d'avant. On y mange, on y danse, on y pleure aussi. Elle se voit, et le vent la défait.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 3,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "fete": 1,
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "materiau": "bambou-et-vacoa",
+    "expose": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "salle-verte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

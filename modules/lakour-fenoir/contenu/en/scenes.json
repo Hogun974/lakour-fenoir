@@ -29,10 +29,6 @@
       "fr": "Poêle",
       "en": "Stove"
     },
-    "flags.lakour-fenoir.plan.elements.1.nom": {
-      "fr": "Grande table",
-      "en": "Big table"
-    },
     "flags.lakour-fenoir.plan.elements.2.nom": {
       "fr": "Lits superposés",
       "en": "Bunk beds"
@@ -44,6 +40,10 @@
     "flags.lakour-fenoir.plan.elements.6.nom": {
       "fr": "Panneau des sentiers",
       "en": "Trail signpost"
+    },
+    "flags.lakour-fenoir.plan.elements.1.nom": {
+      "fr": "Grande table",
+      "en": "Big table"
     }
   },
   "scenes/EQ4Ao5GtfuAl68iV": {

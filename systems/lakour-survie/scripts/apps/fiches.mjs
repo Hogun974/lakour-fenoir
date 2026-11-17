@@ -195,6 +195,16 @@ function porteAbri(etat, s, b) {
 }
 const localiserDemande = v => sansBalises(game.lakourSurvie?.localiser?.(v.demande) ?? v.demande?.texte ?? "");
 
+// Lot 7 : ce que la fiche de l'abri dit du matériau et de l'entretien d'une installation. -> { materiau, entretien }
+function ouvrageDeLaFiche(def, sys, quart) {
+  if (!def || !(Number(sys.niveau) >= 1)) return { materiau: "", entretien: "" };
+  const K = k => `LAKOUR_SURVIE.Ouvrages.${k}`;
+  const materiau = t(K(`Materiaux.${L.materiauDe(def, sys.niveau)}`));
+  const et = L.etatEntretien({ niveau: sys.niveau, suivi: sys.suivi }, def, Math.floor(quart / 4));
+  const entretien = !et ? "" : et.encrasse ? t(K("Fiche.Encrassee")) : et.retard >= 0 ? t(K("Fiche.Due")) : t(K("Fiche.Dans"), { n: -et.retard });
+  return { materiau, entretien, mauvais: Boolean(et && (et.encrasse || et.retard >= 0)) };
+}
+
 export function contexteAbri(a) {
   const s = aPlat(a.system);
   const etat = lireEtat();
@@ -213,7 +223,9 @@ export function contexteAbri(a) {
     return { id: i.id, nom: i.name, img: i.img, niveau: sys.niveau, niveauMax: sys.niveauMax ?? def?.niveauMax ?? 1, etat: sys.etat, etatTexte: t(`LAKOUR_SURVIE.EtatInstallation.${sys.etat ?? 0}`),
       chantier: enChantier ? { fait: sys.chantier.fait, requis: sys.chantier.requis, pct: Math.round(Math.min(1, sys.chantier.fait / sys.chantier.requis) * 100) } : null,
       categorie: t(`LAKOUR_SURVIE.Categories.${sys.categorie ?? def?.categorie ?? "vie"}`), arret: (b?.arrets ?? []).find(x => x.cle === sys.cle)?.raison ?? "", aide: sansBalises(def?.description ?? ""),
-      secours: (b?.secours ?? []).some(x => x.cle === sys.cle), lontan: (def?.arbre ?? sys.arbre) === "lontan" };
+      secours: (b?.secours ?? []).some(x => x.cle === sys.cle), lontan: (def?.arbre ?? sys.arbre) === "lontan",
+      // Lot 7 « Bâtir et défendre » : le matériau, l'entretien (encrassée, à soigner dans N jours ou en retard).
+      ...ouvrageDeLaFiche(def, sys, Number(etat.horloge?.quart) || 0) };
   });
   const nature = NATURE.map(n => ({ cle: n, libelle: t(`LAKOUR_SURVIE.Nature.${n}`), valeur: Math.round((Number(s.nature?.[n]) || 0) * 10) / 10 }));
   const membres = courant ? (etat.groupe.membres ?? []).map(id => game.actors.get(id)).filter(Boolean) : [];

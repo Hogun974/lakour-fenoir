@@ -57,10 +57,12 @@
           "sol": 0,
           "renseignements": false,
           "bonus": {},
-          "bras": null
+          "bras": null,
+          "porte": true
         }
       }
-    ]
+    ],
+    "materiau": "parpaing-et-beton"
   },
   "effects": [],
   "folder": null,

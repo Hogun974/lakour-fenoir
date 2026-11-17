@@ -1,0 +1,82 @@
+{
+  "_id": "eDicj6Dh0be3Dpdh",
+  "_key": "!items!eDicj6Dh0be3Dpdh",
+  "name": "Enceinte d'épaves",
+  "type": "installation",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "cle": "enceinte-d-epaves",
+    "categorie": "defense",
+    "description": "<p>Des carcasses de voitures poussées roues contre roues, les vides bouchés de tôles et de grillage. Il faut une route pleine d'épaves à côté, et des bras pour les pousser. Elle arrête bien ; elle se voit de très loin, et elle claque sous le vent.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 20
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 20
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 2,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 3,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ],
+    "role": "palissade",
+    "rang": 3,
+    "materiau": "tole-de-recuperation"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "enceinte-d-epaves"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -2657,6 +2657,7 @@
    "plans": [
     "batteries",
     "panneaux-solaires",
+    "borne-de-recharge",
     "recette-regulateur-de-charge",
     "recette-utilitaire-electrique",
     "atelier-electricite"
@@ -3607,6 +3608,7 @@
     "enclos-a-cabris",
     "basse-cour",
     "compost",
+    "digesteur-a-biogaz",
     "recette-charrette-a-boeufs",
     "recette-motoculteur-remis-en-etat"
    ],
@@ -4348,7 +4350,8 @@
    ],
    "plans": [
     "serre",
-    "bassin-a-tilapias"
+    "bassin-a-tilapias",
+    "digesteur-a-biogaz"
    ],
    "genre": "hangar",
    "ecart": true
@@ -5389,7 +5392,8 @@
       "bras": null
      }
     }
-   ]
+   ],
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Palissade",
@@ -5444,6 +5448,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
      }
     },
     {
@@ -5486,10 +5494,15 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
      }
     }
    ],
-   "arbre": "moderne"
+   "arbre": "moderne",
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Mur d'enceinte",
@@ -5546,7 +5559,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "pierre-seche"
     },
     {
      "cout": {
@@ -5590,7 +5604,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "parpaing-et-beton"
     },
     {
      "cout": {
@@ -5634,7 +5649,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "parpaing-et-beton"
     }
    ],
    "arbre": "moderne"
@@ -5747,7 +5763,8 @@
      }
     }
    ],
-   "arbre": "moderne"
+   "arbre": "moderne",
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Fossé et pièges",
@@ -5801,7 +5818,13 @@
       "sol": 0,
       "renseignements": false,
       "bonus": {},
-      "bras": null
+      "bras": null,
+      "piege": 1
+     },
+     "materiau": "bambou-et-vacoa",
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     },
     {
@@ -5843,7 +5866,13 @@
       "sol": 0,
       "renseignements": false,
       "bonus": {},
-      "bras": null
+      "bras": null,
+      "piege": 2
+     },
+     "materiau": "bois-sous-tole",
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     }
    ]
@@ -5961,7 +5990,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Porte blindée",
@@ -6017,10 +6047,12 @@
       "sol": 0,
       "renseignements": false,
       "bonus": {},
-      "bras": null
+      "bras": null,
+      "porte": true
      }
     }
-   ]
+   ],
+   "materiau": "parpaing-et-beton"
   },
   {
    "nom": "Camouflage",
@@ -6075,6 +6107,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     },
     {
@@ -6117,6 +6153,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     },
     {
@@ -6161,9 +6201,14 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     }
-   ]
+   ],
+   "materiau": "paille-et-torchis"
   },
   {
    "nom": "Citerne de pluie",
@@ -6222,6 +6267,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "tole-de-recuperation",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -6268,6 +6318,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "tole-de-recuperation",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -6316,6 +6371,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "parpaing-et-beton",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     }
    ],
@@ -6438,7 +6498,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Bouilleur solaire",
@@ -6495,6 +6556,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     },
     {
@@ -6539,9 +6604,14 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Captage de source",
@@ -6601,6 +6671,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -6652,10 +6726,15 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     }
    ],
-   "arbre": "moderne"
+   "arbre": "moderne",
+   "materiau": "pierre-seche"
   },
   {
    "nom": "Pompe manuelle",
@@ -6771,7 +6850,8 @@
      }
     }
    ],
-   "arbre": "moderne"
+   "arbre": "moderne",
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Potager",
@@ -6833,7 +6913,8 @@
        "tache": "cultures",
        "nombre": 1
       }
-     }
+     },
+     "materiau": "bambou-et-vacoa"
     },
     {
      "cout": {
@@ -6884,7 +6965,8 @@
        "tache": "cultures",
        "nombre": 1
       }
-     }
+     },
+     "materiau": "bambou-et-vacoa"
     },
     {
      "cout": {
@@ -6940,7 +7022,8 @@
        "tache": "cultures",
        "nombre": 2
       }
-     }
+     },
+     "materiau": "bois-sous-tole"
     }
    ],
    "arbre": "moderne"
@@ -7010,7 +7093,8 @@
        "tache": "cultures",
        "nombre": 1
       }
-     }
+     },
+     "materiau": "bambou-et-vacoa"
     },
     {
      "cout": {
@@ -7066,7 +7150,8 @@
        "tache": "cultures",
        "nombre": 1
       }
-     }
+     },
+     "materiau": "tole-de-recuperation"
     }
    ]
   },
@@ -7177,7 +7262,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Basse-cour",
@@ -7292,7 +7378,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Enclos à cabris",
@@ -7405,7 +7492,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Bassin à tilapias",
@@ -7467,7 +7555,8 @@
        "tache": "elevage",
        "nombre": 1
       }
-     }
+     },
+     "materiau": "pierre-seche"
     },
     {
      "cout": {
@@ -7524,7 +7613,8 @@
        "tache": "elevage",
        "nombre": 1
       }
-     }
+     },
+     "materiau": "parpaing-et-beton"
     }
    ]
   },
@@ -7639,7 +7729,8 @@
      }
     }
    ],
-   "arbre": "moderne"
+   "arbre": "moderne",
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Compost",
@@ -7694,6 +7785,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 15,
+      "travail": 1
      }
     },
     {
@@ -7738,9 +7833,14 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 15,
+      "travail": 1
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Panneaux solaires",
@@ -7797,6 +7897,13 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 12,
+      "travail": 1,
+      "encrassement": 0.5,
+      "lavee": true,
+      "panne": 0.004
      }
     },
     {
@@ -7843,6 +7950,13 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 12,
+      "travail": 1,
+      "encrassement": 0.5,
+      "lavee": true,
+      "panne": 0.004
      }
     },
     {
@@ -7894,9 +8008,17 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 12,
+      "travail": 1,
+      "encrassement": 0.5,
+      "lavee": true,
+      "panne": 0.004
      }
     }
-   ]
+   ],
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Batteries",
@@ -7953,6 +8075,12 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1,
+      "panne": 0.002,
+      "vie": 400
      }
     },
     {
@@ -7999,6 +8127,12 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1,
+      "panne": 0.002,
+      "vie": 400
      }
     },
     {
@@ -8045,9 +8179,16 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1,
+      "panne": 0.002,
+      "vie": 400
      }
     }
-   ]
+   ],
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Pico-hydro sur rivière",
@@ -8108,6 +8249,13 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 8,
+      "travail": 1,
+      "encrassement": 0.7,
+      "arret": true,
+      "panne": 0.004
      }
     },
     {
@@ -8157,9 +8305,17 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 8,
+      "travail": 1,
+      "encrassement": 0.7,
+      "arret": true,
+      "panne": 0.004
      }
     }
-   ]
+   ],
+   "materiau": "pierre-seche"
   },
   {
    "nom": "Groupe électrogène",
@@ -8218,9 +8374,15 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1,
+      "panne": 0.01
      }
     }
-   ]
+   ],
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Éolienne de récupération",
@@ -8277,6 +8439,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1,
+      "panne": 0.006
      }
     },
     {
@@ -8323,9 +8490,15 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1,
+      "panne": 0.006
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Séchoir et fumoir",
@@ -8386,7 +8559,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Réserve étanche",
@@ -8443,6 +8617,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     },
     {
@@ -8490,10 +8668,15 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     }
    ],
-   "arbre": "moderne"
+   "arbre": "moderne",
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Atelier",
@@ -8611,7 +8794,8 @@
     "etabli",
     "mecanique",
     "electricite"
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Infirmerie",
@@ -8723,7 +8907,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Dortoir",
@@ -8778,7 +8963,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     },
     {
      "cout": {
@@ -8820,7 +9006,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     },
     {
      "cout": {
@@ -8864,7 +9051,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "parpaing-et-beton"
     }
    ]
   },
@@ -8924,7 +9112,8 @@
       "bras": null
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Cuisine commune",
@@ -8989,7 +9178,8 @@
    "arbre": "lontan",
    "metiers": [
     "cuisine"
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Poste radio",
@@ -9100,7 +9290,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Antenne",
@@ -9162,9 +9353,14 @@
        "parole": 1
       },
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Galerie souterraine",
@@ -9221,6 +9417,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "bois-sous-tole",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 2
      }
     },
     {
@@ -9267,6 +9468,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "bois-sous-tole",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 2
      }
     },
     {
@@ -9314,6 +9520,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "bois-sous-tole",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 2
      }
     },
     {
@@ -9368,6 +9579,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "parpaing-et-beton",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 2
      }
     }
    ]
@@ -9425,6 +9641,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 2
      }
     },
     {
@@ -9472,6 +9692,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 2
      }
     },
     {
@@ -9526,9 +9750,14 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 2
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Palissade de bambou",
@@ -9584,6 +9813,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -9629,11 +9862,16 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     }
    ],
    "arbre": "lontan",
-   "role": "palissade"
+   "role": "palissade",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Mur de pierres sèches",
@@ -9738,7 +9976,8 @@
     }
    ],
    "arbre": "lontan",
-   "role": "mur"
+   "role": "mur",
+   "materiau": "pierre-seche"
   },
   {
    "nom": "Guet dans un grand arbre",
@@ -9803,7 +10042,8 @@
     }
    ],
    "arbre": "lontan",
-   "role": "tour-de-guet"
+   "role": "tour-de-guet",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Gouttières de bambou et jarres",
@@ -9863,6 +10103,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 20,
+      "travail": 1
      }
     },
     {
@@ -9912,11 +10156,16 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 20,
+      "travail": 1
      }
     }
    ],
    "arbre": "lontan",
-   "role": "citerne-de-pluie"
+   "role": "citerne-de-pluie",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Conduite de bambou",
@@ -9977,6 +10226,10 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 15,
+      "travail": 1
      }
     },
     {
@@ -10029,11 +10282,16 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 15,
+      "travail": 1
      }
     }
    ],
    "arbre": "lontan",
-   "role": "captage-de-source"
+   "role": "captage-de-source",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Puits à balancier",
@@ -10150,7 +10408,8 @@
     }
    ],
    "arbre": "lontan",
-   "role": "pompe-manuelle"
+   "role": "pompe-manuelle",
+   "materiau": "pierre-seche"
   },
   {
    "nom": "Jardin créole",
@@ -10267,7 +10526,8 @@
     }
    ],
    "arbre": "lontan",
-   "role": "potager"
+   "role": "potager",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Ruches en tronc",
@@ -10332,7 +10592,8 @@
     }
    ],
    "arbre": "lontan",
-   "role": "ruches"
+   "role": "ruches",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Garde-manger lontan",
@@ -10390,11 +10651,16 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
      }
     }
    ],
    "arbre": "lontan",
-   "role": "reserve-etanche"
+   "role": "reserve-etanche",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Gazinière",
@@ -10462,7 +10728,8 @@
    "rang": 0,
    "metiers": [
     "cuisine"
-   ]
+   ],
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Chauffe-eau solaire",
@@ -10521,12 +10788,17 @@
        "soins": 1
       },
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     }
    ],
    "arbre": "moderne",
    "role": "eau-chaude",
-   "rang": 0
+   "rang": 0,
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Chauffe-eau à gaz",
@@ -10590,7 +10862,8 @@
    ],
    "arbre": "moderne",
    "role": "eau-chaude",
-   "rang": 1
+   "rang": 1,
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Eau chauffée au feu de bois",
@@ -10656,7 +10929,8 @@
    ],
    "arbre": "lontan",
    "role": "eau-chaude",
-   "rang": 2
+   "rang": 2,
+   "materiau": "pierre-seche"
   },
   {
    "nom": "Étagère aux cahiers",
@@ -10763,7 +11037,8 @@
       "bras": null
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Feuillées",
@@ -10825,7 +11100,8 @@
    ],
    "arbre": "lontan",
    "role": "latrines",
-   "rang": 2
+   "rang": 2,
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Latrines sèches",
@@ -10887,7 +11163,8 @@
    ],
    "arbre": "lontan",
    "role": "latrines",
-   "rang": 1
+   "rang": 1,
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Fosse maçonnée",
@@ -10953,7 +11230,8 @@
    ],
    "arbre": "moderne",
    "role": "latrines",
-   "rang": 0
+   "rang": 0,
+   "materiau": "parpaing-et-beton"
   },
   {
    "nom": "Lavoir",
@@ -11017,7 +11295,8 @@
    ],
    "arbre": "lontan",
    "role": "toilette",
-   "rang": 1
+   "rang": 1,
+   "materiau": "pierre-seche"
   },
   {
    "nom": "Douche",
@@ -11082,7 +11361,8 @@
    ],
    "arbre": "moderne",
    "role": "toilette",
-   "rang": 0
+   "rang": 0,
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Coin du feu",
@@ -12416,6 +12696,2800 @@
    "metiers": [
     "distillerie"
    ]
+  },
+  {
+   "nom": "Haie de choka",
+   "cle": "haie-de-choka",
+   "categorie": "defense",
+   "description": "<p>Des pieds de choka plantés serrés le long de la clôture, leurs feuilles armées d'épines tournées vers l'extérieur. Il faut six mois pour qu'elle ferme ; ensuite elle se garde seule, arrête ce qui marche sans regarder, et sa taille donne de la fibre à tresser (des matières de l'île). Elle prend la place des barricades quand celles-ci tombent.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 180
+      },
+      "consommation": {},
+      "defense": 1,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "pousse": 180,
+      "bois": 0.2,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "barricades",
+   "rang": 1,
+   "materiau": "bambou-et-vacoa"
+  },
+  {
+   "nom": "Chausse-trapes de bambou",
+   "cle": "chausse-trapes",
+   "categorie": "defense",
+   "description": "<p>Des pointes de bambou durcies au feu, plantées de biais dans l'herbe des passages. Un Livide qui marche droit s'y prend les pieds, trébuche, se relève plus lentement. Un vivant qui regarde où il pose le pied les voit ; il faut les refaire après la pluie.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "piege": 1,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "fosse-et-pieges",
+   "rang": 1,
+   "materiau": "bambou-et-vacoa"
+  },
+  {
+   "nom": "Cloche d'alarme",
+   "cle": "cloche-d-alarme",
+   "categorie": "defense",
+   "description": "<p>Un bout de rail, une jante ou une tôle épaisse pendue à une potence, et une barre de fer à côté. Tout l'abri l'entend d'un coup, même ceux qui dorment. Les environs aussi : on ne la frappe que quand il le faut.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 2
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 1,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 2
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {
+       "vigilance": 1
+      },
+      "alarme": true,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Herse à contrepoids",
+   "cle": "herse",
+   "categorie": "defense",
+   "description": "<p>La porte de l'enceinte : une grille de fers à béton et de tôle qu'un fût rempli de pierres fait remonter, et qu'on laisse retomber d'un coup de couteau dans la corde. Plus lourde qu'un portail, elle ne s'ouvre pas en poussant ; les Livides s'acharnent sur elle, toujours, et c'est elle qu'on répare.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 10
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 6,
+      "pieces": 2,
+      "graines": 0,
+      "travail": 10
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 1,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "porte": true,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "herse",
+   "materiau": "tole-de-recuperation"
+  },
+  {
+   "nom": "Portail de bois dur",
+   "cle": "portail-de-bois-dur",
+   "categorie": "defense",
+   "description": "<p>Deux battants de tamarin ou de bois de natte, chevillés, fermés par une barre qu'il faut deux bras pour lever. Le portail des vieilles cours, refait avec ce qui pousse autour. Il arrête ce qui frappe, et c'est sur lui qu'on frappe.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 12
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 5,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 1,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "porte": true,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "herse",
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Chemin de ronde",
+   "cle": "chemin-de-ronde",
+   "categorie": "defense",
+   "description": "<p>Un plancher de planches sur des poteaux, le long de la palissade, à hauteur d'homme au-dessus du sol, et une échelle qu'on remonte. De là-haut, on frappe par-dessus avec une lance ou une barre. Un Livide ne monte pas à l'échelle : il ne peut pas frapper qui se tient au-dessus de lui, alors il s'en prend aux poteaux.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 8
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": [
+       {
+        "cle": "palissade",
+        "niveau": 1
+       }
+      ]
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 1,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "hauteur": true,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Meurtrière de basalte",
+   "cle": "meurtriere-de-basalte",
+   "categorie": "defense",
+   "description": "<p>Une fente étroite ménagée dans un mur de pierres, évasée vers l'intérieur : on voit dehors sans être vu, on tire sans être atteint. Il faut savoir monter la pierre pour qu'elle tienne autour du vide.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [
+       "pierre-seche"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 1,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {
+       "tir": 1
+      },
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "materiau": "pierre-seche"
+  },
+  {
+   "nom": "Passerelle relevée",
+   "cle": "passerelle-relevee",
+   "categorie": "defense",
+   "description": "<p>Le seul passage au-dessus du fossé : quelques bambous liés, une corde qui passe sur une fourche. Le soir, on la relève, et l'abri devient une île. Les Livides s'arrêtent au bord, se pressent, et s'en prennent à ce qui reste de l'entrée.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": [
+       {
+        "cle": "fosse-et-pieges",
+        "niveau": 1
+       }
+      ]
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 1,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "porte": true,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "materiau": "bambou-et-vacoa"
+  },
+  {
+   "nom": "Douves",
+   "cle": "douves",
+   "categorie": "defense",
+   "description": "<p>Un fossé profond creusé autour de l'abri et rempli par une dérivation de la ravine, une vanne de planches pour régler l'eau. Un Livide y tombe et n'en ressort pas seul ; les vivants passent par la passerelle. L'eau qui dort amène les moustiques : il faut la faire courir, et curer le fond.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 30
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 2,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 30
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [
+        "riviere",
+        "source"
+       ],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 1,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "piege": 2,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 2
+     }
+    }
+   ],
+   "materiau": "pierre-seche"
+  },
+  {
+   "nom": "Enceinte de palettes",
+   "cle": "enceinte-de-palettes",
+   "categorie": "defense",
+   "description": "<p>Des palettes de chantier dressées et clouées entre elles, calées par des piquets : une clôture en un jour, avec ce que les entrepôts du port et des zones ont laissé. Elle tient moins qu'une palissade, et pourrit vite à la pluie.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 1,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 2,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
+     }
+    }
+   ],
+   "role": "palissade",
+   "rang": 2,
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Enceinte d'épaves",
+   "cle": "enceinte-d-epaves",
+   "categorie": "defense",
+   "description": "<p>Des carcasses de voitures poussées roues contre roues, les vides bouchés de tôles et de grillage. Il faut une route pleine d'épaves à côté, et des bras pour les pousser. Elle arrête bien ; elle se voit de très loin, et elle claque sous le vent.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 20
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 20
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 2,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 3,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "role": "palissade",
+   "rang": 3,
+   "materiau": "tole-de-recuperation"
+  },
+  {
+   "nom": "Puits creusé",
+   "cle": "puits-creuse",
+   "categorie": "eau",
+   "description": "<p>Creusé à la pioche et à la barre à mine jusqu'à la nappe, cuvelé de galets à mesure qu'on descend, avec un seau et une corde. Là où il n'y a ni source ni ravine, c'est de l'eau tous les jours de l'année, à remonter à bras et à faire bouillir. Au second niveau, une margelle et un treuil.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 24
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 24
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [
+        "aucune",
+        "citerne",
+        "reseau"
+       ],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 2
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": {
+       "tache": "eau",
+       "nombre": 1
+      }
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 2
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 10
+     },
+     "requiert": {
+      "savoirs": [
+       "pierre-seche"
+      ],
+      "site": {
+       "eau": [
+        "aucune",
+        "citerne",
+        "reseau"
+       ],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 3
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": {
+       "tache": "eau",
+       "nombre": 1
+      }
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 2
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "materiau": "pierre-seche"
+  },
+  {
+   "nom": "Bassin de pierre",
+   "cle": "bassin-de-pierre",
+   "categorie": "eau",
+   "description": "<p>Un bassin maçonné à l'argile, au pied du toit ou de la conduite, pour garder l'eau des jours de pluie. Au second niveau, des joints à la chaux : il ne fuit plus.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 10
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 10
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "eau": 40
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [
+       "pierre-seche"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "eau": 80
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "cuve-en-hauteur",
+   "rang": 1,
+   "materiau": "pierre-seche"
+  },
+  {
+   "nom": "Cuve en hauteur",
+   "cle": "cuve-en-hauteur",
+   "categorie": "eau",
+   "description": "<p>Des fûts sur une charpente, plus haut que le toit, remplis par la citerne : l'eau descend seule jusqu'à la cuisine et à la douche. On ouvre un robinet, et c'est un peu de l'ancienne vie qui revient.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 12
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [
+       "plomberie-filtration"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": [
+       {
+        "cle": "citerne-de-pluie",
+        "niveau": 1
+       }
+      ]
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "eau": 60
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "cuve-en-hauteur",
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Jarres filtrantes",
+   "cle": "jarre-filtrante",
+   "categorie": "eau",
+   "description": "<p>Deux jarres de terre l'une sur l'autre, la première percée, remplie de sable lavé et de charbon de bois : l'eau passe goutte à goutte et sort claire. Lent, mais il suffit de refaire le charbon de temps en temps.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 3
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 3
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [
+        "riviere",
+        "source",
+        "puits"
+       ],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 1
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 15,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "filtre-sable-charbon",
+   "rang": 1,
+   "materiau": "bambou-et-vacoa"
+  },
+  {
+   "nom": "Pompe électrique",
+   "cle": "pompe-electrique",
+   "categorie": "eau",
+   "description": "<p>Le moteur d'une machine à laver ou d'une pompe de piscine, une crépine, des tuyaux : sur le courant de l'abri, elle remonte l'eau du puits ou de la ravine sans un geste. Sans courant, la pompe à bras reprend le travail. Sa crépine se bouche vite.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 2,
+      "pieces": 3,
+      "graines": 0,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [
+       "plomberie-filtration"
+      ],
+      "site": {
+       "eau": [
+        "puits",
+        "riviere"
+       ],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "eau": 6
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "energie": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 10,
+      "travail": 1,
+      "encrassement": 0.6,
+      "arret": true,
+      "panne": 0.006
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "pompe-manuelle",
+   "rang": -1,
+   "materiau": "tole-de-recuperation"
+  },
+  {
+   "nom": "Foyer à trois roches",
+   "cle": "foyer-trois-roches",
+   "categorie": "vie",
+   "description": "<p>Trois galets de ravine, une marmite dessus, du bois dessous : la cuisine de toujours, celle des boucans et des cours. Elle fume beaucoup et se voit de loin ; elle ne casse jamais.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 1
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 1
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 2,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "odeur": 1,
+      "bras": {
+       "tache": "cuisine",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "cuisine-commune",
+   "rang": 2,
+   "materiau": "pierre-seche"
+  },
+  {
+   "nom": "Four à pain",
+   "cle": "four-a-pain",
+   "categorie": "vie",
+   "description": "<p>Une voûte de pierre et d'argile qu'on chauffe au bois pendant une matinée : pain de manioc, gâteau patate, gâteau maïs. L'odeur du pain chaud fait plus pour un groupe qu'un discours. Elle se sent aussi de loin.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 12
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "odeur": 1,
+      "bras": {
+       "tache": "cuisine",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "materiau": "pierre-seche"
+  },
+  {
+   "nom": "Boucan",
+   "cle": "boucan",
+   "categorie": "stockage",
+   "description": "<p>La paillote où l'on cuisine, avec sa claie au-dessus du feu : la viande, le poisson et les piments s'y boucanent des jours durant et ne se gâtent plus. Elle ne coûte que de la paille et des gaulettes ; la pluie use le torchis, le vent l'emporte au premier cyclone.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 4,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": true,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "odeur": 1,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "sechoir-fumoir",
+   "rang": 1,
+   "materiau": "paille-et-torchis",
+   "expose": true
+  },
+  {
+   "nom": "Claies de séchage",
+   "cle": "claies-de-sechage",
+   "categorie": "stockage",
+   "description": "<p>Des claies de bambou sur des tréteaux, au soleil : les zerbaz, les piments, le café, les graines y sèchent sans moisir. On garde ainsi bien plus de brassées qu'il n'en tient dans la case.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 2
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 2
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "plantes": 12
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "materiau": "bambou-et-vacoa",
+   "expose": true
+  },
+  {
+   "nom": "Cellier de pierre",
+   "cle": "cellier-de-pierre",
+   "categorie": "stockage",
+   "description": "<p>Une petite pièce à demi enterrée, aux murs de pierre épais, une porte basse : il y fait frais même en février, les vivres s'y gardent. Rien n'y entre que la main qui sait où chercher.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 16
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 16
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "nourriture": 40
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": true,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "reserve-etanche",
+   "rang": 2,
+   "materiau": "pierre-seche"
+  },
+  {
+   "nom": "Râtelier à bois",
+   "cle": "ratelier-a-bois",
+   "categorie": "stockage",
+   "description": "<p>Deux rangs de piquets où l'on couche les troncs, les poutres et les bambous hors de la boue, à l'abri des termites. Au second niveau, un toit de tôle : les planches aussi y tiennent.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 2
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 2
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "materiaux": 10
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "materiau": "bambou-et-vacoa",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 1,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "materiaux": 25
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "materiau": "bois-sous-tole"
+    }
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Abri à matériaux",
+   "cle": "abri-a-materiaux",
+   "categorie": "stockage",
+   "description": "<p>Un toit de tôle sur quatre poteaux : planches, tôles, parpaings, sacs de ciment et rouleaux de grillage y restent au sec et rangés, au lieu de rouiller dans la cour.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 10
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 10
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {
+       "materiaux": 40
+      },
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Four à chaux",
+   "cle": "four-a-chaux",
+   "categorie": "vie",
+   "description": "<p>Une tour de pierres sèches qu'on remplit de coquillages, de débris de corail mort ramassés sur la plage et de bois, et qu'on fait cuire un jour et une nuit. Il en sort de la chaux, qui fait le mortier et le badigeon : de quoi bâtir sans ciment. Sa fumée blanche monte droit et se voit de toute la côte.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 12
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 4,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [
+       "maconnerie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "materiaux": 0.25
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 2,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "odeur": 1,
+      "bras": {
+       "tache": "atelier",
+       "nombre": 1
+      }
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "materiau": "pierre-seche"
+  },
+  {
+   "nom": "Paillasses",
+   "cle": "paillasse",
+   "categorie": "vie",
+   "description": "<p>Du chaume sec sous une natte de vacoa, à même le plancher : on y dort, sans plus. Au second niveau, une toile cousue et des nattes doubles. Quand le dortoir manque, on se serre dessus.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 1
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 1
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 2,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 2
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 4,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "dortoir",
+   "rang": 1,
+   "materiau": "paille-et-torchis"
+  },
+  {
+   "nom": "Lits de bois",
+   "cle": "lits-de-bois",
+   "categorie": "vie",
+   "description": "<p>Des cadres de planches sanglés de corde, hors du sol : on y dort mieux, loin des scolopendres et de l'eau qui court par terre les nuits d'averse.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 2,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 2,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "role": "dortoir",
+   "rang": 2,
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Grande table",
+   "cle": "grande-table",
+   "categorie": "vie",
+   "description": "<p>Une table où tout l'abri tient en même temps, deux bancs : on y mange ensemble, on y règle ce qui doit se régler, on y joue aux dominos le soir. Ce qui se dit autour d'une table se dit autrement.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Coin de prière",
+   "cle": "coin-de-priere",
+   "categorie": "vie",
+   "description": "<p>Une tablette de pierre contre le mur le plus calme, une flamme, un linge propre. Chacun y pose ce que sa foi demande, une image, une lampe, un chapelet, une poignée de riz, ou vient seulement s'y taire un moment. Personne n'y prie à la place d'un autre.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 2
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 1,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 2
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 14,
+      "travail": 1
+     }
+    }
+   ],
+   "materiau": "pierre-seche"
+  },
+  {
+   "nom": "Tableau des corvées",
+   "cle": "tableau-des-corvees",
+   "categorie": "vie",
+   "description": "<p>Une planche clouée près de la porte et un bout de charbon : qui va à l'eau, qui garde cette nuit, qui fait le cari. Ce qui est écrit se discute moins ; ce qui se discute encore, on l'efface et on recommence.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 1
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 1,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 1
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {
+       "parole": 1
+      },
+      "bras": null
+     }
+    }
+   ],
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Salle verte",
+   "cle": "salle-verte",
+   "categorie": "vie",
+   "description": "<p>Une tonnelle de bambou couverte de palmes et de feuilles de vacoa, dressée pour les fêtes, les mariages et les veillées, comme dans les cours d'avant. On y mange, on y danse, on y pleure aussi. Elle se voit, et le vent la défait.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 6
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "fete": 1,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 30,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "materiau": "bambou-et-vacoa",
+   "expose": true
+  },
+  {
+   "nom": "Lampes à huile",
+   "cle": "lampes-a-huile",
+   "categorie": "vie",
+   "description": "<p>Trois petites flammes dans des boîtes de conserve, une mèche de coton, de l'huile de bancoul ou de coco pressée à la main : la lumière des veillées. Il faut refaire de l'huile chaque semaine. Elles se voient par les fentes.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 1
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 1
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "lumiere": true,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 7,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "eclairage",
+   "rang": 1,
+   "materiau": "bambou-et-vacoa"
+  },
+  {
+   "nom": "Éclairage électrique",
+   "cle": "eclairage-electrique",
+   "categorie": "vie",
+   "description": "<p>Des ampoules de voiture et des rubans de lumière sur le courant de l'abri : on y voit comme avant, on lit, on recoud, la garde voit la cour. Et l'abri se voit de loin, comme une lampe sur la mer.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 3
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 1,
+      "pieces": 2,
+      "graines": 0,
+      "travail": 3
+     },
+     "requiert": {
+      "savoirs": [
+       "electricite-solaire"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "energie": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 2,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 1,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {
+       "vigilance": 1
+      },
+      "lumiere": true,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1,
+      "panne": 0.01
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "eclairage",
+   "materiau": "tole-de-recuperation"
+  },
+  {
+   "nom": "Remise à charrettes",
+   "cle": "remise-a-charrettes",
+   "categorie": "stockage",
+   "description": "<p>Un toit de chaume sur des poteaux, assez haut pour une charrette chargée : les charrettes, le chariot, le motoculteur et leurs remorques y restent au sec, et l'huile de leurs essieux ne part pas avec la pluie.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 9
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 4,
+      "travail": 9
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "remise": 3,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "remise",
+   "rang": 1,
+   "materiau": "paille-et-torchis",
+   "expose": true
+  },
+  {
+   "nom": "Remise à vélos",
+   "cle": "remise-a-velos",
+   "categorie": "stockage",
+   "description": "<p>Un auvent de tôle et des crochets au mur : les vélos, le vélo-cargo et les remorques à l'abri de la pluie et du sel.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 5
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 2,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 5
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "remise": 6,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "remise",
+   "materiau": "tole-de-recuperation"
+  },
+  {
+   "nom": "Remise à recharge",
+   "cle": "borne-de-recharge",
+   "categorie": "energie",
+   "description": "<p>Un abri de tôle câblé sur les batteries, un régulateur de charge : le petit utilitaire électrique s'y recharge la nuit. Elle boit le courant de l'abri ; on l'éteint quand rien ne charge.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 12
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 2,
+      "pieces": 4,
+      "graines": 0,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [
+       "electricite-solaire"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": [
+       {
+        "cle": "panneaux-solaires",
+        "niveau": 2
+       },
+       {
+        "cle": "batteries",
+        "niveau": 1
+       }
+      ]
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "energie": 2
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "remise": 2,
+      "recharge": true,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "materiau": "tole-de-recuperation"
+  },
+  {
+   "nom": "Roue à aubes",
+   "cle": "roue-a-aubes",
+   "categorie": "energie",
+   "description": "<p>Une roue de planches dans le courant de la ravine, un axe, une courroie, l'alternateur d'une voiture : deux unités de courant par jour, jour et nuit, tant que l'eau coule. Les feuilles et les branches la bloquent vite ; à sec ou en crue, elle s'arrête.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 12
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 2,
+      "graines": 0,
+      "travail": 12
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [
+        "riviere"
+       ],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {
+       "energie": 2
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": true,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 6,
+      "travail": 1,
+      "encrassement": 0.7,
+      "arret": true,
+      "panne": 0.006
+     }
+    }
+   ],
+   "materiau": "bois-sous-tole"
+  },
+  {
+   "nom": "Digesteur à biogaz",
+   "cle": "digesteur-a-biogaz",
+   "categorie": "energie",
+   "description": "<p>Des fûts fermés, enterrés à moitié, où le fumier des cabris fermente avec de l'eau : le gaz monte dans une chambre à air et part par un tuyau jusqu'à la gazinière. Il sent, il demande du fumier frais et de l'eau chaque jour, et il ne s'improvise pas. Au second niveau, une cuve maçonnée.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 18
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 2,
+      "graines": 0,
+      "travail": 18
+     },
+     "requiert": {
+      "savoirs": [
+       "plomberie-filtration"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": [
+       {
+        "cle": "enclos-a-cabris",
+        "niveau": 1
+       }
+      ]
+     },
+     "effets": {
+      "production": {
+       "gaz": 0.5
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "eau": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "odeur": 1,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 15,
+      "travail": 1
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [
+       "plomberie-filtration",
+       "maconnerie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": [
+       {
+        "cle": "enclos-a-cabris",
+        "niveau": 1
+       }
+      ]
+     },
+     "effets": {
+      "production": {
+       "gaz": 1
+      },
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "eau": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "odeur": 1,
+      "bras": null
+     },
+     "entretien": {
+      "tousLes": 15,
+      "travail": 1
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "materiau": "parpaing-et-beton"
+  },
+  {
+   "nom": "Touffe de bambous",
+   "cle": "touffe-de-bambous",
+   "categorie": "stockage",
+   "description": "<p>Quelques pieds de bambou plantés près de l'eau, au fond de la cour. Pendant six mois, rien ; ensuite, on ne manque plus de cannes pour les gouttières, les claies, les palissades. Le bambou plie au cyclone et repousse.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 3
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 3
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 1,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 180
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bois": 0.5,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "materiau": "bambou-et-vacoa",
+   "expose": true
   }
  ],
  "savoirs": [
@@ -26519,6 +29593,31 @@
     "nombres": [
      1
     ]
+   },
+   "puits-creuse": {
+    "tache": "eau",
+    "nombres": [
+     1,
+     1
+    ]
+   },
+   "foyer-trois-roches": {
+    "tache": "cuisine",
+    "nombres": [
+     1
+    ]
+   },
+   "four-a-pain": {
+    "tache": "cuisine",
+    "nombres": [
+     1
+    ]
+   },
+   "four-a-chaux": {
+    "tache": "atelier",
+    "nombres": [
+     1
+    ]
    }
   }
  },
@@ -34260,6 +37359,461 @@
    "lieux": [
     "commerce",
     "usine"
+   ]
+  },
+  {
+   "cle": "haie-de-choka",
+   "installation": "haie-de-choka",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "ferme",
+    "case-creole"
+   ]
+  },
+  {
+   "cle": "chausse-trapes",
+   "installation": "chausse-trapes",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "ilet",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "cloche-d-alarme",
+   "installation": "cloche-d-alarme",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "eglise",
+    "ecole",
+    "caserne"
+   ]
+  },
+  {
+   "cle": "herse",
+   "installation": "herse",
+   "rarete": [
+    35,
+    60
+   ],
+   "lieux": [
+    "caserne",
+    "usine"
+   ]
+  },
+  {
+   "cle": "portail-de-bois-dur",
+   "installation": "portail-de-bois-dur",
+   "rarete": [
+    20,
+    45
+   ],
+   "lieux": [
+    "case-creole",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "chemin-de-ronde",
+   "installation": "chemin-de-ronde",
+   "rarete": [
+    25,
+    50
+   ],
+   "lieux": [
+    "caserne"
+   ]
+  },
+  {
+   "cle": "meurtriere-de-basalte",
+   "installation": "meurtriere-de-basalte",
+   "rarete": [
+    35,
+    60
+   ],
+   "lieux": [
+    "ilet",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "passerelle-relevee",
+   "installation": "passerelle-relevee",
+   "rarete": [
+    25,
+    50
+   ],
+   "lieux": [
+    "ilet"
+   ]
+  },
+  {
+   "cle": "douves",
+   "installation": "douves",
+   "rarete": [
+    45,
+    70
+   ],
+   "lieux": [
+    "caserne",
+    "usine"
+   ]
+  },
+  {
+   "cle": "enceinte-de-palettes",
+   "installation": "enceinte-de-palettes",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "commerce",
+    "usine",
+    "port"
+   ]
+  },
+  {
+   "cle": "enceinte-d-epaves",
+   "installation": "enceinte-d-epaves",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "commerce",
+    "usine"
+   ]
+  },
+  {
+   "cle": "puits-creuse",
+   "installation": "puits-creuse",
+   "rarete": [
+    30,
+    60
+   ],
+   "lieux": [
+    "ferme",
+    "ecole"
+   ]
+  },
+  {
+   "cle": "bassin-de-pierre",
+   "installation": "bassin-de-pierre",
+   "rarete": [
+    20,
+    40
+   ],
+   "lieux": [
+    "ilet",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "cuve-en-hauteur",
+   "installation": "cuve-en-hauteur",
+   "rarete": [
+    25,
+    45
+   ],
+   "lieux": [
+    "maison",
+    "ferme",
+    "commerce"
+   ]
+  },
+  {
+   "cle": "jarre-filtrante",
+   "installation": "jarre-filtrante",
+   "rarete": [
+    15,
+    35
+   ],
+   "lieux": [
+    "case-creole",
+    "ilet"
+   ]
+  },
+  {
+   "cle": "pompe-electrique",
+   "installation": "pompe-electrique",
+   "rarete": [
+    40,
+    65
+   ],
+   "lieux": [
+    "usine",
+    "ferme",
+    "commerce"
+   ]
+  },
+  {
+   "cle": "foyer-trois-roches",
+   "installation": "foyer-trois-roches",
+   "rarete": [
+    0,
+    10
+   ],
+   "lieux": [
+    "case-creole",
+    "ilet",
+    "gite"
+   ]
+  },
+  {
+   "cle": "four-a-pain",
+   "installation": "four-a-pain",
+   "rarete": [
+    10,
+    35
+   ],
+   "lieux": [
+    "ecole",
+    "case-creole"
+   ]
+  },
+  {
+   "cle": "boucan",
+   "installation": "boucan",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "case-creole",
+    "ilet",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "claies-de-sechage",
+   "installation": "claies-de-sechage",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "case-creole",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "cellier-de-pierre",
+   "installation": "cellier-de-pierre",
+   "rarete": [
+    25,
+    50
+   ],
+   "lieux": [
+    "ilet",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "ratelier-a-bois",
+   "installation": "ratelier-a-bois",
+   "rarete": [
+    5,
+    15
+   ],
+   "lieux": [
+    "ferme",
+    "case-creole"
+   ]
+  },
+  {
+   "cle": "abri-a-materiaux",
+   "installation": "abri-a-materiaux",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "commerce",
+    "usine",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "four-a-chaux",
+   "installation": "four-a-chaux",
+   "rarete": [
+    25,
+    55
+   ],
+   "lieux": [
+    "commerce",
+    "ecole",
+    "port"
+   ]
+  },
+  {
+   "cle": "paillasse",
+   "installation": "paillasse",
+   "rarete": [
+    0,
+    10
+   ],
+   "lieux": [
+    "case-creole",
+    "ilet"
+   ]
+  },
+  {
+   "cle": "lits-de-bois",
+   "installation": "lits-de-bois",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "maison",
+    "gite"
+   ]
+  },
+  {
+   "cle": "grande-table",
+   "installation": "grande-table",
+   "rarete": [
+    5,
+    15
+   ],
+   "lieux": [
+    "ecole",
+    "gite"
+   ]
+  },
+  {
+   "cle": "coin-de-priere",
+   "installation": "coin-de-priere",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "eglise",
+    "case-creole"
+   ]
+  },
+  {
+   "cle": "tableau-des-corvees",
+   "installation": "tableau-des-corvees",
+   "rarete": [
+    5,
+    15
+   ],
+   "lieux": [
+    "ecole",
+    "caserne"
+   ]
+  },
+  {
+   "cle": "salle-verte",
+   "installation": "salle-verte",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "case-creole",
+    "ilet"
+   ]
+  },
+  {
+   "cle": "lampes-a-huile",
+   "installation": "lampes-a-huile",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "case-creole",
+    "eglise"
+   ]
+  },
+  {
+   "cle": "eclairage-electrique",
+   "installation": "eclairage-electrique",
+   "rarete": [
+    30,
+    55
+   ],
+   "lieux": [
+    "commerce",
+    "immeuble"
+   ]
+  },
+  {
+   "cle": "remise-a-charrettes",
+   "installation": "remise-a-charrettes",
+   "rarete": [
+    15,
+    35
+   ],
+   "lieux": [
+    "ferme"
+   ]
+  },
+  {
+   "cle": "remise-a-velos",
+   "installation": "remise-a-velos",
+   "rarete": [
+    10,
+    25
+   ],
+   "lieux": [
+    "maison",
+    "immeuble"
+   ]
+  },
+  {
+   "cle": "borne-de-recharge",
+   "installation": "borne-de-recharge",
+   "rarete": [
+    60,
+    85
+   ],
+   "lieux": []
+  },
+  {
+   "cle": "roue-a-aubes",
+   "installation": "roue-a-aubes",
+   "rarete": [
+    35,
+    60
+   ],
+   "lieux": [
+    "ferme",
+    "ilet"
+   ]
+  },
+  {
+   "cle": "digesteur-a-biogaz",
+   "installation": "digesteur-a-biogaz",
+   "rarete": [
+    70,
+    95
+   ],
+   "lieux": []
+  },
+  {
+   "cle": "touffe-de-bambous",
+   "installation": "touffe-de-bambous",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "ilet",
+    "ferme"
    ]
   }
  ],

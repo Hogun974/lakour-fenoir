@@ -1,0 +1,89 @@
+{
+  "_id": "ZwY2A7AUi0MliQhI",
+  "_key": "!items!ZwY2A7AUi0MliQhI",
+  "name": "Lampes à huile",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "lampes-a-huile",
+    "categorie": "vie",
+    "description": "<p>Trois petites flammes dans des boîtes de conserve, une mèche de coton, de l'huile de bancoul ou de coco pressée à la main : la lumière des veillées. Il faut refaire de l'huile chaque semaine. Elles se voient par les fentes.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 1
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 1,
+          "travail": 1
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "lumiere": true,
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 7,
+          "travail": 1
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "role": "eclairage",
+    "rang": 1,
+    "materiau": "bambou-et-vacoa"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lampes-a-huile"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

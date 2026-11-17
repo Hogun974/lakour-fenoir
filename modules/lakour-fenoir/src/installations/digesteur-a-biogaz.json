@@ -1,0 +1,156 @@
+{
+  "_id": "2oGgK1cAJxUESBcl",
+  "_key": "!items!2oGgK1cAJxUESBcl",
+  "name": "Digesteur à biogaz",
+  "type": "installation",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "cle": "digesteur-a-biogaz",
+    "categorie": "energie",
+    "description": "<p>Des fûts fermés, enterrés à moitié, où le fumier des cabris fermente avec de l'eau : le gaz monte dans une chambre à air et part par un tuyau jusqu'à la gazinière. Il sent, il demande du fumier frais et de l'eau chaque jour, et il ne s'improvise pas. Au second niveau, une cuve maçonnée.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 18
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 2,
+          "graines": 0,
+          "travail": 18
+        },
+        "requiert": {
+          "savoirs": [
+            "plomberie-filtration"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "enclos-a-cabris",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "gaz": 0.5
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "odeur": 1,
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 15,
+          "travail": 1
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 8
+        },
+        "requiert": {
+          "savoirs": [
+            "plomberie-filtration",
+            "maconnerie"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "enclos-a-cabris",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {
+            "gaz": 1
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "odeur": 1,
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 15,
+          "travail": 1
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "materiau": "parpaing-et-beton"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "digesteur-a-biogaz"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

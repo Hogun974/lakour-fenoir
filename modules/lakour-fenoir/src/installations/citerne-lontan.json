@@ -61,6 +61,10 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 20,
+          "travail": 1
         }
       },
       {
@@ -110,11 +114,16 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 20,
+          "travail": 1
         }
       }
     ],
     "arbre": "lontan",
-    "role": "citerne-de-pluie"
+    "role": "citerne-de-pluie",
+    "materiau": "bambou-et-vacoa"
   },
   "effects": [],
   "folder": null,

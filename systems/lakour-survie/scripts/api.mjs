@@ -34,6 +34,7 @@ import { fonctionsReperes } from "./api-reperes.mjs";
 import { fonctionsCorps } from "./api-corps.mjs";
 import { fonctionsAteliers } from "./api-ateliers.mjs";
 import { fonctionsFouilles } from "./api-fouilles.mjs";
+import { fonctionsOuvrages } from "./api-ouvrages.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -254,7 +255,9 @@ export function instancesDe(a) {
   return objetsDe(a, "installation").map(i => ({
     id: i.id, cle: i.system?.cle, niveau: Number(i.system?.niveau) || 0, etat: Number(i.system?.etat) || 0,
     chantier: { fait: Number(i.system?.chantier?.fait) || 0, requis: Number(i.system?.chantier?.requis) || 0 },
-    termineLe: Number(i.system?.termineLe) || 0, actif: i.system?.actif !== false, reparation: Number(i.system?.reparation) || 0
+    termineLe: Number(i.system?.termineLe) || 0, actif: i.system?.actif !== false, reparation: Number(i.system?.reparation) || 0,
+    // Lot 7 « Bâtir et défendre » : le suivi de l'entretien (logique/ouvrages.mjs), null avant le premier jour.
+    suivi: i.system?.suivi ? structuredClone(i.system.suivi) : null
   }));
 }
 export const abriLogique = a => ({ id: a.id, system: aPlat(a.system), installations: instancesDe(a) });
@@ -282,7 +285,8 @@ async function ecrireAbri(a, { system, installations = null }) {
   if (!installations) return;
   const avant = new Map(instancesDe(a).map(i => [i.id, i]));
   const majs = installations.filter(i => i.id && avant.has(i.id) && JSON.stringify(avant.get(i.id)) !== JSON.stringify({ ...avant.get(i.id), ...i }))
-    .map(i => ({ _id: i.id, system: { niveau: i.niveau, etat: i.etat, chantier: i.chantier, termineLe: i.termineLe, actif: i.actif !== false, reparation: Number(i.reparation) || 0 } }));
+    .map(i => ({ _id: i.id, system: { niveau: i.niveau, etat: i.etat, chantier: i.chantier, termineLe: i.termineLe, actif: i.actif !== false, reparation: Number(i.reparation) || 0,
+      ...(i.suivi !== undefined ? { suivi: i.suivi ? structuredClone(i.suivi) : null } : {}) } }));
   if (majs.length) await a.updateEmbeddedDocuments("Item", majs);
 }
 
@@ -1140,16 +1144,21 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
   // Un chef très écouté donne un dé de plus à la défense, un chef qu'on n'écoute plus en coûte un (chefs.mjs).
   const chef = presents.find(a => a.id === ctx.etat.groupe.chef);
   const autorite = chef ? L.bonusAutoriteAssaut(L.autoriteDe(chef.system)) : 0;
-  const r = L.resoudreAssaut({ defense: Math.max(0, (b?.defense ?? 0) + sangFroid + autorite), vigilance, force: entier(force, 1, 15, 1), hasard: h });
+  // Lot 7 « Bâtir et défendre » (ouvrages.mjs) : devant des Livides, les pièges ôtent de la force (ceux qui débordent se comblent), un
+  // garde en hauteur (chemin de ronde) évite la brèche, la porte ou l'enceinte prend le coup ; la cloche sonne (+2 de bruit).
   const l = abriLogique(ab);
+  const livides = horde || /horde|livide|pallid/i.test(String(type ?? ""));
+  const dev = OUVRAGES.defensesDeLAssaut(l.installations, { force: entier(force, 1, 15, 1), livides, jour: jourCtx(ctx) });
+  const r = dev.apres(L.resoudreAssaut({ defense: Math.max(0, (b?.defense ?? 0) + sangFroid + autorite), vigilance, force: dev.force, hasard: h }), garde.length > 0);
   const degats = [];
   let installations = l.installations;
   if (r.installationEndommagee) {
-    const exposees = installations.filter(i => i.niveau >= 1 && i.etat < 3);
-    const cible = exposees.length ? exposees[Math.floor(h() * exposees.length)] : null;
+    const cible = dev.cible(installations, r, h);
     if (cible) { installations = installations.map(i => (i.id === cible.id ? L.endommagerInstallation(i, 1) : i)); degats.push(defDe("installations", cible.cle)?.nom ?? cible.cle); }
   }
-  await ecrireAbri(ab, { system: { degats: (Number(l.system.degats) || 0) + r.degats }, installations });
+  for (const c of dev.comblees) installations = installations.map(i => (i.id === c.id ? L.endommagerInstallation(i, 1) : i));
+  const bruitCloche = dev.ouvrages.alarme ? 2 : 0;
+  await ecrireAbri(ab, { system: { degats: (Number(l.system.degats) || 0) + r.degats, ...(bruitCloche ? { bruit: borner((Number(l.system.bruit) || 0) + bruitCloche, 0, 10) } : {}) }, installations });
   const blesses = [];
   for (let k = 0; k < r.blesses && presents.length; k++) {
     const a = presents[Math.floor(h() * presents.length)];
@@ -1164,7 +1173,11 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
   const papiersVoles = r.issue === "breche" ? await PLANS_API.pertesDeBreche(ctx, type) : [];
   await chat(carteAssaut(r, { type, description, degats, blesses: blesses.map(id => acteur(id)?.name ?? id) }));
   annoncer("lakourSurvie.assaut", [{ issue: r.issue, marge: r.marge }]);
-  return { marge: r.marge, issue: r.issue, degats, blesses, papiersVoles, sangFroid, desDefense: r.desDefense, desMenace: r.desMenace, succesDefense: r.succesDefense, succesMenace: r.succesMenace };
+  if (dev.retire) noter(ctx, tx("Ouvrages.Journal.Pieges", { n: dev.retire }));
+  if (r.hauteurTient) noter(ctx, tx("Ouvrages.Journal.Hauteur", { installation: defDe("installations", r.appuis.cle)?.nom ?? r.appuis.cle }));
+  if (bruitCloche) noter(ctx, tx("Ouvrages.Journal.Cloche"));
+  return { marge: r.marge, issue: r.issue, degats, blesses, papiersVoles, sangFroid, desDefense: r.desDefense, desMenace: r.desMenace, succesDefense: r.succesDefense, succesMenace: r.succesMenace,
+    force: dev.force, pieges: dev.retire, comblees: dev.comblees.map(c => c.cle), hauteur: Boolean(r.hauteurTient), cloche: Boolean(bruitCloche) };
 }
 
 async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
@@ -1219,6 +1232,11 @@ const CORPS = fonctionsCorps({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx
 const FOUILLES = fonctionsFouilles({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
   ecrireSurvivant: (...x) => ecrireSurvivant(...x), avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o), membresValides, donneesObjet, objetsDe, defDe, instancesDe,
   aLAbri: (etat, ab) => aLAbri(etat, ab), mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), texteStocks, journalSecret, motifLisible });
+// Bâtir et défendre (lot 7, contrat §26) : l'entretien, le feu, la défense devant les Livides, la cave qui s'éboule.
+const OUVRAGES = fonctionsOuvrages({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, chat, carteAction,
+  abriLogique: a => abriLogique(a), ecrireAbri: (...x) => ecrireAbri(...x), membresValides: (...x) => membresValides(...x), brasDe: (qui, jour) => brasDeLEquipe(qui, jour),
+  avancerInterne: (...x) => avancerInterne(...x), defDe, aLAbri: (etat, ab) => aLAbri(etat, ab), savoirsDuGroupe: etat => savoirsDuGroupe(etat),
+  systemeLogique, ecrireSurvivant: (...x) => ecrireSurvivant(...x) });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1520,7 +1538,11 @@ export const api = {
     const qui = membresValides(ctx, membres);
     const q = entier(quarts, 1, 40, 1);
     // Les bras : un jeune de 16 à 18 ans travaille aux 3/4 (lot « fetes », logique/releve.mjs).
-    const ch = L.avancerChantier(instance, def, { quarts: q, bras: brasDeLEquipe(qui, jourCtx(ctx)), jour: jourCtx(ctx) });
+    // Lot 7 : achever un niveau creusé sans savoir étayer, ou près d'une eau qui court, peut l'ébouler (une blessure qui ne tue pas, la
+    // dernière cellule à recreuser).
+    const eb = await OUVRAGES.eboulementDuChantier(ctx, { def, qui, avant: instance, site,
+      resultat: L.avancerChantier(instance, def, { quarts: q, bras: brasDeLEquipe(qui, jourCtx(ctx)), jour: jourCtx(ctx) }) });
+    const ch = eb.resultat;
     if (existante) await ab.updateEmbeddedDocuments("Item", [{ _id: existante.id, system: { niveau: ch.instance.niveau, chantier: ch.instance.chantier, termineLe: ch.instance.termineLe, etat: ch.instance.etat, reparation: Number(ch.instance.reparation) || 0 } }]);
     else await ab.createEmbeddedDocuments("Item", [await donneesInstallation(def, ch.instance)]);
     await ab.update({ system: { bruit: borner((Number(ab.system.bruit) || 0) + 1, 0, 10) } });
@@ -1536,7 +1558,8 @@ export const api = {
         Object.keys(cout).length ? t("LAKOUR_SURVIE.Action.Cout", { cout: texteStocks(Object.fromEntries(Object.entries(cout).filter(([k]) => k !== "travail"))) || "—" }) : ""] }));
     await avancerInterne(ctx, q);
     await terminer(ctx);
-    return { chantier: structuredClone(ch.instance.chantier), termine: ch.termine, niveau: ch.niveau, reste: ch.reste, cout, plan: PLANS_API.connusDe(ctx.etat).includes(def.cle) };
+    return { chantier: structuredClone(ch.instance.chantier), termine: ch.termine, niveau: ch.niveau, reste: ch.reste, cout, plan: PLANS_API.connusDe(ctx.etat).includes(def.cle),
+      eboulement: eb.chance ? { chance: eb.chance, eboule: eb.eboule, blesse: eb.blesse, perdu: eb.perdu } : null };
   }),
 
   reparer: ecriture(async ({ installationId = "", membres = [], quarts = 1 } = {}) => {
@@ -2049,6 +2072,7 @@ export const api = {
   ...ATELIERS.api,
   // Lot 5 « fouille » (contrat §25) : les lieux d'une région, les gisements, les bêtes prises, démonter une installation.
   ...FOUILLES.api,
+  ...OUVRAGES.publiques,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {

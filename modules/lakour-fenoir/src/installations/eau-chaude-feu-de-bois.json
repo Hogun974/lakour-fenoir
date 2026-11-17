@@ -67,7 +67,8 @@
     ],
     "arbre": "lontan",
     "role": "eau-chaude",
-    "rang": 2
+    "rang": 2,
+    "materiau": "pierre-seche"
   },
   "effects": [],
   "folder": null,

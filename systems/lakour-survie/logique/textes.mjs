@@ -104,7 +104,9 @@ export const CLES_TEXTES = [
   // fouilles.mjs (par actions.mjs, etat.mjs et l'API) : fouiller un lieu, le démonter, récolter, les bêtes trouvées, les refus (lot 5 « fouille »)
   "fouille-lieu", "demontage-lieu", "lieu-demonte", "fouille-culte", "recolte", "bete-prise", "bete-file", "bete-pique", "bete-morte", "bete-enclose", "bete-abattue", "bete-relachee",
   "installation-demontee", "lieu-genre-inconnu", "lieu-aucun", "lieu-ailleurs", "lieu-demonte-deja", "lieu-fini", "lieu-indemontable", "lieu-site",
-  "gisement-aucun", "gisement-renvoi", "gisement-epuise", "gisement-rien", "bete-inconnue", "bete-deja-enclose", "bete-sans-enclos"
+  "gisement-aucun", "gisement-renvoi", "gisement-epuise", "gisement-rien", "bete-inconnue", "bete-deja-enclose", "bete-sans-enclos",
+  // ouvrages.mjs (par etat.mjs) : l'entretien des installations, l'encrassement, les pannes (lot 7 « Bâtir et défendre »)
+  "ouvrage-use", "ouvrage-encrasse", "ouvrage-panne", "ouvrage-vieillit", "ouvrage-soigne"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

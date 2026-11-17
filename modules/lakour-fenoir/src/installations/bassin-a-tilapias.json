@@ -63,7 +63,8 @@
             "tache": "elevage",
             "nombre": 1
           }
-        }
+        },
+        "materiau": "pierre-seche"
       },
       {
         "cout": {
@@ -120,7 +121,8 @@
             "tache": "elevage",
             "nombre": 1
           }
-        }
+        },
+        "materiau": "parpaing-et-beton"
       }
     ]
   },

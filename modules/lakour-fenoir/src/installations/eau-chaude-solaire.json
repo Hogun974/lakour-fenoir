@@ -60,12 +60,17 @@
             "soins": 1
           },
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       }
     ],
     "arbre": "moderne",
     "role": "eau-chaude",
-    "rang": 0
+    "rang": 0,
+    "materiau": "tole-de-recuperation"
   },
   "effects": [],
   "folder": null,

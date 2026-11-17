@@ -39,18 +39,23 @@ import { INSTALLATIONS_ATELIERS, EQUIPEMENTS_ATELIERS, BAREME_ATELIERS, TABLES_A
 import { RECETTES_ATELIERS } from "./recettes-3d.mjs";
 import { OBJETS_FOUILLE, GENRES_FOUILLE, BETES_TROUVEES, GISEMENTS, MILIEUX, TABLES_FOUILLE, JOURNAL_FOUILLES,
   sitesAvecGenres, regionsAvecMilieux, equipementsAvecCapture, documentsAvecCapture } from "./fouilles.mjs";
+import { INSTALLATIONS_OUVRAGES, PLANS_OUVRAGES, TABLES_OUVRAGES, JOURNAUX_OUVRAGES, BRAS_OUVRAGES, porterOuvrages, sitesAvecPlansOuvrages } from "./ouvrages.mjs";
+
+// Lot 7 « Bâtir et défendre » (contrat §26) : les matériaux, l'entretien et les effets de défense posés sur les installations d'avant.
+porterOuvrages([...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE]);
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
 const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJournal("guides", CLE_JOURNAL_REGIONS), pageId: idPage("guides", CLE_JOURNAL_REGIONS, r.cle) }]));
 export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 
 export const DOCUMENTS = [
-  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_ATELIERS, ...SAVOIRS, ...documentsAvecCapture(EQUIPEMENTS), ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES,
-  ...documentsAvecCapture(EQUIPEMENTS_ATELIERS), ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...RECETTES_ATELIERS, ...AFFLICTIONS,
+  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_ATELIERS, ...INSTALLATIONS_OUVRAGES, ...SAVOIRS, ...documentsAvecCapture(EQUIPEMENTS), ...EQUIPEMENTS_PLANS,
+  ...EQUIPEMENTS_REPERES, ...documentsAvecCapture(EQUIPEMENTS_ATELIERS), ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...RECETTES_ATELIERS, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, JOURNAL_CORPS, JOURNAL_ATELIERS, JOURNAL_FOUILLES, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, JOURNAL_CORPS, JOURNAL_ATELIERS, JOURNAL_FOUILLES, ...JOURNAUX_OUVRAGES, LIVRE_UNIVERS,
+  ...CAMP.filter(d => d.__pack !== "tables"),
   ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
-  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES, ...TABLES_CORPS, ...TABLES_ATELIERS, ...TABLES_FOUILLE,
+  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES, ...TABLES_CORPS, ...TABLES_ATELIERS, ...TABLES_FOUILLE, ...TABLES_OUVRAGES,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -62,8 +67,9 @@ export function donnees() {
   return {
     module: MODULE, version: 1,
     // Lot 12 : ce qu'on comprend en arrivant dans chaque région (une ligne pour le MJ, contenu/affaires.mjs).
-    regions: regionsAvecMilieux(REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" }))), sites: sitesAvecGenres(sitesAvecAteliers(sitesAvecPlans(SITES))), routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
-    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_ATELIERS].map(aPlat), savoirs: SAVOIRS.map(aPlat),
+    regions: regionsAvecMilieux(REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" }))),
+    sites: sitesAvecGenres(sitesAvecAteliers(sitesAvecPlansOuvrages(sitesAvecPlans(SITES)))), routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
+    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_ATELIERS, ...INSTALLATIONS_OUVRAGES].map(aPlat), savoirs: SAVOIRS.map(aPlat),
     equipements: equipementsAvecCapture([...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...EQUIPEMENTS_ATELIERS].map(aPlat)), passes: PASSES.map(aPlat),
     recettes: [...RECETTES, ...RECETTES_REPERES, ...RECETTES_ATELIERS].map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
     factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
@@ -75,7 +81,7 @@ export function donnees() {
     histoire: { proche: DONNEES_TABLES.histoireProche, matin: DONNEES_TABLES.histoireMatin },
     noms: { prenoms: DONNEES_TABLES.prenoms, prenomsF: DONNEES_TABLES.prenomsF, prenomsM: DONNEES_TABLES.prenomsM, prenomsMixtes: DONNEES_TABLES.prenomsMixtes,
       surnoms: DONNEES_TABLES.surnoms, cyclones: DONNEES_TABLES.cyclones },
-    autonomie: { voies: VOIES_AUTONOMIE, voieDefensive: VOIE_DEFENSIVE, bras: BRAS },
+    autonomie: { voies: VOIES_AUTONOMIE, voieDefensive: VOIE_DEFENSIVE, bras: { ...BRAS, ...BRAS_OUVRAGES } },
     fetes: FETES_FENOIR.map(f => ({ ...f, image: imageSiPeinte(f.cle), effet: f.effet ?? EFFET_FETE })),
     // Le marché (contenu/marche.mjs ; logique systems/lakour-survie/logique/marche.mjs) : les cibles des préjugés, les gens du
     // marché (avec leurs préjugés), des marchés forains possibles, les foires de saison.
@@ -91,7 +97,7 @@ export function donnees() {
     corvees: CORVEES, bareme: { ...BAREME, objets: { ...BAREME.objets, ...BAREME_ATELIERS } },
     // Lot 4 « Les plans » (contrat §21 ; logique/plans.mjs) : les plans qu'on trouve (rareté, lieux, plans uniques) et les lieux à plans
     // rares ; les plans propres d'un site sont dans sites[].plans.
-    plans: PLANS_REGISTRE, lieuxAPlans: LIEUX_A_PLANS,
+    plans: [...PLANS_REGISTRE, ...PLANS_OUVRAGES], lieuxAPlans: LIEUX_A_PLANS,
     // Lot « corps » (contrat §19) : les symptômes (nommés aux joueurs) et le Gris en six stades visibles (logique/maladies.mjs).
     symptomes: SYMPTOMES, gris: GRIS,
     // Lot 5 « fouille » (contrat §25 ; logique/fouilles.mjs) : ce que vaut un objet trouvé, les genres de lieux et leurs tables, les bêtes

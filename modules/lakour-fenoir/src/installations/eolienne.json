@@ -58,6 +58,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1,
+          "panne": 0.006
         }
       },
       {
@@ -104,9 +109,15 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1,
+          "panne": 0.006
         }
       }
-    ]
+    ],
+    "materiau": "bois-sous-tole"
   },
   "effects": [],
   "folder": null,

@@ -1706,3 +1706,87 @@ des sites ; un lieu de culte ne rend rien de convoité hors l'eau.
   journal du MJ « Fouiller, démonter, récolter » ; page « Fouiller, démonter, récolter » du guide du joueur.
 - Simulateur (`essais/outils/simuler-parties.mjs`) : il fouille des lieux quand sa région est maigre, récolte et démonte quand le bois
   manque à l'enraciné ; `--sans-lieux` rejoue la fouille d'avant le lot.
+
+## 26. Bâtir et défendre (lot 7 du portage du jeu 3D, 2026-11-17)
+
+Lot 7 de l'inventaire du jeu 3D : la famille 9 « Bâtir par pièces » (les matériaux), l'entretien des installations (famille 5), « les
+défenses comme les anciens châteaux, avec les moyens du bord », « les Livides devant un abri », les ouvrages de tous les jours,
+l'énergie et l'eau en plus, la cave qui s'éboule. Décisions de Jordan des 15 et 16 novembre, le reste validé le 17 (« tout
+maintenant ») ; rien de ce qui tient à la physique et au temps réel (pièces de 2 m, statique, câbles posés point par point). Chiffres
+et raisons : `docs/equilibre-batir.md`. Logique : `logique/ouvrages.mjs` (nouveau), crochets dans `abri.mjs` (bilan, journée, cyclone)
+et `etat.mjs` (avancer). API : `scripts/api-ouvrages.mjs` (nouveau), crochets dans `api.mjs` (assaut, construire, instances). Contenu :
+`contenu/ouvrages.mjs` (nouveau). Rien n'est retiré ni renommé : une installation sans matériau est en bois sous tôle (la chance d'avant
+au cyclone), une instance sans suivi commence à compter le jour où le système la voit, un contenu sans entretien ne s'use pas.
+
+### 26.1 Règles (logique pure, `logique/ouvrages.mjs`)
+- **Matériaux** : `MATERIAUX` (`paille-et-torchis`, `bambou-et-vacoa`, `bois-sous-tole`, `tole-de-recuperation`, `pierre-seche`,
+  `parpaing-et-beton`, chacun `{ lontan, faiblesses: { cyclone, feu, pluie, livides } }`), `MATERIAU_DEFAUT` (`bois-sous-tole`),
+  `materiauDe(def, niveau)` (le niveau, puis la définition, une lontan : bambou et vacoa), `faiblesse(def, niveau, cause)`.
+- **Cyclone** : `chanceCyclone(def, niveau)` = 0,5 × part au cyclone (bois sous tôle 25 %, comme avant) ; `exposeeAuCyclone(def)` : sa
+  catégorie (eau, nourriture, énergie, défense) ou `expose: true` sur la définition, jamais sous terre. `subirCyclone` s'en sert.
+- **Entretien** (un niveau : `entretien: { tousLes (jours), travail (quarts-personne), encrassement (0..1), arret, lavee, panne
+  (chance par jour), vie (jours) }`) : `entretienDe`, `suiviDe`, `etatEntretien(instance, def, jour)` → `{ du, retard, encrasse,
+  negligence, prochain, travail }`, `entretiensDus(installations, contenu, { jour, marge })`, `tacheDeSoin(def, niveau)` (ses bras, sinon
+  `chantier`), `entretenirInstallation(instance, def, { quarts, bras, jour })` → `{ instance, soigne, rattrape, reste }` (le délai repart,
+  l'encrassement part, un cran perdu faute de soin se rattrape ; une casse se répare, `reparerInstallation`), `facteurEntretien(instance,
+  def, niveau)` (encrassée : × (1 − encrassement), 0 si `arret`). `journeeOuvrages(installations, contenu, { jour, pluie, bras: { tache:
+  n }, hasard })` → `{ installations, evenements }` : le soin courant (un quart par présent à la tâche, au plus en retard d'abord), l'usure
+  (un cran par délai dépassé, `negligence`), l'encrassement, la pluie (au moins la moitié du jour : le torchis prend un jour d'avance,
+  `suivi.avance` ; ce qui est `lavee` recule de deux), les pannes (un tirage par jour et par installation qui en a), la vieillesse (`vie`). Événements :
+  `ouvrage-soigne`, `ouvrage-use`, `ouvrage-encrasse`, `ouvrage-panne`, `ouvrage-vieillit` (`messageOuvrage`).
+- **Défenses devant les Livides** : `ouvragesDeLAbri(installations, contenu, { jour })` → `{ piege, pieges, hauteur, portes, alarme }` (pas
+  hors service ; une haie pas encore fermée ne compte pas) ; `forceDevantOuvrages({ force, livides, ouvrages })` → `{ force, retire,
+  comblees }` (les pièges ôtent leur force, jamais sous 1 ; débordé au-delà de 4 fois sa force, un piège se comble) ;
+  `issueDevantOuvrages(r, { livides, ouvrages, garde })` (un garde et une `hauteur` en état : une brèche de Livides devient
+  « endommagée », sans blessé, et les appuis prennent le coup : `hauteurTient`, `appuis`) ; `cibleDesDegats(installations, contenu,
+  { livides, appuis, issue, hasard })` (Livides tenus dehors : les appuis, sinon une porte, sinon l'enceinte, plus souvent sa pièce la
+  plus faible, sinon ce qui est fragile ; entrés par une brèche : ce qui est fragile ; vivants et bêtes : au hasard, comme avant).
+- **Feu** : `incendieAbri(installations, contenu, { force: 1..3 }, hasard)` → `{ installations, brulees, epargnees, degatsAbri }` (un cran
+  par point de force avec 0,5 × part au feu ; rien sous terre ; force ≥ 2 : l'abri prend force − 1 dégâts).
+- **La cave** : `risqueEboulement({ def, savoirs, site })` (souterrain : 25 % sans `etaiement-galeries`, + 25 % sur un site à rivière),
+  `eboulement({ def, savoirs, site, avant, resultat, hasard })` → `{ chance, eboule, blesse, perdu, resultat }` : un tirage « à la fin du
+  creusement », quand `avancerChantier` achève un niveau ; éboulé, le niveau n'est pas fini (la dernière cellule, 6 quarts, à recreuser :
+  `resultat` est le chantier rouvert) ; `blessureQuiNeTuePas(blessures)` (au plus 3).
+- `REGLES_OUVRAGES`, `erreursOuvrages(contenu)` (fabricant, essais).
+
+### 26.2 Branchements
+- `bilanAbri` : la production × `facteurEntretien` ; une haie (`effets.pousse`) ne défend ni ne cache avant `pousse` jours après
+  `termineLe` ; `bilan.bois` (somme des `effets.bois` en marche, × l'état et le délai) ; `bilan.lumiere` (une installation à
+  `effets.lumiere` en marche). `journeeAbri` ajoute `bilan.bois` au bois des alentours, jusqu'au plafond de la région.
+- `avancer` (étape 5 ter, chaque jour, après la journée de l'abri) : `journeeOuvrages` avec les présents par tâche, la pluie du jour et le
+  flux « ouvrages|jour » (aucun autre tirage ne bouge) ; faits publics à l'abri (sinon au journal secret) sauf `ouvrage-soigne`. La nuit,
+  `bilan.lumiere` éclaire l'abri (lot « sens » : l'habitude du noir ne se gagne pas sous une lampe).
+- API `assaut` / `resoudreMenace` : devant une horde ou des Livides (`horde`, ou le type), les pièges, la hauteur (un membre à la tâche
+  « garde »), la porte et l'enceinte ; un piège débordé prend un cran ; une cloche en état : bruit de l'abri + 2. Le résultat porte en plus
+  `force`, `pieges`, `comblees`, `hauteur`, `cloche`. `construire` d'une installation souterraine : l'éboulement possible au moment
+  d'achever un niveau (flux « eboulement|quart »), rendu dans `eboulement` (`{ chance, eboule, blesse, perdu }`).
+
+### 26.3 Contenu
+- Installations (§3.2) : `materiau` (définition) ou `niveaux[].materiau`, `expose`, `niveaux[].entretien` ; effets nouveaux : `piege`
+  (0..4), `hauteur`, `porte`, `alarme`, `pousse` (jours), `bois` (par jour), `lumiere`, `remise` (places, lu par le lot 6), `recharge`, `fete`
+  (lu par le lot 12). Les installations d'avant reçoivent matériau et entretien (`porterOuvrages`, table `OUVRAGES_EXISTANTS` : celles
+  qui ont des bras n'en ont pas à part ; l'hygiène a déjà le ménage) ; `fosse-et-pieges` reçoit `piege` 1 puis 2, `porte-blindee` `porte`.
+- 38 installations (`contenu/ouvrages.mjs`) : défense (haie de choka, chausse-trapes, cloche d'alarme, herse, portail de bois dur, chemin
+  de ronde, meurtrière de basalte, passerelle relevée, douves, enceintes de palettes et d'épaves) ; eau (puits creusé, bassin de pierre,
+  cuve en hauteur, jarres filtrantes, pompe électrique) ; feu et réserves (foyer à trois roches, four à pain, boucan, claies de séchage,
+  cellier de pierre, râtelier à bois, abri à matériaux, four à chaux) ; vie (paillasses, lits de bois, grande table, coin de prière,
+  tableau des corvées, salle verte, lampes à huile, éclairage électrique) ; remises (à charrettes, à vélos, à recharge) ; énergie et
+  matières (roue à aubes, digesteur à biogaz, touffe de bambous). Sœurs (§13.2) : haie → barricades, chausse-trapes → fossé, portail →
+  herse, bassin → cuve, jarres → filtre, pompe électrique → pompe à bras (rang −1 : la pompe électrique d'abord), foyer → cuisine,
+  boucan → séchoir, cellier → réserve, paillasses et lits → dortoir, enceintes → palissade, lampes → éclairage, remise à charrettes →
+  à vélos.
+- Plans (§21.2) : `PLANS_OUVRAGES` (38, dont four à pain 10-35, four à chaux 25-55, puits 30-60, remise à recharge 60-85, digesteur
+  70-95), ajoutés au registre `plans` ; plans propres de trois sites (le digesteur aux fermes des Palmistes et de la Plaine des Cafres, la
+  remise à recharge à la centrale du Port). Un plan reste un rabais.
+- Journaux du MJ « Les Livides devant un abri » et « Bâtir et entretenir » ; page « Bâtir, entretenir, défendre » du guide du joueur ;
+  tables « Les Livides devant l'abri — ce qu'ils font », « Un entretien oublié — ce qui lâche », « Le feu à l'abri — d'où il vient »
+  (drapeau `ouvrages`). Le fabricant vérifie `erreursOuvrages`.
+
+### 26.4 État, API et fenêtres
+- Installation (§3.2) : `materiau`, `expose`, `suivi` (`{ le, negligence, encrasse, vieLe, fait?, avance? }` | null) ; tous `gmOnlyFields`.
+- API (`scripts/api-ouvrages.mjs`) : lecture `ouvrages()` → `{ abri, jour, installations: [{ id, cle, nom, niveau, etat, materiau,
+  entretien }], dus, defenses, eboulement }` ; écritures (MJ actif, monde ouvert) `entretenir({ installationId, membres, quarts })` (le temps
+  passe), `incendie({ force, cause })`.
+- Fenêtre du MJ, onglet Partie : bloc « Bâtir et défendre » (défenses, risque d'éboulement, entretiens dus) et formulaires « Entretenir une
+  installation », « Le feu à l'abri ». Fiche de l'abri : le matériau de chaque installation et son entretien (dans N jours, à faire,
+  encrassée).

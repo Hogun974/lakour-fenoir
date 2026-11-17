@@ -253,6 +253,8 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     plans: onglet === "savoirs" && etat.demarree ? contextePlans(api, c) : null,
     reperes: onglet === "partie" && etat.demarree ? contexteReperes(api, c, membres) : null,
     corps: onglet === "partie" && etat.demarree ? contexteCorps(api) : null,
+    // Lot 7 « Bâtir et défendre » (contrat §26) : les entretiens dus, les défenses, le feu.
+    ouvrages: onglet === "partie" && etat.demarree ? contexteOuvrages(api) : null,
     // Lot « savoirs » : l'onglet Savoirs et cyclone.
     ...(onglet === "savoirs" || onglet === "groupe" ? contexteSavoirs(etat, c, api, membres) : {})
   };
@@ -287,6 +289,27 @@ export function contexteCorps(api = game.lakourSurvie) {
     gris: c.grisConnu ? t(K("GrisConnu")) : "",
     bivouac: c.bivouac,
     lieux: options(["abri", "bivouac", "sol"].map(x => [x, t(K(`Lieux.${x}`))]), "abri")
+  };
+}
+
+// Lot 7 « Bâtir et défendre » (contrat §26) : les entretiens dus ou en retard, ce que l'abri oppose aux Livides, ce qu'on peut
+// entretenir (formulaire), le risque d'éboulement d'un chantier sous terre.
+export function contexteOuvrages(api = game.lakourSurvie) {
+  const o = api?.ouvrages?.();
+  if (!o?.abri) return null;
+  const K = k => `LAKOUR_SURVIE.Ouvrages.${k}`;
+  const d = o.defenses ?? {};
+  const defenses = [];
+  if (d.piege) defenses.push(t(K("MJ.Piege"), { n: d.piege }));
+  if (d.hauteur?.length) defenses.push(t(K("MJ.Hauteur")));
+  if (d.portes?.length) defenses.push(t(K("MJ.Porte")));
+  if (d.alarme) defenses.push(t(K("MJ.Cloche")));
+  return {
+    dus: o.dus.map(x => ({ texte: x.encrasse ? t(K("MJ.Encrassee"), { installation: x.nom }) : x.retard >= 0 ? t(K("MJ.EnRetard"), { installation: x.nom, n: x.retard })
+      : t(K("MJ.Negligee"), { installation: x.nom, n: x.negligence }) })),
+    defenses: defenses.join(" · "),
+    eboulement: o.eboulement ? t(K("MJ.Eboulement"), { n: Math.round(o.eboulement.chance * 100) }) : "",
+    aEntretenir: options(o.installations.filter(i => i.entretien?.tousLes).map(i => [i.id, `${i.nom} (${t(K(`Materiaux.${i.materiau}`))})`]), o.dus[0]?.id ?? "")
   };
 }
 
@@ -537,7 +560,10 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       soignerMorsure: () => api.soignerMorsure({ acteurId: d.acteur, soigneurId: d.soigneur || "", medicament: d.medicament !== "non", decoction: d.decoction !== "non" }),
       chute: () => api.chute({ acteurId: d.acteur, hauteur: Number(d.hauteur) || 0, eau: Number(d.eau) || 0, tester: d.tester !== "non" }),
       menage: () => api.menage({ membres: liste(d.membres), quarts: Number(d.quarts) || 1 }),
-      dormir: () => api.dormir({ membres: liste(d.membres), quarts: Number(d.quarts) || 1, lieu: d.lieu || "" })
+      dormir: () => api.dormir({ membres: liste(d.membres), quarts: Number(d.quarts) || 1, lieu: d.lieu || "" }),
+      // Bâtir et défendre (contrat §26).
+      entretenir: () => api.entretenir({ installationId: d.installation || "", membres: liste(d.membres), quarts: Number(d.quarts) || 1 }),
+      incendie: () => api.incendie({ force: Number(d.force) || 1, cause: d.cause || "" })
     };
     if (!appels[nom]) return;
     cible.disabled = true;
