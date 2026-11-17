@@ -173,8 +173,12 @@ règle et simulateur). Chaque cellule : graine 1 | graine 2.
 | mixte × 6 | 86 \| 86 (moy. 86.0) | 84 \| 87 (moy. 85.5) | J57 \| J54 | J57 \| J52 | 46 \| 46 | 49 \| 49 | 3.2 \| 3.3 | 3.2 \| 3.2 |
 
 **Graine 3** (300 parties par cas, nomade et enraciné ; avant | après) : vivants à J200, nomade × 1 55 | 53, × 2 76 | 76, × 4 83 | 85,
-× 6 80 | 82 ; enraciné × 1 52 | 52, × 2 74 | 75, × 4 85 | 85, × 6 88 | 88 ; première faim de l'enraciné J21, J28, J21, J17 avant comme
-après.
+× 6 80 | 82 ; enraciné × 1 52 | 52, × 2 74 | 75, × 4 85 | 85, × 6 88 | 88 ; mixte × 1 56 | 53, × 4 86 | 89 ; première faim de
+l'enraciné J21, J28, J21, J17 avant comme après.
+
+**La borne du nomade** (`essais/survie-equilibre.test.mjs` : nomade à 4, 20 parties, au plus 95 % de vivants à J200, médiane au moins
+J120, au moins 4 déménagements), rejouée sur les graines 1 à 40 : avant, 678/800 vivants (85 %) et 1 tirage hors des bornes ; après,
+686/800 (86 %) et aucun. L'essai lui-même (graine 1) passe.
 
 **Ce que le simulateur fait du lot** (par partie, graine 1 | graine 2) : lieux fouillés, nomade × 1 40 | 41, × 2 48 | 49, × 4 57 | 57,
 × 6 55 | 51 ; mixte × 1 22 | 18, × 6 8 | 9 ; enraciné 0,4 à 1,8. Récoltes : enraciné × 6, 0,5 | 0,6. Démontages : aucun (l'enraciné
