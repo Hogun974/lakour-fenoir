@@ -1,0 +1,148 @@
+{
+  "_id": "kYs9WkXJZp9WWB0Z",
+  "_key": "!tables!kYs9WkXJZp9WWB0Z",
+  "name": "Un Livide intrigué — ce qu'il fait",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un Livide a perçu un bruit ou une odeur, sans rien voir : ce qu'il fait ensuite. Il ne charge que s'il voit, ou s'il sent un vivant tout près.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "livide-intrigue",
+      "sens": "livide-intrigue"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "yQpHOuP1AedSPBeW",
+      "_key": "!tables.results!kYs9WkXJZp9WWB0Z.yQpHOuP1AedSPBeW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il s'arrête, tourne la tête vers le bruit, et reste là une longue minute. Puis il repart, dans l'autre sens.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "07ibmId4GQsXM1lK",
+      "_key": "!tables.results!kYs9WkXJZp9WWB0Z.07ibmId4GQsXM1lK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il marche vers le bruit, au pas, sans hâte. Arrivé là où il n'y a rien, il tourne en rond, puis se lasse.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "lCF0ZsyR2FebPi1E",
+      "_key": "!tables.results!kYs9WkXJZp9WWB0Z.lCF0ZsyR2FebPi1E",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il bute contre la clôture, recommence, recommence encore ; au bout d'un moment, il la longe pour chercher un passage.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MK1OcwDHJMuG7HSG",
+      "_key": "!tables.results!kYs9WkXJZp9WWB0Z.MK1OcwDHJMuG7HSG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il renifle, la tête levée, et dérive lentement sous le vent : il suit l'odeur, pas le bruit.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qQIz9gsAEmTraB3E",
+      "_key": "!tables.results!kYs9WkXJZp9WWB0Z.qQIz9gsAEmTraB3E",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il s'arrête devant la case, longtemps. Il n'a rien vu. S'il entend encore un bruit de dedans, il frappe.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qMQLmp7bVpPk594o",
+      "_key": "!tables.results!kYs9WkXJZp9WWB0Z.qMQLmp7bVpPk594o",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux autres le suivent sans avoir rien perçu eux-mêmes : l'éveil passe de l'un à l'autre, comme une onde.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "rFJ9s6g6x0OOE2XS",
+      "_key": "!tables.results!kYs9WkXJZp9WWB0Z.rFJ9s6g6x0OOE2XS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il passe à trois pas de vous sans vous voir : c'est un Livide des Hauts, ses yeux sont morts de froid.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yVStJN93pKhs77Ca",
+      "_key": "!tables.results!kYs9WkXJZp9WWB0Z.yVStJN93pKhs77Ca",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il vous voit. Il n'est plus intrigué : il charge, ou il gémit, et les autres viennent.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

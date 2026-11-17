@@ -4,8 +4,9 @@ import { html, ressources } from "./aides.mjs";
 
 const SITES_A_GAZ = ["case-creole", "maison", "ferme", "ilet"];
 
-function site({ cle, region, nom, type, description, capacite, defense, discretion, eau, sol, soleil, souterrain, acces, stocks = {}, atouts, defauts, installationsDepart = [] }) {
-  return { cle, region, nom, type, description: html(description), capacite, defense, discretion, eau, sol, soleil, souterrain, acces,
+// ravine (lot « sens ») : « temporaire » pour une ravine qui ne coule que quand il a plu dans ses Hauts (sinon : permanente).
+function site({ cle, region, nom, type, description, capacite, defense, discretion, eau, sol, soleil, souterrain, acces, stocks = {}, atouts, defauts, installationsDepart = [], ravine = "" }) {
+  return { cle, region, nom, type, description: html(description), capacite, defense, discretion, eau, sol, soleil, souterrain, acces, ...(ravine ? { ravine } : {}),
     // Les plantes médicinales (zerbaz) d'un jardin de case ou d'une ferme : un stock de l'abri qui ne se pille pas.
     // Lot « savoirs » : une bouteille de gaz de 13 kg sous l'évier des cases, maisons, fermes et îlets.
     stocks: { ...ressources({ ...(SITES_A_GAZ.includes(type) ? { gaz: 13 } : {}), ...stocks }), ...(stocks.plantes ? { plantes: stocks.plantes } : {}) }, atouts, defauts, installationsDepart };
@@ -64,7 +65,7 @@ export const SITES = [
     defauts: ["Place et réserves minuscules", "Houle et cyclones : le port n'abrite pas de tout", "Sans carburant, le bateau n'est plus qu'un abri flottant"] }),
 
   // ---------------------------------------------------------------- Route du Littoral
-  site({ cle: "lazaret-de-la-grande-chaloupe", region: "route-du-littoral", nom: "Le lazaret de la Grande Chaloupe", type: "autre",
+  site({ cle: "lazaret-de-la-grande-chaloupe", region: "route-du-littoral", nom: "Le lazaret de la Grande Chaloupe", type: "autre", ravine: "temporaire",
     description: `Au fond de la ravine de la Grande Chaloupe, les bâtiments de pierre de l'ancien lazaret, où l'on mettait autrefois en quarantaine les engagés arrivés par la mer. Murs épais, cours fermées, toits de tuile, un bassin, des manguiers et des tamarins. L'ironie n'échappe à personne.`,
     capacite: 14, defense: 3, discretion: 2, eau: "riviere", sol: 1, soleil: 2, souterrain: 1, acces: 2,
     stocks: { eau: 4, nourriture: 4, materiaux: 8 },

@@ -45,6 +45,38 @@
       {{#if lune.dateLue}}<p>{{localize "LAKOUR_SURVIE.Annee.DateLue" date=lune.dateLue}}</p>{{/if}}
     </div>
     {{/if}}
+    {{#if sens}}
+    <div class="survie-formulaire survie-sens-percevoir">
+      <h3><i class="fa-solid fa-ear-listen"></i> {{localize "LAKOUR_SURVIE.Percevoir.Titre"}}</h3>
+      {{#if sens.temps}}<p>{{sens.temps}}</p>{{/if}}
+      {{#if sens.odeur}}<p><i class="fa-solid fa-wind"></i> {{sens.odeur}}</p>{{/if}}
+      {{#if sens.ravine}}<p><i class="fa-solid fa-water"></i> {{sens.ravine}}</p>{{/if}}
+      {{#if sens.corps}}<p>{{sens.corps}}</p>{{/if}}
+      {{#if sens.musique}}<p><i class="fa-solid fa-music"></i> <em>{{sens.musique}}</em></p>{{/if}}
+      <ul class="survie-liste-simple">{{#each sens.accoutumance}}<li>{{nom}} — {{texte}}</li>{{/each}}</ul>
+      {{#if sens.nettoyes.length}}<ul class="survie-liste-simple">{{#each sens.nettoyes}}<li>{{localize "LAKOUR_SURVIE.Percevoir.Nettoye" nom=nom jour=jour n=tues facteur=facteur}}</li>{{/each}}</ul>{{/if}}
+    </div>
+    <div class="survie-formulaire" data-forme="noir">
+      <h3><i class="fa-solid fa-eye-slash"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.noir"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.MJ.Qui"}} <select name="acteur">{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.MJ.Action"}} <select name="action">{{#each sens.actionsNoir}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.Percevoir.Nuits"}} <input type="number" name="nuits" value="0" min="0" class="survie-petit"></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    <div class="survie-formulaire" data-forme="nettoyer">
+      <h3><i class="fa-solid fa-broom"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.nettoyer"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.Tableau.Region"}} <select name="region">{{#each regions}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.MJ.Site"}} <select name="site">{{#each sitesIci}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.Percevoir.Tues"}} <input type="number" name="tues" value="10" min="1" class="survie-petit"></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    <div class="survie-formulaire" data-forme="jouer">
+      <h3><i class="fa-solid fa-guitar"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.jouer"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.MJ.Qui"}} <select name="musiciens" multiple>{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.Percevoir.Air"}} <select name="air">{{#each sens.airs}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    {{/if}}
     {{/if}}
 
     {{#if (eq onglet "actions")}}

@@ -1,0 +1,178 @@
+{
+  "_id": "d3crfPUrVAWN2J3H",
+  "_key": "!tables!d3crfPUrVAWN2J3H",
+  "name": "La nuit — ce qu'on entend",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les sons de base du noir : d'abord le vent, puis la faune et les insectes. Ce qu'on imagine fait le reste.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "nuit-ce-qu-on-entend",
+      "sens": "nuit-ce-qu-on-entend"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "oTLpXDn0jg0tZirW",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.oTLpXDn0jg0tZirW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le vent d'abord, toujours : dans les filaos, sous les tôles, dans les feuilles de bananier. Il couvre tout, puis tombe d'un coup.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "s5Kg81K0FEDlji0d",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.s5Kg81K0FEDlji0d",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les grenouilles de la ravine, des centaines, qui chantent comme une seule. Tant qu'elles chantent, rien de gros ne passe près d'elles.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "GhinlvQCUA3rRgez",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.GhinlvQCUA3rRgez",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les grillons, et les margouillats qui claquent sur les murs (<em>tchik, tchik</em>) : le bruit ordinaire d'une nuit de La Réunion.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "38LCBareaSl0uaEl",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.38LCBareaSl0uaEl",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un tangue qui fouille les feuilles mortes en reniflant. On croit à des pas ; c'est une petite bête rayée qui cherche des vers.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CSkOqWJhDFQDSRVd",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.CSkOqWJhDFQDSRVd",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cri d'enfant, long, qui monte et retombe du côté des remparts. La Timise, le pétrel noir. Celui qui n'a pas encore l'habitude du noir ne le sait pas.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0DhFXYo2vSHQyKIc",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.0DhFXYo2vSHQyKIc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un chien, très loin, qui aboie trois fois puis se tait d'un coup.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oN1xC3N2VYUypuPv",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.oN1xC3N2VYUypuPv",
+      "type": "text",
+      "name": "",
+      "description": "<p>La ravine qui gronde plus fort que tout à l'heure : il a plu là-haut. Demain, le radier sera peut-être sous l'eau.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1mVcCIKdIzTgsAUj",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.1mVcCIKdIzTgsAUj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des pas qui traînent sur le bitume, réguliers, sans hâte. Un Livide errant. Il ne sait pas que vous êtes là.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "RJcX1hwwCZuSK3jp",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.RJcX1hwwCZuSK3jp",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le coq du voisin, à trois heures du matin, qui se trompe d'heure comme avant.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "N66ntPbk5shE0nX2",
+      "_key": "!tables.results!d3crfPUrVAWN2J3H.N66ntPbk5shE0nX2",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien. Le silence complet, d'un coup. Ce n'est pas bon signe (table « La nuit — les signes »).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

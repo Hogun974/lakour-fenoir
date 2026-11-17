@@ -11,6 +11,7 @@ import { BESTIAIRE } from "./bestiaire.mjs";
 import { VOIES_AUTONOMIE, INSTALLATIONS } from "./installations.mjs";
 import { texteReputations } from "./reputations.mjs";
 import { PAGES_JOUEUR_ESPRIT, PAGES_MJ_ESPRIT } from "./esprit.mjs";
+import { PAGES_JOUEUR_SENS } from "./sens.mjs";
 import { FETES_FENOIR } from "../scripts/fetes.js";
 import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES, COURS_TEXTE } from "./marche.mjs";
 import { EVENEMENTS } from "./evenements.mjs";
@@ -19,6 +20,7 @@ const nomRegion = cle => REGIONS.find(r => r.cle === cle)?.nom ?? cle;
 const nomInstallation = cle => INSTALLATIONS.find(i => i.system.cle === cle)?.name ?? cle;
 const ZONES_TEXTE = { littoral: "littoral", hauts: "les Hauts", cirque: "cirque", volcan: "volcan", foret: "forêt" };
 const NIVEAU = ["nul", "faible", "moyen", "fort"];
+const virgule = n => String(n).replace(".", ",");
 
 // ================================================================ Guide du joueur
 const GUIDE_JOUEUR = journal({ cle: "guide-du-joueur", nom: "Fénoir — Guide du joueur", pack: "guides", pages: [
@@ -132,6 +134,7 @@ Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs e
   { cle: "enfances", titre: "Les enfances", texte: ENFANCES.map(e => `**${e.nom}** (${Object.entries(e.modificateurs).map(([c, n]) => `${c} ${n > 0 ? "+" : ""}${n}`).join(", ")}${e.incapacites.length ? ` ; incapacité : ${e.incapacites.join(", ")}` : ""}) — ${sansBalises(e.description)}`).join("\n\n") },
   { cle: "passes", titre: "Les passés", texte: PASSES.map(p => `**${p.name}** — ${sansBalises(p.system.description)} *Compétences : ${Object.entries(p.system.competences).map(([c, n]) => `${c} ${n}`).join(", ")}.*`).join("\n\n") },
   ...PAGES_JOUEUR_ESPRIT,
+  ...PAGES_JOUEUR_SENS,
   { cle: "traits", titre: "Les traits", texte: TRAITS.map(t => `**${t.nom}** — ${sansBalises(t.description)}${t.incompatibles.length ? ` *(Incompatible : ${t.incompatibles.map(c => TRAITS.find(x => x.cle === c)?.nom ?? c).join(", ")}.)*` : ""}`).join("\n\n") }
 ] });
 
@@ -320,7 +323,8 @@ const BESTIAIRE_J = journal({ cle: "bestiaire", nom: "Bestiaire de Fénoir", pac
   { cle: "regles", titre: "Combattre", texte: `Chaque succès de combat ou de tir ôte 1 de **résistance** à une créature ; à 0, elle est hors d'état (un Livide ne l'est vraiment que le crâne détruit). Chaque créature encore debout attaque avec ses **dés** : un 6 touche (1 blessure) ; pour un Livide, un second 6 au dé de morsure, c'est une morsure. Tirer fait du bruit. Fuir est souvent la meilleure option.` },
   ...BESTIAIRE.map(b => ({ cle: b.cle, titre: b.nom, texte: `${sansBalises(b.description)}
 
-- **Dés d'attaque** : ${b.des} — **résistance** : ${b.resistance} — **vitesse** : ${b.vitesse} — **sens** : ${b.sens}.
+- **Dés d'attaque** : ${b.des} — **résistance** : ${b.resistance} — **vitesse** : ${b.vitesse} — **sens** : ${b.sens}.${b.perception ? `
+- **Perception** : vue ${virgule(b.perception.vue)}, ouïe ${virgule(b.perception.ouie)}, odorat ${virgule(b.perception.odorat)} (un vivant : 1)${b.perception.froid ? " ; figé par le froid des nuits au-dessus de 400 m" : ""} (journal « Percevoir dans le noir »).` : ""}
 - **Comportement** : ${sansBalises(b.comportement)}
 - **Faiblesse** : ${sansBalises(b.faiblesse)}` }))
 ] });

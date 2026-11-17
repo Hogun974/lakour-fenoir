@@ -114,14 +114,14 @@ export const INSTALLATIONS = [
   installation({ cle: "basse-cour", nom: "Basse-cour", categorie: "nourriture",
     description: `Des poules péi, des canards, un coq qui chante trop tôt. Des œufs tous les jours, de la viande les jours de fête, et un réveil que tout le quartier entend.`,
     niveaux: [
-      { cout: { materiaux: 3, nourriture: 2, travail: 6 }, effets: { production: { nourriture: 1 }, conditions: { delai: 20 }, bruit: 1, visibilite: 1 } },
-      { cout: { materiaux: 5, nourriture: 2, travail: 8 }, requiert: { savoirs: ["elevage"] }, effets: { production: { nourriture: 2 }, conditions: { delai: 20 }, bruit: 1, visibilite: 1 } }
+      { cout: { materiaux: 3, nourriture: 2, travail: 6 }, effets: { production: { nourriture: 1 }, conditions: { delai: 20 }, bruit: 1, visibilite: 1, odeur: 1 } },
+      { cout: { materiaux: 5, nourriture: 2, travail: 8 }, requiert: { savoirs: ["elevage"] }, effets: { production: { nourriture: 2 }, conditions: { delai: 20 }, bruit: 1, visibilite: 1, odeur: 1 } }
     ] }),
   installation({ cle: "enclos-a-cabris", nom: "Enclos à cabris", categorie: "nourriture",
     description: `Un enclos et un abri pour quelques cabris : du lait, des chevreaux, de la viande pour un cari, du fumier pour le potager. Ils mangent n'importe quoi, et s'échappent dès qu'on regarde ailleurs.`,
     niveaux: [
-      { cout: { materiaux: 4, travail: 8 }, effets: { production: { nourriture: 1 }, conditions: { delai: 30 } } },
-      { cout: { materiaux: 6, travail: 12 }, requiert: { savoirs: ["elevage"] }, effets: { production: { nourriture: 3 }, conditions: { delai: 60 }, bruit: 1, sol: 0.01 } }
+      { cout: { materiaux: 4, travail: 8 }, effets: { production: { nourriture: 1 }, conditions: { delai: 30 }, odeur: 1 } },
+      { cout: { materiaux: 6, travail: 12 }, requiert: { savoirs: ["elevage"] }, effets: { production: { nourriture: 3 }, conditions: { delai: 60 }, bruit: 1, sol: 0.01, odeur: 1 } }
     ] }),
   installation({ cle: "bassin-a-tilapias", nom: "Bassin à tilapias", categorie: "nourriture",
     description: `Un bassin bâché ou maçonné où grossissent des tilapias nourris de déchets et de lentilles d'eau ; au second niveau, l'eau du bassin arrose le potager et revient filtrée par une petite pompe.`,
@@ -179,7 +179,7 @@ export const INSTALLATIONS = [
   installation({ cle: "sechoir-fumoir", nom: "Séchoir et fumoir", categorie: "stockage",
     description: `Claies au soleil pour les fruits, les piments, le poisson ; un fumoir de tôle pour la viande boucanée. Ce qui est séché ne se gâte plus.`,
     niveaux: [
-      { cout: { materiaux: 3, travail: 6 }, effets: { conservation: true, visibilite: 1 } }
+      { cout: { materiaux: 3, travail: 6 }, effets: { conservation: true, visibilite: 1, odeur: 1 } }
     ] }),
   installation({ cle: "reserve-etanche", arbre: "moderne", nom: "Réserve étanche", categorie: "stockage",
     description: `Fûts à couvercle, bocaux, sacs hermétiques, étagères hors du sol, pièges à rats : la chaleur humide ne pourrit plus les réserves.`,
@@ -217,7 +217,7 @@ export const INSTALLATIONS = [
   installation({ cle: "cuisine-commune", arbre: "lontan", nom: "Cuisine commune", categorie: "vie",
     description: `Un feu de bois sous un auvent, de grandes marmites, une table pour tout le monde. Un cari partagé tient un groupe ensemble mieux qu'un discours. La fumée, elle, monte haut.`,
     niveaux: [
-      { cout: { materiaux: 3, pieces: 1, travail: 6 }, effets: { moral: 1, visibilite: 1 } }
+      { cout: { materiaux: 3, pieces: 1, travail: 6 }, effets: { moral: 1, visibilite: 1, odeur: 1 } }
     ] }),
 
   // ---------------------------------------------------------------- Communication

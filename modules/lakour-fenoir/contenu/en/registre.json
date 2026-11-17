@@ -2205,8 +2205,8 @@
   "registre/bestiaire/coureur": {
     "_nom": "Coureur",
     "sens": {
-      "fr": "vue, ouïe",
-      "en": "sight, hearing"
+      "fr": "vue, ouïe, odeur",
+      "en": "sight, hearing, smell"
     },
     "description": {
       "fr": "<p>Un mort tout récent, relevé depuis quelques heures : il court encore, maladroitement, et se jette sur sa proie. On n'en voit que les premiers jours.</p>",
@@ -2232,8 +2232,12 @@
       "en": "<p>Feels neither pain nor heat: it walks through flames and barbed wire without slowing.</p>"
     },
     "faiblesse": {
-      "fr": "<p>Ses yeux brûlés : il ne suit que les bruits.</p>",
-      "en": "<p>Its burnt eyes: it only follows sounds.</p>"
+      "fr": "<p>Ses yeux brûlés : il ne voit rien, il suit les bruits et l'odeur des vivants. Qui se tient immobile, sans un bruit et au vent de lui, peut le laisser passer à un pas.</p>",
+      "en": "<p>Its burnt eyes: it sees nothing, it follows the sounds and the smell of the living. Someone who stays still, without a sound and upwind of it, can let it pass a step away.</p>"
+    },
+    "sens": {
+      "fr": "ouïe fine, odeur",
+      "en": "sharp hearing, smell"
     }
   },
   "registre/bestiaire/livide-des-hauts": {
@@ -2302,6 +2306,10 @@
     "faiblesse": {
       "fr": "<p>Il tient à sa vie plus qu'à la bande : un coup dur et il fuit.</p>",
       "en": "<p>He values his life more than the gang: one hard blow and he runs.</p>"
+    },
+    "sens": {
+      "fr": "vue, ouïe",
+      "en": "sight, hearing"
     }
   },
   "registre/bestiaire/rat-des-reserves": {

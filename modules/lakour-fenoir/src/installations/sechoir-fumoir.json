@@ -55,6 +55,7 @@
           "sol": 0,
           "renseignements": false,
           "bonus": {},
+          "odeur": 1,
           "bras": {
             "tache": "cuisine",
             "nombre": 1

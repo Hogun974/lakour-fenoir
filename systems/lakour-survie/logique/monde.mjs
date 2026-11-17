@@ -43,6 +43,9 @@
 //   (0,4 % × force × (1 + visibilité), méfiante ÷ 2, force ceil(1,5 × force) + 1), visite d'une faction neutre ou amicale,
 //   chiens errants (2 %, force 2), accident (1 %). (Équilibrage du 2026-11-04, docs/survie-equilibrage.md : avant, 30 %, 4 % et
 //   1 % donnaient huit assauts par mois à un abri enraciné.)
+//   Lot « sens » (docs/equilibre-sens.md) : l'odeur de l'abri (0 à 4, bilan.odeur) ajoute 2 % par point à la horde et 1 % aux
+//   Livides errants ; celle que sentent les bêtes (bilan.odeurBetes, avec les morts laissés sans repos) 0,5 % aux chiens errants.
+//   Une odeur nulle (le cas de presque tous les abris) ne change rien au tirage.
 // - Faits : `public` selon ce que le groupe perçoit d'où il est (région courante ; fumée et convois des voisines ; nouvelles
 //   par la radio, ou par le téléphone tant qu'il marche dans sa région ; ce que toute l'île voit).
 // - Lot « savoirs » (docs/equilibre-savoirs.md) : le jour rouge, chaque région de la trajectoire reçoit du bois tombé
@@ -59,6 +62,7 @@ import { cleTexteDe, avecPreposition } from "./textes.mjs";
 import { natureInitiale, regenererNature } from "./abri.mjs";
 import { phaseDuJour, saisonDuJour, dateDuJour } from "./temps.mjs";
 import { partPillage, reseauxActifs } from "./renseignements.mjs";
+import { REGLES_SENS } from "./sens.mjs";
 
 export const REGLES_MONDE = {
   infestationDepart: 0.1,
@@ -419,19 +423,20 @@ function appliquerEvenement(monde, contenu, e, r, jour, h, fait, nouvelId, regio
   fait(r.cle, e.cle, `${region} : ${nom}. ${texte}`.trim(), e.public === false ? "region" : "voisins", { evenement: e.cle, cleTexte: "evenement", ...touche }, { region, nom, texte });
 }
 
-// Les menaces du jour contre l'abri (§1.7). abri : { visibilite, bruit, defense }.
-export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jour ?? 0, phase = phaseDuJour(jour), visibilite = 0, bruit = 0 } = {}) {
+// Les menaces du jour contre l'abri (§1.7). abri : { visibilite, bruit, defense, odeur, odeurBetes }.
+export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jour ?? 0, phase = phaseDuJour(jour), visibilite = 0, bruit = 0, odeur = 0, odeurBetes = 0 } = {}) {
   const R = REGLES_MONDE;
   const reg = monde?.regions?.[region];
   if (!reg) return [];
   // Sous le vacarme du cyclone (lot « savoirs »), les Livides n'entendent rien : le bruit de l'abri ne compte pas ce jour-là.
   const vis = borner(Number(visibilite) || 0, 0, 10), br = sousLeVacarme(monde, region, jour) ? 0 : borner(Number(bruit) || 0, 0, 10);
+  const O = REGLES_SENS.odeur.menace, od = borner(Number(odeur) || 0, 0, 4), odB = borner(Number(odeurBetes) || 0, 0, 4);
   const menaces = [];
   for (const ho of monde.hordes ?? []) {
     if (ho.region !== region) continue;
-    if (chance(R.menace.horde + R.menace.hordeBruit * br + R.menace.hordeVisibilite * vis, hasard)) menaces.push({ type: "horde", force: 2 * ho.taille + 1, horde: ho.id, texte: `Une horde (taille ${ho.taille}) trouve l'abri.`, cle: "menace-horde", params: { taille: ho.taille } });
+    if (chance(R.menace.horde + R.menace.hordeBruit * br + R.menace.hordeVisibilite * vis + O.horde * od, hasard)) menaces.push({ type: "horde", force: 2 * ho.taille + 1, horde: ho.id, texte: `Une horde (taille ${ho.taille}) trouve l'abri.`, cle: "menace-horde", params: { taille: ho.taille } });
   }
-  if (reg.infestation > 0.2 && chance(reg.infestation * R.menace.livides * (1 + br / 10) + 0.01 * vis, hasard)) {
+  if (reg.infestation > 0.2 && chance(reg.infestation * R.menace.livides * (1 + br / 10) + 0.01 * vis + O.livides * od, hasard)) {
     menaces.push({ type: "livides", force: Math.max(1, Math.round(reg.infestation)), texte: "Des Livides errants rôdent autour de l'abri.", cle: "menace-livides", params: {} });
   }
   for (const [f, force] of Object.entries(reg.factions ?? {})) {
@@ -445,7 +450,7 @@ export function tirerMenaces(monde, contenu, hasard, { region, jour = monde?.jou
       menaces.push({ type: "visite", force: 0, faction: f, attitude, texte: `${def?.nom ?? f} vient à la rencontre du groupe.`, cle: "menace-visite", params: { faction: def?.nom ?? f } });
     }
   }
-  if (CLES_PHASES.indexOf(phase) >= 1 && chance(0.02, hasard)) menaces.push({ type: "animaux", force: 2, texte: "Une meute de chiens errants, affamés.", cle: "menace-animaux", params: {} });
+  if (CLES_PHASES.indexOf(phase) >= 1 && chance(0.02 + O.animaux * odB, hasard)) menaces.push({ type: "animaux", force: 2, texte: "Une meute de chiens errants, affamés.", cle: "menace-animaux", params: {} });
   if (chance(0.01, hasard)) menaces.push({ type: "accident", force: 0, texte: "Un accident à l'abri (chute, feu de cuisine, outil qui casse).", cle: "menace-accident", params: {} });
   return menaces.sort((a, b) => b.force - a.force).slice(0, R.menacesMax);
 }

@@ -1,0 +1,148 @@
+{
+  "_id": "mAAaKafkFizy1TUH",
+  "_key": "!tables!mAAaKafkFizy1TUH",
+  "name": "La nuit — les signes",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>L'alarme naturelle et les fausses alertes. Quand une horde entre vraiment dans la région, le système le dit (les grenouilles se taisent).</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "nuit-les-signes",
+      "sens": "nuit-les-signes"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "xOy3ZTKDeJFTCL8A",
+      "_key": "!tables.results!mAAaKafkFizy1TUH.xOy3ZTKDeJFTCL8A",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les grenouilles se taisent d'un coup, et les insectes avec : un trou de silence qui avance dans la ravine. Une horde passe (le système le dit quand c'est le cas).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "H5atWEC2F6ctfdk4",
+      "_key": "!tables.results!mAAaKafkFizy1TUH.H5atWEC2F6ctfdk4",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le silence se fait par vagues, d'abord au loin, puis plus près : quelque chose remonte le chemin, et c'est beaucoup.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "3dSQ3U8raL14r94B",
+      "_key": "!tables.results!mAAaKafkFizy1TUH.3dSQ3U8raL14r94B",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les oiseaux d'un manguier s'envolent tous ensemble, en pleine nuit, en criant.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1ZfvkHIHXWulyJMT",
+      "_key": "!tables.results!mAAaKafkFizy1TUH.1ZfvkHIHXWulyJMT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une odeur douceâtre et lourde, portée par le vent : un corps. Un Livide des Bas qui se défait, ou un cabri crevé dans la ravine ; une fois sur deux, c'est une bête, et l'on a eu peur pour rien.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SEx4fylyVGZVVVSs",
+      "_key": "!tables.results!mAAaKafkFizy1TUH.SEx4fylyVGZVVVSs",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les chiens de l'abri grognent bas, le nez vers le même coin de nuit, et n'aboient pas.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nW4Yu6rNletDtO77",
+      "_key": "!tables.results!mAAaKafkFizy1TUH.nW4Yu6rNletDtO77",
+      "type": "text",
+      "name": "",
+      "description": "<p>Plus un bruit de pas ni de voix dans la case d'à côté, alors qu'il y en avait hier soir.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nEBsV1z7l1NfMQI3",
+      "_key": "!tables.results!mAAaKafkFizy1TUH.nEBsV1z7l1NfMQI3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une lumière qui s'éteint sur la crête d'en face, juste au moment où l'on regarde.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xbyM1KbpHZoH2AVq",
+      "_key": "!tables.results!mAAaKafkFizy1TUH.xbyM1KbpHZoH2AVq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les grenouilles chantent, les grillons aussi, le vent passe : une nuit ordinaire. On peut dormir.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

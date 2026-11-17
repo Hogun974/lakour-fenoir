@@ -10,7 +10,11 @@
    "population": 5,
    "climat": {
     "soleil": 2,
-    "pluie": 2
+    "pluie": 2,
+    "pluieAn": {
+     "bas": 1600,
+     "hauts": 3000
+    }
    },
    "description": "<p>Le chef-lieu s'étale du Barachois jusqu'aux pentes de La Montagne et du Brûlé. Au jour zéro, les bouchons remontent le boulevard Sud et les sirènes ne se taisent plus autour du CHU de Bellepierre. Les cases créoles de la rue de Paris ferment leurs barreaux, les barres du Chaudron allument toutes leurs fenêtres, et sur le front de mer, des familles regardent les avions décoller de Gillot comme on regarde partir le dernier car.</p><p>On y trouve de tout : pharmacies, quincailleries, supermarchés, casernes. Et cent cinquante mille personnes qui veulent la même chose que vous.</p>",
    "apres": "<p>La ville tombe vite : densité, hôpital débordé, embouteillages qui deviennent des pièges. Pendant l'effondrement, le centre grouille et des hordes en sortent par la route du Littoral et la RN2. Après deux mois, la chaleur fait son œuvre dans les rues basses : les Livides s'effondrent dans les caniveaux, et ce sont les Sans-Lune qui tiennent les carrefours. Les hauts de La Montagne et du Brûlé, plus frais, gardent leurs morts plus longtemps.</p>",
@@ -127,7 +131,11 @@
    "population": 3,
    "climat": {
     "soleil": 2,
-    "pluie": 2
+    "pluie": 2,
+    "pluieAn": {
+     "bas": 2000,
+     "hauts": 4000
+    }
    },
    "description": "<p>De Gillot à Sainte-Suzanne, la plaine littorale du Nord-Est alterne zones commerciales, champs de canne et lotissements. L'aéroport est le cœur battant du jour zéro : files d'attente jusqu'au parking, rotations ajoutées en urgence, rumeurs de passagers malades débarqués de nuit. Plus à l'est, le phare de Bel-Air veille toujours sur la pointe, et la petite marina de Sainte-Marie dandine ses barques.</p><p>Les vergers des hauts de Sainte-Marie croulent de letchis en décembre.</p>",
    "apres": "<p>Les pistes de Gillot se vident après la dernière rotation, puis s'encombrent d'avions qui ne repartiront pas. Les zones commerciales sont pillées en une semaine. Plus tard, c'est une région de passage entre la capitale et l'Est : les bandes la traversent, et la plaine de canne, haute et jamais coupée, cache tout ce qui marche.</p>",
@@ -233,7 +241,11 @@
    "population": 1,
    "climat": {
     "soleil": 3,
-    "pluie": 1
+    "pluie": 1,
+    "pluieAn": {
+     "bas": 1000,
+     "hauts": 2500
+    }
    },
    "description": "<p>Douze kilomètres coincés entre la falaise et l'océan, de Saint-Denis à La Possession. La nouvelle route du Littoral court sur sa digue et son viaduc jusqu'à la Grande Chaloupe ; au-delà, l'ancienne route serre la falaise sous ses filets et ses merlons. Au jour zéro, c'est un tuyau : deux files immobiles, des klaxons, des gens qui marchent entre les voitures avec leurs enfants sur les épaules.</p><p>Au creux de la Grande Chaloupe dorment le vieux lazaret de pierre et la gare d'autrefois. Le chemin des Anglais, pavé il y a deux siècles, passe au-dessus de tout cela.</p>",
    "apres": "<p>La route devient un cimetière de tôle que les éboulements et la houle referment par morceaux. Qui la tient contrôle le passage entre le Nord et l'Ouest : la Garnison du Quai y pose vite des chicanes. Le chemin des Anglais reste la voie des piétons prudents.</p>",
@@ -351,7 +363,11 @@
    "population": 4,
    "climat": {
     "soleil": 3,
-    "pluie": 1
+    "pluie": 1,
+    "pluieAn": {
+     "bas": 550,
+     "hauts": 1500
+    }
    },
    "description": "<p>Les grues du port Est, les cuves, les darses et les quais : c'est par ici qu'arrivent le carburant, les conteneurs, presque tout ce que mange l'île. La centrale du Port Est ronronne au bord de l'eau. Au jour zéro, les dockers bloquent l'entrée, des familles supplient pour une place sur un cargo, et la Rivière des Galets roule ses galets sous le pont comme si de rien n'était.</p><p>La Possession, plus verte, monte vers Dos d'Âne, d'où l'on voit le rempart de Mafate.</p>",
    "apres": "<p>Le port devient une forteresse : la Garnison du Quai s'y retranche avec ce qui reste d'uniformes et de conteneurs. La centrale s'arrête quand le dernier bioliquide est brûlé. Le lit de la Rivière des Galets reste l'une des portes de Mafate, et beaucoup de réfugiés la prennent.</p>",
@@ -485,7 +501,11 @@
    "population": 4,
    "climat": {
     "soleil": 3,
-    "pluie": 1
+    "pluie": 1,
+    "pluieAn": {
+     "bas": 500,
+     "hauts": 1500
+    }
    },
    "description": "<p>La côte sous le vent : l'étang de Saint-Paul et ses brèdes, la zone de Savanna et son hypermarché, puis Boucan, Saint-Gilles et l'Hermitage, avec le seul vrai lagon de l'île derrière sa barrière de corail. Au jour zéro, il fait beau, terriblement beau. Les touristes cherchent un vol, les plagistes ramassent les transats, et sur la route des Tamarins les gyrophares descendent vers le sud sans s'arrêter.</p><p>Les hauts de Saint-Paul, Bellemène, Le Guillaume, montent dans les champs et les savanes sèches.</p>",
    "apres": "<p>Le littoral Ouest est une des premières régions que la chaleur nettoie : dès le troisième mois, ses rues sont presque vides de Livides. Il se remplit alors d'humains : Ferrailleurs dans les zones commerciales, pêcheurs au port de Saint-Gilles, bandes qui se disputent les villas. L'eau y est rare : sans réseau, on vit de citernes et de forages.</p>",
@@ -619,7 +639,11 @@
    "population": 2,
    "climat": {
     "soleil": 2,
-    "pluie": 2
+    "pluie": 2,
+    "pluieAn": {
+     "bas": 900,
+     "hauts": 2000
+    }
    },
    "description": "<p>Au-dessus des savanes, la route du Maïdo grimpe à travers les champs de géranium, les cryptomérias et la forêt de tamarins des Hauts jusqu'au belvédère, à plus de deux mille mètres, d'où l'on plonge sur Mafate. Petite France, Le Guillaume, Trois-Bassins des Hauts, le Tévelave plus au sud : des bourgs de cases en bois sous tôle, des cuves à eau et des chiens qui aboient au moindre bruit de moteur.</p><p>Au jour zéro, on y entend la nouvelle à la radio, et on ferme le portail.</p>",
    "apres": "<p>Les Hauts de l'Ouest paraissent un refuge pendant les premières semaines, et beaucoup y montent. Mais le frais conserve les Livides, et les familles qui s'y sont réfugiées puis éteintes deviennent, des mois plus tard, des troupes lentes qui errent dans la brume. Les incendies de saison sèche, sans pompiers, ravagent la forêt.</p>",
@@ -738,7 +762,11 @@
    "population": 3,
    "climat": {
     "soleil": 3,
-    "pluie": 1
+    "pluie": 1,
+    "pluieAn": {
+     "bas": 600,
+     "hauts": 1500
+    }
    },
    "description": "<p>Saint-Leu, ses ruelles, son port de poche et les parapentes qui tournent au-dessus de la falaise ; plus loin, Les Avirons et l'Étang-Salé avec sa plage de sable noir et sa forêt de filaos. Les murs de l'ancienne sucrerie de Stella dominent la côte. Au jour zéro, les pêcheurs rentrent tôt, les surfeurs restent à l'eau, et la route des Tamarins se bouche à hauteur des échangeurs.</p>",
    "apres": "<p>Une région moyenne en tout : assez peuplée pour être dangereuse au début, assez sèche et chaude pour se vider plus tard. Les forêts de filaos de l'Étang-Salé deviennent un abri pour ceux qui évitent la route. Les pêcheurs du Sud y poussent leurs barques.</p>",
@@ -859,7 +887,11 @@
    "population": 5,
    "climat": {
     "soleil": 3,
-    "pluie": 1
+    "pluie": 1,
+    "pluieAn": {
+     "bas": 900,
+     "hauts": 2000
+    }
    },
    "description": "<p>La capitale du Sud et sa voisine : le front de mer de Saint-Pierre, son port, son marché couvert, le grand hôpital du Sud ; Saint-Louis, la sucrerie et la centrale du Gol, Pierrefonds et son aérodrome, son quartier militaire. Au jour zéro, le Sud est en fête d'un samedi de décembre, puis les urgences débordent sur le parking, et la RN1 se ferme sur un accident que personne ne vient dégager.</p>",
    "apres": "<p>Comme Saint-Denis, la ville tombe tôt et fort. Le quartier militaire de Pierrefonds tient quelques semaines. Après deux mois, la chaleur du Sud vide les rues de leurs Livides ; les Barques du Sud tiennent le port, le Dispensaire tient ce qui reste de l'hôpital, et entre eux se joue un marché fragile de poisson contre médicaments.</p>",
@@ -992,7 +1024,11 @@
    "population": 3,
    "climat": {
     "soleil": 2,
-    "pluie": 2
+    "pluie": 2,
+    "pluieAn": {
+     "bas": 1200,
+     "hauts": 2500
+    }
    },
    "description": "<p>Le Tampon s'étire en kilomètres numérotés le long de la RN3, du Douzième au Vingt-Troisième, puis la route sort des maisons et monte dans les prairies de la Plaine des Cafres : vaches, barbelés, fermes laitières, Bourg-Murat et son observatoire du volcan. L'Entre-Deux, perché sur son éperon entre deux rivières, garde ses cases créoles et ses jardins. Au jour zéro, il fait frais là-haut, et l'on allume la cheminée.</p>",
    "apres": "<p>Une région à deux visages : la ville du Tampon, très peuplée, tombe comme le littoral mais ne se décompose pas aussi vite ; la Plaine des Cafres, vide et froide, voit la Coopérative des Plaines s'organiser autour des fermes. Le brouillard y est quotidien, et les vieux Livides des Hauts y deviennent légion au fil des mois.</p>",
@@ -1109,7 +1145,11 @@
    "population": 2,
    "climat": {
     "soleil": 2,
-    "pluie": 3
+    "pluie": 3,
+    "pluieAn": {
+     "bas": 2500,
+     "hauts": 5000
+    }
    },
    "description": "<p>Après Saint-Joseph et Petite-Île, la côte devient sauvage : falaises noires, vacoas, forêt de Mare-Longue, champs de vanille sous les arbres, Saint-Philippe et ses marines minuscules, puis le Grand Brûlé, où les coulées de la Fournaise descendent jusqu'à l'océan en coupant la RN2. Il pleut beaucoup, tout pousse, et les gens se connaissent.</p><p>Sous les coulées récentes courent des tunnels de lave que seuls quelques guides fréquentent.</p>",
    "apres": "<p>Peu peuplé, humide, chaud en bas : le Sud sauvage n'est jamais un enfer et devient vite l'une des régions les plus vivables de l'île, au prix de l'isolement. Les éruptions y coupent la route des Laves ; les Pèlerins de la Lave y descendent de Sainte-Rose pour prêcher.</p>",
@@ -1234,7 +1274,11 @@
    "population": 0,
    "climat": {
     "soleil": 2,
-    "pluie": 2
+    "pluie": 2,
+    "pluieAn": {
+     "bas": 4000,
+     "hauts": 6000
+    }
    },
    "description": "<p>La route du Volcan quitte Bourg-Murat, traverse des landes de branles puis la Plaine des Sables, un désert rouge et noir sans un arbre, et s'arrête au Pas de Bellecombe, au bord du rempart. En contrebas, l'Enclos, le cône de la Fournaise, ses cratères et ses fumerolles. Au jour zéro, quelques randonneurs redescendent du sommet sans savoir encore ce qui se passe en bas. Le gîte du volcan affiche complet.</p>",
    "apres": "<p>Personne ne vit là-haut, et c'est sa force comme sa faiblesse : ni eau courante, ni bois, ni cultures possibles, un froid mordant la nuit. Les rares Livides qui y montent y restent des mois, figés par le froid. Quand la Fournaise se réveille, l'Enclos s'illumine, et toute l'île la regarde.</p>",
@@ -1335,7 +1379,11 @@
    "population": 3,
    "climat": {
     "soleil": 1,
-    "pluie": 3
+    "pluie": 3,
+    "pluieAn": {
+     "bas": 3500,
+     "hauts": 7000
+    }
    },
    "description": "<p>La côte au vent : la canne à perte de vue autour de Saint-André et de la sucrerie de Bois-Rouge, les temples tamouls aux couleurs vives, Bras-Panon et ses bichiques, Saint-Benoît au bord de la rivière des Marsouins, puis la route qui longe l'océan jusqu'à Sainte-Rose et Notre-Dame-des-Laves. Il pleut, souvent et fort ; les rivières descendent en torrents. Plus haut, les centrales de Takamaka et de la Rivière de l'Est turbinent l'eau des montagnes.</p><p>Au jour zéro, la pluie retient les gens chez eux, ce qui en sauve beaucoup.</p>",
    "apres": "<p>Grâce à l'hydraulique, l'Est garde du courant plus longtemps que le reste de l'île, quelque temps, par îlots. Sa chaleur humide décompose les Livides très vite. Mais ses rivières en crue coupent les routes, et les cyclones y frappent fort. Les Pèlerins de la Lave s'installent à Sainte-Rose.</p>",
@@ -1474,7 +1522,11 @@
    "population": 1,
    "climat": {
     "soleil": 1,
-    "pluie": 3
+    "pluie": 3,
+    "pluieAn": {
+     "bas": 4000,
+     "hauts": 6000
+    }
    },
    "description": "<p>Entre le col de Bellevue et la descente sur Saint-Benoît, la RN3 traverse un bourg de jardins, de goyaviers et de brume. Au-dessus, par la route forestière, les forêts de Bébour et de Bélouve : tamarins des Hauts couverts de mousse, fougères arborescentes, et le gîte de Bélouve au bord du vide, face au cirque de Salazie et au Trou de Fer. Au jour zéro, la pluie fine ne s'arrête pas, et la radio grésille.</p>",
    "apres": "<p>Peu peuplée, très humide, fraîche : la Plaine des Palmistes reste longtemps calme, puis voit passer les réfugiés de l'Est et du Tampon par la route des Plaines. Les forêts offrent bois, gibier et cachettes ; leurs vieux Livides, conservés par le frais, s'y perdent et s'y accumulent lentement.</p>",
@@ -1594,7 +1646,11 @@
    "population": 1,
    "climat": {
     "soleil": 2,
-    "pluie": 2
+    "pluie": 2,
+    "pluieAn": {
+     "bas": 1700,
+     "hauts": 2500
+    }
    },
    "description": "<p>On y monte par la route aux quatre cents virages depuis Saint-Louis, tunnels à une voie et précipices compris. Au bout, un bourg de cases colorées au pied du Piton des Neiges, ses thermes, ses lentilles, ses vignes en terrasses, ses broderies. Îlet à Cordes et Bras-Sec s'accrochent plus loin sur leurs plateaux. Au jour zéro, le dernier car jaune redescend presque vide, et les éboulis surveillent la route comme toujours.</p>",
    "apres": "<p>Une seule route, fragile : quand elle tombe sous un éboulement, Cilaos devient une île dans l'île. Peu de Livides au début, mais le cirque est frais et les garde ; les années passant, ses chemins se peuplent de silhouettes immobiles qui attendent le soleil. Les terrasses cultivées, elles, nourrissent qui sait s'en occuper.</p>",
@@ -1714,7 +1770,11 @@
    "population": 1,
    "climat": {
     "soleil": 1,
-    "pluie": 3
+    "pluie": 3,
+    "pluieAn": {
+     "bas": 3000,
+     "hauts": 5000
+    }
    },
    "description": "<p>Le cirque vert : on y entre par la route de Salazie depuis Saint-André, le long de la Rivière du Mât, entre les cascades du Voile de la Mariée. Salazie, Hell-Bourg et ses cases créoles à lambrequins, Grand Îlet sous ses treilles de chouchous, et tout au bout le col des Bœufs, porte de Mafate. Il pleut, la brume monte l'après-midi, et chaque ravine chante.</p>",
    "apres": "<p>Isolée par une route que les crues coupent souvent, Salazie nourrit bien ceux qui y restent : chouchous, cresson, camarons, bois. Ses Livides, conservés par le frais et l'ombre, s'entassent avec le temps au fond des ravines et sur les sentiers. Les Familles des Îlets y descendent troquer.</p>",
@@ -1846,7 +1906,11 @@
    "population": 0,
    "climat": {
     "soleil": 2,
-    "pluie": 2
+    "pluie": 2,
+    "pluieAn": {
+     "bas": 1800,
+     "hauts": 3000
+    }
    },
    "description": "<p>Le cirque sans route. On y entre à pied par le col des Bœufs, le Maïdo, le col du Taïbit, la canalisation des Orangers ou le lit de la Rivière des Galets ; l'hélicoptère y monte les vivres. Une quinzaine d'îlets, La Nouvelle, Marla, Roche-Plate, Aurère, Îlet à Bourse, quelques centaines d'habitants, des panneaux solaires sur chaque toit, des sources captées et des sentiers que les anciens connaissent les yeux fermés.</p><p>Au jour zéro, Mafate apprend la nouvelle par la radio, comme le reste du monde. Puis plus rien ne monte.</p>",
    "apres": "<p>Pauvre en tout ce qui se pille, riche de ce qui se cultive et se capte, Mafate est longtemps l'endroit le plus sûr de l'île : peu de monde, donc peu de morts. Mais les réfugiés y affluent par tous les sentiers, et certains montent malades. Les Familles des Îlets en gardent les cols ; elles accueillent ceux qui travaillent et refoulent ceux qui exigent.</p>",
@@ -2313,6 +2377,7 @@
    "soleil": 2,
    "souterrain": 1,
    "acces": 2,
+   "ravine": "temporaire",
    "stocks": {
     "eau": 4,
     "nourriture": 4,
@@ -6728,6 +6793,7 @@
       "sol": 0,
       "renseignements": false,
       "bonus": {},
+      "odeur": 1,
       "bras": {
        "tache": "elevage",
        "nombre": 1
@@ -6778,6 +6844,7 @@
       "sol": 0,
       "renseignements": false,
       "bonus": {},
+      "odeur": 1,
       "bras": {
        "tache": "elevage",
        "nombre": 1
@@ -6840,6 +6907,7 @@
       "sol": 0,
       "renseignements": false,
       "bonus": {},
+      "odeur": 1,
       "bras": {
        "tache": "elevage",
        "nombre": 1
@@ -6889,6 +6957,7 @@
       "sol": 0.01,
       "renseignements": false,
       "bonus": {},
+      "odeur": 1,
       "bras": {
        "tache": "elevage",
        "nombre": 1
@@ -7869,6 +7938,7 @@
       "sol": 0,
       "renseignements": false,
       "bonus": {},
+      "odeur": 1,
       "bras": {
        "tache": "cuisine",
        "nombre": 1
@@ -8462,6 +8532,7 @@
       "sol": 0,
       "renseignements": false,
       "bonus": {},
+      "odeur": 1,
       "bras": {
        "tache": "cuisine",
        "nombre": 1
@@ -15661,7 +15732,15 @@
    "description": "<p>Un mort de quelques jours, encore vêtu de ses habits, la peau grise et marbrée, les yeux voilés de blanc. Il marche comme un homme ivre, mais il ne s'arrête jamais.</p>",
    "comportement": "<p>Va vers le bruit, la lumière et l'odeur des vivants ; s'acharne sur une porte ; se regroupe avec les autres. Mord et griffe.</p>",
    "faiblesse": "<p>Le crâne ; la chaleur humide qui le défait en quelques semaines dans les Bas.</p>",
-   "competences": {}
+   "competences": {},
+   "perception": {
+    "vue": 0.6,
+    "ouie": 1,
+    "odorat": 1,
+    "froid": false,
+    "obstacle": 3,
+    "attaques": 1
+   }
   },
   {
    "cle": "livide-des-hauts",
@@ -15684,7 +15763,15 @@
    "description": "<p>Un Livide ancien, conservé par le froid des Hauts : desséché, raide, couvert de rosée ou de givre au petit matin. Lent, mais si dur à abattre qu'on dirait du bois.</p>",
    "comportement": "<p>Immobile au froid, il s'éveille au soleil et suit les autres. Les hordes des Hauts, des mois après le jour zéro, sont faites de ceux-là.</p>",
    "faiblesse": "<p>La nuit froide le fige : on passe entre eux à l'aube, en silence.</p>",
-   "competences": {}
+   "competences": {},
+   "perception": {
+    "vue": 0.3,
+    "ouie": 1,
+    "odorat": 0,
+    "froid": true,
+    "obstacle": 4,
+    "attaques": 1
+   }
   },
   {
    "cle": "noye-du-lagon",
@@ -15693,7 +15780,7 @@
    "des": 1,
    "resistance": 1,
    "vitesse": "lente",
-   "sens": "ouïe",
+   "sens": "ouïe, odeur",
    "zones": [
     "littoral"
    ],
@@ -15704,7 +15791,15 @@
    "description": "<p>Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p>",
    "comportement": "<p>Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</p>",
    "faiblesse": "<p>Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.</p>",
-   "competences": {}
+   "competences": {},
+   "perception": {
+    "vue": 0.2,
+    "ouie": 1,
+    "odorat": 1,
+    "froid": false,
+    "obstacle": 3,
+    "attaques": 1
+   }
   },
   {
    "cle": "livide-brule",
@@ -15713,7 +15808,7 @@
    "des": 1,
    "resistance": 1,
    "vitesse": "marche",
-   "sens": "ouïe",
+   "sens": "ouïe fine, odeur",
    "zones": [
     "littoral",
     "hauts"
@@ -15725,8 +15820,16 @@
    ],
    "description": "<p>Pris dans un incendie de quartier ou un véhicule en feu, il en est ressorti noirci, à demi aveugle, qui fume encore parfois.</p>",
    "comportement": "<p>Ne sent ni la douleur ni la chaleur : il traverse les flammes et les barbelés sans ralentir.</p>",
-   "faiblesse": "<p>Ses yeux brûlés : il ne suit que les bruits.</p>",
-   "competences": {}
+   "faiblesse": "<p>Ses yeux brûlés : il ne voit rien, il suit les bruits et l'odeur des vivants. Qui se tient immobile, sans un bruit et au vent de lui, peut le laisser passer à un pas.</p>",
+   "competences": {},
+   "perception": {
+    "vue": 0,
+    "ouie": 1.2,
+    "odorat": 1,
+    "froid": false,
+    "obstacle": 5,
+    "attaques": 1
+   }
   },
   {
    "cle": "coureur",
@@ -15735,7 +15838,7 @@
    "des": 2,
    "resistance": 1,
    "vitesse": "rapide",
-   "sens": "vue, ouïe",
+   "sens": "vue, ouïe, odeur",
    "zones": [
     "littoral",
     "hauts",
@@ -15749,7 +15852,15 @@
    "description": "<p>Un mort tout récent, relevé depuis quelques heures : il court encore, maladroitement, et se jette sur sa proie. On n'en voit que les premiers jours.</p>",
    "comportement": "<p>Charge dès qu'il voit, crie en courant, attire les autres. Après une semaine, il ralentit et devient un Livide comme les autres.</p>",
    "faiblesse": "<p>Il tombe, il se cogne : un obstacle bien placé le brise.</p>",
-   "competences": {}
+   "competences": {},
+   "perception": {
+    "vue": 1,
+    "ouie": 1,
+    "odorat": 1,
+    "froid": false,
+    "obstacle": 0,
+    "attaques": 2
+   }
   },
   {
    "cle": "chien-errant",
@@ -17350,7 +17461,8 @@
    "description": "<p>Un kayamb, un harmonica, une vieille guitare au vernis écaillé. Le soir, il joue tout bas un séga ou un maloya de son grand-père. Le bruit attire, il le sait ; il joue quand même, pour lui.</p>",
    "besoin": "objet",
    "texte": "jouer un air le soir, même tout bas",
-   "poids": 1
+   "poids": 1,
+   "bruit": 1
   },
   {
    "cle": "plante",

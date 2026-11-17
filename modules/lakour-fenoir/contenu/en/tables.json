@@ -3629,5 +3629,314 @@
       "fr": "<p><strong>Récupération — Le bateau échoué.</strong> Démonter le moteur d'un bateau échoué sur les galets de la Rivière des Galets.</p><p><strong>Récompense :</strong> 5 pieces, 2 carburant ; réputation +2.</p>",
       "en": "<p><strong>Recovery — The beached boat.</strong> Strip the engine from a boat beached on the boulders of the Rivière des Galets.</p><p><strong>Reward:</strong> 5 parts, 2 fuel; reputation +2.</p>"
     }
+  },
+  "tables/4bGZ5GSaSPT4uz9Y": {
+    "_nom": "La voix de l'île — musique du soir",
+    "name": {
+      "fr": "La voix de l'île — musique du soir",
+      "en": "The voice of the island — evening music"
+    },
+    "description": {
+      "fr": "<p>Ce qui se joue le soir à l'abri. La musique remonte le moral, et elle s'entend.</p>",
+      "en": "<p>What gets played in the evening at the shelter. Music lifts morale, and it can be heard.</p>"
+    },
+    "results.aIcTrsKnRL6BaQ2n.description": {
+      "fr": "<p>Un kayamb, tout bas, sous la varangue : un séga lent que tout le monde connaît. Personne ne chante, mais on bat la mesure du pied.</p>",
+      "en": "<p>A kayamb, very quietly, under the veranda: a slow séga everyone knows. Nobody sings, but feet tap the beat.</p>"
+    },
+    "results.8XjSbXm0xrPiF9mV.description": {
+      "fr": "<p>Une guitare grave, après la mort d'un des vôtres : quelques accords, toujours les mêmes, jusqu'à tard.</p>",
+      "en": "<p>A sombre guitar, after the death of one of your own: a few chords, always the same, until late.</p>"
+    },
+    "results.z5S7kVVoSxXn4iee.description": {
+      "fr": "<p>Un maloya à voix basse, un seau retourné pour roulèr : un repos donné, le 20 décembre, ou une nuit qui compte.</p>",
+      "en": "<p>A maloya sung low, an upturned bucket for a roulèr: rest given to a dead person, 20 December, or a night that matters.</p>"
+    },
+    "results.hmACtgJqTQabQdEk.description": {
+      "fr": "<p>Un bobre, l'arc musical, sa corde et sa calebasse : un ancien qui joue pour lui seul.</p>",
+      "en": "<p>A bobre, the musical bow, its string and its gourd: an old man playing for himself alone.</p>"
+    },
+    "results.xFhXkwW7CNSyU2DX.description": {
+      "fr": "<p>Une chanson tamoule, une chanson chinoise, une chanson de Madagascar : chacun la sienne, et on finit par les apprendre.</p>",
+      "en": "<p>A Tamil song, a Chinese song, a song from Madagascar: each their own, and in the end everyone learns them.</p>"
+    },
+    "results.2DCxp0sHCbrCu6hg.description": {
+      "fr": "<p>Le séga à pleine voix, les mains qui claquent : ça fait du bien, et ça s'entend jusqu'à la route (bruit +3).</p>",
+      "en": "<p>Séga at full voice, hands clapping: it does you good, and it can be heard all the way to the road (noise +3).</p>"
+    },
+    "results.8PGME1b0pxXPeLyv.description": {
+      "fr": "<p>Un harmonica qu'on se passe de main en main ; chacun ne connaît qu'un air.</p>",
+      "en": "<p>A harmonica passed from hand to hand; each one knows only one tune.</p>"
+    },
+    "results.mA8jBtDutpiLacQK.description": {
+      "fr": "<p>Personne ne joue ce soir. Nouvelle lune : on écoute le souffle des autres, et les pas, dehors.</p>",
+      "en": "<p>Nobody plays tonight. New moon: you listen to the others breathing, and to the footsteps outside.</p>"
+    }
+  },
+  "tables/OnVnHb6uKcbvBPlB": {
+    "_nom": "Les contes des anciens",
+    "name": {
+      "fr": "Les contes des anciens",
+      "en": "The old people's tales"
+    },
+    "description": {
+      "fr": "<p>Ce que racontent les gramounes à la veillée : des règles de prudence déguisées. Les personnages y croient ou non ; le jeu ne dit rien de plus.</p>",
+      "en": "<p>What the gramounes tell at the evening gathering: rules of caution in disguise. The characters believe them or not; the game says nothing more.</p>"
+    },
+    "results.tLeEYDpXjYHPjTVm.description": {
+      "fr": "<p>« Rentre avant la nuit, ou Granmèr Kal viendra te prendre. » Ce qu'il faut entendre : on ne traîne pas dehors quand on n'y voit plus.</p>",
+      "en": "<p>\"Come home before nightfall, or Granmèr Kal will come and take you.\" What it means: you don't hang about outside when you can no longer see.</p>"
+    },
+    "results.YJa2OeO7v500dlAU.description": {
+      "fr": "<p>« <em>Siffle pa la nuit.</em> » (Ne siffle pas la nuit.) Ça appelle ce qui rôde, disent les anciens. Ce qu'il faut entendre : la nuit, le moindre bruit porte.</p>",
+      "en": "<p>\"<em>Siffle pa la nuit.</em>\" (Don't whistle at night.) It calls what prowls, say the old people. What it means: at night, the slightest sound carries.</p>"
+    },
+    "results.567mgRI1YcbXtjsI.description": {
+      "fr": "<p>« Si on t'appelle par ton nom dans le noir, ne réponds pas. » Ce qu'il faut entendre : on ne crie pas, on ne se signale pas.</p>",
+      "en": "<p>\"If someone calls your name in the dark, don't answer.\" What it means: you don't shout, you don't give yourself away.</p>"
+    },
+    "results.xgOtCqbrYkNHMK01.description": {
+      "fr": "<p>« Ne laisse pas la lampe à la fenêtre, les esprits la voient de loin. » Ce qu'il faut entendre : une lumière se voit à des centaines de mètres.</p>",
+      "en": "<p>\"Don't leave the lamp in the window, the spirits see it from afar.\" What it means: a light can be seen hundreds of metres away.</p>"
+    },
+    "results.bWjsw1jWPYiJYE8R.description": {
+      "fr": "<p>« Quand la Timise pleure, fais silence. » Ce qu'il faut entendre : quand quelque chose crie dans la nuit, on se tait et on écoute.</p>",
+      "en": "<p>\"When the Timise weeps, keep silent.\" What it means: when something cries out in the night, you stop talking and listen.</p>"
+    },
+    "results.HcaHMGMH7nvdtqR4.description": {
+      "fr": "<p>« <em>Ravine i na faim.</em> » (La ravine a faim.) On ne dort pas dans son lit après la pluie. Ce qu'il faut entendre : une ravine sèche se remplit en un quart d'heure.</p>",
+      "en": "<p>\"<em>Ravine i na faim.</em>\" (The ravine is hungry.) You don't sleep in its bed after rain. What it means: a dry ravine fills up in a quarter of an hour.</p>"
+    },
+    "results.Uy4aB1pTYhof9baB.description": {
+      "fr": "<p>« Ne mange pas dehors le soir, l'odeur appelle. » Ce qu'il faut entendre : la cuisine se sent de loin, sous le vent.</p>",
+      "en": "<p>\"Don't eat outside in the evening, the smell calls.\" What it means: cooking can be smelt from far away, downwind.</p>"
+    },
+    "results.7xiofC0LgxxUMkSl.description": {
+      "fr": "<p>« Les grenouilles savent avant toi. » Ce qu'il faut entendre : quand elles se taisent, quelque chose passe.</p>",
+      "en": "<p>\"The frogs know before you do.\" What it means: when they fall silent, something is passing.</p>"
+    }
+  },
+  "tables/d3crfPUrVAWN2J3H": {
+    "_nom": "La nuit — ce qu'on entend",
+    "name": {
+      "fr": "La nuit — ce qu'on entend",
+      "en": "The night — what you hear"
+    },
+    "description": {
+      "fr": "<p>Les sons de base du noir : d'abord le vent, puis la faune et les insectes. Ce qu'on imagine fait le reste.</p>",
+      "en": "<p>The basic sounds of the dark: first the wind, then the wildlife and the insects. What you imagine does the rest.</p>"
+    },
+    "results.oTLpXDn0jg0tZirW.description": {
+      "fr": "<p>Le vent d'abord, toujours : dans les filaos, sous les tôles, dans les feuilles de bananier. Il couvre tout, puis tombe d'un coup.</p>",
+      "en": "<p>The wind first, always: in the filaos, under the sheet metal, in the banana leaves. It covers everything, then drops all at once.</p>"
+    },
+    "results.s5Kg81K0FEDlji0d.description": {
+      "fr": "<p>Les grenouilles de la ravine, des centaines, qui chantent comme une seule. Tant qu'elles chantent, rien de gros ne passe près d'elles.</p>",
+      "en": "<p>The frogs of the ravine, hundreds of them, singing as one. As long as they sing, nothing big passes near them.</p>"
+    },
+    "results.GhinlvQCUA3rRgez.description": {
+      "fr": "<p>Les grillons, et les margouillats qui claquent sur les murs (<em>tchik, tchik</em>) : le bruit ordinaire d'une nuit de La Réunion.</p>",
+      "en": "<p>Crickets, and geckos clicking on the walls (<em>tchik, tchik</em>): the ordinary sound of a Réunion night.</p>"
+    },
+    "results.38LCBareaSl0uaEl.description": {
+      "fr": "<p>Un tangue qui fouille les feuilles mortes en reniflant. On croit à des pas ; c'est une petite bête rayée qui cherche des vers.</p>",
+      "en": "<p>A tenrec rooting through the dead leaves and sniffing. You think it's footsteps; it's a small striped animal looking for worms.</p>"
+    },
+    "results.CSkOqWJhDFQDSRVd.description": {
+      "fr": "<p>Un cri d'enfant, long, qui monte et retombe du côté des remparts. La Timise, le pétrel noir. Celui qui n'a pas encore l'habitude du noir ne le sait pas.</p>",
+      "en": "<p>A child's cry, long, rising and falling from the side of the cliffs. The Timise, the black petrel. Someone not yet used to the dark doesn't know that.</p>"
+    },
+    "results.0DhFXYo2vSHQyKIc.description": {
+      "fr": "<p>Un chien, très loin, qui aboie trois fois puis se tait d'un coup.</p>",
+      "en": "<p>A dog, very far away, barking three times, then falling silent all at once.</p>"
+    },
+    "results.oN1xC3N2VYUypuPv.description": {
+      "fr": "<p>La ravine qui gronde plus fort que tout à l'heure : il a plu là-haut. Demain, le radier sera peut-être sous l'eau.</p>",
+      "en": "<p>The ravine roaring louder than a moment ago: it has rained up there. Tomorrow, the ford may be under water.</p>"
+    },
+    "results.1mVcCIKdIzTgsAUj.description": {
+      "fr": "<p>Des pas qui traînent sur le bitume, réguliers, sans hâte. Un Livide errant. Il ne sait pas que vous êtes là.</p>",
+      "en": "<p>Footsteps dragging on the tarmac, steady, unhurried. A wandering Pallid. It doesn't know you are there.</p>"
+    },
+    "results.RJcX1hwwCZuSK3jp.description": {
+      "fr": "<p>Le coq du voisin, à trois heures du matin, qui se trompe d'heure comme avant.</p>",
+      "en": "<p>The neighbour's rooster at three in the morning, getting the hour wrong as it always did.</p>"
+    },
+    "results.N66ntPbk5shE0nX2.description": {
+      "fr": "<p>Rien. Le silence complet, d'un coup. Ce n'est pas bon signe (table « La nuit — les signes »).</p>",
+      "en": "<p>Nothing. Complete silence, all at once. It is not a good sign (table \"The night — the signs\").</p>"
+    }
+  },
+  "tables/kYs9WkXJZp9WWB0Z": {
+    "_nom": "Un Livide intrigué — ce qu'il fait",
+    "name": {
+      "fr": "Un Livide intrigué — ce qu'il fait",
+      "en": "A curious Pallid — what it does"
+    },
+    "description": {
+      "fr": "<p>Un Livide a perçu un bruit ou une odeur, sans rien voir : ce qu'il fait ensuite. Il ne charge que s'il voit, ou s'il sent un vivant tout près.</p>",
+      "en": "<p>A Pallid has picked up a sound or a smell without seeing anything: what it does next. It only charges if it sees, or smells a living person very close.</p>"
+    },
+    "results.yQpHOuP1AedSPBeW.description": {
+      "fr": "<p>Il s'arrête, tourne la tête vers le bruit, et reste là une longue minute. Puis il repart, dans l'autre sens.</p>",
+      "en": "<p>It stops, turns its head towards the sound, and stays there a long minute. Then it moves off, the other way.</p>"
+    },
+    "results.07ibmId4GQsXM1lK.description": {
+      "fr": "<p>Il marche vers le bruit, au pas, sans hâte. Arrivé là où il n'y a rien, il tourne en rond, puis se lasse.</p>",
+      "en": "<p>It walks towards the sound, at a walk, unhurried. Arriving where there is nothing, it goes round in circles, then loses interest.</p>"
+    },
+    "results.lCF0ZsyR2FebPi1E.description": {
+      "fr": "<p>Il bute contre la clôture, recommence, recommence encore ; au bout d'un moment, il la longe pour chercher un passage.</p>",
+      "en": "<p>It bumps into the fence, again, and again; after a while it follows it along to look for a way through.</p>"
+    },
+    "results.MK1OcwDHJMuG7HSG.description": {
+      "fr": "<p>Il renifle, la tête levée, et dérive lentement sous le vent : il suit l'odeur, pas le bruit.</p>",
+      "en": "<p>It sniffs, head raised, and drifts slowly downwind: it follows the smell, not the sound.</p>"
+    },
+    "results.qQIz9gsAEmTraB3E.description": {
+      "fr": "<p>Il s'arrête devant la case, longtemps. Il n'a rien vu. S'il entend encore un bruit de dedans, il frappe.</p>",
+      "en": "<p>It stops in front of the house, for a long time. It has seen nothing. If it still hears a sound from inside, it hits the door.</p>"
+    },
+    "results.qMQLmp7bVpPk594o.description": {
+      "fr": "<p>Deux autres le suivent sans avoir rien perçu eux-mêmes : l'éveil passe de l'un à l'autre, comme une onde.</p>",
+      "en": "<p>Two others follow it without having picked up anything themselves: the waking passes from one to the next, like a wave.</p>"
+    },
+    "results.rFJ9s6g6x0OOE2XS.description": {
+      "fr": "<p>Il passe à trois pas de vous sans vous voir : c'est un Livide des Hauts, ses yeux sont morts de froid.</p>",
+      "en": "<p>It passes three steps from you without seeing you: it's a Highland Pallid, its eyes dead with cold.</p>"
+    },
+    "results.yVStJN93pKhs77Ca.description": {
+      "fr": "<p>Il vous voit. Il n'est plus intrigué : il charge, ou il gémit, et les autres viennent.</p>",
+      "en": "<p>It sees you. It is no longer curious: it charges, or it moans, and the others come.</p>"
+    }
+  },
+  "tables/mAAaKafkFizy1TUH": {
+    "_nom": "La nuit — les signes",
+    "name": {
+      "fr": "La nuit — les signes",
+      "en": "The night — the signs"
+    },
+    "description": {
+      "fr": "<p>L'alarme naturelle et les fausses alertes. Quand une horde entre vraiment dans la région, le système le dit (les grenouilles se taisent).</p>",
+      "en": "<p>The natural alarm and the false alerts. When a horde really enters the region, the system says so (the frogs fall silent).</p>"
+    },
+    "results.xOy3ZTKDeJFTCL8A.description": {
+      "fr": "<p>Les grenouilles se taisent d'un coup, et les insectes avec : un trou de silence qui avance dans la ravine. Une horde passe (le système le dit quand c'est le cas).</p>",
+      "en": "<p>The frogs fall silent all at once, and the insects with them: a hole of silence moving along the ravine. A horde is passing (the system says so when it is).</p>"
+    },
+    "results.H5atWEC2F6ctfdk4.description": {
+      "fr": "<p>Le silence se fait par vagues, d'abord au loin, puis plus près : quelque chose remonte le chemin, et c'est beaucoup.</p>",
+      "en": "<p>The silence comes in waves, far off first, then closer: something is coming up the path, and it is a lot.</p>"
+    },
+    "results.3dSQ3U8raL14r94B.description": {
+      "fr": "<p>Les oiseaux d'un manguier s'envolent tous ensemble, en pleine nuit, en criant.</p>",
+      "en": "<p>The birds in a mango tree take off all together, in the middle of the night, shrieking.</p>"
+    },
+    "results.1ZfvkHIHXWulyJMT.description": {
+      "fr": "<p>Une odeur douceâtre et lourde, portée par le vent : un corps. Un Livide des Bas qui se défait, ou un cabri crevé dans la ravine ; une fois sur deux, c'est une bête, et l'on a eu peur pour rien.</p>",
+      "en": "<p>A sweetish, heavy smell carried on the wind: a body. A Lowland Pallid rotting away, or a dead goat in the ravine; half the time it's an animal, and you were afraid for nothing.</p>"
+    },
+    "results.SEx4fylyVGZVVVSs.description": {
+      "fr": "<p>Les chiens de l'abri grognent bas, le nez vers le même coin de nuit, et n'aboient pas.</p>",
+      "en": "<p>The shelter dogs growl low, noses towards the same corner of the night, and don't bark.</p>"
+    },
+    "results.nW4Yu6rNletDtO77.description": {
+      "fr": "<p>Plus un bruit de pas ni de voix dans la case d'à côté, alors qu'il y en avait hier soir.</p>",
+      "en": "<p>Not a footstep or a voice from the house next door, when there were some last night.</p>"
+    },
+    "results.nEBsV1z7l1NfMQI3.description": {
+      "fr": "<p>Une lumière qui s'éteint sur la crête d'en face, juste au moment où l'on regarde.</p>",
+      "en": "<p>A light going out on the ridge opposite, just as you look.</p>"
+    },
+    "results.xbyM1KbpHZoH2AVq.description": {
+      "fr": "<p>Les grenouilles chantent, les grillons aussi, le vent passe : une nuit ordinaire. On peut dormir.</p>",
+      "en": "<p>The frogs are singing, the crickets too, the wind goes by: an ordinary night. You can sleep.</p>"
+    }
+  },
+  "tables/tjtmsTazSVUczpQx": {
+    "_nom": "La ravine après la pluie",
+    "name": {
+      "fr": "La ravine après la pluie",
+      "en": "The ravine after the rain"
+    },
+    "description": {
+      "fr": "<p>Ce que la ravine devient quand il a plu dans ses Hauts.</p>",
+      "en": "<p>What the ravine becomes when it has rained in its uplands.</p>"
+    },
+    "results.4GVG6HwOtSehjXzK.description": {
+      "fr": "<p>L'eau monte d'un mètre en dix minutes, couleur de café au lait, chargée de branches : le radier est infranchissable jusqu'à demain.</p>",
+      "en": "<p>The water rises a metre in ten minutes, the colour of milky coffee, full of branches: the ford can't be crossed until tomorrow.</p>"
+    },
+    "results.KOwd512XCDtvgtbq.description": {
+      "fr": "<p>La ravine sèche de l'Ouest coule pour la première fois depuis des semaines ; les vasques sont pleines, l'eau est boueuse (à filtrer).</p>",
+      "en": "<p>The dry ravine of the West flows for the first time in weeks; the pools are full, the water is muddy (to be filtered).</p>"
+    },
+    "results.sMqGchQwZyi2vHHt.description": {
+      "fr": "<p>La prise d'eau de la pico-hydro est bouchée de galets et de feuilles : il faudra la dégager à la main (un quart de bricolage).</p>",
+      "en": "<p>The micro-hydro intake is choked with pebbles and leaves: it will have to be cleared by hand (a watch of Tinkering).</p>"
+    },
+    "results.RCbxrV4fLgqiHCpu.description": {
+      "fr": "<p>Un Livide emporté par la crue est coincé dans les branches d'un vacoa, plus bas. Il bouge encore.</p>",
+      "en": "<p>A Pallid swept away by the flood is caught in the branches of a vacoa further down. It is still moving.</p>"
+    },
+    "results.VcqremDw5uuM5jyb.description": {
+      "fr": "<p>Le gué qu'on passait à pied sec a changé de place : la crue a déplacé les galets.</p>",
+      "en": "<p>The ford you used to cross dry-shod has moved: the flood shifted the pebbles.</p>"
+    },
+    "results.BbzA9cjMiEGIBUW2.description": {
+      "fr": "<p>L'eau a déposé sur la berge un bidon, une glacière, une chaise en plastique, des planches : de quoi récupérer.</p>",
+      "en": "<p>The water has left on the bank a jerrycan, a cool box, a plastic chair, some planks: things to salvage.</p>"
+    },
+    "results.4Wto4Y9FX3y4EvHp.description": {
+      "fr": "<p>Les bichiques remontent la ravine après la crue (à l'embouchure, en saison) : de quoi pêcher.</p>",
+      "en": "<p>The bichiques swim up the ravine after the flood (at the river mouth, in season): something to fish.</p>"
+    },
+    "results.nivbbRXSOZWImF9T.description": {
+      "fr": "<p>La ravine se tait d'un coup : un éboulis l'a barrée plus haut. Elle rompra le barrage dans la nuit, ou demain.</p>",
+      "en": "<p>The ravine falls silent all at once: a rockfall has dammed it higher up. It will break through tonight, or tomorrow.</p>"
+    }
+  },
+  "tables/uudTAdsOWBVW1zRB": {
+    "_nom": "Ce que porte le vent",
+    "name": {
+      "fr": "Ce que porte le vent",
+      "en": "What the wind carries"
+    },
+    "description": {
+      "fr": "<p>Une odeur que le vent apporte. Le vent change à chaque quart ; un humain ne sent guère que la cuisine, la fumée, les bêtes et les corps.</p>",
+      "en": "<p>A smell the wind brings. The wind changes every watch; a human can hardly smell anything but cooking, smoke, animals and bodies.</p>"
+    },
+    "results.wc5JiXQ17xnxNVol.description": {
+      "fr": "<p>Un cari au feu de bois, quelque part sous le vent : un abri habité, à moins de cent mètres.</p>",
+      "en": "<p>A curry over a wood fire, somewhere downwind: an inhabited shelter, less than a hundred metres away.</p>"
+    },
+    "results.dDgsDExE7YN3s1JA.description": {
+      "fr": "<p>La fumée froide d'un fumoir : de la viande boucanée. Quelqu'un a de quoi manger.</p>",
+      "en": "<p>The cold smoke of a smokehouse: smoked meat. Someone has food.</p>"
+    },
+    "results.7jXCEqcIIAPDdwv2.description": {
+      "fr": "<p>L'odeur d'un corps, lourde et sucrée. À vous de savoir si c'est un Livide, un mort ou une bête.</p>",
+      "en": "<p>The smell of a body, heavy and sweet. Up to you to find out whether it's a Pallid, a dead person or an animal.</p>"
+    },
+    "results.2IuifRBXwvTxDPEq.description": {
+      "fr": "<p>Le poulailler, le bouc, le fumier : des bêtes enfermées, donc des gens pour les garder.</p>",
+      "en": "<p>Chicken run, billy goat, manure: animals penned in, so people to look after them.</p>"
+    },
+    "results.DOpQ9Oux3jfhLtWY.description": {
+      "fr": "<p>Le rhum d'une distillerie abandonnée, les cuves ouvertes : on le sent à des centaines de mètres.</p>",
+      "en": "<p>The rum of an abandoned distillery, the vats left open: you can smell it hundreds of metres away.</p>"
+    },
+    "results.s4MaGAiuwntIAxaY.description": {
+      "fr": "<p>Le savon, le linge propre : un groupe qui tient, et qui se lave.</p>",
+      "en": "<p>Soap, clean washing: a group that holds together, and keeps itself clean.</p>"
+    },
+    "results.uWnyyraSKvb6twQV.description": {
+      "fr": "<p>Le gazole, l'huile chaude : un moteur a tourné il y a peu.</p>",
+      "en": "<p>Diesel, hot oil: an engine was running not long ago.</p>"
+    },
+    "results.TICEdeTsgXdhyCAM.description": {
+      "fr": "<p>Rien du tout : le vent vient de la mer, il n'apporte que le sel.</p>",
+      "en": "<p>Nothing at all: the wind comes from the sea, it brings only salt.</p>"
+    }
   }
 }

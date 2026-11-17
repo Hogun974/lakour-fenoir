@@ -60,6 +60,15 @@
 // - Boutures (journeeAbri) : replantées chaque jour dans un potager ou un jardin en service (elles deviennent des graines),
 //   sinon un tiers meurt (au supérieur).
 // - Alentours au-dessus du plafond (bois et fruits tombés d'un cyclone) : le surplus se perd chaque jour (POURRISSEMENT).
+//
+// Lot « sens » (docs/equilibre-sens.md, contrat §18 ; logique/sens.mjs) :
+// - La ravine du site (`conditions.ravine` : { hydro, eau }, ravineDuJour) : la pico-hydro (condition `riviere`) produit × hydro
+//   (0 à sec ou en crue, 0,75 à l'étiage) ; l'eau d'une rivière (celle du site et des installations d'eau qui demandent une rivière
+//   sur un site à rivière) × eau (0,25 quand la ravine est à sec : les vasques qui restent). Sans `conditions.ravine` : comme avant.
+// - L'odeur (`bilan.odeur`, `bilan.odeurBetes`, `bilan.odeurSources`) : `effets.odeur` des installations en marche, la souillure
+//   (`conditions.souillure`, défaut : l'abri surpeuplé), le sang (`conditions.sang`), les morts sans repos (`conditions.morts`),
+//   les Hauts et la pluie du jour (`conditions.pluie`) ; odeurAbri.
+// - Le musicien (`conditions.musique` : le bruit de son ancrage, bruitDesMusiciens) s'ajoute au bruit de l'abri.
 import { ORDRE_DELESTAGE, RESSOURCES, NATURE, SEUIL_AUTONOMIE, COUT_ILE, borner } from "./constantes.mjs";
 import { installationDe, regionDe, siteDe, niveauDe, niveauMaxDe, natureRegion, indexer } from "./contenu.mjs";
 import { consommationJour, pertesJour, plafonds, joursDeStocks, normaliserStocks, journeeStocks, couvre, retirerStocks } from "./ressources.mjs";
@@ -67,6 +76,7 @@ import { saisonDuJour, bonusFruits, dateDuJour } from "./temps.mjs";
 import { facteurBras } from "./generation.mjs";
 import { message } from "./textes.mjs";
 import { tirerPoids } from "./hasard.mjs";
+import { odeurAbri } from "./sens.mjs";
 
 export const FACTEUR_ETAT = [1, 0.75, 0.5, 0];
 export const SAISON_PLUIE = { pluies: 1, seche: 0.5 };
@@ -102,6 +112,8 @@ export function instanceInstallation(cle, niveau = 0, extra = {}) {
 
 const effetsDe = (def, niveau) => niveauDe(def, niveau)?.effets ?? {};
 const demandeSol = (def, niveau) => Number(niveauDe(def, niveau)?.requiert?.site?.sol ?? 0) > 0;
+// Une installation d'eau qui puise dans une rivière (captage, conduite de bambou) : elle suit la ravine du site (lot « sens »).
+const puiseRiviere = (def, niveau) => def?.categorie === "eau" && (niveauDe(def, niveau)?.requiert?.site?.eau ?? []).includes("riviere");
 const prioriteDelestage = categorie => {
   const i = ORDRE_DELESTAGE.indexOf(categorie);
   return i < 0 ? ORDRE_DELESTAGE.length : i;
@@ -156,6 +168,10 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     if (cond.pluie) f *= c.climat.pluie * SAISON_PLUIE[c.saison];
     if (cond.soleil) f *= c.climat.soleil * SAISON_SOLEIL[c.saison] * (Number(c.site.soleil ?? 3) / 3);
     if (cond.riviere && c.site.eau !== "riviere") f = 0;
+    // La ravine du jour (lot « sens ») : à sec ou en crue, la pico-hydro s'arrête ; à sec, un captage ne tire presque plus rien.
+    const ravine = c.site.eau === "riviere" ? conditions.ravine ?? null : null;
+    if (ravine && cond.riviere) f *= Math.max(0, Number(ravine.hydro ?? 1));
+    else if (ravine && puiseRiviere(def, niveau)) f *= Math.max(0, Number(ravine.eau ?? 1));
     if (Number(cond.delai) > 0 && c.jour - Number(inst.termineLe ?? 0) < Number(cond.delai)) f = 0;
     if (demandeSol(def, niveau)) f *= Math.min(1.25, 0.5 + 0.5 * (solActuel / solSite));
     // Bras : `effets.bras` du niveau, ou `bras: { tache, nombres: [par niveau], niveau }` sur la définition (forme du contenu).
@@ -172,7 +188,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   }
   // L'eau du site et les réseaux publics : une « ligne » sans installation.
   const siteEau = c.site.eau ?? "aucune";
-  const eauSite = (EAU_SITE[siteEau] ?? 0) * (siteEau === "citerne" ? c.climat.pluie * SAISON_PLUIE[c.saison] : 1)
+  const eauSite = (EAU_SITE[siteEau] ?? 0) * (siteEau === "citerne" ? c.climat.pluie * SAISON_PLUIE[c.saison] : siteEau === "riviere" && conditions.ravine ? Math.max(0, Number(conditions.ravine.eau ?? 1)) : 1)
     + (siteEau === "reseau" && conditions.reseaux?.eau ? RESEAU_PUBLIC.eau : 0);
   const courant = conditions.reseaux?.electricite && !SITES_SANS_COURANT.includes(c.site.type) ? RESEAU_PUBLIC.electricite : 0;
   if (eauSite || courant) lignes.push({ cle: "", categorie: "site", niveau: 0, e: {}, production: { eau: eauSite, energie: courant }, horsService: false,
@@ -293,10 +309,14 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   const moralObjets = Math.min(CONFORT_MAX, Math.floor(Math.max(0, Number(conditions.confort) || 0)));
   const protectionCyclone = Math.min(3, Math.max(c.site.type === "tunnel-de-lave" ? 3 : 0, ...structurelles.map(l => Number(l.e.protectionCyclone) || 0)));
   const usure = lignes.filter(l => l.sol && l.enMarche).reduce((s, l) => s + l.niveau * USURE_SOL, 0);
+  // L'odeur de l'abri (lot « sens ») : ce qui sent au-delà d'un groupe ordinaire.
+  const surpeuplement = Math.max(0, c.personnes - capacite);
+  const odeur = odeurAbri({ installations: sommeEffet(actives, "odeur"), souillure: conditions.souillure ?? (surpeuplement > 0 ? 1 : 0), sang: Boolean(conditions.sang),
+    morts: Number(conditions.morts) || 0, altitude: c.region.altitude, pluie: Number(conditions.pluie) || 0 });
   const bilan = {
     defense, discretion, capacite,
     visibilite: borner(Math.round(visibiliteBrute), 0, 10),
-    bruit: sommeEffet(actives, "bruit"),
+    bruit: sommeEffet(actives, "bruit") + Math.max(0, Math.round(Number(conditions.musique) || 0)),
     protectionCyclone,
     soins: sommeEffet(actives, "soins"),
     moral: sommeEffet(actives, "moral") + moralChien + moralObjets,
@@ -311,7 +331,9 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     eauSite: Math.round(eauSite), reseauElectrique: courant > 0,
     arrets,
     secours,
-    surpeuplement: Math.max(0, c.personnes - capacite),
+    surpeuplement,
+    odeur: odeur.odeur, odeurBetes: odeur.betes, odeurSources: odeur.sources,
+    ...(conditions.ravine && c.site.eau === "riviere" ? { ravine: conditions.ravine.etat ?? "" } : {}),
     autonome: net.eau >= 0 && net.nourriture >= 0 && net.energie >= 0
   };
   bilan.joursDeStocks = joursDeStocks(stocks, net);

@@ -28,6 +28,7 @@ import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES } from "./marche.mjs";
 import { sceneReunion } from "./cartes.mjs";
 import { DEPOTS_CYCLONE, GRAMOUNES, TABLES_SAVOIRS, JOURNAUX_SAVOIRS } from "./deux-savoirs.mjs";
 import { HISTOIRES } from "./histoires.mjs";
+import { TABLES_SENS, JOURNAL_SENS } from "./sens.mjs";
 import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
 import { LOT_AFFAIRES } from "./affaires.mjs";
 
@@ -38,8 +39,9 @@ export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 export const DOCUMENTS = [
   ...INSTALLATIONS, ...SAVOIRS, ...EQUIPEMENTS, ...PASSES, ...RECETTES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...JOURNAUX_SAVOIRS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
   ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
+  ...TABLES_SENS,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
