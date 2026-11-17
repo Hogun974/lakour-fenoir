@@ -259,6 +259,22 @@ sans clé ou sans traduction). Sur un an, le **nomade × 4 ne finit plus par man
 graines, le bruit est de ± 3 parties environ : ces écarts-là le dépassent. **À trancher par Jordan** (rien n'a été retouché). **Tranché** : voir « Rééquilibrage du 2026-11-13 », plus haut (sur 240 parties au lieu de 40, les humains × 4 n'avaient
 en fait pas reculé : 22,3 → 24,7 sur 40).
 
+## Les cinq lots de la vague 3 (portage du jeu 3D, 2026-11-17) et leur fusion
+
+Chaque lot a mesuré ses chiffres sur `vague2` et les a écrits dans son propre fichier (gardés tels que leurs auteurs les ont écrits) :
+
+| Lot | Fichier | Ce qu'il règle | Contrat |
+|---|---|---|---|
+| 6 — Les outils, les ateliers et les recettes | [`equilibre-ateliers.md`](equilibre-ateliers.md) | les neuf ateliers et leurs niveaux, la qualité et l'usure des outils et des armes, l'enrayage, la parade, les 103 recettes, aucune rente | §24 |
+| 5 — Fouiller, démonter, récolter | [`equilibre-fouille.md`](equilibre-fouille.md) | les lieux par genre et leur pillage, ce qu'ils rendent, les bêtes trouvées, démonter, la récolte et sa repousse, la qualité d'un outil trouvé | §25 |
+| 7 — Bâtir et défendre | [`equilibre-batir.md`](equilibre-batir.md) | les six matériaux, l'entretien et les pannes, les défenses devant les Livides, le feu, la cave, les 38 installations | §26 |
+| 8 — Le vivant de l'abri | [`equilibre-vivant.md`](equilibre-vivant.md) | la règle du vivant, ce que mangent et boivent les bêtes, les installations, les bêtes portées et en liberté, le chien | §27 |
+| 9 — Le paradis et son piège | [`equilibre-paradis.md`](equilibre-paradis.md) | la chaleur d'un lieu, la ronde, les agglutinés, les corps, sous terre, la haie, rallumer l'île | §28 |
+
+La fusion (branche `vague3`, contrat §29) retire les doublons et branche les lots entre eux, sans retoucher leurs chiffres ; ses
+mesures (`vague2` contre `vague3`, 300 parties par cas, graines 1 et 2, et un an sur 20 graines) et les écarts qu'elle laisse à la
+passe d'équilibrage qui suit sont dans [`equilibre-vague3.md`](equilibre-vague3.md).
+
 ## Médicaments et zerbaz (appliqué le 2026-11-05, après la section suivante)
 
 Constat (section suivante, « Reste ouvert ») : l'infection tue d'abord les survivants seuls ; la morsure est « difficile » avec

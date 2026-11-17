@@ -274,7 +274,7 @@ des rumeurs, un lexique créole, et la première nuit.
 Tout le contenu est dans le module `lakour-fenoir` : douze compendiums (dossier « Fénoir »), plus le **registre** de l'île
 (`assets/donnees.json`) que le système charge pour simuler le monde. Les vrais chiffres, tels que `src/` les contient.
 
-### Les guides des joueurs (7 journaux, 76 pages)
+### Les guides des joueurs (7 journaux, 91 pages)
 
 | Journal | Pages | Ce qu'on y lit |
 |---|---|---|
@@ -286,7 +286,7 @@ Tout le contenu est dans le module `lakour-fenoir` : douze compendiums (dossier 
 | **Le temps de l'île** | 3 | L'année réunionnaise, la lune et la nuit, quand la date se perd. |
 | **Vivre sans l'ancien monde** | 3 | Le savoir d'autrefois, quand le cyclone vient, sans carburant. |
 
-### Les journaux du MJ (11 journaux, 78 pages, cachés aux joueurs)
+### Les journaux du MJ (24 journaux, 193 pages, cachés aux joueurs)
 
 | Journal | Pages | Ce qu'on y lit |
 |---|---|---|
@@ -301,6 +301,13 @@ Tout le contenu est dans le module `lakour-fenoir` : douze compendiums (dossier 
 | **Campagne — L'année du Gris** | 6 | Une campagne en **cinq fronts** : le Comptable, l'autorité provisoire, les Hauts froids, la Fournaise, le remède. |
 | **Pourquoi les Bas se vident** | 2 | La règle du monde et ce qu'elle change. |
 | **Réputation auprès des factions** | 1 | Paliers (Hostile −20, Méfiante −4, Neutre 0, Amicale 5, Alliée 10) et horloges. |
+| **Les ateliers et les outils** | 6 | Les neuf ateliers et leurs trois niveaux, les outils et les armes en trois qualités, l'usure, la réparation de fortune, l'enrayage. |
+| **Fouiller, démonter, récolter** | 8 | Les lieux d'une région par genre, plus ou moins pillés, ce qu'on y trouve, les bêtes dans la cour, démonter, récolter l'île. |
+| **Les Livides devant un abri** | 3 | Les pièges, la hauteur, la porte, l'enceinte : ce que l'abri oppose à un assaut. |
+| **Bâtir et entretenir** | 4 | Les six matériaux, l'entretien, les pannes, le feu, la cave qui s'éboule. |
+| **Le vivant de l'abri** | 8 | Les cheptels et les bacs, ce qui leur manque, les naissances, la maladie, les bêtes portées et en liberté, le chien qui prévient. |
+| **Le paradis et son piège** | 7 | La chaleur d'un lieu, la ronde, les agglutinés, les corps, vivre sous terre, les haies qui cachent. |
+| **Rallumer l'île** | 5 | Reprendre une région, la nettoyer, l'éclairer ; les grands chantiers ; les jalons. |
 
 ### L'île : 16 régions, 52 sites d'abri, 25 liaisons (registre)
 
@@ -318,7 +325,7 @@ plus lente quand la route principale est coupée : chemin des Anglais, Dos d'Ân
 part ; chacun avec capacité, défense, discrétion, eau (aucune, citerne, rivière, source, puits, réseau), sol, soleil,
 souterrain, accès, stocks à l'arrivée, atouts et défauts, installations déjà là.
 
-### Les installations (50, en niveaux)
+### Les installations (117, en niveaux)
 
 Les installations *lontan* (le savoir d'autrefois, avec les matières de l'île) sont les sœurs des modernes : elles tiennent le
 même rôle, autrement.
@@ -362,7 +369,7 @@ jour après trente jours ; des panneaux 2 / 4 / 6 kWh par jour et par point de s
   d'artichaut, La langue de tout le monde, Jambes de cabri, Vertige, Peur de la mer ; avec leurs effets (compétences, moral,
   fatigue, peurs, besoins, tâches, social) et leurs incompatibilités.
 
-### Équipement et véhicules (65), recettes (31), maladies et blessures (12)
+### Équipement et véhicules (171), recettes (139), maladies et blessures (12)
 
 - **Équipement** : 8 armes (sabre à canne, barre à mine, batte, lance de fortune, fusil-harpon, arc de chasse, arbalète de
   fortune, bouclier de tôle), 4 armes à feu (fusil de chasse calibre 12, carabine .22, pistolet de service, fusil d'assaut
@@ -397,7 +404,7 @@ jour après trente jours ; des panneaux 2 / 4 / 6 kWh par jour et par point de s
   (méfiante), le Dispensaire du Sud (amicale), les Sans-Lune (hostile) ; chacune avec sa croissance, ses régions, ce qu'elle
   veut, comment traiter avec elle, une **réputation** à paliers tenue par les horloges du moteur, et une table de demandes.
 
-### Les événements (81) et les tables du MJ (55)
+### Les événements (81) et les tables du MJ (138)
 
 - **Événements** (registre) : 17 de météo (pluies, cyclones, houle, sécheresse, arbres en travers…), 4 de réseaux, 6 de hordes,
   10 humains, 4 accidents, 12 à l'abri, 12 découvertes, 15 de **marché** (tirés au bouton par le MJ, jamais par la simulation),
@@ -420,6 +427,31 @@ lieux** dessinées par le rendu commun du moteur : la case créole, le collège,
 supermarché, le tunnel de lave. Les **jetons** (SVG, plats et en relief, `outils/fabriquer-jetons-fenoir.mjs`) : les
 prétirés et les PNJ, le bestiaire, et des figurants (soignant, réfugié, pèlerin, pêcheur, ferrailleur, fermier, enfant,
 malade, chien…) pour animer un lieu.
+
+## La vague 3 : les ateliers, la fouille, bâtir, le vivant, le paradis
+
+Cinq lots portés du jeu vidéo Fénoir 3D, fusionnés ensemble (contrat §24 à §29 ; chiffres : `docs/equilibre-*.md`) :
+
+- **Les ateliers et les outils** (§24) : neuf ateliers de métier en trois niveaux (Coin du feu, Établi du bois, Forge, Vannerie du
+  vacoa, Atelier de couture, Case à tisanes, Atelier de mécanique, Atelier d'électricité, Distillerie) ; les outils et les armes en
+  trois qualités (de fortune, de récupération, forgé), qui s'usent et se réparent ; l'enrayage au tir ; 104 recettes (premiers outils
+  à mains nues, remèdes faits à la main, eau bouillie, transports, la chaux du four à chaux).
+- **Fouiller, démonter, récolter** (§25) : les lieux d'une région, de 24 genres, plus ou moins pillés et jamais vides ; un outil
+  trouvé a sa qualité ; les bêtes restées dans une cour (il faut l'outil : la cage de bambou, le sac de goni, la corde de choka,
+  l'enfumoir) ; démonter un lieu ou une installation (selon sa matière) ; récolter les gisements de l'île, qui repoussent.
+- **Bâtir et défendre** (§26) : six matériaux (le cyclone, le feu, la pluie et les Livides les lisent), l'entretien des installations
+  sans bras (et le curage des bassins), les pannes, les défenses devant les Livides (pièges, hauteur, porte, enceinte), le feu, la
+  cave qui s'éboule ; 38 installations (Haie de choka, Herse à contrepoids, Chemin de ronde, Puits creusé, Four à pain, Boucan, Four
+  à chaux, Salle verte, Roue à aubes, Digesteur à biogaz, Touffe de bambous…).
+- **Le vivant de l'abri** (§27) : une seule règle pour tout ce qui vit (têtes, santé, manques, naissances, maladie), l'eau de ce qui
+  boit, 11 installations (Clapier, Soue à cochons, Étable, Bassin à camarons, Aquaponie, Bacs de culture, Serre hors-sol, Jardin de
+  zerbaz, Treille à chouchou, Bananeraie, Carreau de canne), les bêtes de l'île en liberté, le chien qui prévient sans attirer.
+- **Le paradis et son piège, rallumer l'île** (§28) : un abri qui tient se fait remarquer (la chaleur d'un lieu, secrète) ; la ronde,
+  les agglutinés, les corps ; vivre sous terre (Puits d'air et de jour) ; les haies qui cachent (Haie de bambous, Rideau de filaos) ;
+  rallumer une région, ses grands chantiers et les jalons d'une longue partie.
+- **Les jointures** (§29) : une fiche et une recette par outil de capture, une liste de bêtes portées (mises en enclos, elles
+  rejoignent le cheptel de leur espèce), un seul entretien, deux rôles de haies ; le matériau des ateliers, du vivant et des haies ;
+  le digesteur et l'enclos à cabris ; les bêtes mortes parmi les corps ; la salle verte à la fête ; la ronde dans la grille des tâches.
 
 ## Les fêtes
 
@@ -535,7 +567,7 @@ ou IA) peut raconter dans n'importe quelle langue.
 
 ## Essais
 
-**416 essais** Node (`node --test`), sans Foundry, sans réseau ni coût, en quelques secondes, couvrent la logique pure du
+**739 essais** Node (`node --test`), sans Foundry, sans réseau ni coût, en quelques secondes, couvrent la logique pure du
 système (dés, état, temps et ressources, abri, actions, génération, simulation du monde sur 200 jours à graine fixe :
 rien de négatif, hordes dans des régions voisines, réseaux tombés dans leur fenêtre, décomposition des Bas après le jour 60,
 autonomie atteignable), ses textes localisés, le contenu (toutes les références résolues, chaque région atteignable de

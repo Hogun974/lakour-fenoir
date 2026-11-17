@@ -273,7 +273,7 @@ rumours, a Creole glossary, and the first night.
 All the content is in the `lakour-fenoir` module: twelve compendiums (folder "Fénoir"), plus the island's **registry**
 (`assets/donnees.json`) the system loads to simulate the world. The real numbers, as `src/` holds them.
 
-### Player guides (7 journals, 76 pages)
+### Player guides (7 journals, 91 pages)
 
 | Journal | Pages | What you read |
 |---|---|---|
@@ -285,7 +285,7 @@ All the content is in the `lakour-fenoir` module: twelve compendiums (folder "F�
 | **The island's time** | 3 | The Réunion year, the moon and the night, when the date is lost. |
 | **Living without the old world** | 3 | The knowledge of the old days, when the cyclone comes, without fuel. |
 
-### GM journals (11 journals, 78 pages, hidden from players)
+### GM journals (24 journals, 193 pages, hidden from players)
 
 | Journal | Pages | What you read |
 |---|---|---|
@@ -300,6 +300,13 @@ All the content is in the `lakour-fenoir` module: twelve compendiums (folder "F�
 | **Campaign — The Year of the Grey** | 6 | A campaign in **five fronts**: the Accountant, the provisional authority, the cold highlands, the Fournaise, the cure. |
 | **Why the lowlands empty out** | 2 | The rule of the world and what it changes. |
 | **Standing with the factions** | 1 | Tiers (Hostile −20, Wary −4, Neutral 0, Friendly 5, Allied 10) and clocks. |
+| **Workshops and tools** | 6 | The nine workshops and their three levels, tools and weapons in three qualities, wear, makeshift repair, jamming. |
+| **Searching, taking apart, gathering** | 8 | A region's places by kind, more or less looted, what is found there, animals in the yard, taking apart, gathering the island. |
+| **The Pallid before a shelter** | 3 | Traps, height, the gate, the enclosure: what the shelter sets against an assault. |
+| **Building and upkeep** | 4 | The six materials, upkeep, breakdowns, fire, the cellar that caves in. |
+| **The shelter's livestock** | 8 | Livestock and troughs, what they lack, births, disease, animals carried and running free, the dog that warns. |
+| **Paradise and its trap** | 7 | The heat of a place, the round, the clustered Pallid, the bodies, living underground, the hedges that hide. |
+| **Lighting the island again** | 5 | Taking back a region, clearing it, lighting it; the great works; the milestones. |
 
 ### The island: 16 regions, 52 shelter sites, 25 links (registry)
 
@@ -317,7 +324,7 @@ the main road is cut), and its marker on the map.
 places apart; each with capacity, defence, stealth, water (none, cistern, river, spring, well, mains), soil, sun,
 underground, access, stocks on arrival, strengths and weaknesses, installations already there.
 
-### Installations (50, in levels)
+### Installations (117, in levels)
 
 The *lontan* installations (the knowledge of the old days, with the island's own materials) are sisters of the modern ones:
 they fill the same role, another way.
@@ -359,7 +366,7 @@ thirty days; panels 2 / 4 / 6 kWh a day per sun point; a group of four consumes 
   noir*, *Cuir de cabri*, *Os de verre*, *Cœur de kour*, *Jambes de cabri*, *Peur de la mer*…), with their effects (skills,
   morale, fatigue, fears, needs, tasks, social) and their incompatibilities.
 
-### Equipment and vehicles (65), recipes (31), diseases and injuries (12)
+### Equipment and vehicles (171), recipes (139), diseases and injuries (12)
 
 - **Equipment**: 8 weapons (cane cutlass, crowbar, bat, makeshift spear, speargun, hunting bow, makeshift crossbow, sheet-metal
   shield), 4 firearms (12-gauge shotgun, .22 rifle, service pistol, service rifle), 11 tools (pry bar, knife, flare gun,
@@ -393,7 +400,7 @@ thirty days; panels 2 / 4 / 6 kWh a day per sun point; a group of four consumes 
   Îlets (wary), the Dispensary of the South (friendly), the Sans-Lune (hostile); each with its growth, regions, what it
   wants, how to deal with it, a tiered **standing** kept by the engine's clocks, and a table of requests.
 
-### Events (81) and GM tables (55)
+### Events (81) and GM tables (138)
 
 - **Events** (registry): 17 weather (rains, cyclones, swell, drought, fallen trees…), 4 networks, 6 hordes, 10 human,
   4 accidents, 12 at the shelter, 12 discoveries, 15 **market** events (drawn by the GM at the press of a button, never by the
@@ -416,6 +423,31 @@ maps** drawn by the engine's shared renderer: the Creole house, the school, the 
 supermarket, the lava tunnel. The **tokens** (SVG, flat and raised, `outils/fabriquer-jetons-fenoir.mjs`): the pregens and
 the NPCs, the bestiary, and extras (carer, refugee, pilgrim, fisherman, scrapper, farmer, child, sick person, dog…) to bring
 a place to life.
+
+## Wave 3: workshops, searching, building, livestock, paradise
+
+Five batches ported from the Fénoir 3D video game, merged together (contract §24 to §29; figures: `docs/equilibre-*.md`):
+
+- **Workshops and tools** (§24): nine trade workshops in three levels (Fire corner, Woodworking bench, Forge, Vacoa weaving, Sewing
+  workshop, Herbal-tea hut, Mechanics workshop, Electrics workshop, Distillery); tools and weapons in three qualities (makeshift,
+  salvaged, forged) that wear out and get mended; jamming when shooting; 104 recipes (first tools by hand, handmade remedies, boiled
+  water, transport, lime from the lime kiln).
+- **Searching, taking apart, gathering** (§25): a region's places, of 24 kinds, more or less looted and never empty; a tool found has
+  its quality; animals left in a yard (you need the tool: the bamboo cage, the goni sack, the choka rope, the smoker); taking apart a
+  place or an installation (according to its material); gathering the island's deposits, which grow back.
+- **Building and defending** (§26): six materials (read by cyclones, fire, rain and the Pallid), upkeep of installations without
+  hands (and cleaning out the ponds), breakdowns, defences against the Pallid (traps, height, gate, enclosure), fire, the cellar that
+  caves in; 38 installations (Choka hedge, Counterweight portcullis, Wall walk, Dug well, Bread oven, Boucan, Lime kiln, Green hall,
+  Water wheel, Biogas digester, Bamboo clump…).
+- **The shelter's livestock** (§27): one rule for everything that lives (heads, health, needs, births, disease), water for whatever
+  drinks, 11 installations (Rabbit hutch, Pigsty, Cattle shed, Camaron pond, Aquaponics, Bamboo growing troughs, Soilless greenhouse,
+  Zerbaz garden, Chouchou trellis, Banana grove, Cane patch), the island's animals running free, the dog that warns without drawing them.
+- **Paradise and its trap, lighting the island again** (§28): a shelter that holds gets noticed (the heat of a place, secret); the
+  round, the clustered Pallid, the bodies; living underground (Air and daylight shaft); the hedges that hide (Bamboo hedge, Filao
+  screen); lighting a region again, its great works and the milestones of a long game.
+- **The joins** (§29): one sheet and one recipe per capture tool, one list of carried animals (penned, they join their species'
+  livestock), a single upkeep, two roles for hedges; materials for workshops, livestock and hedges; the digester and the goat pen; dead
+  animals among the bodies; the green hall at festivals; the round in the task grid.
 
 ## Festivals
 
@@ -527,7 +559,7 @@ the system reads never change. Method: `modules/lakour-mj-ia/docs/traduction.md`
 
 ## Tests
 
-**416 Node tests** (`node --test`), no Foundry, no network, no cost, in a few seconds: the system's pure logic (dice, state,
+**739 Node tests** (`node --test`), no Foundry, no network, no cost, in a few seconds: the system's pure logic (dice, state,
 time and resources, shelter, actions, generation, world simulation over 200 days with a fixed seed: nothing negative, hordes
 in neighbouring regions, networks down within their window, decomposition of the lowlands after day 60, self-sufficiency
 reachable), its localised texts, the content (every reference resolved, every region reachable from every other, every
