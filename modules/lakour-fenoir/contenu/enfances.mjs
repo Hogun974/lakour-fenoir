@@ -1,7 +1,9 @@
 // Les enfances (contrat §10.1) : où et comment chaque survivant a grandi, à La Réunion ou ailleurs. Modificateurs de
 // compétences (+1, +2, parfois −1), parfois un savoir, une incapacité, un équipement, et des phrases pour la graine d'histoire.
-// poids : fréquence au tirage. genre ("f" | "m", vide = neutre) et nomAutre (le libellé pour l'autre genre) quand le libellé
-// est genré : « Fille de pêcheur » / « Fils de pêcheur ». Textes originaux, sans caricature.
+// poids : fréquence au tirage (les enfances à Mayotte, comorienne du Chaudron et z'arabe de Saint-Pierre : 0,5 depuis le rééquilibrage
+// d'après les douze lots, docs/equilibre-3d.md : à 1, la part musulmane au tirage montait au double de son poids).
+// genre ("f" | "m", vide = neutre) et nomAutre (le libellé pour l'autre genre) quand le libellé est genré : « Fille de pêcheur »
+// / « Fils de pêcheur ». Textes originaux, sans caricature.
 import { html } from "./aides.mjs";
 
 function enfance({ cle, nom, origine = "reunion", region = "", description, modificateurs, savoirs = [], incapacites = [], equipement = [], histoire, poids = 1, genre = "", nomAutre = "" }) {
@@ -24,10 +26,10 @@ export const ENFANCES = [
   enfance({ cle: "enfant-de-la-cite-saint-denis", nom: "Enfant de la cité à Saint-Denis", region: "saint-denis", poids: 2,
     description: `Une barre du Chaudron ou de Vauban, les cages d'escalier, le basket, la mère qui travaille de nuit, la ville qu'on connaît par cœur.`,
     modificateurs: { discretion: 1, parole: 1 }, histoire: ["Il a grandi au dixième étage d'une barre du Chaudron.", "Il connaît chaque raccourci de Saint-Denis, chaque cage d'escalier ouverte."] }),
-  enfance({ cle: "enfance-a-mayotte", nom: "Enfance à Mayotte", origine: "ailleurs", poids: 1,
+  enfance({ cle: "enfance-a-mayotte", nom: "Enfance à Mayotte", origine: "ailleurs", poids: 0.5,
     description: `Une enfance à Mayotte, le lagon, la famille nombreuse, puis la traversée vers La Réunion pour les études ou le travail.`,
     modificateurs: { endurance: 1, survie: 1 }, histoire: ["Elle a grandi à Mayotte avant de rejoindre une tante à Saint-Denis.", "Elle parle shimaoré à sa mère au téléphone, chaque dimanche."] }),
-  enfance({ cle: "enfance-comorienne-du-chaudron", nom: "Enfant d'une famille comorienne du Chaudron", region: "saint-denis", poids: 1,
+  enfance({ cle: "enfance-comorienne-du-chaudron", nom: "Enfant d'une famille comorienne du Chaudron", region: "saint-denis", poids: 0.5,
     description: `Né à Saint-Denis de parents venus d'Anjouan et de la Grande Comore : la kofia du vendredi, le mataba de la grand-mère, l'école coranique le mercredi, le basket en bas de la barre, et la question qu'on lui pose toujours, « tu viens d'où ? ».`,
     modificateurs: { parole: 1, endurance: 1 }, histoire: ["Il traduisait pour sa grand-mère au guichet, du shikomori au français et retour.", "Quand on lui demande d'où il vient, il répond « du Chaudron », et on insiste quand même."] }),
   enfance({ cle: "enfance-a-madagascar", nom: "Enfance à Madagascar", origine: "ailleurs", poids: 1,
@@ -54,7 +56,7 @@ export const ENFANCES = [
   enfance({ cle: "enfance-chinoise-de-saint-denis", nom: "Enfance chinoise de Saint-Denis", region: "saint-denis", poids: 1,
     description: `La boutique familiale du centre-ville, les comptes faits le soir, les fêtes du Nouvel An, les grands-parents arrivés de Canton.`,
     modificateurs: { parole: 1, vigilance: 1 }, histoire: ["Elle a grandi derrière le comptoir de la boutique de ses parents.", "Son grand-père racontait la traversée depuis Canton, chaque Nouvel An."] }),
-  enfance({ cle: "enfance-zarab-de-saint-pierre", nom: "Enfance dans une famille commerçante de Saint-Pierre", region: "saint-pierre", poids: 1,
+  enfance({ cle: "enfance-zarab-de-saint-pierre", nom: "Enfance dans une famille commerçante de Saint-Pierre", region: "saint-pierre", poids: 0.5,
     description: `Une famille de commerçants musulmans de Saint-Pierre, la mosquée, le magasin de tissus, le sens des affaires et de la parole donnée.`,
     modificateurs: { parole: 2 }, histoire: ["Il a appris à compter en rendant la monnaie au magasin de son père.", "Dans sa famille, une parole donnée vaut un contrat signé."] }),
   enfance({ cle: "enfant-de-militaire", nom: "Enfant de militaire", origine: "ailleurs", poids: 1,

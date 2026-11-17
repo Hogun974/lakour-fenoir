@@ -17,8 +17,10 @@ const esprit = (extra = {}) => L.survivantNeuf({ statut: "compagnon", regard: "v
 
 test("tirerEsprit : 2000 tirages — regards, religions du contenu, « plusieurs » à deux religions, ancrage du non-croyant, bornes de départ", () => {
   const vus = { regard: new Set(), religion: new Set(), ancrage: new Set() };
+  let musulmans = 0;
   for (let i = 0; i < 2000; i++) {
     const s = L.genererSurvivant(C, L.creerHasard(`e${i}`), { statut: "joueur" });
+    if (s.religion === "musulmane") musulmans++;
     assert.ok(L.REGARDS.includes(s.regard), s.regard);
     assert.ok(RELIGIONS.includes(s.religion), s.religion);
     if (s.religion === "plusieurs") {
@@ -36,6 +38,9 @@ test("tirerEsprit : 2000 tirages — regards, religions du contenu, « plusieurs
   // « plusieurs » ne se tire plus (lot 10 : « hindoue catholique » tient sa place) ; elle se choisit sur la fiche.
   assert.deepEqual([...vus.religion].sort(), L.liste(C.religions).filter(r => r.poids > 0).map(r => r.cle).sort(), "chaque religion sort, « aucune » comprise");
   assert.equal(vus.ancrage.size, idx.ancrages.size, "chaque ancrage sort");
+  // Rééquilibrage d'après les douze lots (docs/equilibre-3d.md) : la part musulmane suit son poids (7) ; à × 12 sur trois enfances,
+  // elle montait à 13,3 % (8,0 % sur 75 000 tirages depuis, × 2 et ces enfances à 0,5).
+  assert.ok(musulmans / 2000 >= 0.05 && musulmans / 2000 <= 0.105, `${musulmans}/2000 musulmans`);
 });
 
 test("tirerEsprit : les tirages d'avant ce lot ne changent pas (flux à part) ; verrous ; l'enfance penche sans décider ; le croyant croit", () => {

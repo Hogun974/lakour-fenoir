@@ -48,8 +48,11 @@ export const RELIGIONS = [
     fetes: ["noel", "paques", "halloween", "dipavali", "cavadee", "nouvel-an-tamoul", "marche-sur-le-feu", "pongal"],
     observance: { besoin: "calme", texte: "un cierge à saint Expédit et une lampe pour Mariamen, la messe du dimanche et le carême du temple" },
     description: `La messe le dimanche et le temple le vendredi, la Vierge et Mariamen sur la même étagère, sous les mêmes fleurs : beaucoup de familles malbares sont les deux à la fois depuis des générations, et personne dans l'île ne trouve ça étrange. Le curé a fini par venir bénir la marche sur le feu ; la grand-mère a toujours su à quelle porte frapper pour quelle peine.` }),
+  // Rééquilibrage d'après les douze lots (docs/equilibre-3d.md) : × 2 au lieu de × 12. Le poids 7 compte déjà les Z'arabes, les Comoriens
+  // et les Mahorais de l'île : à × 12, quatre sur cinq de ces enfances tiraient l'islam et la part musulmane montait à 13,3 % ; à × 2
+  // (et ces trois enfances deux fois moins souvent tirées, enfances.mjs), 8 % sur 75 000 tirages, et deux sur cinq de ces enfances.
   religion({ cle: "musulmane", nom: "Musulmane", poids: 7, alias: ["islam"],
-    affinites: { ...LOIN_DE(12), "enfance-a-madagascar": 0.6, "enfance-tamoule-de-saint-andre": 0.1 },
+    affinites: { ...LOIN_DE(2), "enfance-a-madagascar": 0.6, "enfance-tamoule-de-saint-andre": 0.1 },
     // Le ramadan et l'Aïd el-Kebir : fêtes du lot « fetes ».
     fetes: ["ramadan", "aid-el-kebir"],
     observance: { besoin: "calme", texte: "les cinq prières, l'eau propre des ablutions, le jeûne du ramadan quand il revient" },

@@ -52,7 +52,9 @@ Les croyants pratiquants restent 38 à 39 % ; ceux dont l'observance tient à un
 
 **Un écart à signaler** : la part musulmane tirée (12,8 %) dépasse le poids (7) parce que trois enfances sur vingt-quatre de FVTT
 (comorienne du Chaudron, à Mayotte, z'arabe de Saint-Pierre) font près de 9 % des tirages et rendent l'islam douze fois plus probable.
-Ce n'est pas la liste qui pousse, c'est la part de ces enfances (voir « À trancher »).
+Ce n'est pas la liste qui pousse, c'est la part de ces enfances (voir « À trancher »). **Ramené depuis** (rééquilibrage d'après les
+douze lots, `equilibre-3d.md`) : affinité × 12 → × 2 et ces trois enfances tirées deux fois moins souvent (poids 1 → 0,5) : 8,0 %
+sur 75 000 tirages (13,3 % avant), et deux sur cinq de ces enfances tirent encore l'islam.
 
 ## 2. Changer de religion
 
@@ -239,7 +241,8 @@ sur une graine). Sur un an, les écarts tiennent dans une ou deux parties sur qu
 
 - **La part musulmane tirée** (12,8 % pour un poids de 7) : elle vient des trois enfances musulmanes de FVTT (près de 9 % des tirages).
   Pour retrouver ~7 %, deux voies : baisser le poids de ces enfances au tirage, ou l'affinité (× 12 → × 4 : environ 11 %). Rien n'est
-  changé tant que Jordan n'a pas dit.
+  changé tant que Jordan n'a pas dit. **Tranché le 2026-11-17** (rééquilibrage d'après les douze lots, `equilibre-3d.md`) : les deux,
+  × 2 et poids 0,5 : 8,0 %.
 - **Le servis kabaré** dans la liste commune (1 sur 100) : à reporter dans le jeu 3D (sa clé `servis-kabare`), ou à retirer des
   deux jeux (les fiches qui le portent garderaient leur clé, lue comme un alias).
 - **La suite d'un refus** alignée sur le jeu 3D : le refusé rouge allume moins souvent le feu (30–40 % au lieu de 70 %).

@@ -28606,7 +28606,7 @@
     "Elle a grandi à Mayotte avant de rejoindre une tante à Saint-Denis.",
     "Elle parle shimaoré à sa mère au téléphone, chaque dimanche."
    ],
-   "poids": 1,
+   "poids": 0.5,
    "genre": "",
    "nomAutre": ""
   },
@@ -28627,7 +28627,7 @@
     "Il traduisait pour sa grand-mère au guichet, du shikomori au français et retour.",
     "Quand on lui demande d'où il vient, il répond « du Chaudron », et on insiste quand même."
    ],
-   "poids": 1,
+   "poids": 0.5,
    "genre": "",
    "nomAutre": ""
   },
@@ -28820,7 +28820,7 @@
     "Il a appris à compter en rendant la monnaie au magasin de son père.",
     "Dans sa famille, une parole donnée vaut un contrat signé."
    ],
-   "poids": 1,
+   "poids": 0.5,
    "genre": "",
    "nomAutre": ""
   },
@@ -29829,9 +29829,9 @@
    ],
    "poids": 7,
    "affinites": {
-    "enfance-zarab-de-saint-pierre": 12,
-    "enfance-a-mayotte": 12,
-    "enfance-comorienne-du-chaudron": 12,
+    "enfance-zarab-de-saint-pierre": 2,
+    "enfance-a-mayotte": 2,
+    "enfance-comorienne-du-chaudron": 2,
     "enfance-a-madagascar": 0.6,
     "enfance-tamoule-de-saint-andre": 0.1
    },
