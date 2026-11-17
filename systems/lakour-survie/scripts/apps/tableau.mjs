@@ -140,7 +140,10 @@ export function contexteTableau(onglet = "groupe") {
       electricite: rs.electricite === null || rs.electricite === undefined ? "?" : rs.electricite ? "✔" : "✘",
       eau: rs.eau === null || rs.eau === undefined ? "?" : rs.eau ? "✔" : "✘",
       factions: (rs.factions ?? []).map(f => L.factionDe(c, f)?.nom ?? f).join(", "),
-      notes: [rs.notes ?? "", ...(surCarte?.notes ?? [])].filter(Boolean).join(" "),
+      notes: [rs.notes ?? "", ...(surCarte?.notes ?? []),
+        // Lot 9 : ce qu'on a vu des lumières de la région, daté.
+        ...(rs.lumiere ? [`${t(`LAKOUR_SURVIE.Paradis.Regions.${rs.lumiere}`)} (${t("LAKOUR_SURVIE.Renseignements.Age", { n: Math.max(0, jour - (Number(rs.lumiereVu) || 0)) })})`] : [])].filter(Boolean).join(" "),
+
       carte: surCarte && Object.keys(surCarte.routes).length ? t("LAKOUR_SURVIE.Reperes.CarteLigne", {
         sources: surCarte.sources.map(s => (s.imprimee ? `${s.nom}, ${s.imprimee}` : s.nom)).join(" ; "),
         routes: Object.entries(surCarte.routes).map(([v, e]) => `${L.regionDe(c, v)?.nom ?? v} : ${t(`LAKOUR_SURVIE.Routes.${e}`)}`).join(", ") }) : ""

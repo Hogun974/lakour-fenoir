@@ -718,7 +718,12 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       }
       const il = journeeDeLIle(e, contenu, { jour, conditions: conditionsIle });
       e = il.etat;
-      for (const f of il.faits) { faits.push({ jour, ...f, public: true }); publier(fin, f.cle, f.params, f.texte); alerter(fin, "ile", f.cle, f.params, f.texte); }
+      for (const f of il.faits) {
+        faits.push({ jour, ...f, public: true }); publier(fin, f.cle, f.params, f.texte); alerter(fin, "ile", f.cle, f.params, f.texte);
+        // Les lumières se voient de loin, la nuit : le renseignement de la région le dit, daté (§2.4).
+        e = { ...e, renseignements: { ...e.renseignements, [f.region]: { ...(e.renseignements?.[f.region] ?? {}), lumiere: f.cle === "region-rallumee" ? "rallumee" : "eteinte", lumiereVu: jour } } };
+      }
+
       const jalons = jalonsDuJour(e, { jour, abri: Boolean(ab), saison: saisonDuJour(jour, dateDepart), saisonVeille: saisonDuJour(jour - 1, dateDepart),
         pluiesVecues: aLeJalon(e, "premier-abri"), cyclone: cycloneIci, fetes: (e.fetes ?? []).length, rallumees: regionsRallumees(e).length, regions: regionsDe(contenu).length });
       if (jalons.length) {

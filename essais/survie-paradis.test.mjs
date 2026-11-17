@@ -436,6 +436,9 @@ test("avancer : une région tenue, nettoyée, éclairée se rallume ; la carte p
   assert.ok(r.etat.journal.some(e => e.cle === "region-rallumee"));
   assert.ok(L.jalonsDe(r.etat).some(j => j.cle === "premiere-region"));
   assert.ok(r.paradis.jalons.some(j => j.cle === "premiere-region"));
+  assert.equal(r.etat.renseignements.mafate.lumiere, "rallumee", "le renseignement le dit, daté");
+  assert.ok(r.etat.renseignements.mafate.lumiereVu >= 30);
+
   // Avant un mois d'abri tenu, ou sans nettoyer ses lieux gardés, elle ne s'allume pas.
   assert.equal(L.etatRegion(L.avancer({ ...d, etat, abri: { ...d.abri, installations: panneaux }, contenu: D, quarts: 4 * 20 }).etat, "mafate"), "noire");
   assert.equal(L.etatRegion(L.avancer({ ...d, abri: { ...d.abri, installations: panneaux }, contenu: D, quarts: 4 * 32 }).etat, "mafate"), "noire");
