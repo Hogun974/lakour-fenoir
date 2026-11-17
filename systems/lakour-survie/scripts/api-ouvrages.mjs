@@ -91,7 +91,7 @@ export function fonctionsOuvrages({ ecriture, ouvrirCtx, terminer, noter, tx, jo
     return {
       ouvrages: o, force: fo.force, retire: fo.retire, comblees: fo.comblees,
       apres: (r, garde) => L.issueDevantOuvrages(r, { livides, ouvrages: o, garde }),
-      cible: (liste, r, h) => L.cibleDesDegats(liste, c, { livides, appuis: r.appuis, hasard: h })
+      cible: (liste, r, h) => L.cibleDesDegats(liste, c, { livides, appuis: r.appuis, issue: r.issue, hasard: h })
     };
   }
 

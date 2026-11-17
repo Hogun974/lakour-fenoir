@@ -1574,8 +1574,8 @@ au cyclone), une instance sans suivi commence à compter le jour où le système
   comblees }` (les pièges ôtent leur force, jamais sous 1 ; débordé au-delà de 4 fois sa force, un piège se comble) ;
   `issueDevantOuvrages(r, { livides, ouvrages, garde })` (un garde et une `hauteur` en état : une brèche de Livides devient
   « endommagée », sans blessé, et les appuis prennent le coup : `hauteurTient`, `appuis`) ; `cibleDesDegats(installations, contenu,
-  { livides, appuis, hasard })` (Livides : les appuis, sinon une porte, sinon l'enceinte, plus souvent sa pièce la plus faible, sinon
-  ce qui est fragile ; vivants et bêtes : au hasard, comme avant).
+  { livides, appuis, issue, hasard })` (Livides tenus dehors : les appuis, sinon une porte, sinon l'enceinte, plus souvent sa pièce la
+  plus faible, sinon ce qui est fragile ; entrés par une brèche : ce qui est fragile ; vivants et bêtes : au hasard, comme avant).
 - **Feu** : `incendieAbri(installations, contenu, { force: 1..3 }, hasard)` → `{ installations, brulees, epargnees, degatsAbri }` (un cran
   par point de force avec 0,5 × part au feu ; rien sous terre ; force ≥ 2 : l'abri prend force − 1 dégâts).
 - **La cave** : `risqueEboulement({ def, savoirs, site })` (souterrain : 25 % sans `etaiement-galeries`, + 25 % sur un site à rivière),

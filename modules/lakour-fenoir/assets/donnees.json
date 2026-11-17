@@ -12371,7 +12371,7 @@
    "niveauMax": 1,
    "chantier": {
     "fait": 0,
-    "requis": 8
+    "requis": 6
    },
    "etat": 0,
    "niveaux": [
@@ -12381,7 +12381,7 @@
       "pieces": 0,
       "graines": 0,
       "ile": 4,
-      "travail": 8
+      "travail": 6
      },
      "requiert": {
       "savoirs": [],
@@ -12405,7 +12405,7 @@
       "defense": 0,
       "discretion": 0,
       "capacite": 0,
-      "visibilite": 2,
+      "visibilite": 1,
       "bruit": 0,
       "stockage": {},
       "protectionCyclone": 0,

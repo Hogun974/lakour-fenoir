@@ -54,9 +54,10 @@ test("API : ouvrages() dit le matériau et l'entretien ; entretenir soigne (le d
 
 test("API : un assaut de Livides passe devant les pièges et la cloche ; une bande, non", async () => {
   const { M, a, b, abri } = await partie();
-  const f = await M.api.construire({ installation: "fosse-et-pieges", quarts: 12, membres: [a.id] });
+  // Assez de quarts pour finir, même si l'un d'eux n'a que 16 ou 17 ans (il travaille aux 3/4).
+  const f = await M.api.construire({ installation: "fosse-et-pieges", quarts: 8, membres: [a.id, b.id] });
   assert.equal(f.termine, true);
-  const k = await M.api.construire({ installation: "cloche-d-alarme", quarts: 2, membres: [b.id] });
+  const k = await M.api.construire({ installation: "cloche-d-alarme", quarts: 2, membres: [a.id, b.id] });
   assert.equal(k.termine, true);
   const bruitAvant = Number(abri.system.bruit) || 0;
   const horde = await M.api.assaut({ force: 3, horde: true });

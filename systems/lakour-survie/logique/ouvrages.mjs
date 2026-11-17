@@ -266,20 +266,22 @@ export function issueDevantOuvrages(r, { livides = false, ouvrages = null, garde
   return { ...r, issue: "endommagee", degats: 1, blesses: 0, installationEndommagee: true, hauteurTient: true, appuis: h };
 }
 
-// L'installation que l'assaut abîme. Des Livides : une porte fermée d'abord (elle se frappe toujours), sinon l'enceinte (les
-// installations de défense), plus souvent sa pièce la plus faible, sinon n'importe quoi, plus souvent ce qui est fragile. Des vivants, des
-// bêtes : au hasard, comme avant le lot. installations : instances ; appuis : ce que la hauteur désigne. -> instance | null
-export function cibleDesDegats(installations = [], contenu = {}, { livides = false, appuis = null, hasard = Math.random } = {}) {
+// L'installation que l'assaut abîme. Des Livides tenus dehors (l'issue « endommagée ») : une porte fermée d'abord (elle se frappe
+// toujours), sinon l'enceinte (les installations de défense), plus souvent sa pièce la plus faible, sinon n'importe quoi, plus souvent ce
+// qui est fragile. Des Livides entrés (une brèche) : n'importe quoi, plus souvent ce qui est fragile. Des vivants, des bêtes : au hasard,
+// comme avant le lot. installations : instances ; appuis : ce que la hauteur désigne ; issue : celle de l'assaut. -> instance | null
+export function cibleDesDegats(installations = [], contenu = {}, { livides = false, appuis = null, issue = "endommagee", hasard = Math.random } = {}) {
   const cibles = (installations ?? []).filter(i => n0(i?.niveau) >= 1 && n0(i.etat) < 3);
   if (!cibles.length) return null;
   if (appuis) { const a = cibles.find(i => (appuis.id && i.id === appuis.id) || i.cle === appuis.cle); if (a) return a; }
   if (!livides) return cibles[Math.floor(hasard() * cibles.length)] ?? null;
   const defs = new Map(cibles.map(i => [i, installationDe(contenu, i.cle)]));
   const effets = i => niveauDe(defs.get(i), n0(i.niveau))?.effets ?? {};
-  const portes = cibles.filter(i => effets(i).porte);
+  const dedans = issue === "breche";
+  const portes = dedans ? [] : cibles.filter(i => effets(i).porte);
   if (portes.length) return portes[Math.floor(hasard() * portes.length)];
   const fragilite = i => Math.max(0.01, faiblesse(defs.get(i), n0(i.niveau), "livides"));
-  const enceinte = cibles.filter(i => defs.get(i)?.categorie === "defense" && n0(effets(i).defense) > 0);
+  const enceinte = dedans ? [] : cibles.filter(i => defs.get(i)?.categorie === "defense" && n0(effets(i).defense) > 0);
   const parmi = enceinte.length ? enceinte : cibles;
   const total = parmi.reduce((t, i) => t + fragilite(i), 0);
   let x = hasard() * total;

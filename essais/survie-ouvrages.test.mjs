@@ -142,6 +142,8 @@ test("défenses : pièges (force ôtée aux seuls Livides, la fosse se comble), 
   const sansPorte = [I("citerne-de-pluie"), I("potager"), I("palissade"), I("barricades")];
   for (const x of [0, 0.3, 0.6, 0.99]) assert.ok(["palissade", "barricades"].includes(L.cibleDesDegats(sansPorte, C, { livides: true, hasard: () => x }).cle), "l'enceinte d'abord");
   assert.equal(L.cibleDesDegats(sansPorte, C, { livides: false, hasard: () => 0 }).cle, "citerne-de-pluie", "des vivants : au hasard, comme avant");
+  assert.equal(L.cibleDesDegats(sansPorte, C, { livides: true, issue: "breche", hasard: () => 0 }).cle, "citerne-de-pluie", "entrés, ils cassent ce qui est dedans");
+  assert.equal(L.cibleDesDegats(inst, C, { livides: true, issue: "breche", hasard: () => 0 }).cle, "fosse-et-pieges", "une brèche : la porte ne prend plus tout");
 });
 
 test("la haie ne défend qu'une fois fermée (180 jours) ; la touffe de bambous regarnit le bois des alentours", () => {

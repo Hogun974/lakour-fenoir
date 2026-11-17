@@ -215,7 +215,7 @@ export const INSTALLATIONS_OUVRAGES = [
   ouvrage({ cle: "boucan", arbre: "lontan", role: "sechoir-fumoir", rang: 1, nom: "Boucan", categorie: "stockage", materiau: "paille-et-torchis", expose: true,
     description: `La paillote où l'on cuisine, avec sa claie au-dessus du feu : la viande, le poisson et les piments s'y boucanent des jours durant et ne se gâtent plus. Elle ne coûte que de la paille et des gaulettes ; la pluie use le torchis, le vent l'emporte au premier cyclone.`,
     niveaux: [
-      { cout: { ile: 4, travail: 8 }, effets: { conservation: true, visibilite: 2, odeur: 1 }, entretien: E(30) }
+      { cout: { ile: 4, travail: 6 }, effets: { conservation: true, visibilite: 1, odeur: 1 }, entretien: E(30) }
     ] }),
   ouvrage({ cle: "claies-de-sechage", arbre: "lontan", nom: "Claies de séchage", categorie: "stockage", materiau: "bambou-et-vacoa", expose: true,
     description: `Des claies de bambou sur des tréteaux, au soleil : les zerbaz, les piments, le café, les graines y sèchent sans moisir. On garde ainsi bien plus de brassées qu'il n'en tient dans la case.`,
@@ -444,8 +444,8 @@ Devant une clôture, il cherche d'abord à passer : **il longe le mur** et le co
 
 - **Les pièges** (fossé et pièges, chausse-trapes, douves) ôtent leur force à celle de l'assaut, avant les dés (jamais sous 1). Un piège débordé (une force plus de quatre fois la sienne) se comble : il perd un cran d'état, à vider (réparer).
 - **La hauteur** (chemin de ronde) : si un garde est présent et que le chemin de ronde n'est pas hors service, **il n'y a pas de brèche** ; l'issue devient « endommagée », sans blessé, et ce sont les appuis (le chemin de ronde) qui prennent le coup.
-- **La porte** (herse, portail de bois dur, passerelle relevée, porte blindée) : quand une installation est abîmée, c'est elle.
-- Sinon, **l'enceinte** (les installations de défense) prend le coup, à sa pièce la plus faible (le torchis avant le bambou, le bambou avant la tôle, la tôle avant le bois, le bois avant la pierre) ; sans enceinte, le coup tombe plus souvent sur ce qui est fragile.
+- **La porte** (herse, portail de bois dur, passerelle relevée, porte blindée) : tant qu'ils sont dehors, quand une installation est abîmée, c'est elle.
+- Sinon, **l'enceinte** (les installations de défense) prend le coup, plus souvent à sa pièce la plus faible (le torchis avant le bambou, le bambou avant la tôle, la tôle avant le bois, le bois avant la pierre) ; sans enceinte, ou une fois entrés (une brèche), le coup tombe sur n'importe quoi, plus souvent ce qui est fragile.
 - **La cloche** donne +1 en vigilance (comme une tour de guet) ; quand on la frappe pendant un assaut, l'abri fait +2 de bruit : elle prévient, et elle attire.
 
 Contre des **vivants** (une bande) ou des bêtes, rien de cela : ils voient les pièges, ils prennent ce qu'ils veulent.
@@ -496,7 +496,7 @@ const PAGES_BATIR = [
 - **Les enceintes de palettes et d'épaves** : des palissades de fortune, qui la remplacent quand elle manque.
 - **La cloche d'alarme** : elle réveille tout le monde, et tout le voisinage.
 
-Et **la cave** : creuser sans savoir étayer, c'est risquer l'éboulement (un jour de creusement sur quatre) ; près d'une eau qui court, même en sachant, le risque est là. Un éboulement blesse sans tuer et rebouche une part du travail.` },
+Et **la cave** : creuser sans savoir étayer, c'est risquer l'éboulement (une fois sur quatre, au moment d'achever un niveau) ; près d'une eau qui court, même en sachant, le risque est là. Un éboulement blesse sans tuer et rebouche la dernière cellule.` },
   { cle: "lontan", titre: "Les deux façons de bâtir", texte: `Presque tout ce qu'on bâtit a sa version d'avant, faite avec ce qui pousse autour (le bois, le bambou, le vacoa, la pierre des champs) : le foyer à trois roches pour la cuisine, le boucan pour le fumoir, le cellier de pierre pour la réserve, les paillasses pour le dortoir, les jarres filtrantes pour le filtre, le bassin de pierre pour la cuve, les lampes à huile pour l'éclairage, la remise de chaume pour celle de tôle. Elles ne s'additionnent pas : la meilleure qui marche est en service, l'autre attend. Elles coûtent des matières de l'île et du travail, pas des matériaux fouillés ; elles tiennent moins, et se refont.
 
 **Le puits creusé** : là où il n'y a ni source ni ravine, on creuse jusqu'à la nappe. Deux, puis trois unités d'eau par jour, à remonter à bras. **La touffe de bambous** regarnit le bois des alentours au bout de six mois. **Le four à chaux** fait de la chaux, donc du mortier, avec des coquillages et du bois.` }
