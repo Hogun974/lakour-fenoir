@@ -27,8 +27,8 @@ export const EQUIPEMENTS = [
     description: `Un arc à poulies d'un club de tir à l'arc ou un arc de fabrication maison. Silencieux, les flèches se récupèrent.` }),
   equipement({ cle: "arbalete-de-fortune", nom: "Arbalète de fortune", categorie: "arme", bonus: { tir: 1 }, charge: 2,
     description: `Une arbalète d'atelier : lame de ressort de voiture pour l'arc, crosse de bois, détente de récupération. Lente à armer, silencieuse, et ses carreaux se récupèrent.` }),
-  equipement({ cle: "bouclier-de-tole", nom: "Bouclier de tôle", categorie: "arme", bonus: { combat: 1 }, charge: 2,
-    description: `Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir.` }),
+  equipement({ cle: "bouclier-de-tole", nom: "Bouclier de tôle", categorie: "arme", bonus: { combat: 1 }, charge: 2, parade: 5,
+    description: `Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir. Il pare une touche de Livide sur trois (5 ou 6 au dé) : une touche parée ne blesse pas et ne mord pas.` }),
   // ---------------------------------------------------------------- Armes à feu (rares, bruyantes)
   equipement({ cle: "fusil-de-chasse", nom: "Fusil de chasse calibre 12", categorie: "arme-a-feu", bonus: { tir: 2 }, charge: 2, munitions: 1, bruit: 2,
     description: `Le fusil de chasse d'un chasseur des Hauts, superposé ou à pompe. Terrible à courte portée. Chaque coup s'entend à des kilomètres.` }),
@@ -59,8 +59,8 @@ export const EQUIPEMENTS = [
     description: `Cuisiner sans fumée en route, faire bouillir l'eau. Une cartouche de gaz dure peu ; un réchaud à bois, toujours.` }),
   equipement({ cle: "sac-de-randonnee", nom: "Sac de randonnée", categorie: "vie", bonus: { endurance: 1 }, charge: 0,
     description: `Un grand sac à dos de trekking, bien réglé : on porte plus, plus loin, sans s'abîmer le dos.` }),
-  equipement({ cle: "tente", nom: "Tente et bâche", categorie: "vie", bonus: { survie: 1 }, charge: 2,
-    description: `Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate.` }),
+  equipement({ cle: "tente", nom: "Tente et bâche", categorie: "vie", bonus: { survie: 1 }, charge: 2, bivouac: true,
+    description: `Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate. De quoi bivouaquer : on y dort mieux qu'à même le sol.` }),
   // ---------------------------------------------------------------- Soins
   equipement({ cle: "trousse-de-secours", nom: "Trousse de secours", categorie: "soin", bonus: { soins: 1 }, charge: 1,
     description: `Compresses, bandes, désinfectant, sutures adhésives, garrot, gants, ciseaux. Elle se vide vite.` }),
@@ -147,8 +147,8 @@ export const EQUIPEMENTS = [
     description: `Un sac tressé de feuilles de vacoa séchées, solide et léger, comme ceux des marchés d'avant : on porte plus, plus loin, et c'est beau.` }),
   equipement({ cle: "chaise-en-vacoa", nom: "Chaise en vacoa", categorie: "vie", bonus: {}, charge: 2, effets: { moral: 0.5 },
     description: `Un cadre de bois, une assise tressée de vacoa : de quoi s'asseoir le soir sous la varangue comme avant. On ne mesure pas ce que vaut une chaise avant de s'en être passé.` }),
-  equipement({ cle: "natte-de-vacoa", nom: "Natte de vacoa", categorie: "vie", bonus: {}, charge: 1, effets: { moral: 0.5 },
-    description: `Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil.` }),
+  equipement({ cle: "natte-de-vacoa", nom: "Natte de vacoa", categorie: "vie", bonus: {}, charge: 1, effets: { moral: 0.5 }, bivouac: true,
+    description: `Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil. Roulée sur le sac, elle fait un bivouac.` }),
   equipement({ cle: "cordes-de-choka", nom: "Cordes de choka", categorie: "outil", bonus: { survie: 1 }, charge: 1,
     description: `Des cordes tordues avec la fibre des feuilles de choka (l'agave), rouies et battues : elles lient un bambou, tiennent une bâche, descendent un seau dans le puits.` }),
 

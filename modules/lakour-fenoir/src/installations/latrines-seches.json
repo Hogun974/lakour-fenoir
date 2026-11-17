@@ -1,0 +1,84 @@
+{
+  "_id": "lYUu4jQZpZz4FtF5",
+  "_key": "!items!lYUu4jQZpZz4FtF5",
+  "name": "Latrines sèches",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "latrines-seches",
+    "categorie": "vie",
+    "description": "<p>Une cabane de planches refendues et de bambou, un siège, un fût dessous et de la cendre : rien ne va dans l'eau, et le fût plein, laissé à mûrir une saison, finit en compost pour le jardin.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 3,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0.005,
+          "renseignements": false,
+          "bonus": {},
+          "hygiene": 2,
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "role": "latrines",
+    "rang": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "latrines-seches"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

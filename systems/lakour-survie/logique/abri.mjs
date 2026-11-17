@@ -69,6 +69,14 @@
 //   (`conditions.souillure`, défaut : l'abri surpeuplé), le sang (`conditions.sang`), les morts sans repos (`conditions.morts`),
 //   les Hauts et la pluie du jour (`conditions.pluie`) ; odeurAbri.
 // - Le musicien (`conditions.musique` : le bruit de son ancrage, bruitDesMusiciens) s'ajoute au bruit de l'abri.
+//
+// Lot « corps » (docs/equilibre-corps.md, contrat §19 ; logique/corps.mjs) :
+// - L'hygiène : `effets.hygiene` des installations en marche ; celles du rôle « latrines » (feuillées, latrines sèches, fosse
+//   maçonnée, sœurs) font `bilan.latrines`, les autres (lavoir, douche : rôle « toilette ») `bilan.toilette` ; `bilan.hygiene` =
+//   latrines + toilette, au plus 3.
+// - La souillure (`abri.souillure`) et l'insalubrité (`bilan.insalubrite`, 0 à 3) : journeeAbri l'amasse (personnes, latrines,
+//   surpeuplement) et l'efface (jours, pluie : `conditions.pluie`). L'odeur compte la souillure d'un abri sale (insalubrité 2 et
+//   plus) comme celle d'un abri surpeuplé.
 import { ORDRE_DELESTAGE, RESSOURCES, NATURE, SEUIL_AUTONOMIE, COUT_ILE, borner } from "./constantes.mjs";
 import { installationDe, regionDe, siteDe, niveauDe, niveauMaxDe, natureRegion, indexer } from "./contenu.mjs";
 import { consommationJour, pertesJour, plafonds, joursDeStocks, normaliserStocks, journeeStocks, couvre, retirerStocks } from "./ressources.mjs";
@@ -77,6 +85,7 @@ import { facteurBras } from "./generation.mjs";
 import { message } from "./textes.mjs";
 import { tirerPoids } from "./hasard.mjs";
 import { odeurAbri } from "./sens.mjs";
+import { insalubrite as niveauInsalubrite, niveauHygiene, souillureDe, souillureDuJour } from "./corps.mjs";
 
 export const FACTEUR_ETAT = [1, 0.75, 0.5, 0];
 export const SAISON_PLUIE = { pluies: 1, seche: 0.5 };
@@ -311,7 +320,11 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
   const usure = lignes.filter(l => l.sol && l.enMarche).reduce((s, l) => s + l.niveau * USURE_SOL, 0);
   // L'odeur de l'abri (lot « sens ») : ce qui sent au-delà d'un groupe ordinaire.
   const surpeuplement = Math.max(0, c.personnes - capacite);
-  const odeur = odeurAbri({ installations: sommeEffet(actives, "odeur"), souillure: conditions.souillure ?? (surpeuplement > 0 ? 1 : 0), sang: Boolean(conditions.sang),
+  // Lot « corps » : l'hygiène des installations en marche, l'insalubrité de l'abri.
+  const hygieneDe = filtre => Math.max(0, ...actives.filter(l => Number(l.e.hygiene) > 0 && filtre(l)).map(l => Number(l.e.hygiene)));
+  const latrines = hygieneDe(l => l.role === "latrines"), toilette = hygieneDe(l => l.role !== "latrines");
+  const insalubrite = niveauInsalubrite(souillureDe(abri));
+  const odeur = odeurAbri({ installations: sommeEffet(actives, "odeur"), souillure: conditions.souillure ?? (surpeuplement > 0 || insalubrite >= 2 ? 1 : 0), sang: Boolean(conditions.sang),
     morts: Number(conditions.morts) || 0, altitude: c.region.altitude, pluie: Number(conditions.pluie) || 0 });
   const bilan = {
     defense, discretion, capacite,
@@ -332,6 +345,7 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     arrets,
     secours,
     surpeuplement,
+    latrines, toilette, hygiene: niveauHygiene(latrines, toilette), souillure: souillureDe(abri), insalubrite,
     odeur: odeur.odeur, odeurBetes: odeur.betes, odeurSources: odeur.sources,
     ...(conditions.ravine && c.site.eau === "riviere" ? { ravine: conditions.ravine.etat ?? "" } : {}),
     autonome: net.eau >= 0 && net.nourriture >= 0 && net.energie >= 0
@@ -352,6 +366,9 @@ export function journeeAbri(abri = {}, installations = [], contenu = {}, conditi
     stocks: b.stocks,
     reliquats: bilan.reliquats,
     sol: borner(Number(abri.sol ?? c.site.sol ?? 0) + bilan.sol, 0, SOL_MAX),
+    // Lot « corps » : la souillure du jour (les présents, les latrines, le surpeuplement ; la pluie l'efface plus vite).
+    souillure: souillureDuJour({ souillure: souillureDe(abri), personnes: c.personnes, latrines: bilan.latrines, surpeuplement: bilan.surpeuplement,
+      pluie: Number(conditions.pluie) || 0 }),
     nature: regenererNature(abri.nature, c.region, { saison: c.saison, mois })
   };
   return { abri: nouveau, bilan, manque: r.manque, pertes: r.pertes, perdus: r.perdus, boutures: { repiquees: b.repiquees, mortes: b.mortes } };

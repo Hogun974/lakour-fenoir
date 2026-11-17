@@ -28,7 +28,39 @@
       "duree": 5
     },
     "declencheur": "moustiques",
-    "risque": 0.006
+    "risque": 0.006,
+    "symptomes": {
+      "active": [
+        "fievre",
+        "maux-de-tete",
+        "courbatures",
+        "eruption"
+      ],
+      "aggravee": [
+        "fievre",
+        "maux-de-tete",
+        "courbatures",
+        "saignements",
+        "epuisement"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      },
+      "aggravee": {
+        "moral": 1,
+        "insomnie": true
+      }
+    },
+    "evidente": false,
+    "diagnostic": [
+      "premiers-secours-avances",
+      "zerbaz"
+    ],
+    "insalubrite": 0,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

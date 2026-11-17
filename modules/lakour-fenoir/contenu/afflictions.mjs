@@ -3,11 +3,80 @@
 // des données médicales ; les textes décrivent les maladies sans prétendre soigner qui que ce soit.
 // { cle, nom, categorie, contagion, incubation, duree, effets: { malus, fatigue }, soin: { competence, difficulte, medicaments },
 //   aggravation: { jours, malus, fatigue, duree } | null, declencheur: "eau" | "moustiques" | "ravine" | "chaleur" | null, risque }
+//
+// Lot « corps » (2026-11-17, contrat §19 ; repris de donnees/maladies/effets.json de Fénoir 3D, validé par Jordan « tout
+// maintenant ») : des symptômes, pas des noms. Chaque affliction porte en plus :
+//   symptomes: { active: [clé], aggravee: [clé] } (clés de SYMPTOMES), evidente (tout le monde la voit : fracture, brûlure,
+//   piqûre, choc), diagnostic: [savoir] (ceux qui la reconnaissent), effetsStade: { active|aggravee: { moral, insomnie } } (le moral
+//   perdu quand le stade commence ; insomnie : on dort mal), insalubrite (poids dans le tirage de l'insalubrité), siBlesse
+//   (seulement un blessé l'attrape ainsi). Le Gris a sa table à part (GRIS) : il n'est pas une affliction.
 import { html, objet } from "./aides.mjs";
+
+const PSA = "premiers-secours-avances", ZERBAZ = "zerbaz";
+// Les symptômes, dans l'ordre du jeu 3D (registre « symptomes » : le système les nomme aux joueurs).
+export const SYMPTOMES = [
+  ["fievre", "Fièvre"], ["frissons", "Frissons"], ["maux-de-tete", "Maux de tête"], ["courbatures", "Courbatures"],
+  ["douleurs-articulaires", "Douleurs dans les articulations"], ["eruption", "Boutons sur la peau"], ["jaunisse", "Peau et yeux jaunes"],
+  ["saignements", "Saignements des gencives et du nez"], ["nausee", "Nausée"], ["vomissements", "Vomissements"], ["diarrhee", "Ventre qui se vide"],
+  ["crampes-de-ventre", "Crampes au ventre"], ["soif-intense", "Une soif qui ne passe pas"], ["vertiges", "Vertiges"], ["confusion", "Confusion"],
+  ["demangeaisons", "Démangeaisons"], ["plaie-rouge", "Plaie rouge et chaude"], ["plaie-purulente", "Plaie qui suppure"], ["enflure", "Enflure"],
+  ["cloques", "Cloques"], ["douleur-vive", "Douleur vive"], ["membre-inutilisable", "Un membre qui ne sert plus"], ["raideur", "Mâchoire et nuque raides"],
+  ["spasmes", "Spasmes"], ["insomnie", "Ne dort plus"], ["cauchemars", "Cauchemars"], ["abattement", "Abattement"], ["faiblesse", "Faiblesse"],
+  ["epuisement", "Épuisement"], ["peau-grise", "Peau qui grise"]
+].map(([cle, nom]) => ({ cle, nom }));
+
+// Le Gris en six stades visibles (0 à 5 ; au sixième, la mort) : on ne le nomme qu'avec les premiers secours avancés, ou après
+// avoir vu un mordu se relever. Avec une soif qui monte (le 3D) : le MJ la fait sentir.
+export const GRIS = {
+  diagnostic: [PSA],
+  stades: [
+    { symptomes: ["plaie-rouge"] },
+    { symptomes: ["fievre", "plaie-rouge"] },
+    { symptomes: ["fievre", "frissons", "peau-grise"] },
+    { symptomes: ["fievre", "frissons", "peau-grise", "faiblesse"] },
+    { symptomes: ["frissons", "confusion", "peau-grise", "faiblesse"] },
+    { symptomes: ["confusion", "peau-grise", "epuisement"] }
+  ]
+};
+
+const stade = (symptomes, moral = 0, insomnie = false) => ({ symptomes, moral, insomnie });
+// Par affliction : diagnostic, évidente, stades (actif, aggravé), insalubrité.
+const CORPS = {
+  dengue: { diagnostic: [PSA, ZERBAZ], active: stade(["fievre", "maux-de-tete", "courbatures", "eruption"]),
+    aggravee: stade(["fievre", "maux-de-tete", "courbatures", "saignements", "epuisement"], 1, true) },
+  chikungunya: { diagnostic: [PSA, ZERBAZ], active: stade(["fievre", "douleurs-articulaires", "eruption"]),
+    aggravee: stade(["douleurs-articulaires", "epuisement"], 1, true) },
+  leptospirose: { diagnostic: [PSA], insalubrite: 1, active: stade(["fievre", "frissons", "maux-de-tete", "courbatures"]),
+    aggravee: stade(["fievre", "frissons", "jaunisse", "saignements", "epuisement"], 1) },
+  "gastro-enterite": { diagnostic: [PSA, ZERBAZ], insalubrite: 6, active: stade(["nausee", "vomissements", "diarrhee", "crampes-de-ventre"]),
+    aggravee: stade(["vomissements", "diarrhee", "crampes-de-ventre", "soif-intense", "faiblesse"], 1) },
+  gale: { diagnostic: [PSA, ZERBAZ], insalubrite: 2, active: stade(["demangeaisons", "insomnie"], 0, true) },
+  "plaie-infectee": { diagnostic: [PSA], insalubrite: 3, siBlesse: true, active: stade(["plaie-rouge", "enflure"]),
+    aggravee: stade(["fievre", "frissons", "plaie-purulente", "enflure"], 1) },
+  tetanos: { diagnostic: [PSA], active: stade(["raideur", "spasmes"]), aggravee: stade(["raideur", "spasmes", "epuisement"], 1, true) },
+  fracture: { evidente: true, diagnostic: [PSA], active: stade(["douleur-vive", "membre-inutilisable"]),
+    aggravee: stade(["fievre", "enflure", "douleur-vive", "membre-inutilisable"], 1, true) },
+  brulure: { evidente: true, diagnostic: [PSA, ZERBAZ], active: stade(["cloques", "douleur-vive"]), aggravee: stade(["fievre", "plaie-purulente", "douleur-vive"], 1, true) },
+  "piqure-de-scolopendre": { evidente: true, diagnostic: [ZERBAZ], active: stade(["enflure", "douleur-vive"]) },
+  "coup-de-chaleur": { diagnostic: [PSA], active: stade(["maux-de-tete", "nausee", "soif-intense", "vertiges"]),
+    aggravee: stade(["vomissements", "soif-intense", "confusion", "epuisement"]) },
+  "choc-d-une-perte": { evidente: true, diagnostic: [], active: stade(["insomnie", "cauchemars", "abattement"], 1, true),
+    aggravee: stade(["insomnie", "abattement", "faiblesse"], 1, true) }
+};
+function corpsDe(cle) {
+  const c = CORPS[cle];
+  if (!c) return {};
+  const stades = ["active", "aggravee"].filter(s => c[s]);
+  return {
+    symptomes: Object.fromEntries(stades.map(s => [s, [...c[s].symptomes]])),
+    effetsStade: Object.fromEntries(stades.map(s => [s, { moral: c[s].moral, insomnie: c[s].insomnie }])),
+    evidente: Boolean(c.evidente), diagnostic: [...c.diagnostic], insalubrite: c.insalubrite ?? 0, siBlesse: Boolean(c.siBlesse)
+  };
+}
 
 function affliction({ cle, nom, categorie, description, contagion = 0, incubation = 0, duree, effets, soin, aggravation = null, declencheur = null, risque = 0, prevention = "" }) {
   return objet({ pack: "afflictions", type: "affliction", cle, nom, img: categorie === "maladie" ? "icons/svg/biohazard.svg" : categorie === "psychique" ? "icons/svg/daze.svg" : "icons/svg/blood.svg",
-    system: { categorie, description: html(description), prevention: html(prevention), contagion, incubation, duree, effets, soin, aggravation, declencheur, risque } });
+    system: { categorie, description: html(description), prevention: html(prevention), contagion, incubation, duree, effets, soin, aggravation, declencheur, risque, ...corpsDe(cle) } });
 }
 
 export const AFFLICTIONS = [

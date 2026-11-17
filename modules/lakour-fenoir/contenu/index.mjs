@@ -10,7 +10,8 @@ import { PASSES } from "./passes.mjs";
 import { FACTIONS } from "./factions.mjs";
 import { EVENEMENTS } from "./evenements.mjs";
 import { RECETTES } from "./recettes.mjs";
-import { AFFLICTIONS } from "./afflictions.mjs";
+import { AFFLICTIONS, SYMPTOMES, GRIS } from "./afflictions.mjs";
+import { INSTALLATIONS_HYGIENE, TABLES_CORPS, JOURNAL_CORPS } from "./hygiene.mjs";
 import { BESTIAIRE, BESTIAIRE_ACTEURS, CREATURES } from "./bestiaire.mjs";
 import { ENFANCES } from "./enfances.mjs";
 import { TRAITS } from "./traits.mjs";
@@ -40,11 +41,11 @@ const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJo
 export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 
 export const DOCUMENTS = [
-  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...SAVOIRS, ...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...AFFLICTIONS,
+  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...SAVOIRS, ...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, JOURNAL_CORPS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
   ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
-  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES,
+  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES, ...TABLES_CORPS,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -57,7 +58,7 @@ export function donnees() {
     module: MODULE, version: 1,
     // Lot 12 : ce qu'on comprend en arrivant dans chaque région (une ligne pour le MJ, contenu/affaires.mjs).
     regions: REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" })), sites: sitesAvecPlans(SITES), routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
-    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS].map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: [...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES].map(aPlat), passes: PASSES.map(aPlat),
+    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE].map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: [...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES].map(aPlat), passes: PASSES.map(aPlat),
     recettes: [...RECETTES, ...RECETTES_REPERES].map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
     factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
     religions: RELIGIONS, ancrages: ANCRAGES,
@@ -83,6 +84,8 @@ export function donnees() {
     corvees: CORVEES, bareme: BAREME,
     // Lot 4 « Les plans » (contrat §21 ; logique/plans.mjs) : les plans qu'on trouve (rareté, lieux, plans uniques) et les lieux à plans
     // rares ; les plans propres d'un site sont dans sites[].plans.
-    plans: PLANS_CONSTRUCTION, lieuxAPlans: LIEUX_A_PLANS
+    plans: PLANS_CONSTRUCTION, lieuxAPlans: LIEUX_A_PLANS,
+    // Lot « corps » (contrat §19) : les symptômes (nommés aux joueurs) et le Gris en six stades visibles (logique/maladies.mjs).
+    symptomes: SYMPTOMES, gris: GRIS
   };
 }

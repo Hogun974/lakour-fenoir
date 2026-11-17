@@ -28,7 +28,35 @@
       "duree": 15
     },
     "declencheur": null,
-    "risque": 0
+    "risque": 0,
+    "symptomes": {
+      "active": [
+        "cloques",
+        "douleur-vive"
+      ],
+      "aggravee": [
+        "fievre",
+        "plaie-purulente",
+        "douleur-vive"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      },
+      "aggravee": {
+        "moral": 1,
+        "insomnie": true
+      }
+    },
+    "evidente": true,
+    "diagnostic": [
+      "premiers-secours-avances",
+      "zerbaz"
+    ],
+    "insalubrite": 0,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

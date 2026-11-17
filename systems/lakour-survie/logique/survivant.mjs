@@ -13,8 +13,11 @@
 //   quelle que soit sa mort (le Gris, ses blessures, la soif…) ; un mort sans le Gris reste mort.
 // - Jour : faim +1 sans manger (0 dès qu'on mange) ; faim ≥ 2 → +1 fatigue et −1 moral par jour. Bien nourri et reposé
 //   (fatigue < 3) : moral +1 jusqu'à 3 + confort de l'abri (au plus 5).
+// - Sommeil (lot « corps », corps.mjs) : chaque quart, `veille` monte de 1 pour qui reste éveillé et baisse pour qui dort
+//   (effetQuart, options.dort) ; épuisé (une nuit blanche) −1 dé, terrassé −2 dés ; fatigue et sommeil ensemble au plus −2 dés.
 import { COMPETENCES, borner } from "./constantes.mjs";
 import { malusAfflictions } from "./maladies.mjs";
+import { malusSommeil, quartDeSommeil } from "./corps.mjs";
 
 export const SEUIL_SOIF = 4;           // quarts sans boire avant la fatigue
 export const SEUIL_FAIM = 2;           // jours sans manger avant fatigue et moral
@@ -50,22 +53,25 @@ export function survivantNeuf(partiel = {}) {
 }
 
 // extra : { traits: malus de dés venus des traits (peur d'un lieu, tâche détestée : generation.mjs, modificateursTraits) }.
-// -> { total, blessures, fatigue, moral, afflictions, traits, craque }
+// -> { total, blessures, fatigue, sommeil, moral, afflictions, traits, craque }
 export function malusEtat(s = {}, extra = {}) {
   const b = Number(s.blessures) || 0, f = Number(s.fatigue) || 0, m = Number(s.moral ?? MORAL_DEFAUT);
   const blessures = b >= 4 ? 3 : b >= 3 ? 2 : b >= 2 ? 1 : 0;
   const fatigue = f >= 5 ? 2 : f >= 3 ? 1 : 0;
+  const sommeil = malusSommeil(s, fatigue);
   const moral = m <= 1 ? 1 : 0;
   const afflictions = malusAfflictions(s);
   const traits = Math.max(0, Number(extra.traits) || 0);
-  return { total: blessures + fatigue + moral + afflictions + traits, blessures, fatigue, moral, afflictions, traits, craque: m <= 0 };
+  return { total: blessures + fatigue + sommeil + moral + afflictions + traits, blessures, fatigue, sommeil, moral, afflictions, traits, craque: m <= 0 };
 }
 
 export const peutAgir = s => s?.vivant !== false && !s?.livide;
 
 // Effet d'un quart qui passe (le quart `quart` vient de s'achever).
 // options : { boit: Boolean (eau disponible), repos: "quart" | "nuit" | null, stabilise: Boolean (mourant soigné ce quart),
-//             corpsTraite: Boolean (le corps d'un infecté mort a été traité : pas de relève) }
+//             corpsTraite: Boolean (le corps d'un infecté mort a été traité : pas de relève),
+//             dort: "abri" | "bivouac" | "sol" | null (lot « corps » : où il dort ce quart ; null : éveillé ; absent : on ne compte
+//             pas le sommeil), insomnie: Boolean (une maladie l'empêche de bien dormir) }
 // -> { system, evenements: [{ cle, texte }] }
 export function effetQuart(entree, quart, options = {}) {
   const s = survivantNeuf(entree);
@@ -79,6 +85,12 @@ export function effetQuart(entree, quart, options = {}) {
       evenements.push({ cle: "releve", texte: "se relève, Livide" });
     }
     return { system: s, evenements };
+  }
+  // Sommeil (lot « corps ») : la veille monte ou baisse ; terrassé, il s'endort là où il est.
+  if (options.dort !== undefined) {
+    const z = quartDeSommeil(s, { dort: options.dort, insomnie: Boolean(options.insomnie) });
+    s.veille = z.system.veille;
+    for (const ev of z.evenements) evenements.push({ ...ev, texte: ev.cle === "endormi" ? "s'endort malgré lui, là où il est" : "n'a pas dormi de la nuit" });
   }
   // Soif.
   s.soif = options.boit ? 0 : s.soif + 1;

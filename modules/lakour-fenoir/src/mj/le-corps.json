@@ -1,0 +1,231 @@
+{
+  "_id": "ueEbme3TmLwTYBtV",
+  "_key": "!journal!ueEbme3TmLwTYBtV",
+  "name": "Le corps, le sommeil et l'hygiène",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "le-corps",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "csT9gDkDndOAROPD",
+      "_key": "!journal.pages!ueEbme3TmLwTYBtV.csT9gDkDndOAROPD",
+      "name": "Le corps qui tient, ou qui lâche",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Dans Fénoir, le corps est une ressource comme l'eau ou les cartouches. On ne meurt pas de fatigue, ni de faim, ni de soif : ce qui tue, ce sont les blessures et le Gris. Mais un corps épuisé, sale, malade ou en manque de sommeil rate ce qu'il ne devait pas rater, et c'est là que les blessures arrivent.</p><p>Ce journal rassemble ce que le système compte pour vous : le <strong>sommeil</strong>, l'<strong>hygiène</strong> de l'abri, les <strong>symptômes</strong> des maladies, les <strong>chutes</strong> et le <strong>bouclier</strong>. Rien n'y est montré pour lui-même : pas de gore, rien de scatologique. On dit ce que voient et sentent les personnages, et ce que ça leur coûte.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "principe"
+        }
+      }
+    },
+    {
+      "_id": "oLLVFrf4g5j2tLzd",
+      "_key": "!journal.pages!ueEbme3TmLwTYBtV.oLLVFrf4g5j2tLzd",
+      "name": "Le sommeil",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le sommeil est un besoin à part de la fatigue. La fatigue vient de l'effort, de la faim, de la soif ; le manque de sommeil vient des heures passées debout.</p><ul><li>Le système compte les <strong>quarts éveillés</strong> de chacun (la fiche dit « reposé », « en manque », « épuisé », « terrassé »).</li><li><strong>En manque</strong> après 3 quarts : une journée faite. Rien aux dés ; on bâille, on s'agace.</li><li><strong>Épuisé</strong> après 4 quarts : une nuit blanche. <strong>−1 dé</strong> à tout.</li><li><strong>Terrassé</strong> à 7 quarts : <strong>−2 dés</strong>, et l'on s'endort là où l'on est, au quart suivant, même de garde.</li><li>La fatigue et le manque de sommeil ensemble ne retirent jamais plus de <strong>2 dés</strong>.</li></ul><p><strong>Ce qui efface la veille</strong>, par quart de sommeil : 4 quarts à l'abri, 3 au bivouac, 2 à même le sol. Une nuit à l'abri remet donc à zéro ; une nuit au sol ne rattrape pas une journée (au bout de quatre ou cinq nuits ainsi, on s'effondre). Une nuit au bivouac retire aussi 1 de fatigue ; au sol, rien.</p><p><strong>Qui dort, et quand</strong> (le système le fait seul) :<br>- la nuit à l'abri, tous ceux qui ne veillent pas ;<br>- la garde de nuit, et quiconque n'a pas dormi de la nuit, dort le matin à l'abri ;<br>- épuisé par une nuit blanche (en route, une veillée), on la rattrape au premier quart où l'on s'arrête, là où l'on est ;<br>- en route, la nuit, on marche : le voyage avance, personne ne dort ;<br>- arrêté hors de l'abri, on dort au bivouac si quelqu'un porte de quoi (tente, natte), sinon au sol ;<br>- le quart de repos (tâche « repos »), c'est dormir.</p><p>Une maladie qui empêche de dormir (gale, choc d'une perte, fièvres aggravées) efface un quart de veille de moins.</p><p><strong>Pour le MJ</strong> : avancer({ dorment: [ids] }) fait dormir ceux-là ; avancer({ eveilles: [ids] }) les garde debout (une veillée, une nuit blanche) ; dormir({ acteurId, quarts, lieu }) compte un sommeil que le temps n'a pas compté (une sieste dans un camion).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sommeil"
+        }
+      }
+    },
+    {
+      "_id": "YqLzWzZsZnqr05la",
+      "_key": "!journal.pages!ueEbme3TmLwTYBtV.YqLzWzZsZnqr05la",
+      "name": "Bivouaquer",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Avant de s'installer pour la nuit dehors, un survivant juge l'endroit, sans chiffre : <strong>sûr</strong>, <strong>exposé</strong> ou <strong>dangereux</strong>.</p><ul><li><strong>Dangereux</strong> : une pente raide, le lit d'une ravine (elle se remplit en un quart d'heure quand il pleut là-haut), des Livides en vue ou à portée d'oreille.</li><li><strong>Exposé</strong> : à moins de soixante mètres d'une route, dans le bâti, à découvert, sur une pente douce ; un feu, une lumière, du bruit ; un endroit souillé.</li><li><strong>Sûr</strong> : le reste. Un replat, à couvert, à l'écart.</li></ul><p>Ce que ça change :<br>- dans un endroit dangereux, on dort comme au sol, même sous une tente ;<br>- la table « Un bivouac — ce qui vient la nuit » : une fois si l'endroit est sûr, deux fois et le pire s'il est exposé, deux fois et les deux s'il est dangereux ;<br>- une rencontre de nuit, si vous la tirez (rencontre), vaut moitié moins dans un endroit sûr et double dans un endroit dangereux (bivouac() vous rend ce facteur).</p><p><strong>Pour le MJ</strong> : bivouac({ pente, ravine, route, bati, couvert, feu, lumiere, bruit, livides, souille }) rend le jugement, ses raisons et le sommeil qu'on y aura.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "bivouac"
+        }
+      }
+    },
+    {
+      "_id": "Ay8qhzuyQoH7vrLQ",
+      "_key": "!journal.pages!ueEbme3TmLwTYBtV.Ay8qhzuyQoH7vrLQ",
+      "name": "L'hygiène de l'abri",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un abri où vivent des gens se salit : c'est la <strong>souillure</strong>. Elle monte chaque jour avec ceux qui sont là, et elle s'efface avec le temps et avec la pluie, qui lave tout quatre fois plus vite.</p><p><strong>L'insalubrité</strong> qui en sort, de 0 à 3 :<br>- <strong>propre</strong> : rien à dire ;<br>- <strong>ordinaire</strong> : un camp où l'on vit ; rien de plus que d'habitude ;<br>- <strong>sale</strong> : les mouches, l'odeur (elle se sent dehors et attire comme un abri surpeuplé), et des maladies : la gastro-entérite surtout, une plaie qui s'infecte chez un blessé, la gale, parfois la leptospirose ;<br>- <strong>insalubre</strong> : la même chose, trois fois plus souvent.</p><p><strong>Les installations d'hygiène</strong> (sœurs : la meilleure qui marche sert, l'autre attend) :<br>- <strong>latrines</strong> : feuillées (1), latrines sèches (2, elles font aussi du compost), fosse maçonnée (3, elle prend de l'eau ; sans eau, les latrines sèches prennent le relais). Elles retiennent la souillure : sans rien, chacun en ajoute une part par jour ; avec des feuillées, 0,3 ; des latrines sèches, 0,1 ; une fosse, 0,03 ;<br>- <strong>toilette</strong> : lavoir (1), douche (2). Se laver rend les maladies de la saleté moins fréquentes (un cinquième de moins par point).</p><p>Le <strong>niveau d'hygiène</strong> de l'abri est la somme des deux, au plus 3. Un abri à 3 et <strong>propre</strong> est <strong>salubre</strong> : la gastro-entérite y est moitié moins fréquente, et les maladies s'y passent moins.</p><p>Un groupe de quatre sans latrines devient « ordinaire » en deux jours et « sale » en six jours au sec ; à six, « insalubre » en neuf jours. Avec des feuillées, il reste « ordinaire » ; avec des latrines sèches, propre. Trop de monde pour la place salit plus vite.</p><p><strong>Le ménage</strong> : menage({ membres, quarts }) retire 4 de souillure par quart et par personne. Le grand ménage du Nouvel An chinois remet l'abri à neuf.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "hygiene"
+        }
+      }
+    },
+    {
+      "_id": "VwGpAxPch6Vc0PUu",
+      "_key": "!journal.pages!ueEbme3TmLwTYBtV.VwGpAxPch6Vc0PUu",
+      "name": "Des symptômes, pas des noms",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les joueurs ne voient jamais le nom d'une maladie que leur groupe ne sait pas reconnaître : ils voient ses <strong>symptômes</strong> (fièvre, frissons, une plaie rouge et chaude, des boutons sur la peau). Une maladie qui couve ne se voit pas du tout.</p><ul><li><strong>Premiers secours avancés</strong> reconnaît presque tout ; <strong>Zerbaz et tisanes</strong> reconnaît les fièvres des moustiques, la gastro-entérite, la gale, les brûlures et les piqûres.</li><li>Une <strong>fracture</strong>, une <strong>brûlure</strong>, une <strong>piqûre</strong> de scolopendre et le <strong>choc d'une perte</strong> se voient de tous.</li><li>Au journal public, un mal inconnu se dit par ses signes ; son nom va au journal secret.</li></ul><p>Chaque mal touche <strong>plusieurs points à la fois</strong> : des dés en moins, de la fatigue chaque jour ; certains empêchent de <strong>dormir</strong> (le système le compte). Quand un mal s'aggrave (les fièvres aggravées, les plaies qui suppurent, la fracture qui s'infecte), le <strong>moral</strong> en prend un coup : à vous de le raconter, et d'ôter un point de moral si la scène le veut (symptomes() vous le dit) ; le système ne le fait pas de lui-même.</p><p><strong>Pour le MJ</strong> : symptomes({ acteurId }) rend ce que voient les joueurs, et, pour vous, les noms. Décrivez : « Mylène a les gencives qui saignent et ne tient plus debout » vaut mieux que « Mylène a la dengue ».</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "symptomes"
+        }
+      }
+    },
+    {
+      "_id": "fwEIHDhYxjVN6I60",
+      "_key": "!journal.pages!ueEbme3TmLwTYBtV.fwEIHDhYxjVN6I60",
+      "name": "Le Gris, stade par stade",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le Gris avance d'un stade tous les deux quarts. Ce qu'on en voit :</p><ul><li><strong>Stade 0</strong> : une plaie rouge et chaude. Comme n'importe quelle morsure soignée.</li><li><strong>Stade 1</strong> : la fièvre monte autour de la plaie.</li><li><strong>Stade 2</strong> : les frissons, et la peau qui commence à griser, autour de la plaie d'abord.</li><li><strong>Stade 3</strong> : la faiblesse : les jambes ne portent plus, les mains tremblent.</li><li><strong>Stade 4</strong> : la confusion : il ne reconnaît plus les voix, il appelle des gens qui ne sont pas là.</li><li><strong>Stade 5</strong> : l'épuisement. Il ne parle plus.</li><li><strong>Au sixième</strong>, il meurt, et se relève au quart suivant si l'on ne s'occupe pas de son corps.</li></ul><p>Tout du long, une soif qui monte : il boit, il redemande.</p><p><strong>On ne nomme le Gris</strong> qu'avec les premiers secours avancés, ou après avoir vu un mordu se relever (le système s'en souvient pour le groupe). Avant, ce n'est « que de la fièvre ».</p><p><strong>La morsure pansée se tait.</strong> Quand on soigne une morsure (soignerMorsure), le test est fait, mais son issue va au MJ seul : le joueur lit « pansée, on ne saura que plus tard ». Pendant deux quarts, la fiche ne montre que la morsure pansée ; ensuite, la fièvre vient, ou ne vient pas.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "gris"
+        }
+      }
+    },
+    {
+      "_id": "RGMNIa8iBWgeF5WD",
+      "_key": "!journal.pages!ueEbme3TmLwTYBtV.RGMNIa8iBWgeF5WD",
+      "name": "Les chutes",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Tomber blesse, et plus on tombe de haut, plus on a mal :</p><ul><li>moins de <strong>3 m</strong> : rien ;</li><li><strong>3 m</strong> : une blessure ; <strong>6 m</strong> : deux ; <strong>9 m</strong> : trois ;</li><li><strong>12 m</strong> et plus : <strong>mourant</strong> ;</li><li><strong>25 m</strong> et plus : <strong>mort</strong>.</li></ul><p><strong>L'eau amortit</strong> : un mètre et demi d'eau, ou plus, retire 15 m à la chute (moitié moins dans 75 cm d'eau). Sauter d'un radier dans une vasque profonde, oui ; dans un filet d'eau, non.</p><p><strong>Se recevoir</strong> : un test d'endurance réussi retire une blessure, sauf pour une chute qui rend mourant ou qui tue. Une chute de 6 m et plus, sans s'être reçu, casse un os (une <strong>fracture</strong>).</p><p><strong>Un Livide qui tombe</strong> chancelle dès 3 m ; là où un survivant serait mourant, il se casse les jambes et <strong>rampe</strong> : il avance encore, plus lentement, et ne se relève plus sur ses jambes. Un fossé profond, un balcon, une ravine : ce sont des armes.</p><p><strong>Pour le MJ</strong> : chute({ acteurId, hauteur, eau, reception }) applique tout cela ; chute({ livide: true, hauteur }) dit ce que devient un Livide.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "chutes"
+        }
+      }
+    },
+    {
+      "_id": "ABCtOwGmdrzTz6mh",
+      "_key": "!journal.pages!ueEbme3TmLwTYBtV.ABCtOwGmdrzTz6mh",
+      "name": "Le bouclier",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un bouclier tenu en main pare les touches des Livides : chaque touche est parée sur <strong>5 ou 6</strong> au dé pour le bouclier de tôle (une sur trois). <strong>Une touche parée ne blesse pas et ne mord pas.</strong></p><p>Il se manie avec le combat, comme une arme (+1 dé), et l'on ne tire pas en le tenant. Il est lourd et encombrant : deux charges.</p><p><strong>Pour le MJ</strong> : parer({ acteurId, touches }) jette les dés de parade d'un survivant qui porte un bouclier.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "bouclier"
+        }
+      }
+    },
+    {
+      "_id": "dLfAy46gu5OF3fcw",
+      "_key": "!journal.pages!ueEbme3TmLwTYBtV.dLfAy46gu5OF3fcw",
+      "name": "La faim et la soif",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La faim pèse sur la vie : elle fatigue et ronge le moral, jour après jour. La soif pèse sur l'endurance : elle fatigue à chaque quart. <strong>Ni l'une ni l'autre ne tue d'elle-même</strong> : ce qui tue, ce sont les blessures et le Gris. Mais un groupe affamé, assoiffé et épuisé ne se défend plus, ne fouille plus, et c'est alors que tout arrive.</p><p>Si la situation l'exige (un désert, une ravine sans eau, des jours de siège), c'est à vous de décider qu'un corps lâche : dites-le avant, pour que les joueurs puissent choisir.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "faim-soif"
+        }
+      }
+    }
+  ]
+}

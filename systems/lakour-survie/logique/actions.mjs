@@ -60,6 +60,7 @@ import { regionDe, siteDe, factionDe, natureRegion, voisinsDe, regionsDe, reserv
 import { lancer, compter, resoudreTest } from "./des.mjs";
 import { observer } from "./renseignements.mjs";
 import { exploiterNature, installationsDuSite, plafondsAbri } from "./abri.mjs";
+import { parer } from "./corps.mjs";
 import { normaliserStocks, ajouterStocks, plafonner } from "./ressources.mjs";
 import { abandonnerAbri, reprendreAbri } from "./monde.mjs";
 import { phaseDuJour, momentDe } from "./temps.mjs";
@@ -544,8 +545,10 @@ export function vigilanceDeGarde(gardes = [], { installation = 0 } = {}) {
 // Combat simple. competence : "combat" | "tir".
 // adversaires : [{ nombre, des, resistance, type: "livide" | "animal", cle }] ; ou, en raccourci, livides (nombre) et creature
 // ({ des, resistance, type }, défaut : Livide ordinaire 1 dé, 1 succès).
-// -> { test, neutralises, restants, attaques, desMorsure, touches, morsures, blessures, bruit, detail: [{ cle, nombre, neutralises }] }
-export function resoudreCombat({ niveau = 0, competence = "combat", livides = 1, creature = null, adversaires = null, bonus = 0, malus = 0, forcer = false, hasard = Math.random } = {}) {
+// parade (lot « corps », corps.mjs : parer) : le seuil du bouclier du combattant (5 : la tôle, 5-6 ; 0 : pas de bouclier) ; chaque
+// touche d'un Livide est parée sur un dé ≥ seuil, et une touche parée ne blesse pas et ne mord pas. Sans bouclier, rien n'est tiré.
+// -> { test, neutralises, restants, attaques, desMorsure, touches, parees, desParade, morsures, blessures, bruit, detail: [{ cle, nombre, neutralises }] }
+export function resoudreCombat({ niveau = 0, competence = "combat", livides = 1, creature = null, adversaires = null, bonus = 0, malus = 0, forcer = false, parade = 0, hasard = Math.random } = {}) {
   const groupes = (adversaires ?? [{ nombre: livides, ...(creature ?? CREATURE_DEFAUT.livide) }])
     .map(a => ({ cle: a.cle ?? "livide", type: a.type ?? "livide", nombre: Math.max(0, Number(a.nombre) || 0), des: Math.max(1, Number(a.des) || 1), resistance: Math.max(1, Number(a.resistance) || 1) }));
   const test = resoudreTest({ niveau, difficulte: "normale", bonus, malus, forcer, hasard });
@@ -556,12 +559,18 @@ export function resoudreCombat({ niveau = 0, competence = "combat", livides = 1,
     g.neutralises = n;
     succes -= n * g.resistance;
   }
-  const attaques = [], desMorsure = [];
-  let touches = 0, morsures = 0;
+  const attaques = [], desMorsure = [], desParade = [];
+  let touches = 0, morsures = 0, parees = 0;
   for (const g of detail) {
     const des = lancer((g.nombre - g.neutralises) * g.des, hasard);
     attaques.push(...des);
-    const t = des.filter(d => d === 6).length;
+    let t = des.filter(d => d === 6).length;
+    if (g.type === "livide" && parade) {
+      const p = parer(t, parade, hasard);
+      desParade.push(...p.des);
+      parees += p.parees;
+      t = p.passent;
+    }
     touches += t;
     if (g.type !== "animal") {
       const m = lancer(t, hasard);
@@ -571,7 +580,7 @@ export function resoudreCombat({ niveau = 0, competence = "combat", livides = 1,
   }
   return {
     test, neutralises: detail.reduce((t, g) => t + g.neutralises, 0), restants: detail.reduce((t, g) => t + g.nombre - g.neutralises, 0),
-    attaques, desMorsure, touches, morsures, blessures: touches,
+    attaques, desMorsure, touches, parees, desParade, morsures, blessures: touches,
     bruit: competence === "tir" ? REGLES_ACTIONS.bruitTir : 0,
     detail: detail.map(({ cle, nombre, neutralises }) => ({ cle, nombre, neutralises }))
   };

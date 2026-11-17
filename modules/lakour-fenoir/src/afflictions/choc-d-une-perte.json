@@ -28,7 +28,33 @@
       "duree": 14
     },
     "declencheur": null,
-    "risque": 0
+    "risque": 0,
+    "symptomes": {
+      "active": [
+        "insomnie",
+        "cauchemars",
+        "abattement"
+      ],
+      "aggravee": [
+        "insomnie",
+        "abattement",
+        "faiblesse"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 1,
+        "insomnie": true
+      },
+      "aggravee": {
+        "moral": 1,
+        "insomnie": true
+      }
+    },
+    "evidente": true,
+    "diagnostic": [],
+    "insalubrite": 0,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

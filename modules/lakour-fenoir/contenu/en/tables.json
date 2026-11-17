@@ -3841,6 +3841,57 @@
       "en": "<p><strong>Repair — The catchment swept away.</strong> Rebuild the catchment of an îlet swept away by a flood.</p><p><strong>Reward:</strong> 8 food, 2 seeds; reputation +3.</p>"
     }
   },
+  "tables/toSyilbvWiIW7IiH": {
+    "_nom": "Un bivouac — ce qui vient la nuit",
+    "name": {
+      "fr": "Un bivouac — ce qui vient la nuit",
+      "en": "A bivouac — what comes in the night"
+    },
+    "description": {
+      "fr": "<p>Une nuit dehors. Tirez une fois par nuit ; dans un endroit exposé, tirez deux fois et gardez le pire ; dans un endroit dangereux, tirez deux fois et gardez les deux.</p>",
+      "en": "<p>A night outside. Roll once per night; in an exposed spot, roll twice and keep the worse; in a dangerous spot, roll twice and keep both.</p>"
+    },
+    "results.soCtDf8pwuQr6wEG.description": {
+      "fr": "<p>Rien. Le vent dans les filaos, les grenouilles qui chantent. On se réveille raide et vivant.</p>",
+      "en": "<p>Nothing. The wind in the filaos, the frogs singing. You wake up stiff and alive.</p>"
+    },
+    "results.0eUbNCCTSt0F39bi.description": {
+      "fr": "<p>La rosée des Hauts traverse tout : au matin, les mains ne se ferment plus et le feu ne veut pas prendre.</p>",
+      "en": "<p>The dew of the Highlands soaks through everything: in the morning, hands won't close and the fire won't catch.</p>"
+    },
+    "results.2amHNI6hz0HRlofx.description": {
+      "fr": "<p>Un tangue qui fouille les feuilles autour du sac de vivres. Il faut se lever trois fois pour le chasser.</p>",
+      "en": "<p>A tenrec rooting in the leaves around the food bag. You have to get up three times to chase it off.</p>"
+    },
+    "results.SsUWSzXns3hlc36s.description": {
+      "fr": "<p>Une averse en pleine nuit : la bâche tient, ou ne tient pas. Sans bâche, la nuit ne repose pas (comme dormir au sol).</p>",
+      "en": "<p>A downpour in the middle of the night: the tarp holds, or it doesn't. Without a tarp, the night gives no rest (like sleeping on the ground).</p>"
+    },
+    "results.dPOeN3xS4A38cKjj.description": {
+      "fr": "<p>Des fourmis, des moustiques, une scolopendre dans une chaussure au réveil (secouez-la : sinon, une piqûre).</p>",
+      "en": "<p>Ants, mosquitoes, a centipede in a shoe on waking (shake it out: otherwise, a sting).</p>"
+    },
+    "results.a911SKA0pzKjC2zT.description": {
+      "fr": "<p>Des pas sur la route en contrebas, lents, réguliers : un Livide errant qui ne s'arrête pas. Personne ne dort plus.</p>",
+      "en": "<p>Footsteps on the road below, slow, regular: a wandering Pallid that doesn't stop. Nobody sleeps any more.</p>"
+    },
+    "results.oIH3bbGojdO1wzUR.description": {
+      "fr": "<p>Une lueur au loin, un autre feu. D'autres vivants bivouaquent dans la même ravine.</p>",
+      "en": "<p>A glow in the distance, another fire. Other living people are bivouacking in the same ravine.</p>"
+    },
+    "results.SCNkL7gfQ5RvH52Y.description": {
+      "fr": "<p>La ravine gronde : il a plu là-haut. Dans le lit d'une ravine, c'est le moment de partir, tout de suite.</p>",
+      "en": "<p>The ravine is rumbling: it has rained up above. In a ravine bed, it's time to leave, right now.</p>"
+    },
+    "results.0mt6VvlNL4JzVIby.description": {
+      "fr": "<p>Un chien qui s'approche, maigre, attiré par l'odeur du repas. Il reste à distance jusqu'au matin.</p>",
+      "en": "<p>A dog comes closer, thin, drawn by the smell of the meal. It keeps its distance until morning.</p>"
+    },
+    "results.v5prC2DmtNqxFl7j.description": {
+      "fr": "<p>Le silence complet, d'un coup : une horde passe tout près (rencontre de nuit, au MJ).</p>",
+      "en": "<p>Total silence, all of a sudden: a horde is passing very close (night encounter, up to the GM).</p>"
+    }
+  },
   "tables/uTjmfpIZFy4ALx1G": {
     "_nom": "Marché — litiges au conseil",
     "name": {

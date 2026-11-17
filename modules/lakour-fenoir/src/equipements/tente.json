@@ -7,7 +7,7 @@
   "system": {
     "cle": "tente",
     "categorie": "vie",
-    "description": "<p>Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate.</p>",
+    "description": "<p>Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate. De quoi bivouaquer : on y dort mieux qu'à même le sol.</p>",
     "bonus": {
       "survie": 1
     },
@@ -17,7 +17,8 @@
     "bruit": 0,
     "transport": null,
     "effets": null,
-    "marque": ""
+    "marque": "",
+    "bivouac": true
   },
   "effects": [],
   "folder": null,

@@ -1203,6 +1203,79 @@ Rien n'est retiré ni renommé ; les champs nouveaux ont une valeur par défaut 
   MJ « Percevoir dans le noir » ; page « La nuit, le vent et la pluie » (guide du joueur) ; page « La nuit et ses voix » (livre de
   l'île).
 
+## 19. Le corps, le sommeil et l'hygiène (lot 1 du portage du jeu 3D, 2026-11-17)
+
+Lot 1 de l'inventaire du jeu 3D : la famille 2 « L'esprit sur le corps » (dormir et bivouaquer, le manque de sommeil, les besoins
+naturels et les maladies), les chutes (famille 9) et le bouclier. Décisions de Jordan des 14, 16 et 17 novembre (« tout
+maintenant ») ; rien en temps réel. Chiffres et raisons : `docs/equilibre-corps.md`. Logique : `logique/corps.mjs` (nouveau),
+crochets dans `maladies.mjs`, `survivant.mjs`, `abri.mjs`, `actions.mjs`, `etat.mjs`. Rien n'est retiré ni renommé : une fiche
+sans `veille`, un abri sans `souillure`, un contenu sans symptômes marchent comme avant.
+
+### 19.1 Règles (logique pure, `logique/corps.mjs`)
+- **Sommeil** (survivant `veille` : quarts éveillés depuis le dernier sommeil, 0 à 12) : `SOMMEIL`, `etatSommeil(veille)` →
+  `"repose" | "en-manque" (≥ 3) | "epuise" (≥ 4) | "terrasse" (≥ 7)` ; `malusSommeil(system, malusFatigue)` : épuisé −1 dé,
+  terrassé −2 dés, fatigue et sommeil ensemble au plus −2 (`malusEtat` rend `sommeil`) ; `quartDeSommeil(system, { dort, insomnie })`
+  (un quart de sommeil efface 4 quarts à l'abri, 3 au bivouac, 2 au sol, un de moins avec l'insomnie ; terrassé, on dort de force
+  au sol ; événements `epuise`, `endormi`) ; `dormir(system, { quarts, lieu, insomnie })` ; `lieuDeSommeil({ nuit, matin, aLAbri,
+  enRoute, garde, repos, bivouac, lieu, dort, eveille, veille })` : la nuit à l'abri, la garde (et qui n'a pas dormi) le matin,
+  l'épuisé au premier quart où l'on s'arrête, en route on marche, arrêté dehors au bivouac ou au sol, le quart de repos ; loin de
+  l'abri, la tâche « garde » ne tient personne debout (seule la veille demandée).
+- **Bivouac** : `jugerBivouac({ pente, ravine, route, bati, couvert, feu, lumiere, bruit, livides, souille })` →
+  `{ jugement: "sur" | "expose" | "dangereux", raisons }` ; `sommeilAuBivouac(jugement, equipe)` ; `BIVOUAC.rencontre` (× 0,5 / 1 / 2,
+  pour une rencontre de nuit que le MJ tire).
+- **Chutes** : `chute({ hauteur, eau, reception })` → `{ hauteur, amorti, blessures, mourant, mort, fracture, recu }` (3 m une
+  blessure, une de plus tous les 3 m, mourant à 12 m, mort à 25 m ; 1,5 m d'eau retire 15 m ; se recevoir retire une blessure ;
+  fracture à 6 m et plus sans se recevoir) ; `chuteDeLivide` → `{ chancelle, rampe }` ; `appliquerChute(system, resultat)`.
+- **Hygiène** (abri `souillure`) : `HYGIENE`, `souillureDuJour({ souillure, personnes, latrines, surpeuplement, pluie })`,
+  `insalubrite(souillure)` (0 à 3 : propre, ordinaire, sale, insalubre), `niveauHygiene(latrines, toilette)`, `menage(souillure,
+  { quarts, bras })`, `risqueInsalubrite(niveau, toilette)`, `salubre(hygiene, insalubrite)`, `tirerInsalubrite(survivants, defs,
+  { niveau, toilette }, hasard)` (chaque personne, avec la chance du niveau, attrape une affliction à poids `insalubrite`).
+- **Bouclier** : `parer(touches, seuil, hasard)` → `{ parees, passent, des }` ; `paradeDe(equipements)` ;
+  `resoudreCombat({ …, parade })` : chaque touche d'un Livide est parée sur un dé ≥ seuil ; une touche parée ne blesse ni ne mord ;
+  le résultat porte `parees`, `desParade`. Sans bouclier, rien n'est tiré.
+- **Symptômes** (`maladies.mjs`) : `symptomesAffliction(def, stade)`, `reconnue(def, savoirs)`, `insomnieDe(system, defs)`,
+  `symptomesDuGris(contenu, stade)`, `grisReconnu(contenu, { savoirs, temoin })`, `nomSymptome`, `nomsSymptomes`,
+  `morsureMuette(system, quart)` (deux quarts), `ceQueVoientLesJoueurs(system, contenu, { savoirs, grisConnu, quart })` →
+  `{ maux: [{ cle, nom, stade, symptomes, reconnue }], gris, morsure }`. `moralDuStade(def, stade)` : le moral qu'un stade coûte,
+  à raconter (la logique ne l'applique pas). `facteurRisque(def, { …, salubre })` : l'eau × 0,5 ; contagion × 0,75 dans `tirerMaladies`.
+
+### 19.2 Branchements
+- `effetQuart(system, quart, { …, dort, insomnie })` compte le sommeil (absent : pas compté, comme avant).
+- `avancer` : à chaque quart, `lieuDeSommeil` pour chacun ; options `dorment`, `eveilles`, `bivouac`, `lieuSommeil` ; une nuit au
+  bivouac −1 fatigue. Faits publics `survivant-epuise`, `survivant-endormi`. Le Gris et les maux que le groupe ne reconnaît pas se
+  disent par leurs signes (`survivant-gris-signes`, `survivant-mort-fievre`, `survivant-declaree-signes`, `-aggravee-signes`,
+  `-guerie-signes`) ; le nom et le stade vont au journal secret. Un mordu qui se relève devant le groupe : `groupe.grisConnu`.
+  Chaque jour : l'abri salubre (`conditionsVie.salubre`), puis le tirage de l'insalubrité (flux « insalubrite|jour »).
+- `bilanAbri` : `latrines`, `toilette`, `hygiene`, `souillure`, `insalubrite` ; un abri sale (insalubrité ≥ 2) sent comme un abri
+  surpeuplé (odeur, §18). `journeeAbri` rend la `souillure` du lendemain (personnes, latrines, surpeuplement, `conditions.pluie`).
+- `feter` : une fête à effet `hygiene` (le grand ménage) remet `souillure` à 0.
+
+### 19.3 Contenu
+- Afflictions : `symptomes: { active, aggravee }`, `effetsStade: { active|aggravee: { moral, insomnie } }`, `evidente`,
+  `diagnostic: [savoir]`, `insalubrite` (poids), `siBlesse`. Registre : `symptomes: [{ cle, nom }]` (30, traduits) et
+  `gris: { diagnostic, stades: [{ symptomes }] × 6 }`.
+- Installations (`contenu/hygiene.mjs`) : `effets.hygiene` ; rôle « latrines » (feuillées 1 lontan, latrines sèches 2 lontan,
+  fosse maçonnée 3 moderne, qui prend de l'eau), rôle « toilette » (lavoir 1 lontan, douche 2 moderne).
+- Équipement : `parade` (bouclier de tôle 5), `bivouac` (tente, natte de vacoa).
+- Journal du MJ « Le corps, le sommeil et l'hygiène » ; table « Un bivouac — ce qui vient la nuit » ; page « Dormir, se laver,
+  tomber » du guide du joueur ; l'état d'un survivant (sommeil, faim et soif qui ne tuent pas) ; le bestiaire (bouclier, Livide qui
+  rampe).
+
+### 19.4 État, API et fenêtres
+- Survivant : `veille` (entier), `morsure` (`{ quart }` ou null) ; abri : `souillure` ; équipement : `parade`, `bivouac` ; affliction :
+  les champs du §19.3 (tous `gmOnlyFields`). L'instantané public du bilan porte `hygiene`, `latrines`, `toilette`, `insalubrite`
+  (pas la souillure chiffrée).
+- API (`scripts/api-corps.mjs`) : `corps()`, `symptomes({ acteurId })` (un MJ voit en plus les noms et le stade), `bivouac(criteres)`
+  (lecture) ; `dormir({ acteurId | membres, quarts, lieu })`, `soignerMorsure({ acteurId, soigneurId, medicament, decoction })`
+  (carte du test chuchotée aux MJ, issue au journal secret, `morsure` posée sur la fiche), `chute({ acteurId, hauteur, eau, tester,
+  reception, livide })`, `menage({ membres, quarts })`, `parer({ acteurId, touches })`, `grisConnu({ connu })` (MJ actif, monde
+  ouvert). `avancer({ …, dorment, eveilles, lieuSommeil })` ; le groupe porte-t-il de quoi bivouaquer : lu sur l'équipement.
+  `infecter` note au journal secret. `testDirect({ …, secret })` et `chat(…, { secret })` chuchotent aux MJ.
+- Fiche du survivant : le sommeil ; pour un joueur, les maux par leurs signes (nommés s'il les reconnaît), le Gris par ses signes,
+  la morsure pansée, jamais la jauge du Gris. Infobulle et tableau : le Gris et les noms au MJ seul. Fiche de l'abri : l'hygiène et
+  l'insalubrité. Fenêtre du MJ, onglet Partie : bloc « Le corps » et formulaires « Soigner une morsure », « Une chute », « Le ménage
+  de l'abri », « Dormir ».
+
 ## 20. Le jour qu'on croit, les cartes et les calendriers (lot « cartes », 2026-11-17)
 
 Lot 3 de l'inventaire du jeu 3D : la famille 1 du complément, « Savoir quel jour et quelle heure il est », « Les cartes et les

@@ -1,0 +1,178 @@
+{
+  "_id": "toSyilbvWiIW7IiH",
+  "_key": "!tables!toSyilbvWiIW7IiH",
+  "name": "Un bivouac — ce qui vient la nuit",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une nuit dehors. Tirez une fois par nuit ; dans un endroit exposé, tirez deux fois et gardez le pire ; dans un endroit dangereux, tirez deux fois et gardez les deux.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bivouac-la-nuit",
+      "corps": "bivouac-la-nuit"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "soCtDf8pwuQr6wEG",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.soCtDf8pwuQr6wEG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien. Le vent dans les filaos, les grenouilles qui chantent. On se réveille raide et vivant.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0eUbNCCTSt0F39bi",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.0eUbNCCTSt0F39bi",
+      "type": "text",
+      "name": "",
+      "description": "<p>La rosée des Hauts traverse tout : au matin, les mains ne se ferment plus et le feu ne veut pas prendre.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2amHNI6hz0HRlofx",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.2amHNI6hz0HRlofx",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un tangue qui fouille les feuilles autour du sac de vivres. Il faut se lever trois fois pour le chasser.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SsUWSzXns3hlc36s",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.SsUWSzXns3hlc36s",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une averse en pleine nuit : la bâche tient, ou ne tient pas. Sans bâche, la nuit ne repose pas (comme dormir au sol).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dPOeN3xS4A38cKjj",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.dPOeN3xS4A38cKjj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des fourmis, des moustiques, une scolopendre dans une chaussure au réveil (secouez-la : sinon, une piqûre).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "a911SKA0pzKjC2zT",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.a911SKA0pzKjC2zT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des pas sur la route en contrebas, lents, réguliers : un Livide errant qui ne s'arrête pas. Personne ne dort plus.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oIH3bbGojdO1wzUR",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.oIH3bbGojdO1wzUR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une lueur au loin, un autre feu. D'autres vivants bivouaquent dans la même ravine.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SCNkL7gfQ5RvH52Y",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.SCNkL7gfQ5RvH52Y",
+      "type": "text",
+      "name": "",
+      "description": "<p>La ravine gronde : il a plu là-haut. Dans le lit d'une ravine, c'est le moment de partir, tout de suite.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0mt6VvlNL4JzVIby",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.0mt6VvlNL4JzVIby",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un chien qui s'approche, maigre, attiré par l'odeur du repas. Il reste à distance jusqu'au matin.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "v5prC2DmtNqxFl7j",
+      "_key": "!tables.results!toSyilbvWiIW7IiH.v5prC2DmtNqxFl7j",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le silence complet, d'un coup : une horde passe tout près (rencontre de nuit, au MJ).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

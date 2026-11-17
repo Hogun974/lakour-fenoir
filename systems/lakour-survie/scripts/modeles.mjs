@@ -75,7 +75,11 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
       // Lot 4 « Les plans » (logique/plans.mjs) : les plans qu'il sait par cœur (ils survivent par lui, et meurent avec lui), et celui
       // qu'il apprend, { plan, fait, requis } | null.
       plans: cles(),
-      planEnCours: objetNul()
+      planEnCours: objetNul(),
+      // Lot « corps » (logique/corps.mjs, maladies.mjs) : les quarts passés éveillé depuis le dernier sommeil ; la morsure pansée qui
+      // se tait ({ quart } : deux quarts sans rien dire de l'issue).
+      veille: entier(0, 0, 12),
+      morsure: objetNul()
     };
   }
 
@@ -116,6 +120,8 @@ export class ModeleAbri extends foundry.abstract.TypeDataModel {
       eauDouteuse: nombreNul(),
       preparation: objetNul(),
       lumiereLe: nombreNul(),
+      // Lot « corps » : la souillure de l'abri (logique/corps.mjs) ; l'insalubrité en sort (0 à 3).
+      souillure: nombre(0),
       notes: html()
     };
   }
@@ -161,7 +167,8 @@ export class ModeleEquipement extends foundry.abstract.TypeDataModel {
       // pas un papier).
       plans: cles(), unique: texte(),
       // Lot « cartes » (logique/reperes.mjs) : une carte, un calendrier, une montre… { type, … } ; null : un équipement ordinaire.
-      repere: objetNul()
+      repere: objetNul(),
+      parade: entier(0, 0, 6), bivouac: bool(false)   // lot « corps » : le seuil d'un bouclier au d6 ; de quoi bivouaquer
     };
   }
 }
@@ -191,7 +198,9 @@ export class ModeleAffliction extends foundry.abstract.TypeDataModel {
       cle: cle(), categorie: texte("maladie"), description: html(), prevention: html(), contagion: nombre(0), incubation: nombre(0), duree: nombre(1),
       effets: objetLibre({}), soin: objetLibre({}), aggravation: objetNul(),
       declencheur: new fields.StringField({ required: false, nullable: true, blank: true, initial: null }), risque: nombre(0),
-      stade: texte(), reste: nombre(0)
+      stade: texte(), reste: nombre(0),
+      // Lot « corps » (maladies.mjs) : symptômes par stade, effets d'un stade, évidente, savoirs qui la reconnaissent, insalubrité.
+      symptomes: objetLibre({}), effetsStade: objetLibre({}), evidente: bool(false), diagnostic: cles(), insalubrite: nombre(0), siBlesse: bool(false)
     };
   }
 }

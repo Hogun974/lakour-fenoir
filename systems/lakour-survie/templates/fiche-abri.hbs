@@ -22,6 +22,7 @@
       <div><i class="fa-solid fa-bed"></i><strong>{{bilan.personnes}} / {{bilan.capacite}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.Capacite"}}</span></div>
       <div><i class="fa-solid fa-volume-high"></i><strong>{{bruit}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.Bruit"}}</span></div>
       <div><i class="fa-solid fa-seedling"></i><strong>{{bilan.joursAutonomes}}</strong><span>{{localize "LAKOUR_SURVIE.Abri.JoursAutonomes"}}</span></div>
+      <div data-tooltip="{{localize 'LAKOUR_SURVIE.Corps.Hygiene.Aide'}}" class="{{#if bilan.sale}}mauvais{{/if}}"><i class="fa-solid fa-soap"></i><strong>{{bilan.hygiene}} / 3</strong><span>{{localize "LAKOUR_SURVIE.Corps.Hygiene.Titre"}} — {{bilan.insalubrite}}</span></div>
     </div>
     {{#if bilan.surpeuplement}}<p class="survie-avertissement">{{bilan.surpeuplement}}</p>{{/if}}
     {{#if bilan.savoirs}}<p class="survie-aide"><i class="fa-solid fa-book-open"></i> {{localize "LAKOUR_SURVIE.Abri.Arbres" moderne=bilan.savoirs.moderne lontan=bilan.savoirs.lontan}}</p>{{/if}}

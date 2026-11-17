@@ -135,10 +135,12 @@ export function savoir({ cle, nom, description, apprentissage, effets, arbre = "
 // marque : le signe d'une communauté sur l'objet (le marché, 2026-11-13) ; vide dans le compendium.
 // enseigne (lot « savoirs ») : les savoir-faire qu'un livre ou un cahier apprend (veillées de lecture).
 // repere (lot « cartes », contrat §20) : une carte, un calendrier, une montre… (forme : systems/lakour-survie/logique/reperes.mjs).
-export function equipement({ cle, nom, categorie, description, bonus = {}, charge = 1, usure = 0, munitions = null, bruit = 0, transport = null, effets = null, img, marque = "", enseigne = null, repere = null }) {
+// parade (lot « corps ») : le seuil du bouclier au d6 (5 : la tôle pare sur 5-6) ; bivouac : de quoi bivouaquer (natte, tente).
+export function equipement({ cle, nom, categorie, description, bonus = {}, charge = 1, usure = 0, munitions = null, bruit = 0, transport = null, effets = null, img, marque = "", enseigne = null, repere = null, parade = 0, bivouac = false }) {
   return objet({
     pack: "equipements", type: "equipement", cle, nom, img,
-    system: { categorie, description: html(description), bonus, charge, usure, munitions, bruit, transport, effets, marque, ...(enseigne ? { enseigne } : {}), ...(repere ? { repere } : {}) }
+    system: { categorie, description: html(description), bonus, charge, usure, munitions, bruit, transport, effets, marque, ...(enseigne ? { enseigne } : {}), ...(repere ? { repere } : {}),
+      ...(parade ? { parade } : {}), ...(bivouac ? { bivouac: true } : {}) }
   });
 }
 

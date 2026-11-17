@@ -28,7 +28,35 @@
       "duree": 10
     },
     "declencheur": null,
-    "risque": 0
+    "risque": 0,
+    "symptomes": {
+      "active": [
+        "plaie-rouge",
+        "enflure"
+      ],
+      "aggravee": [
+        "fievre",
+        "frissons",
+        "plaie-purulente",
+        "enflure"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      },
+      "aggravee": {
+        "moral": 1,
+        "insomnie": false
+      }
+    },
+    "evidente": false,
+    "diagnostic": [
+      "premiers-secours-avances"
+    ],
+    "insalubrite": 3,
+    "siBlesse": true
   },
   "effects": [],
   "folder": null,

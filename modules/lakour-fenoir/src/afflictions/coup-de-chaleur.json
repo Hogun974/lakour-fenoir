@@ -28,7 +28,37 @@
       "duree": 2
     },
     "declencheur": "chaleur",
-    "risque": 0.004
+    "risque": 0.004,
+    "symptomes": {
+      "active": [
+        "maux-de-tete",
+        "nausee",
+        "soif-intense",
+        "vertiges"
+      ],
+      "aggravee": [
+        "vomissements",
+        "soif-intense",
+        "confusion",
+        "epuisement"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      },
+      "aggravee": {
+        "moral": 0,
+        "insomnie": false
+      }
+    },
+    "evidente": false,
+    "diagnostic": [
+      "premiers-secours-avances"
+    ],
+    "insalubrite": 0,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

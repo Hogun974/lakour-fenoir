@@ -1,0 +1,87 @@
+{
+  "_id": "k0aNXe8ZUxoKoQWM",
+  "_key": "!items!k0aNXe8ZUxoKoQWM",
+  "name": "Douche",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "douche",
+    "categorie": "vie",
+    "description": "<p>Un fût en hauteur, un tuyau, une pomme percée, un paravent de tôle et un caillebotis : se laver chaque soir, laver une plaie à grande eau. Avec un chauffe-eau, elle est chaude.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [
+            "plomberie-filtration"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "eau": 2
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "hygiene": 2,
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "role": "toilette",
+    "rang": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "douche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

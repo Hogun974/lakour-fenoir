@@ -36,10 +36,16 @@
 // téléphone marche là où il est ou que la radio de l'abri parle ; sinon celui qui le tient note le jour (s'il est là et en état),
 // et un jour non noté fait dériver le compte. options.reperes : { calendriers: [année des calendriers portés], planche: Boolean }.
 // Un membre qui meurt garde dans son journal le jour qu'il croyait et les plans du groupe (etat.morts[].journal).
+// Lot « corps » (corps.mjs, contrat §19) : à chaque quart, le sommeil de chacun (la nuit à l'abri, la garde et qui n'a pas dormi le
+// matin, la nuit dehors au bivouac ou au sol, en route on marche ; options.dorment, eveilles, bivouac, lieuSommeil) ; une nuit au bivouac −1 fatigue.
+// Le Gris et les maladies que le groupe ne sait pas reconnaître se disent au journal public par leurs signes (le nom va au journal
+// secret) ; un mordu qui se relève devant le groupe lui apprend à nommer le Gris (groupe.grisConnu). Chaque jour : la souillure
+// de l'abri (journeeAbri), l'abri salubre aux maladies, puis le tirage de l'insalubrité (flux « insalubrite|jour »).
 // Journal et alertes : chaque entrée est { quart, texte (français, repli), cle, params } (textes.mjs) ; la couche Foundry affiche
 // la traduction de `cle` dans la langue de chaque navigateur. Les anciennes entrées à `texte` seul restent lisibles.
 import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, JOURNAL_SECRET_MAX, palierVisibilite, borner } from "./constantes.mjs";
-import { evoluerAfflictions, tirerMaladies, contracter } from "./maladies.mjs";
+import { evoluerAfflictions, tirerMaladies, contracter, insomnieDe, grisReconnu, symptomesDuGris, nomsSymptomes, reconnue, symptomesAffliction } from "./maladies.mjs";
+import { lieuDeSommeil, tirerInsalubrite, salubre, veilleDe } from "./corps.mjs";
 import { indexer, installationDe } from "./contenu.mjs";
 import { message, cleTexteDe, avecPreposition } from "./textes.mjs";
 import { effetsTraits, lieuxAbri, travailleursParTache, competenceDeTache, peutFaire, retirerMembre } from "./generation.mjs";
@@ -116,7 +122,10 @@ const TYPES_ALERTE = ["cyclone-pre-alerte", "cyclone-orange", "cyclone-rouge", "
 // survivants : [{ id, nom?, system }] (membres du groupe) ; abri : { id, system, installations } | null ;
 // options : { dateDepart, repos: Boolean, veille: [id], stabilises: [id], corpsTraites: [id], visibiliteVeille (pour les paliers ;
 //             défaut : la visibilité au début de l'appel),
-//             boitHorsAbri, mangeHorsAbri: Boolean (défaut vrai : hors de l'abri, le groupe vit de ce qu'il porte ; le MJ ajuste) }.
+//             boitHorsAbri, mangeHorsAbri: Boolean (défaut vrai : hors de l'abri, le groupe vit de ce qu'il porte ; le MJ ajuste),
+//             lot « corps » : dorment: [id] (ils dorment à chaque quart de l'appel), eveilles: [id] (ils ne dorment pas : une
+//             veillée, une nuit blanche), bivouac: Boolean (le groupe porte de quoi bivouaquer), lieuSommeil: "bivouac" | "sol"
+//             (imposé : un endroit dangereux fait dormir comme au sol) }.
 // -> { etat, monde, acteurs: { survivants: [{ id, system, evenements }] (ceux qui ont changé), abri: { id, system, installations } | null },
 //      faits (publics), secrets (faits que le groupe ne perçoit pas), alertes (nouvelles), menaces: [{ jour, … }], bilan, jours: [jour],
 //      departs: [id], aRaconter: [{ jour, evenement, cle, params, texte }] (effets d'événements laissés au MJ, §2.6) }
@@ -141,6 +150,11 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
   const vivantsAuDebut = new Set(survivants.filter(s => peutAgir(s.system)).map(s => s.id));
   let ab = abri ? { id: abri.id, system: structuredClone(abri.system), installations: structuredClone(abri.installations ?? []) } : null;
   const veille = new Set(options.veille ?? []), stabilises = new Set(options.stabilises ?? []), corps = new Set(options.corpsTraites ?? []);
+  // Lot « corps » : ceux que le MJ fait dormir (dorment), les maladies (insomnie, symptômes), ce que le groupe sait reconnaître.
+  const dorment = new Set(options.dorment ?? []), eveilles = new Set(options.eveilles ?? []);
+  const defsAfflictionsQ = indexer(contenu).afflictions;
+  const savoirsGroupe = () => [...new Set(surv.filter(x => peutAgir(x.system)).flatMap(x => x.system.savoirs ?? []))];
+  const grisNomme = () => grisReconnu(contenu, { savoirs: savoirsGroupe(), temoin: Boolean(e.groupe.grisConnu) });
   const faits = [], secrets = [], nouvellesAlertes = [], menaces = [], jours = [], aRaconter = [];
   const auJournalSecret = (jour, f) => { m.journalSecret = [...(m.journalSecret ?? []), { jour, texte: f.texte, cle: cleTexteDe(f), params: f.params ?? {} }].slice(-JOURNAL_SECRET_MAX); };
   const personnesAbri = () => surv.filter(s => peutAgir(s.system) && !departs.includes(s.id) && aLAbri()).length + (e.groupe.pnj ?? []).filter(p => p.etat !== "mort").length;
@@ -177,19 +191,38 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     const fin = q + 1;
     // 1. Effet du quart.
     const nuit = MOMENTS[momentIndex(q)] === "nuit";
+    const matin = MOMENTS[momentIndex(q)] === "matin";
     for (const s of surv) {
       if (departs.includes(s.id)) continue;
       const ici = aLAbri();
       const boit = ici ? (ab.system.stocks?.eau ?? 0) > 0 : options.boitHorsAbri !== false;
       const garde = veille.has(s.id) || s.system.tache === "garde";
-      const repos = nuit && ici && !garde ? "nuit" : options.repos || (!nuit && s.system.tache === "repos") ? "quart" : null;
-      const r = effetQuart(s.system, fin, { boit, repos, stabilise: stabilises.has(s.id), corpsTraite: corps.has(s.id) });
+      // Lot « corps » : loin de l'abri, la tâche « garde » ne garde rien ; seule la veille demandée (options.veille) tient debout.
+      const deGarde = veille.has(s.id) || (s.system.tache === "garde" && ici);
+      const reposQuart = Boolean(options.repos) || (!nuit && s.system.tache === "repos");
+      // Lot « corps » : où il dort (corps.mjs, lieuDeSommeil). Une nuit au bivouac repose un peu (−1 fatigue) ; au sol, rien.
+      const dort = peutAgir(s.system) ? lieuDeSommeil({ nuit, matin, aLAbri: ici, enRoute: Boolean(e.groupe.enRoute), garde: deGarde, repos: reposQuart,
+        bivouac: Boolean(options.bivouac), lieu: options.lieuSommeil ?? "", dort: dorment.has(s.id), eveille: eveilles.has(s.id), veille: veilleDe(s.system) }) : null;
+      const repos = nuit && ici && !garde ? "nuit" : reposQuart ? "quart" : nuit && dort === "bivouac" ? "quart" : null;
+      const r = effetQuart(s.system, fin, { boit, repos, stabilise: stabilises.has(s.id), corpsTraite: corps.has(s.id),
+        dort, insomnie: dort ? insomnieDe(s.system, defsAfflictionsQ) : false });
       s.system = r.system;
       for (const ev of r.evenements) {
         s.evenements.push({ quart: fin, ...ev });
-        if (["mort", "releve", "infection"].includes(ev.cle)) {
+        // Le Gris ne se nomme que si le groupe sait le reconnaître (lot « corps ») : sinon, ses signes, et le stade au MJ.
+        if (["mort", "infection"].includes(ev.cle) && (ev.cle === "infection" || ev.cause === "infection") && !grisNomme()) {
+          if (ev.cle === "infection") {
+            const noms = nomsSymptomes(contenu, symptomesDuGris(contenu, ev.stade)).join(", ");
+            publier(fin, "survivant-gris-signes", { nom: s.nom, symptomes: noms }, `${s.nom} : ${noms}.`);
+            const fx = { jour: Math.floor(fin / QUARTS_PAR_JOUR), region: e.groupe.region, cle: "survivant-infection", params: { nom: s.nom, stade: ev.stade }, texte: `${s.nom} ${ev.texte}.`, public: false, portee: "mj" };
+            secrets.push(fx); auJournalSecret(fx.jour, fx);
+          } else publier(fin, "survivant-mort-fievre", { nom: s.nom }, `${s.nom} meurt, emporté par la fièvre.`);
+        } else if (["mort", "releve", "infection"].includes(ev.cle)) {
           publier(fin, `survivant-${ev.cle}${ev.cause ? `-${ev.cause}` : ""}`, { nom: s.nom, stade: ev.stade ?? "" }, `${s.nom} ${ev.texte}.`);
         }
+        if (ev.cle === "epuise" || ev.cle === "endormi") publier(fin, `survivant-${ev.cle}`, { nom: s.nom }, `${s.nom} ${ev.texte}.`);
+        // Avoir vu un mordu se relever : le groupe sait maintenant nommer le Gris.
+        if (ev.cle === "releve" && !e.groupe.grisConnu) e = { ...e, groupe: { ...e.groupe, grisConnu: true } };
         // Une gramoune qui meurt sans que personne ait écrit sous sa dictée : son savoir s'en va avec elle (lot « savoirs »).
         if (ev.cle === "mort" && estGramoune(s.system, contenu) && !s.system.dictee?.cahier) {
           publier(fin, "savoir-perdu", { nom: s.nom }, `Personne n'a écrit sous la dictée de ${s.nom} : ce qu'elle savait s'en va avec elle.`);
@@ -587,17 +620,37 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         s.system = r.system;
         for (const ev of r.evenements) {
           s.evenements.push({ quart: fin, ...ev });
-          publier(fin, `survivant-${ev.cle}`, { nom: s.nom, affliction: defsAfflictions.get(ev.affliction)?.nom ?? ev.affliction }, `${s.nom} ${ev.texte}.`);
+          const def = defsAfflictions.get(ev.affliction);
+          const nomAff = def?.nom ?? ev.affliction;
+          // Lot « corps » : un mal que le groupe ne sait pas reconnaître se dit par ses signes ; son nom va au MJ.
+          if (!reconnue(def, savoirsGroupe())) {
+            const a = s.system.afflictions?.find(x => x.cle === ev.affliction);
+            const signes = nomsSymptomes(contenu, symptomesAffliction(def, a?.stade ?? "active")).join(", ");
+            publier(fin, `survivant-${ev.cle}-signes`, { nom: s.nom, symptomes: signes },
+              ev.cle === "guerie" ? `${s.nom} va mieux.` : `${s.nom} : ${signes}.`);
+            const fx = { jour, region: e.groupe.region, cle: `survivant-${ev.cle}`, params: { nom: s.nom, affliction: nomAff }, texte: `${s.nom} ${ev.texte}.`, public: false, portee: "mj" };
+            secrets.push(fx); auJournalSecret(jour, fx);
+          } else publier(fin, `survivant-${ev.cle}`, { nom: s.nom, affliction: nomAff }, `${s.nom} ${ev.texte}.`);
         }
       }
       const ici = surv.filter(s => actif(s) && aLAbri());
       const regionVie = regionDe(contenu, ab?.system.region ?? e.groupe.region);
+      // Lot « corps » : l'abri salubre (hygiène 3, insalubrité 0) protège de l'eau sale et de la contagion.
       const conditionsVie = { saison: saisonDuJour(jour, dateDepart), altitude: regionVie?.altitude ?? 0, eauTraitee: Boolean(bilan?.eauTraitee), infirmerie: (bilan?.soins ?? 0) > 0,
-        hygiene: hygieneDuJour(e, jour - 1), eauDouteuse: Boolean(ab && Number(ab.system.eauDouteuse) >= jour) };
+        hygiene: hygieneDuJour(e, jour - 1), eauDouteuse: Boolean(ab && Number(ab.system.eauDouteuse) >= jour),
+        salubre: Boolean(ab && aLAbri() && salubre(bilan?.hygiene ?? 0, bilan?.insalubrite ?? 0)) };
       for (const n of tirerMaladies(ici, defsAfflictions, conditionsVie, deriverHasard(m.graine, "maladies", jour), jour)) {
         const s = surv.find(x => x.id === n.id);
         s.system = contracter(s.system, defsAfflictions.get(n.cle), jour);
         s.evenements.push({ quart: fin, cle: "contracte", affliction: n.cle });
+      }
+      // Lot « corps » : l'insalubrité de l'abri (sale, insalubre) amène ses maladies (flux de hasard à part : « insalubrite|jour »).
+      if (ab && aLAbri() && Number(bilan?.insalubrite) >= 2) {
+        for (const n of tirerInsalubrite(ici, defsAfflictions, { niveau: bilan.insalubrite, toilette: bilan.toilette ?? 0 }, deriverHasard(m.graine, "insalubrite", jour))) {
+          const s = surv.find(x => x.id === n.id);
+          s.system = contracter(s.system, defsAfflictions.get(n.cle), jour);
+          s.evenements.push({ quart: fin, cle: "contracte", affliction: n.cle, insalubrite: true });
+        }
       }
     }
     // 10. Paliers de visibilité.
@@ -647,7 +700,8 @@ export function feter(etat, abri, { fete, annee, survivants = [], personnes = nu
   const gain = { ...(ef.gain ?? {}) };
   if (avec) for (const [r, q] of Object.entries(ef.avecGain ?? {})) gain[r] = (gain[r] ?? 0) + (Number(q) || 0);
   const apres = ajouterStocks(ajouterStocks(stocks, Object.fromEntries(Object.entries(cout).map(([r, q]) => [r, -q]))), gain);
-  const nouvelAbri = { ...abri, system: { ...abri.system, stocks: apres } };
+  // Le grand ménage (une fête à effet `hygiene`, le Nouvel An chinois) nettoie aussi l'abri (lot « corps » : souillure à 0).
+  const nouvelAbri = { ...abri, system: { ...abri.system, stocks: apres, ...(ef.hygiene ? { souillure: 0 } : {}) } };
   const cibles = ids => (ids?.length ? vivants.filter(s => ids.includes(s.id)) : vivants).map(s => s.id);
   const voeux = ef.voeu ? cibles(pour) : [];
   const attaches = ef.attache ? (pour?.length ? vivants.filter(s => pour.includes(s.id)) : vivants).filter(s => s.system.statut === "recrue").map(s => s.id) : [];

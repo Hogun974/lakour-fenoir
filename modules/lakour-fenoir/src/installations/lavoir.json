@@ -1,0 +1,86 @@
+{
+  "_id": "n59ATbBBwwblZoOm",
+  "_key": "!items!n59ATbBBwwblZoOm",
+  "name": "Lavoir",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "lavoir",
+    "categorie": "vie",
+    "description": "<p>Une pierre à laver penchée sur un bassin de galets jointoyés d'argile, au bord de l'eau ou sous la citerne : on y lave le linge, on s'y lave, on y parle. Le linge bouilli à la cendre ne garde pas la gale.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 2,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "hygiene": 1,
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "role": "toilette",
+    "rang": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lavoir"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

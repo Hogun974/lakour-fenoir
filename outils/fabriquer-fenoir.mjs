@@ -454,6 +454,35 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     if (![null, "eau", "moustiques", "ravine", "chaleur"].includes(a.declencheur)) e(`${ou} : déclencheur`);
     if (!(a.duree > 0) || !entre(a.contagion, 0, 1) || !entre(a.risque, 0, 1)) e(`${ou} : durée, contagion ou risque`);
   }
+  // Lot « corps » (contrat §19) : les symptômes de chaque affliction et du Gris, le diagnostic, l'hygiène, le bouclier, le bivouac.
+  const symptomes = new Set((d.symptomes ?? []).map(x => x.cle));
+  for (const x of d.symptomes ?? []) if (!x.cle || !/^[a-z0-9-]+$/.test(x.cle) || !x.nom) e(`symptôme « ${x.cle} » invalide`);
+  const aSymptomes = (ou, l) => { if (!l?.length) e(`${ou} : sans symptômes`); for (const k of l ?? []) if (!symptomes.has(k)) e(`${ou} : symptôme inconnu « ${k} »`); };
+  for (const a of afflictions.values()) {
+    const ou = `affliction ${a.cle}`;
+    aSymptomes(`${ou} (active)`, a.symptomes?.active);
+    if (a.aggravation) aSymptomes(`${ou} (aggravée)`, a.symptomes?.aggravee);
+    aSavoirs(ou, a.diagnostic);
+    if (!a.evidente && !a.diagnostic?.length) e(`${ou} : ni évidente ni reconnue par aucun savoir`);
+    for (const st of Object.values(a.effetsStade ?? {})) if (!entre(st.moral ?? 0, 0, 2)) e(`${ou} : moral d'un stade hors de 0..2`);
+    if (!entre(a.insalubrite ?? 0, 0, 10)) e(`${ou} : poids d'insalubrité`);
+  }
+  if ([...afflictions.values()].filter(a => a.insalubrite > 0).length < 3) e("l'insalubrité n'amène presque aucune maladie");
+  if (d.gris?.stades?.length !== 6) e("le Gris : six stades visibles attendus");
+  for (const [i, st] of (d.gris?.stades ?? []).entries()) aSymptomes(`le Gris, stade ${i}`, st.symptomes);
+  aSavoirs("le Gris", d.gris?.diagnostic);
+  const hygiene = [...installations.values()].filter(i => i.niveaux.some(n => Number(n.effets.hygiene) > 0));
+  for (const i of hygiene) {
+    if (!["latrines", "toilette"].includes(i.role)) e(`installation ${i.cle} : hygiène sans rôle « latrines » ou « toilette »`);
+    for (const n of i.niveaux) if (!entre(n.effets.hygiene, 0, 3)) e(`installation ${i.cle} : hygiène hors de 0..3`);
+  }
+  for (const r of ["latrines", "toilette"]) {
+    const soeurs = hygiene.filter(i => i.role === r);
+    if (!soeurs.some(i => i.arbre === "lontan") || !soeurs.some(i => i.arbre === "moderne")) e(`hygiène : le rôle ${r} demande une sœur lontan et une moderne`);
+  }
+  for (const q of equipements.values()) if (q.parade !== undefined && !(Number.isInteger(q.parade) && q.parade >= 2 && q.parade <= 6)) e(`équipement ${q.cle} : parade hors de 2..6`);
+  if (![...equipements.values()].some(q => q.parade)) e("aucun bouclier");
+  if (![...equipements.values()].some(q => q.bivouac)) e("rien pour bivouaquer");
   for (const b of d.bestiaire ?? []) if (!(b.des >= 1) || !(b.resistance >= 1) || !["livide", "animal", "humain"].includes(b.categorie)) e(`bestiaire ${b.cle} : fiche invalide`);
   for (const k of ["livide-frais", "livide-des-hauts", "noye-du-lagon", "livide-brule", "coureur", "chien-errant", "cochon-marron"]) if (!index.bestiaire.has(k)) e(`bestiaire : ${k} absent`);
   // Lot « sens » : la perception des Livides, les pluies d'une année, les ravines temporaires, le bruit d'un ancrage.

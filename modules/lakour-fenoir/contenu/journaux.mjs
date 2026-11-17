@@ -15,6 +15,7 @@ import { PAGES_JOUEUR_SENS } from "./sens.mjs";
 import { PAGES_JOUEUR_COMMUNAUTE, PAGES_MJ_COMMUNAUTE } from "./communaute.mjs";
 import { PAGES_JOUEUR_PLANS } from "./plans.mjs";
 import { PAGES_JOUEUR_REPERES } from "./reperes.mjs";
+import { PAGES_JOUEUR_CORPS } from "./hygiene.mjs";
 import { FETES_FENOIR } from "../scripts/fetes.js";
 import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES, COURS_TEXTE } from "./marche.mjs";
 import { EVENEMENTS } from "./evenements.mjs";
@@ -59,7 +60,8 @@ Vous cherchez un **abri**, vous l'aménagez, vous vivez de **ressources** qui s'
   { cle: "etat", titre: "L'état d'un survivant", texte: `- **Blessures** (0 à 4) : indemne, égratigné, blessé (−1 dé), grièvement (−2 dés), **mourant** : un test de soins difficile dans le quart, sinon la mort.
 - **Fatigue** (0 à 5) : −1 dé à 3 et 4, −2 à 5. Une nuit de repos à l'abri : −2 ; un quart de repos : −1.
 - **Moral** (0 à 5) : à 1, −1 dé ; à 0, le personnage **craque** (refuse, fuit, s'effondre).
-- **Faim et soif** : au-delà de 4 quarts sans boire, +1 fatigue par quart ; au-delà de 2 jours sans manger, +1 fatigue et −1 moral par jour.
+- **Faim et soif** : au-delà de 4 quarts sans boire, +1 fatigue par quart ; au-delà de 2 jours sans manger, +1 fatigue et −1 moral par jour. La faim pèse sur la vie, la soif sur l'endurance : elles épuisent, elles ne tuent pas d'elles-mêmes.
+- **Sommeil** (à part de la fatigue) : une nuit blanche, **épuisé** (−1 dé) ; au bout de deux nuits sans dormir, **terrassé** (−2 dés), on s'endort où l'on est. Fatigue et sommeil ensemble : au plus −2 dés. Une nuit à l'abri remet d'aplomb (page « Dormir, se laver, tomber »).
 - **Infection** : une **morsure** ou une griffure profonde d'un Livide demande un test de soins **extrême** dans le quart (laver, cauteriser, parfois amputer), **difficile** si le soignant y met un médicament (+1 dé), une décoction de zerbaz (une plante, +1 dé), s'il porte une trousse de secours ou si l'abri a une infirmerie. Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. **Aucun remède connu.** **Seul celui qui porte le Gris se relève** : s'il meurt d'autre chose avant (blessures, soif), il se relève quand même au quart suivant, sauf si l'on s'occupe de son corps à temps ; un mort sans le Gris reste mort.
 - **Maladies et blessures qui durent** : dengue, chikungunya, leptospirose, gastro, plaies infectées, fractures… Une eau traitée, des moustiquaires et une infirmerie en réduisent le risque.` },
   { cle: "temps", titre: "Le temps", texte: `Le temps se compte en **quarts** de six heures : matin, après-midi, soir, nuit. Fouiller un lieu prend un quart ; explorer une région, un ou deux ; voyager, selon la route ; construire, selon le chantier (quarts de travail divisés par le nombre de bras).
@@ -141,6 +143,7 @@ Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs e
   ...PAGES_JOUEUR_SENS,
   ...PAGES_JOUEUR_PLANS,
   ...PAGES_JOUEUR_REPERES,
+  ...PAGES_JOUEUR_CORPS,
   { cle: "traits", titre: "Les traits", texte: TRAITS.map(t => `**${t.nom}** — ${sansBalises(t.description)}${t.incompatibles.length ? ` *(Incompatible : ${t.incompatibles.map(c => TRAITS.find(x => x.cle === c)?.nom ?? c).join(", ")}.)*` : ""}`).join("\n\n") }
 ] });
 
@@ -327,7 +330,9 @@ const REPUTATIONS_J = journal({ cle: "reputations", nom: "Réputation auprès de
 
 // ================================================================ Bestiaire (MJ)
 const BESTIAIRE_J = journal({ cle: "bestiaire", nom: "Bestiaire de Fénoir", pack: "mj", pages: [
-  { cle: "regles", titre: "Combattre", texte: `Chaque succès de combat ou de tir ôte 1 de **résistance** à une créature ; à 0, elle est hors d'état (un Livide ne l'est vraiment que le crâne détruit). Chaque créature encore debout attaque avec ses **dés** : un 6 touche (1 blessure) ; pour un Livide, un second 6 au dé de morsure, c'est une morsure. Tirer fait du bruit. Fuir est souvent la meilleure option.` },
+  { cle: "regles", titre: "Combattre", texte: `Chaque succès de combat ou de tir ôte 1 de **résistance** à une créature ; à 0, elle est hors d'état (un Livide ne l'est vraiment que le crâne détruit). Chaque créature encore debout attaque avec ses **dés** : un 6 touche (1 blessure) ; pour un Livide, un second 6 au dé de morsure, c'est une morsure. Un **bouclier** pare chaque touche d'un Livide sur 5 ou 6 (tôle) : une touche parée ne blesse pas et ne mord pas. Tirer fait du bruit. Fuir est souvent la meilleure option.
+
+**Un Livide qui tombe** de 12 m ou plus (un balcon, un fossé profond, une ravine) se casse les jambes et **rampe** : il avance encore, plus lentement, sans se relever sur ses jambes (journal « Le corps, le sommeil et l'hygiène »).` },
   ...BESTIAIRE.map(b => ({ cle: b.cle, titre: b.nom, texte: `${sansBalises(b.description)}
 
 - **Dés d'attaque** : ${b.des} — **résistance** : ${b.resistance} — **vitesse** : ${b.vitesse} — **sens** : ${b.sens}.${b.perception ? `

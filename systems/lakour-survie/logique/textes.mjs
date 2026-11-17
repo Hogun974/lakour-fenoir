@@ -94,7 +94,10 @@ export const CLES_TEXTES = [
   "plans-lieu-inconnu", "plans-lieu-revenir", "etagere-absente", "etagere-pleine",
   // reperes.mjs (par etat.mjs et l'API) : le compte des jours, la lune lue sur un calendrier, le journal d'un mort (lot « cartes »)
   "compte-retrouve", "compte-doute", "compte-perdu", "compte-manque", "compte-manque-personne", "compte-manque-absent", "compte-manque-mort", "compte-manque-empeche", "compte-manque-moral",
-  "lune-sans-calendrier", "lune-sans-lunes", "journal-absent", "journal-enterre", "journal-livide", "journal-loin"
+  "lune-sans-calendrier", "lune-sans-lunes", "journal-absent", "journal-enterre", "journal-livide", "journal-loin",
+  // corps.mjs, maladies.mjs (par etat.mjs) : le sommeil, les signes d'un mal que le groupe ne sait pas nommer (lot « corps »)
+  "survivant-epuise", "survivant-endormi", "survivant-gris-signes", "survivant-mort-fievre",
+  "survivant-declaree-signes", "survivant-aggravee-signes", "survivant-guerie-signes"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

@@ -246,6 +246,7 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     // Lot 4 « Les plans » (contrat §21) : le carnet, les papiers, l'étagère, les lieux à plans (onglet Savoirs).
     plans: onglet === "savoirs" && etat.demarree ? contextePlans(api, c) : null,
     reperes: onglet === "partie" && etat.demarree ? contexteReperes(api, c, membres) : null,
+    corps: onglet === "partie" && etat.demarree ? contexteCorps(api) : null,
     // Lot « savoirs » : l'onglet Savoirs et cyclone.
     ...(onglet === "savoirs" || onglet === "groupe" ? contexteSavoirs(etat, c, api, membres) : {})
   };
@@ -269,6 +270,20 @@ function contexteSavoirs(etat, c, api, membres) {
 
 // Lot « sens » (contrat §18) : ce que le groupe perçoit (temps du quart, odeur de l'abri, ravine, corps des Livides, habitude du
 // noir de chacun, lieux nettoyés, moment musical), et ce qu'il faut aux formulaires.
+// Lot « corps » (contrat §19) : le sommeil de chacun, l'hygiène et l'insalubrité de l'abri, et ce qu'il faut aux formulaires.
+export function contexteCorps(api = game.lakourSurvie) {
+  const c = api?.corps?.();
+  if (!c) return null;
+  const K = k => `LAKOUR_SURVIE.Corps.${k}`;
+  return {
+    membres: c.membres.filter(m => m.vivant).map(m => ({ nom: m.nom, texte: t(K(`Sommeil.${m.sommeil}`)), mauvais: m.veille >= 4, veille: m.veille })),
+    abri: c.abri ? t(K("Hygiene.Ligne"), { n: c.abri.hygiene, etat: t(K(`Insalubrite.${c.abri.etat}`)) }) + (c.abri.salubre ? ` — ${t(K("Hygiene.Salubre"))}` : "") : "",
+    gris: c.grisConnu ? t(K("GrisConnu")) : "",
+    bivouac: c.bivouac,
+    lieux: options(["abri", "bivouac", "sol"].map(x => [x, t(K(`Lieux.${x}`))]), "abri")
+  };
+}
+
 export function contexteSens(api = game.lakourSurvie) {
   const s = api?.sens?.();
   if (!s) return null;
@@ -504,7 +519,12 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       lireLaLune: () => api.lireLaLune({ objetId: d.objet || "" }),
       donnerRepere: () => api.donnerRepere({ acteurId: d.acteur, cle: d.cle }),
       copierCarte: () => api.copierCarte({ objetId: d.objet, acteurId: d.acteur || "" }),
-      lireJournal: () => api.lireJournal(d.mort ? { mortId: d.mort } : { de: d.de || "", date: d.date || "", depuis: Number(d.depuis) || 0 })
+      lireJournal: () => api.lireJournal(d.mort ? { mortId: d.mort } : { de: d.de || "", date: d.date || "", depuis: Number(d.depuis) || 0 }),
+      // Le corps (contrat §19).
+      soignerMorsure: () => api.soignerMorsure({ acteurId: d.acteur, soigneurId: d.soigneur || "", medicament: d.medicament !== "non", decoction: d.decoction !== "non" }),
+      chute: () => api.chute({ acteurId: d.acteur, hauteur: Number(d.hauteur) || 0, eau: Number(d.eau) || 0, tester: d.tester !== "non" }),
+      menage: () => api.menage({ membres: liste(d.membres), quarts: Number(d.quarts) || 1 }),
+      dormir: () => api.dormir({ membres: liste(d.membres), quarts: Number(d.quarts) || 1, lieu: d.lieu || "" })
     };
     if (!appels[nom]) return;
     cible.disabled = true;
