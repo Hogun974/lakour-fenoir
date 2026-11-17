@@ -1,0 +1,118 @@
+{
+  "_id": "DqcBMEE9uls46Tdb",
+  "_key": "!tables!DqcBMEE9uls46Tdb",
+  "name": "Récolte — Plage",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le sable blanc du lagon de l'Ouest, le sable noir de l'Étang-Salé, les galets de l'Est. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-plage",
+      "fouilles": "recolte-plage"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "3qRIvVPfEfEjf2lG",
+      "_key": "!tables.results!DqcBMEE9uls46Tdb.3qRIvVPfEfEjf2lG",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Banc de sable</strong> (14) — Le sable d'une plage ou d'une ravine : pour le mortier, les filtres à eau.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "e479Xy4pbAqdfSw1",
+      "_key": "!tables.results!DqcBMEE9uls46Tdb.e479Xy4pbAqdfSw1",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Coquillages</strong> (10) — Les coquillages roulés sur le sable : brûlés, ils font la chaux des anciens.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "EMX8A0W5N6q1aZ7x",
+      "_key": "!tables.results!DqcBMEE9uls46Tdb.EMX8A0W5N6q1aZ7x",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bois flotté</strong> (6) — Ce que la mer et les ravines en crue rejettent sur la côte : du bois sec, blanchi, qui brûle bien.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9I0rzAkSmNS21ZSU",
+      "_key": "!tables.results!DqcBMEE9uls46Tdb.9I0rzAkSmNS21ZSU",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Galets roulés</strong> (3) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5mWNDYNDoaYFCg7F",
+      "_key": "!tables.results!DqcBMEE9uls46Tdb.5mWNDYNDoaYFCg7F",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Vasque de sel</strong> (2) — Un creux de rocher où l'eau de mer s'évapore au soleil de l'Ouest : on y gratte une croûte de sel, qui garde le poisson (une recette).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8DeDqOFCcQ9syR84",
+      "_key": "!tables.results!DqcBMEE9uls46Tdb.8DeDqOFCcQ9syR84",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces : quelqu'un a coupé, creusé ou ramassé ici il y a peu. Ce qui reste a été choisi par d'autres.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

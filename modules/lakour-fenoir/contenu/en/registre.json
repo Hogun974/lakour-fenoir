@@ -2342,6 +2342,72 @@
       "en": "<p>His ammunition is counted, and he obeys: you deal with his officers, not with him.</p>"
     }
   },
+  "registre/betesTrouvees/cabri": {
+    "_nom": "Cabri",
+    "nom": {
+      "fr": "Cabri",
+      "en": "Goat"
+    },
+    "description": {
+      "fr": "Un cabri attaché à un piquet qui a mangé tout ce qu'il pouvait atteindre. Il se prend à la corde, et il tire.",
+      "en": "A goat tied to a stake that has eaten everything it could reach. It is taken on a rope, and it pulls."
+    }
+  },
+  "registre/betesTrouvees/essaim": {
+    "_nom": "Essaim d'abeilles",
+    "nom": {
+      "fr": "Essaim d'abeilles",
+      "en": "Swarm of bees"
+    },
+    "description": {
+      "fr": "Un essaim installé dans un mur creux, un toit, une caisse : on l'entend avant de le voir. Il se prend à l'enfumoir ; sans lui, il pique, et il reste.",
+      "en": "A swarm settled in a hollow wall, a roof, a crate: you hear it before you see it. It is taken with a smoker; without one, it stings, and stays."
+    }
+  },
+  "registre/betesTrouvees/lapin": {
+    "_nom": "Lapin",
+    "nom": {
+      "fr": "Lapin",
+      "en": "Rabbit"
+    },
+    "description": {
+      "fr": "Un lapin de clapier resté dans sa caisse, ou qui en est sorti. Une cage ou un sac de goni.",
+      "en": "A hutch rabbit still in its crate, or one that has got out. A cage or a gunny sack."
+    }
+  },
+  "registre/betesTrouvees/porcelet": {
+    "_nom": "Porcelet",
+    "nom": {
+      "fr": "Porcelet",
+      "en": "Piglet"
+    },
+    "description": {
+      "fr": "Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni.",
+      "en": "A suckling pig escaped from its sty, squealing as soon as anyone comes near. A rope or a gunny sack."
+    }
+  },
+  "registre/betesTrouvees/poule": {
+    "_nom": "Poule",
+    "nom": {
+      "fr": "Poule",
+      "en": "Hen"
+    },
+    "description": {
+      "fr": "Une poule de cour, rousse et maigre, qui gratte encore derrière la case. On l'attrape avec une cage ou un sac de goni ; sinon elle file sous les fourrés.",
+      "en": "A yard hen, red and thin, still scratching behind the house. It is caught with a cage or a gunny sack; otherwise it runs off under the bushes."
+    }
+  },
+  "registre/betesTrouvees/veau-moka": {
+    "_nom": "Veau moka",
+    "nom": {
+      "fr": "Veau moka",
+      "en": "Moka calf"
+    },
+    "description": {
+      "fr": "Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement.",
+      "en": "A young Moka ox, small and stubborn, left in the cowshed of a farm shed in the Highlands. It is led on a rope, slowly."
+    }
+  },
   "registre/camp/cuisiner": {
     "_nom": "Cuisiner pour tous",
     "nom": {
@@ -5107,6 +5173,438 @@
       "en": "<p>The weavers of the Wild South bring out their dried screwpine (vacoa) leaves: mats, baskets, hats, ropes, roofing. Everything woven is traded, and people eat the palm hearts of the South.</p>"
     }
   },
+  "registre/genresFouille/administration": {
+    "_nom": "Mairie, poste, administration",
+    "nom": {
+      "fr": "Mairie, poste, administration",
+      "en": "Town hall, post office, offices"
+    },
+    "description": {
+      "fr": "La mairie, la poste, le bureau de l'état civil : des papiers en piles, des registres, des tampons. Un groupe électrogène de secours, parfois, au sous-sol.",
+      "en": "The town hall, the post office, the registry office: papers in piles, registers, rubber stamps. Sometimes a back-up generator in the basement."
+    }
+  },
+  "registre/genresFouille/boutique": {
+    "_nom": "Boutique de quartier",
+    "nom": {
+      "fr": "Boutique de quartier",
+      "en": "Corner shop"
+    },
+    "description": {
+      "fr": "La boutique chinoise du coin, celle qui vendait de tout, du riz au marteau, à crédit pour ceux qu'on connaissait. Le rideau de fer a été forcé, ou pas.",
+      "en": "The Chinese corner shop that sold everything, from rice to hammers, on credit to people it knew. The iron shutter has been forced, or not."
+    }
+  },
+  "registre/genresFouille/case": {
+    "_nom": "Case créole",
+    "nom": {
+      "fr": "Case créole",
+      "en": "Creole house"
+    },
+    "description": {
+      "fr": "Une case de bois sous tôle, sa varangue, sa cour de terre battue et son pied de letchi. Le linge plié dans l'armoire, les bocaux de la cuisine, les outils du jardin sous l'auvent, parfois une poule qui gratte encore la cour.",
+      "en": "A wooden house under corrugated iron, its veranda, its beaten-earth yard and its lychee tree. Linen folded in the wardrobe, jars in the kitchen, garden tools under the eaves, sometimes a hen still scratching in the yard."
+    }
+  },
+  "registre/genresFouille/case-en-tole": {
+    "_nom": "Case en tôle",
+    "nom": {
+      "fr": "Case en tôle",
+      "en": "Iron-sheet shack"
+    },
+    "description": {
+      "fr": "Une case de tôles clouées sur des gaulettes, au bord d'une ravine ou au bout d'un chemin : on y a peu, mais on y a tout gardé.",
+      "en": "A shack of iron sheets nailed onto thin poles, at the edge of a ravine or at the end of a path: there is little in it, but everything has been kept."
+    }
+  },
+  "registre/genresFouille/caserne": {
+    "_nom": "Gendarmerie, caserne de pompiers",
+    "nom": {
+      "fr": "Gendarmerie, caserne de pompiers",
+      "en": "Gendarmerie, fire station"
+    },
+    "description": {
+      "fr": "La brigade, le centre de secours : du matériel pour tenir, porter, soigner, éclairer. Les armes sont parties avec ceux qui les portaient ; il reste ce qu'ils n'ont pas eu le temps de prendre.",
+      "en": "The gendarmerie post, the emergency centre: gear to hold out, carry, treat, light. The weapons left with those who carried them; what remains is what they had no time to take."
+    }
+  },
+  "registre/genresFouille/commerce": {
+    "_nom": "Supérette, grande surface",
+    "nom": {
+      "fr": "Supérette, grande surface",
+      "en": "Mini-market, supermarket"
+    },
+    "description": {
+      "fr": "Les rayons renversés, les caddies, les chambres froides qui sentent. La première chose qu'on a pillée au jour deux ; mais il y a toujours une réserve derrière, un quai de livraison, un rayon qu'on a négligé.",
+      "en": "Overturned shelves, trolleys, cold rooms that stink. The first thing looted on day two; but there is always a storeroom at the back, a delivery bay, an aisle someone overlooked."
+    }
+  },
+  "registre/genresFouille/decombres": {
+    "_nom": "Décombres",
+    "nom": {
+      "fr": "Décombres",
+      "en": "Rubble"
+    },
+    "description": {
+      "fr": "Une case effondrée par le dernier cyclone, un tas de gravats au bord d'un terrain vague, un chantier arrêté au jour un : on y fouille à la main, entre les planches et la ferraille.",
+      "en": "A house knocked down by the last cyclone, a heap of rubble by a vacant lot, a building site stopped on day one: you dig by hand, among planks and scrap."
+    }
+  },
+  "registre/genresFouille/ecole": {
+    "_nom": "École, collège",
+    "nom": {
+      "fr": "École, collège",
+      "en": "School, secondary school"
+    },
+    "description": {
+      "fr": "La cour sous les badamiers, les préaux, la cantine. Les dessins encore aux murs. On s'y est réfugié les premiers jours, puis on en est parti.",
+      "en": "The yard under the badamier trees, the covered playgrounds, the canteen. The drawings still on the walls. People sheltered here in the first days, then left."
+    }
+  },
+  "registre/genresFouille/entrepot": {
+    "_nom": "Entrepôt, usine, aérogare",
+    "nom": {
+      "fr": "Entrepôt, usine, aérogare",
+      "en": "Warehouse, factory, terminal"
+    },
+    "description": {
+      "fr": "Les zones d'activité, les docks, la sucrerie, le terminal de l'aéroport : de grands volumes vides, des palettes, des machines arrêtées. Rien à manger, tout pour bâtir.",
+      "en": "The business parks, the docks, the sugar mill, the airport terminal: big empty spaces, pallets, stopped machines. Nothing to eat, everything to build with."
+    }
+  },
+  "registre/genresFouille/garage": {
+    "_nom": "Garage",
+    "nom": {
+      "fr": "Garage",
+      "en": "Garage"
+    },
+    "description": {
+      "fr": "L'atelier de mécanique avec sa fosse, ses pneus empilés et son odeur d'huile. Des pièces de tout, une batterie, une lame de ressort pour un sabre : le trésor de celui qui sait bricoler.",
+      "en": "The mechanic's workshop with its pit, its stacked tyres and its smell of oil. Parts of everything, a battery, a leaf spring for a cutlass: the treasure of anyone who can tinker."
+    }
+  },
+  "registre/genresFouille/gymnase": {
+    "_nom": "Gymnase, tribune",
+    "nom": {
+      "fr": "Gymnase, tribune",
+      "en": "Gym, stands"
+    },
+    "description": {
+      "fr": "Le gymnase où l'on a installé des lits de camp au jour un, le stade et ses tribunes : des couvertures, des bâches, ce qui reste d'un centre d'accueil qui n'a pas tenu.",
+      "en": "The gym where camp beds were set up on day one, the stadium and its stands: blankets, tarpaulins, what is left of a reception centre that did not hold."
+    }
+  },
+  "registre/genresFouille/hangar": {
+    "_nom": "Hangar agricole, serre",
+    "nom": {
+      "fr": "Hangar agricole, serre",
+      "en": "Farm shed, greenhouse"
+    },
+    "description": {
+      "fr": "Le hangar du planteur, la serre à tomates, l'étable vide au bout du chemin : des outils de champ, des semences, et les dernières bêtes qu'on n'a pas eu le cœur d'emmener.",
+      "en": "The planter's shed, the tomato greenhouse, the empty cowshed at the end of the track: field tools, seed, and the last animals nobody had the heart to take away."
+    }
+  },
+  "registre/genresFouille/hotel": {
+    "_nom": "Hôtel, gîte",
+    "nom": {
+      "fr": "Hôtel, gîte",
+      "en": "Hotel, gîte"
+    },
+    "description": {
+      "fr": "L'hôtel du bord de mer, le gîte de montagne, la chambre d'hôtes du cirque : des draps, des couvertures, du savon en petites boîtes, le bar, la cuisine au gaz.",
+      "en": "The seaside hotel, the mountain gîte, the guest house in the cirque: sheets, blankets, little boxes of soap, the bar, the gas kitchen."
+    }
+  },
+  "registre/genresFouille/immeuble": {
+    "_nom": "Immeuble",
+    "nom": {
+      "fr": "Immeuble",
+      "en": "Block of flats"
+    },
+    "description": {
+      "fr": "Une cage d'escalier, des paliers, des portes enfoncées ou barricadées. Beaucoup d'appartements, peu de chaque chose dans chacun, et des voisins qui n'ont pas tous quitté les lieux.",
+      "en": "A stairwell, landings, doors kicked in or barricaded. Many flats, little of anything in each, and neighbours who have not all left."
+    }
+  },
+  "registre/genresFouille/lieu-de-culte": {
+    "_nom": "Lieu de culte",
+    "nom": {
+      "fr": "Lieu de culte",
+      "en": "Place of worship"
+    },
+    "description": {
+      "fr": "Une église, un temple tamoul, une mosquée, une pagode, une chapelle au bord du chemin. Des bougies, de l'eau, des nappes. On n'y trouve ni outil ni arme, et y prendre quoi que ce soit ne laisse personne indifférent.",
+      "en": "A church, a Tamil temple, a mosque, a pagoda, a wayside chapel. Candles, water, altar cloths. There is no tool or weapon here, and taking anything at all leaves no one indifferent."
+    }
+  },
+  "registre/genresFouille/maison": {
+    "_nom": "Maison en dur",
+    "nom": {
+      "fr": "Maison en dur",
+      "en": "Concrete house"
+    },
+    "description": {
+      "fr": "Parpaings, carrelage, tôle sur charpente : la maison d'une famille qui avait un salaire. Plus de câbles et d'électroménager que de vivres, et un garage où l'on rangeait tout.",
+      "en": "Breeze blocks, tiles, iron roof on a frame: the house of a family that had a salary. More cables and appliances than food, and a garage where everything was stored."
+    }
+  },
+  "registre/genresFouille/pharmacie": {
+    "_nom": "Pharmacie",
+    "nom": {
+      "fr": "Pharmacie",
+      "en": "Pharmacy"
+    },
+    "description": {
+      "fr": "La croix verte éteinte, la vitrine étoilée. Les tiroirs des médicaments ont été vidés en premier ; restent les pansements, le désinfectant, les attelles, ce qui ne se revend pas.",
+      "en": "The green cross switched off, the shop window starred with cracks. The drug drawers were emptied first; what remains are dressings, disinfectant, splints, things that do not resell."
+    }
+  },
+  "registre/genresFouille/quincaillerie": {
+    "_nom": "Quincaillerie",
+    "nom": {
+      "fr": "Quincaillerie",
+      "en": "Hardware store"
+    },
+    "description": {
+      "fr": "La quincaillerie de la rue principale : les clous au poids, les rouleaux de grillage, les sabres à canne pendus au mur. Ce qu'on pille le plus tard, et ce qui sert le plus longtemps.",
+      "en": "The hardware store on the main street: nails by weight, rolls of wire mesh, cane cutlasses hanging on the wall. The last place to be looted, and the one that serves longest."
+    }
+  },
+  "registre/genresFouille/remise": {
+    "_nom": "Remise, boucan, abri de jardin",
+    "nom": {
+      "fr": "Remise, boucan, abri de jardin",
+      "en": "Shed, smokehouse, garden hut"
+    },
+    "description": {
+      "fr": "Le boucan au fond de la cour, la cabane à outils, le kiosque du jardin : ce qu'on ne voulait pas dans la maison, et qui sert maintenant le plus.",
+      "en": "The smokehouse (boucan) at the back of the yard, the tool shed, the garden kiosk: what nobody wanted in the house, and what is most useful now."
+    }
+  },
+  "registre/genresFouille/reservoir": {
+    "_nom": "Château d'eau, réservoir",
+    "nom": {
+      "fr": "Château d'eau, réservoir",
+      "en": "Water tower, reservoir"
+    },
+    "description": {
+      "fr": "La cuve de béton sur la colline, la bâche à eau du quartier. Ce qui reste au fond n'est pas toujours bon à boire tel quel.",
+      "en": "The concrete tank on the hill, the neighbourhood water cistern. What is left at the bottom is not always fit to drink as it is."
+    }
+  },
+  "registre/genresFouille/restaurant": {
+    "_nom": "Restaurant, snack",
+    "nom": {
+      "fr": "Restaurant, snack",
+      "en": "Restaurant, snack bar"
+    },
+    "description": {
+      "fr": "Le camion-bar du front de mer, le snack à samoussas, le restaurant du dimanche avec sa marmite à cari : des bouteilles de gaz, du sel, du rhum, des couteaux.",
+      "en": "The seafront food truck, the samosa stall, the Sunday restaurant with its curry pot: gas bottles, salt, rum, knives."
+    }
+  },
+  "registre/genresFouille/sante": {
+    "_nom": "Centre de santé, dispensaire",
+    "nom": {
+      "fr": "Centre de santé, dispensaire",
+      "en": "Health centre, clinic"
+    },
+    "description": {
+      "fr": "Un dispensaire, une maison médicale, le centre de santé du bourg : les brancards dans le couloir, les dossiers par terre. On y a soigné les premiers mordus ; certains y sont encore.",
+      "en": "A dispensary, a medical practice, the village health centre: stretchers in the corridor, files on the floor. The first bitten were treated here; some are still here."
+    }
+  },
+  "registre/genresFouille/station-service": {
+    "_nom": "Station-service",
+    "nom": {
+      "fr": "Station-service",
+      "en": "Petrol station"
+    },
+    "description": {
+      "fr": "Les cuves enterrées, les pompes mortes sans courant, la boutique aux vitres brisées. Le gazole ne se tire plus qu'à la main, et tout le monde le sait.",
+      "en": "The buried tanks, the pumps dead without power, the shop with broken windows. Diesel can only be drawn by hand now, and everyone knows it."
+    }
+  },
+  "registre/genresFouille/voiture": {
+    "_nom": "Voiture à l'abandon",
+    "nom": {
+      "fr": "Voiture à l'abandon",
+      "en": "Abandoned car"
+    },
+    "description": {
+      "fr": "Une voiture arrêtée en travers, portières ouvertes, ou une épave poussée dans le fossé : la boîte à gants, le coffre, le réservoir. Démontée, elle rend une batterie, des roues, une lame de ressort.",
+      "en": "A car stopped across the road, doors open, or a wreck pushed into the ditch: the glove box, the boot, the tank. Taken apart, it gives a battery, wheels, a leaf spring."
+    }
+  },
+  "registre/gisements/argile": {
+    "_nom": "Berge d'argile",
+    "nom": {
+      "fr": "Berge d'argile",
+      "en": "Clay bank"
+    },
+    "description": {
+      "fr": "Une berge grasse au fond d'une ravine : l'argile des jarres, du torchis, des fours.",
+      "en": "A greasy bank at the bottom of a ravine: the clay of jars, of daub, of ovens."
+    }
+  },
+  "registre/gisements/bambou": {
+    "_nom": "Touffe de bambous",
+    "nom": {
+      "fr": "Touffe de bambous",
+      "en": "Clump of bamboo"
+    },
+    "description": {
+      "fr": "Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.",
+      "en": "A clump of bamboo at the bottom of a ravine or along a stream: straight poles for a palisade, a pipe, a cage."
+    }
+  },
+  "registre/gisements/bancoulier": {
+    "_nom": "Bancoulier",
+    "nom": {
+      "fr": "Bancoulier",
+      "en": "Candlenut tree"
+    },
+    "description": {
+      "fr": "Un grand arbre des Bas aux noix huileuses : on ne les mange pas crues, mais leur huile éclaire une lampe.",
+      "en": "A big lowland tree with oily nuts: they are not eaten raw, but their oil lights a lamp."
+    }
+  },
+  "registre/gisements/basalte": {
+    "_nom": "Bloc de basalte",
+    "nom": {
+      "fr": "Bloc de basalte",
+      "en": "Basalt block"
+    },
+    "description": {
+      "fr": "Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.",
+      "en": "An old lava flow, a scree: the black stone of the island, split with a sledgehammer for dry-stone walls."
+    }
+  },
+  "registre/gisements/bois-flotte": {
+    "_nom": "Bois flotté",
+    "nom": {
+      "fr": "Bois flotté",
+      "en": "Driftwood"
+    },
+    "description": {
+      "fr": "Ce que la mer et les ravines en crue rejettent sur la côte : du bois sec, blanchi, qui brûle bien.",
+      "en": "What the sea and the flooded ravines throw onto the coast: dry wood, bleached, that burns well."
+    }
+  },
+  "registre/gisements/choka": {
+    "_nom": "Pied de choka",
+    "nom": {
+      "fr": "Pied de choka",
+      "en": "Choka plant"
+    },
+    "description": {
+      "fr": "L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.",
+      "en": "The agave of the western savannahs, with long spiky leaves: it gives a fibre that makes good rope."
+    }
+  },
+  "registre/gisements/coquillages": {
+    "_nom": "Coquillages",
+    "description": {
+      "fr": "Les coquillages roulés sur le sable : brûlés, ils font la chaux des anciens.",
+      "en": "Shells rolled up on the sand: burnt, they make the lime of the old folk."
+    },
+    "nom": {
+      "fr": "Coquillages",
+      "en": "Shells"
+    }
+  },
+  "registre/gisements/decombres": {
+    "_nom": "Décombres",
+    "description": {
+      "fr": "Un tas de gravats et de planches : il se fouille comme un lieu (genre « Décombres »).",
+      "en": "A heap of rubble and planks: it is searched like a place (kind “Rubble”)."
+    }
+  },
+  "registre/gisements/galets": {
+    "_nom": "Galets roulés",
+    "nom": {
+      "fr": "Galets roulés",
+      "en": "Rounded pebbles"
+    },
+    "description": {
+      "fr": "Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.",
+      "en": "The round pebbles of the ravines and the eastern beaches, picked up by hand: low walls, hearths, foundations."
+    }
+  },
+  "registre/gisements/jardin-en-friche": {
+    "_nom": "Jardin en friche",
+    "nom": {
+      "fr": "Jardin en friche",
+      "en": "Overgrown garden"
+    },
+    "description": {
+      "fr": "Le jardin d'une case abandonnée, envahi : des graines, quelques légumes, des zerbaz. Il se prend avec la cible « jardins ».",
+      "en": "The garden of an abandoned house, gone wild: seeds, a few vegetables, zerbaz. It is taken with the “gardens” target."
+    }
+  },
+  "registre/gisements/sable": {
+    "_nom": "Banc de sable",
+    "nom": {
+      "fr": "Banc de sable",
+      "en": "Sandbank"
+    },
+    "description": {
+      "fr": "Le sable d'une plage ou d'une ravine : pour le mortier, les filtres à eau.",
+      "en": "The sand of a beach or a ravine: for mortar, for water filters."
+    }
+  },
+  "registre/gisements/source": {
+    "_nom": "Source, trou d'eau",
+    "nom": {
+      "fr": "Source, trou d'eau",
+      "en": "Spring, water hole"
+    },
+    "description": {
+      "fr": "Une source au pied d'un rempart, un trou d'eau dans une ravine : l'eau d'un site, d'un captage, d'une citerne ; l'eau d'un trou se boit bouillie.",
+      "en": "A spring at the foot of a rampart, a water hole in a ravine: the water of a site, a catchment, a cistern; water from a hole is drunk boiled."
+    }
+  },
+  "registre/gisements/terre": {
+    "_nom": "Talus de terre",
+    "nom": {
+      "fr": "Talus de terre",
+      "en": "Earth bank"
+    },
+    "description": {
+      "fr": "Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.",
+      "en": "A bank of red earth you attack with a pickaxe: for wattle and daub, garden mounds, jars."
+    }
+  },
+  "registre/gisements/vacoa": {
+    "_nom": "Pied de vacoa",
+    "nom": {
+      "fr": "Pied de vacoa",
+      "en": "Vacoa plant"
+    },
+    "description": {
+      "fr": "Le vacoa des bords de mer et des ravines du Sud : ses feuilles tressées font les nattes, les sacs, les toits.",
+      "en": "The screw pine of the seashores and the southern ravines: its woven leaves make mats, bags, roofs."
+    }
+  },
+  "registre/gisements/vasque-de-sel": {
+    "_nom": "Vasque de sel",
+    "nom": {
+      "fr": "Vasque de sel",
+      "en": "Salt pan"
+    },
+    "description": {
+      "fr": "Un creux de rocher où l'eau de mer s'évapore au soleil de l'Ouest : on y gratte une croûte de sel, qui garde le poisson (une recette).",
+      "en": "A hollow in the rock where seawater evaporates under the western sun: a crust of salt can be scraped off it, which keeps fish (a recipe)."
+    }
+  },
+  "registre/gisements/zerbaz": {
+    "_nom": "Zerbaz",
+    "description": {
+      "fr": "Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».",
+      "en": "Ayapana, lemongrass, bois de joli cœur: the healing plants. They are gathered with the “herbs” target."
+    }
+  },
   "registre/gramounes/gramoun-ignace": {
     "_nom": "Gramoun Ignace Técher",
     "prejuges.0.dit": {
@@ -7770,6 +8268,785 @@
     "description": {
       "fr": "<p>Le dimanche matin, avant la chaleur : poisson des Barques, soins du Dispensaire, la boutique Thiaw-Kine qui monte un étal, la tisaneuse, le réparateur de radios. Le conseil s'assoit sous le kiosque ; Gérard Payet le préside, Lalao Rasoanaivo tient le cours.</p>",
       "en": "<p>Sunday morning, before the heat: fish from the Boats, care from the Dispensary, the Thiaw-Kine shop setting up a stall, the herbalist, the radio repairer. The council sits under the bandstand; Gérard Payet chairs it, Lalao Rasoanaivo keeps the rate.</p>"
+    }
+  },
+  "registre/milieux/bourg": {
+    "_nom": "Bourg",
+    "nom": {
+      "fr": "Bourg",
+      "en": "Town"
+    },
+    "description": {
+      "fr": "Les rues, les cours, les terrains vagues d'une ville ou d'un bourg : ce que le bâti a laissé tomber.",
+      "en": "The streets, the yards, the vacant lots of a town or a village: what the buildings let fall."
+    }
+  },
+  "registre/milieux/canne": {
+    "_nom": "Champs de canne",
+    "nom": {
+      "fr": "Champs de canne",
+      "en": "Cane fields"
+    },
+    "description": {
+      "fr": "Les cannes qui n'ont pas été coupées cette année, plus hautes qu'un homme : on s'y perd, on s'y cache.",
+      "en": "Cane that was not cut this year, taller than a man: you get lost in it, you hide in it."
+    }
+  },
+  "registre/milieux/cote-rocheuse": {
+    "_nom": "Côte rocheuse",
+    "nom": {
+      "fr": "Côte rocheuse",
+      "en": "Rocky coast"
+    },
+    "description": {
+      "fr": "Les falaises de basalte du Sud sauvage, où la houle cogne, et les vacoas penchés au-dessus de l'écume.",
+      "en": "The basalt cliffs of the wild South, where the swell pounds, and the vacoas leaning over the foam."
+    }
+  },
+  "registre/milieux/cultures": {
+    "_nom": "Cultures",
+    "nom": {
+      "fr": "Cultures",
+      "en": "Farmland"
+    },
+    "description": {
+      "fr": "Les champs de géranium, de légumes, de vanille, les vergers : la terre travaillée, retournée à la friche.",
+      "en": "Fields of geranium, vegetables, vanilla, the orchards: worked land, gone back to fallow."
+    }
+  },
+  "registre/milieux/eboulis": {
+    "_nom": "Éboulis et coulées",
+    "nom": {
+      "fr": "Éboulis et coulées",
+      "en": "Scree and lava flows"
+    },
+    "description": {
+      "fr": "Les éboulis au pied des remparts, les coulées de lave anciennes et récentes : de la pierre, et presque rien d'autre.",
+      "en": "Screes at the foot of the ramparts, old and recent lava flows: stone, and almost nothing else."
+    }
+  },
+  "registre/milieux/foret-des-bas": {
+    "_nom": "Forêt des Bas",
+    "nom": {
+      "fr": "Forêt des Bas",
+      "en": "Lowland forest"
+    },
+    "description": {
+      "fr": "Les ravines boisées de l'Est et du Sud, chaudes et mouillées : bambous, bancouliers, lianes.",
+      "en": "The wooded ravines of the East and the South, hot and wet: bamboo, candlenut trees, creepers."
+    }
+  },
+  "registre/milieux/foret-des-hauts": {
+    "_nom": "Forêt des Hauts",
+    "nom": {
+      "fr": "Forêt des Hauts",
+      "en": "Highland forest"
+    },
+    "description": {
+      "fr": "Tamarins, bois de couleur, fougères arborescentes, la mousse sur tout : la forêt humide au-dessus de mille mètres.",
+      "en": "Tamarinds, native hardwoods, tree ferns, moss on everything: the wet forest above a thousand metres."
+    }
+  },
+  "registre/milieux/foret-seche": {
+    "_nom": "Forêt sèche",
+    "nom": {
+      "fr": "Forêt sèche",
+      "en": "Dry forest"
+    },
+    "description": {
+      "fr": "Les reliques de forêt sèche des pentes de l'Ouest : bois noir, tamarins des Bas, épineux.",
+      "en": "The relics of dry forest on the western slopes: bois noir, lowland tamarinds, thorny scrub."
+    }
+  },
+  "registre/milieux/plage": {
+    "_nom": "Plage",
+    "nom": {
+      "fr": "Plage",
+      "en": "Beach"
+    },
+    "description": {
+      "fr": "Le sable blanc du lagon de l'Ouest, le sable noir de l'Étang-Salé, les galets de l'Est.",
+      "en": "The white sand of the western lagoon, the black sand of L'Étang-Salé, the pebbles of the East."
+    }
+  },
+  "registre/milieux/ravine": {
+    "_nom": "Ravine",
+    "nom": {
+      "fr": "Ravine",
+      "en": "Ravine"
+    },
+    "description": {
+      "fr": "Le lit d'une ravine, à sec ou qui coule : des galets, du sable, de l'argile, des bambous, et l'eau quand il a plu en haut.",
+      "en": "The bed of a ravine, dry or running: pebbles, sand, clay, bamboo, and water when it has rained up above."
+    }
+  },
+  "registre/milieux/savane": {
+    "_nom": "Savane",
+    "nom": {
+      "fr": "Savane",
+      "en": "Savannah"
+    },
+    "description": {
+      "fr": "Les pentes sèches de l'Ouest, herbe jaune et chokas, sous un soleil qui cogne.",
+      "en": "The dry slopes of the West, yellow grass and chokas, under a beating sun."
+    }
+  },
+  "registre/objetsFouille/alcool-desinfectant": {
+    "_nom": "Alcool désinfectant",
+    "nom": {
+      "fr": "Alcool désinfectant",
+      "en": "Disinfectant alcohol"
+    }
+  },
+  "registre/objetsFouille/argile": {
+    "_nom": "Pains d'argile",
+    "nom": {
+      "fr": "Pains d'argile",
+      "en": "Lumps of clay"
+    }
+  },
+  "registre/objetsFouille/attelle": {
+    "_nom": "Attelles",
+    "nom": {
+      "fr": "Attelles",
+      "en": "Splints"
+    }
+  },
+  "registre/objetsFouille/bache": {
+    "_nom": "Bâches",
+    "nom": {
+      "fr": "Bâches",
+      "en": "Tarpaulins"
+    }
+  },
+  "registre/objetsFouille/bambou": {
+    "_nom": "Bambous",
+    "nom": {
+      "fr": "Bambous",
+      "en": "Bamboo poles"
+    }
+  },
+  "registre/objetsFouille/batterie-de-voiture": {
+    "_nom": "Une batterie de voiture",
+    "nom": {
+      "fr": "Une batterie de voiture",
+      "en": "A car battery"
+    }
+  },
+  "registre/objetsFouille/batterie-nomade": {
+    "_nom": "Une batterie nomade",
+    "nom": {
+      "fr": "Une batterie nomade",
+      "en": "A power bank"
+    }
+  },
+  "registre/objetsFouille/baume": {
+    "_nom": "Baume",
+    "nom": {
+      "fr": "Baume",
+      "en": "Balm"
+    }
+  },
+  "registre/objetsFouille/bocal": {
+    "_nom": "Bocaux",
+    "nom": {
+      "fr": "Bocaux",
+      "en": "Jars"
+    }
+  },
+  "registre/objetsFouille/bougie": {
+    "_nom": "Bougies",
+    "nom": {
+      "fr": "Bougies",
+      "en": "Candles"
+    }
+  },
+  "registre/objetsFouille/bouteille-de-gaz": {
+    "_nom": "Bouteilles de gaz",
+    "nom": {
+      "fr": "Bouteilles de gaz",
+      "en": "Gas bottles"
+    }
+  },
+  "registre/objetsFouille/branche": {
+    "_nom": "Branches",
+    "nom": {
+      "fr": "Branches",
+      "en": "Branches"
+    }
+  },
+  "registre/objetsFouille/cable": {
+    "_nom": "Câbles",
+    "nom": {
+      "fr": "Câbles",
+      "en": "Cables"
+    }
+  },
+  "registre/objetsFouille/cadre-de-velo": {
+    "_nom": "Un cadre de vélo",
+    "nom": {
+      "fr": "Un cadre de vélo",
+      "en": "A bicycle frame"
+    }
+  },
+  "registre/objetsFouille/cage": {
+    "_nom": "Une cage à volailles",
+    "nom": {
+      "fr": "Une cage à volailles",
+      "en": "A poultry cage"
+    }
+  },
+  "registre/objetsFouille/cahier-vierge": {
+    "_nom": "Cahiers vierges",
+    "nom": {
+      "fr": "Cahiers vierges",
+      "en": "Blank notebooks"
+    }
+  },
+  "registre/objetsFouille/carabine-22": {
+    "_nom": "Une carabine .22",
+    "nom": {
+      "fr": "Une carabine .22",
+      "en": "A .22 rifle"
+    }
+  },
+  "registre/objetsFouille/carburant": {
+    "_nom": "Bidons d'essence ou de gazole",
+    "nom": {
+      "fr": "Bidons d'essence ou de gazole",
+      "en": "Cans of petrol or diesel"
+    }
+  },
+  "registre/objetsFouille/cartouches": {
+    "_nom": "Cartouches",
+    "nom": {
+      "fr": "Cartouches",
+      "en": "Cartridges"
+    }
+  },
+  "registre/objetsFouille/cellule-solaire": {
+    "_nom": "Cellules solaires",
+    "nom": {
+      "fr": "Cellules solaires",
+      "en": "Solar cells"
+    }
+  },
+  "registre/objetsFouille/chambre-a-air": {
+    "_nom": "Chambres à air",
+    "nom": {
+      "fr": "Chambres à air",
+      "en": "Inner tubes"
+    }
+  },
+  "registre/objetsFouille/charbon-de-bois": {
+    "_nom": "Charbon de bois",
+    "nom": {
+      "fr": "Charbon de bois",
+      "en": "Charcoal"
+    }
+  },
+  "registre/objetsFouille/ciment": {
+    "_nom": "Sacs de ciment",
+    "nom": {
+      "fr": "Sacs de ciment",
+      "en": "Bags of cement"
+    }
+  },
+  "registre/objetsFouille/cire": {
+    "_nom": "Cire",
+    "nom": {
+      "fr": "Cire",
+      "en": "Wax"
+    }
+  },
+  "registre/objetsFouille/clous": {
+    "_nom": "Clous",
+    "nom": {
+      "fr": "Clous",
+      "en": "Nails"
+    }
+  },
+  "registre/objetsFouille/composants": {
+    "_nom": "Composants électroniques",
+    "nom": {
+      "fr": "Composants électroniques",
+      "en": "Electronic components"
+    }
+  },
+  "registre/objetsFouille/conserve": {
+    "_nom": "Boîtes de conserve",
+    "nom": {
+      "fr": "Boîtes de conserve",
+      "en": "Tins of food"
+    }
+  },
+  "registre/objetsFouille/coquillage": {
+    "_nom": "Coquillages",
+    "nom": {
+      "fr": "Coquillages",
+      "en": "Shells"
+    }
+  },
+  "registre/objetsFouille/corde": {
+    "_nom": "Une corde",
+    "nom": {
+      "fr": "Une corde",
+      "en": "A rope"
+    }
+  },
+  "registre/objetsFouille/couteau": {
+    "_nom": "Un couteau",
+    "nom": {
+      "fr": "Un couteau",
+      "en": "A knife"
+    }
+  },
+  "registre/objetsFouille/couverture": {
+    "_nom": "Couvertures",
+    "nom": {
+      "fr": "Couvertures",
+      "en": "Blankets"
+    }
+  },
+  "registre/objetsFouille/douilles": {
+    "_nom": "Douilles à recharger",
+    "nom": {
+      "fr": "Douilles à recharger",
+      "en": "Cases to reload"
+    }
+  },
+  "registre/objetsFouille/eau": {
+    "_nom": "Bouteilles d'eau",
+    "nom": {
+      "fr": "Bouteilles d'eau",
+      "en": "Bottles of water"
+    }
+  },
+  "registre/objetsFouille/eau-de-javel": {
+    "_nom": "Eau de Javel",
+    "nom": {
+      "fr": "Eau de Javel",
+      "en": "Bleach"
+    }
+  },
+  "registre/objetsFouille/encre": {
+    "_nom": "Encre",
+    "nom": {
+      "fr": "Encre",
+      "en": "Ink"
+    }
+  },
+  "registre/objetsFouille/engrais": {
+    "_nom": "Engrais",
+    "nom": {
+      "fr": "Engrais",
+      "en": "Fertiliser"
+    }
+  },
+  "registre/objetsFouille/ferraille": {
+    "_nom": "Ferraille",
+    "nom": {
+      "fr": "Ferraille",
+      "en": "Scrap iron"
+    }
+  },
+  "registre/objetsFouille/feuille-de-choka": {
+    "_nom": "Feuilles de choka",
+    "nom": {
+      "fr": "Feuilles de choka",
+      "en": "Choka leaves"
+    }
+  },
+  "registre/objetsFouille/feuille-de-vacoa": {
+    "_nom": "Feuilles de vacoa",
+    "nom": {
+      "fr": "Feuilles de vacoa",
+      "en": "Vacoa leaves"
+    }
+  },
+  "registre/objetsFouille/fil-de-fer": {
+    "_nom": "Fil de fer",
+    "nom": {
+      "fr": "Fil de fer",
+      "en": "Wire"
+    }
+  },
+  "registre/objetsFouille/fumier": {
+    "_nom": "Fumier",
+    "nom": {
+      "fr": "Fumier",
+      "en": "Manure"
+    }
+  },
+  "registre/objetsFouille/fusil-de-chasse": {
+    "_nom": "Un fusil de chasse",
+    "nom": {
+      "fr": "Un fusil de chasse",
+      "en": "A hunting shotgun"
+    }
+  },
+  "registre/objetsFouille/fut": {
+    "_nom": "Fûts vides",
+    "nom": {
+      "fr": "Fûts vides",
+      "en": "Empty drums"
+    }
+  },
+  "registre/objetsFouille/galet": {
+    "_nom": "Galets",
+    "nom": {
+      "fr": "Galets",
+      "en": "Pebbles"
+    }
+  },
+  "registre/objetsFouille/gants-de-travail": {
+    "_nom": "Gants de travail",
+    "nom": {
+      "fr": "Gants de travail",
+      "en": "Work gloves"
+    }
+  },
+  "registre/objetsFouille/gaulette": {
+    "_nom": "Gaulettes",
+    "nom": {
+      "fr": "Gaulettes",
+      "en": "Thin poles"
+    }
+  },
+  "registre/objetsFouille/graines": {
+    "_nom": "Sachets de graines",
+    "nom": {
+      "fr": "Sachets de graines",
+      "en": "Seed packets"
+    }
+  },
+  "registre/objetsFouille/grillage": {
+    "_nom": "Rouleaux de grillage",
+    "nom": {
+      "fr": "Rouleaux de grillage",
+      "en": "Rolls of wire mesh"
+    }
+  },
+  "registre/objetsFouille/groupe-electrogene": {
+    "_nom": "Un groupe électrogène",
+    "nom": {
+      "fr": "Un groupe électrogène",
+      "en": "A generator"
+    }
+  },
+  "registre/objetsFouille/hache": {
+    "_nom": "Une hache",
+    "nom": {
+      "fr": "Une hache",
+      "en": "An axe"
+    }
+  },
+  "registre/objetsFouille/lampe-electrique": {
+    "_nom": "Une lampe électrique",
+    "nom": {
+      "fr": "Une lampe électrique",
+      "en": "An electric torch"
+    }
+  },
+  "registre/objetsFouille/marteau": {
+    "_nom": "Un marteau",
+    "nom": {
+      "fr": "Un marteau",
+      "en": "A hammer"
+    }
+  },
+  "registre/objetsFouille/masse": {
+    "_nom": "Une masse",
+    "nom": {
+      "fr": "Une masse",
+      "en": "A sledgehammer"
+    }
+  },
+  "registre/objetsFouille/moellon": {
+    "_nom": "Moellons",
+    "nom": {
+      "fr": "Moellons",
+      "en": "Rubble stones"
+    }
+  },
+  "registre/objetsFouille/moteur": {
+    "_nom": "Un petit moteur",
+    "nom": {
+      "fr": "Un petit moteur",
+      "en": "A small engine"
+    }
+  },
+  "registre/objetsFouille/moteur-electrique": {
+    "_nom": "Un moteur électrique",
+    "nom": {
+      "fr": "Un moteur électrique",
+      "en": "An electric motor"
+    }
+  },
+  "registre/objetsFouille/moustiquaires": {
+    "_nom": "Des moustiquaires",
+    "nom": {
+      "fr": "Des moustiquaires",
+      "en": "Mosquito nets"
+    }
+  },
+  "registre/objetsFouille/noix-de-bancoul": {
+    "_nom": "Noix de bancoul",
+    "nom": {
+      "fr": "Noix de bancoul",
+      "en": "Candlenuts"
+    }
+  },
+  "registre/objetsFouille/panneau-solaire": {
+    "_nom": "Un panneau solaire",
+    "nom": {
+      "fr": "Un panneau solaire",
+      "en": "A solar panel"
+    }
+  },
+  "registre/objetsFouille/pansement": {
+    "_nom": "Pansements",
+    "nom": {
+      "fr": "Pansements",
+      "en": "Dressings"
+    }
+  },
+  "registre/objetsFouille/papier": {
+    "_nom": "Papier",
+    "nom": {
+      "fr": "Papier",
+      "en": "Paper"
+    }
+  },
+  "registre/objetsFouille/parpaing": {
+    "_nom": "Parpaings",
+    "nom": {
+      "fr": "Parpaings",
+      "en": "Breeze blocks"
+    }
+  },
+  "registre/objetsFouille/pelle-pioche": {
+    "_nom": "Une pelle et une pioche",
+    "nom": {
+      "fr": "Une pelle et une pioche",
+      "en": "A shovel and a pickaxe"
+    }
+  },
+  "registre/objetsFouille/pied-de-biche": {
+    "_nom": "Un pied-de-biche",
+    "nom": {
+      "fr": "Un pied-de-biche",
+      "en": "A crowbar"
+    }
+  },
+  "registre/objetsFouille/pierre-a-aiguiser": {
+    "_nom": "Pierres à aiguiser",
+    "nom": {
+      "fr": "Pierres à aiguiser",
+      "en": "Whetstones"
+    }
+  },
+  "registre/objetsFouille/pince": {
+    "_nom": "Une pince",
+    "nom": {
+      "fr": "Une pince",
+      "en": "A pair of pliers"
+    }
+  },
+  "registre/objetsFouille/pistolet-de-service": {
+    "_nom": "Un pistolet de service",
+    "nom": {
+      "fr": "Un pistolet de service",
+      "en": "A service pistol"
+    }
+  },
+  "registre/objetsFouille/planche": {
+    "_nom": "Planches",
+    "nom": {
+      "fr": "Planches",
+      "en": "Planks"
+    }
+  },
+  "registre/objetsFouille/plants": {
+    "_nom": "Plants et boutures",
+    "nom": {
+      "fr": "Plants et boutures",
+      "en": "Seedlings and cuttings"
+    }
+  },
+  "registre/objetsFouille/radio-a-manivelle": {
+    "_nom": "Une radio à manivelle",
+    "nom": {
+      "fr": "Une radio à manivelle",
+      "en": "A wind-up radio"
+    }
+  },
+  "registre/objetsFouille/rechaud": {
+    "_nom": "Un réchaud",
+    "nom": {
+      "fr": "Un réchaud",
+      "en": "A camping stove"
+    }
+  },
+  "registre/objetsFouille/ressort": {
+    "_nom": "Lames de ressort",
+    "nom": {
+      "fr": "Lames de ressort",
+      "en": "Leaf springs"
+    }
+  },
+  "registre/objetsFouille/rhum": {
+    "_nom": "Rhum",
+    "nom": {
+      "fr": "Rhum",
+      "en": "Rum"
+    }
+  },
+  "registre/objetsFouille/roue": {
+    "_nom": "Roues",
+    "nom": {
+      "fr": "Roues",
+      "en": "Wheels"
+    }
+  },
+  "registre/objetsFouille/rustine": {
+    "_nom": "Rustines",
+    "nom": {
+      "fr": "Rustines",
+      "en": "Tyre patches"
+    }
+  },
+  "registre/objetsFouille/sable": {
+    "_nom": "Seaux de sable",
+    "nom": {
+      "fr": "Seaux de sable",
+      "en": "Buckets of sand"
+    }
+  },
+  "registre/objetsFouille/sabre-a-canne": {
+    "_nom": "Un sabre à canne",
+    "nom": {
+      "fr": "Un sabre à canne",
+      "en": "A cane cutlass"
+    }
+  },
+  "registre/objetsFouille/sac-de-goni": {
+    "_nom": "Un sac de goni",
+    "nom": {
+      "fr": "Un sac de goni",
+      "en": "A gunny sack"
+    }
+  },
+  "registre/objetsFouille/savates": {
+    "_nom": "Savates",
+    "nom": {
+      "fr": "Savates",
+      "en": "Flip-flops"
+    }
+  },
+  "registre/objetsFouille/scie": {
+    "_nom": "Une scie",
+    "nom": {
+      "fr": "Une scie",
+      "en": "A saw"
+    }
+  },
+  "registre/objetsFouille/seau": {
+    "_nom": "Seaux",
+    "nom": {
+      "fr": "Seaux",
+      "en": "Buckets"
+    }
+  },
+  "registre/objetsFouille/sel": {
+    "_nom": "Sel",
+    "nom": {
+      "fr": "Sel",
+      "en": "Salt"
+    }
+  },
+  "registre/objetsFouille/solute": {
+    "_nom": "Soluté de réhydratation",
+    "nom": {
+      "fr": "Soluté de réhydratation",
+      "en": "Rehydration solution"
+    }
+  },
+  "registre/objetsFouille/terre": {
+    "_nom": "Seaux de terre",
+    "nom": {
+      "fr": "Seaux de terre",
+      "en": "Buckets of earth"
+    }
+  },
+  "registre/objetsFouille/tissu": {
+    "_nom": "Linge et tissu",
+    "nom": {
+      "fr": "Linge et tissu",
+      "en": "Linen and cloth"
+    }
+  },
+  "registre/objetsFouille/tole": {
+    "_nom": "Tôles",
+    "nom": {
+      "fr": "Tôles",
+      "en": "Corrugated iron sheets"
+    }
+  },
+  "registre/objetsFouille/tronconneuse": {
+    "_nom": "Une tronçonneuse",
+    "nom": {
+      "fr": "Une tronçonneuse",
+      "en": "A chainsaw"
+    }
+  },
+  "registre/objetsFouille/trousse-de-secours": {
+    "_nom": "Une trousse de secours",
+    "nom": {
+      "fr": "Une trousse de secours",
+      "en": "A first-aid kit"
+    }
+  },
+  "registre/objetsFouille/truelle": {
+    "_nom": "Une truelle",
+    "nom": {
+      "fr": "Une truelle",
+      "en": "A trowel"
+    }
+  },
+  "registre/objetsFouille/tuyau": {
+    "_nom": "Tuyaux",
+    "nom": {
+      "fr": "Tuyaux",
+      "en": "Pipes"
+    }
+  },
+  "registre/objetsFouille/vinaigre": {
+    "_nom": "Vinaigre",
+    "nom": {
+      "fr": "Vinaigre",
+      "en": "Vinegar"
+    }
+  },
+  "registre/objetsFouille/visserie": {
+    "_nom": "Visserie",
+    "nom": {
+      "fr": "Visserie",
+      "en": "Screws and bolts"
+    }
+  },
+  "registre/objetsFouille/vitre": {
+    "_nom": "Vitres",
+    "nom": {
+      "fr": "Vitres",
+      "en": "Window panes"
+    }
+  },
+  "registre/objetsFouille/vivres": {
+    "_nom": "Vivres secs (riz, grains, sucre)",
+    "nom": {
+      "fr": "Vivres secs (riz, grains, sucre)",
+      "en": "Dry food (rice, grain, sugar)"
     }
   },
   "registre/plans/cahier-de-l-electricien": {

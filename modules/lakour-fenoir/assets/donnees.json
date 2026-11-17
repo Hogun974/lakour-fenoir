@@ -121,7 +121,13 @@
     "x": 1646,
     "y": 268
    },
-   "arrivee": "Le début. Les urgences ont débordé sur les parkings ; les premières portes marquées sont ici. Sur les toits du Chaudron, du linge sèche : des gens vivent là-haut et ne descendent pas."
+   "arrivee": "Le début. Les urgences ont débordé sur les parkings ; les premières portes marquées sont ici. Sur les toits du Chaudron, du linge sèche : des gens vivent là-haut et ne descendent pas.",
+   "milieux": [
+    "bourg",
+    "foret-des-bas",
+    "ravine",
+    "cote-rocheuse"
+   ]
   },
   {
    "cle": "sainte-marie",
@@ -231,7 +237,13 @@
     "x": 2029,
     "y": 319
    },
-   "arrivee": "L'espoir de partir. Des valises par centaines, des files figées, un hangar de fret plein de ce que l'île attendait, et un tableau des départs arrêté sur le même vol."
+   "arrivee": "L'espoir de partir. Des valises par centaines, des files figées, un hangar de fret plein de ce que l'île attendait, et un tableau des départs arrêté sur le même vol.",
+   "milieux": [
+    "bourg",
+    "canne",
+    "cultures",
+    "cote-rocheuse"
+   ]
   },
   {
    "cle": "route-du-littoral",
@@ -353,7 +365,12 @@
     "x": 1264,
     "y": 319
    },
-   "arrivee": "Ce qu'a donné la fuite : des kilomètres d'épaves entre la falaise et la houle. Plus haut, le vieux chemin pavé que les piétons ont rouvert, et le lazaret où l'on mettait déjà les arrivants en quarantaine il y a plus d'un siècle."
+   "arrivee": "Ce qu'a donné la fuite : des kilomètres d'épaves entre la falaise et la houle. Plus haut, le vieux chemin pavé que les piétons ont rouvert, et le lazaret où l'on mettait déjà les arrivants en quarantaine il y a plus d'un siècle.",
+   "milieux": [
+    "cote-rocheuse",
+    "eboulis",
+    "plage"
+   ]
   },
   {
    "cle": "le-port",
@@ -491,7 +508,13 @@
     "x": 929,
     "y": 471
    },
-   "arrivee": "L'ordre qui reste : des murailles de conteneurs, une sirène à heure fixe, des affiches de recensement. Et, au large, un navire qui n'a jamais accosté."
+   "arrivee": "L'ordre qui reste : des murailles de conteneurs, une sirène à heure fixe, des affiches de recensement. Et, au large, un navire qui n'a jamais accosté.",
+   "milieux": [
+    "bourg",
+    "plage",
+    "savane",
+    "ravine"
+   ]
   },
   {
    "cle": "saint-paul",
@@ -629,7 +652,14 @@
     "x": 690,
     "y": 929
    },
-   "arrivee": "La vie d'avant, intacte et vide : les plages, les restaurants, les bateaux de plaisance. Le lagon rend ses noyés ; le marché forain sert aux Ferrailleurs."
+   "arrivee": "La vie d'avant, intacte et vide : les plages, les restaurants, les bateaux de plaisance. Le lagon rend ses noyés ; le marché forain sert aux Ferrailleurs.",
+   "milieux": [
+    "bourg",
+    "plage",
+    "savane",
+    "foret-seche",
+    "ravine"
+   ]
   },
   {
    "cle": "hauts-de-l-ouest",
@@ -752,7 +782,12 @@
     "x": 1168,
     "y": 1387
    },
-   "arrivee": "Ceux qui savaient déjà : l'alambic à géranium, les cases en bois sous tôle, les citernes. Des gens qui n'ont presque rien changé à leur vie, et qui le disent."
+   "arrivee": "Ceux qui savaient déjà : l'alambic à géranium, les cases en bois sous tôle, les citernes. Des gens qui n'ont presque rien changé à leur vie, et qui le disent.",
+   "milieux": [
+    "foret-des-hauts",
+    "cultures",
+    "savane"
+   ]
   },
   {
    "cle": "saint-leu",
@@ -877,7 +912,14 @@
     "x": 977,
     "y": 1896
    },
-   "arrivee": "Le sel, le vent, les filaos. Des pêcheurs qui dorment sur l'eau, et sur le sable noir, des traces qui sortent de la mer."
+   "arrivee": "Le sel, le vent, les filaos. Des pêcheurs qui dorment sur l'eau, et sur le sable noir, des traces qui sortent de la mer.",
+   "milieux": [
+    "bourg",
+    "plage",
+    "canne",
+    "savane",
+    "cote-rocheuse"
+   ]
   },
   {
    "cle": "saint-pierre",
@@ -1014,7 +1056,13 @@
     "x": 1646,
     "y": 2455
    },
-   "arrivee": "Ceux qui soignent : le grand hôpital et ses draps peints d'une croix rouge, les ambulances en navette, la sucrerie du Gol arrêtée en pleine campagne, et une adresse répétée chaque soir à la radio."
+   "arrivee": "Ceux qui soignent : le grand hôpital et ses draps peints d'une croix rouge, les ambulances en navette, la sucrerie du Gol arrêtée en pleine campagne, et une adresse répétée chaque soir à la radio.",
+   "milieux": [
+    "bourg",
+    "canne",
+    "plage",
+    "ravine"
+   ]
   },
   {
    "cle": "le-tampon",
@@ -1135,7 +1183,12 @@
     "x": 2077,
     "y": 1998
    },
-   "arrivee": "Le froid. Des troupeaux, des clôtures doublées, des cloches aux barrières ; au petit matin, des silhouettes immobiles dans les prés, couvertes de rosée."
+   "arrivee": "Le froid. Des troupeaux, des clôtures doublées, des cloches aux barrières ; au petit matin, des silhouettes immobiles dans les prés, couvertes de rosée.",
+   "milieux": [
+    "bourg",
+    "cultures",
+    "foret-des-hauts"
+   ]
   },
   {
    "cle": "sud-sauvage",
@@ -1264,7 +1317,14 @@
     "x": 2793,
     "y": 2710
    },
-   "arrivee": "L'île dans l'île. Peu de monde, donc peu de morts ; la vanille, les vacoas, la mer qui prend sans prévenir. Les gens y sont partis les derniers, ou jamais."
+   "arrivee": "L'île dans l'île. Peu de monde, donc peu de morts ; la vanille, les vacoas, la mer qui prend sans prévenir. Les gens y sont partis les derniers, ou jamais.",
+   "milieux": [
+    "foret-des-bas",
+    "cote-rocheuse",
+    "ravine",
+    "cultures",
+    "eboulis"
+   ]
   },
   {
    "cle": "fournaise",
@@ -1369,7 +1429,11 @@
     "x": 2841,
     "y": 1998
    },
-   "arrivee": "Ce qui ne demande l'avis de personne : la Plaine des Sables sans une trace, le gîte et son livre d'or que plus personne ne signe, les instruments qui tournent encore à Bourg-Murat."
+   "arrivee": "Ce qui ne demande l'avis de personne : la Plaine des Sables sans une trace, le gîte et son livre d'or que plus personne ne signe, les instruments qui tournent encore à Bourg-Murat.",
+   "milieux": [
+    "eboulis",
+    "foret-des-hauts"
+   ]
   },
   {
    "cle": "est",
@@ -1512,7 +1576,14 @@
     "x": 2889,
     "y": 980
    },
-   "arrivee": "La pluie et la foi : des rivières en crue qui charrient tout, la canne haute, les centrales qui ont tenu plus longtemps, l'église que la lave a épargnée et les cierges sur les coulées."
+   "arrivee": "La pluie et la foi : des rivières en crue qui charrient tout, la canne haute, les centrales qui ont tenu plus longtemps, l'église que la lave a épargnée et les cierges sur les coulées.",
+   "milieux": [
+    "canne",
+    "foret-des-bas",
+    "ravine",
+    "cote-rocheuse",
+    "bourg"
+   ]
   },
   {
    "cle": "plaine-des-palmistes",
@@ -1636,7 +1707,12 @@
     "x": 2507,
     "y": 1489
    },
-   "arrivee": "La forêt qui reprend : des gîtes fermés de l'intérieur, la brume de l'après-midi, des sentiers où l'on se perd à dix mètres de la route."
+   "arrivee": "La forêt qui reprend : des gîtes fermés de l'intérieur, la brume de l'après-midi, des sentiers où l'on se perd à dix mètres de la route.",
+   "milieux": [
+    "foret-des-hauts",
+    "cultures",
+    "ravine"
+   ]
   },
   {
    "cle": "cilaos",
@@ -1760,7 +1836,13 @@
     "x": 1742,
     "y": 1489
    },
-   "arrivee": "Une seule route, quatre cents virages, et le car jaune arrêté dans un tunnel. Là-haut, le village a tenu ; chaque éboulis décide s'il reste une île dans l'île."
+   "arrivee": "Une seule route, quatre cents virages, et le car jaune arrêté dans un tunnel. Là-haut, le village a tenu ; chaque éboulis décide s'il reste une île dans l'île.",
+   "milieux": [
+    "eboulis",
+    "ravine",
+    "cultures",
+    "foret-des-hauts"
+   ]
   },
   {
    "cle": "salazie",
@@ -1896,7 +1978,13 @@
     "x": 1981,
     "y": 1082
    },
-   "arrivee": "L'eau partout, les cascades, les treilles de chouchous. La route emportée, le cirque refermé, et des cases de Hell-Bourg dont les jardins sont entretenus par on ne sait qui."
+   "arrivee": "L'eau partout, les cascades, les treilles de chouchous. La route emportée, le cirque refermé, et des cases de Hell-Bourg dont les jardins sont entretenus par on ne sait qui.",
+   "milieux": [
+    "ravine",
+    "cultures",
+    "foret-des-bas",
+    "bourg"
+   ]
   },
   {
    "cle": "mafate",
@@ -2047,7 +2135,13 @@
     "x": 1551,
     "y": 1082
    },
-   "arrivee": "Le monde d'après ressemblait au monde d'avant : pas de route, des panneaux sur les toits, des sifflets d'îlet en îlet. Et un îlet où tout va bien, trop bien."
+   "arrivee": "Le monde d'après ressemblait au monde d'avant : pas de route, des panneaux sur les toits, des sifflets d'îlet en îlet. Et un îlet où tout va bien, trop bien.",
+   "milieux": [
+    "ravine",
+    "eboulis",
+    "savane",
+    "cultures"
+   ]
   }
  ],
  "sites": [
@@ -2091,7 +2185,9 @@
      "installation": "barricades",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "immeuble",
+   "ecart": false
   },
   {
    "cle": "villa-rue-de-paris",
@@ -2141,7 +2237,9 @@
      "installation": "verger",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "case",
+   "ecart": false
   },
   {
    "cle": "caserne-de-la-montagne",
@@ -2199,7 +2297,9 @@
    "plans": [
     "infirmerie",
     "porte-blindee"
-   ]
+   ],
+   "genre": "caserne",
+   "ecart": false
   },
   {
    "cle": "maison-du-brule",
@@ -2245,7 +2345,9 @@
      "installation": "potager",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "maison",
+   "ecart": false
   },
   {
    "cle": "phare-de-bel-air",
@@ -2295,7 +2397,9 @@
    "plans": [
     "eolienne",
     "antenne"
-   ]
+   ],
+   "genre": "administration",
+   "ecart": true
   },
   {
    "cle": "hangar-fret-gillot",
@@ -2343,7 +2447,9 @@
     "reserve-etanche",
     "recette-utilitaire-electrique",
     "recette-remorque-d-utilitaire"
-   ]
+   ],
+   "genre": "commerce",
+   "ecart": false
   },
   {
    "cle": "port-de-sainte-marie",
@@ -2380,7 +2486,9 @@
     "Houle et cyclones : le port n'abrite pas de tout",
     "Sans carburant, le bateau n'est plus qu'un abri flottant"
    ],
-   "installationsDepart": []
+   "installationsDepart": [],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "lazaret-de-la-grande-chaloupe",
@@ -2423,7 +2531,9 @@
      "installation": "mur",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "administration",
+   "ecart": false
   },
   {
    "cle": "base-de-chantier-de-la-digue",
@@ -2487,7 +2597,9 @@
     "atelier",
     "forge",
     "recette-blindage-de-tole"
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "centrale-du-port-est",
@@ -2548,7 +2660,9 @@
     "recette-regulateur-de-charge",
     "recette-utilitaire-electrique",
     "atelier-electricite"
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "palangrier-a-quai",
@@ -2598,7 +2712,9 @@
      "installation": "couture",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "college-de-la-possession",
@@ -2652,7 +2768,9 @@
      "installation": "coin-du-feu",
      "niveau": 2
     }
-   ]
+   ],
+   "genre": "ecole",
+   "ecart": false
   },
   {
    "cle": "hypermarche-de-savanna",
@@ -2698,7 +2816,9 @@
      "installation": "reserve-etanche",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "commerce",
+   "ecart": false
   },
   {
    "cle": "case-de-bellemene",
@@ -2760,7 +2880,9 @@
    "plans": [
     "tisanerie",
     "recette-baume-a-la-cire"
-   ]
+   ],
+   "genre": "case",
+   "ecart": false
   },
   {
    "cle": "port-de-saint-gilles",
@@ -2809,7 +2931,9 @@
    ],
    "plans": [
     "recette-panneaux-nomades"
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "college-hauts-saint-paul",
@@ -2867,7 +2991,9 @@
    "plans": [
     "etagere-aux-cahiers",
     "filtre-sable-charbon"
-   ]
+   ],
+   "genre": "ecole",
+   "ecart": false
   },
   {
    "cle": "gite-de-petite-france",
@@ -2917,7 +3043,9 @@
      "installation": "cuisine-commune",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "hotel",
+   "ecart": true
   },
   {
    "cle": "alambic-du-tevelave",
@@ -2982,7 +3110,9 @@
     "recette-alcool-de-canne",
     "distillerie",
     "recette-rhum-de-canne"
-   ]
+   ],
+   "genre": "hangar",
+   "ecart": true
   },
   {
    "cle": "maison-forestiere-du-maido",
@@ -3032,7 +3162,9 @@
    "plans": [
     "verger",
     "captage-de-source"
-   ]
+   ],
+   "genre": "maison",
+   "ecart": false
   },
   {
    "cle": "sucrerie-de-stella",
@@ -3086,7 +3218,9 @@
    "plans": [
     "sechoir-fumoir",
     "recette-alcool-de-canne"
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "maison-des-filaos",
@@ -3136,7 +3270,9 @@
      "installation": "chiens-de-garde",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "maison",
+   "ecart": false
   },
   {
    "cle": "centre-des-tortues",
@@ -3182,7 +3318,9 @@
      "installation": "panneaux-solaires",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "administration",
+   "ecart": false
   },
   {
    "cle": "quartier-de-pierrefonds",
@@ -3247,7 +3385,9 @@
     "recette-munitions-rechargees",
     "recette-pistolet-de-service-remis-en-etat",
     "recette-bouclier-double-et-cercle"
-   ]
+   ],
+   "genre": "caserne",
+   "ecart": false
   },
   {
    "cle": "hopital-du-sud",
@@ -3301,7 +3441,9 @@
    "plans": [
     "infirmerie",
     "recette-alcool-desinfectant"
-   ]
+   ],
+   "genre": "sante",
+   "ecart": false
   },
   {
    "cle": "sucrerie-du-gol",
@@ -3357,7 +3499,9 @@
     "recette-alcool-de-canne",
     "forge",
     "recette-sabre-forge"
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "chalutier-de-saint-pierre",
@@ -3394,7 +3538,9 @@
     "Au pied d'une ville infestée",
     "Dépend du carburant et du réseau"
    ],
-   "installationsDepart": []
+   "installationsDepart": [],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "ferme-de-la-plaine-des-cafres",
@@ -3463,7 +3609,9 @@
     "compost",
     "recette-charrette-a-boeufs",
     "recette-motoculteur-remis-en-etat"
-   ]
+   ],
+   "genre": "hangar",
+   "ecart": true
   },
   {
    "cle": "college-du-quatorzieme",
@@ -3516,7 +3664,9 @@
    ],
    "plans": [
     "serre"
-   ]
+   ],
+   "genre": "ecole",
+   "ecart": false
   },
   {
    "cle": "case-de-l-entre-deux",
@@ -3567,7 +3717,9 @@
      "installation": "potager",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "case",
+   "ecart": false
   },
   {
    "cle": "tunnel-du-grand-brule",
@@ -3607,7 +3759,9 @@
    "installationsDepart": [],
    "plans": [
     "tunnel-de-lave-amenage"
-   ]
+   ],
+   "genre": "",
+   "ecart": true
   },
   {
    "cle": "centrale-de-langevin",
@@ -3662,7 +3816,9 @@
     "pico-hydro",
     "batteries",
     "recette-regulateur-de-charge"
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "marine-de-langevin",
@@ -3707,7 +3863,9 @@
    ],
    "plans": [
     "sechoir-fumoir"
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "vanilleraie-de-saint-philippe",
@@ -3768,7 +3926,9 @@
     "jardin-creole",
     "vannerie",
     "recette-bertel"
-   ]
+   ],
+   "genre": "hangar",
+   "ecart": true
   },
   {
    "cle": "gite-du-volcan",
@@ -3814,7 +3974,9 @@
      "installation": "dortoir",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "hotel",
+   "ecart": true
   },
   {
    "cle": "grotte-du-rempart",
@@ -3854,7 +4016,9 @@
    "installationsDepart": [],
    "plans": [
     "galerie-souterraine"
-   ]
+   ],
+   "genre": "",
+   "ecart": true
   },
   {
    "cle": "sucrerie-de-bois-rouge",
@@ -3911,7 +4075,9 @@
    ],
    "plans": [
     "recette-alcool-de-canne"
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "eglise-notre-dame-des-laves",
@@ -3964,7 +4130,9 @@
    ],
    "plans": [
     "etagere-aux-cahiers"
-   ]
+   ],
+   "genre": "lieu-de-culte",
+   "ecart": false
   },
   {
    "cle": "centrale-de-la-riviere-de-l-est",
@@ -4021,7 +4189,9 @@
    ],
    "plans": [
     "pico-hydro"
-   ]
+   ],
+   "genre": "entrepot",
+   "ecart": false
   },
   {
    "cle": "maison-de-planteur-de-bras-panon",
@@ -4075,7 +4245,9 @@
      "installation": "vannerie",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "hangar",
+   "ecart": true
   },
   {
    "cle": "gite-de-belouve",
@@ -4121,7 +4293,9 @@
      "installation": "dortoir",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "hotel",
+   "ecart": true
   },
   {
    "cle": "ferme-des-palmistes",
@@ -4175,7 +4349,9 @@
    "plans": [
     "serre",
     "bassin-a-tilapias"
-   ]
+   ],
+   "genre": "hangar",
+   "ecart": true
   },
   {
    "cle": "maison-forestiere-de-bebour",
@@ -4220,7 +4396,9 @@
    ],
    "plans": [
     "captage-de-source"
-   ]
+   ],
+   "genre": "maison",
+   "ecart": false
   },
   {
    "cle": "thermes-de-cilaos",
@@ -4270,7 +4448,9 @@
    "plans": [
     "eau-chaude-solaire",
     "captage-de-source"
-   ]
+   ],
+   "genre": "hotel",
+   "ecart": false
   },
   {
    "cle": "ferme-d-ilet-a-cordes",
@@ -4332,7 +4512,9 @@
    "plans": [
     "jardin-creole",
     "puits-a-balancier"
-   ]
+   ],
+   "genre": "hangar",
+   "ecart": true
   },
   {
    "cle": "gite-de-la-caverne-dufour",
@@ -4381,7 +4563,9 @@
    ],
    "plans": [
     "mur-de-pierres-seches"
-   ]
+   ],
+   "genre": "hotel",
+   "ecart": true
   },
   {
    "cle": "case-de-hell-bourg",
@@ -4436,7 +4620,9 @@
    "plans": [
     "jardin-creole",
     "cuisine-commune"
-   ]
+   ],
+   "genre": "case",
+   "ecart": false
   },
   {
    "cle": "ferme-de-grand-ilet",
@@ -4490,7 +4676,9 @@
    "plans": [
     "jardin-creole",
     "conduite-de-bambou"
-   ]
+   ],
+   "genre": "hangar",
+   "ecart": true
   },
   {
    "cle": "relais-du-col-des-boeufs",
@@ -4536,7 +4724,9 @@
      "installation": "citerne-de-pluie",
      "niveau": 1
     }
-   ]
+   ],
+   "genre": "hotel",
+   "ecart": true
   },
   {
    "cle": "ilet-de-la-nouvelle",
@@ -4594,7 +4784,9 @@
    "plans": [
     "garde-manger-lontan",
     "palissade-de-bambou"
-   ]
+   ],
+   "genre": "case",
+   "ecart": true
   },
   {
    "cle": "ilet-a-bourse",
@@ -4648,7 +4840,9 @@
    "plans": [
     "citerne-lontan",
     "puits-a-balancier"
-   ]
+   ],
+   "genre": "case",
+   "ecart": true
   },
   {
    "cle": "ilet-de-marla",
@@ -4698,7 +4892,9 @@
    "plans": [
     "captage-de-source",
     "mur-de-pierres-seches"
-   ]
+   ],
+   "genre": "case",
+   "ecart": true
   },
   {
    "cle": "ecole-d-aurere",
@@ -4748,7 +4944,9 @@
    "plans": [
     "etagere-aux-cahiers",
     "bouilleur-solaire"
-   ]
+   ],
+   "genre": "ecole",
+   "ecart": false
   }
  ],
  "routes": [
@@ -13446,7 +13644,12 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "capture": [
+    "cabri",
+    "porcelet",
+    "veau-moka"
+   ]
   },
   {
    "nom": "Charrette à bœufs",
@@ -15156,7 +15359,11 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "capture": [
+    "poule",
+    "lapin"
+   ]
   },
   {
    "nom": "Sac de goni",
@@ -15170,7 +15377,12 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "capture": [
+    "poule",
+    "lapin",
+    "porcelet"
+   ]
   },
   {
    "nom": "Enfumoir",
@@ -15184,7 +15396,10 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "capture": [
+    "essaim"
+   ]
   },
   {
    "nom": "Torche",
@@ -19172,6 +19387,7 @@
    "outils": [
     "couteau"
    ],
+   "metier": "vannerie",
    "arbre": "lontan"
   },
   {
@@ -19193,7 +19409,8 @@
     "n": 1
    },
    "sac": true,
-   "lumiere": true
+   "lumiere": true,
+   "metier": "couture"
   },
   {
    "nom": "Enfumoir",
@@ -19214,7 +19431,8 @@
     "n": 1
    },
    "sac": true,
-   "lumiere": true
+   "lumiere": true,
+   "metier": "etabli"
   },
   {
    "nom": "Plants en godets",
@@ -34533,5 +34751,6142 @@
     ]
    }
   ]
- }
+ },
+ "objetsFouille": [
+  {
+   "cle": "conserve",
+   "nom": "Boîtes de conserve",
+   "ressource": "nourriture",
+   "par": 2,
+   "convoite": true
+  },
+  {
+   "cle": "vivres",
+   "nom": "Vivres secs (riz, grains, sucre)",
+   "ressource": "nourriture",
+   "par": 2,
+   "convoite": true
+  },
+  {
+   "cle": "eau",
+   "nom": "Bouteilles d'eau",
+   "ressource": "eau",
+   "par": 2,
+   "convoite": true
+  },
+  {
+   "cle": "sel",
+   "nom": "Sel",
+   "ressource": "nourriture",
+   "par": 6,
+   "convoite": true
+  },
+  {
+   "cle": "vinaigre",
+   "nom": "Vinaigre",
+   "ressource": "nourriture",
+   "par": 6,
+   "convoite": true
+  },
+  {
+   "cle": "rhum",
+   "nom": "Rhum",
+   "ressource": "medicaments",
+   "par": 4,
+   "convoite": true
+  },
+  {
+   "cle": "pansement",
+   "nom": "Pansements",
+   "ressource": "medicaments",
+   "par": 4,
+   "convoite": true
+  },
+  {
+   "cle": "alcool-desinfectant",
+   "nom": "Alcool désinfectant",
+   "ressource": "medicaments",
+   "par": 2,
+   "convoite": true
+  },
+  {
+   "cle": "solute",
+   "nom": "Soluté de réhydratation",
+   "ressource": "medicaments",
+   "par": 2,
+   "convoite": true
+  },
+  {
+   "cle": "attelle",
+   "nom": "Attelles",
+   "ressource": "medicaments",
+   "par": 2,
+   "convoite": true
+  },
+  {
+   "cle": "baume",
+   "nom": "Baume",
+   "ressource": "medicaments",
+   "par": 3,
+   "convoite": true
+  },
+  {
+   "cle": "savon",
+   "nom": "Savon",
+   "ressource": "medicaments",
+   "par": 8,
+   "convoite": true
+  },
+  {
+   "cle": "eau-de-javel",
+   "nom": "Eau de Javel",
+   "ressource": "medicaments",
+   "par": 6,
+   "convoite": true
+  },
+  {
+   "cle": "trousse-de-secours",
+   "nom": "Une trousse de secours",
+   "equipement": "trousse-de-secours",
+   "repli": {
+    "ressource": "medicaments",
+    "par": 0.5
+   },
+   "convoite": true
+  },
+  {
+   "cle": "moustiquaires",
+   "nom": "Des moustiquaires",
+   "equipement": "moustiquaires",
+   "repli": {
+    "ressource": "materiaux",
+    "par": 2
+   },
+   "convoite": false
+  },
+  {
+   "cle": "planche",
+   "nom": "Planches",
+   "ressource": "materiaux",
+   "par": 8,
+   "convoite": false
+  },
+  {
+   "cle": "clous",
+   "nom": "Clous",
+   "ressource": "materiaux",
+   "par": 200,
+   "convoite": false
+  },
+  {
+   "cle": "tole",
+   "nom": "Tôles",
+   "ressource": "materiaux",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "ferraille",
+   "nom": "Ferraille",
+   "ressource": "materiaux",
+   "par": 8,
+   "convoite": false
+  },
+  {
+   "cle": "fil-de-fer",
+   "nom": "Fil de fer",
+   "ressource": "materiaux",
+   "par": 8,
+   "convoite": false
+  },
+  {
+   "cle": "parpaing",
+   "nom": "Parpaings",
+   "ressource": "materiaux",
+   "par": 8,
+   "convoite": false
+  },
+  {
+   "cle": "moellon",
+   "nom": "Moellons",
+   "ressource": "materiaux",
+   "par": 8,
+   "convoite": false
+  },
+  {
+   "cle": "ciment",
+   "nom": "Sacs de ciment",
+   "ressource": "materiaux",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "bache",
+   "nom": "Bâches",
+   "ressource": "materiaux",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "grillage",
+   "nom": "Rouleaux de grillage",
+   "ressource": "materiaux",
+   "par": 3,
+   "convoite": false
+  },
+  {
+   "cle": "tissu",
+   "nom": "Linge et tissu",
+   "ressource": "materiaux",
+   "par": 8,
+   "convoite": false
+  },
+  {
+   "cle": "bocal",
+   "nom": "Bocaux",
+   "ressource": "materiaux",
+   "par": 8,
+   "convoite": false
+  },
+  {
+   "cle": "papier",
+   "nom": "Papier",
+   "ressource": "materiaux",
+   "par": 40,
+   "convoite": false
+  },
+  {
+   "cle": "seau",
+   "nom": "Seaux",
+   "ressource": "materiaux",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "couverture",
+   "nom": "Couvertures",
+   "ressource": "materiaux",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "fut",
+   "nom": "Fûts vides",
+   "ressource": "materiaux",
+   "par": 3,
+   "convoite": false
+  },
+  {
+   "cle": "gants-de-travail",
+   "nom": "Gants de travail",
+   "ressource": "materiaux",
+   "par": 6,
+   "convoite": false
+  },
+  {
+   "cle": "savates",
+   "nom": "Savates",
+   "ressource": "materiaux",
+   "par": 6,
+   "convoite": false
+  },
+  {
+   "cle": "engrais",
+   "nom": "Engrais",
+   "ressource": "materiaux",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "fumier",
+   "nom": "Fumier",
+   "ressource": "materiaux",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "bougie",
+   "nom": "Bougies",
+   "ressource": "materiaux",
+   "par": 12,
+   "convoite": false
+  },
+  {
+   "cle": "cire",
+   "nom": "Cire",
+   "ressource": "materiaux",
+   "par": 6,
+   "convoite": false
+  },
+  {
+   "cle": "cahier-vierge",
+   "nom": "Cahiers vierges",
+   "ressource": "materiaux",
+   "par": 10,
+   "convoite": false
+  },
+  {
+   "cle": "encre",
+   "nom": "Encre",
+   "ressource": "materiaux",
+   "par": 20,
+   "convoite": false
+  },
+  {
+   "cle": "vitre",
+   "nom": "Vitres",
+   "ressource": "materiaux",
+   "par": 6,
+   "convoite": false
+  },
+  {
+   "cle": "charbon-de-bois",
+   "nom": "Charbon de bois",
+   "ressource": "materiaux",
+   "par": 6,
+   "convoite": false
+  },
+  {
+   "cle": "pierre-a-aiguiser",
+   "nom": "Pierres à aiguiser",
+   "ressource": "materiaux",
+   "par": 6,
+   "convoite": false
+  },
+  {
+   "cle": "visserie",
+   "nom": "Visserie",
+   "ressource": "pieces",
+   "par": 8,
+   "convoite": false
+  },
+  {
+   "cle": "cable",
+   "nom": "Câbles",
+   "ressource": "pieces",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "tuyau",
+   "nom": "Tuyaux",
+   "ressource": "pieces",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "composants",
+   "nom": "Composants électroniques",
+   "ressource": "pieces",
+   "par": 2,
+   "convoite": false
+  },
+  {
+   "cle": "chambre-a-air",
+   "nom": "Chambres à air",
+   "ressource": "pieces",
+   "par": 8,
+   "convoite": false
+  },
+  {
+   "cle": "rustine",
+   "nom": "Rustines",
+   "ressource": "pieces",
+   "par": 12,
+   "convoite": false
+  },
+  {
+   "cle": "roue",
+   "nom": "Roues",
+   "ressource": "pieces",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "ressort",
+   "nom": "Lames de ressort",
+   "ressource": "pieces",
+   "par": 2,
+   "convoite": false
+  },
+  {
+   "cle": "moteur",
+   "nom": "Un petit moteur",
+   "ressource": "pieces",
+   "par": 0.34,
+   "convoite": false
+  },
+  {
+   "cle": "moteur-electrique",
+   "nom": "Un moteur électrique",
+   "ressource": "pieces",
+   "par": 0.5,
+   "convoite": false
+  },
+  {
+   "cle": "batterie-de-voiture",
+   "nom": "Une batterie de voiture",
+   "ressource": "pieces",
+   "par": 1,
+   "convoite": false
+  },
+  {
+   "cle": "cellule-solaire",
+   "nom": "Cellules solaires",
+   "ressource": "pieces",
+   "par": 2,
+   "convoite": false
+  },
+  {
+   "cle": "panneau-solaire",
+   "nom": "Un panneau solaire",
+   "ressource": "pieces",
+   "par": 0.5,
+   "convoite": false
+  },
+  {
+   "cle": "groupe-electrogene",
+   "nom": "Un groupe électrogène",
+   "ressource": "pieces",
+   "par": 0.5,
+   "convoite": false
+  },
+  {
+   "cle": "cadre-de-velo",
+   "nom": "Un cadre de vélo",
+   "ressource": "pieces",
+   "par": 2,
+   "convoite": false
+  },
+  {
+   "cle": "graines",
+   "nom": "Sachets de graines",
+   "ressource": "graines",
+   "par": 2,
+   "convoite": false
+  },
+  {
+   "cle": "plants",
+   "nom": "Plants et boutures",
+   "ressource": "boutures",
+   "par": 1,
+   "convoite": false
+  },
+  {
+   "cle": "carburant",
+   "nom": "Bidons d'essence ou de gazole",
+   "ressource": "carburant",
+   "par": 2,
+   "convoite": true
+  },
+  {
+   "cle": "bouteille-de-gaz",
+   "nom": "Bouteilles de gaz",
+   "ressource": "gaz",
+   "par": 0.1,
+   "convoite": true
+  },
+  {
+   "cle": "cartouches",
+   "nom": "Cartouches",
+   "ressource": "munitions",
+   "par": 4,
+   "convoite": true
+  },
+  {
+   "cle": "douilles",
+   "nom": "Douilles à recharger",
+   "ressource": "munitions",
+   "par": 10,
+   "convoite": true
+  },
+  {
+   "cle": "couteau",
+   "nom": "Un couteau",
+   "equipement": "couteau",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": true
+  },
+  {
+   "cle": "sabre-a-canne",
+   "nom": "Un sabre à canne",
+   "equipement": "sabre-a-canne",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": true
+  },
+  {
+   "cle": "pied-de-biche",
+   "nom": "Un pied-de-biche",
+   "equipement": "pied-de-biche",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": true
+  },
+  {
+   "cle": "pelle-pioche",
+   "nom": "Une pelle et une pioche",
+   "equipement": "pelle-pioche",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": true
+  },
+  {
+   "cle": "tronconneuse",
+   "nom": "Une tronçonneuse",
+   "equipement": "tronconneuse",
+   "repli": {
+    "ressource": "pieces",
+    "par": 0.5
+   },
+   "convoite": true
+  },
+  {
+   "cle": "fusil-de-chasse",
+   "nom": "Un fusil de chasse",
+   "equipement": "fusil-de-chasse",
+   "repli": {
+    "ressource": "pieces",
+    "par": 1
+   },
+   "convoite": true
+  },
+  {
+   "cle": "carabine-22",
+   "nom": "Une carabine .22",
+   "equipement": "carabine-22",
+   "repli": {
+    "ressource": "pieces",
+    "par": 1
+   },
+   "convoite": true
+  },
+  {
+   "cle": "pistolet-de-service",
+   "nom": "Un pistolet de service",
+   "equipement": "pistolet-de-service",
+   "repli": {
+    "ressource": "pieces",
+    "par": 1
+   },
+   "convoite": true
+  },
+  {
+   "cle": "lampe-electrique",
+   "nom": "Une lampe électrique",
+   "equipement": "frontale",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": false
+  },
+  {
+   "cle": "radio-a-manivelle",
+   "nom": "Une radio à manivelle",
+   "equipement": "radio-a-manivelle",
+   "repli": {
+    "ressource": "pieces",
+    "par": 1
+   },
+   "convoite": false
+  },
+  {
+   "cle": "batterie-nomade",
+   "nom": "Une batterie nomade",
+   "equipement": "batterie-nomade",
+   "repli": {
+    "ressource": "pieces",
+    "par": 1
+   },
+   "convoite": false
+  },
+  {
+   "cle": "rechaud",
+   "nom": "Un réchaud",
+   "equipement": "rechaud",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": false
+  },
+  {
+   "cle": "marteau",
+   "nom": "Un marteau",
+   "equipement": "marteau",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": true
+  },
+  {
+   "cle": "scie",
+   "nom": "Une scie",
+   "equipement": "scie",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": true
+  },
+  {
+   "cle": "pince",
+   "nom": "Une pince",
+   "equipement": "pince",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": true
+  },
+  {
+   "cle": "truelle",
+   "nom": "Une truelle",
+   "equipement": "truelle",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": true
+  },
+  {
+   "cle": "hache",
+   "nom": "Une hache",
+   "equipement": "hache",
+   "repli": {
+    "ressource": "pieces",
+    "par": 1
+   },
+   "convoite": true
+  },
+  {
+   "cle": "masse",
+   "nom": "Une masse",
+   "equipement": "masse",
+   "repli": {
+    "ressource": "pieces",
+    "par": 2
+   },
+   "convoite": true
+  },
+  {
+   "cle": "corde",
+   "nom": "Une corde",
+   "equipement": "cordes-de-choka",
+   "repli": {
+    "ressource": "materiaux",
+    "par": 10
+   },
+   "convoite": false
+  },
+  {
+   "cle": "sac-de-goni",
+   "nom": "Un sac de goni",
+   "equipement": "sac-de-goni",
+   "repli": {
+    "ressource": "materiaux",
+    "par": 8
+   },
+   "convoite": false
+  },
+  {
+   "cle": "cage",
+   "nom": "Une cage à volailles",
+   "equipement": "cage-de-bambou",
+   "repli": {
+    "ressource": "materiaux",
+    "par": 4
+   },
+   "convoite": false
+  },
+  {
+   "cle": "bambou",
+   "nom": "Bambous",
+   "ressource": "materiaux",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "feuille-de-choka",
+   "nom": "Feuilles de choka",
+   "ressource": "materiaux",
+   "par": 12,
+   "convoite": false
+  },
+  {
+   "cle": "feuille-de-vacoa",
+   "nom": "Feuilles de vacoa",
+   "ressource": "materiaux",
+   "par": 25,
+   "convoite": false
+  },
+  {
+   "cle": "noix-de-bancoul",
+   "nom": "Noix de bancoul",
+   "ressource": "materiaux",
+   "par": 20,
+   "convoite": false
+  },
+  {
+   "cle": "terre",
+   "nom": "Seaux de terre",
+   "ressource": "materiaux",
+   "par": 6,
+   "convoite": false
+  },
+  {
+   "cle": "argile",
+   "nom": "Pains d'argile",
+   "ressource": "materiaux",
+   "par": 4,
+   "convoite": false
+  },
+  {
+   "cle": "sable",
+   "nom": "Seaux de sable",
+   "ressource": "materiaux",
+   "par": 6,
+   "convoite": false
+  },
+  {
+   "cle": "galet",
+   "nom": "Galets",
+   "ressource": "materiaux",
+   "par": 40,
+   "convoite": false
+  },
+  {
+   "cle": "coquillage",
+   "nom": "Coquillages",
+   "ressource": "materiaux",
+   "par": 30,
+   "convoite": false
+  },
+  {
+   "cle": "branche",
+   "nom": "Branches",
+   "ressource": "materiaux",
+   "par": 10,
+   "convoite": false
+  },
+  {
+   "cle": "gaulette",
+   "nom": "Gaulettes",
+   "ressource": "materiaux",
+   "par": 40,
+   "convoite": false
+  }
+ ],
+ "genresFouille": [
+  {
+   "cle": "case",
+   "nom": "Case créole",
+   "description": "Une case de bois sous tôle, sa varangue, sa cour de terre battue et son pied de letchi. Le linge plié dans l'armoire, les bocaux de la cuisine, les outils du jardin sous l'auvent, parfois une poule qui gratte encore la cour.",
+   "batiments": [
+    "case"
+   ],
+   "gestes": 8,
+   "travail": 2,
+   "nombre": {
+    "base": 8,
+    "parPopulation": 6
+   },
+   "lots": [
+    {
+     "objet": "tissu",
+     "q": [
+      2,
+      5
+     ],
+     "chance": 0.8
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "clous",
+     "q": [
+      10,
+      30
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "papier",
+     "q": [
+      3,
+      10
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.35,
+     "risque": 0.05
+    },
+    {
+     "objet": "marteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "scie",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "sabre-a-canne",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "savon",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "pansement",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    },
+    {
+     "objet": "graines",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "fil-de-fer",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "eau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "alcool-desinfectant",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.1,
+     "risque": 0.05
+    },
+    {
+     "objet": "truelle",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.12,
+     "risque": 0.03
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.04
+    },
+    {
+     "objet": "cartouches",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.05,
+     "risque": 0.05
+    },
+    {
+     "objet": "fusil-de-chasse",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.02,
+     "risque": 0.04
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08,
+     "risque": 0.03
+    },
+    {
+     "objet": "sac-de-goni",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15
+    },
+    {
+     "objet": "cage",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    }
+   ],
+   "betes": [
+    {
+     "bete": "poule",
+     "chance": 0.09
+    },
+    {
+     "bete": "lapin",
+     "chance": 0.03
+    },
+    {
+     "bete": "cabri",
+     "chance": 0.02
+    },
+    {
+     "bete": "essaim",
+     "chance": 0.02
+    },
+    {
+     "bete": "porcelet",
+     "chance": 0.01
+    }
+   ],
+   "demontage": {
+    "rend": {
+     "materiaux": 12,
+     "pieces": 0
+    },
+    "travail": 16,
+    "bruit": 1
+   }
+  },
+  {
+   "cle": "case-en-tole",
+   "nom": "Case en tôle",
+   "description": "Une case de tôles clouées sur des gaulettes, au bord d'une ravine ou au bout d'un chemin : on y a peu, mais on y a tout gardé.",
+   "batiments": [
+    "case-en-tole"
+   ],
+   "gestes": 8,
+   "travail": 2,
+   "nombre": {
+    "base": 2,
+    "parPopulation": 4
+   },
+   "lots": [
+    {
+     "objet": "tissu",
+     "q": [
+      2,
+      5
+     ],
+     "chance": 0.8
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "clous",
+     "q": [
+      10,
+      30
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "papier",
+     "q": [
+      3,
+      10
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.35,
+     "risque": 0.05
+    },
+    {
+     "objet": "marteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "scie",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "sabre-a-canne",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "savon",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "pansement",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    },
+    {
+     "objet": "graines",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "fil-de-fer",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "eau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "alcool-desinfectant",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.1,
+     "risque": 0.05
+    },
+    {
+     "objet": "truelle",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.12,
+     "risque": 0.03
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.04
+    },
+    {
+     "objet": "cartouches",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.05,
+     "risque": 0.05
+    },
+    {
+     "objet": "fusil-de-chasse",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.02,
+     "risque": 0.04
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08,
+     "risque": 0.03
+    },
+    {
+     "objet": "sac-de-goni",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15
+    },
+    {
+     "objet": "cage",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    }
+   ],
+   "betes": [
+    {
+     "bete": "poule",
+     "chance": 0.09
+    },
+    {
+     "bete": "lapin",
+     "chance": 0.03
+    },
+    {
+     "bete": "cabri",
+     "chance": 0.02
+    },
+    {
+     "bete": "essaim",
+     "chance": 0.02
+    },
+    {
+     "bete": "porcelet",
+     "chance": 0.01
+    }
+   ],
+   "demontage": {
+    "rend": {
+     "materiaux": 4,
+     "pieces": 0
+    },
+    "travail": 6,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "maison",
+   "nom": "Maison en dur",
+   "description": "Parpaings, carrelage, tôle sur charpente : la maison d'une famille qui avait un salaire. Plus de câbles et d'électroménager que de vivres, et un garage où l'on rangeait tout.",
+   "batiments": [
+    "maison-en-dur"
+   ],
+   "gestes": 10,
+   "travail": 2,
+   "nombre": {
+    "base": 2,
+    "parPopulation": 8
+   },
+   "lots": [
+    {
+     "objet": "tissu",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.8
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      2,
+      5
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5,
+     "risque": 0.05
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "papier",
+     "q": [
+      4,
+      12
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "cable",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "composants",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "vitre",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "marteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.35,
+     "risque": 0.05
+    },
+    {
+     "objet": "scie",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "truelle",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2,
+     "risque": 0.03
+    },
+    {
+     "objet": "pied-de-biche",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.05
+    },
+    {
+     "objet": "savon",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "pansement",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "alcool-desinfectant",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "eau",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "ciment",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.15
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2,
+     "risque": 0.03
+    },
+    {
+     "objet": "cellule-solaire",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.05,
+     "risque": 0.05
+    },
+    {
+     "objet": "panneau-solaire",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.04,
+     "risque": 0.05
+    },
+    {
+     "objet": "groupe-electrogene",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.04
+    },
+    {
+     "objet": "tronconneuse",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.04
+    },
+    {
+     "objet": "moteur-electrique",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.04,
+     "risque": 0.04
+    },
+    {
+     "objet": "carabine-22",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.02,
+     "risque": 0.04
+    },
+    {
+     "objet": "pistolet-de-service",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.01,
+     "risque": 0.03
+    },
+    {
+     "objet": "cartouches",
+     "q": [
+      3,
+      10
+     ],
+     "chance": 0.05,
+     "risque": 0.05
+    },
+    {
+     "objet": "douilles",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.05,
+     "risque": 0.04
+    },
+    {
+     "objet": "sac-de-goni",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    }
+   ],
+   "betes": [
+    {
+     "bete": "poule",
+     "chance": 0.04
+    },
+    {
+     "bete": "lapin",
+     "chance": 0.02
+    },
+    {
+     "bete": "essaim",
+     "chance": 0.015
+    }
+   ],
+   "demontage": {
+    "rend": {
+     "materiaux": 21,
+     "pieces": 1
+    },
+    "travail": 32,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "immeuble",
+   "nom": "Immeuble",
+   "description": "Une cage d'escalier, des paliers, des portes enfoncées ou barricadées. Beaucoup d'appartements, peu de chaque chose dans chacun, et des voisins qui n'ont pas tous quitté les lieux.",
+   "batiments": [
+    "immeuble"
+   ],
+   "gestes": 16,
+   "travail": 3,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 4
+   },
+   "lots": [
+    {
+     "objet": "tissu",
+     "q": [
+      3,
+      8
+     ],
+     "chance": 0.8
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.55,
+     "risque": 0.05
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "papier",
+     "q": [
+      6,
+      16
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "cable",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "composants",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.45,
+     "risque": 0.05
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "vitre",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.45,
+     "risque": 0.05
+    },
+    {
+     "objet": "marteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.35,
+     "risque": 0.05
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "savon",
+     "q": [
+      2,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "pansement",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "alcool-desinfectant",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "eau",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "couverture",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "bougie",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "lampe-electrique",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.04
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.25,
+     "risque": 0.03
+    },
+    {
+     "objet": "cadre-de-velo",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.03
+    },
+    {
+     "objet": "moteur-electrique",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.06,
+     "risque": 0.04
+    },
+    {
+     "objet": "radio-a-manivelle",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.03
+    },
+    {
+     "objet": "cartouches",
+     "q": [
+      3,
+      10
+     ],
+     "chance": 0.04,
+     "risque": 0.05
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 30,
+     "pieces": 3
+    },
+    "travail": 60,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "remise",
+   "nom": "Remise, boucan, abri de jardin",
+   "description": "Le boucan au fond de la cour, la cabane à outils, le kiosque du jardin : ce qu'on ne voulait pas dans la maison, et qui sert maintenant le plus.",
+   "batiments": [
+    "annexe"
+   ],
+   "gestes": 5,
+   "travail": 1,
+   "nombre": {
+    "base": 4,
+    "parPopulation": 3
+   },
+   "lots": [
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "graines",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "grillage",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "fil-de-fer",
+     "q": [
+      2,
+      5
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "clous",
+     "q": [
+      10,
+      40
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "sabre-a-canne",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.35,
+     "risque": 0.05
+    },
+    {
+     "objet": "pelle-pioche",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "cadre-de-velo",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.12,
+     "risque": 0.03
+    },
+    {
+     "objet": "moteur",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.04
+    },
+    {
+     "objet": "carburant",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.15,
+     "risque": 0.05
+    },
+    {
+     "objet": "ciment",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.15
+    },
+    {
+     "objet": "roue",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.15
+    },
+    {
+     "objet": "douilles",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.05,
+     "risque": 0.04
+    },
+    {
+     "objet": "fusil-de-chasse",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.04
+    },
+    {
+     "objet": "sac-de-goni",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    },
+    {
+     "objet": "cage",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    }
+   ],
+   "betes": [
+    {
+     "bete": "poule",
+     "chance": 0.03
+    },
+    {
+     "bete": "essaim",
+     "chance": 0.03
+    }
+   ],
+   "demontage": {
+    "rend": {
+     "materiaux": 2,
+     "pieces": 0
+    },
+    "travail": 4,
+    "bruit": 1
+   }
+  },
+  {
+   "cle": "boutique",
+   "nom": "Boutique de quartier",
+   "description": "La boutique chinoise du coin, celle qui vendait de tout, du riz au marteau, à crédit pour ceux qu'on connaissait. Le rideau de fer a été forcé, ou pas.",
+   "batiments": [
+    "boutique"
+   ],
+   "gestes": 12,
+   "travail": 2,
+   "nombre": {
+    "base": 1,
+    "parPopulation": 3
+   },
+   "lots": [
+    {
+     "objet": "conserve",
+     "q": [
+      3,
+      8
+     ],
+     "chance": 0.8,
+     "risque": 0.04
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "eau",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "savon",
+     "q": [
+      2,
+      5
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "pansement",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "alcool-desinfectant",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "graines",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "clous",
+     "q": [
+      20,
+      80
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      4,
+      12
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "fil-de-fer",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "carburant",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "papier",
+     "q": [
+      5,
+      15
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "marteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "scie",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "truelle",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "pelle-pioche",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.35,
+     "risque": 0.05
+    },
+    {
+     "objet": "sabre-a-canne",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.25,
+     "risque": 0.04
+    },
+    {
+     "objet": "cartouches",
+     "q": [
+      4,
+      12
+     ],
+     "chance": 0.06,
+     "risque": 0.06
+    },
+    {
+     "objet": "composants",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 16,
+     "pieces": 1
+    },
+    "travail": 24,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "commerce",
+   "nom": "Supérette, grande surface",
+   "description": "Les rayons renversés, les caddies, les chambres froides qui sentent. La première chose qu'on a pillée au jour deux ; mais il y a toujours une réserve derrière, un quai de livraison, un rayon qu'on a négligé.",
+   "batiments": [
+    "commerce"
+   ],
+   "gestes": 20,
+   "travail": 4,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 1.2
+   },
+   "lots": [
+    {
+     "objet": "conserve",
+     "q": [
+      6,
+      16
+     ],
+     "chance": 0.85,
+     "risque": 0.03
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      4,
+      10
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "eau",
+     "q": [
+      4,
+      12
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "savon",
+     "q": [
+      3,
+      8
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      2,
+      5
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "pansement",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "alcool-desinfectant",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      3,
+      8
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      4,
+      10
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "graines",
+     "q": [
+      3,
+      10
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "bougie",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "sel",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "vinaigre",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "rhum",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.35,
+     "risque": 0.04
+    },
+    {
+     "objet": "papier",
+     "q": [
+      8,
+      20
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "cahier-vierge",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "lampe-electrique",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.35,
+     "risque": 0.04
+    },
+    {
+     "objet": "rechaud",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.1,
+     "risque": 0.04
+    },
+    {
+     "objet": "couverture",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "savates",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "gants-de-travail",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "composants",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "batterie-nomade",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.04
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 24,
+     "pieces": 3
+    },
+    "travail": 48,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "pharmacie",
+   "nom": "Pharmacie",
+   "description": "La croix verte éteinte, la vitrine étoilée. Les tiroirs des médicaments ont été vidés en premier ; restent les pansements, le désinfectant, les attelles, ce qui ne se revend pas.",
+   "batiments": [
+    "pharmacie"
+   ],
+   "gestes": 10,
+   "travail": 2,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 1
+   },
+   "lots": [
+    {
+     "objet": "pansement",
+     "q": [
+      4,
+      12
+     ],
+     "chance": 0.9,
+     "risque": 0.02
+    },
+    {
+     "objet": "alcool-desinfectant",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.75,
+     "risque": 0.04
+    },
+    {
+     "objet": "savon",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "solute",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.35,
+     "risque": 0.06
+    },
+    {
+     "objet": "attelle",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "baume",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3,
+     "risque": 0.04
+    },
+    {
+     "objet": "trousse-de-secours",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.07
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "eau",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "papier",
+     "q": [
+      3,
+      8
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "moustiquaires",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08,
+     "risque": 0.04
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 14,
+     "pieces": 1
+    },
+    "travail": 24,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "sante",
+   "nom": "Centre de santé, dispensaire",
+   "description": "Un dispensaire, une maison médicale, le centre de santé du bourg : les brancards dans le couloir, les dossiers par terre. On y a soigné les premiers mordus ; certains y sont encore.",
+   "batiments": [
+    "sante"
+   ],
+   "gestes": 16,
+   "travail": 3,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 0.4
+   },
+   "lots": [
+    {
+     "objet": "pansement",
+     "q": [
+      4,
+      14
+     ],
+     "chance": 0.8,
+     "risque": 0.03
+    },
+    {
+     "objet": "alcool-desinfectant",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6,
+     "risque": 0.05
+    },
+    {
+     "objet": "savon",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      2,
+      5
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "solute",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.35,
+     "risque": 0.06
+    },
+    {
+     "objet": "attelle",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.35,
+     "risque": 0.05
+    },
+    {
+     "objet": "trousse-de-secours",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.15,
+     "risque": 0.07
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      3,
+      10
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "couverture",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "eau",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "papier",
+     "q": [
+      5,
+      14
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "cable",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "composants",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "lampe-electrique",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2,
+     "risque": 0.04
+    },
+    {
+     "objet": "groupe-electrogene",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.04,
+     "risque": 0.05
+    },
+    {
+     "objet": "moustiquaires",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.1,
+     "risque": 0.04
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 24,
+     "pieces": 3
+    },
+    "travail": 48,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "restaurant",
+   "nom": "Restaurant, snack",
+   "description": "Le camion-bar du front de mer, le snack à samoussas, le restaurant du dimanche avec sa marmite à cari : des bouteilles de gaz, du sel, du rhum, des couteaux.",
+   "batiments": [
+    "restaurant"
+   ],
+   "gestes": 10,
+   "travail": 2,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 1.5
+   },
+   "lots": [
+    {
+     "objet": "conserve",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.7,
+     "risque": 0.04
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "eau",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "sel",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "vinaigre",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "rhum",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.45,
+     "risque": 0.04
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      3,
+      8
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.6,
+     "risque": 0.04
+    },
+    {
+     "objet": "savon",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.45,
+     "risque": 0.04
+    },
+    {
+     "objet": "rechaud",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.04
+    },
+    {
+     "objet": "charbon-de-bois",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "bougie",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 10,
+     "pieces": 1
+    },
+    "travail": 20,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "quincaillerie",
+   "nom": "Quincaillerie",
+   "description": "La quincaillerie de la rue principale : les clous au poids, les rouleaux de grillage, les sabres à canne pendus au mur. Ce qu'on pille le plus tard, et ce qui sert le plus longtemps.",
+   "batiments": [
+    "quincaillerie"
+   ],
+   "gestes": 14,
+   "travail": 3,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 0.6
+   },
+   "lots": [
+    {
+     "objet": "clous",
+     "q": [
+      30,
+      120
+     ],
+     "chance": 0.85
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      6,
+      20
+     ],
+     "chance": 0.8
+    },
+    {
+     "objet": "fil-de-fer",
+     "q": [
+      3,
+      10
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "grillage",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "ciment",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "tole",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "gants-de-travail",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "marteau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.55,
+     "risque": 0.05
+    },
+    {
+     "objet": "scie",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.45,
+     "risque": 0.05
+    },
+    {
+     "objet": "truelle",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.45,
+     "risque": 0.05
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.45,
+     "risque": 0.05
+    },
+    {
+     "objet": "pelle-pioche",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "pied-de-biche",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "sabre-a-canne",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "hache",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "masse",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.05
+    },
+    {
+     "objet": "pierre-a-aiguiser",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "cable",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "graines",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "engrais",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "tronconneuse",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.05
+    },
+    {
+     "objet": "groupe-electrogene",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.05
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 20,
+     "pieces": 2
+    },
+    "travail": 40,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "garage",
+   "nom": "Garage",
+   "description": "L'atelier de mécanique avec sa fosse, ses pneus empilés et son odeur d'huile. Des pièces de tout, une batterie, une lame de ressort pour un sabre : le trésor de celui qui sait bricoler.",
+   "batiments": [
+    "garage"
+   ],
+   "gestes": 12,
+   "travail": 2,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 1
+   },
+   "route": true,
+   "lots": [
+    {
+     "objet": "visserie",
+     "q": [
+      4,
+      14
+     ],
+     "chance": 0.8
+    },
+    {
+     "objet": "ferraille",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "cable",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.5,
+     "risque": 0.05
+    },
+    {
+     "objet": "marteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.35,
+     "risque": 0.05
+    },
+    {
+     "objet": "pied-de-biche",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "chambre-a-air",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "rustine",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "roue",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "ressort",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.45,
+     "risque": 0.03
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "carburant",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "batterie-de-voiture",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3,
+     "risque": 0.04
+    },
+    {
+     "objet": "gants-de-travail",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "moteur",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.1,
+     "risque": 0.05
+    },
+    {
+     "objet": "cadre-de-velo",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.03
+    },
+    {
+     "objet": "fut",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 14,
+     "pieces": 3
+    },
+    "travail": 28,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "station-service",
+   "nom": "Station-service",
+   "description": "Les cuves enterrées, les pompes mortes sans courant, la boutique aux vitres brisées. Le gazole ne se tire plus qu'à la main, et tout le monde le sait.",
+   "batiments": [
+    "station-service"
+   ],
+   "gestes": 10,
+   "travail": 2,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 0.8
+   },
+   "route": true,
+   "lots": [
+    {
+     "objet": "carburant",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.6,
+     "risque": 0.07
+    },
+    {
+     "objet": "fut",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.45,
+     "risque": 0.04
+    },
+    {
+     "objet": "eau",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "chambre-a-air",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "rustine",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "batterie-de-voiture",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2,
+     "risque": 0.04
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4,
+     "risque": 0.04
+    },
+    {
+     "objet": "cable",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "papier",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.4
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 12,
+     "pieces": 3
+    },
+    "travail": 24,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "ecole",
+   "nom": "École, collège",
+   "description": "La cour sous les badamiers, les préaux, la cantine. Les dessins encore aux murs. On s'y est réfugié les premiers jours, puis on en est parti.",
+   "batiments": [
+    "ecole"
+   ],
+   "gestes": 12,
+   "travail": 2,
+   "nombre": {
+    "base": 1,
+    "parPopulation": 1.5
+   },
+   "lots": [
+    {
+     "objet": "papier",
+     "q": [
+      10,
+      30
+     ],
+     "chance": 0.9
+    },
+    {
+     "objet": "cahier-vierge",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "encre",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "savon",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "pansement",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3,
+     "risque": 0.04
+    },
+    {
+     "objet": "eau",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "cable",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "composants",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.25,
+     "risque": 0.04
+    }
+   ],
+   "betes": [
+    {
+     "bete": "essaim",
+     "chance": 0.02
+    }
+   ],
+   "demontage": {
+    "rend": {
+     "materiaux": 20,
+     "pieces": 2
+    },
+    "travail": 40,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "administration",
+   "nom": "Mairie, poste, administration",
+   "description": "La mairie, la poste, le bureau de l'état civil : des papiers en piles, des registres, des tampons. Un groupe électrogène de secours, parfois, au sous-sol.",
+   "batiments": [
+    "administration"
+   ],
+   "gestes": 12,
+   "travail": 2,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 0.8
+   },
+   "lots": [
+    {
+     "objet": "papier",
+     "q": [
+      10,
+      30
+     ],
+     "chance": 0.9
+    },
+    {
+     "objet": "cahier-vierge",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "encre",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "cable",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "composants",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.45,
+     "risque": 0.05
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "eau",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "savon",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "bougie",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "lampe-electrique",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2,
+     "risque": 0.05
+    },
+    {
+     "objet": "radio-a-manivelle",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.04,
+     "risque": 0.04
+    },
+    {
+     "objet": "batterie-nomade",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.04
+    },
+    {
+     "objet": "groupe-electrogene",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.04
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 20,
+     "pieces": 2
+    },
+    "travail": 40,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "caserne",
+   "nom": "Gendarmerie, caserne de pompiers",
+   "description": "La brigade, le centre de secours : du matériel pour tenir, porter, soigner, éclairer. Les armes sont parties avec ceux qui les portaient ; il reste ce qu'ils n'ont pas eu le temps de prendre.",
+   "batiments": [
+    "gendarmerie",
+    "pompiers"
+   ],
+   "gestes": 14,
+   "travail": 3,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 0.6
+   },
+   "lots": [
+    {
+     "objet": "pansement",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.6,
+     "risque": 0.04
+    },
+    {
+     "objet": "alcool-desinfectant",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "trousse-de-secours",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2,
+     "risque": 0.07
+    },
+    {
+     "objet": "couverture",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "lampe-electrique",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.35,
+     "risque": 0.05
+    },
+    {
+     "objet": "papier",
+     "q": [
+      5,
+      14
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "cable",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "carburant",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.35,
+     "risque": 0.06
+    },
+    {
+     "objet": "gants-de-travail",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "hache",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "pied-de-biche",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.35,
+     "risque": 0.04
+    },
+    {
+     "objet": "eau",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "radio-a-manivelle",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.1,
+     "risque": 0.05
+    },
+    {
+     "objet": "cartouches",
+     "q": [
+      2,
+      10
+     ],
+     "chance": 0.08,
+     "risque": 0.07
+    },
+    {
+     "objet": "pistolet-de-service",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.02,
+     "risque": 0.05
+    },
+    {
+     "objet": "groupe-electrogene",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.05
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 22,
+     "pieces": 3
+    },
+    "travail": 44,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "hangar",
+   "nom": "Hangar agricole, serre",
+   "description": "Le hangar du planteur, la serre à tomates, l'étable vide au bout du chemin : des outils de champ, des semences, et les dernières bêtes qu'on n'a pas eu le cœur d'emmener.",
+   "batiments": [
+    "hangar-agricole",
+    "serre"
+   ],
+   "gestes": 10,
+   "travail": 2,
+   "nombre": {
+    "base": 2,
+    "parPopulation": 1
+   },
+   "lots": [
+    {
+     "objet": "sabre-a-canne",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.5,
+     "risque": 0.04
+    },
+    {
+     "objet": "pelle-pioche",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.45,
+     "risque": 0.04
+    },
+    {
+     "objet": "graines",
+     "q": [
+      3,
+      12
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "engrais",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "fumier",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "plants",
+     "q": [
+      1,
+      6
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "grillage",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "fil-de-fer",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "fut",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "carburant",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "tole",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "ferraille",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "gants-de-travail",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "roue",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "pierre-a-aiguiser",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "moteur",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.06,
+     "risque": 0.04
+    },
+    {
+     "objet": "tronconneuse",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.04,
+     "risque": 0.04
+    },
+    {
+     "objet": "sac-de-goni",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "cage",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.12
+    }
+   ],
+   "betes": [
+    {
+     "bete": "cabri",
+     "chance": 0.04
+    },
+    {
+     "bete": "poule",
+     "chance": 0.06
+    },
+    {
+     "bete": "porcelet",
+     "chance": 0.03
+    },
+    {
+     "bete": "veau-moka",
+     "chance": 0.02
+    },
+    {
+     "bete": "lapin",
+     "chance": 0.02
+    },
+    {
+     "bete": "essaim",
+     "chance": 0.025
+    }
+   ],
+   "demontage": {
+    "rend": {
+     "materiaux": 10,
+     "pieces": 1
+    },
+    "travail": 14,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "entrepot",
+   "nom": "Entrepôt, usine, aérogare",
+   "description": "Les zones d'activité, les docks, la sucrerie, le terminal de l'aéroport : de grands volumes vides, des palettes, des machines arrêtées. Rien à manger, tout pour bâtir.",
+   "batiments": [
+    "entrepot",
+    "usine",
+    "aerogare"
+   ],
+   "gestes": 16,
+   "travail": 3,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 1.2
+   },
+   "lots": [
+    {
+     "objet": "ferraille",
+     "q": [
+      4,
+      12
+     ],
+     "chance": 0.8
+    },
+    {
+     "objet": "tole",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "cable",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      4,
+      16
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "composants",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.4,
+     "risque": 0.05
+    },
+    {
+     "objet": "ciment",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "parpaing",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "fut",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "gants-de-travail",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "carburant",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.3,
+     "risque": 0.06
+    },
+    {
+     "objet": "ressort",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3,
+     "risque": 0.03
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.3,
+     "risque": 0.05
+    },
+    {
+     "objet": "masse",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.05
+    },
+    {
+     "objet": "moteur-electrique",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.12,
+     "risque": 0.05
+    },
+    {
+     "objet": "groupe-electrogene",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.05
+    },
+    {
+     "objet": "panneau-solaire",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.05
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 30,
+     "pieces": 4
+    },
+    "travail": 60,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "hotel",
+   "nom": "Hôtel, gîte",
+   "description": "L'hôtel du bord de mer, le gîte de montagne, la chambre d'hôtes du cirque : des draps, des couvertures, du savon en petites boîtes, le bar, la cuisine au gaz.",
+   "batiments": [
+    "hotel"
+   ],
+   "gestes": 14,
+   "travail": 3,
+   "nombre": {
+    "base": 0.4,
+    "parPopulation": 0.6
+   },
+   "lots": [
+    {
+     "objet": "tissu",
+     "q": [
+      4,
+      12
+     ],
+     "chance": 0.85
+    },
+    {
+     "objet": "couverture",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "savon",
+     "q": [
+      3,
+      8
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "eau",
+     "q": [
+      2,
+      8
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.45,
+     "risque": 0.04
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "rhum",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.35,
+     "risque": 0.04
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "bougie",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "moustiquaires",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2,
+     "risque": 0.03
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.4,
+     "risque": 0.04
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "papier",
+     "q": [
+      3,
+      10
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "cable",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "bouteille-de-gaz",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3,
+     "risque": 0.04
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 24,
+     "pieces": 2
+    },
+    "travail": 48,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "gymnase",
+   "nom": "Gymnase, tribune",
+   "description": "Le gymnase où l'on a installé des lits de camp au jour un, le stade et ses tribunes : des couvertures, des bâches, ce qui reste d'un centre d'accueil qui n'a pas tenu.",
+   "batiments": [
+    "gymnase",
+    "tribune"
+   ],
+   "gestes": 8,
+   "travail": 2,
+   "nombre": {
+    "base": 0,
+    "parPopulation": 0.6
+   },
+   "lots": [
+    {
+     "objet": "tissu",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "eau",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "pansement",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3,
+     "risque": 0.04
+    },
+    {
+     "objet": "savon",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "cable",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "grillage",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "ferraille",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "couverture",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.2
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 16,
+     "pieces": 2
+    },
+    "travail": 32,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "reservoir",
+   "nom": "Château d'eau, réservoir",
+   "description": "La cuve de béton sur la colline, la bâche à eau du quartier. Ce qui reste au fond n'est pas toujours bon à boire tel quel.",
+   "batiments": [
+    "reservoir"
+   ],
+   "gestes": 4,
+   "travail": 1,
+   "nombre": {
+    "base": 1,
+    "parPopulation": 0.4
+   },
+   "lots": [
+    {
+     "objet": "eau",
+     "q": [
+      3,
+      8
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "ferraille",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "grillage",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 6,
+     "pieces": 2
+    },
+    "travail": 12,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "lieu-de-culte",
+   "nom": "Lieu de culte",
+   "description": "Une église, un temple tamoul, une mosquée, une pagode, une chapelle au bord du chemin. Des bougies, de l'eau, des nappes. On n'y trouve ni outil ni arme, et y prendre quoi que ce soit ne laisse personne indifférent.",
+   "batiments": [
+    "eglise",
+    "temple-hindou",
+    "mosquee",
+    "pagode"
+   ],
+   "gestes": 6,
+   "travail": 1,
+   "nombre": {
+    "base": 1,
+    "parPopulation": 1.5
+   },
+   "lots": [
+    {
+     "objet": "bougie",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "eau",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "papier",
+     "q": [
+      1,
+      5
+     ],
+     "chance": 0.4
+    },
+    {
+     "objet": "cire",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    }
+   ],
+   "betes": [
+    {
+     "bete": "essaim",
+     "chance": 0.04
+    }
+   ],
+   "demontage": {
+    "rend": {
+     "materiaux": 16,
+     "pieces": 0
+    },
+    "travail": 40,
+    "bruit": 2
+   },
+   "culte": true
+  },
+  {
+   "cle": "voiture",
+   "nom": "Voiture à l'abandon",
+   "description": "Une voiture arrêtée en travers, portières ouvertes, ou une épave poussée dans le fossé : la boîte à gants, le coffre, le réservoir. Démontée, elle rend une batterie, des roues, une lame de ressort.",
+   "batiments": [],
+   "gestes": 4,
+   "travail": 1,
+   "nombre": {
+    "base": 3,
+    "parPopulation": 6
+   },
+   "route": true,
+   "lots": [
+    {
+     "objet": "tissu",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "papier",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "cable",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "carburant",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.25,
+     "risque": 0.05
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.15,
+     "risque": 0.04
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.1,
+     "risque": 0.04
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.15,
+     "risque": 0.04
+    },
+    {
+     "objet": "eau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    },
+    {
+     "objet": "pansement",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.15,
+     "risque": 0.04
+    },
+    {
+     "objet": "corde",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.2
+    },
+    {
+     "objet": "pied-de-biche",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.1,
+     "risque": 0.04
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    }
+   ],
+   "betes": [],
+   "demontage": {
+    "rend": {
+     "materiaux": 1,
+     "pieces": 3
+    },
+    "travail": 6,
+    "bruit": 2
+   }
+  },
+  {
+   "cle": "decombres",
+   "nom": "Décombres",
+   "description": "Une case effondrée par le dernier cyclone, un tas de gravats au bord d'un terrain vague, un chantier arrêté au jour un : on y fouille à la main, entre les planches et la ferraille.",
+   "batiments": [],
+   "gestes": 5,
+   "travail": 1,
+   "nombre": {
+    "base": 2,
+    "parPopulation": 2
+   },
+   "lots": [
+    {
+     "objet": "planche",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "clous",
+     "q": [
+      4,
+      12
+     ],
+     "chance": 0.7
+    },
+    {
+     "objet": "tole",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "ferraille",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.6
+    },
+    {
+     "objet": "fil-de-fer",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.5
+    },
+    {
+     "objet": "visserie",
+     "q": [
+      1,
+      4
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "tissu",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.45
+    },
+    {
+     "objet": "bocal",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.35
+    },
+    {
+     "objet": "parpaing",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "moellon",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.3
+    },
+    {
+     "objet": "chambre-a-air",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    },
+    {
+     "objet": "cable",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "tuyau",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.25
+    },
+    {
+     "objet": "papier",
+     "q": [
+      2,
+      6
+     ],
+     "chance": 0.2
+    },
+    {
+     "objet": "vivres",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.2
+    },
+    {
+     "objet": "bache",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.12
+    },
+    {
+     "objet": "ciment",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "objet": "vitre",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "objet": "grillage",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "objet": "seau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08
+    },
+    {
+     "objet": "roue",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "objet": "eau-de-javel",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.06
+    },
+    {
+     "objet": "conserve",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.12,
+     "risque": 0.03
+    },
+    {
+     "objet": "composants",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.12,
+     "risque": 0.05
+    },
+    {
+     "objet": "couteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08,
+     "risque": 0.03
+    },
+    {
+     "objet": "marteau",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.08,
+     "risque": 0.03
+    },
+    {
+     "objet": "scie",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.03
+    },
+    {
+     "objet": "pelle-pioche",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.03
+    },
+    {
+     "objet": "pied-de-biche",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.03
+    },
+    {
+     "objet": "sabre-a-canne",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.03
+    },
+    {
+     "objet": "pince",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.03
+    },
+    {
+     "objet": "truelle",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.04,
+     "risque": 0.02
+    },
+    {
+     "objet": "ressort",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.05,
+     "risque": 0.03
+    },
+    {
+     "objet": "carburant",
+     "q": [
+      1,
+      2
+     ],
+     "chance": 0.04,
+     "risque": 0.03
+    },
+    {
+     "objet": "douilles",
+     "q": [
+      1,
+      3
+     ],
+     "chance": 0.03,
+     "risque": 0.03
+    },
+    {
+     "objet": "cellule-solaire",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.02,
+     "risque": 0.03
+    },
+    {
+     "objet": "batterie-de-voiture",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.02
+    },
+    {
+     "objet": "cadre-de-velo",
+     "q": [
+      1,
+      1
+     ],
+     "chance": 0.03,
+     "risque": 0.02
+    }
+   ],
+   "betes": [
+    {
+     "bete": "essaim",
+     "chance": 0.01
+    }
+   ],
+   "demontage": {
+    "rend": {
+     "materiaux": 3,
+     "pieces": 0
+    },
+    "travail": 6,
+    "bruit": 1
+   }
+  }
+ ],
+ "betesTrouvees": [
+  {
+   "cle": "poule",
+   "nom": "Poule",
+   "nombre": [
+    1,
+    3
+   ],
+   "tient": 4,
+   "viande": 1,
+   "enclos": [
+    "basse-cour"
+   ],
+   "sansOutil": "file",
+   "description": "Une poule de cour, rousse et maigre, qui gratte encore derrière la case. On l'attrape avec une cage ou un sac de goni ; sinon elle file sous les fourrés."
+  },
+  {
+   "cle": "lapin",
+   "nom": "Lapin",
+   "nombre": [
+    1,
+    2
+   ],
+   "tient": 4,
+   "viande": 1,
+   "enclos": [
+    "basse-cour"
+   ],
+   "sansOutil": "file",
+   "description": "Un lapin de clapier resté dans sa caisse, ou qui en est sorti. Une cage ou un sac de goni."
+  },
+  {
+   "cle": "cabri",
+   "nom": "Cabri",
+   "nombre": [
+    1,
+    1
+   ],
+   "tient": 6,
+   "viande": 6,
+   "enclos": [
+    "enclos-a-cabris"
+   ],
+   "sansOutil": "file",
+   "description": "Un cabri attaché à un piquet qui a mangé tout ce qu'il pouvait atteindre. Il se prend à la corde, et il tire."
+  },
+  {
+   "cle": "porcelet",
+   "nom": "Porcelet",
+   "nombre": [
+    1,
+    1
+   ],
+   "tient": 5,
+   "viande": 4,
+   "enclos": [
+    "enclos-a-cabris"
+   ],
+   "sansOutil": "file",
+   "description": "Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni."
+  },
+  {
+   "cle": "veau-moka",
+   "nom": "Veau moka",
+   "nombre": [
+    1,
+    1
+   ],
+   "tient": 8,
+   "viande": 10,
+   "enclos": [
+    "enclos-a-cabris"
+   ],
+   "sansOutil": "file",
+   "description": "Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement."
+  },
+  {
+   "cle": "essaim",
+   "nom": "Essaim d'abeilles",
+   "nombre": [
+    1,
+    1
+   ],
+   "tient": 2,
+   "viande": 0,
+   "enclos": [
+    "ruches",
+    "ruches-en-tronc"
+   ],
+   "sansOutil": "pique",
+   "description": "Un essaim installé dans un mur creux, un toit, une caisse : on l'entend avant de le voir. Il se prend à l'enfumoir ; sans lui, il pique, et il reste."
+  }
+ ],
+ "gisements": [
+  {
+   "cle": "bambou",
+   "nom": "Touffe de bambous",
+   "description": "Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.",
+   "produits": [
+    {
+     "objet": "bambou",
+     "q": [
+      3,
+      6
+     ]
+    }
+   ],
+   "parQuart": 2,
+   "repousse": 60,
+   "altitudeMax": 1500,
+   "bruit": 1,
+   "outils": [
+    "sabre-a-canne",
+    "hache",
+    "scie"
+   ]
+  },
+  {
+   "cle": "choka",
+   "nom": "Pied de choka",
+   "description": "L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.",
+   "produits": [
+    {
+     "objet": "feuille-de-choka",
+     "q": [
+      3,
+      6
+     ]
+    }
+   ],
+   "parQuart": 4,
+   "repousse": 60,
+   "altitudeMax": 1300,
+   "bruit": 0,
+   "outils": [
+    "sabre-a-canne",
+    "couteau"
+   ]
+  },
+  {
+   "cle": "vacoa",
+   "nom": "Pied de vacoa",
+   "description": "Le vacoa des bords de mer et des ravines du Sud : ses feuilles tressées font les nattes, les sacs, les toits.",
+   "produits": [
+    {
+     "objet": "feuille-de-vacoa",
+     "q": [
+      6,
+      12
+     ]
+    }
+   ],
+   "parQuart": 4,
+   "repousse": 30,
+   "bruit": 0,
+   "outils": [
+    "sabre-a-canne",
+    "couteau"
+   ]
+  },
+  {
+   "cle": "bancoulier",
+   "nom": "Bancoulier",
+   "description": "Un grand arbre des Bas aux noix huileuses : on ne les mange pas crues, mais leur huile éclaire une lampe.",
+   "produits": [
+    {
+     "objet": "noix-de-bancoul",
+     "q": [
+      8,
+      16
+     ]
+    }
+   ],
+   "parQuart": 4,
+   "repousse": 45,
+   "altitudeMax": 800,
+   "bruit": 0,
+   "outils": []
+  },
+  {
+   "cle": "terre",
+   "nom": "Talus de terre",
+   "description": "Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.",
+   "produits": [
+    {
+     "objet": "terre",
+     "q": [
+      2,
+      3
+     ]
+    }
+   ],
+   "parQuart": 2,
+   "repousse": 30,
+   "bruit": 0,
+   "outils": [
+    "pelle-pioche"
+   ]
+  },
+  {
+   "cle": "argile",
+   "nom": "Berge d'argile",
+   "description": "Une berge grasse au fond d'une ravine : l'argile des jarres, du torchis, des fours.",
+   "produits": [
+    {
+     "objet": "argile",
+     "q": [
+      1,
+      2
+     ]
+    }
+   ],
+   "parQuart": 2,
+   "repousse": 20,
+   "bruit": 0,
+   "outils": [
+    "pelle-pioche"
+   ]
+  },
+  {
+   "cle": "sable",
+   "nom": "Banc de sable",
+   "description": "Le sable d'une plage ou d'une ravine : pour le mortier, les filtres à eau.",
+   "produits": [
+    {
+     "objet": "sable",
+     "q": [
+      1,
+      3
+     ]
+    }
+   ],
+   "parQuart": 2,
+   "repousse": 10,
+   "bruit": 0,
+   "outils": []
+  },
+  {
+   "cle": "galets",
+   "nom": "Galets roulés",
+   "description": "Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.",
+   "produits": [
+    {
+     "objet": "galet",
+     "q": [
+      3,
+      6
+     ]
+    },
+    {
+     "objet": "moellon",
+     "q": [
+      0,
+      1
+     ]
+    }
+   ],
+   "parQuart": 4,
+   "repousse": 30,
+   "bruit": 0,
+   "outils": []
+  },
+  {
+   "cle": "basalte",
+   "nom": "Bloc de basalte",
+   "description": "Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.",
+   "produits": [
+    {
+     "objet": "moellon",
+     "q": [
+      3,
+      5
+     ]
+    },
+    {
+     "objet": "galet",
+     "q": [
+      2,
+      4
+     ]
+    }
+   ],
+   "parQuart": 1,
+   "repousse": 120,
+   "bruit": 2,
+   "outils": [
+    "pelle-pioche",
+    "masse",
+    "barre-a-mine"
+   ]
+  },
+  {
+   "cle": "coquillages",
+   "nom": "Coquillages",
+   "description": "Les coquillages roulés sur le sable : brûlés, ils font la chaux des anciens.",
+   "produits": [
+    {
+     "objet": "coquillage",
+     "q": [
+      6,
+      14
+     ]
+    }
+   ],
+   "parQuart": 6,
+   "repousse": 5,
+   "bruit": 0,
+   "outils": []
+  },
+  {
+   "cle": "bois-flotte",
+   "nom": "Bois flotté",
+   "description": "Ce que la mer et les ravines en crue rejettent sur la côte : du bois sec, blanchi, qui brûle bien.",
+   "produits": [
+    {
+     "objet": "branche",
+     "q": [
+      2,
+      4
+     ]
+    },
+    {
+     "objet": "gaulette",
+     "q": [
+      0,
+      2
+     ]
+    }
+   ],
+   "parQuart": 6,
+   "repousse": 10,
+   "bruit": 0,
+   "outils": []
+  },
+  {
+   "cle": "vasque-de-sel",
+   "nom": "Vasque de sel",
+   "description": "Un creux de rocher où l'eau de mer s'évapore au soleil de l'Ouest : on y gratte une croûte de sel, qui garde le poisson (une recette).",
+   "produits": [],
+   "parQuart": 4,
+   "repousse": 7,
+   "bruit": 0,
+   "outils": [],
+   "renvoi": "sel"
+  },
+  {
+   "cle": "zerbaz",
+   "nom": "Zerbaz",
+   "description": "Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».",
+   "produits": [],
+   "parQuart": 6,
+   "repousse": 15,
+   "bruit": 0,
+   "outils": [],
+   "renvoi": "plantes"
+  },
+  {
+   "cle": "jardin-en-friche",
+   "nom": "Jardin en friche",
+   "description": "Le jardin d'une case abandonnée, envahi : des graines, quelques légumes, des zerbaz. Il se prend avec la cible « jardins ».",
+   "produits": [],
+   "parQuart": 3,
+   "repousse": 40,
+   "bruit": 0,
+   "outils": [],
+   "renvoi": "jardins"
+  },
+  {
+   "cle": "source",
+   "nom": "Source, trou d'eau",
+   "description": "Une source au pied d'un rempart, un trou d'eau dans une ravine : l'eau d'un site, d'un captage, d'une citerne ; l'eau d'un trou se boit bouillie.",
+   "produits": [],
+   "parQuart": 6,
+   "repousse": 1,
+   "bruit": 0,
+   "outils": [],
+   "renvoi": "eau"
+  },
+  {
+   "cle": "decombres",
+   "nom": "Décombres",
+   "description": "Un tas de gravats et de planches : il se fouille comme un lieu (genre « Décombres »).",
+   "produits": [],
+   "parQuart": 1,
+   "repousse": 1,
+   "bruit": 0,
+   "outils": [],
+   "renvoi": "lieu"
+  }
+ ],
+ "milieux": [
+  {
+   "cle": "foret-des-hauts",
+   "nom": "Forêt des Hauts",
+   "description": "Tamarins, bois de couleur, fougères arborescentes, la mousse sur tout : la forêt humide au-dessus de mille mètres.",
+   "gisements": [
+    {
+     "gisement": "zerbaz",
+     "part": 5
+    },
+    {
+     "gisement": "terre",
+     "part": 4
+    },
+    {
+     "gisement": "bambou",
+     "part": 3
+    },
+    {
+     "gisement": "basalte",
+     "part": 3
+    },
+    {
+     "gisement": "argile",
+     "part": 1
+    }
+   ]
+  },
+  {
+   "cle": "foret-des-bas",
+   "nom": "Forêt des Bas",
+   "description": "Les ravines boisées de l'Est et du Sud, chaudes et mouillées : bambous, bancouliers, lianes.",
+   "gisements": [
+    {
+     "gisement": "bambou",
+     "part": 7
+    },
+    {
+     "gisement": "zerbaz",
+     "part": 5
+    },
+    {
+     "gisement": "terre",
+     "part": 4
+    },
+    {
+     "gisement": "bancoulier",
+     "part": 4
+    },
+    {
+     "gisement": "argile",
+     "part": 2
+    },
+    {
+     "gisement": "basalte",
+     "part": 2
+    }
+   ]
+  },
+  {
+   "cle": "cultures",
+   "nom": "Cultures",
+   "description": "Les champs de géranium, de légumes, de vanille, les vergers : la terre travaillée, retournée à la friche.",
+   "gisements": [
+    {
+     "gisement": "terre",
+     "part": 7
+    },
+    {
+     "gisement": "zerbaz",
+     "part": 6
+    },
+    {
+     "gisement": "jardin-en-friche",
+     "part": 5
+    },
+    {
+     "gisement": "bambou",
+     "part": 4
+    },
+    {
+     "gisement": "choka",
+     "part": 3
+    },
+    {
+     "gisement": "decombres",
+     "part": 2
+    },
+    {
+     "gisement": "argile",
+     "part": 2
+    }
+   ]
+  },
+  {
+   "cle": "canne",
+   "nom": "Champs de canne",
+   "description": "Les cannes qui n'ont pas été coupées cette année, plus hautes qu'un homme : on s'y perd, on s'y cache.",
+   "gisements": [
+    {
+     "gisement": "terre",
+     "part": 6
+    },
+    {
+     "gisement": "zerbaz",
+     "part": 2
+    },
+    {
+     "gisement": "bambou",
+     "part": 2
+    },
+    {
+     "gisement": "jardin-en-friche",
+     "part": 2
+    },
+    {
+     "gisement": "decombres",
+     "part": 1
+    }
+   ]
+  },
+  {
+   "cle": "savane",
+   "nom": "Savane",
+   "description": "Les pentes sèches de l'Ouest, herbe jaune et chokas, sous un soleil qui cogne.",
+   "gisements": [
+    {
+     "gisement": "choka",
+     "part": 10
+    },
+    {
+     "gisement": "terre",
+     "part": 4
+    },
+    {
+     "gisement": "basalte",
+     "part": 4
+    },
+    {
+     "gisement": "zerbaz",
+     "part": 3
+    },
+    {
+     "gisement": "galets",
+     "part": 2
+    }
+   ]
+  },
+  {
+   "cle": "foret-seche",
+   "nom": "Forêt sèche",
+   "description": "Les reliques de forêt sèche des pentes de l'Ouest : bois noir, tamarins des Bas, épineux.",
+   "gisements": [
+    {
+     "gisement": "choka",
+     "part": 10
+    },
+    {
+     "gisement": "zerbaz",
+     "part": 4
+    },
+    {
+     "gisement": "basalte",
+     "part": 4
+    },
+    {
+     "gisement": "terre",
+     "part": 3
+    },
+    {
+     "gisement": "bancoulier",
+     "part": 1
+    }
+   ]
+  },
+  {
+   "cle": "ravine",
+   "nom": "Ravine",
+   "description": "Le lit d'une ravine, à sec ou qui coule : des galets, du sable, de l'argile, des bambous, et l'eau quand il a plu en haut.",
+   "gisements": [
+    {
+     "gisement": "galets",
+     "part": 12
+    },
+    {
+     "gisement": "sable",
+     "part": 6
+    },
+    {
+     "gisement": "argile",
+     "part": 6
+    },
+    {
+     "gisement": "source",
+     "part": 6
+    },
+    {
+     "gisement": "bambou",
+     "part": 6
+    },
+    {
+     "gisement": "bancoulier",
+     "part": 2
+    }
+   ]
+  },
+  {
+   "cle": "plage",
+   "nom": "Plage",
+   "description": "Le sable blanc du lagon de l'Ouest, le sable noir de l'Étang-Salé, les galets de l'Est.",
+   "gisements": [
+    {
+     "gisement": "sable",
+     "part": 14
+    },
+    {
+     "gisement": "coquillages",
+     "part": 10
+    },
+    {
+     "gisement": "bois-flotte",
+     "part": 6
+    },
+    {
+     "gisement": "galets",
+     "part": 3
+    },
+    {
+     "gisement": "vasque-de-sel",
+     "part": 2
+    }
+   ]
+  },
+  {
+   "cle": "cote-rocheuse",
+   "nom": "Côte rocheuse",
+   "description": "Les falaises de basalte du Sud sauvage, où la houle cogne, et les vacoas penchés au-dessus de l'écume.",
+   "gisements": [
+    {
+     "gisement": "galets",
+     "part": 10
+    },
+    {
+     "gisement": "vasque-de-sel",
+     "part": 8
+    },
+    {
+     "gisement": "bois-flotte",
+     "part": 6
+    },
+    {
+     "gisement": "basalte",
+     "part": 5
+    },
+    {
+     "gisement": "coquillages",
+     "part": 4
+    },
+    {
+     "gisement": "vacoa",
+     "part": 4
+    },
+    {
+     "gisement": "choka",
+     "part": 3
+    }
+   ]
+  },
+  {
+   "cle": "bourg",
+   "nom": "Bourg",
+   "description": "Les rues, les cours, les terrains vagues d'une ville ou d'un bourg : ce que le bâti a laissé tomber.",
+   "gisements": [
+    {
+     "gisement": "decombres",
+     "part": 14
+    },
+    {
+     "gisement": "jardin-en-friche",
+     "part": 6
+    },
+    {
+     "gisement": "zerbaz",
+     "part": 3
+    },
+    {
+     "gisement": "terre",
+     "part": 3
+    },
+    {
+     "gisement": "bambou",
+     "part": 2
+    },
+    {
+     "gisement": "bancoulier",
+     "part": 1
+    }
+   ]
+  },
+  {
+   "cle": "eboulis",
+   "nom": "Éboulis et coulées",
+   "description": "Les éboulis au pied des remparts, les coulées de lave anciennes et récentes : de la pierre, et presque rien d'autre.",
+   "gisements": [
+    {
+     "gisement": "basalte",
+     "part": 10
+    },
+    {
+     "gisement": "choka",
+     "part": 6
+    },
+    {
+     "gisement": "galets",
+     "part": 4
+    }
+   ]
+  }
+ ]
 }

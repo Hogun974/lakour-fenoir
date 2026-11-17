@@ -1,0 +1,223 @@
+{
+  "_id": "40F2vwcVWzmr0AGn",
+  "_key": "!tables!40F2vwcVWzmr0AGn",
+  "name": "Fouille — Voiture à l'abandon",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une voiture arrêtée en travers, portières ouvertes, ou une épave poussée dans le fossé : la boîte à gants, le coffre, le réservoir. Démontée, elle rend une batterie, des roues, une lame de ressort. Fouiller en entier : 1 quart-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d13",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-voiture",
+      "fouilles": "fouille-voiture"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "aHKxsa2T6CAEwEan",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.aHKxsa2T6CAEwEan",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 linge et tissu — 50 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "iXq0Wf6JyG6utASN",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.iXq0Wf6JyG6utASN",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 papier — 50 % ; 40 pour 1 matériaux</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DAT1azy0GrqN0ktJ",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.DAT1azy0GrqN0ktJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 câbles — 30 % ; 4 pour 1 pièces</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YinZzqgv7zOpU1h8",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.YinZzqgv7zOpU1h8",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 bidons d'essence ou de gazole — 25 % (+5 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "EifUUzlkSwF4ryA5",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.EifUUzlkSwF4ryA5",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 bâches — 20 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NsNEt66WEUw6cCrR",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.NsNEt66WEUw6cCrR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une pince — 15 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hBC0ME73K85V9PFD",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.hBC0ME73K85V9PFD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un couteau — 10 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vueTEgNXPV5qUJ1Z",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.vueTEgNXPV5qUJ1Z",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 boîtes de conserve — 15 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FU8wytaHwdVNlwf2",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.FU8wytaHwdVNlwf2",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 bouteilles d'eau — 20 % ; 2 pour 1 eau</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "suMLv3Bmd2CpA0kA",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.suMLv3Bmd2CpA0kA",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 pansements — 15 % (+4 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Ct5xyls4K4FWSeL8",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.Ct5xyls4K4FWSeL8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une corde — 20 % ; un objet</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "zmtknWdvAJ2XRb4s",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.zmtknWdvAJ2XRb4s",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pied-de-biche — 10 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oK9Fx1y4j4Byc0Ta",
+      "_key": "!tables.results!40F2vwcVWzmr0AGn.oK9Fx1y4j4Byc0Ta",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 visserie — 30 % ; 8 pour 1 pièces</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

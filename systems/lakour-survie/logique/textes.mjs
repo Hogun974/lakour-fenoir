@@ -100,7 +100,11 @@ export const CLES_TEXTES = [
   "survivant-declaree-signes", "survivant-aggravee-signes", "survivant-guerie-signes",
   // fabrication.mjs, armes.mjs (lot 6 « ateliers ») : refus d'une recette, d'une réparation de fortune
   "requiert-atelier", "recette-a-l-abri", "recette-lumiere", "outil-manquant", "objet-manquant",
-  "outil-sans-usure", "outil-arme-a-feu", "outil-neuf", "outil-trop-repare", "outil-pas-une-lame"
+  "outil-sans-usure", "outil-arme-a-feu", "outil-neuf", "outil-trop-repare", "outil-pas-une-lame",
+  // fouilles.mjs (par actions.mjs, etat.mjs et l'API) : fouiller un lieu, le démonter, récolter, les bêtes trouvées, les refus (lot 5 « fouille »)
+  "fouille-lieu", "demontage-lieu", "lieu-demonte", "fouille-culte", "recolte", "bete-prise", "bete-file", "bete-pique", "bete-morte", "bete-enclose", "bete-abattue", "bete-relachee",
+  "installation-demontee", "lieu-genre-inconnu", "lieu-aucun", "lieu-ailleurs", "lieu-demonte-deja", "lieu-fini", "lieu-indemontable", "lieu-site",
+  "gisement-aucun", "gisement-renvoi", "gisement-epuise", "gisement-rien", "bete-inconnue", "bete-deja-enclose", "bete-sans-enclos"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

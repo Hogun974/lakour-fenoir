@@ -19,6 +19,8 @@ const at = (metier, niveau = 1) => ({ installation: { metier, niveau } });
 const un = cle => [{ cle, n: 1 }];
 
 export const RECETTES_ATELIERS = [
+  // Les outils de capture (cage de bambou, sac de goni, enfumoir) n'ont qu'une recette chacune, ici (fusion de la vague 3) : de sac,
+  // rangée dans la famille de l'atelier qui leur convient (vannerie, couture, établi) sans le demander.
   // ---------------------------------------------------------------- Premiers outils, à mains nues (de fortune, depuis le sac)
   recette({ ...SAC, cle: "eclat-de-basalte", nom: "Éclat de basalte", cout: {}, travail: 1, competence: "survie", difficulte: "facile", arbre: "lontan", repond: "couteau-forge",
     produit: { equipement: "eclat-de-basalte", n: 1 }, description: `Deux galets de basalte, l'un contre l'autre, jusqu'à ce qu'un éclat parte avec un fil : le premier couteau.` }),
@@ -186,11 +188,11 @@ export const RECETTES_ATELIERS = [
     produit: { equipement: "ligne-de-peche", n: 1 }, description: `Un hameçon tordu à la pince dans du fil de fer, une ligne, une gaulette.` }),
   recette({ ...SAC, ...LUM, cle: "pieges-a-rats", nom: "Pièges à rats", cout: { materiaux: 1 }, travail: 1, outils: ["couteau"],
     produit: { equipement: "pieges-a-rats", n: 1 }, description: `Une planche, du fil de fer, quatre clous : deux pièges à bascule.` }),
-  recette({ ...SAC, ...LUM, cle: "cage-de-bambou", nom: "Cage de bambou", cout: { materiaux: 1 }, travail: 1, competence: "survie", difficulte: "facile", outils: ["couteau"], arbre: "lontan",
+  recette({ ...SAC, ...LUM, cle: "cage-de-bambou", nom: "Cage de bambou", cout: { materiaux: 1 }, travail: 1, competence: "survie", difficulte: "facile", outils: ["couteau"], arbre: "lontan", metier: "vannerie",
     produit: { equipement: "cage-de-bambou", n: 1 }, description: `Six gaulettes, une corde : une cage pour une poule ou un lapin.` }),
-  recette({ ...SAC, ...LUM, cle: "sac-de-goni", nom: "Sac de goni", cout: { materiaux: 1 }, travail: 1, competence: "survie", difficulte: "facile",
+  recette({ ...SAC, ...LUM, cle: "sac-de-goni", nom: "Sac de goni", cout: { materiaux: 1 }, travail: 1, competence: "survie", difficulte: "facile", metier: "couture",
     produit: { equipement: "sac-de-goni", n: 1 }, description: `Trois tissus de jute cousus en sac, avec un lien.` }),
-  recette({ ...SAC, ...LUM, cle: "enfumoir", nom: "Enfumoir", cout: { materiaux: 1 }, travail: 1, competence: "survie", difficulte: "facile",
+  recette({ ...SAC, ...LUM, cle: "enfumoir", nom: "Enfumoir", cout: { materiaux: 1 }, travail: 1, competence: "survie", difficulte: "facile", metier: "etabli",
     produit: { equipement: "enfumoir", n: 1 }, description: `Une boîte de conserve percée, un chiffon, du chaume : il fume doux et longtemps.` }),
   recette({ ...SAC, cle: "plants-en-godets", nom: "Plants en godets", cout: { graines: 1 }, travail: 1, competence: "survie", savoirs: ["maraichage-tropical"],
     produit: { ressource: "boutures", n: 2 }, description: `Des graines semées dans des godets de terre (des pots de yaourt, des bambous coupés) à l'ombre de la case : des plants levés, à repiquer vite.` }),

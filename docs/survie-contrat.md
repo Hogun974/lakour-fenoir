@@ -1621,3 +1621,88 @@ demandés restent) : le jeu 3D fait tout perdre, c'est un écart voulu.
 - Simulateur (`essais/outils/simuler-parties.mjs`) : les ateliers déjà là ne comptent pas dans le score d'un site (`INSTALLATIONS_NON_JOUEES`) : il ne fabrique pas à l'atelier.
 - Essais : `essais/survie-ateliers.test.mjs` (logique), `essais/contenu-ateliers.test.mjs` (contenu, rentes, traduction),
   `essais/survie-api-ateliers.test.mjs` (API sur la doublure).
+
+## 25. Fouiller, démonter et récolter l'île (lot 5 du portage du jeu 3D, 2026-11-17)
+
+Lot 5 de l'inventaire du jeu 3D : la famille 6 (« plus ou moins pillé, jamais vide », décision du 15 novembre) et la famille 9 (les
+bâtiments réels et leurs tables, démonter ce qui existe, les bêtes trouvées, les gisements et leur repousse), pour une table : rien en
+gestes ni en mètres, des quarts-personne et des ressources entières. Chiffres et raisons : `docs/equilibre-fouille.md`. Logique :
+`logique/fouilles.mjs` (nouveau), crochets dans `actions.mjs` (`fouiller`), `etat.mjs` (`avancer`), `moralite.mjs` (un acte). API :
+`scripts/api-fouilles.mjs` (nouveau), crochets dans `api.mjs`. Contenu : `contenu/fouilles.mjs` (nouveau). Rien n'est retiré ni
+renommé : la fouille d'une région, des sites, des jardins, des livres, des plans, des repères, la nuit noire et la rue nettoyée sont
+celles d'avant ; une partie d'avant le lot n'a ni lieux vus (`etat.lieux` absent), ni lieux au monde (`monde.lieux`), ni bêtes.
+
+### 25.1 Registre (contenu, `contenu/fouilles.mjs`)
+```
+objetsFouille: [{ cle, nom, ressource, par, convoite } | { cle, nom, equipement, repli: { ressource, par }, convoite }]
+                                     // par objets pour une unité ; un équipement que le registre n'a pas encore compte en repli
+genresFouille: [{ cle, nom, description, batiments, gestes, travail (quarts-personne), nombre: { base, parPopulation }, route?,
+                  lots: [{ objet, q: [min, max], chance, risque? }], betes: [{ bete, chance }],
+                  demontage: { rend: { materiaux, pieces }, travail, bruit } | null, culte? }]          // 24 genres
+betesTrouvees: [{ cle, nom, description, nombre: [min, max], tient (quarts), viande, enclos: [installation], sansOutil: "file" | "pique" }]
+gisements: [{ cle, nom, description, produits: [{ objet, q }], parQuart, repousse (jours), altitudeMax?, bruit, outils, renvoi? }]
+milieux: [{ cle, nom, description, gisements: [{ gisement, part }] }]
+regions[].milieux: [cle de milieu] ; sites[].genre (vide : un tunnel, une galerie), sites[].ecart (Boolean)
+equipements[].capture: [cle de bête]  // cage, sac de goni, corde, enfumoir ; la corde de choka (lot « savoirs »)
+```
+`erreursFouilles(contenu)` vérifie tout (fabricant, essais) : objets, chances, quantités, bêtes, enclos, gisements, milieux, genres
+des sites ; un lieu de culte ne rend rien de convoité hors l'eau.
+
+### 25.2 Règles (logique pure, `logique/fouilles.mjs`)
+- **Les lieux** : `lieuxDeLaRegion(contenu, region)` → `{ genre: nombre }` (base + parPopulation × population ; garages, stations et
+  voitures seulement là où passe une route) ; `lieuxDuGenre` → `[{ cle: "<région>:<genre>:<n>", ecart }]` (les derniers à l'écart :
+  0,15 + 0,17 × (5 − population)) ; `lieuDeCle` (aussi `site:<site>`) ; `choisirLieu` (une clé, un site, ou le prochain lieu d'un genre,
+  à l'écart si demandé, ceux qu'on a commencés d'abord).
+- **Le degré de pillage** : `degrePillage({ graine, lieu, regionDef, regMonde })` = `prisDeLaRegion` (la part perdue de la nourriture,
+  de l'eau, des médicaments, des munitions et du carburant de la région) × (0,6 + 0,8 × `villeDuLieu`) ± 0,2 (flux « pillage|<clé> »)
+  − 0,03 × infestation, borné 0..1 ; il ne redescend jamais (`visiterLieu`). `motDuPillage` → `MOTS_PILLAGE` (`intact`, `a-peine`,
+  `deja`, `retourne`, `sac` ; seuils 0,15 / 0,4 / 0,65 / 0,85).
+- **Le contenu** : tiré à la première visite (flux « lieu|<clé> », `tirerLotsDuLieu` : chance + risque × `palierDeRisque`) ; le
+  pillage (`pillerLots`, de d0 à d1) emporte le convoité à 1,1 × degré (au plus 0,9), le reste à 0,5 × degré, et entame un lot resté ;
+  au moins un lot reste (`lotGaranti`), et un lieu fouillé jusqu'au bout rend au moins une unité. `convertirObjets` → `{ butin,
+  equipements, garantis }`.
+- **Fouiller un lieu** : `fouillerLieu(monde, contenu, hasard, { region, lieu, site, genre, ecart, membres, quarts, prudence, jour,
+  equipements })` → `{ ok, motif, monde, cle, lieu (public : lieuPublic), trouve: [{ objet, q }], butin, equipements: [{ cle, n }], bete,
+  culte, travail, bruit }`. Le travail fait (membres × quarts × allure 0,6 / 1 / 1,5) prend sa part du lieu ; le butin pillable vient
+  des réserves de la région (`monde.regions[r].pillage`) ; un lieu fouillé jusqu'au bout est `fini`. Refus : `lieu-genre-inconnu`,
+  `lieu-aucun`, `lieu-ailleurs`, `lieu-demonte-deja`, `lieu-fini`.
+- **Les bêtes** : `tirerBeteDuLieu` (une au plus) × (1 − degré)² ; `prendBete(contenu, equipements, bete)` ; issue `prise`, `file` ou
+  `pique` (l'essaim reste). État public `groupe.betes: [{ id, cle, nombre, prisLe, jusqua, enclos, abri }]` : `ajouterBete`,
+  `expirerBetes` (la viande), `enclore` (une installation de `enclos` en service ; refus `bete-sans-enclos`), `retirerBete` (abattre ou
+  relâcher), `betesDuGroupe`.
+- **Démonter** : `demonterLieu(…)` (un lieu pas fini se fouille d'abord ; `demontage.rend` au prorata du travail, deux fois plus lent
+  sans un outil de `REGLES_FOUILLES.demontage.outils` ; refus `lieu-indemontable`, `lieu-site`) ; `demontageInstallation(instance, def)`
+  → `{ rend, travail }` (la moitié des coûts des niveaux faits, `ile` en matériaux ; un tiers du travail).
+- **Récolter** : `gisementsDeRegion`, `gisementsDisponibles(monde, contenu, region, jour)`, `recolterGisement(…, { gisement, membres,
+  quarts, jour, dateDepart, equipements })` (`parQuart` gisements par quart-personne, la moitié sans outil ; retour après `repousse` jours,
+  ÷ 0,4 en saison sèche ; `monde.gisements[région][gisement] = [jour de retour]`) ; `recoltable` ; refus `gisement-aucun`,
+  `gisement-renvoi` (zerbaz, jardins, eau, décombres, sel : ils se prennent autrement), `gisement-epuise`, `gisement-rien`.
+
+### 25.3 Branchements
+- `fouiller(…, { cible: "lieu" | "demonter" | "matieres", genre, ecart, lieu, gisement, equipements, dateDepart })` : même forme de
+  résultat, plus `{ ok, motif, lieu, cleLieu, trouve, equipements, bete, culte, rendu, gisement }` ; un refus (`ok: false`) ne change
+  rien et ne tire pas de rencontre. Fouiller un lieu, c'est fouiller la région : le glanage de passage et la trousse oubliée (§2.3) y
+  viennent aussi (`glane`, `trousse`) ; le bruit d'un démontage entre dans la rencontre (celui d'une fouille va à l'abri, comme avant).
+  « lieu » et « demonter » comptent comme une fouille (`fouille: true`), « matieres » non. Faits : `fouille-lieu`, `demontage-lieu`, `lieu-demonte`, `recolte`,
+  `bete-prise`, `bete-file`, `bete-pique` (publics) ; `fouille-culte` (secret : un lieu de culte, au MJ de juger).
+- `avancer` : une bête hors d'un enclos dont le délai est passé meurt ; sa viande va à l'abri (le groupe y est) ou à `groupe.porte` ;
+  fait `bete-morte`.
+- `ACTES_MORAUX["prendre-au-culte"]` = −1 (le même pour tous ; jamais d'après la religion ni l'origine).
+
+### 25.4 État, API et fenêtres
+- État public : `lieux: { clé: { region, genre, n, ecart, site, mot, fait, travail, fini, demonte, demontage, vuLe } }` (jamais le degré
+  ni ce qui reste dedans), `groupe.betes`. Secret (monde scellé) : `monde.lieux` (degré, lots restants, bête), `monde.gisements`.
+- `fouiller({ cible, genre, ecart, lieu, gisement, site })` : les objets trouvés sont créés sur le premier fouilleur ; une bête prise va
+  au groupe, l'essaim pique le premier fouilleur (une blessure) ; le rappel d'un lieu de culte va au journal secret ; le résultat porte
+  en plus `lieu`, `trouve`, `objets`, `bete`, `culte`, `gisement`. Lecture : `lieux({ region })` (les genres, les lieux vus ; au MJ, le
+  degré réel), `gisements({ region })` (milieux, gisements ; au MJ, ce qui est disponible), `betes()`. Écriture (MJ actif, monde ouvert) :
+  `enclore({ id })`, `abattre({ id })`, `relacher({ id })`, `demonter({ installationId, membres })` (le temps passe : ⌈travail ÷ bras⌉
+  quarts ; le plan reste au carnet).
+- Équipement (§3.4) : `capture: [clé de bête]` (`gmOnlyFields`).
+- Fenêtre du MJ, onglet Actions : cibles « Un lieu », « Démonter un lieu », « Matières de l'île », le genre de lieu de la région, « à
+  l'écart », le gisement ; formulaires « Démonter une installation » et « Les bêtes prises » (mettre à l'enclos, abattre, relâcher).
+- Contenu : 95 objets, 24 genres, 6 bêtes, 16 gisements, 11 milieux ; équipements `corde`, `sac-de-goni`, `cage`, `enfumoir` et trois
+  recettes ; 37 tables (« Fouille — … » par genre, « Récolte — … » par milieu, ce qu'on lit en arrivant, une bête dans la cour) ;
+  journal du MJ « Fouiller, démonter, récolter » ; page « Fouiller, démonter, récolter » du guide du joueur.
+- Simulateur (`essais/outils/simuler-parties.mjs`) : il fouille des lieux quand sa région est maigre, récolte et démonte quand le bois
+  manque à l'enraciné ; `--sans-lieux` rejoue la fouille d'avant le lot.

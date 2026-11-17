@@ -204,7 +204,13 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     sites: options(L.liste(c.sites).map(s => [s.cle, `${L.regionDe(c, s.region)?.nom ?? s.region} — ${s.nom}`]), ""),
     sitesIci: options([["", t("LAKOUR_SURVIE.MJ.Region")], ...sitesIci], ""),
     cibles: options([["", t("LAKOUR_SURVIE.MJ.Tout")], ...RESSOURCES.filter(r => r !== "energie").map(r => [r, libelleRessource(r)]), ...NATURE.map(n => [n, t(`LAKOUR_SURVIE.Nature.${n}`)]),
-      ...["jardins", "livres"].map(x => [x, t(`LAKOUR_SURVIE.Savoirs.Cibles.${x}`)]), ["plans", t("LAKOUR_SURVIE.Plans.Cible")]], ""),
+      ...["jardins", "livres"].map(x => [x, t(`LAKOUR_SURVIE.Savoirs.Cibles.${x}`)]), ["plans", t("LAKOUR_SURVIE.Plans.Cible")],
+      ...L.CIBLES_FOUILLES.map(x => [x, t(`LAKOUR_SURVIE.Fouilles.Cibles.${x}`)])], ""),
+    // Lot 5 « fouille » (contrat §25) : les genres de lieux de la région, ses gisements, les installations à démonter, les bêtes prises.
+    genresIci: options([["", "—"], ...Object.entries(L.lieuxDeLaRegion(c, ici)).map(([g, n]) => [g, `${L.genreFouille(c, g)?.nom ?? g} (${n})`])], ""),
+    gisementsIci: options([["", t("LAKOUR_SURVIE.Fouilles.LePlusAbondant")], ...Object.keys(L.gisementsDeRegion(c, ici)).filter(g => L.recoltable(L.gisementDe(c, g))).map(g => [g, L.gisementDe(c, g)?.nom ?? g])], ""),
+    aDemonter: options(instances.filter(i => Number(i.system?.niveau) >= 1).map(i => [i.id, `${i.name} (${Number(i.system.niveau)})`]), ""),
+    fouilles: etat.demarree ? { lieux: api.lieux(), betes: api.betes().map(b => ({ ...b, texte: `${b.nom} ×${b.nombre}${b.enclos ? ` — ${b.enclosNom}` : b.reste !== null ? ` — ${t("LAKOUR_SURVIE.Fouilles.Reste", { n: b.reste })}` : ""}` })) } : null,
     prudences: options(PRUDENCES.map(p => [p, t(`LAKOUR_SURVIE.Prudences.${p}`)]), "normal"),
     transports: options([...TRANSPORTS.map(x => [x, t(`LAKOUR_SURVIE.Transports.${x}`)]), ...vehicules.map(v => [v, L.indexer(c).equipements.get(v)?.nom ?? v])], "pied"),
     installations: options(constructibles, ""),
@@ -413,7 +419,8 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
   // Un formulaire de la fenêtre : data-forme = la fonction de l'API, ses champs = ses arguments.
   static async #executer(event, cible) {
     const forme = cible.closest("[data-forme]");
-    const nom = forme?.dataset.forme;
+    // Un bouton peut appeler une autre fonction que celle du formulaire (data-forme-appel : abattre, relâcher une bête).
+    const nom = cible.dataset.formeAppel || forme?.dataset.forme;
     const d = lireChamps(forme);
     const api = game.lakourSurvie;
     const liste = x => (Array.isArray(x) ? x : x ? [x] : []);
@@ -421,7 +428,13 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
     const appels = {
       demarrer: () => api.demarrer({ region: d.region, membres, dateDepart: d.dateDepart || null, graine: d.graine || "" }),
       avancer: () => api.avancer({ quarts: Number(d.quarts) || 1, raison: d.raison ?? "", repos: Boolean(d.repos) }),
-      fouiller: () => api.fouiller({ region: d.region || "", site: d.site || null, cible: d.cible || null, prudence: d.prudence, quarts: Number(d.quarts) || 1, membres }),
+      fouiller: () => api.fouiller({ region: d.region || "", site: d.site || null, cible: d.cible || null, prudence: d.prudence, quarts: Number(d.quarts) || 1, membres,
+        genre: d.genre || "", ecart: d.ecart ? true : null, gisement: d.gisement || "" }),
+      // Lot 5 « fouille » : démonter une installation, les bêtes prises.
+      demonter: () => api.demonter({ installationId: d.installation || "", membres }),
+      enclore: () => api.enclore({ id: d.bete || "" }),
+      abattre: () => api.abattre({ id: d.bete || "" }),
+      relacher: () => api.relacher({ id: d.bete || "" }),
       explorer: () => api.explorer({ region: d.region, prudence: d.prudence, quarts: Number(d.quarts) || 1, membres }),
       installer: () => api.installer({ site: d.site }),
       construire: () => api.construire({ installation: d.installation, quarts: Number(d.quarts) || 1, membres }),

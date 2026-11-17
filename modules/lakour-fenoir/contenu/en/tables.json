@@ -133,6 +133,95 @@
       "en": "<p><strong>Trade — Madame Thiaw-Kine's credit book.</strong> The Chinese shopkeeper of La Rivière Saint-Louis offers her back room in exchange for an escort to Cilaos, and strikes from her book the debts of those who help her. People say she only gives credit to her own; her book fed the whole neighbourhood during the 2009 general strike.</p><p><strong>Reward:</strong> 8 food, 2 seeds.</p>"
     }
   },
+  "tables/0lMYMFrHfUnZ3c8s": {
+    "_nom": "Fouille — Gymnase, tribune",
+    "name": {
+      "fr": "Fouille — Gymnase, tribune",
+      "en": "Scavenging — Gym, stands"
+    },
+    "description": {
+      "fr": "<p>Le gymnase où l'on a installé des lits de camp au jour un, le stade et ses tribunes : des couvertures, des bâches, ce qui reste d'un centre d'accueil qui n'a pas tenu. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The gym where camp beds were set up on day one, the stadium and its stands: blankets, tarpaulins, what is left of a reception centre that did not hold. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.SiGYmdD1TYXxiLEY.description": {
+      "fr": "<p>2 à 6 linge et tissu — 60 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 linen and cloth — 60%; 8 for 1 materials</p>"
+    },
+    "results.6erQquDOMdEd2K9f.description": {
+      "fr": "<p>1 à 5 bouteilles d'eau — 40 % ; 2 pour 1 eau</p>",
+      "en": "<p>1 to 5 bottles of water — 40%; 2 for 1 water</p>"
+    },
+    "results.Jvd9ApV1VnZFvZr9.description": {
+      "fr": "<p>1 à 3 rouleaux de grillage — 30 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 rolls of wire mesh — 30%; 3 for 1 materials</p>"
+    },
+    "results.gUNj3Y7CyEhYIZIg.description": {
+      "fr": "<p>1 à 4 ferraille — 40 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 scrap iron — 40%; 8 for 1 materials</p>"
+    },
+    "results.s8aO3OIBOGEbk4H9.description": {
+      "fr": "<p>1 à 3 couvertures — 20 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 blankets — 20%; 4 for 1 materials</p>"
+    }
+  },
+  "tables/1dHSHR5equnuqtAc": {
+    "_nom": "Récolte — Savane",
+    "name": {
+      "fr": "Récolte — Savane",
+      "en": "Gathering — Savannah"
+    },
+    "description": {
+      "fr": "<p>Les pentes sèches de l'Ouest, herbe jaune et chokas, sous un soleil qui cogne. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>The dry slopes of the West, yellow grass and chokas, under a beating sun. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.0ELDMlfxZ0qVX4DG.description": {
+      "fr": "<p><strong>Pied de choka</strong> (10) — L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.</p>",
+      "en": "<p><strong>Choka plant</strong> (10) — The agave of the western savannahs, with long spiky leaves: it gives a fibre that makes good rope.</p>"
+    },
+    "results.izUYG6tuLMbdSFV6.description": {
+      "fr": "<p><strong>Bloc de basalte</strong> (4) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "en": "<p><strong>Basalt block</strong> (4) — An old lava flow, a scree: the black stone of the island, split with a sledgehammer for dry-stone walls.</p>"
+    },
+    "results.vWcnzhzfELBWupB6.description": {
+      "fr": "<p><strong>Zerbaz</strong> (3) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "en": "<p><strong>Zerbaz</strong> (3) — Ayapana, lemongrass, bois de joli cœur: the healing plants. They are gathered with the “herbs” target.</p>"
+    },
+    "results.tVsJNU6fL9RKwDdi.description": {
+      "fr": "<p><strong>Galets roulés</strong> (2) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "en": "<p><strong>Rounded pebbles</strong> (2) — The round pebbles of the ravines and the eastern beaches, picked up by hand: low walls, hearths, foundations.</p>"
+    }
+  },
+  "tables/241zHILLlbb7FRUz": {
+    "_nom": "Récolte — Éboulis et coulées",
+    "name": {
+      "fr": "Récolte — Éboulis et coulées",
+      "en": "Gathering — Scree and lava flows"
+    },
+    "description": {
+      "fr": "<p>Les éboulis au pied des remparts, les coulées de lave anciennes et récentes : de la pierre, et presque rien d'autre. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>Screes at the foot of the ramparts, old and recent lava flows: stone, and almost nothing else. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.ZQE4bIEvfyf9AqNo.description": {
+      "fr": "<p><strong>Bloc de basalte</strong> (10) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "en": "<p><strong>Basalt block</strong> (10) — An old lava flow, a scree: the black stone of the island, split with a sledgehammer for dry-stone walls.</p>"
+    },
+    "results.3L295jIpTzgVhus3.description": {
+      "fr": "<p><strong>Pied de choka</strong> (6) — L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.</p>",
+      "en": "<p><strong>Choka plant</strong> (6) — The agave of the western savannahs, with long spiky leaves: it gives a fibre that makes good rope.</p>"
+    },
+    "results.FHuTp9PQ9hZXQNKR.description": {
+      "fr": "<p><strong>Galets roulés</strong> (4) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "en": "<p><strong>Rounded pebbles</strong> (4) — The round pebbles of the ravines and the eastern beaches, picked up by hand: low walls, hearths, foundations.</p>"
+    },
+    "results.1oPlSIvKpVAhIR97.description": {
+      "fr": "<p>Rien qui vaille à portée : il faut descendre plus bas dans la ravine, ou monter plus haut, et revenir demain.</p>",
+      "en": "<p>Nothing worth having within reach: you have to go further down the ravine, or further up, and come back tomorrow.</p>"
+    },
+    "results.nEAEoUnQhTfPSB85.description": {
+      "fr": "<p>Un Livide figé dans les fourrés, à vingt pas : on travaille en silence, ou l'on s'en va.</p>",
+      "en": "<p>A Pallid one frozen in the thicket, twenty paces away: you work in silence, or you leave.</p>"
+    }
+  },
   "tables/2KT2bBV66pMOX4ZJ": {
     "_nom": "Marché — ce qui se dit (le Ladi Lafé)",
     "name": {
@@ -233,6 +322,65 @@
     "results.Ym7HNnZ2z1AHtVPt.description": {
       "fr": "<p>« Laissez-nous passer par chez vous, chaque mois, et nourrissez-nous ce jour-là. »</p>",
       "en": "<p>\"Let us pass through your place every month, and feed us that day.\"</p>"
+    }
+  },
+  "tables/3aolIdq7niaemb87": {
+    "_nom": "Fouille — Pharmacie",
+    "name": {
+      "fr": "Fouille — Pharmacie",
+      "en": "Scavenging — Pharmacy"
+    },
+    "description": {
+      "fr": "<p>La croix verte éteinte, la vitrine étoilée. Les tiroirs des médicaments ont été vidés en premier ; restent les pansements, le désinfectant, les attelles, ce qui ne se revend pas. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The green cross switched off, the shop window starred with cracks. The drug drawers were emptied first; what remains are dressings, disinfectant, splints, things that do not resell. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.VwSOHcTB0gC7FJH8.description": {
+      "fr": "<p>4 à 12 pansements — 90 % (+2 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>4 to 12 dressings — 90% (+2% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.mGVMDlKU5Vlsq3LS.description": {
+      "fr": "<p>2 à 6 alcool désinfectant — 75 % (+4 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>2 to 6 disinfectant alcohol — 75% (+4% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.A2lrdiVjFEmMgglT.description": {
+      "fr": "<p>2 à 6 savon — 70 % ; 8 pour 1 médicaments</p>",
+      "en": "<p>2 to 6 soap — 70%; 8 for 1 medicine</p>"
+    },
+    "results.wq3DFE0aQdMxqR9S.description": {
+      "fr": "<p>1 à 3 soluté de réhydratation — 35 % (+6 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 rehydration solution — 35% (+6% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.qpwcj7A5KeUAvn3R.description": {
+      "fr": "<p>1 à 2 attelles — 30 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>1 to 2 splints — 30% (+5% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.mAbkmK0aTRUP50kV.description": {
+      "fr": "<p>1 à 3 baume — 30 % (+4 % par palier de risque) ; 3 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 balm — 30% (+4% per risk level); 3 for 1 medicine</p>"
+    },
+    "results.c5WR6Trx1IBrfpoO.description": {
+      "fr": "<p>Une trousse de secours — 15 % (+7 % par palier de risque) ; un objet</p>",
+      "en": "<p>A first-aid kit — 15% (+7% per risk level); an item</p>"
+    },
+    "results.EesQlENfqmizPYqx.description": {
+      "fr": "<p>1 à 4 linge et tissu — 40 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 linen and cloth — 40%; 8 for 1 materials</p>"
+    },
+    "results.xUdDxGhMjfImWMwu.description": {
+      "fr": "<p>2 à 6 bocaux — 50 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 jars — 50%; 8 for 1 materials</p>"
+    },
+    "results.4dQcX3UYoS7GeGs6.description": {
+      "fr": "<p>1 à 4 bouteilles d'eau — 40 % ; 2 pour 1 eau</p>",
+      "en": "<p>1 to 4 bottles of water — 40%; 2 for 1 water</p>"
+    },
+    "results.YNODldvrWaMJUehn.description": {
+      "fr": "<p>3 à 8 papier — 40 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>3 to 8 paper — 40%; 40 for 1 materials</p>"
+    },
+    "results.YwLbLyrM3Graffbi.description": {
+      "fr": "<p>Des moustiquaires — 8 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>Mosquito nets — 8% (+4% per risk level); an item</p>"
     }
   },
   "tables/3pA4FnapRLv8Q1Yq": {
@@ -343,6 +491,65 @@
     "results.MWb9ivrGbIEIVqDQ.description": {
       "fr": "<p>La météo tourne : pluie, brouillard, nuit qui tombe.</p>",
       "en": "<p>The weather turns: rain, fog, night falling.</p>"
+    }
+  },
+  "tables/40F2vwcVWzmr0AGn": {
+    "_nom": "Fouille — Voiture à l'abandon",
+    "name": {
+      "fr": "Fouille — Voiture à l'abandon",
+      "en": "Scavenging — Abandoned car"
+    },
+    "description": {
+      "fr": "<p>Une voiture arrêtée en travers, portières ouvertes, ou une épave poussée dans le fossé : la boîte à gants, le coffre, le réservoir. Démontée, elle rend une batterie, des roues, une lame de ressort. Fouiller en entier : 1 quart-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>A car stopped across the road, doors open, or a wreck pushed into the ditch: the glove box, the boot, the tank. Taken apart, it gives a battery, wheels, a leaf spring. Searching it all: 1 person-quarter. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.aHKxsa2T6CAEwEan.description": {
+      "fr": "<p>1 à 2 linge et tissu — 50 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 linen and cloth — 50%; 8 for 1 materials</p>"
+    },
+    "results.iXq0Wf6JyG6utASN.description": {
+      "fr": "<p>1 à 4 papier — 50 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 paper — 50%; 40 for 1 materials</p>"
+    },
+    "results.DAT1azy0GrqN0ktJ.description": {
+      "fr": "<p>1 à 2 câbles — 30 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 2 cables — 30%; 4 for 1 parts</p>"
+    },
+    "results.YinZzqgv7zOpU1h8.description": {
+      "fr": "<p>1 à 3 bidons d'essence ou de gazole — 25 % (+5 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "en": "<p>1 to 3 cans of petrol or diesel — 25% (+5% per risk level); 2 for 1 fuel</p>"
+    },
+    "results.EifUUzlkSwF4ryA5.description": {
+      "fr": "<p>1 bâches — 20 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 tarpaulins — 20%; 4 for 1 materials</p>"
+    },
+    "results.hBC0ME73K85V9PFD.description": {
+      "fr": "<p>Un couteau — 10 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A knife — 10% (+4% per risk level); an item</p>"
+    },
+    "results.vueTEgNXPV5qUJ1Z.description": {
+      "fr": "<p>1 à 2 boîtes de conserve — 15 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 2 tins of food — 15% (+4% per risk level); 2 for 1 food</p>"
+    },
+    "results.FU8wytaHwdVNlwf2.description": {
+      "fr": "<p>1 à 2 bouteilles d'eau — 20 % ; 2 pour 1 eau</p>",
+      "en": "<p>1 to 2 bottles of water — 20%; 2 for 1 water</p>"
+    },
+    "results.suMLv3Bmd2CpA0kA.description": {
+      "fr": "<p>1 à 2 pansements — 15 % (+4 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>1 to 2 dressings — 15% (+4% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.Ct5xyls4K4FWSeL8.description": {
+      "fr": "<p>Une corde — 20 % ; un objet</p>",
+      "en": "<p>A rope — 20%; an item</p>"
+    },
+    "results.zmtknWdvAJ2XRb4s.description": {
+      "fr": "<p>Un pied-de-biche — 10 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A crowbar — 10% (+4% per risk level); an item</p>"
+    },
+    "results.oK9Fx1y4j4Byc0Ta.description": {
+      "fr": "<p>1 à 3 visserie — 30 % ; 8 pour 1 pièces</p>",
+      "en": "<p>1 to 3 screws and bolts — 30%; 8 for 1 parts</p>"
     }
   },
   "tables/4CMsVOkhaf6mizsP": {
@@ -735,6 +942,97 @@
       "en": "<p>A house in the Highlands where everything is in order: the bed made, the dishes washed, a note on the table: \"Gone to Marcel's.\"</p>"
     }
   },
+  "tables/7E8VqeWjF6nutvRg": {
+    "_nom": "Fouille — Hangar agricole, serre",
+    "name": {
+      "fr": "Fouille — Hangar agricole, serre",
+      "en": "Scavenging — Farm shed, greenhouse"
+    },
+    "description": {
+      "fr": "<p>Le hangar du planteur, la serre à tomates, l'étable vide au bout du chemin : des outils de champ, des semences, et les dernières bêtes qu'on n'a pas eu le cœur d'emmener. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The planter's shed, the tomato greenhouse, the empty cowshed at the end of the track: field tools, seed, and the last animals nobody had the heart to take away. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.5MNUmYnA8rtAo6w5.description": {
+      "fr": "<p>Un sabre à canne — 50 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A cane cutlass — 50% (+4% per risk level); an item</p>"
+    },
+    "results.7P4Wa3jKNQAvCTAQ.description": {
+      "fr": "<p>Une pelle et une pioche — 45 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A shovel and a pickaxe — 45% (+4% per risk level); an item</p>"
+    },
+    "results.2FjOAArn4SuzL8hH.description": {
+      "fr": "<p>3 à 12 sachets de graines — 60 % ; 2 pour 1 graines</p>",
+      "en": "<p>3 to 12 seed packets — 60%; 2 for 1 seeds</p>"
+    },
+    "results.J1V1zJUVKeyOLHKH.description": {
+      "fr": "<p>1 à 4 engrais — 45 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 fertiliser — 45%; 4 for 1 materials</p>"
+    },
+    "results.tn5CCXHrhmiGkHqP.description": {
+      "fr": "<p>1 à 4 fumier — 35 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 manure — 35%; 4 for 1 materials</p>"
+    },
+    "results.9KJVu0rBCtUxfTfK.description": {
+      "fr": "<p>1 à 6 plants et boutures — 30 % ; 1 pour 1 boutures</p>",
+      "en": "<p>1 to 6 seedlings and cuttings — 30%; 1 for 1 cuttings</p>"
+    },
+    "results.eDCpASxLOnRSXhyd.description": {
+      "fr": "<p>1 à 3 rouleaux de grillage — 45 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 rolls of wire mesh — 45%; 3 for 1 materials</p>"
+    },
+    "results.xQhfaWMDmVEFI5sw.description": {
+      "fr": "<p>2 à 8 fil de fer — 60 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 8 wire — 60%; 8 for 1 materials</p>"
+    },
+    "results.uGLfR0f5RIygrM3f.description": {
+      "fr": "<p>1 à 3 bâches — 50 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 tarpaulins — 50%; 4 for 1 materials</p>"
+    },
+    "results.m6HjhWiM0jHhBb9H.description": {
+      "fr": "<p>1 à 2 fûts vides — 30 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 empty drums — 30%; 3 for 1 materials</p>"
+    },
+    "results.F6Omf9YVLHBoHKst.description": {
+      "fr": "<p>1 à 4 bidons d'essence ou de gazole — 30 % (+5 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "en": "<p>1 to 4 cans of petrol or diesel — 30% (+5% per risk level); 2 for 1 fuel</p>"
+    },
+    "results.ZkOGiE46xjo3DuhH.description": {
+      "fr": "<p>1 à 4 tôles — 40 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 corrugated iron sheets — 40%; 4 for 1 materials</p>"
+    },
+    "results.NF36JtrHwuOZwhEC.description": {
+      "fr": "<p>2 à 6 ferraille — 50 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 scrap iron — 50%; 8 for 1 materials</p>"
+    },
+    "results.KnFMCfRIqwCNY6wd.description": {
+      "fr": "<p>1 à 2 gants de travail — 30 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 work gloves — 30%; 6 for 1 materials</p>"
+    },
+    "results.6AlLsNGMfKPEE0Bd.description": {
+      "fr": "<p>1 à 2 roues — 25 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 2 wheels — 25%; 4 for 1 parts</p>"
+    },
+    "results.OTKqMQ7JOIOJD2AN.description": {
+      "fr": "<p>1 pierres à aiguiser — 25 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 whetstones — 25%; 6 for 1 materials</p>"
+    },
+    "results.hpFFIYk7PIiaWSJ6.description": {
+      "fr": "<p>1 un petit moteur — 6 % (+4 % par palier de risque) ; 3 pièces chacun</p>",
+      "en": "<p>1 a small engine — 6% (+4% per risk level); 3 parts each</p>"
+    },
+    "results.gqjhiKSZOoeKmPFr.description": {
+      "fr": "<p>Une tronçonneuse — 4 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A chainsaw — 4% (+4% per risk level); an item</p>"
+    },
+    "results.MUteRrBEP6AtPpX8.description": {
+      "fr": "<p>Un sac de goni — 35 % ; un objet</p>",
+      "en": "<p>A gunny sack — 35%; an item</p>"
+    },
+    "results.jQSwjQOoh37vBF4J.description": {
+      "fr": "<p>Une cage à volailles — 12 % ; un objet</p>",
+      "en": "<p>A poultry cage — 12%; an item</p>"
+    }
+  },
   "tables/7laWQXPZNSdEIgYT": {
     "_nom": "Demandes — Le Dispensaire du Sud",
     "name": {
@@ -1038,6 +1336,53 @@
       "en": "<p>Highland honey in washed rum bottles.</p>"
     }
   },
+  "tables/A4LLgpaN3KCHQRTn": {
+    "_nom": "Fouille — Hôtel, gîte",
+    "name": {
+      "fr": "Fouille — Hôtel, gîte",
+      "en": "Scavenging — Hotel, gîte"
+    },
+    "description": {
+      "fr": "<p>L'hôtel du bord de mer, le gîte de montagne, la chambre d'hôtes du cirque : des draps, des couvertures, du savon en petites boîtes, le bar, la cuisine au gaz. Fouiller en entier : 3 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The seaside hotel, the mountain gîte, the guest house in the cirque: sheets, blankets, little boxes of soap, the bar, the gas kitchen. Searching it all: 3 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.TentIxI0vhtRW6dI.description": {
+      "fr": "<p>4 à 12 linge et tissu — 85 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>4 to 12 linen and cloth — 85%; 8 for 1 materials</p>"
+    },
+    "results.Aos0bmkkiYMwb1ZK.description": {
+      "fr": "<p>2 à 6 couvertures — 60 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 blankets — 60%; 4 for 1 materials</p>"
+    },
+    "results.CpNqTaKSReHFsYYH.description": {
+      "fr": "<p>2 à 6 boîtes de conserve — 45 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>2 to 6 tins of food — 45% (+4% per risk level); 2 for 1 food</p>"
+    },
+    "results.jV9bOfe0RxtD2ORy.description": {
+      "fr": "<p>1 à 5 vivres secs (riz, grains, sucre) — 40 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 5 dry food (rice, grain, sugar) — 40%; 2 for 1 food</p>"
+    },
+    "results.B5ECFLQi7ENFxN8G.description": {
+      "fr": "<p>2 à 6 bougies — 45 % ; 12 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 candles — 45%; 12 for 1 materials</p>"
+    },
+    "results.GiUsGpCz2mEOnehE.description": {
+      "fr": "<p>Des moustiquaires — 20 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>Mosquito nets — 20% (+3% per risk level); an item</p>"
+    },
+    "results.DiGZcBzZN5YkqiOD.description": {
+      "fr": "<p>Un couteau — 40 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A knife — 40% (+4% per risk level); an item</p>"
+    },
+    "results.7jBL6vTnd8xJxzqJ.description": {
+      "fr": "<p>1 à 3 eau de Javel — 45 % ; 6 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 bleach — 45%; 6 for 1 medicine</p>"
+    },
+    "results.br3pumyHFGqXHMsA.description": {
+      "fr": "<p>1 à 2 bouteilles de gaz — 30 % (+4 % par palier de risque) ; 10 gaz chacun</p>",
+      "en": "<p>1 to 2 gas bottles — 30% (+4% per risk level); 10 gas each</p>"
+    }
+  },
   "tables/A5DEArv99VCcNSDW": {
     "_nom": "Le jardin d'une case",
     "name": {
@@ -1189,6 +1534,41 @@
     "results.gvSSCnA61HyNO74J.description": {
       "fr": "<p>Au matin, la cour est méconnaissable : branches, feuilles, boue, et quelque chose qui n'était pas là hier (table « Ce que le cyclone dépose »).</p>",
       "en": "<p>In the morning, the yard is unrecognisable: branches, leaves, mud, and something that wasn't there yesterday (table “What the cyclone leaves in the yard”).</p>"
+    }
+  },
+  "tables/C7PGquKNBwmKdRWZ": {
+    "_nom": "Récolte — Cultures",
+    "name": {
+      "fr": "Récolte — Cultures",
+      "en": "Gathering — Farmland"
+    },
+    "description": {
+      "fr": "<p>Les champs de géranium, de légumes, de vanille, les vergers : la terre travaillée, retournée à la friche. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>Fields of geranium, vegetables, vanilla, the orchards: worked land, gone back to fallow. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.c8pGcL3kaoWthBgL.description": {
+      "fr": "<p><strong>Talus de terre</strong> (7) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "en": "<p><strong>Earth bank</strong> (7) — A bank of red earth you attack with a pickaxe: for wattle and daub, garden mounds, jars.</p>"
+    },
+    "results.mwJ39dyWF6zsPFGM.description": {
+      "fr": "<p><strong>Zerbaz</strong> (6) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "en": "<p><strong>Zerbaz</strong> (6) — Ayapana, lemongrass, bois de joli cœur: the healing plants. They are gathered with the “herbs” target.</p>"
+    },
+    "results.TlQiiqVqgbYRUuH2.description": {
+      "fr": "<p><strong>Jardin en friche</strong> (5) — Le jardin d'une case abandonnée, envahi : des graines, quelques légumes, des zerbaz. Il se prend avec la cible « jardins ».</p>",
+      "en": "<p><strong>Overgrown garden</strong> (5) — The garden of an abandoned house, gone wild: seeds, a few vegetables, zerbaz. It is taken with the “gardens” target.</p>"
+    },
+    "results.sV8qQTFFif5P90bQ.description": {
+      "fr": "<p><strong>Touffe de bambous</strong> (4) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "en": "<p><strong>Clump of bamboo</strong> (4) — A clump of bamboo at the bottom of a ravine or along a stream: straight poles for a palisade, a pipe, a cage.</p>"
+    },
+    "results.AMw3SsgkLcuHmH8x.description": {
+      "fr": "<p><strong>Pied de choka</strong> (3) — L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.</p>",
+      "en": "<p><strong>Choka plant</strong> (3) — The agave of the western savannahs, with long spiky leaves: it gives a fibre that makes good rope.</p>"
+    },
+    "results.a4J0lYEZWpWXNV88.description": {
+      "fr": "<p><strong>Décombres</strong> (2) — Un tas de gravats et de planches : il se fouille comme un lieu (genre « Décombres »).</p>",
+      "en": "<p><strong>Rubble</strong> (2) — A heap of rubble and planks: it is searched like a place (kind “Rubble”).</p>"
     }
   },
   "tables/CVzybRUPbVjBHSsl": {
@@ -1427,6 +1807,193 @@
       "en": "<p>Smoke from your kitchen was seen from another hill.</p>"
     }
   },
+  "tables/DLmPYNleHsBWDjM0": {
+    "_nom": "Fouille — une bête dans la cour",
+    "name": {
+      "fr": "Fouille — une bête dans la cour",
+      "en": "Scavenging — an animal in the yard"
+    },
+    "description": {
+      "fr": "<p>La bête qu'on peut trouver en fouillant une case, une remise, un hangar : ce qu'il faut pour la prendre, combien de temps elle tient.</p>",
+      "en": "<p>The animal that may be found when searching a house, a shed, a farm shed: what it takes to catch it, how long it lasts.</p>"
+    },
+    "results.erRnq9oh3BFyGxRf.description": {
+      "fr": "<p><strong>Poule</strong> — Une poule de cour, rousse et maigre, qui gratte encore derrière la case. On l'attrape avec une cage ou un sac de goni ; sinon elle file sous les fourrés. <em>Elle tient 24 heures hors d'un enclos ; morte, elle donne 1 de nourriture.</em></p>",
+      "en": "<p><strong>Hen</strong> — A yard hen, red and thin, still scratching behind the house. It is caught with a cage or a gunny sack; otherwise it runs off under the bushes. <em>It lasts 24 hours out of a pen; dead, it gives 1 food.</em></p>"
+    },
+    "results.K5AC9CgPBXwbaAN9.description": {
+      "fr": "<p><strong>Lapin</strong> — Un lapin de clapier resté dans sa caisse, ou qui en est sorti. Une cage ou un sac de goni. <em>Elle tient 24 heures hors d'un enclos ; morte, elle donne 1 de nourriture.</em></p>",
+      "en": "<p><strong>Rabbit</strong> — A hutch rabbit still in its crate, or one that has got out. A cage or a gunny sack. <em>It lasts 24 hours out of a pen; dead, it gives 1 food.</em></p>"
+    },
+    "results.SGYeqaJDcEMisIC9.description": {
+      "fr": "<p><strong>Cabri</strong> — Un cabri attaché à un piquet qui a mangé tout ce qu'il pouvait atteindre. Il se prend à la corde, et il tire. <em>Elle tient 36 heures hors d'un enclos ; morte, elle donne 6 de nourriture.</em></p>",
+      "en": "<p><strong>Goat</strong> — A goat tied to a stake that has eaten everything it could reach. It is taken on a rope, and it pulls. <em>It lasts 36 hours out of a pen; dead, it gives 6 food.</em></p>"
+    },
+    "results.E3D4l7SYZNy0SrjQ.description": {
+      "fr": "<p><strong>Porcelet</strong> — Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni. <em>Elle tient 30 heures hors d'un enclos ; morte, elle donne 4 de nourriture.</em></p>",
+      "en": "<p><strong>Piglet</strong> — A suckling pig escaped from its sty, squealing as soon as anyone comes near. A rope or a gunny sack. <em>It lasts 30 hours out of a pen; dead, it gives 4 food.</em></p>"
+    },
+    "results.KbmxlJbf5Z7OanoW.description": {
+      "fr": "<p><strong>Veau moka</strong> — Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement. <em>Elle tient 48 heures hors d'un enclos ; morte, elle donne 10 de nourriture.</em></p>",
+      "en": "<p><strong>Moka calf</strong> — A young Moka ox, small and stubborn, left in the cowshed of a farm shed in the Highlands. It is led on a rope, slowly. <em>It lasts 48 hours out of a pen; dead, it gives 10 food.</em></p>"
+    },
+    "results.8uXCg4zgT1IQewUZ.description": {
+      "fr": "<p><strong>Essaim d'abeilles</strong> — Un essaim installé dans un mur creux, un toit, une caisse : on l'entend avant de le voir. Il se prend à l'enfumoir ; sans lui, il pique, et il reste. <em>Elle tient 12 heures hors d'un enclos ; morte, elle donne 0 de nourriture.</em></p>",
+      "en": "<p><strong>Swarm of bees</strong> — A swarm settled in a hollow wall, a roof, a crate: you hear it before you see it. It is taken with a smoker; without one, it stings, and stays. <em>It lasts 12 hours out of a pen; dead, it gives 0 food.</em></p>"
+    }
+  },
+  "tables/DcGBEsrmkTnLH4lg": {
+    "_nom": "Récolte — Forêt sèche",
+    "name": {
+      "fr": "Récolte — Forêt sèche",
+      "en": "Gathering — Dry forest"
+    },
+    "description": {
+      "fr": "<p>Les reliques de forêt sèche des pentes de l'Ouest : bois noir, tamarins des Bas, épineux. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>The relics of dry forest on the western slopes: bois noir, lowland tamarinds, thorny scrub. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.5MoxmSKzlXuoKcbN.description": {
+      "fr": "<p><strong>Zerbaz</strong> (4) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "en": "<p><strong>Zerbaz</strong> (4) — Ayapana, lemongrass, bois de joli cœur: the healing plants. They are gathered with the “herbs” target.</p>"
+    },
+    "results.j24s22olnnKtU8Cs.description": {
+      "fr": "<p><strong>Talus de terre</strong> (3) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "en": "<p><strong>Earth bank</strong> (3) — A bank of red earth you attack with a pickaxe: for wattle and daub, garden mounds, jars.</p>"
+    },
+    "results.6yXgeczm4knC5OAH.description": {
+      "fr": "<p><strong>Bancoulier</strong> (1) — Un grand arbre des Bas aux noix huileuses : on ne les mange pas crues, mais leur huile éclaire une lampe.</p>",
+      "en": "<p><strong>Candlenut tree</strong> (1) — A big lowland tree with oily nuts: they are not eaten raw, but their oil lights a lamp.</p>"
+    }
+  },
+  "tables/DmRAWnuCZnk4wFkz": {
+    "_nom": "Fouille — Station-service",
+    "name": {
+      "fr": "Fouille — Station-service",
+      "en": "Scavenging — Petrol station"
+    },
+    "description": {
+      "fr": "<p>Les cuves enterrées, les pompes mortes sans courant, la boutique aux vitres brisées. Le gazole ne se tire plus qu'à la main, et tout le monde le sait. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The buried tanks, the pumps dead without power, the shop with broken windows. Diesel can only be drawn by hand now, and everyone knows it. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.tg0M67TUKUQtkkcD.description": {
+      "fr": "<p>2 à 8 bidons d'essence ou de gazole — 60 % (+7 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "en": "<p>2 to 8 cans of petrol or diesel — 60% (+7% per risk level); 2 for 1 fuel</p>"
+    },
+    "results.N0gaQCQbJrUwrMtK.description": {
+      "fr": "<p>1 à 2 fûts vides — 35 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 empty drums — 35%; 3 for 1 materials</p>"
+    },
+    "results.Dj7m81ZCtWfyF55I.description": {
+      "fr": "<p>1 à 4 tuyaux — 50 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 4 pipes — 50%; 4 for 1 parts</p>"
+    },
+    "results.DR4JPxoIkSHOBtpr.description": {
+      "fr": "<p>1 à 5 boîtes de conserve — 45 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 5 tins of food — 45% (+4% per risk level); 2 for 1 food</p>"
+    },
+    "results.j5gfDBOsSUk3FxPB.description": {
+      "fr": "<p>1 à 4 vivres secs (riz, grains, sucre) — 35 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 4 dry food (rice, grain, sugar) — 35%; 2 for 1 food</p>"
+    },
+    "results.2z8vknp8urG4Y0Ax.description": {
+      "fr": "<p>1 à 3 linge et tissu — 40 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 linen and cloth — 40%; 8 for 1 materials</p>"
+    },
+    "results.NC63VfvQW1QM5Lpi.description": {
+      "fr": "<p>1 à 3 chambres à air — 35 % ; 8 pour 1 pièces</p>",
+      "en": "<p>1 to 3 inner tubes — 35%; 8 for 1 parts</p>"
+    },
+    "results.WOpp80ERGqSAPwYt.description": {
+      "fr": "<p>1 à 3 rustines — 30 % ; 12 pour 1 pièces</p>",
+      "en": "<p>1 to 3 tyre patches — 30%; 12 for 1 parts</p>"
+    },
+    "results.mdzxV5XrSccYcddi.description": {
+      "fr": "<p>1 une batterie de voiture — 20 % (+4 % par palier de risque) ; 1 pour 1 pièces</p>",
+      "en": "<p>1 a car battery — 20% (+4% per risk level); 1 for 1 parts</p>"
+    },
+    "results.7qZLy2GKvduhbMmx.description": {
+      "fr": "<p>1 à 3 bouteilles de gaz — 40 % (+4 % par palier de risque) ; 10 gaz chacun</p>",
+      "en": "<p>1 to 3 gas bottles — 40% (+4% per risk level); 10 gas each</p>"
+    },
+    "results.0wbfxKJiHHpCaeCg.description": {
+      "fr": "<p>1 à 3 câbles — 30 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 3 cables — 30%; 4 for 1 parts</p>"
+    },
+    "results.p46wTWmhfxtBhP4Y.description": {
+      "fr": "<p>2 à 8 papier — 40 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>2 to 8 paper — 40%; 40 for 1 materials</p>"
+    }
+  },
+  "tables/DqcBMEE9uls46Tdb": {
+    "_nom": "Récolte — Plage",
+    "name": {
+      "fr": "Récolte — Plage",
+      "en": "Gathering — Beach"
+    },
+    "description": {
+      "fr": "<p>Le sable blanc du lagon de l'Ouest, le sable noir de l'Étang-Salé, les galets de l'Est. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>The white sand of the western lagoon, the black sand of L'Étang-Salé, the pebbles of the East. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.3qRIvVPfEfEjf2lG.description": {
+      "fr": "<p><strong>Banc de sable</strong> (14) — Le sable d'une plage ou d'une ravine : pour le mortier, les filtres à eau.</p>",
+      "en": "<p><strong>Sandbank</strong> (14) — The sand of a beach or a ravine: for mortar, for water filters.</p>"
+    },
+    "results.e479Xy4pbAqdfSw1.description": {
+      "fr": "<p><strong>Coquillages</strong> (10) — Les coquillages roulés sur le sable : brûlés, ils font la chaux des anciens.</p>",
+      "en": "<p><strong>Shells</strong> (10) — Shells rolled up on the sand: burnt, they make the lime of the old folk.</p>"
+    },
+    "results.EMX8A0W5N6q1aZ7x.description": {
+      "fr": "<p><strong>Bois flotté</strong> (6) — Ce que la mer et les ravines en crue rejettent sur la côte : du bois sec, blanchi, qui brûle bien.</p>",
+      "en": "<p><strong>Driftwood</strong> (6) — What the sea and the flooded ravines throw onto the coast: dry wood, bleached, that burns well.</p>"
+    },
+    "results.9I0rzAkSmNS21ZSU.description": {
+      "fr": "<p><strong>Galets roulés</strong> (3) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "en": "<p><strong>Rounded pebbles</strong> (3) — The round pebbles of the ravines and the eastern beaches, picked up by hand: low walls, hearths, foundations.</p>"
+    },
+    "results.5mWNDYNDoaYFCg7F.description": {
+      "fr": "<p><strong>Vasque de sel</strong> (2) — Un creux de rocher où l'eau de mer s'évapore au soleil de l'Ouest : on y gratte une croûte de sel, qui garde le poisson (une recette).</p>",
+      "en": "<p><strong>Salt pan</strong> (2) — A hollow in the rock where seawater evaporates under the western sun: a crust of salt can be scraped off it, which keeps fish (a recipe).</p>"
+    }
+  },
+  "tables/EJw62CBxktZlGdGE": {
+    "_nom": "Fouille — Mairie, poste, administration",
+    "name": {
+      "fr": "Fouille — Mairie, poste, administration",
+      "en": "Scavenging — Town hall, post office, offices"
+    },
+    "description": {
+      "fr": "<p>La mairie, la poste, le bureau de l'état civil : des papiers en piles, des registres, des tampons. Un groupe électrogène de secours, parfois, au sous-sol. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The town hall, the post office, the registry office: papers in piles, registers, rubber stamps. Sometimes a back-up generator in the basement. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.15HOhUWqvPlnT3U8.description": {
+      "fr": "<p>1 à 4 cahiers vierges — 50 % ; 10 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 blank notebooks — 50%; 10 for 1 materials</p>"
+    },
+    "results.Jy3Ig6GwCZnNPhc7.description": {
+      "fr": "<p>1 à 3 encre — 45 % ; 20 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 ink — 45%; 20 for 1 materials</p>"
+    },
+    "results.SAagdAEg7RQ7Imtb.description": {
+      "fr": "<p>1 à 3 linge et tissu — 35 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 linen and cloth — 35%; 8 for 1 materials</p>"
+    },
+    "results.44GMfkMb5MADN3Sz.description": {
+      "fr": "<p>1 à 4 bouteilles d'eau — 35 % ; 2 pour 1 eau</p>",
+      "en": "<p>1 to 4 bottles of water — 35%; 2 for 1 water</p>"
+    },
+    "results.H4axvXj830AdCusl.description": {
+      "fr": "<p>1 à 3 savon — 30 % ; 8 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 soap — 30%; 8 for 1 medicine</p>"
+    },
+    "results.vLLXncco8Na6HBeE.description": {
+      "fr": "<p>1 à 3 bougies — 25 % ; 12 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 candles — 25%; 12 for 1 materials</p>"
+    },
+    "results.44KtsByehfFFiXfX.description": {
+      "fr": "<p>Une radio à manivelle — 4 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A wind-up radio — 4% (+4% per risk level); an item</p>"
+    }
+  },
   "tables/ERAHk53pO3a4pwAe": {
     "_nom": "L'esprit — les faux bruits de la nuit",
     "name": {
@@ -1624,6 +2191,65 @@
       "en": "<p>An old lady who lived through the cyclone of 1948 and fears nothing.</p>"
     }
   },
+  "tables/GOr5BTz2PShBTnHJ": {
+    "_nom": "Fouille — École, collège",
+    "name": {
+      "fr": "Fouille — École, collège",
+      "en": "Scavenging — School, secondary school"
+    },
+    "description": {
+      "fr": "<p>La cour sous les badamiers, les préaux, la cantine. Les dessins encore aux murs. On s'y est réfugié les premiers jours, puis on en est parti. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The yard under the badamier trees, the covered playgrounds, the canteen. The drawings still on the walls. People sheltered here in the first days, then left. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.FXtzq6eiJo6wFJsa.description": {
+      "fr": "<p>10 à 30 papier — 90 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>10 to 30 paper — 90%; 40 for 1 materials</p>"
+    },
+    "results.y5KMuISPE7ofA22u.description": {
+      "fr": "<p>1 à 5 cahiers vierges — 60 % ; 10 pour 1 matériaux</p>",
+      "en": "<p>1 to 5 blank notebooks — 60%; 10 for 1 materials</p>"
+    },
+    "results.u4GZmFqAKYIZUcwe.description": {
+      "fr": "<p>1 à 3 encre — 50 % ; 20 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 ink — 50%; 20 for 1 materials</p>"
+    },
+    "results.jvBL0oAT6bXFn0sn.description": {
+      "fr": "<p>1 à 4 savon — 40 % ; 8 pour 1 médicaments</p>",
+      "en": "<p>1 to 4 soap — 40%; 8 for 1 medicine</p>"
+    },
+    "results.TclCriTAvDTJlLob.description": {
+      "fr": "<p>1 à 4 pansements — 30 % (+4 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>1 to 4 dressings — 30% (+4% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.HvjHfHFbfvYCQ5uI.description": {
+      "fr": "<p>1 à 5 bouteilles d'eau — 35 % ; 2 pour 1 eau</p>",
+      "en": "<p>1 to 5 bottles of water — 35%; 2 for 1 water</p>"
+    },
+    "results.5vAYkN858DYfAObD.description": {
+      "fr": "<p>1 à 4 bocaux — 35 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 jars — 35%; 8 for 1 materials</p>"
+    },
+    "results.bdsoarhjK1Q3tkOS.description": {
+      "fr": "<p>Une corde — 25 % ; un objet</p>",
+      "en": "<p>A rope — 25%; an item</p>"
+    },
+    "results.U0YcjeGPqyA2NIrh.description": {
+      "fr": "<p>1 à 3 composants électroniques — 30 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 3 electronic components — 30% (+5% per risk level); 2 for 1 parts</p>"
+    },
+    "results.hcdLgHZxyi6htc0g.description": {
+      "fr": "<p>1 à 5 visserie — 30 % ; 8 pour 1 pièces</p>",
+      "en": "<p>1 to 5 screws and bolts — 30%; 8 for 1 parts</p>"
+    },
+    "results.2cyMLkvCPGJlUaFA.description": {
+      "fr": "<p>1 à 4 vivres secs (riz, grains, sucre) — 25 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 4 dry food (rice, grain, sugar) — 25%; 2 for 1 food</p>"
+    },
+    "results.oYzHMBQ6OLZnZdy5.description": {
+      "fr": "<p>1 à 4 boîtes de conserve — 25 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 4 tins of food — 25% (+4% per risk level); 2 for 1 food</p>"
+    }
+  },
   "tables/I8y7O8AIHd2zUqYk": {
     "_nom": "Ce qui reste d'un atelier abandonné",
     "name": {
@@ -1665,6 +2291,113 @@
     "results.7G6fdPIBKHelYOah.description": {
       "fr": "<p>Un atelier occupé : quelqu'un y vit et y travaille, et n'aime pas qu'on entre sans frapper.</p>",
       "en": "<p>An occupied workshop: someone lives and works there, and does not like people walking in without knocking.</p>"
+    }
+  },
+  "tables/Jg8kenA0kk8pCrnj": {
+    "_nom": "Fouille — Supérette, grande surface",
+    "name": {
+      "fr": "Fouille — Supérette, grande surface",
+      "en": "Scavenging — Mini-market, supermarket"
+    },
+    "description": {
+      "fr": "<p>Les rayons renversés, les caddies, les chambres froides qui sentent. La première chose qu'on a pillée au jour deux ; mais il y a toujours une réserve derrière, un quai de livraison, un rayon qu'on a négligé. Fouiller en entier : 4 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>Overturned shelves, trolleys, cold rooms that stink. The first thing looted on day two; but there is always a storeroom at the back, a delivery bay, an aisle someone overlooked. Searching it all: 4 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.rVImDJWBwf7tRzeN.description": {
+      "fr": "<p>6 à 16 boîtes de conserve — 85 % (+3 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>6 to 16 tins of food — 85% (+3% per risk level); 2 for 1 food</p>"
+    },
+    "results.pCgpgxLlqwEy9LDE.description": {
+      "fr": "<p>4 à 10 vivres secs (riz, grains, sucre) — 60 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>4 to 10 dry food (rice, grain, sugar) — 60%; 2 for 1 food</p>"
+    },
+    "results.ToTf6SWOmuJ2nyIm.description": {
+      "fr": "<p>4 à 12 bouteilles d'eau — 70 % ; 2 pour 1 eau</p>",
+      "en": "<p>4 to 12 bottles of water — 70%; 2 for 1 water</p>"
+    },
+    "results.FUrewI4AM6A9arEm.description": {
+      "fr": "<p>3 à 8 savon — 70 % ; 8 pour 1 médicaments</p>",
+      "en": "<p>3 to 8 soap — 70%; 8 for 1 medicine</p>"
+    },
+    "results.0a9jvg16YwX1QThN.description": {
+      "fr": "<p>2 à 5 eau de Javel — 60 % ; 6 pour 1 médicaments</p>",
+      "en": "<p>2 to 5 bleach — 60%; 6 for 1 medicine</p>"
+    },
+    "results.sGQLeUGRDdd5ekBM.description": {
+      "fr": "<p>3 à 8 linge et tissu — 60 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>3 to 8 linen and cloth — 60%; 8 for 1 materials</p>"
+    },
+    "results.IhXWPiAwzG7oSwoG.description": {
+      "fr": "<p>4 à 10 bocaux — 70 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>4 to 10 jars — 70%; 8 for 1 materials</p>"
+    },
+    "results.Nz5EvdbGIJoysEkM.description": {
+      "fr": "<p>1 à 4 bâches — 50 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 tarpaulins — 50%; 4 for 1 materials</p>"
+    },
+    "results.KhozbWl0287AOLZ3.description": {
+      "fr": "<p>3 à 10 sachets de graines — 50 % ; 2 pour 1 graines</p>",
+      "en": "<p>3 to 10 seed packets — 50%; 2 for 1 seeds</p>"
+    },
+    "results.mjvBRsjleYYOpreg.description": {
+      "fr": "<p>2 à 8 bougies — 50 % ; 12 pour 1 matériaux</p>",
+      "en": "<p>2 to 8 candles — 50%; 12 for 1 materials</p>"
+    },
+    "results.OljrAk6MgAx5S07u.description": {
+      "fr": "<p>1 à 4 sel — 50 % ; 6 pour 1 nourriture</p>",
+      "en": "<p>1 to 4 salt — 50%; 6 for 1 food</p>"
+    },
+    "results.EfxYU4G0i69urRk8.description": {
+      "fr": "<p>1 à 3 vinaigre — 40 % ; 6 pour 1 nourriture</p>",
+      "en": "<p>1 to 3 vinegar — 40%; 6 for 1 food</p>"
+    },
+    "results.u1WER4UmAMGWm6fC.description": {
+      "fr": "<p>1 à 3 rhum — 35 % (+4 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 rum — 35% (+4% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.IX0dNwTEdPpHzxjX.description": {
+      "fr": "<p>8 à 20 papier — 60 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>8 to 20 paper — 60%; 40 for 1 materials</p>"
+    },
+    "results.MY9OpHB9hccb0YhA.description": {
+      "fr": "<p>1 à 3 cahiers vierges — 30 % ; 10 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 blank notebooks — 30%; 10 for 1 materials</p>"
+    },
+    "results.qFn2AOzPbPuDgbmz.description": {
+      "fr": "<p>1 à 3 seaux — 50 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 buckets — 50%; 4 for 1 materials</p>"
+    },
+    "results.pVGSkFqlEUj5kRrc.description": {
+      "fr": "<p>Une lampe électrique — 20 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>An electric torch — 20% (+5% per risk level); an item</p>"
+    },
+    "results.rudAjDHoWhcuuyc1.description": {
+      "fr": "<p>1 à 3 bouteilles de gaz — 35 % (+4 % par palier de risque) ; 10 gaz chacun</p>",
+      "en": "<p>1 to 3 gas bottles — 35% (+4% per risk level); 10 gas each</p>"
+    },
+    "results.llcM05SaULiDvZ4U.description": {
+      "fr": "<p>Un réchaud — 10 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A camping stove — 10% (+4% per risk level); an item</p>"
+    },
+    "results.WQXpOMZrIVAhdQ8G.description": {
+      "fr": "<p>1 à 3 couvertures — 30 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 blankets — 30%; 4 for 1 materials</p>"
+    },
+    "results.kE3kbR5oE0LbLPCJ.description": {
+      "fr": "<p>1 à 3 savates — 30 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 flip-flops — 30%; 6 for 1 materials</p>"
+    },
+    "results.Ay5DDFnZ7Fj3q4ml.description": {
+      "fr": "<p>1 à 2 gants de travail — 25 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 work gloves — 25%; 6 for 1 materials</p>"
+    },
+    "results.maTUx1ptTNlzdjbJ.description": {
+      "fr": "<p>1 à 4 composants électroniques — 25 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 4 electronic components — 25% (+5% per risk level); 2 for 1 parts</p>"
+    },
+    "results.7ue9kVOPajAQZpCD.description": {
+      "fr": "<p>Une batterie nomade — 3 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A power bank — 3% (+4% per risk level); an item</p>"
     }
   },
   "tables/L3DZ2K7C0is03hvX": {
@@ -1820,6 +2553,140 @@
       "en": "<p>She goes up to an adult she likes and whispers: \"I'll leave one day.\"</p>"
     }
   },
+  "tables/MMOUq0ZTbSj9t41s": {
+    "_nom": "Récolte — Côte rocheuse",
+    "name": {
+      "fr": "Récolte — Côte rocheuse",
+      "en": "Gathering — Rocky coast"
+    },
+    "description": {
+      "fr": "<p>Les falaises de basalte du Sud sauvage, où la houle cogne, et les vacoas penchés au-dessus de l'écume. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>The basalt cliffs of the wild South, where the swell pounds, and the vacoas leaning over the foam. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.rZuDbIXx28YiotN9.description": {
+      "fr": "<p><strong>Galets roulés</strong> (10) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "en": "<p><strong>Rounded pebbles</strong> (10) — The round pebbles of the ravines and the eastern beaches, picked up by hand: low walls, hearths, foundations.</p>"
+    },
+    "results.9wvCFSJsBsgMBIoH.description": {
+      "fr": "<p><strong>Vasque de sel</strong> (8) — Un creux de rocher où l'eau de mer s'évapore au soleil de l'Ouest : on y gratte une croûte de sel, qui garde le poisson (une recette).</p>",
+      "en": "<p><strong>Salt pan</strong> (8) — A hollow in the rock where seawater evaporates under the western sun: a crust of salt can be scraped off it, which keeps fish (a recipe).</p>"
+    },
+    "results.mHJXGFqeafVMthXS.description": {
+      "fr": "<p><strong>Bloc de basalte</strong> (5) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "en": "<p><strong>Basalt block</strong> (5) — An old lava flow, a scree: the black stone of the island, split with a sledgehammer for dry-stone walls.</p>"
+    },
+    "results.ERq4MAz2gzNODI0C.description": {
+      "fr": "<p><strong>Coquillages</strong> (4) — Les coquillages roulés sur le sable : brûlés, ils font la chaux des anciens.</p>",
+      "en": "<p><strong>Shells</strong> (4) — Shells rolled up on the sand: burnt, they make the lime of the old folk.</p>"
+    },
+    "results.l7pgEojptyJKtJal.description": {
+      "fr": "<p><strong>Pied de vacoa</strong> (4) — Le vacoa des bords de mer et des ravines du Sud : ses feuilles tressées font les nattes, les sacs, les toits.</p>",
+      "en": "<p><strong>Vacoa plant</strong> (4) — The screw pine of the seashores and the southern ravines: its woven leaves make mats, bags, roofs.</p>"
+    }
+  },
+  "tables/MjqhBBVKtCGc8oOI": {
+    "_nom": "Fouille — Boutique de quartier",
+    "name": {
+      "fr": "Fouille — Boutique de quartier",
+      "en": "Scavenging — Corner shop"
+    },
+    "description": {
+      "fr": "<p>La boutique chinoise du coin, celle qui vendait de tout, du riz au marteau, à crédit pour ceux qu'on connaissait. Le rideau de fer a été forcé, ou pas. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The Chinese corner shop that sold everything, from rice to hammers, on credit to people it knew. The iron shutter has been forced, or not. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.G0XyxpqwGXTDEKO2.description": {
+      "fr": "<p>3 à 8 boîtes de conserve — 80 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>3 to 8 tins of food — 80% (+4% per risk level); 2 for 1 food</p>"
+    },
+    "results.qmh1Tt8Hs0vWqy6E.description": {
+      "fr": "<p>2 à 6 vivres secs (riz, grains, sucre) — 60 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>2 to 6 dry food (rice, grain, sugar) — 60%; 2 for 1 food</p>"
+    },
+    "results.RnMVjs8DRXNGNz9V.description": {
+      "fr": "<p>2 à 6 bouteilles d'eau — 60 % ; 2 pour 1 eau</p>",
+      "en": "<p>2 to 6 bottles of water — 60%; 2 for 1 water</p>"
+    },
+    "results.gXmUpc6dBzVtWriW.description": {
+      "fr": "<p>2 à 5 savon — 60 % ; 8 pour 1 médicaments</p>",
+      "en": "<p>2 to 5 soap — 60%; 8 for 1 medicine</p>"
+    },
+    "results.mICI542lvLMvN4Oz.description": {
+      "fr": "<p>1 à 3 alcool désinfectant — 30 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 disinfectant alcohol — 30% (+5% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.H2YsxFhyByGyXmRI.description": {
+      "fr": "<p>1 à 3 eau de Javel — 50 % ; 6 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 bleach — 50%; 6 for 1 medicine</p>"
+    },
+    "results.c1QbgC4aRsDv1QHz.description": {
+      "fr": "<p>2 à 6 linge et tissu — 50 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 linen and cloth — 50%; 8 for 1 materials</p>"
+    },
+    "results.DKWYo9IbTCTz7BwR.description": {
+      "fr": "<p>2 à 6 bocaux — 60 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 jars — 60%; 8 for 1 materials</p>"
+    },
+    "results.xMU2j617DZngcNZD.description": {
+      "fr": "<p>1 à 3 bâches — 40 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 tarpaulins — 40%; 4 for 1 materials</p>"
+    },
+    "results.Dg1WxK1zIiwEyAuC.description": {
+      "fr": "<p>2 à 8 sachets de graines — 50 % ; 2 pour 1 graines</p>",
+      "en": "<p>2 to 8 seed packets — 50%; 2 for 1 seeds</p>"
+    },
+    "results.YNEWNWTwAVVJbpfr.description": {
+      "fr": "<p>20 à 80 clous — 50 % ; 200 pour 1 matériaux</p>",
+      "en": "<p>20 to 80 nails — 50%; 200 for 1 materials</p>"
+    },
+    "results.z4vjJlAFfJUYbM7E.description": {
+      "fr": "<p>4 à 12 visserie — 50 % ; 8 pour 1 pièces</p>",
+      "en": "<p>4 to 12 screws and bolts — 50%; 8 for 1 parts</p>"
+    },
+    "results.vayj1V6bKzFEG4QQ.description": {
+      "fr": "<p>2 à 6 fil de fer — 50 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 wire — 50%; 8 for 1 materials</p>"
+    },
+    "results.I8DWN8KQCUyfD3kZ.description": {
+      "fr": "<p>1 à 4 bidons d'essence ou de gazole — 25 % (+5 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "en": "<p>1 to 4 cans of petrol or diesel — 25% (+5% per risk level); 2 for 1 fuel</p>"
+    },
+    "results.30lARpKhe5kfiGhu.description": {
+      "fr": "<p>5 à 15 papier — 60 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>5 to 15 paper — 60%; 40 for 1 materials</p>"
+    },
+    "results.zzkjBTpESXmquogM.description": {
+      "fr": "<p>Une truelle — 20 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A trowel — 20% (+5% per risk level); an item</p>"
+    },
+    "results.G3iTaoxQh2RsxzHT.description": {
+      "fr": "<p>Une pince — 25 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A pair of pliers — 25% (+5% per risk level); an item</p>"
+    },
+    "results.7j63dEYxuhGJvjJu.description": {
+      "fr": "<p>Une pelle et une pioche — 20 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A shovel and a pickaxe — 20% (+5% per risk level); an item</p>"
+    },
+    "results.jAIkxaweFvx6F3Rb.description": {
+      "fr": "<p>Un sabre à canne — 30 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A cane cutlass — 30% (+5% per risk level); an item</p>"
+    },
+    "results.NN9ZLgLkPzVwSQzn.description": {
+      "fr": "<p>1 à 2 seaux — 40 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 buckets — 40%; 4 for 1 materials</p>"
+    },
+    "results.Tz7bKdb7IlYKSiFP.description": {
+      "fr": "<p>1 à 2 bouteilles de gaz — 25 % (+4 % par palier de risque) ; 10 gaz chacun</p>",
+      "en": "<p>1 to 2 gas bottles — 25% (+4% per risk level); 10 gas each</p>"
+    },
+    "results.0kWaiCFt7f8pmuBG.description": {
+      "fr": "<p>4 à 12 cartouches — 6 % (+6 % par palier de risque) ; 4 pour 1 munitions</p>",
+      "en": "<p>4 to 12 cartridges — 6% (+6% per risk level); 4 for 1 ammunition</p>"
+    },
+    "results.D9oAAcXsZJa2E7ui.description": {
+      "fr": "<p>1 à 3 composants électroniques — 20 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 3 electronic components — 20% (+5% per risk level); 2 for 1 parts</p>"
+    }
+  },
   "tables/N7GL6zu54VcNYBeU": {
     "_nom": "Demandes — Les Pèlerins de la Lave",
     "name": {
@@ -1849,6 +2716,255 @@
     "results.DV5EiWjsMVGNbthF.description": {
       "fr": "<p><strong>Sauvetage — Le prêcheur parti.</strong> Frère Expédit est parti seul vers le volcan ; ses fidèles supplient qu'on le ramène.</p><p><strong>Récompense :</strong> 8 nourriture, 4 eau ; réputation +3.</p>",
       "en": "<p><strong>Rescue — The preacher gone.</strong> Brother Expédit has set off alone towards the volcano; his faithful beg you to bring him back.</p><p><strong>Reward:</strong> 8 food, 4 water; reputation +3.</p>"
+    }
+  },
+  "tables/NACyEMiacyDm1gzM": {
+    "_nom": "Fouille — Garage",
+    "name": {
+      "fr": "Fouille — Garage",
+      "en": "Scavenging — Garage"
+    },
+    "description": {
+      "fr": "<p>L'atelier de mécanique avec sa fosse, ses pneus empilés et son odeur d'huile. Des pièces de tout, une batterie, une lame de ressort pour un sabre : le trésor de celui qui sait bricoler. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The mechanic's workshop with its pit, its stacked tyres and its smell of oil. Parts of everything, a battery, a leaf spring for a cutlass: the treasure of anyone who can tinker. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.luyXJ9BSnHdbgAZ6.description": {
+      "fr": "<p>4 à 14 visserie — 80 % ; 8 pour 1 pièces</p>",
+      "en": "<p>4 to 14 screws and bolts — 80%; 8 for 1 parts</p>"
+    },
+    "results.tu6GKJaiEgxPe3H8.description": {
+      "fr": "<p>2 à 8 ferraille — 70 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 8 scrap iron — 70%; 8 for 1 materials</p>"
+    },
+    "results.qlGjOtKBMwTHvv1m.description": {
+      "fr": "<p>Une pince — 50 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A pair of pliers — 50% (+5% per risk level); an item</p>"
+    },
+    "results.J4PesgB3dz4n2sqW.description": {
+      "fr": "<p>1 à 4 chambres à air — 50 % ; 8 pour 1 pièces</p>",
+      "en": "<p>1 to 4 inner tubes — 50%; 8 for 1 parts</p>"
+    },
+    "results.7cRoqwonVe66BwSE.description": {
+      "fr": "<p>1 à 4 rustines — 40 % ; 12 pour 1 pièces</p>",
+      "en": "<p>1 to 4 tyre patches — 40%; 12 for 1 parts</p>"
+    },
+    "results.znvA5ef5L7LjCjS6.description": {
+      "fr": "<p>1 à 3 roues — 45 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 3 wheels — 45%; 4 for 1 parts</p>"
+    },
+    "results.DPzh2m8rabBcvWNz.description": {
+      "fr": "<p>1 à 3 lames de ressort — 45 % (+3 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 3 leaf springs — 45% (+3% per risk level); 2 for 1 parts</p>"
+    },
+    "results.CE8rv3C5ZDBex59G.description": {
+      "fr": "<p>1 à 5 bidons d'essence ou de gazole — 40 % (+5 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "en": "<p>1 to 5 cans of petrol or diesel — 40% (+5% per risk level); 2 for 1 fuel</p>"
+    },
+    "results.ct4MurvvAvGCRK8l.description": {
+      "fr": "<p>1 à 2 une batterie de voiture — 30 % (+4 % par palier de risque) ; 1 pour 1 pièces</p>",
+      "en": "<p>1 to 2 a car battery — 30% (+4% per risk level); 1 for 1 parts</p>"
+    },
+    "results.XWa39b5biExvAE4O.description": {
+      "fr": "<p>1 à 2 gants de travail — 35 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 work gloves — 35%; 6 for 1 materials</p>"
+    },
+    "results.DWs2dKcPRz5fSBAj.description": {
+      "fr": "<p>1 un petit moteur — 10 % (+5 % par palier de risque) ; 3 pièces chacun</p>",
+      "en": "<p>1 a small engine — 10% (+5% per risk level); 3 parts each</p>"
+    },
+    "results.zDZFlTQYHBv9psMN.description": {
+      "fr": "<p>1 fûts vides — 15 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 empty drums — 15%; 3 for 1 materials</p>"
+    }
+  },
+  "tables/NrH8FazebniwzdWV": {
+    "_nom": "Fouille — Entrepôt, usine, aérogare",
+    "name": {
+      "fr": "Fouille — Entrepôt, usine, aérogare",
+      "en": "Scavenging — Warehouse, factory, terminal"
+    },
+    "description": {
+      "fr": "<p>Les zones d'activité, les docks, la sucrerie, le terminal de l'aéroport : de grands volumes vides, des palettes, des machines arrêtées. Rien à manger, tout pour bâtir. Fouiller en entier : 3 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The business parks, the docks, the sugar mill, the airport terminal: big empty spaces, pallets, stopped machines. Nothing to eat, everything to build with. Searching it all: 3 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.5X6Q10kXWhSou3Gq.description": {
+      "fr": "<p>4 à 12 ferraille — 80 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>4 to 12 scrap iron — 80%; 8 for 1 materials</p>"
+    },
+    "results.kSOzfixCoPDw2c10.description": {
+      "fr": "<p>2 à 6 tôles — 60 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 corrugated iron sheets — 60%; 4 for 1 materials</p>"
+    },
+    "results.KoytvWoYMWHKX4Q3.description": {
+      "fr": "<p>2 à 8 câbles — 70 % ; 4 pour 1 pièces</p>",
+      "en": "<p>2 to 8 cables — 70%; 4 for 1 parts</p>"
+    },
+    "results.oSlt0BCU4IKal3vb.description": {
+      "fr": "<p>2 à 6 tuyaux — 60 % ; 4 pour 1 pièces</p>",
+      "en": "<p>2 to 6 pipes — 60%; 4 for 1 parts</p>"
+    },
+    "results.OIAHdBnfcBtBI7oS.description": {
+      "fr": "<p>4 à 16 visserie — 70 % ; 8 pour 1 pièces</p>",
+      "en": "<p>4 to 16 screws and bolts — 70%; 8 for 1 parts</p>"
+    },
+    "results.mPRIQy5BHiAJMTyp.description": {
+      "fr": "<p>1 à 5 composants électroniques — 40 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 5 electronic components — 40% (+5% per risk level); 2 for 1 parts</p>"
+    },
+    "results.84Uy6VXmha2kBij3.description": {
+      "fr": "<p>1 à 4 sacs de ciment — 35 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 bags of cement — 35%; 4 for 1 materials</p>"
+    },
+    "results.mciMJnV5bYewJlLr.description": {
+      "fr": "<p>2 à 8 parpaings — 35 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 8 breeze blocks — 35%; 8 for 1 materials</p>"
+    },
+    "results.uLuWHrXrIvuXGVhG.description": {
+      "fr": "<p>1 à 3 fûts vides — 40 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 empty drums — 40%; 3 for 1 materials</p>"
+    },
+    "results.c6XD72yWNd4ib654.description": {
+      "fr": "<p>1 à 3 gants de travail — 40 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 work gloves — 40%; 6 for 1 materials</p>"
+    },
+    "results.i5fURL24SYSPfPyR.description": {
+      "fr": "<p>1 à 5 bidons d'essence ou de gazole — 30 % (+6 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "en": "<p>1 to 5 cans of petrol or diesel — 30% (+6% per risk level); 2 for 1 fuel</p>"
+    },
+    "results.mYf7ExEcxST7pycB.description": {
+      "fr": "<p>1 à 3 lames de ressort — 30 % (+3 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 3 leaf springs — 30% (+3% per risk level); 2 for 1 parts</p>"
+    },
+    "results.PV0dltFaCQ9WMFZg.description": {
+      "fr": "<p>1 à 2 un moteur électrique — 12 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "en": "<p>1 to 2 an electric motor — 12% (+5% per risk level); 2 parts each</p>"
+    },
+    "results.BHv8JMg0LaWAzklM.description": {
+      "fr": "<p>1 un panneau solaire — 3 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "en": "<p>1 a solar panel — 3% (+5% per risk level); 2 parts each</p>"
+    }
+  },
+  "tables/Oe16atAsOCRp0fB4": {
+    "_nom": "Fouille — Case créole",
+    "name": {
+      "fr": "Fouille — Case créole",
+      "en": "Scavenging — Creole house"
+    },
+    "description": {
+      "fr": "<p>Une case de bois sous tôle, sa varangue, sa cour de terre battue et son pied de letchi. Le linge plié dans l'armoire, les bocaux de la cuisine, les outils du jardin sous l'auvent, parfois une poule qui gratte encore la cour. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>A wooden house under corrugated iron, its veranda, its beaten-earth yard and its lychee tree. Linen folded in the wardrobe, jars in the kitchen, garden tools under the eaves, sometimes a hen still scratching in the yard. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.UkgcnF3uFVBfsWAi.description": {
+      "fr": "<p>2 à 5 linge et tissu — 80 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 5 linen and cloth — 80%; 8 for 1 materials</p>"
+    },
+    "results.PWe58n15pkjWgGUg.description": {
+      "fr": "<p>1 à 4 bocaux — 70 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 jars — 70%; 8 for 1 materials</p>"
+    },
+    "results.snbGSLl7Rz8eoMoq.description": {
+      "fr": "<p>10 à 30 clous — 60 % ; 200 pour 1 matériaux</p>",
+      "en": "<p>10 to 30 nails — 60%; 200 for 1 materials</p>"
+    },
+    "results.5Y10g0hV4wfgC6Fr.description": {
+      "fr": "<p>1 à 3 vivres secs (riz, grains, sucre) — 50 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 3 dry food (rice, grain, sugar) — 50%; 2 for 1 food</p>"
+    },
+    "results.6IeeUL7i9x5HCOQ6.description": {
+      "fr": "<p>1 à 3 boîtes de conserve — 40 % (+5 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 3 tins of food — 40% (+5% per risk level); 2 for 1 food</p>"
+    },
+    "results.XApPRFQGhBPbTfJo.description": {
+      "fr": "<p>3 à 10 papier — 50 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>3 to 10 paper — 50%; 40 for 1 materials</p>"
+    },
+    "results.V7eFrkrBtbNaWmrt.description": {
+      "fr": "<p>Une corde — 40 % ; un objet</p>",
+      "en": "<p>A rope — 40%; an item</p>"
+    },
+    "results.m4CAC45PHO94dTIc.description": {
+      "fr": "<p>Un couteau — 35 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A knife — 35% (+5% per risk level); an item</p>"
+    },
+    "results.mT1UdTDrMpsIlRdq.description": {
+      "fr": "<p>Un marteau — 30 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A hammer — 30% (+5% per risk level); an item</p>"
+    },
+    "results.aK176hW6AOyFNKUq.description": {
+      "fr": "<p>Une scie — 20 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A saw — 20% (+5% per risk level); an item</p>"
+    },
+    "results.HBFB0gCJFOBdXbQz.description": {
+      "fr": "<p>Un sabre à canne — 25 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A cane cutlass — 25% (+5% per risk level); an item</p>"
+    },
+    "results.TK3L6PsxEKUGzFoG.description": {
+      "fr": "<p>1 seaux — 30 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 buckets — 30%; 4 for 1 materials</p>"
+    },
+    "results.87eIPgQgImFgafhM.description": {
+      "fr": "<p>1 à 2 savon — 25 % ; 8 pour 1 médicaments</p>",
+      "en": "<p>1 to 2 soap — 25%; 8 for 1 medicine</p>"
+    },
+    "results.TrXvcnzkW5h1KU6W.description": {
+      "fr": "<p>1 à 3 pansements — 20 % (+5 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 dressings — 20% (+5% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.ynMZ0tDgCJjdaCQp.description": {
+      "fr": "<p>1 eau de Javel — 20 % ; 6 pour 1 médicaments</p>",
+      "en": "<p>1 bleach — 20%; 6 for 1 medicine</p>"
+    },
+    "results.gFjjWDkplEfLLzJr.description": {
+      "fr": "<p>1 à 4 sachets de graines — 30 % ; 2 pour 1 graines</p>",
+      "en": "<p>1 to 4 seed packets — 30%; 2 for 1 seeds</p>"
+    },
+    "results.VdLKZiquw2zmAgBh.description": {
+      "fr": "<p>1 bâches — 25 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 tarpaulins — 25%; 4 for 1 materials</p>"
+    },
+    "results.SzNEpbMoFGQiCKoq.description": {
+      "fr": "<p>1 à 3 fil de fer — 40 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 wire — 40%; 8 for 1 materials</p>"
+    },
+    "results.TPSqNObjgp8pmU9D.description": {
+      "fr": "<p>2 à 6 visserie — 40 % ; 8 pour 1 pièces</p>",
+      "en": "<p>2 to 6 screws and bolts — 40%; 8 for 1 parts</p>"
+    },
+    "results.Jpy5goCPwg5cfJPB.description": {
+      "fr": "<p>1 à 3 bouteilles d'eau — 25 % ; 2 pour 1 eau</p>",
+      "en": "<p>1 to 3 bottles of water — 25%; 2 for 1 water</p>"
+    },
+    "results.tQWDI3edA2X1EBvW.description": {
+      "fr": "<p>1 alcool désinfectant — 10 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>1 disinfectant alcohol — 10% (+5% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.ZnyB3sIdLtmaliES.description": {
+      "fr": "<p>Une truelle — 12 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A trowel — 12% (+3% per risk level); an item</p>"
+    },
+    "results.xgqWYr52JMU524Kp.description": {
+      "fr": "<p>Une pince — 15 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A pair of pliers — 15% (+4% per risk level); an item</p>"
+    },
+    "results.c4T91bfjctYWVd05.description": {
+      "fr": "<p>2 à 8 cartouches — 5 % (+5 % par palier de risque) ; 4 pour 1 munitions</p>",
+      "en": "<p>2 to 8 cartridges — 5% (+5% per risk level); 4 for 1 ammunition</p>"
+    },
+    "results.x76bzQLGDU9OQSk0.description": {
+      "fr": "<p>Un fusil de chasse — 2 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A hunting shotgun — 2% (+4% per risk level); an item</p>"
+    },
+    "results.696nhEhENST2Xyt9.description": {
+      "fr": "<p>1 bouteilles de gaz — 8 % (+3 % par palier de risque) ; 10 gaz chacun</p>",
+      "en": "<p>1 gas bottles — 8% (+3% per risk level); 10 gas each</p>"
+    },
+    "results.KFlFPiGCr6ByNl3y.description": {
+      "fr": "<p>Un sac de goni — 15 % ; un objet</p>",
+      "en": "<p>A gunny sack — 15%; an item</p>"
+    },
+    "results.E4gN8pK9vAHyyrxk.description": {
+      "fr": "<p>Une cage à volailles — 6 % ; un objet</p>",
+      "en": "<p>A poultry cage — 6%; an item</p>"
     }
   },
   "tables/OnVnHb6uKcbvBPlB": {
@@ -2164,6 +3280,84 @@
       "en": "<p>The sound of a cowbell in the fog, that never stops.</p>"
     }
   },
+  "tables/S49Nxldqr5Eu0GBf": {
+    "_nom": "Fouille — Case en tôle",
+    "name": {
+      "fr": "Fouille — Case en tôle",
+      "en": "Scavenging — Iron-sheet shack"
+    },
+    "description": {
+      "fr": "<p>Une case de tôles clouées sur des gaulettes, au bord d'une ravine ou au bout d'un chemin : on y a peu, mais on y a tout gardé. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>A shack of iron sheets nailed onto thin poles, at the edge of a ravine or at the end of a path: there is little in it, but everything has been kept. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    }
+  },
+  "tables/UXh1CDK7P2KHOvZS": {
+    "_nom": "Fouille — Restaurant, snack",
+    "name": {
+      "fr": "Fouille — Restaurant, snack",
+      "en": "Scavenging — Restaurant, snack bar"
+    },
+    "description": {
+      "fr": "<p>Le camion-bar du front de mer, le snack à samoussas, le restaurant du dimanche avec sa marmite à cari : des bouteilles de gaz, du sel, du rhum, des couteaux. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The seafront food truck, the samosa stall, the Sunday restaurant with its curry pot: gas bottles, salt, rum, knives. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.gmxmQPEqjwJGDro9.description": {
+      "fr": "<p>2 à 8 boîtes de conserve — 70 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>2 to 8 tins of food — 70% (+4% per risk level); 2 for 1 food</p>"
+    },
+    "results.N0GxmObf59V0QXWH.description": {
+      "fr": "<p>2 à 6 vivres secs (riz, grains, sucre) — 50 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>2 to 6 dry food (rice, grain, sugar) — 50%; 2 for 1 food</p>"
+    },
+    "results.y7OWOFOsFLUjFxFf.description": {
+      "fr": "<p>2 à 6 bouteilles d'eau — 50 % ; 2 pour 1 eau</p>",
+      "en": "<p>2 to 6 bottles of water — 50%; 2 for 1 water</p>"
+    },
+    "results.H85ELjZVc8rXt1A9.description": {
+      "fr": "<p>1 à 4 sel — 60 % ; 6 pour 1 nourriture</p>",
+      "en": "<p>1 to 4 salt — 60%; 6 for 1 food</p>"
+    },
+    "results.65Eg4zx8aAJvT6gT.description": {
+      "fr": "<p>1 à 3 vinaigre — 50 % ; 6 pour 1 nourriture</p>",
+      "en": "<p>1 to 3 vinegar — 50%; 6 for 1 food</p>"
+    },
+    "results.ni57XnNGbHrTrUMy.description": {
+      "fr": "<p>1 à 4 rhum — 45 % (+4 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>1 to 4 rum — 45% (+4% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.XBOltO8rm5lJkGYD.description": {
+      "fr": "<p>3 à 8 bocaux — 70 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>3 to 8 jars — 70%; 8 for 1 materials</p>"
+    },
+    "results.AXx95f73749jC7rn.description": {
+      "fr": "<p>Un couteau — 60 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A knife — 60% (+4% per risk level); an item</p>"
+    },
+    "results.G2RYjO8HaGNt4GyD.description": {
+      "fr": "<p>1 à 2 eau de Javel — 40 % ; 6 pour 1 médicaments</p>",
+      "en": "<p>1 to 2 bleach — 40%; 6 for 1 medicine</p>"
+    },
+    "results.FAYi8DIPLAdjoepd.description": {
+      "fr": "<p>1 à 4 linge et tissu — 50 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 linen and cloth — 50%; 8 for 1 materials</p>"
+    },
+    "results.FzGoiF1910eTQgHH.description": {
+      "fr": "<p>1 à 3 bouteilles de gaz — 45 % (+4 % par palier de risque) ; 10 gaz chacun</p>",
+      "en": "<p>1 to 3 gas bottles — 45% (+4% per risk level); 10 gas each</p>"
+    },
+    "results.mgoEHWFhFoQvuoJN.description": {
+      "fr": "<p>Un réchaud — 15 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A camping stove — 15% (+4% per risk level); an item</p>"
+    },
+    "results.AsmGGKEb9KXnbzUm.description": {
+      "fr": "<p>1 à 4 charbon de bois — 30 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 charcoal — 30%; 6 for 1 materials</p>"
+    },
+    "results.fIp4lYwjjBDDE0Qa.description": {
+      "fr": "<p>1 à 4 bougies — 30 % ; 12 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 candles — 30%; 12 for 1 materials</p>"
+    }
+  },
   "tables/UatgNVwi3IvDD5F9": {
     "_nom": "La qualité d'un outil trouvé",
     "name": {
@@ -2273,6 +3467,56 @@
       "en": "<p>The well-keeper's notebook: the site's unique plan (only once in the whole game). The notebook of a well-keeper of the îlets: forty years bringing water where the roads do not go. There is only one, and it is only found at the end of the trails.</p>"
     }
   },
+  "tables/XoT9H5eaakG0w1ww": {
+    "_nom": "Récolte — Champs de canne",
+    "name": {
+      "fr": "Récolte — Champs de canne",
+      "en": "Gathering — Cane fields"
+    },
+    "description": {
+      "fr": "<p>Les cannes qui n'ont pas été coupées cette année, plus hautes qu'un homme : on s'y perd, on s'y cache. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>Cane that was not cut this year, taller than a man: you get lost in it, you hide in it. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.62E8H3Scl6HLSlKU.description": {
+      "fr": "<p><strong>Talus de terre</strong> (6) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "en": "<p><strong>Earth bank</strong> (6) — A bank of red earth you attack with a pickaxe: for wattle and daub, garden mounds, jars.</p>"
+    },
+    "results.yJoHKBMPL7b3WaLl.description": {
+      "fr": "<p><strong>Zerbaz</strong> (2) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "en": "<p><strong>Zerbaz</strong> (2) — Ayapana, lemongrass, bois de joli cœur: the healing plants. They are gathered with the “herbs” target.</p>"
+    },
+    "results.b8vDLrJRWNjdp8n0.description": {
+      "fr": "<p><strong>Touffe de bambous</strong> (2) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "en": "<p><strong>Clump of bamboo</strong> (2) — A clump of bamboo at the bottom of a ravine or along a stream: straight poles for a palisade, a pipe, a cage.</p>"
+    },
+    "results.e3eTs5dDonNgkDBd.description": {
+      "fr": "<p><strong>Jardin en friche</strong> (2) — Le jardin d'une case abandonnée, envahi : des graines, quelques légumes, des zerbaz. Il se prend avec la cible « jardins ».</p>",
+      "en": "<p><strong>Overgrown garden</strong> (2) — The garden of an abandoned house, gone wild: seeds, a few vegetables, zerbaz. It is taken with the “gardens” target.</p>"
+    },
+    "results.8qoxrcZpZaoqAP0i.description": {
+      "fr": "<p><strong>Décombres</strong> (1) — Un tas de gravats et de planches : il se fouille comme un lieu (genre « Décombres »).</p>",
+      "en": "<p><strong>Rubble</strong> (1) — A heap of rubble and planks: it is searched like a place (kind “Rubble”).</p>"
+    }
+  },
+  "tables/YAKvgcujH2mpBHdq": {
+    "_nom": "Récolte — Bourg",
+    "name": {
+      "fr": "Récolte — Bourg",
+      "en": "Gathering — Town"
+    },
+    "description": {
+      "fr": "<p>Les rues, les cours, les terrains vagues d'une ville ou d'un bourg : ce que le bâti a laissé tomber. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>The streets, the yards, the vacant lots of a town or a village: what the buildings let fall. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.jFmKeOny8GxCEl40.description": {
+      "fr": "<p><strong>Décombres</strong> (14) — Un tas de gravats et de planches : il se fouille comme un lieu (genre « Décombres »).</p>",
+      "en": "<p><strong>Rubble</strong> (14) — A heap of rubble and planks: it is searched like a place (kind “Rubble”).</p>"
+    },
+    "results.CMmd8boC0CxM2QSF.description": {
+      "fr": "<p><strong>Jardin en friche</strong> (6) — Le jardin d'une case abandonnée, envahi : des graines, quelques légumes, des zerbaz. Il se prend avec la cible « jardins ».</p>",
+      "en": "<p><strong>Overgrown garden</strong> (6) — The garden of an abandoned house, gone wild: seeds, a few vegetables, zerbaz. It is taken with the “gardens” target.</p>"
+    }
+  },
   "tables/YFN6W0JMRjG55CSU": {
     "_nom": "Raconter sans quête : la nature",
     "name": {
@@ -2316,6 +3560,37 @@
       "en": "<p>A sweet, heavy smell the wind brings from a neighbourhood: you do not go there today.</p>"
     }
   },
+  "tables/YHi1hDRryzSw5LSl": {
+    "_nom": "Fouille — Lieu de culte",
+    "name": {
+      "fr": "Fouille — Lieu de culte",
+      "en": "Scavenging — Place of worship"
+    },
+    "description": {
+      "fr": "<p>Une église, un temple tamoul, une mosquée, une pagode, une chapelle au bord du chemin. Des bougies, de l'eau, des nappes. On n'y trouve ni outil ni arme, et y prendre quoi que ce soit ne laisse personne indifférent. Fouiller en entier : 1 quart-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>A church, a Tamil temple, a mosque, a pagoda, a wayside chapel. Candles, water, altar cloths. There is no tool or weapon here, and taking anything at all leaves no one indifferent. Searching it all: 1 person-quarter. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.nkgGPtxMqrCawGm0.description": {
+      "fr": "<p>1 à 5 bougies — 70 % ; 12 pour 1 matériaux</p>",
+      "en": "<p>1 to 5 candles — 70%; 12 for 1 materials</p>"
+    },
+    "results.aXMDxxOsWnF1JMTS.description": {
+      "fr": "<p>1 à 3 bouteilles d'eau — 50 % ; 2 pour 1 eau</p>",
+      "en": "<p>1 to 3 bottles of water — 50%; 2 for 1 water</p>"
+    },
+    "results.stoOnv4dJcFrW8Uy.description": {
+      "fr": "<p>1 à 5 papier — 40 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>1 to 5 paper — 40%; 40 for 1 materials</p>"
+    },
+    "results.RGrl4hPSeblBMZQU.description": {
+      "fr": "<p>1 à 2 cire — 30 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 wax — 30%; 6 for 1 materials</p>"
+    },
+    "results.F4alhF0aEE82QUbZ.description": {
+      "fr": "<p>1 à 2 bocaux — 30 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 jars — 30%; 8 for 1 materials</p>"
+    }
+  },
   "tables/ZRfOKf6zkJ72GyFX": {
     "_nom": "Livides en fête",
     "name": {
@@ -2349,6 +3624,41 @@
     "results.YtkuyHtE9QCpX05t.description": {
       "fr": "<p>Un Livide coiffé d'une couronne de papier doré, de travers, dans une galerie marchande vide.</p>",
       "en": "<p>A Pallid wearing a gold paper crown, askew, in an empty shopping arcade.</p>"
+    }
+  },
+  "tables/Zt4omoTi9v5Cx8wJ": {
+    "_nom": "Fouille — Château d'eau, réservoir",
+    "name": {
+      "fr": "Fouille — Château d'eau, réservoir",
+      "en": "Scavenging — Water tower, reservoir"
+    },
+    "description": {
+      "fr": "<p>La cuve de béton sur la colline, la bâche à eau du quartier. Ce qui reste au fond n'est pas toujours bon à boire tel quel. Fouiller en entier : 1 quart-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The concrete tank on the hill, the neighbourhood water cistern. What is left at the bottom is not always fit to drink as it is. Searching it all: 1 person-quarter. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.vds5p7tvziVXrT87.description": {
+      "fr": "<p>3 à 8 bouteilles d'eau — 70 % ; 2 pour 1 eau</p>",
+      "en": "<p>3 to 8 bottles of water — 70%; 2 for 1 water</p>"
+    },
+    "results.5yJBOz3RD3vnY6tI.description": {
+      "fr": "<p>1 à 3 tuyaux — 50 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 3 pipes — 50%; 4 for 1 parts</p>"
+    },
+    "results.0WUCFWoHtFmSNzhP.description": {
+      "fr": "<p>1 à 3 ferraille — 40 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 scrap iron — 40%; 8 for 1 materials</p>"
+    },
+    "results.mGP9SE279RbhmfFy.description": {
+      "fr": "<p>1 à 4 visserie — 30 % ; 8 pour 1 pièces</p>",
+      "en": "<p>1 to 4 screws and bolts — 30%; 8 for 1 parts</p>"
+    },
+    "results.7ej8gz1IxI6npap5.description": {
+      "fr": "<p>1 à 2 seaux — 30 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 buckets — 30%; 4 for 1 materials</p>"
+    },
+    "results.RdhHr30CiHo6qfy9.description": {
+      "fr": "<p>1 rouleaux de grillage — 20 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 rolls of wire mesh — 20%; 3 for 1 materials</p>"
     }
   },
   "tables/aIDpVmerx8739tbC": {
@@ -2927,6 +4237,113 @@
       "en": "<p>The plan: Beehives (rarity 25 to 50).</p>"
     }
   },
+  "tables/fH2kUG75Yyy1djM6": {
+    "_nom": "Fouille — Quincaillerie",
+    "name": {
+      "fr": "Fouille — Quincaillerie",
+      "en": "Scavenging — Hardware store"
+    },
+    "description": {
+      "fr": "<p>La quincaillerie de la rue principale : les clous au poids, les rouleaux de grillage, les sabres à canne pendus au mur. Ce qu'on pille le plus tard, et ce qui sert le plus longtemps. Fouiller en entier : 3 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The hardware store on the main street: nails by weight, rolls of wire mesh, cane cutlasses hanging on the wall. The last place to be looted, and the one that serves longest. Searching it all: 3 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.C4OLpM7U5O9afcbP.description": {
+      "fr": "<p>30 à 120 clous — 85 % ; 200 pour 1 matériaux</p>",
+      "en": "<p>30 to 120 nails — 85%; 200 for 1 materials</p>"
+    },
+    "results.iF3tMFZwK2vnD7MV.description": {
+      "fr": "<p>6 à 20 visserie — 80 % ; 8 pour 1 pièces</p>",
+      "en": "<p>6 to 20 screws and bolts — 80%; 8 for 1 parts</p>"
+    },
+    "results.d3x3zoCBQyCD1IBa.description": {
+      "fr": "<p>3 à 10 fil de fer — 70 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>3 to 10 wire — 70%; 8 for 1 materials</p>"
+    },
+    "results.DhjdIwOPthUvbj7d.description": {
+      "fr": "<p>Une corde — 60 % ; un objet</p>",
+      "en": "<p>A rope — 60%; an item</p>"
+    },
+    "results.k91ttyZaTbk9ZDYV.description": {
+      "fr": "<p>1 à 4 rouleaux de grillage — 50 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 rolls of wire mesh — 50%; 3 for 1 materials</p>"
+    },
+    "results.gTWy3Ys2OSILUWfy.description": {
+      "fr": "<p>2 à 6 tuyaux — 50 % ; 4 pour 1 pièces</p>",
+      "en": "<p>2 to 6 pipes — 50%; 4 for 1 parts</p>"
+    },
+    "results.2nZdrOTAUBh89IvT.description": {
+      "fr": "<p>1 à 4 sacs de ciment — 45 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 bags of cement — 45%; 4 for 1 materials</p>"
+    },
+    "results.l7Df3tEi0nMGN6OE.description": {
+      "fr": "<p>1 à 4 tôles — 35 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 corrugated iron sheets — 35%; 4 for 1 materials</p>"
+    },
+    "results.ySHyb85fUMbvpbWH.description": {
+      "fr": "<p>1 à 3 gants de travail — 45 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 work gloves — 45%; 6 for 1 materials</p>"
+    },
+    "results.V52vRZJHx5T5nyWL.description": {
+      "fr": "<p>Un marteau — 55 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A hammer — 55% (+5% per risk level); an item</p>"
+    },
+    "results.8lR9nJcv4zqyqBSB.description": {
+      "fr": "<p>Une scie — 45 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A saw — 45% (+5% per risk level); an item</p>"
+    },
+    "results.YTgFOcYOEbCAh9Ye.description": {
+      "fr": "<p>Une truelle — 45 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A trowel — 45% (+5% per risk level); an item</p>"
+    },
+    "results.geRx0nfN5QHoiYzt.description": {
+      "fr": "<p>Une pince — 45 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A pair of pliers — 45% (+5% per risk level); an item</p>"
+    },
+    "results.3HovZKjVO94GHI54.description": {
+      "fr": "<p>Une pelle et une pioche — 40 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A shovel and a pickaxe — 40% (+5% per risk level); an item</p>"
+    },
+    "results.febkF8y3hlfOCnGQ.description": {
+      "fr": "<p>Un pied-de-biche — 30 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A crowbar — 30% (+5% per risk level); an item</p>"
+    },
+    "results.RueTWhUEOy4XNAM4.description": {
+      "fr": "<p>Un sabre à canne — 40 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A cane cutlass — 40% (+5% per risk level); an item</p>"
+    },
+    "results.owb0iOZeGqyCNru4.description": {
+      "fr": "<p>Une hache — 20 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>An axe — 20% (+5% per risk level); an item</p>"
+    },
+    "results.vOTV3WdvjuDdP3P3.description": {
+      "fr": "<p>Une masse — 15 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A sledgehammer — 15% (+5% per risk level); an item</p>"
+    },
+    "results.FEDsjq1CinkCMGyX.description": {
+      "fr": "<p>1 à 2 pierres à aiguiser — 30 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 whetstones — 30%; 6 for 1 materials</p>"
+    },
+    "results.YlW6TKwOnGJP1KlD.description": {
+      "fr": "<p>2 à 6 câbles — 50 % ; 4 pour 1 pièces</p>",
+      "en": "<p>2 to 6 cables — 50%; 4 for 1 parts</p>"
+    },
+    "results.vPh6xhDuCMLWpTJE.description": {
+      "fr": "<p>2 à 8 sachets de graines — 35 % ; 2 pour 1 graines</p>",
+      "en": "<p>2 to 8 seed packets — 35%; 2 for 1 seeds</p>"
+    },
+    "results.pEdntwGBcF3P3qb3.description": {
+      "fr": "<p>1 à 3 engrais — 30 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 fertiliser — 30%; 4 for 1 materials</p>"
+    },
+    "results.wQHQVY97VvndgGFp.description": {
+      "fr": "<p>Une tronçonneuse — 5 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A chainsaw — 5% (+5% per risk level); an item</p>"
+    },
+    "results.ZQYlDKU4gQBE2ONk.description": {
+      "fr": "<p>1 un groupe électrogène — 3 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "en": "<p>1 a generator — 3% (+5% per risk level); 2 parts each</p>"
+    }
+  },
   "tables/frqhoo0i4jq53Fnx": {
     "_nom": "Lieu à plans — Les conteneurs éventrés du Port Est",
     "name": {
@@ -2940,6 +4357,73 @@
     "results.uv7Y7qnXtuKmS4Sq.description": {
       "fr": "<p>Le plan : Vélo-cargo (recette) (rareté 35 à 60).</p>",
       "en": "<p>The plan: Cargo bike (recipe) (rarity 35 to 60).</p>"
+    }
+  },
+  "tables/gBT4hUImoxrBxx1S": {
+    "_nom": "Fouille — Centre de santé, dispensaire",
+    "name": {
+      "fr": "Fouille — Centre de santé, dispensaire",
+      "en": "Scavenging — Health centre, clinic"
+    },
+    "description": {
+      "fr": "<p>Un dispensaire, une maison médicale, le centre de santé du bourg : les brancards dans le couloir, les dossiers par terre. On y a soigné les premiers mordus ; certains y sont encore. Fouiller en entier : 3 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>A dispensary, a medical practice, the village health centre: stretchers in the corridor, files on the floor. The first bitten were treated here; some are still here. Searching it all: 3 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.fIOYTyag9NrWxYFQ.description": {
+      "fr": "<p>4 à 14 pansements — 80 % (+3 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>4 to 14 dressings — 80% (+3% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.T2pOL468DhgB9Xp7.description": {
+      "fr": "<p>2 à 6 alcool désinfectant — 60 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>2 to 6 disinfectant alcohol — 60% (+5% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.qzA2Tp3C5SRffXtz.description": {
+      "fr": "<p>2 à 8 savon — 70 % ; 8 pour 1 médicaments</p>",
+      "en": "<p>2 to 8 soap — 70%; 8 for 1 medicine</p>"
+    },
+    "results.o6LcppPgepR99Wsh.description": {
+      "fr": "<p>1 à 4 soluté de réhydratation — 35 % (+6 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>1 to 4 rehydration solution — 35% (+6% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.49XxGyaSjCU2eC5h.description": {
+      "fr": "<p>1 à 3 attelles — 35 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 splints — 35% (+5% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.GvHgqr31iHxFaLhu.description": {
+      "fr": "<p>3 à 10 linge et tissu — 70 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>3 to 10 linen and cloth — 70%; 8 for 1 materials</p>"
+    },
+    "results.UNmLCftWlQQ8JxE2.description": {
+      "fr": "<p>1 à 4 couvertures — 50 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 blankets — 50%; 4 for 1 materials</p>"
+    },
+    "results.DCfEX19AiJUwOP7m.description": {
+      "fr": "<p>2 à 8 bouteilles d'eau — 50 % ; 2 pour 1 eau</p>",
+      "en": "<p>2 to 8 bottles of water — 50%; 2 for 1 water</p>"
+    },
+    "results.ekGnTldWR0XELB9B.description": {
+      "fr": "<p>5 à 14 papier — 50 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>5 to 14 paper — 50%; 40 for 1 materials</p>"
+    },
+    "results.DVyEj3GULs6NxMG3.description": {
+      "fr": "<p>1 à 4 câbles — 40 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 4 cables — 40%; 4 for 1 parts</p>"
+    },
+    "results.tvDrFsKE7pLM2Oie.description": {
+      "fr": "<p>1 à 4 composants électroniques — 30 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 4 electronic components — 30% (+5% per risk level); 2 for 1 parts</p>"
+    },
+    "results.DDDxrDYY2G30AzMO.description": {
+      "fr": "<p>1 à 2 bouteilles de gaz — 20 % (+4 % par palier de risque) ; 10 gaz chacun</p>",
+      "en": "<p>1 to 2 gas bottles — 20% (+4% per risk level); 10 gas each</p>"
+    },
+    "results.29h6Vhi1dwNP8lzT.description": {
+      "fr": "<p>1 un groupe électrogène — 4 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "en": "<p>1 a generator — 4% (+5% per risk level); 2 parts each</p>"
+    },
+    "results.r0GRjdcQd2JMHjfe.description": {
+      "fr": "<p>Des moustiquaires — 10 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>Mosquito nets — 10% (+4% per risk level); an item</p>"
     }
   },
   "tables/h3wo9DGwRuinmC5G": {
@@ -2983,6 +4467,41 @@
     "results.yd2JwZX3MrHTlX55.description": {
       "fr": "<p>Des tireurs embusqués visent quiconque sort dans la cour.</p>",
       "en": "<p>Snipers take aim at anyone who steps out into the yard.</p>"
+    }
+  },
+  "tables/hJfz6lnFw7Ynkfkr": {
+    "_nom": "Récolte — Ravine",
+    "name": {
+      "fr": "Récolte — Ravine",
+      "en": "Gathering — Ravine"
+    },
+    "description": {
+      "fr": "<p>Le lit d'une ravine, à sec ou qui coule : des galets, du sable, de l'argile, des bambous, et l'eau quand il a plu en haut. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>The bed of a ravine, dry or running: pebbles, sand, clay, bamboo, and water when it has rained up above. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.fSdf0XwtRHfTkk4B.description": {
+      "fr": "<p><strong>Galets roulés</strong> (12) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "en": "<p><strong>Rounded pebbles</strong> (12) — The round pebbles of the ravines and the eastern beaches, picked up by hand: low walls, hearths, foundations.</p>"
+    },
+    "results.M35beFHCybQHD1Q0.description": {
+      "fr": "<p><strong>Banc de sable</strong> (6) — Le sable d'une plage ou d'une ravine : pour le mortier, les filtres à eau.</p>",
+      "en": "<p><strong>Sandbank</strong> (6) — The sand of a beach or a ravine: for mortar, for water filters.</p>"
+    },
+    "results.qKGajBGdoTvKFglm.description": {
+      "fr": "<p><strong>Berge d'argile</strong> (6) — Une berge grasse au fond d'une ravine : l'argile des jarres, du torchis, des fours.</p>",
+      "en": "<p><strong>Clay bank</strong> (6) — A greasy bank at the bottom of a ravine: the clay of jars, of daub, of ovens.</p>"
+    },
+    "results.5EnSPaF5QjD0aa30.description": {
+      "fr": "<p><strong>Source, trou d'eau</strong> (6) — Une source au pied d'un rempart, un trou d'eau dans une ravine : l'eau d'un site, d'un captage, d'une citerne ; l'eau d'un trou se boit bouillie.</p>",
+      "en": "<p><strong>Spring, water hole</strong> (6) — A spring at the foot of a rampart, a water hole in a ravine: the water of a site, a catchment, a cistern; water from a hole is drunk boiled.</p>"
+    },
+    "results.wVzG0DEygBSOiTIe.description": {
+      "fr": "<p><strong>Touffe de bambous</strong> (6) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "en": "<p><strong>Clump of bamboo</strong> (6) — A clump of bamboo at the bottom of a ravine or along a stream: straight poles for a palisade, a pipe, a cage.</p>"
+    },
+    "results.Bf2HdRPSyKNaudXR.description": {
+      "fr": "<p><strong>Bancoulier</strong> (2) — Un grand arbre des Bas aux noix huileuses : on ne les mange pas crues, mais leur huile éclaire une lampe.</p>",
+      "en": "<p><strong>Candlenut tree</strong> (2) — A big lowland tree with oily nuts: they are not eaten raw, but their oil lights a lamp.</p>"
     }
   },
   "tables/hQZximv1NPeNFnT5": {
@@ -3073,6 +4592,41 @@
     "results.LAMzaYaAAJo2Bw88.description": {
       "fr": "<p><strong>Celui qui est resté seul.</strong> Ce qu'elle veut : Qu'on le laisse. Ce qu'elle cache ou risque : Il sait quelque chose que personne d'autre ne sait.</p>",
       "en": "<p><strong>The one who stayed alone.</strong> What they want: To be left alone. What they hide or risk: He knows something nobody else knows.</p>"
+    }
+  },
+  "tables/ivhpLeb2BfG7nIYV": {
+    "_nom": "Récolte — Forêt des Hauts",
+    "name": {
+      "fr": "Récolte — Forêt des Hauts",
+      "en": "Gathering — Highland forest"
+    },
+    "description": {
+      "fr": "<p>Tamarins, bois de couleur, fougères arborescentes, la mousse sur tout : la forêt humide au-dessus de mille mètres. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>Tamarinds, native hardwoods, tree ferns, moss on everything: the wet forest above a thousand metres. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.q7Lv6lXzHHYNNc2H.description": {
+      "fr": "<p><strong>Zerbaz</strong> (5) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "en": "<p><strong>Zerbaz</strong> (5) — Ayapana, lemongrass, bois de joli cœur: the healing plants. They are gathered with the “herbs” target.</p>"
+    },
+    "results.wu1dXvUf2uENJWqM.description": {
+      "fr": "<p><strong>Talus de terre</strong> (4) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "en": "<p><strong>Earth bank</strong> (4) — A bank of red earth you attack with a pickaxe: for wattle and daub, garden mounds, jars.</p>"
+    },
+    "results.HLOC2Q4K9fv2Ol72.description": {
+      "fr": "<p><strong>Touffe de bambous</strong> (3) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "en": "<p><strong>Clump of bamboo</strong> (3) — A clump of bamboo at the bottom of a ravine or along a stream: straight poles for a palisade, a pipe, a cage.</p>"
+    },
+    "results.cR12yXhib9rcH3nd.description": {
+      "fr": "<p><strong>Bloc de basalte</strong> (3) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "en": "<p><strong>Basalt block</strong> (3) — An old lava flow, a scree: the black stone of the island, split with a sledgehammer for dry-stone walls.</p>"
+    },
+    "results.jVbG4BUcM5LJ3QYY.description": {
+      "fr": "<p><strong>Berge d'argile</strong> (1) — Une berge grasse au fond d'une ravine : l'argile des jarres, du torchis, des fours.</p>",
+      "en": "<p><strong>Clay bank</strong> (1) — A greasy bank at the bottom of a ravine: the clay of jars, of daub, of ovens.</p>"
+    },
+    "results.qGScWAHLRQsq6t5T.description": {
+      "fr": "<p>Des traces : quelqu'un a coupé, creusé ou ramassé ici il y a peu. Ce qui reste a été choisi par d'autres.</p>",
+      "en": "<p>Traces: someone has cut, dug or picked here recently. What remains was chosen by others.</p>"
     }
   },
   "tables/jCRjs1WtyFPo21up": {
@@ -3545,6 +5099,171 @@
       "en": "<p><strong>Recovery — The station's weapons.</strong> Recover the contents of the armoury of an abandoned gendarmerie station in the West before the Moonless do.</p><p><strong>Reward:</strong> 5 ammunition; reputation +3.</p>"
     }
   },
+  "tables/nxNFcjBGFjhAVAZ9": {
+    "_nom": "Fouille — Gendarmerie, caserne de pompiers",
+    "name": {
+      "fr": "Fouille — Gendarmerie, caserne de pompiers",
+      "en": "Scavenging — Gendarmerie, fire station"
+    },
+    "description": {
+      "fr": "<p>La brigade, le centre de secours : du matériel pour tenir, porter, soigner, éclairer. Les armes sont parties avec ceux qui les portaient ; il reste ce qu'ils n'ont pas eu le temps de prendre. Fouiller en entier : 3 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The gendarmerie post, the emergency centre: gear to hold out, carry, treat, light. The weapons left with those who carried them; what remains is what they had no time to take. Searching it all: 3 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.RkgdumXZzYGD9NaC.description": {
+      "fr": "<p>2 à 8 pansements — 60 % (+4 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>2 to 8 dressings — 60% (+4% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.rGi6Ad57z1aeC2HV.description": {
+      "fr": "<p>1 à 3 alcool désinfectant — 40 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 disinfectant alcohol — 40% (+5% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.dlgfDSSzRkO2nhzC.description": {
+      "fr": "<p>Une trousse de secours — 20 % (+7 % par palier de risque) ; un objet</p>",
+      "en": "<p>A first-aid kit — 20% (+7% per risk level); an item</p>"
+    },
+    "results.xDpPsVomCNTJYQnY.description": {
+      "fr": "<p>Une lampe électrique — 35 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>An electric torch — 35% (+5% per risk level); an item</p>"
+    },
+    "results.joLMsnG3ns3REPbg.description": {
+      "fr": "<p>5 à 14 papier — 60 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>5 to 14 paper — 60%; 40 for 1 materials</p>"
+    },
+    "results.eF02kR1hRGw3NAJA.description": {
+      "fr": "<p>1 à 5 bidons d'essence ou de gazole — 35 % (+6 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "en": "<p>1 to 5 cans of petrol or diesel — 35% (+6% per risk level); 2 for 1 fuel</p>"
+    },
+    "results.o1zloz2ETglOSski.description": {
+      "fr": "<p>Une hache — 25 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>An axe — 25% (+5% per risk level); an item</p>"
+    },
+    "results.BD7IltOxoz92EFJg.description": {
+      "fr": "<p>1 à 5 boîtes de conserve — 35 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 5 tins of food — 35% (+4% per risk level); 2 for 1 food</p>"
+    },
+    "results.Ga11ARx8BQXrIANG.description": {
+      "fr": "<p>2 à 6 bouteilles d'eau — 45 % ; 2 pour 1 eau</p>",
+      "en": "<p>2 to 6 bottles of water — 45%; 2 for 1 water</p>"
+    },
+    "results.LpN3lUadIEumCH2T.description": {
+      "fr": "<p>Une radio à manivelle — 10 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A wind-up radio — 10% (+5% per risk level); an item</p>"
+    },
+    "results.LNjYTpWPraFNnzfc.description": {
+      "fr": "<p>2 à 10 cartouches — 8 % (+7 % par palier de risque) ; 4 pour 1 munitions</p>",
+      "en": "<p>2 to 10 cartridges — 8% (+7% per risk level); 4 for 1 ammunition</p>"
+    },
+    "results.9WA2PHEKY5c8GEbr.description": {
+      "fr": "<p>Un pistolet de service — 2 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A service pistol — 2% (+5% per risk level); an item</p>"
+    },
+    "results.FfpVf5IxWieuRUGc.description": {
+      "fr": "<p>1 un groupe électrogène — 5 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "en": "<p>1 a generator — 5% (+5% per risk level); 2 parts each</p>"
+    }
+  },
+  "tables/oA81Y5tGDjkCdhzI": {
+    "_nom": "Fouille — Remise, boucan, abri de jardin",
+    "name": {
+      "fr": "Fouille — Remise, boucan, abri de jardin",
+      "en": "Scavenging — Shed, smokehouse, garden hut"
+    },
+    "description": {
+      "fr": "<p>Le boucan au fond de la cour, la cabane à outils, le kiosque du jardin : ce qu'on ne voulait pas dans la maison, et qui sert maintenant le plus. Fouiller en entier : 1 quart-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>The smokehouse (boucan) at the back of the yard, the tool shed, the garden kiosk: what nobody wanted in the house, and what is most useful now. Searching it all: 1 person-quarter. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.zvmgt7wBk5VaW7ED.description": {
+      "fr": "<p>Une corde — 50 % ; un objet</p>",
+      "en": "<p>A rope — 50%; an item</p>"
+    },
+    "results.07LsCeVh1WiLAAcR.description": {
+      "fr": "<p>2 à 6 sachets de graines — 40 % ; 2 pour 1 graines</p>",
+      "en": "<p>2 to 6 seed packets — 40%; 2 for 1 seeds</p>"
+    },
+    "results.MCdyaNBx7hx049vD.description": {
+      "fr": "<p>1 à 2 rouleaux de grillage — 30 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 rolls of wire mesh — 30%; 3 for 1 materials</p>"
+    },
+    "results.hBtnHSbTNxt1tw9d.description": {
+      "fr": "<p>2 à 5 fil de fer — 50 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 5 wire — 50%; 8 for 1 materials</p>"
+    },
+    "results.mOXAl27AUNyUMjyD.description": {
+      "fr": "<p>10 à 40 clous — 50 % ; 200 pour 1 matériaux</p>",
+      "en": "<p>10 to 40 nails — 50%; 200 for 1 materials</p>"
+    },
+    "results.86udH6ynHMbJfKQQ.description": {
+      "fr": "<p>Un sabre à canne — 35 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A cane cutlass — 35% (+5% per risk level); an item</p>"
+    },
+    "results.OlzMIltksTR6c0Gz.description": {
+      "fr": "<p>Une pelle et une pioche — 30 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A shovel and a pickaxe — 30% (+5% per risk level); an item</p>"
+    },
+    "results.c43mKw154p4uIHv5.description": {
+      "fr": "<p>1 seaux — 40 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 buckets — 40%; 4 for 1 materials</p>"
+    },
+    "results.SCbMEBwUXFRDEJEM.description": {
+      "fr": "<p>1 à 3 tuyaux — 30 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 3 pipes — 30%; 4 for 1 parts</p>"
+    },
+    "results.Nk6YXnrUftNu5qLs.description": {
+      "fr": "<p>1 un cadre de vélo — 12 % (+3 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 a bicycle frame — 12% (+3% per risk level); 2 for 1 parts</p>"
+    },
+    "results.GOl5TBjEfW6mIiD6.description": {
+      "fr": "<p>1 un petit moteur — 5 % (+4 % par palier de risque) ; 3 pièces chacun</p>",
+      "en": "<p>1 a small engine — 5% (+4% per risk level); 3 parts each</p>"
+    },
+    "results.0ej9vbXpEHZbbJpZ.description": {
+      "fr": "<p>1 à 3 bidons d'essence ou de gazole — 15 % (+5 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "en": "<p>1 to 3 cans of petrol or diesel — 15% (+5% per risk level); 2 for 1 fuel</p>"
+    },
+    "results.13f73aProjj6uLYH.description": {
+      "fr": "<p>1 à 2 roues — 15 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 2 wheels — 15%; 4 for 1 parts</p>"
+    },
+    "results.uqlydEUCdt9yAE4c.description": {
+      "fr": "<p>Un fusil de chasse — 3 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A hunting shotgun — 3% (+4% per risk level); an item</p>"
+    },
+    "results.9epNIVtPe3qHCfTT.description": {
+      "fr": "<p>Un sac de goni — 20 % ; un objet</p>",
+      "en": "<p>A gunny sack — 20%; an item</p>"
+    },
+    "results.CQECDNR9XkPwgQJG.description": {
+      "fr": "<p>Une cage à volailles — 8 % ; un objet</p>",
+      "en": "<p>A poultry cage — 8%; an item</p>"
+    }
+  },
+  "tables/oQ42M7xa5syXHU9r": {
+    "_nom": "Récolte — Forêt des Bas",
+    "name": {
+      "fr": "Récolte — Forêt des Bas",
+      "en": "Gathering — Lowland forest"
+    },
+    "description": {
+      "fr": "<p>Les ravines boisées de l'Est et du Sud, chaudes et mouillées : bambous, bancouliers, lianes. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+      "en": "<p>The wooded ravines of the East and the South, hot and wet: bamboo, candlenut trees, creepers. What is found there, from the most common to the rarest (gathering in the API: recolter, target “matieres”).</p>"
+    },
+    "results.eBpq4uKTGmsjqVtV.description": {
+      "fr": "<p><strong>Touffe de bambous</strong> (7) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "en": "<p><strong>Clump of bamboo</strong> (7) — A clump of bamboo at the bottom of a ravine or along a stream: straight poles for a palisade, a pipe, a cage.</p>"
+    },
+    "results.TxRa92zkU2HCJ3aD.description": {
+      "fr": "<p><strong>Bancoulier</strong> (4) — Un grand arbre des Bas aux noix huileuses : on ne les mange pas crues, mais leur huile éclaire une lampe.</p>",
+      "en": "<p><strong>Candlenut tree</strong> (4) — A big lowland tree with oily nuts: they are not eaten raw, but their oil lights a lamp.</p>"
+    },
+    "results.KGPeECdVYK5V5cud.description": {
+      "fr": "<p><strong>Berge d'argile</strong> (2) — Une berge grasse au fond d'une ravine : l'argile des jarres, du torchis, des fours.</p>",
+      "en": "<p><strong>Clay bank</strong> (2) — A greasy bank at the bottom of a ravine: the clay of jars, of daub, of ovens.</p>"
+    },
+    "results.HNV36neoS13ZBEJK.description": {
+      "fr": "<p><strong>Bloc de basalte</strong> (2) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "en": "<p><strong>Basalt block</strong> (2) — An old lava flow, a scree: the black stone of the island, split with a sledgehammer for dry-stone walls.</p>"
+    }
+  },
   "tables/p9dYbgCOS0z1rhVT": {
     "_nom": "Histoire — le proche du jour zéro",
     "name": {
@@ -3602,6 +5321,109 @@
     "results.QMSq4bK1SN713jUe.description": {
       "fr": "<p>Il ne cherche personne : il n'avait plus personne, et c'est peut-être pour ça qu'il tient.</p>",
       "en": "<p>He is looking for nobody: he had nobody left, and perhaps that is why he holds on.</p>"
+    }
+  },
+  "tables/pd0g5hnvU1lmazW3": {
+    "_nom": "Fouille — Immeuble",
+    "name": {
+      "fr": "Fouille — Immeuble",
+      "en": "Scavenging — Block of flats"
+    },
+    "description": {
+      "fr": "<p>Une cage d'escalier, des paliers, des portes enfoncées ou barricadées. Beaucoup d'appartements, peu de chaque chose dans chacun, et des voisins qui n'ont pas tous quitté les lieux. Fouiller en entier : 3 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>A stairwell, landings, doors kicked in or barricaded. Many flats, little of anything in each, and neighbours who have not all left. Searching it all: 3 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.d0gpTpP0pRAdIojN.description": {
+      "fr": "<p>3 à 8 linge et tissu — 80 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>3 to 8 linen and cloth — 80%; 8 for 1 materials</p>"
+    },
+    "results.5mzUjyx33awLb7xG.description": {
+      "fr": "<p>2 à 6 bocaux — 70 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 jars — 70%; 8 for 1 materials</p>"
+    },
+    "results.v4khc5cw3KIHuEyJ.description": {
+      "fr": "<p>2 à 6 boîtes de conserve — 55 % (+5 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>2 to 6 tins of food — 55% (+5% per risk level); 2 for 1 food</p>"
+    },
+    "results.eAHPvZm9hDn8BgTU.description": {
+      "fr": "<p>1 à 4 vivres secs (riz, grains, sucre) — 45 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 4 dry food (rice, grain, sugar) — 45%; 2 for 1 food</p>"
+    },
+    "results.mIv1horhAAdgcl54.description": {
+      "fr": "<p>6 à 16 papier — 60 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>6 to 16 paper — 60%; 40 for 1 materials</p>"
+    },
+    "results.4SUAG7D7iAqMtiCV.description": {
+      "fr": "<p>2 à 6 câbles — 60 % ; 4 pour 1 pièces</p>",
+      "en": "<p>2 to 6 cables — 60%; 4 for 1 parts</p>"
+    },
+    "results.jR0YnMvIVI47GiPo.description": {
+      "fr": "<p>1 à 4 composants électroniques — 45 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 4 electronic components — 45% (+5% per risk level); 2 for 1 parts</p>"
+    },
+    "results.UhF0nmd2wZAdriIT.description": {
+      "fr": "<p>1 à 4 tuyaux — 40 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 4 pipes — 40%; 4 for 1 parts</p>"
+    },
+    "results.tbvUynWGy0lCAG94.description": {
+      "fr": "<p>1 à 3 vitres — 35 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 window panes — 35%; 6 for 1 materials</p>"
+    },
+    "results.IBlzfaCxuf6yLvZ1.description": {
+      "fr": "<p>Un couteau — 45 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A knife — 45% (+5% per risk level); an item</p>"
+    },
+    "results.DvyMSm9SitfsGo2B.description": {
+      "fr": "<p>2 à 5 savon — 50 % ; 8 pour 1 médicaments</p>",
+      "en": "<p>2 to 5 soap — 50%; 8 for 1 medicine</p>"
+    },
+    "results.IsWeYsDxzjgXk8MH.description": {
+      "fr": "<p>2 à 6 pansements — 40 % (+5 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>2 to 6 dressings — 40% (+5% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.pjTLkMKpWwPYrxRG.description": {
+      "fr": "<p>1 à 2 alcool désinfectant — 25 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>1 to 2 disinfectant alcohol — 25% (+5% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.Fe3bLJxpGZnFDTcE.description": {
+      "fr": "<p>1 à 3 eau de Javel — 40 % ; 6 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 bleach — 40%; 6 for 1 medicine</p>"
+    },
+    "results.XUTe9pT0NFEa6VCx.description": {
+      "fr": "<p>2 à 6 bouteilles d'eau — 35 % ; 2 pour 1 eau</p>",
+      "en": "<p>2 to 6 bottles of water — 35%; 2 for 1 water</p>"
+    },
+    "results.qXj0Z3BkV3aszehL.description": {
+      "fr": "<p>1 à 2 couvertures — 30 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 blankets — 30%; 4 for 1 materials</p>"
+    },
+    "results.VlsVMZnXwxauLBIs.description": {
+      "fr": "<p>1 à 4 bougies — 35 % ; 12 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 candles — 35%; 12 for 1 materials</p>"
+    },
+    "results.q6FygTgmEeNXABMV.description": {
+      "fr": "<p>Une lampe électrique — 15 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>An electric torch — 15% (+4% per risk level); an item</p>"
+    },
+    "results.ump1kHAwbvAsgz9q.description": {
+      "fr": "<p>1 à 2 bouteilles de gaz — 25 % (+3 % par palier de risque) ; 10 gaz chacun</p>",
+      "en": "<p>1 to 2 gas bottles — 25% (+3% per risk level); 10 gas each</p>"
+    },
+    "results.H9pgY4umHuHhdyVs.description": {
+      "fr": "<p>1 un cadre de vélo — 15 % (+3 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 a bicycle frame — 15% (+3% per risk level); 2 for 1 parts</p>"
+    },
+    "results.UrWD3ntibM35roec.description": {
+      "fr": "<p>1 un moteur électrique — 6 % (+4 % par palier de risque) ; 2 pièces chacun</p>",
+      "en": "<p>1 an electric motor — 6% (+4% per risk level); 2 parts each</p>"
+    },
+    "results.7HhiYqXX3ic9ffM7.description": {
+      "fr": "<p>Une radio à manivelle — 3 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A wind-up radio — 3% (+3% per risk level); an item</p>"
+    },
+    "results.wSBC5DxE2Rb18Jgq.description": {
+      "fr": "<p>3 à 10 cartouches — 4 % (+5 % par palier de risque) ; 4 pour 1 munitions</p>",
+      "en": "<p>3 to 10 cartridges — 4% (+5% per risk level); 4 for 1 ammunition</p>"
     }
   },
   "tables/rOxhpncbrAU5vGls": {
@@ -3773,6 +5595,169 @@
     "results.Lw64mFrghq97N6wr.description": {
       "fr": "<p>Latchimy Vélaye</p>",
       "en": "<p>Latchimy Vélaye</p>"
+    }
+  },
+  "tables/siMzSJIdFkOAefnR": {
+    "_nom": "Fouille — Décombres",
+    "name": {
+      "fr": "Fouille — Décombres",
+      "en": "Scavenging — Rubble"
+    },
+    "description": {
+      "fr": "<p>Une case effondrée par le dernier cyclone, un tas de gravats au bord d'un terrain vague, un chantier arrêté au jour un : on y fouille à la main, entre les planches et la ferraille. Fouiller en entier : 1 quart-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>A house knocked down by the last cyclone, a heap of rubble by a vacant lot, a building site stopped on day one: you dig by hand, among planks and scrap. Searching it all: 1 person-quarter. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.gFNuWx1DGs2lT6NP.description": {
+      "fr": "<p>1 à 3 planches — 60 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 planks — 60%; 8 for 1 materials</p>"
+    },
+    "results.xQPLJkGXudU3STsK.description": {
+      "fr": "<p>4 à 12 clous — 70 % ; 200 pour 1 matériaux</p>",
+      "en": "<p>4 to 12 nails — 70%; 200 for 1 materials</p>"
+    },
+    "results.b1P1xPFuuDNi23c2.description": {
+      "fr": "<p>1 à 2 tôles — 35 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 corrugated iron sheets — 35%; 4 for 1 materials</p>"
+    },
+    "results.kwRVvPPHWe5mVt59.description": {
+      "fr": "<p>1 à 4 ferraille — 60 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 4 scrap iron — 60%; 8 for 1 materials</p>"
+    },
+    "results.6Uz7uX0VdYPkygc3.description": {
+      "fr": "<p>1 à 3 fil de fer — 50 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 wire — 50%; 8 for 1 materials</p>"
+    },
+    "results.NcVfxDCYPdGD0K8U.description": {
+      "fr": "<p>1 à 4 visserie — 45 % ; 8 pour 1 pièces</p>",
+      "en": "<p>1 to 4 screws and bolts — 45%; 8 for 1 parts</p>"
+    },
+    "results.G2UsDYkbYnx6smKM.description": {
+      "fr": "<p>1 à 3 linge et tissu — 45 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 linen and cloth — 45%; 8 for 1 materials</p>"
+    },
+    "results.K0AjvBDDnw0VJ4Dg.description": {
+      "fr": "<p>1 à 2 bocaux — 35 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 jars — 35%; 8 for 1 materials</p>"
+    },
+    "results.wes5eYpzGlH2hAsi.description": {
+      "fr": "<p>1 à 3 parpaings — 30 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 3 breeze blocks — 30%; 8 for 1 materials</p>"
+    },
+    "results.judtml8mmfG1MR6t.description": {
+      "fr": "<p>1 à 2 moellons — 30 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 rubble stones — 30%; 8 for 1 materials</p>"
+    },
+    "results.Q8p9XM61KzwNLhbB.description": {
+      "fr": "<p>1 à 2 chambres à air — 20 % ; 8 pour 1 pièces</p>",
+      "en": "<p>1 to 2 inner tubes — 20%; 8 for 1 parts</p>"
+    },
+    "results.YzaZHbucSPzR8KTW.description": {
+      "fr": "<p>1 à 2 câbles — 25 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 2 cables — 25%; 4 for 1 parts</p>"
+    },
+    "results.p8CFSwbIL2Ja8Ima.description": {
+      "fr": "<p>1 à 2 tuyaux — 25 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 2 pipes — 25%; 4 for 1 parts</p>"
+    },
+    "results.SXHlMGepw7lAyzXB.description": {
+      "fr": "<p>2 à 6 papier — 20 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 paper — 20%; 40 for 1 materials</p>"
+    },
+    "results.2csDPwBTlm0cyWzr.description": {
+      "fr": "<p>1 à 2 vivres secs (riz, grains, sucre) — 20 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 2 dry food (rice, grain, sugar) — 20%; 2 for 1 food</p>"
+    },
+    "results.e5yOIgUAbgyZZ7uL.description": {
+      "fr": "<p>1 bâches — 12 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 tarpaulins — 12%; 4 for 1 materials</p>"
+    },
+    "results.nuBKbWtgO4rNgWpl.description": {
+      "fr": "<p>1 sacs de ciment — 8 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 bags of cement — 8%; 4 for 1 materials</p>"
+    },
+    "results.mN1jSWXC3cktI0a2.description": {
+      "fr": "<p>1 vitres — 8 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 window panes — 8%; 6 for 1 materials</p>"
+    },
+    "results.ocssNCZVLmX1fgFa.description": {
+      "fr": "<p>1 rouleaux de grillage — 8 % ; 3 pour 1 matériaux</p>",
+      "en": "<p>1 rolls of wire mesh — 8%; 3 for 1 materials</p>"
+    },
+    "results.qaGrhSSSe0936elR.description": {
+      "fr": "<p>1 seaux — 8 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 buckets — 8%; 4 for 1 materials</p>"
+    },
+    "results.3r4Hk9jr0HGCMfRC.description": {
+      "fr": "<p>1 roues — 6 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 wheels — 6%; 4 for 1 parts</p>"
+    },
+    "results.XrkdM66ICMFRSEKS.description": {
+      "fr": "<p>1 eau de Javel — 6 % ; 6 pour 1 médicaments</p>",
+      "en": "<p>1 bleach — 6%; 6 for 1 medicine</p>"
+    },
+    "results.JY1227MNJTridHff.description": {
+      "fr": "<p>1 boîtes de conserve — 12 % (+3 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 tins of food — 12% (+3% per risk level); 2 for 1 food</p>"
+    },
+    "results.Thme6tPxBurtQZr3.description": {
+      "fr": "<p>1 à 2 composants électroniques — 12 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 2 electronic components — 12% (+5% per risk level); 2 for 1 parts</p>"
+    },
+    "results.JCvJ92fICgGJgr4p.description": {
+      "fr": "<p>Un couteau — 8 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A knife — 8% (+3% per risk level); an item</p>"
+    },
+    "results.f6MqnNcnngh1kHOC.description": {
+      "fr": "<p>Un marteau — 8 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A hammer — 8% (+3% per risk level); an item</p>"
+    },
+    "results.AmVlHjmpCBxBbvIH.description": {
+      "fr": "<p>Une scie — 5 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A saw — 5% (+3% per risk level); an item</p>"
+    },
+    "results.2msy0qEUgfNyujqN.description": {
+      "fr": "<p>Une pelle et une pioche — 5 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A shovel and a pickaxe — 5% (+3% per risk level); an item</p>"
+    },
+    "results.w1AxzPFZkGLzvsDj.description": {
+      "fr": "<p>Un pied-de-biche — 5 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A crowbar — 5% (+3% per risk level); an item</p>"
+    },
+    "results.FDuJt1BxDSAMSb16.description": {
+      "fr": "<p>Un sabre à canne — 5 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A cane cutlass — 5% (+3% per risk level); an item</p>"
+    },
+    "results.5771HVxB7GlwGJGw.description": {
+      "fr": "<p>Une pince — 5 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A pair of pliers — 5% (+3% per risk level); an item</p>"
+    },
+    "results.5k1BN3HNqEHGcT0O.description": {
+      "fr": "<p>Une truelle — 4 % (+2 % par palier de risque) ; un objet</p>",
+      "en": "<p>A trowel — 4% (+2% per risk level); an item</p>"
+    },
+    "results.lbg7xzHwSV4G7jCD.description": {
+      "fr": "<p>1 lames de ressort — 5 % (+3 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 leaf springs — 5% (+3% per risk level); 2 for 1 parts</p>"
+    },
+    "results.kKOcmuhtm5r6KeWF.description": {
+      "fr": "<p>1 à 2 bidons d'essence ou de gazole — 4 % (+3 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "en": "<p>1 to 2 cans of petrol or diesel — 4% (+3% per risk level); 2 for 1 fuel</p>"
+    },
+    "results.Wv9FWQGtDlTSxjOZ.description": {
+      "fr": "<p>1 à 3 douilles à recharger — 3 % (+3 % par palier de risque) ; 10 pour 1 munitions</p>",
+      "en": "<p>1 to 3 cases to reload — 3% (+3% per risk level); 10 for 1 ammunition</p>"
+    },
+    "results.TUHcRxgHdMlW3amu.description": {
+      "fr": "<p>1 cellules solaires — 2 % (+3 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 solar cells — 2% (+3% per risk level); 2 for 1 parts</p>"
+    },
+    "results.BI3gOfXYolI4Cmvn.description": {
+      "fr": "<p>1 une batterie de voiture — 3 % (+2 % par palier de risque) ; 1 pour 1 pièces</p>",
+      "en": "<p>1 a car battery — 3% (+2% per risk level); 1 for 1 parts</p>"
+    },
+    "results.ubAfxsrslUEY3Jhb.description": {
+      "fr": "<p>1 un cadre de vélo — 3 % (+2 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 a bicycle frame — 3% (+2% per risk level); 2 for 1 parts</p>"
     }
   },
   "tables/tg3ure3UoIRF6Ig9": {
@@ -3984,6 +5969,41 @@
     "results.v5prC2DmtNqxFl7j.description": {
       "fr": "<p>Le silence complet, d'un coup : une horde passe tout près (rencontre de nuit, au MJ).</p>",
       "en": "<p>Total silence, all of a sudden: a horde is passing very close (night encounter, up to the GM).</p>"
+    }
+  },
+  "tables/uDs8O1bfuJMl0Gi3": {
+    "_nom": "Fouille — ce qu'on lit en arrivant",
+    "name": {
+      "fr": "Fouille — ce qu'on lit en arrivant",
+      "en": "Scavenging — what you read on arrival"
+    },
+    "description": {
+      "fr": "<p>Ce que le groupe voit devant un lieu, selon son degré de pillage (logique/fouilles.mjs, motDuPillage). L'API le dit (lieux, fouiller) ; tirez si vous menez sans elle.</p>",
+      "en": "<p>What the group sees in front of a place, depending on how looted it is (logique/fouilles.mjs, motDuPillage). The API says it (lieux, fouiller); roll if you run without it.</p>"
+    },
+    "results.BtGl6ApmG7Gp2qIS.description": {
+      "fr": "<p><strong>Personne n'y est passé.</strong> La porte est fermée, la poussière sur le rebord est intacte, les volets tirés. Tout est là.</p>",
+      "en": "<p><strong>Nobody has been here.</strong> The door is shut, the dust on the sill untouched, the shutters closed. Everything is there.</p>"
+    },
+    "results.vpkGRm8WOb8rvNKD.description": {
+      "fr": "<p><strong>On y est à peine passé.</strong> Une vitre cassée, un tiroir ouvert, des pas dans la poussière : quelqu'un est venu vite et n'a pris que ce qui se voyait.</p>",
+      "en": "<p><strong>Someone barely passed through.</strong> A broken pane, an open drawer, footprints in the dust: someone came quickly and only took what could be seen.</p>"
+    },
+    "results.DFy9WlAcREIPt0Ut.description": {
+      "fr": "<p><strong>On y est déjà passé.</strong> Les placards sont ouverts, la cuisine retournée, il manque les conserves et les outils. Le reste traîne par terre.</p>",
+      "en": "<p><strong>Someone has already been through.</strong> The cupboards are open, the kitchen turned over, the tins and the tools are gone. The rest lies on the floor.</p>"
+    },
+    "results.91fraNWRp6nGMJFi.description": {
+      "fr": "<p><strong>Tout a été retourné.</strong> Matelas éventrés, tiroirs vidés au sol, faux plafond arraché : des gens ont cherché longtemps. Il reste ce qui ne se mange pas et ne sert pas d'arme.</p>",
+      "en": "<p><strong>Everything has been turned over.</strong> Mattresses slashed, drawers emptied on the floor, false ceiling torn down: people searched for a long time. What is left is what cannot be eaten and is no use as a weapon.</p>"
+    },
+    "results.BpTIsUTSJ6JiCcnh.description": {
+      "fr": "<p><strong>Il ne reste presque rien.</strong> Même les fils électriques ont été arrachés des murs. Mais il y a toujours quelque chose : un rouleau de bâche sous l'escalier, une boîte de clous derrière une plinthe.</p>",
+      "en": "<p><strong>Almost nothing is left.</strong> Even the electric wires have been ripped from the walls. But there is always something: a roll of tarpaulin under the stairs, a box of nails behind a skirting board.</p>"
+    },
+    "results.X8RZtYSk7wDBViC8.description": {
+      "fr": "<p><strong>Des traces fraîches.</strong> Une porte qu'on a forcée cette semaine, des braises dans l'évier, des emballages neufs : quelqu'un fouille le quartier en ce moment. Le lieu se lit un cran plus pillé que la dernière fois.</p>",
+      "en": "<p><strong>Fresh traces.</strong> A door forced this week, embers in the sink, new wrappers: someone is going through the neighbourhood right now. The place reads one step more looted than last time.</p>"
     }
   },
   "tables/uTjmfpIZFy4ALx1G": {
@@ -4459,6 +6479,153 @@
     "results.UnROBgoedZsn9tuh.description": {
       "fr": "<p>Un sac de sport du club de foot de Saint-André, accroché à une branche au-dessus d'une ravine en crue. [La crue l'a apporté d'en haut, rien de plus.]</p>",
       "en": "<p>A sports bag from the Saint-André football club, caught on a branch above a ravine in flood. [The flood brought it down from above, nothing more.]</p>"
+    }
+  },
+  "tables/yr9VY3jjaEdPh7SQ": {
+    "_nom": "Fouille — Maison en dur",
+    "name": {
+      "fr": "Fouille — Maison en dur",
+      "en": "Scavenging — Concrete house"
+    },
+    "description": {
+      "fr": "<p>Parpaings, carrelage, tôle sur charpente : la maison d'une famille qui avait un salaire. Plus de câbles et d'électroménager que de vivres, et un garage où l'on rangeait tout. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+      "en": "<p>Breeze blocks, tiles, iron roof on a frame: the house of a family that had a salary. More cables and appliances than food, and a garage where everything was stored. Searching it all: 2 person-quarters. Without the API, roll one line per person-quarter, and halve what is taken first (food, care, tools, weapons) if the place has already been visited.</p>"
+    },
+    "results.4QiZ7D1SLPGnRKsU.description": {
+      "fr": "<p>2 à 6 linge et tissu — 80 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 6 linen and cloth — 80%; 8 for 1 materials</p>"
+    },
+    "results.cisLDd9k39MDNOmT.description": {
+      "fr": "<p>2 à 5 bocaux — 70 % ; 8 pour 1 matériaux</p>",
+      "en": "<p>2 to 5 jars — 70%; 8 for 1 materials</p>"
+    },
+    "results.TP180VqA3OwQDRki.description": {
+      "fr": "<p>1 à 4 boîtes de conserve — 50 % (+5 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 4 tins of food — 50% (+5% per risk level); 2 for 1 food</p>"
+    },
+    "results.7IlVJ74P3YAoqVfg.description": {
+      "fr": "<p>1 à 3 vivres secs (riz, grains, sucre) — 40 % ; 2 pour 1 nourriture</p>",
+      "en": "<p>1 to 3 dry food (rice, grain, sugar) — 40%; 2 for 1 food</p>"
+    },
+    "results.P61FcSymAyzGJ8fA.description": {
+      "fr": "<p>4 à 12 papier — 60 % ; 40 pour 1 matériaux</p>",
+      "en": "<p>4 to 12 paper — 60%; 40 for 1 materials</p>"
+    },
+    "results.m9E6s5FS5gETHIvE.description": {
+      "fr": "<p>1 à 4 câbles — 60 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 4 cables — 60%; 4 for 1 parts</p>"
+    },
+    "results.EEoCrCD46jPrHhES.description": {
+      "fr": "<p>1 à 3 composants électroniques — 40 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 3 electronic components — 40% (+5% per risk level); 2 for 1 parts</p>"
+    },
+    "results.bVM9L2JXNUaoQpxB.description": {
+      "fr": "<p>2 à 8 visserie — 50 % ; 8 pour 1 pièces</p>",
+      "en": "<p>2 to 8 screws and bolts — 50%; 8 for 1 parts</p>"
+    },
+    "results.zlgMpSF3lcB6NSU9.description": {
+      "fr": "<p>1 à 3 tuyaux — 40 % ; 4 pour 1 pièces</p>",
+      "en": "<p>1 to 3 pipes — 40%; 4 for 1 parts</p>"
+    },
+    "results.P1widgtfgO3074HD.description": {
+      "fr": "<p>1 à 2 vitres — 30 % ; 6 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 window panes — 30%; 6 for 1 materials</p>"
+    },
+    "results.rUA9hXkVhJ2fAeSU.description": {
+      "fr": "<p>Un couteau — 40 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A knife — 40% (+5% per risk level); an item</p>"
+    },
+    "results.iXJxc5WUGvuerJrQ.description": {
+      "fr": "<p>Un marteau — 35 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A hammer — 35% (+5% per risk level); an item</p>"
+    },
+    "results.FeCAAC9LG4kbZYCc.description": {
+      "fr": "<p>Une scie — 25 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A saw — 25% (+5% per risk level); an item</p>"
+    },
+    "results.CuBteLXaloDuS2FC.description": {
+      "fr": "<p>Une pince — 30 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A pair of pliers — 30% (+5% per risk level); an item</p>"
+    },
+    "results.1MGUKEEFMcbjQ3Dv.description": {
+      "fr": "<p>Une truelle — 20 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A trowel — 20% (+3% per risk level); an item</p>"
+    },
+    "results.zY0Dwt6utZrNtF0v.description": {
+      "fr": "<p>Un pied-de-biche — 15 % (+5 % par palier de risque) ; un objet</p>",
+      "en": "<p>A crowbar — 15% (+5% per risk level); an item</p>"
+    },
+    "results.k9nSOpvK3DVSeoqy.description": {
+      "fr": "<p>1 à 3 savon — 40 % ; 8 pour 1 médicaments</p>",
+      "en": "<p>1 to 3 soap — 40%; 8 for 1 medicine</p>"
+    },
+    "results.7GEkUKswRDMCdmTt.description": {
+      "fr": "<p>1 à 4 pansements — 30 % (+5 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "en": "<p>1 to 4 dressings — 30% (+5% per risk level); 4 for 1 medicine</p>"
+    },
+    "results.Er0cDFFYJRueIxmP.description": {
+      "fr": "<p>1 à 2 alcool désinfectant — 20 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "en": "<p>1 to 2 disinfectant alcohol — 20% (+5% per risk level); 2 for 1 medicine</p>"
+    },
+    "results.eAA6JhkhXNEBnLPD.description": {
+      "fr": "<p>1 à 2 eau de Javel — 35 % ; 6 pour 1 médicaments</p>",
+      "en": "<p>1 to 2 bleach — 35%; 6 for 1 medicine</p>"
+    },
+    "results.vd1UZJxkbuFOM1C0.description": {
+      "fr": "<p>1 à 4 bouteilles d'eau — 30 % ; 2 pour 1 eau</p>",
+      "en": "<p>1 to 4 bottles of water — 30%; 2 for 1 water</p>"
+    },
+    "results.jT30RiN7sQ5cZX0S.description": {
+      "fr": "<p>1 à 2 bâches — 30 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 tarpaulins — 30%; 4 for 1 materials</p>"
+    },
+    "results.12SMzFZaxcZvg5jw.description": {
+      "fr": "<p>1 à 2 sacs de ciment — 15 % ; 4 pour 1 matériaux</p>",
+      "en": "<p>1 to 2 bags of cement — 15%; 4 for 1 materials</p>"
+    },
+    "results.HhSM7Vw4lkBQH98J.description": {
+      "fr": "<p>1 bouteilles de gaz — 20 % (+3 % par palier de risque) ; 10 gaz chacun</p>",
+      "en": "<p>1 gas bottles — 20% (+3% per risk level); 10 gas each</p>"
+    },
+    "results.SMuB8SqoS81DKJSX.description": {
+      "fr": "<p>1 à 2 cellules solaires — 5 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "en": "<p>1 to 2 solar cells — 5% (+5% per risk level); 2 for 1 parts</p>"
+    },
+    "results.PGlmpLs0M3hroOhu.description": {
+      "fr": "<p>1 un panneau solaire — 4 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "en": "<p>1 a solar panel — 4% (+5% per risk level); 2 parts each</p>"
+    },
+    "results.u7xNa4eowFaj0D9Y.description": {
+      "fr": "<p>1 un groupe électrogène — 3 % (+4 % par palier de risque) ; 2 pièces chacun</p>",
+      "en": "<p>1 a generator — 3% (+4% per risk level); 2 parts each</p>"
+    },
+    "results.afU5tS0LANQpJDZY.description": {
+      "fr": "<p>Une tronçonneuse — 3 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A chainsaw — 3% (+4% per risk level); an item</p>"
+    },
+    "results.bUJINIzJ6wvbIoHe.description": {
+      "fr": "<p>1 un moteur électrique — 4 % (+4 % par palier de risque) ; 2 pièces chacun</p>",
+      "en": "<p>1 an electric motor — 4% (+4% per risk level); 2 parts each</p>"
+    },
+    "results.L4CNE0tF2eqVnpGe.description": {
+      "fr": "<p>Une carabine .22 — 2 % (+4 % par palier de risque) ; un objet</p>",
+      "en": "<p>A .22 rifle — 2% (+4% per risk level); an item</p>"
+    },
+    "results.u5mmZenltZ7CqaJW.description": {
+      "fr": "<p>Un pistolet de service — 1 % (+3 % par palier de risque) ; un objet</p>",
+      "en": "<p>A service pistol — 1% (+3% per risk level); an item</p>"
+    },
+    "results.G8ri1FVU8jvEkeej.description": {
+      "fr": "<p>3 à 10 cartouches — 5 % (+5 % par palier de risque) ; 4 pour 1 munitions</p>",
+      "en": "<p>3 to 10 cartridges — 5% (+5% per risk level); 4 for 1 ammunition</p>"
+    },
+    "results.mHM5uv4gfujoviOu.description": {
+      "fr": "<p>2 à 6 douilles à recharger — 5 % (+4 % par palier de risque) ; 10 pour 1 munitions</p>",
+      "en": "<p>2 to 6 cases to reload — 5% (+4% per risk level); 10 for 1 ammunition</p>"
+    },
+    "results.ArEx1ifdrLlVPZE8.description": {
+      "fr": "<p>Un sac de goni — 8 % ; un objet</p>",
+      "en": "<p>A gunny sack — 8%; an item</p>"
     }
   },
   "tables/z0FnNGXSDjkLE1Dy": {

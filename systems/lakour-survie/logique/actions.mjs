@@ -65,6 +65,7 @@ import { normaliserStocks, ajouterStocks, plafonner } from "./ressources.mjs";
 import { abandonnerAbri, reprendreAbri } from "./monde.mjs";
 import { phaseDuJour, momentDe } from "./temps.mjs";
 import { chercherPlan, planDuRegistre } from "./plans.mjs";
+import { CIBLES_FOUILLES, fouillerLieu, demonterLieu, recolterGisement, genreFouille, gisementDe, beteTrouvee } from "./fouilles.mjs";
 import { message, avecPreposition } from "./textes.mjs";
 import { facteurRencontreNuit, facteurDangerNuit, facteurButinNuit } from "./lune.mjs";
 
@@ -181,7 +182,11 @@ export function explorer(monde, contenu, hasard, { region, jour = monde?.jour ??
 // connus (cible « plans ») : les clés du carnet que le groupe connaît déjà (un plan connu se trouve moins souvent : on en trouve une copie).
 export const fouilleDesAlentours = cible => NATURE.includes(cible) || cible === "plantes";
 export function fouiller(monde, contenu, hasard, { region, site = null, cible = null, membres = 1, quarts = 1, prudence = "normal", jour = monde?.jour ?? 0,
-  moment = "apres-midi", abri = null, renseignements = {}, savoirs = [], clarte = null, facteurRencontre = 1, connus = [] } = {}) {
+  moment = "apres-midi", abri = null, renseignements = {}, savoirs = [], clarte = null, facteurRencontre = 1, connus = [],
+  genre = "", ecart = null, lieu = "", gisement = "", equipements = [], dateDepart = monde?.dateDepart } = {}) {
+  // Lot 5 « fouille » (fouilles.mjs, contrat §25) : un lieu d'un genre, le démontage d'un lieu, la récolte d'un gisement.
+  if (CIBLES_FOUILLES.includes(cible)) return fouillerUnLieu(monde, contenu, hasard, { region, site, cible, membres, quarts, prudence, jour, moment, abri, renseignements,
+    clarte, facteurRencontre, genre, ecart, lieu, gisement, equipements, dateDepart });
   const F = REGLES_ACTIONS.fouille;
   const P = REGLES_ACTIONS.plantes;
   const p = F.fraction[prudence] ? prudence : "normal";
@@ -267,21 +272,7 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
     // Glanage de passage : en fouillant, on ramasse aussi ce que la nature offre (fruits, un poisson, un tangue), pris dans la
     // nature des alentours de l'abri (si c'est sa région) ou de la région. Ce qu'on glane ne revient qu'à la régénération de la
     // nature : une région où l'on n'a pas glané depuis longtemps est pleine, celle qu'on vient de vider ne rend presque plus rien.
-    const G = REGLES_ACTIONS.glanage;
-    const parJour = natureRegion(regionDe(contenu, region));
-    const demande = Math.ceil(G.parMembre * n * G.prudence[p] * G.nature.reduce((s, k) => s + parJour[k].parJour, 0));
-    const surAbri = nouvelAbri && nouvelAbri.region === region && nouvelAbri.nature;
-    let source = surAbri ? nouvelAbri.nature : nouveauMonde.regions[region].nature ?? {};
-    let reste = demande;
-    for (const k of [...G.nature].sort((a, b) => (Number(source[b]) || 0) - (Number(source[a]) || 0) || G.nature.indexOf(a) - G.nature.indexOf(b))) {
-      if (reste <= 0) break;
-      const e = exploiterNature(source, k, reste);
-      source = e.nature;
-      reste -= e.pris;
-      glane += e.pris;
-    }
-    if (surAbri) nouvelAbri.nature = source;
-    else nouveauMonde.regions[region].nature = source;
+    glane = glaner(nouveauMonde, nouvelAbri, contenu, region, n, p);
     if (glane) butin.nourriture = (butin.nourriture ?? 0) + glane;
   }
   // facteur (lot « sens ») : une rue nettoyée se repeuple peu à peu (sens.mjs, facteurNettoyage).
@@ -302,6 +293,86 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
     ...(plan ? [{ jour, region, cle: "plan-trouve", public: true, texte: `Un plan trouvé : ${nomPlan}.`, params: { plan: nomPlan } }] : [])]
   };
 }
+// Le glanage de passage (2026-11-05) : ce que la nature des alentours de l'abri (si c'est sa région) ou de la région offre à qui
+// fouille ; modifie `monde` (sa région) ou `abri` (sa nature) en place. -> nourriture glanée
+function glaner(monde, abri, contenu, region, n, p) {
+  const G = REGLES_ACTIONS.glanage;
+  const parJour = natureRegion(regionDe(contenu, region));
+  const demande = Math.ceil(G.parMembre * n * G.prudence[p] * G.nature.reduce((s, k) => s + parJour[k].parJour, 0));
+  const surAbri = abri && abri.region === region && abri.nature;
+  let source = surAbri ? abri.nature : monde.regions[region].nature ?? {};
+  let reste = demande, glane = 0;
+  for (const k of [...G.nature].sort((a, b) => (Number(source[b]) || 0) - (Number(source[a]) || 0) || G.nature.indexOf(a) - G.nature.indexOf(b))) {
+    if (reste <= 0) break;
+    const e = exploiterNature(source, k, reste);
+    source = e.nature;
+    reste -= e.pris;
+    glane += e.pris;
+  }
+  if (surAbri) abri.nature = source;
+  else monde.regions[region].nature = source;
+  return glane;
+}
+
+// Lot 5 « fouille » : fouiller un lieu, le démonter, ou récolter un gisement des alentours (fouilles.mjs). Même forme de résultat que
+// fouiller, plus { ok, motif, lieu (public), cleLieu, trouve: [{ objet, q }], equipements: [{ cle, n }], bete, culte, rendu, gisement }.
+// Un refus (plus de lieu, gisement épuisé…) ne fait rien : ok false, motif, sans rencontre.
+function fouillerUnLieu(monde, contenu, hasard, { region, site, cible, membres, quarts, prudence, jour, moment, abri, renseignements, clarte, facteurRencontre, genre, ecart, lieu,
+  gisement, equipements, dateDepart }) {
+  const p = REGLES_ACTIONS.fouille.fraction[prudence] ? prudence : "normal";
+  const args = { region, lieu, site: site ?? "", genre, ecart, membres, quarts, prudence: p, jour, equipements };
+  const r = cible === "lieu" ? fouillerLieu(monde, contenu, hasard, args)
+    : cible === "demonter" ? demonterLieu(monde, contenu, hasard, args)
+      : recolterGisement(monde, contenu, hasard, { region, gisement, membres, quarts, jour, dateDepart, equipements });
+  const vide = { butin: {}, glane: 0, trousse: 0, livre: null, plan: null, rencontre: null, bruit: 0, monde, abri, renseignements, faits: [], fouille: false,
+    lieu: null, cleLieu: "", trouve: [], equipements: [], bete: null, culte: false, rendu: {}, gisement: "" };
+  if (!r.ok) return { ...vide, ok: false, motif: r.motif };
+  const nom = regionDe(contenu, region)?.nom ?? region;
+  const recolte = cible === "matieres";
+  // Fouiller un lieu, c'est fouiller la région : le glanage de passage y vient aussi (pas en démontant, ni en récoltant).
+  let nouvelAbri = abri ? structuredClone(abri) : null, glane = 0;
+  // Et la trousse de secours oubliée (2026-11-05), qui ne vient pas des réserves de la région.
+  let trousse = 0;
+  if (cible === "lieu" && r.monde.regions?.[region]) {
+    const nq = Math.max(0, Number(membres) || 0) * Math.max(0, Number(quarts) || 0);
+    glane = glaner(r.monde, nouvelAbri, contenu, region, nq, p);
+    if (glane) r.butin = { ...r.butin, nourriture: (r.butin.nourriture ?? 0) + glane };
+    const F = REGLES_ACTIONS.fouille;
+    if (reservesDepart(regionDe(contenu, region)).medicaments > 0 && chance(Math.min(F.trousseMax, F.trousse * nq), hasard)) {
+      trousse = 1;
+      r.butin = { ...r.butin, medicaments: (r.butin.medicaments ?? 0) + 1 };
+    }
+  }
+  // Le bruit d'un démontage (des coups de masse, des tôles qu'on arrache) attire ; celui d'une fouille compte comme pour une région
+  // (à l'abri, pas dans la rencontre).
+  const rencontre = tirerRencontre(r.monde, contenu, hasard, { region, jour, moment, prudence: p, contexte: "fouille", clarte, bruit: cible === "demonter" ? r.bruit : 0, facteur: facteurRencontre });
+  const faits = [];
+  const butin = { ...r.butin };
+  if (recolte) {
+    const g = gisementDe(contenu, r.gisement);
+    faits.push({ jour, region, cle: "recolte", public: true, texte: `Récolte ${avecPreposition("à", nom)} : ${g?.nom ?? r.gisement} (${r.pris}).`, params: { region: nom, gisement: g?.nom ?? r.gisement, n: r.pris, butin: { ...butin } } });
+  } else {
+    const g = genreFouille(contenu, r.lieu.genre);
+    const nomLieu = r.lieu.site ? siteDe(contenu, r.lieu.site)?.nom ?? r.lieu.site : g?.nom ?? r.lieu.genre;
+    const lu = Object.entries(butin).map(([k, q]) => `${q} ${k}`).join(", ") || "rien";
+    faits.push({ jour, region, cle: cible === "demonter" ? "demontage-lieu" : "fouille-lieu", public: true,
+      texte: `${cible === "demonter" ? "Démontage" : "Fouille"} ${avecPreposition("de", nomLieu)} ${avecPreposition("à", nom)} (${r.lieu.mot}) : ${lu}.`,
+      params: { region: nom, lieu: nomLieu, mot: r.lieu.mot, butin: { ...butin } } });
+    if (cible === "demonter" && r.fini) faits.push({ jour, region, cle: "lieu-demonte", public: true, texte: `${nomLieu} : il n'en reste rien de debout.`, params: { lieu: nomLieu } });
+    // Un lieu de culte : au MJ de juger si y prendre pèse (acte « prendre-au-culte »).
+    if (r.culte) faits.push({ jour, region, cle: "fouille-culte", public: false, portee: "mj", texte: `On a fouillé ${nomLieu} : y prendre quelque chose ne laisse personne indifférent (acte « prendre-au-culte », à juger).`,
+      params: { lieu: nomLieu } });
+    if (r.bete) {
+      const b = beteTrouvee(contenu, r.bete.cle);
+      faits.push({ jour, region, cle: `bete-${r.bete.issue}`, public: true, texte: `${b?.nom ?? r.bete.cle} (${r.bete.nombre}) : ${({ prise: "prise", file: "elle file", pique: "l'essaim pique" })[r.bete.issue]}.`,
+        params: { bete: b?.nom ?? r.bete.cle, nombre: r.bete.nombre } });
+    }
+  }
+  return { ...vide, ok: true, motif: null, butin, glane, trousse, rencontre, bruit: r.bruit, monde: r.monde, abri: nouvelAbri, renseignements: observer(renseignements, r.monde, contenu, region, jour, "vu"), faits,
+    fouille: !recolte, lieu: r.lieu ?? null, cleLieu: r.cle ?? "", trouve: r.trouve ?? [], equipements: r.equipements ?? [], bete: r.bete ?? null, culte: Boolean(r.culte),
+    rendu: r.rendu ?? {}, gisement: r.gisement ?? "", travail: r.travail ?? 0 };
+}
+
 // Le nom d'un plan ordinaire du registre : celui de l'installation ou de la recette qu'il couvre.
 function nomCiblePlan(contenu, def) {
   if (def.installation) return indexer(contenu).installations.get(def.installation)?.nom ?? def.installation;

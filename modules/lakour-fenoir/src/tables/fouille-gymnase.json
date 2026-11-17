@@ -1,0 +1,178 @@
+{
+  "_id": "0lMYMFrHfUnZ3c8s",
+  "_key": "!tables!0lMYMFrHfUnZ3c8s",
+  "name": "Fouille — Gymnase, tribune",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le gymnase où l'on a installé des lits de camp au jour un, le stade et ses tribunes : des couvertures, des bâches, ce qui reste d'un centre d'accueil qui n'a pas tenu. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-gymnase",
+      "fouilles": "fouille-gymnase"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "SiGYmdD1TYXxiLEY",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.SiGYmdD1TYXxiLEY",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 linge et tissu — 60 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0FjGhBNjhBuKT5YF",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.0FjGhBNjhBuKT5YF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une corde — 50 % ; un objet</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MEKIsv5AAlpP3drO",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.MEKIsv5AAlpP3drO",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 bâches — 40 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6erQquDOMdEd2K9f",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.6erQquDOMdEd2K9f",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 bouteilles d'eau — 40 % ; 2 pour 1 eau</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0ZsCG9VEtiOX1L9A",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.0ZsCG9VEtiOX1L9A",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 pansements — 30 % (+4 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BbX2SCYqkIIF9pH5",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.BbX2SCYqkIIF9pH5",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 savon — 30 % ; 8 pour 1 médicaments</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6d7MgR3etH3loAuI",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.6d7MgR3etH3loAuI",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 câbles — 40 % ; 4 pour 1 pièces</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Jvd9ApV1VnZFvZr9",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.Jvd9ApV1VnZFvZr9",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 rouleaux de grillage — 30 % ; 3 pour 1 matériaux</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gUNj3Y7CyEhYIZIg",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.gUNj3Y7CyEhYIZIg",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 ferraille — 40 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "s8aO3OIBOGEbk4H9",
+      "_key": "!tables.results!0lMYMFrHfUnZ3c8s.s8aO3OIBOGEbk4H9",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 couvertures — 20 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

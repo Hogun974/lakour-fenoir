@@ -596,11 +596,34 @@
       }
     },
     {
+      "_id": "mExTzGqsDKa3DrHf",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.mExTzGqsDKa3DrHf",
+      "name": "Fouiller, démonter, récolter",
+      "type": "text",
+      "sort": 2600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Fouiller un lieu.</strong> Vous pouvez fouiller la région au hasard, ou choisir où entrer : une pharmacie, une case, une quincaillerie. Chaque lieu a été <strong>plus ou moins pillé</strong> avant vous, jamais tout à fait vidé ; en arrivant, vous voyez si personne n'y est passé, ou s'il ne reste presque rien. Les pillards prennent d'abord les vivres, les soins, les outils et les armes : le linge, les câbles, la tôle restent plus longtemps.</p><ul><li><strong>En ville</strong>, on est passé avant vous. <strong>Dans les écarts</strong>, au bout des chemins, il reste bien plus : c'est loin, et l'on y est seul.</li><li>Un lieu se fouille en quelques quarts ; on peut s'arrêter et revenir.</li><li><strong>Une bête</strong> reste parfois dans une cour (une poule, un cabri, un essaim) : il faut l'outil en main (une cage, un sac de goni, une corde, un enfumoir), et la ramener vite à un enclos.</li><li><strong>Un lieu de culte</strong> n'a ni outil ni arme ; y prendre quoi que ce soit ne laisse personne indifférent.</li></ul><p><strong>Démonter.</strong> Une case, une maison, une épave démontée rend la moitié de ce qu'elle a coûté : des planches, des tôles, des câbles. C'est long, c'est bruyant, et un pied-de-biche aide beaucoup. On peut aussi démonter une installation de l'abri avant de partir.</p><p><strong>Récolter l'île.</strong> Les ravines, les savanes, les plages ont leurs bambous, leurs chokas, leur argile, leurs galets : de quoi bâtir lontan. Ce qu'on a coupé repousse, plus lentement en saison sèche.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "fouiller-demonter-recolter"
+        }
+      }
+    },
+    {
       "_id": "GsGWAAAIAkUufDjK",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 2600,
+      "sort": 2700,
       "title": {
         "show": true,
         "level": 1

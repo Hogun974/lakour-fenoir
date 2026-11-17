@@ -17,7 +17,12 @@
     "bruit": 0,
     "transport": null,
     "effets": null,
-    "marque": ""
+    "marque": "",
+    "capture": [
+      "cabri",
+      "porcelet",
+      "veau-moka"
+    ]
   },
   "effects": [],
   "folder": null,

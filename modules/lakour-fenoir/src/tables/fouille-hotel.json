@@ -1,0 +1,253 @@
+{
+  "_id": "A4LLgpaN3KCHQRTn",
+  "_key": "!tables!A4LLgpaN3KCHQRTn",
+  "name": "Fouille — Hôtel, gîte",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>L'hôtel du bord de mer, le gîte de montagne, la chambre d'hôtes du cirque : des draps, des couvertures, du savon en petites boîtes, le bar, la cuisine au gaz. Fouiller en entier : 3 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d15",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-hotel",
+      "fouilles": "fouille-hotel"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "TentIxI0vhtRW6dI",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.TentIxI0vhtRW6dI",
+      "type": "text",
+      "name": "",
+      "description": "<p>4 à 12 linge et tissu — 85 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Aos0bmkkiYMwb1ZK",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.Aos0bmkkiYMwb1ZK",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 couvertures — 60 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cMr03OS1QSRQ4hTS",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.cMr03OS1QSRQ4hTS",
+      "type": "text",
+      "name": "",
+      "description": "<p>3 à 8 savon — 70 % ; 8 pour 1 médicaments</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BFHpSVqVqRmHFAte",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.BFHpSVqVqRmHFAte",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 bouteilles d'eau — 50 % ; 2 pour 1 eau</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CpNqTaKSReHFsYYH",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.CpNqTaKSReHFsYYH",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 boîtes de conserve — 45 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jV9bOfe0RxtD2ORy",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.jV9bOfe0RxtD2ORy",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 vivres secs (riz, grains, sucre) — 40 % ; 2 pour 1 nourriture</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Bnu4DSHE43ZEkJtU",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.Bnu4DSHE43ZEkJtU",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 rhum — 35 % (+4 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9VgH3AsOz8imkV2F",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.9VgH3AsOz8imkV2F",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 bocaux — 60 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "B5ECFLQi7ENFxN8G",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.B5ECFLQi7ENFxN8G",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 bougies — 45 % ; 12 pour 1 matériaux</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "GiUsGpCz2mEOnehE",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.GiUsGpCz2mEOnehE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des moustiquaires — 20 % (+3 % par palier de risque) ; un objet</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DiGZcBzZN5YkqiOD",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.DiGZcBzZN5YkqiOD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un couteau — 40 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7jBL6vTnd8xJxzqJ",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.7jBL6vTnd8xJxzqJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 eau de Javel — 45 % ; 6 pour 1 médicaments</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gDFbUg7iPYQLCT0o",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.gDFbUg7iPYQLCT0o",
+      "type": "text",
+      "name": "",
+      "description": "<p>3 à 10 papier — 50 % ; 40 pour 1 matériaux</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "rSbTnCpR66bm02kl",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.rSbTnCpR66bm02kl",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 câbles — 40 % ; 4 pour 1 pièces</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "br3pumyHFGqXHMsA",
+      "_key": "!tables.results!A4LLgpaN3KCHQRTn.br3pumyHFGqXHMsA",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 bouteilles de gaz — 30 % (+4 % par palier de risque) ; 10 gaz chacun</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "_id": "eAAYubx712CmR8ez",
+  "_key": "!journal!eAAYubx712CmR8ez",
+  "name": "Fouiller, démonter, récolter",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouiller-demonter-recolter",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "cjpPnfFiDp4FuRSK",
+      "_key": "!journal.pages!eAAYubx712CmR8ez.cjpPnfFiDp4FuRSK",
+      "name": "Fouiller un lieu",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Fouiller la région au hasard (la fouille d'avant) reste possible. <strong>Fouiller un lieu</strong>, c'est choisir où l'on entre : une pharmacie, une case, la quincaillerie de la rue principale (fenêtre du MJ, Actions, « Chercher : un lieu » et son genre ; ou fouiller({ cible: \"lieu\", genre })).</p><p><strong>Chaque région a ses lieux</strong> : combien de cases, de boutiques, de pharmacies selon sa population (Saint-Denis : des dizaines de cases, six pharmacies ; Mafate : quelques cases, une école, une chapelle). Une part d'entre eux sont <strong>à l'écart</strong> (une case au bout d'un chemin, loin du bourg) ; on peut le demander (« à l'écart »). Les sites d'abri se fouillent aussi comme un lieu, selon leur genre.</p><p><strong>Un lieu est plus ou moins pillé, jamais vide.</strong> Son degré de pillage suit la région (ce que les autres survivants en ont déjà pris), et la place du lieu : en pleine ville on est passé avant vous, dans un écart beaucoup moins, et là où les Livides sont nombreux, un peu moins aussi. Deux maisons voisines ne se lisent pas pareil. En arrivant, le groupe le <strong>lit en cinq mots</strong> (table « Fouille — ce qu'on lit en arrivant ») : personne n'y est passé, à peine passé, déjà passé, tout a été retourné, il ne reste presque rien.</p><p><strong>Ce que le pillage emporte.</strong> Les pillards prennent d'abord ce qui se mange, ce qui soigne, les outils et les armes, le carburant : chaque lot de ce genre a une chance d'avoir disparu (1,1 × le degré, au plus 9 sur 10) ; les autres lots (linge, papier, tôle, câbles) partent deux fois moins. Un lot resté a pu être entamé. <strong>Il reste toujours au moins un lot</strong> : un lieu pillé n'est jamais vide.</p><p><strong>Le contenu d'un lieu est tiré une fois</strong>, à la première visite : revenir ne le change pas, sauf que d'autres sont peut-être passés entre-temps. On fouille un lieu <strong>en entier en quelques quarts-personne</strong> (deux pour une case, quatre pour une supérette) ; ce qu'on n'a pas eu le temps de fouiller attend, et l'on reprend où l'on en était.</p><p><strong>Ce que rend un lieu</strong> est dit en objets (« 6 boîtes de conserve, 2 pansements, un sabre à canne ») et compté en ressources de Fénoir (page « Ce qu'un objet vaut »). Ce qui se pille se prend sur les réserves de la région : un lieu ne rend pas ce que la région n'a plus. Un outil ou une arme trouvé devient un objet sur le premier fouilleur.</p><p><strong>Le risque</strong> : comme toute fouille, une rencontre possible et du bruit (selon l'allure). <strong>Comme en fouillant la région</strong>, on glane en passant (des fruits, un poisson, un tangue) et l'on tombe parfois sur une trousse de secours oubliée. Ce qui est rare (armes, groupe électrogène, tronçonneuse) se trouve un peu plus là où les Livides tiennent la région : on y est moins allé.</p><p><strong>Une journée dans un écart</strong> rend bien plus de vivres qu'une journée en ville, pour autant de lieux : c'est la raison d'aller loin.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "fouiller-un-lieu"
+        }
+      }
+    },
+    {
+      "_id": "FVS2tkxOwYReILB4",
+      "_key": "!journal.pages!eAAYubx712CmR8ez.FVS2tkxOwYReILB4",
+      "name": "Les genres de lieux",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Chaque genre a sa table (tables « Fouille — … »), son travail et son nombre de lieux par région.</p><ul><li><strong>Case créole</strong> — 2 quarts-personne ; 8 + 6 par point de population. Surtout : linge et tissu, bocaux, clous, vivres secs (riz, grains, sucre), papier. Bêtes : poule 9 %, lapin 3 %, cabri 2 %, essaim d'abeilles 2 %, porcelet 1 %. Démonté (16 quarts-personne) : 12 matériaux.</li><li><strong>Case en tôle</strong> — 2 quarts-personne ; 2 + 4 par point de population. Surtout : linge et tissu, bocaux, clous, vivres secs (riz, grains, sucre), papier. Bêtes : poule 9 %, lapin 3 %, cabri 2 %, essaim d'abeilles 2 %, porcelet 1 %. Démonté (6 quarts-personne) : 4 matériaux.</li><li><strong>Maison en dur</strong> — 2 quarts-personne ; 2 + 8 par point de population. Surtout : linge et tissu, bocaux, papier, câbles, boîtes de conserve. Bêtes : poule 4 %, lapin 2 %, essaim d'abeilles 2 %. Démonté (32 quarts-personne) : 21 matériaux, 1 pièces.</li><li><strong>Immeuble</strong> — 3 quarts-personne ; 4 par point de population. Surtout : linge et tissu, bocaux, papier, câbles, boîtes de conserve. Démonté (60 quarts-personne) : 30 matériaux, 3 pièces.</li><li><strong>Remise, boucan, abri de jardin</strong> — 1 quart-personne ; 4 + 3 par point de population. Surtout : une corde, fil de fer, clous, sachets de graines, seaux. Bêtes : poule 3 %, essaim d'abeilles 3 %. Démonté (4 quarts-personne) : 2 matériaux.</li><li><strong>Boutique de quartier</strong> — 2 quarts-personne ; 1 + 3 par point de population. Surtout : boîtes de conserve, vivres secs (riz, grains, sucre), bouteilles d'eau, savon, bocaux. Démonté (24 quarts-personne) : 16 matériaux, 1 pièces.</li><li><strong>Supérette, grande surface</strong> — 4 quarts-personne ; 1.2 par point de population. Surtout : boîtes de conserve, bouteilles d'eau, savon, bocaux, vivres secs (riz, grains, sucre). Démonté (48 quarts-personne) : 24 matériaux, 3 pièces.</li><li><strong>Pharmacie</strong> — 2 quarts-personne ; 1 par point de population. Surtout : pansements, alcool désinfectant, savon, bocaux, eau de Javel. Démonté (24 quarts-personne) : 14 matériaux, 1 pièces.</li><li><strong>Centre de santé, dispensaire</strong> — 3 quarts-personne ; 0.4 par point de population. Surtout : pansements, savon, linge et tissu, alcool désinfectant, eau de Javel. Démonté (48 quarts-personne) : 24 matériaux, 3 pièces.</li><li><strong>Restaurant, snack</strong> — 2 quarts-personne ; 1.5 par point de population. Surtout : boîtes de conserve, bocaux, sel, un couteau, vivres secs (riz, grains, sucre). Démonté (20 quarts-personne) : 10 matériaux, 1 pièces.</li><li><strong>Quincaillerie</strong> — 3 quarts-personne ; 0.6 par point de population. Surtout : clous, visserie, fil de fer, une corde, un marteau. Démonté (40 quarts-personne) : 20 matériaux, 2 pièces.</li><li><strong>Garage</strong> — 2 quarts-personne ; 1 par point de population, là où passe une route. Surtout : visserie, ferraille, câbles, une pince, chambres à air. Démonté (28 quarts-personne) : 14 matériaux, 3 pièces.</li><li><strong>Station-service</strong> — 2 quarts-personne ; 0.8 par point de population, là où passe une route. Surtout : bidons d'essence ou de gazole, tuyaux, bouteilles d'eau, boîtes de conserve, seaux. Démonté (24 quarts-personne) : 12 matériaux, 3 pièces.</li><li><strong>École, collège</strong> — 2 quarts-personne ; 1 + 1.5 par point de population. Surtout : papier, cahiers vierges, encre, linge et tissu, savon. Bêtes : essaim d'abeilles 2 %. Démonté (40 quarts-personne) : 20 matériaux, 2 pièces.</li><li><strong>Mairie, poste, administration</strong> — 2 quarts-personne ; 0.8 par point de population. Surtout : papier, câbles, cahiers vierges, encre, composants électroniques. Démonté (40 quarts-personne) : 20 matériaux, 2 pièces.</li><li><strong>Gendarmerie, caserne de pompiers</strong> — 3 quarts-personne ; 0.6 par point de population. Surtout : pansements, une corde, papier, couvertures, gants de travail. Démonté (44 quarts-personne) : 22 matériaux, 3 pièces.</li><li><strong>Hangar agricole, serre</strong> — 2 quarts-personne ; 2 + 1 par point de population. Surtout : sachets de graines, une corde, fil de fer, un sabre à canne, bâches. Bêtes : cabri 4 %, poule 6 %, porcelet 3 %, veau moka 2 %, lapin 2 %, essaim d'abeilles 3 %. Démonté (14 quarts-personne) : 10 matériaux, 1 pièces.</li><li><strong>Entrepôt, usine, aérogare</strong> — 3 quarts-personne ; 1.2 par point de population. Surtout : ferraille, câbles, visserie, tôles, tuyaux. Démonté (60 quarts-personne) : 30 matériaux, 4 pièces.</li><li><strong>Hôtel, gîte</strong> — 3 quarts-personne ; 0.4 + 0.6 par point de population. Surtout : linge et tissu, savon, couvertures, bocaux, bouteilles d'eau. Démonté (48 quarts-personne) : 24 matériaux, 2 pièces.</li><li><strong>Gymnase, tribune</strong> — 2 quarts-personne ; 0.6 par point de population. Surtout : linge et tissu, une corde, bâches, bouteilles d'eau, câbles. Démonté (32 quarts-personne) : 16 matériaux, 2 pièces.</li><li><strong>Château d'eau, réservoir</strong> — 1 quart-personne ; 1 + 0.4 par point de population. Surtout : bouteilles d'eau, tuyaux, ferraille, visserie, seaux. Démonté (12 quarts-personne) : 6 matériaux, 2 pièces.</li><li><strong>Lieu de culte</strong> — 1 quart-personne ; 1 + 1.5 par point de population. Surtout : bougies, bouteilles d'eau, linge et tissu, papier, cire. Bêtes : essaim d'abeilles 4 %. Démonté (40 quarts-personne) : 16 matériaux.</li><li><strong>Voiture à l'abandon</strong> — 1 quart-personne ; 3 + 6 par point de population, là où passe une route. Surtout : linge et tissu, papier, câbles, visserie, bidons d'essence ou de gazole. Démonté (6 quarts-personne) : 1 matériaux, 3 pièces.</li><li><strong>Décombres</strong> — 1 quart-personne ; 2 + 2 par point de population. Surtout : clous, planches, ferraille, fil de fer, visserie. Bêtes : essaim d'abeilles 1 %. Démonté (6 quarts-personne) : 3 matériaux.</li></ul><p>Les sites d'abri : une case créole, un îlet se fouillent comme une case ; une ferme comme un hangar ; un gîte comme un hôtel ; un port, une usine comme un entrepôt ; un phare comme une administration ; un hôpital comme un centre de santé ; une église comme un lieu de culte. Un tunnel de lave ne se fouille pas.</p><p>Les cartes et les calendriers ont leur propre tirage (« Le jour qu'on croit ») ; les plans aussi (cible « plans »).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-genres"
+        }
+      }
+    },
+    {
+      "_id": "cGAegmV90omZEbvB",
+      "_key": "!journal.pages!eAAYubx712CmR8ez.cGAegmV90omZEbvB",
+      "name": "Les lieux de culte",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une église, un temple tamoul, une mosquée, une pagode, une chapelle de bord de chemin : leur table est courte, <strong>sans outil, sans arme, sans rien de rare</strong> (des bougies, de l'eau, des nappes, de la cire).</p><p><strong>Y prendre quelque chose ne laisse personne indifférent.</strong> Le système le rappelle au journal secret à chaque fouille d'un lieu de culte ; c'est à vous de juger, selon ce qu'on a pris, comment et devant qui. Si cela pèse, portez l'acte <strong>« Prendre dans un lieu de culte »</strong> (sens moral −1, et la réputation si quelqu'un l'a vu ; à moitié si les témoins savaient pourquoi : des bougies pour veiller un mourant). L'acte est le même pour tous : <strong>aucune religion, aucune origine ne le change</strong>. Un personnage peut y voir un signe ; le jeu ne dit rien.</p><p>On peut aussi démonter un lieu de culte : c'est un chantier long et bruyant, et tout le quartier le saura.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "lieux-de-culte"
+        }
+      }
+    },
+    {
+      "_id": "kF5fw2KFF7uJXboT",
+      "_key": "!journal.pages!eAAYubx712CmR8ez.kF5fw2KFF7uJXboT",
+      "name": "Les bêtes trouvées en fouillant",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une case, une remise, un hangar des Hauts ont parfois encore <strong>une bête</strong> : une poule qui gratte la cour, un lapin dans sa caisse, un cabri à son piquet, un essaim dans un mur. Elles partent les premières quand un lieu est pillé : la chance est multipliée par (1 − degré)², seize fois plus rare en pleine ville que dans un écart.</p><ul><li><strong>Poule</strong> (1 à 3) : Une poule de cour, rousse et maigre, qui gratte encore derrière la case. On l'attrape avec une cage ou un sac de goni ; sinon elle file sous les fourrés. Tient 4 quarts hors d'un enclos ; morte, 1 nourriture. Se garde : basse-cour.</li><li><strong>Lapin</strong> (1 à 2) : Un lapin de clapier resté dans sa caisse, ou qui en est sorti. Une cage ou un sac de goni. Tient 4 quarts hors d'un enclos ; morte, 1 nourriture. Se garde : basse-cour.</li><li><strong>Cabri</strong> (1) : Un cabri attaché à un piquet qui a mangé tout ce qu'il pouvait atteindre. Il se prend à la corde, et il tire. Tient 6 quarts hors d'un enclos ; morte, 6 nourriture. Se garde : enclos-a-cabris.</li><li><strong>Porcelet</strong> (1) : Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni. Tient 5 quarts hors d'un enclos ; morte, 4 nourriture. Se garde : enclos-a-cabris.</li><li><strong>Veau moka</strong> (1) : Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement. Tient 8 quarts hors d'un enclos ; morte, 10 nourriture. Se garde : enclos-a-cabris.</li><li><strong>Essaim d'abeilles</strong> (1) : Un essaim installé dans un mur creux, un toit, une caisse : on l'entend avant de le voir. Il se prend à l'enfumoir ; sans lui, il pique, et il reste. Tient 2 quarts hors d'un enclos ; morte, 0 nourriture. Se garde : ruches, ruches-en-tronc.</li></ul><p><strong>Il faut l'outil en main</strong> : une cage ou un sac de goni pour les volailles et les lapins, une corde pour un cabri, un porcelet, un veau, un enfumoir pour un essaim. <strong>Sans lui</strong>, la bête file (le lieu n'en a plus) ; l'essaim pique (une blessure au premier fouilleur) et reste.</p><p><strong>Une bête prise</strong> suit le groupe (fiche « Les bêtes » de la fenêtre du MJ ; betes()). Elle tient quelques quarts hors d'un enclos : ramenez-la à une installation qui la garde (« Mettre à l'enclos »), ou abattez-la (la viande va aux stocks). Passé le délai, elle meurt, et l'on mange sa viande. Une bête à l'enclos ne change pas encore la production de l'installation : l'élevage complet viendra avec « le vivant de l'abri ».</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-betes"
+        }
+      }
+    },
+    {
+      "_id": "ofFGmFVVSZFlGsDd",
+      "_key": "!journal.pages!eAAYubx712CmR8ez.ofFGmFVVSZFlGsDd",
+      "name": "Démonter",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>On récolte aussi en cassant ce qui existe.</strong> Une case, une maison, une épave démontée rend <strong>la moitié de ce qu'elle a coûté</strong> : des planches, des tôles, des clous, des parpaings, des câbles, comptés en matériaux et en pièces (page « Les genres de lieux »). Une case de bois rend 12 matériaux, une maison en dur 21 matériaux et une pièce, une voiture une batterie, des roues et des ressorts (3 pièces).</p><p><strong>C'est lent et bruyant</strong> : de 4 quarts-personne pour une remise à 60 pour un entrepôt ; chaque quart fait du bruit (+1 ou +2, comme un chantier), et les rencontres viennent avec. <strong>Sans outil</strong> (pied-de-biche, barre à mine, pelle-pioche, masse, tronçonneuse, caisse à outils), deux fois plus lent. Ce qu'on démonte se rend au fur et à mesure ; on peut s'arrêter et revenir.</p><p><strong>Un lieu qu'on n'a pas fini de fouiller</strong> se fouille d'abord : le premier travail va à la fouille, la suite au démontage. Un lieu démonté n'existe plus : ni fouille, ni démontage.</p><p><strong>Démonter une installation de l'abri</strong> (« Démonter une installation » ; demonter({ installationId })) rend la moitié de ce qu'elle a coûté, tous niveaux compris (les matières de l'île reviennent en matériaux), pour un tiers du travail qu'elle avait demandé. Le plan reste au carnet : on la rebâtira plus vite ailleurs.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "demonter"
+        }
+      }
+    },
+    {
+      "_id": "JPAmq337iTekPni1",
+      "_key": "!journal.pages!eAAYubx712CmR8ez.JPAmq337iTekPni1",
+      "name": "Récolter l'île",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les ravines, les savanes, les plages et les éboulis ont leurs <strong>gisements</strong> : touffes de bambous, pieds de choka et de vacoa, talus de terre, berges d'argile, galets, blocs de basalte, coquillages, bois flotté. Ils rendent des <strong>matériaux</strong> (comptés comme le reste : quatre bambous, quarante galets font un matériau), pour les ouvrages lontan, les cordes, le torchis, la chaux. La récolte se fait aux alentours (fenêtre du MJ, Actions, « Chercher : matières de l'île » ; ou fouiller({ cible: \"matieres\", gisement })).</p><p><strong>Chaque région a ses milieux</strong> (tables « Récolte — … ») et donc ses gisements, en nombre. Un gisement exploité <strong>repousse</strong> : un bambou en 60 jours, un pied de vacoa en 30, des coquillages en 5 ; un bloc de basalte ne revient guère (120 jours). En saison sèche, tout repousse à 0,4 de cette vitesse. Le bambou ne monte pas au-dessus de 1 500 m, le choka de 1 300 m, le bancoulier de 800 m.</p><p><strong>Les outils</strong> aident (un sabre pour le bambou et le vacoa, une pioche pour la terre, une masse pour le basalte) : sans eux, deux fois plus lent. Débiter le basalte s'entend (+2 de bruit par quart) ; couper des bambous un peu.</p><p>Ce qui se prend autrement n'est pas récolté : les <strong>zerbaz</strong> (cible « plantes »), les <strong>jardins en friche</strong> (cible « jardins »), l'<strong>eau</strong> d'une source (le site, un captage), les <strong>décombres</strong> (un lieu à fouiller), le <strong>sel</strong> d'une vasque (une recette).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "recolter"
+        }
+      }
+    },
+    {
+      "_id": "hZa3yOkTNNEF3aHX",
+      "_key": "!journal.pages!eAAYubx712CmR8ez.hZa3yOkTNNEF3aHX",
+      "name": "Ce qu'un objet vaut en ressources",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Pour raconter un butin et le compter. Une ressource de Fénoir, c'est une brouette, un jour, une caisse : beaucoup d'objets.</p><ul><li><strong>Nourriture</strong> : 2 boîtes de conserve, 2 vivres secs (riz, grains, sucre), 6 sel, 6 vinaigre.</li><li><strong>Eau</strong> : 2 bouteilles d'eau.</li><li><strong>Médicaments</strong> : 4 rhum, 4 pansements, 2 alcool désinfectant, 2 soluté de réhydratation, 2 attelles, 3 baume, 8 savon, 6 eau de Javel.</li><li><strong>Matériaux</strong> : 8 planches, 200 clous, 4 tôles, 8 ferraille, 8 fil de fer, 8 parpaings, 8 moellons, 4 sacs de ciment, 4 bâches, 3 rouleaux de grillage, 8 linge et tissu, 8 bocaux, 40 papier, 4 seaux, 4 couvertures, 3 fûts vides, 6 gants de travail, 6 savates, 4 engrais, 4 fumier, 12 bougies, 6 cire, 10 cahiers vierges, 20 encre, 6 vitres, 6 charbon de bois, 6 pierres à aiguiser, 4 bambous, 12 feuilles de choka, 25 feuilles de vacoa, 20 noix de bancoul, 6 seaux de terre, 4 pains d'argile, 6 seaux de sable, 40 galets, 30 coquillages, 10 branches, 40 gaulettes.</li><li><strong>Pièces</strong> : 8 visserie, 4 câbles, 4 tuyaux, 2 composants électroniques, 8 chambres à air, 12 rustines, 4 roues, 2 lames de ressort, 1 (3 unités) un petit moteur, 1 (2 unités) un moteur électrique, 1 une batterie de voiture, 2 cellules solaires, 1 (2 unités) un panneau solaire, 1 (2 unités) un groupe électrogène, 2 un cadre de vélo.</li><li><strong>Graines et boutures</strong> : 2 sachets de graines ; 1 plants et boutures.</li><li><strong>Carburant, gaz, munitions</strong> : 2 bidons d'essence ou de gazole ; une bouteille de gaz entamée, une dizaine de kilos ; 4 cartouches, 10 douilles à recharger.</li><li><strong>Un tronc</strong> vaut un demi-matériau ; <strong>dix cannes coupées</strong>, une demi-nourriture (la canne se suce, elle ne nourrit pas longtemps).</li><li><strong>Les outils et les armes</strong> (couteau, sabre à canne, pied-de-biche, fusil…) deviennent des objets. Ceux qui n'ont pas encore de fiche (marteau, scie, pince, truelle, hache, masse) comptent en pièces.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "ce-qu-un-objet-vaut"
+        }
+      }
+    },
+    {
+      "_id": "Xe3WwBC7muxnv4q7",
+      "_key": "!journal.pages!eAAYubx712CmR8ez.Xe3WwBC7muxnv4q7",
+      "name": "Ce que fait le système",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>fouiller({ cible: \"lieu\", genre, ecart, lieu, site })</strong> : le lieu suivant de ce genre dans la région (« ecart » : à l'écart), un lieu déjà commencé (« lieu »), ou un site d'abri (« site »). Rend le lieu (son genre, le mot du pillage, le travail fait), ce qu'on a trouvé en objets (« trouve ») et en ressources (« butin »), les objets créés, la bête rencontrée.</li><li><strong>fouiller({ cible: \"demonter\", … })</strong> : démonter un lieu (il se fouille d'abord s'il n'est pas fini) ; <strong>demonter({ installationId })</strong> : démonter une installation de l'abri.</li><li><strong>fouiller({ cible: \"matieres\", gisement })</strong> : récolter un gisement des alentours (sans gisement : le plus abondant).</li><li><strong>lieux({ region })</strong> : les lieux de la région, ceux qu'on a vus et ce qu'on en sait ; au MJ, le degré réel. <strong>gisements({ region })</strong> : ce que la région a, ce qui repousse.</li><li><strong>betes()</strong>, <strong>enclore({ id })</strong>, <strong>abattre({ id })</strong>, <strong>relacher({ id })</strong> : les bêtes que le groupe a prises.</li><li><strong>acteMoral({ acte: \"prendre-au-culte\" })</strong> : quand prendre dans un lieu de culte pèse.</li><li>Chaque fouille d'un lieu de culte laisse une ligne au journal secret ; une bête prise, perdue, morte, une au journal du groupe.</li><li>Le degré de pillage et le contenu d'un lieu sont secrets (le monde scellé) ; le mot, le travail fait et ce qu'on a trouvé sont publics.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "systeme"
+        }
+      }
+    }
+  ]
+}

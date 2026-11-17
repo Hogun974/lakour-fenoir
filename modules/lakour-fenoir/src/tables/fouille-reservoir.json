@@ -1,0 +1,118 @@
+{
+  "_id": "Zt4omoTi9v5Cx8wJ",
+  "_key": "!tables!Zt4omoTi9v5Cx8wJ",
+  "name": "Fouille — Château d'eau, réservoir",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>La cuve de béton sur la colline, la bâche à eau du quartier. Ce qui reste au fond n'est pas toujours bon à boire tel quel. Fouiller en entier : 1 quart-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-reservoir",
+      "fouilles": "fouille-reservoir"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "vds5p7tvziVXrT87",
+      "_key": "!tables.results!Zt4omoTi9v5Cx8wJ.vds5p7tvziVXrT87",
+      "type": "text",
+      "name": "",
+      "description": "<p>3 à 8 bouteilles d'eau — 70 % ; 2 pour 1 eau</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5yJBOz3RD3vnY6tI",
+      "_key": "!tables.results!Zt4omoTi9v5Cx8wJ.5yJBOz3RD3vnY6tI",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 tuyaux — 50 % ; 4 pour 1 pièces</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0WUCFWoHtFmSNzhP",
+      "_key": "!tables.results!Zt4omoTi9v5Cx8wJ.0WUCFWoHtFmSNzhP",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 ferraille — 40 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mGP9SE279RbhmfFy",
+      "_key": "!tables.results!Zt4omoTi9v5Cx8wJ.mGP9SE279RbhmfFy",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 visserie — 30 % ; 8 pour 1 pièces</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7ej8gz1IxI6npap5",
+      "_key": "!tables.results!Zt4omoTi9v5Cx8wJ.7ej8gz1IxI6npap5",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 seaux — 30 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "RdhHr30CiHo6qfy9",
+      "_key": "!tables.results!Zt4omoTi9v5Cx8wJ.RdhHr30CiHo6qfy9",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 rouleaux de grillage — 20 % ; 3 pour 1 matériaux</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

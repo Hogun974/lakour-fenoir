@@ -1,0 +1,253 @@
+{
+  "_id": "GOr5BTz2PShBTnHJ",
+  "_key": "!tables!GOr5BTz2PShBTnHJ",
+  "name": "Fouille — École, collège",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>La cour sous les badamiers, les préaux, la cantine. Les dessins encore aux murs. On s'y est réfugié les premiers jours, puis on en est parti. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d15",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-ecole",
+      "fouilles": "fouille-ecole"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "FXtzq6eiJo6wFJsa",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.FXtzq6eiJo6wFJsa",
+      "type": "text",
+      "name": "",
+      "description": "<p>10 à 30 papier — 90 % ; 40 pour 1 matériaux</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "y5KMuISPE7ofA22u",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.y5KMuISPE7ofA22u",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 cahiers vierges — 60 % ; 10 pour 1 matériaux</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "u4GZmFqAKYIZUcwe",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.u4GZmFqAKYIZUcwe",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 encre — 50 % ; 20 pour 1 matériaux</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "WynwWpbZSWxEta18",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.WynwWpbZSWxEta18",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 linge et tissu — 40 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jvBL0oAT6bXFn0sn",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.jvBL0oAT6bXFn0sn",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 savon — 40 % ; 8 pour 1 médicaments</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TclCriTAvDTJlLob",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.TclCriTAvDTJlLob",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 pansements — 30 % (+4 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HvjHfHFbfvYCQ5uI",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.HvjHfHFbfvYCQ5uI",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 bouteilles d'eau — 35 % ; 2 pour 1 eau</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5vAYkN858DYfAObD",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.5vAYkN858DYfAObD",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 bocaux — 35 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "bdsoarhjK1Q3tkOS",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.bdsoarhjK1Q3tkOS",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une corde — 25 % ; un objet</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ueYDreRHuDKLBRsZ",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.ueYDreRHuDKLBRsZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 câbles — 40 % ; 4 pour 1 pièces</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "U0YcjeGPqyA2NIrh",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.U0YcjeGPqyA2NIrh",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 composants électroniques — 30 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hcdLgHZxyi6htc0g",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.hcdLgHZxyi6htc0g",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 visserie — 30 % ; 8 pour 1 pièces</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mxoz9tLIEoF5ydns",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.mxoz9tLIEoF5ydns",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 eau de Javel — 40 % ; 6 pour 1 médicaments</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2cyMLkvCPGJlUaFA",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.2cyMLkvCPGJlUaFA",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 vivres secs (riz, grains, sucre) — 25 % ; 2 pour 1 nourriture</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oYzHMBQ6OLZnZdy5",
+      "_key": "!tables.results!GOr5BTz2PShBTnHJ.oYzHMBQ6OLZnZdy5",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 boîtes de conserve — 25 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

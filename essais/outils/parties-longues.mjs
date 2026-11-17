@@ -7,6 +7,7 @@
 //   node essais/outils/parties-longues.mjs                      (tous les scénarios, 40 graines, 365 jours)
 //   options : --graines 40  --jours 365  --scenarios sedentaire-4,seul  --json <fichier>  --monde 730 (monde seul, sans groupe)
 //             --serie h (graines h0, h1… au lieu de g0, g1… : une autre série pour mesurer le bruit du hasard)
+//             --sans-lieux (lot 5 « fouille » : le simulateur ne fouille ni lieux, ni ne démonte, ni ne récolte : la fouille d'avant le lot)
 //
 // Scénarios : sédentaire (autonomie complète sans jamais déménager), seul (enraciné, sédentaire et nomade à 1), compagnons
 // (2 humains + 2 compagnons, enracinés), recrues (2 humains qui recrutent quand une compétence manque), nomade (4, déménage
@@ -15,7 +16,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import * as L from "../../systems/lakour-survie/logique/index.mjs";
-import { chargerContenu, jouerPartie, remedesDe } from "./simuler-parties.mjs";
+import { chargerContenu, jouerPartie, remedesDe, OPTIONS_SIMULATEUR } from "./simuler-parties.mjs";
 import { fetesDuJour } from "../../modules/lakour-fenoir/scripts/fetes.js";
 import { fetesDuJour as calendrierSocle } from "../../modules/lakour-mj-ia/scripts/fetes-logique.js";
 
@@ -303,6 +304,7 @@ function lireOptions(argv) {
     else if (argv[i] === "--json") o.json = argv[++i];
     else if (argv[i] === "--monde") o.monde = Number(argv[++i]);
     else if (argv[i] === "--serie") o.serie = String(argv[++i]);
+    else if (argv[i] === "--sans-lieux") OPTIONS_SIMULATEUR.lieux = false;   // lot 5 « fouille » : la fouille d'avant le lot
   }
   return o;
 }

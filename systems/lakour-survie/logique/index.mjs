@@ -33,3 +33,4 @@ export * from "./gestion.mjs";
 export * from "./plans.mjs";
 export * from "./reperes.mjs";
 export * from "./corps.mjs";
+export * from "./fouilles.mjs";

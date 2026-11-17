@@ -1,0 +1,118 @@
+{
+  "_id": "YAKvgcujH2mpBHdq",
+  "_key": "!tables!YAKvgcujH2mpBHdq",
+  "name": "Récolte — Bourg",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les rues, les cours, les terrains vagues d'une ville ou d'un bourg : ce que le bâti a laissé tomber. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-bourg",
+      "fouilles": "recolte-bourg"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "jFmKeOny8GxCEl40",
+      "_key": "!tables.results!YAKvgcujH2mpBHdq.jFmKeOny8GxCEl40",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Décombres</strong> (14) — Un tas de gravats et de planches : il se fouille comme un lieu (genre « Décombres »).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CMmd8boC0CxM2QSF",
+      "_key": "!tables.results!YAKvgcujH2mpBHdq.CMmd8boC0CxM2QSF",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Jardin en friche</strong> (6) — Le jardin d'une case abandonnée, envahi : des graines, quelques légumes, des zerbaz. Il se prend avec la cible « jardins ».</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "lRzFh6E2aPbgq0QV",
+      "_key": "!tables.results!YAKvgcujH2mpBHdq.lRzFh6E2aPbgq0QV",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Zerbaz</strong> (3) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "AJy1X7aDd1iDHGR2",
+      "_key": "!tables.results!YAKvgcujH2mpBHdq.AJy1X7aDd1iDHGR2",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Talus de terre</strong> (3) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yaPFaM48GqBncYck",
+      "_key": "!tables.results!YAKvgcujH2mpBHdq.yaPFaM48GqBncYck",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Touffe de bambous</strong> (2) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dqJDemJTPXxM7fLO",
+      "_key": "!tables.results!YAKvgcujH2mpBHdq.dqJDemJTPXxM7fLO",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bancoulier</strong> (1) — Un grand arbre des Bas aux noix huileuses : on ne les mange pas crues, mais leur huile éclaire une lampe.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

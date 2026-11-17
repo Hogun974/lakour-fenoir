@@ -175,7 +175,8 @@ export class ModeleEquipement extends foundry.abstract.TypeDataModel {
       // Lot 6 « ateliers » (logique/armes.mjs, fabrication.mjs) : la qualité, les gammes d'outils servies, la solidité (0 : celle de la
       // qualité), les réparations de fortune déjà faites, l'arme remise en état, la lumière, le remède, la protection, l'aménagement.
       qualite: texte(), gammes: cles(), usages: nombre(0), reparations: entier(0, 0, 3), remise: bool(false), eclaire: bool(false),
-      remede: objetNul(), protege: cles(), amenagement: objetNul()
+      remede: objetNul(), protege: cles(), amenagement: objetNul(),
+      capture: cles()   // lot 5 « fouille » : les bêtes que cet outil prend (cage, sac de goni, corde, enfumoir)
     };
   }
 }

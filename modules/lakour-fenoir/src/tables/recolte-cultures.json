@@ -1,0 +1,133 @@
+{
+  "_id": "C7PGquKNBwmKdRWZ",
+  "_key": "!tables!C7PGquKNBwmKdRWZ",
+  "name": "Récolte — Cultures",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les champs de géranium, de légumes, de vanille, les vergers : la terre travaillée, retournée à la friche. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d7",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-cultures",
+      "fouilles": "recolte-cultures"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "c8pGcL3kaoWthBgL",
+      "_key": "!tables.results!C7PGquKNBwmKdRWZ.c8pGcL3kaoWthBgL",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Talus de terre</strong> (7) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mwJ39dyWF6zsPFGM",
+      "_key": "!tables.results!C7PGquKNBwmKdRWZ.mwJ39dyWF6zsPFGM",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Zerbaz</strong> (6) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TlQiiqVqgbYRUuH2",
+      "_key": "!tables.results!C7PGquKNBwmKdRWZ.TlQiiqVqgbYRUuH2",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Jardin en friche</strong> (5) — Le jardin d'une case abandonnée, envahi : des graines, quelques légumes, des zerbaz. Il se prend avec la cible « jardins ».</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sV8qQTFFif5P90bQ",
+      "_key": "!tables.results!C7PGquKNBwmKdRWZ.sV8qQTFFif5P90bQ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Touffe de bambous</strong> (4) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "AMw3SsgkLcuHmH8x",
+      "_key": "!tables.results!C7PGquKNBwmKdRWZ.AMw3SsgkLcuHmH8x",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Pied de choka</strong> (3) — L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "a4J0lYEZWpWXNV88",
+      "_key": "!tables.results!C7PGquKNBwmKdRWZ.a4J0lYEZWpWXNV88",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Décombres</strong> (2) — Un tas de gravats et de planches : il se fouille comme un lieu (genre « Décombres »).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YjScFPFOuu3GjNhD",
+      "_key": "!tables.results!C7PGquKNBwmKdRWZ.YjScFPFOuu3GjNhD",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Berge d'argile</strong> (2) — Une berge grasse au fond d'une ravine : l'argile des jarres, du torchis, des fours.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

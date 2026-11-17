@@ -15,7 +15,12 @@
     "bruit": 0,
     "transport": null,
     "effets": null,
-    "marque": ""
+    "marque": "",
+    "capture": [
+      "poule",
+      "lapin",
+      "porcelet"
+    ]
   },
   "effects": [],
   "folder": null,

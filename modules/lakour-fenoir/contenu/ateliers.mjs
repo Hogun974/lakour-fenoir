@@ -157,6 +157,9 @@ const VIE = [
     description: `Un hameçon tordu dans du fil de fer, une ligne, une gaulette : de quoi pêcher depuis les galets.` }),
   equipement({ cle: "pieges-a-rats", nom: "Pièges à rats", categorie: "outil", bonus: {}, charge: 0,
     description: `Deux pièges de planche et de fil de fer. Les rats gâtent les réserves et salissent l'eau : avec eux posés près des stocks, le MJ ne fait pas perdre de vivres aux rats.` }),
+  // Les outils de capture : une seule fiche par outil pour les lots 5, 6 et 8 (fusion de la vague 3), celle du lot 6, sans qualité
+  // (ils ne servent aucune gamme : le contrat §24 refuse une qualité sans gamme) ; ce
+  // qu'ils prennent (`capture`, posé par contenu/fouilles.mjs puis contenu/vivant.mjs).
   equipement({ cle: "cage-de-bambou", nom: "Cage de bambou", categorie: "outil", bonus: {}, charge: 1,
     description: `Une cage de gaulettes liées : pour emporter vivante une poule ou un lapin trouvés en fouillant. Sans elle, la bête file.` }),
   equipement({ cle: "sac-de-goni", nom: "Sac de goni", categorie: "outil", bonus: {}, charge: 0,

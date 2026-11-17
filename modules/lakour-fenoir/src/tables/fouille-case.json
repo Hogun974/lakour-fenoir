@@ -1,0 +1,448 @@
+{
+  "_id": "Oe16atAsOCRp0fB4",
+  "_key": "!tables!Oe16atAsOCRp0fB4",
+  "name": "Fouille — Case créole",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une case de bois sous tôle, sa varangue, sa cour de terre battue et son pied de letchi. Le linge plié dans l'armoire, les bocaux de la cuisine, les outils du jardin sous l'auvent, parfois une poule qui gratte encore la cour. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d28",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-case",
+      "fouilles": "fouille-case"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "UkgcnF3uFVBfsWAi",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.UkgcnF3uFVBfsWAi",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 5 linge et tissu — 80 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "PWe58n15pkjWgGUg",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.PWe58n15pkjWgGUg",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 bocaux — 70 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "snbGSLl7Rz8eoMoq",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.snbGSLl7Rz8eoMoq",
+      "type": "text",
+      "name": "",
+      "description": "<p>10 à 30 clous — 60 % ; 200 pour 1 matériaux</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5Y10g0hV4wfgC6Fr",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.5Y10g0hV4wfgC6Fr",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 vivres secs (riz, grains, sucre) — 50 % ; 2 pour 1 nourriture</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6IeeUL7i9x5HCOQ6",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.6IeeUL7i9x5HCOQ6",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 boîtes de conserve — 40 % (+5 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "XApPRFQGhBPbTfJo",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.XApPRFQGhBPbTfJo",
+      "type": "text",
+      "name": "",
+      "description": "<p>3 à 10 papier — 50 % ; 40 pour 1 matériaux</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "V7eFrkrBtbNaWmrt",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.V7eFrkrBtbNaWmrt",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une corde — 40 % ; un objet</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "m4CAC45PHO94dTIc",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.m4CAC45PHO94dTIc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un couteau — 35 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mT1UdTDrMpsIlRdq",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.mT1UdTDrMpsIlRdq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un marteau — 30 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aK176hW6AOyFNKUq",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.aK176hW6AOyFNKUq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une scie — 20 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HBFB0gCJFOBdXbQz",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.HBFB0gCJFOBdXbQz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un sabre à canne — 25 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TK3L6PsxEKUGzFoG",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.TK3L6PsxEKUGzFoG",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 seaux — 30 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "87eIPgQgImFgafhM",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.87eIPgQgImFgafhM",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 savon — 25 % ; 8 pour 1 médicaments</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TrXvcnzkW5h1KU6W",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.TrXvcnzkW5h1KU6W",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 pansements — 20 % (+5 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ynMZ0tDgCJjdaCQp",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.ynMZ0tDgCJjdaCQp",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 eau de Javel — 20 % ; 6 pour 1 médicaments</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gFjjWDkplEfLLzJr",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.gFjjWDkplEfLLzJr",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 sachets de graines — 30 % ; 2 pour 1 graines</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VdLKZiquw2zmAgBh",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.VdLKZiquw2zmAgBh",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 bâches — 25 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SzNEpbMoFGQiCKoq",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.SzNEpbMoFGQiCKoq",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 fil de fer — 40 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TPSqNObjgp8pmU9D",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.TPSqNObjgp8pmU9D",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 visserie — 40 % ; 8 pour 1 pièces</p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Jpy5goCPwg5cfJPB",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.Jpy5goCPwg5cfJPB",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 bouteilles d'eau — 25 % ; 2 pour 1 eau</p>",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tQWDI3edA2X1EBvW",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.tQWDI3edA2X1EBvW",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 alcool désinfectant — 10 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "range": [
+        21,
+        21
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZnyB3sIdLtmaliES",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.ZnyB3sIdLtmaliES",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une truelle — 12 % (+3 % par palier de risque) ; un objet</p>",
+      "range": [
+        22,
+        22
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xgqWYr52JMU524Kp",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.xgqWYr52JMU524Kp",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une pince — 15 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        23,
+        23
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "c4T91bfjctYWVd05",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.c4T91bfjctYWVd05",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 cartouches — 5 % (+5 % par palier de risque) ; 4 pour 1 munitions</p>",
+      "range": [
+        24,
+        24
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "x76bzQLGDU9OQSk0",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.x76bzQLGDU9OQSk0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un fusil de chasse — 2 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        25,
+        25
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "696nhEhENST2Xyt9",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.696nhEhENST2Xyt9",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 bouteilles de gaz — 8 % (+3 % par palier de risque) ; 10 gaz chacun</p>",
+      "range": [
+        26,
+        26
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KFlFPiGCr6ByNl3y",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.KFlFPiGCr6ByNl3y",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un sac de goni — 15 % ; un objet</p>",
+      "range": [
+        27,
+        27
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "E4gN8pK9vAHyyrxk",
+      "_key": "!tables.results!Oe16atAsOCRp0fB4.E4gN8pK9vAHyyrxk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une cage à volailles — 6 % ; un objet</p>",
+      "range": [
+        28,
+        28
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}
