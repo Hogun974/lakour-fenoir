@@ -79,6 +79,16 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
     this.vitalite = { value: Math.max(0, 4 - (Number(this.blessures) || 0)), max: 4 };
     this.forces = { value: Math.max(0, 5 - (Number(this.fatigue) || 0)), max: 5 };
   }
+
+  // La graine d'histoire que lit le MJ IA (lakour-mj-ia, materiauHistoire : system.graineHistoire d'abord) : celle gardée à la
+  // création, sinon l'histoire que donne la fiche (§16, scripts/histoires.mjs). Calculée, jamais stockée.
+  get graineHistoire() {
+    const a = this.parent;
+    const gardee = a?.flags?.["lakour-survie"]?.graine || a?.flags?.["lakour-mj-ia"]?.graineHistoire;
+    if (gardee) return gardee;
+    const phrases = globalThis.game?.lakourSurvie?.histoireDuSurvivant?.({ acteur: a })?.phrases ?? [];
+    return phrases.length ? phrases.join(" ") : undefined;
+  }
 }
 
 export class ModeleAbri extends foundry.abstract.TypeDataModel {

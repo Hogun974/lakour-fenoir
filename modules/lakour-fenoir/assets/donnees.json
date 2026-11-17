@@ -19662,5 +19662,2738 @@
    "prix": "Il tousse la nuit, ne peut plus porter, et refuse de s'éloigner de la mer plus de quelques jours.",
    "notes": "Arrivé de Mayotte il y a quarante ans, kofia brodée et barbe blanche, il a pêché au large de Saint-Gilles toute sa vie et tressé ses nasses au bambou. Il se moque des Yabs, « *bann yab i koné pa la mèr* » (les petits blancs des Hauts ne connaissent pas la mer) ; son meilleur ami, un pêcheur de Cilaos descendu à vingt ans, lui a pourtant sauvé la vie un soir de houle. Il prie à l'heure, rit fort, et sait où sont les poissons."
   }
+ ],
+ "histoires": [
+  {
+   "cle": "enfance:enfant-des-hauts-de-salazie",
+   "type": "enfance",
+   "pour": [
+    "enfant-des-hauts-de-salazie"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Grand Îlet, où l'on rentrait de l'école à pied sous la pluie."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Hell-Bourg, dans une case en bois sous tôle dont la varangue donnait sur la brume."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient de Mare à Vieille Place, un écart de Salazie où le chouchou grimpe jusque sur les fils électriques."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa grand-mère lui a appris le nom de chaque plante de la forêt."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Chez {elle|lui}, on vendait le chouchou au bord de la route, dans des gonis posés sur une chaise."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "Le car du collège partait avant le jour ; {elle|il} finissait sa nuit contre la vitre."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait traverser un radier en crue, et surtout quand il ne faut pas le traverser."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait tresser un panier en paille de chouchou, les yeux fermés."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} compte les cascades après la pluie comme d'autres comptent les jours."
+    },
+    {
+     "sujet": "marque",
+     "texte": "La pluie ne {la|le} gêne pas : {elle|il} dit qu'à Salazie on naît mouillé."
+    },
+    {
+     "sujet": "ile",
+     "texte": "L'année de ses dix ans, un cyclone a coupé la route du cirque trois semaines ; personne n'a manqué de rien."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:gamin-du-port",
+   "type": "enfance",
+   "pour": [
+    "gamin-du-port"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi dans une cité du Port, à l'ombre des grues."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à La Rivière des Galets, du côté où le vent du large apporte la poussière du port."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} est {une|un} enfant du Port : quatre étages, une cour en béton, et la sirène des bateaux pour horloge."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa bande d'enfance, c'était sa famille."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Son père était docker ; il rentrait avec l'odeur du sucre en vrac sur les mains."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "{Elle|Il} a séché plus de cours qu'{elle|il} n'en a suivis, mais sait compter une cargaison d'un coup d'œil."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} pêchait au bout de la jetée, avec un fil et une capsule de bouteille pour plomb."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait réparer un vélo avec ce qui traîne, et l'a fait pour toute la cité."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} ne laisse jamais quelqu'un des siens derrière : c'est la seule règle qu'{elle|il} ait gardée."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} reconnaît un bateau à son bruit avant de le voir."
+    },
+    {
+     "sujet": "ile",
+     "texte": "Les soirs de maloya sur le front de mer, {elle|il} tenait le kayamb pour les grands."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:fille-de-pecheur-de-saint-pierre",
+   "type": "enfance",
+   "pour": [
+    "fille-de-pecheur-de-saint-pierre"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi sur le port de Saint-Pierre, entre les filets de son père."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Terre Sainte, le quartier des pêcheurs, où les barques dorment devant les cases."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient de Terre Sainte : une ruelle, un banian, et la mer au bout."
+    },
+    {
+     "sujet": "famille",
+     "texte": "{Elle|Il} savait nager avant de savoir marcher, disait sa mère."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa mère vendait le poisson sur le quai et ne s'est jamais trompée d'un sou."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "À l'école, {elle|il} sentait le poisson le lundi, et a appris à en rire avant les autres."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait ramender un filet, vider un thon et lire le ciel de l'après-midi."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} a tenu la barre pour la première fois à neuf ans, un matin sans vent."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} regarde toujours la mer avant de décider quoi que ce soit."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} ne mange pas de poisson le jour où quelqu'un n'est pas rentré."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} a vu la houle australe passer par-dessus la jetée, et les anciens remonter les barques à la main."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-zoreil",
+   "type": "enfance",
+   "pour": [
+    "enfance-zoreil"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} est arrivé{e|} de métropole à dix ans et a mis un an à comprendre le créole de la cour de récréation.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a débarqué à dix ans d'une ville grise du Nord, avec un anorak qui n'a plus jamais servi.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} avait dix ans quand la famille a suivi une mutation jusqu'à Saint-Gilles-les-Bains ; cela devait durer trois ans.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} dit toujours qu'{elle|il} est d'ici, et on lui répond toujours que non."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} parle créole avec un accent que tout le monde reconnaît, et le parle quand même."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "On l'appelait « zoreil » à l'école ; {elle|il} a fini par répondre au mot comme à un prénom."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} a appris le cari chez la voisine, qui ne lui a jamais donné la recette, seulement les gestes."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Ses parents sont repartis ; {elle|il} est resté{e|}, sans jamais bien savoir l'expliquer."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} attrape encore des coups de soleil, et tout le monde le lui fait remarquer."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfant-de-la-cite-saint-denis",
+   "type": "enfance",
+   "pour": [
+    "enfant-de-la-cite-saint-denis"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi au dixième étage d'une barre du Chaudron."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi au Butor, à Saint-Denis, dans un immeuble dont l'ascenseur n'a jamais marché deux mois de suite."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient d'une cité de Saint-Denis où les mères se parlaient de balcon à balcon."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} connaît chaque raccourci de Saint-Denis, chaque cage d'escalier ouverte."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} dort mieux avec du bruit : le silence des Hauts {la|le} réveille."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa mère faisait des samoussas pour tout l'étage, et l'étage gardait les enfants en retour."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "{Elle|Il} faisait ses devoirs dans l'escalier, là où il y avait de la lumière et pas de petits frères."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait ouvrir une porte sans la clé et ne s'en vante pas."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} jouait au foot pieds nus sur le béton, jusqu'à ce que les lampadaires s'allument."
+    },
+    {
+     "sujet": "ile",
+     "texte": "Pour le 20 désanm, toute la cité descendait au Barachois, les petits sur les épaules."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} a vu la mer tous les jours de sa vie sans presque jamais s'y baigner."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-a-mayotte",
+   "type": "enfance",
+   "pour": [
+    "enfance-a-mayotte"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Mayotte avant de rejoindre une tante à Saint-Denis.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Mayotte, dans un village au bord du lagon, et a pris l'avion pour la première fois à quatorze ans.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "famille",
+     "texte": "{Elle|Il} parlait shimaoré à sa mère au téléphone, chaque dimanche."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Une tante l'a recueilli{e|}, qui comptait un enfant de plus sans jamais compter la dépense."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "École coranique le matin, école de la République l'après-midi : {elle|il} a toujours eu deux cartables."
+    },
+    {
+     "sujet": "marque",
+     "texte": "On lui a tant demandé ses papiers qu'{elle|il} les garde encore sur {elle|lui}, par réflexe."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} compare encore les deux lagons, et ne dit jamais lequel gagne."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait griller le manioc et le poisson sur trois pierres, comme au voulé du dimanche."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-comorienne-du-chaudron",
+   "type": "enfance",
+   "pour": [
+    "enfance-comorienne-du-chaudron"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} est né{e|} au Chaudron, dans une famille venue de la Grande Comore."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi au Chaudron, dans un trois-pièces où l'on était neuf et où il restait toujours une place."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient du Chaudron, de l'immeuble où la cage d'escalier sentait le pilao le vendredi."
+    },
+    {
+     "sujet": "famille",
+     "texte": "{Elle|Il} traduisait pour sa grand-mère au guichet, du shikomori au français et retour."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Les grands mariages de la famille duraient des jours ; {elle|il} y a appris à servir cent personnes sans rien renverser."
+    },
+    {
+     "sujet": "marque",
+     "texte": "Quand on lui demande d'où {elle|il} vient, {elle|il} répond « du Chaudron », et on insiste quand même."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} parle créole, français et shikomori dans la même phrase, sans s'en apercevoir."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "{Elle|Il} était en tête de la classe, et en queue de la liste des invités aux anniversaires."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait qui prévenir, et dans quel ordre, quand quelqu'un du quartier a besoin d'aide."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} n'a vu les Comores qu'une fois, un été, et s'y est senti{e|} de passage là-bas aussi."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} a appris à se taire quand on parle des « derniers arrivés », et à ne pas oublier qui parlait."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-a-madagascar",
+   "type": "enfance",
+   "pour": [
+    "enfance-a-madagascar"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Madagascar, sur les Hautes Terres, où l'hiver pique plus qu'ici.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Tamatave, sur la côte est de Madagascar, face à la même mer vue de l'autre côté.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "famille",
+     "texte": "{Elle|Il} envoyait chaque mois de l'argent à ses frères restés au pays."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait réparer n'importe quoi avec presque rien : là-bas, on n'avait pas le choix."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait repiquer le riz, et sourit de voir l'île acheter le sien en sac."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} est arrivé{e|} avec un visa de trois mois et une valise prêtée ; c'était il y a longtemps.",
+     "age": [
+      26,
+      120
+     ]
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a retrouvé ici des mots malgaches dans le créole, et des noms de famille déjà connus."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "{Elle|Il} a appris le français à l'école, dans des livres plus vieux que l'instituteur."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-a-maurice",
+   "type": "enfance",
+   "pour": [
+    "enfance-a-maurice"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Maurice et a traversé pour suivre {son mari|sa femme}.",
+     "marques": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      20,
+      120
+     ]
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Maurice, à Mahébourg, et a traversé à vingt ans pour un travail de six mois.",
+     "marques": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      21,
+      120
+     ]
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Maurice, dans un village de canne, avant que la famille ne traverse.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} compare tout à son île natale, et finit toujours par dire que celle-ci n'est pas mal non plus."
+    },
+    {
+     "sujet": "marque",
+     "texte": "Son créole n'est pas tout à fait celui d'ici ; on {la|le} comprend, on {la|le} taquine, et {elle|il} taquine en retour."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa mère parlait bhojpuri à la maison, créole au marché et anglais devant l'administration."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} fait les dholl puri de sa mère, et refuse d'entendre qu'ils ressemblent à autre chose."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "{Elle|Il} a appris à lire en anglais et en français à la fois, et mélange encore les deux en comptant."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfant-de-planteur-de-l-est",
+   "type": "enfance",
+   "pour": [
+    "enfant-de-planteur-de-l-est"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Cambuston, au milieu de la canne, là où la route est droite et le ciel bas."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Bras-Panon, dans une case entre la vanille sous ombrière et le champ de canne."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient de Sainte-Anne, sur la côte au vent, où il pleut même quand il fait beau."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} a coupé sa première canne à douze ans, avec le sabre de son père."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait féconder la vanille à la main, fleur par fleur, avant que le soleil ne soit haut."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Chaque Dipavali, sa famille allumait des lampes jusque dans la cour."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Pendant la coupe, toute la famille vivait au rythme du cachalot, le camion qui emporte la canne à l'usine."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "{Elle|Il} manquait l'école pendant la coupe ; la maîtresse ne disait rien, ayant grandi là aussi."
+    },
+    {
+     "sujet": "marque",
+     "texte": "L'odeur de la bagasse chaude lui manque plus que tout le reste."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} juge une terre en la prenant dans la main."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} a vu la rivière sortir de son lit et emporter un champ entier en une nuit."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfant-de-mafate",
+   "type": "enfance",
+   "pour": [
+    "enfant-de-mafate"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à La Nouvelle, dans Mafate, où l'école n'avait qu'une classe."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Roche Plate, sous le rempart du Maïdo, à trois heures de marche de la première route."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient d'Aurère, un îlet de Mafate où ce qui ne pousse pas arrive par hélicoptère ou à dos d'homme."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} est descendu{e|} en ville à quinze ans et n'a jamais aimé le bruit des voitures."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} marche vite et parle peu ; dans le cirque, les deux vont ensemble."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Son père portait le courrier d'îlet en îlet, et savait qui attendait quoi."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "Pour le collège, il a fallu descendre : la semaine en internat, le sentier le vendredi soir."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait porter une charge sur la tête, sur un sentier large comme deux pieds."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait où l'eau sort de la roche, même en saison sèche."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} a appris les étoiles avant les lampadaires : l'électricité, c'était un panneau et une batterie."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} connaît le nom de chaque îlet, et celui des familles qui y vivent."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfant-du-tampon",
+   "type": "enfance",
+   "pour": [
+    "enfant-du-tampon"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi au Dix-Septième, dans une case avec un grand jardin."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi au Petit-Tampon, là où les rues montent droit vers la brume."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient de Bérive, dans les hauts du Tampon, entre les géraniums et les champs de pommes de terre."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Les vacances, c'était la ferme de son oncle, à la Plaine des Cafres."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Le dimanche, toute la famille montait pique-niquer au Nez de Boeuf, la marmite de cari dans le coffre."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "{Elle|Il} allait à l'école en pull, et se moquait des cousins des Bas qui grelottaient à dix-huit degrés."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait faire pousser à peu près tout, pourvu qu'on lui laisse un carré de terre et de la brume."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} donne les adresses en kilomètres, comme tout le monde là-haut : le Quatorzième, le Vingt-Deuxième."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} ne se sent bien qu'avec une pente sous les pieds."
+    },
+    {
+     "sujet": "ile",
+     "texte": "À la fête des fleurs du Tampon, {elle|il} tenait le stand de la famille et rendait la monnaie de tête."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} a vu le volcan rougir le ciel depuis la fenêtre de sa chambre, plus d'une nuit."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfant-de-l-ouest",
+   "type": "enfance",
+   "pour": [
+    "enfant-de-l-ouest"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à L'Ermitage, et a appris à nager dans le lagon avant d'apprendre à lire."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à La Saline les Bains, à deux rues de la plage et des filaos."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Saint-Paul, près du marché du front de mer, où l'on vend de tout le vendredi."
+    },
+    {
+     "sujet": "travail",
+     "texte": "L'été, {elle|il} vendait des glaces sur la plage aux touristes."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait lire la passe et le courant, et à quelle heure le lagon se vide."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} pêchait le zourite à marée basse, avec un bâton et la patience de sa grand-mère."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa famille louait la case aux vacanciers ; pendant la saison, {elle|il} dormait dans la cuisine."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a la peau qui ne craint plus le soleil et les pieds qui ne craignent plus le corail."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} trouve qu'il fait froid dès qu'on dépasse Saint-Gilles-les-Hauts."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} se souvient du jour où l'on a interdit la baignade, et de la plage vide ensuite."
+    },
+    {
+     "sujet": "ile",
+     "texte": "Les soirs de pique-nique sous les filaos, trois familles partageaient une seule marmite."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfant-de-cilaos",
+   "type": "enfance",
+   "pour": [
+    "enfant-de-cilaos"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Cilaos, où sa mère brodait des nappes pour les touristes."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Îlet à Cordes, au bout d'une route qui tient au rempart par habitude."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient de Palmiste Rouge, un écart de Cilaos où le car ne monte que si la route est sèche."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Bras Sec, entre les carrés de lentilles et les vignes en treille."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} sait qu'une route peut disparaître en une nuit."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} compte encore les virages de la route, les nuits où le sommeil ne vient pas."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} a trié les lentilles sur la table de la cuisine, soir après soir, caillou par caillou."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait tirer les fils d'une toile pour un jour de Cilaos, même si ses doigts en ont perdu l'habitude."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Son grand-père faisait un vin que personne n'osait dire mauvais."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "Quand la route cassait, l'école continuait : la maîtresse habitait à trois cases."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} a vu le Piton des Neiges blanc de givre un matin d'août, et n'en a parlé à personne des Bas."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-chinoise-de-saint-denis",
+   "type": "enfance",
+   "pour": [
+    "enfance-chinoise-de-saint-denis"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi derrière le comptoir de la boutique de ses parents, à Saint-Denis."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Saint-Denis, au-dessus de la boutique familiale, dans l'odeur du riz et du pétrole lampant."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient d'une boutique d'angle de Saint-Denis où tout le quartier avait son carnet de crédit."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Son grand-père racontait la traversée depuis Canton, chaque Nouvel An."
+    },
+    {
+     "sujet": "famille",
+     "texte": "À la maison on parlait hakka, à la boutique créole, et à l'école français."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "Le samedi, c'était l'école chinoise ; {elle|il} y a surtout appris à tenir un pinceau sans soupirer."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} savait rendre la monnaie avant de savoir lire."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} tient un carnet de crédit de mémoire : qui doit quoi, et qui il ne faut pas presser."
+    },
+    {
+     "sujet": "marque",
+     "texte": "On disait que la boutique ne faisait crédit qu'aux siens ; {elle|il} l'a vue nourrir la rue tout un mois de cyclone."
+    },
+    {
+     "sujet": "ile",
+     "texte": "Pour la fête de Guan Di, {elle|il} portait les offrandes au temple, et le dragon passait devant la boutique."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} n'a jamais vu Canton, et connaît par cœur une rue où {elle|il} n'a jamais marché."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-zarab-de-saint-pierre",
+   "type": "enfance",
+   "pour": [
+    "enfance-zarab-de-saint-pierre"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Saint-Pierre, au-dessus du magasin de tissus de la famille."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi dans le centre de Saint-Pierre, entre la mosquée et la rue des commerces."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient de Saint-Pierre, d'une maison où le magasin commençait au rez-de-chaussée et finissait à table."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} a appris à compter en rendant la monnaie au magasin de son père."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait mesurer un tissu au bras et dire son prix sans toucher l'étiquette."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Dans sa famille, une parole donnée vaut un contrat signé."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa grand-mère parlait encore gujarati, et faisait des samoussas pour la rupture du jeûne de toute la rue."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "Après l'école, c'était la médersa ; après la médersa, la caisse du magasin."
+    },
+    {
+     "sujet": "marque",
+     "texte": "On dit sa famille dure en affaires ; {elle|il} sait surtout ce que coûte un crédit qu'on ne réclame pas."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} ne marchande jamais un prix juste, et ne paie jamais un prix qui ne l'est pas."
+    },
+    {
+     "sujet": "ile",
+     "texte": "Le soir de l'Aïd, les voisins de toutes les religions passaient goûter, et repartaient avec une assiette."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfant-de-militaire",
+   "type": "enfance",
+   "pour": [
+    "enfant-de-militaire"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a changé huit fois d'école avant le collège, au gré des affectations de son père.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi de caserne en caserne, et n'a défait ses cartons dans l'île qu'à l'adolescence.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "famille",
+     "texte": "Son père l'emmenait au stand de tir le dimanche."
+    },
+    {
+     "sujet": "famille",
+     "texte": "À la maison, les lits se faisaient au carré et les repas se prenaient à l'heure."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} se fait des amis vite et les quitte sans bruit : l'habitude."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} range toujours ses affaires comme si l'on partait demain."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait lire une carte, plier un sac et attendre un ordre sans le demander deux fois."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "À chaque rentrée, {elle|il} arrivait sans connaître personne, et a appris à choisir sa place au fond."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-en-foyer",
+   "type": "enfance",
+   "pour": [
+    "enfance-en-foyer"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a connu trois familles d'accueil avant ses quatorze ans."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi dans un foyer de Saint-Denis, puis dans un autre à Saint-Louis, sans jamais tout déballer."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi dans une famille d'accueil de La Rivière, qui avait déjà six enfants et de la place quand même."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} garde toujours un sac prêt, au cas où."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} retient les prénoms du premier coup : on ne sait jamais combien de temps on reste."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} ne demande rien deux fois, et remercie pour tout."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Une éducatrice lui écrivait chaque année pour son anniversaire ; {elle|il} a gardé toutes les cartes."
+    },
+    {
+     "sujet": "famille",
+     "texte": "{Elle|Il} appelle « tatie » une femme qui n'est pas de son sang, et ne laisse personne en sourire."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "À l'école, {elle|il} disait que ses parents travaillaient loin ; personne n'a jamais vérifié."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait faire à manger pour douze avec ce qu'il y a dans un placard de collectivité."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} connaît l'île par ses déménagements : un bout de l'Est, un bout du Sud, jamais longtemps."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-protegee",
+   "type": "enfance",
+   "pour": [
+    "enfance-protegee"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi dans une villa avec piscine et n'avait jamais porté un sac de ciment."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à La Montagne, au-dessus de Saint-Denis, dans une maison d'où l'on voyait les autres de haut."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Saint-Gilles-les-Bains, dans une résidence fermée, entre le club de voile et le cours de piano."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Ses parents sont partis par l'un des derniers avions ; {elle|il} n'a pas voulu les suivre."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Une nénène l'a élevé{e|} plus que ses parents, et lui a appris le créole qu'on ne parlait pas au salon."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "{Elle|Il} allait à l'école privée en voiture, tous les jours, pour moins d'un kilomètre."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} apprend vite, maintenant, et n'aime pas qu'on lui rappelle d'où {elle|il} vient."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} dit « s'il vous plaît » à tout le monde, même s'il n'y a plus personne pour l'exiger."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait monter à cheval, barrer un dériveur et lire une étiquette de vin : rien de tout cela ne sert."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} n'avait jamais pris le car jaune avant la fin du monde."
+    },
+    {
+     "sujet": "ile",
+     "texte": "Le nom de sa famille est sur une usine, une rue et une vieille rancune."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfant-de-la-plaine-des-cafres",
+   "type": "enfance",
+   "pour": [
+    "enfant-de-la-plaine-des-cafres"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi dans une ferme de La Plaine des Cafres, à mille six cents mètres."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Bourg Murat, là où la route du volcan quitte les dernières maisons."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient du Vingt-Deuxième, sur la Plaine, où le brouillard arrive à quatre heures comme un voisin."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} montait à cheval avant de savoir faire du vélo."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} trayait les vaches avant l'école, et se réchauffait les mains contre leur flanc."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa grand-mère mettait une bouillotte dans chaque lit et du rhum arrangé dans chaque grog."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "L'hiver, {elle|il} cassait la glace dans l'abreuvoir avant de prendre le car."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} n'aime pas la chaleur des Bas, et trouve que la mer manque d'herbe."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} sent venir le brouillard une heure avant tout le monde."
+    },
+    {
+     "sujet": "ile",
+     "texte": "À la foire agricole de la Plaine, {elle|il} menait le veau de la famille au concours, peigné comme pour un mariage."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} a vu passer les voitures vers le volcan à chaque éruption, sans jamais monter voir."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-yab-des-hauts-de-l-ouest",
+   "type": "enfance",
+   "pour": [
+    "enfance-yab-des-hauts-de-l-ouest"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Petite France, sur la route du Maïdo, dans l'odeur du géranium."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi au Guillaume, à mi-pente, là où l'on voit la mer sans jamais y descendre."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient des hauts des Trois Bassins, d'une case en bardeaux montée par un arrière-grand-père."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Son grand-père distillait le géranium dans un alambic de cuivre noirci."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Chez {elle|lui}, on tuait le cochon en décembre, et toute la ravine repartait avec un morceau."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "Au lycée, on l'appelait « yab kouyon » ; {elle|il} a appris à répondre plus vite que les autres."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait couper le bois de chauffe pour l'alambic, et dire à l'odeur quand l'essence est bonne."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait monter un mur en pierre sèche qui tient encore après trois cyclones."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} porte un nom que la moitié de l'île porte aussi, des Hauts jusqu'à la mer."
+    },
+    {
+     "sujet": "marque",
+     "texte": "On dit les gens des Hauts têtus ; {elle|il} répond qu'il faut bien l'être pour cultiver une pente pareille."
+    },
+    {
+     "sujet": "ile",
+     "texte": "Les matins d'hiver, {elle|il} voyait la mer de nuages remplir Mafate depuis le bord du rempart."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-tamoule-de-saint-andre",
+   "type": "enfance",
+   "pour": [
+    "enfance-tamoule-de-saint-andre"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Saint-André, à deux pas du temple, dans une cour où poussaient le margosier et le safran."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Cambuston, dans une case bleue, entre le champ de canne et la chapelle malbare."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient de Saint-André, d'une rue où chaque famille avait son autel et son manguier."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa grand-mère soignait les fièvres du quartier avec des plantes du jardin."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Son père coupait la canne ; c'était aussi le meilleur conteur de la rue."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} a porté le kavadi à seize ans, pour un vœu qu'{elle|il} n'a jamais dit."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait tresser une guirlande de fleurs et faire un cari massalé pour cinquante."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "À l'école, on lui demandait si la marche sur le feu brûlait ; {elle|il} répondait « demande à ton cœur »."
+    },
+    {
+     "sujet": "marque",
+     "texte": "Certains avaient peur du « service » ; {elle|il} a vu les mêmes venir demander une prière, la nuit."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} garde un point de cendre au front les jours qui comptent.",
+     "foi": [
+      "hindouisme-tamoul",
+      "hindoue"
+     ]
+    },
+    {
+     "sujet": "ile",
+     "texte": "Pour le Dipavali, toute la ville descendait dans la rue, et {elle|il} tenait une lampe dans le défilé."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfance-sur-un-bateau",
+   "type": "enfance",
+   "pour": [
+    "enfance-sur-un-bateau"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a fait le tour de l'océan Indien sur le voilier de ses parents.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi sur un voilier de onze mètres, d'escale en escale, avant que le bateau ne reste au Port.",
+     "marques": [
+      "nee-ailleurs"
+     ]
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} dort mal sur un sol qui ne bouge pas."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} range tout à sa place et l'attache : à bord, ce qui traîne tombe."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "L'école, c'était des cahiers par correspondance sur la table à cartes, entre deux quarts."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait faire un nœud de chaise d'une main et le point à midi avec un sextant."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait faire durer vingt litres d'eau douce une semaine."
+    },
+    {
+     "sujet": "famille",
+     "texte": "{Elle|Il} a eu des amis dans dix ports, et aucun plus de trois semaines."
+    }
+   ]
+  },
+  {
+   "cle": "enfance:enfant-du-sud-sauvage",
+   "type": "enfance",
+   "pour": [
+    "enfant-du-sud-sauvage"
+   ],
+   "phrases": [
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Saint-Philippe, entre la vanille de son grand-père et les coulées."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi au Tremblet, le dernier écart avant les laves, sous les vacoas."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} vient de Langevin, où la rivière descend froide jusqu'à la mer."
+    },
+    {
+     "sujet": "lieu",
+     "texte": "{Elle|Il} a grandi à Manapany-les-Bains, au bord d'un bassin creusé dans le basalte."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a vu la lave traverser la route trois fois avant ses vingt ans.",
+     "age": [
+      20,
+      120
+     ]
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} ne tourne jamais le dos à la mer : ici, elle prend sans prévenir."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} sait tresser le vacoa : un sac, un chapeau, une natte, dans cet ordre de difficulté."
+    },
+    {
+     "sujet": "geste",
+     "texte": "{Elle|Il} pêchait à la gaulette sur les rochers noirs, pieds nus, sans jamais glisser."
+    },
+    {
+     "sujet": "famille",
+     "texte": "Sa grand-mère disait que la Vierge au Parasol avait arrêté la coulée ; un oncle disait que c'était la pente."
+    },
+    {
+     "sujet": "ecole",
+     "texte": "Le car scolaire faisait demi-tour quand la route fumait encore ; {elle|il} trouvait cela normal."
+    },
+    {
+     "sujet": "ile",
+     "texte": "{Elle|Il} a marché sur une terre plus jeune qu'{elle|lui}, encore tiède sous la semelle."
+    }
+   ]
+  },
+  {
+   "cle": "passe:infirmiere-du-chu",
+   "type": "passe",
+   "pour": [
+    "infirmiere-du-chu"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} a passé ses nuits aux urgences du CHU, là où l'on apprend à trier avant de consoler."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} travaillait en pédiatrie au CHU, et savait piquer un enfant en lui parlant de tout autre chose."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} connaît par cœur le bruit des urgences un soir de cyclone."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} se lave encore les mains jusqu'aux coudes, même à l'eau de pluie."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a vu arriver les premiers malades du Gris, et sait ce que personne n'a voulu écrire au dossier."
+    },
+    {
+     "sujet": "lien",
+     "texte": "D'anciens patients {la|le} reconnaissent encore, et cela lui a ouvert plus d'une porte."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait ce qu'il faut prendre dans une pharmacie quand on ne peut emporter qu'un sac."
+    }
+   ]
+  },
+  {
+   "cle": "passe:electricien",
+   "type": "passe",
+   "pour": [
+    "electricien"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} a monté son entreprise d'électricité sans associé, avec une camionnette et un crédit jamais fini de payer."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} posait des panneaux solaires sur les toits de l'Ouest, du Port à Saint-Leu."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} dit toujours qu'un toit sans panneau est un toit qui dort."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} coupe le courant avant de toucher quoi que ce soit, même quand il n'y a plus de courant."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a rétabli la lumière de tout un quartier après un cyclone, sans attendre qu'on le lui demande."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait ce qu'une batterie peut encore donner, rien qu'à son poids et à son odeur."
+    },
+    {
+     "sujet": "lien",
+     "texte": "La moitié de ses clients payaient en retard et l'autre en fruits ; {elle|il} n'a jamais relancé personne."
+    }
+   ]
+  },
+  {
+   "cle": "passe:pecheur-de-saint-gilles",
+   "type": "passe",
+   "pour": [
+    "pecheur-de-saint-gilles"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} sortait du port de Saint-Gilles avant le jour, sur une barque de six mètres."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} pêchait la dorade et le thon au large de Saint-Gilles, à la traîne, sans équipage."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "Depuis qu'{elle|il} pêche, {elle|il} ne dort pas plus de trois nuits loin de la mer."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} regarde le ciel de l'ouest à cinq heures, tous les jours, bateau ou pas."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait lire la houle, la couleur de l'eau et le vol des oiseaux au-dessus d'un banc."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a ramené plus d'un plaisancier en panne, sans jamais demander son nom."
+    },
+    {
+     "sujet": "lien",
+     "texte": "Sur le quai, on lui gardait une place à l'ombre ; son poisson était vendu avant que la barque soit amarrée."
+    }
+   ]
+  },
+  {
+   "cle": "passe:planteur-de-canne",
+   "type": "passe",
+   "pour": [
+    "planteur-de-canne"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} cultivait douze hectares de canne, en pente, là où les machines ne montent pas."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} a repris des terres à canne quand plus personne n'en voulait."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "Chaque fin de campagne, {elle|il} invitait tout le quartier au cari."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} se lève encore à quatre heures pendant les mois de coupe, sans raison."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait affûter un sabre à canne sur une pierre de rivière."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a compté ses tonnes, ses dettes et les années de l'usine : les trois chiffres baissaient ensemble."
+    },
+    {
+     "sujet": "lien",
+     "texte": "{Elle|Il} employait les mêmes coupeurs d'une année sur l'autre, et mangeait avec eux au bord du champ."
+    }
+   ]
+  },
+  {
+   "cle": "passe:gendarme",
+   "type": "passe",
+   "pour": [
+    "gendarme"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} était gendarme à la brigade de Saint-Pierre, plus souvent sur la route que derrière un bureau."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} servait au peloton de montagne, celui qu'on appelle quand un sentier ne rend pas quelqu'un."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a sorti des randonneurs de Mafate en pleine nuit plus d'une fois."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a rendu son arme de service le dernier jour, puis {elle|il} est retourné{e|} la chercher."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} regarde encore les mains des gens avant leur visage."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait calmer une dispute de cour avant qu'un sabre ne sorte."
+    },
+    {
+     "sujet": "lien",
+     "texte": "Certains lui en veulent encore pour un procès-verbal ; d'autres lui doivent un fils ramené vivant."
+    }
+   ]
+  },
+  {
+   "cle": "passe:etudiante",
+   "type": "passe",
+   "pour": [
+    "etudiante"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} avait repris des études sur le tard, au fond de l'amphi parmi des jeunes de vingt ans, et s'en moquait.",
+     "age": [
+      30,
+      120
+     ]
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} était en deuxième année à l'université, au Moufia, quand les cours se sont arrêtés pour de bon.",
+     "age": [
+      16,
+      29
+     ]
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} préparait un concours, des fiches plein les murs, quand tout s'est arrêté."
+    },
+    {
+     "sujet": "lien",
+     "texte": "{Elle|Il} partageait un appartement près du Moufia avec deux amies dont {elle|il} n'a plus de nouvelles."
+    },
+    {
+     "sujet": "marque",
+     "texte": "Personne dans sa famille n'avait fait d'études avant {elle|lui}."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} prend encore des notes sur tout, d'une petite écriture serrée."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} travaillait le soir dans un snack pour payer le loyer, et tient une friteuse aussi bien qu'un cahier."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait apprendre vite dans un livre, ce qui sert plus qu'on ne le croyait."
+    }
+   ]
+  },
+  {
+   "cle": "passe:guide-de-canyon",
+   "type": "passe",
+   "pour": [
+    "guide-de-canyon"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} emmenait des clients dans les canyons de Cilaos, corde sur l'épaule, de bassin en bassin."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} guidait dans Fleurs Jaunes et Bras Rouge, et savait à quelle cascade les rires s'arrêtent."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a perdu un client, une fois, dans une crue, et ne prend plus jamais la pluie à la légère."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} connaît chaque bassin de Cilaos et le nom de chaque cascade."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait faire descendre quelqu'un qui a peur, un mot après l'autre."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} vérifie deux fois chaque nœud, y compris ceux des autres."
+    },
+    {
+     "sujet": "lien",
+     "texte": "Les secours l'appelaient quand il fallait quelqu'un qui connaisse le fond de la ravine."
+    }
+   ]
+  },
+  {
+   "cle": "passe:mecanicien",
+   "type": "passe",
+   "pour": [
+    "mecanicien"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "Son garage était la deuxième maison de tout le quartier."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} tenait un garage au Port : deux ponts, une fosse et un transistor toujours allumé."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} a appris le métier en démontant des mobylettes, et le reste en les remontant."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} reconnaît une panne au bruit, avant d'ouvrir le capot."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} ne jette jamais une pièce : tout finit par resservir."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a les mains noires jusque dans les lignes, et ne cherche plus à les ravoir."
+    },
+    {
+     "sujet": "lien",
+     "texte": "{Elle|Il} faisait crédit jusqu'à la fin du mois, et parfois jusqu'à la fin de l'année."
+    }
+   ]
+  },
+  {
+   "cle": "passe:cuisinier-de-camion-bar",
+   "type": "passe",
+   "pour": [
+    "cuisinier-de-camion-bar"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} tenait un camion-bar sur le front de mer de Saint-Leu : bouchons, sandwichs gratinés, cari du jour."
+    },
+    {
+     "sujet": "metier",
+     "texte": "Son camion-bar ouvrait à onze heures et fermait quand la marmite était vide."
+    },
+    {
+     "sujet": "marque",
+     "texte": "Son camion porte un prénom d'enfant, peint en lettres jaunes ; {elle|il} ne dit pas lequel des siens."
+    },
+    {
+     "sujet": "lien",
+     "texte": "{Elle|Il} connaît les commandes de tous les habitués, et leurs secrets."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait nourrir quarante personnes avec un sac de riz, des grains et ce que la journée apporte."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} fait un rougail qui tire des larmes, et jure que le piment est doux cette année."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} goûte tout avant de servir, même quand il n'y a qu'un seul plat."
+    }
+   ]
+  },
+  {
+   "cle": "passe:retraite-de-la-marine",
+   "type": "passe",
+   "pour": [
+    "retraite-de-la-marine"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} a quitté la marine plus tôt que prévu, avec une pension mince et le pied marin.",
+     "age": [
+      16,
+      47
+     ]
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} a vu tous les ports de l'océan Indien, et n'a posé son sac ici que pour ses vieux jours.",
+     "age": [
+      45,
+      120
+     ]
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} a fait trente ans dans la marine, aux machines puis à la passerelle, et en a gardé le pas.",
+     "age": [
+      48,
+      120
+     ]
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} écoute la radio marine chaque soir, par habitude."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} se réveille pour le quart de quatre heures, sans bateau ni personne à relever."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait le morse, les pavillons et la manière de dire non à un officier."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a un tatouage par océan et une histoire par tatouage, jamais deux fois la même."
+    },
+    {
+     "sujet": "lien",
+     "texte": "Au Port, les anciens du quai lui gardaient une chaise et le journal de la veille."
+    }
+   ]
+  },
+  {
+   "cle": "passe:agricultrice-des-hauts",
+   "type": "passe",
+   "pour": [
+    "agricultrice-des-hauts"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} élevait des vaches laitières à La Plaine des Cafres : quarante têtes, et pas un jour de congé."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} cultivait des légumes dans les Hauts, en terrasses, et descendait les vendre au marché forain."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a sauvé son troupeau du dernier cyclone, sans l'aide de personne."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} compte en litres de lait, en bottes de foin et en jours sans pluie."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} parle du temps qu'il fera comme d'autres parlent de politique : avec des preuves."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait aider une vache à vêler, de nuit, à la lampe frontale, sans vétérinaire."
+    },
+    {
+     "sujet": "lien",
+     "texte": "Les voisins montaient lui emprunter le tracteur, et redescendaient avec des œufs en plus."
+    }
+   ]
+  },
+  {
+   "cle": "passe:ambulancier",
+   "type": "passe",
+   "pour": [
+    "ambulancier"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} a conduit des milliers de malades sur les routes de l'Est, sous la pluie, de nuit."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} conduisait l'ambulance entre Saint-Benoît et le CHU, gyrophare ou pas selon l'état du passager."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} connaît chaque radier qui déborde et chaque raccourci."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait porter un blessé dans un escalier trop étroit sans lui faire plus de mal."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} parle aux gens pendant qu'{elle|il} conduit, pour qu'ils restent là."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a vu naître deux enfants sur la banquette arrière, et porte leurs prénoms sur un bracelet."
+    },
+    {
+     "sujet": "lien",
+     "texte": "Dans les écarts, on reconnaissait son moteur, et la cour s'ouvrait avant le coup de klaxon."
+    }
+   ]
+  },
+  {
+   "cle": "passe:prof-de-svt",
+   "type": "passe",
+   "pour": [
+    "prof-de-svt"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} enseignait les sciences de la vie et de la Terre dans un collège de Saint-Paul."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} enseignait les sciences, emmenait chaque année ses élèves au volcan et ne s'en lassait pas."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a expliqué le Gris à ses élèves avec un tableau et une craie, le dernier jour de classe."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait reconnaître une plante endémique, une roche et un mensonge d'élève."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait expliquer une chose compliquée trois fois, de trois façons, sans s'énerver."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} ramasse encore des cailloux et les range par âge."
+    },
+    {
+     "sujet": "lien",
+     "texte": "D'anciens élèves lui disent encore « vous », même ceux qui ont de la barbe."
+    }
+   ]
+  },
+  {
+   "cle": "passe:vendeur-de-bazar",
+   "type": "passe",
+   "pour": [
+    "vendeur-de-bazar"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} tenait un bazar à Saint-Pierre où l'on trouvait de tout, à condition de demander."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} vendait des marmites, des savates, des piles et des cierges, dans cet ordre sur l'étagère."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} a toujours su ce que voulait un client avant qu'il ouvre la bouche."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} connaît le prix de chaque chose, et ce qu'elle vaut maintenant, ce qui n'est plus pareil."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} range tout ce qu'{elle|il} trouve par usage, et sait où est chaque chose dans le noir."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a donné son stock le premier mois, vendu le reste le deuxième, et ne regrette que l'ordre."
+    },
+    {
+     "sujet": "lien",
+     "texte": "Tout le quartier passait au bazar, pour acheter ou seulement pour dire comment allait la famille."
+    }
+   ]
+  },
+  {
+   "cle": "passe:chauffeur-de-car-jaune",
+   "type": "passe",
+   "pour": [
+    "chauffeur-de-car-jaune"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} a fait la route de Cilaos plus de dix mille fois.",
+     "age": [
+      35,
+      120
+     ]
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} conduisait le car jaune de Saint-Louis à Cilaos : quatre cents virages, et des tunnels où l'on passe au centimètre."
+    },
+    {
+     "sujet": "lien",
+     "texte": "Les enfants du cirque l'appelaient par son prénom et lui montaient des mangues."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait reculer un car dans un virage, au bord du vide, pour laisser passer un camion."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait d'avance où la route cassera à la prochaine grosse pluie."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} klaxonne encore avant chaque virage sans visibilité, même à pied."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} a attendu des passagers en retard plus souvent que l'horaire ne le permettait."
+    }
+   ]
+  },
+  {
+   "cle": "passe:apiculteur",
+   "type": "passe",
+   "pour": [
+    "apiculteur"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} a quitté un bureau de Saint-Denis pour des ruches et ne l'a jamais regretté."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} tenait soixante ruches à La Plaine des Palmistes et les déplaçait au gré des floraisons."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} parle à ses abeilles, et prétend qu'elles lui répondent."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} bouge lentement près de tout ce qui pique, mord ou s'énerve."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait quand fleurissent le letchi, le baie rose et le tan rouge, à la semaine près."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} ne compte plus les piqûres, et soigne les rhumatismes des voisins avec."
+    },
+    {
+     "sujet": "lien",
+     "texte": "Son miel partait au marché avant dix heures ; les habitués réservaient d'une année sur l'autre."
+    }
+   ]
+  },
+  {
+   "cle": "passe:ilette-de-mafate",
+   "type": "passe",
+   "pour": [
+    "ilette-de-mafate"
+   ],
+   "phrases": [
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} tenait un gîte à La Nouvelle : douze lits, un cari au feu de bois et pas de réseau."
+    },
+    {
+     "sujet": "metier",
+     "texte": "{Elle|Il} vivait à Marla, de son jardin, de ses bêtes et du passage des randonneurs."
+    },
+    {
+     "sujet": "habitude",
+     "texte": "{Elle|Il} ne descend en ville que pour les papiers, et remonte le soir même."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} connaît chaque famille du cirque et chaque source."
+    },
+    {
+     "sujet": "savoir",
+     "texte": "{Elle|Il} sait ce que pèse un sac de ciment au bout de trois heures de sentier."
+    },
+    {
+     "sujet": "marque",
+     "texte": "{Elle|Il} juge les gens à la façon dont ils arrivent en haut de la côte."
+    },
+    {
+     "sujet": "lien",
+     "texte": "L'hélicoptère déposait les courses le jeudi ; {elle|il} gardait celles des voisins sans qu'on le lui demande."
+    }
+   ]
+  },
+  {
+   "cle": "trait:doigts-de-terre",
+   "type": "trait",
+   "pour": [
+    "doigts-de-terre"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "Tout ce qu'{elle|il} met en terre prend, jusqu'au noyau de mangue jeté par la fenêtre."
+    }
+   ]
+  },
+  {
+   "cle": "trait:sang-de-basalte",
+   "type": "trait",
+   "pour": [
+    "sang-de-basalte"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "Quand tout le monde crie, {elle|il} baisse la voix, et c'est {elle|lui} qu'on écoute."
+    }
+   ]
+  },
+  {
+   "cle": "trait:main-qui-ne-frappe-pas",
+   "type": "trait",
+   "pour": [
+    "main-qui-ne-frappe-pas"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} n'a jamais levé la main sur personne et ne compte pas commencer."
+    }
+   ]
+  },
+  {
+   "cle": "trait:peur-du-noir-sous-terre",
+   "type": "trait",
+   "pour": [
+    "peur-du-noir-sous-terre"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} a passé une heure sans lumière dans un tunnel de lave, un jour, et n'y a jamais remis les pieds."
+    }
+   ]
+  },
+  {
+   "cle": "trait:rat-de-galerie",
+   "type": "trait",
+   "pour": [
+    "rat-de-galerie"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} explorait les tunnels de lave avec une lampe et une pelote de ficelle, pour le plaisir."
+    }
+   ]
+  },
+  {
+   "cle": "trait:leve-avant-le-coq",
+   "type": "trait",
+   "pour": [
+    "leve-avant-le-coq"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} a toujours vu le jour se lever, et plaint ceux qui le ratent."
+    }
+   ]
+  },
+  {
+   "cle": "trait:oiseau-de-nuit",
+   "type": "trait",
+   "pour": [
+    "oiseau-de-nuit"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} n'a jamais rien fait de bon avant dix heures du matin, ni rien de mauvais après minuit."
+    }
+   ]
+  },
+  {
+   "cle": "trait:ventre-sans-fond",
+   "type": "trait",
+   "pour": [
+    "ventre-sans-fond"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} finit les assiettes des autres, avec un mot d'excuse et aucun remords."
+    }
+   ]
+  },
+  {
+   "cle": "trait:oiseau-de-rien",
+   "type": "trait",
+   "pour": [
+    "oiseau-de-rien"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} oublie de manger quand il y a du travail, et s'étonne qu'on s'en inquiète."
+    }
+   ]
+  },
+  {
+   "cle": "trait:nuits-blanches",
+   "type": "trait",
+   "pour": [
+    "nuits-blanches"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} dort trois heures par nuit depuis des années, et connaît tous les bruits de quatre heures."
+    }
+   ]
+  },
+  {
+   "cle": "trait:soleil-dedans",
+   "type": "trait",
+   "pour": [
+    "soleil-dedans"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} trouve encore le moyen de rire d'une mangue trop mûre tombée au bon moment."
+    }
+   ]
+  },
+  {
+   "cle": "trait:nuage-noir",
+   "type": "trait",
+   "pour": [
+    "nuage-noir"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} avait prévu le pire bien avant tout le monde, et n'en tire aucune fierté."
+    }
+   ]
+  },
+  {
+   "cle": "trait:cuir-de-cabri",
+   "type": "trait",
+   "pour": [
+    "cuir-de-cabri"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} s'est cassé le bras deux fois sans s'en plaindre, et une fois sans s'en apercevoir."
+    }
+   ]
+  },
+  {
+   "cle": "trait:os-de-verre",
+   "type": "trait",
+   "pour": [
+    "os-de-verre"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} connaît le plâtre mieux que personne, et les salles d'attente par cœur."
+    }
+   ]
+  },
+  {
+   "cle": "trait:souffle-court",
+   "type": "trait",
+   "pour": [
+    "souffle-court"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} garde un inhalateur vide dans sa poche, pour le geste."
+    }
+   ]
+  },
+  {
+   "cle": "trait:ame-de-pelerin",
+   "type": "trait",
+   "pour": [
+    "ame-de-pelerin"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} allume une bougie en passant devant un oratoire, quel qu'en soit le saint."
+    }
+   ]
+  },
+  {
+   "cle": "trait:loup-solitaire",
+   "type": "trait",
+   "pour": [
+    "loup-solitaire"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} a toujours choisi la case du bout du chemin, par goût."
+    }
+   ]
+  },
+  {
+   "cle": "trait:coeur-de-kour",
+   "type": "trait",
+   "pour": [
+    "coeur-de-kour"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "Chez {elle|lui}, la marmite était toujours trop grande, exprès."
+    }
+   ]
+  },
+  {
+   "cle": "trait:tete-de-bois",
+   "type": "trait",
+   "pour": [
+    "tete-de-bois"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "On ne {la|le} fait pas changer d'avis : on attend que l'idée vienne d'{elle|lui}."
+    }
+   ]
+  },
+  {
+   "cle": "trait:main-ouverte",
+   "type": "trait",
+   "pour": [
+    "main-ouverte"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} a prêté plus qu'{elle|il} n'a jamais possédé, et ne tient aucun compte."
+    }
+   ]
+  },
+  {
+   "cle": "trait:doigts-crochus",
+   "type": "trait",
+   "pour": [
+    "doigts-crochus"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "Des choses finissent dans ses poches ; {elle|il} s'en étonne avant tout le monde."
+    }
+   ]
+  },
+  {
+   "cle": "trait:ancien-fumeur",
+   "type": "trait",
+   "pour": [
+    "ancien-fumeur"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} avait arrêté de fumer depuis sept ans, et compte de nouveau les jours.",
+     "age": [
+      26,
+      120
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "trait:oeil-froid",
+   "type": "trait",
+   "pour": [
+    "oeil-froid"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} tirait au ball-trap le dimanche, sans jamais hausser le ton ni rater deux fois de suite."
+    }
+   ]
+  },
+  {
+   "cle": "trait:mains-qui-tremblent",
+   "type": "trait",
+   "pour": [
+    "mains-qui-tremblent"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} casse un verre par semaine, et demande pardon chaque fois comme si c'était le premier."
+    }
+   ]
+  },
+  {
+   "cle": "trait:touche-a-tout",
+   "type": "trait",
+   "pour": [
+    "touche-a-tout"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} n'a jamais appelé un réparateur de sa vie."
+    }
+   ]
+  },
+  {
+   "cle": "trait:bras-tendu",
+   "type": "trait",
+   "pour": [
+    "bras-tendu"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} s'est toujours battu{e|} pour les autres, jamais pour {elle|lui}."
+    }
+   ]
+  },
+  {
+   "cle": "trait:brute-epaisse",
+   "type": "trait",
+   "pour": [
+    "brute-epaisse"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} a réglé plus d'une discussion avec les épaules, et l'a regretté une fois sur deux."
+    }
+   ]
+  },
+  {
+   "cle": "trait:coeur-d-artichaut",
+   "type": "trait",
+   "pour": [
+    "coeur-d-artichaut"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} pleure aux mariages, aux enterrements et aux départs de car."
+    }
+   ]
+  },
+  {
+   "cle": "trait:creole-de-coeur",
+   "type": "trait",
+   "pour": [
+    "creole-de-coeur"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} dit bonjour dans cinq langues, et sait dans laquelle chacun préfère être remercié."
+    }
+   ]
+  },
+  {
+   "cle": "trait:jambes-de-cabri",
+   "type": "trait",
+   "pour": [
+    "jambes-de-cabri"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} a couru le sentier du Taïbit aller et retour, un dimanche, pour le plaisir."
+    }
+   ]
+  },
+  {
+   "cle": "trait:vertige",
+   "type": "trait",
+   "pour": [
+    "vertige"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} n'a jamais pu regarder en bas depuis le Maïdo : {elle|il} regarde ses chaussures."
+    }
+   ]
+  },
+  {
+   "cle": "trait:peur-de-la-mer",
+   "type": "trait",
+   "pour": [
+    "peur-de-la-mer"
+   ],
+   "phrases": [
+    {
+     "sujet": "trait",
+     "texte": "{Elle|Il} n'entre dans l'eau que jusqu'aux genoux, et seulement dans le lagon."
+    }
+   ]
+  },
+  {
+   "cle": "religion:catholique",
+   "type": "religion",
+   "pour": [
+    "catholique"
+   ],
+   "phrases": [
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} allait à la messe de six heures, celle des gens qui travaillent."
+    },
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} garde une médaille de saint Expédit, pour les affaires urgentes."
+    }
+   ]
+  },
+  {
+   "cle": "religion:hindouisme-tamoul",
+   "type": "religion",
+   "pour": [
+    "hindouisme-tamoul",
+    "hindoue"
+   ],
+   "phrases": [
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} jeûnait avant la marche sur le feu, même les années où {elle|il} ne marchait pas."
+    },
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} dépose une fleur là où d'autres font le signe de croix.",
+     "pratique": true
+    }
+   ]
+  },
+  {
+   "cle": "religion:plusieurs",
+   "type": "religion",
+   "pour": [
+    "plusieurs",
+    "hindoue-catholique"
+   ],
+   "avec": [
+    [
+     "catholique"
+    ],
+    [
+     "hindouisme-tamoul",
+     "hindoue"
+    ]
+   ],
+   "phrases": [
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} va au temple le vendredi et à la messe le dimanche, et ne voit pas où est la question.",
+     "pratique": true
+    },
+    {
+     "sujet": "foi",
+     "texte": "Chez {elle|lui}, la Vierge et Mariamen partagent la même étagère et les mêmes fleurs."
+    }
+   ]
+  },
+  {
+   "cle": "religion:islam",
+   "type": "religion",
+   "pour": [
+    "islam",
+    "musulmane"
+   ],
+   "phrases": [
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} fait encore ses cinq prières, à l'heure du soleil puisqu'il n'y a plus d'appel.",
+     "pratique": true
+    },
+    {
+     "sujet": "foi",
+     "texte": "Pendant le ramadan, {elle|il} portait une assiette aux voisins avant de rompre le jeûne."
+    }
+   ]
+  },
+  {
+   "cle": "religion:evangelique",
+   "type": "religion",
+   "pour": [
+    "evangelique",
+    "protestante"
+   ],
+   "phrases": [
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} chantait à l'assemblée du dimanche, plus fort que juste."
+    },
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} lit quelques versets chaque matin, dans une bible dont la couverture ne tient plus.",
+     "pratique": true
+    }
+   ]
+  },
+  {
+   "cle": "religion:culte-chinois",
+   "type": "religion",
+   "pour": [
+    "culte-chinois",
+    "bouddhiste"
+   ],
+   "phrases": [
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} brûle de l'encens le premier et le quinze du mois lunaire, quand il en reste.",
+     "pratique": true
+    },
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} s'assoit un moment en silence chaque matin, avant que quiconque ait besoin de quoi que ce soit.",
+     "pratique": true
+    }
+   ]
+  },
+  {
+   "cle": "religion:aucune",
+   "type": "religion",
+   "pour": [
+    "aucune"
+   ],
+   "phrases": [
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} ne croit à rien qui ne se répare ou ne se partage."
+    },
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} n'a jamais prié, et tient la porte à ceux qui vont le faire."
+    }
+   ]
+  },
+  {
+   "cle": "religion:ancetres-malgaches",
+   "type": "religion",
+   "pour": [
+    "ancetres-malgaches"
+   ],
+   "phrases": [
+    {
+     "sujet": "foi",
+     "texte": "{Elle|Il} pose un petit verre de rhum pour les anciens avant de boire le sien, sans en faire une histoire.",
+     "pratique": true
+    },
+    {
+     "sujet": "foi",
+     "texte": "Une fois l'an, {elle|il} dit à voix haute le nom de ses morts, pour qu'aucun ne se perde en route."
+    }
+   ]
+  },
+  {
+   "cle": "regard:epreuve",
+   "type": "regard",
+   "pour": [
+    "epreuve"
+   ],
+   "phrases": [
+    {
+     "sujet": "regard",
+     "texte": "{Elle|Il} pense que tout ceci est une épreuve, et qu'une épreuve se traverse."
+    },
+    {
+     "sujet": "regard",
+     "texte": "{Elle|Il} compte les jours comme les marches d'une côte : il y en a un nombre, donc une fin."
+    }
+   ]
+  },
+  {
+   "cle": "regard:refaire",
+   "type": "regard",
+   "pour": [
+    "refaire",
+    "refaire-le-monde"
+   ],
+   "phrases": [
+    {
+     "sujet": "regard",
+     "texte": "{Elle|Il} dit que le monde d'avant n'était pas si bien, et qu'on tient une chance de faire mieux."
+    },
+    {
+     "sujet": "regard",
+     "texte": "{Elle|Il} dessine des plans de village sur des bouts de carton, avec une école au milieu."
+    }
+   ]
+  },
+  {
+   "cle": "regard:vivre",
+   "type": "regard",
+   "pour": [
+    "vivre"
+   ],
+   "phrases": [
+    {
+     "sujet": "regard",
+     "texte": "{Elle|Il} ne cherche pas de sens à tout cela : {elle|il} veut voir demain, et après-demain."
+    },
+    {
+     "sujet": "regard",
+     "texte": "{Elle|Il} dit qu'un cari chaud et un toit sec, c'est déjà une philosophie."
+    }
+   ]
+  },
+  {
+   "cle": "generation",
+   "type": "generation",
+   "pour": [],
+   "phrases": [
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} a toujours eu un téléphone dans la main ; ses doigts cherchent encore l'écran.",
+     "age": [
+      16,
+      24
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} n'avait pas encore voté quand il n'y a plus eu d'élections.",
+     "age": [
+      16,
+      19
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} est de ceux qui n'ont presque rien connu d'autre, et qui s'y font plus vite que les grands.",
+     "age": [
+      16,
+      22
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} est de la génération des embouteillages de la route du Littoral, matin et soir.",
+     "age": [
+      25,
+      55
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} remboursait un crédit sur vingt-cinq ans ; il en restait dix-neuf.",
+     "age": [
+      28,
+      45
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} se souvient de l'année du chikungunya, des genoux de toute l'île et des serpentins qui brûlaient.",
+     "exclut": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      28,
+      120
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} a connu l'île avant les quatre-voies, quand en faire le tour prenait la journée.",
+     "exclut": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      45,
+      120
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} se souvient du temps où la boutique du coin vendait le pain à la moitié et le rhum au verre.",
+     "exclut": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      45,
+      120
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} a connu la case sans électricité, la lampe à pétrole et l'eau à la fontaine du chemin.",
+     "exclut": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      62,
+      120
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} dit « lontan » pour parler de sa jeunesse, et s'aperçoit que lontan revient.",
+     "age": [
+      60,
+      120
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} a vu passer plus de cyclones qu'{elle|il} n'a de doigts, et se souvient du nom de chacun.",
+     "exclut": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      55,
+      120
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} est de la génération qui partait étudier « là-bas », et se demandait s'il fallait rentrer.",
+     "exclut": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      25,
+      50
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} se souvient des coupures d'eau de la saison sèche, et des seaux alignés dans la cour.",
+     "exclut": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      35,
+      65
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} a connu plus de contrats courts que d'années de travail, et savait déjà se débrouiller.",
+     "age": [
+      22,
+      40
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} a vu les champs de canne devenir des lotissements, un rond-point après l'autre.",
+     "exclut": [
+      "nee-ailleurs"
+     ],
+     "age": [
+      40,
+      70
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} a passé le permis trois fois, et n'a jamais eu de voiture à {elle|lui}.",
+     "age": [
+      20,
+      35
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} a encore l'habitude d'écrire les numéros dans un carnet, et le carnet sert de nouveau.",
+     "age": [
+      50,
+      120
+     ]
+    },
+    {
+     "sujet": "generation",
+     "texte": "{Elle|Il} a vu arriver la télévision dans le quartier : un seul poste, et toute la rue devant.",
+     "age": [
+      62,
+      120
+     ]
+    }
+   ]
+  }
  ]
 }

@@ -2748,6 +2748,1981 @@
       "en": "That morning, she was watching the lychees redden in the tree in the yard."
     }
   },
+  "registre/histoires/enfance:enfance-a-madagascar": {
+    "_nom": "enfance:enfance-a-madagascar",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Madagascar, sur les Hautes Terres, où l'hiver pique plus qu'ici.",
+      "en": "{She|He} grew up in Madagascar, in the highlands, where winter bites harder than here."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Tamatave, sur la côte est de Madagascar, face à la même mer vue de l'autre côté.",
+      "en": "{She|He} grew up in Tamatave, on Madagascar's east coast, facing the same sea from the other side."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} envoyait chaque mois de l'argent à ses frères restés au pays.",
+      "en": "{She|He} sent money every month to the brothers who stayed behind."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} sait réparer n'importe quoi avec presque rien : là-bas, on n'avait pas le choix.",
+      "en": "{She|He} can fix anything with almost nothing: back there, you had no choice."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait repiquer le riz, et sourit de voir l'île acheter le sien en sac.",
+      "en": "{She|He} knows how to transplant rice, and smiles to see the island buy its own by the sack."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} est arrivé{e|} avec un visa de trois mois et une valise prêtée ; c'était il y a longtemps.",
+      "en": "{She|He} arrived on a three-month visa with a borrowed suitcase; that was a long time ago."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} a retrouvé ici des mots malgaches dans le créole, et des noms de famille déjà connus.",
+      "en": "{She|He} found Malagasy words in the Creole here, and family names {she|he} already knew."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} a appris le français à l'école, dans des livres plus vieux que l'instituteur.",
+      "en": "{She|He} learnt French at school, from books older than the teacher."
+    }
+  },
+  "registre/histoires/enfance:enfance-a-maurice": {
+    "_nom": "enfance:enfance-a-maurice",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Maurice et a traversé pour suivre {son mari|sa femme}.",
+      "en": "{She|He} grew up in Mauritius and crossed over to follow {her husband|his wife}."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Maurice, à Mahébourg, et a traversé à vingt ans pour un travail de six mois.",
+      "en": "{She|He} grew up in Mauritius, in Mahébourg, and crossed over at twenty for a six-month job."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a grandi à Maurice, dans un village de canne, avant que la famille ne traverse.",
+      "en": "{She|He} grew up in Mauritius, in a cane village, before the family crossed over."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} compare tout à son île natale, et finit toujours par dire que celle-ci n'est pas mal non plus.",
+      "en": "{She|He} compares everything to {her|his} native island, and always ends up saying this one is not bad either."
+    },
+    "phrases.4.texte": {
+      "fr": "Son créole n'est pas tout à fait celui d'ici ; on {la|le} comprend, on {la|le} taquine, et {elle|il} taquine en retour.",
+      "en": "{Her|His} Creole is not quite the one spoken here; people understand, tease, and get teased back."
+    },
+    "phrases.5.texte": {
+      "fr": "Sa mère parlait bhojpuri à la maison, créole au marché et anglais devant l'administration.",
+      "en": "{Her|His} mother spoke Bhojpuri at home, Creole at the market and English to officials."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} fait les dholl puri de sa mère, et refuse d'entendre qu'ils ressemblent à autre chose.",
+      "en": "{She|He} makes {her|his} mother's dholl puri flatbreads and will not hear them compared to anything else."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} a appris à lire en anglais et en français à la fois, et mélange encore les deux en comptant.",
+      "en": "{She|He} learnt to read in English and French at once, and still mixes the two when counting."
+    }
+  },
+  "registre/histoires/enfance:enfance-a-mayotte": {
+    "_nom": "enfance:enfance-a-mayotte",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Mayotte avant de rejoindre une tante à Saint-Denis.",
+      "en": "{She|He} grew up in Mayotte before joining an aunt in Saint-Denis."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Mayotte, dans un village au bord du lagon, et a pris l'avion pour la première fois à quatorze ans.",
+      "en": "{She|He} grew up in Mayotte, in a village on the lagoon, and first boarded a plane at fourteen."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} parlait shimaoré à sa mère au téléphone, chaque dimanche.",
+      "en": "{She|He} spoke Shimaore to {her|his} mother on the phone, every Sunday."
+    },
+    "phrases.3.texte": {
+      "fr": "Une tante l'a recueilli{e|}, qui comptait un enfant de plus sans jamais compter la dépense.",
+      "en": "An aunt took {her|him} in, counting one more child and never counting the cost."
+    },
+    "phrases.4.texte": {
+      "fr": "École coranique le matin, école de la République l'après-midi : {elle|il} a toujours eu deux cartables.",
+      "en": "Quranic school in the morning, state school in the afternoon: {she|he} always carried two satchels."
+    },
+    "phrases.5.texte": {
+      "fr": "On lui a tant demandé ses papiers qu'{elle|il} les garde encore sur {elle|lui}, par réflexe.",
+      "en": "{She|He} was asked for papers so often that {she|he} still carries them, out of habit."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} compare encore les deux lagons, et ne dit jamais lequel gagne.",
+      "en": "{She|He} still compares the two lagoons and never says which one wins."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} sait griller le manioc et le poisson sur trois pierres, comme au voulé du dimanche.",
+      "en": "{She|He} can grill cassava and fish over three stones, as at a Sunday voulé, the beach cookout."
+    }
+  },
+  "registre/histoires/enfance:enfance-chinoise-de-saint-denis": {
+    "_nom": "enfance:enfance-chinoise-de-saint-denis",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi derrière le comptoir de la boutique de ses parents, à Saint-Denis.",
+      "en": "{She|He} grew up behind the counter of {her|his} parents' shop, in Saint-Denis."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Saint-Denis, au-dessus de la boutique familiale, dans l'odeur du riz et du pétrole lampant.",
+      "en": "{She|He} grew up in Saint-Denis, above the family shop, in the smell of rice and lamp oil."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient d'une boutique d'angle de Saint-Denis où tout le quartier avait son carnet de crédit.",
+      "en": "{She|He} comes from a corner shop in Saint-Denis where the whole neighbourhood had a credit book."
+    },
+    "phrases.4.texte": {
+      "fr": "À la maison on parlait hakka, à la boutique créole, et à l'école français.",
+      "en": "At home they spoke Hakka, in the shop Creole, and at school French."
+    },
+    "phrases.5.texte": {
+      "fr": "Le samedi, c'était l'école chinoise ; {elle|il} y a surtout appris à tenir un pinceau sans soupirer.",
+      "en": "Saturdays meant Chinese school; mostly {she|he} learnt there to hold a brush without sighing."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} savait rendre la monnaie avant de savoir lire.",
+      "en": "{She|He} could give change before {she|he} could read."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} tient un carnet de crédit de mémoire : qui doit quoi, et qui il ne faut pas presser.",
+      "en": "{She|He} keeps a credit book in {her|his} head: who owes what, and who must not be pressed."
+    },
+    "phrases.8.texte": {
+      "fr": "On disait que la boutique ne faisait crédit qu'aux siens ; {elle|il} l'a vue nourrir la rue tout un mois de cyclone.",
+      "en": "People said the shop only gave credit to its own; {she|he} saw it feed the street through a whole cyclone month."
+    },
+    "phrases.9.texte": {
+      "fr": "Pour la fête de Guan Di, {elle|il} portait les offrandes au temple, et le dragon passait devant la boutique.",
+      "en": "For the Guan Di festival {she|he} carried offerings to the temple, and the dragon passed in front of the shop."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} n'a jamais vu Canton, et connaît par cœur une rue où {elle|il} n'a jamais marché.",
+      "en": "{She|He} has never seen Canton, and knows by heart a street {she|he} never walked."
+    }
+  },
+  "registre/histoires/enfance:enfance-comorienne-du-chaudron": {
+    "_nom": "enfance:enfance-comorienne-du-chaudron",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} est né{e|} au Chaudron, dans une famille venue de la Grande Comore.",
+      "en": "{She|He} was born in Le Chaudron, to a family from Grande Comore."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi au Chaudron, dans un trois-pièces où l'on était neuf et où il restait toujours une place.",
+      "en": "{She|He} grew up in Le Chaudron, in a three-room flat that held nine and always had room for one more."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient du Chaudron, de l'immeuble où la cage d'escalier sentait le pilao le vendredi.",
+      "en": "{She|He} comes from Le Chaudron, from the block where the stairwell smelled of pilao, spiced rice, on Fridays."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} traduisait pour sa grand-mère au guichet, du shikomori au français et retour.",
+      "en": "{She|He} translated for {her|his} grandmother at the counter, from Shikomori to French and back."
+    },
+    "phrases.4.texte": {
+      "fr": "Les grands mariages de la famille duraient des jours ; {elle|il} y a appris à servir cent personnes sans rien renverser.",
+      "en": "The family's grand weddings lasted for days; there {she|he} learnt to serve a hundred people without spilling a drop."
+    },
+    "phrases.5.texte": {
+      "fr": "Quand on lui demande d'où {elle|il} vient, {elle|il} répond « du Chaudron », et on insiste quand même.",
+      "en": "Asked where {she|he} is from, {she|he} answers \"Le Chaudron\", and people press anyway."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} parle créole, français et shikomori dans la même phrase, sans s'en apercevoir.",
+      "en": "{She|He} speaks Creole, French and Shikomori in one sentence without noticing."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} était en tête de la classe, et en queue de la liste des invités aux anniversaires.",
+      "en": "{She|He} was top of the class, and bottom of the list for birthday invitations."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} sait qui prévenir, et dans quel ordre, quand quelqu'un du quartier a besoin d'aide.",
+      "en": "{She|He} knows whom to tell, and in what order, when someone in the neighbourhood needs help."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} n'a vu les Comores qu'une fois, un été, et s'y est senti{e|} de passage là-bas aussi.",
+      "en": "{She|He} saw the Comoros only once, one summer, and felt like a visitor there too."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} a appris à se taire quand on parle des « derniers arrivés », et à ne pas oublier qui parlait.",
+      "en": "{She|He} learnt to keep quiet when talk turns to \"the last ones to arrive\", and to remember who was talking."
+    }
+  },
+  "registre/histoires/enfance:enfance-en-foyer": {
+    "_nom": "enfance:enfance-en-foyer",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a connu trois familles d'accueil avant ses quatorze ans.",
+      "en": "{She|He} went through three foster families before turning fourteen."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi dans un foyer de Saint-Denis, puis dans un autre à Saint-Louis, sans jamais tout déballer.",
+      "en": "{She|He} grew up in a children's home in Saint-Denis, then another in Saint-Louis, never quite unpacking."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a grandi dans une famille d'accueil de La Rivière, qui avait déjà six enfants et de la place quand même.",
+      "en": "{She|He} grew up with a foster family in La Rivière who already had six children and room all the same."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} garde toujours un sac prêt, au cas où.",
+      "en": "{She|He} always keeps a bag packed, just in case."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} retient les prénoms du premier coup : on ne sait jamais combien de temps on reste.",
+      "en": "{She|He} remembers names first time: you never know how long you are staying."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} ne demande rien deux fois, et remercie pour tout.",
+      "en": "{She|He} never asks twice for anything, and says thank you for everything."
+    },
+    "phrases.6.texte": {
+      "fr": "Une éducatrice lui écrivait chaque année pour son anniversaire ; {elle|il} a gardé toutes les cartes.",
+      "en": "One care worker wrote every year for {her|his} birthday; {she|he} kept every card."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} appelle « tatie » une femme qui n'est pas de son sang, et ne laisse personne en sourire.",
+      "en": "{She|He} calls a woman \"tatie\", auntie, who is no blood relation, and lets no one smile at it."
+    },
+    "phrases.8.texte": {
+      "fr": "À l'école, {elle|il} disait que ses parents travaillaient loin ; personne n'a jamais vérifié.",
+      "en": "At school {she|he} said {her|his} parents worked far away; nobody ever checked."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} sait faire à manger pour douze avec ce qu'il y a dans un placard de collectivité.",
+      "en": "{She|He} can cook for twelve from whatever an institutional cupboard holds."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} connaît l'île par ses déménagements : un bout de l'Est, un bout du Sud, jamais longtemps.",
+      "en": "{She|He} knows the island by its moves: a bit of the East, a bit of the South, never for long."
+    }
+  },
+  "registre/histoires/enfance:enfance-protegee": {
+    "_nom": "enfance:enfance-protegee",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi dans une villa avec piscine et n'avait jamais porté un sac de ciment.",
+      "en": "{She|He} grew up in a villa with a pool and had never carried a bag of cement."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à La Montagne, au-dessus de Saint-Denis, dans une maison d'où l'on voyait les autres de haut.",
+      "en": "{She|He} grew up in La Montagne, above Saint-Denis, in a house that looked down on the others."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a grandi à Saint-Gilles-les-Bains, dans une résidence fermée, entre le club de voile et le cours de piano.",
+      "en": "{She|He} grew up in Saint-Gilles-les-Bains, in a gated estate, between the sailing club and the piano lesson."
+    },
+    "phrases.3.texte": {
+      "fr": "Ses parents sont partis par l'un des derniers avions ; {elle|il} n'a pas voulu les suivre.",
+      "en": "{Her|His} parents left on one of the last planes; {she|he} refused to follow."
+    },
+    "phrases.4.texte": {
+      "fr": "Une nénène l'a élevé{e|} plus que ses parents, et lui a appris le créole qu'on ne parlait pas au salon.",
+      "en": "A nénène, the family nanny, raised {her|him} more than {her|his} parents did, and taught {her|him} the Creole never spoken in the lounge."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} allait à l'école privée en voiture, tous les jours, pour moins d'un kilomètre.",
+      "en": "{She|He} was driven to private school every day, less than a kilometre away."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} apprend vite, maintenant, et n'aime pas qu'on lui rappelle d'où {elle|il} vient.",
+      "en": "{She|He} learns fast these days, and dislikes being reminded where {she|he} comes from."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} dit « s'il vous plaît » à tout le monde, même s'il n'y a plus personne pour l'exiger.",
+      "en": "{She|He} says \"please\" to everyone, even now there is no one left to insist on it."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} sait monter à cheval, barrer un dériveur et lire une étiquette de vin : rien de tout cela ne sert.",
+      "en": "{She|He} can ride, helm a dinghy and read a wine label: none of it is any use."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} n'avait jamais pris le car jaune avant la fin du monde.",
+      "en": "{She|He} had never taken the yellow bus before the world ended."
+    },
+    "phrases.10.texte": {
+      "fr": "Le nom de sa famille est sur une usine, une rue et une vieille rancune.",
+      "en": "{Her|His} family name is on a mill, a street and an old grudge."
+    }
+  },
+  "registre/histoires/enfance:enfance-sur-un-bateau": {
+    "_nom": "enfance:enfance-sur-un-bateau",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a fait le tour de l'océan Indien sur le voilier de ses parents.",
+      "en": "{She|He} sailed round the Indian Ocean on {her|his} parents' yacht."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi sur un voilier de onze mètres, d'escale en escale, avant que le bateau ne reste au Port.",
+      "en": "{She|He} grew up on an eleven-metre sailing boat, from one port of call to the next, until the boat stayed in Le Port."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} dort mal sur un sol qui ne bouge pas.",
+      "en": "{She|He} sleeps badly on ground that does not move."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} range tout à sa place et l'attache : à bord, ce qui traîne tombe.",
+      "en": "{She|He} stows everything and lashes it down: on board, what lies about falls."
+    },
+    "phrases.4.texte": {
+      "fr": "L'école, c'était des cahiers par correspondance sur la table à cartes, entre deux quarts.",
+      "en": "School was correspondence workbooks on the chart table, between two watches."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} sait faire un nœud de chaise d'une main et le point à midi avec un sextant.",
+      "en": "{She|He} can tie a bowline one-handed and take a noon sight with a sextant."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} sait faire durer vingt litres d'eau douce une semaine.",
+      "en": "{She|He} can make twenty litres of fresh water last a week."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} a eu des amis dans dix ports, et aucun plus de trois semaines.",
+      "en": "{She|He} had friends in ten ports, none for more than three weeks."
+    }
+  },
+  "registre/histoires/enfance:enfance-tamoule-de-saint-andre": {
+    "_nom": "enfance:enfance-tamoule-de-saint-andre",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Saint-André, à deux pas du temple, dans une cour où poussaient le margosier et le safran.",
+      "en": "{She|He} grew up in Saint-André, a few steps from the temple, in a yard where neem and turmeric grew."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Cambuston, dans une case bleue, entre le champ de canne et la chapelle malbare.",
+      "en": "{She|He} grew up in Cambuston, in a blue house between the cane field and the Tamil chapel."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient de Saint-André, d'une rue où chaque famille avait son autel et son manguier.",
+      "en": "{She|He} comes from Saint-André, from a street where every family had its shrine and its mango tree."
+    },
+    "phrases.4.texte": {
+      "fr": "Son père coupait la canne ; c'était aussi le meilleur conteur de la rue.",
+      "en": "{Her|His} father cut cane, and was the best storyteller on the street as well."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} a porté le kavadi à seize ans, pour un vœu qu'{elle|il} n'a jamais dit.",
+      "en": "{She|He} carried the kavadi at sixteen, for a vow {she|he} never spoke aloud."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} sait tresser une guirlande de fleurs et faire un cari massalé pour cinquante.",
+      "en": "{She|He} can braid a garland of flowers and cook a massalé curry for fifty."
+    },
+    "phrases.7.texte": {
+      "fr": "À l'école, on lui demandait si la marche sur le feu brûlait ; {elle|il} répondait « demande à ton cœur ».",
+      "en": "At school they asked whether walking on fire burned; {she|he} would answer \"ask your heart\"."
+    },
+    "phrases.8.texte": {
+      "fr": "Certains avaient peur du « service » ; {elle|il} a vu les mêmes venir demander une prière, la nuit.",
+      "en": "Some feared the \"service\", the ceremony; {she|he} saw those same people come asking for a prayer by night."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} garde un point de cendre au front les jours qui comptent.",
+      "en": "{She|He} wears a dot of ash on {her|his} forehead on the days that matter."
+    },
+    "phrases.10.texte": {
+      "fr": "Pour le Dipavali, toute la ville descendait dans la rue, et {elle|il} tenait une lampe dans le défilé.",
+      "en": "For Dipavali the whole town came out into the street, and {she|he} carried a lamp in the parade."
+    }
+  },
+  "registre/histoires/enfance:enfance-yab-des-hauts-de-l-ouest": {
+    "_nom": "enfance:enfance-yab-des-hauts-de-l-ouest",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Petite France, sur la route du Maïdo, dans l'odeur du géranium.",
+      "en": "{She|He} grew up in Petite France, on the Maïdo road, in the smell of geranium."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi au Guillaume, à mi-pente, là où l'on voit la mer sans jamais y descendre.",
+      "en": "{She|He} grew up in Le Guillaume, halfway up the slope, where you can see the sea and never go down to it."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient des hauts des Trois Bassins, d'une case en bardeaux montée par un arrière-grand-père.",
+      "en": "{She|He} comes from the heights of Les Trois Bassins, from a shingled house a great-grandfather built."
+    },
+    "phrases.3.texte": {
+      "fr": "Son grand-père distillait le géranium dans un alambic de cuivre noirci.",
+      "en": "{Her|His} grandfather distilled geranium in a blackened copper still."
+    },
+    "phrases.4.texte": {
+      "fr": "Chez {elle|lui}, on tuait le cochon en décembre, et toute la ravine repartait avec un morceau.",
+      "en": "{Her|His} family killed the pig in December, and the whole ravine went home with a piece."
+    },
+    "phrases.5.texte": {
+      "fr": "Au lycée, on l'appelait « yab kouyon » ; {elle|il} a appris à répondre plus vite que les autres.",
+      "en": "At school they called {her|him} \"yab kouyon\", hill-country fool; {she|he} learnt to answer faster than the rest."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} sait couper le bois de chauffe pour l'alambic, et dire à l'odeur quand l'essence est bonne.",
+      "en": "{She|He} can cut firewood for the still, and tell by smell when the oil is right."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} sait monter un mur en pierre sèche qui tient encore après trois cyclones.",
+      "en": "{She|He} can build a dry-stone wall that still stands after three cyclones."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} porte un nom que la moitié de l'île porte aussi, des Hauts jusqu'à la mer.",
+      "en": "{She|He} carries a surname half the island shares, from the Highlands down to the sea."
+    },
+    "phrases.9.texte": {
+      "fr": "On dit les gens des Hauts têtus ; {elle|il} répond qu'il faut bien l'être pour cultiver une pente pareille.",
+      "en": "People call hill folk stubborn; {she|he} replies that you have to be, to farm a slope like that."
+    },
+    "phrases.10.texte": {
+      "fr": "Les matins d'hiver, {elle|il} voyait la mer de nuages remplir Mafate depuis le bord du rempart.",
+      "en": "On winter mornings {she|he} watched the sea of cloud fill Mafate from the edge of the cliff."
+    }
+  },
+  "registre/histoires/enfance:enfance-zarab-de-saint-pierre": {
+    "_nom": "enfance:enfance-zarab-de-saint-pierre",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Saint-Pierre, au-dessus du magasin de tissus de la famille.",
+      "en": "{She|He} grew up in Saint-Pierre, above the family's fabric shop."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi dans le centre de Saint-Pierre, entre la mosquée et la rue des commerces.",
+      "en": "{She|He} grew up in the centre of Saint-Pierre, between the mosque and the shopping street."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient de Saint-Pierre, d'une maison où le magasin commençait au rez-de-chaussée et finissait à table.",
+      "en": "{She|He} comes from Saint-Pierre, from a house where the shop began on the ground floor and ended at the dinner table."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} a appris à compter en rendant la monnaie au magasin de son père.",
+      "en": "{She|He} learnt to count giving change in {her|his} father's shop."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait mesurer un tissu au bras et dire son prix sans toucher l'étiquette.",
+      "en": "{She|He} can measure cloth along an arm and name its price without touching the tag."
+    },
+    "phrases.6.texte": {
+      "fr": "Sa grand-mère parlait encore gujarati, et faisait des samoussas pour la rupture du jeûne de toute la rue.",
+      "en": "{Her|His} grandmother still spoke Gujarati, and made samosas for the whole street to break the fast."
+    },
+    "phrases.7.texte": {
+      "fr": "Après l'école, c'était la médersa ; après la médersa, la caisse du magasin.",
+      "en": "After school came the madrasa; after the madrasa, the till."
+    },
+    "phrases.8.texte": {
+      "fr": "On dit sa famille dure en affaires ; {elle|il} sait surtout ce que coûte un crédit qu'on ne réclame pas.",
+      "en": "People call {her|his} family hard in business; mostly {she|he} knows what an unclaimed debt costs."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} ne marchande jamais un prix juste, et ne paie jamais un prix qui ne l'est pas.",
+      "en": "{She|He} never haggles over a fair price, and never pays an unfair one."
+    },
+    "phrases.10.texte": {
+      "fr": "Le soir de l'Aïd, les voisins de toutes les religions passaient goûter, et repartaient avec une assiette.",
+      "en": "On the evening of Eid, neighbours of every faith dropped in for a taste, and left with a plate."
+    }
+  },
+  "registre/histoires/enfance:enfance-zoreil": {
+    "_nom": "enfance:enfance-zoreil",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} est arrivé{e|} de métropole à dix ans et a mis un an à comprendre le créole de la cour de récréation.",
+      "en": "{She|He} arrived from mainland France at ten and took a year to follow the Creole of the playground."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a débarqué à dix ans d'une ville grise du Nord, avec un anorak qui n'a plus jamais servi.",
+      "en": "{She|He} landed at ten from a grey northern town, with an anorak that was never worn again."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} avait dix ans quand la famille a suivi une mutation jusqu'à Saint-Gilles-les-Bains ; cela devait durer trois ans.",
+      "en": "{She|He} was ten when the family followed a job transfer to Saint-Gilles-les-Bains; it was meant to last three years."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} dit toujours qu'{elle|il} est d'ici, et on lui répond toujours que non.",
+      "en": "{She|He} always says {she|he} is from here, and is always told otherwise."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} parle créole avec un accent que tout le monde reconnaît, et le parle quand même.",
+      "en": "{She|He} speaks Creole with an accent everyone can place, and speaks it anyway."
+    },
+    "phrases.5.texte": {
+      "fr": "On l'appelait « zoreil » à l'école ; {elle|il} a fini par répondre au mot comme à un prénom.",
+      "en": "They called {her|him} \"zoreil\", the mainlander, at school; in the end {she|he} answered to it like a first name."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} a appris le cari chez la voisine, qui ne lui a jamais donné la recette, seulement les gestes.",
+      "en": "{She|He} learnt to cook cari at the neighbour's, who never gave the recipe, only the gestures."
+    },
+    "phrases.7.texte": {
+      "fr": "Ses parents sont repartis ; {elle|il} est resté{e|}, sans jamais bien savoir l'expliquer.",
+      "en": "{Her|His} parents went back; {she|he} stayed, without ever quite being able to say why."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} attrape encore des coups de soleil, et tout le monde le lui fait remarquer.",
+      "en": "{She|He} still gets sunburnt, and everyone still points it out."
+    }
+  },
+  "registre/histoires/enfance:enfant-de-cilaos": {
+    "_nom": "enfance:enfant-de-cilaos",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Cilaos, où sa mère brodait des nappes pour les touristes.",
+      "en": "{She|He} grew up in Cilaos, where {her|his} mother embroidered tablecloths for tourists."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Îlet à Cordes, au bout d'une route qui tient au rempart par habitude.",
+      "en": "{She|He} grew up in Îlet à Cordes, at the end of a road that clings to the cliff out of habit."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient de Palmiste Rouge, un écart de Cilaos où le car ne monte que si la route est sèche.",
+      "en": "{She|He} comes from Palmiste Rouge, a hamlet below Cilaos where the bus only comes up if the road is dry."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} a grandi à Bras Sec, entre les carrés de lentilles et les vignes en treille.",
+      "en": "{She|He} grew up in Bras Sec, between the lentil plots and the trellised vines."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait qu'une route peut disparaître en une nuit.",
+      "en": "{She|He} knows a road can vanish in a single night."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} compte encore les virages de la route, les nuits où le sommeil ne vient pas.",
+      "en": "{She|He} still counts the bends of the road on nights when sleep will not come."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} a trié les lentilles sur la table de la cuisine, soir après soir, caillou par caillou.",
+      "en": "{She|He} sorted lentils on the kitchen table, evening after evening, stone by stone."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} sait tirer les fils d'une toile pour un jour de Cilaos, même si ses doigts en ont perdu l'habitude.",
+      "en": "{She|He} can draw the threads for Cilaos openwork embroidery, though {her|his} fingers are out of practice."
+    },
+    "phrases.8.texte": {
+      "fr": "Son grand-père faisait un vin que personne n'osait dire mauvais.",
+      "en": "{Her|His} grandfather made a wine nobody dared call bad."
+    },
+    "phrases.9.texte": {
+      "fr": "Quand la route cassait, l'école continuait : la maîtresse habitait à trois cases.",
+      "en": "When the road went, school carried on: the teacher lived three houses away."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} a vu le Piton des Neiges blanc de givre un matin d'août, et n'en a parlé à personne des Bas.",
+      "en": "{She|He} saw the Piton des Neiges white with frost one August morning, and told no one from the lowlands."
+    }
+  },
+  "registre/histoires/enfance:enfant-de-l-ouest": {
+    "_nom": "enfance:enfant-de-l-ouest",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à L'Ermitage, et a appris à nager dans le lagon avant d'apprendre à lire.",
+      "en": "{She|He} grew up in L'Ermitage, and learnt to swim in the lagoon before learning to read."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à La Saline les Bains, à deux rues de la plage et des filaos.",
+      "en": "{She|He} grew up in La Saline les Bains, two streets from the beach and the filao trees."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a grandi à Saint-Paul, près du marché du front de mer, où l'on vend de tout le vendredi.",
+      "en": "{She|He} grew up in Saint-Paul, near the seafront market, where everything is for sale on Fridays."
+    },
+    "phrases.3.texte": {
+      "fr": "L'été, {elle|il} vendait des glaces sur la plage aux touristes.",
+      "en": "In summer {she|he} sold ice creams on the beach to tourists."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait lire la passe et le courant, et à quelle heure le lagon se vide.",
+      "en": "{She|He} can read the pass and the current, and knows when the lagoon drains."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} pêchait le zourite à marée basse, avec un bâton et la patience de sa grand-mère.",
+      "en": "{She|He} hunted octopus at low tide, with a stick and {her|his} grandmother's patience."
+    },
+    "phrases.6.texte": {
+      "fr": "Sa famille louait la case aux vacanciers ; pendant la saison, {elle|il} dormait dans la cuisine.",
+      "en": "{Her|His} family let their house to holidaymakers; in season {she|he} slept in the kitchen."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} a la peau qui ne craint plus le soleil et les pieds qui ne craignent plus le corail.",
+      "en": "{Her|His} skin no longer minds the sun, nor {her|his} feet the coral."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} trouve qu'il fait froid dès qu'on dépasse Saint-Gilles-les-Hauts.",
+      "en": "{She|He} finds it cold as soon as you get past Saint-Gilles-les-Hauts."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} se souvient du jour où l'on a interdit la baignade, et de la plage vide ensuite.",
+      "en": "{She|He} remembers the day swimming was banned, and the empty beach after."
+    },
+    "phrases.10.texte": {
+      "fr": "Les soirs de pique-nique sous les filaos, trois familles partageaient une seule marmite.",
+      "en": "On picnic evenings under the filaos, three families would share a single pot."
+    }
+  },
+  "registre/histoires/enfance:enfant-de-la-cite-saint-denis": {
+    "_nom": "enfance:enfant-de-la-cite-saint-denis",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi au dixième étage d'une barre du Chaudron.",
+      "en": "{She|He} grew up on the tenth floor of a tower block in Le Chaudron."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi au Butor, à Saint-Denis, dans un immeuble dont l'ascenseur n'a jamais marché deux mois de suite.",
+      "en": "{She|He} grew up in Le Butor, in Saint-Denis, in a block whose lift never worked two months running."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient d'une cité de Saint-Denis où les mères se parlaient de balcon à balcon.",
+      "en": "{She|He} comes from an estate in Saint-Denis where mothers talked from balcony to balcony."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} connaît chaque raccourci de Saint-Denis, chaque cage d'escalier ouverte.",
+      "en": "{She|He} knows every shortcut in Saint-Denis, every unlocked stairwell."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} dort mieux avec du bruit : le silence des Hauts {la|le} réveille.",
+      "en": "{She|He} sleeps better with noise: the silence of the heights wakes {her|him} up."
+    },
+    "phrases.5.texte": {
+      "fr": "Sa mère faisait des samoussas pour tout l'étage, et l'étage gardait les enfants en retour.",
+      "en": "{Her|His} mother made samosas for the whole floor, and the floor minded the children in return."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} faisait ses devoirs dans l'escalier, là où il y avait de la lumière et pas de petits frères.",
+      "en": "{She|He} did homework on the stairs, where there was light and no little brothers."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} sait ouvrir une porte sans la clé et ne s'en vante pas.",
+      "en": "{She|He} can open a door without the key and does not brag about it."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} jouait au foot pieds nus sur le béton, jusqu'à ce que les lampadaires s'allument.",
+      "en": "{She|He} played football barefoot on concrete until the streetlights came on."
+    },
+    "phrases.9.texte": {
+      "fr": "Pour le 20 désanm, toute la cité descendait au Barachois, les petits sur les épaules.",
+      "en": "On 20 désanm, Abolition Day, the whole estate walked down to the Barachois, little ones on shoulders."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} a vu la mer tous les jours de sa vie sans presque jamais s'y baigner.",
+      "en": "{She|He} saw the sea every day of {her|his} life and almost never swam in it."
+    }
+  },
+  "registre/histoires/enfance:enfant-de-la-plaine-des-cafres": {
+    "_nom": "enfance:enfant-de-la-plaine-des-cafres",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi dans une ferme de La Plaine des Cafres, à mille six cents mètres.",
+      "en": "{She|He} grew up on a farm on La Plaine des Cafres, sixteen hundred metres up."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Bourg Murat, là où la route du volcan quitte les dernières maisons.",
+      "en": "{She|He} grew up in Bourg Murat, where the volcano road leaves the last houses behind."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient du Vingt-Deuxième, sur la Plaine, où le brouillard arrive à quatre heures comme un voisin.",
+      "en": "{She|He} comes from Le Vingt-Deuxième, on the Plaine, where the fog turns up at four like a neighbour."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} montait à cheval avant de savoir faire du vélo.",
+      "en": "{She|He} could ride a horse before {she|he} could ride a bike."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} trayait les vaches avant l'école, et se réchauffait les mains contre leur flanc.",
+      "en": "{She|He} milked the cows before school, warming {her|his} hands against their flanks."
+    },
+    "phrases.5.texte": {
+      "fr": "Sa grand-mère mettait une bouillotte dans chaque lit et du rhum arrangé dans chaque grog.",
+      "en": "{Her|His} grandmother put a hot-water bottle in every bed and spiced rum in every toddy."
+    },
+    "phrases.6.texte": {
+      "fr": "L'hiver, {elle|il} cassait la glace dans l'abreuvoir avant de prendre le car.",
+      "en": "In winter {she|he} broke the ice on the trough before catching the bus."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} n'aime pas la chaleur des Bas, et trouve que la mer manque d'herbe.",
+      "en": "{She|He} dislikes the lowland heat, and thinks the sea could do with some grass."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} sent venir le brouillard une heure avant tout le monde.",
+      "en": "{She|He} can smell fog coming an hour before anyone else."
+    },
+    "phrases.9.texte": {
+      "fr": "À la foire agricole de la Plaine, {elle|il} menait le veau de la famille au concours, peigné comme pour un mariage.",
+      "en": "At the Plaine's farm fair, {she|he} led the family calf to the show ring, groomed as if for a wedding."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} a vu passer les voitures vers le volcan à chaque éruption, sans jamais monter voir.",
+      "en": "{She|He} watched the cars stream towards the volcano at every eruption, and never went up to look."
+    }
+  },
+  "registre/histoires/enfance:enfant-de-mafate": {
+    "_nom": "enfance:enfant-de-mafate",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à La Nouvelle, dans Mafate, où l'école n'avait qu'une classe.",
+      "en": "{She|He} grew up in La Nouvelle, in Mafate, where the school had a single classroom."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Roche Plate, sous le rempart du Maïdo, à trois heures de marche de la première route.",
+      "en": "{She|He} grew up in Roche Plate, under the Maïdo cliff, three hours' walk from the nearest road."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient d'Aurère, un îlet de Mafate où ce qui ne pousse pas arrive par hélicoptère ou à dos d'homme.",
+      "en": "{She|He} comes from Aurère, a hamlet in Mafate where whatever does not grow arrives by helicopter or on someone's back."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} est descendu{e|} en ville à quinze ans et n'a jamais aimé le bruit des voitures.",
+      "en": "{She|He} came down to town at fifteen and never liked the noise of cars."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} marche vite et parle peu ; dans le cirque, les deux vont ensemble.",
+      "en": "{She|He} walks fast and talks little; in the cirque the two go together."
+    },
+    "phrases.5.texte": {
+      "fr": "Son père portait le courrier d'îlet en îlet, et savait qui attendait quoi.",
+      "en": "{Her|His} father carried the post from hamlet to hamlet, and knew who was waiting for what."
+    },
+    "phrases.6.texte": {
+      "fr": "Pour le collège, il a fallu descendre : la semaine en internat, le sentier le vendredi soir.",
+      "en": "Secondary school meant going down: boarding during the week, the trail home on Friday night."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} sait porter une charge sur la tête, sur un sentier large comme deux pieds.",
+      "en": "{She|He} can carry a load on {her|his} head along a path two feet wide."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} sait où l'eau sort de la roche, même en saison sèche.",
+      "en": "{She|He} knows where water comes out of the rock, even in the dry season."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} a appris les étoiles avant les lampadaires : l'électricité, c'était un panneau et une batterie.",
+      "en": "{She|He} learnt the stars before streetlights: electricity meant one panel and one battery."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} connaît le nom de chaque îlet, et celui des familles qui y vivent.",
+      "en": "{She|He} knows the name of every hamlet, and of the families who live there."
+    }
+  },
+  "registre/histoires/enfance:enfant-de-militaire": {
+    "_nom": "enfance:enfant-de-militaire",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a changé huit fois d'école avant le collège, au gré des affectations de son père.",
+      "en": "{She|He} changed schools eight times before secondary, following {her|his} father's postings."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi de caserne en caserne, et n'a défait ses cartons dans l'île qu'à l'adolescence.",
+      "en": "{She|He} grew up from barracks to barracks, and only unpacked on the island as a teenager."
+    },
+    "phrases.3.texte": {
+      "fr": "À la maison, les lits se faisaient au carré et les repas se prenaient à l'heure.",
+      "en": "At home beds were made square and meals were taken on time."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} se fait des amis vite et les quitte sans bruit : l'habitude.",
+      "en": "{She|He} makes friends fast and leaves them quietly: habit."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} range toujours ses affaires comme si l'on partait demain.",
+      "en": "{She|He} always packs {her|his} things as if leaving tomorrow."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} sait lire une carte, plier un sac et attendre un ordre sans le demander deux fois.",
+      "en": "{She|He} can read a map, pack a bag and wait for an order without asking twice."
+    },
+    "phrases.7.texte": {
+      "fr": "À chaque rentrée, {elle|il} arrivait sans connaître personne, et a appris à choisir sa place au fond.",
+      "en": "Every new term {she|he} arrived knowing nobody, and learnt to pick a seat at the back."
+    }
+  },
+  "registre/histoires/enfance:enfant-de-planteur-de-l-est": {
+    "_nom": "enfance:enfant-de-planteur-de-l-est",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Cambuston, au milieu de la canne, là où la route est droite et le ciel bas.",
+      "en": "{She|He} grew up in Cambuston, in the middle of the cane, where the road runs straight and the sky hangs low."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Bras-Panon, dans une case entre la vanille sous ombrière et le champ de canne.",
+      "en": "{She|He} grew up in Bras-Panon, in a house between the shaded vanilla and the cane field."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient de Sainte-Anne, sur la côte au vent, où il pleut même quand il fait beau.",
+      "en": "{She|He} comes from Sainte-Anne, on the windward coast, where it rains even in fine weather."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} a coupé sa première canne à douze ans, avec le sabre de son père.",
+      "en": "{She|He} cut {her|his} first cane at twelve, with {her|his} father's cane knife."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait féconder la vanille à la main, fleur par fleur, avant que le soleil ne soit haut.",
+      "en": "{She|He} can pollinate vanilla by hand, flower by flower, before the sun is high."
+    },
+    "phrases.6.texte": {
+      "fr": "Pendant la coupe, toute la famille vivait au rythme du cachalot, le camion qui emporte la canne à l'usine.",
+      "en": "At harvest the whole family lived by the cachalot, the truck that hauls the cane to the mill."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} manquait l'école pendant la coupe ; la maîtresse ne disait rien, ayant grandi là aussi.",
+      "en": "{She|He} missed school at harvest time; the teacher said nothing, having grown up there too."
+    },
+    "phrases.8.texte": {
+      "fr": "L'odeur de la bagasse chaude lui manque plus que tout le reste.",
+      "en": "{She|He} misses the smell of warm bagasse more than anything else."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} juge une terre en la prenant dans la main.",
+      "en": "{She|He} judges a field by taking the soil in {her|his} hand."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} a vu la rivière sortir de son lit et emporter un champ entier en une nuit.",
+      "en": "{She|He} once watched the river leave its bed and take a whole field in one night."
+    }
+  },
+  "registre/histoires/enfance:enfant-des-hauts-de-salazie": {
+    "_nom": "enfance:enfant-des-hauts-de-salazie",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Grand Îlet, où l'on rentrait de l'école à pied sous la pluie.",
+      "en": "{She|He} grew up in Grand Îlet, where you walked home from school in the rain."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Hell-Bourg, dans une case en bois sous tôle dont la varangue donnait sur la brume.",
+      "en": "{She|He} grew up in Hell-Bourg, in a wooden house under a tin roof, its veranda facing the mist."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient de Mare à Vieille Place, un écart de Salazie où le chouchou grimpe jusque sur les fils électriques.",
+      "en": "{She|He} comes from Mare à Vieille Place, a hamlet in Salazie where chayote vines climb right up the power lines."
+    },
+    "phrases.4.texte": {
+      "fr": "Chez {elle|lui}, on vendait le chouchou au bord de la route, dans des gonis posés sur une chaise.",
+      "en": "{Her|His} family sold chayote by the roadside, in jute sacks set on a chair."
+    },
+    "phrases.5.texte": {
+      "fr": "Le car du collège partait avant le jour ; {elle|il} finissait sa nuit contre la vitre.",
+      "en": "The school bus left before daylight; {she|he} finished {her|his} night against the window."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} sait traverser un radier en crue, et surtout quand il ne faut pas le traverser.",
+      "en": "{She|He} knows how to cross a flooded ford, and above all when not to."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} sait tresser un panier en paille de chouchou, les yeux fermés.",
+      "en": "{She|He} can weave a basket from chayote straw with {her|his} eyes shut."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} compte les cascades après la pluie comme d'autres comptent les jours.",
+      "en": "{She|He} counts the waterfalls after rain the way others count days."
+    },
+    "phrases.9.texte": {
+      "fr": "La pluie ne {la|le} gêne pas : {elle|il} dit qu'à Salazie on naît mouillé.",
+      "en": "Rain does not bother {her|him}: in Salazie, {she|he} says, you are born wet."
+    },
+    "phrases.10.texte": {
+      "fr": "L'année de ses dix ans, un cyclone a coupé la route du cirque trois semaines ; personne n'a manqué de rien.",
+      "en": "The year {she|he} turned ten, a cyclone cut the road into the cirque for three weeks; nobody went without."
+    }
+  },
+  "registre/histoires/enfance:enfant-du-sud-sauvage": {
+    "_nom": "enfance:enfant-du-sud-sauvage",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi à Saint-Philippe, entre la vanille de son grand-père et les coulées.",
+      "en": "{She|He} grew up in Saint-Philippe, between {her|his} grandfather's vanilla and the lava flows."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi au Tremblet, le dernier écart avant les laves, sous les vacoas.",
+      "en": "{She|He} grew up in Le Tremblet, the last hamlet before the lava, under the screw pines."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient de Langevin, où la rivière descend froide jusqu'à la mer.",
+      "en": "{She|He} comes from Langevin, where the river runs cold all the way to the sea."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} a grandi à Manapany-les-Bains, au bord d'un bassin creusé dans le basalte.",
+      "en": "{She|He} grew up in Manapany-les-Bains, beside a pool cut into the basalt."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} a vu la lave traverser la route trois fois avant ses vingt ans.",
+      "en": "{She|He} saw lava cross the road three times before turning twenty."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} ne tourne jamais le dos à la mer : ici, elle prend sans prévenir.",
+      "en": "{She|He} never turns {her|his} back on the sea: down here it takes without warning."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} sait tresser le vacoa : un sac, un chapeau, une natte, dans cet ordre de difficulté.",
+      "en": "{She|He} can weave screw-pine leaf: a bag, a hat, a mat, in that order of difficulty."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} pêchait à la gaulette sur les rochers noirs, pieds nus, sans jamais glisser.",
+      "en": "{She|He} fished with a cane rod off the black rocks, barefoot, never slipping."
+    },
+    "phrases.8.texte": {
+      "fr": "Sa grand-mère disait que la Vierge au Parasol avait arrêté la coulée ; un oncle disait que c'était la pente.",
+      "en": "{Her|His} grandmother said the Virgin with the Parasol stopped the lava; an uncle said it was the slope."
+    },
+    "phrases.9.texte": {
+      "fr": "Le car scolaire faisait demi-tour quand la route fumait encore ; {elle|il} trouvait cela normal.",
+      "en": "The school bus turned back when the road was still smoking; {she|he} thought that was normal."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} a marché sur une terre plus jeune qu'{elle|lui}, encore tiède sous la semelle.",
+      "en": "{She|He} has walked on ground younger than {she|he} is, still warm underfoot."
+    }
+  },
+  "registre/histoires/enfance:enfant-du-tampon": {
+    "_nom": "enfance:enfant-du-tampon",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi au Dix-Septième, dans une case avec un grand jardin.",
+      "en": "{She|He} grew up at Le Dix-Septième, in a house with a big garden."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi au Petit-Tampon, là où les rues montent droit vers la brume.",
+      "en": "{She|He} grew up in Petit-Tampon, where the streets climb straight into the mist."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient de Bérive, dans les hauts du Tampon, entre les géraniums et les champs de pommes de terre.",
+      "en": "{She|He} comes from Bérive, above Le Tampon, between geranium and potato fields."
+    },
+    "phrases.4.texte": {
+      "fr": "Le dimanche, toute la famille montait pique-niquer au Nez de Boeuf, la marmite de cari dans le coffre.",
+      "en": "On Sundays the whole family drove up to picnic at Nez de Boeuf, a pot of cari in the boot."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} allait à l'école en pull, et se moquait des cousins des Bas qui grelottaient à dix-huit degrés.",
+      "en": "{She|He} went to school in a jumper, and laughed at the lowland cousins shivering at eighteen degrees."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} sait faire pousser à peu près tout, pourvu qu'on lui laisse un carré de terre et de la brume.",
+      "en": "{She|He} can grow nearly anything, given a square of soil and some mist."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} donne les adresses en kilomètres, comme tout le monde là-haut : le Quatorzième, le Vingt-Deuxième.",
+      "en": "{She|He} gives addresses in kilometres, like everyone up there: Le Quatorzième, Le Vingt-Deuxième."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} ne se sent bien qu'avec une pente sous les pieds.",
+      "en": "{She|He} only feels right with a slope underfoot."
+    },
+    "phrases.9.texte": {
+      "fr": "À la fête des fleurs du Tampon, {elle|il} tenait le stand de la famille et rendait la monnaie de tête.",
+      "en": "At Le Tampon's flower festival, {she|he} ran the family stall and did the change in {her|his} head."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} a vu le volcan rougir le ciel depuis la fenêtre de sa chambre, plus d'une nuit.",
+      "en": "{She|He} has watched the volcano redden the sky from {her|his} bedroom window, on more than one night."
+    }
+  },
+  "registre/histoires/enfance:fille-de-pecheur-de-saint-pierre": {
+    "_nom": "enfance:fille-de-pecheur-de-saint-pierre",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi sur le port de Saint-Pierre, entre les filets de son père.",
+      "en": "{She|He} grew up on the harbour of Saint-Pierre, among {her|his} father's nets."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à Terre Sainte, le quartier des pêcheurs, où les barques dorment devant les cases.",
+      "en": "{She|He} grew up in Terre Sainte, the fishermen's quarter, where the boats sleep in front of the houses."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} vient de Terre Sainte : une ruelle, un banian, et la mer au bout.",
+      "en": "{She|He} comes from Terre Sainte: one lane, one banyan tree, and the sea at the end of it."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} savait nager avant de savoir marcher, disait sa mère.",
+      "en": "{She|He} could swim before {she|he} could walk, {her|his} mother used to say."
+    },
+    "phrases.4.texte": {
+      "fr": "Sa mère vendait le poisson sur le quai et ne s'est jamais trompée d'un sou.",
+      "en": "{Her|His} mother sold the catch on the quay and was never out by a single coin."
+    },
+    "phrases.5.texte": {
+      "fr": "À l'école, {elle|il} sentait le poisson le lundi, et a appris à en rire avant les autres.",
+      "en": "At school {she|he} smelled of fish on Mondays, and learnt to laugh about it before the others could."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} sait ramender un filet, vider un thon et lire le ciel de l'après-midi.",
+      "en": "{She|He} can mend a net, gut a tuna and read the afternoon sky."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} a tenu la barre pour la première fois à neuf ans, un matin sans vent.",
+      "en": "{She|He} first took the tiller at nine, on a windless morning."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} regarde toujours la mer avant de décider quoi que ce soit.",
+      "en": "{She|He} always looks at the sea before deciding anything."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} ne mange pas de poisson le jour où quelqu'un n'est pas rentré.",
+      "en": "{She|He} will not eat fish on a day someone has not come back."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} a vu la houle australe passer par-dessus la jetée, et les anciens remonter les barques à la main.",
+      "en": "{She|He} has seen the southern swell break over the jetty, and the old hands haul the boats up by hand."
+    }
+  },
+  "registre/histoires/enfance:gamin-du-port": {
+    "_nom": "enfance:gamin-du-port",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a grandi dans une cité du Port, à l'ombre des grues.",
+      "en": "{She|He} grew up on an estate in Le Port, in the shadow of the cranes."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a grandi à La Rivière des Galets, du côté où le vent du large apporte la poussière du port.",
+      "en": "{She|He} grew up in La Rivière des Galets, on the side where the sea wind carries dust from the docks."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} est {une|un} enfant du Port : quatre étages, une cour en béton, et la sirène des bateaux pour horloge.",
+      "en": "{She|He} is a child of Le Port: four floors, a concrete yard, and ships' horns for a clock."
+    },
+    "phrases.4.texte": {
+      "fr": "Son père était docker ; il rentrait avec l'odeur du sucre en vrac sur les mains.",
+      "en": "{Her|His} father was a docker who came home with the smell of raw sugar on his hands."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} a séché plus de cours qu'{elle|il} n'en a suivis, mais sait compter une cargaison d'un coup d'œil.",
+      "en": "{She|He} skipped more classes than {she|he} sat through, but can size up a cargo at a glance."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} pêchait au bout de la jetée, avec un fil et une capsule de bouteille pour plomb.",
+      "en": "{She|He} fished off the end of the jetty, with a line and a bottle cap for a sinker."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} sait réparer un vélo avec ce qui traîne, et l'a fait pour toute la cité.",
+      "en": "{She|He} can fix a bike with whatever is lying around, and did so for the whole estate."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} ne laisse jamais quelqu'un des siens derrière : c'est la seule règle qu'{elle|il} ait gardée.",
+      "en": "{She|He} never leaves one of {her|his} own behind: it is the one rule {she|he} kept."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} reconnaît un bateau à son bruit avant de le voir.",
+      "en": "{She|He} can tell a ship by its sound before seeing it."
+    },
+    "phrases.10.texte": {
+      "fr": "Les soirs de maloya sur le front de mer, {elle|il} tenait le kayamb pour les grands.",
+      "en": "On maloya nights along the seafront, {she|he} shook the kayamb for the older ones."
+    }
+  },
+  "registre/histoires/generation": {
+    "_nom": "generation",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a toujours eu un téléphone dans la main ; ses doigts cherchent encore l'écran.",
+      "en": "{She|He} always had a phone in {her|his} hand; {her|his} fingers still reach for the screen."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} n'avait pas encore voté quand il n'y a plus eu d'élections.",
+      "en": "{She|He} had not yet voted when elections stopped."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} est de ceux qui n'ont presque rien connu d'autre, et qui s'y font plus vite que les grands.",
+      "en": "{She|He} is one of those who have known little else, and who adapt faster than their elders."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} est de la génération des embouteillages de la route du Littoral, matin et soir.",
+      "en": "{She|He} belongs to the generation of traffic jams on the Coast Road, morning and evening."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} remboursait un crédit sur vingt-cinq ans ; il en restait dix-neuf.",
+      "en": "{She|He} was paying off a twenty-five-year loan; nineteen were left."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} se souvient de l'année du chikungunya, des genoux de toute l'île et des serpentins qui brûlaient.",
+      "en": "{She|He} remembers the year of chikungunya, the whole island's aching knees and the mosquito coils burning."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} a connu l'île avant les quatre-voies, quand en faire le tour prenait la journée.",
+      "en": "{She|He} knew the island before the dual carriageways, when driving round it took all day."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} se souvient du temps où la boutique du coin vendait le pain à la moitié et le rhum au verre.",
+      "en": "{She|He} remembers when the corner shop sold bread by the half loaf and rum by the glass."
+    },
+    "phrases.8.texte": {
+      "fr": "{Elle|Il} a connu la case sans électricité, la lampe à pétrole et l'eau à la fontaine du chemin.",
+      "en": "{She|He} knew the house without electricity, the paraffin lamp and water from the standpipe on the lane."
+    },
+    "phrases.9.texte": {
+      "fr": "{Elle|Il} dit « lontan » pour parler de sa jeunesse, et s'aperçoit que lontan revient.",
+      "en": "{She|He} says \"lontan\", the old days, when speaking of {her|his} youth, and notices that lontan is coming back."
+    },
+    "phrases.10.texte": {
+      "fr": "{Elle|Il} a vu passer plus de cyclones qu'{elle|il} n'a de doigts, et se souvient du nom de chacun.",
+      "en": "{She|He} has seen more cyclones than {she|he} has fingers, and remembers the name of each."
+    },
+    "phrases.11.texte": {
+      "fr": "{Elle|Il} est de la génération qui partait étudier « là-bas », et se demandait s'il fallait rentrer.",
+      "en": "{She|He} belongs to the generation that left to study \"over there\", and wondered whether to come back."
+    },
+    "phrases.12.texte": {
+      "fr": "{Elle|Il} se souvient des coupures d'eau de la saison sèche, et des seaux alignés dans la cour.",
+      "en": "{She|He} remembers the water cuts of the dry season, and the buckets lined up in the yard."
+    },
+    "phrases.13.texte": {
+      "fr": "{Elle|Il} a connu plus de contrats courts que d'années de travail, et savait déjà se débrouiller.",
+      "en": "{She|He} had known more short contracts than years of work, and already knew how to get by."
+    },
+    "phrases.14.texte": {
+      "fr": "{Elle|Il} a vu les champs de canne devenir des lotissements, un rond-point après l'autre.",
+      "en": "{She|He} watched cane fields turn into housing estates, one roundabout after another."
+    },
+    "phrases.15.texte": {
+      "fr": "{Elle|Il} a passé le permis trois fois, et n'a jamais eu de voiture à {elle|lui}.",
+      "en": "{She|He} took the driving test three times, and never owned a car."
+    },
+    "phrases.16.texte": {
+      "fr": "{Elle|Il} a encore l'habitude d'écrire les numéros dans un carnet, et le carnet sert de nouveau.",
+      "en": "{She|He} still writes numbers down in a notebook, and the notebook is useful again."
+    },
+    "phrases.17.texte": {
+      "fr": "{Elle|Il} a vu arriver la télévision dans le quartier : un seul poste, et toute la rue devant.",
+      "en": "{She|He} saw television arrive in the neighbourhood: one set, and the whole street in front of it."
+    }
+  },
+  "registre/histoires/passe:agricultrice-des-hauts": {
+    "_nom": "passe:agricultrice-des-hauts",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} élevait des vaches laitières à La Plaine des Cafres : quarante têtes, et pas un jour de congé.",
+      "en": "{She|He} kept dairy cows on La Plaine des Cafres: forty head, and not one day off."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} cultivait des légumes dans les Hauts, en terrasses, et descendait les vendre au marché forain.",
+      "en": "{She|He} grew vegetables in the heights, on terraces, and drove down to sell them at the open-air market."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a sauvé son troupeau du dernier cyclone, sans l'aide de personne.",
+      "en": "{She|He} saved {her|his} herd in the last cyclone, with nobody's help."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} compte en litres de lait, en bottes de foin et en jours sans pluie.",
+      "en": "{She|He} reckons in litres of milk, bales of hay and days without rain."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} parle du temps qu'il fera comme d'autres parlent de politique : avec des preuves.",
+      "en": "{She|He} talks about tomorrow's weather the way others talk politics: with evidence."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} sait aider une vache à vêler, de nuit, à la lampe frontale, sans vétérinaire.",
+      "en": "{She|He} can help a cow calve at night, by head torch, with no vet."
+    },
+    "phrases.6.texte": {
+      "fr": "Les voisins montaient lui emprunter le tracteur, et redescendaient avec des œufs en plus.",
+      "en": "Neighbours came up to borrow the tractor, and went home with eggs as well."
+    }
+  },
+  "registre/histoires/passe:ambulancier": {
+    "_nom": "passe:ambulancier",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a conduit des milliers de malades sur les routes de l'Est, sous la pluie, de nuit.",
+      "en": "{She|He} drove thousands of patients along the roads of the East, in the rain, at night."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} conduisait l'ambulance entre Saint-Benoît et le CHU, gyrophare ou pas selon l'état du passager.",
+      "en": "{She|He} drove the ambulance between Saint-Benoît and the CHU, lights on or off depending on the passenger."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} connaît chaque radier qui déborde et chaque raccourci.",
+      "en": "{She|He} knows every ford that floods and every shortcut."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} sait porter un blessé dans un escalier trop étroit sans lui faire plus de mal.",
+      "en": "{She|He} can carry an injured person down a too-narrow stairway without making things worse."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} parle aux gens pendant qu'{elle|il} conduit, pour qu'ils restent là.",
+      "en": "{She|He} talks to people while driving, to keep them there."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} a vu naître deux enfants sur la banquette arrière, et porte leurs prénoms sur un bracelet.",
+      "en": "{She|He} saw two babies born on the back seat, and wears their names on a bracelet."
+    },
+    "phrases.6.texte": {
+      "fr": "Dans les écarts, on reconnaissait son moteur, et la cour s'ouvrait avant le coup de klaxon.",
+      "en": "In the hamlets people knew {her|his} engine, and the gate was open before the horn sounded."
+    }
+  },
+  "registre/histoires/passe:apiculteur": {
+    "_nom": "passe:apiculteur",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a quitté un bureau de Saint-Denis pour des ruches et ne l'a jamais regretté.",
+      "en": "{She|He} left an office in Saint-Denis for beehives and never regretted it."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} tenait soixante ruches à La Plaine des Palmistes et les déplaçait au gré des floraisons.",
+      "en": "{She|He} kept sixty hives at La Plaine des Palmistes and moved them as the blossoms came."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} parle à ses abeilles, et prétend qu'elles lui répondent.",
+      "en": "{She|He} talks to {her|his} bees, and claims they answer."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} bouge lentement près de tout ce qui pique, mord ou s'énerve.",
+      "en": "{She|He} moves slowly around anything that stings, bites or loses its temper."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait quand fleurissent le letchi, le baie rose et le tan rouge, à la semaine près.",
+      "en": "{She|He} knows when lychee, pink pepper and tan rouge, a native tree, come into flower, to the week."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} ne compte plus les piqûres, et soigne les rhumatismes des voisins avec.",
+      "en": "{She|He} has stopped counting the stings, and treats the neighbours' rheumatism with them."
+    },
+    "phrases.6.texte": {
+      "fr": "Son miel partait au marché avant dix heures ; les habitués réservaient d'une année sur l'autre.",
+      "en": "{Her|His} honey sold out at the market before ten; regulars put their names down from one year to the next."
+    }
+  },
+  "registre/histoires/passe:chauffeur-de-car-jaune": {
+    "_nom": "passe:chauffeur-de-car-jaune",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a fait la route de Cilaos plus de dix mille fois.",
+      "en": "{She|He} drove the Cilaos road more than ten thousand times."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} conduisait le car jaune de Saint-Louis à Cilaos : quatre cents virages, et des tunnels où l'on passe au centimètre.",
+      "en": "{She|He} drove the yellow bus from Saint-Louis to Cilaos: four hundred bends, and tunnels with a centimetre to spare."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} sait reculer un car dans un virage, au bord du vide, pour laisser passer un camion.",
+      "en": "{She|He} can reverse a bus round a bend, at the edge of the drop, to let a lorry through."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait d'avance où la route cassera à la prochaine grosse pluie.",
+      "en": "{She|He} knows in advance where the road will go at the next heavy rain."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} klaxonne encore avant chaque virage sans visibilité, même à pied.",
+      "en": "{She|He} still sounds the horn before every blind bend, even on foot."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} a attendu des passagers en retard plus souvent que l'horaire ne le permettait.",
+      "en": "{She|He} waited for late passengers more often than the timetable allowed."
+    }
+  },
+  "registre/histoires/passe:cuisinier-de-camion-bar": {
+    "_nom": "passe:cuisinier-de-camion-bar",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} tenait un camion-bar sur le front de mer de Saint-Leu : bouchons, sandwichs gratinés, cari du jour.",
+      "en": "{She|He} ran a food truck on the Saint-Leu seafront: bouchons, toasted sandwiches, cari of the day."
+    },
+    "phrases.1.texte": {
+      "fr": "Son camion-bar ouvrait à onze heures et fermait quand la marmite était vide.",
+      "en": "{Her|His} food truck opened at eleven and closed when the pot was empty."
+    },
+    "phrases.2.texte": {
+      "fr": "Son camion porte un prénom d'enfant, peint en lettres jaunes ; {elle|il} ne dit pas lequel des siens.",
+      "en": "{Her|His} truck bears a child's name, painted in yellow letters; {she|he} will not say which of {her|his} own."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} connaît les commandes de tous les habitués, et leurs secrets.",
+      "en": "{She|He} knows every regular's order, and their secrets."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait nourrir quarante personnes avec un sac de riz, des grains et ce que la journée apporte.",
+      "en": "{She|He} can feed forty people on a sack of rice, some beans and whatever the day brings."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} fait un rougail qui tire des larmes, et jure que le piment est doux cette année.",
+      "en": "{She|He} makes a rougail that draws tears, and swears the chillies are mild this year."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} goûte tout avant de servir, même quand il n'y a qu'un seul plat.",
+      "en": "{She|He} tastes everything before serving, even when there is only one dish."
+    }
+  },
+  "registre/histoires/passe:electricien": {
+    "_nom": "passe:electricien",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a monté son entreprise d'électricité sans associé, avec une camionnette et un crédit jamais fini de payer.",
+      "en": "{She|He} set up an electrical business with no partner, a van and a loan never quite paid off."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} posait des panneaux solaires sur les toits de l'Ouest, du Port à Saint-Leu.",
+      "en": "{She|He} fitted solar panels on rooftops across the West, from Le Port to Saint-Leu."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} dit toujours qu'un toit sans panneau est un toit qui dort.",
+      "en": "{She|He} always says a roof without a panel is a roof asleep."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} coupe le courant avant de toucher quoi que ce soit, même quand il n'y a plus de courant.",
+      "en": "{She|He} cuts the power before touching anything, even when there is no power left."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} a rétabli la lumière de tout un quartier après un cyclone, sans attendre qu'on le lui demande.",
+      "en": "{She|He} got a whole neighbourhood's lights back on after a cyclone, without waiting to be asked."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} sait ce qu'une batterie peut encore donner, rien qu'à son poids et à son odeur.",
+      "en": "{She|He} can tell what a battery still has in it from its weight and its smell."
+    },
+    "phrases.6.texte": {
+      "fr": "La moitié de ses clients payaient en retard et l'autre en fruits ; {elle|il} n'a jamais relancé personne.",
+      "en": "Half {her|his} customers paid late and the other half in fruit; {she|he} never chased anyone."
+    }
+  },
+  "registre/histoires/passe:etudiante": {
+    "_nom": "passe:etudiante",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} avait repris des études sur le tard, au fond de l'amphi parmi des jeunes de vingt ans, et s'en moquait.",
+      "en": "{She|He} had gone back to university late in life, at the back of the lecture hall among twenty-year-olds, and did not care."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} était en deuxième année à l'université, au Moufia, quand les cours se sont arrêtés pour de bon.",
+      "en": "{She|He} was in second year at the university, in Le Moufia, when classes stopped for good."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} préparait un concours, des fiches plein les murs, quand tout s'est arrêté.",
+      "en": "{She|He} was cramming for a competitive exam, notes all over the walls, when everything stopped."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} partageait un appartement près du Moufia avec deux amies dont {elle|il} n'a plus de nouvelles.",
+      "en": "{She|He} shared a flat near Le Moufia with two friends {she|he} has not heard from since."
+    },
+    "phrases.4.texte": {
+      "fr": "Personne dans sa famille n'avait fait d'études avant {elle|lui}.",
+      "en": "Nobody in {her|his} family had gone to university before {her|him}."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} prend encore des notes sur tout, d'une petite écriture serrée.",
+      "en": "{She|He} still takes notes on everything, in small tight handwriting."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} travaillait le soir dans un snack pour payer le loyer, et tient une friteuse aussi bien qu'un cahier.",
+      "en": "{She|He} worked evenings in a snack bar to pay the rent, and handles a fryer as well as a notebook."
+    },
+    "phrases.7.texte": {
+      "fr": "{Elle|Il} sait apprendre vite dans un livre, ce qui sert plus qu'on ne le croyait.",
+      "en": "{She|He} can learn fast from a book, which turns out more useful than anyone thought."
+    }
+  },
+  "registre/histoires/passe:gendarme": {
+    "_nom": "passe:gendarme",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} était gendarme à la brigade de Saint-Pierre, plus souvent sur la route que derrière un bureau.",
+      "en": "{She|He} was a gendarme at the Saint-Pierre brigade, more often on the road than behind a desk."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} servait au peloton de montagne, celui qu'on appelle quand un sentier ne rend pas quelqu'un.",
+      "en": "{She|He} served in the mountain rescue platoon, the one they call when a trail does not give someone back."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a sorti des randonneurs de Mafate en pleine nuit plus d'une fois.",
+      "en": "{She|He} has brought hikers out of Mafate in the dead of night more than once."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} a rendu son arme de service le dernier jour, puis {elle|il} est retourné{e|} la chercher.",
+      "en": "{She|He} handed in {her|his} service weapon on the last day, then went back for it."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} regarde encore les mains des gens avant leur visage.",
+      "en": "{She|He} still looks at people's hands before their faces."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} sait calmer une dispute de cour avant qu'un sabre ne sorte.",
+      "en": "{She|He} knows how to cool a backyard quarrel before a cane knife comes out."
+    },
+    "phrases.6.texte": {
+      "fr": "Certains lui en veulent encore pour un procès-verbal ; d'autres lui doivent un fils ramené vivant.",
+      "en": "Some still hold a fine against {her|him}; others owe {her|him} a son brought home alive."
+    }
+  },
+  "registre/histoires/passe:guide-de-canyon": {
+    "_nom": "passe:guide-de-canyon",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} emmenait des clients dans les canyons de Cilaos, corde sur l'épaule, de bassin en bassin.",
+      "en": "{She|He} took clients down the canyons of Cilaos, rope on {her|his} shoulder, from pool to pool."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} guidait dans Fleurs Jaunes et Bras Rouge, et savait à quelle cascade les rires s'arrêtent.",
+      "en": "{She|He} guided in Fleurs Jaunes and Bras Rouge, and knew at which waterfall the laughing stops."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a perdu un client, une fois, dans une crue, et ne prend plus jamais la pluie à la légère.",
+      "en": "{She|He} lost a client once, to a flash flood, and has never taken rain lightly since."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} connaît chaque bassin de Cilaos et le nom de chaque cascade.",
+      "en": "{She|He} knows every pool in Cilaos and the name of every waterfall."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait faire descendre quelqu'un qui a peur, un mot après l'autre.",
+      "en": "{She|He} can talk a frightened person down, one word at a time."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} vérifie deux fois chaque nœud, y compris ceux des autres.",
+      "en": "{She|He} checks every knot twice, other people's included."
+    },
+    "phrases.6.texte": {
+      "fr": "Les secours l'appelaient quand il fallait quelqu'un qui connaisse le fond de la ravine.",
+      "en": "Rescue teams called {her|him} when they needed someone who knew the bottom of the ravine."
+    }
+  },
+  "registre/histoires/passe:ilette-de-mafate": {
+    "_nom": "passe:ilette-de-mafate",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} tenait un gîte à La Nouvelle : douze lits, un cari au feu de bois et pas de réseau.",
+      "en": "{She|He} ran a hikers' lodge in La Nouvelle: twelve beds, a wood-fired cari and no signal."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} vivait à Marla, de son jardin, de ses bêtes et du passage des randonneurs.",
+      "en": "{She|He} lived in Marla, off the garden, the animals and passing hikers."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} ne descend en ville que pour les papiers, et remonte le soir même.",
+      "en": "{She|He} only goes down to town for paperwork, and is back up the same evening."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} connaît chaque famille du cirque et chaque source.",
+      "en": "{She|He} knows every family in the cirque and every spring."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait ce que pèse un sac de ciment au bout de trois heures de sentier.",
+      "en": "{She|He} knows what a bag of cement weighs after three hours on the trail."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} juge les gens à la façon dont ils arrivent en haut de la côte.",
+      "en": "{She|He} judges people by how they reach the top of the climb."
+    },
+    "phrases.6.texte": {
+      "fr": "L'hélicoptère déposait les courses le jeudi ; {elle|il} gardait celles des voisins sans qu'on le lui demande.",
+      "en": "The helicopter dropped supplies on Thursdays; {she|he} looked after the neighbours' share without being asked."
+    }
+  },
+  "registre/histoires/passe:infirmiere-du-chu": {
+    "_nom": "passe:infirmiere-du-chu",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a passé ses nuits aux urgences du CHU, là où l'on apprend à trier avant de consoler.",
+      "en": "{She|He} spent {her|his} nights in the CHU's emergency department, where you learn to triage before you comfort."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} travaillait en pédiatrie au CHU, et savait piquer un enfant en lui parlant de tout autre chose.",
+      "en": "{She|He} worked in paediatrics at the CHU, and could put a needle in a child while talking about something else entirely."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} connaît par cœur le bruit des urgences un soir de cyclone.",
+      "en": "{She|He} knows by heart the sound of an emergency ward on a cyclone night."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} se lave encore les mains jusqu'aux coudes, même à l'eau de pluie.",
+      "en": "{She|He} still washes {her|his} hands up to the elbows, even in rainwater."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} a vu arriver les premiers malades du Gris, et sait ce que personne n'a voulu écrire au dossier.",
+      "en": "{She|He} saw the first cases of the Grey come in, and knows what nobody wanted written in the file."
+    },
+    "phrases.5.texte": {
+      "fr": "D'anciens patients {la|le} reconnaissent encore, et cela lui a ouvert plus d'une porte.",
+      "en": "Former patients still recognise {her|him}, and that has opened more than one door."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} sait ce qu'il faut prendre dans une pharmacie quand on ne peut emporter qu'un sac.",
+      "en": "{She|He} knows what to take from a pharmacy when you can only carry one bag."
+    }
+  },
+  "registre/histoires/passe:mecanicien": {
+    "_nom": "passe:mecanicien",
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} tenait un garage au Port : deux ponts, une fosse et un transistor toujours allumé.",
+      "en": "{She|He} ran a garage in Le Port: two lifts, a pit and a radio that was never off."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a appris le métier en démontant des mobylettes, et le reste en les remontant.",
+      "en": "{She|He} learnt the trade taking mopeds apart, and the rest putting them back together."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} reconnaît une panne au bruit, avant d'ouvrir le capot.",
+      "en": "{She|He} can name a fault by its sound, before lifting the bonnet."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} ne jette jamais une pièce : tout finit par resservir.",
+      "en": "{She|He} never throws a part away: everything comes in useful again."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} a les mains noires jusque dans les lignes, et ne cherche plus à les ravoir.",
+      "en": "{Her|His} hands are black right into the creases, and {she|he} has stopped trying to get them clean."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} faisait crédit jusqu'à la fin du mois, et parfois jusqu'à la fin de l'année.",
+      "en": "{She|He} gave credit till the end of the month, and sometimes till the end of the year."
+    }
+  },
+  "registre/histoires/passe:pecheur-de-saint-gilles": {
+    "_nom": "passe:pecheur-de-saint-gilles",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} sortait du port de Saint-Gilles avant le jour, sur une barque de six mètres.",
+      "en": "{She|He} left Saint-Gilles harbour before dawn, in a six-metre boat."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} pêchait la dorade et le thon au large de Saint-Gilles, à la traîne, sans équipage.",
+      "en": "{She|He} trolled for dorado and tuna off Saint-Gilles, with no crew."
+    },
+    "phrases.2.texte": {
+      "fr": "Depuis qu'{elle|il} pêche, {elle|il} ne dort pas plus de trois nuits loin de la mer.",
+      "en": "Since taking up fishing, {she|he} has not slept more than three nights away from the sea."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} regarde le ciel de l'ouest à cinq heures, tous les jours, bateau ou pas.",
+      "en": "{She|He} checks the western sky at five every day, boat or no boat."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait lire la houle, la couleur de l'eau et le vol des oiseaux au-dessus d'un banc.",
+      "en": "{She|He} can read the swell, the colour of the water and the flight of birds over a shoal."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} a ramené plus d'un plaisancier en panne, sans jamais demander son nom.",
+      "en": "{She|He} towed in more than one stranded yachtsman, and never asked a name."
+    },
+    "phrases.6.texte": {
+      "fr": "Sur le quai, on lui gardait une place à l'ombre ; son poisson était vendu avant que la barque soit amarrée.",
+      "en": "On the quay they kept {her|him} a spot in the shade; the catch was sold before the boat was tied up."
+    }
+  },
+  "registre/histoires/passe:planteur-de-canne": {
+    "_nom": "passe:planteur-de-canne",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} cultivait douze hectares de canne, en pente, là où les machines ne montent pas.",
+      "en": "{She|He} farmed twelve hectares of cane, on a slope the machines cannot climb."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a repris des terres à canne quand plus personne n'en voulait.",
+      "en": "{She|He} took on cane land when nobody else wanted it."
+    },
+    "phrases.2.texte": {
+      "fr": "Chaque fin de campagne, {elle|il} invitait tout le quartier au cari.",
+      "en": "At the end of every harvest {she|he} invited the whole neighbourhood for cari."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} se lève encore à quatre heures pendant les mois de coupe, sans raison.",
+      "en": "{She|He} still gets up at four during the cutting months, for no reason."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait affûter un sabre à canne sur une pierre de rivière.",
+      "en": "{She|He} can put an edge on a cane knife with a river stone."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} a compté ses tonnes, ses dettes et les années de l'usine : les trois chiffres baissaient ensemble.",
+      "en": "{She|He} counted the tonnes, the debts and the years the mill had left: all three were going down together."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} employait les mêmes coupeurs d'une année sur l'autre, et mangeait avec eux au bord du champ.",
+      "en": "{She|He} hired the same cutters year after year, and ate with them at the edge of the field."
+    }
+  },
+  "registre/histoires/passe:prof-de-svt": {
+    "_nom": "passe:prof-de-svt",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} enseignait les sciences de la vie et de la Terre dans un collège de Saint-Paul.",
+      "en": "{She|He} taught biology and earth science at a secondary school in Saint-Paul."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} enseignait les sciences, emmenait chaque année ses élèves au volcan et ne s'en lassait pas.",
+      "en": "{She|He} taught science, took {her|his} pupils up the volcano every year and never tired of it."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a expliqué le Gris à ses élèves avec un tableau et une craie, le dernier jour de classe.",
+      "en": "{She|He} explained the Grey to {her|his} pupils with a blackboard and a piece of chalk, on the last day of school."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} sait reconnaître une plante endémique, une roche et un mensonge d'élève.",
+      "en": "{She|He} can identify an endemic plant, a rock and a pupil's lie."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} sait expliquer une chose compliquée trois fois, de trois façons, sans s'énerver.",
+      "en": "{She|He} can explain a difficult thing three times, three ways, without losing patience."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} ramasse encore des cailloux et les range par âge.",
+      "en": "{She|He} still picks up stones and sorts them by age."
+    },
+    "phrases.6.texte": {
+      "fr": "D'anciens élèves lui disent encore « vous », même ceux qui ont de la barbe.",
+      "en": "Former pupils still call {her|him} \"{Miss|Sir}\", even the ones with beards."
+    }
+  },
+  "registre/histoires/passe:retraite-de-la-marine": {
+    "_nom": "passe:retraite-de-la-marine",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a quitté la marine plus tôt que prévu, avec une pension mince et le pied marin.",
+      "en": "{She|He} left the navy sooner than planned, with a thin pension and sea legs."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} a vu tous les ports de l'océan Indien, et n'a posé son sac ici que pour ses vieux jours.",
+      "en": "{She|He} has seen every port in the Indian Ocean, and only set {her|his} kitbag down here for {her|his} old age."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a fait trente ans dans la marine, aux machines puis à la passerelle, et en a gardé le pas.",
+      "en": "{She|He} did thirty years in the navy, engine room then bridge, and has kept the walk."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} écoute la radio marine chaque soir, par habitude.",
+      "en": "{She|He} listens to the marine radio every evening, out of habit."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} se réveille pour le quart de quatre heures, sans bateau ni personne à relever.",
+      "en": "{She|He} wakes for the four o'clock watch, with no ship and no one to relieve."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} sait le morse, les pavillons et la manière de dire non à un officier.",
+      "en": "{She|He} knows Morse, signal flags and how to say no to an officer."
+    },
+    "phrases.6.texte": {
+      "fr": "{Elle|Il} a un tatouage par océan et une histoire par tatouage, jamais deux fois la même.",
+      "en": "{She|He} has a tattoo for every ocean and a story for every tattoo, never the same twice."
+    },
+    "phrases.7.texte": {
+      "fr": "Au Port, les anciens du quai lui gardaient une chaise et le journal de la veille.",
+      "en": "In Le Port, the old hands on the quay kept {her|him} a chair and yesterday's paper."
+    }
+  },
+  "registre/histoires/passe:vendeur-de-bazar": {
+    "_nom": "passe:vendeur-de-bazar",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} tenait un bazar à Saint-Pierre où l'on trouvait de tout, à condition de demander.",
+      "en": "{She|He} kept a bazaar in Saint-Pierre where you could find anything, provided you asked."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} vendait des marmites, des savates, des piles et des cierges, dans cet ordre sur l'étagère.",
+      "en": "{She|He} sold cooking pots, flip-flops, batteries and candles, in that order along the shelf."
+    },
+    "phrases.2.texte": {
+      "fr": "{Elle|Il} a toujours su ce que voulait un client avant qu'il ouvre la bouche.",
+      "en": "{She|He} always knew what a customer wanted before they opened their mouth."
+    },
+    "phrases.3.texte": {
+      "fr": "{Elle|Il} connaît le prix de chaque chose, et ce qu'elle vaut maintenant, ce qui n'est plus pareil.",
+      "en": "{She|He} knows the price of everything, and what it is worth now, which is no longer the same."
+    },
+    "phrases.4.texte": {
+      "fr": "{Elle|Il} range tout ce qu'{elle|il} trouve par usage, et sait où est chaque chose dans le noir.",
+      "en": "{She|He} sorts whatever {she|he} finds by use, and knows where each thing is in the dark."
+    },
+    "phrases.5.texte": {
+      "fr": "{Elle|Il} a donné son stock le premier mois, vendu le reste le deuxième, et ne regrette que l'ordre.",
+      "en": "{She|He} gave the stock away the first month, sold the rest the second, and regrets only the order."
+    },
+    "phrases.6.texte": {
+      "fr": "Tout le quartier passait au bazar, pour acheter ou seulement pour dire comment allait la famille.",
+      "en": "The whole neighbourhood came by the bazaar, to buy or just to say how the family was."
+    }
+  },
+  "registre/histoires/regard:epreuve": {
+    "_nom": "regard:epreuve",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} pense que tout ceci est une épreuve, et qu'une épreuve se traverse.",
+      "en": "{She|He} thinks all this is a trial, and that a trial is something you get through."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} compte les jours comme les marches d'une côte : il y en a un nombre, donc une fin.",
+      "en": "{She|He} counts the days like the steps of a climb: there is a number of them, so there is an end."
+    }
+  },
+  "registre/histoires/regard:refaire": {
+    "_nom": "regard:refaire",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} dit que le monde d'avant n'était pas si bien, et qu'on tient une chance de faire mieux.",
+      "en": "{She|He} says the old world was not so great, and that this is a chance to do better."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} dessine des plans de village sur des bouts de carton, avec une école au milieu.",
+      "en": "{She|He} draws village plans on scraps of cardboard, with a school in the middle."
+    }
+  },
+  "registre/histoires/regard:vivre": {
+    "_nom": "regard:vivre",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} ne cherche pas de sens à tout cela : {elle|il} veut voir demain, et après-demain.",
+      "en": "{She|He} looks for no meaning in any of this: {she|he} wants to see tomorrow, and the day after."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} dit qu'un cari chaud et un toit sec, c'est déjà une philosophie.",
+      "en": "{She|He} says a hot cari and a dry roof are a philosophy already."
+    }
+  },
+  "registre/histoires/religion:ancetres-malgaches": {
+    "_nom": "religion:ancetres-malgaches",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} pose un petit verre de rhum pour les anciens avant de boire le sien, sans en faire une histoire.",
+      "en": "{She|He} sets down a small glass of rum for the old ones before drinking {her|his} own, and makes nothing of it."
+    },
+    "phrases.1.texte": {
+      "fr": "Une fois l'an, {elle|il} dit à voix haute le nom de ses morts, pour qu'aucun ne se perde en route.",
+      "en": "Once a year {she|he} says the names of {her|his} dead out loud, so that none of them gets lost along the way."
+    }
+  },
+  "registre/histoires/religion:aucune": {
+    "_nom": "religion:aucune",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} ne croit à rien qui ne se répare ou ne se partage.",
+      "en": "{She|He} believes in nothing that cannot be mended or shared."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} n'a jamais prié, et tient la porte à ceux qui vont le faire.",
+      "en": "{She|He} has never prayed, and holds the door for those on their way to."
+    }
+  },
+  "registre/histoires/religion:catholique": {
+    "_nom": "religion:catholique",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} allait à la messe de six heures, celle des gens qui travaillent.",
+      "en": "{She|He} went to six o'clock mass, the one for working people."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} garde une médaille de saint Expédit, pour les affaires urgentes.",
+      "en": "{She|He} keeps a medal of Saint Expedite, for urgent matters."
+    }
+  },
+  "registre/histoires/religion:culte-chinois": {
+    "_nom": "religion:culte-chinois",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} brûle de l'encens le premier et le quinze du mois lunaire, quand il en reste.",
+      "en": "{She|He} burns incense on the first and fifteenth of the lunar month, when there is any left."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} s'assoit un moment en silence chaque matin, avant que quiconque ait besoin de quoi que ce soit.",
+      "en": "{She|He} sits in silence for a while each morning, before anyone needs anything."
+    }
+  },
+  "registre/histoires/religion:evangelique": {
+    "_nom": "religion:evangelique",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} chantait à l'assemblée du dimanche, plus fort que juste.",
+      "en": "{She|He} sang at Sunday assembly, louder than in tune."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} lit quelques versets chaque matin, dans une bible dont la couverture ne tient plus.",
+      "en": "{She|He} reads a few verses every morning, from a Bible whose cover has given up."
+    }
+  },
+  "registre/histoires/religion:hindouisme-tamoul": {
+    "_nom": "religion:hindouisme-tamoul",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} jeûnait avant la marche sur le feu, même les années où {elle|il} ne marchait pas.",
+      "en": "{She|He} fasted before the fire-walking, even in the years {she|he} did not walk."
+    },
+    "phrases.1.texte": {
+      "fr": "{Elle|Il} dépose une fleur là où d'autres font le signe de croix.",
+      "en": "{She|He} lays down a flower where others make the sign of the cross."
+    }
+  },
+  "registre/histoires/religion:islam": {
+    "_nom": "religion:islam",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} fait encore ses cinq prières, à l'heure du soleil puisqu'il n'y a plus d'appel.",
+      "en": "{She|He} still keeps the five prayers, by the sun now there is no call to prayer."
+    },
+    "phrases.1.texte": {
+      "fr": "Pendant le ramadan, {elle|il} portait une assiette aux voisins avant de rompre le jeûne.",
+      "en": "During Ramadan {she|he} would carry a plate to the neighbours before breaking the fast."
+    }
+  },
+  "registre/histoires/religion:plusieurs": {
+    "_nom": "religion:plusieurs",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} va au temple le vendredi et à la messe le dimanche, et ne voit pas où est la question.",
+      "en": "{She|He} goes to temple on Friday and mass on Sunday, and cannot see what the question is."
+    },
+    "phrases.1.texte": {
+      "fr": "Chez {elle|lui}, la Vierge et Mariamen partagent la même étagère et les mêmes fleurs.",
+      "en": "In {her|his} home the Virgin and Mariamen share one shelf and the same flowers."
+    }
+  },
+  "registre/histoires/trait:ame-de-pelerin": {
+    "_nom": "trait:ame-de-pelerin",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} allume une bougie en passant devant un oratoire, quel qu'en soit le saint.",
+      "en": "{She|He} lights a candle when passing a wayside shrine, whoever the saint."
+    }
+  },
+  "registre/histoires/trait:ancien-fumeur": {
+    "_nom": "trait:ancien-fumeur",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} avait arrêté de fumer depuis sept ans, et compte de nouveau les jours.",
+      "en": "{She|He} had given up smoking seven years ago, and is counting the days again."
+    }
+  },
+  "registre/histoires/trait:bras-tendu": {
+    "_nom": "trait:bras-tendu",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} s'est toujours battu{e|} pour les autres, jamais pour {elle|lui}.",
+      "en": "{She|He} has always fought for others, never for {herself|himself}."
+    }
+  },
+  "registre/histoires/trait:brute-epaisse": {
+    "_nom": "trait:brute-epaisse",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a réglé plus d'une discussion avec les épaules, et l'a regretté une fois sur deux.",
+      "en": "{She|He} has settled more than one argument with {her|his} shoulders, and regretted it half the time."
+    }
+  },
+  "registre/histoires/trait:coeur-d-artichaut": {
+    "_nom": "trait:coeur-d-artichaut",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} pleure aux mariages, aux enterrements et aux départs de car.",
+      "en": "{She|He} cries at weddings, funerals and departing buses."
+    }
+  },
+  "registre/histoires/trait:coeur-de-kour": {
+    "_nom": "trait:coeur-de-kour",
+    "phrases.0.texte": {
+      "fr": "Chez {elle|lui}, la marmite était toujours trop grande, exprès.",
+      "en": "At {her|his} place the pot was always too big, on purpose."
+    }
+  },
+  "registre/histoires/trait:creole-de-coeur": {
+    "_nom": "trait:creole-de-coeur",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} dit bonjour dans cinq langues, et sait dans laquelle chacun préfère être remercié.",
+      "en": "{She|He} can say hello in five languages, and knows in which one each person likes to be thanked."
+    }
+  },
+  "registre/histoires/trait:cuir-de-cabri": {
+    "_nom": "trait:cuir-de-cabri",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} s'est cassé le bras deux fois sans s'en plaindre, et une fois sans s'en apercevoir.",
+      "en": "{She|He} broke an arm twice without complaining, and once without noticing."
+    }
+  },
+  "registre/histoires/trait:doigts-crochus": {
+    "_nom": "trait:doigts-crochus",
+    "phrases.0.texte": {
+      "fr": "Des choses finissent dans ses poches ; {elle|il} s'en étonne avant tout le monde.",
+      "en": "Things end up in {her|his} pockets; {she|he} is surprised before anyone else is."
+    }
+  },
+  "registre/histoires/trait:doigts-de-terre": {
+    "_nom": "trait:doigts-de-terre",
+    "phrases.0.texte": {
+      "fr": "Tout ce qu'{elle|il} met en terre prend, jusqu'au noyau de mangue jeté par la fenêtre.",
+      "en": "Whatever {she|he} puts in the ground takes, down to a mango stone thrown out of the window."
+    }
+  },
+  "registre/histoires/trait:jambes-de-cabri": {
+    "_nom": "trait:jambes-de-cabri",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a couru le sentier du Taïbit aller et retour, un dimanche, pour le plaisir.",
+      "en": "{She|He} once ran the Taïbit trail there and back on a Sunday, for the pleasure of it."
+    }
+  },
+  "registre/histoires/trait:leve-avant-le-coq": {
+    "_nom": "trait:leve-avant-le-coq",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a toujours vu le jour se lever, et plaint ceux qui le ratent.",
+      "en": "{She|He} has always seen the day break, and pities those who miss it."
+    }
+  },
+  "registre/histoires/trait:loup-solitaire": {
+    "_nom": "trait:loup-solitaire",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a toujours choisi la case du bout du chemin, par goût.",
+      "en": "{She|He} has always picked the house at the end of the track, by choice."
+    }
+  },
+  "registre/histoires/trait:main-ouverte": {
+    "_nom": "trait:main-ouverte",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a prêté plus qu'{elle|il} n'a jamais possédé, et ne tient aucun compte.",
+      "en": "{She|He} has lent more than {she|he} ever owned, and keeps no tally."
+    }
+  },
+  "registre/histoires/trait:main-qui-ne-frappe-pas": {
+    "_nom": "trait:main-qui-ne-frappe-pas",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} n'a jamais levé la main sur personne et ne compte pas commencer.",
+      "en": "{She|He} has never raised a hand to anyone and does not mean to start."
+    }
+  },
+  "registre/histoires/trait:mains-qui-tremblent": {
+    "_nom": "trait:mains-qui-tremblent",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} casse un verre par semaine, et demande pardon chaque fois comme si c'était le premier.",
+      "en": "{She|He} breaks a glass a week, and says sorry each time as if it were the first."
+    }
+  },
+  "registre/histoires/trait:nuage-noir": {
+    "_nom": "trait:nuage-noir",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} avait prévu le pire bien avant tout le monde, et n'en tire aucune fierté.",
+      "en": "{She|He} saw the worst coming well before anyone else, and takes no pride in it."
+    }
+  },
+  "registre/histoires/trait:nuits-blanches": {
+    "_nom": "trait:nuits-blanches",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} dort trois heures par nuit depuis des années, et connaît tous les bruits de quatre heures.",
+      "en": "{She|He} has slept three hours a night for years, and knows every sound of four in the morning."
+    }
+  },
+  "registre/histoires/trait:oeil-froid": {
+    "_nom": "trait:oeil-froid",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} tirait au ball-trap le dimanche, sans jamais hausser le ton ni rater deux fois de suite.",
+      "en": "{She|He} shot clays on Sundays, never raising {her|his} voice nor missing twice in a row."
+    }
+  },
+  "registre/histoires/trait:oiseau-de-nuit": {
+    "_nom": "trait:oiseau-de-nuit",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} n'a jamais rien fait de bon avant dix heures du matin, ni rien de mauvais après minuit.",
+      "en": "{She|He} never did anything worthwhile before ten in the morning, nor anything bad after midnight."
+    }
+  },
+  "registre/histoires/trait:oiseau-de-rien": {
+    "_nom": "trait:oiseau-de-rien",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} oublie de manger quand il y a du travail, et s'étonne qu'on s'en inquiète.",
+      "en": "{She|He} forgets to eat when there is work to do, and is surprised anyone worries."
+    }
+  },
+  "registre/histoires/trait:os-de-verre": {
+    "_nom": "trait:os-de-verre",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} connaît le plâtre mieux que personne, et les salles d'attente par cœur.",
+      "en": "{She|He} knows plaster casts better than anyone, and waiting rooms by heart."
+    }
+  },
+  "registre/histoires/trait:peur-de-la-mer": {
+    "_nom": "trait:peur-de-la-mer",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} n'entre dans l'eau que jusqu'aux genoux, et seulement dans le lagon.",
+      "en": "{She|He} goes into the water only up to the knees, and only in the lagoon."
+    }
+  },
+  "registre/histoires/trait:peur-du-noir-sous-terre": {
+    "_nom": "trait:peur-du-noir-sous-terre",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} a passé une heure sans lumière dans un tunnel de lave, un jour, et n'y a jamais remis les pieds.",
+      "en": "{She|He} once spent an hour without light in a lava tube, and never set foot in one again."
+    }
+  },
+  "registre/histoires/trait:rat-de-galerie": {
+    "_nom": "trait:rat-de-galerie",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} explorait les tunnels de lave avec une lampe et une pelote de ficelle, pour le plaisir.",
+      "en": "{She|He} used to explore lava tubes with a torch and a ball of string, for fun."
+    }
+  },
+  "registre/histoires/trait:sang-de-basalte": {
+    "_nom": "trait:sang-de-basalte",
+    "phrases.0.texte": {
+      "fr": "Quand tout le monde crie, {elle|il} baisse la voix, et c'est {elle|lui} qu'on écoute.",
+      "en": "When everyone shouts, {she|he} lowers {her|his} voice, and is the one people listen to."
+    }
+  },
+  "registre/histoires/trait:soleil-dedans": {
+    "_nom": "trait:soleil-dedans",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} trouve encore le moyen de rire d'une mangue trop mûre tombée au bon moment.",
+      "en": "{She|He} still finds a way to laugh at an overripe mango falling at the right moment."
+    }
+  },
+  "registre/histoires/trait:souffle-court": {
+    "_nom": "trait:souffle-court",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} garde un inhalateur vide dans sa poche, pour le geste.",
+      "en": "{She|He} keeps an empty inhaler in {her|his} pocket, for the gesture."
+    }
+  },
+  "registre/histoires/trait:tete-de-bois": {
+    "_nom": "trait:tete-de-bois",
+    "phrases.0.texte": {
+      "fr": "On ne {la|le} fait pas changer d'avis : on attend que l'idée vienne d'{elle|lui}.",
+      "en": "Nobody changes {her|his} mind: you wait for the idea to come from {her|him}."
+    }
+  },
+  "registre/histoires/trait:touche-a-tout": {
+    "_nom": "trait:touche-a-tout",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} n'a jamais appelé un réparateur de sa vie.",
+      "en": "{She|He} has never called a repairman in {her|his} life."
+    }
+  },
+  "registre/histoires/trait:ventre-sans-fond": {
+    "_nom": "trait:ventre-sans-fond",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} finit les assiettes des autres, avec un mot d'excuse et aucun remords.",
+      "en": "{She|He} finishes other people's plates, with a word of apology and no remorse."
+    }
+  },
+  "registre/histoires/trait:vertige": {
+    "_nom": "trait:vertige",
+    "phrases.0.texte": {
+      "fr": "{Elle|Il} n'a jamais pu regarder en bas depuis le Maïdo : {elle|il} regarde ses chaussures.",
+      "en": "{She|He} never could look down from the Maïdo: {she|he} looks at {her|his} shoes."
+    }
+  },
   "registre/marchands/armand-de-sainte-croix": {
     "_nom": "Monsieur Armand de Sainte-Croix",
     "nom": {

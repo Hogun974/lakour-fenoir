@@ -128,7 +128,7 @@ Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs e
 
 **Les tâches du jour.** À l'abri, chacun a une tâche : garde, cultures, élevage, chantier, atelier, cuisine, soins, eau, pêche, chasse, fouille, repos, enseigner. Une tâche tenue une semaine donne une marque.
 
-**L'histoire.** Le MJ IA (ou vous) écrit le journal « Histoire de… » : qui il est, son histoire, ce qu'il garde pour lui (Foundry envoie les documents à tous les navigateurs : ce n'est pas un coffre-fort), et les chapitres de la campagne.` },
+**L'histoire.** Le générateur donne à chaque survivant trois à cinq phrases d'histoire, dans son genre : où il a grandi, ce qu'il faisait, une manie, parfois sa foi, son regard ou sa génération (de la couleur, sans effet de jeu). Elles ouvrent le portrait de son journal « Histoire de… », que le MJ IA (ou vous) écrit ensuite : qui il est, son histoire, ce qu'il garde pour lui (Foundry envoie les documents à tous les navigateurs : ce n'est pas un coffre-fort), et les chapitres de la campagne.` },
   { cle: "enfances", titre: "Les enfances", texte: ENFANCES.map(e => `**${e.nom}** (${Object.entries(e.modificateurs).map(([c, n]) => `${c} ${n > 0 ? "+" : ""}${n}`).join(", ")}${e.incapacites.length ? ` ; incapacité : ${e.incapacites.join(", ")}` : ""}) — ${sansBalises(e.description)}`).join("\n\n") },
   { cle: "passes", titre: "Les passés", texte: PASSES.map(p => `**${p.name}** — ${sansBalises(p.system.description)} *Compétences : ${Object.entries(p.system.competences).map(([c, n]) => `${c} ${n}`).join(", ")}.*`).join("\n\n") },
   ...PAGES_JOUEUR_ESPRIT,

@@ -40,7 +40,11 @@ test("tirerEsprit : les tirages d'avant ce lot ne changent pas (flux à part) ; 
   for (let i = 0; i < 50; i++) {
     const a = L.genererSurvivant(C, L.creerHasard(`f${i}`), {});
     const b = L.genererSurvivant(C, L.creerHasard(`f${i}`), { hasardEsprit: L.creerHasard(`autre${i}`) });
-    const sans = s => Object.fromEntries(Object.entries(s).filter(([k]) => !["regard", "religion", "religions", "pratique", "ancrage", "sensMoral", "autorite", "reputation", "esprit"].includes(k)));
+    // L'histoire (§16) dit la foi ou le regard dans sa dernière phrase, qui suit donc l'esprit (comme le front cendré d'une enfance
+    // tamoule, qui demande la foi hindoue) ; sur ces cinquante tirages, les quatre premières ne bougent pas.
+    const sansHistoire = h => ({ ...h, graine: { ...h.graine, phrases: h.graine.phrases.slice(0, 4), cles: (h.graine.cles ?? []).slice(0, 4) } });
+    const sans = s => Object.fromEntries(Object.entries(s).filter(([k]) => !["regard", "religion", "religions", "pratique", "ancrage", "sensMoral", "autorite", "reputation", "esprit"].includes(k))
+      .map(([k, x]) => [k, k === "histoire" ? sansHistoire(x) : x]));
     assert.deepEqual(sans(a), sans(b), "l'esprit est tiré sur son propre flux");
   }
   const v = L.genererSurvivant(C, L.creerHasard("v"), { verrous: { regard: "epreuve", religion: "plusieurs", religions: ["islam", "catholique"], pratique: true } });

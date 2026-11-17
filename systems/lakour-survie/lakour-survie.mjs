@@ -20,6 +20,7 @@ import { fenetreMJ, ouvrirFenetreMJ } from "./scripts/apps/mj.mjs";
 import { atelier } from "./scripts/apps/atelier.mjs";
 import { ouvrirCreation, doitCreer } from "./scripts/apps/creation.mjs";
 import { brancherGarde } from "./scripts/garde.mjs";
+import { brancherHistoires } from "./scripts/histoires.mjs";
 
 // ------------------------------------------------------------------ l'état change (réglage monde « partie », chez tous)
 const enSaisie = appli => Boolean(appli.element?.querySelector?.("prose-mirror[open]") || appli.element?.contains?.(document.activeElement));
@@ -61,6 +62,8 @@ Hooks.once("init", () => {
   brancherImmersion();
   brancherInfobulle();
   brancherGarde();
+  // Lot 11 (§16) : un journal « Histoire de… » qui naît pour un survivant reçoit son histoire dans la page « Portrait ».
+  brancherHistoires(() => contenu());
 });
 
 // Les fêtes du moteur à la date de JEU (scripts/fetes.mjs) : au crochet « pret » du moteur, avant son premier calcul, dans chaque

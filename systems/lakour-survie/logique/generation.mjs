@@ -38,6 +38,7 @@ import { liste, indexer, installationDe, siteDe, genreDe, GENRES } from "./conte
 import { survivantNeuf, peutAgir } from "./survivant.mjs";
 import { poidsTravail } from "./releve.mjs";
 import { tirerEsprit } from "./esprit.mjs";
+import { composerHistoire } from "./histoires.mjs";
 import { deriverHasard } from "./hasard.mjs";
 import { resoudreTest } from "./des.mjs";
 import { message } from "./textes.mjs";
@@ -187,6 +188,9 @@ export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
   const verrousEsprit = Object.fromEntries(CHAMPS_ESPRIT_VERROUS.filter(k => v[k] !== undefined).map(k => [k, v[k]]));
   const hEsprit = options.hasardEsprit ?? deriverHasard("esprit", nom, age, enfance?.cle ?? "", passe?.cle ?? "", traits.join(","), JSON.stringify(passions), JSON.stringify(niveaux));
   const esprit = tirerEsprit(contenu, hEsprit, { traits, competences, age, enfance: enfance?.cle ?? "", verrous: verrousEsprit });
+  // L'histoire (§16, histoires.mjs) : 3 à 5 phrases du contenu dans le genre du survivant, sur un flux à part dérivé de la fiche ;
+  // sans elles (contenu sans histoires, genre inconnu), les phrases de l'enfance et du passé, comme avant.
+  const histoire = composerHistoire(contenu, { nom, age, genre, enfance: enfance?.cle ?? "", passe: passe?.cle ?? "", traits, ...esprit });
   return survivantNeuf({
     nom, genre: GENRES.includes(genre) ? genre : "",
     age, enfance: enfance?.cle ?? "", passe: passe?.cle ?? "", passions, traits, incapacites, statut, tache: "repos",
@@ -197,7 +201,8 @@ export function genererSurvivant(contenu, hasard = Math.random, options = {}) {
     histoire: {
       journal: "",
       graine: {
-        phrases: [...phrasesDe(enfance), ...phrasesDe(passe)],
+        phrases: histoire?.phrases ?? [...phrasesDe(enfance), ...phrasesDe(passe)],
+        ...(histoire ? { cles: histoire.cles } : {}),
         region: options.region ?? "", age, proche: proche.texte, procheCle: proche.cle, procheMessage: proche.message
       }
     }
