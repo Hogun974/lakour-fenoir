@@ -66,6 +66,8 @@ export function contexteSurvivant(a, { gm = false, proprietaire = false, incubat
     infection: s.infection?.atteint ? { stade: s.infection.stade, pct: Math.round(s.infection.stade / 6 * 100) } : null,
     // Lot « sens » : l'habitude du noir (nuits passées debout sans lumière, palier).
     noir: (() => { const n = L.noirDe(s); return n.nuits > 0 ? { nuits: n.nuits, palier: t(`LAKOUR_SURVIE.Percevoir.Accoutumance.Paliers.${L.palierNoir(n.nuits)}`) } : null; })(),
+    // Lot 4 « Les plans » : ce qu'il sait par cœur (le plan survit par lui).
+    parCoeur: (s.plans ?? []).length ? t("LAKOUR_SURVIE.Plans.ParCoeurFiche", { plans: s.plans.map(k => L.nomDuPlan(game.lakourSurvie?.contenu?.() ?? {}, k)).join(", ") }) : "",
     afflictions, traits, incapacites: [...incap].map(k => ({ cle: k, texte: t(`LAKOUR_SURVIE.Incapacites.${k}`) })),
     enfance: enfance ? { nom: L.nomAccorde(enfance, s.genre), aide: sansBalises(enfance.description) } : s.enfance ? { nom: s.enfance, aide: "" } : null,
     passe: passe ? { nom: L.nomAccorde(passe, s.genre), aide: sansBalises(passe.description) } : s.passe ? { nom: s.passe, aide: "" } : null,
@@ -250,10 +252,20 @@ const effetsTexte = e => {
   for (const [r, q] of Object.entries(e.stockage ?? {})) if (Number(q)) l.push(`${t("LAKOUR_SURVIE.Objet.Stockage")} ${libelleRessource(r).toLowerCase()} +${q}`);
   if (e.conservation) l.push(t("LAKOUR_SURVIE.Objet.Conservation"));
   if (e.renseignements) l.push(t("LAKOUR_SURVIE.Objet.Radio"));
+  // Lot 4 « Les plans » : l'étagère aux cahiers.
+  if (e.bibliotheque?.places) l.push(t("LAKOUR_SURVIE.Plans.EtagereEffet", { places: e.bibliotheque.places }), e.bibliotheque.protege ? t("LAKOUR_SURVIE.Plans.EtagereCoffre") : "");
   if (Number(e.conditions?.delai)) l.push(t("LAKOUR_SURVIE.Objet.Delai", { n: e.conditions.delai }));
   if (e.bras?.tache) l.push(t("LAKOUR_SURVIE.Objet.Bras", { tache: libelleTache(e.bras.tache), n: e.bras.nombre ?? 1 }));
   for (const [k, n] of Object.entries(e.bonus ?? {})) if (Number(n)) l.push(`${libelleCompetence(k)} +${n}`);
   return l;
+};
+
+// Lot 4 « Les plans » : les plans qu'un papier porte, et s'il est unique.
+const lignesPapier = s => {
+  const c = game.lakourSurvie?.contenu?.() ?? {};
+  const p = L.papierDe(s, c);
+  if (!p.plans.length) return [];
+  return [t("LAKOUR_SURVIE.Plans.Objet", { plans: p.plans.map(k => L.nomDuPlan(c, k)).join(", ") }), p.unique ? t("LAKOUR_SURVIE.Plans.ObjetUnique") : ""];
 };
 
 // Les sections d'une fiche d'objet selon son type -> [{ titre, lignes: [texte], html }].
@@ -273,7 +285,7 @@ export function sectionsObjet(i) {
       ajout("Usage", [Object.entries(s.bonus ?? {}).filter(([, n]) => Number(n)).map(([k, n]) => `${libelleCompetence(k)} +${n}`).join(", "),
         Number(s.bruit) ? `${t("LAKOUR_SURVIE.Objet.Effets.bruit")} ${s.bruit}` : "", s.munitions ? t("LAKOUR_SURVIE.Objet.Munitions", { n: s.munitions }) : "",
         s.transport ? t("LAKOUR_SURVIE.Objet.Transport", { places: s.transport.places ?? 1, charge: s.transport.chargeMax ?? 0, terrains: (s.transport.terrains ?? []).join(", ") }) : "",
-        ...effetsTexte(s.effets)]);
+        ...effetsTexte(s.effets), ...lignesPapier(s)]);
       break;
     case "passe": case "enfance": {
       const mods = s.competences ?? s.modificateurs ?? {};

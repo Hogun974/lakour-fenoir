@@ -661,6 +661,37 @@
       "en": "<p>Lapli</p>"
     }
   },
+  "tables/5JTgjE9LqkpCloCr": {
+    "_nom": "Lieu à plans — La salle des machines de Takamaka",
+    "name": {
+      "fr": "Lieu à plans — La salle des machines de Takamaka",
+      "en": "Plan site — The Takamaka machine hall"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on tire dans ce lieu à plans (La salle des machines de Takamaka, L'Est : Saint-André, Saint-Benoît, Sainte-Rose), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+      "en": "<p>What can be drawn at this plan site (The Takamaka machine hall, L'Est : Saint-André, Saint-Benoît, Sainte-Rose), once the guard has been dealt with. Each line counts according to its weight. The system draws by itself (lieuAPlans); this table is for the GM who plays without the API.</p>"
+    },
+    "results.fxTqxGWY8TI9nMaM.description": {
+      "fr": "<p>Le plan : Pico-hydro sur rivière (rareté 65 à 90).</p>",
+      "en": "<p>The plan: Pico-hydro on a river (rarity 65 to 90).</p>"
+    },
+    "results.0EuPnKmAH1BeetEz.description": {
+      "fr": "<p>Le plan : Batteries (rareté 35 à 60).</p>",
+      "en": "<p>The plan: Batteries (rarity 35 to 60).</p>"
+    },
+    "results.QSTdyzc1fa5z4AC1.description": {
+      "fr": "<p>Le plan : Panneaux solaires (rareté 30 à 55).</p>",
+      "en": "<p>The plan: Solar panels (rarity 30 to 55).</p>"
+    },
+    "results.hoGRlY7qpDbVWrKw.description": {
+      "fr": "<p>Le plan : Panneaux démontables (recette) (rareté 45 à 70).</p>",
+      "en": "<p>The plan: Portable panels (recipe) (rarity 45 to 70).</p>"
+    },
+    "results.VDqqGrYDFvYfHeZQ.description": {
+      "fr": "<p>Cahier de l'électricien de la centrale : le plan unique du lieu (une seule fois dans la partie). Le registre d'un technicien de la salle des machines, et tout ce qu'il y a noté pour lui seul. Il n'en existe qu'un, et il est resté au fond de la gorge.</p>",
+      "en": "<p>The power station electrician's notebook: the site's unique plan (only once in the whole game). The logbook of a technician from the machine hall, and everything he noted there for himself alone. There is only one, and it stayed at the bottom of the gorge.</p>"
+    }
+  },
   "tables/5bzuwHnO2gK3Qv6z": {
     "_nom": "Raconter sans quête : un lieu figé",
     "name": {
@@ -733,6 +764,57 @@
     "results.m3E80H12nTBN1F7a.description": {
       "fr": "<p><strong>Récupération — Un Livide entier.</strong> La docteure veut étudier un Livide intact, ramené vivant… si l'on peut dire.</p><p><strong>Récompense :</strong> 6 medicaments, 2 munitions ; réputation +3.</p>",
       "en": "<p><strong>Recovery — A whole Pallid.</strong> The doctor wants to study an intact Pallid, brought back alive… so to speak.</p><p><strong>Reward:</strong> 6 medicine, 2 ammunition; reputation +3.</p>"
+    }
+  },
+  "tables/8NBXiNWF1IIhRmde": {
+    "_nom": "Plans — ce qui se raconte",
+    "name": {
+      "fr": "Plans — ce qui se raconte",
+      "en": "Plans — what people say"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on entend sur les lieux à plans et sur le troc des plans, au marché, à la radio, à la veillée. Le MJ en fait courir un quand une fenêtre s'ouvre (journal secret : « La fenêtre s'ouvre »).</p>",
+      "en": "<p>What is heard about plan sites and the plan trade, at the market, on the radio, at evening gatherings. The GM spreads one when a window opens (secret log: “The window opens”).</p>"
+    },
+    "results.U4UCTAEuhKmWxj5h.description": {
+      "fr": "<p>La salle des machines de Takamaka (L'Est : Saint-André, Saint-Benoît, Sainte-Rose) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller en saison sèche, quand la rivière des Marsouins est basse.</p>",
+      "en": "<p>The Takamaka machine hall (L'Est : Saint-André, Saint-Benoît, Sainte-Rose): “They say everything worth knowing is still there, on paper.” Those who went say you have to go in the dry season, when the Rivière des Marsouins runs low.</p>"
+    },
+    "results.w3cufD9FaPGKrBf6.description": {
+      "fr": "<p>Le relais des crêtes du Maïdo (Les Hauts de l'Ouest) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller en saison sèche, les matins clairs où la brume tarde à monter.</p>",
+      "en": "<p>The Maïdo ridge relay station (Les Hauts de l'Ouest): “They say everything worth knowing is still there, on paper.” Those who went say you have to go in the dry season, on clear mornings when the mist is slow to rise.</p>"
+    },
+    "results.LNkVzPX9AdHBus1b.description": {
+      "fr": "<p>L'îlet sans route de Roche-Plate (Mafate) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent que le chemin coûte plus que ce qu'on rapporte, sauf quand on rapporte le bon cahier.</p>",
+      "en": "<p>The roadless îlet of Roche-Plate (Mafate): “They say everything worth knowing is still there, on paper.” Those who went say the trail costs more than what you bring back, unless you bring back the right notebook.</p>"
+    },
+    "results.rNlKuEUAIXxsfFfQ.description": {
+      "fr": "<p>La station agronomique de Bassin-Plat (Saint-Louis et Saint-Pierre) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller à la nouvelle lune, quand on traverse les serres sans être vu.</p>",
+      "en": "<p>The Bassin-Plat agricultural station (Saint-Louis et Saint-Pierre): “They say everything worth knowing is still there, on paper.” Those who went say you have to go at the new moon, when you can cross the greenhouses unseen.</p>"
+    },
+    "results.8qDdhYNnjGA6GxUD.description": {
+      "fr": "<p>Le laboratoire de la distillerie de Bois-Rouge (L'Est : Saint-André, Saint-Benoît, Sainte-Rose) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller à la nouvelle lune, par nuit noire.</p>",
+      "en": "<p>The Bois-Rouge distillery laboratory (L'Est : Saint-André, Saint-Benoît, Sainte-Rose): “They say everything worth knowing is still there, on paper.” Those who went say you have to go at the new moon, on a pitch-dark night.</p>"
+    },
+    "results.pIBOBK7HVkmvtfTk.description": {
+      "fr": "<p>Les tunnels de lave de l'Enclos (Le Piton de la Fournaise et la Plaine des Sables) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller entre deux coulées : jamais pendant une éruption, ni dans les trois jours qui suivent.</p>",
+      "en": "<p>The lava tubes of the Enclos (Le Piton de la Fournaise et la Plaine des Sables): “They say everything worth knowing is still there, on paper.” Those who went say you have to go between two lava flows: never during an eruption, nor in the three days that follow.</p>"
+    },
+    "results.vUctN9Nh1QmPwpij.description": {
+      "fr": "<p>Les conteneurs éventrés du Port Est (Le Port et La Possession) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller dans la semaine qui suit un cyclone, quand la houle a couché les piles.</p>",
+      "en": "<p>The broken-open containers of Port Est (Le Port et La Possession): “They say everything worth knowing is still there, on paper.” Those who went say you have to go in the week after a cyclone, when the swell has knocked the stacks over.</p>"
+    },
+    "results.q0b21B79DmV0ivSo.description": {
+      "fr": "<p>Un marchand jure qu'il a vu, sur un étal du marché, le carnet d'un fontainier de Mafate, et qu'on en voulait plus qu'un cabri.</p>",
+      "en": "<p>A trader swears he saw, on a market stall, the notebook of a well-keeper from Mafate, and that they wanted more than a goat for it.</p>"
+    },
+    "results.9WTrKCNdBYYEYPjz.description": {
+      "fr": "<p>« Les plans, ça se garde au sec et ça se recopie deux fois. Celui qui a qu'un exemplaire en a zéro. » (Un vieux du Tampon, qui a perdu les siens dans un incendie.)</p>",
+      "en": "<p>“Plans, you keep them dry and you copy them twice. Whoever has only one copy has none.” (An old man from Le Tampon, who lost his in a fire.)</p>"
+    },
+    "results.OvTWRgzNT5dTIgSC.description": {
+      "fr": "<p>Un groupe des Hauts échangerait, dit-on, une copie de n'importe quel plan contre des graines, à condition qu'on lui en apprenne un autre à la veillée.</p>",
+      "en": "<p>A group from the Highlands would trade, people say, a copy of any plan for seeds, as long as someone teaches them another one at an evening gathering.</p>"
     }
   },
   "tables/8R6zkOHHCT2LCJoI": {
@@ -1851,6 +1933,49 @@
       "en": "<p>A car up on blocks, wheels stolen, and a note on the windscreen: “Pa touch, mi rovien” (don't touch, I'll be back). Dated months ago.</p>"
     }
   },
+  "tables/PzXoKroc9Q7V2gWG": {
+    "_nom": "Plans — à quoi ça ressemble",
+    "name": {
+      "fr": "Plans — à quoi ça ressemble",
+      "en": "Plans — what they look like"
+    },
+    "description": {
+      "fr": "<p>Un plan trouvé, en fouillant ou dans un lieu à plans : ce que le groupe tient entre les mains.</p>",
+      "en": "<p>A plan found, while searching or at a plan site: what the group holds in its hands.</p>"
+    },
+    "results.yEyEwjKj2cFnV5f1.description": {
+      "fr": "<p>Une liasse de photocopies agrafées, tachées de café, les cotes reprises au feutre rouge par quelqu'un qui s'était trompé une fois.</p>",
+      "en": "<p>A stapled bundle of photocopies, coffee-stained, the measurements gone over in red felt-tip by someone who had got them wrong once.</p>"
+    },
+    "results.Su3oW7v7AVAx51NJ.description": {
+      "fr": "<p>Le classeur d'un artisan, ses pochettes plastiques, et dans chacune un chantier fini : la photo, le croquis, la liste de ce qu'il avait acheté.</p>",
+      "en": "<p>A craftsman's binder, its plastic sleeves, and in each one a finished job: the photo, the sketch, the list of what he had bought.</p>"
+    },
+    "results.aRP2k1om8oNfoEIR.description": {
+      "fr": "<p>Le carnet à spirale d'un maçon, plein de croquis à main levée et de calculs dans la marge, avec la date de chaque chantier.</p>",
+      "en": "<p>A mason's spiral notebook, full of freehand sketches and sums in the margin, with the date of every job.</p>"
+    },
+    "results.NX3WYr3tyofeti8U.description": {
+      "fr": "<p>Un plan roulé dans un tube de carton, tamponné « bon pour exécution », que l'humidité a gondolé sans l'effacer.</p>",
+      "en": "<p>A drawing rolled in a cardboard tube, stamped “approved for construction”, warped by the damp but not erased.</p>"
+    },
+    "results.yEGe1jiFB4HUvI7e.description": {
+      "fr": "<p>Une notice de montage en quatre langues, pliée en accordéon, à laquelle quelqu'un a ajouté au crayon tout ce qu'elle ne dit pas.</p>",
+      "en": "<p>Assembly instructions in four languages, folded like an accordion, to which someone has added in pencil everything they leave out.</p>"
+    },
+    "results.ZV9JE0PGqErjw2vU.description": {
+      "fr": "<p>Des pages arrachées à un manuel de lycée technique, retenues par une pince à linge, avec un nom d'élève sur la première.</p>",
+      "en": "<p>Pages torn from a technical school textbook, held together by a clothes peg, with a pupil's name on the first one.</p>"
+    },
+    "results.eEL9OaKI0auYTd5E.description": {
+      "fr": "<p>Un schéma au stylo bille sur le dos d'un calendrier de l'an passé, et en bas : « pour Jean-Max, si je suis pas là ».</p>",
+      "en": "<p>A ballpoint diagram on the back of last year's calendar, and at the bottom: “for Jean-Max, if I'm not around”.</p>"
+    },
+    "results.2WC0SP51p88ALlCb.description": {
+      "fr": "<p>Un cahier d'écolier où une main d'enfant a recopié, au propre, ce que son grand-père lui dictait en montrant du doigt.</p>",
+      "en": "<p>A school exercise book in which a child's hand neatly copied out what his grandfather dictated, pointing with his finger.</p>"
+    }
+  },
   "tables/QwBYnUyvaU5GZx2X": {
     "_nom": "Raconter sans quête : un autre exemplaire du cahier",
     "name": {
@@ -1994,6 +2119,64 @@
     "results.UUb2FBjLG87FxkPF.description": {
       "fr": "<p>Le son d'une cloche de vache dans le brouillard, qui ne s'arrête jamais.</p>",
       "en": "<p>The sound of a cowbell in the fog, that never stops.</p>"
+    }
+  },
+  "tables/WfmgqevXTS6BuTCb": {
+    "_nom": "Lieu à plans — Le relais des crêtes du Maïdo",
+    "name": {
+      "fr": "Lieu à plans — Le relais des crêtes du Maïdo",
+      "en": "Plan site — The Maïdo ridge relay station"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on tire dans ce lieu à plans (Le relais des crêtes du Maïdo, Les Hauts de l'Ouest), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+      "en": "<p>What can be drawn at this plan site (The Maïdo ridge relay station, Les Hauts de l'Ouest), once the guard has been dealt with. Each line counts according to its weight. The system draws by itself (lieuAPlans); this table is for the GM who plays without the API.</p>"
+    },
+    "results.hST6eo55NVWc8AYb.description": {
+      "fr": "<p>Le plan : Antenne (rareté 60 à 85).</p>",
+      "en": "<p>The plan: Aerial (rarity 60 to 85).</p>"
+    },
+    "results.4ZFvVNPKaby8UbvM.description": {
+      "fr": "<p>Le plan : Poste radio (rareté 40 à 65).</p>",
+      "en": "<p>The plan: Radio post (rarity 40 to 65).</p>"
+    },
+    "results.Ad1EAQSMrRFzKWW6.description": {
+      "fr": "<p>Le plan : Éolienne de récupération (rareté 50 à 75).</p>",
+      "en": "<p>The plan: Salvaged wind turbine (rarity 50 to 75).</p>"
+    },
+    "results.sWC545dscNADbpHV.description": {
+      "fr": "<p>Le plan : Radio à manivelle (recette) (rareté 40 à 65).</p>",
+      "en": "<p>The plan: Wind-up radio (recipe) (rarity 40 to 65).</p>"
+    }
+  },
+  "tables/WtcpD4ELc7nu9REv": {
+    "_nom": "Lieu à plans — L'îlet sans route de Roche-Plate",
+    "name": {
+      "fr": "Lieu à plans — L'îlet sans route de Roche-Plate",
+      "en": "Plan site — The roadless îlet of Roche-Plate"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on tire dans ce lieu à plans (L'îlet sans route de Roche-Plate, Mafate), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+      "en": "<p>What can be drawn at this plan site (The roadless îlet of Roche-Plate, Mafate), once the guard has been dealt with. Each line counts according to its weight. The system draws by itself (lieuAPlans); this table is for the GM who plays without the API.</p>"
+    },
+    "results.yhus6Ek8llHCfEHO.description": {
+      "fr": "<p>Le plan : Captage de source (rareté 35 à 60).</p>",
+      "en": "<p>The plan: Spring catchment (rarity 35 to 60).</p>"
+    },
+    "results.NZgBU7j8WGC9ABQ8.description": {
+      "fr": "<p>Le plan : Conduite de bambou (rareté 30 à 55).</p>",
+      "en": "<p>The plan: Bamboo pipeline (rarity 30 to 55).</p>"
+    },
+    "results.dPfVUAZZGKGY1IeV.description": {
+      "fr": "<p>Le plan : Mur de pierres sèches (rareté 25 à 50).</p>",
+      "en": "<p>The plan: Dry-stone wall (rarity 25 to 50).</p>"
+    },
+    "results.bFETtukHFicaG8L1.description": {
+      "fr": "<p>Le plan : Puits à balancier (rareté 30 à 55).</p>",
+      "en": "<p>The plan: Well sweep (rarity 30 to 55).</p>"
+    },
+    "results.DwpD3GzUsEFRzj3x.description": {
+      "fr": "<p>Carnet du fontainier : le plan unique du lieu (une seule fois dans la partie). Le carnet d'un fontainier des îlets : quarante ans à amener l'eau là où les routes ne vont pas. Il n'en existe qu'un, et il ne se trouve qu'au bout des sentiers.</p>",
+      "en": "<p>The well-keeper's notebook: the site's unique plan (only once in the whole game). The notebook of a well-keeper of the îlets: forty years bringing water where the roads do not go. There is only one, and it is only found at the end of the trails.</p>"
     }
   },
   "tables/YFN6W0JMRjG55CSU": {
@@ -2321,6 +2504,29 @@
       "en": "<p>Nothing. Complete silence, all at once. It is not a good sign (table \"The night — the signs\").</p>"
     }
   },
+  "tables/dYzlmFMbydf5YdXx": {
+    "_nom": "Lieu à plans — Les tunnels de lave de l'Enclos",
+    "name": {
+      "fr": "Lieu à plans — Les tunnels de lave de l'Enclos",
+      "en": "Plan site — The lava tubes of the Enclos"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on tire dans ce lieu à plans (Les tunnels de lave de l'Enclos, Le Piton de la Fournaise et la Plaine des Sables), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+      "en": "<p>What can be drawn at this plan site (The lava tubes of the Enclos, Le Piton de la Fournaise et la Plaine des Sables), once the guard has been dealt with. Each line counts according to its weight. The system draws by itself (lieuAPlans); this table is for the GM who plays without the API.</p>"
+    },
+    "results.DpI2AWd5tKaNot75.description": {
+      "fr": "<p>Le plan : Aménagement d'un tunnel de lave (rareté 70 à 95).</p>",
+      "en": "<p>The plan: Fitting out a lava tube (rarity 70 to 95).</p>"
+    },
+    "results.OTZTyuqQEP5I2GuW.description": {
+      "fr": "<p>Le plan : Galerie souterraine (rareté 55 à 85).</p>",
+      "en": "<p>The plan: Underground gallery (rarity 55 to 85).</p>"
+    },
+    "results.yKtLMyBGROTBwFNO.description": {
+      "fr": "<p>Le plan : Gourde filtrante de fortune (recette) (rareté 20 à 40).</p>",
+      "en": "<p>The plan: Makeshift filter bottle (recipe) (rarity 20 to 40).</p>"
+    }
+  },
   "tables/dclPTq1OJk9rtHTo": {
     "_nom": "L'esprit — ce que le cyclone a déposé",
     "name": {
@@ -2594,6 +2800,52 @@
     "results.ws6IBJeSUGNG7FV0.description": {
       "fr": "<p>« Nous sommes six à la chapelle du Brûlé. Nous avons des panneaux. Nous cherchons un soignant. »</p>",
       "en": "<p>\"There are six of us at the Brûlé chapel. We have panels. We are looking for someone who can heal.\"</p>"
+    }
+  },
+  "tables/ef9s7L3ZRxQqwtQd": {
+    "_nom": "Lieu à plans — La station agronomique de Bassin-Plat",
+    "name": {
+      "fr": "Lieu à plans — La station agronomique de Bassin-Plat",
+      "en": "Plan site — The Bassin-Plat agricultural station"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on tire dans ce lieu à plans (La station agronomique de Bassin-Plat, Saint-Louis et Saint-Pierre), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+      "en": "<p>What can be drawn at this plan site (The Bassin-Plat agricultural station, Saint-Louis et Saint-Pierre), once the guard has been dealt with. Each line counts according to its weight. The system draws by itself (lieuAPlans); this table is for the GM who plays without the API.</p>"
+    },
+    "results.tAGCjP7FmpiLoWmc.description": {
+      "fr": "<p>Le plan : Bassin à tilapias (rareté 50 à 75).</p>",
+      "en": "<p>The plan: Tilapia pond (rarity 50 to 75).</p>"
+    },
+    "results.pgwhxexYUMnAR6zH.description": {
+      "fr": "<p>Le plan : Serre (rareté 30 à 55).</p>",
+      "en": "<p>The plan: Greenhouse (rarity 30 to 55).</p>"
+    },
+    "results.gDbOAL8TFGST5Bde.description": {
+      "fr": "<p>Le plan : Verger (rareté 10 à 30).</p>",
+      "en": "<p>The plan: Orchard (rarity 10 to 30).</p>"
+    },
+    "results.HneyaGAAo6iWpTlO.description": {
+      "fr": "<p>Le plan : Semences triées (recette) (rareté 20 à 40).</p>",
+      "en": "<p>The plan: Sorted seeds (recipe) (rarity 20 to 40).</p>"
+    },
+    "results.tiQ6MCrF5A7fVGO9.description": {
+      "fr": "<p>Le plan : Ruches (rareté 25 à 50).</p>",
+      "en": "<p>The plan: Beehives (rarity 25 to 50).</p>"
+    }
+  },
+  "tables/frqhoo0i4jq53Fnx": {
+    "_nom": "Lieu à plans — Les conteneurs éventrés du Port Est",
+    "name": {
+      "fr": "Lieu à plans — Les conteneurs éventrés du Port Est",
+      "en": "Plan site — The broken-open containers of Port Est"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on tire dans ce lieu à plans (Les conteneurs éventrés du Port Est, Le Port et La Possession), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+      "en": "<p>What can be drawn at this plan site (The broken-open containers of Port Est, Le Port et La Possession), once the guard has been dealt with. Each line counts according to its weight. The system draws by itself (lieuAPlans); this table is for the GM who plays without the API.</p>"
+    },
+    "results.uv7Y7qnXtuKmS4Sq.description": {
+      "fr": "<p>Le plan : Vélo-cargo (recette) (rareté 35 à 60).</p>",
+      "en": "<p>The plan: Cargo bike (recipe) (rarity 35 to 60).</p>"
     }
   },
   "tables/h3wo9DGwRuinmC5G": {
@@ -3984,6 +4236,37 @@
     "results.UnROBgoedZsn9tuh.description": {
       "fr": "<p>Un sac de sport du club de foot de Saint-André, accroché à une branche au-dessus d'une ravine en crue. [La crue l'a apporté d'en haut, rien de plus.]</p>",
       "en": "<p>A sports bag from the Saint-André football club, caught on a branch above a ravine in flood. [The flood brought it down from above, nothing more.]</p>"
+    }
+  },
+  "tables/z0FnNGXSDjkLE1Dy": {
+    "_nom": "Lieu à plans — Le laboratoire de la distillerie de Bois-Rouge",
+    "name": {
+      "fr": "Lieu à plans — Le laboratoire de la distillerie de Bois-Rouge",
+      "en": "Plan site — The Bois-Rouge distillery laboratory"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on tire dans ce lieu à plans (Le laboratoire de la distillerie de Bois-Rouge, L'Est : Saint-André, Saint-Benoît, Sainte-Rose), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+      "en": "<p>What can be drawn at this plan site (The Bois-Rouge distillery laboratory, L'Est : Saint-André, Saint-Benoît, Sainte-Rose), once the guard has been dealt with. Each line counts according to its weight. The system draws by itself (lieuAPlans); this table is for the GM who plays without the API.</p>"
+    },
+    "results.bWIqLm07mWf1DozD.description": {
+      "fr": "<p>Le plan : Moteur modifié pour l'alcool (recette) (rareté 60 à 90).</p>",
+      "en": "<p>The plan: Engine modified for alcohol (recipe) (rarity 60 to 90).</p>"
+    },
+    "results.ZzpaOG2LJvCsx59l.description": {
+      "fr": "<p>Le plan : Alcool de canne (carburant) (recette) (rareté 35 à 60).</p>",
+      "en": "<p>The plan: Cane alcohol (fuel) (recipe) (rarity 35 to 60).</p>"
+    },
+    "results.f3dgmZNM6trtka53.description": {
+      "fr": "<p>Le plan : Alcool désinfectant (recette) (rareté 30 à 55).</p>",
+      "en": "<p>The plan: Disinfecting alcohol (recipe) (rarity 30 to 55).</p>"
+    },
+    "results.1pzpWcVfI0xJnb8W.description": {
+      "fr": "<p>Le plan : Gazogène sur un camion (recette) (rareté 65 à 90).</p>",
+      "en": "<p>The plan: Wood-gas burner on a truck (recipe) (rarity 65 to 90).</p>"
+    },
+    "results.tC5x47ma4xbH9z1B.description": {
+      "fr": "<p>Le plan : Réserve étanche (rareté 25 à 45).</p>",
+      "en": "<p>The plan: Sealed store (rarity 25 to 45).</p>"
     }
   },
   "tables/zLNkCeGEHL2hM2ni": {

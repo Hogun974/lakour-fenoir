@@ -71,7 +71,11 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
       autorite: entier(2, 0, 5),
       esprit: objetLibre({}),
       // Lot « sens » (logique/sens.mjs) : l'habitude du noir, { nuits, nuitLe, lumiereLe } ; vide : pas encore une nuit dans le noir.
-      noir: objetLibre({})
+      noir: objetLibre({}),
+      // Lot 4 « Les plans » (logique/plans.mjs) : les plans qu'il sait par cœur (ils survivent par lui, et meurent avec lui), et celui
+      // qu'il apprend, { plan, fait, requis } | null.
+      plans: cles(),
+      planEnCours: objetNul()
     };
   }
 
@@ -152,7 +156,10 @@ export class ModeleEquipement extends foundry.abstract.TypeDataModel {
       cle: cle(), categorie: texte("outil"), description: html(), bonus: objetLibre({}), charge: nombre(0), usure: nombre(0),
       munitions: nombreNul(), bruit: nombre(0), transport: objetNul(), effets: objetNul(),
       marque: texte(),   // le signe d'une communauté sur l'objet (marche.mjs, reclamerObjet) : vide = pas marqué
-      enseigne: cles(), auteur: texte()   // lot « savoirs » : ce qu'un livre ou un cahier apprend ; l'ancienne qui l'a dicté
+      enseigne: cles(), auteur: texte(),  // lot « savoirs » : ce qu'un livre ou un cahier apprend ; l'ancienne qui l'a dicté
+      // Lot 4 « Les plans » : les plans qu'un papier porte (clés du carnet), et la clé du plan unique qu'il est (vide : une copie, ou
+      // pas un papier).
+      plans: cles(), unique: texte()
     };
   }
 }

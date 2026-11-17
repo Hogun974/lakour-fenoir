@@ -96,6 +96,9 @@ test("API : accueillir une gramoune (recrue), gagner sa confiance, apprendre aup
   assert.equal(r.termine, true);
   const cahier = b.items.find(i => i.system?.cle === "cahier-de-gramoune");
   assert.ok(cahier && cahier.system.enseigne.includes("zerbaz") && cahier.system.auteur === zelie.name);
+  // Lot 4 « Les plans » : le cahier dicté est un plan unique (ses installations lontan et ses recettes), que le groupe connaît.
+  assert.equal(cahier.system.unique, "cahier-dicte");
+  assert.ok(cahier.system.plans.includes("recette:tisanes") && M.api.plans().connus.includes("recette:tisanes"));
   await assert.rejects(() => M.api.dicter({ gramouneId: zelie.id, scribeId: b.id }), /Impossible d'écrire sous la dictée/);
   // Lire le cahier : lumière (une bougie : l'abri se voit ce soir-là).
   const sansZerbaz = a.items.some(i => i.type === "savoir" && i.system.cle === "zerbaz") ? null : a;

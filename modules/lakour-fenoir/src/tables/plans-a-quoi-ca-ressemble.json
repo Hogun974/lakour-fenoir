@@ -1,0 +1,148 @@
+{
+  "_id": "PzXoKroc9Q7V2gWG",
+  "_key": "!tables!PzXoKroc9Q7V2gWG",
+  "name": "Plans — à quoi ça ressemble",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un plan trouvé, en fouillant ou dans un lieu à plans : ce que le groupe tient entre les mains.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plans-a-quoi-ca-ressemble",
+      "plans": "plans-a-quoi-ca-ressemble"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "yEyEwjKj2cFnV5f1",
+      "_key": "!tables.results!PzXoKroc9Q7V2gWG.yEyEwjKj2cFnV5f1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une liasse de photocopies agrafées, tachées de café, les cotes reprises au feutre rouge par quelqu'un qui s'était trompé une fois.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Su3oW7v7AVAx51NJ",
+      "_key": "!tables.results!PzXoKroc9Q7V2gWG.Su3oW7v7AVAx51NJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le classeur d'un artisan, ses pochettes plastiques, et dans chacune un chantier fini : la photo, le croquis, la liste de ce qu'il avait acheté.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aRP2k1om8oNfoEIR",
+      "_key": "!tables.results!PzXoKroc9Q7V2gWG.aRP2k1om8oNfoEIR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le carnet à spirale d'un maçon, plein de croquis à main levée et de calculs dans la marge, avec la date de chaque chantier.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NX3WYr3tyofeti8U",
+      "_key": "!tables.results!PzXoKroc9Q7V2gWG.NX3WYr3tyofeti8U",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un plan roulé dans un tube de carton, tamponné « bon pour exécution », que l'humidité a gondolé sans l'effacer.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yEGe1jiFB4HUvI7e",
+      "_key": "!tables.results!PzXoKroc9Q7V2gWG.yEGe1jiFB4HUvI7e",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une notice de montage en quatre langues, pliée en accordéon, à laquelle quelqu'un a ajouté au crayon tout ce qu'elle ne dit pas.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZV9JE0PGqErjw2vU",
+      "_key": "!tables.results!PzXoKroc9Q7V2gWG.ZV9JE0PGqErjw2vU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des pages arrachées à un manuel de lycée technique, retenues par une pince à linge, avec un nom d'élève sur la première.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "eEL9OaKI0auYTd5E",
+      "_key": "!tables.results!PzXoKroc9Q7V2gWG.eEL9OaKI0auYTd5E",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un schéma au stylo bille sur le dos d'un calendrier de l'an passé, et en bas : « pour Jean-Max, si je suis pas là ».</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2WC0SP51p88ALlCb",
+      "_key": "!tables.results!PzXoKroc9Q7V2gWG.2WC0SP51p88ALlCb",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cahier d'écolier où une main d'enfant a recopié, au propre, ce que son grand-père lui dictait en montrant du doigt.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

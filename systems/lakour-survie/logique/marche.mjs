@@ -18,8 +18,8 @@
 //   qu'il sait de lui ; le sens moral, il ne le voit pas) et sa parole (confianceDuCommercant, evaluerALaBoutique) ; son carnet
 //   prête plus ou moins selon elle (plafondCredit, facteur) ; un commerçant n'est resté que dans 30 % des boutiques
 //   (commercantReste) ;
-// - la VALEUR d'un objet ou d'un plan en parts (valeurObjet, valeurPlan) : la valeur écrite au barème du contenu, sinon le coût de
-//   sa recette au cours ;
+// - la VALEUR d'un objet en parts (valeurObjet) : la valeur écrite au barème du contenu, sinon le coût de sa recette au cours ; celle
+//   d'un plan est celle du lot « plans » (valeurPlan, plans.mjs), comptée au troc et à la boutique (`objets`) ;
 // - l'ÉTAL : le groupe tient un étal au marché forain, qui vend même quand il n'est pas là, avec une caisse à relever et un risque
 //   de vol (creerEtal, journeeEtal, releverEtal ; journeeDuMarche les tient les jours de marché).
 import { RESSOURCES } from "./constantes.mjs";
@@ -83,9 +83,8 @@ export const REGLES_MARCHE = {
   // L'étal du groupe au marché forain : chaque jour de marché, `ventes` passants s'arrêtent ; chacun prend une unité avec la chance
   // `chance` au cours, × (cours / prix)², au plus `chanceMax` ; payée au cours dans le bien demandé (`contre`), dans la caisse. Sans
   // gardien, une chance `vol` qu'on se serve (`part` du bien le plus fourni) ; avec un gardien, `volGarde`.
-  etal: { ventes: 3, chance: 0.5, chanceMax: 0.95, vol: 0.1, volGarde: 0.02, part: 0.25 },
-  // La valeur d'un plan (jeu 3D : 6 + 0,4 par point de rareté, × 3 s'il est unique, en valeurs du barème ; une part = 2).
-  plan: { base: 6, parRarete: 0.4, unique: 3, parPart: 2 }
+  etal: { ventes: 3, chance: 0.5, chanceMax: 0.95, vol: 0.1, volGarde: 0.02, part: 0.25 }
+  // La valeur d'un plan est celle du lot « plans » (fusion vague2) : REGLES_PLANS.valeur, valeurPlan dans plans.mjs.
 };
 
 const arrondiPas = (x, pas = REGLES_MARCHE.cours.pas) => Math.round(x / pas) * pas;
@@ -134,9 +133,11 @@ export function valeurBiens(biens = {}, cours = coursDuJour()) {
 }
 
 // Un troc évalué au cours : le PNJ demande la valeur reçue majorée (sa première confiance), le groupe donne `donne`.
+// objets (fusion vague2) : { donne, recoit } la valeur en parts des objets qui changent de mains avec les biens (papiers et plans :
+// valeurPlan ; objets : valeurObjet), comptée comme les biens.
 // -> { valeurDonnee, valeurRecue, demandee, ecart (donnée − demandée), accepte, equitable (à 10 % ou une part près, sans majoration) }
-export function evaluerTroc({ donne = {}, recoit = {}, cours = coursDuJour(), majoration = 0 } = {}) {
-  const valeurDonnee = valeurBiens(donne, cours), valeurRecue = valeurBiens(recoit, cours);
+export function evaluerTroc({ donne = {}, recoit = {}, cours = coursDuJour(), majoration = 0, objets = {} } = {}) {
+  const valeurDonnee = valeurBiens(donne, cours) + n0(objets.donne), valeurRecue = valeurBiens(recoit, cours) + n0(objets.recoit);
   const demandee = arrondiPas(valeurRecue * (1 + n0(majoration)));
   const ecart = valeurDonnee - demandee;
   const equitable = Math.abs(valeurDonnee - valeurRecue) <= Math.max(1, 0.1 * valeurRecue);
@@ -303,10 +304,11 @@ export function prixDuCommercant(client = {}) {
 }
 // Un troc à la boutique : le commerçant demande la valeur de ce qu'il cède × vente, et la majoration de sa première confiance
 // (préjugés, rumeurs, faction) ; il compte ce qu'on lui cède × achat. Troc seulement : ce qu'on donne en trop est perdu.
+// objets : comme pour evaluerTroc (la valeur en parts des papiers, plans et objets échangés), à la même marge que les biens.
 // -> { valeurDonnee, valeurRecue (au cours), offerte (ce qu'il en compte), demandee, ecart, accepte, confiance, vente, achat }
-export function evaluerALaBoutique({ donne = {}, recoit = {}, cours = coursDuJour(), reputation = 0, parole = 1, majoration = 0 } = {}) {
+export function evaluerALaBoutique({ donne = {}, recoit = {}, cours = coursDuJour(), reputation = 0, parole = 1, majoration = 0, objets = {} } = {}) {
   const p = prixDuCommercant({ reputation, parole });
-  const valeurDonnee = valeurBiens(donne, cours), valeurRecue = valeurBiens(recoit, cours);
+  const valeurDonnee = valeurBiens(donne, cours) + n0(objets.donne), valeurRecue = valeurBiens(recoit, cours) + n0(objets.recoit);
   const offerte = arrondiPas(valeurDonnee * p.achat);
   const demandee = arrondiPas(valeurRecue * p.vente * (1 + n0(majoration)));
   return { valeurDonnee, valeurRecue, offerte, demandee, ecart: offerte - demandee, accepte: valeurRecue > 0 && offerte >= demandee, ...p };
@@ -326,12 +328,9 @@ export function valeurObjet(cle, contenu = {}, cours = coursDuJour()) {
   if (couts.length) return { valeur: Math.max(REGLES_MARCHE.cours.minimum, arrondiPas(Math.min(...couts))), source: "recette" };
   return { valeur: null, source: "" };
 }
-// Un plan : (6 + 0,4 × sa rareté) × 3 s'il est unique, en valeurs du barème du jeu 3D, ramené en parts (÷ 2), à la demi-part près.
-// Les plans restent un rabais (décision de Jordan du 17 novembre 2026) : leur valeur est ce qu'ils font économiser.
-export function valeurPlan({ rarete = 0, unique = false } = {}) {
-  const P = REGLES_MARCHE.plan;
-  return arrondiPas((P.base + P.parRarete * n0(rarete)) * (unique ? P.unique : 1) / P.parPart);
-}
+// Un plan : sa valeur est celle du lot « plans » (valeurPlan dans plans.mjs : 3 + 0,2 × sa rareté courante, × 3 s'il est unique, en
+// parts entières ; le jeu 3D disait 6 + 0,4 × rareté en valeurs du barème, une part = 2 : la même règle). Les plans restent un rabais
+// (décision de Jordan du 17 novembre 2026) : leur valeur est ce qu'ils font économiser.
 
 // ------------------------------------------------------------------ l'étal du groupe au marché forain (lot 10)
 // Un étal : { id, marche (clé du marché forain), biens: { r: n } (ce qui reste à vendre), prix: { r: parts } (à l'unité ; le cours

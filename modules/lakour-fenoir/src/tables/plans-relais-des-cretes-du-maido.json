@@ -1,0 +1,163 @@
+{
+  "_id": "WfmgqevXTS6BuTCb",
+  "_key": "!tables!WfmgqevXTS6BuTCb",
+  "name": "Lieu à plans — Le relais des crêtes du Maïdo",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on tire dans ce lieu à plans (Le relais des crêtes du Maïdo, Les Hauts de l'Ouest), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+  "formula": "1d9",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plans-relais-des-cretes-du-maido",
+      "plans": "plans-relais-des-cretes-du-maido"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "hST6eo55NVWc8AYb",
+      "_key": "!tables.results!WfmgqevXTS6BuTCb.hST6eo55NVWc8AYb",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Antenne (rareté 60 à 85).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "4MX1JFcPcIH35Gcf",
+      "_key": "!tables.results!WfmgqevXTS6BuTCb.4MX1JFcPcIH35Gcf",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Antenne (rareté 60 à 85).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7R8rumQjePikAXaJ",
+      "_key": "!tables.results!WfmgqevXTS6BuTCb.7R8rumQjePikAXaJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Antenne (rareté 60 à 85).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "4ZFvVNPKaby8UbvM",
+      "_key": "!tables.results!WfmgqevXTS6BuTCb.4ZFvVNPKaby8UbvM",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Poste radio (rareté 40 à 65).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LOAinsAft3KGZBle",
+      "_key": "!tables.results!WfmgqevXTS6BuTCb.LOAinsAft3KGZBle",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Poste radio (rareté 40 à 65).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Ad1EAQSMrRFzKWW6",
+      "_key": "!tables.results!WfmgqevXTS6BuTCb.Ad1EAQSMrRFzKWW6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Éolienne de récupération (rareté 50 à 75).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "44mCyfWGbhpcJ9nT",
+      "_key": "!tables.results!WfmgqevXTS6BuTCb.44mCyfWGbhpcJ9nT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Éolienne de récupération (rareté 50 à 75).</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sWC545dscNADbpHV",
+      "_key": "!tables.results!WfmgqevXTS6BuTCb.sWC545dscNADbpHV",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Radio à manivelle (recette) (rareté 40 à 65).</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NY1w1VZWbSHK9fm1",
+      "_key": "!tables.results!WfmgqevXTS6BuTCb.NY1w1VZWbSHK9fm1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Panneaux solaires (rareté 30 à 55).</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

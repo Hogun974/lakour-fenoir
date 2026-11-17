@@ -1,0 +1,178 @@
+{
+  "_id": "z0FnNGXSDjkLE1Dy",
+  "_key": "!tables!z0FnNGXSDjkLE1Dy",
+  "name": "Lieu à plans — Le laboratoire de la distillerie de Bois-Rouge",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on tire dans ce lieu à plans (Le laboratoire de la distillerie de Bois-Rouge, L'Est : Saint-André, Saint-Benoît, Sainte-Rose), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plans-distillerie-de-bois-rouge",
+      "plans": "plans-distillerie-de-bois-rouge"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "bWIqLm07mWf1DozD",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.bWIqLm07mWf1DozD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Moteur modifié pour l'alcool (recette) (rareté 60 à 90).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "32d5cIvFia2x4C5p",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.32d5cIvFia2x4C5p",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Moteur modifié pour l'alcool (recette) (rareté 60 à 90).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wBgFAKYPbfCBsjX3",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.wBgFAKYPbfCBsjX3",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Moteur modifié pour l'alcool (recette) (rareté 60 à 90).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZzpaOG2LJvCsx59l",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.ZzpaOG2LJvCsx59l",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Alcool de canne (carburant) (recette) (rareté 35 à 60).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8X7AcyT0PFkCzSti",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.8X7AcyT0PFkCzSti",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Alcool de canne (carburant) (recette) (rareté 35 à 60).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kJ6yKaE6xuA1asOm",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.kJ6yKaE6xuA1asOm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Alcool de canne (carburant) (recette) (rareté 35 à 60).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "f3dgmZNM6trtka53",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.f3dgmZNM6trtka53",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Alcool désinfectant (recette) (rareté 30 à 55).</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "V9sj24pq8XLOicfE",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.V9sj24pq8XLOicfE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Alcool désinfectant (recette) (rareté 30 à 55).</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1pzpWcVfI0xJnb8W",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.1pzpWcVfI0xJnb8W",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Gazogène sur un camion (recette) (rareté 65 à 90).</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tC5x47ma4xbH9z1B",
+      "_key": "!tables.results!z0FnNGXSDjkLE1Dy.tC5x47ma4xbH9z1B",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Réserve étanche (rareté 25 à 45).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

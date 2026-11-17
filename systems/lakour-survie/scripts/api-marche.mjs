@@ -14,7 +14,7 @@ export const GROUPE = "groupe";
 const SUJETS = ["debiteur", "sujet", "par", "auteur"];
 
 export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser, chat, carteAction, sansBalises,
-  porterActe = null, membresPresents = () => [], espritDuTirage = () => ({}) }) {
+  porterActe = null, membresPresents = () => [], espritDuTirage = () => ({}), valeurPapier = () => null, valeurPlanDeCle = () => null }) {
   const c = () => contenu();
   const etatMarche = ctx => L.marcheDe(ctx.etat);
   const secretMarche = ctx => L.secretMarcheDe(ctx.monde);
@@ -36,6 +36,28 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
   const slug = s => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "marche";
 
   // Les stocks du groupe : ceux de l'abri, sinon ce qu'il porte.
+  // La valeur des objets d'un troc (fusion vague2) : -> { donne, recoit, detail: [{ sens, objet, valeur, source }] }
+  function valeurDesObjets(etat, cr, { objetsDonnes = [], plansRecus = [], objetsRecus = [] } = {}) {
+    const detail = [];
+    const porteurs = survivantsDuGroupe(etat);
+    for (const id of listeIds(objetsDonnes)) {
+      const i = porteurs.map(a => a.items?.get?.(id)).find(Boolean);
+      if (!i) throw erreur("ActeurInconnu");
+      const vp = valeurPapier(i);
+      const v = vp !== null && vp !== undefined ? { valeur: vp, source: "plan" } : L.valeurObjet(aPlat(i.system).cle, c(), cr);
+      detail.push({ sens: "donne", objet: i.name, valeur: Number(v.valeur) || 0, source: v.source });
+    }
+    for (const k of listeIds(plansRecus)) {
+      const v = valeurPlanDeCle(k);
+      detail.push({ sens: "recoit", objet: k, valeur: Number(v) || 0, source: v === null || v === undefined ? "" : "plan" });
+    }
+    for (const k of listeIds(objetsRecus)) {
+      const v = L.valeurObjet(k, c(), cr);
+      detail.push({ sens: "recoit", objet: k, valeur: Number(v.valeur) || 0, source: v.source });
+    }
+    const somme = sens => detail.filter(x => x.sens === sens).reduce((s, x) => s + x.valeur, 0);
+    return { donne: somme("donne"), recoit: somme("recoit"), detail };
+  }
   const stocksDuGroupe = ctx => { const ab = abriCourant(ctx.etat); return ab ? aPlat(ab.system).stocks : (ctx.etat.groupe.porte ?? {}); };
   async function ecrireStocks(ctx, stocks) {
     const ab = abriCourant(ctx.etat);
@@ -179,19 +201,24 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
     confiance: ({ pnjId = "", cibles = [], faction = "" } = {}) => confianceDe(lireEtat(), { pnjId, cibles, faction }),
     // Évaluer un troc sans rien changer.
     // boutique (lot 10) : un troc avec le commerçant d'une boutique, à sa marge (selon la réputation et la parole de parleurId).
-    evaluerTroc: ({ donne = {}, recoit = {}, pnjId = "", cibles = [], faction = "", marche = "", boutique = "", parleurId = "" } = {}) => {
+    // Fusion vague2 : des objets peuvent changer de mains avec les biens. objetsDonnes : des objets portés par le groupe (un papier vaut
+    // ses plans, valeurPlan du lot « plans » ; un autre objet, valeurObjet) ; plansRecus : des clés de plans ; objetsRecus : des clés
+    // d'objets. Un objet sans valeur connue compte pour rien (au MJ de dire).
+    evaluerTroc: ({ donne = {}, recoit = {}, pnjId = "", cibles = [], faction = "", marche = "", boutique = "", parleurId = "",
+      objetsDonnes = [], plansRecus = [], objetsRecus = [] } = {}) => {
       const etat = lireEtat();
       const b = boutiqueDe(etat, boutique);
       const conf = confianceDe(etat, { pnjId: pnjId || b?.tenancier || "", cibles, faction });
       const mk = marche ? trouverMarche(L.marcheDe(etat), marche) : null;
       const cr = cours(etat, { recolte: recolteDe(mk) });
-      if (b) return { ...L.evaluerALaBoutique({ donne, recoit, cours: cr, ...clientDe(etat, parleurId), majoration: conf.majoration }), boutique: b.cle, confiance: conf, cours: cr };
-      return { ...L.evaluerTroc({ donne, recoit, cours: cr, majoration: conf.majoration }), confiance: conf, cours: cr };
+      const objets = valeurDesObjets(etat, cr, { objetsDonnes, plansRecus, objetsRecus });
+      const o = { donne: objets.donne, recoit: objets.recoit };
+      if (b) return { ...L.evaluerALaBoutique({ donne, recoit, cours: cr, ...clientDe(etat, parleurId), majoration: conf.majoration, objets: o }), boutique: b.cle, confiance: conf, cours: cr, objets };
+      return { ...L.evaluerTroc({ donne, recoit, cours: cr, majoration: conf.majoration, objets: o }), confiance: conf, cours: cr, objets };
     },
     // Ce que vaut un objet (équipement, bête vivante) en parts : le barème du contenu, sinon sa recette au cours (lot 10).
     valeurObjet: ({ cle = "" } = {}) => ({ cle, ...L.valeurObjet(cle, c(), cours(lireEtat())) }),
-    // Ce que vaut un plan en parts (sa rareté, unique ou non).
-    valeurPlan: ({ rarete = 0, unique = false } = {}) => L.valeurPlan({ rarete, unique }),
+    // Ce que vaut un plan en parts : valeurPlan({ cle } ou { rarete, unique }) est celle du lot « plans » (api-plans.mjs ; fusion vague2).
     // Un litige au conseil : une voix par bastion (« a », « b » ou rien).
     trancherLitige: ({ voix = {} } = {}) => L.trancherLitige({ voix }),
     // Un événement de marché tiré selon le stade, la saison et la phase (à jouer ; le démenti s'applique avec dementirPrejuge).

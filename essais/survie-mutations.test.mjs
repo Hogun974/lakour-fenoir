@@ -154,6 +154,16 @@ const VERIFICATIONS = {
     const recrue = () => [{ id: "r", system: L.survivantNeuf({ statut: "recrue", tache: "repos", moral: 0, traits: ["desespere"] }) }];
     assert.deepEqual(avancerJours(L, { site: "hauts-ferme", jours: 2, contenu, survivants: recrue() }).departs, []);
     assert.deepEqual(avancerJours(L, { site: "hauts-ferme", jours: 3, contenu, survivants: recrue() }).departs, ["r"]);
+  },
+  // Lot 4 « Les plans » (plans.mjs) : la valeur d'un plan unique, la rareté qui ne passe pas sous son minimum, le rabais d'une recette,
+  // la fenêtre « après un cyclone ».
+  "plan unique × 3": L => assert.equal(L.valeurPlan({ cle: "u", unique: true, rarete: [90, 100] }), 66),
+  "rareté au minimum": L => assert.equal(L.rareteCourante({ cle: "p", rarete: [60, 90] }, { p: 10 }), 60),
+  "rabais d'une recette": L => { const r = L.recetteAvecPlan({ cle: "x", cout: { pieces: 4 }, travail: 6 }, ["recette:x"]); assert.deepEqual([r.cout.pieces, r.travail], [3, 3]); },
+  "fenêtre après un cyclone": L => {
+    const lieu = { region: "r", fenetre: { apresCyclone: 7 } };
+    assert.equal(L.fenetreLieu(lieu, { jour: 10, cyclones: { r: 10 } }).ouverte, false);
+    assert.equal(L.fenetreLieu(lieu, { jour: 11, cyclones: { r: 10 } }).ouverte, true);
   }
 };
 
@@ -197,7 +207,11 @@ const MUTATIONS = [
   ["etat.mjs", "Boolean(bilan?.autonome) && e.fouilleLe !== jour - 1", "Boolean(bilan?.autonome)", "autonomie sans fouille"],
   ["etat.mjs", "if (palier > palierVeille) {", "if (palier > palierVeille + 9) {", "palier de visibilité"],
   ["etat.mjs", "if (c && sys.joursTache % 7 === 0) {", "if (c && sys.joursTache % 8 === 0) {", "marque de la semaine"],
-  ["survivant.mjs", "if (s.joursMoralZero >= 3)", "if (s.joursMoralZero >= 4)", "départ des recrues"]
+  ["survivant.mjs", "if (s.joursMoralZero >= 3)", "if (s.joursMoralZero >= 4)", "départ des recrues"],
+  ["plans.mjs", "valeur: { base: 3, parPoint: 0.2, unique: 3 },", "valeur: { base: 3, parPoint: 0.2, unique: 1 },", "plan unique × 3"],
+  ["plans.mjs", "Math.min(1, n * REGLES_PLANS.circulation.pas)", "n * REGLES_PLANS.circulation.pas", "rareté au minimum"],
+  ["plans.mjs", "const plan = (connus ?? []).includes(clePlanRecette(recette.cle));", "const plan = false;", "rabais d'une recette"],
+  ["plans.mjs", "if (!(ecart >= 1 && ecart <= Number(f.apresCyclone)))", "if (!(ecart >= 0 && ecart <= Number(f.apresCyclone)))", "fenêtre après un cyclone"]
 ];
 
 async function chargerMutant(fichier, avant, apres) {

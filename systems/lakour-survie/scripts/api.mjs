@@ -29,6 +29,7 @@ import { fonctionsMarche } from "./api-marche.mjs";
 import { histoireDuSurvivant, DRAPEAU_PHRASES } from "./histoires.mjs";
 import { fonctionsSens } from "./api-sens.mjs";
 import { fonctionsGestion } from "./api-gestion.mjs";
+import { fonctionsPlans } from "./api-plans.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -907,7 +908,7 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   const c = contenu();
   const reg = region || ctx.etat.groupe.region;
   if (!L.regionDe(c, reg)) throw clair(t("LAKOUR_SURVIE.Erreurs.RegionInconnue", { region: reg }));
-  if (cible && !NATURE.includes(cible) && !RESSOURCES.includes(cible) && !CIBLES_SAVOIRS.includes(cible)) throw clair(t("LAKOUR_SURVIE.Erreurs.CibleInconnue", { cible }));
+  if (cible && !NATURE.includes(cible) && !RESSOURCES.includes(cible) && !CIBLES_SAVOIRS.includes(cible) && cible !== CIBLE_PLANS) throw clair(t("LAKOUR_SURVIE.Erreurs.CibleInconnue", { cible }));
   const qui = membresValides(ctx, membres);
   const q = entier(quarts, 1, 8, 1);
   const ab = abriCourant(ctx.etat);
@@ -918,7 +919,9 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   const r = L.fouiller(ctx.monde, c, hasard(ctx, "fouille"), { region: reg, site, cible, membres: Math.max(1, qui.length), quarts: q, prudence,
     jour: jourCtx(ctx), moment: L.momentDe(ctx.etat.horloge.quart), abri: ab ? aPlat(ab.system) : null, renseignements: ctx.etat.renseignements, savoirs, clarte,
     // Lot « sens » : un lieu nettoyé se repeuple peu à peu (moins de rencontres).
-    facteurRencontre: L.facteurNettoyage(ctx.etat.nettoyes ?? [], { region: reg, site: site ?? "", jour: jourCtx(ctx) }) });
+    facteurRencontre: L.facteurNettoyage(ctx.etat.nettoyes ?? [], { region: reg, site: site ?? "", jour: jourCtx(ctx) }),
+    // Lot 4 « Les plans » : ce que le groupe connaît déjà (un plan connu se trouve moins souvent).
+    connus: cible === CIBLE_PLANS ? PLANS_API.connusDe(ctx.etat) : [] });
   ctx.monde = r.monde;
   ctx.etat.renseignements = r.renseignements;
   if (r.fouille) ctx.etat = L.noterFouille(ctx.etat, jourCtx(ctx));
@@ -935,10 +938,13 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
     const def = defDe("savoirs", r.livre), base = defDe("equipements", "manuel-de-survie");
     if (def && base) await qui[0].createEmbeddedDocuments("Item", [await donneesObjet("equipement", base, { enseigne: [r.livre] })].map(o => ({ ...o, name: t("LAKOUR_SURVIE.Savoirs.Livre", { savoir: def.nom }) })));
   }
+  // Un plan trouvé (lot 4 « Les plans ») : le papier va au premier fouilleur ; le groupe le lit au carnet s'il en a les savoirs.
+  const plan = r.plan && qui[0] ? await PLANS_API.trouverPapier(ctx, qui[0], r.plan) : null;
   await chat(carteAction({ icone: "fa-magnifying-glass", titre: t("LAKOUR_SURVIE.Action.Fouille", { lieu: site ? nomSite(site) : nomRegion(reg) }),
-    lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" }), t("LAKOUR_SURVIE.Action.Butin", { butin: texteStocks(r.butin) || t("LAKOUR_SURVIE.Action.Rien") })] }));
+    lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" }), t("LAKOUR_SURVIE.Action.Butin", { butin: texteStocks(r.butin) || t("LAKOUR_SURVIE.Action.Rien") }),
+      plan ? t("LAKOUR_SURVIE.Plans.CarteTrouve", { plan: plan.nom }) : ""] }));
   await avancerInterne(ctx, q);
-  return { butin: r.butin, livre: r.livre ?? null, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille, clarte };
+  return { butin: r.butin, livre: r.livre ?? null, plan, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille, clarte };
 }
 
 // Un abri d'avant les notes secrètes (sans le drapeau notesPubliques) : ses notes, écrites par le MJ, vont au monde scellé ; la
@@ -1088,9 +1094,11 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
   if (menaceId && ctx.monde) ctx.monde.menaces = (ctx.monde.menaces ?? []).filter(m => m.id !== menaceId);
   noter(ctx, tx(`Assaut.Journal.${r.issue}`, { type: type || t("LAKOUR_SURVIE.Assaut.Inconnu") }));
   if (r.issue === "breche") alerter(ctx, "breche", tx("Assaut.Breche"));
+  // Lot 4 « Les plans » : des vivants qui forcent l'abri emportent des papiers de l'étagère aux cahiers.
+  const papiersVoles = r.issue === "breche" ? await PLANS_API.pertesDeBreche(ctx, type) : [];
   await chat(carteAssaut(r, { type, description, degats, blesses: blesses.map(id => acteur(id)?.name ?? id) }));
   annoncer("lakourSurvie.assaut", [{ issue: r.issue, marge: r.marge }]);
-  return { marge: r.marge, issue: r.issue, degats, blesses, sangFroid, desDefense: r.desDefense, desMenace: r.desMenace, succesDefense: r.succesDefense, succesMenace: r.succesMenace };
+  return { marge: r.marge, issue: r.issue, degats, blesses, papiersVoles, sangFroid, desDefense: r.desDefense, desMenace: r.desMenace, succesDefense: r.succesDefense, succesMenace: r.succesMenace };
 }
 
 async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
@@ -1105,7 +1113,9 @@ async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
 // Jointures (fusion des lots) : porterActe et membresPresents (le sens moral, §14 : colporter, mentir, rompre la trêve, jouer d'un
 // préjugé), espritDuTirage (l'esprit des gens du marché). Passés par des flèches : définis plus bas.
 const MARCHE = fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser,
-  chat, carteAction, sansBalises, porterActe: (...x) => porterActe(...x), membresPresents: ctx => membresPresents(ctx), espritDuTirage: (...x) => espritDuTirage(...x) });
+  chat, carteAction, sansBalises, porterActe: (...x) => porterActe(...x), membresPresents: ctx => membresPresents(ctx), espritDuTirage: (...x) => espritDuTirage(...x),
+  // Fusion vague2 : la valeur des papiers et des plans au troc et à la boutique (lot 4, api-plans.mjs ; PLANS_API est défini plus bas).
+  valeurPapier: i => PLANS_API.valeurPapierDeLObjet(i), valeurPlanDeCle: k => PLANS_API.valeurPlanDeCle(k) });
 // Percevoir dans le noir (contrat §18) : ses fonctions, avec les aides internes d'ici.
 // La table de gestion, les rangs, le passage, la conversion (lot 10, contrat §22).
 const GESTION = fonctionsGestion({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, systemeLogique, abriLogique,
@@ -1113,6 +1123,11 @@ const GESTION = fonctionsGestion({ ecriture, ouvrirCtx, terminer, noter, tx, jou
 const SENS = fonctionsSens({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, dateDepart, clair, erreur, chat, carteAction, systemeLogique,
   bilanVivant: (etat, monde) => bilanVivant(etat, monde), mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), fetesDuJeu,
   aLAbri: (etat, ab) => aLAbri(etat, ab) });
+// Lot 4 « Les plans » (contrat §21) : le carnet, les papiers, les lieux à plans, l'étagère aux cahiers (api-plans.mjs).
+export const CIBLE_PLANS = "plans";
+const PLANS_API = fonctionsPlans({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, dateDepart, clair, erreur, chat, carteAction,
+  avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o), membresValides, donneesObjet, objetsDe, defDe, hasard, motifsLisibles, savoirsDuGroupe, instancesDe,
+  aLAbri: (etat, ab) => aLAbri(etat, ab), mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), texteStocks });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1278,11 +1293,12 @@ export const api = {
     const def = defDe("installations", cle);
     if (!ab || !def) return { ok: false, raisons: [t(ab ? "LAKOUR_SURVIE.Erreurs.InstallationInconnue" : "LAKOUR_SURVIE.Erreurs.SansAbri", { installation: cle })] };
     const l = abriLogique(ab);
-    return L.peutConstruire(def, undefined, { stocks: l.system.stocks, installations: l.installations, nature: l.system.nature }, L.siteDe(contenu(), l.system.site) ?? {}, { savoirs: savoirsDuGroupe(etat), plans: etat.groupe.plans });
+    return L.peutConstruire(def, undefined, { stocks: l.system.stocks, installations: l.installations, nature: l.system.nature }, L.siteDe(contenu(), l.system.site) ?? {}, { savoirs: savoirsDuGroupe(etat), plans: PLANS_API.connusDe(etat) });
   },
   peutFabriquer(cle, { bras = 1 } = {}) {
     const etat = lireEtat(), ab = abriCourant(etat);
-    const def = defDe("recettes", cle);
+    // Lot 4 « Les plans » : une recette dont le groupe connaît le plan coûte moins et prend moins de temps.
+    const def = L.recetteAvecPlan(defDe("recettes", cle), PLANS_API.connusDe(etat));
     return L.peutFabriquer(def, { stocks: ab ? aPlat(ab.system).stocks : etat.groupe.porte ?? {}, installations: ab && aLAbri(etat, ab) ? instancesDe(ab) : [], savoirs: savoirsDuGroupe(etat), bras });
   },
 
@@ -1393,7 +1409,8 @@ export const api = {
     let instance = existante;
     let cout = {};
     if (!existante || !(existante.chantier.requis > 0)) {
-      const o = L.ouvrirChantier(def, { stocks: l.system.stocks, installations: l.installations, nature: l.system.nature }, site, { savoirs: savoirsDuGroupe(ctx.etat), plans: ctx.etat.groupe.plans });
+      // Les plans connus (lot 4) : le carnet, ce qu'un membre sait par cœur, un plan unique en main.
+      const o = L.ouvrirChantier(def, { stocks: l.system.stocks, installations: l.installations, nature: l.system.nature }, site, { savoirs: savoirsDuGroupe(ctx.etat), plans: PLANS_API.connusDe(ctx.etat) });
       if (!o.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Construction", { raisons: motifsLisibles(o) }));
       await ab.update({ system: { stocks: o.stocks, ...(o.nature ? { nature: o.nature } : {}) } });
       instance = { ...o.instance, id: existante?.id };
@@ -1419,7 +1436,7 @@ export const api = {
         Object.keys(cout).length ? t("LAKOUR_SURVIE.Action.Cout", { cout: texteStocks(Object.fromEntries(Object.entries(cout).filter(([k]) => k !== "travail"))) || "—" }) : ""] }));
     await avancerInterne(ctx, q);
     await terminer(ctx);
-    return { chantier: structuredClone(ch.instance.chantier), termine: ch.termine, niveau: ch.niveau, reste: ch.reste, cout, plan: (ctx.etat.groupe.plans ?? []).includes(def.cle) };
+    return { chantier: structuredClone(ch.instance.chantier), termine: ch.termine, niveau: ch.niveau, reste: ch.reste, cout, plan: PLANS_API.connusDe(ctx.etat).includes(def.cle) };
   }),
 
   reparer: ecriture(async ({ installationId = "", membres = [], quarts = 1 } = {}) => {
@@ -1484,6 +1501,8 @@ export const api = {
     const arrivee = L.installerAbri(ctx.monde, c, { site, jour: jourCtx(ctx), quart: ctx.etat.horloge.quart });
     if (!arrivee.ok) throw clair(motifLisible(arrivee));
     const d = await quitterAbri(ctx, ab, { emporter, transport: moyen, membres: bras });
+    // Lot 4 « Les plans » : les papiers de l'étagère aux cahiers partent avec le groupe (ils ne pèsent rien).
+    await PLANS_API.emporterEtagere(ctx);
     let voyage = null;
     if (s.region !== ctx.etat.groupe.region) voyage = await voyagerInterne(ctx, { vers: s.region, transport, membres: qui.map(a => a.id), charge });
     const inst = await installerInterne(ctx, { site });
@@ -1627,8 +1646,10 @@ export const api = {
   fabriquer: ecriture(async ({ recette, acteurId = "", membres = [], forcer = false } = {}) => {
     const ctx = ouvrirCtx();
     const c = contenu();
-    const def = defDe("recettes", recette) ?? L.liste(c.recettes).find(r => r.nom === recette);
-    if (!def) throw clair(t("LAKOUR_SURVIE.Erreurs.RecetteInconnue", { recette }));
+    const brute = defDe("recettes", recette) ?? L.liste(c.recettes).find(r => r.nom === recette);
+    if (!brute) throw clair(t("LAKOUR_SURVIE.Erreurs.RecetteInconnue", { recette }));
+    // Lot 4 « Les plans » : avec le plan de la recette, 25 % d'ingrédients en moins et la moitié du travail.
+    const def = L.recetteAvecPlan(brute, PLANS_API.connusDe(ctx.etat));
     const competence = def.competence ?? "bricolage";
     const presents = membresValides(ctx, []);
     const artisan = acteur(acteurId) ?? presents.sort((x, y) => (y.system.competences?.[competence]?.niveau ?? 0) - (x.system.competences?.[competence]?.niveau ?? 0))[0];
@@ -1653,7 +1674,7 @@ export const api = {
     noter(ctx, tx(r.test.reussite ? "Journal.Fabrique" : "Journal.FabriqueRate", { nom: artisan.name, recette: def.nom }));
     await avancerInterne(ctx, Math.max(1, r.quarts));
     await terminer(ctx);
-    return { ok: true, termine: true, reussite: r.test.reussite, competence, test: { ...r.test, competence }, produit: r.produit, quarts: r.quarts, perdu: r.perdu, acteurId: artisan.id };
+    return { ok: true, termine: true, reussite: r.test.reussite, competence, test: { ...r.test, competence }, produit: r.produit, quarts: r.quarts, perdu: r.perdu, acteurId: artisan.id, plan: Boolean(def.plan) };
   }),
 
   affliction: ecriture(async ({ acteurId, cle, action = "donner", soigneurId = "" } = {}) => {
@@ -1899,6 +1920,8 @@ export const api = {
   ...SENS,
   // Lot 10 (contrat §22) : la table de gestion, les rangs, le passage entre abris, changer de religion.
   ...GESTION,
+  // Lot 4 « Les plans » (contrat §21) : le carnet, les papiers, les lieux à plans, l'étagère aux cahiers.
+  ...PLANS_API.api,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {
@@ -2331,7 +2354,8 @@ async function dicterInterne(ctx, { gramouneId, scribeId } = {}) {
   if (r.termine) {
     const base = defDe("equipements", "cahier-de-gramoune");
     if (base) {
-      const o = await donneesObjet("equipement", base, { enseigne: r.enseigne, auteur: g.name });
+      // Lot 4 « Les plans » : le cahier dicté est un plan unique (les installations et recettes de ses savoirs lontan) ; il ne se copie pas.
+      const o = await donneesObjet("equipement", base, { enseigne: r.enseigne, auteur: g.name, plans: L.plansDuCahierDicte(r.enseigne, contenu()), unique: L.CAHIER_DICTE });
       await scribe.createEmbeddedDocuments("Item", [{ ...o, name: t("LAKOUR_SURVIE.Savoirs.Cahier", { nom: g.name }) }]);
     }
     noter(ctx, tx("Journal.CahierEcrit", { nom: g.name, scribe: scribe.name }));

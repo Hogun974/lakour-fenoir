@@ -151,7 +151,8 @@ test("la valeur d'un objet (le barème, sinon sa recette au cours) et d'un plan 
   assert.deepEqual(L.valeurObjet("bouclier-de-tole", C), { valeur: L.valeurBiens(r.cout, L.coursDuJour()), source: "recette" });
   assert.deepEqual(L.valeurObjet("objet-inconnu", C), { valeur: null, source: "" });
   assert.equal(L.valeurPlan({ rarete: 0 }), 3);
-  assert.equal(L.valeurPlan({ rarete: 22.5 }), 7.5, "le four à pain du jeu 3D (≈ 15 au barème)");
+  // Fusion vague2 : la valeur d'un plan est celle du lot « plans » (parts entières) : 3 + 0,2 × 22,5 = 7,5, arrondi à 8.
+  assert.equal(L.valeurPlan({ rarete: 22.5 }), 8, "le four à pain du jeu 3D (≈ 15 au barème)");
   assert.equal(L.valeurPlan({ rarete: 95, unique: true }), 66, "le cahier unique (≈ 132)");
 });
 

@@ -1,0 +1,148 @@
+{
+  "_id": "5JTgjE9LqkpCloCr",
+  "_key": "!tables!5JTgjE9LqkpCloCr",
+  "name": "Lieu à plans — La salle des machines de Takamaka",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on tire dans ce lieu à plans (La salle des machines de Takamaka, L'Est : Saint-André, Saint-Benoît, Sainte-Rose), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plans-salle-des-machines-de-takamaka",
+      "plans": "plans-salle-des-machines-de-takamaka"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "fxTqxGWY8TI9nMaM",
+      "_key": "!tables.results!5JTgjE9LqkpCloCr.fxTqxGWY8TI9nMaM",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Pico-hydro sur rivière (rareté 65 à 90).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "bxEOgHgs6Aj0x0uA",
+      "_key": "!tables.results!5JTgjE9LqkpCloCr.bxEOgHgs6Aj0x0uA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Pico-hydro sur rivière (rareté 65 à 90).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oe8Ew2pKoSe0d5WA",
+      "_key": "!tables.results!5JTgjE9LqkpCloCr.oe8Ew2pKoSe0d5WA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Pico-hydro sur rivière (rareté 65 à 90).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0EuPnKmAH1BeetEz",
+      "_key": "!tables.results!5JTgjE9LqkpCloCr.0EuPnKmAH1BeetEz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Batteries (rareté 35 à 60).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TByme0iiRL1fkTNq",
+      "_key": "!tables.results!5JTgjE9LqkpCloCr.TByme0iiRL1fkTNq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Batteries (rareté 35 à 60).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QSTdyzc1fa5z4AC1",
+      "_key": "!tables.results!5JTgjE9LqkpCloCr.QSTdyzc1fa5z4AC1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Panneaux solaires (rareté 30 à 55).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hoGRlY7qpDbVWrKw",
+      "_key": "!tables.results!5JTgjE9LqkpCloCr.hoGRlY7qpDbVWrKw",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Panneaux démontables (recette) (rareté 45 à 70).</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VDqqGrYDFvYfHeZQ",
+      "_key": "!tables.results!5JTgjE9LqkpCloCr.VDqqGrYDFvYfHeZQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Cahier de l'électricien de la centrale : le plan unique du lieu (une seule fois dans la partie). Le registre d'un technicien de la salle des machines, et tout ce qu'il y a noté pour lui seul. Il n'en existe qu'un, et il est resté au fond de la gorge.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

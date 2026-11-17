@@ -1,0 +1,148 @@
+{
+  "_id": "dYzlmFMbydf5YdXx",
+  "_key": "!tables!dYzlmFMbydf5YdXx",
+  "name": "Lieu à plans — Les tunnels de lave de l'Enclos",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on tire dans ce lieu à plans (Les tunnels de lave de l'Enclos, Le Piton de la Fournaise et la Plaine des Sables), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plans-tunnels-de-l-enclos",
+      "plans": "plans-tunnels-de-l-enclos"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "DpI2AWd5tKaNot75",
+      "_key": "!tables.results!dYzlmFMbydf5YdXx.DpI2AWd5tKaNot75",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Aménagement d'un tunnel de lave (rareté 70 à 95).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tuo1E8TShRYUehob",
+      "_key": "!tables.results!dYzlmFMbydf5YdXx.tuo1E8TShRYUehob",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Aménagement d'un tunnel de lave (rareté 70 à 95).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SZM0gBerKsoRdEp2",
+      "_key": "!tables.results!dYzlmFMbydf5YdXx.SZM0gBerKsoRdEp2",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Aménagement d'un tunnel de lave (rareté 70 à 95).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "OTZTyuqQEP5I2GuW",
+      "_key": "!tables.results!dYzlmFMbydf5YdXx.OTZTyuqQEP5I2GuW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Galerie souterraine (rareté 55 à 85).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "poS5vyYm5U709kCq",
+      "_key": "!tables.results!dYzlmFMbydf5YdXx.poS5vyYm5U709kCq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Galerie souterraine (rareté 55 à 85).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BE841jgjRFdrFuqd",
+      "_key": "!tables.results!dYzlmFMbydf5YdXx.BE841jgjRFdrFuqd",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Galerie souterraine (rareté 55 à 85).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yjIAl681o1iks4E9",
+      "_key": "!tables.results!dYzlmFMbydf5YdXx.yjIAl681o1iks4E9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Réserve étanche (rareté 25 à 45).</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yKtLMyBGROTBwFNO",
+      "_key": "!tables.results!dYzlmFMbydf5YdXx.yKtLMyBGROTBwFNO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Gourde filtrante de fortune (recette) (rareté 20 à 40).</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

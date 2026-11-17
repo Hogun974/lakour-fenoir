@@ -30,6 +30,7 @@ import { COMMUNAUTES } from "../systems/lakour-survie/logique/fetes.mjs";
 import { verifierHistoires } from "../systems/lakour-survie/logique/histoires.mjs";
 import { verifierCorvees } from "../systems/lakour-survie/logique/gestion.mjs";
 import { erreursAffaire } from "../systems/lakour-survie/logique/affaires.mjs";
+import { erreursPlans } from "../systems/lakour-survie/logique/plans.mjs";
 import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_DECLINABLES, IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
@@ -658,6 +659,10 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   // Lot 10 (§22) : les corvées (une des treize tâches, un nom) et le barème des objets (des parts positives).
   for (const m of verifierCorvees(d)) e(m);
   for (const [k, v] of Object.entries(d.bareme?.objets ?? {})) if (!/^[a-z0-9-]+$/.test(k) || !(Number(v) >= 0)) e(`barème : objet « ${k} » (${v})`);
+  // Lot 4 « Les plans » (contrat §21 ; logique/plans.mjs) : rareté, cibles connues, plans uniques et leur objet, plans des sites, lieux à
+  // plans (région, garde, fenêtre, tirage d'au moins trois plans dont un rare).
+  for (const x of erreursPlans(d)) e(x);
+  if ((d.plans ?? []).length && !(d.lieuxAPlans ?? []).length) e("plans : aucun lieu à plans");
 
   // Aucun terme interdit dans tout le registre.
   const interdits = termesInterdits(JSON.stringify(d));

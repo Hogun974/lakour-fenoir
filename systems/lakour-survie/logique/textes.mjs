@@ -86,7 +86,12 @@ export const CLES_TEXTES = [
   "esprit-conversion-faite", "conversion-inconnue", "conversion-plusieurs", "conversion-meme",
   "chef-succede", "chef-perdu", "rang-pas-membre", "rang-deja-chef", "rang-nouveau", "rang-jeune", "rang-seconds-max",
   "passage-inconnu", "passage-ouvert", "passage-ferme", "quota-pas-membre", "etal-vend", "etal-vole",
-  "rumeur-quitte-sa-foi", "rumeur-change-souvent"
+  "rumeur-quitte-sa-foi", "rumeur-change-souvent",
+  // plans.mjs (lot 4 « Les plans ») : un plan trouvé, la fenêtre d'un lieu à plans, l'étagère aux cahiers, les refus
+  "plan-trouve", "plans-fenetre", "etagere-perte-eau",
+  "plan-inconnu", "plan-pas-connu", "plan-deja-appris", "plan-illisible",
+  "plans-fenetre-saison-seche", "plans-fenetre-saison-pluies", "plans-fenetre-lune", "plans-fenetre-cyclone", "plans-fenetre-eruption",
+  "plans-lieu-inconnu", "plans-lieu-revenir", "etagere-absente", "etagere-pleine"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

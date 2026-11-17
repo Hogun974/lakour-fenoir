@@ -1,0 +1,163 @@
+{
+  "_id": "WtcpD4ELc7nu9REv",
+  "_key": "!tables!WtcpD4ELc7nu9REv",
+  "name": "Lieu à plans — L'îlet sans route de Roche-Plate",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on tire dans ce lieu à plans (L'îlet sans route de Roche-Plate, Mafate), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+  "formula": "1d9",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plans-ilet-de-roche-plate",
+      "plans": "plans-ilet-de-roche-plate"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "yhus6Ek8llHCfEHO",
+      "_key": "!tables.results!WtcpD4ELc7nu9REv.yhus6Ek8llHCfEHO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Captage de source (rareté 35 à 60).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QGryQhLFQBA4AACz",
+      "_key": "!tables.results!WtcpD4ELc7nu9REv.QGryQhLFQBA4AACz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Captage de source (rareté 35 à 60).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "US1jDhzBUmw0jNTm",
+      "_key": "!tables.results!WtcpD4ELc7nu9REv.US1jDhzBUmw0jNTm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Captage de source (rareté 35 à 60).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NZgBU7j8WGC9ABQ8",
+      "_key": "!tables.results!WtcpD4ELc7nu9REv.NZgBU7j8WGC9ABQ8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Conduite de bambou (rareté 30 à 55).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uAlBTEohzN8c8VNu",
+      "_key": "!tables.results!WtcpD4ELc7nu9REv.uAlBTEohzN8c8VNu",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Conduite de bambou (rareté 30 à 55).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dPfVUAZZGKGY1IeV",
+      "_key": "!tables.results!WtcpD4ELc7nu9REv.dPfVUAZZGKGY1IeV",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Mur de pierres sèches (rareté 25 à 50).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "iPbLakOCN8tR1ukA",
+      "_key": "!tables.results!WtcpD4ELc7nu9REv.iPbLakOCN8tR1ukA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Mur de pierres sèches (rareté 25 à 50).</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "bFETtukHFicaG8L1",
+      "_key": "!tables.results!WtcpD4ELc7nu9REv.bFETtukHFicaG8L1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Puits à balancier (rareté 30 à 55).</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DwpD3GzUsEFRzj3x",
+      "_key": "!tables.results!WtcpD4ELc7nu9REv.DwpD3GzUsEFRzj3x",
+      "type": "text",
+      "name": "",
+      "description": "<p>Carnet du fontainier : le plan unique du lieu (une seule fois dans la partie). Le carnet d'un fontainier des îlets : quarante ans à amener l'eau là où les routes ne vont pas. Il n'en existe qu'un, et il ne se trouve qu'au bout des sentiers.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

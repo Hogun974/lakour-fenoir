@@ -504,11 +504,34 @@
       }
     },
     {
+      "_id": "ze2j1FbcQyEMd6hR",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.ze2j1FbcQyEMd6hR",
+      "name": "Les plans",
+      "type": "text",
+      "sort": 2200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce que vous avez déjà su bâtir une fois se rebâtit plus vite : c'est le <strong>carnet</strong> du groupe. On y ajoute aussi les <strong>plans trouvés</strong> : un schéma coté, une notice annotée, le carnet d'un artisan.</p><ul><li><strong>Un plan connu</strong> fait bâtir (ou fabriquer) avec <strong>un quart de matériaux en moins et la moitié du travail</strong>. Aucun plan n'est obligatoire : sans plan, on bâtit au prix plein.</li><li><strong>Lire un plan</strong> demande le savoir-faire qu'il suppose. Sinon, gardez le papier : pour plus tard, quand quelqu'un aura appris, ou pour un autre groupe.</li><li><strong>Où chercher</strong> : les quincailleries, les garages, les écoles, les casernes, et surtout <strong>là où le savoir vivait</strong> (une centrale, une distillerie, un îlet de fontainiers). Les plus rares dorment dans des lieux dangereux, qui ne s'ouvrent qu'à certains moments.</li><li><strong>Copier</strong> un plan (une veillée, avec de la lumière) donne un papier à troquer ou à garder en double. <strong>Apprendre par cœur</strong> fait survivre un plan à la perte du papier, tant que celui qui l'a appris vit.</li><li><strong>Les plans uniques</strong> (le cahier de tisanes d'une gramoune, le carnet d'un fontainier) ne se copient pas, et valent très cher.</li><li><strong>L'étagère aux cahiers</strong> garde les papiers à l'abri. Elle se vole, elle brûle ; un coffre étanche et caché les protège.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-plans"
+        }
+      }
+    },
+    {
       "_id": "GsGWAAAIAkUufDjK",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 2200,
+      "sort": 2300,
       "title": {
         "show": true,
         "level": 1

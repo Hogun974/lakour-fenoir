@@ -204,7 +204,7 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     sites: options(L.liste(c.sites).map(s => [s.cle, `${L.regionDe(c, s.region)?.nom ?? s.region} — ${s.nom}`]), ""),
     sitesIci: options([["", t("LAKOUR_SURVIE.MJ.Region")], ...sitesIci], ""),
     cibles: options([["", t("LAKOUR_SURVIE.MJ.Tout")], ...RESSOURCES.filter(r => r !== "energie").map(r => [r, libelleRessource(r)]), ...NATURE.map(n => [n, t(`LAKOUR_SURVIE.Nature.${n}`)]),
-      ...["jardins", "livres"].map(x => [x, t(`LAKOUR_SURVIE.Savoirs.Cibles.${x}`)])], ""),
+      ...["jardins", "livres"].map(x => [x, t(`LAKOUR_SURVIE.Savoirs.Cibles.${x}`)]), ["plans", t("LAKOUR_SURVIE.Plans.Cible")]], ""),
     prudences: options(PRUDENCES.map(p => [p, t(`LAKOUR_SURVIE.Prudences.${p}`)]), "normal"),
     transports: options([...TRANSPORTS.map(x => [x, t(`LAKOUR_SURVIE.Transports.${x}`)]), ...vehicules.map(v => [v, L.indexer(c).equipements.get(v)?.nom ?? v])], "pied"),
     installations: options(constructibles, ""),
@@ -243,6 +243,8 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     // Lot 10 : la table de gestion (onglet Groupe).
     gestion: onglet === "groupe" && etat.demarree ? contexteGestion(api, c) : null,
     sens: onglet === "partie" && etat.demarree ? contexteSens(api) : null,
+    // Lot 4 « Les plans » (contrat §21) : le carnet, les papiers, l'étagère, les lieux à plans (onglet Savoirs).
+    plans: onglet === "savoirs" && etat.demarree ? contextePlans(api, c) : null,
     // Lot « savoirs » : l'onglet Savoirs et cyclone.
     ...(onglet === "savoirs" || onglet === "groupe" ? contexteSavoirs(etat, c, api, membres) : {})
   };
@@ -287,6 +289,41 @@ export function contexteSens(api = game.lakourSurvie) {
     nettoyes: s.nettoyes.map(x => ({ nom: x.nom, jour: x.jour, tues: x.tues, facteur: Math.round(x.facteur * 100) })),
     actionsNoir: options(["lumiere", "nuit", "regler"].map(a => [a, t(P(`ActionsNoir.${a}`))]), "lumiere"),
     airs: options(["doux", "fort"].map(a => [a, t(P(`Airs.${a}`))]), "doux")
+  };
+}
+
+// Lot 4 « Les plans » (contrat §21) : le carnet du groupe, ce que chacun sait par cœur, les papiers et l'étagère, les lieux à plans (avec
+// leur fenêtre et leur garde), et les listes des formulaires.
+export function contextePlans(api = game.lakourSurvie, c = contenu()) {
+  const p = api?.plans?.();
+  if (!p) return null;
+  const P = k => `LAKOUR_SURVIE.Plans.${k}`;
+  const nomSavoir = s => L.indexer(c).savoirs.get(s)?.nom ?? s;
+  const fiche = x => t(P("Fiche"), { nom: x.nom, rarete: x.rarete, valeur: x.valeur });
+  const aLire = x => x.plans.filter(y => !y.lisible && !y.auCarnet).map(y => t(P("Illisible"), { plan: y.nom, savoirs: (y.manque ?? []).map(nomSavoir).join(", ") }));
+  const lignePapier = x => [t(P(x.porteur ? "PapierLigne" : "EtagereLigne"), { nom: x.nom, porteur: x.porteur ?? "", valeur: x.valeur }),
+    x.unique ? t(P("Unique")) : "", ...(x.unique ? [] : aLire(x))].filter(Boolean).join(" — ");
+  const lieux = api.lieuxAPlans?.() ?? [];
+  const copiables = [...new Map([...p.carnet, ...p.papiers.filter(x => !x.unique).flatMap(x => x.plans)].map(y => [y.cle, y.nom])).entries()];
+  const uniques = L.plansDuRegistre(c).filter(x => x.unique);
+  const survivants = (game.actors?.contents ?? []).filter(a => a.type === "survivant");
+  return {
+    carnet: p.carnet.map(fiche).join(" · ") || t(P("Rien")),
+    parCoeur: p.parCoeur.map(x => `${x.nom} : ${x.plans.map(y => y.nom).join(", ") || t(P("Rien"))}${x.enCours ? ` (${t(P("EnCours"), { plan: L.nomDuPlan(c, x.enCours.plan), fait: x.enCours.fait, requis: x.enCours.requis })})` : ""}`),
+    papiers: p.papiers.map(lignePapier),
+    etagere: { titre: t(P("Etagere"), { n: p.etagere.length, places: p.places }), protege: p.protege, sans: !p.places, papiers: p.etagere.map(lignePapier) },
+    lieux: lieux.map(l => ({ nom: l.nom, region: l.regionNom, ici: l.ici, garde: t(P(`Gardes.${l.garde?.type ?? "milieu"}`)), fenetre: l.fenetre,
+      etat: !l.ouverte ? `${t(P("Ferme"))} (${l.motifs.map(m => localiser(m)).join(" ; ")})` : l.revenir ? t(P("Revenir"), { jour: l.prochain }) : t(P("Ouvert")) })),
+    optionsLieux: options(lieux.map(l => [l.cle, `${l.ici ? "★ " : ""}${l.nom} — ${l.regionNom}`]), ""),
+    optionsPapiers: options(p.papiers.map(x => [x.objetId, `${x.nom} (${x.porteur})`]), ""),
+    optionsCopiables: options(copiables, ""),
+    optionsConnus: options(p.connus.map(k => [k, L.nomDuPlan(c, k)]), ""),
+    optionsEtagere: options(p.etagere.map(x => [x.id, x.nom]), ""),
+    optionsCibles: options([...L.liste(c.installations).map(i => [i.cle, i.nom]), ...L.liste(c.recettes).map(r => [L.clePlanRecette(r.cle), t(P("CibleRecette"), { nom: r.nom })])], ""),
+    optionsRecevoir: options([...uniques.map(x => [x.cle, `${x.nom} (${t(P("Unique"))})`]), ...L.liste(c.installations).map(i => [i.cle, i.nom]),
+      ...L.liste(c.recettes).map(r => [L.clePlanRecette(r.cle), t(P("CibleRecette"), { nom: r.nom })])], ""),
+    optionsCauses: options(L.CAUSES_PERTE.map(x => [x, t(P(`Causes.${x}`))]), "feu"),
+    optionsSurvivants: options(survivants.map(a => [a.id, `${a.name}${a.system?.vivant === false || a.system?.livide ? " †" : ""}`]), "")
   };
 }
 
@@ -415,7 +452,19 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       // Percevoir dans le noir (contrat §18).
       noir: () => api.noir({ acteurId: d.acteur, action: d.action || "lumiere", nuits: Number(d.nuits) || 0 }),
       nettoyer: () => api.nettoyer({ region: d.region || "", site: d.site || "", tues: Number(d.tues) || 0 }),
-      jouer: () => api.jouer({ musiciens: liste(d.musiciens), air: d.air || "doux" })
+      jouer: () => api.jouer({ musiciens: liste(d.musiciens), air: d.air || "doux" }),
+      // Les plans (contrat §21).
+      lieuAPlans: () => api.lieuAPlans({ lieu: d.lieu || "", membres, quarts: Number(d.quarts) || 2 }),
+      lirePlan: () => api.lirePlan({ objetId: d.papier || "" }),
+      copierPlan: () => api.copierPlan({ cle: d.plan || "", acteurId: d.acteur || "" }),
+      enseignerPlan: () => api.enseignerPlan({ acteurId: d.acteur || "", cle: d.plan || "" }),
+      rangerPlan: () => api.rangerPlan({ objetId: d.papier || "" }),
+      prendrePlan: () => api.prendrePlan({ id: d.rangement || "", acteurId: d.acteur || "" }),
+      perdreEtagere: () => api.perdreEtagere({ cause: d.cause || "feu" }),
+      donnerPlan: () => api.donnerPlan({ objetId: d.papier || "", contre: biens(d, "contre"), a: d.a ?? "" }),
+      recevoirPlan: () => api.recevoirPlan({ cle: d.plan || "", acteurId: d.acteur || "", contre: biens(d, "contre"), de: d.de ?? "" }),
+      noterPlan: () => api.noterPlan({ cle: d.plan || "" }),
+      reprendrePlans: () => api.reprendrePlans({ deId: d.mort || "", aId: d.acteur || "" })
     };
     if (!appels[nom]) return;
     cible.disabled = true;

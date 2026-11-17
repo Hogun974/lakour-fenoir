@@ -1,0 +1,39 @@
+{
+  "_id": "To7XMo05JkOKuHtY",
+  "_key": "!items!To7XMo05JkOKuHtY",
+  "name": "Cahier de l'électricien de la centrale",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cahier-de-l-electricien",
+    "categorie": "livre",
+    "description": "<p>Un registre cartonné de la salle des machines, avec, au dos des relevés de turbine, ce qu'un technicien a noté pour lui seul pendant vingt ans : comment faire tourner une petite turbine sur un filet d'eau, réparer un régulateur, ménager une batterie qui fatigue, câbler des panneaux sans tout griller. Il n'en existe qu'un ; il ne se recopie pas.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "enseigne": [
+      "electricite-solaire"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cahier-de-l-electricien"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

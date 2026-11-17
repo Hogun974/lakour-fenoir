@@ -1,0 +1,36 @@
+{
+  "_id": "OvB4CqD6YEeHulAh",
+  "_key": "!items!OvB4CqD6YEeHulAh",
+  "name": "Copie de plan",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "copie-de-plan",
+    "categorie": "livre",
+    "description": "<p>Quelques feuilles pliées en quatre : un schéma coté, la liste de ce qu'il faut, l'ordre des gestes, parfois une main qui a écrit « attention » dans la marge. Celui qui a le savoir-faire qu'il demande le lit et le note au carnet du groupe ; les autres le gardent pour plus tard, ou pour quelqu'un d'autre. Un plan connu fait bâtir avec un quart de matériaux en moins et la moitié du travail. Il se recopie, il se troque.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "copie-de-plan"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}
