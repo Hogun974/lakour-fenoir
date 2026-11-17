@@ -28,3 +28,4 @@ export * from "./fetes.mjs";
 export * from "./releve.mjs";
 export * from "./affaires.mjs";
 export * from "./sens.mjs";
+export * from "./plans.mjs";

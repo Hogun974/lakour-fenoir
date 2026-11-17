@@ -1202,3 +1202,70 @@ Rien n'est retiré ni renommé ; les champs nouveaux ont une valeur par défaut 
   anciens », « Un Livide intrigué — ce qu'il fait », « La ravine après la pluie », « La voix de l'île — musique du soir » ; journal du
   MJ « Percevoir dans le noir » ; page « La nuit, le vent et la pluie » (guide du joueur) ; page « La nuit et ses voix » (livre de
   l'île).
+
+## 21. Les plans (lot 4 « Les plans », 2026-11-17)
+
+Lot 4 de l'inventaire du jeu 3D : la famille 7 « Les plans », sans rien de ce qui tient aux cycles du serveur (remise à zéro,
+verrous, chance de garder un plan). Chiffres et raisons : `docs/equilibre-plans.md`. Logique : `logique/plans.mjs` (nouveau), un
+crochet dans `actions.mjs` (`fouiller`, cible `plans`), deux dans `etat.mjs` (`avancer` : la fenêtre qui s'ouvre, l'eau du cyclone
+sur l'étagère). **Décision de Jordan du 2026-11-17 : un plan reste un rabais** (25 % de matériaux en moins, la moitié du travail :
+`PLANS` d'`abri.mjs`, inchangé) ; **aucune installation, aucune recette n'exige un plan trouvé.** Rien n'est retiré ni renommé.
+
+### 21.1 Clés, carnet, ce que le groupe connaît
+- Une clé de plan au carnet (`groupe.plans`, §4) : la clé d'une installation (comme avant), ou `recette:<clé>` pour une recette.
+  Une installation terminée y entre comme avant ; **fabriquer une recette ne l'y inscrit pas**.
+- Ce que le groupe **connaît** (le rabais) : `plansConnus({ carnet, parCoeur, uniques })` = le carnet ∪ ce que ses membres vivants
+  savent par cœur (`system.plans` du survivant) ∪ les plans des **plans uniques** en main (portés par un membre vivant, ou sur
+  l'étagère de l'abri quand le groupe y est). `construire`, `peutConstruire`, `fabriquer`, `peutFabriquer` s'en servent ;
+  `recetteAvecPlan(recette, connus)` rend la recette au rabais (`plan: true`).
+- Lire : `savoirsDuPlan(contenu, cle)` (le premier niveau de l'installation, ou la recette), `peutLirePlan(contenu, cle, savoirs)`.
+- Apprendre par cœur : `veilleePlan(eleve, { cle, contenu, connus })`, `veilleesPourApprendre(def)` = 1 + rareté moyenne ÷ 25.
+
+### 21.2 Registre (contenu, `contenu/plans.mjs`)
+```
+plans: [{ cle, installation | recette, rarete: [min, max], lieux: [type de site], savoirs?: [cle] }      // ordinaires : une cible
+      | { cle, unique: true, nom, description, rarete, couvre: [clé du carnet], objet: clé d'équipement, enseigne: [savoir], lieux }]
+lieuxAPlans: [{ cle, nom, region, site?, description, retour (jours),
+                garde: { type: "milieu" | "livides", texte, test?: { competence, difficulte }, rencontre?: { creature, nombre: [min, max] } },
+                fenetre: { saison?: "seche" | "pluies", lune?: phase, apresCyclone?: jours, horsEruption?: jours }, fenetreTexte,
+                tirage: [{ plan: clé du registre, poids }] }]
+sites[].plans: [clé du registre]   // les plans propres d'un site (« là où le savoir vivait »), même rares
+```
+- Un plan dont le minimum atteint 50 est **rare** : jamais dans un lieu ordinaire. `planPourCle` donne aussi un plan (rareté 10-30) à
+  toute installation ou recette que le registre ne décrit pas. `erreursPlans(contenu)` vérifie tout (fabricant, essais).
+- Installation `etagere-aux-cahiers` (`effets.bibliotheque: { places, protege }`, 12 puis 24 papiers) ; équipements `copie-de-plan`,
+  `carnet-du-fontainier`, `cahier-de-l-electricien` (le cahier de tisanes prend `cahier-de-gramoune`).
+
+### 21.3 Papiers, rareté, valeur
+- Équipement (§3.4) : `plans: [clé du carnet]` (les plans qu'un papier porte ; vide : pas un papier), `unique: ""` | clé du plan
+  unique | `"cahier-dicte"`. `papierDe(system, contenu)` : un cahier dicté d'avant ce lot (sans `plans`) en reçoit d'après ce qu'il
+  enseigne (`plansDuCahierDicte`). Survivant (§3.1) : `plans: [clé]` (par cœur), `planEnCours: { plan, fait, requis } | null`.
+  Tous réservés au MJ (`gmOnlyFields`).
+- `rareteCourante(def, circulation)` : la moyenne, moins un quart de l'écart jusqu'au minimum par copie sortie du groupe ;
+  `valeurPlan(def, { circulation })` = arrondi de `3 + 0,2 × rareté`, × 3 unique (en parts, lu par le marché du lot 10) ;
+  `faireCirculer`, `valeurPapier`.
+
+### 21.4 Trouver
+- `fouiller({ cible: "plans", connus })` : `chanceDePlan({ site, n, prudence })`, `plansDuLieu`, `chercherPlan` ; rend `plan` (clé du
+  registre ou null) et le fait public `plan-trouve` ; le site se repose (`monde.plans.lieux`). Compte comme une fouille.
+- Lieux à plans : `fenetreLieu(lieu, { jour, dateDepart, cyclones, eruption })`, `fenetresQuiSouvrent`, `etatLieuAPlans`,
+  `tirerDuLieu(monde, contenu, lieu, hasard, { jour, dateDepart, connus })` (un plan parmi plusieurs ; revenir après `retour` jours ;
+  un plan unique une fois : `monde.plans.uniques`), `noterCyclone`.
+- `avancer`, chaque jour : la date du cyclone qui frappe (`monde.plans.cyclones`) ; un lieu dont la fenêtre s'ouvre : fait secret
+  `plans-fenetre` `{ lieu, quand }` (journal secret, jamais public) ; un cyclone qui abîme un abri non préparé gâte un papier de
+  l'étagère (`etagere-perte-eau`, pas dans le coffre).
+
+### 21.5 État, API et fenêtres
+- État public : `plans: { circulation: { clé du registre: n }, etagere: [{ id, name, img, system }] }` (absent d'une partie d'avant :
+  `plansDeLEtat` rend du vide). Secret : `monde.plans = { lieux, uniques, rares: { lieu: { prochain, tires } }, cyclones }`.
+- API (`scripts/api-plans.mjs`, étalée dans `game.lakourSurvie`). Lecture : `plans()`, `valeurPlan({ cle })`, `lieuxAPlans()`.
+  Écriture (MJ actif, monde ouvert) : `lieuAPlans({ lieu, membres, quarts = 2 })` (la garde passée), `lirePlan({ objetId })`,
+  `copierPlan({ cle, acteurId })`, `enseignerPlan({ acteurId, cle })`, `rangerPlan({ objetId })`, `prendrePlan({ id, acteurId })`,
+  `perdreEtagere({ cause: "vol" | "feu" | "eau" })`, `donnerPlan({ objetId, contre, a })`, `recevoirPlan({ cle, acteurId, contre, de })`,
+  `noterPlan({ cle })` (une issue d'affaire `plan`, §17), `reprendrePlans({ deId, aId })` (les papiers d'un mort). `fouiller` rend
+  `plan` ; `assaut` rend `papiersVoles` (une brèche faite par des vivants) ; `demenager` emporte l'étagère ; `dicter` écrit un cahier
+  unique avec ses plans ; `construire` et `fabriquer` rendent `plan`.
+- Fenêtre du MJ, onglet Savoirs : bloc « Les plans » (carnet, par cœur, papiers, étagère, lieux et leur fenêtre) et ses formulaires ;
+  cible de fouille « Plans ». Tableau de bord : les plans connus (recettes comprises). Fiches : un papier dit ses plans, l'étagère
+  ses places ; un survivant, ce qu'il sait par cœur. Journal du MJ « Les plans » ; page « Les plans » du guide du joueur ; tables
+  « Lieu à plans — … » (une par lieu), « Plans — à quoi ça ressemble », « Plans — ce qui se raconte ».

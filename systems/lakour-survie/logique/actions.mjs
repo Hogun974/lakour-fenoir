@@ -43,6 +43,8 @@
 // Lot « savoirs » (docs/equilibre-savoirs.md, contrat §13) :
 // - Fouilles « jardins » (les jardins des cases : nourriture, boutures, zerbaz ; savoirs.mjs, JARDINS_CASES) et « livres » (un
 //   livre qui apprend un savoir-faire : LIVRES). Toutes deux comptent comme une fouille de la région (rencontres, autonomie).
+// - Fouille « plans » (lot 4 « Les plans », plans.mjs, chercherPlan) : un plan à trouver selon le type du site ; le site n'en rend
+//   plus pendant quelques jours. Elle compte aussi comme une fouille.
 // - Sur la route, les chiens abandonnés vont en meutes : rencontre « animaux » deux fois plus probable, 3 à 7 bêtes. Un sentier
 //   est silencieux : rencontres × 0,7.
 // - Véhicules : `source` (ce qu'ils brûlent : carburant, biocarburant pour un moteur modifié, materiaux pour un gazogène, energie
@@ -61,6 +63,7 @@ import { exploiterNature, installationsDuSite, plafondsAbri } from "./abri.mjs";
 import { normaliserStocks, ajouterStocks, plafonner } from "./ressources.mjs";
 import { abandonnerAbri, reprendreAbri } from "./monde.mjs";
 import { phaseDuJour, momentDe } from "./temps.mjs";
+import { chercherPlan, planDuRegistre } from "./plans.mjs";
 import { message, avecPreposition } from "./textes.mjs";
 import { facteurRencontreNuit, facteurDangerNuit, facteurButinNuit } from "./lune.mjs";
 
@@ -172,10 +175,12 @@ export function explorer(monde, contenu, hasard, { region, jour = monde?.jour ??
 // « plantes » (les zerbaz des alentours). abri : system de l'abri (pour la nature des alentours, si la région est celle de
 // l'abri). savoirs : ceux des fouilleurs (le savoir des zerbaz double les plantes cueillies).
 // -> { butin, glane (nourriture glanée, comprise dans butin), trousse (médicament d'une trousse oubliée, compris dans butin),
-//      rencontre, bruit, monde, abri, renseignements, faits, fouille: Boolean (compte pour l'autonomie) }
+//      rencontre, bruit, monde, abri, renseignements, faits, fouille: Boolean (compte pour l'autonomie), plan (clé du registre des
+//      plans ou null : cible « plans ») }
+// connus (cible « plans ») : les clés du carnet que le groupe connaît déjà (un plan connu se trouve moins souvent : on en trouve une copie).
 export const fouilleDesAlentours = cible => NATURE.includes(cible) || cible === "plantes";
 export function fouiller(monde, contenu, hasard, { region, site = null, cible = null, membres = 1, quarts = 1, prudence = "normal", jour = monde?.jour ?? 0,
-  moment = "apres-midi", abri = null, renseignements = {}, savoirs = [], clarte = null, facteurRencontre = 1 } = {}) {
+  moment = "apres-midi", abri = null, renseignements = {}, savoirs = [], clarte = null, facteurRencontre = 1, connus = [] } = {}) {
   const F = REGLES_ACTIONS.fouille;
   const P = REGLES_ACTIONS.plantes;
   const p = F.fraction[prudence] ? prudence : "normal";
@@ -185,8 +190,13 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
   let nouveauMonde = structuredClone(monde);
   let nouvelAbri = abri ? structuredClone(abri) : null;
   const butin = {};
-  let glane = 0, trousse = 0, livre = null;
-  if ((cible === "jardins" || cible === "livres") && nouveauMonde.regions[region]) {
+  let glane = 0, trousse = 0, livre = null, plan = null;
+  if (cible === "plans" && nouveauMonde.regions[region]) {
+    // Lot 4 « Les plans » : un plan à trouver, selon le type du site (plans.mjs).
+    const r = chercherPlan(nouveauMonde, contenu, hasard, { region, site: site ? siteDe(contenu, site) : null, n, prudence: p, jour, connus });
+    nouveauMonde = r.monde;
+    plan = r.plan;
+  } else if ((cible === "jardins" || cible === "livres") && nouveauMonde.regions[region]) {
     // Lot « savoirs » : les jardins des cases (nourriture, boutures, zerbaz) ou un livre qui apprend un savoir-faire.
     const regMonde = nouveauMonde.regions[region];
     const def = regionDe(contenu, region);
@@ -279,14 +289,23 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
   const lu = Object.entries(butin).map(([r, q]) => `${q} ${r}`).join(", ") || "rien";
   const nomSite = site ? siteDe(contenu, site)?.nom ?? site : "";
   const nomLivre = livre ? indexer(contenu).savoirs.get(livre)?.nom ?? livre : "";
+  const defPlan = plan ? planDuRegistre(contenu, plan) : null;
+  const nomPlan = defPlan ? defPlan.nom ?? nomCiblePlan(contenu, defPlan) : "";
   return {
-    butin, glane, trousse, livre, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
+    butin, glane, trousse, livre, plan, rencontre, bruit, monde: nouveauMonde, abri: nouvelAbri,
     renseignements: observer(renseignements, nouveauMonde, contenu, region, jour, "vu"),
     fouille: !fouilleDesAlentours(cible),
     faits: [{ jour, region, cle: site ? "fouille" : "fouille-region", public: true, texte: `Fouille ${site ? `${avecPreposition("de", nomSite)} ` : ""}${avecPreposition("à", nom)} : ${lu}.`,
       params: { region: nom, site: nomSite, butin: { ...butin } } },
-    ...(livre ? [{ jour, region, cle: "livre-trouve", public: true, texte: `Un livre trouvé : il peut apprendre ${nomLivre}.`, params: { savoir: nomLivre } }] : [])]
+    ...(livre ? [{ jour, region, cle: "livre-trouve", public: true, texte: `Un livre trouvé : il peut apprendre ${nomLivre}.`, params: { savoir: nomLivre } }] : []),
+    ...(plan ? [{ jour, region, cle: "plan-trouve", public: true, texte: `Un plan trouvé : ${nomPlan}.`, params: { plan: nomPlan } }] : [])]
   };
+}
+// Le nom d'un plan ordinaire du registre : celui de l'installation ou de la recette qu'il couvre.
+function nomCiblePlan(contenu, def) {
+  if (def.installation) return indexer(contenu).installations.get(def.installation)?.nom ?? def.installation;
+  if (def.recette) return indexer(contenu).recettes.get(def.recette)?.nom ?? def.recette;
+  return def.cle;
 }
 
 // ------------------------------------------------------------------ chemins

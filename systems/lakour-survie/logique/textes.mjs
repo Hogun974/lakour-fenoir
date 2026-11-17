@@ -81,7 +81,12 @@ export const CLES_TEXTES = [
   // chefs.mjs : ce que décide le chef d'une bande
   "chef-attaquer", "chef-negocier", "chef-passer", "chef-ultimatum", "chef-rejoindre",
   // sens.mjs (par etat.mjs) : percevoir dans le noir, la Timise, l'alarme naturelle (lot « sens »)
-  "noir-palier-1", "noir-palier-2", "noir-palier-3", "noir-palier-4", "grenouilles-silence", "noir-horde-entendue", "timise", "timise-reconnue"
+  "noir-palier-1", "noir-palier-2", "noir-palier-3", "noir-palier-4", "grenouilles-silence", "noir-horde-entendue", "timise", "timise-reconnue",
+  // plans.mjs (lot 4 « Les plans ») : un plan trouvé, la fenêtre d'un lieu à plans, l'étagère aux cahiers, les refus
+  "plan-trouve", "plans-fenetre", "etagere-perte-eau",
+  "plan-inconnu", "plan-pas-connu", "plan-deja-appris", "plan-illisible",
+  "plans-fenetre-saison-seche", "plans-fenetre-saison-pluies", "plans-fenetre-lune", "plans-fenetre-cyclone", "plans-fenetre-eruption",
+  "plans-lieu-inconnu", "plans-lieu-revenir", "etagere-absente", "etagere-pleine"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

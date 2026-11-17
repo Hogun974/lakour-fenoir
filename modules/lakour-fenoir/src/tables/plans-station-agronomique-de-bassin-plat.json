@@ -1,0 +1,178 @@
+{
+  "_id": "ef9s7L3ZRxQqwtQd",
+  "_key": "!tables!ef9s7L3ZRxQqwtQd",
+  "name": "Lieu à plans — La station agronomique de Bassin-Plat",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on tire dans ce lieu à plans (La station agronomique de Bassin-Plat, Saint-Louis et Saint-Pierre), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plans-station-agronomique-de-bassin-plat",
+      "plans": "plans-station-agronomique-de-bassin-plat"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "tAGCjP7FmpiLoWmc",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.tAGCjP7FmpiLoWmc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Bassin à tilapias (rareté 50 à 75).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QAAZcKvfsYojxCEc",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.QAAZcKvfsYojxCEc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Bassin à tilapias (rareté 50 à 75).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7LPXVZ8htAfiQaKu",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.7LPXVZ8htAfiQaKu",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Bassin à tilapias (rareté 50 à 75).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pgwhxexYUMnAR6zH",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.pgwhxexYUMnAR6zH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Serre (rareté 30 à 55).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wVYUqReyGTGjwzZQ",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.wVYUqReyGTGjwzZQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Serre (rareté 30 à 55).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gDbOAL8TFGST5Bde",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.gDbOAL8TFGST5Bde",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Verger (rareté 10 à 30).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LFjY7zQpb1pg3mVF",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.LFjY7zQpb1pg3mVF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Verger (rareté 10 à 30).</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HneyaGAAo6iWpTlO",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.HneyaGAAo6iWpTlO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Semences triées (recette) (rareté 20 à 40).</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HLFiFrb9KqpK4Gzh",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.HLFiFrb9KqpK4Gzh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Semences triées (recette) (rareté 20 à 40).</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tiQ6MCrF5A7fVGO9",
+      "_key": "!tables.results!ef9s7L3ZRxQqwtQd.tiQ6MCrF5A7fVGO9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Ruches (rareté 25 à 50).</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

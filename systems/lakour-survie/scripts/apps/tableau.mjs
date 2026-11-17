@@ -103,7 +103,7 @@ export function contexteTableau(onglet = "groupe") {
     groupe, besoins: besoins.map(b => ({ ...b, tacheLibelle: libelleTache(b.tache),
       couvertureLibelle: t(`LAKOUR_SURVIE.Besoins.${b.couverture}`), urgenceTexte: typeof b.urgence === "string" ? b.urgence : "" })),
     pnj: (etat.groupe?.pnj ?? []).map(p => ({ nom: p.nom, etat: p.etat })),
-    plans: (etat.groupe?.plans ?? []).map(k => L.installationDe(c, k)?.nom ?? k),
+    plans: (etat.groupe?.plans ?? []).map(k => L.nomDuPlan(c, k)),   // lot 4 : une installation, ou « recette:<clé> »
     // Lot « fetes » : l'autel (les morts du groupe), ce qui soutient le groupe (souvenirs de fête, vœux, autel), les liens tissés.
     morts: (etat.morts ?? []).map(m => ({ nom: m.nom, etat: t(`LAKOUR_SURVIE.Autel.Etats.${m.repos ? "repos" : m.retrouve ? "deuil" : m.livide ? "livide" : "perdu"}`) })),
     souvenirs: L.souvenirsActifs(etat, jour).map(x => ({ texte: `${t(`LAKOUR_SURVIE.Souvenirs.${x.cle}`)}${x.qui?.length ? ` (${x.qui.map(id => game.actors.get(id)?.name ?? id).join(", ")})` : ""}`,

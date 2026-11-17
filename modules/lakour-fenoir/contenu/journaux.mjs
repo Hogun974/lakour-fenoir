@@ -12,6 +12,7 @@ import { VOIES_AUTONOMIE, INSTALLATIONS } from "./installations.mjs";
 import { texteReputations } from "./reputations.mjs";
 import { PAGES_JOUEUR_ESPRIT, PAGES_MJ_ESPRIT } from "./esprit.mjs";
 import { PAGES_JOUEUR_SENS } from "./sens.mjs";
+import { PAGES_JOUEUR_PLANS } from "./plans.mjs";
 import { FETES_FENOIR } from "../scripts/fetes.js";
 import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES, COURS_TEXTE } from "./marche.mjs";
 import { EVENEMENTS } from "./evenements.mjs";
@@ -135,6 +136,7 @@ Le meilleur endroit change avec le temps : au début, les Hauts semblent sûrs e
   { cle: "passes", titre: "Les passés", texte: PASSES.map(p => `**${p.name}** — ${sansBalises(p.system.description)} *Compétences : ${Object.entries(p.system.competences).map(([c, n]) => `${c} ${n}`).join(", ")}.*`).join("\n\n") },
   ...PAGES_JOUEUR_ESPRIT,
   ...PAGES_JOUEUR_SENS,
+  ...PAGES_JOUEUR_PLANS,
   { cle: "traits", titre: "Les traits", texte: TRAITS.map(t => `**${t.nom}** — ${sansBalises(t.description)}${t.incompatibles.length ? ` *(Incompatible : ${t.incompatibles.map(c => TRAITS.find(x => x.cle === c)?.nom ?? c).join(", ")}.)*` : ""}`).join("\n\n") }
 ] });
 

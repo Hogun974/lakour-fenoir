@@ -303,6 +303,17 @@
       "en": "<p>A kitchen knife or a cane-knife blade lashed to the end of a bamboo pole: you strike through a fence without coming close.</p>"
     }
   },
+  "equipements/OvB4CqD6YEeHulAh": {
+    "_nom": "Copie de plan",
+    "name": {
+      "fr": "Copie de plan",
+      "en": "Plan copy"
+    },
+    "system.description": {
+      "fr": "<p>Quelques feuilles pliées en quatre : un schéma coté, la liste de ce qu'il faut, l'ordre des gestes, parfois une main qui a écrit « attention » dans la marge. Celui qui a le savoir-faire qu'il demande le lit et le note au carnet du groupe ; les autres le gardent pour plus tard, ou pour quelqu'un d'autre. Un plan connu fait bâtir avec un quart de matériaux en moins et la moitié du travail. Il se recopie, il se troque.</p>",
+      "en": "<p>A few sheets folded in four: a dimensioned drawing, the list of what is needed, the order of the steps, sometimes a hand that wrote “careful” in the margin. Whoever has the know-how it calls for reads it and writes it into the group's notebook; the others keep it for later, or for someone else. A known plan lets you build with a quarter less material and half the work. It can be copied, it can be traded.</p>"
+    }
+  },
   "equipements/R0G71qo20r7WKfk2": {
     "_nom": "Natte de vacoa",
     "name": {
@@ -334,6 +345,17 @@
     "system.description": {
       "fr": "<p>Un bout de bois de goyavier fendu, une ligature de fil : le linge sèche au vent au lieu de traîner. Trois fois rien, et la cour ressemble de nouveau à une cour.</p>",
       "en": "<p>A split stick of guava wood, a twist of wire: the washing dries in the wind instead of lying about. Next to nothing, and the yard looks like a yard again.</p>"
+    }
+  },
+  "equipements/To7XMo05JkOKuHtY": {
+    "_nom": "Cahier de l'électricien de la centrale",
+    "name": {
+      "fr": "Cahier de l'électricien de la centrale",
+      "en": "The power station electrician's notebook"
+    },
+    "system.description": {
+      "fr": "<p>Un registre cartonné de la salle des machines, avec, au dos des relevés de turbine, ce qu'un technicien a noté pour lui seul pendant vingt ans : comment faire tourner une petite turbine sur un filet d'eau, réparer un régulateur, ménager une batterie qui fatigue, câbler des panneaux sans tout griller. Il n'en existe qu'un ; il ne se recopie pas.</p>",
+      "en": "<p>A cardboard-bound logbook from the machine hall, with, on the back of the turbine readings, what a technician noted for himself alone for twenty years: how to run a small turbine on a trickle of water, repair a charge controller, spare a tiring battery, wire panels without frying everything. There is only one; it cannot be copied.</p>"
     }
   },
   "equipements/VPX4NAJ9P5XDCfKL": {
@@ -477,6 +499,17 @@
     "system.description": {
       "fr": "<p>Le sac d'un ambulancier ou d'un pompier : oxygène, attelles, matériel de suture, perfusions, tensiomètre.</p>",
       "en": "<p>A paramedic's or a firefighter's bag: oxygen, splints, suture kit, drips, blood-pressure cuff.</p>"
+    }
+  },
+  "equipements/kT4EhMvNaNdebEMl": {
+    "_nom": "Carnet du fontainier",
+    "name": {
+      "fr": "Carnet du fontainier",
+      "en": "The well-keeper's notebook"
+    },
+    "system.description": {
+      "fr": "<p>Un carnet à spirale gondolé par l'humidité, couvert d'une écriture serrée et de croquis à l'encre bleue : les sources des remparts, où l'eau dort sous la roche, la pente qu'il faut à une conduite de bambou pour ne jamais se boucher, la façon de cuveler un puits dans la terre rouge. Celui qui l'a tenu a passé quarante ans à amener l'eau dans les îlets. Il n'en existe qu'un ; il ne se recopie pas, il se lit à côté de celui qui le tient.</p>",
+      "en": "<p>A spiral notebook warped by damp, covered in tight handwriting and blue-ink sketches: the springs of the ramparts, where water sleeps under the rock, the slope a bamboo pipe needs so it never clogs, how to line a well in the red earth. The man who kept it spent forty years bringing water to the îlets. There is only one; it cannot be copied, it is read beside whoever holds it.</p>"
     }
   },
   "equipements/kxJoDbSlvEmKK5Bi": {

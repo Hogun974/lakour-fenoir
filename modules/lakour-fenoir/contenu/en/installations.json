@@ -263,6 +263,17 @@
       "en": "<p>A tunnel of plastic or salvaged panes over hoops: sheltered from the driving rains of the East and the cold of the Highlands, tomatoes, lettuces and seedlings grow all year round. The plastic shines in the sun.</p>"
     }
   },
+  "installations/USvYYsn77JVCHiKr": {
+    "_nom": "Étagère aux cahiers",
+    "name": {
+      "fr": "Étagère aux cahiers",
+      "en": "Notebook shelf"
+    },
+    "system.description": {
+      "fr": "<p>Deux planches contre le mur le plus sec, une caisse à munitions qui ferme, des sachets de riz vides pour garder les feuilles du jus de la case : c'est là qu'on range les plans recopiés, les cahiers et les carnets trouvés. Tout le monde peut y lire, tout le monde peut y apprendre. Une étagère, ça se vole, et ça brûle. Au second niveau, un coffre étanche caché sous le plancher : ni le feu, ni l'eau, et un voleur pressé n'y trouve presque rien.</p>",
+      "en": "<p>Two planks against the driest wall, an ammunition crate that closes, empty rice bags to keep the pages from the damp of the case: this is where copied plans, notebooks and found exercise books are put away. Everyone can read there, everyone can learn there. A shelf can be stolen, and it burns. At the second level, a watertight chest hidden under the floor: no fire, no water, and a thief in a hurry finds almost nothing there.</p>"
+    }
+  },
   "installations/UgGo9sTV5xrqQHGo": {
     "_nom": "Jardin créole",
     "name": {

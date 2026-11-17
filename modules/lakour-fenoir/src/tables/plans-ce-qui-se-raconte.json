@@ -1,0 +1,178 @@
+{
+  "_id": "8NBXiNWF1IIhRmde",
+  "_key": "!tables!8NBXiNWF1IIhRmde",
+  "name": "Plans — ce qui se raconte",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on entend sur les lieux à plans et sur le troc des plans, au marché, à la radio, à la veillée. Le MJ en fait courir un quand une fenêtre s'ouvre (journal secret : « La fenêtre s'ouvre »).</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plans-ce-qui-se-raconte",
+      "plans": "plans-ce-qui-se-raconte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "U4UCTAEuhKmWxj5h",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.U4UCTAEuhKmWxj5h",
+      "type": "text",
+      "name": "",
+      "description": "<p>La salle des machines de Takamaka (L'Est : Saint-André, Saint-Benoît, Sainte-Rose) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller en saison sèche, quand la rivière des Marsouins est basse.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "w3cufD9FaPGKrBf6",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.w3cufD9FaPGKrBf6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le relais des crêtes du Maïdo (Les Hauts de l'Ouest) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller en saison sèche, les matins clairs où la brume tarde à monter.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LNkVzPX9AdHBus1b",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.LNkVzPX9AdHBus1b",
+      "type": "text",
+      "name": "",
+      "description": "<p>L'îlet sans route de Roche-Plate (Mafate) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent que le chemin coûte plus que ce qu'on rapporte, sauf quand on rapporte le bon cahier.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "rNlKuEUAIXxsfFfQ",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.rNlKuEUAIXxsfFfQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>La station agronomique de Bassin-Plat (Saint-Louis et Saint-Pierre) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller à la nouvelle lune, quand on traverse les serres sans être vu.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8qDdhYNnjGA6GxUD",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.8qDdhYNnjGA6GxUD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le laboratoire de la distillerie de Bois-Rouge (L'Est : Saint-André, Saint-Benoît, Sainte-Rose) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller à la nouvelle lune, par nuit noire.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pIBOBK7HVkmvtfTk",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.pIBOBK7HVkmvtfTk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les tunnels de lave de l'Enclos (Le Piton de la Fournaise et la Plaine des Sables) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller entre deux coulées : jamais pendant une éruption, ni dans les trois jours qui suivent.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vUctN9Nh1QmPwpij",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.vUctN9Nh1QmPwpij",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les conteneurs éventrés du Port Est (Le Port et La Possession) : « Paraît qu'il reste là-bas tout ce qu'il faut savoir, sur papier. » Ceux qui y sont allés disent qu'il faut y aller dans la semaine qui suit un cyclone, quand la houle a couché les piles.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "q0b21B79DmV0ivSo",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.q0b21B79DmV0ivSo",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un marchand jure qu'il a vu, sur un étal du marché, le carnet d'un fontainier de Mafate, et qu'on en voulait plus qu'un cabri.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9WTrKCNdBYYEYPjz",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.9WTrKCNdBYYEYPjz",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Les plans, ça se garde au sec et ça se recopie deux fois. Celui qui a qu'un exemplaire en a zéro. » (Un vieux du Tampon, qui a perdu les siens dans un incendie.)</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "OvTWRgzNT5dTIgSC",
+      "_key": "!tables.results!8NBXiNWF1IIhRmde.OvTWRgzNT5dTIgSC",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un groupe des Hauts échangerait, dit-on, une copie de n'importe quel plan contre des graines, à condition qu'on lui en apprenne un autre à la veillée.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

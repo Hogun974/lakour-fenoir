@@ -31,17 +31,18 @@ import { HISTOIRES } from "./histoires.mjs";
 import { TABLES_SENS, JOURNAL_SENS } from "./sens.mjs";
 import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
 import { LOT_AFFAIRES } from "./affaires.mjs";
+import { INSTALLATIONS_PLANS, EQUIPEMENTS_PLANS, PLANS_CONSTRUCTION, LIEUX_A_PLANS, TABLES_PLANS, JOURNAL_PLANS, sitesAvecPlans } from "./plans.mjs";
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
 const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJournal("guides", CLE_JOURNAL_REGIONS), pageId: idPage("guides", CLE_JOURNAL_REGIONS, r.cle) }]));
 export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 
 export const DOCUMENTS = [
-  ...INSTALLATIONS, ...SAVOIRS, ...EQUIPEMENTS, ...PASSES, ...RECETTES, ...AFFLICTIONS,
+  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...SAVOIRS, ...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...PASSES, ...RECETTES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
   ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
-  ...TABLES_SENS,
+  ...TABLES_SENS, ...TABLES_PLANS,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -53,8 +54,8 @@ export function donnees() {
   return {
     module: MODULE, version: 1,
     // Lot 12 : ce qu'on comprend en arrivant dans chaque région (une ligne pour le MJ, contenu/affaires.mjs).
-    regions: REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" })), sites: SITES, routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
-    installations: INSTALLATIONS.map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: EQUIPEMENTS.map(aPlat), passes: PASSES.map(aPlat),
+    regions: REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" })), sites: sitesAvecPlans(SITES), routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
+    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS].map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: [...EQUIPEMENTS, ...EQUIPEMENTS_PLANS].map(aPlat), passes: PASSES.map(aPlat),
     recettes: RECETTES.map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
     factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
     religions: RELIGIONS, ancrages: ANCRAGES,
@@ -75,6 +76,9 @@ export function donnees() {
     // Lot 11 « histoires » (§16) : les phrases d'histoire des survivants, tirées par le générateur (logique/histoires.mjs).
     histoires: HISTOIRES,
     // Lot 12 « Affaires, récits et fêtes » (contrat §17) : les affaires de l'île, lues par la logique (logique/affaires.mjs) et le MJ IA.
-    affaires: LOT_AFFAIRES.affaires
+    affaires: LOT_AFFAIRES.affaires,
+    // Lot 4 « Les plans » (contrat §21 ; logique/plans.mjs) : les plans qu'on trouve (rareté, lieux, plans uniques) et les lieux à plans
+    // rares ; les plans propres d'un site sont dans sites[].plans.
+    plans: PLANS_CONSTRUCTION, lieuxAPlans: LIEUX_A_PLANS
   };
 }

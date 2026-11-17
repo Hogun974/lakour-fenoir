@@ -274,6 +274,90 @@
         <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
       </div>
     </div>
+    {{#if plans}}
+    <h3 class="survie-titre-bloc"><i class="fa-solid fa-scroll"></i> {{localize "LAKOUR_SURVIE.Plans.Titre"}}</h3>
+    <p class="survie-aide">{{localize "LAKOUR_SURVIE.Plans.Aide"}}</p>
+    <ul class="survie-liste-simple">
+      <li><strong>{{localize "LAKOUR_SURVIE.Plans.Carnet"}}</strong> : {{plans.carnet}}</li>
+      {{#each plans.parCoeur}}<li><strong>{{localize "LAKOUR_SURVIE.Plans.ParCoeur"}}</strong> : {{this}}</li>{{/each}}
+      {{#each plans.papiers}}<li><strong>{{localize "LAKOUR_SURVIE.Plans.Papiers"}}</strong> : {{this}}</li>{{/each}}
+      {{#if plans.etagere.sans}}<li>{{localize "LAKOUR_SURVIE.Plans.SansEtagere"}}</li>{{else}}<li><strong>{{plans.etagere.titre}}</strong>{{#if plans.etagere.protege}} ({{localize "LAKOUR_SURVIE.Plans.EtagereProtegee"}}){{/if}}{{#each plans.etagere.papiers}} · {{this}}{{/each}}</li>{{/if}}
+    </ul>
+    <h4>{{localize "LAKOUR_SURVIE.Plans.Lieux"}}</h4>
+    <ul class="survie-liste-simple">{{#each plans.lieux}}<li>{{#if ici}}★ {{/if}}<strong>{{nom}}</strong> ({{region}}) — {{garde}}{{#if fenetre}}, {{fenetre}}{{/if}} : <em>{{etat}}</em></li>{{/each}}</ul>
+    <div class="survie-formulaires">
+      <div class="survie-formulaire" data-forme="lieuAPlans">
+        <h3><i class="fa-solid fa-mountain"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.lieuAPlans"}}</h3>
+        <p class="survie-aide">{{localize "LAKOUR_SURVIE.Plans.AideLieu"}}</p>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Lieu"}} <select name="lieu">{{#each plans.optionsLieux}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.MJ.Quarts"}} <input type="number" name="quarts" value="2" min="1" max="8"></label>
+        <label>{{localize "LAKOUR_SURVIE.MJ.Qui"}} <select name="membres" multiple>{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="lirePlan">
+        <h3><i class="fa-solid fa-book-open-reader"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.lirePlan"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Papier"}} <select name="papier">{{#each plans.optionsPapiers}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="copierPlan">
+        <h3><i class="fa-solid fa-copy"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.copierPlan"}}</h3>
+        <p class="survie-aide">{{localize "LAKOUR_SURVIE.Plans.AideCopier"}}</p>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Plan"}} <select name="plan">{{#each plans.optionsCopiables}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Scribe"}} <select name="acteur">{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="enseignerPlan">
+        <h3><i class="fa-solid fa-brain"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.enseignerPlan"}}</h3>
+        <p class="survie-aide">{{localize "LAKOUR_SURVIE.Plans.AideEnseigner"}}</p>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Plan"}} <select name="plan">{{#each plans.optionsConnus}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Eleve"}} <select name="acteur">{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="rangerPlan">
+        <h3><i class="fa-solid fa-box-archive"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.rangerPlan"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Papier"}} <select name="papier">{{#each plans.optionsPapiers}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="prendrePlan">
+        <h3><i class="fa-solid fa-hand-holding"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.prendrePlan"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Rangement"}} <select name="rangement">{{#each plans.optionsEtagere}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Porteur"}} <select name="acteur">{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="perdreEtagere">
+        <h3><i class="fa-solid fa-fire"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.perdreEtagere"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Cause"}} <select name="cause">{{#each plans.optionsCauses}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="donnerPlan">
+        <h3><i class="fa-solid fa-handshake"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.donnerPlan"}}</h3>
+        <p class="survie-aide">{{localize "LAKOUR_SURVIE.Plans.AideTroc"}}</p>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Papier"}} <select name="papier">{{#each plans.optionsPapiers}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.A"}} <input type="text" name="a"></label>
+        <fieldset><legend>{{localize "LAKOUR_SURVIE.Plans.Champs.Contre"}}</legend>{{#each ressources}}<label>{{libelle}} <input type="number" name="contre.{{cle}}" value="0" min="0"></label>{{/each}}</fieldset>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="recevoirPlan">
+        <h3><i class="fa-solid fa-envelope-open-text"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.recevoirPlan"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Plan"}} <select name="plan">{{#each plans.optionsRecevoir}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Porteur"}} <select name="acteur">{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.De"}} <input type="text" name="de"></label>
+        <fieldset><legend>{{localize "LAKOUR_SURVIE.Plans.Champs.Contre"}}</legend>{{#each ressources}}<label>{{libelle}} <input type="number" name="contre.{{cle}}" value="0" min="0"></label>{{/each}}</fieldset>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="noterPlan">
+        <h3><i class="fa-solid fa-pen"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.noterPlan"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Plan"}} <select name="plan">{{#each plans.optionsCibles}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+      <div class="survie-formulaire" data-forme="reprendrePlans">
+        <h3><i class="fa-solid fa-person-praying"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.reprendrePlans"}}</h3>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Mort"}} <select name="mort">{{#each plans.optionsSurvivants}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <label>{{localize "LAKOUR_SURVIE.Plans.Champs.Porteur"}} <select name="acteur">{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+        <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+      </div>
+    </div>
+    {{/if}}
     {{/if}}
 
     {{#if (eq onglet "communaute")}}

@@ -40,6 +40,7 @@
         </div>
         {{/if}}
         {{#if noir}}<p class="survie-noir" data-tooltip="{{localize 'LAKOUR_SURVIE.Percevoir.Accoutumance.Aide'}}"><i class="fa-solid fa-ear-listen"></i> {{localize "LAKOUR_SURVIE.Percevoir.Accoutumance.Fiche" palier=noir.palier n=noir.nuits}}</p>{{/if}}
+        {{#if parCoeur}}<p class="survie-par-coeur"><i class="fa-solid fa-scroll"></i> {{parCoeur}}</p>{{/if}}
         {{#if afflictions.length}}
         <h4>{{localize "LAKOUR_SURVIE.Fiche.Afflictions"}}</h4>
         <ul class="survie-puces">

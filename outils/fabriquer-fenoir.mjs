@@ -29,6 +29,7 @@ import { IMAGES_FETES, EFFET_FETE, FETES_HORS_SOCLE } from "../modules/lakour-fe
 import { COMMUNAUTES } from "../systems/lakour-survie/logique/fetes.mjs";
 import { verifierHistoires } from "../systems/lakour-survie/logique/histoires.mjs";
 import { erreursAffaire } from "../systems/lakour-survie/logique/affaires.mjs";
+import { erreursPlans } from "../systems/lakour-survie/logique/plans.mjs";
 import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_DECLINABLES, IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
@@ -649,6 +650,11 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
       for (const k of famille.keys()) if (!vus.has(k)) e(`histoires : ${type} « ${k} » sans phrases`);
     }
   }
+
+  // Lot 4 « Les plans » (contrat §21 ; logique/plans.mjs) : rareté, cibles connues, plans uniques et leur objet, plans des sites, lieux à
+  // plans (région, garde, fenêtre, tirage d'au moins trois plans dont un rare).
+  for (const x of erreursPlans(d)) e(x);
+  if ((d.plans ?? []).length && !(d.lieuxAPlans ?? []).length) e("plans : aucun lieu à plans");
 
   // Aucun terme interdit dans tout le registre.
   const interdits = termesInterdits(JSON.stringify(d));

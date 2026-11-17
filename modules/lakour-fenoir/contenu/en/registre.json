@@ -6991,6 +6991,135 @@
       "en": "{She|He} never could look down from the Maïdo: {she|he} looks at {her|his} shoes."
     }
   },
+  "registre/lieuxAPlans/conteneurs-du-port-est": {
+    "_nom": "Les conteneurs éventrés du Port Est",
+    "nom": {
+      "fr": "Les conteneurs éventrés du Port Est",
+      "en": "The broken-open containers of Port Est"
+    },
+    "description": {
+      "fr": "Sur les quais du Port Est, des milliers de conteneurs en piles. La plupart sont fermés, plombés, trop lourds à ouvrir sans grue. Mais quand un cyclone passe, la houle et le vent en couchent des rangées entières sur le quai, et les portes s'ouvrent : du matériel neuf, avec ses notices et ses plans de montage.",
+      "en": "On the quays of Port Est, thousands of containers in stacks. Most are closed, sealed, too heavy to open without a crane. But when a cyclone passes, the swell and the wind knock whole rows of them over onto the quay, and the doors burst open: new equipment, with its instructions and assembly plans."
+    },
+    "garde.texte": {
+      "fr": "Les dockers et les marins de garde au jour zéro, et ceux que la mer a ramenés dans la darse : des noyés lents et gonflés qui sortent de l'eau quand on fait du bruit. Ouvrir une porte tordue est un test d'endurance normal, et chaque coup de barre à mine s'entend ; sur un échec, il faut forcer, et ils viennent.",
+      "en": "The dockers and sailors on duty on day zero, and those the sea has brought back into the dock: slow, bloated drowned ones that come out of the water when there is noise. Opening a twisted door is a normal endurance test, and every blow of the crowbar can be heard; on a failure, it has to be forced, and they come."
+    },
+    "fenetreTexte": {
+      "fr": "dans la semaine qui suit un cyclone, quand la houle a couché les piles",
+      "en": "in the week after a cyclone, when the swell has knocked the stacks over"
+    }
+  },
+  "registre/lieuxAPlans/distillerie-de-bois-rouge": {
+    "_nom": "Le laboratoire de la distillerie de Bois-Rouge",
+    "nom": {
+      "fr": "Le laboratoire de la distillerie de Bois-Rouge",
+      "en": "The Bois-Rouge distillery laboratory"
+    },
+    "description": {
+      "fr": "Derrière la sucrerie, la distillerie et son laboratoire : alambics, colonnes, cuves de mélasse, et dans un bureau vitré les dossiers des ingénieurs, comment tirer de l'alcool de la canne, comment faire tourner un moteur avec. Le jour zéro tombait en pleine fin de campagne sucrière ; les équipes de nuit ne sont jamais rentrées chez elles.",
+      "en": "Behind the sugar mill, the distillery and its laboratory: stills, columns, molasses vats, and in a glass-walled office the engineers' files, how to draw alcohol from cane, how to run an engine on it. Day zero fell at the very end of the sugar campaign; the night shifts never went home."
+    },
+    "garde.texte": {
+      "fr": "Les ouvriers de la dernière campagne, des dizaines, entre les cuves et sous les colonnes, et parmi eux quelques coureurs qui n'ont rien perdu de leur vitesse. On ne s'y risque que par nuit noire, sans lumière : un test de discrétion difficile ; sur un échec, les coureurs d'abord, puis tous les autres.",
+      "en": "The workers of the last campaign, dozens of them, between the vats and under the columns, and among them a few runners who have lost none of their speed. Only on a pitch-dark night, without light: a difficult stealth test; on a failure, the runners first, then all the others."
+    },
+    "fenetreTexte": {
+      "fr": "à la nouvelle lune, par nuit noire",
+      "en": "at the new moon, on a pitch-dark night"
+    }
+  },
+  "registre/lieuxAPlans/ilet-de-roche-plate": {
+    "_nom": "L'îlet sans route de Roche-Plate",
+    "nom": {
+      "fr": "L'îlet sans route de Roche-Plate",
+      "en": "The roadless îlet of Roche-Plate"
+    },
+    "description": {
+      "fr": "Au fond de Mafate, sous le Maïdo, un îlet où l'on ne vient qu'à pied par des sentiers à flanc de rempart. Ici, l'eau a toujours été une affaire de patience : captages dans la roche, conduites de bambou, bassins, un vieux fontainier qui savait tout. Les cases se taisent depuis le jour zéro ; dans l'une d'elles, il reste son carnet.",
+      "en": "Deep in Mafate, below the Maïdo, an îlet (a hamlet) that can only be reached on foot by trails along the rampart. Here, water has always been a matter of patience: catchments in the rock, bamboo pipes, basins, an old well-keeper who knew everything. The cases have been silent since day zero; in one of them, his notebook is still there."
+    },
+    "garde.texte": {
+      "fr": "Trois heures de descente par le sentier de la Brèche, autant pour remonter, avec ce qu'on porte. Un test d'endurance difficile ; sur un échec, une cheville tordue (une blessure) ou une journée de plus. Dans les cases du haut, quelques Livides des Hauts, gardés par le froid depuis des mois, attendent sans bouger.",
+      "en": "Three hours down the Brèche trail, as many back up, carrying what you take. A difficult endurance test; on a failure, a twisted ankle (a wound) or one more day. In the upper cases, a few Highland Pallid, kept by the cold for months, wait without moving."
+    }
+  },
+  "registre/lieuxAPlans/relais-des-cretes-du-maido": {
+    "_nom": "Le relais des crêtes du Maïdo",
+    "nom": {
+      "fr": "Le relais des crêtes du Maïdo",
+      "en": "The Maïdo ridge relay station"
+    },
+    "description": {
+      "fr": "Au bout de la route du Maïdo, sur l'arête qui tombe à pic sur Mafate, des pylônes, des paraboles et des cabanes de béton pleines d'armoires : les relais qui portaient la radio, la télévision et les téléphones de l'Ouest. Il y a là des classeurs de schémas, des notices de maintenance, des manuels que personne n'a ouverts depuis des années.",
+      "en": "At the end of the Maïdo road, on the ridge that drops sheer into Mafate, pylons, dishes and concrete huts full of cabinets: the relays that carried radio, television and the telephones of the West. There are binders of diagrams, maintenance notes, manuals nobody has opened in years."
+    },
+    "garde.texte": {
+      "fr": "La brume monte de Mafate vers midi et noie tout en un quart d'heure ; le rempart est à trois pas, sans garde-corps ; la nuit, il gèle presque. Un test de survie difficile pour s'y retrouver dans la brume et redescendre avant la nuit ; sur un échec, on passe la nuit là-haut (fatigue +2) ou l'on se perd vers le bord. Les Livides des Hauts, conservés par le froid, errent lentement autour des cabanes.",
+      "en": "Mist rises from Mafate around noon and drowns everything in a quarter of an hour; the rampart is three steps away, with no railing; at night it almost freezes. A difficult survival test to find your way in the mist and get down before nightfall; on a failure, the night is spent up there (fatigue +2) or someone strays towards the edge. Highland Pallid, preserved by the cold, wander slowly around the huts."
+    },
+    "fenetreTexte": {
+      "fr": "en saison sèche, les matins clairs où la brume tarde à monter",
+      "en": "in the dry season, on clear mornings when the mist is slow to rise"
+    }
+  },
+  "registre/lieuxAPlans/salle-des-machines-de-takamaka": {
+    "_nom": "La salle des machines de Takamaka",
+    "nom": {
+      "fr": "La salle des machines de Takamaka",
+      "en": "The Takamaka machine hall"
+    },
+    "description": {
+      "fr": "Au fond de la gorge de la rivière des Marsouins, sous des remparts de six cents mètres qui ruissellent de cascades, la petite centrale de Takamaka : une salle des machines, des bureaux, des armoires de plans et de registres. On y descend par l'ancien escalier des techniciens, des centaines de marches mouillées, puis on longe l'eau. C'est l'endroit le plus humide de l'île ; c'est aussi là qu'on savait faire de la lumière avec une rivière.",
+      "en": "At the bottom of the Rivière des Marsouins gorge, under six-hundred-metre ramparts streaming with waterfalls, the small Takamaka power station: a machine hall, offices, cabinets of plans and logbooks. You go down by the old technicians' stairway, hundreds of wet steps, then along the water. It is the wettest place on the island; it is also where people knew how to make light out of a river."
+    },
+    "garde.texte": {
+      "fr": "La descente et la remontée (une demi-journée chacune, les jambes en feu), les marches couvertes de mousse, et surtout la rivière : il suffit d'une averse dans les Hauts pour qu'elle monte d'un mètre en une heure. Un test d'endurance difficile pour descendre ; sur un échec, une blessure (une glissade) ou une nuit de plus en bas. Si la pluie tombe là-haut pendant qu'on y est, la remontée devient une course.",
+      "en": "The way down and the way back up (half a day each, legs on fire), the moss-covered steps, and above all the river: one downpour in the Highlands and it rises a metre in an hour. A difficult endurance test to go down; on a failure, a wound (a slip) or one more night at the bottom. If rain falls up there while the group is down, the climb back becomes a race."
+    },
+    "fenetreTexte": {
+      "fr": "en saison sèche, quand la rivière des Marsouins est basse",
+      "en": "in the dry season, when the Rivière des Marsouins runs low"
+    }
+  },
+  "registre/lieuxAPlans/station-agronomique-de-bassin-plat": {
+    "_nom": "La station agronomique de Bassin-Plat",
+    "nom": {
+      "fr": "La station agronomique de Bassin-Plat",
+      "en": "The Bassin-Plat agricultural station"
+    },
+    "description": {
+      "fr": "Sur les pentes au-dessus de Saint-Pierre, une station de recherche agricole : des serres, des bassins d'essai, des vergers numérotés, une bibliothèque de fiches techniques et une banque de semences. Au jour zéro, on y a regroupé des malades des quartiers voisins, en quarantaine dans les logements du personnel. La quarantaine n'a pas tenu.",
+      "en": "On the slopes above Saint-Pierre, an agricultural research station: greenhouses, trial ponds, numbered orchards, a library of technical sheets and a seed bank. On day zero, the sick from the nearby neighbourhoods were gathered there, quarantined in the staff housing. The quarantine did not hold."
+    },
+    "garde.texte": {
+      "fr": "Les anciens malades de la quarantaine errent entre les serres et les logements, une bonne douzaine, et le moindre bruit de verre les rassemble. On traverse à la nuit noire, sans lumière, de serre en serre : un test de discrétion difficile ; sur un échec, ils viennent tous.",
+      "en": "The former quarantine patients wander between the greenhouses and the housing, a good dozen of them, and the slightest sound of glass draws them all. You cross on a pitch-dark night, without light, from greenhouse to greenhouse: a difficult stealth test; on a failure, they all come."
+    },
+    "fenetreTexte": {
+      "fr": "à la nouvelle lune, quand on traverse les serres sans être vu",
+      "en": "at the new moon, when you can cross the greenhouses unseen"
+    }
+  },
+  "registre/lieuxAPlans/tunnels-de-l-enclos": {
+    "_nom": "Les tunnels de lave de l'Enclos",
+    "nom": {
+      "fr": "Les tunnels de lave de l'Enclos",
+      "en": "The lava tubes of the Enclos"
+    },
+    "description": {
+      "fr": "Dans l'Enclos du volcan, sous les coulées récentes, des tunnels de lave où les volcanologues avaient posé des instruments et où des spéléologues tenaient leurs carnets : comment on étaye une voûte de basalte, où l'air circule, comment on aménage une galerie qui ne s'effondre pas. Leur abri de toile est resté au fond, avec les cahiers.",
+      "en": "In the volcano's Enclos, under the recent lava flows, lava tubes where volcanologists had set up instruments and where cavers kept their notebooks: how to shore up a basalt vault, where the air moves, how to fit out a gallery that does not collapse. Their canvas shelter is still at the far end, with the notebooks."
+    },
+    "garde.texte": {
+      "fr": "Le noir complet, la roche coupante, les voûtes qui s'effritent, et parfois une poche d'air qui sent le soufre. Un test d'endurance difficile (ramper, porter la lumière, garder son calme) ; sur un échec, une blessure (une chute, une coupure) ou la panique qui fait rebrousser chemin. Jamais pendant une éruption.",
+      "en": "Complete darkness, cutting rock, crumbling vaults, and sometimes a pocket of air that smells of sulphur. A difficult endurance test (crawling, carrying the light, keeping calm); on a failure, a wound (a fall, a cut) or the panic that turns you back. Never during an eruption."
+    },
+    "fenetreTexte": {
+      "fr": "entre deux coulées : jamais pendant une éruption, ni dans les trois jours qui suivent",
+      "en": "between two lava flows: never during an eruption, nor in the three days that follow"
+    }
+  },
   "registre/marchands/armand-de-sainte-croix": {
     "_nom": "Monsieur Armand de Sainte-Croix",
     "nom": {
@@ -7359,6 +7488,31 @@
     "description": {
       "fr": "<p>Le dimanche matin, avant la chaleur : poisson des Barques, soins du Dispensaire, la boutique Thiaw-Kine qui monte un étal, la tisaneuse, le réparateur de radios. Le conseil s'assoit sous le kiosque ; Gérard Payet le préside, Lalao Rasoanaivo tient le cours.</p>",
       "en": "<p>Sunday morning, before the heat: fish from the Boats, care from the Dispensary, the Thiaw-Kine shop setting up a stall, the herbalist, the radio repairer. The council sits under the bandstand; Gérard Payet chairs it, Lalao Rasoanaivo keeps the rate.</p>"
+    }
+  },
+  "registre/plans/cahier-de-l-electricien": {
+    "_nom": "Cahier de l'électricien de la centrale",
+    "description": {
+      "fr": "Le registre d'un technicien de la salle des machines, et tout ce qu'il y a noté pour lui seul. Il n'en existe qu'un, et il est resté au fond de la gorge.",
+      "en": "The logbook of a technician from the machine hall, and everything he noted there for himself alone. There is only one, and it stayed at the bottom of the gorge."
+    }
+  },
+  "registre/plans/cahier-de-tisanes-de-la-gramoune": {
+    "_nom": "Cahier de tisanes d'une gramoune",
+    "nom": {
+      "fr": "Cahier de tisanes d'une gramoune",
+      "en": "A gramoune's herbal tea notebook"
+    },
+    "description": {
+      "fr": "Un cahier d'écolier aux pages jaunies, retrouvé au fond d'une armoire de case : les tisanes d'une gramoune morte avant le jour zéro, avec ses mots à elle. Ayapana pour le ventre, citronnelle pour la fièvre, bois de quivi, faham, les doses comptées « en cuillères à café de mon fils ». Il n'en existe qu'un.",
+      "en": "A school exercise book with yellowed pages, found at the back of a cupboard in a case: the herbal teas of a gramoune (an old woman) who died before day zero, in her own words. Ayapana for the stomach, lemongrass for fever, bois de quivi, faham, the doses counted “in my son's teaspoons”. There is only one."
+    }
+  },
+  "registre/plans/carnet-du-fontainier": {
+    "_nom": "Carnet du fontainier",
+    "description": {
+      "fr": "Le carnet d'un fontainier des îlets : quarante ans à amener l'eau là où les routes ne vont pas. Il n'en existe qu'un, et il ne se trouve qu'au bout des sentiers.",
+      "en": "The notebook of a well-keeper of the îlets: forty years bringing water where the roads do not go. There is only one, and it is only found at the end of the trails."
     }
   },
   "registre/recrues": {

@@ -1,0 +1,163 @@
+{
+  "_id": "frqhoo0i4jq53Fnx",
+  "_key": "!tables!frqhoo0i4jq53Fnx",
+  "name": "Lieu à plans — Les conteneurs éventrés du Port Est",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on tire dans ce lieu à plans (Les conteneurs éventrés du Port Est, Le Port et La Possession), une fois la garde passée. Chaque ligne compte selon son poids. Le système tire lui-même (lieuAPlans) ; cette table sert au MJ qui joue sans l'API.</p>",
+  "formula": "1d9",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plans-conteneurs-du-port-est",
+      "plans": "plans-conteneurs-du-port-est"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "d7eyyDVvKz2EDOc1",
+      "_key": "!tables.results!frqhoo0i4jq53Fnx.d7eyyDVvKz2EDOc1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Éolienne de récupération (rareté 50 à 75).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "naZR0r1SYGSsI2Hk",
+      "_key": "!tables.results!frqhoo0i4jq53Fnx.naZR0r1SYGSsI2Hk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Éolienne de récupération (rareté 50 à 75).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ePoMjrJU4GCyGbSC",
+      "_key": "!tables.results!frqhoo0i4jq53Fnx.ePoMjrJU4GCyGbSC",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Panneaux solaires (rareté 30 à 55).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vnsNZ7hPaUbRwKDz",
+      "_key": "!tables.results!frqhoo0i4jq53Fnx.vnsNZ7hPaUbRwKDz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Panneaux solaires (rareté 30 à 55).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "78gphHxHtfrJLn98",
+      "_key": "!tables.results!frqhoo0i4jq53Fnx.78gphHxHtfrJLn98",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Batteries (rareté 35 à 60).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "rfNFCo6UoblQKZeH",
+      "_key": "!tables.results!frqhoo0i4jq53Fnx.rfNFCo6UoblQKZeH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Batteries (rareté 35 à 60).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xbbquwPHaJcjBlY8",
+      "_key": "!tables.results!frqhoo0i4jq53Fnx.xbbquwPHaJcjBlY8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Panneaux démontables (recette) (rareté 45 à 70).</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5o8hWl4eA55ZAP72",
+      "_key": "!tables.results!frqhoo0i4jq53Fnx.5o8hWl4eA55ZAP72",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Panneaux démontables (recette) (rareté 45 à 70).</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uv7Y7qnXtuKmS4Sq",
+      "_key": "!tables.results!frqhoo0i4jq53Fnx.uv7Y7qnXtuKmS4Sq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le plan : Vélo-cargo (recette) (rareté 35 à 60).</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

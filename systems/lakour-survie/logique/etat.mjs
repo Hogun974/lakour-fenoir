@@ -60,6 +60,7 @@ import { espritActif, plafondEsprit, nourrituresDuJour, journeeEsprit, fauxBruit
 import { couleurDuGroupe, malaiseCouleur } from "./moralite.mjs";
 import { journeePorte, listeALaPorte } from "./porte.mjs";
 import { autoriteDuJour, crisesAutorite, tributsDus } from "./chefs.mjs";
+import { noterCyclone, fenetresQuiSouvrent, plansDuMonde, plansDeLEtat, perteEtagere, etagereDeLAbri } from "./plans.mjs";
 
 export function etatVide() {
   return {
@@ -282,6 +283,14 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     if (!ab) delete ctx.abri;
     const sim = simulerJour(m, contenu, hasardDuJour(m.graine, jour), jour, ctx);
     m = sim.monde;
+    // Lot 4 « Les plans » (plans.mjs) : le cyclone du jour garde sa date (les lieux à plans « après un cyclone ») ; un lieu à plans dont
+    // la fenêtre s'ouvre aujourd'hui va au journal secret (au MJ d'en faire courir le bruit). Aucun tirage : rien d'autre ne bouge.
+    m = noterCyclone(m, jour);
+    for (const l of fenetresQuiSouvrent(contenu, { jour, dateDepart, cyclones: plansDuMonde(m).cyclones, eruption: m.eruption })) {
+      const fx = { jour, region: l.region, cle: "plans-fenetre", params: { lieu: l.nom, quand: l.fenetreTexte ?? "" }, public: false, portee: "mj",
+        texte: `La fenêtre s'ouvre : ${l.nom} (${l.fenetreTexte ?? ""}).` };
+      secrets.push(fx); auJournalSecret(jour, fx);
+    }
     for (const f of sim.faits) {
       if (!f.public) { secrets.push(f); continue; }
       faits.push(f);
@@ -338,6 +347,17 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         if (Object.keys(cy.emportes).length) dire("cyclone-emportes", { cyclone: c.nom, pertes: cy.emportes }, `${c.nom} emporte ce qui traînait dehors.`);
         if (cy.eau) dire("cyclone-citerne", { cyclone: c.nom, eau: cy.eau }, `Les fuites et les gouttières qui débordent remplissent la citerne (+${cy.eau} eau) : une eau à filtrer.`);
         dire("cyclone-arbres", { cyclone: c.nom }, "Des arbres couchés partout : du bois pour des semaines, des fruits à ramasser et conserver vite ; l'abri se voit de plus loin.");
+        // Lot 4 « Les plans » : un cyclone qui abîme un abri qu'on n'a pas préparé gâte un papier de l'étagère aux cahiers (pas dans le coffre
+        // étanche). Flux de hasard à part : « etagere|jour ».
+        const pe = plansDeLEtat(e);
+        if (cy.degats && !prepare && pe.etagere.length) {
+          const r = perteEtagere(pe.etagere, { cause: "eau", protege: etagereDeLAbri(ab.installations, contenu).protege, hasard: deriverHasard(m.graine, "etagere", jour) });
+          if (r.perdus.length) {
+            e = { ...e, plans: { ...pe, etagere: r.etagere } };
+            const papiers = r.perdus.map(x => x.name).join(", ");
+            dire("etagere-perte-eau", { papiers }, `L'eau est entrée jusqu'à l'étagère aux cahiers : ${papiers}, détrempé, ne se lit plus.`);
+          }
+        }
         if (cy.depot) {
           dire("cyclone-depot", { cyclone: c.nom, nom: cy.depot.nom, stocks: cy.depot.stocks }, `Le cyclone a déposé dans la cour : ${cy.depot.nom}.`);
           if (cy.depot.menace) menaces.push({ jour, type: cy.depot.menace.type ?? "livides", force: Number(cy.depot.menace.force) || 1, ...message("menace-depot", { nom: cy.depot.nom }, `${cy.depot.nom} : une menace dans la cour.`) });

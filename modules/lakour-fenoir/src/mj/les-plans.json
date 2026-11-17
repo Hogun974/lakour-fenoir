@@ -1,0 +1,208 @@
+{
+  "_id": "513EACESNH8xpEFH",
+  "_key": "!journal!513EACESNH8xpEFH",
+  "name": "Les plans",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "les-plans",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "rB5ARb9kOFrEwg2Q",
+      "_key": "!journal.pages!513EACESNH8xpEFH.rB5ARb9kOFrEwg2Q",
+      "name": "Ce qu'est un plan",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un plan dit comment bâtir une installation ou fabriquer une recette : un schéma coté, la liste de ce qu'il faut, l'ordre des gestes. <strong>Un plan connu fait bâtir avec un quart de matériaux en moins et la moitié du travail</strong> (fabriquer aussi, pour une recette). C'est tout : <strong>aucune installation, aucune recette n'exige un plan.</strong> Un groupe qui n'en a aucun bâtit tout ce que ses savoirs lui permettent, au prix plein.</p><p><strong>Le carnet du groupe.</strong> Ce que le groupe a déjà bâti une fois y entre de lui-même (comme avant : c'est la meilleure compétence qu'on emporte en déménageant). Un plan trouvé y entre quand quelqu'un du groupe sait le lire, c'est-à-dire a le savoir-faire qu'il demande (celui du premier niveau de l'installation, ou celui de la recette). Sinon on garde le papier, <strong>pour plus tard ou pour un autre</strong>. Le carnet ne se perd pas : c'est ce que le groupe sait, il suit le groupe partout, et chacun le garde quand un groupe se sépare.</p><p><strong>Ce que le groupe connaît</strong>, et qui donne le rabais : son carnet ; ce qu'un de ses membres vivants sait <strong>par cœur</strong> ; les <strong>plans uniques</strong> qu'il a en main (un membre les porte, ou ils sont sur l'étagère aux cahiers de l'abri où le groupe se trouve).</p><p><strong>La rareté</strong> (0 à 100) dit où un plan se trouve et ce qu'il vaut. Un plan dont le minimum atteint 50 est <strong>rare</strong> : il ne se trouve que là où le savoir vivait. Les plans rares de l'île : Bassin à tilapias, Pico-hydro sur rivière, Éolienne de récupération, Antenne, Galerie souterraine, Aménagement d'un tunnel de lave, Moteur modifié pour l'alcool (recette), Gazogène sur un camion (recette).</p><p><strong>Fabriquer une recette ne l'inscrit pas au carnet</strong> : seul un papier lu, un plan unique ou ce qu'on a appris par cœur donne le rabais d'une recette.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "un-plan"
+        }
+      }
+    },
+    {
+      "_id": "byA74sgtAnUD2q2q",
+      "_key": "!journal.pages!513EACESNH8xpEFH.byA74sgtAnUD2q2q",
+      "name": "Trouver un plan",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>La fouille « plans ».</strong> On fouille un site en cherchant des plans (fenêtre du MJ, Actions, « Chercher : plans » ; ou fouiller({ cible: \"plans\" })). La chance dépend du type du site : commerces et quincailleries 25 %, usines, hangars et garages 25 %, écoles 20 %, casernes, phares et ports 15 %, hôpitaux et fermes 12 %, gîtes et îlets 10 %, cases et maisons 8 %, églises 5 % ; sans site, en fouillant la région, 4 %. Elle monte avec le monde qui cherche et le temps passé (jusqu'à deux fois plus), un peu en allant vite, un peu moins en restant discret, et ne dépasse jamais 60 %. Un plan déjà au carnet se trouve deux fois moins souvent : on en trouve alors une copie, qui se troque.</p><p><strong>Après un plan trouvé</strong>, le site n'en rend plus pendant quelques jours (3 pour un commerce ou une usine, 4 pour une école, 5 pour une case).</p><p><strong>Où se trouve quoi.</strong><br>- Surtout dans les commerces et quincailleries : Palissade, Porte blindée, Panneaux solaires, Batteries, Réserve étanche, Arbalète de fortune (recette), Vélo-cargo (recette), Panneaux démontables (recette).<br>- Surtout dans les usines, hangars et garages : Mur d'enceinte, Atelier, Alcool de canne (carburant) (recette), Huile filtrée (carburant) (recette).<br>- Surtout dans les casernes : Tour de guet, Camouflage, Poste radio, Munitions rechargées (recette).<br>- Surtout dans les fermes : Fossé et pièges, Pompe manuelle, Serre, Verger, Enclos à cabris, Ruches, Compost, Séchoir et fumoir, Semences triées (recette).<br>- Surtout dans les cases créoles : Palissade de bambou, Citerne de pluie, Gouttières de bambou et jarres, Potager, Basse-cour, Jardin créole, Garde-manger lontan, Cuisine commune.<br>- Surtout dans les îlets : Mur de pierres sèches, Captage de source, Conduite de bambou, Puits à balancier.<br>- Surtout dans les écoles et collèges : Filtre à sable et charbon, Bouilleur solaire, Dortoir, Étagère aux cahiers, Radio à manivelle (recette), Bocaux et boucané (recette).<br>- Surtout dans les hôpitaux : Infirmerie, Alcool désinfectant (recette).<br>- Surtout dans les immeubles : Chauffe-eau solaire.<br>- Surtout dans les gîtes : Gourde filtrante de fortune (recette).<br>- Surtout dans les maisons : Poêle de masse (recette), Chauffe-eau solaire de fortune (recette).</p><p><strong>Le plan se trouve là où le savoir vivait.</strong> Ces sites gardent leurs propres plans, même rares, et les rendent trois fois plus souvent :<br>- <strong>La petite centrale de Langevin</strong> (Saint-Joseph et le Sud sauvage) : Pico-hydro sur rivière, Batteries.<br>- <strong>La centrale de la Rivière de l'Est</strong> (L'Est : Saint-André, Saint-Benoît, Sainte-Rose) : Pico-hydro sur rivière.<br>- <strong>La centrale du Port Est</strong> (Le Port et La Possession) : Batteries, Panneaux solaires.<br>- <strong>La sucrerie et la centrale du Gol</strong> (Saint-Louis et Saint-Pierre) : Gazogène sur un camion (recette), Alcool de canne (carburant) (recette).<br>- <strong>L'ancienne sucrerie de Stella</strong> (Saint-Leu et l'Étang-Salé) : Séchoir et fumoir, Alcool de canne (carburant) (recette).<br>- <strong>La sucrerie et la distillerie de Bois-Rouge</strong> (L'Est : Saint-André, Saint-Benoît, Sainte-Rose) : Alcool de canne (carburant) (recette).<br>- <strong>La ferme et l'alambic à géranium du Tévelave</strong> (Les Hauts de l'Ouest) : Alcool désinfectant (recette), Alcool de canne (carburant) (recette).<br>- <strong>Le phare de Bel-Air</strong> (Sainte-Marie et l'aéroport) : Éolienne de récupération, Antenne.<br>- <strong>La maison forestière du Maïdo</strong> (Les Hauts de l'Ouest) : Verger, Captage de source.<br>- <strong>La maison forestière de Bébour</strong> (La Plaine des Palmistes et Bélouve) : Captage de source.<br>- <strong>La caserne de pompiers de La Montagne</strong> (Saint-Denis) : Infirmerie, Porte blindée.<br>- <strong>Le quartier militaire de Pierrefonds</strong> (Saint-Louis et Saint-Pierre) : Camouflage, Mur d'enceinte, Munitions rechargées (recette).<br>- <strong>Le grand hôpital du Sud</strong> (Saint-Louis et Saint-Pierre) : Infirmerie, Alcool désinfectant (recette).<br>- <strong>Une ferme laitière de la Plaine des Cafres</strong> (Le Tampon et la Plaine des Cafres) : Enclos à cabris, Basse-cour, Compost.<br>- <strong>Une ferme maraîchère de la Plaine des Palmistes</strong> (La Plaine des Palmistes et Bélouve) : Serre, Bassin à tilapias.<br>- <strong>Une vanilleraie de Saint-Philippe</strong> (Saint-Joseph et le Sud sauvage) : Verger, Jardin créole.<br>- <strong>Une ferme de chouchous à Grand Îlet</strong> (Salazie) : Jardin créole, Conduite de bambou.<br>- <strong>Une ferme d'Îlet à Cordes</strong> (Cilaos) : Jardin créole, Puits à balancier.<br>- <strong>L'îlet de Marla</strong> (Mafate) : Captage de source, Mur de pierres sèches.<br>- <strong>Îlet à Bourse</strong> (Mafate) : Gouttières de bambou et jarres, Puits à balancier.<br>- <strong>L'îlet de La Nouvelle</strong> (Mafate) : Garde-manger lontan, Palissade de bambou.<br>- <strong>L'école d'Aurère</strong> (Mafate) : Étagère aux cahiers, Bouilleur solaire.<br>- <strong>Un tunnel de lave du Grand Brûlé</strong> (Saint-Joseph et le Sud sauvage) : Aménagement d'un tunnel de lave.<br>- <strong>Une grotte de lave sous le rempart</strong> (Le Piton de la Fournaise et la Plaine des Sables) : Galerie souterraine.<br>- <strong>La base de chantier de la digue</strong> (La route du Littoral) : Mur d'enceinte, Atelier.<br>- <strong>Les thermes de Cilaos</strong> (Cilaos) : Chauffe-eau solaire, Captage de source.<br>- <strong>Le refuge de la Caverne Dufour</strong> (Cilaos) : Mur de pierres sèches.<br>- <strong>Le collège sur la colline</strong> (Saint-Paul et la côte Ouest) : Étagère aux cahiers, Filtre à sable et charbon.<br>- <strong>Un collège du Quatorzième</strong> (Le Tampon et la Plaine des Cafres) : Serre.<br>- <strong>Un hangar de fret de Gillot</strong> (Sainte-Marie et l'aéroport) : Vélo-cargo (recette), Réserve étanche.<br>- <strong>Un catamaran du port de Saint-Gilles</strong> (Saint-Paul et la côte Ouest) : Panneaux démontables (recette).<br>- <strong>La marine de Langevin</strong> (Saint-Joseph et le Sud sauvage) : Séchoir et fumoir.<br>- <strong>L'église Notre-Dame-des-Laves</strong> (L'Est : Saint-André, Saint-Benoît, Sainte-Rose) : Étagère aux cahiers.<br>- <strong>Une case créole de Hell-Bourg</strong> (Salazie) : Jardin créole, Cuisine commune.</p><p><strong>À quoi ça ressemble</strong> : table « Plans — à quoi ça ressemble ».</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "trouver"
+        }
+      }
+    },
+    {
+      "_id": "l0kWtJgdam4960Ow",
+      "_key": "!journal.pages!513EACESNH8xpEFH.l0kWtJgdam4960Ow",
+      "name": "Les lieux à plans",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les plans les plus rares dorment dans des lieux <strong>gardés</strong> : par l'île elle-même (une gorge, une crête, un tunnel), ou par des Livides plus nombreux et plus dangereux qu'ailleurs. Certains ne s'atteignent qu'à certains moments : en saison sèche, à la nouvelle lune, entre deux coulées, juste après un cyclone. Le système dit au journal secret quand une <strong>fenêtre s'ouvre</strong> ; à vous d'en faire courir le bruit (table « Plans — ce qui se raconte »).</p><p><strong>Comment on joue.</strong> Le groupe s'y rend (il doit être dans la région du lieu). Vous jouez la <strong>garde</strong> : le test qu'elle demande, la rencontre si elle en a une. S'il passe, appelez <strong>« Un lieu à plans »</strong> (fenêtre du MJ, onglet Savoirs ; ou lieuAPlans({ lieu })) : le système <strong>tire un plan parmi plusieurs</strong>, le pose sur le premier du groupe, le lit au carnet si l'on sait, et fait passer deux quarts. On peut <strong>revenir</strong> plus tard tenter les autres (un plan déjà tiré là sort quatre fois moins souvent) ; un plan unique n'en sort qu'une fois dans la partie.</p><h4>La salle des machines de Takamaka</h4><p><em>L'Est : Saint-André, Saint-Benoît, Sainte-Rose. Gardé par l'île ; ouvert en saison sèche, quand la rivière des Marsouins est basse. On peut y revenir après 30 jours.</em></p><p>Au fond de la gorge de la rivière des Marsouins, sous des remparts de six cents mètres qui ruissellent de cascades, la petite centrale de Takamaka : une salle des machines, des bureaux, des armoires de plans et de registres. On y descend par l'ancien escalier des techniciens, des centaines de marches mouillées, puis on longe l'eau. C'est l'endroit le plus humide de l'île ; c'est aussi là qu'on savait faire de la lumière avec une rivière.</p><p><strong>La garde.</strong> La descente et la remontée (une demi-journée chacune, les jambes en feu), les marches couvertes de mousse, et surtout la rivière : il suffit d'une averse dans les Hauts pour qu'elle monte d'un mètre en une heure. Un test d'endurance difficile pour descendre ; sur un échec, une blessure (une glissade) ou une nuit de plus en bas. Si la pluie tombe là-haut pendant qu'on y est, la remontée devient une course.</p><p><strong>Ce qu'on y tire</strong> : Pico-hydro sur rivière (3), Batteries (2), Panneaux solaires (1), Panneaux démontables (recette) (1), Cahier de l'électricien de la centrale (1).</p><h4>Le relais des crêtes du Maïdo</h4><p><em>Les Hauts de l'Ouest. Gardé par l'île ; ouvert en saison sèche, les matins clairs où la brume tarde à monter. On peut y revenir après 30 jours.</em></p><p>Au bout de la route du Maïdo, sur l'arête qui tombe à pic sur Mafate, des pylônes, des paraboles et des cabanes de béton pleines d'armoires : les relais qui portaient la radio, la télévision et les téléphones de l'Ouest. Il y a là des classeurs de schémas, des notices de maintenance, des manuels que personne n'a ouverts depuis des années.</p><p><strong>La garde.</strong> La brume monte de Mafate vers midi et noie tout en un quart d'heure ; le rempart est à trois pas, sans garde-corps ; la nuit, il gèle presque. Un test de survie difficile pour s'y retrouver dans la brume et redescendre avant la nuit ; sur un échec, on passe la nuit là-haut (fatigue +2) ou l'on se perd vers le bord. Les Livides des Hauts, conservés par le froid, errent lentement autour des cabanes. (Rencontre : 2 à 5 × Livide des Hauts.)</p><p><strong>Ce qu'on y tire</strong> : Antenne (3), Poste radio (2), Éolienne de récupération (2), Radio à manivelle (recette) (1), Panneaux solaires (1).</p><h4>L'îlet sans route de Roche-Plate</h4><p><em>Mafate. Gardé par l'île ; toujours ouvert. On peut y revenir après 45 jours.</em></p><p>Au fond de Mafate, sous le Maïdo, un îlet où l'on ne vient qu'à pied par des sentiers à flanc de rempart. Ici, l'eau a toujours été une affaire de patience : captages dans la roche, conduites de bambou, bassins, un vieux fontainier qui savait tout. Les cases se taisent depuis le jour zéro ; dans l'une d'elles, il reste son carnet.</p><p><strong>La garde.</strong> Trois heures de descente par le sentier de la Brèche, autant pour remonter, avec ce qu'on porte. Un test d'endurance difficile ; sur un échec, une cheville tordue (une blessure) ou une journée de plus. Dans les cases du haut, quelques Livides des Hauts, gardés par le froid depuis des mois, attendent sans bouger. (Rencontre : 1 à 4 × Livide des Hauts.)</p><p><strong>Ce qu'on y tire</strong> : Captage de source (3), Conduite de bambou (2), Mur de pierres sèches (2), Puits à balancier (1), Carnet du fontainier (1).</p><h4>La station agronomique de Bassin-Plat</h4><p><em>Saint-Louis et Saint-Pierre. Gardé par des Livides ; ouvert à la nouvelle lune, quand on traverse les serres sans être vu. On peut y revenir après 30 jours.</em></p><p>Sur les pentes au-dessus de Saint-Pierre, une station de recherche agricole : des serres, des bassins d'essai, des vergers numérotés, une bibliothèque de fiches techniques et une banque de semences. Au jour zéro, on y a regroupé des malades des quartiers voisins, en quarantaine dans les logements du personnel. La quarantaine n'a pas tenu.</p><p><strong>La garde.</strong> Les anciens malades de la quarantaine errent entre les serres et les logements, une bonne douzaine, et le moindre bruit de verre les rassemble. On traverse à la nuit noire, sans lumière, de serre en serre : un test de discrétion difficile ; sur un échec, ils viennent tous. (Rencontre : 6 à 12 × Livide frais.)</p><p><strong>Ce qu'on y tire</strong> : Bassin à tilapias (3), Serre (2), Verger (2), Semences triées (recette) (2), Ruches (1).</p><h4>Le laboratoire de la distillerie de Bois-Rouge</h4><p><em>L'Est : Saint-André, Saint-Benoît, Sainte-Rose, La sucrerie et la distillerie de Bois-Rouge. Gardé par des Livides ; ouvert à la nouvelle lune, par nuit noire. On peut y revenir après 30 jours.</em></p><p>Derrière la sucrerie, la distillerie et son laboratoire : alambics, colonnes, cuves de mélasse, et dans un bureau vitré les dossiers des ingénieurs, comment tirer de l'alcool de la canne, comment faire tourner un moteur avec. Le jour zéro tombait en pleine fin de campagne sucrière ; les équipes de nuit ne sont jamais rentrées chez elles.</p><p><strong>La garde.</strong> Les ouvriers de la dernière campagne, des dizaines, entre les cuves et sous les colonnes, et parmi eux quelques coureurs qui n'ont rien perdu de leur vitesse. On ne s'y risque que par nuit noire, sans lumière : un test de discrétion difficile ; sur un échec, les coureurs d'abord, puis tous les autres. (Rencontre : 2 à 4 × Coureur.)</p><p><strong>Ce qu'on y tire</strong> : Moteur modifié pour l'alcool (recette) (3), Alcool de canne (carburant) (recette) (3), Alcool désinfectant (recette) (2), Gazogène sur un camion (recette) (1), Réserve étanche (1).</p><h4>Les tunnels de lave de l'Enclos</h4><p><em>Le Piton de la Fournaise et la Plaine des Sables. Gardé par l'île ; ouvert entre deux coulées : jamais pendant une éruption, ni dans les trois jours qui suivent. On peut y revenir après 40 jours.</em></p><p>Dans l'Enclos du volcan, sous les coulées récentes, des tunnels de lave où les volcanologues avaient posé des instruments et où des spéléologues tenaient leurs carnets : comment on étaye une voûte de basalte, où l'air circule, comment on aménage une galerie qui ne s'effondre pas. Leur abri de toile est resté au fond, avec les cahiers.</p><p><strong>La garde.</strong> Le noir complet, la roche coupante, les voûtes qui s'effritent, et parfois une poche d'air qui sent le soufre. Un test d'endurance difficile (ramper, porter la lumière, garder son calme) ; sur un échec, une blessure (une chute, une coupure) ou la panique qui fait rebrousser chemin. Jamais pendant une éruption.</p><p><strong>Ce qu'on y tire</strong> : Aménagement d'un tunnel de lave (3), Galerie souterraine (3), Réserve étanche (1), Gourde filtrante de fortune (recette) (1).</p><h4>Les conteneurs éventrés du Port Est</h4><p><em>Le Port et La Possession. Gardé par des Livides ; ouvert dans la semaine qui suit un cyclone, quand la houle a couché les piles. On peut y revenir après 20 jours.</em></p><p>Sur les quais du Port Est, des milliers de conteneurs en piles. La plupart sont fermés, plombés, trop lourds à ouvrir sans grue. Mais quand un cyclone passe, la houle et le vent en couchent des rangées entières sur le quai, et les portes s'ouvrent : du matériel neuf, avec ses notices et ses plans de montage.</p><p><strong>La garde.</strong> Les dockers et les marins de garde au jour zéro, et ceux que la mer a ramenés dans la darse : des noyés lents et gonflés qui sortent de l'eau quand on fait du bruit. Ouvrir une porte tordue est un test d'endurance normal, et chaque coup de barre à mine s'entend ; sur un échec, il faut forcer, et ils viennent. (Rencontre : 3 à 8 × Noyé du lagon.)</p><p><strong>Ce qu'on y tire</strong> : Éolienne de récupération (2), Panneaux solaires (2), Batteries (2), Panneaux démontables (recette) (2), Vélo-cargo (recette) (1).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "lieux"
+        }
+      }
+    },
+    {
+      "_id": "zx5JVIcVICAuuCZH",
+      "_key": "!journal.pages!513EACESNH8xpEFH.zx5JVIcVICAuuCZH",
+      "name": "Lire, copier, apprendre par cœur",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Lire</strong> (une veillée) : un papier que personne ne savait lire le jour où on l'a trouvé ; quelqu'un a appris depuis le savoir-faire qu'il demande. Le plan entre au carnet.</p><p><strong>Copier</strong> (une veillée, à l'abri, avec de la lumière : une unité d'énergie si l'abri en a, sinon une bougie, et l'abri se voit ce soir-là) : on recopie un plan du carnet, ou d'une copie qu'un membre porte, sur un papier neuf. La copie sert à <strong>troquer</strong>, à <strong>donner</strong> à un autre groupe, à garder en double sur l'étagère. <strong>Un plan unique ne se copie pas.</strong></p><p><strong>Apprendre par cœur</strong> (une veillée par cran, à l'abri, avec de la lumière) : 1 veillée pour un plan courant, 4 pour un plan rare ou unique (1 + rareté ÷ 25). Il faut le savoir-faire qu'il demande. Le plan <strong>survit par celui qui l'a appris</strong> : tant qu'il vit et reste au groupe, le groupe le connaît, même si le papier brûle ou si le cahier unique est volé. Il meurt avec lui. Une recrue qui savait des plans par cœur les apporte avec elle (à noter sur sa fiche).</p><p><strong>Les papiers d'un mort</strong> restent sur son corps : « Reprendre les papiers d'un mort » (reprendrePlans) les passe à un membre du groupe. Un plan unique se prend sur le corps ; le mort le perd.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "lire-copier-apprendre"
+        }
+      }
+    },
+    {
+      "_id": "DmnzTmbMcygQrsYF",
+      "_key": "!journal.pages!513EACESNH8xpEFH.DmnzTmbMcygQrsYF",
+      "name": "Les plans uniques",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Il en existe peu, un seul exemplaire chacun dans la partie. Un plan unique <strong>ne se copie pas</strong> et ne va pas au carnet : il se consulte, tant qu'on l'a en main (porté par un membre, ou sur l'étagère de l'abri où le groupe se trouve). Il couvre souvent plusieurs plans, il apprend parfois un savoir-faire (veillées de lecture, comme un livre), et il vaut <strong>trois fois plus</strong> au troc. On peut en apprendre le contenu par cœur pour qu'il survive à sa perte.</p><ul><li><strong>Cahier de tisanes d'une gramoune</strong> (rareté 90 à 100, 66 parts) : Un cahier d'écolier aux pages jaunies, retrouvé au fond d'une armoire de case : les tisanes d'une gramoune morte avant le jour zéro, avec ses mots à elle. Ayapana pour le ventre, citronnelle pour la fièvre, bois de quivi, faham, les doses comptées « en cuillères à café de mon fils ». Il n'en existe qu'un. <em>Couvre : Tisanes et emplâtres (recette), Rimèd lontan (recette).</em></li><li><strong>Carnet du fontainier</strong> (rareté 85 à 100, 65 parts) : Le carnet d'un fontainier des îlets : quarante ans à amener l'eau là où les routes ne vont pas. Il n'en existe qu'un, et il ne se trouve qu'au bout des sentiers. <em>Couvre : Captage de source, Conduite de bambou, Gouttières de bambou et jarres, Puits à balancier.</em></li><li><strong>Cahier de l'électricien de la centrale</strong> (rareté 85 à 100, 65 parts) : Le registre d'un technicien de la salle des machines, et tout ce qu'il y a noté pour lui seul. Il n'en existe qu'un, et il est resté au fond de la gorge. <em>Couvre : Pico-hydro sur rivière, Batteries, Panneaux solaires.</em></li></ul><p><strong>Le cahier dicté d'une gramoune</strong> (lot « savoirs ») est lui aussi un plan unique : il couvre les installations lontan et les recettes que demandent les savoirs qu'elle a dictés (et les tisanes, si elle sait les zerbaz). Un cahier écrit avant ce lot l'est aussi, sans rien faire.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "uniques"
+        }
+      }
+    },
+    {
+      "_id": "QeqcRZiEDLT1rgXY",
+      "_key": "!journal.pages!513EACESNH8xpEFH.QeqcRZiEDLT1rgXY",
+      "name": "L'étagère aux cahiers",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une installation de stockage : deux planches et une caisse (niveau 1, <strong>12 papiers</strong>), puis un coffre étanche caché sous le plancher (niveau 2, <strong>24 papiers</strong>). On y <strong>range</strong> les papiers de l'abri pour qu'ils n'aillent pas en fouille avec leurs porteurs, et pour que tout le monde y lise. Les plans uniques qui y sont comptent quand le groupe est à l'abri.</p><p><strong>Elle se vole</strong> : une <strong>brèche</strong> faite par des vivants (pas des Livides) emporte 1 à 3 papiers (au plus 1 dans le coffre). <strong>Elle brûle</strong> : un incendie de l'abri (« L'étagère brûle ou est volée », à décider par vous : le feu du rancunier à la porte, une lampe renversée) en perd la moitié, rien dans le coffre. <strong>L'eau</strong> : un cyclone qui abîme un abri qu'on n'a pas préparé gâte un papier, rien dans le coffre.</p><p>Au <strong>déménagement</strong>, les papiers de l'étagère partent avec le groupe (ils ne pèsent rien).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "etagere"
+        }
+      }
+    },
+    {
+      "_id": "Sl1lGBiIxarxGYf3",
+      "_key": "!journal.pages!513EACESNH8xpEFH.Sl1lGBiIxarxGYf3",
+      "name": "Le troc des plans",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un plan vaut au troc <strong>3 parts + 0,2 par point de rareté</strong>, trois fois plus s'il est unique (une part, c'est un jour de nourriture). La rareté part de la moyenne du plan ; chaque <strong>copie qui sort du groupe</strong> (donnée, troquée) la fait baisser d'un quart de l'écart jusqu'au minimum : un plan qui circule vaut moins, mais un plan rare reste un plan rare.</p><p>Quelques valeurs, à la rareté moyenne : Citerne de pluie 6 ; Potager 6 ; Panneaux solaires 12 ; Infirmerie 13 ; Cuisine commune 8 ; Bassin à tilapias 16 ; Pico-hydro sur rivière 19 ; Éolienne de récupération 16 ; Antenne 18 ; Cahier de tisanes d'une gramoune 66 ; Carnet du fontainier 65 ; Cahier de l'électricien de la centrale 65 parts.</p><p>Le prix se discute comme tout troc (le marché, ses préjugés, la confiance). « Donner ou troquer un papier » et « Recevoir un plan » (fenêtre du MJ ; donnerPlan, recevoirPlan) déplacent le papier et ce qui va en échange ; valeurPlan({ cle }) dit ce que le plan vaut aujourd'hui.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "troc"
+        }
+      }
+    },
+    {
+      "_id": "uDTnBWwiAlLzXpqk",
+      "_key": "!journal.pages!513EACESNH8xpEFH.uDTnBWwiAlLzXpqk",
+      "name": "Ce que fait le système",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Construire</strong> et <strong>fabriquer</strong> appliquent le rabais des plans connus (carnet, par cœur, plans uniques en main).</li><li><strong>Fouiller</strong> avec la cible « plans » : un plan selon le type du site, puis le site se repose quelques jours.</li><li><strong>Chaque jour</strong>, la date d'un cyclone qui frappe une région est gardée ; un lieu à plans dont la fenêtre s'ouvre va au <strong>journal secret</strong> (« La fenêtre s'ouvre »).</li><li><strong>Une brèche</strong> faite par des vivants vole des papiers de l'étagère ; <strong>un cyclone</strong> sur un abri non préparé en gâte un ; <strong>un déménagement</strong> les emporte.</li><li><strong>API</strong> : plans(), valeurPlan({ cle }), lieuxAPlans(), lieuAPlans({ lieu, membres, quarts }), lirePlan({ objetId }), copierPlan({ cle, acteurId }), enseignerPlan({ acteurId, cle }), rangerPlan({ objetId }), prendrePlan({ id, acteurId }), perdreEtagere({ cause: \"vol\" | \"feu\" | \"eau\" }), donnerPlan({ objetId, contre, a }), recevoirPlan({ cle, acteurId, contre, de }), noterPlan({ cle }) (une issue d'affaire qui donne un plan), reprendrePlans({ deId, aId }).</li><li>Une clé de plan au carnet : celle de l'installation, ou « recette:&lt;clé&gt; » pour une recette.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "systeme"
+        }
+      }
+    }
+  ]
+}
