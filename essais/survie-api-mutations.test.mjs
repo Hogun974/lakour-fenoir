@@ -108,7 +108,9 @@ const VERIFICATIONS = {
   // Un test ne se force qu'une fois.
   async uneFois(M0) {
     const { M, a } = await debut(M0);
-    await M.api.test({ acteurId: a.id, competence: "tir", difficulte: "normale" });
+    // Un test raté sans enrayer une arme (des dés sur 2) : il se force une fois (vague 3 : tiré au hasard, l'enrayage d'une arme
+    // portée, lot 6, rendait la carte non forçable).
+    await desFixes(0.2, () => M.api.test({ acteurId: a.id, competence: "tir", difficulte: "normale" }));
     const id = messages.at(-1).id;
     await M.api.forcer({ messageId: id });
     await assert.rejects(() => M.api.forcer({ messageId: id }), /DejaForce/);
@@ -117,13 +119,22 @@ const VERIFICATIONS = {
   async uneMarque(M0) {
     const { M, a } = await debut(M0);
     await a.update({ system: { competences: { tir: { niveau: 0, marques: 0 } }, passions: { tir: 0 }, age: 40 } });
-    const r = await M.api.test({ acteurId: a.id, competence: "tir", difficulte: "extreme" });
+    // Des dés qui tombent sur 2 (le test échoue sans enrayer une arme, et le test forcé aussi) : tirés au hasard, une réussite à
+    // l'extrême ou un enrayage (lot 6) faisaient échouer l'essai (vague 3).
+    const r = await desFixes(0.2, () => M.api.test({ acteurId: a.id, competence: "tir", difficulte: "extreme" }));
     assert.equal(r.marque, true);
-    await M.api.forcer({ messageId: messages.at(-1).id });
+    await desFixes(0.2, () => M.api.forcer({ messageId: messages.at(-1).id }));
     assert.equal(a.system.competences.tir.niveau, 0);
     assert.equal(a.system.competences.tir.marques, 1);
   }
 };
+
+// Les dés de l'API (Math.random) à une valeur fixe, le temps d'un appel.
+async function desFixes(v, fn) {
+  const avant = Math.random;
+  Math.random = () => v;
+  try { return await fn(); } finally { Math.random = avant; }
+}
 
 const MUTATIONS = [
   ["gardeMJ", "scripts/api.mjs", "function exigerMJ() {\n  if (!estMJActif()) throw erreur(\"PasMJActif\");\n}", "function exigerMJ() {}"],

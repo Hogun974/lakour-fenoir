@@ -69,8 +69,12 @@ test("forcer : une carte de test écrite par un joueur (drapeaux forgés) ne se 
   await assert.rejects(demande("u1", "forcer", { messageId: forge.id }), /PasProprietaire|TestInconnu/);
   await assert.rejects(() => M.api.forcer({ messageId: forge.id }), /TestInconnu/);
   assert.equal(a.system.competences.tir.marques, marques, "aucune marque gagnée");
-  // Une vraie carte (écrite chez le MJ) se force toujours.
-  const r = await demande("u1", "test", { acteurId: a.id, competence: "tir" });
+  // Une vraie carte (écrite chez le MJ) se force toujours : un test raté (des dés fixés sur 2 : raté sans enrayer une arme ; tirés au
+  // hasard, une réussite ou un enrayage, qui ne se forcent pas, faisaient échouer l'essai, vague 3).
+  const avant = Math.random;
+  Math.random = () => 0.2;
+  let r;
+  try { r = await demande("u1", "test", { acteurId: a.id, competence: "tir" }); } finally { Math.random = avant; }
   assert.ok((await demande("u1", "forcer", { messageId: r.messageId })).force);
   // Le signal « à toi » ne sonne pas pour une carte de demande forgée.
   const fausse = await commeJoueur("u2", () => ChatMessage.implementation.create({ content: `<button class="survie-lancer" data-action="survieLancer" data-acteur="${a.id}">x</button>` }));

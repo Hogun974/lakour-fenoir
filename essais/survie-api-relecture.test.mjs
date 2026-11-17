@@ -16,8 +16,11 @@ installerFoundry();
 const M0 = await charger();
 
 async function partieInstallee(M, { site = "college-hauts-saint-paul", stocks = { nourriture: 30, eau: 30, materiaux: 10, medicaments: 3 } } = {}) {
-  const a = await survivantTire(M, { userId: "u1" });
-  const b = await survivantTire(M, { userId: "u2" });
+  // Deux survivants tirés d'une graine fixe (vague 3) : tirés au hasard, leur équipement (plus lourd depuis le lot 6) dépassait
+  // parfois la charge du véhicule, et le voyage était refusé pour la charge avant le carburant que l'essai vérifie.
+  const h = creerHasard("relecture-survivants");
+  const a = await survivantTire(M, { userId: "u1", hasard: h });
+  const b = await survivantTire(M, { userId: "u2", hasard: h });
   await M.api.demarrer({ region: "saint-paul", membres: [a.id, b.id], graine: "relecture", essai: true });
   await M.api.installer({ site });
   await M.api.ajuster({ stocks });

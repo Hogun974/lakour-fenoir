@@ -77,7 +77,9 @@ test("API : le feu à l'abri (la pierre tient) ; creuser sans l'étaiement : le 
   assert.equal(r.force, 3);
   assert.equal(r.degatsAbri, 2);
   assert.ok(M.api.etat().journal.some(e => e.cle === "Ouvrages.Journal.Incendie"));
-  const etai = [a, b].some(x => (x.system.savoirs ?? []).includes("etaiement-galeries"));
+  // Ce que le groupe sait, comme le système le lit (les savoirs de la fiche ET les objets « savoir » portés) : lu sur la fiche seule, un
+  // survivant tiré au hasard qui portait le savoir en objet faisait échouer l'essai une fois sur dix (vague 3).
+  const etai = M.module.savoirsDuGroupe(M.api.etat()).includes("etaiement-galeries");
   const g = await M.api.construire({ installation: "galerie-souterraine", quarts: 4, membres: [a.id] });
   if (etai) assert.equal(g.eboulement, null, "le groupe sait étayer : aucun risque");
   else {

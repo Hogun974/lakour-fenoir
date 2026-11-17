@@ -48,6 +48,9 @@ test("API : paradis() dit le signe aux joueurs et la chaleur au MJ seul ; chaleu
 
 test("API : une ronde jouée en scène (abattus donnés) : la chaleur baisse, les corps s'entassent ; on les enterre, ou on les brûle (fumée)", async () => {
   const { M, a, b, abri } = await partie();
+  // Deux adultes reposés : un bras chacun (tirés au hasard, un jeune de moins de 18 ans travaille moins vite, et l'essai comptait
+  // parfois deux corps enterrés au lieu de trois ; vague 3).
+  for (const x of [a, b]) await x.update({ system: { age: 30, fatigue: 0, blessures: 0 } });
   await M.api.chaleur({ valeur: 4, agglutines: 5 });
   const r = await M.api.ronde({ membres: [a.id], abattus: 4 });
   assert.equal(r.abattus, 4);

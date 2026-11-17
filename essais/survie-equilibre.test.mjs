@@ -18,7 +18,9 @@ import { simuler, mesurer, jouerPartie, chargerContenu, PARTIES_RAPIDE, scoreSit
 import * as L from "../systems/lakour-survie/logique/index.mjs";
 
 const CAS = "passif-4,nomade-4,enracine-4,enracine-1";
-const resultats = await simuler({ parties: PARTIES_RAPIDE, graine: "1", cas: CAS, fils: 4 });
+// Dans ce fil (vague 3) : les mêmes parties, les mêmes graines, les mêmes résultats ; avec quatre fils d'exécution, un fil tombait
+// parfois quand toute la suite tournait en même temps (une fois en une quinzaine de passages), sans rien dire de l'équilibre.
+const resultats = await simuler({ parties: PARTIES_RAPIDE, graine: "1", cas: CAS, fils: 1 });
 const m = mesurer(resultats);
 const cas = m.cas;
 const part = (n, d) => n / Math.max(1, d);

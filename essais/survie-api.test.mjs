@@ -206,7 +206,12 @@ test("partie complète : jour 0, deux survivants tirés, installation, fouille, 
 test("test : dés au chat, marque si échoué, forcer une seule fois (bouton du propriétaire), demandé par le joueur", async () => {
   const M = await nouveauMonde();
   const a = await survivantTire(M, { userId: "u1" });
-  const r = await M.api.test({ acteurId: a.id, competence: "tir", difficulte: "extreme", compte: true });
+  // Des dés fixés sur 2 pour ce test-là : il échoue sans enrayer une arme (deux 1 l'enrayent, lot 6), donc il se force ; tirés au
+  // hasard, une réussite à l'extrême ou un enrayage, qui ne se forcent pas, faisaient échouer l'essai (vague 3).
+  const desAvant = Math.random;
+  Math.random = () => 0.2;
+  let r;
+  try { r = await M.api.test({ acteurId: a.id, competence: "tir", difficulte: "extreme", compte: true }); } finally { Math.random = desAvant; }
   for (const k of ["des", "succes", "requis", "reussite", "marge", "force", "complication", "marque", "texte"]) assert.ok(k in r, k);
   assert.equal(r.requis, 3);
   const m = messages.at(-1);
