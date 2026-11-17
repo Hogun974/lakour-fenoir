@@ -79,7 +79,9 @@ export const CLES_TEXTES = [
   "porte-demande-refugie", "porte-demande-famille", "porte-demande-blesse", "porte-demande-dur",
   "porte-accueilli", "porte-refuse", "porte-trahi", "porte-inconnu", "porte-decision", "porte-rien-a-prendre",
   // chefs.mjs : ce que décide le chef d'une bande
-  "chef-attaquer", "chef-negocier", "chef-passer", "chef-ultimatum", "chef-rejoindre"
+  "chef-attaquer", "chef-negocier", "chef-passer", "chef-ultimatum", "chef-rejoindre",
+  // sens.mjs (par etat.mjs) : percevoir dans le noir, la Timise, l'alarme naturelle (lot « sens »)
+  "noir-palier-1", "noir-palier-2", "noir-palier-3", "noir-palier-4", "grenouilles-silence", "noir-horde-entendue", "timise", "timise-reconnue"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

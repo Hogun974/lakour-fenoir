@@ -64,6 +64,8 @@ export function contexteSurvivant(a, { gm = false, proprietaire = false, incubat
     acteur: { id: a.id, uuid: a.uuid, name: a.name, img: a.img }, system: s, gm, proprietaire, editable: gm || proprietaire,
     competences, etat, malus: malus.total, craque: malus.craque,
     infection: s.infection?.atteint ? { stade: s.infection.stade, pct: Math.round(s.infection.stade / 6 * 100) } : null,
+    // Lot « sens » : l'habitude du noir (nuits passées debout sans lumière, palier).
+    noir: (() => { const n = L.noirDe(s); return n.nuits > 0 ? { nuits: n.nuits, palier: t(`LAKOUR_SURVIE.Percevoir.Accoutumance.Paliers.${L.palierNoir(n.nuits)}`) } : null; })(),
     afflictions, traits, incapacites: [...incap].map(k => ({ cle: k, texte: t(`LAKOUR_SURVIE.Incapacites.${k}`) })),
     enfance: enfance ? { nom: L.nomAccorde(enfance, s.genre), aide: sansBalises(enfance.description) } : s.enfance ? { nom: s.enfance, aide: "" } : null,
     passe: passe ? { nom: L.nomAccorde(passe, s.genre), aide: sansBalises(passe.description) } : s.passe ? { nom: s.passe, aide: "" } : null,

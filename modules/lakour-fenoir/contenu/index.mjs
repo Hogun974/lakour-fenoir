@@ -27,6 +27,7 @@ import { CARTES_LIEUX } from "./lieux-cartes.mjs";
 import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES } from "./marche.mjs";
 import { sceneReunion } from "./cartes.mjs";
 import { DEPOTS_CYCLONE, GRAMOUNES, TABLES_SAVOIRS, JOURNAUX_SAVOIRS } from "./deux-savoirs.mjs";
+import { TABLES_SENS, JOURNAL_SENS } from "./sens.mjs";
 import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
@@ -36,8 +37,8 @@ export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 export const DOCUMENTS = [
   ...INSTALLATIONS, ...SAVOIRS, ...EQUIPEMENTS, ...PASSES, ...RECETTES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...JOURNAUX_SAVOIRS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
-  ...TABLES, ...TABLES_SAVOIRS, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...TABLES, ...TABLES_SAVOIRS, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT, ...TABLES_SENS,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 

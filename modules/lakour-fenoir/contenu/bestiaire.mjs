@@ -7,33 +7,40 @@ import { imageJeton } from "./jetons.mjs";
 
 // acteur: false (lot « savoirs ») : une créature décrite au bestiaire et tirée par la logique, sans acteur au compendium (pas de
 // jeton peint) : le MJ prend le jeton d'une créature proche (le chien errant pour le chien de tête).
-function creature({ cle, nom, categorie, des, resistance, vitesse, sens, zones, phases, description, comportement, faiblesse, competences = {}, acteur = true }) {
+// perception (lot « sens », logique/sens.mjs desFaceALivide) : { vue, ouie, odorat } (1 = un vivant ordinaire ; 0 = rien), froid (figé
+// la nuit au-dessus de 400 m), obstacle (coups donnés à un obstacle avant de chercher un autre passage), attaques.
+function creature({ cle, nom, categorie, des, resistance, vitesse, sens, zones, phases, description, comportement, faiblesse, competences = {}, acteur = true, perception = null }) {
   return { cle, nom, categorie, des, resistance, vitesse, sens, zones, phases, description: html(description), comportement: html(comportement), faiblesse: html(faiblesse), competences,
-    ...(acteur ? {} : { acteur: false }) };
+    ...(acteur ? {} : { acteur: false }), ...(perception ? { perception } : {}) };
 }
 
 export const BESTIAIRE = [
-  creature({ cle: "livide-frais", nom: "Livide frais", categorie: "livide", des: 1, resistance: 1, vitesse: "marche", sens: "ouïe, odeur",
+  creature({ cle: "livide-frais", perception: { vue: 0.6, ouie: 1, odorat: 1, froid: false, obstacle: 3, attaques: 1 },
+    nom: "Livide frais", categorie: "livide", des: 1, resistance: 1, vitesse: "marche", sens: "ouïe, odeur",
     zones: ["littoral", "hauts", "cirque", "foret", "volcan"], phases: ["jour-zero", "panique", "effondrement", "silence"],
     description: `Un mort de quelques jours, encore vêtu de ses habits, la peau grise et marbrée, les yeux voilés de blanc. Il marche comme un homme ivre, mais il ne s'arrête jamais.`,
     comportement: `Va vers le bruit, la lumière et l'odeur des vivants ; s'acharne sur une porte ; se regroupe avec les autres. Mord et griffe.`,
     faiblesse: `Le crâne ; la chaleur humide qui le défait en quelques semaines dans les Bas.` }),
-  creature({ cle: "livide-des-hauts", nom: "Livide des Hauts", categorie: "livide", des: 1, resistance: 2, vitesse: "lente", sens: "ouïe",
+  creature({ cle: "livide-des-hauts", perception: { vue: 0.3, ouie: 1, odorat: 0, froid: true, obstacle: 4, attaques: 1 },
+    nom: "Livide des Hauts", categorie: "livide", des: 1, resistance: 2, vitesse: "lente", sens: "ouïe",
     zones: ["hauts", "cirque", "volcan", "foret"], phases: ["silence", "apres"],
     description: `Un Livide ancien, conservé par le froid des Hauts : desséché, raide, couvert de rosée ou de givre au petit matin. Lent, mais si dur à abattre qu'on dirait du bois.`,
     comportement: `Immobile au froid, il s'éveille au soleil et suit les autres. Les hordes des Hauts, des mois après le jour zéro, sont faites de ceux-là.`,
     faiblesse: `La nuit froide le fige : on passe entre eux à l'aube, en silence.` }),
-  creature({ cle: "noye-du-lagon", nom: "Noyé du lagon", categorie: "livide", des: 1, resistance: 1, vitesse: "lente", sens: "ouïe",
+  creature({ cle: "noye-du-lagon", perception: { vue: 0.2, ouie: 1, odorat: 1, froid: false, obstacle: 3, attaques: 1 },
+    nom: "Noyé du lagon", categorie: "livide", des: 1, resistance: 1, vitesse: "lente", sens: "ouïe, odeur",
     zones: ["littoral"], phases: ["effondrement", "silence"],
     description: `Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.`,
     comportement: `Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.`,
     faiblesse: `Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.` }),
-  creature({ cle: "livide-brule", nom: "Livide brûlé", categorie: "livide", des: 1, resistance: 1, vitesse: "marche", sens: "ouïe",
+  creature({ cle: "livide-brule", perception: { vue: 0, ouie: 1.2, odorat: 1, froid: false, obstacle: 5, attaques: 1 },
+    nom: "Livide brûlé", categorie: "livide", des: 1, resistance: 1, vitesse: "marche", sens: "ouïe fine, odeur",
     zones: ["littoral", "hauts"], phases: ["panique", "effondrement", "silence"],
     description: `Pris dans un incendie de quartier ou un véhicule en feu, il en est ressorti noirci, à demi aveugle, qui fume encore parfois.`,
     comportement: `Ne sent ni la douleur ni la chaleur : il traverse les flammes et les barbelés sans ralentir.`,
-    faiblesse: `Ses yeux brûlés : il ne suit que les bruits.` }),
-  creature({ cle: "coureur", nom: "Coureur", categorie: "livide", des: 2, resistance: 1, vitesse: "rapide", sens: "vue, ouïe",
+    faiblesse: `Ses yeux brûlés : il ne voit rien, il suit les bruits et l'odeur des vivants. Qui se tient immobile, sans un bruit et au vent de lui, peut le laisser passer à un pas.` }),
+  creature({ cle: "coureur", perception: { vue: 1, ouie: 1, odorat: 1, froid: false, obstacle: 0, attaques: 2 },
+    nom: "Coureur", categorie: "livide", des: 2, resistance: 1, vitesse: "rapide", sens: "vue, ouïe, odeur",
     zones: ["littoral", "hauts", "cirque", "foret"], phases: ["jour-zero", "panique"],
     description: `Un mort tout récent, relevé depuis quelques heures : il court encore, maladroitement, et se jette sur sa proie. On n'en voit que les premiers jours.`,
     comportement: `Charge dès qu'il voit, crie en courant, attire les autres. Après une semaine, il ralentit et devient un Livide comme les autres.`,

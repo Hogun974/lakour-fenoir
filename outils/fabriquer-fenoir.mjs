@@ -443,6 +443,18 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   }
   for (const b of d.bestiaire ?? []) if (!(b.des >= 1) || !(b.resistance >= 1) || !["livide", "animal", "humain"].includes(b.categorie)) e(`bestiaire ${b.cle} : fiche invalide`);
   for (const k of ["livide-frais", "livide-des-hauts", "noye-du-lagon", "livide-brule", "coureur", "chien-errant", "cochon-marron"]) if (!index.bestiaire.has(k)) e(`bestiaire : ${k} absent`);
+  // Lot « sens » : la perception des Livides, les pluies d'une année, les ravines temporaires, le bruit d'un ancrage.
+  for (const b of d.bestiaire ?? []) {
+    const p = b.perception;
+    if (p && !(["vue", "ouie", "odorat"].every(k => Number(p[k]) >= 0 && Number(p[k]) <= 2) && Number(p.obstacle ?? 0) >= 0 && Number(p.attaques ?? 1) >= 1)) e(`bestiaire ${b.cle} : perception invalide`);
+  }
+  for (const b of (d.bestiaire ?? []).filter(x => x.categorie === "livide")) if (!b.perception) e(`bestiaire ${b.cle} : un Livide sans perception`);
+  for (const r of d.regions ?? []) {
+    const an = r.climat?.pluieAn;
+    if (an && !(Number(an.bas) > 0 && Number(an.hauts) >= Number(an.bas))) e(`région ${r.cle} : pluieAn invalide`);
+  }
+  for (const s of d.sites ?? []) if (s.ravine && (!["permanente", "temporaire"].includes(s.ravine) || s.eau !== "riviere")) e(`site ${s.cle} : ravine sans rivière ou inconnue`);
+  for (const a of d.ancrages ?? []) if (a.bruit !== undefined && !(Number(a.bruit) >= 0 && Number(a.bruit) <= 2)) e(`ancrage ${a.cle} : bruit`);
 
   // Factions, événements, réputations.
   if (factions.size < 6 || factions.size > 8) e(`${factions.size} factions (6 à 8 attendues)`);

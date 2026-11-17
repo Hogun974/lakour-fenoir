@@ -198,6 +198,7 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     monde: onglet === "monde" ? resumeMonde(monde, c) : null,
     marche: onglet === "marche" && etat.demarree ? contexteMarche(etat, monde, c) : null,
     recrue: CACHE.recrue,
+    sens: onglet === "partie" && etat.demarree ? contexteSens(api) : null,
     // Lot « savoirs » : l'onglet Savoirs et cyclone.
     ...(onglet === "savoirs" || onglet === "groupe" ? contexteSavoirs(etat, c, api, membres) : {})
   };
@@ -216,6 +217,32 @@ function contexteSavoirs(etat, c, api, membres) {
     sources: options(["maitre", "livre", "cahier"].map(x => [x, t(`LAKOUR_SURVIE.Savoirs.Sources.${x}`)]), "maitre"),
     membresConfiance: options(membres.map(a => [a.id, `${a.name} (${t("LAKOUR_SURVIE.Savoirs.ConfianceCourte", { n: Number(a.system?.confiance) || 0 })})`]), ""),
     gramounes: options([["", "—"], ...(c.gramounes ?? []).map(g => [g.cle, `${g.nom}, ${g.age}`])], "")
+  };
+}
+
+// Lot « sens » (contrat §18) : ce que le groupe perçoit (temps du quart, odeur de l'abri, ravine, corps des Livides, habitude du
+// noir de chacun, lieux nettoyés, moment musical), et ce qu'il faut aux formulaires.
+export function contexteSens(api = game.lakourSurvie) {
+  const s = api?.sens?.();
+  if (!s) return null;
+  const P = k => `LAKOUR_SURVIE.Percevoir.${k}`;
+  const dir = d => t(P(`Vent.Directions.${d}`));
+  const temps = [];
+  if (s.pluie) temps.push(t(P("Pluie")));
+  if (s.brume) temps.push(t(P("Brume")));
+  if (s.vent) temps.push(t(P("Vent.Texte"), { mot: t(P(`Vent.Mots.${s.vent.mot}`)), vers: dir(s.vent.vers), de: dir(s.vent.de) }));
+  if (s.voix) temps.push(t(P(`Voix.${s.voix}`)));
+  return {
+    temps: temps.join(" · "),
+    odeur: s.odeur ? t(P("Odeur.Texte"), { odeur: s.odeur.odeur, betes: s.odeur.betes,
+      sources: s.odeur.sources.map(x => t(P(`Odeur.Sources.${x}`))).join(", ") || "—", vers: s.odeur.sousLeVent ? dir(s.odeur.sousLeVent) : "—" }) : "",
+    ravine: s.ravine ? t(P("Ravine.Texte"), { etat: t(P(`Ravine.Etats.${s.ravine}`)) }) : "",
+    corps: s.corps ? t(P("Corps.Texte"), { etat: t(P(`Corps.Etats.${s.corps.etat}`)) }) : "",
+    musique: s.musique ? t(P(`MomentsMusique.${s.musique}`)) : "",
+    accoutumance: s.accoutumance.map(x => ({ nom: x.nom, texte: t(P("Accoutumance.Ligne"), { n: x.nuits, palier: t(P(`Accoutumance.Paliers.${x.effectif}`)) }) })),
+    nettoyes: s.nettoyes.map(x => ({ nom: x.nom, jour: x.jour, tues: x.tues, facteur: Math.round(x.facteur * 100) })),
+    actionsNoir: options(["lumiere", "nuit", "regler"].map(a => [a, t(P(`ActionsNoir.${a}`))]), "lumiere"),
+    airs: options(["doux", "fort"].map(a => [a, t(P(`Airs.${a}`))]), "doux")
   };
 }
 
@@ -323,7 +350,11 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       tribut: () => api.tribut({ tributId: d.tribut, paye: d.paye !== "non" }),
       separer: () => api.separer({ partants: membres, abriVaAux: d.abriVaAux || "restants", nom: d.nom ?? "" }),
       fusionner: () => api.fusionner({ communauteId: d.communaute }),
-      lireSigne: () => api.lireSigne({})
+      lireSigne: () => api.lireSigne({}),
+      // Percevoir dans le noir (contrat §18).
+      noir: () => api.noir({ acteurId: d.acteur, action: d.action || "lumiere", nuits: Number(d.nuits) || 0 }),
+      nettoyer: () => api.nettoyer({ region: d.region || "", site: d.site || "", tues: Number(d.tues) || 0 }),
+      jouer: () => api.jouer({ musiciens: liste(d.musiciens), air: d.air || "doux" })
     };
     if (!appels[nom]) return;
     cible.disabled = true;

@@ -1,0 +1,148 @@
+{
+  "_id": "4bGZ5GSaSPT4uz9Y",
+  "_key": "!tables!4bGZ5GSaSPT4uz9Y",
+  "name": "La voix de l'île — musique du soir",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qui se joue le soir à l'abri. La musique remonte le moral, et elle s'entend.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "musique-du-soir",
+      "sens": "musique-du-soir"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "aIcTrsKnRL6BaQ2n",
+      "_key": "!tables.results!4bGZ5GSaSPT4uz9Y.aIcTrsKnRL6BaQ2n",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un kayamb, tout bas, sous la varangue : un séga lent que tout le monde connaît. Personne ne chante, mais on bat la mesure du pied.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8XjSbXm0xrPiF9mV",
+      "_key": "!tables.results!4bGZ5GSaSPT4uz9Y.8XjSbXm0xrPiF9mV",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une guitare grave, après la mort d'un des vôtres : quelques accords, toujours les mêmes, jusqu'à tard.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "z5S7kVVoSxXn4iee",
+      "_key": "!tables.results!4bGZ5GSaSPT4uz9Y.z5S7kVVoSxXn4iee",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un maloya à voix basse, un seau retourné pour roulèr : un repos donné, le 20 décembre, ou une nuit qui compte.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hmACtgJqTQabQdEk",
+      "_key": "!tables.results!4bGZ5GSaSPT4uz9Y.hmACtgJqTQabQdEk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un bobre, l'arc musical, sa corde et sa calebasse : un ancien qui joue pour lui seul.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xFhXkwW7CNSyU2DX",
+      "_key": "!tables.results!4bGZ5GSaSPT4uz9Y.xFhXkwW7CNSyU2DX",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une chanson tamoule, une chanson chinoise, une chanson de Madagascar : chacun la sienne, et on finit par les apprendre.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2DCxp0sHCbrCu6hg",
+      "_key": "!tables.results!4bGZ5GSaSPT4uz9Y.2DCxp0sHCbrCu6hg",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le séga à pleine voix, les mains qui claquent : ça fait du bien, et ça s'entend jusqu'à la route (bruit +3).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8PGME1b0pxXPeLyv",
+      "_key": "!tables.results!4bGZ5GSaSPT4uz9Y.8PGME1b0pxXPeLyv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un harmonica qu'on se passe de main en main ; chacun ne connaît qu'un air.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mA8jBtDutpiLacQK",
+      "_key": "!tables.results!4bGZ5GSaSPT4uz9Y.mA8jBtDutpiLacQK",
+      "type": "text",
+      "name": "",
+      "description": "<p>Personne ne joue ce soir. Nouvelle lune : on écoute le souffle des autres, et les pas, dehors.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

@@ -25,3 +25,4 @@ export * from "./lune.mjs";
 export * from "./souvenirs.mjs";
 export * from "./fetes.mjs";
 export * from "./releve.mjs";
+export * from "./sens.mjs";

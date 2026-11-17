@@ -228,11 +228,34 @@
       }
     },
     {
+      "_id": "zAuelbscaEEMMFSa",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.zAuelbscaEEMMFSa",
+      "name": "La nuit et ses voix",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La nuit, ce sont les oreilles qui vous gardent en vie. Plusieurs mains ont écrit ces pages, dans plusieurs abris.</p><blockquote><p>La première semaine, je n'ai pas dormi. Chaque bruit était un Livide. Le vent sous la tôle, un Livide. Le tangue dans les feuilles, un Livide. La troisième nuit de garde, j'ai compris que les grenouilles chantaient toute la nuit, et que tant qu'elles chantaient, je pouvais respirer.<br><em>Carnet d'un gardien de nuit, dans les Hauts de Saint-Paul.</em></p></blockquote><blockquote><p>Le cri, la première fois, on a cru à un enfant. Deux hommes sont descendus dans la ravine avec une lampe. Ils ne sont pas remontés. Ce n'était pas l'enfant qui les a eus : c'était la lampe. Le cri, c'était la Timise, le pétrel noir. Ma grand-mère disait que c'était Granmèr Kal qui pleure sur les enfants qui traînent dehors. Elle avait raison sur ce qui compte : on ne traîne pas dehors.<br><em>Écrit sur la page de garde d'un livre de messe.</em></p></blockquote><p>Ce que les anciens racontaient aux enfants, on le répète maintenant aux adultes : rentrer avant la nuit, ne pas siffler, ne pas répondre quand on vous appelle dans le noir, ne pas laisser de lampe à la fenêtre, ne pas dormir au bord de la ravine après la pluie. Personne n'a besoin de croire aux esprits pour obéir à ces contes. Les Livides suffisent.</p><blockquote><p>On a appris à sentir. Pas comme un chien : un humain ne sent presque rien. Mais un corps, ça se sent, lourd et sucré, à cinquante pas. Une fois sur deux, c'est un cabri crevé. On y va quand même, à pas lents, au vent.<br><em>Carnet d'une cueilleuse de zerbaz, à Salazie.</em></p></blockquote><p>Mois après mois, l'île s'est éteinte, et les pétrels sont revenus. On entend la Timise plus souvent qu'avant le jour zéro. Certains y voient un mauvais signe ; d'autres, la preuve que l'île tient encore. Le livre ne tranche pas.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "la-nuit-et-ses-voix"
+        }
+      }
+    },
+    {
       "_id": "MF1KFuIcbvugnenh",
       "_key": "!journal.pages!up0rswZgQIHj9Y1K.MF1KFuIcbvugnenh",
       "name": "Portraits",
       "type": "text",
-      "sort": 1000,
+      "sort": 1100,
       "title": {
         "show": true,
         "level": 1
@@ -255,7 +278,7 @@
       "_key": "!journal.pages!up0rswZgQIHj9Y1K.motAKgguEFt98pLF",
       "name": "Rumeurs et mystères",
       "type": "text",
-      "sort": 1100,
+      "sort": 1200,
       "title": {
         "show": true,
         "level": 1
@@ -278,7 +301,7 @@
       "_key": "!journal.pages!up0rswZgQIHj9Y1K.LdQO3a7yWsGTNZMn",
       "name": "Lexique",
       "type": "text",
-      "sort": 1200,
+      "sort": 1300,
       "title": {
         "show": true,
         "level": 1
@@ -301,7 +324,7 @@
       "_key": "!journal.pages!up0rswZgQIHj9Y1K.WmhNGAb81nELourG",
       "name": "La première nuit",
       "type": "text",
-      "sort": 1300,
+      "sort": 1400,
       "title": {
         "show": true,
         "level": 1

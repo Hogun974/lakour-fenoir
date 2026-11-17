@@ -175,7 +175,7 @@ export function explorer(monde, contenu, hasard, { region, jour = monde?.jour ??
 //      rencontre, bruit, monde, abri, renseignements, faits, fouille: Boolean (compte pour l'autonomie) }
 export const fouilleDesAlentours = cible => NATURE.includes(cible) || cible === "plantes";
 export function fouiller(monde, contenu, hasard, { region, site = null, cible = null, membres = 1, quarts = 1, prudence = "normal", jour = monde?.jour ?? 0,
-  moment = "apres-midi", abri = null, renseignements = {}, savoirs = [], clarte = null } = {}) {
+  moment = "apres-midi", abri = null, renseignements = {}, savoirs = [], clarte = null, facteurRencontre = 1 } = {}) {
   const F = REGLES_ACTIONS.fouille;
   const P = REGLES_ACTIONS.plantes;
   const p = F.fraction[prudence] ? prudence : "normal";
@@ -273,7 +273,8 @@ export function fouiller(monde, contenu, hasard, { region, site = null, cible = 
     else nouveauMonde.regions[region].nature = source;
     if (glane) butin.nourriture = (butin.nourriture ?? 0) + glane;
   }
-  const rencontre = tirerRencontre(nouveauMonde, contenu, hasard, { region, jour, moment, prudence: p, contexte: "fouille", clarte });
+  // facteur (lot « sens ») : une rue nettoyée se repeuple peu à peu (sens.mjs, facteurNettoyage).
+  const rencontre = tirerRencontre(nouveauMonde, contenu, hasard, { region, jour, moment, prudence: p, contexte: "fouille", clarte, facteur: facteurRencontre });
   const bruit = fouilleDesAlentours(cible) ? 0 : F.bruit[p];
   const lu = Object.entries(butin).map(([r, q]) => `${q} ${r}`).join(", ") || "rien";
   const nomSite = site ? siteDe(contenu, site)?.nom ?? site : "";

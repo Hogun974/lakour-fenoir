@@ -54,7 +54,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Un mort de quelques jours, encore vêtu de ses habits, la peau grise et marbrée, les yeux voilés de blanc. Il marche comme un homme ivre, mais il ne s'arrête jamais.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : marche — <strong>sens</strong> : ouïe, odeur.</li><li><strong>Comportement</strong> : Va vers le bruit, la lumière et l'odeur des vivants ; s'acharne sur une porte ; se regroupe avec les autres. Mord et griffe.</li><li><strong>Faiblesse</strong> : Le crâne ; la chaleur humide qui le défait en quelques semaines dans les Bas.</li></ul>",
+        "content": "<p>Un mort de quelques jours, encore vêtu de ses habits, la peau grise et marbrée, les yeux voilés de blanc. Il marche comme un homme ivre, mais il ne s'arrête jamais.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : marche — <strong>sens</strong> : ouïe, odeur.</li><li><strong>Perception</strong> : vue 0,6, ouïe 1, odorat 1 (un vivant : 1) (journal « Percevoir dans le noir »).</li><li><strong>Comportement</strong> : Va vers le bruit, la lumière et l'odeur des vivants ; s'acharne sur une porte ; se regroupe avec les autres. Mord et griffe.</li><li><strong>Faiblesse</strong> : Le crâne ; la chaleur humide qui le défait en quelques semaines dans les Bas.</li></ul>",
         "format": 1
       },
       "ownership": {
@@ -77,7 +77,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Un Livide ancien, conservé par le froid des Hauts : desséché, raide, couvert de rosée ou de givre au petit matin. Lent, mais si dur à abattre qu'on dirait du bois.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 2 — <strong>vitesse</strong> : lente — <strong>sens</strong> : ouïe.</li><li><strong>Comportement</strong> : Immobile au froid, il s'éveille au soleil et suit les autres. Les hordes des Hauts, des mois après le jour zéro, sont faites de ceux-là.</li><li><strong>Faiblesse</strong> : La nuit froide le fige : on passe entre eux à l'aube, en silence.</li></ul>",
+        "content": "<p>Un Livide ancien, conservé par le froid des Hauts : desséché, raide, couvert de rosée ou de givre au petit matin. Lent, mais si dur à abattre qu'on dirait du bois.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 2 — <strong>vitesse</strong> : lente — <strong>sens</strong> : ouïe.</li><li><strong>Perception</strong> : vue 0,3, ouïe 1, odorat 0 (un vivant : 1) ; figé par le froid des nuits au-dessus de 400 m (journal « Percevoir dans le noir »).</li><li><strong>Comportement</strong> : Immobile au froid, il s'éveille au soleil et suit les autres. Les hordes des Hauts, des mois après le jour zéro, sont faites de ceux-là.</li><li><strong>Faiblesse</strong> : La nuit froide le fige : on passe entre eux à l'aube, en silence.</li></ul>",
         "format": 1
       },
       "ownership": {
@@ -100,7 +100,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : lente — <strong>sens</strong> : ouïe.</li><li><strong>Comportement</strong> : Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</li><li><strong>Faiblesse</strong> : Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.</li></ul>",
+        "content": "<p>Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : lente — <strong>sens</strong> : ouïe, odeur.</li><li><strong>Perception</strong> : vue 0,2, ouïe 1, odorat 1 (un vivant : 1) (journal « Percevoir dans le noir »).</li><li><strong>Comportement</strong> : Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</li><li><strong>Faiblesse</strong> : Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.</li></ul>",
         "format": 1
       },
       "ownership": {
@@ -123,7 +123,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Pris dans un incendie de quartier ou un véhicule en feu, il en est ressorti noirci, à demi aveugle, qui fume encore parfois.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : marche — <strong>sens</strong> : ouïe.</li><li><strong>Comportement</strong> : Ne sent ni la douleur ni la chaleur : il traverse les flammes et les barbelés sans ralentir.</li><li><strong>Faiblesse</strong> : Ses yeux brûlés : il ne suit que les bruits.</li></ul>",
+        "content": "<p>Pris dans un incendie de quartier ou un véhicule en feu, il en est ressorti noirci, à demi aveugle, qui fume encore parfois.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : marche — <strong>sens</strong> : ouïe fine, odeur.</li><li><strong>Perception</strong> : vue 0, ouïe 1,2, odorat 1 (un vivant : 1) (journal « Percevoir dans le noir »).</li><li><strong>Comportement</strong> : Ne sent ni la douleur ni la chaleur : il traverse les flammes et les barbelés sans ralentir.</li><li><strong>Faiblesse</strong> : Ses yeux brûlés : il ne voit rien, il suit les bruits et l'odeur des vivants. Qui se tient immobile, sans un bruit et au vent de lui, peut le laisser passer à un pas.</li></ul>",
         "format": 1
       },
       "ownership": {
@@ -146,7 +146,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Un mort tout récent, relevé depuis quelques heures : il court encore, maladroitement, et se jette sur sa proie. On n'en voit que les premiers jours.</p><ul><li><strong>Dés d'attaque</strong> : 2 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : rapide — <strong>sens</strong> : vue, ouïe.</li><li><strong>Comportement</strong> : Charge dès qu'il voit, crie en courant, attire les autres. Après une semaine, il ralentit et devient un Livide comme les autres.</li><li><strong>Faiblesse</strong> : Il tombe, il se cogne : un obstacle bien placé le brise.</li></ul>",
+        "content": "<p>Un mort tout récent, relevé depuis quelques heures : il court encore, maladroitement, et se jette sur sa proie. On n'en voit que les premiers jours.</p><ul><li><strong>Dés d'attaque</strong> : 2 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : rapide — <strong>sens</strong> : vue, ouïe, odeur.</li><li><strong>Perception</strong> : vue 1, ouïe 1, odorat 1 (un vivant : 1) (journal « Percevoir dans le noir »).</li><li><strong>Comportement</strong> : Charge dès qu'il voit, crie en courant, attire les autres. Après une semaine, il ralentit et devient un Livide comme les autres.</li><li><strong>Faiblesse</strong> : Il tombe, il se cogne : un obstacle bien placé le brise.</li></ul>",
         "format": 1
       },
       "ownership": {

@@ -1,0 +1,148 @@
+{
+  "_id": "OnVnHb6uKcbvBPlB",
+  "_key": "!tables!OnVnHb6uKcbvBPlB",
+  "name": "Les contes des anciens",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce que racontent les gramounes à la veillée : des règles de prudence déguisées. Les personnages y croient ou non ; le jeu ne dit rien de plus.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "contes-des-anciens",
+      "sens": "contes-des-anciens"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "tLeEYDpXjYHPjTVm",
+      "_key": "!tables.results!OnVnHb6uKcbvBPlB.tLeEYDpXjYHPjTVm",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Rentre avant la nuit, ou Granmèr Kal viendra te prendre. » Ce qu'il faut entendre : on ne traîne pas dehors quand on n'y voit plus.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YJa2OeO7v500dlAU",
+      "_key": "!tables.results!OnVnHb6uKcbvBPlB.YJa2OeO7v500dlAU",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Siffle pa la nuit.</em> » (Ne siffle pas la nuit.) Ça appelle ce qui rôde, disent les anciens. Ce qu'il faut entendre : la nuit, le moindre bruit porte.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "567mgRI1YcbXtjsI",
+      "_key": "!tables.results!OnVnHb6uKcbvBPlB.567mgRI1YcbXtjsI",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Si on t'appelle par ton nom dans le noir, ne réponds pas. » Ce qu'il faut entendre : on ne crie pas, on ne se signale pas.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xgOtCqbrYkNHMK01",
+      "_key": "!tables.results!OnVnHb6uKcbvBPlB.xgOtCqbrYkNHMK01",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Ne laisse pas la lampe à la fenêtre, les esprits la voient de loin. » Ce qu'il faut entendre : une lumière se voit à des centaines de mètres.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "bWjsw1jWPYiJYE8R",
+      "_key": "!tables.results!OnVnHb6uKcbvBPlB.bWjsw1jWPYiJYE8R",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Quand la Timise pleure, fais silence. » Ce qu'il faut entendre : quand quelque chose crie dans la nuit, on se tait et on écoute.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HcaHMGMH7nvdtqR4",
+      "_key": "!tables.results!OnVnHb6uKcbvBPlB.HcaHMGMH7nvdtqR4",
+      "type": "text",
+      "name": "",
+      "description": "<p>« <em>Ravine i na faim.</em> » (La ravine a faim.) On ne dort pas dans son lit après la pluie. Ce qu'il faut entendre : une ravine sèche se remplit en un quart d'heure.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Uy4aB1pTYhof9baB",
+      "_key": "!tables.results!OnVnHb6uKcbvBPlB.Uy4aB1pTYhof9baB",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Ne mange pas dehors le soir, l'odeur appelle. » Ce qu'il faut entendre : la cuisine se sent de loin, sous le vent.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7xiofC0LgxxUMkSl",
+      "_key": "!tables.results!OnVnHb6uKcbvBPlB.7xiofC0LgxxUMkSl",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Les grenouilles savent avant toi. » Ce qu'il faut entendre : quand elles se taisent, quelque chose passe.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

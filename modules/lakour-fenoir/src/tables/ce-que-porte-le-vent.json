@@ -1,0 +1,148 @@
+{
+  "_id": "uudTAdsOWBVW1zRB",
+  "_key": "!tables!uudTAdsOWBVW1zRB",
+  "name": "Ce que porte le vent",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une odeur que le vent apporte. Le vent change à chaque quart ; un humain ne sent guère que la cuisine, la fumée, les bêtes et les corps.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ce-que-porte-le-vent",
+      "sens": "ce-que-porte-le-vent"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "wc5JiXQ17xnxNVol",
+      "_key": "!tables.results!uudTAdsOWBVW1zRB.wc5JiXQ17xnxNVol",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un cari au feu de bois, quelque part sous le vent : un abri habité, à moins de cent mètres.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dDgsDExE7YN3s1JA",
+      "_key": "!tables.results!uudTAdsOWBVW1zRB.dDgsDExE7YN3s1JA",
+      "type": "text",
+      "name": "",
+      "description": "<p>La fumée froide d'un fumoir : de la viande boucanée. Quelqu'un a de quoi manger.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7jXCEqcIIAPDdwv2",
+      "_key": "!tables.results!uudTAdsOWBVW1zRB.7jXCEqcIIAPDdwv2",
+      "type": "text",
+      "name": "",
+      "description": "<p>L'odeur d'un corps, lourde et sucrée. À vous de savoir si c'est un Livide, un mort ou une bête.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2IuifRBXwvTxDPEq",
+      "_key": "!tables.results!uudTAdsOWBVW1zRB.2IuifRBXwvTxDPEq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le poulailler, le bouc, le fumier : des bêtes enfermées, donc des gens pour les garder.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DOpQ9Oux3jfhLtWY",
+      "_key": "!tables.results!uudTAdsOWBVW1zRB.DOpQ9Oux3jfhLtWY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le rhum d'une distillerie abandonnée, les cuves ouvertes : on le sent à des centaines de mètres.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "s4MaGAiuwntIAxaY",
+      "_key": "!tables.results!uudTAdsOWBVW1zRB.s4MaGAiuwntIAxaY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le savon, le linge propre : un groupe qui tient, et qui se lave.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uWnyyraSKvb6twQV",
+      "_key": "!tables.results!uudTAdsOWBVW1zRB.uWnyyraSKvb6twQV",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le gazole, l'huile chaude : un moteur a tourné il y a peu.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TICEdeTsgXdhyCAM",
+      "_key": "!tables.results!uudTAdsOWBVW1zRB.TICEdeTsgXdhyCAM",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien du tout : le vent vient de la mer, il n'apporte que le sel.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

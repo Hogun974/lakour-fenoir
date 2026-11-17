@@ -958,3 +958,60 @@ Aucun chiffre nouveau : chaque jointure applique une règle qui existait déjà 
   devient `api.lireSigne()` ; l'erreur d'un groupe séparé inconnu devient `Erreurs.GroupeInconnu` (`Erreurs.CommunauteInconnue`
   reste la communauté d'une fête, §11). Le gaz, les boutures et le biocarburant (§13) n'ont pas de cours au marché
   (`RESSOURCES_HORS_COURS`) : ils ne se troquent pas au cours tant qu'on ne leur en a pas donné un.
+
+## 18. Percevoir dans le noir, le vent et la pluie (lot « sens », 2026-11-17)
+
+Lot 2 de l'inventaire du jeu 3D : la famille 4 « Percevoir dans le noir » et la famille 11 « La voix de l'île », pour une table
+(rien en temps réel : ni écholocalisation affichée, ni états d'éveil suivis Livide par Livide). Chiffres et raisons :
+`docs/equilibre-sens.md`. Logique : `logique/sens.mjs` (nouveau), crochets dans `abri.mjs`, `monde.mjs`, `actions.mjs`, `etat.mjs`.
+Rien n'est retiré ni renommé ; les champs nouveaux ont une valeur par défaut ; une odeur nulle ne change aucun tirage.
+
+### 18.1 Règles (logique pure, `logique/sens.mjs`)
+- **Pluie** : `pleutAuQuart({ graine, quart, region, contenu, dateDepart, monde?, hauts? })` (flux « pluie|quart|région », 65 % commun
+  à l'île : « pluie|quart ») ; chance `chanceDePluie(mm, saison)` ; `pluieAnnuelle(region, { hauts })` lit `climat.pluieAn: { bas,
+  hauts }` (sinon `climat.pluie`) ; une intempérie en cours (`intemperiesDuJour`) fait pleuvoir ; `pluieDuJour` (part du jour).
+- **Ravines** : `eauDesHauts` (8 quarts), `etatRavine` → `"a-sec" | "basse" | "coule" | "en-crue"`, `ravineDuJour({ …, jour, ravine })`
+  → `{ etats, etat, hydro, eau }`. Site : `ravine: "temporaire"` (absent : permanente).
+- **Brume** : `brumeAuQuart({ altitude, moment })`. **Vent** : `ventDuQuart({ graine, quart, dateDepart })` → `{ cap, vers, de, force,
+  mot }` (flux « vent|quart », toute l'île).
+- **Odeur** : `odeurAbri({ installations, souillure, sang, morts, altitude, pluie })` → `{ odeur, betes, sources, attenuee }` ;
+  `mortsSansRepos(etat, region, jour)`. Installation : `effets.odeur` (cuisine commune, séchoir et fumoir, basse-cour, enclos à
+  cabris).
+- **Habitude du noir** (survivant, `system.noir: { nuits, nuitLe, lumiereLe }`) : `noirDe`, `palierNoir` (2, 6, 14, 30 nuits),
+  `palierNoirEffectif(system, quart)`, `compterNuitNoire(system, { quart, lumiere })`, `allumerDansLeNoir`, `texteNoir` ;
+  `desDuNoir(competence, { clarte, palier, ecoute: "" | "yeux-fermes" | "active" })` → `{ des, bruit, immobile }` ;
+  `desDuTemps(competence, { pluie, brume })`.
+- **Livides** : bestiaire `perception: { vue, ouie, odorat, froid, obstacle, attaques }` ; `perceptionDe(contenu, cle)`,
+  `desFaceALivide(perception, { nuit, vent: "vers-lui" | "vers-moi", bruit, altitude })` ; `ETATS_EVEIL` ;
+  `corpsDesLivides({ jour, altitude })`.
+- **Rue nettoyée** : `nettoyerLieu(nettoyes, { region, site, jour, tues })`, `facteurNettoyage(nettoyes, { region, site, jour })`.
+- **Timise** : `chanceTimise({ zone, jour })`. **Musique** : `veilleeMusique({ air, jour, derniere })`, `bruitDesMusiciens(systemes,
+  contenu)` (ancrage `bruit`), `momentMusical({ … })`, `voixDeLaRegion(region)`, `VOIX_DES_ZONES`, `PORTEES`, `REGLES_SENS`.
+
+### 18.2 Branchements
+- `bilanAbri(…, conditions)` : `conditions.ravine` (pico-hydro × hydro ; eau d'une rivière × eau), `conditions.pluie`, `souillure`,
+  `sang`, `morts` (odeur), `musique` (bruit) ; le bilan rend `odeur`, `odeurBetes`, `odeurSources` et, au bord d'une rivière, `ravine`.
+- `tirerMenaces(…, { odeur, odeurBetes })` : horde + 2 % par point, errants + 1 %, chiens + 0,5 % (odeur des bêtes).
+- `fouiller(…, { facteurRencontre })` : les rencontres d'une fouille × ce facteur (défaut 1).
+- `avancer` : les conditions de l'abri portent pluie, ravine, morts, musicien ; l'odeur va aux menaces ; au quart de nuit,
+  l'habitude du noir (options `lumiere`, `lumiereEnRoute`), les grenouilles qui se taisent (une fois par horde : `monde.silences`,
+  secret), la Timise (flux « timise|jour »). Faits : `noir-palier-1` à `4`, `grenouilles-silence` (aussi en alerte, type
+  `silence`), `noir-horde-entendue`, `timise`, `timise-reconnue` (`CLES_TEXTES`).
+
+### 18.3 État, API et fenêtres
+- État public : `temps: { quart, region, pluie, brume, vent }` (écrit par le MJ actif à chaque écriture ; pas la graine),
+  `nettoyes: [{ region, site, jour, tues }]`, `groupe.musiqueLe`. `meteo.temps` peut valoir `"averse"` et `"brume"` (bandeau, scène :
+  pluie et brouillard, ambiance sonore « pluie »). `cielDe` : un quart de nuit où il pleut est couvert. L'instantané du bilan porte
+  `odeur`, `odeurBetes`, `odeurSources`, `ravine`.
+- `quand()` rend en plus `pluie`, `brume`, `vent`, `voix`. `test({ …, ecoute })` (MJ seulement) ; le résultat porte `temps`, `noir`,
+  `bruitEcoute`. `avancer({ …, lumiere, lumiereEnRoute })`. `fouiller` applique le nettoyage du lieu.
+- Nouvelles fonctions : `sens()` (lecture : temps, odeur, ravine, corps, habitude de chacun, lieux nettoyés, moment musical),
+  `approche({ creature, vent, bruit })` (lecture), `noir({ acteurId, action: "lumiere" | "nuit" | "regler", nuits })`,
+  `nettoyer({ region, site, tues })`, `jouer({ musiciens, air: "doux" | "fort" })` (MJ actif, monde ouvert).
+- Survivant : `noir` (objet, vide par défaut ; `gmOnlyFields`). Fiche : l'habitude du noir. Fenêtre du MJ, onglet Partie : bloc
+  « Les sens » et formulaires « L'habitude du noir », « Un lieu nettoyé », « Une veillée en musique ».
+- Contenu : `regions[].climat.pluieAn`, `sites[].ravine`, `bestiaire[].perception`, `installations[].niveaux[].effets.odeur`,
+  `ancrages[].bruit` ; tables « La nuit — ce qu'on entend », « La nuit — les signes », « Ce que porte le vent », « Les contes des
+  anciens », « Un Livide intrigué — ce qu'il fait », « La ravine après la pluie », « La voix de l'île — musique du soir » ; journal du
+  MJ « Percevoir dans le noir » ; page « La nuit, le vent et la pluie » (guide du joueur) ; page « La nuit et ses voix » (livre de
+  l'île).

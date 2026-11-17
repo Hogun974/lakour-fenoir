@@ -28,6 +28,10 @@
 //      (retirée de groupe.membres, `departs`). Les traits (§10.1) jouent sur les rations, le moral, la fatigue, la peur du lieu.
 //  10. paliers de visibilité (§9) : un palier franchi à la hausse depuis la veille donne un fait SECRET `palierVisibilite`
 //      { palier, visibilite } (au MJ seulement).
+// Lot « sens » (sens.mjs, contrat §18) : les conditions de l'abri portent la pluie du jour, la ravine du site, les morts sans repos et
+// le musicien ; l'odeur de l'abri va aux menaces ; au quart de nuit, ceux qui veillent dehors ou de garde sans lumière s'habituent au
+// noir (options.lumiere : l'abri est éclairé ; options.lumiereEnRoute : le groupe marche avec des torches), les grenouilles se
+// taisent quand une horde entre dans la région du groupe (une fois par horde), la Timise crie parfois.
 // Journal et alertes : chaque entrée est { quart, texte (français, repli), cle, params } (textes.mjs) ; la couche Foundry affiche
 // la traduction de `cle` dans la langue de chaque navigateur. Les anciennes entrées à `texte` seul restent lisibles.
 import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, JOURNAL_SECRET_MAX, palierVisibilite, borner } from "./constantes.mjs";
@@ -37,8 +41,9 @@ import { message, cleTexteDe, avecPreposition } from "./textes.mjs";
 import { effetsTraits, lieuxAbri, travailleursParTache, competenceDeTache, peutFaire, retirerMembre } from "./generation.mjs";
 import { marquer } from "./des.mjs";
 import { ajouterStocks } from "./ressources.mjs";
-import { hasardDuJour, deriverHasard, choisir, graineSure } from "./hasard.mjs";
-import { regionsDe, regionDe, sontVoisines } from "./contenu.mjs";
+import { hasardDuJour, deriverHasard, choisir, graineSure, chance } from "./hasard.mjs";
+import { regionsDe, regionDe, siteDe, sontVoisines } from "./contenu.mjs";
+import { pluieDuJour, ravineDuJour, mortsSansRepos, bruitDesMusiciens, compterNuitNoire, palierNoirEffectif, chanceTimise, texteNoir } from "./sens.mjs";
 import { phaseDuJour, momentIndex, saisonDuJour } from "./temps.mjs";
 import { effetQuart, effetJour, peutAgir } from "./survivant.mjs";
 import { bilanAbri, journeeAbri, suivreAutonomie, passageCyclone, subirEvenementAbri } from "./abri.mjs";
@@ -140,9 +145,17 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     for (const s of presentsAbri()) { const b = effetsTraits(s.system, contenu).besoins; r.eau += b.eau; r.nourriture += b.nourriture; }
     return r;
   };
+  // Lot « sens » : la pluie du jour dans la région de l'abri, la ravine de son site, les morts sans repos, le musicien présent.
+  const sensDuJour = jour => {
+    if (!ab || !m?.graine) return {};
+    const region = ab.system.region, site = siteDe(contenu, ab.system.site);
+    const meteo = { graine: m.graine, region, contenu, dateDepart, monde: m };
+    return { pluie: pluieDuJour({ ...meteo, jour }), morts: mortsSansRepos(e, region, jour), musique: bruitDesMusiciens(presentsAbri().map(s => s.system), contenu),
+      ...(site?.eau === "riviere" ? { ravine: ravineDuJour({ ...meteo, jour, ravine: site.ravine || "permanente" }) } : {}) };
+  };
   const conditions = jour => ({ jour, dateDepart, personnes: personnesAbri(), reseaux: ab ? reseauxActifs(m, ab.system.region, jour) : {},
     rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu, jour), lueur: lueurDuJour(e, jour), signature: signatureDuMarche(e.marche),
-    chien: Boolean(options.chien) && aLAbri(), confort: aLAbri() ? Number(options.confort) || 0 : 0 });
+    chien: Boolean(options.chien) && aLAbri(), confort: aLAbri() ? Number(options.confort) || 0 : 0, ...sensDuJour(jour) });
   let bilan = ab ? bilanAbri(ab.system, ab.installations, contenu, conditions(Math.floor(e.horloge.quart / QUARTS_PAR_JOUR))) : null;
   let palierVeille = palierVisibilite(options.visibiliteVeille ?? bilan?.visibilite ?? 0);
   // publier(quart, cle, params, texte) : une entrée du journal ; alerter(quart, type, cle, params, texte) : une alerte.
@@ -200,6 +213,45 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         publier(fin, t.cle, t.params, t.texte);
       }
     }
+    // 1 quater. Percevoir dans le noir (lot « sens »). Au quart de nuit : ceux qui sont debout dans le noir (en route, ou de garde)
+    // s'habituent ; les grenouilles se taisent quand une horde entre dans la région ; la Timise crie (flux « timise|jour »).
+    if (nuit) {
+      const jourQ = Math.floor(q / QUARTS_PAR_JOUR);
+      const enRoute = Boolean(e.groupe.enRoute);
+      const lumiereLe = ab?.system?.lumiereLe;
+      const lumiereAbri = Boolean(options.lumiere) || (aLAbri() && ((lumiereLe !== null && lumiereLe !== undefined && Number(lumiereLe) === jourQ) || lueurDuJour(e, jourQ) > 0));
+      const debout = surv.filter(s => actif(s) && (enRoute || veille.has(s.id) || s.system.tache === "garde"));
+      for (const s of debout) {
+        const r = compterNuitNoire(s.system, { quart: q, lumiere: enRoute ? Boolean(options.lumiereEnRoute) : lumiereAbri });
+        if (!r.compte) continue;
+        s.system = r.system;
+        if (r.palier > r.avant) {
+          const t = texteNoir(r.palier, s.nom);
+          s.evenements.push({ quart: fin, cle: "noir-palier", palier: r.palier });
+          publier(fin, t.cle, t.params, t.texte);
+        }
+      }
+      const oreille = seuil => debout.find(s => palierNoirEffectif(s.system, q) >= seuil) ?? null;
+      const ici = enRoute ? "" : e.groupe.region;
+      if (ici) {
+        const hordes = (m.hordes ?? []).filter(h => h.region === ici && Number(h.taille) > 0);
+        const deja = new Set(m.silences ?? []);
+        if (hordes.some(h => !deja.has(h.id))) {
+          const texte = "Les grenouilles se sont tues d'un coup, et les insectes avec : un grand trou de silence dans la nuit.";
+          publier(fin, "grenouilles-silence", {}, texte);
+          alerter(fin, "silence", "grenouilles-silence", {}, texte);
+          const o = oreille(3);
+          if (o) publier(fin, "noir-horde-entendue", { nom: o.nom }, `${o.nom} l'entend sous le silence : des pas, beaucoup de pas, qui traînent. Une horde.`);
+        }
+        m.silences = hordes.map(h => h.id);
+      }
+      const zone = regionDe(contenu, e.groupe.enRoute?.vers ?? e.groupe.region)?.zone;
+      if (zone && chance(chanceTimise({ zone, jour: jourQ }), deriverHasard(m.graine, "timise", jourQ))) {
+        const o = oreille(1);
+        if (o) publier(fin, "timise-reconnue", { nom: o.nom }, `Un gémissement d'enfant monte de la ravine. ${o.nom} ne bouge pas : « Timise. Un oiseau. »`);
+        else publier(fin, "timise", {}, "Un gémissement d'enfant monte de la ravine, puis un autre, plus loin. Personne n'ose sortir. Au matin, rien.");
+      }
+    }
     // 2. Bruit de l'abri.
     if (ab) ab.system.bruit = Math.min(10, Math.max(0, (Number(ab.system.bruit) || 0) - 2 + (bilan?.bruit ?? 0)));
     // 3. Voyage en cours.
@@ -224,7 +276,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       region: e.groupe.enRoute ? e.groupe.enRoute.vers : e.groupe.region,
       radio: Boolean(bilan?.renseignements),
       bruitParRegion: ab ? { [ab.system.region]: Math.min(10, (Number(ab.system.bruit) || 0) + (bilan?.bruit ?? 0)) } : {},
-      abri: ab ? { region: ab.system.region, visibilite: bilan?.visibilite ?? 0, bruit: ab.system.bruit ?? 0, defense: bilan?.defense ?? 0 } : undefined
+      abri: ab ? { region: ab.system.region, visibilite: bilan?.visibilite ?? 0, bruit: ab.system.bruit ?? 0, defense: bilan?.defense ?? 0,
+        odeur: bilan?.odeur ?? 0, odeurBetes: bilan?.odeurBetes ?? 0 } : undefined
     };
     if (!ab) delete ctx.abri;
     const sim = simulerJour(m, contenu, hasardDuJour(m.graine, jour), jour, ctx);

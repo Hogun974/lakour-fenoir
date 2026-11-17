@@ -23,7 +23,7 @@ function region({ cle, nom, zone, altitude, population, climat, description, apr
 
 export const REGIONS_BRUTES = [
   region({
-    cle: "saint-denis", nom: "Saint-Denis", zone: "littoral", altitude: 150, population: 5, climat: { soleil: 2, pluie: 2 },
+    cle: "saint-denis", nom: "Saint-Denis", zone: "littoral", altitude: 150, population: 5, climat: { soleil: 2, pluie: 2, pluieAn: { bas: 1600, hauts: 3000 } },
     description: `Le chef-lieu s'étale du Barachois jusqu'aux pentes de La Montagne et du Brûlé. Au jour zéro, les bouchons remontent le boulevard Sud et les sirènes ne se taisent plus autour du CHU de Bellepierre. Les cases créoles de la rue de Paris ferment leurs barreaux, les barres du Chaudron allument toutes leurs fenêtres, et sur le front de mer, des familles regardent les avions décoller de Gillot comme on regarde partir le dernier car.
 
 On y trouve de tout : pharmacies, quincailleries, supermarchés, casernes. Et cent cinquante mille personnes qui veulent la même chose que vous.`,
@@ -36,7 +36,7 @@ On y trouve de tout : pharmacies, quincailleries, supermarchés, casernes. Et ce
     repere: repere(55.45, -20.89)
   }),
   region({
-    cle: "sainte-marie", nom: "Sainte-Marie et l'aéroport", zone: "littoral", altitude: 80, population: 3, climat: { soleil: 2, pluie: 2 },
+    cle: "sainte-marie", nom: "Sainte-Marie et l'aéroport", zone: "littoral", altitude: 80, population: 3, climat: { soleil: 2, pluie: 2, pluieAn: { bas: 2000, hauts: 4000 } },
     description: `De Gillot à Sainte-Suzanne, la plaine littorale du Nord-Est alterne zones commerciales, champs de canne et lotissements. L'aéroport est le cœur battant du jour zéro : files d'attente jusqu'au parking, rotations ajoutées en urgence, rumeurs de passagers malades débarqués de nuit. Plus à l'est, le phare de Bel-Air veille toujours sur la pointe, et la petite marina de Sainte-Marie dandine ses barques.
 
 Les vergers des hauts de Sainte-Marie croulent de letchis en décembre.`,
@@ -49,7 +49,7 @@ Les vergers des hauts de Sainte-Marie croulent de letchis en décembre.`,
     repere: repere(55.53, -20.9)
   }),
   region({
-    cle: "route-du-littoral", nom: "La route du Littoral", zone: "littoral", altitude: 20, population: 1, climat: { soleil: 3, pluie: 1 },
+    cle: "route-du-littoral", nom: "La route du Littoral", zone: "littoral", altitude: 20, population: 1, climat: { soleil: 3, pluie: 1, pluieAn: { bas: 1000, hauts: 2500 } },
     description: `Douze kilomètres coincés entre la falaise et l'océan, de Saint-Denis à La Possession. La nouvelle route du Littoral court sur sa digue et son viaduc jusqu'à la Grande Chaloupe ; au-delà, l'ancienne route serre la falaise sous ses filets et ses merlons. Au jour zéro, c'est un tuyau : deux files immobiles, des klaxons, des gens qui marchent entre les voitures avec leurs enfants sur les épaules.
 
 Au creux de la Grande Chaloupe dorment le vieux lazaret de pierre et la gare d'autrefois. Le chemin des Anglais, pavé il y a deux siècles, passe au-dessus de tout cela.`,
@@ -62,7 +62,7 @@ Au creux de la Grande Chaloupe dorment le vieux lazaret de pierre et la gare d'a
     repere: repere(55.37, -20.9)
   }),
   region({
-    cle: "le-port", nom: "Le Port et La Possession", zone: "littoral", altitude: 30, population: 4, climat: { soleil: 3, pluie: 1 },
+    cle: "le-port", nom: "Le Port et La Possession", zone: "littoral", altitude: 30, population: 4, climat: { soleil: 3, pluie: 1, pluieAn: { bas: 550, hauts: 1500 } },
     description: `Les grues du port Est, les cuves, les darses et les quais : c'est par ici qu'arrivent le carburant, les conteneurs, presque tout ce que mange l'île. La centrale du Port Est ronronne au bord de l'eau. Au jour zéro, les dockers bloquent l'entrée, des familles supplient pour une place sur un cargo, et la Rivière des Galets roule ses galets sous le pont comme si de rien n'était.
 
 La Possession, plus verte, monte vers Dos d'Âne, d'où l'on voit le rempart de Mafate.`,
@@ -75,7 +75,7 @@ La Possession, plus verte, monte vers Dos d'Âne, d'où l'on voit le rempart de 
     repere: repere(55.3, -20.93)
   }),
   region({
-    cle: "saint-paul", nom: "Saint-Paul et la côte Ouest", zone: "littoral", altitude: 120, population: 4, climat: { soleil: 3, pluie: 1 },
+    cle: "saint-paul", nom: "Saint-Paul et la côte Ouest", zone: "littoral", altitude: 120, population: 4, climat: { soleil: 3, pluie: 1, pluieAn: { bas: 500, hauts: 1500 } },
     description: `La côte sous le vent : l'étang de Saint-Paul et ses brèdes, la zone de Savanna et son hypermarché, puis Boucan, Saint-Gilles et l'Hermitage, avec le seul vrai lagon de l'île derrière sa barrière de corail. Au jour zéro, il fait beau, terriblement beau. Les touristes cherchent un vol, les plagistes ramassent les transats, et sur la route des Tamarins les gyrophares descendent vers le sud sans s'arrêter.
 
 Les hauts de Saint-Paul, Bellemène, Le Guillaume, montent dans les champs et les savanes sèches.`,
@@ -88,7 +88,7 @@ Les hauts de Saint-Paul, Bellemène, Le Guillaume, montent dans les champs et le
     repere: repere(55.25, -21.02)
   }),
   region({
-    cle: "hauts-de-l-ouest", nom: "Les Hauts de l'Ouest", zone: "hauts", altitude: 1200, population: 2, climat: { soleil: 2, pluie: 2 },
+    cle: "hauts-de-l-ouest", nom: "Les Hauts de l'Ouest", zone: "hauts", altitude: 1200, population: 2, climat: { soleil: 2, pluie: 2, pluieAn: { bas: 900, hauts: 2000 } },
     description: `Au-dessus des savanes, la route du Maïdo grimpe à travers les champs de géranium, les cryptomérias et la forêt de tamarins des Hauts jusqu'au belvédère, à plus de deux mille mètres, d'où l'on plonge sur Mafate. Petite France, Le Guillaume, Trois-Bassins des Hauts, le Tévelave plus au sud : des bourgs de cases en bois sous tôle, des cuves à eau et des chiens qui aboient au moindre bruit de moteur.
 
 Au jour zéro, on y entend la nouvelle à la radio, et on ferme le portail.`,
@@ -101,7 +101,7 @@ Au jour zéro, on y entend la nouvelle à la radio, et on ferme le portail.`,
     repere: repere(55.35, -21.11)
   }),
   region({
-    cle: "saint-leu", nom: "Saint-Leu et l'Étang-Salé", zone: "littoral", altitude: 150, population: 3, climat: { soleil: 3, pluie: 1 },
+    cle: "saint-leu", nom: "Saint-Leu et l'Étang-Salé", zone: "littoral", altitude: 150, population: 3, climat: { soleil: 3, pluie: 1, pluieAn: { bas: 600, hauts: 1500 } },
     description: `Saint-Leu, ses ruelles, son port de poche et les parapentes qui tournent au-dessus de la falaise ; plus loin, Les Avirons et l'Étang-Salé avec sa plage de sable noir et sa forêt de filaos. Les murs de l'ancienne sucrerie de Stella dominent la côte. Au jour zéro, les pêcheurs rentrent tôt, les surfeurs restent à l'eau, et la route des Tamarins se bouche à hauteur des échangeurs.`,
     apres: `Une région moyenne en tout : assez peuplée pour être dangereuse au début, assez sèche et chaude pour se vider plus tard. Les forêts de filaos de l'Étang-Salé deviennent un abri pour ceux qui évitent la route. Les pêcheurs du Sud y poussent leurs barques.`,
     ressources: { nourriture: 650, eau: 320, carburant: 200, medicaments: 40, munitions: 15, materiaux: 200, pieces: 80, graines: 25 },
@@ -112,7 +112,7 @@ Au jour zéro, on y entend la nouvelle à la radio, et on ferme le portail.`,
     repere: repere(55.31, -21.21)
   }),
   region({
-    cle: "saint-pierre", nom: "Saint-Louis et Saint-Pierre", zone: "littoral", altitude: 100, population: 5, climat: { soleil: 3, pluie: 1 },
+    cle: "saint-pierre", nom: "Saint-Louis et Saint-Pierre", zone: "littoral", altitude: 100, population: 5, climat: { soleil: 3, pluie: 1, pluieAn: { bas: 900, hauts: 2000 } },
     description: `La capitale du Sud et sa voisine : le front de mer de Saint-Pierre, son port, son marché couvert, le grand hôpital du Sud ; Saint-Louis, la sucrerie et la centrale du Gol, Pierrefonds et son aérodrome, son quartier militaire. Au jour zéro, le Sud est en fête d'un samedi de décembre, puis les urgences débordent sur le parking, et la RN1 se ferme sur un accident que personne ne vient dégager.`,
     apres: `Comme Saint-Denis, la ville tombe tôt et fort. Le quartier militaire de Pierrefonds tient quelques semaines. Après deux mois, la chaleur du Sud vide les rues de leurs Livides ; les Barques du Sud tiennent le port, le Dispensaire tient ce qui reste de l'hôpital, et entre eux se joue un marché fragile de poisson contre médicaments.`,
     ressources: { nourriture: 1300, eau: 700, carburant: 380, medicaments: 200, munitions: 50, materiaux: 320, pieces: 180, graines: 35 },
@@ -123,7 +123,7 @@ Au jour zéro, on y entend la nouvelle à la radio, et on ferme le portail.`,
     repere: repere(55.45, -21.32)
   }),
   region({
-    cle: "le-tampon", nom: "Le Tampon et la Plaine des Cafres", zone: "hauts", altitude: 1000, population: 3, climat: { soleil: 2, pluie: 2 },
+    cle: "le-tampon", nom: "Le Tampon et la Plaine des Cafres", zone: "hauts", altitude: 1000, population: 3, climat: { soleil: 2, pluie: 2, pluieAn: { bas: 1200, hauts: 2500 } },
     description: `Le Tampon s'étire en kilomètres numérotés le long de la RN3, du Douzième au Vingt-Troisième, puis la route sort des maisons et monte dans les prairies de la Plaine des Cafres : vaches, barbelés, fermes laitières, Bourg-Murat et son observatoire du volcan. L'Entre-Deux, perché sur son éperon entre deux rivières, garde ses cases créoles et ses jardins. Au jour zéro, il fait frais là-haut, et l'on allume la cheminée.`,
     apres: `Une région à deux visages : la ville du Tampon, très peuplée, tombe comme le littoral mais ne se décompose pas aussi vite ; la Plaine des Cafres, vide et froide, voit la Coopérative des Plaines s'organiser autour des fermes. Le brouillard y est quotidien, et les vieux Livides des Hauts y deviennent légion au fil des mois.`,
     ressources: { nourriture: 800, eau: 420, carburant: 220, medicaments: 60, munitions: 20, materiaux: 260, pieces: 90, graines: 60 },
@@ -134,7 +134,7 @@ Au jour zéro, on y entend la nouvelle à la radio, et on ferme le portail.`,
     repere: repere(55.54, -21.23)
   }),
   region({
-    cle: "sud-sauvage", nom: "Saint-Joseph et le Sud sauvage", zone: "foret", altitude: 250, population: 2, climat: { soleil: 2, pluie: 3 },
+    cle: "sud-sauvage", nom: "Saint-Joseph et le Sud sauvage", zone: "foret", altitude: 250, population: 2, climat: { soleil: 2, pluie: 3, pluieAn: { bas: 2500, hauts: 5000 } },
     description: `Après Saint-Joseph et Petite-Île, la côte devient sauvage : falaises noires, vacoas, forêt de Mare-Longue, champs de vanille sous les arbres, Saint-Philippe et ses marines minuscules, puis le Grand Brûlé, où les coulées de la Fournaise descendent jusqu'à l'océan en coupant la RN2. Il pleut beaucoup, tout pousse, et les gens se connaissent.
 
 Sous les coulées récentes courent des tunnels de lave que seuls quelques guides fréquentent.`,
@@ -147,7 +147,7 @@ Sous les coulées récentes courent des tunnels de lave que seuls quelques guide
     repere: repere(55.69, -21.37)
   }),
   region({
-    cle: "fournaise", nom: "Le Piton de la Fournaise et la Plaine des Sables", zone: "volcan", altitude: 2300, population: 0, climat: { soleil: 2, pluie: 2 },
+    cle: "fournaise", nom: "Le Piton de la Fournaise et la Plaine des Sables", zone: "volcan", altitude: 2300, population: 0, climat: { soleil: 2, pluie: 2, pluieAn: { bas: 4000, hauts: 6000 } },
     description: `La route du Volcan quitte Bourg-Murat, traverse des landes de branles puis la Plaine des Sables, un désert rouge et noir sans un arbre, et s'arrête au Pas de Bellecombe, au bord du rempart. En contrebas, l'Enclos, le cône de la Fournaise, ses cratères et ses fumerolles. Au jour zéro, quelques randonneurs redescendent du sommet sans savoir encore ce qui se passe en bas. Le gîte du volcan affiche complet.`,
     apres: `Personne ne vit là-haut, et c'est sa force comme sa faiblesse : ni eau courante, ni bois, ni cultures possibles, un froid mordant la nuit. Les rares Livides qui y montent y restent des mois, figés par le froid. Quand la Fournaise se réveille, l'Enclos s'illumine, et toute l'île la regarde.`,
     ressources: { nourriture: 30, eau: 20, carburant: 15, medicaments: 5, munitions: 0, materiaux: 20, pieces: 10, graines: 0 },
@@ -158,7 +158,7 @@ Sous les coulées récentes courent des tunnels de lave que seuls quelques guide
     repere: repere(55.7, -21.23)
   }),
   region({
-    cle: "est", nom: "L'Est : Saint-André, Saint-Benoît, Sainte-Rose", zone: "littoral", altitude: 150, population: 3, climat: { soleil: 1, pluie: 3 },
+    cle: "est", nom: "L'Est : Saint-André, Saint-Benoît, Sainte-Rose", zone: "littoral", altitude: 150, population: 3, climat: { soleil: 1, pluie: 3, pluieAn: { bas: 3500, hauts: 7000 } },
     description: `La côte au vent : la canne à perte de vue autour de Saint-André et de la sucrerie de Bois-Rouge, les temples tamouls aux couleurs vives, Bras-Panon et ses bichiques, Saint-Benoît au bord de la rivière des Marsouins, puis la route qui longe l'océan jusqu'à Sainte-Rose et Notre-Dame-des-Laves. Il pleut, souvent et fort ; les rivières descendent en torrents. Plus haut, les centrales de Takamaka et de la Rivière de l'Est turbinent l'eau des montagnes.
 
 Au jour zéro, la pluie retient les gens chez eux, ce qui en sauve beaucoup.`,
@@ -171,7 +171,7 @@ Au jour zéro, la pluie retient les gens chez eux, ce qui en sauve beaucoup.`,
     repere: repere(55.71, -21.03)
   }),
   region({
-    cle: "plaine-des-palmistes", nom: "La Plaine des Palmistes et Bélouve", zone: "foret", altitude: 1050, population: 1, climat: { soleil: 1, pluie: 3 },
+    cle: "plaine-des-palmistes", nom: "La Plaine des Palmistes et Bélouve", zone: "foret", altitude: 1050, population: 1, climat: { soleil: 1, pluie: 3, pluieAn: { bas: 4000, hauts: 6000 } },
     description: `Entre le col de Bellevue et la descente sur Saint-Benoît, la RN3 traverse un bourg de jardins, de goyaviers et de brume. Au-dessus, par la route forestière, les forêts de Bébour et de Bélouve : tamarins des Hauts couverts de mousse, fougères arborescentes, et le gîte de Bélouve au bord du vide, face au cirque de Salazie et au Trou de Fer. Au jour zéro, la pluie fine ne s'arrête pas, et la radio grésille.`,
     apres: `Peu peuplée, très humide, fraîche : la Plaine des Palmistes reste longtemps calme, puis voit passer les réfugiés de l'Est et du Tampon par la route des Plaines. Les forêts offrent bois, gibier et cachettes ; leurs vieux Livides, conservés par le frais, s'y perdent et s'y accumulent lentement.`,
     ressources: { nourriture: 180, eau: 140, carburant: 40, medicaments: 10, munitions: 8, materiaux: 100, pieces: 35, graines: 40 },
@@ -182,7 +182,7 @@ Au jour zéro, la pluie retient les gens chez eux, ce qui en sauve beaucoup.`,
     repere: repere(55.63, -21.13)
   }),
   region({
-    cle: "cilaos", nom: "Cilaos", zone: "cirque", altitude: 1200, population: 1, climat: { soleil: 2, pluie: 2 },
+    cle: "cilaos", nom: "Cilaos", zone: "cirque", altitude: 1200, population: 1, climat: { soleil: 2, pluie: 2, pluieAn: { bas: 1700, hauts: 2500 } },
     description: `On y monte par la route aux quatre cents virages depuis Saint-Louis, tunnels à une voie et précipices compris. Au bout, un bourg de cases colorées au pied du Piton des Neiges, ses thermes, ses lentilles, ses vignes en terrasses, ses broderies. Îlet à Cordes et Bras-Sec s'accrochent plus loin sur leurs plateaux. Au jour zéro, le dernier car jaune redescend presque vide, et les éboulis surveillent la route comme toujours.`,
     apres: `Une seule route, fragile : quand elle tombe sous un éboulement, Cilaos devient une île dans l'île. Peu de Livides au début, mais le cirque est frais et les garde ; les années passant, ses chemins se peuplent de silhouettes immobiles qui attendent le soleil. Les terrasses cultivées, elles, nourrissent qui sait s'en occuper.`,
     ressources: { nourriture: 200, eau: 160, carburant: 40, medicaments: 15, munitions: 8, materiaux: 90, pieces: 35, graines: 50 },
@@ -193,7 +193,7 @@ Au jour zéro, la pluie retient les gens chez eux, ce qui en sauve beaucoup.`,
     repere: repere(55.47, -21.13)
   }),
   region({
-    cle: "salazie", nom: "Salazie", zone: "cirque", altitude: 900, population: 1, climat: { soleil: 1, pluie: 3 },
+    cle: "salazie", nom: "Salazie", zone: "cirque", altitude: 900, population: 1, climat: { soleil: 1, pluie: 3, pluieAn: { bas: 3000, hauts: 5000 } },
     description: `Le cirque vert : on y entre par la route de Salazie depuis Saint-André, le long de la Rivière du Mât, entre les cascades du Voile de la Mariée. Salazie, Hell-Bourg et ses cases créoles à lambrequins, Grand Îlet sous ses treilles de chouchous, et tout au bout le col des Bœufs, porte de Mafate. Il pleut, la brume monte l'après-midi, et chaque ravine chante.`,
     apres: `Isolée par une route que les crues coupent souvent, Salazie nourrit bien ceux qui y restent : chouchous, cresson, camarons, bois. Ses Livides, conservés par le frais et l'ombre, s'entassent avec le temps au fond des ravines et sur les sentiers. Les Familles des Îlets y descendent troquer.`,
     ressources: { nourriture: 220, eau: 180, carburant: 50, medicaments: 15, munitions: 6, materiaux: 100, pieces: 35, graines: 55 },
@@ -204,7 +204,7 @@ Au jour zéro, la pluie retient les gens chez eux, ce qui en sauve beaucoup.`,
     repere: repere(55.52, -21.05)
   }),
   region({
-    cle: "mafate", nom: "Mafate", zone: "cirque", altitude: 1000, population: 0, climat: { soleil: 2, pluie: 2 },
+    cle: "mafate", nom: "Mafate", zone: "cirque", altitude: 1000, population: 0, climat: { soleil: 2, pluie: 2, pluieAn: { bas: 1800, hauts: 3000 } },
     description: `Le cirque sans route. On y entre à pied par le col des Bœufs, le Maïdo, le col du Taïbit, la canalisation des Orangers ou le lit de la Rivière des Galets ; l'hélicoptère y monte les vivres. Une quinzaine d'îlets, La Nouvelle, Marla, Roche-Plate, Aurère, Îlet à Bourse, quelques centaines d'habitants, des panneaux solaires sur chaque toit, des sources captées et des sentiers que les anciens connaissent les yeux fermés.
 
 Au jour zéro, Mafate apprend la nouvelle par la radio, comme le reste du monde. Puis plus rien ne monte.`,

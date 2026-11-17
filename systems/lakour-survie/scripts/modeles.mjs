@@ -69,7 +69,9 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
       sensMoral: new fields.NumberField({ required: true, nullable: false, integer: true, min: -10, max: 10, initial: 0 }),
       reputation: new fields.NumberField({ required: true, nullable: false, integer: true, min: -10, max: 10, initial: 0 }),
       autorite: entier(2, 0, 5),
-      esprit: objetLibre({})
+      esprit: objetLibre({}),
+      // Lot « sens » (logique/sens.mjs) : l'habitude du noir, { nuits, nuitLe, lumiereLe } ; vide : pas encore une nuit dans le noir.
+      noir: objetLibre({})
     };
   }
 

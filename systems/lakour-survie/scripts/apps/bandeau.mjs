@@ -9,7 +9,7 @@ import { CHEMIN, jours } from "./commun.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const ICONES_MOMENT = { matin: "fa-sun", "apres-midi": "fa-cloud-sun", soir: "fa-cloud-moon", nuit: "fa-moon" };
-const ICONES_METEO = { cyclone: "fa-hurricane", pluie: "fa-cloud-showers-heavy" };
+const ICONES_METEO = { cyclone: "fa-hurricane", pluie: "fa-cloud-showers-heavy", averse: "fa-cloud-rain", brume: "fa-smog" };   // averse, brume : lot « sens »
 
 // Le contenu du bandeau pour l'utilisateur courant (pur, éprouvé hors Foundry).
 export function contexteBandeau() {

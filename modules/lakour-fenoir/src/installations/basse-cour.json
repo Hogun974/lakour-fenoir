@@ -58,6 +58,7 @@
           "sol": 0,
           "renseignements": false,
           "bonus": {},
+          "odeur": 1,
           "bras": {
             "tache": "elevage",
             "nombre": 1
@@ -108,6 +109,7 @@
           "sol": 0,
           "renseignements": false,
           "bonus": {},
+          "odeur": 1,
           "bras": {
             "tache": "elevage",
             "nombre": 1

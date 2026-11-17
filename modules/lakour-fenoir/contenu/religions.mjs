@@ -13,8 +13,9 @@ function religion({ cle, nom, description, observance = null, fetes = [], poids 
   return { cle, nom, description: html(description), ...(observance ? { observance: { besoin: observance.besoin, texte: observance.texte } } : {}), fetes, poids, affinites,
     ...(special ? { special } : {}) };
 }
-function ancrage({ cle, nom, description, besoin, texte, poids = 1 }) {
-  return { cle, nom, description: html(description), besoin, texte, poids };
+// bruit (lot « sens ») : ce que l'ancrage ajoute au bruit de l'abri quand un pratiquant y est (l'instrument joué chaque soir).
+function ancrage({ cle, nom, description, besoin, texte, poids = 1, bruit = 0 }) {
+  return { cle, nom, description: html(description), besoin, texte, poids, ...(bruit ? { bruit } : {}) };
 }
 
 export const RELIGIONS = [
@@ -68,7 +69,7 @@ export const ANCRAGES = [
     description: `Le café à cinq heures et demie, la barbe faite, le lit fait, les affaires pliées : le monde s'écroule, pas ses habitudes. Sur la route, sans abri, tout se dérègle, et lui avec.` }),
   ancrage({ cle: "sport", nom: "Le sport", besoin: "calme", poids: 2, texte: "courir, nager ou faire ses pompes chaque matin",
     description: `Il courait le Grand Raid, ou il jouait au foot le dimanche au stade de son quartier. Il continue : des pompes au lever, une course dans la cour. Le corps fatigué fait taire la tête.` }),
-  ancrage({ cle: "musique", nom: "Un instrument", besoin: "objet", poids: 1, texte: "jouer un air le soir, même tout bas",
+  ancrage({ cle: "musique", nom: "Un instrument", besoin: "objet", poids: 1, bruit: 1, texte: "jouer un air le soir, même tout bas",
     description: `Un kayamb, un harmonica, une vieille guitare au vernis écaillé. Le soir, il joue tout bas un séga ou un maloya de son grand-père. Le bruit attire, il le sait ; il joue quand même, pour lui.` }),
   ancrage({ cle: "plante", nom: "Un pied de piment", besoin: "objet", poids: 1, texte: "l'arroser, le mettre au soleil, l'emporter partout",
     description: `Un pied de piment dans un pot de yaourt, ou une bouture de géranium de la case de sa mère. Il l'arrose, il le déplace au soleil, il l'emporte quand on part. Tant qu'il pousse, quelque chose continue.` })

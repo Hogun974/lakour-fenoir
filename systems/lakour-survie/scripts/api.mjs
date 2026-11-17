@@ -26,6 +26,7 @@ import { lireBudget } from "./reglages.mjs";
 import { ecrireChroniques, chapitreOuvert } from "./chroniques.mjs";
 import { deMJ, trouverDemande, fermerDemande, argumentsDuTestJoueur, propositionPermise } from "./demandes.mjs";
 import { fonctionsMarche } from "./api-marche.mjs";
+import { fonctionsSens } from "./api-sens.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -76,8 +77,23 @@ export function quandDe(etat = lireEtat()) {
   return {
     ...q, fetes: fetesDuJeu(q.date, contenu().fetes ?? []).map(f => ({ cle: f.cle, nom: f.nom, coeur: f.coeur })),
     lune, couvert, clarte, chaleur: L.chaleurPese({ mois: d.mois, altitude, moment: q.moment }), signes: L.signesDuMois(d.mois, { altitude }),
-    dateExacte: sue.exacte, dateLue: sue.exacte ? "" : texteDateLue(sue)
+    dateExacte: sue.exacte, dateLue: sue.exacte ? "" : texteDateLue(sue),
+    // Lot « sens » (logique/sens.mjs) : le temps du quart là où est le groupe (écrit par le MJ actif dans etat.temps), la voix de la région.
+    ...tempsDuQuart(etat, q.quart, region)
   };
+}
+// La pluie, la brume et le vent du quart (ce que le groupe voit et sent) ; rien si etat.temps ne parle pas de ce quart-ci.
+function tempsDuQuart(etat, quart, region) {
+  const x = etat?.temps?.quart === quart && etat?.temps?.region === region ? etat.temps : null;
+  const reg = L.regionDe(contenu(), region);
+  return { pluie: Boolean(x?.pluie), brume: Boolean(x?.brume), vent: x?.vent ? structuredClone(x.vent) : null, voix: reg ? L.voixDeLaRegion(reg) : "" };
+}
+// Le temps réel d'un quart dans une région (MJ actif, monde ouvert) : { pluie, brume, vent }.
+export function tempsReel(monde, quart, region) {
+  if (!monde?.graine || !region) return { pluie: false, brume: false, vent: null };
+  const reg = L.regionDe(contenu(), region);
+  const pluie = L.pleutAuQuart({ graine: monde.graine, quart, region, contenu: contenu(), dateDepart: dateDepart(), monde });
+  return { pluie, brume: L.brumeAuQuart({ altitude: reg?.altitude, moment: L.momentDe(quart) }), vent: L.ventDuQuart({ graine: monde.graine, quart, dateDepart: dateDepart() }) };
 }
 // « Début février, lune gibbeuse décroissante, les longanis » (langue du client).
 export function texteDateLue(sue) {
@@ -91,7 +107,11 @@ export function cielDe(monde, region, jour) {
   if (!monde?.graine || !region) return { soir: false, nuit: false };
   const reg = L.regionDe(contenu(), region);
   const evenements = (monde.regions?.[region]?.evenements ?? []).filter(e => Number(e.depuis) <= jour && (e.jusqua === null || e.jusqua === undefined || Number(e.jusqua) >= jour)).map(e => e.cle);
-  return L.cielDeLaNuit(L.deriverHasard(monde.graine, "ciel", jour, region), { zone: reg?.zone, saison: L.saisonDuJour(jour, dateDepart()), evenements });
+  const ciel = L.cielDeLaNuit(L.deriverHasard(monde.graine, "ciel", jour, region), { zone: reg?.zone, saison: L.saisonDuJour(jour, dateDepart()), evenements });
+  // Lot « sens » : un quart de nuit où il pleut a le ciel couvert.
+  const pleut = quart => L.pleutAuQuart({ graine: monde.graine, quart, region, contenu: contenu(), dateDepart: dateDepart(), monde });
+  const q0 = jour * L.QUARTS_PAR_JOUR;
+  return { soir: ciel.soir || pleut(q0 + 2), nuit: ciel.nuit || pleut(q0 + 3) };
 }
 // La clarté réelle d'un quart dans une région (MJ actif) : 0 à 3 la nuit, null le jour.
 export function clarteReelle(monde, quart, region) {
@@ -176,7 +196,8 @@ const parlePour = a => {
 
 // ------------------------------------------------------------------ acteurs <-> logique
 const CHAMPS_SURVIVANT = ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "vivant", "livide", "tache", "statut",
-  "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "confiance", "apprentissage", "dictee"];
+  "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "confiance", "apprentissage", "dictee",
+  "noir"];   // lot « sens » : l'habitude du noir (logique/sens.mjs)
 // L'esprit et le sens moral (contrat §14) : réécrits par l'avancée du temps (observances, regard, lâcher, autorité du chef) et par
 // les actes du groupe.
 const CHAMPS_ESPRIT = ["regard", "religion", "religions", "pratique", "ancrage", "sensMoral", "reputation", "autorite", "esprit"];
@@ -321,7 +342,17 @@ function conditionsAbri(etat, monde, a, { publique = false } = {}) {
     : monde ? L.reseauxActifs(monde, a.system.region, jour) : (etat.bilan?.reseaux ?? {});
   const cc = chienEtConfort(aLAbri(etat, a) ? survivantsDuGroupe(etat).filter(x => L.peutAgir(x.system)) : []);
   return { jour, dateDepart: dateDepart(), personnes: presents.length + pnj, reseaux: { eau: Boolean(r.eau), electricite: Boolean(r.electricite) }, rations,
-    travailleurs: L.travailleursParTache(presents, c), signature: L.signatureDuMarche(etat.marche), chien: cc.chien, confort: cc.confort };
+    travailleurs: L.travailleursParTache(presents, c), signature: L.signatureDuMarche(etat.marche), chien: cc.chien, confort: cc.confort,
+    ...sensDeLAbri(etat, monde, a, presents, jour) };
+}
+// Lot « sens » : la pluie du jour, la ravine du site, les morts sans repos, le musicien (comme logique/etat.mjs). Sans monde : rien.
+function sensDeLAbri(etat, monde, a, presents, jour) {
+  if (!monde?.graine) return {};
+  const c = contenu();
+  const region = a.system.region, site = L.siteDe(c, a.system.site);
+  const meteo = { graine: monde.graine, region, contenu: c, dateDepart: dateDepart(), monde };
+  return { pluie: L.pluieDuJour({ ...meteo, jour }), morts: L.mortsSansRepos(etat, region, jour), musique: L.bruitDesMusiciens(presents.map(m => m.system), c),
+    ...(site?.eau === "riviere" ? { ravine: L.ravineDuJour({ ...meteo, jour, ravine: site.ravine || "permanente" }) } : {}) };
 }
 export function bilanVivant(etat = lireEtat(), monde = Coffre.mondeEnMemoire(), { publique = false } = {}) {
   const a = abriCourant(etat);
@@ -334,7 +365,8 @@ export function bilanVivant(etat = lireEtat(), monde = Coffre.mondeEnMemoire(), 
 }
 const CHAMPS_BILAN = ["production", "consommation", "net", "pertes", "joursDeStocks", "defense", "discretion", "visibilite", "capacite", "bruit",
   "protectionCyclone", "soins", "moral", "conservation", "renseignements", "eauTraitee", "plafonds", "arrets", "surpeuplement", "reseaux", "personnes", "actives",
-  "secours", "savoirs"];
+  "secours", "savoirs",
+  "odeur", "odeurBetes", "odeurSources", "ravine"];   // lot « sens » : ce que l'abri sent, l'état de sa ravine
 // L'instantané PUBLIC du bilan (état de la partie, lu par les joueurs) : ce que le groupe sait, pas le réel à distance.
 export function instantaneBilan(etat, monde) {
   const b = bilanVivant(etat, monde, { publique: true });
@@ -352,7 +384,9 @@ export function meteoPublique(etat, monde) {
   const rouge = monde.cyclone?.alerte === "rouge";
   const cyclone = evts.some(e => e.cle === "cyclone") || (rouge && (!region || (monde.cyclone.trajectoire ?? []).includes(region)));
   const pluie = evts.some(e => ["fortes-pluies", "crue", "eboulement"].includes(e.cle));
-  return { temps: cyclone ? "cyclone" : pluie ? "pluie" : "", saison: L.saisonDuJour(jour, dateDepart()), jour };
+  // Lot « sens » : une averse sur le quart, la brume des Hauts (là où est le groupe ; en route, rien).
+  const x = region ? tempsReel(monde, etat.horloge.quart, region) : { pluie: false, brume: false };
+  return { temps: cyclone ? "cyclone" : pluie ? "pluie" : x.pluie ? "averse" : x.brume ? "brume" : "", saison: L.saisonDuJour(jour, dateDepart()), jour };
 }
 
 // ------------------------------------------------------------------ terminer une écriture
@@ -363,6 +397,8 @@ function tempsDeLIle(ctx) {
   const jour = jourCtx(ctx);
   const region = ctx.etat.groupe.enRoute?.vers ?? ctx.etat.groupe.region;
   ctx.etat.ciel = { jour, region, ...cielDe(ctx.monde, region, jour) };
+  // Lot « sens » : la pluie, la brume et le vent du quart là où est le groupe (ce qu'il voit et sent ; la graine reste secrète).
+  ctx.etat.temps = { quart: ctx.etat.horloge.quart, region, ...tempsReel(ctx.monde, ctx.etat.horloge.quart, region) };
   const telephone = Boolean(L.reseauxActifs(ctx.monde, ctx.etat.groupe.region, jour)?.telephone);
   const ab = abriCourant(ctx.etat);
   const radio = Boolean(ctx.etat.bilan?.renseignements) && aLAbri(ctx.etat, ab);
@@ -485,19 +521,23 @@ async function avancerInterne(ctx, quarts, options = {}) {
 // Bonus d'outil (le meilleur équipement), d'installation (atelier, tour de guet, antenne : à l'abri) ; malus d'état et de traits.
 // La nuit et la chaleur DEHORS (lot « fetes », logique/lune.mjs) : dehors = le test se passe hors de l'abri (par défaut : le groupe
 // n'est pas à son abri ; le MJ peut le dire : true ou false). -> { nuit, chaleur } (dés en plus ou en moins)
-function modificateursDehors(sys, competence, etat, dehors) {
+function modificateursDehors(sys, competence, etat, dehors, ecoute = "") {
   const ici = aLAbri(etat);
-  if (!(dehors ?? !ici) || !etat?.demarree) return { nuit: 0, chaleur: 0 };
+  if (!(dehors ?? !ici) || !etat?.demarree) return { nuit: 0, chaleur: 0, temps: 0, noir: 0, bruit: 0 };
   const quart = etat.horloge?.quart ?? 0;
   const region = etat.groupe?.enRoute?.vers ?? etat.groupe?.region ?? "";
   const monde = estMJActif() ? Coffre.mondeEnMemoire() : null;
   const clarte = monde ? clarteReelle(monde, quart, region) : quandDe(etat).clarte;
   const d = L.dateDuJour(L.jourDe(quart), dateDepart());
   const altitude = Number(L.regionDe(contenu(), region)?.altitude) || 0;
-  return { nuit: L.desDeNuit(competence, clarte), chaleur: L.desDeChaleur(competence, { mois: d.mois, altitude, moment: L.momentDe(quart) }) };
+  // Lot « sens » : la pluie et la brume du quart (vigilance −1, discrétion +1), l'habitude du noir et l'écoute (vigilance).
+  const temps = monde ? tempsReel(monde, quart, region) : tempsDuQuart(etat, quart, region);
+  const noir = L.desDuNoir(competence, { clarte, palier: L.palierNoirEffectif(sys, quart), ecoute });
+  return { nuit: L.desDeNuit(competence, clarte), chaleur: L.desDeChaleur(competence, { mois: d.mois, altitude, moment: L.momentDe(quart) }),
+    temps: L.desDuTemps(competence, temps), noir: noir.des, bruit: noir.bruit };
 }
 
-function modificateursDuTest(a, sys, competence, etat = lireEtat(), { dehors = null } = {}) {
+function modificateursDuTest(a, sys, competence, etat = lireEtat(), { dehors = null, ecoute = "" } = {}) {
   const c = contenu();
   const outil = Math.max(0, ...objetsDe(a, "equipement").map(i => Number(i.system?.bonus?.[competence]) || 0));
   let installation = 0, lieux = [];
@@ -512,11 +552,13 @@ function modificateursDuTest(a, sys, competence, etat = lireEtat(), { dehors = n
   }
   const traits = L.modificateursTraits(sys, c, { lieux }).malus;
   const malus = L.malusEtat(sys, { traits });
-  const x = modificateursDehors(sys, competence, etat, dehors);
-  const plus = Math.max(0, x.nuit) + Math.max(0, x.chaleur), moins = Math.max(0, -x.nuit) + Math.max(0, -x.chaleur);
+  const x = modificateursDehors(sys, competence, etat, dehors, ecoute);
+  const plus = Math.max(0, x.nuit) + Math.max(0, x.chaleur) + Math.max(0, x.temps) + Math.max(0, x.noir),
+    moins = Math.max(0, -x.nuit) + Math.max(0, -x.chaleur) + Math.max(0, -x.temps);
   // Celui qui lâche parle moins (esprit.mjs, malusEsprit).
   const esprit = L.malusEsprit(sys, competence);
-  return { bonus: Math.min(2, outil + installation) + plus, malus: malus.total + moins + esprit, outil, installation, etat: malus, nuit: x.nuit, chaleur: x.chaleur, esprit };
+  return { bonus: Math.min(2, outil + installation) + plus, malus: malus.total + moins + esprit, outil, installation, etat: malus, nuit: x.nuit, chaleur: x.chaleur, esprit,
+    temps: x.temps, noir: x.noir, bruitEcoute: x.bruit };
 }
 
 async function appliquerTest(a, competence, r) {
@@ -534,14 +576,16 @@ async function appliquerTest(a, competence, r) {
   return { monte, niveau };
 }
 
-async function testDirect({ acteurId, competence, difficulte = "normale", bonus = 0, malus = 0, forcer = false, titre = "", compte = true, forcable = true, dehors = null } = {}) {
+// ecoute (lot « sens », MJ seulement) : "yeux-fermes" (+1 dé à la vigilance, rien d'autre ce tour-là) ou "active" (palier 4 de
+// l'habitude du noir, la nuit : +1 dé, mais un bruit qu'un Livide proche entend).
+async function testDirect({ acteurId, competence, difficulte = "normale", bonus = 0, malus = 0, forcer = false, titre = "", compte = true, forcable = true, dehors = null, ecoute = "" } = {}) {
   const a = acteur(acteurId);
   if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
   if (!COMPETENCES.includes(competence)) throw clair(t("LAKOUR_SURVIE.Erreurs.CompetenceInconnue", { competence }));
   const sys = systemeLogique(a);
   if (!L.peutAgir(sys)) throw clair(t("LAKOUR_SURVIE.Erreurs.HorsEtat", { nom: a.name }));
   const diff = DIFFICULTES[difficulte] ? difficulte : "normale";
-  const mods = modificateursDuTest(a, sys, competence, lireEtat(), { dehors: typeof dehors === "boolean" ? dehors : null });
+  const mods = modificateursDuTest(a, sys, competence, lireEtat(), { dehors: typeof dehors === "boolean" ? dehors : null, ecoute: ["yeux-fermes", "active"].includes(ecoute) ? ecoute : "" });
   const niveau = Number(sys.competences?.[competence]?.niveau) || 0;
   // La chance (esprit.mjs : celui qui a été trahi) : un dé de plus au prochain test qui compte, consommé. Le jeu ne dit pas d'où.
   const chance = compte !== false ? L.utiliserChance(sys) : { bonus: 0 };
@@ -550,7 +594,8 @@ async function testDirect({ acteurId, competence, difficulte = "normale", bonus 
   const maj = await appliquerTest(a, competence, r);
   const info = { nom: a.name, competence, titre, monte: maj.monte, niveau: maj.niveau, chance: chance.bonus > 0 };
   const message = await chat(carteTest(r, { ...info, forcable }), { speaker: parlePour(a), flags: { test: { acteurId: a.id, competence, titre, resultat: r, forcable } } });
-  return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, nuit: mods.nuit, chaleur: mods.chaleur, chance: chance.bonus, monte: maj.monte, texte: texteTest(a.name, competence, r), messageId: message?.id ?? null };
+  return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, nuit: mods.nuit, chaleur: mods.chaleur, chance: chance.bonus, monte: maj.monte,
+    temps: mods.temps, noir: mods.noir, bruitEcoute: mods.bruitEcoute, texte: texteTest(a.name, competence, r), messageId: message?.id ?? null };
 }
 
 // Forcer : seulement la carte d'un test écrite par un MJ (le résultat qu'elle porte fait foi) ; un message écrit par un joueur, avec
@@ -853,7 +898,9 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   // La nuit (lot « fetes ») : la clarté réelle du quart où l'on part (lune, brume, nuages) ; null le jour.
   const clarte = clarteReelle(ctx.monde, ctx.etat.horloge.quart, reg);
   const r = L.fouiller(ctx.monde, c, hasard(ctx, "fouille"), { region: reg, site, cible, membres: Math.max(1, qui.length), quarts: q, prudence,
-    jour: jourCtx(ctx), moment: L.momentDe(ctx.etat.horloge.quart), abri: ab ? aPlat(ab.system) : null, renseignements: ctx.etat.renseignements, savoirs, clarte });
+    jour: jourCtx(ctx), moment: L.momentDe(ctx.etat.horloge.quart), abri: ab ? aPlat(ab.system) : null, renseignements: ctx.etat.renseignements, savoirs, clarte,
+    // Lot « sens » : un lieu nettoyé se repeuple peu à peu (moins de rencontres).
+    facteurRencontre: L.facteurNettoyage(ctx.etat.nettoyes ?? [], { region: reg, site: site ?? "", jour: jourCtx(ctx) }) });
   ctx.monde = r.monde;
   ctx.etat.renseignements = r.renseignements;
   if (r.fouille) ctx.etat = L.noterFouille(ctx.etat, jourCtx(ctx));
@@ -1041,6 +1088,10 @@ async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
 // préjugé), espritDuTirage (l'esprit des gens du marché). Passés par des flèches : définis plus bas.
 const MARCHE = fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser,
   chat, carteAction, sansBalises, porterActe: (...x) => porterActe(...x), membresPresents: ctx => membresPresents(ctx), espritDuTirage: (...x) => espritDuTirage(...x) });
+// Percevoir dans le noir (contrat §18) : ses fonctions, avec les aides internes d'ici.
+const SENS = fonctionsSens({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, dateDepart, clair, erreur, chat, carteAction, systemeLogique,
+  bilanVivant: (etat, monde) => bilanVivant(etat, monde), mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), fetesDuJeu,
+  aLAbri: (etat, ab) => aLAbri(etat, ab) });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1233,11 +1284,12 @@ export const api = {
     return { partie: p, etat: structuredClone(ctx.etat), quand: quandDe(ctx.etat) };
   }),
 
-  avancer: ecriture(async ({ quarts = 1, raison = "", repos = false, veille = [], stabilises = [], corpsTraites = [] } = {}) => {
+  // lumiere (lot « sens ») : l'abri reste éclairé la nuit (la garde ne s'habitue pas au noir) ; lumiereEnRoute : on marche à la torche.
+  avancer: ecriture(async ({ quarts = 1, raison = "", repos = false, veille = [], stabilises = [], corpsTraites = [], lumiere = false, lumiereEnRoute = false } = {}) => {
     const ctx = ouvrirCtx();
     ctx.raison = String(raison ?? "");
     ctx.carteTemps = true;
-    await avancerInterne(ctx, quarts, { repos: Boolean(repos), veille, stabilises, corpsTraites });
+    await avancerInterne(ctx, quarts, { repos: Boolean(repos), veille, stabilises, corpsTraites, lumiere: Boolean(lumiere), lumiereEnRoute: Boolean(lumiereEnRoute) });
     await terminer(ctx);
     return { quand: quandDe(ctx.etat), faits: ctx.faits.map(publicFait), alertes: ctx.alertes, bilan: bilanVivant(ctx.etat, ctx.monde), departs: ctx.departs };
   }),
@@ -1787,6 +1839,8 @@ export const api = {
 
   // ---------------- §12 : le marché (api-marche.mjs)
   ...MARCHE.api,
+  // Lot « sens » (contrat §18) : percevoir dans le noir, le vent, la pluie, la rue nettoyée, la musique.
+  ...SENS,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {

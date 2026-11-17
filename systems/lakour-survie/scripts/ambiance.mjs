@@ -19,7 +19,7 @@ export function ambianceVoulue(etat, { tension = false } = {}) {
   if (tension) return "tension";
   const temps = etat.meteo?.temps ?? "";
   if (temps === "cyclone") return "orage";
-  if (temps === "pluie") return "pluie";
+  if (temps === "pluie" || temps === "averse") return "pluie";   // averse : lot « sens »
   const moment = momentDe(etat.horloge?.quart ?? 0);
   return moment === "nuit" || moment === "soir" ? "nuit" : "";
 }

@@ -7,6 +7,7 @@
 // bestiaire.mjs, regions.mjs et scripts/fetes.js. Textes originaux.
 import { journal, idJournal, idPage, MODULE } from "./aides.mjs";
 import { CLE_JOURNAL_REGIONS } from "./journaux.mjs";
+import { PAGE_LIVRE_SENS } from "./sens.mjs";
 
 // Liens vers ce que les joueurs peuvent lire : une page du journal des régions, un journal du pack « guides », une page du
 // guide du joueur. Format Foundry v14 : Compendium.<module>.<pack>.<Type>.<id>[.JournalEntryPage.<id>].
@@ -205,6 +206,7 @@ Il y a deux manières de vivre à Fénoir, et ce livre refuse de dire laquelle e
 > On est restés. On a creusé la cave, planté, capté la source. Le soixante-dixième jour, personne n'est sorti chercher quoi que ce soit, et on a mangé à notre faim. Ma fille a demandé si c'était ça, gagner. J'ai dit que c'était ça, aujourd'hui.
 > *Carnet de Rivo, électricien.*` },
 
+  PAGE_LIVRE_SENS,
   { cle: "portraits", titre: "Portraits", texte: `On rencontre les mêmes gens d'un bout de l'île à l'autre : les noms changent, les visages pas tant que ça. En voici quelques-uns, tels qu'on les décrit autour des feux. Certains existent vraiment. D'autres sont peut-être déjà morts quand vous lirez ceci. Tous ont une bonne raison.
 
 **La commandante Hoarau**, du Port. Ancienne officière de port, la cinquantaine, une voix qui ne monte jamais. Elle a pris la tête de ce qui restait d'uniformes et en a fait la Garnison du Quai. Elle croit sincèrement qu'il faut un ordre pour survivre, et il n'est pas sûr qu'elle ait tort. Elle signe « pour l'autorité provisoire », et elle y croit encore, au provisoire.

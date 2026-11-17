@@ -28,10 +28,12 @@ const canevasPret = () => Boolean(globalThis.canvas?.ready && canvas.scene);
 export function obscuriteVoulue(etat) {
   if (!etat?.demarree) return null;
   const base = OBSCURITE[momentDe(etat.horloge?.quart ?? 0)] ?? 0;
-  return etat.meteo?.temps === "cyclone" ? Math.max(base, 0.6) : etat.meteo?.temps === "pluie" ? Math.max(base, 0.25) : base;
+  return etat.meteo?.temps === "cyclone" ? Math.max(base, 0.6) : etat.meteo?.temps === "pluie" ? Math.max(base, 0.25)
+    : ["averse", "brume"].includes(etat.meteo?.temps) ? Math.max(base, 0.15) : base;   // lot « sens »
 }
 // L'effet météo voulu (pure) : clé de CONFIG.weatherEffects, ou "".
-export const meteoVoulue = etat => (etat?.meteo?.temps === "cyclone" ? "rainStorm" : etat?.meteo?.temps === "pluie" ? "rain" : "");
+export const meteoVoulue = etat => (etat?.meteo?.temps === "cyclone" ? "rainStorm" : ["pluie", "averse"].includes(etat?.meteo?.temps) ? "rain"
+  : etat?.meteo?.temps === "brume" ? "fog" : "");   // averse, brume : lot « sens »
 
 // Chez le MJ actif : la lumière de la scène active suit le moment.
 export async function suivreLumiere() {
