@@ -51,8 +51,18 @@ export const REGLES_FOUILLES = {
   demontage: { sansOutil: 0.5, outils: ["pied-de-biche", "barre-a-mine", "pelle-pioche", "masse", "tronconneuse", "caisse-a-outils", "marteau", "hache"],
     installation: { rend: 0.5, travail: 1 / 3, ressources: ["materiaux", "pieces", "graines"] } },
   // Récolter : sans outil (quand le gisement en demande), deux fois plus lent ; en saison sèche, la repousse à 0,4 de sa vitesse.
-  recolte: { sansOutil: 0.5, seche: 0.4 }
+  recolte: { sansOutil: 0.5, seche: 0.4 },
+  // La qualité d'un outil ou d'une arme trouvé (décision de Jordan du 2026-11-16, le jeu 3D) : de fortune, de récupération, forgé ;
+  // 60 / 30 / 10 % au calme, 43 / 36 / 21 % au plus haut risque (palier 4), en ligne droite entre les deux. Le champ `qualite` de
+  // l'équipement est celui du lot 6 (ateliers) : tant qu'il n'existe pas, la qualité tirée ne change rien.
+  qualite: { cles: ["fortune", "recuperation", "forge"], calme: [0.6, 0.3, 0.1], risque: [0.43, 0.36, 0.21] }
 };
+// La qualité d'un outil trouvé selon le palier de risque de la région (0 à 4). -> "fortune" | "recuperation" | "forge"
+export function qualiteTrouvee(palier, hasard) {
+  const Q = REGLES_FOUILLES.qualite;
+  const t = borner(Number(palier) || 0, 0, REGLES_FOUILLES.risqueMax) / REGLES_FOUILLES.risqueMax;
+  return tirerPoids(Q.cles.map((cle, i) => ({ cle, poids: Q.calme[i] + (Q.risque[i] - Q.calme[i]) * t })), hasard)?.cle ?? Q.cles[0];
+}
 
 // ------------------------------------------------------------------ registre
 const caches = new WeakMap();
@@ -301,7 +311,7 @@ export function fouillerLieu(monde, contenu, hasard, { region, lieu = "", site =
       const dispo = Math.max(0, Math.floor(Number(reg.pillage[r]) || 0));
       const garde = conv.garantis.includes(r) ? Math.max(1, Math.min(q, dispo)) : Math.min(q, dispo);
       if (garde > 0) conv.butin[r] = garde; else delete conv.butin[r];
-      reg.pillage[r] = Math.max(0, dispo - garde);
+      reg.pillage[r] = Math.max(0, (Number(reg.pillage[r]) || 0) - garde);
     }
   }
   // Jamais vide : un lieu fouillé jusqu'au bout rend au moins une unité, celle du lot qui valait le plus (s'il n'a rien rendu d'autre).
@@ -315,9 +325,9 @@ export function fouillerLieu(monde, contenu, hasard, { region, lieu = "", site =
       if (reg?.pillage && RESSOURCES_PILLABLES.includes(r)) reg.pillage[r] = Math.max(0, (Number(reg.pillage[r]) || 0) - 1);
     }
   }
-  // La bête : rencontrée à la première fouille du lieu.
+  // La bête : rencontrée à la première fouille du lieu ; un essaim resté se prend plus tard, quand on revient avec l'enfumoir.
   let bete = null;
-  if (e.bete && e.visites === 1) {
+  if (e.bete && (e.visites === 1 || prendBete(contenu, equipements, e.bete.bete))) {
     const def = beteTrouvee(contenu, e.bete.bete);
     const outil = prendBete(contenu, equipements, e.bete.bete);
     if (outil) { bete = { cle: e.bete.bete, nombre: e.bete.nombre, issue: "prise", outil, tient: Number(def?.tient) || 4 }; e.bete = null; }
@@ -326,6 +336,9 @@ export function fouillerLieu(monde, contenu, hasard, { region, lieu = "", site =
   }
   nouveau.lieux = { ...lieuxDuMonde(nouveau), [l.cle]: e };
   const g = genreFouille(contenu, l.genre);
+  // La qualité de chaque outil ou arme trouvé (lot 6) : une par objet.
+  const palier = palierDeRisque(reg?.infestation);
+  for (const x of conv.equipements) x.qualites = Array.from({ length: x.n }, () => qualiteTrouvee(palier, hasard));
   return { ok: true, motif: null, monde: nouveau, cle: l.cle, lieu: lieuPublic(l.cle, e), trouve: pris, butin: conv.butin, equipements: conv.equipements, bete,
     culte: Boolean(g?.culte), travail: n, bruit: R.bruit[prudence] ?? 1 };
 }
@@ -378,10 +391,9 @@ export function demonterLieu(monde, contenu, hasard, { region, lieu = "", site =
   nouveau.lieux = { ...lieuxDuMonde(nouveau), [l.cle]: e };
   const butin = { ...(fouille?.ok ? fouille.butin : {}) };
   for (const [r, n] of Object.entries(rendu)) butin[r] = (butin[r] ?? 0) + n;
-  const quartsDemontage = total > 0 ? Math.max(1, Math.ceil(total / Math.max(1, Number(membres) || 1))) : 0;
   return { ok: true, motif: null, monde: nouveau, cle: l.cle, lieu: lieuPublic(l.cle, e), fouille: fouille?.ok ? fouille : null, butin,
     equipements: fouille?.ok ? fouille.equipements : [], trouve: fouille?.ok ? fouille.trouve : [], bete: fouille?.ok ? fouille.bete : null, culte: Boolean(g.culte),
-    rendu, travail: fait, outil, bruit: total > 0 ? (Number(D.bruit) || 1) : (fouille?.bruit ?? 0), quartsBruyants: quartsDemontage, fini };
+    rendu, travail: fait, outil, bruit: total > 0 ? (Number(D.bruit) || 1) : (fouille?.bruit ?? 0), fini };
 }
 
 // Démonter une installation de l'abri : la moitié de ses coûts (tous les niveaux jusqu'au sien ; les matières de l'île reviennent en

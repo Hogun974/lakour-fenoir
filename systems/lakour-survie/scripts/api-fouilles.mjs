@@ -32,10 +32,11 @@ export function fonctionsFouilles({ ecriture, ouvrirCtx, terminer, noter, tx, jo
     // Les outils et les armes trouvés : des objets sur le premier fouilleur.
     if (qui[0] && (r.equipements ?? []).length) {
       const docs = [];
-      for (const { cle, n } of r.equipements) {
+      for (const { cle, n, qualites = [] } of r.equipements) {
         const def = defDe("equipements", cle);
         if (!def) continue;
-        for (let i = 0; i < Math.min(5, n); i++) docs.push(await donneesObjet("equipement", def));
+        // La qualité tirée (lot 6 « ateliers » : le champ `qualite` ; sans lui, Foundry l'ignore).
+        for (let i = 0; i < Math.min(5, n); i++) docs.push(await donneesObjet("equipement", def, qualites[i] ? { qualite: qualites[i] } : {}));
       }
       if (docs.length) {
         await qui[0].createEmbeddedDocuments("Item", docs);

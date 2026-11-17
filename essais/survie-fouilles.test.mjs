@@ -217,6 +217,10 @@ test("fouiller (actions.mjs) : les cibles « lieu », « demonter », « matiere
   const r = L.fouiller(monde, contenu, h(21), { region: "saint-denis", cible: "lieu", genre: "pharmacie", membres: 2, quarts: 1, renseignements: etat.renseignements });
   assert.ok(r.ok && r.fouille && r.lieu.genre === "pharmacie" && r.renseignements["saint-denis"]);
   for (const f of r.faits) assert.ok(L.CLES_TEXTES.includes(f.cle), f.cle);
+  // Fouiller un lieu, c'est fouiller la région : le glanage de passage y vient aussi.
+  assert.ok(r.glane > 0 && r.butin.nourriture >= r.glane, `glane ${r.glane}`);
+  assert.ok(r.monde.regions["saint-denis"].nature.cueillette + r.monde.regions["saint-denis"].nature.peche + r.monde.regions["saint-denis"].nature.gibier
+    < monde.regions["saint-denis"].nature.cueillette + monde.regions["saint-denis"].nature.peche + monde.regions["saint-denis"].nature.gibier);
   const non = L.fouiller(monde, contenu, h(22), { region: "mafate", cible: "lieu", genre: "pharmacie" });
   assert.equal(non.ok, false);
   assert.equal(non.motif.cle, "lieu-aucun");
@@ -237,4 +241,18 @@ test("le registre : erreursFouilles ne dit rien du vrai contenu et voit un objet
   assert.match(e, /objet inconnu licorne/);
   assert.match(e, /chance/);
   assert.match(e, /genre inconnu y/);
+});
+
+test("la qualité d'un outil trouvé : surtout de fortune au calme, plus souvent forgé là où le risque est haut (lot 6 : le champ qualite)", () => {
+  const compte = palier => { const c = { fortune: 0, recuperation: 0, forge: 0 }; for (let i = 0; i < 2000; i++) c[L.qualiteTrouvee(palier, h("q", palier, i))]++; return c; };
+  const calme = compte(0), haut = compte(4);
+  assert.ok(Math.abs(calme.fortune / 2000 - 0.6) < 0.04 && Math.abs(calme.forge / 2000 - 0.1) < 0.03, JSON.stringify(calme));
+  assert.ok(Math.abs(haut.fortune / 2000 - 0.43) < 0.04 && Math.abs(haut.forge / 2000 - 0.21) < 0.03, JSON.stringify(haut));
+  const { monde } = depart();
+  let vu = false;
+  for (let n = 1; n <= 10 && !vu; n++) {
+    const r = L.fouillerLieu(monde, contenu, h("outil", n), { region: "saint-denis", lieu: `saint-denis:quincaillerie:${(n % 3) + 1}`, membres: 3, quarts: 1 });
+    for (const x of r.equipements) { assert.equal(x.qualites.length, x.n); vu = true; }
+  }
+  assert.ok(vu, "une quincaillerie rend des outils");
 });

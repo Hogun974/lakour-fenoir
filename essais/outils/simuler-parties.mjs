@@ -49,6 +49,11 @@
 //   payant les matières de l'île sur le bois des alentours ; à deux et plus, le nomade (et le mixte) creuse des feuillées là où il
 //   s'installe (une demi-journée d'un) ; un survivant qui porte un bouclier pare (resoudreCombat, parade) ; le groupe qui porte une
 //   tente ou une natte dort au bivouac hors de l'abri. Le sommeil, la souillure et l'insalubrité sont ceux de la logique (avancer).
+// - lot 5 « fouille » (2026-11-17, docs/equilibre-fouille.md), comme un groupe raisonnable qui choisit où entrer : quand sa région est
+//   maigre ou vide (renseignement), ou qu'il cherche des médicaments, il fouille des LIEUX plutôt que la région (le genre qui sert le
+//   besoin, à l'écart d'abord : LIEUX_DU_BESOIN) ; l'enraciné à qui il manque des matériaux et dont les alentours n'ont plus de bois
+//   récolte les matières de l'île, sinon démonte une case, une épave, une remise. Il ne prend pas les bêtes et ne garde pas les objets
+//   trouvés (outils, armes). Option --sans-lieux : la fouille d'avant le lot (mesure de comparaison).
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -83,6 +88,14 @@ export const REGLES_SIMULATEUR = {
 // Les remèdes (2026-11-05) : sous `reserve` médicaments (aucun), on cueille des zerbaz et, avec `plantesTisane` plantes, on
 // prépare une tisane (recette du contenu). Une réserve de 2 ou 3 faisait autant pour les solos et plus pour les groupes de 4.
 export const REMEDES = { reserve: 1, recette: "tisanes", plantesTisane: 3 };
+// Lot 5 « fouille » : les genres de lieux qui servent chaque besoin (dans l'ordre), et ce qu'on démonte pour des matériaux.
+export const LIEUX_DU_BESOIN = {
+  nourriture: ["commerce", "boutique", "restaurant", "case", "maison", "hotel"], eau: ["commerce", "boutique", "reservoir", "station-service", "case", "maison"],
+  medicaments: ["pharmacie", "sante", "caserne", "maison", "case"], materiaux: ["quincaillerie", "entrepot", "hangar", "decombres", "case"],
+  pieces: ["garage", "entrepot", "maison", "voiture"], tout: ["case", "maison", "boutique", "commerce", "hangar", "remise"]
+};
+export const A_DEMONTER = ["case-en-tole", "case", "remise", "voiture", "decombres", "maison"];
+export const OPTIONS_SIMULATEUR = { lieux: true };
 
 // L'ordre de construction de l'enraciné ({ cle, niveau }) : ce que le site, les savoirs et les stocks permettent passe en premier.
 export const ORDRE_ENRACINE = [
@@ -458,9 +471,49 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
 
   // ---- fouilles.
   const prudencePour = regionCle => (["dense", "grouillante"].includes(etat.renseignements[regionCle]?.infestation) ? "discret" : "normal");
+  // Lot 5 « fouille » : fouiller un lieu d'un genre qui sert le besoin (à l'écart d'abord) ; null si aucun lieu ne reste.
+  const equipementsDe = liste => [...new Set(liste.flatMap(s => s.system.equipement ?? []))];
+  const fouillerUnLieu = (fouilleurs, cibleLot, genres, jour, h) => {
+    const regionCle = abri.system.region;
+    const prudence = prudencePour(regionCle);
+    for (const genre of genres) {
+      for (const ecart of [true, false]) {
+        const f = L.fouiller(monde, contenu, h, { region: regionCle, cible: cibleLot, genre, ecart, membres: fouilleurs.length, quarts: 2, prudence, jour, moment: "matin",
+          abri: abri.system, renseignements: etat.renseignements, equipements: equipementsDe(fouilleurs), dateDepart: monde.dateDepart });
+        if (!f.ok) continue;
+        monde = f.monde;
+        stats.trousses += f.trousse ?? 0;
+        abri.system = { ...(f.abri ?? abri.system), stocks: L.ajouterStocks((f.abri ?? abri.system).stocks, f.butin), bruit: Math.min(10, (abri.system.bruit ?? 0) + f.bruit) };
+        etat = L.noterFouille({ ...etat, renseignements: f.renseignements }, jour);
+        actionsDuJour.push(...f.faits, ...(f.rencontre ? [f.rencontre] : []));
+        resoudreRencontre(f.rencontre, fouilleurs, jour * 4, h);
+        stats[cibleLot === "demonter" ? "demontages" : "lieux"] = (stats[cibleLot === "demonter" ? "demontages" : "lieux"] ?? 0) + 1;
+        noter(jour, `${cibleLot} ${genre}${ecart ? " (écart)" : ""} (${fouilleurs.length}) : ${JSON.stringify(f.butin)}${f.rencontre ? ` — rencontre ${f.rencontre.texte}` : ""}`);
+        // Ce qui compte pour juger une fouille (rester ou partir) : ce qui nourrit et désaltère (sinon : tout, pour un démontage).
+        return cibleLot === "lieu" ? (f.butin.nourriture ?? 0) + (f.butin.eau ?? 0) : somme(Object.values(f.butin));
+      }
+    }
+    return null;
+  };
+  const recolterMatieres = (ouvriers, jour, h) => {
+    const f = L.fouiller(monde, contenu, h, { region: abri.system.region, cible: "matieres", membres: ouvriers.length, quarts: 2, jour, moment: "matin", abri: abri.system,
+      renseignements: etat.renseignements, equipements: equipementsDe(ouvriers), dateDepart: monde.dateDepart });
+    if (!f.ok) return null;
+    monde = f.monde;
+    abri.system = { ...abri.system, stocks: L.ajouterStocks(abri.system.stocks, f.butin) };
+    actionsDuJour.push(...f.faits, ...(f.rencontre ? [f.rencontre] : []));
+    resoudreRencontre(f.rencontre, ouvriers, jour * 4, h);
+    stats.recoltes = (stats.recoltes ?? 0) + 1;
+    return somme(Object.values(f.butin));
+  };
   const fouillerRegion = (fouilleurs, cible, jour, h) => {
     if (!fouilleurs.length) return 0;
     const regionCle = abri.system.region;
+    // Lot 5 : la région maigre ou vide, ou des médicaments à trouver : un lieu qui sert le besoin.
+    if (OPTIONS_SIMULATEUR.lieux && (etat.renseignements[regionCle]?.pillage === "vide" || cible === "medicaments")) {
+      const n = fouillerUnLieu(fouilleurs, "lieu", LIEUX_DU_BESOIN[cible ?? "tout"] ?? LIEUX_DU_BESOIN.tout, jour, h);
+      if (n !== null) return n;
+    }
     const prudence = prudencePour(regionCle);
     const f = L.fouiller(monde, contenu, h, { region: regionCle, cible, membres: fouilleurs.length, quarts: 2, prudence, jour, moment: "matin", abri: abri.system, renseignements: etat.renseignements,
       savoirs: savoirsDe(fouilleurs) });
@@ -737,6 +790,8 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         dispo = dispo.slice(2);
         // Des matériaux : le bois des alentours d'abord, sinon la fouille ciblée de la région.
         if (res === "materiaux" && (abri.system.nature?.bois ?? 0) >= 2) { poser(f, "chasse"); fouillerNature(f, jour, h, "bois"); }
+        // Lot 5 : plus de bois aux alentours : les matières de l'île, sinon démonter une case, une épave.
+        else if (res === "materiaux" && OPTIONS_SIMULATEUR.lieux && (poser(f, "chantier"), recolterMatieres(f, jour, h) ?? fouillerUnLieu(f, "demonter", A_DEMONTER, jour, h)) !== null) { /* fait */ }
         else { poser(f, "fouille"); fouillerRegion(f, res, jour, h); }
       }
       if (dispo.length) { poser(dispo, "chasse"); fouillerNature(dispo, jour, h); }
@@ -913,7 +968,9 @@ export function mesurer(resultats, { jours = JOURS_DEFAUT } = {}) {
       joursSansEau: arrondi(moyenne(l.map(x => x.joursSansEau))), joursSansNourriture: arrondi(moyenne(l.map(x => x.joursSansNourriture))),
       limitante: limitante[0][1] > 0 ? limitante[0][0] : "—", blocages, installations: arrondi(moyenne(l.map(x => x.installations))),
       morts: l.reduce((t, x) => { for (const [c, n] of Object.entries(x.morts)) t[c] = (t[c] ?? 0) + n; return t; }, {}),
-      remedes: remedesDe(l)
+      remedes: remedesDe(l),
+      // Lot 5 « fouille » : lieux fouillés, démontages et récoltes par partie.
+      fouille: { lieux: arrondi(moyenne(l.map(x => x.lieux ?? 0)), 1), demontages: arrondi(moyenne(l.map(x => x.demontages ?? 0)), 1), recoltes: arrondi(moyenne(l.map(x => x.recoltes ?? 0)), 1) }
     };
   }
   // Régions de départ (toutes stratégies sauf passif).
@@ -951,6 +1008,8 @@ export function tableaux(m) {
   l.push("", "### Remèdes (morsures : aidées par un médicament, une décoction, une trousse ou une infirmerie ; soignées ; par partie : trousses trouvées, plantes cueillies, tisanes)", "",
     "| Cas | Morsures | Aidées | Soignées | Trousses | Plantes | Tisanes | Jours d'abri avec un médicament |", "|---|---|---|---|---|---|---|---|");
   for (const c of cas) l.push(`| ${c.strategie} × ${c.membres} | ${c.remedes.morsures} | ${c.remedes.aidees} | ${c.remedes.soignees} | ${c.remedes.trousses} | ${c.remedes.plantes} | ${c.remedes.tisanes} | ${c.remedes.joursAvecMedicament} |`);
+  l.push("", "### Lot « fouille » (par partie : lieux fouillés, démontages, récoltes de matières)", "", "| Cas | Lieux | Démontages | Récoltes |", "|---|---|---|---|");
+  for (const c of cas) l.push(`| ${c.strategie} × ${c.membres} | ${c.fouille?.lieux ?? 0} | ${c.fouille?.demontages ?? 0} | ${c.fouille?.recoltes ?? 0} |`);
   l.push("", "### Régions de départ (toutes stratégies sauf passif)", "", "| Région | Parties | Q1 | Médiane | Vivants à la fin | Autonomes |", "|---|---|---|---|---|---|");
   for (const [cle, r] of Object.entries(m.regions).sort((a, b) => b[1].mediane - a[1].mediane)) l.push(`| ${cle} | ${r.parties} | ${r.q1} | ${r.mediane} | ${r.survie200} | ${r.autonomie} |`);
   l.push("", "### Hauts contre Bas après J90 (abris des parties encore en vie)", "", "| Zone | Jours d'abri après J90 | Assauts par mois | Livides errants par mois |", "|---|---|---|---|");
@@ -971,13 +1030,15 @@ function lireOptions(argv) {
     else if (a === "--json") o.json = argv[++i];
     else if (a === "--journal") o.journal = true;
     else if (a === "--rapide") { o.rapide = true; o.parties = PARTIES_RAPIDE; }
+    else if (a === "--sans-lieux") o.sansLieux = true;
   }
   return o;
 }
 
 // Simule tous les cas demandés (en fils d'exécution si fils > 1). -> Promise<[stats]>
-export async function simuler({ parties = 200, graine = "1", jours = JOURS_DEFAUT, cas = null, fils = 1 } = {}) {
+export async function simuler({ parties = 200, graine = "1", jours = JOURS_DEFAUT, cas = null, fils = 1, sansLieux = false } = {}) {
   const liste = casDe(cas);
+  OPTIONS_SIMULATEUR.lieux = !sansLieux;
   if (fils <= 1) {
     const contenu = chargerContenu();
     return liste.flatMap(c => jouerCas(contenu, c, { parties, graine, jours }));
@@ -985,7 +1046,7 @@ export async function simuler({ parties = 200, graine = "1", jours = JOURS_DEFAU
   const lots = Array.from({ length: Math.min(fils, liste.length) }, () => []);
   liste.forEach((c, i) => lots[i % lots.length].push(c));
   const resultats = await Promise.all(lots.map(lot => new Promise((resoudre, rejeter) => {
-    const w = new Worker(fileURLToPath(import.meta.url), { workerData: { lot, parties, graine, jours } });
+    const w = new Worker(fileURLToPath(import.meta.url), { workerData: { lot, parties, graine, jours, sansLieux } });
     w.on("message", resoudre); w.on("error", rejeter);
     w.on("exit", code => { if (code !== 0) rejeter(new Error(`fil terminé avec le code ${code}`)); });
   })));
@@ -994,6 +1055,7 @@ export async function simuler({ parties = 200, graine = "1", jours = JOURS_DEFAU
 
 if (!isMainThread && workerData?.lot) {
   const contenu = chargerContenu();
+  OPTIONS_SIMULATEUR.lieux = !workerData.sansLieux;
   parentPort.postMessage(workerData.lot.flatMap(c => jouerCas(contenu, c, workerData)));
 } else if (isMainThread && process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const o = lireOptions(process.argv.slice(2));
