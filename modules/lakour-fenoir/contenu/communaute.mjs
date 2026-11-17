@@ -46,7 +46,18 @@ export const CORVEES = [
 export const BAREME = {
   objets: {
     tronconneuse: 22.5, "fusil-de-chasse": 20, "carabine-22": 17.5, "pistolet-de-service": 17.5,
-    "carte-routiere-de-l-ile": 6, "carte-de-randonnee-de-cilaos": 4, "carte-ancienne-de-l-ile": 3,
+    // Les repères du lot « cartes » (fusion vague2) : les clés de ses objets. Du barème du jeu 3D (÷ 2) : la carte routière 6, la
+    // carte de randonnée 4, la carte ancienne 3, le calendrier des postes 1,5, celui de l'an passé (le vieux calendrier) 1. Ceux que
+    // le jeu 3D n'a pas, au plus près : un plan de ville comme une carte de randonnée (une région), une moitié de carte la moitié
+    // d'une carte routière, une carte annotée comme une carte routière, une copie à la main comme une carte ancienne (la main n'est
+    // pas l'imprimeur), les calendriers de l'année comme celui des postes, la montre comme une carte ancienne. La planche des jours, le
+    // cadran, l'encre et le cahier cousu se fabriquent : ils valent leur recette.
+    "carte-routiere-de-l-ile": 6, "carte-de-randonnee": 4, "carte-ancienne": 3, "plan-de-ville": 4, "moitie-de-carte": 3,
+    "carte-annotee": 6, "copie-de-carte": 3,
+    "calendrier-des-postes": 1.5, "vieux-calendrier": 1, "calendrier-de-l-annee": 1.5, "calendrier-des-marees-et-des-lunes": 1.5,
+    "calendrier-des-fetes": 1.5, "montre-a-aiguilles": 3,
+    // Lot « corps » (fusion vague2) : la tente, de quoi bivouaquer (le « bivouac » du barème du jeu 3D, 10 ÷ 2 ; la natte se fabrique).
+    tente: 5,
     // Les bêtes vivantes (le lot du vivant de l'abri en fera des objets ; leur valeur est déjà là).
     poule: 4, lapin: 4, cabri: 10, porcelet: 12.5, "veau-moka": 20, essaim: 7.5
   }
@@ -133,7 +144,7 @@ Changer de religion se fait dans un lieu de culte (église, temple, mosquée, pa
 # Le marché chiffré
 
 - **La boutique** : le commerçant revend à 1,25 fois le cours et rachète à 0,6 fois ; sa confiance suit la réputation du client (pas son sens moral, qu'il ne voit pas) et sa parole. Tout bleu, on paie 1,09 fois et on reçoit 0,69 ; tout rouge, 1,67 et 0,45. Ses préjugés s'y ajoutent. Un commerçant n'est resté que dans trois boutiques sur dix.
-- **La valeur d'un objet** : le barème pour les armes, les outils rares et les bêtes vivantes ; sinon le coût de sa recette au cours.
+- **La valeur d'un objet** : le barème pour les armes, les outils rares, les cartes, les calendriers, la montre et les bêtes vivantes ; sinon le coût de sa recette au cours. **Un papier de plans** (une copie, un cahier unique) vaut ce que vaut son plan (le journal « Les plans ») : au troc comme à la boutique, il compte avec le reste.
 - **L'étal** vend les jours de marché, même sans le groupe ; une chance sur dix qu'on s'y serve sans gardien.
 
 # Jouer un PNJ croisé

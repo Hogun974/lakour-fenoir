@@ -324,7 +324,7 @@ Au **déménagement**, les papiers de l'étagère partent avec le groupe (ils ne
 
 Quelques valeurs, à la rareté moyenne : ${[...ordinaires.filter(p => ["potager", "citerne-de-pluie", "cuisine-commune", "panneaux-solaires", "infirmerie"].includes(p.cle)), ...rares.slice(0, 4), ...PLANS_CONSTRUCTION.filter(p => p.unique)].map(p => `${nomPlan(p.cle)} ${valeur(p)}`).join(" ; ")} parts.
 
-Le prix se discute comme tout troc (le marché, ses préjugés, la confiance). « Donner ou troquer un papier » et « Recevoir un plan » (fenêtre du MJ ; donnerPlan, recevoirPlan) déplacent le papier et ce qui va en échange ; valeurPlan({ cle }) dit ce que le plan vaut aujourd'hui.` },
+Le prix se discute comme tout troc (le marché, ses préjugés, la confiance). « Donner ou troquer un papier » et « Recevoir un plan » (fenêtre du MJ ; donnerPlan, recevoirPlan) déplacent le papier et ce qui va en échange ; valeurPlan({ cle }) dit ce que le plan vaut aujourd'hui. Au marché, evaluerTroc le compte avec le reste, au troc comme à la boutique (à la marge du commerçant) : objetsDonnes pour les papiers que le groupe cède, plansRecus pour ceux qu'il reçoit.` },
   { cle: "systeme", titre: "Ce que fait le système", texte: `- **Construire** et **fabriquer** appliquent le rabais des plans connus (carnet, par cœur, plans uniques en main).
 - **Fouiller** avec la cible « plans » : un plan selon le type du site, puis le site se repose quelques jours.
 - **Chaque jour**, la date d'un cyclone qui frappe une région est gardée ; un lieu à plans dont la fenêtre s'ouvre va au **journal secret** (« La fenêtre s'ouvre »).

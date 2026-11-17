@@ -1154,7 +1154,7 @@ async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
 const MARCHE = fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser,
   chat, carteAction, sansBalises, porterActe: (...x) => porterActe(...x), membresPresents: ctx => membresPresents(ctx), espritDuTirage: (...x) => espritDuTirage(...x),
   // Fusion vague2 : la valeur des papiers et des plans au troc et à la boutique (lot 4, api-plans.mjs ; PLANS_API est défini plus bas).
-  valeurPapier: i => PLANS_API.valeurPapierDeLObjet(i), valeurPlanDeCle: k => PLANS_API.valeurPlanDeCle(k) });
+  valeurPapier: i => PLANS_API.valeurPapierDeLObjet(i), valeurPlanDeCle: k => PLANS_API.valeurPlanDeCle(k), valeurPlanDeObjet: k => PLANS_API.valeurPlanDeObjet(k) });
 // Percevoir dans le noir (contrat §18) : ses fonctions, avec les aides internes d'ici.
 // La table de gestion, les rangs, le passage, la conversion (lot 10, contrat §22).
 const GESTION = fonctionsGestion({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, systemeLogique, abriLogique,
@@ -1170,7 +1170,9 @@ const PLANS_API = fonctionsPlans({ ecriture, ouvrirCtx, terminer, noter, tx, jou
 // Le jour qu'on croit, les cartes et les calendriers (contrat §20) : ses fonctions, avec les aides internes d'ici.
 const REPERES = fonctionsReperes({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, dateDepart, clair, chat, carteAction,
   quandDe: etat => quandDe(etat), avancerInterne: (ctx, n) => avancerInterne(ctx, n), donneesObjet: (...x) => donneesObjet(...x),
-  aLAbri: (etat, ab) => aLAbri(etat, ab), fetesDuJeu, estMJ: () => Boolean(game.user?.isGM) });
+  aLAbri: (etat, ab) => aLAbri(etat, ab), fetesDuJeu, estMJ: () => Boolean(game.user?.isGM),
+  // Fusion vague2 : le journal d'un mort rend ses plans selon la règle du lot « plans », et ses papiers passent à un vivant.
+  plansEcrits: (ctx, plans) => PLANS_API.plansEcrits(ctx, plans), papiersDuMort: (ctx, id) => PLANS_API.papiersDuMort(ctx, id) });
 // Le corps, le sommeil et l'hygiène (contrat §19) : ses fonctions, avec les aides internes d'ici.
 // Une entrée du journal SECRET (au MJ seul, dans le monde scellé) : l'issue d'une morsure soignée, l'infection déclarée.
 function journalSecret(ctx, x) {

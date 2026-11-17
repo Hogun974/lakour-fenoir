@@ -235,11 +235,14 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     {
       const ins = inscrireMorts(e, surv.filter(x => vivantsAuDebut.has(x.id)).map(x => ({ id: x.id, nom: x.nom, system: x.system })), { quart: fin, region: e.groupe.region });
       e = ins.etat;
-      // Lot « cartes » : son journal reste sur lui, avec le jour qu'il croyait et les plans du groupe.
+      // Lot « cartes » : son journal reste sur lui, avec le jour qu'il croyait et les plans du groupe ; fusion vague2 : et les plans
+      // qu'il savait par cœur (lot « plans » : ils meurent avec lui, sauf ce qu'en garde son journal, tant qu'on peut le lire).
       if (ins.nouveaux.length) {
         const ids = new Set(ins.nouveaux.map(x => x.id));
-        const journal = journalAuDeces(compteDe(e, { jour: Math.floor(fin / QUARTS_PAR_JOUR) }), e.groupe.plans ?? []);
-        e = { ...e, morts: e.morts.map(x => (ids.has(x.id) && !x.journal ? { ...x, journal: structuredClone(journal) } : x)) };
+        const compte = compteDe(e, { jour: Math.floor(fin / QUARTS_PAR_JOUR) });
+        const parCoeur = new Map(surv.map(x => [x.id, Array.isArray(x.system?.plans) ? x.system.plans : []]));
+        const journalDe = id => journalAuDeces(compte, [...new Set([...(e.groupe.plans ?? []), ...(parCoeur.get(id) ?? [])])]);
+        e = { ...e, morts: e.morts.map(x => (ids.has(x.id) && !x.journal ? { ...x, journal: journalDe(x.id) } : x)) };
       }
       if (ins.nouveaux.length) {
         for (const x of surv) if (peutAgir(x.system) && !departs.includes(x.id)) x.system = { ...x.system, moral: borner((Number(x.system.moral) || 0) - ins.nouveaux.length, 0, 5) };

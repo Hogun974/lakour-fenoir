@@ -14,7 +14,8 @@ export const GROUPE = "groupe";
 const SUJETS = ["debiteur", "sujet", "par", "auteur"];
 
 export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, dateDepart, quandDe, fetesDuJeu, erreur, clair, localiser, chat, carteAction, sansBalises,
-  porterActe = null, membresPresents = () => [], espritDuTirage = () => ({}), valeurPapier = () => null, valeurPlanDeCle = () => null }) {
+  porterActe = null, membresPresents = () => [], espritDuTirage = () => ({}), valeurPapier = () => null, valeurPlanDeCle = () => null,
+  valeurPlanDeObjet = () => null }) {
   const c = () => contenu();
   const etatMarche = ctx => L.marcheDe(ctx.etat);
   const secretMarche = ctx => L.secretMarcheDe(ctx.monde);
@@ -36,6 +37,11 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
   const slug = s => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "marche";
 
   // Les stocks du groupe : ceux de l'abri, sinon ce qu'il porte.
+  // La valeur d'un objet par sa clé (fusion vague2) : l'objet d'un plan unique vaut son plan (lot 4), sinon valeurObjet (lot 10).
+  function valeurDeLaCle(k, cr) {
+    const vp = valeurPlanDeObjet(k);
+    return vp !== null && vp !== undefined ? { valeur: vp, source: "plan" } : L.valeurObjet(k, c(), cr);
+  }
   // La valeur des objets d'un troc (fusion vague2) : -> { donne, recoit, detail: [{ sens, objet, valeur, source }] }
   function valeurDesObjets(etat, cr, { objetsDonnes = [], plansRecus = [], objetsRecus = [] } = {}) {
     const detail = [];
@@ -52,7 +58,7 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
       detail.push({ sens: "recoit", objet: k, valeur: Number(v) || 0, source: v === null || v === undefined ? "" : "plan" });
     }
     for (const k of listeIds(objetsRecus)) {
-      const v = L.valeurObjet(k, c(), cr);
+      const v = valeurDeLaCle(k, cr);
       detail.push({ sens: "recoit", objet: k, valeur: Number(v.valeur) || 0, source: v.source });
     }
     const somme = sens => detail.filter(x => x.sens === sens).reduce((s, x) => s + x.valeur, 0);
@@ -216,8 +222,20 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
       if (b) return { ...L.evaluerALaBoutique({ donne, recoit, cours: cr, ...clientDe(etat, parleurId), majoration: conf.majoration, objets: o }), boutique: b.cle, confiance: conf, cours: cr, objets };
       return { ...L.evaluerTroc({ donne, recoit, cours: cr, majoration: conf.majoration, objets: o }), confiance: conf, cours: cr, objets };
     },
-    // Ce que vaut un objet (équipement, bête vivante) en parts : le barème du contenu, sinon sa recette au cours (lot 10).
-    valeurObjet: ({ cle = "" } = {}) => ({ cle, ...L.valeurObjet(cle, c(), cours(lireEtat())) }),
+    // Ce que vaut un objet (équipement, bête vivante) en parts : le barème du contenu, sinon sa recette au cours (lot 10). Fusion
+    // vague2 : un papier de plans (objetId d'un objet porté par le groupe) ou l'objet d'un plan unique (cle) vaut son plan (lot 4).
+    valeurObjet: ({ cle = "", objetId = "" } = {}) => {
+      const etat = lireEtat();
+      const cr = cours(etat);
+      if (objetId) {
+        const i = survivantsDuGroupe(etat).map(a => a.items?.get?.(objetId)).find(Boolean);
+        if (!i) throw erreur("ActeurInconnu");
+        const vp = valeurPapier(i);
+        const k = aPlat(i.system).cle ?? "";
+        return { cle: k, objet: i.name, ...(vp !== null && vp !== undefined ? { valeur: vp, source: "plan" } : L.valeurObjet(k, c(), cr)) };
+      }
+      return { cle, ...valeurDeLaCle(cle, cr) };
+    },
     // Ce que vaut un plan en parts : valeurPlan({ cle } ou { rarete, unique }) est celle du lot « plans » (api-plans.mjs ; fusion vague2).
     // Un litige au conseil : une voix par bastion (« a », « b » ou rien).
     trancherLitige: ({ voix = {} } = {}) => L.trancherLitige({ voix }),

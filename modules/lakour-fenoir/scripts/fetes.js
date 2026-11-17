@@ -153,7 +153,7 @@ const EFFETS = {
     gain: "Une nuit de lampes à huile : +2 de moral à chacun.",
     cout: "Une ration de plus par personne ; chaque flamme attire (visibilité +3 cette nuit)." },
   "nouvel-an-chinois": { communautes: ["chinois", "tous"], effet: { moral: 1, rations: 1, bruit: 3, quarts: 2, hygiene: { jours: 30 }, liens: 1 },
-    gain: "Le grand ménage de l'abri : un mois où les maladies prennent moitié moins ; dettes et trocs soldés ; un don à un abri voisin installe la confiance (un lien de plus avec lui) ; +1 de moral à chacun.",
+    gain: "Le grand ménage de l'abri : l'abri lavé de toute sa souillure, et un mois où les maladies prennent moitié moins ; dettes et trocs soldés ; un don à un abri voisin installe la confiance (un lien de plus avec lui) ; +1 de moral à chacun.",
     cout: "Deux quarts de travail, une ration de plus par personne, et les pétards (bruit +3)." },
   cavadee: { communautes: ["malbars"], effet: { voeu: { moral: 1, fatigue: 1 }, lueur: { visibilite: 2, jours: 1 } },
     gain: "Après dix jours de carême, un vœu (retrouver quelqu'un, atteindre un lieu) qui soutient le moral de ceux qui l'ont fait tant qu'ils le tiennent.",

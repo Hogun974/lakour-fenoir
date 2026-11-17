@@ -13,7 +13,8 @@
 // - trouverPapier(ctx, acteur, cleRegistre) : un plan trouvé (la fouille « plans ») ;
 // - pertesDeBreche(ctx, type) : une brèche faite par des vivants vide une part de l'étagère ;
 // - emporterEtagere(ctx) : au déménagement, les papiers de l'étagère partent avec le groupe ;
-// - valeurPapierDeLObjet(objet), valeurPlanDeCle(cle) : la valeur au troc et à la boutique (le marché du lot 10 ; fusion vague2).
+// - valeurPapierDeLObjet(objet), valeurPlanDeCle(cle) : la valeur au troc et à la boutique (le marché du lot 10 ; fusion vague2) ;
+// - plansEcrits(ctx, plans), papiersDuMort(ctx, deId) : le journal d'un mort (lot « cartes » ; fusion vague2).
 import * as L from "../logique/index.mjs";
 import { t, lireEtat, acteur, survivantsDuGroupe, abriCourant, aPlat } from "./donnees.mjs";
 
@@ -361,9 +362,36 @@ export function fonctionsPlans({ ecriture, ouvrirCtx, terminer, noter, tx, jourC
     return d ? L.valeurPlan(d, { circulation: L.plansDeLEtat(lireEtat()).circulation }) : null;
   };
 
+  // Des plans écrits (le journal d'un mort ou d'un inconnu, lot « cartes » ; fusion vague2) : ceux que le groupe sait lire vont au
+  // carnet ; un plan qu'il ne sait pas lire reste un papier (une copie, au premier membre vivant), comme un plan trouvé.
+  // -> { lus: [clé], papier: { objetId, nom, plans, acteurId } | null }
+  async function plansEcrits(ctx, plans = []) {
+    const c = contenu();
+    const valides = [...new Set([plans].flat().filter(Boolean))].filter(k => L.cibleExiste(c, k));
+    const lus = lireAuCarnet(ctx, valides);
+    const reste = valides.filter(k => !(ctx.etat.groupe.plans ?? []).includes(k));
+    const a = vivants(ctx.etat)[0];
+    if (!reste.length || !a) return { lus, papier: null };
+    const doc = await creerPapier(a, { plans: reste });
+    noter(ctx, tx("Plans.Journal.ALire", { plan: nomsPlans(reste), savoirs: nomsSavoirs(L.savoirsDuPlan(c, reste[0])) }));
+    return { lus, papier: { objetId: doc?.id ?? "", nom: doc?.name ?? "", plans: reste, acteurId: a.id } };
+  }
+  // Les papiers que porte un mort du groupe passent au premier membre vivant (le journal lu sur le corps, lot « cartes »).
+  async function papiersDuMort(ctx, deId = "") {
+    const de = acteur(deId);
+    if (!de || de.type !== "survivant" || !vivants(ctx.etat).some(a => a !== de)) return { repris: [] };
+    return reprendrePlansInterne(ctx, { deId });
+  }
+
+  // L'objet d'un plan unique du registre (un cahier, un carnet) vaut son plan ; null pour un autre objet.
+  const valeurPlanDeObjet = cle => {
+    const d = cle ? L.plansDuRegistre(contenu()).find(p => p.unique && p.objet === cle) : null;
+    return d ? L.valeurPlan(d) : null;
+  };
+
   const ecrire = fn => ecriture(async (args = {}) => { const ctx = ouvrirCtx(); const r = await fn(ctx, args); await terminer(ctx); return r; });
   return {
-    connusDe, trouverPapier, pertesDeBreche, emporterEtagere, valeurPapierDeLObjet, valeurPlanDeCle,
+    connusDe, trouverPapier, pertesDeBreche, emporterEtagere, valeurPapierDeLObjet, valeurPlanDeCle, valeurPlanDeObjet, plansEcrits, papiersDuMort,
     api: {
       plans: () => plans(), valeurPlan, lieuxAPlans,
       lieuAPlans: ecrire(lieuAPlansInterne),

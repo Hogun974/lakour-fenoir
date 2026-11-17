@@ -14,7 +14,8 @@
 // - dateDeLaFete(ctx, { chez, fete })   -> à la fête des autres, on apprend le jour (participer)
 // - api : reperes(), compte({ action, acteurId, date, jour, certitude }), donnerDate({ de, a, date, jour, mensonge }),
 //         lireLaLune({ objetId }), donnerRepere({ acteurId, cle }), copierCarte({ objetId, acteurId }),
-//         lireJournal({ mortId } | { de, date, jour, depuis, plans, renseignements })
+//         lireJournal({ mortId } | { de, date, jour, depuis, plans, renseignements }) : ses plans suivent la règle du lot « plans »
+//         (lus au carnet, sinon une copie à lire) ; sur le corps d'un mort, ses papiers passent à un vivant (fusion vague2)
 import * as L from "../logique/index.mjs";
 import { t, lireEtat, acteur, survivantsDuGroupe, abriCourant, aPlat, langue, localiser } from "./donnees.mjs";
 
@@ -22,7 +23,8 @@ export const CATEGORIE_REPERE = "repere";
 const ACTIONS_COMPTE = ["teneur", "noter", "oublier", "regler"];
 
 export function fonctionsReperes({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, dateDepart, clair, chat, carteAction, quandDe,
-  avancerInterne, donneesObjet, aLAbri, fetesDuJeu = () => [], estMJ = () => Boolean(globalThis.game?.user?.isGM) }) {
+  avancerInterne, donneesObjet, aLAbri, fetesDuJeu = () => [], estMJ = () => Boolean(globalThis.game?.user?.isGM),
+  plansEcrits = null, papiersDuMort = null }) {
   const R = cle => `LAKOUR_SURVIE.Reperes.${cle}`;
   const nomRegion = cle => L.regionDe(contenu(), cle)?.nom ?? cle;
   const defRepere = cle => L.reperesDuContenu(contenu()).find(d => d.cle === cle) ?? null;
@@ -287,7 +289,7 @@ export function fonctionsReperes({ ecriture, ouvrirCtx, terminer, noter, tx, jou
   async function lireJournalInterne(ctx, { mortId = "", de = "", date = "", jour = null, depuis = 0, plans = [], renseignements = null } = {}) {
     const j = jourCtx(ctx);
     const c = compteCtx(ctx);
-    const sortie = { ok: true, de: "", jour: null, plans: [], regions: [] };
+    const sortie = { ok: true, de: "", jour: null, plans: [], regions: [], papier: null, papiers: [] };
     let jourAnnonce = null, marge = L.REGLES_COMPTE.recu.marge, auteur = "";
     let lesPlans = [];
     if (mortId) {
@@ -301,7 +303,8 @@ export function fonctionsReperes({ ecriture, ouvrirCtx, terminer, noter, tx, jou
       const note = jourDe({ date, jour });
       jourAnnonce = note === null ? null : note + Math.max(0, Math.floor(Number(depuis) || 0));
       lesPlans = [plans].flat().filter(Boolean);
-      for (const p of lesPlans) if (!L.installationDe(contenu(), p)) throw clair(t(R("Erreurs.Plans"), { plan: p }));
+      // Une installation, ou une recette (« recette:<clé> », lot « plans » ; fusion vague2).
+      for (const p of lesPlans) if (!L.cibleExiste(contenu(), p)) throw clair(t(R("Erreurs.Plans"), { plan: p }));
       if (renseignements && typeof renseignements === "object") {
         const r = L.renseignementsDuJournal(ctx.etat.renseignements, renseignements, { jour: j, contenu: contenu() });
         ctx.etat.renseignements = r.renseignements;
@@ -315,11 +318,20 @@ export function fonctionsReperes({ ecriture, ouvrirCtx, terminer, noter, tx, jou
       sortie.jour = jourAnnonce;
       noter(ctx, tx("Reperes.Journal.Recu", { de: auteur, date: isoDu(jourAnnonce) }));
     }
-    for (const p of lesPlans) {
-      if ((ctx.etat.groupe.plans ?? []).includes(p)) continue;
-      ctx.etat = L.ajouterPlan(ctx.etat, p);
-      sortie.plans.push(p);
+    // Fusion vague2 : les plans écrits suivent la règle du lot « plans » (lus au carnet si le groupe sait les lire, sinon une copie à
+    // lire plus tard) ; les papiers que portait le mort passent à un vivant (reprendrePlans).
+    if (plansEcrits) {
+      const r = await plansEcrits(ctx, lesPlans);
+      sortie.plans = r.lus;
+      sortie.papier = r.papier;
+    } else {
+      for (const p of lesPlans) {
+        if ((ctx.etat.groupe.plans ?? []).includes(p)) continue;
+        ctx.etat = L.ajouterPlan(ctx.etat, p);
+        sortie.plans.push(p);
+      }
     }
+    if (mortId && papiersDuMort) sortie.papiers = (await papiersDuMort(ctx, mortId)).repris ?? [];
     await avancerInterne(ctx, 1);
     return sortie;
   }

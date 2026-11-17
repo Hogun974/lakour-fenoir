@@ -1442,7 +1442,8 @@ ni renommé : les anciennes clés de religion restent des alias, les champs nouv
   la **réputation**, × 1 + 3 % par niveau de parole au-dessus de 1, bornée 0,25..1,15) ; `prixDuCommercant` (vente 1,25 / confiance,
   achat 0,6 × confiance) ; `evaluerALaBoutique({ donne, recoit, cours, reputation, parole, majoration })` ; `plafondCredit(carnet,
   debiteur, confiance, facteur)` et `prendreACredit({ …, facteur })` (le plafond × la confiance, à la demi-part).
-- `valeurObjet(cle, contenu, cours)` → `{ valeur, source: "bareme" | "recette" | "" }` ; `valeurPlan({ rarete, unique })`.
+- `valeurObjet(cle, contenu, cours)` → `{ valeur, source: "bareme" | "recette" | "" }` ; `valeurPlan({ rarete, unique })` (celle du lot
+  plans depuis la fusion vague2, §23).
 - L'étal : `creerEtal`, `chanceVenteEtal`, `journeeEtal(etal, { cours, hasard })`, `releverEtal` ; `REGLES_MARCHE.etal` ;
   `journeeDuMarche({ …, cours, hasard })` fait vendre les étals les jours de leur marché (faits `etal-vend`, `etal-vole`).
   État public : `marche.etals: [{ id, marche, biens, prix, contre, caisse, gardien, vendus, vols, depuis }]` (vide par défaut).
@@ -1511,3 +1512,32 @@ valeurObjet({ cle }) / valeurPlan({ rarete, unique })
   tables « La communauté — le départ préparé » et « La religion — ce qu'on dit de celui qui en change » ; pages « La table de
   gestion, les rangs et le marché » (guide du joueur) et « Mener la table de gestion, le marché chiffré et la porte » (guide du MJ,
   avec la liste de priorités d'un PNJ croisé : partir, fuir, écouter, boire, manger, dormir, faire sa tâche, errer).
+
+## 23. Jointures entre les lots corps, cartes, plans et communauté (fusion vague2, 2026-11-17)
+
+Les quatre lots (§19 à §22) ont été écrits côte à côte sur `vague1` ; leur fusion les branche là où chacun avait laissé un point
+d'accroche. Aucune règle nouvelle : chaque jointure applique une règle qui existait déjà dans l'un des lots. Essais :
+`essais/survie-jointures-vague2.test.mjs`.
+
+- **La valeur d'un plan** (§21 -> §22). `valeurPlan` existait des deux côtés (`plans.mjs`, `marche.mjs`) : une seule reste, celle du
+  lot plans (`3 + 0,2 × rareté courante`, × 3 unique, en parts entières, au moins 1). Elle prend un plan du registre ou la forme du
+  marché `{ rarete: nombre, unique }` (une rareté en un nombre vaut `[r, r]`). `REGLES_MARCHE.plan` n'existe plus. API :
+  `valeurPlan({ cle })` ou `valeurPlan({ rarete, unique })` (→ `{ cle, unique, rarete, valeur, … }`).
+- **Le troc et la boutique comptent les objets** : `evaluerTroc` et `evaluerALaBoutique` prennent `objets: { donne, recoit }` (des
+  parts, comptées comme les biens ; à la boutique, à la marge du commerçant). API `evaluerTroc({ …, objetsDonnes: [objetId],
+  plansRecus: [clé de plan], objetsRecus: [clé d'objet] })` : un papier porté vaut son plan (`valeurPapier`), un autre objet
+  `valeurObjet` ; le résultat rend `objets: { donne, recoit, detail }`. `valeurObjet({ objetId })` dit ce que vaut un objet porté
+  (un papier : son plan) ; `valeurObjet({ cle })` d'un objet de plan unique (carnet, cahier) : son plan.
+- **Le journal d'un mort** (§20 -> §21). À sa mort, son journal garde le carnet du groupe ET les plans qu'il savait par cœur (« les
+  plans qu'il a appris ») : ils meurent avec lui, sauf ce qu'en garde le journal tant qu'on peut le lire. `lireJournal` : ses plans
+  suivent la règle du lot plans (lus au carnet si le groupe sait les lire, sinon une copie au premier vivant, à lire plus tard :
+  `papier`) ; sur le corps d'un mort, les papiers qu'il portait passent à un vivant (`reprendrePlans` ; `papiers`). Le journal
+  d'un inconnu accepte un plan de recette (`recette:<clé>`).
+- **Les repères au barème** (§20 -> §22) : les clés du lot cartes (le barème du lot 10 portait celles du jeu 3D). Carte routière 6,
+  carte de randonnée 4, carte ancienne 3, calendrier des postes 1,5, vieux calendrier 1 (jeu 3D ÷ 2) ; au plus près pour ceux que
+  le jeu 3D n'a pas : plan de ville 4, moitié de carte 3, carte annotée 6, copie de carte 3, calendriers de l'année, des marées et
+  des fêtes 1,5, montre 3. La planche des jours, le cadran, l'encre et le cahier cousu valent leur recette. La **tente** (de quoi
+  bivouaquer, §19) vaut 5 (le « bivouac » du jeu 3D).
+- **Les religions et les fêtes** (§22 -> §14) : la fête d'un pratiquant suit `religionsDe(…, contenu)` (anciennes clés comprises) ;
+  essai : le bouddhiste, sous `culte-chinois` comme sous `bouddhiste`, gagne 1 de plus au Nouvel An chinois.
+- **Le grand ménage** (§19) : le gain du Nouvel An chinois dit que l'abri est lavé de toute sa souillure (ce que `feter` faisait déjà).
