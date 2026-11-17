@@ -49,6 +49,14 @@
 //   payant les matières de l'île sur le bois des alentours ; à deux et plus, le nomade (et le mixte) creuse des feuillées là où il
 //   s'installe (une demi-journée d'un) ; un survivant qui porte un bouclier pare (resoudreCombat, parade) ; le groupe qui porte une
 //   tente ou une natte dort au bivouac hors de l'abri. Le sommeil, la souillure et l'insalubrité sont ceux de la logique (avancer).
+// - lot 7 « Bâtir et défendre » (2026-11-17, docs/equilibre-batir.md) : l'entretien est celui de la logique (avancer : ceux qui sont
+//   au chantier ou à la tâche d'une installation la soignent) ; sans rien à bâtir ni à réparer, un libre passe un quart sur un
+//   entretien dû ; l'enceinte se répare d'abord, une installation lontan avec le bois des alentours ; un assaut de Livides passe devant
+//   les ouvrages (pièges, hauteur, porte, enceinte : ouvrages.mjs) ; achever un niveau creusé sans l'étaiement peut l'ébouler (une
+//   blessure qui ne tue pas, une cellule à recreuser) ; l'enraciné bâtit les ouvrages lontan qui lui servent tôt (des jarres
+//   filtrantes si le filtre n'a pas pu se faire, un boucan après le premier potager, un puits creusé là où l'eau manque ; la réserve et
+//   le séchoir après la basse-cour et l'enclos), jamais une sœur lontan d'une installation qui tient déjà son rôle aussi bien ou mieux ;
+//   sans aucun remède, il cueille des zerbaz toutes les deux semaines (REMEDES.cueilletteTousLes).
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -82,14 +90,15 @@ export const REGLES_SIMULATEUR = {
 };
 // Les remèdes (2026-11-05) : sous `reserve` médicaments (aucun), on cueille des zerbaz et, avec `plantesTisane` plantes, on
 // prépare une tisane (recette du contenu). Une réserve de 2 ou 3 faisait autant pour les solos et plus pour les groupes de 4.
-export const REMEDES = { reserve: 1, recette: "tisanes", plantesTisane: 3 };
+// Lot 7 : cueilletteTousLes (jours) : un enraciné sans remède va cueillir des zerbaz toutes les deux semaines (docs/equilibre-batir.md).
+export const REMEDES = { reserve: 1, recette: "tisanes", plantesTisane: 3, cueilletteTousLes: 14 };
 
 // L'ordre de construction de l'enraciné ({ cle, niveau }) : ce que le site, les savoirs et les stocks permettent passe en premier.
 export const ORDRE_ENRACINE = [
-  ["captage-de-source", 1], ["pompe-manuelle", 1], ["citerne-de-pluie", 1], ["filtre-sable-charbon", 1],
-  ["potager", 1], ["panneaux-solaires", 1], ["batteries", 1], ["barricades", 1], ["feuillees", 1], ["reserve-etanche", 1], ["sechoir-fumoir", 1],
+  ["captage-de-source", 1], ["pompe-manuelle", 1], ["citerne-de-pluie", 1], ["filtre-sable-charbon", 1], ["jarre-filtrante", 1],
+  ["potager", 1], ["boucan", 1], ["panneaux-solaires", 1], ["batteries", 1], ["barricades", 1], ["puits-creuse", 1], ["feuillees", 1],
   ["compost", 1], ["citerne-de-pluie", 2], ["captage-de-source", 2], ["pompe-manuelle", 2], ["basse-cour", 1], ["enclos-a-cabris", 1],
-  ["potager", 2], ["galerie-souterraine", 1], ["tunnel-de-lave-amenage", 1], ["camouflage", 1], ["palissade", 1], ["tour-de-guet", 1],
+  ["reserve-etanche", 1], ["sechoir-fumoir", 1], ["potager", 2], ["galerie-souterraine", 1], ["tunnel-de-lave-amenage", 1], ["camouflage", 1], ["palissade", 1], ["tour-de-guet", 1],
   ["infirmerie", 1], ["dortoir", 1], ["bouilleur-solaire", 1], ["latrines-seches", 1], ["barricades", 2], ["panneaux-solaires", 2],
   ["batteries", 2],
   ["citerne-de-pluie", 3], ["camouflage", 2], ["galerie-souterraine", 2], ["fosse-et-pieges", 1],
@@ -394,6 +403,12 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         const def = idx.installations.get(cle);
         const inst = abri.installations.find(i => i.cle === cle);
         if (!def || (Number(inst?.niveau) || 0) !== niveau - 1) continue;
+        // Lot 7 : un puits creusé (des jours de pioche) seulement quand l'eau de l'abri ne suffit pas.
+        if (cle === "puits-creuse" && (abri.bilan?.net?.eau ?? -1) >= 1) continue;
+        // Lot 7 : on ne bâtit pas une sœur lontan d'une installation qui tient déjà son rôle aussi bien ou mieux (les jarres quand le
+        // filtre est là) ; une meilleure sœur, si (les latrines sèches après les feuillées).
+        if (niveau === 1 && def.arbre === "lontan" && abri.installations.some(i => i.cle !== cle && Number(i.niveau) >= 1 && Number(i.etat) < 3
+          && L.roleDe(idx.installations.get(i.cle)) === L.roleDe(def) && L.rangDe(idx.installations.get(i.cle)) <= L.rangDe(def))) continue;
         // Des bêtes à nourrir (chiens de garde) : seulement sur un surplus de nourriture produite.
         if (installationNourrie(def, niveau) && !((abri.bilan?.net?.nourriture ?? -1) >= 1)) continue;
         // Lot « corps » : une installation d'hygiène qui prend de l'eau (lavoir, douche), seulement sur un surplus d'eau.
@@ -418,7 +433,15 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     const ouvert = abri.installations.find(i => Number(i.chantier?.requis) > 0);
     if (!ouvert || !ouvriers.length) return;
     const def = idx.installations.get(ouvert.cle);
-    const r = L.avancerChantier(ouvert, def, { quarts: 2, bras: ouvriers.length, jour });
+    // Lot 7 : achever un niveau creusé sans l'étaiement (ou près d'une eau qui court) peut l'ébouler.
+    const eb = L.eboulement({ def, savoirs, site: idx.sites.get(abri.system.site), avant: ouvert, resultat: L.avancerChantier(ouvert, def, { quarts: 2, bras: ouvriers.length, jour }),
+      hasard: hasard("eboulement", jour) });
+    const r = eb.resultat;
+    if (eb.eboule) {
+      const s = L.choisir(ouvriers, hasard("eboulement-qui", jour));
+      if (s) { s.system = { ...s.system, blessures: L.blessureQuiNeTuePas(s.system.blessures) }; s.derniereCause = "accident"; }
+      stats.eboulements = (stats.eboulements ?? 0) + 1;
+    }
     abri.installations = abri.installations.map(i => (i.cle === ouvert.cle ? r.instance : i));
     if (r.termine) {
       etat = L.ajouterPlan(etat, r.plan);
@@ -433,11 +456,16 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       abri.system = r.abri;
       return;
     }
-    const abimee = abri.installations.find(i => Number(i.etat) > 0 && Number(i.niveau) >= 1);
-    if (abimee && (abri.system.stocks.materiaux ?? 0) > 0) {
-      const r = L.reparerInstallation(abimee, idx.installations.get(abimee.cle), { quarts: 2, bras: bricoleurs.length, materiaux: abri.system.stocks.materiaux });
+    // Lot 7 : l'enceinte d'abord (les Livides s'en prennent à elle ; hors service, elle ne défend plus), puis le reste.
+    const abimees = abri.installations.filter(i => Number(i.etat) > 0 && Number(i.niveau) >= 1);
+    const abimee = abimees.find(i => idx.installations.get(i.cle)?.categorie === "defense") ?? abimees[0];
+    const lontan = abimee && idx.installations.get(abimee.cle)?.arbre === "lontan";
+    if (abimee && (lontan ? L.boisDisponible(abri.system) > 0 : (abri.system.stocks.materiaux ?? 0) > 0)) {
+      const r = L.reparerInstallation(abimee, idx.installations.get(abimee.cle), { quarts: 2, bras: bricoleurs.length, materiaux: abri.system.stocks.materiaux, ile: L.boisDisponible(abri.system) });
       abri.installations = abri.installations.map(i => (i.cle === abimee.cle ? r.instance : i));
-      abri.system.stocks = L.ajouterStocks(abri.system.stocks, { materiaux: -r.cout.materiaux });
+      // Lot 7 : une lontan se répare avec le bois des alentours (matières de l'île).
+      if (r.cout.ile) abri.system.nature = L.prendreIle(abri.system.nature, r.cout.ile);
+      else abri.system.stocks = L.ajouterStocks(abri.system.stocks, { materiaux: -(r.cout.materiaux ?? 0) });
     }
   };
 
@@ -532,13 +560,18 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       if (jour > 30 && m.force >= 3) stats.serieuxApres30++;
       const bas = L.estDesBas(idx.regions.get(abri.system.region));
       if (jour > 90) stats[bas ? "bas" : "hauts"].assauts++;
-      const a = L.resoudreAssaut({ defense: bilan.defense, vigilance, force: m.force, hasard: h });
+      // Lot 7 : devant des Livides, les pièges, la hauteur (un garde sur le chemin de ronde), la porte et l'enceinte (ouvrages.mjs).
+      const livides = ["horde", "livides"].includes(m.type);
+      const ouvrages = L.ouvragesDeLAbri(abri.installations, contenu, { jour });
+      const fo = L.forceDevantOuvrages({ force: m.force, livides, ouvrages });
+      const a = L.issueDevantOuvrages(L.resoudreAssaut({ defense: bilan.defense, vigilance, force: fo.force, hasard: h }), { livides, ouvrages, garde: gardes.length > 0 });
       abri.system = L.endommagerAbri(abri.system, a.degats);
       if (a.installationEndommagee) {
-        const cibles = abri.installations.filter(i => Number(i.niveau) >= 1);
-        const c = L.choisir(cibles, h);
+        const c = L.cibleDesDegats(abri.installations, contenu, { livides, appuis: a.appuis, issue: a.issue, hasard: h });
         if (c) abri.installations = abri.installations.map(i => (i === c ? L.endommagerInstallation(i, 1) : i));
       }
+      for (const cb of fo.comblees) abri.installations = abri.installations.map(i => (i.cle === cb.cle ? L.endommagerInstallation(i, 1) : i));
+      if (ouvrages.alarme) abri.system = { ...abri.system, bruit: Math.min(10, (Number(abri.system.bruit) || 0) + 2) };
       if (a.issue === "endommagee") {
         const s = L.choisir(gardes.length ? gardes : vivants(), h);
         if (s) { s.system = L.blesser(s.system, 1).system; s.derniereCause = "assaut"; }
@@ -705,6 +738,16 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         // Plus d'eau à trouver et le site n'en donne pas assez : on cherche un site avec de l'eau (sa région ou une voisine).
         if (jour > 1 && (abri.system.stocks.eau ?? 0) < bilan.consommation.eau && trouvee < bilan.consommation.eau) doitPartir = `soif (site ${abri.system.site})`;
       }
+      // Lot 7 : plus aucun remède ni de quoi en faire (moins de REMEDES.plantesTisane plantes), toutes les deux semaines : avant de bâtir,
+      // le meilleur en survie va cueillir des zerbaz (une journée), comme le ferait un groupe raisonnable. Les chantiers du lot (le
+      // boucan surtout, qui ôte la faim de la réserve) prenaient les journées où le solo cueillait en passant (docs/equilibre-batir.md).
+      if (jour % REMEDES.cueilletteTousLes === 0 && !manqueNourriture && besoinRemedes() && dispo.length && (abri.system.nature?.cueillette ?? 0) >= 1) {
+        const c = [...dispo].sort((a, b) => L.competence(b.system, "survie").niveau - L.competence(a.system, "survie").niveau).slice(0, 1);
+        dispo = dispo.filter(s => !c.includes(s));
+        poser(c, "chasse");
+        fouillerNature(c, jour, h, "cueillette");
+        stats.cueillettesRemedes = (stats.cueillettesRemedes ?? 0) + 1;
+      }
       // Lot « savoirs » : un cyclone annoncé sur la région de l'abri : on rentre et on fixe ce qui s'envole (deux quarts de travail
       // par personne envoyée), comme le ferait un groupe raisonnable qui écoute la radio ou voit le ciel.
       const cy = monde.cyclone;
@@ -729,6 +772,16 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         poser(dispo.slice(0, 1), "chantier");
         reparer(dispo.slice(0, 1), jour);
         dispo = dispo.slice(1);
+      } else if (dispo.length && !vivants().some(s => s.system.tache === "chantier")) {
+        // Lot 7 : rien à bâtir ni à réparer, et un entretien dû : un libre y passe un quart (entretenirInstallation), puis repart à
+        // sa journée. Ceux qui bâtissent ou réparent soignent déjà en passant (le soin courant d'avancer).
+        const du = L.entretiensDus(abri.installations, contenu, { jour }).find(d => d.tache === "chantier");
+        const inst = du && abri.installations.find(i => i.cle === du.cle);
+        if (inst) {
+          const r = L.entretenirInstallation(inst, idx.installations.get(inst.cle), { quarts: 1, bras: 1, jour });
+          abri.installations = abri.installations.map(i => (i === inst ? r.instance : i));
+          stats.entretiens = (stats.entretiens ?? 0) + 1;
+        }
       }
       if (besoin && dispo.length) {
         const res = Object.keys(besoin)[0];
