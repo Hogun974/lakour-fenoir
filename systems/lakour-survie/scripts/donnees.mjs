@@ -43,6 +43,20 @@ export const aPlat = system => (typeof system?.toObject === "function" ? system.
 
 export const acteur = id => (id ? game.actors?.get(id) ?? null : null);
 export const survivantsDuGroupe = (etat = lireEtat()) => (etat.groupe?.membres ?? []).map(acteur).filter(a => a?.type === "survivant");
+// Un survivant désigné par son id, ou par son nom (lot 10, contrat §22) : par le nom, d'abord parmi `parmi` (le groupe), puis dans
+// tout le monde ; un nom que portent deux survivants ou plus ne désigne personne (ambigu) : une rumeur ou un acte dit sous ce nom
+// ne va jamais au mauvais. -> l'acteur, ou null
+export function survivantDesigne(ref, parmi = []) {
+  if (!ref) return null;
+  const parId = acteur(ref);
+  if (parId?.type === "survivant") return parId;
+  const unique = l => { const x = l.filter(a => a?.type === "survivant" && a.name === ref); return x.length === 1 ? x[0] : null; };
+  const dansLeGroupe = (parmi ?? []).filter(a => a?.type === "survivant" && a.name === ref);
+  if (dansLeGroupe.length) return dansLeGroupe.length === 1 ? dansLeGroupe[0] : null;
+  return unique(game.actors?.contents ?? []);
+}
+// Les noms des survivants du monde (lot 10 : le générateur n'en tire pas un homonyme).
+export const nomsDesSurvivants = () => (game.actors?.contents ?? []).filter(a => a.type === "survivant").map(a => a.name).filter(Boolean);
 export const abriCourant = (etat = lireEtat()) => {
   const a = acteur(etat.groupe?.abri);
   return a?.type === "abri" ? a : null;

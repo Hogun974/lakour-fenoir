@@ -12,7 +12,18 @@
 // - Le Ladi Lafé (« il a dit qu'il a fait ») : ce qui se dit de quelqu'un. Une rumeur est publique ; sa vérité, son auteur et
 //   sa malveillance sont secrets (monde scellé). Colporter du mal a un coût : un mensonge démenti se sait, et l'auteur devient
 //   à son tour le sujet d'une rumeur ; le résultat le signale (`colporteur`) pour la jauge de sens moral, quand elle existera.
+//
+// Lot 10 (2026-11-17, contrat §22, docs/equilibre-communaute.md), repris du jeu 3D (famille 7, validé par Jordan) :
+// - la MARGE du commerçant : il revend au-dessus du cours et rachète en dessous ; sa confiance suit la RÉPUTATION du client (ce
+//   qu'il sait de lui ; le sens moral, il ne le voit pas) et sa parole (confianceDuCommercant, evaluerALaBoutique) ; son carnet
+//   prête plus ou moins selon elle (plafondCredit, facteur) ; un commerçant n'est resté que dans 30 % des boutiques
+//   (commercantReste) ;
+// - la VALEUR d'un objet ou d'un plan en parts (valeurObjet, valeurPlan) : la valeur écrite au barème du contenu, sinon le coût de
+//   sa recette au cours ;
+// - l'ÉTAL : le groupe tient un étal au marché forain, qui vend même quand il n'est pas là, avec une caisse à relever et un risque
+//   de vol (creerEtal, journeeEtal, releverEtal ; journeeDuMarche les tient les jours de marché).
 import { RESSOURCES } from "./constantes.mjs";
+import { chance } from "./hasard.mjs";
 import { message } from "./textes.mjs";
 import { normaliserStocks, retirerStocks, ajouterStocks } from "./ressources.mjs";
 import { dateDuJour } from "./temps.mjs";
@@ -63,7 +74,18 @@ export const REGLES_MARCHE = {
   accueil: { bruit: 3, signature: 2, joursParPoint: 4, reputation: 1 },
   // Le Ladi Lafé : une rumeur s'éteint après `duree` jours (une trêve rompue : `dureeTreve`) ; au plus `max` rumeurs gardées.
   rumeur: { duree: 90, dureeTreve: 365, max: 60 },
-  semaine: 7
+  semaine: 7,
+  // Lot 10 : la boutique d'un commerçant (jeu 3D, paquets/base/jeu/bareme.json, validé par Jordan le 17 novembre 2026). Il revend à
+  // 1,25 × le cours et rachète à 0,6 × ; sa confiance (1 pour un inconnu) va de 0,75 (réputation −10) à 1,15 (+10) en ligne droite,
+  // × (1 + 3 % par niveau de parole au-dessus de 1), bornée entre 0,25 et 1,15 ; elle divise le prix de vente, multiplie le prix
+  // d'achat et le plafond du carnet. Un commerçant est resté dans 30 % des boutiques.
+  boutique: { presence: 0.3, vente: 1.25, achat: 0.6, confiance: { bleu: 1.15, rouge: 0.75, min: 0.25, max: 1.15 }, parole: 0.03, paroleDe: 1 },
+  // L'étal du groupe au marché forain : chaque jour de marché, `ventes` passants s'arrêtent ; chacun prend une unité avec la chance
+  // `chance` au cours, × (cours / prix)², au plus `chanceMax` ; payée au cours dans le bien demandé (`contre`), dans la caisse. Sans
+  // gardien, une chance `vol` qu'on se serve (`part` du bien le plus fourni) ; avec un gardien, `volGarde`.
+  etal: { ventes: 3, chance: 0.5, chanceMax: 0.95, vol: 0.1, volGarde: 0.02, part: 0.25 },
+  // La valeur d'un plan (jeu 3D : 6 + 0,4 par point de rareté, × 3 s'il est unique, en valeurs du barème ; une part = 2).
+  plan: { base: 6, parRarete: 0.4, unique: 3, parPart: 2 }
 };
 
 const arrondiPas = (x, pas = REGLES_MARCHE.cours.pas) => Math.round(x / pas) * pas;
@@ -185,17 +207,20 @@ export const detteDe = (carnet, debiteur) => (carnet?.entrees ?? []).filter(e =>
 const traine = (e, jour) => n0(e.reste) > 0 && (e.nouvelAn !== null && e.nouvelAn !== undefined || Number(jour) - Number(e.jour) >= REGLES_MARCHE.carnet.traine);
 
 // Le plafond de crédit d'un débiteur : 10 parts, +5 par Nouvel An où il a tout rendu (au plus 30) ; la moitié si le tenancier se
-// méfie, rien s'il refuse.
-export function plafondCredit(carnet, debiteur, confiance = null) {
+// méfie, rien s'il refuse. facteur (lot 10) : la confiance du commerçant (confianceDuCommercant), qui le multiplie (à la demi-part).
+export function plafondCredit(carnet, debiteur, confiance = null, facteur = 1) {
   const C = REGLES_MARCHE.carnet;
   const base = Math.min(C.plafondMax, C.plafond + C.parAnneeTenue * n0(carnet?.parole?.[debiteur]));
   const credit = confiance?.credit ?? "plein";
-  return credit === "refuse" ? 0 : credit === "moitie" ? Math.floor(base / 2) : base;
+  const brut = credit === "refuse" ? 0 : credit === "moitie" ? Math.floor(base / 2) : base;
+  const f = Number(facteur) > 0 ? Number(facteur) : 1;
+  return f === 1 ? brut : Math.floor(brut * f * 2) / 2;
 }
 
 // Prendre à crédit : la dette est écrite, au cours du jour. Refusé si le tenancier refuse (première confiance), si une dette de ce
-// débiteur traîne (30 jours, ou passée le Nouvel An), ou au-delà du plafond. -> { ok, motif, carnet, entree }
-export function prendreACredit(carnet, { debiteur = "groupe", biens = {}, cours = coursDuJour(), jour = 0, confiance = null } = {}) {
+// débiteur traîne (30 jours, ou passée le Nouvel An), ou au-delà du plafond. facteur : la confiance du commerçant (lot 10).
+// -> { ok, motif, carnet, entree }
+export function prendreACredit(carnet, { debiteur = "groupe", biens = {}, cours = coursDuJour(), jour = 0, confiance = null, facteur = 1 } = {}) {
   const c = structuredClone(carnet ?? carnetVide());
   const refus = (cle, params, texte) => ({ ok: false, motif: message(cle, params, texte), carnet: c, entree: null });
   const pris = biensPropres(biens);
@@ -203,7 +228,7 @@ export function prendreACredit(carnet, { debiteur = "groupe", biens = {}, cours 
   if (!valeur) return refus("carnet-rien", {}, "rien à écrire au carnet");
   if (confiance?.credit === "refuse") return refus("carnet-refuse", { debiteur }, `pas de crédit pour ${debiteur}`);
   if (c.entrees.some(e => e.debiteur === debiteur && traine(e, jour))) return refus("carnet-traine", { debiteur }, `${debiteur} a une dette qui traîne`);
-  const plafond = plafondCredit(c, debiteur, confiance);
+  const plafond = plafondCredit(c, debiteur, confiance, facteur);
   const total = detteDe(c, debiteur) + valeur;
   if (total > plafond) return refus("carnet-plafond", { plafond, dette: total - valeur }, `plafond du carnet : ${plafond} parts (déjà ${total - valeur})`);
   const entree = { id: `d${c.prochain++}`, debiteur, pris, valeur, reste: valeur, jour: Number(jour) || 0, nouvelAn: null, rumeur: false, rendus: [] };
@@ -255,6 +280,115 @@ export function solderAuNouvelAn(carnet, { annee, remises = [] } = {}) {
   }
   c.soldeLe = annee;
   return { carnet: c, deja: false, soldes, impayees, remises: effacees };
+}
+
+// ------------------------------------------------------------------ la boutique du commerçant (lot 10)
+// Un commerçant est-il resté dans cette boutique ? (30 % des boutiques et commerces.)
+export const commercantReste = (hasard = Math.random) => chance(REGLES_MARCHE.boutique.presence, hasard);
+// Sa confiance envers un client : la réputation du client (−10..10 : ce qu'on dit de lui ; le sens moral, le commerçant ne le voit
+// pas) et sa parole (niveau). -> un nombre entre 0,25 et 1,15 (1 : un inconnu à la parole ordinaire)
+export function confianceDuCommercant({ reputation = 0, parole = 1 } = {}) {
+  const B = REGLES_MARCHE.boutique, C = B.confiance;
+  const r = Math.max(-10, Math.min(10, Number(reputation) || 0)) / 10;
+  const base = r >= 0 ? 1 + (C.bleu - 1) * r : 1 + (1 - C.rouge) * r;
+  const avecParole = base * (1 + B.parole * Math.max(0, (Number(parole) || 0) - B.paroleDe));
+  return Math.round(Math.min(C.max, Math.max(C.min, avecParole)) * 1000) / 1000;
+}
+// Ses prix pour un client, en multiples du cours : { confiance, vente (ce qu'il demande de ce qu'il cède), achat (ce qu'il compte
+// de ce qu'on lui cède) }. Tout bleu : 1,09 et 0,69 ; tout rouge : 1,67 et 0,45.
+export function prixDuCommercant(client = {}) {
+  const B = REGLES_MARCHE.boutique;
+  const confiance = confianceDuCommercant(client);
+  return { confiance, vente: Math.round(B.vente / confiance * 1000) / 1000, achat: Math.round(B.achat * confiance * 1000) / 1000 };
+}
+// Un troc à la boutique : le commerçant demande la valeur de ce qu'il cède × vente, et la majoration de sa première confiance
+// (préjugés, rumeurs, faction) ; il compte ce qu'on lui cède × achat. Troc seulement : ce qu'on donne en trop est perdu.
+// -> { valeurDonnee, valeurRecue (au cours), offerte (ce qu'il en compte), demandee, ecart, accepte, confiance, vente, achat }
+export function evaluerALaBoutique({ donne = {}, recoit = {}, cours = coursDuJour(), reputation = 0, parole = 1, majoration = 0 } = {}) {
+  const p = prixDuCommercant({ reputation, parole });
+  const valeurDonnee = valeurBiens(donne, cours), valeurRecue = valeurBiens(recoit, cours);
+  const offerte = arrondiPas(valeurDonnee * p.achat);
+  const demandee = arrondiPas(valeurRecue * p.vente * (1 + n0(majoration)));
+  return { valeurDonnee, valeurRecue, offerte, demandee, ecart: offerte - demandee, accepte: valeurRecue > 0 && offerte >= demandee, ...p };
+}
+
+// ------------------------------------------------------------------ la valeur d'un objet, d'un plan (lot 10)
+// Un objet : la valeur écrite au barème du contenu (contenu.bareme : { objets: { cle: parts } }, bêtes vivantes comprises), sinon le
+// coût de sa recette la moins chère au cours (les ingrédients, sans le travail : comme le jeu 3D), sinon rien (au MJ de dire).
+// -> { valeur: parts | null, source: "bareme" | "recette" | "" }
+export function valeurObjet(cle, contenu = {}, cours = coursDuJour()) {
+  const k = String(cle ?? "");
+  const ecrite = contenu?.bareme?.objets?.[k];
+  if (ecrite !== undefined && ecrite !== null && Number.isFinite(Number(ecrite))) return { valeur: Math.max(0, Number(ecrite)), source: "bareme" };
+  const recettes = (Array.isArray(contenu?.recettes) ? contenu.recettes : Object.values(contenu?.recettes ?? {}))
+    .map(r => (r?.system ? { ...r.system } : r)).filter(r => r?.produit?.equipement === k);
+  const couts = recettes.map(r => valeurBiens(r.cout ?? {}, cours) / Math.max(1, n0(r.produit?.n) || 1)).filter(v => v > 0);
+  if (couts.length) return { valeur: Math.max(REGLES_MARCHE.cours.minimum, arrondiPas(Math.min(...couts))), source: "recette" };
+  return { valeur: null, source: "" };
+}
+// Un plan : (6 + 0,4 × sa rareté) × 3 s'il est unique, en valeurs du barème du jeu 3D, ramené en parts (÷ 2), à la demi-part près.
+// Les plans restent un rabais (décision de Jordan du 17 novembre 2026) : leur valeur est ce qu'ils font économiser.
+export function valeurPlan({ rarete = 0, unique = false } = {}) {
+  const P = REGLES_MARCHE.plan;
+  return arrondiPas((P.base + P.parRarete * n0(rarete)) * (unique ? P.unique : 1) / P.parPart);
+}
+
+// ------------------------------------------------------------------ l'étal du groupe au marché forain (lot 10)
+// Un étal : { id, marche (clé du marché forain), biens: { r: n } (ce qui reste à vendre), prix: { r: parts } (à l'unité ; le cours
+// du jour par défaut), contre (le bien qu'on demande en paiement), caisse: { r: n } (les fractions restent), gardien (un nom, ou
+// vide), vendus: { r: n }, vols, depuis }. Le groupe y pose des biens de ses stocks et relève la caisse quand il passe.
+export function creerEtal({ id = "e1", marche = "", biens = {}, prix = {}, contre = "nourriture", gardien = "", jour = 0 } = {}) {
+  return {
+    id: String(id), marche: String(marche ?? ""), biens: biensPropres(biens),
+    prix: Object.fromEntries(Object.entries(prix ?? {}).filter(([r, v]) => RESSOURCES_TROC.includes(r) && n0(v) > 0).map(([r, v]) => [r, n0(v)])),
+    contre: RESSOURCES_TROC.includes(contre) ? contre : "nourriture", caisse: {}, gardien: String(gardien ?? ""), vendus: {}, vols: 0, depuis: Number(jour) || 0
+  };
+}
+const prixEtal = (etal, r, cours) => n0(etal?.prix?.[r]) || n0(cours[r]) || 1;
+// La chance qu'un passant prenne une unité à ce prix : la moitié au cours ; plus si c'est moins cher ; un quart à deux fois le cours.
+export const chanceVenteEtal = (prix, cours) => Math.min(REGLES_MARCHE.etal.chanceMax, REGLES_MARCHE.etal.chance * (n0(cours) / Math.max(0.01, n0(prix))) ** 2);
+// Un jour de marché à l'étal. -> { etal, vendus: { r: n }, recu: { r: n } (dans la caisse), vole: { r: n } }
+export function journeeEtal(etal, { cours = coursDuJour(), hasard = Math.random } = {}) {
+  const E = REGLES_MARCHE.etal;
+  const e = { ...creerEtal(etal), ...structuredClone(etal ?? {}) };
+  e.biens = biensPropres(e.biens); e.caisse = { ...(e.caisse ?? {}) }; e.vendus = { ...(e.vendus ?? {}) };
+  const vendus = {}, recu = {}, vole = {};
+  const contre = RESSOURCES_TROC.includes(e.contre) ? e.contre : "nourriture";
+  for (let k = 0; k < E.ventes; k++) {
+    const dispo = Object.keys(e.biens).filter(r => n0(e.biens[r]) > 0);
+    if (!dispo.length) break;
+    const r = dispo[Math.floor(hasard() * dispo.length) % dispo.length];
+    const p = prixEtal(e, r, cours);
+    if (!chance(chanceVenteEtal(p, cours[r]), hasard)) continue;
+    e.biens[r] -= 1;
+    vendus[r] = (vendus[r] ?? 0) + 1;
+    const paye = Math.round(p / Math.max(REGLES_MARCHE.cours.minimum, n0(cours[contre]) || 1) * 100) / 100;
+    e.caisse[contre] = Math.round((n0(e.caisse[contre]) + paye) * 100) / 100;
+    recu[contre] = Math.round((n0(recu[contre]) + paye) * 100) / 100;
+  }
+  if (chance(e.gardien ? E.volGarde : E.vol, hasard)) {
+    const [r, q] = Object.entries(e.biens).sort((a, b) => n0(b[1]) - n0(a[1]))[0] ?? [];
+    if (r && n0(q) > 0) {
+      const n = Math.max(1, Math.ceil(n0(q) * E.part));
+      e.biens[r] -= n;
+      vole[r] = n;
+      e.vols = n0(e.vols) + 1;
+    }
+  }
+  for (const [r, n] of Object.entries(vendus)) e.vendus[r] = n0(e.vendus[r]) + n;
+  e.biens = biensPropres(e.biens);
+  return { etal: e, vendus, recu, vole };
+}
+// Relever la caisse : les unités entières vont au groupe, les fractions restent dans la caisse. -> { etal, releve: { r: n } }
+export function releverEtal(etal) {
+  const e = structuredClone(etal ?? {});
+  e.caisse = { ...(e.caisse ?? {}) };
+  const releve = {};
+  for (const [r, q] of Object.entries(e.caisse)) {
+    const n = Math.floor(n0(q) + 1e-9);
+    if (n > 0) { releve[r] = n; e.caisse[r] = Math.round((n0(q) - n) * 100) / 100; }
+  }
+  return { etal: e, releve };
 }
 
 // ------------------------------------------------------------------ le marché forain et sa trêve
@@ -309,7 +443,8 @@ export const signatureDuMarche = (etatMarche, hote = "groupe") => ((etatMarche?.
 
 // ------------------------------------------------------------------ le Ladi Lafé
 // L'état PUBLIC du marché (etat.marche) et sa part SECRÈTE (monde.marche : la vérité des rumeurs).
-export const marcheVide = () => ({ boutiques: [], marches: [], rumeurs: [], signe: "", prochain: 1 });
+// etals (lot 10) : les étals du groupe, chacun sur son marché forain.
+export const marcheVide = () => ({ boutiques: [], marches: [], rumeurs: [], signe: "", prochain: 1, etals: [] });
 export const secretMarcheVide = () => ({ rumeurs: {} });
 export const marcheDe = etat => ({ ...marcheVide(), ...(etat?.marche ?? {}) });
 export const secretMarcheDe = monde => ({ ...secretMarcheVide(), ...(monde?.marche ?? {}) });
@@ -375,8 +510,9 @@ export function reclamerObjet({ marque = "", signeReclamant = "", signePossesseu
 // Les jours de marché, la signature de l'abri qui accueille, les dettes qui traînent (le Ladi Lafé s'en empare), le Nouvel An
 // chinois (le carnet se solde), les rumeurs qui s'éteignent.
 // fetes : clés des fêtes au cœur ce jour-là (« nouvel-an-chinois » solde les carnets). debiteur : le nom du groupe dans les carnets.
-// -> { marche, secret, faits: [message public], marches: [cle] (jours de marché), bruit, reputation: { bastion: n }, soldes }
-export function journeeDuMarche({ marche, secret, jour = 0, dateDepart, fetes = [], debiteur = "groupe" } = {}) {
+// cours, hasard (lot 10) : pour les étals du groupe, les jours de leur marché (sans hasard, les étals attendent).
+// -> { marche, secret, faits: [message public], marches: [cle] (jours de marché), bruit, reputation: { bastion: n }, soldes, etals }
+export function journeeDuMarche({ marche, secret, jour = 0, dateDepart, fetes = [], debiteur = "groupe", cours = null, hasard = null } = {}) {
   let m = { ...marcheVide(), ...structuredClone(marche ?? {}) };
   let s = { ...secretMarcheVide(), ...structuredClone(secret ?? {}) };
   const faits = [], jours = [], reputation = {}, soldes = [];
@@ -425,7 +561,23 @@ export function journeeDuMarche({ marche, secret, jour = 0, dateDepart, fetes = 
   const gardees = new Set(vivantes.map(r => r.id));
   m.rumeurs = vivantes;
   s.rumeurs = Object.fromEntries(Object.entries(s.rumeurs).filter(([id]) => gardees.has(id)));
-  return { marche: m, secret: s, faits, marches: jours, bruit, reputation, soldes };
+  // 5. Les étals du groupe (lot 10) : ils vendent les jours de leur marché, même quand le groupe n'y est pas.
+  const etals = [];
+  if (typeof hasard === "function") {
+    const cr = cours ?? coursDuJour();
+    m.etals = (m.etals ?? []).map(e => {
+      if (!jours.includes(e.marche)) return e;
+      const r = journeeEtal(e, { cours: cr, hasard });
+      const nom = m.marches.find(x => x.cle === e.marche)?.nom ?? e.marche;
+      if (Object.keys(r.vendus).length) faits.push(message("etal-vend", { marche: nom, vendus: r.vendus },
+        `${nom} : l'étal du groupe a vendu ${Object.entries(r.vendus).map(([k, q]) => `${q} ${k}`).join(", ")}.`));
+      if (Object.keys(r.vole).length) faits.push(message("etal-vole", { marche: nom, vole: r.vole },
+        `${nom} : on s'est servi à l'étal du groupe (${Object.entries(r.vole).map(([k, q]) => `${q} ${k}`).join(", ")}).`));
+      etals.push({ id: e.id, vendus: r.vendus, recu: r.recu, vole: r.vole });
+      return r.etal;
+    });
+  }
+  return { marche: m, secret: s, faits, marches: jours, bruit, reputation, soldes, etals };
 }
 
 // ------------------------------------------------------------------ un événement de marché tiré au jour du marché

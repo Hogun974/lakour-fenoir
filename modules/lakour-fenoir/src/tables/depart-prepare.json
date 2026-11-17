@@ -1,0 +1,148 @@
+{
+  "_id": "lvnc8Aik4KmJNMAZ",
+  "_key": "!tables!lvnc8Aik4KmJNMAZ",
+  "name": "La communauté — le départ préparé",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une suite à la désertion : des membres qui n'écoutent plus le chef préparent leur départ en douce. Des stocks manquent peu à peu, une cache se monte hors les murs ; la ronde peut la découvrir ; le chef retient les partants, les laisse partir ou part avec eux. Rien n'est automatique : à jouer.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "depart-prepare",
+      "communaute": "depart-prepare"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "nmyGE1y24SzMl2PY",
+      "_key": "!tables.results!lvnc8Aik4KmJNMAZ.nmyGE1y24SzMl2PY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Il manque deux rations de riz, puis trois. Personne n'a rien vu, et chacun regarde son voisin.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qUMcJAF5rVFEVICF",
+      "_key": "!tables.results!lvnc8Aik4KmJNMAZ.qUMcJAF5rVFEVICF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un bidon d'eau a disparu de la citerne ; le cadenas n'est pas forcé.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wbc7PZwrgeDW1u3y",
+      "_key": "!tables.results!lvnc8Aik4KmJNMAZ.wbc7PZwrgeDW1u3y",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux d'entre eux se taisent quand le chef approche, et parlent bas, le soir, au bout du camp.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "M7XQf4HqydfLymKD",
+      "_key": "!tables.results!lvnc8Aik4KmJNMAZ.M7XQf4HqydfLymKD",
+      "type": "text",
+      "name": "",
+      "description": "<p>La ronde trouve, sous une tôle au bord de la ravine, des bouteilles d'eau et un sac de vivres bien ficelé.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "epqBxRD5WyOk31pC",
+      "_key": "!tables.results!lvnc8Aik4KmJNMAZ.epqBxRD5WyOk31pC",
+      "type": "text",
+      "name": "",
+      "description": "<p>On retrouve un plan dessiné au charbon sur un carton : le chemin vers les Hauts, une croix sur un îlet.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Zu5j96f2Qt9qBudQ",
+      "_key": "!tables.results!lvnc8Aik4KmJNMAZ.Zu5j96f2Qt9qBudQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une petite demande si « tonton » va revenir : elle l'a vu cacher quelque chose derrière le manguier.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qc1Jjf7JOUKaWF90",
+      "_key": "!tables.results!lvnc8Aik4KmJNMAZ.qc1Jjf7JOUKaWF90",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le chef les surprend au portail avant le jour, sacs au dos. Il peut les retenir, les laisser partir, ou partir avec eux.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Sgm1GrCuPu2k8Z74",
+      "_key": "!tables.results!lvnc8Aik4KmJNMAZ.Sgm1GrCuPu2k8Z74",
+      "type": "text",
+      "name": "",
+      "description": "<p>La cache est vide ce matin. Ils sont partis cette nuit avec ce qu'ils avaient mis de côté, et rien de plus.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

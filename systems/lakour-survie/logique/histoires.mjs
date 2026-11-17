@@ -18,7 +18,7 @@
 // d'histoire de l'enfance et du passé, comme avant). Aucune phrase n'a d'effet de jeu.
 import { deriverHasard, choisir, chance } from "./hasard.mjs";
 import { liste, indexer, GENRES } from "./contenu.mjs";
-import { RELIGION_AUCUNE, RELIGION_PLUSIEURS, REGARDS } from "./esprit.mjs";
+import { RELIGION_AUCUNE, RELIGION_PLUSIEURS, REGARDS, religionsDe } from "./esprit.mjs";
 
 export const HISTOIRE = { phrasesMin: 3, phrasesMax: 5, phraseMax: 150, histoireMax: 520, chanceAjout: 0.65 };
 export const TYPES_HISTOIRE = ["enfance", "passe", "trait", "religion", "regard", "generation"];
@@ -84,10 +84,11 @@ export function vontEnsemble(a, b) {
 export const hasardDeLHistoire = (fiche = {}) =>
   deriverHasard("histoire", fiche.nom ?? "", Number(fiche.age) || 0, fiche.genre ?? "", fiche.enfance ?? "", fiche.passe ?? "");
 
-// Les religions d'une fiche (la sienne, et celles de « plusieurs »).
-function religionsDeFiche(fiche) {
+// Les religions d'une fiche (la sienne, et celles de « plusieurs ») sous les clés qu'elle porte, et sous leurs clés d'aujourd'hui
+// (liste commune du lot 10 : une ancienne clé de FVTT trouve ses phrases, une religion double trouve celles de ses deux religions).
+function religionsDeFiche(fiche, contenu = {}) {
   const r = String(fiche?.religion ?? "");
-  return new Set([r, ...(r === RELIGION_PLUSIEURS ? cles(fiche?.religions) : [])].filter(Boolean));
+  return new Set([r, ...(r === RELIGION_PLUSIEURS ? cles(fiche?.religions) : []), ...religionsDe(fiche ?? {}, contenu)].filter(Boolean));
 }
 
 // Les phrases choisies pour un survivant, dans l'ordre où elles se lisent, ou null (voir l'en-tête).
@@ -97,7 +98,7 @@ export function choisirPhrases(contenu, fiche = {}, hasard = null) {
   const toutes = phrasesHistoire(contenu);
   if (!toutes.length) return null;
   const age = Number(fiche.age) || 0;
-  const religions = religionsDeFiche(fiche);
+  const religions = religionsDeFiche(fiche, contenu);
   const croyant = [...religions].some(r => r !== RELIGION_AUCUNE);
   // Ce que l'histoire affirme d'avance : né ailleurs, si l'enfance vient d'ailleurs.
   const contexte = indexer(contenu).enfances.get(fiche.enfance)?.origine === "ailleurs" ? [MARQUE_NEE_AILLEURS] : [];
@@ -163,7 +164,7 @@ export function clesDeLaFiche(contenu, fiche = {}, ids = []) {
   const l = cles(ids).map(id => parId.get(id));
   if (!GENRES.includes(fiche.genre) || !l.length || l.some(p => !p)) return false;
   const age = Number(fiche.age) || 0;
-  const religions = religionsDeFiche(fiche);
+  const religions = religionsDeFiche(fiche, contenu);
   const de = {
     enfance: p => p.pour.includes(fiche.enfance), passe: p => p.pour.includes(fiche.passe), trait: p => p.pour.some(t => cles(fiche.traits).includes(t)),
     religion: p => p.pour.some(r => religions.has(r)), regard: p => p.pour.includes(fiche.regard), generation: () => true

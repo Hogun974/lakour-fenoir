@@ -135,7 +135,7 @@ test("contenu : l'esprit des gramounes et des gens du marché, les préjugés de
 test("API : la gramoune recrutée et le marchand créé portent leur esprit ; la gramoune, ses préjugés", async () => {
   const { M, a } = await partie();
   const recrue = await M.api.genererRecrue({ gramoune: "gramoun-said" });
-  assert.equal(recrue.religion, "islam");
+  assert.equal(recrue.religion, "musulmane", "la liste commune des religions (lot 10) : « islam » est devenue « musulmane »");
   assert.equal(recrue.prejuges[0].cible, "yabs");
   let said = null;
   for (let k = 0; k < 30 && !said; k++) {
@@ -143,10 +143,10 @@ test("API : la gramoune recrutée et le marchand créé portent leur esprit ; la
     if (r.reussite) said = game.actors.get(r.acteurId);
   }
   assert.ok(said, "il finit par suivre le groupe");
-  assert.deepEqual([said.system.regard, said.system.religion, said.system.pratique, said.system.sensMoral], ["refaire", "islam", true, 4]);
+  assert.deepEqual([said.system.regard, said.system.religion, said.system.pratique, said.system.sensMoral], ["refaire", "musulmane", true, 4]);
   assert.equal(said.system.prejuges[0].cible, "yabs");
   const m = await M.api.creerMarchand({ cle: "lalao-rasoanaivo" });
   const lalao = game.actors.get(m.acteurId);
-  assert.deepEqual([lalao.system.regard, lalao.system.religion, lalao.system.autorite], ["refaire", "evangelique", 4]);
+  assert.deepEqual([lalao.system.regard, lalao.system.religion, lalao.system.autorite], ["refaire", "protestante", 4]);
   assert.ok(lalao.system.prejuges.length >= 1, "elle garde ses préjugés");
 });

@@ -29,7 +29,11 @@ const caches = new WeakMap();
 export function indexer(contenu = {}) {
   if (contenu && typeof contenu === "object" && caches.has(contenu)) return caches.get(contenu);
   const index = {};
-  for (const f of FAMILLES) index[f] = new Map(liste(contenu?.[f]).map(o => [o.cle, o]));
+  for (const f of FAMILLES) {
+    index[f] = new Map(liste(contenu?.[f]).map(o => [o.cle, o]));
+    // Les anciennes clés d'un objet (`alias`, la liste commune des religions du lot 10) mènent à lui, sans jamais cacher une clé.
+    for (const o of liste(contenu?.[f])) for (const a of Array.isArray(o.alias) ? o.alias : []) if (a && !index[f].has(a)) index[f].set(a, o);
+  }
   if (contenu && typeof contenu === "object") caches.set(contenu, index);
   return index;
 }

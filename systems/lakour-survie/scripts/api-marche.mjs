@@ -8,7 +8,7 @@
 // Le système ne connaît l'origine de personne : `cibles` (les préjugés du PNJ qui s'éveillent devant l'inconnu) est donné par le MJ.
 import * as L from "../logique/index.mjs";
 import { RESSOURCES } from "../logique/constantes.mjs";
-import { t, lireEtat, aPlat, acteur, abriCourant, MODULE_MJIA } from "./donnees.mjs";
+import { t, lireEtat, aPlat, acteur, abriCourant, MODULE_MJIA, survivantDesigne, survivantsDuGroupe } from "./donnees.mjs";
 
 export const GROUPE = "groupe";
 const SUJETS = ["debiteur", "sujet", "par", "auteur"];
@@ -79,6 +79,17 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
     const rumeurs = L.rumeursContre(L.marcheDe(etat), sujet, jour).length;
     return { ...L.premiereConfiance({ prejuges, cibles: listeIds(cibles), rumeurs, palier: palierFaction(faction) }), rumeurs, pnj: a?.name ?? "" };
   }
+  // Le client d'une boutique (lot 10) : celui qui parle (sa réputation, sa parole), sinon le groupe (la moyenne des réputations de
+  // ses vivants, la meilleure parole). Le commerçant ne voit jamais le sens moral, seulement ce qu'on dit de lui.
+  function clientDe(etat, parleurId = "") {
+    const p = acteur(parleurId);
+    const niveauParole = a => Number(aPlat(a.system).competences?.parole?.niveau) || 0;
+    if (p?.type === "survivant") return { reputation: Number(p.system.reputation) || 0, parole: niveauParole(p), nom: p.name };
+    const vivants = survivantsDuGroupe(etat).filter(a => L.peutAgir(aPlat(a.system)));
+    const reputation = L.reputationDuGroupe(vivants.map(a => aPlat(a.system))).moyenne;
+    return { reputation, parole: Math.max(0, ...vivants.map(niveauParole)), nom: "" };
+  }
+  const boutiqueDe = (etat, ref) => (ref ? trouverBoutique(L.marcheDe(etat), ref) : null);
   async function userPrejugesDe(a, options) {
     if (!a || a.type !== "survivant") return { uses: [], tombes: [] };
     const avant = aPlat(a.system).prejuges ?? [];
@@ -95,13 +106,14 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
   // Lancer une rumeur dans le contexte d'une écriture (publique au journal, vérité au monde scellé).
   // Le sens moral (lot « moral », contrat §14) : qui porte un acte du marché. qui : « groupe » (ses membres présents), l'id ou le nom
   // d'un survivant ; un PNJ inconnu ou une faction ne portent rien ici. -> le résultat de porterActe, ou null.
-  function porteursDe(qui) {
+  // Un nom se cherche d'abord dans le groupe ; un nom que portent deux survivants ne désigne personne (lot 10 : jamais le mauvais).
+  function porteursDe(qui, ctx = null) {
     if (!qui) return [];
-    const a = acteur(qui) ?? (game.actors?.contents ?? []).find(x => x.type === "survivant" && x.name === qui);
-    return a?.type === "survivant" ? [a.id] : [];
+    const a = survivantDesigne(qui, ctx ? survivantsDuGroupe(ctx.etat) : []);
+    return a ? [a.id] : [];
   }
   async function acteDuMarche(ctx, qui, acte) {
-    const ids = qui === GROUPE ? membresPresents(ctx).map(a => a.id) : porteursDe(qui);
+    const ids = qui === GROUPE ? membresPresents(ctx).map(a => a.id) : porteursDe(qui, ctx);
     return ids.length && porterActe ? porterActe(ctx, ids, acte) : null;
   }
 
@@ -122,7 +134,9 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
     for (const j of jours) {
       const date = L.dateDuJour(j, dateDepart()).iso;
       const fetes = fetesDuJeu(date, c().fetes ?? []).filter(f => f.coeur).map(f => f.cle);
-      const r = L.journeeDuMarche({ marche: etatMarche(ctx), secret: secretMarche(ctx), jour: j, dateDepart: dateDepart(), fetes, debiteur: GROUPE });
+      // Les étals du groupe (lot 10) vendent au cours du jour, sur un flux de hasard propre au jour.
+      const r = L.journeeDuMarche({ marche: etatMarche(ctx), secret: secretMarche(ctx), jour: j, dateDepart: dateDepart(), fetes, debiteur: GROUPE,
+        cours: L.coursDuJour({ phase: L.phaseDuJour(j), saison: L.saisonDuJour(j, dateDepart()) }), hasard: L.deriverHasard(ctx.monde.graine ?? "", "etal", j) });
       ctx.etat.marche = r.marche;
       ctx.monde.marche = r.secret;
       bruit += r.bruit;
@@ -164,13 +178,20 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
     // La première confiance d'un PNJ envers le groupe (cibles : les préjugés du PNJ que le MJ dit éveillés devant lui).
     confiance: ({ pnjId = "", cibles = [], faction = "" } = {}) => confianceDe(lireEtat(), { pnjId, cibles, faction }),
     // Évaluer un troc sans rien changer.
-    evaluerTroc: ({ donne = {}, recoit = {}, pnjId = "", cibles = [], faction = "", marche = "" } = {}) => {
+    // boutique (lot 10) : un troc avec le commerçant d'une boutique, à sa marge (selon la réputation et la parole de parleurId).
+    evaluerTroc: ({ donne = {}, recoit = {}, pnjId = "", cibles = [], faction = "", marche = "", boutique = "", parleurId = "" } = {}) => {
       const etat = lireEtat();
-      const conf = confianceDe(etat, { pnjId, cibles, faction });
+      const b = boutiqueDe(etat, boutique);
+      const conf = confianceDe(etat, { pnjId: pnjId || b?.tenancier || "", cibles, faction });
       const mk = marche ? trouverMarche(L.marcheDe(etat), marche) : null;
       const cr = cours(etat, { recolte: recolteDe(mk) });
+      if (b) return { ...L.evaluerALaBoutique({ donne, recoit, cours: cr, ...clientDe(etat, parleurId), majoration: conf.majoration }), boutique: b.cle, confiance: conf, cours: cr };
       return { ...L.evaluerTroc({ donne, recoit, cours: cr, majoration: conf.majoration }), confiance: conf, cours: cr };
     },
+    // Ce que vaut un objet (équipement, bête vivante) en parts : le barème du contenu, sinon sa recette au cours (lot 10).
+    valeurObjet: ({ cle = "" } = {}) => ({ cle, ...L.valeurObjet(cle, c(), cours(lireEtat())) }),
+    // Ce que vaut un plan en parts (sa rareté, unique ou non).
+    valeurPlan: ({ rarete = 0, unique = false } = {}) => L.valeurPlan({ rarete, unique }),
     // Un litige au conseil : une voix par bastion (« a », « b » ou rien).
     trancherLitige: ({ voix = {} } = {}) => L.trancherLitige({ voix }),
     // Un événement de marché tiré selon le stade, la saison et la phase (à jouer ; le démenti s'applique avec dementirPrejuge).
@@ -185,14 +206,21 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
     // Troquer au cours : le PNJ demande sa majoration ; refusé s'il n'y trouve pas son compte, sauf `accepter` (le MJ passe outre).
     // Un échange honnête (au moins au cours) use d'un échange les préjugés éveillés du PNJ.
     // prejuge : qui joue d'un préjugé pour faire baisser le prix (« groupe » ou un survivant) : il porte l'acte « colporter » (§14).
-    troquer: ecriture(async ({ donne = {}, recoit = {}, pnjId = "", cibles = [], faction = "", marche = "", accepter = false, prejuge = "" } = {}) => {
+    // boutique, parleurId (lot 10) : à la boutique d'un commerçant, sa marge s'ajoute (il revend au-dessus du cours, rachète en
+    // dessous), selon la réputation et la parole de qui parle (le groupe, sans lui).
+    troquer: ecriture(async ({ donne = {}, recoit = {}, pnjId = "", cibles = [], faction = "", marche = "", accepter = false, prejuge = "", boutique = "", parleurId = "" } = {}) => {
       const ctx = ouvrirCtx();
+      const b = boutique ? trouverBoutique(etatMarche(ctx), boutique) : null;
+      if (boutique && !b) throw clair(t("LAKOUR_SURVIE.Marche.Erreurs.Boutique"));
+      pnjId = pnjId || b?.tenancier || "";
       const conf = confianceDe(ctx.etat, { pnjId, cibles, faction });
       if (faction && palierFaction(faction)?.echange === false) throw clair(t("LAKOUR_SURVIE.Marche.Erreurs.Hostile"));
       const mk = marche ? trouverMarche(etatMarche(ctx), marche) : null;
       const cr = cours(ctx.etat, { recolte: recolteDe(mk) });
-      const ev = L.evaluerTroc({ donne, recoit, cours: cr, majoration: conf.majoration });
-      if (!ev.accepte && !accepter) return { ok: false, ...ev, confiance: conf, raison: t("LAKOUR_SURVIE.Marche.Refuse", { demandee: ev.demandee, donnee: ev.valeurDonnee }) };
+      const ev = b ? L.evaluerALaBoutique({ donne, recoit, cours: cr, ...clientDe(ctx.etat, parleurId), majoration: conf.majoration })
+        : L.evaluerTroc({ donne, recoit, cours: cr, majoration: conf.majoration });
+      const donnee = b ? ev.offerte : ev.valeurDonnee;
+      if (!ev.accepte && !accepter) return { ok: false, ...ev, confiance: conf, raison: t("LAKOUR_SURVIE.Marche.Refuse", { demandee: ev.demandee, donnee }) };
       const r = L.appliquerTroc(stocksDuGroupe(ctx), { donne, recoit });
       if (!r.ok) throw clair(localiser(r.motif));
       await ecrireStocks(ctx, r.stocks);
@@ -206,29 +234,68 @@ export function fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter,
     }),
 
     // La boutique et son carnet.
-    ouvrirBoutique: ecriture(async ({ nom = "", tenancier = "", region = "", cle = "" } = {}) => {
+    // tirer (lot 10) : on ne sait pas si quelqu'un a rouvert cette boutique : un commerçant n'est resté que dans 30 % des boutiques ;
+    // sinon, rien ne s'ouvre ({ ok: false }).
+    ouvrirBoutique: ecriture(async ({ nom = "", tenancier = "", region = "", cle = "", tirer = false } = {}) => {
       const ctx = ouvrirCtx();
+      if (tirer && !L.commercantReste(Math.random)) { await terminer(ctx); return { ok: false, boutique: null, raison: t("LAKOUR_SURVIE.Gestion.PasDeCommercant") }; }
       const m = etatMarche(ctx);
       const k = cleLibre(cle || slug(nom), m.boutiques.map(b => b.cle));
       const b = L.carnetVide({ cle: k, nom: nom || k, tenancier, region: region || ctx.etat.groupe.region });
       ctx.etat.marche = { ...m, boutiques: [...m.boutiques, b] };
       noter(ctx, tx("Marche.Journal.Boutique", { boutique: b.nom }));
       await terminer(ctx);
-      return { boutique: structuredClone(b) };
+      return { ok: true, boutique: structuredClone(b) };
     }),
-    crediter: ecriture(async ({ boutique = "", biens: pris = {}, pnjId = "", cibles = [], faction = "" } = {}) => {
+
+    // L'étal du groupe au marché forain (lot 10) : des biens de ses stocks posés à son prix (le cours par défaut), payés en `contre` ;
+    // il vend les jours du marché, même sans le groupe ; un gardien décourage les voleurs.
+    tenirEtal: ecriture(async ({ marche = "", biens: poses = {}, prix = {}, contre = "nourriture", gardien = "" } = {}) => {
+      const ctx = ouvrirCtx();
+      const m = etatMarche(ctx);
+      const mk = trouverMarche(m, marche);
+      if (!mk || mk.foire) throw clair(t("LAKOUR_SURVIE.Marche.Erreurs.Marche"));
+      if (!Object.keys(biens(poses)).length) throw clair(t("LAKOUR_SURVIE.Gestion.EtalVide"));
+      const s = L.retirerStocks(stocksDuGroupe(ctx), biens(poses));
+      if (Object.keys(s.manque).length) throw clair(localiser({ cle: "manque", params: { manque: s.manque }, texte: "" }));
+      const id = `e${(m.etals ?? []).reduce((n, e) => Math.max(n, Number(String(e.id).slice(1)) || 0), 0) + 1}`;
+      const e = L.creerEtal({ id, marche: mk.cle, biens: poses, prix, contre, gardien, jour: jourCtx(ctx) });
+      ctx.etat.marche = { ...m, etals: [...(m.etals ?? []), e] };
+      await ecrireStocks(ctx, s.stocks);
+      noter(ctx, tx("Gestion.Journal.Etal", { marche: mk.nom, biens: texteBiens(e.biens) }));
+      await terminer(ctx);
+      return { etal: structuredClone(e) };
+    }),
+    // Relever la caisse de l'étal ; fermer : ce qui reste revient aussi aux stocks.
+    releverEtal: ecriture(async ({ etal = "", fermer = false } = {}) => {
+      const ctx = ouvrirCtx();
+      const m = etatMarche(ctx);
+      const e = (m.etals ?? []).find(x => x.id === etal) ?? ((m.etals ?? []).length === 1 && !etal ? m.etals[0] : null);
+      if (!e) throw clair(t("LAKOUR_SURVIE.Gestion.EtalInconnu"));
+      const r = L.releverEtal(e);
+      const rendus = { ...r.releve };
+      if (fermer) for (const [k, q] of Object.entries(r.etal.biens ?? {})) rendus[k] = (rendus[k] ?? 0) + q;
+      ctx.etat.marche = { ...m, etals: fermer ? m.etals.filter(x => x.id !== e.id) : m.etals.map(x => (x.id === e.id ? r.etal : x)) };
+      await ecrireStocks(ctx, L.ajouterStocks(stocksDuGroupe(ctx), rendus));
+      noter(ctx, tx(fermer ? "Gestion.Journal.EtalFerme" : "Gestion.Journal.Caisse", { biens: texteBiens(r.releve), rendus: texteBiens(rendus) }));
+      await terminer(ctx);
+      return { releve: r.releve, rendus, etal: fermer ? null : structuredClone(r.etal) };
+    }),
+    crediter: ecriture(async ({ boutique = "", biens: pris = {}, pnjId = "", cibles = [], faction = "", parleurId = "" } = {}) => {
       const ctx = ouvrirCtx();
       const m = etatMarche(ctx);
       const b = trouverBoutique(m, boutique);
       if (!b) throw clair(t("LAKOUR_SURVIE.Marche.Erreurs.Boutique"));
       const conf = confianceDe(ctx.etat, { pnjId: pnjId || b.tenancier, cibles, faction });
-      const r = L.prendreACredit(b, { debiteur: GROUPE, biens: pris, cours: cours(ctx.etat), jour: jourCtx(ctx), confiance: conf });
-      if (!r.ok) return { ok: false, raison: localiser(lisible(r.motif)), confiance: conf };
+      // Lot 10 : le carnet prête selon la confiance du commerçant (la réputation et la parole du client).
+      const facteur = L.confianceDuCommercant(clientDe(ctx.etat, parleurId));
+      const r = L.prendreACredit(b, { debiteur: GROUPE, biens: pris, cours: cours(ctx.etat), jour: jourCtx(ctx), confiance: conf, facteur });
+      if (!r.ok) return { ok: false, raison: localiser(lisible(r.motif)), confiance: conf, facteur };
       ctx.etat.marche = { ...m, boutiques: m.boutiques.map(x => (x.cle === b.cle ? r.carnet : x)) };
       await ecrireStocks(ctx, L.ajouterStocks(stocksDuGroupe(ctx), biens(pris)));
       noter(ctx, tx("Marche.Journal.Credit", { boutique: b.nom, biens: texteBiens(pris), valeur: r.entree.valeur }));
       await terminer(ctx);
-      return { ok: true, entree: r.entree, dette: L.detteDe(r.carnet, GROUPE), plafond: L.plafondCredit(r.carnet, GROUPE, conf), confiance: conf };
+      return { ok: true, entree: r.entree, dette: L.detteDe(r.carnet, GROUPE), plafond: L.plafondCredit(r.carnet, GROUPE, conf, facteur), confiance: conf, facteur };
     }),
     rendre: ecriture(async ({ boutique = "", biens: rendus = {}, cibles = [] } = {}) => {
       const ctx = ouvrirCtx();

@@ -158,7 +158,7 @@ test("fêtes du lot 12 : Pongal et le miel vert avec gain, coût et communautés
   for (const f of D.fetes) assert.ok(f.ambiance && f.ambiance.length <= 600, `${f.cle} : ambiance`);
   const bp = FOIRES.find(f => f.cle === "foire-de-bras-panon");
   assert.deepEqual([bp.region, bp.mois, bp.recolte], ["est", 5, "nourriture"]);
-  assert.ok(RELIGIONS.find(r => r.cle === "hindouisme-tamoul").fetes.includes("pongal"), "un pratiquant y gagne son moral");
+  assert.ok(RELIGIONS.find(r => r.cle === "hindoue").fetes.includes("pongal"), "un pratiquant y gagne son moral");
   // Le journal des joueurs dit ce qu'on voit, ce qu'on trouve, et la période en mots.
   const journal = doc("guides", "fetes-de-fenoir");
   for (const f of D.fetes) {

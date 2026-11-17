@@ -146,6 +146,10 @@ export function reactionEnfant(entree, sens, hasard = Math.random) {
   s.esprit = { ...espritDe(s), revolte: e.revolte, projet };
   return { system: s, reaction: revolte ? "revolte" : "imite", projet };
 }
+// Les enfants qui voient un acte (lot 10) : les moins de 18 ans présents, sauf ceux qui le portent : un témoin n'est jamais
+// l'auteur de l'acte (un jeune de 16 ou 17 ans qui colporte ne réagit pas en témoin à sa propre rumeur). membres : [{ id, system }] ;
+// auteurs : [id] (les porteurs d'acteCollectif). -> [{ id, system }]
+export const enfantsTemoins = (membres = [], auteurs = []) => membres.filter(m => !(auteurs ?? []).includes(m.id) && estEnfant(m.system));
 // Les adultes qui voient la révolte d'un enfant et pourraient préparer un départ à l'insu du chef : bleus (jauge ≥ 3), pas le chef.
 export const complicesPossibles = (adultes = [], chefId = "") => adultes.filter(a => vivant(a.system) && !estEnfant(a.system) && a.id !== chefId && n0(a.system.sensMoral) >= 3).map(a => a.id);
 

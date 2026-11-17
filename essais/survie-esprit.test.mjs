@@ -9,7 +9,8 @@ import { chargerContenu } from "./outils/simuler-parties.mjs";
 
 const C = chargerContenu();
 const idx = L.indexer(C);
-const RELIGIONS = [...idx.religions.keys()];
+// Les clés d'aujourd'hui (sans les anciennes, alias de la liste commune du lot 10).
+const RELIGIONS = L.liste(C.religions).map(r => r.cle);
 // Un survivant dont l'esprit est tiré, sans hasard : catholique pratiquant, regard « vivre ».
 const esprit = (extra = {}) => L.survivantNeuf({ statut: "compagnon", regard: "vivre", religion: "catholique", religions: [], pratique: true, ancrage: "",
   sensMoral: 0, autorite: 2, reputation: 0, esprit: {}, moral: 3, ...extra });
@@ -32,7 +33,8 @@ test("tirerEsprit : 2000 tirages — regards, religions du contenu, « plusieurs
     vus.regard.add(s.regard); vus.religion.add(s.religion); if (s.ancrage) vus.ancrage.add(s.ancrage);
   }
   assert.equal(vus.regard.size, 3);
-  assert.equal(vus.religion.size, RELIGIONS.length, "chaque religion sort, « aucune » et « plusieurs » compris");
+  // « plusieurs » ne se tire plus (lot 10 : « hindoue catholique » tient sa place) ; elle se choisit sur la fiche.
+  assert.deepEqual([...vus.religion].sort(), L.liste(C.religions).filter(r => r.poids > 0).map(r => r.cle).sort(), "chaque religion sort, « aucune » comprise");
   assert.equal(vus.ancrage.size, idx.ancrages.size, "chaque ancrage sort");
 });
 
@@ -49,7 +51,8 @@ test("tirerEsprit : les tirages d'avant ce lot ne changent pas (flux à part) ; 
   }
   const v = L.genererSurvivant(C, L.creerHasard("v"), { verrous: { regard: "epreuve", religion: "plusieurs", religions: ["islam", "catholique"], pratique: true } });
   assert.equal(v.regard, "epreuve");
-  assert.deepEqual(v.religions, ["islam", "catholique"]);
+  // Une ancienne clé verrouillée (« islam ») se garde sous sa clé d'aujourd'hui (liste commune du lot 10).
+  assert.deepEqual(v.religions, ["musulmane", "catholique"]);
   assert.equal(v.pratique, true);
   const a = L.genererSurvivant(C, L.creerHasard("a"), { verrous: { religion: "aucune", ancrage: "carnet" } });
   assert.equal(a.ancrage, "carnet");
@@ -57,9 +60,10 @@ test("tirerEsprit : les tirages d'avant ce lot ne changent pas (flux à part) ; 
   let hindous = 0, autres = 0, base = 0;
   for (let i = 0; i < 600; i++) {
     const t = L.tirerEsprit(C, L.creerHasard(`t${i}`), { enfance: "enfance-tamoule-de-saint-andre" });
-    if (t.religion === "hindouisme-tamoul" || t.religions.includes("hindouisme-tamoul")) hindous++; else autres++;
+    const hindou = x => L.religionsDe(x, C).includes("hindoue");
+    if (hindou(t)) hindous++; else autres++;
     const z = L.tirerEsprit(C, L.creerHasard(`t${i}`), { enfance: "enfance-zoreil" });
-    if (z.religion === "hindouisme-tamoul" || z.religions.includes("hindouisme-tamoul")) base++;
+    if (hindou(z)) base++;
   }
   assert.ok(hindous > 3 * base && autres > 30, `tamoule : ${hindous} hindous, ${autres} autres ; zoreil : ${base}`);
   // « Âme de pèlerin » : jamais « aucune ».

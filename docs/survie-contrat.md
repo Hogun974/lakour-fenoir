@@ -1202,3 +1202,104 @@ Rien n'est retiré ni renommé ; les champs nouveaux ont une valeur par défaut 
   anciens », « Un Livide intrigué — ce qu'il fait », « La ravine après la pluie », « La voix de l'île — musique du soir » ; journal du
   MJ « Percevoir dans le noir » ; page « La nuit, le vent et la pluie » (guide du joueur) ; page « La nuit et ses voix » (livre de
   l'île).
+
+## 22. Le marché chiffré, la porte, la religion et la table de gestion (lot 10 du portage du jeu 3D, 2026-11-17)
+
+Lot 10 de l'inventaire du jeu 3D, validé par Jordan (« tout maintenant ») : la marge du commerçant et l'étal (famille 7), la porte
+(complément « 4 quinquies bis »), la religion (famille 2) et la table de gestion de l'abri (famille 9). Chiffres et raisons :
+`docs/equilibre-communaute.md`. Rien n'est magique ; **aucune religion ni aucune origine n'a d'effet propre** ; rien n'est retiré
+ni renommé : les anciennes clés de religion restent des alias, les champs nouveaux de l'état ont une valeur par défaut.
+
+### 22.1 La liste commune des religions (contenu `religions.mjs`, logique `esprit.mjs`)
+- **Une seule liste pour les deux jeux** (décision de Jordan du 17 novembre) : les clés et les poids du jeu 3D (validés le 14 novembre),
+  plus le servis kabaré : `catholique` 45, `hindoue` 16, `aucune` 14, `hindoue-catholique` 10, `musulmane` 7, `protestante` 4,
+  `bouddhiste` 3, `servis-kabare` 1 (sur 100). `plusieurs` reste une entrée spéciale, choisie sur la fiche (poids 0 : elle ne se tire
+  plus). Une religion porte `alias: [anciennes clés]` et, pour une religion double, `composee: [clés]`.
+- **Alias** : `hindouisme-tamoul` → `hindoue`, `islam` → `musulmane`, `evangelique` → `protestante`, `culte-chinois` → `bouddhiste`,
+  `ancetres-malgaches` → `servis-kabare`. L'index du contenu (`indexer`) mène un alias à sa religion ; `cleReligion(cle, contenu)`
+  rend la clé d'aujourd'hui ; un tirage, un verrou, `ajusterEsprit`, un tirage venu du MJ IA écrivent la clé d'aujourd'hui ; une fiche
+  qui garde une ancienne clé marche comme avant (observance, plafond, fêtes, phrases d'histoire, listes des fenêtres).
+- `religionsDe(s, contenu?, jour?)` : la religion (ou celles de « plusieurs ») sous les clés d'aujourd'hui, les deux religions d'une
+  religion double, et pendant une conversion l'ancienne aussi. `coreligionnaires(a, b, contenu?, jour?)`, `soutienDe(s, contenu,
+  jour?)`, `plafondEsprit(s, contenu, { …, jour })` la suivent. Les phrases d'histoire (§16) gardent leurs clés de groupe
+  (`religion:hindouisme-tamoul/1`) : leur `pour` porte l'ancienne clé puis la nouvelle.
+- **Changer de religion** : `changerDeReligion(s, { religion, religions, jour }, contenu)` → `{ ok, motif, system, avant, quitte,
+  souvent }`. Pendant `REGLES_ESPRIT.conversion.jours` (30), les deux religions comptent pour prier ensemble et pour les fêtes,
+  l'observance la plus exigeante s'impose et le plafond du pratiquant reste à 0 (au lieu de +1) ; `journeeEsprit` clôt la conversion
+  (fait `esprit-conversion-faite`, au MJ). Champs dans `system.esprit` (`espritDe`) : `religionAvant`, `religionsAvant`, `convertiLe`,
+  `conversions` (jours).
+
+### 22.2 Le marché chiffré (`marche.mjs`)
+- `REGLES_MARCHE.boutique` : `commercantReste(hasard)` (30 %) ; `confianceDuCommercant({ reputation, parole })` (0,75 à 1,15 selon
+  la **réputation**, × 1 + 3 % par niveau de parole au-dessus de 1, bornée 0,25..1,15) ; `prixDuCommercant` (vente 1,25 / confiance,
+  achat 0,6 × confiance) ; `evaluerALaBoutique({ donne, recoit, cours, reputation, parole, majoration })` ; `plafondCredit(carnet,
+  debiteur, confiance, facteur)` et `prendreACredit({ …, facteur })` (le plafond × la confiance, à la demi-part).
+- `valeurObjet(cle, contenu, cours)` → `{ valeur, source: "bareme" | "recette" | "" }` ; `valeurPlan({ rarete, unique })`.
+- L'étal : `creerEtal`, `chanceVenteEtal`, `journeeEtal(etal, { cours, hasard })`, `releverEtal` ; `REGLES_MARCHE.etal` ;
+  `journeeDuMarche({ …, cours, hasard })` fait vendre les étals les jours de leur marché (faits `etal-vend`, `etal-vole`).
+  État public : `marche.etals: [{ id, marche, biens, prix, contre, caisse, gardien, vendus, vols, depuis }]` (vide par défaut).
+
+### 22.3 La porte et l'inconnu (`porte.mjs`, `generation.mjs`, `moralite.mjs`)
+- La suite d'un refus suit le jeu 3D : `chancesDuRefus(sensMoral)` → il comprend 60 fois sur 100 ; rancune (feu) 20 × (1 − couleur),
+  retour 20 × (1 + couleur), couleur = jauge / 10 (`REGLES_PORTE.suites.comprend, rancune, retour`).
+- `ATTITUDES_RENCONTRE` (amicale 25, neutre 45, méfiante 22, hostile 8), `tirerAttitude(hasard)` ; `genererRecrue` rend `attitude`
+  (flux à part : la recrue ne change pas). `TENTATIVES_PAR_JOUR` (1) : l'API compte les tentatives du jour (`recruter` rend
+  `tentative`, `insiste`) ; elle n'interdit rien, le MJ tranche.
+- Les homonymes : `genererSurvivant(…, { nomsPris })` ne tire pas un nom déjà porté (sans homonyme, aucun tirage ne change ; un nom
+  gardé par verrou reste) ; `genererRecrue({ nomsPris })`, `tirerVisiteur({ nomsPris })` ; `cleDeNom(nom)`. Le témoin d'un acte :
+  `enfantsTemoins(membres, auteurs)` : jamais l'auteur.
+
+### 22.4 Les rangs et le passage (`chefs.mjs`)
+- `RANGS` (chef, second, membre, nouveau), `REGLES_RANGS` (3 seconds au plus, nouveau 7 jours) ; `rangDuMembre(etat, id, jour)`,
+  `secondsDe`, `estNouveau`, `noterArrivee`, `admettre`, `nommerSecond(etat, id, { retirer, jour, membre })` (refus : `rang-*`).
+- `rangsDuJour(etat, survivants, { jour, partis })` (dans `avancer`) : un mort, un parti, un relevé perdent leur rang ; le chef
+  mort, le premier second vivant et adulte prend la tête (fait public `chef-succede`), sinon plus de chef (`chef-perdu`) ; les
+  nouveaux d'une semaine deviennent membres. `crisesAutorite({ …, seconds })` désigne d'abord un second.
+- `accordDePassage(etat, communauteId, { ouvert, jour })` : `communautes[].passage` (Boolean), `passageLe` ; faits
+  `passage-ouvert`, `passage-ferme`.
+- État public : `groupe.seconds: [id]`, `groupe.nouveaux: { id: jour }`, `groupe.tentatives: { "nom|parleur|jour": n }` (le jour
+  seulement).
+
+### 22.5 La table de gestion (`gestion.mjs`, nouveau)
+- La grille : `groupe.priorites: { acteurId: { tache: 0..4 } }` (0 : jamais ; 1 d'abord) ; `PRIORITE_MAX`, `TACHES_GRILLE`,
+  `grilleDe`, `grilleParDefaut(system, tacheRepartie)` (sa tâche de la répartition en 1, ce qu'il sait faire en 3), `reglerPriorites`,
+  `effacerPriorites`, `travailDisponible(situation)`, `situationDeLAbri(membres, abri, contenu)` (les bras des installations),
+  `tacheParPriorite(system, grille, disponible, contenu)` (la priorité, puis le meilleur niveau), `repartirParPriorites(membres,
+  etat, { besoins, abri, contenu, situation })` (jamais un joueur).
+- Les quotas : `groupe.quotas: [{ id, acteurId, tache, jours, semaine, fait, depuis }]` ; `poserQuota`, `retirerQuota`,
+  `suivreQuotas(etat, membres, jour)` (dans `avancer` ; bilans des semaines closes, **sans punition**), `etatDuQuota`, `semaineDe`.
+- Les corvées : `contenu.corvees: [{ cle, nom, tache, description }]` (26) ; `groupe.corvees: { acteurId: cle }` ; `corveesDe`,
+  `donnerCorvee`, `verifierCorvees`. Aucun effet de jeu.
+- La répartition automatique de l'API (`repartirAuto`, avant chaque `avancer`) suit la grille d'un membre qui en a une, même sans le
+  réglage `repartitionAuto` ; avec le réglage, la grille par défaut pour les autres.
+
+### 22.6 API (`scripts/api-gestion.mjs`, `api-marche.mjs`, `api.mjs` ; écritures au MJ actif, monde ouvert)
+```
+tableDeGestion()                                   -> { jour, semaine, disponible, membres: [{ id, nom, statut, rang, actif, tache,
+                                                      corvee, grille, grillePropre, prendrait, niveaux }], quotas, seconds, stocks }
+corvees({ tache })                                 -> [{ cle, nom, tache, description }]
+priorites({ acteurId, grille, effacer }) / quota({ acteurId, tache, jours, retirer }) / corvee({ acteurId, corvee })
+second({ acteurId, retirer }) / admettre({ acteurId }) / passage({ communauteId, ouvert })
+convertir({ acteurId, religion, religions, lieu }) -> { religion, religions, avant, quitte, souvent, rumeur }
+evaluerTroc({ …, boutique, parleurId }) / troquer({ …, boutique, parleurId }) / crediter({ …, parleurId }) -> la marge, le facteur
+ouvrirBoutique({ …, tirer })                       -> { ok, boutique } (tirer : un commerçant n'est resté que 30 fois sur 100)
+tenirEtal({ marche, biens, prix, contre, gardien }) / releverEtal({ etal, fermer })
+valeurObjet({ cle }) / valeurPlan({ rarete, unique })
+```
+- `communaute()` rend en plus `seconds` et `rangs` ; `genererRecrue()` rend `attitude` ; `recruter` rend `tentative`, `insiste` ;
+  `acteMoral({ acteurs })` accepte un nom (refusé s'il est porté par deux survivants). Un nom dit à `rumeur`, `dementir`, `troquer`
+  (`prejuge`), `rompreTreve` se cherche d'abord dans le groupe ; un nom porté par deux survivants ne désigne personne
+  (`survivantDesigne`, donnees.mjs). `generer()` évite les noms des survivants du monde (`nomsDesSurvivants`).
+- Un témoin n'est jamais l'auteur : `porterActe` passe ses porteurs à `temoignageEnfants`.
+- Quitter sa religion, ou en changer une deuxième fois dans l'année : une rumeur vraie au Ladi Lafé (`rumeur-quitte-sa-foi`,
+  `rumeur-change-souvent`, portée « quartier »).
+
+### 22.7 Fenêtres et contenu
+- Fenêtre du MJ : onglet **Groupe**, la table de gestion (grille membre × tâche, ce que chacun prendrait, les quotas, les stocks,
+  quota, corvée) et l'attitude tirée de la recrue ; onglet **Communauté**, le rang de chacun, la conversion en cours, les seconds,
+  admettre, l'accord de passage, changer de religion ; onglet **Marché**, la boutique et qui parle au troc, « un commerçant est-il
+  resté ? », l'étal, la caisse, la valeur d'un objet. Tableau de bord : les quotas, le rang et la corvée de chacun.
+- Contenu (`contenu/communaute.mjs`) : `corvees` (26), `bareme.objets` (armes, tronçonneuse, cartes, bêtes vivantes, en parts) ;
+  tables « La communauté — le départ préparé » et « La religion — ce qu'on dit de celui qui en change » ; pages « La table de
+  gestion, les rangs et le marché » (guide du joueur) et « Mener la table de gestion, le marché chiffré et la porte » (guide du MJ,
+  avec la liste de priorités d'un PNJ croisé : partir, fuir, écouter, boire, manger, dormir, faire sa tâche, errer).

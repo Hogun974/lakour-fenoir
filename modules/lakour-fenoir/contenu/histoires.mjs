@@ -14,9 +14,10 @@
 // - pratique : seulement pour un croyant pratiquant ; foi : seulement si sa religion (ou l'une des siennes) est dans la liste.
 //   L'enfance ne fixe jamais la foi : une enfance tamoule peut donner un survivant sans religion, et la phrase du front cendré tombe.
 // Un groupe : { cle, type: "enfance" | "passe" | "trait" | "religion" | "regard" | "generation", pour: [clés], avec?, phrases }.
-// pour : les clés du contenu à qui le groupe parle ; une religion donne d'abord la clé de FVTT, puis celle du jeu 3D, pour que la
-// liste commune des religions (lot 10) trouve la sienne. avec (religion « plusieurs ») : de chaque liste, l'une au moins dans ses
-// religions.
+// pour : les clés du contenu à qui le groupe parle ; une religion donne d'abord l'ancienne clé de FVTT (elle fait la clé du groupe,
+// que gardent les fiches : « religion:hindouisme-tamoul/1 »), puis celle de la liste commune aux deux jeux (lot 10, contrat §22 :
+// les clés du jeu 3D, plus « servis-kabare »). Une religion double (« hindoue-catholique ») trouve aussi les phrases de ses deux
+// religions (logique/esprit.mjs, religionsDe). avec (religion « plusieurs ») : de chaque liste, l'une au moins dans ses religions.
 //
 // Ce qui a changé en route (docs/equilibre-histoires.md) : « Grand Îlet » à la manière de FVTT ; la phrase de l'enfance yab qui
 // disait la peau et les yeux devient celle du nom (guide du métissage : on est métis) ; le front cendré de l'enfance tamoule
@@ -609,7 +610,7 @@ export const HISTOIRES = [
     p("foi", "{Elle|Il} ne croit à rien qui ne se répare ou ne se partage."),
     p("foi", "{Elle|Il} n'a jamais prié, et tient la porte à ceux qui vont le faire.")
   ]),
-  groupe("religion", ["ancetres-malgaches"], [
+  groupe("religion", ["ancetres-malgaches", "servis-kabare"], [
     p("foi", "{Elle|Il} pose un petit verre de rhum pour les anciens avant de boire le sien, sans en faire une histoire.", { pratique: true }),
     p("foi", "Une fois l'an, {elle|il} dit à voix haute le nom de ses morts, pour qu'aucun ne se perde en route.")
   ]),

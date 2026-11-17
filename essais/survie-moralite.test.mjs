@@ -110,10 +110,15 @@ test("aucune couleur n'est gratuite : le bleu attire les réfugiés, le rouge at
 test("le refusé : le rancunier allume un feu, le bon revient avec ce qui manque, le neutre part ; la journée de la porte les fait arriver", () => {
   const liste = [{ ressource: "eau", manque: 10 }, { ressource: "medicaments", manque: 2 }];
   const suites = s => { const n = { part: 0, feu: 0, revient: 0 }; for (let i = 0; i < 400; i++) n[L.suiteDuRefus({ sensMoral: s }, L.creerHasard(`r${s}|${i}`), { liste }).suite]++; return n; };
-  const rouge = suites(-5), bleu = suites(5), neutre = suites(0);
-  assert.ok(rouge.feu > 230 && rouge.revient === 0, JSON.stringify(rouge));
-  assert.ok(bleu.revient > 190 && bleu.feu === 0, JSON.stringify(bleu));
-  assert.ok(neutre.part > 250, JSON.stringify(neutre));
+  // Lot 10 : les chiffres du jeu 3D (validés par Jordan) : il comprend 60 fois sur 100 ; la rancune et le retour se partagent le reste
+  // et penchent avec sa couleur ; un tout rouge ne revient jamais, un tout bleu n'est jamais rancunier.
+  const rouge = suites(-5), bleu = suites(5), neutre = suites(0), toutRouge = suites(-10), toutBleu = suites(10);
+  assert.ok(rouge.feu > 90 && rouge.feu < 150 && rouge.feu > 2 * rouge.revient, JSON.stringify(rouge));
+  assert.ok(bleu.revient > 90 && bleu.revient < 150 && bleu.revient > 2 * bleu.feu, JSON.stringify(bleu));
+  assert.ok(neutre.part > 205 && neutre.part < 275, JSON.stringify(neutre));
+  assert.ok(toutRouge.revient === 0 && toutRouge.feu > 120, JSON.stringify(toutRouge));
+  assert.ok(toutBleu.feu === 0 && toutBleu.revient > 120, JSON.stringify(toutBleu));
+  assert.deepEqual(L.chancesDuRefus(0), { part: 0.6, feu: 0.2, revient: 0.2 });
   const r = L.suiteDuRefus({ sensMoral: 5 }, () => 0.1, { liste });
   assert.equal(r.suite, "revient");
   assert.deepEqual(Object.keys(r.apporte), ["eau", "medicaments"], "il rapporte ce qui manque");

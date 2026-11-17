@@ -41,10 +41,13 @@ export function aideFoi(s, c = contenu()) {
 
 // Les listes des formulaires (fiche du MJ, création).
 export const optionsRegards = (choisi = "", vide = true) => options([...(vide ? [["", "—"]] : []), ...L.REGARDS.map(r => [r, t(`LAKOUR_SURVIE.Regards.${r}`)])], choisi);
+// Une fiche qui porte une ancienne clé (liste commune du lot 10) voit sa religion choisie sous la clé d'aujourd'hui.
 export const optionsReligions = (choisi = "", c = contenu(), vide = true) =>
-  options([...(vide ? [["", "—"]] : []), ...L.liste(c.religions).map(r => [r.cle, r.nom])], choisi);
-export const optionsReligionsMultiples = (choisies = [], c = contenu()) =>
-  L.liste(c.religions).filter(r => !r.special).map(r => ({ valeur: r.cle, libelle: r.nom, choisi: (choisies ?? []).includes(r.cle) }));
+  options([...(vide ? [["", "—"]] : []), ...L.liste(c.religions).map(r => [r.cle, r.nom])], L.cleReligion(choisi, c));
+export const optionsReligionsMultiples = (choisies = [], c = contenu()) => {
+  const cles = (choisies ?? []).map(x => L.cleReligion(x, c));
+  return L.liste(c.religions).filter(r => !r.special).map(r => ({ valeur: r.cle, libelle: r.nom, choisi: cles.includes(r.cle) }));
+};
 export const optionsAncrages = (choisi = "", c = contenu()) => options([["", "—"], ...L.liste(c.ancrages).map(a => [a.cle, a.nom])], choisi);
 export const optionsActes = (choisi = "") => options(Object.keys(L.ACTES_MORAUX).map(a => [a, `${t(`LAKOUR_SURVIE.Actes.${a}`)} (${L.ACTES_MORAUX[a] > 0 ? "+" : ""}${L.ACTES_MORAUX[a]})`]), choisi);
 
