@@ -81,7 +81,10 @@ export const CLES_TEXTES = [
   // chefs.mjs : ce que décide le chef d'une bande
   "chef-attaquer", "chef-negocier", "chef-passer", "chef-ultimatum", "chef-rejoindre",
   // sens.mjs (par etat.mjs) : percevoir dans le noir, la Timise, l'alarme naturelle (lot « sens »)
-  "noir-palier-1", "noir-palier-2", "noir-palier-3", "noir-palier-4", "grenouilles-silence", "noir-horde-entendue", "timise", "timise-reconnue"
+  "noir-palier-1", "noir-palier-2", "noir-palier-3", "noir-palier-4", "grenouilles-silence", "noir-horde-entendue", "timise", "timise-reconnue",
+  // corps.mjs, maladies.mjs (par etat.mjs) : le sommeil, les signes d'un mal que le groupe ne sait pas nommer (lot « corps »)
+  "survivant-epuise", "survivant-endormi", "survivant-gris-signes", "survivant-mort-fievre",
+  "survivant-declaree-signes", "survivant-aggravee-signes", "survivant-guerie-signes"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

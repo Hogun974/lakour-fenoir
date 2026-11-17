@@ -1,0 +1,84 @@
+{
+  "_id": "KFvjhfTm3pdFH5ZD",
+  "_key": "!items!KFvjhfTm3pdFH5ZD",
+  "name": "Feuillées",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "feuillees",
+    "categorie": "vie",
+    "description": "<p>Une tranchée creusée à l'écart et sous le vent, un paravent de feuilles de vacoa, un seau de cendre et une pelle : une poignée de cendre après chaque passage, et l'on rebouche quand c'est plein, un peu plus loin. Ce que faisaient les anciens dans les écarts, et les soldats partout.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 2
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 1,
+          "travail": 2
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "hygiene": 1,
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "role": "latrines",
+    "rang": 2
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "feuillees"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

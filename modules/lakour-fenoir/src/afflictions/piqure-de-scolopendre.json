@@ -23,7 +23,25 @@
     },
     "aggravation": null,
     "declencheur": null,
-    "risque": 0
+    "risque": 0,
+    "symptomes": {
+      "active": [
+        "enflure",
+        "douleur-vive"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      }
+    },
+    "evidente": true,
+    "diagnostic": [
+      "zerbaz"
+    ],
+    "insalubrite": 0,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

@@ -31,7 +31,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Chaque succès de combat ou de tir ôte 1 de <strong>résistance</strong> à une créature ; à 0, elle est hors d'état (un Livide ne l'est vraiment que le crâne détruit). Chaque créature encore debout attaque avec ses <strong>dés</strong> : un 6 touche (1 blessure) ; pour un Livide, un second 6 au dé de morsure, c'est une morsure. Tirer fait du bruit. Fuir est souvent la meilleure option.</p>",
+        "content": "<p>Chaque succès de combat ou de tir ôte 1 de <strong>résistance</strong> à une créature ; à 0, elle est hors d'état (un Livide ne l'est vraiment que le crâne détruit). Chaque créature encore debout attaque avec ses <strong>dés</strong> : un 6 touche (1 blessure) ; pour un Livide, un second 6 au dé de morsure, c'est une morsure. Un <strong>bouclier</strong> pare chaque touche d'un Livide sur 5 ou 6 (tôle) : une touche parée ne blesse pas et ne mord pas. Tirer fait du bruit. Fuir est souvent la meilleure option.</p><p><strong>Un Livide qui tombe</strong> de 12 m ou plus (un balcon, un fossé profond, une ravine) se casse les jambes et <strong>rampe</strong> : il avance encore, plus lentement, sans se relever sur ses jambes (journal « Le corps, le sommeil et l'hygiène »).</p>",
         "format": 1
       },
       "ownership": {

@@ -10205,6 +10205,325 @@
    "arbre": "lontan",
    "role": "eau-chaude",
    "rang": 2
+  },
+  {
+   "nom": "Feuillées",
+   "cle": "feuillees",
+   "categorie": "vie",
+   "description": "<p>Une tranchée creusée à l'écart et sous le vent, un paravent de feuilles de vacoa, un seau de cendre et une pelle : une poignée de cendre après chaque passage, et l'on rebouche quand c'est plein, un peu plus loin. Ce que faisaient les anciens dans les écarts, et les soldats partout.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 2
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 1,
+      "travail": 2
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "hygiene": 1,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "latrines",
+   "rang": 2
+  },
+  {
+   "nom": "Latrines sèches",
+   "cle": "latrines-seches",
+   "categorie": "vie",
+   "description": "<p>Une cabane de planches refendues et de bambou, un siège, un fût dessous et de la cendre : rien ne va dans l'eau, et le fût plein, laissé à mûrir une saison, finit en compost pour le jardin.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0.005,
+      "renseignements": false,
+      "bonus": {},
+      "hygiene": 2,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "latrines",
+   "rang": 1
+  },
+  {
+   "nom": "Fosse maçonnée",
+   "cle": "fosse-maconnee",
+   "categorie": "vie",
+   "description": "<p>Une fosse en dur, enterrée, avec sa chasse et ses tuyaux, comme celles des cases d'avant : on n'y pense plus, tant qu'il y a de l'eau pour la chasse. Sans eau, on retourne aux latrines sèches ou aux feuillées.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 10
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 6,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 10
+     },
+     "requiert": {
+      "savoirs": [
+       "maconnerie",
+       "plomberie-filtration"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "eau": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "hygiene": 3,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "latrines",
+   "rang": 0
+  },
+  {
+   "nom": "Lavoir",
+   "cle": "lavoir",
+   "categorie": "vie",
+   "description": "<p>Une pierre à laver penchée sur un bassin de galets jointoyés d'argile, au bord de l'eau ou sous la citerne : on y lave le linge, on s'y lave, on y parle. Le linge bouilli à la cendre ne garde pas la gale.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "eau": 1
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "hygiene": 1,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "toilette",
+   "rang": 1
+  },
+  {
+   "nom": "Douche",
+   "cle": "douche",
+   "categorie": "vie",
+   "description": "<p>Un fût en hauteur, un tuyau, une pomme percée, un paravent de tôle et un caillebotis : se laver chaque soir, laver une plaie à grande eau. Avec un chauffe-eau, elle est chaude.</p>",
+   "niveau": 0,
+   "niveauMax": 1,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [
+       "plomberie-filtration"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {
+       "eau": 2
+      },
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "hygiene": 2,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "role": "toilette",
+   "rang": 0
   }
  ],
  "savoirs": [
@@ -10497,7 +10816,7 @@
    "nom": "Bouclier de tôle",
    "cle": "bouclier-de-tole",
    "categorie": "arme",
-   "description": "<p>Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir.</p>",
+   "description": "<p>Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir. Il pare une touche de Livide sur trois (5 ou 6 au dé) : une touche parée ne blesse pas et ne mord pas.</p>",
    "bonus": {
     "combat": 1
    },
@@ -10507,7 +10826,8 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "parade": 5
   },
   {
    "nom": "Fusil de chasse calibre 12",
@@ -10737,7 +11057,7 @@
    "nom": "Tente et bâche",
    "cle": "tente",
    "categorie": "vie",
-   "description": "<p>Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate.</p>",
+   "description": "<p>Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate. De quoi bivouaquer : on y dort mieux qu'à même le sol.</p>",
    "bonus": {
     "survie": 1
    },
@@ -10747,7 +11067,8 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "bivouac": true
   },
   {
    "nom": "Trousse de secours",
@@ -11365,7 +11686,7 @@
    "nom": "Natte de vacoa",
    "cle": "natte-de-vacoa",
    "categorie": "vie",
-   "description": "<p>Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil.</p>",
+   "description": "<p>Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil. Roulée sur le sac, elle fait un bivouac.</p>",
    "bonus": {},
    "charge": 1,
    "usure": 0,
@@ -11375,7 +11696,8 @@
    "effets": {
     "moral": 0.5
    },
-   "marque": ""
+   "marque": "",
+   "bivouac": true
   },
   {
    "nom": "Cordes de choka",
@@ -12732,7 +13054,39 @@
     "duree": 5
    },
    "declencheur": "moustiques",
-   "risque": 0.006
+   "risque": 0.006,
+   "symptomes": {
+    "active": [
+     "fievre",
+     "maux-de-tete",
+     "courbatures",
+     "eruption"
+    ],
+    "aggravee": [
+     "fievre",
+     "maux-de-tete",
+     "courbatures",
+     "saignements",
+     "epuisement"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    },
+    "aggravee": {
+     "moral": 1,
+     "insomnie": true
+    }
+   },
+   "evidente": false,
+   "diagnostic": [
+    "premiers-secours-avances",
+    "zerbaz"
+   ],
+   "insalubrite": 0,
+   "siBlesse": false
   },
   {
    "nom": "Chikungunya",
@@ -12759,7 +13113,35 @@
     "duree": 30
    },
    "declencheur": "moustiques",
-   "risque": 0.004
+   "risque": 0.004,
+   "symptomes": {
+    "active": [
+     "fievre",
+     "douleurs-articulaires",
+     "eruption"
+    ],
+    "aggravee": [
+     "douleurs-articulaires",
+     "epuisement"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    },
+    "aggravee": {
+     "moral": 1,
+     "insomnie": true
+    }
+   },
+   "evidente": false,
+   "diagnostic": [
+    "premiers-secours-avances",
+    "zerbaz"
+   ],
+   "insalubrite": 0,
+   "siBlesse": false
   },
   {
    "nom": "Leptospirose",
@@ -12786,7 +13168,38 @@
     "duree": 10
    },
    "declencheur": "ravine",
-   "risque": 0.003
+   "risque": 0.003,
+   "symptomes": {
+    "active": [
+     "fievre",
+     "frissons",
+     "maux-de-tete",
+     "courbatures"
+    ],
+    "aggravee": [
+     "fievre",
+     "frissons",
+     "jaunisse",
+     "saignements",
+     "epuisement"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    },
+    "aggravee": {
+     "moral": 1,
+     "insomnie": false
+    }
+   },
+   "evidente": false,
+   "diagnostic": [
+    "premiers-secours-avances"
+   ],
+   "insalubrite": 1,
+   "siBlesse": false
   },
   {
    "nom": "Gastro-entérite",
@@ -12813,7 +13226,39 @@
     "duree": 3
    },
    "declencheur": "eau",
-   "risque": 0.01
+   "risque": 0.01,
+   "symptomes": {
+    "active": [
+     "nausee",
+     "vomissements",
+     "diarrhee",
+     "crampes-de-ventre"
+    ],
+    "aggravee": [
+     "vomissements",
+     "diarrhee",
+     "crampes-de-ventre",
+     "soif-intense",
+     "faiblesse"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    },
+    "aggravee": {
+     "moral": 1,
+     "insomnie": false
+    }
+   },
+   "evidente": false,
+   "diagnostic": [
+    "premiers-secours-avances",
+    "zerbaz"
+   ],
+   "insalubrite": 6,
+   "siBlesse": false
   },
   {
    "nom": "Gale",
@@ -12835,7 +13280,26 @@
    },
    "aggravation": null,
    "declencheur": null,
-   "risque": 0.002
+   "risque": 0.002,
+   "symptomes": {
+    "active": [
+     "demangeaisons",
+     "insomnie"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": true
+    }
+   },
+   "evidente": false,
+   "diagnostic": [
+    "premiers-secours-avances",
+    "zerbaz"
+   ],
+   "insalubrite": 2,
+   "siBlesse": false
   },
   {
    "nom": "Plaie infectée",
@@ -12862,7 +13326,35 @@
     "duree": 10
    },
    "declencheur": null,
-   "risque": 0
+   "risque": 0,
+   "symptomes": {
+    "active": [
+     "plaie-rouge",
+     "enflure"
+    ],
+    "aggravee": [
+     "fievre",
+     "frissons",
+     "plaie-purulente",
+     "enflure"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    },
+    "aggravee": {
+     "moral": 1,
+     "insomnie": false
+    }
+   },
+   "evidente": false,
+   "diagnostic": [
+    "premiers-secours-avances"
+   ],
+   "insalubrite": 3,
+   "siBlesse": true
   },
   {
    "nom": "Tétanos",
@@ -12889,7 +13381,34 @@
     "duree": 20
    },
    "declencheur": null,
-   "risque": 0
+   "risque": 0,
+   "symptomes": {
+    "active": [
+     "raideur",
+     "spasmes"
+    ],
+    "aggravee": [
+     "raideur",
+     "spasmes",
+     "epuisement"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    },
+    "aggravee": {
+     "moral": 1,
+     "insomnie": true
+    }
+   },
+   "evidente": false,
+   "diagnostic": [
+    "premiers-secours-avances"
+   ],
+   "insalubrite": 0,
+   "siBlesse": false
   },
   {
    "nom": "Fracture",
@@ -12916,7 +13435,35 @@
     "duree": 60
    },
    "declencheur": null,
-   "risque": 0
+   "risque": 0,
+   "symptomes": {
+    "active": [
+     "douleur-vive",
+     "membre-inutilisable"
+    ],
+    "aggravee": [
+     "fievre",
+     "enflure",
+     "douleur-vive",
+     "membre-inutilisable"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    },
+    "aggravee": {
+     "moral": 1,
+     "insomnie": true
+    }
+   },
+   "evidente": true,
+   "diagnostic": [
+    "premiers-secours-avances"
+   ],
+   "insalubrite": 0,
+   "siBlesse": false
   },
   {
    "nom": "Brûlure",
@@ -12943,7 +13490,35 @@
     "duree": 15
    },
    "declencheur": null,
-   "risque": 0
+   "risque": 0,
+   "symptomes": {
+    "active": [
+     "cloques",
+     "douleur-vive"
+    ],
+    "aggravee": [
+     "fievre",
+     "plaie-purulente",
+     "douleur-vive"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    },
+    "aggravee": {
+     "moral": 1,
+     "insomnie": true
+    }
+   },
+   "evidente": true,
+   "diagnostic": [
+    "premiers-secours-avances",
+    "zerbaz"
+   ],
+   "insalubrite": 0,
+   "siBlesse": false
   },
   {
    "nom": "Piqûre de scolopendre",
@@ -12965,7 +13540,25 @@
    },
    "aggravation": null,
    "declencheur": null,
-   "risque": 0
+   "risque": 0,
+   "symptomes": {
+    "active": [
+     "enflure",
+     "douleur-vive"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    }
+   },
+   "evidente": true,
+   "diagnostic": [
+    "zerbaz"
+   ],
+   "insalubrite": 0,
+   "siBlesse": false
   },
   {
    "nom": "Coup de chaleur",
@@ -12992,7 +13585,37 @@
     "duree": 2
    },
    "declencheur": "chaleur",
-   "risque": 0.004
+   "risque": 0.004,
+   "symptomes": {
+    "active": [
+     "maux-de-tete",
+     "nausee",
+     "soif-intense",
+     "vertiges"
+    ],
+    "aggravee": [
+     "vomissements",
+     "soif-intense",
+     "confusion",
+     "epuisement"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 0,
+     "insomnie": false
+    },
+    "aggravee": {
+     "moral": 0,
+     "insomnie": false
+    }
+   },
+   "evidente": false,
+   "diagnostic": [
+    "premiers-secours-avances"
+   ],
+   "insalubrite": 0,
+   "siBlesse": false
   },
   {
    "nom": "Le choc d'une perte",
@@ -13019,7 +13642,33 @@
     "duree": 14
    },
    "declencheur": null,
-   "risque": 0
+   "risque": 0,
+   "symptomes": {
+    "active": [
+     "insomnie",
+     "cauchemars",
+     "abattement"
+    ],
+    "aggravee": [
+     "insomnie",
+     "abattement",
+     "faiblesse"
+    ]
+   },
+   "effetsStade": {
+    "active": {
+     "moral": 1,
+     "insomnie": true
+    },
+    "aggravee": {
+     "moral": 1,
+     "insomnie": true
+    }
+   },
+   "evidente": true,
+   "diagnostic": [],
+   "insalubrite": 0,
+   "siBlesse": false
   }
  ],
  "factions": [
@@ -24853,5 +25502,175 @@
    "traces": "Une file de gens à la grille du port, chaque matin ; des papiers qu'on garde au sec, au cas où.",
    "ton": ""
   }
- ]
+ ],
+ "symptomes": [
+  {
+   "cle": "fievre",
+   "nom": "Fièvre"
+  },
+  {
+   "cle": "frissons",
+   "nom": "Frissons"
+  },
+  {
+   "cle": "maux-de-tete",
+   "nom": "Maux de tête"
+  },
+  {
+   "cle": "courbatures",
+   "nom": "Courbatures"
+  },
+  {
+   "cle": "douleurs-articulaires",
+   "nom": "Douleurs dans les articulations"
+  },
+  {
+   "cle": "eruption",
+   "nom": "Boutons sur la peau"
+  },
+  {
+   "cle": "jaunisse",
+   "nom": "Peau et yeux jaunes"
+  },
+  {
+   "cle": "saignements",
+   "nom": "Saignements des gencives et du nez"
+  },
+  {
+   "cle": "nausee",
+   "nom": "Nausée"
+  },
+  {
+   "cle": "vomissements",
+   "nom": "Vomissements"
+  },
+  {
+   "cle": "diarrhee",
+   "nom": "Ventre qui se vide"
+  },
+  {
+   "cle": "crampes-de-ventre",
+   "nom": "Crampes au ventre"
+  },
+  {
+   "cle": "soif-intense",
+   "nom": "Une soif qui ne passe pas"
+  },
+  {
+   "cle": "vertiges",
+   "nom": "Vertiges"
+  },
+  {
+   "cle": "confusion",
+   "nom": "Confusion"
+  },
+  {
+   "cle": "demangeaisons",
+   "nom": "Démangeaisons"
+  },
+  {
+   "cle": "plaie-rouge",
+   "nom": "Plaie rouge et chaude"
+  },
+  {
+   "cle": "plaie-purulente",
+   "nom": "Plaie qui suppure"
+  },
+  {
+   "cle": "enflure",
+   "nom": "Enflure"
+  },
+  {
+   "cle": "cloques",
+   "nom": "Cloques"
+  },
+  {
+   "cle": "douleur-vive",
+   "nom": "Douleur vive"
+  },
+  {
+   "cle": "membre-inutilisable",
+   "nom": "Un membre qui ne sert plus"
+  },
+  {
+   "cle": "raideur",
+   "nom": "Mâchoire et nuque raides"
+  },
+  {
+   "cle": "spasmes",
+   "nom": "Spasmes"
+  },
+  {
+   "cle": "insomnie",
+   "nom": "Ne dort plus"
+  },
+  {
+   "cle": "cauchemars",
+   "nom": "Cauchemars"
+  },
+  {
+   "cle": "abattement",
+   "nom": "Abattement"
+  },
+  {
+   "cle": "faiblesse",
+   "nom": "Faiblesse"
+  },
+  {
+   "cle": "epuisement",
+   "nom": "Épuisement"
+  },
+  {
+   "cle": "peau-grise",
+   "nom": "Peau qui grise"
+  }
+ ],
+ "gris": {
+  "diagnostic": [
+   "premiers-secours-avances"
+  ],
+  "stades": [
+   {
+    "symptomes": [
+     "plaie-rouge"
+    ]
+   },
+   {
+    "symptomes": [
+     "fievre",
+     "plaie-rouge"
+    ]
+   },
+   {
+    "symptomes": [
+     "fievre",
+     "frissons",
+     "peau-grise"
+    ]
+   },
+   {
+    "symptomes": [
+     "fievre",
+     "frissons",
+     "peau-grise",
+     "faiblesse"
+    ]
+   },
+   {
+    "symptomes": [
+     "frissons",
+     "confusion",
+     "peau-grise",
+     "faiblesse"
+    ]
+   },
+   {
+    "symptomes": [
+     "confusion",
+     "peau-grise",
+     "epuisement"
+    ]
+   }
+  ]
+ }
 }

@@ -28,7 +28,35 @@
       "duree": 30
     },
     "declencheur": "moustiques",
-    "risque": 0.004
+    "risque": 0.004,
+    "symptomes": {
+      "active": [
+        "fievre",
+        "douleurs-articulaires",
+        "eruption"
+      ],
+      "aggravee": [
+        "douleurs-articulaires",
+        "epuisement"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      },
+      "aggravee": {
+        "moral": 1,
+        "insomnie": true
+      }
+    },
+    "evidente": false,
+    "diagnostic": [
+      "premiers-secours-avances",
+      "zerbaz"
+    ],
+    "insalubrite": 0,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

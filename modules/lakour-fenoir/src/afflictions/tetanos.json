@@ -28,7 +28,34 @@
       "duree": 20
     },
     "declencheur": null,
-    "risque": 0
+    "risque": 0,
+    "symptomes": {
+      "active": [
+        "raideur",
+        "spasmes"
+      ],
+      "aggravee": [
+        "raideur",
+        "spasmes",
+        "epuisement"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      },
+      "aggravee": {
+        "moral": 1,
+        "insomnie": true
+      }
+    },
+    "evidente": false,
+    "diagnostic": [
+      "premiers-secours-avances"
+    ],
+    "insalubrite": 0,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

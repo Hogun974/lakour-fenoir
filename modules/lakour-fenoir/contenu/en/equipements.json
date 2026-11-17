@@ -39,8 +39,8 @@
       "en": "Sheet-metal shield"
     },
     "system.description": {
-      "fr": "<p>Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir.</p>",
-      "en": "<p>A sheet of corrugated iron backed with plywood, with two handles: you push back, you shield yourself from bites, you advance in a line down a corridor.</p>"
+      "fr": "<p>Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir. Il pare une touche de Livide sur trois (5 ou 6 au dé) : une touche parée ne blesse pas et ne mord pas.</p>",
+      "en": "<p>A sheet of corrugated iron backed with plywood, with two handles: you push back, you shield yourself from bites, you advance in a line down a corridor. It parries one Pallid hit in three (5 or 6 on the die): a parried hit doesn't wound and doesn't bite.</p>"
     }
   },
   "equipements/6MIKGIKFH4dr5ilO": {
@@ -156,8 +156,8 @@
       "en": "Tent and tarp"
     },
     "system.description": {
-      "fr": "<p>Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate.</p>",
-      "en": "<p>Sleep outside without getting soaked, put up a makeshift shelter on a Mafate trail.</p>"
+      "fr": "<p>Dormir dehors sans tremper, monter un abri de fortune sur un sentier de Mafate. De quoi bivouaquer : on y dort mieux qu'à même le sol.</p>",
+      "en": "<p>Sleep outside without getting soaked, put up a makeshift shelter on a Mafate trail. Something to bivouac with: you sleep better than on the bare ground.</p>"
     }
   },
   "equipements/FcBV9tuBBLLLoplo": {
@@ -310,8 +310,8 @@
       "en": "Vacoa mat"
     },
     "system.description": {
-      "fr": "<p>Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil.</p>",
-      "en": "<p>A woven mat to sleep dry on, to sit on in the evening, to dry coffee or grain in the sun.</p>"
+      "fr": "<p>Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil. Roulée sur le sac, elle fait un bivouac.</p>",
+      "en": "<p>A woven mat to sleep dry on, to sit on in the evening, to dry coffee or grain in the sun. Rolled on top of the pack, it makes a bivouac.</p>"
     }
   },
   "equipements/Rx2lvvdh5L8dpysq": {

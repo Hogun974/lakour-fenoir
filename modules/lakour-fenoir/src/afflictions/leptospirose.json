@@ -28,7 +28,38 @@
       "duree": 10
     },
     "declencheur": "ravine",
-    "risque": 0.003
+    "risque": 0.003,
+    "symptomes": {
+      "active": [
+        "fievre",
+        "frissons",
+        "maux-de-tete",
+        "courbatures"
+      ],
+      "aggravee": [
+        "fievre",
+        "frissons",
+        "jaunisse",
+        "saignements",
+        "epuisement"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      },
+      "aggravee": {
+        "moral": 1,
+        "insomnie": false
+      }
+    },
+    "evidente": false,
+    "diagnostic": [
+      "premiers-secours-avances"
+    ],
+    "insalubrite": 1,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

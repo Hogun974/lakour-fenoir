@@ -28,7 +28,35 @@
       "duree": 60
     },
     "declencheur": null,
-    "risque": 0
+    "risque": 0,
+    "symptomes": {
+      "active": [
+        "douleur-vive",
+        "membre-inutilisable"
+      ],
+      "aggravee": [
+        "fievre",
+        "enflure",
+        "douleur-vive",
+        "membre-inutilisable"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      },
+      "aggravee": {
+        "moral": 1,
+        "insomnie": true
+      }
+    },
+    "evidente": true,
+    "diagnostic": [
+      "premiers-secours-avances"
+    ],
+    "insalubrite": 0,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

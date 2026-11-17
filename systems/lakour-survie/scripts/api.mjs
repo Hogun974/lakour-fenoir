@@ -28,6 +28,7 @@ import { deMJ, trouverDemande, fermerDemande, argumentsDuTestJoueur, proposition
 import { fonctionsMarche } from "./api-marche.mjs";
 import { histoireDuSurvivant, DRAPEAU_PHRASES } from "./histoires.mjs";
 import { fonctionsSens } from "./api-sens.mjs";
+import { fonctionsCorps } from "./api-corps.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -188,8 +189,11 @@ const lisible = x => (x && typeof x === "object" ? { ...x, texte: localiser(x) }
 const motifLisible = r => (r?.motif ? localiser(r.motif) : r?.raison ?? "");
 const motifsLisibles = r => (r?.motifs?.length ? r.motifs : r?.raisons ?? []).map(localiser).join(" ; ");
 
-async function chat(content, { speaker = null, flags = {} } = {}) {
-  return ChatMessage.implementation.create({ content, speaker: speaker ?? { alias: t("LAKOUR_SURVIE.Titre") }, flags: { [ID]: { carte: true, ...flags } } });
+// secret (lot « corps ») : le message ne va qu'aux MJ (l'issue d'une morsure soignée).
+async function chat(content, { speaker = null, flags = {}, secret = false } = {}) {
+  const whisper = secret ? [...(game.users?.contents ?? game.users ?? [])].filter(u => u?.isGM).map(u => u.id) : undefined;
+  return ChatMessage.implementation.create({ content, speaker: speaker ?? { alias: t("LAKOUR_SURVIE.Titre") }, flags: { [ID]: { carte: true, ...flags } },
+    ...(whisper ? { whisper, blind: true } : {}) });
 }
 const parlePour = a => {
   try { return ChatMessage.implementation.getSpeaker?.({ actor: a }) ?? { alias: a.name, actor: a.id }; } catch { return { alias: a.name, actor: a.id }; }
@@ -198,7 +202,8 @@ const parlePour = a => {
 // ------------------------------------------------------------------ acteurs <-> logique
 const CHAMPS_SURVIVANT = ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "vivant", "livide", "tache", "statut",
   "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "confiance", "apprentissage", "dictee",
-  "noir"];   // lot « sens » : l'habitude du noir (logique/sens.mjs)
+  "noir",   // lot « sens » : l'habitude du noir (logique/sens.mjs)
+  "veille", "morsure"];   // lot « corps » : les quarts éveillés (corps.mjs), la morsure pansée qui se tait (maladies.mjs)
 // L'esprit et le sens moral (contrat §14) : réécrits par l'avancée du temps (observances, regard, lâcher, autorité du chef) et par
 // les actes du groupe.
 const CHAMPS_ESPRIT = ["regard", "religion", "religions", "pratique", "ancrage", "sensMoral", "reputation", "autorite", "esprit"];
@@ -245,7 +250,7 @@ async function ecrireSurvivant(a, system, ctx = null) {
 async function ecrireAbri(a, { system, installations = null }) {
   const s = {};
   for (const k of ["stocks", "reliquats", "nature", "sol", "bruit", "degats", "reparation", "installeLe", "abandonneLe", "site", "region",
-    "vegetation", "eauDouteuse", "preparation", "lumiereLe"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);
+    "vegetation", "eauDouteuse", "preparation", "lumiereLe", "souillure"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);
   await a.update({ system: s });
   if (!installations) return;
   const avant = new Map(instancesDe(a).map(i => [i.id, i]));
@@ -367,7 +372,8 @@ export function bilanVivant(etat = lireEtat(), monde = Coffre.mondeEnMemoire(), 
 const CHAMPS_BILAN = ["production", "consommation", "net", "pertes", "joursDeStocks", "defense", "discretion", "visibilite", "capacite", "bruit",
   "protectionCyclone", "soins", "moral", "conservation", "renseignements", "eauTraitee", "plafonds", "arrets", "surpeuplement", "reseaux", "personnes", "actives",
   "secours", "savoirs",
-  "odeur", "odeurBetes", "odeurSources", "ravine"];   // lot « sens » : ce que l'abri sent, l'état de sa ravine
+  "odeur", "odeurBetes", "odeurSources", "ravine",   // lot « sens » : ce que l'abri sent, l'état de sa ravine
+  "hygiene", "latrines", "toilette", "insalubrite"];  // lot « corps » : l'hygiène de l'abri et son insalubrité (pas la souillure chiffrée)
 // L'instantané PUBLIC du bilan (état de la partie, lu par les joueurs) : ce que le groupe sait, pas le réel à distance.
 export function instantaneBilan(etat, monde) {
   const b = bilanVivant(etat, monde, { publique: true });
@@ -475,8 +481,10 @@ async function avancerInterne(ctx, quarts, options = {}) {
   const survivants = membres.map(a => ({ id: a.id, nom: a.name, system: systemeLogique(a, ctx.monde) }));
   const ab = abriCourant(ctx.etat);
   const cc = chienEtConfort(membres.filter(a => L.peutAgir(a.system)));
+  // Lot « corps » : le groupe porte-t-il de quoi bivouaquer (une tente, une natte : equipement.bivouac) ?
+  const bivouac = membres.some(a => L.peutAgir(a.system) && objetsDe(a, "equipement").some(i => i.system?.bivouac || defDe("equipements", i.system?.cle)?.bivouac));
   const r = L.avancer({ etat: ctx.etat, monde: ctx.monde, contenu: c, quarts: n, survivants, abri: ab ? abriLogique(ab) : null,
-    options: { dateDepart: dateDepart(), visibiliteVeille: Number(ctx.monde.visibiliteVeille) || 0, chien: cc.chien, confort: cc.confort, ...options } });
+    options: { dateDepart: dateDepart(), visibiliteVeille: Number(ctx.monde.visibiliteVeille) || 0, chien: cc.chien, confort: cc.confort, bivouac, ...options } });
   ctx.etat = r.etat;
   ctx.monde = r.monde;
   for (const s of r.acteurs.survivants) {
@@ -579,7 +587,8 @@ async function appliquerTest(a, competence, r) {
 
 // ecoute (lot « sens », MJ seulement) : "yeux-fermes" (+1 dé à la vigilance, rien d'autre ce tour-là) ou "active" (palier 4 de
 // l'habitude du noir, la nuit : +1 dé, mais un bruit qu'un Livide proche entend).
-async function testDirect({ acteurId, competence, difficulte = "normale", bonus = 0, malus = 0, forcer = false, titre = "", compte = true, forcable = true, dehors = null, ecoute = "" } = {}) {
+// secret (lot « corps ») : la carte du test ne va qu'aux MJ (soigner une morsure : l'issue n'est dite à personne).
+async function testDirect({ acteurId, competence, difficulte = "normale", bonus = 0, malus = 0, forcer = false, titre = "", compte = true, forcable = true, dehors = null, ecoute = "", secret = false } = {}) {
   const a = acteur(acteurId);
   if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
   if (!COMPETENCES.includes(competence)) throw clair(t("LAKOUR_SURVIE.Erreurs.CompetenceInconnue", { competence }));
@@ -594,7 +603,7 @@ async function testDirect({ acteurId, competence, difficulte = "normale", bonus 
   const r = L.resoudreTest({ niveau, difficulte: diff, bonus: (Number(bonus) || 0) + mods.bonus + chance.bonus, malus: (Number(malus) || 0) + mods.malus, forcer: Boolean(forcer), compte: compte !== false });
   const maj = await appliquerTest(a, competence, r);
   const info = { nom: a.name, competence, titre, monte: maj.monte, niveau: maj.niveau, chance: chance.bonus > 0 };
-  const message = await chat(carteTest(r, { ...info, forcable }), { speaker: parlePour(a), flags: { test: { acteurId: a.id, competence, titre, resultat: r, forcable } } });
+  const message = await chat(carteTest(r, { ...info, forcable: forcable && !secret }), { speaker: parlePour(a), secret, flags: { test: { acteurId: a.id, competence, titre, resultat: r, forcable: forcable && !secret } } });
   return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, nuit: mods.nuit, chaleur: mods.chaleur, chance: chance.bonus, monte: maj.monte,
     temps: mods.temps, noir: mods.noir, bruitEcoute: mods.bruitEcoute, texte: texteTest(a.name, competence, r), messageId: message?.id ?? null };
 }
@@ -1098,6 +1107,18 @@ const MARCHE = fonctionsMarche({ ecriture, ouvrirCtx, terminer, noter, alerter, 
 const SENS = fonctionsSens({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, dateDepart, clair, erreur, chat, carteAction, systemeLogique,
   bilanVivant: (etat, monde) => bilanVivant(etat, monde), mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), fetesDuJeu,
   aLAbri: (etat, ab) => aLAbri(etat, ab) });
+// Le corps, le sommeil et l'hygiène (contrat §19) : ses fonctions, avec les aides internes d'ici.
+// Une entrée du journal SECRET (au MJ seul, dans le monde scellé) : l'issue d'une morsure soignée, l'infection déclarée.
+function journalSecret(ctx, x) {
+  const e = entreeTexte(x);
+  if (!e || !ctx.monde) return;
+  ctx.monde.journalSecret = [...(ctx.monde.journalSecret ?? []), { jour: jourCtx(ctx), texte: e.texte ?? "", cle: e.cle ?? "", params: e.params ?? {} }].slice(-L.JOURNAL_SECRET_MAX);
+}
+const CORPS = fonctionsCorps({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
+  ecrireSurvivant: (...x) => ecrireSurvivant(...x), bilanVivant: (etat, monde) => bilanVivant(etat, monde),
+  mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), aLAbri: (etat, ab) => aLAbri(etat, ab),
+  savoirsDuGroupe: etat => savoirsDuGroupe(etat), testDirect: (...x) => testDirect(...x), objetsDe, defDe, estMJ: () => Boolean(game.user?.isGM),
+  brasDe: (qui, jour) => brasDeLEquipe(qui, jour), journalSecret });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1321,11 +1342,16 @@ export const api = {
   }),
 
   // lumiere (lot « sens ») : l'abri reste éclairé la nuit (la garde ne s'habitue pas au noir) ; lumiereEnRoute : on marche à la torche.
-  avancer: ecriture(async ({ quarts = 1, raison = "", repos = false, veille = [], stabilises = [], corpsTraites = [], lumiere = false, lumiereEnRoute = false } = {}) => {
+  // Lot « corps » : dorment (ils dorment à chaque quart), eveilles (ils restent debout), lieuSommeil ("bivouac" | "sol" : la nuit
+  // dehors ; un endroit dangereux fait dormir comme au sol). De quoi bivouaquer : un membre porte une tente ou une natte.
+  avancer: ecriture(async ({ quarts = 1, raison = "", repos = false, veille = [], stabilises = [], corpsTraites = [], lumiere = false, lumiereEnRoute = false,
+    dorment = [], eveilles = [], lieuSommeil = "" } = {}) => {
     const ctx = ouvrirCtx();
     ctx.raison = String(raison ?? "");
     ctx.carteTemps = true;
-    await avancerInterne(ctx, quarts, { repos: Boolean(repos), veille, stabilises, corpsTraites, lumiere: Boolean(lumiere), lumiereEnRoute: Boolean(lumiereEnRoute) });
+    const membres = survivantsDuGroupe(ctx.etat);
+    await avancerInterne(ctx, quarts, { repos: Boolean(repos), veille, stabilises, corpsTraites, lumiere: Boolean(lumiere), lumiereEnRoute: Boolean(lumiereEnRoute),
+      dorment: idsDe(dorment, membres), eveilles: idsDe(eveilles, membres), ...(["bivouac", "sol"].includes(lieuSommeil) ? { lieuSommeil } : {}) });
     await terminer(ctx);
     return { quand: quandDe(ctx.etat), faits: ctx.faits.map(publicFait), alertes: ctx.alertes, bilan: bilanVivant(ctx.etat, ctx.monde), departs: ctx.departs };
   }),
@@ -1536,7 +1562,8 @@ export const api = {
     if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
     const s = L.infecter(systemeLogique(a, ctx.monde), ctx.etat.horloge.quart);
     await ecrireSurvivant(a, s, ctx);
-    noter(ctx, tx("Journal.Infecte", { nom: a.name }));
+    // Lot « corps » : l'issue d'une morsure n'est dite à personne : l'infection va au journal secret, le Gris se dira par ses signes.
+    journalSecret(ctx, tx("Journal.Infecte", { nom: a.name }));
     await terminer(ctx);
     return { infection: structuredClone(s.infection) };
   }),
@@ -1877,6 +1904,7 @@ export const api = {
   ...MARCHE.api,
   // Lot « sens » (contrat §18) : percevoir dans le noir, le vent, la pluie, la rue nettoyée, la musique.
   ...SENS,
+  ...CORPS,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {

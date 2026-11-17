@@ -7,7 +7,7 @@
   "system": {
     "cle": "natte-de-vacoa",
     "categorie": "vie",
-    "description": "<p>Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil.</p>",
+    "description": "<p>Une natte tressée pour dormir au sec, s'asseoir à la veillée, sécher le café ou les grains au soleil. Roulée sur le sac, elle fait un bivouac.</p>",
     "bonus": {},
     "charge": 1,
     "usure": 0,
@@ -17,7 +17,8 @@
     "effets": {
       "moral": 0.5
     },
-    "marque": ""
+    "marque": "",
+    "bivouac": true
   },
   "effects": [],
   "folder": null,

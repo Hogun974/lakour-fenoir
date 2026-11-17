@@ -43,7 +43,12 @@
 //   (fin « impasse », pas « vivants ») ;
 // - l'enraciné ne construit une installation qui mange (chiens de garde) que sur un surplus de nourriture produite ;
 // - rééquilibrage du 2026-11-13 (docs/equilibre.md) : le soir, à l'abri, le groupe donne le repos à ses morts retrouvés (lot
-//   « fetes ») ; le gaz, les boutures et le biocarburant, qu'il ne joue pas, ne comptent pas dans le choix d'un site.
+//   « fetes ») ; le gaz, les boutures et le biocarburant, qu'il ne joue pas, ne comptent pas dans le choix d'un site ;
+// - lot « corps » (2026-11-17, docs/equilibre-corps.md) : l'enraciné creuse des feuillées, puis bâtit des latrines sèches
+//   (ORDRE_ENRACINE ; un lavoir ou une douche, qui prennent de l'eau, seulement sur un surplus d'eau s'ils y entrent un jour), en
+//   payant les matières de l'île sur le bois des alentours ; à deux et plus, le nomade (et le mixte) creuse des feuillées là où il
+//   s'installe (une demi-journée d'un) ; un survivant qui porte un bouclier pare (resoudreCombat, parade) ; le groupe qui porte une
+//   tente ou une natte dort au bivouac hors de l'abri. Le sommeil, la souillure et l'insalubrité sont ceux de la logique (avancer).
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -82,10 +87,11 @@ export const REMEDES = { reserve: 1, recette: "tisanes", plantesTisane: 3 };
 // L'ordre de construction de l'enraciné ({ cle, niveau }) : ce que le site, les savoirs et les stocks permettent passe en premier.
 export const ORDRE_ENRACINE = [
   ["captage-de-source", 1], ["pompe-manuelle", 1], ["citerne-de-pluie", 1], ["filtre-sable-charbon", 1],
-  ["potager", 1], ["panneaux-solaires", 1], ["batteries", 1], ["barricades", 1], ["reserve-etanche", 1], ["sechoir-fumoir", 1],
+  ["potager", 1], ["panneaux-solaires", 1], ["batteries", 1], ["barricades", 1], ["feuillees", 1], ["reserve-etanche", 1], ["sechoir-fumoir", 1],
   ["compost", 1], ["citerne-de-pluie", 2], ["captage-de-source", 2], ["pompe-manuelle", 2], ["basse-cour", 1], ["enclos-a-cabris", 1],
   ["potager", 2], ["galerie-souterraine", 1], ["tunnel-de-lave-amenage", 1], ["camouflage", 1], ["palissade", 1], ["tour-de-guet", 1],
-  ["infirmerie", 1], ["dortoir", 1], ["bouilleur-solaire", 1], ["barricades", 2], ["panneaux-solaires", 2], ["batteries", 2],
+  ["infirmerie", 1], ["dortoir", 1], ["bouilleur-solaire", 1], ["latrines-seches", 1], ["barricades", 2], ["panneaux-solaires", 2],
+  ["batteries", 2],
   ["citerne-de-pluie", 3], ["camouflage", 2], ["galerie-souterraine", 2], ["fosse-et-pieges", 1],
   ["ruches", 1], ["verger", 1], ["serre", 1], ["potager", 3], ["enclos-a-cabris", 2], ["basse-cour", 2], ["mur", 1],
   ["bassin-a-tilapias", 1], ["poste-radio", 1], ["galerie-souterraine", 3], ["tunnel-de-lave-amenage", 2], ["camouflage", 3],
@@ -188,6 +194,8 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
   let actionsDuJour = [];
   let derniereAvance = null;
   const vivants = () => survivants.filter(s => L.peutAgir(s.system) && etat.groupe.membres.includes(s.id));
+  // Lot « corps » : le groupe porte-t-il de quoi bivouaquer (une tente, une natte) ?
+  const bivouac = () => vivants().some(s => (s.system.equipement ?? []).some(e => idx.equipements.get(e)?.bivouac));
   const systemes = () => survivants.map(s => s.system);
 
   // ---- le site.
@@ -225,7 +233,8 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       if (restants <= 0 || !L.peutAgir(s.system)) break;
       const niveau = Math.max(L.competence(s.system, "combat").niveau, L.competence(s.system, "tir").niveau);
       const malus = L.malusEtat(s.system).total;
-      const r = L.resoudreCombat({ niveau, livides: Math.min(restants, 4), creature, malus, hasard: h });
+      const parade = L.paradeDe((s.system.equipement ?? []).map(e => idx.equipements.get(e)));   // lot « corps » : le bouclier
+      const r = L.resoudreCombat({ niveau, livides: Math.min(restants, 4), creature, malus, parade, hasard: h });
       restants -= r.neutralises;
       if (r.blessures > 0) {
         const b = L.blesser(s.system, r.blessures, { morsure: r.morsures > 0 });
@@ -387,16 +396,20 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         if (!def || (Number(inst?.niveau) || 0) !== niveau - 1) continue;
         // Des bêtes à nourrir (chiens de garde) : seulement sur un surplus de nourriture produite.
         if (installationNourrie(def, niveau) && !((abri.bilan?.net?.nourriture ?? -1) >= 1)) continue;
-        const v = L.peutConstruire(def, niveau, { stocks: abri.system.stocks, installations: abri.installations }, site, groupe);
+        // Lot « corps » : une installation d'hygiène qui prend de l'eau (lavoir, douche), seulement sur un surplus d'eau.
+        if (Number(L.niveauDe(def, niveau)?.effets?.hygiene) > 0 && Number(L.niveauDe(def, niveau)?.effets?.consommation?.eau) > 0
+          && !((abri.bilan?.net?.eau ?? -1) >= Number(L.niveauDe(def, niveau).effets.consommation.eau) + 1)) continue;
+        const v = L.peutConstruire(def, niveau, { stocks: abri.system.stocks, installations: abri.installations, nature: abri.system.nature }, site, groupe);
         if (v.ok) {
-          const o = L.ouvrirChantier(def, { stocks: abri.system.stocks, installations: abri.installations }, site, groupe);
+          const o = L.ouvrirChantier(def, { stocks: abri.system.stocks, installations: abri.installations, nature: abri.system.nature }, site, groupe);
           if (!o.ok) continue;
           abri.system.stocks = o.stocks;
+          if (o.nature) abri.system.nature = o.nature;   // lot « corps » : les matières de l'île prises sur le bois des alentours
           abri.installations = inst ? abri.installations.map(i => (i.cle === cle ? o.instance : i)) : [...abri.installations, o.instance];
           noter(jour, `ouvre le chantier ${cle} niveau ${niveau} (${o.instance.chantier.requis} quarts-personne)`);
           break;
         }
-        if (!besoin && v.motifs.length === 1 && v.motifs[0].cle === "manque") besoin = v.motifs[0].params.manque;
+        if (!besoin && v.motifs.length === 1 && v.motifs[0].cle === "manque" && !(L.COUT_ILE in v.motifs[0].params.manque)) besoin = v.motifs[0].params.manque;
       }
     }
     return besoin;
@@ -426,6 +439,21 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       abri.installations = abri.installations.map(i => (i.cle === abimee.cle ? r.instance : i));
       abri.system.stocks = L.ajouterStocks(abri.system.stocks, { materiaux: -r.cout.materiaux });
     }
+  };
+
+  // ---- lot « corps » : creuser des feuillées (nomade, mixte), comme un groupe raisonnable qui reste plus d'une nuit.
+  const creuserFeuillees = (s, jour) => {
+    const def = idx.installations.get("feuillees");
+    if (!def || abri.installations.some(i => Number(i.niveau) >= 1 && idx.installations.get(i.cle)?.role === "latrines")) return false;
+    const o = L.ouvrirChantier(def, { stocks: abri.system.stocks, installations: abri.installations, nature: abri.system.nature }, idx.sites.get(abri.system.site), { savoirs, plans: etat.groupe.plans });
+    if (!o.ok) return false;
+    abri.system.stocks = o.stocks;
+    if (o.nature) abri.system.nature = o.nature;
+    const r = L.avancerChantier(o.instance, def, { quarts: 2, bras: 1, jour });
+    abri.installations = [...abri.installations.filter(i => i.cle !== "feuillees"), r.instance];
+    const a = L.assigner(s.system, "chantier", jour); if (a.ok) s.system = a.system;
+    stats.feuillees = (stats.feuillees ?? 0) + 1;
+    return true;
   };
 
   // ---- fouilles.
@@ -569,7 +597,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
   const jourDeRoute = jour => {
     const mange = (porte.nourriture ?? 0) >= vivants().length;
     if (mange) porte = L.ajouterStocks(porte, { nourriture: -vivants().length });
-    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri: null, options: { mangeHorsAbri: mange, corpsTraites: ids } });
+    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri: null, options: { mangeHorsAbri: mange, corpsTraites: ids, bivouac: bivouac() } });
     appliquer(r);
     if (!etat.groupe.enRoute) {
       const cible = cibleSite && idx.sites.get(cibleSite)?.region === etat.groupe.region ? cibleSite : choisirSite(enracine ? "enracine" : "nomade", [etat.groupe.region], monde.regions[etat.groupe.region]?.sitesVisites ?? [])?.site;
@@ -581,7 +609,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
   // Un jour de déménagement (départ, ou changement de site dans la région) : le temps passe aussi, sans travail.
   const jourSansTravail = (jour, h) => {
     if (etat.groupe.enRoute) return jourDeRoute(jour);
-    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri, options: { corpsTraites: ids } });
+    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri, options: { corpsTraites: ids, bivouac: bivouac() } });
     appliquer(r);
     if (abri) resoudreMenaces(r.menaces, jour + 1, h);
     finDeJour(jour + 1);
@@ -716,6 +744,8 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     } else {
       // Nomade : tout le monde fouille, sauf la garde ; ciblé si l'eau ou la nourriture manque ; un cueilleur aux alentours.
       let dispo = libres();
+      // Lot « corps » : à deux et plus, un abri sans latrines : l'un d'eux creuse des feuillées (une demi-journée, du bois des alentours).
+      if (dispo.length > 1 && creuserFeuillees(dispo[0], jour)) dispo = dispo.slice(1);
       const cible = manqueEau ? "eau" : manqueNourriture ? "nourriture" : null;
       if (cible && dispo.length > 1) {
         const k = Math.ceil(dispo.length / 2);
@@ -769,7 +799,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     feterSiFete(jour);
 
     // La journée passe.
-    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri, options: { stabilises, corpsTraites: ids, veille: vivants().filter(s => s.system.tache === "garde").map(s => s.id) } });
+    const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri, options: { stabilises, corpsTraites: ids, veille: vivants().filter(s => s.system.tache === "garde").map(s => s.id), bivouac: bivouac() } });
     appliquer(r);
     if (abri) {
       abri.bilan = r.bilan;

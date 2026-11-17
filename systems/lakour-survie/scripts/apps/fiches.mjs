@@ -26,6 +26,13 @@ export const nettoyerHTML = html => {
 export const enrichir = (html, doc) => foundry.applications.ux.TextEditor.implementation.enrichHTML(nettoyerHTML(html), { relativeTo: doc, secrets: doc.isOwner });
 const contenu = () => game.lakourSurvie?.contenu?.() ?? {};
 const defDe = (famille, cle) => L.indexer(contenu())[famille]?.get(cle) ?? null;
+// Les savoirs que le groupe met au chevet (lot « corps ») : ceux des membres vivants (leurs savoirs écrits sur la fiche), et ceux
+// du survivant lui-même. Hors Foundry (essais), ceux de la fiche seule.
+function savoirsVus(etat, s) {
+  const membres = (etat.groupe?.membres ?? []).map(id => globalThis.game?.actors?.get?.(id)).filter(a => a?.type === "survivant" && L.peutAgir(a.system));
+  const objets = a => [...(a.items?.contents ?? [])].filter(i => i.type === "savoir").map(i => i.system?.cle).filter(Boolean);
+  return [...new Set([...(s.savoirs ?? []), ...membres.flatMap(a => [...(a.system?.savoirs ?? []), ...objets(a)])])];
+}
 export const BLESSURES = ["Indemne", "Egratigne", "Blesse", "Grievement", "Mourant"];
 
 // ------------------------------------------------------------------ survivant (contexte pur, éprouvé hors Foundry)
@@ -51,10 +58,22 @@ export function contexteSurvivant(a, { gm = false, proprietaire = false, incubat
     { cle: "faim", libelle: t("LAKOUR_SURVIE.Etat.faim"), valeur: Number(s.faim) || 0, max: 5, texte: t("LAKOUR_SURVIE.Fiche.Jours", { n: s.faim ?? 0 }), mauvais: (s.faim ?? 0) >= 2 },
     { cle: "soif", libelle: t("LAKOUR_SURVIE.Etat.soif"), valeur: Number(s.soif) || 0, max: 6, texte: t("LAKOUR_SURVIE.Fiche.Quarts", { n: s.soif ?? 0 }), mauvais: (s.soif ?? 0) >= 4 }
   ].map(e => ({ ...e, borne: ["faim", "soif"].includes(e.cle) ? 99 : e.max, pct: Math.round(Math.min(1, e.valeur / e.max) * 100) }));
-  const afflictions = (s.afflictions ?? []).filter(x => gm || x.stade !== "incubation").map(x => {
+  // Lot « corps » : le joueur voit des symptômes ; le nom d'un mal, seulement si le groupe le reconnaît (savoirs). Le MJ voit tout.
+  const etatPartie = lireEtat();
+  const vu = L.ceQueVoientLesJoueurs(s, c, { savoirs: savoirsVus(etatPartie, s), grisConnu: Boolean(etatPartie.groupe?.grisConnu), quart: Number(etatPartie.horloge?.quart) || 0 });
+  const signes = cles => L.nomsSymptomes(c, cles).join(", ");
+  const afflictions = gm ? (s.afflictions ?? []).map(x => {
     const def = defDe("afflictions", x.cle);
-    return { cle: x.cle, nom: def?.nom ?? x.cle, stade: t(`LAKOUR_SURVIE.Afflictions.${x.stade}`), reste: x.reste, malus: x.malus, aide: sansBalises(def?.description ?? ""), traitee: x.traitee };
+    return { cle: x.cle, nom: def?.nom ?? x.cle, stade: t(`LAKOUR_SURVIE.Afflictions.${x.stade}`), reste: x.reste, malus: x.malus, aide: sansBalises(def?.description ?? ""), traitee: x.traitee,
+      signes: signes(L.symptomesAffliction(def, x.stade)) };
+  }) : vu.maux.map(m => {
+    const def = m.cle ? defDe("afflictions", m.cle) : null;
+    const x = (s.afflictions ?? []).find(y => y.cle === m.cle) ?? {};
+    return { cle: m.cle, nom: m.nom || t("LAKOUR_SURVIE.Corps.MalInconnu"), stade: t(`LAKOUR_SURVIE.Afflictions.${m.stade}`), reste: m.reconnue ? x.reste : null, malus: x.malus,
+      aide: def ? sansBalises(def.description ?? "") : "", traitee: Boolean(x.traitee), signes: signes(m.symptomes) };
   });
+  const veille = L.veilleDe(s);
+  const sommeil = { etat: L.etatSommeil(veille), texte: t(`LAKOUR_SURVIE.Corps.Sommeil.${L.etatSommeil(veille)}`), mauvais: veille >= L.SOMMEIL.epuise, veille };
   const traits = (s.traits ?? []).map(k => { const d = defDe("traits", k); return { cle: k, nom: d?.nom ?? k, aide: sansBalises(d?.description ?? "") }; });
   const enfance = defDe("enfances", s.enfance), passe = defDe("passes", s.passe);
   const objets = type => [...(a.items?.contents ?? [])].filter(i => i.type === type).map(i => ({ id: i.id, nom: i.name, img: i.img,
@@ -63,7 +82,11 @@ export function contexteSurvivant(a, { gm = false, proprietaire = false, incubat
   return {
     acteur: { id: a.id, uuid: a.uuid, name: a.name, img: a.img }, system: s, gm, proprietaire, editable: gm || proprietaire,
     competences, etat, malus: malus.total, craque: malus.craque,
-    infection: s.infection?.atteint ? { stade: s.infection.stade, pct: Math.round(s.infection.stade / 6 * 100) } : null,
+    // Le Gris : le MJ voit le stade ; le joueur, ses signes (nommés s'il le reconnaît), et rien pendant que la morsure pansée se tait.
+    infection: gm && s.infection?.atteint ? { stade: s.infection.stade, pct: Math.round(s.infection.stade / 6 * 100) } : null,
+    gris: !gm && vu.gris ? { signes: signes(vu.gris.symptomes), nom: vu.gris.reconnu ? t("LAKOUR_SURVIE.Corps.Gris") : t("LAKOUR_SURVIE.Corps.Fievre") } : null,
+    morsure: vu.morsure ? t("LAKOUR_SURVIE.Corps.Morsure.Pansee") : "",
+    sommeil,
     // Lot « sens » : l'habitude du noir (nuits passées debout sans lumière, palier).
     noir: (() => { const n = L.noirDe(s); return n.nuits > 0 ? { nuits: n.nuits, palier: t(`LAKOUR_SURVIE.Percevoir.Accoutumance.Paliers.${L.palierNoir(n.nuits)}`) } : null; })(),
     afflictions, traits, incapacites: [...incap].map(k => ({ cle: k, texte: t(`LAKOUR_SURVIE.Incapacites.${k}`) })),
@@ -199,7 +222,9 @@ export function contexteAbri(a) {
     region: L.regionDe(contenu(), s.region)?.nom ?? s.region, site: site ? { nom: site.nom, atouts: site.atouts ?? [], defauts: site.defauts ?? [] } : null,
     stocks, installations, nature, sol: Math.round((Number(s.sol) || 0) * 100) / 100, bruit: s.bruit, degats: s.degats,
     bilan: b ? { defense: b.defense, discretion: b.discretion, visibilite: b.visibilite, capacite: b.capacite, personnes: b.personnes, autonome: Boolean(etat.autonome),
-      joursAutonomes: etat.joursAutonomes ?? 0, savoirs: b.savoirs ?? null, surpeuplement: b.surpeuplement ? t("LAKOUR_SURVIE.Abri.Surpeuplement", { n: b.surpeuplement }) : "", production: Object.entries(b.production ?? {}).map(([r, q]) => `${libelleRessource(r)} ${q}`).join(", ") } : null,
+      joursAutonomes: etat.joursAutonomes ?? 0, savoirs: b.savoirs ?? null, surpeuplement: b.surpeuplement ? t("LAKOUR_SURVIE.Abri.Surpeuplement", { n: b.surpeuplement }) : "",
+      // Lot « corps » : l'hygiène (0 à 3) et l'insalubrité (propre, ordinaire, sale, insalubre).
+      hygiene: Number(b.hygiene) || 0, insalubrite: t(`LAKOUR_SURVIE.Corps.Insalubrite.${L.ETATS_INSALUBRITE[Number(b.insalubrite) || 0] ?? "propre"}`), sale: Number(b.insalubrite) >= 2, production: Object.entries(b.production ?? {}).map(([r, q]) => `${libelleRessource(r)} ${q}`).join(", ") } : null,
     grille, taches: Object.keys(L.TACHES).map(x => ({ cle: x, libelle: libelleTache(x) })), gm: game.user.isGM,
     // La liste à la porte (ce qui manque vraiment, d'après les stocks) et ceux qui attendent devant (ce que le groupe voit d'eux).
     porte: courant ? porteAbri(etat, s, b) : null,

@@ -71,7 +71,7 @@ export function contexteTableau(onglet = "groupe") {
     const s = aPlat(a.system);
     return {
       id: a.id, nom: a.name, img: a.img, statut: t(`LAKOUR_SURVIE.Statuts.${s.statut || "joueur"}`), vivant: s.vivant !== false && !s.livide,
-      etat: t("LAKOUR_SURVIE.Tableau.EtatLigne", { b: s.blessures ?? 0, f: s.fatigue ?? 0, m: s.moral ?? 4 }), infecte: Boolean(s.infection?.atteint),
+      etat: t("LAKOUR_SURVIE.Tableau.EtatLigne", { b: s.blessures ?? 0, f: s.fatigue ?? 0, m: s.moral ?? 4 }), infecte: Boolean(game.user?.isGM && s.infection?.atteint),   // lot « corps » : le Gris au MJ seul
       peutChanger: game.user.isGM || a.isOwner,
       cases: Object.keys(L.TACHES).map(x => ({ tache: x, choisie: s.tache === x, possible: L.peutFaire(s, x) }))
     };

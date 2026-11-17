@@ -28,7 +28,39 @@
       "duree": 3
     },
     "declencheur": "eau",
-    "risque": 0.01
+    "risque": 0.01,
+    "symptomes": {
+      "active": [
+        "nausee",
+        "vomissements",
+        "diarrhee",
+        "crampes-de-ventre"
+      ],
+      "aggravee": [
+        "vomissements",
+        "diarrhee",
+        "crampes-de-ventre",
+        "soif-intense",
+        "faiblesse"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": false
+      },
+      "aggravee": {
+        "moral": 1,
+        "insomnie": false
+      }
+    },
+    "evidente": false,
+    "diagnostic": [
+      "premiers-secours-avances",
+      "zerbaz"
+    ],
+    "insalubrite": 6,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,

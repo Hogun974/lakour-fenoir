@@ -20,8 +20,13 @@ export function contenuInfobulle(acteur) {
       etats.push({ cle: `blessures-${s.blessures ?? 0}`, texte: t(`LAKOUR_SURVIE.Blessures.${BLESSURES[s.blessures ?? 0] ?? "Indemne"}`) });
       if ((s.fatigue ?? 0) >= 3) etats.push({ cle: "fatigue", texte: t("LAKOUR_SURVIE.Infobulle.Fatigue", { n: s.fatigue }) });
       if ((s.moral ?? 4) <= 1) etats.push({ cle: "moral", texte: t("LAKOUR_SURVIE.Infobulle.Moral", { n: s.moral }) });
-      if (s.infection?.atteint) etats.push({ cle: "infection", texte: t("LAKOUR_SURVIE.Infobulle.Infection", { n: s.infection.stade }) });
-      for (const a of (s.afflictions ?? []).filter(x => x.stade === "active" || x.stade === "aggravee")) etats.push({ cle: "affliction", texte: nomAffliction(a.cle) });
+      // Lot « corps » : le Gris et le nom des maux au MJ seul ; les joueurs voient « malade » (les signes sont sur la fiche).
+      const mj = Boolean(globalThis.game?.user?.isGM);
+      if (mj && s.infection?.atteint) etats.push({ cle: "infection", texte: t("LAKOUR_SURVIE.Infobulle.Infection", { n: s.infection.stade }) });
+      const maux = (s.afflictions ?? []).filter(x => x.stade === "active" || x.stade === "aggravee");
+      if (mj) for (const a of maux) etats.push({ cle: "affliction", texte: nomAffliction(a.cle) });
+      else if (maux.length || (s.infection?.atteint && Number(s.infection.stade) >= 1)) etats.push({ cle: "affliction", texte: t("LAKOUR_SURVIE.Corps.Malade") });
+      if (Number(s.veille) >= 4) etats.push({ cle: "sommeil", texte: t(`LAKOUR_SURVIE.Corps.Sommeil.${Number(s.veille) >= 7 ? "terrasse" : "epuise"}`) });
     }
     return { nom: acteur.name, etats, ligne: s.tache ? `${t("LAKOUR_SURVIE.Fiche.Tache")} : ${libelleTache(s.tache)}` : "" };
   }

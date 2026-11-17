@@ -1,4 +1,15 @@
 {
+  "installations/09EGWsR6zt4wCUqZ": {
+    "_nom": "Fosse maçonnée",
+    "name": {
+      "fr": "Fosse maçonnée",
+      "en": "Cesspit"
+    },
+    "system.description": {
+      "fr": "<p>Une fosse en dur, enterrée, avec sa chasse et ses tuyaux, comme celles des cases d'avant : on n'y pense plus, tant qu'il y a de l'eau pour la chasse. Sans eau, on retourne aux latrines sèches ou aux feuillées.</p>",
+      "en": "<p>A solid, buried pit, with its flush and its pipes, like those of the old houses: you stop thinking about it, as long as there is water for the flush. Without water, you go back to the dry latrines or the trench.</p>"
+    }
+  },
   "installations/0TYc9N3Qmf83Z5wX": {
     "_nom": "Séchoir et fumoir",
     "name": {
@@ -173,6 +184,17 @@
     "system.description": {
       "fr": "<p>Bananiers et papayers d'abord, qui donnent dans l'année ; puis manguiers, letchis, agrumes, fruits à pain, qu'il faut des années pour voir porter, sauf si l'on s'installe là où quelqu'un les a plantés avant vous.</p>",
       "en": "<p>Banana and papaya trees first, which bear within the year; then mango, lychee, citrus, breadfruit, which take years to bear, unless you settle where someone planted them before you.</p>"
+    }
+  },
+  "installations/KFvjhfTm3pdFH5ZD": {
+    "_nom": "Feuillées",
+    "name": {
+      "fr": "Feuillées",
+      "en": "Latrine trench"
+    },
+    "system.description": {
+      "fr": "<p>Une tranchée creusée à l'écart et sous le vent, un paravent de feuilles de vacoa, un seau de cendre et une pelle : une poignée de cendre après chaque passage, et l'on rebouche quand c'est plein, un peu plus loin. Ce que faisaient les anciens dans les écarts, et les soldats partout.</p>",
+      "en": "<p>A trench dug out of the way and downwind, a screen of vacoa leaves, a bucket of ash and a shovel: a handful of ash after each visit, and when it's full you fill it in and dig a little further on. What the old folk did in the remote hamlets, and soldiers everywhere.</p>"
     }
   },
   "installations/L6yjHk9jweGRmc2Y": {
@@ -450,6 +472,17 @@
       "en": "<p>Lidded drums, jars, airtight bags, shelves off the ground, rat traps: the humid heat no longer rots the stores.</p>"
     }
   },
+  "installations/k0aNXe8ZUxoKoQWM": {
+    "_nom": "Douche",
+    "name": {
+      "fr": "Douche",
+      "en": "Shower"
+    },
+    "system.description": {
+      "fr": "<p>Un fût en hauteur, un tuyau, une pomme percée, un paravent de tôle et un caillebotis : se laver chaque soir, laver une plaie à grande eau. Avec un chauffe-eau, elle est chaude.</p>",
+      "en": "<p>A drum up high, a hose, a perforated rose, a sheet-metal screen and a duckboard: wash every evening, rinse a wound with plenty of water. With a water heater, it's hot.</p>"
+    }
+  },
   "installations/kszenIroGrHUV0CA": {
     "_nom": "Tour de guet",
     "name": {
@@ -459,6 +492,28 @@
     "system.description": {
       "fr": "<p>Une plateforme sur pilotis, un toit, un garde-corps, une échelle qu'on remonte. De là-haut, la garde voit venir de loin, et voit aussi les fumées des voisins.</p>",
       "en": "<p>A platform on stilts, a roof, a railing, a ladder you pull up. From up there the watch sees things coming from afar, and sees the neighbours' smoke too.</p>"
+    }
+  },
+  "installations/lYUu4jQZpZz4FtF5": {
+    "_nom": "Latrines sèches",
+    "name": {
+      "fr": "Latrines sèches",
+      "en": "Dry latrines"
+    },
+    "system.description": {
+      "fr": "<p>Une cabane de planches refendues et de bambou, un siège, un fût dessous et de la cendre : rien ne va dans l'eau, et le fût plein, laissé à mûrir une saison, finit en compost pour le jardin.</p>",
+      "en": "<p>A hut of split planks and bamboo, a seat, a drum underneath and ash: nothing goes into the water, and the full drum, left to ripen for a season, ends up as compost for the garden.</p>"
+    }
+  },
+  "installations/n59ATbBBwwblZoOm": {
+    "_nom": "Lavoir",
+    "name": {
+      "fr": "Lavoir",
+      "en": "Wash-house"
+    },
+    "system.description": {
+      "fr": "<p>Une pierre à laver penchée sur un bassin de galets jointoyés d'argile, au bord de l'eau ou sous la citerne : on y lave le linge, on s'y lave, on y parle. Le linge bouilli à la cendre ne garde pas la gale.</p>",
+      "en": "<p>A washing stone leaning over a basin of pebbles set in clay, by the water or under the cistern: you wash the laundry there, you wash yourself there, you talk there. Linen boiled with ash doesn't keep scabies.</p>"
     }
   },
   "installations/r8pqEpTGmoECFVA1": {

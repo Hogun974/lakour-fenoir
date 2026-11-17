@@ -9899,6 +9899,216 @@
       "en": "Wood burns well"
     }
   },
+  "registre/symptomes/abattement": {
+    "_nom": "Abattement",
+    "nom": {
+      "fr": "Abattement",
+      "en": "Listlessness"
+    }
+  },
+  "registre/symptomes/cauchemars": {
+    "_nom": "Cauchemars",
+    "nom": {
+      "fr": "Cauchemars",
+      "en": "Nightmares"
+    }
+  },
+  "registre/symptomes/cloques": {
+    "_nom": "Cloques",
+    "nom": {
+      "fr": "Cloques",
+      "en": "Blisters"
+    }
+  },
+  "registre/symptomes/confusion": {
+    "_nom": "Confusion",
+    "nom": {
+      "fr": "Confusion",
+      "en": "Confusion"
+    }
+  },
+  "registre/symptomes/courbatures": {
+    "_nom": "Courbatures",
+    "nom": {
+      "fr": "Courbatures",
+      "en": "Aching all over"
+    }
+  },
+  "registre/symptomes/crampes-de-ventre": {
+    "_nom": "Crampes au ventre",
+    "nom": {
+      "fr": "Crampes au ventre",
+      "en": "Stomach cramps"
+    }
+  },
+  "registre/symptomes/demangeaisons": {
+    "_nom": "Démangeaisons",
+    "nom": {
+      "fr": "Démangeaisons",
+      "en": "Itching"
+    }
+  },
+  "registre/symptomes/diarrhee": {
+    "_nom": "Ventre qui se vide",
+    "nom": {
+      "fr": "Ventre qui se vide",
+      "en": "Bowels running"
+    }
+  },
+  "registre/symptomes/douleur-vive": {
+    "_nom": "Douleur vive",
+    "nom": {
+      "fr": "Douleur vive",
+      "en": "Sharp pain"
+    }
+  },
+  "registre/symptomes/douleurs-articulaires": {
+    "_nom": "Douleurs dans les articulations",
+    "nom": {
+      "fr": "Douleurs dans les articulations",
+      "en": "Pain in the joints"
+    }
+  },
+  "registre/symptomes/enflure": {
+    "_nom": "Enflure",
+    "nom": {
+      "fr": "Enflure",
+      "en": "Swelling"
+    }
+  },
+  "registre/symptomes/epuisement": {
+    "_nom": "Épuisement",
+    "nom": {
+      "fr": "Épuisement",
+      "en": "Exhaustion"
+    }
+  },
+  "registre/symptomes/eruption": {
+    "_nom": "Boutons sur la peau",
+    "nom": {
+      "fr": "Boutons sur la peau",
+      "en": "Spots on the skin"
+    }
+  },
+  "registre/symptomes/faiblesse": {
+    "_nom": "Faiblesse",
+    "nom": {
+      "fr": "Faiblesse",
+      "en": "Weakness"
+    }
+  },
+  "registre/symptomes/fievre": {
+    "_nom": "Fièvre",
+    "nom": {
+      "fr": "Fièvre",
+      "en": "Fever"
+    }
+  },
+  "registre/symptomes/frissons": {
+    "_nom": "Frissons",
+    "nom": {
+      "fr": "Frissons",
+      "en": "Shivering"
+    }
+  },
+  "registre/symptomes/insomnie": {
+    "_nom": "Ne dort plus",
+    "nom": {
+      "fr": "Ne dort plus",
+      "en": "Can't sleep"
+    }
+  },
+  "registre/symptomes/jaunisse": {
+    "_nom": "Peau et yeux jaunes",
+    "nom": {
+      "fr": "Peau et yeux jaunes",
+      "en": "Yellow skin and eyes"
+    }
+  },
+  "registre/symptomes/maux-de-tete": {
+    "_nom": "Maux de tête",
+    "nom": {
+      "fr": "Maux de tête",
+      "en": "Headache"
+    }
+  },
+  "registre/symptomes/membre-inutilisable": {
+    "_nom": "Un membre qui ne sert plus",
+    "nom": {
+      "fr": "Un membre qui ne sert plus",
+      "en": "A limb that won't work"
+    }
+  },
+  "registre/symptomes/nausee": {
+    "_nom": "Nausée",
+    "nom": {
+      "fr": "Nausée",
+      "en": "Nausea"
+    }
+  },
+  "registre/symptomes/peau-grise": {
+    "_nom": "Peau qui grise",
+    "nom": {
+      "fr": "Peau qui grise",
+      "en": "Skin turning grey"
+    }
+  },
+  "registre/symptomes/plaie-purulente": {
+    "_nom": "Plaie qui suppure",
+    "nom": {
+      "fr": "Plaie qui suppure",
+      "en": "A festering wound"
+    }
+  },
+  "registre/symptomes/plaie-rouge": {
+    "_nom": "Plaie rouge et chaude",
+    "nom": {
+      "fr": "Plaie rouge et chaude",
+      "en": "A red, hot wound"
+    }
+  },
+  "registre/symptomes/raideur": {
+    "_nom": "Mâchoire et nuque raides",
+    "nom": {
+      "fr": "Mâchoire et nuque raides",
+      "en": "Stiff jaw and neck"
+    }
+  },
+  "registre/symptomes/saignements": {
+    "_nom": "Saignements des gencives et du nez",
+    "nom": {
+      "fr": "Saignements des gencives et du nez",
+      "en": "Bleeding gums and nose"
+    }
+  },
+  "registre/symptomes/soif-intense": {
+    "_nom": "Une soif qui ne passe pas",
+    "nom": {
+      "fr": "Une soif qui ne passe pas",
+      "en": "A thirst that won't go"
+    }
+  },
+  "registre/symptomes/spasmes": {
+    "_nom": "Spasmes",
+    "nom": {
+      "fr": "Spasmes",
+      "en": "Spasms"
+    }
+  },
+  "registre/symptomes/vertiges": {
+    "_nom": "Vertiges",
+    "nom": {
+      "fr": "Vertiges",
+      "en": "Dizziness"
+    }
+  },
+  "registre/symptomes/vomissements": {
+    "_nom": "Vomissements",
+    "nom": {
+      "fr": "Vomissements",
+      "en": "Vomiting"
+    }
+  },
   "registre/traits/ame-de-pelerin": {
     "_nom": "Âme de pèlerin",
     "nom": {

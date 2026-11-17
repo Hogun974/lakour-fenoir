@@ -123,7 +123,7 @@
         "level": 1
       },
       "text": {
-        "content": "<ul><li><strong>Blessures</strong> (0 à 4) : indemne, égratigné, blessé (−1 dé), grièvement (−2 dés), <strong>mourant</strong> : un test de soins difficile dans le quart, sinon la mort.</li><li><strong>Fatigue</strong> (0 à 5) : −1 dé à 3 et 4, −2 à 5. Une nuit de repos à l'abri : −2 ; un quart de repos : −1.</li><li><strong>Moral</strong> (0 à 5) : à 1, −1 dé ; à 0, le personnage <strong>craque</strong> (refuse, fuit, s'effondre).</li><li><strong>Faim et soif</strong> : au-delà de 4 quarts sans boire, +1 fatigue par quart ; au-delà de 2 jours sans manger, +1 fatigue et −1 moral par jour.</li><li><strong>Infection</strong> : une <strong>morsure</strong> ou une griffure profonde d'un Livide demande un test de soins <strong>extrême</strong> dans le quart (laver, cauteriser, parfois amputer), <strong>difficile</strong> si le soignant y met un médicament (+1 dé), une décoction de zerbaz (une plante, +1 dé), s'il porte une trousse de secours ou si l'abri a une infirmerie. Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. <strong>Aucun remède connu.</strong> <strong>Seul celui qui porte le Gris se relève</strong> : s'il meurt d'autre chose avant (blessures, soif), il se relève quand même au quart suivant, sauf si l'on s'occupe de son corps à temps ; un mort sans le Gris reste mort.</li><li><strong>Maladies et blessures qui durent</strong> : dengue, chikungunya, leptospirose, gastro, plaies infectées, fractures… Une eau traitée, des moustiquaires et une infirmerie en réduisent le risque.</li></ul>",
+        "content": "<ul><li><strong>Blessures</strong> (0 à 4) : indemne, égratigné, blessé (−1 dé), grièvement (−2 dés), <strong>mourant</strong> : un test de soins difficile dans le quart, sinon la mort.</li><li><strong>Fatigue</strong> (0 à 5) : −1 dé à 3 et 4, −2 à 5. Une nuit de repos à l'abri : −2 ; un quart de repos : −1.</li><li><strong>Moral</strong> (0 à 5) : à 1, −1 dé ; à 0, le personnage <strong>craque</strong> (refuse, fuit, s'effondre).</li><li><strong>Faim et soif</strong> : au-delà de 4 quarts sans boire, +1 fatigue par quart ; au-delà de 2 jours sans manger, +1 fatigue et −1 moral par jour. La faim pèse sur la vie, la soif sur l'endurance : elles épuisent, elles ne tuent pas d'elles-mêmes.</li><li><strong>Sommeil</strong> (à part de la fatigue) : une nuit blanche, <strong>épuisé</strong> (−1 dé) ; au bout de deux nuits sans dormir, <strong>terrassé</strong> (−2 dés), on s'endort où l'on est. Fatigue et sommeil ensemble : au plus −2 dés. Une nuit à l'abri remet d'aplomb (page « Dormir, se laver, tomber »).</li><li><strong>Infection</strong> : une <strong>morsure</strong> ou une griffure profonde d'un Livide demande un test de soins <strong>extrême</strong> dans le quart (laver, cauteriser, parfois amputer), <strong>difficile</strong> si le soignant y met un médicament (+1 dé), une décoction de zerbaz (une plante, +1 dé), s'il porte une trousse de secours ou si l'abri a une infirmerie. Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. <strong>Aucun remède connu.</strong> <strong>Seul celui qui porte le Gris se relève</strong> : s'il meurt d'autre chose avant (blessures, soif), il se relève quand même au quart suivant, sauf si l'on s'occupe de son corps à temps ; un mort sans le Gris reste mort.</li><li><strong>Maladies et blessures qui durent</strong> : dengue, chikungunya, leptospirose, gastro, plaies infectées, fractures… Une eau traitée, des moustiquaires et une infirmerie en réduisent le risque.</li></ul>",
         "format": 1
       },
       "ownership": {
@@ -481,11 +481,34 @@
       }
     },
     {
+      "_id": "cXLeSO2UDJHk9LrU",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.cXLeSO2UDJHk9LrU",
+      "name": "Dormir, se laver, tomber",
+      "type": "text",
+      "sort": 2100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le corps tient, ou lâche.</p><ul><li><strong>Dormir.</strong> Le manque de sommeil n'est pas la fatigue. Une nuit blanche coûte un dé ; deux nuits sans dormir, on s'endort où l'on est. Une nuit à l'abri remet d'aplomb ; une nuit au sol ne rattrape pas une journée ; de quoi bivouaquer (une tente, une natte) change tout.</li><li><strong>Bivouaquer.</strong> Avant de dormir dehors, regardez l'endroit : sûr, exposé (une route, du bâti, à découvert, un feu), dangereux (une pente raide, le lit d'une ravine, des Livides). Dans un endroit dangereux, on ne dort pas vraiment.</li><li><strong>Se laver.</strong> Un abri où vivent des gens se salit, et la saleté rend malade. Des latrines, même des feuillées, une douche ou un lavoir, et le camp reste sain. La pluie lave tout.</li><li><strong>Être malade.</strong> On voit des signes : la fièvre, les frissons, une plaie qui rougit. Le nom du mal, seul celui qui sait soigner le connaît.</li><li><strong>Une morsure.</strong> On la soigne tout de suite. Ensuite, on attend : personne ne sait si le soin a pris, avant que la fièvre vienne, ou ne vienne pas.</li><li><strong>Tomber.</strong> Dès 3 m, on se blesse ; à 12 m, on se tue presque ; de l'eau profonde amortit. Un Livide qui tombe de haut rampe.</li><li><strong>Le bouclier.</strong> Il pare une touche de Livide sur trois : une touche parée ne mord pas.</li><li><strong>La faim et la soif</strong> épuisent ; elles ne tuent pas d'elles-mêmes. Ce qui tue, ce sont les blessures et le Gris.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-corps"
+        }
+      }
+    },
+    {
       "_id": "GsGWAAAIAkUufDjK",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 2100,
+      "sort": 2200,
       "title": {
         "show": true,
         "level": 1

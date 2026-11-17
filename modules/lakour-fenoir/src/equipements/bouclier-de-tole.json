@@ -7,7 +7,7 @@
   "system": {
     "cle": "bouclier-de-tole",
     "categorie": "arme",
-    "description": "<p>Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir.</p>",
+    "description": "<p>Une plaque de tôle ondulée doublée de contreplaqué, avec deux poignées : on repousse, on se protège des morsures, on avance en ligne dans un couloir. Il pare une touche de Livide sur trois (5 ou 6 au dé) : une touche parée ne blesse pas et ne mord pas.</p>",
     "bonus": {
       "combat": 1
     },
@@ -17,7 +17,8 @@
     "bruit": 0,
     "transport": null,
     "effets": null,
-    "marque": ""
+    "marque": "",
+    "parade": 5
   },
   "effects": [],
   "folder": null,

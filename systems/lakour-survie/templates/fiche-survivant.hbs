@@ -39,11 +39,14 @@
           <span class="survie-jauge-barre gris"><span style="width: {{infection.pct}}%"></span></span>
         </div>
         {{/if}}
+        {{#if gris}}<p class="survie-avertissement survie-gris"><i class="fa-solid fa-temperature-high"></i> {{gris.nom}} : {{gris.signes}}</p>{{/if}}
+        {{#if morsure}}<p class="survie-morsure"><i class="fa-solid fa-kit-medical"></i> {{morsure}}</p>{{/if}}
+        <p class="survie-sommeil {{#if sommeil.mauvais}}mauvais{{/if}}" data-tooltip="{{localize 'LAKOUR_SURVIE.Corps.Sommeil.Aide'}}"><i class="fa-solid fa-bed"></i> {{sommeil.texte}}{{#if @root.gm}} <small>({{localize "LAKOUR_SURVIE.Corps.Sommeil.Quarts" n=sommeil.veille}})</small>{{/if}}</p>
         {{#if noir}}<p class="survie-noir" data-tooltip="{{localize 'LAKOUR_SURVIE.Percevoir.Accoutumance.Aide'}}"><i class="fa-solid fa-ear-listen"></i> {{localize "LAKOUR_SURVIE.Percevoir.Accoutumance.Fiche" palier=noir.palier n=noir.nuits}}</p>{{/if}}
         {{#if afflictions.length}}
         <h4>{{localize "LAKOUR_SURVIE.Fiche.Afflictions"}}</h4>
         <ul class="survie-puces">
-          {{#each afflictions}}<li class="survie-puce affliction {{#if traitee}}traitee{{/if}}" data-tooltip="{{aide}}">{{nom}} <small>({{stade}}, {{reste}} j)</small></li>{{/each}}
+          {{#each afflictions}}<li class="survie-puce affliction {{#if traitee}}traitee{{/if}}" data-tooltip="{{#if aide}}{{aide}}{{else}}{{signes}}{{/if}}">{{nom}} <small>({{stade}}{{#if reste}}, {{reste}} j{{/if}})</small>{{#if signes}} — <em>{{signes}}</em>{{/if}}</li>{{/each}}
         </ul>
         {{/if}}
 

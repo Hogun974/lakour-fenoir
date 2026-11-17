@@ -23,7 +23,26 @@
     },
     "aggravation": null,
     "declencheur": null,
-    "risque": 0.002
+    "risque": 0.002,
+    "symptomes": {
+      "active": [
+        "demangeaisons",
+        "insomnie"
+      ]
+    },
+    "effetsStade": {
+      "active": {
+        "moral": 0,
+        "insomnie": true
+      }
+    },
+    "evidente": false,
+    "diagnostic": [
+      "premiers-secours-avances",
+      "zerbaz"
+    ],
+    "insalubrite": 2,
+    "siBlesse": false
   },
   "effects": [],
   "folder": null,
