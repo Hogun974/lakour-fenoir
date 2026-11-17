@@ -13,7 +13,7 @@ import { jetonsNonPeints, listeJetons, verifierJetons } from "../outils/fabrique
 import { INDEX_JOUEURS, cheminJetonIa, cheminJetonJoueurIa } from "../modules/lakour-fenoir/contenu/jetons.mjs";
 import { DOCUMENTS, donnees } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { COMPETENCES, MODULE, sansBalises } from "../modules/lakour-fenoir/contenu/aides.mjs";
-import { FETES_FENOIR, declinaisons, fetesDuJour, IMAGES_FETES } from "../modules/lakour-fenoir/scripts/fetes.js";
+import { FETES_FENOIR, FETES_HORS_SOCLE, declinaisons, fetesDuJour, IMAGES_FETES, estHorsSocle } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { IDS_DECLINABLES, IDS_SUR_DEMANDE, fetesDuJour as calendrierDuSocle, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { BRAS } from "../modules/lakour-fenoir/contenu/installations.mjs";
 import { verifierModuleDeContenu } from "../modules/lakour-mj-ia/outils/contrat-contenu.mjs";
@@ -218,13 +218,14 @@ test("journaux : guides lisibles des joueurs, journaux du MJ cachés, une page p
   attendre(verifierDocuments(mutes), /visibilité 2 au lieu de 0/);
 });
 
-test("le livre de l'île : 10 à 14 pages, 30 000 à 45 000 caractères, carnets de survivants, liens vers ce que les joueurs peuvent lire, rien du secret du MJ", () => {
+test("le livre de l'île : 10 à 14 pages, 30 000 à 47 000 caractères, carnets de survivants, liens vers ce que les joueurs peuvent lire, rien du secret du MJ", () => {
   const livre = docs.find(x => x.pack === "guides" && x.doc.flags[MODULE].cle === "livre-de-l-ile").doc;
   assert.equal(livre.name, "Fénoir — Le livre de l'île");
   assert.ok(livre.pages.length >= 10 && livre.pages.length <= 14, `${livre.pages.length} pages`);
   const lisible = h => h.replace(/@UUID\[[^\]]+\]\{([^}]*)\}/g, "$1").replace(/<[^>]+>/g, "");
   const total = livre.pages.reduce((n, p) => n + lisible(p.text.content).length, 0);
-  assert.ok(total >= 30000 && total <= 45000, `${total} caractères`);
+  // 47 000 : la page « Les signes des murs » du lot 12 (2026-11-17).
+  assert.ok(total >= 30000 && total <= 47000, `${total} caractères`);
   const tout = livre.pages.map(p => p.text.content).join(" ");
   assert.ok((tout.match(/<blockquote>/g) ?? []).length >= 6, "des carnets de survivants");
   for (const t of ["L'île, avant", "Le dernier mois ordinaire", "Le jour zéro", "Portraits", "Rumeurs et mystères", "Lexique", "La première nuit"]) assert.ok(livre.pages.some(p => p.name === t), t);
@@ -317,11 +318,18 @@ test("fêtes : chaque fête déclinée a une clé connue du socle du moteur, une
     assert.ok(IDS_DECLINABLES.includes(d.fete), `${d.id} : fête « ${d.fete} » inconnue du socle`);
     deja.push(normaliserDeclinaison(d, deja)); // lève si fête inconnue, doublon, décor illisible
   }
-  assert.equal(deja.length, FETES_DE_FENOIR.length);
+  // Les fêtes hors du socle (lot 12 : Pongal, le miel vert) ne sont pas déclinées : le socle ne les connaît pas.
+  assert.deepEqual(FETES_HORS_SOCLE, ["pongal", "fete-du-miel-vert"]);
+  assert.equal(deja.length, FETES_DE_FENOIR.length - FETES_HORS_SOCLE.length);
   for (const f of FETES_FENOIR) {
-    assert.equal(f.moteur, f.cle, `${f.cle} : alias lu par main.js`);
-    assert.equal(f.date, f.periode, `${f.cle} : alias lu par le journal`);
     assert.ok(!f.periode.includes("-"), `${f.cle} : période sans trait d'union`);
+    if (estHorsSocle(f)) {
+      assert.ok(!IDS_DECLINABLES.includes(f.cle), `${f.cle} : le socle ne la connaît pas`);
+      assert.ok(!("moteur" in f) && (f.date || f.dates), `${f.cle} : sa propre date, pas d'alias moteur`);
+      continue;
+    }
+    assert.equal(f.moteur, f.cle, `${f.cle} : alias lu par main.js`);
+    assert.equal(f.date, f.periode, `${f.cle} : alias de la période`);
   }
   // La Toussaint : déclinée sous « halloween », avec sobriété.
   const toussaint = FETES_FENOIR.find(f => f.cle === "halloween");
@@ -337,8 +345,8 @@ test("fêtes au registre : image (si peinte), gain et coût de chaque fête, auc
     if (f.image) assert.ok(existsSync(new URL(f.image.replace(`modules/${MODULE}/`, ""), RACINE)), `${f.cle} : image absente`);
     assert.deepEqual(f.effet, FETES_FENOIR.find(x => x.cle === f.cle).effet, `${f.cle} : effet du contenu`);
     assert.ok(f.gain && f.cout && f.communautes.length, `${f.cle} : gain, coût, communautés`);
-    for (const k of ["date", "dates", "avant", "apres", "moteur"]) assert.ok(!(k in f), `${f.cle} : ${k}`);
-    for (const k of ["nom", "description", "consigne", "periode"]) assert.ok(f[k], `${f.cle} : ${k}`);
+    if (!FETES_HORS_SOCLE.includes(f.cle)) for (const k of ["date", "dates", "avant", "apres", "moteur"]) assert.ok(!(k in f), `${f.cle} : ${k}`);
+    for (const k of ["nom", "description", "consigne", "periode", "ambiance"]) assert.ok(f[k], `${f.cle} : ${k}`);
   }
   const casse = copie();
   casse.fetes[0].cle = "toussaint";
@@ -388,7 +396,14 @@ test("fêtes à la date de JEU : le calendrier du socle, déclinaisons de Fénoi
   assert.ok(avecDemande("2027-01-03").includes("marche-sur-le-feu"));
   const noel = fetesDuJour("2026-12-25", calendrierDuSocle)[0];
   assert.equal(noel.coeur, true); assert.equal(noel.debut, "2026-12-01"); assert.equal(noel.fin, "2026-12-31");
-  assert.deepEqual(fetesDuJour("2026-12-25"), [], "sans socle (hors Foundry) : rien");
+  assert.deepEqual(fetesDuJour("2026-12-25"), [], "sans socle (hors Foundry) : rien du socle");
+  // Les fêtes hors du socle (lot 12) se datent elles-mêmes, avec ou sans socle.
+  assert.deepEqual(fetesDuJour("2027-01-14").map(f => [f.cle, f.coeur]), [["pongal", true]], "Pongal, cœur le 14 janvier");
+  assert.deepEqual(fetesDuJour("2027-01-13").map(f => [f.cle, f.coeur, f.debut, f.fin]), [["pongal", false, "2027-01-13", "2027-01-16"]]);
+  assert.deepEqual(fetesDuJour("2027-01-17"), []);
+  assert.deepEqual(fetesDuJour("2027-01-30").map(f => [f.cle, f.coeur]), [["fete-du-miel-vert", true]], "le dernier samedi de janvier 2027");
+  assert.deepEqual(fetesDuJour("2028-01-29").map(f => f.cle), ["fete-du-miel-vert"], "le dernier samedi de janvier 2028");
+  assert.deepEqual(fetesDuJour("2027-01-14", calendrierDuSocle).map(f => f.cle), ["pongal"], "avec le socle : après celles du socle");
   assert.deepEqual(fetesDuJour("n'importe quoi", calendrierDuSocle), []);
 });
 

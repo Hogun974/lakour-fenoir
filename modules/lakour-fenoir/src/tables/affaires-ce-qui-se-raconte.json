@@ -1,0 +1,373 @@
+{
+  "_id": "9RPaekT6l3X3WzI0",
+  "_key": "!tables!9RPaekT6l3X3WzI0",
+  "name": "Affaires : ce qui se raconte",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on entend dire ; entre parenthèses, l'affaire (journal « Les affaires de l'île »). Tirez sa vérité quand elle naît.</p>",
+  "formula": "1d23",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "affaires-ce-qui-se-raconte",
+      "affaires": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "GY55Ki7KGIKKrJbP",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.GY55Ki7KGIKKrJbP",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Cette année, Cilaos tient sa foire. Comme avant. Sous trêve. » <em>(1. Les lentilles d'octobre)</em></p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "4zKydX2JCsUQCpSs",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.4zKydX2JCsUQCpSs",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Grand Îlet cherche des bras pour les treilles. Nourris, logés, et la gramoune qui montre. » <em>(2. La treille de Grand Îlet)</em></p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oQP7GSKEOSznxP68",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.oQP7GSKEOSznxP68",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Trois jours au col. Tout le monde. Même ceux qu'on connaît. » <em>(3. La quarantaine du col)</em></p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DdOCdtSTIx2s8Hbt",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.DdOCdtSTIx2s8Hbt",
+      "type": "text",
+      "name": "",
+      "description": "<p>« À l'îlet, là-haut, ils ont tout : l'eau, le courant, la paix. Ma cousine y est. Elle ne redescend pas. » <em>(4. L'îlet où tout va bien)</em></p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DWiSfYimdXgSla8z",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.DWiSfYimdXgSla8z",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Un tunnel sous la coulée, plein de sacs de riz. Je l'ai vu, je te dis. Enfin, mon beau-frère l'a vu. » <em>(5. Le tunnel aux vivres)</em></p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "GEQbZWRqCvDkK2mx",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.GEQbZWRqCvDkK2mx",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Les machines des géologues, à Bourg-Murat ? Elles grattent, elles grattent. Personne ne sait lire ça. » <em>(6. Les aiguilles de Bourg-Murat)</em></p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Y1LDhd5kWYbsU8ED",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.Y1LDhd5kWYbsU8ED",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le patron Grondin, qui ne discute pas : « Pas devant Saint-Leu. Pas tant que la mer rend. » <em>(7. Les noyés de la passe)</em></p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Ea0OP1RNcpx4Dh9n",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.Ea0OP1RNcpx4Dh9n",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Celui qui se dit médecin, au contrôle, ne repart pas. On le loge, on le nourrit, on le garde. » <em>(8. Le vieux chemin pavé)</em></p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "i1Z6gmjmko6OnB23",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.i1Z6gmjmko6OnB23",
+      "type": "text",
+      "name": "",
+      "description": "<p>Gros Mani : « Une part pour chaque bras. Et la route, après, elle est à tout le monde. Enfin, à nous d'abord. » <em>(9. Le viaduc)</em></p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dM1mnxAL8tfA7aTr",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.dM1mnxAL8tfA7aTr",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Une lampe. Une seule. Un peu d'huile, une mèche. On la met derrière la tôle, personne ne la verra. » <em>(10. Une seule lampe)</em></p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Zb40yeN6lqWtbmBk",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.Zb40yeN6lqWtbmBk",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Qui sait encore tendre une peau sur un rouleur ? Mon père savait. » <em>(11. Le kabar du 20 désanm)</em></p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DFFKAjWoYussIE2a",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.DFFKAjWoYussIE2a",
+      "type": "text",
+      "name": "",
+      "description": "<p>« J'ai promis. Dix jours sans viande, puis le temple. Si elle est vivante, elle y sera. » <em>(12. Le vœu)</em></p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cS1dLHqTDOMHeeJJ",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.cS1dLHqTDOMHeeJJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Noël, c'est demain. J'ai coché chaque soir. » « Tu as coché deux fois le soir de la pluie, oui. » <em>(13. Le jour qu'il est)</em></p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CfwhAxSEnzthaLLO",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.CfwhAxSEnzthaLLO",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Chez les voisins, la nuit, ils font du feu et ils chantent des choses. <em>Zot i fé servis.</em> Moi, je dis rien. » <em>(14. Le service dans la nuit)</em></p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pOuoHlaJ7MFBOdCO",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.pOuoHlaJ7MFBOdCO",
+      "type": "text",
+      "name": "",
+      "description": "<p>« C'est les Comoriens du Chaudron. Tout le monde le sait. » Celui qui le dit n'a rien vu. <em>(15. Les derniers arrivés)</em></p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cj1jXIEQOjYyWSFt",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.cj1jXIEQOjYyWSFt",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Les Pèlerins ? Ils t'ouvrent, ils te nourrissent, ils te demandent rien. Rien du tout. » <em>(16. Rendre à la lave)</em></p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "lhagHBYq8hPSvEYp",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.lhagHBYq8hPSvEYp",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Cuire le géranium. Pas pour le parfum, hein. Pour ce qui brûle. » <em>(17. L'alambic du Tévelave)</em></p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NzbZEQrZMur4td2y",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.NzbZEQrZMur4td2y",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Pour la fièvre, il y a une feuille. Pas celle d'en bas : celle d'en haut, sous les tamarins. Et pas trop. » <em>(18. Zerbaz)</em></p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "C2tQNyKOH6mwL8HZ",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.C2tQNyKOH6mwL8HZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un électricien du Sud : « La petite centrale, au fond ? Tout est dedans. Les plans, les turbines de rechange. Si tu descends. » <em>(19. La petite centrale de Langevin)</em></p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wGfMayjU41n7qNeA",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.wGfMayjU41n7qNeA",
+      "type": "text",
+      "name": "",
+      "description": "<p>« Vous m'avez dit qu'il n'y avait pas de place. J'ai vu la liste. J'ai ce qui vous manque. » <em>(20. Celui qu'on a refusé)</em></p>",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "JWFeJcV8QeJnenyb",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.JWFeJcV8QeJnenyb",
+      "type": "text",
+      "name": "",
+      "description": "<p>Sous la pierre d'un oratoire rouge : « Je veux partir. Je sais où est le cahier. Jeudi, même heure. » <em>(21. La liste du Comptable)</em></p>",
+      "range": [
+        21,
+        21
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "k7HwV2MZ6gwWqzpx",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.k7HwV2MZ6gwWqzpx",
+      "type": "text",
+      "name": "",
+      "description": "<p>Mémé Lucette : « Le lait, il descend. Avec vous ou sans vous. Mais sans vous, il descend pas loin. » <em>(22. Le convoi du lait)</em></p>",
+      "range": [
+        22,
+        22
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KuNrO6R67JnIwOop",
+      "_key": "!tables.results!9RPaekT6l3X3WzI0.KuNrO6R67JnIwOop",
+      "type": "text",
+      "name": "",
+      "description": "<p>La radio de la Garnison : « … évacuation par cargo jeudi, apportez vos papiers… » La voix se répète depuis trois semaines. <em>(23. Le cargo)</em></p>",
+      "range": [
+        23,
+        23
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

@@ -29,6 +29,7 @@ import { sceneReunion } from "./cartes.mjs";
 import { DEPOTS_CYCLONE, GRAMOUNES, TABLES_SAVOIRS, JOURNAUX_SAVOIRS } from "./deux-savoirs.mjs";
 import { HISTOIRES } from "./histoires.mjs";
 import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
+import { LOT_AFFAIRES } from "./affaires.mjs";
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
 const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJournal("guides", CLE_JOURNAL_REGIONS), pageId: idPage("guides", CLE_JOURNAL_REGIONS, r.cle) }]));
@@ -38,7 +39,7 @@ export const DOCUMENTS = [
   ...INSTALLATIONS, ...SAVOIRS, ...EQUIPEMENTS, ...PASSES, ...RECETTES, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
   ...JOURNAUX, ...JOURNAUX_SAVOIRS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
-  ...TABLES, ...TABLES_SAVOIRS, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
+  ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -49,7 +50,8 @@ const aPlat = d => ({ nom: d.name, ...structuredClone(d.system) });
 export function donnees() {
   return {
     module: MODULE, version: 1,
-    regions: REGIONS, sites: SITES, routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
+    // Lot 12 : ce qu'on comprend en arrivant dans chaque région (une ligne pour le MJ, contenu/affaires.mjs).
+    regions: REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" })), sites: SITES, routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
     installations: INSTALLATIONS.map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: EQUIPEMENTS.map(aPlat), passes: PASSES.map(aPlat),
     recettes: RECETTES.map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
     factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
@@ -69,6 +71,8 @@ export function donnees() {
     // Lot « savoirs » : ce que le cyclone dépose dans la cour (lu par la logique) ; les gramounes qu'on peut accueillir.
     depotsCyclone: DEPOTS_CYCLONE, gramounes: GRAMOUNES,
     // Lot 11 « histoires » (§16) : les phrases d'histoire des survivants, tirées par le générateur (logique/histoires.mjs).
-    histoires: HISTOIRES
+    histoires: HISTOIRES,
+    // Lot 12 « Affaires, récits et fêtes » (contrat §17) : les affaires de l'île, lues par la logique (logique/affaires.mjs) et le MJ IA.
+    affaires: LOT_AFFAIRES.affaires
   };
 }

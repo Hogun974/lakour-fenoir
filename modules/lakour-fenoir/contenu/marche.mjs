@@ -157,7 +157,10 @@ export const FOIRES = [
   foire({ cle: "foire-du-vacoa", nom: "La foire du vacoa de Saint-Philippe", region: "sud-sauvage", mois: 8, recolte: "materiaux", produit: "les feuilles de vacoa tressées",
     description: `Les tresseuses du Sud sauvage sortent leurs feuilles de vacoa séchées : nattes, paniers, chapeaux, cordes, toitures. Tout ce qui se tresse se troque, et l'on mange les cœurs de palmiste du Sud.` }),
   foire({ cle: "foire-aux-semences", nom: "La foire aux semences du Nouvel An tamoul", region: "est", mois: 4, recolte: "graines", produit: "les semences",
-    description: `En avril, la fin des cyclones et le Nouvel An tamoul : le signal des semis. Les abris de l'Est échangent leurs graines devant le temple de Saint-André, sachet contre sachet, et chacun repart avec de quoi semer ce qu'il n'avait pas.` })
+    description: `En avril, la fin des cyclones et le Nouvel An tamoul : le signal des semis. Les abris de l'Est échangent leurs graines devant le temple de Saint-André, sachet contre sachet, et chacun repart avec de quoi semer ce qu'il n'avait pas.` }),
+  // Lot 12 (2026-11-17), repris du jeu 3D : la grande foire agricole de l'Est, en mai.
+  foire({ cle: "foire-de-bras-panon", nom: "La foire de Bras-Panon", region: "est", mois: 5, recolte: "nourriture", produit: "la vanille, les fruits et les légumes de l'Est",
+    description: `En mai, Bras-Panon tenait la grande foire agricole de l'Est : la vanille préparée des planteurs, les bœufs et les cabris, les fruits, les légumes, les plants. La foire est devenue un troc sous trêve au bord de la Rivière des Roches : on y monte des fonds de Saint-Benoît et de Sainte-Rose, on y troque des gousses noires qui sentent encore l'avant, et pendant trois jours, sous la pluie de l'Est, personne ne lève la main sur personne.` })
 ];
 
 // ---------------------------------------------------------------- Le cours de base (pour les textes : la logique le calcule)

@@ -116,7 +116,8 @@
    "repere": {
     "x": 1646,
     "y": 268
-   }
+   },
+   "arrivee": "Le début. Les urgences ont débordé sur les parkings ; les premières portes marquées sont ici. Sur les toits du Chaudron, du linge sèche : des gens vivent là-haut et ne descendent pas."
   },
   {
    "cle": "sainte-marie",
@@ -221,7 +222,8 @@
    "repere": {
     "x": 2029,
     "y": 319
-   }
+   },
+   "arrivee": "L'espoir de partir. Des valises par centaines, des files figées, un hangar de fret plein de ce que l'île attendait, et un tableau des départs arrêté sur le même vol."
   },
   {
    "cle": "route-du-littoral",
@@ -338,7 +340,8 @@
    "repere": {
     "x": 1264,
     "y": 319
-   }
+   },
+   "arrivee": "Ce qu'a donné la fuite : des kilomètres d'épaves entre la falaise et la houle. Plus haut, le vieux chemin pavé que les piétons ont rouvert, et le lazaret où l'on mettait déjà les arrivants en quarantaine il y a plus d'un siècle."
   },
   {
    "cle": "le-port",
@@ -471,7 +474,8 @@
    "repere": {
     "x": 929,
     "y": 471
-   }
+   },
+   "arrivee": "L'ordre qui reste : des murailles de conteneurs, une sirène à heure fixe, des affiches de recensement. Et, au large, un navire qui n'a jamais accosté."
   },
   {
    "cle": "saint-paul",
@@ -604,7 +608,8 @@
    "repere": {
     "x": 690,
     "y": 929
-   }
+   },
+   "arrivee": "La vie d'avant, intacte et vide : les plages, les restaurants, les bateaux de plaisance. Le lagon rend ses noyés ; le marché forain sert aux Ferrailleurs."
   },
   {
    "cle": "hauts-de-l-ouest",
@@ -722,7 +727,8 @@
    "repere": {
     "x": 1168,
     "y": 1387
-   }
+   },
+   "arrivee": "Ceux qui savaient déjà : l'alambic à géranium, les cases en bois sous tôle, les citernes. Des gens qui n'ont presque rien changé à leur vie, et qui le disent."
   },
   {
    "cle": "saint-leu",
@@ -842,7 +848,8 @@
    "repere": {
     "x": 977,
     "y": 1896
-   }
+   },
+   "arrivee": "Le sel, le vent, les filaos. Des pêcheurs qui dorment sur l'eau, et sur le sable noir, des traces qui sortent de la mer."
   },
   {
    "cle": "saint-pierre",
@@ -974,7 +981,8 @@
    "repere": {
     "x": 1646,
     "y": 2455
-   }
+   },
+   "arrivee": "Ceux qui soignent : le grand hôpital et ses draps peints d'une croix rouge, les ambulances en navette, la sucrerie du Gol arrêtée en pleine campagne, et une adresse répétée chaque soir à la radio."
   },
   {
    "cle": "le-tampon",
@@ -1090,7 +1098,8 @@
    "repere": {
     "x": 2077,
     "y": 1998
-   }
+   },
+   "arrivee": "Le froid. Des troupeaux, des clôtures doublées, des cloches aux barrières ; au petit matin, des silhouettes immobiles dans les prés, couvertes de rosée."
   },
   {
    "cle": "sud-sauvage",
@@ -1214,7 +1223,8 @@
    "repere": {
     "x": 2793,
     "y": 2710
-   }
+   },
+   "arrivee": "L'île dans l'île. Peu de monde, donc peu de morts ; la vanille, les vacoas, la mer qui prend sans prévenir. Les gens y sont partis les derniers, ou jamais."
   },
   {
    "cle": "fournaise",
@@ -1314,7 +1324,8 @@
    "repere": {
     "x": 2841,
     "y": 1998
-   }
+   },
+   "arrivee": "Ce qui ne demande l'avis de personne : la Plaine des Sables sans une trace, le gîte et son livre d'or que plus personne ne signe, les instruments qui tournent encore à Bourg-Murat."
   },
   {
    "cle": "est",
@@ -1452,7 +1463,8 @@
    "repere": {
     "x": 2889,
     "y": 980
-   }
+   },
+   "arrivee": "La pluie et la foi : des rivières en crue qui charrient tout, la canne haute, les centrales qui ont tenu plus longtemps, l'église que la lave a épargnée et les cierges sur les coulées."
   },
   {
    "cle": "plaine-des-palmistes",
@@ -1571,7 +1583,8 @@
    "repere": {
     "x": 2507,
     "y": 1489
-   }
+   },
+   "arrivee": "La forêt qui reprend : des gîtes fermés de l'intérieur, la brume de l'après-midi, des sentiers où l'on se perd à dix mètres de la route."
   },
   {
    "cle": "cilaos",
@@ -1690,7 +1703,8 @@
    "repere": {
     "x": 1742,
     "y": 1489
-   }
+   },
+   "arrivee": "Une seule route, quatre cents virages, et le car jaune arrêté dans un tunnel. Là-haut, le village a tenu ; chaque éboulis décide s'il reste une île dans l'île."
   },
   {
    "cle": "salazie",
@@ -1821,7 +1835,8 @@
    "repere": {
     "x": 1981,
     "y": 1082
-   }
+   },
+   "arrivee": "L'eau partout, les cascades, les treilles de chouchous. La route emportée, le cirque refermé, et des cases de Hell-Bourg dont les jardins sont entretenus par on ne sait qui."
   },
   {
    "cle": "mafate",
@@ -1967,7 +1982,8 @@
    "repere": {
     "x": 1551,
     "y": 1082
-   }
+   },
+   "arrivee": "Le monde d'après ressemblait au monde d'avant : pas de route, des panneaux sur les toits, des sifflets d'îlet en îlet. Et un îlet où tout va bien, trop bien."
   }
  ],
  "sites": [
@@ -17166,7 +17182,8 @@
     "dipavali",
     "cavadee",
     "nouvel-an-tamoul",
-    "marche-sur-le-feu"
+    "marche-sur-le-feu",
+    "pongal"
    ],
    "poids": 1.5,
    "affinites": {
@@ -18497,6 +18514,7 @@
    },
    "gain": "Un repas partagé : +1 de moral, et une semaine où il remonte plus haut ; un cadeau attache une recrue au groupe (elle devient compagnon et ne part plus, même à bout de forces).",
    "cout": "Un vrai surplus : deux rations de plus par personne.",
+   "ambiance": "Des pieds de Noël décorés, filao ou cryptoméria, dans les cases restées, et des guirlandes aux varangues. En fouillant, un cadeau emballé que personne n'a ouvert, des grappes de letchis. Quelques Livides portent encore un bonnet de Noël.",
    "image": "modules/lakour-fenoir/assets/fetes/noel.jpg"
   },
   {
@@ -18522,6 +18540,7 @@
    },
    "gain": "On se souhaite de voir l'année suivante : +1 de moral à chacun.",
    "cout": "Une ration de plus par personne ; à minuit, le moindre bruit porte loin (bruit +2).",
+   "ambiance": "Des cotillons au fond des tiroirs, une bouteille gardée pour minuit. Au loin, une salve de pétards ou une fusée que quelqu'un gardait : tout ce qui éclate à minuit s'entend à des centaines de mètres.",
    "image": "modules/lakour-fenoir/assets/fetes/nouvel-an.jpg"
   },
   {
@@ -18546,6 +18565,7 @@
    },
    "gain": "Un repas en famille, des œufs cachés pour les plus jeunes : +1 de moral à chacun.",
    "cout": "Une ration de plus par personne (bruit +1).",
+   "ambiance": "Rien de plus que ce que les cases gardent : la cloche d'une église qu'on n'ose pas sonner, des œufs de la basse-cour cachés pour les plus jeunes.",
    "image": "modules/lakour-fenoir/assets/fetes/paques.jpg"
   },
   {
@@ -18574,6 +18594,7 @@
    },
    "gain": "On donne le repos à tous ses morts retrouvés : leur deuil se lève ; +1 de moral à chacun.",
    "cout": "Il faut avoir retrouvé ses morts (le corps d'un mort relevé en Livide doit être retrouvé d'abord) ; les bougies se voient la nuit (visibilité +1).",
+   "ambiance": "Rien qu'on ajoute : c'est un deuil. Les cimetières gardent les tombes blanchies l'an d'avant et des pots de chrysanthèmes secs ; on n'y va plus. Sur une varangue, la citrouille creusée du dernier Halloween, réduite à rien.",
    "image": "modules/lakour-fenoir/assets/fetes/halloween.jpg"
   },
   {
@@ -18605,6 +18626,7 @@
    },
    "gain": "La nuit la plus longue de l'année, dans le froid des Hauts : en musique, +1 de moral à chacun ; en silence, on dort serrés (fatigue −1).",
    "cout": "Une ration chaude de plus par personne ; si l'on joue, la musique porte loin (bruit +3).",
+   "ambiance": "Une guitare ou un kayamb oubliés dans une case vide. Un casque de musique au cou de quelques Livides. La musique s'entend à une centaine de mètres, le séga des bons jours bien plus loin.",
    "image": "modules/lakour-fenoir/assets/fetes/musique.jpg"
   },
   {
@@ -18634,6 +18656,7 @@
    },
    "gain": "Le maloya remonte le moral de tout l'abri : +1 de moral à chacun, et trois jours où il remonte plus haut.",
    "cout": "Une ration de plus par personne ; le tambour s'entend de très loin (bruit +4 à l'abri).",
+   "ambiance": "Un feu de kabar et ses bancs sur une place ; en fouillant, un rouleur à la peau détendue ou un kayamb. Le maloya et le tambour portent à des centaines de mètres.",
    "image": "modules/lakour-fenoir/assets/fetes/liberte.jpg"
   },
   {
@@ -18658,6 +18681,7 @@
    },
    "gain": "Un verre levé à ceux d'en face : +1 de moral à chacun.",
    "cout": "Une ration de plus par personne (bruit +2).",
+   "ambiance": "Un drapeau délavé à la mairie, des lampions de l'an passé dans un carton, une estrade qu'on n'a jamais démontée.",
    "image": "modules/lakour-fenoir/assets/fetes/fete-nationale.jpg"
   },
   {
@@ -18687,6 +18711,7 @@
    },
    "gain": "Une nuit de lampes à huile : +2 de moral à chacun.",
    "cout": "Une ration de plus par personne ; chaque flamme attire (visibilité +3 cette nuit).",
+   "ambiance": "Des lampes à huile le long des chemins et aux seuils, un kolam devant la porte, des guirlandes de lumières éteintes aux façades. En fouillant, des gâteaux indiens dans une boîte en fer. Une guirlande lumineuse, morte, au cou de quelques Livides.",
    "image": "modules/lakour-fenoir/assets/fetes/dipavali.jpg"
   },
   {
@@ -18717,6 +18742,7 @@
    },
    "gain": "Le grand ménage de l'abri : un mois où les maladies prennent moitié moins ; dettes et trocs soldés ; un don à un abri voisin installe la confiance (un lien de plus avec lui) ; +1 de moral à chacun.",
    "cout": "Deux quarts de travail, une ration de plus par personne, et les pétards (bruit +3).",
+   "ambiance": "Des lanternes rouges aux façades, des papiers rouges sans écriture au seuil. En fouillant, une enveloppe rouge, des mandarines. Un ruban rouge au cou de quelques Livides. Les pétards portent très loin.",
    "image": "modules/lakour-fenoir/assets/fetes/nouvel-an-chinois.jpg"
   },
   {
@@ -18746,6 +18772,7 @@
    },
    "gain": "Après dix jours de carême, un vœu (retrouver quelqu'un, atteindre un lieu) qui soutient le moral de ceux qui l'ont fait tant qu'ils le tiennent.",
    "cout": "Les privations (fatigue +1 à ceux qui font le vœu) ; la marche à découvert (visibilité +2 ce jour-là).",
+   "ambiance": "Des fleurs fanées et des oriflammes autour des temples, laissées telles quelles depuis le jour zéro. Personne n'y touche.",
    "image": "modules/lakour-fenoir/assets/fetes/cavadee.jpg"
   },
   {
@@ -18773,6 +18800,7 @@
    },
    "gain": "Une cueillette joyeuse : +1 de moral à chacun et trois paniers de letchis (nourriture +3).",
    "cout": "Il faut sortir et grimper aux arbres (un quart dehors ; bruit +1).",
+   "ambiance": "Des grappes de letchis dans les jardins abandonnés, et des bouquets encore attachés aux piquets, au bord des routes, là où on les vendait.",
    "image": "modules/lakour-fenoir/assets/fetes/letchis.jpg"
   },
   {
@@ -18804,6 +18832,7 @@
    },
    "gain": "Un mois de discipline et de cohésion : le moral de chacun remonte plus haut pendant tout le mois.",
    "cout": "On ne mange et ne boit qu'à la nuit : cuisine et lumière nocturnes (visibilité +1 pendant le mois).",
+   "ambiance": "Des lanternes aux fenêtres des cases musulmanes ; en fouillant, des samoussas secs et des gâteaux à partager oubliés dans une boîte.",
    "image": "modules/lakour-fenoir/assets/fetes/ramadan.jpg"
   },
   {
@@ -18833,6 +18862,7 @@
    },
    "gain": "La part donnée aux démunis bâtit la réputation de l'abri (renom +1, deux liens de plus avec l'abri à qui l'on porte une part) ; des réfugiés viendront ; +1 de moral à chacun.",
    "cout": "Un cabri de l'élevage (six rations).",
+   "ambiance": "Une corde de piquet vide dans une cour, une marmite immense retournée sur le feu éteint ; les voisins se souviennent de la part qu'on leur portait.",
    "image": "modules/lakour-fenoir/assets/fetes/aid-el-kebir.jpg"
   },
   {
@@ -18862,6 +18892,7 @@
    },
    "gain": "Fin de la saison des cyclones, signal des semis : deux graines mises de côté, et deux de plus en les échangeant avec un abri voisin (un lien de plus avec lui) ; +1 de moral à chacun.",
    "cout": "Rien d'autre que d'oser aller voir les voisins.",
+   "ambiance": "Des guirlandes de fleurs séchées aux portes, un kolam effacé par la pluie ; en fouillant, des gâteaux indiens.",
    "image": "modules/lakour-fenoir/assets/fetes/nouvel-an-tamoul.jpg"
   },
   {
@@ -18894,7 +18925,175 @@
    },
    "gain": "Du sang-froid face aux hordes : deux semaines où la défense de l'abri a un dé de plus contre une horde.",
    "cout": "Beaucoup de bois (quatre matériaux) ; une lueur visible de loin (visibilité +3 cette nuit).",
+   "ambiance": "Au temple, les fleurs, les oriflammes et la fosse de braises éteinte, telles qu'au dernier feu. Personne n'y touche.",
    "image": "modules/lakour-fenoir/assets/fetes/marche-sur-le-feu.jpg"
+  },
+  {
+   "cle": "pongal",
+   "nom": "Pongal, la moisson tamoule",
+   "periode": "du 13 au 16 janvier, au soleil du matin",
+   "description": "À la mi-janvier, Pongal remerciait le soleil pour la moisson : devant les cases et les temples tamouls, on faisait bouillir le riz au lait sucré dans un pot de terre neuf, sur trois pierres, jusqu'à ce qu'il déborde. Des cannes dressées de chaque côté de la porte, un kolam au seuil, et le lendemain, les bêtes de la cour nourries les premières. Au camp, un seul pot, et tout le monde vient le regarder déborder.",
+   "consigne": "Pongal, la moisson tamoule : un pot de riz au lait qui déborde au soleil du matin, des cannes dressées, un kolam ; on remercie pour ce qui a poussé, et l'on nourrit les bêtes de la cour en premier",
+   "decor": {
+    "palette": "soleil",
+    "ornements": []
+   },
+   "communautes": [
+    "malbars",
+    "tous"
+   ],
+   "effet": {
+    "moral": 1,
+    "rations": 1,
+    "quarts": 1,
+    "bruit": 1,
+    "soutien": {
+     "moral": 1,
+     "jours": 4
+    }
+   },
+   "gain": "Quatre jours de moisson : +1 de moral à chacun, et quatre jours où il remonte plus haut.",
+   "cout": "Une ration de plus par personne (le riz au lait sucré) ; un quart pour le kolam et la cuisson dehors ; le cri de joie quand le pot déborde (bruit +1).",
+   "ambiance": "Un pot de terre noirci sur trois pierres au seuil d'une case, des cannes à sucre dressées de chaque côté de la porte, un kolam de farine de riz que les fourmis emportent.",
+   "date": "01-14",
+   "avant": 1,
+   "apres": 2,
+   "image": ""
+  },
+  {
+   "cle": "fete-du-miel-vert",
+   "nom": "La fête du miel vert",
+   "periode": "le dernier samedi et le dernier dimanche de janvier, à la Plaine des Cafres",
+   "description": "Fin janvier, à la Plaine des Cafres, les apiculteurs des Hauts ouvraient leurs ruches au public : le miel sombre des forêts de tamarins, la cire, le pain d'épices, et des enfants qui goûtaient tout au bout d'une cuillère. Au camp, on enfume une ruche ou un essaim sauvage, on partage un rayon, et le miel finit sur les petites plaies autant que sur le pain.",
+   "consigne": "Fête du miel vert : on enfume une ruche ou un essaim sauvage des Hauts, on partage un rayon ; le miel nourrit et soigne les petites plaies, et la fumée de l'enfumoir se voit de loin",
+   "decor": {
+    "palette": "or",
+    "ornements": []
+   },
+   "communautes": [
+    "tous"
+   ],
+   "effet": {
+    "moral": 1,
+    "quarts": 1,
+    "gain": {
+     "nourriture": 1,
+     "medicaments": 1
+    },
+    "lueur": {
+     "visibilite": 1,
+     "jours": 1
+    }
+   },
+   "gain": "Un rayon de miel partagé : +1 de moral à chacun, une nourriture et un médicament (le miel sur les petites plaies).",
+   "cout": "Un quart dehors à enfumer une ruche ou un essaim sauvage ; la fumée se voit (visibilité +1 ce jour-là).",
+   "ambiance": "Des ruches en tronc et des cadres abandonnés dans les jardins de la Plaine ; en fouillant, un pot de miel des Hauts, qui ne se gâte jamais.",
+   "dates": {
+    "2000": "01-29",
+    "2001": "01-27",
+    "2002": "01-26",
+    "2003": "01-25",
+    "2004": "01-31",
+    "2005": "01-29",
+    "2006": "01-28",
+    "2007": "01-27",
+    "2008": "01-26",
+    "2009": "01-31",
+    "2010": "01-30",
+    "2011": "01-29",
+    "2012": "01-28",
+    "2013": "01-26",
+    "2014": "01-25",
+    "2015": "01-31",
+    "2016": "01-30",
+    "2017": "01-28",
+    "2018": "01-27",
+    "2019": "01-26",
+    "2020": "01-25",
+    "2021": "01-30",
+    "2022": "01-29",
+    "2023": "01-28",
+    "2024": "01-27",
+    "2025": "01-25",
+    "2026": "01-31",
+    "2027": "01-30",
+    "2028": "01-29",
+    "2029": "01-27",
+    "2030": "01-26",
+    "2031": "01-25",
+    "2032": "01-31",
+    "2033": "01-29",
+    "2034": "01-28",
+    "2035": "01-27",
+    "2036": "01-26",
+    "2037": "01-31",
+    "2038": "01-30",
+    "2039": "01-29",
+    "2040": "01-28",
+    "2041": "01-26",
+    "2042": "01-25",
+    "2043": "01-31",
+    "2044": "01-30",
+    "2045": "01-28",
+    "2046": "01-27",
+    "2047": "01-26",
+    "2048": "01-25",
+    "2049": "01-30",
+    "2050": "01-29",
+    "2051": "01-28",
+    "2052": "01-27",
+    "2053": "01-25",
+    "2054": "01-31",
+    "2055": "01-30",
+    "2056": "01-29",
+    "2057": "01-27",
+    "2058": "01-26",
+    "2059": "01-25",
+    "2060": "01-31",
+    "2061": "01-29",
+    "2062": "01-28",
+    "2063": "01-27",
+    "2064": "01-26",
+    "2065": "01-31",
+    "2066": "01-30",
+    "2067": "01-29",
+    "2068": "01-28",
+    "2069": "01-26",
+    "2070": "01-25",
+    "2071": "01-31",
+    "2072": "01-30",
+    "2073": "01-28",
+    "2074": "01-27",
+    "2075": "01-26",
+    "2076": "01-25",
+    "2077": "01-30",
+    "2078": "01-29",
+    "2079": "01-28",
+    "2080": "01-27",
+    "2081": "01-25",
+    "2082": "01-31",
+    "2083": "01-30",
+    "2084": "01-29",
+    "2085": "01-27",
+    "2086": "01-26",
+    "2087": "01-25",
+    "2088": "01-31",
+    "2089": "01-29",
+    "2090": "01-28",
+    "2091": "01-27",
+    "2092": "01-26",
+    "2093": "01-31",
+    "2094": "01-30",
+    "2095": "01-29",
+    "2096": "01-28",
+    "2097": "01-26",
+    "2098": "01-25",
+    "2099": "01-31",
+    "2100": "01-30"
+   },
+   "avant": 0,
+   "apres": 1,
+   "image": ""
   }
  ],
  "communautes": [
@@ -19341,6 +19540,15 @@
    "recolte": "graines",
    "produit": "les semences",
    "description": "<p>En avril, la fin des cyclones et le Nouvel An tamoul : le signal des semis. Les abris de l'Est échangent leurs graines devant le temple de Saint-André, sachet contre sachet, et chacun repart avec de quoi semer ce qu'il n'avait pas.</p>"
+  },
+  {
+   "cle": "foire-de-bras-panon",
+   "nom": "La foire de Bras-Panon",
+   "region": "est",
+   "mois": 5,
+   "recolte": "nourriture",
+   "produit": "la vanille, les fruits et les légumes de l'Est",
+   "description": "<p>En mai, Bras-Panon tenait la grande foire agricole de l'Est : la vanille préparée des planteurs, les bœufs et les cabris, les fruits, les légumes, les plants. La foire est devenue un troc sous trêve au bord de la Rivière des Roches : on y monte des fonds de Saint-Benoît et de Sainte-Rose, on y troque des gousses noires qui sentent encore l'avant, et pendant trois jours, sous la pluie de l'Est, personne ne lève la main sur personne.</p>"
   }
  ],
  "depotsCyclone": [
@@ -22394,6 +22602,2144 @@
      ]
     }
    ]
+  }
+ ],
+ "affaires": [
+  {
+   "cle": "les-lentilles-d-octobre",
+   "numero": 1,
+   "titre": "Les lentilles d'octobre",
+   "taille": "grande-affaire",
+   "famille": "cirques",
+   "regions": [
+    "cilaos"
+   ],
+   "sites": [
+    "ferme-d-ilet-a-cordes"
+   ],
+   "factions": [
+    "familles-des-ilets",
+    "cooperative-des-plaines"
+   ],
+   "front": "",
+   "foire": "foire-des-lentilles",
+   "naissance": {
+    "mois": [
+     9,
+     10
+    ],
+    "phases": [
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Dès septembre, tout le Sud répète que Cilaos tiendra sa foire « comme avant », sous trêve. On l'entend au marché de Saint-Pierre, à la radio des Barques, dans la bouche d'un porteur qui redescend du cirque.",
+   "demande": "Que la route aux quatre cents virages ou les sentiers soient praticables le jour dit, que quelqu'un garde la trêve, que les îlets descendent leur récolte. On peut escorter un convoi de porteurs, déblayer un éboulis au-dessus du Pavillon (deux jours de chantier, et du bruit), garder la trêve avec le conseil, ou seulement venir troquer.",
+   "malTourner": "L'éboulis n'est pas levé, et la foire se tient entre gens du cirque seulement. Une bande vient « compter les sacs » et tâter la trêve. La date circule fausse : des gens montent un jour trop tôt ou trop tard, et dorment dehors.",
+   "change": "Si elle a lieu, Cilaos a sa foire (trois jours, onglet Marché) et la Coopérative y garde un étal à l'année.",
+   "garde": "Des graines, des nouvelles de toute l'île en une journée, et le souvenir d'avoir vu du monde.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "La foire aura lieu si la route est ouverte : le conseil de l'îlet l'a décidé."
+    },
+    "perimee": {
+     "poids": 1,
+     "texte": "On l'a dit en juillet ; depuis, un éboulis a coupé la route au-dessus du Pavillon, et personne ne l'a encore dit en bas."
+    },
+    "fausse": {
+     "poids": 1,
+     "texte": "La date répétée en bas est fausse d'une semaine : quelqu'un s'est trompé en recopiant, ou l'a voulu."
+    }
+   },
+   "pente": {
+    "tousLes": 7,
+    "crans": [
+     "Le conseil de l'îlet cherche des bras pour l'éboulis.",
+     "Les porteurs descendent seuls, chargés ; certains n'arrivent pas.",
+     "La foire se tient entre gens du cirque ; le Sud ne monte pas."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "tenue",
+     "titre": "La foire se tient",
+     "texte": "La route est ouverte et la trêve tenue : trois jours de troc, des gens de toute l'île.",
+     "effets": {
+      "reputation": {
+       "familles-des-ilets": 2,
+       "cooperative-des-plaines": 1
+      },
+      "moral": 1
+     }
+    },
+    {
+     "cle": "entre-soi",
+     "titre": "Entre gens du cirque",
+     "texte": "L'éboulis tient ; la foire se fait sans le Sud, et sans le groupe s'il n'a pas aidé.",
+     "effets": {}
+    },
+    {
+     "cle": "treve-rompue",
+     "titre": "La trêve rompue",
+     "texte": "Une bande compte les sacs, quelqu'un sort une arme : la trêve tombe, la foire se vide, et l'on cherche à qui la faute.",
+     "effets": {
+      "reputation": {
+       "familles-des-ilets": -1
+      },
+      "rumeur": true
+     }
+    }
+   ],
+   "voix": [
+    "« Cette année, Cilaos tient sa foire. Comme avant. Sous trêve. »",
+    "« Les lentilles ? Si la route passe. Et si la route passe, tout le monde passe. »",
+    "À la craie, sur le mur de la gare routière de Saint-Pierre : « LENTILLES, 3e SAMEDI ».",
+    "La radio des Barques : « Cilaos cherche des bras pour l'éboulis du Pavillon. Nourris. »"
+   ],
+   "traces": "Un étal de la Coopérative qui reste ; un sentier balisé de cairns pour monter ; la date notée dans les cahiers de dix abris, pas toujours la même.",
+   "ton": ""
+  },
+  {
+   "cle": "la-treille-de-grand-ilet",
+   "numero": 2,
+   "titre": "La treille de Grand Îlet",
+   "taille": "affaire",
+   "famille": "cirques",
+   "regions": [
+    "salazie"
+   ],
+   "sites": [
+    "ferme-de-grand-ilet"
+   ],
+   "factions": [
+    "familles-des-ilets"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Une famille de Grand Îlet fait dire, par les Familles des Îlets, qu'elle ne peut plus monter ses treilles de chouchous seule : le fils est descendu le jour zéro et n'est pas remonté.",
+   "demande": "Des bras pendant une semaine, du fil de fer, du bambou, et de la patience : la gramoune ne montre sa façon de faire qu'à celui qui reste jusqu'au bout.",
+   "malTourner": "La route emportée a refermé le cirque : on n'y entre que par les cols. Un glissement de terrain menace la parcelle. Celui qui part avant la fin n'apprend rien, et laisse un affront que la famille n'oublie pas.",
+   "change": "Le cirque nourrit un abri de plus, ou perd une ferme.",
+   "garde": "La façon lontan de monter une treille (le savoir « Jardin créole »), et une famille qui n'oublie ni le service ni l'affront.",
+   "verites": {
+    "vraie": {
+     "poids": 4,
+     "texte": "La famille a vraiment besoin de bras, et la gramoune enseignera à qui reste."
+    },
+    "exageree": {
+     "poids": 1,
+     "texte": "La famille s'en sortirait seule ; elle cherche surtout des voisins pour l'hiver, et un gendre si possible."
+    }
+   },
+   "pente": {
+    "tousLes": 10,
+    "crans": [
+     "Les lianes de chouchou courent par terre et pourrissent.",
+     "La famille mange ses graines.",
+     "Elle descend à Hell-Bourg, et la ferme retourne à la brousse."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "jusqu-au-bout",
+     "titre": "Rester jusqu'au bout",
+     "texte": "Sept jours de travail ; la gramoune montre sa façon, et la famille donne de sa récolte.",
+     "effets": {
+      "savoir": "jardin-creole",
+      "reputation": {
+       "familles-des-ilets": 2
+      },
+      "stocks": {
+       "nourriture": 4
+      }
+     }
+    },
+    {
+     "cle": "parti-avant",
+     "titre": "Partir avant la fin",
+     "texte": "On a aidé trois jours, puis on est parti : la famille le dit à tous les îlets.",
+     "effets": {
+      "reputation": {
+       "familles-des-ilets": -1
+      }
+     }
+    },
+    {
+     "cle": "glissement",
+     "titre": "Le glissement",
+     "texte": "La pluie emporte la parcelle avant la fin. La famille n'a plus rien : l'accueillir, c'est trois bouches de plus et une gramoune qui sait.",
+     "effets": {
+      "acte": "accueillir",
+      "recrue": true
+     }
+    }
+   ],
+   "voix": [
+    "« Grand Îlet cherche des bras pour les treilles. Nourris, logés, et la gramoune qui montre. »",
+    "« Elle ne montre qu'à ceux qui restent. Les autres, elle les regarde partir. »",
+    "Un sifflet, depuis le col : trois coups longs. À Salazie, cela veut dire qu'on demande de l'aide."
+   ],
+   "traces": "Une treille montée à la façon d'avant, ou des lianes mortes sur des piquets ; le nom de celui qui est parti, que la famille dit encore.",
+   "ton": ""
+  },
+  {
+   "cle": "la-quarantaine-du-col",
+   "numero": 3,
+   "titre": "La quarantaine du col",
+   "taille": "affaire",
+   "famille": "cirques",
+   "regions": [
+    "salazie",
+    "mafate"
+   ],
+   "sites": [
+    "relais-du-col-des-boeufs"
+   ],
+   "factions": [
+    "familles-des-ilets"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "En voulant entrer. Au relais du col des Bœufs, deux guetteurs des Familles arrêtent tout le monde : trois jours d'attente, sous leurs yeux, avec d'autres qui attendent.",
+   "demande": "D'attendre trois jours, de travailler pour sa soupe, et de regarder les autres : parmi ceux qui attendent, une femme garde ses manches longues malgré la chaleur.",
+   "malTourner": "La dénoncer peut être une erreur : une brûlure de marmite, pas une morsure. Se taire peut laisser entrer le Gris dans le cirque. Partir de nuit par le sentier fait de vous ceux qu'on ne laissera plus jamais entrer.",
+   "change": "La confiance des Familles des Îlets, pour longtemps, dans un sens ou dans l'autre.",
+   "garde": "L'entrée de Mafate, ou une rumeur tenace sur son propre compte.",
+   "verites": {
+    "vraie": {
+     "poids": 1,
+     "texte": "Elle a été mordue il y a deux jours, et elle espère que ce n'est rien. Le Gris suit son cours : le MJ dit le stade."
+    },
+    "fausse": {
+     "poids": 2,
+     "texte": "C'est une brûlure de marmite, mal soignée ; elle a honte de la cicatrice."
+    }
+   },
+   "pente": {
+    "tousLes": 1,
+    "crans": [
+     "Les guetteurs comptent les jours, sans rien dire.",
+     "Quelqu'un d'autre a vu les manches, et parle tout bas.",
+     "Le troisième jour, les guetteurs font retrousser les manches à tout le monde."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "denoncer-a-raison",
+     "titre": "La dénoncer, à raison",
+     "texte": "C'était une morsure : les Familles la mettent à l'écart, et laissent entrer le groupe.",
+     "effets": {
+      "reputation": {
+       "familles-des-ilets": 1
+      }
+     }
+    },
+    {
+     "cle": "denoncer-a-tort",
+     "titre": "La dénoncer, à tort",
+     "texte": "C'était une brûlure. Elle est renvoyée quand même, et le Ladi Lafé sait qui l'a désignée.",
+     "effets": {
+      "acte": "colporter",
+      "rumeur": true
+     }
+    },
+    {
+     "cle": "se-taire",
+     "titre": "Se taire",
+     "texte": "Personne ne dit rien. Si c'était une morsure et qu'on apprend que le groupe avait vu, la confiance des Familles tombe.",
+     "effets": {
+      "reputation": {
+       "familles-des-ilets": -1
+      }
+     }
+    },
+    {
+     "cle": "partir-de-nuit",
+     "titre": "Partir de nuit",
+     "texte": "Par le sentier, sans attendre la fin : le groupe entre, et tous les îlets le savent le lendemain.",
+     "effets": {
+      "reputation": {
+       "familles-des-ilets": -3
+      },
+      "rumeur": true
+     }
+    }
+   ],
+   "voix": [
+    "« Trois jours au col. Tout le monde. Même ceux qu'on connaît. »",
+    "Un guetteur, sans lever les yeux : « Vous avez mangé ? Alors vous travaillez. »",
+    "« Celle-là, avec ses manches… *Mi di sa, mi di rien.* » (Je dis ça, je ne dis rien.)"
+   ],
+   "traces": "Une liste de noms au relais, avec des croix ; ce que les Familles disent de vous aux autres îlets.",
+   "ton": ""
+  },
+  {
+   "cle": "l-ilet-ou-tout-va-bien",
+   "numero": 4,
+   "titre": "L'îlet où tout va bien",
+   "taille": "grande-affaire",
+   "famille": "cirques",
+   "regions": [
+    "mafate"
+   ],
+   "sites": [],
+   "factions": [
+    "familles-des-ilets"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Par recoupement. Personne ne le dit en entier : des gens y sont allés et ne sont pas revenus parce qu'ils y sont bien ; d'autres disent qu'on n'en repart pas. Le livre de l'île le range parmi les mystères qu'on ne numérote pas.",
+   "demande": "D'y monter (deux jours de sentier depuis le col), d'y rester assez pour comprendre ce qui fait tenir l'endroit, et de décider si on en parle.",
+   "malTourner": "Ce qui le fait tenir peut être très simple, ou ne pas se dire. En parler amène du monde, et le monde le défait.",
+   "change": "Un abri modèle reste secret, devient un marché, ou devient une cible.",
+   "garde": "Une règle de vie qu'on peut reprendre chez soi, et la question de savoir si on a bien fait de la dire.",
+   "verites": {
+    "vraie": {
+     "poids": 2,
+     "texte": "Une source qui ne tarit jamais, des terrasses, des panneaux, et un accord strict : on y entre pour toujours ou pas du tout. Tout le monde y est bien, et personne n'a envie de partir."
+    },
+    "exageree": {
+     "poids": 2,
+     "texte": "L'îlet tient par une règle dure : qui ne travaille pas est renvoyé, les vieux comme les autres. On y est bien tant qu'on est utile."
+    },
+    "piege": {
+     "poids": 1,
+     "texte": "L'îlet tient parce qu'il ne laisse repartir personne : ceux qui montent sont désarmés, gardés et mis au travail. On n'en repart pas, en effet."
+    }
+   },
+   "pente": {
+    "tousLes": 14,
+    "crans": [
+     "On en parle un peu plus au marché.",
+     "Une famille monte s'y installer ; d'autres suivent.",
+     "Trop de monde arrive : l'îlet ferme son sentier, ou s'ouvre et se défait."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "garder-le-secret",
+     "titre": "Garder le secret",
+     "texte": "On en revient avec une règle qu'on reprend chez soi, et l'on n'en dit rien.",
+     "effets": {
+      "entente": 1
+     }
+    },
+    {
+     "cle": "le-dire",
+     "titre": "Le dire",
+     "texte": "Le Ladi Lafé s'en empare ; l'îlet devient une destination, et les Familles savent qui a parlé.",
+     "effets": {
+      "rumeur": true,
+      "reputation": {
+       "familles-des-ilets": -1
+      }
+     }
+    },
+    {
+     "cle": "y-rester",
+     "titre": "Y rester",
+     "texte": "Un membre du groupe choisit d'y vivre, et ne redescend pas.",
+     "effets": {
+      "depart": true
+     }
+    },
+    {
+     "cle": "repartir-sans-permission",
+     "titre": "Repartir sans permission",
+     "texte": "De nuit, par la crête : on sait désormais ce qu'il y a là-haut, et l'îlet sait qu'on le sait.",
+     "effets": {
+      "rumeur": true
+     }
+    }
+   ],
+   "voix": [
+    "« À l'îlet, là-haut, ils ont tout : l'eau, le courant, la paix. Ma cousine y est. Elle ne redescend pas. »",
+    "« On n'en revient pas, de cet îlet. Prends ça comme tu veux. »",
+    "Un sifflet qui ne répond pas : l'îlet d'en face ne parle à personne."
+   ],
+   "traces": "Un sentier mieux entretenu que les autres, qui finit sur une barrière ; dans les cahiers, des noms qui ne donnent plus de nouvelles.",
+   "ton": ""
+  },
+  {
+   "cle": "le-tunnel-aux-vivres",
+   "numero": 5,
+   "titre": "Le tunnel aux vivres",
+   "taille": "grande-affaire",
+   "famille": "volcan",
+   "regions": [
+    "sud-sauvage"
+   ],
+   "sites": [
+    "tunnel-du-grand-brule"
+   ],
+   "factions": [
+    "barques-du-sud",
+    "pelerins-de-la-lave"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "C'est la rumeur numéro six du livre de l'île. Une Barque du Sud jure l'avoir vu ; un Pèlerin dit que c'est un tombeau.",
+   "demande": "De marcher sur la lave refroidie de la route des Laves, de trouver la bonne bouche parmi dix, de la lumière pour plusieurs quarts sous terre, et de savoir étayer (le savoir « Étaiement et galeries » évite un éboulement).",
+   "malTourner": "Elle est vraie une fois sur deux. Fausse : un tunnel vide et frais, bon à aménager. Vraie : quelqu'un y vit encore et garde ses vivres, ou il y est mort, et l'on décide quoi faire de ce qu'il laisse.",
+   "change": "Un refuge sous la roche existe pour la prochaine éruption, ou un piège est connu de tous.",
+   "garde": "De quoi aménager un tunnel de lave (le plan), et l'emplacement, à donner ou à taire.",
+   "verites": {
+    "vraie": {
+     "poids": 1,
+     "texte": "Un ancien guide y vit seul depuis le jour zéro, avec des vivres pour des mois, et ne veut voir personne ; ou il y est mort, et ses vivres sont là."
+    },
+    "fausse": {
+     "poids": 1,
+     "texte": "Un tunnel vide et frais, sans un sac : quelqu'un a inventé, ou s'est trompé de bouche."
+    }
+   },
+   "pente": {
+    "tousLes": 10,
+    "crans": [
+     "D'autres cherchent la bouche ; on voit leurs traces sur la lave.",
+     "Quelqu'un a trouvé : les vivres partent, sac par sac.",
+     "Le tunnel est vide, ou gardé par ceux qui l'ont pris."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "les-vivres",
+     "titre": "Les vivres",
+     "texte": "On trouve la réserve, et personne pour la garder.",
+     "effets": {
+      "stocks": {
+       "nourriture": 8,
+       "eau": 4
+      },
+      "plan": "tunnel-de-lave-amenage"
+     }
+    },
+    {
+     "cle": "partager",
+     "titre": "Partager avec l'habitant",
+     "texte": "Il est vivant. On partage, on l'écoute ; il montre ses galeries, et peut-être vient avec le groupe.",
+     "effets": {
+      "acte": "partager",
+      "plan": "tunnel-de-lave-amenage"
+     }
+    },
+    {
+     "cle": "chasser",
+     "titre": "Le chasser",
+     "texte": "Il est vivant, et seul. On prend ses vivres et l'on garde sa bouche.",
+     "effets": {
+      "acte": "attaquer",
+      "stocks": {
+       "nourriture": 8,
+       "eau": 4
+      },
+      "rumeur": true
+     }
+    },
+    {
+     "cle": "vide",
+     "titre": "Le tunnel vide",
+     "texte": "Rien que la roche fraîche : un abri à aménager, que personne ne connaît.",
+     "effets": {
+      "plan": "tunnel-de-lave-amenage"
+     }
+    }
+   ],
+   "voix": [
+    "« Un tunnel sous la coulée, plein de sacs de riz. Je l'ai vu, je te dis. Enfin, mon beau-frère l'a vu. »",
+    "Un Pèlerin, doucement : « Ce trou-là, c'est un tombeau. Laissez-le à la lave. »",
+    "Le livre de l'île, rumeur six : « Personne qui l'ait vu n'en est revenu pour le dire, ce qui peut vouloir dire deux choses. »"
+   ],
+   "traces": "Une bouche marquée d'un cairn, ou bouchée de pierres ; un nom de plus sur la liste de ceux qui sont allés voir.",
+   "ton": ""
+  },
+  {
+   "cle": "les-aiguilles-de-bourg-murat",
+   "numero": 6,
+   "titre": "Les aiguilles de Bourg-Murat",
+   "taille": "affaire",
+   "famille": "volcan",
+   "regions": [
+    "le-tampon"
+   ],
+   "sites": [],
+   "factions": [
+    "cooperative-des-plaines",
+    "pelerins-de-la-lave"
+   ],
+   "front": "fournaise",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 1,
+    "declencheurs": []
+   },
+   "apprendre": "Un fermier de la Coopérative le dit au troc du samedi : à l'observatoire de Bourg-Murat, où plus personne ne vient, « les machines des géologues grattent le papier jour et nuit ».",
+   "demande": "Quelqu'un qui sache lire les tracés, ou qui trouve le cahier où c'est expliqué ; puis porter la nouvelle à Sainte-Rose avant la fissure : trois jours par la Plaine des Palmistes, ou deux par la route des Laves, qui sera peut-être coupée.",
+   "malTourner": "Les Pèlerins ne veulent pas l'entendre : l'épreuve, disent-ils, ne se lit pas sur une aiguille. La nouvelle arrive déformée et vide un village pour rien, ou elle arrive trop tard.",
+   "change": "Le front de la Fournaise recule d'un cran si l'Est est prévenu à temps.",
+   "garde": "Savoir lire le volcan, que presque personne n'a : le groupe sait désormais une éruption quelques jours avant (le MJ le lui dit).",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Les tracés montrent un gonflement qui s'accélère : une éruption dans les semaines qui viennent."
+    },
+    "exageree": {
+     "poids": 1,
+     "texte": "Les aiguilles s'agitent pour une crise sismique qui retombera ; prévenir vide l'Est pour rien."
+    }
+   },
+   "pente": {
+    "tousLes": 7,
+    "crans": [
+     "Le papier des enregistreurs s'épuise ; personne ne le change.",
+     "Les secousses se sentent jusqu'à la Plaine des Cafres.",
+     "La fissure s'ouvre : le front de la Fournaise avance d'un cran."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "a-temps",
+     "titre": "L'Est prévenu à temps",
+     "texte": "La nouvelle arrive, et elle est crue : les villages bas se vident avant la coulée.",
+     "effets": {
+      "front": -1,
+      "reputation": {
+       "pelerins-de-la-lave": 1
+      },
+      "renom": 1
+     }
+    },
+    {
+     "cle": "pour-rien",
+     "titre": "Un village vidé pour rien",
+     "texte": "La nouvelle était exagérée : des familles ont marché sous la pluie pour rien, et s'en souviennent.",
+     "effets": {
+      "rumeur": true,
+      "renom": -1
+     }
+    },
+    {
+     "cle": "trop-tard",
+     "titre": "Trop tard",
+     "texte": "On arrive avec la coulée.",
+     "effets": {
+      "front": 1
+     }
+    },
+    {
+     "cle": "pas-entendus",
+     "titre": "Pas entendus",
+     "texte": "Les Pèlerins écoutent poliment et ne bougent pas ; d'autres, dans l'Est, partent quand même.",
+     "effets": {
+      "reputation": {
+       "pelerins-de-la-lave": -1
+      }
+     }
+    }
+   ],
+   "voix": [
+    "« Les machines des géologues, à Bourg-Murat ? Elles grattent, elles grattent. Personne ne sait lire ça. »",
+    "Une fermière qui n'a jamais vu d'éruption de près : « Le volcan, c'est pas une aiguille qui va te le dire. C'est les oiseaux. »",
+    "Un rouleau de papier quadrillé trouvé dans une voiture, avec des dates entourées au stylo rouge."
+   ],
+   "traces": "Un rouleau couvert de traits serrés ; une route des Laves barrée, ou une église vide sur une coulée neuve.",
+   "ton": ""
+  },
+  {
+   "cle": "les-noyes-de-la-passe",
+   "numero": 7,
+   "titre": "Les noyés de la passe",
+   "taille": "affaire",
+   "famille": "littoral",
+   "regions": [
+    "saint-leu"
+   ],
+   "sites": [],
+   "factions": [
+    "barques-du-sud"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "phases": [
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Après une houle australe, les Barques ne veulent plus mouiller devant Saint-Leu : la mer a rendu ses noyés, sur la plage et dans la passe.",
+   "demande": "De nettoyer une plage à marée basse, de jour, en silence (un quart dehors), et de décider quoi faire des corps.",
+   "malTourner": "La morsure d'un noyé s'infecte toujours. Brûler les corps fait une fumée que toute la côte voit. La mer en rend d'autres à la houle suivante.",
+   "change": "Une marine redevient un port sûr pour quelques semaines.",
+   "garde": "Un passage par la mer avec les Barques, qui vaut la route des Laves.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Une dizaine de noyés sur la plage et dans la passe, lents, lourds d'eau."
+    },
+    "exageree": {
+     "poids": 1,
+     "texte": "On a dit cinquante ; il y en a quatre, mais une barque s'est échouée au milieu d'eux."
+    }
+   },
+   "pente": {
+    "tousLes": 3,
+    "crans": [
+     "Les Barques mouillent plus au sud, et la pêche baisse.",
+     "Les noyés remontent la ravine vers le bourg.",
+     "La houle suivante en rend d'autres."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "enterres",
+     "titre": "La plage nettoyée, les corps enterrés",
+     "texte": "Un jour de plus à creuser sous les filaos, en silence ; les Barques s'en souviennent.",
+     "effets": {
+      "reputation": {
+       "barques-du-sud": 2
+      }
+     }
+    },
+    {
+     "cle": "brules",
+     "titre": "Les corps brûlés",
+     "texte": "Plus vite ; mais toute la côte voit la fumée.",
+     "effets": {
+      "reputation": {
+       "barques-du-sud": 2
+      },
+      "visibilite": 2
+     }
+    },
+    {
+     "cle": "laisser-la-mer",
+     "titre": "Laisser la mer faire",
+     "texte": "On attend que la houle les reprenne. Les Barques passent au large de Saint-Leu, et ne s'arrêtent plus.",
+     "effets": {
+      "reputation": {
+       "barques-du-sud": -1
+      }
+     }
+    }
+   ],
+   "voix": [
+    "Le patron Grondin, qui ne discute pas : « Pas devant Saint-Leu. Pas tant que la mer rend. »",
+    "« Marée basse, plein jour, pas un mot. Ils entendent même sous l'eau. »",
+    "Le livre de l'île, rumeur deux : « La mer les rend : les noyés reviennent avec la houle. »"
+   ],
+   "traces": "Des tombes au haut de la plage, sous les filaos, ou une tache noire de feu sur le sable.",
+   "ton": ""
+  },
+  {
+   "cle": "le-vieux-chemin-pave",
+   "numero": 8,
+   "titre": "Le vieux chemin pavé",
+   "taille": "affaire",
+   "famille": "littoral",
+   "regions": [
+    "route-du-littoral"
+   ],
+   "sites": [
+    "lazaret-de-la-grande-chaloupe"
+   ],
+   "factions": [
+    "garnison-du-quai",
+    "dispensaire-du-sud"
+   ],
+   "front": "garnison",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 1,
+    "declencheurs": []
+   },
+   "apprendre": "Une soignante veut rejoindre le Sud sans passer par le contrôle de la Garnison où, dit-elle, « celui qui se dit médecin ne repart pas ».",
+   "demande": "De la conduire par le vieux chemin pavé, au-dessus de la falaise, de nuit ou par temps couvert (deux quarts de marche), en passant devant le lazaret.",
+   "malTourner": "La livrer à la Garnison rapporte du carburant, et fait rougir. La Garnison a peut-être raison de dire qu'elle sauverait plus de monde au Port. Le chemin est raide, glissant, et le lazaret n'est pas vide.",
+   "change": "Le Dispensaire gagne une soignante, ou la Garnison une réquisitionnée.",
+   "garde": "La connaissance du chemin (on passe la route du Littoral sans le contrôle), et une dette de l'un des deux camps.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Elle est infirmière, et la Garnison réquisitionne bien les soignants."
+    },
+    "exageree": {
+     "poids": 1,
+     "texte": "Elle est aide-soignante ; la Garnison l'aurait gardée, logée, nourrie, et fait travailler, sans plus."
+    }
+   },
+   "pente": {
+    "tousLes": 2,
+    "crans": [
+     "Elle cherche quelqu'un d'autre pour la conduire.",
+     "Elle tente le chemin seule.",
+     "La Garnison la trouve sur la route."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "au-sud",
+     "titre": "Arrivée au Sud",
+     "texte": "Elle arrive au Dispensaire ; le groupe connaît le chemin.",
+     "effets": {
+      "acte": "aider",
+      "reputation": {
+       "dispensaire-du-sud": 2,
+       "garnison-du-quai": -1
+      },
+      "voie": "ouverte"
+     }
+    },
+    {
+     "cle": "livree",
+     "titre": "Livrée à la Garnison",
+     "texte": "On la conduit au poste de la Grande Chaloupe ; on repart avec du carburant.",
+     "effets": {
+      "acte": "trahir",
+      "reputation": {
+       "garnison-du-quai": 2,
+       "dispensaire-du-sud": -2
+      },
+      "stocks": {
+       "carburant": 4
+      }
+     }
+    },
+    {
+     "cle": "refus",
+     "titre": "Refuser de l'emmener",
+     "texte": "Elle part seule. On apprendra la suite par le Ladi Lafé, ou jamais.",
+     "effets": {}
+    }
+   ],
+   "voix": [
+    "« Celui qui se dit médecin, au contrôle, ne repart pas. On le loge, on le nourrit, on le garde. »",
+    "Une femme au marché, à voix basse : « Il y a le chemin des anciens, au-dessus de la falaise. Les pavés sont encore là. »",
+    "La radio de la Garnison : « Tout personnel de santé est prié de se présenter au poste de la Grande Chaloupe. »"
+   ],
+   "traces": "Des pavés remis en place sur le chemin, une corde nouée à un passage ; au Dispensaire, une soignante de plus, ou un poste vide.",
+   "ton": ""
+  },
+  {
+   "cle": "le-viaduc",
+   "numero": 9,
+   "titre": "Le viaduc",
+   "taille": "grande-affaire",
+   "famille": "littoral",
+   "regions": [
+    "saint-paul",
+    "saint-leu"
+   ],
+   "sites": [],
+   "factions": [
+    "ferrailleurs"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Les Ferrailleurs offrent une part à qui les aidera à « ouvrir la route d'en haut » : la route des Tamarins, bouchée d'épaves sur ses viaducs.",
+   "demande": "De dégager une voie entre les épaves d'un viaduc, voiture après voiture (des jours de chantier, à plusieurs de préférence) : siphonner, pousser dans le vide (un grand fracas à chaque fois), ou laisser en chicane.",
+   "malTourner": "Chaque voiture est une boîte à surprise : un Livide resté attaché à sa ceinture, des gens qui ne sont jamais sortis. Le bruit amène la horde. Une route ouverte sert aussi aux Sans-Lune et aux convois de la Garnison.",
+   "change": "L'Ouest et le Sud se rejoignent en charrette ou à vélo en une journée : une vraie modification de la carte (le MJ ouvre la route).",
+   "garde": "Des pièces, un droit de passage chez les Ferrailleurs, et la responsabilité de ce qui passera par là.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Trois viaducs bouchés ; le plus long demande une semaine à six."
+    },
+    "piege": {
+     "poids": 1,
+     "texte": "Les Ferrailleurs veulent surtout que le fracas se fasse loin de leur casse : la horde qu'il attire, c'est le groupe qui l'aura sur le dos."
+    }
+   },
+   "pente": {
+    "tousLes": 14,
+    "crans": [
+     "Les Ferrailleurs commencent seuls, lentement.",
+     "Une horde s'installe sous le viaduc, attirée par leur bruit.",
+     "Ils abandonnent ; la route reste fermée."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "route-ouverte",
+     "titre": "La route ouverte",
+     "texte": "Les épaves sont au fond de la ravine ; on passe en charrette, en camion.",
+     "effets": {
+      "voie": "ouverte",
+      "reputation": {
+       "ferrailleurs": 2
+      },
+      "stocks": {
+       "pieces": 4,
+       "carburant": 2
+      }
+     }
+    },
+    {
+     "cle": "en-chicane",
+     "titre": "En chicane",
+     "texte": "Une voie étroite, gardée : on passe à pied et à vélo, pas les convois.",
+     "effets": {
+      "voie": "ouverte",
+      "reputation": {
+       "ferrailleurs": 1
+      }
+     }
+    },
+    {
+     "cle": "la-horde",
+     "titre": "La horde",
+     "texte": "Le fracas amène une horde qui reste sous le viaduc ; le chantier s'arrête.",
+     "effets": {
+      "horde": true
+     }
+    }
+   ],
+   "voix": [
+    "Gros Mani : « Une part pour chaque bras. Et la route, après, elle est à tout le monde. Enfin, à nous d'abord. »",
+    "« Sur le viaduc, il y a encore des gens dans les voitures. Faut pas regarder dedans. »",
+    "Une affiche à la casse de la Rivière des Galets : « ON CHERCHE DES BRAS, ROUTE D'EN HAUT »."
+   ],
+   "traces": "Un trou dans le parapet et des carcasses au fond de la ravine ; des traces de vélo, puis de charrette, puis de camion.",
+   "ton": ""
+  },
+  {
+   "cle": "une-seule-lampe",
+   "numero": 10,
+   "titre": "Une seule lampe",
+   "taille": "affaire",
+   "famille": "fetes",
+   "regions": [],
+   "sites": [],
+   "factions": [],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [],
+    "fete": "dipavali",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Une famille malbare du camp, ou des voisins, dit qu'il lui faudrait de l'huile et une mèche pour une lampe, une seule.",
+   "demande": "De l'huile (à trouver, à presser, à troquer : une part au cours) et une mèche ; puis de décider, tous ensemble, si on l'allume dehors.",
+   "malTourner": "Quelqu'un au camp grince que « *zot i fé servis* » (ils font leur cérémonie, sous-entendu : leur sorcellerie). Chaque flamme attire. Une lampe allumée en cachette ne réunit personne.",
+   "change": "Le moral de tout l'abri, et le regard des uns sur les autres : celui qui grinçait vient voir la lampe.",
+   "garde": "Rien qui se porte. C'est l'affaire qui dit ce que les fêtes font ici.",
+   "verites": {
+    "vraie": {
+     "poids": 1,
+     "texte": "Il n'y a rien à découvrir : une famille veut une lampe."
+    }
+   },
+   "pente": {
+    "tousLes": 3,
+    "crans": [
+     "La famille cherche de l'huile seule.",
+     "Le jour passe ; on allume une bougie à la place, sans rien dire."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "allumee",
+     "titre": "La lampe allumée dehors",
+     "texte": "Le groupe fête Dipavali : tout le camp vient voir, même celui qui grinçait.",
+     "effets": {
+      "fete": "dipavali",
+      "prejuge": true
+     }
+    },
+    {
+     "cle": "cachee",
+     "titre": "La lampe cachée",
+     "texte": "Allumée derrière une tôle : la famille prie seule, le reste du camp dort.",
+     "effets": {}
+    },
+    {
+     "cle": "pas-de-lampe",
+     "titre": "Pas de lampe",
+     "texte": "Le groupe refuse : trop de risques. La famille ne dit rien, et s'en souvient.",
+     "effets": {
+      "entente": -1
+     }
+    }
+   ],
+   "voix": [
+    "« Une lampe. Une seule. Un peu d'huile, une mèche. On la met derrière la tôle, personne ne la verra. »",
+    "« *Zot i fé servis*, là-bas. » Celui qui le dit n'est jamais allé voir.",
+    "Un enfant du camp demande pourquoi on allume une lampe quand il fait noir partout."
+   ],
+   "traces": "Une petite lampe de terre noircie, rangée avec soin ; quelqu'un qui ne dit plus « servis » de la même façon.",
+   "ton": ""
+  },
+  {
+   "cle": "le-kabar-du-20-desanm",
+   "numero": 11,
+   "titre": "Le kabar du 20 désanm",
+   "taille": "affaire",
+   "famille": "fetes",
+   "regions": [],
+   "sites": [],
+   "factions": [],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [
+     12
+    ],
+    "phases": [],
+    "fete": "liberte",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Dès le début de décembre, quelqu'un demande qui sait encore tendre une peau sur un rouleur.",
+   "demande": "De fabriquer ou de retrouver les instruments (une peau, un fût, des graines pour le kayamb), de trouver une voix, et un endroit d'où le tambour ne trahira pas l'abri.",
+   "malTourner": "Le tambour s'entend de très loin. Le jouer sous terre ou pendant un orage change tout. Le taire blesse ceux qui savent ce qu'on fête.",
+   "change": "Le moral, l'autorité de celui qui a tranché, et ce que les voisins savent de l'emplacement de l'abri.",
+   "garde": "Un instrument, et le premier maloya joué par des survivants.",
+   "verites": {
+    "vraie": {
+     "poids": 1,
+     "texte": "Il n'y a rien à découvrir : il y a un choix."
+    }
+   },
+   "pente": {
+    "tousLes": 7,
+    "crans": [
+     "Le rouleur n'a toujours pas de peau.",
+     "Le 20 décembre passe en silence ; quelqu'un fredonne quand même."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "dehors",
+     "titre": "Le kabar dehors",
+     "texte": "Le groupe fête le 20 décembre, tambour compris.",
+     "effets": {
+      "fete": "liberte"
+     }
+    },
+    {
+     "cle": "a-couvert",
+     "titre": "Sous terre, ou sous l'orage",
+     "texte": "Le kabar se tient, et le tambour se perd dans la roche ou le tonnerre (au MJ de dire ce qui porte encore).",
+     "effets": {
+      "fete": "liberte"
+     }
+    },
+    {
+     "cle": "se-taire",
+     "titre": "Se taire",
+     "texte": "Le chef décide de ne pas jouer. Ceux qui savent ce qu'on fête le prennent mal.",
+     "effets": {
+      "entente": -1
+     }
+    }
+   ],
+   "voix": [
+    "« Qui sait encore tendre une peau sur un rouleur ? Mon père savait. »",
+    "« Le 20 *désanm*, on joue. Même si c'est la fin du monde. Surtout si c'est la fin du monde. »",
+    "« Un tambour, ça s'entend à trois ravines. Tu veux qu'ils viennent danser, les Livides ? »"
+   ],
+   "traces": "Un rouleur pendu au mur, sa peau tendue ; une date gravée sur le fût.",
+   "ton": ""
+  },
+  {
+   "cle": "le-voeu",
+   "numero": 12,
+   "titre": "Le vœu",
+   "taille": "affaire",
+   "famille": "fetes",
+   "regions": [
+    "est"
+   ],
+   "sites": [],
+   "factions": [],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [],
+    "fete": "cavadee",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Un survivant, du groupe ou d'ailleurs, veut tenir un vœu : retrouver quelqu'un, atteindre un lieu.",
+   "demande": "Dix jours de carême (le vœu du Cavadee), puis une marche à découvert jusqu'à un temple de l'Est, en groupe si l'on veut l'accompagner.",
+   "malTourner": "Celui qu'on cherche est mort, ou Livide, ou ne veut pas être retrouvé. Rompre le carême ne punit de rien, mais le vœu ne soutient plus.",
+   "change": "Un moral qui tient tant que le vœu est tenu, et un lieu de culte rouvert.",
+   "garde": "La réponse, quelle qu'elle soit. C'est une affaire qui peut finir par un deuil.",
+   "verites": {
+    "vraie": {
+     "poids": 2,
+     "texte": "Celui qu'on cherche est vivant, quelque part sur la route du temple."
+    },
+    "perimee": {
+     "poids": 2,
+     "texte": "Il était vivant il y a un mois ; il est parti depuis, ou il est mort."
+    },
+    "fausse": {
+     "poids": 1,
+     "texte": "Il est mort le jour zéro ; on ne le saura qu'en arrivant."
+    }
+   },
+   "pente": {
+    "tousLes": 10,
+    "crans": [
+     "Le carême fatigue ; le vœu tient.",
+     "La saison passe, la route se ferme.",
+     "Le vœu reste en suspens, et pèse."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "tenu",
+     "titre": "Le vœu tenu",
+     "texte": "On arrive au temple ; on retrouve, ou l'on sait.",
+     "effets": {
+      "fete": "cavadee",
+      "voeu": "tenu"
+     }
+    },
+    {
+     "cle": "rompu",
+     "titre": "Le vœu rompu",
+     "texte": "Le carême cède, ou la route. Personne ne reproche rien ; le vœu ne soutient plus.",
+     "effets": {
+      "voeu": "rompu"
+     }
+    },
+    {
+     "cle": "le-deuil",
+     "titre": "La réponse, et le deuil",
+     "texte": "Ce qu'on trouve est une tombe, ou un Livide qu'on reconnaît. Le vœu est tenu ; le reste se porte.",
+     "effets": {
+      "voeu": "tenu",
+      "moral": -1
+     }
+    }
+   ],
+   "voix": [
+    "« J'ai promis. Dix jours sans viande, puis le temple. Si elle est vivante, elle y sera. »",
+    "« Un vœu, ça ne se rompt pas pour une horde. Ça se rompt pour rien, ou pas du tout. »",
+    "Sous la pierre d'un oratoire : un prénom, une date, et « je viens »."
+   ],
+   "traces": "Un temple où brûle de nouveau une lampe ; une tombe, peut-être, au bout d'une route.",
+   "ton": ""
+  },
+  {
+   "cle": "le-jour-qu-il-est",
+   "numero": 13,
+   "titre": "Le jour qu'il est",
+   "taille": "affaire",
+   "famille": "fetes",
+   "regions": [
+    "mafate",
+    "cilaos",
+    "salazie"
+   ],
+   "sites": [],
+   "factions": [
+    "familles-des-ilets"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [
+     12
+    ],
+    "phases": [],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": [
+     "date-perdue"
+    ]
+   },
+   "apprendre": "En arrivant quelque part où l'on se dispute sur la date : les uns veulent fêter Noël demain, les autres dans quatre jours.",
+   "demande": "De donner le jour qu'on croit, calendrier à l'appui si on en a un, ou de lire la lune et les signes du paysage avec eux.",
+   "malTourner": "On peut se tromper de bonne foi, ou mentir. Un faux jour se propage d'îlet en îlet par les sifflets, et revient un mois plus tard dans la bouche d'un inconnu.",
+   "change": "Une communauté retrouve le compte des jours, ou le perd pour de bon.",
+   "garde": "Une réputation de quelqu'un qui sait, ou qui a menti sur la seule chose que personne ne peut vérifier.",
+   "verites": {
+    "vraie": {
+     "poids": 1,
+     "texte": "Les uns ont raison : ils ont gardé un calendrier coché chaque soir."
+    },
+    "fausse": {
+     "poids": 1,
+     "texte": "Personne n'a raison : les deux comptes ont dérivé, de deux jours chacun, dans les deux sens."
+    }
+   },
+   "pente": {
+    "tousLes": 4,
+    "crans": [
+     "La dispute s'aigrit.",
+     "On fête Noël deux fois, ou pas du tout."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "juste",
+     "titre": "Le bon jour, de bonne foi",
+     "texte": "On retrouve la date ensemble ; l'îlet s'en souviendra.",
+     "effets": {
+      "reputation": {
+       "familles-des-ilets": 1
+      },
+      "renom": 1
+     }
+    },
+    {
+     "cle": "trompe",
+     "titre": "Un faux jour, de bonne foi",
+     "texte": "On s'est trompé, sans le savoir ; le faux jour court.",
+     "effets": {
+      "rumeur": true
+     }
+    },
+    {
+     "cle": "mensonge",
+     "titre": "Un faux jour, exprès",
+     "texte": "On a menti, pour une raison ou pour rien ; le Ladi Lafé finira par le dire.",
+     "effets": {
+      "acte": "mentir",
+      "rumeur": true
+     }
+    }
+   ],
+   "voix": [
+    "« Noël, c'est demain. J'ai coché chaque soir. » « Tu as coché deux fois le soir de la pluie, oui. »",
+    "Trois coups de sifflet, puis deux : l'îlet d'à côté donne sa date. Personne ne sait d'où il la tient.",
+    "« Demande à la lune. Elle, elle ne ment pas. Elle ne dit pas tout, c'est tout. »"
+   ],
+   "traces": "Un calendrier coché à la porte de l'école de l'îlet ; une date fausse qui court encore.",
+   "ton": ""
+  },
+  {
+   "cle": "le-service-dans-la-nuit",
+   "numero": 14,
+   "titre": "Le service dans la nuit",
+   "taille": "affaire",
+   "famille": "religion",
+   "regions": [
+    "est",
+    "sud-sauvage",
+    "saint-pierre"
+   ],
+   "sites": [],
+   "factions": [],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Au camp, quelqu'un dit qu'on fait « de la sorcellerie » chez les voisins, la nuit, avec du feu.",
+   "demande": "D'aller voir, ou de laisser dire.",
+   "malTourner": "C'est toujours autre chose que ce qu'on a dit. Le danger vient de ceux qui y vont armés, et du feu, qui, lui, se voit vraiment de loin.",
+   "change": "Deux abris se parlent, ou se ferment. Celui qui a colporté rougit.",
+   "garde": "Un voisinage. Le jeu ne donne jamais raison à la rumeur.",
+   "verites": {
+    "fausse": {
+     "poids": 1,
+     "texte": "Une veillée pour un mort, une prière pour un malade, ou un repas : jamais ce qu'on a dit. Le MJ choisit ; la rumeur est toujours fausse."
+    }
+   },
+   "pente": {
+    "tousLes": 3,
+    "crans": [
+     "La rumeur grossit : on parle de poules noires.",
+     "Des gens du camp veulent y aller « voir », armés.",
+     "Le voisinage se ferme : plus de troc, plus de passage."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "aller-voir",
+     "titre": "Aller voir, les mains vides",
+     "texte": "On est reçu ; on partage le repas ou la veillée, et l'on revient le dire.",
+     "effets": {
+      "rumeur": "dementie",
+      "prejuge": true
+     }
+    },
+    {
+     "cle": "y-aller-armes",
+     "titre": "Y aller armés",
+     "texte": "Une porte enfoncée, un feu renversé, des gens qui n'avaient rien fait.",
+     "effets": {
+      "acte": "attaquer",
+      "rumeur": true
+     }
+    },
+    {
+     "cle": "laisser-dire",
+     "titre": "Laisser dire",
+     "texte": "La rumeur reste, et le chemin entre les deux abris se referme.",
+     "effets": {
+      "rumeur": true
+     }
+    }
+   ],
+   "voix": [
+    "« Chez les voisins, la nuit, ils font du feu et ils chantent des choses. *Zot i fé servis.* Moi, je dis rien. »",
+    "« J'ai vu une poule noire. » Personne d'autre ne l'a vue.",
+    "Une vieille du camp : « *Kosa zot i rakont ? Na in malad lasou.* » (Qu'est-ce que vous racontez ? Il y a un malade, là-bas.)"
+   ],
+   "traces": "Un chemin entre deux abris qui se rouvre, ou une barrière de plus ; le nom du colporteur, que tout le monde finit par savoir.",
+   "ton": ""
+  },
+  {
+   "cle": "les-derniers-arrives",
+   "numero": 15,
+   "titre": "Les derniers arrivés",
+   "taille": "affaire",
+   "famille": "religion",
+   "regions": [
+    "saint-denis"
+   ],
+   "sites": [
+    "barre-du-chaudron"
+   ],
+   "factions": [
+    "sans-lune"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "panique",
+     "effondrement",
+     "silence"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "C'est la rumeur numéro quatre du livre de l'île : on accuse une famille comorienne du Chaudron d'avoir vidé l'hypermarché du quartier.",
+   "demande": "De recouper : des traces de camion sur le parking, des marques à la bombe, un témoin sur un toit du Chaudron.",
+   "malTourner": "Pendant qu'on vérifie, d'autres ont déjà décidé. Répéter la rumeur est le plus facile.",
+   "change": "Une famille est chassée ou gardée ; les vrais auteurs sont connus, ou non.",
+   "garde": "Un pas vers le bleu ou vers le rouge, et la leçon que le Ladi Lafé court plus vite que les faits.",
+   "verites": {
+    "fausse": {
+     "poids": 1,
+     "texte": "Ceux qui ont vidé l'hypermarché étaient des Sans-Lune, en camion, le visage noirci de suie ; on retrouve le camion plus loin. La famille n'y est pour rien."
+    }
+   },
+   "pente": {
+    "tousLes": 2,
+    "crans": [
+     "On parle d'aller « leur demander ».",
+     "La famille est chassée de sa cage d'escalier.",
+     "Elle a disparu ; personne ne sait où."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "la-preuve",
+     "titre": "La preuve apportée",
+     "texte": "Les traces et le témoin disent qui c'était, devant tout le monde.",
+     "effets": {
+      "acte": "aider",
+      "rumeur": "dementie",
+      "prejuge": true
+     }
+    },
+    {
+     "cle": "accueillie",
+     "titre": "La famille accueillie",
+     "texte": "Chassée de son immeuble, elle trouve une place à l'abri.",
+     "effets": {
+      "acte": "accueillir",
+      "recrue": true
+     }
+    },
+    {
+     "cle": "chassee",
+     "titre": "La famille chassée",
+     "texte": "Personne n'a vérifié à temps, ou le groupe a aidé à la chasser.",
+     "effets": {
+      "acte": "exclure"
+     }
+    },
+    {
+     "cle": "repetee",
+     "titre": "La rumeur répétée",
+     "texte": "Le groupe la répète à son tour : c'est le plus facile.",
+     "effets": {
+      "acte": "colporter",
+      "rumeur": true
+     }
+    }
+   ],
+   "voix": [
+    "« C'est les Comoriens du Chaudron. Tout le monde le sait. » Celui qui le dit n'a rien vu.",
+    "Un garçon, depuis un toit : « Moi, j'ai vu un camion. Blanc. Ils avaient de la suie sur la figure. »",
+    "Le livre de l'île, rumeur quatre : « Faux. Mais la rumeur court plus vite qu'eux. »"
+   ],
+   "traces": "Une porte de cage d'escalier repeinte, ou murée ; un camion blanc retrouvé vide sur la RN2.",
+   "ton": ""
+  },
+  {
+   "cle": "rendre-a-la-lave",
+   "numero": 16,
+   "titre": "Rendre à la lave",
+   "taille": "grande-affaire",
+   "famille": "religion",
+   "regions": [
+    "est"
+   ],
+   "sites": [
+    "eglise-notre-dame-des-laves"
+   ],
+   "factions": [
+    "pelerins-de-la-lave",
+    "dispensaire-du-sud"
+   ],
+   "front": "remede",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "On dit que les Pèlerins nourrissent et soignent sans rien demander. On dit aussi, plus bas, qu'ils « rendent les mordus à la lave ». C'est la rumeur numéro huit du livre de l'île.",
+   "demande": "D'y vivre un moment pour savoir (quelques jours à Sainte-Rose, à travailler, à prier ou non : personne n'y est forcé), puis de choisir : se taire, parler, ou faire sortir quelqu'un.",
+   "malTourner": "Les deux choses sont vraies le même jour. Frère Expédit laisse prier tout le monde, et croit ce qu'il croit : les mordus qui viennent à eux sont veillés, puis accompagnés, à la fin, vers les coulées, et l'on ne les revoit pas. Certains y vont en paix ; aux autres, on ne demande pas. L'ironie y est plus dangereuse qu'une arme.",
+   "change": "Le front du remède, si le Dispensaire l'apprend : la docteure cherche des infectés vivants. L'accueil des Pèlerins, pour tous ceux qui viennent après.",
+   "garde": "Un lieu où changer de religion, où rien n'est imposé, et un doute.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Les Pèlerins soignent, nourrissent, et accompagnent les mordus vers les coulées avant qu'ils se relèvent. Rien ne se voit : on le comprend à ce qui manque le matin."
+    },
+    "exageree": {
+     "poids": 1,
+     "texte": "Ils n'accompagnent que ceux qui le demandent ; la rumeur a fait le reste."
+    }
+   },
+   "pente": {
+    "tousLes": 10,
+    "crans": [
+     "Un mordu de plus arrive à Sainte-Rose, avec les siens.",
+     "Le Dispensaire entend la rumeur : le front du remède peut avancer.",
+     "Les Pèlerins ferment leur porte aux curieux."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "se-taire",
+     "titre": "Se taire",
+     "texte": "On sait, et l'on n'en dit rien ; les Pèlerins continuent de nourrir qui vient.",
+     "effets": {
+      "reputation": {
+       "pelerins-de-la-lave": 1
+      }
+     }
+    },
+    {
+     "cle": "le-dire-au-dispensaire",
+     "titre": "Le dire au Dispensaire",
+     "texte": "La docteure veut comprendre ; elle enverra quelqu'un à Sainte-Rose.",
+     "effets": {
+      "front": 1,
+      "reputation": {
+       "dispensaire-du-sud": 1,
+       "pelerins-de-la-lave": -2
+      }
+     }
+    },
+    {
+     "cle": "faire-sortir",
+     "titre": "Faire sortir quelqu'un",
+     "texte": "Un mordu qui ne veut pas aller aux coulées demande à partir. On l'emmène, et l'on porte avec lui ce qui vient ensuite.",
+     "effets": {
+      "acte": "aider",
+      "reputation": {
+       "pelerins-de-la-lave": -1
+      }
+     }
+    },
+    {
+     "cle": "le-dire-partout",
+     "titre": "Le dire partout",
+     "texte": "Le Ladi Lafé s'en empare, et les gens cessent de venir à Sainte-Rose, malades compris.",
+     "effets": {
+      "rumeur": true,
+      "reputation": {
+       "pelerins-de-la-lave": -2
+      }
+     }
+    }
+   ],
+   "voix": [
+    "« Les Pèlerins ? Ils t'ouvrent, ils te nourrissent, ils te demandent rien. Rien du tout. »",
+    "Plus bas : « Et les mordus, tu sais ce qu'ils en font ? Ils les rendent à la lave. »",
+    "Frère Expédit, doucement : « Ici, personne ne se relève. Nous y veillons. »"
+   ],
+   "traces": "Une natte roulée au bout d'une rangée ; un sentier usé qui monte vers les coulées, que personne ne prend de jour.",
+   "ton": "Rien n'est montré : ni la coulée, ni ce qui s'y passe. Le malaise vient de ce qu'on comprend (une natte vide le matin, un chant qui s'arrête), jamais de ce qu'on voit. Aucun Pèlerin n'est un monstre ni un saint ; la foi n'a aucun effet, ni bon ni mauvais. Aucun enfant n'est en jeu dans cette affaire."
+  },
+  {
+   "cle": "l-alambic-du-tevelave",
+   "numero": 17,
+   "titre": "L'alambic du Tévelave",
+   "taille": "affaire",
+   "famille": "savoirs",
+   "regions": [
+    "hauts-de-l-ouest"
+   ],
+   "sites": [
+    "alambic-du-tevelave"
+   ],
+   "factions": [
+    "ferrailleurs"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Les Ferrailleurs cherchent « quelqu'un qui sache encore cuire le géranium », pour en tirer autre chose que du parfum.",
+   "demande": "Du bois de chauffe, une semaine de temps, et l'accord du vieux distillateur, qui n'enseigne qu'en travaillant à côté de lui.",
+   "malTourner": "Il meurt avant d'avoir tout montré, et le savoir se perd. La fumée de l'alambic se voit de loin. Les Ferrailleurs vendent ce que vous avez appris au suivant.",
+   "change": "L'alcool comme carburant maison existe dans la région.",
+   "garde": "Le savoir de l'alambic (« Moteurs de fortune » : l'alcool de canne et ce qui roule avec), de ceux qui valent cher.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Le vieux est vivant, et prêt à montrer à qui travaille."
+    },
+    "perimee": {
+     "poids": 1,
+     "texte": "Le vieux est mort il y a dix jours ; son cahier est dans la case, à moitié brûlé."
+    }
+   },
+   "pente": {
+    "tousLes": 10,
+    "crans": [
+     "Le vieux s'affaiblit.",
+     "Les Ferrailleurs trouvent quelqu'un d'autre.",
+     "Le vieux meurt ; l'alambic rouille."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "appris",
+     "titre": "Appris en travaillant",
+     "texte": "Une semaine à côté de lui, à la chaleur du foyer ; on repart en sachant.",
+     "effets": {
+      "savoir": "moteurs-de-fortune",
+      "reputation": {
+       "ferrailleurs": 1
+      }
+     }
+    },
+    {
+     "cle": "garde-pour-soi",
+     "titre": "Gardé pour soi",
+     "texte": "On apprend, et l'on n'en dit rien aux Ferrailleurs.",
+     "effets": {
+      "savoir": "moteurs-de-fortune",
+      "reputation": {
+       "ferrailleurs": -1
+      }
+     }
+    },
+    {
+     "cle": "perdu",
+     "titre": "Le savoir perdu",
+     "texte": "Il est mort, le cahier est brûlé : il reste un alambic de cuivre, à démonter.",
+     "effets": {
+      "stocks": {
+       "pieces": 2
+      }
+     }
+    }
+   ],
+   "voix": [
+    "« Cuire le géranium. Pas pour le parfum, hein. Pour ce qui brûle. »",
+    "Le vieux : « Je montre en faisant. Celui qui veut que je raconte, il repart avec rien. »",
+    "Une fumée blanche, un matin, au-dessus du Tévelave : quelqu'un a rallumé l'alambic."
+   ],
+   "traces": "Un alambic de cuivre qui fume de nouveau, ou qui rouille ; dans un cahier, des temps et des températures écrits d'une main qui tremble.",
+   "ton": ""
+  },
+  {
+   "cle": "zerbaz",
+   "numero": 18,
+   "titre": "Zerbaz",
+   "taille": "affaire",
+   "famille": "savoirs",
+   "regions": [
+    "plaine-des-palmistes",
+    "hauts-de-l-ouest",
+    "salazie"
+   ],
+   "sites": [],
+   "factions": [],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Une gramoune donne le nom d'une plante contre la fièvre, et l'étage de la forêt où elle pousse.",
+   "demande": "De monter la chercher au bon endroit et à la bonne saison, de la reconnaître, et de la préparer comme elle a dit (une tisane).",
+   "malTourner": "Une recette circule fausse : une plante voisine, une dose doublée. La tisane soulage et ne guérit pas tout ; elle ne fait rien contre le Gris.",
+   "change": "Un abri sait soigner une fièvre de plus, et reconnaître ce qu'il a.",
+   "garde": "Une page de cahier que d'autres voudront copier (le savoir « Zerbaz et tisanes »).",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "La plante pousse où elle a dit, et soulage les fièvres."
+    },
+    "fausse": {
+     "poids": 1,
+     "texte": "La recette a été recopiée de travers : la plante voisine ne fait rien, ou rend malade."
+    }
+   },
+   "pente": {
+    "tousLes": 14,
+    "crans": [
+     "La saison de la plante passe.",
+     "La gramoune oublie le nom, ou s'en va."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "apprise",
+     "titre": "La plante trouvée et apprise",
+     "texte": "On la reconnaît, on la cueille, on la prépare.",
+     "effets": {
+      "savoir": "zerbaz",
+      "stocks": {
+       "plantes": 3
+      }
+     }
+    },
+    {
+     "cle": "la-mauvaise",
+     "titre": "La mauvaise plante",
+     "texte": "On a cueilli la voisine ; un malade le paie (au MJ de dire comment).",
+     "effets": {}
+    },
+    {
+     "cle": "la-page-donnee",
+     "titre": "La page donnée",
+     "texte": "On recopie la page pour un autre abri.",
+     "effets": {
+      "acte": "partager",
+      "renom": 1
+     }
+    }
+   ],
+   "voix": [
+    "« Pour la fièvre, il y a une feuille. Pas celle d'en bas : celle d'en haut, sous les tamarins. Et pas trop. »",
+    "« Ma grand-mère disait : la plante te soigne si tu la cueilles le matin. » Personne ne sait si c'est vrai.",
+    "Une page recopiée, passée de main en main, avec une dose barrée et réécrite."
+   ],
+   "traces": "Un sachet de feuilles sèches étiqueté à la main ; une page de cahier copiée trois fois.",
+   "ton": ""
+  },
+  {
+   "cle": "la-petite-centrale-de-langevin",
+   "numero": 19,
+   "titre": "La petite centrale de Langevin",
+   "taille": "grande-affaire",
+   "famille": "savoirs",
+   "regions": [
+    "sud-sauvage"
+   ],
+   "sites": [
+    "centrale-de-langevin"
+   ],
+   "factions": [
+    "barques-du-sud"
+   ],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "phases": [
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Par un électricien, ou par un journal trouvé sur un mort : au fond de la ravine, la vieille centrale de Langevin garde de quoi apprendre la pico-hydro.",
+   "demande": "D'y descendre à la saison sèche seulement, avec de la corde (le matériel de canyon aide), et de passer ce qui garde le lieu.",
+   "malTourner": "Quelqu'un garde l'endroit : un Livide qu'on a connu, peut-être, resté là où il travaillait. La crue remonte vite si l'on se trompe de jour. Ce qu'on trouve n'est pas forcément ce qu'on voulait.",
+   "change": "Un abri du Sud a du courant jour et nuit, sans bruit.",
+   "garde": "Le plan de la pico-hydro, et la raison de revenir : il reste des pièces.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Les cahiers de l'exploitant sont là, au sec, avec les schémas."
+    },
+    "perimee": {
+     "poids": 1,
+     "texte": "Quelqu'un est passé avant : il reste des pièces, pas les cahiers."
+    }
+   },
+   "pente": {
+    "tousLes": 30,
+    "crans": [
+     "La saison des pluies approche : la ravine se ferme.",
+     "La centrale est pillée par d'autres."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "les-cahiers",
+     "titre": "Les cahiers",
+     "texte": "On remonte avec les schémas et quelques pièces.",
+     "effets": {
+      "plan": "pico-hydro",
+      "stocks": {
+       "pieces": 3
+      }
+     }
+    },
+    {
+     "cle": "des-pieces",
+     "titre": "Des pièces seulement",
+     "texte": "Les cahiers sont partis ; les turbines de rechange sont là.",
+     "effets": {
+      "stocks": {
+       "pieces": 4
+      }
+     }
+    },
+    {
+     "cle": "la-crue",
+     "titre": "La crue",
+     "texte": "On s'est trompé de jour : la ravine monte, et l'on remonte sans rien.",
+     "effets": {}
+    }
+   ],
+   "voix": [
+    "Un électricien du Sud : « La petite centrale, au fond ? Tout est dedans. Les plans, les turbines de rechange. Si tu descends. »",
+    "Dans un journal trouvé sur un corps : « Langevin. Saison sèche. Corde. Ne pas y aller seul. »",
+    "« Quand la ravine chante, tu remontes. Tu discutes pas. »"
+   ],
+   "traces": "Une corde à demeure dans la ravine ; plus tard, une lampe qui brille toute la nuit dans un abri du Sud.",
+   "ton": ""
+  },
+  {
+   "cle": "celui-qu-on-a-refuse",
+   "numero": 20,
+   "titre": "Celui qu'on a refusé",
+   "taille": "affaire",
+   "famille": "sens-moral",
+   "regions": [],
+   "sites": [],
+   "factions": [],
+   "front": "",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": [
+     "refus-a-la-porte"
+    ]
+   },
+   "apprendre": "Il revient. On l'avait refusé parce qu'il n'y avait plus de place ; il a lu la liste de ce qui manque, à la porte.",
+   "demande": "De décider une seconde fois, devant tout le monde (un vote, si l'abri vote), maintenant qu'il apporte ce qui manque.",
+   "malTourner": "Prendre ce qu'il apporte et le refuser encore : le groupe rougit, et lui sait ce qu'il y a derrière la porte. L'accueillir alors que le vote disait non : l'autorité du chef baisse.",
+   "change": "Un membre de plus, ou quelqu'un, dehors, qui sait ce qu'il y a derrière la porte.",
+   "garde": "Un enfant de l'abri a tout vu.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Il apporte vraiment ce qui manque, et ne demande qu'une place."
+    },
+    "piege": {
+     "poids": 1,
+     "texte": "Une bande l'envoie : elle veut savoir ce que l'abri a, et combien il est."
+    }
+   },
+   "pente": {
+    "tousLes": 1,
+    "crans": [
+     "Il attend à la porte, un jour.",
+     "Il repart vers un autre abri, avec ce qu'il sait du vôtre."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "accueilli",
+     "titre": "Accueilli",
+     "texte": "La porte s'ouvre, la deuxième fois.",
+     "effets": {
+      "acte": "accueillir",
+      "recrue": true
+     }
+    },
+    {
+     "cle": "refuse-encore",
+     "titre": "Refusé encore",
+     "texte": "Il n'y a toujours pas de place.",
+     "effets": {
+      "acte": "exclure"
+     }
+    },
+    {
+     "cle": "pris-et-refuse",
+     "titre": "Ce qu'il apporte pris, lui refusé",
+     "texte": "On garde ce qu'il apporte, et l'on ferme la porte.",
+     "effets": {
+      "acte": "trahir"
+     }
+    },
+    {
+     "cle": "contre-le-vote",
+     "titre": "Accueilli contre le vote",
+     "texte": "Le chef ouvre quand même.",
+     "effets": {
+      "acte": "accueillir",
+      "recrue": true,
+      "autorite": -1
+     }
+    }
+   ],
+   "voix": [
+    "« Vous m'avez dit qu'il n'y avait pas de place. J'ai vu la liste. J'ai ce qui vous manque. »",
+    "Un enfant, tout bas : « C'est le monsieur de l'autre fois. »",
+    "Le Ladi Lafé, plus tard : « Cet abri-là, il prend, et il ferme la porte. » Ou bien : « Cet abri-là, il a ouvert deux fois. »"
+   ],
+   "traces": "Un nom de plus parmi les membres, ou une silhouette qui s'éloigne ; ce que l'enfant en retient (l'enfant témoin, §14).",
+   "ton": ""
+  },
+  {
+   "cle": "la-liste-du-comptable",
+   "numero": 21,
+   "titre": "La liste du Comptable",
+   "taille": "grande-affaire",
+   "famille": "sens-moral",
+   "regions": [
+    "saint-denis",
+    "sainte-marie"
+   ],
+   "sites": [],
+   "factions": [
+    "sans-lune",
+    "garnison-du-quai"
+   ],
+   "front": "comptable",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 1,
+    "declencheurs": []
+   },
+   "apprendre": "Un jeune des Sans-Lune fait savoir, sous la pierre d'un oratoire rouge, qu'il veut partir, et qu'il sait où est le cahier du Comptable.",
+   "demande": "De le faire sortir, de voler le cahier, de le recopier, ou de le rendre contre une lune de paix.",
+   "malTourner": "C'est un piège une fois sur quatre. Et avoir la liste, c'est savoir ce que doit chaque quartier, et pouvoir le réclamer à sa place.",
+   "change": "Le front du Comptable recule, ou change seulement de main.",
+   "garde": "La tentation. C'est l'affaire qui montre comment on devient le suivant.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Le garçon veut vraiment partir ; le cahier est dans une boutique murée du centre de Saint-Denis."
+    },
+    "piege": {
+     "poids": 1,
+     "texte": "Le Comptable l'a envoyé : il veut savoir qui, dans le Nord, ose lui prendre quelque chose."
+    }
+   },
+   "pente": {
+    "tousLes": 5,
+    "crans": [
+     "Le garçon attend à l'oratoire, de plus en plus inquiet.",
+     "On le soupçonne ; il ne vient plus.",
+     "Le tribut monte dans tout le Nord : le front du Comptable avance."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "sorti",
+     "titre": "Le garçon sorti",
+     "texte": "Il quitte la bande, et rejoint le groupe ou part plus loin.",
+     "effets": {
+      "acte": "aider",
+      "recrue": true,
+      "reputation": {
+       "sans-lune": -2
+      }
+     }
+    },
+    {
+     "cle": "cahier-detruit",
+     "titre": "Le cahier détruit",
+     "texte": "Brûlé ou noyé : les dettes du Nord n'ont plus d'écrit.",
+     "effets": {
+      "front": -1,
+      "reputation": {
+       "sans-lune": -3
+      }
+     }
+    },
+    {
+     "cle": "cahier-rendu",
+     "titre": "Rendu contre une lune de paix",
+     "texte": "Le Comptable reprend son cahier ; le groupe ne paie rien pendant un mois.",
+     "effets": {
+      "reputation": {
+       "sans-lune": 1
+      }
+     }
+    },
+    {
+     "cle": "la-tentation",
+     "titre": "Réclamer à sa place",
+     "texte": "On garde la liste, et l'on va réclamer ce que les quartiers doivent.",
+     "effets": {
+      "acte": "attaquer",
+      "stocks": {
+       "nourriture": 6,
+       "carburant": 2
+      },
+      "rumeur": true
+     }
+    }
+   ],
+   "voix": [
+    "Sous la pierre d'un oratoire rouge : « Je veux partir. Je sais où est le cahier. Jeudi, même heure. »",
+    "« Le Comptable, il oublie rien. Il a tout écrit. Ce que tu dois, ce que ton père devait. »",
+    "Sur une porte de Sainte-Marie, trois traits et un rond à la bombe : ici, on a déjà payé."
+   ],
+   "traces": "Des portes marquées qu'on repeint, ou de nouvelles marques ; un cahier brûlé, ou recopié, qui circule.",
+   "ton": ""
+  },
+  {
+   "cle": "le-convoi-du-lait",
+   "numero": 22,
+   "titre": "Le convoi du lait",
+   "taille": "grande-affaire",
+   "famille": "plusieurs",
+   "regions": [
+    "le-tampon",
+    "saint-pierre"
+   ],
+   "sites": [
+    "ferme-de-la-plaine-des-cafres",
+    "hopital-du-sud"
+   ],
+   "factions": [
+    "cooperative-des-plaines",
+    "dispensaire-du-sud",
+    "garnison-du-quai"
+   ],
+   "front": "garnison",
+   "foire": "",
+   "naissance": {
+    "mois": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "phases": [
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "La Coopérative cherche des gens pour descendre le lait et le fromage au Dispensaire, en charrette à bœufs, par la route des Plaines.",
+   "demande": "Au moins deux rôles tenus en même temps : mener les bêtes, lentes et silencieuses, et ouvrir la route devant. Seul, c'est possible, et très long.",
+   "malTourner": "Un convoi de la Garnison monte prendre le même lait. Au petit matin, la route des Plaines est pleine de Livides figés par le froid, entre lesquels il faut passer avant le soleil.",
+   "change": "L'hôpital tient un mois de plus ; la Coopérative et le Dispensaire deviennent alliés, ou la Garnison se sert.",
+   "garde": "Des soins promis au Dispensaire, et un chemin éprouvé entre les Hauts et le Sud.",
+   "verites": {
+    "vraie": {
+     "poids": 3,
+     "texte": "Le lait est là, la charrette aussi ; le Dispensaire attend."
+    },
+    "exageree": {
+     "poids": 1,
+     "texte": "Le Dispensaire attend surtout les bœufs : il voudrait garder la charrette pour ses navettes."
+    }
+   },
+   "pente": {
+    "tousLes": 3,
+    "crans": [
+     "Le lait tourne ; on en fait du fromage.",
+     "La Garnison apprend qu'il y a du lait.",
+     "Le convoi de la Garnison monte : le front de l'autorité provisoire avance."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "livre",
+     "titre": "Le convoi livré",
+     "texte": "Le lait arrive à l'hôpital ; la docteure promet des soins à qui l'a descendu.",
+     "effets": {
+      "reputation": {
+       "cooperative-des-plaines": 2,
+       "dispensaire-du-sud": 2
+      },
+      "stocks": {
+       "medicaments": 2
+      }
+     }
+    },
+    {
+     "cle": "la-garnison-se-sert",
+     "titre": "La Garnison se sert",
+     "texte": "Le convoi armé arrive le premier.",
+     "effets": {
+      "front": 1
+     }
+    },
+    {
+     "cle": "partage",
+     "titre": "Le lait partagé",
+     "texte": "On négocie sur la route : moitié pour l'hôpital, moitié pour le Port.",
+     "effets": {
+      "reputation": {
+       "garnison-du-quai": 1,
+       "cooperative-des-plaines": 1,
+       "dispensaire-du-sud": 1
+      }
+     }
+    }
+   ],
+   "voix": [
+    "Mémé Lucette : « Le lait, il descend. Avec vous ou sans vous. Mais sans vous, il descend pas loin. »",
+    "« À l'aube, sur la route des Plaines, ils sont plantés là, gelés, comme des piquets. Tu passes entre. Tu respires pas. »",
+    "La radio de la Garnison : « Les denrées des Hauts sont réquisitionnées pour la population du Port. »"
+   ],
+   "traces": "Des traces de roues ferrées entre des silhouettes immobiles ; au Dispensaire, des bidons vides rangés, à rendre.",
+   "ton": ""
+  },
+  {
+   "cle": "le-cargo",
+   "numero": 23,
+   "titre": "Le cargo",
+   "taille": "front",
+   "famille": "plusieurs",
+   "regions": [
+    "le-port"
+   ],
+   "sites": [
+    "palangrier-a-quai"
+   ],
+   "factions": [
+    "garnison-du-quai"
+   ],
+   "front": "garnison",
+   "foire": "",
+   "naissance": {
+    "mois": [],
+    "phases": [
+     "panique",
+     "effondrement",
+     "silence",
+     "apres"
+    ],
+    "fete": "",
+    "cran": 0,
+    "declencheurs": []
+   },
+   "apprendre": "Dès les premiers jours, à la radio : la Garnison annonce un cargo pour les survivants recensés, avec une date. Puis une autre.",
+   "demande": "Rien, d'abord. Puis de choisir : y croire et se faire recenser, tenir sa communauté à l'écart, ou chercher la preuve au poste radio du port.",
+   "malTourner": "Ceux qui y vont avec leurs papiers restent : logés, nourris, réquisitionnés. La date glisse pendant toute la campagne.",
+   "change": "Selon le cours de la campagne, le cargo vient, ne vient pas, ou vient pour autre chose que prévu.",
+   "garde": "La seule nouvelle possible du reste du monde, et elle arrive à la toute fin.",
+   "verites": {
+    "fausse": {
+     "poids": 2,
+     "texte": "Il n'y a pas de cargo : la commandante y croit à moitié, et la date tient les gens tranquilles."
+    },
+    "vraie": {
+     "poids": 1,
+     "texte": "Un cargo existe, quelque part, et parle à la radio du port une nuit sur dix. Il viendra, mais pas pour tout le monde."
+    }
+   },
+   "pente": {
+    "tousLes": 30,
+    "crans": [
+     "Une nouvelle date à la radio.",
+     "Des familles descendent au Port avec leurs papiers.",
+     "Le recensement devient obligatoire sur la route du Littoral.",
+     "La date glisse encore ; certains n'y croient plus, d'autres plus que jamais."
+    ]
+   },
+   "issues": [
+    {
+     "cle": "recenses",
+     "titre": "Se faire recenser",
+     "texte": "Une part du groupe descend au Port avec ses papiers, et y reste.",
+     "effets": {
+      "reputation": {
+       "garnison-du-quai": 2
+      },
+      "depart": true
+     }
+    },
+    {
+     "cle": "a-l-ecart",
+     "titre": "Tenir sa communauté à l'écart",
+     "texte": "Personne ne descend ; la Garnison le note.",
+     "effets": {
+      "reputation": {
+       "garnison-du-quai": -1
+      }
+     }
+    },
+    {
+     "cle": "la-preuve",
+     "titre": "La preuve, au poste radio du port",
+     "texte": "Une nuit, on entend ce que dit vraiment la radio du port : le MJ dit ce qu'on entend, selon la vérité tirée.",
+     "effets": {}
+    },
+    {
+     "cle": "il-vient",
+     "titre": "Le cargo vient",
+     "texte": "À la toute fin de la campagne, et pour ce qu'en décide le MJ.",
+     "effets": {}
+    }
+   ],
+   "voix": [
+    "La radio de la Garnison : « … évacuation par cargo jeudi, apportez vos papiers… » La voix se répète depuis trois semaines.",
+    "« Mon frère est descendu au Port avec ses papiers. Il est logé. Il travaille. Il ne remonte pas. »",
+    "Le livre de l'île, rumeur trois : « Personne ne l'a vu. »"
+   ],
+   "traces": "Une file de gens à la grille du port, chaque matin ; des papiers qu'on garde au sec, au cas où.",
+   "ton": ""
   }
  ]
 }

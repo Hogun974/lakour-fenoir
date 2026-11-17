@@ -1,0 +1,178 @@
+{
+  "_id": "3pA4FnapRLv8Q1Yq",
+  "_key": "!tables!3pA4FnapRLv8Q1Yq",
+  "name": "Raconter sans quête : l'écrit des murs",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on lit sur un mur ou une porte ; entre crochets, ce que cela veut dire (pour le MJ).</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recit-ecrits-des-murs",
+      "recit": "ecrits-des-murs"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "hsN9GTkZAGJOPplF",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.hsN9GTkZAGJOPplF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois traits et un rond à la bombe, sur une porte. [Les Sans-Lune sont passés ; ici, on a payé.]</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LxGYiEVPBrv7aO5z",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.LxGYiEVPBrv7aO5z",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une porte sans marque, dans une rue où toutes les autres en ont une. [Elle n'a pas payé ; elle n'a plus longtemps.]</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mzzaH1OkcfKA77Iq",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.mzzaH1OkcfKA77Iq",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un drap peint d'une croix rouge à une fenêtre. [Le Dispensaire, ou quelqu'un qui soigne.]</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "RCFSaIY5570xw1tD",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.RCFSaIY5570xw1tD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une croix noire et un chiffre sur une porte. [Des Livides dedans, et combien. Parfois juste.]</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TSH9sTG9PCQbROph",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.TSH9sTG9PCQbROph",
+      "type": "text",
+      "name": "",
+      "description": "<p>« PARTIS À CILAOS », et sept prénoms. [Ils sont montés le troisième jour ; quatre sont arrivés.]</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "E4wkVcz77cRuhkGj",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.E4wkVcz77cRuhkGj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des bâtons groupés par cinq, qui s'arrêtent au milieu d'un groupe. [Celui qui comptait a cessé.]</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "WeFtleg5rrHuHPiH",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.WeFtleg5rrHuHPiH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une flèche et « EAU », à la craie. [Une citerne à deux cents mètres ; l'eau est bonne, ou ne l'est plus.]</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "unccsHYD9NXbyCxW",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.unccsHYD9NXbyCxW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un prénom et une date, puis d'autres dates en dessous, d'autres mains. [Quelqu'un cherche quelqu'un ; d'autres l'ont vu passer.]</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kePSEiVt6SCIwuDU",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.kePSEiVt6SCIwuDU",
+      "type": "text",
+      "name": "",
+      "description": "<p>« ICI 3 VIVANTS », et dessous, plus récent : « 2 ».</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "lT6QTbDOODmoB3ON",
+      "_key": "!tables.results!3pA4FnapRLv8Q1Yq.lT6QTbDOODmoB3ON",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une affiche de recensement de la Garnison, et quelqu'un a écrit dessus : « ET APRÈS ? »</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

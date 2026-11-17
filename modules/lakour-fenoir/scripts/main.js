@@ -7,7 +7,7 @@
 //    les identifiants du compendium (les épingles de la carte visent les pages du journal « Les régions de l'île ») ; dans un
 //    monde déjà installé, les journaux présents reçoivent les pages nouvelles et les pages intactes sont remises à jour
 //    (scripts/mise-a-jour.js : une page retouchée par le MJ reste telle quelle).
-import { FETES_FENOIR, imageDeFete, fetesDuJour } from "./fetes.js";
+import { FETES_FENOIR, imageDeFete, fetesDuJour, estHorsSocle } from "./fetes.js";
 import { ID } from "./identite.js";
 import { avecEmpreintes, planMiseAJour } from "./mise-a-jour.js";
 
@@ -47,8 +47,9 @@ Hooks.on("lakourSurvie.enregistrer", registre => {
 // ---------- 2. Les fêtes (calendrier réel du moteur) : seules celles qui y existent sont déclinées ; les autres vivent au
 // calendrier du jeu (donnees.fetes, fetesDuJour) que le système et le MJ IA lisent. Les textes viennent du registre chargé
 // (assets/donnees.json : en anglais dans lakour-fenoir-en), à défaut de scripts/fetes.js (français).
+// Une fête qui porte sa propre date (hors du socle : Pongal, le miel vert, lot 12) n'est pas déclinée : le socle ne la connaît pas.
 export function declinaisonsDeFete(fetes = DONNEES?.fetes ?? FETES_FENOIR) {
-  return fetes.filter(f => f.moteur ?? f.cle).map(f => ({ id: `fenoir-${f.cle}`, fete: f.moteur ?? f.cle, nom: f.nom, description: f.description, consigne: f.consigne, decor: f.decor }));
+  return fetes.filter(f => (f.moteur ?? f.cle) && !estHorsSocle(f)).map(f => ({ id: `fenoir-${f.cle}`, fete: f.moteur ?? f.cle, nom: f.nom, description: f.description, consigne: f.consigne, decor: f.decor }));
 }
 export function enregistrerFetes(api) {
   if (game.system.id !== SYSTEME || typeof api?.fetes?.enregistrer !== "function") return 0;

@@ -133,49 +133,6 @@
       "en": "<p><strong>Trade — Madame Thiaw-Kine's credit book.</strong> The Chinese shopkeeper of La Rivière Saint-Louis offers her back room in exchange for an escort to Cilaos, and strikes from her book the debts of those who help her. People say she only gives credit to her own; her book fed the whole neighbourhood during the 2009 general strike.</p><p><strong>Reward:</strong> 8 food, 2 seeds.</p>"
     }
   },
-  "tables/3Wyf3O4dXAwMlD6u": {
-    "_nom": "Les chefs de bande — les ultimatums",
-    "name": {
-      "fr": "Les chefs de bande — les ultimatums",
-      "en": "Gang leaders — the ultimatums"
-    },
-    "description": {
-      "fr": "<p>Ce qu'exige un chef de bande qui pose un ultimatum. Accepté, il devient un tribut, puis, avec le temps, une alliance ou une révolte.</p>",
-      "en": "<p>What a gang leader demands when issuing an ultimatum. Accepted, it becomes a tribute, then, in time, an alliance or a revolt.</p>"
-    },
-    "results.UvwFCBpsnKnpUrDu.description": {
-      "fr": "<p>« Une part de ce que vous produisez, chaque semaine. Et personne ne viendra vous ennuyer. »</p>",
-      "en": "<p>\"A share of what you produce, every week. And nobody will come bothering you.\"</p>"
-    },
-    "results.l1fPV1IVBK6Gmmys.description": {
-      "fr": "<p>« Votre carburant. Tout. Après, on parlera d'amitié. »</p>",
-      "en": "<p>\"Your fuel. All of it. Then we'll talk about friendship.\"</p>"
-    },
-    "results.txazMx7frdHRmeHh.description": {
-      "fr": "<p>« Deux bras pour nos chantiers, un mois. Vous choisissez lesquels. »</p>",
-      "en": "<p>\"Two pairs of hands for our building work, for a month. You choose whose.\"</p>"
-    },
-    "results.7be9ccvjd05emP2F.description": {
-      "fr": "<p>« Les médicaments, ou on vient les chercher, et on prendra le reste avec. »</p>",
-      "en": "<p>\"The medicine, or we come and get it, and we'll take the rest with it.\"</p>"
-    },
-    "results.TTYLhS6nwbxK5zsG.description": {
-      "fr": "<p>« La moitié de la récolte. On a des enfants aussi. »</p>",
-      "en": "<p>\"Half the harvest. We have children too.\"</p>"
-    },
-    "results.mZhTjjjyNPQdAvDF.description": {
-      "fr": "<p>« Rien pour cette fois. La prochaine lune, on revient, et vous aurez réfléchi. »</p>",
-      "en": "<p>\"Nothing this time. Next moon we come back, and you'll have thought it over.\"</p>"
-    },
-    "results.aVZnD76wRMqhm0NY.description": {
-      "fr": "<p>« Votre radio. On veut savoir ce que vous savez. »</p>",
-      "en": "<p>\"Your radio. We want to know what you know.\"</p>"
-    },
-    "results.Ym7HNnZ2z1AHtVPt.description": {
-      "fr": "<p>« Laissez-nous passer par chez vous, chaque mois, et nourrissez-nous ce jour-là. »</p>",
-      "en": "<p>\"Let us pass through your place every month, and feed us that day.\"</p>"
-    }
-  },
   "tables/2KT2bBV66pMOX4ZJ": {
     "_nom": "Marché — ce qui se dit (le Ladi Lafé)",
     "name": {
@@ -233,6 +190,100 @@
     "results.mKD97nNN8QAkDpOx.description": {
       "fr": "<p>« Le président du conseil fait passer ses amis d'abord. » [Faux : il vient de donner tort à son cousin.]</p>",
       "en": "<p>\"The council chairman puts his friends first.\" [False: he has just ruled against his cousin.]</p>"
+    }
+  },
+  "tables/3Wyf3O4dXAwMlD6u": {
+    "_nom": "Les chefs de bande — les ultimatums",
+    "name": {
+      "fr": "Les chefs de bande — les ultimatums",
+      "en": "Gang leaders — the ultimatums"
+    },
+    "description": {
+      "fr": "<p>Ce qu'exige un chef de bande qui pose un ultimatum. Accepté, il devient un tribut, puis, avec le temps, une alliance ou une révolte.</p>",
+      "en": "<p>What a gang leader demands when issuing an ultimatum. Accepted, it becomes a tribute, then, in time, an alliance or a revolt.</p>"
+    },
+    "results.UvwFCBpsnKnpUrDu.description": {
+      "fr": "<p>« Une part de ce que vous produisez, chaque semaine. Et personne ne viendra vous ennuyer. »</p>",
+      "en": "<p>\"A share of what you produce, every week. And nobody will come bothering you.\"</p>"
+    },
+    "results.l1fPV1IVBK6Gmmys.description": {
+      "fr": "<p>« Votre carburant. Tout. Après, on parlera d'amitié. »</p>",
+      "en": "<p>\"Your fuel. All of it. Then we'll talk about friendship.\"</p>"
+    },
+    "results.txazMx7frdHRmeHh.description": {
+      "fr": "<p>« Deux bras pour nos chantiers, un mois. Vous choisissez lesquels. »</p>",
+      "en": "<p>\"Two pairs of hands for our building work, for a month. You choose whose.\"</p>"
+    },
+    "results.7be9ccvjd05emP2F.description": {
+      "fr": "<p>« Les médicaments, ou on vient les chercher, et on prendra le reste avec. »</p>",
+      "en": "<p>\"The medicine, or we come and get it, and we'll take the rest with it.\"</p>"
+    },
+    "results.TTYLhS6nwbxK5zsG.description": {
+      "fr": "<p>« La moitié de la récolte. On a des enfants aussi. »</p>",
+      "en": "<p>\"Half the harvest. We have children too.\"</p>"
+    },
+    "results.mZhTjjjyNPQdAvDF.description": {
+      "fr": "<p>« Rien pour cette fois. La prochaine lune, on revient, et vous aurez réfléchi. »</p>",
+      "en": "<p>\"Nothing this time. Next moon we come back, and you'll have thought it over.\"</p>"
+    },
+    "results.aVZnD76wRMqhm0NY.description": {
+      "fr": "<p>« Votre radio. On veut savoir ce que vous savez. »</p>",
+      "en": "<p>\"Your radio. We want to know what you know.\"</p>"
+    },
+    "results.Ym7HNnZ2z1AHtVPt.description": {
+      "fr": "<p>« Laissez-nous passer par chez vous, chaque mois, et nourrissez-nous ce jour-là. »</p>",
+      "en": "<p>\"Let us pass through your place every month, and feed us that day.\"</p>"
+    }
+  },
+  "tables/3pA4FnapRLv8Q1Yq": {
+    "_nom": "Raconter sans quête : l'écrit des murs",
+    "name": {
+      "fr": "Raconter sans quête : l'écrit des murs",
+      "en": "Telling without a quest: what the walls say"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on lit sur un mur ou une porte ; entre crochets, ce que cela veut dire (pour le MJ).</p>",
+      "en": "<p>What you read on a wall or a door; in brackets, what it means (for the GM).</p>"
+    },
+    "results.hsN9GTkZAGJOPplF.description": {
+      "fr": "<p>Trois traits et un rond à la bombe, sur une porte. [Les Sans-Lune sont passés ; ici, on a payé.]</p>",
+      "en": "<p>Three strokes and a circle in spray paint, on a door. [The Moonless came by; here, they paid.]</p>"
+    },
+    "results.LxGYiEVPBrv7aO5z.description": {
+      "fr": "<p>Une porte sans marque, dans une rue où toutes les autres en ont une. [Elle n'a pas payé ; elle n'a plus longtemps.]</p>",
+      "en": "<p>An unmarked door, in a street where all the others have a mark. [It has not paid; it does not have long.]</p>"
+    },
+    "results.mzzaH1OkcfKA77Iq.description": {
+      "fr": "<p>Un drap peint d'une croix rouge à une fenêtre. [Le Dispensaire, ou quelqu'un qui soigne.]</p>",
+      "en": "<p>A sheet painted with a red cross at a window. [The Dispensary, or someone who cares for the sick.]</p>"
+    },
+    "results.RCFSaIY5570xw1tD.description": {
+      "fr": "<p>Une croix noire et un chiffre sur une porte. [Des Livides dedans, et combien. Parfois juste.]</p>",
+      "en": "<p>A black cross and a number on a door. [Pallid inside, and how many. Sometimes right.]</p>"
+    },
+    "results.TSH9sTG9PCQbROph.description": {
+      "fr": "<p>« PARTIS À CILAOS », et sept prénoms. [Ils sont montés le troisième jour ; quatre sont arrivés.]</p>",
+      "en": "<p>\"GONE TO CILAOS\", and seven first names. [They went up on the third day; four arrived.]</p>"
+    },
+    "results.E4wkVcz77cRuhkGj.description": {
+      "fr": "<p>Des bâtons groupés par cinq, qui s'arrêtent au milieu d'un groupe. [Celui qui comptait a cessé.]</p>",
+      "en": "<p>Sticks grouped in fives, stopping in the middle of a group. [Whoever was counting has stopped.]</p>"
+    },
+    "results.WeFtleg5rrHuHPiH.description": {
+      "fr": "<p>Une flèche et « EAU », à la craie. [Une citerne à deux cents mètres ; l'eau est bonne, ou ne l'est plus.]</p>",
+      "en": "<p>An arrow and \"WATER\", in chalk. [A cistern two hundred metres away; the water is good, or no longer is.]</p>"
+    },
+    "results.unccsHYD9NXbyCxW.description": {
+      "fr": "<p>Un prénom et une date, puis d'autres dates en dessous, d'autres mains. [Quelqu'un cherche quelqu'un ; d'autres l'ont vu passer.]</p>",
+      "en": "<p>A first name and a date, then other dates below, in other hands. [Someone is looking for someone; others saw them pass.]</p>"
+    },
+    "results.kePSEiVt6SCIwuDU.description": {
+      "fr": "<p>« ICI 3 VIVANTS », et dessous, plus récent : « 2 ».</p>",
+      "en": "<p>\"3 ALIVE HERE\", and below, more recent: \"2\".</p>"
+    },
+    "results.lT6QTbDOODmoB3ON.description": {
+      "fr": "<p>Une affiche de recensement de la Garnison, et quelqu'un a écrit dessus : « ET APRÈS ? »</p>",
+      "en": "<p>A Garrison registration poster, and someone has written on it: \"AND THEN?\"</p>"
     }
   },
   "tables/3rOWWRWJAOrlApYT": {
@@ -567,6 +618,49 @@
       "en": "<p>Lapli</p>"
     }
   },
+  "tables/5bzuwHnO2gK3Qv6z": {
+    "_nom": "Raconter sans quête : un lieu figé",
+    "name": {
+      "fr": "Raconter sans quête : un lieu figé",
+      "en": "Telling without a quest: a frozen place"
+    },
+    "description": {
+      "fr": "<p>Une scène laissée telle quelle ; à ne montrer qu'une fois.</p>",
+      "en": "<p>A scene left as it was; show it only once.</p>"
+    },
+    "results.va4b2LV3nc8QfLa5.description": {
+      "fr": "<p>Une table mise pour quatre sous une varangue, les assiettes couvertes de moisissure, une chaise renversée en arrière.</p>",
+      "en": "<p>A table set for four on a veranda, the plates covered in mould, a chair tipped over backwards.</p>"
+    },
+    "results.jguQkHEEzPwduzN9.description": {
+      "fr": "<p>Une voiture portières ouvertes au milieu de la route, le moteur froid, une glacière et des serviettes de plage sur la banquette.</p>",
+      "en": "<p>A car with its doors open in the middle of the road, the engine cold, a cool box and beach towels on the back seat.</p>"
+    },
+    "results.7TvbQSp09kTSoHct.description": {
+      "fr": "<p>Une salle de classe, les cartables accrochés aux chaises, la date du 4 décembre au tableau, et dessous : « Contrôle de géographie ».</p>",
+      "en": "<p>A classroom, the schoolbags hung on the chairs, the date 4 December on the board, and below it: \"Geography test\".</p>"
+    },
+    "results.CjMFOrzYC44WOYkl.description": {
+      "fr": "<p>Un salon de coiffure : une cliente est partie en plein brushing, le séchoir pend encore au bout de son fil.</p>",
+      "en": "<p>A hairdresser's: a customer left in the middle of a blow-dry, the dryer still hanging on its cord.</p>"
+    },
+    "results.WMvQFM4ktVXuZKzE.description": {
+      "fr": "<p>Une station-service, les pistolets décrochés, et une file de voitures vides qui attend un plein qui ne viendra plus.</p>",
+      "en": "<p>A petrol station, the nozzles unhooked, and a line of empty cars waiting for a fill-up that will never come.</p>"
+    },
+    "results.yBU7qBRIjcl7O3LE.description": {
+      "fr": "<p>Une salle d'opération de clinique, tout rangé avec soin, sauf une chaise calée contre la porte, de l'intérieur.</p>",
+      "en": "<p>A clinic operating theatre, everything carefully put away, except a chair wedged against the door, from the inside.</p>"
+    },
+    "results.KDHUMnwBDEBUFRrc.description": {
+      "fr": "<p>Un mariage sous une tente blanche : les nappes, un gâteau effondré, et toutes les chaises poussées d'un seul coup vers la sortie.</p>",
+      "en": "<p>A wedding under a white marquee: the tablecloths, a collapsed cake, and all the chairs pushed back at once towards the exit.</p>"
+    },
+    "results.w9JCozX6BxL9jM7h.description": {
+      "fr": "<p>Une case des Hauts où tout est en ordre : le lit fait, la vaisselle lavée, un mot sur la table : « Partis chez Marcel. »</p>",
+      "en": "<p>A house in the Highlands where everything is in order: the bed made, the dishes washed, a note on the table: \"Gone to Marcel's.\"</p>"
+    }
+  },
   "tables/7laWQXPZNSdEIgYT": {
     "_nom": "Demandes — Le Dispensaire du Sud",
     "name": {
@@ -639,6 +733,184 @@
     "results.vXxHnyBqWyBQrcY0.description": {
       "fr": "<p>Une chienne avec ses chiots, cachée dans un fossé : elle attaquera pour eux, ou se laissera nourrir.</p>",
       "en": "<p>A bitch with her puppies, hidden in a ditch: she will attack for them, or let herself be fed.</p>"
+    }
+  },
+  "tables/9RPaekT6l3X3WzI0": {
+    "_nom": "Affaires : ce qui se raconte",
+    "name": {
+      "fr": "Affaires : ce qui se raconte",
+      "en": "Affairs: what people say"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on entend dire ; entre parenthèses, l'affaire (journal « Les affaires de l'île »). Tirez sa vérité quand elle naît.</p>",
+      "en": "<p>What you hear said; in brackets, the affair (journal \"The island's affairs\"). Draw its truth when it arises.</p>"
+    },
+    "results.GY55Ki7KGIKKrJbP.description": {
+      "fr": "<p>« Cette année, Cilaos tient sa foire. Comme avant. Sous trêve. » <em>(1. Les lentilles d'octobre)</em></p>",
+      "en": "<p>\"This year Cilaos holds its fair. Like before. Under truce.\" <em>(1. The October lentils)</em></p>"
+    },
+    "results.4zKydX2JCsUQCpSs.description": {
+      "fr": "<p>« Grand Îlet cherche des bras pour les treilles. Nourris, logés, et la gramoune qui montre. » <em>(2. La treille de Grand Îlet)</em></p>",
+      "en": "<p>\"Grand Îlet needs hands for the trellises. Fed, housed, and the gramoune who shows you.\" <em>(2. The Grand Îlet trellis)</em></p>"
+    },
+    "results.oQP7GSKEOSznxP68.description": {
+      "fr": "<p>« Trois jours au col. Tout le monde. Même ceux qu'on connaît. » <em>(3. La quarantaine du col)</em></p>",
+      "en": "<p>\"Three days at the pass. Everyone. Even people we know.\" <em>(3. The quarantine at the pass)</em></p>"
+    },
+    "results.DdOCdtSTIx2s8Hbt.description": {
+      "fr": "<p>« À l'îlet, là-haut, ils ont tout : l'eau, le courant, la paix. Ma cousine y est. Elle ne redescend pas. » <em>(4. L'îlet où tout va bien)</em></p>",
+      "en": "<p>\"At the îlet up there, they have everything: water, power, peace. My cousin is there. She doesn't come down.\" <em>(4. The îlet where all is well)</em></p>"
+    },
+    "results.DWiSfYimdXgSla8z.description": {
+      "fr": "<p>« Un tunnel sous la coulée, plein de sacs de riz. Je l'ai vu, je te dis. Enfin, mon beau-frère l'a vu. » <em>(5. Le tunnel aux vivres)</em></p>",
+      "en": "<p>\"A tunnel under the lava flow, full of sacks of rice. I saw it, I'm telling you. Well, my brother-in-law saw it.\" <em>(5. The tunnel of supplies)</em></p>"
+    },
+    "results.GEQbZWRqCvDkK2mx.description": {
+      "fr": "<p>« Les machines des géologues, à Bourg-Murat ? Elles grattent, elles grattent. Personne ne sait lire ça. » <em>(6. Les aiguilles de Bourg-Murat)</em></p>",
+      "en": "<p>\"The geologists' machines, at Bourg-Murat? They scratch and scratch. Nobody can read that.\" <em>(6. The needles of Bourg-Murat)</em></p>"
+    },
+    "results.Y1LDhd5kWYbsU8ED.description": {
+      "fr": "<p>Le patron Grondin, qui ne discute pas : « Pas devant Saint-Leu. Pas tant que la mer rend. » <em>(7. Les noyés de la passe)</em></p>",
+      "en": "<p>Skipper Grondin, who does not argue: \"Not off Saint-Leu. Not while the sea is giving them back.\" <em>(7. The drowned of the channel)</em></p>"
+    },
+    "results.Ea0OP1RNcpx4Dh9n.description": {
+      "fr": "<p>« Celui qui se dit médecin, au contrôle, ne repart pas. On le loge, on le nourrit, on le garde. » <em>(8. Le vieux chemin pavé)</em></p>",
+      "en": "<p>\"Anyone who says he's a doctor, at the checkpoint, doesn't leave again. They house him, feed him, keep him.\" <em>(8. The old paved path)</em></p>"
+    },
+    "results.i1Z6gmjmko6OnB23.description": {
+      "fr": "<p>Gros Mani : « Une part pour chaque bras. Et la route, après, elle est à tout le monde. Enfin, à nous d'abord. » <em>(9. Le viaduc)</em></p>",
+      "en": "<p>Gros Mani: \"A share for every pair of arms. And the road, afterwards, belongs to everyone. Well, to us first.\" <em>(9. The viaduct)</em></p>"
+    },
+    "results.dM1mnxAL8tfA7aTr.description": {
+      "fr": "<p>« Une lampe. Une seule. Un peu d'huile, une mèche. On la met derrière la tôle, personne ne la verra. » <em>(10. Une seule lampe)</em></p>",
+      "en": "<p>\"A lamp. Just one. A bit of oil, a wick. We'll put it behind the iron sheet, nobody will see it.\" <em>(10. A single lamp)</em></p>"
+    },
+    "results.Zb40yeN6lqWtbmBk.description": {
+      "fr": "<p>« Qui sait encore tendre une peau sur un rouleur ? Mon père savait. » <em>(11. Le kabar du 20 désanm)</em></p>",
+      "en": "<p>\"Who still knows how to stretch a skin over a rouleur? My father knew.\" <em>(11. The kabar of 20 désanm)</em></p>"
+    },
+    "results.DFFKAjWoYussIE2a.description": {
+      "fr": "<p>« J'ai promis. Dix jours sans viande, puis le temple. Si elle est vivante, elle y sera. » <em>(12. Le vœu)</em></p>",
+      "en": "<p>\"I promised. Ten days without meat, then the temple. If she's alive, she'll be there.\" <em>(12. The vow)</em></p>"
+    },
+    "results.cS1dLHqTDOMHeeJJ.description": {
+      "fr": "<p>« Noël, c'est demain. J'ai coché chaque soir. » « Tu as coché deux fois le soir de la pluie, oui. » <em>(13. Le jour qu'il est)</em></p>",
+      "en": "<p>\"Christmas is tomorrow. I ticked every evening.\" \"You ticked twice the evening it rained, yes.\" <em>(13. What day it is)</em></p>"
+    },
+    "results.CfwhAxSEnzthaLLO.description": {
+      "fr": "<p>« Chez les voisins, la nuit, ils font du feu et ils chantent des choses. <em>Zot i fé servis.</em> Moi, je dis rien. » <em>(14. Le service dans la nuit)</em></p>",
+      "en": "<p>\"At the neighbours', at night, they make a fire and sing things. <em>Zot i fé servis</em> (they're doing their ceremony). Me, I'm saying nothing.\" <em>(14. The ceremony in the night)</em></p>"
+    },
+    "results.pOuoHlaJ7MFBOdCO.description": {
+      "fr": "<p>« C'est les Comoriens du Chaudron. Tout le monde le sait. » Celui qui le dit n'a rien vu. <em>(15. Les derniers arrivés)</em></p>",
+      "en": "<p>\"It's the Comorians from the Chaudron. Everybody knows.\" Whoever says it saw nothing. <em>(15. The last to arrive)</em></p>"
+    },
+    "results.cj1jXIEQOjYyWSFt.description": {
+      "fr": "<p>« Les Pèlerins ? Ils t'ouvrent, ils te nourrissent, ils te demandent rien. Rien du tout. » <em>(16. Rendre à la lave)</em></p>",
+      "en": "<p>\"The Pilgrims? They open up to you, they feed you, they ask you for nothing. Nothing at all.\" <em>(16. Giving back to the lava)</em></p>"
+    },
+    "results.lhagHBYq8hPSvEYp.description": {
+      "fr": "<p>« Cuire le géranium. Pas pour le parfum, hein. Pour ce qui brûle. » <em>(17. L'alambic du Tévelave)</em></p>",
+      "en": "<p>\"Cooking geranium. Not for perfume, mind. For what burns.\" <em>(17. The still of Le Tévelave)</em></p>"
+    },
+    "results.NzbZEQrZMur4td2y.description": {
+      "fr": "<p>« Pour la fièvre, il y a une feuille. Pas celle d'en bas : celle d'en haut, sous les tamarins. Et pas trop. » <em>(18. Zerbaz)</em></p>",
+      "en": "<p>\"For fever, there's a leaf. Not the one down below: the one up high, under the tamarinds. And not too much.\" <em>(18. Zerbaz)</em></p>"
+    },
+    "results.C2tQNyKOH6mwL8HZ.description": {
+      "fr": "<p>Un électricien du Sud : « La petite centrale, au fond ? Tout est dedans. Les plans, les turbines de rechange. Si tu descends. » <em>(19. La petite centrale de Langevin)</em></p>",
+      "en": "<p>An electrician from the South: \"The little power station, down at the bottom? Everything's in there. The plans, the spare turbines. If you go down.\" <em>(19. The little Langevin power station)</em></p>"
+    },
+    "results.wGfMayjU41n7qNeA.description": {
+      "fr": "<p>« Vous m'avez dit qu'il n'y avait pas de place. J'ai vu la liste. J'ai ce qui vous manque. » <em>(20. Celui qu'on a refusé)</em></p>",
+      "en": "<p>\"You told me there was no room. I saw the list. I've got what you're missing.\" <em>(20. The one we turned away)</em></p>"
+    },
+    "results.JWFeJcV8QeJnenyb.description": {
+      "fr": "<p>Sous la pierre d'un oratoire rouge : « Je veux partir. Je sais où est le cahier. Jeudi, même heure. » <em>(21. La liste du Comptable)</em></p>",
+      "en": "<p>Under the stone of a red oratory: \"I want out. I know where the notebook is. Thursday, same time.\" <em>(21. The Bookkeeper's list)</em></p>"
+    },
+    "results.k7HwV2MZ6gwWqzpx.description": {
+      "fr": "<p>Mémé Lucette : « Le lait, il descend. Avec vous ou sans vous. Mais sans vous, il descend pas loin. » <em>(22. Le convoi du lait)</em></p>",
+      "en": "<p>Mémé Lucette: \"The milk goes down. With you or without you. But without you, it doesn't get far.\" <em>(22. The milk convoy)</em></p>"
+    },
+    "results.KuNrO6R67JnIwOop.description": {
+      "fr": "<p>La radio de la Garnison : « … évacuation par cargo jeudi, apportez vos papiers… » La voix se répète depuis trois semaines. <em>(23. Le cargo)</em></p>",
+      "en": "<p>The Garrison's radio: \"… evacuation by cargo ship Thursday, bring your papers…\" The voice has been repeating for three weeks. <em>(23. The cargo ship)</em></p>"
+    }
+  },
+  "tables/9Z48zATc55hbPGWK": {
+    "_nom": "Marché — ce qu'on trouve sur les étals",
+    "name": {
+      "fr": "Marché — ce qu'on trouve sur les étals",
+      "en": "Market — what's on the stalls"
+    },
+    "description": {
+      "fr": "<p>Un étal du marché forain ou de la foire.</p>",
+      "en": "<p>A stall at the open-air market or the fair.</p>"
+    },
+    "results.GGdMvJMR6NVi3e5s.description": {
+      "fr": "<p>Des sacs de lentilles de Cilaos, petites et brunes, au cours.</p>",
+      "en": "<p>Sacks of Cilaos lentils, small and brown, at the rate.</p>"
+    },
+    "results.CshLEhUJjyAkJ4Z1.description": {
+      "fr": "<p>Des bocaux d'achards de légumes et de piment, fermés à la cire.</p>",
+      "en": "<p>Jars of vegetable and chilli achards, sealed with wax.</p>"
+    },
+    "results.cp06yfF05EkhV1xE.description": {
+      "fr": "<p>Des chouchous par brassées, encore humides de la rosée de Salazie.</p>",
+      "en": "<p>Armfuls of chayotes, still wet with the Salazie dew.</p>"
+    },
+    "results.ICpxwMASDHbCve0q.description": {
+      "fr": "<p>Du poisson séché des Barques, en chapelets.</p>",
+      "en": "<p>Dried fish from the Boats, on strings.</p>"
+    },
+    "results.2sbKWcrpQm8XQQz6.description": {
+      "fr": "<p>Des clous redressés, triés par taille dans des boîtes de conserve.</p>",
+      "en": "<p>Straightened nails, sorted by size in tin cans.</p>"
+    },
+    "results.1q4oDTEWCcbcqANT.description": {
+      "fr": "<p>Des batteries de voiture « presque chargées », dit le Ferrailleur.</p>",
+      "en": "<p>Car batteries, \"nearly charged\", says the Scrapper.</p>"
+    },
+    "results.CZamPrMlcGGopr4V.description": {
+      "fr": "<p>Des paquets de zerbaz dans du papier journal : fièvre, ventre, entorse.</p>",
+      "en": "<p>Packets of zerbaz in newspaper: fever, stomach, sprain.</p>"
+    },
+    "results.lQtzvzX97IKmYw0l.description": {
+      "fr": "<p>Un vélo sans pneus, et deux pneus sans vélo.</p>",
+      "en": "<p>A bicycle without tyres, and two tyres without a bicycle.</p>"
+    },
+    "results.nNvobYQhDCQ5CbzA.description": {
+      "fr": "<p>Des sachets de graines de brèdes, de tomates, de piments, de maïs.</p>",
+      "en": "<p>Packets of seeds: brèdes (leafy greens), tomatoes, chillies, maize.</p>"
+    },
+    "results.wXA7jKvIVIGMdtsh.description": {
+      "fr": "<p>Une chèvre et son petit, à troquer ensemble.</p>",
+      "en": "<p>A goat and her kid, to be traded together.</p>"
+    },
+    "results.ia87u9BIMzEJKNf0.description": {
+      "fr": "<p>Des nattes et des paniers de vacoa tressé.</p>",
+      "en": "<p>Mats and baskets of woven screwpine (vacoa).</p>"
+    },
+    "results.6EgZZwAWzF48DpLz.description": {
+      "fr": "<p>Du savon de cendre et de graisse, en pains carrés.</p>",
+      "en": "<p>Soap made of ash and fat, in square bars.</p>"
+    },
+    "results.Vaup6kzbjpaqE3Gj.description": {
+      "fr": "<p>Des cartouches de chasse, comptées une à une, à prix fort.</p>",
+      "en": "<p>Hunting cartridges, counted one by one, at a steep price.</p>"
+    },
+    "results.wN61xbMt4ZriJbr4.description": {
+      "fr": "<p>Des piles de toutes tailles, testées sur la langue devant le client.</p>",
+      "en": "<p>Batteries of every size, tested on the tongue in front of the customer.</p>"
+    },
+    "results.MypPxBBElic49V6J.description": {
+      "fr": "<p>Des manuels scolaires : on troque les pages pour allumer le feu, ou pour apprendre.</p>",
+      "en": "<p>School textbooks: the pages are traded to light fires, or to learn.</p>"
+    },
+    "results.MuCx3T2PKK2rg38C.description": {
+      "fr": "<p>Du miel des Hauts dans des bouteilles de rhum lavées.</p>",
+      "en": "<p>Highland honey in washed rum bottles.</p>"
     }
   },
   "tables/A5DEArv99VCcNSDW": {
@@ -835,81 +1107,6 @@
     "results.J7j5MVCmo7Js1sJQ.description": {
       "fr": "<p>Il mord, de peur, quand on le surprend dans son sommeil (1 blessure, pas de Gris : c'est un chien). Tout est à recommencer, ou presque.</p>",
       "en": "<p>It bites, out of fear, when startled in its sleep (1 wound, no Grey: it's a dog). Back to square one, or nearly.</p>"
-    }
-  },
-  "tables/9Z48zATc55hbPGWK": {
-    "_nom": "Marché — ce qu'on trouve sur les étals",
-    "name": {
-      "fr": "Marché — ce qu'on trouve sur les étals",
-      "en": "Market — what's on the stalls"
-    },
-    "description": {
-      "fr": "<p>Un étal du marché forain ou de la foire.</p>",
-      "en": "<p>A stall at the open-air market or the fair.</p>"
-    },
-    "results.GGdMvJMR6NVi3e5s.description": {
-      "fr": "<p>Des sacs de lentilles de Cilaos, petites et brunes, au cours.</p>",
-      "en": "<p>Sacks of Cilaos lentils, small and brown, at the rate.</p>"
-    },
-    "results.CshLEhUJjyAkJ4Z1.description": {
-      "fr": "<p>Des bocaux d'achards de légumes et de piment, fermés à la cire.</p>",
-      "en": "<p>Jars of vegetable and chilli achards, sealed with wax.</p>"
-    },
-    "results.cp06yfF05EkhV1xE.description": {
-      "fr": "<p>Des chouchous par brassées, encore humides de la rosée de Salazie.</p>",
-      "en": "<p>Armfuls of chayotes, still wet with the Salazie dew.</p>"
-    },
-    "results.ICpxwMASDHbCve0q.description": {
-      "fr": "<p>Du poisson séché des Barques, en chapelets.</p>",
-      "en": "<p>Dried fish from the Boats, on strings.</p>"
-    },
-    "results.2sbKWcrpQm8XQQz6.description": {
-      "fr": "<p>Des clous redressés, triés par taille dans des boîtes de conserve.</p>",
-      "en": "<p>Straightened nails, sorted by size in tin cans.</p>"
-    },
-    "results.1q4oDTEWCcbcqANT.description": {
-      "fr": "<p>Des batteries de voiture « presque chargées », dit le Ferrailleur.</p>",
-      "en": "<p>Car batteries, \"nearly charged\", says the Scrapper.</p>"
-    },
-    "results.CZamPrMlcGGopr4V.description": {
-      "fr": "<p>Des paquets de zerbaz dans du papier journal : fièvre, ventre, entorse.</p>",
-      "en": "<p>Packets of zerbaz in newspaper: fever, stomach, sprain.</p>"
-    },
-    "results.lQtzvzX97IKmYw0l.description": {
-      "fr": "<p>Un vélo sans pneus, et deux pneus sans vélo.</p>",
-      "en": "<p>A bicycle without tyres, and two tyres without a bicycle.</p>"
-    },
-    "results.nNvobYQhDCQ5CbzA.description": {
-      "fr": "<p>Des sachets de graines de brèdes, de tomates, de piments, de maïs.</p>",
-      "en": "<p>Packets of seeds: brèdes (leafy greens), tomatoes, chillies, maize.</p>"
-    },
-    "results.wXA7jKvIVIGMdtsh.description": {
-      "fr": "<p>Une chèvre et son petit, à troquer ensemble.</p>",
-      "en": "<p>A goat and her kid, to be traded together.</p>"
-    },
-    "results.ia87u9BIMzEJKNf0.description": {
-      "fr": "<p>Des nattes et des paniers de vacoa tressé.</p>",
-      "en": "<p>Mats and baskets of woven screwpine (vacoa).</p>"
-    },
-    "results.6EgZZwAWzF48DpLz.description": {
-      "fr": "<p>Du savon de cendre et de graisse, en pains carrés.</p>",
-      "en": "<p>Soap made of ash and fat, in square bars.</p>"
-    },
-    "results.Vaup6kzbjpaqE3Gj.description": {
-      "fr": "<p>Des cartouches de chasse, comptées une à une, à prix fort.</p>",
-      "en": "<p>Hunting cartridges, counted one by one, at a steep price.</p>"
-    },
-    "results.wN61xbMt4ZriJbr4.description": {
-      "fr": "<p>Des piles de toutes tailles, testées sur la langue devant le client.</p>",
-      "en": "<p>Batteries of every size, tested on the tongue in front of the customer.</p>"
-    },
-    "results.MypPxBBElic49V6J.description": {
-      "fr": "<p>Des manuels scolaires : on troque les pages pour allumer le feu, ou pour apprendre.</p>",
-      "en": "<p>School textbooks: the pages are traded to light fires, or to learn.</p>"
-    },
-    "results.MuCx3T2PKK2rg38C.description": {
-      "fr": "<p>Du miel des Hauts dans des bouteilles de rhum lavées.</p>",
-      "en": "<p>Highland honey in washed rum bottles.</p>"
     }
   },
   "tables/CYOYEXdAq7JQv5EY": {
@@ -1517,49 +1714,6 @@
       "en": "<p><strong>Repair — The hideout's lamps.</strong> Get the panels of their hideout working.</p><p><strong>Reward:</strong> 3 ammunition, 4 food; reputation +1.</p>"
     }
   },
-  "tables/RrsEELfidn02gbrG": {
-    "_nom": "La porte — ce que dit le refusé",
-    "name": {
-      "fr": "La porte — ce que dit le refusé",
-      "en": "The door — what the one turned away says"
-    },
-    "description": {
-      "fr": "<p>Celui à qui l'on a fermé la porte, en partant. Ce qu'il fera ensuite dépend de lui, pas de ce qu'il dit.</p>",
-      "en": "<p>The one the door was shut on, as they leave. What they do next depends on them, not on what they say.</p>"
-    },
-    "results.9Xqj7iX7sO0r69fB.description": {
-      "fr": "<p>« <em>Mi konpran.</em> » (Je comprends.) Il remet son sac sur l'épaule et repart sans se retourner.</p>",
-      "en": "<p>\"<em>Mi konpran.</em>\" (I understand.) He shoulders his bag again and leaves without looking back.</p>"
-    },
-    "results.AezM11dQKnnCGE9a.description": {
-      "fr": "<p>Elle crache par terre : « Vous verrez, quand ce sera votre tour. »</p>",
-      "en": "<p>She spits on the ground: \"You'll see, when it's your turn.\"</p>"
-    },
-    "results.BkkGk0PRkMQC7g2i.description": {
-      "fr": "<p>Il demande seulement de l'eau pour la route. Qu'on la lui donne ou non, on s'en souviendra.</p>",
-      "en": "<p>He only asks for water for the road. Whether you give it to him or not, it will be remembered.</p>"
-    },
-    "results.UsEJFQyXVbhzv2E9.description": {
-      "fr": "<p>Elle note quelque chose dans un carnet, regarde longuement la barrière, et s'en va.</p>",
-      "en": "<p>She writes something down in a notebook, looks at the gate for a long time, and goes.</p>"
-    },
-    "results.e5WIDfocYvUbfqoy.description": {
-      "fr": "<p>« Dites-moi ce qui vous manque. Je reviendrai avec. »</p>",
-      "en": "<p>\"Tell me what you're short of. I'll come back with it.\"</p>"
-    },
-    "results.gADFYADTZDvK5Iy3.description": {
-      "fr": "<p>Il ne dit rien. Le soir, on voit sa silhouette sur la crête, qui observe le camp.</p>",
-      "en": "<p>He says nothing. In the evening, his silhouette can be seen on the ridge, watching the camp.</p>"
-    },
-    "results.VfOusK80uRs25kjB.description": {
-      "fr": "<p>Elle laisse un enfant à la porte, et s'enfuit. (Le MJ décide de la suite : on n'a refusé qu'elle.)</p>",
-      "en": "<p>She leaves a child at the door and runs off. (The GM decides what follows: only she was turned away.)</p>"
-    },
-    "results.dpomYH4MQrHiqhgr.description": {
-      "fr": "<p>Il rit : « Les Sans-Lune, eux, m'auraient ouvert. » Puis il prend la route du littoral.</p>",
-      "en": "<p>He laughs: \"The Moonless would have let me in.\" Then he takes the coast road.</p>"
-    }
-  },
   "tables/PRGTFt3WHnYdtKLM": {
     "_nom": "Verrous de la route",
     "name": {
@@ -1609,6 +1763,92 @@
     "results.mNVF8rgzcTcMvKFD.description": {
       "fr": "<p>Une voiture sur cales, roues volées, et un mot sur le pare-brise : « Pa touch, mi rovien » (n'y touchez pas, je reviens). Daté d'il y a des mois.</p>",
       "en": "<p>A car up on blocks, wheels stolen, and a note on the windscreen: “Pa touch, mi rovien” (don't touch, I'll be back). Dated months ago.</p>"
+    }
+  },
+  "tables/QwBYnUyvaU5GZx2X": {
+    "_nom": "Raconter sans quête : un autre exemplaire du cahier",
+    "name": {
+      "fr": "Raconter sans quête : un autre exemplaire du cahier",
+      "en": "Telling without a quest: another copy of the notebook"
+    },
+    "description": {
+      "fr": "<p>Ce qu'un autre exemplaire du livre de l'île a de différent.</p>",
+      "en": "<p>What another copy of the island's book has that is different.</p>"
+    },
+    "results.lvoWasVxElTcRb3c.description": {
+      "fr": "<p>Un exemplaire de Cilaos : la rumeur un est rayée, et à côté, d'une autre main : « Ils montent très bien. Vu au Pavillon le 3. »</p>",
+      "en": "<p>A copy from Cilaos: rumour one is crossed out, and beside it, in another hand: \"They climb just fine. Seen at the Pavillon on the 3rd.\"</p>"
+    },
+    "results.S6BE0tjJeIFVK3bR.description": {
+      "fr": "<p>Un exemplaire de l'Est : une page de plus, sur les crues, avec la hauteur de l'eau à chaque radier.</p>",
+      "en": "<p>A copy from the East: one more page, on the floods, with the water level at each ford.</p>"
+    },
+    "results.q5NwW5hZlaLp7NBO.description": {
+      "fr": "<p>Un exemplaire du Port : la page sur la Garnison arrachée proprement, au cutter.</p>",
+      "en": "<p>A copy from Le Port: the page on the Garrison neatly cut out, with a box cutter.</p>"
+    },
+    "results.uexhQmr4BxFJGOLg.description": {
+      "fr": "<p>Un exemplaire de Mafate, recopié à la main sans une faute ; chaque rumeur y porte le nom de l'îlet qui l'a dite.</p>",
+      "en": "<p>A copy from Mafate, copied out by hand without a single mistake; each rumour bears the name of the îlet that told it.</p>"
+    },
+    "results.LDDHWA6o9snlCzpD.description": {
+      "fr": "<p>Un exemplaire trouvé sur un mort : la page blanche, à la fin, n'est plus blanche ; trois lignes au crayon, que la pluie a rendues illisibles.</p>",
+      "en": "<p>A copy found on a dead body: the blank page at the end is blank no longer; three lines in pencil, made unreadable by the rain.</p>"
+    },
+    "results.CeOLwOxDvGxL6oDj.description": {
+      "fr": "<p>Un exemplaire des Hauts : une onzième rumeur, numérotée : « Les vieux Livides ne craignent pas le feu, ils craignent le soleil. » Personne n'a signé.</p>",
+      "en": "<p>A copy from the Highlands: an eleventh rumour, numbered: \"The old Pallid don't fear fire, they fear the sun.\" Nobody signed it.</p>"
+    },
+    "results.QOhAPj5KavJT4Jy0.description": {
+      "fr": "<p>Un exemplaire de Saint-Pierre : des noms de soignants, avec les jours où ils sont au Dispensaire.</p>",
+      "en": "<p>A copy from Saint-Pierre: the names of carers, with the days they are at the Dispensary.</p>"
+    },
+    "results.oMT8Zexc7WUh1jX6.description": {
+      "fr": "<p>Un exemplaire du Sud sauvage : le lexique est deux fois plus long, et la moitié des mots sont des noms de plantes.</p>",
+      "en": "<p>A copy from the Wild South: the glossary is twice as long, and half the words are names of plants.</p>"
+    }
+  },
+  "tables/RrsEELfidn02gbrG": {
+    "_nom": "La porte — ce que dit le refusé",
+    "name": {
+      "fr": "La porte — ce que dit le refusé",
+      "en": "The door — what the one turned away says"
+    },
+    "description": {
+      "fr": "<p>Celui à qui l'on a fermé la porte, en partant. Ce qu'il fera ensuite dépend de lui, pas de ce qu'il dit.</p>",
+      "en": "<p>The one the door was shut on, as they leave. What they do next depends on them, not on what they say.</p>"
+    },
+    "results.9Xqj7iX7sO0r69fB.description": {
+      "fr": "<p>« <em>Mi konpran.</em> » (Je comprends.) Il remet son sac sur l'épaule et repart sans se retourner.</p>",
+      "en": "<p>\"<em>Mi konpran.</em>\" (I understand.) He shoulders his bag again and leaves without looking back.</p>"
+    },
+    "results.AezM11dQKnnCGE9a.description": {
+      "fr": "<p>Elle crache par terre : « Vous verrez, quand ce sera votre tour. »</p>",
+      "en": "<p>She spits on the ground: \"You'll see, when it's your turn.\"</p>"
+    },
+    "results.BkkGk0PRkMQC7g2i.description": {
+      "fr": "<p>Il demande seulement de l'eau pour la route. Qu'on la lui donne ou non, on s'en souviendra.</p>",
+      "en": "<p>He only asks for water for the road. Whether you give it to him or not, it will be remembered.</p>"
+    },
+    "results.UsEJFQyXVbhzv2E9.description": {
+      "fr": "<p>Elle note quelque chose dans un carnet, regarde longuement la barrière, et s'en va.</p>",
+      "en": "<p>She writes something down in a notebook, looks at the gate for a long time, and goes.</p>"
+    },
+    "results.e5WIDfocYvUbfqoy.description": {
+      "fr": "<p>« Dites-moi ce qui vous manque. Je reviendrai avec. »</p>",
+      "en": "<p>\"Tell me what you're short of. I'll come back with it.\"</p>"
+    },
+    "results.gADFYADTZDvK5Iy3.description": {
+      "fr": "<p>Il ne dit rien. Le soir, on voit sa silhouette sur la crête, qui observe le camp.</p>",
+      "en": "<p>He says nothing. In the evening, his silhouette can be seen on the ridge, watching the camp.</p>"
+    },
+    "results.VfOusK80uRs25kjB.description": {
+      "fr": "<p>Elle laisse un enfant à la porte, et s'enfuit. (Le MJ décide de la suite : on n'a refusé qu'elle.)</p>",
+      "en": "<p>She leaves a child at the door and runs off. (The GM decides what follows: only she was turned away.)</p>"
+    },
+    "results.dpomYH4MQrHiqhgr.description": {
+      "fr": "<p>Il rit : « Les Sans-Lune, eux, m'auraient ouvert. » Puis il prend la route du littoral.</p>",
+      "en": "<p>He laughs: \"The Moonless would have let me in.\" Then he takes the coast road.</p>"
     }
   },
   "tables/S2NNTo6b2KG2DCLc": {
@@ -1668,6 +1908,84 @@
     "results.UUb2FBjLG87FxkPF.description": {
       "fr": "<p>Le son d'une cloche de vache dans le brouillard, qui ne s'arrête jamais.</p>",
       "en": "<p>The sound of a cowbell in the fog, that never stops.</p>"
+    }
+  },
+  "tables/YFN6W0JMRjG55CSU": {
+    "_nom": "Raconter sans quête : la nature",
+    "name": {
+      "fr": "Raconter sans quête : la nature",
+      "en": "Telling without a quest: nature"
+    },
+    "description": {
+      "fr": "<p>Ce que dit le paysage, à qui sait le lire.</p>",
+      "en": "<p>What the landscape says, to those who can read it.</p>"
+    },
+    "results.WoT7puNijJD7HbOF.description": {
+      "fr": "<p>Les flamboyants rouges, partout : c'est la fin de l'année.</p>",
+      "en": "<p>Red flame trees, everywhere: it is the end of the year.</p>"
+    },
+    "results.S496kiiFGBguVgzQ.description": {
+      "fr": "<p>Des letchis qui pourrissent sous l'arbre : personne n'est passé depuis des semaines.</p>",
+      "en": "<p>Lychees rotting under the tree: nobody has come by for weeks.</p>"
+    },
+    "results.LlE6N1xsOXC9Qpck.description": {
+      "fr": "<p>Un champ de canne jamais coupé, plus haut qu'un homme : on ne voit rien venir, et rien ne vous voit.</p>",
+      "en": "<p>A field of cane never cut, taller than a man: you see nothing coming, and nothing sees you.</p>"
+    },
+    "results.wxyFDt2Yuy2NxjPo.description": {
+      "fr": "<p>Des chiens en meute qui traversent la route sans un regard : ils ont mangé ailleurs.</p>",
+      "en": "<p>Dogs in a pack crossing the road without a glance: they have eaten elsewhere.</p>"
+    },
+    "results.aR8xeIsWTFwMcVRv.description": {
+      "fr": "<p>Les grenouilles se taisent d'un coup, puis les insectes : quelque chose de nombreux passe tout près.</p>",
+      "en": "<p>The frogs fall silent all at once, then the insects: something numerous is passing very close.</p>"
+    },
+    "results.jpKG3bAbaAIaMubR.description": {
+      "fr": "<p>De l'herbe dans les fissures de la quatre-voies, et des cabris qui y broutent.</p>",
+      "en": "<p>Grass in the cracks of the dual carriageway, and goats grazing there.</p>"
+    },
+    "results.gkMDBMxJ1TKDLRJr.description": {
+      "fr": "<p>Des oiseaux posés en rangs serrés sur les fils électriques : le courant ne passe plus nulle part.</p>",
+      "en": "<p>Birds perched in tight rows on the power lines: the current no longer runs anywhere.</p>"
+    },
+    "results.ulSBkmjFOhJ7XqkE.description": {
+      "fr": "<p>Une odeur sucrée et lourde que le vent apporte d'un quartier : on n'y va pas aujourd'hui.</p>",
+      "en": "<p>A sweet, heavy smell the wind brings from a neighbourhood: you do not go there today.</p>"
+    }
+  },
+  "tables/ZRfOKf6zkJ72GyFX": {
+    "_nom": "Livides en fête",
+    "name": {
+      "fr": "Livides en fête",
+      "en": "Pallid in holiday dress"
+    },
+    "description": {
+      "fr": "<p>Pendant une fête, ce qu'un Livide porte encore : jamais rien de religieux ni de mémoire (règle de respect).</p>",
+      "en": "<p>During a holiday, what a Pallid is still wearing: never anything religious or of remembrance (the rule of respect).</p>"
+    },
+    "results.NVAGknWPAxqKUSYG.description": {
+      "fr": "<p>Un Livide en bonnet de Noël, le pompon traîné dans la boue, qui se cogne doucement à une vitrine décorée.</p>",
+      "en": "<p>A Pallid in a Santa hat, the pompom dragged through the mud, bumping gently against a decorated shop window.</p>"
+    },
+    "results.LqBicvm58DA41rzC.description": {
+      "fr": "<p>Un Livide au ruban rouge noué au cou, qui suit le bruit des pétards jusqu'au bout de la rue.</p>",
+      "en": "<p>A Pallid with a red ribbon tied round its neck, following the sound of firecrackers to the end of the street.</p>"
+    },
+    "results.Epd7J5dtX8QOf4tl.description": {
+      "fr": "<p>Une Livide avec une guirlande lumineuse éteinte enroulée sur l'épaule, prise dans un grillage.</p>",
+      "en": "<p>A Pallid woman with a dead string of fairy lights wound over her shoulder, caught in a wire fence.</p>"
+    },
+    "results.IMZ3VwlHspntoz0o.description": {
+      "fr": "<p>Un Livide au casque de musique sur les oreilles, le fil arraché, qui tourne la tête vers chaque son.</p>",
+      "en": "<p>A Pallid with headphones over its ears, the cord torn off, turning its head towards every sound.</p>"
+    },
+    "results.lqRbL1uCnjWgdPiy.description": {
+      "fr": "<p>Deux Livides en chemises à fleurs du bal du 14 juillet, figés de froid sur la place de Bourg-Murat.</p>",
+      "en": "<p>Two Pallid in flowered shirts from the 14 July dance, frozen stiff with cold on the square at Bourg-Murat.</p>"
+    },
+    "results.YtkuyHtE9QCpX05t.description": {
+      "fr": "<p>Un Livide coiffé d'une couronne de papier doré, de travers, dans une galerie marchande vide.</p>",
+      "en": "<p>A Pallid wearing a gold paper crown, askew, in an empty shopping arcade.</p>"
     }
   },
   "tables/aIDpVmerx8739tbC": {
@@ -1907,6 +2225,65 @@
     "results.0UGOVfqViDTBZlt5.description": {
       "fr": "<p>Une lampe à pétrole intacte, son verre entier, au pied de la porte.</p>",
       "en": "<p>An intact oil lamp, its glass whole, at the foot of the door.</p>"
+    }
+  },
+  "tables/eANWghPfd5WP2sz7": {
+    "_nom": "Bruits de l'île",
+    "name": {
+      "fr": "Bruits de l'île",
+      "en": "Noises of the island"
+    },
+    "description": {
+      "fr": "<p>La plus petite des affaires : un moment, qui ne demande rien et fait sentir que l'île vit.</p>",
+      "en": "<p>The smallest of the affairs: a moment that asks for nothing and makes you feel the island is alive.</p>"
+    },
+    "results.ChAjJm44b82jF1Xd.description": {
+      "fr": "<p>Un chien qui gratte à une porte, toujours la même, et qui ne veut pas partir.</p>",
+      "en": "<p>A dog scratching at a door, always the same one, and refusing to leave.</p>"
+    },
+    "results.DgwO0gWS1pu9OiC9.description": {
+      "fr": "<p>Un drap blanc à un balcon, qui n'y était pas hier.</p>",
+      "en": "<p>A white sheet on a balcony, which was not there yesterday.</p>"
+    },
+    "results.e7GvXZAyZND6vU07.description": {
+      "fr": "<p>Un réveil qui sonne encore chaque matin à six heures dans une case vide, plus faible chaque jour.</p>",
+      "en": "<p>An alarm clock still ringing every morning at six in an empty house, fainter every day.</p>"
+    },
+    "results.H6xYDJqjkkI9Z4bl.description": {
+      "fr": "<p>Un cabri debout sur le toit d'une voiture, qui vous regarde passer.</p>",
+      "en": "<p>A goat standing on the roof of a car, watching you go by.</p>"
+    },
+    "results.0Ydz4kv3u1NBgQFU.description": {
+      "fr": "<p>Des traces de pas fraîches dans la cendre d'un feu éteint.</p>",
+      "en": "<p>Fresh footprints in the ashes of a dead fire.</p>"
+    },
+    "results.4EOPAxjAGRrD50un.description": {
+      "fr": "<p>Une fumée lointaine qui s'éteint dès qu'on la regarde.</p>",
+      "en": "<p>Distant smoke that goes out as soon as you look at it.</p>"
+    },
+    "results.QN3zuEB8fgJE9Xg0.description": {
+      "fr": "<p>Un mot cloué à un poteau : « Eau potable, 200 m », et une flèche.</p>",
+      "en": "<p>A note nailed to a post: \"Drinking water, 200 m\", and an arrow.</p>"
+    },
+    "results.lB05Q1ZEH8uwVSWn.description": {
+      "fr": "<p>Une fenêtre qui claque au vent, dans une maison où quelqu'un l'a pourtant fermée.</p>",
+      "en": "<p>A window banging in the wind, in a house where someone had nonetheless closed it.</p>"
+    },
+    "results.ELgH8tOS7m3y7sbl.description": {
+      "fr": "<p>Une odeur de cari, quelque part, impossible à situer.</p>",
+      "en": "<p>A smell of cari, somewhere, impossible to place.</p>"
+    },
+    "results.LQDva2cSYOco04B5.description": {
+      "fr": "<p>Une moto au loin, qui descend la route, puis plus rien.</p>",
+      "en": "<p>A motorbike in the distance, coming down the road, then nothing.</p>"
+    },
+    "results.48OUcGgOtqZ4NQdJ.description": {
+      "fr": "<p>Un cairn frais au bord du sentier : quelqu'un balise.</p>",
+      "en": "<p>A fresh cairn at the edge of the trail: someone is marking the way.</p>"
+    },
+    "results.sRMxmeqtrFyeQTBH.description": {
+      "fr": "<p>Une sonnerie de téléphone, une seule, dans une voiture abandonnée.</p>",
+      "en": "<p>A phone ringing, just once, in an abandoned car.</p>"
     }
   },
   "tables/eUNONdmZdZucM7AF": {
@@ -2168,6 +2545,53 @@
       "en": "<p>A group camps a kilometre away and no longer moves.</p>"
     }
   },
+  "tables/hcdCp8uVdmDmi9Vb": {
+    "_nom": "Figures de l'île",
+    "name": {
+      "fr": "Figures de l'île",
+      "en": "The island's figures"
+    },
+    "description": {
+      "fr": "<p>Un rôle, pas une communauté : n'importe qui de l'île peut le tenir.</p>",
+      "en": "<p>A role, not a community: anyone on the island can hold it.</p>"
+    },
+    "results.JDax47WwMC7ZAACH.description": {
+      "fr": "<p><strong>La gramoune qui sait.</strong> Ce qu'elle veut : Qu'on l'écoute jusqu'au bout. Ce qu'elle cache ou risque : Elle n'enseigne qu'à celui qui reste, et elle n'a pas tout le temps.</p>",
+      "en": "<p><strong>The gramoune who knows.</strong> What they want: To be listened to until the end. What they hide or risk: She only teaches whoever stays, and she does not have all the time in the world.</p>"
+    },
+    "results.BtiAvJSqtIM9puaD.description": {
+      "fr": "<p><strong>Celui qui compte.</strong> Ce qu'elle veut : Que rien ne manque : il tient le cahier des stocks, des dettes, des jours. Ce qu'elle cache ou risque : Il peut devenir un Comptable.</p>",
+      "en": "<p><strong>The one who keeps count.</strong> What they want: That nothing be missing: he keeps the book of stocks, debts and days. What they hide or risk: He could become a Bookkeeper.</p>"
+    },
+    "results.1YkeuyOHzpABMPMH.description": {
+      "fr": "<p><strong>Celle qui a gardé les enfants.</strong> Ce qu'elle veut : Qu'on ne lui mente pas. Ce qu'elle cache ou risque : Elle a besoin de tout et ne demandera rien.</p>",
+      "en": "<p><strong>The one who looked after the children.</strong> What they want: Not to be lied to. What they hide or risk: She needs everything and will ask for nothing.</p>"
+    },
+    "results.5VqB58kkYFCJR2zi.description": {
+      "fr": "<p><strong>Le revenu de la ville.</strong> Ce qu'elle veut : Qu'on le croie. Ce qu'elle cache ou risque : Ce qu'il raconte date, et il le sait mal.</p>",
+      "en": "<p><strong>The one back from town.</strong> What they want: To be believed. What they hide or risk: What he tells is out of date, and he knows it badly.</p>"
+    },
+    "results.yUeBnutUmqw3bPNk.description": {
+      "fr": "<p><strong>Celui qui organise.</strong> Ce qu'elle veut : Bien faire, tout de suite, pour tous. Ce qu'elle cache ou risque : Il n'a pas demandé leur avis aux autres, et il a souvent raison sur le fond.</p>",
+      "en": "<p><strong>The one who organises.</strong> What they want: To do things right, straight away, for everyone. What they hide or risk: He did not ask the others their opinion, and he is often right on the substance.</p>"
+    },
+    "results.lmOUVA1dAc91x5jC.description": {
+      "fr": "<p><strong>Le croyant.</strong> Ce qu'elle veut : Tenir sa promesse. Ce qu'elle cache ou risque : Sa foi le fait tenir, et peut le fermer aux autres.</p>",
+      "en": "<p><strong>The believer.</strong> What they want: To keep his promise. What they hide or risk: His faith keeps him standing, and can close him off from others.</p>"
+    },
+    "results.BerVzZDEeF38Gwn8.description": {
+      "fr": "<p><strong>L'enfant qui regarde.</strong> Ce qu'elle veut : Comprendre ce que font les grands. Ce qu'elle cache ou risque : Il se calquera sur eux, ou il partira.</p>",
+      "en": "<p><strong>The child who watches.</strong> What they want: To understand what the grown-ups do. What they hide or risk: He will copy them, or he will leave.</p>"
+    },
+    "results.NtIVslCAhEAxNzEJ.description": {
+      "fr": "<p><strong>Le marchand d'entre-deux.</strong> Ce qu'elle veut : Que tout circule. Ce qu'elle cache ou risque : Vos nouvelles circulent aussi.</p>",
+      "en": "<p><strong>The go-between trader.</strong> What they want: That everything keeps moving. What they hide or risk: Your news moves too.</p>"
+    },
+    "results.LAMzaYaAAJo2Bw88.description": {
+      "fr": "<p><strong>Celui qui est resté seul.</strong> Ce qu'elle veut : Qu'on le laisse. Ce qu'elle cache ou risque : Il sait quelque chose que personne d'autre ne sait.</p>",
+      "en": "<p><strong>The one who stayed alone.</strong> What they want: To be left alone. What they hide or risk: He knows something nobody else knows.</p>"
+    }
+  },
   "tables/jCRjs1WtyFPo21up": {
     "_nom": "Rencontres — phase jour-zero",
     "name": {
@@ -2217,6 +2641,49 @@
     "results.rWEm6iOCQkL0L9t4.description": {
       "fr": "<p>Un policier municipal qui tire en l'air pour disperser une foule.</p>",
       "en": "<p>A municipal police officer firing into the air to disperse a crowd.</p>"
+    }
+  },
+  "tables/l3OhwGiaMBAr72bc": {
+    "_nom": "Raconter sans quête : le journal d'un mort",
+    "name": {
+      "fr": "Raconter sans quête : le journal d'un mort",
+      "en": "Telling without a quest: a dead person's journal"
+    },
+    "description": {
+      "fr": "<p>Une entrée du carnet trouvé sur un corps ; entre crochets, ce qui est vrai (pour le MJ).</p>",
+      "en": "<p>An entry in the notebook found on a body; in brackets, what is true (for the GM).</p>"
+    },
+    "results.rnKFBFFgtFmnYTas.description": {
+      "fr": "<p><strong>Le pêcheur.</strong> « Jour 6. La mer est bonne, la terre ne l'est plus. J'ai mis le bateau au mouillage devant Saint-Leu. On y dort bien. » [Vrai, jusqu'à la houle.]</p>",
+      "en": "<p><strong>The fisherman.</strong> \"Day 6. The sea is good, the land isn't any more. I've put the boat at anchor off Saint-Leu. We sleep well there.\" [True, until the swell.]</p>"
+    },
+    "results.eRzORmAT96QXtjTk.description": {
+      "fr": "<p><strong>L'infirmière.</strong> « On manque de tout, sauf de malades. Le Dispensaire prend tout le monde. Si je meurs, rendez ce carnet à la docteure. » [Vrai.]</p>",
+      "en": "<p><strong>The nurse.</strong> \"We're short of everything except patients. The Dispensary takes everyone. If I die, give this notebook back to the doctor.\" [True.]</p>"
+    },
+    "results.53bLWo3nhzvzPTbv.description": {
+      "fr": "<p><strong>L'élève de terminale.</strong> « Maman dit qu'on remonte chez tatie à Cilaos demain. J'ai pris mon cahier de maths, je sais pas pourquoi. » [Vrai ; le car jaune ne passe plus le tunnel.]</p>",
+      "en": "<p><strong>The final-year pupil.</strong> \"Mum says we're going up to auntie's in Cilaos tomorrow. I took my maths exercise book, I don't know why.\" [True; the yellow bus no longer gets through the tunnel.]</p>"
+    },
+    "results.QmA1CCJ0kBOjHq9F.description": {
+      "fr": "<p><strong>Le chauffeur de car.</strong> « Le car jaune est arrêté dans le tunnel. On a laissé les sacs. Je reviendrai les chercher. » [Vrai : les sacs y sont toujours.]</p>",
+      "en": "<p><strong>The bus driver.</strong> \"The yellow bus is stopped in the tunnel. We left the bags. I'll come back for them.\" [True: the bags are still there.]</p>"
+    },
+    "results.DJL8T70S7jDrY0BA.description": {
+      "fr": "<p><strong>Le vigile.</strong> « L'hypermarché a été vidé par les Comoriens du Chaudron, je les ai vus. » [Faux : il n'a vu qu'un camion. Le préjugé était le sien.]</p>",
+      "en": "<p><strong>The security guard.</strong> \"The hypermarket was emptied by the Comorians from the Chaudron, I saw them.\" [False: he only saw a truck. The prejudice was his own.]</p>"
+    },
+    "results.SOcyafA7hcUvFc3U.description": {
+      "fr": "<p><strong>La tisaneuse.</strong> « Pour la fièvre, la feuille d'en haut, trois fois par jour. » [À moitié vrai : la dose a été doublée en recopiant.]</p>",
+      "en": "<p><strong>The herbalist.</strong> \"For fever, the leaf from up high, three times a day.\" [Half true: the dose was doubled in copying.]</p>"
+    },
+    "results.YhSSKPEVXRCUp1T4.description": {
+      "fr": "<p><strong>Le gendarme.</strong> « Ordre d'évacuer vers le Port. Cargo jeudi. » [Faux : il n'y a pas eu de cargo jeudi.]</p>",
+      "en": "<p><strong>The gendarme.</strong> \"Orders to evacuate towards Le Port. Cargo ship Thursday.\" [False: there was no cargo ship on Thursday.]</p>"
+    },
+    "results.NZPEMRCDbT7AijaG.description": {
+      "fr": "<p><strong>L'électricien.</strong> « La petite centrale de Langevin tient toujours. Les cahiers de l'exploitant sont dans le bureau, en haut. » [Vrai, si personne n'est passé avant.]</p>",
+      "en": "<p><strong>The electrician.</strong> \"The little Langevin power station still stands. The operator's notebooks are in the office, upstairs.\" [True, if nobody came before.]</p>"
     }
   },
   "tables/lUWq21YOp6BTkewB": {
@@ -3087,6 +3554,49 @@
     "results.1BhALBKiHREihkTG.description": {
       "fr": "<p>Vavaka</p>",
       "en": "<p>Vavaka</p>"
+    }
+  },
+  "tables/xy4CRhi0vrQVevFH": {
+    "_nom": "Raconter sans quête : l'objet déplacé",
+    "name": {
+      "fr": "Raconter sans quête : l'objet déplacé",
+      "en": "Telling without a quest: the object out of place"
+    },
+    "description": {
+      "fr": "<p>Un objet loin de chez lui ; entre crochets, ce qu'il raconte (pour le MJ).</p>",
+      "en": "<p>An object far from home; in brackets, what it tells (for the GM).</p>"
+    },
+    "results.6RwZEhUsmlvRhRXB.description": {
+      "fr": "<p>Un badge d'hôpital au cou d'un Livide : « CHU Sud, brancardier ». [Il venait de Saint-Pierre, à quarante kilomètres.]</p>",
+      "en": "<p>A hospital badge round a Pallid's neck: \"CHU Sud, porter\". [He came from Saint-Pierre, forty kilometres away.]</p>"
+    },
+    "results.EQck12JG7Bk5WllF.description": {
+      "fr": "<p>Un brassard orange de la Garnison au bras d'un Livide des Hauts. [Un soldat d'un convoi qui n'est pas redescendu.]</p>",
+      "en": "<p>An orange Garrison armband on the arm of a Highland Pallid. [A soldier from a convoy that never came back down.]</p>"
+    },
+    "results.HoJvC5LVDEPVVafm.description": {
+      "fr": "<p>Une carte d'embarquement pliée dans une poche : vol du 5 décembre. [Il n'a jamais embarqué.]</p>",
+      "en": "<p>A boarding pass folded in a pocket: flight of 5 December. [He never boarded.]</p>"
+    },
+    "results.xT3mZiIZ0qW0krjo.description": {
+      "fr": "<p>Un casque de chantier de la nouvelle route du Littoral, sur une plage de Saint-Paul. [La houle l'a porté.]</p>",
+      "en": "<p>A hard hat from the new Route du Littoral worksite, on a beach at Saint-Paul. [The swell carried it.]</p>"
+    },
+    "results.Bs3i6WlbGZWYuXTH.description": {
+      "fr": "<p>Un gilet de sauvetage d'un navire de croisière, échoué à Saint-Philippe. [Un navire au large, quelque part.]</p>",
+      "en": "<p>A life jacket from a cruise ship, washed up at Saint-Philippe. [A ship out at sea, somewhere.]</p>"
+    },
+    "results.ahkyyBzdV1KASpYv.description": {
+      "fr": "<p>Un trousseau de clés au porte-clés de Cilaos, au bord de la mer. [Quelqu'un des Hauts est descendu jusque-là.]</p>",
+      "en": "<p>A bunch of keys on a Cilaos key ring, by the sea. [Someone from the Highlands came all the way down here.]</p>"
+    },
+    "results.FSWqzEUVa1Q0tVUD.description": {
+      "fr": "<p>Une alliance gravée au doigt d'un Livide : deux prénoms et une date. [Le prénom est peut-être sur un mur, quelque part.]</p>",
+      "en": "<p>An engraved wedding ring on a Pallid's finger: two first names and a date. [The first name may be on a wall, somewhere.]</p>"
+    },
+    "results.UnROBgoedZsn9tuh.description": {
+      "fr": "<p>Un sac de sport du club de foot de Saint-André, accroché à une branche au-dessus d'une ravine en crue. [La crue l'a apporté d'en haut, rien de plus.]</p>",
+      "en": "<p>A sports bag from the Saint-André football club, caught on a branch above a ravine in flood. [The flood brought it down from above, nothing more.]</p>"
     }
   },
   "tables/zLNkCeGEHL2hM2ni": {
