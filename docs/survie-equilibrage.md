@@ -52,7 +52,13 @@ brèche, si les Livides restants sont plus nombreux que les valides, le groupe f
 (déménagement forcé) ; un malade aggravé (malus ≥ 3), épuisé et affamé meurt. Depuis le rééquilibrage du 2026-11-13
 (`docs/equilibre.md`) : le soir, à l'abri, le groupe donne le repos à ses morts retrouvés (sans quoi le deuil pesait jusqu'au
 bout de la partie) ; le gaz, les boutures et le biocarburant, que le simulateur ne joue pas, ne comptent plus dans le score
-d'un site (les 13 kg de gaz sous l'évier faisaient choisir une maison plutôt qu'un bon site).
+d'un site (les 13 kg de gaz sous l'évier faisaient choisir une maison plutôt qu'un bon site). Depuis le rééquilibrage d'après les
+douze lots du jeu 3D (`docs/equilibre-3d.md`, 2026-11-17) : ce qui boit (installations du vivant, basse-cour et enclos compris,
+hygiène qui prend de l'eau) ne se bâtit que sur un surplus d'eau du jour **et de la saison sèche** ; en sécheresse, quand le bilan
+d'eau est négatif, le groupe mange aussi le couple qu'il gardait (un enclos boit autant avec deux bêtes qu'avec dix) ; le passif
+passe un quart sur un entretien dû, comme l'enraciné oisif ; seul ou à deux, l'enraciné ne creuse ses feuillées et ses latrines
+qu'une fois autonome. L'option `--couper` (des deux outils) coupe des règles des lots pour
+mesurer leur part ; elle ne sert qu'à la mesure.
 
 **Mesures** par cas (stratégie × taille) : jours de survie (quartiles), vivants à J200, première faim, autonomie (part et jour),
 déménagements, installations, causes de fin, cyclones, éruptions et hordes vécus, assauts par mois après J30 (sérieux : force

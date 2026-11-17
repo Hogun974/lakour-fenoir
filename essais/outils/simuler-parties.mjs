@@ -5,6 +5,7 @@
 //   node essais/outils/simuler-parties.mjs --parties 200 --graine 1            (12 cas : 4 stratégies × 1, 2, 4, 6 membres… voir --cas)
 //   node essais/outils/simuler-parties.mjs --rapide                            (20 parties par cas, pour essais/survie-equilibre.test.mjs)
 //   options : --jours 200  --cas nomade-4,enracine-4  --fils 4 (fils d'exécution, défaut : cœurs − 1)  --json <fichier>  --journal (une partie détaillée)
+//             --couper soif-betes,usure (mesure : couper des règles des lots, COUPURES ; jamais dans le jeu)
 //
 // Un GROUPE de 1, 2, 4 ou 6 survivants tirés par le générateur (§10.2, budget 10–16) joue chaque jour selon une STRATÉGIE :
 // - « passif » : s'installe sur le site le plus sûr de sa région, monte la garde, et ne fait rien d'autre (la mesure de référence
@@ -68,6 +69,11 @@
 //   vides : le simulateur ne capture pas de bêtes) ; le soir, il
 //   soigne un cheptel malade s'il a le remède (le meilleur en survie, normale, +1 dé avec l'élevage ou le maraîchage) et abat ce qui
 //   dépasse le plein quand l'enclos est plein ou que les vivres manquent, tout sauf un couple quand l'eau manque (VIVANT_SIMULATEUR).
+// - rééquilibrage d'après les douze lots (2026-11-17, docs/equilibre-3d.md), comme un groupe raisonnable : ce qui boit (les
+//   installations du vivant, la basse-cour et l'enclos à cabris compris, et l'hygiène qui prend de l'eau) ne se bâtit que sur un
+//   surplus d'eau du jour ET de la saison sèche ; quand l'eau manque et que le bilan d'eau est négatif, on mange aussi le couple
+//   gardé (un enclos boit autant avec deux bêtes qu'avec dix) ; le passif, qui ne fait rien d'autre que la garde, passe un quart sur
+//   un entretien dû (le geste de l'enraciné oisif) ; seul ou à deux, l'enraciné bâtit son hygiène une fois autonome. Option --couper : couper des règles des lots pour mesurer leur part (COUPURES).
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -110,7 +116,7 @@ export const LIEUX_DU_BESOIN = {
   pieces: ["garage", "entrepot", "maison", "voiture"], tout: ["case", "maison", "boutique", "commerce", "hangar", "remise"]
 };
 export const A_DEMONTER = ["case-en-tole", "case", "remise", "voiture", "decombres", "maison"];
-export const OPTIONS_SIMULATEUR = { lieux: true };
+export const OPTIONS_SIMULATEUR = { lieux: true, couper: [] };
 
 // L'ordre de construction de l'enraciné ({ cle, niveau }) : ce que le site, les savoirs et les stocks permettent passe en premier.
 export const ORDRE_ENRACINE = [
@@ -146,7 +152,45 @@ export function chargerContenu(fichier = FICHIER_DONNEES) {
   const contenu = normaliserContenu(brut);
   const erreurs = L.verifierContenu(contenu);
   if (erreurs.length) throw new Error(`Contenu invalide : ${erreurs.slice(0, 5).join(" ; ")}`);
+  for (const nom of OPTIONS_SIMULATEUR.couper ?? []) couperRegle(contenu, nom);
   return contenu;
+}
+
+// ------------------------------------------------------------------ coupures (mesure seulement)
+// Passe d'équilibrage d'après les douze lots du jeu 3D (docs/equilibre-3d.md) : pour trouver la part de chaque lot dans une
+// différence, on coupe UNE de ses règles (option --couper, liste séparée par des virgules) et l'on rejoue les mêmes graines. Jamais
+// dans le jeu : la coupure change les règles de la logique dans ce seul processus (et ses fils), et le contenu chargé ici.
+export const COUPURES = {
+  // Lot 8 « vivant » : les bêtes ne boivent plus (l'eau ajoutée aux enclos, au clapier, à la soue, à l'étable, à l'aquaponie).
+  "soif-betes": contenu => {
+    for (const def of L.liste(contenu.installations)) for (const n of def.niveaux ?? []) {
+      const v = n?.effets?.vivant;
+      if (!v || def.cle === "bassin-a-tilapias" || L.especeDe(contenu, v.espece ?? v.especes?.[0])?.genre === "plants") continue;
+      if (n.effets.consommation?.eau) n.effets.consommation = { ...n.effets.consommation, eau: 0 };
+    }
+  },
+  // Lot 7 « bâtir » : plus d'entretien ni de panne (le curage des bassins du vivant reste).
+  usure: contenu => {
+    for (const def of L.liste(contenu.installations)) for (const n of def.niveaux ?? []) if (n?.entretien && !n.entretien.eau) delete n.entretien;
+  },
+  // Lot 7 « bâtir » : la tôle au cyclone comme avant le lot (25 % par point, la part du bois sous tôle).
+  "cyclone-tole": () => { L.MATERIAUX["tole-de-recuperation"].faiblesses.cyclone = L.MATERIAUX["bois-sous-tole"].faiblesses.cyclone; },
+  // Lot 7 : tous les matériaux au cyclone comme avant le lot.
+  "cyclone-materiaux": () => { for (const m of Object.values(L.MATERIAUX)) m.faiblesses.cyclone = L.MATERIAUX["bois-sous-tole"].faiblesses.cyclone; },
+  // Lot 9 « paradis » : la chaleur d'un lieu ne monte plus (donc ni arrivants, ni agglutinés, ni hordes attirées).
+  chaleur: () => { const C = L.REGLES_PARADIS.chaleur; C.parJour = 0; C.bruitFort = 0; L.REGLES_PARADIS.agglutines.chaleur = 0; },
+  // Lot 9 : les arrivants repartent tous (aucun agglutiné), la chaleur monte comme avant.
+  agglutines: () => { L.REGLES_PARADIS.agglutines.reste = 0; },
+  // Lot 9 : les corps frais autour de l'abri ne salissent ni ne sentent plus.
+  corps: () => { L.REGLES_PARADIS.corps.frais.bas = -1; L.REGLES_PARADIS.corps.frais.hauts = -1; },
+  // Lot « corps » : l'abri ne se salit plus (ni insalubrité, ni ses maladies, ni l'odeur de la souillure).
+  hygiene: () => { L.HYGIENE.apport.fill(0); L.HYGIENE.surpeuplement = 0; },
+  // Lot « sens » : l'odeur de l'abri n'attire plus rien.
+  odeur: () => { const M = L.REGLES_SENS.odeur.menace; M.livides = 0; M.horde = 0; M.animaux = 0; }
+};
+export function couperRegle(contenu, nom) {
+  if (!COUPURES[nom]) throw new Error(`Coupure inconnue : ${nom} (${Object.keys(COUPURES).join(", ")})`);
+  COUPURES[nom](contenu);
 }
 
 // ------------------------------------------------------------------ outils
@@ -371,10 +415,14 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       }
       if (!["betes", "poissons"].includes(esp.genre)) continue;
       const vivres = abri.bilan?.joursDeStocks?.nourriture ?? 99, eau = abri.bilan?.joursDeStocks?.eau ?? 99;
-      // L'eau manque (moins de VIVANT_SIMULATEUR.secheresse jours) : on garde un couple, on mange le reste.
+      // L'eau manque (moins de VIVANT_SIMULATEUR.secheresse jours) : on garde un couple, on mange le reste. Rééquilibrage d'après les
+      // douze lots (docs/equilibre-3d.md) : un enclos boit autant avec deux bêtes qu'avec dix (seul un cheptel vide ne boit pas) ; quand
+      // l'eau du jour ne suffit plus (bilan négatif), garder le couple ne sauvait pas une goutte : on mange tout ce qui boit.
       const secheresse = eau < VIVANT_SIMULATEUR.secheresse && esp.genre === "betes";
+      const boit = Number(L.niveauDe(idx.installations.get(c.cle), abri.installations.find(i => i.cle === c.cle)?.niveau)?.effets?.consommation?.eau) > 0;
+      const garder = secheresse && boit && (abri.bilan?.net?.eau ?? 0) < 0 ? 0 : VIVANT_SIMULATEUR.garder;
       if (st.tetes >= c.places || vivres < VIVANT_SIMULATEUR.abattreSousJours || secheresse) {
-        const n = st.tetes - (secheresse ? VIVANT_SIMULATEUR.garder : Math.max(c.plein, VIVANT_SIMULATEUR.garder));
+        const n = st.tetes - (secheresse ? garder : Math.max(c.plein, VIVANT_SIMULATEUR.garder));
         if (n <= 0) continue;
         const a = L.abattreCheptel(st, esp, { n });
         if (!a.ok) continue;
@@ -384,6 +432,16 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         noter(jour, `abat ${a.abattues} (${c.cle}) : +${a.nourriture} nourriture`);
       }
     }
+  };
+  // Lot 7 : un libre passe un quart sur l'entretien dû le plus en retard (entretenirInstallation), puis repart à sa journée.
+  const entretenirUnDu = (libresDuJour) => {
+    if (!abri || !libresDuJour.length) return;
+    const du = L.entretiensDus(abri.installations, contenu, { jour }).find(d => d.tache === "chantier");
+    const inst = du && abri.installations.find(i => i.cle === du.cle);
+    if (!inst) return;
+    const r = L.entretenirInstallation(inst, idx.installations.get(inst.cle), { quarts: 1, bras: 1, jour });
+    abri.installations = abri.installations.map(i => (i === inst ? r.instance : i));
+    stats.entretiens = (stats.entretiens ?? 0) + 1;
   };
   const resoudreRencontre = (rencontre, combattants, quart, h) => {
     if (!rencontre) return;
@@ -481,6 +539,12 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     const groupe = { savoirs, plans: etat.groupe.plans };
     const ouvert = abri.installations.find(i => Number(i.chantier?.requis) > 0);
     let besoin = null;
+    // Rééquilibrage d'après les douze lots (docs/equilibre-3d.md) : ce qui boit se juge aussi sur l'eau de la saison sèche (net du jour
+    // et net de la saison sèche, sans délestage), comme un groupe de l'île qui sait qu'elle revient. Jugé sur le seul jour, le surplus
+    // de la saison des pluies faisait bâtir un jardin de zerbaz ou une basse-cour qui buvaient la réserve dès la saison sèche.
+    let netSec = null;
+    const surplusEau = conso => Math.min(abri.bilan?.net?.eau ?? -1, netSec ??= L.bilanAbri({ ...abri.system, stocks: { ...abri.system.stocks, eau: 999 } },
+      abri.installations, contenu, { jour, personnes: vivants().length, saison: "seche" }).net?.eau ?? -1) >= conso + 1;
     if (!ouvert) {
       for (const [cle, niveau] of ORDRE_ENRACINE) {
         const def = idx.installations.get(cle);
@@ -494,13 +558,20 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
           && L.roleDe(idx.installations.get(i.cle)) === L.roleDe(def) && L.rangDe(idx.installations.get(i.cle)) <= L.rangDe(def))) continue;
         // Des bêtes à nourrir (chiens de garde) : seulement sur un surplus de nourriture produite.
         if (installationNourrie(def, niveau) && !((abri.bilan?.net?.nourriture ?? -1) >= 1)) continue;
-        // Lot 8 : une installation nouvelle du vivant qui boit (bacs, treille, bananeraie, jardin de zerbaz, clapier, aquaponie), seulement
-        // sur un surplus d'eau, comme un groupe raisonnable qui ne plante pas ce qu'il ne peut pas arroser.
-        if (CLES_VIVANT.has(cle) && Number(L.niveauDe(def, niveau)?.effets?.consommation?.eau) > 0
-          && !((abri.bilan?.net?.eau ?? -1) >= Number(L.niveauDe(def, niveau).effets.consommation.eau) + 1)) continue;
+        // Lot 8 : une installation du vivant qui boit (bacs, treille, bananeraie, jardin de zerbaz, clapier, aquaponie), seulement
+        // sur un surplus d'eau, comme un groupe raisonnable qui ne plante pas ce qu'il ne peut pas arroser. Rééquilibrage d'après les
+        // douze lots (docs/equilibre-3d.md) : aussi la basse-cour, l'enclos à cabris et le bassin, qui boivent depuis le lot 8 et que
+        // le simulateur bâtissait encore sans regarder l'eau (les sédentaires mouraient de soif en saison sèche, leurs poules buvant
+        // la réserve).
+        if ((CLES_VIVANT.has(cle) || L.vivantDuNiveau(def, niveau)) && Number(L.niveauDe(def, niveau)?.effets?.consommation?.eau) > 0
+          && !surplusEau(Number(L.niveauDe(def, niveau).effets.consommation.eau))) continue;
+        // Rééquilibrage d'après les douze lots (docs/equilibre-3d.md) : à un ou deux, l'eau et le potager d'abord ; l'hygiène (feuillées,
+        // latrines) une fois autonome. Seul ou à deux, l'abri reste « ordinaire » sans latrines (jamais sale) ; ces chantiers, pris sur
+        // les journées de l'eau et du potager, coûtaient deux points d'autonomie à l'enraciné à deux (lot « corps »).
+        if (Number(L.niveauDe(def, niveau)?.effets?.hygiene) > 0 && vivants().length <= 2 && !etat.autonome) continue;
         // Lot « corps » : une installation d'hygiène qui prend de l'eau (lavoir, douche), seulement sur un surplus d'eau.
         if (Number(L.niveauDe(def, niveau)?.effets?.hygiene) > 0 && Number(L.niveauDe(def, niveau)?.effets?.consommation?.eau) > 0
-          && !((abri.bilan?.net?.eau ?? -1) >= Number(L.niveauDe(def, niveau).effets.consommation.eau) + 1)) continue;
+          && !surplusEau(Number(L.niveauDe(def, niveau).effets.consommation.eau))) continue;
         const v = L.peutConstruire(def, niveau, { stocks: abri.system.stocks, installations: abri.installations, nature: abri.system.nature }, site, groupe);
         if (v.ok) {
           const o = L.ouvrirChantier(def, { stocks: abri.system.stocks, installations: abri.installations, nature: abri.system.nature }, site, groupe);
@@ -862,7 +933,10 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     // Travail.
     let doitPartir = null;
     if (strategie === "passif") {
-      // rien
+      // Rééquilibrage d'après les douze lots (docs/equilibre-3d.md) : rien, sauf le geste de l'enraciné qui n'a rien à bâtir (lot 7) :
+      // un libre passe un quart sur un entretien dû (la gouttière de la citerne). Sans lui, le passif, qui ne soigne jamais, perdait
+      // la citerne et le captage de son site en deux cents jours : l'entretien n'existait pas quand le passif a été défini.
+      entretenirUnDu(libres());
     } else if (enracine) {
       const besoin = construire(jour, h);
       const ouvert = abri.installations.find(i => Number(i.chantier?.requis) > 0);
@@ -935,13 +1009,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       } else if (dispo.length && !vivants().some(s => s.system.tache === "chantier")) {
         // Lot 7 : rien à bâtir ni à réparer, et un entretien dû : un libre y passe un quart (entretenirInstallation), puis repart à
         // sa journée. Ceux qui bâtissent ou réparent soignent déjà en passant (le soin courant d'avancer).
-        const du = L.entretiensDus(abri.installations, contenu, { jour }).find(d => d.tache === "chantier");
-        const inst = du && abri.installations.find(i => i.cle === du.cle);
-        if (inst) {
-          const r = L.entretenirInstallation(inst, idx.installations.get(inst.cle), { quarts: 1, bras: 1, jour });
-          abri.installations = abri.installations.map(i => (i === inst ? r.instance : i));
-          stats.entretiens = (stats.entretiens ?? 0) + 1;
-        }
+        entretenirUnDu(dispo);
       }
       if (besoin && dispo.length) {
         const res = Object.keys(besoin)[0];
@@ -1219,14 +1287,16 @@ function lireOptions(argv) {
     else if (a === "--journal") o.journal = true;
     else if (a === "--rapide") { o.rapide = true; o.parties = PARTIES_RAPIDE; }
     else if (a === "--sans-lieux") o.sansLieux = true;
+    else if (a === "--couper") o.couper = argv[++i].split(",").filter(Boolean);
   }
   return o;
 }
 
 // Simule tous les cas demandés (en fils d'exécution si fils > 1). -> Promise<[stats]>
-export async function simuler({ parties = 200, graine = "1", jours = JOURS_DEFAUT, cas = null, fils = 1, sansLieux = false } = {}) {
+export async function simuler({ parties = 200, graine = "1", jours = JOURS_DEFAUT, cas = null, fils = 1, sansLieux = false, couper = [] } = {}) {
   const liste = casDe(cas);
   OPTIONS_SIMULATEUR.lieux = !sansLieux;
+  OPTIONS_SIMULATEUR.couper = couper;
   if (fils <= 1) {
     const contenu = chargerContenu();
     return liste.flatMap(c => jouerCas(contenu, c, { parties, graine, jours }));
@@ -1234,7 +1304,7 @@ export async function simuler({ parties = 200, graine = "1", jours = JOURS_DEFAU
   const lots = Array.from({ length: Math.min(fils, liste.length) }, () => []);
   liste.forEach((c, i) => lots[i % lots.length].push(c));
   const resultats = await Promise.all(lots.map(lot => new Promise((resoudre, rejeter) => {
-    const w = new Worker(fileURLToPath(import.meta.url), { workerData: { lot, parties, graine, jours, sansLieux } });
+    const w = new Worker(fileURLToPath(import.meta.url), { workerData: { lot, parties, graine, jours, sansLieux, couper } });
     w.on("message", resoudre); w.on("error", rejeter);
     w.on("exit", code => { if (code !== 0) rejeter(new Error(`fil terminé avec le code ${code}`)); });
   })));
@@ -1242,8 +1312,9 @@ export async function simuler({ parties = 200, graine = "1", jours = JOURS_DEFAU
 }
 
 if (!isMainThread && workerData?.lot) {
-  const contenu = chargerContenu();
   OPTIONS_SIMULATEUR.lieux = !workerData.sansLieux;
+  OPTIONS_SIMULATEUR.couper = workerData.couper ?? [];
+  const contenu = chargerContenu();
   parentPort.postMessage(workerData.lot.flatMap(c => jouerCas(contenu, c, workerData)));
 } else if (isMainThread && process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const o = lireOptions(process.argv.slice(2));
