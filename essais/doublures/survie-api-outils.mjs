@@ -33,8 +33,10 @@ export async function monde(M, options = {}) {
 }
 
 // Un survivant tiré par le générateur, créé par le MJ (confié à userId s'il est donné). -> l'acteur
-export async function survivantTire(M, { userId = "", verrous = {}, statut = "joueur" } = {}) {
-  const d = M.api.generer({ verrous, statut });
+// hasard : un générateur à graine (logique/hasard.mjs, creerHasard) pour un tirage reproductible (fiche et esprit) ; sans lui,
+// Math.random, et chaque lancement tire d'autres survivants.
+export async function survivantTire(M, { userId = "", verrous = {}, statut = "joueur", hasard = null } = {}) {
+  const d = M.api.generer({ verrous, statut, ...(hasard ? { hasard } : {}) });
   const r = await M.api.creerSurvivant({ donnees: d, userId, rejoindre: false, statut });
   return game.actors.get(r.acteurId);
 }

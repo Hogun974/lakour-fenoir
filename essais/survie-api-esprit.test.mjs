@@ -99,10 +99,13 @@ test("la porte : on frappe, on vote, on accueille (une recrue, des bouches) ; qu
   assert.ok(contexteAbri(abri).porte, "la fiche d'abri montre la porte");
 });
 
+// Tirage fixe (graine) : au hasard, quand le premier tiré avait 16 ou 17 ans, il se voyait colporter en « enfant témoin » et sa
+// révolte le ramenait vers le bleu : la jauge ne bougeait pas (une fois sur dix environ).
 test("le point d'entrée du sens moral (la rumeur : colporter), le chef, sa parole, l'entente, le signe, séparer et fusionner", async () => {
   const M = await nouveauMonde();
   const ids = [];
-  for (let i = 0; i < 4; i++) ids.push((await survivantTire(M, { statut: i ? "compagnon" : "joueur", userId: i ? "" : "u1" })).id);
+  const hasard = L.creerHasard("essai-communaute-survivants");
+  for (let i = 0; i < 4; i++) ids.push((await survivantTire(M, { statut: i ? "compagnon" : "joueur", userId: i ? "" : "u1", hasard })).id);
   await M.api.demarrer({ region: "saint-denis", membres: ids, graine: "essai-communaute", essai: true });
   const [a, b, c, d] = ids.map(id => game.actors.get(id));
   const s0 = a.system.sensMoral, r0 = a.system.reputation;

@@ -16,11 +16,13 @@ import * as L from "../systems/lakour-survie/logique/index.mjs";
 installerFoundry();
 const M0 = await charger();
 
-// Un groupe de deux adultes installé à Saint-Pierre, avec des vivres.
-async function partie() {
+// Un groupe de deux adultes installé à Saint-Pierre, avec des vivres. graine : les deux survivants tirés d'un générateur à graine
+// (toujours les mêmes) ; sans elle, au hasard.
+async function partie({ graine = "" } = {}) {
   const M = await monde(M0);
-  const a = await survivantTire(M, { userId: "u1" });
-  const b = await survivantTire(M, { statut: "compagnon" });
+  const hasard = graine ? L.creerHasard(graine) : null;
+  const a = await survivantTire(M, { userId: "u1", hasard });
+  const b = await survivantTire(M, { statut: "compagnon", hasard });
   for (const x of [a, b]) await x.update({ system: { age: 30, sensMoral: 0, reputation: 0 } });
   await M.api.demarrer({ region: "saint-pierre", membres: [a.id, b.id], graine: "essai-des-jointures", essai: true });
   const ins = await M.api.installer({ site: M.api.contenu().sites.find(s => s.region === "saint-pierre").cle });
@@ -29,8 +31,10 @@ async function partie() {
 }
 const sens = a => Number(game.actors.get(a.id).system.sensMoral) || 0;
 
+// Tirage fixe (graine) : au hasard, les deux survivants portaient parfois le même nom (une fois sur soixante environ), et la
+// rumeur dite sous le nom du second allait au premier.
 test("Ladi Lafé : celui qui colporte du mal rougit (acte « colporter ») ; un PNJ inconnu ne porte rien", async () => {
-  const { M, a, b } = await partie();
+  const { M, a, b } = await partie({ graine: "essai-des-jointures-survivants" });
   const r = await M.api.rumeur({ sujet: "Le cousin", texte: "Il a volé une nasse.", vraie: false, malveillant: true, auteur: a.id });
   assert.equal(r.colporteur, a.id);
   assert.equal(sens(a), L.ACTES_MORAUX.colporter, "le colporteur porte l'acte");

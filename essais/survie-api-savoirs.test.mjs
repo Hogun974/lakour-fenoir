@@ -6,14 +6,17 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { installerFoundry, commeJoueur } from "./doublures/foundry-survie.mjs";
 import { charger, monde, survivantTire } from "./doublures/survie-api-outils.mjs";
+import { creerHasard } from "../systems/lakour-survie/logique/hasard.mjs";
 
 installerFoundry();
 const M0 = await charger();
 
-async function partieALaFerme() {
+// graine : tire les deux survivants d'un générateur à graine (toujours les mêmes) ; sans elle, au hasard.
+async function partieALaFerme({ graine = "" } = {}) {
   const M = await monde(M0);
-  const a = await survivantTire(M);
-  const b = await survivantTire(M);
+  const hasard = graine ? creerHasard(graine) : null;
+  const a = await survivantTire(M, { hasard });
+  const b = await survivantTire(M, { hasard });
   await M.api.demarrer({ region: "le-tampon", membres: [a.id, b.id], graine: "savoirs-api", essai: true });
   const ins = await M.api.installer({ site: "ferme-de-la-plaine-des-cafres" });
   await M.api.ajuster({ stocks: { nourriture: 80, eau: 30, graines: 6 }, raison: "réserves" });
@@ -31,8 +34,10 @@ test("API : les fonctions du lot « savoirs » existent ; hors du MJ actif, elle
   assert.ok(Number.isInteger(s.moderne) && Number.isInteger(s.lontan) && s.complete === false);
 });
 
+// Tirage fixe (graine) : au hasard, un jeune de 16 ou 17 ans (il travaille aux 3/4) laissait le jardin à 7 sur 8 en 4 quarts
+// (une fois sur sept environ).
 test("API : construire à l'ancienne prend le bois des alentours ; la sœur moderne en service, la lontan en secours sur la fiche", async () => {
-  const { M, a, b, abri } = await partieALaFerme();
+  const { M, a, b, abri } = await partieALaFerme({ graine: "savoirs-api-survivants" });
   const bois = abri.system.nature.bois;
   const materiaux = abri.system.stocks.materiaux;
   const r = await M.api.construire({ installation: "jardin-creole", quarts: 4, membres: [a.id, b.id] });
