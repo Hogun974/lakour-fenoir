@@ -126,7 +126,7 @@ On se tait. On ne sort pas la nuit. On ne tire que si l'on n'a pas le choix, par
 
 **Est-ce que ça se transmet autrement que par la morsure ?** On ne croit pas. Des gens ont vécu des semaines avec des infectés sans l'attraper, ont touché des corps, respiré le même air. Mais on ne sait pas pourquoi les premiers malades de novembre l'ont eu, eux, sans morsure. Alors on lave les mains, on couvre les plaies, et on n'embrasse pas les mourants.
 
-**Est-ce que tout le monde se relève ?** Ceux qui meurent du Gris, oui. Ceux qui meurent d'autre chose… On a vu des vieux morts dans leur lit, de leur mort, qui se sont relevés, et d'autres qui ne se sont pas relevés. Ne comptez sur rien : veillez vos morts, attachez-les, ou enterrez-les profond.
+**Est-ce que tout le monde se relève ?** Non : seulement ceux qui portaient le Gris. Ceux-là se relèvent tous, de quoi qu'ils soient morts, de la fièvre, d'une chute ou d'une balle. Un mort sans le Gris reste un mort, et on peut le pleurer en paix. On a cru voir des vieux, morts dans leur lit, se relever : ils le portaient sans le savoir, comme les premiers malades de novembre. Dans le doute, veillez vos morts, et ne laissez jamais seul un mordu qui s'en va.
 
 **Y a-t-il des gens que ça ne prend pas ?** C'est la rumeur la plus dangereuse de l'île, parce que c'est celle qu'on a le plus envie de croire. On parle d'un enfant mordu qui n'a rien eu. On parle d'une femme du Sud qui est tombée malade et s'est réveillée. Le Dispensaire du Sud voudrait bien les trouver. Jusqu'à preuve, une morsure est une morsure.
 
@@ -285,7 +285,7 @@ Le créole réunionnais se parle plus qu'il ne s'écrit ; les graphies varient. 
 # Mots des survivants
 
 - **Le Gris** : le mal. « Il a pris le Gris », « elle porte le Gris » : infecté.
-- **Livide** : un mort relevé. **Coureur** : un Livide tout frais, qui court encore. **Livide des Hauts** : un Livide ancien, conservé par le froid, raide, très dur à abattre. **Noyé** : un Livide rendu par la mer.
+- **Livide** : un mort que le Gris a relevé. **Coureur** : un Livide tout frais, qui court encore. **Livide des Hauts** : un Livide ancien, conservé par le froid, raide, très dur à abattre. **Noyé** : un Livide rendu par la mer.
 - **Hors d'état** : quand un Livide ne bouge plus pour de bon.
 - **Horde** : un rassemblement de Livides qui se déplace en masse, attiré par le bruit.
 - **Le quart** : la mesure du temps : matin, après-midi, soir, nuit. « Deux quarts de marche. » « Un quart de garde. »

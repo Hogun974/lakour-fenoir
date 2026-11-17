@@ -2281,8 +2281,8 @@
   "registre/bestiaire/noye-du-lagon": {
     "_nom": "Noyé du lagon",
     "description": {
-      "fr": "<p>Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p>",
-      "en": "<p>A body swollen with seawater, thrown back by the swell, covered in seaweed and crabs. It gets up in the foam and walks towards the beach.</p>"
+      "fr": "<p>Un mordu que la mer a pris, rendu par la houle : un corps gonflé d'eau de mer, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p>",
+      "en": "<p>Someone bitten whom the sea took, given back by the swell: a body swollen with seawater, covered in seaweed and crabs. It gets up in the foam and walks towards the beach.</p>"
     },
     "comportement": {
       "fr": "<p>Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</p>",

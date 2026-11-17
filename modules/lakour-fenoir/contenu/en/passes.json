@@ -280,8 +280,8 @@
       "en": "<p>An undergraduate at the Moufia university, she lives in a flatshare, knows everyone, runs half-marathons and learns fast. She has never seen anyone die.</p>"
     },
     "system.accroche": {
-      "fr": "<p>Elle passe un partiel quand un surveillant s'effondre dans l'amphi. Quand il se relève, la porte est déjà bloquée par la foule.</p>",
-      "en": "<p>She is sitting an exam when an invigilator collapses in the lecture hall. By the time he gets up, the door is already blocked by the crowd.</p>"
+      "fr": "<p>Elle passe un partiel quand un surveillant fiévreux s'effondre dans l'amphi. Quand il se relève, la porte est déjà bloquée par la foule.</p>",
+      "en": "<p>She is sitting an exam when a feverish invigilator collapses in the lecture hall. By the time he gets up, the door is already blocked by the crowd.</p>"
     },
     "system.histoire.0": {
       "fr": "Elle est la première de sa famille à faire des études.",
@@ -438,8 +438,8 @@
       "en": "<p>A sergeant in a southern gendarmerie station, used to road accidents, end-of-dance brawls and mountain searches. She has a weapon, a radio, and the habit of being listened to.</p>"
     },
     "system.accroche": {
-      "fr": "<p>On l'envoie sécuriser un accident sur la RN1. Les blessés se relèvent avant les secours.</p>",
-      "en": "<p>She is sent to secure an accident on the RN1. The injured get up before the rescue services arrive.</p>"
+      "fr": "<p>On l'envoie sécuriser un accident sur la RN1. Les blessés mordus se relèvent avant les secours.</p>",
+      "en": "<p>She is sent to secure an accident on the RN1. The injured who were bitten get up before the rescue services arrive.</p>"
     },
     "system.histoire.0": {
       "fr": "Elle a demandé sa mutation dans l'île de sa mère, qu'elle ne connaissait que l'été.",

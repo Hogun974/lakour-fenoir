@@ -153,7 +153,7 @@ export function contexteMJ(onglet = "partie", resultat = null) {
   const candidats = api?.candidatsReleve?.({}) ?? [];
   const libelleCandidat = x => `${x.nom}${x.source === "pnj" ? ` (${t("LAKOUR_SURVIE.Releve.PnjLeger")})` : x.age ? ` (${t("LAKOUR_SURVIE.Releve.Ans", { n: x.age })})` : ""}${x.tache && x.tache !== "repos" ? ` — ${t(`LAKOUR_SURVIE.Taches.${x.tache}`)}` : ""}`;
   const joueurs = (game.users?.contents ?? [...(game.users?.values?.() ?? [])]).filter(u => !u.isGM);
-  const morts = (etat.morts ?? []).map(m => ({ ...m, etatTexte: t(`LAKOUR_SURVIE.Autel.Etats.${m.repos ? "repos" : m.retrouve ? "deuil" : "perdu"}`) }));
+  const morts = (etat.morts ?? []).map(m => ({ ...m, etatTexte: t(`LAKOUR_SURVIE.Autel.Etats.${m.repos ? "repos" : m.retrouve ? "deuil" : m.livide ? "livide" : "perdu"}`) }));
   return {
     onglet, onglets: ONGLETS_MJ.map(o => ({ cle: o, libelle: t(`LAKOUR_SURVIE.MJ.Onglets.${o}`), actif: o === onglet })),
     actif, ouvert, demarree: Boolean(etat.demarree), bloque: Boolean(etat.demarree) && !ouvert,

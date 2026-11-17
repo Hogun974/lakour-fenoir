@@ -79,6 +79,10 @@ bateau).
   `bonusMorsure({ medicament, decoction, outil, infirmerie })` (2026-11-05, « Médicaments et zerbaz », docs/equilibre.md) ;
   jamais plus facile que difficile ; échec : infecté. Le stade monte de 1 tous les 2 quarts ; à 6, la personne meurt et se relève Livide au quart suivant si rien n'est
   fait. Aucun remède connu (le monde pourra en révéler plus tard : c'est au MJ). Les compagnons et PNJ suivent la même règle.
+  **Seul le porteur du Gris se relève** (décision de Jordan du 2026-11-17, comme dans Fénoir 3D) : un mort qui porte le Gris
+  (`infection.atteint`) se relève au quart suivant quelle que soit sa mort (le Gris, ses blessures, la soif…), sauf corps
+  traité (`corpsTraites` d'`avancer`) ; un mort sans le Gris reste mort. Sur l'autel, un mort relevé est « à retrouver »
+  avant le repos (`morts[].livide`, §11).
 - `savoirs` : objets `savoir` possédés (§3.3). `marques` par compétence.
 
 ### 1.4 Le temps

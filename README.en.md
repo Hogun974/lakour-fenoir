@@ -22,8 +22,8 @@
 
 December, Réunion Island. The lychees are ripening, Christmas is being prepared under the filao trees, the radio mentions a
 strange fever at the hospital. Tonight, someone you know did not get up the way they should. **Fénoir** ("the night", in
-Réunion Creole: *i fé noir*): a sickness nobody can name, *the Grey*, raises the dead. They are called **the Pallid**. Your
-characters live on the island and start **on day zero**: everything still works, nothing is right any more. The emergency
+Réunion Creole: *i fé noir*): a sickness nobody can name, *the Grey*, raises those who die carrying it. They are called
+**the Pallid**. Your characters live on the island and start **on day zero**: everything still works, nothing is right any more. The emergency
 rooms overflow, the four-lane highway is jammed, the radio hesitates between two stories. Then, region after region, power,
 water, fuel and phone go down; towns empty out or swarm; gangs form; the cyclones of the southern summer wait for nobody, and
 neither does the volcano.

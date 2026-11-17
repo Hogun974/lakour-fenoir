@@ -24,7 +24,7 @@ const virgule = n => String(n).replace(".", ",");
 
 // ================================================================ Guide du joueur
 const GUIDE_JOUEUR = journal({ cle: "guide-du-joueur", nom: "Fénoir — Guide du joueur", pack: "guides", pages: [
-  { cle: "bienvenue", titre: "Bienvenue à Fénoir", texte: `**Fénoir**, c'est la nuit, en créole. Un mal que personne ne comprend, *le Gris*, relève les morts : on les appelle les **Livides**. Vous vivez à La Réunion, et la partie commence **au jour zéro** : les lumières sont encore allumées, les téléphones sonnent, les urgences débordent, et rien ne va plus.
+  { cle: "bienvenue", titre: "Bienvenue à Fénoir", texte: `**Fénoir**, c'est la nuit, en créole. Un mal que personne ne comprend, *le Gris*, relève ceux qui meurent en le portant : on les appelle les **Livides**. Vous vivez à La Réunion, et la partie commence **au jour zéro** : les lumières sont encore allumées, les téléphones sonnent, les urgences débordent, et rien ne va plus.
 
 Le temps avance avec vos actions, et le monde avance avec lui : les réseaux tombent région par région, les villes se remplissent de Livides puis, des mois plus tard, s'en vident ; des bandes naissent, des cyclones passent, la Fournaise peut se réveiller.
 
@@ -57,7 +57,7 @@ Vous cherchez un **abri**, vous l'aménagez, vous vivez de **ressources** qui s'
 - **Fatigue** (0 à 5) : −1 dé à 3 et 4, −2 à 5. Une nuit de repos à l'abri : −2 ; un quart de repos : −1.
 - **Moral** (0 à 5) : à 1, −1 dé ; à 0, le personnage **craque** (refuse, fuit, s'effondre).
 - **Faim et soif** : au-delà de 4 quarts sans boire, +1 fatigue par quart ; au-delà de 2 jours sans manger, +1 fatigue et −1 moral par jour.
-- **Infection** : une **morsure** ou une griffure profonde d'un Livide demande un test de soins **extrême** dans le quart (laver, cauteriser, parfois amputer), **difficile** si le soignant y met un médicament (+1 dé), une décoction de zerbaz (une plante, +1 dé), s'il porte une trousse de secours ou si l'abri a une infirmerie. Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. **Aucun remède connu.**
+- **Infection** : une **morsure** ou une griffure profonde d'un Livide demande un test de soins **extrême** dans le quart (laver, cauteriser, parfois amputer), **difficile** si le soignant y met un médicament (+1 dé), une décoction de zerbaz (une plante, +1 dé), s'il porte une trousse de secours ou si l'abri a une infirmerie. Échec : le Gris est entré. Il avance toutes les deux quarts ; au bout, la personne meurt et se relève Livide. **Aucun remède connu.** **Seul celui qui porte le Gris se relève** : s'il meurt d'autre chose avant (blessures, soif), il se relève quand même au quart suivant, sauf si l'on s'occupe de son corps à temps ; un mort sans le Gris reste mort.
 - **Maladies et blessures qui durent** : dengue, chikungunya, leptospirose, gastro, plaies infectées, fractures… Une eau traitée, des moustiquaires et une infirmerie en réduisent le risque.` },
   { cle: "temps", titre: "Le temps", texte: `Le temps se compte en **quarts** de six heures : matin, après-midi, soir, nuit. Fouiller un lieu prend un quart ; explorer une région, un ou deux ; voyager, selon la route ; construire, selon le chantier (quarts de travail divisés par le nombre de bras).
 
@@ -218,7 +218,7 @@ Les **zerbaz** sont sa chance : une cueillette rapporte quelques plantes, une d�
 
 **Chez les autres.** Aller à la fête d'une autre communauté tisse des liens (onglet Groupe). Les PNJ y portent leurs préjugés, et les faits les démentent : celui qui craignait le « service » des Malbars a vu le feu de la marche et la cuisine partagée après ; c'est à vous de le jouer.
 
-**La mort et la relève.** Quand un survivant de joueur meurt, proposez la relève (onglet Groupe) : un nouveau tirage, ou un autre membre de 16 ans au moins. Celui qu'on reprend lâche son travail : dites-le, et laissez les joueurs le confier. Les morts s'inscrivent d'eux-mêmes sur l'autel du groupe ; ajoutez-y les PNJ légers qui tombent. Un mort relevé en Livide doit être retrouvé avant le repos : c'est une scène.` },
+**La mort et la relève.** Quand un survivant de joueur meurt, proposez la relève (onglet Groupe) : un nouveau tirage, ou un autre membre de 16 ans au moins. Celui qu'on reprend lâche son travail : dites-le, et laissez les joueurs le confier. Les morts s'inscrivent d'eux-mêmes sur l'autel du groupe ; ajoutez-y les PNJ légers qui tombent. Seul un mort qui portait le Gris se relève, de quoi qu'il soit mort ; un mort sans le Gris reste mort, et son corps est là pour le repos. Un mort relevé en Livide doit d'abord être retrouvé avant le repos : c'est une scène.` },
   { cle: "marche", titre: "Le marché", texte: `Le marché est l'endroit où toutes les communautés se croisent : c'est là que l'île d'après se voit vivre, et que les préjugés s'entendent le plus. Faites-le naître lentement, au rythme de la partie (le détail est dans le journal **Le marché et le Ladi Lafé**).
 
 - **Au début, le troc.** De la main à la main : une boîte de cartouches contre un sac de riz, à la barrière d'un abri. Utilisez le **cours** (onglet Marché de la fenêtre du MJ) pour dire si l'échange est juste ; le système ne fait que compter.
@@ -270,7 +270,7 @@ const CHRONOLOGIE = journal({ cle: "chronologie-de-la-crise", nom: "Chronologie 
   { cle: "avant", titre: "Avant le jour zéro", texte: `Personne ne sait d'où vient le Gris. Quelques jours avant le jour zéro, des cas de « fièvre grise » sont signalés à bord d'un navire au large et dans un hôpital de l'île ; les autorités parlent d'une intoxication. Les malades meurent en un jour ou deux. Ils ne restent pas morts.
 
 (Au MJ de décider s'il révèle un jour l'origine. Le contenu ne la fixe pas, volontairement.)` },
-  { cle: "jour-zero", titre: "Jour zéro (jours 0 et 1)", texte: `- Les premiers morts se relèvent aux urgences de Saint-Denis et de Saint-Pierre, dans des maisons, dans des voitures.
+  { cle: "jour-zero", titre: "Jour zéro (jours 0 et 1)", texte: `- Les premiers malades du Gris meurent et se relèvent aux urgences de Saint-Denis et de Saint-Pierre, dans des maisons, dans des voitures.
 - Les réseaux marchent tous ; le téléphone sature dès le soir.
 - Embouteillages monstres vers l'aéroport et vers les Hauts ; accidents sur la RN1 et la RN2.
 - Les autorités demandent de rester chez soi, parlent d'un « malaise collectif ».
@@ -285,7 +285,7 @@ const CHRONOLOGIE = journal({ cle: "chronologie-de-la-crise", nom: "Chronologie 
 - La Coopérative des Plaines, les Barques du Sud, les Ferrailleurs, le Dispensaire, les Pèlerins de la Lave et les Familles des Îlets s'organisent.` },
   { cle: "silence", titre: "Silence (jours 21 à 59)", texte: `- Plus d'autorité, sinon celle qu'on prend. Les factions se disputent les régions et occupent les abris abandonnés.
 - Les hordes errent ; les premiers Livides des Bas commencent à se défaire dans la chaleur.
-- Les Hauts se remplissent de réfugiés… qui meurent et se relèvent dans le froid, où ils durent.
+- Les Hauts se remplissent de réfugiés… et ceux qu'on a mordus en route y meurent et se relèvent dans le froid, où ils durent.
 - Cyclones possibles (saison des pluies) ; éruption possible de la Fournaise.` },
   { cle: "apres", titre: "L'après (jour 60 et plus)", texte: `- La chaleur humide des Bas décompose les Livides : le littoral se vide d'eux en quelques mois.
 - Les bandes humaines dominent le littoral : Sans-Lune au nord, Ferrailleurs à l'ouest, Garnison au Port, Barques au sud.
@@ -333,7 +333,7 @@ const BESTIAIRE_J = journal({ cle: "bestiaire", nom: "Bestiaire de Fénoir", pac
 const JOUR_ZERO = journal({ cle: "jour-zero", nom: "Scénario d'ouverture — Jour zéro", pack: "mj", pages: [
   { cle: "principe", titre: "Le premier jour", texte: `Une soirée pour lancer la campagne. Chaque personnage commence **là où son passé le place** au matin du 4 décembre, un vendredi de saison des pluies, et l'objectif de la séance est simple : **se retrouver**, ou trouver les autres, et passer la première nuit à l'abri.
 
-**Structure.** Trois temps : *ce matin-là* (une scène courte par personnage, dans sa région), *la bascule* (l'après-midi, quand les morts se relèvent partout), *la nuit* (le groupe réuni quelque part, ou en route). Si les personnages sont loin les uns des autres, le téléphone marche encore : ils peuvent s'appeler, se donner rendez-vous. Le réseau sature à la tombée de la nuit.
+**Structure.** Trois temps : *ce matin-là* (une scène courte par personnage, dans sa région), *la bascule* (l'après-midi, quand les morts du Gris se relèvent partout), *la nuit* (le groupe réuni quelque part, ou en route). Si les personnages sont loin les uns des autres, le téléphone marche encore : ils peuvent s'appeler, se donner rendez-vous. Le réseau sature à la tombée de la nuit.
 
 **Ce que le système fait.** Démarrez la partie (région de départ du groupe : celle du lieu de rendez-vous), avancez par quarts. Le jour zéro, presque tout marche ; laissez les joueurs le sentir avant que ça ne marche plus.` },
   { cle: "depart-saint-denis", titre: "Départ — Saint-Denis : la garde de nuit", texte: `**Pour** : infirmière, ambulancier, étudiante, toute personne en ville.

@@ -9,6 +9,8 @@
 //   à l'abri −2. Mourant (blessures 4) à la fin d'un quart sans avoir été stabilisé → mort.
 // - Infection : stade = floor((quart − depuis) / 2), au plus 6 ; à 6, mort ; au quart suivant, il se relève Livide si rien n'est
 //   fait (`corpsTraite`).
+// - Qui se relève (décision de Jordan du 2026-11-17, comme dans Fénoir 3D) : SEUL le porteur du Gris (infection.atteint), et
+//   quelle que soit sa mort (le Gris, ses blessures, la soif…) ; un mort sans le Gris reste mort.
 // - Jour : faim +1 sans manger (0 dès qu'on mange) ; faim ≥ 2 → +1 fatigue et −1 moral par jour. Bien nourri et reposé
 //   (fatigue < 3) : moral +1 jusqu'à 3 + confort de l'abri (au plus 5).
 import { COMPETENCES, borner } from "./constantes.mjs";
@@ -70,8 +72,9 @@ export function effetQuart(entree, quart, options = {}) {
   const evenements = [];
   if (s.livide) return { system: s, evenements };
   if (!s.vivant) {
-    // Mort de l'infection : se relève Livide au quart suivant si rien n'est fait.
-    if (s.infection.atteint && s.infection.stade >= STADE_MORT && !options.corpsTraite) {
+    // Mort en portant le Gris (de lui ou d'autre chose) : se relève Livide au quart suivant si rien n'est fait. Sans le Gris :
+    // il reste mort.
+    if (s.infection.atteint && !options.corpsTraite) {
       s.livide = true;
       evenements.push({ cle: "releve", texte: "se relève, Livide" });
     }

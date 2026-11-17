@@ -219,14 +219,15 @@ test("journaux : guides lisibles des joueurs, journaux du MJ cachés, une page p
 });
 
 // Fusion « vague1 » (2026-11-17) : la page « Les signes des murs » (lot 12) et « La nuit et ses voix » (lot « sens ») portent le
-// livre à quinze pages ; le plafond passe de 45 000 à 48 000 caractères (47 873 à la fusion).
-test("le livre de l'île : 10 à 15 pages, 30 000 à 48 000 caractères, carnets de survivants, liens vers ce que les joueurs peuvent lire, rien du secret du MJ", () => {
+// livre à quinze pages ; avec la réponse « seul le porteur du Gris se relève », il compte 48 052 caractères : le plafond passe
+// de 45 000 à 48 100.
+test("le livre de l'île : 10 à 15 pages, 30 000 à 48 100 caractères, carnets de survivants, liens vers ce que les joueurs peuvent lire, rien du secret du MJ", () => {
   const livre = docs.find(x => x.pack === "guides" && x.doc.flags[MODULE].cle === "livre-de-l-ile").doc;
   assert.equal(livre.name, "Fénoir — Le livre de l'île");
   assert.ok(livre.pages.length >= 10 && livre.pages.length <= 15, `${livre.pages.length} pages`);
   const lisible = h => h.replace(/@UUID\[[^\]]+\]\{([^}]*)\}/g, "$1").replace(/<[^>]+>/g, "");
   const total = livre.pages.reduce((n, p) => n + lisible(p.text.content).length, 0);
-  assert.ok(total >= 30000 && total <= 48000, `${total} caractères`);
+  assert.ok(total >= 30000 && total <= 48100, `${total} caractères`);
   const tout = livre.pages.map(p => p.text.content).join(" ");
   assert.ok((tout.match(/<blockquote>/g) ?? []).length >= 6, "des carnets de survivants");
   for (const t of ["L'île, avant", "Le dernier mois ordinaire", "Le jour zéro", "Portraits", "Rumeurs et mystères", "Lexique", "La première nuit"]) assert.ok(livre.pages.some(p => p.name === t), t);

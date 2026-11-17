@@ -61,6 +61,29 @@ test("infection : un stade tous les 2 quarts, mort à 6, relève au quart suivan
   assert.equal(L.effetQuart(m.system, 23, { corpsTraite: true }).system.livide, false);
 });
 
+// Décision de Jordan du 2026-11-17 : seul le porteur du Gris se relève, quelle que soit sa mort ; un mort sans le Gris reste mort.
+test("qui se relève : le porteur du Gris, même mort d'autre chose ; jamais un mort sans le Gris", () => {
+  // Mordu (stade 1), puis mourant de ses blessures, non stabilisé : il meurt de ses blessures et se relève au quart suivant.
+  let s = { ...L.infecter(L.survivantNeuf({}), 10), blessures: 4 };
+  const m = L.effetQuart(s, 12, { boit: true });
+  assert.equal(m.system.vivant, false);
+  assert.ok(m.evenements.some(e => e.cle === "mort" && e.cause === "blessures"));
+  assert.ok(m.system.infection.stade < L.STADE_MORT, "le Gris ne l'a pas encore tué");
+  const r = L.effetQuart(m.system, 13, {});
+  assert.equal(r.system.livide, true, "il portait le Gris : il se relève");
+  assert.ok(r.evenements.some(e => e.cle === "releve"));
+  assert.equal(L.effetQuart(m.system, 13, { corpsTraite: true }).system.livide, false, "son corps traité, il reste mort");
+  // Sans le Gris : mort de ses blessures, il reste mort, quart après quart.
+  let sain = L.effetQuart({ ...L.survivantNeuf({}), blessures: 4 }, 12, { boit: true }).system;
+  assert.equal(sain.vivant, false);
+  for (let q = 13; q <= 30; q++) {
+    const x = L.effetQuart(sain, q, {});
+    assert.equal(x.system.livide, false, "un mort sans le Gris ne se relève jamais");
+    assert.equal(x.evenements.length, 0);
+    sain = x.system;
+  }
+});
+
 test("morsure : soins extrême réussi ou infection", () => {
   assert.equal(L.appliquerMorsure({}, { reussite: true }, 5).infecte, false);
   const r = L.appliquerMorsure({}, { reussite: false }, 5);

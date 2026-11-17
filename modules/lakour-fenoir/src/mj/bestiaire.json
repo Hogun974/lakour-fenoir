@@ -100,7 +100,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : lente — <strong>sens</strong> : ouïe, odeur.</li><li><strong>Perception</strong> : vue 0,2, ouïe 1, odorat 1 (un vivant : 1) (journal « Percevoir dans le noir »).</li><li><strong>Comportement</strong> : Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</li><li><strong>Faiblesse</strong> : Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.</li></ul>",
+        "content": "<p>Un mordu que la mer a pris, rendu par la houle : un corps gonflé d'eau de mer, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p><ul><li><strong>Dés d'attaque</strong> : 1 — <strong>résistance</strong> : 1 — <strong>vitesse</strong> : lente — <strong>sens</strong> : ouïe, odeur.</li><li><strong>Perception</strong> : vue 0,2, ouïe 1, odorat 1 (un vivant : 1) (journal « Percevoir dans le noir »).</li><li><strong>Comportement</strong> : Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</li><li><strong>Faiblesse</strong> : Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.</li></ul>",
         "format": 1
       },
       "ownership": {

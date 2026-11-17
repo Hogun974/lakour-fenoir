@@ -105,7 +105,7 @@ export function contexteTableau(onglet = "groupe") {
     pnj: (etat.groupe?.pnj ?? []).map(p => ({ nom: p.nom, etat: p.etat })),
     plans: (etat.groupe?.plans ?? []).map(k => L.installationDe(c, k)?.nom ?? k),
     // Lot « fetes » : l'autel (les morts du groupe), ce qui soutient le groupe (souvenirs de fête, vœux, autel), les liens tissés.
-    morts: (etat.morts ?? []).map(m => ({ nom: m.nom, etat: t(`LAKOUR_SURVIE.Autel.Etats.${m.repos ? "repos" : m.retrouve ? "deuil" : "perdu"}`) })),
+    morts: (etat.morts ?? []).map(m => ({ nom: m.nom, etat: t(`LAKOUR_SURVIE.Autel.Etats.${m.repos ? "repos" : m.retrouve ? "deuil" : m.livide ? "livide" : "perdu"}`) })),
     souvenirs: L.souvenirsActifs(etat, jour).map(x => ({ texte: `${t(`LAKOUR_SURVIE.Souvenirs.${x.cle}`)}${x.qui?.length ? ` (${x.qui.map(id => game.actors.get(id)?.name ?? id).join(", ")})` : ""}`,
       fin: x.jusqua === null || x.jusqua === undefined ? t("LAKOUR_SURVIE.Souvenirs.Tenu") : t("LAKOUR_SURVIE.Souvenirs.Jusqua", { n: x.jusqua }) })),
     liens: [...Object.entries(etat.liens?.communautes ?? {}).map(([k, n]) => `${t(`LAKOUR_SURVIE.Communautes.${k}`)} ${n}`),

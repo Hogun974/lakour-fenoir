@@ -22,9 +22,9 @@
 
 Décembre, La Réunion. Les letchis mûrissent, on prépare Noël sous les filaos, la radio parle d'une fièvre bizarre au CHU. Ce
 soir, quelqu'un que vous connaissez ne s'est pas relevé comme il faut. **Fénoir** (« la nuit », en créole : *i fé noir*) :
-un mal que personne ne sait nommer, *le Gris*, relève les morts. On les appelle les **Livides**. Vos personnages vivent sur
-l'île et débarquent **au jour zéro** : tout marche encore, rien ne va plus. Les urgences débordent, la quatre-voies est
-bouchée, la radio hésite entre deux versions. Puis, région par région, l'électricité, l'eau, le carburant et le téléphone
+un mal que personne ne sait nommer, *le Gris*, relève ceux qui meurent en le portant. On les appelle les **Livides**.
+Vos personnages vivent sur l'île et débarquent **au jour zéro** : tout marche encore, rien ne va plus. Les urgences
+débordent, la quatre-voies est bouchée, la radio hésite entre deux versions. Puis, région par région, l'électricité, l'eau, le carburant et le téléphone
 tombent ; les villes se vident ou grouillent ; des bandes s'organisent ; les cyclones de l'été austral n'attendent personne,
 et le volcan non plus.
 

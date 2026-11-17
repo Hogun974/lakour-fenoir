@@ -30,7 +30,7 @@ export const BESTIAIRE = [
   creature({ cle: "noye-du-lagon", perception: { vue: 0.2, ouie: 1, odorat: 1, froid: false, obstacle: 3, attaques: 1 },
     nom: "Noyé du lagon", categorie: "livide", des: 1, resistance: 1, vitesse: "lente", sens: "ouïe, odeur",
     zones: ["littoral"], phases: ["effondrement", "silence"],
-    description: `Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.`,
+    description: `Un mordu que la mer a pris, rendu par la houle : un corps gonflé d'eau de mer, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.`,
     comportement: `Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.`,
     faiblesse: `Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.` }),
   creature({ cle: "livide-brule", perception: { vue: 0, ouie: 1.2, odorat: 1, froid: false, obstacle: 5, attaques: 1 },

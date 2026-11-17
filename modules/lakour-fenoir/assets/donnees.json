@@ -11689,7 +11689,7 @@
     "pistolet-de-service",
     "talkies"
    ],
-   "accroche": "<p>On l'envoie sécuriser un accident sur la RN1. Les blessés se relèvent avant les secours.</p>",
+   "accroche": "<p>On l'envoie sécuriser un accident sur la RN1. Les blessés mordus se relèvent avant les secours.</p>",
    "region": "saint-pierre",
    "incapacites": [],
    "histoire": [
@@ -11716,7 +11716,7 @@
     "velo",
     "manuel-de-survie"
    ],
-   "accroche": "<p>Elle passe un partiel quand un surveillant s'effondre dans l'amphi. Quand il se relève, la porte est déjà bloquée par la foule.</p>",
+   "accroche": "<p>Elle passe un partiel quand un surveillant fiévreux s'effondre dans l'amphi. Quand il se relève, la porte est déjà bloquée par la foule.</p>",
    "region": "saint-denis",
    "incapacites": [],
    "histoire": [
@@ -15788,7 +15788,7 @@
     "effondrement",
     "silence"
    ],
-   "description": "<p>Un corps gonflé d'eau de mer, rejeté par la houle, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p>",
+   "description": "<p>Un mordu que la mer a pris, rendu par la houle : un corps gonflé d'eau de mer, couvert d'algues et de crabes. Il se relève dans l'écume et marche vers la plage.</p>",
    "comportement": "<p>Sort de l'eau la nuit, au bord des plages et des ports ; on le croit mort, il ne l'est pas tout à fait.</p>",
    "faiblesse": "<p>Sa chair cède sous un coup ; mais une morsure de noyé s'infecte toujours.</p>",
    "competences": {},
