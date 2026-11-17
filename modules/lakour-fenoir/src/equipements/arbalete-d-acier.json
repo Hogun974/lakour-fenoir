@@ -1,0 +1,38 @@
+{
+  "_id": "8ds91JCnFMu9f8Xo",
+  "_key": "!items!8ds91JCnFMu9f8Xo",
+  "name": "Arbalète d'acier à levier",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "arbalete-d-acier",
+    "categorie": "arme",
+    "description": "<p>L'arbalète de fortune reprise à la forge : un arc d'acier forgé, un levier pour la tendre en quelques secondes au lieu d'une demi-minute. Silencieuse ; ses carreaux se récupèrent.</p>",
+    "bonus": {
+      "tir": 2
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "arbalete-d-acier"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

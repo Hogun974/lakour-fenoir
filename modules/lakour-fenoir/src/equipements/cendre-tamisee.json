@@ -1,0 +1,36 @@
+{
+  "_id": "cfFL8k2OV7lDKIgu",
+  "_key": "!items!cfFL8k2OV7lDKIgu",
+  "name": "Cendre tamisée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cendre-tamisee",
+    "categorie": "matiere",
+    "description": "<p>Un seau de cendre de bois fine, passée au tamis : pour la lessive et pour la terre.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cendre-tamisee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

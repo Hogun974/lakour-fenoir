@@ -63,7 +63,10 @@
         }
       }
     ],
-    "arbre": "lontan"
+    "arbre": "lontan",
+    "metiers": [
+      "cuisine"
+    ]
   },
   "effects": [],
   "folder": null,

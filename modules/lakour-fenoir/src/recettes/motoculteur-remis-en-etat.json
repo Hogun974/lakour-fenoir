@@ -1,0 +1,54 @@
+{
+  "_id": "WlZermXuAKlN62I9",
+  "_key": "!items!WlZermXuAKlN62I9",
+  "name": "Motoculteur remis en état",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "motoculteur-remis-en-etat",
+    "description": "<p>Un petit moteur de pompe ou de tondeuse, huit ferrailles, deux roues, douze boîtes de vis, des tuyaux, un câble : il démarre au troisième coup de lanceur.</p>",
+    "cout": {
+      "materiaux": 2,
+      "pieces": 4
+    },
+    "travail": 8,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "motoculteur",
+      "n": 1
+    },
+    "outils": [
+      "pince",
+      "marteau"
+    ],
+    "bruit": 2,
+    "metier": "mecanique",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "motoculteur-remis-en-etat"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

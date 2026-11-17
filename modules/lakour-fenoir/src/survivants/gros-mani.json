@@ -139,7 +139,11 @@
         "bruit": 0,
         "transport": null,
         "effets": null,
-        "marque": ""
+        "marque": "",
+        "qualite": "forge",
+        "gammes": [
+          "pied-de-biche"
+        ]
       },
       "effects": [],
       "folder": null,

@@ -145,6 +145,11 @@
       "savoir-manquant": "missing know-how: {savoir}", "eau-requise": "the site needs {eau} (here: {ici})",
       "site-sol": "arable soil is needed (soil {requis}; here {ici})", "site-soleil": "sunlight is needed (sun {requis}; here {ici})",
       "site-souterrain": "a suitable basement is needed (underground {requis}; here {ici})",
+      "requiert-atelier": "needs a workshop: {metier} level {niveau}", "recette-a-l-abri": "this is done at the shelter, not from the pack",
+      "recette-lumiere": "needs light at night", "outil-manquant": "needs in hand: {outil}", "objet-manquant": "needs: {n} × {objet}",
+      "outil-sans-usure": "{objet} does not wear out", "outil-arme-a-feu": "a firearm cannot be patched up: it has to be restored at the workbench",
+      "outil-neuf": "{objet} does not need mending", "outil-trop-repare": "{objet} has already been patched up three times: make a new one",
+      "outil-pas-une-lame": "{objet} is not a blade",
       "requiert": "needed first: {installation} level {niveau}", "requiert-hors-service": "{installation} is out of order", "manque": "missing: {manque}",
       "marche-stade-troc": "Hand to hand, from the very first day.",
       "marche-stade-boutique": "A shopkeeper keeps a shop, with a credit book.",
@@ -384,6 +389,29 @@
       "Type": "Action", "Details": "Where, who, how…", "Envoyer": "Propose", "Envoyee": "Proposal sent to the GM.",
       "Types": { "fouiller": "Scavenge", "explorer": "Explore", "construire": "Build", "garde": "Keep watch", "repos": "Rest", "voyager": "Travel", "fabriquer": "Craft", "autre": "Other" }
     },
+    "Ateliers": {
+      "AtelierNiveau": "{metier}, level {niveau}", "DepuisLeSac": "from the pack", "ALAbri": "at the shelter", "Lumiere": "light at night", "EnMain": "needs",
+      "Outils": "Tools in hand: {outils}", "Objets": "Items needed: {objets}", "Traitement": "the shelter's water treated for {jours} day(s)",
+      "Enrayee": "{arme} jams: the shot does not go off",
+      "Etats": { "bon": "in working order", "use": "worn", "casse": "broken" },
+      "Fiche": {
+        "Qualite": "Quality: {qualite}", "Gammes": "Serves as: {gammes}", "Usure": "Wear: {usure} / {usages} ({etat})", "Remise": "Restored: it jams less",
+        "Parade": "Parries a Pallid's hit on {seuil} or more", "Remede": "Remedy for: {maux}{remplace}", "Remplace": " (stands in for one medicine)", "Eclaire": "Gives light at night"
+      },
+      "Journal": {
+        "Casse": "{nom}'s {objet} has broken.", "Usee": "{nom}'s {objet} is worn: it jams more often.", "Repare": "{nom} patches up the {objet} (time {fois} of 3).",
+        "Affute": "{nom} sharpens the {objet} on the stone.", "Remede": "{objet} used to treat {nom}.", "EauTraitee": "The shelter's water is treated for {jours} day(s)."
+      },
+      "Erreurs": {
+        "ObjetInconnu": "{nom} does not have that item.", "PasUneLame": "{objet} is not a blade.", "SansPierre": "The group needs a whetstone.",
+        "SansMateriau": "This needs one material (a bit of wire or rope)."
+      }
+    },
+    "Metiers": { "cuisine": "Fire corner", "etabli": "Woodworking bench", "forge": "Forge", "vannerie": "Vacoa weaving", "couture": "Sewing workshop", "tisanerie": "Herbal-tea hut",
+      "mecanique": "Mechanics workshop", "electricite": "Electrics workshop", "distillerie": "Distillery" },
+    "Gammes": { "hache": "axe", "sabre": "cane knife", "couteau": "knife", "marteau": "hammer", "scie": "saw", "truelle": "trowel", "pelle-pioche": "shovel and pick",
+      "pied-de-biche": "crowbar", "masse": "sledgehammer", "pince": "pliers", "gratte": "hoe", "lance": "spear" },
+    "Qualites": { "fortune": "makeshift", "recuperation": "salvaged", "forge": "forged" },
     "Atelier": {
       "Titre": "Workshop", "Intro": "{n} recipe(s) possible now. Hover a recipe for its description.", "Artisan": "Crafter",
       "LeMeilleur": "The most skilled", "Fabriquer": "Craft", "Proposer": "Propose to the GM", "Carte": "Workshop: {recette}"

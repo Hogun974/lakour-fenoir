@@ -1,0 +1,46 @@
+{
+  "_id": "ZQOczhmOEX72UV26",
+  "_key": "!items!ZQOczhmOEX72UV26",
+  "name": "Couverture",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "couverture",
+    "description": "<p>Six tissus, des draps et des rideaux cousus en épaisseur.</p>",
+    "cout": {
+      "materiaux": 2
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "couture",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "couverture",
+      "n": 1
+    },
+    "lumiere": true,
+    "metier": "couture"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "couverture"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

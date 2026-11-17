@@ -1,0 +1,49 @@
+{
+  "_id": "5tCcNNuRZnn3CqL5",
+  "_key": "!items!5tCcNNuRZnn3CqL5",
+  "name": "Gants de travail",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "gants-de-travail",
+    "description": "<p>Deux tissus doublés, cousus serré.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "couture",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "gants-de-travail",
+      "n": 1
+    },
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "metier": "couture"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gants-de-travail"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

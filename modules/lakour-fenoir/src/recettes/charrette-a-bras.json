@@ -1,0 +1,56 @@
+{
+  "_id": "GLUbnJhLcd8XCKgJ",
+  "_key": "!items!GLUbnJhLcd8XCKgJ",
+  "name": "Charrette à bras",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "charrette-a-bras",
+    "description": "<p>Huit planches, deux roues de bois, quatre gaulettes, quarante chevilles, deux cordes : un plateau et deux brancards.</p>",
+    "cout": {
+      "materiaux": 3
+    },
+    "travail": 6,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "charrette-a-bras",
+      "n": 1
+    },
+    "outils": [
+      "scie"
+    ],
+    "objets": [
+      {
+        "cle": "roue-de-bois",
+        "n": 2
+      }
+    ],
+    "metier": "etabli",
+    "arbre": "lontan",
+    "repond": "chariot-de-recuperation"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "charrette-a-bras"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

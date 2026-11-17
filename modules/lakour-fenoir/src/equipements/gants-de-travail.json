@@ -1,0 +1,36 @@
+{
+  "_id": "BuR0xLPwIFiTq9dT",
+  "_key": "!items!BuR0xLPwIFiTq9dT",
+  "name": "Gants de travail",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "gants-de-travail",
+    "categorie": "vie",
+    "description": "<p>Des gants de toile doublée : on déplace le bois et les tôles sans se couper, et sans glisser la main sur une scolopendre (le MJ ne fait pas tirer la piqûre à qui les porte en remuant le bois).</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gants-de-travail"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

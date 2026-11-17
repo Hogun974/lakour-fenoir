@@ -1,0 +1,36 @@
+{
+  "_id": "lrhomsofB0IjGLdq",
+  "_key": "!items!lrhomsofB0IjGLdq",
+  "name": "Sel",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "sel",
+    "categorie": "matiere",
+    "description": "<p>Un bocal de sel de mer, gris et humide, réduit sur le feu : sans sel, pas de boucané, pas d'achards.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sel"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_id": "5ZKLwS1CIrmXVIoi",
+  "_key": "!items!5ZKLwS1CIrmXVIoi",
+  "name": "Pelle et pioche de récupération",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "pelle-pioche-de-recuperation",
+    "description": "<p>Une tôle pliée, deux barres de ferraille, un manche, des clous.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "pelle-pioche-de-recuperation",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "metier": "etabli",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pelle-pioche-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

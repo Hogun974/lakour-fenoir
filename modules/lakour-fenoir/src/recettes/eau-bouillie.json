@@ -1,0 +1,47 @@
+{
+  "_id": "jHVx7a002yxual06",
+  "_key": "!items!jHVx7a002yxual06",
+  "name": "Eau bouillie",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "eau-bouillie",
+    "description": "<p>Les marmites sur le feu toute la journée : l'eau de l'abri est bouillie, pour un jour. Lent, et il faut du bois ; mais cela ne dépend de rien.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "traitement": "eau",
+      "jours": 1
+    },
+    "metier": "cuisine",
+    "arbre": "lontan",
+    "repond": "eau-javellisee"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "eau-bouillie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

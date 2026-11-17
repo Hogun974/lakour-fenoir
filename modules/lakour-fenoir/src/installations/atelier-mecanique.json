@@ -1,0 +1,172 @@
+{
+  "_id": "PhMd8sBeve7qiLMV",
+  "_key": "!items!PhMd8sBeve7qiLMV",
+  "name": "Atelier de mécanique",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "atelier-mecanique",
+    "categorie": "vie",
+    "description": "<p>Un abri de tôle, un étau, des clés, une fosse ou des chandelles pour passer sous un moteur ; puis un garage de planches avec ses bidons d'huile ; enfin un garage maçonné, avec palan et établi d'acier. On y remet en état ce qui roule et ce qui tire.</p>",
+    "niveau": 0,
+    "niveauMax": 3,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 5,
+          "pieces": 3,
+          "graines": 0,
+          "travail": 8
+        },
+        "requiert": {
+          "savoirs": [
+            "mecanique"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 8,
+          "pieces": 4,
+          "graines": 0,
+          "travail": 14
+        },
+        "requiert": {
+          "savoirs": [
+            "mecanique",
+            "maconnerie"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "metiers": [
+      "mecanique"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "atelier-mecanique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

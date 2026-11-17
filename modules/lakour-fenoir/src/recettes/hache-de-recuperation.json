@@ -1,0 +1,49 @@
+{
+  "_id": "hbmXnGEohoRrElWt",
+  "_key": "!items!hbmXnGEohoRrElWt",
+  "name": "Hache de récupération",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "hache-de-recuperation",
+    "description": "<p>Trois bouts de ferraille, un manche, du fil de fer : un fer découpé au burin, emmanché et goupillé.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "hache-de-recuperation",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "metier": "etabli",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "hache-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

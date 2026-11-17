@@ -1,0 +1,56 @@
+{
+  "_id": "Mo0MF7udLZevYMrB",
+  "_key": "!items!Mo0MF7udLZevYMrB",
+  "name": "Sabre forgé",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "sabre-forge",
+    "description": "<p>Une lame de ressort de voiture, chauffée, étirée, recourbée, trempée : elle devient un sabre à canne.</p>",
+    "cout": {
+      "pieces": 1
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "forge",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "sabre-a-canne",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 3,
+    "metier": "forge",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sabre-forge"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

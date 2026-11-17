@@ -1,0 +1,37 @@
+{
+  "_id": "imwXVVsnQTaAp1Oa",
+  "_key": "!items!imwXVVsnQTaAp1Oa",
+  "name": "Lampe électrique",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "lampe-electrique",
+    "categorie": "outil",
+    "description": "<p>Une ampoule de récupération dans un bocal, un câble, une batterie qu'on recharge aux panneaux : une lumière franche et sans fumée, tant qu'il y a du courant.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "eclaire": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lampe-electrique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

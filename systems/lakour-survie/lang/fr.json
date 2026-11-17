@@ -145,6 +145,11 @@
       "savoir-manquant": "savoir-faire manquant : {savoir}", "eau-requise": "il faut {eau} sur le site (ici : {ici})",
       "site-sol": "il faut de la terre cultivable (sol {requis} ; ici {ici})", "site-soleil": "il faut du soleil (soleil {requis} ; ici {ici})",
       "site-souterrain": "il faut un sous-sol qui s'y prête (souterrain {requis} ; ici {ici})",
+      "requiert-atelier": "il faut un atelier : {metier} niveau {niveau}", "recette-a-l-abri": "cela se fait à l'abri, pas depuis le sac",
+      "recette-lumiere": "il faut de la lumière, la nuit", "outil-manquant": "il faut en main : {outil}", "objet-manquant": "il faut : {n} × {objet}",
+      "outil-sans-usure": "{objet} ne s'use pas", "outil-arme-a-feu": "une arme à feu ne se rafistole pas : il faut la remettre en état à l'établi",
+      "outil-neuf": "{objet} n'a pas besoin d'être réparé", "outil-trop-repare": "{objet} a déjà été rafistolé trois fois : il faut en faire un autre",
+      "outil-pas-une-lame": "{objet} n'est pas une lame",
       "requiert": "il faut d'abord : {installation} niveau {niveau}", "requiert-hors-service": "{installation} est hors service", "manque": "il manque : {manque}",
       "marche-stade-troc": "De la main à la main, dès le premier jour.",
       "marche-stade-boutique": "Un commerçant tient boutique, avec son carnet de crédit.",
@@ -384,6 +389,29 @@
       "Type": "Action", "Details": "Où, qui, comment…", "Envoyer": "Proposer", "Envoyee": "Proposition envoyée au MJ.",
       "Types": { "fouiller": "Fouiller", "explorer": "Explorer", "construire": "Construire", "garde": "Monter la garde", "repos": "Se reposer", "voyager": "Voyager", "fabriquer": "Fabriquer", "autre": "Autre" }
     },
+    "Ateliers": {
+      "AtelierNiveau": "{metier}, niveau {niveau}", "DepuisLeSac": "depuis le sac", "ALAbri": "à l'abri", "Lumiere": "de la lumière la nuit", "EnMain": "il faut",
+      "Outils": "Outils en main : {outils}", "Objets": "Objets demandés : {objets}", "Traitement": "l'eau de l'abri traitée pour {jours} jour(s)",
+      "Enrayee": "{arme} s'enraye : le coup ne part pas",
+      "Etats": { "bon": "en état", "use": "usé", "casse": "cassé" },
+      "Fiche": {
+        "Qualite": "Qualité : {qualite}", "Gammes": "Sert de : {gammes}", "Usure": "Usure : {usure} / {usages} ({etat})", "Remise": "Remise en état : elle s'enraye moins",
+        "Parade": "Pare une touche de Livide sur {seuil} et plus", "Remede": "Remède pour : {maux}{remplace}", "Remplace": " (tient lieu d'un médicament)", "Eclaire": "Éclaire la nuit"
+      },
+      "Journal": {
+        "Casse": "{objet} de {nom} a cassé.", "Usee": "{objet} de {nom} est usé : il s'enraye plus souvent.", "Repare": "{nom} rafistole {objet} (fois {fois} sur 3).",
+        "Affute": "{nom} affûte {objet} à la pierre.", "Remede": "{objet} pour soigner {nom}.", "EauTraitee": "L'eau de l'abri est traitée pour {jours} jour(s)."
+      },
+      "Erreurs": {
+        "ObjetInconnu": "{nom} n'a pas cet objet.", "PasUneLame": "{objet} n'est pas une lame.", "SansPierre": "Il faut une pierre à aiguiser dans le groupe.",
+        "SansMateriau": "Il faut un matériau (un bout de fil de fer ou de corde)."
+      }
+    },
+    "Metiers": { "cuisine": "Coin du feu", "etabli": "Établi du bois", "forge": "Forge", "vannerie": "Vannerie du vacoa", "couture": "Atelier de couture", "tisanerie": "Case à tisanes",
+      "mecanique": "Atelier de mécanique", "electricite": "Atelier d'électricité", "distillerie": "Distillerie" },
+    "Gammes": { "hache": "hache", "sabre": "sabre", "couteau": "couteau", "marteau": "marteau", "scie": "scie", "truelle": "truelle", "pelle-pioche": "pelle et pioche",
+      "pied-de-biche": "pied-de-biche", "masse": "masse", "pince": "pince", "gratte": "gratte", "lance": "lance" },
+    "Qualites": { "fortune": "de fortune", "recuperation": "de récupération", "forge": "forgé" },
     "Atelier": {
       "Titre": "Atelier", "Intro": "{n} recette(s) possible(s) maintenant. Survole une recette pour sa description.", "Artisan": "Artisan",
       "LeMeilleur": "Le plus habile", "Fabriquer": "Fabriquer", "Proposer": "Proposer au MJ", "Carte": "Atelier : {recette}"

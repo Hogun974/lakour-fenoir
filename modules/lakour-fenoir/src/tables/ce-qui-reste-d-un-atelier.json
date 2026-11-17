@@ -1,0 +1,148 @@
+{
+  "_id": "I8y7O8AIHd2zUqYk",
+  "_key": "!tables!I8y7O8AIHd2zUqYk",
+  "name": "Ce qui reste d'un atelier abandonné",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un garage, une forge de quartier, la cuisine d'une cantine, l'alambic d'une ferme : ce qu'on y trouve en arrivant, avant de le remettre en marche.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ce-qui-reste-d-un-atelier",
+      "ateliers": "ce-qui-reste-d-un-atelier"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "PQBtFW9rBfkKsZBC",
+      "_key": "!tables.results!I8y7O8AIHd2zUqYk.PQBtFW9rBfkKsZBC",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un établi intact sous une bâche, des outils pendus au mur : quelqu'un a fermé à clé en partant, et n'est pas revenu.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "idLtCr4H3GKqyfyk",
+      "_key": "!tables.results!I8y7O8AIHd2zUqYk.idLtCr4H3GKqyfyk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une forge froide, un tas de charbon de bois mouillé, des fers à moitié faits sur l'enclume.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cXGRStVs6xJ9jAQv",
+      "_key": "!tables.results!I8y7O8AIHd2zUqYk.cXGRStVs6xJ9jAQv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un garage pillé : plus un outil, mais la fosse est là, et des pièces sous l'établi que personne n'a vues.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6ILt0D0bPeOmSeBc",
+      "_key": "!tables.results!I8y7O8AIHd2zUqYk.6ILt0D0bPeOmSeBc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une cuisine de cantine aux marmites énormes ; le gaz est vide, le fourneau à bois du fond marche encore.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "fOHAAqTlBchE4oNs",
+      "_key": "!tables.results!I8y7O8AIHd2zUqYk.fOHAAqTlBchE4oNs",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un alambic de ferme, son serpentin vert-de-grisé, des bouteilles vides alignées : il suffit de le nettoyer.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "VnO9kObzZRBtJa0Z",
+      "_key": "!tables.results!I8y7O8AIHd2zUqYk.VnO9kObzZRBtJa0Z",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un atelier de couture de quartier : une machine à pédale, des bobines, des patrons au mur, une veste qui attend son bouton.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ANE5RvEFpOi47dtV",
+      "_key": "!tables.results!I8y7O8AIHd2zUqYk.ANE5RvEFpOi47dtV",
+      "type": "text",
+      "name": "",
+      "description": "<p>La case d'une gramoune : des bottes de zerbaz séchées au plafond, des bocaux sans étiquette, un cahier qu'on ne trouve pas.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7G6fdPIBKHelYOah",
+      "_key": "!tables.results!I8y7O8AIHd2zUqYk.7G6fdPIBKHelYOah",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un atelier occupé : quelqu'un y vit et y travaille, et n'aime pas qu'on entre sans frapper.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

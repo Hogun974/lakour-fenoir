@@ -1,0 +1,40 @@
+{
+  "_id": "bkFO8K5CzR1vpAvU",
+  "_key": "!items!bkFO8K5CzR1vpAvU",
+  "name": "Masse de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "masse-de-fortune",
+    "categorie": "outil",
+    "description": "<p>Une grosse pierre liée en croix au bout d'un manche : elle casse un parpaing, si l'on a de la patience.</p>",
+    "bonus": {},
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "masse"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "masse-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

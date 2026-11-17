@@ -1,0 +1,38 @@
+{
+  "_id": "mkbRc2EBkNbAzNmR",
+  "_key": "!items!mkbRc2EBkNbAzNmR",
+  "name": "Lampe à huile",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "lampe-a-huile",
+    "categorie": "outil",
+    "description": "<p>Un bocal, une mèche de tissu, de l'huile de bancoul : une petite flamme qui fume, pour trois nuits. On la remplit avec une autre bouteille d'huile.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "usages": 3,
+    "eclaire": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lampe-a-huile"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

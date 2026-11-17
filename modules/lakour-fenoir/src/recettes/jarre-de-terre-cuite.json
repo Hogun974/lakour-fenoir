@@ -1,0 +1,52 @@
+{
+  "_id": "0qv95AxMsgbeXQHd",
+  "_key": "!items!0qv95AxMsgbeXQHd",
+  "name": "Jarre de terre cuite",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "jarre-de-terre-cuite",
+    "description": "<p>De l'argile de la ravine, montée en colombins à la main, séchée à l'ombre, cuite dans le four de la forge.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "forge",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "jarre-de-terre-cuite",
+      "n": 1
+    },
+    "objets": [
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "metier": "forge",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "jarre-de-terre-cuite"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

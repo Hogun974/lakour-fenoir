@@ -1,0 +1,42 @@
+{
+  "_id": "6PLrDhXoYL6sKtQT",
+  "_key": "!items!6PLrDhXoYL6sKtQT",
+  "name": "Sabre de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "sabre-a-canne-de-recuperation",
+    "categorie": "arme",
+    "description": "<p>Une lame taillée dans une tôle épaisse, affûtée à la meule, un manche de bois : elle coupe la canne comme l'autre.</p>",
+    "bonus": {
+      "combat": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "sabre"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sabre-a-canne-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

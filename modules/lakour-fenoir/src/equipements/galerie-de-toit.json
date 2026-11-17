@@ -1,0 +1,39 @@
+{
+  "_id": "0NFsrS5zUEvBysYO",
+  "_key": "!items!0NFsrS5zUEvBysYO",
+  "name": "Galerie de toit",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "galerie-de-toit",
+    "categorie": "amenagement",
+    "description": "<p>Une galerie de tubes soudés sur le toit, des sangles : quatre charges de plus sur un véhicule du groupe (au MJ), et ce qu'on y met se voit de loin.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "amenagement": {
+      "charge": 4
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "galerie-de-toit"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

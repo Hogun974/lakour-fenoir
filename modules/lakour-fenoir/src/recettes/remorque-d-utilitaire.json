@@ -1,0 +1,59 @@
+{
+  "_id": "kX7bfptzwNX7o5w9",
+  "_key": "!items!kX7bfptzwNX7o5w9",
+  "name": "Remorque d'utilitaire",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "remorque-d-utilitaire",
+    "description": "<p>Huit ferrailles, six planches, deux roues, dix boîtes de vis : le plateau que tire le petit utilitaire.</p>",
+    "cout": {
+      "materiaux": 3,
+      "pieces": 3
+    },
+    "travail": 5,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "utilitaire-et-remorque",
+      "n": 1
+    },
+    "outils": [
+      "pince",
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "utilitaire-electrique",
+        "n": 1
+      }
+    ],
+    "metier": "mecanique",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "remorque-d-utilitaire"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

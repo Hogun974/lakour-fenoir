@@ -18,7 +18,8 @@
     "transport": null,
     "effets": null,
     "marque": "",
-    "parade": 5
+    "parade": 5,
+    "usages": 12
   },
   "effects": [],
   "folder": null,

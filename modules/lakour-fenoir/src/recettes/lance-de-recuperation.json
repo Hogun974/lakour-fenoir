@@ -1,0 +1,49 @@
+{
+  "_id": "8W4e3JzWp0acEw7e",
+  "_key": "!items!8W4e3JzWp0acEw7e",
+  "name": "Lance de récupération",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "lance-de-recuperation",
+    "description": "<p>Un manche droit, deux ferrailles battues en fer de lance, du fil de fer.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "lance-de-recuperation",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "metier": "etabli",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lance-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

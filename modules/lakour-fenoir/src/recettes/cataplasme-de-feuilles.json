@@ -1,0 +1,46 @@
+{
+  "_id": "5iM4tzsTtiY23skp",
+  "_key": "!items!5iM4tzsTtiY23skp",
+  "name": "Cataplasme de feuilles",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "cataplasme-de-feuilles",
+    "description": "<p>Des feuilles écrasées entre deux pierres, posées sur la plaie et tenues par une lanière de vacoa.</p>",
+    "cout": {
+      "plantes": 2
+    },
+    "travail": 1,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "zerbaz"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "cataplasme-de-feuilles",
+      "n": 1
+    },
+    "sac": true,
+    "arbre": "lontan",
+    "repond": "pansements"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cataplasme-de-feuilles"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

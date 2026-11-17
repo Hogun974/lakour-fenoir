@@ -1,0 +1,50 @@
+{
+  "_id": "EOQzLEvXxjmCmoWt",
+  "_key": "!items!EOQzLEvXxjmCmoWt",
+  "name": "Scie de récupération",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "scie-de-recuperation",
+    "description": "<p>Une lame de ressort taillée en dents à la lime, tendue sur un arc de bois par une vis.</p>",
+    "cout": {
+      "pieces": 1
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "scie-de-recuperation",
+      "n": 1
+    },
+    "outils": [
+      "marteau",
+      "pince"
+    ],
+    "metier": "etabli",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "scie-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

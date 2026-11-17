@@ -1,0 +1,47 @@
+{
+  "_id": "qWRBvdJAqSnEQrbh",
+  "_key": "!items!qWRBvdJAqSnEQrbh",
+  "name": "Filet de pêche",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "filet-de-peche",
+    "description": "<p>Huit cordes nouées maille à maille pendant des soirées entières, lestées de galets percés.</p>",
+    "cout": {
+      "materiaux": 2
+    },
+    "travail": 6,
+    "competence": "survie",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "peche-lagon"
+      ],
+      "installation": {
+        "metier": "vannerie",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "filet-de-peche",
+      "n": 1
+    },
+    "metier": "vannerie"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "filet-de-peche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

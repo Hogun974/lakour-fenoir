@@ -1,0 +1,49 @@
+{
+  "_id": "LU4YYpr5F3IDD6eD",
+  "_key": "!items!LU4YYpr5F3IDD6eD",
+  "name": "Trousse de secours",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "trousse-de-secours",
+    "description": "<p>Des pansements, un alcool, un savon, rangés dans une trousse de toile cousue : tout au même endroit, quand il faut aller vite.</p>",
+    "cout": {
+      "medicaments": 3,
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "premiers-secours-avances"
+      ],
+      "installation": {
+        "metier": "couture",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "trousse-de-secours",
+      "n": 1
+    },
+    "metier": "couture",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "trousse-de-secours"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

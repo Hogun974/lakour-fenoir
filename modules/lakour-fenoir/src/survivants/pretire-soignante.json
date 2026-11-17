@@ -180,7 +180,8 @@
         "bruit": 0,
         "transport": null,
         "effets": null,
-        "marque": ""
+        "marque": "",
+        "eclaire": true
       },
       "effects": [],
       "folder": null,

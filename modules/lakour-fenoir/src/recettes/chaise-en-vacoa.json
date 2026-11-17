@@ -22,7 +22,8 @@
     "produit": {
       "equipement": "chaise-en-vacoa",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

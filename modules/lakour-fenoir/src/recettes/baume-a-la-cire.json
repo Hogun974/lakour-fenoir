@@ -1,0 +1,55 @@
+{
+  "_id": "1utnEl6ZUtEVwuC6",
+  "_key": "!items!1utnEl6ZUtEVwuC6",
+  "name": "Baume à la cire",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "baume-a-la-cire",
+    "description": "<p>La cire des ruches fondue avec l'huile de bancoul et deux brassées de zerbaz, coulée en bocal : deux pots.</p>",
+    "cout": {
+      "nourriture": 1,
+      "plantes": 2
+    },
+    "travail": 2,
+    "competence": "soins",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "zerbaz"
+      ],
+      "installation": {
+        "metier": "tisanerie",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "baume-a-la-cire",
+      "n": 2
+    },
+    "objets": [
+      {
+        "cle": "huile-de-bancoul",
+        "n": 1
+      }
+    ],
+    "metier": "tisanerie",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "baume-a-la-cire"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

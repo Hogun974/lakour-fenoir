@@ -1,0 +1,50 @@
+{
+  "_id": "DmxipDdrTJ5DCzhn",
+  "_key": "!items!DmxipDdrTJ5DCzhn",
+  "name": "Roue de bois cerclée",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "roue-de-bois",
+    "description": "<p>Quatre planches chevillées en disque, deux ferrailles battues en cercle et posées à chaud, vingt clous.</p>",
+    "cout": {
+      "materiaux": 2
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "roue-de-bois",
+      "n": 1
+    },
+    "outils": [
+      "scie",
+      "marteau"
+    ],
+    "metier": "etabli",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "roue-de-bois"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

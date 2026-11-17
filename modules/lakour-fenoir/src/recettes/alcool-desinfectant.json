@@ -18,12 +18,16 @@
       "savoirs": [
         "conserverie"
       ],
-      "installation": null
+      "installation": {
+        "metier": "distillerie",
+        "niveau": 1
+      }
     },
     "produit": {
       "ressource": "medicaments",
       "n": 1
-    }
+    },
+    "metier": "distillerie"
   },
   "effects": [],
   "folder": null,

@@ -1,0 +1,49 @@
+{
+  "_id": "yr6qs7CXYXMWfnpN",
+  "_key": "!items!yr6qs7CXYXMWfnpN",
+  "name": "Pince de récupération",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "pince-de-recuperation",
+    "description": "<p>Deux bras de ferraille et un boulon.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "pince-de-recuperation",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "metier": "etabli",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pince-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

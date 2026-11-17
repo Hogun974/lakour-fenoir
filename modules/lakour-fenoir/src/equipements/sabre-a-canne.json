@@ -17,7 +17,11 @@
     "bruit": 0,
     "transport": null,
     "effets": null,
-    "marque": ""
+    "marque": "",
+    "qualite": "forge",
+    "gammes": [
+      "sabre"
+    ]
   },
   "effects": [],
   "folder": null,

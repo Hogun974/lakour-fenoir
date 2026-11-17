@@ -1,0 +1,52 @@
+{
+  "_id": "3NvjqTmZhxplZmBx",
+  "_key": "!items!3NvjqTmZhxplZmBx",
+  "name": "Vélo remis en état",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "velo-remis-en-etat",
+    "description": "<p>Un vieux cadre trouvé dans une cour, deux chambres à air, des vis, des rustines découpées dans une chambre morte : il roule.</p>",
+    "cout": {
+      "materiaux": 1,
+      "pieces": 2
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "velo",
+      "n": 1
+    },
+    "outils": [
+      "pince"
+    ],
+    "metier": "mecanique",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "velo-remis-en-etat"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "_id": "8aBzRwLD9Hse3Yn0",
+  "_key": "!items!8aBzRwLD9Hse3Yn0",
+  "name": "Gratte forgée",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "gratte-forgee",
+    "description": "<p>La houe des carreaux de l'île : trois ferrailles, un sac de charbon, un manche.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "forge",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "gratte",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 2,
+    "metier": "forge"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gratte-forgee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

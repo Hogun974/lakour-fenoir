@@ -1,0 +1,44 @@
+{
+  "_id": "ftz4G2tCZC4sXPSh",
+  "_key": "!items!ftz4G2tCZC4sXPSh",
+  "name": "Truelle de fortune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "truelle-de-fortune",
+    "description": "<p>Une pierre plate emmanchée et liée.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "truelle-de-fortune",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true,
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "truelle-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

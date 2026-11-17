@@ -20,7 +20,8 @@
     "produit": {
       "equipement": "planche-des-jours",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

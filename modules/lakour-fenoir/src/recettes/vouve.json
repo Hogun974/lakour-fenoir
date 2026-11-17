@@ -1,0 +1,52 @@
+{
+  "_id": "Ky0dvu8NJP7Lw9wY",
+  "_key": "!items!Ky0dvu8NJP7Lw9wY",
+  "name": "Vouve",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "vouve",
+    "description": "<p>Huit gaulettes, dix feuilles de vacoa et une corde : la nasse en entonnoir qu'on cale dans le courant.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 3,
+    "competence": "survie",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "peche-lagon"
+      ],
+      "installation": {
+        "metier": "vannerie",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "vouve",
+      "n": 1
+    },
+    "outils": [
+      "couteau"
+    ],
+    "metier": "vannerie",
+    "arbre": "lontan",
+    "repond": "ligne-de-peche"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "vouve"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

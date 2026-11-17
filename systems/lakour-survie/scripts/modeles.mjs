@@ -122,6 +122,8 @@ export class ModeleAbri extends foundry.abstract.TypeDataModel {
       lumiereLe: nombreNul(),
       // Lot « corps » : la souillure de l'abri (logique/corps.mjs) ; l'insalubrité en sort (0 à 3).
       souillure: nombre(0),
+      // Lot 6 « ateliers » : l'eau bouillie ou javellisée à l'atelier traite l'eau de l'abri jusqu'à ce jour (exclu ; 0 : rien).
+      eauTraiteeAvant: nombre(0),
       notes: html()
     };
   }
@@ -145,7 +147,8 @@ export class ModeleInstallation extends foundry.abstract.TypeDataModel {
       // Lot « savoirs » : arbre (moderne, lontan), rôle partagé avec une sœur, rang entre sœurs.
       arbre: texte(),
       role: texte(),
-      rang: nombreNul()
+      rang: nombreNul(),
+      metiers: cles()   // lot 6 « ateliers » : les métiers d'atelier qu'elle sert (logique/fabrication.mjs)
     };
   }
 }
@@ -168,7 +171,11 @@ export class ModeleEquipement extends foundry.abstract.TypeDataModel {
       plans: cles(), unique: texte(),
       // Lot « cartes » (logique/reperes.mjs) : une carte, un calendrier, une montre… { type, … } ; null : un équipement ordinaire.
       repere: objetNul(),
-      parade: entier(0, 0, 6), bivouac: bool(false)   // lot « corps » : le seuil d'un bouclier au d6 ; de quoi bivouaquer
+      parade: entier(0, 0, 6), bivouac: bool(false),   // lot « corps » : le seuil d'un bouclier au d6 ; de quoi bivouaquer
+      // Lot 6 « ateliers » (logique/armes.mjs, fabrication.mjs) : la qualité, les gammes d'outils servies, la solidité (0 : celle de la
+      // qualité), les réparations de fortune déjà faites, l'arme remise en état, la lumière, le remède, la protection, l'aménagement.
+      qualite: texte(), gammes: cles(), usages: nombre(0), reparations: entier(0, 0, 3), remise: bool(false), eclaire: bool(false),
+      remede: objetNul(), protege: cles(), amenagement: objetNul()
     };
   }
 }
@@ -187,7 +194,11 @@ export class ModeleRecette extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       cle: cle(), description: html(), cout: objetLibre({}), travail: nombre(1), competence: texte("bricolage"), difficulte: texte("normale"),
-      requiert: objetLibre({ savoirs: [], installation: null }), produit: objetLibre({})
+      requiert: objetLibre({ savoirs: [], installation: null }), produit: objetLibre({}),
+      // Lot 6 « ateliers » (logique/fabrication.mjs) : depuis le sac, de la lumière la nuit, les outils en main, les objets consommés,
+      // le bruit du travail, le métier d'atelier, le savoir (lontan, moderne) et la recette qui répond au même besoin.
+      sac: bool(false), lumiere: bool(false), outils: cles(), objets: new fields.ArrayField(new fields.ObjectField()), bruit: nombre(0),
+      metier: texte(), arbre: texte(), repond: texte()
     };
   }
 }

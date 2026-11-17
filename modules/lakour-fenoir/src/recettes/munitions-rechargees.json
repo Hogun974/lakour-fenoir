@@ -19,14 +19,15 @@
         "mecanique"
       ],
       "installation": {
-        "cle": "atelier",
+        "metier": "mecanique",
         "niveau": 2
       }
     },
     "produit": {
       "ressource": "munitions",
       "n": 2
-    }
+    },
+    "metier": "mecanique"
   },
   "effects": [],
   "folder": null,

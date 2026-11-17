@@ -317,6 +317,38 @@ function texteRepere(r) {
   return l;
 }
 
+// Lot 6 « ateliers » (contrat §24) : la qualité, l'usure et le remède d'un objet ; l'atelier, le sac, les outils et les objets d'une recette.
+const nomMetier = m => t(`LAKOUR_SURVIE.Metiers.${m}`);
+const nomGamme = g => t(`LAKOUR_SURVIE.Gammes.${g}`);
+export function texteAtelierRequis(r) {
+  if (r && typeof r === "object" && r.metier) return t("LAKOUR_SURVIE.Ateliers.AtelierNiveau", { metier: nomMetier(r.metier), niveau: r.niveau ?? 1 });
+  const cle = r?.cle ?? r;
+  return `${defDe("installations", cle)?.nom ?? cle}${r?.niveau > 1 ? ` (${t("LAKOUR_SURVIE.Objet.Niveau")} ${r.niveau})` : ""}`;
+}
+function lignesOutil(s, def) {
+  const x = { ...(def ?? {}), ...Object.fromEntries(Object.entries(s).filter(([, v]) => v !== "" && v !== null && v !== undefined && v !== 0 && !(Array.isArray(v) && !v.length))), usure: s.usure };
+  const u = L.usagesDe(x);
+  return [
+    L.qualiteDe(x) ? t("LAKOUR_SURVIE.Ateliers.Fiche.Qualite", { qualite: t(`LAKOUR_SURVIE.Qualites.${L.qualiteDe(x)}`) }) : "",
+    L.gammesDe(x).length ? t("LAKOUR_SURVIE.Ateliers.Fiche.Gammes", { gammes: L.gammesDe(x).map(nomGamme).join(", ") }) : "",
+    u ? t("LAKOUR_SURVIE.Ateliers.Fiche.Usure", { usure: Number(x.usure) || 0, usages: u, etat: t(`LAKOUR_SURVIE.Ateliers.Etats.${L.etatOutil(x) || "bon"}`) }) : "",
+    x.remise ? t("LAKOUR_SURVIE.Ateliers.Fiche.Remise") : "",
+    x.parade ? t("LAKOUR_SURVIE.Ateliers.Fiche.Parade", { seuil: x.parade }) : "",
+    x.remede ? t("LAKOUR_SURVIE.Ateliers.Fiche.Remede", { maux: (x.remede.afflictions ?? []).map(a => defDe("afflictions", a)?.nom ?? a).join(", "),
+      remplace: x.remede.remplace ? t("LAKOUR_SURVIE.Ateliers.Fiche.Remplace") : "" }) : "",
+    x.eclaire ? t("LAKOUR_SURVIE.Ateliers.Fiche.Eclaire") : ""
+  ];
+}
+function lignesRecetteAtelier(s) {
+  return [
+    s.sac ? t("LAKOUR_SURVIE.Ateliers.DepuisLeSac") : "",
+    s.lumiere ? t("LAKOUR_SURVIE.Ateliers.Lumiere") : "",
+    (s.outils ?? []).length ? t("LAKOUR_SURVIE.Ateliers.Outils", { outils: s.outils.map(nomGamme).join(", ") }) : "",
+    (s.objets ?? []).length ? t("LAKOUR_SURVIE.Ateliers.Objets", { objets: s.objets.map(o => `${o.n ?? 1} × ${defDe("equipements", o.cle)?.nom ?? o.cle}`).join(", ") }) : "",
+    s.produit?.traitement ? t("LAKOUR_SURVIE.Ateliers.Traitement", { jours: s.produit.jours ?? 1 }) : ""
+  ];
+}
+
 // Les sections d'une fiche d'objet selon son type -> [{ titre, lignes: [texte], html }].
 export function sectionsObjet(i) {
   const s = aPlat(i.system);
@@ -334,7 +366,7 @@ export function sectionsObjet(i) {
       ajout("Usage", [Object.entries(s.bonus ?? {}).filter(([, n]) => Number(n)).map(([k, n]) => `${libelleCompetence(k)} +${n}`).join(", "),
         Number(s.bruit) ? `${t("LAKOUR_SURVIE.Objet.Effets.bruit")} ${s.bruit}` : "", s.munitions ? t("LAKOUR_SURVIE.Objet.Munitions", { n: s.munitions }) : "",
         s.transport ? t("LAKOUR_SURVIE.Objet.Transport", { places: s.transport.places ?? 1, charge: s.transport.chargeMax ?? 0, terrains: (s.transport.terrains ?? []).join(", ") }) : "",
-        ...effetsTexte(s.effets), ...lignesPapier(s), ...texteRepere(s.repere)]);
+        ...effetsTexte(s.effets), ...lignesPapier(s), ...texteRepere(s.repere), ...lignesOutil(s, defDe("equipements", s.cle))]);
       break;
     case "passe": case "enfance": {
       const mods = s.competences ?? s.modificateurs ?? {};
@@ -348,7 +380,8 @@ export function sectionsObjet(i) {
     case "recette":
       ajout("Fabrication", [`${t("LAKOUR_SURVIE.Objet.Cout")} : ${coutTexte(s.cout)}`, `${t("LAKOUR_SURVIE.Objet.Travail")} : ${s.travail}`,
         `${libelleCompetence(s.competence)} (${t(`LAKOUR_SURVIE.Difficultes.${s.difficulte}`)})`,
-        s.requiert?.installation ? `${t("LAKOUR_SURVIE.Objet.Requiert")} : ${defDe("installations", s.requiert.installation?.cle ?? s.requiert.installation)?.nom ?? s.requiert.installation}` : "",
+        s.requiert?.installation ? `${t("LAKOUR_SURVIE.Objet.Requiert")} : ${texteAtelierRequis(s.requiert.installation)}` : "",
+        ...lignesRecetteAtelier(s),
         s.produit?.equipement ? `${t("LAKOUR_SURVIE.Objet.Produit")} : ${defDe("equipements", s.produit.equipement)?.nom ?? s.produit.equipement} × ${s.produit.n ?? 1}` : "",
         s.produit?.ressource ? `${t("LAKOUR_SURVIE.Objet.Produit")} : ${s.produit.n ?? 1} ${libelleRessource(s.produit.ressource).toLowerCase()}` : ""]);
       break;

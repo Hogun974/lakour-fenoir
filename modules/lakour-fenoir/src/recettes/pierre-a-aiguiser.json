@@ -1,0 +1,40 @@
+{
+  "_id": "9tQ1gvqrPN7he6Ge",
+  "_key": "!items!9tQ1gvqrPN7he6Ge",
+  "name": "Pierre à aiguiser",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "pierre-a-aiguiser",
+    "description": "<p>Un galet au grain fin, choisi au bord de la ravine et dressé à plat sur une dalle, avec de l'eau et de la patience.</p>",
+    "cout": {},
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "pierre-a-aiguiser",
+      "n": 1
+    },
+    "sac": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pierre-a-aiguiser"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

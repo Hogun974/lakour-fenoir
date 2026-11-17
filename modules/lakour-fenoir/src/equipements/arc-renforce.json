@@ -1,0 +1,38 @@
+{
+  "_id": "vryrQlIak6aDeizE",
+  "_key": "!items!vryrQlIak6aDeizE",
+  "name": "Arc renforcé",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "arc-renforce",
+    "categorie": "arme",
+    "description": "<p>L'arc de chasse, doublé au dos d'une lame de ressort et d'une corde neuve : il tire plus loin et plus fort. Silencieux, comme avant.</p>",
+    "bonus": {
+      "tir": 2
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "arc-renforce"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

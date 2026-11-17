@@ -336,7 +336,9 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     conservation,
     renseignements: actives.some(l => l.e.renseignements),
     bonus,
-    eauTraitee: actives.some(l => l.e.eauTraitee) || (siteEau === "reseau" && Boolean(conditions.reseaux?.eau)),
+    // Lot 6 (contrat §24) : l'eau bouillie ou javellisée à l'atelier traite l'eau de l'abri jusqu'au jour `eauTraiteeAvant` (exclu).
+    eauTraitee: actives.some(l => l.e.eauTraitee) || (siteEau === "reseau" && Boolean(conditions.reseaux?.eau))
+      || (Number(abri.eauTraiteeAvant) || 0) > (Number.isFinite(Number(conditions.jour)) ? Number(conditions.jour) : Infinity),
     plafonds: plafond,
     production, reliquats, consommation, pertes, net,
     sol: sommeEffet(actives, "sol") - usure,

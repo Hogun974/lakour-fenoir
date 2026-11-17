@@ -20,7 +20,8 @@
     "produit": {
       "equipement": "cordes-de-choka",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

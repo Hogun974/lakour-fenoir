@@ -1,0 +1,40 @@
+{
+  "_id": "EDspfEYYgLGDFkCc",
+  "_key": "!items!EDspfEYYgLGDFkCc",
+  "name": "Scie de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "scie-de-fortune",
+    "categorie": "outil",
+    "description": "<p>Des éclats de basalte pris dans une branche fendue, en dents : elle râpe plus qu'elle ne scie.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "scie"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "scie-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

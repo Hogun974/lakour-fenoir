@@ -141,7 +141,8 @@
         "bruit": 2,
         "transport": null,
         "effets": null,
-        "marque": ""
+        "marque": "",
+        "usages": 50
       },
       "effects": [],
       "folder": null,

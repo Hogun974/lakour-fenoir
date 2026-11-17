@@ -1,0 +1,45 @@
+{
+  "_id": "5LYeh23pbFb7MrWn",
+  "_key": "!items!5LYeh23pbFb7MrWn",
+  "name": "Eau javellisée",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "eau-javellisee",
+    "description": "<p>Une bouteille d'eau de Javel trouvée sous un évier, quelques gouttes par bidon et une demi-heure d'attente : l'eau de l'abri est traitée pour une semaine. Rapide, tant qu'il reste de la Javel.</p>",
+    "cout": {
+      "medicaments": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "plomberie-filtration"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "traitement": "eau",
+      "jours": 7
+    },
+    "arbre": "moderne",
+    "repond": "eau-bouillie"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "eau-javellisee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "PKpuIMOvorh5JaJW",
+  "_key": "!items!PKpuIMOvorh5JaJW",
+  "name": "Huile de bancoul",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "huile-de-bancoul",
+    "categorie": "matiere",
+    "description": "<p>L'huile à lampe d'autrefois, pressée des noix du bancoulier : elle éclaire, elle graisse les armes, elle entre dans les baumes. Elle ne se mange pas.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "huile-de-bancoul"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

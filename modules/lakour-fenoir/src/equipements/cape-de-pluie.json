@@ -1,0 +1,36 @@
+{
+  "_id": "WFBAUi5Bq2DbidiQ",
+  "_key": "!items!WFBAUi5Bq2DbidiQ",
+  "name": "Cape de pluie",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cape-de-pluie",
+    "categorie": "vie",
+    "description": "<p>Une cape taillée dans une bâche, avec une capuche : on marche sous l'averse sans tremper ce qu'on porte, les cartes, les cahiers, les allumettes.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cape-de-pluie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_id": "tYSw5fCo4wnEfxsy",
+  "_key": "!items!tYSw5fCo4wnEfxsy",
+  "name": "Vinaigre de canne",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "vinaigre-de-canne",
+    "description": "<p>Dix cannes pressées, le jus laissé à tourner des semaines dans un bocal fermé d'un linge : deux bocaux de vinaigre, si rien ne pourrit.</p>",
+    "cout": {
+      "nourriture": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "conserverie"
+      ],
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "vinaigre-de-canne",
+      "n": 2
+    },
+    "metier": "cuisine",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "vinaigre-de-canne"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

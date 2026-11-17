@@ -1,0 +1,51 @@
+{
+  "_id": "OEg0kStIoGyn2BjW",
+  "_key": "!items!OEg0kStIoGyn2BjW",
+  "name": "Coudre un sac",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "coudre-un-sac",
+    "description": "<p>Six tissus forts (bâche, toile de store, jean), deux cordes, des coutures doublées : un sac de randonnée.</p>",
+    "cout": {
+      "materiaux": 2
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "couture",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "sac-de-randonnee",
+      "n": 1
+    },
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "metier": "couture",
+    "arbre": "moderne",
+    "repond": "bertel"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "coudre-un-sac"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

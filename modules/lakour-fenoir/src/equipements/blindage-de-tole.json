@@ -1,0 +1,39 @@
+{
+  "_id": "IWYjWmqIZzVeSFIx",
+  "_key": "!items!IWYjWmqIZzVeSFIx",
+  "name": "Blindage de tôle et grilles",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "blindage-de-tole",
+    "categorie": "amenagement",
+    "description": "<p>Des tôles boulonnées sur les portières, des grilles de fenêtre sur les vitres : dans le véhicule, chaque touche d'un Livide qui passe la main ou la tête est parée sur 5 ou 6, comme un bouclier de tôle. Le MJ le pose sur un véhicule du groupe ; la voiture est plus lourde et plus lente sur les pentes.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "amenagement": {
+      "parade": 5
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "blindage-de-tole"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

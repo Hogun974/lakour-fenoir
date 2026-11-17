@@ -1,0 +1,42 @@
+{
+  "_id": "V45eWuUJFJD4zseQ",
+  "_key": "!items!V45eWuUJFJD4zseQ",
+  "name": "Pince de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pince-de-recuperation",
+    "categorie": "outil",
+    "description": "<p>Deux bras de ferraille et un boulon : elle coupe le fil de fer, tient les câbles, démonte une épave.</p>",
+    "bonus": {
+      "bricolage": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "pince"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pince-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

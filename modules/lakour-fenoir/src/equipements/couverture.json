@@ -1,0 +1,39 @@
+{
+  "_id": "jDf6Mhnx8fzxXKc0",
+  "_key": "!items!jDf6Mhnx8fzxXKc0",
+  "name": "Couverture",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "couverture",
+    "categorie": "vie",
+    "description": "<p>Une couverture cousue de vieux draps et de rideaux : les nuits des Hauts sont froides. Roulée sur le sac, elle fait de quoi bivouaquer.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 0.25
+    },
+    "marque": "",
+    "bivouac": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "couverture"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

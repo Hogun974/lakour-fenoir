@@ -1,0 +1,50 @@
+{
+  "_id": "KlZW7CHgvGKPULIf",
+  "_key": "!items!KlZW7CHgvGKPULIf",
+  "name": "Lampe à huile",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "lampe-a-huile",
+    "description": "<p>Un bocal, une mèche de tissu tordu passée dans un couvercle percé, de l'huile de bancoul.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "lampe-a-huile",
+      "n": 1
+    },
+    "sac": true,
+    "objets": [
+      {
+        "cle": "huile-de-bancoul",
+        "n": 1
+      }
+    ],
+    "arbre": "lontan",
+    "repond": "lampes-electriques"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lampe-a-huile"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

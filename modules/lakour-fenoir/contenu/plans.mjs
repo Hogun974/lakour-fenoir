@@ -7,6 +7,8 @@
 import { installation, equipement, journal, table, MODULE } from "./aides.mjs";
 import { INSTALLATIONS } from "./installations.mjs";
 import { RECETTES } from "./recettes.mjs";
+import { PLANS_ATELIERS, COUVRE_CAHIER_GRAMOUNE } from "./ateliers.mjs";
+import { RECETTES_ATELIERS } from "./recettes-3d.mjs";
 import { REGIONS, SITES } from "./monde.mjs";
 import { BESTIAIRE } from "./bestiaire.mjs";
 
@@ -102,7 +104,7 @@ export const PLANS_CONSTRUCTION = [
   R("gazogene", [65, 90]),
   // Les plans uniques : un seul exemplaire dans la partie.
   { cle: "cahier-de-tisanes-de-la-gramoune", unique: true, nom: "Cahier de tisanes d'une gramoune", rarete: [90, 100], objet: "cahier-de-gramoune",
-    couvre: ["recette:tisanes", "recette:rimed-lontan"], enseigne: ["zerbaz"], lieux: ["case-creole"],
+    couvre: ["recette:tisanes", "recette:rimed-lontan", ...COUVRE_CAHIER_GRAMOUNE], enseigne: ["zerbaz"], lieux: ["case-creole"],
     description: `Un cahier d'écolier aux pages jaunies, retrouvé au fond d'une armoire de case : les tisanes d'une gramoune morte avant le jour zéro, avec ses mots à elle. Ayapana pour le ventre, citronnelle pour la fièvre, bois de quivi, faham, les doses comptées « en cuillères à café de mon fils ». Il n'en existe qu'un.` },
   { cle: "carnet-du-fontainier", unique: true, nom: "Carnet du fontainier", rarete: [85, 100], objet: "carnet-du-fontainier",
     couvre: ["captage-de-source", "conduite-de-bambou", "citerne-lontan", "puits-a-balancier"], enseigne: ["hydraulique-rurale"], lieux: [],
@@ -111,6 +113,10 @@ export const PLANS_CONSTRUCTION = [
     couvre: ["pico-hydro", "batteries", "panneaux-solaires"], enseigne: ["electricite-solaire"], lieux: [],
     description: `Le registre d'un technicien de la salle des machines, et tout ce qu'il y a noté pour lui seul. Il n'en existe qu'un, et il est resté au fond de la gorge.` }
 ];
+
+// Le registre complet : les plans d'ici et ceux des ateliers et des recettes du lot 6 (contenu/ateliers.mjs ; leur liste est dans le
+// journal du MJ « Les ateliers et les outils », le journal « Les plans » garde la sienne).
+export const PLANS_REGISTRE = [...PLANS_CONSTRUCTION, ...PLANS_ATELIERS];
 
 // ---------------------------------------------------------------- Le plan se trouve là où le savoir vivait : les plans propres d'un site
 // (on les trouve même rares, en fouillant ce site, trois fois plus souvent que les autres).
@@ -207,7 +213,7 @@ export const LIEUX_A_PLANS = [
 
 // ---------------------------------------------------------------- Noms
 const nomInstallation = cle => INSTALLATIONS.find(i => i.system.cle === cle)?.name ?? INSTALLATIONS_PLANS.find(i => i.system.cle === cle)?.name ?? cle;
-const nomRecette = cle => RECETTES.find(r => r.system.cle === cle)?.name ?? cle;
+const nomRecette = cle => RECETTES.find(r => r.system.cle === cle)?.name ?? RECETTES_ATELIERS.find(r => r.system.cle === cle)?.name ?? cle;
 const nomCible = k => (k.startsWith("recette:") ? `${nomRecette(k.slice(8))} (recette)` : nomInstallation(k));
 export const nomPlan = cle => {
   const p = PLANS_CONSTRUCTION.find(x => x.cle === cle);

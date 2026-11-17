@@ -1,0 +1,43 @@
+{
+  "_id": "wQ6tdYF1bIUdexJW",
+  "_key": "!items!wQ6tdYF1bIUdexJW",
+  "name": "Pelle et pioche de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pelle-pioche-de-recuperation",
+    "categorie": "outil",
+    "description": "<p>Une pelle de tôle pliée, un fer de pioche fait d'une barre de ferraille : on creuse la tranchée, la fosse, la tombe.</p>",
+    "bonus": {
+      "endurance": 1,
+      "bricolage": 1
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "pelle-pioche"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pelle-pioche-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

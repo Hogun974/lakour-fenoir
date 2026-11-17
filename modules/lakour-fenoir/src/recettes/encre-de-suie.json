@@ -20,7 +20,8 @@
     "produit": {
       "equipement": "encre-de-suie",
       "n": 2
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

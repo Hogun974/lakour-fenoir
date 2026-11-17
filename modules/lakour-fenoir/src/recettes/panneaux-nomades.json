@@ -18,12 +18,16 @@
       "savoirs": [
         "electricite-solaire"
       ],
-      "installation": "atelier"
+      "installation": {
+        "metier": "electricite",
+        "niveau": 1
+      }
     },
     "produit": {
       "equipement": "panneaux-demontables",
       "n": 1
-    }
+    },
+    "metier": "electricite"
   },
   "effects": [],
   "folder": null,

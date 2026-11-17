@@ -1,0 +1,43 @@
+{
+  "_id": "FyQ7SCJWBciiEsbe",
+  "_key": "!items!FyQ7SCJWBciiEsbe",
+  "name": "Hache de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "hache-de-recuperation",
+    "categorie": "outil",
+    "description": "<p>Un fer de ferraille découpé au burin, emmanché et goupillé au fil de fer : elle abat un arbre, et le reste.</p>",
+    "bonus": {
+      "bricolage": 1,
+      "combat": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "hache"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "hache-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

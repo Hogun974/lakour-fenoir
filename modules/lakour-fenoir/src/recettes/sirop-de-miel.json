@@ -1,0 +1,49 @@
+{
+  "_id": "8AgJdfBOIsCgOMl6",
+  "_key": "!items!8AgJdfBOIsCgOMl6",
+  "name": "Sirop de miel aux zerbaz",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "sirop-de-miel",
+    "description": "<p>Du miel des ruches, des zerbaz infusés dedans à feu très doux : deux flacons, à la cuillère.</p>",
+    "cout": {
+      "nourriture": 1,
+      "plantes": 2
+    },
+    "travail": 2,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "zerbaz"
+      ],
+      "installation": {
+        "metier": "tisanerie",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "sirop-de-miel",
+      "n": 2
+    },
+    "metier": "tisanerie",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sirop-de-miel"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

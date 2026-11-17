@@ -1,0 +1,40 @@
+{
+  "_id": "SbdNyphTHNDTDiU1",
+  "_key": "!items!SbdNyphTHNDTDiU1",
+  "name": "Éclat de basalte",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "eclat-de-basalte",
+    "categorie": "outil",
+    "description": "<p>Un éclat de galet de basalte, frappé contre un autre jusqu'à trouver le fil : le premier tranchant, à mains nues. Il coupe mal et s'émousse vite, mais il coupe.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "couteau"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "eclat-de-basalte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

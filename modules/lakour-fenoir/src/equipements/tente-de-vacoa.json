@@ -1,0 +1,38 @@
+{
+  "_id": "BLutJmrrlAybzT2Z",
+  "_key": "!items!BLutJmrrlAybzT2Z",
+  "name": "Tente de vacoa",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "tente-de-vacoa",
+    "categorie": "vie",
+    "description": "<p>La <em>tente</em>, à La Réunion, c'est le panier tressé qu'on porte au marché et au champ, pas l'abri de toile. Celle-ci a deux anses et sent la feuille sèche.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 0.25
+    },
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tente-de-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

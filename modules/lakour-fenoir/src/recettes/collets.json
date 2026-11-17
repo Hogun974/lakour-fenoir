@@ -21,7 +21,8 @@
     "produit": {
       "equipement": "collets-et-nasses",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

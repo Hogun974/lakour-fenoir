@@ -1,0 +1,167 @@
+{
+  "_id": "f0zU0F0kmEAKW2oI",
+  "_key": "!items!f0zU0F0kmEAKW2oI",
+  "name": "Atelier de couture",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "couture",
+    "categorie": "vie",
+    "description": "<p>Une table, des ciseaux, du fil de pêche, des aiguilles de matelassier, puis une machine à coudre à pédale sortie d'une case des Hauts. On y retaille les bâches, on y coud les sacs, on y rapièce ce qui doit encore durer une saison.</p>",
+    "niveau": 0,
+    "niveauMax": 3,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 2,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 8
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 5,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 14
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ],
+    "metiers": [
+      "couture"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "couture"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -19,14 +19,15 @@
         "moteurs-de-fortune"
       ],
       "installation": {
-        "cle": "atelier",
+        "metier": "mecanique",
         "niveau": 1
       }
     },
     "produit": {
       "equipement": "voiture-a-l-alcool",
       "n": 1
-    }
+    },
+    "metier": "mecanique"
   },
   "effects": [],
   "folder": null,

@@ -1,0 +1,39 @@
+{
+  "_id": "CrIfQEhqjOdsQbRq",
+  "_key": "!items!CrIfQEhqjOdsQbRq",
+  "name": "Capeline de vacoa",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "capeline-de-vacoa",
+    "categorie": "vie",
+    "description": "<p>Le grand chapeau de vacoa des planteurs : dehors, à l'heure où le soleil tape, il ôte le malus de la chaleur.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "protege": [
+      "soleil"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "capeline-de-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

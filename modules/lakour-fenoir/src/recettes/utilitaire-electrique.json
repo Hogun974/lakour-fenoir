@@ -1,0 +1,60 @@
+{
+  "_id": "TQNhILPXBt0TLuxO",
+  "_key": "!items!TQNhILPXBt0TLuxO",
+  "name": "Petit utilitaire électrique",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "utilitaire-electrique",
+    "description": "<p>Un moteur électrique de voiturette, quatre batteries de voiture, quatre roues, douze ferrailles, deux tôles, six câbles, des composants, un régulateur de charge, seize boîtes de vis : le chantier d'une saison.</p>",
+    "cout": {
+      "materiaux": 4,
+      "pieces": 10
+    },
+    "travail": 16,
+    "competence": "bricolage",
+    "difficulte": "extreme",
+    "requiert": {
+      "savoirs": [
+        "mecanique",
+        "electricite-solaire"
+      ],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 3
+      }
+    },
+    "produit": {
+      "equipement": "utilitaire-electrique",
+      "n": 1
+    },
+    "outils": [
+      "pince",
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "regulateur-de-charge",
+        "n": 1
+      }
+    ],
+    "metier": "mecanique",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "utilitaire-electrique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

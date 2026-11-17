@@ -1,0 +1,58 @@
+{
+  "_id": "OrMBcoQoV27t1oQ6",
+  "_key": "!items!OrMBcoQoV27t1oQ6",
+  "name": "Charrette à bœufs",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "charrette-a-boeufs",
+    "description": "<p>Un tronc pour le timon, seize planches, deux roues, des ferrures, des cordes, quatre-vingts clous, et un joug taillé à la main. Il faut deux bœufs moka dressés pour la tirer : la charrette ne les donne pas.</p>",
+    "cout": {
+      "materiaux": 8
+    },
+    "travail": 12,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "elevage"
+      ],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "charrette-a-boeufs",
+      "n": 1
+    },
+    "outils": [
+      "scie",
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "roue-de-bois",
+        "n": 2
+      }
+    ],
+    "metier": "etabli",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "charrette-a-boeufs"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

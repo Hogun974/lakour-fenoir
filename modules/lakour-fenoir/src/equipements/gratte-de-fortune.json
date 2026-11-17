@@ -1,0 +1,40 @@
+{
+  "_id": "9oT6NGKDlELS0uIK",
+  "_key": "!items!9oT6NGKDlELS0uIK",
+  "name": "Gratte de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "gratte-de-fortune",
+    "categorie": "outil",
+    "description": "<p>Une pierre plate emmanchée en travers : la houe d'avant les houes, pour sarcler et butter.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "gratte"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gratte-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

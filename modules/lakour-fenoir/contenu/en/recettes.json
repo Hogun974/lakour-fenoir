@@ -1,4 +1,48 @@
 {
+  "recettes/0qv95AxMsgbeXQHd": {
+    "_nom": "Jarre de terre cuite",
+    "name": {
+      "fr": "Jarre de terre cuite",
+      "en": "Earthenware jar"
+    },
+    "system.description": {
+      "fr": "<p>De l'argile de la ravine, montée en colombins à la main, séchée à l'ombre, cuite dans le four de la forge.</p>",
+      "en": "<p>Clay from the ravine, built up in coils by hand, dried in the shade, fired in the forge's oven.</p>"
+    }
+  },
+  "recettes/1deEaU0io89vdPvA": {
+    "_nom": "Tisane de la gramoune",
+    "name": {
+      "fr": "Tisane de la gramoune",
+      "en": "The gramoune's herbal tea"
+    },
+    "system.description": {
+      "fr": "<p>Les plantes et les doses du cahier d'une gramoune : celui qui a le cahier la fait plus vite (son plan). Deux bols.</p>",
+      "en": "<p>The plants and doses from a gramoune's notebook: whoever has the notebook makes it faster (its plan). Two bowls.</p>"
+    }
+  },
+  "recettes/1utnEl6ZUtEVwuC6": {
+    "_nom": "Baume à la cire",
+    "name": {
+      "fr": "Baume à la cire",
+      "en": "Beeswax balm"
+    },
+    "system.description": {
+      "fr": "<p>La cire des ruches fondue avec l'huile de bancoul et deux brassées de zerbaz, coulée en bocal : deux pots.</p>",
+      "en": "<p>Beeswax melted with bancoul oil and two armfuls of zerbaz, poured into a jar: two pots.</p>"
+    }
+  },
+  "recettes/2O19qyCWKX5KAQ2M": {
+    "_nom": "Lance forgée",
+    "name": {
+      "fr": "Lance forgée",
+      "en": "Forged spear"
+    },
+    "system.description": {
+      "fr": "<p>Un fer de lance forgé et trempé, emmanché sur un bambou plein.</p>",
+      "en": "<p>A forged and tempered spearhead, fitted on a solid bamboo.</p>"
+    }
+  },
   "recettes/2RjHb8GsOBEOSg9r": {
     "_nom": "Chauffe-eau solaire de fortune",
     "name": {
@@ -8,6 +52,61 @@
     "system.description": {
       "fr": "<p>Un serpentin de tuyau d'arrosage noir sur le toit, un fût isolé de vieilles couvertures, un robinet : de l'eau chaude au soleil.</p>",
       "en": "<p>A coil of black garden hose on the roof, a drum insulated with old blankets, a tap: hot water from the sun.</p>"
+    }
+  },
+  "recettes/3NvjqTmZhxplZmBx": {
+    "_nom": "Vélo remis en état",
+    "name": {
+      "fr": "Vélo remis en état",
+      "en": "Restored bicycle"
+    },
+    "system.description": {
+      "fr": "<p>Un vieux cadre trouvé dans une cour, deux chambres à air, des vis, des rustines découpées dans une chambre morte : il roule.</p>",
+      "en": "<p>An old frame found in a yard, two inner tubes, screws, patches cut from a dead tube: it rolls.</p>"
+    }
+  },
+  "recettes/3S4ERKYoSwthVHIH": {
+    "_nom": "Ligne de pêche",
+    "name": {
+      "fr": "Ligne de pêche",
+      "en": "Fishing line"
+    },
+    "system.description": {
+      "fr": "<p>Un hameçon tordu à la pince dans du fil de fer, une ligne, une gaulette.</p>",
+      "en": "<p>A hook bent with pliers from wire, a line, a rod.</p>"
+    }
+  },
+  "recettes/3niOzbavxdndRPvQ": {
+    "_nom": "Lessive de cendre",
+    "name": {
+      "fr": "Lessive de cendre",
+      "en": "Ash lye"
+    },
+    "system.description": {
+      "fr": "<p>Un seau de cendre tamisée, de l'eau chaude, une nuit de repos : on décante, et on lave le linge quand il n'y a plus de savon.</p>",
+      "en": "<p>A bucket of sifted ash, hot water, a night's rest: you decant, and wash the linen when there is no soap left.</p>"
+    }
+  },
+  "recettes/4XGh4Z4TD0whjU5C": {
+    "_nom": "Remorque de voiture",
+    "name": {
+      "fr": "Remorque de voiture",
+      "en": "Car trailer"
+    },
+    "system.description": {
+      "fr": "<p>L'essieu et les roues d'une épave, un plateau de tôle, un timon, une boule d'attelage récupérée sur un 4×4.</p>",
+      "en": "<p>The axle and wheels of a wreck, a sheet-metal platform, a drawbar, a tow ball salvaged from a 4×4.</p>"
+    }
+  },
+  "recettes/4fyCPXB0YENkWeAA": {
+    "_nom": "Gratte de fortune",
+    "name": {
+      "fr": "Gratte de fortune",
+      "en": "Makeshift hoe"
+    },
+    "system.description": {
+      "fr": "<p>Une pierre plate emmanchée en travers, liée à la corde.</p>",
+      "en": "<p>A flat stone hafted crosswise, tied with rope.</p>"
     }
   },
   "recettes/5HIPC9w7NaleygmE": {
@@ -21,6 +120,94 @@
       "en": "<p>A drum, a firebox, a filter, pipes to the intake: one of the group's trucks (the GM removes it) will run on dry wood.</p>"
     }
   },
+  "recettes/5IYkjsOXw8GUH2YU": {
+    "_nom": "Plants en godets",
+    "name": {
+      "fr": "Plants en godets",
+      "en": "Seedlings in pots"
+    },
+    "system.description": {
+      "fr": "<p>Des graines semées dans des godets de terre (des pots de yaourt, des bambous coupés) à l'ombre de la case : des plants levés, à repiquer vite.</p>",
+      "en": "<p>Seeds sown in pots of earth (yoghurt pots, cut bamboo) in the shade of the house: seedlings up, to be planted out quickly.</p>"
+    }
+  },
+  "recettes/5LYeh23pbFb7MrWn": {
+    "_nom": "Eau javellisée",
+    "name": {
+      "fr": "Eau javellisée",
+      "en": "Bleached water"
+    },
+    "system.description": {
+      "fr": "<p>Une bouteille d'eau de Javel trouvée sous un évier, quelques gouttes par bidon et une demi-heure d'attente : l'eau de l'abri est traitée pour une semaine. Rapide, tant qu'il reste de la Javel.</p>",
+      "en": "<p>A bottle of bleach found under a sink, a few drops per can and half an hour's wait: the shelter's water is treated for a week. Quick, as long as there is bleach left.</p>"
+    }
+  },
+  "recettes/5ZKLwS1CIrmXVIoi": {
+    "_nom": "Pelle et pioche de récupération",
+    "name": {
+      "fr": "Pelle et pioche de récupération",
+      "en": "Salvaged shovel and pick"
+    },
+    "system.description": {
+      "fr": "<p>Une tôle pliée, deux barres de ferraille, un manche, des clous.</p>",
+      "en": "<p>A folded sheet of metal, two scrap bars, a handle, nails.</p>"
+    }
+  },
+  "recettes/5iM4tzsTtiY23skp": {
+    "_nom": "Cataplasme de feuilles",
+    "name": {
+      "fr": "Cataplasme de feuilles",
+      "en": "Leaf poultice"
+    },
+    "system.description": {
+      "fr": "<p>Des feuilles écrasées entre deux pierres, posées sur la plaie et tenues par une lanière de vacoa.</p>",
+      "en": "<p>Leaves crushed between two stones, laid on the wound and held by a strip of vacoa.</p>"
+    }
+  },
+  "recettes/5ruI2gr7060dvga6": {
+    "_nom": "Bouclier doublé et cerclé",
+    "name": {
+      "fr": "Bouclier doublé et cerclé",
+      "en": "Doubled and rimmed shield"
+    },
+    "system.description": {
+      "fr": "<p>Le bouclier de tôle, une seconde tôle, deux ferrailles battues en cercle et rivées à chaud, vingt clous.</p>",
+      "en": "<p>The sheet-iron shield, a second sheet, two bits of scrap beaten into a rim and riveted hot, twenty nails.</p>"
+    }
+  },
+  "recettes/5tCcNNuRZnn3CqL5": {
+    "_nom": "Gants de travail",
+    "name": {
+      "fr": "Gants de travail",
+      "en": "Work gloves"
+    },
+    "system.description": {
+      "fr": "<p>Deux tissus doublés, cousus serré.</p>",
+      "en": "<p>Two doubled cloths, tightly sewn.</p>"
+    }
+  },
+  "recettes/6oYNCi9VseFjLv4K": {
+    "_nom": "Sac de goni",
+    "name": {
+      "fr": "Sac de goni",
+      "en": "Goni sack"
+    },
+    "system.description": {
+      "fr": "<p>Trois tissus de jute cousus en sac, avec un lien.</p>",
+      "en": "<p>Three jute cloths sewn into a sack, with a tie.</p>"
+    }
+  },
+  "recettes/6tXxfCmvTmB3Mizc": {
+    "_nom": "Batterie remise en état",
+    "name": {
+      "fr": "Batterie remise en état",
+      "en": "Restored battery"
+    },
+    "system.description": {
+      "fr": "<p>Une batterie de voiture vidée, nettoyée, rechargée lentement ; deux câbles, une poignée, des prises : une batterie qu'on emporte.</p>",
+      "en": "<p>A car battery drained, cleaned, slowly recharged; two cables, a handle, sockets: a battery you can carry.</p>"
+    }
+  },
   "recettes/7JuZNH2SQ4MCyAaV": {
     "_nom": "Gourde filtrante de fortune",
     "name": {
@@ -32,6 +219,28 @@
       "en": "<p>A bottle, cotton wool, washed sand, crushed charcoal: you filter, then boil or leave in the sun.</p>"
     }
   },
+  "recettes/7LzhClfhydVKTGHN": {
+    "_nom": "Pied-de-biche de récupération",
+    "name": {
+      "fr": "Pied-de-biche de récupération",
+      "en": "Salvaged crowbar"
+    },
+    "system.description": {
+      "fr": "<p>Trois barres de ferraille, une aplatie et recourbée au feu.</p>",
+      "en": "<p>Three scrap bars, one flattened and bent in the fire.</p>"
+    }
+  },
+  "recettes/7e9vZC6biyWkurCE": {
+    "_nom": "Hache de fortune",
+    "name": {
+      "fr": "Hache de fortune",
+      "en": "Makeshift axe"
+    },
+    "system.description": {
+      "fr": "<p>Un galet taillé en biseau, emmanché dans une branche fendue au couteau et serré à la corde mouillée, qui se resserre en séchant.</p>",
+      "en": "<p>A pebble shaped to a bevel, hafted in a branch split with the knife and tied with wet rope, which tightens as it dries.</p>"
+    }
+  },
   "recettes/83vFZKoyGyRF5GKg": {
     "_nom": "Vélo-cargo",
     "name": {
@@ -41,6 +250,50 @@
     "system.description": {
       "fr": "<p>Deux vélos, une caisse de bois, des soudures ou des colliers : porter des bidons et des sacs sans carburant.</p>",
       "en": "<p>Two bicycles, a wooden crate, welds or cable ties: carry jerrycans and sacks without fuel.</p>"
+    }
+  },
+  "recettes/8AgJdfBOIsCgOMl6": {
+    "_nom": "Sirop de miel aux zerbaz",
+    "name": {
+      "fr": "Sirop de miel aux zerbaz",
+      "en": "Honey and zerbaz syrup"
+    },
+    "system.description": {
+      "fr": "<p>Du miel des ruches, des zerbaz infusés dedans à feu très doux : deux flacons, à la cuillère.</p>",
+      "en": "<p>Honey from the hives, zerbaz steeped in it over a very low heat: two bottles, by the spoonful.</p>"
+    }
+  },
+  "recettes/8EDnoFCvQvpIgDyM": {
+    "_nom": "Sel de mer",
+    "name": {
+      "fr": "Sel de mer",
+      "en": "Sea salt"
+    },
+    "system.description": {
+      "fr": "<p>Douze seaux d'eau de mer réduits sur le feu jusqu'à ce que le fond blanchisse : deux bocaux de sel. Il faut la mer à portée, ou des bidons d'eau de mer rapportés.</p>",
+      "en": "<p>Twelve buckets of seawater boiled down over the fire until the bottom turns white: two jars of salt. You need the sea within reach, or cans of seawater brought back.</p>"
+    }
+  },
+  "recettes/8W4e3JzWp0acEw7e": {
+    "_nom": "Lance de récupération",
+    "name": {
+      "fr": "Lance de récupération",
+      "en": "Salvaged spear"
+    },
+    "system.description": {
+      "fr": "<p>Un manche droit, deux ferrailles battues en fer de lance, du fil de fer.</p>",
+      "en": "<p>A straight shaft, two bits of scrap beaten into a spearhead, wire.</p>"
+    }
+  },
+  "recettes/8aBzRwLD9Hse3Yn0": {
+    "_nom": "Gratte forgée",
+    "name": {
+      "fr": "Gratte forgée",
+      "en": "Forged hoe"
+    },
+    "system.description": {
+      "fr": "<p>La houe des carreaux de l'île : trois ferrailles, un sac de charbon, un manche.</p>",
+      "en": "<p>The hoe of the island's vegetable plots: three bits of scrap, a sack of charcoal, a handle.</p>"
     }
   },
   "recettes/8aqgHi3ZUxy4IUE0": {
@@ -63,6 +316,39 @@
     "system.description": {
       "fr": "<p>Un cadre de bois chevillé, une assise tressée de vacoa : une soirée de travail pour des années de veillées.</p>",
       "en": "<p>A pegged wooden frame, a seat woven from vacoa: one evening's work for years of evenings.</p>"
+    }
+  },
+  "recettes/8mY8EMmJYwjCUDql": {
+    "_nom": "Arc renforcé",
+    "name": {
+      "fr": "Arc renforcé",
+      "en": "Reinforced bow"
+    },
+    "system.description": {
+      "fr": "<p>L'arc de chasse doublé au dos d'une lame de ressort ligaturée, deux cordes neuves, du fil de fer.</p>",
+      "en": "<p>The hunting bow backed with a lashed spring leaf, two new strings, wire.</p>"
+    }
+  },
+  "recettes/9tQ1gvqrPN7he6Ge": {
+    "_nom": "Pierre à aiguiser",
+    "name": {
+      "fr": "Pierre à aiguiser",
+      "en": "Whetstone"
+    },
+    "system.description": {
+      "fr": "<p>Un galet au grain fin, choisi au bord de la ravine et dressé à plat sur une dalle, avec de l'eau et de la patience.</p>",
+      "en": "<p>A fine-grained pebble, chosen at the edge of the ravine and ground flat on a slab, with water and patience.</p>"
+    }
+  },
+  "recettes/AW3BSFLbWL8gHVWP": {
+    "_nom": "Arbalète d'acier à levier",
+    "name": {
+      "fr": "Arbalète d'acier à levier",
+      "en": "Steel lever crossbow"
+    },
+    "system.description": {
+      "fr": "<p>L'arbalète de fortune, un ressort forgé en arc, quatre ferrailles pour le levier, deux boîtes de vis.</p>",
+      "en": "<p>The makeshift crossbow, a spring forged into a bow, four bits of scrap for the lever, two boxes of screws.</p>"
     }
   },
   "recettes/Buvxj39uKMreBfcT": {
@@ -98,6 +384,127 @@
       "en": "<p>Achards, rougails in jars, smoked meat, dried fish: what was going to rot will keep for months.</p>"
     }
   },
+  "recettes/CeaTWYwgFgdXx4Yt": {
+    "_nom": "Remorque de motoculteur",
+    "name": {
+      "fr": "Remorque de motoculteur",
+      "en": "Two-wheel tractor trailer"
+    },
+    "system.description": {
+      "fr": "<p>Dix ferrailles, deux tôles, six planches, deux roues, douze boîtes de vis : le plateau que tire le motoculteur.</p>",
+      "en": "<p>Ten bits of scrap, two sheets of metal, six planks, two wheels, twelve boxes of screws: the platform the two-wheel tractor pulls.</p>"
+    }
+  },
+  "recettes/Cfenr8yuw8RcHQgw": {
+    "_nom": "Remorque de vélo",
+    "name": {
+      "fr": "Remorque de vélo",
+      "en": "Bicycle trailer"
+    },
+    "system.description": {
+      "fr": "<p>Quatre ferrailles, deux planches, deux roues, des vis, du fil de fer : une remorque qui s'accroche derrière le vélo du groupe.</p>",
+      "en": "<p>Four bits of scrap, two planks, two wheels, screws, wire: a trailer that hitches behind the group's bicycle.</p>"
+    }
+  },
+  "recettes/CiCEe3FbN1h1Vv3J": {
+    "_nom": "Remettre en état une carabine .22",
+    "name": {
+      "fr": "Remettre en état une carabine .22",
+      "en": "Restore a .22 rifle"
+    },
+    "system.description": {
+      "fr": "<p>La carabine démontée, nettoyée, huilée, son ressort changé.</p>",
+      "en": "<p>The rifle taken apart, cleaned, oiled, its spring changed.</p>"
+    }
+  },
+  "recettes/CkJyDHnd4n6V09nD": {
+    "_nom": "Rhum de canne",
+    "name": {
+      "fr": "Rhum de canne",
+      "en": "Cane rum"
+    },
+    "system.description": {
+      "fr": "<p>Trente cannes pressées, le jus fermenté une semaine, passé une fois à l'alambic : deux bouteilles d'un rhum rude.</p>",
+      "en": "<p>Thirty canes pressed, the juice fermented for a week, passed once through the still: two bottles of a rough rum.</p>"
+    }
+  },
+  "recettes/D5cDimSbMfHJOlhD": {
+    "_nom": "Remplir une lampe à huile",
+    "name": {
+      "fr": "Remplir une lampe à huile",
+      "en": "Refill an oil lamp"
+    },
+    "system.description": {
+      "fr": "<p>Une bouteille d'huile de bancoul, une mèche recoupée : la lampe repart pour trois nuits.</p>",
+      "en": "<p>A bottle of bancoul oil, a trimmed wick: the lamp goes again for three nights.</p>"
+    }
+  },
+  "recettes/DBtupTHRR97eNoWZ": {
+    "_nom": "Scie forgée",
+    "name": {
+      "fr": "Scie forgée",
+      "en": "Forged saw"
+    },
+    "system.description": {
+      "fr": "<p>Une lame de ressort recuite, taillée à la lime, avoyée, retrempée, sur un arc de planche.</p>",
+      "en": "<p>A spring leaf annealed, filed, set, tempered again, on a plank bow.</p>"
+    }
+  },
+  "recettes/DNshhDpFTe99kksN": {
+    "_nom": "Truelle forgée",
+    "name": {
+      "fr": "Truelle forgée",
+      "en": "Forged trowel"
+    },
+    "system.description": {
+      "fr": "<p>Deux ferrailles battues en triangle, un sac de charbon, une branche.</p>",
+      "en": "<p>Two bits of scrap beaten into a triangle, a sack of charcoal, a branch.</p>"
+    }
+  },
+  "recettes/DVQ3v4sO4Jppoqol": {
+    "_nom": "Capeline de vacoa",
+    "name": {
+      "fr": "Capeline de vacoa",
+      "en": "Vacoa capeline"
+    },
+    "system.description": {
+      "fr": "<p>Douze feuilles de vacoa tressées en spirale, un large bord contre le soleil.</p>",
+      "en": "<p>Twelve vacoa leaves woven in a spiral, a wide brim against the sun.</p>"
+    }
+  },
+  "recettes/DmfHaObNwM1GXWeo": {
+    "_nom": "Tisane d'ayapana",
+    "name": {
+      "fr": "Tisane d'ayapana",
+      "en": "Ayapana tea"
+    },
+    "system.description": {
+      "fr": "<p>Des feuilles d'ayapana, de l'eau frémissante, un couvercle : celle que les gramounes donnent pour le ventre. Deux bols.</p>",
+      "en": "<p>Ayapana leaves, simmering water, a lid: the one the gramounes give for the stomach. Two bowls.</p>"
+    }
+  },
+  "recettes/DmxipDdrTJ5DCzhn": {
+    "_nom": "Roue de bois cerclée",
+    "name": {
+      "fr": "Roue de bois cerclée",
+      "en": "Iron-rimmed wooden wheel"
+    },
+    "system.description": {
+      "fr": "<p>Quatre planches chevillées en disque, deux ferrailles battues en cercle et posées à chaud, vingt clous.</p>",
+      "en": "<p>Four planks pegged into a disc, two bits of scrap beaten into a rim and fitted hot, twenty nails.</p>"
+    }
+  },
+  "recettes/EOQzLEvXxjmCmoWt": {
+    "_nom": "Scie de récupération",
+    "name": {
+      "fr": "Scie de récupération",
+      "en": "Salvaged saw"
+    },
+    "system.description": {
+      "fr": "<p>Une lame de ressort taillée en dents à la lime, tendue sur un arc de bois par une vis.</p>",
+      "en": "<p>A spring leaf filed into teeth, stretched on a wooden bow by a screw.</p>"
+    }
+  },
   "recettes/EQKtEz46LIaK1Rdx": {
     "_nom": "Natte de vacoa",
     "name": {
@@ -107,6 +514,17 @@
     "system.description": {
       "fr": "<p>Des lanières de vacoa tressées à plat, bord replié : une natte pour dormir, sécher, s'asseoir.</p>",
       "en": "<p>Strips of vacoa woven flat, edge folded over: a mat to sleep on, dry things on, sit on.</p>"
+    }
+  },
+  "recettes/ESdIrv6ZEVbfaiaD": {
+    "_nom": "Achards",
+    "name": {
+      "fr": "Achards",
+      "en": "Achards"
+    },
+    "system.description": {
+      "fr": "<p>Les légumes en lanières, ébouillantés, au vinaigre et au piment, en bocaux : ils tiennent des mois.</p>",
+      "en": "<p>Vegetables in strips, blanched, in vinegar and chilli, in jars: they keep for months.</p>"
     }
   },
   "recettes/FnsYcbklzcALvqjB": {
@@ -120,6 +538,116 @@
       "en": "<p>A receiver stripped from an old set, a bicycle dynamo, a crank: listen to the island without batteries.</p>"
     }
   },
+  "recettes/FwLhOpAvLVdXXfe7": {
+    "_nom": "Forger une hache",
+    "name": {
+      "fr": "Forger une hache",
+      "en": "Forge an axe"
+    },
+    "system.description": {
+      "fr": "<p>Six ferrailles soudées au feu, le tranchant rapporté et trempé, un manche taillé dans le goyavier.</p>",
+      "en": "<p>Six bits of scrap forge-welded, the edge added and tempered, a handle cut from guava wood.</p>"
+    }
+  },
+  "recettes/GLUbnJhLcd8XCKgJ": {
+    "_nom": "Charrette à bras",
+    "name": {
+      "fr": "Charrette à bras",
+      "en": "Handcart"
+    },
+    "system.description": {
+      "fr": "<p>Huit planches, deux roues de bois, quatre gaulettes, quarante chevilles, deux cordes : un plateau et deux brancards.</p>",
+      "en": "<p>Eight planks, two wooden wheels, four rods, forty pegs, two ropes: a platform and two shafts.</p>"
+    }
+  },
+  "recettes/HBdyrrO3PLn9qXOq": {
+    "_nom": "Régulateur de charge",
+    "name": {
+      "fr": "Régulateur de charge",
+      "en": "Charge controller"
+    },
+    "system.description": {
+      "fr": "<p>Quatre lots de composants dessoudés de chargeurs et de vieux onduleurs, remontés sur une carte, deux câbles : sans lui, les panneaux tuent les batteries.</p>",
+      "en": "<p>Four lots of components desoldered from chargers and old inverters, rebuilt on a board, two cables: without it, panels kill batteries.</p>"
+    }
+  },
+  "recettes/IkAx5DNxvdVtyttS": {
+    "_nom": "Rhum arrangé",
+    "name": {
+      "fr": "Rhum arrangé",
+      "en": "Rhum arrangé"
+    },
+    "system.description": {
+      "fr": "<p>Deux bouteilles de rhum de canne où macèrent des zerbaz, un mois : faute d'alcool fort, on nettoie une plaie avec. Deux bouteilles valent un alcool désinfectant.</p>",
+      "en": "<p>Two bottles of cane rum with zerbaz steeping in them, for a month: lacking strong alcohol, you clean a wound with it. Two bottles are worth one disinfectant alcohol.</p>"
+    }
+  },
+  "recettes/JCmS9HDLcxcyBk5n": {
+    "_nom": "Cage de bambou",
+    "name": {
+      "fr": "Cage de bambou",
+      "en": "Bamboo cage"
+    },
+    "system.description": {
+      "fr": "<p>Six gaulettes, une corde : une cage pour une poule ou un lapin.</p>",
+      "en": "<p>Six rods, a rope: a cage for a hen or a rabbit.</p>"
+    }
+  },
+  "recettes/KR7ZB5bXg875tcxh": {
+    "_nom": "Remettre en état un fusil de chasse",
+    "name": {
+      "fr": "Remettre en état un fusil de chasse",
+      "en": "Restore a hunting shotgun"
+    },
+    "system.description": {
+      "fr": "<p>Le fusil démonté pièce à pièce, nettoyé, huilé à l'huile de bancoul, un ressort et deux boîtes de vis changés.</p>",
+      "en": "<p>The shotgun taken apart piece by piece, cleaned, oiled with bancoul oil, a spring and two boxes of screws changed.</p>"
+    }
+  },
+  "recettes/KlZW7CHgvGKPULIf": {
+    "_nom": "Lampe à huile",
+    "name": {
+      "fr": "Lampe à huile",
+      "en": "Oil lamp"
+    },
+    "system.description": {
+      "fr": "<p>Un bocal, une mèche de tissu tordu passée dans un couvercle percé, de l'huile de bancoul.</p>",
+      "en": "<p>A jar, a twisted cloth wick passed through a pierced lid, bancoul oil.</p>"
+    }
+  },
+  "recettes/Ky0dvu8NJP7Lw9wY": {
+    "_nom": "Vouve",
+    "name": {
+      "fr": "Vouve",
+      "en": "Vouve"
+    },
+    "system.description": {
+      "fr": "<p>Huit gaulettes, dix feuilles de vacoa et une corde : la nasse en entonnoir qu'on cale dans le courant.</p>",
+      "en": "<p>Eight rods, ten vacoa leaves and a rope: the funnel trap you wedge in the current.</p>"
+    }
+  },
+  "recettes/LU4YYpr5F3IDD6eD": {
+    "_nom": "Trousse de secours",
+    "name": {
+      "fr": "Trousse de secours",
+      "en": "First-aid kit"
+    },
+    "system.description": {
+      "fr": "<p>Des pansements, un alcool, un savon, rangés dans une trousse de toile cousue : tout au même endroit, quand il faut aller vite.</p>",
+      "en": "<p>Dressings, an alcohol, a soap, stored in a sewn canvas pouch: everything in the same place, when you have to be quick.</p>"
+    }
+  },
+  "recettes/Lmd9SsCp5ToTQmBk": {
+    "_nom": "Pelle et pioche forgées",
+    "name": {
+      "fr": "Pelle et pioche forgées",
+      "en": "Forged shovel and pick"
+    },
+    "system.description": {
+      "fr": "<p>Six ferrailles battues en pelle et en fer de pioche, un manche.</p>",
+      "en": "<p>Six bits of scrap beaten into a shovel and a pick head, a handle.</p>"
+    }
+  },
   "recettes/MbZqvVVbkxPgJ8rR": {
     "_nom": "Moustiquaires",
     "name": {
@@ -131,6 +659,83 @@
       "en": "<p>Curtains, net curtains, tulle from a fabric shop, re-sewn and stretched over the beds.</p>"
     }
   },
+  "recettes/Mo0MF7udLZevYMrB": {
+    "_nom": "Sabre forgé",
+    "name": {
+      "fr": "Sabre forgé",
+      "en": "Forged cane knife"
+    },
+    "system.description": {
+      "fr": "<p>Une lame de ressort de voiture, chauffée, étirée, recourbée, trempée : elle devient un sabre à canne.</p>",
+      "en": "<p>A car leaf spring, heated, drawn out, curved, tempered: it becomes a cane knife.</p>"
+    }
+  },
+  "recettes/Ni4sH2x0oAfMRdEc": {
+    "_nom": "Pince coupante forgée",
+    "name": {
+      "fr": "Pince coupante forgée",
+      "en": "Forged cutting pliers"
+    },
+    "system.description": {
+      "fr": "<p>Trois ferrailles, une vis pour l'axe, des mâchoires trempées.</p>",
+      "en": "<p>Three bits of scrap, a screw for the pivot, tempered jaws.</p>"
+    }
+  },
+  "recettes/OEg0kStIoGyn2BjW": {
+    "_nom": "Coudre un sac",
+    "name": {
+      "fr": "Coudre un sac",
+      "en": "Sew a bag"
+    },
+    "system.description": {
+      "fr": "<p>Six tissus forts (bâche, toile de store, jean), deux cordes, des coutures doublées : un sac de randonnée.</p>",
+      "en": "<p>Six strong cloths (tarpaulin, awning canvas, denim), two ropes, doubled seams: a hiking backpack.</p>"
+    }
+  },
+  "recettes/OOwhuMB32e1rYi87": {
+    "_nom": "Marteau de récupération",
+    "name": {
+      "fr": "Marteau de récupération",
+      "en": "Salvaged hammer"
+    },
+    "system.description": {
+      "fr": "<p>Deux bouts de ferraille, un manche, du fil de fer.</p>",
+      "en": "<p>Two bits of scrap metal, a handle, wire.</p>"
+    }
+  },
+  "recettes/OrMBcoQoV27t1oQ6": {
+    "_nom": "Charrette à bœufs",
+    "name": {
+      "fr": "Charrette à bœufs",
+      "en": "Ox cart"
+    },
+    "system.description": {
+      "fr": "<p>Un tronc pour le timon, seize planches, deux roues, des ferrures, des cordes, quatre-vingts clous, et un joug taillé à la main. Il faut deux bœufs moka dressés pour la tirer : la charrette ne les donne pas.</p>",
+      "en": "<p>A log for the shaft, sixteen planks, two wheels, iron fittings, ropes, eighty nails, and a yoke cut by hand. Two trained moka oxen are needed to pull it: the cart does not provide them.</p>"
+    }
+  },
+  "recettes/PhTUEPydcDgJqnTT": {
+    "_nom": "Masse de fortune",
+    "name": {
+      "fr": "Masse de fortune",
+      "en": "Makeshift sledgehammer"
+    },
+    "system.description": {
+      "fr": "<p>Une grosse pierre liée en croix au bout d'un manche, à deux cordes.</p>",
+      "en": "<p>A big stone lashed crosswise at the end of a handle, with two ropes.</p>"
+    }
+  },
+  "recettes/PjNSHEk3RjBGkiGa": {
+    "_nom": "Levier de bois dur",
+    "name": {
+      "fr": "Levier de bois dur",
+      "en": "Hardwood lever"
+    },
+    "system.description": {
+      "fr": "<p>Une branche de bois dur, taillée en biseau au couteau.</p>",
+      "en": "<p>A hardwood branch, cut to a bevel with the knife.</p>"
+    }
+  },
   "recettes/Pje7DRlLPgNGD37v": {
     "_nom": "Alcool désinfectant",
     "name": {
@@ -140,6 +745,61 @@
     "system.description": {
       "fr": "<p>Fruits trop mûrs, jus de canne, un alambic de cocotte et de serpentin : un alcool fort qui désinfecte plaies et instruments.</p>",
       "en": "<p>Overripe fruit, cane juice, a still made from a pressure cooker and a coil: a strong spirit that disinfects wounds and instruments.</p>"
+    }
+  },
+  "recettes/Q3CBHuC2ieLf3HVO": {
+    "_nom": "Attelle",
+    "name": {
+      "fr": "Attelle",
+      "en": "Splint"
+    },
+    "system.description": {
+      "fr": "<p>Deux gaulettes, deux bandes de tissu, une corde : pour tenir un membre cassé, tout de suite.</p>",
+      "en": "<p>Two rods, two strips of cloth, a rope: to hold a broken limb, right away.</p>"
+    }
+  },
+  "recettes/RYmvUduiO4b9G6jg": {
+    "_nom": "Cari au feu de bois",
+    "name": {
+      "fr": "Cari au feu de bois",
+      "en": "Wood-fire cari"
+    },
+    "system.description": {
+      "fr": "<p>Une marmite pour tout le monde : un cari étire ce qu'il y a, et on mange mieux à plusieurs.</p>",
+      "en": "<p>One pot for everyone: a cari (curry) stretches what there is, and you eat better together.</p>"
+    }
+  },
+  "recettes/SF0UczML8gO2GOVx": {
+    "_nom": "Masse de récupération",
+    "name": {
+      "fr": "Masse de récupération",
+      "en": "Salvaged sledgehammer"
+    },
+    "system.description": {
+      "fr": "<p>Un bloc d'acier de casse percé, un manche, du fil de fer.</p>",
+      "en": "<p>A drilled block of scrapyard steel, a handle, wire.</p>"
+    }
+  },
+  "recettes/TQNhILPXBt0TLuxO": {
+    "_nom": "Petit utilitaire électrique",
+    "name": {
+      "fr": "Petit utilitaire électrique",
+      "en": "Small electric utility vehicle"
+    },
+    "system.description": {
+      "fr": "<p>Un moteur électrique de voiturette, quatre batteries de voiture, quatre roues, douze ferrailles, deux tôles, six câbles, des composants, un régulateur de charge, seize boîtes de vis : le chantier d'une saison.</p>",
+      "en": "<p>A microcar's electric motor, four car batteries, four wheels, twelve bits of scrap, two sheets of metal, six cables, components, a charge controller, sixteen boxes of screws: a whole season's work.</p>"
+    }
+  },
+  "recettes/TmJx77B3cWdK8oVF": {
+    "_nom": "Pelle et pic de fortune",
+    "name": {
+      "fr": "Pelle et pic de fortune",
+      "en": "Makeshift shovel and pick"
+    },
+    "system.description": {
+      "fr": "<p>Une pelle taillée dans une planche, un pic de bois dur durci au feu.</p>",
+      "en": "<p>A shovel cut from a plank, a hardwood pick hardened in the fire.</p>"
     }
   },
   "recettes/TzE3XBQUBOoTBAUz": {
@@ -164,6 +824,28 @@
       "en": "<p>Two salvaged panels on a folding frame, a regulator, plug-in cables: power you take with you when you move.</p>"
     }
   },
+  "recettes/WlZermXuAKlN62I9": {
+    "_nom": "Motoculteur remis en état",
+    "name": {
+      "fr": "Motoculteur remis en état",
+      "en": "Restored two-wheel tractor"
+    },
+    "system.description": {
+      "fr": "<p>Un petit moteur de pompe ou de tondeuse, huit ferrailles, deux roues, douze boîtes de vis, des tuyaux, un câble : il démarre au troisième coup de lanceur.</p>",
+      "en": "<p>A small pump or mower engine, eight bits of scrap, two wheels, twelve boxes of screws, hoses, a cable: it starts at the third pull.</p>"
+    }
+  },
+  "recettes/WlbtYKA1T3GwhDug": {
+    "_nom": "Tisane de citronnelle",
+    "name": {
+      "fr": "Tisane de citronnelle",
+      "en": "Lemongrass tea"
+    },
+    "system.description": {
+      "fr": "<p>La citronnelle du bord des cases, bouillie : celle qu'on boit chaude quand la fièvre prend. Deux bols.</p>",
+      "en": "<p>The lemongrass from beside the houses, boiled: the one you drink hot when fever takes hold. Two bowls.</p>"
+    }
+  },
   "recettes/WqqRsn0W6NSai902": {
     "_nom": "Tisanes et emplâtres",
     "name": {
@@ -175,6 +857,39 @@
       "en": "<p>Two armfuls of zerbaz, boiled water, a pot: an ayapana or lemongrass brew for mild fevers and stomach aches, a decoction to wash a wound, a poultice of crushed leaves. In the game it counts as a medicine (including to wash a bite); it does not cure the Grey. The know-how “Zerbaz and infusions” gives +1 die.</p>"
     }
   },
+  "recettes/WxtaNdtKpnVvu9BB": {
+    "_nom": "Masse forgée",
+    "name": {
+      "fr": "Masse forgée",
+      "en": "Forged sledgehammer"
+    },
+    "system.description": {
+      "fr": "<p>Huit ferrailles rassemblées en un bloc, percé à chaud pour le manche.</p>",
+      "en": "<p>Eight bits of scrap gathered into one block, punched hot for the handle.</p>"
+    }
+  },
+  "recettes/Xu2PLelGG5XO3yFS": {
+    "_nom": "Pince de bambou",
+    "name": {
+      "fr": "Pince de bambou",
+      "en": "Bamboo tongs"
+    },
+    "system.description": {
+      "fr": "<p>Un bambou fendu en deux branches, refermé à la corde.</p>",
+      "en": "<p>A bamboo split into two arms, closed with rope.</p>"
+    }
+  },
+  "recettes/YaVd5Hpd8O4X4eRq": {
+    "_nom": "Savates de pneu",
+    "name": {
+      "fr": "Savates de pneu",
+      "en": "Tyre sandals"
+    },
+    "system.description": {
+      "fr": "<p>Deux semelles découpées dans un pneu, une bride en chambre à air.</p>",
+      "en": "<p>Two soles cut from a tyre, an inner-tube strap.</p>"
+    }
+  },
   "recettes/YbxqiHxVcgqo4lZF": {
     "_nom": "Savon",
     "name": {
@@ -184,6 +899,28 @@
     "system.description": {
       "fr": "<p>Graisse de cochon ou huile, cendre de bois tamisée, un peu de patience : se laver les mains évite la moitié des maladies.</p>",
       "en": "<p>Pig fat or oil, sifted wood ash, a little patience: washing your hands prevents half of all illnesses.</p>"
+    }
+  },
+  "recettes/ZPZi8VDHbTzIJ3Ds": {
+    "_nom": "Marteau de fortune",
+    "name": {
+      "fr": "Marteau de fortune",
+      "en": "Makeshift hammer"
+    },
+    "system.description": {
+      "fr": "<p>Un galet rond pris dans une branche fendue, serré à la corde.</p>",
+      "en": "<p>A round pebble caught in a split branch, tied tight with rope.</p>"
+    }
+  },
+  "recettes/ZQOczhmOEX72UV26": {
+    "_nom": "Couverture",
+    "name": {
+      "fr": "Couverture",
+      "en": "Blanket"
+    },
+    "system.description": {
+      "fr": "<p>Six tissus, des draps et des rideaux cousus en épaisseur.</p>",
+      "en": "<p>Six cloths, sheets and curtains sewn in layers.</p>"
     }
   },
   "recettes/Zh85g2AG1kZOvpP4": {
@@ -219,6 +956,17 @@
       "en": "<p>Oil from abandoned fryers and pressed coconuts, settled, filtered through cloth, heated: a fuel for a modified engine, which clogs it quickly.</p>"
     }
   },
+  "recettes/bliWJqVaCqZeSIp6": {
+    "_nom": "Couteau forgé",
+    "name": {
+      "fr": "Couteau forgé",
+      "en": "Forged knife"
+    },
+    "system.description": {
+      "fr": "<p>Deux bouts de ferraille, un sac de charbon, une branche pour le manche : un vrai couteau.</p>",
+      "en": "<p>Two bits of scrap metal, a sack of charcoal, a branch for the handle: a real knife.</p>"
+    }
+  },
   "recettes/bocOAY487x6bUzvN": {
     "_nom": "Munitions rechargées",
     "name": {
@@ -230,6 +978,17 @@
       "en": "<p>Recovered cases, primers and hunting shot, powder taken from damaged cartridges: slow, dangerous work. Botched, it blows up the gun.</p>"
     }
   },
+  "recettes/cTvPoPlSptDMmJwr": {
+    "_nom": "Truelle de récupération",
+    "name": {
+      "fr": "Truelle de récupération",
+      "en": "Salvaged trowel"
+    },
+    "system.description": {
+      "fr": "<p>Un triangle de tôle riveté de quatre clous sur un manche.</p>",
+      "en": "<p>A triangle of sheet metal riveted with four nails onto a handle.</p>"
+    }
+  },
   "recettes/doXaj0nFOD8ptTpY": {
     "_nom": "Bouclier de tôle",
     "name": {
@@ -239,6 +998,28 @@
     "system.description": {
       "fr": "<p>Tôle ondulée, contreplaqué, deux poignées vissées : lourd, bruyant, mais une morsure s'y casse les dents.</p>",
       "en": "<p>Corrugated iron, plywood, two screwed-on handles: heavy, noisy, but a bite breaks its teeth on it.</p>"
+    }
+  },
+  "recettes/e6xCYpg7UclwKPZs": {
+    "_nom": "Eau salée et sucrée",
+    "name": {
+      "fr": "Eau salée et sucrée",
+      "en": "Salted and sweetened water"
+    },
+    "system.description": {
+      "fr": "<p>De l'eau propre, une pincée de sel, le jus de deux cannes, dans les bonnes proportions : deux bouteilles.</p>",
+      "en": "<p>Clean water, a pinch of salt, the juice of two canes, in the right proportions: two bottles.</p>"
+    }
+  },
+  "recettes/eGSM9ygy99NNZooU": {
+    "_nom": "Tenue rapiécée",
+    "name": {
+      "fr": "Tenue rapiécée",
+      "en": "Patched clothes"
+    },
+    "system.description": {
+      "fr": "<p>Quatre tissus, une corde : des genouillères, des coudières, des poches cousues par-dessus les trous.</p>",
+      "en": "<p>Four cloths, a rope: knee pads, elbow pads, pockets sewn over the holes.</p>"
     }
   },
   "recettes/eL2IkwEgFoJjE1G9": {
@@ -261,6 +1042,50 @@
     "system.description": {
       "fr": "<p>Lame de ressort de voiture, crosse de bois dur, détente de récupération, et des carreaux taillés dans des tiges de fer à béton.</p>",
       "en": "<p>A car leaf spring, a hardwood stock, a salvaged trigger, and bolts cut from lengths of rebar.</p>"
+    }
+  },
+  "recettes/ehGdJsaFzNPTf8pd": {
+    "_nom": "Charbon de bois en meule",
+    "name": {
+      "fr": "Charbon de bois en meule",
+      "en": "Charcoal clamp"
+    },
+    "system.description": {
+      "fr": "<p>Un tronc débité, dressé en meule dans la cour, couvert de terre, allumé par le haut et surveillé deux jours et une nuit : trois sacs de charbon. La meule fume, et la fumée se voit.</p>",
+      "en": "<p>A log cut up, stacked into a clamp in the yard, covered with earth, lit from the top and watched for two days and a night: three sacks of charcoal. The clamp smokes, and the smoke can be seen.</p>"
+    }
+  },
+  "recettes/fgL3r193pRdXkO4e": {
+    "_nom": "Blindage de tôle et grilles",
+    "name": {
+      "fr": "Blindage de tôle et grilles",
+      "en": "Sheet-iron armour and grilles"
+    },
+    "system.description": {
+      "fr": "<p>Des tôles et des grilles prises sur d'autres épaves, découpées, boulonnées aux portières et devant les vitres.</p>",
+      "en": "<p>Iron sheets and grilles taken from other wrecks, cut, bolted to the doors and over the windows.</p>"
+    }
+  },
+  "recettes/ftz4G2tCZC4sXPSh": {
+    "_nom": "Truelle de fortune",
+    "name": {
+      "fr": "Truelle de fortune",
+      "en": "Makeshift trowel"
+    },
+    "system.description": {
+      "fr": "<p>Une pierre plate emmanchée et liée.</p>",
+      "en": "<p>A flat stone, hafted and tied.</p>"
+    }
+  },
+  "recettes/hbmXnGEohoRrElWt": {
+    "_nom": "Hache de récupération",
+    "name": {
+      "fr": "Hache de récupération",
+      "en": "Salvaged axe"
+    },
+    "system.description": {
+      "fr": "<p>Trois bouts de ferraille, un manche, du fil de fer : un fer découpé au burin, emmanché et goupillé.</p>",
+      "en": "<p>Three bits of scrap metal, a handle, wire: a head cut out with a cold chisel, hafted and pinned.</p>"
     }
   },
   "recettes/hkB29SfrpROUsgvO": {
@@ -296,6 +1121,149 @@
       "en": "<p>A piece of guava wood, a knife, some wire: you split, you carve, you bind. The kind of thing you used to buy without thinking.</p>"
     }
   },
+  "recettes/iKtRBuRfUNrkIgDx": {
+    "_nom": "Scie de fortune",
+    "name": {
+      "fr": "Scie de fortune",
+      "en": "Makeshift saw"
+    },
+    "system.description": {
+      "fr": "<p>Trois éclats de basalte coincés en dents dans une branche fendue, collés à la sève et ligaturés.</p>",
+      "en": "<p>Three basalt flakes wedged as teeth in a split branch, glued with sap and lashed.</p>"
+    }
+  },
+  "recettes/j0M9DGrSspXEPI6o": {
+    "_nom": "Galerie de toit",
+    "name": {
+      "fr": "Galerie de toit",
+      "en": "Roof rack"
+    },
+    "system.description": {
+      "fr": "<p>Des tubes et des barres de toit pris sur des épaves, soudés ou boulonnés, des sangles.</p>",
+      "en": "<p>Tubes and roof bars taken from wrecks, welded or bolted, straps.</p>"
+    }
+  },
+  "recettes/jAXadwU3zd1foWoz": {
+    "_nom": "Huile de bancoul",
+    "name": {
+      "fr": "Huile de bancoul",
+      "en": "Bancoul oil"
+    },
+    "system.description": {
+      "fr": "<p>Trente noix de bancoul grillées, pilées, bouillies ; on écume l'huile qui monte : une bouteille.</p>",
+      "en": "<p>Thirty bancoul nuts roasted, pounded, boiled; you skim the oil that rises: one bottle.</p>"
+    }
+  },
+  "recettes/jFAFJwxAPSIeJLWM": {
+    "_nom": "Enfumoir",
+    "name": {
+      "fr": "Enfumoir",
+      "en": "Bee smoker"
+    },
+    "system.description": {
+      "fr": "<p>Une boîte de conserve percée, un chiffon, du chaume : il fume doux et longtemps.</p>",
+      "en": "<p>A pierced tin can, a rag, thatch: it smokes gently and for a long time.</p>"
+    }
+  },
+  "recettes/jFFCiWbkkwxF0c3u": {
+    "_nom": "Gratte de récupération",
+    "name": {
+      "fr": "Gratte de récupération",
+      "en": "Salvaged hoe"
+    },
+    "system.description": {
+      "fr": "<p>Une tôle, un manche, quatre clous.</p>",
+      "en": "<p>A sheet of metal, a handle, four nails.</p>"
+    }
+  },
+  "recettes/jHVx7a002yxual06": {
+    "_nom": "Eau bouillie",
+    "name": {
+      "fr": "Eau bouillie",
+      "en": "Boiled water"
+    },
+    "system.description": {
+      "fr": "<p>Les marmites sur le feu toute la journée : l'eau de l'abri est bouillie, pour un jour. Lent, et il faut du bois ; mais cela ne dépend de rien.</p>",
+      "en": "<p>The pots on the fire all day: the shelter's water is boiled, for one day. Slow, and it takes wood; but it depends on nothing.</p>"
+    }
+  },
+  "recettes/jXzKJtDJQC8L3VF6": {
+    "_nom": "Viande boucanée au sel",
+    "name": {
+      "fr": "Viande boucanée au sel",
+      "en": "Salted boucané meat"
+    },
+    "system.description": {
+      "fr": "<p>La viande salée, puis fumée longtemps au-dessus du feu, sous le boucan : elle se garde sans bocal.</p>",
+      "en": "<p>The meat salted, then smoked for a long time over the fire, under the boucan (smokehouse): it keeps without a jar.</p>"
+    }
+  },
+  "recettes/kMaPd7CTfD7ZMydQ": {
+    "_nom": "Couteau de récupération",
+    "name": {
+      "fr": "Couteau de récupération",
+      "en": "Salvaged knife"
+    },
+    "system.description": {
+      "fr": "<p>Une lame de scie à métaux cassée, meulée, emmanchée.</p>",
+      "en": "<p>A broken hacksaw blade, ground down, hafted.</p>"
+    }
+  },
+  "recettes/kOFHKiiIt7xqEBED": {
+    "_nom": "Éclat de basalte",
+    "name": {
+      "fr": "Éclat de basalte",
+      "en": "Basalt flake"
+    },
+    "system.description": {
+      "fr": "<p>Deux galets de basalte, l'un contre l'autre, jusqu'à ce qu'un éclat parte avec un fil : le premier couteau.</p>",
+      "en": "<p>Two basalt pebbles, one against the other, until a flake comes away with an edge: the first knife.</p>"
+    }
+  },
+  "recettes/kX7bfptzwNX7o5w9": {
+    "_nom": "Remorque d'utilitaire",
+    "name": {
+      "fr": "Remorque d'utilitaire",
+      "en": "Utility vehicle trailer"
+    },
+    "system.description": {
+      "fr": "<p>Huit ferrailles, six planches, deux roues, dix boîtes de vis : le plateau que tire le petit utilitaire.</p>",
+      "en": "<p>Eight bits of scrap, six planks, two wheels, ten boxes of screws: the platform the small utility vehicle pulls.</p>"
+    }
+  },
+  "recettes/lZ3NBHn5f4JE8yWX": {
+    "_nom": "Marteau forgé",
+    "name": {
+      "fr": "Marteau forgé",
+      "en": "Forged hammer"
+    },
+    "system.description": {
+      "fr": "<p>Le premier outil de la forge se forge au galet : trois ferrailles, un sac de charbon, un manche.</p>",
+      "en": "<p>The forge's first tool is forged on a pebble: three bits of scrap, a sack of charcoal, a handle.</p>"
+    }
+  },
+  "recettes/ltrIgIt5dJEryVVT": {
+    "_nom": "Bertel",
+    "name": {
+      "fr": "Bertel",
+      "en": "Bertel"
+    },
+    "system.description": {
+      "fr": "<p>Trente feuilles de vacoa tressées serré, deux cordes pour les bretelles : le sac à dos des Hauts.</p>",
+      "en": "<p>Thirty vacoa leaves woven tight, two ropes for the straps: the backpack of the Highlands.</p>"
+    }
+  },
+  "recettes/lycwpcfW4Mf8u6In": {
+    "_nom": "Cape de pluie",
+    "name": {
+      "fr": "Cape de pluie",
+      "en": "Rain cape"
+    },
+    "system.description": {
+      "fr": "<p>Une bâche taillée en cape, une capuche, une corde pour fermer.</p>",
+      "en": "<p>A tarpaulin cut into a cape, a hood, a rope to close it.</p>"
+    }
+  },
   "recettes/nHobGpngrAgb3YMs": {
     "_nom": "Arc et flèches",
     "name": {
@@ -305,6 +1273,61 @@
     "system.description": {
       "fr": "<p>Un arc de bois de goyavier ou de tuyau PVC chauffé, une corde tressée, une douzaine de flèches empennées de plumes de poule.</p>",
       "en": "<p>A bow of guava wood or heated PVC pipe, a braided string, a dozen arrows fletched with hen feathers.</p>"
+    }
+  },
+  "recettes/nfFX5k6dVnma5iWA": {
+    "_nom": "Sabre de récupération",
+    "name": {
+      "fr": "Sabre de récupération",
+      "en": "Salvaged cane knife"
+    },
+    "system.description": {
+      "fr": "<p>Une tôle épaisse découpée, affûtée à la meule, un manche de bois serré au fil de fer.</p>",
+      "en": "<p>A thick sheet of metal cut out, ground sharp, a wooden handle tightened with wire.</p>"
+    }
+  },
+  "recettes/nq4d2RHGdDYkMbHq": {
+    "_nom": "Réviser une tronçonneuse",
+    "name": {
+      "fr": "Réviser une tronçonneuse",
+      "en": "Overhaul a chainsaw"
+    },
+    "system.description": {
+      "fr": "<p>La chaîne affûtée à la pierre, le carburateur réglé, le pot bourré de laine de roche, l'huile de bancoul pour la chaîne.</p>",
+      "en": "<p>The chain sharpened on the stone, the carburettor tuned, the exhaust stuffed with rock wool, bancoul oil for the chain.</p>"
+    }
+  },
+  "recettes/nqQIJMP2B1CNJz8d": {
+    "_nom": "Pied-de-biche forgé",
+    "name": {
+      "fr": "Pied-de-biche forgé",
+      "en": "Forged crowbar"
+    },
+    "system.description": {
+      "fr": "<p>Quatre ferrailles soudées au feu et recourbées, un sac de charbon.</p>",
+      "en": "<p>Four bits of scrap forge-welded and bent, a sack of charcoal.</p>"
+    }
+  },
+  "recettes/oNnD72OEZztJXCNk": {
+    "_nom": "Torches",
+    "name": {
+      "fr": "Torches",
+      "en": "Torches"
+    },
+    "system.description": {
+      "fr": "<p>Deux branches, un chiffon fendu en bandes, trempé d'huile de bancoul et serré.</p>",
+      "en": "<p>Two branches, a rag torn into strips, soaked in bancoul oil and bound tight.</p>"
+    }
+  },
+  "recettes/olnSXgJJBWlDGBhv": {
+    "_nom": "Lampes électriques",
+    "name": {
+      "fr": "Lampes électriques",
+      "en": "Electric lamps"
+    },
+    "system.description": {
+      "fr": "<p>Des ampoules de récupération, un câble, un bocal pour chacune : deux lampes à brancher sur une batterie.</p>",
+      "en": "<p>Salvaged bulbs, a cable, a jar for each: two lamps to plug into a battery.</p>"
     }
   },
   "recettes/pJXHweyZrmBkJqPJ": {
@@ -329,6 +1352,39 @@
       "en": "<p>Cane juice or fermented fruit, a makeshift still, and the alcohol running out, stronger than for rum: ten litres of a fuel that only modified engines will take.</p>"
     }
   },
+  "recettes/qDQkElgYwvaL3B3B": {
+    "_nom": "Remettre en état un pistolet de service",
+    "name": {
+      "fr": "Remettre en état un pistolet de service",
+      "en": "Restore a service pistol"
+    },
+    "system.description": {
+      "fr": "<p>Le pistolet démonté, nettoyé, huilé, le ressort du chargeur changé.</p>",
+      "en": "<p>The pistol taken apart, cleaned, oiled, the magazine spring changed.</p>"
+    }
+  },
+  "recettes/qWRBvdJAqSnEQrbh": {
+    "_nom": "Filet de pêche",
+    "name": {
+      "fr": "Filet de pêche",
+      "en": "Fishing net"
+    },
+    "system.description": {
+      "fr": "<p>Huit cordes nouées maille à maille pendant des soirées entières, lestées de galets percés.</p>",
+      "en": "<p>Eight ropes knotted mesh by mesh for whole evenings, weighted with drilled pebbles.</p>"
+    }
+  },
+  "recettes/rAFuxhYxhspczW7T": {
+    "_nom": "Sabre de fortune",
+    "name": {
+      "fr": "Sabre de fortune",
+      "en": "Makeshift cane knife"
+    },
+    "system.description": {
+      "fr": "<p>Une pierre plate retaillée, ligaturée au bout d'un bambou.</p>",
+      "en": "<p>A flat stone, reshaped, lashed to the end of a bamboo.</p>"
+    }
+  },
   "recettes/s4dClkWjWERLuYic": {
     "_nom": "Cahier cousu",
     "name": {
@@ -338,6 +1394,39 @@
     "system.description": {
       "fr": "<p>Des feuilles récupérées (des cahiers d'école, le dos des affiches), pliées et cousues au fil de pêche.</p>",
       "en": "<p>Salvaged sheets (school exercise books, the backs of posters), folded and sewn with fishing line.</p>"
+    }
+  },
+  "recettes/tDbI64wVk39BLv2F": {
+    "_nom": "Tente de vacoa",
+    "name": {
+      "fr": "Tente de vacoa",
+      "en": "Vacoa tente"
+    },
+    "system.description": {
+      "fr": "<p>Quinze feuilles de vacoa séchées, blanchies, fendues en lanières, tressées en panier à deux anses.</p>",
+      "en": "<p>Fifteen vacoa leaves dried, bleached, split into strips, woven into a basket with two handles.</p>"
+    }
+  },
+  "recettes/tYSw5fCo4wnEfxsy": {
+    "_nom": "Vinaigre de canne",
+    "name": {
+      "fr": "Vinaigre de canne",
+      "en": "Cane vinegar"
+    },
+    "system.description": {
+      "fr": "<p>Dix cannes pressées, le jus laissé à tourner des semaines dans un bocal fermé d'un linge : deux bocaux de vinaigre, si rien ne pourrit.</p>",
+      "en": "<p>Ten canes pressed, the juice left to turn for weeks in a jar closed with a cloth: two jars of vinegar, if nothing rots.</p>"
+    }
+  },
+  "recettes/uCzKIxcUhDY4N878": {
+    "_nom": "Cendres tamisées",
+    "name": {
+      "fr": "Cendres tamisées",
+      "en": "Sifted ash"
+    },
+    "system.description": {
+      "fr": "<p>Le bois de la veille brûlé jusqu'au blanc, la cendre passée au tamis : trois seaux.</p>",
+      "en": "<p>Yesterday's wood burnt to white, the ash passed through a sieve: three buckets.</p>"
     }
   },
   "recettes/uZaevsE1XImDgyjV": {
@@ -362,6 +1451,28 @@
       "en": "<p>You take one of the group's old petrol cars (the GM removes it): seals, jets, ignition. From now on it will drink cane alcohol and filtered oil, no longer petrol.</p>"
     }
   },
+  "recettes/wQp1C3Qq17zgrgX4": {
+    "_nom": "Bougies",
+    "name": {
+      "fr": "Bougies",
+      "en": "Candles"
+    },
+    "system.description": {
+      "fr": "<p>La cire des ruches fondue, coulée autour d'une mèche de corde dans des tiges de bambou.</p>",
+      "en": "<p>Beeswax melted, poured around a rope wick in bamboo stems.</p>"
+    }
+  },
+  "recettes/x5MdG7cRpq2OLeH4": {
+    "_nom": "Pièges à rats",
+    "name": {
+      "fr": "Pièges à rats",
+      "en": "Rat traps"
+    },
+    "system.description": {
+      "fr": "<p>Une planche, du fil de fer, quatre clous : deux pièges à bascule.</p>",
+      "en": "<p>A plank, wire, four nails: two seesaw traps.</p>"
+    }
+  },
   "recettes/xdHnDIfvxxIX9cSE": {
     "_nom": "Réchaud à bois",
     "name": {
@@ -371,6 +1482,28 @@
     "system.description": {
       "fr": "<p>Deux boîtes de conserve imbriquées, percées en haut et en bas : un réchaud qui brûle des brindilles presque sans fumée.</p>",
       "en": "<p>Two tin cans nested together, pierced at top and bottom: a stove that burns twigs almost without smoke.</p>"
+    }
+  },
+  "recettes/xh5V4BDp8CLbsfr8": {
+    "_nom": "Chariot de récupération",
+    "name": {
+      "fr": "Chariot de récupération",
+      "en": "Salvaged trolley"
+    },
+    "system.description": {
+      "fr": "<p>Six ferrailles, une tôle, deux roues de brouette ou de chariot, huit boîtes de vis, deux chambres à air.</p>",
+      "en": "<p>Six bits of scrap, a sheet of metal, two wheelbarrow or trolley wheels, eight boxes of screws, two inner tubes.</p>"
+    }
+  },
+  "recettes/yr6qs7CXYXMWfnpN": {
+    "_nom": "Pince de récupération",
+    "name": {
+      "fr": "Pince de récupération",
+      "en": "Salvaged pliers"
+    },
+    "system.description": {
+      "fr": "<p>Deux bras de ferraille et un boulon.</p>",
+      "en": "<p>Two scrap-metal arms and a bolt.</p>"
     }
   },
   "recettes/z5bmjfxQ48deOIP8": {

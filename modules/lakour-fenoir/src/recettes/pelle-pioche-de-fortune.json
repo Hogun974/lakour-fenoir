@@ -1,0 +1,47 @@
+{
+  "_id": "TmJx77B3cWdK8oVF",
+  "_key": "!items!TmJx77B3cWdK8oVF",
+  "name": "Pelle et pic de fortune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "pelle-pioche-de-fortune",
+    "description": "<p>Une pelle taillée dans une planche, un pic de bois dur durci au feu.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "pelle-pioche-de-fortune",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pelle-pioche-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

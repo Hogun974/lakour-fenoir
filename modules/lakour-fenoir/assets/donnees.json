@@ -2332,10 +2332,17 @@
     "Une coque de tôle : chaude, bruyante, impossible à défendre de près",
     "Ni terre ni eau à soi"
    ],
-   "installationsDepart": [],
+   "installationsDepart": [
+    {
+     "installation": "atelier-mecanique",
+     "niveau": 1
+    }
+   ],
    "plans": [
     "recette-velo-cargo",
-    "reserve-etanche"
+    "reserve-etanche",
+    "recette-utilitaire-electrique",
+    "recette-remorque-d-utilitaire"
    ]
   },
   {
@@ -2465,11 +2472,21 @@
     {
      "installation": "barricades",
      "niveau": 1
+    },
+    {
+     "installation": "forge",
+     "niveau": 1
+    },
+    {
+     "installation": "atelier-mecanique",
+     "niveau": 1
     }
    ],
    "plans": [
     "mur",
-    "atelier"
+    "atelier",
+    "forge",
+    "recette-blindage-de-tole"
    ]
   },
   {
@@ -2519,11 +2536,18 @@
     {
      "installation": "batteries",
      "niveau": 1
+    },
+    {
+     "installation": "atelier-electricite",
+     "niveau": 2
     }
    ],
    "plans": [
     "batteries",
-    "panneaux-solaires"
+    "panneaux-solaires",
+    "recette-regulateur-de-charge",
+    "recette-utilitaire-electrique",
+    "atelier-electricite"
    ]
   },
   {
@@ -2568,6 +2592,10 @@
     },
     {
      "installation": "groupe-electrogene",
+     "niveau": 1
+    },
+    {
+     "installation": "couture",
      "niveau": 1
     }
    ]
@@ -2618,6 +2646,10 @@
     },
     {
      "installation": "dortoir",
+     "niveau": 2
+    },
+    {
+     "installation": "coin-du-feu",
      "niveau": 2
     }
    ]
@@ -2719,7 +2751,15 @@
     {
      "installation": "potager",
      "niveau": 1
+    },
+    {
+     "installation": "tisanerie",
+     "niveau": 1
     }
+   ],
+   "plans": [
+    "tisanerie",
+    "recette-baume-a-la-cire"
    ]
   },
   {
@@ -2818,6 +2858,10 @@
     {
      "installation": "cuisine-commune",
      "niveau": 1
+    },
+    {
+     "installation": "coin-du-feu",
+     "niveau": 2
     }
    ],
    "plans": [
@@ -2927,11 +2971,17 @@
     {
      "installation": "sechoir-fumoir",
      "niveau": 1
+    },
+    {
+     "installation": "distillerie",
+     "niveau": 2
     }
    ],
    "plans": [
     "recette-alcool-desinfectant",
-    "recette-alcool-de-canne"
+    "recette-alcool-de-canne",
+    "distillerie",
+    "recette-rhum-de-canne"
    ]
   },
   {
@@ -3022,6 +3072,14 @@
    "installationsDepart": [
     {
      "installation": "mur",
+     "niveau": 1
+    },
+    {
+     "installation": "distillerie",
+     "niveau": 1
+    },
+    {
+     "installation": "forge",
      "niveau": 1
     }
    ],
@@ -3177,12 +3235,18 @@
     {
      "installation": "dortoir",
      "niveau": 2
+    },
+    {
+     "installation": "atelier-mecanique",
+     "niveau": 2
     }
    ],
    "plans": [
     "camouflage",
     "mur",
-    "recette-munitions-rechargees"
+    "recette-munitions-rechargees",
+    "recette-pistolet-de-service-remis-en-etat",
+    "recette-bouclier-double-et-cercle"
    ]
   },
   {
@@ -3282,11 +3346,17 @@
     {
      "installation": "palissade",
      "niveau": 1
+    },
+    {
+     "installation": "forge",
+     "niveau": 2
     }
    ],
    "plans": [
     "recette-gazogene",
-    "recette-alcool-de-canne"
+    "recette-alcool-de-canne",
+    "forge",
+    "recette-sabre-forge"
    ]
   },
   {
@@ -3377,12 +3447,22 @@
     {
      "installation": "compost",
      "niveau": 1
+    },
+    {
+     "installation": "forge",
+     "niveau": 1
+    },
+    {
+     "installation": "etabli",
+     "niveau": 1
     }
    ],
    "plans": [
     "enclos-a-cabris",
     "basse-cour",
-    "compost"
+    "compost",
+    "recette-charrette-a-boeufs",
+    "recette-motoculteur-remis-en-etat"
    ]
   },
   {
@@ -3428,6 +3508,10 @@
     {
      "installation": "infirmerie",
      "niveau": 1
+    },
+    {
+     "installation": "coin-du-feu",
+     "niveau": 2
     }
    ],
    "plans": [
@@ -3568,11 +3652,16 @@
     {
      "installation": "atelier",
      "niveau": 1
+    },
+    {
+     "installation": "atelier-electricite",
+     "niveau": 1
     }
    ],
    "plans": [
     "pico-hydro",
-    "batteries"
+    "batteries",
+    "recette-regulateur-de-charge"
    ]
   },
   {
@@ -3668,11 +3757,17 @@
     {
      "installation": "sechoir-fumoir",
      "niveau": 1
+    },
+    {
+     "installation": "vannerie",
+     "niveau": 1
     }
    ],
    "plans": [
     "verger",
-    "jardin-creole"
+    "jardin-creole",
+    "vannerie",
+    "recette-bertel"
    ]
   },
   {
@@ -3808,6 +3903,10 @@
     {
      "installation": "palissade",
      "niveau": 1
+    },
+    {
+     "installation": "distillerie",
+     "niveau": 2
     }
    ],
    "plans": [
@@ -3914,6 +4013,10 @@
     {
      "installation": "palissade",
      "niveau": 1
+    },
+    {
+     "installation": "atelier-electricite",
+     "niveau": 1
     }
    ],
    "plans": [
@@ -3967,6 +4070,10 @@
     {
      "installation": "verger",
      "niveau": 2
+    },
+    {
+     "installation": "vannerie",
+     "niveau": 1
     }
    ]
   },
@@ -4216,6 +4323,10 @@
     {
      "installation": "galerie-souterraine",
      "niveau": 1
+    },
+    {
+     "installation": "etabli",
+     "niveau": 1
     }
    ],
    "plans": [
@@ -4315,6 +4426,10 @@
     },
     {
      "installation": "potager",
+     "niveau": 1
+    },
+    {
+     "installation": "tisanerie",
      "niveau": 1
     }
    ],
@@ -8293,6 +8408,11 @@
       }
      }
     }
+   ],
+   "metiers": [
+    "etabli",
+    "mecanique",
+    "electricite"
    ]
   },
   {
@@ -8668,7 +8788,10 @@
      }
     }
    ],
-   "arbre": "lontan"
+   "arbre": "lontan",
+   "metiers": [
+    "cuisine"
+   ]
   },
   {
    "nom": "Poste radio",
@@ -10138,7 +10261,10 @@
    ],
    "arbre": "moderne",
    "role": "cuisine-commune",
-   "rang": 0
+   "rang": 0,
+   "metiers": [
+    "cuisine"
+   ]
   },
   {
    "nom": "Chauffe-eau solaire",
@@ -10759,6 +10885,1339 @@
    "arbre": "moderne",
    "role": "toilette",
    "rang": 0
+  },
+  {
+   "nom": "Coin du feu",
+   "cle": "coin-du-feu",
+   "categorie": "vie",
+   "description": "<p>Le feu de travail, à l'écart de la cuisine : trois roches et un trépied d'abord, puis un foyer sous tôle avec une cheminée de fûts, enfin un fourneau maçonné. On y fait bouillir, réduire, fumer, cuire le savon et le sel. La cuisine commune et la gazinière en servent au premier niveau.</p>",
+   "niveau": 0,
+   "niveauMax": 3,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 5,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 14
+     },
+     "requiert": {
+      "savoirs": [
+       "maconnerie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "metiers": [
+    "cuisine"
+   ]
+  },
+  {
+   "nom": "Établi du bois",
+   "cle": "etabli",
+   "categorie": "vie",
+   "description": "<p>Un plateau de bambou sur deux tréteaux, puis un vrai établi de planches sous un appentis de tôle, enfin une menuiserie maçonnée avec ses râteliers. On y débite, on y emmanche, on y monte les roues et les charrettes, on y remet les armes en état.</p>",
+   "niveau": 0,
+   "niveauMax": 3,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 5,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 14
+     },
+     "requiert": {
+      "savoirs": [
+       "maconnerie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "metiers": [
+    "etabli"
+   ]
+  },
+  {
+   "nom": "Forge",
+   "cle": "forge",
+   "categorie": "vie",
+   "description": "<p>Un foyer de pierres sèches et de terre, un soufflet de chambre à air, un rail pour enclume ; puis un abri de tôle et une hotte ; enfin une forge maçonnée qui tient la chaleur. Le marteau s'entend loin, et la fumée monte.</p>",
+   "niveau": 0,
+   "niveauMax": 3,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 5,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 8,
+      "pieces": 2,
+      "graines": 0,
+      "travail": 14
+     },
+     "requiert": {
+      "savoirs": [
+       "maconnerie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "metiers": [
+    "forge"
+   ]
+  },
+  {
+   "nom": "Vannerie du vacoa",
+   "cle": "vannerie",
+   "categorie": "vie",
+   "description": "<p>Un coin d'ombre où sèchent les feuilles de vacoa fendues en lanières, des bacs pour les blanchir, des gabarits pour les paniers et les nattes. Les anciennes de la côte au vent y passaient des après-midi entières. Au second niveau, un auvent de tôle et des étagères ; au troisième, une pièce maçonnée où rien ne moisit.</p>",
+   "niveau": 0,
+   "niveauMax": 3,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 5,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 14
+     },
+     "requiert": {
+      "savoirs": [
+       "maconnerie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "metiers": [
+    "vannerie"
+   ]
+  },
+  {
+   "nom": "Atelier de couture",
+   "cle": "couture",
+   "categorie": "vie",
+   "description": "<p>Une table, des ciseaux, du fil de pêche, des aiguilles de matelassier, puis une machine à coudre à pédale sortie d'une case des Hauts. On y retaille les bâches, on y coud les sacs, on y rapièce ce qui doit encore durer une saison.</p>",
+   "niveau": 0,
+   "niveauMax": 3,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 5,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 14
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "metiers": [
+    "couture"
+   ]
+  },
+  {
+   "nom": "Case à tisanes",
+   "cle": "tisanerie",
+   "categorie": "vie",
+   "description": "<p>Des bottes de zerbaz pendues au plafond d'une case de paille et de torchis, des bocaux étiquetés à la main, une marmite qui ne sert qu'à ça. Plus tard, des étagères et des bocaux par dizaines ; enfin une petite pièce de pierre, fraîche et sèche, où les feuilles gardent leur force. Rien n'y guérit le Gris.</p>",
+   "niveau": 0,
+   "niveauMax": 3,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 14
+     },
+     "requiert": {
+      "savoirs": [
+       "zerbaz"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "metiers": [
+    "tisanerie"
+   ]
+  },
+  {
+   "nom": "Atelier de mécanique",
+   "cle": "atelier-mecanique",
+   "categorie": "vie",
+   "description": "<p>Un abri de tôle, un étau, des clés, une fosse ou des chandelles pour passer sous un moteur ; puis un garage de planches avec ses bidons d'huile ; enfin un garage maçonné, avec palan et établi d'acier. On y remet en état ce qui roule et ce qui tire.</p>",
+   "niveau": 0,
+   "niveauMax": 3,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 5,
+      "pieces": 3,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [
+       "mecanique"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 8,
+      "pieces": 4,
+      "graines": 0,
+      "travail": 14
+     },
+     "requiert": {
+      "savoirs": [
+       "mecanique",
+       "maconnerie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "metiers": [
+    "mecanique"
+   ]
+  },
+  {
+   "nom": "Atelier d'électricité",
+   "cle": "atelier-electricite",
+   "categorie": "vie",
+   "description": "<p>Une table sous tôle, un fer à souder qu'on chauffe au feu ou à la batterie, des boîtes de composants triés ; puis une pièce de planches, sèche, avec son multimètre et ses câbles ; enfin un local maçonné où l'on remet en état les batteries et les régulateurs.</p>",
+   "niveau": 0,
+   "niveauMax": 3,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 1,
+      "pieces": 2,
+      "graines": 0,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 4,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [
+       "electricite-solaire"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 5,
+      "pieces": 5,
+      "graines": 0,
+      "travail": 14
+     },
+     "requiert": {
+      "savoirs": [
+       "electricite-solaire",
+       "maconnerie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "moderne",
+   "metiers": [
+    "electricite"
+   ]
+  },
+  {
+   "nom": "Distillerie",
+   "cle": "distillerie",
+   "categorie": "vie",
+   "description": "<p>Un alambic de cocotte et de serpentin sur un foyer de pierres, puis une chaudière de tôle avec sa colonne, enfin une petite distillerie maçonnée. Le jus de canne y devient rhum, désinfectant ou carburant. L'odeur porte loin sous le vent.</p>",
+   "niveau": 0,
+   "niveauMax": 3,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 1,
+      "pieces": 1,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 4,
+      "pieces": 2,
+      "graines": 0,
+      "travail": 8
+     },
+     "requiert": {
+      "savoirs": [
+       "conserverie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 7,
+      "pieces": 3,
+      "graines": 0,
+      "travail": 14
+     },
+     "requiert": {
+      "savoirs": [
+       "conserverie",
+       "maconnerie"
+      ],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 0,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "bras": null
+     }
+    }
+   ],
+   "metiers": [
+    "distillerie"
+   ]
   }
  ],
  "savoirs": [
@@ -10914,7 +12373,11 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "sabre"
+   ]
   },
   {
    "nom": "Barre à mine",
@@ -10931,7 +12394,10 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "gammes": [
+    "pied-de-biche"
+   ]
   },
   {
    "nom": "Pied-de-biche",
@@ -10948,7 +12414,11 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "pied-de-biche"
+   ]
   },
   {
    "nom": "Batte ou manche de pioche",
@@ -10980,7 +12450,11 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "lance"
+   ]
   },
   {
    "nom": "Couteau",
@@ -10996,7 +12470,11 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "couteau"
+   ]
   },
   {
    "nom": "Fusil-harpon",
@@ -11062,7 +12540,8 @@
    "transport": null,
    "effets": null,
    "marque": "",
-   "parade": 5
+   "parade": 5,
+   "usages": 12
   },
   {
    "nom": "Fusil de chasse calibre 12",
@@ -11078,7 +12557,8 @@
    "bruit": 2,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "usages": 40
   },
   {
    "nom": "Carabine .22",
@@ -11094,7 +12574,8 @@
    "bruit": 1,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "usages": 60
   },
   {
    "nom": "Pistolet de service",
@@ -11110,7 +12591,8 @@
    "bruit": 2,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "usages": 50
   },
   {
    "nom": "Fusil d'assaut réglementaire",
@@ -11126,7 +12608,8 @@
    "bruit": 4,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "usages": 60
   },
   {
    "nom": "Pistolet de détresse",
@@ -11157,7 +12640,11 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "pelle-pioche"
+   ]
   },
   {
    "nom": "Caisse à outils",
@@ -11173,7 +12660,12 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "gammes": [
+    "marteau",
+    "pince",
+    "scie"
+   ]
   },
   {
    "nom": "Tronçonneuse",
@@ -11189,7 +12681,12 @@
    "bruit": 3,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "gammes": [
+    "hache",
+    "scie"
+   ],
+   "usages": 25
   },
   {
    "nom": "Lampe frontale",
@@ -11205,7 +12702,8 @@
    "bruit": 0,
    "transport": null,
    "effets": null,
-   "marque": ""
+   "marque": "",
+   "eclaire": true
   },
   {
    "nom": "Jumelles",
@@ -12694,6 +14192,1620 @@
     "type": "cahier",
     "rarete": "commune"
    }
+  },
+  {
+   "nom": "Éclat de basalte",
+   "cle": "eclat-de-basalte",
+   "categorie": "outil",
+   "description": "<p>Un éclat de galet de basalte, frappé contre un autre jusqu'à trouver le fil : le premier tranchant, à mains nues. Il coupe mal et s'émousse vite, mais il coupe.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "couteau"
+   ]
+  },
+  {
+   "nom": "Hache de fortune",
+   "cle": "hache-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Un galet taillé, emmanché dans une branche fendue et serré à la corde : de quoi abattre ses premiers arbres, lentement. Le manche lâche avant la pierre.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "hache"
+   ]
+  },
+  {
+   "nom": "Sabre de fortune",
+   "cle": "sabre-a-canne-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Une lame de pierre plate ligaturée au bout d'un bambou : elle tranche les lianes et le vétiver, pas grand-chose de plus.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "sabre"
+   ]
+  },
+  {
+   "nom": "Marteau de fortune",
+   "cle": "marteau-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Un galet rond lié à un manche de goyavier. On tape juste, ou on se tape les doigts.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "marteau"
+   ]
+  },
+  {
+   "nom": "Scie de fortune",
+   "cle": "scie-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Des éclats de basalte pris dans une branche fendue, en dents : elle râpe plus qu'elle ne scie.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "scie"
+   ]
+  },
+  {
+   "nom": "Truelle de fortune",
+   "cle": "truelle-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Une pierre plate emmanchée : de quoi lisser la terre d'un torchis ou caler une pierre.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "truelle"
+   ]
+  },
+  {
+   "nom": "Pelle et pic de fortune",
+   "cle": "pelle-pioche-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Une pelle taillée dans une planche, un pic de bois durci au feu : on creuse, à la sueur.</p>",
+   "bonus": {},
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "pelle-pioche"
+   ]
+  },
+  {
+   "nom": "Levier de bois dur",
+   "cle": "pied-de-biche-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Une branche de bois dur, taillée en biseau : elle soulève une tôle, force un volet, et casse au troisième essai.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "pied-de-biche"
+   ]
+  },
+  {
+   "nom": "Masse de fortune",
+   "cle": "masse-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Une grosse pierre liée en croix au bout d'un manche : elle casse un parpaing, si l'on a de la patience.</p>",
+   "bonus": {},
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "masse"
+   ]
+  },
+  {
+   "nom": "Pince de bambou",
+   "cle": "pince-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Un bambou fendu, refermé à la corde : il tient ce qui brûle et tord un fil de fer fin.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "pince"
+   ]
+  },
+  {
+   "nom": "Gratte de fortune",
+   "cle": "gratte-de-fortune",
+   "categorie": "outil",
+   "description": "<p>Une pierre plate emmanchée en travers : la houe d'avant les houes, pour sarcler et butter.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "fortune",
+   "gammes": [
+    "gratte"
+   ]
+  },
+  {
+   "nom": "Hache de récupération",
+   "cle": "hache-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Un fer de ferraille découpé au burin, emmanché et goupillé au fil de fer : elle abat un arbre, et le reste.</p>",
+   "bonus": {
+    "bricolage": 1,
+    "combat": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "hache"
+   ]
+  },
+  {
+   "nom": "Sabre de récupération",
+   "cle": "sabre-a-canne-de-recuperation",
+   "categorie": "arme",
+   "description": "<p>Une lame taillée dans une tôle épaisse, affûtée à la meule, un manche de bois : elle coupe la canne comme l'autre.</p>",
+   "bonus": {
+    "combat": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "sabre"
+   ]
+  },
+  {
+   "nom": "Couteau de récupération",
+   "cle": "couteau-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Une lame de scie à métaux meulée, un manche de bois et de fil de fer : un vrai couteau, qui tient moins.</p>",
+   "bonus": {
+    "survie": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "couteau"
+   ]
+  },
+  {
+   "nom": "Marteau de récupération",
+   "cle": "marteau-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Un écrou de gros boulon serti sur un manche : il plante, il redresse, il arrache.</p>",
+   "bonus": {
+    "bricolage": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "marteau"
+   ]
+  },
+  {
+   "nom": "Scie de récupération",
+   "cle": "scie-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Une lame de ressort taillée en dents à la lime, tendue sur un arc de bois : elle débite une planche en un quart.</p>",
+   "bonus": {
+    "bricolage": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "scie"
+   ]
+  },
+  {
+   "nom": "Truelle de récupération",
+   "cle": "truelle-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Un triangle de tôle riveté sur un manche : on gâche, on lisse, on jointoie.</p>",
+   "bonus": {
+    "bricolage": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "truelle"
+   ]
+  },
+  {
+   "nom": "Pelle et pioche de récupération",
+   "cle": "pelle-pioche-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Une pelle de tôle pliée, un fer de pioche fait d'une barre de ferraille : on creuse la tranchée, la fosse, la tombe.</p>",
+   "bonus": {
+    "endurance": 1,
+    "bricolage": 1
+   },
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "pelle-pioche"
+   ]
+  },
+  {
+   "nom": "Pied-de-biche de récupération",
+   "cle": "pied-de-biche-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Une barre de ferraille aplatie et recourbée au feu : elle ouvre, elle soulève, elle cogne.</p>",
+   "bonus": {
+    "bricolage": 1,
+    "combat": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "pied-de-biche"
+   ]
+  },
+  {
+   "nom": "Masse de récupération",
+   "cle": "masse-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Un bloc d'acier de casse, percé et emmanché : il casse le roc et les murs en dur.</p>",
+   "bonus": {
+    "bricolage": 1,
+    "combat": 1
+   },
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "masse"
+   ]
+  },
+  {
+   "nom": "Pince de récupération",
+   "cle": "pince-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Deux bras de ferraille et un boulon : elle coupe le fil de fer, tient les câbles, démonte une épave.</p>",
+   "bonus": {
+    "bricolage": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "pince"
+   ]
+  },
+  {
+   "nom": "Gratte de récupération",
+   "cle": "gratte-de-recuperation",
+   "categorie": "outil",
+   "description": "<p>Une lame de tôle sur un manche, comme celle des carreaux de l'île : sarcler, butter, creuser une rigole.</p>",
+   "bonus": {
+    "survie": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "gratte"
+   ]
+  },
+  {
+   "nom": "Lance de récupération",
+   "cle": "lance-de-recuperation",
+   "categorie": "arme",
+   "description": "<p>Un fer de ferraille forgé à froid, goupillé sur un manche droit : à deux mètres d'une bouche qui mord, on frappe et on recule.</p>",
+   "bonus": {
+    "combat": 2
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "recuperation",
+   "gammes": [
+    "lance"
+   ]
+  },
+  {
+   "nom": "Hache forgée",
+   "cle": "hache",
+   "categorie": "outil",
+   "description": "<p>Un fer forgé, trempé, emmanché à la main : elle tient une trentaine d'arbres avant qu'on la rafistole.</p>",
+   "bonus": {
+    "bricolage": 1,
+    "combat": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "hache"
+   ]
+  },
+  {
+   "nom": "Marteau forgé",
+   "cle": "marteau",
+   "categorie": "outil",
+   "description": "<p>Une tête d'acier forgée au galet, un manche de goyavier : le premier outil de la forge, et le plus utile.</p>",
+   "bonus": {
+    "bricolage": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "marteau"
+   ]
+  },
+  {
+   "nom": "Scie forgée",
+   "cle": "scie",
+   "categorie": "outil",
+   "description": "<p>Une lame de ressort recuite, taillée, avoyée, retrempée : il faut savoir la mécanique pour la réussir.</p>",
+   "bonus": {
+    "bricolage": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "scie"
+   ]
+  },
+  {
+   "nom": "Truelle forgée",
+   "cle": "truelle",
+   "categorie": "outil",
+   "description": "<p>Une truelle d'acier, pour maçonner à la chaux ou au ciment.</p>",
+   "bonus": {
+    "bricolage": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "truelle"
+   ]
+  },
+  {
+   "nom": "Masse forgée",
+   "cle": "masse",
+   "categorie": "outil",
+   "description": "<p>Huit kilos d'acier au bout d'un manche : le roc, les murs en dur, et ce qui se met en travers.</p>",
+   "bonus": {
+    "bricolage": 1,
+    "combat": 1
+   },
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "masse"
+   ]
+  },
+  {
+   "nom": "Pince coupante forgée",
+   "cle": "pince",
+   "categorie": "outil",
+   "description": "<p>Une vraie pince coupante : le fil de fer, les câbles, les boulons d'une épave.</p>",
+   "bonus": {
+    "bricolage": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "pince"
+   ]
+  },
+  {
+   "nom": "Gratte forgée",
+   "cle": "gratte",
+   "categorie": "outil",
+   "description": "<p>La houe des carreaux de l'île, forgée et trempée : pour sarcler, butter, creuser une rigole.</p>",
+   "bonus": {
+    "survie": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "gratte"
+   ]
+  },
+  {
+   "nom": "Lance forgée",
+   "cle": "lance-forgee",
+   "categorie": "arme",
+   "description": "<p>Un fer de lance forgé et trempé sur un bambou plein : elle tient à distance, et elle dure.</p>",
+   "bonus": {
+    "combat": 2
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "qualite": "forge",
+   "gammes": [
+    "lance"
+   ]
+  },
+  {
+   "nom": "Pierre à aiguiser",
+   "cle": "pierre-a-aiguiser",
+   "categorie": "outil",
+   "description": "<p>Un galet au grain fin, dressé à plat sur une dalle. Avec elle, on redonne du fil à une lame (hache, sabre, couteau, scie) : l'affûtage rend un quart de ses usages et ne compte pas parmi les trois réparations de fortune.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Arc renforcé",
+   "cle": "arc-renforce",
+   "categorie": "arme",
+   "description": "<p>L'arc de chasse, doublé au dos d'une lame de ressort et d'une corde neuve : il tire plus loin et plus fort. Silencieux, comme avant.</p>",
+   "bonus": {
+    "tir": 2
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Arbalète d'acier à levier",
+   "cle": "arbalete-d-acier",
+   "categorie": "arme",
+   "description": "<p>L'arbalète de fortune reprise à la forge : un arc d'acier forgé, un levier pour la tendre en quelques secondes au lieu d'une demi-minute. Silencieuse ; ses carreaux se récupèrent.</p>",
+   "bonus": {
+    "tir": 2
+   },
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Bouclier doublé et cerclé",
+   "cle": "bouclier-double-et-cercle",
+   "categorie": "arme",
+   "description": "<p>Le bouclier de tôle doublé d'une seconde tôle et cerclé de fer à la forge : il pare une touche de Livide sur deux (4, 5 ou 6 au dé), et une touche parée ne blesse pas et ne mord pas. Plus lourd, il tient plus longtemps.</p>",
+   "bonus": {
+    "combat": 1
+   },
+   "charge": 3,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "parade": 4,
+   "usages": 30
+  },
+  {
+   "nom": "Fusil de chasse remis en état",
+   "cle": "fusil-de-chasse-remis-en-etat",
+   "categorie": "arme-a-feu",
+   "description": "<p>Le fusil démonté, nettoyé, huilé à l'huile de bancoul, son ressort changé : il porte plus juste et ne s'enraye presque plus. Il s'entend toujours à des kilomètres.</p>",
+   "bonus": {
+    "tir": 3
+   },
+   "charge": 2,
+   "usure": 0,
+   "munitions": 1,
+   "bruit": 2,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "usages": 70,
+   "remise": true
+  },
+  {
+   "nom": "Carabine .22 remise en état",
+   "cle": "carabine-22-remise-en-etat",
+   "categorie": "arme-a-feu",
+   "description": "<p>La petite carabine reprise pièce à pièce : précise, fiable, et toujours moins bruyante qu'un fusil.</p>",
+   "bonus": {
+    "tir": 2
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": 1,
+   "bruit": 1,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "usages": 100,
+   "remise": true
+  },
+  {
+   "nom": "Pistolet de service remis en état",
+   "cle": "pistolet-de-service-remis-en-etat",
+   "categorie": "arme-a-feu",
+   "description": "<p>Le pistolet nettoyé, son ressort de chargeur changé : il ne s'enraye presque plus.</p>",
+   "bonus": {
+    "tir": 2
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": 1,
+   "bruit": 2,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "usages": 85,
+   "remise": true
+  },
+  {
+   "nom": "Tronçonneuse révisée",
+   "cle": "tronconneuse-revisee",
+   "categorie": "outil",
+   "description": "<p>La tronçonneuse démontée, sa chaîne affûtée, son carburateur réglé, son pot bourré de laine de roche : elle coupe mieux, dure plus, et s'entend un peu moins loin.</p>",
+   "bonus": {
+    "bricolage": 2
+   },
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 2,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "gammes": [
+    "hache",
+    "scie"
+   ],
+   "usages": 40
+  },
+  {
+   "nom": "Bertel",
+   "cle": "bertel",
+   "categorie": "vie",
+   "description": "<p>Le sac à dos de vacoa des Hauts, tressé serré, avec ses bretelles de corde : on y porte le manger, les outils, les patates du jardin. Il se refait quand il s'use.</p>",
+   "bonus": {
+    "endurance": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "moral": 0.25
+   },
+   "marque": ""
+  },
+  {
+   "nom": "Tente de vacoa",
+   "cle": "tente-de-vacoa",
+   "categorie": "vie",
+   "description": "<p>La <em>tente</em>, à La Réunion, c'est le panier tressé qu'on porte au marché et au champ, pas l'abri de toile. Celle-ci a deux anses et sent la feuille sèche.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "moral": 0.25
+   },
+   "marque": ""
+  },
+  {
+   "nom": "Capeline de vacoa",
+   "cle": "capeline-de-vacoa",
+   "categorie": "vie",
+   "description": "<p>Le grand chapeau de vacoa des planteurs : dehors, à l'heure où le soleil tape, il ôte le malus de la chaleur.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "protege": [
+    "soleil"
+   ]
+  },
+  {
+   "nom": "Tenue rapiécée",
+   "cle": "tenue-rapiecee",
+   "categorie": "vie",
+   "description": "<p>Des vêtements repris, renforcés aux genoux et aux coudes, qui tiendront encore une saison. Être propre et couvert, ça compte.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "moral": 0.25
+   },
+   "marque": ""
+  },
+  {
+   "nom": "Gants de travail",
+   "cle": "gants-de-travail",
+   "categorie": "vie",
+   "description": "<p>Des gants de toile doublée : on déplace le bois et les tôles sans se couper, et sans glisser la main sur une scolopendre (le MJ ne fait pas tirer la piqûre à qui les porte en remuant le bois).</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Couverture",
+   "cle": "couverture",
+   "categorie": "vie",
+   "description": "<p>Une couverture cousue de vieux draps et de rideaux : les nuits des Hauts sont froides. Roulée sur le sac, elle fait de quoi bivouaquer.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "moral": 0.25
+   },
+   "marque": "",
+   "bivouac": true
+  },
+  {
+   "nom": "Cape de pluie",
+   "cle": "cape-de-pluie",
+   "categorie": "vie",
+   "description": "<p>Une cape taillée dans une bâche, avec une capuche : on marche sous l'averse sans tremper ce qu'on porte, les cartes, les cahiers, les allumettes.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Savates de pneu",
+   "cle": "savates-de-pneu",
+   "categorie": "vie",
+   "description": "<p>Des savates deux-doigts découpées dans un pneu, la bride en chambre à air : elles ne s'usent pas, ne glissent pas sur le basalte mouillé, et ne coûtent rien.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "moral": 0.25
+   },
+   "marque": ""
+  },
+  {
+   "nom": "Jarre de terre cuite",
+   "cle": "jarre-de-terre-cuite",
+   "categorie": "vie",
+   "description": "<p>Une jarre d'argile montée à la main et cuite au four de la forge : l'eau y reste fraîche et ne croupit pas. Elle garde quatre unités d'eau de plus à l'abri (au MJ).</p>",
+   "bonus": {},
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": {
+    "stockage": {
+     "eau": 4
+    }
+   },
+   "marque": ""
+  },
+  {
+   "nom": "Vouve",
+   "cle": "vouve",
+   "categorie": "outil",
+   "description": "<p>La nasse tressée de gaulettes et de vacoa qu'on cale dans le courant, à l'embouchure des rivières, pour les bichiques et les petits poissons. On la pose le soir, on la relève au matin.</p>",
+   "bonus": {
+    "survie": 1
+   },
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Filet de pêche",
+   "cle": "filet-de-peche",
+   "categorie": "outil",
+   "description": "<p>Un filet noué maille à maille, lesté de galets : long à faire, il nourrit un groupe au lagon ou dans une vasque.</p>",
+   "bonus": {
+    "survie": 2
+   },
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Ligne de pêche",
+   "cle": "ligne-de-peche",
+   "categorie": "outil",
+   "description": "<p>Un hameçon tordu dans du fil de fer, une ligne, une gaulette : de quoi pêcher depuis les galets.</p>",
+   "bonus": {
+    "survie": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Pièges à rats",
+   "cle": "pieges-a-rats",
+   "categorie": "outil",
+   "description": "<p>Deux pièges de planche et de fil de fer. Les rats gâtent les réserves et salissent l'eau : avec eux posés près des stocks, le MJ ne fait pas perdre de vivres aux rats.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Cage de bambou",
+   "cle": "cage-de-bambou",
+   "categorie": "outil",
+   "description": "<p>Une cage de gaulettes liées : pour emporter vivante une poule ou un lapin trouvés en fouillant. Sans elle, la bête file.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Sac de goni",
+   "cle": "sac-de-goni",
+   "categorie": "outil",
+   "description": "<p>Le sac de jute des sucreries et des marchés : on y met une bête qui se débat, un porcelet, un cabri tout jeune.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Enfumoir",
+   "cle": "enfumoir",
+   "categorie": "outil",
+   "description": "<p>Une boîte de conserve percée, du chaume qui fume : on calme un essaim avant de le prendre. Sans lui, l'essaim pique.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Torche",
+   "cle": "torche",
+   "categorie": "outil",
+   "description": "<p>Une branche, un chiffon trempé d'huile de bancoul : de la lumière pour une nuit, qui se voit de très loin.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "usages": 1,
+   "eclaire": true
+  },
+  {
+   "nom": "Lampe à huile",
+   "cle": "lampe-a-huile",
+   "categorie": "outil",
+   "description": "<p>Un bocal, une mèche de tissu, de l'huile de bancoul : une petite flamme qui fume, pour trois nuits. On la remplit avec une autre bouteille d'huile.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "usages": 3,
+   "eclaire": true
+  },
+  {
+   "nom": "Bougies",
+   "cle": "bougies",
+   "categorie": "outil",
+   "description": "<p>La cire des ruches coulée autour d'une mèche : deux nuits d'une lumière douce, qui se voit moins qu'un feu.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "usages": 2,
+   "eclaire": true
+  },
+  {
+   "nom": "Lampe électrique",
+   "cle": "lampe-electrique",
+   "categorie": "outil",
+   "description": "<p>Une ampoule de récupération dans un bocal, un câble, une batterie qu'on recharge aux panneaux : une lumière franche et sans fumée, tant qu'il y a du courant.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "eclaire": true
+  },
+  {
+   "nom": "Charbon de bois",
+   "cle": "charbon-de-bois",
+   "categorie": "matiere",
+   "description": "<p>Un sac de charbon tiré d'une meule couverte de terre : le feu de la forge, le four à poterie, le filtre à eau, l'encre. Une forge en brûle un sac par ouvrage.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Sel",
+   "cle": "sel",
+   "categorie": "matiere",
+   "description": "<p>Un bocal de sel de mer, gris et humide, réduit sur le feu : sans sel, pas de boucané, pas d'achards.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Vinaigre de canne",
+   "cle": "vinaigre-de-canne",
+   "categorie": "matiere",
+   "description": "<p>Le jus de canne qu'on a laissé tourner des semaines dans un bocal fermé d'un linge : pour les achards.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Huile de bancoul",
+   "cle": "huile-de-bancoul",
+   "categorie": "matiere",
+   "description": "<p>L'huile à lampe d'autrefois, pressée des noix du bancoulier : elle éclaire, elle graisse les armes, elle entre dans les baumes. Elle ne se mange pas.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Rhum de canne",
+   "cle": "rhum-de-canne",
+   "categorie": "matiere",
+   "description": "<p>Une bouteille du jus fermenté passé une fois à l'alambic : rude. On en fait le rhum arrangé.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Cendre tamisée",
+   "cle": "cendre-tamisee",
+   "categorie": "matiere",
+   "description": "<p>Un seau de cendre de bois fine, passée au tamis : pour la lessive et pour la terre.</p>",
+   "bonus": {},
+   "charge": 1,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Roue de bois cerclée",
+   "cle": "roue-de-bois",
+   "categorie": "matiere",
+   "description": "<p>Une roue de planches chevillées, cerclée de fer à chaud : elle remplace les roues de récupération quand il n'y en a plus.</p>",
+   "bonus": {},
+   "charge": 2,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Régulateur de charge",
+   "cle": "regulateur-de-charge",
+   "categorie": "matiere",
+   "description": "<p>Une petite carte électronique remontée dans un boîtier : sans lui, des panneaux tuent les batteries. Un utilitaire électrique en demande un.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Tisane de la gramoune",
+   "cle": "tisane-de-la-gramoune",
+   "categorie": "soin",
+   "description": "<p>La tisane du cahier de la gramoune, ses plantes à elle, ses doses à elle : pour le ventre, les fièvres et les coups de chaleur, elle tient lieu de médicament et donne un dé de plus au soin. Elle ne guérit pas du Gris.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "remede": {
+    "afflictions": [
+     "gastro-enterite",
+     "dengue",
+     "chikungunya",
+     "coup-de-chaleur"
+    ],
+    "bonus": 1,
+    "remplace": true
+   }
+  },
+  {
+   "nom": "Tisane d'ayapana",
+   "cle": "tisane-d-ayapana",
+   "categorie": "soin",
+   "description": "<p>L'ayapana que les gramounes donnent pour le ventre : pour une gastro-entérite, elle tient lieu de médicament et donne un dé de plus au soin.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "remede": {
+    "afflictions": [
+     "gastro-enterite"
+    ],
+    "bonus": 1,
+    "remplace": true
+   }
+  },
+  {
+   "nom": "Tisane de citronnelle",
+   "cle": "tisane-de-citronnelle",
+   "categorie": "soin",
+   "description": "<p>Celle qu'on boit chaude quand on se sent pris par la fièvre : pour la dengue et le chikungunya, elle tient lieu de médicament et donne un dé de plus au soin.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "remede": {
+    "afflictions": [
+     "dengue",
+     "chikungunya"
+    ],
+    "bonus": 1,
+    "remplace": true
+   }
+  },
+  {
+   "nom": "Cataplasme de feuilles",
+   "cle": "cataplasme-de-feuilles",
+   "categorie": "soin",
+   "description": "<p>Des feuilles pilées, tenues par une lanière de vacoa : sur une plaie qui rougit, une piqûre, une brûlure, il tient lieu de médicament et donne un dé de plus au soin.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "remede": {
+    "afflictions": [
+     "plaie-infectee",
+     "piqure-de-scolopendre",
+     "brulure"
+    ],
+    "bonus": 1,
+    "remplace": true
+   }
+  },
+  {
+   "nom": "Baume à la cire",
+   "cle": "baume-a-la-cire",
+   "categorie": "soin",
+   "description": "<p>Cire d'abeille, huile de bancoul et zerbaz fondus ensemble : pour la peau brûlée ou mangée par la gale, il tient lieu de médicament et donne un dé de plus au soin.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "remede": {
+    "afflictions": [
+     "brulure",
+     "gale"
+    ],
+    "bonus": 1,
+    "remplace": true
+   }
+  },
+  {
+   "nom": "Sirop de miel aux zerbaz",
+   "cle": "sirop-de-miel",
+   "categorie": "soin",
+   "description": "<p>Du miel et des zerbaz, à la cuillère, pour la gorge et la toux des fièvres : un dé de plus au soin, mais il ne tient pas lieu de médicament.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "remede": {
+    "afflictions": [
+     "dengue",
+     "chikungunya",
+     "leptospirose"
+    ],
+    "bonus": 1,
+    "remplace": false
+   }
+  },
+  {
+   "nom": "Eau salée et sucrée",
+   "cle": "eau-salee-et-sucree",
+   "categorie": "soin",
+   "description": "<p>De l'eau propre, une pincée de sel, du jus de canne : pour qui se vide ou a pris un coup de chaleur, elle tient lieu de médicament et donne un dé de plus au soin.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "remede": {
+    "afflictions": [
+     "gastro-enterite",
+     "coup-de-chaleur"
+    ],
+    "bonus": 1,
+    "remplace": true
+   }
+  },
+  {
+   "nom": "Attelle",
+   "cle": "attelle",
+   "categorie": "soin",
+   "description": "<p>Deux gaulettes, du tissu, une corde : pour tenir un membre cassé, tout de suite. Elle tient lieu de médicament pour soigner une fracture et donne un dé de plus.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "remede": {
+    "afflictions": [
+     "fracture"
+    ],
+    "bonus": 1,
+    "remplace": true
+   }
+  },
+  {
+   "nom": "Lessive de cendre",
+   "cle": "lessive-de-cendre",
+   "categorie": "soin",
+   "description": "<p>De la cendre tamisée et de l'eau chaude : on y fait bouillir le linge et les draps, et la gale s'en va avec. Elle tient lieu de médicament pour la gale et donne un dé de plus.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "remede": {
+    "afflictions": [
+     "gale"
+    ],
+    "bonus": 1,
+    "remplace": true
+   }
+  },
+  {
+   "nom": "Charrette à bras",
+   "cle": "charrette-a-bras",
+   "categorie": "transport",
+   "description": "<p>Un plateau de planches, deux roues de bois cerclées, deux brancards : un survivant y emmène des troncs et des sacs. Ni sentier, ni ravine, ni escalier. Un peu d'huile de bancoul aux moyeux tous les trente jours.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 1,
+   "transport": {
+    "mode": "pied",
+    "places": 0,
+    "chargeMax": 8,
+    "carburantParQuart": 0,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 1,
+    "allure": 1.2,
+    "pente": {
+     "descente": 1,
+     "montee": 1.6
+    },
+    "large": true
+   },
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Chariot de récupération",
+   "cle": "chariot-de-recuperation",
+   "categorie": "transport",
+   "description": "<p>De la ferraille soudée ou boulonnée, une caisse de tôle, deux roues de brouette ou de chariot de supermarché : vite monté, il roule mieux que la charrette, mais pas dans la boue. Deux rustines tous les trente jours.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 1,
+   "transport": {
+    "mode": "pied",
+    "places": 0,
+    "chargeMax": 10,
+    "carburantParQuart": 0,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 1,
+    "allure": 1.1,
+    "pente": {
+     "descente": 1,
+     "montee": 1.5
+    },
+    "large": true
+   },
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Vélo et sa remorque",
+   "cle": "velo-et-remorque",
+   "categorie": "transport",
+   "description": "<p>Un vélo tout-terrain avec, accrochée derrière, une remorque de ferraille et de planches : les sacs et les planches suivent, sans un bruit. Les montées des Hauts se font à pied, en poussant. Deux rustines tous les vingt jours.</p>",
+   "bonus": {
+    "endurance": 1
+   },
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": {
+    "mode": "pied",
+    "places": 1,
+    "chargeMax": 7,
+    "carburantParQuart": 0,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 0,
+    "allure": 0.6,
+    "pente": {
+     "descente": 0.7,
+     "montee": 3
+    }
+   },
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Motoculteur",
+   "cle": "motoculteur",
+   "categorie": "transport",
+   "description": "<p>Un petit moteur sur deux roues, remis en état : seul, il ne porte presque rien ; il tire une remorque. Il boit du carburant et s'entend de très loin.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 4,
+   "transport": {
+    "mode": "vehicule",
+    "places": 1,
+    "chargeMax": 2,
+    "carburantParQuart": 0.5,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 4,
+    "lenteur": 3
+   },
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Motoculteur et sa remorque",
+   "cle": "motoculteur-et-remorque",
+   "categorie": "transport",
+   "description": "<p>Le motoculteur attelé à son plateau de ferraille : il porte presque autant qu'une charrette à bœufs, à l'allure d'un homme qui marche, et tout le monde l'entend venir. Deux boîtes de vis tous les quinze jours.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 4,
+   "transport": {
+    "mode": "vehicule",
+    "places": 1,
+    "chargeMax": 32,
+    "carburantParQuart": 0.5,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 4,
+    "lenteur": 3,
+    "large": true
+   },
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Petit utilitaire électrique",
+   "cle": "utilitaire-electrique",
+   "categorie": "transport",
+   "description": "<p>Un châssis de voiturette, un moteur électrique, quatre batteries et son régulateur : silencieux, rechargé par les panneaux de l'abri (deux unités d'énergie par quart de route). Ni boue, ni sentier.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": {
+    "mode": "vehicule",
+    "places": 2,
+    "chargeMax": 20,
+    "carburantParQuart": 2,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 0,
+    "lenteur": 1.5,
+    "source": "energie"
+   },
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Utilitaire électrique et sa remorque",
+   "cle": "utilitaire-et-remorque",
+   "categorie": "transport",
+   "description": "<p>Le petit utilitaire et le plateau qu'il tire : il déménage un abri sans un bruit, et vide ses batteries en un trajet (trois unités d'énergie par quart de route).</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": {
+    "mode": "vehicule",
+    "places": 2,
+    "chargeMax": 36,
+    "carburantParQuart": 3,
+    "terrains": [
+     "route",
+     "piste"
+    ],
+    "bruit": 0,
+    "lenteur": 1.8,
+    "source": "energie",
+    "large": true
+   },
+   "effets": null,
+   "marque": ""
+  },
+  {
+   "nom": "Blindage de tôle et grilles",
+   "cle": "blindage-de-tole",
+   "categorie": "amenagement",
+   "description": "<p>Des tôles boulonnées sur les portières, des grilles de fenêtre sur les vitres : dans le véhicule, chaque touche d'un Livide qui passe la main ou la tête est parée sur 5 ou 6, comme un bouclier de tôle. Le MJ le pose sur un véhicule du groupe ; la voiture est plus lourde et plus lente sur les pentes.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "amenagement": {
+    "parade": 5
+   }
+  },
+  {
+   "nom": "Galerie de toit",
+   "cle": "galerie-de-toit",
+   "categorie": "amenagement",
+   "description": "<p>Une galerie de tubes soudés sur le toit, des sangles : quatre charges de plus sur un véhicule du groupe (au MJ), et ce qu'on y met se voit de loin.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "amenagement": {
+    "charge": 4
+   }
+  },
+  {
+   "nom": "Remorque de voiture",
+   "cle": "remorque-de-voiture",
+   "categorie": "amenagement",
+   "description": "<p>Un essieu, deux roues, un plateau de tôle, un timon et une boule d'attelage : dix charges de plus derrière une voiture ou un 4×4 (au MJ), mais l'attelage ne se faufile plus entre les épaves.</p>",
+   "bonus": {},
+   "charge": 0,
+   "usure": 0,
+   "munitions": null,
+   "bruit": 0,
+   "transport": null,
+   "effets": null,
+   "marque": "",
+   "amenagement": {
+    "charge": 10,
+    "large": true
+   }
   }
  ],
  "passes": [
@@ -13204,7 +16316,8 @@
    "produit": {
     "equipement": "lance-de-fortune",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Arc et flèches",
@@ -13218,12 +16331,16 @@
    "difficulte": "difficile",
    "requiert": {
     "savoirs": [],
-    "installation": "atelier"
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
    },
    "produit": {
     "equipement": "arc-de-chasse",
     "n": 1
-   }
+   },
+   "metier": "etabli"
   },
   {
    "nom": "Arbalète de fortune",
@@ -13241,14 +16358,15 @@
      "mecanique"
     ],
     "installation": {
-     "cle": "atelier",
+     "metier": "mecanique",
      "niveau": 1
     }
    },
    "produit": {
     "equipement": "arbalete-de-fortune",
     "n": 1
-   }
+   },
+   "metier": "mecanique"
   },
   {
    "nom": "Bouclier de tôle",
@@ -13267,7 +16385,8 @@
    "produit": {
     "equipement": "bouclier-de-tole",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Collets et nasses",
@@ -13287,7 +16406,8 @@
    "produit": {
     "equipement": "collets-et-nasses",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Cloches d'alerte",
@@ -13306,7 +16426,8 @@
    "produit": {
     "equipement": "cloches-d-alerte",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Gourde filtrante de fortune",
@@ -13328,7 +16449,8 @@
    "produit": {
     "equipement": "filtre-portatif",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Réchaud à bois",
@@ -13347,7 +16469,8 @@
    "produit": {
     "equipement": "rechaud",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Poêle de masse",
@@ -13364,12 +16487,16 @@
     "savoirs": [
      "maconnerie"
     ],
-    "installation": null
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
    },
    "produit": {
     "equipement": "poele-de-masse",
     "n": 1
-   }
+   },
+   "metier": "cuisine"
   },
   {
    "nom": "Chauffe-eau solaire de fortune",
@@ -13391,7 +16518,8 @@
    "produit": {
     "equipement": "chauffe-eau-solaire",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Vélo-cargo",
@@ -13409,14 +16537,15 @@
      "mecanique"
     ],
     "installation": {
-     "cle": "atelier",
+     "metier": "mecanique",
      "niveau": 1
     }
    },
    "produit": {
     "equipement": "velo-cargo",
     "n": 1
-   }
+   },
+   "metier": "mecanique"
   },
   {
    "nom": "Panneaux démontables",
@@ -13433,12 +16562,16 @@
     "savoirs": [
      "electricite-solaire"
     ],
-    "installation": "atelier"
+    "installation": {
+     "metier": "electricite",
+     "niveau": 1
+    }
    },
    "produit": {
     "equipement": "panneaux-demontables",
     "n": 1
-   }
+   },
+   "metier": "electricite"
   },
   {
    "nom": "Radio à manivelle",
@@ -13459,7 +16592,8 @@
    "produit": {
     "equipement": "radio-a-manivelle",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Moustiquaires",
@@ -13478,7 +16612,8 @@
    "produit": {
     "equipement": "moustiquaires",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Munitions rechargées",
@@ -13496,14 +16631,15 @@
      "mecanique"
     ],
     "installation": {
-     "cle": "atelier",
+     "metier": "mecanique",
      "niveau": 2
     }
    },
    "produit": {
     "ressource": "munitions",
     "n": 2
-   }
+   },
+   "metier": "mecanique"
   },
   {
    "nom": "Alcool désinfectant",
@@ -13520,12 +16656,16 @@
     "savoirs": [
      "conserverie"
     ],
-    "installation": null
+    "installation": {
+     "metier": "distillerie",
+     "niveau": 1
+    }
    },
    "produit": {
     "ressource": "medicaments",
     "n": 1
-   }
+   },
+   "metier": "distillerie"
   },
   {
    "nom": "Savon",
@@ -13535,17 +16675,21 @@
     "nourriture": 2,
     "materiaux": 1
    },
-   "travail": 2,
+   "travail": 3,
    "competence": "survie",
    "difficulte": "normale",
    "requiert": {
     "savoirs": [],
-    "installation": null
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
    },
    "produit": {
     "ressource": "medicaments",
     "n": 1
-   }
+   },
+   "metier": "cuisine"
   },
   {
    "nom": "Pansements de fortune",
@@ -13564,7 +16708,8 @@
    "produit": {
     "ressource": "medicaments",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Tisanes et emplâtres",
@@ -13583,7 +16728,8 @@
    "produit": {
     "ressource": "medicaments",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Bocaux et boucané",
@@ -13600,12 +16746,16 @@
     "savoirs": [
      "conserverie"
     ],
-    "installation": null
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
    },
    "produit": {
     "ressource": "nourriture",
     "n": 5
-   }
+   },
+   "metier": "cuisine"
   },
   {
    "nom": "Semences triées",
@@ -13626,7 +16776,8 @@
    "produit": {
     "ressource": "graines",
     "n": 2
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Pinces à linge en bois fendu",
@@ -13645,7 +16796,8 @@
    "produit": {
     "equipement": "pinces-a-linge-en-bois",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Sac en vacoa",
@@ -13666,7 +16818,8 @@
    "produit": {
     "equipement": "sac-en-vacoa",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Chaise en vacoa",
@@ -13687,7 +16840,8 @@
    "produit": {
     "equipement": "chaise-en-vacoa",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Natte de vacoa",
@@ -13708,7 +16862,8 @@
    "produit": {
     "equipement": "natte-de-vacoa",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Cordes de choka",
@@ -13727,7 +16882,8 @@
    "produit": {
     "equipement": "cordes-de-choka",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Rimèd lontan",
@@ -13736,7 +16892,7 @@
    "cout": {
     "plantes": 3
    },
-   "travail": 2,
+   "travail": 4,
    "competence": "soins",
    "difficulte": "normale",
    "requiert": {
@@ -13748,7 +16904,8 @@
    "produit": {
     "ressource": "medicaments",
     "n": 2
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Alcool de canne (carburant)",
@@ -13769,7 +16926,8 @@
    "produit": {
     "ressource": "biocarburant",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Huile filtrée (carburant)",
@@ -13791,7 +16949,8 @@
    "produit": {
     "ressource": "biocarburant",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Moteur modifié pour l'alcool",
@@ -13809,14 +16968,15 @@
      "moteurs-de-fortune"
     ],
     "installation": {
-     "cle": "atelier",
+     "metier": "mecanique",
      "niveau": 1
     }
    },
    "produit": {
     "equipement": "voiture-a-l-alcool",
     "n": 1
-   }
+   },
+   "metier": "mecanique"
   },
   {
    "nom": "Gazogène sur un camion",
@@ -13834,14 +16994,15 @@
      "moteurs-de-fortune"
     ],
     "installation": {
-     "cle": "atelier",
+     "metier": "mecanique",
      "niveau": 1
     }
    },
    "produit": {
     "equipement": "camion-a-gazogene",
     "n": 1
-   }
+   },
+   "metier": "mecanique"
   },
   {
    "nom": "Planche des jours",
@@ -13860,7 +17021,8 @@
    "produit": {
     "equipement": "planche-des-jours",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Cadran solaire",
@@ -13879,7 +17041,8 @@
    "produit": {
     "equipement": "cadran-solaire",
     "n": 1
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Encre de suie",
@@ -13898,7 +17061,8 @@
    "produit": {
     "equipement": "encre-de-suie",
     "n": 2
-   }
+   },
+   "sac": true
   },
   {
    "nom": "Cahier cousu",
@@ -13917,7 +17081,2969 @@
    "produit": {
     "equipement": "cahier-cousu",
     "n": 1
-   }
+   },
+   "sac": true
+  },
+  {
+   "nom": "Éclat de basalte",
+   "cle": "eclat-de-basalte",
+   "description": "<p>Deux galets de basalte, l'un contre l'autre, jusqu'à ce qu'un éclat parte avec un fil : le premier couteau.</p>",
+   "cout": {},
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "eclat-de-basalte",
+    "n": 1
+   },
+   "sac": true,
+   "arbre": "lontan",
+   "repond": "couteau-forge"
+  },
+  {
+   "nom": "Hache de fortune",
+   "cle": "hache-de-fortune",
+   "description": "<p>Un galet taillé en biseau, emmanché dans une branche fendue au couteau et serré à la corde mouillée, qui se resserre en séchant.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "hache-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "arbre": "lontan",
+   "repond": "hache-forgee"
+  },
+  {
+   "nom": "Pierre à aiguiser",
+   "cle": "pierre-a-aiguiser",
+   "description": "<p>Un galet au grain fin, choisi au bord de la ravine et dressé à plat sur une dalle, avec de l'eau et de la patience.</p>",
+   "cout": {},
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "pierre-a-aiguiser",
+    "n": 1
+   },
+   "sac": true
+  },
+  {
+   "nom": "Sabre de fortune",
+   "cle": "sabre-a-canne-de-fortune",
+   "description": "<p>Une pierre plate retaillée, ligaturée au bout d'un bambou.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "sabre-a-canne-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Marteau de fortune",
+   "cle": "marteau-de-fortune",
+   "description": "<p>Un galet rond pris dans une branche fendue, serré à la corde.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "marteau-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Scie de fortune",
+   "cle": "scie-de-fortune",
+   "description": "<p>Trois éclats de basalte coincés en dents dans une branche fendue, collés à la sève et ligaturés.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "scie-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Truelle de fortune",
+   "cle": "truelle-de-fortune",
+   "description": "<p>Une pierre plate emmanchée et liée.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "truelle-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Pelle et pic de fortune",
+   "cle": "pelle-pioche-de-fortune",
+   "description": "<p>Une pelle taillée dans une planche, un pic de bois dur durci au feu.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "pelle-pioche-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Levier de bois dur",
+   "cle": "pied-de-biche-de-fortune",
+   "description": "<p>Une branche de bois dur, taillée en biseau au couteau.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "pied-de-biche-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Masse de fortune",
+   "cle": "masse-de-fortune",
+   "description": "<p>Une grosse pierre liée en croix au bout d'un manche, à deux cordes.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "masse-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Pince de bambou",
+   "cle": "pince-de-fortune",
+   "description": "<p>Un bambou fendu en deux branches, refermé à la corde.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "pince-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Gratte de fortune",
+   "cle": "gratte-de-fortune",
+   "description": "<p>Une pierre plate emmanchée en travers, liée à la corde.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "gratte-de-fortune",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Hache de récupération",
+   "cle": "hache-de-recuperation",
+   "description": "<p>Trois bouts de ferraille, un manche, du fil de fer : un fer découpé au burin, emmanché et goupillé.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "hache-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Sabre de récupération",
+   "cle": "sabre-a-canne-de-recuperation",
+   "description": "<p>Une tôle épaisse découpée, affûtée à la meule, un manche de bois serré au fil de fer.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "sabre-a-canne-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Couteau de récupération",
+   "cle": "couteau-de-recuperation",
+   "description": "<p>Une lame de scie à métaux cassée, meulée, emmanchée.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "couteau-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Marteau de récupération",
+   "cle": "marteau-de-recuperation",
+   "description": "<p>Deux bouts de ferraille, un manche, du fil de fer.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "marteau-de-recuperation",
+    "n": 1
+   },
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Scie de récupération",
+   "cle": "scie-de-recuperation",
+   "description": "<p>Une lame de ressort taillée en dents à la lime, tendue sur un arc de bois par une vis.</p>",
+   "cout": {
+    "pieces": 1
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "scie-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau",
+    "pince"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Truelle de récupération",
+   "cle": "truelle-de-recuperation",
+   "description": "<p>Un triangle de tôle riveté de quatre clous sur un manche.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "truelle-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Pelle et pioche de récupération",
+   "cle": "pelle-pioche-de-recuperation",
+   "description": "<p>Une tôle pliée, deux barres de ferraille, un manche, des clous.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "pelle-pioche-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Pied-de-biche de récupération",
+   "cle": "pied-de-biche-de-recuperation",
+   "description": "<p>Trois barres de ferraille, une aplatie et recourbée au feu.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "pied-de-biche-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Masse de récupération",
+   "cle": "masse-de-recuperation",
+   "description": "<p>Un bloc d'acier de casse percé, un manche, du fil de fer.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "masse-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Pince de récupération",
+   "cle": "pince-de-recuperation",
+   "description": "<p>Deux bras de ferraille et un boulon.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "pince-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Gratte de récupération",
+   "cle": "gratte-de-recuperation",
+   "description": "<p>Une tôle, un manche, quatre clous.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "gratte-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Lance de récupération",
+   "cle": "lance-de-recuperation",
+   "description": "<p>Un manche droit, deux ferrailles battues en fer de lance, du fil de fer.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "lance-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Charbon de bois en meule",
+   "cle": "charbon-de-bois",
+   "description": "<p>Un tronc débité, dressé en meule dans la cour, couvert de terre, allumé par le haut et surveillé deux jours et une nuit : trois sacs de charbon. La meule fume, et la fumée se voit.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 4,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "charbon-de-bois",
+    "n": 3
+   },
+   "outils": [
+    "hache"
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Couteau forgé",
+   "cle": "couteau-forge",
+   "description": "<p>Deux bouts de ferraille, un sac de charbon, une branche pour le manche : un vrai couteau.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "couteau",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 2,
+   "metier": "forge",
+   "arbre": "moderne",
+   "repond": "eclat-de-basalte"
+  },
+  {
+   "nom": "Marteau forgé",
+   "cle": "marteau-forge",
+   "description": "<p>Le premier outil de la forge se forge au galet : trois ferrailles, un sac de charbon, un manche.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "marteau",
+    "n": 1
+   },
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 2,
+   "metier": "forge"
+  },
+  {
+   "nom": "Gratte forgée",
+   "cle": "gratte-forgee",
+   "description": "<p>La houe des carreaux de l'île : trois ferrailles, un sac de charbon, un manche.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "gratte",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 2,
+   "metier": "forge"
+  },
+  {
+   "nom": "Truelle forgée",
+   "cle": "truelle-forgee",
+   "description": "<p>Deux ferrailles battues en triangle, un sac de charbon, une branche.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "truelle",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 2,
+   "metier": "forge"
+  },
+  {
+   "nom": "Pied-de-biche forgé",
+   "cle": "pied-de-biche-forge",
+   "description": "<p>Quatre ferrailles soudées au feu et recourbées, un sac de charbon.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "pied-de-biche",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 2,
+   "metier": "forge",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Lance forgée",
+   "cle": "lance-forgee",
+   "description": "<p>Un fer de lance forgé et trempé, emmanché sur un bambou plein.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "lance-forgee",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 2,
+   "metier": "forge",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Forger une hache",
+   "cle": "hache-forgee",
+   "description": "<p>Six ferrailles soudées au feu, le tranchant rapporté et trempé, un manche taillé dans le goyavier.</p>",
+   "cout": {
+    "materiaux": 2
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "hache",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 3,
+   "metier": "forge",
+   "arbre": "moderne",
+   "repond": "hache-de-fortune"
+  },
+  {
+   "nom": "Sabre forgé",
+   "cle": "sabre-forge",
+   "description": "<p>Une lame de ressort de voiture, chauffée, étirée, recourbée, trempée : elle devient un sabre à canne.</p>",
+   "cout": {
+    "pieces": 1
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "sabre-a-canne",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 3,
+   "metier": "forge",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Masse forgée",
+   "cle": "masse-forgee",
+   "description": "<p>Huit ferrailles rassemblées en un bloc, percé à chaud pour le manche.</p>",
+   "cout": {
+    "materiaux": 2
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "masse",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 3,
+   "metier": "forge"
+  },
+  {
+   "nom": "Pince coupante forgée",
+   "cle": "pince-forgee",
+   "description": "<p>Trois ferrailles, une vis pour l'axe, des mâchoires trempées.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "pince",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 3,
+   "metier": "forge"
+  },
+  {
+   "nom": "Scie forgée",
+   "cle": "scie-forgee",
+   "description": "<p>Une lame de ressort recuite, taillée à la lime, avoyée, retrempée, sur un arc de planche.</p>",
+   "cout": {
+    "pieces": 1
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "forge",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "scie",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 3,
+   "metier": "forge",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Pelle et pioche forgées",
+   "cle": "pelle-pioche-forgee",
+   "description": "<p>Six ferrailles battues en pelle et en fer de pioche, un manche.</p>",
+   "cout": {
+    "materiaux": 2
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "pelle-pioche",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 3,
+   "metier": "forge",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Jarre de terre cuite",
+   "cle": "jarre-de-terre-cuite",
+   "description": "<p>De l'argile de la ravine, montée en colombins à la main, séchée à l'ombre, cuite dans le four de la forge.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "jarre-de-terre-cuite",
+    "n": 1
+   },
+   "objets": [
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "metier": "forge",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Bouclier doublé et cerclé",
+   "cle": "bouclier-double-et-cercle",
+   "description": "<p>Le bouclier de tôle, une seconde tôle, deux ferrailles battues en cercle et rivées à chaud, vingt clous.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "forge",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "bouclier-double-et-cercle",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "bouclier-de-tole",
+     "n": 1
+    },
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 2,
+   "metier": "forge"
+  },
+  {
+   "nom": "Arbalète d'acier à levier",
+   "cle": "arbalete-d-acier",
+   "description": "<p>L'arbalète de fortune, un ressort forgé en arc, quatre ferrailles pour le levier, deux boîtes de vis.</p>",
+   "cout": {
+    "materiaux": 1,
+    "pieces": 1
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "forge",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "arbalete-d-acier",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "arbalete-de-fortune",
+     "n": 1
+    },
+    {
+     "cle": "charbon-de-bois",
+     "n": 1
+    }
+   ],
+   "bruit": 3,
+   "metier": "forge"
+  },
+  {
+   "nom": "Tente de vacoa",
+   "cle": "tente-de-vacoa",
+   "description": "<p>Quinze feuilles de vacoa séchées, blanchies, fendues en lanières, tressées en panier à deux anses.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "vannerie",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "tente-de-vacoa",
+    "n": 1
+   },
+   "outils": [
+    "couteau"
+   ],
+   "metier": "vannerie",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Bertel",
+   "cle": "bertel",
+   "description": "<p>Trente feuilles de vacoa tressées serré, deux cordes pour les bretelles : le sac à dos des Hauts.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 4,
+   "competence": "survie",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "vannerie",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "bertel",
+    "n": 1
+   },
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "metier": "vannerie",
+   "arbre": "lontan",
+   "repond": "coudre-un-sac"
+  },
+  {
+   "nom": "Capeline de vacoa",
+   "cle": "capeline-de-vacoa",
+   "description": "<p>Douze feuilles de vacoa tressées en spirale, un large bord contre le soleil.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "vannerie",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "capeline-de-vacoa",
+    "n": 1
+   },
+   "metier": "vannerie",
+   "arbre": "lontan",
+   "repond": "cape-de-pluie"
+  },
+  {
+   "nom": "Vouve",
+   "cle": "vouve",
+   "description": "<p>Huit gaulettes, dix feuilles de vacoa et une corde : la nasse en entonnoir qu'on cale dans le courant.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 3,
+   "competence": "survie",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "peche-lagon"
+    ],
+    "installation": {
+     "metier": "vannerie",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "vouve",
+    "n": 1
+   },
+   "outils": [
+    "couteau"
+   ],
+   "metier": "vannerie",
+   "arbre": "lontan",
+   "repond": "ligne-de-peche"
+  },
+  {
+   "nom": "Filet de pêche",
+   "cle": "filet-de-peche",
+   "description": "<p>Huit cordes nouées maille à maille pendant des soirées entières, lestées de galets percés.</p>",
+   "cout": {
+    "materiaux": 2
+   },
+   "travail": 6,
+   "competence": "survie",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "peche-lagon"
+    ],
+    "installation": {
+     "metier": "vannerie",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "filet-de-peche",
+    "n": 1
+   },
+   "metier": "vannerie"
+  },
+  {
+   "nom": "Coudre un sac",
+   "cle": "coudre-un-sac",
+   "description": "<p>Six tissus forts (bâche, toile de store, jean), deux cordes, des coutures doublées : un sac de randonnée.</p>",
+   "cout": {
+    "materiaux": 2
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "couture",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "sac-de-randonnee",
+    "n": 1
+   },
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "metier": "couture",
+   "arbre": "moderne",
+   "repond": "bertel"
+  },
+  {
+   "nom": "Tenue rapiécée",
+   "cle": "tenue-rapiecee",
+   "description": "<p>Quatre tissus, une corde : des genouillères, des coudières, des poches cousues par-dessus les trous.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "couture",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "tenue-rapiecee",
+    "n": 1
+   },
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "metier": "couture"
+  },
+  {
+   "nom": "Gants de travail",
+   "cle": "gants-de-travail",
+   "description": "<p>Deux tissus doublés, cousus serré.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "bricolage",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "couture",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "gants-de-travail",
+    "n": 1
+   },
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "metier": "couture"
+  },
+  {
+   "nom": "Couverture",
+   "cle": "couverture",
+   "description": "<p>Six tissus, des draps et des rideaux cousus en épaisseur.</p>",
+   "cout": {
+    "materiaux": 2
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "couture",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "couverture",
+    "n": 1
+   },
+   "lumiere": true,
+   "metier": "couture"
+  },
+  {
+   "nom": "Cape de pluie",
+   "cle": "cape-de-pluie",
+   "description": "<p>Une bâche taillée en cape, une capuche, une corde pour fermer.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "couture",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "cape-de-pluie",
+    "n": 1
+   },
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "metier": "couture",
+   "arbre": "moderne",
+   "repond": "capeline-de-vacoa"
+  },
+  {
+   "nom": "Savates de pneu",
+   "cle": "savates-de-pneu",
+   "description": "<p>Deux semelles découpées dans un pneu, une bride en chambre à air.</p>",
+   "cout": {
+    "pieces": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "couture",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "savates-de-pneu",
+    "n": 1
+   },
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "metier": "couture",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Trousse de secours",
+   "cle": "trousse-de-secours",
+   "description": "<p>Des pansements, un alcool, un savon, rangés dans une trousse de toile cousue : tout au même endroit, quand il faut aller vite.</p>",
+   "cout": {
+    "medicaments": 3,
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "soins",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "premiers-secours-avances"
+    ],
+    "installation": {
+     "metier": "couture",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "trousse-de-secours",
+    "n": 1
+   },
+   "metier": "couture",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Cendres tamisées",
+   "cle": "cendres-tamisees",
+   "description": "<p>Le bois de la veille brûlé jusqu'au blanc, la cendre passée au tamis : trois seaux.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "cendre-tamisee",
+    "n": 3
+   },
+   "metier": "cuisine"
+  },
+  {
+   "nom": "Sel de mer",
+   "cle": "sel-de-mer",
+   "description": "<p>Douze seaux d'eau de mer réduits sur le feu jusqu'à ce que le fond blanchisse : deux bocaux de sel. Il faut la mer à portée, ou des bidons d'eau de mer rapportés.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 4,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "sel",
+    "n": 2
+   },
+   "metier": "cuisine",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Vinaigre de canne",
+   "cle": "vinaigre-de-canne",
+   "description": "<p>Dix cannes pressées, le jus laissé à tourner des semaines dans un bocal fermé d'un linge : deux bocaux de vinaigre, si rien ne pourrit.</p>",
+   "cout": {
+    "nourriture": 1
+   },
+   "travail": 2,
+   "competence": "survie",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "conserverie"
+    ],
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "vinaigre-de-canne",
+    "n": 2
+   },
+   "metier": "cuisine",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Viande boucanée au sel",
+   "cle": "viande-boucanee",
+   "description": "<p>La viande salée, puis fumée longtemps au-dessus du feu, sous le boucan : elle se garde sans bocal.</p>",
+   "cout": {
+    "nourriture": 2,
+    "materiaux": 1
+   },
+   "travail": 4,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "ressource": "nourriture",
+    "n": 3
+   },
+   "outils": [
+    "couteau"
+   ],
+   "objets": [
+    {
+     "cle": "sel",
+     "n": 1
+    }
+   ],
+   "metier": "cuisine",
+   "arbre": "lontan",
+   "repond": "conserves"
+  },
+  {
+   "nom": "Achards",
+   "cle": "achards",
+   "description": "<p>Les légumes en lanières, ébouillantés, au vinaigre et au piment, en bocaux : ils tiennent des mois.</p>",
+   "cout": {
+    "nourriture": 3,
+    "materiaux": 1
+   },
+   "travail": 2,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "conserverie"
+    ],
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "ressource": "nourriture",
+    "n": 5
+   },
+   "outils": [
+    "couteau"
+   ],
+   "objets": [
+    {
+     "cle": "vinaigre-de-canne",
+     "n": 1
+    },
+    {
+     "cle": "sel",
+     "n": 1
+    }
+   ],
+   "metier": "cuisine"
+  },
+  {
+   "nom": "Cari au feu de bois",
+   "cle": "cari-au-feu-de-bois",
+   "description": "<p>Une marmite pour tout le monde : un cari étire ce qu'il y a, et on mange mieux à plusieurs.</p>",
+   "cout": {
+    "nourriture": 3
+   },
+   "travail": 2,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "ressource": "nourriture",
+    "n": 4
+   },
+   "outils": [
+    "couteau"
+   ],
+   "metier": "cuisine",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Huile de bancoul",
+   "cle": "huile-de-bancoul",
+   "description": "<p>Trente noix de bancoul grillées, pilées, bouillies ; on écume l'huile qui monte : une bouteille.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 3,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "huile-de-bancoul",
+    "n": 1
+   },
+   "metier": "cuisine",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Eau bouillie",
+   "cle": "eau-bouillie",
+   "description": "<p>Les marmites sur le feu toute la journée : l'eau de l'abri est bouillie, pour un jour. Lent, et il faut du bois ; mais cela ne dépend de rien.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "traitement": "eau",
+    "jours": 1
+   },
+   "metier": "cuisine",
+   "arbre": "lontan",
+   "repond": "eau-javellisee"
+  },
+  {
+   "nom": "Eau javellisée",
+   "cle": "eau-javellisee",
+   "description": "<p>Une bouteille d'eau de Javel trouvée sous un évier, quelques gouttes par bidon et une demi-heure d'attente : l'eau de l'abri est traitée pour une semaine. Rapide, tant qu'il reste de la Javel.</p>",
+   "cout": {
+    "medicaments": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "plomberie-filtration"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "traitement": "eau",
+    "jours": 7
+   },
+   "arbre": "moderne",
+   "repond": "eau-bouillie"
+  },
+  {
+   "nom": "Lessive de cendre",
+   "cle": "lessive-de-cendre",
+   "description": "<p>Un seau de cendre tamisée, de l'eau chaude, une nuit de repos : on décante, et on lave le linge quand il n'y a plus de savon.</p>",
+   "cout": {
+    "eau": 1
+   },
+   "travail": 2,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "cuisine",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "lessive-de-cendre",
+    "n": 1
+   },
+   "objets": [
+    {
+     "cle": "cendre-tamisee",
+     "n": 1
+    }
+   ],
+   "metier": "cuisine",
+   "arbre": "lontan",
+   "repond": "savon"
+  },
+  {
+   "nom": "Tisane de la gramoune",
+   "cle": "tisane-de-la-gramoune",
+   "description": "<p>Les plantes et les doses du cahier d'une gramoune : celui qui a le cahier la fait plus vite (son plan). Deux bols.</p>",
+   "cout": {
+    "plantes": 3,
+    "eau": 1
+   },
+   "travail": 1,
+   "competence": "soins",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "zerbaz"
+    ],
+    "installation": {
+     "metier": "tisanerie",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "tisane-de-la-gramoune",
+    "n": 2
+   },
+   "metier": "tisanerie"
+  },
+  {
+   "nom": "Tisane d'ayapana",
+   "cle": "tisane-d-ayapana",
+   "description": "<p>Des feuilles d'ayapana, de l'eau frémissante, un couvercle : celle que les gramounes donnent pour le ventre. Deux bols.</p>",
+   "cout": {
+    "plantes": 2,
+    "eau": 1
+   },
+   "travail": 1,
+   "competence": "soins",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "zerbaz"
+    ],
+    "installation": {
+     "metier": "tisanerie",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "tisane-d-ayapana",
+    "n": 2
+   },
+   "metier": "tisanerie",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Tisane de citronnelle",
+   "cle": "tisane-de-citronnelle",
+   "description": "<p>La citronnelle du bord des cases, bouillie : celle qu'on boit chaude quand la fièvre prend. Deux bols.</p>",
+   "cout": {
+    "plantes": 2,
+    "eau": 1
+   },
+   "travail": 1,
+   "competence": "soins",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "zerbaz"
+    ],
+    "installation": {
+     "metier": "tisanerie",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "tisane-de-citronnelle",
+    "n": 2
+   },
+   "metier": "tisanerie",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Cataplasme de feuilles",
+   "cle": "cataplasme-de-feuilles",
+   "description": "<p>Des feuilles écrasées entre deux pierres, posées sur la plaie et tenues par une lanière de vacoa.</p>",
+   "cout": {
+    "plantes": 2
+   },
+   "travail": 1,
+   "competence": "soins",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "zerbaz"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "cataplasme-de-feuilles",
+    "n": 1
+   },
+   "sac": true,
+   "arbre": "lontan",
+   "repond": "pansements"
+  },
+  {
+   "nom": "Baume à la cire",
+   "cle": "baume-a-la-cire",
+   "description": "<p>La cire des ruches fondue avec l'huile de bancoul et deux brassées de zerbaz, coulée en bocal : deux pots.</p>",
+   "cout": {
+    "nourriture": 1,
+    "plantes": 2
+   },
+   "travail": 2,
+   "competence": "soins",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "zerbaz"
+    ],
+    "installation": {
+     "metier": "tisanerie",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "baume-a-la-cire",
+    "n": 2
+   },
+   "objets": [
+    {
+     "cle": "huile-de-bancoul",
+     "n": 1
+    }
+   ],
+   "metier": "tisanerie",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Sirop de miel aux zerbaz",
+   "cle": "sirop-de-miel",
+   "description": "<p>Du miel des ruches, des zerbaz infusés dedans à feu très doux : deux flacons, à la cuillère.</p>",
+   "cout": {
+    "nourriture": 1,
+    "plantes": 2
+   },
+   "travail": 2,
+   "competence": "soins",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "zerbaz"
+    ],
+    "installation": {
+     "metier": "tisanerie",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "sirop-de-miel",
+    "n": 2
+   },
+   "metier": "tisanerie",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Rhum arrangé",
+   "cle": "rhum-arrange",
+   "description": "<p>Deux bouteilles de rhum de canne où macèrent des zerbaz, un mois : faute d'alcool fort, on nettoie une plaie avec. Deux bouteilles valent un alcool désinfectant.</p>",
+   "cout": {
+    "plantes": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "ressource": "medicaments",
+    "n": 1
+   },
+   "sac": true,
+   "objets": [
+    {
+     "cle": "rhum-de-canne",
+     "n": 2
+    }
+   ],
+   "arbre": "lontan",
+   "repond": "alcool-desinfectant"
+  },
+  {
+   "nom": "Attelle",
+   "cle": "attelle",
+   "description": "<p>Deux gaulettes, deux bandes de tissu, une corde : pour tenir un membre cassé, tout de suite.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "soins",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "premiers-secours-avances"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "attelle",
+    "n": 1
+   },
+   "sac": true,
+   "outils": [
+    "couteau"
+   ]
+  },
+  {
+   "nom": "Eau salée et sucrée",
+   "cle": "eau-salee-et-sucree",
+   "description": "<p>De l'eau propre, une pincée de sel, le jus de deux cannes, dans les bonnes proportions : deux bouteilles.</p>",
+   "cout": {
+    "eau": 2,
+    "nourriture": 1
+   },
+   "travail": 1,
+   "competence": "soins",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "premiers-secours-avances"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "eau-salee-et-sucree",
+    "n": 2
+   },
+   "sac": true,
+   "objets": [
+    {
+     "cle": "sel",
+     "n": 1
+    }
+   ],
+   "arbre": "moderne",
+   "repond": "tisane-d-ayapana"
+  },
+  {
+   "nom": "Rhum de canne",
+   "cle": "rhum-de-canne",
+   "description": "<p>Trente cannes pressées, le jus fermenté une semaine, passé une fois à l'alambic : deux bouteilles d'un rhum rude.</p>",
+   "cout": {
+    "nourriture": 3,
+    "materiaux": 1
+   },
+   "travail": 4,
+   "competence": "survie",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "conserverie"
+    ],
+    "installation": {
+     "metier": "distillerie",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "rhum-de-canne",
+    "n": 2
+   },
+   "metier": "distillerie",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Ligne de pêche",
+   "cle": "ligne-de-peche",
+   "description": "<p>Un hameçon tordu à la pince dans du fil de fer, une ligne, une gaulette.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "ligne-de-peche",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "pince"
+   ],
+   "arbre": "moderne",
+   "repond": "vouve"
+  },
+  {
+   "nom": "Pièges à rats",
+   "cle": "pieges-a-rats",
+   "description": "<p>Une planche, du fil de fer, quatre clous : deux pièges à bascule.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "pieges-a-rats",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ]
+  },
+  {
+   "nom": "Cage de bambou",
+   "cle": "cage-de-bambou",
+   "description": "<p>Six gaulettes, une corde : une cage pour une poule ou un lapin.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "cage-de-bambou",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Sac de goni",
+   "cle": "sac-de-goni",
+   "description": "<p>Trois tissus de jute cousus en sac, avec un lien.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "sac-de-goni",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true
+  },
+  {
+   "nom": "Enfumoir",
+   "cle": "enfumoir",
+   "description": "<p>Une boîte de conserve percée, un chiffon, du chaume : il fume doux et longtemps.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "enfumoir",
+    "n": 1
+   },
+   "sac": true,
+   "lumiere": true
+  },
+  {
+   "nom": "Plants en godets",
+   "cle": "plants-en-godets",
+   "description": "<p>Des graines semées dans des godets de terre (des pots de yaourt, des bambous coupés) à l'ombre de la case : des plants levés, à repiquer vite.</p>",
+   "cout": {
+    "graines": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "maraichage-tropical"
+    ],
+    "installation": null
+   },
+   "produit": {
+    "ressource": "boutures",
+    "n": 2
+   },
+   "sac": true
+  },
+  {
+   "nom": "Torches",
+   "cle": "torches",
+   "description": "<p>Deux branches, un chiffon fendu en bandes, trempé d'huile de bancoul et serré.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "torche",
+    "n": 2
+   },
+   "sac": true,
+   "outils": [
+    "couteau"
+   ],
+   "objets": [
+    {
+     "cle": "huile-de-bancoul",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "nom": "Lampe à huile",
+   "cle": "lampe-a-huile",
+   "description": "<p>Un bocal, une mèche de tissu tordu passée dans un couvercle percé, de l'huile de bancoul.</p>",
+   "cout": {
+    "materiaux": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "lampe-a-huile",
+    "n": 1
+   },
+   "sac": true,
+   "objets": [
+    {
+     "cle": "huile-de-bancoul",
+     "n": 1
+    }
+   ],
+   "arbre": "lontan",
+   "repond": "lampes-electriques"
+  },
+  {
+   "nom": "Remplir une lampe à huile",
+   "cle": "remplir-la-lampe",
+   "description": "<p>Une bouteille d'huile de bancoul, une mèche recoupée : la lampe repart pour trois nuits.</p>",
+   "cout": {},
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "facile",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "lampe-a-huile",
+    "n": 1
+   },
+   "sac": true,
+   "objets": [
+    {
+     "cle": "lampe-a-huile",
+     "n": 1
+    },
+    {
+     "cle": "huile-de-bancoul",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "nom": "Bougies",
+   "cle": "bougies",
+   "description": "<p>La cire des ruches fondue, coulée autour d'une mèche de corde dans des tiges de bambou.</p>",
+   "cout": {
+    "nourriture": 1
+   },
+   "travail": 1,
+   "competence": "survie",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": null
+   },
+   "produit": {
+    "equipement": "bougies",
+    "n": 2
+   },
+   "sac": true,
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Arc renforcé",
+   "cle": "arc-renforce",
+   "description": "<p>L'arc de chasse doublé au dos d'une lame de ressort ligaturée, deux cordes neuves, du fil de fer.</p>",
+   "cout": {
+    "materiaux": 1,
+    "pieces": 1
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "arc-renforce",
+    "n": 1
+   },
+   "lumiere": true,
+   "outils": [
+    "couteau"
+   ],
+   "objets": [
+    {
+     "cle": "arc-de-chasse",
+     "n": 1
+    }
+   ],
+   "metier": "etabli"
+  },
+  {
+   "nom": "Remettre en état un fusil de chasse",
+   "cle": "fusil-de-chasse-remis-en-etat",
+   "description": "<p>Le fusil démonté pièce à pièce, nettoyé, huilé à l'huile de bancoul, un ressort et deux boîtes de vis changés.</p>",
+   "cout": {
+    "pieces": 1
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "fusil-de-chasse-remis-en-etat",
+    "n": 1
+   },
+   "outils": [
+    "pince"
+   ],
+   "objets": [
+    {
+     "cle": "fusil-de-chasse",
+     "n": 1
+    },
+    {
+     "cle": "huile-de-bancoul",
+     "n": 1
+    }
+   ],
+   "metier": "etabli"
+  },
+  {
+   "nom": "Remettre en état une carabine .22",
+   "cle": "carabine-22-remise-en-etat",
+   "description": "<p>La carabine démontée, nettoyée, huilée, son ressort changé.</p>",
+   "cout": {
+    "pieces": 1
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "carabine-22-remise-en-etat",
+    "n": 1
+   },
+   "outils": [
+    "pince"
+   ],
+   "objets": [
+    {
+     "cle": "carabine-22",
+     "n": 1
+    },
+    {
+     "cle": "huile-de-bancoul",
+     "n": 1
+    }
+   ],
+   "metier": "etabli"
+  },
+  {
+   "nom": "Remettre en état un pistolet de service",
+   "cle": "pistolet-de-service-remis-en-etat",
+   "description": "<p>Le pistolet démonté, nettoyé, huilé, le ressort du chargeur changé.</p>",
+   "cout": {
+    "pieces": 1
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "pistolet-de-service-remis-en-etat",
+    "n": 1
+   },
+   "outils": [
+    "pince"
+   ],
+   "objets": [
+    {
+     "cle": "pistolet-de-service",
+     "n": 1
+    },
+    {
+     "cle": "huile-de-bancoul",
+     "n": 1
+    }
+   ],
+   "metier": "etabli"
+  },
+  {
+   "nom": "Réviser une tronçonneuse",
+   "cle": "tronconneuse-revisee",
+   "description": "<p>La chaîne affûtée à la pierre, le carburateur réglé, le pot bourré de laine de roche, l'huile de bancoul pour la chaîne.</p>",
+   "cout": {
+    "pieces": 1
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "tronconneuse-revisee",
+    "n": 1
+   },
+   "outils": [
+    "pince"
+   ],
+   "objets": [
+    {
+     "cle": "tronconneuse",
+     "n": 1
+    },
+    {
+     "cle": "huile-de-bancoul",
+     "n": 1
+    },
+    {
+     "cle": "pierre-a-aiguiser",
+     "n": 1
+    }
+   ],
+   "metier": "etabli"
+  },
+  {
+   "nom": "Roue de bois cerclée",
+   "cle": "roue-de-bois",
+   "description": "<p>Quatre planches chevillées en disque, deux ferrailles battues en cercle et posées à chaud, vingt clous.</p>",
+   "cout": {
+    "materiaux": 2
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "roue-de-bois",
+    "n": 1
+   },
+   "outils": [
+    "scie",
+    "marteau"
+   ],
+   "metier": "etabli",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Charrette à bras",
+   "cle": "charrette-a-bras",
+   "description": "<p>Huit planches, deux roues de bois, quatre gaulettes, quarante chevilles, deux cordes : un plateau et deux brancards.</p>",
+   "cout": {
+    "materiaux": 3
+   },
+   "travail": 6,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "charrette-a-bras",
+    "n": 1
+   },
+   "outils": [
+    "scie"
+   ],
+   "objets": [
+    {
+     "cle": "roue-de-bois",
+     "n": 2
+    }
+   ],
+   "metier": "etabli",
+   "arbre": "lontan",
+   "repond": "chariot-de-recuperation"
+  },
+  {
+   "nom": "Charrette à bœufs",
+   "cle": "charrette-a-boeufs",
+   "description": "<p>Un tronc pour le timon, seize planches, deux roues, des ferrures, des cordes, quatre-vingts clous, et un joug taillé à la main. Il faut deux bœufs moka dressés pour la tirer : la charrette ne les donne pas.</p>",
+   "cout": {
+    "materiaux": 8
+   },
+   "travail": 12,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "elevage"
+    ],
+    "installation": {
+     "metier": "etabli",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "charrette-a-boeufs",
+    "n": 1
+   },
+   "outils": [
+    "scie",
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "roue-de-bois",
+     "n": 2
+    }
+   ],
+   "metier": "etabli",
+   "arbre": "lontan"
+  },
+  {
+   "nom": "Vélo remis en état",
+   "cle": "velo-remis-en-etat",
+   "description": "<p>Un vieux cadre trouvé dans une cour, deux chambres à air, des vis, des rustines découpées dans une chambre morte : il roule.</p>",
+   "cout": {
+    "materiaux": 1,
+    "pieces": 2
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "velo",
+    "n": 1
+   },
+   "outils": [
+    "pince"
+   ],
+   "metier": "mecanique",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Chariot de récupération",
+   "cle": "chariot-de-recuperation",
+   "description": "<p>Six ferrailles, une tôle, deux roues de brouette ou de chariot, huit boîtes de vis, deux chambres à air.</p>",
+   "cout": {
+    "materiaux": 2,
+    "pieces": 2
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "chariot-de-recuperation",
+    "n": 1
+   },
+   "outils": [
+    "marteau",
+    "pince"
+   ],
+   "metier": "mecanique",
+   "arbre": "moderne",
+   "repond": "charrette-a-bras"
+  },
+  {
+   "nom": "Remorque de vélo",
+   "cle": "remorque-de-velo",
+   "description": "<p>Quatre ferrailles, deux planches, deux roues, des vis, du fil de fer : une remorque qui s'accroche derrière le vélo du groupe.</p>",
+   "cout": {
+    "materiaux": 2,
+    "pieces": 2
+   },
+   "travail": 3,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "velo-et-remorque",
+    "n": 1
+   },
+   "outils": [
+    "pince"
+   ],
+   "objets": [
+    {
+     "cle": "velo",
+     "n": 1
+    }
+   ],
+   "metier": "mecanique",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Motoculteur remis en état",
+   "cle": "motoculteur-remis-en-etat",
+   "description": "<p>Un petit moteur de pompe ou de tondeuse, huit ferrailles, deux roues, douze boîtes de vis, des tuyaux, un câble : il démarre au troisième coup de lanceur.</p>",
+   "cout": {
+    "materiaux": 2,
+    "pieces": 4
+   },
+   "travail": 8,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "motoculteur",
+    "n": 1
+   },
+   "outils": [
+    "pince",
+    "marteau"
+   ],
+   "bruit": 2,
+   "metier": "mecanique",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Remorque de motoculteur",
+   "cle": "remorque-de-motoculteur",
+   "description": "<p>Dix ferrailles, deux tôles, six planches, deux roues, douze boîtes de vis : le plateau que tire le motoculteur.</p>",
+   "cout": {
+    "materiaux": 4,
+    "pieces": 3
+   },
+   "travail": 6,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "motoculteur-et-remorque",
+    "n": 1
+   },
+   "outils": [
+    "pince",
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "motoculteur",
+     "n": 1
+    }
+   ],
+   "metier": "mecanique",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Petit utilitaire électrique",
+   "cle": "utilitaire-electrique",
+   "description": "<p>Un moteur électrique de voiturette, quatre batteries de voiture, quatre roues, douze ferrailles, deux tôles, six câbles, des composants, un régulateur de charge, seize boîtes de vis : le chantier d'une saison.</p>",
+   "cout": {
+    "materiaux": 4,
+    "pieces": 10
+   },
+   "travail": 16,
+   "competence": "bricolage",
+   "difficulte": "extreme",
+   "requiert": {
+    "savoirs": [
+     "mecanique",
+     "electricite-solaire"
+    ],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 3
+    }
+   },
+   "produit": {
+    "equipement": "utilitaire-electrique",
+    "n": 1
+   },
+   "outils": [
+    "pince",
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "regulateur-de-charge",
+     "n": 1
+    }
+   ],
+   "metier": "mecanique",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Remorque d'utilitaire",
+   "cle": "remorque-d-utilitaire",
+   "description": "<p>Huit ferrailles, six planches, deux roues, dix boîtes de vis : le plateau que tire le petit utilitaire.</p>",
+   "cout": {
+    "materiaux": 3,
+    "pieces": 3
+   },
+   "travail": 5,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "utilitaire-et-remorque",
+    "n": 1
+   },
+   "outils": [
+    "pince",
+    "marteau"
+   ],
+   "objets": [
+    {
+     "cle": "utilitaire-electrique",
+     "n": 1
+    }
+   ],
+   "metier": "mecanique",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Blindage de tôle et grilles",
+   "cle": "blindage-de-tole",
+   "description": "<p>Des tôles et des grilles prises sur d'autres épaves, découpées, boulonnées aux portières et devant les vitres.</p>",
+   "cout": {
+    "materiaux": 4,
+    "pieces": 1
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "blindage-de-tole",
+    "n": 1
+   },
+   "outils": [
+    "marteau",
+    "pince"
+   ],
+   "bruit": 2,
+   "metier": "mecanique",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Galerie de toit",
+   "cle": "galerie-de-toit",
+   "description": "<p>Des tubes et des barres de toit pris sur des épaves, soudés ou boulonnés, des sangles.</p>",
+   "cout": {
+    "materiaux": 2,
+    "pieces": 1
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "galerie-de-toit",
+    "n": 1
+   },
+   "outils": [
+    "marteau"
+   ],
+   "metier": "mecanique",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Remorque de voiture",
+   "cle": "remorque-de-voiture",
+   "description": "<p>L'essieu et les roues d'une épave, un plateau de tôle, un timon, une boule d'attelage récupérée sur un 4×4.</p>",
+   "cout": {
+    "materiaux": 3,
+    "pieces": 2
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "mecanique",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "remorque-de-voiture",
+    "n": 1
+   },
+   "outils": [
+    "marteau",
+    "pince"
+   ],
+   "metier": "mecanique",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Batterie remise en état",
+   "cle": "batterie-remise-en-etat",
+   "description": "<p>Une batterie de voiture vidée, nettoyée, rechargée lentement ; deux câbles, une poignée, des prises : une batterie qu'on emporte.</p>",
+   "cout": {
+    "pieces": 2
+   },
+   "travail": 2,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [
+     "electricite-solaire"
+    ],
+    "installation": {
+     "metier": "electricite",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "batterie-nomade",
+    "n": 1
+   },
+   "outils": [
+    "pince"
+   ],
+   "metier": "electricite",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Régulateur de charge",
+   "cle": "regulateur-de-charge",
+   "description": "<p>Quatre lots de composants dessoudés de chargeurs et de vieux onduleurs, remontés sur une carte, deux câbles : sans lui, les panneaux tuent les batteries.</p>",
+   "cout": {
+    "pieces": 3
+   },
+   "travail": 4,
+   "competence": "bricolage",
+   "difficulte": "difficile",
+   "requiert": {
+    "savoirs": [
+     "electricite-solaire"
+    ],
+    "installation": {
+     "metier": "electricite",
+     "niveau": 2
+    }
+   },
+   "produit": {
+    "equipement": "regulateur-de-charge",
+    "n": 1
+   },
+   "outils": [
+    "pince"
+   ],
+   "metier": "electricite",
+   "arbre": "moderne"
+  },
+  {
+   "nom": "Lampes électriques",
+   "cle": "lampes-electriques",
+   "description": "<p>Des ampoules de récupération, un câble, un bocal pour chacune : deux lampes à brancher sur une batterie.</p>",
+   "cout": {
+    "pieces": 1
+   },
+   "travail": 1,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "metier": "electricite",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "equipement": "lampe-electrique",
+    "n": 2
+   },
+   "outils": [
+    "pince"
+   ],
+   "metier": "electricite",
+   "arbre": "moderne",
+   "repond": "lampe-a-huile"
   }
  ],
  "afflictions": [
@@ -26619,7 +32745,11 @@
    "cabri": 10,
    "porcelet": 12.5,
    "veau-moka": 20,
-   "essaim": 7.5
+   "essaim": 7.5,
+   "fusil-de-chasse-remis-en-etat": 25,
+   "carabine-22-remise-en-etat": 21,
+   "pistolet-de-service-remis-en-etat": 21,
+   "tronconneuse-revisee": 27
   }
  },
  "plans": [
@@ -27316,7 +33446,8 @@
    "objet": "cahier-de-gramoune",
    "couvre": [
     "recette:tisanes",
-    "recette:rimed-lontan"
+    "recette:rimed-lontan",
+    "recette:tisane-de-la-gramoune"
    ],
    "enseigne": [
     "zerbaz"
@@ -27366,6 +33497,552 @@
    ],
    "lieux": [],
    "description": "Le registre d'un technicien de la salle des machines, et tout ce qu'il y a noté pour lui seul. Il n'en existe qu'un, et il est resté au fond de la gorge."
+  },
+  {
+   "cle": "coin-du-feu",
+   "installation": "coin-du-feu",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "case-creole",
+    "ecole",
+    "gite"
+   ]
+  },
+  {
+   "cle": "etabli",
+   "installation": "etabli",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "case-creole",
+    "ferme",
+    "commerce"
+   ]
+  },
+  {
+   "cle": "forge",
+   "installation": "forge",
+   "rarete": [
+    20,
+    45
+   ],
+   "lieux": [
+    "usine",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "vannerie",
+   "installation": "vannerie",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "case-creole",
+    "ilet"
+   ]
+  },
+  {
+   "cle": "couture",
+   "installation": "couture",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "commerce",
+    "maison",
+    "case-creole"
+   ]
+  },
+  {
+   "cle": "tisanerie",
+   "installation": "tisanerie",
+   "rarete": [
+    20,
+    45
+   ],
+   "lieux": [
+    "case-creole",
+    "ilet"
+   ]
+  },
+  {
+   "cle": "atelier-mecanique",
+   "installation": "atelier-mecanique",
+   "rarete": [
+    25,
+    50
+   ],
+   "lieux": [
+    "usine",
+    "commerce",
+    "caserne"
+   ]
+  },
+  {
+   "cle": "atelier-electricite",
+   "installation": "atelier-electricite",
+   "rarete": [
+    35,
+    60
+   ],
+   "lieux": [
+    "usine",
+    "commerce",
+    "ecole"
+   ]
+  },
+  {
+   "cle": "distillerie",
+   "installation": "distillerie",
+   "rarete": [
+    30,
+    55
+   ],
+   "lieux": [
+    "usine",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "recette-hache-forgee",
+   "recette": "hache-forgee",
+   "rarete": [
+    10,
+    40
+   ],
+   "lieux": [
+    "ferme",
+    "commerce"
+   ]
+  },
+  {
+   "cle": "recette-sabre-forge",
+   "recette": "sabre-forge",
+   "rarete": [
+    20,
+    50
+   ],
+   "lieux": [
+    "ferme",
+    "usine"
+   ]
+  },
+  {
+   "cle": "recette-scie-forgee",
+   "recette": "scie-forgee",
+   "rarete": [
+    25,
+    50
+   ],
+   "lieux": [
+    "usine",
+    "commerce"
+   ]
+  },
+  {
+   "cle": "recette-arbalete-d-acier",
+   "recette": "arbalete-d-acier",
+   "rarete": [
+    35,
+    60
+   ],
+   "lieux": [
+    "caserne",
+    "commerce"
+   ]
+  },
+  {
+   "cle": "recette-bouclier-double-et-cercle",
+   "recette": "bouclier-double-et-cercle",
+   "rarete": [
+    15,
+    35
+   ],
+   "lieux": [
+    "caserne",
+    "usine"
+   ]
+  },
+  {
+   "cle": "recette-fusil-de-chasse-remis-en-etat",
+   "recette": "fusil-de-chasse-remis-en-etat",
+   "rarete": [
+    30,
+    55
+   ],
+   "lieux": [
+    "commerce",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "recette-carabine-22-remise-en-etat",
+   "recette": "carabine-22-remise-en-etat",
+   "rarete": [
+    30,
+    55
+   ],
+   "lieux": [
+    "commerce",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "recette-pistolet-de-service-remis-en-etat",
+   "recette": "pistolet-de-service-remis-en-etat",
+   "rarete": [
+    40,
+    65
+   ],
+   "lieux": [
+    "caserne"
+   ]
+  },
+  {
+   "cle": "recette-tronconneuse-revisee",
+   "recette": "tronconneuse-revisee",
+   "rarete": [
+    20,
+    45
+   ],
+   "lieux": [
+    "commerce",
+    "ferme",
+    "usine"
+   ]
+  },
+  {
+   "cle": "recette-filet-de-peche",
+   "recette": "filet-de-peche",
+   "rarete": [
+    15,
+    35
+   ],
+   "lieux": [
+    "port"
+   ]
+  },
+  {
+   "cle": "recette-vouve",
+   "recette": "vouve",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "case-creole",
+    "port"
+   ]
+  },
+  {
+   "cle": "recette-bertel",
+   "recette": "bertel",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "case-creole",
+    "ilet"
+   ]
+  },
+  {
+   "cle": "recette-coudre-un-sac",
+   "recette": "coudre-un-sac",
+   "rarete": [
+    15,
+    35
+   ],
+   "lieux": [
+    "commerce",
+    "maison"
+   ]
+  },
+  {
+   "cle": "recette-achards",
+   "recette": "achards",
+   "rarete": [
+    10,
+    25
+   ],
+   "lieux": [
+    "case-creole",
+    "ecole"
+   ]
+  },
+  {
+   "cle": "recette-vinaigre-de-canne",
+   "recette": "vinaigre-de-canne",
+   "rarete": [
+    15,
+    35
+   ],
+   "lieux": [
+    "ferme",
+    "case-creole"
+   ]
+  },
+  {
+   "cle": "recette-rhum-de-canne",
+   "recette": "rhum-de-canne",
+   "rarete": [
+    20,
+    45
+   ],
+   "lieux": [
+    "usine",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "recette-baume-a-la-cire",
+   "recette": "baume-a-la-cire",
+   "rarete": [
+    25,
+    50
+   ],
+   "lieux": [
+    "case-creole"
+   ]
+  },
+  {
+   "cle": "recette-sirop-de-miel",
+   "recette": "sirop-de-miel",
+   "rarete": [
+    20,
+    45
+   ],
+   "lieux": [
+    "case-creole",
+    "ferme"
+   ]
+  },
+  {
+   "cle": "recette-trousse-de-secours",
+   "recette": "trousse-de-secours",
+   "rarete": [
+    20,
+    40
+   ],
+   "lieux": [
+    "hopital",
+    "caserne",
+    "ecole"
+   ]
+  },
+  {
+   "cle": "recette-eau-javellisee",
+   "recette": "eau-javellisee",
+   "rarete": [
+    5,
+    20
+   ],
+   "lieux": [
+    "hopital",
+    "ecole",
+    "commerce"
+   ]
+  },
+  {
+   "cle": "recette-jarre-de-terre-cuite",
+   "recette": "jarre-de-terre-cuite",
+   "rarete": [
+    20,
+    45
+   ],
+   "lieux": [
+    "case-creole",
+    "ilet"
+   ]
+  },
+  {
+   "cle": "recette-roue-de-bois",
+   "recette": "roue-de-bois",
+   "rarete": [
+    20,
+    45
+   ],
+   "lieux": [
+    "ferme",
+    "ilet"
+   ]
+  },
+  {
+   "cle": "recette-charrette-a-bras",
+   "recette": "charrette-a-bras",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "ferme",
+    "case-creole"
+   ]
+  },
+  {
+   "cle": "recette-charrette-a-boeufs",
+   "recette": "charrette-a-boeufs",
+   "rarete": [
+    30,
+    60
+   ],
+   "lieux": [
+    "ferme"
+   ]
+  },
+  {
+   "cle": "recette-chariot-de-recuperation",
+   "recette": "chariot-de-recuperation",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "commerce",
+    "usine"
+   ]
+  },
+  {
+   "cle": "recette-velo-remis-en-etat",
+   "recette": "velo-remis-en-etat",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "commerce",
+    "maison"
+   ]
+  },
+  {
+   "cle": "recette-remorque-de-velo",
+   "recette": "remorque-de-velo",
+   "rarete": [
+    15,
+    35
+   ],
+   "lieux": [
+    "commerce"
+   ]
+  },
+  {
+   "cle": "recette-motoculteur-remis-en-etat",
+   "recette": "motoculteur-remis-en-etat",
+   "rarete": [
+    35,
+    60
+   ],
+   "lieux": [
+    "ferme"
+   ]
+  },
+  {
+   "cle": "recette-remorque-de-motoculteur",
+   "recette": "remorque-de-motoculteur",
+   "rarete": [
+    25,
+    45
+   ],
+   "lieux": [
+    "ferme"
+   ]
+  },
+  {
+   "cle": "recette-utilitaire-electrique",
+   "recette": "utilitaire-electrique",
+   "rarete": [
+    75,
+    95
+   ],
+   "lieux": []
+  },
+  {
+   "cle": "recette-remorque-d-utilitaire",
+   "recette": "remorque-d-utilitaire",
+   "rarete": [
+    40,
+    65
+   ],
+   "lieux": [
+    "usine"
+   ]
+  },
+  {
+   "cle": "recette-batterie-remise-en-etat",
+   "recette": "batterie-remise-en-etat",
+   "rarete": [
+    25,
+    50
+   ],
+   "lieux": [
+    "commerce",
+    "usine"
+   ]
+  },
+  {
+   "cle": "recette-regulateur-de-charge",
+   "recette": "regulateur-de-charge",
+   "rarete": [
+    50,
+    80
+   ],
+   "lieux": []
+  },
+  {
+   "cle": "recette-lampes-electriques",
+   "recette": "lampes-electriques",
+   "rarete": [
+    15,
+    35
+   ],
+   "lieux": [
+    "commerce",
+    "ecole"
+   ]
+  },
+  {
+   "cle": "recette-blindage-de-tole",
+   "recette": "blindage-de-tole",
+   "rarete": [
+    30,
+    55
+   ],
+   "lieux": [
+    "caserne",
+    "usine"
+   ]
+  },
+  {
+   "cle": "recette-galerie-de-toit",
+   "recette": "galerie-de-toit",
+   "rarete": [
+    10,
+    30
+   ],
+   "lieux": [
+    "commerce",
+    "usine"
+   ]
+  },
+  {
+   "cle": "recette-remorque-de-voiture",
+   "recette": "remorque-de-voiture",
+   "rarete": [
+    20,
+    40
+   ],
+   "lieux": [
+    "commerce",
+    "usine"
+   ]
   }
  ],
  "lieuxAPlans": [

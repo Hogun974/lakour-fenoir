@@ -1,0 +1,57 @@
+{
+  "_id": "bliWJqVaCqZeSIp6",
+  "_key": "!items!bliWJqVaCqZeSIp6",
+  "name": "Couteau forgé",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "couteau-forge",
+    "description": "<p>Deux bouts de ferraille, un sac de charbon, une branche pour le manche : un vrai couteau.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "forge",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "couteau",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 2,
+    "metier": "forge",
+    "arbre": "moderne",
+    "repond": "eclat-de-basalte"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "couteau-forge"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

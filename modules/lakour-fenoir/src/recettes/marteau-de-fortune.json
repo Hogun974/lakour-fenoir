@@ -1,0 +1,44 @@
+{
+  "_id": "ZPZi8VDHbTzIJ3Ds",
+  "_key": "!items!ZPZi8VDHbTzIJ3Ds",
+  "name": "Marteau de fortune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "marteau-de-fortune",
+    "description": "<p>Un galet rond pris dans une branche fendue, serré à la corde.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "marteau-de-fortune",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true,
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "marteau-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

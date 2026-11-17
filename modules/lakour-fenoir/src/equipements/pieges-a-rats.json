@@ -1,0 +1,36 @@
+{
+  "_id": "WnUYwC8G39aJAHzH",
+  "_key": "!items!WnUYwC8G39aJAHzH",
+  "name": "Pièges à rats",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pieges-a-rats",
+    "categorie": "outil",
+    "description": "<p>Deux pièges de planche et de fil de fer. Les rats gâtent les réserves et salissent l'eau : avec eux posés près des stocks, le MJ ne fait pas perdre de vivres aux rats.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pieges-a-rats"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "_id": "Cfenr8yuw8RcHQgw",
+  "_key": "!items!Cfenr8yuw8RcHQgw",
+  "name": "Remorque de vélo",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "remorque-de-velo",
+    "description": "<p>Quatre ferrailles, deux planches, deux roues, des vis, du fil de fer : une remorque qui s'accroche derrière le vélo du groupe.</p>",
+    "cout": {
+      "materiaux": 2,
+      "pieces": 2
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "velo-et-remorque",
+      "n": 1
+    },
+    "outils": [
+      "pince"
+    ],
+    "objets": [
+      {
+        "cle": "velo",
+        "n": 1
+      }
+    ],
+    "metier": "mecanique",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "remorque-de-velo"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

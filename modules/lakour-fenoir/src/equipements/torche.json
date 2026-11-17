@@ -1,0 +1,38 @@
+{
+  "_id": "sC3NignwGkVyaUPl",
+  "_key": "!items!sC3NignwGkVyaUPl",
+  "name": "Torche",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "torche",
+    "categorie": "outil",
+    "description": "<p>Une branche, un chiffon trempé d'huile de bancoul : de la lumière pour une nuit, qui se voit de très loin.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "usages": 1,
+    "eclaire": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "torche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

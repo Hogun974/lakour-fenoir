@@ -20,7 +20,8 @@
     "produit": {
       "equipement": "cahier-cousu",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

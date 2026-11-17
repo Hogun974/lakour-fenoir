@@ -1,0 +1,42 @@
+{
+  "_id": "36ngm2pXnSvgJY3s",
+  "_key": "!items!36ngm2pXnSvgJY3s",
+  "name": "Gratte forgée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "gratte",
+    "categorie": "outil",
+    "description": "<p>La houe des carreaux de l'île, forgée et trempée : pour sarcler, butter, creuser une rigole.</p>",
+    "bonus": {
+      "survie": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "forge",
+    "gammes": [
+      "gratte"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "gratte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

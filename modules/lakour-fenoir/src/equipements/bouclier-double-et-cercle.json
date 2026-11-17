@@ -1,0 +1,40 @@
+{
+  "_id": "2BQxyTLmPZ1TYh3S",
+  "_key": "!items!2BQxyTLmPZ1TYh3S",
+  "name": "Bouclier doublé et cerclé",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "bouclier-double-et-cercle",
+    "categorie": "arme",
+    "description": "<p>Le bouclier de tôle doublé d'une seconde tôle et cerclé de fer à la forge : il pare une touche de Livide sur deux (4, 5 ou 6 au dé), et une touche parée ne blesse pas et ne mord pas. Plus lourd, il tient plus longtemps.</p>",
+    "bonus": {
+      "combat": 1
+    },
+    "charge": 3,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "parade": 4,
+    "usages": 30
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bouclier-double-et-cercle"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

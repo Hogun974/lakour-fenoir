@@ -1,0 +1,50 @@
+{
+  "_id": "olnSXgJJBWlDGBhv",
+  "_key": "!items!olnSXgJJBWlDGBhv",
+  "name": "Lampes électriques",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "lampes-electriques",
+    "description": "<p>Des ampoules de récupération, un câble, un bocal pour chacune : deux lampes à brancher sur une batterie.</p>",
+    "cout": {
+      "pieces": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "electricite",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "lampe-electrique",
+      "n": 2
+    },
+    "outils": [
+      "pince"
+    ],
+    "metier": "electricite",
+    "arbre": "moderne",
+    "repond": "lampe-a-huile"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lampes-electriques"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

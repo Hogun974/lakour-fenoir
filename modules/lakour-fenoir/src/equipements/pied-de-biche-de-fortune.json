@@ -1,0 +1,40 @@
+{
+  "_id": "0GL0rHMCTQ6ccDCS",
+  "_key": "!items!0GL0rHMCTQ6ccDCS",
+  "name": "Levier de bois dur",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pied-de-biche-de-fortune",
+    "categorie": "outil",
+    "description": "<p>Une branche de bois dur, taillée en biseau : elle soulève une tôle, force un volet, et casse au troisième essai.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "pied-de-biche"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pied-de-biche-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

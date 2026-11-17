@@ -1,0 +1,42 @@
+{
+  "_id": "tOUFyg8eJgIMb0BF",
+  "_key": "!items!tOUFyg8eJgIMb0BF",
+  "name": "Lance de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "lance-de-recuperation",
+    "categorie": "arme",
+    "description": "<p>Un fer de ferraille forgé à froid, goupillé sur un manche droit : à deux mètres d'une bouche qui mord, on frappe et on recule.</p>",
+    "bonus": {
+      "combat": 2
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "lance"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lance-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

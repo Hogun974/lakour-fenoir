@@ -1,0 +1,40 @@
+{
+  "_id": "NVcoyeeADKvH2v8i",
+  "_key": "!items!NVcoyeeADKvH2v8i",
+  "name": "Bertel",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "bertel",
+    "categorie": "vie",
+    "description": "<p>Le sac à dos de vacoa des Hauts, tressé serré, avec ses bretelles de corde : on y porte le manger, les outils, les patates du jardin. Il se refait quand il s'use.</p>",
+    "bonus": {
+      "endurance": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 0.25
+    },
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bertel"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

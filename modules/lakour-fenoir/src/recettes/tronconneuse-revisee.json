@@ -1,0 +1,64 @@
+{
+  "_id": "nq4d2RHGdDYkMbHq",
+  "_key": "!items!nq4d2RHGdDYkMbHq",
+  "name": "Réviser une tronçonneuse",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "tronconneuse-revisee",
+    "description": "<p>La chaîne affûtée à la pierre, le carburateur réglé, le pot bourré de laine de roche, l'huile de bancoul pour la chaîne.</p>",
+    "cout": {
+      "pieces": 1
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "tronconneuse-revisee",
+      "n": 1
+    },
+    "outils": [
+      "pince"
+    ],
+    "objets": [
+      {
+        "cle": "tronconneuse",
+        "n": 1
+      },
+      {
+        "cle": "huile-de-bancoul",
+        "n": 1
+      },
+      {
+        "cle": "pierre-a-aiguiser",
+        "n": 1
+      }
+    ],
+    "metier": "etabli"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tronconneuse-revisee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

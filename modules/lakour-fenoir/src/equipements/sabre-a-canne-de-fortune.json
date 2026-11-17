@@ -1,0 +1,40 @@
+{
+  "_id": "gp8w0dCnMHPl8JjP",
+  "_key": "!items!gp8w0dCnMHPl8JjP",
+  "name": "Sabre de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "sabre-a-canne-de-fortune",
+    "categorie": "outil",
+    "description": "<p>Une lame de pierre plate ligaturée au bout d'un bambou : elle tranche les lianes et le vétiver, pas grand-chose de plus.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "sabre"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sabre-a-canne-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

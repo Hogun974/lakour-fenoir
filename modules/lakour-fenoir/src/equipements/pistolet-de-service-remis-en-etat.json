@@ -1,0 +1,40 @@
+{
+  "_id": "MxeDOLyI7EmfO0sa",
+  "_key": "!items!MxeDOLyI7EmfO0sa",
+  "name": "Pistolet de service remis en état",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pistolet-de-service-remis-en-etat",
+    "categorie": "arme-a-feu",
+    "description": "<p>Le pistolet nettoyé, son ressort de chargeur changé : il ne s'enraye presque plus.</p>",
+    "bonus": {
+      "tir": 2
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": 1,
+    "bruit": 2,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "usages": 85,
+    "remise": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pistolet-de-service-remis-en-etat"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -122,6 +122,10 @@ const EAU_SCORE = { source: 5, riviere: 5, puits: 3.5, citerne: 0, reseau: 1.5, 
 // pas dans le choix d'un site : les 13 kg de gaz sous l'évier des cases faisaient passer une maison devant un meilleur site
 // (rééquilibrage du 2026-11-13, docs/equilibre.md).
 export const STOCKS_NON_JOUES = ["gaz", "boutures", "biocarburant"];
+// Lot 6 « ateliers » (docs/equilibre-ateliers.md) : le simulateur ne fabrique pas à l'atelier (seulement des tisanes, depuis le
+// sac) ; les ateliers déjà là sur un site ne le lui font donc pas préférer.
+export const INSTALLATIONS_NON_JOUEES = ["coin-du-feu", "etabli", "forge", "vannerie", "couture", "tisanerie", "atelier-mecanique", "atelier-electricite", "distillerie"];
+const installationsDuSite = site => (site.installationsDepart ?? []).filter(i => !INSTALLATIONS_NON_JOUEES.includes(i.installation)).length;
 const stocksDuSite = site => somme(Object.entries(site.stocks ?? {}).filter(([r]) => !STOCKS_NON_JOUES.includes(r)).map(([, q]) => Number(q) || 0));
 
 // Le meilleur site pour s'enraciner (eau d'abord, sol, soleil, discrétion, ce qui existe déjà), avec ses contraintes.
@@ -129,7 +133,7 @@ export function scoreSiteEnracine(site, region, membres) {
   let s = (EAU_SCORE[site.eau] ?? 0) + (site.eau === "citerne" ? 0.8 * Number(region.climat?.pluie ?? 0) : 0);
   if (membres >= 5 && !["source", "riviere"].includes(site.eau)) s -= 2;
   s += Number(site.sol ?? 0) * 1.2 + Number(site.soleil ?? 0) * (Number(region.climat?.soleil ?? 1) / 3);
-  s += Number(site.discretion ?? 0) + Number(site.defense ?? 0) * 0.5 + (site.installationsDepart?.length ?? 0) * 1;
+  s += Number(site.discretion ?? 0) + Number(site.defense ?? 0) * 0.5 + installationsDuSite(site) * 1;
   s += Number(site.souterrain ?? 0) * 0.3 + Math.min(3, stocksDuSite(site) / 60);
   const nature = L.natureRegion(region);
   s += (nature.cueillette.parJour + nature.peche.parJour + nature.gibier.parJour) * 0.4;
@@ -140,7 +144,7 @@ export function scoreSiteEnracine(site, region, membres) {
 // Le site d'un nomade ou d'un passif : sûr, discret, avec des stocks.
 export function scoreSiteNomade(site, region, visites = []) {
   const stocks = stocksDuSite(site);
-  return Number(site.defense ?? 0) + Number(site.discretion ?? 0) + stocks / 20 + (EAU_SCORE[site.eau] ?? 0) * 0.3 + (site.installationsDepart?.length ?? 0) * 0.3
+  return Number(site.defense ?? 0) + Number(site.discretion ?? 0) + stocks / 20 + (EAU_SCORE[site.eau] ?? 0) * 0.3 + installationsDuSite(site) * 0.3
     - (visites.includes(site.cle) ? 3 : 0);
 }
 

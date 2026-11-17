@@ -1,0 +1,36 @@
+{
+  "_id": "OG6nSifmelFY1j5a",
+  "_key": "!items!OG6nSifmelFY1j5a",
+  "name": "Roue de bois cerclée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "roue-de-bois",
+    "categorie": "matiere",
+    "description": "<p>Une roue de planches chevillées, cerclée de fer à chaud : elle remplace les roues de récupération quand il n'y en a plus.</p>",
+    "bonus": {},
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "roue-de-bois"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

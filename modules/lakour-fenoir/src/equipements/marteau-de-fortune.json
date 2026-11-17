@@ -1,0 +1,40 @@
+{
+  "_id": "M82MYPCu8CabIDYy",
+  "_key": "!items!M82MYPCu8CabIDYy",
+  "name": "Marteau de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "marteau-de-fortune",
+    "categorie": "outil",
+    "description": "<p>Un galet rond lié à un manche de goyavier. On tape juste, ou on se tape les doigts.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "marteau"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "marteau-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

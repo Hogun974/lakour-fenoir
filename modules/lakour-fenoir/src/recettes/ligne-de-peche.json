@@ -1,0 +1,48 @@
+{
+  "_id": "3S4ERKYoSwthVHIH",
+  "_key": "!items!3S4ERKYoSwthVHIH",
+  "name": "Ligne de pêche",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "ligne-de-peche",
+    "description": "<p>Un hameçon tordu à la pince dans du fil de fer, une ligne, une gaulette.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "ligne-de-peche",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true,
+    "outils": [
+      "pince"
+    ],
+    "arbre": "moderne",
+    "repond": "vouve"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ligne-de-peche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

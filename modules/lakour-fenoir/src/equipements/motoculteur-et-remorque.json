@@ -1,0 +1,48 @@
+{
+  "_id": "NFWGYsJro8lTnPfQ",
+  "_key": "!items!NFWGYsJro8lTnPfQ",
+  "name": "Motoculteur et sa remorque",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "motoculteur-et-remorque",
+    "categorie": "transport",
+    "description": "<p>Le motoculteur attelé à son plateau de ferraille : il porte presque autant qu'une charrette à bœufs, à l'allure d'un homme qui marche, et tout le monde l'entend venir. Deux boîtes de vis tous les quinze jours.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 4,
+    "transport": {
+      "mode": "vehicule",
+      "places": 1,
+      "chargeMax": 32,
+      "carburantParQuart": 0.5,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 4,
+      "lenteur": 3,
+      "large": true
+    },
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "motoculteur-et-remorque"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

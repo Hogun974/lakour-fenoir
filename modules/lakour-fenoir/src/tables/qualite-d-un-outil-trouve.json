@@ -1,0 +1,178 @@
+{
+  "_id": "UatgNVwi3IvDD5F9",
+  "_key": "!tables!UatgNVwi3IvDD5F9",
+  "name": "La qualité d'un outil trouvé",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quand une fouille rend un outil ou une arme blanche (hache, sabre, couteau, marteau…), sa qualité : de fortune six fois sur dix, de récupération trois, forgé une. Dans un lieu dangereux, relancez une fois un « de fortune » (le système : qualiteTrouvee, logique/armes.mjs).</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "qualite-d-un-outil-trouve",
+      "ateliers": "qualite-d-un-outil-trouve"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "DHyeRhDxcommnENY",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.DHyeRhDxcommnENY",
+      "type": "text",
+      "name": "",
+      "description": "<p>De fortune : une pierre emmanchée, un bout de bois durci, des ligatures qui lâchent.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "GHPeqdXmgZrnFINa",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.GHPeqdXmgZrnFINa",
+      "type": "text",
+      "name": "",
+      "description": "<p>De fortune : bricolé par quelqu'un d'autre, qui n'en a plus eu besoin.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "l1OiUDKIdqsYeiF4",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.l1OiUDKIdqsYeiF4",
+      "type": "text",
+      "name": "",
+      "description": "<p>De fortune : un manche fendu, rafistolé au fil de fer.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "eKLOBScUgbkpi4Vk",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.eKLOBScUgbkpi4Vk",
+      "type": "text",
+      "name": "",
+      "description": "<p>De fortune : il a déjà beaucoup servi.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6mLdxjY1j0tyfnNy",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.6mLdxjY1j0tyfnNy",
+      "type": "text",
+      "name": "",
+      "description": "<p>De fortune : fait à la hâte, dans les premiers jours.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "C65P8QVy7HlpYcBY",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.C65P8QVy7HlpYcBY",
+      "type": "text",
+      "name": "",
+      "description": "<p>De fortune : on reconnaît la main d'un ancien, mais le temps a passé dessus.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YMqENOk7zHDFd4I5",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.YMqENOk7zHDFd4I5",
+      "type": "text",
+      "name": "",
+      "description": "<p>De récupération : de la ferraille et un manche, bien goupillés.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "F9sRJoPO7HirB9De",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.F9sRJoPO7HirB9De",
+      "type": "text",
+      "name": "",
+      "description": "<p>De récupération : sorti d'un atelier de quartier, la marque d'un forgeron à la pointe.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SEQU8JoAMlf4ynge",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.SEQU8JoAMlf4ynge",
+      "type": "text",
+      "name": "",
+      "description": "<p>De récupération : un outil d'avant, réparé avec ce qu'il y avait.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ip1xuIjUqlGPHQ23",
+      "_key": "!tables.results!UatgNVwi3IvDD5F9.ip1xuIjUqlGPHQ23",
+      "type": "text",
+      "name": "",
+      "description": "<p>Forgé : un vrai outil d'acier, d'avant ou de la forge d'un autre groupe ; il porte peut-être une marque.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

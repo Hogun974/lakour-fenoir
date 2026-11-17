@@ -1,0 +1,58 @@
+{
+  "_id": "DBtupTHRR97eNoWZ",
+  "_key": "!items!DBtupTHRR97eNoWZ",
+  "name": "Scie forgée",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "scie-forgee",
+    "description": "<p>Une lame de ressort recuite, taillée à la lime, avoyée, retrempée, sur un arc de planche.</p>",
+    "cout": {
+      "pieces": 1
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "metier": "forge",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "scie",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 3,
+    "metier": "forge",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "scie-forgee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

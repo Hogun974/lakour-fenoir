@@ -1,0 +1,42 @@
+{
+  "_id": "kOFHKiiIt7xqEBED",
+  "_key": "!items!kOFHKiiIt7xqEBED",
+  "name": "Éclat de basalte",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "eclat-de-basalte",
+    "description": "<p>Deux galets de basalte, l'un contre l'autre, jusqu'à ce qu'un éclat parte avec un fil : le premier couteau.</p>",
+    "cout": {},
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "eclat-de-basalte",
+      "n": 1
+    },
+    "sac": true,
+    "arbre": "lontan",
+    "repond": "couteau-forge"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "eclat-de-basalte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

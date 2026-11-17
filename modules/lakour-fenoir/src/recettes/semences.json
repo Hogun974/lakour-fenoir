@@ -22,7 +22,8 @@
     "produit": {
       "ressource": "graines",
       "n": 2
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

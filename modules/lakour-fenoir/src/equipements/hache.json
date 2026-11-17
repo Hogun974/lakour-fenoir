@@ -1,0 +1,43 @@
+{
+  "_id": "ScWW43uLv8FhgebV",
+  "_key": "!items!ScWW43uLv8FhgebV",
+  "name": "Hache forgée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "hache",
+    "categorie": "outil",
+    "description": "<p>Un fer forgé, trempé, emmanché à la main : elle tient une trentaine d'arbres avant qu'on la rafistole.</p>",
+    "bonus": {
+      "bricolage": 1,
+      "combat": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "forge",
+    "gammes": [
+      "hache"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "hache"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

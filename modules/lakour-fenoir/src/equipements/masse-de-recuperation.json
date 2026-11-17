@@ -1,0 +1,43 @@
+{
+  "_id": "Y06OD7esvi7ZFwoK",
+  "_key": "!items!Y06OD7esvi7ZFwoK",
+  "name": "Masse de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "masse-de-recuperation",
+    "categorie": "outil",
+    "description": "<p>Un bloc d'acier de casse, percé et emmanché : il casse le roc et les murs en dur.</p>",
+    "bonus": {
+      "bricolage": 1,
+      "combat": 1
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "masse"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "masse-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

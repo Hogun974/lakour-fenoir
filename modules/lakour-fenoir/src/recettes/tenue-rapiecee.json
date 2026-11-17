@@ -1,0 +1,49 @@
+{
+  "_id": "eGSM9ygy99NNZooU",
+  "_key": "!items!eGSM9ygy99NNZooU",
+  "name": "Tenue rapiécée",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "tenue-rapiecee",
+    "description": "<p>Quatre tissus, une corde : des genouillères, des coudières, des poches cousues par-dessus les trous.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "couture",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "tenue-rapiecee",
+      "n": 1
+    },
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "metier": "couture"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tenue-rapiecee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

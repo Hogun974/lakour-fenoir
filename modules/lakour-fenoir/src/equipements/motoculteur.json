@@ -1,0 +1,47 @@
+{
+  "_id": "rGbtgmv9Nt8hmD3p",
+  "_key": "!items!rGbtgmv9Nt8hmD3p",
+  "name": "Motoculteur",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "motoculteur",
+    "categorie": "transport",
+    "description": "<p>Un petit moteur sur deux roues, remis en état : seul, il ne porte presque rien ; il tire une remorque. Il boit du carburant et s'entend de très loin.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 4,
+    "transport": {
+      "mode": "vehicule",
+      "places": 1,
+      "chargeMax": 2,
+      "carburantParQuart": 0.5,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 4,
+      "lenteur": 3
+    },
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "motoculteur"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

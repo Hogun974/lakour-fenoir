@@ -1,0 +1,48 @@
+{
+  "_id": "7e9vZC6biyWkurCE",
+  "_key": "!items!7e9vZC6biyWkurCE",
+  "name": "Hache de fortune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "hache-de-fortune",
+    "description": "<p>Un galet taillé en biseau, emmanché dans une branche fendue au couteau et serré à la corde mouillée, qui se resserre en séchant.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "hache-de-fortune",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "arbre": "lontan",
+    "repond": "hache-forgee"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "hache-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

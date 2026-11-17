@@ -1,0 +1,51 @@
+{
+  "_id": "6tXxfCmvTmB3Mizc",
+  "_key": "!items!6tXxfCmvTmB3Mizc",
+  "name": "Batterie remise en état",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "batterie-remise-en-etat",
+    "description": "<p>Une batterie de voiture vidée, nettoyée, rechargée lentement ; deux câbles, une poignée, des prises : une batterie qu'on emporte.</p>",
+    "cout": {
+      "pieces": 2
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "electricite-solaire"
+      ],
+      "installation": {
+        "metier": "electricite",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "batterie-nomade",
+      "n": 1
+    },
+    "outils": [
+      "pince"
+    ],
+    "metier": "electricite",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "batterie-remise-en-etat"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

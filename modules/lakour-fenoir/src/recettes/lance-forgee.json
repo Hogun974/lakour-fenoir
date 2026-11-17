@@ -1,0 +1,56 @@
+{
+  "_id": "2O19qyCWKX5KAQ2M",
+  "_key": "!items!2O19qyCWKX5KAQ2M",
+  "name": "Lance forgée",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "lance-forgee",
+    "description": "<p>Un fer de lance forgé et trempé, emmanché sur un bambou plein.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "forge",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "lance-forgee",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 2,
+    "metier": "forge",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lance-forgee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

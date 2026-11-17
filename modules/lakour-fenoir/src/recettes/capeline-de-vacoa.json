@@ -1,0 +1,47 @@
+{
+  "_id": "DVQ3v4sO4Jppoqol",
+  "_key": "!items!DVQ3v4sO4Jppoqol",
+  "name": "Capeline de vacoa",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "capeline-de-vacoa",
+    "description": "<p>Douze feuilles de vacoa tressées en spirale, un large bord contre le soleil.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "vannerie",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "capeline-de-vacoa",
+      "n": 1
+    },
+    "metier": "vannerie",
+    "arbre": "lontan",
+    "repond": "cape-de-pluie"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "capeline-de-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -32,6 +32,8 @@ import { verifierCorvees } from "../systems/lakour-survie/logique/gestion.mjs";
 import { erreursAffaire } from "../systems/lakour-survie/logique/affaires.mjs";
 import { erreursPlans } from "../systems/lakour-survie/logique/plans.mjs";
 import { erreursRepere, chanceRepere, LIEUX_REPERE, CHANCE_REPERE_MAX } from "../systems/lakour-survie/logique/reperes.mjs";
+import { METIERS, TRAITEMENTS, objetsDeRecette } from "../systems/lakour-survie/logique/fabrication.mjs";
+import { GAMMES, QUALITES } from "../systems/lakour-survie/logique/armes.mjs";
 import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_DECLINABLES, IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
@@ -423,6 +425,12 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     if (!CATEGORIES_EQUIPEMENT.includes(q.categorie)) e(`${ou} : catégorie « ${q.categorie} »`);
     aCompetences(ou, q.bonus);
     if (q.categorie === "arme-a-feu" && !(q.munitions > 0)) e(`${ou} : arme à feu sans munitions`);
+    // Lot 6 « ateliers » : qualité, gammes, usages, remède.
+    if (q.qualite && !QUALITES.includes(q.qualite)) e(`${ou} : qualité « ${q.qualite} »`);
+    for (const g of q.gammes ?? []) if (!GAMMES.includes(g)) e(`${ou} : gamme « ${g} »`);
+    if (q.qualite && !(q.gammes ?? []).length) e(`${ou} : une qualité sans gamme`);
+    if (q.usages !== undefined && !(Number(q.usages) >= 0)) e(`${ou} : usages`);
+    if (q.remede) for (const a of q.remede.afflictions ?? []) if (!afflictions.has(a)) e(`${ou} : remède pour une affliction inconnue « ${a} »`);
     if (q.transport) {
       if (!TRANSPORTS.includes(q.transport.mode)) e(`${ou} : mode « ${q.transport.mode} »`);
       if (!q.transport.terrains?.length || q.transport.terrains.some(t => !TERRAINS.includes(t))) e(`${ou} : terrains invalides`);
@@ -443,9 +451,18 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     for (const k of Object.keys(r.cout)) if (!STOCKS.includes(k)) e(`${ou} : coût ${k}`);
     aSavoirs(ou, r.requiert.savoirs);
     const ri = typeof r.requiert.installation === "string" ? { cle: r.requiert.installation, niveau: 1 } : r.requiert.installation;
-    if (ri && (!installations.has(ri.cle) || ri.niveau > installations.get(ri.cle).niveauMax)) e(`${ou} : installation requise ${ri.cle}`);
-    if (r.produit.equipement ? !equipements.has(r.produit.equipement) : !STOCKS.includes(r.produit.ressource)) e(`${ou} : produit inconnu`);
-    if (!(r.produit.n >= 1)) e(`${ou} : quantité produite`);
+    // Lot 6 « ateliers » (contrat §24) : un atelier de métier, que sert au moins une installation à ce niveau.
+    if (ri?.metier) {
+      if (!METIERS.includes(ri.metier) || ![...installations.values()].some(i => (i.metiers ?? []).includes(ri.metier) && i.niveauMax >= (ri.niveau ?? 1))) e(`${ou} : atelier ${ri.metier} niveau ${ri.niveau}`);
+    } else if (ri && (!installations.has(ri.cle) || ri.niveau > installations.get(ri.cle).niveauMax)) e(`${ou} : installation requise ${ri.cle}`);
+    if (ri && r.sac) e(`${ou} : de sac et d'atelier à la fois`);
+    for (const g of r.outils ?? []) if (!GAMMES.includes(g)) e(`${ou} : outil « ${g} »`);
+    for (const o of objetsDeRecette(r)) if (!equipements.has(o.cle)) e(`${ou} : objet demandé « ${o.cle} »`);
+    if (r.produit.traitement) { if (!TRAITEMENTS.includes(r.produit.traitement) || !(r.produit.jours >= 1)) e(`${ou} : traitement`); }
+    else {
+      if (r.produit.equipement ? !equipements.has(r.produit.equipement) : !STOCKS.includes(r.produit.ressource)) e(`${ou} : produit inconnu`);
+      if (!(r.produit.n >= 1)) e(`${ou} : quantité produite`);
+    }
   }
   for (const a of afflictions.values()) {
     const ou = `affliction ${a.cle}`;

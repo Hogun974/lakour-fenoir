@@ -22,7 +22,8 @@
     "produit": {
       "equipement": "radio-a-manivelle",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

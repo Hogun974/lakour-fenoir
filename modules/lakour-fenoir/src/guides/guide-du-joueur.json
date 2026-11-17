@@ -573,11 +573,34 @@
       }
     },
     {
+      "_id": "SNsj3QoeM4HjDuOD",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.SNsj3QoeM4HjDuOD",
+      "name": "Fabriquer et réparer",
+      "type": "text",
+      "sort": 2500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>On fabrique depuis le sac (une lance, une torche, une attelle) ou à l'atelier, à l'abri. Les neuf ateliers (coin du feu, établi, forge, vannerie, couture, case à tisanes, mécanique, électricité, distillerie) ont chacun trois niveaux ; un atelier au-dessus de ce que demande la recette donne un dé de plus et va plus vite.</p><ul><li><strong>Les outils</strong> existent de fortune (pierre et bambou : un dé de moins, six usages), de récupération (ferraille : vingt usages) et forgés (quarante). Un outil cassé se rafistole au fil de fer, trois fois au plus ; une pierre à aiguiser redonne du fil aux lames.</li><li><strong>Beaucoup de recettes</strong> demandent un outil en main, et parfois un objet fait avant (du charbon de bois, du sel, de l'huile de bancoul).</li><li><strong>Une fabrication ratée</strong> rend la moitié de ce qu'on y a mis.</li><li><strong>Les armes à feu</strong> s'enrayent : deux 1 au test de tir, et le coup ne part pas. Remises en état, presque plus.</li><li><strong>Les remèdes</strong> de la case à tisanes (ayapana, citronnelle, cataplasme…) aident à soigner un mal précis et tiennent souvent lieu de médicament. Aucun ne guérit du Gris.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-ateliers"
+        }
+      }
+    },
+    {
       "_id": "GsGWAAAIAkUufDjK",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 2500,
+      "sort": 2600,
       "title": {
         "show": true,
         "level": 1

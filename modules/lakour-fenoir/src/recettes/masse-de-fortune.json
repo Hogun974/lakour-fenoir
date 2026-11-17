@@ -1,0 +1,44 @@
+{
+  "_id": "PhTUEPydcDgJqnTT",
+  "_key": "!items!PhTUEPydcDgJqnTT",
+  "name": "Masse de fortune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "masse-de-fortune",
+    "description": "<p>Une grosse pierre liée en croix au bout d'un manche, à deux cordes.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "masse-de-fortune",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true,
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "masse-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

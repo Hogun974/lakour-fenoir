@@ -1,0 +1,36 @@
+{
+  "_id": "wNOKb0gMWE2rjlHu",
+  "_key": "!items!wNOKb0gMWE2rjlHu",
+  "name": "Régulateur de charge",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "regulateur-de-charge",
+    "categorie": "matiere",
+    "description": "<p>Une petite carte électronique remontée dans un boîtier : sans lui, des panneaux tuent les batteries. Un utilitaire électrique en demande un.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "regulateur-de-charge"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "6oYNCi9VseFjLv4K",
+  "_key": "!items!6oYNCi9VseFjLv4K",
+  "name": "Sac de goni",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "sac-de-goni",
+    "description": "<p>Trois tissus de jute cousus en sac, avec un lien.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "sac-de-goni",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sac-de-goni"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

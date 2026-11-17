@@ -20,7 +20,8 @@
     "produit": {
       "equipement": "pinces-a-linge-en-bois",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

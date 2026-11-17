@@ -1,0 +1,51 @@
+{
+  "_id": "ltrIgIt5dJEryVVT",
+  "_key": "!items!ltrIgIt5dJEryVVT",
+  "name": "Bertel",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "bertel",
+    "description": "<p>Trente feuilles de vacoa tressées serré, deux cordes pour les bretelles : le sac à dos des Hauts.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 4,
+    "competence": "survie",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "vannerie",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "bertel",
+      "n": 1
+    },
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "metier": "vannerie",
+    "arbre": "lontan",
+    "repond": "coudre-un-sac"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bertel"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

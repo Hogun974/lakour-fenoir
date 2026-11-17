@@ -1,0 +1,50 @@
+{
+  "_id": "IkAx5DNxvdVtyttS",
+  "_key": "!items!IkAx5DNxvdVtyttS",
+  "name": "Rhum arrangé",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "rhum-arrange",
+    "description": "<p>Deux bouteilles de rhum de canne où macèrent des zerbaz, un mois : faute d'alcool fort, on nettoie une plaie avec. Deux bouteilles valent un alcool désinfectant.</p>",
+    "cout": {
+      "plantes": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "ressource": "medicaments",
+      "n": 1
+    },
+    "sac": true,
+    "objets": [
+      {
+        "cle": "rhum-de-canne",
+        "n": 2
+      }
+    ],
+    "arbre": "lontan",
+    "repond": "alcool-desinfectant"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rhum-arrange"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

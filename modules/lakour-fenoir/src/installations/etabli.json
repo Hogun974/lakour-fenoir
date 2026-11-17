@@ -1,0 +1,169 @@
+{
+  "_id": "4ohcU7AqR2UOHBbe",
+  "_key": "!items!4ohcU7AqR2UOHBbe",
+  "name": "Établi du bois",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "etabli",
+    "categorie": "vie",
+    "description": "<p>Un plateau de bambou sur deux tréteaux, puis un vrai établi de planches sous un appentis de tôle, enfin une menuiserie maçonnée avec ses râteliers. On y débite, on y emmanche, on y monte les roues et les charrettes, on y remet les armes en état.</p>",
+    "niveau": 0,
+    "niveauMax": 3,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 2,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 8
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 5,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 14
+        },
+        "requiert": {
+          "savoirs": [
+            "maconnerie"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ],
+    "metiers": [
+      "etabli"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "etabli"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

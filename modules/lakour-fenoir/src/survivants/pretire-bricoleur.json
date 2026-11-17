@@ -143,7 +143,12 @@
         "bruit": 0,
         "transport": null,
         "effets": null,
-        "marque": ""
+        "marque": "",
+        "gammes": [
+          "marteau",
+          "pince",
+          "scie"
+        ]
       },
       "effects": [],
       "folder": null,

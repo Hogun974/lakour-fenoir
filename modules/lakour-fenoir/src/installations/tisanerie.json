@@ -1,0 +1,171 @@
+{
+  "_id": "vfmZnrnYiCiRyxCw",
+  "_key": "!items!vfmZnrnYiCiRyxCw",
+  "name": "Case à tisanes",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "tisanerie",
+    "categorie": "vie",
+    "description": "<p>Des bottes de zerbaz pendues au plafond d'une case de paille et de torchis, des bocaux étiquetés à la main, une marmite qui ne sert qu'à ça. Plus tard, des étagères et des bocaux par dizaines ; enfin une petite pièce de pierre, fraîche et sèche, où les feuilles gardent leur force. Rien n'y guérit le Gris.</p>",
+    "niveau": 0,
+    "niveauMax": 3,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 2,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 8
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 3,
+          "travail": 14
+        },
+        "requiert": {
+          "savoirs": [
+            "zerbaz"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "metiers": [
+      "tisanerie"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tisanerie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

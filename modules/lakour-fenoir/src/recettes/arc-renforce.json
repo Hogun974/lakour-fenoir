@@ -1,0 +1,56 @@
+{
+  "_id": "8mY8EMmJYwjCUDql",
+  "_key": "!items!8mY8EMmJYwjCUDql",
+  "name": "Arc renforcé",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "arc-renforce",
+    "description": "<p>L'arc de chasse doublé au dos d'une lame de ressort ligaturée, deux cordes neuves, du fil de fer.</p>",
+    "cout": {
+      "materiaux": 1,
+      "pieces": 1
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "arc-renforce",
+      "n": 1
+    },
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "objets": [
+      {
+        "cle": "arc-de-chasse",
+        "n": 1
+      }
+    ],
+    "metier": "etabli"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "arc-renforce"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

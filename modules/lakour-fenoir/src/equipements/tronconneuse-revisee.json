@@ -1,0 +1,43 @@
+{
+  "_id": "aPLcOLPm9UIOouuq",
+  "_key": "!items!aPLcOLPm9UIOouuq",
+  "name": "Tronçonneuse révisée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "tronconneuse-revisee",
+    "categorie": "outil",
+    "description": "<p>La tronçonneuse démontée, sa chaîne affûtée, son carburateur réglé, son pot bourré de laine de roche : elle coupe mieux, dure plus, et s'entend un peu moins loin.</p>",
+    "bonus": {
+      "bricolage": 2
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 2,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "gammes": [
+      "hache",
+      "scie"
+    ],
+    "usages": 40
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tronconneuse-revisee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}
