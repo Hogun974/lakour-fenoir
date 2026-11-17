@@ -30,6 +30,7 @@ export const ACTES_MORAUX = {
   abandonner: -2,   // laisser quelqu'un derrière soi qu'on pouvait emmener
   attaquer: -2,     // attaquer des gens qui ne menaçaient pas
   trahir: -3,       // prendre ce qu'on apporte puis trahir, livrer quelqu'un
+  "prendre-au-culte": -1, // prendre dans un lieu de culte (lot 5 « fouille ») : au MJ de juger si cela pèse ; le même pour tous, quelle que soit la foi
   accueillir: 1,    // ouvrir la porte
   aider: 1,         // soigner, nourrir, guider un inconnu
   partager: 1,      // donner une part de ses stocks

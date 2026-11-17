@@ -1,0 +1,133 @@
+{
+  "_id": "MMOUq0ZTbSj9t41s",
+  "_key": "!tables!MMOUq0ZTbSj9t41s",
+  "name": "Récolte — Côte rocheuse",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les falaises de basalte du Sud sauvage, où la houle cogne, et les vacoas penchés au-dessus de l'écume. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d7",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-cote-rocheuse",
+      "fouilles": "recolte-cote-rocheuse"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "rZuDbIXx28YiotN9",
+      "_key": "!tables.results!MMOUq0ZTbSj9t41s.rZuDbIXx28YiotN9",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Galets roulés</strong> (10) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9wvCFSJsBsgMBIoH",
+      "_key": "!tables.results!MMOUq0ZTbSj9t41s.9wvCFSJsBsgMBIoH",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Vasque de sel</strong> (8) — Un creux de rocher où l'eau de mer s'évapore au soleil de l'Ouest : on y gratte une croûte de sel, qui garde le poisson (une recette).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jRW6Xsr810pzEbEG",
+      "_key": "!tables.results!MMOUq0ZTbSj9t41s.jRW6Xsr810pzEbEG",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bois flotté</strong> (6) — Ce que la mer et les ravines en crue rejettent sur la côte : du bois sec, blanchi, qui brûle bien.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mHJXGFqeafVMthXS",
+      "_key": "!tables.results!MMOUq0ZTbSj9t41s.mHJXGFqeafVMthXS",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bloc de basalte</strong> (5) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ERq4MAz2gzNODI0C",
+      "_key": "!tables.results!MMOUq0ZTbSj9t41s.ERq4MAz2gzNODI0C",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Coquillages</strong> (4) — Les coquillages roulés sur le sable : brûlés, ils font la chaux des anciens.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "l7pgEojptyJKtJal",
+      "_key": "!tables.results!MMOUq0ZTbSj9t41s.l7pgEojptyJKtJal",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Pied de vacoa</strong> (4) — Le vacoa des bords de mer et des ravines du Sud : ses feuilles tressées font les nattes, les sacs, les toits.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vK60yRBviA81r2HJ",
+      "_key": "!tables.results!MMOUq0ZTbSj9t41s.vK60yRBviA81r2HJ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Pied de choka</strong> (3) — L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

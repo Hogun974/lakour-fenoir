@@ -1,0 +1,313 @@
+{
+  "_id": "NrH8FazebniwzdWV",
+  "_key": "!tables!NrH8FazebniwzdWV",
+  "name": "Fouille — Entrepôt, usine, aérogare",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les zones d'activité, les docks, la sucrerie, le terminal de l'aéroport : de grands volumes vides, des palettes, des machines arrêtées. Rien à manger, tout pour bâtir. Fouiller en entier : 3 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d19",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-entrepot",
+      "fouilles": "fouille-entrepot"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "5X6Q10kXWhSou3Gq",
+      "_key": "!tables.results!NrH8FazebniwzdWV.5X6Q10kXWhSou3Gq",
+      "type": "text",
+      "name": "",
+      "description": "<p>4 à 12 ferraille — 80 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kSOzfixCoPDw2c10",
+      "_key": "!tables.results!NrH8FazebniwzdWV.kSOzfixCoPDw2c10",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 tôles — 60 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KoytvWoYMWHKX4Q3",
+      "_key": "!tables.results!NrH8FazebniwzdWV.KoytvWoYMWHKX4Q3",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 câbles — 70 % ; 4 pour 1 pièces</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oSlt0BCU4IKal3vb",
+      "_key": "!tables.results!NrH8FazebniwzdWV.oSlt0BCU4IKal3vb",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 tuyaux — 60 % ; 4 pour 1 pièces</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "OIAHdBnfcBtBI7oS",
+      "_key": "!tables.results!NrH8FazebniwzdWV.OIAHdBnfcBtBI7oS",
+      "type": "text",
+      "name": "",
+      "description": "<p>4 à 16 visserie — 70 % ; 8 pour 1 pièces</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mPRIQy5BHiAJMTyp",
+      "_key": "!tables.results!NrH8FazebniwzdWV.mPRIQy5BHiAJMTyp",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 composants électroniques — 40 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "84Uy6VXmha2kBij3",
+      "_key": "!tables.results!NrH8FazebniwzdWV.84Uy6VXmha2kBij3",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 sacs de ciment — 35 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mciMJnV5bYewJlLr",
+      "_key": "!tables.results!NrH8FazebniwzdWV.mciMJnV5bYewJlLr",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 parpaings — 35 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "IhknpfovoqRsmoEU",
+      "_key": "!tables.results!NrH8FazebniwzdWV.IhknpfovoqRsmoEU",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 bâches — 50 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uFd4IbBBWFScj1pk",
+      "_key": "!tables.results!NrH8FazebniwzdWV.uFd4IbBBWFScj1pk",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une corde — 40 % ; un objet</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uLuWHrXrIvuXGVhG",
+      "_key": "!tables.results!NrH8FazebniwzdWV.uLuWHrXrIvuXGVhG",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 fûts vides — 40 % ; 3 pour 1 matériaux</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "c6XD72yWNd4ib654",
+      "_key": "!tables.results!NrH8FazebniwzdWV.c6XD72yWNd4ib654",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 gants de travail — 40 % ; 6 pour 1 matériaux</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "i5fURL24SYSPfPyR",
+      "_key": "!tables.results!NrH8FazebniwzdWV.i5fURL24SYSPfPyR",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 bidons d'essence ou de gazole — 30 % (+6 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mYf7ExEcxST7pycB",
+      "_key": "!tables.results!NrH8FazebniwzdWV.mYf7ExEcxST7pycB",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 lames de ressort — 30 % (+3 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aqyUeMgQ7tdqGlYN",
+      "_key": "!tables.results!NrH8FazebniwzdWV.aqyUeMgQ7tdqGlYN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une pince — 30 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ukFDxATxjvcMZJkX",
+      "_key": "!tables.results!NrH8FazebniwzdWV.ukFDxATxjvcMZJkX",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une masse — 15 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "PV0dltFaCQ9WMFZg",
+      "_key": "!tables.results!NrH8FazebniwzdWV.PV0dltFaCQ9WMFZg",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 un moteur électrique — 12 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "B7VKpf1yba1KHyX5",
+      "_key": "!tables.results!NrH8FazebniwzdWV.B7VKpf1yba1KHyX5",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 un groupe électrogène — 5 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BHv8JMg0LaWAzklM",
+      "_key": "!tables.results!NrH8FazebniwzdWV.BHv8JMg0LaWAzklM",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 un panneau solaire — 3 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

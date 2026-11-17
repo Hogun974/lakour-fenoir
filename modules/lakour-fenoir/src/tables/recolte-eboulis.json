@@ -1,0 +1,118 @@
+{
+  "_id": "241zHILLlbb7FRUz",
+  "_key": "!tables!241zHILLlbb7FRUz",
+  "name": "Récolte — Éboulis et coulées",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les éboulis au pied des remparts, les coulées de lave anciennes et récentes : de la pierre, et presque rien d'autre. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-eboulis",
+      "fouilles": "recolte-eboulis"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "ZQE4bIEvfyf9AqNo",
+      "_key": "!tables.results!241zHILLlbb7FRUz.ZQE4bIEvfyf9AqNo",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bloc de basalte</strong> (10) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "3L295jIpTzgVhus3",
+      "_key": "!tables.results!241zHILLlbb7FRUz.3L295jIpTzgVhus3",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Pied de choka</strong> (6) — L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FHuTp9PQ9hZXQNKR",
+      "_key": "!tables.results!241zHILLlbb7FRUz.FHuTp9PQ9hZXQNKR",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Galets roulés</strong> (4) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wfKXiSiAEDOlxHy8",
+      "_key": "!tables.results!241zHILLlbb7FRUz.wfKXiSiAEDOlxHy8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces : quelqu'un a coupé, creusé ou ramassé ici il y a peu. Ce qui reste a été choisi par d'autres.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1oPlSIvKpVAhIR97",
+      "_key": "!tables.results!241zHILLlbb7FRUz.1oPlSIvKpVAhIR97",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien qui vaille à portée : il faut descendre plus bas dans la ravine, ou monter plus haut, et revenir demain.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nEAEoUnQhTfPSB85",
+      "_key": "!tables.results!241zHILLlbb7FRUz.nEAEoUnQhTfPSB85",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide figé dans les fourrés, à vingt pas : on travaille en silence, ou l'on s'en va.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

@@ -32,6 +32,7 @@ import { fonctionsGestion } from "./api-gestion.mjs";
 import { fonctionsPlans } from "./api-plans.mjs";
 import { fonctionsReperes } from "./api-reperes.mjs";
 import { fonctionsCorps } from "./api-corps.mjs";
+import { fonctionsFouilles } from "./api-fouilles.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -941,11 +942,11 @@ export function besoins() {
 }
 
 // ------------------------------------------------------------------ l'API
-async function fouillerInterne(ctx, { region, site = null, cible = null, membres = [], quarts = 1, prudence = "normal" }) {
+async function fouillerInterne(ctx, { region, site = null, cible = null, membres = [], quarts = 1, prudence = "normal", genre = "", ecart = null, lieu = "", gisement = "" }) {
   const c = contenu();
   const reg = region || ctx.etat.groupe.region;
   if (!L.regionDe(c, reg)) throw clair(t("LAKOUR_SURVIE.Erreurs.RegionInconnue", { region: reg }));
-  if (cible && !NATURE.includes(cible) && !RESSOURCES.includes(cible) && !CIBLES_SAVOIRS.includes(cible) && cible !== CIBLE_PLANS) throw clair(t("LAKOUR_SURVIE.Erreurs.CibleInconnue", { cible }));
+  if (cible && !NATURE.includes(cible) && !RESSOURCES.includes(cible) && !CIBLES_SAVOIRS.includes(cible) && cible !== CIBLE_PLANS && !L.CIBLES_FOUILLES.includes(cible)) throw clair(t("LAKOUR_SURVIE.Erreurs.CibleInconnue", { cible }));
   const qui = membresValides(ctx, membres);
   const q = entier(quarts, 1, 8, 1);
   const ab = abriCourant(ctx.etat);
@@ -958,7 +959,10 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
     // Lot « sens » : un lieu nettoyé se repeuple peu à peu (moins de rencontres).
     facteurRencontre: L.facteurNettoyage(ctx.etat.nettoyes ?? [], { region: reg, site: site ?? "", jour: jourCtx(ctx) }),
     // Lot 4 « Les plans » : ce que le groupe connaît déjà (un plan connu se trouve moins souvent).
-    connus: cible === CIBLE_PLANS ? PLANS_API.connusDe(ctx.etat) : [] });
+    connus: cible === CIBLE_PLANS ? PLANS_API.connusDe(ctx.etat) : [],
+    // Lot 5 « fouille » : le genre du lieu, à l'écart ou non, un lieu déjà commencé, le gisement ; les outils des fouilleurs.
+    genre, ecart: ecart === null || ecart === "" ? null : Boolean(ecart), lieu, gisement, equipements: FOUILLES.equipementsDe(qui), dateDepart: dateDepart() });
+  if (r.ok === false) throw clair(motifLisible(r));
   ctx.monde = r.monde;
   ctx.etat.renseignements = r.renseignements;
   if (r.fouille) ctx.etat = L.noterFouille(ctx.etat, jourCtx(ctx));
@@ -969,7 +973,7 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
     if (r.abri?.nature) sys.nature = r.abri.nature;
     await ab.update({ system: sys });
   } else ctx.etat.groupe.porte = L.ajouterStocks(ctx.etat.groupe.porte ?? {}, r.butin);
-  for (const f of r.faits) noter(ctx, f);
+  for (const f of r.faits) if (f.public !== false) noter(ctx, f);
   // Un livre trouvé (lot « savoirs ») : il va au premier fouilleur ; il apprend le savoir tiré (veillées de lecture : apprendre).
   if (r.livre && qui[0]) {
     const def = defDe("savoirs", r.livre), base = defDe("equipements", "manuel-de-survie");
@@ -978,12 +982,17 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   // Un plan trouvé (lot 4 « Les plans ») : le papier va au premier fouilleur ; le groupe le lit au carnet s'il en a les savoirs.
   const plan = r.plan && qui[0] ? await PLANS_API.trouverPapier(ctx, qui[0], r.plan) : null;
   // Lot « cartes » : une carte ou un calendrier, parfois (flux de hasard à part : les autres tirages ne bougent pas).
-  const repere = await REPERES.trouver(ctx, { site, region: reg, qui, fouille: r.fouille });
-  await chat(carteAction({ icone: "fa-magnifying-glass", titre: t("LAKOUR_SURVIE.Action.Fouille", { lieu: site ? nomSite(site) : nomRegion(reg) }),
-    lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" }), t("LAKOUR_SURVIE.Action.Butin", { butin: texteStocks(r.butin) || t("LAKOUR_SURVIE.Action.Rien") }),
+  // Lot « cartes » : pas de repère dans une récolte ni dans un démontage (seulement en fouillant un lieu ou la région).
+  const repere = ["matieres", "demonter"].includes(cible) ? null : await REPERES.trouver(ctx, { site, region: reg, qui, fouille: r.fouille });
+  // Lot 5 « fouille » : les objets trouvés, la bête, le lieu vu.
+  const lot5 = L.CIBLES_FOUILLES.includes(cible) ? await FOUILLES.apres(ctx, r, qui) : null;
+  await chat(carteAction({ icone: cible === "demonter" ? "fa-hammer" : cible === "matieres" ? "fa-leaf" : "fa-magnifying-glass", titre: t("LAKOUR_SURVIE.Action.Fouille", { lieu: site ? nomSite(site) : nomRegion(reg) }),
+    lignes: [t("LAKOUR_SURVIE.Action.Qui", { noms: qui.map(a => a.name).join(", ") || "—" }), ...(lot5 ? FOUILLES.lignesCarte(r, lot5) : []),
+      t("LAKOUR_SURVIE.Action.Butin", { butin: texteStocks(r.butin) || t("LAKOUR_SURVIE.Action.Rien") }),
       plan ? t("LAKOUR_SURVIE.Plans.CarteTrouve", { plan: plan.nom }) : "", ...(repere ? [t("LAKOUR_SURVIE.Reperes.Trouvaille", { objet: repere.nom })] : [])] }));
   await avancerInterne(ctx, q);
-  return { butin: r.butin, livre: r.livre ?? null, plan, repere, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits, ...ctx.faits].map(publicFait), fouille: r.fouille, clarte };
+  return { butin: r.butin, livre: r.livre ?? null, plan, repere, rencontre: lisible(r.rencontre), bruit: r.bruit, faits: [...r.faits.filter(f => f.public !== false), ...ctx.faits].map(publicFait), fouille: r.fouille, clarte,
+    ...(lot5 ? { lieu: r.lieu, trouve: r.trouve, objets: lot5.objets, bete: lot5.bete, culte: r.culte, gisement: r.gisement } : {}) };
 }
 
 // Un abri d'avant les notes secrètes (sans le drapeau notesPubliques) : ses notes, écrites par le MJ, vont au monde scellé ; la
@@ -1185,6 +1194,10 @@ const CORPS = fonctionsCorps({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx
   mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), aLAbri: (etat, ab) => aLAbri(etat, ab),
   savoirsDuGroupe: etat => savoirsDuGroupe(etat), testDirect: (...x) => testDirect(...x), objetsDe, defDe, estMJ: () => Boolean(game.user?.isGM),
   brasDe: (qui, jour) => brasDeLEquipe(qui, jour), journalSecret });
+// Lot 5 « fouille » (contrat §25) : fouiller un lieu, démonter, récolter, les bêtes trouvées (api-fouilles.mjs).
+const FOUILLES = fonctionsFouilles({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
+  ecrireSurvivant: (...x) => ecrireSurvivant(...x), avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o), membresValides, donneesObjet, objetsDe, defDe, instancesDe,
+  aLAbri: (etat, ab) => aLAbri(etat, ab), mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), texteStocks, journalSecret, motifLisible });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1992,6 +2005,8 @@ export const api = {
   // Lot « cartes » (contrat §20) : le compte des jours, la lune sur un calendrier, les cartes et les calendriers, le journal d'un mort.
   ...REPERES.api,
   ...CORPS,
+  // Lot 5 « fouille » (contrat §25) : les lieux d'une région, les gisements, les bêtes prises, démonter une installation.
+  ...FOUILLES.api,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {

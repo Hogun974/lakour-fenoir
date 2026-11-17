@@ -1,0 +1,118 @@
+{
+  "_id": "YHi1hDRryzSw5LSl",
+  "_key": "!tables!YHi1hDRryzSw5LSl",
+  "name": "Fouille — Lieu de culte",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une église, un temple tamoul, une mosquée, une pagode, une chapelle au bord du chemin. Des bougies, de l'eau, des nappes. On n'y trouve ni outil ni arme, et y prendre quoi que ce soit ne laisse personne indifférent. Fouiller en entier : 1 quart-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-lieu-de-culte",
+      "fouilles": "fouille-lieu-de-culte"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "nkgGPtxMqrCawGm0",
+      "_key": "!tables.results!YHi1hDRryzSw5LSl.nkgGPtxMqrCawGm0",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 bougies — 70 % ; 12 pour 1 matériaux</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aXMDxxOsWnF1JMTS",
+      "_key": "!tables.results!YHi1hDRryzSw5LSl.aXMDxxOsWnF1JMTS",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 bouteilles d'eau — 50 % ; 2 pour 1 eau</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "w50tmKvPsx6x0Xep",
+      "_key": "!tables.results!YHi1hDRryzSw5LSl.w50tmKvPsx6x0Xep",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 linge et tissu — 40 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "stoOnv4dJcFrW8Uy",
+      "_key": "!tables.results!YHi1hDRryzSw5LSl.stoOnv4dJcFrW8Uy",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 papier — 40 % ; 40 pour 1 matériaux</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "RGrl4hPSeblBMZQU",
+      "_key": "!tables.results!YHi1hDRryzSw5LSl.RGrl4hPSeblBMZQU",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 cire — 30 % ; 6 pour 1 matériaux</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "F4alhF0aEE82QUbZ",
+      "_key": "!tables.results!YHi1hDRryzSw5LSl.F4alhF0aEE82QUbZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 bocaux — 30 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

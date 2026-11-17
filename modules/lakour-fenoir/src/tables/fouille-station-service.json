@@ -1,0 +1,253 @@
+{
+  "_id": "DmRAWnuCZnk4wFkz",
+  "_key": "!tables!DmRAWnuCZnk4wFkz",
+  "name": "Fouille — Station-service",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les cuves enterrées, les pompes mortes sans courant, la boutique aux vitres brisées. Le gazole ne se tire plus qu'à la main, et tout le monde le sait. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d15",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-station-service",
+      "fouilles": "fouille-station-service"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "tg0M67TUKUQtkkcD",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.tg0M67TUKUQtkkcD",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 bidons d'essence ou de gazole — 60 % (+7 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "N0gaQCQbJrUwrMtK",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.N0gaQCQbJrUwrMtK",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 fûts vides — 35 % ; 3 pour 1 matériaux</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Dj7m81ZCtWfyF55I",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.Dj7m81ZCtWfyF55I",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 tuyaux — 50 % ; 4 pour 1 pièces</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5sDhhOz7Xs5dGIar",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.5sDhhOz7Xs5dGIar",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 seaux — 40 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DR4JPxoIkSHOBtpr",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.DR4JPxoIkSHOBtpr",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 boîtes de conserve — 45 % (+4 % par palier de risque) ; 2 pour 1 nourriture</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "kKdWPBpzCbD8Aa1C",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.kKdWPBpzCbD8Aa1C",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 bouteilles d'eau — 50 % ; 2 pour 1 eau</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "j5gfDBOsSUk3FxPB",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.j5gfDBOsSUk3FxPB",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 vivres secs (riz, grains, sucre) — 35 % ; 2 pour 1 nourriture</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2z8vknp8urG4Y0Ax",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.2z8vknp8urG4Y0Ax",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 linge et tissu — 40 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Dp8hAzbEtSZDU8l0",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.Dp8hAzbEtSZDU8l0",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 bâches — 30 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NC63VfvQW1QM5Lpi",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.NC63VfvQW1QM5Lpi",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 chambres à air — 35 % ; 8 pour 1 pièces</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "WOpp80ERGqSAPwYt",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.WOpp80ERGqSAPwYt",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 rustines — 30 % ; 12 pour 1 pièces</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mdzxV5XrSccYcddi",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.mdzxV5XrSccYcddi",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 une batterie de voiture — 20 % (+4 % par palier de risque) ; 1 pour 1 pièces</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7qZLy2GKvduhbMmx",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.7qZLy2GKvduhbMmx",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 bouteilles de gaz — 40 % (+4 % par palier de risque) ; 10 gaz chacun</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0wbfxKJiHHpCaeCg",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.0wbfxKJiHHpCaeCg",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 câbles — 30 % ; 4 pour 1 pièces</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "p46wTWmhfxtBhP4Y",
+      "_key": "!tables.results!DmRAWnuCZnk4wFkz.p46wTWmhfxtBhP4Y",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 papier — 40 % ; 40 pour 1 matériaux</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

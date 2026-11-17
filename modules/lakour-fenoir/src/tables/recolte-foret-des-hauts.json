@@ -1,0 +1,118 @@
+{
+  "_id": "ivhpLeb2BfG7nIYV",
+  "_key": "!tables!ivhpLeb2BfG7nIYV",
+  "name": "Récolte — Forêt des Hauts",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Tamarins, bois de couleur, fougères arborescentes, la mousse sur tout : la forêt humide au-dessus de mille mètres. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-foret-des-hauts",
+      "fouilles": "recolte-foret-des-hauts"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "q7Lv6lXzHHYNNc2H",
+      "_key": "!tables.results!ivhpLeb2BfG7nIYV.q7Lv6lXzHHYNNc2H",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Zerbaz</strong> (5) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wu1dXvUf2uENJWqM",
+      "_key": "!tables.results!ivhpLeb2BfG7nIYV.wu1dXvUf2uENJWqM",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Talus de terre</strong> (4) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HLOC2Q4K9fv2Ol72",
+      "_key": "!tables.results!ivhpLeb2BfG7nIYV.HLOC2Q4K9fv2Ol72",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Touffe de bambous</strong> (3) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cR12yXhib9rcH3nd",
+      "_key": "!tables.results!ivhpLeb2BfG7nIYV.cR12yXhib9rcH3nd",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bloc de basalte</strong> (3) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jVbG4BUcM5LJ3QYY",
+      "_key": "!tables.results!ivhpLeb2BfG7nIYV.jVbG4BUcM5LJ3QYY",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Berge d'argile</strong> (1) — Une berge grasse au fond d'une ravine : l'argile des jarres, du torchis, des fours.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qGScWAHLRQsq6t5T",
+      "_key": "!tables.results!ivhpLeb2BfG7nIYV.qGScWAHLRQsq6t5T",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces : quelqu'un a coupé, creusé ou ramassé ici il y a peu. Ce qui reste a été choisi par d'autres.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

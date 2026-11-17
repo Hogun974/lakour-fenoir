@@ -73,6 +73,7 @@ import { autoriteDuJour, crisesAutorite, tributsDus, rangsDuJour, secondsDe } fr
 import { suivreQuotas } from "./gestion.mjs";
 import { noterCyclone, fenetresQuiSouvrent, plansDuMonde, plansDeLEtat, perteEtagere, etagereDeLAbri } from "./plans.mjs";
 import { compteDepart, compteDe, journeeCompte, texteCompte, supportDuCompte, journalAuDeces } from "./reperes.mjs";
+import { expirerBetes, betesDuGroupe, beteTrouvee } from "./fouilles.mjs";
 
 export function etatVide() {
   return {
@@ -666,6 +667,21 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         m.journalSecret = [...m.journalSecret, { jour, texte: f.texte, cle: f.cleTexte, params: f.params }];
       }
       palierVeille = palier;
+    }
+  }
+
+  // Lot 5 « fouille » (fouilles.mjs) : une bête prise qui n'est pas à l'enclos à temps meurt ; sa viande va à l'abri (le groupe y est) ou
+  // dans ce qu'il porte.
+  if (betesDuGroupe(e).length) {
+    const x = expirerBetes(e, contenu, e.horloge.quart);
+    e = x.etat;
+    for (const { bete, viande } of x.mortes) {
+      const nom = beteTrouvee(contenu, bete.cle)?.nom ?? bete.cle;
+      if (viande > 0) {
+        if (aLAbri()) ab.system.stocks = ajouterStocks(ab.system.stocks ?? {}, { nourriture: viande });
+        else e = { ...e, groupe: { ...e.groupe, porte: ajouterStocks(e.groupe.porte ?? {}, { nourriture: viande }) } };
+      }
+      publier(e.horloge.quart, "bete-morte", { bete: nom, viande }, `${nom} : pas d'enclos à temps, elle est morte${viande ? ` (${viande} de nourriture)` : ""}.`);
     }
   }
 

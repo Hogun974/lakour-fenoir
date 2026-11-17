@@ -120,6 +120,17 @@
       "en": "<p>A receiver stripped from an old set, a bicycle dynamo, a crank: listen to the island without batteries.</p>"
     }
   },
+  "recettes/JCmS9HDLcxcyBk5n": {
+    "_nom": "Cage de bambou",
+    "name": {
+      "fr": "Cage de bambou",
+      "en": "Bamboo cage"
+    },
+    "system.description": {
+      "fr": "<p>Six gaulettes de bambou fendu, une corde pour les ligatures, un couteau : une cage légère pour ramener des volailles.</p>",
+      "en": "<p>Six split bamboo poles, a rope for the lashings, a knife: a light cage to bring poultry back.</p>"
+    }
+  },
   "recettes/MbZqvVVbkxPgJ8rR": {
     "_nom": "Moustiquaires",
     "name": {
@@ -294,6 +305,28 @@
     "system.description": {
       "fr": "<p>Un bout de goyavier, un couteau, du fil : on fend, on taille, on ligature. Le genre de chose qu'on achetait sans y penser.</p>",
       "en": "<p>A piece of guava wood, a knife, some wire: you split, you carve, you bind. The kind of thing you used to buy without thinking.</p>"
+    }
+  },
+  "recettes/jFAFJwxAPSIeJLWM": {
+    "_nom": "Enfumoir",
+    "name": {
+      "fr": "Enfumoir",
+      "en": "Smoker"
+    },
+    "system.description": {
+      "fr": "<p>Une boîte de conserve percée, un soufflet de chambre à air, une poignée de vétiver sec.</p>",
+      "en": "<p>A pierced tin can, inner-tube bellows, a handful of dry vetiver.</p>"
+    }
+  },
+  "recettes/n7ONFPbOV3BvAxka": {
+    "_nom": "Sac de goni cousu",
+    "name": {
+      "fr": "Sac de goni cousu",
+      "en": "Sewn gunny sack"
+    },
+    "system.description": {
+      "fr": "<p>Trois morceaux de toile de jute ou de bâche, cousus au fil de pêche.</p>",
+      "en": "<p>Three pieces of jute cloth or tarpaulin, sewn with fishing line.</p>"
     }
   },
   "recettes/nHobGpngrAgb3YMs": {

@@ -1,0 +1,118 @@
+{
+  "_id": "XoT9H5eaakG0w1ww",
+  "_key": "!tables!XoT9H5eaakG0w1ww",
+  "name": "Récolte — Champs de canne",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les cannes qui n'ont pas été coupées cette année, plus hautes qu'un homme : on s'y perd, on s'y cache. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-canne",
+      "fouilles": "recolte-canne"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "62E8H3Scl6HLSlKU",
+      "_key": "!tables.results!XoT9H5eaakG0w1ww.62E8H3Scl6HLSlKU",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Talus de terre</strong> (6) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yJoHKBMPL7b3WaLl",
+      "_key": "!tables.results!XoT9H5eaakG0w1ww.yJoHKBMPL7b3WaLl",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Zerbaz</strong> (2) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "b8vDLrJRWNjdp8n0",
+      "_key": "!tables.results!XoT9H5eaakG0w1ww.b8vDLrJRWNjdp8n0",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Touffe de bambous</strong> (2) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "e3eTs5dDonNgkDBd",
+      "_key": "!tables.results!XoT9H5eaakG0w1ww.e3eTs5dDonNgkDBd",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Jardin en friche</strong> (2) — Le jardin d'une case abandonnée, envahi : des graines, quelques légumes, des zerbaz. Il se prend avec la cible « jardins ».</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8qoxrcZpZaoqAP0i",
+      "_key": "!tables.results!XoT9H5eaakG0w1ww.8qoxrcZpZaoqAP0i",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Décombres</strong> (1) — Un tas de gravats et de planches : il se fouille comme un lieu (genre « Décombres »).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2PIXoblvz88GHj1Z",
+      "_key": "!tables.results!XoT9H5eaakG0w1ww.2PIXoblvz88GHj1Z",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces : quelqu'un a coupé, creusé ou ramassé ici il y a peu. Ce qui reste a été choisi par d'autres.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

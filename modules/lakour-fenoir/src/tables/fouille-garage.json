@@ -1,0 +1,298 @@
+{
+  "_id": "NACyEMiacyDm1gzM",
+  "_key": "!tables!NACyEMiacyDm1gzM",
+  "name": "Fouille — Garage",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>L'atelier de mécanique avec sa fosse, ses pneus empilés et son odeur d'huile. Des pièces de tout, une batterie, une lame de ressort pour un sabre : le trésor de celui qui sait bricoler. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d18",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-garage",
+      "fouilles": "fouille-garage"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "luyXJ9BSnHdbgAZ6",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.luyXJ9BSnHdbgAZ6",
+      "type": "text",
+      "name": "",
+      "description": "<p>4 à 14 visserie — 80 % ; 8 pour 1 pièces</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tu6GKJaiEgxPe3H8",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.tu6GKJaiEgxPe3H8",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 ferraille — 70 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cv9RdYgVUKrluqpJ",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.cv9RdYgVUKrluqpJ",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 câbles — 60 % ; 4 pour 1 pièces</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qlGjOtKBMwTHvv1m",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.qlGjOtKBMwTHvv1m",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une pince — 50 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uswgNAC5z04cEETL",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.uswgNAC5z04cEETL",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un marteau — 35 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "fjKW0sCPW6w2gBDO",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.fjKW0sCPW6w2gBDO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un pied-de-biche — 30 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "J4PesgB3dz4n2sqW",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.J4PesgB3dz4n2sqW",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 chambres à air — 50 % ; 8 pour 1 pièces</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7cRoqwonVe66BwSE",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.7cRoqwonVe66BwSE",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 rustines — 40 % ; 12 pour 1 pièces</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "znvA5ef5L7LjCjS6",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.znvA5ef5L7LjCjS6",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 roues — 45 % ; 4 pour 1 pièces</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DPzh2m8rabBcvWNz",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.DPzh2m8rabBcvWNz",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 lames de ressort — 45 % (+3 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wKMmkGvohk4Y1fZU",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.wKMmkGvohk4Y1fZU",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 tuyaux — 40 % ; 4 pour 1 pièces</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CE8rv3C5ZDBex59G",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.CE8rv3C5ZDBex59G",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 5 bidons d'essence ou de gazole — 40 % (+5 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ct4MurvvAvGCRK8l",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.ct4MurvvAvGCRK8l",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 une batterie de voiture — 30 % (+4 % par palier de risque) ; 1 pour 1 pièces</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "XWa39b5biExvAE4O",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.XWa39b5biExvAE4O",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 gants de travail — 35 % ; 6 pour 1 matériaux</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ceh8HPTqRZeH3LWx",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.ceh8HPTqRZeH3LWx",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 linge et tissu — 40 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DWs2dKcPRz5fSBAj",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.DWs2dKcPRz5fSBAj",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 un petit moteur — 10 % (+5 % par palier de risque) ; 3 pièces chacun</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "04jy7WJ19sSEOIqt",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.04jy7WJ19sSEOIqt",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 un cadre de vélo — 15 % (+3 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "zDZFlTQYHBv9psMN",
+      "_key": "!tables.results!NACyEMiacyDm1gzM.zDZFlTQYHBv9psMN",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 fûts vides — 15 % ; 3 pour 1 matériaux</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

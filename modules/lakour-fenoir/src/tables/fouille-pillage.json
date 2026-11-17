@@ -1,0 +1,118 @@
+{
+  "_id": "uDs8O1bfuJMl0Gi3",
+  "_key": "!tables!uDs8O1bfuJMl0Gi3",
+  "name": "Fouille — ce qu'on lit en arrivant",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce que le groupe voit devant un lieu, selon son degré de pillage (logique/fouilles.mjs, motDuPillage). L'API le dit (lieux, fouiller) ; tirez si vous menez sans elle.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-pillage",
+      "fouilles": "fouille-pillage"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "BtGl6ApmG7Gp2qIS",
+      "_key": "!tables.results!uDs8O1bfuJMl0Gi3.BtGl6ApmG7Gp2qIS",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Personne n'y est passé.</strong> La porte est fermée, la poussière sur le rebord est intacte, les volets tirés. Tout est là.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vpkGRm8WOb8rvNKD",
+      "_key": "!tables.results!uDs8O1bfuJMl0Gi3.vpkGRm8WOb8rvNKD",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>On y est à peine passé.</strong> Une vitre cassée, un tiroir ouvert, des pas dans la poussière : quelqu'un est venu vite et n'a pris que ce qui se voyait.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DFy9WlAcREIPt0Ut",
+      "_key": "!tables.results!uDs8O1bfuJMl0Gi3.DFy9WlAcREIPt0Ut",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>On y est déjà passé.</strong> Les placards sont ouverts, la cuisine retournée, il manque les conserves et les outils. Le reste traîne par terre.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "91fraNWRp6nGMJFi",
+      "_key": "!tables.results!uDs8O1bfuJMl0Gi3.91fraNWRp6nGMJFi",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Tout a été retourné.</strong> Matelas éventrés, tiroirs vidés au sol, faux plafond arraché : des gens ont cherché longtemps. Il reste ce qui ne se mange pas et ne sert pas d'arme.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BpTIsUTSJ6JiCcnh",
+      "_key": "!tables.results!uDs8O1bfuJMl0Gi3.BpTIsUTSJ6JiCcnh",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Il ne reste presque rien.</strong> Même les fils électriques ont été arrachés des murs. Mais il y a toujours quelque chose : un rouleau de bâche sous l'escalier, une boîte de clous derrière une plinthe.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "X8RZtYSk7wDBViC8",
+      "_key": "!tables.results!uDs8O1bfuJMl0Gi3.X8RZtYSk7wDBViC8",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Des traces fraîches.</strong> Une porte qu'on a forcée cette semaine, des braises dans l'évier, des emballages neufs : quelqu'un fouille le quartier en ce moment. Le lieu se lit un cran plus pillé que la dernière fois.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

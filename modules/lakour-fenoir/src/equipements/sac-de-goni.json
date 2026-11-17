@@ -1,0 +1,41 @@
+{
+  "_id": "ecKmnQN8uh4OW6cO",
+  "_key": "!items!ecKmnQN8uh4OW6cO",
+  "name": "Sac de goni",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "sac-de-goni",
+    "categorie": "outil",
+    "description": "<p>Un grand sac de jute qui a porté du riz ou du maïs : on y met une poule, un lapin, un porcelet qui crie, et l'on referme d'un nœud.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "capture": [
+      "poule",
+      "lapin",
+      "porcelet"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sac-de-goni"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

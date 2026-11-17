@@ -168,7 +168,8 @@ export class ModeleEquipement extends foundry.abstract.TypeDataModel {
       plans: cles(), unique: texte(),
       // Lot « cartes » (logique/reperes.mjs) : une carte, un calendrier, une montre… { type, … } ; null : un équipement ordinaire.
       repere: objetNul(),
-      parade: entier(0, 0, 6), bivouac: bool(false)   // lot « corps » : le seuil d'un bouclier au d6 ; de quoi bivouaquer
+      parade: entier(0, 0, 6), bivouac: bool(false),   // lot « corps » : le seuil d'un bouclier au d6 ; de quoi bivouaquer
+      capture: cles()   // lot 5 « fouille » : les bêtes que cet outil prend (cage, sac de goni, corde, enfumoir)
     };
   }
 }

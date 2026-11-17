@@ -1,0 +1,40 @@
+{
+  "_id": "Dqrpzx50xXrnXxaU",
+  "_key": "!items!Dqrpzx50xXrnXxaU",
+  "name": "Cage à volailles",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cage",
+    "categorie": "outil",
+    "description": "<p>Une cage de bambou ou de grillage, avec une porte à loquet : on y porte deux ou trois poules, un lapin, jusqu'à la basse-cour.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "capture": [
+      "poule",
+      "lapin"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cage"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

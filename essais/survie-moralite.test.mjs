@@ -18,7 +18,7 @@ test("le point d'entrée commun : déplacer la jauge et la réputation, bornées
   const c = L.acteMoral(S(), "colporter");
   assert.deepEqual([c.system.sensMoral, c.system.reputation, c.delta], [-1, -1, -1], "colporter du mal rougit celui qui colporte");
   assert.equal(L.acteMoral(S(), "", { delta: 3 }).system.sensMoral, 3, "un déplacement libre");
-  assert.deepEqual(Object.keys(L.ACTES_MORAUX).sort(), ["abandonner", "accueillir", "aider", "attaquer", "colporter", "epargner", "exclure", "mentir", "partager", "rendre", "trahir"]);
+  assert.deepEqual(Object.keys(L.ACTES_MORAUX).sort(), ["abandonner", "accueillir", "aider", "attaquer", "colporter", "epargner", "exclure", "mentir", "partager", "prendre-au-culte", "rendre", "trahir"]);
 });
 
 test("circonstances atténuantes : la jauge bouge quand même ; seul le jugement des témoins qui savaient s'adoucit", () => {

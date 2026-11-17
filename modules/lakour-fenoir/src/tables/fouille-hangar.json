@@ -1,0 +1,373 @@
+{
+  "_id": "7E8VqeWjF6nutvRg",
+  "_key": "!tables!7E8VqeWjF6nutvRg",
+  "name": "Fouille — Hangar agricole, serre",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le hangar du planteur, la serre à tomates, l'étable vide au bout du chemin : des outils de champ, des semences, et les dernières bêtes qu'on n'a pas eu le cœur d'emmener. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d23",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-hangar",
+      "fouilles": "fouille-hangar"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "5MNUmYnA8rtAo6w5",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.5MNUmYnA8rtAo6w5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un sabre à canne — 50 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7P4Wa3jKNQAvCTAQ",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.7P4Wa3jKNQAvCTAQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une pelle et une pioche — 45 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2FjOAArn4SuzL8hH",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.2FjOAArn4SuzL8hH",
+      "type": "text",
+      "name": "",
+      "description": "<p>3 à 12 sachets de graines — 60 % ; 2 pour 1 graines</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "J1V1zJUVKeyOLHKH",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.J1V1zJUVKeyOLHKH",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 engrais — 45 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tn5CCXHrhmiGkHqP",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.tn5CCXHrhmiGkHqP",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 fumier — 35 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9KJVu0rBCtUxfTfK",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.9KJVu0rBCtUxfTfK",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 6 plants et boutures — 30 % ; 1 pour 1 boutures</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "GtcjwuYQtHmT81Tt",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.GtcjwuYQtHmT81Tt",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une corde — 60 % ; un objet</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "eDCpASxLOnRSXhyd",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.eDCpASxLOnRSXhyd",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 rouleaux de grillage — 45 % ; 3 pour 1 matériaux</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xQhfaWMDmVEFI5sw",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.xQhfaWMDmVEFI5sw",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 fil de fer — 60 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uGLfR0f5RIygrM3f",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.uGLfR0f5RIygrM3f",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 bâches — 50 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9hn2j8gu7y2CGJPe",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.9hn2j8gu7y2CGJPe",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 tuyaux — 50 % ; 4 pour 1 pièces</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wRNmrYjLG9VgQCWO",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.wRNmrYjLG9VgQCWO",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 seaux — 50 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "m6HjhWiM0jHhBb9H",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.m6HjhWiM0jHhBb9H",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 fûts vides — 30 % ; 3 pour 1 matériaux</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "F6Omf9YVLHBoHKst",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.F6Omf9YVLHBoHKst",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 bidons d'essence ou de gazole — 30 % (+5 % par palier de risque) ; 2 pour 1 carburant</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZkOGiE46xjo3DuhH",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.ZkOGiE46xjo3DuhH",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 tôles — 40 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NF36JtrHwuOZwhEC",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.NF36JtrHwuOZwhEC",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 ferraille — 50 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KnFMCfRIqwCNY6wd",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.KnFMCfRIqwCNY6wd",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 gants de travail — 30 % ; 6 pour 1 matériaux</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6AlLsNGMfKPEE0Bd",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.6AlLsNGMfKPEE0Bd",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 roues — 25 % ; 4 pour 1 pièces</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "OTKqMQ7JOIOJD2AN",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.OTKqMQ7JOIOJD2AN",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 pierres à aiguiser — 25 % ; 6 pour 1 matériaux</p>",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hpFFIYk7PIiaWSJ6",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.hpFFIYk7PIiaWSJ6",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 un petit moteur — 6 % (+4 % par palier de risque) ; 3 pièces chacun</p>",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gqjhiKSZOoeKmPFr",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.gqjhiKSZOoeKmPFr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une tronçonneuse — 4 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        21,
+        21
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "MUteRrBEP6AtPpX8",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.MUteRrBEP6AtPpX8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un sac de goni — 35 % ; un objet</p>",
+      "range": [
+        22,
+        22
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jQSwjQOoh37vBF4J",
+      "_key": "!tables.results!7E8VqeWjF6nutvRg.jQSwjQOoh37vBF4J",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une cage à volailles — 12 % ; un objet</p>",
+      "range": [
+        23,
+        23
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "_id": "DLmPYNleHsBWDjM0",
+  "_key": "!tables!DLmPYNleHsBWDjM0",
+  "name": "Fouille — une bête dans la cour",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>La bête qu'on peut trouver en fouillant une case, une remise, un hangar : ce qu'il faut pour la prendre, combien de temps elle tient.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-bete",
+      "fouilles": "fouille-bete"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "erRnq9oh3BFyGxRf",
+      "_key": "!tables.results!DLmPYNleHsBWDjM0.erRnq9oh3BFyGxRf",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Poule</strong> — Une poule de cour, rousse et maigre, qui gratte encore derrière la case. On l'attrape avec une cage ou un sac de goni ; sinon elle file sous les fourrés. <em>Elle tient 24 heures hors d'un enclos ; morte, elle donne 1 de nourriture.</em></p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "K5AC9CgPBXwbaAN9",
+      "_key": "!tables.results!DLmPYNleHsBWDjM0.K5AC9CgPBXwbaAN9",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Lapin</strong> — Un lapin de clapier resté dans sa caisse, ou qui en est sorti. Une cage ou un sac de goni. <em>Elle tient 24 heures hors d'un enclos ; morte, elle donne 1 de nourriture.</em></p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SGYeqaJDcEMisIC9",
+      "_key": "!tables.results!DLmPYNleHsBWDjM0.SGYeqaJDcEMisIC9",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Cabri</strong> — Un cabri attaché à un piquet qui a mangé tout ce qu'il pouvait atteindre. Il se prend à la corde, et il tire. <em>Elle tient 36 heures hors d'un enclos ; morte, elle donne 6 de nourriture.</em></p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "E3D4l7SYZNy0SrjQ",
+      "_key": "!tables.results!DLmPYNleHsBWDjM0.E3D4l7SYZNy0SrjQ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Porcelet</strong> — Un cochon de lait échappé de sa soue, qui crie dès qu'on l'approche. Une corde ou un sac de goni. <em>Elle tient 30 heures hors d'un enclos ; morte, elle donne 4 de nourriture.</em></p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KbmxlJbf5Z7OanoW",
+      "_key": "!tables.results!DLmPYNleHsBWDjM0.KbmxlJbf5Z7OanoW",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Veau moka</strong> — Un jeune bœuf moka, petit et têtu, resté dans l'étable d'un hangar des Hauts. Il se mène à la corde, lentement. <em>Elle tient 48 heures hors d'un enclos ; morte, elle donne 10 de nourriture.</em></p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "8uXCg4zgT1IQewUZ",
+      "_key": "!tables.results!DLmPYNleHsBWDjM0.8uXCg4zgT1IQewUZ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Essaim d'abeilles</strong> — Un essaim installé dans un mur creux, un toit, une caisse : on l'entend avant de le voir. Il se prend à l'enfumoir ; sans lui, il pique, et il reste. <em>Elle tient 12 heures hors d'un enclos ; morte, elle donne 0 de nourriture.</em></p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

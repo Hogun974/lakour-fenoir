@@ -1,0 +1,118 @@
+{
+  "_id": "1dHSHR5equnuqtAc",
+  "_key": "!tables!1dHSHR5equnuqtAc",
+  "name": "Récolte — Savane",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les pentes sèches de l'Ouest, herbe jaune et chokas, sous un soleil qui cogne. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-savane",
+      "fouilles": "recolte-savane"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "0ELDMlfxZ0qVX4DG",
+      "_key": "!tables.results!1dHSHR5equnuqtAc.0ELDMlfxZ0qVX4DG",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Pied de choka</strong> (10) — L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "N6MUi2lNLv3TOBUW",
+      "_key": "!tables.results!1dHSHR5equnuqtAc.N6MUi2lNLv3TOBUW",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Talus de terre</strong> (4) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "izUYG6tuLMbdSFV6",
+      "_key": "!tables.results!1dHSHR5equnuqtAc.izUYG6tuLMbdSFV6",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bloc de basalte</strong> (4) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vWcnzhzfELBWupB6",
+      "_key": "!tables.results!1dHSHR5equnuqtAc.vWcnzhzfELBWupB6",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Zerbaz</strong> (3) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tVsJNU6fL9RKwDdi",
+      "_key": "!tables.results!1dHSHR5equnuqtAc.tVsJNU6fL9RKwDdi",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Galets roulés</strong> (2) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "WAWm2Bql1w5eojnx",
+      "_key": "!tables.results!1dHSHR5equnuqtAc.WAWm2Bql1w5eojnx",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces : quelqu'un a coupé, creusé ou ramassé ici il y a peu. Ce qui reste a été choisi par d'autres.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

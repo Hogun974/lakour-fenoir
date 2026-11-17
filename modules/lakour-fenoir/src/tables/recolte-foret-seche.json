@@ -1,0 +1,118 @@
+{
+  "_id": "DcGBEsrmkTnLH4lg",
+  "_key": "!tables!DcGBEsrmkTnLH4lg",
+  "name": "Récolte — Forêt sèche",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les reliques de forêt sèche des pentes de l'Ouest : bois noir, tamarins des Bas, épineux. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-foret-seche",
+      "fouilles": "recolte-foret-seche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "uKqhIl57tmpJuK9U",
+      "_key": "!tables.results!DcGBEsrmkTnLH4lg.uKqhIl57tmpJuK9U",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Pied de choka</strong> (10) — L'agave des savanes de l'Ouest, aux longues feuilles piquantes : on en tire une fibre qui fait de bonnes cordes.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5MoxmSKzlXuoKcbN",
+      "_key": "!tables.results!DcGBEsrmkTnLH4lg.5MoxmSKzlXuoKcbN",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Zerbaz</strong> (4) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "M3NDR00xtONdNHxD",
+      "_key": "!tables.results!DcGBEsrmkTnLH4lg.M3NDR00xtONdNHxD",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bloc de basalte</strong> (4) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "j24s22olnnKtU8Cs",
+      "_key": "!tables.results!DcGBEsrmkTnLH4lg.j24s22olnnKtU8Cs",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Talus de terre</strong> (3) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "6yXgeczm4knC5OAH",
+      "_key": "!tables.results!DcGBEsrmkTnLH4lg.6yXgeczm4knC5OAH",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bancoulier</strong> (1) — Un grand arbre des Bas aux noix huileuses : on ne les mange pas crues, mais leur huile éclaire une lampe.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NytpknYBeXLG6KHh",
+      "_key": "!tables.results!DcGBEsrmkTnLH4lg.NytpknYBeXLG6KHh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces : quelqu'un a coupé, creusé ou ramassé ici il y a peu. Ce qui reste a été choisi par d'autres.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

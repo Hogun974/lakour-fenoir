@@ -1,0 +1,41 @@
+{
+  "_id": "RpWiUaCVoyaCyVEc",
+  "_key": "!items!RpWiUaCVoyaCyVEc",
+  "name": "Corde",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "corde",
+    "categorie": "outil",
+    "description": "<p>Dix mètres de corde de nylon ou de chanvre, enroulée autour de l'épaule : pour attacher une charge, descendre dans une ravine, mener un cabri ou un veau.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "capture": [
+      "cabri",
+      "porcelet",
+      "veau-moka"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "corde"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

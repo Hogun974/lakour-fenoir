@@ -97,7 +97,11 @@ export const CLES_TEXTES = [
   "lune-sans-calendrier", "lune-sans-lunes", "journal-absent", "journal-enterre", "journal-livide", "journal-loin",
   // corps.mjs, maladies.mjs (par etat.mjs) : le sommeil, les signes d'un mal que le groupe ne sait pas nommer (lot « corps »)
   "survivant-epuise", "survivant-endormi", "survivant-gris-signes", "survivant-mort-fievre",
-  "survivant-declaree-signes", "survivant-aggravee-signes", "survivant-guerie-signes"
+  "survivant-declaree-signes", "survivant-aggravee-signes", "survivant-guerie-signes",
+  // fouilles.mjs (par actions.mjs, etat.mjs et l'API) : fouiller un lieu, le démonter, récolter, les bêtes trouvées, les refus (lot 5 « fouille »)
+  "fouille-lieu", "demontage-lieu", "lieu-demonte", "fouille-culte", "recolte", "bete-prise", "bete-file", "bete-pique", "bete-morte", "bete-enclose", "bete-abattue", "bete-relachee",
+  "installation-demontee", "lieu-genre-inconnu", "lieu-aucun", "lieu-ailleurs", "lieu-demonte-deja", "lieu-fini", "lieu-indemontable", "lieu-site",
+  "gisement-aucun", "gisement-renvoi", "gisement-epuise", "gisement-rien", "bete-inconnue", "bete-deja-enclose", "bete-sans-enclos"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

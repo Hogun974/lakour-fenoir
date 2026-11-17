@@ -1,0 +1,118 @@
+{
+  "_id": "oQ42M7xa5syXHU9r",
+  "_key": "!tables!oQ42M7xa5syXHU9r",
+  "name": "Récolte — Forêt des Bas",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Les ravines boisées de l'Est et du Sud, chaudes et mouillées : bambous, bancouliers, lianes. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-foret-des-bas",
+      "fouilles": "recolte-foret-des-bas"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "eBpq4uKTGmsjqVtV",
+      "_key": "!tables.results!oQ42M7xa5syXHU9r.eBpq4uKTGmsjqVtV",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Touffe de bambous</strong> (7) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uCUB9zcQbOTBhWDJ",
+      "_key": "!tables.results!oQ42M7xa5syXHU9r.uCUB9zcQbOTBhWDJ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Zerbaz</strong> (5) — Ayapana, citronnelle, bois de joli cœur : les plantes qui soignent. Elles se cueillent avec la cible « plantes ».</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "EEHs6w09OXWlwBxZ",
+      "_key": "!tables.results!oQ42M7xa5syXHU9r.EEHs6w09OXWlwBxZ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Talus de terre</strong> (4) — Un talus de terre rouge qu'on attaque à la pioche : pour le torchis, les buttes du potager, les jarres.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "TxRa92zkU2HCJ3aD",
+      "_key": "!tables.results!oQ42M7xa5syXHU9r.TxRa92zkU2HCJ3aD",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bancoulier</strong> (4) — Un grand arbre des Bas aux noix huileuses : on ne les mange pas crues, mais leur huile éclaire une lampe.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KGPeECdVYK5V5cud",
+      "_key": "!tables.results!oQ42M7xa5syXHU9r.KGPeECdVYK5V5cud",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Berge d'argile</strong> (2) — Une berge grasse au fond d'une ravine : l'argile des jarres, du torchis, des fours.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HNV36neoS13ZBEJK",
+      "_key": "!tables.results!oQ42M7xa5syXHU9r.HNV36neoS13ZBEJK",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bloc de basalte</strong> (2) — Une coulée ancienne, un éboulis : la pierre noire de l'île, qu'on débite à la masse pour la pierre sèche.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

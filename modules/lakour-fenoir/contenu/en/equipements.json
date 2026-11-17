@@ -184,6 +184,17 @@
       "en": "<p>A calendar from another year, forgotten on a wall: the days fall wrong, and so do the moons. Whoever reads the moon on it thinks they have found the day again; they are wrong, without knowing it.</p>"
     }
   },
+  "equipements/Dqrpzx50xXrnXxaU": {
+    "_nom": "Cage à volailles",
+    "name": {
+      "fr": "Cage à volailles",
+      "en": "Poultry cage"
+    },
+    "system.description": {
+      "fr": "<p>Une cage de bambou ou de grillage, avec une porte à loquet : on y porte deux ou trois poules, un lapin, jusqu'à la basse-cour.</p>",
+      "en": "<p>A cage of bamboo or wire mesh, with a latched door: two or three hens or a rabbit are carried in it to the poultry yard.</p>"
+    }
+  },
   "equipements/EPJKOAHUNqbfpcwc": {
     "_nom": "Poinçon de marque",
     "name": {
@@ -431,6 +442,17 @@
       "en": "<p>A woven mat to sleep dry on, to sit on in the evening, to dry coffee or grain in the sun. Rolled on top of the pack, it makes a bivouac.</p>"
     }
   },
+  "equipements/RpWiUaCVoyaCyVEc": {
+    "_nom": "Corde",
+    "name": {
+      "fr": "Corde",
+      "en": "Rope"
+    },
+    "system.description": {
+      "fr": "<p>Dix mètres de corde de nylon ou de chanvre, enroulée autour de l'épaule : pour attacher une charge, descendre dans une ravine, mener un cabri ou un veau.</p>",
+      "en": "<p>Ten metres of nylon or hemp rope, coiled over the shoulder: to tie a load, to go down into a ravine, to lead a goat or a calf.</p>"
+    }
+  },
   "equipements/Rx2lvvdh5L8dpysq": {
     "_nom": "Radio à manivelle",
     "name": {
@@ -594,6 +616,17 @@
     "system.description": {
       "fr": "<p>Les deux mains libres dans le noir d'un tunnel ou d'une cage d'escalier. Avec des piles ou rechargeable.</p>",
       "en": "<p>Both hands free in the dark of a tunnel or a stairwell. Battery or rechargeable.</p>"
+    }
+  },
+  "equipements/ecKmnQN8uh4OW6cO": {
+    "_nom": "Sac de goni",
+    "name": {
+      "fr": "Sac de goni",
+      "en": "Gunny sack"
+    },
+    "system.description": {
+      "fr": "<p>Un grand sac de jute qui a porté du riz ou du maïs : on y met une poule, un lapin, un porcelet qui crie, et l'on referme d'un nœud.</p>",
+      "en": "<p>A big jute sack that once held rice or maize: a hen, a rabbit, a squealing piglet go in, and it is tied shut with a knot.</p>"
     }
   },
   "equipements/erkZO5xELWuZbgqd": {
@@ -946,6 +979,17 @@
     "system.description": {
       "fr": "<p>Le petit livret des pêcheurs et des plaisanciers : pour chaque jour, les heures des marées, le lever et le coucher de la lune, sa phase heure par heure. Avec lui, la lune donne le jour à un jour près.</p>",
       "en": "<p>The little booklet of fishermen and sailors: for every day, the times of the tides, moonrise and moonset, its phase hour by hour. With it, the moon gives the day to within a day.</p>"
+    }
+  },
+  "equipements/zZHhQqluot84qGTD": {
+    "_nom": "Enfumoir",
+    "name": {
+      "fr": "Enfumoir",
+      "en": "Smoker"
+    },
+    "system.description": {
+      "fr": "<p>Une boîte de conserve percée, un soufflet taillé dans une chambre à air, de la paille de vétiver qui fume : l'essaim se calme, et l'on peut le faire passer dans une caisse.</p>",
+      "en": "<p>A pierced tin can, bellows cut from an inner tube, vetiver straw that smokes: the swarm calms down, and it can be moved into a crate.</p>"
     }
   },
   "equipements/zbfFqGVAJlulr1ou": {

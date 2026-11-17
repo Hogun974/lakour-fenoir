@@ -1,0 +1,223 @@
+{
+  "_id": "EJw62CBxktZlGdGE",
+  "_key": "!tables!EJw62CBxktZlGdGE",
+  "name": "Fouille — Mairie, poste, administration",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>La mairie, la poste, le bureau de l'état civil : des papiers en piles, des registres, des tampons. Un groupe électrogène de secours, parfois, au sous-sol. Fouiller en entier : 2 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d13",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-administration",
+      "fouilles": "fouille-administration"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "owuz6aQQnEaZ2iIy",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.owuz6aQQnEaZ2iIy",
+      "type": "text",
+      "name": "",
+      "description": "<p>10 à 30 papier — 90 % ; 40 pour 1 matériaux</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "15HOhUWqvPlnT3U8",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.15HOhUWqvPlnT3U8",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 cahiers vierges — 50 % ; 10 pour 1 matériaux</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Jy3Ig6GwCZnNPhc7",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.Jy3Ig6GwCZnNPhc7",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 encre — 45 % ; 20 pour 1 matériaux</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "P4vX5CRQRGuBe7Xk",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.P4vX5CRQRGuBe7Xk",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 câbles — 60 % ; 4 pour 1 pièces</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9Z5nnbwzUbL8oqXz",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.9Z5nnbwzUbL8oqXz",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 composants électroniques — 45 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SAagdAEg7RQ7Imtb",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.SAagdAEg7RQ7Imtb",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 linge et tissu — 35 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "44GMfkMb5MADN3Sz",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.44GMfkMb5MADN3Sz",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 bouteilles d'eau — 35 % ; 2 pour 1 eau</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "H4axvXj830AdCusl",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.H4axvXj830AdCusl",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 savon — 30 % ; 8 pour 1 médicaments</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "vLLXncco8Na6HBeE",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.vLLXncco8Na6HBeE",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 bougies — 25 % ; 12 pour 1 matériaux</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nnwEqJtdsFGRag9C",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.nnwEqJtdsFGRag9C",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une lampe électrique — 20 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "44KtsByehfFFiXfX",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.44KtsByehfFFiXfX",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une radio à manivelle — 4 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sSoWzCY71rg2a2tP",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.sSoWzCY71rg2a2tP",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une batterie nomade — 3 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "El1yJGuBufsfzLV9",
+      "_key": "!tables.results!EJw62CBxktZlGdGE.El1yJGuBufsfzLV9",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 un groupe électrogène — 3 % (+4 % par palier de risque) ; 2 pièces chacun</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

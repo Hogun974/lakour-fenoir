@@ -1,0 +1,118 @@
+{
+  "_id": "hJfz6lnFw7Ynkfkr",
+  "_key": "!tables!hJfz6lnFw7Ynkfkr",
+  "name": "Récolte — Ravine",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Le lit d'une ravine, à sec ou qui coule : des galets, du sable, de l'argile, des bambous, et l'eau quand il a plu en haut. Ce qu'on y trouve, du plus courant au plus rare (la récolte de l'API : recolter, cible « matieres »).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recolte-ravine",
+      "fouilles": "recolte-ravine"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "fSdf0XwtRHfTkk4B",
+      "_key": "!tables.results!hJfz6lnFw7Ynkfkr.fSdf0XwtRHfTkk4B",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Galets roulés</strong> (12) — Les galets ronds des ravines et des plages de l'Est, qu'on ramasse à la main : murets, foyers, fondations.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "M35beFHCybQHD1Q0",
+      "_key": "!tables.results!hJfz6lnFw7Ynkfkr.M35beFHCybQHD1Q0",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Banc de sable</strong> (6) — Le sable d'une plage ou d'une ravine : pour le mortier, les filtres à eau.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qKGajBGdoTvKFglm",
+      "_key": "!tables.results!hJfz6lnFw7Ynkfkr.qKGajBGdoTvKFglm",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Berge d'argile</strong> (6) — Une berge grasse au fond d'une ravine : l'argile des jarres, du torchis, des fours.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5EnSPaF5QjD0aa30",
+      "_key": "!tables.results!hJfz6lnFw7Ynkfkr.5EnSPaF5QjD0aa30",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Source, trou d'eau</strong> (6) — Une source au pied d'un rempart, un trou d'eau dans une ravine : l'eau d'un site, d'un captage, d'une citerne ; l'eau d'un trou se boit bouillie.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wVzG0DEygBSOiTIe",
+      "_key": "!tables.results!hJfz6lnFw7Ynkfkr.wVzG0DEygBSOiTIe",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Touffe de bambous</strong> (6) — Une touffe de bambous au fond d'une ravine ou au bord d'un ruisseau : des perches droites pour une palissade, une conduite, une cage.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Bf2HdRPSyKNaudXR",
+      "_key": "!tables.results!hJfz6lnFw7Ynkfkr.Bf2HdRPSyKNaudXR",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Bancoulier</strong> (2) — Un grand arbre des Bas aux noix huileuses : on ne les mange pas crues, mais leur huile éclaire une lampe.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

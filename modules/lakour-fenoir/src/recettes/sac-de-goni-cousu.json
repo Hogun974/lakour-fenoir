@@ -1,0 +1,41 @@
+{
+  "_id": "n7ONFPbOV3BvAxka",
+  "_key": "!items!n7ONFPbOV3BvAxka",
+  "name": "Sac de goni cousu",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "sac-de-goni-cousu",
+    "description": "<p>Trois morceaux de toile de jute ou de bâche, cousus au fil de pêche.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "sac-de-goni",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sac-de-goni-cousu"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

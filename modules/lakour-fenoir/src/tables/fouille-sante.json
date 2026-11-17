@@ -1,0 +1,298 @@
+{
+  "_id": "gBT4hUImoxrBxx1S",
+  "_key": "!tables!gBT4hUImoxrBxx1S",
+  "name": "Fouille — Centre de santé, dispensaire",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un dispensaire, une maison médicale, le centre de santé du bourg : les brancards dans le couloir, les dossiers par terre. On y a soigné les premiers mordus ; certains y sont encore. Fouiller en entier : 3 quarts-personne. Sans l'API, tirez une ligne par quart-personne, et divisez par deux ce qu'on prend d'abord (vivres, soins, outils, armes) si le lieu a déjà été visité.</p>",
+  "formula": "1d18",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fouille-sante",
+      "fouilles": "fouille-sante"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "fIOYTyag9NrWxYFQ",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.fIOYTyag9NrWxYFQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>4 à 14 pansements — 80 % (+3 % par palier de risque) ; 4 pour 1 médicaments</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "T2pOL468DhgB9Xp7",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.T2pOL468DhgB9Xp7",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 alcool désinfectant — 60 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "qzA2Tp3C5SRffXtz",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.qzA2Tp3C5SRffXtz",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 savon — 70 % ; 8 pour 1 médicaments</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "0WMepHp0gGOshuQC",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.0WMepHp0gGOshuQC",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 5 eau de Javel — 60 % ; 6 pour 1 médicaments</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "o6LcppPgepR99Wsh",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.o6LcppPgepR99Wsh",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 soluté de réhydratation — 35 % (+6 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "49XxGyaSjCU2eC5h",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.49XxGyaSjCU2eC5h",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 3 attelles — 35 % (+5 % par palier de risque) ; 2 pour 1 médicaments</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wHcdMymED2oQwf8J",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.wHcdMymED2oQwf8J",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une trousse de secours — 15 % (+7 % par palier de risque) ; un objet</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "GvHgqr31iHxFaLhu",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.GvHgqr31iHxFaLhu",
+      "type": "text",
+      "name": "",
+      "description": "<p>3 à 10 linge et tissu — 70 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "UNmLCftWlQQ8JxE2",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.UNmLCftWlQQ8JxE2",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 couvertures — 50 % ; 4 pour 1 matériaux</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DCfEX19AiJUwOP7m",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.DCfEX19AiJUwOP7m",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 8 bouteilles d'eau — 50 % ; 2 pour 1 eau</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DAM9RciyGt605Cvs",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.DAM9RciyGt605Cvs",
+      "type": "text",
+      "name": "",
+      "description": "<p>2 à 6 bocaux — 50 % ; 8 pour 1 matériaux</p>",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ekGnTldWR0XELB9B",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.ekGnTldWR0XELB9B",
+      "type": "text",
+      "name": "",
+      "description": "<p>5 à 14 papier — 50 % ; 40 pour 1 matériaux</p>",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DVyEj3GULs6NxMG3",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.DVyEj3GULs6NxMG3",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 câbles — 40 % ; 4 pour 1 pièces</p>",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "tvDrFsKE7pLM2Oie",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.tvDrFsKE7pLM2Oie",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 4 composants électroniques — 30 % (+5 % par palier de risque) ; 2 pour 1 pièces</p>",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BxANbjve6o5ncI6J",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.BxANbjve6o5ncI6J",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une lampe électrique — 20 % (+5 % par palier de risque) ; un objet</p>",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DDDxrDYY2G30AzMO",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.DDDxrDYY2G30AzMO",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 à 2 bouteilles de gaz — 20 % (+4 % par palier de risque) ; 10 gaz chacun</p>",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "29h6Vhi1dwNP8lzT",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.29h6Vhi1dwNP8lzT",
+      "type": "text",
+      "name": "",
+      "description": "<p>1 un groupe électrogène — 4 % (+5 % par palier de risque) ; 2 pièces chacun</p>",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "r0GRjdcQd2JMHjfe",
+      "_key": "!tables.results!gBT4hUImoxrBxx1S.r0GRjdcQd2JMHjfe",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des moustiquaires — 10 % (+4 % par palier de risque) ; un objet</p>",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}
