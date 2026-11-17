@@ -25,8 +25,9 @@ import {
 import { DOCUMENTS, donnees as donneesContenu } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { CARTE } from "../modules/lakour-fenoir/contenu/regions.mjs";
 import { ecrirePlans } from "../modules/lakour-fenoir/contenu/cartes.mjs";
-import { IMAGES_FETES, EFFET_FETE } from "../modules/lakour-fenoir/scripts/fetes.js";
+import { IMAGES_FETES, EFFET_FETE, FETES_HORS_SOCLE } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { COMMUNAUTES } from "../systems/lakour-survie/logique/fetes.mjs";
+import { erreursAffaire } from "../systems/lakour-survie/logique/affaires.mjs";
 import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_DECLINABLES, IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
@@ -69,8 +70,11 @@ export const TYPE_DOCUMENT = {
 // docs/fetes.md ; lot « fetes » du 2026-11-13 : ramadan, Aïd el-Kebir, Nouvel An tamoul, marche sur le feu).
 export const FETES_MOTEUR = IDS_DECLINABLES;
 // Les fêtes que Fénoir doit décliner (contrat §9) ; la Toussaint est déclinée sous « halloween ».
+// Lot 12 (2026-11-17, contrat §17) : Pongal et la fête du miel vert, hors du socle du moteur (FETES_HORS_SOCLE de scripts/fetes.js) :
+// elles portent leur propre date et ne sont pas déclinées.
 export const FETES_DE_FENOIR = ["noel", "nouvel-an", "paques", "halloween", "musique", "liberte", "fete-nationale", "dipavali", "nouvel-an-chinois", "cavadee", "letchis",
-  "ramadan", "aid-el-kebir", "nouvel-an-tamoul", "marche-sur-le-feu"];
+  "ramadan", "aid-el-kebir", "nouvel-an-tamoul", "marche-sur-le-feu", ...FETES_HORS_SOCLE];
+const MMJJ = /^(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
 // La forme d'un effet de fête (systems/lakour-survie/logique/fetes.mjs) : les champs connus.
 export const CHAMPS_EFFET_FETE = ["moral", "rations", "cout", "gain", "avecGain", "bruit", "quarts", "soutien", "lueur", "hygiene", "sangFroid", "liens", "renom",
   "refugies", "attache", "voeu", "repos", "fatigue", "options"];
@@ -519,17 +523,26 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   for (const f of factions.values()) if (!(Number.isInteger(f.sensMoralChef) && f.sensMoralChef >= -10 && f.sensMoralChef <= 10)) e(`faction ${f.cle} : sensMoralChef`);
 
   // Fêtes : chaque clé est une fête du socle du moteur, déclinable telle quelle (une déclinaison par fête), dates au socle seul.
+  // Exception (lot 12) : une fête hors du socle (FETES_HORS_SOCLE) porte sa propre date et n'est pas déclinée ; si le socle la
+  // connaît un jour, sa date doit partir (sinon elle serait comptée deux fois).
   const declinees = [];
   for (const f of d.fetes ?? []) {
     const ou = `fête ${f.cle}`;
-    if (!FETES_MOTEUR.includes(f.cle)) e(`${ou} : clé inconnue du socle des fêtes du moteur`);
+    const horsSocle = FETES_HORS_SOCLE.includes(f.cle);
+    if (horsSocle) {
+      if (FETES_MOTEUR.includes(f.cle)) e(`${ou} : le socle du moteur la connaît désormais, sa date codée en dur doit partir`);
+      const dates = [...("date" in f ? [f.date] : []), ...Object.values(f.dates ?? {})];
+      if (!dates.length || dates.some(x => !MMJJ.test(String(x)))) e(`${ou} : hors du socle, il lui faut sa date (« MM-JJ » ou par année)`);
+      if (!Number.isInteger(f.avant ?? 0) || !Number.isInteger(f.apres ?? 0) || (f.avant ?? 0) < 0 || (f.apres ?? 0) < 0) e(`${ou} : fenêtre avant / après`);
+    } else if (!FETES_MOTEUR.includes(f.cle)) e(`${ou} : clé inconnue du socle des fêtes du moteur`);
     else {
       try { declinees.push(normaliserDeclinaison({ id: `fenoir-${f.cle}`, fete: f.cle, nom: f.nom, description: f.description, consigne: f.consigne, decor: f.decor }, declinees)); }
       catch (x) { e(`${ou} : ${x.message}`); }
     }
     if (!f.nom || f.nom.length > 80 || !f.description || f.description.length > 600 || !f.consigne || f.consigne.length > 300) e(`${ou} : nom, description ou consigne trop longs ou vides`);
     if (!f.periode || f.periode.includes("-")) e(`${ou} : période absente ou avec un trait d'union (le journal la lit telle quelle)`);
-    if ("date" in f || "dates" in f) e(`${ou} : date codée en dur (le socle du moteur donne les dates)`);
+    if (!horsSocle && ("date" in f || "dates" in f)) e(`${ou} : date codée en dur (le socle du moteur donne les dates)`);
+    if (!f.ambiance || f.ambiance.length > 600) e(`${ou} : ce qu'on voit et ce qu'on trouve (ambiance) absent ou trop long`);
     if (f.image !== (IMAGES_FETES.includes(f.cle) ? `modules/${MODULE}/assets/fetes/${f.cle}.jpg` : "")) e(`${ou} : chemin d'image`);
     // Gain et coût (lot « fetes ») : un effet de forme connue, et leur texte pour les joueurs.
     const ef = f.effet ?? {};
@@ -570,6 +583,14 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     if (!v.stades?.length || v.stades.some(s => !STADES.includes(s))) e(`événement ${v.cle} : stades`);
     if (v.effets.dementi && !cibles.has(v.effets.dementi)) e(`événement ${v.cle} : démenti « ${v.effets.dementi} »`);
   }
+
+  // Les affaires (lot 12, contrat §17 ; logique/affaires.mjs) : bien formées, références connues, numérotées de 1 à n sans trou ;
+  // une ligne d'arrivée pour chaque région (regions[].arrivee).
+  const affaires = d.affaires ?? [];
+  for (const a of affaires) for (const x of erreursAffaire(a, d)) e(x);
+  if (new Set(affaires.map(a => a.cle)).size !== affaires.length) e("affaires : clé en double");
+  if (affaires.map(a => a.numero).sort((x, y) => x - y).some((n, i) => n !== i + 1)) e("affaires : numéros de 1 à n, sans trou ni doublon");
+  for (const r of d.regions ?? []) if (!String(r.arrivee ?? "").trim()) e(`région ${r.cle} : ligne d'arrivée (arrivee) absente`);
 
   // Créatures (famille lue par la logique du système) : les Livides et animaux du bestiaire, mêmes dés et résistance.
   const creatures = new Map((d.creatures ?? []).map(c => [c.cle, c]));

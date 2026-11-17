@@ -1149,6 +1149,21 @@ export function communaute(etat = lireEtat()) {
   };
 }
 
+// Les affaires (lot 12, contrat §17 ; logique/affaires.mjs) : le contexte où elles naissent. Région du groupe, mois et phase du jour de
+// jeu, fêtes de ce jour et des `horizon` jours suivants, crans des fronts (horloges « front-<front> » du moteur, s'il les tient ;
+// `fronts` donnés l'emportent), déclencheurs dits par le MJ, affaires closes. Tout se donne aussi à la main.
+function contexteAffaires({ region = "", mois = null, phase = "", fronts = null, declencheurs = [], closes = [], horizon = 30 } = {}) {
+  const etat = lireEtat(), q = quandDe(etat), c = contenu();
+  const fetes = new Set();
+  for (let k = 0; k <= Math.max(0, Math.floor(Number(horizon) || 0)); k++) {
+    for (const f of fetesDuJeu(L.dateDuJour(q.jour + k, dateDepart()).iso, c.fetes ?? [])) fetes.add(f.cle);
+  }
+  const h = game.modules?.get?.(MODULE_MJIA)?.api?.horloges;
+  const lus = Object.fromEntries(L.FRONTS_CAMPAGNE.map(f => [f, Number((typeof h?.trouver === "function" ? h.trouver(`front-${f}`) : null)?.valeur) || 0]));
+  return { region: region || (etat?.groupe?.enRoute?.vers ?? etat?.groupe?.region ?? ""), mois: mois ?? q.mois, phase: phase || q.phase, fetes: [...fetes],
+    fronts: { ...lus, ...(fronts ?? {}) }, declencheurs: [...(declencheurs ?? [])], closes: [...(closes ?? [])] };
+}
+
 export const api = {
   logique: L,
   registre,
@@ -1166,6 +1181,19 @@ export const api = {
   mondeOuvert: () => Coffre.mondeOuvert(),
   ecritureBloquee: () => Coffre.ecritureBloquee(),
   fetesDuJour: (date = quandDe().date) => fetesDuJeu(date, contenu().fetes ?? []),
+  // Les affaires (lot 12, contrat §17), en lecture : celles qui peuvent naître ici et maintenant, et le tirage d'une affaire avec sa
+  // vérité (réservée au MJ : à garder hors de la vue des joueurs). Rien n'est écrit dans la partie : l'affaire en cours, sa vérité et
+  // sa pente se tiennent dans une horloge du moteur (« affaire-<clé> ») ou dans les notes du MJ.
+  affaires: (options = {}) => {
+    const ctx = contexteAffaires(options);
+    return { contexte: ctx, affaires: L.affairesPossibles(contenu(), ctx).map(a => ({ cle: a.cle, numero: a.numero, titre: a.titre, taille: a.taille, front: a.front ?? "", regions: a.regions ?? [] })) };
+  },
+  tirerAffaire: ({ cle = "", ...options } = {}) => L.tirerAffaire(contenu(), contexteAffaires(options), Math.random, { cle }),
+  penteAffaire: ({ cle = "", jours = 0 } = {}) => {
+    const a = L.affaireDe(contenu(), cle);
+    return a ? { cle, ...L.cranDeLaPente(a, jours), crans: a.pente?.crans?.length ?? 0 } : null;
+  },
+  issueAffaire: ({ cle = "", issue = "" } = {}) => L.issueDe(L.affaireDe(contenu(), cle), issue),
   peutConstruire(cle) {
     const etat = lireEtat(), ab = abriCourant(etat);
     const def = defDe("installations", cle);

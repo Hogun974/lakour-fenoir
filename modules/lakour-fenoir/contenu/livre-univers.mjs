@@ -7,6 +7,7 @@
 // bestiaire.mjs, regions.mjs et scripts/fetes.js. Textes originaux.
 import { journal, idJournal, idPage, MODULE } from "./aides.mjs";
 import { CLE_JOURNAL_REGIONS } from "./journaux.mjs";
+import { LOT_AFFAIRES } from "./affaires.mjs";
 
 // Liens vers ce que les joueurs peuvent lire : une page du journal des régions, un journal du pack « guides », une page du
 // guide du joueur. Format Foundry v14 : Compendium.<module>.<pack>.<Type>.<id>[.JournalEntryPage.<id>].
@@ -293,6 +294,9 @@ Le créole réunionnais se parle plus qu'il ne s'écrit ; les graphies varient. 
 - **Tribut** : ce que les Sans-Lune prennent pour ne pas prendre le reste.
 - **Brassard orange** : la Garnison. **Coupon de soin** : la monnaie du Dispensaire. **La quarantaine du col** : les trois jours à la porte de Mafate avant d'entrer.
 - **Le silence** : le temps, après la panique, où plus personne ne répond à la radio.` },
+
+  // Lot 12 (2026-11-17) : ce que disent les murs (contenu/affaires.mjs).
+  LOT_AFFAIRES.pageLivre,
 
   { cle: "premiere-nuit", titre: "La première nuit", texte: `Ce texte a été trouvé dans le premier cahier, sans nom. On le recopie en dernier, parce que c'est par là que tout le monde commence.
 

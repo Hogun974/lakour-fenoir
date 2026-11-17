@@ -1,0 +1,163 @@
+{
+  "_id": "hcdCp8uVdmDmi9Vb",
+  "_key": "!tables!hcdCp8uVdmDmi9Vb",
+  "name": "Figures de l'île",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un rôle, pas une communauté : n'importe qui de l'île peut le tenir.</p>",
+  "formula": "1d9",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "figures-de-l-ile",
+      "figures": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "JDax47WwMC7ZAACH",
+      "_key": "!tables.results!hcdCp8uVdmDmi9Vb.JDax47WwMC7ZAACH",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>La gramoune qui sait.</strong> Ce qu'elle veut : Qu'on l'écoute jusqu'au bout. Ce qu'elle cache ou risque : Elle n'enseigne qu'à celui qui reste, et elle n'a pas tout le temps.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BtiAvJSqtIM9puaD",
+      "_key": "!tables.results!hcdCp8uVdmDmi9Vb.BtiAvJSqtIM9puaD",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Celui qui compte.</strong> Ce qu'elle veut : Que rien ne manque : il tient le cahier des stocks, des dettes, des jours. Ce qu'elle cache ou risque : Il peut devenir un Comptable.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1YkeuyOHzpABMPMH",
+      "_key": "!tables.results!hcdCp8uVdmDmi9Vb.1YkeuyOHzpABMPMH",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Celle qui a gardé les enfants.</strong> Ce qu'elle veut : Qu'on ne lui mente pas. Ce qu'elle cache ou risque : Elle a besoin de tout et ne demandera rien.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "5VqB58kkYFCJR2zi",
+      "_key": "!tables.results!hcdCp8uVdmDmi9Vb.5VqB58kkYFCJR2zi",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Le revenu de la ville.</strong> Ce qu'elle veut : Qu'on le croie. Ce qu'elle cache ou risque : Ce qu'il raconte date, et il le sait mal.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yUeBnutUmqw3bPNk",
+      "_key": "!tables.results!hcdCp8uVdmDmi9Vb.yUeBnutUmqw3bPNk",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Celui qui organise.</strong> Ce qu'elle veut : Bien faire, tout de suite, pour tous. Ce qu'elle cache ou risque : Il n'a pas demandé leur avis aux autres, et il a souvent raison sur le fond.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "lmOUVA1dAc91x5jC",
+      "_key": "!tables.results!hcdCp8uVdmDmi9Vb.lmOUVA1dAc91x5jC",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Le croyant.</strong> Ce qu'elle veut : Tenir sa promesse. Ce qu'elle cache ou risque : Sa foi le fait tenir, et peut le fermer aux autres.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BerVzZDEeF38Gwn8",
+      "_key": "!tables.results!hcdCp8uVdmDmi9Vb.BerVzZDEeF38Gwn8",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>L'enfant qui regarde.</strong> Ce qu'elle veut : Comprendre ce que font les grands. Ce qu'elle cache ou risque : Il se calquera sur eux, ou il partira.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NtIVslCAhEAxNzEJ",
+      "_key": "!tables.results!hcdCp8uVdmDmi9Vb.NtIVslCAhEAxNzEJ",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Le marchand d'entre-deux.</strong> Ce qu'elle veut : Que tout circule. Ce qu'elle cache ou risque : Vos nouvelles circulent aussi.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LAMzaYaAAJo2Bw88",
+      "_key": "!tables.results!hcdCp8uVdmDmi9Vb.LAMzaYaAAJo2Bw88",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Celui qui est resté seul.</strong> Ce qu'elle veut : Qu'on le laisse. Ce qu'elle cache ou risque : Il sait quelque chose que personne d'autre ne sait.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

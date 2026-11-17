@@ -155,7 +155,8 @@ const FETES = journal({ cle: "fetes-de-fenoir", nom: "Les fêtes de Fénoir", pa
   { cle: "chez-les-autres", titre: "Aller à la fête des autres", texte: `À La Réunion, tout le monde allait voir le feu de la Dipavali, le dragon du Nouvel An chinois, le kabar du 20 décembre. Dans le monde d'après, **aller à la fête d'une autre communauté** (un abri voisin, une faction, un quartier qui fête encore) prend deux quarts, rend **+1 de moral** à ceux qui y vont, et **tisse un lien** avec ceux qui reçoivent : un lien de plus avec leur communauté et, s'ils sont d'une faction, avec elle. Avec deux liens, on recrute plus facilement chez eux.
 
 Les préjugés ne tombent pas en un soir. Mais on se méfie moins de ceux avec qui l'on a mangé.` },
-  ...FETES_FENOIR.map(f => ({ cle: f.cle, titre: f.nom, texte: `${f.description}${f.gain ? `\n\n**Ce qu'elle apporte.** ${f.gain}` : ""}${f.cout ? `\n\n**Ce qu'elle coûte.** ${f.cout}` : ""}\n\n*Date : ${f.date ? f.date.split("-").reverse().join("/") : Object.entries(f.dates).map(([a, d]) => `${d.split("-").reverse().join("/")}/${a}`).join(", ")}.*` }))
+  // La date dite en mots (periode) ; ce qu'on voit et ce qu'on trouve pendant la fête (ambiance, lot 12).
+  ...FETES_FENOIR.map(f => ({ cle: f.cle, titre: f.nom, texte: `${f.description}${f.gain ? `\n\n**Ce qu'elle apporte.** ${f.gain}` : ""}${f.cout ? `\n\n**Ce qu'elle coûte.** ${f.cout}` : ""}${f.ambiance ? `\n\n**Ce qu'on voit, ce qu'on trouve.** ${f.ambiance}` : ""}\n\n*Date : ${f.periode}.*` }))
 ] });
 
 // ================================================================ Le temps de l'île (joueurs ; lot « fetes », 2026-11-13)
@@ -204,6 +205,7 @@ Les **zerbaz** sont sa chance : une cueillette rapporte quelques plantes, une d�
 - **Réputations** : une horloge **rep-<faction>** par faction (voir « Réputation auprès des factions »).
 - **Bestiaire** : Livides et animaux, avec leurs dés et leur résistance.
 - **Cartes** : la carte de La Réunion (une épingle par région) et sept cartes de lieux (case créole, collège, station-service, supermarché, gîte, tunnel de lave, îlet).
+- **Affaires** : vingt-trois affaires et la façon de les mener (journaux « Les affaires de l'île » et « Mener une affaire ») ; tables des récits sans quête, des figures de l'île, des bruits et des Livides en fête.
 - **Le MJ IA** joue tout cela avec ses outils survie_* : il voit le réel et le connu, et ne dit aux joueurs que le connu.` },
   { cle: "temps-de-l-ile", titre: "Le temps de l'île, les fêtes et les morts", texte: `**La lune.** Le système calcule la lune de la date de jeu et, chaque nuit, si la brume ou les nuages la cachent (souvent dans les Hauts le soir, toujours sous la pluie forte et le cyclone) : le bandeau dit la clarté. Une sortie de nuit en tient compte d'elle-même (fouille, voyage, tests dehors : le guide « Le temps de l'île » des joueurs). Une nuit de noir total est celle des expéditions risquées : faites-la sentir (la main sur l'épaule de celui de devant, la ravine qu'on devine au bruit de l'eau).
 
@@ -447,10 +449,11 @@ Les fronts se croisent : laissez les joueurs choisir lequel combattre, et montre
   { cle: "front-remede", titre: "Front 5 — Le remède", texte: `**Menace** : la docteure Soundirassen croit tenir une piste… et elle a besoin de cobayes.
 1. Elle demande des Livides entiers.
 2. Elle demande des infectés vivants.
-3. Un enfant mordu ne s'est pas transformé : elle le veut.
+3. On dit qu'un enfant mordu ne s'est pas transformé ; elle voudrait le voir, et ceux qui le gardent le cachent.
 4. Les Pèlerins apprennent ce qu'elle fait.
 5. Les Pèlerins marchent sur l'hôpital.
 6. **Désastre** : le Dispensaire brûle, ou le remède échoue en tuant ceux qu'il devait sauver — ou il marche, à moitié, et tout le monde le veut.
+*Ton* : rien ne se montre. L'enfant n'est jamais en danger sous les yeux des joueurs ; l'enjeu est de savoir qui le protège, qui décide pour lui, et ce qu'on accepte d'entendre (journal « Mener une affaire », page « Les sujets délicats »).
 *Le contenu ne fixe pas la vérité sur le Gris : à vous de décider si ce front mène quelque part.*` }
 ] });
 

@@ -1,0 +1,300 @@
+{
+  "_id": "DuFx87ohGtgn1FQy",
+  "_key": "!journal!DuFx87ohGtgn1FQy",
+  "name": "Mener une affaire",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "mener-une-affaire",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "fEUPjf1kq59ILHoz",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.fEUPjf1kq59ILHoz",
+      "name": "Ce qu'est une affaire",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une <strong>affaire</strong>, c'est quelque chose qui se passe sur l'île et dont le groupe a entendu parler. Ce n'est pas une mission qu'on lui confie : c'est un morceau du monde qui existe sans lui, qui avance, et qui finira d'une façon ou d'une autre, avec ou sans lui.</p><ul><li><strong>Pas de liste de tâches, pas de récompense annoncée.</strong> Les joueurs savent ce qu'ils ont entendu, de qui, vers quel jour, et où. C'est tout.</li><li><strong>Une affaire peut être fausse</strong> (une erreur, un mensonge), <strong>périmée</strong> (c'était vrai il y a dix jours), <strong>déjà réglée par d'autres</strong>, ou <strong>pire que ce qu'on a dit</strong>. Ne le dites jamais : ils le découvrent en y allant, ou en recoupant.</li><li><strong>Ce qu'on y gagne est dans le monde</strong> : une route ouverte, un savoir appris, un allié, une dette, de la réputation, un plan, un endroit rendu vivable. Jamais des points.</li><li><strong>Ne rien faire est une réponse.</strong> L'affaire avance toute seule, et ce qu'elle devient se voit.</li></ul><p>Le journal « Les affaires de l'île » en donne vingt-trois, écrites pour une table.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "principe"
+        }
+      }
+    },
+    {
+      "_id": "fypDuaBDfTIhHU5H",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.fypDuaBDfTIhHU5H",
+      "name": "D'où naît une affaire",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Un besoin d'une communauté</strong> : un îlet manque de bras, un abri de pièces ; c'est la liste qu'on lit à la porte.</li><li><strong>Une fête qui approche</strong> : il faut de l'huile pour la lampe de Dipavali, une peau pour le rouleur du 20 décembre.</li><li><strong>Un événement annoncé</strong> : le cyclone que la vieille sent venir, la Fournaise qui gronde.</li><li><strong>Un front qui avance</strong> : un cran de la campagne « L'année du Gris » fait naître une affaire dans les régions touchées.</li><li><strong>Une rumeur du Ladi Lafé</strong> : un fait, vrai ou non, mis en circulation, déformé à chaque bouche.</li><li><strong>Un lieu gardé</strong> : une centrale au fond d'une ravine, qu'on n'atteint qu'à la saison sèche.</li><li><strong>Un mort</strong> : un carnet trouvé sur un corps parle d'une cache.</li><li><strong>Un acte du groupe</strong> : celui qu'on a refusé à la porte revient.</li></ul><p>Chaque affaire dit <strong>quand elle naît</strong> : des mois, des phases de la crise, une fête à venir, le cran d'un front, un déclencheur. Le MJ IA les trouve pour vous ; à la main, tirez la table « Affaires : ce qui se raconte », ou choisissez celle qui sert la table. Une ou deux à la fois suffisent.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "naissance"
+        }
+      }
+    },
+    {
+      "_id": "yjdHBL0PdSsGpZtT",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.yjdHBL0PdSsGpZtT",
+      "name": "Quatre tailles",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>Bruit</strong> (un moment) : un chien qui gratte à une porte, un drap blanc à un balcon. Il ne demande rien ; il fait sentir que l'île vit. Table « Bruits de l'île ».</li><li><strong>Affaire</strong> (quelques jours) : trouver de l'huile pour une lampe, faire passer une soignante par le vieux chemin.</li><li><strong>Grande affaire</strong> (des semaines) : la foire aux lentilles, l'îlet où tout va trop bien. Une ou deux en même temps, pas plus.</li><li><strong>Front</strong> (toute la campagne) : le Comptable, la Garnison, les Hauts froids, la Fournaise, le remède, dans la campagne « L'année du Gris ». Le cargo en est un.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "tailles"
+        }
+      }
+    },
+    {
+      "_id": "WYmPBqUyAS6mT1KJ",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.WYmPBqUyAS6mT1KJ",
+      "name": "La vérité",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Quand une affaire naît, tirez sa <strong>vérité</strong>, et gardez-la pour vous. Chaque affaire dit lesquelles sont possibles, et leur poids :</p><ul><li><strong>vraie</strong> : c'est comme on l'a dit ;</li><li><strong>exagérée</strong> : il y a quelque chose, en plus petit ou en plus simple ;</li><li><strong>périmée</strong> : c'était vrai, il y a dix jours ;</li><li><strong>fausse</strong> : une erreur, un mensonge, une peur ;</li><li><strong>un piège</strong> : quelqu'un veut qu'on vienne.</li></ul><p>Une rumeur sur une communauté (le « service » des voisins, la famille du Chaudron) est <strong>toujours fausse</strong> : le jeu ne donne jamais raison à un préjugé. La source compte : un témoin se trompe moins qu'un radioamateur, et le Ladi Lafé déforme à chaque passage (un lieu voisin, un nombre grossi, un nom changé).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "verite"
+        }
+      }
+    },
+    {
+      "_id": "pSo7Z9agWsdq57PW",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.pSo7Z9agWsdq57PW",
+      "name": "La pente et l'horloge",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Chaque affaire a une <strong>pente</strong> : ce qu'elle devient si personne ne s'en occupe, cran par cran, un cran tous les tant de jours. Ouvrez une horloge du MJ IA par affaire en cours (identifiant « affaire-&lt;clé&gt; », autant de segments que de crans), ou cochez les crans à la main. Quand les joueurs agissent, l'horloge s'arrête ou recule ; quand ils laissent faire, elle avance, et ce qu'elle annonce se voit dans le monde.</p><p>Les fronts de la campagne ont aussi leur horloge : « front-comptable », « front-garnison », « front-hauts », « front-fournaise », « front-remede ». Une affaire de front fait avancer ou reculer la sienne.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "pente"
+        }
+      }
+    },
+    {
+      "_id": "furArQAQKS3GGIIh",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.furArQAQKS3GGIIh",
+      "name": "Les issues et ce qu'elles changent",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Chaque affaire a trois à cinq <strong>fins</strong>. Chacune dit ses effets, avec les règles de Fénoir :</p><ul><li><strong>réputation</strong> auprès d'une faction : son horloge « rep-&lt;faction&gt; » ;</li><li><strong>acte</strong> : le sens moral de ceux qui ont choisi (accueillir, aider, partager, colporter, mentir, trahir…), avec ses témoins ;</li><li><strong>front</strong> : un cran de plus ou de moins à l'horloge du front de l'affaire ;</li><li><strong>stocks</strong>, <strong>savoir</strong> (appris ou enseigné), <strong>plan</strong> (ajouté aux plans du groupe : moins de matériaux, moins de travail) ;</li><li><strong>renom</strong> de l'abri, <strong>moral</strong> de chacun, <strong>entente</strong> du groupe, <strong>autorité</strong> du chef ;</li><li><strong>quelqu'un rejoint</strong> le groupe, ou le <strong>quitte</strong> ;</li><li><strong>le Ladi Lafé s'en empare</strong> (une rumeur court), ou <strong>la rumeur est démentie</strong> ; <strong>un préjugé</strong> d'un PNJ perd un cran ;</li><li><strong>visibilité</strong> de l'abri, <strong>une route s'ouvre</strong>, <strong>une horde approche</strong> ;</li><li><strong>une fête</strong> se tient (son gain et son coût), <strong>un vœu</strong> est tenu ou rompu.</li></ul><p>Appliquez ce qui a eu lieu, pas plus : une issue n'est pas un barème. Si le groupe n'y était pour rien, l'issue change le monde, pas ses stocks.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "issues"
+        }
+      }
+    },
+    {
+      "_id": "nOdnwbTbR0G1o2KL",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.nOdnwbTbR0G1o2KL",
+      "name": "Les voix et les traces",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une affaire <strong>s'entend</strong> avant de se voir. Chacune a ses voix : ce qu'on en dit au camp, au marché, à la radio, sur un mur. Donnez la nouvelle avec sa provenance : « Entendu de Mémé Lucette, au troc de Bourg-Murat, vers le 12. » Les joueurs peuvent la noter, la rayer, la donner à d'autres, juste ou fausse.</p><p>Le français de l'île d'abord : des phrases courtes et concrètes. Le créole par touches justes, avec son sens à côté. Personne ne parle comme un livre, sauf ceux dont c'était le métier. Chacun parle de ce qu'il sait faire. Et personne ne dit tout.</p><p>Quand une affaire finit, elle <strong>laisse des traces</strong> : une tombe, une clôture réparée, une case brûlée, ce que le Ladi Lafé en répète. Une affaire que les joueurs n'ont pas vérifiée reste dans leurs notes comme ils l'avaient entendue, peut-être pour toujours.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "voix"
+        }
+      }
+    },
+    {
+      "_id": "mURi6lGOzF6uU5eX",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.mURi6lGOzF6uU5eX",
+      "name": "Les sujets délicats",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Deux sujets se jouent avec une retenue particulière (décision de Jordan) : l'affaire « Rendre à la lave », ce que les Pèlerins font des mordus, et l'enfant du front du remède.</p><ul><li><strong>Rien n'est montré.</strong> Pas de scène de mort, pas de corps, pas de coulée. On l'apprend à ce qui manque : une natte vide le matin, un chant qui s'arrête, une porte qu'on ne rouvre pas.</li><li><strong>Aucun enfant n'est mis en danger</strong> sous les yeux des joueurs, ni de façon complaisante. L'enfant mordu qui ne s'est pas transformé est une rumeur, puis un enfant que des adultes protègent ; l'enjeu est de savoir qui le protège, qui décide pour lui, et ce qu'on accepte d'entendre.</li><li><strong>Le malaise vient de ce qu'on comprend</strong>, pas de ce qu'on voit. Laissez les joueurs faire le chemin ; ne le faites pas à leur place.</li><li><strong>Ni monstre ni saint.</strong> Frère Expédit croit ce qu'il croit, la docteure Soundirassen cherche ce qu'elle cherche ; la foi n'a aucun effet, ni bon ni mauvais, et le jeu ne confirme rien.</li><li>Si quelqu'un à la table est mal à l'aise, coupez, sans discuter.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "sujets-delicats"
+        }
+      }
+    },
+    {
+      "_id": "dhn0ULumwmYIqsHf",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.dhn0ULumwmYIqsHf",
+      "name": "Les fêtes et les Livides : la règle de respect",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Pendant une fête, l'île garde ses décors : pieds de Noël, lanternes rouges, lampes à huile, kolam, cannes dressées, feu de kabar. Chaque fête dit ce qu'on voit et ce qu'on trouve (« Les fêtes de Fénoir »). Quelques Livides portent encore ce qu'ils avaient sur eux : un bonnet de Noël, un ruban rouge, une guirlande éteinte, un casque de musique.</p><p><strong>Jamais rien de religieux ni de mémoire sur un Livide</strong> : ni chapelet, ni croix, ni pottou, ni kavadi, ni brassard de deuil. Ce qui est sacré, ou qui touche aux morts, n'apparaît qu'en décor posé avec soin, ou comme un objet qu'on trouve. La table « Livides en fête » donne quelques descriptions qui respectent la règle.</p><p>Le bruit d'une fête est dans son coût : pétards, tambour et maloya portent très loin, la musique moins.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "respect"
+        }
+      }
+    },
+    {
+      "_id": "K21BVUylgEGGEY4X",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.K21BVUylgEGGEY4X",
+      "name": "Ce que chaque région laisse comprendre",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce que les joueurs comprennent en arrivant, rien qu'en regardant. Une ligne à dire au premier passage, avant toute rencontre.</p><ul><li><strong>Saint-Denis.</strong> Le début. Les urgences ont débordé sur les parkings ; les premières portes marquées sont ici. Sur les toits du Chaudron, du linge sèche : des gens vivent là-haut et ne descendent pas.</li><li><strong>Sainte-Marie et l'aéroport.</strong> L'espoir de partir. Des valises par centaines, des files figées, un hangar de fret plein de ce que l'île attendait, et un tableau des départs arrêté sur le même vol.</li><li><strong>La route du Littoral.</strong> Ce qu'a donné la fuite : des kilomètres d'épaves entre la falaise et la houle. Plus haut, le vieux chemin pavé que les piétons ont rouvert, et le lazaret où l'on mettait déjà les arrivants en quarantaine il y a plus d'un siècle.</li><li><strong>Le Port et La Possession.</strong> L'ordre qui reste : des murailles de conteneurs, une sirène à heure fixe, des affiches de recensement. Et, au large, un navire qui n'a jamais accosté.</li><li><strong>Saint-Paul et la côte Ouest.</strong> La vie d'avant, intacte et vide : les plages, les restaurants, les bateaux de plaisance. Le lagon rend ses noyés ; le marché forain sert aux Ferrailleurs.</li><li><strong>Les Hauts de l'Ouest.</strong> Ceux qui savaient déjà : l'alambic à géranium, les cases en bois sous tôle, les citernes. Des gens qui n'ont presque rien changé à leur vie, et qui le disent.</li><li><strong>Saint-Leu et l'Étang-Salé.</strong> Le sel, le vent, les filaos. Des pêcheurs qui dorment sur l'eau, et sur le sable noir, des traces qui sortent de la mer.</li><li><strong>Saint-Louis et Saint-Pierre.</strong> Ceux qui soignent : le grand hôpital et ses draps peints d'une croix rouge, les ambulances en navette, la sucrerie du Gol arrêtée en pleine campagne, et une adresse répétée chaque soir à la radio.</li><li><strong>Le Tampon et la Plaine des Cafres.</strong> Le froid. Des troupeaux, des clôtures doublées, des cloches aux barrières ; au petit matin, des silhouettes immobiles dans les prés, couvertes de rosée.</li><li><strong>Saint-Joseph et le Sud sauvage.</strong> L'île dans l'île. Peu de monde, donc peu de morts ; la vanille, les vacoas, la mer qui prend sans prévenir. Les gens y sont partis les derniers, ou jamais.</li><li><strong>Le Piton de la Fournaise et la Plaine des Sables.</strong> Ce qui ne demande l'avis de personne : la Plaine des Sables sans une trace, le gîte et son livre d'or que plus personne ne signe, les instruments qui tournent encore à Bourg-Murat.</li><li><strong>L'Est : Saint-André, Saint-Benoît, Sainte-Rose.</strong> La pluie et la foi : des rivières en crue qui charrient tout, la canne haute, les centrales qui ont tenu plus longtemps, l'église que la lave a épargnée et les cierges sur les coulées.</li><li><strong>La Plaine des Palmistes et Bélouve.</strong> La forêt qui reprend : des gîtes fermés de l'intérieur, la brume de l'après-midi, des sentiers où l'on se perd à dix mètres de la route.</li><li><strong>Cilaos.</strong> Une seule route, quatre cents virages, et le car jaune arrêté dans un tunnel. Là-haut, le village a tenu ; chaque éboulis décide s'il reste une île dans l'île.</li><li><strong>Salazie.</strong> L'eau partout, les cascades, les treilles de chouchous. La route emportée, le cirque refermé, et des cases de Hell-Bourg dont les jardins sont entretenus par on ne sait qui.</li><li><strong>Mafate.</strong> Le monde d'après ressemblait au monde d'avant : pas de route, des panneaux sur les toits, des sifflets d'îlet en îlet. Et un îlet où tout va bien, trop bien.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "regions"
+        }
+      }
+    },
+    {
+      "_id": "zK57fZQRyAHskJZn",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.zK57fZQRyAHskJZn",
+      "name": "Les figures de l'île",
+      "type": "text",
+      "sort": 1100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>On les retrouve partout. Ce sont des <strong>rôles, pas des communautés</strong> : chacun peut être tenu par n'importe qui de l'île, de n'importe quelle origine. Les personnages nommés de Fénoir (la commandante Hoarau, Mémé Lucette, Gros Mani, le patron Grondin, Frère Expédit, Madame Lauret, la docteure Soundirassen, Ophélie Turpin, le Comptable, Ti Zan) tiennent chacun un lieu et un front ; <strong>aucun n'est un méchant ni un saint</strong>. La table « Figures de l'île » les tire.</p><ul><li><strong>La gramoune qui sait.</strong> Ce qu'elle veut : Qu'on l'écoute jusqu'au bout. Ce qu'elle cache ou risque : Elle n'enseigne qu'à celui qui reste, et elle n'a pas tout le temps.</li><li><strong>Celui qui compte.</strong> Ce qu'elle veut : Que rien ne manque : il tient le cahier des stocks, des dettes, des jours. Ce qu'elle cache ou risque : Il peut devenir un Comptable.</li><li><strong>Celle qui a gardé les enfants.</strong> Ce qu'elle veut : Qu'on ne lui mente pas. Ce qu'elle cache ou risque : Elle a besoin de tout et ne demandera rien.</li><li><strong>Le revenu de la ville.</strong> Ce qu'elle veut : Qu'on le croie. Ce qu'elle cache ou risque : Ce qu'il raconte date, et il le sait mal.</li><li><strong>Celui qui organise.</strong> Ce qu'elle veut : Bien faire, tout de suite, pour tous. Ce qu'elle cache ou risque : Il n'a pas demandé leur avis aux autres, et il a souvent raison sur le fond.</li><li><strong>Le croyant.</strong> Ce qu'elle veut : Tenir sa promesse. Ce qu'elle cache ou risque : Sa foi le fait tenir, et peut le fermer aux autres.</li><li><strong>L'enfant qui regarde.</strong> Ce qu'elle veut : Comprendre ce que font les grands. Ce qu'elle cache ou risque : Il se calquera sur eux, ou il partira.</li><li><strong>Le marchand d'entre-deux.</strong> Ce qu'elle veut : Que tout circule. Ce qu'elle cache ou risque : Vos nouvelles circulent aussi.</li><li><strong>Celui qui est resté seul.</strong> Ce qu'elle veut : Qu'on le laisse. Ce qu'elle cache ou risque : Il sait quelque chose que personne d'autre ne sait.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "figures"
+        }
+      }
+    },
+    {
+      "_id": "pku7zi3wHQMWpBJv",
+      "_key": "!journal.pages!DuFx87ohGtgn1FQy.pku7zi3wHQMWpBJv",
+      "name": "Raconter sans quête",
+      "type": "text",
+      "sort": 1200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les joueurs doivent pouvoir comprendre l'essentiel sans que personne ne leur parle, rien qu'en regardant. Huit supports, chacun avec sa table.</p><ul><li><strong>Le lieu figé.</strong> Une scène laissée telle quelle le jour zéro ou après. Elle dit ce qui s'est passé là, sans un mot. Ne la montrez qu'une fois dans la partie. Table « Raconter sans quête : un lieu figé ».</li><li><strong>Le journal d'un mort.</strong> Un carnet resté sur un corps : quelques jours d'une vie, où il allait, ce qu'il croyait. Les entrées sont écrites par métier ; certaines sont fausses, et le carnet ne le dit pas (la vérité est entre crochets, pour le MJ). Table « Raconter sans quête : le journal d'un mort ».</li><li><strong>Le cahier commun.</strong> Le livre de l'île, recopié d'abri en abri : chacun le complète. Les exemplaires diffèrent selon les régions ; lire celui d'un autre complète le sien. Table « Raconter sans quête : un autre exemplaire du cahier ».</li><li><strong>La radio.</strong> Tant qu'il y a du courant et un poste : la boucle officielle qui s'arrête au milieu d'une phrase, la Garnison et son cargo, une voix qui lit des histoires le matin, une femme qui répète une adresse et un prénom. Les nouvelles, vraies ou fausses, et le silence du reste du monde. Table « Rumeurs de la radio ».</li><li><strong>L'écrit des murs.</strong> Les marques à la bombe des Sans-Lune sur les portes « déjà payées », les croix rouges du Dispensaire, les flèches, les prénoms et les dates, « PARTIS À CILAOS », les comptes de jours. Les joueurs en apprennent le sens peu à peu (le livre de l'île en donne une page). Table « Raconter sans quête : l'écrit des murs ».</li><li><strong>L'oratoire rouge.</strong> Les petits oratoires de saint Expédit au bord des routes : des messages laissés entre gens qui ne se croisent pas, des ex-voto, des demandes. On les lit ; on ne les prend pas. Table « Oratoires rouges — messages ».</li><li><strong>L'objet déplacé.</strong> Ce que le cyclone a redistribué, ce que la mer a rendu, ce qu'un Livide porte encore. Il dit d'où venait celui qu'on vient d'abattre. Table « Raconter sans quête : l'objet déplacé ».</li><li><strong>La nature.</strong> Les flamboyants rouges, les letchis qui pourrissent sous l'arbre, la canne jamais coupée, les chiens en meute, le silence des grenouilles : la date, l'abandon, le danger qui approche. Table « Raconter sans quête : la nature ».</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "supports"
+        }
+      }
+    }
+  ]
+}

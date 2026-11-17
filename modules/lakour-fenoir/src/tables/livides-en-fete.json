@@ -1,0 +1,118 @@
+{
+  "_id": "ZRfOKf6zkJ72GyFX",
+  "_key": "!tables!ZRfOKf6zkJ72GyFX",
+  "name": "Livides en fête",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Pendant une fête, ce qu'un Livide porte encore : jamais rien de religieux ni de mémoire (règle de respect).</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "livides-en-fete",
+      "fetes": "livides"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "NVAGknWPAxqKUSYG",
+      "_key": "!tables.results!ZRfOKf6zkJ72GyFX.NVAGknWPAxqKUSYG",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide en bonnet de Noël, le pompon traîné dans la boue, qui se cogne doucement à une vitrine décorée.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LqBicvm58DA41rzC",
+      "_key": "!tables.results!ZRfOKf6zkJ72GyFX.LqBicvm58DA41rzC",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide au ruban rouge noué au cou, qui suit le bruit des pétards jusqu'au bout de la rue.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Epd7J5dtX8QOf4tl",
+      "_key": "!tables.results!ZRfOKf6zkJ72GyFX.Epd7J5dtX8QOf4tl",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une Livide avec une guirlande lumineuse éteinte enroulée sur l'épaule, prise dans un grillage.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "IMZ3VwlHspntoz0o",
+      "_key": "!tables.results!ZRfOKf6zkJ72GyFX.IMZ3VwlHspntoz0o",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide au casque de musique sur les oreilles, le fil arraché, qui tourne la tête vers chaque son.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "lqRbL1uCnjWgdPiy",
+      "_key": "!tables.results!ZRfOKf6zkJ72GyFX.lqRbL1uCnjWgdPiy",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux Livides en chemises à fleurs du bal du 14 juillet, figés de froid sur la place de Bourg-Murat.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YtkuyHtE9QCpX05t",
+      "_key": "!tables.results!ZRfOKf6zkJ72GyFX.YtkuyHtE9QCpX05t",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide coiffé d'une couronne de papier doré, de travers, dans une galerie marchande vide.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

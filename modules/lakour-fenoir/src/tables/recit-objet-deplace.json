@@ -1,0 +1,148 @@
+{
+  "_id": "xy4CRhi0vrQVevFH",
+  "_key": "!tables!xy4CRhi0vrQVevFH",
+  "name": "Raconter sans quête : l'objet déplacé",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Un objet loin de chez lui ; entre crochets, ce qu'il raconte (pour le MJ).</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recit-objet-deplace",
+      "recit": "objet-deplace"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "6RwZEhUsmlvRhRXB",
+      "_key": "!tables.results!xy4CRhi0vrQVevFH.6RwZEhUsmlvRhRXB",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un badge d'hôpital au cou d'un Livide : « CHU Sud, brancardier ». [Il venait de Saint-Pierre, à quarante kilomètres.]</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "EQck12JG7Bk5WllF",
+      "_key": "!tables.results!xy4CRhi0vrQVevFH.EQck12JG7Bk5WllF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un brassard orange de la Garnison au bras d'un Livide des Hauts. [Un soldat d'un convoi qui n'est pas redescendu.]</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "HoJvC5LVDEPVVafm",
+      "_key": "!tables.results!xy4CRhi0vrQVevFH.HoJvC5LVDEPVVafm",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une carte d'embarquement pliée dans une poche : vol du 5 décembre. [Il n'a jamais embarqué.]</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xT3mZiIZ0qW0krjo",
+      "_key": "!tables.results!xy4CRhi0vrQVevFH.xT3mZiIZ0qW0krjo",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un casque de chantier de la nouvelle route du Littoral, sur une plage de Saint-Paul. [La houle l'a porté.]</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Bs3i6WlbGZWYuXTH",
+      "_key": "!tables.results!xy4CRhi0vrQVevFH.Bs3i6WlbGZWYuXTH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un gilet de sauvetage d'un navire de croisière, échoué à Saint-Philippe. [Un navire au large, quelque part.]</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ahkyyBzdV1KASpYv",
+      "_key": "!tables.results!xy4CRhi0vrQVevFH.ahkyyBzdV1KASpYv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un trousseau de clés au porte-clés de Cilaos, au bord de la mer. [Quelqu'un des Hauts est descendu jusque-là.]</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FSWqzEUVa1Q0tVUD",
+      "_key": "!tables.results!xy4CRhi0vrQVevFH.FSWqzEUVa1Q0tVUD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une alliance gravée au doigt d'un Livide : deux prénoms et une date. [Le prénom est peut-être sur un mur, quelque part.]</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "UnROBgoedZsn9tuh",
+      "_key": "!tables.results!xy4CRhi0vrQVevFH.UnROBgoedZsn9tuh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un sac de sport du club de foot de Saint-André, accroché à une branche au-dessus d'une ravine en crue. [La crue l'a apporté d'en haut, rien de plus.]</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

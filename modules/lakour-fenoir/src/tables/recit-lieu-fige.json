@@ -1,0 +1,148 @@
+{
+  "_id": "5bzuwHnO2gK3Qv6z",
+  "_key": "!tables!5bzuwHnO2gK3Qv6z",
+  "name": "Raconter sans quête : un lieu figé",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une scène laissée telle quelle ; à ne montrer qu'une fois.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recit-lieu-fige",
+      "recit": "lieu-fige"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "va4b2LV3nc8QfLa5",
+      "_key": "!tables.results!5bzuwHnO2gK3Qv6z.va4b2LV3nc8QfLa5",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une table mise pour quatre sous une varangue, les assiettes couvertes de moisissure, une chaise renversée en arrière.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jguQkHEEzPwduzN9",
+      "_key": "!tables.results!5bzuwHnO2gK3Qv6z.jguQkHEEzPwduzN9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une voiture portières ouvertes au milieu de la route, le moteur froid, une glacière et des serviettes de plage sur la banquette.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7TvbQSp09kTSoHct",
+      "_key": "!tables.results!5bzuwHnO2gK3Qv6z.7TvbQSp09kTSoHct",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une salle de classe, les cartables accrochés aux chaises, la date du 4 décembre au tableau, et dessous : « Contrôle de géographie ».</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CjMFOrzYC44WOYkl",
+      "_key": "!tables.results!5bzuwHnO2gK3Qv6z.CjMFOrzYC44WOYkl",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un salon de coiffure : une cliente est partie en plein brushing, le séchoir pend encore au bout de son fil.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "WMvQFM4ktVXuZKzE",
+      "_key": "!tables.results!5bzuwHnO2gK3Qv6z.WMvQFM4ktVXuZKzE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une station-service, les pistolets décrochés, et une file de voitures vides qui attend un plein qui ne viendra plus.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yBU7qBRIjcl7O3LE",
+      "_key": "!tables.results!5bzuwHnO2gK3Qv6z.yBU7qBRIjcl7O3LE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une salle d'opération de clinique, tout rangé avec soin, sauf une chaise calée contre la porte, de l'intérieur.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KDHUMnwBDEBUFRrc",
+      "_key": "!tables.results!5bzuwHnO2gK3Qv6z.KDHUMnwBDEBUFRrc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un mariage sous une tente blanche : les nappes, un gâteau effondré, et toutes les chaises poussées d'un seul coup vers la sortie.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "w9JCozX6BxL9jM7h",
+      "_key": "!tables.results!5bzuwHnO2gK3Qv6z.w9JCozX6BxL9jM7h",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une case des Hauts où tout est en ordre : le lit fait, la vaisselle lavée, un mot sur la table : « Partis chez Marcel. »</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

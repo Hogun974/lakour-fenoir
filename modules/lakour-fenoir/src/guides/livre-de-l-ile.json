@@ -297,11 +297,34 @@
       }
     },
     {
+      "_id": "2PYAyjbFBJLm5gSm",
+      "_key": "!journal.pages!up0rswZgQIHj9Y1K.2PYAyjbFBJLm5gSm",
+      "name": "Les signes des murs",
+      "type": "text",
+      "sort": 1300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>On écrit sur les murs depuis le premier jour. Au début, c'était pour dire où l'on allait ; maintenant, c'est aussi pour dire qui tient le quartier. Voici ce qu'on a compris. Recopiez, complétez, et rayez ce qui est faux.</p><ul><li><strong>Trois traits et un rond</strong>, à la bombe, sur une porte : les Sans-Lune sont passés, et ici, on a payé. Une porte sans marque dans une rue marquée n'a pas payé ; elle n'a plus longtemps.</li><li><strong>Une croix rouge</strong> peinte sur un drap ou sur un mur : le Dispensaire, ou quelqu'un qui soigne. Venez avec vos malades, pas avec vos armes.</li><li><strong>Une croix noire</strong> sur une porte, avec un chiffre : des Livides dedans, et combien. N'ouvrez pas.</li><li><strong>« PARTIS À CILAOS »</strong>, et des prénoms : des gens qui sont montés. Ils sont peut-être arrivés.</li><li><strong>Des bâtons groupés par cinq</strong> : quelqu'un compte les jours. S'ils s'arrêtent, il a cessé de compter.</li><li><strong>Une flèche et « EAU »</strong> : une source, un robinet qui coule, une citerne. Faites bouillir quand même.</li><li><strong>Un prénom et une date</strong> : quelqu'un cherche quelqu'un. Ajoutez la vôtre si vous l'avez vu passer.</li><li><strong>« ICI 3 VIVANTS »</strong> : ils étaient trois, ce jour-là.</li></ul><p>Au bord des routes, sous la pierre des oratoires rouges, on laisse aussi des mots. On les lit ; on ne les prend pas.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "signes-des-murs"
+        }
+      }
+    },
+    {
       "_id": "WmhNGAb81nELourG",
       "_key": "!journal.pages!up0rswZgQIHj9Y1K.WmhNGAb81nELourG",
       "name": "La première nuit",
       "type": "text",
-      "sort": 1300,
+      "sort": 1400,
       "title": {
         "show": true,
         "level": 1

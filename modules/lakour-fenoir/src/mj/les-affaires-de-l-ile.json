@@ -1,0 +1,576 @@
+{
+  "_id": "xHdVNDStmVyRBXKC",
+  "_key": "!journal!xHdVNDStmVyRBXKC",
+  "name": "Les affaires de l'île",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "les-affaires-de-l-ile",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "enGFNnWwYp4dfQqL",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.enGFNnWwYp4dfQqL",
+      "name": "Vingt-trois affaires",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Vingt-trois affaires, rangées par famille. Chacune dit <strong>comment on l'apprend</strong>, <strong>ce qu'elle demande</strong>, <strong>comment elle tourne mal</strong>, <strong>ce qu'elle change</strong> et <strong>ce qu'on en garde</strong> ; puis ce que le MJ garde pour lui : sa <strong>vérité</strong> (tirez-la quand elle naît), sa <strong>pente</strong> (ce qu'elle devient si personne ne s'en occupe), ses <strong>issues</strong> (avec leurs effets dans les règles), ses <strong>voix</strong> et ses <strong>traces</strong>.</p><p>Les noms de personnes viennent de Fénoir ou sont des rôles ; les lieux sont de vrais lieux de l'île. Aucune n'est obligatoire, aucune ne se coche : laissez-les venir aux joueurs par la rumeur, et laissez-les finir sans eux s'ils regardent ailleurs. La méthode est dans le journal « Mener une affaire ».</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "introduction"
+        }
+      }
+    },
+    {
+      "_id": "0afYH8Aq61GlcSES",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.0afYH8Aq61GlcSES",
+      "name": "1. Les lentilles d'octobre (Les cirques)",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Grande affaire (des semaines)</em><br><strong>Où.</strong> Cilaos.<br><strong>Lieux.</strong> Une ferme d'Îlet à Cordes.<br><strong>Foire.</strong> La foire des lentilles de Cilaos.<br><strong>Qui.</strong> Les Familles des Îlets · La Coopérative des Plaines.<br><strong>Quand elle naît.</strong> En septembre et octobre ; pendant le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Dès septembre, tout le Sud répète que Cilaos tiendra sa foire « comme avant », sous trêve. On l'entend au marché de Saint-Pierre, à la radio des Barques, dans la bouche d'un porteur qui redescend du cirque.</p><p><strong>Ce qu'elle demande.</strong> Que la route aux quatre cents virages ou les sentiers soient praticables le jour dit, que quelqu'un garde la trêve, que les îlets descendent leur récolte. On peut escorter un convoi de porteurs, déblayer un éboulis au-dessus du Pavillon (deux jours de chantier, et du bruit), garder la trêve avec le conseil, ou seulement venir troquer.</p><p><strong>Comment elle tourne mal.</strong> L'éboulis n'est pas levé, et la foire se tient entre gens du cirque seulement. Une bande vient « compter les sacs » et tâter la trêve. La date circule fausse : des gens montent un jour trop tôt ou trop tard, et dorment dehors.</p><p><strong>Ce qu'elle change.</strong> Si elle a lieu, Cilaos a sa foire (trois jours, onglet Marché) et la Coopérative y garde un étal à l'année.</p><p><strong>Ce qu'on en garde.</strong> Des graines, des nouvelles de toute l'île en une journée, et le souvenir d'avoir vu du monde.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 5) : La foire aura lieu si la route est ouverte : le conseil de l'îlet l'a décidé.</li><li><strong>Périmée</strong> (1 sur 5) : On l'a dit en juillet ; depuis, un éboulis a coupé la route au-dessus du Pavillon, et personne ne l'a encore dit en bas.</li><li><strong>Fausse</strong> (1 sur 5) : La date répétée en bas est fausse d'une semaine : quelqu'un s'est trompé en recopiant, ou l'a voulu.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 7 jours</em></p><ul><li><strong>Cran 1.</strong> Le conseil de l'îlet cherche des bras pour l'éboulis.</li><li><strong>Cran 2.</strong> Les porteurs descendent seuls, chargés ; certains n'arrivent pas.</li><li><strong>Cran 3.</strong> La foire se tient entre gens du cirque ; le Sud ne monte pas.</li></ul><h2>Les issues</h2><ul><li><strong>La foire se tient.</strong> La route est ouverte et la trêve tenue : trois jours de troc, des gens de toute l'île. <em>Effets : réputation +2 (Les Familles des Îlets) ; réputation +1 (La Coopérative des Plaines) ; moral +1 à chacun.</em></li><li><strong>Entre gens du cirque.</strong> L'éboulis tient ; la foire se fait sans le Sud, et sans le groupe s'il n'a pas aidé. <em>Effets : rien de plus que ce qui se raconte.</em></li><li><strong>La trêve rompue.</strong> Une bande compte les sacs, quelqu'un sort une arme : la trêve tombe, la foire se vide, et l'on cherche à qui la faute. <em>Effets : réputation −1 (Les Familles des Îlets) ; le Ladi Lafé s'en empare.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Cette année, Cilaos tient sa foire. Comme avant. Sous trêve. »</li><li>« Les lentilles ? Si la route passe. Et si la route passe, tout le monde passe. »</li><li>À la craie, sur le mur de la gare routière de Saint-Pierre : « LENTILLES, 3e SAMEDI ».</li><li>La radio des Barques : « Cilaos cherche des bras pour l'éboulis du Pavillon. Nourris. »</li></ul><p><strong>Ce qui en reste.</strong> Un étal de la Coopérative qui reste ; un sentier balisé de cairns pour monter ; la date notée dans les cahiers de dix abris, pas toujours la même.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-lentilles-d-octobre"
+        }
+      }
+    },
+    {
+      "_id": "JtBuFXukSxuNyWC9",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.JtBuFXukSxuNyWC9",
+      "name": "2. La treille de Grand Îlet (Les cirques)",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> Salazie.<br><strong>Lieux.</strong> Une ferme de chouchous à Grand Îlet.<br><strong>Qui.</strong> Les Familles des Îlets.<br><strong>Quand elle naît.</strong> Pendant l'effondrement, le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Une famille de Grand Îlet fait dire, par les Familles des Îlets, qu'elle ne peut plus monter ses treilles de chouchous seule : le fils est descendu le jour zéro et n'est pas remonté.</p><p><strong>Ce qu'elle demande.</strong> Des bras pendant une semaine, du fil de fer, du bambou, et de la patience : la gramoune ne montre sa façon de faire qu'à celui qui reste jusqu'au bout.</p><p><strong>Comment elle tourne mal.</strong> La route emportée a refermé le cirque : on n'y entre que par les cols. Un glissement de terrain menace la parcelle. Celui qui part avant la fin n'apprend rien, et laisse un affront que la famille n'oublie pas.</p><p><strong>Ce qu'elle change.</strong> Le cirque nourrit un abri de plus, ou perd une ferme.</p><p><strong>Ce qu'on en garde.</strong> La façon lontan de monter une treille (le savoir « Jardin créole »), et une famille qui n'oublie ni le service ni l'affront.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (4 sur 5) : La famille a vraiment besoin de bras, et la gramoune enseignera à qui reste.</li><li><strong>Exagérée</strong> (1 sur 5) : La famille s'en sortirait seule ; elle cherche surtout des voisins pour l'hiver, et un gendre si possible.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 10 jours</em></p><ul><li><strong>Cran 1.</strong> Les lianes de chouchou courent par terre et pourrissent.</li><li><strong>Cran 2.</strong> La famille mange ses graines.</li><li><strong>Cran 3.</strong> Elle descend à Hell-Bourg, et la ferme retourne à la brousse.</li></ul><h2>Les issues</h2><ul><li><strong>Rester jusqu'au bout.</strong> Sept jours de travail ; la gramoune montre sa façon, et la famille donne de sa récolte. <em>Effets : réputation +2 (Les Familles des Îlets) ; +4 nourriture ; savoir « Jardin créole ».</em></li><li><strong>Partir avant la fin.</strong> On a aidé trois jours, puis on est parti : la famille le dit à tous les îlets. <em>Effets : réputation −1 (Les Familles des Îlets).</em></li><li><strong>Le glissement.</strong> La pluie emporte la parcelle avant la fin. La famille n'a plus rien : l'accueillir, c'est trois bouches de plus et une gramoune qui sait. <em>Effets : acte « accueillir » pour ceux qui ont choisi ; quelqu'un rejoint le groupe.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Grand Îlet cherche des bras pour les treilles. Nourris, logés, et la gramoune qui montre. »</li><li>« Elle ne montre qu'à ceux qui restent. Les autres, elle les regarde partir. »</li><li>Un sifflet, depuis le col : trois coups longs. À Salazie, cela veut dire qu'on demande de l'aide.</li></ul><p><strong>Ce qui en reste.</strong> Une treille montée à la façon d'avant, ou des lianes mortes sur des piquets ; le nom de celui qui est parti, que la famille dit encore.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "la-treille-de-grand-ilet"
+        }
+      }
+    },
+    {
+      "_id": "E0CfpxOXht64wLKs",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.E0CfpxOXht64wLKs",
+      "name": "3. La quarantaine du col (Les cirques)",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> Salazie · Mafate.<br><strong>Lieux.</strong> Le relais du col des Bœufs.<br><strong>Qui.</strong> Les Familles des Îlets.<br><strong>Quand elle naît.</strong> Pendant l'effondrement, le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> En voulant entrer. Au relais du col des Bœufs, deux guetteurs des Familles arrêtent tout le monde : trois jours d'attente, sous leurs yeux, avec d'autres qui attendent.</p><p><strong>Ce qu'elle demande.</strong> D'attendre trois jours, de travailler pour sa soupe, et de regarder les autres : parmi ceux qui attendent, une femme garde ses manches longues malgré la chaleur.</p><p><strong>Comment elle tourne mal.</strong> La dénoncer peut être une erreur : une brûlure de marmite, pas une morsure. Se taire peut laisser entrer le Gris dans le cirque. Partir de nuit par le sentier fait de vous ceux qu'on ne laissera plus jamais entrer.</p><p><strong>Ce qu'elle change.</strong> La confiance des Familles des Îlets, pour longtemps, dans un sens ou dans l'autre.</p><p><strong>Ce qu'on en garde.</strong> L'entrée de Mafate, ou une rumeur tenace sur son propre compte.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (1 sur 3) : Elle a été mordue il y a deux jours, et elle espère que ce n'est rien. Le Gris suit son cours : le MJ dit le stade.</li><li><strong>Fausse</strong> (2 sur 3) : C'est une brûlure de marmite, mal soignée ; elle a honte de la cicatrice.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 1 jour</em></p><ul><li><strong>Cran 1.</strong> Les guetteurs comptent les jours, sans rien dire.</li><li><strong>Cran 2.</strong> Quelqu'un d'autre a vu les manches, et parle tout bas.</li><li><strong>Cran 3.</strong> Le troisième jour, les guetteurs font retrousser les manches à tout le monde.</li></ul><h2>Les issues</h2><ul><li><strong>La dénoncer, à raison.</strong> C'était une morsure : les Familles la mettent à l'écart, et laissent entrer le groupe. <em>Effets : réputation +1 (Les Familles des Îlets).</em></li><li><strong>La dénoncer, à tort.</strong> C'était une brûlure. Elle est renvoyée quand même, et le Ladi Lafé sait qui l'a désignée. <em>Effets : acte « colporter » pour ceux qui ont choisi ; le Ladi Lafé s'en empare.</em></li><li><strong>Se taire.</strong> Personne ne dit rien. Si c'était une morsure et qu'on apprend que le groupe avait vu, la confiance des Familles tombe. <em>Effets : réputation −1 (Les Familles des Îlets).</em></li><li><strong>Partir de nuit.</strong> Par le sentier, sans attendre la fin : le groupe entre, et tous les îlets le savent le lendemain. <em>Effets : réputation −3 (Les Familles des Îlets) ; le Ladi Lafé s'en empare.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Trois jours au col. Tout le monde. Même ceux qu'on connaît. »</li><li>Un guetteur, sans lever les yeux : « Vous avez mangé ? Alors vous travaillez. »</li><li>« Celle-là, avec ses manches… <em>Mi di sa, mi di rien.</em> » (Je dis ça, je ne dis rien.)</li></ul><p><strong>Ce qui en reste.</strong> Une liste de noms au relais, avec des croix ; ce que les Familles disent de vous aux autres îlets.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "la-quarantaine-du-col"
+        }
+      }
+    },
+    {
+      "_id": "Z28OrUPDEskBT6G8",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.Z28OrUPDEskBT6G8",
+      "name": "4. L'îlet où tout va bien (Les cirques)",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Grande affaire (des semaines)</em><br><strong>Où.</strong> Mafate.<br><strong>Qui.</strong> Les Familles des Îlets.<br><strong>Quand elle naît.</strong> Pendant le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Par recoupement. Personne ne le dit en entier : des gens y sont allés et ne sont pas revenus parce qu'ils y sont bien ; d'autres disent qu'on n'en repart pas. Le livre de l'île le range parmi les mystères qu'on ne numérote pas.</p><p><strong>Ce qu'elle demande.</strong> D'y monter (deux jours de sentier depuis le col), d'y rester assez pour comprendre ce qui fait tenir l'endroit, et de décider si on en parle.</p><p><strong>Comment elle tourne mal.</strong> Ce qui le fait tenir peut être très simple, ou ne pas se dire. En parler amène du monde, et le monde le défait.</p><p><strong>Ce qu'elle change.</strong> Un abri modèle reste secret, devient un marché, ou devient une cible.</p><p><strong>Ce qu'on en garde.</strong> Une règle de vie qu'on peut reprendre chez soi, et la question de savoir si on a bien fait de la dire.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (2 sur 5) : Une source qui ne tarit jamais, des terrasses, des panneaux, et un accord strict : on y entre pour toujours ou pas du tout. Tout le monde y est bien, et personne n'a envie de partir.</li><li><strong>Exagérée</strong> (2 sur 5) : L'îlet tient par une règle dure : qui ne travaille pas est renvoyé, les vieux comme les autres. On y est bien tant qu'on est utile.</li><li><strong>Un piège</strong> (1 sur 5) : L'îlet tient parce qu'il ne laisse repartir personne : ceux qui montent sont désarmés, gardés et mis au travail. On n'en repart pas, en effet.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 14 jours</em></p><ul><li><strong>Cran 1.</strong> On en parle un peu plus au marché.</li><li><strong>Cran 2.</strong> Une famille monte s'y installer ; d'autres suivent.</li><li><strong>Cran 3.</strong> Trop de monde arrive : l'îlet ferme son sentier, ou s'ouvre et se défait.</li></ul><h2>Les issues</h2><ul><li><strong>Garder le secret.</strong> On en revient avec une règle qu'on reprend chez soi, et l'on n'en dit rien. <em>Effets : entente +1.</em></li><li><strong>Le dire.</strong> Le Ladi Lafé s'en empare ; l'îlet devient une destination, et les Familles savent qui a parlé. <em>Effets : réputation −1 (Les Familles des Îlets) ; le Ladi Lafé s'en empare.</em></li><li><strong>Y rester.</strong> Un membre du groupe choisit d'y vivre, et ne redescend pas. <em>Effets : quelqu'un quitte le groupe.</em></li><li><strong>Repartir sans permission.</strong> De nuit, par la crête : on sait désormais ce qu'il y a là-haut, et l'îlet sait qu'on le sait. <em>Effets : le Ladi Lafé s'en empare.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« À l'îlet, là-haut, ils ont tout : l'eau, le courant, la paix. Ma cousine y est. Elle ne redescend pas. »</li><li>« On n'en revient pas, de cet îlet. Prends ça comme tu veux. »</li><li>Un sifflet qui ne répond pas : l'îlet d'en face ne parle à personne.</li></ul><p><strong>Ce qui en reste.</strong> Un sentier mieux entretenu que les autres, qui finit sur une barrière ; dans les cahiers, des noms qui ne donnent plus de nouvelles.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "l-ilet-ou-tout-va-bien"
+        }
+      }
+    },
+    {
+      "_id": "wzHjCvVOjybi7FCX",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.wzHjCvVOjybi7FCX",
+      "name": "5. Le tunnel aux vivres (Le volcan)",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Grande affaire (des semaines)</em><br><strong>Où.</strong> Saint-Joseph et le Sud sauvage.<br><strong>Lieux.</strong> Un tunnel de lave du Grand Brûlé.<br><strong>Qui.</strong> Les Barques du Sud · Les Pèlerins de la Lave.<br><strong>Quand elle naît.</strong> Pendant l'effondrement, le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> C'est la rumeur numéro six du livre de l'île. Une Barque du Sud jure l'avoir vu ; un Pèlerin dit que c'est un tombeau.</p><p><strong>Ce qu'elle demande.</strong> De marcher sur la lave refroidie de la route des Laves, de trouver la bonne bouche parmi dix, de la lumière pour plusieurs quarts sous terre, et de savoir étayer (le savoir « Étaiement et galeries » évite un éboulement).</p><p><strong>Comment elle tourne mal.</strong> Elle est vraie une fois sur deux. Fausse : un tunnel vide et frais, bon à aménager. Vraie : quelqu'un y vit encore et garde ses vivres, ou il y est mort, et l'on décide quoi faire de ce qu'il laisse.</p><p><strong>Ce qu'elle change.</strong> Un refuge sous la roche existe pour la prochaine éruption, ou un piège est connu de tous.</p><p><strong>Ce qu'on en garde.</strong> De quoi aménager un tunnel de lave (le plan), et l'emplacement, à donner ou à taire.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (1 sur 2) : Un ancien guide y vit seul depuis le jour zéro, avec des vivres pour des mois, et ne veut voir personne ; ou il y est mort, et ses vivres sont là.</li><li><strong>Fausse</strong> (1 sur 2) : Un tunnel vide et frais, sans un sac : quelqu'un a inventé, ou s'est trompé de bouche.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 10 jours</em></p><ul><li><strong>Cran 1.</strong> D'autres cherchent la bouche ; on voit leurs traces sur la lave.</li><li><strong>Cran 2.</strong> Quelqu'un a trouvé : les vivres partent, sac par sac.</li><li><strong>Cran 3.</strong> Le tunnel est vide, ou gardé par ceux qui l'ont pris.</li></ul><h2>Les issues</h2><ul><li><strong>Les vivres.</strong> On trouve la réserve, et personne pour la garder. <em>Effets : +8 nourriture ; +4 eau ; plan « Aménagement d'un tunnel de lave ».</em></li><li><strong>Partager avec l'habitant.</strong> Il est vivant. On partage, on l'écoute ; il montre ses galeries, et peut-être vient avec le groupe. <em>Effets : acte « partager » pour ceux qui ont choisi ; plan « Aménagement d'un tunnel de lave ».</em></li><li><strong>Le chasser.</strong> Il est vivant, et seul. On prend ses vivres et l'on garde sa bouche. <em>Effets : acte « attaquer » pour ceux qui ont choisi ; +8 nourriture ; +4 eau ; le Ladi Lafé s'en empare.</em></li><li><strong>Le tunnel vide.</strong> Rien que la roche fraîche : un abri à aménager, que personne ne connaît. <em>Effets : plan « Aménagement d'un tunnel de lave ».</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Un tunnel sous la coulée, plein de sacs de riz. Je l'ai vu, je te dis. Enfin, mon beau-frère l'a vu. »</li><li>Un Pèlerin, doucement : « Ce trou-là, c'est un tombeau. Laissez-le à la lave. »</li><li>Le livre de l'île, rumeur six : « Personne qui l'ait vu n'en est revenu pour le dire, ce qui peut vouloir dire deux choses. »</li></ul><p><strong>Ce qui en reste.</strong> Une bouche marquée d'un cairn, ou bouchée de pierres ; un nom de plus sur la liste de ceux qui sont allés voir.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-tunnel-aux-vivres"
+        }
+      }
+    },
+    {
+      "_id": "dxdiWPz5mBHx3a4b",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.dxdiWPz5mBHx3a4b",
+      "name": "6. Les aiguilles de Bourg-Murat (Le volcan)",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> Le Tampon et la Plaine des Cafres.<br><strong>Qui.</strong> La Coopérative des Plaines · Les Pèlerins de la Lave.<br><strong>Front de la Fournaise.</strong><br><strong>Quand elle naît.</strong> Pendant l'effondrement, le silence et l'après ; quand le front de la Fournaise atteint le cran 1.</p><p><strong>Comment on l'apprend.</strong> Un fermier de la Coopérative le dit au troc du samedi : à l'observatoire de Bourg-Murat, où plus personne ne vient, « les machines des géologues grattent le papier jour et nuit ».</p><p><strong>Ce qu'elle demande.</strong> Quelqu'un qui sache lire les tracés, ou qui trouve le cahier où c'est expliqué ; puis porter la nouvelle à Sainte-Rose avant la fissure : trois jours par la Plaine des Palmistes, ou deux par la route des Laves, qui sera peut-être coupée.</p><p><strong>Comment elle tourne mal.</strong> Les Pèlerins ne veulent pas l'entendre : l'épreuve, disent-ils, ne se lit pas sur une aiguille. La nouvelle arrive déformée et vide un village pour rien, ou elle arrive trop tard.</p><p><strong>Ce qu'elle change.</strong> Le front de la Fournaise recule d'un cran si l'Est est prévenu à temps.</p><p><strong>Ce qu'on en garde.</strong> Savoir lire le volcan, que presque personne n'a : le groupe sait désormais une éruption quelques jours avant (le MJ le lui dit).</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Les tracés montrent un gonflement qui s'accélère : une éruption dans les semaines qui viennent.</li><li><strong>Exagérée</strong> (1 sur 4) : Les aiguilles s'agitent pour une crise sismique qui retombera ; prévenir vide l'Est pour rien.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 7 jours</em></p><ul><li><strong>Cran 1.</strong> Le papier des enregistreurs s'épuise ; personne ne le change.</li><li><strong>Cran 2.</strong> Les secousses se sentent jusqu'à la Plaine des Cafres.</li><li><strong>Cran 3.</strong> La fissure s'ouvre : le front de la Fournaise avance d'un cran.</li></ul><h2>Les issues</h2><ul><li><strong>L'Est prévenu à temps.</strong> La nouvelle arrive, et elle est crue : les villages bas se vident avant la coulée. <em>Effets : réputation +1 (Les Pèlerins de la Lave) ; front de la Fournaise −1 ; renom +1.</em></li><li><strong>Un village vidé pour rien.</strong> La nouvelle était exagérée : des familles ont marché sous la pluie pour rien, et s'en souviennent. <em>Effets : renom −1 ; le Ladi Lafé s'en empare.</em></li><li><strong>Trop tard.</strong> On arrive avec la coulée. <em>Effets : front de la Fournaise +1.</em></li><li><strong>Pas entendus.</strong> Les Pèlerins écoutent poliment et ne bougent pas ; d'autres, dans l'Est, partent quand même. <em>Effets : réputation −1 (Les Pèlerins de la Lave).</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Les machines des géologues, à Bourg-Murat ? Elles grattent, elles grattent. Personne ne sait lire ça. »</li><li>Une fermière qui n'a jamais vu d'éruption de près : « Le volcan, c'est pas une aiguille qui va te le dire. C'est les oiseaux. »</li><li>Un rouleau de papier quadrillé trouvé dans une voiture, avec des dates entourées au stylo rouge.</li></ul><p><strong>Ce qui en reste.</strong> Un rouleau couvert de traits serrés ; une route des Laves barrée, ou une église vide sur une coulée neuve.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-aiguilles-de-bourg-murat"
+        }
+      }
+    },
+    {
+      "_id": "FOArkgp6lQCkmO2o",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.FOArkgp6lQCkmO2o",
+      "name": "7. Les noyés de la passe (Le littoral et les routes)",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> Saint-Leu et l'Étang-Salé.<br><strong>Qui.</strong> Les Barques du Sud.<br><strong>Quand elle naît.</strong> En mai, juin, juillet, août, septembre et octobre ; pendant l'effondrement, le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Après une houle australe, les Barques ne veulent plus mouiller devant Saint-Leu : la mer a rendu ses noyés, sur la plage et dans la passe.</p><p><strong>Ce qu'elle demande.</strong> De nettoyer une plage à marée basse, de jour, en silence (un quart dehors), et de décider quoi faire des corps.</p><p><strong>Comment elle tourne mal.</strong> La morsure d'un noyé s'infecte toujours. Brûler les corps fait une fumée que toute la côte voit. La mer en rend d'autres à la houle suivante.</p><p><strong>Ce qu'elle change.</strong> Une marine redevient un port sûr pour quelques semaines.</p><p><strong>Ce qu'on en garde.</strong> Un passage par la mer avec les Barques, qui vaut la route des Laves.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Une dizaine de noyés sur la plage et dans la passe, lents, lourds d'eau.</li><li><strong>Exagérée</strong> (1 sur 4) : On a dit cinquante ; il y en a quatre, mais une barque s'est échouée au milieu d'eux.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 3 jours</em></p><ul><li><strong>Cran 1.</strong> Les Barques mouillent plus au sud, et la pêche baisse.</li><li><strong>Cran 2.</strong> Les noyés remontent la ravine vers le bourg.</li><li><strong>Cran 3.</strong> La houle suivante en rend d'autres.</li></ul><h2>Les issues</h2><ul><li><strong>La plage nettoyée, les corps enterrés.</strong> Un jour de plus à creuser sous les filaos, en silence ; les Barques s'en souviennent. <em>Effets : réputation +2 (Les Barques du Sud).</em></li><li><strong>Les corps brûlés.</strong> Plus vite ; mais toute la côte voit la fumée. <em>Effets : réputation +2 (Les Barques du Sud) ; visibilité +2.</em></li><li><strong>Laisser la mer faire.</strong> On attend que la houle les reprenne. Les Barques passent au large de Saint-Leu, et ne s'arrêtent plus. <em>Effets : réputation −1 (Les Barques du Sud).</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>Le patron Grondin, qui ne discute pas : « Pas devant Saint-Leu. Pas tant que la mer rend. »</li><li>« Marée basse, plein jour, pas un mot. Ils entendent même sous l'eau. »</li><li>Le livre de l'île, rumeur deux : « La mer les rend : les noyés reviennent avec la houle. »</li></ul><p><strong>Ce qui en reste.</strong> Des tombes au haut de la plage, sous les filaos, ou une tache noire de feu sur le sable.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-noyes-de-la-passe"
+        }
+      }
+    },
+    {
+      "_id": "sOYGExHYKXJoujX9",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.sOYGExHYKXJoujX9",
+      "name": "8. Le vieux chemin pavé (Le littoral et les routes)",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> La route du Littoral.<br><strong>Lieux.</strong> Le lazaret de la Grande Chaloupe.<br><strong>Qui.</strong> La Garnison du Quai · Le Dispensaire du Sud.<br><strong>Front de l'autorité provisoire.</strong><br><strong>Quand elle naît.</strong> Pendant l'effondrement, le silence et l'après ; quand le front de l'autorité provisoire atteint le cran 1.</p><p><strong>Comment on l'apprend.</strong> Une soignante veut rejoindre le Sud sans passer par le contrôle de la Garnison où, dit-elle, « celui qui se dit médecin ne repart pas ».</p><p><strong>Ce qu'elle demande.</strong> De la conduire par le vieux chemin pavé, au-dessus de la falaise, de nuit ou par temps couvert (deux quarts de marche), en passant devant le lazaret.</p><p><strong>Comment elle tourne mal.</strong> La livrer à la Garnison rapporte du carburant, et fait rougir. La Garnison a peut-être raison de dire qu'elle sauverait plus de monde au Port. Le chemin est raide, glissant, et le lazaret n'est pas vide.</p><p><strong>Ce qu'elle change.</strong> Le Dispensaire gagne une soignante, ou la Garnison une réquisitionnée.</p><p><strong>Ce qu'on en garde.</strong> La connaissance du chemin (on passe la route du Littoral sans le contrôle), et une dette de l'un des deux camps.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Elle est infirmière, et la Garnison réquisitionne bien les soignants.</li><li><strong>Exagérée</strong> (1 sur 4) : Elle est aide-soignante ; la Garnison l'aurait gardée, logée, nourrie, et fait travailler, sans plus.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 2 jours</em></p><ul><li><strong>Cran 1.</strong> Elle cherche quelqu'un d'autre pour la conduire.</li><li><strong>Cran 2.</strong> Elle tente le chemin seule.</li><li><strong>Cran 3.</strong> La Garnison la trouve sur la route.</li></ul><h2>Les issues</h2><ul><li><strong>Arrivée au Sud.</strong> Elle arrive au Dispensaire ; le groupe connaît le chemin. <em>Effets : réputation +2 (Le Dispensaire du Sud) ; réputation −1 (La Garnison du Quai) ; acte « aider » pour ceux qui ont choisi ; une route s'ouvre (au MJ).</em></li><li><strong>Livrée à la Garnison.</strong> On la conduit au poste de la Grande Chaloupe ; on repart avec du carburant. <em>Effets : réputation +2 (La Garnison du Quai) ; réputation −2 (Le Dispensaire du Sud) ; acte « trahir » pour ceux qui ont choisi ; +4 carburant.</em></li><li><strong>Refuser de l'emmener.</strong> Elle part seule. On apprendra la suite par le Ladi Lafé, ou jamais. <em>Effets : rien de plus que ce qui se raconte.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Celui qui se dit médecin, au contrôle, ne repart pas. On le loge, on le nourrit, on le garde. »</li><li>Une femme au marché, à voix basse : « Il y a le chemin des anciens, au-dessus de la falaise. Les pavés sont encore là. »</li><li>La radio de la Garnison : « Tout personnel de santé est prié de se présenter au poste de la Grande Chaloupe. »</li></ul><p><strong>Ce qui en reste.</strong> Des pavés remis en place sur le chemin, une corde nouée à un passage ; au Dispensaire, une soignante de plus, ou un poste vide.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-vieux-chemin-pave"
+        }
+      }
+    },
+    {
+      "_id": "7qLKdZ7az0uGPGZs",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.7qLKdZ7az0uGPGZs",
+      "name": "9. Le viaduc (Le littoral et les routes)",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Grande affaire (des semaines)</em><br><strong>Où.</strong> Saint-Paul et la côte Ouest · Saint-Leu et l'Étang-Salé.<br><strong>Qui.</strong> Les Ferrailleurs.<br><strong>Quand elle naît.</strong> Pendant le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Les Ferrailleurs offrent une part à qui les aidera à « ouvrir la route d'en haut » : la route des Tamarins, bouchée d'épaves sur ses viaducs.</p><p><strong>Ce qu'elle demande.</strong> De dégager une voie entre les épaves d'un viaduc, voiture après voiture (des jours de chantier, à plusieurs de préférence) : siphonner, pousser dans le vide (un grand fracas à chaque fois), ou laisser en chicane.</p><p><strong>Comment elle tourne mal.</strong> Chaque voiture est une boîte à surprise : un Livide resté attaché à sa ceinture, des gens qui ne sont jamais sortis. Le bruit amène la horde. Une route ouverte sert aussi aux Sans-Lune et aux convois de la Garnison.</p><p><strong>Ce qu'elle change.</strong> L'Ouest et le Sud se rejoignent en charrette ou à vélo en une journée : une vraie modification de la carte (le MJ ouvre la route).</p><p><strong>Ce qu'on en garde.</strong> Des pièces, un droit de passage chez les Ferrailleurs, et la responsabilité de ce qui passera par là.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Trois viaducs bouchés ; le plus long demande une semaine à six.</li><li><strong>Un piège</strong> (1 sur 4) : Les Ferrailleurs veulent surtout que le fracas se fasse loin de leur casse : la horde qu'il attire, c'est le groupe qui l'aura sur le dos.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 14 jours</em></p><ul><li><strong>Cran 1.</strong> Les Ferrailleurs commencent seuls, lentement.</li><li><strong>Cran 2.</strong> Une horde s'installe sous le viaduc, attirée par leur bruit.</li><li><strong>Cran 3.</strong> Ils abandonnent ; la route reste fermée.</li></ul><h2>Les issues</h2><ul><li><strong>La route ouverte.</strong> Les épaves sont au fond de la ravine ; on passe en charrette, en camion. <em>Effets : réputation +2 (Les Ferrailleurs) ; +4 pièces ; +2 carburant ; une route s'ouvre (au MJ).</em></li><li><strong>En chicane.</strong> Une voie étroite, gardée : on passe à pied et à vélo, pas les convois. <em>Effets : réputation +1 (Les Ferrailleurs) ; une route s'ouvre (au MJ).</em></li><li><strong>La horde.</strong> Le fracas amène une horde qui reste sous le viaduc ; le chantier s'arrête. <em>Effets : une horde approche (au MJ).</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>Gros Mani : « Une part pour chaque bras. Et la route, après, elle est à tout le monde. Enfin, à nous d'abord. »</li><li>« Sur le viaduc, il y a encore des gens dans les voitures. Faut pas regarder dedans. »</li><li>Une affiche à la casse de la Rivière des Galets : « ON CHERCHE DES BRAS, ROUTE D'EN HAUT ».</li></ul><p><strong>Ce qui en reste.</strong> Un trou dans le parapet et des carcasses au fond de la ravine ; des traces de vélo, puis de charrette, puis de camion.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-viaduc"
+        }
+      }
+    },
+    {
+      "_id": "pG4GS7v86QmD4gpW",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.pG4GS7v86QmD4gpW",
+      "name": "10. Une seule lampe (Les fêtes)",
+      "type": "text",
+      "sort": 1100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> partout, ou là où se trouve le groupe.<br><strong>Quand elle naît.</strong> À l'approche de « Dipavali, la fête des lumières ».</p><p><strong>Comment on l'apprend.</strong> Une famille malbare du camp, ou des voisins, dit qu'il lui faudrait de l'huile et une mèche pour une lampe, une seule.</p><p><strong>Ce qu'elle demande.</strong> De l'huile (à trouver, à presser, à troquer : une part au cours) et une mèche ; puis de décider, tous ensemble, si on l'allume dehors.</p><p><strong>Comment elle tourne mal.</strong> Quelqu'un au camp grince que « <em>zot i fé servis</em> » (ils font leur cérémonie, sous-entendu : leur sorcellerie). Chaque flamme attire. Une lampe allumée en cachette ne réunit personne.</p><p><strong>Ce qu'elle change.</strong> Le moral de tout l'abri, et le regard des uns sur les autres : celui qui grinçait vient voir la lampe.</p><p><strong>Ce qu'on en garde.</strong> Rien qui se porte. C'est l'affaire qui dit ce que les fêtes font ici.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (1 sur 1) : Il n'y a rien à découvrir : une famille veut une lampe.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 3 jours</em></p><ul><li><strong>Cran 1.</strong> La famille cherche de l'huile seule.</li><li><strong>Cran 2.</strong> Le jour passe ; on allume une bougie à la place, sans rien dire.</li></ul><h2>Les issues</h2><ul><li><strong>La lampe allumée dehors.</strong> Le groupe fête Dipavali : tout le camp vient voir, même celui qui grinçait. <em>Effets : un préjugé perd un cran ; le groupe fête « Dipavali, la fête des lumières » (son gain et son coût).</em></li><li><strong>La lampe cachée.</strong> Allumée derrière une tôle : la famille prie seule, le reste du camp dort. <em>Effets : rien de plus que ce qui se raconte.</em></li><li><strong>Pas de lampe.</strong> Le groupe refuse : trop de risques. La famille ne dit rien, et s'en souvient. <em>Effets : entente −1.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Une lampe. Une seule. Un peu d'huile, une mèche. On la met derrière la tôle, personne ne la verra. »</li><li>« <em>Zot i fé servis</em>, là-bas. » Celui qui le dit n'est jamais allé voir.</li><li>Un enfant du camp demande pourquoi on allume une lampe quand il fait noir partout.</li></ul><p><strong>Ce qui en reste.</strong> Une petite lampe de terre noircie, rangée avec soin ; quelqu'un qui ne dit plus « servis » de la même façon.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "une-seule-lampe"
+        }
+      }
+    },
+    {
+      "_id": "BuP7iLCsDJXoGkBC",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.BuP7iLCsDJXoGkBC",
+      "name": "11. Le kabar du 20 désanm (Les fêtes)",
+      "type": "text",
+      "sort": 1200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> partout, ou là où se trouve le groupe.<br><strong>Quand elle naît.</strong> En décembre ; à l'approche de « Le 20 décembre, fête de la liberté ».</p><p><strong>Comment on l'apprend.</strong> Dès le début de décembre, quelqu'un demande qui sait encore tendre une peau sur un rouleur.</p><p><strong>Ce qu'elle demande.</strong> De fabriquer ou de retrouver les instruments (une peau, un fût, des graines pour le kayamb), de trouver une voix, et un endroit d'où le tambour ne trahira pas l'abri.</p><p><strong>Comment elle tourne mal.</strong> Le tambour s'entend de très loin. Le jouer sous terre ou pendant un orage change tout. Le taire blesse ceux qui savent ce qu'on fête.</p><p><strong>Ce qu'elle change.</strong> Le moral, l'autorité de celui qui a tranché, et ce que les voisins savent de l'emplacement de l'abri.</p><p><strong>Ce qu'on en garde.</strong> Un instrument, et le premier maloya joué par des survivants.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (1 sur 1) : Il n'y a rien à découvrir : il y a un choix.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 7 jours</em></p><ul><li><strong>Cran 1.</strong> Le rouleur n'a toujours pas de peau.</li><li><strong>Cran 2.</strong> Le 20 décembre passe en silence ; quelqu'un fredonne quand même.</li></ul><h2>Les issues</h2><ul><li><strong>Le kabar dehors.</strong> Le groupe fête le 20 décembre, tambour compris. <em>Effets : le groupe fête « Le 20 décembre, fête de la liberté » (son gain et son coût).</em></li><li><strong>Sous terre, ou sous l'orage.</strong> Le kabar se tient, et le tambour se perd dans la roche ou le tonnerre (au MJ de dire ce qui porte encore). <em>Effets : le groupe fête « Le 20 décembre, fête de la liberté » (son gain et son coût).</em></li><li><strong>Se taire.</strong> Le chef décide de ne pas jouer. Ceux qui savent ce qu'on fête le prennent mal. <em>Effets : entente −1.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Qui sait encore tendre une peau sur un rouleur ? Mon père savait. »</li><li>« Le 20 <em>désanm</em>, on joue. Même si c'est la fin du monde. Surtout si c'est la fin du monde. »</li><li>« Un tambour, ça s'entend à trois ravines. Tu veux qu'ils viennent danser, les Livides ? »</li></ul><p><strong>Ce qui en reste.</strong> Un rouleur pendu au mur, sa peau tendue ; une date gravée sur le fût.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-kabar-du-20-desanm"
+        }
+      }
+    },
+    {
+      "_id": "tJ0usUD0OEzgFJra",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.tJ0usUD0OEzgFJra",
+      "name": "12. Le vœu (Les fêtes)",
+      "type": "text",
+      "sort": 1300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> L'Est : Saint-André, Saint-Benoît, Sainte-Rose.<br><strong>Quand elle naît.</strong> À l'approche de « Le Cavadee ».</p><p><strong>Comment on l'apprend.</strong> Un survivant, du groupe ou d'ailleurs, veut tenir un vœu : retrouver quelqu'un, atteindre un lieu.</p><p><strong>Ce qu'elle demande.</strong> Dix jours de carême (le vœu du Cavadee), puis une marche à découvert jusqu'à un temple de l'Est, en groupe si l'on veut l'accompagner.</p><p><strong>Comment elle tourne mal.</strong> Celui qu'on cherche est mort, ou Livide, ou ne veut pas être retrouvé. Rompre le carême ne punit de rien, mais le vœu ne soutient plus.</p><p><strong>Ce qu'elle change.</strong> Un moral qui tient tant que le vœu est tenu, et un lieu de culte rouvert.</p><p><strong>Ce qu'on en garde.</strong> La réponse, quelle qu'elle soit. C'est une affaire qui peut finir par un deuil.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (2 sur 5) : Celui qu'on cherche est vivant, quelque part sur la route du temple.</li><li><strong>Périmée</strong> (2 sur 5) : Il était vivant il y a un mois ; il est parti depuis, ou il est mort.</li><li><strong>Fausse</strong> (1 sur 5) : Il est mort le jour zéro ; on ne le saura qu'en arrivant.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 10 jours</em></p><ul><li><strong>Cran 1.</strong> Le carême fatigue ; le vœu tient.</li><li><strong>Cran 2.</strong> La saison passe, la route se ferme.</li><li><strong>Cran 3.</strong> Le vœu reste en suspens, et pèse.</li></ul><h2>Les issues</h2><ul><li><strong>Le vœu tenu.</strong> On arrive au temple ; on retrouve, ou l'on sait. <em>Effets : le groupe fête « Le Cavadee » (son gain et son coût) ; vœu tenu.</em></li><li><strong>Le vœu rompu.</strong> Le carême cède, ou la route. Personne ne reproche rien ; le vœu ne soutient plus. <em>Effets : vœu rompu.</em></li><li><strong>La réponse, et le deuil.</strong> Ce qu'on trouve est une tombe, ou un Livide qu'on reconnaît. Le vœu est tenu ; le reste se porte. <em>Effets : moral −1 à chacun ; vœu tenu.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« J'ai promis. Dix jours sans viande, puis le temple. Si elle est vivante, elle y sera. »</li><li>« Un vœu, ça ne se rompt pas pour une horde. Ça se rompt pour rien, ou pas du tout. »</li><li>Sous la pierre d'un oratoire : un prénom, une date, et « je viens ».</li></ul><p><strong>Ce qui en reste.</strong> Un temple où brûle de nouveau une lampe ; une tombe, peut-être, au bout d'une route.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-voeu"
+        }
+      }
+    },
+    {
+      "_id": "IeqVxTe6fy4XrRkx",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.IeqVxTe6fy4XrRkx",
+      "name": "13. Le jour qu'il est (Les fêtes)",
+      "type": "text",
+      "sort": 1400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> Mafate · Cilaos · Salazie.<br><strong>Qui.</strong> Les Familles des Îlets.<br><strong>Quand elle naît.</strong> En décembre ; quand la date se perd.</p><p><strong>Comment on l'apprend.</strong> En arrivant quelque part où l'on se dispute sur la date : les uns veulent fêter Noël demain, les autres dans quatre jours.</p><p><strong>Ce qu'elle demande.</strong> De donner le jour qu'on croit, calendrier à l'appui si on en a un, ou de lire la lune et les signes du paysage avec eux.</p><p><strong>Comment elle tourne mal.</strong> On peut se tromper de bonne foi, ou mentir. Un faux jour se propage d'îlet en îlet par les sifflets, et revient un mois plus tard dans la bouche d'un inconnu.</p><p><strong>Ce qu'elle change.</strong> Une communauté retrouve le compte des jours, ou le perd pour de bon.</p><p><strong>Ce qu'on en garde.</strong> Une réputation de quelqu'un qui sait, ou qui a menti sur la seule chose que personne ne peut vérifier.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (1 sur 2) : Les uns ont raison : ils ont gardé un calendrier coché chaque soir.</li><li><strong>Fausse</strong> (1 sur 2) : Personne n'a raison : les deux comptes ont dérivé, de deux jours chacun, dans les deux sens.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 4 jours</em></p><ul><li><strong>Cran 1.</strong> La dispute s'aigrit.</li><li><strong>Cran 2.</strong> On fête Noël deux fois, ou pas du tout.</li></ul><h2>Les issues</h2><ul><li><strong>Le bon jour, de bonne foi.</strong> On retrouve la date ensemble ; l'îlet s'en souviendra. <em>Effets : réputation +1 (Les Familles des Îlets) ; renom +1.</em></li><li><strong>Un faux jour, de bonne foi.</strong> On s'est trompé, sans le savoir ; le faux jour court. <em>Effets : le Ladi Lafé s'en empare.</em></li><li><strong>Un faux jour, exprès.</strong> On a menti, pour une raison ou pour rien ; le Ladi Lafé finira par le dire. <em>Effets : acte « mentir » pour ceux qui ont choisi ; le Ladi Lafé s'en empare.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Noël, c'est demain. J'ai coché chaque soir. » « Tu as coché deux fois le soir de la pluie, oui. »</li><li>Trois coups de sifflet, puis deux : l'îlet d'à côté donne sa date. Personne ne sait d'où il la tient.</li><li>« Demande à la lune. Elle, elle ne ment pas. Elle ne dit pas tout, c'est tout. »</li></ul><p><strong>Ce qui en reste.</strong> Un calendrier coché à la porte de l'école de l'îlet ; une date fausse qui court encore.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-jour-qu-il-est"
+        }
+      }
+    },
+    {
+      "_id": "ygULbslb1BdMeGwc",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.ygULbslb1BdMeGwc",
+      "name": "14. Le service dans la nuit (La religion et les préjugés)",
+      "type": "text",
+      "sort": 1500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> L'Est : Saint-André, Saint-Benoît, Sainte-Rose · Saint-Joseph et le Sud sauvage · Saint-Louis et Saint-Pierre.<br><strong>Quand elle naît.</strong> Pendant l'effondrement, le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Au camp, quelqu'un dit qu'on fait « de la sorcellerie » chez les voisins, la nuit, avec du feu.</p><p><strong>Ce qu'elle demande.</strong> D'aller voir, ou de laisser dire.</p><p><strong>Comment elle tourne mal.</strong> C'est toujours autre chose que ce qu'on a dit. Le danger vient de ceux qui y vont armés, et du feu, qui, lui, se voit vraiment de loin.</p><p><strong>Ce qu'elle change.</strong> Deux abris se parlent, ou se ferment. Celui qui a colporté rougit.</p><p><strong>Ce qu'on en garde.</strong> Un voisinage. Le jeu ne donne jamais raison à la rumeur.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Fausse</strong> (1 sur 1) : Une veillée pour un mort, une prière pour un malade, ou un repas : jamais ce qu'on a dit. Le MJ choisit ; la rumeur est toujours fausse.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 3 jours</em></p><ul><li><strong>Cran 1.</strong> La rumeur grossit : on parle de poules noires.</li><li><strong>Cran 2.</strong> Des gens du camp veulent y aller « voir », armés.</li><li><strong>Cran 3.</strong> Le voisinage se ferme : plus de troc, plus de passage.</li></ul><h2>Les issues</h2><ul><li><strong>Aller voir, les mains vides.</strong> On est reçu ; on partage le repas ou la veillée, et l'on revient le dire. <em>Effets : la rumeur est démentie ; un préjugé perd un cran.</em></li><li><strong>Y aller armés.</strong> Une porte enfoncée, un feu renversé, des gens qui n'avaient rien fait. <em>Effets : acte « attaquer » pour ceux qui ont choisi ; le Ladi Lafé s'en empare.</em></li><li><strong>Laisser dire.</strong> La rumeur reste, et le chemin entre les deux abris se referme. <em>Effets : le Ladi Lafé s'en empare.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Chez les voisins, la nuit, ils font du feu et ils chantent des choses. <em>Zot i fé servis.</em> Moi, je dis rien. »</li><li>« J'ai vu une poule noire. » Personne d'autre ne l'a vue.</li><li>Une vieille du camp : « <em>Kosa zot i rakont ? Na in malad lasou.</em> » (Qu'est-ce que vous racontez ? Il y a un malade, là-bas.)</li></ul><p><strong>Ce qui en reste.</strong> Un chemin entre deux abris qui se rouvre, ou une barrière de plus ; le nom du colporteur, que tout le monde finit par savoir.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-service-dans-la-nuit"
+        }
+      }
+    },
+    {
+      "_id": "o0R6Fe95jGYWzpZ3",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.o0R6Fe95jGYWzpZ3",
+      "name": "15. Les derniers arrivés (La religion et les préjugés)",
+      "type": "text",
+      "sort": 1600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> Saint-Denis.<br><strong>Lieux.</strong> Le dernier étage d'une barre du Chaudron.<br><strong>Qui.</strong> Les Sans-Lune.<br><strong>Quand elle naît.</strong> Pendant la panique, l'effondrement et le silence.</p><p><strong>Comment on l'apprend.</strong> C'est la rumeur numéro quatre du livre de l'île : on accuse une famille comorienne du Chaudron d'avoir vidé l'hypermarché du quartier.</p><p><strong>Ce qu'elle demande.</strong> De recouper : des traces de camion sur le parking, des marques à la bombe, un témoin sur un toit du Chaudron.</p><p><strong>Comment elle tourne mal.</strong> Pendant qu'on vérifie, d'autres ont déjà décidé. Répéter la rumeur est le plus facile.</p><p><strong>Ce qu'elle change.</strong> Une famille est chassée ou gardée ; les vrais auteurs sont connus, ou non.</p><p><strong>Ce qu'on en garde.</strong> Un pas vers le bleu ou vers le rouge, et la leçon que le Ladi Lafé court plus vite que les faits.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Fausse</strong> (1 sur 1) : Ceux qui ont vidé l'hypermarché étaient des Sans-Lune, en camion, le visage noirci de suie ; on retrouve le camion plus loin. La famille n'y est pour rien.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 2 jours</em></p><ul><li><strong>Cran 1.</strong> On parle d'aller « leur demander ».</li><li><strong>Cran 2.</strong> La famille est chassée de sa cage d'escalier.</li><li><strong>Cran 3.</strong> Elle a disparu ; personne ne sait où.</li></ul><h2>Les issues</h2><ul><li><strong>La preuve apportée.</strong> Les traces et le témoin disent qui c'était, devant tout le monde. <em>Effets : acte « aider » pour ceux qui ont choisi ; la rumeur est démentie ; un préjugé perd un cran.</em></li><li><strong>La famille accueillie.</strong> Chassée de son immeuble, elle trouve une place à l'abri. <em>Effets : acte « accueillir » pour ceux qui ont choisi ; quelqu'un rejoint le groupe.</em></li><li><strong>La famille chassée.</strong> Personne n'a vérifié à temps, ou le groupe a aidé à la chasser. <em>Effets : acte « exclure » pour ceux qui ont choisi.</em></li><li><strong>La rumeur répétée.</strong> Le groupe la répète à son tour : c'est le plus facile. <em>Effets : acte « colporter » pour ceux qui ont choisi ; le Ladi Lafé s'en empare.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« C'est les Comoriens du Chaudron. Tout le monde le sait. » Celui qui le dit n'a rien vu.</li><li>Un garçon, depuis un toit : « Moi, j'ai vu un camion. Blanc. Ils avaient de la suie sur la figure. »</li><li>Le livre de l'île, rumeur quatre : « Faux. Mais la rumeur court plus vite qu'eux. »</li></ul><p><strong>Ce qui en reste.</strong> Une porte de cage d'escalier repeinte, ou murée ; un camion blanc retrouvé vide sur la RN2.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "les-derniers-arrives"
+        }
+      }
+    },
+    {
+      "_id": "YKFWkAEkl9MF6RaH",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.YKFWkAEkl9MF6RaH",
+      "name": "16. Rendre à la lave (La religion et les préjugés)",
+      "type": "text",
+      "sort": 1700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Grande affaire (des semaines)</em><br><strong>Où.</strong> L'Est : Saint-André, Saint-Benoît, Sainte-Rose.<br><strong>Lieux.</strong> L'église Notre-Dame-des-Laves.<br><strong>Qui.</strong> Les Pèlerins de la Lave · Le Dispensaire du Sud.<br><strong>Front du remède.</strong><br><strong>Quand elle naît.</strong> Pendant le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> On dit que les Pèlerins nourrissent et soignent sans rien demander. On dit aussi, plus bas, qu'ils « rendent les mordus à la lave ». C'est la rumeur numéro huit du livre de l'île.</p><p><strong>Ce qu'elle demande.</strong> D'y vivre un moment pour savoir (quelques jours à Sainte-Rose, à travailler, à prier ou non : personne n'y est forcé), puis de choisir : se taire, parler, ou faire sortir quelqu'un.</p><p><strong>Comment elle tourne mal.</strong> Les deux choses sont vraies le même jour. Frère Expédit laisse prier tout le monde, et croit ce qu'il croit : les mordus qui viennent à eux sont veillés, puis accompagnés, à la fin, vers les coulées, et l'on ne les revoit pas. Certains y vont en paix ; aux autres, on ne demande pas. L'ironie y est plus dangereuse qu'une arme.</p><p><strong>Ce qu'elle change.</strong> Le front du remède, si le Dispensaire l'apprend : la docteure cherche des infectés vivants. L'accueil des Pèlerins, pour tous ceux qui viennent après.</p><p><strong>Ce qu'on en garde.</strong> Un lieu où changer de religion, où rien n'est imposé, et un doute.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Les Pèlerins soignent, nourrissent, et accompagnent les mordus vers les coulées avant qu'ils se relèvent. Rien ne se voit : on le comprend à ce qui manque le matin.</li><li><strong>Exagérée</strong> (1 sur 4) : Ils n'accompagnent que ceux qui le demandent ; la rumeur a fait le reste.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 10 jours</em></p><ul><li><strong>Cran 1.</strong> Un mordu de plus arrive à Sainte-Rose, avec les siens.</li><li><strong>Cran 2.</strong> Le Dispensaire entend la rumeur : le front du remède peut avancer.</li><li><strong>Cran 3.</strong> Les Pèlerins ferment leur porte aux curieux.</li></ul><h2>Les issues</h2><ul><li><strong>Se taire.</strong> On sait, et l'on n'en dit rien ; les Pèlerins continuent de nourrir qui vient. <em>Effets : réputation +1 (Les Pèlerins de la Lave).</em></li><li><strong>Le dire au Dispensaire.</strong> La docteure veut comprendre ; elle enverra quelqu'un à Sainte-Rose. <em>Effets : réputation +1 (Le Dispensaire du Sud) ; réputation −2 (Les Pèlerins de la Lave) ; front du remède +1.</em></li><li><strong>Faire sortir quelqu'un.</strong> Un mordu qui ne veut pas aller aux coulées demande à partir. On l'emmène, et l'on porte avec lui ce qui vient ensuite. <em>Effets : réputation −1 (Les Pèlerins de la Lave) ; acte « aider » pour ceux qui ont choisi.</em></li><li><strong>Le dire partout.</strong> Le Ladi Lafé s'en empare, et les gens cessent de venir à Sainte-Rose, malades compris. <em>Effets : réputation −2 (Les Pèlerins de la Lave) ; le Ladi Lafé s'en empare.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Les Pèlerins ? Ils t'ouvrent, ils te nourrissent, ils te demandent rien. Rien du tout. »</li><li>Plus bas : « Et les mordus, tu sais ce qu'ils en font ? Ils les rendent à la lave. »</li><li>Frère Expédit, doucement : « Ici, personne ne se relève. Nous y veillons. »</li></ul><p><strong>Ce qui en reste.</strong> Une natte roulée au bout d'une rangée ; un sentier usé qui monte vers les coulées, que personne ne prend de jour.</p><p><strong>Le ton.</strong> Rien n'est montré : ni la coulée, ni ce qui s'y passe. Le malaise vient de ce qu'on comprend (une natte vide le matin, un chant qui s'arrête), jamais de ce qu'on voit. Aucun Pèlerin n'est un monstre ni un saint ; la foi n'a aucun effet, ni bon ni mauvais. Aucun enfant n'est en jeu dans cette affaire.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "rendre-a-la-lave"
+        }
+      }
+    },
+    {
+      "_id": "ogp0ECN2pTPI18pd",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.ogp0ECN2pTPI18pd",
+      "name": "17. L'alambic du Tévelave (Les savoirs)",
+      "type": "text",
+      "sort": 1800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> Les Hauts de l'Ouest.<br><strong>Lieux.</strong> La ferme et l'alambic à géranium du Tévelave.<br><strong>Qui.</strong> Les Ferrailleurs.<br><strong>Quand elle naît.</strong> Pendant l'effondrement, le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Les Ferrailleurs cherchent « quelqu'un qui sache encore cuire le géranium », pour en tirer autre chose que du parfum.</p><p><strong>Ce qu'elle demande.</strong> Du bois de chauffe, une semaine de temps, et l'accord du vieux distillateur, qui n'enseigne qu'en travaillant à côté de lui.</p><p><strong>Comment elle tourne mal.</strong> Il meurt avant d'avoir tout montré, et le savoir se perd. La fumée de l'alambic se voit de loin. Les Ferrailleurs vendent ce que vous avez appris au suivant.</p><p><strong>Ce qu'elle change.</strong> L'alcool comme carburant maison existe dans la région.</p><p><strong>Ce qu'on en garde.</strong> Le savoir de l'alambic (« Moteurs de fortune » : l'alcool de canne et ce qui roule avec), de ceux qui valent cher.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Le vieux est vivant, et prêt à montrer à qui travaille.</li><li><strong>Périmée</strong> (1 sur 4) : Le vieux est mort il y a dix jours ; son cahier est dans la case, à moitié brûlé.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 10 jours</em></p><ul><li><strong>Cran 1.</strong> Le vieux s'affaiblit.</li><li><strong>Cran 2.</strong> Les Ferrailleurs trouvent quelqu'un d'autre.</li><li><strong>Cran 3.</strong> Le vieux meurt ; l'alambic rouille.</li></ul><h2>Les issues</h2><ul><li><strong>Appris en travaillant.</strong> Une semaine à côté de lui, à la chaleur du foyer ; on repart en sachant. <em>Effets : réputation +1 (Les Ferrailleurs) ; savoir « Moteurs de fortune ».</em></li><li><strong>Gardé pour soi.</strong> On apprend, et l'on n'en dit rien aux Ferrailleurs. <em>Effets : réputation −1 (Les Ferrailleurs) ; savoir « Moteurs de fortune ».</em></li><li><strong>Le savoir perdu.</strong> Il est mort, le cahier est brûlé : il reste un alambic de cuivre, à démonter. <em>Effets : +2 pièces.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Cuire le géranium. Pas pour le parfum, hein. Pour ce qui brûle. »</li><li>Le vieux : « Je montre en faisant. Celui qui veut que je raconte, il repart avec rien. »</li><li>Une fumée blanche, un matin, au-dessus du Tévelave : quelqu'un a rallumé l'alambic.</li></ul><p><strong>Ce qui en reste.</strong> Un alambic de cuivre qui fume de nouveau, ou qui rouille ; dans un cahier, des temps et des températures écrits d'une main qui tremble.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "l-alambic-du-tevelave"
+        }
+      }
+    },
+    {
+      "_id": "LNEgTM5NMc7DKXwr",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.LNEgTM5NMc7DKXwr",
+      "name": "18. Zerbaz (Les savoirs)",
+      "type": "text",
+      "sort": 1900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> La Plaine des Palmistes et Bélouve · Les Hauts de l'Ouest · Salazie.<br><strong>Quand elle naît.</strong> Pendant l'effondrement, le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Une gramoune donne le nom d'une plante contre la fièvre, et l'étage de la forêt où elle pousse.</p><p><strong>Ce qu'elle demande.</strong> De monter la chercher au bon endroit et à la bonne saison, de la reconnaître, et de la préparer comme elle a dit (une tisane).</p><p><strong>Comment elle tourne mal.</strong> Une recette circule fausse : une plante voisine, une dose doublée. La tisane soulage et ne guérit pas tout ; elle ne fait rien contre le Gris.</p><p><strong>Ce qu'elle change.</strong> Un abri sait soigner une fièvre de plus, et reconnaître ce qu'il a.</p><p><strong>Ce qu'on en garde.</strong> Une page de cahier que d'autres voudront copier (le savoir « Zerbaz et tisanes »).</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : La plante pousse où elle a dit, et soulage les fièvres.</li><li><strong>Fausse</strong> (1 sur 4) : La recette a été recopiée de travers : la plante voisine ne fait rien, ou rend malade.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 14 jours</em></p><ul><li><strong>Cran 1.</strong> La saison de la plante passe.</li><li><strong>Cran 2.</strong> La gramoune oublie le nom, ou s'en va.</li></ul><h2>Les issues</h2><ul><li><strong>La plante trouvée et apprise.</strong> On la reconnaît, on la cueille, on la prépare. <em>Effets : +3 plantes ; savoir « Zerbaz et tisanes ».</em></li><li><strong>La mauvaise plante.</strong> On a cueilli la voisine ; un malade le paie (au MJ de dire comment). <em>Effets : rien de plus que ce qui se raconte.</em></li><li><strong>La page donnée.</strong> On recopie la page pour un autre abri. <em>Effets : acte « partager » pour ceux qui ont choisi ; renom +1.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Pour la fièvre, il y a une feuille. Pas celle d'en bas : celle d'en haut, sous les tamarins. Et pas trop. »</li><li>« Ma grand-mère disait : la plante te soigne si tu la cueilles le matin. » Personne ne sait si c'est vrai.</li><li>Une page recopiée, passée de main en main, avec une dose barrée et réécrite.</li></ul><p><strong>Ce qui en reste.</strong> Un sachet de feuilles sèches étiqueté à la main ; une page de cahier copiée trois fois.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "zerbaz"
+        }
+      }
+    },
+    {
+      "_id": "doUpypGGtb9HAgVv",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.doUpypGGtb9HAgVv",
+      "name": "19. La petite centrale de Langevin (Les savoirs)",
+      "type": "text",
+      "sort": 2000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Grande affaire (des semaines)</em><br><strong>Où.</strong> Saint-Joseph et le Sud sauvage.<br><strong>Lieux.</strong> La petite centrale de Langevin.<br><strong>Qui.</strong> Les Barques du Sud.<br><strong>Quand elle naît.</strong> En mai, juin, juillet, août, septembre, octobre et novembre ; pendant le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Par un électricien, ou par un journal trouvé sur un mort : au fond de la ravine, la vieille centrale de Langevin garde de quoi apprendre la pico-hydro.</p><p><strong>Ce qu'elle demande.</strong> D'y descendre à la saison sèche seulement, avec de la corde (le matériel de canyon aide), et de passer ce qui garde le lieu.</p><p><strong>Comment elle tourne mal.</strong> Quelqu'un garde l'endroit : un Livide qu'on a connu, peut-être, resté là où il travaillait. La crue remonte vite si l'on se trompe de jour. Ce qu'on trouve n'est pas forcément ce qu'on voulait.</p><p><strong>Ce qu'elle change.</strong> Un abri du Sud a du courant jour et nuit, sans bruit.</p><p><strong>Ce qu'on en garde.</strong> Le plan de la pico-hydro, et la raison de revenir : il reste des pièces.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Les cahiers de l'exploitant sont là, au sec, avec les schémas.</li><li><strong>Périmée</strong> (1 sur 4) : Quelqu'un est passé avant : il reste des pièces, pas les cahiers.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 30 jours</em></p><ul><li><strong>Cran 1.</strong> La saison des pluies approche : la ravine se ferme.</li><li><strong>Cran 2.</strong> La centrale est pillée par d'autres.</li></ul><h2>Les issues</h2><ul><li><strong>Les cahiers.</strong> On remonte avec les schémas et quelques pièces. <em>Effets : +3 pièces ; plan « Pico-hydro sur rivière ».</em></li><li><strong>Des pièces seulement.</strong> Les cahiers sont partis ; les turbines de rechange sont là. <em>Effets : +4 pièces.</em></li><li><strong>La crue.</strong> On s'est trompé de jour : la ravine monte, et l'on remonte sans rien. <em>Effets : rien de plus que ce qui se raconte.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>Un électricien du Sud : « La petite centrale, au fond ? Tout est dedans. Les plans, les turbines de rechange. Si tu descends. »</li><li>Dans un journal trouvé sur un corps : « Langevin. Saison sèche. Corde. Ne pas y aller seul. »</li><li>« Quand la ravine chante, tu remontes. Tu discutes pas. »</li></ul><p><strong>Ce qui en reste.</strong> Une corde à demeure dans la ravine ; plus tard, une lampe qui brille toute la nuit dans un abri du Sud.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "la-petite-centrale-de-langevin"
+        }
+      }
+    },
+    {
+      "_id": "YMw6MEs4baj71jg6",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.YMw6MEs4baj71jg6",
+      "name": "20. Celui qu'on a refusé (Le sens moral)",
+      "type": "text",
+      "sort": 2100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Affaire (quelques jours)</em><br><strong>Où.</strong> partout, ou là où se trouve le groupe.<br><strong>Quand elle naît.</strong> Après un refus à la porte.</p><p><strong>Comment on l'apprend.</strong> Il revient. On l'avait refusé parce qu'il n'y avait plus de place ; il a lu la liste de ce qui manque, à la porte.</p><p><strong>Ce qu'elle demande.</strong> De décider une seconde fois, devant tout le monde (un vote, si l'abri vote), maintenant qu'il apporte ce qui manque.</p><p><strong>Comment elle tourne mal.</strong> Prendre ce qu'il apporte et le refuser encore : le groupe rougit, et lui sait ce qu'il y a derrière la porte. L'accueillir alors que le vote disait non : l'autorité du chef baisse.</p><p><strong>Ce qu'elle change.</strong> Un membre de plus, ou quelqu'un, dehors, qui sait ce qu'il y a derrière la porte.</p><p><strong>Ce qu'on en garde.</strong> Un enfant de l'abri a tout vu.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Il apporte vraiment ce qui manque, et ne demande qu'une place.</li><li><strong>Un piège</strong> (1 sur 4) : Une bande l'envoie : elle veut savoir ce que l'abri a, et combien il est.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 1 jour</em></p><ul><li><strong>Cran 1.</strong> Il attend à la porte, un jour.</li><li><strong>Cran 2.</strong> Il repart vers un autre abri, avec ce qu'il sait du vôtre.</li></ul><h2>Les issues</h2><ul><li><strong>Accueilli.</strong> La porte s'ouvre, la deuxième fois. <em>Effets : acte « accueillir » pour ceux qui ont choisi ; quelqu'un rejoint le groupe.</em></li><li><strong>Refusé encore.</strong> Il n'y a toujours pas de place. <em>Effets : acte « exclure » pour ceux qui ont choisi.</em></li><li><strong>Ce qu'il apporte pris, lui refusé.</strong> On garde ce qu'il apporte, et l'on ferme la porte. <em>Effets : acte « trahir » pour ceux qui ont choisi.</em></li><li><strong>Accueilli contre le vote.</strong> Le chef ouvre quand même. <em>Effets : acte « accueillir » pour ceux qui ont choisi ; autorité du chef −1 ; quelqu'un rejoint le groupe.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>« Vous m'avez dit qu'il n'y avait pas de place. J'ai vu la liste. J'ai ce qui vous manque. »</li><li>Un enfant, tout bas : « C'est le monsieur de l'autre fois. »</li><li>Le Ladi Lafé, plus tard : « Cet abri-là, il prend, et il ferme la porte. » Ou bien : « Cet abri-là, il a ouvert deux fois. »</li></ul><p><strong>Ce qui en reste.</strong> Un nom de plus parmi les membres, ou une silhouette qui s'éloigne ; ce que l'enfant en retient (l'enfant témoin, §14).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "celui-qu-on-a-refuse"
+        }
+      }
+    },
+    {
+      "_id": "MIdT6MCn7X8kyhIL",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.MIdT6MCn7X8kyhIL",
+      "name": "21. La liste du Comptable (Le sens moral)",
+      "type": "text",
+      "sort": 2200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Grande affaire (des semaines)</em><br><strong>Où.</strong> Saint-Denis · Sainte-Marie et l'aéroport.<br><strong>Qui.</strong> Les Sans-Lune · La Garnison du Quai.<br><strong>Front du Comptable.</strong><br><strong>Quand elle naît.</strong> Pendant le silence et l'après ; quand le front du Comptable atteint le cran 1.</p><p><strong>Comment on l'apprend.</strong> Un jeune des Sans-Lune fait savoir, sous la pierre d'un oratoire rouge, qu'il veut partir, et qu'il sait où est le cahier du Comptable.</p><p><strong>Ce qu'elle demande.</strong> De le faire sortir, de voler le cahier, de le recopier, ou de le rendre contre une lune de paix.</p><p><strong>Comment elle tourne mal.</strong> C'est un piège une fois sur quatre. Et avoir la liste, c'est savoir ce que doit chaque quartier, et pouvoir le réclamer à sa place.</p><p><strong>Ce qu'elle change.</strong> Le front du Comptable recule, ou change seulement de main.</p><p><strong>Ce qu'on en garde.</strong> La tentation. C'est l'affaire qui montre comment on devient le suivant.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Le garçon veut vraiment partir ; le cahier est dans une boutique murée du centre de Saint-Denis.</li><li><strong>Un piège</strong> (1 sur 4) : Le Comptable l'a envoyé : il veut savoir qui, dans le Nord, ose lui prendre quelque chose.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 5 jours</em></p><ul><li><strong>Cran 1.</strong> Le garçon attend à l'oratoire, de plus en plus inquiet.</li><li><strong>Cran 2.</strong> On le soupçonne ; il ne vient plus.</li><li><strong>Cran 3.</strong> Le tribut monte dans tout le Nord : le front du Comptable avance.</li></ul><h2>Les issues</h2><ul><li><strong>Le garçon sorti.</strong> Il quitte la bande, et rejoint le groupe ou part plus loin. <em>Effets : réputation −2 (Les Sans-Lune) ; acte « aider » pour ceux qui ont choisi ; quelqu'un rejoint le groupe.</em></li><li><strong>Le cahier détruit.</strong> Brûlé ou noyé : les dettes du Nord n'ont plus d'écrit. <em>Effets : réputation −3 (Les Sans-Lune) ; front du Comptable −1.</em></li><li><strong>Rendu contre une lune de paix.</strong> Le Comptable reprend son cahier ; le groupe ne paie rien pendant un mois. <em>Effets : réputation +1 (Les Sans-Lune).</em></li><li><strong>Réclamer à sa place.</strong> On garde la liste, et l'on va réclamer ce que les quartiers doivent. <em>Effets : acte « attaquer » pour ceux qui ont choisi ; +6 nourriture ; +2 carburant ; le Ladi Lafé s'en empare.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>Sous la pierre d'un oratoire rouge : « Je veux partir. Je sais où est le cahier. Jeudi, même heure. »</li><li>« Le Comptable, il oublie rien. Il a tout écrit. Ce que tu dois, ce que ton père devait. »</li><li>Sur une porte de Sainte-Marie, trois traits et un rond à la bombe : ici, on a déjà payé.</li></ul><p><strong>Ce qui en reste.</strong> Des portes marquées qu'on repeint, ou de nouvelles marques ; un cahier brûlé, ou recopié, qui circule.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "la-liste-du-comptable"
+        }
+      }
+    },
+    {
+      "_id": "mj38MUqulOZHKMMs",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.mj38MUqulOZHKMMs",
+      "name": "22. Le convoi du lait (À plusieurs, et sur toute une campagne)",
+      "type": "text",
+      "sort": 2300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Grande affaire (des semaines)</em><br><strong>Où.</strong> Le Tampon et la Plaine des Cafres · Saint-Louis et Saint-Pierre.<br><strong>Lieux.</strong> Une ferme laitière de la Plaine des Cafres · Le grand hôpital du Sud.<br><strong>Qui.</strong> La Coopérative des Plaines · Le Dispensaire du Sud · La Garnison du Quai.<br><strong>Front de l'autorité provisoire.</strong><br><strong>Quand elle naît.</strong> En mai, juin, juillet, août, septembre et octobre ; pendant le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> La Coopérative cherche des gens pour descendre le lait et le fromage au Dispensaire, en charrette à bœufs, par la route des Plaines.</p><p><strong>Ce qu'elle demande.</strong> Au moins deux rôles tenus en même temps : mener les bêtes, lentes et silencieuses, et ouvrir la route devant. Seul, c'est possible, et très long.</p><p><strong>Comment elle tourne mal.</strong> Un convoi de la Garnison monte prendre le même lait. Au petit matin, la route des Plaines est pleine de Livides figés par le froid, entre lesquels il faut passer avant le soleil.</p><p><strong>Ce qu'elle change.</strong> L'hôpital tient un mois de plus ; la Coopérative et le Dispensaire deviennent alliés, ou la Garnison se sert.</p><p><strong>Ce qu'on en garde.</strong> Des soins promis au Dispensaire, et un chemin éprouvé entre les Hauts et le Sud.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Vraie</strong> (3 sur 4) : Le lait est là, la charrette aussi ; le Dispensaire attend.</li><li><strong>Exagérée</strong> (1 sur 4) : Le Dispensaire attend surtout les bœufs : il voudrait garder la charrette pour ses navettes.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 3 jours</em></p><ul><li><strong>Cran 1.</strong> Le lait tourne ; on en fait du fromage.</li><li><strong>Cran 2.</strong> La Garnison apprend qu'il y a du lait.</li><li><strong>Cran 3.</strong> Le convoi de la Garnison monte : le front de l'autorité provisoire avance.</li></ul><h2>Les issues</h2><ul><li><strong>Le convoi livré.</strong> Le lait arrive à l'hôpital ; la docteure promet des soins à qui l'a descendu. <em>Effets : réputation +2 (La Coopérative des Plaines) ; réputation +2 (Le Dispensaire du Sud) ; +2 médicaments.</em></li><li><strong>La Garnison se sert.</strong> Le convoi armé arrive le premier. <em>Effets : front de l'autorité provisoire +1.</em></li><li><strong>Le lait partagé.</strong> On négocie sur la route : moitié pour l'hôpital, moitié pour le Port. <em>Effets : réputation +1 (La Garnison du Quai) ; réputation +1 (La Coopérative des Plaines) ; réputation +1 (Le Dispensaire du Sud).</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>Mémé Lucette : « Le lait, il descend. Avec vous ou sans vous. Mais sans vous, il descend pas loin. »</li><li>« À l'aube, sur la route des Plaines, ils sont plantés là, gelés, comme des piquets. Tu passes entre. Tu respires pas. »</li><li>La radio de la Garnison : « Les denrées des Hauts sont réquisitionnées pour la population du Port. »</li></ul><p><strong>Ce qui en reste.</strong> Des traces de roues ferrées entre des silhouettes immobiles ; au Dispensaire, des bidons vides rangés, à rendre.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-convoi-du-lait"
+        }
+      }
+    },
+    {
+      "_id": "bpQJxIHdZBojkI4q",
+      "_key": "!journal.pages!xHdVNDStmVyRBXKC.bpQJxIHdZBojkI4q",
+      "name": "23. Le cargo (À plusieurs, et sur toute une campagne)",
+      "type": "text",
+      "sort": 2400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Front (toute la campagne)</em><br><strong>Où.</strong> Le Port et La Possession.<br><strong>Lieux.</strong> Un palangrier à quai, darse de pêche.<br><strong>Qui.</strong> La Garnison du Quai.<br><strong>Front de l'autorité provisoire.</strong><br><strong>Quand elle naît.</strong> Pendant la panique, l'effondrement, le silence et l'après.</p><p><strong>Comment on l'apprend.</strong> Dès les premiers jours, à la radio : la Garnison annonce un cargo pour les survivants recensés, avec une date. Puis une autre.</p><p><strong>Ce qu'elle demande.</strong> Rien, d'abord. Puis de choisir : y croire et se faire recenser, tenir sa communauté à l'écart, ou chercher la preuve au poste radio du port.</p><p><strong>Comment elle tourne mal.</strong> Ceux qui y vont avec leurs papiers restent : logés, nourris, réquisitionnés. La date glisse pendant toute la campagne.</p><p><strong>Ce qu'elle change.</strong> Selon le cours de la campagne, le cargo vient, ne vient pas, ou vient pour autre chose que prévu.</p><p><strong>Ce qu'on en garde.</strong> La seule nouvelle possible du reste du monde, et elle arrive à la toute fin.</p><h2>La vérité (au MJ seul)</h2><ul><li><strong>Fausse</strong> (2 sur 3) : Il n'y a pas de cargo : la commandante y croit à moitié, et la date tient les gens tranquilles.</li><li><strong>Vraie</strong> (1 sur 3) : Un cargo existe, quelque part, et parle à la radio du port une nuit sur dix. Il viendra, mais pas pour tout le monde.</li></ul><h2>Si personne ne s'en occupe</h2><p><em>un cran tous les 30 jours</em></p><ul><li><strong>Cran 1.</strong> Une nouvelle date à la radio.</li><li><strong>Cran 2.</strong> Des familles descendent au Port avec leurs papiers.</li><li><strong>Cran 3.</strong> Le recensement devient obligatoire sur la route du Littoral.</li><li><strong>Cran 4.</strong> La date glisse encore ; certains n'y croient plus, d'autres plus que jamais.</li></ul><h2>Les issues</h2><ul><li><strong>Se faire recenser.</strong> Une part du groupe descend au Port avec ses papiers, et y reste. <em>Effets : réputation +2 (La Garnison du Quai) ; quelqu'un quitte le groupe.</em></li><li><strong>Tenir sa communauté à l'écart.</strong> Personne ne descend ; la Garnison le note. <em>Effets : réputation −1 (La Garnison du Quai).</em></li><li><strong>La preuve, au poste radio du port.</strong> Une nuit, on entend ce que dit vraiment la radio du port : le MJ dit ce qu'on entend, selon la vérité tirée. <em>Effets : rien de plus que ce qui se raconte.</em></li><li><strong>Le cargo vient.</strong> À la toute fin de la campagne, et pour ce qu'en décide le MJ. <em>Effets : rien de plus que ce qui se raconte.</em></li></ul><h2>Comment on l'entend dire</h2><ul><li>La radio de la Garnison : « … évacuation par cargo jeudi, apportez vos papiers… » La voix se répète depuis trois semaines.</li><li>« Mon frère est descendu au Port avec ses papiers. Il est logé. Il travaille. Il ne remonte pas. »</li><li>Le livre de l'île, rumeur trois : « Personne ne l'a vu. »</li></ul><p><strong>Ce qui en reste.</strong> Une file de gens à la grille du port, chaque matin ; des papiers qu'on garde au sec, au cas où.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-cargo"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "_id": "QwBYnUyvaU5GZx2X",
+  "_key": "!tables!QwBYnUyvaU5GZx2X",
+  "name": "Raconter sans quête : un autre exemplaire du cahier",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'un autre exemplaire du livre de l'île a de différent.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recit-cahier-commun",
+      "recit": "cahier-commun"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "lvoWasVxElTcRb3c",
+      "_key": "!tables.results!QwBYnUyvaU5GZx2X.lvoWasVxElTcRb3c",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un exemplaire de Cilaos : la rumeur un est rayée, et à côté, d'une autre main : « Ils montent très bien. Vu au Pavillon le 3. »</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "S6BE0tjJeIFVK3bR",
+      "_key": "!tables.results!QwBYnUyvaU5GZx2X.S6BE0tjJeIFVK3bR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un exemplaire de l'Est : une page de plus, sur les crues, avec la hauteur de l'eau à chaque radier.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "q5NwW5hZlaLp7NBO",
+      "_key": "!tables.results!QwBYnUyvaU5GZx2X.q5NwW5hZlaLp7NBO",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un exemplaire du Port : la page sur la Garnison arrachée proprement, au cutter.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "uexhQmr4BxFJGOLg",
+      "_key": "!tables.results!QwBYnUyvaU5GZx2X.uexhQmr4BxFJGOLg",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un exemplaire de Mafate, recopié à la main sans une faute ; chaque rumeur y porte le nom de l'îlet qui l'a dite.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LDDHWA6o9snlCzpD",
+      "_key": "!tables.results!QwBYnUyvaU5GZx2X.LDDHWA6o9snlCzpD",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un exemplaire trouvé sur un mort : la page blanche, à la fin, n'est plus blanche ; trois lignes au crayon, que la pluie a rendues illisibles.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CeOLwOxDvGxL6oDj",
+      "_key": "!tables.results!QwBYnUyvaU5GZx2X.CeOLwOxDvGxL6oDj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un exemplaire des Hauts : une onzième rumeur, numérotée : « Les vieux Livides ne craignent pas le feu, ils craignent le soleil. » Personne n'a signé.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QOhAPj5KavJT4Jy0",
+      "_key": "!tables.results!QwBYnUyvaU5GZx2X.QOhAPj5KavJT4Jy0",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un exemplaire de Saint-Pierre : des noms de soignants, avec les jours où ils sont au Dispensaire.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oMT8Zexc7WUh1jX6",
+      "_key": "!tables.results!QwBYnUyvaU5GZx2X.oMT8Zexc7WUh1jX6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un exemplaire du Sud sauvage : le lexique est deux fois plus long, et la moitié des mots sont des noms de plantes.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

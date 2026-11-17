@@ -1,0 +1,148 @@
+{
+  "_id": "l3OhwGiaMBAr72bc",
+  "_key": "!tables!l3OhwGiaMBAr72bc",
+  "name": "Raconter sans quête : le journal d'un mort",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Une entrée du carnet trouvé sur un corps ; entre crochets, ce qui est vrai (pour le MJ).</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recit-journal-d-un-mort",
+      "recit": "journal-d-un-mort"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "rnKFBFFgtFmnYTas",
+      "_key": "!tables.results!l3OhwGiaMBAr72bc.rnKFBFFgtFmnYTas",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Le pêcheur.</strong> « Jour 6. La mer est bonne, la terre ne l'est plus. J'ai mis le bateau au mouillage devant Saint-Leu. On y dort bien. » [Vrai, jusqu'à la houle.]</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "eRzORmAT96QXtjTk",
+      "_key": "!tables.results!l3OhwGiaMBAr72bc.eRzORmAT96QXtjTk",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>L'infirmière.</strong> « On manque de tout, sauf de malades. Le Dispensaire prend tout le monde. Si je meurs, rendez ce carnet à la docteure. » [Vrai.]</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "53bLWo3nhzvzPTbv",
+      "_key": "!tables.results!l3OhwGiaMBAr72bc.53bLWo3nhzvzPTbv",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>L'élève de terminale.</strong> « Maman dit qu'on remonte chez tatie à Cilaos demain. J'ai pris mon cahier de maths, je sais pas pourquoi. » [Vrai ; le car jaune ne passe plus le tunnel.]</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QmA1CCJ0kBOjHq9F",
+      "_key": "!tables.results!l3OhwGiaMBAr72bc.QmA1CCJ0kBOjHq9F",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Le chauffeur de car.</strong> « Le car jaune est arrêté dans le tunnel. On a laissé les sacs. Je reviendrai les chercher. » [Vrai : les sacs y sont toujours.]</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DJL8T70S7jDrY0BA",
+      "_key": "!tables.results!l3OhwGiaMBAr72bc.DJL8T70S7jDrY0BA",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Le vigile.</strong> « L'hypermarché a été vidé par les Comoriens du Chaudron, je les ai vus. » [Faux : il n'a vu qu'un camion. Le préjugé était le sien.]</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SOcyafA7hcUvFc3U",
+      "_key": "!tables.results!l3OhwGiaMBAr72bc.SOcyafA7hcUvFc3U",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>La tisaneuse.</strong> « Pour la fièvre, la feuille d'en haut, trois fois par jour. » [À moitié vrai : la dose a été doublée en recopiant.]</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YhSSKPEVXRCUp1T4",
+      "_key": "!tables.results!l3OhwGiaMBAr72bc.YhSSKPEVXRCUp1T4",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>Le gendarme.</strong> « Ordre d'évacuer vers le Port. Cargo jeudi. » [Faux : il n'y a pas eu de cargo jeudi.]</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "NZPEMRCDbT7AijaG",
+      "_key": "!tables.results!l3OhwGiaMBAr72bc.NZPEMRCDbT7AijaG",
+      "type": "text",
+      "name": "",
+      "description": "<p><strong>L'électricien.</strong> « La petite centrale de Langevin tient toujours. Les cahiers de l'exploitant sont dans le bureau, en haut. » [Vrai, si personne n'est passé avant.]</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

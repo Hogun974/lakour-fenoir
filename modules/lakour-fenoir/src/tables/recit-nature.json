@@ -1,0 +1,148 @@
+{
+  "_id": "YFN6W0JMRjG55CSU",
+  "_key": "!tables!YFN6W0JMRjG55CSU",
+  "name": "Raconter sans quête : la nature",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce que dit le paysage, à qui sait le lire.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "recit-nature",
+      "recit": "nature"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "WoT7puNijJD7HbOF",
+      "_key": "!tables.results!YFN6W0JMRjG55CSU.WoT7puNijJD7HbOF",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les flamboyants rouges, partout : c'est la fin de l'année.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "S496kiiFGBguVgzQ",
+      "_key": "!tables.results!YFN6W0JMRjG55CSU.S496kiiFGBguVgzQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des letchis qui pourrissent sous l'arbre : personne n'est passé depuis des semaines.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "LlE6N1xsOXC9Qpck",
+      "_key": "!tables.results!YFN6W0JMRjG55CSU.LlE6N1xsOXC9Qpck",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un champ de canne jamais coupé, plus haut qu'un homme : on ne voit rien venir, et rien ne vous voit.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wxyFDt2Yuy2NxjPo",
+      "_key": "!tables.results!YFN6W0JMRjG55CSU.wxyFDt2Yuy2NxjPo",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des chiens en meute qui traversent la route sans un regard : ils ont mangé ailleurs.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "aR8xeIsWTFwMcVRv",
+      "_key": "!tables.results!YFN6W0JMRjG55CSU.aR8xeIsWTFwMcVRv",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les grenouilles se taisent d'un coup, puis les insectes : quelque chose de nombreux passe tout près.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jpKG3bAbaAIaMubR",
+      "_key": "!tables.results!YFN6W0JMRjG55CSU.jpKG3bAbaAIaMubR",
+      "type": "text",
+      "name": "",
+      "description": "<p>De l'herbe dans les fissures de la quatre-voies, et des cabris qui y broutent.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gkMDBMxJ1TKDLRJr",
+      "_key": "!tables.results!YFN6W0JMRjG55CSU.gkMDBMxJ1TKDLRJr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des oiseaux posés en rangs serrés sur les fils électriques : le courant ne passe plus nulle part.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ulSBkmjFOhJ7XqkE",
+      "_key": "!tables.results!YFN6W0JMRjG55CSU.ulSBkmjFOhJ7XqkE",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une odeur sucrée et lourde que le vent apporte d'un quartier : on n'y va pas aujourd'hui.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

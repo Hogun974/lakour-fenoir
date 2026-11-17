@@ -27,7 +27,8 @@ export const RELIGIONS = [
   religion({ cle: "hindouisme-tamoul", nom: "Hindouisme tamoul", poids: 1.5,
     affinites: { "enfance-tamoule-de-saint-andre": 6, "enfant-de-planteur-de-l-est": 1.8, "enfance-a-maurice": 2, "enfance-zarab-de-saint-pierre": 0.1, "enfance-a-mayotte": 0.1, "enfance-comorienne-du-chaudron": 0.1, "enfance-zoreil": 0.2 },
     // Le Nouvel An tamoul et la marche sur le feu : fêtes du lot « fetes », rattachées à la fusion des lots.
-    fetes: ["dipavali", "cavadee", "nouvel-an-tamoul", "marche-sur-le-feu"],
+    // Pongal (moisson tamoule) : fête du lot 12, hors du socle du moteur.
+    fetes: ["dipavali", "cavadee", "nouvel-an-tamoul", "marche-sur-le-feu", "pongal"],
     observance: { besoin: "calme", texte: "la lampe allumée le soir, une offrande de fleurs ou de riz, le carême avant les fêtes" },
     description: `La religion des Malbars, venue avec les engagés du Sud de l'Inde : les temples aux couleurs vives, les fêtes de la lumière, le feu sur lequel on marche, la Cavadee et ses piercings, le carême qu'on tient avant. Ceux qui ne la connaissent pas parlent de « services » et de sorcellerie ; ceux qui la pratiquent allument une lampe chaque soir et ne demandent à personne de comprendre.` }),
   religion({ cle: "islam", nom: "Islam", poids: 0.6,

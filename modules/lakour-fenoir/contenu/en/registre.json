@@ -1,4 +1,2135 @@
 {
+  "registre/affaires/celui-qu-on-a-refuse": {
+    "_nom": "celui-qu-on-a-refuse",
+    "titre": {
+      "fr": "Celui qu'on a refusé",
+      "en": "The one we turned away"
+    },
+    "apprendre": {
+      "fr": "Il revient. On l'avait refusé parce qu'il n'y avait plus de place ; il a lu la liste de ce qui manque, à la porte.",
+      "en": "He comes back. He was turned away because there was no more room; he read the list of what is missing, at the door."
+    },
+    "demande": {
+      "fr": "De décider une seconde fois, devant tout le monde (un vote, si l'abri vote), maintenant qu'il apporte ce qui manque.",
+      "en": "To decide a second time, in front of everyone (a vote, if the shelter votes), now that he brings what is missing."
+    },
+    "malTourner": {
+      "fr": "Prendre ce qu'il apporte et le refuser encore : le groupe rougit, et lui sait ce qu'il y a derrière la porte. L'accueillir alors que le vote disait non : l'autorité du chef baisse.",
+      "en": "Taking what he brings and turning him away again: the group turns red, and he knows what lies behind the door. Taking him in when the vote said no: the leader's authority falls."
+    },
+    "change": {
+      "fr": "Un membre de plus, ou quelqu'un, dehors, qui sait ce qu'il y a derrière la porte.",
+      "en": "One more member, or someone outside who knows what lies behind the door."
+    },
+    "garde": {
+      "fr": "Un enfant de l'abri a tout vu.",
+      "en": "A child of the shelter saw everything."
+    },
+    "verites.vraie.texte": {
+      "fr": "Il apporte vraiment ce qui manque, et ne demande qu'une place.",
+      "en": "He really does bring what is missing, and only asks for a place."
+    },
+    "verites.piege.texte": {
+      "fr": "Une bande l'envoie : elle veut savoir ce que l'abri a, et combien il est.",
+      "en": "A gang sends him: it wants to know what the shelter has, and how many are inside."
+    },
+    "pente.crans.0": {
+      "fr": "Il attend à la porte, un jour.",
+      "en": "He waits at the door, for a day."
+    },
+    "pente.crans.1": {
+      "fr": "Il repart vers un autre abri, avec ce qu'il sait du vôtre.",
+      "en": "He leaves for another shelter, with what he knows of yours."
+    },
+    "issues.0.titre": {
+      "fr": "Accueilli",
+      "en": "Taken in"
+    },
+    "issues.0.texte": {
+      "fr": "La porte s'ouvre, la deuxième fois.",
+      "en": "The door opens, the second time."
+    },
+    "issues.1.titre": {
+      "fr": "Refusé encore",
+      "en": "Turned away again"
+    },
+    "issues.1.texte": {
+      "fr": "Il n'y a toujours pas de place.",
+      "en": "There is still no room."
+    },
+    "issues.2.titre": {
+      "fr": "Ce qu'il apporte pris, lui refusé",
+      "en": "What he brings taken, he turned away"
+    },
+    "issues.2.texte": {
+      "fr": "On garde ce qu'il apporte, et l'on ferme la porte.",
+      "en": "You keep what he brings, and close the door."
+    },
+    "issues.3.titre": {
+      "fr": "Accueilli contre le vote",
+      "en": "Taken in against the vote"
+    },
+    "issues.3.texte": {
+      "fr": "Le chef ouvre quand même.",
+      "en": "The leader opens the door anyway."
+    },
+    "voix.0": {
+      "fr": "« Vous m'avez dit qu'il n'y avait pas de place. J'ai vu la liste. J'ai ce qui vous manque. »",
+      "en": "\"You told me there was no room. I saw the list. I've got what you're missing.\""
+    },
+    "voix.1": {
+      "fr": "Un enfant, tout bas : « C'est le monsieur de l'autre fois. »",
+      "en": "A child, very quietly: \"It's the man from last time.\""
+    },
+    "voix.2": {
+      "fr": "Le Ladi Lafé, plus tard : « Cet abri-là, il prend, et il ferme la porte. » Ou bien : « Cet abri-là, il a ouvert deux fois. »",
+      "en": "The Ladi Lafé, later: \"That shelter, it takes, and it shuts the door.\" Or else: \"That shelter, it opened twice.\""
+    },
+    "traces": {
+      "fr": "Un nom de plus parmi les membres, ou une silhouette qui s'éloigne ; ce que l'enfant en retient (l'enfant témoin, §14).",
+      "en": "One more name among the members, or a silhouette walking away; what the child takes from it (the child witness, §14)."
+    }
+  },
+  "registre/affaires/l-alambic-du-tevelave": {
+    "_nom": "l-alambic-du-tevelave",
+    "titre": {
+      "fr": "L'alambic du Tévelave",
+      "en": "The still of Le Tévelave"
+    },
+    "apprendre": {
+      "fr": "Les Ferrailleurs cherchent « quelqu'un qui sache encore cuire le géranium », pour en tirer autre chose que du parfum.",
+      "en": "The Scrappers are looking for \"someone who still knows how to cook geranium\", to get something other than perfume out of it."
+    },
+    "demande": {
+      "fr": "Du bois de chauffe, une semaine de temps, et l'accord du vieux distillateur, qui n'enseigne qu'en travaillant à côté de lui.",
+      "en": "Firewood, a week of time, and the agreement of the old distiller, who only teaches by working alongside him."
+    },
+    "malTourner": {
+      "fr": "Il meurt avant d'avoir tout montré, et le savoir se perd. La fumée de l'alambic se voit de loin. Les Ferrailleurs vendent ce que vous avez appris au suivant.",
+      "en": "He dies before showing everything, and the know-how is lost. The still's smoke can be seen from far away. The Scrappers sell what you learned to the next one."
+    },
+    "change": {
+      "fr": "L'alcool comme carburant maison existe dans la région.",
+      "en": "Alcohol as home-made fuel exists in the region."
+    },
+    "garde": {
+      "fr": "Le savoir de l'alambic (« Moteurs de fortune » : l'alcool de canne et ce qui roule avec), de ceux qui valent cher.",
+      "en": "The know-how of the still (\"Makeshift engines\": cane alcohol and what runs on it), the kind that is worth a lot."
+    },
+    "verites.vraie.texte": {
+      "fr": "Le vieux est vivant, et prêt à montrer à qui travaille.",
+      "en": "The old man is alive, and ready to show whoever works."
+    },
+    "verites.perimee.texte": {
+      "fr": "Le vieux est mort il y a dix jours ; son cahier est dans la case, à moitié brûlé.",
+      "en": "The old man died ten days ago; his notebook is in the house, half burned."
+    },
+    "pente.crans.0": {
+      "fr": "Le vieux s'affaiblit.",
+      "en": "The old man grows weaker."
+    },
+    "pente.crans.1": {
+      "fr": "Les Ferrailleurs trouvent quelqu'un d'autre.",
+      "en": "The Scrappers find someone else."
+    },
+    "pente.crans.2": {
+      "fr": "Le vieux meurt ; l'alambic rouille.",
+      "en": "The old man dies; the still rusts."
+    },
+    "issues.0.titre": {
+      "fr": "Appris en travaillant",
+      "en": "Learned by working"
+    },
+    "issues.0.texte": {
+      "fr": "Une semaine à côté de lui, à la chaleur du foyer ; on repart en sachant.",
+      "en": "A week beside him, in the heat of the fire; you leave knowing how."
+    },
+    "issues.1.titre": {
+      "fr": "Gardé pour soi",
+      "en": "Kept to yourselves"
+    },
+    "issues.1.texte": {
+      "fr": "On apprend, et l'on n'en dit rien aux Ferrailleurs.",
+      "en": "You learn, and say nothing to the Scrappers."
+    },
+    "issues.2.titre": {
+      "fr": "Le savoir perdu",
+      "en": "The know-how lost"
+    },
+    "issues.2.texte": {
+      "fr": "Il est mort, le cahier est brûlé : il reste un alambic de cuivre, à démonter.",
+      "en": "He is dead, the notebook burned: what is left is a copper still, to take apart."
+    },
+    "voix.0": {
+      "fr": "« Cuire le géranium. Pas pour le parfum, hein. Pour ce qui brûle. »",
+      "en": "\"Cooking geranium. Not for perfume, mind. For what burns.\""
+    },
+    "voix.1": {
+      "fr": "Le vieux : « Je montre en faisant. Celui qui veut que je raconte, il repart avec rien. »",
+      "en": "The old man: \"I show by doing. Whoever wants me to tell him leaves with nothing.\""
+    },
+    "voix.2": {
+      "fr": "Une fumée blanche, un matin, au-dessus du Tévelave : quelqu'un a rallumé l'alambic.",
+      "en": "White smoke, one morning, above Le Tévelave: someone has lit the still again."
+    },
+    "traces": {
+      "fr": "Un alambic de cuivre qui fume de nouveau, ou qui rouille ; dans un cahier, des temps et des températures écrits d'une main qui tremble.",
+      "en": "A copper still smoking again, or rusting; in a notebook, times and temperatures written in a trembling hand."
+    }
+  },
+  "registre/affaires/l-ilet-ou-tout-va-bien": {
+    "_nom": "l-ilet-ou-tout-va-bien",
+    "titre": {
+      "fr": "L'îlet où tout va bien",
+      "en": "The îlet where all is well"
+    },
+    "apprendre": {
+      "fr": "Par recoupement. Personne ne le dit en entier : des gens y sont allés et ne sont pas revenus parce qu'ils y sont bien ; d'autres disent qu'on n'en repart pas. Le livre de l'île le range parmi les mystères qu'on ne numérote pas.",
+      "en": "By piecing it together. Nobody tells the whole of it: people went there and did not come back because they are happy there; others say nobody leaves it. The island's book files it among the mysteries that are not numbered."
+    },
+    "demande": {
+      "fr": "D'y monter (deux jours de sentier depuis le col), d'y rester assez pour comprendre ce qui fait tenir l'endroit, et de décider si on en parle.",
+      "en": "To climb up there (two days of trail from the pass), to stay long enough to understand what keeps the place going, and to decide whether to talk about it."
+    },
+    "malTourner": {
+      "fr": "Ce qui le fait tenir peut être très simple, ou ne pas se dire. En parler amène du monde, et le monde le défait.",
+      "en": "What keeps it going may be very simple, or may not be spoken of. Talking about it brings people, and people undo it."
+    },
+    "change": {
+      "fr": "Un abri modèle reste secret, devient un marché, ou devient une cible.",
+      "en": "A model shelter stays secret, becomes a market, or becomes a target."
+    },
+    "garde": {
+      "fr": "Une règle de vie qu'on peut reprendre chez soi, et la question de savoir si on a bien fait de la dire.",
+      "en": "A rule of life you can take home, and the question of whether you were right to tell it."
+    },
+    "verites.vraie.texte": {
+      "fr": "Une source qui ne tarit jamais, des terrasses, des panneaux, et un accord strict : on y entre pour toujours ou pas du tout. Tout le monde y est bien, et personne n'a envie de partir.",
+      "en": "A spring that never runs dry, terraces, panels, and a strict agreement: you go in for good or not at all. Everyone is happy there, and nobody wants to leave."
+    },
+    "verites.exageree.texte": {
+      "fr": "L'îlet tient par une règle dure : qui ne travaille pas est renvoyé, les vieux comme les autres. On y est bien tant qu'on est utile.",
+      "en": "The îlet holds by a hard rule: whoever does not work is sent away, the old like the rest. You are fine there as long as you are useful."
+    },
+    "verites.piege.texte": {
+      "fr": "L'îlet tient parce qu'il ne laisse repartir personne : ceux qui montent sont désarmés, gardés et mis au travail. On n'en repart pas, en effet.",
+      "en": "The îlet holds because it lets nobody leave: those who climb up are disarmed, watched and put to work. Indeed, nobody leaves it."
+    },
+    "pente.crans.0": {
+      "fr": "On en parle un peu plus au marché.",
+      "en": "People talk about it a little more at the market."
+    },
+    "pente.crans.1": {
+      "fr": "Une famille monte s'y installer ; d'autres suivent.",
+      "en": "A family climbs up to settle there; others follow."
+    },
+    "pente.crans.2": {
+      "fr": "Trop de monde arrive : l'îlet ferme son sentier, ou s'ouvre et se défait.",
+      "en": "Too many people arrive: the îlet closes its trail, or opens up and comes apart."
+    },
+    "issues.0.titre": {
+      "fr": "Garder le secret",
+      "en": "Keeping the secret"
+    },
+    "issues.0.texte": {
+      "fr": "On en revient avec une règle qu'on reprend chez soi, et l'on n'en dit rien.",
+      "en": "You come back with a rule you take home, and you say nothing."
+    },
+    "issues.1.titre": {
+      "fr": "Le dire",
+      "en": "Telling it"
+    },
+    "issues.1.texte": {
+      "fr": "Le Ladi Lafé s'en empare ; l'îlet devient une destination, et les Familles savent qui a parlé.",
+      "en": "The Ladi Lafé seizes on it; the îlet becomes a destination, and the Families know who talked."
+    },
+    "issues.2.titre": {
+      "fr": "Y rester",
+      "en": "Staying there"
+    },
+    "issues.2.texte": {
+      "fr": "Un membre du groupe choisit d'y vivre, et ne redescend pas.",
+      "en": "One member of the group chooses to live there, and does not come back down."
+    },
+    "issues.3.titre": {
+      "fr": "Repartir sans permission",
+      "en": "Leaving without permission"
+    },
+    "issues.3.texte": {
+      "fr": "De nuit, par la crête : on sait désormais ce qu'il y a là-haut, et l'îlet sait qu'on le sait.",
+      "en": "At night, by the ridge: now you know what is up there, and the îlet knows that you know."
+    },
+    "voix.0": {
+      "fr": "« À l'îlet, là-haut, ils ont tout : l'eau, le courant, la paix. Ma cousine y est. Elle ne redescend pas. »",
+      "en": "\"At the îlet up there, they have everything: water, power, peace. My cousin is there. She doesn't come down.\""
+    },
+    "voix.1": {
+      "fr": "« On n'en revient pas, de cet îlet. Prends ça comme tu veux. »",
+      "en": "\"You don't come back from that îlet. Take it how you like.\""
+    },
+    "voix.2": {
+      "fr": "Un sifflet qui ne répond pas : l'îlet d'en face ne parle à personne.",
+      "en": "A whistle that gets no answer: the îlet across the way talks to nobody."
+    },
+    "traces": {
+      "fr": "Un sentier mieux entretenu que les autres, qui finit sur une barrière ; dans les cahiers, des noms qui ne donnent plus de nouvelles.",
+      "en": "A trail better kept than the others, ending at a barrier; in the notebooks, names that send no more news."
+    }
+  },
+  "registre/affaires/la-liste-du-comptable": {
+    "_nom": "la-liste-du-comptable",
+    "titre": {
+      "fr": "La liste du Comptable",
+      "en": "The Bookkeeper's list"
+    },
+    "apprendre": {
+      "fr": "Un jeune des Sans-Lune fait savoir, sous la pierre d'un oratoire rouge, qu'il veut partir, et qu'il sait où est le cahier du Comptable.",
+      "en": "A young Moonless lets it be known, under the stone of a red oratory, that he wants out, and that he knows where the Bookkeeper's notebook is."
+    },
+    "demande": {
+      "fr": "De le faire sortir, de voler le cahier, de le recopier, ou de le rendre contre une lune de paix.",
+      "en": "To get him out, to steal the notebook, to copy it, or to give it back in exchange for a moon of peace."
+    },
+    "malTourner": {
+      "fr": "C'est un piège une fois sur quatre. Et avoir la liste, c'est savoir ce que doit chaque quartier, et pouvoir le réclamer à sa place.",
+      "en": "It is a trap one time in four. And having the list means knowing what each neighbourhood owes, and being able to claim it in his place."
+    },
+    "change": {
+      "fr": "Le front du Comptable recule, ou change seulement de main.",
+      "en": "The Bookkeeper front falls back, or only changes hands."
+    },
+    "garde": {
+      "fr": "La tentation. C'est l'affaire qui montre comment on devient le suivant.",
+      "en": "Temptation. This is the affair that shows how you become the next one."
+    },
+    "verites.vraie.texte": {
+      "fr": "Le garçon veut vraiment partir ; le cahier est dans une boutique murée du centre de Saint-Denis.",
+      "en": "The boy really wants out; the notebook is in a walled-up shop in central Saint-Denis."
+    },
+    "verites.piege.texte": {
+      "fr": "Le Comptable l'a envoyé : il veut savoir qui, dans le Nord, ose lui prendre quelque chose.",
+      "en": "The Bookkeeper sent him: he wants to know who, in the North, dares to take something from him."
+    },
+    "pente.crans.0": {
+      "fr": "Le garçon attend à l'oratoire, de plus en plus inquiet.",
+      "en": "The boy waits at the oratory, more and more worried."
+    },
+    "pente.crans.1": {
+      "fr": "On le soupçonne ; il ne vient plus.",
+      "en": "He is suspected; he stops coming."
+    },
+    "pente.crans.2": {
+      "fr": "Le tribut monte dans tout le Nord : le front du Comptable avance.",
+      "en": "The tribute rises throughout the North: the Bookkeeper front moves forward."
+    },
+    "issues.0.titre": {
+      "fr": "Le garçon sorti",
+      "en": "The boy got out"
+    },
+    "issues.0.texte": {
+      "fr": "Il quitte la bande, et rejoint le groupe ou part plus loin.",
+      "en": "He leaves the gang, and joins the group or goes further away."
+    },
+    "issues.1.titre": {
+      "fr": "Le cahier détruit",
+      "en": "The notebook destroyed"
+    },
+    "issues.1.texte": {
+      "fr": "Brûlé ou noyé : les dettes du Nord n'ont plus d'écrit.",
+      "en": "Burned or drowned: the North's debts are no longer written down."
+    },
+    "issues.2.titre": {
+      "fr": "Rendu contre une lune de paix",
+      "en": "Returned for a moon of peace"
+    },
+    "issues.2.texte": {
+      "fr": "Le Comptable reprend son cahier ; le groupe ne paie rien pendant un mois.",
+      "en": "The Bookkeeper gets his notebook back; the group pays nothing for a month."
+    },
+    "issues.3.titre": {
+      "fr": "Réclamer à sa place",
+      "en": "Claiming in his place"
+    },
+    "issues.3.texte": {
+      "fr": "On garde la liste, et l'on va réclamer ce que les quartiers doivent.",
+      "en": "You keep the list, and go and claim what the neighbourhoods owe."
+    },
+    "voix.0": {
+      "fr": "Sous la pierre d'un oratoire rouge : « Je veux partir. Je sais où est le cahier. Jeudi, même heure. »",
+      "en": "Under the stone of a red oratory: \"I want out. I know where the notebook is. Thursday, same time.\""
+    },
+    "voix.1": {
+      "fr": "« Le Comptable, il oublie rien. Il a tout écrit. Ce que tu dois, ce que ton père devait. »",
+      "en": "\"The Bookkeeper, he forgets nothing. He wrote it all down. What you owe, what your father owed.\""
+    },
+    "voix.2": {
+      "fr": "Sur une porte de Sainte-Marie, trois traits et un rond à la bombe : ici, on a déjà payé.",
+      "en": "On a door in Sainte-Marie, three strokes and a circle in spray paint: here, they have already paid."
+    },
+    "traces": {
+      "fr": "Des portes marquées qu'on repeint, ou de nouvelles marques ; un cahier brûlé, ou recopié, qui circule.",
+      "en": "Marked doors being repainted, or new marks; a notebook burned, or copied, going around."
+    }
+  },
+  "registre/affaires/la-petite-centrale-de-langevin": {
+    "_nom": "la-petite-centrale-de-langevin",
+    "apprendre": {
+      "fr": "Par un électricien, ou par un journal trouvé sur un mort : au fond de la ravine, la vieille centrale de Langevin garde de quoi apprendre la pico-hydro.",
+      "en": "From an electrician, or from a journal found on a dead body: at the bottom of the ravine, the old Langevin power station holds what you need to learn pico-hydro."
+    },
+    "demande": {
+      "fr": "D'y descendre à la saison sèche seulement, avec de la corde (le matériel de canyon aide), et de passer ce qui garde le lieu.",
+      "en": "To go down there in the dry season only, with rope (canyoning gear helps), and to get past whatever guards the place."
+    },
+    "malTourner": {
+      "fr": "Quelqu'un garde l'endroit : un Livide qu'on a connu, peut-être, resté là où il travaillait. La crue remonte vite si l'on se trompe de jour. Ce qu'on trouve n'est pas forcément ce qu'on voulait.",
+      "en": "Someone guards the place: a Pallid you once knew, perhaps, who stayed where he used to work. The flood rises fast if you pick the wrong day. What you find is not necessarily what you wanted."
+    },
+    "change": {
+      "fr": "Un abri du Sud a du courant jour et nuit, sans bruit.",
+      "en": "A shelter in the South has power day and night, without noise."
+    },
+    "garde": {
+      "fr": "Le plan de la pico-hydro, et la raison de revenir : il reste des pièces.",
+      "en": "The pico-hydro plan, and a reason to come back: there are parts left."
+    },
+    "verites.vraie.texte": {
+      "fr": "Les cahiers de l'exploitant sont là, au sec, avec les schémas.",
+      "en": "The operator's notebooks are there, dry, with the diagrams."
+    },
+    "verites.perimee.texte": {
+      "fr": "Quelqu'un est passé avant : il reste des pièces, pas les cahiers.",
+      "en": "Someone came before: there are parts left, not the notebooks."
+    },
+    "pente.crans.0": {
+      "fr": "La saison des pluies approche : la ravine se ferme.",
+      "en": "The rainy season is coming: the ravine closes."
+    },
+    "pente.crans.1": {
+      "fr": "La centrale est pillée par d'autres.",
+      "en": "The power station is looted by others."
+    },
+    "issues.0.titre": {
+      "fr": "Les cahiers",
+      "en": "The notebooks"
+    },
+    "issues.0.texte": {
+      "fr": "On remonte avec les schémas et quelques pièces.",
+      "en": "You climb back up with the diagrams and a few parts."
+    },
+    "issues.1.titre": {
+      "fr": "Des pièces seulement",
+      "en": "Parts only"
+    },
+    "issues.1.texte": {
+      "fr": "Les cahiers sont partis ; les turbines de rechange sont là.",
+      "en": "The notebooks are gone; the spare turbines are there."
+    },
+    "issues.2.titre": {
+      "fr": "La crue",
+      "en": "The flood"
+    },
+    "issues.2.texte": {
+      "fr": "On s'est trompé de jour : la ravine monte, et l'on remonte sans rien.",
+      "en": "You picked the wrong day: the ravine rises, and you climb back with nothing."
+    },
+    "voix.0": {
+      "fr": "Un électricien du Sud : « La petite centrale, au fond ? Tout est dedans. Les plans, les turbines de rechange. Si tu descends. »",
+      "en": "An electrician from the South: \"The little power station, down at the bottom? Everything's in there. The plans, the spare turbines. If you go down.\""
+    },
+    "voix.1": {
+      "fr": "Dans un journal trouvé sur un corps : « Langevin. Saison sèche. Corde. Ne pas y aller seul. »",
+      "en": "In a journal found on a body: \"Langevin. Dry season. Rope. Don't go alone.\""
+    },
+    "voix.2": {
+      "fr": "« Quand la ravine chante, tu remontes. Tu discutes pas. »",
+      "en": "\"When the ravine sings, you climb back up. You don't argue.\""
+    },
+    "traces": {
+      "fr": "Une corde à demeure dans la ravine ; plus tard, une lampe qui brille toute la nuit dans un abri du Sud.",
+      "en": "A rope left in place in the ravine; later, a lamp shining all night in a shelter in the South."
+    }
+  },
+  "registre/affaires/la-quarantaine-du-col": {
+    "_nom": "la-quarantaine-du-col",
+    "titre": {
+      "fr": "La quarantaine du col",
+      "en": "The quarantine at the pass"
+    },
+    "apprendre": {
+      "fr": "En voulant entrer. Au relais du col des Bœufs, deux guetteurs des Familles arrêtent tout le monde : trois jours d'attente, sous leurs yeux, avec d'autres qui attendent.",
+      "en": "By trying to get in. At the Col des Bœufs relay, two lookouts of the Families stop everyone: three days of waiting, under their eyes, with others who are waiting too."
+    },
+    "demande": {
+      "fr": "D'attendre trois jours, de travailler pour sa soupe, et de regarder les autres : parmi ceux qui attendent, une femme garde ses manches longues malgré la chaleur.",
+      "en": "To wait three days, to work for your soup, and to watch the others: among those waiting, a woman keeps her long sleeves down despite the heat."
+    },
+    "malTourner": {
+      "fr": "La dénoncer peut être une erreur : une brûlure de marmite, pas une morsure. Se taire peut laisser entrer le Gris dans le cirque. Partir de nuit par le sentier fait de vous ceux qu'on ne laissera plus jamais entrer.",
+      "en": "Reporting her may be a mistake: a burn from a cooking pot, not a bite. Keeping quiet may let the Grey into the cirque. Leaving at night by the trail makes you the people who will never be let in again."
+    },
+    "change": {
+      "fr": "La confiance des Familles des Îlets, pour longtemps, dans un sens ou dans l'autre.",
+      "en": "The trust of the Families of the Îlets, for a long time, one way or the other."
+    },
+    "garde": {
+      "fr": "L'entrée de Mafate, ou une rumeur tenace sur son propre compte.",
+      "en": "The way into Mafate, or a stubborn rumour about yourself."
+    },
+    "verites.vraie.texte": {
+      "fr": "Elle a été mordue il y a deux jours, et elle espère que ce n'est rien. Le Gris suit son cours : le MJ dit le stade.",
+      "en": "She was bitten two days ago, and she hopes it is nothing. The Grey runs its course: the GM says the stage."
+    },
+    "verites.fausse.texte": {
+      "fr": "C'est une brûlure de marmite, mal soignée ; elle a honte de la cicatrice.",
+      "en": "It is a burn from a cooking pot, badly cared for; she is ashamed of the scar."
+    },
+    "pente.crans.0": {
+      "fr": "Les guetteurs comptent les jours, sans rien dire.",
+      "en": "The lookouts count the days, saying nothing."
+    },
+    "pente.crans.1": {
+      "fr": "Quelqu'un d'autre a vu les manches, et parle tout bas.",
+      "en": "Someone else has seen the sleeves, and talks in a low voice."
+    },
+    "pente.crans.2": {
+      "fr": "Le troisième jour, les guetteurs font retrousser les manches à tout le monde.",
+      "en": "On the third day, the lookouts make everyone roll up their sleeves."
+    },
+    "issues.0.titre": {
+      "fr": "La dénoncer, à raison",
+      "en": "Reporting her, rightly"
+    },
+    "issues.0.texte": {
+      "fr": "C'était une morsure : les Familles la mettent à l'écart, et laissent entrer le groupe.",
+      "en": "It was a bite: the Families set her apart, and let the group in."
+    },
+    "issues.1.titre": {
+      "fr": "La dénoncer, à tort",
+      "en": "Reporting her, wrongly"
+    },
+    "issues.1.texte": {
+      "fr": "C'était une brûlure. Elle est renvoyée quand même, et le Ladi Lafé sait qui l'a désignée.",
+      "en": "It was a burn. She is sent away all the same, and the Ladi Lafé knows who pointed at her."
+    },
+    "issues.2.titre": {
+      "fr": "Se taire",
+      "en": "Keeping quiet"
+    },
+    "issues.2.texte": {
+      "fr": "Personne ne dit rien. Si c'était une morsure et qu'on apprend que le groupe avait vu, la confiance des Familles tombe.",
+      "en": "Nobody says anything. If it was a bite and it comes out that the group had seen, the Families' trust falls."
+    },
+    "issues.3.titre": {
+      "fr": "Partir de nuit",
+      "en": "Leaving at night"
+    },
+    "issues.3.texte": {
+      "fr": "Par le sentier, sans attendre la fin : le groupe entre, et tous les îlets le savent le lendemain.",
+      "en": "By the trail, without waiting for the end: the group gets in, and every îlet knows it the next day."
+    },
+    "voix.0": {
+      "fr": "« Trois jours au col. Tout le monde. Même ceux qu'on connaît. »",
+      "en": "\"Three days at the pass. Everyone. Even people we know.\""
+    },
+    "voix.1": {
+      "fr": "Un guetteur, sans lever les yeux : « Vous avez mangé ? Alors vous travaillez. »",
+      "en": "A lookout, without looking up: \"Have you eaten? Then you work.\""
+    },
+    "voix.2": {
+      "fr": "« Celle-là, avec ses manches… *Mi di sa, mi di rien.* » (Je dis ça, je ne dis rien.)",
+      "en": "\"That one, with her sleeves… *Mi di sa, mi di rien.*\" (I'm saying it, I'm not saying anything.)"
+    },
+    "traces": {
+      "fr": "Une liste de noms au relais, avec des croix ; ce que les Familles disent de vous aux autres îlets.",
+      "en": "A list of names at the relay, with crosses; what the Families say about you to the other îlets."
+    }
+  },
+  "registre/affaires/la-treille-de-grand-ilet": {
+    "_nom": "la-treille-de-grand-ilet",
+    "titre": {
+      "fr": "La treille de Grand Îlet",
+      "en": "The Grand Îlet trellis"
+    },
+    "apprendre": {
+      "fr": "Une famille de Grand Îlet fait dire, par les Familles des Îlets, qu'elle ne peut plus monter ses treilles de chouchous seule : le fils est descendu le jour zéro et n'est pas remonté.",
+      "en": "A family from Grand Îlet sends word, through the Families of the Îlets, that it can no longer put up its chayote trellises alone: the son went down on day zero and never came back up."
+    },
+    "demande": {
+      "fr": "Des bras pendant une semaine, du fil de fer, du bambou, et de la patience : la gramoune ne montre sa façon de faire qu'à celui qui reste jusqu'au bout.",
+      "en": "Hands for a week, wire, bamboo, and patience: the gramoune only shows her way of doing it to whoever stays to the end."
+    },
+    "malTourner": {
+      "fr": "La route emportée a refermé le cirque : on n'y entre que par les cols. Un glissement de terrain menace la parcelle. Celui qui part avant la fin n'apprend rien, et laisse un affront que la famille n'oublie pas.",
+      "en": "The washed-out road has closed the cirque: you only get in by the passes. A landslide threatens the plot. Whoever leaves before the end learns nothing, and leaves behind an affront the family does not forget."
+    },
+    "change": {
+      "fr": "Le cirque nourrit un abri de plus, ou perd une ferme.",
+      "en": "The cirque feeds one more shelter, or loses a farm."
+    },
+    "garde": {
+      "fr": "La façon lontan de monter une treille (le savoir « Jardin créole »), et une famille qui n'oublie ni le service ni l'affront.",
+      "en": "The lontan way of putting up a trellis (the know-how \"Creole garden\"), and a family that forgets neither the favour nor the affront."
+    },
+    "verites.vraie.texte": {
+      "fr": "La famille a vraiment besoin de bras, et la gramoune enseignera à qui reste.",
+      "en": "The family really needs hands, and the gramoune will teach whoever stays."
+    },
+    "verites.exageree.texte": {
+      "fr": "La famille s'en sortirait seule ; elle cherche surtout des voisins pour l'hiver, et un gendre si possible.",
+      "en": "The family would manage alone; it is mostly looking for neighbours for the winter, and a son-in-law if possible."
+    },
+    "pente.crans.0": {
+      "fr": "Les lianes de chouchou courent par terre et pourrissent.",
+      "en": "The chayote vines run along the ground and rot."
+    },
+    "pente.crans.1": {
+      "fr": "La famille mange ses graines.",
+      "en": "The family eats its seeds."
+    },
+    "pente.crans.2": {
+      "fr": "Elle descend à Hell-Bourg, et la ferme retourne à la brousse.",
+      "en": "It goes down to Hell-Bourg, and the farm goes back to the bush."
+    },
+    "issues.0.titre": {
+      "fr": "Rester jusqu'au bout",
+      "en": "Staying to the end"
+    },
+    "issues.0.texte": {
+      "fr": "Sept jours de travail ; la gramoune montre sa façon, et la famille donne de sa récolte.",
+      "en": "Seven days of work; the gramoune shows her way, and the family gives part of its harvest."
+    },
+    "issues.1.titre": {
+      "fr": "Partir avant la fin",
+      "en": "Leaving before the end"
+    },
+    "issues.1.texte": {
+      "fr": "On a aidé trois jours, puis on est parti : la famille le dit à tous les îlets.",
+      "en": "You helped for three days, then left: the family tells every îlet."
+    },
+    "issues.2.titre": {
+      "fr": "Le glissement",
+      "en": "The landslide"
+    },
+    "issues.2.texte": {
+      "fr": "La pluie emporte la parcelle avant la fin. La famille n'a plus rien : l'accueillir, c'est trois bouches de plus et une gramoune qui sait.",
+      "en": "The rain carries the plot away before the end. The family has nothing left: taking them in means three more mouths and a gramoune who knows."
+    },
+    "voix.0": {
+      "fr": "« Grand Îlet cherche des bras pour les treilles. Nourris, logés, et la gramoune qui montre. »",
+      "en": "\"Grand Îlet needs hands for the trellises. Fed, housed, and the gramoune who shows you.\""
+    },
+    "voix.1": {
+      "fr": "« Elle ne montre qu'à ceux qui restent. Les autres, elle les regarde partir. »",
+      "en": "\"She only shows those who stay. The others, she watches them leave.\""
+    },
+    "voix.2": {
+      "fr": "Un sifflet, depuis le col : trois coups longs. À Salazie, cela veut dire qu'on demande de l'aide.",
+      "en": "A whistle, from the pass: three long blasts. In Salazie, that means someone is asking for help."
+    },
+    "traces": {
+      "fr": "Une treille montée à la façon d'avant, ou des lianes mortes sur des piquets ; le nom de celui qui est parti, que la famille dit encore.",
+      "en": "A trellis put up the old way, or dead vines on stakes; the name of the one who left, which the family still says."
+    }
+  },
+  "registre/affaires/le-cargo": {
+    "_nom": "le-cargo",
+    "titre": {
+      "fr": "Le cargo",
+      "en": "The cargo ship"
+    },
+    "apprendre": {
+      "fr": "Dès les premiers jours, à la radio : la Garnison annonce un cargo pour les survivants recensés, avec une date. Puis une autre.",
+      "en": "From the first days, on the radio: the Garrison announces a cargo ship for registered survivors, with a date. Then another."
+    },
+    "demande": {
+      "fr": "Rien, d'abord. Puis de choisir : y croire et se faire recenser, tenir sa communauté à l'écart, ou chercher la preuve au poste radio du port.",
+      "en": "Nothing, at first. Then to choose: believe in it and register, keep your community out of it, or look for proof at the port's radio station."
+    },
+    "malTourner": {
+      "fr": "Ceux qui y vont avec leurs papiers restent : logés, nourris, réquisitionnés. La date glisse pendant toute la campagne.",
+      "en": "Those who go with their papers stay: housed, fed, requisitioned. The date slips throughout the campaign."
+    },
+    "change": {
+      "fr": "Selon le cours de la campagne, le cargo vient, ne vient pas, ou vient pour autre chose que prévu.",
+      "en": "Depending on how the campaign goes, the ship comes, does not come, or comes for something other than planned."
+    },
+    "garde": {
+      "fr": "La seule nouvelle possible du reste du monde, et elle arrive à la toute fin.",
+      "en": "The only possible news from the rest of the world, and it arrives at the very end."
+    },
+    "verites.fausse.texte": {
+      "fr": "Il n'y a pas de cargo : la commandante y croit à moitié, et la date tient les gens tranquilles.",
+      "en": "There is no cargo ship: the commander half believes in it, and the date keeps people calm."
+    },
+    "verites.vraie.texte": {
+      "fr": "Un cargo existe, quelque part, et parle à la radio du port une nuit sur dix. Il viendra, mais pas pour tout le monde.",
+      "en": "A cargo ship exists, somewhere, and talks to the port radio one night in ten. It will come, but not for everyone."
+    },
+    "pente.crans.0": {
+      "fr": "Une nouvelle date à la radio.",
+      "en": "A new date on the radio."
+    },
+    "pente.crans.1": {
+      "fr": "Des familles descendent au Port avec leurs papiers.",
+      "en": "Families go down to Le Port with their papers."
+    },
+    "pente.crans.2": {
+      "fr": "Le recensement devient obligatoire sur la route du Littoral.",
+      "en": "Registration becomes compulsory on the Route du Littoral."
+    },
+    "pente.crans.3": {
+      "fr": "La date glisse encore ; certains n'y croient plus, d'autres plus que jamais.",
+      "en": "The date slips again; some no longer believe, others more than ever."
+    },
+    "issues.0.titre": {
+      "fr": "Se faire recenser",
+      "en": "Registering"
+    },
+    "issues.0.texte": {
+      "fr": "Une part du groupe descend au Port avec ses papiers, et y reste.",
+      "en": "Part of the group goes down to Le Port with its papers, and stays there."
+    },
+    "issues.1.titre": {
+      "fr": "Tenir sa communauté à l'écart",
+      "en": "Keeping your community out of it"
+    },
+    "issues.1.texte": {
+      "fr": "Personne ne descend ; la Garnison le note.",
+      "en": "Nobody goes down; the Garrison takes note."
+    },
+    "issues.2.titre": {
+      "fr": "La preuve, au poste radio du port",
+      "en": "The proof, at the port's radio station"
+    },
+    "issues.2.texte": {
+      "fr": "Une nuit, on entend ce que dit vraiment la radio du port : le MJ dit ce qu'on entend, selon la vérité tirée.",
+      "en": "One night, you hear what the port radio really says: the GM says what you hear, according to the truth drawn."
+    },
+    "issues.3.titre": {
+      "fr": "Le cargo vient",
+      "en": "The ship comes"
+    },
+    "issues.3.texte": {
+      "fr": "À la toute fin de la campagne, et pour ce qu'en décide le MJ.",
+      "en": "At the very end of the campaign, and for whatever the GM decides."
+    },
+    "voix.0": {
+      "fr": "La radio de la Garnison : « … évacuation par cargo jeudi, apportez vos papiers… » La voix se répète depuis trois semaines.",
+      "en": "The Garrison's radio: \"… evacuation by cargo ship Thursday, bring your papers…\" The voice has been repeating for three weeks."
+    },
+    "voix.1": {
+      "fr": "« Mon frère est descendu au Port avec ses papiers. Il est logé. Il travaille. Il ne remonte pas. »",
+      "en": "\"My brother went down to Le Port with his papers. He's housed. He works. He doesn't come back up.\""
+    },
+    "voix.2": {
+      "fr": "Le livre de l'île, rumeur trois : « Personne ne l'a vu. »",
+      "en": "The island's book, rumour three: \"Nobody has seen it.\""
+    },
+    "traces": {
+      "fr": "Une file de gens à la grille du port, chaque matin ; des papiers qu'on garde au sec, au cas où.",
+      "en": "A line of people at the port gate, every morning; papers kept dry, just in case."
+    }
+  },
+  "registre/affaires/le-convoi-du-lait": {
+    "_nom": "le-convoi-du-lait",
+    "titre": {
+      "fr": "Le convoi du lait",
+      "en": "The milk convoy"
+    },
+    "apprendre": {
+      "fr": "La Coopérative cherche des gens pour descendre le lait et le fromage au Dispensaire, en charrette à bœufs, par la route des Plaines.",
+      "en": "The Cooperative is looking for people to take the milk and cheese down to the Dispensary, by ox cart, along the Route des Plaines."
+    },
+    "demande": {
+      "fr": "Au moins deux rôles tenus en même temps : mener les bêtes, lentes et silencieuses, et ouvrir la route devant. Seul, c'est possible, et très long.",
+      "en": "At least two roles held at the same time: driving the animals, slow and silent, and opening the road ahead. Alone, it can be done, and takes very long."
+    },
+    "malTourner": {
+      "fr": "Un convoi de la Garnison monte prendre le même lait. Au petit matin, la route des Plaines est pleine de Livides figés par le froid, entre lesquels il faut passer avant le soleil.",
+      "en": "A Garrison convoy comes up to take the same milk. At dawn, the Route des Plaines is full of Pallid frozen stiff by the cold, between which you must pass before the sun."
+    },
+    "change": {
+      "fr": "L'hôpital tient un mois de plus ; la Coopérative et le Dispensaire deviennent alliés, ou la Garnison se sert.",
+      "en": "The hospital holds out one more month; the Cooperative and the Dispensary become allies, or the Garrison helps itself."
+    },
+    "garde": {
+      "fr": "Des soins promis au Dispensaire, et un chemin éprouvé entre les Hauts et le Sud.",
+      "en": "Care promised at the Dispensary, and a proven road between the Highlands and the South."
+    },
+    "verites.vraie.texte": {
+      "fr": "Le lait est là, la charrette aussi ; le Dispensaire attend.",
+      "en": "The milk is there, the cart too; the Dispensary is waiting."
+    },
+    "verites.exageree.texte": {
+      "fr": "Le Dispensaire attend surtout les bœufs : il voudrait garder la charrette pour ses navettes.",
+      "en": "The Dispensary is mostly waiting for the oxen: it would like to keep the cart for its shuttles."
+    },
+    "pente.crans.0": {
+      "fr": "Le lait tourne ; on en fait du fromage.",
+      "en": "The milk turns; it is made into cheese."
+    },
+    "pente.crans.1": {
+      "fr": "La Garnison apprend qu'il y a du lait.",
+      "en": "The Garrison learns there is milk."
+    },
+    "pente.crans.2": {
+      "fr": "Le convoi de la Garnison monte : le front de l'autorité provisoire avance.",
+      "en": "The Garrison convoy comes up: the provisional authority front moves forward."
+    },
+    "issues.0.titre": {
+      "fr": "Le convoi livré",
+      "en": "The convoy delivered"
+    },
+    "issues.0.texte": {
+      "fr": "Le lait arrive à l'hôpital ; la docteure promet des soins à qui l'a descendu.",
+      "en": "The milk reaches the hospital; the doctor promises care to whoever brought it down."
+    },
+    "issues.1.titre": {
+      "fr": "La Garnison se sert",
+      "en": "The Garrison helps itself"
+    },
+    "issues.1.texte": {
+      "fr": "Le convoi armé arrive le premier.",
+      "en": "The armed convoy arrives first."
+    },
+    "issues.2.titre": {
+      "fr": "Le lait partagé",
+      "en": "The milk shared"
+    },
+    "issues.2.texte": {
+      "fr": "On négocie sur la route : moitié pour l'hôpital, moitié pour le Port.",
+      "en": "You negotiate on the road: half for the hospital, half for Le Port."
+    },
+    "voix.0": {
+      "fr": "Mémé Lucette : « Le lait, il descend. Avec vous ou sans vous. Mais sans vous, il descend pas loin. »",
+      "en": "Mémé Lucette: \"The milk goes down. With you or without you. But without you, it doesn't get far.\""
+    },
+    "voix.1": {
+      "fr": "« À l'aube, sur la route des Plaines, ils sont plantés là, gelés, comme des piquets. Tu passes entre. Tu respires pas. »",
+      "en": "\"At dawn, on the Route des Plaines, they stand there, frozen, like fence posts. You go between. You don't breathe.\""
+    },
+    "voix.2": {
+      "fr": "La radio de la Garnison : « Les denrées des Hauts sont réquisitionnées pour la population du Port. »",
+      "en": "The Garrison's radio: \"Produce from the Highlands is requisitioned for the population of Le Port.\""
+    },
+    "traces": {
+      "fr": "Des traces de roues ferrées entre des silhouettes immobiles ; au Dispensaire, des bidons vides rangés, à rendre.",
+      "en": "Iron-rimmed wheel tracks between motionless figures; at the Dispensary, empty churns lined up, to be returned."
+    }
+  },
+  "registre/affaires/le-jour-qu-il-est": {
+    "_nom": "le-jour-qu-il-est",
+    "titre": {
+      "fr": "Le jour qu'il est",
+      "en": "What day it is"
+    },
+    "apprendre": {
+      "fr": "En arrivant quelque part où l'on se dispute sur la date : les uns veulent fêter Noël demain, les autres dans quatre jours.",
+      "en": "By arriving somewhere people are arguing about the date: some want to celebrate Christmas tomorrow, others in four days."
+    },
+    "demande": {
+      "fr": "De donner le jour qu'on croit, calendrier à l'appui si on en a un, ou de lire la lune et les signes du paysage avec eux.",
+      "en": "To give the day you believe, calendar in hand if you have one, or to read the moon and the signs of the landscape with them."
+    },
+    "malTourner": {
+      "fr": "On peut se tromper de bonne foi, ou mentir. Un faux jour se propage d'îlet en îlet par les sifflets, et revient un mois plus tard dans la bouche d'un inconnu.",
+      "en": "You can be wrong in good faith, or lie. A false day spreads from îlet to îlet by whistle, and comes back a month later in the mouth of a stranger."
+    },
+    "change": {
+      "fr": "Une communauté retrouve le compte des jours, ou le perd pour de bon.",
+      "en": "A community gets its count of days back, or loses it for good."
+    },
+    "garde": {
+      "fr": "Une réputation de quelqu'un qui sait, ou qui a menti sur la seule chose que personne ne peut vérifier.",
+      "en": "A reputation as someone who knows, or who lied about the one thing nobody can check."
+    },
+    "verites.vraie.texte": {
+      "fr": "Les uns ont raison : ils ont gardé un calendrier coché chaque soir.",
+      "en": "One side is right: they kept a calendar ticked off every evening."
+    },
+    "verites.fausse.texte": {
+      "fr": "Personne n'a raison : les deux comptes ont dérivé, de deux jours chacun, dans les deux sens.",
+      "en": "Nobody is right: both counts have drifted, by two days each, in opposite directions."
+    },
+    "pente.crans.0": {
+      "fr": "La dispute s'aigrit.",
+      "en": "The argument turns sour."
+    },
+    "pente.crans.1": {
+      "fr": "On fête Noël deux fois, ou pas du tout.",
+      "en": "Christmas is celebrated twice, or not at all."
+    },
+    "issues.0.titre": {
+      "fr": "Le bon jour, de bonne foi",
+      "en": "The right day, in good faith"
+    },
+    "issues.0.texte": {
+      "fr": "On retrouve la date ensemble ; l'îlet s'en souviendra.",
+      "en": "You find the date together; the îlet will remember it."
+    },
+    "issues.1.titre": {
+      "fr": "Un faux jour, de bonne foi",
+      "en": "A false day, in good faith"
+    },
+    "issues.1.texte": {
+      "fr": "On s'est trompé, sans le savoir ; le faux jour court.",
+      "en": "You were wrong, without knowing it; the false day spreads."
+    },
+    "issues.2.titre": {
+      "fr": "Un faux jour, exprès",
+      "en": "A false day, on purpose"
+    },
+    "issues.2.texte": {
+      "fr": "On a menti, pour une raison ou pour rien ; le Ladi Lafé finira par le dire.",
+      "en": "You lied, for a reason or for nothing; the Ladi Lafé will end up saying so."
+    },
+    "voix.0": {
+      "fr": "« Noël, c'est demain. J'ai coché chaque soir. » « Tu as coché deux fois le soir de la pluie, oui. »",
+      "en": "\"Christmas is tomorrow. I ticked every evening.\" \"You ticked twice the evening it rained, yes.\""
+    },
+    "voix.1": {
+      "fr": "Trois coups de sifflet, puis deux : l'îlet d'à côté donne sa date. Personne ne sait d'où il la tient.",
+      "en": "Three whistle blasts, then two: the next îlet gives its date. Nobody knows where it got it from."
+    },
+    "voix.2": {
+      "fr": "« Demande à la lune. Elle, elle ne ment pas. Elle ne dit pas tout, c'est tout. »",
+      "en": "\"Ask the moon. She doesn't lie. She just doesn't tell everything, that's all.\""
+    },
+    "traces": {
+      "fr": "Un calendrier coché à la porte de l'école de l'îlet ; une date fausse qui court encore.",
+      "en": "A calendar ticked off on the door of the îlet school; a false date still going around."
+    }
+  },
+  "registre/affaires/le-kabar-du-20-desanm": {
+    "_nom": "le-kabar-du-20-desanm",
+    "titre": {
+      "fr": "Le kabar du 20 désanm",
+      "en": "The kabar of 20 désanm"
+    },
+    "apprendre": {
+      "fr": "Dès le début de décembre, quelqu'un demande qui sait encore tendre une peau sur un rouleur.",
+      "en": "From the start of December, someone asks who still knows how to stretch a skin over a rouleur drum."
+    },
+    "demande": {
+      "fr": "De fabriquer ou de retrouver les instruments (une peau, un fût, des graines pour le kayamb), de trouver une voix, et un endroit d'où le tambour ne trahira pas l'abri.",
+      "en": "To make or find the instruments (a skin, a barrel, seeds for the kayamb), to find a voice, and a place from which the drum will not give the shelter away."
+    },
+    "malTourner": {
+      "fr": "Le tambour s'entend de très loin. Le jouer sous terre ou pendant un orage change tout. Le taire blesse ceux qui savent ce qu'on fête.",
+      "en": "The drum carries very far. Playing it underground or during a storm changes everything. Silencing it hurts those who know what is being celebrated."
+    },
+    "change": {
+      "fr": "Le moral, l'autorité de celui qui a tranché, et ce que les voisins savent de l'emplacement de l'abri.",
+      "en": "Morale, the authority of whoever decided, and what the neighbours know of where the shelter is."
+    },
+    "garde": {
+      "fr": "Un instrument, et le premier maloya joué par des survivants.",
+      "en": "An instrument, and the first maloya played by survivors."
+    },
+    "verites.vraie.texte": {
+      "fr": "Il n'y a rien à découvrir : il y a un choix.",
+      "en": "There is nothing to uncover: there is a choice."
+    },
+    "pente.crans.0": {
+      "fr": "Le rouleur n'a toujours pas de peau.",
+      "en": "The rouleur still has no skin."
+    },
+    "pente.crans.1": {
+      "fr": "Le 20 décembre passe en silence ; quelqu'un fredonne quand même.",
+      "en": "20 December passes in silence; someone hums all the same."
+    },
+    "issues.0.titre": {
+      "fr": "Le kabar dehors",
+      "en": "The kabar outside"
+    },
+    "issues.0.texte": {
+      "fr": "Le groupe fête le 20 décembre, tambour compris.",
+      "en": "The group celebrates 20 December, drum and all."
+    },
+    "issues.1.titre": {
+      "fr": "Sous terre, ou sous l'orage",
+      "en": "Underground, or under the storm"
+    },
+    "issues.1.texte": {
+      "fr": "Le kabar se tient, et le tambour se perd dans la roche ou le tonnerre (au MJ de dire ce qui porte encore).",
+      "en": "The kabar is held, and the drum is lost in the rock or the thunder (the GM says what still carries)."
+    },
+    "issues.2.texte": {
+      "fr": "Le chef décide de ne pas jouer. Ceux qui savent ce qu'on fête le prennent mal.",
+      "en": "The leader decides not to play. Those who know what is being celebrated take it badly."
+    },
+    "voix.0": {
+      "fr": "« Qui sait encore tendre une peau sur un rouleur ? Mon père savait. »",
+      "en": "\"Who still knows how to stretch a skin over a rouleur? My father knew.\""
+    },
+    "voix.1": {
+      "fr": "« Le 20 *désanm*, on joue. Même si c'est la fin du monde. Surtout si c'est la fin du monde. »",
+      "en": "\"On 20 *désanm* (20 December), we play. Even if it's the end of the world. Especially if it's the end of the world.\""
+    },
+    "voix.2": {
+      "fr": "« Un tambour, ça s'entend à trois ravines. Tu veux qu'ils viennent danser, les Livides ? »",
+      "en": "\"A drum, you hear it three ravines away. You want the Pallid to come and dance?\""
+    },
+    "traces": {
+      "fr": "Un rouleur pendu au mur, sa peau tendue ; une date gravée sur le fût.",
+      "en": "A rouleur hanging on the wall, its skin stretched; a date carved on the barrel."
+    }
+  },
+  "registre/affaires/le-service-dans-la-nuit": {
+    "_nom": "le-service-dans-la-nuit",
+    "titre": {
+      "fr": "Le service dans la nuit",
+      "en": "The ceremony in the night"
+    },
+    "apprendre": {
+      "fr": "Au camp, quelqu'un dit qu'on fait « de la sorcellerie » chez les voisins, la nuit, avec du feu.",
+      "en": "In the camp, someone says the neighbours are doing \"witchcraft\" at night, with fire."
+    },
+    "demande": {
+      "fr": "D'aller voir, ou de laisser dire.",
+      "en": "To go and see, or to let people talk."
+    },
+    "malTourner": {
+      "fr": "C'est toujours autre chose que ce qu'on a dit. Le danger vient de ceux qui y vont armés, et du feu, qui, lui, se voit vraiment de loin.",
+      "en": "It is always something other than what was said. The danger comes from those who go there armed, and from the fire, which really can be seen from far away."
+    },
+    "change": {
+      "fr": "Deux abris se parlent, ou se ferment. Celui qui a colporté rougit.",
+      "en": "Two shelters talk to each other, or close up. The one who spread it turns red."
+    },
+    "garde": {
+      "fr": "Un voisinage. Le jeu ne donne jamais raison à la rumeur.",
+      "en": "A neighbourhood. The game never proves the rumour right."
+    },
+    "verites.fausse.texte": {
+      "fr": "Une veillée pour un mort, une prière pour un malade, ou un repas : jamais ce qu'on a dit. Le MJ choisit ; la rumeur est toujours fausse.",
+      "en": "A wake for a dead person, a prayer for a sick one, or a meal: never what was said. The GM chooses; the rumour is always false."
+    },
+    "pente.crans.0": {
+      "fr": "La rumeur grossit : on parle de poules noires.",
+      "en": "The rumour grows: there is talk of black hens."
+    },
+    "pente.crans.1": {
+      "fr": "Des gens du camp veulent y aller « voir », armés.",
+      "en": "People in the camp want to go and \"see\", armed."
+    },
+    "pente.crans.2": {
+      "fr": "Le voisinage se ferme : plus de troc, plus de passage.",
+      "en": "The neighbourhood closes up: no more trading, no more passing through."
+    },
+    "issues.0.titre": {
+      "fr": "Aller voir, les mains vides",
+      "en": "Going to see, empty-handed"
+    },
+    "issues.0.texte": {
+      "fr": "On est reçu ; on partage le repas ou la veillée, et l'on revient le dire.",
+      "en": "You are welcomed; you share the meal or the wake, and come back to say so."
+    },
+    "issues.1.titre": {
+      "fr": "Y aller armés",
+      "en": "Going there armed"
+    },
+    "issues.1.texte": {
+      "fr": "Une porte enfoncée, un feu renversé, des gens qui n'avaient rien fait.",
+      "en": "A door broken in, a fire knocked over, people who had done nothing."
+    },
+    "issues.2.titre": {
+      "fr": "Laisser dire",
+      "en": "Letting people talk"
+    },
+    "issues.2.texte": {
+      "fr": "La rumeur reste, et le chemin entre les deux abris se referme.",
+      "en": "The rumour stays, and the path between the two shelters closes again."
+    },
+    "voix.0": {
+      "fr": "« Chez les voisins, la nuit, ils font du feu et ils chantent des choses. *Zot i fé servis.* Moi, je dis rien. »",
+      "en": "\"At the neighbours', at night, they make a fire and sing things. *Zot i fé servis* (they're doing their ceremony). Me, I'm saying nothing.\""
+    },
+    "voix.1": {
+      "fr": "« J'ai vu une poule noire. » Personne d'autre ne l'a vue.",
+      "en": "\"I saw a black hen.\" Nobody else saw it."
+    },
+    "voix.2": {
+      "fr": "Une vieille du camp : « *Kosa zot i rakont ? Na in malad lasou.* » (Qu'est-ce que vous racontez ? Il y a un malade, là-bas.)",
+      "en": "An old woman in the camp: \"*Kosa zot i rakont? Na in malad lasou.*\" (What are you on about? There's someone sick over there.)"
+    },
+    "traces": {
+      "fr": "Un chemin entre deux abris qui se rouvre, ou une barrière de plus ; le nom du colporteur, que tout le monde finit par savoir.",
+      "en": "A path between two shelters that opens again, or one more barrier; the name of the one who spread it, which everyone ends up knowing."
+    }
+  },
+  "registre/affaires/le-tunnel-aux-vivres": {
+    "_nom": "le-tunnel-aux-vivres",
+    "titre": {
+      "fr": "Le tunnel aux vivres",
+      "en": "The tunnel of supplies"
+    },
+    "apprendre": {
+      "fr": "C'est la rumeur numéro six du livre de l'île. Une Barque du Sud jure l'avoir vu ; un Pèlerin dit que c'est un tombeau.",
+      "en": "It is rumour number six in the island's book. A Southern Boat swears to have seen it; a Pilgrim says it is a tomb."
+    },
+    "demande": {
+      "fr": "De marcher sur la lave refroidie de la route des Laves, de trouver la bonne bouche parmi dix, de la lumière pour plusieurs quarts sous terre, et de savoir étayer (le savoir « Étaiement et galeries » évite un éboulement).",
+      "en": "To walk on the cooled lava of the Route des Laves, to find the right mouth among ten, light for several watches underground, and to know how to shore up (the know-how \"Shoring and galleries\" prevents a cave-in)."
+    },
+    "malTourner": {
+      "fr": "Elle est vraie une fois sur deux. Fausse : un tunnel vide et frais, bon à aménager. Vraie : quelqu'un y vit encore et garde ses vivres, ou il y est mort, et l'on décide quoi faire de ce qu'il laisse.",
+      "en": "It is true one time in two. False: an empty, cool tunnel, good for fitting out. True: someone still lives there and guards his supplies, or he died there, and you decide what to do with what he leaves."
+    },
+    "change": {
+      "fr": "Un refuge sous la roche existe pour la prochaine éruption, ou un piège est connu de tous.",
+      "en": "A shelter under the rock exists for the next eruption, or a trap is known to all."
+    },
+    "garde": {
+      "fr": "De quoi aménager un tunnel de lave (le plan), et l'emplacement, à donner ou à taire.",
+      "en": "What you need to fit out a lava tunnel (the plan), and the location, to give away or to keep quiet."
+    },
+    "verites.vraie.texte": {
+      "fr": "Un ancien guide y vit seul depuis le jour zéro, avec des vivres pour des mois, et ne veut voir personne ; ou il y est mort, et ses vivres sont là.",
+      "en": "A former guide has lived there alone since day zero, with supplies for months, and wants to see nobody; or he died there, and his supplies are there."
+    },
+    "verites.fausse.texte": {
+      "fr": "Un tunnel vide et frais, sans un sac : quelqu'un a inventé, ou s'est trompé de bouche.",
+      "en": "An empty, cool tunnel, not a single sack: someone made it up, or got the wrong mouth."
+    },
+    "pente.crans.0": {
+      "fr": "D'autres cherchent la bouche ; on voit leurs traces sur la lave.",
+      "en": "Others look for the mouth; you see their tracks on the lava."
+    },
+    "pente.crans.1": {
+      "fr": "Quelqu'un a trouvé : les vivres partent, sac par sac.",
+      "en": "Someone has found it: the supplies leave, sack by sack."
+    },
+    "pente.crans.2": {
+      "fr": "Le tunnel est vide, ou gardé par ceux qui l'ont pris.",
+      "en": "The tunnel is empty, or guarded by those who took it."
+    },
+    "issues.0.titre": {
+      "fr": "Les vivres",
+      "en": "The supplies"
+    },
+    "issues.0.texte": {
+      "fr": "On trouve la réserve, et personne pour la garder.",
+      "en": "You find the store, and nobody to guard it."
+    },
+    "issues.1.titre": {
+      "fr": "Partager avec l'habitant",
+      "en": "Sharing with the man inside"
+    },
+    "issues.1.texte": {
+      "fr": "Il est vivant. On partage, on l'écoute ; il montre ses galeries, et peut-être vient avec le groupe.",
+      "en": "He is alive. You share, you listen; he shows his galleries, and may come with the group."
+    },
+    "issues.2.titre": {
+      "fr": "Le chasser",
+      "en": "Driving him out"
+    },
+    "issues.2.texte": {
+      "fr": "Il est vivant, et seul. On prend ses vivres et l'on garde sa bouche.",
+      "en": "He is alive, and alone. You take his supplies and keep his mouth."
+    },
+    "issues.3.titre": {
+      "fr": "Le tunnel vide",
+      "en": "The empty tunnel"
+    },
+    "issues.3.texte": {
+      "fr": "Rien que la roche fraîche : un abri à aménager, que personne ne connaît.",
+      "en": "Nothing but cool rock: a shelter to fit out, which nobody knows about."
+    },
+    "voix.0": {
+      "fr": "« Un tunnel sous la coulée, plein de sacs de riz. Je l'ai vu, je te dis. Enfin, mon beau-frère l'a vu. »",
+      "en": "\"A tunnel under the lava flow, full of sacks of rice. I saw it, I'm telling you. Well, my brother-in-law saw it.\""
+    },
+    "voix.1": {
+      "fr": "Un Pèlerin, doucement : « Ce trou-là, c'est un tombeau. Laissez-le à la lave. »",
+      "en": "A Pilgrim, gently: \"That hole is a tomb. Leave it to the lava.\""
+    },
+    "voix.2": {
+      "fr": "Le livre de l'île, rumeur six : « Personne qui l'ait vu n'en est revenu pour le dire, ce qui peut vouloir dire deux choses. »",
+      "en": "The island's book, rumour six: \"Nobody who has seen it has come back to say so, which can mean two things.\""
+    },
+    "traces": {
+      "fr": "Une bouche marquée d'un cairn, ou bouchée de pierres ; un nom de plus sur la liste de ceux qui sont allés voir.",
+      "en": "A mouth marked with a cairn, or blocked with stones; one more name on the list of those who went to look."
+    }
+  },
+  "registre/affaires/le-viaduc": {
+    "_nom": "le-viaduc",
+    "titre": {
+      "fr": "Le viaduc",
+      "en": "The viaduct"
+    },
+    "apprendre": {
+      "fr": "Les Ferrailleurs offrent une part à qui les aidera à « ouvrir la route d'en haut » : la route des Tamarins, bouchée d'épaves sur ses viaducs.",
+      "en": "The Scrappers offer a share to whoever helps them \"open the high road\": the Route des Tamarins, blocked with wrecks on its viaducts."
+    },
+    "demande": {
+      "fr": "De dégager une voie entre les épaves d'un viaduc, voiture après voiture (des jours de chantier, à plusieurs de préférence) : siphonner, pousser dans le vide (un grand fracas à chaque fois), ou laisser en chicane.",
+      "en": "To clear a lane between the wrecks of a viaduct, car after car (days of work, preferably with several people): siphon, push into the void (a great crash every time), or leave them as a chicane."
+    },
+    "malTourner": {
+      "fr": "Chaque voiture est une boîte à surprise : un Livide resté attaché à sa ceinture, des gens qui ne sont jamais sortis. Le bruit amène la horde. Une route ouverte sert aussi aux Sans-Lune et aux convois de la Garnison.",
+      "en": "Every car is a box of surprises: a Pallid still strapped in its seatbelt, people who never got out. The noise brings the horde. An open road also serves the Moonless and the Garrison's convoys."
+    },
+    "change": {
+      "fr": "L'Ouest et le Sud se rejoignent en charrette ou à vélo en une journée : une vraie modification de la carte (le MJ ouvre la route).",
+      "en": "The West and the South are joined by cart or bicycle in a single day: a real change to the map (the GM opens the road)."
+    },
+    "garde": {
+      "fr": "Des pièces, un droit de passage chez les Ferrailleurs, et la responsabilité de ce qui passera par là.",
+      "en": "Parts, a right of way with the Scrappers, and responsibility for whatever will pass that way."
+    },
+    "verites.vraie.texte": {
+      "fr": "Trois viaducs bouchés ; le plus long demande une semaine à six.",
+      "en": "Three blocked viaducts; the longest takes a week for six people."
+    },
+    "verites.piege.texte": {
+      "fr": "Les Ferrailleurs veulent surtout que le fracas se fasse loin de leur casse : la horde qu'il attire, c'est le groupe qui l'aura sur le dos.",
+      "en": "The Scrappers mostly want the crashing done far from their scrapyard: the horde it draws is the one the group will have on its back."
+    },
+    "pente.crans.0": {
+      "fr": "Les Ferrailleurs commencent seuls, lentement.",
+      "en": "The Scrappers start alone, slowly."
+    },
+    "pente.crans.1": {
+      "fr": "Une horde s'installe sous le viaduc, attirée par leur bruit.",
+      "en": "A horde settles under the viaduct, drawn by their noise."
+    },
+    "pente.crans.2": {
+      "fr": "Ils abandonnent ; la route reste fermée.",
+      "en": "They give up; the road stays closed."
+    },
+    "issues.0.titre": {
+      "fr": "La route ouverte",
+      "en": "The road open"
+    },
+    "issues.0.texte": {
+      "fr": "Les épaves sont au fond de la ravine ; on passe en charrette, en camion.",
+      "en": "The wrecks are at the bottom of the ravine; carts and trucks get through."
+    },
+    "issues.1.titre": {
+      "fr": "En chicane",
+      "en": "As a chicane"
+    },
+    "issues.1.texte": {
+      "fr": "Une voie étroite, gardée : on passe à pied et à vélo, pas les convois.",
+      "en": "A narrow, guarded lane: you get through on foot and by bicycle, not the convoys."
+    },
+    "issues.2.titre": {
+      "fr": "La horde",
+      "en": "The horde"
+    },
+    "issues.2.texte": {
+      "fr": "Le fracas amène une horde qui reste sous le viaduc ; le chantier s'arrête.",
+      "en": "The crashing brings a horde that stays under the viaduct; the work stops."
+    },
+    "voix.0": {
+      "fr": "Gros Mani : « Une part pour chaque bras. Et la route, après, elle est à tout le monde. Enfin, à nous d'abord. »",
+      "en": "Gros Mani: \"A share for every pair of arms. And the road, afterwards, belongs to everyone. Well, to us first.\""
+    },
+    "voix.1": {
+      "fr": "« Sur le viaduc, il y a encore des gens dans les voitures. Faut pas regarder dedans. »",
+      "en": "\"On the viaduct, there are still people in the cars. Don't look inside.\""
+    },
+    "voix.2": {
+      "fr": "Une affiche à la casse de la Rivière des Galets : « ON CHERCHE DES BRAS, ROUTE D'EN HAUT ».",
+      "en": "A poster at the Rivière des Galets scrapyard: \"WE NEED HANDS, HIGH ROAD\"."
+    },
+    "traces": {
+      "fr": "Un trou dans le parapet et des carcasses au fond de la ravine ; des traces de vélo, puis de charrette, puis de camion.",
+      "en": "A hole in the parapet and carcasses at the bottom of the ravine; bicycle tracks, then cart tracks, then truck tracks."
+    }
+  },
+  "registre/affaires/le-vieux-chemin-pave": {
+    "_nom": "le-vieux-chemin-pave",
+    "titre": {
+      "fr": "Le vieux chemin pavé",
+      "en": "The old paved path"
+    },
+    "apprendre": {
+      "fr": "Une soignante veut rejoindre le Sud sans passer par le contrôle de la Garnison où, dit-elle, « celui qui se dit médecin ne repart pas ».",
+      "en": "A carer wants to reach the South without going through the Garrison checkpoint where, she says, \"anyone who says he's a doctor doesn't leave again\"."
+    },
+    "demande": {
+      "fr": "De la conduire par le vieux chemin pavé, au-dessus de la falaise, de nuit ou par temps couvert (deux quarts de marche), en passant devant le lazaret.",
+      "en": "To take her along the old paved path above the cliff, at night or under cloud (two watches of walking), past the lazaretto."
+    },
+    "malTourner": {
+      "fr": "La livrer à la Garnison rapporte du carburant, et fait rougir. La Garnison a peut-être raison de dire qu'elle sauverait plus de monde au Port. Le chemin est raide, glissant, et le lazaret n'est pas vide.",
+      "en": "Handing her over to the Garrison earns fuel, and turns you red. The Garrison may be right to say she would save more people at Le Port. The path is steep, slippery, and the lazaretto is not empty."
+    },
+    "change": {
+      "fr": "Le Dispensaire gagne une soignante, ou la Garnison une réquisitionnée.",
+      "en": "The Dispensary gains a carer, or the Garrison a requisitioned one."
+    },
+    "garde": {
+      "fr": "La connaissance du chemin (on passe la route du Littoral sans le contrôle), et une dette de l'un des deux camps.",
+      "en": "Knowledge of the path (you get past the Route du Littoral without the checkpoint), and a debt from one of the two sides."
+    },
+    "verites.vraie.texte": {
+      "fr": "Elle est infirmière, et la Garnison réquisitionne bien les soignants.",
+      "en": "She is a nurse, and the Garrison really does requisition carers."
+    },
+    "verites.exageree.texte": {
+      "fr": "Elle est aide-soignante ; la Garnison l'aurait gardée, logée, nourrie, et fait travailler, sans plus.",
+      "en": "She is a care assistant; the Garrison would have kept her, housed her, fed her and put her to work, nothing more."
+    },
+    "pente.crans.0": {
+      "fr": "Elle cherche quelqu'un d'autre pour la conduire.",
+      "en": "She looks for someone else to take her."
+    },
+    "pente.crans.1": {
+      "fr": "Elle tente le chemin seule.",
+      "en": "She tries the path alone."
+    },
+    "pente.crans.2": {
+      "fr": "La Garnison la trouve sur la route.",
+      "en": "The Garrison finds her on the road."
+    },
+    "issues.0.titre": {
+      "fr": "Arrivée au Sud",
+      "en": "Arrived in the South"
+    },
+    "issues.0.texte": {
+      "fr": "Elle arrive au Dispensaire ; le groupe connaît le chemin.",
+      "en": "She reaches the Dispensary; the group knows the path."
+    },
+    "issues.1.titre": {
+      "fr": "Livrée à la Garnison",
+      "en": "Handed over to the Garrison"
+    },
+    "issues.1.texte": {
+      "fr": "On la conduit au poste de la Grande Chaloupe ; on repart avec du carburant.",
+      "en": "You take her to the Grande Chaloupe post; you leave with fuel."
+    },
+    "issues.2.titre": {
+      "fr": "Refuser de l'emmener",
+      "en": "Refusing to take her"
+    },
+    "issues.2.texte": {
+      "fr": "Elle part seule. On apprendra la suite par le Ladi Lafé, ou jamais.",
+      "en": "She leaves alone. You will hear what happened through the Ladi Lafé, or never."
+    },
+    "voix.0": {
+      "fr": "« Celui qui se dit médecin, au contrôle, ne repart pas. On le loge, on le nourrit, on le garde. »",
+      "en": "\"Anyone who says he's a doctor, at the checkpoint, doesn't leave again. They house him, feed him, keep him.\""
+    },
+    "voix.1": {
+      "fr": "Une femme au marché, à voix basse : « Il y a le chemin des anciens, au-dessus de la falaise. Les pavés sont encore là. »",
+      "en": "A woman at the market, in a low voice: \"There's the old people's path, above the cliff. The paving stones are still there.\""
+    },
+    "voix.2": {
+      "fr": "La radio de la Garnison : « Tout personnel de santé est prié de se présenter au poste de la Grande Chaloupe. »",
+      "en": "The Garrison's radio: \"All health personnel are asked to report to the Grande Chaloupe post.\""
+    },
+    "traces": {
+      "fr": "Des pavés remis en place sur le chemin, une corde nouée à un passage ; au Dispensaire, une soignante de plus, ou un poste vide.",
+      "en": "Paving stones set back in place on the path, a rope knotted at a difficult step; at the Dispensary, one more carer, or an empty post."
+    }
+  },
+  "registre/affaires/le-voeu": {
+    "_nom": "le-voeu",
+    "titre": {
+      "fr": "Le vœu",
+      "en": "The vow"
+    },
+    "apprendre": {
+      "fr": "Un survivant, du groupe ou d'ailleurs, veut tenir un vœu : retrouver quelqu'un, atteindre un lieu.",
+      "en": "A survivor, from the group or elsewhere, wants to keep a vow: to find someone, to reach a place."
+    },
+    "demande": {
+      "fr": "Dix jours de carême (le vœu du Cavadee), puis une marche à découvert jusqu'à un temple de l'Est, en groupe si l'on veut l'accompagner.",
+      "en": "Ten days of fasting (the Cavadee vow), then a walk in the open to a temple in the East, as a group if others want to go along."
+    },
+    "malTourner": {
+      "fr": "Celui qu'on cherche est mort, ou Livide, ou ne veut pas être retrouvé. Rompre le carême ne punit de rien, mais le vœu ne soutient plus.",
+      "en": "The one you are looking for is dead, or a Pallid, or does not want to be found. Breaking the fast is punished by nothing, but the vow no longer holds you up."
+    },
+    "change": {
+      "fr": "Un moral qui tient tant que le vœu est tenu, et un lieu de culte rouvert.",
+      "en": "A morale that holds as long as the vow is kept, and a place of worship reopened."
+    },
+    "garde": {
+      "fr": "La réponse, quelle qu'elle soit. C'est une affaire qui peut finir par un deuil.",
+      "en": "The answer, whatever it is. This is an affair that can end in mourning."
+    },
+    "verites.vraie.texte": {
+      "fr": "Celui qu'on cherche est vivant, quelque part sur la route du temple.",
+      "en": "The one you are looking for is alive, somewhere on the road to the temple."
+    },
+    "verites.perimee.texte": {
+      "fr": "Il était vivant il y a un mois ; il est parti depuis, ou il est mort.",
+      "en": "He was alive a month ago; he has left since, or he is dead."
+    },
+    "verites.fausse.texte": {
+      "fr": "Il est mort le jour zéro ; on ne le saura qu'en arrivant.",
+      "en": "He died on day zero; you will only learn it when you arrive."
+    },
+    "pente.crans.0": {
+      "fr": "Le carême fatigue ; le vœu tient.",
+      "en": "The fasting is tiring; the vow holds."
+    },
+    "pente.crans.1": {
+      "fr": "La saison passe, la route se ferme.",
+      "en": "The season passes, the road closes."
+    },
+    "pente.crans.2": {
+      "fr": "Le vœu reste en suspens, et pèse.",
+      "en": "The vow stays in suspense, and weighs."
+    },
+    "issues.0.titre": {
+      "fr": "Le vœu tenu",
+      "en": "The vow kept"
+    },
+    "issues.0.texte": {
+      "fr": "On arrive au temple ; on retrouve, ou l'on sait.",
+      "en": "You reach the temple; you find, or you know."
+    },
+    "issues.1.titre": {
+      "fr": "Le vœu rompu",
+      "en": "The vow broken"
+    },
+    "issues.1.texte": {
+      "fr": "Le carême cède, ou la route. Personne ne reproche rien ; le vœu ne soutient plus.",
+      "en": "The fast gives way, or the road does. Nobody blames anyone; the vow no longer holds you up."
+    },
+    "issues.2.titre": {
+      "fr": "La réponse, et le deuil",
+      "en": "The answer, and mourning"
+    },
+    "issues.2.texte": {
+      "fr": "Ce qu'on trouve est une tombe, ou un Livide qu'on reconnaît. Le vœu est tenu ; le reste se porte.",
+      "en": "What you find is a grave, or a Pallid you recognise. The vow is kept; the rest has to be carried."
+    },
+    "voix.0": {
+      "fr": "« J'ai promis. Dix jours sans viande, puis le temple. Si elle est vivante, elle y sera. »",
+      "en": "\"I promised. Ten days without meat, then the temple. If she's alive, she'll be there.\""
+    },
+    "voix.1": {
+      "fr": "« Un vœu, ça ne se rompt pas pour une horde. Ça se rompt pour rien, ou pas du tout. »",
+      "en": "\"A vow, you don't break it for a horde. You break it for nothing, or not at all.\""
+    },
+    "voix.2": {
+      "fr": "Sous la pierre d'un oratoire : un prénom, une date, et « je viens ».",
+      "en": "Under the stone of an oratory: a first name, a date, and \"I'm coming\"."
+    },
+    "traces": {
+      "fr": "Un temple où brûle de nouveau une lampe ; une tombe, peut-être, au bout d'une route.",
+      "en": "A temple where a lamp burns again; a grave, perhaps, at the end of a road."
+    }
+  },
+  "registre/affaires/les-aiguilles-de-bourg-murat": {
+    "_nom": "les-aiguilles-de-bourg-murat",
+    "titre": {
+      "fr": "Les aiguilles de Bourg-Murat",
+      "en": "The needles of Bourg-Murat"
+    },
+    "apprendre": {
+      "fr": "Un fermier de la Coopérative le dit au troc du samedi : à l'observatoire de Bourg-Murat, où plus personne ne vient, « les machines des géologues grattent le papier jour et nuit ».",
+      "en": "A Cooperative farmer says it at the Saturday trading: at the Bourg-Murat observatory, where nobody goes any more, \"the geologists' machines scratch the paper day and night\"."
+    },
+    "demande": {
+      "fr": "Quelqu'un qui sache lire les tracés, ou qui trouve le cahier où c'est expliqué ; puis porter la nouvelle à Sainte-Rose avant la fissure : trois jours par la Plaine des Palmistes, ou deux par la route des Laves, qui sera peut-être coupée.",
+      "en": "Someone who can read the traces, or who finds the notebook where it is explained; then carrying the news to Sainte-Rose before the fissure: three days by the Plaine des Palmistes, or two by the Route des Laves, which may be cut."
+    },
+    "malTourner": {
+      "fr": "Les Pèlerins ne veulent pas l'entendre : l'épreuve, disent-ils, ne se lit pas sur une aiguille. La nouvelle arrive déformée et vide un village pour rien, ou elle arrive trop tard.",
+      "en": "The Pilgrims do not want to hear it: the trial, they say, is not read off a needle. The news arrives distorted and empties a village for nothing, or it arrives too late."
+    },
+    "change": {
+      "fr": "Le front de la Fournaise recule d'un cran si l'Est est prévenu à temps.",
+      "en": "The Fournaise front falls back one step if the East is warned in time."
+    },
+    "garde": {
+      "fr": "Savoir lire le volcan, que presque personne n'a : le groupe sait désormais une éruption quelques jours avant (le MJ le lui dit).",
+      "en": "Knowing how to read the volcano, which almost nobody can: from now on the group knows of an eruption a few days ahead (the GM tells it)."
+    },
+    "verites.vraie.texte": {
+      "fr": "Les tracés montrent un gonflement qui s'accélère : une éruption dans les semaines qui viennent.",
+      "en": "The traces show a swelling that is speeding up: an eruption within the coming weeks."
+    },
+    "verites.exageree.texte": {
+      "fr": "Les aiguilles s'agitent pour une crise sismique qui retombera ; prévenir vide l'Est pour rien.",
+      "en": "The needles are twitching for a seismic crisis that will die down; warning people empties the East for nothing."
+    },
+    "pente.crans.0": {
+      "fr": "Le papier des enregistreurs s'épuise ; personne ne le change.",
+      "en": "The recorders' paper runs out; nobody changes it."
+    },
+    "pente.crans.1": {
+      "fr": "Les secousses se sentent jusqu'à la Plaine des Cafres.",
+      "en": "The tremors can be felt as far as the Plaine des Cafres."
+    },
+    "pente.crans.2": {
+      "fr": "La fissure s'ouvre : le front de la Fournaise avance d'un cran.",
+      "en": "The fissure opens: the Fournaise front moves forward one step."
+    },
+    "issues.0.titre": {
+      "fr": "L'Est prévenu à temps",
+      "en": "The East warned in time"
+    },
+    "issues.0.texte": {
+      "fr": "La nouvelle arrive, et elle est crue : les villages bas se vident avant la coulée.",
+      "en": "The news arrives, and it is believed: the low villages empty before the flow."
+    },
+    "issues.1.titre": {
+      "fr": "Un village vidé pour rien",
+      "en": "A village emptied for nothing"
+    },
+    "issues.1.texte": {
+      "fr": "La nouvelle était exagérée : des familles ont marché sous la pluie pour rien, et s'en souviennent.",
+      "en": "The news was exaggerated: families walked in the rain for nothing, and remember it."
+    },
+    "issues.2.titre": {
+      "fr": "Trop tard",
+      "en": "Too late"
+    },
+    "issues.2.texte": {
+      "fr": "On arrive avec la coulée.",
+      "en": "You arrive with the lava flow."
+    },
+    "issues.3.titre": {
+      "fr": "Pas entendus",
+      "en": "Not heard"
+    },
+    "issues.3.texte": {
+      "fr": "Les Pèlerins écoutent poliment et ne bougent pas ; d'autres, dans l'Est, partent quand même.",
+      "en": "The Pilgrims listen politely and do not move; others in the East leave all the same."
+    },
+    "voix.0": {
+      "fr": "« Les machines des géologues, à Bourg-Murat ? Elles grattent, elles grattent. Personne ne sait lire ça. »",
+      "en": "\"The geologists' machines, at Bourg-Murat? They scratch and scratch. Nobody can read that.\""
+    },
+    "voix.1": {
+      "fr": "Une fermière qui n'a jamais vu d'éruption de près : « Le volcan, c'est pas une aiguille qui va te le dire. C'est les oiseaux. »",
+      "en": "A farmer who has never seen an eruption up close: \"The volcano, it's not a needle that'll tell you. It's the birds.\""
+    },
+    "voix.2": {
+      "fr": "Un rouleau de papier quadrillé trouvé dans une voiture, avec des dates entourées au stylo rouge.",
+      "en": "A roll of graph paper found in a car, with dates circled in red pen."
+    },
+    "traces": {
+      "fr": "Un rouleau couvert de traits serrés ; une route des Laves barrée, ou une église vide sur une coulée neuve.",
+      "en": "A roll covered in tight lines; a Route des Laves barred off, or an empty church on a new lava flow."
+    }
+  },
+  "registre/affaires/les-derniers-arrives": {
+    "_nom": "les-derniers-arrives",
+    "apprendre": {
+      "fr": "C'est la rumeur numéro quatre du livre de l'île : on accuse une famille comorienne du Chaudron d'avoir vidé l'hypermarché du quartier.",
+      "en": "It is rumour number four in the island's book: a Comorian family from the Chaudron is accused of emptying the neighbourhood hypermarket."
+    },
+    "demande": {
+      "fr": "De recouper : des traces de camion sur le parking, des marques à la bombe, un témoin sur un toit du Chaudron.",
+      "en": "To cross-check: truck tracks on the car park, spray-painted marks, a witness on a Chaudron rooftop."
+    },
+    "malTourner": {
+      "fr": "Pendant qu'on vérifie, d'autres ont déjà décidé. Répéter la rumeur est le plus facile.",
+      "en": "While you check, others have already decided. Repeating the rumour is the easiest thing."
+    },
+    "change": {
+      "fr": "Une famille est chassée ou gardée ; les vrais auteurs sont connus, ou non.",
+      "en": "A family is driven out or kept; the real culprits are known, or not."
+    },
+    "garde": {
+      "fr": "Un pas vers le bleu ou vers le rouge, et la leçon que le Ladi Lafé court plus vite que les faits.",
+      "en": "A step towards blue or towards red, and the lesson that the Ladi Lafé runs faster than the facts."
+    },
+    "verites.fausse.texte": {
+      "fr": "Ceux qui ont vidé l'hypermarché étaient des Sans-Lune, en camion, le visage noirci de suie ; on retrouve le camion plus loin. La famille n'y est pour rien.",
+      "en": "Those who emptied the hypermarket were Moonless, in a truck, faces blackened with soot; the truck is found further on. The family had nothing to do with it."
+    },
+    "pente.crans.0": {
+      "fr": "On parle d'aller « leur demander ».",
+      "en": "People talk of going to \"ask them\"."
+    },
+    "pente.crans.1": {
+      "fr": "La famille est chassée de sa cage d'escalier.",
+      "en": "The family is driven out of its stairwell."
+    },
+    "pente.crans.2": {
+      "fr": "Elle a disparu ; personne ne sait où.",
+      "en": "It has vanished; nobody knows where."
+    },
+    "issues.0.titre": {
+      "fr": "La preuve apportée",
+      "en": "The proof brought"
+    },
+    "issues.0.texte": {
+      "fr": "Les traces et le témoin disent qui c'était, devant tout le monde.",
+      "en": "The tracks and the witness say who it was, in front of everyone."
+    },
+    "issues.1.titre": {
+      "fr": "La famille accueillie",
+      "en": "The family taken in"
+    },
+    "issues.1.texte": {
+      "fr": "Chassée de son immeuble, elle trouve une place à l'abri.",
+      "en": "Driven out of its building, it finds a place at the shelter."
+    },
+    "issues.2.titre": {
+      "fr": "La famille chassée",
+      "en": "The family driven out"
+    },
+    "issues.2.texte": {
+      "fr": "Personne n'a vérifié à temps, ou le groupe a aidé à la chasser.",
+      "en": "Nobody checked in time, or the group helped drive it out."
+    },
+    "issues.3.titre": {
+      "fr": "La rumeur répétée",
+      "en": "The rumour repeated"
+    },
+    "issues.3.texte": {
+      "fr": "Le groupe la répète à son tour : c'est le plus facile.",
+      "en": "The group repeats it in turn: it is the easiest thing."
+    },
+    "voix.0": {
+      "fr": "« C'est les Comoriens du Chaudron. Tout le monde le sait. » Celui qui le dit n'a rien vu.",
+      "en": "\"It's the Comorians from the Chaudron. Everybody knows.\" Whoever says it saw nothing."
+    },
+    "voix.1": {
+      "fr": "Un garçon, depuis un toit : « Moi, j'ai vu un camion. Blanc. Ils avaient de la suie sur la figure. »",
+      "en": "A boy, from a rooftop: \"Me, I saw a truck. White. They had soot on their faces.\""
+    },
+    "voix.2": {
+      "fr": "Le livre de l'île, rumeur quatre : « Faux. Mais la rumeur court plus vite qu'eux. »",
+      "en": "The island's book, rumour four: \"False. But the rumour runs faster than they do.\""
+    },
+    "traces": {
+      "fr": "Une porte de cage d'escalier repeinte, ou murée ; un camion blanc retrouvé vide sur la RN2.",
+      "en": "A stairwell door repainted, or walled up; a white truck found empty on the RN2."
+    }
+  },
+  "registre/affaires/les-lentilles-d-octobre": {
+    "_nom": "les-lentilles-d-octobre",
+    "titre": {
+      "fr": "Les lentilles d'octobre",
+      "en": "The October lentils"
+    },
+    "apprendre": {
+      "fr": "Dès septembre, tout le Sud répète que Cilaos tiendra sa foire « comme avant », sous trêve. On l'entend au marché de Saint-Pierre, à la radio des Barques, dans la bouche d'un porteur qui redescend du cirque.",
+      "en": "From September on, the whole South keeps saying that Cilaos will hold its fair \"like before\", under truce. You hear it at the Saint-Pierre market, on the Boats' radio, from a porter coming back down from the cirque."
+    },
+    "demande": {
+      "fr": "Que la route aux quatre cents virages ou les sentiers soient praticables le jour dit, que quelqu'un garde la trêve, que les îlets descendent leur récolte. On peut escorter un convoi de porteurs, déblayer un éboulis au-dessus du Pavillon (deux jours de chantier, et du bruit), garder la trêve avec le conseil, ou seulement venir troquer.",
+      "en": "That the road of four hundred bends, or the trails, be passable on the day, that someone keep the truce, that the îlets bring their harvest down. You can escort a convoy of porters, clear a rockfall above the Pavillon (two days of work, and noise), keep the truce with the council, or just come to trade."
+    },
+    "malTourner": {
+      "fr": "L'éboulis n'est pas levé, et la foire se tient entre gens du cirque seulement. Une bande vient « compter les sacs » et tâter la trêve. La date circule fausse : des gens montent un jour trop tôt ou trop tard, et dorment dehors.",
+      "en": "The rockfall is not cleared, and the fair is held among cirque people only. A gang comes to \"count the sacks\" and test the truce. The date goes around wrong: people climb up a day too early or too late, and sleep outside."
+    },
+    "change": {
+      "fr": "Si elle a lieu, Cilaos a sa foire (trois jours, onglet Marché) et la Coopérative y garde un étal à l'année.",
+      "en": "If it takes place, Cilaos has its fair (three days, Market tab) and the Cooperative keeps a stall there all year round."
+    },
+    "garde": {
+      "fr": "Des graines, des nouvelles de toute l'île en une journée, et le souvenir d'avoir vu du monde.",
+      "en": "Seeds, news from the whole island in a single day, and the memory of having seen people."
+    },
+    "verites.vraie.texte": {
+      "fr": "La foire aura lieu si la route est ouverte : le conseil de l'îlet l'a décidé.",
+      "en": "The fair will take place if the road is open: the îlet council has decided so."
+    },
+    "verites.perimee.texte": {
+      "fr": "On l'a dit en juillet ; depuis, un éboulis a coupé la route au-dessus du Pavillon, et personne ne l'a encore dit en bas.",
+      "en": "It was said in July; since then a rockfall has cut the road above the Pavillon, and nobody has said so down below yet."
+    },
+    "verites.fausse.texte": {
+      "fr": "La date répétée en bas est fausse d'une semaine : quelqu'un s'est trompé en recopiant, ou l'a voulu.",
+      "en": "The date repeated down below is a week off: someone made a mistake copying it, or meant to."
+    },
+    "pente.crans.0": {
+      "fr": "Le conseil de l'îlet cherche des bras pour l'éboulis.",
+      "en": "The îlet council looks for hands to clear the rockfall."
+    },
+    "pente.crans.1": {
+      "fr": "Les porteurs descendent seuls, chargés ; certains n'arrivent pas.",
+      "en": "The porters come down alone, loaded; some never arrive."
+    },
+    "pente.crans.2": {
+      "fr": "La foire se tient entre gens du cirque ; le Sud ne monte pas.",
+      "en": "The fair is held among cirque people; the South does not come up."
+    },
+    "issues.0.titre": {
+      "fr": "La foire se tient",
+      "en": "The fair is held"
+    },
+    "issues.0.texte": {
+      "fr": "La route est ouverte et la trêve tenue : trois jours de troc, des gens de toute l'île.",
+      "en": "The road is open and the truce kept: three days of trading, people from all over the island."
+    },
+    "issues.1.titre": {
+      "fr": "Entre gens du cirque",
+      "en": "Among cirque people"
+    },
+    "issues.1.texte": {
+      "fr": "L'éboulis tient ; la foire se fait sans le Sud, et sans le groupe s'il n'a pas aidé.",
+      "en": "The rockfall holds; the fair goes on without the South, and without the group if it did not help."
+    },
+    "issues.2.titre": {
+      "fr": "La trêve rompue",
+      "en": "The truce broken"
+    },
+    "issues.2.texte": {
+      "fr": "Une bande compte les sacs, quelqu'un sort une arme : la trêve tombe, la foire se vide, et l'on cherche à qui la faute.",
+      "en": "A gang counts the sacks, someone draws a weapon: the truce falls, the fair empties, and people look for someone to blame."
+    },
+    "voix.0": {
+      "fr": "« Cette année, Cilaos tient sa foire. Comme avant. Sous trêve. »",
+      "en": "\"This year Cilaos holds its fair. Like before. Under truce.\""
+    },
+    "voix.1": {
+      "fr": "« Les lentilles ? Si la route passe. Et si la route passe, tout le monde passe. »",
+      "en": "\"The lentils? If the road gets through. And if the road gets through, everybody gets through.\""
+    },
+    "voix.2": {
+      "fr": "À la craie, sur le mur de la gare routière de Saint-Pierre : « LENTILLES, 3e SAMEDI ».",
+      "en": "In chalk, on the wall of the Saint-Pierre bus station: \"LENTILS, 3rd SATURDAY\"."
+    },
+    "voix.3": {
+      "fr": "La radio des Barques : « Cilaos cherche des bras pour l'éboulis du Pavillon. Nourris. »",
+      "en": "The Boats' radio: \"Cilaos needs hands for the Pavillon rockfall. Food provided.\""
+    },
+    "traces": {
+      "fr": "Un étal de la Coopérative qui reste ; un sentier balisé de cairns pour monter ; la date notée dans les cahiers de dix abris, pas toujours la même.",
+      "en": "A Cooperative stall that stays; a trail marked with cairns for the climb; the date noted in the notebooks of ten shelters, not always the same."
+    }
+  },
+  "registre/affaires/les-noyes-de-la-passe": {
+    "_nom": "les-noyes-de-la-passe",
+    "titre": {
+      "fr": "Les noyés de la passe",
+      "en": "The drowned of the channel"
+    },
+    "apprendre": {
+      "fr": "Après une houle australe, les Barques ne veulent plus mouiller devant Saint-Leu : la mer a rendu ses noyés, sur la plage et dans la passe.",
+      "en": "After a southern swell, the Boats no longer want to anchor off Saint-Leu: the sea has given back its drowned, on the beach and in the channel."
+    },
+    "demande": {
+      "fr": "De nettoyer une plage à marée basse, de jour, en silence (un quart dehors), et de décider quoi faire des corps.",
+      "en": "To clear a beach at low tide, by day, in silence (one watch outside), and to decide what to do with the bodies."
+    },
+    "malTourner": {
+      "fr": "La morsure d'un noyé s'infecte toujours. Brûler les corps fait une fumée que toute la côte voit. La mer en rend d'autres à la houle suivante.",
+      "en": "The bite of a drowned one always gets infected. Burning the bodies makes smoke the whole coast can see. The sea gives back more with the next swell."
+    },
+    "change": {
+      "fr": "Une marine redevient un port sûr pour quelques semaines.",
+      "en": "A marina becomes a safe harbour again for a few weeks."
+    },
+    "garde": {
+      "fr": "Un passage par la mer avec les Barques, qui vaut la route des Laves.",
+      "en": "A passage by sea with the Boats, which is worth the Route des Laves."
+    },
+    "verites.vraie.texte": {
+      "fr": "Une dizaine de noyés sur la plage et dans la passe, lents, lourds d'eau.",
+      "en": "About ten drowned ones on the beach and in the channel, slow, heavy with water."
+    },
+    "verites.exageree.texte": {
+      "fr": "On a dit cinquante ; il y en a quatre, mais une barque s'est échouée au milieu d'eux.",
+      "en": "People said fifty; there are four, but a boat has run aground in the middle of them."
+    },
+    "pente.crans.0": {
+      "fr": "Les Barques mouillent plus au sud, et la pêche baisse.",
+      "en": "The Boats anchor further south, and the fishing drops."
+    },
+    "pente.crans.1": {
+      "fr": "Les noyés remontent la ravine vers le bourg.",
+      "en": "The drowned ones climb the ravine towards the town."
+    },
+    "pente.crans.2": {
+      "fr": "La houle suivante en rend d'autres.",
+      "en": "The next swell gives back more."
+    },
+    "issues.0.titre": {
+      "fr": "La plage nettoyée, les corps enterrés",
+      "en": "The beach cleared, the bodies buried"
+    },
+    "issues.0.texte": {
+      "fr": "Un jour de plus à creuser sous les filaos, en silence ; les Barques s'en souviennent.",
+      "en": "One more day digging under the filaos, in silence; the Boats remember it."
+    },
+    "issues.1.titre": {
+      "fr": "Les corps brûlés",
+      "en": "The bodies burned"
+    },
+    "issues.1.texte": {
+      "fr": "Plus vite ; mais toute la côte voit la fumée.",
+      "en": "Faster; but the whole coast sees the smoke."
+    },
+    "issues.2.titre": {
+      "fr": "Laisser la mer faire",
+      "en": "Letting the sea do it"
+    },
+    "issues.2.texte": {
+      "fr": "On attend que la houle les reprenne. Les Barques passent au large de Saint-Leu, et ne s'arrêtent plus.",
+      "en": "You wait for the swell to take them back. The Boats pass far off Saint-Leu, and no longer stop."
+    },
+    "voix.0": {
+      "fr": "Le patron Grondin, qui ne discute pas : « Pas devant Saint-Leu. Pas tant que la mer rend. »",
+      "en": "Skipper Grondin, who does not argue: \"Not off Saint-Leu. Not while the sea is giving them back.\""
+    },
+    "voix.1": {
+      "fr": "« Marée basse, plein jour, pas un mot. Ils entendent même sous l'eau. »",
+      "en": "\"Low tide, broad daylight, not a word. They hear even under water.\""
+    },
+    "voix.2": {
+      "fr": "Le livre de l'île, rumeur deux : « La mer les rend : les noyés reviennent avec la houle. »",
+      "en": "The island's book, rumour two: \"The sea gives them back: the drowned return with the swell.\""
+    },
+    "traces": {
+      "fr": "Des tombes au haut de la plage, sous les filaos, ou une tache noire de feu sur le sable.",
+      "en": "Graves at the top of the beach, under the filaos, or a black stain of fire on the sand."
+    }
+  },
+  "registre/affaires/rendre-a-la-lave": {
+    "_nom": "rendre-a-la-lave",
+    "titre": {
+      "fr": "Rendre à la lave",
+      "en": "Giving back to the lava"
+    },
+    "apprendre": {
+      "fr": "On dit que les Pèlerins nourrissent et soignent sans rien demander. On dit aussi, plus bas, qu'ils « rendent les mordus à la lave ». C'est la rumeur numéro huit du livre de l'île.",
+      "en": "People say the Pilgrims feed and care for others without asking anything. People also say, more quietly, that they \"give the bitten back to the lava\". It is rumour number eight in the island's book."
+    },
+    "demande": {
+      "fr": "D'y vivre un moment pour savoir (quelques jours à Sainte-Rose, à travailler, à prier ou non : personne n'y est forcé), puis de choisir : se taire, parler, ou faire sortir quelqu'un.",
+      "en": "To live there for a while to find out (a few days in Sainte-Rose, working, praying or not: nobody is forced to), then to choose: keep quiet, speak, or get someone out."
+    },
+    "malTourner": {
+      "fr": "Les deux choses sont vraies le même jour. Frère Expédit laisse prier tout le monde, et croit ce qu'il croit : les mordus qui viennent à eux sont veillés, puis accompagnés, à la fin, vers les coulées, et l'on ne les revoit pas. Certains y vont en paix ; aux autres, on ne demande pas. L'ironie y est plus dangereuse qu'une arme.",
+      "en": "Both things are true on the same day. Brother Expédit lets everyone pray, and believes what he believes: the bitten who come to them are watched over, then accompanied, at the end, towards the lava fields, and are not seen again. Some go in peace; the others are not asked. Irony is more dangerous there than a weapon."
+    },
+    "change": {
+      "fr": "Le front du remède, si le Dispensaire l'apprend : la docteure cherche des infectés vivants. L'accueil des Pèlerins, pour tous ceux qui viennent après.",
+      "en": "The cure front, if the Dispensary learns of it: the doctor is looking for living infected people. The welcome of the Pilgrims, for everyone who comes after."
+    },
+    "garde": {
+      "fr": "Un lieu où changer de religion, où rien n'est imposé, et un doute.",
+      "en": "A place to change religion, where nothing is imposed, and a doubt."
+    },
+    "verites.vraie.texte": {
+      "fr": "Les Pèlerins soignent, nourrissent, et accompagnent les mordus vers les coulées avant qu'ils se relèvent. Rien ne se voit : on le comprend à ce qui manque le matin.",
+      "en": "The Pilgrims care, feed, and accompany the bitten towards the lava fields before they rise. Nothing can be seen: you understand it from what is missing in the morning."
+    },
+    "verites.exageree.texte": {
+      "fr": "Ils n'accompagnent que ceux qui le demandent ; la rumeur a fait le reste.",
+      "en": "They only accompany those who ask; the rumour did the rest."
+    },
+    "pente.crans.0": {
+      "fr": "Un mordu de plus arrive à Sainte-Rose, avec les siens.",
+      "en": "One more bitten person arrives in Sainte-Rose, with family."
+    },
+    "pente.crans.1": {
+      "fr": "Le Dispensaire entend la rumeur : le front du remède peut avancer.",
+      "en": "The Dispensary hears the rumour: the cure front may move forward."
+    },
+    "pente.crans.2": {
+      "fr": "Les Pèlerins ferment leur porte aux curieux.",
+      "en": "The Pilgrims close their door to the curious."
+    },
+    "issues.0.texte": {
+      "fr": "On sait, et l'on n'en dit rien ; les Pèlerins continuent de nourrir qui vient.",
+      "en": "You know, and say nothing; the Pilgrims go on feeding whoever comes."
+    },
+    "issues.1.titre": {
+      "fr": "Le dire au Dispensaire",
+      "en": "Telling the Dispensary"
+    },
+    "issues.1.texte": {
+      "fr": "La docteure veut comprendre ; elle enverra quelqu'un à Sainte-Rose.",
+      "en": "The doctor wants to understand; she will send someone to Sainte-Rose."
+    },
+    "issues.2.titre": {
+      "fr": "Faire sortir quelqu'un",
+      "en": "Getting someone out"
+    },
+    "issues.2.texte": {
+      "fr": "Un mordu qui ne veut pas aller aux coulées demande à partir. On l'emmène, et l'on porte avec lui ce qui vient ensuite.",
+      "en": "A bitten person who does not want to go to the lava fields asks to leave. You take them, and carry with them whatever comes next."
+    },
+    "issues.3.titre": {
+      "fr": "Le dire partout",
+      "en": "Telling everyone"
+    },
+    "issues.3.texte": {
+      "fr": "Le Ladi Lafé s'en empare, et les gens cessent de venir à Sainte-Rose, malades compris.",
+      "en": "The Ladi Lafé seizes on it, and people stop coming to Sainte-Rose, the sick included."
+    },
+    "voix.0": {
+      "fr": "« Les Pèlerins ? Ils t'ouvrent, ils te nourrissent, ils te demandent rien. Rien du tout. »",
+      "en": "\"The Pilgrims? They open up to you, they feed you, they ask you for nothing. Nothing at all.\""
+    },
+    "voix.1": {
+      "fr": "Plus bas : « Et les mordus, tu sais ce qu'ils en font ? Ils les rendent à la lave. »",
+      "en": "More quietly: \"And the bitten, you know what they do with them? They give them back to the lava.\""
+    },
+    "voix.2": {
+      "fr": "Frère Expédit, doucement : « Ici, personne ne se relève. Nous y veillons. »",
+      "en": "Brother Expédit, gently: \"Here, nobody rises again. We see to it.\""
+    },
+    "traces": {
+      "fr": "Une natte roulée au bout d'une rangée ; un sentier usé qui monte vers les coulées, que personne ne prend de jour.",
+      "en": "A mat rolled up at the end of a row; a worn path climbing towards the lava fields, which nobody takes by day."
+    },
+    "ton": {
+      "fr": "Rien n'est montré : ni la coulée, ni ce qui s'y passe. Le malaise vient de ce qu'on comprend (une natte vide le matin, un chant qui s'arrête), jamais de ce qu'on voit. Aucun Pèlerin n'est un monstre ni un saint ; la foi n'a aucun effet, ni bon ni mauvais. Aucun enfant n'est en jeu dans cette affaire.",
+      "en": "Nothing is shown: neither the lava flow, nor what happens there. The unease comes from what you understand (an empty mat in the morning, a song that stops), never from what you see. No Pilgrim is a monster or a saint; faith has no effect, good or bad. No child is involved in this affair."
+    }
+  },
+  "registre/affaires/une-seule-lampe": {
+    "_nom": "une-seule-lampe",
+    "titre": {
+      "fr": "Une seule lampe",
+      "en": "A single lamp"
+    },
+    "apprendre": {
+      "fr": "Une famille malbare du camp, ou des voisins, dit qu'il lui faudrait de l'huile et une mèche pour une lampe, une seule.",
+      "en": "A Malbar family in the camp, or neighbours, say they would need oil and a wick for a lamp, just one."
+    },
+    "demande": {
+      "fr": "De l'huile (à trouver, à presser, à troquer : une part au cours) et une mèche ; puis de décider, tous ensemble, si on l'allume dehors.",
+      "en": "Oil (to find, to press, to trade: one share at the going rate) and a wick; then to decide, all together, whether to light it outside."
+    },
+    "malTourner": {
+      "fr": "Quelqu'un au camp grince que « *zot i fé servis* » (ils font leur cérémonie, sous-entendu : leur sorcellerie). Chaque flamme attire. Une lampe allumée en cachette ne réunit personne.",
+      "en": "Someone in the camp grumbles that \"*zot i fé servis*\" (they are doing their ceremony, meaning: their witchcraft). Every flame draws attention. A lamp lit in hiding brings nobody together."
+    },
+    "change": {
+      "fr": "Le moral de tout l'abri, et le regard des uns sur les autres : celui qui grinçait vient voir la lampe.",
+      "en": "The morale of the whole shelter, and the way people look at each other: the one who grumbled comes to see the lamp."
+    },
+    "garde": {
+      "fr": "Rien qui se porte. C'est l'affaire qui dit ce que les fêtes font ici.",
+      "en": "Nothing you can carry. This is the affair that says what holidays do here."
+    },
+    "verites.vraie.texte": {
+      "fr": "Il n'y a rien à découvrir : une famille veut une lampe.",
+      "en": "There is nothing to uncover: a family wants a lamp."
+    },
+    "pente.crans.0": {
+      "fr": "La famille cherche de l'huile seule.",
+      "en": "The family looks for oil alone."
+    },
+    "pente.crans.1": {
+      "fr": "Le jour passe ; on allume une bougie à la place, sans rien dire.",
+      "en": "The day passes; a candle is lit instead, without a word."
+    },
+    "issues.0.titre": {
+      "fr": "La lampe allumée dehors",
+      "en": "The lamp lit outside"
+    },
+    "issues.0.texte": {
+      "fr": "Le groupe fête Dipavali : tout le camp vient voir, même celui qui grinçait.",
+      "en": "The group celebrates Dipavali: the whole camp comes to see, even the one who grumbled."
+    },
+    "issues.1.titre": {
+      "fr": "La lampe cachée",
+      "en": "The hidden lamp"
+    },
+    "issues.1.texte": {
+      "fr": "Allumée derrière une tôle : la famille prie seule, le reste du camp dort.",
+      "en": "Lit behind a sheet of corrugated iron: the family prays alone, the rest of the camp sleeps."
+    },
+    "issues.2.titre": {
+      "fr": "Pas de lampe",
+      "en": "No lamp"
+    },
+    "issues.2.texte": {
+      "fr": "Le groupe refuse : trop de risques. La famille ne dit rien, et s'en souvient.",
+      "en": "The group refuses: too risky. The family says nothing, and remembers."
+    },
+    "voix.0": {
+      "fr": "« Une lampe. Une seule. Un peu d'huile, une mèche. On la met derrière la tôle, personne ne la verra. »",
+      "en": "\"A lamp. Just one. A bit of oil, a wick. We'll put it behind the iron sheet, nobody will see it.\""
+    },
+    "voix.1": {
+      "fr": "« *Zot i fé servis*, là-bas. » Celui qui le dit n'est jamais allé voir.",
+      "en": "\"*Zot i fé servis*, over there.\" Whoever says it has never gone to look."
+    },
+    "voix.2": {
+      "fr": "Un enfant du camp demande pourquoi on allume une lampe quand il fait noir partout.",
+      "en": "A child in the camp asks why you would light a lamp when it is dark everywhere."
+    },
+    "traces": {
+      "fr": "Une petite lampe de terre noircie, rangée avec soin ; quelqu'un qui ne dit plus « servis » de la même façon.",
+      "en": "A small blackened clay lamp, carefully put away; someone who no longer says \"servis\" the same way."
+    }
+  },
+  "registre/affaires/zerbaz": {
+    "_nom": "zerbaz",
+    "titre": {
+      "fr": "Zerbaz",
+      "en": "Zerbaz"
+    },
+    "apprendre": {
+      "fr": "Une gramoune donne le nom d'une plante contre la fièvre, et l'étage de la forêt où elle pousse.",
+      "en": "A gramoune gives the name of a plant against fever, and the level of the forest where it grows."
+    },
+    "demande": {
+      "fr": "De monter la chercher au bon endroit et à la bonne saison, de la reconnaître, et de la préparer comme elle a dit (une tisane).",
+      "en": "To climb up and look for it in the right place and the right season, to recognise it, and to prepare it as she said (an infusion)."
+    },
+    "malTourner": {
+      "fr": "Une recette circule fausse : une plante voisine, une dose doublée. La tisane soulage et ne guérit pas tout ; elle ne fait rien contre le Gris.",
+      "en": "A recipe goes around wrong: a neighbouring plant, a doubled dose. The infusion eases and does not cure everything; it does nothing against the Grey."
+    },
+    "change": {
+      "fr": "Un abri sait soigner une fièvre de plus, et reconnaître ce qu'il a.",
+      "en": "A shelter knows how to treat one more fever, and to recognise what it has."
+    },
+    "garde": {
+      "fr": "Une page de cahier que d'autres voudront copier (le savoir « Zerbaz et tisanes »).",
+      "en": "A notebook page others will want to copy (the know-how \"Zerbaz and infusions\")."
+    },
+    "verites.vraie.texte": {
+      "fr": "La plante pousse où elle a dit, et soulage les fièvres.",
+      "en": "The plant grows where she said, and eases fevers."
+    },
+    "verites.fausse.texte": {
+      "fr": "La recette a été recopiée de travers : la plante voisine ne fait rien, ou rend malade.",
+      "en": "The recipe was copied wrong: the neighbouring plant does nothing, or makes you ill."
+    },
+    "pente.crans.0": {
+      "fr": "La saison de la plante passe.",
+      "en": "The plant's season passes."
+    },
+    "pente.crans.1": {
+      "fr": "La gramoune oublie le nom, ou s'en va.",
+      "en": "The gramoune forgets the name, or goes away."
+    },
+    "issues.0.titre": {
+      "fr": "La plante trouvée et apprise",
+      "en": "The plant found and learned"
+    },
+    "issues.0.texte": {
+      "fr": "On la reconnaît, on la cueille, on la prépare.",
+      "en": "You recognise it, pick it, prepare it."
+    },
+    "issues.1.titre": {
+      "fr": "La mauvaise plante",
+      "en": "The wrong plant"
+    },
+    "issues.1.texte": {
+      "fr": "On a cueilli la voisine ; un malade le paie (au MJ de dire comment).",
+      "en": "You picked the neighbouring one; a sick person pays for it (the GM says how)."
+    },
+    "issues.2.titre": {
+      "fr": "La page donnée",
+      "en": "The page given away"
+    },
+    "issues.2.texte": {
+      "fr": "On recopie la page pour un autre abri.",
+      "en": "You copy the page out for another shelter."
+    },
+    "voix.0": {
+      "fr": "« Pour la fièvre, il y a une feuille. Pas celle d'en bas : celle d'en haut, sous les tamarins. Et pas trop. »",
+      "en": "\"For fever, there's a leaf. Not the one down below: the one up high, under the tamarinds. And not too much.\""
+    },
+    "voix.1": {
+      "fr": "« Ma grand-mère disait : la plante te soigne si tu la cueilles le matin. » Personne ne sait si c'est vrai.",
+      "en": "\"My grandmother used to say: the plant heals you if you pick it in the morning.\" Nobody knows if it's true."
+    },
+    "voix.2": {
+      "fr": "Une page recopiée, passée de main en main, avec une dose barrée et réécrite.",
+      "en": "A copied page, passed from hand to hand, with one dose crossed out and rewritten."
+    },
+    "traces": {
+      "fr": "Un sachet de feuilles sèches étiqueté à la main ; une page de cahier copiée trois fois.",
+      "en": "A packet of dried leaves labelled by hand; a notebook page copied three times."
+    }
+  },
+  "registre/ancrages/carnet": {
+    "_nom": "Un carnet",
+    "nom": {
+      "fr": "Un carnet",
+      "en": "A notebook"
+    },
+    "description": {
+      "fr": "<p>Un carnet d'écolier où il écrit chaque soir ce qui s'est passé : les noms, les dates, la météo, ce qu'on a mangé. Quelqu'un, un jour, devra savoir. Le perdre, ce serait perdre tout ce qu'il a vu.</p>",
+      "en": "<p>A school exercise book in which they write down every evening what happened: names, dates, the weather, what we ate. Someone, one day, will need to know. Losing it would be losing everything they have seen.</p>"
+    },
+    "texte": {
+      "fr": "écrire quelques lignes chaque soir",
+      "en": "write a few lines every evening"
+    }
+  },
+  "registre/ancrages/musique": {
+    "_nom": "Un instrument",
+    "nom": {
+      "fr": "Un instrument",
+      "en": "An instrument"
+    },
+    "description": {
+      "fr": "<p>Un kayamb, un harmonica, une vieille guitare au vernis écaillé. Le soir, il joue tout bas un séga ou un maloya de son grand-père. Le bruit attire, il le sait ; il joue quand même, pour lui.</p>",
+      "en": "<p>A kayamb, a harmonica, an old guitar with flaking varnish. In the evening, they play very softly a séga or a maloya from their grandfather. Noise attracts, they know it; they play anyway, for themselves.</p>"
+    },
+    "texte": {
+      "fr": "jouer un air le soir, même tout bas",
+      "en": "play a tune in the evening, even very softly"
+    }
+  },
+  "registre/ancrages/photo": {
+    "_nom": "Une photo",
+    "nom": {
+      "fr": "Une photo",
+      "en": "A photo"
+    },
+    "description": {
+      "fr": "<p>Une photo pliée en quatre dans un portefeuille : des enfants, un mariage, une maison au bord de la mer. Il la regarde chaque soir. Tant qu'il l'a sur lui, il sait pourquoi il se lève.</p>",
+      "en": "<p>A photo folded in four in a wallet: children, a wedding, a house by the sea. They look at it every evening. As long as they have it on them, they know why they get up.</p>"
+    },
+    "texte": {
+      "fr": "la regarder chaque soir, la garder sèche",
+      "en": "look at it every evening, keep it dry"
+    }
+  },
+  "registre/ancrages/plante": {
+    "_nom": "Un pied de piment",
+    "nom": {
+      "fr": "Un pied de piment",
+      "en": "A chilli plant"
+    },
+    "description": {
+      "fr": "<p>Un pied de piment dans un pot de yaourt, ou une bouture de géranium de la case de sa mère. Il l'arrose, il le déplace au soleil, il l'emporte quand on part. Tant qu'il pousse, quelque chose continue.</p>",
+      "en": "<p>A chilli plant in a yoghurt pot, or a geranium cutting from their mother's house. They water it, move it into the sun, take it along when we leave. As long as it grows, something goes on.</p>"
+    },
+    "texte": {
+      "fr": "l'arroser, le mettre au soleil, l'emporter partout",
+      "en": "water it, put it in the sun, take it everywhere"
+    }
+  },
+  "registre/ancrages/routine": {
+    "_nom": "Une routine",
+    "nom": {
+      "fr": "Une routine",
+      "en": "A routine"
+    },
+    "description": {
+      "fr": "<p>Le café à cinq heures et demie, la barbe faite, le lit fait, les affaires pliées : le monde s'écroule, pas ses habitudes. Sur la route, sans abri, tout se dérègle, et lui avec.</p>",
+      "en": "<p>Coffee at half past five, a clean shave, the bed made, clothes folded: the world falls apart, their habits don't. On the road, without a shelter, everything goes off the rails, and them with it.</p>"
+    },
+    "texte": {
+      "fr": "le café à la même heure, se raser, plier ses affaires",
+      "en": "coffee at the same time, a shave, folding their things"
+    }
+  },
+  "registre/ancrages/sport": {
+    "_nom": "Le sport",
+    "nom": {
+      "fr": "Le sport",
+      "en": "Sport"
+    },
+    "description": {
+      "fr": "<p>Il courait le Grand Raid, ou il jouait au foot le dimanche au stade de son quartier. Il continue : des pompes au lever, une course dans la cour. Le corps fatigué fait taire la tête.</p>",
+      "en": "<p>They used to run the Grand Raid, or played football on Sundays at the local stadium. They keep at it: push-ups on waking, a run around the yard. A tired body quiets the head.</p>"
+    },
+    "texte": {
+      "fr": "courir, nager ou faire ses pompes chaque matin",
+      "en": "running, swimming or push-ups every morning"
+    }
+  },
   "registre/autonomie": {
     "_nom": "autonomie",
     "voies.0.nom": {
@@ -320,149 +2451,6 @@
       "en": "A wounded person recovers faster (one wound less per success, with 1 medicine); a treated affliction no longer worsens."
     }
   },
-  "registre/depotsCyclone/bache-et-cordes": {
-    "_nom": "une bâche bleue et ses cordes",
-    "nom": {
-      "fr": "une bâche bleue et ses cordes",
-      "en": "a blue tarp and its ropes"
-    },
-    "texte": {
-      "fr": "Une bâche de chantier enroulée autour du poteau de la barrière, avec ses cordes. Elle servira.",
-      "en": "A building-site tarp wrapped round the gatepost, with its ropes. It will come in handy."
-    }
-  },
-  "registre/depotsCyclone/barque-retournee": {
-    "_nom": "une barque retournée",
-    "nom": {
-      "fr": "une barque retournée",
-      "en": "an upturned boat"
-    },
-    "texte": {
-      "fr": "Une barque de pêcheur, coque en l'air, au milieu du chemin. Le moteur a disparu ; le bois et les rames restent.",
-      "en": "A fishing boat, hull in the air, in the middle of the path. The engine is gone; the wood and the oars remain."
-    }
-  },
-  "registre/depotsCyclone/bouteille-de-gaz": {
-    "_nom": "une bouteille de gaz",
-    "nom": {
-      "fr": "une bouteille de gaz",
-      "en": "a gas bottle"
-    },
-    "texte": {
-      "fr": "Une bouteille de gaz de treize kilos a roulé jusqu'au mur. Pleine, ou presque.",
-      "en": "A thirteen-kilo gas bottle has rolled up against the wall. Full, or nearly."
-    }
-  },
-  "registre/depotsCyclone/cuve-de-fioul": {
-    "_nom": "une cuve percée",
-    "nom": {
-      "fr": "une cuve percée",
-      "en": "a holed tank"
-    },
-    "texte": {
-      "fr": "Une cuve de mazout percée a vidé son fond dans la cour. Le potager boira de l'eau sale quelques jours.",
-      "en": "A holed fuel-oil tank has emptied its dregs into the yard. The vegetable garden will drink dirty water for a few days."
-    }
-  },
-  "registre/depotsCyclone/fut-d-eau": {
-    "_nom": "un fût plein d'eau de pluie",
-    "nom": {
-      "fr": "un fût plein d'eau de pluie",
-      "en": "a drum full of rainwater"
-    },
-    "texte": {
-      "fr": "Un fût bleu, venu on ne sait d'où, plein à ras bord d'eau de pluie.",
-      "en": "A blue drum, from who knows where, brimming with rainwater."
-    }
-  },
-  "registre/depotsCyclone/livide-sous-la-tole": {
-    "_nom": "un Livide coincé sous une tôle",
-    "nom": {
-      "fr": "un Livide coincé sous une tôle",
-      "en": "a Pallid pinned under a sheet of metal"
-    },
-    "texte": {
-      "fr": "Une tôle s'est abattue contre la clôture, et dessous, quelque chose bouge encore et gratte.",
-      "en": "A sheet of metal has slammed against the fence, and underneath, something is still moving and scratching."
-    }
-  },
-  "registre/depotsCyclone/malle-d-un-inconnu": {
-    "_nom": "la malle d'un inconnu",
-    "nom": {
-      "fr": "la malle d'un inconnu",
-      "en": "a stranger's trunk"
-    },
-    "texte": {
-      "fr": "Une petite malle de bois, des photos de famille gondolées, un chapelet, une lettre jamais postée. Certains y voient un signe ; ce n'est qu'une malle.",
-      "en": "A small wooden trunk, warped family photos, a rosary, a letter never posted. Some see a sign in it; it is only a trunk."
-    }
-  },
-  "registre/depotsCyclone/nid-de-guepes": {
-    "_nom": "un nid de guêpes",
-    "nom": {
-      "fr": "un nid de guêpes",
-      "en": "a wasps' nest"
-    },
-    "texte": {
-      "fr": "Un nid de guêpes arraché à un arbre, tombé dans la réserve de bois. Elles sont furieuses.",
-      "en": "A wasps' nest torn from a tree, fallen into the woodpile. They are furious."
-    }
-  },
-  "registre/depotsCyclone/panneau-arrache": {
-    "_nom": "un panneau solaire arraché",
-    "nom": {
-      "fr": "un panneau solaire arraché",
-      "en": "a torn-off solar panel"
-    },
-    "texte": {
-      "fr": "Un panneau solaire, le cadre tordu, les cellules intactes, couché dans la boue de la cour.",
-      "en": "A solar panel, frame twisted, cells intact, lying in the mud of the yard."
-    }
-  },
-  "registre/depotsCyclone/poules-affolees": {
-    "_nom": "des poules affolées",
-    "nom": {
-      "fr": "des poules affolées",
-      "en": "panicked hens"
-    },
-    "texte": {
-      "fr": "Trois poules trempées, réfugiées sous la varangue, qui ne veulent plus partir.",
-      "en": "Three soaked hens, sheltering under the veranda, that will not leave."
-    }
-  },
-  "registre/depotsCyclone/regimes-de-bananes": {
-    "_nom": "des régimes de bananes cassés",
-    "nom": {
-      "fr": "des régimes de bananes cassés",
-      "en": "broken banana bunches"
-    },
-    "texte": {
-      "fr": "Les bananiers du voisin ont cassé : deux régimes verts dans la cour, à faire mûrir ou cuire vite.",
-      "en": "The neighbour's banana trees have snapped: two green bunches in the yard, to ripen or cook quickly."
-    }
-  },
-  "registre/depotsCyclone/toles-du-voisin": {
-    "_nom": "des tôles arrachées à un toit voisin",
-    "nom": {
-      "fr": "des tôles arrachées à un toit voisin",
-      "en": "sheet metal torn from a neighbour's roof"
-    },
-    "texte": {
-      "fr": "Trois tôles ondulées, encore clouées à leur chevron, plantées dans le manguier. Quelqu'un, ailleurs, n'a plus de toit.",
-      "en": "Three corrugated sheets, still nailed to their rafter, stuck in the mango tree. Someone, somewhere, has no roof any more."
-    }
-  },
-  "registre/depotsCyclone/vache-noyee": {
-    "_nom": "une vache noyée",
-    "nom": {
-      "fr": "une vache noyée",
-      "en": "a drowned cow"
-    },
-    "texte": {
-      "fr": "Une vache gonflée, coincée contre la barrière : dans deux jours, l'odeur. Il faut la tirer loin, ou la brûler, et la fumée se verra.",
-      "en": "A bloated cow, wedged against the fence: in two days, the smell. It has to be dragged far away, or burned, and the smoke will be seen."
-    }
-  },
   "registre/communautes/cafres": {
     "_nom": "Cafres",
     "nom": {
@@ -604,6 +2592,149 @@
     "description": {
       "fr": "Les métropolitains installés, ou de passage.",
       "en": "People from mainland France who settled here, or are passing through."
+    }
+  },
+  "registre/depotsCyclone/bache-et-cordes": {
+    "_nom": "une bâche bleue et ses cordes",
+    "nom": {
+      "fr": "une bâche bleue et ses cordes",
+      "en": "a blue tarp and its ropes"
+    },
+    "texte": {
+      "fr": "Une bâche de chantier enroulée autour du poteau de la barrière, avec ses cordes. Elle servira.",
+      "en": "A building-site tarp wrapped round the gatepost, with its ropes. It will come in handy."
+    }
+  },
+  "registre/depotsCyclone/barque-retournee": {
+    "_nom": "une barque retournée",
+    "nom": {
+      "fr": "une barque retournée",
+      "en": "an upturned boat"
+    },
+    "texte": {
+      "fr": "Une barque de pêcheur, coque en l'air, au milieu du chemin. Le moteur a disparu ; le bois et les rames restent.",
+      "en": "A fishing boat, hull in the air, in the middle of the path. The engine is gone; the wood and the oars remain."
+    }
+  },
+  "registre/depotsCyclone/bouteille-de-gaz": {
+    "_nom": "une bouteille de gaz",
+    "nom": {
+      "fr": "une bouteille de gaz",
+      "en": "a gas bottle"
+    },
+    "texte": {
+      "fr": "Une bouteille de gaz de treize kilos a roulé jusqu'au mur. Pleine, ou presque.",
+      "en": "A thirteen-kilo gas bottle has rolled up against the wall. Full, or nearly."
+    }
+  },
+  "registre/depotsCyclone/cuve-de-fioul": {
+    "_nom": "une cuve percée",
+    "nom": {
+      "fr": "une cuve percée",
+      "en": "a holed tank"
+    },
+    "texte": {
+      "fr": "Une cuve de mazout percée a vidé son fond dans la cour. Le potager boira de l'eau sale quelques jours.",
+      "en": "A holed fuel-oil tank has emptied its dregs into the yard. The vegetable garden will drink dirty water for a few days."
+    }
+  },
+  "registre/depotsCyclone/fut-d-eau": {
+    "_nom": "un fût plein d'eau de pluie",
+    "nom": {
+      "fr": "un fût plein d'eau de pluie",
+      "en": "a drum full of rainwater"
+    },
+    "texte": {
+      "fr": "Un fût bleu, venu on ne sait d'où, plein à ras bord d'eau de pluie.",
+      "en": "A blue drum, from who knows where, brimming with rainwater."
+    }
+  },
+  "registre/depotsCyclone/livide-sous-la-tole": {
+    "_nom": "un Livide coincé sous une tôle",
+    "nom": {
+      "fr": "un Livide coincé sous une tôle",
+      "en": "a Pallid pinned under a sheet of metal"
+    },
+    "texte": {
+      "fr": "Une tôle s'est abattue contre la clôture, et dessous, quelque chose bouge encore et gratte.",
+      "en": "A sheet of metal has slammed against the fence, and underneath, something is still moving and scratching."
+    }
+  },
+  "registre/depotsCyclone/malle-d-un-inconnu": {
+    "_nom": "la malle d'un inconnu",
+    "nom": {
+      "fr": "la malle d'un inconnu",
+      "en": "a stranger's trunk"
+    },
+    "texte": {
+      "fr": "Une petite malle de bois, des photos de famille gondolées, un chapelet, une lettre jamais postée. Certains y voient un signe ; ce n'est qu'une malle.",
+      "en": "A small wooden trunk, warped family photos, a rosary, a letter never posted. Some see a sign in it; it is only a trunk."
+    }
+  },
+  "registre/depotsCyclone/nid-de-guepes": {
+    "_nom": "un nid de guêpes",
+    "nom": {
+      "fr": "un nid de guêpes",
+      "en": "a wasps' nest"
+    },
+    "texte": {
+      "fr": "Un nid de guêpes arraché à un arbre, tombé dans la réserve de bois. Elles sont furieuses.",
+      "en": "A wasps' nest torn from a tree, fallen into the woodpile. They are furious."
+    }
+  },
+  "registre/depotsCyclone/panneau-arrache": {
+    "_nom": "un panneau solaire arraché",
+    "nom": {
+      "fr": "un panneau solaire arraché",
+      "en": "a torn-off solar panel"
+    },
+    "texte": {
+      "fr": "Un panneau solaire, le cadre tordu, les cellules intactes, couché dans la boue de la cour.",
+      "en": "A solar panel, frame twisted, cells intact, lying in the mud of the yard."
+    }
+  },
+  "registre/depotsCyclone/poules-affolees": {
+    "_nom": "des poules affolées",
+    "nom": {
+      "fr": "des poules affolées",
+      "en": "panicked hens"
+    },
+    "texte": {
+      "fr": "Trois poules trempées, réfugiées sous la varangue, qui ne veulent plus partir.",
+      "en": "Three soaked hens, sheltering under the veranda, that will not leave."
+    }
+  },
+  "registre/depotsCyclone/regimes-de-bananes": {
+    "_nom": "des régimes de bananes cassés",
+    "nom": {
+      "fr": "des régimes de bananes cassés",
+      "en": "broken banana bunches"
+    },
+    "texte": {
+      "fr": "Les bananiers du voisin ont cassé : deux régimes verts dans la cour, à faire mûrir ou cuire vite.",
+      "en": "The neighbour's banana trees have snapped: two green bunches in the yard, to ripen or cook quickly."
+    }
+  },
+  "registre/depotsCyclone/toles-du-voisin": {
+    "_nom": "des tôles arrachées à un toit voisin",
+    "nom": {
+      "fr": "des tôles arrachées à un toit voisin",
+      "en": "sheet metal torn from a neighbour's roof"
+    },
+    "texte": {
+      "fr": "Trois tôles ondulées, encore clouées à leur chevron, plantées dans le manguier. Quelqu'un, ailleurs, n'a plus de toit.",
+      "en": "Three corrugated sheets, still nailed to their rafter, stuck in the mango tree. Someone, somewhere, has no roof any more."
+    }
+  },
+  "registre/depotsCyclone/vache-noyee": {
+    "_nom": "une vache noyée",
+    "nom": {
+      "fr": "une vache noyée",
+      "en": "a drowned cow"
+    },
+    "texte": {
+      "fr": "Une vache gonflée, coincée contre la barrière : dans deux jours, l'odeur. Il faut la tirer loin, ou la brûler, et la fumée se verra.",
+      "en": "A bloated cow, wedged against the fence: in two days, the smell. It has to be dragged far away, or burned, and the smoke will be seen."
     }
   },
   "registre/enfances/enfance-a-madagascar": {
@@ -1477,17 +3608,6 @@
       "en": "<p>A neighbourhood burns: a forgotten candle, a generator, a looting gone wrong. Without firefighters, the fire goes from one house to the next all night.</p>"
     }
   },
-  "registre/evenements/la-porte-en-debat": {
-    "_nom": "Faut-il ouvrir ?",
-    "nom": {
-      "fr": "Faut-il ouvrir ?",
-      "en": "Should we open?"
-    },
-    "texte": {
-      "fr": "<p>Une famille campe depuis deux jours devant la barrière. Au repas, le ton monte : « <em>nou nana pa asé pou nou mèm</em> » (on n'a pas assez pour nous-mêmes), répond quelqu'un à celle qui veut ouvrir. Le chef peut trancher seul, ou demander un vote. Qui a voté contre une trahison ne rougit pas avec les autres.</p>",
-      "en": "<p>A family has been camping in front of the gate for two days. At the meal, voices rise: \"<em>nou nana pa asé pou nou mèm</em>\" (we don't have enough for ourselves), someone answers the woman who wants to open. The leader can decide alone, or call a vote. Whoever voted against a betrayal doesn't turn red with the others.</p>"
-    }
-  },
   "registre/evenements/jardin-abandonne": {
     "_nom": "Un jardin abandonné",
     "nom": {
@@ -1508,6 +3628,17 @@
     "texte": {
       "fr": "<p>Dans une case au bout d'un chemin, une très vieille dame refuse de partir : elle a son jardin, ses zerbaz, ses poules. Elle sait des choses que plus personne ne sait ; elle ne les dira qu'à ceux qui prendront le temps de l'écouter (une gramoune à accueillir : fenêtre du MJ).</p>",
       "en": "<p>In a house at the end of a path, a very old lady refuses to leave: she has her garden, her zerbaz (healing herbs), her hens. She knows things nobody else knows any more; she will only tell them to those who take the time to listen (a gramoune to take in: GM window).</p>"
+    }
+  },
+  "registre/evenements/la-porte-en-debat": {
+    "_nom": "Faut-il ouvrir ?",
+    "nom": {
+      "fr": "Faut-il ouvrir ?",
+      "en": "Should we open?"
+    },
+    "texte": {
+      "fr": "<p>Une famille campe depuis deux jours devant la barrière. Au repas, le ton monte : « <em>nou nana pa asé pou nou mèm</em> » (on n'a pas assez pour nous-mêmes), répond quelqu'un à celle qui veut ouvrir. Le chef peut trancher seul, ou demander un vote. Qui a voté contre une trahison ne rougit pas avec les autres.</p>",
+      "en": "<p>A family has been camping in front of the gate for two days. At the meal, voices rise: \"<em>nou nana pa asé pou nou mèm</em>\" (we don't have enough for ourselves), someone answers the woman who wants to open. The leader can decide alone, or call a vote. Whoever voted against a betrayal doesn't turn red with the others.</p>"
     }
   },
   "registre/evenements/la-terre-du-gros-blanc": {
@@ -1629,17 +3760,6 @@
     "texte": {
       "fr": "<p>Sur un parking de zone commerciale, les Ferrailleurs tiennent marché : pièces, batteries, outils, carburant, et des nouvelles de toute l'île, vraies ou fausses.</p>",
       "en": "<p>In a retail-park car park, the Scrappers hold a market: parts, batteries, tools, fuel, and news from all over the island, true or false.</p>"
-    }
-  },
-  "registre/evenements/meute-sur-la-route": {
-    "_nom": "Une meute tient la route",
-    "nom": {
-      "fr": "Une meute tient la route",
-      "en": "A pack holds the road"
-    },
-    "texte": {
-      "fr": "<p>Une meute d'une dizaine de chiens, menée par un grand chien de tête, tient un tronçon de route : elle suit les voyageurs, attend la nuit ou la panne.</p>",
-      "en": "<p>A pack of about ten dogs, led by a big lead dog, holds a stretch of road: it follows travellers, waiting for night or a breakdown.</p>"
     }
   },
   "registre/evenements/marche-l-objet-rapporte": {
@@ -1790,6 +3910,17 @@
     "texte": {
       "fr": "<p>« <em>Yab i désann jamé dann ba</em> » (le Yab ne descend jamais de ses Hauts), répète un jeune du Port en cherchant des lentilles de Cilaos, introuvables d'après lui. Derrière lui, Jean-Marie Dijoux pose son sac de jute, quatre heures de marche dans les jambes, comme chaque semaine depuis le jour zéro. Les meilleures lentilles de l'île, petites et brunes. Il les troque au cours, pas une part de plus, et repart avant la nuit en marmonnant que « <em>moun anba i vé tout pou rien</em> » (les gens d'en bas veulent tout pour rien). Le jeune du Port l'aide à recharger son sac. Ni l'un ni l'autre ne s'excuse ; ils se reverront samedi.</p>",
       "en": "<p>\"<em>Yab i désann jamé dann ba</em>\" (the Yab never comes down from his Highlands), repeats a youngster from Le Port while looking for Cilaos lentils, which according to him cannot be found. Behind him, Jean-Marie Dijoux sets down his jute sack, four hours of walking in his legs, like every week since day zero. The best lentils on the island, small and brown. He trades them at the rate, not a share more, and leaves before nightfall muttering that \"<em>moun anba i vé tout pou rien</em>\" (people from down below want everything for nothing). The youngster from Le Port helps him load his sack. Neither apologises; they will see each other on Saturday.</p>"
+    }
+  },
+  "registre/evenements/meute-sur-la-route": {
+    "_nom": "Une meute tient la route",
+    "nom": {
+      "fr": "Une meute tient la route",
+      "en": "A pack holds the road"
+    },
+    "texte": {
+      "fr": "<p>Une meute d'une dizaine de chiens, menée par un grand chien de tête, tient un tronçon de route : elle suit les voyageurs, attend la nuit ou la panne.</p>",
+      "en": "<p>A pack of about ten dogs, led by a big lead dog, holds a stretch of road: it follows travellers, waiting for night or a breakdown.</p>"
     }
   },
   "registre/evenements/noyes-du-lagon": {
@@ -2158,6 +4289,10 @@
     "cout": {
       "fr": "Un cabri de l'élevage (six rations).",
       "en": "A goat from the herd (six rations)."
+    },
+    "ambiance": {
+      "fr": "Une corde de piquet vide dans une cour, une marmite immense retournée sur le feu éteint ; les voisins se souviennent de la part qu'on leur portait.",
+      "en": "An empty tethering rope in a yard, a huge pot upturned on the dead fire; the neighbours remember the share that used to be brought to them."
     }
   },
   "registre/fetes/cavadee": {
@@ -2181,6 +4316,10 @@
     "cout": {
       "fr": "Les privations (fatigue +1 à ceux qui font le vœu) ; la marche à découvert (visibilité +2 ce jour-là).",
       "en": "The privations (fatigue +1 to those who make the vow); the walk in the open (visibility +2 that day)."
+    },
+    "ambiance": {
+      "fr": "Des fleurs fanées et des oriflammes autour des temples, laissées telles quelles depuis le jour zéro. Personne n'y touche.",
+      "en": "Withered flowers and pennants around the temples, left as they were since day zero. Nobody touches them."
     }
   },
   "registre/fetes/dipavali": {
@@ -2204,6 +4343,37 @@
     "cout": {
       "fr": "Une ration de plus par personne ; chaque flamme attire (visibilité +3 cette nuit).",
       "en": "One extra ration per person; every flame draws attention (visibility +3 that night)."
+    },
+    "ambiance": {
+      "fr": "Des lampes à huile le long des chemins et aux seuils, un kolam devant la porte, des guirlandes de lumières éteintes aux façades. En fouillant, des gâteaux indiens dans une boîte en fer. Une guirlande lumineuse, morte, au cou de quelques Livides.",
+      "en": "Oil lamps along the paths and at the thresholds, a kolam in front of the door, strings of lights switched off on the façades. When searching, Indian sweets in a tin box. A dead string of fairy lights round the neck of a few Pallid."
+    }
+  },
+  "registre/fetes/fete-du-miel-vert": {
+    "_nom": "La fête du miel vert",
+    "periode": {
+      "fr": "le dernier samedi et le dernier dimanche de janvier, à la Plaine des Cafres",
+      "en": "the last Saturday and Sunday of January, at the Plaine des Cafres"
+    },
+    "description": {
+      "fr": "Fin janvier, à la Plaine des Cafres, les apiculteurs des Hauts ouvraient leurs ruches au public : le miel sombre des forêts de tamarins, la cire, le pain d'épices, et des enfants qui goûtaient tout au bout d'une cuillère. Au camp, on enfume une ruche ou un essaim sauvage, on partage un rayon, et le miel finit sur les petites plaies autant que sur le pain.",
+      "en": "At the end of January, at the Plaine des Cafres, the beekeepers of the Highlands opened their hives to the public: the dark honey of the tamarind forests, beeswax, gingerbread, and children tasting everything off the tip of a spoon. In camp, you smoke out a hive or a wild swarm, share a comb, and the honey ends up on small wounds as much as on bread."
+    },
+    "consigne": {
+      "fr": "Fête du miel vert : on enfume une ruche ou un essaim sauvage des Hauts, on partage un rayon ; le miel nourrit et soigne les petites plaies, et la fumée de l'enfumoir se voit de loin",
+      "en": "Green honey festival: you smoke out a hive or a wild swarm of the Highlands, share a comb; honey feeds and heals small wounds, and the smoker's smoke can be seen from afar"
+    },
+    "gain": {
+      "fr": "Un rayon de miel partagé : +1 de moral à chacun, une nourriture et un médicament (le miel sur les petites plaies).",
+      "en": "A honeycomb shared: +1 morale to everyone, one food and one medicine (honey on small wounds)."
+    },
+    "cout": {
+      "fr": "Un quart dehors à enfumer une ruche ou un essaim sauvage ; la fumée se voit (visibilité +1 ce jour-là).",
+      "en": "A watch outside smoking out a hive or a wild swarm; the smoke can be seen (visibility +1 that day)."
+    },
+    "ambiance": {
+      "fr": "Des ruches en tronc et des cadres abandonnés dans les jardins de la Plaine ; en fouillant, un pot de miel des Hauts, qui ne se gâte jamais.",
+      "en": "Log hives and abandoned frames in the gardens of the Plaine; when searching, a jar of Highland honey, which never goes off."
     }
   },
   "registre/fetes/fete-nationale": {
@@ -2227,6 +4397,10 @@
     "cout": {
       "fr": "Une ration de plus par personne (bruit +2).",
       "en": "One extra ration per person (noise +2)."
+    },
+    "ambiance": {
+      "fr": "Un drapeau délavé à la mairie, des lampions de l'an passé dans un carton, une estrade qu'on n'a jamais démontée.",
+      "en": "A faded flag at the town hall, last year's paper lanterns in a cardboard box, a stage nobody ever took down."
     }
   },
   "registre/fetes/halloween": {
@@ -2250,6 +4424,10 @@
     "cout": {
       "fr": "Il faut avoir retrouvé ses morts (le corps d'un mort relevé en Livide doit être retrouvé d'abord) ; les bougies se voient la nuit (visibilité +1).",
       "en": "You must have found your dead (the body of someone who rose as a Pallid must be found first); the candles can be seen at night (visibility +1)."
+    },
+    "ambiance": {
+      "fr": "Rien qu'on ajoute : c'est un deuil. Les cimetières gardent les tombes blanchies l'an d'avant et des pots de chrysanthèmes secs ; on n'y va plus. Sur une varangue, la citrouille creusée du dernier Halloween, réduite à rien.",
+      "en": "Nothing is added: it is a time of mourning. The cemeteries keep the graves whitewashed the year before and pots of dry chrysanthemums; nobody goes there any more. On a veranda, the carved pumpkin from the last Halloween, shrunk to nothing."
     }
   },
   "registre/fetes/letchis": {
@@ -2273,6 +4451,10 @@
     "cout": {
       "fr": "Il faut sortir et grimper aux arbres (un quart dehors ; bruit +1).",
       "en": "You have to go out and climb the trees (one watch outside; noise +1)."
+    },
+    "ambiance": {
+      "fr": "Des grappes de letchis dans les jardins abandonnés, et des bouquets encore attachés aux piquets, au bord des routes, là où on les vendait.",
+      "en": "Bunches of lychees in the abandoned gardens, and bouquets still tied to stakes by the roadside, where they used to be sold."
     }
   },
   "registre/fetes/liberte": {
@@ -2296,6 +4478,10 @@
     "cout": {
       "fr": "Une ration de plus par personne ; le tambour s'entend de très loin (bruit +4 à l'abri).",
       "en": "One extra ration per person; the drum carries very far (noise +4 at the shelter)."
+    },
+    "ambiance": {
+      "fr": "Un feu de kabar et ses bancs sur une place ; en fouillant, un rouleur à la peau détendue ou un kayamb. Le maloya et le tambour portent à des centaines de mètres.",
+      "en": "A kabar fire and its benches on a square; when searching, a rouleur drum with a slack skin, or a kayamb. The maloya and the drum carry hundreds of metres."
     }
   },
   "registre/fetes/marche-sur-le-feu": {
@@ -2319,6 +4505,10 @@
     "cout": {
       "fr": "Beaucoup de bois (quatre matériaux) ; une lueur visible de loin (visibilité +3 cette nuit).",
       "en": "A lot of wood (four materials); a glow seen from far away (visibility +3 that night)."
+    },
+    "ambiance": {
+      "fr": "Au temple, les fleurs, les oriflammes et la fosse de braises éteinte, telles qu'au dernier feu. Personne n'y touche.",
+      "en": "At the temple, the flowers, the pennants and the pit of dead embers, just as they were after the last fire. Nobody touches them."
     }
   },
   "registre/fetes/musique": {
@@ -2342,6 +4532,10 @@
     "cout": {
       "fr": "Une ration chaude de plus par personne ; si l'on joue, la musique porte loin (bruit +3).",
       "en": "One extra hot ration per person; if you play, the music carries far (noise +3)."
+    },
+    "ambiance": {
+      "fr": "Une guitare ou un kayamb oubliés dans une case vide. Un casque de musique au cou de quelques Livides. La musique s'entend à une centaine de mètres, le séga des bons jours bien plus loin.",
+      "en": "A guitar or a kayamb forgotten in an empty house. Headphones round the neck of a few Pallid. Music can be heard a hundred metres away, the séga of the good days much further."
     }
   },
   "registre/fetes/noel": {
@@ -2365,6 +4559,10 @@
     "cout": {
       "fr": "Un vrai surplus : deux rations de plus par personne.",
       "en": "A real surplus: two extra rations per person."
+    },
+    "ambiance": {
+      "fr": "Des pieds de Noël décorés, filao ou cryptoméria, dans les cases restées, et des guirlandes aux varangues. En fouillant, un cadeau emballé que personne n'a ouvert, des grappes de letchis. Quelques Livides portent encore un bonnet de Noël.",
+      "en": "Decorated Christmas trees, casuarina or cryptomeria, in the houses still standing, and garlands on the verandas. When searching, a wrapped present nobody opened, bunches of lychees. A few Pallid still wear a Santa hat."
     }
   },
   "registre/fetes/nouvel-an": {
@@ -2388,6 +4586,10 @@
     "cout": {
       "fr": "Une ration de plus par personne ; à minuit, le moindre bruit porte loin (bruit +2).",
       "en": "One extra ration per person; at midnight, the slightest noise carries far (noise +2)."
+    },
+    "ambiance": {
+      "fr": "Des cotillons au fond des tiroirs, une bouteille gardée pour minuit. Au loin, une salve de pétards ou une fusée que quelqu'un gardait : tout ce qui éclate à minuit s'entend à des centaines de mètres.",
+      "en": "Party streamers at the back of drawers, a bottle kept for midnight. In the distance, a volley of firecrackers or a rocket someone was saving: anything that bursts at midnight can be heard hundreds of metres away."
     }
   },
   "registre/fetes/nouvel-an-chinois": {
@@ -2411,6 +4613,10 @@
     "cout": {
       "fr": "Deux quarts de travail, une ration de plus par personne, et les pétards (bruit +3).",
       "en": "Two watches of work, one extra ration per person, and the firecrackers (noise +3)."
+    },
+    "ambiance": {
+      "fr": "Des lanternes rouges aux façades, des papiers rouges sans écriture au seuil. En fouillant, une enveloppe rouge, des mandarines. Un ruban rouge au cou de quelques Livides. Les pétards portent très loin.",
+      "en": "Red lanterns on the façades, red papers without writing at the threshold. When searching, a red envelope, mandarins. A red ribbon round the neck of a few Pallid. The firecrackers carry very far."
     }
   },
   "registre/fetes/nouvel-an-tamoul": {
@@ -2434,6 +4640,10 @@
     "cout": {
       "fr": "Rien d'autre que d'oser aller voir les voisins.",
       "en": "Nothing but daring to go and see the neighbours."
+    },
+    "ambiance": {
+      "fr": "Des guirlandes de fleurs séchées aux portes, un kolam effacé par la pluie ; en fouillant, des gâteaux indiens.",
+      "en": "Dried flower garlands on the doors, a kolam washed away by the rain; when searching, Indian sweets."
     }
   },
   "registre/fetes/paques": {
@@ -2457,98 +4667,37 @@
     "cout": {
       "fr": "Une ration de plus par personne (bruit +1).",
       "en": "One extra ration per person (noise +1)."
+    },
+    "ambiance": {
+      "fr": "Rien de plus que ce que les cases gardent : la cloche d'une église qu'on n'ose pas sonner, des œufs de la basse-cour cachés pour les plus jeunes.",
+      "en": "Nothing more than what the houses keep: the bell of a church nobody dares ring, eggs from the farmyard hidden for the youngest."
     }
   },
-  "registre/gramounes/gramoun-ignace": {
-    "_nom": "Gramoun Ignace Técher",
-    "nom": {
-      "fr": "Gramoun Ignace Técher",
-      "en": "Gramoun Ignace Técher"
+  "registre/fetes/pongal": {
+    "_nom": "Pongal, la moisson tamoule",
+    "periode": {
+      "fr": "du 13 au 16 janvier, au soleil du matin",
+      "en": "from 13 to 16 January, in the morning sun"
     },
-    "raison": {
-      "fr": "Il gardait encore ses vaches au-dessus de l'îlet ; la dernière est morte, et il est descendu, une canne à la main, sans un mot.",
-      "en": "He was still keeping his cows above the îlet; the last one died, and he came down, a stick in his hand, without a word."
+    "description": {
+      "fr": "À la mi-janvier, Pongal remerciait le soleil pour la moisson : devant les cases et les temples tamouls, on faisait bouillir le riz au lait sucré dans un pot de terre neuf, sur trois pierres, jusqu'à ce qu'il déborde. Des cannes dressées de chaque côté de la porte, un kolam au seuil, et le lendemain, les bêtes de la cour nourries les premières. Au camp, un seul pot, et tout le monde vient le regarder déborder.",
+      "en": "In mid-January, Pongal thanked the sun for the harvest: in front of Tamil houses and temples, sweet milk rice was boiled in a new clay pot, on three stones, until it overflowed. Sugar cane stalks stood on each side of the door, a kolam at the threshold, and the next day the farmyard animals were fed first. In camp, a single pot, and everyone comes to watch it overflow."
     },
-    "prix": {
-      "fr": "Il commande tout chantier comme s'il était le sien, ne monte plus une échelle, et râle contre « les gens d'en bas ».",
-      "en": "He runs every building job as if it were his own, no longer climbs a ladder, and grumbles about “the people from down below”."
+    "consigne": {
+      "fr": "Pongal, la moisson tamoule : un pot de riz au lait qui déborde au soleil du matin, des cannes dressées, un kolam ; on remercie pour ce qui a poussé, et l'on nourrit les bêtes de la cour en premier",
+      "en": "Pongal, the Tamil harvest: a pot of milk rice overflowing in the morning sun, cane stalks standing upright, a kolam; people give thanks for what has grown, and the farmyard animals are fed first"
     },
-    "prejuges.0.dit": {
-      "fr": "« *Bann malbar i fé sèrvis.* » (Les Malbars font des cérémonies.)",
-      "en": "\"*Bann malbar i fé sèrvis.*\" (The Malbars hold ceremonies.)"
+    "gain": {
+      "fr": "Quatre jours de moisson : +1 de moral à chacun, et quatre jours où il remonte plus haut.",
+      "en": "Four days of harvest: +1 morale to everyone, and four days when it climbs higher."
     },
-    "notes": {
-      "fr": "Yab de vieille souche, il a monté à la main la moitié des murets de pierre sèche de son îlet. Il répète que « *bann malbar i fé sèrvis* » (les Malbars font des cérémonies) comme s'il s'en méfiait ; l'homme qui lui a appris à poser une boutisse s'appelait Moutoussamy, et c'est à son enterrement qu'Ignace a pleuré pour la dernière fois. Il dort peu, se lève avant le coq, et voudrait qu'on en fasse autant.",
-      "en": "A Yab (a poor white of the Highlands) of old stock, he built half the dry-stone walls of his îlet by hand. He keeps saying “*bann malbar i fé sèrvis*” (the Malbars, the Tamil Réunionese, hold ceremonies) as if he distrusted them; the man who taught him to lay a through-stone was called Moutoussamy, and it was at his funeral that Ignace last cried. He sleeps little, rises before the rooster, and would like everyone else to do the same."
-    }
-  },
-  "registre/gramounes/gramoun-said": {
-    "_nom": "Gramoun Saïd Madi",
-    "nom": {
-      "fr": "Gramoun Saïd Madi",
-      "en": "Gramoun Saïd Madi"
+    "cout": {
+      "fr": "Une ration de plus par personne (le riz au lait sucré) ; un quart pour le kolam et la cuisson dehors ; le cri de joie quand le pot déborde (bruit +1).",
+      "en": "One extra ration per person (the sweet milk rice); a watch for the kolam and the cooking outside; the cry of joy when the pot overflows (noise +1)."
     },
-    "raison": {
-      "fr": "Il a ramené sa pirogue au port avec trois inconnus à bord le soir du jour zéro, et ne l'a plus quittée depuis.",
-      "en": "He brought his pirogue back to port with three strangers on board on the evening of day zero, and has not left it since."
-    },
-    "prix": {
-      "fr": "Il tousse la nuit, ne peut plus porter, et refuse de s'éloigner de la mer plus de quelques jours.",
-      "en": "He coughs at night, can no longer carry loads, and refuses to stay away from the sea for more than a few days."
-    },
-    "prejuges.0.dit": {
-      "fr": "« *Bann yab i koné pa la mèr.* » (Les petits blancs des Hauts ne connaissent pas la mer.)",
-      "en": "\"*Bann yab i koné pa la mèr.*\" (The poor whites of the Highlands don't know the sea.)"
-    },
-    "notes": {
-      "fr": "Arrivé de Mayotte il y a quarante ans, kofia brodée et barbe blanche, il a pêché au large de Saint-Gilles toute sa vie et tressé ses nasses au bambou. Il se moque des Yabs, « *bann yab i koné pa la mèr* » (les petits blancs des Hauts ne connaissent pas la mer) ; son meilleur ami, un pêcheur de Cilaos descendu à vingt ans, lui a pourtant sauvé la vie un soir de houle. Il prie à l'heure, rit fort, et sait où sont les poissons.",
-      "en": "He came from Mayotte forty years ago, embroidered kofia and white beard, fished off Saint-Gilles all his life and wove his fish traps from bamboo. He makes fun of the Yabs, “*bann yab i koné pa la mèr*” (the poor whites of the Highlands know nothing of the sea); yet his best friend, a fisherman from Cilaos who came down at twenty, saved his life one night of heavy swell. He prays on time, laughs loudly, and knows where the fish are."
-    }
-  },
-  "registre/gramounes/gramoune-mariamma": {
-    "_nom": "Gramoune Mariamma Moutoussamy",
-    "nom": {
-      "fr": "Gramoune Mariamma Moutoussamy",
-      "en": "Gramoune Mariamma Moutoussamy"
-    },
-    "raison": {
-      "fr": "Son étal de paniers au bazar de Saint-Louis a brûlé avec le reste ; elle a gardé son couteau à vacoa et son sourire.",
-      "en": "Her basket stall at the Saint-Louis bazaar burned with everything else; she kept her vacoa knife and her smile."
-    },
-    "prix": {
-      "fr": "Elle ne mangera pas de bœuf, demande un coin pour sa lampe le vendredi, et donne tout ce qu'on lui confie.",
-      "en": "She will not eat beef, asks for a corner for her lamp on Fridays, and gives away everything she is given."
-    },
-    "prejuges.0.dit": {
-      "fr": "« *Zot lé dèrnié arivé, zot i pran tout.* » (Les derniers arrivés prennent tout.)",
-      "en": "\"*Zot lé dèrnié arivé, zot i pran tout.*\" (The last to arrive take everything.)"
-    },
-    "notes": {
-      "fr": "Vannière malbare, elle a tressé des milliers de sacs et de chaises de vacoa pour les marchés du Sud. Elle dit des Comoriens qu'« *zot lé dèrnié arivé, zot i pran tout* » (les derniers arrivés prennent tout), puis partage son riz avec la première famille comorienne qui passe, et lui apprend à tresser. Elle chante en tamoul en travaillant ; personne ne comprend les paroles, tout le monde connaît l'air.",
-      "en": "A Malbar (Tamil Réunionese) basket-weaver, she has woven thousands of vacoa bags and chairs for the markets of the South. She says of the Comorians that “*zot lé dèrnié arivé, zot i pran tout*” (the last to arrive take everything), then shares her rice with the first Comorian family that passes, and teaches them to weave. She sings in Tamil while she works; nobody understands the words, everyone knows the tune."
-    }
-  },
-  "registre/gramounes/gramoune-zelie": {
-    "_nom": "Gramoune Zélie Ah-Kiem",
-    "nom": {
-      "fr": "Gramoune Zélie Ah-Kiem",
-      "en": "Gramoune Zélie Ah-Kiem"
-    },
-    "raison": {
-      "fr": "Elle n'a pas voulu quitter sa case de Bras-Panon ; quand la ravine a pris le pont, ce sont ses voisins qui ont dû partir, et elle avec.",
-      "en": "She would not leave her house in Bras-Panon; when the ravine took the bridge, it was her neighbours who had to leave, and she went with them."
-    },
-    "prix": {
-      "fr": "Elle marche lentement, il faut la porter dans les sentiers, et elle ne donne ses remèdes qu'à ceux qui l'écoutent.",
-      "en": "She walks slowly, she has to be carried on the trails, and she only gives her remedies to those who listen to her."
-    },
-    "prejuges.0.dit": {
-      "fr": "« *Zot i koné pa nout rimèd.* » (Ils ne connaissent pas nos remèdes.)",
-      "en": "\"*Zot i koné pa nout rimèd.*\" (They don't know our remedies.)"
-    },
-    "notes": {
-      "fr": "Fille d'un boutiquier chinois de Bras-Panon et d'une coupeuse de canne cafre, elle a soigné tout le quartier avec son jardin : ayapana, fleur jaune, faham, citronnelle. Elle dit des médecins zoreils qu'« *zot i koné pa nout rimèd* » (ils ne connaissent pas nos remèdes) ; c'est pourtant une infirmière de Lyon qui, la première, a recopié ses recettes dans un cahier, et elle en parle avec tendresse. Elle ne se plaint jamais du dos. Elle se plaint de tout le reste.",
-      "en": "Daughter of a Chinese shopkeeper from Bras-Panon and a Cafre (Afro-Réunionese) cane cutter, she has tended the whole neighbourhood with her garden: ayapana, fleur jaune, faham, lemongrass. She says of the Zoreil (mainland French) doctors that “*zot i koné pa nout rimèd*” (they don't know our remedies); yet it was a nurse from Lyon who first copied her recipes into a notebook, and she speaks of her fondly. She never complains about her back. She complains about everything else."
+    "ambiance": {
+      "fr": "Un pot de terre noirci sur trois pierres au seuil d'une case, des cannes à sucre dressées de chaque côté de la porte, un kolam de farine de riz que les fourmis emportent.",
+      "en": "A blackened clay pot on three stones at a house's threshold, sugar cane stalks standing on each side of the door, a rice-flour kolam the ants are carrying away."
     }
   },
   "registre/fetes/ramadan": {
@@ -2572,6 +4721,10 @@
     "cout": {
       "fr": "On ne mange et ne boit qu'à la nuit : cuisine et lumière nocturnes (visibilité +1 pendant le mois).",
       "en": "You only eat and drink after nightfall: cooking and light at night (visibility +1 for the month)."
+    },
+    "ambiance": {
+      "fr": "Des lanternes aux fenêtres des cases musulmanes ; en fouillant, des samoussas secs et des gâteaux à partager oubliés dans une boîte.",
+      "en": "Lanterns in the windows of Muslim homes; when searching, dry samosas and cakes for sharing forgotten in a box."
     }
   },
   "registre/foires/foire-aux-semences": {
@@ -2587,6 +4740,21 @@
     "description": {
       "fr": "<p>En avril, la fin des cyclones et le Nouvel An tamoul : le signal des semis. Les abris de l'Est échangent leurs graines devant le temple de Saint-André, sachet contre sachet, et chacun repart avec de quoi semer ce qu'il n'avait pas.</p>",
       "en": "<p>In April, the end of the cyclones and the Tamil New Year: the signal for sowing. The shelters of the East swap their seeds in front of the Saint-André temple, packet for packet, and everyone leaves with something to sow that they did not have.</p>"
+    }
+  },
+  "registre/foires/foire-de-bras-panon": {
+    "_nom": "La foire de Bras-Panon",
+    "nom": {
+      "fr": "La foire de Bras-Panon",
+      "en": "The Bras-Panon fair"
+    },
+    "produit": {
+      "fr": "la vanille, les fruits et les légumes de l'Est",
+      "en": "vanilla, fruit and vegetables of the East"
+    },
+    "description": {
+      "fr": "<p>En mai, Bras-Panon tenait la grande foire agricole de l'Est : la vanille préparée des planteurs, les bœufs et les cabris, les fruits, les légumes, les plants. La foire est devenue un troc sous trêve au bord de la Rivière des Roches : on y monte des fonds de Saint-Benoît et de Sainte-Rose, on y troque des gousses noires qui sentent encore l'avant, et pendant trois jours, sous la pluie de l'Est, personne ne lève la main sur personne.</p>",
+      "en": "<p>In May, Bras-Panon held the great agricultural fair of the East: the planters' cured vanilla, oxen and goats, fruit, vegetables, seedlings. The fair has become a barter market under truce on the banks of the Rivière des Roches: people come up from the depths of Saint-Benoît and Sainte-Rose, trade black pods that still smell of before, and for three days, in the rain of the East, nobody raises a hand against anybody.</p>"
     }
   },
   "registre/foires/foire-des-goyaviers": {
@@ -2647,6 +4815,98 @@
     "description": {
       "fr": "<p>Les tresseuses du Sud sauvage sortent leurs feuilles de vacoa séchées : nattes, paniers, chapeaux, cordes, toitures. Tout ce qui se tresse se troque, et l'on mange les cœurs de palmiste du Sud.</p>",
       "en": "<p>The weavers of the Wild South bring out their dried screwpine (vacoa) leaves: mats, baskets, hats, ropes, roofing. Everything woven is traded, and people eat the palm hearts of the South.</p>"
+    }
+  },
+  "registre/gramounes/gramoun-ignace": {
+    "_nom": "Gramoun Ignace Técher",
+    "prejuges.0.dit": {
+      "fr": "« *Bann malbar i fé sèrvis.* » (Les Malbars font des cérémonies.)",
+      "en": "\"*Bann malbar i fé sèrvis.*\" (The Malbars hold ceremonies.)"
+    },
+    "nom": {
+      "fr": "Gramoun Ignace Técher",
+      "en": "Gramoun Ignace Técher"
+    },
+    "raison": {
+      "fr": "Il gardait encore ses vaches au-dessus de l'îlet ; la dernière est morte, et il est descendu, une canne à la main, sans un mot.",
+      "en": "He was still keeping his cows above the îlet; the last one died, and he came down, a stick in his hand, without a word."
+    },
+    "prix": {
+      "fr": "Il commande tout chantier comme s'il était le sien, ne monte plus une échelle, et râle contre « les gens d'en bas ».",
+      "en": "He runs every building job as if it were his own, no longer climbs a ladder, and grumbles about “the people from down below”."
+    },
+    "notes": {
+      "fr": "Yab de vieille souche, il a monté à la main la moitié des murets de pierre sèche de son îlet. Il répète que « *bann malbar i fé sèrvis* » (les Malbars font des cérémonies) comme s'il s'en méfiait ; l'homme qui lui a appris à poser une boutisse s'appelait Moutoussamy, et c'est à son enterrement qu'Ignace a pleuré pour la dernière fois. Il dort peu, se lève avant le coq, et voudrait qu'on en fasse autant.",
+      "en": "A Yab (a poor white of the Highlands) of old stock, he built half the dry-stone walls of his îlet by hand. He keeps saying “*bann malbar i fé sèrvis*” (the Malbars, the Tamil Réunionese, hold ceremonies) as if he distrusted them; the man who taught him to lay a through-stone was called Moutoussamy, and it was at his funeral that Ignace last cried. He sleeps little, rises before the rooster, and would like everyone else to do the same."
+    }
+  },
+  "registre/gramounes/gramoun-said": {
+    "_nom": "Gramoun Saïd Madi",
+    "prejuges.0.dit": {
+      "fr": "« *Bann yab i koné pa la mèr.* » (Les petits blancs des Hauts ne connaissent pas la mer.)",
+      "en": "\"*Bann yab i koné pa la mèr.*\" (The poor whites of the Highlands don't know the sea.)"
+    },
+    "nom": {
+      "fr": "Gramoun Saïd Madi",
+      "en": "Gramoun Saïd Madi"
+    },
+    "raison": {
+      "fr": "Il a ramené sa pirogue au port avec trois inconnus à bord le soir du jour zéro, et ne l'a plus quittée depuis.",
+      "en": "He brought his pirogue back to port with three strangers on board on the evening of day zero, and has not left it since."
+    },
+    "prix": {
+      "fr": "Il tousse la nuit, ne peut plus porter, et refuse de s'éloigner de la mer plus de quelques jours.",
+      "en": "He coughs at night, can no longer carry loads, and refuses to stay away from the sea for more than a few days."
+    },
+    "notes": {
+      "fr": "Arrivé de Mayotte il y a quarante ans, kofia brodée et barbe blanche, il a pêché au large de Saint-Gilles toute sa vie et tressé ses nasses au bambou. Il se moque des Yabs, « *bann yab i koné pa la mèr* » (les petits blancs des Hauts ne connaissent pas la mer) ; son meilleur ami, un pêcheur de Cilaos descendu à vingt ans, lui a pourtant sauvé la vie un soir de houle. Il prie à l'heure, rit fort, et sait où sont les poissons.",
+      "en": "He came from Mayotte forty years ago, embroidered kofia and white beard, fished off Saint-Gilles all his life and wove his fish traps from bamboo. He makes fun of the Yabs, “*bann yab i koné pa la mèr*” (the poor whites of the Highlands know nothing of the sea); yet his best friend, a fisherman from Cilaos who came down at twenty, saved his life one night of heavy swell. He prays on time, laughs loudly, and knows where the fish are."
+    }
+  },
+  "registre/gramounes/gramoune-mariamma": {
+    "_nom": "Gramoune Mariamma Moutoussamy",
+    "prejuges.0.dit": {
+      "fr": "« *Zot lé dèrnié arivé, zot i pran tout.* » (Les derniers arrivés prennent tout.)",
+      "en": "\"*Zot lé dèrnié arivé, zot i pran tout.*\" (The last to arrive take everything.)"
+    },
+    "nom": {
+      "fr": "Gramoune Mariamma Moutoussamy",
+      "en": "Gramoune Mariamma Moutoussamy"
+    },
+    "raison": {
+      "fr": "Son étal de paniers au bazar de Saint-Louis a brûlé avec le reste ; elle a gardé son couteau à vacoa et son sourire.",
+      "en": "Her basket stall at the Saint-Louis bazaar burned with everything else; she kept her vacoa knife and her smile."
+    },
+    "prix": {
+      "fr": "Elle ne mangera pas de bœuf, demande un coin pour sa lampe le vendredi, et donne tout ce qu'on lui confie.",
+      "en": "She will not eat beef, asks for a corner for her lamp on Fridays, and gives away everything she is given."
+    },
+    "notes": {
+      "fr": "Vannière malbare, elle a tressé des milliers de sacs et de chaises de vacoa pour les marchés du Sud. Elle dit des Comoriens qu'« *zot lé dèrnié arivé, zot i pran tout* » (les derniers arrivés prennent tout), puis partage son riz avec la première famille comorienne qui passe, et lui apprend à tresser. Elle chante en tamoul en travaillant ; personne ne comprend les paroles, tout le monde connaît l'air.",
+      "en": "A Malbar (Tamil Réunionese) basket-weaver, she has woven thousands of vacoa bags and chairs for the markets of the South. She says of the Comorians that “*zot lé dèrnié arivé, zot i pran tout*” (the last to arrive take everything), then shares her rice with the first Comorian family that passes, and teaches them to weave. She sings in Tamil while she works; nobody understands the words, everyone knows the tune."
+    }
+  },
+  "registre/gramounes/gramoune-zelie": {
+    "_nom": "Gramoune Zélie Ah-Kiem",
+    "prejuges.0.dit": {
+      "fr": "« *Zot i koné pa nout rimèd.* » (Ils ne connaissent pas nos remèdes.)",
+      "en": "\"*Zot i koné pa nout rimèd.*\" (They don't know our remedies.)"
+    },
+    "nom": {
+      "fr": "Gramoune Zélie Ah-Kiem",
+      "en": "Gramoune Zélie Ah-Kiem"
+    },
+    "raison": {
+      "fr": "Elle n'a pas voulu quitter sa case de Bras-Panon ; quand la ravine a pris le pont, ce sont ses voisins qui ont dû partir, et elle avec.",
+      "en": "She would not leave her house in Bras-Panon; when the ravine took the bridge, it was her neighbours who had to leave, and she went with them."
+    },
+    "prix": {
+      "fr": "Elle marche lentement, il faut la porter dans les sentiers, et elle ne donne ses remèdes qu'à ceux qui l'écoutent.",
+      "en": "She walks slowly, she has to be carried on the trails, and she only gives her remedies to those who listen to her."
+    },
+    "notes": {
+      "fr": "Fille d'un boutiquier chinois de Bras-Panon et d'une coupeuse de canne cafre, elle a soigné tout le quartier avec son jardin : ayapana, fleur jaune, faham, citronnelle. Elle dit des médecins zoreils qu'« *zot i koné pa nout rimèd* » (ils ne connaissent pas nos remèdes) ; c'est pourtant une infirmière de Lyon qui, la première, a recopié ses recettes dans un cahier, et elle en parle avec tendresse. Elle ne se plaint jamais du dos. Elle se plaint de tout le reste.",
+      "en": "Daughter of a Chinese shopkeeper from Bras-Panon and a Cafre (Afro-Réunionese) cane cutter, she has tended the whole neighbourhood with her garden: ayapana, fleur jaune, faham, lemongrass. She says of the Zoreil (mainland French) doctors that “*zot i koné pa nout rimèd*” (they don't know our remedies); yet it was a nurse from Lyon who first copied her recipes into a notebook, and she speaks of her fondly. She never complains about her back. She complains about everything else."
     }
   },
   "registre/histoire": {
@@ -3254,6 +5514,10 @@
     "voisins.2.route": {
       "fr": "GR R1 par le Bloc et la Caverne Dufour, sous le Piton des Neiges",
       "en": "GR R1 via Le Bloc and the Caverne Dufour, below the Piton des Neiges"
+    },
+    "arrivee": {
+      "fr": "Une seule route, quatre cents virages, et le car jaune arrêté dans un tunnel. Là-haut, le village a tenu ; chaque éboulis décide s'il reste une île dans l'île.",
+      "en": "A single road, four hundred bends, and the yellow bus stopped in a tunnel. Up there, the village held; every rockfall decides whether it stays an island within the island."
     }
   },
   "registre/regions/est": {
@@ -3273,6 +5537,10 @@
     "voisins.3.route": {
       "fr": "Route de Salazie (RD48) le long de la Rivière du Mât, de Saint-André à Hell-Bourg",
       "en": "Salazie road (RD48) along the Rivière du Mât, from Saint-André to Hell-Bourg"
+    },
+    "arrivee": {
+      "fr": "La pluie et la foi : des rivières en crue qui charrient tout, la canne haute, les centrales qui ont tenu plus longtemps, l'église que la lave a épargnée et les cierges sur les coulées.",
+      "en": "Rain and faith: rivers in flood carrying everything away, the tall cane, the power stations that held out longer, the church the lava spared and the candles on the lava flows."
     }
   },
   "registre/regions/fournaise": {
@@ -3284,6 +5552,10 @@
     "apres": {
       "fr": "<p>Personne ne vit là-haut, et c'est sa force comme sa faiblesse : ni eau courante, ni bois, ni cultures possibles, un froid mordant la nuit. Les rares Livides qui y montent y restent des mois, figés par le froid. Quand la Fournaise se réveille, l'Enclos s'illumine, et toute l'île la regarde.</p>",
       "en": "<p>Nobody lives up there, and that is its strength as much as its weakness: no running water, no wood, no crops possible, a biting cold at night. The few Pallid that climb up stay for months, frozen by the cold. When the Fournaise wakes, the Enclos lights up, and the whole island watches.</p>"
+    },
+    "arrivee": {
+      "fr": "Ce qui ne demande l'avis de personne : la Plaine des Sables sans une trace, le gîte et son livre d'or que plus personne ne signe, les instruments qui tournent encore à Bourg-Murat.",
+      "en": "What asks nobody's opinion: the Plaine des Sables without a single track, the gîte and its guest book nobody signs any more, the instruments still running at Bourg-Murat."
     }
   },
   "registre/regions/hauts-de-l-ouest": {
@@ -3303,6 +5575,10 @@
     "voisins.2.route": {
       "fr": "Sentier du Maïdo : descente du rempart vers Roche-Plate",
       "en": "Maïdo trail: down the rampart to Roche-Plate"
+    },
+    "arrivee": {
+      "fr": "Ceux qui savaient déjà : l'alambic à géranium, les cases en bois sous tôle, les citernes. Des gens qui n'ont presque rien changé à leur vie, et qui le disent.",
+      "en": "Those who already knew how: the geranium still, the wooden houses under corrugated iron, the cisterns. People who have changed almost nothing in their lives, and say so."
     }
   },
   "registre/regions/le-port": {
@@ -3326,6 +5602,10 @@
     "voisins.2.variante.route": {
       "fr": "Sentier de Dos d'Âne, du Cap Noir à Deux-Bras puis Aurère",
       "en": "Dos d'Âne trail, from Cap Noir to Deux-Bras then Aurère"
+    },
+    "arrivee": {
+      "fr": "L'ordre qui reste : des murailles de conteneurs, une sirène à heure fixe, des affiches de recensement. Et, au large, un navire qui n'a jamais accosté.",
+      "en": "The order that remains: walls of containers, a siren at fixed hours, registration posters. And, out at sea, a ship that has never docked."
     }
   },
   "registre/regions/le-tampon": {
@@ -3345,6 +5625,10 @@
     "voisins.2.route": {
       "fr": "Route du Volcan, de Bourg-Murat au Pas de Bellecombe par la Plaine des Sables",
       "en": "Route du Volcan, from Bourg-Murat to the Pas de Bellecombe via the Plaine des Sables"
+    },
+    "arrivee": {
+      "fr": "Le froid. Des troupeaux, des clôtures doublées, des cloches aux barrières ; au petit matin, des silhouettes immobiles dans les prés, couvertes de rosée.",
+      "en": "The cold. Herds, doubled fences, bells on the gates; at dawn, motionless figures in the meadows, covered in dew."
     }
   },
   "registre/regions/mafate": {
@@ -3356,6 +5640,10 @@
     "apres": {
       "fr": "<p>Pauvre en tout ce qui se pille, riche de ce qui se cultive et se capte, Mafate est longtemps l'endroit le plus sûr de l'île : peu de monde, donc peu de morts. Mais les réfugiés y affluent par tous les sentiers, et certains montent malades. Les Familles des Îlets en gardent les cols ; elles accueillent ceux qui travaillent et refoulent ceux qui exigent.</p>",
       "en": "<p>Poor in everything that can be looted, rich in what can be grown and tapped, Mafate is for a long time the safest place on the island: few people, so few dead. But refugees pour in along every trail, and some come up sick. The Families of the Îlets guard the passes; they take in those who work and turn back those who demand.</p>"
+    },
+    "arrivee": {
+      "fr": "Le monde d'après ressemblait au monde d'avant : pas de route, des panneaux sur les toits, des sifflets d'îlet en îlet. Et un îlet où tout va bien, trop bien.",
+      "en": "The world after looked like the world before: no road, panels on the roofs, whistles from îlet to îlet. And one îlet where all is well, too well."
     }
   },
   "registre/regions/plaine-des-palmistes": {
@@ -3371,6 +5659,10 @@
     "voisins.2.route": {
       "fr": "Route forestière de Bébour-Bélouve puis le sentier de Bélouve à Hell-Bourg",
       "en": "Bébour-Bélouve forest road, then the trail from Bélouve to Hell-Bourg"
+    },
+    "arrivee": {
+      "fr": "La forêt qui reprend : des gîtes fermés de l'intérieur, la brume de l'après-midi, des sentiers où l'on se perd à dix mètres de la route.",
+      "en": "The forest taking over: gîtes locked from the inside, the afternoon mist, trails where you get lost ten metres from the road."
     }
   },
   "registre/regions/route-du-littoral": {
@@ -3390,6 +5682,10 @@
     "voisins.1.variante.route": {
       "fr": "Chemin des Anglais vers La Possession",
       "en": "Chemin des Anglais towards La Possession"
+    },
+    "arrivee": {
+      "fr": "Ce qu'a donné la fuite : des kilomètres d'épaves entre la falaise et la houle. Plus haut, le vieux chemin pavé que les piétons ont rouvert, et le lazaret où l'on mettait déjà les arrivants en quarantaine il y a plus d'un siècle.",
+      "en": "What the flight came to: kilometres of wrecks between the cliff and the swell. Higher up, the old paved path people on foot have reopened, and the lazaretto where arrivals were already quarantined more than a century ago."
     }
   },
   "registre/regions/saint-denis": {
@@ -3413,6 +5709,10 @@
     "voisins.1.variante.route": {
       "fr": "Chemin des Anglais par La Montagne",
       "en": "Chemin des Anglais via La Montagne"
+    },
+    "arrivee": {
+      "fr": "Le début. Les urgences ont débordé sur les parkings ; les premières portes marquées sont ici. Sur les toits du Chaudron, du linge sèche : des gens vivent là-haut et ne descendent pas.",
+      "en": "The beginning. The emergency departments overflowed into the car parks; the first marked doors are here. On the rooftops of the Chaudron, washing is drying: people live up there and do not come down."
     }
   },
   "registre/regions/saint-leu": {
@@ -3428,6 +5728,10 @@
     "voisins.2.route": {
       "fr": "RN1 par l'Étang-Salé et Saint-Louis",
       "en": "RN1 via L'Étang-Salé and Saint-Louis"
+    },
+    "arrivee": {
+      "fr": "Le sel, le vent, les filaos. Des pêcheurs qui dorment sur l'eau, et sur le sable noir, des traces qui sortent de la mer.",
+      "en": "Salt, wind, filaos. Fishermen who sleep on the water, and on the black sand, tracks coming out of the sea."
     }
   },
   "registre/regions/saint-paul": {
@@ -3451,6 +5755,10 @@
     "voisins.3.route": {
       "fr": "Route des Tamarins (RN1), ou la route littorale par Saint-Gilles",
       "en": "Route des Tamarins (RN1), or the coast road via Saint-Gilles"
+    },
+    "arrivee": {
+      "fr": "La vie d'avant, intacte et vide : les plages, les restaurants, les bateaux de plaisance. Le lagon rend ses noyés ; le marché forain sert aux Ferrailleurs.",
+      "en": "The life before, intact and empty: the beaches, the restaurants, the pleasure boats. The lagoon gives back its drowned; the open-air market serves the Scrappers."
     }
   },
   "registre/regions/saint-pierre": {
@@ -3474,6 +5782,10 @@
     "voisins.3.route": {
       "fr": "RN2 par Petite-Île et Saint-Joseph",
       "en": "RN2 via Petite-Île and Saint-Joseph"
+    },
+    "arrivee": {
+      "fr": "Ceux qui soignent : le grand hôpital et ses draps peints d'une croix rouge, les ambulances en navette, la sucrerie du Gol arrêtée en pleine campagne, et une adresse répétée chaque soir à la radio.",
+      "en": "Those who care for others: the big hospital and its sheets painted with a red cross, the ambulances shuttling, the Le Gol sugar mill stopped in the middle of the season, and an address repeated every evening on the radio."
     }
   },
   "registre/regions/sainte-marie": {
@@ -3489,6 +5801,10 @@
     "voisins.1.route": {
       "fr": "RN2 par Sainte-Suzanne et Saint-André",
       "en": "RN2 via Sainte-Suzanne and Saint-André"
+    },
+    "arrivee": {
+      "fr": "L'espoir de partir. Des valises par centaines, des files figées, un hangar de fret plein de ce que l'île attendait, et un tableau des départs arrêté sur le même vol.",
+      "en": "The hope of leaving. Suitcases by the hundred, frozen queues, a freight hangar full of what the island was waiting for, and a departures board stopped on the same flight."
     }
   },
   "registre/regions/salazie": {
@@ -3504,6 +5820,10 @@
     "voisins.2.route": {
       "fr": "Col des Bœufs depuis Grand Îlet, puis la descente vers La Nouvelle",
       "en": "Col des Bœufs from Grand Îlet, then the descent to La Nouvelle"
+    },
+    "arrivee": {
+      "fr": "L'eau partout, les cascades, les treilles de chouchous. La route emportée, le cirque refermé, et des cases de Hell-Bourg dont les jardins sont entretenus par on ne sait qui.",
+      "en": "Water everywhere, the waterfalls, the chayote trellises. The road washed out, the cirque closed again, and Hell-Bourg houses whose gardens are kept up by who knows whom."
     }
   },
   "registre/regions/sud-sauvage": {
@@ -3523,6 +5843,10 @@
     "voisins.2.route": {
       "fr": "RN2, route des Laves à travers le Grand Brûlé jusqu'à Sainte-Rose et Saint-Benoît",
       "en": "RN2, the Route des Laves across the Grand Brûlé to Sainte-Rose and Saint-Benoît"
+    },
+    "arrivee": {
+      "fr": "L'île dans l'île. Peu de monde, donc peu de morts ; la vanille, les vacoas, la mer qui prend sans prévenir. Les gens y sont partis les derniers, ou jamais.",
+      "en": "The island within the island. Few people, so few dead; the vanilla, the screwpines, the sea that takes without warning. People left there last, or never."
     }
   },
   "registre/religions/ancetres-malgaches": {
@@ -4064,7 +6388,7 @@
     "_nom": "La petite centrale de Langevin",
     "nom": {
       "fr": "La petite centrale de Langevin",
-      "en": "The little Langevin power plant"
+      "en": "The little Langevin power station"
     },
     "description": {
       "fr": "<p>Dans la vallée de la rivière Langevin, au-dessus de Saint-Joseph, une petite centrale hydroélectrique, sa prise d'eau, sa conduite forcée et sa maison de garde. Les turbines tournent toutes seules tant que personne ne les arrête, et la rivière, elle, ne s'arrête jamais.</p>",
@@ -5970,96 +8294,6 @@
     "nom": {
       "fr": "La visite",
       "en": "The visit"
-    }
-  },
-  "registre/ancrages/carnet": {
-    "_nom": "Un carnet",
-    "nom": {
-      "fr": "Un carnet",
-      "en": "A notebook"
-    },
-    "description": {
-      "fr": "<p>Un carnet d'écolier où il écrit chaque soir ce qui s'est passé : les noms, les dates, la météo, ce qu'on a mangé. Quelqu'un, un jour, devra savoir. Le perdre, ce serait perdre tout ce qu'il a vu.</p>",
-      "en": "<p>A school exercise book in which they write down every evening what happened: names, dates, the weather, what we ate. Someone, one day, will need to know. Losing it would be losing everything they have seen.</p>"
-    },
-    "texte": {
-      "fr": "écrire quelques lignes chaque soir",
-      "en": "write a few lines every evening"
-    }
-  },
-  "registre/ancrages/musique": {
-    "_nom": "Un instrument",
-    "nom": {
-      "fr": "Un instrument",
-      "en": "An instrument"
-    },
-    "description": {
-      "fr": "<p>Un kayamb, un harmonica, une vieille guitare au vernis écaillé. Le soir, il joue tout bas un séga ou un maloya de son grand-père. Le bruit attire, il le sait ; il joue quand même, pour lui.</p>",
-      "en": "<p>A kayamb, a harmonica, an old guitar with flaking varnish. In the evening, they play very softly a séga or a maloya from their grandfather. Noise attracts, they know it; they play anyway, for themselves.</p>"
-    },
-    "texte": {
-      "fr": "jouer un air le soir, même tout bas",
-      "en": "play a tune in the evening, even very softly"
-    }
-  },
-  "registre/ancrages/photo": {
-    "_nom": "Une photo",
-    "nom": {
-      "fr": "Une photo",
-      "en": "A photo"
-    },
-    "description": {
-      "fr": "<p>Une photo pliée en quatre dans un portefeuille : des enfants, un mariage, une maison au bord de la mer. Il la regarde chaque soir. Tant qu'il l'a sur lui, il sait pourquoi il se lève.</p>",
-      "en": "<p>A photo folded in four in a wallet: children, a wedding, a house by the sea. They look at it every evening. As long as they have it on them, they know why they get up.</p>"
-    },
-    "texte": {
-      "fr": "la regarder chaque soir, la garder sèche",
-      "en": "look at it every evening, keep it dry"
-    }
-  },
-  "registre/ancrages/plante": {
-    "_nom": "Un pied de piment",
-    "nom": {
-      "fr": "Un pied de piment",
-      "en": "A chilli plant"
-    },
-    "description": {
-      "fr": "<p>Un pied de piment dans un pot de yaourt, ou une bouture de géranium de la case de sa mère. Il l'arrose, il le déplace au soleil, il l'emporte quand on part. Tant qu'il pousse, quelque chose continue.</p>",
-      "en": "<p>A chilli plant in a yoghurt pot, or a geranium cutting from their mother's house. They water it, move it into the sun, take it along when we leave. As long as it grows, something goes on.</p>"
-    },
-    "texte": {
-      "fr": "l'arroser, le mettre au soleil, l'emporter partout",
-      "en": "water it, put it in the sun, take it everywhere"
-    }
-  },
-  "registre/ancrages/routine": {
-    "_nom": "Une routine",
-    "nom": {
-      "fr": "Une routine",
-      "en": "A routine"
-    },
-    "description": {
-      "fr": "<p>Le café à cinq heures et demie, la barbe faite, le lit fait, les affaires pliées : le monde s'écroule, pas ses habitudes. Sur la route, sans abri, tout se dérègle, et lui avec.</p>",
-      "en": "<p>Coffee at half past five, a clean shave, the bed made, clothes folded: the world falls apart, their habits don't. On the road, without a shelter, everything goes off the rails, and them with it.</p>"
-    },
-    "texte": {
-      "fr": "le café à la même heure, se raser, plier ses affaires",
-      "en": "coffee at the same time, a shave, folding their things"
-    }
-  },
-  "registre/ancrages/sport": {
-    "_nom": "Le sport",
-    "nom": {
-      "fr": "Le sport",
-      "en": "Sport"
-    },
-    "description": {
-      "fr": "<p>Il courait le Grand Raid, ou il jouait au foot le dimanche au stade de son quartier. Il continue : des pompes au lever, une course dans la cour. Le corps fatigué fait taire la tête.</p>",
-      "en": "<p>They used to run the Grand Raid, or played football on Sundays at the local stadium. They keep at it: push-ups on waking, a run around the yard. A tired body quiets the head.</p>"
-    },
-    "texte": {
-      "fr": "courir, nager ou faire ses pompes chaque matin",
-      "en": "running, swimming or push-ups every morning"
     }
   }
 }

@@ -958,3 +958,124 @@ Aucun chiffre nouveau : chaque jointure applique une règle qui existait déjà 
   devient `api.lireSigne()` ; l'erreur d'un groupe séparé inconnu devient `Erreurs.GroupeInconnu` (`Erreurs.CommunauteInconnue`
   reste la communauté d'une fête, §11). Le gaz, les boutures et le biocarburant (§13) n'ont pas de cours au marché
   (`RESSOURCES_HORS_COURS`) : ils ne se troquent pas au cours tant qu'on ne leur en a pas donné un.
+
+## 17. Affaires, récits et fêtes (lot 12, 2026-11-17)
+
+Repris du jeu 3D, validé par Jordan (« tout maintenant ») :
+- `docs/propositions/histoire-et-quetes.md`, §2 à §4 et §6.2 ;
+- `donnees/fetes/base.json` et `crates/fenoir-regles/src/fetes.rs`.
+
+Chiffres et raisons : `docs/equilibre-affaires.md`. Rien n'est retiré ni renommé ; le moteur n'est pas touché.
+
+**Le ton.**
+- Les préjugés sont dans la bouche des personnages, et une rumeur sur une communauté est toujours fausse.
+- Aucune origine ne joue dans les règles ; la foi n'a aucun effet propre.
+- Les sujets délicats (l'affaire « Rendre à la lave », l'enfant du front du remède) suivent la décision de Jordan du
+  17 novembre : rien de montré, aucun enfant mis en danger, le malaise vient de ce qu'on comprend.
+
+### 17.1 Contenu (`modules/lakour-fenoir/contenu/affaires.mjs`)
+- **Données et fabrique.**
+  - `DONNEES_AFFAIRES` : les affaires, les arrivées, les supports, les figures, les bruits, les Livides en fête, les libellés, les
+    pages.
+  - `construireAffaires(D, N)` les fabrique : le registre, les journaux, les tables, la page du livre et les arrivées.
+  - Les libellés et les noms (`NOMS_DU_CONTENU`) lui sont donnés : la fabrique rejoue à l'identique, et la traduction s'en sert.
+  - `LOT_AFFAIRES` est le lot publié.
+- **Registre `affaires`** (23) :
+  ```
+  { cle, numero, titre, taille: "bruit" | "affaire" | "grande-affaire" | "front", famille, regions ([] : partout), sites, factions,
+    front: "" | "comptable" | "garnison" | "hauts" | "fournaise" | "remede", foire,
+    naissance: { mois: [1..12], phases: [phase], fete: clé, cran: 1..6, declencheurs: ["refus-a-la-porte" | "date-perdue"] },
+    apprendre, demande, malTourner, change, garde,
+    verites: { vraie | exageree | perimee | fausse | piege: { poids, texte } },
+    pente: { tousLes: jours, crans: [texte] },
+    issues: [{ cle, titre, texte, effets }] (3 à 5),
+    voix: [texte] (3 au moins), traces, ton }
+  ```
+- **Effets d'une issue**, tous facultatifs (`EFFETS_ISSUE`) :
+  - `reputation: { faction: ±n }` ;
+  - `acte` : un acte du §14 ;
+  - `front: ±n` : le front de l'affaire ;
+  - `stocks: { ressource: ±n }` ;
+  - `savoir` : une clé de savoir ;
+  - `plan` : une clé d'installation ;
+  - `renom`, `moral`, `entente`, `autorite`, `visibilite` : ±n ;
+  - `recrue`, `depart`, `prejuge`, `horde` : `true` ;
+  - `rumeur` : `true` ou `"dementie"` ;
+  - `voie` : `"ouverte"` ;
+  - `fete` : une clé de fête ;
+  - `voeu` : `"tenu"` ou `"rompu"`.
+- **Registre `regions[].arrivee`** : ce qu'on comprend en arrivant dans la région, une ligne pour le MJ.
+- **Journaux du MJ.**
+  - « Les affaires de l'île » : une introduction, puis une page par affaire.
+  - « Mener une affaire » :
+    - la méthode, les tailles, la vérité, la pente et les horloges, les issues, les voix et les traces ;
+    - les sujets délicats et la règle de respect des fêtes ;
+    - les arrivées, les figures, les supports de récit.
+- **Tables nouvelles.**
+  - `affaires-ce-qui-se-raconte` (drapeau `affaires`) ;
+  - six supports `recit-<support>` (drapeau `recit`) : lieu figé, journal d'un mort, cahier commun, écrit des murs, objet déplacé,
+    nature ;
+  - `figures-de-l-ile`, `bruits-de-l-ile`, `livides-en-fete` (drapeau `fetes: "livides"`).
+  - La radio et les oratoires gardent leurs tables (`rumeurs-radio`, `oratoires-rouges`).
+- **Autres journaux.**
+  - Le livre de l'île gagne la page « Les signes des murs », avant « La première nuit ».
+  - Le guide du MJ, page « Les outils du MJ », gagne une ligne.
+  - La campagne, front 5 : le cran 3 et une ligne de ton sont récrits sobrement.
+
+### 17.2 Logique (`systems/lakour-survie/logique/affaires.mjs`, lecture seule)
+- **Constantes** : `TAILLES_AFFAIRE`, `VERITES_AFFAIRE`, `FRONTS_CAMPAGNE`, `CRANS_FRONT`, `DECLENCHEURS_AFFAIRE`, `EFFETS_ISSUE`,
+  `RESSOURCES_ISSUE`.
+- **Lire les affaires** : `affairesDe(contenu)`, `affaireDe(contenu, cle)`.
+- **`affairePossible(a, ctx)` et `affairesPossibles(contenu, ctx)`**, avec
+  `ctx = { region, mois, phase, fetes, fronts, declencheurs, closes }`.
+  - Un champ absent ne filtre pas.
+  - Un déclencheur, lui, doit être dit.
+- **`tirerVerite(a, hasard)`** : `{ cle, texte, poids }`.
+- **`tirerAffaire(contenu, ctx, hasard, { cle })`** : `{ cle, numero, titre, taille, front, verite, voix, pente, possibles }`, ou
+  `null`.
+- **`cranDeLaPente(a, jours)`** : `{ cran, texte, fin }`.
+- **`issueDe(a, cle)`** : une copie de l'issue.
+- **`erreursAffaire(a, contenu)`** : les erreurs, contre le registre. Le fabricant et les essais s'en servent.
+
+### 17.3 API (`game.lakourSurvie`, lecture)
+- **`affaires({ region, mois, phase, fronts, declencheurs, closes, horizon = 30 })`** : `{ contexte, affaires: [{ cle, numero,
+  titre, taille, front, regions }] }`. Le contexte se complète seul :
+  - la région du groupe ;
+  - le mois et la phase du jour de jeu ;
+  - les fêtes du jour et des `horizon` jours suivants ;
+  - les crans lus dans les horloges du moteur `front-<front>`. Les `fronts` donnés l'emportent.
+- **`tirerAffaire({ cle, ...contexte })`** : la vérité tirée est au MJ seul.
+- **`penteAffaire({ cle, jours })`**, **`issueAffaire({ cle, issue })`**.
+- **Rien n'est écrit dans la partie.** Une affaire en cours se tient dans une horloge du moteur (« affaire-<clé> », un segment par
+  cran) ou dans les notes du MJ.
+
+### 17.4 Fêtes et foire
+- **Fêtes hors du socle** (`FETES_HORS_SOCLE` dans `scripts/fetes.js`) : `pongal` et `fete-du-miel-vert`.
+  - **Leur date.** Elles portent leur propre date, dans la forme que lit `fetesDuJeu` :
+    - Pongal : `date: "01-14"`, `avant: 1`, `apres: 2` ;
+    - le miel vert : `dates`, le dernier samedi de janvier de 2000 à 2100, `apres: 1`.
+  - **Pas déclinées auprès du moteur** : ni `declinaisons()`, ni `declinaisonsDeFete` de `main.js`.
+  - **Vues quand même.** `fetesDuJour` du module les ajoute, avec ou sans le socle. Le système les voit, les annonce et les fête.
+  - **Ce que vérifie le fabricant** :
+    - une fête hors du socle a sa date ;
+    - une fête du socle n'en a pas ;
+    - une fête que le socle connaîtrait un jour devrait perdre la sienne.
+  - **Pongal et la religion** : Pongal s'ajoute aux fêtes de l'hindouisme tamoul.
+- **`ambiance`**, pour chaque fête : ce qu'on voit et ce qu'on trouve, dit dans le journal « Les fêtes de Fénoir ». La période se
+  lit désormais dans `periode` ; l'alias `date`, non énumérable, ne sert plus qu'aux fêtes du socle.
+- **Foire** `foire-de-bras-panon` : dans l'Est, en mai, sa récolte est la nourriture.
+
+### 17.5 MJ IA (le moteur n'est pas touché ; besoins écrits pour son dépôt)
+- **Un outil `survie_affaire`**, avec trois actions :
+  - « tirer » : `api.tirerAffaire`. Il ouvre une horloge « affaire-<clé> » d'autant de segments que de crans, et garde la vérité au
+    secret.
+  - « avancer » : un cran de la pente, avec son texte.
+  - « clore » : avec l'issue (`api.issueAffaire`), il applique les effets avec les outils existants.
+- **Le contexte** :
+  - les affaires en cours (titre, cran ; la vérité en secret) ;
+  - la ligne d'arrivée de la région où le groupe entre.
+- **Les consignes** :
+  - ne jamais dire la vérité d'une affaire ;
+  - donner la nouvelle avec sa provenance ;
+  - les sujets délicats et la règle de respect.
+- **Le socle des fêtes** : Pongal et le miel vert « sur demande ». Le contenu retirera alors leur date.
