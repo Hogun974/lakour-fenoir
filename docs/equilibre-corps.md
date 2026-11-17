@@ -135,4 +135,74 @@ Livides, comme dans le 3D. La marche ralentie (× 0,92) est laissée de côté ;
 
 ## 7. Les mesures
 
-MESURES
+Même code de mesure des deux côtés : `node essais/outils/simuler-parties.mjs --parties 300 --graine <g>` (16 cas × 300 parties de
+200 jours), joué sur `vague1` (commit a3a2965, **avant** le lot) et sur `lots-corps` (**après**), **graines 1 et 2** (9 600 parties
+de chaque côté). Dans chaque case : graine 1 · graine 2 (moyenne).
+
+| Cas | Vivants à J200, avant | après | Autonomes, avant | après | 1re faim, avant | après | Fins par départ, avant | après |
+|---|---|---|---|---|---|---|---|---|
+| passif × 1 | 12 · 15 (13,5) | 12 · 15 (13,5) | 37 · 36 | 37 · 36 | J17 · J17 | J17 · J17 | 1 · 3 | 1 · 3 |
+| passif × 2 | 13 · 14 (13,5) | 13 · 14 (13,5) | 31 · 34 | 31 · 34 | J10 · J10 | J10 · J10 | 1 · 1 | 1 · 1 |
+| passif × 4 | 12 · 14 (13,0) | 12 · 14 (13,0) | 28 · 29 | 28 · 29 | J7 · J7 | J7 · J7 | 0 · 0 | 0 · 0 |
+| passif × 6 | 11 · 11 (11,0) | 11 · 11 (11,0) | 21 · 22 | 21 · 22 | J5 · J5 | J5 · J5 | 1 · 0 | 1 · 0 |
+| nomade × 1 | 55 · 56 (55,5) | 55 · 56 (55,5) | 1 · 2 | 1 · 2 | J186 · J200 | J186 · J200 | 2 · 5 | 2 · 5 |
+| nomade × 2 | 71 · 73 (72,0) | 72 · 74 (73,0) | 1 · 1 | 1 · 1 | J61 · J65 | J61 · J67 | 9 · 12 | 12 · 12 |
+| nomade × 4 | 81 · 80 (80,5) | 78 · 84 (81,0) | 3 · 3 | 3 · 4 | J115 · J124 | J118 · J122 | 9 · 5 | 7 · 6 |
+| nomade × 6 | 81 · 82 (81,5) | 82 · 80 (81,0) | 2 · 0 | 1 · 0 | J132 · J137 | J129 · J136 | 11 · 8 | 10 · 19 |
+| enraciné × 1 | 57 · 56 (56,5) | 55 · 54 (54,5) | 72 · 72 | 70 · 67 | J21 · J28 | J21 · J29 | 2 · 1 | 2 · 2 |
+| enraciné × 2 | 75 · 73 (74,0) | 78 · 74 (76,0) | 58 · 56 | 54 · 51 | J21 · J21 | J21 · J21 | 4 · 2 | 4 · 1 |
+| enraciné × 4 | 88 · 82 (85,0) | 88 · 83 (85,5) | 76 · 74 | 72 · 74 | J21 · J21 | J27 · J28 | 1 · 2 | 2 · 2 |
+| enraciné × 6 | 87 · 86 (86,5) | 83 · 87 (85,0) | 70 · 70 | 73 · 72 | J17 · J17 | J17 · J17 | 4 · 6 | 3 · 2 |
+| mixte × 1 | 56 · 59 (57,5) | 58 · 57 (57,5) | 19 · 14 | 19 · 14 | J115 · J115 | J111 · J114 | 1 · 0 | 1 · 0 |
+| mixte × 2 | 75 · 76 (75,5) | 73 · 76 (74,5) | 20 · 21 | 18 · 20 | J56 · J58 | J56 · J58 | 6 · 2 | 6 · 2 |
+| mixte × 4 | 84 · 86 (85,0) | 84 · 86 (85,0) | 33 · 38 | 37 · 36 | J77 · J58 | J58 · J65 | 8 · 3 | 7 · 3 |
+| mixte × 6 | 86 · 83 (84,5) | 86 · 86 (86,0) | 49 · 44 | 46 · 46 | J58 · J51 | J58 · J53 | 4 · 5 | 6 · 3 |
+
+**Lecture.** Les cibles tiennent : les vivants à J200 restent à moins de 2 points de moyenne d'avant dans tous les cas (le passif,
+qui ne fait rien de neuf, à l'identique ; nomade × 4 80,5 → 81,0 ; enraciné × 4 85,0 → 85,5 ; mixte × 4 85,0 → 85,0), les deux voies
+restent proches, la première faim et l'autonomie restent dans leurs plages.
+
+**Écarts relevés** (à surveiller, aucun hors du bruit de 300 parties sur la survie) :
+- **L'autonomie de l'enraciné seul et à deux** baisse un peu (× 1 : 72 · 72 → 70 · 67 ; × 2 : 58 · 56 → 54 · 51). Les feuillées puis
+  les latrines sèches prennent deux chantiers et du bois des alentours (matières de l'île) au moment où le petit groupe construit
+  son eau et son potager ; à quatre et six, rien ne se voit (× 4 : 76 · 74 → 72 · 74 ; × 6 : 70 · 70 → 73 · 72). Leur survie ne bouge
+  pas (× 2 : 74,0 → 76,0).
+- **La première faim de l'enraciné × 4** recule (J21 → J27 · J28) : c'est un mieux (le site choisi et l'ordre de construction
+  décalent le premier creux de vivres).
+- **Les fins par départ du nomade × 6** : 11 · 8 → 10 · 19. La graine 1 ne bouge pas, la graine 2 double ; la survie, elle, ne bouge
+  pas (81,5 → 81,0). Le moral appliqué d'office (§5) les faisait monter partout ; coupé, il reste cet écart sur une graine, qui peut
+  être du bruit (le même cas variait de 3 à 12 entre deux états du 13 novembre). À remesurer à la fusion.
+
+**Ce que le lot fait dans le simulateur** (60 parties par cas, graine 2, comptées par le `controle` de `jouerPartie`) :
+
+| Cas | Maladies de l'insalubrité / partie | Jours d'abri sales (insalubres) | Nuits blanches / partie | Endormis / partie | Hygiène bâtie (parties) |
+|---|---|---|---|---|---|
+| passif × 1 | 0,00 | 0 % (0 %) | 0,00 | 0,00 | — |
+| passif × 2 | 0,00 | 0 % (0 %) | 0,12 | 0,02 | — |
+| passif × 4 | 0,07 | 4 % (0 %) | 0,03 | 0,00 | — |
+| passif × 6 | 0,13 | 12 % (1 %) | 0,03 | 0,00 | — |
+| nomade × 1 | 0,00 | 0 % (0 %) | 2,18 | 0,12 | — |
+| nomade × 2 | 0,00 | 0 % (0 %) | 3,78 | 0,27 | feuillées 15 |
+| nomade × 4 | 0,03 | 0 % (0 %) | 17,28 | 0,87 | feuillées 35 |
+| nomade × 6 | 0,02 | 0 % (0 %) | 45,35 | 3,63 | feuillées 30 |
+| enraciné × 1 | 0,00 | 0 % (0 %) | 0,75 | 0,00 | feuillées 31, latrines sèches 29 |
+| enraciné × 2 | 0,00 | 0 % (0 %) | 0,75 | 0,00 | feuillées 38, latrines sèches 36 |
+| enraciné × 4 | 0,00 | 0 % (0 %) | 1,80 | 0,05 | feuillées 48, latrines sèches 47 |
+| enraciné × 6 | 0,00 | 0 % (0 %) | 1,38 | 0,25 | feuillées 53, latrines sèches 53 |
+| mixte × 1 | 0,00 | 0 % (0 %) | 1,38 | 0,08 | feuillées 18, latrines sèches 16 |
+| mixte × 2 | 0,00 | 0 % (0 %) | 4,42 | 0,50 | feuillées 34, latrines sèches 30 |
+| mixte × 4 | 0,02 | 0 % (0 %) | 8,93 | 0,73 | feuillées 46, latrines sèches 41 |
+| mixte × 6 | 0,00 | 0 % (0 %) | 11,73 | 1,15 | feuillées 48, latrines sèches 45 |
+
+- Les maladies de l'insalubrité sont rares partout (0,2 par partie au plus, pour le passif à six qui ne bâtit rien et vit dans un
+  abri sale 12 % des jours) : la règle mord sur le groupe qui ne s'occupe pas de son abri, et la table en parle (journal du MJ).
+- Les nuits blanches sont celles des déménagements (on marche la nuit en route) : nomade × 6, une quarantaine par partie (sept par
+  personne pour douze déménagements), quelques endormis. Elles ne changent aucun résultat (§1, le malus coupé seul).
+- L'enraciné bâtit des feuillées puis des latrines sèches dans presque toutes les parties ; le nomade creuse des feuillées à chaque
+  site où il reste.
+
+## 8. Ce qui ne change pas
+
+Le tirage du monde (`hasardDuJour`), les menaces d'un abri propre, les récoltes, les fouilles, les dés d'un survivant reposé, la
+morsure et le Gris (seule l'issue se tait), les fêtes (sauf le grand ménage qui nettoie l'abri). L'insalubrité a son propre flux de
+hasard (« insalubrite|jour ») et ne tire rien pour un abri propre ou ordinaire. Un bouclier ne tire de dés que s'il est porté.
