@@ -1116,16 +1116,13 @@ Chiffres et raisons : `docs/equilibre-affaires.md`. Rien n'est retiré ni renomm
   cran) ou dans les notes du MJ.
 
 ### 17.4 Fêtes et foire
-- **Fêtes hors du socle** (`FETES_HORS_SOCLE` dans `scripts/fetes.js`) : `pongal` et `fete-du-miel-vert`.
-  - **Leur date.** Elles portent leur propre date, dans la forme que lit `fetesDuJeu` :
-    - Pongal : `date: "01-14"`, `avant: 1`, `apres: 2` ;
-    - le miel vert : `dates`, le dernier samedi de janvier de 2000 à 2100, `apres: 1`.
-  - **Pas déclinées auprès du moteur** : ni `declinaisons()`, ni `declinaisonsDeFete` de `main.js`.
-  - **Vues quand même.** `fetesDuJour` du module les ajoute, avec ou sans le socle. Le système les voit, les annonce et les fête.
-  - **Ce que vérifie le fabricant** :
-    - une fête hors du socle a sa date ;
-    - une fête du socle n'en a pas ;
-    - une fête que le socle connaîtrait un jour devrait perdre la sienne.
+- **Pongal et la fête du miel vert** (`pongal`, `fete-du-miel-vert`) : fêtes « sur demande » du socle depuis le moteur 0.49.0.
+  - **Leur date vient du socle**, comme celle du ramadan : Pongal du 13 au 16 janvier (cœur le 14) ; le miel vert le dernier
+    samedi de janvier et le dimanche qui suit (cœur le samedi).
+  - **Déclinées auprès du moteur** comme les autres (`declinaisons()`, `declinaisonsDeFete` de `main.js`) : le moteur pose leur
+    décor et dit leur ligne au narrateur.
+  - **Ce que vérifie le fabricant** : aucune fête de Fénoir n'a de date codée en dur.
+  - Avant le moteur 0.49.0, elles portaient leur propre date (`DATES_HORS_SOCLE`, retirée).
   - **Pongal et la religion** : Pongal s'ajoute aux fêtes de l'hindouisme tamoul.
 - **`ambiance`**, pour chaque fête : ce qu'on voit et ce qu'on trouve, dit dans le journal « Les fêtes de Fénoir ». La période se
   lit désormais dans `periode` ; l'alias `date`, non énumérable, ne sert plus qu'aux fêtes du socle.

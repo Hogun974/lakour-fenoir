@@ -39,7 +39,7 @@ export const RELIGIONS = [
     description: `La foi de la plupart des cases de l'île : la messe du dimanche, les processions, la Vierge noire de la Rivière des Pluies et saint Expédit, dont les petites chapelles rouges bordent encore les routes. Après le jour zéro, on prie dans les églises fermées, on allume des bougies devant les statues, et chacun se demande si c'est la fin des temps ou seulement la fin d'un monde.` }),
   religion({ cle: "hindoue", nom: "Hindoue", poids: 16, alias: ["hindouisme-tamoul"],
     affinites: { "enfance-tamoule-de-saint-andre": 6, "enfant-de-planteur-de-l-est": 1.8, "enfance-a-maurice": 2, "enfance-zoreil": 0.2, ...LOIN_DE(0.1) },
-    // Le Nouvel An tamoul et la marche sur le feu : fêtes du lot « fetes » ; Pongal (moisson tamoule) : fête du lot 12, hors du socle.
+    // Le Nouvel An tamoul et la marche sur le feu : fêtes du lot « fetes » ; Pongal (moisson tamoule) : fête du lot 12, sur demande au socle depuis le moteur 0.49.0.
     fetes: ["dipavali", "cavadee", "nouvel-an-tamoul", "marche-sur-le-feu", "pongal"],
     observance: { besoin: "calme", texte: "la lampe allumée le soir, une offrande de fleurs ou de riz, le carême avant les fêtes" },
     description: `La religion des Malbars, venue avec les engagés du Sud de l'Inde : les temples aux couleurs vives, les fêtes de la lumière, le feu sur lequel on marche, la Cavadee et ses piercings, le carême qu'on tient avant. Ceux qui ne la connaissent pas parlent de « services » et de sorcellerie ; ceux qui la pratiquent allument une lampe chaque soir et ne demandent à personne de comprendre.` }),

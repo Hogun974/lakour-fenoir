@@ -1,6 +1,6 @@
 // Les affaires de l'île (lot 12 « Affaires, récits et fêtes », 2026-11-17 ; contrat §17) : la logique pure
 // (systems/lakour-survie/logique/affaires.mjs) sur le VRAI contenu de lakour-fenoir, puis l'API en lecture sur la doublure de Foundry,
-// et les fêtes hors du socle (Pongal, le miel vert) que le système date et fête.
+// et Pongal et le miel vert (fêtes « sur demande » du socle depuis le moteur 0.49.0), que le système fête.
 // Lancer : npm run essais
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -114,7 +114,7 @@ test("erreursAffaire : le vrai contenu passe ; chaque règle se casse (mutations
   casse(a => { a.apprendre = " "; }, /apprendre vide/);
 });
 
-// ---------------------------------------------------------------- L'API (lecture) et les fêtes hors du socle, sur la doublure
+// ---------------------------------------------------------------- L'API (lecture) et Pongal et le miel vert, sur la doublure
 installerFoundry();
 const M0 = await charger();
 
@@ -158,8 +158,14 @@ test("API : les affaires qui peuvent naître ici et maintenant (région du group
   assert.ok(!("affaires" in M.api.etat()));
 });
 
-test("fêtes hors du socle : Pongal et le miel vert se datent eux-mêmes ; on les fête avec leur gain et leur coût", async () => {
+test("Pongal et le miel vert : datés par le socle du moteur (sur demande) ; on les fête avec leur gain et leur coût", async () => {
   const { M, abri } = await partie({ dateDepart: "2027-01-14" });
+  // Le socle du moteur (0.49.0) les date : sans lui, plus de date codée en dur.
+  const moteur = game.modules.get("lakour-mj-ia");
+  const fetesMoteur = moteur.api.fetes;
+  moteur.api.fetes = undefined;
+  assert.deepEqual(M.api.fetesDuJour("2027-01-14"), [], "sans le socle, rien");
+  moteur.api.fetes = { calendrier: d => FL.fetesDuJour(d, { aussi: FL.IDS_SUR_DEMANDE }) };
   const jour = M.api.fetesDuJour("2027-01-14");
   assert.deepEqual(jour.map(f => [f.cle, f.coeur]), [["pongal", true]]);
   assert.deepEqual(M.api.fetesDuJour("2027-01-30").map(f => f.cle), ["fete-du-miel-vert"]);
@@ -173,4 +179,5 @@ test("fêtes hors du socle : Pongal et le miel vert se datent eux-mêmes ; on le
   await assert.rejects(() => M.api.feter({ fete: "pongal" }), /déjà|already/i);
   const miel = await M.api.feter({ fete: "fete-du-miel-vert" });
   assert.deepEqual(miel.gain, { nourriture: 1, medicaments: 1 });
+  moteur.api.fetes = fetesMoteur;
 });

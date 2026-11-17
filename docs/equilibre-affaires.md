@@ -90,14 +90,10 @@ nombre de crans. Issues : leurs effets, dans l'ordre.
 | Pongal (13 au 16 janvier, cœur le 14) | +1 moral ; souvenir +1 pendant 4 jours | 1 ration par personne ; 1 quart ; bruit +1 | Quatre jours de moisson : le souvenir dure le temps de la fête. Moins que Noël (2 rations, 7 jours), plus que le 14 juillet (le moral seul). Le quart : le kolam et la cuisson dehors. Le bruit : le cri quand le pot déborde, sans pétards. |
 | Fête du miel vert (dernier samedi et dimanche de janvier) | +1 moral ; nourriture +1, médicaments +1 | 1 quart dehors ; lueur +1 un jour | On enfume une ruche ou un essaim sauvage : un peu de nourriture, un peu de soin (le miel sur les petites plaies). C'est moins que les letchis (nourriture +3), parce que le miel soigne aussi. La fumée de l'enfumoir se voit. |
 
-- **Pourquoi « hors du socle ».** Le moteur, qu'on ne touche pas, ne connaît ni Pongal ni le miel vert. Les deux fêtes portent donc
-  leur propre date (`date`, `dates`, `avant`, `apres`) :
-  - le système la lit déjà (`scripts/fetes.mjs`, `fetesDuJeu`) ;
-  - elles ne sont pas déclinées auprès du moteur ;
-  - le jour venu, le bandeau et l'alerte du narrateur les disent, mais le moteur ne pose pas leur décor.
-- **Les dates.**
-  - Pongal : celles du jeu 3D, à vérifier par Jordan.
-  - Le miel vert : le dernier samedi de janvier est calculé de 2000 à 2100.
+- **D'abord « hors du socle », puis sur demande.** Le moteur ne connaissait ni Pongal ni le miel vert : les deux fêtes ont d'abord
+  porté leur propre date. Depuis le moteur 0.49.0, ce sont des fêtes « sur demande » du socle : leur date codée en dur est partie,
+  et Fénoir les décline comme le ramadan et l'Aïd (le moteur pose leur décor). Le gain, le coût et les textes ne changent pas.
+- **Les dates** (au socle) : Pongal du 13 au 16 janvier, cœur le 14 ; le miel vert le dernier samedi de janvier et le dimanche.
 - **Pongal et la religion.** Elle est ajoutée aux fêtes de l'hindouisme tamoul : un pratiquant y gagne 1 de moral de plus, comme
   pour les autres fêtes de sa religion.
 - **Pas de doublon.**

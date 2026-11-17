@@ -5,7 +5,7 @@
 // - les rumeurs sur une communauté toujours fausses ; aucun effet lié à une origine ;
 // - une ligne d'arrivée par région, les supports de récit sans quête, les figures, les bruits, les Livides en fête (règle de
 //   respect) ; la page du livre de l'île ;
-// - les fêtes : Pongal et le miel vert (hors du socle), ce qu'on voit et ce qu'on trouve à chaque fête, la foire de Bras-Panon ;
+// - les fêtes : Pongal et le miel vert (fêtes « sur demande » du socle depuis le moteur 0.49.0), ce qu'on voit et ce qu'on trouve à chaque fête, la foire de Bras-Panon ;
 // - l'anglais : tout traduit, rien de français, le glossaire tenu.
 // Aucun réseau.  Lancer : npm run essais
 import { test } from "node:test";
@@ -15,7 +15,7 @@ import { DONNEES_AFFAIRES, LOT_AFFAIRES, construireAffaires, NOMS_DU_CONTENU } f
 import { TABLES } from "../modules/lakour-fenoir/contenu/tables.mjs";
 import { FOIRES } from "../modules/lakour-fenoir/contenu/marche.mjs";
 import { RELIGIONS } from "../modules/lakour-fenoir/contenu/religions.mjs";
-import { FETES_FENOIR, FETES_HORS_SOCLE } from "../modules/lakour-fenoir/scripts/fetes.js";
+import { FETES_FENOIR } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { MODULE, sansBalises } from "../modules/lakour-fenoir/contenu/aides.mjs";
 import { erreursAffaire, FRONTS_CAMPAGNE, TAILLES_AFFAIRE } from "../systems/lakour-survie/logique/affaires.mjs";
 import { fabriquer, fabriquerAnglais, verifierDonnees } from "../outils/fabriquer-fenoir.mjs";
@@ -143,15 +143,13 @@ test("récits sans quête : une ligne d'arrivée par région, huit supports (six
 });
 
 test("fêtes du lot 12 : Pongal et le miel vert avec gain, coût et communautés, sans doublon ; ce qu'on voit à chaque fête ; la foire de Bras-Panon", () => {
-  assert.deepEqual(FETES_HORS_SOCLE, ["pongal", "fete-du-miel-vert"]);
   const pongal = D.fetes.find(f => f.cle === "pongal"), miel = D.fetes.find(f => f.cle === "fete-du-miel-vert");
   assert.deepEqual(pongal.communautes, ["malbars", "tous"]);
   assert.deepEqual(pongal.effet, { moral: 1, rations: 1, quarts: 1, bruit: 1, soutien: { moral: 1, jours: 4 } });
   assert.deepEqual(miel.communautes, ["tous"]);
   assert.deepEqual(miel.effet.gain, { nourriture: 1, medicaments: 1 });
-  assert.equal(pongal.date, "01-14");
-  assert.equal(Object.keys(miel.dates).length, 101);
-  assert.ok(Object.values(miel.dates).every(d => /^01-(2[5-9]|3[01])$/.test(d)), "le dernier samedi de janvier");
+  // Fêtes « sur demande » du socle (moteur 0.49.0) : déclinées comme le ramadan, sans date codée en dur.
+  for (const f of [pongal, miel]) for (const k of ["date", "dates", "avant", "apres"]) assert.ok(!(k in f), `${f.cle} : ${k}`);
   // Pas de doublon : la fête de la lentille est la foire d'octobre, le Teemeedee la marche sur le feu.
   for (const k of ["fete-de-la-lentille", "teemeedee", "foire-de-bras-panon", "aid-el-fitr"]) assert.ok(!D.fetes.some(f => f.cle === k), k);
   assert.ok(D.foires.some(f => f.cle === "foire-des-lentilles"));
@@ -166,10 +164,10 @@ test("fêtes du lot 12 : Pongal et le miel vert avec gain, coût et communautés
     assert.ok(p.text.content.includes("Ce qu'on voit, ce qu'on trouve"), f.cle);
     assert.ok(sansBalises(p.text.content).includes(`Date : ${f.periode}`), f.cle);
   }
-  // Mutations : une fête du socle datée, une fête hors du socle sans date.
+  // Mutations : Pongal redatée en dur.
   const casse = structuredClone(D);
-  delete casse.fetes.find(f => f.cle === "pongal").date;
-  assert.ok(verifierDonnees(casse).some(e => /pongal.*sa date/.test(e)));
+  casse.fetes.find(f => f.cle === "pongal").date = "01-14";
+  assert.ok(verifierDonnees(casse).some(e => /pongal.*date codée en dur/.test(e)));
   const sansAmbiance = structuredClone(D);
   sansAmbiance.fetes[0].ambiance = "";
   assert.ok(verifierDonnees(sansAmbiance).some(e => /ambiance/.test(e)));
@@ -196,7 +194,7 @@ test("l'anglais du lot : affaires, arrivées, fêtes, foire, journaux et tables 
   assert.equal(registre.affaires.find(a => a.cle === "la-liste-du-comptable").titre, "The Bookkeeper's list");
   for (const r of registre.regions) assert.ok(r.arrivee && r.arrivee !== D.regions.find(x => x.cle === r.cle).arrivee, r.cle);
   assert.equal(registre.fetes.find(f => f.cle === "pongal").nom, "Pongal, the Tamil harvest");
-  assert.equal(registre.fetes.find(f => f.cle === "pongal").date, "01-14", "la date ne se traduit pas");
+  assert.ok(!("date" in registre.fetes.find(f => f.cle === "pongal")), "la date vient du socle");
   assert.equal(registre.foires.find(f => f.cle === "foire-de-bras-panon").nom, "The Bras-Panon fair");
   const en = (pack, cle) => documents.find(x => x.pack === pack && x.doc.flags?.["lakour-fenoir-en"]?.cle === cle)?.doc;
   assert.equal(en("mj", "les-affaires-de-l-ile").name, "The island's affairs");

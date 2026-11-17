@@ -5,6 +5,75 @@ Deux numéros de version avancent ensemble : celui du **système** `lakour-survi
 publication GitHub (étiquette `v<version du système>`) emporte le tout. Le moteur commun `lakour-mj-ia` a son propre journal
 dans [son dépôt](https://github.com/Hogun974/lakour-mj-ia).
 
+## Système 0.3.0 · Contenu 0.4.0 — 17 novembre 2026
+
+Douze chantiers portés du jeu vidéo Fénoir 3D, réécrits pour une table : rien en temps réel, tout passe par le MJ et les dés.
+
+- **Les histoires des survivants** : chaque survivant tiré reçoit trois à cinq phrases d'histoire, accordées au féminin ou au
+  masculin, selon son enfance, son passé, ses traits, sa foi et son âge, sans contradiction. Plus de 400 phrases, en français et
+  en anglais.
+- **Les affaires et les récits** :
+  - vingt-trois affaires de l'île, écrites pour le MJ : comment on l'apprend, ce qu'elle demande, comment elle tourne mal, ce
+    qu'elle change ; chacune a sa vérité cachée, sa pente et ses issues ;
+  - des récits sans quête : les figures de l'île, ses bruits, les Livides parés pour la fête (rien de religieux sur eux), une
+    arrivée pour chaque région, la page « Les signes des murs » du livre de l'île ;
+  - deux fêtes de plus, Pongal et la fête du miel vert, et la foire de Bras-Panon ; chaque fête dit ce qu'on voit et ce qu'on
+    trouve. Le MJ IA les connaît et pose leur décor, comme pour le ramadan.
+- **Les sens** : la pluie par région et par quart, la brume des Hauts, le vent des alizés, les ravines à sec ou en crue ; l'odeur
+  de l'abri qui attire hordes, errants et chiens ; l'œil qui s'habitue au noir en quelques nuits ; écouter les yeux fermés,
+  approcher un Livide selon sa sorte, les grenouilles qui se taisent.
+- **Le corps** :
+  - le sommeil compte à part de la fatigue : une nuit blanche ôte un dé, la suivante deux, et l'on finit par s'endormir où l'on
+    est ; le bivouac est sûr, exposé ou dangereux ;
+  - les chutes, du simple choc à la mort, et l'eau qui amortit ;
+  - l'abri se salit sans latrines ni toilette, et l'insalubrité rend malade ; le bouclier pare une morsure ;
+  - les joueurs voient des symptômes, pas des noms : un mal n'est nommé que si le groupe sait le reconnaître, le Gris compris.
+- **Le jour qu'on croit et les cartes** : quand le téléphone se tait, le groupe tient lui-même le compte des jours, et il peut se
+  tromper ou le perdre ; on lit la lune sur un calendrier et l'heure dans le ciel ; cartes, calendriers, montre et journal d'un
+  mort se trouvent, se copient et se donnent. Le vrai jour reste au MJ.
+- **Les plans** : soixante plans, dont trois uniques, plus ou moins rares ; des lieux à plans à fouiller, des copies, le carnet
+  du groupe, l'étagère aux cahiers qui craint l'eau du cyclone. Un plan sert de rabais (un quart de matériaux en moins, moitié
+  moins de travail) : rien ne l'exige.
+- **La communauté** :
+  - le marché chiffré : la marge du commerçant selon la réputation, le crédit selon la parole, la valeur d'un objet et d'un plan,
+    l'étal du groupe au marché forain ;
+  - la porte : ce que devient celui qu'on refuse, l'attitude d'un inconnu ;
+  - les rangs du groupe (chef, seconds, membres, nouveaux), la succession à la mort du chef, l'accord de passage entre abris ;
+  - la table de gestion : des priorités par personne et par tâche, des quotas suivis sans punition, vingt-six corvées ;
+  - changer de religion dans un lieu de culte, et ce qu'on en dit.
+- **Les ateliers** : neuf ateliers de métier en trois niveaux ; outils et armes de fortune, de récupération ou forgés, qui s'usent,
+  se réparent et s'affûtent ; l'arme à feu peut s'enrayer ; plus de cent recettes nouvelles, dont des remèdes et l'eau bouillie ou
+  javellisée.
+- **La fouille** : fouiller un lieu précis (vingt-quatre genres de lieux, plus ou moins pillés, jamais vides), démonter une
+  installation ou un lieu pour la moitié de ce qu'il a coûté, récolter ce que l'île repousse ; les bêtes trouvées, à mettre en enclos
+  à temps.
+- **Bâtir et défendre** : chaque installation a son matériau, qui tient plus ou moins au cyclone, au feu, à la pluie et aux
+  Livides ; l'entretien, l'usure et les pannes ; les pièges, la porte et l'enceinte devant un assaut ; le feu sur l'abri ; la cave
+  qui s'éboule si l'on ne sait pas étayer ; trente-huit installations nouvelles, dont des sœurs lontan des modernes.
+- **Le vivant de l'abri** : une seule règle pour tout ce qui vit à l'abri (bêtes, bassins, cultures hors-sol) : de l'eau, de quoi
+  manger, de la place, sinon la santé baisse ; naissances, maladies et soins ; dix espèces, onze installations ; le chien qui
+  prévient sans attirer. Aucune bête n'est une monture.
+- **Le paradis et son piège, et rallumer l'île** :
+  - un abri qui dure devient « chaud » : les Livides s'y agglutinent, les hordes y viennent ; la ronde, le silence et le leurre le
+    refroidissent ; les joueurs n'en voient que le signe ;
+  - les corps à enterrer ou à brûler, la vie sous terre, les haies qui poussent ;
+  - le but d'une longue partie : rallumer une région (un abri tenu, ses lieux nettoyés, de la lumière), et les grands chantiers
+    de route, de centrale, de port ou de phare.
+- **Les chantiers se tiennent entre eux** : un plan se troque à sa valeur ; le journal d'un mort garde les plans qu'il savait ;
+  cartes et calendriers ont leur prix au marché ; un outil trouvé a sa qualité ; démonter rend selon le matériau ; le digesteur vit
+  du fumier de l'enclos ; les bêtes mortes rejoignent les corps à traiter ; la salle verte rend la fête plus belle ; la ronde se
+  donne à la table de gestion. Les doublons entre chantiers sont retirés.
+- **Les décisions de l'auteur** :
+  - seul le porteur du Gris se relève, quelle que soit sa mort ; un mort sans le Gris reste mort ;
+  - une seule liste de religions pour le jeu de rôle et le jeu 3D, avec leurs poids (les fiches et les tirages d'avant restent
+    lisibles) ;
+  - les plans restent un rabais : aucune installation ni recette n'en exige un.
+- **Le rééquilibrage** : mesuré avant et après sur un an (240 parties par cas) et sur 200 jours (trois graines, 300 parties par
+  cas). Les groupes qui restent sur place retrouvent leur survie d'avant ; aucune règle de fond ne change. Un seul chiffre du jeu
+  bouge : la part musulmane au tirage des survivants est ramenée à 8 % (elle montait à 13 %), plus près de son poids sur l'île ;
+  aucune origine ne fixe la foi. Les mesures sont dans `docs/equilibre-3d.md`.
+- **Traduction anglaise complète.** Pongal et le miel vert n'ont pas encore d'illustration. Moteur requis : 0.49.0.
+
 ## Système 0.2.2 · Contenu 0.3.2 — 14 novembre 2026
 
 - **Quatre fêtes illustrées**, peintes comme les autres (générées localement par IA, FLUX.2 klein 9B) : la rupture du jeûne du

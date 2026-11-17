@@ -13,7 +13,7 @@ import { jetonsNonPeints, listeJetons, verifierJetons } from "../outils/fabrique
 import { INDEX_JOUEURS, cheminJetonIa, cheminJetonJoueurIa } from "../modules/lakour-fenoir/contenu/jetons.mjs";
 import { DOCUMENTS, donnees } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { COMPETENCES, MODULE, sansBalises } from "../modules/lakour-fenoir/contenu/aides.mjs";
-import { FETES_FENOIR, FETES_HORS_SOCLE, declinaisons, fetesDuJour, IMAGES_FETES, estHorsSocle } from "../modules/lakour-fenoir/scripts/fetes.js";
+import { FETES_FENOIR, declinaisons, fetesDuJour, IMAGES_FETES } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { IDS_DECLINABLES, IDS_SUR_DEMANDE, fetesDuJour as calendrierDuSocle, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { BRAS as BRAS_INSTALLATIONS } from "../modules/lakour-fenoir/contenu/installations.mjs";
 import { BRAS_OUVRAGES } from "../modules/lakour-fenoir/contenu/ouvrages.mjs";
@@ -324,16 +324,11 @@ test("fêtes : chaque fête déclinée a une clé connue du socle du moteur, une
     assert.ok(IDS_DECLINABLES.includes(d.fete), `${d.id} : fête « ${d.fete} » inconnue du socle`);
     deja.push(normaliserDeclinaison(d, deja)); // lève si fête inconnue, doublon, décor illisible
   }
-  // Les fêtes hors du socle (lot 12 : Pongal, le miel vert) ne sont pas déclinées : le socle ne les connaît pas.
-  assert.deepEqual(FETES_HORS_SOCLE, ["pongal", "fete-du-miel-vert"]);
-  assert.equal(deja.length, FETES_DE_FENOIR.length - FETES_HORS_SOCLE.length);
+  // Toutes déclinées, Pongal et le miel vert compris (fêtes « sur demande » du socle depuis le moteur 0.49.0).
+  assert.equal(deja.length, FETES_DE_FENOIR.length);
+  assert.ok(["pongal", "fete-du-miel-vert"].every(k => deja.some(d => d.fete === k)));
   for (const f of FETES_FENOIR) {
     assert.ok(!f.periode.includes("-"), `${f.cle} : période sans trait d'union`);
-    if (estHorsSocle(f)) {
-      assert.ok(!IDS_DECLINABLES.includes(f.cle), `${f.cle} : le socle ne la connaît pas`);
-      assert.ok(!("moteur" in f) && (f.date || f.dates), `${f.cle} : sa propre date, pas d'alias moteur`);
-      continue;
-    }
     assert.equal(f.moteur, f.cle, `${f.cle} : alias lu par main.js`);
     assert.equal(f.date, f.periode, `${f.cle} : alias de la période`);
   }
@@ -351,7 +346,7 @@ test("fêtes au registre : image (si peinte), gain et coût de chaque fête, auc
     if (f.image) assert.ok(existsSync(new URL(f.image.replace(`modules/${MODULE}/`, ""), RACINE)), `${f.cle} : image absente`);
     assert.deepEqual(f.effet, FETES_FENOIR.find(x => x.cle === f.cle).effet, `${f.cle} : effet du contenu`);
     assert.ok(f.gain && f.cout && f.communautes.length, `${f.cle} : gain, coût, communautés`);
-    if (!FETES_HORS_SOCLE.includes(f.cle)) for (const k of ["date", "dates", "avant", "apres", "moteur"]) assert.ok(!(k in f), `${f.cle} : ${k}`);
+    for (const k of ["date", "dates", "avant", "apres", "moteur"]) assert.ok(!(k in f), `${f.cle} : ${k}`);
     for (const k of ["nom", "description", "consigne", "periode", "ambiance"]) assert.ok(f[k], `${f.cle} : ${k}`);
   }
   const casse = copie();
@@ -369,8 +364,8 @@ test("fêtes au registre : image (si peinte), gain et coût de chaque fête, auc
   const sansTexte = copie();
   sansTexte.fetes[0].gain = "";
   attendre(verifierDonnees(sansTexte), /gain ou coût sans texte/);
-  // Les quatre fêtes du lot « fetes » : peintes depuis la 0.3.2, effets propres.
-  for (const k of IDS_SUR_DEMANDE) assert.equal(D.fetes.find(f => f.cle === k)?.image, `modules/${MODULE}/assets/fetes/${k}.jpg`, k);
+  // Les quatre fêtes du lot « fetes » : peintes depuis la 0.3.2, effets propres ; Pongal et le miel vert n'ont pas d'illustration.
+  for (const k of ["ramadan", "aid-el-kebir", "nouvel-an-tamoul", "marche-sur-le-feu"]) assert.equal(D.fetes.find(f => f.cle === k)?.image, `modules/${MODULE}/assets/fetes/${k}.jpg`, k);
   const noel = D.fetes.find(f => f.cle === "noel").effet;
   assert.equal(noel.rations, 2, "Noël : un vrai surplus");
   assert.ok(noel.attache);
@@ -403,13 +398,15 @@ test("fêtes à la date de JEU : le calendrier du socle, déclinaisons de Fénoi
   const noel = fetesDuJour("2026-12-25", calendrierDuSocle)[0];
   assert.equal(noel.coeur, true); assert.equal(noel.debut, "2026-12-01"); assert.equal(noel.fin, "2026-12-31");
   assert.deepEqual(fetesDuJour("2026-12-25"), [], "sans socle (hors Foundry) : rien du socle");
-  // Les fêtes hors du socle (lot 12) se datent elles-mêmes, avec ou sans socle.
-  assert.deepEqual(fetesDuJour("2027-01-14").map(f => [f.cle, f.coeur]), [["pongal", true]], "Pongal, cœur le 14 janvier");
-  assert.deepEqual(fetesDuJour("2027-01-13").map(f => [f.cle, f.coeur, f.debut, f.fin]), [["pongal", false, "2027-01-13", "2027-01-16"]]);
-  assert.deepEqual(fetesDuJour("2027-01-17"), []);
-  assert.deepEqual(fetesDuJour("2027-01-30").map(f => [f.cle, f.coeur]), [["fete-du-miel-vert", true]], "le dernier samedi de janvier 2027");
-  assert.deepEqual(fetesDuJour("2028-01-29").map(f => f.cle), ["fete-du-miel-vert"], "le dernier samedi de janvier 2028");
-  assert.deepEqual(fetesDuJour("2027-01-14", calendrierDuSocle).map(f => f.cle), ["pongal"], "avec le socle : après celles du socle");
+  // Pongal et le miel vert : fêtes sur demande du socle (moteur 0.49.0), datées par lui seul.
+  assert.ok(!cles("2027-01-14").includes("pongal"), "sans déclinaison, le socle ne la donne pas");
+  assert.deepEqual(fetesDuJour("2027-01-14"), [], "sans socle : plus de date codée en dur");
+  const pongal = fetesDuJour("2027-01-13", d => calendrierDuSocle(d, { aussi: IDS_SUR_DEMANDE })).find(f => f.cle === "pongal");
+  assert.deepEqual([pongal.coeur, pongal.debut, pongal.fin], [false, "2027-01-13", "2027-01-16"]);
+  assert.equal(fetesDuJour("2027-01-14", d => calendrierDuSocle(d, { aussi: IDS_SUR_DEMANDE })).find(f => f.cle === "pongal").coeur, true, "cœur le 14 janvier");
+  assert.ok(!avecDemande("2027-01-17").includes("pongal"));
+  assert.ok(avecDemande("2027-01-30").includes("fete-du-miel-vert"), "le dernier samedi de janvier 2027");
+  assert.ok(avecDemande("2028-01-29").includes("fete-du-miel-vert"), "le dernier samedi de janvier 2028");
   assert.deepEqual(fetesDuJour("n'importe quoi", calendrierDuSocle), []);
 });
 
@@ -445,7 +442,7 @@ test("créatures au registre (famille lue par la logique du système) et bras de
 
 test("module.json : compendiums, langues, dossier de compendiums", () => {
   const m = JSON.parse(readFileSync(new URL("module.json", RACINE), "utf8"));
-  assert.equal(m.id, MODULE); assert.equal(m.version, "0.3.2");
+  assert.equal(m.id, MODULE); assert.equal(m.version, "0.4.0");
   assert.deepEqual(m.compatibility, { minimum: "14", verified: "14.370" });
   assert.equal(m.relationships.systems[0].id, "lakour-survie");
   assert.deepEqual(m.esmodules, ["scripts/main.js"]);

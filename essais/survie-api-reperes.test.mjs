@@ -7,6 +7,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { installerFoundry, commeJoueur, valeur } from "./doublures/foundry-survie.mjs";
 import { charger, monde, survivantTire } from "./doublures/survie-api-outils.mjs";
+import * as FL from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 
 installerFoundry();
 const M0 = await charger();
@@ -252,6 +253,10 @@ test("API : à la fête des autres on apprend le jour ; une partie d'avant le lo
 
 test("API : le calendrier des fêtes de l'année fait voir venir les fêtes des autres (depuis le jour qu'on croit) ; perdu, il ne sert plus", async () => {
   const { M, a } = await partie();
+  // Le socle des fêtes du moteur (0.49.0) date Pongal, fête sur demande que Fénoir décline.
+  const moteur = game.modules.get("lakour-mj-ia");
+  const fetesMoteur = moteur.api.fetes;
+  moteur.api.fetes = { calendrier: d => FL.fetesDuJour(d, { aussi: FL.IDS_SUR_DEMANDE }) };
   await M.api.avancer({ quarts: 4 * 30 });
   await M.api.compte({ action: "regler", date: "2027-01-03", certitude: "sur" });   // le 3 janvier 2027
   assert.deepEqual(M.api.reperes().fetesAVenir, [], "sans le calendrier");
@@ -265,4 +270,5 @@ test("API : le calendrier des fêtes de l'année fait voir venir les fêtes des 
   assert.match(contexteTableau("groupe").reperes.fetes, /Pongal.* dans 11 jours/);
   await retoucher(e => { e.compte = { ...e.compte, certitude: "perdu" }; });
   assert.deepEqual(M.api.reperes().fetesAVenir, []);
+  moteur.api.fetes = fetesMoteur;
 });

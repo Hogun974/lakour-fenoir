@@ -19,11 +19,9 @@
 // communauté tisse des liens (logique/fetes.mjs, participer). Ni la description (carte publique) ni la consigne (ligne pour le
 // narrateur) ne disent un secret de partie.
 //
-// Fêtes hors du socle (lot 12 « Affaires, récits et fêtes », 2026-11-17 ; contrat §17) : Pongal et la fête du miel vert ne sont
-// pas au calendrier du moteur, qu'on ne touche pas. Elles portent donc leur propre date (`date` « MM-JJ » ou `dates` par année,
-// `avant`, `apres` : la forme que lit systems/lakour-survie/scripts/fetes.mjs, fetesDuJeu) et ne sont pas déclinées auprès du
-// socle (FETES_HORS_SOCLE) : le système les voit, les fête et les annonce ; le décor et la ligne du narrateur du moteur viendront
-// quand le socle les aura « sur demande ». Toutes les autres gardent la règle : dates au socle seul.
+// Pongal et la fête du miel vert (lot 12 « Affaires, récits et fêtes », 2026-11-17 ; contrat §17) : d'abord datées ici, faute
+// d'entrée au socle, elles sont depuis le moteur 0.49.0 des fêtes « sur demande » du socle, déclinées comme le ramadan et l'Aïd.
+// Toutes les fêtes gardent donc la règle : dates au socle seul. Elles n'ont pas d'illustration (IMAGES_FETES).
 // ambiance (lot 12) : ce qu'on voit et ce qu'on trouve pendant la fête (décors, trouvailles), dit aux joueurs dans le journal
 // « Les fêtes de Fénoir ». Règle de respect : sur un Livide, seulement un objet de fête profane (bonnet de Noël, ruban rouge,
 // guirlande, casque de musique) ; rien de religieux ni de mémoire, qui n'apparaît qu'en décor posé avec soin.
@@ -104,7 +102,7 @@ const FETES = [
     description: "Au début de janvier, après dix-huit jours de carême, les fidèles malbars marchaient pieds nus sur un lit de braises, au temple, sous les yeux de toute l'île. Au camp, on allume un grand feu qui brûle le bois d'une semaine ; ceux qui le traversent, ou le regardent, en reviennent avec des nerfs que la nuit n'entame plus. La lueur se voit de très loin.",
     consigne: "Marche sur le feu : un grand feu de bois, des pieds nus sur les braises, la foi de ceux qui croient et le respect des autres ; rien de surnaturel, seulement des nerfs plus solides, et une lueur visible de loin",
     decor: { palette: "braise", ornements: ["bougies"] } },
-  // Fêtes hors du socle (lot 12, 2026-11-17) : elles se datent elles-mêmes (DATES_HORS_SOCLE).
+  // Fêtes « sur demande » du socle depuis le moteur 0.49.0 (lot 12, 2026-11-17).
   { cle: "pongal", nom: "Pongal, la moisson tamoule", periode: "du 13 au 16 janvier, au soleil du matin",
     description: "À la mi-janvier, Pongal remerciait le soleil pour la moisson : devant les cases et les temples tamouls, on faisait bouillir le riz au lait sucré dans un pot de terre neuf, sur trois pierres, jusqu'à ce qu'il déborde. Des cannes dressées de chaque côté de la porte, un kolam au seuil, et le lendemain, les bêtes de la cour nourries les premières. Au camp, un seul pot, et tout le monde vient le regarder déborder.",
     consigne: "Pongal, la moisson tamoule : un pot de riz au lait qui déborde au soleil du matin, des cannes dressées, un kolam ; on remercie pour ce qui a poussé, et l'on nourrit les bêtes de la cour en premier",
@@ -115,15 +113,6 @@ const FETES = [
     decor: { palette: "or", ornements: [] } }
 ];
 
-// Le dernier samedi de janvier d'une année (« 01-JJ ») : la fête du miel vert.
-const dernierSamediDeJanvier = a => { for (let j = 31; j >= 25; j--) if (new Date(Date.UTC(a, 0, j)).getUTCDay() === 6) return `01-${j}`; return "01-25"; };
-// Les dates des fêtes hors du socle (la forme lue par fetesDuJeu du système) : `date` fixe ou `dates` par année, fenêtre `avant` et
-// `apres` (jours). Le cœur est le jour de la date. Années couvertes pour une date mobile : 2000 à 2100.
-export const DATES_HORS_SOCLE = {
-  pongal: { date: "01-14", avant: 1, apres: 2 },
-  "fete-du-miel-vert": { dates: Object.fromEntries(Array.from({ length: 101 }, (_, i) => 2000 + i).map(a => [String(a), dernierSamediDeJanvier(a)])), avant: 0, apres: 1 }
-};
-export const FETES_HORS_SOCLE = Object.keys(DATES_HORS_SOCLE);
 
 // ---------------------------------------------------------------- Gains et coûts (lot « fetes »)
 // effet : la forme lue par la logique du système (logique/fetes.mjs) ; gain, cout : ce qu'en lisent les joueurs (journal des fêtes).
@@ -205,13 +194,10 @@ const AMBIANCES = {
   "fete-du-miel-vert": "Des ruches en tronc et des cadres abandonnés dans les jardins de la Plaine ; en fouillant, un pot de miel des Hauts, qui ne se gâte jamais."
 };
 
-// Deux alias de compatibilité, NON énumérables (absents de assets/donnees.json), pour les fêtes du socle seulement : `moteur`
-// (= cle, lu par main.js pour décliner la fête) et `date` (= periode, l'ancien nom de la période). Une fête hors du socle porte au
-// contraire sa vraie date, énumérable (DATES_HORS_SOCLE), et n'a pas d'alias `moteur`.
-export const estHorsSocle = f => FETES_HORS_SOCLE.includes(f?.cle);
+// Deux alias de compatibilité, NON énumérables (absents de assets/donnees.json) : `moteur` (= cle, lu par main.js pour décliner
+// la fête) et `date` (= periode, l'ancien nom de la période).
 export const FETES_FENOIR = FETES.map(f => {
   const fete = { ...f, ...(EFFETS[f.cle] ?? { communautes: ["tous"], effet: EFFET_FETE, gain: "", cout: "" }), ambiance: AMBIANCES[f.cle] ?? "" };
-  if (estHorsSocle(f)) return { ...fete, ...structuredClone(DATES_HORS_SOCLE[f.cle]) };
   return Object.defineProperties(fete, {
     moteur: { value: f.cle, enumerable: false },
     date: { value: f.periode, enumerable: false }
@@ -219,7 +205,7 @@ export const FETES_FENOIR = FETES.map(f => {
 });
 
 // Les déclinaisons remises au socle (api.fetes.enregistrer) : une par fête du socle, id « fenoir-<cle> ».
-export const declinaisons = () => FETES_FENOIR.filter(f => !estHorsSocle(f)).map(f => ({ id: `fenoir-${f.cle}`, fete: f.cle, nom: f.nom, description: f.description, consigne: f.consigne, decor: f.decor }));
+export const declinaisons = () => FETES_FENOIR.map(f => ({ id: `fenoir-${f.cle}`, fete: f.cle, nom: f.nom, description: f.description, consigne: f.consigne, decor: f.decor }));
 
 // Le calendrier du socle dans Foundry (api.fetes.calendrier, la logique de fetes-logique.js), ou null.
 const calendrierDuMoteur = () => globalThis.game?.modules?.get?.(ID_MOTEUR)?.api?.fetes?.calendrier ?? null;
@@ -227,30 +213,14 @@ const calendrierDuMoteur = () => globalThis.game?.modules?.get?.(ID_MOTEUR)?.api
 // Les fêtes de Fénoir à une date de JEU « AAAA-MM-JJ » (pas celle du navigateur), de la plus prioritaire à la moins, avec leur
 // fenêtre : [{ ...fête, debut, fin, coeur }]. Les dates viennent du socle : `calendrier(date)` est fetesDuJour de
 // fetes-logique.js (ou api.fetes.calendrier du moteur, par défaut dans Foundry). Sans socle : [].
-// Les fêtes hors du socle (lot 12) s'y ajoutent d'après leur propre date, même sans socle, après celles du socle.
 export function fetesDuJour(dateIso, calendrier = calendrierDuMoteur()) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateIso ?? ""));
   if (!m) return [];
   // Midi, heure locale : le socle lit le jour local de la date.
   const jour = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 12);
-  const duSocle = typeof calendrier === "function" ? calendrier(jour).map(c => {
-    const f = FETES_FENOIR.find(x => x.cle === c.id && !estHorsSocle(x));
+  if (typeof calendrier !== "function") return [];
+  return calendrier(jour).map(c => {
+    const f = FETES_FENOIR.find(x => x.cle === c.id);
     return f ? { ...f, debut: c.debut, fin: c.fin, coeur: c.coeur } : null;
-  }).filter(Boolean) : [];
-  return [...duSocle, ...FETES_FENOIR.filter(estHorsSocle).map(f => fenetreHorsSocle(f, dateIso)).filter(Boolean)];
-}
-// La fenêtre d'une fête hors du socle qui contient ce jour (« AAAA-MM-JJ »), ou null : { ...fête, debut, fin, coeur }.
-const MS_JOUR = 86400000;
-const numeroJour = iso => Math.round(Date.UTC(Number(iso.slice(0, 4)), Number(iso.slice(5, 7)) - 1, Number(iso.slice(8, 10))) / MS_JOUR);
-const isoDuNumero = n => new Date(n * MS_JOUR).toISOString().slice(0, 10);
-export function fenetreHorsSocle(f, dateIso) {
-  const n = numeroJour(dateIso), annee = Number(dateIso.slice(0, 4));
-  for (const a of [annee - 1, annee, annee + 1]) {
-    const mmjj = f.dates?.[String(a)] ?? f.date;
-    if (!mmjj) continue;
-    const j = numeroJour(`${a}-${mmjj}`);
-    const debut = j - (Number(f.avant) || 0), fin = j + (Number(f.apres) || 0);
-    if (n >= debut && n <= fin) return { ...f, debut: isoDuNumero(debut), fin: isoDuNumero(fin), coeur: n === j };
-  }
-  return null;
+  }).filter(Boolean);
 }
