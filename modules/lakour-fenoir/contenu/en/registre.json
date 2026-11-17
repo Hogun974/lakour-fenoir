@@ -2223,6 +2223,10 @@
   },
   "registre/bestiaire/livide-brule": {
     "_nom": "Livide brûlé",
+    "sens": {
+      "fr": "ouïe fine, odeur",
+      "en": "sharp hearing, smell"
+    },
     "description": {
       "fr": "<p>Pris dans un incendie de quartier ou un véhicule en feu, il en est ressorti noirci, à demi aveugle, qui fume encore parfois.</p>",
       "en": "<p>Caught in a neighbourhood blaze or a burning vehicle, it came out blackened, half blind, sometimes still smoking.</p>"
@@ -2234,10 +2238,6 @@
     "faiblesse": {
       "fr": "<p>Ses yeux brûlés : il ne voit rien, il suit les bruits et l'odeur des vivants. Qui se tient immobile, sans un bruit et au vent de lui, peut le laisser passer à un pas.</p>",
       "en": "<p>Its burnt eyes: it sees nothing, it follows the sounds and the smell of the living. Someone who stays still, without a sound and upwind of it, can let it pass a step away.</p>"
-    },
-    "sens": {
-      "fr": "ouïe fine, odeur",
-      "en": "sharp hearing, smell"
     }
   },
   "registre/bestiaire/livide-des-hauts": {
@@ -2295,6 +2295,10 @@
   },
   "registre/bestiaire/pillard-sans-lune": {
     "_nom": "Pillard des Sans-Lune",
+    "sens": {
+      "fr": "vue, ouïe",
+      "en": "sight, hearing"
+    },
     "description": {
       "fr": "<p>Visage noirci, vêtements sombres, un sabre ou un fusil, et la liste du Comptable dans la poche : un homme de la bande qui tient Saint-Denis la nuit.</p>",
       "en": "<p>Blackened face, dark clothes, a cane knife or a shotgun, and the Bookkeeper's list in his pocket: a man of the gang that holds Saint-Denis by night.</p>"
@@ -2306,10 +2310,6 @@
     "faiblesse": {
       "fr": "<p>Il tient à sa vie plus qu'à la bande : un coup dur et il fuit.</p>",
       "en": "<p>He values his life more than the gang: one hard blow and he runs.</p>"
-    },
-    "sens": {
-      "fr": "vue, ouïe",
-      "en": "sight, hearing"
     }
   },
   "registre/bestiaire/rat-des-reserves": {
