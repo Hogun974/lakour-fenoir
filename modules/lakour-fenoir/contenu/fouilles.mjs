@@ -59,7 +59,7 @@ export const OBJETS_FOUILLE = [
   E("carabine-22", "une carabine .22", "carabine-22", { ressource: "pieces", par: 1 }), E("pistolet-de-service", "un pistolet de service", "pistolet-de-service", { ressource: "pieces", par: 1 }),
   E("lampe-electrique", "une lampe électrique", "frontale", { ressource: "pieces", par: 2 }, false), E("radio-a-manivelle", "une radio à manivelle", "radio-a-manivelle", { ressource: "pieces", par: 1 }, false),
   E("batterie-nomade", "une batterie nomade", "batterie-nomade", { ressource: "pieces", par: 1 }, false), E("rechaud", "un réchaud", "rechaud", { ressource: "pieces", par: 2 }, false),
-  // Les outils que le lot 6 (ateliers) écrit : en attendant leur fiche, leur valeur en pièces.
+  // Les outils du lot 6 (ateliers) : des objets depuis la fusion de la vague 3 (la valeur en pièces ne sert plus que de repli).
   E("marteau", "un marteau", "marteau", { ressource: "pieces", par: 2 }), E("scie", "une scie", "scie", { ressource: "pieces", par: 2 }),
   E("pince", "une pince", "pince", { ressource: "pieces", par: 2 }), E("truelle", "une truelle", "truelle", { ressource: "pieces", par: 2 }),
   E("hache", "une hache", "hache", { ressource: "pieces", par: 1 }), E("masse", "une masse", "masse", { ressource: "pieces", par: 2 }),
@@ -461,7 +461,7 @@ Ce qui se prend autrement n'est pas récolté : les **zerbaz** (cible « plantes
 - **Graines et boutures** : ${nomsObjets("graines")} ; ${nomsObjets("boutures")}.
 - **Carburant, gaz, munitions** : ${nomsObjets("carburant")} ; une bouteille de gaz entamée, une dizaine de kilos ; ${nomsObjets("munitions")}.
 - **Un tronc** vaut un demi-matériau ; **dix cannes coupées**, une demi-nourriture (la canne se suce, elle ne nourrit pas longtemps).
-- **Les outils et les armes** (couteau, sabre à canne, pied-de-biche, fusil…) deviennent des objets. Ceux qui n'ont pas encore de fiche (marteau, scie, pince, truelle, hache, masse) comptent en pièces.` },
+- **Les outils et les armes** (couteau, sabre à canne, pied-de-biche, fusil…) deviennent des objets. Le marteau, la scie, la pince, la truelle, la hache et la masse aussi : chacun a sa qualité (de fortune, de récupération, forgé), selon le risque du lieu.` },
   { cle: "systeme", titre: "Ce que fait le système", texte: `- **fouiller({ cible: "lieu", genre, ecart, lieu, site })** : le lieu suivant de ce genre dans la région (« ecart » : à l'écart), un lieu déjà commencé (« lieu »), ou un site d'abri (« site »). Rend le lieu (son genre, le mot du pillage, le travail fait), ce qu'on a trouvé en objets (« trouve ») et en ressources (« butin »), les objets créés, la bête rencontrée.
 - **fouiller({ cible: "demonter", … })** : démonter un lieu (il se fouille d'abord s'il n'est pas fini) ; **demonter({ installationId })** : démonter une installation de l'abri.
 - **fouiller({ cible: "matieres", gisement })** : récolter un gisement des alentours (sans gisement : le plus abondant).

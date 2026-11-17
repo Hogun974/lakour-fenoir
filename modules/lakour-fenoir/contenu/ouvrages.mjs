@@ -94,17 +94,54 @@ export const OUVRAGES_EXISTANTS = {
   douche: { materiau: "bois-sous-tole" }
 };
 
+// Fusion de la vague 3 : les installations des lots 6 (ateliers), 8 (vivant) et 9 (paradis) ont aussi leur matériau ; celles qui
+// n'ont pas de bras (les ateliers, les haies et le puits de jour) ont aussi un entretien, celui des installations d'avant de même
+// matière : une construction de bambou, de vacoa ou de paille se reprend tous les deux mois (E(60), comme la palissade de bambou),
+// une haie se taille tous les trois mois (E(90), comme la haie de choka) ; la tôle, la pierre et le parpaing tiennent seuls (comme
+// l'atelier et l'infirmerie d'avant). Le vivant a ses bras (l'élevage, les cultures) : un matériau seulement, et le curage des
+// bassins (contenu/vivant.mjs, curageDuVivant). entretien : le même à tous les niveaux, ou une liste par niveau (null : aucun).
+const BAMBOU = "bambou-et-vacoa", BOIS = "bois-sous-tole", TOLE = "tole-de-recuperation", PIERRE = "pierre-seche", PARPAING = "parpaing-et-beton";
+export const OUVRAGES_DES_LOTS = {
+  // Lot 6 : neuf ateliers en trois niveaux (« le matériau fait le niveau »).
+  "coin-du-feu": { materiau: [PIERRE, TOLE, PARPAING] },
+  etabli: { materiau: [BAMBOU, BOIS, BOIS], entretien: [E(60), null, null] },
+  forge: { materiau: [PIERRE, PIERRE, PARPAING] },
+  vannerie: { materiau: [BAMBOU, BAMBOU, BOIS], entretien: [E(60), E(60), null] },
+  couture: { materiau: [BAMBOU, BOIS, BOIS], entretien: [E(60), null, null] },
+  tisanerie: { materiau: [BAMBOU, BAMBOU, BOIS], entretien: [E(60), E(60), null] },
+  "atelier-mecanique": { materiau: [TOLE, TOLE, PARPAING] },
+  "atelier-electricite": { materiau: [BOIS, BOIS, PARPAING] },
+  distillerie: { materiau: [PIERRE, TOLE, TOLE] },
+  // Lot 8 : clapier et soue sous tôle et moellons, l'étable et les bacs de bambou, les bassins de pierre ou de parpaing.
+  clapier: { materiau: BOIS },
+  "soue-a-cochons": { materiau: PIERRE },
+  etable: { materiau: BAMBOU },
+  "bassin-a-camarons": { materiau: PIERRE },
+  aquaponie: { materiau: PARPAING },
+  "bacs-de-culture": { materiau: BAMBOU },
+  "serre-hydroponique": { materiau: TOLE },
+  "jardin-de-zerbaz": { materiau: BAMBOU },
+  "treille-a-chouchou": { materiau: BAMBOU },
+  bananeraie: { materiau: BAMBOU },
+  "carreau-de-canne": { materiau: BAMBOU },
+  // Lot 9 : le puits de jour (un tuyau à garder libre), les haies qui cachent (à tailler).
+  "puits-de-jour": { materiau: [BOIS, TOLE], entretien: E(60) },
+  "haie-de-bambous": { materiau: BAMBOU, entretien: E(90) },
+  "rideau-de-filaos": { materiau: BAMBOU, entretien: E(90) }
+};
+
 // Pose les matériaux, l'entretien et les effets du lot sur les documents d'installation déjà écrits (avant la fabrication). Une
-// clé absente de la table ne change pas. -> les documents (modifiés en place)
+// clé absente des tables ne change pas. -> les documents (modifiés en place)
 export function porterOuvrages(documents = []) {
   for (const d of documents) {
-    const o = OUVRAGES_EXISTANTS[d?.system?.cle];
+    const o = OUVRAGES_EXISTANTS[d?.system?.cle] ?? OUVRAGES_DES_LOTS[d?.system?.cle];
     if (!o) continue;
     const niveaux = d.system.niveaux ?? [];
     if (typeof o.materiau === "string") d.system.materiau = o.materiau;
     niveaux.forEach((n, k) => {
       if (Array.isArray(o.materiau)) n.materiau = o.materiau[k] ?? o.materiau.at(-1);
-      if (o.entretien) n.entretien = { ...o.entretien };
+      const en = Array.isArray(o.entretien) ? o.entretien[k] ?? null : o.entretien;
+      if (en) n.entretien = { ...en };
       const plus = Array.isArray(o.effets) ? o.effets[k] ?? o.effets.at(-1) : o.effets;
       if (plus) Object.assign(n.effets, plus);
     });
@@ -317,9 +354,9 @@ export const INSTALLATIONS_OUVRAGES = [
     description: `Des fûts fermés, enterrés à moitié, où le fumier des cabris fermente avec de l'eau : le gaz monte dans une chambre à air et part par un tuyau jusqu'à la gazinière. Il sent, il demande du fumier frais et de l'eau chaque jour, et il ne s'improvise pas. Au second niveau, une cuve maçonnée.`,
     niveaux: [
       { cout: { materiaux: 4, pieces: 2, travail: 18 }, requiert: { savoirs: ["plomberie-filtration"], installations: [{ cle: "enclos-a-cabris", niveau: 1 }] },
-        effets: { production: { gaz: 0.5 }, consommation: { eau: 1 }, odeur: 1 }, entretien: E(15) },
+        effets: { production: { gaz: 0.5 }, consommation: { eau: 1 }, odeur: 1, fumier: ["enclos-a-cabris"] }, entretien: E(15) },
       { cout: { materiaux: 3, pieces: 1, travail: 8 }, requiert: { savoirs: ["plomberie-filtration", "maconnerie"], installations: [{ cle: "enclos-a-cabris", niveau: 1 }] },
-        effets: { production: { gaz: 1 }, consommation: { eau: 1 }, odeur: 1 }, entretien: E(15) }
+        effets: { production: { gaz: 1 }, consommation: { eau: 1 }, odeur: 1, fumier: ["enclos-a-cabris"] }, entretien: E(15) }
     ] }),
   ouvrage({ cle: "touffe-de-bambous", arbre: "lontan", nom: "Touffe de bambous", categorie: "stockage", materiau: "bambou-et-vacoa", expose: true,
     description: `Quelques pieds de bambou plantés près de l'eau, au fond de la cour. Pendant six mois, rien ; ensuite, on ne manque plus de cannes pour les gouttières, les claies, les palissades. Le bambou plie au cyclone et repousse.`,

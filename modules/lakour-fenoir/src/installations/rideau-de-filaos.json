@@ -59,6 +59,10 @@
           "pousse": 30,
           "casse": true,
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 90,
+          "travail": 1
         }
       },
       {
@@ -104,6 +108,10 @@
           "pousse": 45,
           "casse": true,
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 90,
+          "travail": 1
         }
       }
     ],

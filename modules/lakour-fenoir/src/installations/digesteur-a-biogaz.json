@@ -67,6 +67,9 @@
           "renseignements": false,
           "bonus": {},
           "odeur": 1,
+          "fumier": [
+            "enclos-a-cabris"
+          ],
           "bras": null
         },
         "entretien": {
@@ -126,6 +129,9 @@
           "renseignements": false,
           "bonus": {},
           "odeur": 1,
+          "fumier": [
+            "enclos-a-cabris"
+          ],
           "bras": null
         },
         "entretien": {

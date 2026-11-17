@@ -1900,7 +1900,7 @@ export const api = {
     const ids = idsDe(pour, survivantsDuGroupe(ctx.etat));
     const { effet, option: choisie } = L.effetDeFete(f, option);
     const jour = jourCtx(ctx);
-    const r = L.feter(ctx.etat, { system: aPlat(ab.system) }, { fete: cle, annee: L.dateDuJour(jour, dateDepart()).annee, survivants: membres,
+    const r = L.feter(ctx.etat, { system: aPlat(ab.system), installations: instancesDe(ab) }, { fete: cle, annee: L.dateDuJour(jour, dateDepart()).annee, survivants: membres,
       effet: f ? effet : null, pour: ids, avec, jour, contenu: c });
     if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Fete", { raison: motifLisible(r) }));
     ctx.etat = r.etat;

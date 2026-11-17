@@ -50,6 +50,8 @@ porterOuvrages([...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIE
 // du vivant (effets.vivant, l'eau de ceux qui boivent), la pluie arrose ce qui pousse à ciel ouvert ; le cochon marron a son espèce.
 vivantDesInstallations(INSTALLATIONS);
 completerBestiaire(BESTIAIRE);
+// Fusion de la vague 3 : le matériau et l'entretien (lot 7) des installations des lots 6, 8 et 9 (OUVRAGES_DES_LOTS).
+porterOuvrages([...INSTALLATIONS_ATELIERS, ...INSTALLATIONS_VIVANT, ...INSTALLATIONS_PARADIS]);
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
 const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJournal("guides", CLE_JOURNAL_REGIONS), pageId: idPage("guides", CLE_JOURNAL_REGIONS, r.cle) }]));

@@ -10,17 +10,15 @@
 import { installation, journal, table, MODULE } from "./aides.mjs";
 
 // ---------------------------------------------------------------- Installations
-// Le matériau des haies (lot 7) : bambou et vacoa, celui des installations lontan sans matériau dit, posé sur la définition.
-const avecMateriau = docs => { for (const d of docs) if (["haie-de-bambous", "rideau-de-filaos"].includes(d.system.cle)) d.system.materiau = "bambou-et-vacoa"; return docs; };
-export const INSTALLATIONS_PARADIS = avecMateriau([
+export const INSTALLATIONS_PARADIS = [
   installation({ cle: "puits-de-jour", nom: "Puits d'air et de jour", categorie: "souterrain",
     description: `Un conduit percé jusqu'au jour depuis la galerie : d'abord un simple tuyau d'air coiffé d'un chapeau de tôle, puis un vrai puits, tubé, fermé d'une plaque de plexiglas ou d'un vieux pare-brise, qui descend un rond de soleil jusqu'en bas. L'air circule, la bougie se tient droite ; le jour tombe sur ceux qui ne remontent plus. Mais ce qui entre sort aussi : le soir, la lueur des lampes monte par le puits, avec la fumée et les voix.`,
     niveaux: [
       { cout: { materiaux: 2, travail: 4 }, requiert: { site: { souterrain: 1 } }, effets: { air: 1, discretion: -1 } },
       { cout: { materiaux: 3, pieces: 1, travail: 6 }, requiert: { site: { souterrain: 1 } }, effets: { air: 1, jour: 1, discretion: -1, visibilite: 1 } }
     ] }),
-  // Les haies qui cachent : leur matériau (lot 7) fait leur part des dégâts du cyclone (passageCyclone) ; après lui, le bambou plie et
-// se relève, le filao casse (haiesAuCyclone, logique/paradis.mjs). Fusion de la vague 3.
+  // Les haies qui cachent : leur matériau (lot 7, contenu/ouvrages.mjs : OUVRAGES_DES_LOTS) fait leur part des dégâts du cyclone
+// (passageCyclone) ; après lui, le bambou plie et se relève, le filao casse (haiesAuCyclone, logique/paradis.mjs). Fusion de la vague 3.
   installation({ cle: "haie-de-bambous", arbre: "lontan", role: "camouflage", rang: 1, nom: "Haie de bambous", categorie: "defense",
     description: `Des touffes de bambou arrachées dans la ravine et replantées serré autour de la cour, comme faisaient les anciens pour casser le vent. Il faut deux mois pour qu'elle ferme, trois pour qu'elle cache vraiment. Au cyclone, elle se couche, et se relève : elle ne casse pas.`,
     niveaux: [
@@ -33,7 +31,7 @@ export const INSTALLATIONS_PARADIS = avecMateriau([
       { cout: { ile: 1, graines: 1, travail: 3 }, effets: { discretion: 1, visibilite: -1, pousse: 30, casse: true } },
       { cout: { ile: 2, graines: 1, travail: 4 }, effets: { discretion: 2, visibilite: -2, pousse: 45, casse: true } }
     ] })
-]);
+];
 // Pas de bras (§10.3) : elles marchent sans personne à la tâche (même forme que installations.mjs).
 for (const i of INSTALLATIONS_PARADIS) for (const n of i.system.niveaux) n.effets.bras = null;
 

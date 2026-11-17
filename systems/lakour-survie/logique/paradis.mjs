@@ -59,7 +59,9 @@ export const REGLES_PARADIS = {
   },
   flux: { seuil: 1, parChaleur: 0.25, infestation: 2, plancher: 0.15, max: 6 },
   // Sans ronde, la moitié de ceux qui arrivent restent ; chaque jour, 15 % des agglutinés repartent d'eux-mêmes ; au plus 8.
-  agglutines: { max: 8, reste: 0.4, depart: 0.2, chaleur: 0.005, menace: 0.01, force: 5 },
+  agglutines: { max: 8, reste: 0.4, depart: 0.2, chaleur: 0.005, menace: 0.01, force: 5,
+    // Fusion de la vague 3 : chaque jour, chaque agglutiné a une chance sur quatre d'atteindre un enclos ; au plus une bête par jour.
+    bete: 0.25 },
   ronde: { parEchange: 3, surprise: 1, rate: -1, trouvaille: 10, tournee: 1, frappent: 1 },
   corps: { frais: { bas: 15, hauts: 40 }, hautsCompte: 0.5, souillure: 0.05, beaucoup: 8, enterrer: 3, bruler: 10, boisParBrule: 5, fumee: 2 },
   sousTerre: { paliers: [7, 21], malus: [1, 2], air: { lourd: 0.75 } },

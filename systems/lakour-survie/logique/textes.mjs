@@ -118,7 +118,9 @@ export const CLES_TEXTES = [
   "jalon-premier-abri", "jalon-premiere-saison-des-pluies", "jalon-premier-cyclone", "jalon-premiere-fete", "jalon-premiere-region", "jalon-moitie-de-l-ile",
   "jalon-toute-l-ile", "leurre", "leurre-rate", "corps-enterres", "corps-brules", "corps-rien", "corps-sans-bois", "paradis-sans-abri", "paradis-pas-a-l-abri",
   "chantier-inconnu", "chantier-loin", "chantier-deja-fini", "chantier-avance", "chantier-aide", "ronde-jouee", "rallumer-declaree", "rallumer-eteinte",
-  "sous-terre-regle"
+  "sous-terre-regle",
+  // la fusion de la vague 3 (jointures, contrat §29) : un agglutiné tue une bête d'enclos
+  "agglutine-bete"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

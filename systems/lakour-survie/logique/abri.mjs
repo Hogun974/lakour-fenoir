@@ -110,9 +110,9 @@ import { tirerPoids } from "./hasard.mjs";
 import { odeurAbri } from "./sens.mjs";
 import { insalubrite as niveauInsalubrite, niveauHygiene, souillureDe, souillureDuJour } from "./corps.mjs";
 import { chanceCyclone, exposeeAuCyclone, facteurEntretien, haieFermee } from "./ouvrages.mjs";
-import { vivantDuNiveau, etatCheptel, facteurCheptel, especeDe, criDuVivant, arroseParLaPluie, cheptelsDe, journeeVivant } from "./vivant.mjs";
+import { vivantDuNiveau, etatCheptel, facteurCheptel, especeDe, criDuVivant, arroseParLaPluie, cheptelsDe, journeeVivant, fumierDe, corpsDeBetes } from "./vivant.mjs";
 import { vigilanceAvecChien } from "./savoirs.mjs";
-import { corpsDe, corpsFrais, corpsOublies, totalCorps, fumeeDuJour, facteurPousse, REGLES_PARADIS } from "./paradis.mjs";
+import { corpsDe, corpsFrais, corpsOublies, totalCorps, fumeeDuJour, facteurPousse, ajouterCorps, REGLES_PARADIS } from "./paradis.mjs";
 
 export const FACTEUR_ETAT = [1, 0.75, 0.5, 0];
 export const SAISON_PLUIE = { pluies: 1, seche: 0.5 };
@@ -222,6 +222,9 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     const vv = vivantDuNiveau(def, niveau);
     const cheptel = vv ? etatCheptel(abri, inst, def, contenu, { jour: c.jour, altitude: c.region.altitude }) : null;
     if (cheptel) f *= facteurCheptel(cheptel, vv, especeDe(contenu, cheptel.espece), { altitude: c.region.altitude }).facteur;
+    // Fusion de la vague 3 : ce qui vit du fumier d'un cheptel (le digesteur à biogaz, `effets.fumier` : les clés des enclos) produit
+    // selon le troupeau de ces enclos (vides : rien).
+    if (Array.isArray(e.fumier) && e.fumier.length) f *= fumierDe(abri, installations, contenu, e.fumier, { jour: c.jour, altitude: c.region.altitude });
     const vide = Boolean(cheptel && cheptel.tetes <= 0);
     const eauConso = vide || arroseParLaPluie(e, conditions) ? 0 : Number(e.consommation?.eau) || 0;
     const production = {};
@@ -431,6 +434,10 @@ export function journeeAbri(abri = {}, installations = [], contenu = {}, conditi
   const v = journeeVivant({ abri: nouveau, installations, contenu, bilan, conditions: { ...conditions, jour: c.jour, personnes: c.personnes },
     manqueNourriture: r.manque.nourriture ?? 0, hasard: conditions.hasardVivant ?? null });
   if (Object.keys(v.vivant).length || abri.vivant) nouveau.vivant = v.vivant;
+  // Fusion de la vague 3 : les bêtes mortes d'un enclos (pas les poissons, les plants ni les essaims) rejoignent les corps de l'abri
+  // (lot 9) : elles sentent et salissent tant qu'on ne les enterre ou ne les brûle pas.
+  const mortes = corpsDeBetes(v.evenements, v.vivant, contenu);
+  if (mortes > 0) nouveau.corps = ajouterCorps(corpsDe(nouveau), { jour: c.jour, n: mortes });
   if (v.stocks.graines !== nouveau.stocks.graines) nouveau.stocks = { ...nouveau.stocks, graines: Math.max(0, Math.floor(Number(v.stocks.graines) || 0)) };
   return { abri: nouveau, bilan, manque: r.manque, pertes: r.pertes, perdus: r.perdus, boutures: { repiquees: b.repiquees, mortes: b.mortes }, vivant: v.evenements };
 }

@@ -11493,7 +11493,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "pierre-seche"
     },
     {
      "cout": {
@@ -11535,7 +11536,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "tole-de-recuperation"
     },
     {
      "cout": {
@@ -11579,7 +11581,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "parpaing-et-beton"
     }
    ],
    "metiers": [
@@ -11640,6 +11643,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "bambou-et-vacoa",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -11682,7 +11690,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     },
     {
      "cout": {
@@ -11726,7 +11735,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     }
    ],
    "metiers": [
@@ -11787,7 +11797,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "pierre-seche"
     },
     {
      "cout": {
@@ -11829,7 +11840,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "pierre-seche"
     },
     {
      "cout": {
@@ -11873,7 +11885,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "parpaing-et-beton"
     }
    ],
    "metiers": [
@@ -11934,6 +11947,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "bambou-et-vacoa",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -11976,6 +11994,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "bambou-et-vacoa",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -12020,7 +12043,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     }
    ],
    "arbre": "lontan",
@@ -12082,6 +12106,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "bambou-et-vacoa",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -12124,7 +12153,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     },
     {
      "cout": {
@@ -12166,7 +12196,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     }
    ],
    "metiers": [
@@ -12227,6 +12258,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "bambou-et-vacoa",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -12269,6 +12305,11 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
+     },
+     "materiau": "bambou-et-vacoa",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -12314,7 +12355,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     }
    ],
    "arbre": "lontan",
@@ -12375,7 +12417,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "tole-de-recuperation"
     },
     {
      "cout": {
@@ -12419,7 +12462,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "tole-de-recuperation"
     },
     {
      "cout": {
@@ -12464,7 +12508,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "parpaing-et-beton"
     }
    ],
    "arbre": "moderne",
@@ -12525,7 +12570,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     },
     {
      "cout": {
@@ -12569,7 +12615,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "bois-sous-tole"
     },
     {
      "cout": {
@@ -12614,7 +12661,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "parpaing-et-beton"
     }
    ],
    "arbre": "moderne",
@@ -12676,7 +12724,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "pierre-seche"
     },
     {
      "cout": {
@@ -12720,7 +12769,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "tole-de-recuperation"
     },
     {
      "cout": {
@@ -12765,7 +12815,8 @@
       "renseignements": false,
       "bonus": {},
       "bras": null
-     }
+     },
+     "materiau": "tole-de-recuperation"
     }
    ],
    "metiers": [
@@ -15434,6 +15485,9 @@
       "renseignements": false,
       "bonus": {},
       "odeur": 1,
+      "fumier": [
+       "enclos-a-cabris"
+      ],
       "bras": null
      },
      "entretien": {
@@ -15493,6 +15547,9 @@
       "renseignements": false,
       "bonus": {},
       "odeur": 1,
+      "fumier": [
+       "enclos-a-cabris"
+      ],
       "bras": null
      },
      "entretien": {
@@ -15691,7 +15748,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "bois-sous-tole"
   },
   {
    "nom": "Soue à cochons",
@@ -15762,7 +15820,8 @@
       }
      }
     }
-   ]
+   ],
+   "materiau": "pierre-seche"
   },
   {
    "nom": "Étable",
@@ -15837,7 +15896,8 @@
      }
     }
    ],
-   "arbre": "lontan"
+   "arbre": "lontan",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Bassin à camarons",
@@ -15913,7 +15973,8 @@
      }
     }
    ],
-   "arbre": "lontan"
+   "arbre": "lontan",
+   "materiau": "pierre-seche"
   },
   {
    "nom": "Aquaponie",
@@ -15994,7 +16055,8 @@
      }
     }
    ],
-   "arbre": "moderne"
+   "arbre": "moderne",
+   "materiau": "parpaing-et-beton"
   },
   {
    "nom": "Bacs de culture en bambou",
@@ -16077,7 +16139,8 @@
     }
    ],
    "arbre": "lontan",
-   "role": "hors-sol"
+   "role": "hors-sol",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Serre hors-sol",
@@ -16164,7 +16227,8 @@
     }
    ],
    "arbre": "moderne",
-   "role": "hors-sol"
+   "role": "hors-sol",
+   "materiau": "tole-de-recuperation"
   },
   {
    "nom": "Jardin de zerbaz",
@@ -16233,7 +16297,8 @@
      }
     }
    ],
-   "arbre": "lontan"
+   "arbre": "lontan",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Treille à chouchou",
@@ -16300,7 +16365,8 @@
      }
     }
    ],
-   "arbre": "lontan"
+   "arbre": "lontan",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Bananeraie",
@@ -16372,7 +16438,8 @@
      }
     }
    ],
-   "arbre": "lontan"
+   "arbre": "lontan",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Carreau de canne",
@@ -16436,7 +16503,8 @@
      }
     }
    ],
-   "arbre": "lontan"
+   "arbre": "lontan",
+   "materiau": "bambou-et-vacoa"
   },
   {
    "nom": "Puits d'air et de jour",
@@ -16492,6 +16560,11 @@
       "bonus": {},
       "air": 1,
       "bras": null
+     },
+     "materiau": "bois-sous-tole",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     },
     {
@@ -16536,6 +16609,11 @@
       "air": 1,
       "jour": 1,
       "bras": null
+     },
+     "materiau": "tole-de-recuperation",
+     "entretien": {
+      "tousLes": 60,
+      "travail": 1
      }
     }
    ]
@@ -16596,6 +16674,10 @@
       "pousse": 60,
       "plie": true,
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
      }
     },
     {
@@ -16641,6 +16723,10 @@
       "pousse": 90,
       "plie": true,
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
      }
     }
    ],
@@ -16705,6 +16791,10 @@
       "pousse": 30,
       "casse": true,
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
      }
     },
     {
@@ -16750,6 +16840,10 @@
       "pousse": 45,
       "casse": true,
       "bras": null
+     },
+     "entretien": {
+      "tousLes": 90,
+      "travail": 1
      }
     }
    ],
@@ -24608,6 +24702,27 @@
    "metier": "electricite",
    "arbre": "moderne",
    "repond": "lampe-a-huile"
+  },
+  {
+   "nom": "Chaux de coquillages",
+   "cle": "chaux-de-coquillages",
+   "description": "<p>Une fournée de coquillages et de corail mort, ramassés sur la plage, cuits un jour et une nuit dans le four à chaux, puis éteints à l'eau : de quoi monter des joints et blanchir un mur, le mortier sans ciment des anciens.</p>",
+   "cout": {},
+   "travail": 6,
+   "competence": "bricolage",
+   "difficulte": "normale",
+   "requiert": {
+    "savoirs": [],
+    "installation": {
+     "cle": "four-a-chaux",
+     "niveau": 1
+    }
+   },
+   "produit": {
+    "ressource": "materiaux",
+    "n": 1
+   },
+   "arbre": "lontan"
   }
  ],
  "afflictions": [

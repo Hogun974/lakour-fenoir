@@ -1,0 +1,43 @@
+{
+  "_id": "7nCOJ8VnyQP4FwTv",
+  "_key": "!items!7nCOJ8VnyQP4FwTv",
+  "name": "Chaux de coquillages",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "chaux-de-coquillages",
+    "description": "<p>Une fournée de coquillages et de corail mort, ramassés sur la plage, cuits un jour et une nuit dans le four à chaux, puis éteints à l'eau : de quoi monter des joints et blanchir un mur, le mortier sans ciment des anciens.</p>",
+    "cout": {},
+    "travail": 6,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "cle": "four-a-chaux",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "ressource": "materiaux",
+      "n": 1
+    },
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chaux-de-coquillages"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

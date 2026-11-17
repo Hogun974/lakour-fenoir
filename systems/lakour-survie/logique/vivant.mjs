@@ -144,6 +144,32 @@ export function filtreRestant(inst, def, jour = 0) {
 }
 export const eauSale = (inst, def) => Boolean(entretienDe(def, inst?.niveau)?.eau && suiviDe(inst)?.encrasse);
 
+// Le fumier que donnent des enclos (fusion de la vague 3 : le digesteur à biogaz du lot 7 lit l'enclos à cabris) : le meilleur troupeau
+// (têtes ÷ plein, au plus 1) parmi les installations nommées, à leur niveau ; 0 sans enclos ou enclos vide.
+export function fumierDe(abri = {}, installations = [], contenu = {}, cles = [], { jour = 0, altitude = 0 } = {}) {
+  let mieux = 0;
+  for (const inst of installations ?? []) {
+    if (!cles.includes(inst?.cle) || !(n0(inst.niveau) >= 1) || n0(inst.etat) >= 3) continue;
+    const def = installationDe(contenu, inst.cle);
+    const v = vivantDuNiveau(def, inst.niveau);
+    if (!v) continue;
+    const st = etatCheptel(abri, inst, def, contenu, { jour, altitude });
+    mieux = Math.max(mieux, facteurCheptel(st, v).troupeau);
+  }
+  return mieux;
+}
+
+// Les bêtes mortes du jour (événements « vivant-morts » de journeeVivant) qui laissent un corps : celles du genre « betes ».
+export function corpsDeBetes(evenements = [], vivant = {}, contenu = {}) {
+  let n = 0;
+  for (const ev of evenements ?? []) {
+    if (ev?.cle !== "vivant-morts") continue;
+    const espece = vivant?.[ev.installation]?.espece;
+    if ((especeDe(contenu, espece)?.genre ?? "betes") === "betes") n += Math.max(0, Math.floor(n0(ev.params?.n)));
+  }
+  return n;
+}
+
 // Le bruit des cheptels qui ont eu faim ou soif (ils crient), au plus REGLES_VIVANT.cri.max.
 export function criDuVivant(abri = {}) {
   const n = Object.values(abri?.vivant ?? {}).filter(st => n0(st?.tetes) > 0 && (st?.manques ?? []).some(m => m === "faim" || m === "soif")).length;

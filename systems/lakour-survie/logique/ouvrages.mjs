@@ -242,6 +242,16 @@ export function ouvragesDeLAbri(installations = [], contenu = {}, { jour = null 
   }
   return o;
 }
+// La salle des fêtes (`effets.fete` : la salle verte) : le moral de plus qu'une fête y donne à chacun (le plus haut des installations en
+// état, pas hors service ; fusion de la vague 3, branché dans feter). installations : instances.
+export function bonusDeFete(installations = [], contenu = {}) {
+  let b = 0;
+  for (const inst of installations ?? []) {
+    if (!(n0(inst?.niveau) >= 1) || n0(inst.etat) >= 3 || inst.actif === false) continue;
+    b = Math.max(b, n0(niveauDe(installationDe(contenu, inst.cle), n0(inst.niveau))?.effets?.fete));
+  }
+  return b;
+}
 // Une haie (effets.pousse) ne défend qu'une fois fermée : `pousse` jours après sa plantation (ce qu'elle cache pousse avec elle :
 // facteurPousse, logique/paradis.mjs).
 export const haieFermee = (instance, effets, jour) => !(n0(effets?.pousse) > 0) || n0(jour) - n0(instance?.termineLe) >= n0(effets.pousse);
@@ -373,6 +383,9 @@ export function erreursOuvrages(contenu = {}) {
       if (f.piege !== undefined && !(n0(f.piege) >= 0 && n0(f.piege) <= 4)) erreurs.push(`${ici} : piège ${f.piege}`);
       if (f.pousse !== undefined && !(n0(f.pousse) >= 0)) erreurs.push(`${ici} : pousse ${f.pousse}`);
       if (f.bois !== undefined && !(n0(f.bois) >= 0 && n0(f.bois) <= 2)) erreurs.push(`${ici} : bois ${f.bois}`);
+      if (f.fumier !== undefined && !(Array.isArray(f.fumier) && f.fumier.every(k => (contenu.installations ?? []).some(i => i.cle === k))))
+        erreurs.push(`${ici} : fumier ${JSON.stringify(f.fumier)}`);
+      if (f.fete !== undefined && !(n0(f.fete) >= 0 && n0(f.fete) <= 2)) erreurs.push(`${ici} : fête ${f.fete}`);
     });
   }
   return erreurs;

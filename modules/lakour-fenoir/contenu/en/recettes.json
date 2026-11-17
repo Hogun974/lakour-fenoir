@@ -241,6 +241,17 @@
       "en": "<p>A pebble shaped to a bevel, hafted in a branch split with the knife and tied with wet rope, which tightens as it dries.</p>"
     }
   },
+  "recettes/7nCOJ8VnyQP4FwTv": {
+    "_nom": "Chaux de coquillages",
+    "name": {
+      "fr": "Chaux de coquillages",
+      "en": "Seashell lime"
+    },
+    "system.description": {
+      "fr": "<p>Une fournée de coquillages et de corail mort, ramassés sur la plage, cuits un jour et une nuit dans le four à chaux, puis éteints à l'eau : de quoi monter des joints et blanchir un mur, le mortier sans ciment des anciens.</p>",
+      "en": "<p>A batch of seashells and dead coral, picked up on the beach, fired for a day and a night in the lime kiln, then slaked with water: enough to point joints and whitewash a wall, the old folks' mortar without cement.</p>"
+    }
+  },
   "recettes/83vFZKoyGyRF5GKg": {
     "_nom": "Vélo-cargo",
     "name": {

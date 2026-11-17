@@ -188,7 +188,8 @@ test("démonter une installation : la moitié de ses coûts, tous niveaux compri
   const idx = L.indexer(contenu).installations;
   assert.deepEqual(L.demontageInstallation({ niveau: 2 }, idx.get("palissade")), { rend: { materiaux: 10 }, travail: 10 });
   assert.deepEqual(L.demontageInstallation({ niveau: 1 }, idx.get("panneaux-solaires")), { rend: { materiaux: 1, pieces: 2 }, travail: 2 });
-  assert.deepEqual(L.demontageInstallation({ niveau: 2 }, idx.get("palissade-de-bambou")), { rend: { materiaux: 8 }, travail: 10 });
+  // Fusion de la vague 3 : démonter lit le matériau (le bambou pourrit, un quart ; la tôle et le bois sous tôle, la moitié).
+  assert.deepEqual(L.demontageInstallation({ niveau: 2 }, idx.get("palissade-de-bambou")), { rend: { materiaux: 4 }, travail: 10 });
   assert.deepEqual(L.demontageInstallation({ niveau: 0 }, idx.get("mur")).rend, {});
 });
 

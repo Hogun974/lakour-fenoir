@@ -1695,10 +1695,10 @@ des sites ; un lieu de culte ne rend rien de convoité hors l'eau.
   au groupe, l'essaim pique le premier fouilleur (une blessure) ; le rappel d'un lieu de culte va au journal secret ; le résultat porte
   en plus `lieu`, `trouve`, `objets`, `bete`, `culte`, `gisement`. Lecture : `lieux({ region })` (les genres, les lieux vus ; au MJ, le
   degré réel), `gisements({ region })` (milieux, gisements ; au MJ, ce qui est disponible), `betes()`. Écriture (MJ actif, monde ouvert) :
-  `demonter({ installationId, membres })` ; les bêtes prises se mettent au cheptel, s'abattent ou se lâchent par les fonctions du §27
-  (`mettreEnEnclos({ beteId })`, `abattre({ beteId })`, `lacherBetes({ beteId })` ; §29) (le temps passe : ⌈travail ÷ bras⌉
-  quarts ; le plan reste au carnet).
-- Équipement (§3.4) : `capture: [clé de bête]` (`gmOnlyFields`).
+  `demonter({ installationId, membres })` (le temps passe : ⌈travail ÷ bras⌉ quarts ; le plan reste au carnet) ; les bêtes prises se
+  mettent au cheptel, s'abattent ou se lâchent par les fonctions du §27 (`mettreEnEnclos({ beteId })`, `abattre({ beteId })`,
+  `lacherBetes({ beteId })` ; §29).
+- Équipement (§3.4) : `capture: [clé d'espèce]` (`gmOnlyFields` ; depuis la vague 3, la liste du §27, §29).
 - Fenêtre du MJ, onglet Actions : cibles « Un lieu », « Démonter un lieu », « Matières de l'île », le genre de lieu de la région, « à
   l'écart », le gisement ; formulaires « Démonter une installation » et « Les bêtes prises » (mettre à l'enclos, abattre, relâcher : les appels du §27).
 - Contenu : 95 objets, 24 genres, 6 bêtes, 16 gisements, 11 milieux ; équipements `corde`, `sac-de-goni`, `cage`, `enfumoir` et trois
@@ -1804,8 +1804,9 @@ des ruches ne change pas ; la maladie tire dans son propre flux (« vivant|jour 
 
 ### 27.1 Règles (logique pure, `logique/vivant.mjs`)
 - **Un cheptel** (ou un bac de plants) : un niveau d'installation porte `effets.vivant: { espece | especes: [clé], places, plein, depart?,
-  filtre? (jours), sansPompe? (jours), maladie? (facteur) }` ; son état est `abri.vivant[clé d'installation]` = `{ espece, tetes, sante 0..3,
-  malade: { depuis } | null, manques: [mot], naissances (reliquat), filtreLe, sansPompe, depuis }`. `etatCheptel(abri, inst, def, contenu,
+  sansPompe? (jours), maladie? (facteur) }` (le `filtre` est devenu l'entretien `{ tousLes, travail: 1, eau: true }` du niveau, §26 et
+  §29) ; son état est `abri.vivant[clé d'installation]` = `{ espece, tetes, sante 0..3, malade: { depuis } | null, manques: [mot],
+  naissances (reliquat), sansPompe, depuis }`. `etatCheptel(abri, inst, def, contenu,
   { jour, altitude })` : absent, `plein` têtes (une installation d'un site ou d'une partie d'avant) ou `depart` (achevée depuis un jour au
   plus : `REGLES_VIVANT.recent`) ; `vivantDuNiveau`, `estVivante`, `especesPossibles`, `especeParDefaut` (la première qui vit à cette
   altitude), `dansSonAltitude`, `especesDe`, `especeDe`.
@@ -1814,8 +1815,8 @@ des ruches ne change pas ; la maladie tire dans son propre flux (« vivant|jour 
 - **La journée** : `journeeVivant({ abri, installations, contenu, bilan, conditions, manqueNourriture, hasard })` → `{ vivant, stocks,
   evenements }`. Chaque manque ôte 1 de santé (`MANQUES_VIVANT` : `soif` = arrêt faute d'eau, ou installation éteinte ; `faim` selon `espece.mange` : `restes` quand
   personne n'a mangé ce jour-là ou personne n'est là, `herbe` sur un site sans terre sans personne à l'élevage, `solution` sans compost en
-  service ; `panne` = hors service ou sans courant ; `eau-sale` = filtre passé son temps, sauf quelqu'un à la tâche du genre,
-  `TACHE_VIVANT` ; `ombre` ; `surpopulation`) ; malade, −1 tous les deux jours ; un jour sans aucun mal, +1 ; à 0, un tiers meurt (au moins
+  service ; `panne` = hors service ou sans courant ; `eau-sale` = l'entretien `eau` laissé passé son temps (le suivi « encrassé »
+  de l'instance, `eauSale` ; ses bras le soignent chaque jour, §29) ; `ombre` ; `surpopulation`) ; malade, −1 tous les deux jours ; un jour sans aucun mal, +1 ; à 0, un tiers meurt (au moins
   un) ; `sansPompe` jours d'arrêt d'affilée : tout meurt. Naissances : santé ≥ 2, pas malade, dans son altitude, deux têtes et une place :
   ⌊têtes ÷ 2⌋ × `espece.taux` par jour (reliquat). Plants : un semis par jour à la tâche « cultures » (une graine, six plants). Maladie :
   `espece.maladie` × `v.maladie` × l'insalubrité de l'abri (¼, ½, ¾, 1) ; elle passe seule à 10 % par jour.
@@ -1979,3 +1980,79 @@ rallumée ne changent aucun tirage du monde.
   « L'île — ce qu'on voit la nuit », « Un convoi attiré par la lumière » ; journaux du MJ « Le paradis et son piège » et « Rallumer
   l'île » ; pages « Le paradis, et ce qu'il coûte » et « Rallumer l'île » du guide du joueur. Le simulateur : la ronde de l'enraciné quand
   « ils viennent », l'enterrement des corps, l'option `rallumer` (scénarios longs `rallumer-4`, `sans-rondes-4`).
+
+## 29. Jointures de la vague 3 (fusion des lots ateliers, fouille, bâtir, vivant et paradis, 2026-11-17)
+
+Les cinq lots du portage du jeu 3D (§24 à §28) ont été écrits côte à côte sur `vague2`. Leur fusion (branche `vague3`) retire ce que
+plusieurs lots définissaient chacun de leur côté, et branche les lots là où l'un avait laissé un point d'accroche pour un autre. Rien
+n'est retiré qu'une partie en cours utilisait avant la vague 3 ; tout ce qui est ici est éprouvé par
+`essais/survie-jointures-vague3.test.mjs`. Les chiffres d'équilibre ne sont pas retouchés (mesures : `docs/equilibre-vague3.md`).
+
+### 29.1 Ce qui n'existe plus qu'une fois
+- **La qualité d'un outil trouvé** : `qualiteTrouvee(palier, hasard)` de `logique/armes.mjs` (§24 ; 60/30/10 % au calme, 43/36/21 % au
+  palier 4). `logique/fouilles.mjs` l'importe ; sa table `REGLES_FOUILLES.qualite` n'existe plus. (Exportée par deux modules, elle était
+  indéfinie à travers `export *` de `logique/index.mjs`, comme `valeurPlan` à la vague 2.)
+- **Les outils de capture** : une fiche par objet, celle du §24 (`cage-de-bambou`, `sac-de-goni`, `enfumoir`), avec le champ `capture`
+  du §27 (par espèce : `CAPTURE_DES_EQUIPEMENTS` de `contenu/vivant.mjs`, posé au registre par `captureDesEquipements` et au compendium
+  par `documentsAvecCapture`). Une recette par objet, celle du §24, une recette de sac rangée dans la famille de son atelier (`metier` :
+  vannerie, couture, établi ; elle ne le demande pas). Ces fiches n'ont pas de `qualite` : elles ne servent aucune gamme, et le §24
+  refuse une qualité sans gamme. La corde : une seule clé, `cordes-de-choka` (le butin « une corde » la donne, « une cage à volailles »
+  donne la cage de bambou). Retirés : les fiches `corde` et `cage` et les recettes `cage-de-bambou`, `sac-de-goni-cousu`, `enfumoir` du
+  §25 ; les fiches et recettes du §27. `prendBete` (§25) lit le champ du §27 : l'espèce d'un alias compte (le porcelet est un cochon, le
+  veau moka un bœuf moka).
+- **Les bêtes portées** : une liste, `etat.groupe.betes`, à la forme du §27 `{ id, cle, nombre, prisLe, jusqua, enclos, abri, source }` ;
+  une expiration, `betesQuiMeurent` (§27, à chaque quart d'`avancer` ; fait « vivant-portee-morte ») ; `expirerBetes` et `enclore` (§25)
+  n'existent plus. `ajouterBete` passe par `porterBete` (source « fouille », le délai de l'espèce) ; `retirerBete` compte la viande de
+  l'espèce. Les bêtes trouvées (`betesTrouvees`) prennent le délai (`capture.horsEnclos`), la viande et l'enclos de leur espèce : la
+  basse-cour, le clapier, l'enclos à cabris, la soue, l'étable, les ruches. API : `enclore({ id })`, `abattre({ id })` et
+  `relacher({ id })` (§25) sont remplacés par `mettreEnEnclos({ beteId })` (la bête rejoint le cheptel de son espèce et quitte la
+  liste), `abattre({ beteId })` (une bête portée : sa viande, à l'abri ou portée) et `lacherBetes({ beteId })` du §27 ; deux `abattre`
+  s'écrasaient en silence dans `game.lakourSurvie`. Fenêtre du MJ : le formulaire « Les bêtes prises » appelle ces trois fonctions.
+- **L'entretien** : un seul mécanisme, celui du §26. Le curage des bassins et des bacs (§27 : `vivant.filtre`, `filtreLe`) est un
+  entretien `{ tousLes, travail: 1, eau: true }` posé sur le niveau (`curageDuVivant`) : ses bras (l'élevage, les cultures) le soignent
+  dans `journeeOuvrages` ; laissé passé son temps, son eau « s'encrasse » sans rien produire de moins ni abîmer l'installation (pas de
+  fait « ouvrage-encrasse ») et le vivant en fait le manque `eau-sale` (`eauSale`, `filtreRestant` : les jours avant de curer).
+  `curer({ installation, membres })` est l'entretien du §26 (`entretenirInterne` : un quart, le temps passe) ; refus « rien à curer »
+  sans entretien `eau`. Un `filtreLe` d'une partie en cours est ignoré : le suivi de l'instance commence le premier jour.
+- **Les haies** : deux rôles, gardés. La haie de choka (§26) est une défense : elle ne défend qu'une fois fermée (`haieFermee`). La haie
+  de bambous et le rideau de filaos (§28) sont du camouflage : ce qu'ils cachent pousse avec eux (`facteurPousse`). Le §26 annulait
+  aussi la discrétion d'une haie pas encore fermée, ce qui effaçait le camouflage du §28 jusqu'au dernier jour : il n'annule plus que
+  la défense. Les haies du §28 ont un matériau (bambou et vacoa) : le cyclone le lit (`passageCyclone`), puis `haiesAuCyclone` plie le
+  bambou et casse le filao.
+- **L'usure, les pannes et la ronde** : l'usure et les pannes sont au §26 seulement ; la ronde au §28 seulement.
+
+### 29.2 Les jointures
+- **Matériau et entretien des installations des lots 6, 8 et 9** (`OUVRAGES_DES_LOTS`, `contenu/ouvrages.mjs`, posé par
+  `porterOuvrages`). Les ateliers : une matière par niveau (« le matériau fait le niveau » : bambou, bois sous tôle, pierre, tôle,
+  parpaing) ; l'entretien seulement pour ce qui n'a pas de bras : un niveau de bambou ou de vacoa tous les 60 jours (établi, vannerie,
+  couture, case à tisanes), les haies tous les 90, le puits de jour tous les 60 ; la tôle, la pierre et le parpaing tiennent seuls (comme
+  l'atelier d'avant). Le vivant a ses bras : un matériau seulement (clapier sous tôle, soue de moellons, étable et bacs de bambou, bassins
+  de pierre ou de parpaing, serre de tôle).
+- **Les plans** : le registre (`plans`) réunit ceux du lot 4, du §24 (les ateliers, la charrette à bras et à bœufs, le régulateur de
+  charge, l'utilitaire électrique, la hache et le sabre forgés…) et du §26 (le four à chaux, le digesteur, la salle verte…) ; un plan
+  reste un rabais, aucun n'est exigé.
+- **Un outil trouvé** (§25) prend la qualité du §24 : `outilDeQualite(contenu, cle, qualite)` donne la fiche de la même gamme et de cette
+  qualité (`marteau-de-fortune`, `hache-de-recuperation` ; le forgé est la fiche de base), sinon la fiche trouvée avec le champ `qualite`.
+  Le marteau, la scie, la pince, la truelle, la hache et la masse sont des objets (leur valeur en pièces n'est plus qu'un repli).
+- **Démonter lit le matériau** (`demontageInstallation`) : la part reprise de chaque niveau, `REGLES_FOUILLES.demontage.materiau` — bois
+  sous tôle et tôle ½ (comme avant), pierre sèche ¾, bambou et vacoa, paille et torchis, parpaing et béton ¼.
+- **La chaux** : la recette `chaux-de-coquillages` (§24) demande le four à chaux (§26) : pas de coût, six quarts, une unité de
+  matériaux (bien moins que la récolte : pas une rente).
+- **Le digesteur à biogaz** lit l'enclos à cabris : `effets.fumier: ["enclos-a-cabris"]` ; sa production × le troupeau de l'enclos
+  (`fumierDe` : têtes ÷ plein, au plus 1 ; vide, rien).
+- **Les bêtes mortes** d'un enclos (genre « betes » : pas les poissons, les plants ni les essaims) rejoignent les corps de l'abri (§28 :
+  `abri.corps`, l'odeur et la souillure, à enterrer ou brûler) : `corpsDeBetes`, dans `journeeAbri`.
+- **Un agglutiné tue une bête d'enclos** : chaque jour, chance `REGLES_PARADIS.agglutines.bete` (¼) par agglutiné, au plus une bête (la
+  règle de `pertesDAssaut`) ; elle rejoint les corps ; fait « agglutine-bete » (journal du groupe, ou secret quand il est loin) ; flux de
+  hasard à part (`paradis|betes|jour`).
+- **La salle verte** (`effets.fete`) : `feter` ajoute son moral à chacun (`bonusDeFete` : la plus haute des installations en état ;
+  `feter(…, { contenu })`, ou `{ installations: contenu }` pour ne lire que cela) ; le résultat dit `salle`.
+- **La ronde** est dans la grille des tâches (`TACHES_GRILLE` : les treize du §10.3 et la ronde), sur demande : la grille par défaut
+  l'éteint.
+- **Les rencontres en fouille** gardent le facteur de rallumage (§28, `facteurRallumage`, avec celui du nettoyage) pour toutes les
+  cibles, lieux, démontages et récoltes compris ; le simulateur le passe aussi.
+- **Les matières récoltées ne paient pas le coût `ile`.** Décision : `ile`, ce sont les matières qu'on coupe autour de l'abri
+  (`nature.bois`), qui repoussent et que la touffe de bambous regarnit ; la récolte (§25) rend des **matériaux**, qui ne se distinguent
+  plus en stock d'une tôle ou d'un sac de clous. Les laisser payer `ile` laisserait la quincaillerie bâtir les installations lontan et
+  effacerait la différence entre une sœur lontan et une sœur moderne ; l'équilibre des lots 7 et 9, mesuré ainsi, ne bouge pas. La récolte
+  sert les installations modernes et les recettes ; une lontan se paie avec les alentours.

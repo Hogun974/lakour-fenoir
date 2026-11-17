@@ -28,9 +28,11 @@ import { deriverHasard, chance, entier, arrondiHasard, tirerPoids } from "./hasa
 import { saisonDuJour } from "./temps.mjs";
 import { message } from "./textes.mjs";
 // La qualité d'un outil trouvé : une seule règle, celle du lot 6 (ateliers, logique/armes.mjs ; fusion de la vague 3).
-import { qualiteTrouvee } from "./armes.mjs";
+import { qualiteTrouvee, qualiteDe, gammesDe } from "./armes.mjs";
 // Les bêtes trouvées sont des espèces du vivant (lot 8) : leur outil, leur viande, leur délai hors d'un enclos, leur enclos.
 import { especeDe, porterBete } from "./vivant.mjs";
+// Démonter lit le matériau d'un niveau (lot 7).
+import { materiauDe } from "./ouvrages.mjs";
 
 // ------------------------------------------------------------------ règles
 export const MOTS_PILLAGE = ["intact", "a-peine", "deja", "retourne", "sac"];
@@ -53,7 +55,11 @@ export const REGLES_FOUILLES = {
   betes: { puissance: 2 },
   // Démonter : sans outil, deux fois plus lent ; une installation rend la moitié de ses coûts, pour un tiers de son travail.
   demontage: { sansOutil: 0.5, outils: ["pied-de-biche", "barre-a-mine", "pelle-pioche", "masse", "tronconneuse", "caisse-a-outils", "marteau", "hache"],
-    installation: { rend: 0.5, travail: 1 / 3, ressources: ["materiaux", "pieces", "graines"] } },
+    installation: { rend: 0.5, travail: 1 / 3, ressources: ["materiaux", "pieces", "graines"] },
+    // Fusion de la vague 3 (le matériau du lot 7) : ce qu'on reprend d'un niveau selon sa matière. La tôle et le bois sous tôle se
+    // démontent comme avant (la moitié) ; la pierre sèche se reprend presque entière ; le bambou, le vacoa et la paille pourrissent ou
+    // cassent, le parpaing et le béton se cassent.
+    materiau: { "bois-sous-tole": 0.5, "tole-de-recuperation": 0.5, "pierre-seche": 0.75, "bambou-et-vacoa": 0.25, "paille-et-torchis": 0.25, "parpaing-et-beton": 0.25 } },
   // Récolter : sans outil (quand le gisement en demande), deux fois plus lent ; en saison sèche, la repousse à 0,4 de sa vitesse.
   recolte: { sansOutil: 0.5, seche: 0.4 }
   // La qualité d'un outil ou d'une arme trouvé (décision de Jordan du 2026-11-16) : 60 / 30 / 10 % au calme, 43 / 36 / 21 % au
@@ -340,6 +346,24 @@ export function fouillerLieu(monde, contenu, hasard, { region, lieu = "", site =
     culte: Boolean(g?.culte), travail: n, bruit: R.bruit[prudence] ?? 1 };
 }
 
+// L'objet que devient un outil trouvé selon sa qualité tirée (fusion de la vague 3, jointure du lot 6) : la fiche de la même gamme et
+// de cette qualité (« marteau-de-fortune », « hache-de-recuperation » ; le forgé est la fiche de base), sinon la fiche trouvée, à
+// laquelle on pose le champ `qualite`. -> { cle, qualite } (qualite : à poser sur l'objet, ou "" quand la fiche la porte déjà)
+export function outilDeQualite(contenu, cle, qualite = "") {
+  const idx = indexer(contenu).equipements;
+  const def = idx.get(cle);
+  if (!def || !qualite) return { cle, qualite: "" };
+  if (qualiteDe(def) === qualite) return { cle, qualite: "" };
+  const gamme = gammesDe(def)[0];
+  if (gamme) {
+    const base = cle.replace(/-(de-fortune|de-recuperation)$/, "");
+    const voulue = qualite === "forge" ? base : `${base}-de-${qualite}`;
+    const autre = idx.get(voulue);
+    if (autre && qualiteDe(autre) === qualite && gammesDe(autre).includes(gamme)) return { cle: voulue, qualite: "" };
+  }
+  return { cle, qualite };
+}
+
 // ------------------------------------------------------------------ démonter
 // outil : un outil qui démonte (REGLES_FOUILLES.demontage.outils) parmi les équipements des démonteurs. Un lieu pas encore fouillé en
 // entier se fouille d'abord. -> { ok, motif, monde, lieu, cle, fouille (le résultat de fouillerLieu ou null), butin, equipements, trouve,
@@ -393,8 +417,9 @@ export function demonterLieu(monde, contenu, hasard, { region, lieu = "", site =
     rendu, travail: fait, outil, bruit: total > 0 ? (Number(D.bruit) || 1) : (fouille?.bruit ?? 0), fini };
 }
 
-// Démonter une installation de l'abri : la moitié de ses coûts (tous les niveaux jusqu'au sien ; les matières de l'île reviennent en
-// matériaux), pour un tiers de son travail. -> { rend: { ressource: n }, travail (quarts-personne) }
+// Démonter une installation de l'abri : une part de ses coûts selon le matériau de chaque niveau (la moitié pour le bois sous tôle et
+// la tôle, comme avant ; tous les niveaux jusqu'au sien ; les matières de l'île reviennent en matériaux), pour un tiers de son
+// travail. -> { rend: { ressource: n }, travail (quarts-personne) }
 export function demontageInstallation(instance, def) {
   const I = REGLES_FOUILLES.demontage.installation;
   const niveau = Math.max(0, Number(instance?.niveau) || 0);
@@ -402,15 +427,16 @@ export function demontageInstallation(instance, def) {
   let travail = 0;
   for (let k = 1; k <= niveau; k++) {
     const c = niveauDe(def, k)?.cout ?? {};
+    const part = REGLES_FOUILLES.demontage.materiau[materiauDe(def, k)] ?? I.rend;
     for (const [r, q] of Object.entries(c)) {
       if (r === "travail") { travail += Number(q) || 0; continue; }
       const cible = r === "ile" ? "materiaux" : r;
       if (!I.ressources.includes(cible)) continue;
-      somme[cible] = (somme[cible] ?? 0) + (Number(q) || 0);
+      somme[cible] = (somme[cible] ?? 0) + (Number(q) || 0) * part;
     }
   }
   const rend = {};
-  for (const [r, q] of Object.entries(somme)) { const n = Math.floor(q * I.rend); if (n > 0) rend[r] = n; }
+  for (const [r, q] of Object.entries(somme)) { const n = Math.floor(q + 1e-9); if (n > 0) rend[r] = n; }
   return { rend, travail: Math.max(1, Math.ceil(travail * I.travail)) };
 }
 

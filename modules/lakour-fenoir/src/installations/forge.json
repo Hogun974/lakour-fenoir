@@ -57,7 +57,8 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
-        }
+        },
+        "materiau": "pierre-seche"
       },
       {
         "cout": {
@@ -99,7 +100,8 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
-        }
+        },
+        "materiau": "pierre-seche"
       },
       {
         "cout": {
@@ -143,7 +145,8 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
-        }
+        },
+        "materiau": "parpaing-et-beton"
       }
     ],
     "metiers": [

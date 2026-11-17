@@ -84,12 +84,12 @@ import { autoriteDuJour, crisesAutorite, tributsDus, rangsDuJour, secondsDe } fr
 import { suivreQuotas } from "./gestion.mjs";
 import { noterCyclone, fenetresQuiSouvrent, plansDuMonde, plansDeLEtat, perteEtagere, etagereDeLAbri } from "./plans.mjs";
 import { compteDepart, compteDe, journeeCompte, texteCompte, supportDuCompte, journalAuDeces } from "./reperes.mjs";
-import { journeeOuvrages, messageOuvrage } from "./ouvrages.mjs";
-import { betesQuiMeurent } from "./vivant.mjs";
+import { journeeOuvrages, messageOuvrage, bonusDeFete } from "./ouvrages.mjs";
+import { betesQuiMeurent, pertesDAssaut } from "./vivant.mjs";
 import { lieuDe, lieuRefroidi, avecLieu, arrivants, rondeDuJour, journeeDuLieu, jourDeSilence, motChaleur, corpsDe, ajouterCorps, TACHE_RONDE, TACHES_DEHORS,
   vitSousTerre, puitsDe, journeeSousTerre, malusSousTerre, palierSousTerre, sousTerreDe, airSousTerre, fatigueDeLAir, haiesAuCyclone, hasardParadis,
   regionsRallumees, conditionsReprise, journeeDeLIle, journeeDesChantiers, lumiereDeLAbri, ileDe, jalonsDuJour, jalonsDe, aLeJalon, texteJalon, chantierDe,
-  bienfaitsDeRegion, routesTenues, chaleurQuiAttire } from "./paradis.mjs";
+  bienfaitsDeRegion, routesTenues, chaleurQuiAttire, REGLES_PARADIS } from "./paradis.mjs";
 import { paradeDe } from "./corps.mjs";
 
 export function etatVide() {
@@ -533,6 +533,17 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       const j = journeeDuLieu(lieuDuJour, { jour, personnes: personnesAbri(), region, saison: saisonDuJour(jour, dateDepart), silence, bruitFort: bruitJour >= 4,
         ronde: ronde?.faite ? ronde : null, arrives });
       m = avecLieu(m, ab.system.site, j.lieu);
+      // Fusion de la vague 3 : un agglutiné peut tuer une bête d'enclos par jour (au plus une ; flux de hasard à part). Elle rejoint les
+      // corps de l'abri.
+      if (j.lieu.agglutines > 0 && hasardParadis(m.graine, "betes", jour)() < Math.min(1, REGLES_PARADIS.agglutines.bete * j.lieu.agglutines)) {
+        const p = pertesDAssaut(ab.system, ab.installations ?? [], contenu, { marge: -1, jour });
+        if (p.pertes.length) {
+          ab.system = { ...ab.system, vivant: p.vivant, corps: ajouterCorps(corpsDe(ab.system), { jour, n: 1 }) };
+          const nom = nomInstallation(p.pertes[0].cle);
+          if (ici) publier(fin, "agglutine-bete", { installation: nom }, `Un Livide resté autour de l'abri a tué une bête : ${nom}.`);
+          else { const fx = { jour, region: ab.system.region, ...message("agglutine-bete", { installation: nom }, `Un Livide resté autour de l'abri a tué une bête : ${nom}.`), public: false, portee: "abri" }; secrets.push(fx); auJournalSecret(jour, fx); }
+        }
+      }
       if (ronde?.faite && ronde.engagee) {
         const noms = rondiers.map(r => r.nom).join(", ");
         ab.system = { ...ab.system, rondeLe: jour, rondesManquees: 0, corps: ajouterCorps(corpsDe(ab.system), { jour, n: ronde.abattus }) };
@@ -873,7 +884,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
 // -> { ok, raison, motif: { cle, params, texte } | null, etat, abri, survivants: [{ id, system }], effet, cout, gain, bruit, quarts,
 //      attaches: [id], voeux: [id], reposes: [nom], restent: [nom], refugies: Boolean }
 const texteManque = manque => Object.entries(manque).map(([r, q]) => `${q} ${r}`).join(", ");
-export function feter(etat, abri, { fete, annee, survivants = [], personnes = null, effet = null, pour = [], avec = "", jour = 0, contenu = null } = {}) {
+export function feter(etat, abri, { fete, annee, survivants = [], personnes = null, effet = null, pour = [], avec = "", jour = 0, contenu = null, installations = null } = {}) {
   const cle = `${fete}-${annee}`;
   const rien = (raison, cleMotif, params = {}) => ({ ok: false, raison, motif: message(cleMotif, params, raison), etat, abri, survivants });
   if (!fete || !annee) return rien("fête ou année manquante", "fete-manquante");
@@ -897,11 +908,14 @@ export function feter(etat, abri, { fete, annee, survivants = [], personnes = nu
   const voeux = ef.voeu ? cibles(pour) : [];
   const attaches = ef.attache ? (pour?.length ? vivants.filter(s => pour.includes(s.id)) : vivants).filter(s => s.system.statut === "recrue").map(s => s.id) : [];
   const religions = indexer(contenu ?? {}).religions;
+  // Fusion de la vague 3 : la salle verte (lot 7, effets.fete) donne son moral de plus à la fête (abri.installations, lues avec le
+  // contenu ; `installations` : le contenu seul pour cela, sans les autres effets du lot « moral »).
+  const salle = contenu || installations ? bonusDeFete(abri?.installations ?? [], contenu ?? installations) : 0;
   const saFete = sys => espritActif(sys) && Boolean(sys.pratique) && religionsDe(sys, contenu ?? {}).some(r => (religions.get(r)?.fetes ?? []).includes(fete));
   const nouveaux = survivants.map(s => {
     if (!peutAgir(s.system)) return s;
     const sys = structuredClone(s.system);
-    sys.moral = borner((Number(sys.moral ?? 4)) + (Number(ef.moral) || 0) + (saFete(s.system) ? 1 : 0), 0, 5);
+    sys.moral = borner((Number(sys.moral ?? 4)) + (Number(ef.moral) || 0) + (saFete(s.system) ? 1 : 0) + salle, 0, 5);
     if (Number(ef.fatigue)) sys.fatigue = borner((Number(sys.fatigue) || 0) + Number(ef.fatigue), 0, 5);
     if (voeux.includes(s.id) && Number(ef.voeu?.fatigue)) sys.fatigue = borner((Number(sys.fatigue) || 0) + Number(ef.voeu.fatigue), 0, 5);
     if (attaches.includes(s.id)) { sys.statut = "compagnon"; sys.joursMoralZero = 0; }
@@ -921,6 +935,6 @@ export function feter(etat, abri, { fete, annee, survivants = [], personnes = nu
   if (Number(ef.renom)) e = ajouterLiens(e, { renom: Number(ef.renom) });
   let reposes = [], restent = [];
   if (ef.repos) ({ etat: e, reposes, restent } = reposerRetrouves(e, { jour: j }));
-  return { ok: true, raison: "", motif: null, etat: e, abri: nouvelAbri, survivants: nouveaux, effet: ef, cout, gain, bruit: Number(ef.bruit) || 0,
+  return { ok: true, raison: "", motif: null, etat: e, abri: nouvelAbri, survivants: nouveaux, effet: ef, cout, gain, bruit: Number(ef.bruit) || 0, salle,
     quarts: Math.max(0, Number(ef.quarts) || 0), attaches, voeux, reposes, restent, refugies: Boolean(ef.refugies) };
 }

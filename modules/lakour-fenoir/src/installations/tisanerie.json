@@ -57,6 +57,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "materiau": "bambou-et-vacoa",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       },
       {
@@ -99,6 +104,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "materiau": "bambou-et-vacoa",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       },
       {
@@ -144,7 +154,8 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
-        }
+        },
+        "materiau": "bois-sous-tole"
       }
     ],
     "arbre": "lontan",

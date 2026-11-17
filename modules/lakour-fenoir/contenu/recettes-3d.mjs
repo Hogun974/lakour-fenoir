@@ -258,5 +258,11 @@ export const RECETTES_ATELIERS = [
   recette({ ...at("electricite", 2), cle: "regulateur-de-charge", nom: "Régulateur de charge", cout: { pieces: 3 }, travail: 4, difficulte: "difficile", savoirs: ["electricite-solaire"], outils: ["pince"], arbre: "moderne",
     produit: { equipement: "regulateur-de-charge", n: 1 }, description: `Quatre lots de composants dessoudés de chargeurs et de vieux onduleurs, remontés sur une carte, deux câbles : sans lui, les panneaux tuent les batteries.` }),
   recette({ ...at("electricite"), cle: "lampes-electriques", nom: "Lampes électriques", cout: { pieces: 1 }, travail: 1, outils: ["pince"], arbre: "moderne", repond: "lampe-a-huile",
-    produit: { equipement: "lampe-electrique", n: 2 }, description: `Des ampoules de récupération, un câble, un bocal pour chacune : deux lampes à brancher sur une batterie.` })
+    produit: { equipement: "lampe-electrique", n: 2 }, description: `Des ampoules de récupération, un câble, un bocal pour chacune : deux lampes à brancher sur une batterie.` }),
+  // ---------------------------------------------------------------- La chaux (fusion de la vague 3) : elle demande le four à chaux du lot 7
+  // (le mortier sans ciment). Les coquillages et le corail mort se ramassent : pas de coût, une journée et une nuit de cuisson ; une
+  // unité de matériaux, bien moins que la récolte (pas une rente). Le four rend aussi, de lui-même, ce que ses bras y cuisent.
+  recette({ cle: "chaux-de-coquillages", nom: "Chaux de coquillages", cout: {}, travail: 6, competence: "bricolage", difficulte: "normale", arbre: "lontan",
+    installation: { cle: "four-a-chaux", niveau: 1 },
+    produit: { ressource: "materiaux", n: 1 }, description: `Une fournée de coquillages et de corail mort, ramassés sur la plage, cuits un jour et une nuit dans le four à chaux, puis éteints à l'eau : de quoi monter des joints et blanchir un mur, le mortier sans ciment des anciens.` })
 ];

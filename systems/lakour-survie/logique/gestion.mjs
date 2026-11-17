@@ -11,7 +11,7 @@
 //   recettes et des matériaux ; les cultures et l'élevage s'il y a une installation de ce genre ; enseigner, jamais d'office.
 // - Les QUOTAS (groupe.quotas = [{ id, acteurId, tache, jours, semaine, fait }]) : « tant de jours par semaine à telle tâche », une
 //   demande suivie et affichée, SANS punition automatique (suivreQuotas, chaque jour d'avancer).
-// - Les CORVÉES (contenu.corvees : { cle, nom, tache, description }) : vingt-six sous-tâches des treize tâches (puiser l'eau,
+// - Les CORVÉES (contenu.corvees : { cle, nom, tache, description }) : vingt-six sous-tâches des treize tâches (et deux de la ronde, lot 9) (puiser l'eau,
 //   rapporter des troncs, nettoyer les filtres…), de la couleur pour dire ce que fait chacun ; aucun effet (groupe.corvees =
 //   { acteurId: cle }).
 // - Les PNJ apprennent comme les joueurs : une tâche tenue sept jours donne une marque à tout membre, joueur ou non (etat.mjs, déjà).
@@ -24,7 +24,7 @@ import { message } from "./textes.mjs";
 
 export const PRIORITE_MAX = 4;
 export const PRIORITE_DEFAUT = { repartition: 1, capable: 3 };
-// Les tâches que la grille règle (les treize du §10.3).
+// Les tâches que la grille règle : les treize du §10.3 et la ronde (lot 9 ; sur demande : la grille par défaut l'éteint ; contrat §29).
 export const TACHES_GRILLE = Object.keys(TACHES);
 const n0 = x => Number(x) || 0;
 const borne = p => Math.max(0, Math.min(PRIORITE_MAX, Math.round(n0(p))));

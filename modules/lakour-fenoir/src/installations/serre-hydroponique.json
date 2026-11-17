@@ -88,7 +88,8 @@
       }
     ],
     "arbre": "moderne",
-    "role": "hors-sol"
+    "role": "hors-sol",
+    "materiau": "tole-de-recuperation"
   },
   "effects": [],
   "folder": null,

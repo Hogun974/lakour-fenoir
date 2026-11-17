@@ -57,6 +57,11 @@
           "bonus": {},
           "air": 1,
           "bras": null
+        },
+        "materiau": "bois-sous-tole",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       },
       {
@@ -101,6 +106,11 @@
           "air": 1,
           "jour": 1,
           "bras": null
+        },
+        "materiau": "tole-de-recuperation",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       }
     ]

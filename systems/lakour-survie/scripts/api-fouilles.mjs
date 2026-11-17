@@ -33,10 +33,13 @@ export function fonctionsFouilles({ ecriture, ouvrirCtx, terminer, noter, tx, jo
     if (qui[0] && (r.equipements ?? []).length) {
       const docs = [];
       for (const { cle, n, qualites = [] } of r.equipements) {
-        const def = defDe("equipements", cle);
-        if (!def) continue;
-        // La qualité tirée (lot 6 « ateliers » : le champ `qualite` ; sans lui, Foundry l'ignore).
-        for (let i = 0; i < Math.min(5, n); i++) docs.push(await donneesObjet("equipement", def, qualites[i] ? { qualite: qualites[i] } : {}));
+        if (!defDe("equipements", cle)) continue;
+        // La qualité tirée (lot 6 « ateliers ») : la fiche de cette qualité dans la même gamme (un marteau de fortune), sinon le champ
+        // `qualite` posé sur l'objet (fusion de la vague 3 : outilDeQualite).
+        for (let i = 0; i < Math.min(5, n); i++) {
+          const o = L.outilDeQualite(contenu(), cle, qualites[i] ?? "");
+          docs.push(await donneesObjet("equipement", defDe("equipements", o.cle), o.qualite ? { qualite: o.qualite } : {}));
+        }
       }
       if (docs.length) {
         await qui[0].createEmbeddedDocuments("Item", docs);

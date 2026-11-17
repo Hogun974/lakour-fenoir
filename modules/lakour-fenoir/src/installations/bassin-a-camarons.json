@@ -77,7 +77,8 @@
         }
       }
     ],
-    "arbre": "lontan"
+    "arbre": "lontan",
+    "materiau": "pierre-seche"
   },
   "effects": [],
   "folder": null,

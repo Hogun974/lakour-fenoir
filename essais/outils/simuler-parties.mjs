@@ -580,7 +580,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     const prudence = prudencePour(regionCle);
     for (const genre of genres) {
       for (const ecart of [true, false]) {
-        const f = L.fouiller(monde, contenu, h, { region: regionCle, cible: cibleLot, genre, ecart, membres: fouilleurs.length, quarts: 2, prudence, jour, moment: "matin",
+        const f = L.fouiller(monde, contenu, h, { region: regionCle, facteurRencontre: L.facteurRallumage(etat, regionCle), cible: cibleLot, genre, ecart, membres: fouilleurs.length, quarts: 2, prudence, jour, moment: "matin",
           abri: abri.system, renseignements: etat.renseignements, equipements: equipementsDe(fouilleurs), dateDepart: monde.dateDepart });
         if (!f.ok) continue;
         monde = f.monde;
@@ -598,7 +598,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     return null;
   };
   const recolterMatieres = (ouvriers, jour, h) => {
-    const f = L.fouiller(monde, contenu, h, { region: abri.system.region, cible: "matieres", membres: ouvriers.length, quarts: 2, jour, moment: "matin", abri: abri.system,
+    const f = L.fouiller(monde, contenu, h, { region: abri.system.region, facteurRencontre: L.facteurRallumage(etat, abri.system.region), cible: "matieres", membres: ouvriers.length, quarts: 2, jour, moment: "matin", abri: abri.system,
       renseignements: etat.renseignements, equipements: equipementsDe(ouvriers), dateDepart: monde.dateDepart });
     if (!f.ok) return null;
     monde = f.monde;
@@ -622,7 +622,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
       if (n !== null) return n;
     }
     const prudence = prudencePour(regionCle);
-    const f = L.fouiller(monde, contenu, h, { region: regionCle, cible, membres: fouilleurs.length, quarts: 2, prudence, jour, moment: "matin", abri: abri.system, renseignements: etat.renseignements,
+    const f = L.fouiller(monde, contenu, h, { region: regionCle, facteurRencontre: L.facteurRallumage(etat, regionCle), cible, membres: fouilleurs.length, quarts: 2, prudence, jour, moment: "matin", abri: abri.system, renseignements: etat.renseignements,
       savoirs: savoirsDe(fouilleurs) });
     monde = f.monde;
     stats.trousses += f.trousse ?? 0;
@@ -643,7 +643,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     const ordre = (voulu ? [voulu] : ["cueillette", "peche", "gibier"]).filter(k => parJour[k].parJour > 0 && (n[k] ?? 0) >= 1).sort((a, b) => (n[b] ?? 0) - (n[a] ?? 0));
     const cible = ordre[0] ?? null;
     if (!cible) return 0;
-    const f = L.fouiller(monde, contenu, h, { region: abri.system.region, cible, membres: cueilleurs.length, quarts: 2, prudence: prudencePour(abri.system.region), jour, abri: abri.system, renseignements: etat.renseignements,
+    const f = L.fouiller(monde, contenu, h, { region: abri.system.region, facteurRencontre: L.facteurRallumage(etat, abri.system.region), cible, membres: cueilleurs.length, quarts: 2, prudence: prudencePour(abri.system.region), jour, abri: abri.system, renseignements: etat.renseignements,
       savoirs: savoirsDe(cueilleurs) });
     monde = f.monde;
     stats.plantes += f.butin.plantes ?? 0;
@@ -749,7 +749,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     const d = L.dateDuJour(jour, monde.dateDepart);
     for (const f of fetesDuJour(d.iso, calendrierSocle)) {
       if (!f.coeur) continue;
-      const r = L.feter(etat, abri, { fete: f.cle, annee: d.annee, survivants: vivants() });
+      const r = L.feter(etat, abri, { fete: f.cle, annee: d.annee, survivants: vivants(), installations: contenu });
       if (!r.ok) continue;
       etat = r.etat; abri = { ...abri, system: r.abri.system };
       for (const n of r.survivants) { const s = survivants.find(x => x.id === n.id); if (s) s.system = n.system; }
