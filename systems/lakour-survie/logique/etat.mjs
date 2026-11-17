@@ -331,7 +331,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
           if (ab && aLAbri()) ab.system = { ...ab.system, stocks: ajouterStocks(ab.system.stocks, { nourriture: viande }) };
           else e = { ...e, groupe: { ...e.groupe, porte: ajouterStocks(e.groupe.porte ?? {}, { nourriture: viande }) } };
         }
-        for (const b of r.mortes) publier(fin, "vivant-portee-morte", { n: b.n, espece: b.espece, viande: b.viande }, `Les bêtes qu'on portait (${b.n}) n'ont pas tenu hors d'un enclos ; il en reste ${b.viande} de viande.`);
+        for (const b of r.mortes) publier(fin, "vivant-portee-morte", { n: b.nombre, espece: b.cle, viande: b.viande }, `Les bêtes qu'on portait (${b.nombre}) n'ont pas tenu hors d'un enclos ; il en reste ${b.viande} de viande.`);
       }
     }
     e.horloge = { quart: fin };

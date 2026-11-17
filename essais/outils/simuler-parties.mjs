@@ -49,6 +49,12 @@
 //   payant les matières de l'île sur le bois des alentours ; à deux et plus, le nomade (et le mixte) creuse des feuillées là où il
 //   s'installe (une demi-journée d'un) ; un survivant qui porte un bouclier pare (resoudreCombat, parade) ; le groupe qui porte une
 //   tente ou une natte dort au bivouac hors de l'abri. Le sommeil, la souillure et l'insalubrité sont ceux de la logique (avancer).
+// - lot 8 « Le vivant de l'abri » (2026-11-17, docs/equilibre-vivant.md) : les cheptels sont ceux de la logique (santé, manques, naissances,
+//   maladie : avancer) ; l'enraciné bâtit aussi un clapier, un jardin de zerbaz, une treille, une bananeraie, des bacs de culture,
+//   l'aquaponie (ORDRE_ENRACINE ; seulement sur un surplus d'eau quand elles boivent ; pas la soue ni l'étable, qui commencent
+//   vides : le simulateur ne capture pas de bêtes) ; le soir, il
+//   soigne un cheptel malade s'il a le remède (le meilleur en survie, normale, +1 dé avec l'élevage ou le maraîchage) et abat ce qui
+//   dépasse le plein quand l'enclos est plein ou que les vivres manquent, tout sauf un couple quand l'eau manque (VIVANT_SIMULATEUR).
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -98,6 +104,17 @@ export const ORDRE_ENRACINE = [
   ["palissade", 2], ["tour-de-guet", 2], ["mur", 2], ["porte-blindee", 1], ["galerie-souterraine", 4], ["mur", 3], ["batteries", 3], ["panneaux-solaires", 3],
   ["chiens-de-garde", 1]
 ];
+// Lot 8 « Le vivant de l'abri » : où l'enraciné glisse les installations nouvelles du vivant (après l'installation nommée).
+export const ORDRE_VIVANT = [["enclos-a-cabris", 1, "clapier", 1], ["compost", 1, "jardin-de-zerbaz", 1], ["verger", 1, "treille-a-chouchou", 1],
+  ["verger", 1, "bananeraie", 1], ["basse-cour", 2, "clapier", 2], ["serre", 1, "bacs-de-culture", 1], ["bassin-a-tilapias", 1, "aquaponie", 1]];
+for (const [apres, na, cle, n] of [...ORDRE_VIVANT].reverse()) {
+  const i = ORDRE_ENRACINE.findIndex(([c, x]) => c === apres && x === na);
+  ORDRE_ENRACINE.splice(i + 1, 0, [cle, n]);
+}
+const CLES_VIVANT = new Set(ORDRE_VIVANT.map(x => x[2]));
+// Le vivant (lot 8) : on abat jusqu'au plein (jamais sous deux bêtes) quand l'enclos est plein, ou sous ce nombre de jours de vivres.
+// Et quand l'eau manque (moins de `secheresse` jours), on ne garde qu'un couple : le reste se mange au lieu de boire.
+export const VIVANT_SIMULATEUR = { abattreSousJours: 2, garder: 2, secheresse: 3 };
 const PRIORITE_EMPORT = ["nourriture", "eau", "medicaments", "plantes", "pieces", "materiaux", "graines", "carburant", "munitions"];
 const CAUSES = ["faim", "soif", "assaut", "rencontre", "infection", "maladie", "depart", "impasse", "vivants"];
 
@@ -188,7 +205,9 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     // fouillant, plantes cueillies, tisanes réussies, jours d'abri avec au moins un médicament.
     morsures: 0, morsuresAidees: 0, morsuresSoignees: 0, trousses: 0, plantes: 0, tisanes: 0, joursAvecMedicament: 0,
     // Lot « fetes » (rééquilibrage du 2026-11-13) : morts à qui le groupe a donné le repos.
-    repos: 0
+    repos: 0,
+    // Lot 8 « Le vivant de l'abri » : naissances, bêtes mortes (manques, maladie), maladies, soins réussis, viande abattue.
+    vivant: { naissances: 0, mortes: 0, malades: 0, soins: 0, viande: 0, cheptels: 0, tetes: 0 }
   };
   let fouillesMaigres = 0;
   let actionsDuJour = [];
@@ -293,6 +312,45 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     if (r.produit) stats.tisanes++;
     noter(jour, `tisane (${artisan.nom}) : ${r.produit ? `+${r.produit.n} médicament` : "ratée"}`);
   };
+  // Lot 8 : le soir, soigner un cheptel malade (le remède de l'espèce, un test de survie), abattre ce qui dépasse le plein.
+  const soccuperDesBetes = (jour, h) => {
+    if (!abri) return;
+    const cheptels = L.cheptelsDe(abri.system, abri.installations, contenu, { jour });
+    for (const c of cheptels) {
+      const esp = L.especeDe(contenu, c.espece);
+      if (!esp) continue;
+      const st = L.etatCheptel(abri.system, abri.installations.find(i => i.cle === c.cle), idx.installations.get(c.cle), contenu, { jour });
+      if (c.malade) {
+        const { ile = 0, ...cout } = esp.remede?.cout ?? {};
+        const soigneur = vivants().filter(s => Number(s.system.fatigue) < R.fatigueRepos).sort((a, b) => L.competence(b.system, "survie").niveau - L.competence(a.system, "survie").niveau)[0];
+        if (soigneur && L.couvre(abri.system.stocks, cout) && ile <= L.boisDisponible(abri.system)) {
+          abri.system.stocks = L.retirerStocks(abri.system.stocks, cout).stocks;
+          if (ile) abri.system.nature = L.prendreIle(abri.system.nature, ile);
+          const savoir = esp.genre === "plants" ? "maraichage-tropical" : "elevage";
+          const t = L.resoudreTest({ niveau: L.competence(soigneur.system, "survie").niveau, difficulte: "normale", bonus: (soigneur.system.savoirs ?? []).includes(savoir) ? 1 : 0,
+            malus: L.malusEtat(soigneur.system).total, hasard: h });
+          const r = L.soignerCheptel(st, t);
+          abri.system.vivant = { ...(abri.system.vivant ?? {}), [c.cle]: r.etat };
+          if (r.gueri) stats.vivant.soins++;
+        }
+        continue;
+      }
+      if (!["betes", "poissons"].includes(esp.genre)) continue;
+      const vivres = abri.bilan?.joursDeStocks?.nourriture ?? 99, eau = abri.bilan?.joursDeStocks?.eau ?? 99;
+      // L'eau manque (moins de VIVANT_SIMULATEUR.secheresse jours) : on garde un couple, on mange le reste.
+      const secheresse = eau < VIVANT_SIMULATEUR.secheresse && esp.genre === "betes";
+      if (st.tetes >= c.places || vivres < VIVANT_SIMULATEUR.abattreSousJours || secheresse) {
+        const n = st.tetes - (secheresse ? VIVANT_SIMULATEUR.garder : Math.max(c.plein, VIVANT_SIMULATEUR.garder));
+        if (n <= 0) continue;
+        const a = L.abattreCheptel(st, esp, { n });
+        if (!a.ok) continue;
+        abri.system.vivant = { ...(abri.system.vivant ?? {}), [c.cle]: a.etat };
+        abri.system.stocks = L.ajouterStocks(abri.system.stocks, { nourriture: a.nourriture });
+        stats.vivant.viande += a.nourriture;
+        noter(jour, `abat ${a.abattues} (${c.cle}) : +${a.nourriture} nourriture`);
+      }
+    }
+  };
   const resoudreRencontre = (rencontre, combattants, quart, h) => {
     if (!rencontre) return;
     stats.rencontres++;
@@ -396,6 +454,10 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         if (!def || (Number(inst?.niveau) || 0) !== niveau - 1) continue;
         // Des bêtes à nourrir (chiens de garde) : seulement sur un surplus de nourriture produite.
         if (installationNourrie(def, niveau) && !((abri.bilan?.net?.nourriture ?? -1) >= 1)) continue;
+        // Lot 8 : une installation nouvelle du vivant qui boit (bacs, treille, bananeraie, jardin de zerbaz, clapier, aquaponie), seulement
+        // sur un surplus d'eau, comme un groupe raisonnable qui ne plante pas ce qu'il ne peut pas arroser.
+        if (CLES_VIVANT.has(cle) && Number(L.niveauDe(def, niveau)?.effets?.consommation?.eau) > 0
+          && !((abri.bilan?.net?.eau ?? -1) >= Number(L.niveauDe(def, niveau).effets.consommation.eau) + 1)) continue;
         // Lot « corps » : une installation d'hygiène qui prend de l'eau (lavoir, douche), seulement sur un surplus d'eau.
         if (Number(L.niveauDe(def, niveau)?.effets?.hygiene) > 0 && Number(L.niveauDe(def, niveau)?.effets?.consommation?.eau) > 0
           && !((abri.bilan?.net?.eau ?? -1) >= Number(L.niveauDe(def, niveau).effets.consommation.eau) + 1)) continue;
@@ -795,11 +857,18 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
     // Soir : soins, fête.
     const stabilises = soigner(jour, h);
     preparerTisane(jour, h);
+    soccuperDesBetes(jour, h);
     donnerLeRepos(jour);
     feterSiFete(jour);
 
     // La journée passe.
     const r = L.avancer({ etat, monde, contenu, quarts: 4, survivants, abri, options: { stabilises, corpsTraites: ids, veille: vivants().filter(s => s.system.tache === "garde").map(s => s.id), bivouac: bivouac() } });
+    // Lot 8 : ce qui est arrivé aux cheptels (le journal du jour, public ou secret selon que le groupe est à l'abri).
+    for (const x of [...(r.etat.journal ?? []), ...(r.monde.journalSecret ?? [])]) {
+      if (x.cle === "vivant-naissance") stats.vivant.naissances += Number(x.params?.n) || 0;
+      else if (x.cle === "vivant-morts") stats.vivant.mortes += Number(x.params?.n) || 0;
+      else if (x.cle === "vivant-malade") stats.vivant.malades++;
+    }
     appliquer(r);
     if (abri) {
       abri.bilan = r.bilan;
@@ -860,6 +929,7 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
   if (vivants().length) stats.fin = stats.impasse === null ? "vivants" : "impasse";
   stats.regionFin = abri?.system.region ?? etat.groupe.region;
   stats.installationsFin = abri ? abri.installations.filter(i => i.niveau >= 1).map(i => `${i.cle}${i.niveau}`) : [];
+  if (abri) { const ch = L.cheptelsDe(abri.system, abri.installations, contenu, { jour: stats.jours }); stats.vivant.cheptels = ch.length; stats.vivant.tetes = ch.reduce((t, c) => t + c.tetes, 0); }
   stats.journal = lignes;
   return stats;
 }
@@ -913,7 +983,9 @@ export function mesurer(resultats, { jours = JOURS_DEFAUT } = {}) {
       joursSansEau: arrondi(moyenne(l.map(x => x.joursSansEau))), joursSansNourriture: arrondi(moyenne(l.map(x => x.joursSansNourriture))),
       limitante: limitante[0][1] > 0 ? limitante[0][0] : "—", blocages, installations: arrondi(moyenne(l.map(x => x.installations))),
       morts: l.reduce((t, x) => { for (const [c, n] of Object.entries(x.morts)) t[c] = (t[c] ?? 0) + n; return t; }, {}),
-      remedes: remedesDe(l)
+      remedes: remedesDe(l),
+      // Lot 8 : le vivant, par partie (moyennes).
+      vivant: Object.fromEntries(["naissances", "mortes", "malades", "soins", "viande", "cheptels", "tetes"].map(k => [k, arrondi(moyenne(l.map(x => Number(x.vivant?.[k]) || 0)), 1)]))
     };
   }
   // Régions de départ (toutes stratégies sauf passif).
@@ -951,6 +1023,9 @@ export function tableaux(m) {
   l.push("", "### Remèdes (morsures : aidées par un médicament, une décoction, une trousse ou une infirmerie ; soignées ; par partie : trousses trouvées, plantes cueillies, tisanes)", "",
     "| Cas | Morsures | Aidées | Soignées | Trousses | Plantes | Tisanes | Jours d'abri avec un médicament |", "|---|---|---|---|---|---|---|---|");
   for (const c of cas) l.push(`| ${c.strategie} × ${c.membres} | ${c.remedes.morsures} | ${c.remedes.aidees} | ${c.remedes.soignees} | ${c.remedes.trousses} | ${c.remedes.plantes} | ${c.remedes.tisanes} | ${c.remedes.joursAvecMedicament} |`);
+  l.push("", "### Le vivant de l'abri (par partie : cheptels et têtes à la fin, naissances, bêtes mortes, maladies, soins réussis, viande abattue)", "",
+    "| Cas | Cheptels | Têtes | Naissances | Mortes | Maladies | Soins | Viande |", "|---|---|---|---|---|---|---|---|");
+  for (const c of cas) l.push(`| ${c.strategie} × ${c.membres} | ${c.vivant.cheptels} | ${c.vivant.tetes} | ${c.vivant.naissances} | ${c.vivant.mortes} | ${c.vivant.malades} | ${c.vivant.soins} | ${c.vivant.viande} |`);
   l.push("", "### Régions de départ (toutes stratégies sauf passif)", "", "| Région | Parties | Q1 | Médiane | Vivants à la fin | Autonomes |", "|---|---|---|---|---|---|");
   for (const [cle, r] of Object.entries(m.regions).sort((a, b) => b[1].mediane - a[1].mediane)) l.push(`| ${cle} | ${r.parties} | ${r.q1} | ${r.mediane} | ${r.survie200} | ${r.autonomie} |`);
   l.push("", "### Hauts contre Bas après J90 (abris des parties encore en vie)", "", "| Zone | Jours d'abri après J90 | Assauts par mois | Livides errants par mois |", "|---|---|---|---|");

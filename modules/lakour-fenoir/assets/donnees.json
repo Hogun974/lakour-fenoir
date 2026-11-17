@@ -29052,6 +29052,7 @@
     "difficulte": "facile",
     "outils": [
      "cage-de-bambou",
+     "cage",
      "sac-de-goni"
     ],
     "horsEnclos": 4
@@ -29077,6 +29078,7 @@
     "difficulte": "normale",
     "outils": [
      "cage-de-bambou",
+     "cage",
      "sac-de-goni"
     ],
     "horsEnclos": 4
@@ -29101,7 +29103,8 @@
    "capture": {
     "difficulte": "normale",
     "outils": [
-     "cordes-de-choka"
+     "cordes-de-choka",
+     "corde"
     ],
     "horsEnclos": 6
    },
@@ -29122,10 +29125,14 @@
     },
     "texte": "une tisane de zerbaz (une brassée)"
    },
+   "alias": [
+    "porcelet"
+   ],
    "capture": {
     "difficulte": "normale",
     "outils": [
      "cordes-de-choka",
+     "corde",
      "sac-de-goni"
     ],
     "horsEnclos": 5
@@ -29147,10 +29154,14 @@
     },
     "texte": "une tisane de zerbaz (une brassée)"
    },
+   "alias": [
+    "veau-moka"
+   ],
    "capture": {
     "difficulte": "normale",
     "outils": [
-     "cordes-de-choka"
+     "cordes-de-choka",
+     "corde"
     ],
     "horsEnclos": 8
    },

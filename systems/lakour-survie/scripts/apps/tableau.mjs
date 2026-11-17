@@ -4,7 +4,7 @@
 import { ID } from "../../logique/constantes.mjs";
 import * as L from "../../logique/index.mjs";
 import { t, lireEtat, aPlat, echapper, sansBalises, localiser, libelleTache, libelleCompetence, survivantsDuGroupe, monSurvivant } from "../donnees.mjs";
-import { CHEMIN, essayer, lireChamps, options } from "./commun.mjs";
+import { CHEMIN, essayer, lireChamps, options, ligneCheptel } from "./commun.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const contenu = () => game.lakourSurvie?.contenu?.() ?? {};
@@ -149,6 +149,10 @@ export function contexteTableau(onglet = "groupe") {
     quotas: (etat.groupe?.quotas ?? []).map(q => ({ tenu: L.etatDuQuota(q).tenu, texte: t("LAKOUR_SURVIE.Gestion.Quota", { nom: game.actors.get(q.acteurId)?.name ?? q.acteurId,
       tache: libelleTache(q.tache), fait: L.etatDuQuota(q).fait, jours: L.etatDuQuota(q).jours }) })),
     plans: (etat.groupe?.plans ?? []).map(k => L.nomDuPlan(c, k)),   // lot 4 : une installation, ou « recette:<clé> »
+    // Lot 8 : les cheptels de l'abri (on les voit, on les entend) et les bêtes que le groupe porte, avec le temps qu'il leur reste.
+    cheptels: (etat.bilan?.cheptels ?? []).map(x => `${x.nom} — ${ligneCheptel(x)}`),
+    betes: L.betesPortees(etat.groupe?.betes).map(b => t("LAKOUR_SURVIE.Vivant.Portee", { n: b.nombre, espece: L.especeDe(c, b.cle)?.nom ?? b.cle,
+      reste: Math.max(0, Number(b.jusqua ?? 0) - (Number(etat.horloge?.quart) || 0)) })),
     // Lot « fetes » : l'autel (les morts du groupe), ce qui soutient le groupe (souvenirs de fête, vœux, autel), les liens tissés.
     morts: (etat.morts ?? []).map(m => ({ nom: m.nom, etat: t(`LAKOUR_SURVIE.Autel.Etats.${m.repos ? "repos" : m.retrouve ? "deuil" : m.livide ? "livide" : "perdu"}`) })),
     souvenirs: L.souvenirsActifs(etat, jour).map(x => ({ texte: `${t(`LAKOUR_SURVIE.Souvenirs.${x.cle}`)}${x.qui?.length ? ` (${x.qui.map(id => game.actors.get(id)?.name ?? id).join(", ")})` : ""}`,

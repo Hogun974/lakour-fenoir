@@ -490,7 +490,8 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   if ((d.especes ?? []).length < 8) e("vivant : moins de huit espèces");
   if ((d.bestiaire ?? []).filter(b => b.categorie === "bete").length < 4) e("vivant : moins de quatre bêtes en liberté");
   for (const k of ["basse-cour", "enclos-a-cabris", "bassin-a-tilapias", "ruches"]) if (!installations.get(k)?.niveaux.every(n => n.effets.vivant)) e(`vivant : ${k} sans cheptel`);
-  for (const x of d.especes ?? []) for (const o of x.capture?.outils ?? []) if (!equipements.has(o)) e(`espèce ${x.cle} : outil de capture inconnu « ${o} »`);
+  // Un outil au moins existe pour chaque espèce qui se prend (les clés d'un autre lot, « cage », « corde », peuvent manquer ici).
+  for (const x of (d.especes ?? []).filter(y => y.capture)) if (!(x.capture.outils ?? []).some(o => equipements.has(o))) e(`espèce ${x.cle} : aucun outil de capture connu`);
   for (const k of ["livide-frais", "livide-des-hauts", "noye-du-lagon", "livide-brule", "coureur", "chien-errant", "cochon-marron"]) if (!index.bestiaire.has(k)) e(`bestiaire : ${k} absent`);
   // Lot « sens » : la perception des Livides, les pluies d'une année, les ravines temporaires, le bruit d'un ancrage.
   for (const b of d.bestiaire ?? []) {

@@ -156,4 +156,12 @@ test("API : la fiche de l'abri dit chaque cheptel ; la fenêtre du MJ montre « 
   assert.equal(contexteMJ("partie").vivant, null);
   const b = M.api.beteSauvage({ zone: "hauts" });
   assert.ok(b === null || (b.espece && b.nombre >= 1));
+  // Le tableau de bord des joueurs : les cheptels, et les bêtes portées avec le temps qu'il leur reste.
+  await M.api.recevoirBete({ espece: "poule", n: 2 });
+  await M.api.avancer({ quarts: 1 });
+  const { contexteTableau } = await import("../systems/lakour-survie/scripts/apps/tableau.mjs");
+  const tab = await commeJoueur("u1", () => contexteTableau("groupe"));
+  assert.ok(tab.cheptels.some(x => /2 \/ 4/.test(x)), "l'enclos des cabris vu du tableau");
+  assert.equal(tab.betes.length, 1);
+  assert.match(tab.betes[0], /3/, "trois quarts hors d'un enclos");
 });

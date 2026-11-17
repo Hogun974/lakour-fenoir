@@ -296,12 +296,12 @@ export function contexteVivant(api = game.lakourSurvie, c = {}) {
   const sauvages = L.liste(c.bestiaire).filter(b => b.categorie === "bete" || b.espece);
   return {
     cheptels: v.cheptels.map(x => ({ nom: x.nom, texte: ligneCheptel(x), mauvais: x.sante <= 1 || x.malade })),
-    betes: v.betes.map(b => ({ id: b.id, texte: t(K("Portee"), { n: b.n, espece: b.nom, reste: b.reste }) })),
+    betes: v.betes.map(b => ({ id: b.id, texte: t(K("Portee"), { n: b.nombre, espece: b.nom, reste: b.reste }) })),
     chien: v.chien,
     installations: options(v.cheptels.map(x => [x.cle, `${x.nom} (${x.especeNom ?? x.espece})`]), ""),
     especes: options(especes.map(e => [e.cle, e.nom]), ""),
     capturables: options(especes.filter(e => e.capture).map(e => [e.cle, e.nom]), ""),
-    portees: options([["", t(K("Toutes"))], ...v.betes.map(b => [b.id, `${b.nom} (${b.n})`])], ""),
+    portees: options([["", t(K("Toutes"))], ...v.betes.map(b => [b.id, `${b.nom} (${b.nombre})`])], ""),
     zones: options([["", "—"], ...L.ZONES.map(z => [z, t(`LAKOUR_SURVIE.Zones.${z}`)])], ""),
     sauvages: sauvages.map(b => `${b.nom} (${nomEspece(b.espece)})`).join(", "),
     competences: options([["combat", t("LAKOUR_SURVIE.Competences.combat")], ["tir", t("LAKOUR_SURVIE.Competences.tir")]], "combat")

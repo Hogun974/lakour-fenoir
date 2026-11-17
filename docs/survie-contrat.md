@@ -1563,8 +1563,8 @@ des ruches ne change pas ; la maladie tire dans son propre flux (« vivant|jour 
 - **Production** : `facteurCheptel(st, v, espece, { altitude })` = min(1, têtes ÷ plein) × vigueur (`REGLES_VIVANT.vigueur` : santé 0 rien,
   1 moitié, 2 et 3 entière) × ½ hors de l'altitude de l'espèce ; un cheptel vide ne boit ni ne mange.
 - **La journée** : `journeeVivant({ abri, installations, contenu, bilan, conditions, manqueNourriture, hasard })` → `{ vivant, stocks,
-  evenements }`. Chaque manque ôte 1 de santé (`MANQUES_VIVANT` : `soif` = arrêt faute d'eau ; `faim` selon `espece.mange` : `restes` quand
-  le groupe a manqué de vivres ou n'est pas là, `herbe` sur un site sans terre sans personne à l'élevage, `solution` sans compost en
+  evenements }`. Chaque manque ôte 1 de santé (`MANQUES_VIVANT` : `soif` = arrêt faute d'eau, ou installation éteinte ; `faim` selon `espece.mange` : `restes` quand
+  personne n'a mangé ce jour-là ou personne n'est là, `herbe` sur un site sans terre sans personne à l'élevage, `solution` sans compost en
   service ; `panne` = hors service ou sans courant ; `eau-sale` = filtre passé son temps, sauf quelqu'un à la tâche du genre,
   `TACHE_VIVANT` ; `ombre` ; `surpopulation`) ; malade, −1 tous les deux jours ; un jour sans aucun mal, +1 ; à 0, un tiers meurt (au moins
   un) ; `sansPompe` jours d'arrêt d'affilée : tout meurt. Naissances : santé ≥ 2, pas malade, dans son altitude, deux têtes et une place :
@@ -1572,8 +1572,10 @@ des ruches ne change pas ; la maladie tire dans son propre flux (« vivant|jour 
   `espece.maladie` × `v.maladie` × l'insalubrité de l'abri (¼, ½, ¾, 1) ; elle passe seule à 10 % par jour.
 - **Gestes** : `peuplerCheptel`, `abattreCheptel` (viande = têtes × `espece.viande`, à l'entier inférieur), `soignerCheptel(st, test)`,
   `nettoyerCheptel(st, jour)` ; motifs `pas-vivant`, `nombre`, `plein`, `autre-espece`, `pas-de-viande`, `vide`, `pas-malade`.
-- **Bêtes portées** (`etat.groupe.betes: [{ id, espece, n, depuis (quart), source }]`, public) : `ajouterBete`, `betesQuiMeurent` (passé
-  `espece.capture.horsEnclos` quarts ; viande), `horsEnclosDe`, `enclosPour(installations, contenu, espece, abri)`.
+- **Bêtes portées** (`etat.groupe.betes: [{ id, cle (l'espèce, ou un alias : porcelet, veau-moka), nombre, prisLe, jusqua (quart),
+  enclos: "", abri: "", source }]`, public : la forme des bêtes trouvées du lot 5, pour une seule liste) : `porterBete`, `betesPortees`
+  (sans celles « à l'enclos »), `betesQuiMeurent` (à `jusqua` = prise + `espece.capture.horsEnclos` quarts ; viande), `horsEnclosDe`,
+  `enclosPour(installations, contenu, espece, abri)` ; `especeDe` lit aussi les `alias` d'une espèce, `cleEspece`.
 - **Bêtes en liberté** (bestiaire, `categorie: "bete"`, `espece`, `groupe: [min, max]`, `acteur: false`) : `betesSauvagesDe`,
   `tirerBeteSauvage(contenu, { zone, phase }, hasard)`, `prendreBete(espece, { test, outils })` (l'outil de `espece.capture.outils` ; sans
   outil ou raté : elle file ; un essaim sans enfumoir pique et reste), `chasserBete(espece, { test })`.

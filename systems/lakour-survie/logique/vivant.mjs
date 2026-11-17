@@ -10,8 +10,9 @@
 // - Son état (abri.vivant[clé de l'installation]) : { espece, tetes, sante 0..3, malade: { depuis } | null, manques: [mot],
 //   naissances (reliquat), filtreLe (jour), sansPompe (jours), depuis (jour) }. Absent : pleine santé, `plein` têtes (ou `depart`
 //   si l'installation vient d'être achevée : etatCheptel).
-// - Chaque jour (journeeVivant, appelé par journeeAbri), chaque MANQUE ôte 1 de santé : soif (l'installation s'arrête faute d'eau),
-//   faim (selon ce que mange l'espèce : « restes » quand le groupe a manqué de vivres ou n'est pas là, « herbe » sur un site sans
+// - Chaque jour (journeeVivant, appelé par journeeAbri), chaque MANQUE ôte 1 de santé : soif (l'installation s'arrête faute d'eau, ou
+//   on l'a éteinte),
+//   faim (selon ce que mange l'espèce : « restes » quand personne n'a mangé ce jour-là ou que personne n'est là, « herbe » sur un site sans
 //   terre quand personne n'est à l'élevage, « solution » sans compost en service), panne (hors service, sans courant), eau sale
 //   (filtre ou bassin à curer passé son temps, quand personne n'est à la tâche pour le faire), ombre (des plants sans soleil),
 //   surpopulation (plus de têtes que de places). Malade, il perd 1 de santé tous les deux jours. Un jour sans aucun mal lui en rend 1.
@@ -58,7 +59,9 @@ const arrondi = (x, k = 3) => Math.round(n0(x) * 10 ** k) / 10 ** k;
 
 // ------------------------------------------------------------------ définitions
 export const especesDe = contenu => liste(contenu?.especes);
-export const especeDe = (contenu, cle) => especesDe(contenu).find(e => e.cle === cle) ?? null;
+// Une espèce par sa clé, ou par un de ses alias (le porcelet et le veau moka des bêtes trouvées en fouillant, lot 5).
+export const especeDe = (contenu, cle) => especesDe(contenu).find(e => e.cle === cle) ?? especesDe(contenu).find(e => (e.alias ?? []).includes(cle)) ?? null;
+export const cleEspece = (contenu, cle) => especeDe(contenu, cle)?.cle ?? cle;
 // L'effet `vivant` d'un niveau d'une installation (null : rien de vivant).
 export const vivantDuNiveau = (def, niveau) => {
   const v = niveauDe(def, Math.max(1, n0(niveau)))?.effets?.vivant;
@@ -170,17 +173,25 @@ export function journeeVivant({ abri = {}, installations = [], contenu = {}, bil
     const st = etatCheptel(abri, inst, def, contenu, { jour, altitude });
     const esp = especeDe(contenu, st.espece) ?? {};
     const nom = def?.nom ?? inst.cle;
-    if (st.tetes <= 0) { vivant[inst.cle] = { ...st, manques: [], malade: null, sansPompe: 0 }; continue; }
     const genre = esp.genre ?? "betes";
+    if (st.tetes <= 0) {
+      // Un bac vide se resème (la tâche « cultures », une graine) ; un enclos vide attend qu'on le peuple.
+      const resemer = genre === "plants" && n0(v.plein) > 0 && aLaTache("cultures") && n0(stocks.graines) >= R.replanter.graines;
+      if (resemer) stocks.graines = n0(stocks.graines) - R.replanter.graines;
+      vivant[inst.cle] = { ...st, tetes: resemer ? Math.min(R.replanter.plants, n0(v.plein)) : 0, sante: R.santeMax, manques: [], malade: null, sansPompe: 0 };
+      continue;
+    }
     const tache = TACHE_VIVANT[genre] ?? "elevage";
     // Le soin de tous les jours : qui est à la tâche cure le bassin, change le filtre (eau sale évitée).
     if (n0(v.filtre) > 0 && aLaTache(tache)) st.filtreLe = jour;
     // Les manques du jour.
     const raison = arrets.get(inst.cle);
     const manques = [];
-    if (raison === "eau") manques.push("soif");
+    // Sans eau : l'installation arrêtée faute d'eau, ou éteinte (on ne s'en occupe plus : personne ne la remplit).
+    if (raison === "eau" || inst.actif === false) manques.push("soif");
     const mange = esp.mange ?? "";
-    if ((mange === "restes" && (personnes <= 0 || n0(manqueNourriture) > 0))
+    // Les restes : tant qu'on cuisine quelque chose, il y a des épluchures ; plus rien, quand personne n'a mangé ou que personne n'est là.
+    if ((mange === "restes" && (personnes <= 0 || n0(manqueNourriture) >= personnes))
       || (mange === "herbe" && n0(site.sol) < 1 && !aLaTache("elevage"))
       || (mange === "solution" && !compost)) manques.push("faim");
     const panne = n0(inst.etat) >= 3 || raison === "energie" || raison === "hors-service";
@@ -283,24 +294,29 @@ export function nettoyerCheptel(st, jour = 0) {
 }
 
 // ------------------------------------------------------------------ bêtes portées (prises en liberté, trouvées en fouillant)
-// etat.groupe.betes : [{ id, espece, n, depuis (quart), source }]. Le délai hors d'un enclos est celui de l'espèce (capture.horsEnclos,
-// en quarts) ; passé, elles meurent (une bête morte se mange encore).
+// etat.groupe.betes : [{ id, cle (l'espèce, ou un alias : porcelet, veau-moka), nombre, prisLe (quart), jusqua (quart), enclos: "",
+// abri: "", source }] : la forme des bêtes trouvées du lot 5 (fouille), pour que les deux lots partagent la même liste. Le délai hors
+// d'un enclos est celui de l'espèce (capture.horsEnclos, en quarts) ; passé, elles meurent (une bête morte se mange encore). Une bête
+// mise en enclos rejoint le cheptel de son espèce (peuplerCheptel) et quitte la liste ; une entrée « à l'enclos » (enclos posé, jusqua
+// null) d'un autre lot n'est jamais comptée ici.
 export const HORS_ENCLOS_DEFAUT = 4;
 export const horsEnclosDe = espece => Math.max(1, Math.floor(n0(espece?.capture?.horsEnclos) || HORS_ENCLOS_DEFAUT));
-export function ajouterBete(betes = [], { espece = "", n = 1, quart = 0, source = "" } = {}) {
+export const betesPortees = betes => (Array.isArray(betes) ? betes : []).filter(b => b && !b.enclos && Number(b.nombre) > 0);
+export function porterBete(betes = [], { espece = "", nombre = 1, quart = 0, source = "", contenu = {} } = {}) {
   const liste0 = Array.isArray(betes) ? betes.map(b => ({ ...b })) : [];
-  const q = Math.max(0, Math.floor(n0(n)));
+  const q = Math.max(0, Math.floor(n0(nombre)));
   if (!espece || !q) return { betes: liste0, bete: null };
-  const id = `b${quart}-${liste0.length + 1}-${espece}`;
-  const bete = { id, espece, n: q, depuis: n0(quart), source };
+  const id = `bete-${quart}-${espece}-${liste0.length + 1}`;
+  const bete = { id, cle: espece, nombre: q, prisLe: n0(quart), jusqua: n0(quart) + horsEnclosDe(especeDe(contenu, espece)), enclos: "", abri: "", source };
   return { betes: [...liste0, bete], bete };
 }
 // Les bêtes portées qui meurent à ce quart. -> { betes (celles qui restent), mortes: [{ ...bete, viande }] }
 export function betesQuiMeurent(betes = [], { quart = 0, contenu = {} } = {}) {
   const restent = [], mortes = [];
   for (const b of Array.isArray(betes) ? betes : []) {
-    const esp = especeDe(contenu, b.espece);
-    if (n0(quart) - n0(b.depuis) >= horsEnclosDe(esp)) mortes.push({ ...b, viande: Math.floor(n0(b.n) * n0(esp?.viande) + 1e-9) });
+    const esp = especeDe(contenu, b.cle);
+    const jusqua = b.jusqua === null || b.jusqua === undefined ? null : n0(b.jusqua);
+    if (!b.enclos && jusqua !== null && n0(quart) >= jusqua) mortes.push({ ...b, viande: Math.floor(n0(b.nombre) * n0(esp?.viande) + 1e-9) });
     else restent.push({ ...b });
   }
   return { betes: restent, mortes };
@@ -312,9 +328,9 @@ export function enclosPour(installations = [], contenu = {}, espece = "", abri =
     if (!(n0(inst?.niveau) >= 1)) continue;
     const def = installationDe(contenu, inst.cle);
     const v = vivantDuNiveau(def, inst.niveau);
-    if (!v || !especesPossibles(v).includes(espece)) continue;
+    if (!v || !especesPossibles(v).includes(cleEspece(contenu, espece))) continue;
     const st = etatCheptel(abri, inst, def, contenu, { jour, altitude });
-    if (st.tetes > 0 && st.espece && st.espece !== espece) continue;
+    if (st.tetes > 0 && st.espece && st.espece !== cleEspece(contenu, espece)) continue;
     return { cle: inst.cle, places: n0(v.places), tetes: st.tetes, etat: st };
   }
   return null;

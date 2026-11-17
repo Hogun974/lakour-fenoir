@@ -17,25 +17,28 @@ import { installation, equipement, objet, html, journal, table, MODULE } from ".
 // ---------------------------------------------------------------- Les espèces
 // { cle, nom, genre: "betes" | "poissons" | "plants" | "essaim", taux (naissances par jour et par couple), viande (nourriture par
 //   tête abattue), mange: "herbe" | "restes" | "solution" | "", maladie (chance par jour, abri insalubre), altitude: [min, max] | null,
-//   remede: { cout, texte }, capture: { difficulte, outils: [clé d'équipement], horsEnclos (quarts) } | null, produit (ce qu'on en tire) }
+//   remede: { cout, texte }, capture: { difficulte, outils: [clé d'équipement], horsEnclos (quarts) } | null, produit (ce qu'on en tire),
+//   alias?: [clé] (les clés des bêtes trouvées en fouillant du lot 5 : le porcelet est un cochon, le veau moka un bœuf moka) }
+// Les outils : ceux d'ici (cage de bambou, sac de goni, enfumoir), la corde de choka et les nasses qui existaient, et ceux du lot 5
+// (« cage », « corde ») s'il les apporte : un seul suffit, prendreBete accepte n'importe lequel de la liste.
 const TISANE = { cout: { plantes: 1 }, texte: "une tisane de zerbaz (une brassée)" };
 const EAU_CHANGEE = { cout: { eau: 4 }, texte: "l'eau changée, une poignée de sel (quatre d'eau)" };
 const LESSIVE = { cout: { ile: 1 }, texte: "de la lessive de cendre (du bois des alentours)" };
 export const ESPECES = [
   { cle: "poule", nom: "Poule péi", genre: "betes", taux: 0.08, viande: 1, mange: "restes", maladie: 0.02, altitude: null, remede: TISANE,
-    capture: { difficulte: "facile", outils: ["cage-de-bambou", "sac-de-goni"], horsEnclos: 4 },
+    capture: { difficulte: "facile", outils: ["cage-de-bambou", "cage", "sac-de-goni"], horsEnclos: 4 },
     produit: "Des œufs (une ration de nourriture vaut quatre œufs), et une poule au cari les jours de fête." },
   { cle: "lapin", nom: "Lapin", genre: "betes", taux: 0.1, viande: 1, mange: "herbe", maladie: 0.02, altitude: null, remede: TISANE,
-    capture: { difficulte: "normale", outils: ["cage-de-bambou", "sac-de-goni"], horsEnclos: 4 },
+    capture: { difficulte: "normale", outils: ["cage-de-bambou", "cage", "sac-de-goni"], horsEnclos: 4 },
     produit: "De la viande sans bruit, du fumier pour le jardin." },
   { cle: "cabri", nom: "Cabri", genre: "betes", taux: 0.02, viande: 6, mange: "herbe", maladie: 0.01, altitude: null, remede: TISANE,
-    capture: { difficulte: "normale", outils: ["cordes-de-choka"], horsEnclos: 6 },
+    capture: { difficulte: "normale", outils: ["cordes-de-choka", "corde"], horsEnclos: 6 },
     produit: "Du lait, des chevreaux, du fumier ; un cabri abattu, six rations et une peau." },
-  { cle: "cochon", nom: "Cochon", genre: "betes", taux: 0.03, viande: 10, mange: "restes", maladie: 0.01, altitude: null, remede: TISANE,
-    capture: { difficulte: "normale", outils: ["cordes-de-choka", "sac-de-goni"], horsEnclos: 5 },
+  { cle: "cochon", nom: "Cochon", genre: "betes", taux: 0.03, viande: 10, mange: "restes", maladie: 0.01, altitude: null, remede: TISANE, alias: ["porcelet"],
+    capture: { difficulte: "normale", outils: ["cordes-de-choka", "corde", "sac-de-goni"], horsEnclos: 5 },
     produit: "Rien chaque jour, sinon le fumier : on l'engraisse aux restes et aux troncs de bananier, et un cochon nourrit le camp dix jours." },
-  { cle: "boeuf-moka", nom: "Bœuf moka", genre: "betes", taux: 0.004, viande: 20, mange: "herbe", maladie: 0.01, altitude: null, remede: TISANE,
-    capture: { difficulte: "normale", outils: ["cordes-de-choka"], horsEnclos: 8 },
+  { cle: "boeuf-moka", nom: "Bœuf moka", genre: "betes", taux: 0.004, viande: 20, mange: "herbe", maladie: 0.01, altitude: null, remede: TISANE, alias: ["veau-moka"],
+    capture: { difficulte: "normale", outils: ["cordes-de-choka", "corde"], horsEnclos: 8 },
     produit: "Du lait, du fumier, la traction d'une charrette ; abattu, vingt rations et trois peaux." },
   { cle: "essaim", nom: "Essaim d'abeilles", genre: "essaim", taux: 0, viande: 0, mange: "", maladie: 0.01, altitude: null, remede: TISANE,
     capture: { difficulte: "normale", outils: ["enfumoir"], horsEnclos: 2 },
@@ -291,7 +294,7 @@ Le système suit chaque **cheptel** (ou chaque bac de plants) pour vous : ses **
   { cle: "regle", titre: "Une seule règle pour tout ce qui vit", texte: `Chaque jour, chaque **manque** ôte **1 de santé** au cheptel :
 
 - **la soif** : l'installation n'a pas eu son eau (les personnes boivent d'abord) ;
-- **la faim** : les poules, les cochons et les poissons vivent des **restes** du groupe (un jour où le groupe a manqué de vivres, ou n'était pas là, ils ont faim) ; les cabris, les lapins et les bœufs broutent (**l'herbe** : sur un site sans terre, il faut quelqu'un à l'élevage pour en couper ailleurs) ; les plants hors-sol boivent la **solution** du compost (sans compost en service, ils ont faim) ;
+- **la faim** : les poules, les cochons et les poissons vivent des **restes** du groupe (un jour où personne n'a mangé, ou où personne n'était là, ils ont faim) ; les cabris, les lapins et les bœufs broutent (**l'herbe** : sur un site sans terre, il faut quelqu'un à l'élevage pour en couper ailleurs) ; les plants hors-sol boivent la **solution** du compost (sans compost en service, ils ont faim) ;
 - **la panne** : l'installation est hors service, ou n'a plus de courant ;
 - **l'eau sale** : un bassin à curer, un filtre à changer, passé son temps (personne à la tâche pour le faire) ;
 - **l'ombre** : des plants sans soleil ;

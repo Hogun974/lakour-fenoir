@@ -81,8 +81,11 @@ test("vivant : chaque manque ôte 1 de santé ; un jour sans mal en rend 1 ; à 
   assert.ok(r.evenements.some(x => x.cle === "vivant-soif"));
   // Soif et faim (les restes : le groupe a manqué de vivres) : −2.
   r = L.journeeVivant({ abri: abriDe(insts, { vivant: { "basse-cour": { tetes: 9, sante: 3 } } }), installations: insts, contenu, bilan: { arrets: [{ cle: "basse-cour", raison: "eau" }] },
-    conditions: { jour: 50, personnes: 4 }, manqueNourriture: 2 });
-  assert.equal(r.vivant["basse-cour"].sante, 1);
+    conditions: { jour: 50, personnes: 4 }, manqueNourriture: 4 });
+  assert.equal(r.vivant["basse-cour"].sante, 1, "personne n'a mangé : plus de restes");
+  // Une ration de moins pour quatre : on a cuisiné, il y a des épluchures.
+  r = L.journeeVivant({ abri: abriDe(insts, { vivant: { "basse-cour": { tetes: 9, sante: 3 } } }), installations: insts, contenu, bilan: {}, conditions: { jour: 50, personnes: 4 }, manqueNourriture: 1 });
+  assert.deepEqual(r.vivant["basse-cour"].manques, []);
   // À 0 : un tiers meurt (au moins une).
   r = jour(abriDe(insts, { vivant: { "basse-cour": { tetes: 9, sante: 1 } } }), { arrets: [{ cle: "basse-cour", raison: "eau" }] });
   assert.deepEqual([r.vivant["basse-cour"].sante, r.vivant["basse-cour"].tetes], [0, 6]);
@@ -96,6 +99,10 @@ test("vivant : chaque manque ôte 1 de santé ; un jour sans mal en rend 1 ; à 
   // Personne à l'abri : pas de restes, les poules ont faim.
   r = jour(abriDe(insts, { vivant: { "basse-cour": { tetes: 9, sante: 3 } } }), {}, { personnes: 0 });
   assert.deepEqual(r.vivant["basse-cour"].manques, ["faim"]);
+  // Éteinte (on ne s'en occupe plus) : personne ne la remplit, elles ont soif.
+  const eteinte = [{ ...inst("basse-cour", 2), actif: false }];
+  r = L.journeeVivant({ abri: abriDe(eteinte, { vivant: { "basse-cour": { tetes: 9, sante: 3 } } }), installations: eteinte, contenu, bilan: {}, conditions: { jour: 50, personnes: 4 } });
+  assert.deepEqual(r.vivant["basse-cour"].manques, ["soif"]);
   // Surpopulation : plus de têtes que de places.
   r = jour(abriDe(insts, { vivant: { "basse-cour": { tetes: 14, sante: 3 } } }), {});
   assert.ok(r.vivant["basse-cour"].manques.includes("surpopulation"));
@@ -162,6 +169,9 @@ test("vivant : les naissances (santé 2, deux bêtes, une place), jamais hors de
   const p = L.journeeVivant({ abri: abriDe(bacs, { vivant: { "bacs-de-culture": { tetes: 2, sante: 3, filtreLe: 1 } } }), installations: bacs, contenu, bilan: { actives: ["compost"] },
     conditions: { jour: 2, personnes: 2, travailleurs: { cultures: [{ niveau: 1 }] } } });
   assert.deepEqual([p.vivant["bacs-de-culture"].tetes, p.stocks.graines], [8, 9]);
+  const vide = L.journeeVivant({ abri: abriDe(bacs, { vivant: { "bacs-de-culture": { tetes: 0, sante: 0, filtreLe: 1 } } }), installations: bacs, contenu, bilan: { actives: ["compost"] },
+    conditions: { jour: 2, personnes: 2, travailleurs: { cultures: [{ niveau: 1 }] } } });
+  assert.deepEqual([vide.vivant["bacs-de-culture"].tetes, vide.vivant["bacs-de-culture"].sante, vide.stocks.graines], [6, 3, 9], "un bac vide se resème");
 });
 
 test("vivant : la maladie prend selon l'insalubrité (flux à part), passe seule ou se soigne ; malade, le cheptel perd 1 tous les deux jours", () => {
@@ -206,14 +216,21 @@ test("vivant : peupler jusqu'aux places, abattre (la viande, le troupeau baisse)
 });
 
 test("vivant : les bêtes portées tiennent leur délai hors d'un enclos, puis meurent (leur viande se mange) ; l'enclos de leur espèce", () => {
-  let b = L.ajouterBete([], { espece: "cabri", n: 2, quart: 10, source: "capture" }).betes;
-  b = L.ajouterBete(b, { espece: "poule", n: 3, quart: 12 }).betes;
+  let b = L.porterBete([], { espece: "cabri", nombre: 2, quart: 10, source: "capture", contenu }).betes;
+  b = L.porterBete(b, { espece: "poule", nombre: 3, quart: 12, contenu }).betes;
   assert.equal(b.length, 2);
+  assert.deepEqual(Object.keys(b[0]).sort(), ["abri", "cle", "enclos", "id", "jusqua", "nombre", "prisLe", "source"], "la forme des bêtes trouvées du lot 5");
+  assert.deepEqual([b[0].jusqua, b[1].jusqua], [16, 16]);
   let r = L.betesQuiMeurent(b, { quart: 15, contenu });
   assert.equal(r.mortes.length, 0, "15 − 10 < 6 quarts pour un cabri, 15 − 12 < 4 pour une poule");
   r = L.betesQuiMeurent(b, { quart: 16, contenu });
-  assert.deepEqual(r.mortes.map(x => [x.espece, x.viande]), [["cabri", 12], ["poule", 3]]);
+  assert.deepEqual(r.mortes.map(x => [x.cle, x.viande]), [["cabri", 12], ["poule", 3]]);
   assert.equal(r.betes.length, 0);
+  // Une entrée « à l'enclos » d'un autre lot (enclos posé, jusqua null) ne meurt pas ; un porcelet (alias) est un cochon.
+  assert.equal(L.betesQuiMeurent([{ id: "x", cle: "poule", nombre: 2, prisLe: 0, jusqua: null, enclos: "basse-cour" }], { quart: 99, contenu }).mortes.length, 0);
+  assert.equal(L.especeDe(contenu, "porcelet").cle, "cochon");
+  assert.equal(L.especeDe(contenu, "veau-moka").cle, "boeuf-moka");
+  assert.equal(L.betesQuiMeurent([{ id: "p", cle: "porcelet", nombre: 1, prisLe: 0, jusqua: 5 }], { quart: 5, contenu }).mortes[0].viande, 10);
   const insts = [inst("basse-cour"), inst("enclos-a-cabris")];
   assert.equal(L.enclosPour(insts, contenu, "cabri", abriDe(insts)).cle, "enclos-a-cabris");
   assert.equal(L.enclosPour(insts, contenu, "lapin", abriDe(insts)), null);
@@ -221,7 +238,7 @@ test("vivant : les bêtes portées tiennent leur délai hors d'un enclos, puis m
   const { monde, etat } = L.demarrerPartie({ contenu, graine: "vivant|portees", region: "le-tampon", membres: ["a"] });
   const ins = L.installerAbri(monde, contenu, { site: "ferme-de-la-plaine-des-cafres", jour: 0, quart: 0 });
   const abri = { id: "abri", system: ins.abri, installations: ins.installations };
-  const e = { ...etat, groupe: { ...etat.groupe, abri: "abri", region: ins.abri.region, betes: L.ajouterBete([], { espece: "cabri", n: 1, quart: 0 }).betes } };
+  const e = { ...etat, groupe: { ...etat.groupe, abri: "abri", region: ins.abri.region, betes: L.porterBete([], { espece: "cabri", nombre: 1, quart: 0, contenu }).betes } };
   const avant = abri.system.stocks.nourriture;
   const s = L.avancer({ etat: e, monde: ins.monde, contenu, quarts: 6, survivants: [{ id: "a", system: L.survivantNeuf({}) }], abri });
   assert.equal(s.etat.groupe.betes.length, 0);

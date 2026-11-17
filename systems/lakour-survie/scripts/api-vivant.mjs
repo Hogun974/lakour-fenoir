@@ -69,9 +69,9 @@ export function fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jour
     const ab = abriCourant(etat);
     const b = ab ? bilanVivant(etat, mondeMJ()) : null;
     const quart = Number(etat.horloge?.quart) || 0;
-    const betes = (etat.groupe?.betes ?? []).map(x => {
-      const e = L.especeDe(contenu(), x.espece);
-      return { ...x, nom: e?.nom ?? x.espece, reste: Math.max(0, L.horsEnclosDe(e) - (quart - Number(x.depuis))) };
+    const betes = L.betesPortees(etat.groupe?.betes).map(x => {
+      const e = L.especeDe(contenu(), x.cle);
+      return { ...x, espece: e?.cle ?? x.cle, nom: e?.nom ?? x.cle, reste: Math.max(0, Number(x.jusqua ?? quart) - quart) };
     });
     return { cheptels: structuredClone(b?.cheptels ?? []), betes, chien: chienAvecLeGroupe(etat), outils: [...new Set(outilsDuGroupe(etat))] };
   }
@@ -102,7 +102,7 @@ export function fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jour
       if ((Number(stocks.graines) || 0) < graines) throw clair(t(K("Erreurs.Graines"), { n: graines }));
       stocks = L.retirerStocks(stocks, { graines }).stocks;
     } else if (portees) {
-      const dispo = (ctx.etat.groupe.betes ?? []).filter(b => b.espece === voulue).reduce((s, b) => s + Number(b.n), 0);
+      const dispo = L.betesPortees(ctx.etat.groupe.betes).filter(b => L.cleEspece(contenu(), b.cle) === voulue).reduce((s, b) => s + Number(b.nombre), 0);
       if (!dispo) throw clair(t(K("Erreurs.AucunePortee"), { espece: esp.nom }));
       q = Math.min(q, dispo);
     }
@@ -111,11 +111,11 @@ export function fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jour
     if (esp.genre !== "plants" && portees) {
       let reste = r.entrent;
       ctx.etat.groupe = { ...ctx.etat.groupe, betes: (ctx.etat.groupe.betes ?? []).map(b => {
-        if (b.espece !== voulue || reste <= 0) return b;
-        const pris = Math.min(reste, Number(b.n));
+        if (b.enclos || L.cleEspece(contenu(), b.cle) !== voulue || reste <= 0) return b;
+        const pris = Math.min(reste, Number(b.nombre));
         reste -= pris;
-        return { ...b, n: Number(b.n) - pris };
-      }).filter(b => Number(b.n) > 0) };
+        return { ...b, nombre: Number(b.nombre) - pris };
+      }).filter(b => b.enclos || Number(b.nombre) > 0) };
     }
     if (esp.genre === "plants") await ab.update({ system: { stocks } });
     await ecrireCheptel(ab, inst.cle, r.etat);
@@ -126,21 +126,22 @@ export function fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jour
   // Mettre les bêtes portées dans l'enclos de leur espèce (toutes, ou celles d'une prise).
   async function mettreEnEnclosInterne(ctx, { beteId = "" } = {}) {
     const ab = abriIci(ctx);
-    const portees = (ctx.etat.groupe.betes ?? []).filter(b => !beteId || b.id === beteId);
+    const portees = L.betesPortees(ctx.etat.groupe.betes).filter(b => !beteId || b.id === beteId);
     if (!portees.length) throw clair(t(K("Erreurs.RienAPorter")));
     const sortie = [];
     let restes = (ctx.etat.groupe.betes ?? []).filter(b => !portees.includes(b));
     let systeme = aPlat(ab.system);
     for (const b of portees) {
-      const enclos = L.enclosPour(instancesDe(ab), contenu(), b.espece, systeme, { jour: jourCtx(ctx) });
-      if (!enclos) { restes.push(b); sortie.push({ id: b.id, espece: b.espece, entrent: 0, raison: "sans-enclos" }); continue; }
-      const r = L.peuplerCheptel(enclos.etat, { n: b.n, places: enclos.places, espece: b.espece });
-      if (!r.ok) { restes.push(b); sortie.push({ id: b.id, espece: b.espece, entrent: 0, raison: r.motif }); continue; }
+      const espece = L.cleEspece(contenu(), b.cle);
+      const enclos = L.enclosPour(instancesDe(ab), contenu(), espece, systeme, { jour: jourCtx(ctx) });
+      if (!enclos) { restes.push(b); sortie.push({ id: b.id, espece, entrent: 0, raison: "sans-enclos" }); continue; }
+      const r = L.peuplerCheptel(enclos.etat, { n: b.nombre, places: enclos.places, espece });
+      if (!r.ok) { restes.push(b); sortie.push({ id: b.id, espece, entrent: 0, raison: r.motif }); continue; }
       systeme = { ...systeme, vivant: { ...(systeme.vivant ?? {}), [enclos.cle]: r.etat } };
       await ecrireCheptel(ab, enclos.cle, r.etat);
-      if (r.restent) restes.push({ ...b, n: r.restent });
-      sortie.push({ id: b.id, espece: b.espece, entrent: r.entrent, installation: enclos.cle });
-      noter(ctx, tx("Vivant.Journal.Peuple", { installation: defDe("installations", enclos.cle)?.nom ?? enclos.cle, n: r.entrent, espece: nomEspece(b.espece) }));
+      if (r.restent) restes.push({ ...b, nombre: r.restent });
+      sortie.push({ id: b.id, espece, entrent: r.entrent, installation: enclos.cle });
+      noter(ctx, tx("Vivant.Journal.Peuple", { installation: defDe("installations", enclos.cle)?.nom ?? enclos.cle, n: r.entrent, espece: nomEspece(espece) }));
     }
     ctx.etat.groupe = { ...ctx.etat.groupe, betes: restes };
     return { betes: sortie, restent: restes.length };
@@ -212,7 +213,7 @@ export function fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jour
     let bete = null;
     if (r.prise) {
       const q = Math.max(1, Math.floor(Number(n) || 1));
-      const x = L.ajouterBete(ctx.etat.groupe.betes ?? [], { espece: esp.cle, n: q, quart: ctx.etat.horloge.quart, source: "capture" });
+      const x = L.porterBete(ctx.etat.groupe.betes ?? [], { espece: esp.cle, nombre: q, quart: ctx.etat.horloge.quart, source: "capture", contenu: contenu() });
       ctx.etat.groupe = { ...ctx.etat.groupe, betes: x.betes };
       bete = x.bete;
       noter(ctx, tx("Vivant.Journal.Prise", { nom: a.name, n: q, espece: esp.nom, quarts: L.horsEnclosDe(esp) }));
@@ -242,19 +243,19 @@ export function fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jour
 
   async function recevoirBeteInterne(ctx, { espece = "", n = 1, source = "" } = {}) {
     const esp = especeOuErreur(espece);
-    const x = L.ajouterBete(ctx.etat.groupe.betes ?? [], { espece: esp.cle, n, quart: ctx.etat.horloge.quart, source: String(source || "") });
+    const x = L.porterBete(ctx.etat.groupe.betes ?? [], { espece: esp.cle, nombre: n, quart: ctx.etat.horloge.quart, source: String(source || ""), contenu: contenu() });
     if (!x.bete) throw clair(t(K("Erreurs.nombre")));
     ctx.etat.groupe = { ...ctx.etat.groupe, betes: x.betes };
-    noter(ctx, tx("Vivant.Journal.Recue", { n: x.bete.n, espece: esp.nom, quarts: L.horsEnclosDe(esp) }));
+    noter(ctx, tx("Vivant.Journal.Recue", { n: x.bete.nombre, espece: esp.nom, quarts: L.horsEnclosDe(esp) }));
     return { bete: x.bete };
   }
 
   async function lacherBetesInterne(ctx, { beteId = "" } = {}) {
-    const avant = ctx.etat.groupe.betes ?? [];
-    const restent = avant.filter(b => beteId && b.id !== beteId);
+    const restent = (ctx.etat.groupe.betes ?? []).filter(b => b.enclos || (beteId && b.id !== beteId));
+    const lachees = (ctx.etat.groupe.betes ?? []).length - restent.length;
     ctx.etat.groupe = { ...ctx.etat.groupe, betes: restent };
-    if (avant.length !== restent.length) noter(ctx, tx("Vivant.Journal.Lachees", { n: avant.length - restent.length }));
-    return { lachees: avant.length - restent.length };
+    if (lachees) noter(ctx, tx("Vivant.Journal.Lachees", { n: lachees }));
+    return { lachees };
   }
 
   // Un assaut (assautInterne) : un Livide resté près d'un enclos tue une bête ; une bande en emporte.

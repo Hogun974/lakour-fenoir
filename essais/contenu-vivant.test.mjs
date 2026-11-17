@@ -22,7 +22,7 @@ test("contenu « vivant » : dix espèces, leurs remèdes et leurs outils ; aucu
   assert.deepEqual([viande.poule, viande.cabri, viande.cochon, viande["boeuf-moka"]], [1, 6, 10, 20], "les viandes du jeu 3D");
   assert.deepEqual(ESPECES.find(e => e.cle === "tilapia").altitude, [0, 900]);
   assert.deepEqual(ESPECES.find(e => e.cle === "camaron").altitude, [0, 500]);
-  for (const e of ESPECES.filter(x => x.capture)) for (const o of e.capture.outils) assert.ok(D.equipements.some(q => q.cle === o && (q.capture ?? []).includes(e.cle)), `${e.cle} : ${o}`);
+  for (const e of ESPECES.filter(x => x.capture)) assert.ok(e.capture.outils.some(o => D.equipements.some(q => q.cle === o && (q.capture ?? []).includes(e.cle))), e.cle);
   assert.deepEqual(EQUIPEMENTS_VIVANT.map(q => q.system.cle), ["cage-de-bambou", "sac-de-goni", "enfumoir"]);
   // Une espèce inconnue sur un cheptel est refusée par le fabricant.
   const mute = structuredClone(D);
