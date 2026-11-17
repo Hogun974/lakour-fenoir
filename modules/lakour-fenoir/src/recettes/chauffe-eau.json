@@ -23,7 +23,8 @@
     "produit": {
       "equipement": "chauffe-eau-solaire",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

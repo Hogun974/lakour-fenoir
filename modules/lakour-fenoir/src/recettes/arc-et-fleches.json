@@ -15,12 +15,16 @@
     "difficulte": "difficile",
     "requiert": {
       "savoirs": [],
-      "installation": "atelier"
+      "installation": {
+        "metier": "etabli",
+        "niveau": 1
+      }
     },
     "produit": {
       "equipement": "arc-de-chasse",
       "n": 1
-    }
+    },
+    "metier": "etabli"
   },
   "effects": [],
   "folder": null,

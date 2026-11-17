@@ -11,17 +11,21 @@
       "nourriture": 2,
       "materiaux": 1
     },
-    "travail": 2,
+    "travail": 3,
     "competence": "survie",
     "difficulte": "normale",
     "requiert": {
       "savoirs": [],
-      "installation": null
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
     },
     "produit": {
       "ressource": "medicaments",
       "n": 1
-    }
+    },
+    "metier": "cuisine"
   },
   "effects": [],
   "folder": null,

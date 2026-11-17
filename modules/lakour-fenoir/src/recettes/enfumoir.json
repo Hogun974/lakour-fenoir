@@ -1,0 +1,43 @@
+{
+  "_id": "jFAFJwxAPSIeJLWM",
+  "_key": "!items!jFAFJwxAPSIeJLWM",
+  "name": "Enfumoir",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "enfumoir",
+    "description": "<p>Une boîte de conserve percée, un chiffon, du chaume : il fume doux et longtemps.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "enfumoir",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "enfumoir"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

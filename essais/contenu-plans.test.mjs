@@ -7,6 +7,7 @@ import assert from "node:assert/strict";
 import { fabriquer, fabriquerAnglais, lireDictionnaires, verifierDonnees } from "../outils/fabriquer-fenoir.mjs";
 import { donnees } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { TABLES_PLANS, JOURNAL_PLANS, LIEUX_A_PLANS, PLANS_DES_SITES } from "../modules/lakour-fenoir/contenu/plans.mjs";
+import { PLANS_DES_SITES_ATELIERS } from "../modules/lakour-fenoir/contenu/ateliers.mjs";
 import { MODULE, sansBalises } from "../modules/lakour-fenoir/contenu/aides.mjs";
 import * as L from "../systems/lakour-survie/logique/index.mjs";
 
@@ -29,8 +30,9 @@ test("registre : les plans (rareté, lieux, plans uniques et leur objet), les pl
   // Chaque plan rare se trouve quelque part : dans un lieu à plans, parmi les plans d'un site, ou (plan unique) dans un type de site.
   const quelquePart = new Set([...D.lieuxAPlans.flatMap(l => l.tirage.map(x => x.plan)), ...D.sites.flatMap(s => s.plans ?? [])]);
   for (const p of D.plans.filter(x => L.estRare(x))) assert.ok(quelquePart.has(p.cle) || (p.unique && p.lieux.length), `${p.cle} ne se trouve nulle part`);
-  assert.equal(D.sites.filter(s => (s.plans ?? []).length).length, Object.keys(PLANS_DES_SITES).length);
-  assert.deepEqual(D.sites.find(s => s.cle === "centrale-de-langevin").plans, ["pico-hydro", "batteries"]);
+  // Lot 6 « ateliers » : ses plans s'ajoutent à ceux des sites (contenu/ateliers.mjs), après ceux du lot « plans ».
+  assert.equal(D.sites.filter(s => (s.plans ?? []).length).length, new Set([...Object.keys(PLANS_DES_SITES), ...Object.keys(PLANS_DES_SITES_ATELIERS)]).size);
+  assert.deepEqual(D.sites.find(s => s.cle === "centrale-de-langevin").plans, ["pico-hydro", "batteries", ...PLANS_DES_SITES_ATELIERS["centrale-de-langevin"]]);
   // Les sept lieux : leur fenêtre (saison sèche, nouvelle lune, après un cyclone, entre deux coulées, ou toujours), leur garde.
   assert.equal(D.lieuxAPlans.length, 7);
   const fenetres = D.lieuxAPlans.map(l => Object.keys(l.fenetre).join(",") || "toujours").sort();

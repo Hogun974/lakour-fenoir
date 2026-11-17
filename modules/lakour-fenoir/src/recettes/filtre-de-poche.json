@@ -23,7 +23,8 @@
     "produit": {
       "equipement": "filtre-portatif",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

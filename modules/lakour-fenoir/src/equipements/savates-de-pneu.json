@@ -1,0 +1,38 @@
+{
+  "_id": "dOJW8zhSSPXCuHN8",
+  "_key": "!items!dOJW8zhSSPXCuHN8",
+  "name": "Savates de pneu",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "savates-de-pneu",
+    "categorie": "vie",
+    "description": "<p>Des savates deux-doigts découpées dans un pneu, la bride en chambre à air : elles ne s'usent pas, ne glissent pas sur le basalte mouillé, et ne coûtent rien.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 0.25
+    },
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "savates-de-pneu"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

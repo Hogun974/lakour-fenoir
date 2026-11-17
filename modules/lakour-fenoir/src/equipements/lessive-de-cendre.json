@@ -1,0 +1,43 @@
+{
+  "_id": "WkEm9AuYCJZabVA8",
+  "_key": "!items!WkEm9AuYCJZabVA8",
+  "name": "Lessive de cendre",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "lessive-de-cendre",
+    "categorie": "soin",
+    "description": "<p>De la cendre tamisée et de l'eau chaude : on y fait bouillir le linge et les draps, et la gale s'en va avec. Elle tient lieu de médicament pour la gale et donne un dé de plus.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "remede": {
+      "afflictions": [
+        "gale"
+      ],
+      "bonus": 1,
+      "remplace": true
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lessive-de-cendre"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

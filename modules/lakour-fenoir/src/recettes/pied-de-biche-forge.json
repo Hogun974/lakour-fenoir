@@ -1,0 +1,56 @@
+{
+  "_id": "nqQIJMP2B1CNJz8d",
+  "_key": "!items!nqQIJMP2B1CNJz8d",
+  "name": "Pied-de-biche forgé",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "pied-de-biche-forge",
+    "description": "<p>Quatre ferrailles soudées au feu et recourbées, un sac de charbon.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "forge",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "pied-de-biche",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 2,
+    "metier": "forge",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pied-de-biche-forge"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

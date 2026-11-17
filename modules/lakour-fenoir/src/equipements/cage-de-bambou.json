@@ -1,0 +1,36 @@
+{
+  "_id": "RagkwcKEADt02QUU",
+  "_key": "!items!RagkwcKEADt02QUU",
+  "name": "Cage de bambou",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cage-de-bambou",
+    "categorie": "outil",
+    "description": "<p>Une cage de gaulettes liées : pour emporter vivante une poule ou un lapin trouvés en fouillant. Sans elle, la bête file.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cage-de-bambou"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

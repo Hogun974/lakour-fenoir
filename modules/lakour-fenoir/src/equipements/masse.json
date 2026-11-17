@@ -1,0 +1,43 @@
+{
+  "_id": "ORVVChbOhbYEy4y7",
+  "_key": "!items!ORVVChbOhbYEy4y7",
+  "name": "Masse forgée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "masse",
+    "categorie": "outil",
+    "description": "<p>Huit kilos d'acier au bout d'un manche : le roc, les murs en dur, et ce qui se met en travers.</p>",
+    "bonus": {
+      "bricolage": 1,
+      "combat": 1
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "forge",
+    "gammes": [
+      "masse"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "masse"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

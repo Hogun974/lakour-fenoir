@@ -1,0 +1,47 @@
+{
+  "_id": "PjNSHEk3RjBGkiGa",
+  "_key": "!items!PjNSHEk3RjBGkiGa",
+  "name": "Levier de bois dur",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "pied-de-biche-de-fortune",
+    "description": "<p>Une branche de bois dur, taillée en biseau au couteau.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "pied-de-biche-de-fortune",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pied-de-biche-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

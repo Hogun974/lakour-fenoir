@@ -1,0 +1,48 @@
+{
+  "_id": "1deEaU0io89vdPvA",
+  "_key": "!items!1deEaU0io89vdPvA",
+  "name": "Tisane de la gramoune",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "tisane-de-la-gramoune",
+    "description": "<p>Les plantes et les doses du cahier d'une gramoune : celui qui a le cahier la fait plus vite (son plan). Deux bols.</p>",
+    "cout": {
+      "plantes": 3,
+      "eau": 1
+    },
+    "travail": 1,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "zerbaz"
+      ],
+      "installation": {
+        "metier": "tisanerie",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "tisane-de-la-gramoune",
+      "n": 2
+    },
+    "metier": "tisanerie"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tisane-de-la-gramoune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

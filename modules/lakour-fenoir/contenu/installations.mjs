@@ -189,7 +189,7 @@ export const INSTALLATIONS = [
     ] }),
 
   // ---------------------------------------------------------------- Vie
-  installation({ cle: "atelier", nom: "Atelier", categorie: "vie",
+  installation({ cle: "atelier", nom: "Atelier", categorie: "vie", metiers: ["etabli", "mecanique", "electricite"],   // lot 6 : un atelier à tout faire
     description: `Un établi, un étau, des outils rangés, une caisse de pièces triées. On y répare, on y fabrique, on y apprend.`,
     niveaux: [
       { cout: { materiaux: 4, pieces: 2, travail: 8 }, effets: { bonus: { bricolage: 1 } } },
@@ -214,7 +214,7 @@ export const INSTALLATIONS = [
     niveaux: [
       { cout: { materiaux: 1, travail: 1 }, effets: { autel: true } }
     ] }),
-  installation({ cle: "cuisine-commune", arbre: "lontan", nom: "Cuisine commune", categorie: "vie",
+  installation({ cle: "cuisine-commune", arbre: "lontan", nom: "Cuisine commune", categorie: "vie", metiers: ["cuisine"],
     description: `Un feu de bois sous un auvent, de grandes marmites, une table pour tout le monde. Un cari partagé tient un groupe ensemble mieux qu'un discours. La fumée, elle, monte haut.`,
     niveaux: [
       { cout: { materiaux: 3, pieces: 1, travail: 6 }, effets: { moral: 1, visibilite: 1, odeur: 1 } }
@@ -307,7 +307,7 @@ export const INSTALLATIONS = [
     niveaux: [
       { cout: { ile: 3, travail: 8 }, effets: { conservation: true, stockage: { nourriture: 50 } } }
     ] }),
-  installation({ cle: "gaziniere", arbre: "moderne", role: "cuisine-commune", rang: 0, nom: "Gazinière", categorie: "vie",
+  installation({ cle: "gaziniere", arbre: "moderne", role: "cuisine-commune", rang: 0, nom: "Gazinière", categorie: "vie", metiers: ["cuisine"],
     description: `La gazinière d'une cuisine, sa bouteille de treize kilos dessous : on cuit le cari sans fumée, donc sans se faire voir. La bouteille se vide ; quand il n'y a plus de gaz, on retourne au feu de bois (la cuisine commune prend le relais si elle existe).`,
     niveaux: [
       { cout: { materiaux: 1, pieces: 1, travail: 2 }, effets: { moral: 1, consommation: { gaz: 1 } } }

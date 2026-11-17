@@ -10,7 +10,7 @@
     "cout": {
       "plantes": 3
     },
-    "travail": 2,
+    "travail": 4,
     "competence": "soins",
     "difficulte": "normale",
     "requiert": {
@@ -22,7 +22,8 @@
     "produit": {
       "ressource": "medicaments",
       "n": 2
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

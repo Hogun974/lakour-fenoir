@@ -1,0 +1,38 @@
+{
+  "_id": "4m4MeL0yMpWDSA6m",
+  "_key": "!items!4m4MeL0yMpWDSA6m",
+  "name": "Vouve",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "vouve",
+    "categorie": "outil",
+    "description": "<p>La nasse tressée de gaulettes et de vacoa qu'on cale dans le courant, à l'embouchure des rivières, pour les bichiques et les petits poissons. On la pose le soir, on la relève au matin.</p>",
+    "bonus": {
+      "survie": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "vouve"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

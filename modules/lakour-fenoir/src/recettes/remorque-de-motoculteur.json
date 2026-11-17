@@ -1,0 +1,59 @@
+{
+  "_id": "CeaTWYwgFgdXx4Yt",
+  "_key": "!items!CeaTWYwgFgdXx4Yt",
+  "name": "Remorque de motoculteur",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "remorque-de-motoculteur",
+    "description": "<p>Dix ferrailles, deux tôles, six planches, deux roues, douze boîtes de vis : le plateau que tire le motoculteur.</p>",
+    "cout": {
+      "materiaux": 4,
+      "pieces": 3
+    },
+    "travail": 6,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "motoculteur-et-remorque",
+      "n": 1
+    },
+    "outils": [
+      "pince",
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "motoculteur",
+        "n": 1
+      }
+    ],
+    "metier": "mecanique",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "remorque-de-motoculteur"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

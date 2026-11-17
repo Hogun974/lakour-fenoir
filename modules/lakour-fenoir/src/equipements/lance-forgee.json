@@ -1,0 +1,42 @@
+{
+  "_id": "sefq4CERKvk8bDal",
+  "_key": "!items!sefq4CERKvk8bDal",
+  "name": "Lance forgée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "lance-forgee",
+    "categorie": "arme",
+    "description": "<p>Un fer de lance forgé et trempé sur un bambou plein : elle tient à distance, et elle dure.</p>",
+    "bonus": {
+      "combat": 2
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "forge",
+    "gammes": [
+      "lance"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lance-forgee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

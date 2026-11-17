@@ -6,6 +6,7 @@ import assert from "node:assert/strict";
 import { fabriquer, fabriquerAnglais, lireDictionnaires, verifierDonnees } from "../outils/fabriquer-fenoir.mjs";
 import { donnees } from "../modules/lakour-fenoir/contenu/index.mjs";
 import { CORVEES, BAREME, TABLES_COMMUNAUTE } from "../modules/lakour-fenoir/contenu/communaute.mjs";
+import { BAREME_ATELIERS } from "../modules/lakour-fenoir/contenu/ateliers.mjs";
 import { sansBalises } from "../modules/lakour-fenoir/contenu/aides.mjs";
 import * as L from "../systems/lakour-survie/logique/index.mjs";
 
@@ -33,7 +34,8 @@ test("les corvées : vingt-six, aux treize tâches ; le barème des objets en pa
   assert.deepEqual(L.verifierCorvees(D), []);
   assert.deepEqual([...new Set(CORVEES.map(c => c.tache))].sort(), ["atelier", "chantier", "cuisine", "cultures", "eau", "elevage", "fouille", "garde", "soins"]);
   assert.ok(CORVEES.every(c => c.description.length > 10));
-  assert.deepEqual(D.bareme, BAREME);
+  // Lot 6 « ateliers » (contrat §24) : les armes remises en état s'ajoutent au barème du lot 10, qui reste tel quel.
+  assert.deepEqual(D.bareme, { ...BAREME, objets: { ...BAREME.objets, ...BAREME_ATELIERS } });
   assert.equal(BAREME.objets["fusil-de-chasse"], 20, "40 au barème du jeu 3D, une part = 2");
   for (const k of ["fusil-de-chasse", "carabine-22", "pistolet-de-service", "tronconneuse"]) assert.ok(D.equipements.some(e => e.cle === k), k);
   const tables = docs.filter(d => d.pack === "tables").map(d => d.doc.flags["lakour-fenoir"].cle);

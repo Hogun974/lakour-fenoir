@@ -20,7 +20,8 @@
     "produit": {
       "equipement": "bouclier-de-tole",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

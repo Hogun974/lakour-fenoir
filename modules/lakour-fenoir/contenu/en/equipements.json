@@ -45,6 +45,28 @@
       "en": "\"Bébour: the gîte is empty, the fire catches well, nobody around.\" Another hand has added, in pencil: \"liar\"."
     }
   },
+  "equipements/0GL0rHMCTQ6ccDCS": {
+    "_nom": "Levier de bois dur",
+    "name": {
+      "fr": "Levier de bois dur",
+      "en": "Hardwood lever"
+    },
+    "system.description": {
+      "fr": "<p>Une branche de bois dur, taillée en biseau : elle soulève une tôle, force un volet, et casse au troisième essai.</p>",
+      "en": "<p>A hardwood branch cut to a bevel: it lifts a sheet of iron, forces a shutter, and breaks at the third try.</p>"
+    }
+  },
+  "equipements/0NFsrS5zUEvBysYO": {
+    "_nom": "Galerie de toit",
+    "name": {
+      "fr": "Galerie de toit",
+      "en": "Roof rack"
+    },
+    "system.description": {
+      "fr": "<p>Une galerie de tubes soudés sur le toit, des sangles : quatre charges de plus sur un véhicule du groupe (au MJ), et ce qu'on y met se voit de loin.</p>",
+      "en": "<p>A rack of welded tubes on the roof, straps: four more loads on one of the group's vehicles (for the GM), and what you put there is seen from far away.</p>"
+    }
+  },
   "equipements/1qDrJz9tbJn3utaA": {
     "_nom": "Calendrier des fêtes de l'île",
     "name": {
@@ -67,6 +89,17 @@
       "en": "<p>A delivery scooter, charged in the sun by the shelter's panels: fast, silent, it carries almost nothing. One unit of energy per watch on the road.</p>"
     }
   },
+  "equipements/2BQxyTLmPZ1TYh3S": {
+    "_nom": "Bouclier doublé et cerclé",
+    "name": {
+      "fr": "Bouclier doublé et cerclé",
+      "en": "Doubled and rimmed shield"
+    },
+    "system.description": {
+      "fr": "<p>Le bouclier de tôle doublé d'une seconde tôle et cerclé de fer à la forge : il pare une touche de Livide sur deux (4, 5 ou 6 au dé), et une touche parée ne blesse pas et ne mord pas. Plus lourd, il tient plus longtemps.</p>",
+      "en": "<p>The sheet-iron shield doubled with a second sheet and rimmed with iron at the forge: it parries one Pallid hit in two (4, 5 or 6 on the die), and a parried hit neither wounds nor bites. Heavier, it lasts longer.</p>"
+    }
+  },
   "equipements/2dlGA2Bloq3ddJ62": {
     "_nom": "Cloches d'alerte",
     "name": {
@@ -76,6 +109,28 @@
     "system.description": {
       "fr": "<p>Des fils tendus autour du camp, garnis de boîtes de conserve et de clochettes : rien n'approche sans un tintement.</p>",
       "en": "<p>Wires stretched around the camp, strung with tin cans and little bells: nothing comes near without a jingle.</p>"
+    }
+  },
+  "equipements/36ngm2pXnSvgJY3s": {
+    "_nom": "Gratte forgée",
+    "name": {
+      "fr": "Gratte forgée",
+      "en": "Forged hoe"
+    },
+    "system.description": {
+      "fr": "<p>La houe des carreaux de l'île, forgée et trempée : pour sarcler, butter, creuser une rigole.</p>",
+      "en": "<p>The hoe of the island's vegetable plots, forged and tempered: for weeding, earthing up, digging a channel.</p>"
+    }
+  },
+  "equipements/37C6UlpKxeyFBvWu": {
+    "_nom": "Vinaigre de canne",
+    "name": {
+      "fr": "Vinaigre de canne",
+      "en": "Cane vinegar"
+    },
+    "system.description": {
+      "fr": "<p>Le jus de canne qu'on a laissé tourner des semaines dans un bocal fermé d'un linge : pour les achards.</p>",
+      "en": "<p>Cane juice left to turn for weeks in a jar closed with a cloth: for achards.</p>"
     }
   },
   "equipements/3plOmQ5JsHKI5QbE": {
@@ -89,6 +144,50 @@
       "en": "<p>A sheet of corrugated iron backed with plywood, with two handles: you push back, you shield yourself from bites, you advance in a line down a corridor. It parries one Pallid hit in three (5 or 6 on the die): a parried hit doesn't wound and doesn't bite.</p>"
     }
   },
+  "equipements/4m4MeL0yMpWDSA6m": {
+    "_nom": "Vouve",
+    "name": {
+      "fr": "Vouve",
+      "en": "Vouve"
+    },
+    "system.description": {
+      "fr": "<p>La nasse tressée de gaulettes et de vacoa qu'on cale dans le courant, à l'embouchure des rivières, pour les bichiques et les petits poissons. On la pose le soir, on la relève au matin.</p>",
+      "en": "<p>The woven trap of rods and vacoa wedged in the current at river mouths, for bichiques and small fish. Set in the evening, lifted in the morning.</p>"
+    }
+  },
+  "equipements/4rSXeUhHWvESCrA7": {
+    "_nom": "Filet de pêche",
+    "name": {
+      "fr": "Filet de pêche",
+      "en": "Fishing net"
+    },
+    "system.description": {
+      "fr": "<p>Un filet noué maille à maille, lesté de galets : long à faire, il nourrit un groupe au lagon ou dans une vasque.</p>",
+      "en": "<p>A net knotted mesh by mesh, weighted with pebbles: long to make, it feeds a group at the lagoon or in a pool.</p>"
+    }
+  },
+  "equipements/5fIV8vKGePcxhFrp": {
+    "_nom": "Pince de bambou",
+    "name": {
+      "fr": "Pince de bambou",
+      "en": "Bamboo tongs"
+    },
+    "system.description": {
+      "fr": "<p>Un bambou fendu, refermé à la corde : il tient ce qui brûle et tord un fil de fer fin.</p>",
+      "en": "<p>A split bamboo, closed with rope: it holds what burns and twists thin wire.</p>"
+    }
+  },
+  "equipements/69RXiHB7GpvJ3B1m": {
+    "_nom": "Rhum de canne",
+    "name": {
+      "fr": "Rhum de canne",
+      "en": "Cane rum"
+    },
+    "system.description": {
+      "fr": "<p>Une bouteille du jus fermenté passé une fois à l'alambic : rude. On en fait le rhum arrangé.</p>",
+      "en": "<p>A bottle of fermented juice passed once through the still: rough. Rhum arrangé is made from it.</p>"
+    }
+  },
   "equipements/6MIKGIKFH4dr5ilO": {
     "_nom": "Couteau",
     "name": {
@@ -100,6 +199,17 @@
       "en": "<p>A good knife, for everything: gutting fish, cutting rope, whittling wood. A weapon of last resort.</p>"
     }
   },
+  "equipements/6PLrDhXoYL6sKtQT": {
+    "_nom": "Sabre de récupération",
+    "name": {
+      "fr": "Sabre de récupération",
+      "en": "Salvaged cane knife"
+    },
+    "system.description": {
+      "fr": "<p>Une lame taillée dans une tôle épaisse, affûtée à la meule, un manche de bois : elle coupe la canne comme l'autre.</p>",
+      "en": "<p>A blade cut from thick sheet metal, ground sharp, a wooden handle: it cuts cane like the other one.</p>"
+    }
+  },
   "equipements/6aeO2dmRghB3dx9L": {
     "_nom": "Vélo tout-terrain",
     "name": {
@@ -109,6 +219,17 @@
     "system.description": {
       "fr": "<p>Silencieux, sans carburant, plus rapide qu'à pied sur la route… tant que ça descend. Les Hauts se montent à pied à côté.</p>",
       "en": "<p>Silent, no fuel, faster than walking on the road… as long as it goes downhill. In the Highlands you push it uphill on foot.</p>"
+    }
+  },
+  "equipements/6klZCg5yQ6xAs4Cq": {
+    "_nom": "Pelle et pic de fortune",
+    "name": {
+      "fr": "Pelle et pic de fortune",
+      "en": "Makeshift shovel and pick"
+    },
+    "system.description": {
+      "fr": "<p>Une pelle taillée dans une planche, un pic de bois durci au feu : on creuse, à la sueur.</p>",
+      "en": "<p>A shovel cut from a plank, a pick of hardwood hardened in the fire: you dig, by the sweat of your brow.</p>"
     }
   },
   "equipements/71t1IczrhQEDQtfo": {
@@ -155,11 +276,77 @@
       "en": "<p>A rental kayak from the lagoon: follow the coast without a sound, cross the swell in fair weather, fish beyond the reef.</p>"
     }
   },
+  "equipements/8XVwHvw0Sy21WFDM": {
+    "_nom": "Gratte de récupération",
+    "name": {
+      "fr": "Gratte de récupération",
+      "en": "Salvaged hoe"
+    },
+    "system.description": {
+      "fr": "<p>Une lame de tôle sur un manche, comme celle des carreaux de l'île : sarcler, butter, creuser une rigole.</p>",
+      "en": "<p>A sheet-metal blade on a handle, like those of the island's vegetable plots: weeding, earthing up, digging a channel.</p>"
+    }
+  },
+  "equipements/8ds91JCnFMu9f8Xo": {
+    "_nom": "Arbalète d'acier à levier",
+    "name": {
+      "fr": "Arbalète d'acier à levier",
+      "en": "Steel lever crossbow"
+    },
+    "system.description": {
+      "fr": "<p>L'arbalète de fortune reprise à la forge : un arc d'acier forgé, un levier pour la tendre en quelques secondes au lieu d'une demi-minute. Silencieuse ; ses carreaux se récupèrent.</p>",
+      "en": "<p>The makeshift crossbow reworked at the forge: a forged steel bow, a lever to span it in a few seconds instead of half a minute. Silent; its bolts can be recovered.</p>"
+    }
+  },
+  "equipements/98WRtQoMTRyCf1Qw": {
+    "_nom": "Scie forgée",
+    "name": {
+      "fr": "Scie forgée",
+      "en": "Forged saw"
+    },
+    "system.description": {
+      "fr": "<p>Une lame de ressort recuite, taillée, avoyée, retrempée : il faut savoir la mécanique pour la réussir.</p>",
+      "en": "<p>A spring leaf annealed, cut, set and tempered again: you need to know mechanics to get it right.</p>"
+    }
+  },
   "equipements/9Hr9xFO759pAMjDy": {
     "_nom": "4×4",
     "system.description": {
       "fr": "<p>Un pick-up ou un 4×4 de planteur : il passe la piste de la Rivière des Galets, les chemins de canne et les radiers en eau basse. Il boit beaucoup.</p>",
       "en": "<p>A pickup or a planter's 4×4: it takes the Rivière des Galets track, the cane tracks and the fords at low water. It drinks a lot.</p>"
+    }
+  },
+  "equipements/9oT6NGKDlELS0uIK": {
+    "_nom": "Gratte de fortune",
+    "name": {
+      "fr": "Gratte de fortune",
+      "en": "Makeshift hoe"
+    },
+    "system.description": {
+      "fr": "<p>Une pierre plate emmanchée en travers : la houe d'avant les houes, pour sarcler et butter.</p>",
+      "en": "<p>A flat stone hafted crosswise: the hoe before hoes, for weeding and earthing up.</p>"
+    }
+  },
+  "equipements/A9qox8IBORA4BoFI": {
+    "_nom": "Cataplasme de feuilles",
+    "name": {
+      "fr": "Cataplasme de feuilles",
+      "en": "Leaf poultice"
+    },
+    "system.description": {
+      "fr": "<p>Des feuilles pilées, tenues par une lanière de vacoa : sur une plaie qui rougit, une piqûre, une brûlure, il tient lieu de médicament et donne un dé de plus au soin.</p>",
+      "en": "<p>Crushed leaves, held by a strip of vacoa: on a wound turning red, a sting, a burn, it stands in for a medicine and gives one more die to the treatment.</p>"
+    }
+  },
+  "equipements/ABFH4ASqTCQ1xpEb": {
+    "_nom": "Tenue rapiécée",
+    "name": {
+      "fr": "Tenue rapiécée",
+      "en": "Patched clothes"
+    },
+    "system.description": {
+      "fr": "<p>Des vêtements repris, renforcés aux genoux et aux coudes, qui tiendront encore une saison. Être propre et couvert, ça compte.</p>",
+      "en": "<p>Clothes mended, reinforced at the knees and elbows, that will hold for one more season. Being clean and covered matters.</p>"
     }
   },
   "equipements/AGkAlItFs45sN3Ts": {
@@ -173,6 +360,39 @@
       "en": "<p>A metre and a half of steel: you force a door, lift a slab, keep a Pallid at arm's length. Heavy.</p>"
     }
   },
+  "equipements/BLutJmrrlAybzT2Z": {
+    "_nom": "Tente de vacoa",
+    "name": {
+      "fr": "Tente de vacoa",
+      "en": "Vacoa tente"
+    },
+    "system.description": {
+      "fr": "<p>La <em>tente</em>, à La Réunion, c'est le panier tressé qu'on porte au marché et au champ, pas l'abri de toile. Celle-ci a deux anses et sent la feuille sèche.</p>",
+      "en": "<p>On Réunion, a <em>tente</em> is the woven basket you carry to market and to the field, not a canvas shelter. This one has two handles and smells of dry leaf.</p>"
+    }
+  },
+  "equipements/BOQnBdzpNZJYTFqs": {
+    "_nom": "Ligne de pêche",
+    "name": {
+      "fr": "Ligne de pêche",
+      "en": "Fishing line"
+    },
+    "system.description": {
+      "fr": "<p>Un hameçon tordu dans du fil de fer, une ligne, une gaulette : de quoi pêcher depuis les galets.</p>",
+      "en": "<p>A hook bent from wire, a line, a rod: enough to fish from the pebble beach.</p>"
+    }
+  },
+  "equipements/BuR0xLPwIFiTq9dT": {
+    "_nom": "Gants de travail",
+    "name": {
+      "fr": "Gants de travail",
+      "en": "Work gloves"
+    },
+    "system.description": {
+      "fr": "<p>Des gants de toile doublée : on déplace le bois et les tôles sans se couper, et sans glisser la main sur une scolopendre (le MJ ne fait pas tirer la piqûre à qui les porte en remuant le bois).</p>",
+      "en": "<p>Gloves of doubled canvas: you move wood and iron sheets without cutting yourself, and without slipping your hand onto a centipede (the GM does not roll for the sting for whoever wears them while shifting wood).</p>"
+    }
+  },
   "equipements/Bv2927IxJMnq0Q0o": {
     "_nom": "Vieux calendrier",
     "name": {
@@ -182,6 +402,50 @@
     "system.description": {
       "fr": "<p>Un calendrier d'une autre année, oublié sur un mur : les jours tombent faux, et les lunes aussi. Celui qui y lit la lune croit retrouver le jour ; il se trompe, sans le savoir.</p>",
       "en": "<p>A calendar from another year, forgotten on a wall: the days fall wrong, and so do the moons. Whoever reads the moon on it thinks they have found the day again; they are wrong, without knowing it.</p>"
+    }
+  },
+  "equipements/BzPgPlqNQRFXpXEU": {
+    "_nom": "Chariot de récupération",
+    "name": {
+      "fr": "Chariot de récupération",
+      "en": "Salvaged trolley"
+    },
+    "system.description": {
+      "fr": "<p>De la ferraille soudée ou boulonnée, une caisse de tôle, deux roues de brouette ou de chariot de supermarché : vite monté, il roule mieux que la charrette, mais pas dans la boue. Deux rustines tous les trente jours.</p>",
+      "en": "<p>Scrap metal welded or bolted, a sheet-metal box, two wheelbarrow or supermarket-trolley wheels: quickly built, it rolls better than the handcart, but not in mud. Two patches every thirty days.</p>"
+    }
+  },
+  "equipements/CrIfQEhqjOdsQbRq": {
+    "_nom": "Capeline de vacoa",
+    "name": {
+      "fr": "Capeline de vacoa",
+      "en": "Vacoa capeline"
+    },
+    "system.description": {
+      "fr": "<p>Le grand chapeau de vacoa des planteurs : dehors, à l'heure où le soleil tape, il ôte le malus de la chaleur.</p>",
+      "en": "<p>The planters' wide vacoa hat: outside, when the sun beats down, it removes the heat penalty.</p>"
+    }
+  },
+  "equipements/E4MpPnNEPoi2kqs3": {
+    "_nom": "Petit utilitaire électrique",
+    "name": {
+      "fr": "Petit utilitaire électrique",
+      "en": "Small electric utility vehicle"
+    },
+    "system.description": {
+      "fr": "<p>Un châssis de voiturette, un moteur électrique, quatre batteries et son régulateur : silencieux, rechargé par les panneaux de l'abri (deux unités d'énergie par quart de route). Ni boue, ni sentier.</p>",
+      "en": "<p>A microcar chassis, an electric motor, four batteries and their controller: silent, recharged by the shelter's panels (two units of energy per watch on the road). No mud, no trail.</p>"
+    }
+  },
+  "equipements/EDspfEYYgLGDFkCc": {
+    "_nom": "Scie de fortune",
+    "name": {
+      "fr": "Scie de fortune",
+      "en": "Makeshift saw"
+    },
+    "system.description": {
+      "fr": "<p>Des éclats de basalte pris dans une branche fendue, en dents : elle râpe plus qu'elle ne scie.</p>",
+      "en": "<p>Basalt flakes set as teeth in a split branch: it rasps more than it saws.</p>"
     }
   },
   "equipements/EPJKOAHUNqbfpcwc": {
@@ -217,6 +481,17 @@
       "en": "<p>The looter's tool: doors, crates, roller shutters. It hits, too.</p>"
     }
   },
+  "equipements/Ev9B5sZFBoRPrNTu": {
+    "_nom": "Tisane d'ayapana",
+    "name": {
+      "fr": "Tisane d'ayapana",
+      "en": "Ayapana tea"
+    },
+    "system.description": {
+      "fr": "<p>L'ayapana que les gramounes donnent pour le ventre : pour une gastro-entérite, elle tient lieu de médicament et donne un dé de plus au soin.</p>",
+      "en": "<p>The ayapana the gramounes give for the stomach: for gastroenteritis, it stands in for a medicine and gives one more die to the treatment.</p>"
+    }
+  },
   "equipements/F3GL6XW5TfMujoWT": {
     "_nom": "Tente et bâche",
     "name": {
@@ -250,6 +525,17 @@
       "en": "<p>A big trekking backpack, properly adjusted: you carry more, further, without wrecking your back.</p>"
     }
   },
+  "equipements/FyQ7SCJWBciiEsbe": {
+    "_nom": "Hache de récupération",
+    "name": {
+      "fr": "Hache de récupération",
+      "en": "Salvaged axe"
+    },
+    "system.description": {
+      "fr": "<p>Un fer de ferraille découpé au burin, emmanché et goupillé au fil de fer : elle abat un arbre, et le reste.</p>",
+      "en": "<p>A head cut from scrap metal with a cold chisel, hafted and pinned with wire: it fells a tree, and the rest.</p>"
+    }
+  },
   "equipements/FzEDgXkageKZMZih": {
     "_nom": "Âne de bât",
     "name": {
@@ -259,6 +545,17 @@
     "system.description": {
       "fr": "<p>Un âne d'une ferme des Hauts ou de randonnée : il porte sur les sentiers de Mafate ce qu'aucun véhicule n'y montera. Il mange, il brait.</p>",
       "en": "<p>A donkey from a Highland farm or a trekking outfit: it carries up the Mafate trails what no vehicle will ever climb. It eats, it brays.</p>"
+    }
+  },
+  "equipements/GKiDYSkwrngvDf8L": {
+    "_nom": "Pied-de-biche de récupération",
+    "name": {
+      "fr": "Pied-de-biche de récupération",
+      "en": "Salvaged crowbar"
+    },
+    "system.description": {
+      "fr": "<p>Une barre de ferraille aplatie et recourbée au feu : elle ouvre, elle soulève, elle cogne.</p>",
+      "en": "<p>A scrap bar flattened and bent in the fire: it opens, lifts, hits.</p>"
     }
   },
   "equipements/GMevJZf2TevArQ9Y": {
@@ -294,6 +591,17 @@
       "en": "<p>See before being seen: the road, the rampart across the way, a farmyard.</p>"
     }
   },
+  "equipements/HGA3VJcpKPdqWzB2": {
+    "_nom": "Baume à la cire",
+    "name": {
+      "fr": "Baume à la cire",
+      "en": "Beeswax balm"
+    },
+    "system.description": {
+      "fr": "<p>Cire d'abeille, huile de bancoul et zerbaz fondus ensemble : pour la peau brûlée ou mangée par la gale, il tient lieu de médicament et donne un dé de plus au soin.</p>",
+      "en": "<p>Beeswax, bancoul oil and zerbaz melted together: for skin that is burnt or eaten by scabies, it stands in for a medicine and gives one more die to the treatment.</p>"
+    }
+  },
   "equipements/HXUOGHkBjBQxEsfC": {
     "_nom": "Collets et nasses",
     "name": {
@@ -303,6 +611,28 @@
     "system.description": {
       "fr": "<p>Des collets de fil de fer pour les tangues et les lièvres, des nasses de grillage pour les camarons et les poissons de rivière : on les pose le soir, on les relève au matin.</p>",
       "en": "<p>Wire snares for tenrecs and hares, wire-mesh traps for river prawns and fish: you set them in the evening, you lift them in the morning.</p>"
+    }
+  },
+  "equipements/HptmDIiSFaxMiCE6": {
+    "_nom": "Tisane de citronnelle",
+    "name": {
+      "fr": "Tisane de citronnelle",
+      "en": "Lemongrass tea"
+    },
+    "system.description": {
+      "fr": "<p>Celle qu'on boit chaude quand on se sent pris par la fièvre : pour la dengue et le chikungunya, elle tient lieu de médicament et donne un dé de plus au soin.</p>",
+      "en": "<p>The one you drink hot when fever takes hold: for dengue and chikungunya, it stands in for a medicine and gives one more die to the treatment.</p>"
+    }
+  },
+  "equipements/IWYjWmqIZzVeSFIx": {
+    "_nom": "Blindage de tôle et grilles",
+    "name": {
+      "fr": "Blindage de tôle et grilles",
+      "en": "Sheet-iron armour and grilles"
+    },
+    "system.description": {
+      "fr": "<p>Des tôles boulonnées sur les portières, des grilles de fenêtre sur les vitres : dans le véhicule, chaque touche d'un Livide qui passe la main ou la tête est parée sur 5 ou 6, comme un bouclier de tôle. Le MJ le pose sur un véhicule du groupe ; la voiture est plus lourde et plus lente sur les pentes.</p>",
+      "en": "<p>Iron sheets bolted onto the doors, window grilles over the glass: in the vehicle, each hit from a Pallid who gets a hand or head in is parried on 5 or 6, like a sheet-iron shield. The GM fits it on one of the group's vehicles; the car is heavier and slower on slopes.</p>"
     }
   },
   "equipements/IylxLgrTqrtVNmjC": {
@@ -316,6 +646,17 @@
       "en": "<p>A stray that finally ate from someone's hand, or a puppy from a litter of the shelter's own: it sleeps across the doorway, hears the Pallid before the watch does, gets restless before the cyclone and the volcano. It fights if you let it go, and it can die doing so. At the shelter, it lifts everyone's spirits.</p>"
     }
   },
+  "equipements/JwOKAw4RElBi4sp7": {
+    "_nom": "Bougies",
+    "name": {
+      "fr": "Bougies",
+      "en": "Candles"
+    },
+    "system.description": {
+      "fr": "<p>La cire des ruches coulée autour d'une mèche : deux nuits d'une lumière douce, qui se voit moins qu'un feu.</p>",
+      "en": "<p>Beeswax poured around a wick: two nights of soft light, less visible than a fire.</p>"
+    }
+  },
   "equipements/Jwm8SP40wObOc5wt": {
     "_nom": "Sabre à canne",
     "name": {
@@ -325,6 +666,17 @@
     "system.description": {
       "fr": "<p>La lame large et recourbée des coupeurs de canne, qu'on trouve dans chaque hangar de l'île. Elle coupe les cannes, les lianes, les branches… et le reste. Silencieuse.</p>",
       "en": "<p>The broad curved blade of the cane cutters, found in every shed on the island. It cuts cane, vines, branches… and the rest. Silent.</p>"
+    }
+  },
+  "equipements/KcBRniSGLdsKPSZS": {
+    "_nom": "Marteau forgé",
+    "name": {
+      "fr": "Marteau forgé",
+      "en": "Forged hammer"
+    },
+    "system.description": {
+      "fr": "<p>Une tête d'acier forgée au galet, un manche de goyavier : le premier outil de la forge, et le plus utile.</p>",
+      "en": "<p>A steel head forged on a pebble, a guava-wood handle: the forge's first tool, and the most useful.</p>"
     }
   },
   "equipements/LrLI4CexQXCAI2hu": {
@@ -338,6 +690,28 @@
       "en": "<p>Mosquito nets for every bed, cut down and mended: in the Lowlands in the rainy season they protect against dengue and chikungunya better than any remedy.</p>"
     }
   },
+  "equipements/M82MYPCu8CabIDYy": {
+    "_nom": "Marteau de fortune",
+    "name": {
+      "fr": "Marteau de fortune",
+      "en": "Makeshift hammer"
+    },
+    "system.description": {
+      "fr": "<p>Un galet rond lié à un manche de goyavier. On tape juste, ou on se tape les doigts.</p>",
+      "en": "<p>A round pebble tied to a guava-wood handle. You strike true, or you strike your fingers.</p>"
+    }
+  },
+  "equipements/MxeDOLyI7EmfO0sa": {
+    "_nom": "Pistolet de service remis en état",
+    "name": {
+      "fr": "Pistolet de service remis en état",
+      "en": "Restored service pistol"
+    },
+    "system.description": {
+      "fr": "<p>Le pistolet nettoyé, son ressort de chargeur changé : il ne s'enraye presque plus.</p>",
+      "en": "<p>The pistol cleaned, its magazine spring changed: it hardly ever jams.</p>"
+    }
+  },
   "equipements/N7R4QARsw7C8lpoc": {
     "_nom": "Poêle de masse",
     "name": {
@@ -347,6 +721,28 @@
     "system.description": {
       "fr": "<p>Un poêle de briques et de pierres qui garde la chaleur toute la nuit avec une brassée de bois : indispensable dans les Hauts en hiver austral, il cuit aussi le pain.</p>",
       "en": "<p>A stove of bricks and stones that holds its heat all night on an armful of wood: indispensable in the Highlands in the austral winter, and it bakes bread too.</p>"
+    }
+  },
+  "equipements/NFWGYsJro8lTnPfQ": {
+    "_nom": "Motoculteur et sa remorque",
+    "name": {
+      "fr": "Motoculteur et sa remorque",
+      "en": "Two-wheel tractor and trailer"
+    },
+    "system.description": {
+      "fr": "<p>Le motoculteur attelé à son plateau de ferraille : il porte presque autant qu'une charrette à bœufs, à l'allure d'un homme qui marche, et tout le monde l'entend venir. Deux boîtes de vis tous les quinze jours.</p>",
+      "en": "<p>The two-wheel tractor hitched to its scrap-metal platform: it carries almost as much as an ox cart, at the pace of a walking man, and everyone hears it coming. Two boxes of screws every fifteen days.</p>"
+    }
+  },
+  "equipements/NVcoyeeADKvH2v8i": {
+    "_nom": "Bertel",
+    "name": {
+      "fr": "Bertel",
+      "en": "Bertel"
+    },
+    "system.description": {
+      "fr": "<p>Le sac à dos de vacoa des Hauts, tressé serré, avec ses bretelles de corde : on y porte le manger, les outils, les patates du jardin. Il se refait quand il s'use.</p>",
+      "en": "<p>The vacoa backpack of the Highlands, tightly woven, with rope straps: you carry the food, the tools, the sweet potatoes from the garden in it. It is remade when it wears out.</p>"
     }
   },
   "equipements/No3fi8QjyVit4Vcg": {
@@ -398,6 +794,28 @@
       "en": "<p>A kitchen knife or a cane-knife blade lashed to the end of a bamboo pole: you strike through a fence without coming close.</p>"
     }
   },
+  "equipements/OG6nSifmelFY1j5a": {
+    "_nom": "Roue de bois cerclée",
+    "name": {
+      "fr": "Roue de bois cerclée",
+      "en": "Iron-rimmed wooden wheel"
+    },
+    "system.description": {
+      "fr": "<p>Une roue de planches chevillées, cerclée de fer à chaud : elle remplace les roues de récupération quand il n'y en a plus.</p>",
+      "en": "<p>A wheel of pegged planks, rimmed with hot iron: it replaces salvaged wheels when there are none left.</p>"
+    }
+  },
+  "equipements/ORVVChbOhbYEy4y7": {
+    "_nom": "Masse forgée",
+    "name": {
+      "fr": "Masse forgée",
+      "en": "Forged sledgehammer"
+    },
+    "system.description": {
+      "fr": "<p>Huit kilos d'acier au bout d'un manche : le roc, les murs en dur, et ce qui se met en travers.</p>",
+      "en": "<p>Eight kilos of steel at the end of a handle: rock, concrete walls, and whatever gets in the way.</p>"
+    }
+  },
   "equipements/OvB4CqD6YEeHulAh": {
     "_nom": "Copie de plan",
     "name": {
@@ -407,6 +825,17 @@
     "system.description": {
       "fr": "<p>Quelques feuilles pliées en quatre : un schéma coté, la liste de ce qu'il faut, l'ordre des gestes, parfois une main qui a écrit « attention » dans la marge. Celui qui a le savoir-faire qu'il demande le lit et le note au carnet du groupe ; les autres le gardent pour plus tard, ou pour quelqu'un d'autre. Un plan connu fait bâtir avec un quart de matériaux en moins et la moitié du travail. Il se recopie, il se troque.</p>",
       "en": "<p>A few sheets folded in four: a dimensioned drawing, the list of what is needed, the order of the steps, sometimes a hand that wrote “careful” in the margin. Whoever has the know-how it calls for reads it and writes it into the group's notebook; the others keep it for later, or for someone else. A known plan lets you build with a quarter less material and half the work. It can be copied, it can be traded.</p>"
+    }
+  },
+  "equipements/PKpuIMOvorh5JaJW": {
+    "_nom": "Huile de bancoul",
+    "name": {
+      "fr": "Huile de bancoul",
+      "en": "Bancoul oil"
+    },
+    "system.description": {
+      "fr": "<p>L'huile à lampe d'autrefois, pressée des noix du bancoulier : elle éclaire, elle graisse les armes, elle entre dans les baumes. Elle ne se mange pas.</p>",
+      "en": "<p>The lamp oil of old, pressed from the nuts of the bancoul (candlenut) tree: it gives light, greases weapons, goes into balms. It is not eaten.</p>"
     }
   },
   "equipements/QMhog9vjE1IGTzZ7": {
@@ -431,6 +860,28 @@
       "en": "<p>A woven mat to sleep dry on, to sit on in the evening, to dry coffee or grain in the sun. Rolled on top of the pack, it makes a bivouac.</p>"
     }
   },
+  "equipements/R6Y1CFZ0sxxldEFT": {
+    "_nom": "Sirop de miel aux zerbaz",
+    "name": {
+      "fr": "Sirop de miel aux zerbaz",
+      "en": "Honey and zerbaz syrup"
+    },
+    "system.description": {
+      "fr": "<p>Du miel et des zerbaz, à la cuillère, pour la gorge et la toux des fièvres : un dé de plus au soin, mais il ne tient pas lieu de médicament.</p>",
+      "en": "<p>Honey and zerbaz, by the spoonful, for the throat and the cough of fevers: one more die to the treatment, but it does not stand in for a medicine.</p>"
+    }
+  },
+  "equipements/RagkwcKEADt02QUU": {
+    "_nom": "Cage de bambou",
+    "name": {
+      "fr": "Cage de bambou",
+      "en": "Bamboo cage"
+    },
+    "system.description": {
+      "fr": "<p>Une cage de gaulettes liées : pour emporter vivante une poule ou un lapin trouvés en fouillant. Sans elle, la bête file.</p>",
+      "en": "<p>A cage of tied rods: to carry away alive a hen or a rabbit found while scavenging. Without it, the animal runs off.</p>"
+    }
+  },
   "equipements/Rx2lvvdh5L8dpysq": {
     "_nom": "Radio à manivelle",
     "name": {
@@ -440,6 +891,28 @@
     "system.description": {
       "fr": "<p>Une petite radio qu'on remonte à la main : écouter les dernières émissions, les messages en boucle, les autres groupes. Elle ne sait pas émettre.</p>",
       "en": "<p>A small radio you crank by hand: listen to the last broadcasts, the looped messages, the other groups. It cannot transmit.</p>"
+    }
+  },
+  "equipements/SbdNyphTHNDTDiU1": {
+    "_nom": "Éclat de basalte",
+    "name": {
+      "fr": "Éclat de basalte",
+      "en": "Basalt flake"
+    },
+    "system.description": {
+      "fr": "<p>Un éclat de galet de basalte, frappé contre un autre jusqu'à trouver le fil : le premier tranchant, à mains nues. Il coupe mal et s'émousse vite, mais il coupe.</p>",
+      "en": "<p>A flake struck from a basalt pebble against another until an edge appears: the first blade, bare-handed. It cuts badly and dulls fast, but it cuts.</p>"
+    }
+  },
+  "equipements/ScWW43uLv8FhgebV": {
+    "_nom": "Hache forgée",
+    "name": {
+      "fr": "Hache forgée",
+      "en": "Forged axe"
+    },
+    "system.description": {
+      "fr": "<p>Un fer forgé, trempé, emmanché à la main : elle tient une trentaine d'arbres avant qu'on la rafistole.</p>",
+      "en": "<p>A forged, tempered head, hafted by hand: it lasts about thirty trees before it needs patching up.</p>"
     }
   },
   "equipements/T7LFaNYAkK9llURL": {
@@ -475,6 +948,17 @@
       "en": "<p>A split stick of guava wood, a twist of wire: the washing dries in the wind instead of lying about. Next to nothing, and the yard looks like a yard again.</p>"
     }
   },
+  "equipements/TFln7jwtHmCPJJSV": {
+    "_nom": "Eau salée et sucrée",
+    "name": {
+      "fr": "Eau salée et sucrée",
+      "en": "Salted and sweetened water"
+    },
+    "system.description": {
+      "fr": "<p>De l'eau propre, une pincée de sel, du jus de canne : pour qui se vide ou a pris un coup de chaleur, elle tient lieu de médicament et donne un dé de plus au soin.</p>",
+      "en": "<p>Clean water, a pinch of salt, cane juice: for someone who is emptying out or has had heatstroke, it stands in for a medicine and gives one more die to the treatment.</p>"
+    }
+  },
   "equipements/To7XMo05JkOKuHtY": {
     "_nom": "Cahier de l'électricien de la centrale",
     "name": {
@@ -497,6 +981,39 @@
       "en": "<p>The almanac the postman used to sell at the end of the year, with its photos of kittens or of the island's landscapes: the days, the saints, the school holidays and the quarters of the moon. In November and December, it is already next year's. It hung in the kitchen of almost every case.</p>"
     }
   },
+  "equipements/UxLkQMXZS03pSeaN": {
+    "_nom": "Truelle de fortune",
+    "name": {
+      "fr": "Truelle de fortune",
+      "en": "Makeshift trowel"
+    },
+    "system.description": {
+      "fr": "<p>Une pierre plate emmanchée : de quoi lisser la terre d'un torchis ou caler une pierre.</p>",
+      "en": "<p>A hafted flat stone: enough to smooth cob or wedge a stone.</p>"
+    }
+  },
+  "equipements/V45eWuUJFJD4zseQ": {
+    "_nom": "Pince de récupération",
+    "name": {
+      "fr": "Pince de récupération",
+      "en": "Salvaged pliers"
+    },
+    "system.description": {
+      "fr": "<p>Deux bras de ferraille et un boulon : elle coupe le fil de fer, tient les câbles, démonte une épave.</p>",
+      "en": "<p>Two scrap-metal arms and a bolt: they cut wire, hold cables, take a wreck apart.</p>"
+    }
+  },
+  "equipements/VHEd7GO85grpbVTB": {
+    "_nom": "Hache de fortune",
+    "name": {
+      "fr": "Hache de fortune",
+      "en": "Makeshift axe"
+    },
+    "system.description": {
+      "fr": "<p>Un galet taillé, emmanché dans une branche fendue et serré à la corde : de quoi abattre ses premiers arbres, lentement. Le manche lâche avant la pierre.</p>",
+      "en": "<p>A shaped pebble, hafted in a split branch and tied tight with rope: enough to fell your first trees, slowly. The handle gives before the stone.</p>"
+    }
+  },
   "equipements/VPX4NAJ9P5XDCfKL": {
     "_nom": "Balance romaine",
     "name": {
@@ -506,6 +1023,39 @@
     "system.description": {
       "fr": "<p>Un fléau d'acier, un crochet, un poids qui coulisse : la balance des boutiques et des marchés d'avant. On pèse devant tout le monde, deux fois s'il le faut, et l'on discute moins.</p>",
       "en": "<p>A steel beam, a hook, a sliding weight: the scales of the shops and markets of before. You weigh in front of everyone, twice if need be, and you argue less.</p>"
+    }
+  },
+  "equipements/WFBAUi5Bq2DbidiQ": {
+    "_nom": "Cape de pluie",
+    "name": {
+      "fr": "Cape de pluie",
+      "en": "Rain cape"
+    },
+    "system.description": {
+      "fr": "<p>Une cape taillée dans une bâche, avec une capuche : on marche sous l'averse sans tremper ce qu'on porte, les cartes, les cahiers, les allumettes.</p>",
+      "en": "<p>A cape cut from a tarpaulin, with a hood: you walk through the downpour without soaking what you carry, the maps, the notebooks, the matches.</p>"
+    }
+  },
+  "equipements/WkEm9AuYCJZabVA8": {
+    "_nom": "Lessive de cendre",
+    "name": {
+      "fr": "Lessive de cendre",
+      "en": "Ash lye"
+    },
+    "system.description": {
+      "fr": "<p>De la cendre tamisée et de l'eau chaude : on y fait bouillir le linge et les draps, et la gale s'en va avec. Elle tient lieu de médicament pour la gale et donne un dé de plus.</p>",
+      "en": "<p>Sifted ash and hot water: linen and sheets are boiled in it, and the scabies goes with them. It stands in for a medicine for scabies and gives one more die.</p>"
+    }
+  },
+  "equipements/WnUYwC8G39aJAHzH": {
+    "_nom": "Pièges à rats",
+    "name": {
+      "fr": "Pièges à rats",
+      "en": "Rat traps"
+    },
+    "system.description": {
+      "fr": "<p>Deux pièges de planche et de fil de fer. Les rats gâtent les réserves et salissent l'eau : avec eux posés près des stocks, le MJ ne fait pas perdre de vivres aux rats.</p>",
+      "en": "<p>Two traps of plank and wire. Rats spoil the stores and foul the water: with these set near the stocks, the GM does not make the group lose food to rats.</p>"
     }
   },
   "equipements/XA2FiclBwc5Dzv6e": {
@@ -530,6 +1080,28 @@
       "en": "<p>Ropes twisted from the fibre of choka (agave) leaves, retted and beaten: they lash a bamboo, hold a tarp, lower a bucket into the well.</p>"
     }
   },
+  "equipements/Y06OD7esvi7ZFwoK": {
+    "_nom": "Masse de récupération",
+    "name": {
+      "fr": "Masse de récupération",
+      "en": "Salvaged sledgehammer"
+    },
+    "system.description": {
+      "fr": "<p>Un bloc d'acier de casse, percé et emmanché : il casse le roc et les murs en dur.</p>",
+      "en": "<p>A block of scrapyard steel, drilled and hafted: it breaks rock and concrete walls.</p>"
+    }
+  },
+  "equipements/Y6My5FfCe4rGrEUH": {
+    "_nom": "Pince coupante forgée",
+    "name": {
+      "fr": "Pince coupante forgée",
+      "en": "Forged cutting pliers"
+    },
+    "system.description": {
+      "fr": "<p>Une vraie pince coupante : le fil de fer, les câbles, les boulons d'une épave.</p>",
+      "en": "<p>Real cutting pliers: wire, cables, the bolts of a wreck.</p>"
+    }
+  },
   "equipements/YABPoPUuOXPaf1P7": {
     "_nom": "Batte ou manche de pioche",
     "name": {
@@ -539,6 +1111,17 @@
     "system.description": {
       "fr": "<p>Du bois dur, bien en main. Rien de mieux pour repousser, rien de pire pour achever.</p>",
       "en": "<p>Hard wood, good in the hand. Nothing better for pushing back, nothing worse for finishing off.</p>"
+    }
+  },
+  "equipements/Yjs3DPynSF2oMrHs": {
+    "_nom": "Truelle de récupération",
+    "name": {
+      "fr": "Truelle de récupération",
+      "en": "Salvaged trowel"
+    },
+    "system.description": {
+      "fr": "<p>Un triangle de tôle riveté sur un manche : on gâche, on lisse, on jointoie.</p>",
+      "en": "<p>A triangle of sheet metal riveted on a handle: you mix, smooth, point.</p>"
     }
   },
   "equipements/Z7QQhuzYx0KyQRg6": {
@@ -552,6 +1135,28 @@
       "en": "<p>A horse from a riding centre on the Plaine des Cafres: faster than walking on tracks and pasture, sure-footed on the wide trails. It has to be fed, watered, and kept from the Pallid.</p>"
     }
   },
+  "equipements/aPLcOLPm9UIOouuq": {
+    "_nom": "Tronçonneuse révisée",
+    "name": {
+      "fr": "Tronçonneuse révisée",
+      "en": "Overhauled chainsaw"
+    },
+    "system.description": {
+      "fr": "<p>La tronçonneuse démontée, sa chaîne affûtée, son carburateur réglé, son pot bourré de laine de roche : elle coupe mieux, dure plus, et s'entend un peu moins loin.</p>",
+      "en": "<p>The chainsaw taken apart, its chain sharpened, its carburettor tuned, its exhaust stuffed with rock wool: it cuts better, lasts longer, and is heard a little less far.</p>"
+    }
+  },
+  "equipements/ak5bDl1GNq0Ie5JF": {
+    "_nom": "Remorque de voiture",
+    "name": {
+      "fr": "Remorque de voiture",
+      "en": "Car trailer"
+    },
+    "system.description": {
+      "fr": "<p>Un essieu, deux roues, un plateau de tôle, un timon et une boule d'attelage : dix charges de plus derrière une voiture ou un 4×4 (au MJ), mais l'attelage ne se faufile plus entre les épaves.</p>",
+      "en": "<p>An axle, two wheels, a sheet-metal platform, a drawbar and a tow ball: ten more loads behind a car or a 4×4 (for the GM), but the rig can no longer squeeze between wrecks.</p>"
+    }
+  },
   "equipements/bcPN8wVfFI6TWjEh": {
     "_nom": "Vélo-cargo",
     "name": {
@@ -563,6 +1168,17 @@
       "en": "<p>A box bike (a courier's, or built in the workshop): carry jerrycans, sacks of soil or a wounded person on the Lowland roads.</p>"
     }
   },
+  "equipements/bkFO8K5CzR1vpAvU": {
+    "_nom": "Masse de fortune",
+    "name": {
+      "fr": "Masse de fortune",
+      "en": "Makeshift sledgehammer"
+    },
+    "system.description": {
+      "fr": "<p>Une grosse pierre liée en croix au bout d'un manche : elle casse un parpaing, si l'on a de la patience.</p>",
+      "en": "<p>A big stone lashed crosswise at the end of a handle: it breaks a breeze block, if you are patient.</p>"
+    }
+  },
   "equipements/bqtCrw2ly0rWWqZn": {
     "_nom": "Charrette à bœufs",
     "name": {
@@ -572,6 +1188,50 @@
     "system.description": {
       "fr": "<p>Deux bœufs moka d'une ferme des Hauts sous le joug, une charrette de bois cerclée de fer : lente, silencieuse, elle porte une case entière. Les bêtes broutent l'herbe des bas-côtés, on marche à côté d'elles (ce ne sont pas des montures), et il faut savoir les mener (élevage).</p>",
       "en": "<p>Two moka oxen from a Highland farm under the yoke, a wooden cart with iron-rimmed wheels: slow, silent, it carries a whole house. The beasts graze the verges, you walk beside them (they are not mounts), and you have to know how to drive them (animal husbandry).</p>"
+    }
+  },
+  "equipements/c3ehQww7pvnBCIRO": {
+    "_nom": "Jarre de terre cuite",
+    "name": {
+      "fr": "Jarre de terre cuite",
+      "en": "Earthenware jar"
+    },
+    "system.description": {
+      "fr": "<p>Une jarre d'argile montée à la main et cuite au four de la forge : l'eau y reste fraîche et ne croupit pas. Elle garde quatre unités d'eau de plus à l'abri (au MJ).</p>",
+      "en": "<p>A clay jar built by hand and fired in the forge's oven: water stays cool in it and does not go stale. It holds four more units of water at the shelter (for the GM).</p>"
+    }
+  },
+  "equipements/cfFL8k2OV7lDKIgu": {
+    "_nom": "Cendre tamisée",
+    "name": {
+      "fr": "Cendre tamisée",
+      "en": "Sifted ash"
+    },
+    "system.description": {
+      "fr": "<p>Un seau de cendre de bois fine, passée au tamis : pour la lessive et pour la terre.</p>",
+      "en": "<p>A bucket of fine wood ash, passed through a sieve: for lye and for the soil.</p>"
+    }
+  },
+  "equipements/d2GUhJuEnmvo1ger": {
+    "_nom": "Marteau de récupération",
+    "name": {
+      "fr": "Marteau de récupération",
+      "en": "Salvaged hammer"
+    },
+    "system.description": {
+      "fr": "<p>Un écrou de gros boulon serti sur un manche : il plante, il redresse, il arrache.</p>",
+      "en": "<p>A big nut from a heavy bolt crimped on a handle: it drives, straightens, pulls.</p>"
+    }
+  },
+  "equipements/dOJW8zhSSPXCuHN8": {
+    "_nom": "Savates de pneu",
+    "name": {
+      "fr": "Savates de pneu",
+      "en": "Tyre sandals"
+    },
+    "system.description": {
+      "fr": "<p>Des savates deux-doigts découpées dans un pneu, la bride en chambre à air : elles ne s'usent pas, ne glissent pas sur le basalte mouillé, et ne coûtent rien.</p>",
+      "en": "<p>Flip-flops cut from a tyre, the strap made of inner tube: they do not wear out, do not slip on wet basalt, and cost nothing.</p>"
     }
   },
   "equipements/dUmMz8dGEXOMhloc": {
@@ -596,6 +1256,28 @@
       "en": "<p>Both hands free in the dark of a tunnel or a stairwell. Battery or rechargeable.</p>"
     }
   },
+  "equipements/eOlg958uypgUMu0D": {
+    "_nom": "Truelle forgée",
+    "name": {
+      "fr": "Truelle forgée",
+      "en": "Forged trowel"
+    },
+    "system.description": {
+      "fr": "<p>Une truelle d'acier, pour maçonner à la chaux ou au ciment.</p>",
+      "en": "<p>A steel trowel, for laying with lime or cement.</p>"
+    }
+  },
+  "equipements/ecKmnQN8uh4OW6cO": {
+    "_nom": "Sac de goni",
+    "name": {
+      "fr": "Sac de goni",
+      "en": "Goni sack"
+    },
+    "system.description": {
+      "fr": "<p>Le sac de jute des sucreries et des marchés : on y met une bête qui se débat, un porcelet, un cabri tout jeune.</p>",
+      "en": "<p>The jute sack of the sugar mills and markets: you put an animal that struggles in it, a piglet, a very young goat.</p>"
+    }
+  },
   "equipements/erkZO5xELWuZbgqd": {
     "_nom": "Planche des jours",
     "name": {
@@ -618,6 +1300,17 @@
       "en": "<p>Two folding camper-van panels, a regulator, a battery: enough to recharge the lamps, the radio and the walkie-talkies, anywhere. You take them with you when you move.</p>"
     }
   },
+  "equipements/gBRSsh8ENCE8aXEB": {
+    "_nom": "Utilitaire électrique et sa remorque",
+    "name": {
+      "fr": "Utilitaire électrique et sa remorque",
+      "en": "Electric utility vehicle and trailer"
+    },
+    "system.description": {
+      "fr": "<p>Le petit utilitaire et le plateau qu'il tire : il déménage un abri sans un bruit, et vide ses batteries en un trajet (trois unités d'énergie par quart de route).</p>",
+      "en": "<p>The small utility vehicle and the platform it pulls: it moves a whole shelter without a sound, and empties its batteries in one trip (three units of energy per watch on the road).</p>"
+    }
+  },
   "equipements/gRaW040bdNTirY7E": {
     "_nom": "Arc de chasse",
     "name": {
@@ -627,6 +1320,17 @@
     "system.description": {
       "fr": "<p>Un arc à poulies d'un club de tir à l'arc ou un arc de fabrication maison. Silencieux, les flèches se récupèrent.</p>",
       "en": "<p>A compound bow from an archery club, or a home-made bow. Silent, and the arrows can be recovered.</p>"
+    }
+  },
+  "equipements/gp8w0dCnMHPl8JjP": {
+    "_nom": "Sabre de fortune",
+    "name": {
+      "fr": "Sabre de fortune",
+      "en": "Makeshift cane knife"
+    },
+    "system.description": {
+      "fr": "<p>Une lame de pierre plate ligaturée au bout d'un bambou : elle tranche les lianes et le vétiver, pas grand-chose de plus.</p>",
+      "en": "<p>A flat stone blade lashed to the end of a bamboo: it slices lianas and vetiver, not much more.</p>"
     }
   },
   "equipements/hHK6ckirfpLMz8NM": {
@@ -649,6 +1353,39 @@
     "system.description": {
       "fr": "<p>Le sac d'un ambulancier ou d'un pompier : oxygène, attelles, matériel de suture, perfusions, tensiomètre.</p>",
       "en": "<p>A paramedic's or a firefighter's bag: oxygen, splints, suture kit, drips, blood-pressure cuff.</p>"
+    }
+  },
+  "equipements/imwXVVsnQTaAp1Oa": {
+    "_nom": "Lampe électrique",
+    "name": {
+      "fr": "Lampe électrique",
+      "en": "Electric lamp"
+    },
+    "system.description": {
+      "fr": "<p>Une ampoule de récupération dans un bocal, un câble, une batterie qu'on recharge aux panneaux : une lumière franche et sans fumée, tant qu'il y a du courant.</p>",
+      "en": "<p>A salvaged bulb in a jar, a cable, a battery recharged on the panels: a clear light without smoke, as long as there is power.</p>"
+    }
+  },
+  "equipements/jDf6Mhnx8fzxXKc0": {
+    "_nom": "Couverture",
+    "name": {
+      "fr": "Couverture",
+      "en": "Blanket"
+    },
+    "system.description": {
+      "fr": "<p>Une couverture cousue de vieux draps et de rideaux : les nuits des Hauts sont froides. Roulée sur le sac, elle fait de quoi bivouaquer.</p>",
+      "en": "<p>A blanket sewn from old sheets and curtains: nights in the Highlands are cold. Rolled on the pack, it is enough to bivouac.</p>"
+    }
+  },
+  "equipements/kRky4J5HKSNEjoqD": {
+    "_nom": "Fusil de chasse remis en état",
+    "name": {
+      "fr": "Fusil de chasse remis en état",
+      "en": "Restored hunting shotgun"
+    },
+    "system.description": {
+      "fr": "<p>Le fusil démonté, nettoyé, huilé à l'huile de bancoul, son ressort changé : il porte plus juste et ne s'enraye presque plus. Il s'entend toujours à des kilomètres.</p>",
+      "en": "<p>The shotgun taken apart, cleaned, oiled with bancoul oil, its spring changed: it shoots truer and hardly ever jams. It is still heard for kilometres.</p>"
     }
   },
   "equipements/kT4EhMvNaNdebEMl": {
@@ -682,6 +1419,28 @@
     "system.description": {
       "fr": "<p>Le plan que distribuaient l'office de tourisme et la mairie : les rues, les écoles, la pharmacie de garde, la gendarmerie, les routes qui sortent de la ville. Il ne couvre que la ville où on l'a trouvé.</p>",
       "en": "<p>The plan the tourist office and the town hall used to hand out: the streets, the schools, the duty pharmacy, the gendarmerie, the roads out of town. It only covers the town where it was found.</p>"
+    }
+  },
+  "equipements/lQ3IoYVWDl4BhUCw": {
+    "_nom": "Pierre à aiguiser",
+    "name": {
+      "fr": "Pierre à aiguiser",
+      "en": "Whetstone"
+    },
+    "system.description": {
+      "fr": "<p>Un galet au grain fin, dressé à plat sur une dalle. Avec elle, on redonne du fil à une lame (hache, sabre, couteau, scie) : l'affûtage rend un quart de ses usages et ne compte pas parmi les trois réparations de fortune.</p>",
+      "en": "<p>A fine-grained pebble, ground flat on a slab. With it, you put an edge back on a blade (axe, cane knife, knife, saw): sharpening restores a quarter of its uses and does not count among the three makeshift repairs.</p>"
+    }
+  },
+  "equipements/lrhomsofB0IjGLdq": {
+    "_nom": "Sel",
+    "name": {
+      "fr": "Sel",
+      "en": "Salt"
+    },
+    "system.description": {
+      "fr": "<p>Un bocal de sel de mer, gris et humide, réduit sur le feu : sans sel, pas de boucané, pas d'achards.</p>",
+      "en": "<p>A jar of sea salt, grey and damp, boiled down over the fire: without salt, no boucané (smoked meat), no achards.</p>"
     }
   },
   "equipements/lyHb0eP2OzbXMBBT": {
@@ -739,6 +1498,28 @@
       "en": "<p>A fisherman's boat with its outboard: from harbour to harbour along the coast, far from the roads and the hordes, as long as the sea allows.</p>"
     }
   },
+  "equipements/mkbRc2EBkNbAzNmR": {
+    "_nom": "Lampe à huile",
+    "name": {
+      "fr": "Lampe à huile",
+      "en": "Oil lamp"
+    },
+    "system.description": {
+      "fr": "<p>Un bocal, une mèche de tissu, de l'huile de bancoul : une petite flamme qui fume, pour trois nuits. On la remplit avec une autre bouteille d'huile.</p>",
+      "en": "<p>A jar, a cloth wick, bancoul oil: a small smoky flame, for three nights. You refill it with another bottle of oil.</p>"
+    }
+  },
+  "equipements/mmWt80vJftjAZvBT": {
+    "_nom": "Scie de récupération",
+    "name": {
+      "fr": "Scie de récupération",
+      "en": "Salvaged saw"
+    },
+    "system.description": {
+      "fr": "<p>Une lame de ressort taillée en dents à la lime, tendue sur un arc de bois : elle débite une planche en un quart.</p>",
+      "en": "<p>A spring leaf filed into teeth, stretched on a wooden bow: it cuts a plank in a watch.</p>"
+    }
+  },
   "equipements/n3f2wGUmK2bCA5ZZ": {
     "_nom": "Fusil de chasse calibre 12",
     "name": {
@@ -748,6 +1529,17 @@
     "system.description": {
       "fr": "<p>Le fusil de chasse d'un chasseur des Hauts, superposé ou à pompe. Terrible à courte portée. Chaque coup s'entend à des kilomètres.</p>",
       "en": "<p>A Highland hunter's shotgun, over-and-under or pump-action. Terrible at short range. Every shot is heard for kilometres.</p>"
+    }
+  },
+  "equipements/ny0JeIZg722GsNZW": {
+    "_nom": "Attelle",
+    "name": {
+      "fr": "Attelle",
+      "en": "Splint"
+    },
+    "system.description": {
+      "fr": "<p>Deux gaulettes, du tissu, une corde : pour tenir un membre cassé, tout de suite. Elle tient lieu de médicament pour soigner une fracture et donne un dé de plus.</p>",
+      "en": "<p>Two rods, cloth, a rope: to hold a broken limb, right away. It stands in for a medicine to treat a fracture and gives one more die.</p>"
     }
   },
   "equipements/oAYx8BLS49AhmEun": {
@@ -783,6 +1575,17 @@
       "en": "<p>A workshop crossbow: a car leaf spring for the bow, a wooden stock, a salvaged trigger. Slow to cock, silent, and its bolts can be recovered.</p>"
     }
   },
+  "equipements/p0UP8qoxxabnRjQ3": {
+    "_nom": "Tisane de la gramoune",
+    "name": {
+      "fr": "Tisane de la gramoune",
+      "en": "The gramoune's herbal tea"
+    },
+    "system.description": {
+      "fr": "<p>La tisane du cahier de la gramoune, ses plantes à elle, ses doses à elle : pour le ventre, les fièvres et les coups de chaleur, elle tient lieu de médicament et donne un dé de plus au soin. Elle ne guérit pas du Gris.</p>",
+      "en": "<p>The herbal tea from a gramoune's (an old woman's) notebook, her plants, her doses: for the stomach, fevers and heatstroke, it stands in for a medicine and gives one more die to the treatment. It does not cure the Grey.</p>"
+    }
+  },
   "equipements/pNcSHLmPMugTau0E": {
     "_nom": "Batterie nomade",
     "name": {
@@ -792,6 +1595,39 @@
     "system.description": {
       "fr": "<p>Une grosse batterie portable avec ses prises : garder le courant d'une journée pour la nuit.</p>",
       "en": "<p>A big portable battery with its sockets: keep a day's power for the night.</p>"
+    }
+  },
+  "equipements/pV9b8JPKvudZsQYJ": {
+    "_nom": "Charrette à bras",
+    "name": {
+      "fr": "Charrette à bras",
+      "en": "Handcart"
+    },
+    "system.description": {
+      "fr": "<p>Un plateau de planches, deux roues de bois cerclées, deux brancards : un survivant y emmène des troncs et des sacs. Ni sentier, ni ravine, ni escalier. Un peu d'huile de bancoul aux moyeux tous les trente jours.</p>",
+      "en": "<p>A plank platform, two iron-rimmed wooden wheels, two shafts: one survivor hauls logs and sacks with it. No trail, no ravine, no stairs. A little bancoul oil on the hubs every thirty days.</p>"
+    }
+  },
+  "equipements/pbHnbR9YZ8kzKikh": {
+    "_nom": "Couteau de récupération",
+    "name": {
+      "fr": "Couteau de récupération",
+      "en": "Salvaged knife"
+    },
+    "system.description": {
+      "fr": "<p>Une lame de scie à métaux meulée, un manche de bois et de fil de fer : un vrai couteau, qui tient moins.</p>",
+      "en": "<p>A ground-down hacksaw blade, a handle of wood and wire: a real knife, that lasts less.</p>"
+    }
+  },
+  "equipements/rGbtgmv9Nt8hmD3p": {
+    "_nom": "Motoculteur",
+    "name": {
+      "fr": "Motoculteur",
+      "en": "Two-wheel tractor"
+    },
+    "system.description": {
+      "fr": "<p>Un petit moteur sur deux roues, remis en état : seul, il ne porte presque rien ; il tire une remorque. Il boit du carburant et s'entend de très loin.</p>",
+      "en": "<p>A small engine on two wheels, restored: on its own, it carries almost nothing; it pulls a trailer. It drinks fuel and is heard from very far away.</p>"
     }
   },
   "equipements/rfekFU67EFP5EOgN": {
@@ -816,6 +1652,28 @@
       "en": "<p>Spanners, screwdrivers, pliers, hacksaw, multimeter, duct tape, cable ties: enough to repair almost anything.</p>"
     }
   },
+  "equipements/sC3NignwGkVyaUPl": {
+    "_nom": "Torche",
+    "name": {
+      "fr": "Torche",
+      "en": "Torch"
+    },
+    "system.description": {
+      "fr": "<p>Une branche, un chiffon trempé d'huile de bancoul : de la lumière pour une nuit, qui se voit de très loin.</p>",
+      "en": "<p>A branch, a rag soaked in bancoul oil: light for one night, seen from very far away.</p>"
+    }
+  },
+  "equipements/sefq4CERKvk8bDal": {
+    "_nom": "Lance forgée",
+    "name": {
+      "fr": "Lance forgée",
+      "en": "Forged spear"
+    },
+    "system.description": {
+      "fr": "<p>Un fer de lance forgé et trempé sur un bambou plein : elle tient à distance, et elle dure.</p>",
+      "en": "<p>A forged and tempered spearhead on a solid bamboo: it keeps them at a distance, and it lasts.</p>"
+    }
+  },
   "equipements/sswgHn21e5oBrOHt": {
     "_nom": "Cahier d'une gramoune",
     "name": {
@@ -825,6 +1683,17 @@
     "system.description": {
       "fr": "<p>Un cahier d'écolier rempli à la veillée, sous la dictée d'une ancienne : remèdes, lunes pour planter, façons de tresser et de bâtir, avec ses mots à elle. Il n'en existe qu'un ; il apprend ce qu'elle savait, même quand elle n'est plus là.</p>",
       "en": "<p>A school exercise book filled in during the evenings, at an elder's dictation: remedies, moons for planting, ways to weave and to build, in her own words. There is only one; it teaches what she knew, even when she is gone.</p>"
+    }
+  },
+  "equipements/tOUFyg8eJgIMb0BF": {
+    "_nom": "Lance de récupération",
+    "name": {
+      "fr": "Lance de récupération",
+      "en": "Salvaged spear"
+    },
+    "system.description": {
+      "fr": "<p>Un fer de ferraille forgé à froid, goupillé sur un manche droit : à deux mètres d'une bouche qui mord, on frappe et on recule.</p>",
+      "en": "<p>A scrap-metal head cold-forged and pinned on a straight shaft: two metres from a biting mouth, you strike and step back.</p>"
     }
   },
   "equipements/u9ANmNix6eQQlUsC": {
@@ -871,6 +1740,28 @@
       "en": "<p>A 1:25,000 map of a cirque or of the volcano, folded and refolded by a hiker: every contour line, every trail, every îlet (hamlet), the gîtes and the water points. It is the only one that shows the trails. It doesn't know which ones the rockfalls have carried away since.</p>"
     }
   },
+  "equipements/uz62LC8Nwo03k14I": {
+    "_nom": "Vélo et sa remorque",
+    "name": {
+      "fr": "Vélo et sa remorque",
+      "en": "Bicycle and trailer"
+    },
+    "system.description": {
+      "fr": "<p>Un vélo tout-terrain avec, accrochée derrière, une remorque de ferraille et de planches : les sacs et les planches suivent, sans un bruit. Les montées des Hauts se font à pied, en poussant. Deux rustines tous les vingt jours.</p>",
+      "en": "<p>A mountain bike with, hitched behind, a trailer of scrap metal and planks: the sacks and planks follow, without a sound. The climbs of the Highlands are done on foot, pushing. Two patches every twenty days.</p>"
+    }
+  },
+  "equipements/vryrQlIak6aDeizE": {
+    "_nom": "Arc renforcé",
+    "name": {
+      "fr": "Arc renforcé",
+      "en": "Reinforced bow"
+    },
+    "system.description": {
+      "fr": "<p>L'arc de chasse, doublé au dos d'une lame de ressort et d'une corde neuve : il tire plus loin et plus fort. Silencieux, comme avant.</p>",
+      "en": "<p>The hunting bow, backed with a spring leaf and a new string: it shoots further and harder. Silent, as before.</p>"
+    }
+  },
   "equipements/w5jAo3vhpTDnsksz": {
     "_nom": "Pistolet de détresse",
     "name": {
@@ -882,6 +1773,28 @@
       "en": "<p>A boat's flare gun: call for help, signal, dazzle, draw a horde elsewhere, start a fire. There are only a few flares.</p>"
     }
   },
+  "equipements/wNOKb0gMWE2rjlHu": {
+    "_nom": "Régulateur de charge",
+    "name": {
+      "fr": "Régulateur de charge",
+      "en": "Charge controller"
+    },
+    "system.description": {
+      "fr": "<p>Une petite carte électronique remontée dans un boîtier : sans lui, des panneaux tuent les batteries. Un utilitaire électrique en demande un.</p>",
+      "en": "<p>A small circuit board rebuilt in a box: without it, panels kill batteries. A small electric utility vehicle needs one.</p>"
+    }
+  },
+  "equipements/wQ6tdYF1bIUdexJW": {
+    "_nom": "Pelle et pioche de récupération",
+    "name": {
+      "fr": "Pelle et pioche de récupération",
+      "en": "Salvaged shovel and pick"
+    },
+    "system.description": {
+      "fr": "<p>Une pelle de tôle pliée, un fer de pioche fait d'une barre de ferraille : on creuse la tranchée, la fosse, la tombe.</p>",
+      "en": "<p>A folded sheet-metal shovel, a pick head made from a scrap bar: you dig the trench, the pit, the grave.</p>"
+    }
+  },
   "equipements/wXr1B7QmyHAbya4x": {
     "_nom": "Jerricans",
     "name": {
@@ -891,6 +1804,17 @@
     "system.description": {
       "fr": "<p>Deux jerricans de vingt litres : de l'eau, de l'essence, de quoi transporter ce qui compte.</p>",
       "en": "<p>Two twenty-litre jerrycans: water, petrol, a way to carry what matters.</p>"
+    }
+  },
+  "equipements/wwyZD45O4Uq6VbMV": {
+    "_nom": "Carabine .22 remise en état",
+    "name": {
+      "fr": "Carabine .22 remise en état",
+      "en": "Restored .22 rifle"
+    },
+    "system.description": {
+      "fr": "<p>La petite carabine reprise pièce à pièce : précise, fiable, et toujours moins bruyante qu'un fusil.</p>",
+      "en": "<p>The small rifle reworked piece by piece: accurate, reliable, and still quieter than a shotgun.</p>"
     }
   },
   "equipements/yE85TULkfR9UIx88": {
@@ -937,6 +1861,17 @@
       "en": "<p>A rental bike from the West coast, its battery charged on the shelter's panels: it climbs back up to the Highlands almost as easily as it comes down, without a sound. Half a unit of energy per watch on the road.</p>"
     }
   },
+  "equipements/zOHFklR8jDw5dUdX": {
+    "_nom": "Charbon de bois",
+    "name": {
+      "fr": "Charbon de bois",
+      "en": "Charcoal"
+    },
+    "system.description": {
+      "fr": "<p>Un sac de charbon tiré d'une meule couverte de terre : le feu de la forge, le four à poterie, le filtre à eau, l'encre. Une forge en brûle un sac par ouvrage.</p>",
+      "en": "<p>A sack of charcoal from a clamp covered with earth: the fire of the forge, the pottery kiln, the water filter, ink. A forge burns one sack per piece of work.</p>"
+    }
+  },
   "equipements/zQmFKR3RXI2jZLId": {
     "_nom": "Calendrier des marées et des lunes",
     "name": {
@@ -946,6 +1881,17 @@
     "system.description": {
       "fr": "<p>Le petit livret des pêcheurs et des plaisanciers : pour chaque jour, les heures des marées, le lever et le coucher de la lune, sa phase heure par heure. Avec lui, la lune donne le jour à un jour près.</p>",
       "en": "<p>The little booklet of fishermen and sailors: for every day, the times of the tides, moonrise and moonset, its phase hour by hour. With it, the moon gives the day to within a day.</p>"
+    }
+  },
+  "equipements/zZHhQqluot84qGTD": {
+    "_nom": "Enfumoir",
+    "name": {
+      "fr": "Enfumoir",
+      "en": "Bee smoker"
+    },
+    "system.description": {
+      "fr": "<p>Une boîte de conserve percée, du chaume qui fume : on calme un essaim avant de le prendre. Sans lui, l'essaim pique.</p>",
+      "en": "<p>A pierced tin can, smouldering thatch: you calm a swarm before taking it. Without it, the swarm stings.</p>"
     }
   },
   "equipements/zbfFqGVAJlulr1ou": {

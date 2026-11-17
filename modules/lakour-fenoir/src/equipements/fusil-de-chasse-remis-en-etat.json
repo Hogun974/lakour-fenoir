@@ -1,0 +1,40 @@
+{
+  "_id": "kRky4J5HKSNEjoqD",
+  "_key": "!items!kRky4J5HKSNEjoqD",
+  "name": "Fusil de chasse remis en état",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "fusil-de-chasse-remis-en-etat",
+    "categorie": "arme-a-feu",
+    "description": "<p>Le fusil démonté, nettoyé, huilé à l'huile de bancoul, son ressort changé : il porte plus juste et ne s'enraye presque plus. Il s'entend toujours à des kilomètres.</p>",
+    "bonus": {
+      "tir": 3
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": 1,
+    "bruit": 2,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "usages": 70,
+    "remise": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "fusil-de-chasse-remis-en-etat"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

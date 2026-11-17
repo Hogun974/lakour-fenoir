@@ -1,0 +1,45 @@
+{
+  "_id": "uCzKIxcUhDY4N878",
+  "_key": "!items!uCzKIxcUhDY4N878",
+  "name": "Cendres tamisées",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "cendres-tamisees",
+    "description": "<p>Le bois de la veille brûlé jusqu'au blanc, la cendre passée au tamis : trois seaux.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "cendre-tamisee",
+      "n": 3
+    },
+    "metier": "cuisine"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cendres-tamisees"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

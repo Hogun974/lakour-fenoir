@@ -1,0 +1,53 @@
+{
+  "_id": "uz62LC8Nwo03k14I",
+  "_key": "!items!uz62LC8Nwo03k14I",
+  "name": "Vélo et sa remorque",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "velo-et-remorque",
+    "categorie": "transport",
+    "description": "<p>Un vélo tout-terrain avec, accrochée derrière, une remorque de ferraille et de planches : les sacs et les planches suivent, sans un bruit. Les montées des Hauts se font à pied, en poussant. Deux rustines tous les vingt jours.</p>",
+    "bonus": {
+      "endurance": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "pied",
+      "places": 1,
+      "chargeMax": 7,
+      "carburantParQuart": 0,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 0,
+      "allure": 0.6,
+      "pente": {
+        "descente": 0.7,
+        "montee": 3
+      }
+    },
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "velo-et-remorque"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

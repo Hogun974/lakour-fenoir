@@ -15,7 +15,7 @@ import * as L from "../logique/index.mjs";
 import { t, lireEtat, acteur, survivantsDuGroupe, abriCourant, aPlat } from "./donnees.mjs";
 
 export function fonctionsCorps({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
-  ecrireSurvivant, bilanVivant, mondeMJ, aLAbri, savoirsDuGroupe, testDirect, objetsDe, defDe, estMJ, brasDe, journalSecret }) {
+  ecrireSurvivant, bilanVivant, mondeMJ, aLAbri, savoirsDuGroupe, testDirect, objetsDe, defDe, estMJ, brasDe, journalSecret, ateliers = null }) {
   const survivantDe = id => {
     const a = acteur(id);
     if (!a || a.type !== "survivant") throw erreur("ActeurInconnu");
@@ -175,10 +175,17 @@ export function fonctionsCorps({ ecriture, ouvrirCtx, terminer, noter, tx, jourC
 
   async function parerInterne(ctx, { acteurId = "", touches = 1 } = {}) {
     const a = survivantDe(acteurId);
-    const equipement = objetsDe(a, "equipement").map(i => ({ parade: i.system?.parade ?? defDe("equipements", i.system?.cle)?.parade }));
-    const seuil = L.paradeDe(equipement);
+    // Lot 6 « ateliers » : un bouclier brisé ne pare plus ; celui qui pare s'use (un usage par parade qui a servi).
+    const boucliers = objetsDe(a, "equipement").filter(i => !ateliers?.estCasseItem(i))
+      .map(i => ({ item: i, parade: Number(i.system?.parade) || Number(defDe("equipements", i.system?.cle)?.parade) || 0 }));
+    const seuil = L.paradeDe(boucliers);
     if (!seuil) throw clair(t("LAKOUR_SURVIE.Corps.Erreurs.SansBouclier", { nom: a.name }));
     const r = L.parer(touches, seuil, Math.random);
+    const tenu = boucliers.find(b => b.parade === seuil);
+    if (r.parees > 0 && tenu && ateliers) {
+      const u = await ateliers.userItem(tenu.item, 1);
+      if (u.casse) noter(ctx, tx("Ateliers.Journal.Casse", { nom: a.name, objet: tenu.item.name }));
+    }
     await chat(carteAction({ icone: "fa-shield", titre: t("LAKOUR_SURVIE.Corps.Parade.Titre", { nom: a.name }),
       lignes: [t("LAKOUR_SURVIE.Corps.Parade.Des", { des: r.des.join(" ") || "—", seuil }), t("LAKOUR_SURVIE.Corps.Parade.Resultat", { parees: r.parees, passent: r.passent })] }));
     return { acteurId: a.id, seuil, ...r };

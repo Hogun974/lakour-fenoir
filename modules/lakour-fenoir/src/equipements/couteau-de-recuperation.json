@@ -1,0 +1,42 @@
+{
+  "_id": "pbHnbR9YZ8kzKikh",
+  "_key": "!items!pbHnbR9YZ8kzKikh",
+  "name": "Couteau de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "couteau-de-recuperation",
+    "categorie": "outil",
+    "description": "<p>Une lame de scie à métaux meulée, un manche de bois et de fil de fer : un vrai couteau, qui tient moins.</p>",
+    "bonus": {
+      "survie": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "couteau"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "couteau-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

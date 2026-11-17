@@ -1,0 +1,49 @@
+{
+  "_id": "WlbtYKA1T3GwhDug",
+  "_key": "!items!WlbtYKA1T3GwhDug",
+  "name": "Tisane de citronnelle",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "tisane-de-citronnelle",
+    "description": "<p>La citronnelle du bord des cases, bouillie : celle qu'on boit chaude quand la fièvre prend. Deux bols.</p>",
+    "cout": {
+      "plantes": 2,
+      "eau": 1
+    },
+    "travail": 1,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "zerbaz"
+      ],
+      "installation": {
+        "metier": "tisanerie",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "tisane-de-citronnelle",
+      "n": 2
+    },
+    "metier": "tisanerie",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tisane-de-citronnelle"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

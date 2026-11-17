@@ -1,0 +1,42 @@
+{
+  "_id": "KcBRniSGLdsKPSZS",
+  "_key": "!items!KcBRniSGLdsKPSZS",
+  "name": "Marteau forgé",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "marteau",
+    "categorie": "outil",
+    "description": "<p>Une tête d'acier forgée au galet, un manche de goyavier : le premier outil de la forge, et le plus utile.</p>",
+    "bonus": {
+      "bricolage": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "forge",
+    "gammes": [
+      "marteau"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "marteau"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

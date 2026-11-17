@@ -109,7 +109,7 @@ export const EQUIPEMENTS_REPERES = [...CARTES, ...CALENDRIERS, ...FAITS_MAIN];
 // ---------------------------------------------------------------- Recettes (le format de recettes.mjs)
 function recette({ cle, nom, description, cout, travail, competence = "bricolage", difficulte = "normale", produit }) {
   return objet({ pack: "recettes", type: "recette", cle, nom, img: "icons/svg/anvil.svg",
-    system: { description: html(description), cout, travail, competence, difficulte, requiert: { savoirs: [], installation: null }, produit } });
+    system: { description: html(description), cout, travail, competence, difficulte, requiert: { savoirs: [], installation: null }, produit, sac: true } });   // lot 6 : depuis le sac
 }
 export const RECETTES_REPERES = [
   recette({ cle: "planche-des-jours", nom: "Planche des jours", cout: { materiaux: 1 }, travail: 1, difficulte: "facile", produit: { equipement: "planche-des-jours", n: 1 },

@@ -1,0 +1,49 @@
+{
+  "_id": "cTvPoPlSptDMmJwr",
+  "_key": "!items!cTvPoPlSptDMmJwr",
+  "name": "Truelle de récupération",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "truelle-de-recuperation",
+    "description": "<p>Un triangle de tôle riveté de quatre clous sur un manche.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "etabli",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "truelle-de-recuperation",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "metier": "etabli",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "truelle-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

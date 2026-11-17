@@ -1,0 +1,40 @@
+{
+  "_id": "c3ehQww7pvnBCIRO",
+  "_key": "!items!c3ehQww7pvnBCIRO",
+  "name": "Jarre de terre cuite",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "jarre-de-terre-cuite",
+    "categorie": "vie",
+    "description": "<p>Une jarre d'argile montée à la main et cuite au four de la forge : l'eau y reste fraîche et ne croupit pas. Elle garde quatre unités d'eau de plus à l'abri (au MJ).</p>",
+    "bonus": {},
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "stockage": {
+        "eau": 4
+      }
+    },
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "jarre-de-terre-cuite"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

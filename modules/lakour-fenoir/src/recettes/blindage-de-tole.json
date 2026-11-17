@@ -1,0 +1,52 @@
+{
+  "_id": "fgL3r193pRdXkO4e",
+  "_key": "!items!fgL3r193pRdXkO4e",
+  "name": "Blindage de tôle et grilles",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "blindage-de-tole",
+    "description": "<p>Des tôles et des grilles prises sur d'autres épaves, découpées, boulonnées aux portières et devant les vitres.</p>",
+    "cout": {
+      "materiaux": 4,
+      "pieces": 1
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "blindage-de-tole",
+      "n": 1
+    },
+    "outils": [
+      "marteau",
+      "pince"
+    ],
+    "bruit": 2,
+    "metier": "mecanique",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "blindage-de-tole"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

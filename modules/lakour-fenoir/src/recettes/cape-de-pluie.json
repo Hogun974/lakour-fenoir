@@ -1,0 +1,51 @@
+{
+  "_id": "lycwpcfW4Mf8u6In",
+  "_key": "!items!lycwpcfW4Mf8u6In",
+  "name": "Cape de pluie",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "cape-de-pluie",
+    "description": "<p>Une bâche taillée en cape, une capuche, une corde pour fermer.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "couture",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "cape-de-pluie",
+      "n": 1
+    },
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "metier": "couture",
+    "arbre": "moderne",
+    "repond": "capeline-de-vacoa"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cape-de-pluie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

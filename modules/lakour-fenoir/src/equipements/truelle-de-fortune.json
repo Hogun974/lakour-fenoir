@@ -1,0 +1,40 @@
+{
+  "_id": "UxLkQMXZS03pSeaN",
+  "_key": "!items!UxLkQMXZS03pSeaN",
+  "name": "Truelle de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "truelle-de-fortune",
+    "categorie": "outil",
+    "description": "<p>Une pierre plate emmanchée : de quoi lisser la terre d'un torchis ou caler une pierre.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "truelle"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "truelle-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

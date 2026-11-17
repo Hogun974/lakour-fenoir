@@ -1,0 +1,46 @@
+{
+  "_id": "8EDnoFCvQvpIgDyM",
+  "_key": "!items!8EDnoFCvQvpIgDyM",
+  "name": "Sel de mer",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "sel-de-mer",
+    "description": "<p>Douze seaux d'eau de mer réduits sur le feu jusqu'à ce que le fond blanchisse : deux bocaux de sel. Il faut la mer à portée, ou des bidons d'eau de mer rapportés.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 4,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "sel",
+      "n": 2
+    },
+    "metier": "cuisine",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sel-de-mer"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

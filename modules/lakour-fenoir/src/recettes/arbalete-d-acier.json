@@ -1,0 +1,62 @@
+{
+  "_id": "AW3BSFLbWL8gHVWP",
+  "_key": "!items!AW3BSFLbWL8gHVWP",
+  "name": "Arbalète d'acier à levier",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "arbalete-d-acier",
+    "description": "<p>L'arbalète de fortune, un ressort forgé en arc, quatre ferrailles pour le levier, deux boîtes de vis.</p>",
+    "cout": {
+      "materiaux": 1,
+      "pieces": 1
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "mecanique"
+      ],
+      "installation": {
+        "metier": "forge",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "arbalete-d-acier",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "arbalete-de-fortune",
+        "n": 1
+      },
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 3,
+    "metier": "forge"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "arbalete-d-acier"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

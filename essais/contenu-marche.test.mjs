@@ -9,7 +9,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
-import { REGLES_MARCHE, coursDuJour } from "../systems/lakour-survie/logique/marche.mjs";
+import { REGLES_MARCHE, coursDuJour, valeurObjet } from "../systems/lakour-survie/logique/marche.mjs";
 import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES, COURS_TEXTE } from "../modules/lakour-fenoir/contenu/marche.mjs";
 import { EVENEMENTS } from "../modules/lakour-fenoir/contenu/evenements.mjs";
 import { SURVIVANTS } from "../modules/lakour-fenoir/contenu/survivants.mjs";
@@ -82,7 +82,8 @@ test("recettes et cours : aucune recette ne rapporte plus de 3 parts par quart d
     for (const phase of phases) {
       const c = coursDuJour({ phase });
       if (!(r.produit.ressource in c) || Object.keys(r.cout).some(k => !(k in c))) continue;
-      const cout = Object.entries(r.cout).reduce((t, [k, q]) => t + q * c[k], 0);
+      // Lot 6 « ateliers » : les objets que la recette consomme (le rhum du rhum arrangé…) comptent à leur valeur.
+      const cout = Object.entries(r.cout).reduce((t, [k, q]) => t + q * c[k], 0) + (r.objets ?? []).reduce((t, o) => t + (valeurObjet(o.cle, D, c).valeur ?? 0) * (o.n ?? 1), 0);
       const parQuart = (r.produit.n * c[r.produit.ressource] - cout) / r.travail;
       assert.ok(parQuart <= 3, `${r.cle} (${phase}) : ${parQuart} parts par quart`);
     }

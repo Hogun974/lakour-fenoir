@@ -1,0 +1,38 @@
+{
+  "_id": "BOQnBdzpNZJYTFqs",
+  "_key": "!items!BOQnBdzpNZJYTFqs",
+  "name": "Ligne de pêche",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "ligne-de-peche",
+    "categorie": "outil",
+    "description": "<p>Un hameçon tordu dans du fil de fer, une ligne, une gaulette : de quoi pêcher depuis les galets.</p>",
+    "bonus": {
+      "survie": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "ligne-de-peche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

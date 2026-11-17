@@ -1,0 +1,46 @@
+{
+  "_id": "p0UP8qoxxabnRjQ3",
+  "_key": "!items!p0UP8qoxxabnRjQ3",
+  "name": "Tisane de la gramoune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "tisane-de-la-gramoune",
+    "categorie": "soin",
+    "description": "<p>La tisane du cahier de la gramoune, ses plantes à elle, ses doses à elle : pour le ventre, les fièvres et les coups de chaleur, elle tient lieu de médicament et donne un dé de plus au soin. Elle ne guérit pas du Gris.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "remede": {
+      "afflictions": [
+        "gastro-enterite",
+        "dengue",
+        "chikungunya",
+        "coup-de-chaleur"
+      ],
+      "bonus": 1,
+      "remplace": true
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tisane-de-la-gramoune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

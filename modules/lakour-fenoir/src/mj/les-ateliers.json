@@ -1,0 +1,162 @@
+{
+  "_id": "D1hFc0T8H6TBgaWG",
+  "_key": "!journal!D1hFc0T8H6TBgaWG",
+  "name": "Les ateliers et les outils",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "les-ateliers",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "6L7tbZ6pOuHWxZvV",
+      "_key": "!journal.pages!D1hFc0T8H6TBgaWG.6L7tbZ6pOuHWxZvV",
+      "name": "Fabriquer, à la main et à l'atelier",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce qu'on fabrique, dans Fénoir, se fait de deux façons.</p><ul><li><strong>Depuis le sac</strong> : les petites fabrications (un éclat de basalte, une lance, une torche, une attelle) se font n'importe où, même en route, sur ce que le groupe porte. Certaines demandent de la lumière la nuit.</li><li><strong>À l'atelier</strong> : les grosses demandent un atelier de leur métier, à l'abri. Il y en a neuf : le <strong>coin du feu</strong>, l'<strong>établi du bois</strong>, la <strong>forge</strong>, la <strong>vannerie du vacoa</strong>, l'<strong>atelier de couture</strong>, la <strong>case à tisanes</strong>, l'<strong>atelier de mécanique</strong>, l'<strong>atelier d'électricité</strong>, la <strong>distillerie</strong>. Chacun a trois niveaux, et c'est le matériau qui fait le niveau : ce que l'île donne d'abord (pierre sèche, bambou, paille et torchis), le bois sous tôle ensuite, le parpaing enfin.</li></ul><p><strong>Un meilleur atelier fait mieux.</strong> Une recette faite à un atelier d'un niveau au-dessus de ce qu'elle demande gagne <strong>un dé</strong> et va <strong>une fois et demie plus vite</strong> ; deux niveaux au-dessus, <strong>deux dés</strong> et <strong>deux fois plus vite</strong>. L'atelier de FVTT d'avant sert d'établi, de mécanique et d'électricité ; la cuisine commune et la gazinière servent de coin du feu.</p><p><strong>Les outils en main.</strong> Beaucoup de recettes demandent un outil : un marteau, une pince, un couteau, une scie, une hache. Un membre du groupe présent doit l'avoir, en état. Une caisse à outils sert de marteau, de pince et de scie ; une tronçonneuse de hache et de scie.</p><p><strong>Les objets qu'une recette consomme.</strong> Certaines demandent un objet fait avant : le charbon de bois de la forge, le sel du boucané, l'huile de bancoul des lampes, l'arme qu'on remet en état. Sur une réussite, il est consommé ; sur un échec, il reste.</p><p><strong>Un échec</strong> rend la moitié des ressources (arrondie au-dessus) ; le reste est gâché. Rien d'autre ne se perd.</p><p><strong>Pour le MJ</strong> : peutFabriquer(cle) dit ce qui manque ; fabriquer({ recette, acteurId }) fait tout (test, coût, objets, outils usés, bruit).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "principe"
+        }
+      }
+    },
+    {
+      "_id": "J4mnHis5i5Ru8yDB",
+      "_key": "!journal.pages!D1hFc0T8H6TBgaWG.J4mnHis5i5Ru8yDB",
+      "name": "Les outils en trois qualités",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Douze gammes d'outils et d'armes blanches : hache, sabre à canne, couteau, marteau, scie, truelle, pelle et pioche, pied-de-biche, masse, pince coupante, gratte, lance. Chacune existe en trois qualités.</p><ul><li><strong>De fortune</strong> : pierre, bambou, ligatures, depuis le sac. <strong>Un dé de moins</strong> que l'outil forgé (souvent aucun), et <strong>6 usages</strong>. Il ouvre les recettes qui demandent l'outil : c'est par lui qu'on commence, à mains nues.</li><li><strong>De récupération</strong> : ferraille, tôle, ressort, un manche, à l'établi. <strong>Le même bonus</strong> que l'outil forgé, <strong>20 usages</strong>.</li><li><strong>Forgé</strong> : acier, à la forge, avec du charbon de bois. <strong>40 usages</strong> (une hache forgée abat une trentaine d'arbres).</li></ul><p><strong>Un usage</strong>, c'est un quart de travail avec l'outil (abattre, bâtir, fabriquer) ou un combat. Une fabrication use d'un usage chaque outil qu'elle demande ; pour le reste, le MJ use l'outil (userOutil). Au bout de ses usages, l'outil est <strong>cassé</strong> : plus de bonus, et il ne compte plus pour une recette.</p><p><strong>La réparation de fortune</strong> (un bout de fil de fer ou de corde : 1 matériau, un quart) rend la moitié de ses usages, puis le quart, puis le huitième ; <strong>trois fois au plus</strong>. <strong>La pierre à aiguiser</strong> redonne du fil à une lame (hache, sabre, couteau, scie) : un quart des usages, sans compter parmi les trois réparations.</p><p><strong>Ce qu'on trouve</strong> : un outil trouvé en fouillant est de fortune six fois sur dix, de récupération trois, forgé une ; plus le lieu est dangereux, plus il est bon (table « La qualité d'un outil trouvé »).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "outils"
+        }
+      }
+    },
+    {
+      "_id": "8kjjLUuIAbRQq4B8",
+      "_key": "!journal.pages!D1hFc0T8H6TBgaWG.8kjjLUuIAbRQq4B8",
+      "name": "Les suites : armes remises en état, bouclier doublé",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce qui n'existe qu'en un matériau progresse par une version meilleure, faite à l'atelier à partir de l'objet d'origine (consommé) :</p><ul><li><strong>arc renforcé</strong> (+2 dés au tir) ; <strong>arbalète d'acier à levier</strong> (+2 dés) ;</li><li><strong>bouclier doublé et cerclé</strong> : il pare chaque touche d'un Livide sur <strong>4, 5 ou 6</strong> (la moitié), contre 5 ou 6 pour la tôle ; trois charges ; 30 usages contre 12 ;</li><li><strong>fusil de chasse remis en état</strong> (+3 dés), <strong>carabine .22</strong> et <strong>pistolet de service remis en état</strong> (+2) : ils s'enrayent bien moins ;</li><li><strong>tronçonneuse révisée</strong> : elle dure plus et fait moins de bruit (2 au lieu de 3).</li></ul><p><strong>L'enrayage.</strong> Une arme à feu s'enraye quand le test de tir montre <strong>au moins deux 1</strong> (<strong>trois 1</strong> si elle a été remise en état). Usée (la moitié de ses usages passée, un usage par test de tir), <strong>les 2 comptent comme des 1</strong>. Une arme enrayée ne tire pas : le test est un échec, la munition reste dans l'arme, et il faut la désenrayer avant de tirer de nouveau. À trois dés, une arme d'origine s'enraye environ une fois sur treize ; remise en état, presque jamais.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "suites"
+        }
+      }
+    },
+    {
+      "_id": "NeWf60bs3TLJ5MJ0",
+      "_key": "!journal.pages!D1hFc0T8H6TBgaWG.NeWf60bs3TLJ5MJ0",
+      "name": "Les remèdes faits à la main",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La case à tisanes, le coin du feu et le sac font des remèdes qui ne sont pas des médicaments : une <strong>tisane d'ayapana</strong> pour le ventre, une <strong>tisane de citronnelle</strong> pour les fièvres, un <strong>cataplasme</strong> pour une plaie, un <strong>baume à la cire</strong> pour la peau, une <strong>eau salée et sucrée</strong> pour qui se vide, une <strong>attelle</strong> pour un membre cassé, une <strong>lessive de cendre</strong> contre la gale, un <strong>sirop de miel</strong> pour les fièvres longues.</p><p>Quand on soigne une maladie ou une blessure qu'un remède vise, il donne <strong>un dé de plus</strong> au test de soin, et la plupart <strong>tiennent lieu d'un médicament</strong>. On s'en sert une fois. <strong>Aucun ne guérit du Gris</strong>, et le jeu ne promet rien de médical : ce sont des usages de l'île, comme les tisanes et emplâtres d'avant.</p><p><strong>L'eau bouillie</strong> (au coin du feu) et <strong>l'eau javellisée</strong> traitent l'eau de l'abri pour un jour, ou une semaine : les maladies de l'eau baissent comme avec un filtre.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "remedes"
+        }
+      }
+    },
+    {
+      "_id": "I7uH0RKMlCs7EY1X",
+      "_key": "!journal.pages!D1hFc0T8H6TBgaWG.I7uH0RKMlCs7EY1X",
+      "name": "Porter, tirer, rouler",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les charges se comptent en charges (environ 15 kg) : la <strong>charrette à bras</strong> en porte 8, le <strong>chariot de récupération</strong> 10, le <strong>vélo et sa remorque</strong> 7, le <strong>motoculteur et sa remorque</strong> 32, le <strong>petit utilitaire électrique</strong> 20 (36 avec sa remorque), la <strong>charrette à bœufs</strong> 40. Aucun ne passe les sentiers ; les plus larges ne se faufilent pas entre les épaves.</p><p><strong>Aménager un véhicule</strong> (à l'atelier de mécanique) : un <strong>blindage de tôle et des grilles</strong> (dans le véhicule, chaque touche d'un Livide est parée sur 5 ou 6), une <strong>galerie de toit</strong> (+4 charges), une <strong>remorque</strong> (+10 charges, mais elle ne se faufile plus). Le MJ les pose sur un véhicule du groupe.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "transports"
+        }
+      }
+    },
+    {
+      "_id": "ZOqCRgY2BQCP8Fj9",
+      "_key": "!journal.pages!D1hFc0T8H6TBgaWG.ZOqCRgY2BQCP8Fj9",
+      "name": "Les plans des ateliers",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Chaque atelier et les recettes les plus longues ont leur plan, qu'on trouve en fouillant (journal « Les plans »). <strong>Un plan reste un rabais</strong> : avec lui, on bâtit ou on fabrique avec un quart de matériaux en moins et moitié moins de travail. Aucun atelier ni aucune recette ne l'exige. La rareté (0 à 100) dit où on le trouve : à partir de 50, seulement là où le savoir vivait.</p><ul><li><strong>Coin du feu</strong> : rareté 5 à 20.</li><li><strong>Établi du bois</strong> : rareté 5 à 20.</li><li><strong>Forge</strong> : rareté 20 à 45.</li><li><strong>Vannerie du vacoa</strong> : rareté 10 à 30.</li><li><strong>Atelier de couture</strong> : rareté 10 à 30.</li><li><strong>Case à tisanes</strong> : rareté 20 à 45.</li><li><strong>Atelier de mécanique</strong> : rareté 25 à 50.</li><li><strong>Atelier d'électricité</strong> : rareté 35 à 60.</li><li><strong>Distillerie</strong> : rareté 30 à 55.</li><li><strong>Forger une hache (recette)</strong> : rareté 10 à 40.</li><li><strong>Sabre forgé (recette)</strong> : rareté 20 à 50.</li><li><strong>Scie forgée (recette)</strong> : rareté 25 à 50.</li><li><strong>Arbalète d'acier à levier (recette)</strong> : rareté 35 à 60.</li><li><strong>Bouclier doublé et cerclé (recette)</strong> : rareté 15 à 35.</li><li><strong>Remettre en état un fusil de chasse (recette)</strong> : rareté 30 à 55.</li><li><strong>Remettre en état une carabine .22 (recette)</strong> : rareté 30 à 55.</li><li><strong>Remettre en état un pistolet de service (recette)</strong> : rareté 40 à 65.</li><li><strong>Réviser une tronçonneuse (recette)</strong> : rareté 20 à 45.</li><li><strong>Filet de pêche (recette)</strong> : rareté 15 à 35.</li><li><strong>Vouve (recette)</strong> : rareté 10 à 30.</li><li><strong>Bertel (recette)</strong> : rareté 10 à 30.</li><li><strong>Coudre un sac (recette)</strong> : rareté 15 à 35.</li><li><strong>Achards (recette)</strong> : rareté 10 à 25.</li><li><strong>Vinaigre de canne (recette)</strong> : rareté 15 à 35.</li><li><strong>Rhum de canne (recette)</strong> : rareté 20 à 45.</li><li><strong>Baume à la cire (recette)</strong> : rareté 25 à 50.</li><li><strong>Sirop de miel aux zerbaz (recette)</strong> : rareté 20 à 45.</li><li><strong>Trousse de secours (recette)</strong> : rareté 20 à 40.</li><li><strong>Eau javellisée (recette)</strong> : rareté 5 à 20.</li><li><strong>Jarre de terre cuite (recette)</strong> : rareté 20 à 45.</li><li><strong>Roue de bois cerclée (recette)</strong> : rareté 20 à 45.</li><li><strong>Charrette à bras (recette)</strong> : rareté 10 à 30.</li><li><strong>Charrette à bœufs (recette)</strong> : rareté 30 à 60.</li><li><strong>Chariot de récupération (recette)</strong> : rareté 10 à 30.</li><li><strong>Vélo remis en état (recette)</strong> : rareté 10 à 30.</li><li><strong>Remorque de vélo (recette)</strong> : rareté 15 à 35.</li><li><strong>Motoculteur remis en état (recette)</strong> : rareté 35 à 60.</li><li><strong>Remorque de motoculteur (recette)</strong> : rareté 25 à 45.</li><li><strong>Petit utilitaire électrique (recette)</strong> : rareté 75 à 95.</li><li><strong>Remorque d'utilitaire (recette)</strong> : rareté 40 à 65.</li><li><strong>Batterie remise en état (recette)</strong> : rareté 25 à 50.</li><li><strong>Régulateur de charge (recette)</strong> : rareté 50 à 80.</li><li><strong>Lampes électriques (recette)</strong> : rareté 15 à 35.</li><li><strong>Blindage de tôle et grilles (recette)</strong> : rareté 30 à 55.</li><li><strong>Galerie de toit (recette)</strong> : rareté 10 à 30.</li><li><strong>Remorque de voiture (recette)</strong> : rareté 20 à 40.</li></ul><p>Le <strong>cahier de tisanes de la gramoune</strong> (plan unique) couvre aussi la tisane de la gramoune.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "plans"
+        }
+      }
+    }
+  ]
+}

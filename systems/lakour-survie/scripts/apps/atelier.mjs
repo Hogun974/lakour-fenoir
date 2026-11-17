@@ -5,6 +5,7 @@ import { ID } from "../../logique/constantes.mjs";
 import * as L from "../../logique/index.mjs";
 import { t, lireEtat, sansBalises, localiser, libelleCompetence, libelleRessource, survivantsDuGroupe } from "../donnees.mjs";
 import { CHEMIN, essayer, lireChamps, options } from "./commun.mjs";
+import { texteAtelierRequis } from "./fiches.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const contenu = () => game.lakourSurvie?.contenu?.() ?? {};
@@ -15,9 +16,18 @@ export function contexteAtelier() {
   const api = game.lakourSurvie;
   const recettes = L.liste(c.recettes).map(r => {
     const v = api.peutFabriquer(r.cle);
-    const produit = r.produit?.equipement ? (L.indexer(c).equipements.get(r.produit.equipement)?.nom ?? r.produit.equipement) : r.produit?.ressource ? libelleRessource(r.produit.ressource) : "";
+    const idx = L.indexer(c);
+    const produit = r.produit?.equipement ? (idx.equipements.get(r.produit.equipement)?.nom ?? r.produit.equipement) : r.produit?.ressource ? libelleRessource(r.produit.ressource)
+      : r.produit?.traitement ? t("LAKOUR_SURVIE.Ateliers.Traitement", { jours: r.produit.jours ?? 1 }) : "";
+    // Lot 6 « ateliers » : les noms des métiers, des outils et des objets dans les motifs de refus ; où se fait la recette.
+    const motifs = (v.motifs?.length ? v.motifs : []).map(m => (m.cle === "requiert-atelier" ? { ...m, params: { ...m.params, metier: t(`LAKOUR_SURVIE.Metiers.${m.params.metier}`) } }
+      : m.cle === "outil-manquant" ? { ...m, params: { ...m.params, outil: t(`LAKOUR_SURVIE.Gammes.${m.params.outil}`) } }
+        : m.cle === "objet-manquant" ? { ...m, params: { ...m.params, objet: idx.equipements.get(m.params.objet)?.nom ?? m.params.objet } } : m));
+    const ou = r.requiert?.installation ? texteAtelierRequis(r.requiert.installation) : r.sac ? t("LAKOUR_SURVIE.Ateliers.DepuisLeSac") : t("LAKOUR_SURVIE.Ateliers.ALAbri");
+    const besoins = [...(r.outils ?? []).map(g => t(`LAKOUR_SURVIE.Gammes.${g}`)), ...(r.objets ?? []).map(o => `${o.n ?? 1} × ${idx.equipements.get(o.cle)?.nom ?? o.cle}`)].join(", ");
     return {
-      cle: r.cle, nom: r.nom, ok: v.ok, raisons: (v.motifs?.length ? v.motifs : v.raisons ?? []).map(localiser), aide: sansBalises(r.description ?? ""),
+      cle: r.cle, nom: r.nom, ok: v.ok, raisons: (motifs.length ? motifs : v.raisons ?? []).map(localiser), aide: sansBalises(r.description ?? ""), ou, besoins,
+      lumiere: Boolean(r.lumiere),
       cout: Object.entries(r.cout ?? {}).filter(([, q]) => Number(q)).map(([k, q]) => `${q} ${libelleRessource(k).toLowerCase()}`).join(", ") || "—",
       travail: r.travail, competence: libelleCompetence(r.competence ?? "bricolage"), difficulte: t(`LAKOUR_SURVIE.Difficultes.${r.difficulte ?? "normale"}`),
       produit: `${produit}${Number(r.produit?.n) > 1 ? ` × ${r.produit.n}` : ""}`

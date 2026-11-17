@@ -1,0 +1,38 @@
+{
+  "_id": "4rSXeUhHWvESCrA7",
+  "_key": "!items!4rSXeUhHWvESCrA7",
+  "name": "Filet de pêche",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "filet-de-peche",
+    "categorie": "outil",
+    "description": "<p>Un filet noué maille à maille, lesté de galets : long à faire, il nourrit un groupe au lagon ou dans une vasque.</p>",
+    "bonus": {
+      "survie": 2
+    },
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "filet-de-peche"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

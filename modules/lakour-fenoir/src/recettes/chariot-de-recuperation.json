@@ -1,0 +1,52 @@
+{
+  "_id": "xh5V4BDp8CLbsfr8",
+  "_key": "!items!xh5V4BDp8CLbsfr8",
+  "name": "Chariot de récupération",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "chariot-de-recuperation",
+    "description": "<p>Six ferrailles, une tôle, deux roues de brouette ou de chariot, huit boîtes de vis, deux chambres à air.</p>",
+    "cout": {
+      "materiaux": 2,
+      "pieces": 2
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "chariot-de-recuperation",
+      "n": 1
+    },
+    "outils": [
+      "marteau",
+      "pince"
+    ],
+    "metier": "mecanique",
+    "arbre": "moderne",
+    "repond": "charrette-a-bras"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "chariot-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

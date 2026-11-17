@@ -1624,6 +1624,49 @@
       "en": "<p>An old lady who lived through the cyclone of 1948 and fears nothing.</p>"
     }
   },
+  "tables/I8y7O8AIHd2zUqYk": {
+    "_nom": "Ce qui reste d'un atelier abandonné",
+    "name": {
+      "fr": "Ce qui reste d'un atelier abandonné",
+      "en": "What is left of an abandoned workshop"
+    },
+    "description": {
+      "fr": "<p>Un garage, une forge de quartier, la cuisine d'une cantine, l'alambic d'une ferme : ce qu'on y trouve en arrivant, avant de le remettre en marche.</p>",
+      "en": "<p>A garage, a neighbourhood forge, a canteen kitchen, a farm still: what you find on arrival, before getting it working again.</p>"
+    },
+    "results.PQBtFW9rBfkKsZBC.description": {
+      "fr": "<p>Un établi intact sous une bâche, des outils pendus au mur : quelqu'un a fermé à clé en partant, et n'est pas revenu.</p>",
+      "en": "<p>An intact workbench under a tarpaulin, tools hanging on the wall: someone locked up when they left, and never came back.</p>"
+    },
+    "results.idLtCr4H3GKqyfyk.description": {
+      "fr": "<p>Une forge froide, un tas de charbon de bois mouillé, des fers à moitié faits sur l'enclume.</p>",
+      "en": "<p>A cold forge, a heap of wet charcoal, half-made irons on the anvil.</p>"
+    },
+    "results.cXGRStVs6xJ9jAQv.description": {
+      "fr": "<p>Un garage pillé : plus un outil, mais la fosse est là, et des pièces sous l'établi que personne n'a vues.</p>",
+      "en": "<p>A looted garage: not one tool left, but the pit is there, and parts under the bench that nobody saw.</p>"
+    },
+    "results.6ILt0D0bPeOmSeBc.description": {
+      "fr": "<p>Une cuisine de cantine aux marmites énormes ; le gaz est vide, le fourneau à bois du fond marche encore.</p>",
+      "en": "<p>A canteen kitchen with enormous pots; the gas is empty, the wood stove at the back still works.</p>"
+    },
+    "results.fOHAAqTlBchE4oNs.description": {
+      "fr": "<p>Un alambic de ferme, son serpentin vert-de-grisé, des bouteilles vides alignées : il suffit de le nettoyer.</p>",
+      "en": "<p>A farm still, its coil green with verdigris, empty bottles lined up: it just needs cleaning.</p>"
+    },
+    "results.VnO9kObzZRBtJa0Z.description": {
+      "fr": "<p>Un atelier de couture de quartier : une machine à pédale, des bobines, des patrons au mur, une veste qui attend son bouton.</p>",
+      "en": "<p>A neighbourhood sewing workshop: a treadle machine, reels, patterns on the wall, a jacket waiting for its button.</p>"
+    },
+    "results.ANE5RvEFpOi47dtV.description": {
+      "fr": "<p>La case d'une gramoune : des bottes de zerbaz séchées au plafond, des bocaux sans étiquette, un cahier qu'on ne trouve pas.</p>",
+      "en": "<p>A gramoune's case: bundles of dried zerbaz on the ceiling, unlabelled jars, a notebook nobody can find.</p>"
+    },
+    "results.7G6fdPIBKHelYOah.description": {
+      "fr": "<p>Un atelier occupé : quelqu'un y vit et y travaille, et n'aime pas qu'on entre sans frapper.</p>",
+      "en": "<p>An occupied workshop: someone lives and works there, and does not like people walking in without knocking.</p>"
+    }
+  },
   "tables/L3DZ2K7C0is03hvX": {
     "_nom": "Histoire — ce matin-là",
     "name": {
@@ -2119,6 +2162,57 @@
     "results.UUb2FBjLG87FxkPF.description": {
       "fr": "<p>Le son d'une cloche de vache dans le brouillard, qui ne s'arrête jamais.</p>",
       "en": "<p>The sound of a cowbell in the fog, that never stops.</p>"
+    }
+  },
+  "tables/UatgNVwi3IvDD5F9": {
+    "_nom": "La qualité d'un outil trouvé",
+    "name": {
+      "fr": "La qualité d'un outil trouvé",
+      "en": "The quality of a tool found"
+    },
+    "description": {
+      "fr": "<p>Quand une fouille rend un outil ou une arme blanche (hache, sabre, couteau, marteau…), sa qualité : de fortune six fois sur dix, de récupération trois, forgé une. Dans un lieu dangereux, relancez une fois un « de fortune » (le système : qualiteTrouvee, logique/armes.mjs).</p>",
+      "en": "<p>When a scavenging run turns up a tool or a blade (axe, cane knife, knife, hammer…), its quality: makeshift six times in ten, salvaged three, forged one. In a dangerous place, reroll a “makeshift” once (the system: qualiteTrouvee, logique/armes.mjs).</p>"
+    },
+    "results.DHyeRhDxcommnENY.description": {
+      "fr": "<p>De fortune : une pierre emmanchée, un bout de bois durci, des ligatures qui lâchent.</p>",
+      "en": "<p>Makeshift: a hafted stone, a bit of hardened wood, lashings that give way.</p>"
+    },
+    "results.GHPeqdXmgZrnFINa.description": {
+      "fr": "<p>De fortune : bricolé par quelqu'un d'autre, qui n'en a plus eu besoin.</p>",
+      "en": "<p>Makeshift: knocked together by someone else, who no longer needed it.</p>"
+    },
+    "results.l1OiUDKIdqsYeiF4.description": {
+      "fr": "<p>De fortune : un manche fendu, rafistolé au fil de fer.</p>",
+      "en": "<p>Makeshift: a split handle, patched up with wire.</p>"
+    },
+    "results.eKLOBScUgbkpi4Vk.description": {
+      "fr": "<p>De fortune : il a déjà beaucoup servi.</p>",
+      "en": "<p>Makeshift: it has already seen a lot of use.</p>"
+    },
+    "results.6mLdxjY1j0tyfnNy.description": {
+      "fr": "<p>De fortune : fait à la hâte, dans les premiers jours.</p>",
+      "en": "<p>Makeshift: made in a hurry, in the first days.</p>"
+    },
+    "results.C65P8QVy7HlpYcBY.description": {
+      "fr": "<p>De fortune : on reconnaît la main d'un ancien, mais le temps a passé dessus.</p>",
+      "en": "<p>Makeshift: you recognise an old-timer's hand, but time has passed over it.</p>"
+    },
+    "results.YMqENOk7zHDFd4I5.description": {
+      "fr": "<p>De récupération : de la ferraille et un manche, bien goupillés.</p>",
+      "en": "<p>Salvaged: scrap metal and a handle, well pinned.</p>"
+    },
+    "results.F9sRJoPO7HirB9De.description": {
+      "fr": "<p>De récupération : sorti d'un atelier de quartier, la marque d'un forgeron à la pointe.</p>",
+      "en": "<p>Salvaged: out of a neighbourhood workshop, a smith's mark punched at the tip.</p>"
+    },
+    "results.SEQU8JoAMlf4ynge.description": {
+      "fr": "<p>De récupération : un outil d'avant, réparé avec ce qu'il y avait.</p>",
+      "en": "<p>Salvaged: a tool from before, mended with whatever there was.</p>"
+    },
+    "results.ip1xuIjUqlGPHQ23.description": {
+      "fr": "<p>Forgé : un vrai outil d'acier, d'avant ou de la forge d'un autre groupe ; il porte peut-être une marque.</p>",
+      "en": "<p>Forged: a real steel tool, from before or from another group's forge; it may bear a mark.</p>"
     }
   },
   "tables/WfmgqevXTS6BuTCb": {

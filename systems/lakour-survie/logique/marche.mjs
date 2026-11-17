@@ -318,13 +318,21 @@ export function evaluerALaBoutique({ donne = {}, recoit = {}, cours = coursDuJou
 // Un objet : la valeur écrite au barème du contenu (contenu.bareme : { objets: { cle: parts } }, bêtes vivantes comprises), sinon le
 // coût de sa recette la moins chère au cours (les ingrédients, sans le travail : comme le jeu 3D), sinon rien (au MJ de dire).
 // -> { valeur: parts | null, source: "bareme" | "recette" | "" }
-export function valeurObjet(cle, contenu = {}, cours = coursDuJour()) {
+// Lot 6 (contrat §24) : une recette qui consomme des objets (une matière travaillée, l'arme qu'on remet en état) vaut aussi ce
+// qu'ils valent ; `vus` évite de tourner en rond.
+export function valeurObjet(cle, contenu = {}, cours = coursDuJour(), vus = new Set()) {
   const k = String(cle ?? "");
   const ecrite = contenu?.bareme?.objets?.[k];
   if (ecrite !== undefined && ecrite !== null && Number.isFinite(Number(ecrite))) return { valeur: Math.max(0, Number(ecrite)), source: "bareme" };
+  if (vus.has(k)) return { valeur: null, source: "" };
+  const suite = new Set([...vus, k]);
   const recettes = (Array.isArray(contenu?.recettes) ? contenu.recettes : Object.values(contenu?.recettes ?? {}))
     .map(r => (r?.system ? { ...r.system } : r)).filter(r => r?.produit?.equipement === k);
-  const couts = recettes.map(r => valeurBiens(r.cout ?? {}, cours) / Math.max(1, n0(r.produit?.n) || 1)).filter(v => v > 0);
+  const valeurObjets = r => (Array.isArray(r.objets) ? r.objets : []).reduce((t, o) => {
+    const c = typeof o === "string" ? o : o?.cle;
+    return t + (Number(valeurObjet(c, contenu, cours, suite).valeur) || 0) * Math.max(1, n0(typeof o === "string" ? 1 : o?.n) || 1);
+  }, 0);
+  const couts = recettes.map(r => (valeurBiens(r.cout ?? {}, cours) + valeurObjets(r)) / Math.max(1, n0(r.produit?.n) || 1)).filter(v => v > 0);
   if (couts.length) return { valeur: Math.max(REGLES_MARCHE.cours.minimum, arrondiPas(Math.min(...couts))), source: "recette" };
   return { valeur: null, source: "" };
 }

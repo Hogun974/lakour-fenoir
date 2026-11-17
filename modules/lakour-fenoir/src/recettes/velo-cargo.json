@@ -19,14 +19,15 @@
         "mecanique"
       ],
       "installation": {
-        "cle": "atelier",
+        "metier": "mecanique",
         "niveau": 1
       }
     },
     "produit": {
       "equipement": "velo-cargo",
       "n": 1
-    }
+    },
+    "metier": "mecanique"
   },
   "effects": [],
   "folder": null,

@@ -20,7 +20,8 @@
     "produit": {
       "equipement": "lance-de-fortune",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

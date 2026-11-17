@@ -1,0 +1,40 @@
+{
+  "_id": "wwyZD45O4Uq6VbMV",
+  "_key": "!items!wwyZD45O4Uq6VbMV",
+  "name": "Carabine .22 remise en état",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "carabine-22-remise-en-etat",
+    "categorie": "arme-a-feu",
+    "description": "<p>La petite carabine reprise pièce à pièce : précise, fiable, et toujours moins bruyante qu'un fusil.</p>",
+    "bonus": {
+      "tir": 2
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": 1,
+    "bruit": 1,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "usages": 100,
+    "remise": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "carabine-22-remise-en-etat"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

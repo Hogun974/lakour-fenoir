@@ -22,7 +22,8 @@
     "produit": {
       "equipement": "natte-de-vacoa",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

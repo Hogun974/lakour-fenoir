@@ -18,12 +18,16 @@
       "savoirs": [
         "maconnerie"
       ],
-      "installation": null
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
     },
     "produit": {
       "equipement": "poele-de-masse",
       "n": 1
-    }
+    },
+    "metier": "cuisine"
   },
   "effects": [],
   "folder": null,

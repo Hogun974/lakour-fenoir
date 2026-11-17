@@ -1,0 +1,36 @@
+{
+  "_id": "lQ3IoYVWDl4BhUCw",
+  "_key": "!items!lQ3IoYVWDl4BhUCw",
+  "name": "Pierre à aiguiser",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pierre-a-aiguiser",
+    "categorie": "outil",
+    "description": "<p>Un galet au grain fin, dressé à plat sur une dalle. Avec elle, on redonne du fil à une lame (hache, sabre, couteau, scie) : l'affûtage rend un quart de ses usages et ne compte pas parmi les trois réparations de fortune.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pierre-a-aiguiser"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

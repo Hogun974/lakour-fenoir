@@ -114,6 +114,11 @@
           }
         }
       }
+    ],
+    "metiers": [
+      "etabli",
+      "mecanique",
+      "electricite"
     ]
   },
   "effects": [],

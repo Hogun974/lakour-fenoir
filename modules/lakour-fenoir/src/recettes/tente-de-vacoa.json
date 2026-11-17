@@ -1,0 +1,49 @@
+{
+  "_id": "tDbI64wVk39BLv2F",
+  "_key": "!items!tDbI64wVk39BLv2F",
+  "name": "Tente de vacoa",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "tente-de-vacoa",
+    "description": "<p>Quinze feuilles de vacoa séchées, blanchies, fendues en lanières, tressées en panier à deux anses.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "vannerie",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "tente-de-vacoa",
+      "n": 1
+    },
+    "outils": [
+      "couteau"
+    ],
+    "metier": "vannerie",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tente-de-vacoa"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

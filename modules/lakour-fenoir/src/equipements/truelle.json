@@ -1,0 +1,42 @@
+{
+  "_id": "eOlg958uypgUMu0D",
+  "_key": "!items!eOlg958uypgUMu0D",
+  "name": "Truelle forgée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "truelle",
+    "categorie": "outil",
+    "description": "<p>Une truelle d'acier, pour maçonner à la chaux ou au ciment.</p>",
+    "bonus": {
+      "bricolage": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "forge",
+    "gammes": [
+      "truelle"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "truelle"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "HGA3VJcpKPdqWzB2",
+  "_key": "!items!HGA3VJcpKPdqWzB2",
+  "name": "Baume à la cire",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "baume-a-la-cire",
+    "categorie": "soin",
+    "description": "<p>Cire d'abeille, huile de bancoul et zerbaz fondus ensemble : pour la peau brûlée ou mangée par la gale, il tient lieu de médicament et donne un dé de plus au soin.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "remede": {
+      "afflictions": [
+        "brulure",
+        "gale"
+      ],
+      "bonus": 1,
+      "remplace": true
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "baume-a-la-cire"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

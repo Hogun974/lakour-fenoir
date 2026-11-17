@@ -28,7 +28,8 @@ export const PHASES = ["jour-zero", "panique", "effondrement", "silence", "apres
 export const SAISONS = ["pluies", "seche"];
 export const ATTITUDES = ["hostile", "mefiante", "neutre", "amicale"];
 export const COMPETENCES = ["endurance", "combat", "tir", "discretion", "vigilance", "bricolage", "survie", "soins", "parole", "conduite"];
-export const CATEGORIES_EQUIPEMENT = ["arme", "arme-a-feu", "outil", "soin", "transport", "communication", "energie", "vie", "livre", "animal", "repere"];
+export const CATEGORIES_EQUIPEMENT = ["arme", "arme-a-feu", "outil", "soin", "transport", "communication", "energie", "vie", "livre", "animal", "repere",
+  "matiere", "amenagement"];   // lot 6 « ateliers » : les matières travaillées (charbon, sel…), les aménagements de véhicule
 export const TRANSPORTS = ["pied", "vehicule", "bateau"];
 
 // Repères d'équilibre (docs/survie-notes-contenu.md) : ce que vise le contenu, pour que la logique s'aligne.
@@ -112,14 +113,15 @@ function niveauInstallation(n = {}) {
 // Lot « savoirs » : arbre ("moderne" | "lontan" | "" : sans sœur), role (la clé de l'installation sœur, ou un rôle commun comme
 // « eau-chaude » : deux sœurs ne s'additionnent pas, la meilleure qui marche est en service, l'autre attend en secours), rang
 // (ordre de préférence entre sœurs : 0 d'abord ; défaut 0, 1 pour une lontan). Ces champs ne sont écrits que s'ils servent.
-export function installation({ cle, nom, categorie, description, niveaux, arbre = "", role = "", rang = null }) {
+// metiers (lot 6 « ateliers ») : les métiers d'atelier que sert l'installation, à son niveau (logique/fabrication.mjs).
+export function installation({ cle, nom, categorie, description, niveaux, arbre = "", role = "", rang = null, metiers = null }) {
   const nv = niveaux.map(niveauInstallation);
   return objet({
     pack: "installations", type: "installation", cle, nom, img: IMAGES_CATEGORIE[categorie],
     system: {
       categorie, description: html(description), niveau: 0, niveauMax: nv.length,
       chantier: { fait: 0, requis: nv[0]?.cout.travail ?? 0 }, etat: 0, niveaux: nv,
-      ...(arbre ? { arbre } : {}), ...(role ? { role } : {}), ...(rang !== null ? { rang } : {})
+      ...(arbre ? { arbre } : {}), ...(role ? { role } : {}), ...(rang !== null ? { rang } : {}), ...(metiers?.length ? { metiers } : {})
     }
   });
 }
@@ -136,11 +138,19 @@ export function savoir({ cle, nom, description, apprentissage, effets, arbre = "
 // enseigne (lot « savoirs ») : les savoir-faire qu'un livre ou un cahier apprend (veillées de lecture).
 // repere (lot « cartes », contrat §20) : une carte, un calendrier, une montre… (forme : systems/lakour-survie/logique/reperes.mjs).
 // parade (lot « corps ») : le seuil du bouclier au d6 (5 : la tôle pare sur 5-6) ; bivouac : de quoi bivouaquer (natte, tente).
-export function equipement({ cle, nom, categorie, description, bonus = {}, charge = 1, usure = 0, munitions = null, bruit = 0, transport = null, effets = null, img, marque = "", enseigne = null, repere = null, parade = 0, bivouac = false }) {
+// Lot 6 « ateliers » (contrat §24 ; logique : systems/lakour-survie/logique/armes.mjs et fabrication.mjs) : qualite ("fortune" |
+// "recuperation" | "forge"), gammes (les outils qu'il sert : hache, marteau…), usages (solidité propre, sinon celle de la qualité),
+// remise (une arme à feu remise en état : elle s'enraye moins), eclaire (une lumière), remede ({ afflictions, bonus, remplace } :
+// un objet de soin fait à la main), protege (["soleil"] : la capeline ôte le malus de chaleur), amenagement (ce qu'un aménagement
+// de véhicule apporte, dit au MJ). Rien de tout cela n'est écrit sur un objet qui ne s'en sert pas.
+export function equipement({ cle, nom, categorie, description, bonus = {}, charge = 1, usure = 0, munitions = null, bruit = 0, transport = null, effets = null, img, marque = "", enseigne = null, repere = null, parade = 0, bivouac = false,
+  qualite = "", gammes = null, usages = 0, remise = false, eclaire = false, remede = null, protege = null, amenagement = null }) {
   return objet({
     pack: "equipements", type: "equipement", cle, nom, img,
     system: { categorie, description: html(description), bonus, charge, usure, munitions, bruit, transport, effets, marque, ...(enseigne ? { enseigne } : {}), ...(repere ? { repere } : {}),
-      ...(parade ? { parade } : {}), ...(bivouac ? { bivouac: true } : {}) }
+      ...(parade ? { parade } : {}), ...(bivouac ? { bivouac: true } : {}),
+      ...(qualite ? { qualite } : {}), ...(gammes?.length ? { gammes } : {}), ...(usages ? { usages } : {}), ...(remise ? { remise: true } : {}),
+      ...(eclaire ? { eclaire: true } : {}), ...(remede ? { remede } : {}), ...(protege?.length ? { protege } : {}), ...(amenagement ? { amenagement } : {}) }
   });
 }
 

@@ -1,0 +1,42 @@
+{
+  "_id": "Yjs3DPynSF2oMrHs",
+  "_key": "!items!Yjs3DPynSF2oMrHs",
+  "name": "Truelle de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "truelle-de-recuperation",
+    "categorie": "outil",
+    "description": "<p>Un triangle de tôle riveté sur un manche : on gâche, on lisse, on jointoie.</p>",
+    "bonus": {
+      "bricolage": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "truelle"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "truelle-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_id": "E4MpPnNEPoi2kqs3",
+  "_key": "!items!E4MpPnNEPoi2kqs3",
+  "name": "Petit utilitaire électrique",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "utilitaire-electrique",
+    "categorie": "transport",
+    "description": "<p>Un châssis de voiturette, un moteur électrique, quatre batteries et son régulateur : silencieux, rechargé par les panneaux de l'abri (deux unités d'énergie par quart de route). Ni boue, ni sentier.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "vehicule",
+      "places": 2,
+      "chargeMax": 20,
+      "carburantParQuart": 2,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 0,
+      "lenteur": 1.5,
+      "source": "energie"
+    },
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "utilitaire-electrique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

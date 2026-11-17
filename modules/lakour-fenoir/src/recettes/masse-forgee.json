@@ -1,0 +1,55 @@
+{
+  "_id": "WxtaNdtKpnVvu9BB",
+  "_key": "!items!WxtaNdtKpnVvu9BB",
+  "name": "Masse forgée",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "masse-forgee",
+    "description": "<p>Huit ferrailles rassemblées en un bloc, percé à chaud pour le manche.</p>",
+    "cout": {
+      "materiaux": 2
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "forge",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "masse",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 3,
+    "metier": "forge"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "masse-forgee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

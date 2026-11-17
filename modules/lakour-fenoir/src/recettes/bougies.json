@@ -1,0 +1,43 @@
+{
+  "_id": "wQp1C3Qq17zgrgX4",
+  "_key": "!items!wQp1C3Qq17zgrgX4",
+  "name": "Bougies",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "bougies",
+    "description": "<p>La cire des ruches fondue, coulée autour d'une mèche de corde dans des tiges de bambou.</p>",
+    "cout": {
+      "nourriture": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "bougies",
+      "n": 2
+    },
+    "sac": true,
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bougies"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

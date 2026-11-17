@@ -1,0 +1,42 @@
+{
+  "_id": "mmWt80vJftjAZvBT",
+  "_key": "!items!mmWt80vJftjAZvBT",
+  "name": "Scie de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "scie-de-recuperation",
+    "categorie": "outil",
+    "description": "<p>Une lame de ressort taillée en dents à la lime, tendue sur un arc de bois : elle débite une planche en un quart.</p>",
+    "bonus": {
+      "bricolage": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "scie"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "scie-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

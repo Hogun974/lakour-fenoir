@@ -1,0 +1,45 @@
+{
+  "_id": "ehGdJsaFzNPTf8pd",
+  "_key": "!items!ehGdJsaFzNPTf8pd",
+  "name": "Charbon de bois en meule",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "charbon-de-bois",
+    "description": "<p>Un tronc débité, dressé en meule dans la cour, couvert de terre, allumé par le haut et surveillé deux jours et une nuit : trois sacs de charbon. La meule fume, et la fumée se voit.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 4,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "charbon-de-bois",
+      "n": 3
+    },
+    "outils": [
+      "hache"
+    ],
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "charbon-de-bois"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

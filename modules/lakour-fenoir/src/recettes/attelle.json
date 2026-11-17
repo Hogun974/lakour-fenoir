@@ -1,0 +1,47 @@
+{
+  "_id": "Q3CBHuC2ieLf3HVO",
+  "_key": "!items!Q3CBHuC2ieLf3HVO",
+  "name": "Attelle",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "attelle",
+    "description": "<p>Deux gaulettes, deux bandes de tissu, une corde : pour tenir un membre cassé, tout de suite.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "premiers-secours-avances"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "attelle",
+      "n": 1
+    },
+    "sac": true,
+    "outils": [
+      "couteau"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "attelle"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -11,6 +11,7 @@ export * from "./abri.mjs";
 export * from "./renseignements.mjs";
 export * from "./monde.mjs";
 export * from "./actions.mjs";
+export * from "./armes.mjs";
 export * from "./fabrication.mjs";
 export * from "./maladies.mjs";
 export * from "./generation.mjs";

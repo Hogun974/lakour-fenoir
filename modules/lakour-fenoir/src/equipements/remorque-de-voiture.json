@@ -1,0 +1,40 @@
+{
+  "_id": "ak5bDl1GNq0Ie5JF",
+  "_key": "!items!ak5bDl1GNq0Ie5JF",
+  "name": "Remorque de voiture",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "remorque-de-voiture",
+    "categorie": "amenagement",
+    "description": "<p>Un essieu, deux roues, un plateau de tôle, un timon et une boule d'attelage : dix charges de plus derrière une voiture ou un 4×4 (au MJ), mais l'attelage ne se faufile plus entre les épaves.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "amenagement": {
+      "charge": 10,
+      "large": true
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "remorque-de-voiture"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

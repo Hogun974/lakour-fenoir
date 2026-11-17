@@ -1,0 +1,42 @@
+{
+  "_id": "d2GUhJuEnmvo1ger",
+  "_key": "!items!d2GUhJuEnmvo1ger",
+  "name": "Marteau de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "marteau-de-recuperation",
+    "categorie": "outil",
+    "description": "<p>Un écrou de gros boulon serti sur un manche : il plante, il redresse, il arrache.</p>",
+    "bonus": {
+      "bricolage": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "marteau"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "marteau-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

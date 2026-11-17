@@ -1,0 +1,40 @@
+{
+  "_id": "5fIV8vKGePcxhFrp",
+  "_key": "!items!5fIV8vKGePcxhFrp",
+  "name": "Pince de bambou",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pince-de-fortune",
+    "categorie": "outil",
+    "description": "<p>Un bambou fendu, refermé à la corde : il tient ce qui brûle et tord un fil de fer fin.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "pince"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pince-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

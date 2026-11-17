@@ -1,0 +1,49 @@
+{
+  "_id": "DmfHaObNwM1GXWeo",
+  "_key": "!items!DmfHaObNwM1GXWeo",
+  "name": "Tisane d'ayapana",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "tisane-d-ayapana",
+    "description": "<p>Des feuilles d'ayapana, de l'eau frémissante, un couvercle : celle que les gramounes donnent pour le ventre. Deux bols.</p>",
+    "cout": {
+      "plantes": 2,
+      "eau": 1
+    },
+    "travail": 1,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "zerbaz"
+      ],
+      "installation": {
+        "metier": "tisanerie",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "tisane-d-ayapana",
+      "n": 2
+    },
+    "metier": "tisanerie",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tisane-d-ayapana"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

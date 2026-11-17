@@ -1,0 +1,38 @@
+{
+  "_id": "ABFH4ASqTCQ1xpEb",
+  "_key": "!items!ABFH4ASqTCQ1xpEb",
+  "name": "Tenue rapiécée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "tenue-rapiecee",
+    "categorie": "vie",
+    "description": "<p>Des vêtements repris, renforcés aux genoux et aux coudes, qui tiendront encore une saison. Être propre et couvert, ça compte.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": {
+      "moral": 0.25
+    },
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tenue-rapiecee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

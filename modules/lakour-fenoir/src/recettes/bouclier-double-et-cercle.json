@@ -1,0 +1,59 @@
+{
+  "_id": "5ruI2gr7060dvga6",
+  "_key": "!items!5ruI2gr7060dvga6",
+  "name": "Bouclier doublé et cerclé",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "bouclier-double-et-cercle",
+    "description": "<p>Le bouclier de tôle, une seconde tôle, deux ferrailles battues en cercle et rivées à chaud, vingt clous.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "forge",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "bouclier-double-et-cercle",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "bouclier-de-tole",
+        "n": 1
+      },
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 2,
+    "metier": "forge"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bouclier-double-et-cercle"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

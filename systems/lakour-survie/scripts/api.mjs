@@ -32,6 +32,7 @@ import { fonctionsGestion } from "./api-gestion.mjs";
 import { fonctionsPlans } from "./api-plans.mjs";
 import { fonctionsReperes } from "./api-reperes.mjs";
 import { fonctionsCorps } from "./api-corps.mjs";
+import { fonctionsAteliers } from "./api-ateliers.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -587,7 +588,8 @@ function modificateursDehors(sys, competence, etat, dehors, ecoute = "") {
 
 function modificateursDuTest(a, sys, competence, etat = lireEtat(), { dehors = null, ecoute = "" } = {}) {
   const c = contenu();
-  const outil = Math.max(0, ...objetsDe(a, "equipement").map(i => Number(i.system?.bonus?.[competence]) || 0));
+  // Lot 6 « ateliers » : un outil cassé ne donne plus son bonus.
+  const outil = Math.max(0, ...objetsDe(a, "equipement").filter(i => !ATELIERS.interne.estCasseItem(i)).map(i => Number(i.system?.bonus?.[competence]) || 0));
   let installation = 0, lieux = [];
   const ab = abriCourant(etat);
   if (ab && aLAbri(etat, ab) && (etat.groupe.membres ?? []).includes(a.id)) {
@@ -601,6 +603,8 @@ function modificateursDuTest(a, sys, competence, etat = lireEtat(), { dehors = n
   const traits = L.modificateursTraits(sys, c, { lieux }).malus;
   const malus = L.malusEtat(sys, { traits });
   const x = modificateursDehors(sys, competence, etat, dehors, ecoute);
+  // Lot 6 : la capeline de vacoa ôte le malus de la chaleur.
+  if (x.chaleur < 0 && ATELIERS.interne.protegeDe(a, "soleil")) x.chaleur = 0;
   const plus = Math.max(0, x.nuit) + Math.max(0, x.chaleur) + Math.max(0, x.temps) + Math.max(0, x.noir),
     moins = Math.max(0, -x.nuit) + Math.max(0, -x.chaleur) + Math.max(0, -x.temps);
   // Celui qui lâche parle moins (esprit.mjs, malusEsprit).
@@ -639,11 +643,25 @@ async function testDirect({ acteurId, competence, difficulte = "normale", bonus 
   // La chance (esprit.mjs : celui qui a été trahi) : un dé de plus au prochain test qui compte, consommé. Le jeu ne dit pas d'où.
   const chance = compte !== false ? L.utiliserChance(sys) : { bonus: 0 };
   if (chance.bonus) await a.update({ system: { esprit: chance.system.esprit } });
-  const r = L.resoudreTest({ niveau, difficulte: diff, bonus: (Number(bonus) || 0) + mods.bonus + chance.bonus, malus: (Number(malus) || 0) + mods.malus, forcer: Boolean(forcer), compte: compte !== false });
+  let r = L.resoudreTest({ niveau, difficulte: diff, bonus: (Number(bonus) || 0) + mods.bonus + chance.bonus, malus: (Number(malus) || 0) + mods.malus, forcer: Boolean(forcer), compte: compte !== false });
+  // Lot 6 « ateliers » : au tir, la meilleure arme à feu s'use (un usage par test) et s'enraye sur deux 1 (trois si elle a été remise en
+  // état ; usée, les 2 comptent) : le coup ne part pas, le test est un échec et il ne se force pas.
+  const arme = competence === "tir" ? ATELIERS.interne.armeDeTir(a) : null;
+  let enrayee = null;
+  if (arme) {
+    const e = L.enrayage(r.des, arme.system);
+    await ATELIERS.interne.userItem(arme.item, 1);
+    if (e.enrayee) {
+      enrayee = { arme: arme.item.name, uns: e.uns };
+      r = { ...r, succes: 0, reussite: false, marge: -r.requis, enrayee: true };
+    }
+  }
   const maj = await appliquerTest(a, competence, r);
-  const info = { nom: a.name, competence, titre, monte: maj.monte, niveau: maj.niveau, chance: chance.bonus > 0 };
-  const message = await chat(carteTest(r, { ...info, forcable: forcable && !secret }), { speaker: parlePour(a), secret, flags: { test: { acteurId: a.id, competence, titre, resultat: r, forcable: forcable && !secret } } });
-  return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, nuit: mods.nuit, chaleur: mods.chaleur, chance: chance.bonus, monte: maj.monte,
+  const titreCarte = enrayee ? [titre, t("LAKOUR_SURVIE.Ateliers.Enrayee", { arme: enrayee.arme })].filter(Boolean).join(" — ") : titre;
+  const forcableCarte = forcable && !secret && !enrayee;
+  const info = { nom: a.name, competence, titre: titreCarte, monte: maj.monte, niveau: maj.niveau, chance: chance.bonus > 0 };
+  const message = await chat(carteTest(r, { ...info, forcable: forcableCarte }), { speaker: parlePour(a), secret, flags: { test: { acteurId: a.id, competence, titre: titreCarte, resultat: r, forcable: forcableCarte } } });
+  return { ...r, competence, acteurId: a.id, niveau, malusEtat: mods.malus, bonusOutils: mods.bonus, nuit: mods.nuit, chaleur: mods.chaleur, chance: chance.bonus, monte: maj.monte, enrayee,
     temps: mods.temps, noir: mods.noir, bruitEcoute: mods.bruitEcoute, texte: texteTest(a.name, competence, r), messageId: message?.id ?? null };
 }
 
@@ -1180,11 +1198,14 @@ function journalSecret(ctx, x) {
   if (!e || !ctx.monde) return;
   ctx.monde.journalSecret = [...(ctx.monde.journalSecret ?? []), { jour: jourCtx(ctx), texte: e.texte ?? "", cle: e.cle ?? "", params: e.params ?? {} }].slice(-L.JOURNAL_SECRET_MAX);
 }
+// Les outils, les ateliers et les recettes (lot 6, contrat §24) : ses fonctions, avec les aides internes d'ici.
+const ATELIERS = fonctionsAteliers({ ecriture, ouvrirCtx, terminer, noter, tx, contenu, clair, erreur, objetsDe, defDe,
+  avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o), aLAbri: (etat, ab) => aLAbri(etat, ab), quandDe: etat => quandDe(etat), instancesDe });
 const CORPS = fonctionsCorps({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
   ecrireSurvivant: (...x) => ecrireSurvivant(...x), bilanVivant: (etat, monde) => bilanVivant(etat, monde),
   mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), aLAbri: (etat, ab) => aLAbri(etat, ab),
   savoirsDuGroupe: etat => savoirsDuGroupe(etat), testDirect: (...x) => testDirect(...x), objetsDe, defDe, estMJ: () => Boolean(game.user?.isGM),
-  brasDe: (qui, jour) => brasDeLEquipe(qui, jour), journalSecret });
+  brasDe: (qui, jour) => brasDeLEquipe(qui, jour), journalSecret, ateliers: ATELIERS.interne });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1358,7 +1379,9 @@ export const api = {
     const etat = lireEtat(), ab = abriCourant(etat);
     // Lot 4 « Les plans » : une recette dont le groupe connaît le plan coûte moins et prend moins de temps.
     const def = L.recetteAvecPlan(defDe("recettes", cle), PLANS_API.connusDe(etat));
-    return L.peutFabriquer(def, { stocks: ab ? aPlat(ab.system).stocks : etat.groupe.porte ?? {}, installations: ab && aLAbri(etat, ab) ? instancesDe(ab) : [], savoirs: savoirsDuGroupe(etat), bras });
+    // Lot 6 : l'atelier du métier, la lumière la nuit, les outils en main, les objets demandés ; hors de l'abri, les recettes de sac.
+    const { _enMain, _source, ...opts } = ATELIERS.interne.optionsFabrication(etat);
+    return L.peutFabriquer(def, { stocks: ab ? aPlat(ab.system).stocks : etat.groupe.porte ?? {}, installations: ab && aLAbri(etat, ab) ? instancesDe(ab) : [], savoirs: savoirsDuGroupe(etat), bras, ...opts });
   },
 
   // ---------------- tests (le joueur propriétaire passe par le MJ actif)
@@ -1725,8 +1748,15 @@ export const api = {
     const sys = systemeLogique(artisan);
     const mods = modificateursDuTest(artisan, sys, competence, ctx.etat);
     const bras = Math.max(1, (membres ?? []).length || 1);
+    // Lot 6 : l'atelier au-dessus du niveau demandé donne ses dés dans le plafond des aides (outil + installation ≤ 2) ; la logique
+    // les ajoute elle-même, on les retire donc d'ici.
+    const opts = ATELIERS.interne.optionsFabrication(ctx.etat);
+    const { _enMain, _source, ...optsLogique } = opts;
+    const ecart = L.atelierPour(def, ici ? instancesDe(ab) : [], optsLogique.metiers)?.bonus ?? 0;
+    const aides = Math.min(2, mods.outil + mods.installation);
+    const bonus = mods.bonus - aides + Math.min(2, mods.outil + Math.max(mods.installation, ecart)) - ecart;
     const r = L.fabriquer(def, { stocks, installations: ici ? instancesDe(ab) : [], savoirs: savoirsDuGroupe(ctx.etat), niveau: Number(sys.competences?.[competence]?.niveau) || 0,
-      bonus: mods.bonus, malus: mods.malus, forcer: Boolean(forcer), bras, hasard: hasard(ctx, "atelier") });
+      bonus, malus: mods.malus, forcer: Boolean(forcer), bras, hasard: hasard(ctx, "atelier"), ...optsLogique });
     if (!r.ok) throw clair(t("LAKOUR_SURVIE.Erreurs.Fabrication", { raisons: motifsLisibles(r) }));
     if (ab) await ab.update({ system: { stocks: r.stocks } }); else ctx.etat.groupe.porte = r.stocks;
     const maj = await appliquerTest(artisan, competence, r.test);
@@ -1737,9 +1767,11 @@ export const api = {
       if (e) await artisan.createEmbeddedDocuments("Item", await Promise.all(Array.from({ length: Math.max(1, r.produit.n) }, () => donneesObjet("equipement", e))));
     }
     noter(ctx, tx(r.test.reussite ? "Journal.Fabrique" : "Journal.FabriqueRate", { nom: artisan.name, recette: def.nom }));
+    const notes = await ATELIERS.interne.apresFabrication(ctx, { ...r, recetteLumiere: Boolean(def.lumiere) }, opts);
     await avancerInterne(ctx, Math.max(1, r.quarts));
     await terminer(ctx);
-    return { ok: true, termine: true, reussite: r.test.reussite, competence, test: { ...r.test, competence }, produit: r.produit, quarts: r.quarts, perdu: r.perdu, acteurId: artisan.id, plan: Boolean(def.plan) };
+    return { ok: true, termine: true, reussite: r.test.reussite, competence, test: { ...r.test, competence }, produit: r.produit, quarts: r.quarts, perdu: r.perdu, acteurId: artisan.id, plan: Boolean(def.plan),
+      atelier: r.atelier, consomme: r.test.reussite ? r.consomme : [], outils: r.outils, bruit: r.bruit, notes };
   }),
 
   affliction: ecriture(async ({ acteurId, cle, action = "donner", soigneurId = "" } = {}) => {
@@ -1759,11 +1791,19 @@ export const api = {
     const soigneur = acteur(soigneurId) ?? (await soinsDe(ctx, { acteurId })).soigneur;
     const ab = abriCourant(ctx.etat);
     const stocks = ab ? aPlat(ab.system).stocks : (ctx.etat.groupe.porte ?? {});
-    const med = Math.max(0, Number(def.soin?.medicaments) || 0);
+    // Lot 6 « ateliers » : un remède fait à la main qui vise ce mal (une tisane d'ayapana pour le ventre, une attelle…) donne un dé
+    // de plus et tient souvent lieu d'un médicament ; on s'en sert une fois.
+    const remede = ATELIERS.interne.remedeDe(ctx.etat, def.cle);
+    const med = Math.max(0, (Number(def.soin?.medicaments) || 0) - (remede?.remplace ? 1 : 0));
+    const defSoin = remede?.remplace ? { ...def, soin: { ...def.soin, medicaments: med } } : def;
     if ((Number(stocks.medicaments) || 0) < med) throw clair(t("LAKOUR_SURVIE.Erreurs.Medicaments", { n: med }));
-    const test = await testDirect({ acteurId: soigneur.id, competence: def.soin?.competence ?? "soins", difficulte: def.soin?.difficulte ?? "normale",
+    const test = await testDirect({ acteurId: soigneur.id, competence: def.soin?.competence ?? "soins", difficulte: def.soin?.difficulte ?? "normale", bonus: remede?.bonus ?? 0,
       titre: t("LAKOUR_SURVIE.Soins.Affliction", { nom: a.name, affliction: def.nom }), forcable: false });
-    const r = L.soignerAffliction(systemeLogique(a, ctx.monde), def, test, stocks);
+    if (remede) {
+      await remede.objet.acteur.deleteEmbeddedDocuments("Item", [remede.objet.item.id]);
+      noter(ctx, tx("Ateliers.Journal.Remede", { objet: remede.objet.item.name, nom: a.name }));
+    }
+    const r = L.soignerAffliction(systemeLogique(a, ctx.monde), defSoin, test, stocks);
     if (ab) await ab.update({ system: { stocks: L.normaliserStocks(r.stocks) } }); else ctx.etat.groupe.porte = L.normaliserStocks(r.stocks);
     await ecrireSurvivant(a, r.system, ctx);
     noter(ctx, tx(r.ok ? "Journal.AfflictionSoignee" : "Journal.AfflictionRate", { nom: a.name, affliction: def.nom }));
@@ -1992,6 +2032,8 @@ export const api = {
   // Lot « cartes » (contrat §20) : le compte des jours, la lune sur un calendrier, les cartes et les calendriers, le journal d'un mort.
   ...REPERES.api,
   ...CORPS,
+  // Lot 6 « ateliers » (contrat §24) : les outils d'un survivant, l'usure, la réparation de fortune et l'affûtage.
+  ...ATELIERS.api,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {

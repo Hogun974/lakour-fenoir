@@ -19,14 +19,15 @@
         "moteurs-de-fortune"
       ],
       "installation": {
-        "cle": "atelier",
+        "metier": "mecanique",
         "niveau": 1
       }
     },
     "produit": {
       "equipement": "camion-a-gazogene",
       "n": 1
-    }
+    },
+    "metier": "mecanique"
   },
   "effects": [],
   "folder": null,

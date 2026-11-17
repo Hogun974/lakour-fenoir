@@ -1,0 +1,45 @@
+{
+  "_id": "R6Y1CFZ0sxxldEFT",
+  "_key": "!items!R6Y1CFZ0sxxldEFT",
+  "name": "Sirop de miel aux zerbaz",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "sirop-de-miel",
+    "categorie": "soin",
+    "description": "<p>Du miel et des zerbaz, à la cuillère, pour la gorge et la toux des fièvres : un dé de plus au soin, mais il ne tient pas lieu de médicament.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "remede": {
+      "afflictions": [
+        "dengue",
+        "chikungunya",
+        "leptospirose"
+      ],
+      "bonus": 1,
+      "remplace": false
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sirop-de-miel"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

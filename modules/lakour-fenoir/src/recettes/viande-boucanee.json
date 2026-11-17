@@ -1,0 +1,57 @@
+{
+  "_id": "jXzKJtDJQC8L3VF6",
+  "_key": "!items!jXzKJtDJQC8L3VF6",
+  "name": "Viande boucanée au sel",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "viande-boucanee",
+    "description": "<p>La viande salée, puis fumée longtemps au-dessus du feu, sous le boucan : elle se garde sans bocal.</p>",
+    "cout": {
+      "nourriture": 2,
+      "materiaux": 1
+    },
+    "travail": 4,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "ressource": "nourriture",
+      "n": 3
+    },
+    "outils": [
+      "couteau"
+    ],
+    "objets": [
+      {
+        "cle": "sel",
+        "n": 1
+      }
+    ],
+    "metier": "cuisine",
+    "arbre": "lontan",
+    "repond": "conserves"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "viande-boucanee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "e6xCYpg7UclwKPZs",
+  "_key": "!items!e6xCYpg7UclwKPZs",
+  "name": "Eau salée et sucrée",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "eau-salee-et-sucree",
+    "description": "<p>De l'eau propre, une pincée de sel, le jus de deux cannes, dans les bonnes proportions : deux bouteilles.</p>",
+    "cout": {
+      "eau": 2,
+      "nourriture": 1
+    },
+    "travail": 1,
+    "competence": "soins",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "premiers-secours-avances"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "eau-salee-et-sucree",
+      "n": 2
+    },
+    "sac": true,
+    "objets": [
+      {
+        "cle": "sel",
+        "n": 1
+      }
+    ],
+    "arbre": "moderne",
+    "repond": "tisane-d-ayapana"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "eau-salee-et-sucree"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "_id": "x5MdG7cRpq2OLeH4",
+  "_key": "!items!x5MdG7cRpq2OLeH4",
+  "name": "Pièges à rats",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "pieges-a-rats",
+    "description": "<p>Une planche, du fil de fer, quatre clous : deux pièges à bascule.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "pieges-a-rats",
+      "n": 1
+    },
+    "sac": true,
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pieges-a-rats"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

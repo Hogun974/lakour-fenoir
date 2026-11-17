@@ -1,0 +1,51 @@
+{
+  "_id": "HBdyrrO3PLn9qXOq",
+  "_key": "!items!HBdyrrO3PLn9qXOq",
+  "name": "Régulateur de charge",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "regulateur-de-charge",
+    "description": "<p>Quatre lots de composants dessoudés de chargeurs et de vieux onduleurs, remontés sur une carte, deux câbles : sans lui, les panneaux tuent les batteries.</p>",
+    "cout": {
+      "pieces": 3
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [
+        "electricite-solaire"
+      ],
+      "installation": {
+        "metier": "electricite",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "regulateur-de-charge",
+      "n": 1
+    },
+    "outils": [
+      "pince"
+    ],
+    "metier": "electricite",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "regulateur-de-charge"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

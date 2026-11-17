@@ -107,7 +107,8 @@
         "bruit": 4,
         "transport": null,
         "effets": null,
-        "marque": ""
+        "marque": "",
+        "usages": 60
       },
       "effects": [],
       "folder": null,

@@ -1,0 +1,36 @@
+{
+  "_id": "69RXiHB7GpvJ3B1m",
+  "_key": "!items!69RXiHB7GpvJ3B1m",
+  "name": "Rhum de canne",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "rhum-de-canne",
+    "categorie": "matiere",
+    "description": "<p>Une bouteille du jus fermenté passé une fois à l'alambic : rude. On en fait le rhum arrangé.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rhum-de-canne"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "_id": "j0M9DGrSspXEPI6o",
+  "_key": "!items!j0M9DGrSspXEPI6o",
+  "name": "Galerie de toit",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "galerie-de-toit",
+    "description": "<p>Des tubes et des barres de toit pris sur des épaves, soudés ou boulonnés, des sangles.</p>",
+    "cout": {
+      "materiaux": 2,
+      "pieces": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "galerie-de-toit",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "metier": "mecanique",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "galerie-de-toit"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

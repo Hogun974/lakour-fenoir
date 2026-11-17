@@ -1,0 +1,51 @@
+{
+  "_id": "oNnD72OEZztJXCNk",
+  "_key": "!items!oNnD72OEZztJXCNk",
+  "name": "Torches",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "torches",
+    "description": "<p>Deux branches, un chiffon fendu en bandes, trempé d'huile de bancoul et serré.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "torche",
+      "n": 2
+    },
+    "sac": true,
+    "outils": [
+      "couteau"
+    ],
+    "objets": [
+      {
+        "cle": "huile-de-bancoul",
+        "n": 1
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "torches"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

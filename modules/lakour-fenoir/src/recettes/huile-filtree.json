@@ -23,7 +23,8 @@
     "produit": {
       "ressource": "biocarburant",
       "n": 1
-    }
+    },
+    "sac": true
   },
   "effects": [],
   "folder": null,

@@ -1541,3 +1541,83 @@ d'accroche. Aucune règle nouvelle : chaque jointure applique une règle qui exi
 - **Les religions et les fêtes** (§22 -> §14) : la fête d'un pratiquant suit `religionsDe(…, contenu)` (anciennes clés comprises) ;
   essai : le bouddhiste, sous `culte-chinois` comme sous `bouddhiste`, gagne 1 de plus au Nouvel An chinois.
 - **Le grand ménage** (§19) : le gain du Nouvel An chinois dit que l'abri est lavé de toute sa souillure (ce que `feter` faisait déjà).
+
+## 24. Les outils, les ateliers et les recettes (lot 6 du portage du jeu 3D, 2026-11-17)
+
+Lot 6 de l'inventaire du jeu 3D : la famille 9 « Fabriquer » du complément (ateliers par métier, petites fabrications depuis le sac,
+outils en trois qualités, usure et réparation de fortune, suites des armes, bouclier, enrayage, recettes, transports de charges,
+véhicules aménagés). Décisions de Jordan des 14, 15, 16 et 17 novembre (« tout maintenant ») ; rien en temps réel. Chiffres et
+raisons : `docs/equilibre-ateliers.md`. Logique : `logique/armes.mjs` (nouveau), `logique/fabrication.mjs` (étendu), crochets dans
+`marche.mjs` (`valeurObjet`) et `abri.mjs` (eau traitée). Rien n'est retiré ni renommé : une recette d'avant (installation par sa
+clé, sans `sac`, `outils` ni `objets`) se fabrique comme avant ; un objet sans qualité ne s'use pas ; un abri sans `eauTraiteeAvant`
+n'a rien de traité. **Une fabrication ratée garde la règle de FVTT** (la moitié du coût rendue, arrondie au supérieur ; les objets
+demandés restent) : le jeu 3D fait tout perdre, c'est un écart voulu.
+
+### 24.1 Règles (logique pure)
+- **Ateliers de métier** (`fabrication.mjs`) : `METIERS` (cuisine, etabli, forge, vannerie, couture, tisanerie, mecanique,
+  electricite, distillerie). Une recette demande `requiert.installation: { metier, niveau }` ; une installation sert les métiers de
+  sa définition (`metiers`) à son niveau. `atelierPour(recette, installations, metiers)` → `{ cle, niveau, requis, ecart, bonus,
+  vitesse, horsService }` : au-dessus du niveau demandé, +1 dé et × 1,5 de vitesse par niveau (au plus +2 dés et × 2,
+  `REGLES_ATELIER`). `metiersDuContenu(installations)`, `requisAtelier(recette)`, `quartsDeFabrication(recette, { bras, vitesse })`.
+- **`peutFabriquer(recette, options)`** prend en plus (tout facultatif) `metiers`, `aLAbri` (défaut vrai), `nuit`, `lumiere`,
+  `outils` ([gamme] en main ; `null` : pas vérifié), `objets` ({ cle: n } du groupe ; `null` : pas vérifié) ; motifs neufs
+  `requiert-atelier`, `recette-a-l-abri`, `recette-lumiere`, `outil-manquant`, `objet-manquant`. Une recette `sac` se fait partout ;
+  sans `sac` ni installation, seulement à l'abri. Rend aussi `atelier`.
+- **`fabriquer`** : les dés de l'atelier s'ajoutent au test ; sur une réussite, `consomme` (les objets demandés) ; toujours
+  `outils` (un usage chacun) et `bruit` ; un produit `{ traitement: "eau", jours }` est rendu à la couche Foundry.
+- **Remèdes** : `remedePour(affliction, objets, defs)` → `{ objet, bonus, remplace }` (celui qui tient lieu d'un médicament d'abord).
+- **Outils** (`armes.mjs`) : `QUALITES` (fortune, recuperation, forge), `GAMMES` (hache, sabre, couteau, marteau, scie, truelle,
+  pelle-pioche, pied-de-biche, masse, pince, gratte, lance), `REGLES_OUTILS` ; `qualiteDe`, `gammesDe`, `usagesDe` (écrits, sinon
+  6 / 20 / 40 selon la qualité, 0 : ne s'use pas), `estCasse` (une arme à feu ne casse pas), `estUsee` (la moitié passée),
+  `etatOutil`, `usagesRestants`, `bonusOutil` (0 cassé), `userOutil(eq, n)`, `reparerOutil(eq)` (½, ¼, ⅛ des usages, trois fois ;
+  motifs `outil-sans-usure`, `outil-arme-a-feu`, `outil-neuf`, `outil-trop-repare`), `affuterOutil(eq)` (une lame, ¼, hors compte ;
+  `GAMMES_LAMES`, motif `outil-pas-une-lame`), `outilsEnMain(objets, defs)` (Map gamme → le meilleur objet non cassé). Chaque fonction
+  accepte la définition du contenu en second argument : un objet créé avant ce lot lit sa qualité, ses gammes et ses usages là.
+- **Enrayage** : `enrayage(des, arme)` → `{ enrayee, uns, requis }` (au moins deux 1 ; trois remise en état ; usée, les 2 comptent) ;
+  `chanceEnrayage(n, { remise, usee })`.
+- **Qualité trouvée** : `poidsQualiteTrouvee(palier)` (6 ; 3 + 0,5 par palier ; 1 + 0,5 par palier), `qualiteTrouvee(palier, hasard)`
+  (pour le lot « fouille »).
+- **Marché** : `valeurObjet` compte aussi la valeur des objets qu'une recette consomme (sans boucle).
+- **Abri** : `bilanAbri(…).eauTraitee` est vrai tant que `conditions.jour < abri.eauTraiteeAvant`.
+
+### 24.2 Contenu (`contenu/ateliers.mjs`, `contenu/recettes-3d.mjs`)
+- Installations : neuf ateliers (`coin-du-feu`, `etabli`, `forge`, `vannerie`, `couture`, `tisanerie`, `atelier-mecanique`,
+  `atelier-electricite`, `distillerie`), trois niveaux, champ `metiers` ; l'`atelier` de FVTT sert `etabli`, `mecanique`,
+  `electricite` ; la `cuisine-commune` et la `gaziniere` servent `cuisine`. Des sites en ont déjà (`installationsDepart`) et portent
+  des plans du lot (`plans`).
+- Équipement (champs, tous facultatifs) : `qualite`, `gammes`, `usages`, `reparations`, `remise`, `eclaire`, `remede: { afflictions,
+  bonus, remplace }`, `protege: ["soleil"]`, `amenagement` ; catégories `matiere` et `amenagement`. Outils en trois qualités (les
+  outils forgés de FVTT gardent leurs valeurs), suites (arc renforcé, arbalète d'acier, bouclier doublé et cerclé `parade: 4`,
+  fusil, carabine et pistolet remis en état, tronçonneuse révisée), vêtements, pêche, lumière, matières travaillées, remèdes,
+  transports (charrette à bras, chariot, vélo et remorque, motoculteur, utilitaire électrique et leurs remorques), aménagements.
+- Recettes (champs, tous facultatifs) : `sac`, `lumiere`, `outils`, `objets: [{ cle, n }]`, `bruit`, `metier`, `arbre`, `repond`,
+  `produit.traitement`. Cent trois recettes ajoutées ; des recettes d'avant passent à un atelier de métier (savon, bocaux et poêle de
+  masse au coin du feu, alcool désinfectant à la distillerie ; arc, arbalète, vélo-cargo, panneaux, munitions, moteurs à l'atelier
+  du métier, que l'atelier de FVTT sert toujours) ; celles d'avant sans installation sont `sac`. Savon (2 → 3 quarts) et rimèd lontan
+  (2 → 4) prennent plus de travail : avec l'atelier ou le plan, ils devenaient des rentes.
+- Barème : les armes remises en état et la tronçonneuse révisée (25, 21, 21, 27). Plans au registre (`plans`, via
+  `contenu/plans.mjs` : `PLANS_REGISTRE`) : les neuf ateliers et 37 recettes ; le cahier de la gramoune couvre sa tisane. Un plan
+  reste un rabais.
+- Journal du MJ « Les ateliers et les outils » (six pages) ; tables « La qualité d'un outil trouvé », « Ce qui reste d'un atelier
+  abandonné » ; page « Fabriquer et réparer » du guide du joueur.
+
+### 24.3 État, API et fenêtres
+- Équipement : `qualite`, `gammes`, `usages`, `reparations`, `remise`, `eclaire`, `remede`, `protege`, `amenagement` ; recette :
+  `sac`, `lumiere`, `outils`, `objets`, `bruit`, `metier`, `arbre`, `repond` ; installation : `metiers` ; abri : `eauTraiteeAvant`
+  (tous `gmOnlyFields`).
+- API (`scripts/api-ateliers.mjs`) : `outils({ acteurId })` (lecture) ; `userOutil({ acteurId, objetId | cle, usages })`,
+  `reparerOutil({ acteurId, objetId | cle, affuter })` (MJ actif, monde ouvert ; 1 matériau et un quart, ou la pierre à aiguiser).
+  `peutFabriquer` et `fabriquer` lisent les ateliers, la lumière (un objet qui éclaire, ou à l'abri de l'énergie ou un feu de
+  travail), les outils et les objets des présents ; `fabriquer` retire les objets consommés, use les outils (et la lumière portée la
+  nuit), ajoute le bruit à l'abri, pose l'eau traitée, et rend `atelier`, `consomme`, `outils`, `bruit`, `notes`. Les dés de
+  l'atelier comptent dans le plafond des aides (outil + installation ≤ 2).
+- Branchements : `test` au tir use la meilleure arme à feu et l'enraye (le test devient un échec qui ne se force pas, `enrayee` au
+  résultat, le titre de la carte le dit) ; `affliction` (soin) prend le meilleur remède du groupe (un dé, un médicament de moins
+  s'il remplace, l'objet consommé) ; `parer` ignore un bouclier brisé et use celui qui pare ; un outil cassé ne donne plus son
+  bonus ; la capeline ôte le malus de chaleur.
+- Fenêtre de l'atelier : où se fait chaque recette (depuis le sac, à l'abri, l'atelier et son niveau), ce qu'il faut en main, la
+  lumière ; les refus nomment le métier, l'outil, l'objet. Fiche d'un objet : qualité, gammes, usure, remise en état, parade, remède,
+  lumière ; fiche d'une recette : l'atelier, le sac, les outils, les objets, le traitement.
+- Simulateur (`essais/outils/simuler-parties.mjs`) : les ateliers déjà là ne comptent pas dans le score d'un site (`INSTALLATIONS_NON_JOUEES`) : il ne fabrique pas à l'atelier.
+- Essais : `essais/survie-ateliers.test.mjs` (logique), `essais/contenu-ateliers.test.mjs` (contenu, rentes, traduction),
+  `essais/survie-api-ateliers.test.mjs` (API sur la doublure).

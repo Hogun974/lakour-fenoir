@@ -1,0 +1,51 @@
+{
+  "_id": "4XGh4Z4TD0whjU5C",
+  "_key": "!items!4XGh4Z4TD0whjU5C",
+  "name": "Remorque de voiture",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "remorque-de-voiture",
+    "description": "<p>L'essieu et les roues d'une épave, un plateau de tôle, un timon, une boule d'attelage récupérée sur un 4×4.</p>",
+    "cout": {
+      "materiaux": 3,
+      "pieces": 2
+    },
+    "travail": 4,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "mecanique",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "remorque-de-voiture",
+      "n": 1
+    },
+    "outils": [
+      "marteau",
+      "pince"
+    ],
+    "metier": "mecanique",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "remorque-de-voiture"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

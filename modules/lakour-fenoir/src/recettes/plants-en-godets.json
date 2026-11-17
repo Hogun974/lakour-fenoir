@@ -1,0 +1,44 @@
+{
+  "_id": "5IYkjsOXw8GUH2YU",
+  "_key": "!items!5IYkjsOXw8GUH2YU",
+  "name": "Plants en godets",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "plants-en-godets",
+    "description": "<p>Des graines semées dans des godets de terre (des pots de yaourt, des bambous coupés) à l'ombre de la case : des plants levés, à repiquer vite.</p>",
+    "cout": {
+      "graines": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "maraichage-tropical"
+      ],
+      "installation": null
+    },
+    "produit": {
+      "ressource": "boutures",
+      "n": 2
+    },
+    "sac": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "plants-en-godets"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

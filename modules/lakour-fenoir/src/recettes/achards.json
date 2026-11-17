@@ -1,0 +1,61 @@
+{
+  "_id": "ESdIrv6ZEVbfaiaD",
+  "_key": "!items!ESdIrv6ZEVbfaiaD",
+  "name": "Achards",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "achards",
+    "description": "<p>Les légumes en lanières, ébouillantés, au vinaigre et au piment, en bocaux : ils tiennent des mois.</p>",
+    "cout": {
+      "nourriture": 3,
+      "materiaux": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [
+        "conserverie"
+      ],
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "ressource": "nourriture",
+      "n": 5
+    },
+    "outils": [
+      "couteau"
+    ],
+    "objets": [
+      {
+        "cle": "vinaigre-de-canne",
+        "n": 1
+      },
+      {
+        "cle": "sel",
+        "n": 1
+      }
+    ],
+    "metier": "cuisine"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "achards"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

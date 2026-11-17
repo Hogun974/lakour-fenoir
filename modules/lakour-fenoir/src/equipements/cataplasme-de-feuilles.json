@@ -1,0 +1,45 @@
+{
+  "_id": "A9qox8IBORA4BoFI",
+  "_key": "!items!A9qox8IBORA4BoFI",
+  "name": "Cataplasme de feuilles",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "cataplasme-de-feuilles",
+    "categorie": "soin",
+    "description": "<p>Des feuilles pilées, tenues par une lanière de vacoa : sur une plaie qui rougit, une piqûre, une brûlure, il tient lieu de médicament et donne un dé de plus au soin.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "remede": {
+      "afflictions": [
+        "plaie-infectee",
+        "piqure-de-scolopendre",
+        "brulure"
+      ],
+      "bonus": 1,
+      "remplace": true
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cataplasme-de-feuilles"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_id": "gBRSsh8ENCE8aXEB",
+  "_key": "!items!gBRSsh8ENCE8aXEB",
+  "name": "Utilitaire électrique et sa remorque",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "utilitaire-et-remorque",
+    "categorie": "transport",
+    "description": "<p>Le petit utilitaire et le plateau qu'il tire : il déménage un abri sans un bruit, et vide ses batteries en un trajet (trois unités d'énergie par quart de route).</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": {
+      "mode": "vehicule",
+      "places": 2,
+      "chargeMax": 36,
+      "carburantParQuart": 3,
+      "terrains": [
+        "route",
+        "piste"
+      ],
+      "bruit": 0,
+      "lenteur": 1.8,
+      "source": "energie",
+      "large": true
+    },
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "utilitaire-et-remorque"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

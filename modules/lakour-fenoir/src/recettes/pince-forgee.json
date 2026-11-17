@@ -1,0 +1,55 @@
+{
+  "_id": "Ni4sH2x0oAfMRdEc",
+  "_key": "!items!Ni4sH2x0oAfMRdEc",
+  "name": "Pince coupante forgée",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "pince-forgee",
+    "description": "<p>Trois ferrailles, une vis pour l'axe, des mâchoires trempées.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 3,
+    "competence": "bricolage",
+    "difficulte": "difficile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "forge",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "pince",
+      "n": 1
+    },
+    "outils": [
+      "marteau"
+    ],
+    "objets": [
+      {
+        "cle": "charbon-de-bois",
+        "n": 1
+      }
+    ],
+    "bruit": 3,
+    "metier": "forge"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pince-forgee"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

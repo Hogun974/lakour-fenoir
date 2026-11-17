@@ -1,0 +1,42 @@
+{
+  "_id": "98WRtQoMTRyCf1Qw",
+  "_key": "!items!98WRtQoMTRyCf1Qw",
+  "name": "Scie forgée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "scie",
+    "categorie": "outil",
+    "description": "<p>Une lame de ressort recuite, taillée, avoyée, retrempée : il faut savoir la mécanique pour la réussir.</p>",
+    "bonus": {
+      "bricolage": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "forge",
+    "gammes": [
+      "scie"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "scie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

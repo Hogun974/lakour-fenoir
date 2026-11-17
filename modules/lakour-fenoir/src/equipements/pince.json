@@ -1,0 +1,42 @@
+{
+  "_id": "Y6My5FfCe4rGrEUH",
+  "_key": "!items!Y6My5FfCe4rGrEUH",
+  "name": "Pince coupante forgée",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pince",
+    "categorie": "outil",
+    "description": "<p>Une vraie pince coupante : le fil de fer, les câbles, les boulons d'une épave.</p>",
+    "bonus": {
+      "bricolage": 1
+    },
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "forge",
+    "gammes": [
+      "pince"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pince"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

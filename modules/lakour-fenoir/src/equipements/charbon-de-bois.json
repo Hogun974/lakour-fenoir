@@ -1,0 +1,36 @@
+{
+  "_id": "zOHFklR8jDw5dUdX",
+  "_key": "!items!zOHFklR8jDw5dUdX",
+  "name": "Charbon de bois",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "charbon-de-bois",
+    "categorie": "matiere",
+    "description": "<p>Un sac de charbon tiré d'une meule couverte de terre : le feu de la forge, le four à poterie, le filtre à eau, l'encre. Une forge en brûle un sac par ouvrage.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "charbon-de-bois"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

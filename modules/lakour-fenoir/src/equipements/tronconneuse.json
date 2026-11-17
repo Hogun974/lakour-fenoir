@@ -17,7 +17,12 @@
     "bruit": 3,
     "transport": null,
     "effets": null,
-    "marque": ""
+    "marque": "",
+    "gammes": [
+      "hache",
+      "scie"
+    ],
+    "usages": 25
   },
   "effects": [],
   "folder": null,

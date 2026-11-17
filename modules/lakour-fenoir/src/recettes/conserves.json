@@ -18,12 +18,16 @@
       "savoirs": [
         "conserverie"
       ],
-      "installation": null
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
     },
     "produit": {
       "ressource": "nourriture",
       "n": 5
-    }
+    },
+    "metier": "cuisine"
   },
   "effects": [],
   "folder": null,

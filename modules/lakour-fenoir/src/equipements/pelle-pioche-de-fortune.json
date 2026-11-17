@@ -1,0 +1,40 @@
+{
+  "_id": "6klZCg5yQ6xAs4Cq",
+  "_key": "!items!6klZCg5yQ6xAs4Cq",
+  "name": "Pelle et pic de fortune",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pelle-pioche-de-fortune",
+    "categorie": "outil",
+    "description": "<p>Une pelle taillée dans une planche, un pic de bois durci au feu : on creuse, à la sueur.</p>",
+    "bonus": {},
+    "charge": 2,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "fortune",
+    "gammes": [
+      "pelle-pioche"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pelle-pioche-de-fortune"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

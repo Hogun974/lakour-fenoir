@@ -1,0 +1,43 @@
+{
+  "_id": "GKiDYSkwrngvDf8L",
+  "_key": "!items!GKiDYSkwrngvDf8L",
+  "name": "Pied-de-biche de récupération",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "pied-de-biche-de-recuperation",
+    "categorie": "outil",
+    "description": "<p>Une barre de ferraille aplatie et recourbée au feu : elle ouvre, elle soulève, elle cogne.</p>",
+    "bonus": {
+      "bricolage": 1,
+      "combat": 1
+    },
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "qualite": "recuperation",
+    "gammes": [
+      "pied-de-biche"
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pied-de-biche-de-recuperation"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

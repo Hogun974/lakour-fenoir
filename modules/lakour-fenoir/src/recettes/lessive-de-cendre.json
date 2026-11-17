@@ -1,0 +1,53 @@
+{
+  "_id": "3niOzbavxdndRPvQ",
+  "_key": "!items!3niOzbavxdndRPvQ",
+  "name": "Lessive de cendre",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "lessive-de-cendre",
+    "description": "<p>Un seau de cendre tamisée, de l'eau chaude, une nuit de repos : on décante, et on lave le linge quand il n'y a plus de savon.</p>",
+    "cout": {
+      "eau": 1
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "equipement": "lessive-de-cendre",
+      "n": 1
+    },
+    "objets": [
+      {
+        "cle": "cendre-tamisee",
+        "n": 1
+      }
+    ],
+    "metier": "cuisine",
+    "arbre": "lontan",
+    "repond": "savon"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "lessive-de-cendre"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

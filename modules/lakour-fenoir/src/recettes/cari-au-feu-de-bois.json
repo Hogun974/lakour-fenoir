@@ -1,0 +1,49 @@
+{
+  "_id": "RYmvUduiO4b9G6jg",
+  "_key": "!items!RYmvUduiO4b9G6jg",
+  "name": "Cari au feu de bois",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "cari-au-feu-de-bois",
+    "description": "<p>Une marmite pour tout le monde : un cari étire ce qu'il y a, et on mange mieux à plusieurs.</p>",
+    "cout": {
+      "nourriture": 3
+    },
+    "travail": 2,
+    "competence": "survie",
+    "difficulte": "facile",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "cuisine",
+        "niveau": 1
+      }
+    },
+    "produit": {
+      "ressource": "nourriture",
+      "n": 4
+    },
+    "outils": [
+      "couteau"
+    ],
+    "metier": "cuisine",
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cari-au-feu-de-bois"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

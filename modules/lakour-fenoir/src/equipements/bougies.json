@@ -1,0 +1,38 @@
+{
+  "_id": "JwOKAw4RElBi4sp7",
+  "_key": "!items!JwOKAw4RElBi4sp7",
+  "name": "Bougies",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "bougies",
+    "categorie": "outil",
+    "description": "<p>La cire des ruches coulée autour d'une mèche : deux nuits d'une lumière douce, qui se voit moins qu'un feu.</p>",
+    "bonus": {},
+    "charge": 0,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": "",
+    "usages": 2,
+    "eclaire": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "bougies"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "_id": "YaVd5Hpd8O4X4eRq",
+  "_key": "!items!YaVd5Hpd8O4X4eRq",
+  "name": "Savates de pneu",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "savates-de-pneu",
+    "description": "<p>Deux semelles découpées dans un pneu, une bride en chambre à air.</p>",
+    "cout": {
+      "pieces": 1
+    },
+    "travail": 2,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": {
+        "metier": "couture",
+        "niveau": 2
+      }
+    },
+    "produit": {
+      "equipement": "savates-de-pneu",
+      "n": 1
+    },
+    "lumiere": true,
+    "outils": [
+      "couteau"
+    ],
+    "metier": "couture",
+    "arbre": "moderne"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "savates-de-pneu"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}
