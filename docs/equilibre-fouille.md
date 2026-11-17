@@ -113,3 +113,97 @@ la fouille complète d'un lieu de chaque sorte (un lieu différent par monde), e
   secours. Dans une grande ville, au début, la fouille de la région ciblée sur les médicaments rend davantage (1,5 % × 2,5 des
   réserves, jusqu'à 6 par quart-personne) : la fouille d'un lieu ne remplace pas celle d'une région, elle prend le relais quand la
   région s'épuise, et elle sert là où la région est pauvre.
+
+## Le simulateur
+
+`essais/outils/simuler-parties.mjs` joue les nouveautés comme un groupe raisonnable (`LIEUX_DU_BESOIN`, `A_DEMONTER`) :
+- quand le renseignement de sa région dit « vide » et que la fouille de la région ne rendrait plus une unité par fouilleur de ce qu'il
+  cherche (1,5 % de ce qui reste, × 2,5 en ciblant), ou qu'il cherche des médicaments, il fouille un **lieu** du genre qui sert son
+  besoin (supérette, boutique, case pour manger ; pharmacie, centre de santé pour les médicaments), à l'écart d'abord ; pour juger
+  s'il reste ou part, il compte ce qui nourrit et désaltère ;
+- l'enraciné à qui il manque des matériaux et dont les alentours n'ont plus de bois **récolte** les matières de l'île, sinon
+  **démonte** une case de tôle, une case, une remise, une épave ;
+- il ne prend pas les bêtes et ne garde pas les objets trouvés (outils, armes) : ce que la fouille d'un lieu rend en plus de la
+  fouille d'une région n'est pas compté dans ses chances ;
+- `--sans-lieux` (et `parties-longues.mjs --sans-lieux`) rejoue la fouille d'avant le lot : vérifié, 120 parties sur 120 identiques à
+  la branche de départ (même jour de fin, même cause, même première faim, même autonomie, mêmes déménagements).
+
+### Ce qui a été essayé, et pourquoi la règle a changé
+
+1. **Le nomade fouillait des lieux dès que sa région était « maigre »** (règle d'abord sans glanage dans un lieu) : la survie du nomade
+   à J200 tombait de 72-82 % à 23-26 %, sa première faim de J117 à J45. Il ne glanait plus en fouillant (le glanage de passage n'était
+   que dans la fouille d'une région) : c'est pourtant « ce qui se renouvelle pour qui bouge », le levier du nomade (`docs/equilibre.md`).
+   **Changement de règle** : fouiller un lieu, c'est fouiller la région ; le glanage et la trousse oubliée y viennent aussi.
+2. **Avec le glanage, toujours dès « maigre »** : nomade × 1, 2, 4, 6 à 53, 75, 73, 66 % (150 parties, graine 1) contre 56, 73, 81,
+   83 % : dans une région « maigre » (10 à 40 % des réserves), la fouille de la région rend encore 1,5 % de ce qui reste, plus que les
+   lieux mis à sac de la ville. Un groupe raisonnable ne quitte la fouille de la région que quand elle ne rend plus rien : **le
+   simulateur passe aux lieux quand la région est « vide »** (ou pour des médicaments).
+3. **Le bruit de la fouille d'un lieu dans la rencontre** (+10 % par point) : retiré ; comme pour une région, il va à l'abri. Seul le
+   démontage, bruyant, attire dans la rencontre.
+4. **Dès « vide »** (deux graines de 300 parties, plus la graine 3 pour le nomade et l'enraciné) : rien ne bougeait chez l'enraciné et
+   le mixte, mais le nomade seul perdait 3 à 4 points sur les trois graines (56 → 52, 56 → 53, 55 → 51) et à six 2 à 3 (82 → 80,
+   80 → 77, 80 → 77) : le renseignement « vide » dit que la région a perdu 90 % de ses réserves, pas qu'il n'y reste rien de ce qu'on
+   cherche (l'eau dure plus que les conserves) ; une fouille ciblée de la région en rendait encore plus qu'un lieu mis à sac. **Le
+   simulateur passe aux lieux quand la région ne rendrait plus une unité par fouilleur** : c'est ce que ferait un groupe qui voit ses
+   fouilles revenir vides. Mesures ci-dessous.
+
+## Les mesures
+
+**200 jours** : `node essais/outils/simuler-parties.mjs --parties 300 --graine 1` puis `--graine 2` (16 cas, 4 800 parties par
+graine, 9 600 en tout), **avant** (la branche de départ `vague2`, commit 98790e2, rejouée aussi par `--sans-lieux`) et **après** (le lot :
+règle et simulateur). Chaque cellule : graine 1 | graine 2.
+
+| Cas | Vivants à J200 : avant | après | Première faim (médiane) : avant | après | Autonomes : avant | après | Déménagements : avant | après |
+|---|---|---|---|---|---|---|---|---|
+| passif × 1 | 13 \| 15 (moy. 14.0) | 13 \| 15 (moy. 14.0) | J17 \| J17 | J17 \| J17 | 37 \| 36 | 37 \| 36 | 0.3 \| 0.3 | 0.3 \| 0.3 |
+| passif × 2 | 13 \| 14 (moy. 13.5) | 13 \| 14 (moy. 13.5) | J10 \| J10 | J10 \| J10 | 31 \| 34 | 31 \| 34 | 0.2 \| 0.2 | 0.2 \| 0.2 |
+| passif × 4 | 12 \| 13 (moy. 12.5) | 12 \| 13 (moy. 12.5) | J7 \| J7 | J7 \| J7 | 28 \| 29 | 28 \| 29 | 0.2 \| 0.1 | 0.2 \| 0.1 |
+| passif × 6 | 11 \| 11 (moy. 11.0) | 11 \| 11 (moy. 11.0) | J5 \| J5 | J5 \| J5 | 21 \| 22 | 21 \| 22 | 0.1 \| 0.1 | 0.1 \| 0.1 |
+| nomade × 1 | 56 \| 56 (moy. 56.0) | 58 \| 57 (moy. 57.5) | J189 \| J200 | J187 \| J200 | 1 \| 2 | 1 \| 2 | 2.4 \| 2.3 | 2.4 \| 2.3 |
+| nomade × 2 | 72 \| 74 (moy. 73.0) | 74 \| 75 (moy. 74.5) | J64 \| J70 | J64 \| J65 | 1 \| 1 | 1 \| 1 | 2.7 \| 2.6 | 2.7 \| 2.6 |
+| nomade × 4 | 78 \| 85 (moy. 81.5) | 82 \| 85 (moy. 83.5) | J117 \| J122 | J119 \| J131 | 3 \| 4 | 2 \| 3 | 5.4 \| 5.7 | 5.7 \| 6 |
+| nomade × 6 | 82 \| 80 (moy. 81.0) | 83 \| 81 (moy. 82.0) | J131 \| J136 | J122 \| J131 | 1 \| 1 | 1 \| 1 | 11.2 \| 11.5 | 11.7 \| 12 |
+| enracine × 1 | 55 \| 54 (moy. 54.5) | 55 \| 55 (moy. 55.0) | J21 \| J29 | J21 \| J29 | 70 \| 67 | 70 \| 67 | 1.6 \| 1.5 | 1.6 \| 1.5 |
+| enracine × 2 | 78 \| 74 (moy. 76.0) | 78 \| 74 (moy. 76.0) | J21 \| J21 | J21 \| J21 | 54 \| 51 | 54 \| 51 | 1.3 \| 1.3 | 1.3 \| 1.3 |
+| enracine × 4 | 88 \| 84 (moy. 86.0) | 87 \| 84 (moy. 85.5) | J28 \| J27 | J27 \| J27 | 72 \| 74 | 73 \| 73 | 1.3 \| 1.3 | 1.3 \| 1.2 |
+| enracine × 6 | 84 \| 87 (moy. 85.5) | 85 \| 87 (moy. 86.0) | J17 \| J17 | J17 \| J17 | 73 \| 72 | 73 \| 72 | 1.3 \| 1.2 | 1.3 \| 1.2 |
+| mixte × 1 | 58 \| 57 (moy. 57.5) | 58 \| 59 (moy. 58.5) | J111 \| J114 | J95 \| J114 | 19 \| 14 | 18 \| 18 | 2.1 \| 2.2 | 2.1 \| 2.3 |
+| mixte × 2 | 74 \| 76 (moy. 75.0) | 75 \| 76 (moy. 75.5) | J56 \| J58 | J56 \| J58 | 18 \| 21 | 18 \| 21 | 3 \| 2.9 | 2.8 \| 2.9 |
+| mixte × 4 | 84 \| 86 (moy. 85.0) | 85 \| 87 (moy. 86.0) | J58 \| J65 | J61 \| J57 | 37 \| 37 | 35 \| 39 | 3.1 \| 3.1 | 3.1 \| 3.1 |
+| mixte × 6 | 86 \| 86 (moy. 86.0) | 84 \| 87 (moy. 85.5) | J57 \| J54 | J57 \| J52 | 46 \| 46 | 49 \| 49 | 3.2 \| 3.3 | 3.2 \| 3.2 |
+
+**Graine 3** (300 parties par cas, nomade et enraciné ; avant | après) : vivants à J200, nomade × 1 55 | 53, × 2 76 | 76, × 4 83 | 85,
+× 6 80 | 82 ; enraciné × 1 52 | 52, × 2 74 | 75, × 4 85 | 85, × 6 88 | 88 ; première faim de l'enraciné J21, J28, J21, J17 avant comme
+après.
+
+**Ce que le simulateur fait du lot** (par partie, graine 1 | graine 2) : lieux fouillés, nomade × 1 40 | 41, × 2 48 | 49, × 4 57 | 57,
+× 6 55 | 51 ; mixte × 1 22 | 18, × 6 8 | 9 ; enraciné 0,4 à 1,8. Récoltes : enraciné × 6, 0,5 | 0,6. Démontages : aucun (l'enraciné
+trouve toujours du bois, ou des matières de l'île, avant d'en venir là ; le démontage sert à la table, pas au simulateur).
+
+**Lecture.**
+- **La première faim de l'enraciné ne bouge pas** : J21 | J29 seul, J21 à deux, J27 à quatre, J17 à six (cible : J21 à J28 ; à six,
+  J17, comme avant le lot). Il ne fouille presque pas de lieux : ses alentours et sa région le nourrissent.
+- **La survie à J200 ne bouge pas** au-delà du bruit du hasard : de −1 à +2 points selon le cas. Partie par partie (graine 1), le
+  nomade seul gagne 26 parties et en perd 19 parmi celles où il a fouillé des lieux (les 76 autres sont identiques à l'avant) ; à
+  quatre, 28 et 17 ; à six, 31 et 28.
+- **Les deux voies restent aussi valables l'une que l'autre** : à quatre, nomade 83,5 % contre enraciné 85,5 % (81,5 contre 86
+  avant) ; à six, 82 contre 86 (81 contre 85,5) ; à deux, 74,5 contre 76 (73 contre 76) ; seul, 57,5 contre 55 (56 contre 54,5).
+- **La première faim du nomade** reste celle d'avant (J119 | J131 à quatre au lieu de J117 | J122 ; J122 | J131 à six au lieu de
+  J131 | J136).
+
+**Un an** (`node essais/outils/parties-longues.mjs --graines 16`, sans puis avec les lieux : 16 parties par scénario, vivants au
+jour 365) : aucune anomalie, aucune impasse.
+
+| Scénario | avant (`--sans-lieux`) | après |
+|---|---|---|
+| sedentaire-4 | 6 | 7 |
+| sedentaire-2 | 6 | 6 |
+| seul-enracine | 2 | 2 |
+| seul-sedentaire | 6 | 5 |
+| seul-nomade | 9 | 10 |
+| compagnons | 13 | 13 |
+| humains-4 | 11 | 10 |
+| recrues | 8 | 8 |
+| sans-recrues | 10 | 10 |
+| nomade-4 | 9 | 9 |
+| mixte-4 | 9 | 10 |

@@ -431,7 +431,7 @@ const PAGES_MJ = [
 
 **Ce que rend un lieu** est dit en objets (« 6 boîtes de conserve, 2 pansements, un sabre à canne ») et compté en ressources de Fénoir (page « Ce qu'un objet vaut »). Ce qui se pille se prend sur les réserves de la région : un lieu ne rend pas ce que la région n'a plus. Un outil ou une arme trouvé devient un objet sur le premier fouilleur.
 
-**Le risque** : comme toute fouille, une rencontre possible et du bruit (selon l'allure). Ce qui est rare (armes, groupe électrogène, tronçonneuse) se trouve un peu plus là où les Livides tiennent la région : on y est moins allé.
+**Le risque** : comme toute fouille, une rencontre possible et du bruit (selon l'allure). **Comme en fouillant la région**, on glane en passant (des fruits, un poisson, un tangue) et l'on tombe parfois sur une trousse de secours oubliée. Ce qui est rare (armes, groupe électrogène, tronçonneuse) se trouve un peu plus là où les Livides tiennent la région : on y est moins allé.
 
 **Une journée dans un écart** rend bien plus de vivres qu'une journée en ville, pour autant de lieux : c'est la raison d'aller loin.` },
   { cle: "les-genres", titre: "Les genres de lieux", texte: `Chaque genre a sa table (tables « Fouille — … »), son travail et son nombre de lieux par région.

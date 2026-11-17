@@ -509,8 +509,13 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
   const fouillerRegion = (fouilleurs, cible, jour, h) => {
     if (!fouilleurs.length) return 0;
     const regionCle = abri.system.region;
-    // Lot 5 : la région maigre ou vide, ou des médicaments à trouver : un lieu qui sert le besoin.
-    if (OPTIONS_SIMULATEUR.lieux && (etat.renseignements[regionCle]?.pillage === "vide" || cible === "medicaments")) {
+    // Lot 5 : la région vide et sa fouille qui ne rend plus rien de ce qu'on cherche, ou des médicaments à trouver : un lieu qui sert le besoin.
+    // Ce que la fouille de la région rendrait de ce qu'on cherche (1,5 % de ce qui reste, × 2,5 en ciblant) : moins d'une unité par
+    // fouilleur, elle ne sert plus ; un lieu, si.
+    const reste = r => Number(monde.regions[regionCle]?.pillage?.[r]) || 0;
+    const voulu = cible ? reste(cible) * 2.5 : reste("nourriture") + reste("eau");
+    const epuisee = voulu * L.REGLES_ACTIONS.fouille.fraction.normal < 1;
+    if (OPTIONS_SIMULATEUR.lieux && ((etat.renseignements[regionCle]?.pillage === "vide" && epuisee) || cible === "medicaments")) {
       const n = fouillerUnLieu(fouilleurs, "lieu", LIEUX_DU_BESOIN[cible ?? "tout"] ?? LIEUX_DU_BESOIN.tout, jour, h);
       if (n !== null) return n;
     }
