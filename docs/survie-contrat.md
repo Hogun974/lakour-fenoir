@@ -1541,3 +1541,115 @@ d'accroche. Aucune règle nouvelle : chaque jointure applique une règle qui exi
 - **Les religions et les fêtes** (§22 -> §14) : la fête d'un pratiquant suit `religionsDe(…, contenu)` (anciennes clés comprises) ;
   essai : le bouddhiste, sous `culte-chinois` comme sous `bouddhiste`, gagne 1 de plus au Nouvel An chinois.
 - **Le grand ménage** (§19) : le gain du Nouvel An chinois dit que l'abri est lavé de toute sa souillure (ce que `feter` faisait déjà).
+
+## 28. Le paradis et son piège, et « rallumer l'île » (lot 9 du portage du jeu 3D, 2026-11-17)
+
+Lot 9 de l'inventaire du jeu 3D : la famille 5 du complément, « Le paradis et son piège » (la chaleur d'un lieu, les rondes et les
+rondes manquées, les corps à enterrer ou à brûler, l'air et le jour sous terre, la haie qui cache l'abri, l'entretien du paradis), et
+« rallumer l'île », le but d'une longue partie décidé par Jordan le 16 novembre (complément, « 4 quinquies »). Rien de ce qui tient aux
+cycles du serveur du jeu 3D (remise à zéro, abris qui se désagrègent). Chiffres et raisons : `docs/equilibre-paradis.md`. Logique :
+`logique/paradis.mjs` (nouveau), crochets dans `monde.mjs`, `abri.mjs`, `etat.mjs`, `generation.mjs`, `gestion.mjs`. API :
+`scripts/api-paradis.mjs` (nouveau). Contenu : `contenu/paradis.mjs` (nouveau). Rien n'est retiré ni renommé : un monde sans
+`paradis`, un abri sans corps, un état sans `ile` ni `jalons` marchent comme avant ; une chaleur nulle, aucun agglutiné, aucune région
+rallumée ne changent aucun tirage du monde.
+
+### 28.1 La chaleur d'un lieu (SECRET : `monde.paradis.lieux[site] = { chaleur 0..10, le, agglutines 0..8, leurreLe }`)
+- `lieuDe`, `avecLieu`, `lieuRefroidi(lieu, jour)` (−0,08 par jour où personne n'y vit ; un agglutiné s'en va tous les trois jours),
+  `facteurTaille(personnes)` ((personnes ÷ 4)^1,5, au plus 2), `facteurSaison(region, saison)` (Hauts en saison sèche × 1,25).
+- `journeeDuLieu(lieu, { jour, personnes, region, saison, silence, bruitFort, ronde, arrives })` → `{ lieu, monte, silence, agglutines,
+  manquee }` : +0,05 × taille × saison par jour (+0,05 un jour de bruit fort), −0,2 un jour de silence, −0,4 par Livide abattu et −0,03
+  par ronde (pas la tournée) ; 20 % des agglutinés repartent chaque jour ; sans ronde engagée, à partir de 2 (« on vous a remarqués »),
+  4 sur 10 des arrivants restent ; chaque agglutiné +0,005.
+- `jourDeSilence({ taches, bruitMax, bruitInstallations, fouille, decide })` (aucune tâche de `TACHES_BRUYANTES`, pas de fouille, le
+  bruit de l'abri jamais au-dessus de 1, aucun groupe électrogène ; ou décidé). `campLeurre(lieu, { jour, reussi })` (−2, moitié dans la
+  semaine d'un autre ou si l'on a été vu ; trois quarts des agglutinés le suivent).
+- `arrivants({ chaleur, infestation, hasard })` : (chaleur − 1) × 0,25 × min(1, infestation ÷ 2, au moins 0,15), au plus 6.
+- `motChaleur(chaleur, agglutines)` → `"oublie" | "traces" | "remarques" | "viennent" | "assieges"` (ce que le groupe perçoit) ;
+  `chaleurQuiAttire(chaleur)` (ce qui passe 2) ; `menacesDeChaleur({ chaleur, agglutines })` → `{ horde: 0,01 × attirante, livides:
+  0,01 × agglutinés, forceLivides: un par cinq agglutinés }`.
+
+### 28.2 La ronde, la tournée, les corps
+- Tâche du jour `ronde` (`TACHES.ronde = "vigilance"`), **sur demande** (`TACHES_SUR_DEMANDE`) : ni `besoinsDuGroupe`, ni `repartir`, ni
+  `grilleParDefaut` ne la donnent ; `travailDisponible().ronde` (un abri) ; l'incapacité « violence » l'interdit.
+- `rondeDuJour({ rondiers: [{ id, nom, system, parade }], livides, tournee, hasard })` → `{ faite, engagee, tournee, livides, abattus,
+  restants, cherche, blessures: [{ id, n, morsure }], trouvaille 1..10 | 0, echanges }` : le meilleur guetteur cherche (vigilance,
+  normale) ; vus à temps, +1 dé au combat et ceux qu'on n'abat pas ne frappent pas ; surpris, −1 dé et le plus proche frappe quand
+  l'échange n'en a abattu aucun ; trois Livides au plus par échange ; un bouclier pare. La **tournée du petit jour** (`tournee`) : la garde
+  de la nuit, quand personne n'a la ronde, −1 dé ; sans les voir, elle ne s'engage pas (`engagee: false`, comptée comme manquée) ; jamais
+  d'indice.
+- Les corps (PUBLIC, `abri.corps = [{ jour, n }]`) : `corpsDe`, `totalCorps`, `ajouterCorps`, `corpsFrais(corps, { jour, altitude })` (15
+  jours dans les Bas, 40 dans les Hauts comptés moitié), `corpsOublies` (90 jours), `traiterCorps(corps, { action: "enterrer" | "bruler",
+  quarts, bras, bois })` (3 ou 10 par quart et par bras ; un bois pour cinq corps ; `fumee`), `fumeeDuJour(abri, jour)` (+2 de visibilité).
+  `bilanAbri` : un corps frais compte comme un mort sans repos pour l'odeur des bêtes (jamais pour les Livides) ; `journeeAbri` : +0,05 de
+  souillure par corps frais.
+
+### 28.3 Sous terre, la haie, le prix du paradis
+- `vitSousTerre(abri, site, installations)` (`abri.sousTerre` s'il est dit ; sinon un site `tunnel-de-lave` ou `galerie`, un tunnel de lave
+  aménagé, une galerie au niveau 4) ; survivant `sousTerre: { jours }` : `journeeSousTerre(system, { sousTerre, dehors, puitsJour })`
+  (`TACHES_DEHORS` remettent à zéro), `palierSousTerre` (7, 21), `malusSousTerre` (−1, −2 au plafond du moral) ; `airSousTerre({ sousTerre,
+  personnes, capacite, puitsAir })` → `"bon" | "lourd" (> ¾ de la place) | "vicie" (> la place)`, un puits d'air d'un cran mieux ;
+  `fatigueDeLAir` (+1, +2 au matin). Installations : `effets.air`, `effets.jour` (`bilan.puitsAir`, `bilan.puitsJour`, `puitsDe`).
+- La haie : `effets.pousse` (jours : `facteurPousse` sur la discrétion et la visibilité d'une installation qui pousse), `effets.plie` (le
+  bambou retrouve son état après un cyclone), `effets.casse` (le filao prend un point d'état de plus) : `haiesAuCyclone(avant, apres,
+  contenu)`.
+- `prixDuParadis({ … })` (lecture) : autonome, complet, rondiers, part du groupe, signe, corps, sous terre.
+- L'entretien du paradis : le « contrôle » est la ronde (son indice, table « La ronde — ce qu'on trouve ») ; l'usure des installations
+  elle-même est au lot 7 (jointure).
+
+### 28.4 Rallumer l'île (PUBLIC : `etat.ile = { regions: { cle: { etat: "rallumee" | "eteinte", depuis, ombreLe, fois } }, chantiers: { cle: { fait, requis, debut, finiLe, aides } } }`, `etat.jalons = [{ cle, jour, params }]`)
+- `conditionsReprise(etat, contenu, region, { jour, abri, infestation, lumiereAbri })` → `{ tenue, tenu, nettoyes, lieux, propre,
+  lumiere, toutes, manque: ["tenu" | "nettoyes" | "infestation" | "lumiere"] }` : un abri tenu depuis 30 jours (le groupe, ou une communauté
+  séparée du §14, `tenueDe`) ; chaque site de la région (sauf ceux qu'on tient) nettoyé (`etat.nettoyes`, §18) depuis moins de 90 jours
+  (`lieuxGardes`) ; l'infestation réelle sous 2,5 (plus dense) ; la lumière (`lumiereDeLAbri` : 1 kWh produit ou le réseau ; un chantier
+  à `lumiere` ; pour une communauté, `communautes[].lumiere`).
+- `journeeDeLIle(etat, contenu, { jour, conditions })` : rallumée quand tout y est (fait `region-rallumee`, portée île) ; sans abri tenu
+  ou sans lumière dix jours, éteinte (`region-eteinte`) ; elle se rallume comme la première fois.
+- Le monde (`simulerJour`, contexte `rallumees`, `chaleurParRegion`, `routesTenues`) : une région rallumée perd 0,03 d'infestation par
+  jour et ne passe plus 1,5 ; aucune horde n'y naît ; +8 % de dispersion ; chaque jour, `chanceConvoi(n)` (1,5 % × (1 + 25 % par
+  autre région rallumée)) qu'une bande hostile ou
+  méfiante d'une voisine (`factionAttiree`) y envoie un convoi (+0,5 de force là, −0,3 chez elle ; fait `convoi-attire` ; flux
+  « convoi|jour|région ») ; une horde qui choisit son cap préfère la région d'un abri chaud (+0,2 par point de `chaleurQuiAttire`) ; une
+  route rouverte par un chantier passe de « coupée » à « difficile » (sauf le jour du cyclone).
+- Les menaces (`tirerMenaces(…, { chaleur, agglutines, rallumee, rallumees })`) : horde +0,01 par point de chaleur attirante ; errants
+  +0,01 par agglutiné et un de force par cinq ; région rallumée : errants × 0,5, et les bandes voient l'abri avec 2 de visibilité de
+  plus (menace et visites), leur force +1 par 4 régions rallumées (`forceDeLaLumiere`).
+  `facteurRallumage(etat, region)` : les rencontres d'une fouille × 0,5.
+- Les chantiers de région (registre `chantiersRegion : [{ cle, nom, region, type: "route" | "centrale" | "port" | "phare", travail, cout,
+  requiert, effets: { lumiere, electricite, routes, peche }, affaires, description }]`) : `chantiersDuContenu`, `chantierDe`, `chantierFini`,
+  `travaillerChantier(ch, def, { quarts, bras, jour })`, `journeeDesChantiers` (chaque aide : 2 quarts-personne par jour),
+  `bienfaitsDeRegion` (une centrale : la lumière et le courant du réseau pour l'abri de la région), `routesTenues`, `erreursChantiers`
+  (le fabricant s'en sert).
+- Les jalons : `JALONS` (`premier-abri`, `premiere-saison-des-pluies`, `premier-cyclone`, `premiere-fete`, `premiere-region`,
+  `moitie-de-l-ile`, `toute-l-ile`), `jalonsDuJour`, `texteJalon` ; aucune récompense.
+
+### 28.5 Avancer
+- Chaque jour (étape 5 ter) : les arrivants (flux « paradis|flux|jour ») ; la ronde de qui a la tâche « ronde », sinon la tournée de la
+  garde (flux « paradis|ronde|jour » ; `options.tournee === false` : pas de tournée) ; la journée du lieu (`options.silence` : le MJ
+  décide) ; corps, `rondeLe`, `rondesManquees`, `signeChaleur` (le mot, sur l'abri : public) ; blessures de la ronde appliquées, morsures
+  en alerte (`alerte-ronde-morsure`), à raconter et rendues (`resultat.paradis.morsures`, à soigner : `soignerMorsure`). Faits `ronde`,
+  `ronde-morsure`, `ronde-blesse`, `agglutines`, `chaleur-<mot>`.
+- Étape 6 : l'air sous terre (`abri.air`, faits `air-*`, alerte `air-vicie`), les jours sans soleil de chacun (`sous-terre-palier-*`).
+- Après le cyclone : `haie-pliee`, `haie-cassee`. Étape 7 ter : les alliés des chantiers, l'île (`region-rallumee`, `region-eteinte`, en
+  alerte), les jalons (`jalon-*`, `resultat.paradis.jalons`). Le courant d'une centrale relancée (`reseaux.electricite`).
+
+### 28.6 Documents, API, fenêtres, contenu
+- Abri (§3.1, `gmOnlyFields`) : `corps`, `rondeLe`, `rondesManquees`, `signeChaleur`, `fumeeLe`, `sousTerre` (booléen ou null), `air`.
+  Survivant : `sousTerre`. Tâche « ronde » (lang `Taches.ronde`).
+- API (`scripts/api-paradis.mjs`, étalée dans `game.lakourSurvie`). Lecture : `paradis()` (le signe, les corps, la ronde, sous terre, le
+  prix ; au MJ, `mj: { chaleur, agglutines, leurreLe, seuil, arrivants }`), `ile()` (chaque région, ce qui lui manque, les lieux gardés ;
+  l'infestation réelle au MJ seul ; les chantiers ; les jalons). Écriture (MJ actif, monde ouvert) : `ronde({ membres, abattus, livides })`,
+  `traiterCorps({ action, membres, quarts })`, `leurre({ membres })` (un matériau, deux quarts, test de discrétion), `chaleur({ delta,
+  valeur, agglutines })`, `sousTerre({ vit })`, `rallumer({ region, action: "declarer" | "eteindre" })`, `chantierRegion({ cle, membres,
+  quarts, aide, retirer })` ; `avancer({ silence })` ; `fouiller` dans une région rallumée ; le courant d'une centrale.
+- Fenêtre du MJ, onglet Partie : bloc « Le paradis et son piège » (le signe, la chaleur, les rondiers, sous terre, les jours sans soleil)
+  et ses formulaires (une ronde, les corps, un camp leurre, la chaleur, vivre sous terre) ; bloc « Rallumer l'île » (les régions, ce qui
+  leur manque, les chantiers, les jalons) et ses formulaires. Fiche de l'abri : le signe, la dernière ronde, les corps, l'air. Fiche du
+  survivant : les jours sans soleil. Tableau de bord : la carte s'allume (halo des régions rallumées, cerne des éteintes), les régions
+  rallumées, les jalons. Chroniques de Fénoir : une page « Les jalons ».
+- Contenu (`contenu/paradis.mjs`) : installations `puits-de-jour` (air, puis jour ; −1 de discrétion), `haie-de-bambous` et
+  `rideau-de-filaos` (sœurs lontan du camouflage, rôle `camouflage`) ; six `chantiersRegion` (centrales de Langevin et de la Rivière de
+  l'Est, routes du Littoral et des Tamarins, port de Saint-Pierre, phare de Bel-Air ; affaires « La petite centrale de Langevin » et
+  « Le viaduc ») ; deux corvées de la ronde ; tables (drapeau `paradis`) « La ronde — ce qu'on trouve », « Sous terre — la bougie »,
+  « L'île — ce qu'on voit la nuit », « Un convoi attiré par la lumière » ; journaux du MJ « Le paradis et son piège » et « Rallumer
+  l'île » ; pages « Le paradis, et ce qu'il coûte » et « Rallumer l'île » du guide du joueur. Le simulateur : la ronde de l'enraciné quand
+  « ils viennent », l'enterrement des corps, l'option `rallumer` (scénarios longs `rallumer-4`, `sans-rondes-4`).

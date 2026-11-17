@@ -134,7 +134,7 @@ Rien de cela n'interdit de s'enraciner : un groupe organisé tient son paradis d
 - **Un camp leurre** : un feu et du bruit loin de l'abri, pour tirer ailleurs ce qui rôde (leurre : deux quarts, un matériau, et un test de discrétion pour rentrer sans être vu ; raté, il ne trompe qu'à moitié). Il trompe moitié moins s'il en a été fait un dans la semaine.
 - **Partir** : un lieu où plus personne ne vit refroidit, jour après jour. Revenir dans un lieu qu'on a quitté depuis des mois, c'est revenir dans un lieu oublié. C'est la **transhumance** des anciens : les Hauts à une saison, les Bas à l'autre.
 
-**Ce qu'elle fait.** Dès qu'il reste des traces, elle fait **venir des Livides** autour de l'abri, chaque jour un peu plus. Une fois qu'« ils viennent », elle pèse aussi sur les **hordes** : une horde qui passe trouve plus souvent l'abri, et les hordes de passage se tournent vers la région d'un abri chaud. Jamais sur la visibilité : celle-là reste ce que voient les vivants, les bandes.
+**Ce qu'elle fait.** Dès qu'il reste des traces, elle fait **venir des Livides** autour de l'abri, chaque jour un peu plus. Une fois qu'on vous a remarqués, elle pèse aussi sur les **hordes** : une horde qui passe trouve plus souvent l'abri, et les hordes de passage se tournent vers la région d'un abri chaud. Jamais sur la visibilité : celle-là reste ce que voient les vivants, les bandes.
 
 **Ce qu'en voient les joueurs** (le journal le dit quand ça change) :
 - *on vous a oubliés* : rien ;
@@ -198,7 +198,7 @@ Elle **s'éteint** si on l'abandonne : dix jours sans abri tenu ou sans lumière
   { cle: "effets", titre: "Ce que change une région rallumée", texte: `**Moins de Livides.** Son infestation baisse chaque jour, et ne redevient jamais dense ; aucune horde n'y naît ; celles qui y passent se défont plus vite ; les errants rôdent moitié moins autour de l'abri, et les fouilles y font moitié moins de rencontres.
 
 **La lumière se voit, et les bandes viennent.** C'est le contrepoint, et il ne se négocie pas :
-- l'abri d'une région rallumée se voit de loin pour les **bandes** (3 de visibilité de plus pour elles) ;
+- l'abri d'une région rallumée se voit de loin pour les **bandes** (2 de visibilité de plus pour elles) ;
 - chaque nuit, une région rallumée peut **attirer un convoi** : la bande la plus forte d'une région voisine y envoie du monde (table « Un convoi attiré par la lumière ») ; plus il y a de régions rallumées, plus c'est fréquent ;
 - toutes les bandes qui viennent à l'abri sont plus fortes à mesure que l'île se rallume (+1 de force par quatre régions).
 

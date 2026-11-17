@@ -739,8 +739,25 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         abri.system.preparation = { jour, fait: avant + 2 * k, requis };
         stats.preparations = (stats.preparations ?? 0) + 1;
       }
+      // Lot 9 : rallumer. Autonome, sans manque : avant le chantier, les deux meilleurs combattants libres (un seul s'il n'y en a qu'un)
+      // nettoient un lieu gardé de la région (un échange de combat chacun) ; il en faut au moins un tous les trois mois.
+      if (rallumer && etat.autonome && !manqueNourriture && !manqueEau && dispo.length >= 1) {
+        const g = L.lieuxGardes(etat, contenu, abri.system.region, { jour, tenus: [abri.system.site] });
+        const lieu = g.lieux.find(l => !l.nettoye);
+        if (lieu) {
+          const equipe = [...dispo].sort((a, b) => L.competence(b.system, "combat").niveau - L.competence(a.system, "combat").niveau).slice(0, 2);
+          dispo = dispo.filter(s => !equipe.includes(s));
+          poser(equipe, "fouille");
+          const nombre = Math.max(1, Math.round(2 * (monde.regions[abri.system.region]?.infestation ?? 0)));
+          const r = combattre(equipe, { nombre, des: 1, resistance: 1, type: "livide" }, jour * 4, h, "rencontre");
+          const tues = nombre - r.restants;
+          if (tues >= 1) { etat = { ...etat, nettoyes: L.nettoyerLieu(etat.nettoyes ?? [], { region: abri.system.region, site: lieu.site, jour, tues }) }; stats.nettoyages++; }
+          noter(jour, `nettoie ${lieu.site} (${tues}/${nombre})`);
+        }
+      }
       if (ouvert && dispo.length) {
         const ouvriers = dispo.slice(0, 2);
+
         dispo = dispo.slice(2);
         poser(ouvriers, "chantier");
         travaillerChantier(ouvriers, jour);
@@ -757,21 +774,6 @@ export function jouerPartie(contenu, { strategie = "nomade", membres = 4, region
         // Des matériaux : le bois des alentours d'abord, sinon la fouille ciblée de la région.
         if (res === "materiaux" && (abri.system.nature?.bois ?? 0) >= 2) { poser(f, "chasse"); fouillerNature(f, jour, h, "bois"); }
         else { poser(f, "fouille"); fouillerRegion(f, res, jour, h); }
-      }
-      // Lot 9 : rallumer. Autonome, sans manque, à deux au moins : on nettoie un lieu gardé de la région (un échange de combat chacun).
-      if (rallumer && etat.autonome && !manqueNourriture && !manqueEau && dispo.length >= 2) {
-        const g = L.lieuxGardes(etat, contenu, abri.system.region, { jour, tenus: [abri.system.site] });
-        const lieu = g.lieux.find(l => !l.nettoye);
-        if (lieu) {
-          const equipe = [...dispo].sort((a, b) => L.competence(b.system, "combat").niveau - L.competence(a.system, "combat").niveau).slice(0, 2);
-          dispo = dispo.filter(s => !equipe.includes(s));
-          poser(equipe, "fouille");
-          const nombre = Math.max(1, Math.round(2 * (monde.regions[abri.system.region]?.infestation ?? 0)));
-          const r = combattre(equipe, { nombre, des: 1, resistance: 1, type: "livide" }, jour * 4, h, "rencontre");
-          const tues = nombre - r.restants;
-          if (tues >= 1) { etat = { ...etat, nettoyes: L.nettoyerLieu(etat.nettoyes ?? [], { region: abri.system.region, site: lieu.site, jour, tues }) }; stats.nettoyages++; }
-          noter(jour, `nettoie ${lieu.site} (${tues}/${nombre})`);
-        }
       }
       if (dispo.length) { poser(dispo, "chasse"); fouillerNature(dispo, jour, h); }
       if (doitPartir && sEnraciner(jour, h, [abri.system.site])) { noter(jour, `part (${doitPartir})`); jourSansTravail(jour, h); continue; }

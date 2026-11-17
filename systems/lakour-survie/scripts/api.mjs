@@ -410,7 +410,9 @@ const CHAMPS_BILAN = ["production", "consommation", "net", "pertes", "joursDeSto
   "protectionCyclone", "soins", "moral", "conservation", "renseignements", "eauTraitee", "plafonds", "arrets", "surpeuplement", "reseaux", "personnes", "actives",
   "secours", "savoirs",
   "odeur", "odeurBetes", "odeurSources", "ravine",   // lot « sens » : ce que l'abri sent, l'état de sa ravine
-  "hygiene", "latrines", "toilette", "insalubrite"];  // lot « corps » : l'hygiène de l'abri et son insalubrité (pas la souillure chiffrée)
+  "hygiene", "latrines", "toilette", "insalubrite",   // lot « corps » : l'hygiène de l'abri et son insalubrité (pas la souillure chiffrée)
+  "corps", "corpsFrais", "puitsAir", "puitsJour"];   // lot 9 : les corps à l'abri, les puits sous terre (jamais la chaleur, qui est au monde)
+
 // L'instantané PUBLIC du bilan (état de la partie, lu par les joueurs) : ce que le groupe sait, pas le réel à distance.
 export function instantaneBilan(etat, monde) {
   const b = bilanVivant(etat, monde, { publique: true });

@@ -49,7 +49,7 @@
 //   Lot 9 « Le paradis et son piège » (paradis.mjs, docs/equilibre-paradis.md) : la CHALEUR du lieu de l'abri ajoute 2 % par point à
 //   la horde présente et 1 % aux Livides errants ; chaque Livide AGGLUTINÉ autour de l'abri (ronde manquée) 3 % aux errants, et un
 //   de force tous les deux. Une région RALLUMÉE : errants moitié moins souvent ; mais la lumière se voit : les bandes voient l'abri
-//   avec 3 de visibilité de plus, et leur force monte de 1 par 4 régions rallumées. Tout à zéro (le cas d'avant) : même tirage.
+//   avec 2 de visibilité de plus, et leur force monte de 1 par 4 régions rallumées. Tout à zéro (le cas d'avant) : même tirage.
 // - Faits : `public` selon ce que le groupe perçoit d'où il est (région courante ; fumée et convois des voisines ; nouvelles
 //   par la radio, ou par le téléphone tant qu'il marche dans sa région ; ce que toute l'île voit).
 // - Lot « savoirs » (docs/equilibre-savoirs.md) : le jour rouge, chaque région de la trajectoire reçoit du bois tombé
@@ -61,7 +61,7 @@
 //   de l'abri du groupe). Une région rallumée : son infestation décroît de 0,03 par jour de plus et ne passe plus 1,5 ; aucune horde
 //   n'y naît, celles qui y passent se défont plus vite (+8 % par jour) ; chaque jour, elle peut attirer un convoi d'une bande voisine
 //   (chanceConvoi, flux « convoi|jour|région » à part). Une horde qui choisit son cap préfère la région d'un abri chaud (+0,5 par
-//   point de chaleur au-dessus du seuil où « ils viennent », chaleurQuiAttire). Sans région rallumée ni chaleur : rien ne change.
+//   point de chaleur au-dessus du seuil où « on vous a remarqués », chaleurQuiAttire). Sans région rallumée ni chaleur : rien ne change.
 // - Textes (textes.mjs) : chaque fait, menace et entrée du journal secret porte `texte` (français, repli) et `cle`/`params` pour
 //   la traduction ; le fait d'un événement du contenu garde `cle` = clé de l'événement et met sa clé de texte dans `cleTexte`.
 import { CLES_PHASES, ALTITUDE_BAS, NATURE, RESEAUX, JOURNAL_SECRET_MAX, borner, DATE_DEPART } from "./constantes.mjs";

@@ -6,11 +6,11 @@
 // - LA CHALEUR D'UN LIEU (secret : monde.paradis.lieux[site]) : à quel point le lieu attire les Livides, parce qu'on y reste
 //   longtemps et nombreux. Elle monte chaque jour où l'on y vit (× la taille du groupe), redescend par les jours de silence, les
 //   camps leurres, les rondes, et refroidit quand plus personne n'y vit (la transhumance : on revient trouver un lieu oublié).
-//   Elle s'ajoute aux menaces de HORDES et de Livides errants (jamais à la visibilité, qui reste celle des bandes) et tire les hordes
-//   de passage vers la région de l'abri.
+//   Passé le seuil où « on vous a remarqués », elle s'ajoute aux menaces de HORDES (jamais à la visibilité, qui reste celle des bandes)
+//   et tire les hordes de passage vers la région de l'abri ; les Livides errants, eux, viennent du flux.
 // - LE FLUX : chaque jour, des Livides arrivent autour de l'abri, selon la chaleur et l'infestation de la région. LA RONDE (une
 //   tâche du jour, vigilance pour les voir, combat pour les abattre) les abat : la chaleur baisse d'autant. Sans ronde, au-dessus du
-//   seuil où « ils viennent », ils restent : les AGGLUTINÉS, qui pèsent sur les menaces et attirent les suivants. Une ronde confiée à
+//   seuil où « on vous a remarqués », une part reste : les AGGLUTINÉS, qui pèsent sur les menaces et attirent les suivants. Une ronde confiée à
 //   un PNJ rate selon ses compétences : ce sont ses dés.
 // - LES CORPS que laissent les rondes (public : abri.corps, par lots datés) sentent pour les bêtes (chiens errants : l'odeur des
 //   morts du lot « sens » ; les Livides, eux, ignorent l'odeur d'un corps) et salissent l'abri (souillure du lot « corps ») tant qu'ils
@@ -50,7 +50,7 @@ export const REGLES_PARADIS = {
     parAbattu: 0.4,             // chaque Livide abattu en ronde
     parRonde: 0.03,             // une ronde (pas la tournée du petit jour), même sans Livide : les traces effacées
     manquee: 0,                 // une ronde manquée au-dessus du seuil : elle ne monte pas plus (ce sont les agglutinés qui pèsent)
-    seuilRonde: 2,              // au-dessus, « ils viennent » : sans ronde, ceux qui arrivent restent
+    seuilRonde: 2,              // à partir de là, « on vous a remarqués » : sans ronde, une part de ceux qui arrivent restent
     leurre: 2,                  // un camp leurre
     leurreRepos: 7,             // jours avant qu'un autre leurre ne trompe autant (avant : la moitié)
     // Ce que la chaleur ajoute aux menaces (par point) et à l'attrait d'une région pour les hordes de passage.
@@ -66,11 +66,11 @@ export const REGLES_PARADIS = {
   rallumer: {
     tenu: 30,                   // jours d'abri tenu
     nettoyage: { valable: 90, tues: 1 },
-    infestationMax: 2,          // au-dessus (dense), la région ne s'allume pas
+    infestationMax: 2.5,        // à partir de là (dense, la bande des renseignements), la région ne s'allume pas
     energie: 1,                 // ce que l'abri doit produire (kWh par jour) pour « ramener la lumière »
     eteinte: 10,                // jours sans abri ni lumière avant que la région s'éteigne
     effets: { infestation: 0.03, plafond: 1.5, dispersion: 0.08, livides: 0.5, rencontres: 0.5 },
-    lumiere: { visibilite: 3, attire: 0.02, parRegion: 0.25, force: 0.5, depart: 0.3, pression: 4 },
+    lumiere: { visibilite: 2, attire: 0.015, parRegion: 0.25, force: 0.5, depart: 0.3, pression: 4 },
     chantier: { aideParJour: 2 },
     moitie: 8
   }
@@ -238,7 +238,8 @@ export function menacesDeChaleur({ chaleur = 0, agglutines = 0 } = {}) {
   const c = chaleurQuiAttire(chaleur), a = Math.max(0, Math.floor(n0(agglutines)));
   return { horde: R.chaleur.menace.horde * c, livides: R.chaleur.menace.livides * c + R.agglutines.menace * a, forceLivides: Math.floor(a / R.agglutines.force) };
 }
-// La part de la chaleur qui attire les hordes : ce qui passe le seuil où « ils viennent » (un lieu seulement remarqué n'en attire pas).
+// La part de la chaleur qui attire les hordes : ce qui passe le seuil où « on vous a remarqués » (un lieu où il ne reste que des traces
+// n'en attire pas).
 export const chaleurQuiAttire = chaleur => Math.max(0, borner(n0(chaleur), 0, R.chaleur.max) - R.chaleur.seuilRonde);
 
 
@@ -403,7 +404,7 @@ export function conditionsReprise(etat, contenu, region, { jour = 0, abri = null
   const tenu = Boolean(tenue) && n0(jour) - n0(tenue.depuis) >= R.rallumer.tenu;
   const tenus = [abri?.region === region ? abri.site : null, ...(etat?.communautes ?? []).filter(c => c?.region === region).map(c => c.site)].filter(Boolean);
   const g = lieuxGardes(etat, contenu, region, { jour, tenus });
-  const propre = n0(infestation) <= R.rallumer.infestationMax;
+  const propre = n0(infestation) < R.rallumer.infestationMax;
   const bienfaits = bienfaitsDeRegion(etat, contenu, region);
   const lumiere = Boolean(bienfaits.lumiere) || (tenue?.par === "groupe" ? Boolean(lumiereAbri) : Boolean(tenue?.lumiere));
   const manque = [...(tenu ? [] : ["tenu"]), ...(g.tous ? [] : ["nettoyes"]), ...(propre ? [] : ["infestation"]), ...(lumiere ? [] : ["lumiere"])];
@@ -462,7 +463,7 @@ export function journeeDesChantiers(etat, contenu, { jour = 0 } = {}) {
 
 // Les effets d'une région rallumée sur le monde (monde.mjs, simulerJour). -> { infestation, plafond, dispersion, sansHorde }
 export const effetsRallumee = () => ({ ...R.rallumer.effets });
-// La pression de la lumière : chaque région rallumée a, chaque jour, 2 % (+ 25 % par autre région rallumée) de chances d'attirer un
+// La pression de la lumière : chaque région rallumée a, chaque jour, 1,5 % (+ 25 % par autre région rallumée) de chances d'attirer un
 // convoi : la faction hostile ou méfiante la plus forte d'une région voisine y envoie du monde (+0,5 de force là-bas, −0,3 chez
 // elle). Les bandes du groupe qui rallume se font aussi plus fortes : +1 de force par 4 régions rallumées. Pure, déterministe.
 export function chanceConvoi(nRallumees = 1) {
