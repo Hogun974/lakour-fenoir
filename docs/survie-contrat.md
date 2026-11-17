@@ -958,3 +958,65 @@ Aucun chiffre nouveau : chaque jointure applique une règle qui existait déjà 
   devient `api.lireSigne()` ; l'erreur d'un groupe séparé inconnu devient `Erreurs.GroupeInconnu` (`Erreurs.CommunauteInconnue`
   reste la communauté d'une fête, §11). Le gaz, les boutures et le biocarburant (§13) n'ont pas de cours au marché
   (`RESSOURCES_HORS_COURS`) : ils ne se troquent pas au cours tant qu'on ne leur en a pas donné un.
+
+## 16. Les histoires des survivants (lot 11 du portage du jeu 3D, 2026-11-17)
+
+Les phrases d'histoire écrites pour Fénoir 3D (`donnees/histoires/` du jeu 3D, décision de Jordan des 14 et 15 novembre :
+« beaucoup plus d'histoires, beaucoup de natifs de La Réunion ») entrent dans le jeu de table. Elles complètent la graine
+d'histoire du §10.2 et le journal du §10.5. **Aucune n'a d'effet de jeu** : ni dé, ni moral, ni règle ; l'origine d'un survivant
+ne décide de rien (guide du métissage, `docs/metissage.md`). Chiffres et raisons : `docs/equilibre-histoires.md`.
+
+### 16.1 Contenu (`lakour-fenoir`, `contenu/histoires.mjs` ; registre : famille `histoires`)
+```
+histoires: [{
+  cle: "enfance:enfant-de-cilaos" | "passe:…" | "trait:…" | "religion:…" | "regard:…" | "generation",
+  type: "enfance" | "passe" | "trait" | "religion" | "regard" | "generation",
+  pour: [clé],              // les clés du contenu à qui le groupe parle (vide pour « generation ») ; une religion donne la clé
+                            //   de FVTT puis celle du jeu 3D (« hindouisme-tamoul », « hindoue ») pour la liste commune du lot 10
+  avec?: [[clé]],           // religion trouvée par « plusieurs » : de chaque liste, l'une au moins dans ses religions
+  phrases: [{
+    sujet: String,          // une histoire ne prend jamais deux phrases du même sujet ; « lieu » ouvre l'enfance, « metier » le passé
+    texte: String,          // accordé entre accolades, le féminin d'abord : « {Elle|Il} est né{e|} à Cilaos »
+    marques?: [String], exclut?: [String],   // « nee-ailleurs » : né hors de l'île
+    age?: [min, max],       // la tranche d'âge où la phrase vaut
+    pratique?: true,        // seulement pour un croyant pratiquant (§14)
+    foi?: [clé]             // seulement si sa religion, ou l'une des siennes, est dans la liste
+  }]
+}]
+```
+- 24 enfances (8 à 11 phrases chacune), 17 passés (7 ou 8), 32 traits (une), 8 religions (deux), 3 regards (deux), 18 phrases de
+  génération : 440 phrases. Une phrase de passé ne dit rien de l'enfance, des parents ni du lieu de naissance.
+- Anglais : les mêmes groupes dans `contenu/en/registre.json` (« registre/histoires/<clé> », champ `phrases.<n>.texte`),
+  accordés de même (« {She|He} was born in Cilaos ») ; les mots créoles rares ont leur sens à côté.
+- Le fabricant vérifie la forme (accolades bien formées dans les deux genres, 150 caractères au plus par phrase, en français et
+  en anglais) et que chaque enfance, passé et trait a ses phrases.
+
+### 16.2 Tirage (`logique/histoires.mjs`, logique pure)
+- `composerHistoire(contenu, fiche, { hasard? })` -> `{ phrases: [texte accordé], cles: ["enfance:enfant-de-cilaos/3", …] }` ou
+  `null` (genre inconnu, enfance ou passé sans phrases). `fiche` : `{ nom, age, genre, enfance, passe, traits, religion,
+  religions, pratique, regard }`. Dans l'ordre : une phrase de lieu de l'enfance, une autre de l'enfance, une phrase de métier
+  du passé, une autre du passé, puis 65 fois sur 100 une de plus (un trait, la foi, le regard ou la génération) ; 520 caractères
+  au plus (on retire par la fin, jamais sous 3 phrases).
+- Cohérence : jamais deux phrases du même sujet ni deux qui s'excluent ; l'âge ; une enfance d'origine « ailleurs » porte la
+  marque « nee-ailleurs » ; « pratique » et « foi » suivent l'esprit du §14 (un esprit non tiré n'en prend aucune).
+- Hasard : un flux à part, `deriverHasard("histoire", nom, âge, genre, enfance, passé)`. La même fiche donne la même histoire ;
+  aucun autre tirage du générateur ne bouge (les survivants, recrues et parties d'avant restent les mêmes).
+- `phrasesParCles(contenu, cles, genre)` relit des phrases gardées dans un genre et dans la langue du contenu ;
+  `clesDeLaFiche(contenu, fiche, cles)` : vrai si des phrases gardées vont toujours à la fiche (son enfance, son passé, ses
+  traits, sa foi, son regard, son âge) ; `histoireDe(contenu, fiche, { cles })` : les phrases gardées si elles vont, sinon celles
+  de la fiche. `accorder(texte, genre)`, `verifierHistoires(contenu)`, `HISTOIRE` (les bornes).
+- `genererSurvivant` (§10.2) : `histoire.graine.phrases` reçoit ces phrases et `histoire.graine.cles` leurs clés ; sans elles,
+  les phrases de l'enfance et du passé, comme avant.
+
+### 16.3 Foundry (`scripts/histoires.mjs`)
+- `creerSurvivant` garde les clés du tirage dans `flags.lakour-survie.phrasesHistoire` (au plus 5, seulement si elles vont à la
+  fiche créée : un tirage dont le MJ IA a changé le passé ne garde pas celles de l'autre métier) ; la graine
+  (`flags.lakour-survie.graine`, et `flags.lakour-mj-ia.graineHistoire` quand le moteur est actif) porte les phrases, comme
+  l'aperçu de la fenêtre de création.
+- `api.histoireDuSurvivant({ acteurId | acteur })` (lecture, partout) -> `{ phrases, cles }` : les phrases gardées tant qu'elles
+  vont à sa fiche, sinon celles de sa fiche (un survivant d'avant ce lot a donc aussi la sienne).
+- `system.graineHistoire` (survivant ; calculée, jamais stockée) : la graine gardée, sinon l'histoire de la fiche. Le moteur la
+  lit d'abord (`materiauHistoire`).
+- **Journal « Histoire de… »** (§10.5) : quand le moteur le crée pour un survivant, le MJ qui l'a créé écrit l'histoire dans la
+  page « Portrait » (crochet `createJournalEntry`), tant que cette page n'a que ses questions d'aide. Les autres pages gardent
+  les leurs ; une page déjà écrite ne se réécrit jamais. Le MJ IA l'écrit ensuite à sa façon ou la complète.

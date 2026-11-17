@@ -14,6 +14,7 @@ export * from "./actions.mjs";
 export * from "./fabrication.mjs";
 export * from "./maladies.mjs";
 export * from "./generation.mjs";
+export * from "./histoires.mjs";
 export * from "./marche.mjs";
 export * from "./savoirs.mjs";
 export * from "./esprit.mjs";

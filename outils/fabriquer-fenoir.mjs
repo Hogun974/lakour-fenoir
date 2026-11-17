@@ -27,6 +27,7 @@ import { CARTE } from "../modules/lakour-fenoir/contenu/regions.mjs";
 import { ecrirePlans } from "../modules/lakour-fenoir/contenu/cartes.mjs";
 import { IMAGES_FETES, EFFET_FETE } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { COMMUNAUTES } from "../systems/lakour-survie/logique/fetes.mjs";
+import { verifierHistoires } from "../systems/lakour-survie/logique/histoires.mjs";
 import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_DECLINABLES, IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { appliquer, extraire, fusionner, resumerRapport } from "../modules/lakour-mj-ia/outils/traduction.mjs";
@@ -603,6 +604,17 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
     aSavoirs(ou, g.savoirs); aCompetences(ou, g.competences); aIncapacites(ou, g.incapacites);
     if (!(g.age >= 60) || !(g.savoirs ?? []).some(sv => savoirs.get(sv)?.arbre === "lontan")) e(`${ou} : une gramoune a 60 ans ou plus et un savoir lontan`);
     if (!["f", "m"].includes(g.genre) || !g.nom || !sansBalises(g.notes) || !g.raison || !g.prix) e(`${ou} : genre, nom, notes, raison ou prix`);
+  }
+
+  // Lot 11 « histoires » (§16) : la forme des phrases (logique/histoires.mjs, dans chaque langue), et chaque enfance, passé et
+  // trait a les siennes.
+  for (const m of verifierHistoires(d)) e(m);
+  if (d.histoires) {
+    const parle = type => new Set(d.histoires.filter(g => g.type === type).flatMap(g => g.pour ?? []));
+    for (const [type, famille] of [["enfance", enfances], ["passe", passes], ["trait", traits]]) {
+      const vus = parle(type);
+      for (const k of famille.keys()) if (!vus.has(k)) e(`histoires : ${type} « ${k} » sans phrases`);
+    }
   }
 
   // Aucun terme interdit dans tout le registre.

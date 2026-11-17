@@ -27,6 +27,7 @@ import { CARTES_LIEUX } from "./lieux-cartes.mjs";
 import { COMMUNAUTES, MARCHANDS, MARCHES, FOIRES } from "./marche.mjs";
 import { sceneReunion } from "./cartes.mjs";
 import { DEPOTS_CYCLONE, GRAMOUNES, TABLES_SAVOIRS, JOURNAUX_SAVOIRS } from "./deux-savoirs.mjs";
+import { HISTOIRES } from "./histoires.mjs";
 import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
@@ -66,6 +67,8 @@ export function donnees() {
     // marché (avec leurs préjugés), des marchés forains possibles, les foires de saison.
     communautes: COMMUNAUTES, marchands: MARCHANDS, marches: MARCHES, foires: FOIRES,
     // Lot « savoirs » : ce que le cyclone dépose dans la cour (lu par la logique) ; les gramounes qu'on peut accueillir.
-    depotsCyclone: DEPOTS_CYCLONE, gramounes: GRAMOUNES
+    depotsCyclone: DEPOTS_CYCLONE, gramounes: GRAMOUNES,
+    // Lot 11 « histoires » (§16) : les phrases d'histoire des survivants, tirées par le générateur (logique/histoires.mjs).
+    histoires: HISTOIRES
   };
 }

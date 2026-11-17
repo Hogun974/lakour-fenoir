@@ -26,6 +26,7 @@ import { lireBudget } from "./reglages.mjs";
 import { ecrireChroniques, chapitreOuvert } from "./chroniques.mjs";
 import { deMJ, trouverDemande, fermerDemande, argumentsDuTestJoueur, propositionPermise } from "./demandes.mjs";
 import { fonctionsMarche } from "./api-marche.mjs";
+import { histoireDuSurvivant, DRAPEAU_PHRASES } from "./histoires.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -711,6 +712,11 @@ async function creerActeurSurvivant(d, { userId = "", statut = null } = {}) {
   const moteur = game.modules?.get?.(MODULE_MJIA);
   // La graine d'histoire (texte libre, lu par le MJ IA) : sans balises, bornée.
   const graine = sansBalises(typeof d.graine === "string" ? d.graine : "").slice(0, 2000);
+  // Les clés des phrases d'histoire du tirage (§16) : relues plus tard dans la langue du contenu ; seulement si le contenu les connaît
+  // et qu'elles vont à la fiche créée (un tirage dont on a changé le passé ou l'enfance ne garde pas les siennes).
+  const clesHistoire = Array.isArray(d.histoire?.cles) ? d.histoire.cles.filter(k => typeof k === "string").slice(0, L.HISTOIRE.phrasesMax) : [];
+  const ficheHistoire = { age: entier(d.age, 16, 99, 30), genre: d.genre, enfance: d.enfance, passe: d.passe, traits: d.traits ?? [], ...espritDuTirage(d, c) };
+  const phrasesHistoire = L.clesDeLaFiche(c, ficheHistoire, clesHistoire) ? clesHistoire : [];
   const a = await Actor.implementation.create({
     name: nom, type: "survivant", img: jeton,
     system: {
@@ -724,7 +730,7 @@ async function creerActeurSurvivant(d, { userId = "", statut = null } = {}) {
     },
     ownership: user && !user.isGM ? { default: 0, [user.id]: PROPRIO } : { default: 0 },
     prototypeToken: { name: nom, actorLink: true, disposition: globalThis.CONST?.TOKEN_DISPOSITIONS?.FRIENDLY ?? 1, sight: { enabled: true }, texture: { src: jeton } },
-    flags: { [ID]: { graine }, ...(moteur?.active && graine ? { [MODULE_MJIA]: { graineHistoire: graine } } : {}) }
+    flags: { [ID]: { graine, ...(phrasesHistoire.length ? { [DRAPEAU_PHRASES]: phrasesHistoire } : {}) }, ...(moteur?.active && graine ? { [MODULE_MJIA]: { graineHistoire: graine } } : {}) }
   });
   const objets = [];
   for (const s of d.savoirs ?? []) { const def = defDe("savoirs", s); if (def) objets.push(await donneesObjet("savoir", def)); }
@@ -1163,6 +1169,8 @@ export const api = {
   bilan: () => (estMJActif() && Coffre.mondeOuvert() ? bilanVivant() : (() => { const e = lireEtat(); return e.bilan ? { ...structuredClone(e.bilan), autonomie: e.autonome, autonome: e.autonome, joursAutonomes: e.joursAutonomes, alertes: (e.alertes ?? []).slice(-5) } : null; })()),
   besoins: () => besoins(),
   generer: (options = {}) => generer(options),
+  // L'histoire d'un survivant (§16) : { phrases, cles } ; ses phrases gardées, sinon celles de sa fiche.
+  histoireDuSurvivant: ({ acteurId = "", acteur: a = null } = {}) => histoireDuSurvivant(a ?? acteur(acteurId), contenu()),
   mondeOuvert: () => Coffre.mondeOuvert(),
   ecritureBloquee: () => Coffre.ecritureBloquee(),
   fetesDuJour: (date = quandDe().date) => fetesDuJeu(date, contenu().fetes ?? []),
