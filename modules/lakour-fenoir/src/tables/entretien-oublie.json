@@ -1,0 +1,178 @@
+{
+  "_id": "YBjJnJVPR5T4Yc1A",
+  "_key": "!tables!YBjJnJVPR5T4Yc1A",
+  "name": "Un entretien oublié — ce qui lâche",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Quand une installation perd un cran faute de soin, ou pour raconter une panne. Tirez une fois.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "entretien-oublie",
+      "ouvrages": "entretien-oublie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "6jhbqDmZr5chIdzQ",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.6jhbqDmZr5chIdzQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les joints de la gouttière ont lâché : la moitié de l'averse est passée à côté de la citerne.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pNkAOZENMUIgOpGr",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.pNkAOZENMUIgOpGr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des termites dans les poteaux de la palissade : on enfonce un doigt dans le bois comme dans du pain.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mGnKAe4Efyc5cT0b",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.mGnKAe4Efyc5cT0b",
+      "type": "text",
+      "name": "",
+      "description": "<p>La crépine de la pompe est bouchée de feuilles et de vase. Une heure, les mains dans l'eau froide.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "lqVkYkREG3fEkdWM",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.lqVkYkREG3fEkdWM",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les panneaux sont gris de poussière et de fientes : ils ne donnent plus que la moitié. Un seau d'eau, un chiffon.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "pcZXQuhQM6pumboZ",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.pcZXQuhQM6pumboZ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le torchis de la paillote a coulé avec la pluie : les murs ont des trous où passe le jour.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FM86HaaCLycKc62I",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.FM86HaaCLycKc62I",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une batterie a gonflé, elle sent l'œuf pourri : il faut la sortir, loin, avant qu'elle ne fuie.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ADgOcDvMdfcimwDz",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.ADgOcDvMdfcimwDz",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le compost n'a pas été retourné : il sent, il attire les rats, et il ne nourrit plus rien.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KoHTjiwTc9C44Lh6",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.KoHTjiwTc9C44Lh6",
+      "type": "text",
+      "name": "",
+      "description": "<p>La roue à aubes est bloquée par un tronc venu d'en haut. Il faut entrer dans l'eau pour la dégager.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Uv82CekDmgaYcNdM",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.Uv82CekDmgaYcNdM",
+      "type": "text",
+      "name": "",
+      "description": "<p>L'étai de la cave a travaillé : une fissure court au plafond, de la terre tombe la nuit.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9vNtlswCRmO9yT1r",
+      "_key": "!tables.results!YBjJnJVPR5T4Yc1A.9vNtlswCRmO9yT1r",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien de cassé, rien de bouché : quelqu'un y a pensé avant vous. Notez qui.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

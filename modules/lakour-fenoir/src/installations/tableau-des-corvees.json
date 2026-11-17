@@ -1,0 +1,82 @@
+{
+  "_id": "XSgzDQAK2YyHBQMf",
+  "_key": "!items!XSgzDQAK2YyHBQMf",
+  "name": "Tableau des corvées",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "tableau-des-corvees",
+    "categorie": "vie",
+    "description": "<p>Une planche clouée près de la porte et un bout de charbon : qui va à l'eau, qui garde cette nuit, qui fait le cari. Ce qui est écrit se discute moins ; ce qui se discute encore, on l'efface et on recommence.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 1
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 1,
+          "pieces": 0,
+          "graines": 0,
+          "travail": 1
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {
+            "parole": 1
+          },
+          "bras": null
+        }
+      }
+    ],
+    "materiau": "bois-sous-tole"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "tableau-des-corvees"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

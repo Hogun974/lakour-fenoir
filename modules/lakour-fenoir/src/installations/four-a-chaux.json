@@ -1,0 +1,90 @@
+{
+  "_id": "nWmf7ScJpm81BHNE",
+  "_key": "!items!nWmf7ScJpm81BHNE",
+  "name": "Four à chaux",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "four-a-chaux",
+    "categorie": "vie",
+    "description": "<p>Une tour de pierres sèches qu'on remplit de coquillages, de débris de corail mort ramassés sur la plage et de bois, et qu'on fait cuire un jour et une nuit. Il en sort de la chaux, qui fait le mortier et le badigeon : de quoi bâtir sans ciment. Sa fumée blanche monte droit et se voit de toute la côte.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 12
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 4,
+          "travail": 12
+        },
+        "requiert": {
+          "savoirs": [
+            "maconnerie"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "materiaux": 0.25
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 2,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "odeur": 1,
+          "bras": {
+            "tache": "atelier",
+            "nombre": 1
+          }
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "materiau": "pierre-seche"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "four-a-chaux"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

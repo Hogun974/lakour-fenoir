@@ -57,6 +57,10 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       },
       {
@@ -102,11 +106,16 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       }
     ],
     "arbre": "lontan",
-    "role": "palissade"
+    "role": "palissade",
+    "materiau": "bambou-et-vacoa"
   },
   "effects": [],
   "folder": null,

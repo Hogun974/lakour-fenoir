@@ -55,7 +55,13 @@
           "sol": 0,
           "renseignements": false,
           "bonus": {},
-          "bras": null
+          "bras": null,
+          "piege": 1
+        },
+        "materiau": "bambou-et-vacoa",
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1
         }
       },
       {
@@ -97,7 +103,13 @@
           "sol": 0,
           "renseignements": false,
           "bonus": {},
-          "bras": null
+          "bras": null,
+          "piege": 2
+        },
+        "materiau": "bois-sous-tole",
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1
         }
       }
     ]

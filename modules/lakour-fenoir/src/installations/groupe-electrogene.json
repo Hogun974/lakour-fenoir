@@ -60,9 +60,15 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1,
+          "panne": 0.01
         }
       }
-    ]
+    ],
+    "materiau": "tole-de-recuperation"
   },
   "effects": [],
   "folder": null,

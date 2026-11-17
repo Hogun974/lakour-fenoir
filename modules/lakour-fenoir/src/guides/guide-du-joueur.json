@@ -573,11 +573,34 @@
       }
     },
     {
+      "_id": "ens2gPTwjwrrniHY",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.ens2gPTwjwrrniHY",
+      "name": "Bâtir, entretenir, défendre",
+      "type": "text",
+      "sort": 2500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce qu'on bâtit s'use, se salit, casse ; et ce qui est fait de paille tient moins que ce qui est fait de pierre.</p><ul><li><strong>Les matériaux.</strong> La paille et le torchis s'envolent au cyclone et s'usent sous la pluie ; la tôle s'arrache au vent mais ne brûle pas ; la pierre et le parpaing ne craignent presque rien, ni le vent ni le feu.</li><li><strong>L'entretien.</strong> Une installation qu'on ne soigne pas perd un cran tous les quelques semaines. Quelqu'un au chantier, à l'abri, la soigne en passant. Les panneaux sales, la roue bouchée produisent moins ou plus du tout : un coup de chiffon, et ça repart.</li><li><strong>Les pannes.</strong> Ce qui a un moteur tombe en panne de temps en temps. Il faut réparer.</li><li><strong>Les Livides devant l'abri.</strong> Ils ne frappent que s'ils savent quelqu'un derrière. Ils cherchent un passage, puis s'en prennent à ce qui est faible, et à la porte, toujours. Ils ne montent pas aux échelles : d'un chemin de ronde, on les tient. Une fosse en arrête quelques-uns, pas une foule. Le silence les fait partir.</li><li><strong>Les deux façons.</strong> Presque tout existe en version d'avant, faite de bambou, de paille et de pierre : moins forte, gratuite, qui se refait.</li><li><strong>Le feu.</strong> Il prend la paille, le bambou et le bois ; la pierre reste.</li><li><strong>La cave.</strong> Sans savoir étayer, elle s'éboule. Près de l'eau qui court, aussi.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "batir-et-defendre"
+        }
+      }
+    },
+    {
       "_id": "GsGWAAAIAkUufDjK",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 2500,
+      "sort": 2600,
       "title": {
         "show": true,
         "level": 1

@@ -1,0 +1,148 @@
+{
+  "_id": "WFpglDbBOg3kGqie",
+  "_key": "!tables!WFpglDbBOg3kGqie",
+  "name": "Le feu à l'abri — d'où il vient",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Pour un incendie de l'abri (API incendie). Tirez une fois ; la force est entre parenthèses.</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "feu-a-l-abri",
+      "ouvrages": "feu-a-l-abri"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "mFsVkkyn7YcXjYfh",
+      "_key": "!tables.results!WFpglDbBOg3kGqie.mFsVkkyn7YcXjYfh",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une lampe à huile renversée par un chat sur une natte (1).</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Gnpgmx0CX6mSaazR",
+      "_key": "!tables.results!WFpglDbBOg3kGqie.Gnpgmx0CX6mSaazR",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des braises du foyer emportées par une rafale jusqu'au toit de chaume du boucan (2).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "IEsdvcv6yIsJ4feW",
+      "_key": "!tables.results!WFpglDbBOg3kGqie.IEsdvcv6yIsJ4feW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le groupe électrogène, surchauffé, prend feu au réservoir (2).</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Lu9noqGkJLlLlhoA",
+      "_key": "!tables.results!WFpglDbBOg3kGqie.Lu9noqGkJLlLlhoA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bande jette des bouteilles enflammées par-dessus la palissade, en pleine nuit (2).</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "jDrhtlFAMShRxMEU",
+      "_key": "!tables.results!WFpglDbBOg3kGqie.jDrhtlFAMShRxMEU",
+      "type": "text",
+      "name": "",
+      "description": "<p>L'incendie des savanes descend la pente, poussé par le vent (3) : tout ce qui est de paille et de bois y passe.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "CMuFvNDdBYug3a50",
+      "_key": "!tables.results!WFpglDbBOg3kGqie.CMuFvNDdBYug3a50",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un court-circuit dans les câbles bricolés de l'éclairage (1).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "wonr2I2RJP8G5Fjs",
+      "_key": "!tables.results!WFpglDbBOg3kGqie.wonr2I2RJP8G5Fjs",
+      "type": "text",
+      "name": "",
+      "description": "<p>La graisse du boucan s'enflamme pendant que tout le monde regarde ailleurs (1).</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "4H9zYTjrkEoSixdL",
+      "_key": "!tables.results!WFpglDbBOg3kGqie.4H9zYTjrkEoSixdL",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le feu de la fête, trop haut, trop près de la salle verte (2).</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

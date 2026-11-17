@@ -60,6 +60,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "materiau": "tole-de-recuperation",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       },
       {
@@ -106,6 +111,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "materiau": "tole-de-recuperation",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       },
       {
@@ -154,6 +164,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "materiau": "parpaing-et-beton",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       }
     ],

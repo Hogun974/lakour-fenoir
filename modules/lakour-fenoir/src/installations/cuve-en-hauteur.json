@@ -1,0 +1,95 @@
+{
+  "_id": "buM4ANICgORgk41b",
+  "_key": "!items!buM4ANICgORgk41b",
+  "name": "Cuve en hauteur",
+  "type": "installation",
+  "img": "icons/svg/waterfall.svg",
+  "system": {
+    "cle": "cuve-en-hauteur",
+    "categorie": "eau",
+    "description": "<p>Des fûts sur une charpente, plus haut que le toit, remplis par la citerne : l'eau descend seule jusqu'à la cuisine et à la douche. On ouvre un robinet, et c'est un peu de l'ancienne vie qui revient.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 12
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 4,
+          "pieces": 1,
+          "graines": 0,
+          "travail": 12
+        },
+        "requiert": {
+          "savoirs": [
+            "plomberie-filtration"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "citerne-de-pluie",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {
+            "eau": 60
+          },
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "role": "cuve-en-hauteur",
+    "materiau": "bois-sous-tole"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cuve-en-hauteur"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

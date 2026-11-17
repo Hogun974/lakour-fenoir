@@ -1,0 +1,94 @@
+{
+  "_id": "84hnuVvRuNck34qU",
+  "_key": "!items!84hnuVvRuNck34qU",
+  "name": "Éclairage électrique",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "eclairage-electrique",
+    "categorie": "vie",
+    "description": "<p>Des ampoules de voiture et des rubans de lumière sur le courant de l'abri : on y voit comme avant, on lit, on recoud, la garde voit la cour. Et l'abri se voit de loin, comme une lampe sur la mer.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 3
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 1,
+          "pieces": 2,
+          "graines": 0,
+          "travail": 3
+        },
+        "requiert": {
+          "savoirs": [
+            "electricite-solaire"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "energie": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 2,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {
+            "vigilance": 1
+          },
+          "lumiere": true,
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 90,
+          "travail": 1,
+          "panne": 0.01
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "role": "eclairage",
+    "materiau": "tole-de-recuperation"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "eclairage-electrique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

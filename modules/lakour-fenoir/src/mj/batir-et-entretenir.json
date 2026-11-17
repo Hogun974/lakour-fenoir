@@ -1,0 +1,116 @@
+{
+  "_id": "orT8FoaSRPjhguGd",
+  "_key": "!journal!orT8FoaSRPjhguGd",
+  "name": "Bâtir et entretenir",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "batir-et-entretenir",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "ZgHpwpXkYJANBb8l",
+      "_key": "!journal.pages!orT8FoaSRPjhguGd.ZgHpwpXkYJANBb8l",
+      "name": "Les six matériaux",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Chaque installation est faite d'une famille de matériaux. Elle dit ce qui l'abîme :</p><ul><li><strong>Paille et torchis</strong> : rien ne coûte moins, rien ne tient moins. Le cyclone l'emporte (0,9), le feu le prend (1), <strong>la pluie l'use chaque jour</strong> (son entretien revient plus vite sous la pluie).</li><li><strong>Bambou et vacoa</strong> : souple, il plie au vent (0,7) ; il brûle.</li><li><strong>Bois sous tôle</strong> : la case ordinaire (cyclone 0,5, la mesure d'avant).</li><li><strong>Tôle de récupération</strong> : elle ne brûle presque pas, mais <strong>le vent l'arrache</strong> (0,8) : une tôle qui s'envole devient un projectile, et elle claque sous la pluie toute la nuit.</li><li><strong>Pierre sèche</strong> : le cyclone n'y peut presque rien (0,2), <strong>le feu ne la prend pas</strong>.</li><li><strong>Parpaing et béton</strong> : rien ne l'atteint (0,05), le feu non plus. Mais il faut du ciment, et du savoir.</li></ul><p><strong>Le cyclone</strong> abîme une installation exposée avec une chance par point de dégâts égale à la moitié de cette part (25 % pour le bois sous tôle, 40 % pour la tôle, 10 % pour la pierre). Une paillote, une tonnelle, une remise de chaume sont exposées même si ce ne sont ni des cultures ni des défenses.</p><p><strong>Le feu</strong> (incendie({ force })) : chaque installation, sauf sous terre, prend un cran par point de force avec la moitié de sa part au feu ; la pierre et le parpaing ne brûlent pas. À force 2 et plus, l'abri lui-même est abîmé.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "materiaux"
+        }
+      }
+    },
+    {
+      "_id": "bXauB4PNBWTjcnLw",
+      "_key": "!journal.pages!orT8FoaSRPjhguGd.bXauB4PNBWTjcnLw",
+      "name": "L'entretien",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Une installation qu'on ne soigne pas perd un cran</strong> : pleine marche, 75 %, 50 %, hors service. Chacune a son rythme : la citerne tous les 60 jours, la palissade tous les 90, le compost tous les 15, le boucan tous les 30 (plus vite sous la pluie : c'est du torchis).</p><p><strong>Qui soigne.</strong> Ceux qui sont à la tâche de l'installation (le potager, le filtre, l'atelier ont leurs bras : ils la tiennent en travaillant) et, pour les autres, <strong>ceux qui sont au chantier</strong>, à l'abri : chacun donne un quart de soin par jour, à ce qui presse le plus. On peut aussi entretenir à la demande (entretenir({ installationId, membres, quarts })).</p><p><strong>Un soin</strong> remet le délai à zéro, nettoie, et <strong>rattrape un cran perdu faute de soin</strong>. Il ne répare pas une casse (un assaut, un cyclone, une panne) : ça, c'est reparer, avec des matériaux.</p><p><strong>S'encrasser.</strong> Les panneaux se salissent en 12 jours et ne donnent plus que la moitié (la pluie les lave) ; la pico-hydro se bouche en 8 jours, la roue à aubes en 6, la pompe électrique en 10 : elles s'arrêtent. Elles ne perdent pas d'état : il suffit de les nettoyer.</p><p><strong>Les pannes.</strong> Ce qui a un moteur ou de l'électronique tombe en panne de temps en temps (de 0,2 à 1 % par jour : le groupe électrogène le plus, les batteries le moins). Une panne, c'est un cran d'état : à réparer. Les batteries <strong>vieillissent</strong> : un cran tous les 400 jours.</p><p><strong>Une partie d'avant</strong> : les délais partent du jour où le système les voit pour la première fois ; rien ne casse d'un coup.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "entretien"
+        }
+      }
+    },
+    {
+      "_id": "3mFWTFxCx2L4zIGI",
+      "_key": "!journal.pages!orT8FoaSRPjhguGd.3mFWTFxCx2L4zIGI",
+      "name": "Les défenses avec les moyens du bord",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Les anciens châteaux avaient une enceinte, une porte lourde, un chemin de ronde, des douves. Un abri de Fénoir peut avoir tout cela, en tôle, en bambou et en pierre :</p><ul><li><strong>La haie de choka</strong> : ses épines arrêtent ce qui marche droit, mais <strong>il faut six mois pour qu'elle ferme</strong> ; elle prend la place des barricades quand elles tombent, et donne de la fibre.</li><li><strong>Les chausse-trapes</strong> de bambou : un piège (−1 à la force des Livides), qui relaie le fossé.</li><li><strong>La herse</strong> à contrepoids et le <strong>portail de bois dur</strong> : une porte (les coups vont sur elle).</li><li><strong>Le chemin de ronde</strong>, sur la palissade : la hauteur (pas de brèche tant qu'il tient et qu'un garde y est).</li><li><strong>La meurtrière de basalte</strong> : +1 en tir à l'abri.</li><li><strong>La passerelle relevée</strong> au-dessus du fossé : une porte, qu'on remonte le soir.</li><li><strong>Les douves</strong>, remplies par la ravine : un gros piège (−2).</li><li><strong>Les enceintes de palettes et d'épaves</strong> : des palissades de fortune, qui la remplacent quand elle manque.</li><li><strong>La cloche d'alarme</strong> : elle réveille tout le monde, et tout le voisinage.</li></ul><p>Et <strong>la cave</strong> : creuser sans savoir étayer, c'est risquer l'éboulement (un jour de creusement sur quatre) ; près d'une eau qui court, même en sachant, le risque est là. Un éboulement blesse sans tuer et rebouche une part du travail.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "defenses"
+        }
+      }
+    },
+    {
+      "_id": "2kY1ylZdcktowQAY",
+      "_key": "!journal.pages!orT8FoaSRPjhguGd.2kY1ylZdcktowQAY",
+      "name": "Les deux façons de bâtir",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Presque tout ce qu'on bâtit a sa version d'avant, faite avec ce qui pousse autour (le bois, le bambou, le vacoa, la pierre des champs) : le foyer à trois roches pour la cuisine, le boucan pour le fumoir, le cellier de pierre pour la réserve, les paillasses pour le dortoir, les jarres filtrantes pour le filtre, le bassin de pierre pour la cuve, les lampes à huile pour l'éclairage, la remise de chaume pour celle de tôle. Elles ne s'additionnent pas : la meilleure qui marche est en service, l'autre attend. Elles coûtent des matières de l'île et du travail, pas des matériaux fouillés ; elles tiennent moins, et se refont.</p><p><strong>Le puits creusé</strong> : là où il n'y a ni source ni ravine, on creuse jusqu'à la nappe. Deux, puis trois unités d'eau par jour, à remonter à bras. <strong>La touffe de bambous</strong> regarnit le bois des alentours au bout de six mois. <strong>Le four à chaux</strong> fait de la chaux, donc du mortier, avec des coquillages et du bois.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "lontan"
+        }
+      }
+    }
+  ]
+}

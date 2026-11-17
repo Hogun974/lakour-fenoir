@@ -166,6 +166,27 @@
       <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
     </div>
     {{/if}}
+    {{#if ouvrages}}
+    <div class="survie-formulaire survie-ouvrages-bloc">
+      <h3><i class="fa-solid fa-trowel-bricks"></i> {{localize "LAKOUR_SURVIE.Ouvrages.Titre"}}</h3>
+      {{#if ouvrages.defenses}}<p><i class="fa-solid fa-shield-halved"></i> {{ouvrages.defenses}}</p>{{/if}}
+      {{#if ouvrages.eboulement}}<p class="mauvais"><i class="fa-solid fa-hill-rockslide"></i> {{ouvrages.eboulement}}</p>{{/if}}
+      {{#if ouvrages.dus.length}}<ul class="survie-liste-simple">{{#each ouvrages.dus}}<li class="mauvais">{{texte}}</li>{{/each}}</ul>{{else}}<p>{{localize "LAKOUR_SURVIE.Ouvrages.MJ.RienDu"}}</p>{{/if}}
+    </div>
+    <div class="survie-formulaire" data-forme="entretenir">
+      <h3><i class="fa-solid fa-screwdriver-wrench"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.entretenir"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.Ouvrages.MJ.Installation"}} <select name="installation">{{#each ouvrages.aEntretenir}}<option value="{{valeur}}" {{#if choisi}}selected{{/if}}>{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.MJ.Qui"}} <select name="membres" multiple>{{#each membres}}<option value="{{valeur}}">{{libelle}}</option>{{/each}}</select></label>
+      <label>{{localize "LAKOUR_SURVIE.MJ.Quarts"}} <input type="number" name="quarts" value="1" min="1" max="8" class="survie-petit"></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    <div class="survie-formulaire" data-forme="incendie">
+      <h3><i class="fa-solid fa-fire"></i> {{localize "LAKOUR_SURVIE.MJ.Formes.incendie"}}</h3>
+      <label>{{localize "LAKOUR_SURVIE.Ouvrages.MJ.Force"}} <input type="number" name="force" value="1" min="1" max="3" class="survie-petit"></label>
+      <label>{{localize "LAKOUR_SURVIE.Ouvrages.MJ.Cause"}} <input type="text" name="cause" value=""></label>
+      <button type="button" data-action="executer">{{localize "LAKOUR_SURVIE.MJ.Faire"}}</button>
+    </div>
+    {{/if}}
     {{/if}}
 
     {{#if (eq onglet "actions")}}

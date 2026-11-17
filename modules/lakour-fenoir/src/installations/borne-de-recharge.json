@@ -1,0 +1,100 @@
+{
+  "_id": "gG7PtufinaywBfZN",
+  "_key": "!items!gG7PtufinaywBfZN",
+  "name": "Remise à recharge",
+  "type": "installation",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "cle": "borne-de-recharge",
+    "categorie": "energie",
+    "description": "<p>Un abri de tôle câblé sur les batteries, un régulateur de charge : le petit utilitaire électrique s'y recharge la nuit. Elle boit le courant de l'abri ; on l'éteint quand rien ne charge.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 12
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 4,
+          "graines": 0,
+          "travail": 12
+        },
+        "requiert": {
+          "savoirs": [
+            "electricite-solaire"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": [
+            {
+              "cle": "panneaux-solaires",
+              "niveau": 2
+            },
+            {
+              "cle": "batteries",
+              "niveau": 1
+            }
+          ]
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "energie": 2
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "remise": 2,
+          "recharge": true,
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "materiau": "tole-de-recuperation"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "borne-de-recharge"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

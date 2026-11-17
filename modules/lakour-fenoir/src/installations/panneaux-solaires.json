@@ -58,6 +58,13 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 12,
+          "travail": 1,
+          "encrassement": 0.5,
+          "lavee": true,
+          "panne": 0.004
         }
       },
       {
@@ -104,6 +111,13 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 12,
+          "travail": 1,
+          "encrassement": 0.5,
+          "lavee": true,
+          "panne": 0.004
         }
       },
       {
@@ -155,9 +169,17 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 12,
+          "travail": 1,
+          "encrassement": 0.5,
+          "lavee": true,
+          "panne": 0.004
         }
       }
-    ]
+    ],
+    "materiau": "tole-de-recuperation"
   },
   "effects": [],
   "folder": null,

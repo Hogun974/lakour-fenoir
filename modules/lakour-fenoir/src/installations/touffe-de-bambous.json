@@ -1,0 +1,84 @@
+{
+  "_id": "wBJLnYSkj5EjA6I0",
+  "_key": "!items!wBJLnYSkj5EjA6I0",
+  "name": "Touffe de bambous",
+  "type": "installation",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "cle": "touffe-de-bambous",
+    "categorie": "stockage",
+    "description": "<p>Quelques pieds de bambou plantés près de l'eau, au fond de la cour. Pendant six mois, rien ; ensuite, on ne manque plus de cannes pour les gouttières, les claies, les palissades. Le bambou plie au cyclone et repousse.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 3
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 1,
+          "travail": 3
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 1,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 180
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bois": 0.5,
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "materiau": "bambou-et-vacoa",
+    "expose": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "touffe-de-bambous"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

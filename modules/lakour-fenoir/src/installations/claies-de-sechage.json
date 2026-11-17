@@ -1,0 +1,89 @@
+{
+  "_id": "HIMBcFt1PaivKFnx",
+  "_key": "!items!HIMBcFt1PaivKFnx",
+  "name": "Claies de séchage",
+  "type": "installation",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "cle": "claies-de-sechage",
+    "categorie": "stockage",
+    "description": "<p>Des claies de bambou sur des tréteaux, au soleil : les zerbaz, les piments, le café, les graines y sèchent sans moisir. On garde ainsi bien plus de brassées qu'il n'en tient dans la case.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 2
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 1,
+          "travail": 2
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {
+            "plantes": 12
+          },
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 30,
+          "travail": 1
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "materiau": "bambou-et-vacoa",
+    "expose": true
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "claies-de-sechage"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

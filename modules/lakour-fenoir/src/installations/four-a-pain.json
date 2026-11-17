@@ -1,0 +1,86 @@
+{
+  "_id": "IKyHRiK5fUD91HUj",
+  "_key": "!items!IKyHRiK5fUD91HUj",
+  "name": "Four à pain",
+  "type": "installation",
+  "img": "icons/svg/house.svg",
+  "system": {
+    "cle": "four-a-pain",
+    "categorie": "vie",
+    "description": "<p>Une voûte de pierre et d'argile qu'on chauffe au bois pendant une matinée : pain de manioc, gâteau patate, gâteau maïs. L'odeur du pain chaud fait plus pour un groupe qu'un discours. Elle se sent aussi de loin.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 12
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 3,
+          "travail": 12
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 1,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "odeur": 1,
+          "bras": {
+            "tache": "cuisine",
+            "nombre": 1
+          }
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "materiau": "pierre-seche"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "four-a-pain"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

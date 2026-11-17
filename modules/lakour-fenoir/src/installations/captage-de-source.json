@@ -61,6 +61,10 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       },
       {
@@ -112,10 +116,15 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 60,
+          "travail": 1
         }
       }
     ],
-    "arbre": "moderne"
+    "arbre": "moderne",
+    "materiau": "pierre-seche"
   },
   "effects": [],
   "folder": null,

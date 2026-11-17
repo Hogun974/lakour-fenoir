@@ -62,6 +62,13 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 8,
+          "travail": 1,
+          "encrassement": 0.7,
+          "arret": true,
+          "panne": 0.004
         }
       },
       {
@@ -111,9 +118,17 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "entretien": {
+          "tousLes": 8,
+          "travail": 1,
+          "encrassement": 0.7,
+          "arret": true,
+          "panne": 0.004
         }
       }
-    ]
+    ],
+    "materiau": "pierre-seche"
   },
   "effects": [],
   "folder": null,

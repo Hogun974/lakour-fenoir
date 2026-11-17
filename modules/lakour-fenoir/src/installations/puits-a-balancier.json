@@ -118,7 +118,8 @@
       }
     ],
     "arbre": "lontan",
-    "role": "pompe-manuelle"
+    "role": "pompe-manuelle",
+    "materiau": "pierre-seche"
   },
   "effects": [],
   "folder": null,

@@ -1,0 +1,99 @@
+{
+  "_id": "eGfAF6xhloueaHGr",
+  "_key": "!items!eGfAF6xhloueaHGr",
+  "name": "Pompe électrique",
+  "type": "installation",
+  "img": "icons/svg/waterfall.svg",
+  "system": {
+    "cle": "pompe-electrique",
+    "categorie": "eau",
+    "description": "<p>Le moteur d'une machine à laver ou d'une pompe de piscine, une crépine, des tuyaux : sur le courant de l'abri, elle remonte l'eau du puits ou de la ravine sans un geste. Sans courant, la pompe à bras reprend le travail. Sa crépine se bouche vite.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 6
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 3,
+          "graines": 0,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [
+            "plomberie-filtration"
+          ],
+          "site": {
+            "eau": [
+              "puits",
+              "riviere"
+            ],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "eau": 6
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {
+            "energie": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 10,
+          "travail": 1,
+          "encrassement": 0.6,
+          "arret": true,
+          "panne": 0.006
+        }
+      }
+    ],
+    "arbre": "moderne",
+    "role": "pompe-manuelle",
+    "rang": -1,
+    "materiau": "tole-de-recuperation"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "pompe-electrique"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

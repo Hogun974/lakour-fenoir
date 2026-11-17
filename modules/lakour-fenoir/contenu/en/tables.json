@@ -1933,6 +1933,57 @@
       "en": "<p>A car up on blocks, wheels stolen, and a note on the windscreen: “Pa touch, mi rovien” (don't touch, I'll be back). Dated months ago.</p>"
     }
   },
+  "tables/PzWh3SfpZoJjrTNs": {
+    "_nom": "Les Livides devant l'abri — ce qu'ils font",
+    "name": {
+      "fr": "Les Livides devant l'abri — ce qu'ils font",
+      "en": "The Pallid before the shelter — what they do"
+    },
+    "description": {
+      "fr": "<p>Pendant un assaut de Livides, ou quand le groupe regarde par-dessus la palissade. Tirez une fois par moment de l'assaut.</p>",
+      "en": "<p>During an assault of the Pallid, or when the group looks over the stockade. Roll once per moment of the assault.</p>"
+    },
+    "results.oxdZXud3fun1wTog.description": {
+      "fr": "<p>Ils longent l'enceinte, la main sur les planches, sans s'arrêter : ils cherchent par où passer. Un trou de soixante mètres plus loin leur suffit.</p>",
+      "en": "<p>They walk along the enclosure, a hand on the planks, without stopping: they are looking for a way through. A gap sixty metres further on is enough for them.</p>"
+    },
+    "results.oAFq5aA1p0kSyRG5.description": {
+      "fr": "<p>L'un d'eux s'est arrêté devant la porte et frappe, du plat de la main, sans fin. Les autres viennent se presser derrière lui.</p>",
+      "en": "<p>One of them has stopped in front of the door and strikes it, with the flat of its hand, endlessly. The others come and crowd behind it.</p>"
+    },
+    "results.sOJ5JAZiBEo2FC0i.description": {
+      "fr": "<p>Ils s'en prennent au poteau d'angle, le plus vieux, celui qui penche. Ce soir, il faudra le reprendre.</p>",
+      "en": "<p>They go for the corner post, the oldest, the one that leans. Tonight, it will have to be redone.</p>"
+    },
+    "results.AYEUX8MjDN3mk6HH.description": {
+      "fr": "<p>Le chemin de ronde tient : en dessous, ils lèvent les bras, griffent l'air, et ne comprennent pas l'échelle. Ce sont les poteaux qu'ils secouent.</p>",
+      "en": "<p>The wall walk holds: below, they raise their arms, claw at the air, and do not understand the ladder. It is the posts they shake.</p>"
+    },
+    "results.BQ6eAVeuZPfBK4Yc.description": {
+      "fr": "<p>Le premier tombe dans la fosse, puis le deuxième ; le cinquième marche sur les autres et prend pied au bord.</p>",
+      "en": "<p>The first one falls into the pit, then the second; the fifth walks on the others and gets a foothold on the edge.</p>"
+    },
+    "results.gcw1ttlHGNi5Z3IV.description": {
+      "fr": "<p>Le bruit de leurs coups en amène d'autres, du bas de la ravine. Ils ne frappent pas : ils se pressent, et attendent.</p>",
+      "en": "<p>The noise of their blows brings others, from the bottom of the ravine. They do not strike: they crowd, and wait.</p>"
+    },
+    "results.7QkvWmSkCnAgHG8E.description": {
+      "fr": "<p>Un Livide figé par le froid des Hauts, appuyé contre la barrière depuis l'aube, qui n'a pas bougé. On ne sait pas s'il entend encore.</p>",
+      "en": "<p>One of the Pallid frozen stiff by the cold of the Highlands, leaning against the fence since dawn, who has not moved. Nobody knows if it still hears.</p>"
+    },
+    "results.I1gOfVTDVquptgoW.description": {
+      "fr": "<p>Ils se taisent d'un coup et se détournent : un bruit plus fort ailleurs, une tôle qui claque, un chien. Le siège se défait.</p>",
+      "en": "<p>They fall silent all at once and turn away: a louder noise elsewhere, a sheet of metal banging, a dog. The siege comes undone.</p>"
+    },
+    "results.y35Z0lUDo5QfatE5.description": {
+      "fr": "<p>La cloche a sonné : tout l'abri est debout. Au loin, d'autres silhouettes ont levé la tête vers le son.</p>",
+      "en": "<p>The bell has rung: the whole shelter is up. In the distance, other silhouettes have raised their heads towards the sound.</p>"
+    },
+    "results.quQkfMgZUC0ov2F6.description": {
+      "fr": "<p>Plus un signe de vie dans l'abri depuis une heure : ils s'en vont un à un, sans hâte, vers le prochain bruit.</p>",
+      "en": "<p>Not a sign of life in the shelter for an hour: they leave one by one, unhurried, towards the next noise.</p>"
+    }
+  },
   "tables/PzXoKroc9Q7V2gWG": {
     "_nom": "Plans — à quoi ça ressemble",
     "name": {
@@ -2121,6 +2172,49 @@
       "en": "<p>The sound of a cowbell in the fog, that never stops.</p>"
     }
   },
+  "tables/WFpglDbBOg3kGqie": {
+    "_nom": "Le feu à l'abri — d'où il vient",
+    "name": {
+      "fr": "Le feu à l'abri — d'où il vient",
+      "en": "Fire at the shelter — where it comes from"
+    },
+    "description": {
+      "fr": "<p>Pour un incendie de l'abri (API incendie). Tirez une fois ; la force est entre parenthèses.</p>",
+      "en": "<p>For a fire at the shelter (API incendie). Roll once; the strength is in brackets.</p>"
+    },
+    "results.mFsVkkyn7YcXjYfh.description": {
+      "fr": "<p>Une lampe à huile renversée par un chat sur une natte (1).</p>",
+      "en": "<p>An oil lamp knocked over by a cat onto a mat (1).</p>"
+    },
+    "results.Gnpgmx0CX6mSaazR.description": {
+      "fr": "<p>Des braises du foyer emportées par une rafale jusqu'au toit de chaume du boucan (2).</p>",
+      "en": "<p>Embers from the hearth carried by a gust to the thatched roof of the boucan (2).</p>"
+    },
+    "results.IEsdvcv6yIsJ4feW.description": {
+      "fr": "<p>Le groupe électrogène, surchauffé, prend feu au réservoir (2).</p>",
+      "en": "<p>The generator, overheated, catches fire at the tank (2).</p>"
+    },
+    "results.Lu9noqGkJLlLlhoA.description": {
+      "fr": "<p>Une bande jette des bouteilles enflammées par-dessus la palissade, en pleine nuit (2).</p>",
+      "en": "<p>A gang throws burning bottles over the stockade, in the dead of night (2).</p>"
+    },
+    "results.jDrhtlFAMShRxMEU.description": {
+      "fr": "<p>L'incendie des savanes descend la pente, poussé par le vent (3) : tout ce qui est de paille et de bois y passe.</p>",
+      "en": "<p>The savannah fire comes down the slope, driven by the wind (3): everything made of straw and wood goes up.</p>"
+    },
+    "results.CMuFvNDdBYug3a50.description": {
+      "fr": "<p>Un court-circuit dans les câbles bricolés de l'éclairage (1).</p>",
+      "en": "<p>A short circuit in the jury-rigged cables of the lighting (1).</p>"
+    },
+    "results.wonr2I2RJP8G5Fjs.description": {
+      "fr": "<p>La graisse du boucan s'enflamme pendant que tout le monde regarde ailleurs (1).</p>",
+      "en": "<p>The boucan's fat catches fire while everyone is looking elsewhere (1).</p>"
+    },
+    "results.4H9zYTjrkEoSixdL.description": {
+      "fr": "<p>Le feu de la fête, trop haut, trop près de la salle verte (2).</p>",
+      "en": "<p>The feast fire, too high, too close to the green hall (2).</p>"
+    }
+  },
   "tables/WfmgqevXTS6BuTCb": {
     "_nom": "Lieu à plans — Le relais des crêtes du Maïdo",
     "name": {
@@ -2177,6 +2271,57 @@
     "results.DwpD3GzUsEFRzj3x.description": {
       "fr": "<p>Carnet du fontainier : le plan unique du lieu (une seule fois dans la partie). Le carnet d'un fontainier des îlets : quarante ans à amener l'eau là où les routes ne vont pas. Il n'en existe qu'un, et il ne se trouve qu'au bout des sentiers.</p>",
       "en": "<p>The well-keeper's notebook: the site's unique plan (only once in the whole game). The notebook of a well-keeper of the îlets: forty years bringing water where the roads do not go. There is only one, and it is only found at the end of the trails.</p>"
+    }
+  },
+  "tables/YBjJnJVPR5T4Yc1A": {
+    "_nom": "Un entretien oublié — ce qui lâche",
+    "name": {
+      "fr": "Un entretien oublié — ce qui lâche",
+      "en": "Forgotten upkeep — what gives way"
+    },
+    "description": {
+      "fr": "<p>Quand une installation perd un cran faute de soin, ou pour raconter une panne. Tirez une fois.</p>",
+      "en": "<p>When an installation loses a notch for lack of care, or to tell a breakdown. Roll once.</p>"
+    },
+    "results.6jhbqDmZr5chIdzQ.description": {
+      "fr": "<p>Les joints de la gouttière ont lâché : la moitié de l'averse est passée à côté de la citerne.</p>",
+      "en": "<p>The gutter joints have given way: half the downpour went past the cistern.</p>"
+    },
+    "results.pNkAOZENMUIgOpGr.description": {
+      "fr": "<p>Des termites dans les poteaux de la palissade : on enfonce un doigt dans le bois comme dans du pain.</p>",
+      "en": "<p>Termites in the stockade posts: you push a finger into the wood as into bread.</p>"
+    },
+    "results.mGnKAe4Efyc5cT0b.description": {
+      "fr": "<p>La crépine de la pompe est bouchée de feuilles et de vase. Une heure, les mains dans l'eau froide.</p>",
+      "en": "<p>The pump's strainer is clogged with leaves and silt. An hour with your hands in cold water.</p>"
+    },
+    "results.lqVkYkREG3fEkdWM.description": {
+      "fr": "<p>Les panneaux sont gris de poussière et de fientes : ils ne donnent plus que la moitié. Un seau d'eau, un chiffon.</p>",
+      "en": "<p>The panels are grey with dust and droppings: they only give half now. A bucket of water, a rag.</p>"
+    },
+    "results.pcZXQuhQM6pumboZ.description": {
+      "fr": "<p>Le torchis de la paillote a coulé avec la pluie : les murs ont des trous où passe le jour.</p>",
+      "en": "<p>The cob of the hut has run with the rain: the walls have holes where daylight comes through.</p>"
+    },
+    "results.FM86HaaCLycKc62I.description": {
+      "fr": "<p>Une batterie a gonflé, elle sent l'œuf pourri : il faut la sortir, loin, avant qu'elle ne fuie.</p>",
+      "en": "<p>A battery has swollen, it smells of rotten eggs: it has to be taken out, far away, before it leaks.</p>"
+    },
+    "results.ADgOcDvMdfcimwDz.description": {
+      "fr": "<p>Le compost n'a pas été retourné : il sent, il attire les rats, et il ne nourrit plus rien.</p>",
+      "en": "<p>The compost has not been turned: it stinks, it draws rats, and it no longer feeds anything.</p>"
+    },
+    "results.KoHTjiwTc9C44Lh6.description": {
+      "fr": "<p>La roue à aubes est bloquée par un tronc venu d'en haut. Il faut entrer dans l'eau pour la dégager.</p>",
+      "en": "<p>The water wheel is blocked by a trunk come down from above. You have to get into the water to free it.</p>"
+    },
+    "results.Uv82CekDmgaYcNdM.description": {
+      "fr": "<p>L'étai de la cave a travaillé : une fissure court au plafond, de la terre tombe la nuit.</p>",
+      "en": "<p>The cellar prop has shifted: a crack runs across the ceiling, earth falls at night.</p>"
+    },
+    "results.9vNtlswCRmO9yT1r.description": {
+      "fr": "<p>Rien de cassé, rien de bouché : quelqu'un y a pensé avant vous. Notez qui.</p>",
+      "en": "<p>Nothing broken, nothing clogged: someone thought of it before you. Note who.</p>"
     }
   },
   "tables/YFN6W0JMRjG55CSU": {

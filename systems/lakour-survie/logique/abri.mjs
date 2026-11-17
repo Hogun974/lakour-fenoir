@@ -37,7 +37,7 @@
 // - Nature des alentours : régénération par jour vers le plafond = rendement × (cueillette 0,25, gibier 0,15, pêche 0,25,
 //   bois 0,2) ; cueillette × 0,7 en saison sèche et × bonus des fruits (1,25 en novembre, 1,5 en décembre-janvier).
 // - Cyclone : dégâts = force − protection cyclonique (si positif) ; chaque installation exposée (eau, nourriture, énergie,
-//   défense) prend 1 point d'état avec 25 % de chances par point de dégâts.
+//   défense) prend 1 point d'état avec 25 % de chances par point de dégâts (lot 7 : selon son matériau, ouvrages.mjs).
 // - Événement du contenu qui touche l'abri (§2.6, subirEvenementAbri) : stocks perdus (jamais sous 0) et dégâts appliqués ;
 //   moral, blessures, trouvailles rendus au MJ, à raconter.
 // - Bonus d'installation (`effets.bonus`, tour de guet : vigilance) : le meilleur des installations pas hors service (bilan.bonus).
@@ -77,6 +77,14 @@
 // - La souillure (`abri.souillure`) et l'insalubrité (`bilan.insalubrite`, 0 à 3) : journeeAbri l'amasse (personnes, latrines,
 //   surpeuplement) et l'efface (jours, pluie : `conditions.pluie`). L'odeur compte la souillure d'un abri sale (insalubrité 2 et
 //   plus) comme celle d'un abri surpeuplé.
+//
+// Lot 7 « Bâtir et défendre » (docs/equilibre-batir.md, contrat §26 ; logique/ouvrages.mjs) :
+// - Une installation encrassée (panneaux sales, pico-hydro bouchée) produit × (1 − encrassement), ou plus du tout (facteurEntretien).
+// - Une haie (`effets.pousse`) ne défend ni ne cache avant d'être fermée (haieFermee).
+// - Une touffe de bambous (`effets.bois`) regarnit chaque jour le bois des alentours (bilan.bois, journeeAbri), jusqu'au plafond.
+// - `effets.lumiere` (lampes, éclairage) : bilan.lumiere, l'abri est éclairé la nuit (lot « sens »).
+// - Cyclone : la chance par point de dégâts suit le matériau (chanceCyclone : 25 % pour le bois sous tôle, comme avant), et une
+//   définition peut se dire exposée (`expose`) quelle que soit sa catégorie (exposeeAuCyclone).
 import { ORDRE_DELESTAGE, RESSOURCES, NATURE, SEUIL_AUTONOMIE, COUT_ILE, borner } from "./constantes.mjs";
 import { installationDe, regionDe, siteDe, niveauDe, niveauMaxDe, natureRegion, indexer } from "./contenu.mjs";
 import { consommationJour, pertesJour, plafonds, joursDeStocks, normaliserStocks, journeeStocks, couvre, retirerStocks } from "./ressources.mjs";
@@ -86,6 +94,7 @@ import { message } from "./textes.mjs";
 import { tirerPoids } from "./hasard.mjs";
 import { odeurAbri } from "./sens.mjs";
 import { insalubrite as niveauInsalubrite, niveauHygiene, souillureDe, souillureDuJour } from "./corps.mjs";
+import { chanceCyclone, exposeeAuCyclone, facteurEntretien, haieFermee } from "./ouvrages.mjs";
 
 export const FACTEUR_ETAT = [1, 0.75, 0.5, 0];
 export const SAISON_PLUIE = { pluies: 1, seche: 0.5 };
@@ -170,7 +179,9 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     if (niveau < 1) continue;
     const def = installationDe(contenu, inst.cle);
     if (!def) continue;
-    const e = effetsDe(def, niveau);
+    // Lot 7 : une haie qui n'a pas encore fermé ne défend ni ne cache.
+    const e0 = effetsDe(def, niveau);
+    const e = haieFermee(inst, e0, Number(conditions.jour ?? 0)) ? e0 : { ...e0, defense: 0, discretion: 0 };
     const fEtat = FACTEUR_ETAT[borner(Number(inst.etat) || 0, 0, 3)];
     const cond = e.conditions ?? {};
     let f = fEtat;
@@ -186,10 +197,12 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     // Bras : `effets.bras` du niveau, ou `bras: { tache, nombres: [par niveau], niveau }` sur la définition (forme du contenu).
     const bras = e.bras ?? (def.bras?.tache ? { tache: def.bras.tache, nombre: def.bras.nombres?.[niveau - 1] ?? def.bras.nombre ?? 1, niveau: def.bras.niveau } : null);
     if (bras?.tache) f *= facteurBras(bras, conditions.travailleurs?.[bras.tache] ?? []);
+    // Lot 7 : encrassée (panneaux sales, roue bouchée), elle produit moins, ou plus du tout.
+    f *= facteurEntretien(inst, def, niveau);
     const production = {};
     for (const [r, q] of Object.entries(e.production ?? {})) production[r] = (Number(q) || 0) * f;
     lignes.push({
-      cle: inst.cle, categorie: def.categorie, niveau, e, production, horsService: fEtat === 0, role: roleDe(def), rang: rangDe(def),
+      cle: inst.cle, categorie: def.categorie, niveau, e, production, horsService: fEtat === 0, role: roleDe(def), rang: rangDe(def), bois: (Number(e.bois) || 0) * f,
       consommation: { energie: Number(e.consommation?.energie) || 0, carburant: Number(e.consommation?.carburant) || 0, eau: Number(e.consommation?.eau) || 0,
         nourriture: Number(e.consommation?.nourriture) || 0, gaz: Number(e.consommation?.gaz) || 0 },
       peutMarcher: fEtat > 0 && inst.actif !== false, enMarche: fEtat > 0 && inst.actif !== false, sol: demandeSol(def, niveau)
@@ -348,7 +361,10 @@ export function bilanAbri(abri = {}, installations = [], contenu = {}, condition
     latrines, toilette, hygiene: niveauHygiene(latrines, toilette), souillure: souillureDe(abri), insalubrite,
     odeur: odeur.odeur, odeurBetes: odeur.betes, odeurSources: odeur.sources,
     ...(conditions.ravine && c.site.eau === "riviere" ? { ravine: conditions.ravine.etat ?? "" } : {}),
-    autonome: net.eau >= 0 && net.nourriture >= 0 && net.energie >= 0
+    autonome: net.eau >= 0 && net.nourriture >= 0 && net.energie >= 0,
+    // Lot 7 : le bois que les touffes de bambous rendent aux alentours ; l'abri éclairé la nuit.
+    bois: Math.round(actives.reduce((t, l) => t + l.bois, 0) * 100) / 100,
+    lumiere: actives.some(l => Boolean(l.e.lumiere))
   };
   bilan.joursDeStocks = joursDeStocks(stocks, net);
   return bilan;
@@ -369,9 +385,17 @@ export function journeeAbri(abri = {}, installations = [], contenu = {}, conditi
     // Lot « corps » : la souillure du jour (les présents, les latrines, le surpeuplement ; la pluie l'efface plus vite).
     souillure: souillureDuJour({ souillure: souillureDe(abri), personnes: c.personnes, latrines: bilan.latrines, surpeuplement: bilan.surpeuplement,
       pluie: Number(conditions.pluie) || 0 }),
-    nature: regenererNature(abri.nature, c.region, { saison: c.saison, mois })
+    nature: regarnir(regenererNature(abri.nature, c.region, { saison: c.saison, mois }), c.region, bilan.bois)
   };
   return { abri: nouveau, bilan, manque: r.manque, pertes: r.pertes, perdus: r.perdus, boutures: { repiquees: b.repiquees, mortes: b.mortes } };
+}
+
+// Lot 7 : le bois qu'une touffe de bambous rend aux alentours, jusqu'au plafond de la région.
+function regarnir(nature, region, bois = 0) {
+  if (!(Number(bois) > 0)) return nature;
+  const plafond = natureRegion(region).bois.plafond;
+  const actuel = Number(nature?.bois) || 0;
+  return actuel >= plafond ? nature : { ...nature, bois: Math.round(Math.min(plafond, actuel + Number(bois)) * 100) / 100 };
 }
 
 // Les boutures d'un jour (lot « savoirs ») : repiquées dans un jardin en service (potager, jardin créole, serre, verger), elles
@@ -593,9 +617,11 @@ export function subirCyclone(abri, installations, contenu, { force = 1, protecti
   const endommagees = [];
   const nouvelles = (installations ?? []).map(inst => {
     const def = installationDe(contenu, inst.cle);
-    if (!degats || !def || !CATEGORIES_EXPOSEES.includes(def.categorie) || !(inst.niveau >= 1)) return inst;
+    if (!degats || !def || !exposeeAuCyclone(def) || !(inst.niveau >= 1)) return inst;
+    // Lot 7 : la chance par point suit le matériau (bois sous tôle : 25 %, comme avant ; tôle 40 % ; pierre sèche 10 %).
+    const p = chanceCyclone(def, inst.niveau);
     let n = 0;
-    for (let k = 0; k < degats; k++) if (hasard() < 0.25) n++;
+    for (let k = 0; k < degats; k++) if (hasard() < p) n++;
     if (!n) return inst;
     endommagees.push(inst.cle);
     return endommagerInstallation(inst, n);

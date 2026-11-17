@@ -1,0 +1,90 @@
+{
+  "_id": "YV6QqQ5VnXFjFLqE",
+  "_key": "!items!YV6QqQ5VnXFjFLqE",
+  "name": "Haie de choka",
+  "type": "installation",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "cle": "haie-de-choka",
+    "categorie": "defense",
+    "description": "<p>Des pieds de choka plantés serrés le long de la clôture, leurs feuilles armées d'épines tournées vers l'extérieur. Il faut six mois pour qu'elle ferme ; ensuite elle se garde seule, arrête ce qui marche sans regarder, et sa taille donne de la fibre à tresser (des matières de l'île). Elle prend la place des barricades quand celles-ci tombent.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 2,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 180
+          },
+          "consommation": {},
+          "defense": 1,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "pousse": 180,
+          "bois": 0.2,
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 90,
+          "travail": 1
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "role": "barricades",
+    "rang": 1,
+    "materiau": "bambou-et-vacoa"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "haie-de-choka"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

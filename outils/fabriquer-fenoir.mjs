@@ -31,6 +31,7 @@ import { verifierHistoires } from "../systems/lakour-survie/logique/histoires.mj
 import { verifierCorvees } from "../systems/lakour-survie/logique/gestion.mjs";
 import { erreursAffaire } from "../systems/lakour-survie/logique/affaires.mjs";
 import { erreursPlans } from "../systems/lakour-survie/logique/plans.mjs";
+import { erreursOuvrages } from "../systems/lakour-survie/logique/ouvrages.mjs";
 import { erreursRepere, chanceRepere, LIEUX_REPERE, CHANCE_REPERE_MAX } from "../systems/lakour-survie/logique/reperes.mjs";
 import { RELIGIONS, ANCRAGES } from "../modules/lakour-fenoir/contenu/religions.mjs";
 import { IDS_DECLINABLES, IDS_FETES, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
@@ -471,6 +472,8 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   if (d.gris?.stades?.length !== 6) e("le Gris : six stades visibles attendus");
   for (const [i, st] of (d.gris?.stades ?? []).entries()) aSymptomes(`le Gris, stade ${i}`, st.symptomes);
   aSavoirs("le Gris", d.gris?.diagnostic);
+  // Lot 7 « Bâtir et défendre » (§26) : matériaux, entretiens, pièges, haies (logique/ouvrages.mjs, erreursOuvrages).
+  for (const m of erreursOuvrages(d)) e(m);
   const hygiene = [...installations.values()].filter(i => i.niveaux.some(n => Number(n.effets.hygiene) > 0));
   for (const i of hygiene) {
     if (!["latrines", "toilette"].includes(i.role)) e(`installation ${i.cle} : hygiène sans rôle « latrines » ou « toilette »`);

@@ -67,7 +67,8 @@
     ],
     "arbre": "moderne",
     "role": "latrines",
-    "rang": 0
+    "rang": 0,
+    "materiau": "parpaing-et-beton"
   },
   "effects": [],
   "folder": null,

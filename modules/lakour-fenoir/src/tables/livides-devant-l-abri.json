@@ -1,0 +1,178 @@
+{
+  "_id": "PzWh3SfpZoJjrTNs",
+  "_key": "!tables!PzWh3SfpZoJjrTNs",
+  "name": "Les Livides devant l'abri — ce qu'ils font",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Pendant un assaut de Livides, ou quand le groupe regarde par-dessus la palissade. Tirez une fois par moment de l'assaut.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "livides-devant-l-abri",
+      "ouvrages": "livides-devant-l-abri"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "oxdZXud3fun1wTog",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.oxdZXud3fun1wTog",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ils longent l'enceinte, la main sur les planches, sans s'arrêter : ils cherchent par où passer. Un trou de soixante mètres plus loin leur suffit.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "oAFq5aA1p0kSyRG5",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.oAFq5aA1p0kSyRG5",
+      "type": "text",
+      "name": "",
+      "description": "<p>L'un d'eux s'est arrêté devant la porte et frappe, du plat de la main, sans fin. Les autres viennent se presser derrière lui.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "sOJ5JAZiBEo2FC0i",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.sOJ5JAZiBEo2FC0i",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ils s'en prennent au poteau d'angle, le plus vieux, celui qui penche. Ce soir, il faudra le reprendre.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "AYEUX8MjDN3mk6HH",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.AYEUX8MjDN3mk6HH",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le chemin de ronde tient : en dessous, ils lèvent les bras, griffent l'air, et ne comprennent pas l'échelle. Ce sont les poteaux qu'ils secouent.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BQ6eAVeuZPfBK4Yc",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.BQ6eAVeuZPfBK4Yc",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le premier tombe dans la fosse, puis le deuxième ; le cinquième marche sur les autres et prend pied au bord.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "gcw1ttlHGNi5Z3IV",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.gcw1ttlHGNi5Z3IV",
+      "type": "text",
+      "name": "",
+      "description": "<p>Le bruit de leurs coups en amène d'autres, du bas de la ravine. Ils ne frappent pas : ils se pressent, et attendent.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "7QkvWmSkCnAgHG8E",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.7QkvWmSkCnAgHG8E",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un Livide figé par le froid des Hauts, appuyé contre la barrière depuis l'aube, qui n'a pas bougé. On ne sait pas s'il entend encore.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "I1gOfVTDVquptgoW",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.I1gOfVTDVquptgoW",
+      "type": "text",
+      "name": "",
+      "description": "<p>Ils se taisent d'un coup et se détournent : un bruit plus fort ailleurs, une tôle qui claque, un chien. Le siège se défait.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "y35Z0lUDo5QfatE5",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.y35Z0lUDo5QfatE5",
+      "type": "text",
+      "name": "",
+      "description": "<p>La cloche a sonné : tout l'abri est debout. Au loin, d'autres silhouettes ont levé la tête vers le son.</p>",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "quQkfMgZUC0ov2F6",
+      "_key": "!tables.results!PzWh3SfpZoJjrTNs.quQkfMgZUC0ov2F6",
+      "type": "text",
+      "name": "",
+      "description": "<p>Plus un signe de vie dans l'abri depuis une heure : ils s'en vont un à un, sans hâte, vers le prochain bruit.</p>",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

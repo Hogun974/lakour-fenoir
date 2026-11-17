@@ -1,0 +1,93 @@
+{
+  "_id": "i4rXpAdB2fEGhVNS",
+  "_key": "!journal!i4rXpAdB2fEGhVNS",
+  "name": "Les Livides devant un abri",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "les-livides-devant-un-abri",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "bCtzLtO8IBesRwXM",
+      "_key": "!journal.pages!i4rXpAdB2fEGhVNS.bCtzLtO8IBesRwXM",
+      "name": "Ce qu'un Livide fait devant un abri",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un Livide ne s'en prend pas à une case vide. <strong>Il ne frappe que s'il y a un vivant derrière</strong> : il en a vu entrer un, il l'entend, il le sent. Une maison silencieuse, il passe devant.</p><p>Devant une clôture, il cherche d'abord à passer : <strong>il longe le mur</strong> et le contourne si le détour fait moins d'une soixantaine de mètres (le tour d'une case, l'entrée de derrière). Sinon, <strong>il s'en prend à la pièce la plus faible</strong> à sa portée : la planche pourrie, le poteau qui penche, la tôle mal clouée. Chaque coup fait du bruit, et le bruit en amène d'autres, qui se pressent derrière sans frapper.</p><p><strong>Une porte fermée se frappe, toujours.</strong> C'est pour cela qu'une herse, un portail lourd ou une porte blindée protègent tout le reste : les coups vont sur elle.</p><p><strong>Un Livide ne monte pas à l'échelle.</strong> Un vivant qui se tient à plus de deux mètres au-dessus de lui n'est plus frappé. Les Livides se pressent dessous, puis s'en prennent à <strong>ce qui porte</strong> : les poteaux du chemin de ronde, les pieds de la tour. Si les appuis tiennent, la garde tient.</p><p><strong>Une fosse se comble.</strong> Les premiers tombent et n'en ressortent pas ; quand il y en a assez au fond, les suivants marchent dessus et passent. Une fosse arrête une poignée de Livides, pas une horde ; après, il faut la vider.</p><p><strong>Le siège cesse</strong> peu après le dernier signe de vie. Se taire, éteindre, attendre : c'est parfois la meilleure défense, et c'est la plus dure.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "principe"
+        }
+      }
+    },
+    {
+      "_id": "d95P5ooVgDpGSaFI",
+      "_key": "!journal.pages!i4rXpAdB2fEGhVNS.d95P5ooVgDpGSaFI",
+      "name": "Ce que le système compte",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un assaut se règle comme avant (contrat §1.7) : les dés de défense de l'abri et de la garde contre la force de la menace. Devant des <strong>Livides</strong> (une horde, des Livides), les ouvrages jouent en plus :</p><ul><li><strong>Les pièges</strong> (fossé et pièges, chausse-trapes, douves) ôtent leur force à celle de l'assaut, avant les dés (jamais sous 1). Un piège débordé (une force plus de quatre fois la sienne) se comble : il perd un cran d'état, à vider (réparer).</li><li><strong>La hauteur</strong> (chemin de ronde) : si un garde est présent et que le chemin de ronde n'est pas hors service, <strong>il n'y a pas de brèche</strong> ; l'issue devient « endommagée », sans blessé, et ce sont les appuis (le chemin de ronde) qui prennent le coup.</li><li><strong>La porte</strong> (herse, portail de bois dur, passerelle relevée, porte blindée) : quand une installation est abîmée, c'est elle.</li><li>Sinon, <strong>l'enceinte</strong> (les installations de défense) prend le coup, à sa pièce la plus faible (le torchis avant le bambou, le bambou avant la tôle, la tôle avant le bois, le bois avant la pierre) ; sans enceinte, le coup tombe plus souvent sur ce qui est fragile.</li><li><strong>La cloche</strong> donne +1 en vigilance (comme une tour de guet) ; quand on la frappe pendant un assaut, l'abri fait +2 de bruit : elle prévient, et elle attire.</li></ul><p>Contre des <strong>vivants</strong> (une bande) ou des bêtes, rien de cela : ils voient les pièges, ils prennent ce qu'ils veulent.</p><p><strong>Pour le MJ</strong> : assaut({ force, horde }) fait tout cela ; ouvrages() dit ce que l'abri a de pièges, de hauteur, de portes. La table « Les Livides devant l'abri — ce qu'ils font » donne de quoi raconter.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "regles"
+        }
+      }
+    },
+    {
+      "_id": "xOza6ClKW8Zcgafq",
+      "_key": "!journal.pages!i4rXpAdB2fEGhVNS.xOza6ClKW8Zcgafq",
+      "name": "Raconter un siège",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce qui fait peur, dans un siège, ce n'est pas ce qu'on voit : c'est le bruit. Les coups réguliers sur la tôle, qui ne s'arrêtent pas. Le grattement contre la porte. Le silence, d'un coup, qui est pire.</p><ul><li>Décrivez la clôture, pas les Livides : le poteau qui bouge, la planche qui cède d'un centimètre.</li><li>Donnez aux joueurs des choix : frapper par-dessus, se taire, sonner la cloche, renforcer la porte, attendre.</li><li>Laissez le temps passer : un siège dure. Quelqu'un doit dormir, quelqu'un doit boire, un enfant pleure.</li><li>Après, montrez les dégâts : ce qu'il faudra refaire, et ce que ça coûte.</li></ul><p>Rien de gore : un Livide est une silhouette, une main grise sur une planche, une odeur. Les joueurs comblent le reste.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "raconter"
+        }
+      }
+    }
+  ]
+}

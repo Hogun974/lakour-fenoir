@@ -58,6 +58,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "materiau": "bois-sous-tole",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 2
         }
       },
       {
@@ -104,6 +109,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "materiau": "bois-sous-tole",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 2
         }
       },
       {
@@ -151,6 +161,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "materiau": "bois-sous-tole",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 2
         }
       },
       {
@@ -205,6 +220,11 @@
           "renseignements": false,
           "bonus": {},
           "bras": null
+        },
+        "materiau": "parpaing-et-beton",
+        "entretien": {
+          "tousLes": 60,
+          "travail": 2
         }
       }
     ]

@@ -97,7 +97,9 @@ export const CLES_TEXTES = [
   "lune-sans-calendrier", "lune-sans-lunes", "journal-absent", "journal-enterre", "journal-livide", "journal-loin",
   // corps.mjs, maladies.mjs (par etat.mjs) : le sommeil, les signes d'un mal que le groupe ne sait pas nommer (lot « corps »)
   "survivant-epuise", "survivant-endormi", "survivant-gris-signes", "survivant-mort-fievre",
-  "survivant-declaree-signes", "survivant-aggravee-signes", "survivant-guerie-signes"
+  "survivant-declaree-signes", "survivant-aggravee-signes", "survivant-guerie-signes",
+  // ouvrages.mjs (par etat.mjs) : l'entretien des installations, l'encrassement, les pannes (lot 7 « Bâtir et défendre »)
+  "ouvrage-use", "ouvrage-encrasse", "ouvrage-panne", "ouvrage-vieillit", "ouvrage-soigne"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

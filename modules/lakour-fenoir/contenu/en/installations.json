@@ -21,6 +21,17 @@
       "en": "<p>Racks in the sun for fruit, chillies, fish; a sheet-metal smokehouse for cured meat. What is dried no longer spoils.</p>"
     }
   },
+  "installations/2oGgK1cAJxUESBcl": {
+    "_nom": "Digesteur à biogaz",
+    "name": {
+      "fr": "Digesteur à biogaz",
+      "en": "Biogas digester"
+    },
+    "system.description": {
+      "fr": "<p>Des fûts fermés, enterrés à moitié, où le fumier des cabris fermente avec de l'eau : le gaz monte dans une chambre à air et part par un tuyau jusqu'à la gazinière. Il sent, il demande du fumier frais et de l'eau chaque jour, et il ne s'improvise pas. Au second niveau, une cuve maçonnée.</p>",
+      "en": "<p>Closed drums, half buried, where the goats' manure ferments with water: the gas rises into an inner tube and goes through a pipe to the gas stove. It smells, it wants fresh manure and water every day, and it cannot be improvised. At the second level, a masonry tank.</p>"
+    }
+  },
   "installations/3bSnjKrdfDoyz7lm": {
     "_nom": "Mur d'enceinte",
     "name": {
@@ -43,6 +54,17 @@
       "en": "<p>A bench, a vice, tools put away, a crate of sorted parts. Here you repair, you make, you learn.</p>"
     }
   },
+  "installations/5R3JpQYH0IecW2Aj": {
+    "_nom": "Paillasses",
+    "name": {
+      "fr": "Paillasses",
+      "en": "Straw pallets"
+    },
+    "system.description": {
+      "fr": "<p>Du chaume sec sous une natte de vacoa, à même le plancher : on y dort, sans plus. Au second niveau, une toile cousue et des nattes doubles. Quand le dortoir manque, on se serre dessus.</p>",
+      "en": "<p>Dry thatch under a screwpine mat, straight on the floor: you sleep on it, nothing more. At the second level, a sewn cover and double mats. When the dormitory runs short, people squeeze onto them.</p>"
+    }
+  },
   "installations/5SYPK3lvGG98GEEw": {
     "_nom": "Gazinière",
     "name": {
@@ -52,6 +74,17 @@
     "system.description": {
       "fr": "<p>La gazinière d'une cuisine, sa bouteille de treize kilos dessous : on cuit le cari sans fumée, donc sans se faire voir. La bouteille se vide ; quand il n'y a plus de gaz, on retourne au feu de bois (la cuisine commune prend le relais si elle existe).</p>",
       "en": "<p>A kitchen gas stove with its thirteen-kilo bottle underneath: you cook the cari (curry) without smoke, so without being seen. The bottle empties; when there is no gas left, it is back to the wood fire (the communal kitchen takes over if there is one).</p>"
+    }
+  },
+  "installations/84hnuVvRuNck34qU": {
+    "_nom": "Éclairage électrique",
+    "name": {
+      "fr": "Éclairage électrique",
+      "en": "Electric lighting"
+    },
+    "system.description": {
+      "fr": "<p>Des ampoules de voiture et des rubans de lumière sur le courant de l'abri : on y voit comme avant, on lit, on recoud, la garde voit la cour. Et l'abri se voit de loin, comme une lampe sur la mer.</p>",
+      "en": "<p>Car bulbs and light strips on the shelter's power: you see as before, you read, you mend, the watch sees the yard. And the shelter can be seen from afar, like a lamp on the sea.</p>"
     }
   },
   "installations/8HfJ6ROWDZ1WwLXg": {
@@ -120,6 +153,28 @@
       "en": "<p>Split bamboo as gutters along the edge of the roof, earthenware jars and wooden casks beneath. The joints leak a little, the jars crack; you remake them with what grows around.</p>"
     }
   },
+  "installations/CRIrzPzPX1DSJFpX": {
+    "_nom": "Coin de prière",
+    "name": {
+      "fr": "Coin de prière",
+      "en": "Prayer corner"
+    },
+    "system.description": {
+      "fr": "<p>Une tablette de pierre contre le mur le plus calme, une flamme, un linge propre. Chacun y pose ce que sa foi demande, une image, une lampe, un chapelet, une poignée de riz, ou vient seulement s'y taire un moment. Personne n'y prie à la place d'un autre.</p>",
+      "en": "<p>A stone shelf against the quietest wall, a flame, a clean cloth. Each person sets there what their faith asks, a picture, a lamp, a rosary, a handful of rice, or just comes to be quiet there for a while. Nobody prays there in someone else's place.</p>"
+    }
+  },
+  "installations/DHDhL1EQybCNjofA": {
+    "_nom": "Jarres filtrantes",
+    "name": {
+      "fr": "Jarres filtrantes",
+      "en": "Filter jars"
+    },
+    "system.description": {
+      "fr": "<p>Deux jarres de terre l'une sur l'autre, la première percée, remplie de sable lavé et de charbon de bois : l'eau passe goutte à goutte et sort claire. Lent, mais il suffit de refaire le charbon de temps en temps.</p>",
+      "en": "<p>Two earthenware jars one above the other, the top one pierced, filled with washed sand and charcoal: the water passes drop by drop and comes out clear. Slow, but you only need to renew the charcoal now and then.</p>"
+    }
+  },
   "installations/DyRSnjRBQuBCNwEC": {
     "_nom": "Infirmerie",
     "name": {
@@ -140,6 +195,17 @@
     "system.description": {
       "fr": "<p>Un grenier sur pilotis coiffé de vétiver, des jarres fermées de cire, des sacs de vacoa pendus hors de portée des rats : la réserve tient au sec, en plus petit.</p>",
       "en": "<p>A granary on stilts thatched with vetiver, jars sealed with wax, vacoa bags hung out of the rats' reach: the stores stay dry, on a smaller scale.</p>"
+    }
+  },
+  "installations/EGKmpDR3PXOfTWQu": {
+    "_nom": "Salle verte",
+    "name": {
+      "fr": "Salle verte",
+      "en": "Green hall"
+    },
+    "system.description": {
+      "fr": "<p>Une tonnelle de bambou couverte de palmes et de feuilles de vacoa, dressée pour les fêtes, les mariages et les veillées, comme dans les cours d'avant. On y mange, on y danse, on y pleure aussi. Elle se voit, et le vent la défait.</p>",
+      "en": "<p>A bamboo arbour covered with palms and screwpine leaves, put up for feasts, weddings and wakes, as in the yards of old. You eat there, dance there, cry there too. It can be seen, and the wind undoes it.</p>"
     }
   },
   "installations/EN4DMaHD7lvjWzip": {
@@ -164,6 +230,17 @@
       "en": "<p>A small stone basin at the spring or in the ravine, a strainer, a pipe running down by gravity to the shelter. That is how the îlets of Mafate live: the water comes on its own, without pump or power.</p>"
     }
   },
+  "installations/F42H68le6M9ps7h7": {
+    "_nom": "Passerelle relevée",
+    "name": {
+      "fr": "Passerelle relevée",
+      "en": "Raised footbridge"
+    },
+    "system.description": {
+      "fr": "<p>Le seul passage au-dessus du fossé : quelques bambous liés, une corde qui passe sur une fourche. Le soir, on la relève, et l'abri devient une île. Les Livides s'arrêtent au bord, se pressent, et s'en prennent à ce qui reste de l'entrée.</p>",
+      "en": "<p>The only way over the ditch: a few lashed bamboos, a rope running over a forked post. At night you raise it, and the shelter becomes an island. The Pallid stop at the edge, crowd there, and go for what is left of the entrance.</p>"
+    }
+  },
   "installations/FMOhBO04FGLDnr7Y": {
     "_nom": "Groupe électrogène",
     "name": {
@@ -173,6 +250,28 @@
     "system.description": {
       "fr": "<p>Du courant à la demande, beaucoup, tout de suite. Il boit du carburant qui ne reviendra jamais, et il s'entend à un kilomètre.</p>",
       "en": "<p>Power on demand, plenty of it, right now. It drinks fuel that will never come back, and it can be heard a kilometre away.</p>"
+    }
+  },
+  "installations/HIMBcFt1PaivKFnx": {
+    "_nom": "Claies de séchage",
+    "name": {
+      "fr": "Claies de séchage",
+      "en": "Drying racks"
+    },
+    "system.description": {
+      "fr": "<p>Des claies de bambou sur des tréteaux, au soleil : les zerbaz, les piments, le café, les graines y sèchent sans moisir. On garde ainsi bien plus de brassées qu'il n'en tient dans la case.</p>",
+      "en": "<p>Bamboo racks on trestles, in the sun: herbs, chillies, coffee, seeds dry there without moulding. That way you keep far more armfuls than fit in the house.</p>"
+    }
+  },
+  "installations/IKyHRiK5fUD91HUj": {
+    "_nom": "Four à pain",
+    "name": {
+      "fr": "Four à pain",
+      "en": "Bread oven"
+    },
+    "system.description": {
+      "fr": "<p>Une voûte de pierre et d'argile qu'on chauffe au bois pendant une matinée : pain de manioc, gâteau patate, gâteau maïs. L'odeur du pain chaud fait plus pour un groupe qu'un discours. Elle se sent aussi de loin.</p>",
+      "en": "<p>A vault of stone and clay heated with wood for a whole morning: cassava bread, sweet potato cake, maize cake. The smell of warm bread does more for a group than a speech. It can be smelt from afar too.</p>"
     }
   },
   "installations/IatwRrcpMBVu3AGv": {
@@ -186,6 +285,28 @@
       "en": "<p>Banana and papaya trees first, which bear within the year; then mango, lychee, citrus, breadfruit, which take years to bear, unless you settle where someone planted them before you.</p>"
     }
   },
+  "installations/IzfhQTbquhyrZ60s": {
+    "_nom": "Roue à aubes",
+    "name": {
+      "fr": "Roue à aubes",
+      "en": "Water wheel"
+    },
+    "system.description": {
+      "fr": "<p>Une roue de planches dans le courant de la ravine, un axe, une courroie, l'alternateur d'une voiture : deux unités de courant par jour, jour et nuit, tant que l'eau coule. Les feuilles et les branches la bloquent vite ; à sec ou en crue, elle s'arrête.</p>",
+      "en": "<p>A plank wheel in the ravine's current, an axle, a belt, a car alternator: two units of power a day, day and night, as long as the water flows. Leaves and branches block it fast; dry or in flood, it stops.</p>"
+    }
+  },
+  "installations/JHSLpHnXKHVyqyHT": {
+    "_nom": "Boucan",
+    "name": {
+      "fr": "Boucan",
+      "en": "Boucan"
+    },
+    "system.description": {
+      "fr": "<p>La paillote où l'on cuisine, avec sa claie au-dessus du feu : la viande, le poisson et les piments s'y boucanent des jours durant et ne se gâtent plus. Elle ne coûte que de la paille et des gaulettes ; la pluie use le torchis, le vent l'emporte au premier cyclone.</p>",
+      "en": "<p>The thatched hut where you cook, with its rack above the fire: meat, fish and chillies are smoked there for days on end and no longer spoil. It costs only straw and saplings; the rain wears the cob, the wind takes it at the first cyclone.</p>"
+    }
+  },
   "installations/KFvjhfTm3pdFH5ZD": {
     "_nom": "Feuillées",
     "name": {
@@ -195,6 +316,17 @@
     "system.description": {
       "fr": "<p>Une tranchée creusée à l'écart et sous le vent, un paravent de feuilles de vacoa, un seau de cendre et une pelle : une poignée de cendre après chaque passage, et l'on rebouche quand c'est plein, un peu plus loin. Ce que faisaient les anciens dans les écarts, et les soldats partout.</p>",
       "en": "<p>A trench dug out of the way and downwind, a screen of vacoa leaves, a bucket of ash and a shovel: a handful of ash after each visit, and when it's full you fill it in and dig a little further on. What the old folk did in the remote hamlets, and soldiers everywhere.</p>"
+    }
+  },
+  "installations/KTwoXA2Pn87nXQq6": {
+    "_nom": "Enceinte de palettes",
+    "name": {
+      "fr": "Enceinte de palettes",
+      "en": "Pallet enclosure"
+    },
+    "system.description": {
+      "fr": "<p>Des palettes de chantier dressées et clouées entre elles, calées par des piquets : une clôture en un jour, avec ce que les entrepôts du port et des zones ont laissé. Elle tient moins qu'une palissade, et pourrit vite à la pluie.</p>",
+      "en": "<p>Building-site pallets stood up and nailed to each other, wedged by stakes: a fence in a day, with what the warehouses of the port and the business parks left behind. It holds less than a stockade, and rots fast in the rain.</p>"
     }
   },
   "installations/L6yjHk9jweGRmc2Y": {
@@ -217,6 +349,17 @@
     "system.description": {
       "fr": "<p>Une pompe à bras sur le puits, ou une pompe de récupération remontée à la main : vingt minutes de bras le matin, de l'eau pour la journée.</p>",
       "en": "<p>A hand pump on the well, or a salvaged pump reassembled by hand: twenty minutes of arm work in the morning, water for the day.</p>"
+    }
+  },
+  "installations/NQriicwxAdQfOTAT": {
+    "_nom": "Chemin de ronde",
+    "name": {
+      "fr": "Chemin de ronde",
+      "en": "Wall walk"
+    },
+    "system.description": {
+      "fr": "<p>Un plancher de planches sur des poteaux, le long de la palissade, à hauteur d'homme au-dessus du sol, et une échelle qu'on remonte. De là-haut, on frappe par-dessus avec une lance ou une barre. Un Livide ne monte pas à l'échelle : il ne peut pas frapper qui se tient au-dessus de lui, alors il s'en prend aux poteaux.</p>",
+      "en": "<p>A floor of planks on posts along the stockade, a man's height above the ground, and a ladder you pull up. From up there you strike down with a spear or a bar. The Pallid do not climb ladders: they cannot hit whoever stands above them, so they go for the posts.</p>"
     }
   },
   "installations/OBOMpYK7tFolQcYZ": {
@@ -285,6 +428,17 @@
       "en": "<p>A tunnel of plastic or salvaged panes over hoops: sheltered from the driving rains of the East and the cold of the Highlands, tomatoes, lettuces and seedlings grow all year round. The plastic shines in the sun.</p>"
     }
   },
+  "installations/TjrH5za1ONmADZD9": {
+    "_nom": "Lits de bois",
+    "name": {
+      "fr": "Lits de bois",
+      "en": "Wooden beds"
+    },
+    "system.description": {
+      "fr": "<p>Des cadres de planches sanglés de corde, hors du sol : on y dort mieux, loin des scolopendres et de l'eau qui court par terre les nuits d'averse.</p>",
+      "en": "<p>Plank frames strung with rope, off the ground: you sleep better there, away from the centipedes and the water that runs across the floor on stormy nights.</p>"
+    }
+  },
   "installations/USvYYsn77JVCHiKr": {
     "_nom": "Étagère aux cahiers",
     "name": {
@@ -307,6 +461,17 @@
       "en": "<p>The house garden, where everything grows together: banana trees for shade, chayote on the trellis, taro, cassava, sweet potatoes, brèdes (leafy greens), and the zerbaz (healing herbs) along the fence. You plant it from cuttings and mulch it; it drinks little, looks like an abandoned yard, and yields less than a neatly lined vegetable garden.</p>"
     }
   },
+  "installations/VLPzaekC3fBVIZlL": {
+    "_nom": "Abri à matériaux",
+    "name": {
+      "fr": "Abri à matériaux",
+      "en": "Materials shed"
+    },
+    "system.description": {
+      "fr": "<p>Un toit de tôle sur quatre poteaux : planches, tôles, parpaings, sacs de ciment et rouleaux de grillage y restent au sec et rangés, au lieu de rouiller dans la cour.</p>",
+      "en": "<p>A sheet-metal roof on four posts: planks, sheets, breeze blocks, cement bags and rolls of mesh stay dry and tidy there, instead of rusting in the yard.</p>"
+    }
+  },
   "installations/VVjNtIGqchisVLlL": {
     "_nom": "Conduite de bambou",
     "name": {
@@ -316,6 +481,17 @@
     "system.description": {
       "fr": "<p>Un petit barrage de pierres à la source, et des bambous emboîtés, calés sur des fourches, qui descendent jusqu'à la case. L'eau arrive seule ; il en fuit un peu à chaque joint, et une chèvre peut tout défaire.</p>",
       "en": "<p>A small stone dam at the spring, and bamboo pipes fitted end to end, propped on forked sticks, running down to the house. The water arrives on its own; a little leaks at every joint, and a goat can undo it all.</p>"
+    }
+  },
+  "installations/Vf5LFaJplPPSsSKi": {
+    "_nom": "Puits creusé",
+    "name": {
+      "fr": "Puits creusé",
+      "en": "Dug well"
+    },
+    "system.description": {
+      "fr": "<p>Creusé à la pioche et à la barre à mine jusqu'à la nappe, cuvelé de galets à mesure qu'on descend, avec un seau et une corde. Là où il n'y a ni source ni ravine, c'est de l'eau tous les jours de l'année, à remonter à bras et à faire bouillir. Au second niveau, une margelle et un treuil.</p>",
+      "en": "<p>Dug with pick and crowbar down to the water table, lined with river stones as you go down, with a bucket and a rope. Where there is neither spring nor ravine, it is water every day of the year, to be hauled up by hand and boiled. At the second level, a rim and a windlass.</p>"
     }
   },
   "installations/VqIUYVmL1LYQrgrT": {
@@ -362,6 +538,17 @@
       "en": "<p>A ditch dug in front of the fence, sharpened stakes at the bottom, wires strung with tin cans, trapdoors on the passages. The Pallid fall in; the living, for their part, soon learn to avoid them.</p>"
     }
   },
+  "installations/XSgzDQAK2YyHBQMf": {
+    "_nom": "Tableau des corvées",
+    "name": {
+      "fr": "Tableau des corvées",
+      "en": "Chore board"
+    },
+    "system.description": {
+      "fr": "<p>Une planche clouée près de la porte et un bout de charbon : qui va à l'eau, qui garde cette nuit, qui fait le cari. Ce qui est écrit se discute moins ; ce qui se discute encore, on l'efface et on recommence.</p>",
+      "en": "<p>A plank nailed by the door and a stick of charcoal: who goes for water, who keeps watch tonight, who makes the curry. What is written gets argued less; what still gets argued, you rub out and start again.</p>"
+    }
+  },
   "installations/XZOEuvGQ94TT5o5F": {
     "_nom": "Poste radio",
     "name": {
@@ -395,6 +582,28 @@
       "en": "<p>A pen and a shelter for a few goats: milk, kids, meat for a cari, manure for the vegetable plot. They eat anything, and escape the moment you look away.</p>"
     }
   },
+  "installations/YV6QqQ5VnXFjFLqE": {
+    "_nom": "Haie de choka",
+    "name": {
+      "fr": "Haie de choka",
+      "en": "Choka hedge"
+    },
+    "system.description": {
+      "fr": "<p>Des pieds de choka plantés serrés le long de la clôture, leurs feuilles armées d'épines tournées vers l'extérieur. Il faut six mois pour qu'elle ferme ; ensuite elle se garde seule, arrête ce qui marche sans regarder, et sa taille donne de la fibre à tresser (des matières de l'île). Elle prend la place des barricades quand celles-ci tombent.</p>",
+      "en": "<p>Choka plants set close along the fence, their thorn-armed leaves turned outward. It takes six months to close; after that it guards itself, stops whatever walks without looking, and its trimmings give fibre to plait (materials from the island). It takes the barricades' place when they fall.</p>"
+    }
+  },
+  "installations/Z0PC2WDxh564EYY7": {
+    "_nom": "Râtelier à bois",
+    "name": {
+      "fr": "Râtelier à bois",
+      "en": "Wood rack"
+    },
+    "system.description": {
+      "fr": "<p>Deux rangs de piquets où l'on couche les troncs, les poutres et les bambous hors de la boue, à l'abri des termites. Au second niveau, un toit de tôle : les planches aussi y tiennent.</p>",
+      "en": "<p>Two rows of stakes where logs, beams and bamboo are laid out of the mud, safe from termites. At the second level, a sheet-metal roof: planks keep there too.</p>"
+    }
+  },
   "installations/Z6uJJGVCncMXJbN5": {
     "_nom": "Autel des morts",
     "name": {
@@ -417,6 +626,17 @@
       "en": "<p>Beds of brèdes (leaf greens), taro, sweet potatoes, cassava, beans, chayotes and chillies. The first crop of greens comes quickly; the rest follows. A vegetable plot can be seen, and it drinks.</p>"
     }
   },
+  "installations/ZwY2A7AUi0MliQhI": {
+    "_nom": "Lampes à huile",
+    "name": {
+      "fr": "Lampes à huile",
+      "en": "Oil lamps"
+    },
+    "system.description": {
+      "fr": "<p>Trois petites flammes dans des boîtes de conserve, une mèche de coton, de l'huile de bancoul ou de coco pressée à la main : la lumière des veillées. Il faut refaire de l'huile chaque semaine. Elles se voient par les fentes.</p>",
+      "en": "<p>Three small flames in tin cans, a cotton wick, candlenut or coconut oil pressed by hand: the light of the evening gatherings. Oil has to be made again every week. They show through the cracks.</p>"
+    }
+  },
   "installations/aPUo41aJLtwNcuNQ": {
     "_nom": "Puits à balancier",
     "name": {
@@ -428,6 +648,72 @@
       "en": "<p>A long wooden pole on a forked post, a stone at one end as a counterweight, a bucket at the other: you draw water without pump or parts, at the cost of a few more trips.</p>"
     }
   },
+  "installations/ap0b2fkYanPlcIqS": {
+    "_nom": "Grande table",
+    "name": {
+      "fr": "Grande table",
+      "en": "Long table"
+    },
+    "system.description": {
+      "fr": "<p>Une table où tout l'abri tient en même temps, deux bancs : on y mange ensemble, on y règle ce qui doit se régler, on y joue aux dominos le soir. Ce qui se dit autour d'une table se dit autrement.</p>",
+      "en": "<p>A table where the whole shelter fits at once, two benches: you eat together there, settle what has to be settled, play dominoes in the evening. What is said around a table is said differently.</p>"
+    }
+  },
+  "installations/b0COj4WAYlPfCueR": {
+    "_nom": "Meurtrière de basalte",
+    "name": {
+      "fr": "Meurtrière de basalte",
+      "en": "Basalt loophole"
+    },
+    "system.description": {
+      "fr": "<p>Une fente étroite ménagée dans un mur de pierres, évasée vers l'intérieur : on voit dehors sans être vu, on tire sans être atteint. Il faut savoir monter la pierre pour qu'elle tienne autour du vide.</p>",
+      "en": "<p>A narrow slit left in a stone wall, splayed towards the inside: you see out without being seen, you shoot without being reached. You need to know how to lay stone for it to hold around the gap.</p>"
+    }
+  },
+  "installations/buM4ANICgORgk41b": {
+    "_nom": "Cuve en hauteur",
+    "name": {
+      "fr": "Cuve en hauteur",
+      "en": "Raised tank"
+    },
+    "system.description": {
+      "fr": "<p>Des fûts sur une charpente, plus haut que le toit, remplis par la citerne : l'eau descend seule jusqu'à la cuisine et à la douche. On ouvre un robinet, et c'est un peu de l'ancienne vie qui revient.</p>",
+      "en": "<p>Drums on a frame, higher than the roof, filled by the cistern: water runs down on its own to the kitchen and the shower. You open a tap, and a little of the old life comes back.</p>"
+    }
+  },
+  "installations/cHDUZpTdKanCvJN8": {
+    "_nom": "Herse à contrepoids",
+    "name": {
+      "fr": "Herse à contrepoids",
+      "en": "Counterweight portcullis"
+    },
+    "system.description": {
+      "fr": "<p>La porte de l'enceinte : une grille de fers à béton et de tôle qu'un fût rempli de pierres fait remonter, et qu'on laisse retomber d'un coup de couteau dans la corde. Plus lourde qu'un portail, elle ne s'ouvre pas en poussant ; les Livides s'acharnent sur elle, toujours, et c'est elle qu'on répare.</p>",
+      "en": "<p>The gate of the enclosure: a grid of rebar and sheet metal that a drum full of stones lifts, and that drops at one cut of a knife through the rope. Heavier than a gate, it does not open when pushed; the Pallid always go at it, and it is the thing you repair.</p>"
+    }
+  },
+  "installations/eDicj6Dh0be3Dpdh": {
+    "_nom": "Enceinte d'épaves",
+    "name": {
+      "fr": "Enceinte d'épaves",
+      "en": "Wreck enclosure"
+    },
+    "system.description": {
+      "fr": "<p>Des carcasses de voitures poussées roues contre roues, les vides bouchés de tôles et de grillage. Il faut une route pleine d'épaves à côté, et des bras pour les pousser. Elle arrête bien ; elle se voit de très loin, et elle claque sous le vent.</p>",
+      "en": "<p>Car wrecks pushed wheel to wheel, the gaps stopped with sheet metal and wire mesh. You need a road full of wrecks nearby, and arms to push them. It stops things well; it can be seen from very far, and it bangs in the wind.</p>"
+    }
+  },
+  "installations/eGfAF6xhloueaHGr": {
+    "_nom": "Pompe électrique",
+    "name": {
+      "fr": "Pompe électrique",
+      "en": "Electric pump"
+    },
+    "system.description": {
+      "fr": "<p>Le moteur d'une machine à laver ou d'une pompe de piscine, une crépine, des tuyaux : sur le courant de l'abri, elle remonte l'eau du puits ou de la ravine sans un geste. Sans courant, la pompe à bras reprend le travail. Sa crépine se bouche vite.</p>",
+      "en": "<p>The motor of a washing machine or a pool pump, a strainer, pipes: on the shelter's power, it lifts water from the well or the ravine without lifting a finger. Without power, the hand pump takes over. Its strainer clogs fast.</p>"
+    }
+  },
   "installations/fFPNjbJ5DsEO1eJH": {
     "_nom": "Ruches",
     "name": {
@@ -437,6 +723,17 @@
     "system.description": {
       "fr": "<p>Quelques ruches d'abeilles, au bord du verger ou sous les baies roses : du miel de letchi ou de forêt, de la cire pour les bougies, et des fleurs qui donnent mieux. Le miel soigne les plaies.</p>",
       "en": "<p>A few beehives, at the edge of the orchard or under the Brazilian pepper trees: lychee or forest honey, wax for candles, and flowers that bear better. Honey heals wounds.</p>"
+    }
+  },
+  "installations/fLa730lpUtSOqDaY": {
+    "_nom": "Chausse-trapes de bambou",
+    "name": {
+      "fr": "Chausse-trapes de bambou",
+      "en": "Bamboo caltrops"
+    },
+    "system.description": {
+      "fr": "<p>Des pointes de bambou durcies au feu, plantées de biais dans l'herbe des passages. Un Livide qui marche droit s'y prend les pieds, trébuche, se relève plus lentement. Un vivant qui regarde où il pose le pied les voit ; il faut les refaire après la pluie.</p>",
+      "en": "<p>Fire-hardened bamboo spikes driven slantwise into the grass of the paths. One of the Pallid walking straight catches its feet, stumbles, gets up more slowly. The living who watch where they step can see them; they need redoing after the rain.</p>"
     }
   },
   "installations/fi4tkZW6qrrHZ6LN": {
@@ -470,6 +767,28 @@
     "system.description": {
       "fr": "<p>Le capteur et le ballon d'un toit de l'Ouest, démontés et remontés : une douche chaude chaque soir de soleil, de l'eau chaude pour laver les plaies. Le capteur brille sur le toit.</p>",
       "en": "<p>The collector and tank from a roof in the West, taken down and put back up: a hot shower every sunny evening, hot water to wash wounds. The collector shines on the roof.</p>"
+    }
+  },
+  "installations/gG7PtufinaywBfZN": {
+    "_nom": "Remise à recharge",
+    "name": {
+      "fr": "Remise à recharge",
+      "en": "Charging shed"
+    },
+    "system.description": {
+      "fr": "<p>Un abri de tôle câblé sur les batteries, un régulateur de charge : le petit utilitaire électrique s'y recharge la nuit. Elle boit le courant de l'abri ; on l'éteint quand rien ne charge.</p>",
+      "en": "<p>A sheet-metal shed wired to the batteries, a charge controller: the small electric utility vehicle recharges there at night. It drinks the shelter's power; switch it off when nothing is charging.</p>"
+    }
+  },
+  "installations/iFCOrRoyAwhQ1jCG": {
+    "_nom": "Bassin de pierre",
+    "name": {
+      "fr": "Bassin de pierre",
+      "en": "Stone basin"
+    },
+    "system.description": {
+      "fr": "<p>Un bassin maçonné à l'argile, au pied du toit ou de la conduite, pour garder l'eau des jours de pluie. Au second niveau, des joints à la chaux : il ne fuit plus.</p>",
+      "en": "<p>A basin built with clay at the foot of the roof or the pipe, to keep the water of rainy days. At the second level, lime joints: it no longer leaks.</p>"
     }
   },
   "installations/jzUqENvDVDDGNEUc": {
@@ -516,6 +835,17 @@
       "en": "<p>A hut of split planks and bamboo, a seat, a drum underneath and ash: nothing goes into the water, and the full drum, left to ripen for a season, ends up as compost for the garden.</p>"
     }
   },
+  "installations/lsJBp7qgU5u1OAM6": {
+    "_nom": "Cellier de pierre",
+    "name": {
+      "fr": "Cellier de pierre",
+      "en": "Stone cellar"
+    },
+    "system.description": {
+      "fr": "<p>Une petite pièce à demi enterrée, aux murs de pierre épais, une porte basse : il y fait frais même en février, les vivres s'y gardent. Rien n'y entre que la main qui sait où chercher.</p>",
+      "en": "<p>A small half-buried room, with thick stone walls and a low door: it stays cool even in February, and food keeps there. Nothing goes in but the hand that knows where to look.</p>"
+    }
+  },
   "installations/n59ATbBBwwblZoOm": {
     "_nom": "Lavoir",
     "name": {
@@ -525,6 +855,28 @@
     "system.description": {
       "fr": "<p>Une pierre à laver penchée sur un bassin de galets jointoyés d'argile, au bord de l'eau ou sous la citerne : on y lave le linge, on s'y lave, on y parle. Le linge bouilli à la cendre ne garde pas la gale.</p>",
       "en": "<p>A washing stone leaning over a basin of pebbles set in clay, by the water or under the cistern: you wash the laundry there, you wash yourself there, you talk there. Linen boiled with ash doesn't keep scabies.</p>"
+    }
+  },
+  "installations/nWmf7ScJpm81BHNE": {
+    "_nom": "Four à chaux",
+    "name": {
+      "fr": "Four à chaux",
+      "en": "Lime kiln"
+    },
+    "system.description": {
+      "fr": "<p>Une tour de pierres sèches qu'on remplit de coquillages, de débris de corail mort ramassés sur la plage et de bois, et qu'on fait cuire un jour et une nuit. Il en sort de la chaux, qui fait le mortier et le badigeon : de quoi bâtir sans ciment. Sa fumée blanche monte droit et se voit de toute la côte.</p>",
+      "en": "<p>A dry-stone tower filled with shells, bits of dead coral picked up on the beach and wood, fired for a day and a night. Out comes lime, which makes mortar and whitewash: enough to build without cement. Its white smoke rises straight and can be seen along the whole coast.</p>"
+    }
+  },
+  "installations/pAOIsxcqT6RfFRCQ": {
+    "_nom": "Douves",
+    "name": {
+      "fr": "Douves",
+      "en": "Moat"
+    },
+    "system.description": {
+      "fr": "<p>Un fossé profond creusé autour de l'abri et rempli par une dérivation de la ravine, une vanne de planches pour régler l'eau. Un Livide y tombe et n'en ressort pas seul ; les vivants passent par la passerelle. L'eau qui dort amène les moustiques : il faut la faire courir, et curer le fond.</p>",
+      "en": "<p>A deep ditch dug around the shelter and filled by a channel off the ravine, a gate of planks to set the water. One of the Pallid falls in and does not climb out alone; the living cross by the footbridge. Still water brings mosquitoes: it has to run, and the bottom has to be dredged.</p>"
     }
   },
   "installations/r8pqEpTGmoECFVA1": {
@@ -582,6 +934,39 @@
       "en": "<p>A guyed mast, a wire strung between two trees or a repurposed satellite dish: the radio reaches across the whole island. It can be seen from afar too.</p>"
     }
   },
+  "installations/vlPjRlOdfus6f00P": {
+    "_nom": "Foyer à trois roches",
+    "name": {
+      "fr": "Foyer à trois roches",
+      "en": "Three-stone hearth"
+    },
+    "system.description": {
+      "fr": "<p>Trois galets de ravine, une marmite dessus, du bois dessous : la cuisine de toujours, celle des boucans et des cours. Elle fume beaucoup et se voit de loin ; elle ne casse jamais.</p>",
+      "en": "<p>Three river stones, a pot on top, wood underneath: the cooking of always, that of the boucans and the yards. It smokes a lot and can be seen from afar; it never breaks.</p>"
+    }
+  },
+  "installations/w9fGm0UyGlEIuH2s": {
+    "_nom": "Remise à charrettes",
+    "name": {
+      "fr": "Remise à charrettes",
+      "en": "Cart shed"
+    },
+    "system.description": {
+      "fr": "<p>Un toit de chaume sur des poteaux, assez haut pour une charrette chargée : les charrettes, le chariot, le motoculteur et leurs remorques y restent au sec, et l'huile de leurs essieux ne part pas avec la pluie.</p>",
+      "en": "<p>A thatched roof on posts, high enough for a loaded cart: the carts, the trolley, the walking tractor and their trailers stay dry there, and the oil on their axles does not wash off in the rain.</p>"
+    }
+  },
+  "installations/wBJLnYSkj5EjA6I0": {
+    "_nom": "Touffe de bambous",
+    "name": {
+      "fr": "Touffe de bambous",
+      "en": "Bamboo clump"
+    },
+    "system.description": {
+      "fr": "<p>Quelques pieds de bambou plantés près de l'eau, au fond de la cour. Pendant six mois, rien ; ensuite, on ne manque plus de cannes pour les gouttières, les claies, les palissades. Le bambou plie au cyclone et repousse.</p>",
+      "en": "<p>A few bamboo plants set near the water, at the back of the yard. For six months, nothing; after that, you never lack canes for gutters, racks, palisades. Bamboo bends in a cyclone and grows back.</p>"
+    }
+  },
   "installations/wFRx3HFMJvXoj0WG": {
     "_nom": "Compost",
     "name": {
@@ -602,6 +987,39 @@
     "system.description": {
       "fr": "<p>Une plateforme de gaulettes dans la fourche d'un manguier ou d'un tamarin, une échelle de corde qu'on remonte : la garde voit loin, cachée dans le feuillage. Rien de plus, et c'est déjà beaucoup.</p>",
       "en": "<p>A platform of poles in the fork of a mango or tamarind tree, a rope ladder you pull up after you: the watch sees far, hidden in the foliage. Nothing more, and that is already a lot.</p>"
+    }
+  },
+  "installations/xE6yKImYTeDDlKbn": {
+    "_nom": "Remise à vélos",
+    "name": {
+      "fr": "Remise à vélos",
+      "en": "Bicycle shed"
+    },
+    "system.description": {
+      "fr": "<p>Un auvent de tôle et des crochets au mur : les vélos, le vélo-cargo et les remorques à l'abri de la pluie et du sel.</p>",
+      "en": "<p>A sheet-metal awning and hooks on the wall: the bicycles, the cargo bike and the trailers out of the rain and the salt.</p>"
+    }
+  },
+  "installations/xNTK57vXv2JG4gt9": {
+    "_nom": "Portail de bois dur",
+    "name": {
+      "fr": "Portail de bois dur",
+      "en": "Hardwood gate"
+    },
+    "system.description": {
+      "fr": "<p>Deux battants de tamarin ou de bois de natte, chevillés, fermés par une barre qu'il faut deux bras pour lever. Le portail des vieilles cours, refait avec ce qui pousse autour. Il arrête ce qui frappe, et c'est sur lui qu'on frappe.</p>",
+      "en": "<p>Two leaves of tamarind or bois de natte, pegged together, closed by a bar it takes two arms to lift. The gate of the old yards, made again from what grows around. It stops what strikes, and it is what gets struck.</p>"
+    }
+  },
+  "installations/z3IiPrqxZWc6vvbx": {
+    "_nom": "Cloche d'alarme",
+    "name": {
+      "fr": "Cloche d'alarme",
+      "en": "Alarm bell"
+    },
+    "system.description": {
+      "fr": "<p>Un bout de rail, une jante ou une tôle épaisse pendue à une potence, et une barre de fer à côté. Tout l'abri l'entend d'un coup, même ceux qui dorment. Les environs aussi : on ne la frappe que quand il le faut.</p>",
+      "en": "<p>A length of rail, a wheel rim or a thick sheet of metal hung from a gallows, with an iron bar beside it. The whole shelter hears it at once, even the sleepers. So does the neighbourhood: you only strike it when you must.</p>"
     }
   },
   "installations/zOYAZvwAMgTY3d6b": {

@@ -1,0 +1,91 @@
+{
+  "_id": "IzfhQTbquhyrZ60s",
+  "_key": "!items!IzfhQTbquhyrZ60s",
+  "name": "Roue à aubes",
+  "type": "installation",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "cle": "roue-a-aubes",
+    "categorie": "energie",
+    "description": "<p>Une roue de planches dans le courant de la ravine, un axe, une courroie, l'alternateur d'une voiture : deux unités de courant par jour, jour et nuit, tant que l'eau coule. Les feuilles et les branches la bloquent vite ; à sec ou en crue, elle s'arrête.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 12
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 3,
+          "pieces": 2,
+          "graines": 0,
+          "travail": 12
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [
+              "riviere"
+            ],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "energie": 2
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": true,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "bras": null
+        },
+        "entretien": {
+          "tousLes": 6,
+          "travail": 1,
+          "encrassement": 0.7,
+          "arret": true,
+          "panne": 0.006
+        }
+      }
+    ],
+    "materiau": "bois-sous-tole"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "roue-a-aubes"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}
