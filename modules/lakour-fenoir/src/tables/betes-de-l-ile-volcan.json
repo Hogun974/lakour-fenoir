@@ -1,0 +1,118 @@
+{
+  "_id": "vtd7X3KJ3BckHBVI",
+  "_key": "!tables!vtd7X3KJ3BckHBVI",
+  "name": "Les bêtes de l'île — le volcan",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on croise dans les landes et les pâturages du volcan. Peu de choses.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "betes-de-l-ile-volcan",
+      "vivant": "betes-de-l-ile-volcan"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "CRKr6tUHcvJJgUuy",
+      "_key": "!tables.results!vtd7X3KJ3BckHBVI.CRKr6tUHcvJJgUuy",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien : le vent, la scorie, les nuages qui passent au ras du sol.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Atno8kN4FPZgusfI",
+      "_key": "!tables.results!vtd7X3KJ3BckHBVI.Atno8kN4FPZgusfI",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux bœufs moka égarés dans la lande, très maigres.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "JunJvuT29p6LmXSV",
+      "_key": "!tables.results!vtd7X3KJ3BckHBVI.JunJvuT29p6LmXSV",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois cabris marrons dans les remparts.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "l8X9l6JsoUS9ZJWr",
+      "_key": "!tables.results!vtd7X3KJ3BckHBVI.l8X9l6JsoUS9ZJWr",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien, sinon une carcasse de bœuf, ancienne : d'autres sont passés avant vous.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "9Hurnu7pQYbaST3o",
+      "_key": "!tables.results!vtd7X3KJ3BckHBVI.9Hurnu7pQYbaST3o",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un essaim dans un mur de pierres sèches d'une ancienne bergerie.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "hSeZv4mhYkAoiREy",
+      "_key": "!tables.results!vtd7X3KJ3BckHBVI.hSeZv4mhYkAoiREy",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des traces de cabris jusqu'à une vasque d'eau de pluie.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

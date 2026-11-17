@@ -16,6 +16,7 @@ import { COMPETENCES, MODULE, sansBalises } from "../modules/lakour-fenoir/conte
 import { FETES_FENOIR, FETES_HORS_SOCLE, declinaisons, fetesDuJour, IMAGES_FETES, estHorsSocle } from "../modules/lakour-fenoir/scripts/fetes.js";
 import { IDS_DECLINABLES, IDS_SUR_DEMANDE, fetesDuJour as calendrierDuSocle, normaliserDeclinaison } from "../modules/lakour-mj-ia/scripts/fetes-logique.js";
 import { BRAS } from "../modules/lakour-fenoir/contenu/installations.mjs";
+import { BRAS_VIVANT } from "../modules/lakour-fenoir/contenu/vivant.mjs";
 import { verifierModuleDeContenu } from "../modules/lakour-mj-ia/outils/contrat-contenu.mjs";
 
 const RACINE = new URL("../modules/lakour-fenoir/", import.meta.url);
@@ -411,7 +412,8 @@ test("fêtes à la date de JEU : le calendrier du socle, déclinaisons de Fénoi
 
 test("créatures au registre (famille lue par la logique du système) et bras des installations (§10.3)", async t => {
   const humains = D.bestiaire.filter(b => b.categorie === "humain").map(b => b.cle);
-  assert.deepEqual(D.creatures.map(c => c.cle).sort(), D.bestiaire.filter(b => b.categorie !== "humain").map(b => b.cle).sort());
+  // Les bêtes en liberté (lot 8, catégorie « bete ») fuient : ni humaines, ni créatures que la logique fait combattre.
+  assert.deepEqual(D.creatures.map(c => c.cle).sort(), D.bestiaire.filter(b => !["humain", "bete"].includes(b.categorie)).map(b => b.cle).sort());
   for (const c of D.creatures) {
     const b = par("bestiaire", c.cle);
     assert.equal(c.type, b.categorie); assert.equal(c.des, b.des); assert.equal(c.resistance, b.resistance);
@@ -423,7 +425,7 @@ test("créatures au registre (famille lue par la logique du système) et bras de
   attendre(verifierDonnees(sansType), /type « humain »/);
   // Bras : la forme du contrat, effets.bras: { tache, nombre } sur chaque niveau, celle que lit logique/abri.mjs en premier.
   for (const i of D.installations) for (const n of i.niveaux) {
-    const b = BRAS[i.cle];
+    const b = BRAS[i.cle] ?? (BRAS_VIVANT[i.cle] ? { tache: BRAS_VIVANT[i.cle] } : null);
     if (!b) { assert.equal(n.effets.bras, null, i.cle); continue; }
     assert.deepEqual(Object.keys(n.effets.bras).sort(), ["nombre", "tache"], i.cle);
     assert.equal(n.effets.bras.tache, b.tache);

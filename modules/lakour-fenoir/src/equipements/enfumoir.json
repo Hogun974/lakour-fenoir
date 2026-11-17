@@ -1,0 +1,36 @@
+{
+  "_id": "zZHhQqluot84qGTD",
+  "_key": "!items!zZHhQqluot84qGTD",
+  "name": "Enfumoir",
+  "type": "equipement",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "cle": "enfumoir",
+    "categorie": "outil",
+    "description": "<p>Une boîte de conserve, un soufflet de chambre à air, de la paille de vétiver qui fume : l'essaim s'endort, on le prend sans être piqué.</p>",
+    "bonus": {},
+    "charge": 1,
+    "usure": 0,
+    "munitions": null,
+    "bruit": 0,
+    "transport": null,
+    "effets": null,
+    "marque": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "enfumoir"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

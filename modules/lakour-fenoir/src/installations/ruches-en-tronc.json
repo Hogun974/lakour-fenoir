@@ -61,6 +61,12 @@
           "bras": {
             "tache": "elevage",
             "nombre": 1
+          },
+          "vivant": {
+            "espece": "essaim",
+            "places": 1,
+            "plein": 1,
+            "depart": 1
           }
         }
       }

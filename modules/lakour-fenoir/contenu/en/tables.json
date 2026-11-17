@@ -527,6 +527,41 @@
       "en": "<p>A post office and its uncollected parcels.</p>"
     }
   },
+  "tables/4WIFytKTQ2aHKJN8": {
+    "_nom": "Les bêtes de l'île — le littoral",
+    "name": {
+      "fr": "Les bêtes de l'île — le littoral",
+      "en": "Animals of the island — the coast"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on croise en battant les cultures, la canne et les écarts des Bas. Une bête en liberté se prend (test de survie avec l'outil de son espèce : cage, sac de goni, corde) ou se chasse ; ratée, elle file, et les autres avec.</p>",
+      "en": "<p>What you come across combing the fields, the cane and the outlying hamlets of the Lowlands. An animal running free can be caught (a Survival test with its species' tool: cage, goni sack, rope) or hunted; missed, it bolts, and the others with it.</p>"
+    },
+    "results.PoxNm1QHRXW99Gud.description": {
+      "fr": "<p>Rien, sinon des traces de pattes dans la boue d'un chemin de canne.</p>",
+      "en": "<p>Nothing, except paw prints in the mud of a cane track.</p>"
+    },
+    "results.9AcQXggDLTNBZqBd.description": {
+      "fr": "<p>Une poule marronne et ses poussins, au bord d'un champ de canne (une poule, trois poussins qui suivront la mère).</p>",
+      "en": "<p>A feral hen and her chicks, at the edge of a cane field (one hen, three chicks that will follow the mother).</p>"
+    },
+    "results.qD7vyAuWs5w7dpEt.description": {
+      "fr": "<p>Cinq poules et un coq dans le manguier d'une cour vide, au crépuscule : elles se perchent.</p>",
+      "en": "<p>Five hens and a rooster in the mango tree of an empty yard, at dusk: they are roosting.</p>"
+    },
+    "results.OYUjfSIgv4HTKzbf.description": {
+      "fr": "<p>Deux lapins dans un talus de cultures, au petit matin.</p>",
+      "en": "<p>Two rabbits in a field bank, early in the morning.</p>"
+    },
+    "results.MrniilA2rasV27yP.description": {
+      "fr": "<p>Un essaim pendu sous l'auvent d'une case abandonnée, gros comme un ballon (il faut un enfumoir).</p>",
+      "en": "<p>A swarm hanging under the eaves of an abandoned house, as big as a ball (you need a bee smoker).</p>"
+    },
+    "results.nYI0ZDFNWEinRGzw.description": {
+      "fr": "<p>Un chien errant qui suit les poules, lui aussi. Il vous regarde, et ne part pas.</p>",
+      "en": "<p>A stray dog following the hens, too. It looks at you, and does not leave.</p>"
+    }
+  },
   "tables/4bGZ5GSaSPT4uz9Y": {
     "_nom": "La voix de l'île — musique du soir",
     "name": {
@@ -733,6 +768,41 @@
     "results.w9JCozX6BxL9jM7h.description": {
       "fr": "<p>Une case des Hauts où tout est en ordre : le lit fait, la vaisselle lavée, un mot sur la table : « Partis chez Marcel. »</p>",
       "en": "<p>A house in the Highlands where everything is in order: the bed made, the dishes washed, a note on the table: \"Gone to Marcel's.\"</p>"
+    }
+  },
+  "tables/5iWchY1NITpaQQ2Y": {
+    "_nom": "Les bêtes de l'île — les forêts",
+    "name": {
+      "fr": "Les bêtes de l'île — les forêts",
+      "en": "Animals of the island — the forests"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on croise dans les forêts des Bas et des Hauts, les ravines.</p>",
+      "en": "<p>What you come across in the forests of the Lowlands and the Highlands, the ravines.</p>"
+    },
+    "results.TCUf0a6vdDHlqfLN.description": {
+      "fr": "<p>Rien que des tangues dans les feuilles, et un papangue au-dessus.</p>",
+      "en": "<p>Nothing but tangues (tenrecs) in the leaves, and a papangue (harrier) overhead.</p>"
+    },
+    "results.BMrez4DGEkChquRU.description": {
+      "fr": "<p>Trois cochons marrons dans une ravine (ils chargent quand on les surprend ; un piège ou une fosse suffit).</p>",
+      "en": "<p>Three feral pigs in a ravine (they charge when surprised; a trap or a pit is enough).</p>"
+    },
+    "results.KdTEOokyEltXfyh8.description": {
+      "fr": "<p>Un essaim dans une souche, qui bourdonne fort au soleil.</p>",
+      "en": "<p>A swarm in a stump, buzzing loudly in the sun.</p>"
+    },
+    "results.yqePEhgICuOB3SKT.description": {
+      "fr": "<p>Des cabris marrons sur une crête, à l'aube.</p>",
+      "en": "<p>Feral goats on a ridge, at dawn.</p>"
+    },
+    "results.Xt2ZTc9nt6PJG64l.description": {
+      "fr": "<p>Des anguilles dans un bassin de la rivière, sous les racines.</p>",
+      "en": "<p>Eels in a pool of the river, under the roots.</p>"
+    },
+    "results.xf4ZcjBJFVVEZaFt.description": {
+      "fr": "<p>Des poules marronnes autour d'un ancien boucan.</p>",
+      "en": "<p>Feral hens around an old smoking hut.</p>"
     }
   },
   "tables/7laWQXPZNSdEIgYT": {
@@ -1191,6 +1261,57 @@
       "en": "<p>In the morning, the yard is unrecognisable: branches, leaves, mud, and something that wasn't there yesterday (table “What the cyclone leaves in the yard”).</p>"
     }
   },
+  "tables/B33GKVefhArycxDa": {
+    "_nom": "Un cheptel — ce qui arrive",
+    "name": {
+      "fr": "Un cheptel — ce qui arrive",
+      "en": "A herd — what happens"
+    },
+    "description": {
+      "fr": "<p>Pour donner de la vie à l'élevage, une fois de temps en temps, ou quand un cheptel a eu un manque.</p>",
+      "en": "<p>To bring the livestock to life, now and then, or when a herd has gone without something.</p>"
+    },
+    "results.JatboqHXn7or0p6F.description": {
+      "fr": "<p>Un cabri s'est échappé par un trou de la clôture ; on le retrouve au matin dans le potager des voisins (ou dans le vôtre).</p>",
+      "en": "<p>A goat got out through a hole in the fence; you find it in the morning in the neighbours' vegetable plot (or in yours).</p>"
+    },
+    "results.xF9iOLrg1kDVFNk5.description": {
+      "fr": "<p>Une poule couve dans un coin où personne ne l'attendait : des poussins dans trois semaines.</p>",
+      "en": "<p>A hen is brooding in a corner where nobody expected her: chicks in three weeks.</p>"
+    },
+    "results.3FpXmdlswNJRa4tB.description": {
+      "fr": "<p>Un chien errant tourne la nuit autour de la basse-cour. Le lendemain, il revient.</p>",
+      "en": "<p>A stray dog prowls around the poultry yard at night. The next day, it comes back.</p>"
+    },
+    "results.f2W56CgWiEG2ssrF.description": {
+      "fr": "<p>Une bête boite : une épine, une pierre ; un soin d'une heure, et elle remarche.</p>",
+      "en": "<p>An animal is limping: a thorn, a stone; an hour's care, and it walks again.</p>"
+    },
+    "results.dIwmV8s6nyJLq4lU.description": {
+      "fr": "<p>Le coq chante trop tôt, trop fort. Quelqu'un propose d'en faire un cari.</p>",
+      "en": "<p>The rooster crows too early, too loud. Someone suggests making a cari of it.</p>"
+    },
+    "results.nAM2wUAHDLqr5oDT.description": {
+      "fr": "<p>Une scolopendre dans la paille du clapier : un lapin en meurt.</p>",
+      "en": "<p>A scolopendra in the hutch straw: a rabbit dies of it.</p>"
+    },
+    "results.cBUz2dweNiFd1lPA.description": {
+      "fr": "<p>L'eau du bassin a verdi en une nuit de chaleur : il faut curer avant que les poissons ne remontent respirer.</p>",
+      "en": "<p>The tank water turned green in one hot night: it must be cleaned out before the fish come up gasping.</p>"
+    },
+    "results.QUxsYlHpEmqY7wYa.description": {
+      "fr": "<p>Un enfant du groupe a donné un nom à chaque bête. Personne n'ose plus parler d'abattre.</p>",
+      "en": "<p>A child of the group has given every animal a name. Nobody dares talk about slaughtering any more.</p>"
+    },
+    "results.aEkJMfPU6Yg8v6Kz.description": {
+      "fr": "<p>Des voisins viennent proposer un troc : un cabri contre des médicaments.</p>",
+      "en": "<p>Neighbours come to offer a trade: a goat for medicine.</p>"
+    },
+    "results.6yHPIGBumBHJZqOF.description": {
+      "fr": "<p>La nuit, les bêtes se taisent toutes d'un coup, et se serrent dans le fond de l'enclos. Le chien grogne vers la ravine.</p>",
+      "en": "<p>At night, the animals all fall silent at once, and huddle at the back of the pen. The dog growls towards the ravine.</p>"
+    }
+  },
   "tables/CVzybRUPbVjBHSsl": {
     "_nom": "Un chien errant, veillée après veillée",
     "name": {
@@ -1622,6 +1743,41 @@
     "results.FRnLgBrEp2dECQ9u.description": {
       "fr": "<p>Une vieille dame qui a connu le cyclone de 1948 et qui n'a peur de rien.</p>",
       "en": "<p>An old lady who lived through the cyclone of 1948 and fears nothing.</p>"
+    }
+  },
+  "tables/HYhLOJ2wK46kBYZY": {
+    "_nom": "Les bêtes de l'île — les cirques",
+    "name": {
+      "fr": "Les bêtes de l'île — les cirques",
+      "en": "Animals of the island — the cirques"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on croise dans les îlets, les éboulis et les sentiers des cirques.</p>",
+      "en": "<p>What you come across in the îlets (hamlets), the scree and the trails of the cirques.</p>"
+    },
+    "results.na3G5WmnffDPdLie.description": {
+      "fr": "<p>Rien : le sentier, la ravine, le bruit de l'eau.</p>",
+      "en": "<p>Nothing: the trail, the ravine, the sound of water.</p>"
+    },
+    "results.cFmRrLvctWIKRYJA.description": {
+      "fr": "<p>Six cabris marrons dans un éboulis ; ils boivent chaque soir à la même vasque.</p>",
+      "en": "<p>Six feral goats in a scree slope; they drink every evening at the same pool.</p>"
+    },
+    "results.PkuwVLGE3VYCXUwi.description": {
+      "fr": "<p>Les poules d'un îlet vide, qui vivent maintenant dans les goyaviers.</p>",
+      "en": "<p>The hens of an empty îlet, now living in the guava trees.</p>"
+    },
+    "results.mMdbwCDTmq8f44E9.description": {
+      "fr": "<p>Un essaim dans le tronc creux d'un tamarin.</p>",
+      "en": "<p>A swarm in the hollow trunk of a tamarind.</p>"
+    },
+    "results.YnHtl5Kv2idjn0aY.description": {
+      "fr": "<p>Des camarons dans une vasque profonde de la ravine (une nasse : de quoi peupler un bassin).</p>",
+      "en": "<p>Camarons in a deep pool of the ravine (a fish trap: enough to stock a pond).</p>"
+    },
+    "results.FV2pdqqQEjICkM08.description": {
+      "fr": "<p>Deux cochons marrons qui retournent un vieux champ de songes (ils chargent si on les surprend).</p>",
+      "en": "<p>Two feral pigs rooting up an old field of songe (taro) (they charge when surprised).</p>"
     }
   },
   "tables/L3DZ2K7C0is03hvX": {
@@ -3032,6 +3188,41 @@
       "en": "<p>A municipal police officer firing into the air to disperse a crowd.</p>"
     }
   },
+  "tables/jtbKoV38Fs2rhuQN": {
+    "_nom": "Les bêtes de l'île — les Hauts",
+    "name": {
+      "fr": "Les bêtes de l'île — les Hauts",
+      "en": "Animals of the island — the Highlands"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on croise dans les pâturages, les landes et les fermes des Hauts.</p>",
+      "en": "<p>What you come across in the pastures, the heathland and the farms of the Highlands.</p>"
+    },
+    "results.b2CGaUXqOx6Ccm4i.description": {
+      "fr": "<p>Rien : le brouillard monte, on n'y voit plus à vingt pas.</p>",
+      "en": "<p>Nothing: the fog is rising, you cannot see twenty paces.</p>"
+    },
+    "results.S7NPwLT9rbm8U6iN.description": {
+      "fr": "<p>Trois bœufs moka et un veau dans une prairie de la Plaine des Cafres, un vieux taureau devant (une corde, et de la patience).</p>",
+      "en": "<p>Three moka oxen and a calf in a meadow of the Plaine des Cafres, an old bull in front (a rope, and patience).</p>"
+    },
+    "results.ZzzCuQxXyeXlV2W5.description": {
+      "fr": "<p>Une bande de lapins dans une lande à ajoncs, au soir.</p>",
+      "en": "<p>A band of rabbits on a gorse heath, in the evening.</p>"
+    },
+    "results.sKY3t2Id2zCyDEQ6.description": {
+      "fr": "<p>Quatre cabris sur un muret de pierres sèches ; ils vous regardent passer.</p>",
+      "en": "<p>Four goats on a dry-stone wall; they watch you go by.</p>"
+    },
+    "results.kLpRPBQUT4DHM032.description": {
+      "fr": "<p>Une ferme vide : la porte de l'étable bat, une vache maigre meugle dans l'enclos (un bœuf moka qu'on peut mener).</p>",
+      "en": "<p>An empty farm: the cattle shed door is banging, a thin cow lows in the pen (a moka ox you can lead).</p>"
+    },
+    "results.4yuUt1DB9OT9eEBq.description": {
+      "fr": "<p>Des poules marronnes dans les cryptomérias d'un ancien élevage.</p>",
+      "en": "<p>Feral hens in the cryptomerias of an old farm.</p>"
+    }
+  },
   "tables/kYs9WkXJZp9WWB0Z": {
     "_nom": "Un Livide intrigué — ce qu'il fait",
     "name": {
@@ -4109,6 +4300,41 @@
     "results.FOjsAM2NgDkq26Bm.description": {
       "fr": "<p>Un émissaire d'une faction lointaine demande un savoir que vous avez.</p>",
       "en": "<p>An emissary from a distant faction asks for a know-how you have.</p>"
+    }
+  },
+  "tables/vtd7X3KJ3BckHBVI": {
+    "_nom": "Les bêtes de l'île — le volcan",
+    "name": {
+      "fr": "Les bêtes de l'île — le volcan",
+      "en": "Animals of the island — the volcano"
+    },
+    "description": {
+      "fr": "<p>Ce qu'on croise dans les landes et les pâturages du volcan. Peu de choses.</p>",
+      "en": "<p>What you come across on the heathland and pastures of the volcano. Not much.</p>"
+    },
+    "results.CRKr6tUHcvJJgUuy.description": {
+      "fr": "<p>Rien : le vent, la scorie, les nuages qui passent au ras du sol.</p>",
+      "en": "<p>Nothing: the wind, the scoria, the clouds passing at ground level.</p>"
+    },
+    "results.Atno8kN4FPZgusfI.description": {
+      "fr": "<p>Deux bœufs moka égarés dans la lande, très maigres.</p>",
+      "en": "<p>Two moka oxen strayed onto the heath, very thin.</p>"
+    },
+    "results.JunJvuT29p6LmXSV.description": {
+      "fr": "<p>Trois cabris marrons dans les remparts.</p>",
+      "en": "<p>Three feral goats on the ramparts.</p>"
+    },
+    "results.l8X9l6JsoUS9ZJWr.description": {
+      "fr": "<p>Rien, sinon une carcasse de bœuf, ancienne : d'autres sont passés avant vous.</p>",
+      "en": "<p>Nothing, except an ox carcass, an old one: others have been here before you.</p>"
+    },
+    "results.9Hurnu7pQYbaST3o.description": {
+      "fr": "<p>Un essaim dans un mur de pierres sèches d'une ancienne bergerie.</p>",
+      "en": "<p>A swarm in a dry-stone wall of an old sheepfold.</p>"
+    },
+    "results.hSeZv4mhYkAoiREy.description": {
+      "fr": "<p>Des traces de cabris jusqu'à une vasque d'eau de pluie.</p>",
+      "en": "<p>Goat tracks leading to a pool of rainwater.</p>"
     }
   },
   "tables/wSIDVO72cuKZAuEU": {

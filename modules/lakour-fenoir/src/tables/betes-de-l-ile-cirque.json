@@ -1,0 +1,118 @@
+{
+  "_id": "HYhLOJ2wK46kBYZY",
+  "_key": "!tables!HYhLOJ2wK46kBYZY",
+  "name": "Les bêtes de l'île — les cirques",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on croise dans les îlets, les éboulis et les sentiers des cirques.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "betes-de-l-ile-cirque",
+      "vivant": "betes-de-l-ile-cirque"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "na3G5WmnffDPdLie",
+      "_key": "!tables.results!HYhLOJ2wK46kBYZY.na3G5WmnffDPdLie",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien : le sentier, la ravine, le bruit de l'eau.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cFmRrLvctWIKRYJA",
+      "_key": "!tables.results!HYhLOJ2wK46kBYZY.cFmRrLvctWIKRYJA",
+      "type": "text",
+      "name": "",
+      "description": "<p>Six cabris marrons dans un éboulis ; ils boivent chaque soir à la même vasque.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "PkuwVLGE3VYCXUwi",
+      "_key": "!tables.results!HYhLOJ2wK46kBYZY.PkuwVLGE3VYCXUwi",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les poules d'un îlet vide, qui vivent maintenant dans les goyaviers.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "mMdbwCDTmq8f44E9",
+      "_key": "!tables.results!HYhLOJ2wK46kBYZY.mMdbwCDTmq8f44E9",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un essaim dans le tronc creux d'un tamarin.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "YnHtl5Kv2idjn0aY",
+      "_key": "!tables.results!HYhLOJ2wK46kBYZY.YnHtl5Kv2idjn0aY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des camarons dans une vasque profonde de la ravine (une nasse : de quoi peupler un bassin).</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FV2pdqqQEjICkM08",
+      "_key": "!tables.results!HYhLOJ2wK46kBYZY.FV2pdqqQEjICkM08",
+      "type": "text",
+      "name": "",
+      "description": "<p>Deux cochons marrons qui retournent un vieux champ de songes (ils chargent si on les surprend).</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

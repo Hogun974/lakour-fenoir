@@ -1,0 +1,97 @@
+{
+  "_id": "Tc2oFSCuKvPBFDFb",
+  "_key": "!items!Tc2oFSCuKvPBFDFb",
+  "name": "Étable",
+  "type": "installation",
+  "img": "icons/svg/oak.svg",
+  "system": {
+    "cle": "etable",
+    "categorie": "nourriture",
+    "description": "<p>Un abri de troncs et de gaulettes couvert de chaume, un enclos de pieux autour d'un coin d'herbe : deux bœufs moka, qu'il faut trouver dans les Hauts et mener à la corde. Du lait chaque jour, du fumier, la traction d'une charrette ; ce ne sont pas des montures.</p>",
+    "niveau": 0,
+    "niveauMax": 1,
+    "chantier": {
+      "fait": 0,
+      "requis": 16
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 2,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 6,
+          "travail": 16
+        },
+        "requiert": {
+          "savoirs": [
+            "elevage"
+          ],
+          "site": {
+            "eau": [],
+            "sol": 1,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {
+            "nourriture": 1
+          },
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 30
+          },
+          "consommation": {
+            "eau": 1
+          },
+          "defense": 0,
+          "discretion": 0,
+          "capacite": 0,
+          "visibilite": 0,
+          "bruit": 1,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0.02,
+          "renseignements": false,
+          "bonus": {},
+          "odeur": 1,
+          "vivant": {
+            "espece": "boeuf-moka",
+            "places": 2,
+            "plein": 2,
+            "depart": 0
+          },
+          "bras": {
+            "tache": "elevage",
+            "nombre": 1
+          }
+        }
+      }
+    ],
+    "arbre": "lontan"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "etable"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

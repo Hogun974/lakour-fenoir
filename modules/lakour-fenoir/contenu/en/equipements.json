@@ -431,6 +431,17 @@
       "en": "<p>A woven mat to sleep dry on, to sit on in the evening, to dry coffee or grain in the sun. Rolled on top of the pack, it makes a bivouac.</p>"
     }
   },
+  "equipements/RagkwcKEADt02QUU": {
+    "_nom": "Cage de bambou",
+    "name": {
+      "fr": "Cage de bambou",
+      "en": "Bamboo cage"
+    },
+    "system.description": {
+      "fr": "<p>Une cage de gaulettes ligaturées, une porte qui retombe : on y met une poule, deux lapins, et on la porte sur le dos.</p>",
+      "en": "<p>A cage of lashed gaulettes (thin poles), a door that drops shut: a hen or two rabbits go in, and you carry it on your back.</p>"
+    }
+  },
   "equipements/Rx2lvvdh5L8dpysq": {
     "_nom": "Radio à manivelle",
     "name": {
@@ -594,6 +605,17 @@
     "system.description": {
       "fr": "<p>Les deux mains libres dans le noir d'un tunnel ou d'une cage d'escalier. Avec des piles ou rechargeable.</p>",
       "en": "<p>Both hands free in the dark of a tunnel or a stairwell. Battery or rechargeable.</p>"
+    }
+  },
+  "equipements/ecKmnQN8uh4OW6cO": {
+    "_nom": "Sac de goni",
+    "name": {
+      "fr": "Sac de goni",
+      "en": "Goni sack"
+    },
+    "system.description": {
+      "fr": "<p>Le grand sac de jute des sucreries : une poule, un lapin, un porcelet dedans, la tête dehors, et l'on marche.</p>",
+      "en": "<p>The big jute sack from the sugar mills: a hen, a rabbit, a piglet inside, head sticking out, and off you walk.</p>"
     }
   },
   "equipements/erkZO5xELWuZbgqd": {
@@ -946,6 +968,17 @@
     "system.description": {
       "fr": "<p>Le petit livret des pêcheurs et des plaisanciers : pour chaque jour, les heures des marées, le lever et le coucher de la lune, sa phase heure par heure. Avec lui, la lune donne le jour à un jour près.</p>",
       "en": "<p>The little booklet of fishermen and sailors: for every day, the times of the tides, moonrise and moonset, its phase hour by hour. With it, the moon gives the day to within a day.</p>"
+    }
+  },
+  "equipements/zZHhQqluot84qGTD": {
+    "_nom": "Enfumoir",
+    "name": {
+      "fr": "Enfumoir",
+      "en": "Bee smoker"
+    },
+    "system.description": {
+      "fr": "<p>Une boîte de conserve, un soufflet de chambre à air, de la paille de vétiver qui fume : l'essaim s'endort, on le prend sans être piqué.</p>",
+      "en": "<p>A tin can, a bellows cut from an inner tube, smouldering vetiver straw: the swarm goes drowsy, and you take it without being stung.</p>"
     }
   },
   "equipements/zbfFqGVAJlulr1ou": {

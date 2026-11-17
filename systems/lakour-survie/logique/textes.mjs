@@ -65,6 +65,9 @@ export const CLES_TEXTES = [
   // lot « savoirs » : les deux savoirs, la gramoune, le chien, le cyclone vécu, les routes sans carburant
   "eruption-premices", "livre-trouve", "verrou-epave", "verrou-eboulis", "verrou-tunnel", "verrou-arbre", "voyage-source",
   "savoir-perdu", "chien-agite-cyclone", "chien-agite-volcan", "boutures-mortes",
+  // vivant.mjs, etat.mjs (lot 8 « Le vivant de l'abri ») : les cheptels, les bêtes portées, le chien qui grogne
+  "vivant-soif", "vivant-faim", "vivant-eau-sale", "vivant-morts", "vivant-vide", "vivant-naissance", "vivant-malade", "vivant-guerie",
+  "vivant-sans-pompe", "vivant-portee-morte", "chien-grogne",
   "cyclone-prepare", "cyclone-emportes", "cyclone-citerne", "cyclone-arbres", "cyclone-depot", "menace-depot",
   "apprendre-savoir-inconnu", "apprendre-source", "apprendre-deja", "apprendre-maitre", "apprendre-livre",
   "dictee-pas-gramoune", "dictee-confiance", "dictee-faite",

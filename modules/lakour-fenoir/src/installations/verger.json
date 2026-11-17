@@ -60,7 +60,8 @@
           "bras": {
             "tache": "cultures",
             "nombre": 1
-          }
+          },
+          "pluieArrose": true
         }
       },
       {
@@ -107,7 +108,8 @@
           "bras": {
             "tache": "cultures",
             "nombre": 1
-          }
+          },
+          "pluieArrose": true
         }
       }
     ]

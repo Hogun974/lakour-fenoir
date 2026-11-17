@@ -8,7 +8,7 @@ import { ID, COMPETENCES, RESSOURCES, NATURE, DIFFICULTES, PRUDENCES, TRANSPORTS
 import * as L from "../../logique/index.mjs";
 import { t, lireEtat, sansBalises, localiser, libelleCompetence, libelleRessource, survivantsDuGroupe, abriCourant, erreurLisible } from "../donnees.mjs";
 import { estMJActif } from "../canal.mjs";
-import { CHEMIN, essayer, lireChamps, options } from "./commun.mjs";
+import { CHEMIN, essayer, lireChamps, options, ligneCheptel } from "./commun.mjs";
 import { jaugeSens, libelleFoi, libelleBande, optionsActes, texteListe } from "./esprit.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -247,6 +247,8 @@ export function contexteMJ(onglet = "partie", resultat = null) {
     plans: onglet === "savoirs" && etat.demarree ? contextePlans(api, c) : null,
     reperes: onglet === "partie" && etat.demarree ? contexteReperes(api, c, membres) : null,
     corps: onglet === "partie" && etat.demarree ? contexteCorps(api) : null,
+    // Lot 8 « Le vivant de l'abri » (contrat §27) : les cheptels, les bêtes portées, les bêtes en liberté, le chien (onglet Actions).
+    vivant: onglet === "actions" && etat.demarree ? contexteVivant(api, c) : null,
     // Lot « savoirs » : l'onglet Savoirs et cyclone.
     ...(onglet === "savoirs" || onglet === "groupe" ? contexteSavoirs(etat, c, api, membres) : {})
   };
@@ -281,6 +283,28 @@ export function contexteCorps(api = game.lakourSurvie) {
     gris: c.grisConnu ? t(K("GrisConnu")) : "",
     bivouac: c.bivouac,
     lieux: options(["abri", "bivouac", "sol"].map(x => [x, t(K(`Lieux.${x}`))]), "abri")
+  };
+}
+
+// Lot 8 « Le vivant de l'abri » : les cheptels (ligneCheptel, commun.mjs), les bêtes que le groupe porte, et ce qu'il faut aux formulaires.
+export function contexteVivant(api = game.lakourSurvie, c = {}) {
+  const v = api?.cheptels?.();
+  if (!v) return null;
+  const K = k => `LAKOUR_SURVIE.Vivant.${k}`;
+  const especes = L.liste(c.especes);
+  const nomEspece = k => especes.find(e => e.cle === k)?.nom ?? k;
+  const sauvages = L.liste(c.bestiaire).filter(b => b.categorie === "bete" || b.espece);
+  return {
+    cheptels: v.cheptels.map(x => ({ nom: x.nom, texte: ligneCheptel(x), mauvais: x.sante <= 1 || x.malade })),
+    betes: v.betes.map(b => ({ id: b.id, texte: t(K("Portee"), { n: b.n, espece: b.nom, reste: b.reste }) })),
+    chien: v.chien,
+    installations: options(v.cheptels.map(x => [x.cle, `${x.nom} (${x.especeNom ?? x.espece})`]), ""),
+    especes: options(especes.map(e => [e.cle, e.nom]), ""),
+    capturables: options(especes.filter(e => e.capture).map(e => [e.cle, e.nom]), ""),
+    portees: options([["", t(K("Toutes"))], ...v.betes.map(b => [b.id, `${b.nom} (${b.n})`])], ""),
+    zones: options([["", "—"], ...L.ZONES.map(z => [z, t(`LAKOUR_SURVIE.Zones.${z}`)])], ""),
+    sauvages: sauvages.map(b => `${b.nom} (${nomEspece(b.espece)})`).join(", "),
+    competences: options([["combat", t("LAKOUR_SURVIE.Competences.combat")], ["tir", t("LAKOUR_SURVIE.Competences.tir")]], "combat")
   };
 }
 
@@ -524,7 +548,19 @@ export class FenetreMJ extends HandlebarsApplicationMixin(ApplicationV2) {
       soignerMorsure: () => api.soignerMorsure({ acteurId: d.acteur, soigneurId: d.soigneur || "", medicament: d.medicament !== "non", decoction: d.decoction !== "non" }),
       chute: () => api.chute({ acteurId: d.acteur, hauteur: Number(d.hauteur) || 0, eau: Number(d.eau) || 0, tester: d.tester !== "non" }),
       menage: () => api.menage({ membres: liste(d.membres), quarts: Number(d.quarts) || 1 }),
-      dormir: () => api.dormir({ membres: liste(d.membres), quarts: Number(d.quarts) || 1, lieu: d.lieu || "" })
+      dormir: () => api.dormir({ membres: liste(d.membres), quarts: Number(d.quarts) || 1, lieu: d.lieu || "" }),
+      // Le vivant de l'abri (contrat §27).
+      peupler: () => api.peupler({ installation: d.installation, n: Number(d.n) || 1, espece: d.espece || "", portees: d.portees === "oui" }),
+      mettreEnEnclos: () => api.mettreEnEnclos({ beteId: d.bete || "" }),
+      abattre: () => api.abattre({ installation: d.installation, n: Number(d.n) || 1 }),
+      soignerCheptel: () => api.soignerCheptel({ installation: d.installation, acteurId: d.acteur || "" }),
+      curer: () => api.curer({ installation: d.installation, membres }),
+      capturer: () => api.capturer({ acteurId: d.acteur, espece: d.espece, n: Number(d.n) || 1 }),
+      chasser: () => api.chasser({ acteurId: d.acteur, espece: d.espece, competence: d.competence || "combat", fuit: d.fuit === "oui" }),
+      recevoirBete: () => api.recevoirBete({ espece: d.espece, n: Number(d.n) || 1, source: d.source || "" }),
+      lacherBetes: () => api.lacherBetes({ beteId: d.bete || "" }),
+      beteSauvage: () => api.beteSauvage({ zone: d.zone || "" }),
+      flairDuChien: () => api.flairDuChien({ distance: Number(d.distance) || 0, nuit: d.nuit === "oui", suit: d.suit === "oui" })
     };
     if (!appels[nom]) return;
     cible.disabled = true;

@@ -120,6 +120,27 @@ export function veilleeChien(chien = {}, test = {}) {
   return { chien: { ...structuredClone(chien ?? {}), confiance: g.confiance }, delta: g.delta, apprivoise: g.confiance >= CHIEN.seuil, morsure: !test?.reussite && Boolean(test?.force) };
 }
 
+// Le chien prévient sans attirer (lot 8 « Le vivant de l'abri », décision de Jordan du 17 novembre 2026 ; docs/equilibre-vivant.md) :
+// quand un Livide approche, le chien du groupe tourne autour de son maître et grogne bas (un son qui ne porte pas) ; si le maître le
+// suit, il le mène vers l'endroit d'où vient le danger et s'arrête à bonne distance ; il n'aboie (un bruit, qui attire) que pour un
+// Livide tout près. Un chien gagné ne fuit plus les Livides. Il flaire à 44 m de jour, 22 m la nuit (il ne lâche qu'à 1,3 fois).
+// Au jeu : la garde (de l'abri, d'un bivouac, d'une marche) gagne +1 dé de vigilance par le chien, sans aucun bruit, en plus des
+// installations (au plus +2, comme un outil et une installation) ; seul un aboiement (un Livide à moins de 5 m) fait du bruit.
+export const CHIEN_PREVIENT = { flair: { jour: 44, nuit: 22 }, lache: 1.3, aboie: 5, suit: 8, arret: 14, grogne: 4, vigilance: 1, maxBonus: 2,
+  bruitAboiement: 2 };
+// Ce que fait le chien devant un Livide à `distance` mètres. suit : le maître le suit. ->
+// { signal: "rien" | "tourne" | "mene" | "aboie", bruit (au bruit de l'abri ou de la scène : 0, sauf l'aboiement), flair (m), arret (m) }
+export function alerteDuChien({ distance = Infinity, nuit = false, suit = false } = {}) {
+  const C = CHIEN_PREVIENT;
+  const flair = nuit ? C.flair.nuit : C.flair.jour;
+  const d = Number(distance);
+  if (!(d <= flair)) return { signal: "rien", bruit: 0, flair, arret: C.arret };
+  if (d < C.aboie) return { signal: "aboie", bruit: C.bruitAboiement, flair, arret: C.arret };
+  return { signal: suit ? "mene" : "tourne", bruit: 0, flair, arret: C.arret };
+}
+// Le bonus de vigilance de la garde avec le chien : +1 sur ce qu'apportent l'outil et les installations, au plus +2 en tout.
+export const vigilanceAvecChien = (bonus = 0, chien = false) => (chien ? Math.min(CHIEN_PREVIENT.maxBonus, Math.max(0, Number(bonus) || 0) + CHIEN_PREVIENT.vigilance) : Math.max(0, Number(bonus) || 0));
+
 // ------------------------------------------------------------------ le cyclone vécu
 export const VENTS = ["rafales", "accalmie", "oeil", "retour"];
 // Dehors, selon le vent : dés en moins à tout test, vigilance en moins encore (on n'y voit ni n'entend rien), discrétion en plus.

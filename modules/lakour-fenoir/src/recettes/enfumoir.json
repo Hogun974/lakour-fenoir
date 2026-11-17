@@ -1,0 +1,42 @@
+{
+  "_id": "jFAFJwxAPSIeJLWM",
+  "_key": "!items!jFAFJwxAPSIeJLWM",
+  "name": "Enfumoir",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "enfumoir",
+    "description": "<p>Une boîte de conserve, une chambre à air pour le soufflet, de la paille sèche.</p>",
+    "cout": {
+      "materiaux": 1,
+      "pieces": 1
+    },
+    "travail": 1,
+    "competence": "bricolage",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "enfumoir",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "enfumoir"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

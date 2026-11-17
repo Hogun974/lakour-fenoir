@@ -1,0 +1,208 @@
+{
+  "_id": "k4CQfJDtCB6La8YI",
+  "_key": "!journal!k4CQfJDtCB6La8YI",
+  "name": "Le vivant de l'abri",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "le-vivant",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "K5XRL5Y7k2SsAZXC",
+      "_key": "!journal.pages!k4CQfJDtCB6La8YI.K5XRL5Y7k2SsAZXC",
+      "name": "Ce qui vit à l'abri",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un abri qui veut tenir longtemps finit par élever et cultiver : des poules, des cabris, un bassin, des bacs de brèdes. <strong>Rien de tout cela ne marche seul.</strong> Les bêtes boivent, mangent, tombent malades, crient quand elles ont faim ; les bassins verdissent ; les filtres se bouchent. À plusieurs, on tient ; seul, on choisit ce qu'on laisse tomber.</p><p>Le système suit chaque <strong>cheptel</strong> (ou chaque bac de plants) pour vous : ses <strong>têtes</strong>, ses <strong>places</strong>, sa <strong>santé</strong> de 0 à 3. Vous racontez ; il compte.</p><p><strong>À part les chiens, les animaux s'élèvent, ils ne s'apprivoisent pas.</strong> Ce ne sont pas des montures : la charrette à bœufs reste une charrette, menée à pied.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "principe"
+        }
+      }
+    },
+    {
+      "_id": "tYP1As593tzlWkGI",
+      "_key": "!journal.pages!k4CQfJDtCB6La8YI.tYP1As593tzlWkGI",
+      "name": "Une seule règle pour tout ce qui vit",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Chaque jour, chaque <strong>manque</strong> ôte <strong>1 de santé</strong> au cheptel :</p><ul><li><strong>la soif</strong> : l'installation n'a pas eu son eau (les personnes boivent d'abord) ;</li><li><strong>la faim</strong> : les poules, les cochons et les poissons vivent des <strong>restes</strong> du groupe (un jour où le groupe a manqué de vivres, ou n'était pas là, ils ont faim) ; les cabris, les lapins et les bœufs broutent (<strong>l'herbe</strong> : sur un site sans terre, il faut quelqu'un à l'élevage pour en couper ailleurs) ; les plants hors-sol boivent la <strong>solution</strong> du compost (sans compost en service, ils ont faim) ;</li><li><strong>la panne</strong> : l'installation est hors service, ou n'a plus de courant ;</li><li><strong>l'eau sale</strong> : un bassin à curer, un filtre à changer, passé son temps (personne à la tâche pour le faire) ;</li><li><strong>l'ombre</strong> : des plants sans soleil ;</li><li><strong>la surpopulation</strong> : plus de têtes que de places.</li></ul><p>Un jour <strong>sans aucun mal</strong> rend 1 de santé. <strong>Malade</strong>, le cheptel perd 1 de santé tous les deux jours. <strong>À 0</strong>, un tiers du cheptel meurt chaque jour (au moins une bête).</p><p><strong>La production</strong> : celle de l'installation, si le cheptel est au <strong>plein</strong> (le nombre de têtes qu'il lui faut) et en santé (2 ou 3) ; à 1 de santé, la moitié ; à 0, rien. Avec moitié moins de têtes que le plein, moitié moins. Un enclos vide ne boit ni ne mange.</p><p><strong>Les naissances</strong> : un cheptel en santé (2 ou 3), qui a de la place et au moins deux bêtes, grandit chaque jour selon son espèce (une poule tous les douze jours par couple, un lapin tous les dix, un cabri tous les cinquante, un veau en huit mois). <strong>Hors de son altitude</strong> (un tilapia au-dessus de 900 m, un camaron au-dessus de 500), un cheptel donne moitié moins et ne fait pas de petits.</p><p><strong>La maladie</strong> prend un cheptel 1 à 3 fois sur 100 par jour dans un abri insalubre, quatre fois moins dans un abri propre (l'hygiène de l'abri, journal « Le corps, le sommeil et l'hygiène »). Elle passe seule une fois sur dix par jour ; <strong>soignée</strong> (une tisane de zerbaz pour les bêtes, l'eau changée pour les poissons, de la lessive de cendre pour les plants, et un test de survie), elle cesse.</p><p><strong>Qui est à la tâche</strong> fait le soin de tous les jours : à l'élevage, on cure les bassins et on coupe l'herbe ; aux cultures, on rince les bacs et on resème (une graine pour six plants, un semis par jour).</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "regle"
+        }
+      }
+    },
+    {
+      "_id": "DBE67NKjGwGxIcM7",
+      "_key": "!journal.pages!k4CQfJDtCB6La8YI.DBE67NKjGwGxIcM7",
+      "name": "Les installations du vivant",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce que chacune loge (ses places, et le plein qu'il lui faut pour donner sa production) et ce qu'elle donne :</p><ul><li><strong>Basse-cour</strong> : des poules (6 places, plein à 4 ; puis 12 et 8) ; des œufs chaque jour (une ration vaut quatre œufs), elle boit un peu.</li><li><strong>Clapier</strong> : des lapins (6 et 3 ; puis 10 et 6) ; de la viande sans bruit.</li><li><strong>Enclos à cabris</strong> : des cabris (4 et 2 ; puis 6 et 4) ; du lait, des chevreaux, du fumier.</li><li><strong>Soue à cochons</strong> : deux cochons, quatre places ; rien chaque jour, du fumier ; on l'engraisse aux restes, et un cochon abattu nourrit le camp dix jours. Il faut d'abord en trouver, ou en prendre un en liberté.</li><li><strong>Étable</strong> : deux bœufs moka, qu'il faut trouver dans les Hauts ; du lait et du fumier ; la traction d'une charrette.</li><li><strong>Bassin à tilapias</strong> : 30 places, plein à 20 (puis 40 et 30) ; à curer tous les 20 jours (tous les 8 avec la pompe).</li><li><strong>Bassin à camarons</strong> : au bord de la rivière ; des camarons dans les Bas, des anguilles plus haut ; l'eau qui court se renouvelle seule.</li><li><strong>Aquaponie</strong> : des tilapias et des brèdes ensemble ; deux fois moins d'eau qu'un potager, un filtre qui tient trente jours ; <strong>deux jours sans pompe tuent tout</strong>.</li><li><strong>Bacs de culture en bambou</strong> (lontan) et <strong>serre hors-sol</strong> (moderne, cinq fois plus de plants, rarement malade) : des plants sans terre, nourris par le compost, à rincer.</li><li><strong>Ruches</strong> : un essaim.</li><li><strong>Jardin de zerbaz</strong> : une brassée de plantes par jour, une fois qu'il a pris (trente jours).</li><li><strong>Treille à chouchou</strong>, <strong>bananeraie</strong> (300 jours avant le premier régime), <strong>carreau de canne</strong> (une année) : ce qui pousse longtemps, et dure.</li></ul><p><strong>L'eau</strong> : tout ce qui boit prend sa part après les personnes (potager, serre, étable, bassins, bacs, enclos). <strong>La pluie arrose</strong> ce qui pousse à ciel ouvert (potager, jardin créole, verger, treille, bananeraie, jardin de zerbaz) : un jour de pluie, ils ne prennent pas d'eau.</p><p><strong>Une installation qu'on vient d'achever</strong> commence avec un petit cheptel (trois poules, deux cabris, deux lapins, une poignée d'alevins, un essaim) ; la soue et l'étable commencent vides. Celles qu'on trouve sur un site sont pleines.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "installations"
+        }
+      }
+    },
+    {
+      "_id": "BMdmTvBjaeZcDC7W",
+      "_key": "!journal.pages!k4CQfJDtCB6La8YI.BMdmTvBjaeZcDC7W",
+      "name": "Ce qu'on en tire",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>La <strong>production</strong> de chaque jour (œufs, lait, poissons, brèdes) va aux stocks, comme celle d'un potager.</p><p><strong>La viande demande d'abattre une bête</strong>, et le troupeau baisse : une poule ou un lapin, 1 ration ; un cabri, 6 ; un cochon, 10 ; un bœuf moka, 20 ; quatre tilapias, deux camarons ou deux anguilles, 1. Abattre au-dessus du plein ne coûte rien à la production ; en dessous, si. La viande se gâte comme le reste sans réserve étanche ni séchoir.</p><p><strong>Le fumier</strong> enrichit le sol (le potager donne plus), et le <strong>lait</strong> fait partie de la production des cabris et des bœufs. La <strong>peau</strong> se tanne : des sangles, une bretelle de sac, à raconter.</p><p><strong>Pour le MJ</strong> : abattre({ installation, n }) met la viande aux stocks ; peupler({ installation, n }) ajoute des bêtes (données, troquées) ou sème des plants (une graine pour six) ; cheptels() dit tout.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "produits"
+        }
+      }
+    },
+    {
+      "_id": "9oAfaEMyvsEoG1l7",
+      "_key": "!journal.pages!k4CQfJDtCB6La8YI.9oAfaEMyvsEoG1l7",
+      "name": "Trouver des bêtes",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un élevage se peuple de deux façons : <strong>en liberté</strong> (les bêtes retournées sauvages) et <strong>en fouillant</strong> (un poulailler abandonné, un essaim dans un mur). Rare et précieux : un abri qui veut un élevage doit le chercher, souvent à plusieurs.</p><p><strong>Les bêtes en liberté</strong> n'attaquent pas : poules marronnes, lapins, cabris marrons, bœufs moka, et les cochons marrons (qui, eux, chargent quand on les surprend). Tirez la table « Les bêtes de l'île » de la zone, ou beteSauvage().</p><ul><li><strong>La prendre</strong> : il faut l'<strong>outil</strong> de son espèce en main (une <strong>cage de bambou</strong> ou un <strong>sac de goni</strong> pour une poule ou un lapin ; une <strong>corde</strong> pour un cabri, un bœuf, un cochon ; un <strong>enfumoir</strong> pour un essaim ; une <strong>nasse</strong> pour des alevins ou des camarons), et un test de <strong>survie</strong>, facile pour une poule, normale pour le reste (+1 dé avec l'élevage). <strong>Ratée, la bête file, et les autres avec.</strong> Sans l'outil, elle file aussi. Un essaim sans enfumoir pique (une blessure) et reste.</li><li><strong>La chasser</strong> : combat ou tir, normale (difficile si elle fuit déjà) ; abattue, sa viande. Un tir s'entend.</li><li><strong>La ramener</strong> : une bête prise tient hors d'un enclos une journée (poule, lapin), un jour et demi (cabri), deux jours (bœuf), une demi-journée (essaim, poissons) ; passé ce temps, elle meurt (sa viande se mange encore). Le système la compte dans ce que porte le groupe ; à l'abri, mettreEnEnclos() la met dans l'enclos de son espèce.</li></ul><p><strong>Pour le MJ</strong> : capturer({ acteurId, espece, n }), chasser({ acteurId, espece, competence, fuit }), recevoirBete({ espece, n, source }) (une bête donnée, troquée, trouvée en fouillant), lacherBetes().</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "trouver"
+        }
+      }
+    },
+    {
+      "_id": "KCm6v7YvXk8P5ICD",
+      "_key": "!journal.pages!k4CQfJDtCB6La8YI.KCm6v7YvXk8P5ICD",
+      "name": "Le bruit, l'odeur et les Livides",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>L'élevage attire.</strong> La basse-cour, l'enclos, la soue et l'étable sentent (l'odeur de l'abri, journal « Percevoir dans le noir ») ; la basse-cour, la soue et l'étable s'entendent. <strong>Un cheptel qui a faim ou soif crie</strong> : +1 au bruit de l'abri (+2 au plus), qui fait venir les hordes.</p><p><strong>Un Livide resté près d'un enclos tue une bête par tour.</strong> Dans un assaut contre l'abri, une défense qui cède d'un rien (marge −1) coûte une bête ; une brèche en coûte autant que la force de la menace (une bande, elle, les emporte). Le système les retire.</p><p><strong>Les bêtes sentent avant vous.</strong> La nuit, quand elles se taisent toutes d'un coup et se serrent au fond de l'enclos, c'est que quelque chose passe.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "attirer"
+        }
+      }
+    },
+    {
+      "_id": "upZrjnx5oqPKLCT0",
+      "_key": "!journal.pages!k4CQfJDtCB6La8YI.upZrjnx5oqPKLCT0",
+      "name": "Le chien qui prévient sans attirer",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le chien du groupe (gagné patiemment, à la veillée, ou né d'une portée de l'élevage) <strong>prévient sans attirer</strong> : quand un Livide approche, il tourne autour de son maître, agité ; si le maître le suit, il le <strong>mène</strong> vers l'endroit d'où vient le danger et s'arrête à bonne distance (une quinzaine de mètres). Il <strong>grogne</strong> tout bas, un son qui ne porte pas. Il <strong>n'aboie</strong> que pour un Livide tout près (moins de 5 m) : là, ça s'entend.</p><ul><li>Il <strong>flaire</strong> un Livide à une quarantaine de mètres de jour, une vingtaine la nuit.</li><li><strong>La garde</strong> (à l'abri, au bivouac, en marche) gagne <strong>+1 dé de vigilance</strong> par lui, sans aucun bruit, en plus d'une tour de guet (au plus +2).</li><li>À l'abri, quand une horde ou des Livides viennent, il grogne vers eux : le groupe le sait (une alerte), pas ce que c'est.</li><li>Un chien gagné ne fuit plus les Livides. Il se bat si on le lâche, et peut y rester.</li><li>Il s'agite aussi avant le cyclone et le volcan.</li></ul><p><strong>Pour le MJ</strong> : flairDuChien({ distance, nuit, suit }) vous dit ce qu'il fait ; un aboiement ajoute 2 au bruit de la scène.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "chien"
+        }
+      }
+    },
+    {
+      "_id": "GZjKhXo1MIN5gIqi",
+      "_key": "!journal.pages!k4CQfJDtCB6La8YI.GZjKhXo1MIN5gIqi",
+      "name": "Pour le MJ",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul><li><strong>cheptels()</strong> : chaque cheptel (têtes, places, plein, santé, malade, manques, filtre), les bêtes que porte le groupe et le temps qu'il leur reste, le chien, les outils de capture du groupe.</li><li><strong>peupler</strong>, <strong>mettreEnEnclos</strong>, <strong>abattre</strong>, <strong>soignerCheptel</strong> (un quart, le remède de l'espèce, un test de survie), <strong>curer</strong> (un quart).</li><li><strong>capturer</strong>, <strong>chasser</strong>, <strong>recevoirBete</strong>, <strong>lacherBetes</strong>, <strong>beteSauvage</strong> (une rencontre tirée, pour vous).</li><li><strong>flairDuChien</strong> : ce que fait le chien devant un Livide.</li><li>Au journal : les naissances, la soif, les morts, la maladie (à l'abri ; loin de l'abri, au journal secret). La table « Un cheptel — ce qui arrive » donne de la vie à l'élevage.</li></ul><p><strong>Le ton</strong> : un élevage, c'est des noms qu'on donne aux bêtes, un enfant qui pleure le jour du cari, des voisins qui proposent un troc. Pas de détail complaisant quand une bête meurt ; on dit ce qu'on fait du corps.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "pour-le-mj"
+        }
+      }
+    }
+  ]
+}

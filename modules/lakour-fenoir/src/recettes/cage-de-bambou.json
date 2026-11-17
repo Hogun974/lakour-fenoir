@@ -1,0 +1,41 @@
+{
+  "_id": "JCmS9HDLcxcyBk5n",
+  "_key": "!items!JCmS9HDLcxcyBk5n",
+  "name": "Cage de bambou",
+  "type": "recette",
+  "img": "icons/svg/anvil.svg",
+  "system": {
+    "cle": "cage-de-bambou",
+    "description": "<p>Des gaulettes de bambou, une corde de choka, un couteau : une soirée de travail.</p>",
+    "cout": {
+      "materiaux": 1
+    },
+    "travail": 1,
+    "competence": "survie",
+    "difficulte": "normale",
+    "requiert": {
+      "savoirs": [],
+      "installation": null
+    },
+    "produit": {
+      "equipement": "cage-de-bambou",
+      "n": 1
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "cage-de-bambou"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}

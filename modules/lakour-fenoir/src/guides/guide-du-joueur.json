@@ -169,7 +169,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Les stocks de l'abri sont des nombres : <strong>eau</strong> (un jour d'eau pour une personne), <strong>nourriture</strong> (un jour de repas), <strong>carburant</strong> (10 litres), <strong>médicaments</strong>, <strong>munitions</strong>, <strong>matériaux</strong> (une brouette), <strong>pièces</strong> (une caisse), <strong>graines</strong>, <strong>plantes médicinales</strong> (une brassée de zerbaz : elles se cueillent, ne se pillent pas, et l'on n'en garde qu'une douzaine), <strong>énergie</strong> (kWh, plafonnée par les batteries).</p><p>Chaque jour, chaque personne boit <strong>1 eau</strong> (1,5 dans les Bas en saison chaude) et mange <strong>1 nourriture</strong>. Sans réserve étanche ni séchoir, <strong>5 %</strong> de la nourriture se gâte chaque jour : la chaleur humide pourrit tout.</p><p>Les <strong>installations</strong> produisent, protègent, cachent. Un groupe de quatre consomme 4 eau et 4 nourriture par jour ; à titre de repère, une citerne de pluie donne environ 1 eau par jour et par point de pluie de la région à son premier niveau, un potager environ 2 nourriture par jour après un mois, des panneaux environ 2 kWh par jour et par point de soleil. Un jour où eau, nourriture et énergie nettes sont positives sans aucune fouille est un <strong>jour autonome</strong> ; sept de suite, et l'abri est <strong>autonome</strong>.</p><p>Exemples de voies d'autonomie : <strong>La ferme des Hauts</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 2, Enclos à cabris 2, Basse-cour 1, Réserve étanche 1, Panneaux solaires 1, Batteries 1) ; <strong>L'îlet de Mafate</strong> (Captage de source 2, Compost 1, Potager 2, Enclos à cabris 1, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1, Batteries 1, Poste radio 1) ; <strong>La case de l'Ouest sec</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 2, Verger 2, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1) ; <strong>La vallée de la Langevin (avec le courant de la rivière)</strong> (Captage de source 1, Filtre à sable et charbon 1, Compost 1, Potager 2, Bassin à tilapias 2, Réserve étanche 1, Pico-hydro sur rivière 1, Infirmerie 2, Poste radio 2, Atelier 2) ; <strong>Le refuge sous la ferme (voie discrète)</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 3, Panneaux solaires 2, Batteries 1, Galerie souterraine 4, Camouflage 3).</p>",
+        "content": "<p>Les stocks de l'abri sont des nombres : <strong>eau</strong> (un jour d'eau pour une personne), <strong>nourriture</strong> (un jour de repas), <strong>carburant</strong> (10 litres), <strong>médicaments</strong>, <strong>munitions</strong>, <strong>matériaux</strong> (une brouette), <strong>pièces</strong> (une caisse), <strong>graines</strong>, <strong>plantes médicinales</strong> (une brassée de zerbaz : elles se cueillent, ne se pillent pas, et l'on n'en garde qu'une douzaine), <strong>énergie</strong> (kWh, plafonnée par les batteries).</p><p>Chaque jour, chaque personne boit <strong>1 eau</strong> (1,5 dans les Bas en saison chaude) et mange <strong>1 nourriture</strong>. Sans réserve étanche ni séchoir, <strong>5 %</strong> de la nourriture se gâte chaque jour : la chaleur humide pourrit tout.</p><p>Les <strong>installations</strong> produisent, protègent, cachent. Un groupe de quatre consomme 4 eau et 4 nourriture par jour ; à titre de repère, une citerne de pluie donne environ 1 eau par jour et par point de pluie de la région à son premier niveau, un potager environ 2 nourriture par jour après un mois, des panneaux environ 2 kWh par jour et par point de soleil. Un jour où eau, nourriture et énergie nettes sont positives sans aucune fouille est un <strong>jour autonome</strong> ; sept de suite, et l'abri est <strong>autonome</strong>.</p><p>Exemples de voies d'autonomie : <strong>La ferme des Hauts</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Jardin créole 2, Enclos à cabris 2, Basse-cour 1, Réserve étanche 1, Panneaux solaires 1, Batteries 1) ; <strong>L'îlet de Mafate</strong> (Captage de source 2, Compost 1, Potager 2, Enclos à cabris 1, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1, Batteries 1, Poste radio 1) ; <strong>La case de l'Ouest sec</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 2, Verger 2, Basse-cour 1, Séchoir et fumoir 1, Panneaux solaires 1) ; <strong>La vallée de la Langevin (avec le courant de la rivière)</strong> (Captage de source 1, Filtre à sable et charbon 1, Compost 1, Potager 2, Bassin à tilapias 2, Réserve étanche 1, Pico-hydro sur rivière 1, Infirmerie 2, Poste radio 2, Atelier 2) ; <strong>Le refuge sous la ferme (voie discrète)</strong> (Citerne de pluie 3, Bouilleur solaire 2, Compost 1, Potager 3, Panneaux solaires 2, Batteries 1, Galerie souterraine 4, Camouflage 3).</p>",
         "format": 1
       },
       "ownership": {
@@ -573,11 +573,34 @@
       }
     },
     {
+      "_id": "1c2bfeEqJ8ruW3I4",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.1c2bfeEqJ8ruW3I4",
+      "name": "Élever, cultiver, prendre une bête",
+      "type": "text",
+      "sort": 2500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Ce qui vit à l'abri demande du soin, tous les jours.</p><ul><li><strong>Les bêtes boivent et mangent.</strong> Les poules, les cochons et les poissons vivent de vos restes ; les cabris, les lapins et les bœufs broutent. Un jour de soif ou de faim, elles s'affaiblissent, et elles crient (ça s'entend de loin). Trop affaiblies, elles meurent.</li><li><strong>En santé, elles font des petits</strong>, tant qu'il y a de la place. Un enclos qu'on vient de bâtir commence avec quelques bêtes ; il faut du temps, ou en trouver d'autres, pour qu'il donne à plein.</li><li><strong>Les bassins et les bacs</strong> se curent et se rincent : quelqu'un à l'élevage ou aux cultures s'en occupe chaque jour.</li><li><strong>Une bête malade</strong> se soigne : une tisane de zerbaz, de l'eau changée pour les poissons.</li><li><strong>La viande</strong>, il faut abattre. Le troupeau baisse.</li><li><strong>La pluie arrose</strong> le potager et le jardin : un jour de pluie, ils ne prennent pas d'eau.</li><li><strong>Les bêtes en liberté</strong> fuient : on les prend avec le bon outil (une cage, un sac de goni, une corde, un enfumoir) et un peu d'adresse ; ratée, elle file avec les autres. Une bête prise tient un jour ou deux hors d'un enclos.</li><li><strong>Le chien du groupe prévient sans attirer</strong> : il tourne autour de vous, grogne bas, vous mène vers ce qui vient, et n'aboie que quand c'est tout près. Avec lui, la garde voit venir.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-vivant"
+        }
+      }
+    },
+    {
       "_id": "GsGWAAAIAkUufDjK",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 2500,
+      "sort": 2600,
       "title": {
         "show": true,
         "level": 1

@@ -122,6 +122,9 @@ export class ModeleAbri extends foundry.abstract.TypeDataModel {
       lumiereLe: nombreNul(),
       // Lot « corps » : la souillure de l'abri (logique/corps.mjs) ; l'insalubrité en sort (0 à 3).
       souillure: nombre(0),
+      // Lot 8 « Le vivant de l'abri » (logique/vivant.mjs) : l'état de chaque cheptel, par clé d'installation ({ espece, tetes, sante,
+      // malade, manques, naissances, filtreLe, sansPompe, depuis }) ; vide : les cheptels sont pleins (une partie d'avant le lot).
+      vivant: objetLibre({}),
       notes: html()
     };
   }

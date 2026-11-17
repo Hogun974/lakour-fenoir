@@ -1,0 +1,118 @@
+{
+  "_id": "5iWchY1NITpaQQ2Y",
+  "_key": "!tables!5iWchY1NITpaQQ2Y",
+  "name": "Les bêtes de l'île — les forêts",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce qu'on croise dans les forêts des Bas et des Hauts, les ravines.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "betes-de-l-ile-foret",
+      "vivant": "betes-de-l-ile-foret"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "TCUf0a6vdDHlqfLN",
+      "_key": "!tables.results!5iWchY1NITpaQQ2Y.TCUf0a6vdDHlqfLN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Rien que des tangues dans les feuilles, et un papangue au-dessus.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "BMrez4DGEkChquRU",
+      "_key": "!tables.results!5iWchY1NITpaQQ2Y.BMrez4DGEkChquRU",
+      "type": "text",
+      "name": "",
+      "description": "<p>Trois cochons marrons dans une ravine (ils chargent quand on les surprend ; un piège ou une fosse suffit).</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "KdTEOokyEltXfyh8",
+      "_key": "!tables.results!5iWchY1NITpaQQ2Y.KdTEOokyEltXfyh8",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un essaim dans une souche, qui bourdonne fort au soleil.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "yqePEhgICuOB3SKT",
+      "_key": "!tables.results!5iWchY1NITpaQQ2Y.yqePEhgICuOB3SKT",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des cabris marrons sur une crête, à l'aube.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "Xt2ZTc9nt6PJG64l",
+      "_key": "!tables.results!5iWchY1NITpaQQ2Y.Xt2ZTc9nt6PJG64l",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des anguilles dans un bassin de la rivière, sous les racines.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xf4ZcjBJFVVEZaFt",
+      "_key": "!tables.results!5iWchY1NITpaQQ2Y.xf4ZcjBJFVVEZaFt",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des poules marronnes autour d'un ancien boucan.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

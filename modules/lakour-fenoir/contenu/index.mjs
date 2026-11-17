@@ -35,17 +35,25 @@ import { FETES_FENOIR, imageSiPeinte, EFFET_FETE } from "../scripts/fetes.js";
 import { LOT_AFFAIRES } from "./affaires.mjs";
 import { CORVEES, BAREME, TABLES_COMMUNAUTE } from "./communaute.mjs";
 import { INSTALLATIONS_PLANS, EQUIPEMENTS_PLANS, PLANS_CONSTRUCTION, LIEUX_A_PLANS, TABLES_PLANS, JOURNAL_PLANS, sitesAvecPlans } from "./plans.mjs";
+import { ESPECES, INSTALLATIONS_VIVANT, BETES_SAUVAGES, EQUIPEMENTS_VIVANT, RECETTES_VIVANT, TABLES_VIVANT, JOURNAL_VIVANT, vivantDesInstallations,
+  completerBestiaire, captureDesEquipements } from "./vivant.mjs";
+
+// Lot 8 « Le vivant de l'abri » (contrat §27) : la basse-cour, l'enclos à cabris, le bassin à tilapias et les ruches passent sous la règle
+// du vivant (effets.vivant, l'eau de ceux qui boivent), la pluie arrose ce qui pousse à ciel ouvert ; le cochon marron a son espèce.
+vivantDesInstallations(INSTALLATIONS);
+completerBestiaire(BESTIAIRE);
 
 // Carte de La Réunion : une épingle par région vers sa page du journal « Les régions de l'île ».
 const pagesRegions = Object.fromEntries(REGIONS.map(r => [r.cle, { entryId: idJournal("guides", CLE_JOURNAL_REGIONS), pageId: idPage("guides", CLE_JOURNAL_REGIONS, r.cle) }]));
 export const SCENE_REUNION = sceneReunion(REGIONS, pagesRegions);
 
 export const DOCUMENTS = [
-  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...SAVOIRS, ...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...AFFLICTIONS,
+  ...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_VIVANT, ...SAVOIRS, ...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES,
+  ...EQUIPEMENTS_VIVANT, ...PASSES, ...RECETTES, ...RECETTES_REPERES, ...RECETTES_VIVANT, ...AFFLICTIONS,
   ...SURVIVANTS, ...BESTIAIRE_ACTEURS,
-  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, JOURNAL_CORPS, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
+  ...JOURNAUX, ...JOURNAUX_SAVOIRS, JOURNAL_SENS, JOURNAL_PLANS, JOURNAL_REPERES, JOURNAL_CORPS, JOURNAL_VIVANT, LIVRE_UNIVERS, ...CAMP.filter(d => d.__pack !== "tables"),
   ...LOT_AFFAIRES.journaux, ...TABLES, ...TABLES_SAVOIRS, ...LOT_AFFAIRES.tables, ...CAMP.filter(d => d.__pack === "tables"), APPELS_RADIO, ...DEMANDES, ...TABLES_ESPRIT,
-  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES, ...TABLES_CORPS,
+  ...TABLES_SENS, ...TABLES_COMMUNAUTE, ...TABLES_PLANS, ...TABLES_REPERES, ...TABLES_CORPS, ...TABLES_VIVANT,
   SCENE_REUNION, ...CARTES_LIEUX
 ];
 
@@ -58,9 +66,10 @@ export function donnees() {
     module: MODULE, version: 1,
     // Lot 12 : ce qu'on comprend en arrivant dans chaque région (une ligne pour le MJ, contenu/affaires.mjs).
     regions: REGIONS.map(r => ({ ...r, arrivee: LOT_AFFAIRES.arrivees[r.cle] ?? "" })), sites: sitesAvecPlans(SITES), routes: ROUTES.map(({ de, vers, ...r }) => ({ de, vers, ...r })),
-    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE].map(aPlat), savoirs: SAVOIRS.map(aPlat), equipements: [...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES].map(aPlat), passes: PASSES.map(aPlat),
-    recettes: [...RECETTES, ...RECETTES_REPERES].map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
-    factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: BESTIAIRE, enfances: ENFANCES, traits: TRAITS,
+    installations: [...INSTALLATIONS, ...INSTALLATIONS_PLANS, ...INSTALLATIONS_HYGIENE, ...INSTALLATIONS_VIVANT].map(aPlat), savoirs: SAVOIRS.map(aPlat),
+    equipements: captureDesEquipements([...EQUIPEMENTS, ...EQUIPEMENTS_PLANS, ...EQUIPEMENTS_REPERES, ...EQUIPEMENTS_VIVANT].map(aPlat)), passes: PASSES.map(aPlat),
+    recettes: [...RECETTES, ...RECETTES_REPERES, ...RECETTES_VIVANT].map(aPlat), afflictions: AFFLICTIONS.map(aPlat),
+    factions: FACTIONS, evenements: EVENEMENTS, creatures: CREATURES, bestiaire: [...BESTIAIRE, ...BETES_SAUVAGES], enfances: ENFANCES, traits: TRAITS,
     religions: RELIGIONS, ancrages: ANCRAGES,
     reputations: { paliers: PALIERS, factions: REPUTATIONS, horloges: HORLOGES_REPUTATION },
     visibilite: PALIERS_VISIBILITE.map(p => ({ ...p, table: `tables:visibilite-${p.cle}` })),
@@ -86,6 +95,8 @@ export function donnees() {
     // rares ; les plans propres d'un site sont dans sites[].plans.
     plans: PLANS_CONSTRUCTION, lieuxAPlans: LIEUX_A_PLANS,
     // Lot « corps » (contrat §19) : les symptômes (nommés aux joueurs) et le Gris en six stades visibles (logique/maladies.mjs).
-    symptomes: SYMPTOMES, gris: GRIS
+    symptomes: SYMPTOMES, gris: GRIS,
+    // Lot 8 « Le vivant de l'abri » (contrat §27 ; logique/vivant.mjs) : les espèces élevées et ce qu'on en sait.
+    especes: ESPECES
   };
 }

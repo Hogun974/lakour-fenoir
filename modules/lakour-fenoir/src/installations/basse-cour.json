@@ -44,7 +44,9 @@
             "riviere": false,
             "delai": 20
           },
-          "consommation": {},
+          "consommation": {
+            "eau": 0.5
+          },
           "defense": 0,
           "discretion": 0,
           "capacite": 0,
@@ -62,6 +64,12 @@
           "bras": {
             "tache": "elevage",
             "nombre": 1
+          },
+          "vivant": {
+            "espece": "poule",
+            "places": 6,
+            "plein": 4,
+            "depart": 3
           }
         }
       },
@@ -95,7 +103,9 @@
             "riviere": false,
             "delai": 20
           },
-          "consommation": {},
+          "consommation": {
+            "eau": 0.5
+          },
           "defense": 0,
           "discretion": 0,
           "capacite": 0,
@@ -113,6 +123,11 @@
           "bras": {
             "tache": "elevage",
             "nombre": 1
+          },
+          "vivant": {
+            "espece": "poule",
+            "places": 12,
+            "plein": 8
           }
         }
       }

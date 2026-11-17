@@ -21,6 +21,17 @@
       "en": "<p>A drum, a firebox, a filter, pipes to the intake: one of the group's trucks (the GM removes it) will run on dry wood.</p>"
     }
   },
+  "recettes/6oYNCi9VseFjLv4K": {
+    "_nom": "Sac de goni",
+    "name": {
+      "fr": "Sac de goni",
+      "en": "Goni sack"
+    },
+    "system.description": {
+      "fr": "<p>De la toile de jute ou trois sacs de riz cousus ensemble.</p>",
+      "en": "<p>Jute cloth, or three rice sacks sewn together.</p>"
+    }
+  },
   "recettes/7JuZNH2SQ4MCyAaV": {
     "_nom": "Gourde filtrante de fortune",
     "name": {
@@ -118,6 +129,17 @@
     "system.description": {
       "fr": "<p>Un récepteur démonté d'un vieux poste, une dynamo de vélo, une manivelle : écouter l'île sans piles.</p>",
       "en": "<p>A receiver stripped from an old set, a bicycle dynamo, a crank: listen to the island without batteries.</p>"
+    }
+  },
+  "recettes/JCmS9HDLcxcyBk5n": {
+    "_nom": "Cage de bambou",
+    "name": {
+      "fr": "Cage de bambou",
+      "en": "Bamboo cage"
+    },
+    "system.description": {
+      "fr": "<p>Des gaulettes de bambou, une corde de choka, un couteau : une soirée de travail.</p>",
+      "en": "<p>Bamboo gaulettes, a choka (agave) rope, a knife: an evening's work.</p>"
     }
   },
   "recettes/MbZqvVVbkxPgJ8rR": {
@@ -294,6 +316,17 @@
     "system.description": {
       "fr": "<p>Un bout de goyavier, un couteau, du fil : on fend, on taille, on ligature. Le genre de chose qu'on achetait sans y penser.</p>",
       "en": "<p>A piece of guava wood, a knife, some wire: you split, you carve, you bind. The kind of thing you used to buy without thinking.</p>"
+    }
+  },
+  "recettes/jFAFJwxAPSIeJLWM": {
+    "_nom": "Enfumoir",
+    "name": {
+      "fr": "Enfumoir",
+      "en": "Bee smoker"
+    },
+    "system.description": {
+      "fr": "<p>Une boîte de conserve, une chambre à air pour le soufflet, de la paille sèche.</p>",
+      "en": "<p>A tin can, an inner tube for the bellows, dry straw.</p>"
     }
   },
   "recettes/nHobGpngrAgb3YMs": {

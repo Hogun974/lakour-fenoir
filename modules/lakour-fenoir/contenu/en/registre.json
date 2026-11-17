@@ -2153,6 +2153,44 @@
       "en": "The refuge beneath the farm (the quiet path)"
     }
   },
+  "registre/bestiaire/boeuf-moka-sauvage": {
+    "_nom": "Bœufs moka",
+    "nom": {
+      "fr": "Bœufs moka",
+      "en": "Moka oxen"
+    },
+    "description": {
+      "fr": "<p>Des bœufs moka des fermes de la Plaine des Cafres, lâchés le jour zéro : ils paissent les pâturages et les landes, un tiers de veaux, un vieux taureau devant.</p>",
+      "en": "<p>Moka oxen from the farms of the Plaine des Cafres, let loose on day zero: they graze the pastures and the heathland, a third of them calves, an old bull in front.</p>"
+    },
+    "comportement": {
+      "fr": "<p>Lents, méfiants ; ils ne fuient qu'au dernier moment, et loin. Un taureau qu'on serre de trop près peut charger.</p>",
+      "en": "<p>Slow, wary; they only flee at the last moment, and far. A bull pressed too close may charge.</p>"
+    },
+    "faiblesse": {
+      "fr": "<p>Le sel, et la voix calme de quelqu'un qui a déjà mené des bêtes : avec l'élevage, on les approche.</p>",
+      "en": "<p>Salt, and the calm voice of someone who has led animals before: with livestock farming, you can get close.</p>"
+    }
+  },
+  "registre/bestiaire/cabri-marron": {
+    "_nom": "Cabris marrons",
+    "nom": {
+      "fr": "Cabris marrons",
+      "en": "Feral goats"
+    },
+    "description": {
+      "fr": "<p>Des cabris partis des enclos, qui vivent dans les éboulis, les remparts et les forêts sèches, là où personne ne monte.</p>",
+      "en": "<p>Goats gone from the pens, living in the scree, the ramparts and the dry forests, where nobody climbs.</p>"
+    },
+    "comportement": {
+      "fr": "<p>Ils regardent venir de loin, sautent d'un rocher à l'autre, et vont boire à la même vasque chaque soir.</p>",
+      "en": "<p>They watch you coming from afar, leap from rock to rock, and go to drink at the same pool every evening.</p>"
+    },
+    "faiblesse": {
+      "fr": "<p>La vasque du soir : une corde, quelqu'un qui attend sans bouger.</p>",
+      "en": "<p>The evening pool: a rope, someone waiting without moving.</p>"
+    }
+  },
   "registre/bestiaire/chien-de-tete": {
     "_nom": "Chien de tête",
     "description": {
@@ -2219,6 +2257,25 @@
     "faiblesse": {
       "fr": "<p>Il tombe, il se cogne : un obstacle bien placé le brise.</p>",
       "en": "<p>It falls, it crashes into things: a well-placed obstacle breaks it.</p>"
+    }
+  },
+  "registre/bestiaire/lapin-sauvage": {
+    "_nom": "Lapins",
+    "nom": {
+      "fr": "Lapins",
+      "en": "Rabbits"
+    },
+    "description": {
+      "fr": "<p>Des lapins échappés des clapiers, qui ont fait des petits dans les talus des cultures et les landes des Hauts.</p>",
+      "en": "<p>Rabbits escaped from the hutches, which have bred in the banks of the fields and the heathland of the Highlands.</p>"
+    },
+    "comportement": {
+      "fr": "<p>Ils sortent à l'aube et au soir ; au moindre pas, ils disparaissent dans le talus.</p>",
+      "en": "<p>They come out at dawn and in the evening; at the slightest step, they vanish into the bank.</p>"
+    },
+    "faiblesse": {
+      "fr": "<p>Ils reviennent toujours au même trou : une cage à l'entrée, et de la patience.</p>",
+      "en": "<p>They always come back to the same hole: a cage at the entrance, and patience.</p>"
     }
   },
   "registre/bestiaire/livide-brule": {
@@ -2310,6 +2367,25 @@
     "faiblesse": {
       "fr": "<p>Il tient à sa vie plus qu'à la bande : un coup dur et il fuit.</p>",
       "en": "<p>He values his life more than the gang: one hard blow and he runs.</p>"
+    }
+  },
+  "registre/bestiaire/poule-marronne": {
+    "_nom": "Poule marronne",
+    "nom": {
+      "fr": "Poule marronne",
+      "en": "Feral hen"
+    },
+    "description": {
+      "fr": "<p>Les poules des cours abandonnées vivent maintenant dans la canne et les bords de route, un coq devant, qui chante encore trop tôt.</p>",
+      "en": "<p>The hens of the abandoned yards now live in the cane and along the roadsides, a rooster in front, still crowing too early.</p>"
+    },
+    "comportement": {
+      "fr": "<p>Elles grattent, picorent, s'envolent d'un coup quand on court vers elles. Le soir, elles se perchent dans le même manguier.</p>",
+      "en": "<p>They scratch, peck, take off all at once when you run at them. In the evening, they roost in the same mango tree.</p>"
+    },
+    "faiblesse": {
+      "fr": "<p>Le soir, sur leur perchoir, elles ne bougent plus : un sac de goni, une main tranquille.</p>",
+      "en": "<p>In the evening, on their roost, they no longer move: a goni sack, a steady hand.</p>"
     }
   },
   "registre/bestiaire/rat-des-reserves": {
@@ -3489,6 +3565,128 @@
     "nomAutre": {
       "fr": "Gamine du Port",
       "en": "Kid from Le Port"
+    }
+  },
+  "registre/especes/anguille": {
+    "_nom": "Anguille",
+    "nom": {
+      "fr": "Anguille",
+      "en": "Eel"
+    },
+    "produit": {
+      "fr": "L'anguille des bassins, lente à venir (deux font une ration).",
+      "en": "The pond eel, slow to come (two make a ration)."
+    }
+  },
+  "registre/especes/boeuf-moka": {
+    "_nom": "Bœuf moka",
+    "nom": {
+      "fr": "Bœuf moka",
+      "en": "Moka ox"
+    },
+    "produit": {
+      "fr": "Du lait, du fumier, la traction d'une charrette ; abattu, vingt rations et trois peaux.",
+      "en": "Milk, manure, the pull of a cart; slaughtered, twenty rations and three hides."
+    }
+  },
+  "registre/especes/cabri": {
+    "_nom": "Cabri",
+    "nom": {
+      "fr": "Cabri",
+      "en": "Goat"
+    },
+    "produit": {
+      "fr": "Du lait, des chevreaux, du fumier ; un cabri abattu, six rations et une peau.",
+      "en": "Milk, kids, manure; one goat slaughtered, six rations and a hide."
+    }
+  },
+  "registre/especes/camaron": {
+    "_nom": "Camaron",
+    "nom": {
+      "fr": "Camaron",
+      "en": "Camaron (river prawn)"
+    },
+    "produit": {
+      "fr": "Le camaron de la rivière, le plat des grands jours (deux font une ration).",
+      "en": "The river camaron, the dish of great days (two make a ration)."
+    }
+  },
+  "registre/especes/cochon": {
+    "_nom": "Cochon",
+    "nom": {
+      "fr": "Cochon",
+      "en": "Pig"
+    },
+    "produit": {
+      "fr": "Rien chaque jour, sinon le fumier : on l'engraisse aux restes et aux troncs de bananier, et un cochon nourrit le camp dix jours.",
+      "en": "Nothing each day but manure: you fatten it on scraps and banana trunks, and one pig feeds the camp for ten days."
+    }
+  },
+  "registre/especes/essaim": {
+    "_nom": "Essaim d'abeilles",
+    "nom": {
+      "fr": "Essaim d'abeilles",
+      "en": "Bee swarm"
+    },
+    "produit": {
+      "fr": "Le miel, la cire des bougies, des fleurs qui donnent mieux.",
+      "en": "Honey, wax for candles, flowers that bear better."
+    }
+  },
+  "registre/especes/lapin": {
+    "_nom": "Lapin",
+    "nom": {
+      "fr": "Lapin",
+      "en": "Rabbit"
+    },
+    "produit": {
+      "fr": "De la viande sans bruit, du fumier pour le jardin.",
+      "en": "Meat without noise, manure for the garden."
+    }
+  },
+  "registre/especes/plants-hors-sol": {
+    "_nom": "Plants hors-sol",
+    "nom": {
+      "fr": "Plants hors-sol",
+      "en": "Soilless plants"
+    },
+    "remede.texte": {
+      "fr": "de la lessive de cendre (du bois des alentours)",
+      "en": "wood-ash lye (wood from the surroundings)"
+    },
+    "produit": {
+      "fr": "Des brèdes surtout, des salades dans les Hauts, des tomates et des piments dans les Bas.",
+      "en": "Mostly brèdes (leafy greens), lettuces in the Highlands, tomatoes and chillies in the Lowlands."
+    }
+  },
+  "registre/especes/poule": {
+    "_nom": "Poule péi",
+    "nom": {
+      "fr": "Poule péi",
+      "en": "Péi hen (local hen)"
+    },
+    "remede.texte": {
+      "fr": "une tisane de zerbaz (une brassée)",
+      "en": "a zerbaz infusion (an armful)"
+    },
+    "produit": {
+      "fr": "Des œufs (une ration de nourriture vaut quatre œufs), et une poule au cari les jours de fête.",
+      "en": "Eggs (a ration of food is worth four eggs), and a chicken cari on feast days."
+    }
+  },
+  "registre/especes/tilapia": {
+    "_nom": "Tilapia",
+    "nom": {
+      "fr": "Tilapia",
+      "en": "Tilapia"
+    },
+    "remede.texte": {
+      "fr": "l'eau changée, une poignée de sel (quatre d'eau)",
+      "en": "fresh water, a handful of salt (four water)"
+    },
+    "produit": {
+      "fr": "Du poisson (quatre tilapias font une ration).",
+      "en": "Fish (four tilapias make a ration)."
     }
   },
   "registre/evenements/appel-a-l-aide": {

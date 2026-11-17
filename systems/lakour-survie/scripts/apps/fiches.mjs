@@ -9,7 +9,7 @@
 import { ID, COMPETENCES, RESSOURCES, NATURE, DIFFICULTES } from "../../logique/constantes.mjs";
 import * as L from "../../logique/index.mjs";
 import { t, aPlat, lireEtat, echapper, sansBalises, libelleCompetence, libelleRessource, libelleTache, MODULE_MJIA } from "../donnees.mjs";
-import { CHEMIN, essayer, lireChamps, flammes, jours, options } from "./commun.mjs";
+import { CHEMIN, essayer, lireChamps, flammes, jours, options, ligneCheptel } from "./commun.mjs";
 import { contexteEsprit, texteListe } from "./esprit.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -213,7 +213,9 @@ export function contexteAbri(a) {
     return { id: i.id, nom: i.name, img: i.img, niveau: sys.niveau, niveauMax: sys.niveauMax ?? def?.niveauMax ?? 1, etat: sys.etat, etatTexte: t(`LAKOUR_SURVIE.EtatInstallation.${sys.etat ?? 0}`),
       chantier: enChantier ? { fait: sys.chantier.fait, requis: sys.chantier.requis, pct: Math.round(Math.min(1, sys.chantier.fait / sys.chantier.requis) * 100) } : null,
       categorie: t(`LAKOUR_SURVIE.Categories.${sys.categorie ?? def?.categorie ?? "vie"}`), arret: (b?.arrets ?? []).find(x => x.cle === sys.cle)?.raison ?? "", aide: sansBalises(def?.description ?? ""),
-      secours: (b?.secours ?? []).some(x => x.cle === sys.cle), lontan: (def?.arbre ?? sys.arbre) === "lontan" };
+      secours: (b?.secours ?? []).some(x => x.cle === sys.cle), lontan: (def?.arbre ?? sys.arbre) === "lontan",
+      // Lot 8 : son cheptel (têtes, places, santé, ce qui lui manque).
+      cheptel: ligneCheptel((b?.cheptels ?? []).find(x => x.cle === sys.cle)) };
   });
   const nature = NATURE.map(n => ({ cle: n, libelle: t(`LAKOUR_SURVIE.Nature.${n}`), valeur: Math.round((Number(s.nature?.[n]) || 0) * 10) / 10 }));
   const membres = courant ? (etat.groupe.membres ?? []).map(id => game.actors.get(id)).filter(Boolean) : [];

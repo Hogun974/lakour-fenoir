@@ -32,6 +32,7 @@ import { fonctionsGestion } from "./api-gestion.mjs";
 import { fonctionsPlans } from "./api-plans.mjs";
 import { fonctionsReperes } from "./api-reperes.mjs";
 import { fonctionsCorps } from "./api-corps.mjs";
+import { fonctionsVivant } from "./api-vivant.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -275,7 +276,8 @@ async function ecrireSurvivant(a, system, ctx = null) {
 async function ecrireAbri(a, { system, installations = null }) {
   const s = {};
   for (const k of ["stocks", "reliquats", "nature", "sol", "bruit", "degats", "reparation", "installeLe", "abandonneLe", "site", "region",
-    "vegetation", "eauDouteuse", "preparation", "lumiereLe", "souillure"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);
+    "vegetation", "eauDouteuse", "preparation", "lumiereLe", "souillure",
+    "vivant"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);   // lot 8 : les cheptels (logique/vivant.mjs)
   await a.update({ system: s });
   if (!installations) return;
   const avant = new Map(instancesDe(a).map(i => [i.id, i]));
@@ -402,7 +404,8 @@ const CHAMPS_BILAN = ["production", "consommation", "net", "pertes", "joursDeSto
   "protectionCyclone", "soins", "moral", "conservation", "renseignements", "eauTraitee", "plafonds", "arrets", "surpeuplement", "reseaux", "personnes", "actives",
   "secours", "savoirs",
   "odeur", "odeurBetes", "odeurSources", "ravine",   // lot « sens » : ce que l'abri sent, l'état de sa ravine
-  "hygiene", "latrines", "toilette", "insalubrite"];  // lot « corps » : l'hygiène de l'abri et son insalubrité (pas la souillure chiffrée)
+  "hygiene", "latrines", "toilette", "insalubrite",   // lot « corps » : l'hygiène de l'abri et son insalubrité (pas la souillure chiffrée)
+  "cheptels"];   // lot 8 : les cheptels et les bacs de l'abri (on les voit, on les entend)
 // L'instantané PUBLIC du bilan (état de la partie, lu par les joueurs) : ce que le groupe sait, pas le réel à distance.
 export function instantaneBilan(etat, monde) {
   const b = bilanVivant(etat, monde, { publique: true });
@@ -587,7 +590,11 @@ function modificateursDehors(sys, competence, etat, dehors, ecoute = "") {
 
 function modificateursDuTest(a, sys, competence, etat = lireEtat(), { dehors = null, ecoute = "" } = {}) {
   const c = contenu();
-  const outil = Math.max(0, ...objetsDe(a, "equipement").map(i => Number(i.system?.bonus?.[competence]) || 0));
+  // Lot 8 : le chien du groupe prévient sans attirer : la vigilance de chacun du groupe (la garde, la marche, le bivouac), comme son
+  // maître (son bonus d'outil), sans bruit.
+  const chien = competence === "vigilance" && (etat.groupe?.membres ?? []).includes(a.id) && chienEtConfort(survivantsDuGroupe(etat).filter(x => L.peutAgir(x.system))).chien
+    ? L.CHIEN_PREVIENT.vigilance : 0;
+  const outil = Math.max(chien, ...objetsDe(a, "equipement").map(i => Number(i.system?.bonus?.[competence]) || 0));
   let installation = 0, lieux = [];
   const ab = abriCourant(etat);
   if (ab && aLAbri(etat, ab) && (etat.groupe.membres ?? []).includes(a.id)) {
@@ -1135,9 +1142,11 @@ async function assautInterne(ctx, { force = 1, type = "", description = "", mena
   if (r.issue === "breche") alerter(ctx, "breche", tx("Assaut.Breche"));
   // Lot 4 « Les plans » : des vivants qui forcent l'abri emportent des papiers de l'étagère aux cahiers.
   const papiersVoles = r.issue === "breche" ? await PLANS_API.pertesDeBreche(ctx, type) : [];
+  // Lot 8 : un Livide resté près d'un enclos tue une bête ; une bande en emporte (logique/vivant.mjs, pertesDAssaut).
+  const betesPerdues = await VIVANT.pertesDAssaut(ctx, { marge: r.marge, force: entier(force, 1, 15, 1) });
   await chat(carteAssaut(r, { type, description, degats, blesses: blesses.map(id => acteur(id)?.name ?? id) }));
   annoncer("lakourSurvie.assaut", [{ issue: r.issue, marge: r.marge }]);
-  return { marge: r.marge, issue: r.issue, degats, blesses, papiersVoles, sangFroid, desDefense: r.desDefense, desMenace: r.desMenace, succesDefense: r.succesDefense, succesMenace: r.succesMenace };
+  return { marge: r.marge, issue: r.issue, degats, blesses, papiersVoles, betesPerdues, sangFroid, desDefense: r.desDefense, desMenace: r.desMenace, succesDefense: r.succesDefense, succesMenace: r.succesMenace };
 }
 
 async function soinsDe(ctx, { acteurId, soigneurId = "", difficulte = "" }) {
@@ -1185,6 +1194,11 @@ const CORPS = fonctionsCorps({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx
   mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), aLAbri: (etat, ab) => aLAbri(etat, ab),
   savoirsDuGroupe: etat => savoirsDuGroupe(etat), testDirect: (...x) => testDirect(...x), objetsDe, defDe, estMJ: () => Boolean(game.user?.isGM),
   brasDe: (qui, jour) => brasDeLEquipe(qui, jour), journalSecret });
+// Lot 8 « Le vivant de l'abri » (contrat §27) : les cheptels, les bêtes portées, en liberté, le chien qui prévient (api-vivant.mjs).
+const VIVANT = fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
+  ecrireSurvivant: (...x) => ecrireSurvivant(...x), bilanVivant: (etat, monde) => bilanVivant(etat, monde),
+  mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), aLAbri: (etat, ab) => aLAbri(etat, ab),
+  testDirect: (...x) => testDirect(...x), objetsDe, defDe, avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o), instancesDe, membresValides });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1992,6 +2006,8 @@ export const api = {
   // Lot « cartes » (contrat §20) : le compte des jours, la lune sur un calendrier, les cartes et les calendriers, le journal d'un mort.
   ...REPERES.api,
   ...CORPS,
+  // Lot 8 (contrat §27) : les cheptels, les bêtes portées et en liberté, le chien qui prévient.
+  ...VIVANT.api,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {
