@@ -33,6 +33,7 @@ import { erreursAffaire } from "../systems/lakour-survie/logique/affaires.mjs";
 import { erreursPlans } from "../systems/lakour-survie/logique/plans.mjs";
 import { erreursFouilles } from "../systems/lakour-survie/logique/fouilles.mjs";
 import { erreursOuvrages } from "../systems/lakour-survie/logique/ouvrages.mjs";
+import { erreursChantiers } from "../systems/lakour-survie/logique/paradis.mjs";
 import { erreursRepere, chanceRepere, LIEUX_REPERE, CHANCE_REPERE_MAX } from "../systems/lakour-survie/logique/reperes.mjs";
 import { METIERS, TRAITEMENTS, objetsDeRecette } from "../systems/lakour-survie/logique/fabrication.mjs";
 import { GAMMES, QUALITES } from "../systems/lakour-survie/logique/armes.mjs";
@@ -728,6 +729,9 @@ export function verifierDonnees(d, { module: MODULE = MODULE_PAR_DEFAUT } = {}) 
   for (const x of erreursPlans(d)) e(x);
   // Lot 5 « fouille » (§25) : les genres de lieux, les objets trouvés, les bêtes, les gisements et les milieux.
   for (const x of erreursFouilles(d)) e(x);
+  // Lot 9 « Le paradis et son piège » (contrat §28) : les grands chantiers de région (région, type, travail, effets, voisines des routes,
+  // savoirs et affaires connus).
+  for (const x of erreursChantiers(d)) e(x);
   if ((d.plans ?? []).length && !(d.lieuxAPlans ?? []).length) e("plans : aucun lieu à plans");
 
   // Aucun terme interdit dans tout le registre.

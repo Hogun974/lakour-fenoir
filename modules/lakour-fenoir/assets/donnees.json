@@ -16417,6 +16417,324 @@
     }
    ],
    "arbre": "lontan"
+  },
+  {
+   "nom": "Puits d'air et de jour",
+   "cle": "puits-de-jour",
+   "categorie": "souterrain",
+   "description": "<p>Un conduit percé jusqu'au jour depuis la galerie : d'abord un simple tuyau d'air coiffé d'un chapeau de tôle, puis un vrai puits, tubé, fermé d'une plaque de plexiglas ou d'un vieux pare-brise, qui descend un rond de soleil jusqu'en bas. L'air circule, la bougie se tient droite ; le jour tombe sur ceux qui ne remontent plus. Mais ce qui entre sort aussi : le soir, la lueur des lampes monte par le puits, avec la fumée et les voix.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 2,
+      "pieces": 0,
+      "graines": 0,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 1
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": -1,
+      "capacite": 0,
+      "visibilite": 0,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "air": 1,
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 3,
+      "pieces": 1,
+      "graines": 0,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 1
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": -1,
+      "capacite": 0,
+      "visibilite": 1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "air": 1,
+      "jour": 1,
+      "bras": null
+     }
+    }
+   ]
+  },
+  {
+   "nom": "Haie de bambous",
+   "cle": "haie-de-bambous",
+   "categorie": "defense",
+   "description": "<p>Des touffes de bambou arrachées dans la ravine et replantées serré autour de la cour, comme faisaient les anciens pour casser le vent. Il faut deux mois pour qu'elle ferme, trois pour qu'elle cache vraiment. Au cyclone, elle se couche, et se relève : elle ne casse pas.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 4
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 1,
+      "capacite": 0,
+      "visibilite": -1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "pousse": 60,
+      "plie": true,
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 0,
+      "ile": 3,
+      "travail": 6
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 2,
+      "capacite": 0,
+      "visibilite": -2,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "pousse": 90,
+      "plie": true,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "camouflage",
+   "rang": 1
+  },
+  {
+   "nom": "Rideau de filaos",
+   "cle": "rideau-de-filaos",
+   "categorie": "defense",
+   "description": "<p>Une rangée de jeunes filaos plantés en quinconce, qui chantent au vent comme ceux des plages. Ils montent vite : un mois, et l'abri se devine à peine. Mais le filao ne plie pas : au cyclone, il casse, et l'on voit à travers jusqu'à ce qu'il repousse.</p>",
+   "niveau": 0,
+   "niveauMax": 2,
+   "chantier": {
+    "fait": 0,
+    "requis": 3
+   },
+   "etat": 0,
+   "niveaux": [
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 1,
+      "ile": 1,
+      "travail": 3
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 1,
+      "capacite": 0,
+      "visibilite": -1,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "pousse": 30,
+      "casse": true,
+      "bras": null
+     }
+    },
+    {
+     "cout": {
+      "materiaux": 0,
+      "pieces": 0,
+      "graines": 1,
+      "ile": 2,
+      "travail": 4
+     },
+     "requiert": {
+      "savoirs": [],
+      "site": {
+       "eau": [],
+       "sol": 0,
+       "soleil": 0,
+       "souterrain": 0
+      },
+      "installations": []
+     },
+     "effets": {
+      "production": {},
+      "conditions": {
+       "pluie": false,
+       "soleil": false,
+       "riviere": false,
+       "delai": 0
+      },
+      "consommation": {},
+      "defense": 0,
+      "discretion": 2,
+      "capacite": 0,
+      "visibilite": -2,
+      "bruit": 0,
+      "stockage": {},
+      "protectionCyclone": 0,
+      "soins": 0,
+      "moral": 0,
+      "conservation": false,
+      "sol": 0,
+      "renseignements": false,
+      "bonus": {},
+      "pousse": 45,
+      "casse": true,
+      "bras": null
+     }
+    }
+   ],
+   "arbre": "lontan",
+   "role": "camouflage",
+   "rang": 2
   }
  ],
  "savoirs": [
@@ -37093,6 +37411,18 @@
    "nom": "Monter la garde",
    "tache": "garde",
    "description": "La ronde, les yeux sur la route et sur la ravine, l'oreille aux cloches, la nuit entière s'il le faut."
+  },
+  {
+   "cle": "faire-le-tour-de-la-cloture",
+   "nom": "Faire le tour de la clôture",
+   "tache": "ronde",
+   "description": "Longer la clôture et la haie, redresser ce qui penche, regarder ce qui a passé la nuit."
+  },
+  {
+   "cle": "relever-les-traces",
+   "nom": "Relever les traces",
+   "tache": "ronde",
+   "description": "Suivre les herbes couchées et les pas dans la boue jusqu'au bout du chemin, et abattre ce qu'on trouve."
   }
  ],
  "bareme": {
@@ -45758,6 +46088,133 @@
    },
    "capture": null,
    "produit": "Des brèdes surtout, des salades dans les Hauts, des tomates et des piments dans les Bas."
+  }
+ ],
+ "chantiersRegion": [
+  {
+   "cle": "relancer-la-centrale-de-langevin",
+   "nom": "Relancer la petite centrale de Langevin",
+   "region": "sud-sauvage",
+   "type": "centrale",
+   "travail": 90,
+   "cout": {
+    "materiaux": 8,
+    "pieces": 10
+   },
+   "requiert": {
+    "savoirs": [
+     "hydraulique-rurale"
+    ]
+   },
+   "effets": {
+    "lumiere": true,
+    "electricite": true
+   },
+   "affaires": [
+    "la-petite-centrale-de-langevin"
+   ],
+   "description": "Au fond de la ravine, la petite centrale attend qu'on dégage la prise d'eau, qu'on rebobine un alternateur et qu'on retende la ligne jusqu'à la Marine. Un travail de saison sèche, à plusieurs : la crue remonte vite. Fini, le Sud a du courant la nuit, sans bruit, et ses lumières se voient depuis la mer."
+  },
+  {
+   "cle": "relancer-la-centrale-de-la-riviere-de-l-est",
+   "nom": "Relancer la centrale de la Rivière de l'Est",
+   "region": "est",
+   "type": "centrale",
+   "travail": 140,
+   "cout": {
+    "materiaux": 12,
+    "pieces": 16
+   },
+   "requiert": {
+    "savoirs": [
+     "hydraulique-rurale",
+     "mecanique"
+    ]
+   },
+   "effets": {
+    "lumiere": true,
+    "electricite": true
+   },
+   "description": "La grande centrale de l'Est s'est arrêtée seule, faute de bras. Il faut descendre au pied de la conduite, nettoyer les grilles, remettre une turbine en route et isoler le réseau pour n'éclairer que ce qui vit encore. Le plus long des chantiers, et celui qui allume tout l'Est."
+  },
+  {
+   "cle": "rouvrir-la-route-du-littoral",
+   "nom": "Rouvrir la route du Littoral",
+   "region": "route-du-littoral",
+   "type": "route",
+   "travail": 160,
+   "cout": {
+    "materiaux": 10,
+    "carburant": 6
+   },
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ]
+   },
+   "effets": {
+    "routes": [
+     "saint-denis",
+     "le-port"
+    ]
+   },
+   "description": "Les éboulis de la falaise, les voitures abandonnées en travers, les filets arrachés : il faut tout dégager, pousser les épaves à la mer, étayer les pires endroits. Finie, la route ne se ferme plus qu'aux pires jours : après un éboulement, on passe encore, au pas."
+  },
+  {
+   "cle": "rouvrir-la-route-des-tamarins",
+   "nom": "Rouvrir la route des Tamarins",
+   "region": "saint-paul",
+   "type": "route",
+   "travail": 120,
+   "cout": {
+    "materiaux": 6,
+    "carburant": 4
+   },
+   "requiert": {
+    "savoirs": [
+     "mecanique"
+    ]
+   },
+   "effets": {
+    "routes": [
+     "saint-leu"
+    ]
+   },
+   "affaires": [
+    "le-viaduc"
+   ],
+   "description": "Les viaducs de la route d'en haut sont bouchés d'épaves. Les Ferrailleurs y voient de la ferraille ; d'autres, une route. Il faut les pousser au fond des ravines, une à une, et garder la chaussée ouverte."
+  },
+  {
+   "cle": "reparer-le-port-de-saint-pierre",
+   "nom": "Réparer le port de Saint-Pierre",
+   "region": "saint-pierre",
+   "type": "port",
+   "travail": 120,
+   "cout": {
+    "materiaux": 14,
+    "pieces": 4
+   },
+   "effets": {
+    "lumiere": true,
+    "peche": 1
+   },
+   "description": "Dégager la passe, renflouer deux barques, réparer la chambre froide à la main et rallumer les feux de l'entrée : les pêcheurs du Sud ressortent. Fini, le port pêche (une part de plus chaque jour à qui y tient un abri, au MJ de la donner) et ses feux se voient du large."
+  },
+  {
+   "cle": "rallumer-le-phare-de-bel-air",
+   "nom": "Rallumer le phare de Bel-Air",
+   "region": "sainte-marie",
+   "type": "phare",
+   "travail": 40,
+   "cout": {
+    "materiaux": 2,
+    "pieces": 4
+   },
+   "effets": {
+    "lumiere": true
+   },
+   "description": "Le vieux phare de Sainte-Marie n'a besoin que d'un panneau, d'une batterie et de quelqu'un pour monter là-haut. Il ne guide plus aucun bateau ; il dit seulement, chaque nuit, qu'il y a encore des vivants sur cette côte."
   }
  ]
 }

@@ -1,0 +1,118 @@
+{
+  "_id": "qdx5NwgRdCTheXwl",
+  "_key": "!tables!qdx5NwgRdCTheXwl",
+  "name": "Sous terre — la bougie",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Ce que l'on remarque au fond de la galerie, quand on y vit depuis des jours.</p>",
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "sous-terre-la-bougie",
+      "paradis": "sous-terre-la-bougie"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "gg1PwbXyVstgSUOm",
+      "_key": "!tables.results!qdx5NwgRdCTheXwl.gg1PwbXyVstgSUOm",
+      "type": "text",
+      "name": "",
+      "description": "<p>La flamme de la bougie penche toujours du même côté : l'air vient de là. On sait où creuser le puits.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "xjn3smrx5rW4wzRF",
+      "_key": "!tables.results!qdx5NwgRdCTheXwl.xjn3smrx5rW4wzRF",
+      "type": "text",
+      "name": "",
+      "description": "<p>La flamme baisse le soir, quand tout le monde est rentré : on dort la tête lourde.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "2QPlDruUo5D0zm3m",
+      "_key": "!tables.results!qdx5NwgRdCTheXwl.2QPlDruUo5D0zm3m",
+      "type": "text",
+      "name": "",
+      "description": "<p>Quelqu'un compte les jours sur le mur à la craie, et s'arrête : il ne sait plus si c'était hier ou avant-hier.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "SmMIp3VC8lCpBD3h",
+      "_key": "!tables.results!qdx5NwgRdCTheXwl.SmMIp3VC8lCpBD3h",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un enfant demande de quelle couleur est le ciel, aujourd'hui. Personne ne sait.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "DqAfXPNHTA5Uh1rQ",
+      "_key": "!tables.results!qdx5NwgRdCTheXwl.DqAfXPNHTA5Uh1rQ",
+      "type": "text",
+      "name": "",
+      "description": "<p>Les voix portent loin dans la galerie : on se dispute à voix basse, ou pas du tout.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "QrlgEX0nNWnZJlWY",
+      "_key": "!tables.results!qdx5NwgRdCTheXwl.QrlgEX0nNWnZJlWY",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une goutte qui tombe, toujours au même endroit, toute la nuit. On finit par ne plus l'entendre, ou par ne plus entendre qu'elle.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

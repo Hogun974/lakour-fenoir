@@ -665,11 +665,57 @@
       }
     },
     {
+      "_id": "1YUYO0DKZnK7CF9a",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.1YUYO0DKZnK7CF9a",
+      "name": "Le paradis, et ce qu'il coûte",
+      "type": "text",
+      "sort": 2900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Un abri autonome, où l'on vit bien : c'est le but de qui s'enracine. Mais <strong>un lieu où l'on reste longtemps se fait remarquer</strong>. On le voit à des signes : des traces, puis un ou deux Livides chaque jour, puis plus.</p><ul><li><strong>La ronde</strong> les tient : un membre qui l'a pour tâche fait le tour au matin et abat ceux qu'il trouve ; vus à temps, ils ne frappent pas. Celui qui a veillé la nuit fait aussi un tour au petit jour. Sans ronde, ils restent, et s'agglutinent contre la clôture.</li><li><strong>Les corps</strong> des Livides abattus s'enterrent (lent, sans bruit) ou se brûlent (vite, mais la fumée se voit).</li><li><strong>Le silence</strong> fait oublier un lieu : un jour où personne ne bâtit, ne fouille ni ne chasse. <strong>Un camp leurre</strong>, loin, tire ailleurs ce qui rôde. <strong>Partir</strong> fait oublier un lieu : on peut y revenir plus tard.</li><li><strong>Sous terre</strong>, on manque d'air et de jour : sortir chaque jour, ou percer un puits (qui laisse aussi sortir la lueur et le bruit).</li><li><strong>Une haie</strong> de bambous ou de filaos cache l'abri, quand elle a poussé ; au cyclone, le bambou plie, le filao casse.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "le-paradis"
+        }
+      }
+    },
+    {
+      "_id": "701qUTuS6qcP98mx",
+      "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.701qUTuS6qcP98mx",
+      "name": "Rallumer l'île",
+      "type": "text",
+      "sort": 3000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le but d'une longue partie : <strong>reprendre l'île, région par région</strong>. Une région se rallume quand on y tient un abri depuis un mois, qu'on en a nettoyé chaque lieu, que les Livides n'y sont plus nombreux, et qu'on y a ramené la lumière (du courant à l'abri, ou un grand chantier : une centrale, un phare, un port). La nuit, on la voit de loin ; sur la carte du tableau de bord, elle s'allume.</p><p>Elle devient moins dangereuse : moins de Livides, et plus aucune horde n'y naît. Mais <strong>la lumière se voit, et les bandes viennent</strong>. Et si on l'abandonne, le noir revient en dix jours.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "rallumer"
+        }
+      }
+    },
+    {
       "_id": "GsGWAAAIAkUufDjK",
       "_key": "!journal.pages!6cAiaJj4qo5Z1EsL.GsGWAAAIAkUufDjK",
       "name": "Les traits",
       "type": "text",
-      "sort": 2900,
+      "sort": 3100,
       "title": {
         "show": true,
         "level": 1

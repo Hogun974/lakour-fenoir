@@ -38,7 +38,11 @@ export const SCENARIOS = {
   "recrues": { strategie: "enracine", membres: 2, recrutement: true },
   "sans-recrues": { strategie: "enracine", membres: 2 },
   "nomade-4": { strategie: "nomade", membres: 4 },
-  "mixte-4": { strategie: "mixte", membres: 4 }
+  "mixte-4": { strategie: "mixte", membres: 4 },
+  // Lot 9 « Le paradis et son piège » (docs/equilibre-paradis.md) : l'enraciné × 4 (humains-4) qui, une fois autonome, nettoie les lieux gardés de
+  // sa région pour la rallumer ; et le même sans jamais faire de ronde (ni tournée du petit jour) : le prix du paradis négligé.
+  "rallumer-4": { strategie: "enracine", membres: 4, rallumer: true },
+  "sans-rondes-4": { strategie: "enracine", membres: 4, rondes: false }
 };
 
 // ------------------------------------------------------------------ contrôles d'une partie
@@ -291,7 +295,15 @@ export function resumer(parties, jours) {
     manquesDebut: l.map(p => p.stats.manquesDebut?.length ?? 0), manquesFin: l.map(p => p.stats.manquesFin?.length ?? 0),
     joursAvecManque: moyenne(l.map(p => p.stats.joursAvecManque ?? 0)),
     morts: l.reduce((t, p) => { for (const [c, n] of Object.entries(p.stats.morts)) t[c] = (t[c] ?? 0) + n; return t; }, {}),
-    remedes: remedesDe(l.map(p => p.stats))
+    remedes: remedesDe(l.map(p => p.stats)),
+    // Lot 9 : rondes, Livides abattus, chaleur (la plus haute, celle de la fin), agglutinés (le plus), corps enterrés, morsures de
+    // ronde, nettoyages, régions rallumées (combien, jour médian), jours où la région l'est, convois attirés.
+    paradis: { rondes: moyenne(l.map(p => p.stats.rondes ?? 0)), abattus: moyenne(l.map(p => p.stats.abattus ?? 0)), chaleurMax: moyenne(l.map(p => p.stats.chaleurMax ?? 0)),
+      chaleurFin: moyenne(l.map(p => p.stats.chaleurFin ?? 0)), agglutinesMax: moyenne(l.map(p => p.stats.agglutinesMax ?? 0)), corps: moyenne(l.map(p => p.stats.corpsEnterres ?? 0)),
+      morsures: l.reduce((t, p) => t + (p.stats.morsuresRonde ?? 0), 0), nettoyages: moyenne(l.map(p => p.stats.nettoyages ?? 0)),
+      rallumees: l.filter(p => p.stats.rallumeeLe !== null && p.stats.rallumeeLe !== undefined).length,
+      rallumeeMediane: q(l.filter(p => p.stats.rallumeeLe !== null && p.stats.rallumeeLe !== undefined).map(p => p.stats.rallumeeLe), 0.5),
+      joursRallumee: moyenne(l.map(p => p.stats.joursRallumee ?? 0)), convois: moyenne(l.map(p => p.stats.convois ?? 0)) }
   };
 }
 
@@ -334,6 +346,11 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   }
   console.log("\n### Remèdes (morsures : aidées par un médicament, une décoction, une trousse ou une infirmerie, soignées ; par partie : trousses trouvées, plantes cueillies, tisanes ; jours d'abri avec un médicament)\n");
   for (const [sc, r] of Object.entries(resumes)) console.log(`${sc.padEnd(16)} morsures ${r.remedes.morsures}, aidées ${r.remedes.aidees}, soignées ${r.remedes.soignees} ; trousses ${r.remedes.trousses}, plantes ${r.remedes.plantes}, tisanes ${r.remedes.tisanes} ; médicament ${r.remedes.joursAvecMedicament} des jours`);
+  console.log("\n### Le paradis et l'île (lot 9 : par partie ; morsures de ronde : en tout)\n");
+  for (const [sc, r] of Object.entries(resumes)) {
+    const x = r.paradis;
+    console.log(`${sc.padEnd(16)} rondes ${arr(x.rondes)}, abattus ${arr(x.abattus)}, chaleur max ${arr(x.chaleurMax, 2)} fin ${arr(x.chaleurFin, 2)}, agglutinés max ${arr(x.agglutinesMax)}, corps enterrés ${arr(x.corps)}, morsures ${x.morsures} ; nettoyages ${arr(x.nettoyages)}, rallumées ${x.rallumees} (J${x.rallumeeMediane ?? "—"}), jours rallumés ${arr(x.joursRallumee)}, convois ${arr(x.convois, 2)}`);
+  }
   console.log("\n### Menaces contre l'abri par mois (moyenne des parties en vie)\n");
   for (const [sc, r] of Object.entries(resumes)) console.log(`${sc.padEnd(16)} ${r.menacesParMois.map(x => arr(x)).join(" ")}`);
   console.log("\n### Menaces par type et par trimestre (par mois ; h horde, l Livides errants, b bande, a animaux, v visite)\n");

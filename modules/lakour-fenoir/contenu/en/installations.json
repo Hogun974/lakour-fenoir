@@ -208,6 +208,17 @@
       "en": "<p>A stone shelf against the quietest wall, a flame, a clean cloth. Each person sets there what their faith asks, a picture, a lamp, a rosary, a handful of rice, or just comes to be quiet there for a while. Nobody prays there in someone else's place.</p>"
     }
   },
+  "installations/CaKbxHsALyP6wS2q": {
+    "_nom": "Haie de bambous",
+    "name": {
+      "fr": "Haie de bambous",
+      "en": "Bamboo hedge"
+    },
+    "system.description": {
+      "fr": "<p>Des touffes de bambou arrachées dans la ravine et replantées serré autour de la cour, comme faisaient les anciens pour casser le vent. Il faut deux mois pour qu'elle ferme, trois pour qu'elle cache vraiment. Au cyclone, elle se couche, et se relève : elle ne casse pas.</p>",
+      "en": "<p>Clumps of bamboo pulled up in the ravine and replanted close together around the yard, as the old folk did to break the wind. It takes two months to close up, three to really hide anything. In a cyclone it lies down, and gets back up: it does not break.</p>"
+    }
+  },
   "installations/D0N2mvtdqrLXrOlN": {
     "_nom": "Bassin à camarons",
     "name": {
@@ -791,6 +802,17 @@
       "en": "<p>Three small flames in tin cans, a cotton wick, candlenut or coconut oil pressed by hand: the light of the evening gatherings. Oil has to be made again every week. They show through the cracks.</p>"
     }
   },
+  "installations/ZzYuqoTcdrA8dEp3": {
+    "_nom": "Puits d'air et de jour",
+    "name": {
+      "fr": "Puits d'air et de jour",
+      "en": "Air and daylight shaft"
+    },
+    "system.description": {
+      "fr": "<p>Un conduit percé jusqu'au jour depuis la galerie : d'abord un simple tuyau d'air coiffé d'un chapeau de tôle, puis un vrai puits, tubé, fermé d'une plaque de plexiglas ou d'un vieux pare-brise, qui descend un rond de soleil jusqu'en bas. L'air circule, la bougie se tient droite ; le jour tombe sur ceux qui ne remontent plus. Mais ce qui entre sort aussi : le soir, la lueur des lampes monte par le puits, avec la fumée et les voix.</p>",
+      "en": "<p>A duct dug up to the daylight from the tunnel: first a simple air pipe capped with a sheet-metal hat, then a real shaft, lined, closed with a sheet of perspex or an old windscreen, which brings a disc of sunlight all the way down. The air moves, the candle stands straight; daylight falls on those who no longer go up. But what comes in also goes out: in the evening, the glow of the lamps rises through the shaft, with the smoke and the voices.</p>"
+    }
+  },
   "installations/aPUo41aJLtwNcuNQ": {
     "_nom": "Puits à balancier",
     "name": {
@@ -1229,6 +1251,17 @@
     "system.description": {
       "fr": "<p>Deux battants de tamarin ou de bois de natte, chevillés, fermés par une barre qu'il faut deux bras pour lever. Le portail des vieilles cours, refait avec ce qui pousse autour. Il arrête ce qui frappe, et c'est sur lui qu'on frappe.</p>",
       "en": "<p>Two leaves of tamarind or bois de natte, pegged together, closed by a bar it takes two arms to lift. The gate of the old yards, made again from what grows around. It stops what strikes, and it is what gets struck.</p>"
+    }
+  },
+  "installations/yZ5MjWnebXOBXMQ1": {
+    "_nom": "Rideau de filaos",
+    "name": {
+      "fr": "Rideau de filaos",
+      "en": "Filao screen"
+    },
+    "system.description": {
+      "fr": "<p>Une rangée de jeunes filaos plantés en quinconce, qui chantent au vent comme ceux des plages. Ils montent vite : un mois, et l'abri se devine à peine. Mais le filao ne plie pas : au cyclone, il casse, et l'on voit à travers jusqu'à ce qu'il repousse.</p>",
+      "en": "<p>A row of young filao trees planted in staggered lines, singing in the wind like those on the beaches. They shoot up fast: one month, and the shelter can barely be made out. But the filao does not bend: in a cyclone it snaps, and you can see through until it grows back.</p>"
     }
   },
   "installations/z3IiPrqxZWc6vvbx": {

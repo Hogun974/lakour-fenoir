@@ -25,6 +25,8 @@
       <div data-tooltip="{{localize 'LAKOUR_SURVIE.Corps.Hygiene.Aide'}}" class="{{#if bilan.sale}}mauvais{{/if}}"><i class="fa-solid fa-soap"></i><strong>{{bilan.hygiene}} / 3</strong><span>{{localize "LAKOUR_SURVIE.Corps.Hygiene.Titre"}} — {{bilan.insalubrite}}</span></div>
     </div>
     {{#if bilan.surpeuplement}}<p class="survie-avertissement">{{bilan.surpeuplement}}</p>{{/if}}
+    {{#if courant}}<p class="survie-aide {{#if paradis.mauvais}}mauvais{{/if}}"><i class="fa-solid fa-shoe-prints"></i> {{localize "LAKOUR_SURVIE.Paradis.Fiche.Signe"}} : {{paradis.signe}}{{#if paradis.ronde}} · {{paradis.ronde}}{{/if}}{{#if paradis.corps}} · {{paradis.corps}}{{/if}}{{#if paradis.air}} · {{paradis.air}}{{/if}}</p>{{/if}}
+
     {{#if bilan.savoirs}}<p class="survie-aide"><i class="fa-solid fa-book-open"></i> {{localize "LAKOUR_SURVIE.Abri.Arbres" moderne=bilan.savoirs.moderne lontan=bilan.savoirs.lontan}}</p>{{/if}}
     {{/if}}
 

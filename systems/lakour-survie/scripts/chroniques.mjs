@@ -5,7 +5,8 @@
 import { ID } from "../logique/constantes.mjs";
 import { jourDe } from "../logique/temps.mjs";
 import { regionDe } from "../logique/contenu.mjs";
-import { t, echapper } from "./donnees.mjs";
+import { t, echapper, localiser } from "./donnees.mjs";
+import { texteJalon } from "../logique/paradis.mjs";
 
 export const chapitreOuvert = etat => [...(etat?.chroniques ?? [])].reverse().find(c => c.fin === null || c.fin === undefined) ?? null;
 
@@ -27,11 +28,18 @@ export function pageChapitre(c, contenu, maintenant) {
 
 export function pagesDesChroniques(etat, contenu) {
   const maintenant = etat?.horloge?.quart ?? 0;
-  return (etat?.chroniques ?? []).map((c, i) => ({
+  const pages = (etat?.chroniques ?? []).map((c, i) => ({
     name: t("LAKOUR_SURVIE.Chroniques.Chapitre", { n: i + 1, nom: c.nom }), type: "text", sort: (i + 1) * 100,
     text: { content: pageChapitre(c, contenu, maintenant) }
   }));
+  // Lot 9 « Rallumer l'île » : les jalons du groupe (premier abri, première saison des pluies, premier cyclone, première fête, première
+  // région rallumée, la moitié de l'île, toute l'île), une page à la fin, sans rien d'autre que la date.
+  const jalons = Array.isArray(etat?.jalons) ? etat.jalons : [];
+  if (jalons.length) pages.push({ name: t("LAKOUR_SURVIE.Paradis.Ile.Jalons"), type: "text", sort: (pages.length + 1) * 100,
+    text: { content: `<div class="lakour-survie survie-chronique"><ul>${jalons.map(j => `<li>${t("LAKOUR_SURVIE.Bandeau.Jour", { n: Number(j.jour) || 0 })} — ${echapper(localiser(texteJalon(j.cle, j.params ?? {})))}</li>`).join("")}</ul></div>` } });
+  return pages;
 }
+
 
 // Récrit le journal « Chroniques de Fénoir » (MJ actif). -> le journal
 export async function ecrireChroniques(etat, contenu) {

@@ -1,0 +1,139 @@
+{
+  "_id": "MBCykn2qBSE5A98C",
+  "_key": "!journal!MBCykn2qBSE5A98C",
+  "name": "Rallumer l'île",
+  "folder": null,
+  "sort": 0,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "rallumer-l-ile",
+      "visible": false
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "pages": [
+    {
+      "_id": "4EE0q6ZO5sNdhmj5",
+      "_key": "!journal.pages!MBCykn2qBSE5A98C.4EE0q6ZO5sNdhmj5",
+      "name": "Rallumer l'île",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Le but d'une longue partie : reprendre l'île, région par région.</strong> Pas d'écran de victoire : la nuit, de loin et sur la carte, les régions reprises s'allument.</p><p>Une région se <strong>rallume</strong> quand, en même temps :<br>1. <strong>une communauté y tient un abri depuis un mois</strong> (le groupe, ou une communauté qui s'en est séparée) ;<br>2. <strong>ses lieux gardés sont nettoyés</strong> : chacun de ses sites (sauf l'abri) nettoyé de ses Livides depuis moins de trois mois (nettoyer, du lot « sens ») ;<br>3. <strong>l'infestation n'y est plus dense</strong> (le système le sait, les joueurs le sentent) ;<br>4. <strong>la lumière y est revenue</strong> : l'abri y produit du courant (des panneaux, une pico-hydro, une éolienne), ou un grand chantier de la région y a rallumé quelque chose (une centrale, un phare, les feux d'un port).</p><p>Elle <strong>s'éteint</strong> si on l'abandonne : dix jours sans abri tenu ou sans lumière, et le noir revient. On peut la rallumer de nouveau (il suffit de la tenir, de l'éclairer, et que ses lieux soient encore propres).</p><p><strong>Pour le MJ</strong> : ile() dit ce qui manque, région par région ; rallumer({ region, action }) déclare une région rallumée ou éteinte (une communauté alliée qui a fait le travail, une scène). Le tableau de bord montre la carte qui s'allume.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "but"
+        }
+      }
+    },
+    {
+      "_id": "zTwKWKFpnsc626T9",
+      "_key": "!journal.pages!MBCykn2qBSE5A98C.zTwKWKFpnsc626T9",
+      "name": "Ce que change une région rallumée",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><strong>Moins de Livides.</strong> Son infestation baisse chaque jour, et ne redevient jamais dense ; aucune horde n'y naît ; celles qui y passent se défont plus vite ; les errants rôdent moitié moins autour de l'abri, et les fouilles y font moitié moins de rencontres.</p><p><strong>La lumière se voit, et les bandes viennent.</strong> C'est le contrepoint, et il ne se négocie pas :<br>- l'abri d'une région rallumée se voit de loin pour les <strong>bandes</strong> (2 de visibilité de plus pour elles) ;<br>- chaque nuit, une région rallumée peut <strong>attirer un convoi</strong> : la bande la plus forte d'une région voisine y envoie du monde (table « Un convoi attiré par la lumière ») ; plus il y a de régions rallumées, plus c'est fréquent ;<br>- toutes les bandes qui viennent à l'abri sont plus fortes à mesure que l'île se rallume (+1 de force par quatre régions).</p><p>Rallumer l'île, c'est échanger des Livides contre des vivants. Ce n'est pas plus facile ; c'est autre chose.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "effets"
+        }
+      }
+    },
+    {
+      "_id": "mQd6GiKM92bZI1iR",
+      "_key": "!journal.pages!MBCykn2qBSE5A98C.mQd6GiKM92bZI1iR",
+      "name": "Les grands chantiers",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Certaines régions ont un <strong>grand chantier</strong> : trop gros pour un groupe seul, il se fait à plusieurs. chantierRegion({ cle, membres, quarts }) y fait travailler le groupe (il faut y être ; le coût se paie au premier quart) ; chantierRegion({ cle, aide }) y ajoute un allié (une faction amie, une communauté) qui avance le travail chaque jour.</p><ul><li><strong>La petite centrale de Langevin</strong> (Sud sauvage) : la lumière et le courant pour l'abri du Sud. L'affaire « La petite centrale de Langevin » y mène.</li><li><strong>La centrale de la Rivière de l'Est</strong> : le plus long ; tout l'Est.</li><li><strong>La route du Littoral</strong> et <strong>la route des Tamarins</strong> (Saint-Paul : l'affaire « Le viaduc ») : une route rouverte ne se coupe plus qu'aux pires jours ; un éboulement la rend difficile, pas fermée.</li><li><strong>Le port de Saint-Pierre</strong> : ses feux, et la pêche qui reprend (une part de plus par jour, au MJ de la donner).</li><li><strong>Le phare de Bel-Air</strong> : rien qu'une lumière, chaque nuit, qui dit qu'il y a des vivants.</li></ul>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "chantiers"
+        }
+      }
+    },
+    {
+      "_id": "SeGJo0ShXcQ2YFtT",
+      "_key": "!journal.pages!MBCykn2qBSE5A98C.SeGJo0ShXcQ2YFtT",
+      "name": "Les jalons",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Le système note dans les Chroniques de Fénoir, sans rien donner en échange :<br>- le <strong>premier abri</strong> ;<br>- la <strong>première saison des pluies</strong> passée (le premier jour de l'hiver austral) ;<br>- le <strong>premier cyclone</strong> traversé ;<br>- la <strong>première fête</strong> tenue ;<br>- la <strong>première région rallumée</strong> ;<br>- <strong>la moitié de l'île</strong> ;<br>- <strong>toute l'île</strong>.</p><p>Lisez-les à voix haute, une fois, quand ils tombent.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "jalons"
+        }
+      }
+    },
+    {
+      "_id": "dHTr5MYB0Zph5Lqj",
+      "_key": "!journal.pages!MBCykn2qBSE5A98C.dHTr5MYB0Zph5Lqj",
+      "name": "Une campagne pour rallumer l'île",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Une campagne au long cours peut se donner ce but, et le dire dès la première séance.</p><ul><li><strong>Le premier temps</strong> : survivre, trouver un lieu, le tenir. Le paradis vient avant la lumière.</li><li><strong>Le deuxième temps</strong> : nettoyer la région, lieu par lieu (des scènes de nettoyage, des affaires), y ramener le courant. La première région s'allume.</li><li><strong>Le troisième temps</strong> : essaimer. Une partie du groupe part tenir une autre région (séparer, et la communauté garde son abri) ; on se prête la main aux grands chantiers ; on négocie avec les bandes que la lumière attire, ou on les combat.</li><li><strong>La fin</strong> : il n'y en a pas. Une île à moitié rallumée est une victoire qu'on peut perdre en dix nuits.</li></ul><p>Le <strong>MJ IA</strong> suit la même règle : il lit ile() à chaque séance, dit ce qui manque en mots de monde (« la caserne est encore pleine », « l'abri n'a pas de courant »), fait venir les convois, et ne déclare jamais une région rallumée de lui-même.</p>",
+        "format": 1
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {
+        "lakour-fenoir": {
+          "cle": "campagne"
+        }
+      }
+    }
+  ]
+}

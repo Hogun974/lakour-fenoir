@@ -79,7 +79,10 @@ export class ModeleSurvivant extends foundry.abstract.TypeDataModel {
       // Lot « corps » (logique/corps.mjs, maladies.mjs) : les quarts passés éveillé depuis le dernier sommeil ; la morsure pansée qui
       // se tait ({ quart } : deux quarts sans rien dire de l'issue).
       veille: entier(0, 0, 12),
-      morsure: objetNul()
+      morsure: objetNul(),
+      // Lot 9 « Le paradis et son piège » (logique/paradis.mjs) : les jours d'affilée sans voir le soleil, { jours } (vide : jamais sous
+      // terre).
+      sousTerre: objetLibre({})
     };
   }
 
@@ -127,7 +130,18 @@ export class ModeleAbri extends foundry.abstract.TypeDataModel {
       // Lot 8 « Le vivant de l'abri » (logique/vivant.mjs) : l'état de chaque cheptel, par clé d'installation ({ espece, tetes, sante,
       // malade, manques, naissances, filtreLe, sansPompe, depuis }) ; vide : les cheptels sont pleins (une partie d'avant le lot).
       vivant: objetLibre({}),
+      // Lot 9 (logique/paradis.mjs) : les corps des Livides abattus par les rondes [{ jour, n }], le jour de la dernière ronde, les rondes
+      // manquées d'affilée, le signe de la chaleur que perçoit le groupe (oublie, traces, remarques, viennent, assieges ; jamais le
+      // chiffre, qui reste au monde secret), le jour d'un bûcher, la vie sous terre (null : selon le site), l'air sous terre.
+      corps: new fields.ArrayField(new fields.ObjectField()),
+      rondeLe: nombreNul(),
+      rondesManquees: entier(0),
+      signeChaleur: texte(),
+      fumeeLe: nombreNul(),
+      sousTerre: new fields.BooleanField({ required: false, nullable: true, initial: null }),
+      air: texte(),
       notes: html()
+
     };
   }
 }

@@ -42,6 +42,9 @@
 
     {{#if (eq onglet "renseignements")}}
     <div class="survie-carte-cadre">{{{carte}}}</div>
+    <p class="survie-aide"><i class="fa-solid fa-lightbulb"></i> <strong>{{localize "LAKOUR_SURVIE.Paradis.Ile.Tableau"}}</strong> — {{#if ile.rallumees}}{{ile.rallumees}}{{else}}{{localize "LAKOUR_SURVIE.Paradis.Ile.Aucune"}}{{/if}}</p>
+    {{#if ile.jalons.length}}<p class="survie-aide"><i class="fa-solid fa-flag"></i> <strong>{{localize "LAKOUR_SURVIE.Paradis.Ile.Jalons"}}</strong> — {{#each ile.jalons}}{{this}}{{#unless @last}} · {{/unless}}{{/each}}</p>{{/if}}
+
     <p class="survie-aide">{{localize "LAKOUR_SURVIE.Tableau.AideRenseignements"}}</p>
     <table class="survie-table renseignements">
       <thead><tr><th>{{localize "LAKOUR_SURVIE.Tableau.Region"}}</th><th>{{localize "LAKOUR_SURVIE.Tableau.Vu"}}</th><th>{{localize "LAKOUR_SURVIE.Tableau.Infestation"}}</th><th>{{localize "LAKOUR_SURVIE.Tableau.Pillage"}}</th><th>⚡</th><th>💧</th><th>{{localize "LAKOUR_SURVIE.Tableau.Factions"}}</th></tr></thead>

@@ -36,3 +36,4 @@ export * from "./corps.mjs";
 export * from "./fouilles.mjs";
 export * from "./ouvrages.mjs";
 export * from "./vivant.mjs";
+export * from "./paradis.mjs";

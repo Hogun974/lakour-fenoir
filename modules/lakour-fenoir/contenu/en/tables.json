@@ -222,6 +222,57 @@
       "en": "<p>A Pallid one frozen in the thicket, twenty paces away: you work in silence, or you leave.</p>"
     }
   },
+  "tables/2DxfOVkAEXgJSHIc": {
+    "_nom": "L'île — ce qu'on voit la nuit",
+    "name": {
+      "fr": "L'île — ce qu'on voit la nuit",
+      "en": "The island — what you see at night"
+    },
+    "description": {
+      "fr": "<p>La nuit, d'un point haut, on regarde l'île. Tirez quand le groupe regarde au loin ; les régions rallumées se voient toujours.</p>",
+      "en": "<p>At night, from a high point, you look at the island. Roll when the group looks into the distance; regions lit again can always be seen.</p>"
+    },
+    "results.cIKmfSzHiwty74sG.description": {
+      "fr": "<p>Rien. Le noir, d'un bout à l'autre, et la lune sur la mer.</p>",
+      "en": "<p>Nothing. Darkness from end to end, and the moon on the sea.</p>"
+    },
+    "results.ZE0ICanfeITIJL6x.description": {
+      "fr": "<p>Une lumière fixe sur la côte, très loin : quelqu'un a du courant.</p>",
+      "en": "<p>A steady light on the coast, very far away: someone has power.</p>"
+    },
+    "results.ttkC34RA4bvHbDLy.description": {
+      "fr": "<p>Un feu qui bouge, sur une route des Hauts : un convoi qui roule tous phares éteints sauf un.</p>",
+      "en": "<p>A moving light on a Highland road: a convoy driving with all its headlights off but one.</p>"
+    },
+    "results.3CFIyC1ejmhqXM2P.description": {
+      "fr": "<p>Le phare, peut-être : un éclat, puis rien, puis un éclat.</p>",
+      "en": "<p>The lighthouse, perhaps: a flash, then nothing, then a flash.</p>"
+    },
+    "results.ljEwTshkZ88Jq9M4.description": {
+      "fr": "<p>Une lueur rouge sur le volcan, qu'on regarde longtemps.</p>",
+      "en": "<p>A red glow on the volcano, which you watch for a long time.</p>"
+    },
+    "results.r1XiWmTuXNcZd2DI.description": {
+      "fr": "<p>Des lampes dans un îlet de Mafate, minuscules, à l'heure du repas.</p>",
+      "en": "<p>Lamps in an îlet of Mafate, tiny, at mealtime.</p>"
+    },
+    "results.l7yXiGSseHSBGB5T.description": {
+      "fr": "<p>Une ville entière dans le noir, sauf une fenêtre.</p>",
+      "en": "<p>A whole town in the dark, except for one window.</p>"
+    },
+    "results.VAAlN6NBkYUQEckm.description": {
+      "fr": "<p>Vos propres lumières, si votre région est rallumée : de si loin, on dirait d'avant.</p>",
+      "en": "<p>Your own lights, if your region is lit again: from so far away, it looks like before.</p>"
+    },
+    "results.IyNC4zLOpde3PRE4.description": {
+      "fr": "<p>Un incendie dans les cannes, qui court sur la pente.</p>",
+      "en": "<p>A fire in the cane fields, running up the slope.</p>"
+    },
+    "results.Wap6ZuVF1xcXQvMT.description": {
+      "fr": "<p>Deux lumières qui se répondent, d'une colline à l'autre, en clignant : quelqu'un se parle.</p>",
+      "en": "<p>Two lights answering each other, from one hill to the other, blinking: someone is talking.</p>"
+    }
+  },
   "tables/2KT2bBV66pMOX4ZJ": {
     "_nom": "Marché — ce qui se dit (le Ladi Lafé)",
     "name": {
@@ -3000,6 +3051,57 @@
       "en": "<p>1 a solar panel — 3% (+5% per risk level); 2 parts each</p>"
     }
   },
+  "tables/NzqR9CdZLGJLCquW": {
+    "_nom": "La ronde — ce qu'on trouve",
+    "name": {
+      "fr": "La ronde — ce qu'on trouve",
+      "en": "The round — what you find"
+    },
+    "description": {
+      "fr": "<p>Quand la ronde voit les Livides à temps, elle relève aussi autre chose (le système donne le numéro ; sinon, tirez).</p>",
+      "en": "<p>When the round sees the Pallid in time, it also notices something else (the system gives the number; otherwise, roll).</p>"
+    },
+    "results.oEzPzwrQ3tH79K4f.description": {
+      "fr": "<p>Une fuite : la citerne suinte au pied, une auréole sombre dans la terre. Réparée aujourd'hui, elle ne coûte rien ; laissée, elle coûtera.</p>",
+      "en": "<p>A leak: the tank seeps at its base, a dark ring in the earth. Repaired today, it costs nothing; left, it will cost.</p>"
+    },
+    "results.uL4b1u07n3UoHLg0.description": {
+      "fr": "<p>Un pieu de la clôture penché, un fil arraché : quelque chose a poussé là, cette nuit, et n'est pas passé.</p>",
+      "en": "<p>A fence post leaning, a wire torn off: something pushed here last night, and didn't get through.</p>"
+    },
+    "results.4JpUhHkBfO19NuVG.description": {
+      "fr": "<p>Des traces fraîches dans la boue du chemin, qui tournent autour de l'abri et repartent vers la ravine. Trois, peut-être quatre.</p>",
+      "en": "<p>Fresh tracks in the mud of the path, circling the shelter and heading back to the ravine. Three, maybe four.</p>"
+    },
+    "results.osheIIhP5Mg1ersj.description": {
+      "fr": "<p>Une bâche du potager soulevée par le vent ; des poules qui ne sont pas rentrées.</p>",
+      "en": "<p>A tarpaulin over the vegetable garden lifted by the wind; hens that didn't come back in.</p>"
+    },
+    "results.uULeVcHBVjyFHu0M.description": {
+      "fr": "<p>Un corps d'avant-hier que les chiens errants ont traîné jusqu'au bord du chemin. Il faudra l'enterrer plus loin.</p>",
+      "en": "<p>A body from two days ago that stray dogs have dragged to the edge of the path. It will have to be buried further off.</p>"
+    },
+    "results.SGNTQM6yycCkvMnP.description": {
+      "fr": "<p>Un mot coincé sous une pierre, à l'entrée : quelqu'un est passé, a vu, et demande s'il peut revenir.</p>",
+      "en": "<p>A note wedged under a stone at the entrance: someone came by, saw, and asks if they may come back.</p>"
+    },
+    "results.hTzX4ExGmf9sjIkE.description": {
+      "fr": "<p>La haie a un trou, au ras du sol, assez grand pour un chien, ou pour un enfant.</p>",
+      "en": "<p>The hedge has a hole, at ground level, big enough for a dog, or a child.</p>"
+    },
+    "results.n32oexxdwoCXtFDd.description": {
+      "fr": "<p>Une vieille douille, toute neuve : quelqu'un a tiré près d'ici, hier soir. Ce n'était pas vous.</p>",
+      "en": "<p>A spent cartridge, brand new: someone fired near here last night. It wasn't you.</p>"
+    },
+    "results.2NznIwKbXDcfxwNR.description": {
+      "fr": "<p>Rien, sinon le silence des oiseaux quand on passe le long de la ravine. Ils savent quelque chose.</p>",
+      "en": "<p>Nothing, except the silence of the birds as you walk along the ravine. They know something.</p>"
+    },
+    "results.786Oq85kWfB2vPVO.description": {
+      "fr": "<p>Des fruits tombés que personne n'a ramassés, et un manguier qui charge : une bonne nouvelle, pour une fois.</p>",
+      "en": "<p>Fallen fruit nobody has picked up, and a mango tree heavy with fruit: good news, for once.</p>"
+    }
+  },
   "tables/Oe16atAsOCRp0fB4": {
     "_nom": "Fouille — Case créole",
     "name": {
@@ -5762,6 +5864,41 @@
       "en": "<p>3 to 10 cartridges — 4% (+5% per risk level); 4 for 1 ammunition</p>"
     }
   },
+  "tables/qdx5NwgRdCTheXwl": {
+    "_nom": "Sous terre — la bougie",
+    "name": {
+      "fr": "Sous terre — la bougie",
+      "en": "Underground — the candle"
+    },
+    "description": {
+      "fr": "<p>Ce que l'on remarque au fond de la galerie, quand on y vit depuis des jours.</p>",
+      "en": "<p>What you notice at the back of the tunnel, when you have lived there for days.</p>"
+    },
+    "results.gg1PwbXyVstgSUOm.description": {
+      "fr": "<p>La flamme de la bougie penche toujours du même côté : l'air vient de là. On sait où creuser le puits.</p>",
+      "en": "<p>The candle flame always leans the same way: the air comes from there. Now you know where to dig the shaft.</p>"
+    },
+    "results.xjn3smrx5rW4wzRF.description": {
+      "fr": "<p>La flamme baisse le soir, quand tout le monde est rentré : on dort la tête lourde.</p>",
+      "en": "<p>The flame drops in the evening, when everyone is back in: people sleep with heavy heads.</p>"
+    },
+    "results.2QPlDruUo5D0zm3m.description": {
+      "fr": "<p>Quelqu'un compte les jours sur le mur à la craie, et s'arrête : il ne sait plus si c'était hier ou avant-hier.</p>",
+      "en": "<p>Someone counts the days in chalk on the wall, and stops: they no longer know if it was yesterday or the day before.</p>"
+    },
+    "results.SmMIp3VC8lCpBD3h.description": {
+      "fr": "<p>Un enfant demande de quelle couleur est le ciel, aujourd'hui. Personne ne sait.</p>",
+      "en": "<p>A child asks what colour the sky is today. Nobody knows.</p>"
+    },
+    "results.DqAfXPNHTA5Uh1rQ.description": {
+      "fr": "<p>Les voix portent loin dans la galerie : on se dispute à voix basse, ou pas du tout.</p>",
+      "en": "<p>Voices carry far in the tunnel: people argue in whispers, or not at all.</p>"
+    },
+    "results.QrlgEX0nNWnZJlWY.description": {
+      "fr": "<p>Une goutte qui tombe, toujours au même endroit, toute la nuit. On finit par ne plus l'entendre, ou par ne plus entendre qu'elle.</p>",
+      "en": "<p>A drop falling, always in the same place, all night. In the end you no longer hear it, or you hear nothing else.</p>"
+    }
+  },
   "tables/rOxhpncbrAU5vGls": {
     "_nom": "Noms réunionnais",
     "name": {
@@ -6516,6 +6653,49 @@
     "results.wcg6yqR30GPRSN4V.description": {
       "fr": "<p><strong>Escorte — Le passage de la route des Laves.</strong> Accompagner par la route une famille de pêcheurs qui rejoint Saint-Philippe.</p><p><strong>Récompense :</strong> 6 nourriture ; réputation +2.</p>",
       "en": "<p><strong>Escort — The passage of the Route des Laves.</strong> Accompany by road a fishing family heading for Saint-Philippe.</p><p><strong>Reward:</strong> 6 food; reputation +2.</p>"
+    }
+  },
+  "tables/vf7dheVN7XC2uLKX": {
+    "_nom": "Un convoi attiré par la lumière",
+    "name": {
+      "fr": "Un convoi attiré par la lumière",
+      "en": "A convoy drawn by the light"
+    },
+    "description": {
+      "fr": "<p>La lumière d'une région rallumée se voit de loin : il en vient du monde. Tirez qui arrive (la faction, le système la donne).</p>",
+      "en": "<p>The light of a region lit again can be seen from afar: people come. Roll who arrives (the faction, the system gives it).</p>"
+    },
+    "results.RTH3y3KDWH0E5pa1.description": {
+      "fr": "<p>Des camions qui s'arrêtent à distance, phares éteints, pour regarder un long moment avant d'approcher.</p>",
+      "en": "<p>Trucks that stop at a distance, headlights off, to watch for a long while before coming closer.</p>"
+    },
+    "results.nkNCFBHfzBZiQTFd.description": {
+      "fr": "<p>Une bande qui vient « demander sa part » de ce courant qu'on a : elle en veut, ou elle veut tout.</p>",
+      "en": "<p>A gang that comes to \"ask for its share\" of the power you have: it wants some, or it wants everything.</p>"
+    },
+    "results.cxYDMEDBCdsXVnIe.description": {
+      "fr": "<p>Des familles à pied, attirées comme des papillons : elles demandent seulement à rester près de la lumière.</p>",
+      "en": "<p>Families on foot, drawn like moths: they only ask to stay near the light.</p>"
+    },
+    "results.ksDELKnXlL9KUu4P.description": {
+      "fr": "<p>Des pillards qui ont compris qu'une région éclairée est une région qui a quelque chose à prendre.</p>",
+      "en": "<p>Looters who have understood that a region with lights is a region with something to take.</p>"
+    },
+    "results.1Yog1haSHrotQTMj.description": {
+      "fr": "<p>Des récupérateurs qui proposent un échange : leurs pièces contre une place sur le réseau.</p>",
+      "en": "<p>Scavengers offering a trade: their parts for a place on the grid.</p>"
+    },
+    "results.ZjPeqxtaYOsdl0l1.description": {
+      "fr": "<p>Un groupe armé qui s'installe dans un abri vide, juste à la limite de la lumière, et attend.</p>",
+      "en": "<p>An armed group that settles in an empty shelter, right at the edge of the light, and waits.</p>"
+    },
+    "results.dSWsra48PxGC0i3f.description": {
+      "fr": "<p>Un vieux qui marche depuis trois jours, seul, parce qu'il a vu la lumière depuis les Hauts.</p>",
+      "en": "<p>An old man who has been walking alone for three days, because he saw the light from the Highlands.</p>"
+    },
+    "results.FDu6gJ9Dt0bq21RN.description": {
+      "fr": "<p>Personne, cette fois : seulement un bruit de moteur, la nuit, qui s'arrête et repart.</p>",
+      "en": "<p>Nobody, this time: only the sound of an engine at night, which stops and starts again.</p>"
     }
   },
   "tables/voj6Fh3GYhcDKF4s": {

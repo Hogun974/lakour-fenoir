@@ -45,6 +45,13 @@
 // ce qui arrive aux cheptels va au journal (public à l'abri, sinon secret) ; les bêtes que le groupe porte (groupe.betes) meurent
 // passé leur délai hors d'un enclos (leur viande va aux stocks de l'abri si le groupe y est, sinon à ce qu'il porte) ; le chien du
 // groupe grogne quand une horde ou des Livides viennent vers l'abri (alerte « chien »), sans bruit.
+// Lot 9 « Le paradis et son piège » (paradis.mjs, contrat §28) : chaque jour, la chaleur du lieu de l'abri (secret, monde.paradis)
+// monte avec les jours et le groupe, redescend un jour de silence (options.silence : le MJ le décide) ; des Livides arrivent ; ceux qui
+// ont la tâche « ronde » les abattent (corps à l'abri, abri.corps ; blessures et morsures, à soigner : resultat.paradis.morsures), sinon
+// ils s'agglutinent ; le menaces du jour lisent la chaleur et les agglutinés. Sous terre : les jours sans soleil (survivant.sousTerre)
+// baissent le plafond du moral, l'air lourd fatigue. Au cyclone, la haie de bambous plie, celle de filaos casse. Puis l'île : les régions
+// tenues, nettoyées et éclairées se rallument (etat.ile), s'éteignent si on les quitte ; les alliés avancent les chantiers de région ;
+// les jalons (etat.jalons).
 // Journal et alertes : chaque entrée est { quart, texte (français, repli), cle, params } (textes.mjs) ; la couche Foundry affiche
 // la traduction de `cle` dans la langue de chaque navigateur. Les anciennes entrées à `texte` seul restent lisibles.
 import { JOURNAL_MAX, ALERTES_MAX, QUARTS_PAR_JOUR, MOMENTS, JOURNAL_SECRET_MAX, palierVisibilite, borner } from "./constantes.mjs";
@@ -79,6 +86,11 @@ import { noterCyclone, fenetresQuiSouvrent, plansDuMonde, plansDeLEtat, perteEta
 import { compteDepart, compteDe, journeeCompte, texteCompte, supportDuCompte, journalAuDeces } from "./reperes.mjs";
 import { journeeOuvrages, messageOuvrage } from "./ouvrages.mjs";
 import { betesQuiMeurent } from "./vivant.mjs";
+import { lieuDe, lieuRefroidi, avecLieu, arrivants, rondeDuJour, journeeDuLieu, jourDeSilence, motChaleur, corpsDe, ajouterCorps, TACHE_RONDE, TACHES_DEHORS,
+  vitSousTerre, puitsDe, journeeSousTerre, malusSousTerre, palierSousTerre, sousTerreDe, airSousTerre, fatigueDeLAir, haiesAuCyclone, hasardParadis,
+  regionsRallumees, conditionsReprise, journeeDeLIle, journeeDesChantiers, lumiereDeLAbri, ileDe, jalonsDuJour, jalonsDe, aLeJalon, texteJalon, chantierDe,
+  bienfaitsDeRegion, routesTenues, chaleurQuiAttire } from "./paradis.mjs";
+import { paradeDe } from "./corps.mjs";
 
 export function etatVide() {
   return {
@@ -182,7 +194,13 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     return { pluie: pluieDuJour({ ...meteo, jour }), morts: mortsSansRepos(e, region, jour), musique: bruitDesMusiciens(presentsAbri().map(s => s.system), contenu),
       ...(site?.eau === "riviere" ? { ravine: ravineDuJour({ ...meteo, jour, ravine: site.ravine || "permanente" }) } : {}) };
   };
-  const conditions = jour => ({ jour, dateDepart, personnes: personnesAbri(), reseaux: ab ? reseauxActifs(m, ab.system.region, jour) : {},
+  // Lot 9 : une centrale relancée par un grand chantier donne le courant du réseau à l'abri de sa région.
+  const reseauxDeLAbri = jour => {
+    if (!ab) return {};
+    const r = reseauxActifs(m, ab.system.region, jour);
+    return bienfaitsDeRegion(e, contenu, ab.system.region).electricite ? { ...r, electricite: true } : r;
+  };
+  const conditions = jour => ({ jour, dateDepart, personnes: personnesAbri(), reseaux: reseauxDeLAbri(jour),
     rations: rations(), travailleurs: travailleursParTache(presentsAbri(), contenu, jour), lueur: lueurDuJour(e, jour), signature: signatureDuMarche(e.marche),
     chien: Boolean(options.chien) && aLAbri(), confort: aLAbri() ? Number(options.confort) || 0 : 0, ...sensDuJour(jour),
     hasardVivant: m?.graine ? deriverHasard(m.graine, "vivant", jour) : null });
@@ -192,6 +210,10 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
   const publier = (quart, cle, params, texte) => { e = ajouterJournal(e, [{ quart, ...message(cle, params, texte) }]); };
   const alerter = (quart, type, cle, params, texte) => { const a = { quart, type, ...message(cle, params, texte) }; nouvellesAlertes.push(a); e = ajouterAlertes(e, [a]); };
   const nomInstallation = cle => installationDe(contenu, cle)?.nom ?? cle;
+  // Lot 9 : le plus fort bruit de l'abri dans la journée (un jour de silence), les morsures des rondes (à soigner), les jalons.
+  let bruitJour = 0;
+  const paradis = { morsures: [], rondes: [], jalons: [] };
+  const defsEquipements = indexer(contenu).equipements;
 
   for (let k = 0; k < Math.max(0, Math.floor(quarts)); k++) {
     const q = e.horloge.quart;
@@ -313,6 +335,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       }
     }
     // 2. Bruit de l'abri.
+    if (ab) bruitJour = Math.max(bruitJour, Number(ab.system.bruit) || 0, bilan?.bruit ?? 0);
     if (ab) ab.system.bruit = Math.min(10, Math.max(0, (Number(ab.system.bruit) || 0) - 2 + (bilan?.bruit ?? 0)));
     // 3. Voyage en cours.
     if (e.groupe.enRoute) {
@@ -345,12 +368,17 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
     jours.push(jour);
     e = oublierSouvenirs(e, jour - 1);
     // 4. Monde.
+    // Lot 9 : la chaleur du lieu de l'abri (refroidi des jours sans personne) et les agglutinés ; les régions rallumées.
+    const lieuDuJour = ab ? lieuRefroidi(lieuDe(m, ab.system.site), jour) : null;
     const ctx = {
       region: e.groupe.enRoute ? e.groupe.enRoute.vers : e.groupe.region,
       radio: Boolean(bilan?.renseignements),
       bruitParRegion: ab ? { [ab.system.region]: Math.min(10, (Number(ab.system.bruit) || 0) + (bilan?.bruit ?? 0)) } : {},
       abri: ab ? { region: ab.system.region, visibilite: bilan?.visibilite ?? 0, bruit: ab.system.bruit ?? 0, defense: bilan?.defense ?? 0,
-        odeur: bilan?.odeur ?? 0, odeurBetes: bilan?.odeurBetes ?? 0 } : undefined
+        odeur: bilan?.odeur ?? 0, odeurBetes: bilan?.odeurBetes ?? 0, chaleur: lieuDuJour.chaleur, agglutines: lieuDuJour.agglutines } : undefined,
+      rallumees: regionsRallumees(e),
+      routesTenues: routesTenues(e, contenu),
+      chaleurParRegion: ab && chaleurQuiAttire(lieuDuJour.chaleur) > 0 ? { [ab.system.region]: chaleurQuiAttire(lieuDuJour.chaleur) } : {}
     };
     if (!ab) delete ctx.abri;
     const sim = simulerJour(m, contenu, hasardDuJour(m.graine, jour), jour, ctx);
@@ -415,7 +443,9 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         const cy = passageCyclone(ab.system, ab.installations, contenu, { force: c.force, protection: bilan.protectionCyclone, prepare, jour,
           depots: liste(contenu.depotsCyclone) }, deriverHasard(m.graine, "abri", jour));
         ab.system = { ...cy.abri, preparation: null };
-        ab.installations = cy.installations;
+        // Lot 9 : la haie de bambous plie et repousse, celle de filaos casse.
+        const haies = haiesAuCyclone(ab.installations, cy.installations, contenu);
+        ab.installations = haies.installations;
         if (cy.degats) {
           const installations = cy.endommagees.map(nomInstallation).join(", ");
           publier(fin, cy.endommagees.length ? "cyclone-degats-installations" : "cyclone-degats", { cyclone: c.nom, installations },
@@ -430,6 +460,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         if (Object.keys(cy.emportes).length) dire("cyclone-emportes", { cyclone: c.nom, pertes: cy.emportes }, `${c.nom} emporte ce qui traînait dehors.`);
         if (cy.eau) dire("cyclone-citerne", { cyclone: c.nom, eau: cy.eau }, `Les fuites et les gouttières qui débordent remplissent la citerne (+${cy.eau} eau) : une eau à filtrer.`);
         dire("cyclone-arbres", { cyclone: c.nom }, "Des arbres couchés partout : du bois pour des semaines, des fruits à ramasser et conserver vite ; l'abri se voit de plus loin.");
+        for (const k of haies.pliees) dire("haie-pliee", { nom: nomInstallation(k) }, `${nomInstallation(k)} a plié sous le vent ; elle se redresse déjà.`);
+        for (const k of haies.cassees) dire("haie-cassee", { nom: nomInstallation(k) }, `${nomInstallation(k)} : les filaos ont cassé ; l'abri se voit à travers.`);
         // Lot 4 « Les plans » : un cyclone qui abîme un abri qu'on n'a pas préparé gâte un papier de l'étagère aux cahiers (pas dans le coffre
         // étanche). Flux de hasard à part : « etagere|jour ».
         const pe = plansDeLEtat(e);
@@ -483,14 +515,89 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
         else { const fx = { jour, region: ab.system.region, ...x, public: false, portee: "abri" }; secrets.push(fx); auJournalSecret(jour, fx); }
       }
     }
+    // 5 quater. Lot 9 : le paradis et son piège. Les Livides qui arrivent, la ronde de ceux qui l'ont pour tâche (flux « paradis|ronde|
+    // jour » à part), ceux qui s'agglutinent quand personne ne la fait, la chaleur du lieu (secret), les corps (public).
+    if (ab) {
+      const region = regionDe(contenu, ab.system.region);
+      const ici = aLAbri();
+      const presents = presentsAbri();
+      const arrives = arrivants({ chaleur: lieuDuJour.chaleur, infestation: m.regions?.[ab.system.region]?.infestation ?? 0, hasard: hasardParadis(m.graine, "flux", jour) });
+      // Ceux qui ont la ronde ; à défaut, celui qui a veillé fait le tour au petit jour (sauf options.tournee === false).
+      const enRonde = s => ({ id: s.id, nom: s.nom, system: s.system, parade: paradeDe((s.system.equipement ?? []).map(k => defsEquipements.get(k)).filter(Boolean)) });
+      let rondiers = ici ? presents.filter(s => s.system.tache === TACHE_RONDE && peutFaire(s.system, TACHE_RONDE)).map(enRonde) : [];
+      const tournee = !rondiers.length && options.tournee !== false;
+      if (tournee && ici) rondiers = presents.filter(s => s.system.tache === "garde" && peutFaire(s.system, TACHE_RONDE)).slice(0, 1).map(enRonde);
+      const ronde = rondiers.length ? rondeDuJour({ rondiers, livides: lieuDuJour.agglutines + arrives, tournee, hasard: hasardParadis(m.graine, "ronde", jour) }) : null;
+      const silence = jourDeSilence({ taches: presents.map(s => s.system.tache), bruitMax: bruitJour, bruitInstallations: bilan?.bruit ?? 0, fouille: e.fouilleLe === jour - 1,
+        decide: typeof options.silence === "boolean" ? options.silence : null });
+      const j = journeeDuLieu(lieuDuJour, { jour, personnes: personnesAbri(), region, saison: saisonDuJour(jour, dateDepart), silence, bruitFort: bruitJour >= 4,
+        ronde: ronde?.faite ? ronde : null, arrives });
+      m = avecLieu(m, ab.system.site, j.lieu);
+      if (ronde?.faite && ronde.engagee) {
+        const noms = rondiers.map(r => r.nom).join(", ");
+        ab.system = { ...ab.system, rondeLe: jour, rondesManquees: 0, corps: ajouterCorps(corpsDe(ab.system), { jour, n: ronde.abattus }) };
+        // Une ronde qui ne trouve rien ne s'écrit pas au journal (la tournée du petit jour non plus) : seulement ce qui s'y passe.
+        if (ronde.livides) publier(fin, "ronde", { noms, abattus: ronde.abattus, restants: ronde.restants },
+          `La ronde (${noms}) : ${ronde.abattus} Livide(s) abattu(s)${ronde.restants ? `, ${ronde.restants} encore autour de l'abri` : ""}.`);
+        for (const b of ronde.blessures) {
+          const s = surv.find(x => x.id === b.id);
+          if (!s) continue;
+          s.system = { ...s.system, blessures: Math.min(4, (Number(s.system.blessures) || 0) + b.n) };
+          s.evenements.push({ quart: fin, cle: "ronde-blessure", n: b.n, morsure: b.morsure });
+          publier(fin, b.morsure ? "ronde-morsure" : "ronde-blesse", { nom: s.nom }, b.morsure ? `${s.nom} revient de la ronde avec une morsure : il faut la soigner tout de suite.` : `${s.nom} revient de la ronde blessé.`);
+          if (b.morsure) {
+            paradis.morsures.push(s.id);
+            alerter(fin, "morsure", "alerte-ronde-morsure", { nom: s.nom }, `${s.nom} a été mordu pendant la ronde.`);
+            aRaconter.push({ jour, evenement: "ronde", ...message("ronde-morsure", { nom: s.nom }, `${s.nom} revient de la ronde avec une morsure : il faut la soigner tout de suite.`) });
+          }
+        }
+        if (ronde.trouvaille) aRaconter.push({ jour, evenement: "ronde", trouvaille: ronde.trouvaille, ...message("ronde-trouvaille", { n: ronde.trouvaille }, `La ronde a relevé quelque chose (table « La ronde — ce qu'on trouve », ${ronde.trouvaille}).`) });
+        paradis.rondes.push({ jour, rondiers: rondiers.map(r => r.id), livides: ronde.livides, abattus: ronde.abattus, restants: ronde.restants, trouvaille: ronde.trouvaille });
+      } else if (j.manquee) {
+        ab.system = { ...ab.system, rondesManquees: (Number(ab.system.rondesManquees) || 0) + 1 };
+        if (j.agglutines > 0 && ici) publier(fin, "agglutines", { n: j.agglutines }, `Personne n'a fait la ronde : ${j.agglutines} Livide(s) traîne(nt) autour de l'abri, et ne repartent pas.`);
+      }
+      // Ce que le groupe perçoit de la chaleur : un signe quand il change (jamais le chiffre).
+      const mot = motChaleur(j.lieu.chaleur, j.lieu.agglutines);
+      if (mot !== (ab.system.signeChaleur ?? "oublie")) {
+        ab.system = { ...ab.system, signeChaleur: mot };
+        if (ici) publier(fin, `chaleur-${mot}`, {}, ({ oublie: "Plus une trace autour de l'abri : on vous a oubliés.", traces: "Des traces autour de l'abri, des herbes couchées : quelque chose passe, la nuit.",
+          remarques: "On vous a remarqués : il en vient chaque jour, un ou deux, qui rôdent.", viennent: "Ils viennent : chaque jour, plus nombreux autour de l'abri.",
+          assieges: "L'abri est assiégé : ils sont là, contre la clôture, et ne partent plus." })[mot]);
+        if (ici && (mot === "viennent" || mot === "assieges")) alerter(fin, "chaleur", `chaleur-${mot}`, {}, mot === "assieges" ? "L'abri est assiégé." : "Ils viennent, chaque jour plus nombreux.");
+      }
+    }
+    bruitJour = 0;
+
     // 6. Repas.
     let rang = 0;
     const lieux = ab && aLAbri() ? lieuxAbri(ab, contenu) : [];
     const taille = presentsAbri().length + pnjPresents();
     const entente = ententeDe(e);
     const jourEsprit = {};
+    // Lot 9 : sous terre, les jours sans soleil (le plafond du moral) et l'air (la nuit repose moins).
+    const sousTerreIci = Boolean(ab && aLAbri() && vitSousTerre(ab.system, siteDe(contenu, ab.system.site), ab.installations));
+    const puits = puitsDe(bilan ?? {});
+    if (ab) {
+      const air = airSousTerre({ sousTerre: sousTerreIci, personnes: personnesAbri(), capacite: bilan?.capacite ?? 0, puitsAir: puits.air });
+      if (air !== (ab.system.air ?? "bon")) {
+        ab.system = { ...ab.system, air };
+        if (aLAbri()) publier(fin, `air-${air}`, {}, ({ bon: "L'air de la galerie est redevenu bon : la flamme de la bougie se tient droite.",
+          lourd: "L'air de la galerie s'alourdit : la flamme de la bougie baisse le soir, on dort mal.", vicie: "L'air manque dans la galerie : la bougie s'étouffe, les têtes tournent." })[air]);
+        if (aLAbri() && air === "vicie") alerter(fin, "air", "air-vicie", {}, "L'air manque dans la galerie.");
+      }
+      const fatigueAir = fatigueDeLAir(air);
+      if (fatigueAir) for (const s of presentsAbri()) s.system = { ...s.system, fatigue: Math.min(5, (Number(s.system.fatigue) || 0) + fatigueAir) };
+    }
     for (const s of surv) {
       if (!actif(s)) continue;
+      {
+        const avant = palierSousTerre(sousTerreDe(s.system).jours);
+        s.system = journeeSousTerre(s.system, { sousTerre: sousTerreIci, dehors: TACHES_DEHORS.includes(s.system.tache), puitsJour: puits.jour });
+        const apres = palierSousTerre(sousTerreDe(s.system).jours);
+        if (apres > avant) publier(fin, `sous-terre-palier-${apres}`, { nom: s.nom, n: sousTerreDe(s.system).jours },
+          apres >= 2 ? `${s.nom} n'a pas vu le soleil depuis ${sousTerreDe(s.system).jours} jours : il ne parle plus guère.` : `${s.nom} n'a pas vu le soleil depuis une semaine : il pâlit, il dort mal.`);
+      }
       const mange = aLAbri() ? rang++ < nourris : options.mangeHorsAbri !== false;
       const tr = effetsTraits(s.system, contenu);
       const peurMoral = tr.peurs.filter(p => p.lieux.some(l => lieux.includes(l))).reduce((t, p) => t + p.moral, 0);
@@ -498,7 +605,8 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       const autres = Math.max(0, (aLAbri() ? presentsAbri().length : surv.filter(actif).length) - 1);
       const pe = plafondEsprit(s.system, contenu, { entente, presents: autres, jour });
       // esprit (lot « fetes », souvenirs.mjs) : souvenirs de fête, vœux, autel et deuil ; plafondEsprit (lot « moral », esprit.mjs).
-      const souvenirs = espritDuJour(e, s.id, jour - 1);
+      // Lot 9 : les jours sans soleil baissent le plafond comme un deuil (−1 après une semaine, −2 après trois).
+      const souvenirs = espritDuJour(e, s.id, jour - 1) - malusSousTerre(s.system);
       jourEsprit[s.id] = { mange, autres, plafond: Math.min(5, Math.max(0, 3 + Math.max(0, Number(confort) || 0) + (Number(tr.moral) || 0) + pe + souvenirs)), confort };
       const r = effetJour(s.system, { mange, confort, traits: tr, personnes: taille, peurMoral, esprit: souvenirs, plafondEsprit: pe, sansAppetit: sansAppetit(s.system) });
       s.system = r.system;
@@ -635,6 +743,39 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
       const cible = choisir(regionsDe(contenu).map(r => r.cle), deriverHasard(m.graine, "radio", jour));
       if (cible) e.renseignements = observer(e.renseignements, m, contenu, cible, jour, "radio");
     }
+    // 7 ter. Lot 9 : rallumer l'île. Les alliés avancent les chantiers de région ; chaque région tenue (l'abri du groupe, une de ses
+    // communautés) ou déjà rallumée est jugée : tenue depuis un mois, lieux gardés nettoyés, infestation qui n'est plus dense, la
+    // lumière ; rallumée, ou éteinte au bout de dix jours d'abandon. Puis les jalons.
+    {
+      const ch = journeeDesChantiers(e, contenu, { jour });
+      e = ch.etat;
+      for (const cle of ch.finis) {
+        const def = chantierDe(contenu, cle);
+        const region = regionDe(contenu, def?.region)?.nom ?? def?.region ?? "";
+        publier(fin, "chantier-fini", { nom: def?.nom ?? cle, region }, `Le chantier est fini : ${def?.nom ?? cle}.`);
+      }
+      const candidates = new Set([...Object.keys(ileDe(e).regions), ...(ab && !ab.system.abandonneLe ? [ab.system.region] : []),
+        ...(e.communautes ?? []).filter(c => c?.region && c?.abri).map(c => c.region)]);
+      const conditionsIle = {};
+      for (const r of candidates) {
+        if (!m.regions?.[r]) continue;
+        conditionsIle[r] = conditionsReprise(e, contenu, r, { jour, abri: ab?.system ?? null, infestation: m.regions[r].infestation, lumiereAbri: lumiereDeLAbri(bilan) });
+      }
+      const il = journeeDeLIle(e, contenu, { jour, conditions: conditionsIle });
+      e = il.etat;
+      for (const f of il.faits) {
+        faits.push({ jour, ...f, public: true }); publier(fin, f.cle, f.params, f.texte); alerter(fin, "ile", f.cle, f.params, f.texte);
+        // Les lumières se voient de loin, la nuit : le renseignement de la région le dit, daté (§2.4).
+        e = { ...e, renseignements: { ...e.renseignements, [f.region]: { ...(e.renseignements?.[f.region] ?? {}), lumiere: f.cle === "region-rallumee" ? "rallumee" : "eteinte", lumiereVu: jour } } };
+      }
+
+      const jalons = jalonsDuJour(e, { jour, abri: Boolean(ab), saison: saisonDuJour(jour, dateDepart), saisonVeille: saisonDuJour(jour - 1, dateDepart),
+        pluiesVecues: aLeJalon(e, "premier-abri"), cyclone: cycloneIci, fetes: (e.fetes ?? []).length, rallumees: regionsRallumees(e).length, regions: regionsDe(contenu).length });
+      if (jalons.length) {
+        e = { ...e, jalons: [...jalonsDe(e), ...jalons] };
+        for (const x of jalons) { const t = texteJalon(x.cle, x.params); publier(fin, t.cle, t.params, t.texte); paradis.jalons.push(x); }
+      }
+    }
     // 7 bis. Le jour qu'on croit (lot « cartes », reperes.mjs) : le téléphone de la région du groupe ou la radio de l'abri le donnent ;
     // sinon celui qui tient le compte a noté hier, ou non (flux de hasard à part : « compte|jour »).
     {
@@ -718,7 +859,7 @@ export function avancer({ etat, monde, contenu, quarts = 1, survivants = [], abr
 
   if (ab) bilan = bilanAbri(ab.system, ab.installations, contenu, conditions(Math.floor(e.horloge.quart / QUARTS_PAR_JOUR)));
   const changes = surv.filter(s => JSON.stringify(s.system) !== avant.get(s.id)).map(s => ({ id: s.id, system: s.system, evenements: s.evenements }));
-  return { etat: e, monde: m, acteurs: { survivants: changes, abri: ab }, faits, secrets, alertes: nouvellesAlertes, menaces, bilan, jours, departs, aRaconter };
+  return { etat: e, monde: m, acteurs: { survivants: changes, abri: ab }, faits, secrets, alertes: nouvellesAlertes, menaces, bilan, jours, departs, aRaconter, paradis };
 }
 
 // Fêter une fête au camp (§9 ; gains et coûts propres à chaque fête depuis le lot « fetes », 2026-11-13 : fetes.mjs) : une seule fois

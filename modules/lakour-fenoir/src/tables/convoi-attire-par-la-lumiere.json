@@ -1,0 +1,148 @@
+{
+  "_id": "vf7dheVN7XC2uLKX",
+  "_key": "!tables!vf7dheVN7XC2uLKX",
+  "name": "Un convoi attiré par la lumière",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>La lumière d'une région rallumée se voit de loin : il en vient du monde. Tirez qui arrive (la faction, le système la donne).</p>",
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "convoi-attire-par-la-lumiere",
+      "paradis": "convoi-attire-par-la-lumiere"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  },
+  "results": [
+    {
+      "_id": "RTH3y3KDWH0E5pa1",
+      "_key": "!tables.results!vf7dheVN7XC2uLKX.RTH3y3KDWH0E5pa1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des camions qui s'arrêtent à distance, phares éteints, pour regarder un long moment avant d'approcher.</p>",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "nkNCFBHfzBZiQTFd",
+      "_key": "!tables.results!vf7dheVN7XC2uLKX.nkNCFBHfzBZiQTFd",
+      "type": "text",
+      "name": "",
+      "description": "<p>Une bande qui vient « demander sa part » de ce courant qu'on a : elle en veut, ou elle veut tout.</p>",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "cxYDMEDBCdsXVnIe",
+      "_key": "!tables.results!vf7dheVN7XC2uLKX.cxYDMEDBCdsXVnIe",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des familles à pied, attirées comme des papillons : elles demandent seulement à rester près de la lumière.</p>",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ksDELKnXlL9KUu4P",
+      "_key": "!tables.results!vf7dheVN7XC2uLKX.ksDELKnXlL9KUu4P",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des pillards qui ont compris qu'une région éclairée est une région qui a quelque chose à prendre.</p>",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "1Yog1haSHrotQTMj",
+      "_key": "!tables.results!vf7dheVN7XC2uLKX.1Yog1haSHrotQTMj",
+      "type": "text",
+      "name": "",
+      "description": "<p>Des récupérateurs qui proposent un échange : leurs pièces contre une place sur le réseau.</p>",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "ZjPeqxtaYOsdl0l1",
+      "_key": "!tables.results!vf7dheVN7XC2uLKX.ZjPeqxtaYOsdl0l1",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un groupe armé qui s'installe dans un abri vide, juste à la limite de la lumière, et attend.</p>",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "dSWsra48PxGC0i3f",
+      "_key": "!tables.results!vf7dheVN7XC2uLKX.dSWsra48PxGC0i3f",
+      "type": "text",
+      "name": "",
+      "description": "<p>Un vieux qui marche depuis trois jours, seul, parce qu'il a vu la lumière depuis les Hauts.</p>",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    },
+    {
+      "_id": "FDu6gJ9Dt0bq21RN",
+      "_key": "!tables.results!vf7dheVN7XC2uLKX.FDu6gJ9Dt0bq21RN",
+      "type": "text",
+      "name": "",
+      "description": "<p>Personne, cette fois : seulement un bruit de moteur, la nuit, qui s'arrête et repart.</p>",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "drawn": false,
+      "img": null,
+      "flags": {}
+    }
+  ]
+}

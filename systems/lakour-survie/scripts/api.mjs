@@ -36,6 +36,7 @@ import { fonctionsAteliers } from "./api-ateliers.mjs";
 import { fonctionsFouilles } from "./api-fouilles.mjs";
 import { fonctionsOuvrages } from "./api-ouvrages.mjs";
 import { fonctionsVivant } from "./api-vivant.mjs";
+import { fonctionsParadis } from "./api-paradis.mjs";
 
 export const registre = creerRegistre();
 export const contenu = () => registre.contenu();
@@ -232,7 +233,8 @@ const parlePour = a => {
 const CHAMPS_SURVIVANT = ["competences", "blessures", "fatigue", "moral", "faim", "soif", "infection", "afflictions", "vivant", "livide", "tache", "statut",
   "joursTache", "tacheDepuis", "joursSansPassion", "joursMoralZero", "enseigne", "confiance", "apprentissage", "dictee",
   "noir",   // lot « sens » : l'habitude du noir (logique/sens.mjs)
-  "veille", "morsure"];   // lot « corps » : les quarts éveillés (corps.mjs), la morsure pansée qui se tait (maladies.mjs)
+  "veille", "morsure",   // lot « corps » : les quarts éveillés (corps.mjs), la morsure pansée qui se tait (maladies.mjs)
+  "sousTerre"];          // lot 9 : les jours sans soleil (paradis.mjs)
 // L'esprit et le sens moral (contrat §14) : réécrits par l'avancée du temps (observances, regard, lâcher, autorité du chef) et par
 // les actes du groupe.
 const CHAMPS_ESPRIT = ["regard", "religion", "religions", "pratique", "ancrage", "sensMoral", "reputation", "autorite", "esprit"];
@@ -282,7 +284,9 @@ async function ecrireAbri(a, { system, installations = null }) {
   const s = {};
   for (const k of ["stocks", "reliquats", "nature", "sol", "bruit", "degats", "reparation", "installeLe", "abandonneLe", "site", "region",
     "vegetation", "eauDouteuse", "preparation", "lumiereLe", "souillure",
-    "vivant"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);   // lot 8 : les cheptels (logique/vivant.mjs)
+    "vivant",   // lot 8 : les cheptels (logique/vivant.mjs)
+    // Lot 9 (paradis.mjs) : les corps, la ronde, le signe de la chaleur, le bûcher, la vie sous terre, l'air.
+    "corps", "rondeLe", "rondesManquees", "signeChaleur", "fumeeLe", "sousTerre", "air"]) if (system[k] !== undefined) s[k] = structuredClone(system[k]);
   await a.update({ system: s });
   if (!installations) return;
   const avant = new Map(instancesDe(a).map(i => [i.id, i]));
@@ -384,7 +388,10 @@ function conditionsAbri(etat, monde, a, { publique = false } = {}) {
   const r = publique && !aLAbri(etat, a) ? { eau: connu.eau === true, electricite: connu.electricite === true }
     : monde ? L.reseauxActifs(monde, a.system.region, jour) : (etat.bilan?.reseaux ?? {});
   const cc = chienEtConfort(aLAbri(etat, a) ? survivantsDuGroupe(etat).filter(x => L.peutAgir(x.system)) : []);
-  return { jour, dateDepart: dateDepart(), personnes: presents.length + pnj, reseaux: { eau: Boolean(r.eau), electricite: Boolean(r.electricite) }, rations,
+  // Lot 9 : une centrale relancée par un grand chantier donne le courant à l'abri de sa région (paradis.mjs, bienfaitsDeRegion).
+  const centrale = L.bienfaitsDeRegion(etat, c, a.system.region).electricite;
+  return { jour, dateDepart: dateDepart(), personnes: presents.length + pnj, reseaux: { eau: Boolean(r.eau), electricite: Boolean(r.electricite) || centrale }, rations,
+
     travailleurs: L.travailleursParTache(presents, c), signature: L.signatureDuMarche(etat.marche), chien: cc.chien, confort: cc.confort,
     ...sensDeLAbri(etat, monde, a, presents, jour) };
 }
@@ -411,7 +418,8 @@ const CHAMPS_BILAN = ["production", "consommation", "net", "pertes", "joursDeSto
   "secours", "savoirs",
   "odeur", "odeurBetes", "odeurSources", "ravine",   // lot « sens » : ce que l'abri sent, l'état de sa ravine
   "hygiene", "latrines", "toilette", "insalubrite",   // lot « corps » : l'hygiène de l'abri et son insalubrité (pas la souillure chiffrée)
-  "cheptels"];   // lot 8 : les cheptels et les bacs de l'abri (on les voit, on les entend)
+  "cheptels",   // lot 8 : les cheptels et les bacs de l'abri (on les voit, on les entend)
+  "corps", "corpsFrais", "puitsAir", "puitsJour"];   // lot 9 : les corps à l'abri, les puits sous terre (jamais la chaleur, qui est au monde)
 // L'instantané PUBLIC du bilan (état de la partie, lu par les joueurs) : ce que le groupe sait, pas le réel à distance.
 export function instantaneBilan(etat, monde) {
   const b = bilanVivant(etat, monde, { publique: true });
@@ -553,6 +561,10 @@ async function avancerInterne(ctx, quarts, options = {}) {
     ...r.menaces.map(m => avecChef(ctx, { id: `m${++ctx.monde.compteurMenaces}`, ...m }))].slice(-20);
   // Les départs de celui qui lâche ou qui déserte (esprit.mjs, chefs.mjs) : au MJ, à raconter.
   ctx.aRaconter = [...(ctx.aRaconter ?? []), ...(r.aRaconter ?? [])];
+  // Lot 9 : un jalon franchi s'écrit aussi dans les Chroniques de Fénoir ; les morsures de la ronde sont à soigner (alerte déjà posée).
+  if (r.paradis?.jalons?.length) ctx.chroniques = true;
+  ctx.paradis = { morsures: [...(ctx.paradis?.morsures ?? []), ...(r.paradis?.morsures ?? [])], rondes: [...(ctx.paradis?.rondes ?? []), ...(r.paradis?.rondes ?? [])] };
+
   // Paliers de visibilité franchis (secrets : au MJ seul).
   for (const f of r.secrets.filter(x => x.cle === "palierVisibilite")) {
     const p = palierDe(f);
@@ -985,8 +997,8 @@ async function fouillerInterne(ctx, { region, site = null, cible = null, membres
   const clarte = clarteReelle(ctx.monde, ctx.etat.horloge.quart, reg);
   const r = L.fouiller(ctx.monde, c, hasard(ctx, "fouille"), { region: reg, site, cible, membres: Math.max(1, qui.length), quarts: q, prudence,
     jour: jourCtx(ctx), moment: L.momentDe(ctx.etat.horloge.quart), abri: ab ? aPlat(ab.system) : null, renseignements: ctx.etat.renseignements, savoirs, clarte,
-    // Lot « sens » : un lieu nettoyé se repeuple peu à peu (moins de rencontres).
-    facteurRencontre: L.facteurNettoyage(ctx.etat.nettoyes ?? [], { region: reg, site: site ?? "", jour: jourCtx(ctx) }),
+    // Lot « sens » : un lieu nettoyé se repeuple peu à peu (moins de rencontres). Lot 9 : une région rallumée, moitié moins.
+    facteurRencontre: L.facteurNettoyage(ctx.etat.nettoyes ?? [], { region: reg, site: site ?? "", jour: jourCtx(ctx) }) * L.facteurRallumage(ctx.etat, reg),
     // Lot 4 « Les plans » : ce que le groupe connaît déjà (un plan connu se trouve moins souvent).
     connus: cible === CIBLE_PLANS ? PLANS_API.connusDe(ctx.etat) : [],
     // Lot 5 « fouille » : le genre du lieu, à l'écart ou non, un lieu déjà commencé, le gisement ; les outils des fouilleurs.
@@ -1251,6 +1263,12 @@ const VIVANT = fonctionsVivant({ ecriture, ouvrirCtx, terminer, noter, tx, jourC
   ecrireSurvivant: (...x) => ecrireSurvivant(...x), bilanVivant: (etat, monde) => bilanVivant(etat, monde),
   mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), aLAbri: (etat, ab) => aLAbri(etat, ab),
   testDirect: (...x) => testDirect(...x), objetsDe, defDe, avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o), instancesDe, membresValides });
+// Le paradis et son piège, et rallumer l'île (lot 9, contrat §28) : ses fonctions, avec les aides internes d'ici.
+const PARADIS = fonctionsParadis({ ecriture, ouvrirCtx, terminer, noter, alerter, tx, jourCtx, contenu, clair, erreur, chat, carteAction, systemeLogique,
+  ecrireSurvivant: (...x) => ecrireSurvivant(...x), bilanVivant: (etat, monde) => bilanVivant(etat, monde),
+  mondeMJ: () => (estMJActif() && Coffre.mondeOuvert() ? Coffre.mondeEnMemoire() : null), aLAbri: (etat, ab) => aLAbri(etat, ab),
+  testDirect: (...x) => testDirect(...x), objetsDe, defDe, estMJ: () => Boolean(game.user?.isGM), brasDe: (qui, jour) => brasDeLEquipe(qui, jour), journalSecret,
+  avancerInterne: (ctx, q, o) => avancerInterne(ctx, q, o) });
 // ------------------------------------------------------------------ l'esprit, le sens moral, la communauté (contrat §14)
 const nomActe = acte => t(`LAKOUR_SURVIE.Actes.${acte}`);
 async function ecrireEsprit(a, s) {
@@ -1487,13 +1505,15 @@ export const api = {
   // Lot « corps » : dorment (ils dorment à chaque quart), eveilles (ils restent debout), lieuSommeil ("bivouac" | "sol" : la nuit
   // dehors ; un endroit dangereux fait dormir comme au sol). De quoi bivouaquer : un membre porte une tente ou une natte.
   avancer: ecriture(async ({ quarts = 1, raison = "", repos = false, veille = [], stabilises = [], corpsTraites = [], lumiere = false, lumiereEnRoute = false,
-    dorment = [], eveilles = [], lieuSommeil = "" } = {}) => {
+    dorment = [], eveilles = [], lieuSommeil = "", silence = null } = {}) => {
     const ctx = ouvrirCtx();
     ctx.raison = String(raison ?? "");
     ctx.carteTemps = true;
     const membres = survivantsDuGroupe(ctx.etat);
     await avancerInterne(ctx, quarts, { repos: Boolean(repos), veille, stabilises, corpsTraites, lumiere: Boolean(lumiere), lumiereEnRoute: Boolean(lumiereEnRoute),
-      dorment: idsDe(dorment, membres), eveilles: idsDe(eveilles, membres), ...(["bivouac", "sol"].includes(lieuSommeil) ? { lieuSommeil } : {}) });
+      dorment: idsDe(dorment, membres), eveilles: idsDe(eveilles, membres), ...(["bivouac", "sol"].includes(lieuSommeil) ? { lieuSommeil } : {}),
+      // Lot 9 : un jour de silence décidé par le MJ (true), ou refusé (false) ; sinon, le système le voit seul.
+      ...(typeof silence === "boolean" ? { silence } : {}) });
     await terminer(ctx);
     return { quand: quandDe(ctx.etat), faits: ctx.faits.map(publicFait), alertes: ctx.alertes, bilan: bilanVivant(ctx.etat, ctx.monde), departs: ctx.departs };
   }),
@@ -2089,6 +2109,8 @@ export const api = {
   ...OUVRAGES.publiques,
   // Lot 8 (contrat §27) : les cheptels, les bêtes portées et en liberté, le chien qui prévient.
   ...VIVANT.api,
+  // Lot 9 « Le paradis et son piège » (contrat §28) : la chaleur du lieu, la ronde, les corps, sous terre, rallumer l'île.
+  ...PARADIS,
 
   // ---------------- §10 : groupe, recrues
   genererRecrue: async ({ region = "", gramoune = "" } = {}) => {

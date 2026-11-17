@@ -109,7 +109,16 @@ export const CLES_TEXTES = [
   "installation-demontee", "lieu-genre-inconnu", "lieu-aucun", "lieu-ailleurs", "lieu-demonte-deja", "lieu-fini", "lieu-indemontable", "lieu-site",
   "gisement-aucun", "gisement-renvoi", "gisement-epuise", "gisement-rien", "bete-inconnue", "bete-deja-enclose", "bete-sans-enclos",
   // ouvrages.mjs (par etat.mjs) : l'entretien des installations, l'encrassement, les pannes (lot 7 « Bâtir et défendre »)
-  "ouvrage-use", "ouvrage-encrasse", "ouvrage-panne", "ouvrage-vieillit", "ouvrage-soigne"
+  "ouvrage-use", "ouvrage-encrasse", "ouvrage-panne", "ouvrage-vieillit", "ouvrage-soigne",
+  // paradis.mjs (par etat.mjs, monde.mjs et l'API) : la chaleur d'un lieu, la ronde, les corps, sous terre, la haie, rallumer l'île,
+  // les jalons (lot 9 « Le paradis et son piège »)
+  "ronde", "ronde-calme", "ronde-blesse", "ronde-morsure", "alerte-ronde-morsure", "ronde-trouvaille", "agglutines",
+  "chaleur-oublie", "chaleur-traces", "chaleur-remarques", "chaleur-viennent", "chaleur-assieges", "haie-pliee", "haie-cassee",
+  "air-bon", "air-lourd", "air-vicie", "sous-terre-palier-1", "sous-terre-palier-2", "chantier-fini", "region-rallumee", "region-eteinte", "convoi-attire",
+  "jalon-premier-abri", "jalon-premiere-saison-des-pluies", "jalon-premier-cyclone", "jalon-premiere-fete", "jalon-premiere-region", "jalon-moitie-de-l-ile",
+  "jalon-toute-l-ile", "leurre", "leurre-rate", "corps-enterres", "corps-brules", "corps-rien", "corps-sans-bois", "paradis-sans-abri", "paradis-pas-a-l-abri",
+  "chantier-inconnu", "chantier-loin", "chantier-deja-fini", "chantier-avance", "chantier-aide", "ronde-jouee", "rallumer-declaree", "rallumer-eteinte",
+  "sous-terre-regle"
 ];
 
 // ------------------------------------------------------------------ petite grammaire des textes à trous

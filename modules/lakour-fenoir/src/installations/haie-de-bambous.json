@@ -1,0 +1,130 @@
+{
+  "_id": "CaKbxHsALyP6wS2q",
+  "_key": "!items!CaKbxHsALyP6wS2q",
+  "name": "Haie de bambous",
+  "type": "installation",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "cle": "haie-de-bambous",
+    "categorie": "defense",
+    "description": "<p>Des touffes de bambou arrachées dans la ravine et replantées serré autour de la cour, comme faisaient les anciens pour casser le vent. Il faut deux mois pour qu'elle ferme, trois pour qu'elle cache vraiment. Au cyclone, elle se couche, et se relève : elle ne casse pas.</p>",
+    "niveau": 0,
+    "niveauMax": 2,
+    "chantier": {
+      "fait": 0,
+      "requis": 4
+    },
+    "etat": 0,
+    "niveaux": [
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 2,
+          "travail": 4
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 1,
+          "capacite": 0,
+          "visibilite": -1,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "pousse": 60,
+          "plie": true,
+          "bras": null
+        }
+      },
+      {
+        "cout": {
+          "materiaux": 0,
+          "pieces": 0,
+          "graines": 0,
+          "ile": 3,
+          "travail": 6
+        },
+        "requiert": {
+          "savoirs": [],
+          "site": {
+            "eau": [],
+            "sol": 0,
+            "soleil": 0,
+            "souterrain": 0
+          },
+          "installations": []
+        },
+        "effets": {
+          "production": {},
+          "conditions": {
+            "pluie": false,
+            "soleil": false,
+            "riviere": false,
+            "delai": 0
+          },
+          "consommation": {},
+          "defense": 0,
+          "discretion": 2,
+          "capacite": 0,
+          "visibilite": -2,
+          "bruit": 0,
+          "stockage": {},
+          "protectionCyclone": 0,
+          "soins": 0,
+          "moral": 0,
+          "conservation": false,
+          "sol": 0,
+          "renseignements": false,
+          "bonus": {},
+          "pousse": 90,
+          "plie": true,
+          "bras": null
+        }
+      }
+    ],
+    "arbre": "lontan",
+    "role": "camouflage",
+    "rang": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lakour-fenoir": {
+      "cle": "haie-de-bambous"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "lakour-survie",
+    "systemVersion": "0.1.0"
+  }
+}
